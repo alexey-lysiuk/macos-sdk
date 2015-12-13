@@ -1,0 +1,7 @@
+{
+    buildSettings = 
+    {
+        "MACOSX_DEPLOYMENT_TARGET" = "10.1"; 
+    }; 
+    name = "Mac OS X 10.1.5"; 
+}
