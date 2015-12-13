@@ -1,7 +1,0 @@
-{
-    buildSettings = 
-    {
-        "MACOSX_DEPLOYMENT_TARGET" = "10.2"; 
-    }; 
-    name = "Mac OS X 10.2.6"; 
-}

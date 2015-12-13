@@ -1,1 +1,0 @@
-../../CurrentJDK/Headers/jawt.h
