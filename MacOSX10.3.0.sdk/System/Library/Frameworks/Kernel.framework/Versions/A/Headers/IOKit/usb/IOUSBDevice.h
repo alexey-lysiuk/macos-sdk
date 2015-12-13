@@ -23,9 +23,15 @@
 #ifndef __OPEN_SOURCE__
 /*
  *
- *	$Id: IOUSBDevice.h,v 1.38 2003/08/21 21:50:09 nano Exp $
+ *	$Id: IOUSBDevice.h,v 1.39 2003/09/10 19:07:17 nano Exp $
  *
  *	$Log: IOUSBDevice.h,v $
+ *	Revision 1.39  2003/09/10 19:07:17  nano
+ *	Merge in branches to fix #3406994 (make SuspendDevice synchronous)
+ *	
+ *	Revision 1.38.26.1  2003/09/10 18:33:59  nano
+ *	Couple of booleans to support synchronous DeviceSuspend
+ *	
  *	Revision 1.38  2003/08/21 21:50:09  nano
  *	Remove use of compatibility slot in IOUSBPipe.h -- it's not necessary
  *	
@@ -118,6 +124,8 @@ protected:
         IOWorkLoop *		_workLoop;
         IOTimerEventSource *	_notifierHandlerTimer;
         UInt32			_notificationType;
+        bool			_suspendInProgress;
+        bool			_portHasBeenSuspended;
     };
     ExpansionData * _expansionData;
 

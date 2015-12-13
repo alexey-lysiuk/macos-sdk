@@ -196,6 +196,7 @@ struct nfs_args {
 #define	NFSMNT_RESVPORT		0x00008000  /* Allocate a reserved port */
 #define	NFSMNT_RDIRPLUS		0x00010000  /* Use Readdirplus for V3 */
 #define	NFSMNT_READDIRSIZE	0x00020000  /* Set readdir size */
+#define	NFSMNT_NOLOCKS		0x00040000  /* don't support file locking */
 
 #define NFSSTA_TIMEO		0x00010000  /* experienced a timeout. */
 #define NFSSTA_FORCE		0x00020000  /* doing a forced unmount. */
@@ -405,6 +406,7 @@ extern TAILQ_HEAD(nfs_reqq, nfsreq) nfs_reqq;
 #define R_GETONEREP	0x0080		/* Probe for one reply only */
 #define R_BUSY		0x0100		/* Locked. */
 #define R_WAITING	0x0200		/* Someone waiting for lock. */
+#define R_RESENDERR	0x0400		/* resend failed. */
 
 /*
  * A list of nfssvc_sock structures is maintained with all the sockets

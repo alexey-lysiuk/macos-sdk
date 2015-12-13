@@ -500,10 +500,14 @@ extern double significand ( double );
  * BSD math library entry points
  */
 #ifndef __COMPLEX__
+#ifdef __APPLE_CC__
 #define complex _Complex
 extern double cabs ( double complex );
 #undef complex
-#endif
+#else
+extern double cabs ( __complex_t );
+#endif /* __APPLE_CC__ */
+#endif /* __COMPLEX__ */
 
 extern double drem ( double, double );
 

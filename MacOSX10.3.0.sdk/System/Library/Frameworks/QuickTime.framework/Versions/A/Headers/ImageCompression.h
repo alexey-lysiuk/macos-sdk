@@ -1400,7 +1400,8 @@ enum {
   codecDSequenceSingleField     = (1L << 6),
   codecDSequenceBidirectionalPrediction = (1L << 7),
   codecDSequenceFlushInsteadOfDirtying = (1L << 8),
-  codecDSequenceEnableSubPixelPositioning = (1L << 9)
+  codecDSequenceEnableSubPixelPositioning = (1L << 9),
+  codecDSequenceDeinterlaceFields = (1L << 10)
 };
 
 typedef CodecComponent *                CodecComponentPtr;

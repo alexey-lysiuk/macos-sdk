@@ -24,9 +24,12 @@
 #ifndef __OPEN_SOURCE__
 /*
  *
- *	$Id: IOUSBLog.h,v 1.19 2003/08/20 19:41:40 nano Exp $
+ *	$Id: IOUSBLog.h,v 1.20 2003/09/05 22:38:50 nano Exp $
  *
  *	$Log: IOUSBLog.h,v $
+ *	Revision 1.20  2003/09/05 22:38:50  nano
+ *	Removed logging --set to Production
+ *	
  *	Revision 1.19  2003/08/20 19:41:40  nano
  *	
  *	Bug #:
@@ -72,7 +75,7 @@
 // Allow clients to define their own debug level.
 
 #if( !defined( DEBUG_LEVEL ) )
-	#define	DEBUG_LEVEL			DEBUG_LEVEL_BETA
+	#define	DEBUG_LEVEL			DEBUG_LEVEL_PRODUCTION
 #endif
 
 // Index for user client methods

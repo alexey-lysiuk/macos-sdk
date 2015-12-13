@@ -1,5 +1,5 @@
 /*---------------------------------------------------------------------------*\
-  $Id: poll.h,v 1.1.1.1 2003/07/21 16:20:21 zarzycki Exp $
+  $Id: poll.h,v 1.2 2003/09/13 00:08:18 eseidel Exp $
 
   NAME
 
@@ -68,6 +68,10 @@
 
 #ifndef _POLL_EMUL_H_
 #define _POLL_EMUL_H_
+
+#ifndef POLL_NO_WARN
+#warning "poll() functionality for Mac OS X is implemented via an emulation layer on top of select(), not in the kernel directly.  It is recommended that programs running under OS X 10.3 prefer select() over poll().  Configure scripts should look for the _POLL_EMUL_H_ define (instead of _POLL_H_ or _SYS_POLL_H_) and avoid implementations where poll is not implemented in the kernel."
+#endif
 
 #define POLLIN		0x01
 #define POLLPRI		0x02

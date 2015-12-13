@@ -124,7 +124,7 @@ struct	nfsmount {
 #define VFSTONFS(mp)	((mp) ? ((struct nfsmount *)((mp)->mnt_data)) : NULL)
 
 #ifndef NFS_TPRINTF_INITIAL_DELAY
-#define NFS_TPRINTF_INITIAL_DELAY	8
+#define NFS_TPRINTF_INITIAL_DELAY	12
 #endif
 
 #ifndef NFS_TPRINTF_DELAY

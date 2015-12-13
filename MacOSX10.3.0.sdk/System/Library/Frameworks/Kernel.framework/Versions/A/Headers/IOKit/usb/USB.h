@@ -24,9 +24,18 @@
 #ifndef __OPEN_SOURCE__
 /*
  *
- *	$Id: USB.h,v 1.42 2003/08/20 19:41:40 nano Exp $
+ *	$Id: USB.h,v 1.44 2003/09/10 19:07:17 nano Exp $
  *
  *	$Log: USB.h,v $
+ *	Revision 1.44  2003/09/10 19:07:17  nano
+ *	Merge in branches to fix #3406994 (make SuspendDevice synchronous)
+ *	
+ *	Revision 1.43.2.1  2003/09/10 18:33:40  nano
+ *	Add port has been suspended message.
+ *	
+ *	Revision 1.43  2003/09/10 16:28:00  nano
+ *	Added missing iFunction in IOUSBInterfaceAssociationDescriptor.
+ *	
  *	Revision 1.42  2003/08/20 19:41:40  nano
  *	
  *	Bug #:
@@ -384,11 +393,12 @@ Completion Code         Error Returned              Description
 #define kIOUSBMessageHubSuspendPort         iokit_usb_msg(2)   // 0xe00004002  Message sent to a hub to suspend a particular port
 #define kIOUSBMessageHubResumePort          iokit_usb_msg(3)   // 0xe00004003  Message sent to a hub to resume a particular port
 #define kIOUSBMessageHubIsDeviceConnected   iokit_usb_msg(4)   // 0xe00004004  Message sent to a hub to inquire whether a particular port has a device connected or not
-#define kIOUSBMessageHubIsPortEnabled       iokit_usb_msg(5)   // 0xe00004001  Message sent to a hub to inquire whether a particular port is enabled or not
-#define kIOUSBMessageHubReEnumeratePort     iokit_usb_msg(6)   // 0xe00004001  Message sent to a hub to reenumerate the device attached to a particular port
-#define kIOUSBMessagePortHasBeenReset       iokit_usb_msg(10)  // 0xe00004001  Message sent to a device indicating that the port it is attached to has been reset
-#define kIOUSBMessagePortHasBeenResumed     iokit_usb_msg(11)  // 0xe00004001  Message sent to a device indicating that the port it is attached to has been resumed
-#define kIOUSBMessageHubPortClearTT      	iokit_usb_msg(12)
+#define kIOUSBMessageHubIsPortEnabled       iokit_usb_msg(5)   // 0xe00004005  Message sent to a hub to inquire whether a particular port is enabled or not
+#define kIOUSBMessageHubReEnumeratePort     iokit_usb_msg(6)   // 0xe00004006  Message sent to a hub to reenumerate the device attached to a particular port
+#define kIOUSBMessagePortHasBeenReset       iokit_usb_msg(10)  // 0xe0000400a  Message sent to a device indicating that the port it is attached to has been reset
+#define kIOUSBMessagePortHasBeenResumed     iokit_usb_msg(11)  // 0xe0000400b  Message sent to a device indicating that the port it is attached to has been resumed
+#define kIOUSBMessageHubPortClearTT         iokit_usb_msg(12)  // 0xe0000400c  Message sent to a hub to clear the transaction translator
+#define kIOUSBMessagePortHasBeenSuspended   iokit_usb_msg(13)  // 0xe0000400d  Message sent to a device indicating that the port it is attached to has been suspended
 
 // Obsolete
 //
@@ -599,6 +609,7 @@ struct IOUSBInterfaceAssociationDescriptor
     UInt8 			bFunctionClass;
     UInt8 			bFunctionSubClass;
     UInt8 			bFunctionProtocol;
+    UInt8			iFunction;
 };
 typedef struct IOUSBInterfaceAssociationDescriptor	IOUSBInterfaceAssociationDescriptor;
 typedef IOUSBInterfaceAssociationDescriptor *	IOUSBInterfaceAssociationDescriptorPtr;

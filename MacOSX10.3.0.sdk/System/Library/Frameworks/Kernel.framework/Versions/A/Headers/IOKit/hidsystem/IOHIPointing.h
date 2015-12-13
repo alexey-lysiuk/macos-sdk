@@ -140,8 +140,10 @@ private:
         AbsoluteTime	scrollLastEventTime3;
 
         // Added to post events to the HID Manager
-        IOHIDPointingDevice  * hidPointingNub;
-
+        IOHIDPointingDevice	* hidPointingNub;
+        IOService 		* openClient;
+        
+        bool		isSeized;
     };
 
     void *  _reserved;
@@ -187,6 +189,8 @@ public:
                     ScrollWheelEventCallback		sweCallback);
 
   virtual void close(IOService * client, IOOptionBits );
+  virtual IOReturn message( UInt32 type, IOService * provider,
+                              void * argument = 0 );
 
   virtual IOHIDKind hidKind();
   virtual bool 	    updateProperties( void );

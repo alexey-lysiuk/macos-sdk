@@ -632,7 +632,10 @@ enum {
   kActionListSetMatchingFromXML = 13316, /* (C string xml, C string targetParentPath) */
   kActionListSetFromURL         = 13317, /* (C string url, C string targetParentPath ) */
   kActionListExchangeLists      = 13318, /* (C string url, C string parentPath) */
-  kActionListServerQuery        = 13319 /* (C string url, C string keyValuePairs, long flags, C string parentPath) */
+  kActionListServerQuery        = 13319, /* (C string url, C string keyValuePairs, long flags, C string parentPath) */
+  kActionListAddAttribute       = 13320, /* (C string elementPath, long atIndex, C string newAttributeName) */
+  kActionListRemoveAttributes   = 13321, /* (C string elementPath, long startIndex, long endIndex) */
+  kActionListSetAttributeValue  = 13322 /* (C string elementPath, C string attributeName, C string valueString) */
 };
 
 
@@ -757,6 +760,9 @@ enum {
   kOperandListGetElementPathByIndex = 7169, /* (C string parentPath, long index) */
   kOperandListGetElementValue   = 7170, /* (C string elementPath) */
   kOperandListCopyToXML         = 7171, /* (C string parentPath, long startIndex, long endIndex) */
+  kOperandListCountAttributes   = 7172, /* (C string elementPath) */
+  kOperandListGetAttributeNameByIndex = 7173, /* (C string elementPath, long index) */
+  kOperandListGetAttributeValue = 7174, /* (C string elementPath, C string attributeName) */
   kOperandSin                   = 8192, /* float x    */
   kOperandCos                   = 8193, /* float x    */
   kOperandTan                   = 8194, /* float x    */
@@ -800,7 +806,7 @@ enum {
   kFirstTextTrackAction         = kActionTextTrackPasteText,
   kLastTextTrackAction          = kActionTextTrackSetEditable,
   kFirstMultiTargetAction       = kActionListAddElement,
-  kLastMultiTargetAction        = kActionListServerQuery,
+  kLastMultiTargetAction        = kActionListSetAttributeValue,
   kFirstAction                  = kFirstMovieAction,
   kLastAction                   = kLastMultiTargetAction
 };
@@ -1162,7 +1168,8 @@ enum {
   hintsFlushVideoInsteadOfDirtying = 1 << 22,
   hintsEnableSubPixelPositioning = 1L << 23,
   hintsRenderingMode            = 1L << 24,
-  hintsAllowIdleSleep           = 1L << 25 /* asks media handlers not to call UpdateSystemActivity etc */
+  hintsAllowIdleSleep           = 1L << 25, /* asks media handlers not to call UpdateSystemActivity etc */
+  hintsDeinterlaceFields        = 1L << 26
 };
 
 typedef unsigned long                   playHintsEnum;

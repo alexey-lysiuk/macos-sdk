@@ -3,7 +3,7 @@
  
      Contains:   Apple Help
  
-     Version:    Help-27~973
+     Version:    Help-27~1003
  
      Copyright:  © 2000-2003 by Apple Computer, Inc., all rights reserved.
  

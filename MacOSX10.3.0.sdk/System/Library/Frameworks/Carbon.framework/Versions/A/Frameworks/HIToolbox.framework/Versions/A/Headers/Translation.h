@@ -3,7 +3,7 @@
  
      Contains:   Translation Manager (Macintosh Easy Open) Interfaces.
  
-     Version:    HIToolbox-145.14~1
+     Version:    HIToolbox-145.33~1
  
      Copyright:  © 1991-2003 by Apple Computer, Inc., all rights reserved.
  

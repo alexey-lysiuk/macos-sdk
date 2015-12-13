@@ -352,15 +352,13 @@ public:
 
 	/*! 
 		@function start
-		@abstract During an IOService instantiation, the start method is called when the
-		IOService has been selected to run on the provider.
 		@discussion See IOService for discussion.
 		@result Return true if the start was successful, false otherwise ( which will
 		cause the instance to be detached and usually freed ).
 	*/
 
 	virtual bool start ( IOService * provider );
-
+	
 	/*!
 	 *	@function cleanUp
 		@abstract cleanUp is called to tear down IOFireWireSerialBusProtocolTransport.
@@ -370,6 +368,22 @@ public:
 	
 	virtual void cleanUp ( void );
 
+	/*!
+		@function finalize
+		@abstract See IOService for discussion.
+		@result Returns true.
+	*/
+	
+	virtual bool finalize ( IOOptionBits options );
+
+	/*! 
+		@function free
+		@discussion See IOService for discussion.
+		@result none.
+	*/
+	
+	virtual void free ( void );
+		
 protected:
 	
 	virtual IOReturn login ( void );

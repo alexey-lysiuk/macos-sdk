@@ -3,7 +3,7 @@
  
      Contains:   Gestalt Interfaces.
  
-     Version:    CarbonCore-536.1~1
+     Version:    CarbonCore-545~1
  
      Copyright:  © 1988-2003 by Apple Computer, Inc.  All rights reserved
  
@@ -1806,8 +1806,20 @@ enum {
   gestaltQTVRMgrVers            = 'qtvv' /* QuickTime VR version                                  */
 };
 
+/*    
+    Because some PowerPC machines now support very large physical memory capacities, including
+    some above the maximum value which can held in a 32 bit quantity, there is now a new selector,
+    gestaltPhysicalRAMSizeInMegabytes, which returns the size of physical memory scaled
+    in megabytes.  It is recommended that code transition to using this new selector if
+    it wants to get a useful value for the amount of physical memory on the system.  Code can
+    also use the sysctl() and sysctlbyname() BSD calls to get these kinds of values.
+    
+    For compatability with code which assumed that the value in returned by the
+    gestaltPhysicalRAMSize selector would be a signed quantity of bytes, this selector will
+    now return 2 gigabytes-1 ( LONG_MAX ) if the system has 2 gigabytes of physical memory or more.
+*/
 enum {
-  gestaltPhysicalRAMSize        = 'ram ' /* physical RAM size */
+  gestaltPhysicalRAMSize        = 'ram ' /* physical RAM size, in bytes */
 };
 
 enum {

@@ -339,6 +339,7 @@ struct extern_proc {
 					/* flag set on exec */
 #define	P_FORCEQUOTA	0x20000000	/* Force quota for root */
 #define	P_NOCLDWAIT	0x40000000	/* No zombies when chil procs exit */
+#define	P_NOREMOTEHANG	0x80000000	/* Don't hang on remote FS ops */
 
 #define	P_NOSWAP	0		/* Obsolete: retained so that nothing breaks */
 #define	P_PHYSIO	0		/* Obsolete: retained so that nothing breaks */
@@ -406,6 +407,7 @@ extern void	procinit __P((void));
 #ifdef __APPLE_API_UNSTABLE
 
 extern struct	proc *pfind __P((pid_t));	/* Find process by id. */
+__private_extern__ struct proc *pzfind(pid_t);	/* Find zombie by id. */
 extern struct	pgrp *pgfind __P((pid_t));	/* Find process group by id. */
 
 extern int	chgproccnt __P((uid_t uid, int diff));

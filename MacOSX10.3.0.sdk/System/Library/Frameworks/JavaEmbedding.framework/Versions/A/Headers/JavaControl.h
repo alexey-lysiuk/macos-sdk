@@ -3,7 +3,7 @@
  
      Contains:   interface to embedding Java code in a Carbon Control
  
-     Version:    JavaEmbedding-24~34
+     Version:    JavaEmbedding-24~64
  
      Copyright:  © 2000-2003 by Apple Computer, Inc., all rights reserved.
  

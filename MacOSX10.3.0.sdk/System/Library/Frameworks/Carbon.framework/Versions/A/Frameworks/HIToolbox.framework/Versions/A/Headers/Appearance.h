@@ -3,7 +3,7 @@
  
      Contains:   Appearance Manager Interfaces.
  
-     Version:    HIToolbox-145.14~1
+     Version:    HIToolbox-145.33~1
  
      Copyright:  © 1994-2003 by Apple Computer, Inc., all rights reserved
  
@@ -749,18 +749,44 @@ enum {
 };
 
 typedef UInt16                          ThemeTabDirection;
-/* NOTE ON TAB HEIGHT                                                                       */
-/* Use the kThemeSmallTabHeightMax and kThemeLargeTabHeightMax when calculating the rects   */
-/* to draw tabs into. This height includes the tab frame overlap. Tabs that are not in the  */
-/* front are only drawn down to where they meet the frame, as if the height was just        */
-/* kThemeLargeTabHeight, for example, as opposed to the ...Max constant. Remember that for  */
-/* East and West tabs, the height referred to below is actually the width.                  */
+
+/*
+ *  Summary:
+ *    Deprecated tab height and overlap constants.
+ *  
+ *  Discussion:
+ *    These constants have been deprecated in favor of theme metrics.
+ *    Please do not use them anymore. These constants will be removed
+ *    in the next major release of OS X.
+ */
 enum {
-  kThemeSmallTabHeight          = 16,   /* amount small tabs protrude from frame.*/
-  kThemeLargeTabHeight          = 21,   /* amount large tabs protrude from frame.*/
-  kThemeTabPaneOverlap          = 3,    /* amount tabs overlap frame.*/
-  kThemeSmallTabHeightMax       = 19,   /* small tab height + overlap*/
-  kThemeLargeTabHeightMax       = 24    /* large tab height + overlap*/
+
+  /*
+   * Deprecated. Use kThemeMetricSmallTabHeight.
+   */
+  kThemeSmallTabHeight          = 16,
+
+  /*
+   * Deprecated. Use kThemeMetricLargeTabHeight.
+   */
+  kThemeLargeTabHeight          = 21,
+
+  /*
+   * Deprecated. Use kThemeMetricTabFrameOverlap.
+   */
+  kThemeTabPaneOverlap          = 3,
+
+  /*
+   * Deprecated. Use kThemeMetricSmallTabHeight and
+   * kThemeMetricSmallTabFrameOverlap.
+   */
+  kThemeSmallTabHeightMax       = 19,
+
+  /*
+   * Deprecated. Use metric kThemeMetricLargeTabHeight and
+   * kThemeMetricTabFrameOverlap.
+   */
+  kThemeLargeTabHeightMax       = 24
 };
 
 /*ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ*/

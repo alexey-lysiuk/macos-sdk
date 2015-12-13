@@ -365,7 +365,7 @@
 #define HAVE_PERROR 1
 
 /* Define if you have the poll function.  */
-/* #undef HAVE_POLL */
+#define HAVE_POLL 1
 
 /* Define if you have the pread function.  */
 #define HAVE_PREAD 1
@@ -737,7 +737,7 @@
 /* #undef HAVE_SYS_PARAM_H */
 
 /* Define if you have the <sys/poll.h> header file.  */
-/* #undef HAVE_SYS_POLL_H */
+#define HAVE_SYS_POLL_H 1
 
 /* Define if you have the <sys/resource.h> header file.  */
 #define HAVE_SYS_RESOURCE_H 1
@@ -2472,10 +2472,10 @@
 /* #undef PTHREADS */
 
 /* PHP build date */
-#define PHP_BUILD_DATE "2003-08-30"
+#define PHP_BUILD_DATE "2003-09-13"
 
 /* uname -a output */
-#define PHP_UNAME "Darwin roll 7.0 Darwin Kernel Version 6.0: Fri Jul 25 16:58:41 PDT 2003; root:xnu-344.frankD.roots/xnu-344.frankD~obj/RELEASE_PPC Power Macintosh powerpc"
+#define PHP_UNAME "Darwin trashguy 7.0 Darwin Kernel Version 6.0: Fri Jul 25 16:58:41 PDT 2003; root:xnu-344.frankD.roots/xnu-344.frankD~obj/RELEASE_PPC Power Macintosh powerpc"
 
 /* uname output */
 #define PHP_OS "Darwin"

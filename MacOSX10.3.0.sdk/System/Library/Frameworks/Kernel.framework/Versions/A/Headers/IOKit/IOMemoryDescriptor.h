@@ -67,6 +67,7 @@ enum {
     kIOMemoryAsReference	= 0x00000100,
     kIOMemoryBufferPageable	= 0x00000400,
     kIOMemoryDontMap		= 0x00000800,
+    kIOMemoryPersistent		= 0x00010000
 };
 
 #define kIOMapperNone	((IOMapper *) -1)

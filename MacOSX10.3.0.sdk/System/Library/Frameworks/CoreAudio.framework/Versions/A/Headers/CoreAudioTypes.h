@@ -166,6 +166,7 @@ enum
 	kAudioFormatFlagIsPacked					= (1L << 3),	//	set if the sample bits are packed as closely together as possible, clear if they are high or low aligned within the channel
 	kAudioFormatFlagIsAlignedHigh				= (1L << 4),	//	set if the sample bits are placed into the high bits of the channel, clear for low bit placement, only valid if kAudioFormatFlagIsPacked is clear
 	kAudioFormatFlagIsNonInterleaved			= (1L << 5),	//	set if the samples for each channel are located contiguously and the channels are layed out end to end, clear if the samples for each frame are layed out contiguously and the frames layed out end to end
+	kAudioFormatFlagIsNonMixable				= (1L << 5),	//	set to indicate when a format is non-mixable
 	kAudioFormatFlagsAreAllClear				= (1L << 31),	//	set if all the flags would be clear in order to preserve 0 as the wild card value
 
 	//	linear PCM flags
@@ -175,6 +176,7 @@ enum
 	kLinearPCMFormatFlagIsPacked				= kAudioFormatFlagIsPacked,
 	kLinearPCMFormatFlagIsAlignedHigh			= kAudioFormatFlagIsAlignedHigh,
 	kLinearPCMFormatFlagIsNonInterleaved		= kAudioFormatFlagIsNonInterleaved,
+	kLinearPCMFormatFlagIsNonMixable			= kAudioFormatFlagIsNonMixable,
 	kLinearPCMFormatFlagsAreAllClear			= kAudioFormatFlagsAreAllClear
 };
 

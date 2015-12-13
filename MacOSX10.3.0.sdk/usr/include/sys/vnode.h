@@ -202,7 +202,8 @@ struct vnode {
 		/* wakeup tasks waiting when count falls below threshold */
 #define	VNOFLUSH	0x800000	/* don't vflush() if SKIPSYSTEM */
 #define VDELETED       0x1000000        /* this vnode is being deleted */
-#define VFULLFSYNC	   0x2000000	/* ask the drive to write the data to the media */
+#define VFULLFSYNC     0x2000000	/* ask the drive to write the data to the media */
+#define VHASBEENPAGED  0x4000000        /* vnode has been recently paged to */
 
 /*
  * Vnode attributes.  A field value of VNOVAL represents a field whose value

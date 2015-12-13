@@ -3,7 +3,7 @@
  
      Contains:   Master include for Help private framework
  
-     Version:    Help-27~973
+     Version:    Help-27~1003
  
      Copyright:  © 1999-2003 by Apple Computer, Inc., all rights reserved.
  

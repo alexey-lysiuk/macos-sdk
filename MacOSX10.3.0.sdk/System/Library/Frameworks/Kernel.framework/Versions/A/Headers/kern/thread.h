@@ -741,6 +741,10 @@ extern boolean_t	refunnel_hint(
 						thread_t		thread,
 						wait_result_t	wresult);
 
+/* For use by CHUD */
+vm_offset_t min_valid_stack_address(void);
+vm_offset_t max_valid_stack_address(void);
+
 #endif	/* __APPLE_API_PRIVATE */
 
 #endif	/* _KERN_THREAD_H_ */

@@ -299,8 +299,7 @@ enum {
     kIOAudioControlTypeLevel			= 'levl',
     kIOAudioControlTypeToggle			= 'togl',
 	kIOAudioControlTypeJack				= 'jack',
-    kIOAudioControlTypeSelector			= 'slct',
-	kIOAudioControlTypeStereoPan		= 'span'
+    kIOAudioControlTypeSelector			= 'slct'
 };
 
 enum {

@@ -3,7 +3,7 @@
  
      Contains:   Open Scripting Architecture Client Interfaces.
  
-     Version:    OSA-62~46
+     Version:    OSA-62~76
  
      Copyright:  © 1992-2003 by Apple Computer, Inc., all rights reserved
  

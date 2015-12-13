@@ -56,6 +56,7 @@
 // The following messages should be unique across the entire system
 #define sub_iokit_hidsystem			err_sub(14)
 #define kIOHIDSystem508MouseClickMessage 	iokit_family_msg(sub_iokit_hidsystem, 1)
+#define kIOHIDSystemDeviceSeizeRequestMessage	iokit_family_msg(sub_iokit_hidsystem, 2)
 
 class IOHIDSystem : public IOService
 {

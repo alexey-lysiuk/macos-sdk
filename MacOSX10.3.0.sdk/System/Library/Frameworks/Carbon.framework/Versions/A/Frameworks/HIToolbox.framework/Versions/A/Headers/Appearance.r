@@ -3,7 +3,7 @@
  
      Contains:   Appearance Manager Interfaces.
  
-     Version:    HIToolbox-145.14~1
+     Version:    HIToolbox-145.33~1
  
      Copyright:  © 1994-2003 by Apple Computer, Inc., all rights reserved
  
@@ -318,11 +318,11 @@
 #define kThemeTabEast 					2
 #define kThemeTabWest 					3
 
-#define kThemeSmallTabHeight 			16					/*  amount small tabs protrude from frame. */
-#define kThemeLargeTabHeight 			21					/*  amount large tabs protrude from frame. */
-#define kThemeTabPaneOverlap 			3					/*  amount tabs overlap frame. */
-#define kThemeSmallTabHeightMax 		19					/*  small tab height + overlap */
-#define kThemeLargeTabHeightMax 		24					/*  large tab height + overlap */
+#define kThemeSmallTabHeight 			16
+#define kThemeLargeTabHeight 			21
+#define kThemeTabPaneOverlap 			3
+#define kThemeSmallTabHeightMax 		19
+#define kThemeLargeTabHeightMax 		24
 
 #define kThemeMediumScrollBar 			0
 #define kThemeSmallScrollBar 			1

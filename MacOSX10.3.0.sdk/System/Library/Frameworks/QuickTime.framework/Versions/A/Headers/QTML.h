@@ -77,7 +77,8 @@ enum {
   kInitializeQTMLUseGDIFlag     = (1L << 1), /* flag for requesting GDI when calling InitializeQTML*/
   kInitializeQTMLDisableDirectSound = (1L << 2), /* disables QTML's use of DirectSound*/
   kInitializeQTMLUseExclusiveFullScreenModeFlag = (1L << 3), /* later than QTML 3.0: qtml starts up in exclusive full screen mode*/
-  kInitializeQTMLDisableDDClippers = (1L << 4) /* flag for requesting QTML not to use DirectDraw clipper objects; QTML 5.0 and later*/
+  kInitializeQTMLDisableDDClippers = (1L << 4), /* flag for requesting QTML not to use DirectDraw clipper objects; QTML 5.0 and later*/
+  kInitializeQTMLEnableDoubleBufferedSurface = (1L << 6) /* flag for requesting QuickTime use a double-buffered destination surface; QT6.4 and later*/
 };
 
 /*
@@ -105,9 +106,11 @@ enum {
 
 /* CreatePortAssociation flags*/
 enum {
-  kQTMLNoIdleEvents             = (1L << 1) /* ask for a non-auto-idled port to be created*/
+  kQTMLNoIdleEvents             = (1L << 1), /* ask for a non-auto-idled port to be created*/
+  kQTMLNoDoubleBufferPort       = (1L << 2) /* ask for QTML not to double-buffer this port*/
 };
 
+#define kQTMLIsDoubleBuffered "UsesDoubleBuffer"
 /*
  *  CreatePortAssociation()
  *  

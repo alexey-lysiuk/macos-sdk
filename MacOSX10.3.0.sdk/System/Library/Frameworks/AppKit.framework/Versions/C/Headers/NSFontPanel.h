@@ -61,7 +61,7 @@
 	unsigned int	    _collectionDisabled; // used by validate font panel modes. 
 	unsigned int	    _sizeDisabled; // used by validate font panel modes. 
 	unsigned int	    _faceDisabled; // used by validate font panel modes. 
-	unsigned int	    _inTakingSizeFromSlider; // true if in process of taking slider value.
+	unsigned int	    _lastFaceSelection; 
         unsigned int        RESERVED2:12;
     } _fpFlags;
     float		_cachedSizeValue;

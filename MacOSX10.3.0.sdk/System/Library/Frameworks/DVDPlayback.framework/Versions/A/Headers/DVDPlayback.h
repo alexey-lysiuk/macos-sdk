@@ -22,9 +22,9 @@
 	During a playback "session," the application must perform specific minimum operations, as follows:
 	1.	Initialize the playback framework with DVDInitialize. The DVDPlayback framework can only be opened by one
 		process at a time. If a second process attempts to initialize it, an error will be returned.
-	2.	Set the gDevice with DVDSetVideoDevice
-	3.	Set the playback grafport with DVDSetVideoPort.
-	4.	Set the video bounds with DVDSetVideoBounds. This is the bounds within the grafport and is in port coordinates.
+	2.	Set the playback grafport with DVDSetVideoPort(Carbon) or the window with DVDSetVideoWindowID(Cocoa).
+	3.	Set the gDevice with DVDSetVideoDevice(Carbon) or the display with DVDSetVideoDisplay(Cocoa).
+	4.	Set the video bounds with DVDSetVideoBounds. This is the bounds within the grafport/window and is in port coordinates.
 	5.	Open the media with DVDOpenMediaVolume (DVD disc) or DVDOpenMediaFile (VIDEO_TS folder).
 	6.	Play the media
 	7.	When finished or switching media, close with the appropriate call (DVDCloseMediaVolume or DVDCloseMediaFile)
@@ -34,13 +34,8 @@
 #ifndef __DVDPLAYBACK__
 #define __DVDPLAYBACK__
 
-#ifdef __MACH__
-#include	<QD/Quickdraw.h>
-#include	<CoreGraphics/CGDirectDisplay.h>
+#include	<ApplicationServices/ApplicationServices.h>
 #include	<Security/Authorization.h>
-#else
-#include	<Carbon.h>
-#endif
 
 #ifdef __cplusplus
 extern "C" {
@@ -611,19 +606,17 @@ extern	OSStatus	DVDGetVideoDevice(GDHandle *outDevice);
 //
 //	DVDIsSupportedDisplay	-	Returns TRUE if this display is known to support DVD playback.  Could 
 //							 	return FALSE for a display capable DVD playback but using a different 
-//								video driver than the one currently in use.  DVDSetVideoPort must have 
-//								been previously called with a valid port for this call to work properly.
+//								video driver than the one currently in use.  DVDSetVideoWindowID must have 
+//								been previously called with a valid window for this call to work properly.
 //	DVDSwitchToDisplay		- 	Switches active to the new playback display. It will return with an error
 //								if the new display is not suppported and keep the old display
 //	DVDSetVideoDisplay		- 	Set the display to playback video on.
 //	DVDSetVideoDisplay		- 	Returns the display video playback is on.
 //-----------------------------------------------------
-#ifdef __MACH__
 extern	OSStatus	DVDIsSupportedDisplay(CGDirectDisplayID inDisplay,Boolean *outSupported);
 extern	OSStatus	DVDSwitchToDisplay(CGDirectDisplayID newDisplay,Boolean *outSupported);
 extern	OSStatus	DVDSetVideoDisplay(CGDirectDisplayID inDisplay);
 extern	OSStatus	DVDGetVideoDisplay(CGDirectDisplayID *outDisplay);
-#endif
 
 
 
@@ -651,10 +644,8 @@ extern	OSStatus	DVDGetVideoDisplay(CGDirectDisplayID *outDisplay);
 //-----------------------------------------------------
 extern	OSStatus	DVDSetVideoPort(CGrafPtr inVidPort);
 extern	OSStatus	DVDGetVideoPort(CGrafPtr *outVidPort);
-#ifdef __MACH__
 extern	OSStatus	DVDSetVideoWindowID(UInt32 inVidWindowID);
 extern	OSStatus	DVDGetVideoWindowID(UInt32 *outVidWindowID);
-#endif
 extern	OSStatus	DVDSetVideoBounds(Rect *inPortRect);
 extern	OSStatus	DVDGetVideoBounds(Rect *outPortRect);
 extern	OSStatus	DVDGetVideoKeyColor(RGBColor *outKeyColor);
@@ -923,9 +914,7 @@ extern	OSStatus	DVDGetMenuLanguageCode(DVDLanguageCode *outCode);
 //-----------------------------------------------------	
 extern	OSStatus	DVDGetDiscRegionCode(DVDRegionCode *outCode);
 extern	OSStatus	DVDGetDriveRegionCode(DVDRegionCode *outCode,SInt16 *outNumberChangesLeft);
-#ifdef __MACH__
 extern	OSStatus	DVDSetDriveRegionCode(DVDRegionCode inCode, AuthorizationRef inAuthorization);
-#endif
 
 
 

@@ -3,7 +3,7 @@
  
      Contains:   ColorSync types
  
-     Version:    ColorSync-116.1~4
+     Version:    ColorSync-118.2~1
  
      Copyright:  © 2000-2003 by Apple Computer, Inc., all rights reserved.
  

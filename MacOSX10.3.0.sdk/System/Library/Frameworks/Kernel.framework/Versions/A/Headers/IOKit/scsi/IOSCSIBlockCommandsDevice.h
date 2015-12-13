@@ -118,6 +118,9 @@ protected:
 	// Interconnect that allows multiple initiators to access it.  This is used mainly
 	// by the power management code to not send power state related START_STOP_UNIT
 	// commands to the device.
+	// The fDeviceIsShared value is also used to prevent power state commands from being
+	// sent to manual eject device since these devices behave better when allowed to
+	// manage their own power.
 	#define fDeviceIsShared	fIOSCSIBlockCommandsDeviceReserved->fDeviceIsShared
 	
 	// ---- Device Characteristics ----

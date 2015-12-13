@@ -95,6 +95,7 @@ protected:
     struct ExpansionData {
 		IOAudioClientBufferExtendedInfo		*extendedInfo;
 		IOExternalMethod					methods[kIOAudioEngineNumCalls];		// This size can be changed, this is the new methods pointer
+ 		UInt32								classicMode;
 //		void								*securityToken;
 	};
 

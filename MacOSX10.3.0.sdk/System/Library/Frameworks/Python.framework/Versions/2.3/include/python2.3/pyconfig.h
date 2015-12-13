@@ -323,7 +323,7 @@
 /* #undef HAVE_PLOCK */
 
 /* Define to 1 if you have the `poll' function. */
-/* #undef HAVE_POLL */
+#define HAVE_POLL 1
 
 /* Define to 1 if you have the <poll.h> header file. */
 #define HAVE_POLL_H 1

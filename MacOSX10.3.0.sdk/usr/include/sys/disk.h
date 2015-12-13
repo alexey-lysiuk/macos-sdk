@@ -98,6 +98,7 @@ typedef struct
 #define DKIOCGETMAXSEGMENTBYTECOUNTWRITE _IOR('d', 69, u_int64_t)
 
 #ifdef KERNEL
+#define DKIOCGETISVIRTUAL                _IOR('d', 72, u_int32_t)
 #define DKIOCGETBLOCKCOUNT32             _IOR('d', 25, u_int32_t)
 #define DKIOCSETBLOCKSIZE                _IOW('d', 24, u_int32_t)
 #define DKIOCGETBSDUNIT                  _IOR('d', 27, u_int32_t)

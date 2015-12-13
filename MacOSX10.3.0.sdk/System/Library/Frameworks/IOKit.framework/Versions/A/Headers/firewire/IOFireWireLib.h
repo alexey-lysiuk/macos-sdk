@@ -59,6 +59,12 @@ IODestroyPlugInInterface(). Do not call Release() on it.
 */
 /*
 	$Log: IOFireWireLib.h,v $
+	Revision 1.31  2003/09/10 23:01:48  collin
+	*** empty log message ***
+	
+	Revision 1.30  2003/09/06 01:37:24  collin
+	*** empty log message ***
+	
 	Revision 1.29  2003/08/25 08:39:17  niels
 	*** empty log message ***
 	
@@ -812,7 +818,7 @@ public:
 		@param numQuads Number of quadlets to write
 		@param failOnReset Pass true if the command should only be executed during the FireWire bus generation
 			specified in 'generation'. Pass false to ignore the generation parameter. The generation can be
-			obtained by calling GetGenerationAndNodeID()
+			obtained by calling GetBusGeneration()
 		@param generation The FireWire bus generation during which the command should be executed. Ignored
 			if failOnReset is false.
 		@result An IOFireWireLibCommandRef interface. See IOFireWireLibCommandRef.
@@ -833,7 +839,7 @@ public:
 		@param callback Command completion callback.
 		@param failOnReset Pass true if the command should only be executed during the FireWire bus generation
 			specified in 'generation'. Pass false to ignore the generation parameter. The generation can be
-			obtained by calling GetGenerationAndNodeID()
+			obtained by calling GetBusGeneration()
 		@param generation The FireWire bus generation during which the command should be executed. Ignored
 			if failOnReset is false.
 		@result An IOFireWireLibCommandRef interface. See IOFireWireLibCommandRef.	*/
@@ -1280,7 +1286,7 @@ public:
 		@param callback Command completion callback.
 		@param failOnReset Pass true if the command should only be executed during the FireWire bus generation
 			specified in 'generation'. Pass false to ignore the generation parameter. The generation can be
-			obtained by calling GetGenerationAndNodeID()
+			obtained by calling GetBusGeneration()
 		@param generation The FireWire bus generation during which the command should be executed. Ignored
 			if failOnReset is false.
 		@result An IOFireWireLibCommandRef interface. See IOFireWireLibCommandRef.	*/
@@ -1306,7 +1312,7 @@ public:
 		@param size Size in bytes of compare swap transaction to perform. Value values are 4 and 8.
 		@param failOnReset Pass true if the command should only be executed during the FireWire bus generation
 			specified in 'generation'. Pass false to ignore the generation parameter. The generation can be
-			obtained by calling GetGenerationAndNodeID()
+			obtained by calling GetBusGeneration()
 		@param generation The FireWire bus generation during which the command should be executed. Ignored
 			if failOnReset is false.
 		@result An IOReturn error code
@@ -1980,7 +1986,7 @@ public:
 		</table>
 		@param self The command object interface of interest
 		@param generation A bus generation. The current bus generation can be obtained
-			from IOFireWireDeviceInterface::GetGenerationAndNodeID().	*/
+			from IOFireWireDeviceInterface::GetBusGeneration().	*/
 		/*
 		void				(*SetGeneration)(IOFireWireLibCommandRef self, UInt32 generation) ;
 		*/

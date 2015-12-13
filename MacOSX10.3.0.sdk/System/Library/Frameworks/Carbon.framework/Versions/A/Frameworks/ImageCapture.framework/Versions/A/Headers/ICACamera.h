@@ -3,7 +3,7 @@
  
      Contains:   Digital still camera-specific selectors and structures
  
-     Version:    ImageCapture-165~16
+     Version:    ImageCapture-181~1
  
      Copyright:  © 2000-2003 by Apple Computer, Inc., all rights reserved.
  

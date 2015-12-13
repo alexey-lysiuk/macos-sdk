@@ -3,7 +3,7 @@
  
      Contains:   Navigation Services Interfaces
  
-     Version:    NavigationServices-97.2~1
+     Version:    NavigationServices-97.5~1
  
      Copyright:  © 1996-2003 by Apple Computer, Inc., all rights reserved
  

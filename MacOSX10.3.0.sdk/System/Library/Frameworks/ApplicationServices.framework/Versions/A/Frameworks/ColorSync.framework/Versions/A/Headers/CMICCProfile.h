@@ -3,7 +3,7 @@
  
      Contains:   ICC Profile Format Definitions
  
-     Version:    ColorSync-116.1~4
+     Version:    ColorSync-118.2~1
  
      Copyright:  © 1994-2003 by Apple Computer, Inc., all rights reserved.
  

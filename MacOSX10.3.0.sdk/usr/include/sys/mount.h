@@ -214,6 +214,7 @@ struct mount {
  * past the mount point.  This keeps the subtree stable during mounts
  * and unmounts.
  */
+#define MNTK_VIRTUALDEV 0x00200000      /* mounted on a virtual device i.e. a disk image */
 #define MNTK_ROOTDEV    0x00400000      /* this filesystem resides on the same device as the root */
 #define MNTK_IO_XINFO   0x00800000      /* mnt_un.mntu_ioptr has a malloc associated with it */
 #define MNTK_UNMOUNT	0x01000000	/* unmount in progress */

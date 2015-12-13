@@ -321,6 +321,10 @@ struct CodecDecompressParams {
   Boolean             onlyUseCodecIfItIsInUserPreferredCodecList; /* set to prevent this codec from being used unless it is in the userPreferredCodec list*/
 
   QTMediaContextID    mediaContextID;
+
+                                              /* The following fields only exist for QuickTime 6.5 and greater */
+  UInt8               deinterlaceRequest;     /* set by the ICM before PreDecompress/Preflight */
+  UInt8               deinterlaceAnswer;      /* codec should set this in PreDecompress/Preflight if it will satisfy the deinterlaceRequest */
 };
 typedef struct CodecDecompressParams    CodecDecompressParams;
 enum {
@@ -349,6 +353,12 @@ enum {
   kICMImageBufferNoPreference   = 0,
   kICMImageBufferPreferMainMemory = 1,
   kICMImageBufferPreferVideoMemory = 2
+};
+
+/* values for deinterlaceRequest and deinterlaceAnswer */
+enum {
+  kICMNoDeinterlacing           = 0,
+  kICMDeinterlaceFields         = 1
 };
 
 typedef CALLBACK_API( void , ImageCodecTimeTriggerProcPtr )(void * refcon);

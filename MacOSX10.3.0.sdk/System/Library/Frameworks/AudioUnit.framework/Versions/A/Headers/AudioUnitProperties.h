@@ -18,11 +18,14 @@
 #ifndef __AudioUnitProperties
 #define __AudioUnitProperties
 
-#include <AudioUnit/AUComponent.h>
-#include <CoreAudio/CoreAudioTypes.h>
-
-#if TARGET_API_MAC_OSX
+#if !defined(__COREAUDIO_USE_FLAT_INCLUDES__)
+	#include <AudioUnit/AUComponent.h>
+	#include <CoreAudio/CoreAudioTypes.h>
 	#include <CoreFoundation/CoreFoundation.h>
+#else
+	#include <AUComponent.h>
+	#include <CoreAudioTypes.h>
+	#include <CoreFoundation.h>
 #endif
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -72,6 +75,11 @@ enum
 	kAudioUnitProperty_ParameterClumpName			= 35,
 	kAudioUnitProperty_PresentPreset				= 36,
 	kAudioUnitProperty_UsesInternalReverb			= 1005,
+	kAudioUnitProperty_OfflineRender				= 37,
+	kAudioUnitProperty_ParameterStringFromValue		= kAudioUnitProperty_ParameterValueName,
+		// this is the new property to retrieve the actual parameter value from a parameter name
+	kAudioUnitProperty_ParameterValueFromString		= 38,
+	kAudioUnitProperty_IconLocation					= 39,
 	
 // Applicable to MusicDevices				(1000 -> 1999)
 	kMusicDeviceProperty_InstrumentCount 			= 1000,
@@ -106,22 +114,26 @@ enum
 	kAudioUnitProperty_MeteringMode					= 3007,
 	kAudioUnitProperty_PannerMode					= 3008,
 	kAudioUnitProperty_MatrixDimensions				= 3009,
+	kAudioUnitProperty_3DMixerDistanceParams		= 3010,
 
 // offline unit properties
 	kAudioOfflineUnitProperty_InputSize				= 3020,
 	kAudioOfflineUnitProperty_OutputSize			= 3021,
 	kAudioUnitOfflineProperty_StartOffset			= 3022,
 	kAudioUnitOfflineProperty_PreflightRequirements	= 3023,
-	kAudioUnitOfflineProperty_PreflightName			= 3024
+	kAudioUnitOfflineProperty_PreflightName			= 3024,
+
+// translation properties when migrating settings from other plugin formats to AU
+	kAudioUnitMigrateProperty_FromPlugin			= 4000,
+	kAudioUnitMigrateProperty_OldAutomation			= 4001
 };
 
 /*
 	New Property Values:
 	kAudioUnitProperty_ElementName
-		Value is a 										CFStringRef (passed of course as CFStringRef*)
-		The Host should do CFRetain upon getting this property if it keeps it around
-		and then CFRelease it when done.
-		When setting, the Host can release this string after it has Set the property
+		Value is a 										CFStringRef
+		The Host owns a reference to this property value (as with all other CF properties), and 
+		should release the string retrieved or used when setting.
 		
 	kAudioUnitProperty_CocoaUI
 		Value is a										struct AudioUnitCocoaViewInfo
@@ -417,13 +429,22 @@ typedef struct AUPreset {
 #define kAUPresetNameKey			"name"
 #define kAUPresetRenderQualityKey	"render-quality"
 #define kAUPresetCPULoadKey			"cpu-load"
-#define kAUPresetVSTDataKey			"vstdata"
 #define kAUPresetElementNameKey		"element-name"
+#define kAUPresetExternalFileRefs	"file-references"
+
+// these are keys to use when a preset contains data from other plugin formats
+#define kAUPresetVSTDataKey			"vstdata"
+#define kAUPresetMASDataKey			"masdata"
+
 
 // this key if present, distinguishes a global preset that is set on the global scope
 // with a part-based preset that is set on the part scope. The value of this key is
 // audio unit defined
 #define kAUPresetPartKey			"part"
+
+
+
+// Host Call Backs
 
 // If the host is unable to provide the requested information
 // then it can return the kAudioUnitErr_CannotDoInCurrentContext error code
@@ -442,10 +463,19 @@ typedef OSStatus (*HostCallback_GetMusicalTimeLocation) (void     *inHostUserDat
 												UInt32            *outTimeSig_Denominator,
 												Float64           *outCurrentMeasureDownBeat);
 
+typedef OSStatus (*HostCallback_GetTransportState) (void 	*inHostUserData,
+										Boolean 			*outIsPlaying,
+										Boolean 			*outTransportStateChanged,
+										Float64 			*outCurrentSampleInTimeLine,
+										Boolean 			*outIsCycling,
+										Float64 			*outCycleStartBeat,
+										Float64 			*outCycleEndBeat);
+
 typedef struct HostCallbackInfo {
-	void *		hostUserData;
-	HostCallback_GetBeatAndTempo beatAndTempoProc;
+	void *									hostUserData;
+	HostCallback_GetBeatAndTempo			beatAndTempoProc;
     HostCallback_GetMusicalTimeLocation     musicalTimeLocationProc;
+	HostCallback_GetTransportState			transportStateProc;	
 } HostCallbackInfo;
 
 // mCocoaAUViewBundleLocation - contains the location of the bundle which the host app can then use to locate the bundle
@@ -456,11 +486,27 @@ typedef struct AudioUnitCocoaViewInfo {
 	CFStringRef	mCocoaAUViewClass[1];
 } AudioUnitCocoaViewInfo;
 
+// this is deprecated see AudioUnitParameterStringFromValue for equivalent struct, but with clearer field names
 typedef struct AudioUnitParameterValueName {
 	AudioUnitParameterID	inParamID;
-	Float32					*inValue;	//maybe NULL if should translate current parameter value
+	const Float32			*inValue;	// may be NULL if should translate current parameter value
 	CFStringRef				outName;  	// see comments for kAudioUnitProperty_ParameterValueName
 } AudioUnitParameterValueName;
+
+
+		// used with kAudioUnitProperty_ParameterStringFromValue property
+typedef struct AudioUnitParameterStringFromValue {
+	AudioUnitParameterID	inParamID;
+	const Float32			*inValue;	
+	CFStringRef				outString;  	
+} AudioUnitParameterStringFromValue;
+
+		// used with kAudioUnitProperty_ParameterValueFromString property
+typedef struct AudioUnitParameterValueFromString {
+	AudioUnitParameterID	inParamID;
+	CFStringRef				inString;
+	Float32					outValue;
+} AudioUnitParameterValueFromString;
 
 // AU Developers should *not* use a clumpID of zero - this is a reerved value for system usage
 enum {
@@ -511,7 +557,9 @@ enum
 	kAudioUnitParameterUnit_BPM					= 22,	/* beats per minute, ie tempo */
     kAudioUnitParameterUnit_Beats               = 23,	/* time relative to tempo, ie. 1.0 at 120 BPM would equal 1/2 a second */
 	kAudioUnitParameterUnit_Milliseconds		= 24,	/* parameter is expressed in milliseconds */
-	kAudioUnitParameterUnit_Ratio				= 25	/* for compression, expansion ratio, etc. */
+	kAudioUnitParameterUnit_Ratio				= 25,	/* for compression, expansion ratio, etc. */
+	
+	kAudioUnitParameterUnit_CustomUnit			= 26	/* this is the parameter unit type for parameters that present a custom unit name */
 };
 
 typedef UInt32		AudioUnitParameterUnit;
@@ -519,14 +567,12 @@ typedef UInt32		AudioUnitParameterUnit;
 // if the "unit" field contains a value not in the enum above, then assume kAudioUnitParameterUnit_Generic
 typedef struct AudioUnitParameterInfo
 {
-#if TARGET_API_MAC_OSX
-	char 					name[56];			// UTF8 encoded C string, may be treated as 56 characters
+	char 					name[52];			// UTF8 encoded C string, may be treated as 56 characters
 												// if kAudioUnitParameterFlag_HasCFNameString not set
+	CFStringRef				unitName;			// only valid if kAudioUnitParameterFlag_HasUnitName
 	UInt32					clumpID;			// only valid if kAudioUnitParameterFlag_HasClump
 	CFStringRef				cfNameString;		// only valid if kAudioUnitParameterFlag_HasCFNameString
-#else
-	char 					name[64];			// UTF8 encoded C string
-#endif
+
 	AudioUnitParameterUnit	unit;						
 	Float32					minValue;			
 	Float32					maxValue;			
@@ -548,20 +594,32 @@ typedef struct AudioUnitParameterInfo
 enum
 {
 // -------------------------------
-// THESE ARE DEPRECATED AS OF 10.2 - these will eventually be reused
+// THESE ARE DEPRECATED AS OF 10.2 - these will eventually be reused, so don't use them!
 	kAudioUnitParameterFlag_Global		= (1L << 0),	//	parameter scope is global
 	kAudioUnitParameterFlag_Input		= (1L << 1),	//	parameter scope is input
 	kAudioUnitParameterFlag_Output		= (1L << 2),	//	parameter scope is output
 	kAudioUnitParameterFlag_Group		= (1L << 3),	//	parameter scope is group
-// -------------------------------
-	kAudioUnitParameterFlag_CFNameRelease		= (1L << 4),
 
 // THESE ARE THE VALID RANGES OF PARAMETER FLAGS
 // -------------------------------
+	kAudioUnitParameterFlag_CFNameRelease		= (1L << 4),
+
+	// bit positions 18,17,16 are set aside for display scales. bit 19 is reserved.
+	kAudioUnitParameterFlag_DisplayMask			= (7L << 16) | (1L << 22),
+	kAudioUnitParameterFlag_DisplaySquareRoot	= (1L << 16),
+	kAudioUnitParameterFlag_DisplaySquared		= (2L << 16),
+	kAudioUnitParameterFlag_DisplayCubed		= (3L << 16),
+	kAudioUnitParameterFlag_DisplayCubeRoot		= (4L << 16),
+	kAudioUnitParameterFlag_DisplayExponential	= (5L << 16),
+
+
 	kAudioUnitParameterFlag_HasClump	 		= (1L << 20),
 	kAudioUnitParameterFlag_HasName		 		= (1L << 21),
-	kAudioUnitParameterFlag_DisplayLogarithmic 	= (1L << 22),		
+	// this renames the existing parameter flag _HasName, to _ValuesHaveStrings to be clearer on its intended usage.
+	kAudioUnitParameterFlag_ValuesHaveStrings	= kAudioUnitParameterFlag_HasName,
+	
 	// indicates that a graphical representation should use a  logarithmic scale
+	kAudioUnitParameterFlag_DisplayLogarithmic 	= (1L << 22),		
 	
 	kAudioUnitParameterFlag_IsHighResolution 	= (1L << 23),
 	kAudioUnitParameterFlag_NonRealTime 		= (1L << 24),
@@ -573,6 +631,86 @@ enum
 	kAudioUnitParameterFlag_IsReadable			= (1L << 30),
 	kAudioUnitParameterFlag_IsWritable			= (1L << 31)
 };
+
+#define GetAudioUnitParameterDisplayType(flags) \
+	((flags) & kAudioUnitParameterFlag_DisplayMask)
+
+#define AudioUnitDisplayTypeIsLogarithmic(flags) \
+	(GetAudioUnitParameterDisplayType(flags) == kAudioUnitParameterFlag_DisplayLogarithmic)
+	
+#define AudioUnitDisplayTypeIsSquareRoot(flags) \
+	(GetAudioUnitParameterDisplayType(flags) == kAudioUnitParameterFlag_DisplaySquareRoot)
+	
+#define AudioUnitDisplayTypeIsSquared(flags) \
+	(GetAudioUnitParameterDisplayType(flags) == kAudioUnitParameterFlag_DisplaySquared)
+	
+#define AudioUnitDisplayTypeIsCubed(flags) \
+	(GetAudioUnitParameterDisplayType(flags) == kAudioUnitParameterFlag_DisplayCubed)
+
+#define AudioUnitDisplayTypeIsCubeRoot(flags) \
+	(GetAudioUnitParameterDisplayType(flags) == kAudioUnitParameterFlag_DisplayCubeRoot)
+
+#define AudioUnitDisplayTypeIsExponential(flags) \
+	(GetAudioUnitParameterDisplayType(flags) == kAudioUnitParameterFlag_DisplayExponential)
+
+#define SetAudioUnitParameterDisplayType(flags, displayType) \
+	(((flags) & ~kAudioUnitParameterFlag_DisplayMask) | (displayType))
+
+
+enum {
+	kOtherPluginFormat_Undefined	= 0, //reserving this value for future use
+	kOtherPluginFormat_kMAS			= 1,
+	kOtherPluginFormat_kVST			= 2
+};
+/*
+struct AudioClassDescription {
+    OSType mType;
+    OSType mSubType;
+    OSType mManufacturer;
+};
+is defined in <CoreAudio/CoreAudioTypes.h>
+
+How these fields are used varies for each format.
+In general, 
+	mType specifies a generic, plugin format defined descriptor, 
+	mSubType is usually left to the manufacturer to use at their discretion
+	mManufacturer is a registered code to identify all plugins from the same manufacturer
+*/
+typedef struct  AudioUnitOtherPluginDesc
+{
+	UInt32 						format; //kOtherPluginFormat_kMAS, etc
+	AudioClassDescription		plugin;
+} AudioUnitOtherPluginDesc;
+
+typedef struct AudioUnitParameterValueTranslation 
+{
+	AudioUnitOtherPluginDesc	otherDesc;
+	UInt32						otherParamID;
+	Float32						otherValue;
+	AudioUnitParameterID		auParamID;
+	Float32						auValue;
+} AudioUnitParameterValueTranslation;
+
+// AU-MAS Specific Structs for the data contained in the "masdata" key of an AU Preset dictionary
+typedef struct AudioUnitPresetMAS_SettingData
+{
+	UInt32 				isStockSetting; // zero or 1  i.e. "long bool"
+	UInt32 				settingID;
+	UInt32 				dataLen; //length of following data
+	UInt8 				data[1];
+} AudioUnitPresetMAS_SettingData;
+
+typedef struct AudioUnitPresetMAS_Settings
+{
+	UInt32 							manufacturerID;
+	UInt32 							effectID;
+	UInt32 							variantID;
+	UInt32 							settingsVersion;
+	UInt32 							numberOfSettings;
+	AudioUnitPresetMAS_SettingData 	settings[1];
+} AudioUnitPresetMAS_Settings;
+
+// AU-VST - the CFDataRef data contains VST chunk data with no additional information. 
 
 // new for 10.2
 typedef struct AudioUnitMIDIControlMapping
@@ -590,5 +728,12 @@ typedef struct AudioOutputUnitStartAtTimeParams {
 	AudioTimeStamp			mTimestamp;
 	UInt32					mFlags;
 } AudioOutputUnitStartAtTimeParams;
+
+typedef struct MixerDistanceParams {
+	Float32					mReferenceDistance;
+	Float32					mMaxDistance;
+	Float32					mMaxAttenuation;	// in decibels
+} MixerDistanceParams;
+
 
 #endif // __AudioUnitProperties

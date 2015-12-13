@@ -3,7 +3,7 @@
  
      Contains:   Resource Manager Interfaces.
  
-     Version:    CarbonCore-536.1~1
+     Version:    CarbonCore-545~1
  
      Copyright:  © 1985-2003 by Apple Computer, Inc., all rights reserved
  

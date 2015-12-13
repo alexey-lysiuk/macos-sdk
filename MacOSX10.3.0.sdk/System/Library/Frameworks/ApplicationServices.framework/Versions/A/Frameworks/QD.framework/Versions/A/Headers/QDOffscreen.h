@@ -3,7 +3,7 @@
  
      Contains:   Quickdraw Offscreen GWorld Interfaces.
  
-     Version:    Quickdraw-139~2
+     Version:    Quickdraw-150~1
  
      Copyright:  © 1985-2003 by Apple Computer, Inc., all rights reserved
  

@@ -139,6 +139,8 @@
  */
 #define	kIOAudioEngineFullChannelNumberNamesKey		"IOAudioEngineChannelNumberNames"
 
+#define kIOAudioEngineFlavorKey						"IOAudioEngineFlavor"
+
 /*****
  *
  * IOAudioStream defines
@@ -250,12 +252,7 @@
  */
 #define kIOAudioControlChannelIDKey		"IOAudioControlChannelID"
 
-#define kIOAudioPanControlLeftChannelIDKey		"IOAudioPanControlLeftChannelID"
-#define kIOAudioPanControlRightChannelIDKey		"IOAudioPanControlRightChannelID"
-
 #define kIOAudioControlChannelNumberKey			"IOAudioControlChannelNumber"
-#define kIOAudioControlPanLeftChannelNumberKey	"IOAudioControlPanLeftChannelNumber"
-#define kIOAudioControlPanRightChannelNumberKey	"IOAudioControlPanRightChannelNumber"
 
 #define kIOAudioControlCoreAudioPropertyIDKey	"IOAudioControlCoreAudioPropertyID"
 /*!
@@ -372,17 +369,8 @@
 
 #define kIOAudioLevelControlRangesKey		"IOAudioLevelControlRanges"
 
-#define kIOAudioPanControlMaxRightValueKey		"IOAudioLevelControlMaxRightValue"
-#define kIOAudioPanControlMaxLeftValueKey		"IOAudioLevelControlMaxLeftValue"
-
 #define kIOAudioSelectorControlAvailableSelectionsKey	"IOAudioSelectorControlAvailableSelections"
 #define kIOAudioSelectorControlSelectionValueKey		"IOAudioSelectorControlSelectionValue"
 #define kIOAudioSelectorControlSelectionDescriptionKey	"IOAudioSelectorControlSelectionDescriptionKey"
-
-#define	kIOAudioStereoPanControlFullLeftValueKey	"IOAudioStereoPanControlFullLeftValue"
-#define	kIOAudioStereoPanControlCenterValueKey		"IOAudioStereoPanControlCenterValue"
-#define	kIOAudioStereoPanControlFullRightValueKey	"IOAudioStereoPanControlFullRightValue"
-#define	kIOAudioStereoPanControlLeftChannelKey		"IOAudioStereoPanControlLeftChannel"
-#define	kIOAudioStereoPanControlRightChannelKey		"IOAudioStereoPanControlRightChannel"
 
 #endif /* _IOAUDIODEFINES_H */

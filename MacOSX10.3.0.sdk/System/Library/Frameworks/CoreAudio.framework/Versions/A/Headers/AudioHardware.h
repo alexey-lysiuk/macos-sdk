@@ -21,6 +21,7 @@
 //	Includes
 //=============================================================================
 
+#include <AvailabilityMacros.h>
 #include <CoreAudio/CoreAudioTypes.h>
 
 #if PRAGMA_ENUM_ALWAYSINT
@@ -331,7 +332,11 @@ enum
 	
 	kAudioDevicePropertyLatency							= 'ltnc',
 		//	a UInt32 containing the number of frames of latency in the device
-		//	Note that input and output latency may differ.
+		//	Note that input and output latency may differ. Further, streams
+		//	may have additional latency so they should be queried as well.
+		//	If both the device and the stream say they have latency, then
+		//	the total latency for the stream is the device latency summed with
+		//	the stream latency.
 	
 	kAudioDevicePropertyBufferSize						= 'bsiz',
 		//	a UInt32 containing the size of the IO buffers in bytes
@@ -734,6 +739,22 @@ enum
 
 //=============================================================================
 //	Errors
+//
+//  Note that the errors listed below are only a partial listing of the error
+//  codes that the HAL API might return. The API can and will return other
+//  codes that are not listed here from any API call.
+//
+//  Further, the HAL does not attach any specific meaning to any of the error
+//  codes listed below unless specifically mentioned in the documentation for
+//  a specific API call. Consequently, it is an application programming
+//  mistake to write code that checks for a specific error code and to attach
+//  any meaning to it other than the call that was made has failed unless the
+//  documentation for that call says otherwise.
+//
+//  There are two exceptions to this: kAudioHardwareBadDeviceError and
+//  kAudioHardwareBadStreamError. These two codes will be returned from a
+//  call if and only if the AudioDeviceID or AudioStreamID passed to an API
+//  call was invalid. 
 //=============================================================================
 
 enum
@@ -764,7 +785,7 @@ enum
 //-----------------------------------------------------------------------------
 
 extern OSStatus
-AudioHardwareUnload();
+AudioHardwareUnload()																			AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER;
 
 //=============================================================================
 //	Global Property Management
@@ -782,7 +803,7 @@ AudioHardwareUnload();
 extern OSStatus
 AudioHardwareGetPropertyInfo(	AudioHardwarePropertyID inPropertyID,
 								UInt32*					outSize,
-								Boolean*				outWritable);
+								Boolean*				outWritable)							AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 //-----------------------------------------------------------------------------
 //	AudioHardwareGetProperty
@@ -796,7 +817,7 @@ AudioHardwareGetPropertyInfo(	AudioHardwarePropertyID inPropertyID,
 extern OSStatus
 AudioHardwareGetProperty(	AudioHardwarePropertyID	inPropertyID,
 							UInt32*					ioPropertyDataSize,
-							void*					outPropertyData);
+							void*					outPropertyData)							AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 //-----------------------------------------------------------------------------
 //	AudioHardwareSetProperty
@@ -808,7 +829,7 @@ AudioHardwareGetProperty(	AudioHardwarePropertyID	inPropertyID,
 extern OSStatus
 AudioHardwareSetProperty(	AudioHardwarePropertyID	inPropertyID,
 							UInt32					inPropertyDataSize,
-							void*					inPropertyData);
+							void*					inPropertyData)								AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 //-----------------------------------------------------------------------------
 //	AudioHardwarePropertyListenerProc
@@ -829,7 +850,7 @@ typedef OSStatus
 extern OSStatus
 AudioHardwareAddPropertyListener(	AudioHardwarePropertyID				inPropertyID,
 									AudioHardwarePropertyListenerProc	inProc,
-									void*								inClientData);
+									void*								inClientData)			AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 //-----------------------------------------------------------------------------
 //	AudioHardwareRemovePropertyListener
@@ -839,7 +860,7 @@ AudioHardwareAddPropertyListener(	AudioHardwarePropertyID				inPropertyID,
 
 extern OSStatus
 AudioHardwareRemovePropertyListener(	AudioHardwarePropertyID				inPropertyID,
-										AudioHardwarePropertyListenerProc	inProc);
+										AudioHardwarePropertyListenerProc	inProc)				AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
 //=============================================================================
@@ -901,7 +922,7 @@ typedef OSStatus
 extern OSStatus
 AudioDeviceAddIOProc(	AudioDeviceID		inDevice,
 						AudioDeviceIOProc	inProc,
-						void*				inClientData);
+						void*				inClientData)										AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 //-----------------------------------------------------------------------------
 //	AudioDeviceRemoveIOProc
@@ -910,7 +931,7 @@ AudioDeviceAddIOProc(	AudioDeviceID		inDevice,
 //-----------------------------------------------------------------------------
 
 extern OSStatus
-AudioDeviceRemoveIOProc(AudioDeviceID inDevice, AudioDeviceIOProc inProc);
+AudioDeviceRemoveIOProc(AudioDeviceID inDevice, AudioDeviceIOProc inProc)						AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 //-----------------------------------------------------------------------------
 //	AudioDeviceStart
@@ -926,7 +947,7 @@ AudioDeviceRemoveIOProc(AudioDeviceID inDevice, AudioDeviceIOProc inProc);
 //-----------------------------------------------------------------------------
 
 extern OSStatus
-AudioDeviceStart(AudioDeviceID inDevice, AudioDeviceIOProc inProc);
+AudioDeviceStart(AudioDeviceID inDevice, AudioDeviceIOProc inProc)								AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 //-----------------------------------------------------------------------------
 //	AudioDeviceStartAtTime
@@ -972,7 +993,7 @@ extern OSStatus
 AudioDeviceStartAtTime(	AudioDeviceID		inDevice,
 						AudioDeviceIOProc	inProc,
 						AudioTimeStamp*		ioRequestedStartTime,
-						UInt32				inFlags);
+						UInt32				inFlags)											AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
 
 //-----------------------------------------------------------------------------
 //	AudioDeviceStop
@@ -981,7 +1002,7 @@ AudioDeviceStartAtTime(	AudioDeviceID		inDevice,
 //-----------------------------------------------------------------------------
 
 extern OSStatus
-AudioDeviceStop(AudioDeviceID inDevice, AudioDeviceIOProc inProc);
+AudioDeviceStop(AudioDeviceID inDevice, AudioDeviceIOProc inProc)								AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 //-----------------------------------------------------------------------------
 //	AudioDeviceRead
@@ -1002,7 +1023,9 @@ AudioDeviceStop(AudioDeviceID inDevice, AudioDeviceIOProc inProc);
 //-----------------------------------------------------------------------------
 
 extern OSStatus
-AudioDeviceRead(AudioDeviceID inDevice, const AudioTimeStamp* inStartTime, AudioBufferList* outData);
+AudioDeviceRead(	AudioDeviceID			inDevice,
+					const AudioTimeStamp*   inStartTime,
+					AudioBufferList*		outData)											AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER;
 
 //=============================================================================
 //	Time Management
@@ -1018,7 +1041,7 @@ AudioDeviceRead(AudioDeviceID inDevice, const AudioTimeStamp* inStartTime, Audio
 //-----------------------------------------------------------------------------
 
 extern OSStatus
-AudioDeviceGetCurrentTime(AudioDeviceID inDevice, AudioTimeStamp* outTime);
+AudioDeviceGetCurrentTime(AudioDeviceID inDevice, AudioTimeStamp* outTime)						AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 //-----------------------------------------------------------------------------
 //	AudioDeviceTranslateTime
@@ -1031,7 +1054,7 @@ AudioDeviceGetCurrentTime(AudioDeviceID inDevice, AudioTimeStamp* outTime);
 extern OSStatus
 AudioDeviceTranslateTime(	AudioDeviceID			inDevice,
 							const AudioTimeStamp*	inTime,
-							AudioTimeStamp*			outTime);
+							AudioTimeStamp*			outTime)									AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 //-----------------------------------------------------------------------------
 //	AudioDeviceGetNearestStartTime
@@ -1067,7 +1090,7 @@ AudioDeviceTranslateTime(	AudioDeviceID			inDevice,
 extern OSStatus
 AudioDeviceGetNearestStartTime(	AudioDeviceID	inDevice,
 								AudioTimeStamp*	ioRequestedStartTime,
-								UInt32			inFlags);
+								UInt32			inFlags)										AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
 
 //=============================================================================
 //	Device Property Management
@@ -1096,7 +1119,7 @@ AudioDeviceGetPropertyInfo(	AudioDeviceID			inDevice,
 							Boolean					isInput,
 							AudioDevicePropertyID	inPropertyID,
 							UInt32*					outSize,
-							Boolean*				outWritable);
+							Boolean*				outWritable)								AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 //-----------------------------------------------------------------------------
 //	AudioDeviceGetProperty
@@ -1115,7 +1138,7 @@ AudioDeviceGetProperty(	AudioDeviceID			inDevice,
 						Boolean					isInput,
 						AudioDevicePropertyID	inPropertyID,
 						UInt32*					ioPropertyDataSize,
-						void*					outPropertyData);
+						void*					outPropertyData)								AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 //-----------------------------------------------------------------------------
 //	AudioDeviceSetProperty
@@ -1130,7 +1153,7 @@ AudioDeviceSetProperty(	AudioDeviceID			inDevice,
 						Boolean					isInput,
 						AudioDevicePropertyID	inPropertyID,
 						UInt32					inPropertyDataSize,
-						const void*				inPropertyData);
+						const void*				inPropertyData)									AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 //-----------------------------------------------------------------------------
 //	AudioDevicePropertyListenerProc
@@ -1157,7 +1180,7 @@ AudioDeviceAddPropertyListener(	AudioDeviceID					inDevice,
 								Boolean							isInput,
 								AudioDevicePropertyID			inPropertyID,
 								AudioDevicePropertyListenerProc	inProc,
-								void*							inClientData);
+								void*							inClientData)					AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 //-----------------------------------------------------------------------------
 //	AudioDeviceRemovePropertyListener
@@ -1170,7 +1193,7 @@ AudioDeviceRemovePropertyListener(	AudioDeviceID					inDevice,
 									UInt32							inChannel,
 									Boolean							isInput,
 									AudioDevicePropertyID			inPropertyID,
-									AudioDevicePropertyListenerProc	inProc);
+									AudioDevicePropertyListenerProc	inProc)						AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 //=============================================================================
 //	Stream Property Management
@@ -1196,7 +1219,7 @@ AudioStreamGetPropertyInfo(	AudioStreamID			inStream,
 							UInt32					inChannel,
 							AudioDevicePropertyID	inPropertyID,
 							UInt32*					outSize,
-							Boolean*				outWritable);
+							Boolean*				outWritable)								AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER;
 
 //-----------------------------------------------------------------------------
 //	AudioStreamGetProperty
@@ -1214,7 +1237,7 @@ AudioStreamGetProperty(	AudioStreamID			inStream,
 						UInt32					inChannel,
 						AudioDevicePropertyID	inPropertyID,
 						UInt32*					ioPropertyDataSize,
-						void*					outPropertyData);
+						void*					outPropertyData)								AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER;
 
 //-----------------------------------------------------------------------------
 //	AudioStreamSetProperty
@@ -1228,7 +1251,7 @@ AudioStreamSetProperty(	AudioStreamID			inStream,
 						UInt32					inChannel,
 						AudioDevicePropertyID	inPropertyID,
 						UInt32					inPropertyDataSize,
-						const void*				inPropertyData);
+						const void*				inPropertyData)									AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER;
 
 //-----------------------------------------------------------------------------
 //	AudioStreamPropertyListenerProc
@@ -1253,7 +1276,7 @@ AudioStreamAddPropertyListener(	AudioStreamID					inStream,
 								UInt32							inChannel,
 								AudioDevicePropertyID			inPropertyID,
 								AudioStreamPropertyListenerProc	inProc,
-								void*							inClientData);
+								void*							inClientData)					AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER;
 
 //-----------------------------------------------------------------------------
 //	AudioStreamRemovePropertyListener
@@ -1265,7 +1288,7 @@ extern OSStatus
 AudioStreamRemovePropertyListener(	AudioStreamID					inStream,
 									UInt32							inChannel,
 									AudioDevicePropertyID			inPropertyID,
-									AudioStreamPropertyListenerProc	inProc);
+									AudioStreamPropertyListenerProc	inProc)						AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER;
 
 #if defined(__cplusplus)
 }

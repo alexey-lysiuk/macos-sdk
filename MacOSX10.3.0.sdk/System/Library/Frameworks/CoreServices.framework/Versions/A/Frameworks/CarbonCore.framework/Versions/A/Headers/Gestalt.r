@@ -3,7 +3,7 @@
  
      Contains:   Gestalt Interfaces.
  
-     Version:    CarbonCore-536.1~1
+     Version:    CarbonCore-545~1
  
      Copyright:  © 1988-2003 by Apple Computer, Inc.  All rights reserved
  
@@ -821,7 +821,7 @@
 #define gestaltQTVRCubicPanosPresent 	3					/*  QTVR runtime knows about cubic panoramic movies        */
 
 #define gestaltQTVRMgrVers 				'qtvv'				/*  QuickTime VR version                                   */
-#define gestaltPhysicalRAMSize 			'ram '				/*  physical RAM size  */
+#define gestaltPhysicalRAMSize 			'ram '				/*  physical RAM size, in bytes  */
 #define gestaltPhysicalRAMSizeInMegabytes  'ramm'			/*  physical RAM size, scaled in megabytes  */
 #define gestaltRBVAddr 					'rbv '				/*  RBV base address   */
 #define gestaltROMSize 					'rom '				/*  rom size  */

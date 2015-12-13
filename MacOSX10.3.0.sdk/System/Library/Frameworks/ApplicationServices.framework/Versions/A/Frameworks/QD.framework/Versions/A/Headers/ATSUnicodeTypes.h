@@ -3,7 +3,7 @@
  
      Contains:   ATSUI types and constants.
  
-     Version:    Quickdraw-139~2
+     Version:    Quickdraw-150~1
  
      Copyright:  © 2003 by Apple Computer, Inc., all rights reserved.
  
@@ -610,20 +610,23 @@ enum {
   kATSUStyleDropShadowOffsetOptionTag = 297L,
 
   /*
+   * (Type: CGColorRef) (Default value: NULL) Used to specify the color
+   * of the dropshadow. May be set as a style attribute.
+   */
+  kATSUStyleDropShadowColorOptionTag = 298L,
+
+  /*
    * This is just for convenience. It is the upper limit of the style
    * tags.
    */
-  kATSUMaxStyleTag              = 298L,
+  kATSUMaxStyleTag              = 299L,
 
   /*
-   * This tag is obsolete. Please use kATSULangRegionTag instead.
+   * This tag is obsolete. Please use kATSULangRegionTag instead. This
+   * is the maximum Apple ATSUI reserved tag value.  Client defined
+   * tags must be larger.
    */
   kATSULanguageTag              = 264L,
-
-  /*
-   * This is the maximum Apple ATSUI reserved tag value.  Client
-   * defined tags must be larger.
-   */
   kATSUMaxATSUITagValue         = 65535L
 };
 

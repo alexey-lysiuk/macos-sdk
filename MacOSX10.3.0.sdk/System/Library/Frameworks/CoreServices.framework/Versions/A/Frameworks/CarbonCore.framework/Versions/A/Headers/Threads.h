@@ -3,7 +3,7 @@
  
      Contains:   Thread Manager Interfaces.
  
-     Version:    CarbonCore-536.1~1
+     Version:    CarbonCore-545~1
  
      Copyright:  © 1991-2003 by Apple Computer, Inc., all rights reserved.
  
