@@ -1,0 +1,10 @@
+{
+    DefaultProperties =  {
+        "MACOSX_DEPLOYMENT_TARGET" = "10.3";
+    };
+    CustomProperties = {
+	"KERNEL_EXTENSION_HEADER_SEARCH_PATHS" = "$(KERNEL_FRAMEWORK_HEADERS) $(KERNEL_FRAMEWORK_HEADERS)/bsd $(KERNEL_FRAMEWORK)/PrivateHeaders";
+    }; 
+    name = "Mac OS X 10.3.9"; 
+    supportsZeroLink = YES;
+}

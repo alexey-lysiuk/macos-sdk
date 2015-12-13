@@ -1,1 +1,0 @@
-gcc/darwin/default/va-ppc.h
