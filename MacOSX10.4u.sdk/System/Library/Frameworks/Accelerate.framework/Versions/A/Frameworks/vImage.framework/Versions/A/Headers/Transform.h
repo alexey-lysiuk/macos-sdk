@@ -112,8 +112,8 @@ vImage_Error vImageMatrixMultiply_PlanarF(          const vImage_Buffer *srcs[],
                                                     uint32_t    	src_planes,
                                                     uint32_t    	dest_planes,
                                                     const float		matrix[],		
-                                                    const float 	*pre_bias,	//A packed array of src_plane int16_t values. NULL is okay
-                                                    const float 	*post_bias,	//A packed array of dest_plane int16_t values. NULL is okay
+                                                    const float 	*pre_bias,	//A packed array of float values. NULL is okay
+                                                    const float 	*post_bias,	//A packed array of float values. NULL is okay
                                                     vImage_Flags flags )		AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
                 
@@ -144,25 +144,25 @@ vImage_Error vImageMatrixMultiply_ARGBFFFF(         const vImage_Buffer *src,
  *
  *  i.e. negative values are treated as if they are positive, and the sign restored at the end.
  *
- * This provides for symmetric gamma curves about 0, and also solves the problem of undefined
- * behavior for pow() of a negative value by a non-integer exponent. 
+ * This provides for symmetric gamma curves about 0, and also solves the problem of NaN results from
+ * pow( negative number, non-integer). 
  *
  * The results are available in two varieties, full and half precision. The full precision version covers
  * all pixel values and all exponents and delivers a result within a few ULPs of the IEEE-754 correct powf().
  *       
  * The half precision variant provides a precision of ±1/4096: 
  *
- *          abs((correct result - result provided)) < 1/4096
+ *          fabs((correct result - result provided)) < 1/4096
  *
  * Half-precision is intended to be used with data that will ultimately be converted to 8-bit integer data. 
  * As such, the faster half precision variants only work for floating point pixel values in the range 0.0 ... 1.0.
  * Out of range pixel values will clamp appropriately to 0.0 or 1.0 before the calculation is performed. 
  *
- * In addition, there are restrictions on range on the exponent. It must be positive, in the range 0.4...2.5. 
- * If the exponent is outside the prescribed range the code will return a full precision gamma instead. (The 
- * range is estimated. In early versions of MacOS X.4, all exponents fall back on the full precision version.)  
+ * In addition, there are restrictions on range on the exponent. In general, for best performance, it should be near 1.0,
+ * though a faster path exists out to +-12. If the exponent is outside the prescribed range the code will return a full 
+ * precision gamma instead. (In MacOS X.4.3 and earlier, all exponents fall back on the full precision version. )  
  *
- * Half precision calculations that conform to these restrictions are likely to be orders of magnitude faster 
+ * Half precision calculations that conform to these restrictions are likely to be much faster 
  * than the full precision gamma. Use kvImageGamma_UseGammaValue and kvImageGamma_UseGammaValue_half_precision 
  * to control whether you get a full or half precision result. kvImageGamma_UseGammaValue will never use a 
  * half-precision calculation.

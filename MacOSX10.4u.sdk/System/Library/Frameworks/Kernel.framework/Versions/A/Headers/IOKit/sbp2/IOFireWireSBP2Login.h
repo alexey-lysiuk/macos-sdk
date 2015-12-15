@@ -642,6 +642,9 @@ protected:
 	virtual void removeLogin( void );
 	virtual IOFireWireSBP2Target * getTarget( void );
 	
+	UInt32		fARDMAMax;
+	bool		fPhysicalAccessEnabled;
+
 private:
 
     OSMetaClassDeclareReservedUnused(IOFireWireSBP2Login, 1);
@@ -1048,6 +1051,11 @@ protected:
 	void fetchAgentRetryTimer( IOReturn status, IOFireWireBus *bus, IOFWBusCommand *fwCmd );
 	
 	void terminateNotify( void );
+
+public:
+	
+	bool	isPhysicalAccessEnabled( void );
+	UInt32	getARDMMax( void );
 	
 private:
     

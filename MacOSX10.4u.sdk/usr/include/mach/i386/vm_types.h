@@ -74,9 +74,9 @@
  *
  * They also had an implicit "same size as pointer" characteristic
  * to them (i.e. Mach's traditional types are very ILP32 or ILP64
- * centric).  We will likely support x86 ABIs that do not follow
- * either ofthese models (specifically LP64).  Therefore, we had to
- * make a choice between making these types scale with pointers or stay
+ * centric).  We support x86 ABIs that do not follow either of
+ * these models (specifically LP64).  Therefore, we had to make a
+ * choice between making these types scale with pointers or stay
  * tied to integers.  Because their use is predominantly tied to
  * to the size of an integer, we are keeping that association and
  * breaking free from pointer size guarantees.

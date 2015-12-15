@@ -3,9 +3,9 @@
  
      Contains:   QuickTime Interfaces.
  
-     Version:    QuickTime 7.0.4
+     Version:    QuickTime 7.1.2
  
-     Copyright:  © 1990-2005 by Apple Computer, Inc., all rights reserved
+     Copyright:  © 1990-2006 by Apple Computer, Inc., all rights reserved
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -67,7 +67,10 @@
 extern "C" {
 #endif
 
-#pragma options align=mac68k
+#pragma pack(push, 2)
+
+/* This sets the user defined exportset name i.e. fw_QuickTime_XManchego, available on 10.5 or later, and comment [4486184] */
+/* NOTE:  Requires Interfacer-35 or later */
 
 /*  "kFix1" is defined in FixMath as "fixed1"  */
 /* error codes are in Errors.[haa] */
@@ -10262,33 +10265,34 @@ enum {
 enum {
 
   /*
-   * kQTAudioPropertyID_Gain: Value is Float32. The audio gain of a
-   * movie or track.  The gain level is multiplicative; eg. 0.0 is
-   * silent, 0.5 is -6dB, 1.0 is 0dB (ie. the audio from the movie is
-   * not modified), 2.0 is +6dB, etc.  The gain level can be set higher
-   * than 1.0 in order to allow quiet movies/tracks to be boosted in
-   * volume. Settings higher than 1.0 may result in audio clipping, of
-   * course. The setting is not stored in the movie/track.  It is only
-   * used until the movie/track is disposed.
+   * kQTAudioPropertyID_Gain:  Value is Float32.  Get/Set/Listenable
+   * The audio gain of a movie or track.  The gain level is
+   * multiplicative; eg. 0.0 is silent, 0.5 is -6dB, 1.0 is 0dB (ie.
+   * the audio from the movie is not modified), 2.0 is +6dB, etc.  The
+   * gain level can be set higher than 1.0 in order to allow quiet
+   * movies/tracks to be boosted in volume. Settings higher than 1.0
+   * may result in audio clipping, of course. The setting is not stored
+   * in the movie/track.  It is only used until the movie/track is
+   * disposed.
    */
-  kQTAudioPropertyID_Gain       = 'gain', /* value is Float32. Gettable/Settable*/
+  kQTAudioPropertyID_Gain       = 'gain', /* value is Float32. Gettable/Settable.*/
 
   /*
-   * kQTAudioPropertyID_Mute: Value is Boolean. The audio mute state of
-   * a movie or track.  If true, the movie/track is muted.  The setting
-   * is not stored in the movie/track.  It is only used until the
-   * movie/track is disposed.
+   * kQTAudioPropertyID_Mute:  Value is Boolean.  Get/Set/Listenable
+   * The audio mute state of a movie or track.  If true, the
+   * movie/track is muted.  The setting is not stored in the
+   * movie/track.  It is only used until the movie/track is disposed.
    */
-  kQTAudioPropertyID_Mute       = 'mute', /* value is Boolean. Gettable/Settable*/
+  kQTAudioPropertyID_Mute       = 'mute', /* value is Boolean. Gettable/Settable.*/
 
   /*
-   * kQTAudioPropertyID_Balance: Value is Float32. The audio balance of
-   * a movie.  -1.0 means full left, 0.0 means centered, and 1.0 means
-   * full right.  The setting is not stored in the movie.  It is only
-   * used until the movie is disposed.  This is only supported for
-   * movies, not tracks.
+   * kQTAudioPropertyID_Balance:  Value is Float32.  Get/Set/Listenable
+   * The audio balance of a movie.  -1.0 means full left, 0.0 means
+   * centered, and 1.0 means full right.  The setting is not stored in
+   * the movie.  It is only used until the movie is disposed.  This is
+   * only supported for movies, not tracks.
    */
-  kQTAudioPropertyID_Balance    = 'bala', /* value is Float32. Gettable/Settable*/
+  kQTAudioPropertyID_Balance    = 'bala', /* value is Float32. Gettable/Settable.*/
 
   /*
    * kQTAudioPropertyID_RateChangesPreservePitch:   Value is Boolean. 
@@ -10304,12 +10308,37 @@ enum {
    * can be specified as a property to the NewMovieFromProperties()
    * API. Currently, it has no effect when set on an open movie.
    */
-  kQTAudioPropertyID_RateChangesPreservePitch = 'aucp', /* value is Boolean.  Gettable/Settable*/
+  kQTAudioPropertyID_RateChangesPreservePitch = 'aucp', /* value is Boolean.  Gettable/Settable.*/
 
   /*
-   * kQTAudioPropertyID_ChannelLayout: Value is AudioChannelLayout. The
-   * AudioChannelLayout of a track, or other audio stream.  Currently
-   * only settable/gettable for tracks.  (See
+   * kQTAudioPropertyID_Pitch:   Value is Float32.  Get/Set/Listenable
+   * Movie pitch adjustment.  Adjusts the pitch of all audio tracks
+   * that contribute to the AudioContext mix.  Pitch control takes
+   * effect only if kQTAudioPropertyID_RateChangesPreservePitch is in
+   * effect, otherwise returns kQTMessageNotHandledErr. The Float32
+   * value is specified in cents: 0.0 == no change, 1.0 == one cent up,
+   * 100.0 == one semi-tone up, -1.0 == one cent down. The most useful
+   * ranges for pitch are +/- 1200. (ie, one octave)
+   */
+  kQTAudioPropertyID_Pitch      = 'pitc', /* value is Float32. Get/Set/Listenable.*/
+
+  /*
+   * kQTAudioPropertyID_RenderQuality:   Value is UInt32.  Get/Set
+   * Movie audio render quality takes effect for movie playback. UInt32
+   * values are as defined in <AudioUnit/AudioUnitProperties.h> and
+   * vary from 0x00 (kRenderQuality_Min) to 0x7F (kRenderQuality_Max).
+   * We also define a special value
+   * (kQTAudioRenderQuality_PlaybackDefault) which resets the quality
+   * settings of the playback processing chain to values that are
+   * chosen to be an optimal balance of performance and quality.
+   */
+  kQTAudioPropertyID_RenderQuality = 'qual', /* value is UInt32.  Gettable/Settable.*/
+  kQTAudioRenderQuality_PlaybackDefault = 0x8000, /* defined to be outside the CoreAudio valid range*/
+
+  /*
+   * kQTAudioPropertyID_ChannelLayout:  Value is AudioChannelLayout. 
+   * Get/Set The AudioChannelLayout of a track, or other audio stream. 
+   * Currently only settable/gettable for tracks.  (See
    * kQTAudioPropertyID_SummaryChannelLayout if you want to get the
    * summary AudioChannelLayout of a movie.) Note that this is a
    * variable sized property (since it may contain an array of
@@ -10320,51 +10349,72 @@ enum {
   kQTAudioPropertyID_ChannelLayout = 'tlay', /* value is AudioChannelLayout. Gettable/Settable.*/
 
   /*
-   * kQTAudioPropertyID_SummaryChannelLayout: Value is
-   * AudioChannelLayout. The summary AudioChannelLayout of a movie, or
-   * other grouping of audio streams. All like-labelled channels are
-   * combined, so there are no duplicates.  For example, if there is a
-   * stereo (L/R) track, 5 single-channel tracks marked Left, Right,
-   * Left Surround, Right Surround and Center, and a 4 channel track
-   * marked L/R/Ls/Rs, then the summary AudioChannelLayout will be
-   * L/R/Ls/Rs/C. It will _not_ be L/R/L/R/Ls/Rs/C/L/R/Ls/Rs. Note that
-   * this is a variable sized property (since it may contain an array
-   * of ChannelDescriptions; see CoreAudioTypes.h).  You must get the
-   * size first (by calling, for example, QTGetMoviePropertyInfo)
-   * allocate a struct of that size, and then get the property.
+   * kQTAudioPropertyID_SummaryChannelLayout:  Value is
+   * AudioChannelLayout.  Get-only The summary AudioChannelLayout of a
+   * movie, or other grouping of audio streams. All like-labelled
+   * channels are combined, so there are no duplicates.  For example,
+   * if there is a stereo (L/R) track, 5 single-channel tracks marked
+   * Left, Right, Left Surround, Right Surround and Center, and a 4
+   * channel track marked L/R/Ls/Rs, then the summary
+   * AudioChannelLayout will be L/R/Ls/Rs/C. It will _not_ be
+   * L/R/L/R/Ls/Rs/C/L/R/Ls/Rs. Note that this is a variable sized
+   * property (since it may contain an array of ChannelDescriptions;
+   * see CoreAudioTypes.h).  You must get the size first (by calling,
+   * for example, QTGetMoviePropertyInfo) allocate a struct of that
+   * size, and then get the property.
    */
   kQTAudioPropertyID_SummaryChannelLayout = 'clay', /* value is AudioChannelLayout. Gettable.*/
 
   /*
-   * kQTAudioPropertyID_DeviceChannelLayout: Value is
-   * AudioChannelLayout. The AudioChannelLayout of the device this
-   * movie is playing to.  Note that this is a variable sized property
-   * (since it may contain an array of ChannelDescriptions; see
-   * CoreAudioTypes.h).  You must get the size first (by calling, for
-   * example, QTGetMoviePropertyInfo) allocate a struct of that size,
-   * and then get the property.
+   * kQTAudioPropertyID_DeviceChannelLayout:  Value is
+   * AudioChannelLayout.  Get-only The AudioChannelLayout of the device
+   * this movie is playing to.  Note that this is a variable sized
+   * property (since it may contain an array of ChannelDescriptions;
+   * see CoreAudioTypes.h).  You must get the size first (by calling,
+   * for example, QTGetMoviePropertyInfo) allocate a struct of that
+   * size, and then get the property.
    */
   kQTAudioPropertyID_DeviceChannelLayout = 'dcly', /* value is AudioChannelLayout. Gettable.*/
 
   /*
-   * kQTAudioPropertyID_FormatString: Value is CFStringRef.  Use with
-   * kQTPropertyClass_Audio. kQTAudioPropertyID_FormatString returns a
-   * localized, human readable string describing the audio format as a
-   * CFStringRef, i.e. "MPEG Layer 3". You may get this property from a
-   * SoundDescription Handle by calling
-   * QTSoundDescriptionGetProperty(), or from a
+   * kQTAudioPropertyID_DeviceASBD:  Value is
+   * AudioStreamBasicDescription.  Get-only Returns the
+   * AudioStreamBasicDescription of the device this movie is playing
+   * to. The interesting fields are the sample rate, which reflects
+   * device's current state, and the number of channels, which matches
+   * what is reported by kQTAudioPropertyID_DeviceChannelLayout.
+   */
+  kQTAudioPropertyID_DeviceASBD = 'dasd', /* value is AudioStreamBasicDescription. Gettable.*/
+
+  /*
+   * kQTAudioPropertyID_SummaryASBD:  Value is
+   * AudioStreamBasicDescription.  Get-only Returns the
+   * AudioStreamBasicDescription corresponding to the Summary Mix of a
+   * movie.  This will describe non-interleaved, Float32 linear PCM
+   * data, with a sample rate equal to the highest audio sample rate
+   * found among the sound tracks contributing to the AudioContext mix,
+   * and a number of channels that matches what is reported by
+   * kQTAudioPropertyID_SummaryChannelLayout.
+   */
+  kQTAudioPropertyID_SummaryASBD = 'sasd', /* value is AudioStreamBasicDescription. Gettable.*/
+
+  /*
+   * kQTAudioPropertyID_FormatString:  Value is CFStringRef.  Get-only
+   * kQTAudioPropertyID_FormatString returns a localized, human
+   * readable string describing the audio format as a CFStringRef, i.e.
+   * "MPEG Layer 3". You may get this property from a SoundDescription
+   * Handle by calling QTSoundDescriptionGetProperty(), or from a
    * StandardAudioCompression (scdi/audi) component instance by calling
    * QTGetComponentProperty().
    */
   kQTAudioPropertyID_FormatString = 'fstr', /* value is CFStringRef.  Gettable.*/
 
   /*
-   * kQTAudioPropertyID_ChannelLayoutString: Value is CFStringRef.  Use
-   * with kQTPropertyClass_Audio.
-   * kQTAudioPropertyID_ChannelLayoutString returns a localized, human
-   * readable string describing the audio channel layout as a
-   * CFStringRef, i.e. "5.0 (L R C Ls Rs)". You may get this property
-   * from a SoundDescription Handle by calling
+   * kQTAudioPropertyID_ChannelLayoutString:  Value is CFStringRef. 
+   * Get-only kQTAudioPropertyID_ChannelLayoutString returns a
+   * localized, human readable string describing the audio channel
+   * layout as a CFStringRef, i.e. "5.0 (L R C Ls Rs)". You may get
+   * this property from a SoundDescription Handle by calling
    * QTSoundDescriptionGetProperty(), or from a
    * StandardAudioCompression (scdi/audi) component instance by calling
    * QTGetComponentProperty().
@@ -10372,10 +10422,10 @@ enum {
   kQTAudioPropertyID_ChannelLayoutString = 'lstr', /* value is CFStringRef.  Gettable.*/
 
   /*
-   * kQTAudioPropertyID_SampleRateString:
-   * kQTAudioPropertyID_SampleRateString returns a localized, human
-   * readable string describing the audio sample rate as a CFStringRef,
-   * i.e. "44.100 kHz". You may get this property from a
+   * kQTAudioPropertyID_SampleRateString:  Value is CFStringRef. 
+   * Get-only kQTAudioPropertyID_SampleRateString returns a localized,
+   * human readable string describing the audio sample rate as a
+   * CFStringRef, i.e. "44.100 kHz". You may get this property from a
    * SoundDescription Handle by calling
    * QTSoundDescriptionGetProperty(), or from a
    * StandardAudioCompression (scdi/audi) component instance by calling
@@ -10384,12 +10434,12 @@ enum {
   kQTAudioPropertyID_SampleRateString = 'rstr', /* value is CFStringRef.  Gettable.*/
 
   /*
-   * kQTAudioPropertyID_SampleSizeString:
-   * kQTAudioPropertyID_SampleSizeString returns a localized, human
-   * readable string describing the audio sample size as a CFStringRef,
-   * i.e. "24-bit". Note, this property will only return a valid string
-   * if the format is uncompressed (LPCM) audio. You may get this
-   * property from a SoundDescription Handle by calling
+   * kQTAudioPropertyID_SampleSizeString:  Value is CFStringRef. 
+   * Get-only kQTAudioPropertyID_SampleSizeString returns a localized,
+   * human readable string describing the audio sample size as a
+   * CFStringRef, i.e. "24-bit". Note, this property will only return a
+   * valid string if the format is uncompressed (LPCM) audio. You may
+   * get this property from a SoundDescription Handle by calling
    * QTSoundDescriptionGetProperty(), or from a
    * StandardAudioCompression (scdi/audi) component instance by calling
    * QTGetComponentProperty().
@@ -10397,27 +10447,30 @@ enum {
   kQTAudioPropertyID_SampleSizeString = 'sstr', /* value is CFStringRef.  Gettable.*/
 
   /*
-   * kQTAudioPropertyID_BitRateString: kQTAudioPropertyID_BitRateString
-   * returns a localized, human readable string describing the audio
-   * bit rate as a CFStringRef, i.e. "12 kbps". You may get this
-   * property from a SoundDescription Handle by calling
-   * QTSoundDescriptionGetProperty(), or from a
+   * kQTAudioPropertyID_BitRateString:  Value is CFStringRef.  Get-only
+   * kQTAudioPropertyID_BitRateString returns a localized, human
+   * readable string describing the audio bit rate as a CFStringRef,
+   * i.e. "12 kbps". You may get this property from a SoundDescription
+   * Handle by calling QTSoundDescriptionGetProperty(), or from a
    * StandardAudioCompression (scdi/audi) component instance by calling
    * QTGetComponentProperty().
    */
   kQTAudioPropertyID_BitRateString = 'bstr', /* value is CFStringRef.  Gettable.*/
 
   /*
-   * kQTAudioPropertyID_SummaryString: kQTAudioPropertyID_SummaryString
-   * returns a localized, human readable string summarizing the audio
-   * as a CFStringRef, i.e. "16-bit Integer (Big Endian), Stereo (L R),
-   * 48.000 kHz". You may get this property from a SoundDescription
-   * Handle calling QTSoundDescriptionGetProperty(), or from a
+   * kQTAudioPropertyID_SummaryString:  Value is CFStringRef.  Get-only
+   * kQTAudioPropertyID_SummaryString returns a localized, human
+   * readable string summarizing the audio as a CFStringRef, i.e.
+   * "16-bit Integer (Big Endian), Stereo (L R), 48.000 kHz". You may
+   * get this property from a SoundDescription Handle calling
+   * QTSoundDescriptionGetProperty(), or from a
    * StandardAudioCompression (scdi/audi) component instance by calling
    * QTGetComponentProperty().
    */
   kQTAudioPropertyID_SummaryString = 'asum' /* value is CFStringRef.  Gettable.*/
 };
+
+
 
 /* whichMixToMeter constants*/
 
@@ -10755,7 +10808,19 @@ enum {
    * or channel layout are read back, you will get information relating
    * to the re-mapped movie.
    */
-  kQTMovieAudioExtractionMoviePropertyID_AllChannelsDiscrete = 'disc' /* value is Boolean. Gettable/Settable.*/
+  kQTMovieAudioExtractionMoviePropertyID_AllChannelsDiscrete = 'disc', /* value is Boolean. Gettable/Settable.*/
+
+  /*
+   * kQTMovieAudioExtractionAudioPropertyID_RenderQuality: Value is
+   * UInt32 (set & get) Set the render quality to be used for this
+   * audio extraction session. UInt32 values are as defined in
+   * <AudioUnit/AudioUnitProperties.h> and vary from 0x00
+   * (kRenderQuality_Min) to 0x7F (kRenderQuality_Max). We also define
+   * a special value (kQTAudioRenderQuality_PlaybackDefault) which
+   * resets the quality settings to the same values that were chosen by
+   * default for playback.
+   */
+  kQTMovieAudioExtractionAudioPropertyID_RenderQuality = 'qual' /* value is UInt32. Gettable/Settable.*/
 };
 
 /* "Output Audio class" property IDs*/
@@ -11185,6 +11250,244 @@ GetMovieVisualContrast(
   Movie      movie,
   Float32 *  contrastOut,
   UInt32     flags)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+
+/* Movie Aperture APIs*/
+
+
+/*
+ *  Summary:
+ *    Visual properties of movies for aperture modes.
+ */
+enum {
+
+  /*
+   * You can set the aperture mode property on a movie to indicate
+   * whether aspect ratio and clean aperture correction should be
+   * performed. The values for this property have the prefix
+   * kQTApertureMode_ and are in ImageCompression.h. 
+   * When a movie is in clean, production or encoded pixels aperture
+   * mode, each track's dimensions are overriden by special dimensions
+   * for that mode. The original track dimensions are preserved and can
+   * be restored by setting the movie into classic aperture mode.
+   */
+  kQTVisualPropertyID_ApertureMode = 'apmd' /* OSType, Read/Write/Listen */
+};
+
+
+/*
+ *  Summary:
+ *    Visual properties of tracks for aperture modes
+ *  
+ *  Discussion:
+ *    A track's dimensions may vary depending on the movie's aperture
+ *    mode. The dimensions for a given aperture mode may be accessed
+ *    using these properties.
+ */
+enum {
+
+  /*
+   * The track dimensions used in QuickTime 7.0.x and earlier. Setting
+   * this property is equivalent to calling SetTrackDimensions, except
+   * that SetTrackDimensions also changes the aperture mode to
+   * kQTApertureMode_Classic, and setting this property does not.
+   */
+  kQTVisualPropertyID_ClassicDimensions = 'cldi', /* FixedPoint, Read/Write */
+
+  /*
+   * The track dimensions to use in clean aperture mode.
+   */
+  kQTVisualPropertyID_CleanApertureDimensions = 'cadi', /* FixedPoint, Read/Write */
+
+  /*
+   * The track dimensions to use in production aperture mode.
+   */
+  kQTVisualPropertyID_ProductionApertureDimensions = 'prdi', /* FixedPoint, Read/Write */
+
+  /*
+   * The track dimensions to use in encoded pixels aperture mode.
+   */
+  kQTVisualPropertyID_EncodedPixelsDimensions = 'endi', /* FixedPoint, Read/Write */
+
+  /*
+   * True if aperture mode dimensions have been set on this movie, even
+   * if they are all identical to the classic dimensions (as is the
+   * case for content with square pixels and no edge processing
+   * region). 
+   * This property can also be tested on a movie, where it is true if
+   * any track has aperture mode dimensions.
+   */
+  kQTVisualPropertyID_HasApertureModeDimensions = 'hamd' /* Boolean, Read */
+};
+
+
+/*
+ *  Summary:
+ *    Media Characteristics
+ */
+enum {
+
+  /*
+   * Indicates that a media handler supports aperture modes, which
+   * enable video to be automatically scaled and cropped to compensate
+   * for non-square pixel aspect ratios and to trim possibly-dirty edge
+   * processing regions. The dimensions of such a track may change when
+   * the movie's aperture mode is changed.
+   */
+  kCharacteristicSupportsApertureModes = 'apmd'
+};
+
+/*
+ *  SetTrackApertureModeDimensionsUsingSampleDescription()
+ *  
+ *  Summary:
+ *    Sets a track's aperture mode dimensions using values calculated
+ *    using a sample description.
+ *  
+ *  Discussion:
+ *    This function should be used to add information needed to support
+ *    aperture modes to newly created tracks. This information is
+ *    calculated using the given sample description. If sampleDesc is
+ *    NULL, the track's first sample description is used.
+ *  
+ *  Parameters:
+ *    
+ *    track:
+ *      [in] The track.
+ *    
+ *    sampleDesc:
+ *      [in] The sample description handle.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 (or QuickTime 7.1) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSErr 
+SetTrackApertureModeDimensionsUsingSampleDescription(
+  Track                     track,
+  SampleDescriptionHandle   sampleDesc)       /* can be NULL */ AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+
+
+/*
+ *  GenerateMovieApertureModeDimensions()
+ *  
+ *  Summary:
+ *    Examines a movie and sets up track aperture mode dimensions.
+ *  
+ *  Discussion:
+ *    This function can be used to add information needed to support
+ *    aperture modes to movies created with applications and/or
+ *    versions of QuickTime that did not support aperture mode
+ *    dimensions. If the image descriptions in video tracks lack tags
+ *    describing clean aperture and pixel aspect ratio information, the
+ *    media data may be scanned to see if the correct values can be
+ *    divined and attached. Then the aperture mode dimensions are
+ *    calculated and set for each track. Afterwards, the
+ *    kQTVisualPropertyID_HasApertureModeDimensions property will be
+ *    set to true for these tracks. Tracks which do not support
+ *    aperture modes are not changed.
+ *  
+ *  Parameters:
+ *    
+ *    movie:
+ *      [in] The movie.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 (or QuickTime 7.1) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSErr 
+GenerateMovieApertureModeDimensions(Movie movie)              AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+
+
+/*
+ *  GenerateTrackApertureModeDimensions()
+ *  
+ *  Summary:
+ *    Examines a track and sets up aperture mode dimensions.
+ *  
+ *  Discussion:
+ *    This function can be used to add information needed to support
+ *    aperture modes to tracks created with applications and/or
+ *    versions of QuickTime that did not support aperture mode
+ *    dimensions. If the image descriptions in video tracks lack tags
+ *    describing clean aperture and pixel aspect ratio information, the
+ *    media data may be scanned to see if the correct values can be
+ *    divined and attached. Then the aperture mode dimensions are
+ *    calculated and set. Afterwards, the
+ *    kQTVisualPropertyID_HasApertureModeDimensions property will be
+ *    set to true for these tracks. Tracks which do not support
+ *    aperture modes are not changed.
+ *  
+ *  Parameters:
+ *    
+ *    track:
+ *      [in] The track.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 (or QuickTime 7.1) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSErr 
+GenerateTrackApertureModeDimensions(Track track)              AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+
+
+/*
+ *  RemoveMovieApertureModeDimensions()
+ *  
+ *  Summary:
+ *    Removes aperture mode dimension information from a movie.
+ *  
+ *  Discussion:
+ *    This function removes aperture mode dimension information from a
+ *    movie's tracks. It does not attempt to modify sample
+ *    descriptions, so it may not completely reverse the effect of
+ *    GenerateMovieApertureModeDimensions. It sets the
+ *    kQTVisualPropertyID_HasApertureModeDimensions property to false.
+ *  
+ *  Parameters:
+ *    
+ *    movie:
+ *      [in] The movie.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 (or QuickTime 7.1) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSErr 
+RemoveMovieApertureModeDimensions(Movie movie)                AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+
+
+/*
+ *  RemoveTrackApertureModeDimensions()
+ *  
+ *  Summary:
+ *    Removes aperture mode dimension information from a track.
+ *  
+ *  Discussion:
+ *    This function removes aperture mode dimension information from a
+ *    track. It does not attempt to modify sample descriptions, so it
+ *    may not completely reverse the effect of
+ *    GenerateTrackApertureModeDimensions. It sets the
+ *    kQTVisualPropertyID_HasApertureModeDimensions property to false.
+ *  
+ *  Parameters:
+ *    
+ *    track:
+ *      [in] The track.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 (or QuickTime 7.1) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSErr 
+RemoveTrackApertureModeDimensions(Track track)                AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
 
 
 
@@ -12136,6 +12439,114 @@ InvokeQTEffectListFilterUPP(
   OSType                 minorClass,
   void *                 refcon,
   QTEffectListFilterUPP  userUPP)                             AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+
+#if __MACH__
+  #ifdef __cplusplus
+    inline QTCallBackUPP                                        NewQTCallBackUPP(QTCallBackProcPtr userRoutine) { return userRoutine; }
+    inline QTSyncTaskUPP                                        NewQTSyncTaskUPP(QTSyncTaskProcPtr userRoutine) { return userRoutine; }
+    inline MovieRgnCoverUPP                                     NewMovieRgnCoverUPP(MovieRgnCoverProcPtr userRoutine) { return userRoutine; }
+    inline MovieProgressUPP                                     NewMovieProgressUPP(MovieProgressProcPtr userRoutine) { return userRoutine; }
+    inline MovieDrawingCompleteUPP                              NewMovieDrawingCompleteUPP(MovieDrawingCompleteProcPtr userRoutine) { return userRoutine; }
+    inline TrackTransferUPP                                     NewTrackTransferUPP(TrackTransferProcPtr userRoutine) { return userRoutine; }
+    inline GetMovieUPP                                          NewGetMovieUPP(GetMovieProcPtr userRoutine) { return userRoutine; }
+    inline MoviePreviewCallOutUPP                               NewMoviePreviewCallOutUPP(MoviePreviewCallOutProcPtr userRoutine) { return userRoutine; }
+    inline TextMediaUPP                                         NewTextMediaUPP(TextMediaProcPtr userRoutine) { return userRoutine; }
+    inline ActionsUPP                                           NewActionsUPP(ActionsProcPtr userRoutine) { return userRoutine; }
+    inline DoMCActionUPP                                        NewDoMCActionUPP(DoMCActionProcPtr userRoutine) { return userRoutine; }
+    inline MovieExecuteWiredActionsUPP                          NewMovieExecuteWiredActionsUPP(MovieExecuteWiredActionsProcPtr userRoutine) { return userRoutine; }
+    inline MoviePrePrerollCompleteUPP                           NewMoviePrePrerollCompleteUPP(MoviePrePrerollCompleteProcPtr userRoutine) { return userRoutine; }
+    inline QTNextTaskNeededSoonerCallbackUPP                    NewQTNextTaskNeededSoonerCallbackUPP(QTNextTaskNeededSoonerCallbackProcPtr userRoutine) { return userRoutine; }
+    inline MoviesErrorUPP                                       NewMoviesErrorUPP(MoviesErrorProcPtr userRoutine) { return userRoutine; }
+    inline TweenerDataUPP                                       NewTweenerDataUPP(TweenerDataProcPtr userRoutine) { return userRoutine; }
+    inline QTEffectListFilterUPP                                NewQTEffectListFilterUPP(QTEffectListFilterProcPtr userRoutine) { return userRoutine; }
+    inline void                                                 DisposeQTCallBackUPP(QTCallBackUPP) { }
+    inline void                                                 DisposeQTSyncTaskUPP(QTSyncTaskUPP) { }
+    inline void                                                 DisposeMovieRgnCoverUPP(MovieRgnCoverUPP) { }
+    inline void                                                 DisposeMovieProgressUPP(MovieProgressUPP) { }
+    inline void                                                 DisposeMovieDrawingCompleteUPP(MovieDrawingCompleteUPP) { }
+    inline void                                                 DisposeTrackTransferUPP(TrackTransferUPP) { }
+    inline void                                                 DisposeGetMovieUPP(GetMovieUPP) { }
+    inline void                                                 DisposeMoviePreviewCallOutUPP(MoviePreviewCallOutUPP) { }
+    inline void                                                 DisposeTextMediaUPP(TextMediaUPP) { }
+    inline void                                                 DisposeActionsUPP(ActionsUPP) { }
+    inline void                                                 DisposeDoMCActionUPP(DoMCActionUPP) { }
+    inline void                                                 DisposeMovieExecuteWiredActionsUPP(MovieExecuteWiredActionsUPP) { }
+    inline void                                                 DisposeMoviePrePrerollCompleteUPP(MoviePrePrerollCompleteUPP) { }
+    inline void                                                 DisposeQTNextTaskNeededSoonerCallbackUPP(QTNextTaskNeededSoonerCallbackUPP) { }
+    inline void                                                 DisposeMoviesErrorUPP(MoviesErrorUPP) { }
+    inline void                                                 DisposeTweenerDataUPP(TweenerDataUPP) { }
+    inline void                                                 DisposeQTEffectListFilterUPP(QTEffectListFilterUPP) { }
+    inline void                                                 InvokeQTCallBackUPP(QTCallBack cb, long refCon, QTCallBackUPP userUPP) { (*userUPP)(cb, refCon); }
+    inline void                                                 InvokeQTSyncTaskUPP(void * task, QTSyncTaskUPP userUPP) { (*userUPP)(task); }
+    inline OSErr                                                InvokeMovieRgnCoverUPP(Movie theMovie, RgnHandle changedRgn, long refcon, MovieRgnCoverUPP userUPP) { return (*userUPP)(theMovie, changedRgn, refcon); }
+    inline OSErr                                                InvokeMovieProgressUPP(Movie theMovie, short message, short whatOperation, Fixed percentDone, long refcon, MovieProgressUPP userUPP) { return (*userUPP)(theMovie, message, whatOperation, percentDone, refcon); }
+    inline OSErr                                                InvokeMovieDrawingCompleteUPP(Movie theMovie, long refCon, MovieDrawingCompleteUPP userUPP) { return (*userUPP)(theMovie, refCon); }
+    inline OSErr                                                InvokeTrackTransferUPP(Track t, long refCon, TrackTransferUPP userUPP) { return (*userUPP)(t, refCon); }
+    inline OSErr                                                InvokeGetMovieUPP(long offset, long size, void * dataPtr, void * refCon, GetMovieUPP userUPP) { return (*userUPP)(offset, size, dataPtr, refCon); }
+    inline Boolean                                              InvokeMoviePreviewCallOutUPP(long refcon, MoviePreviewCallOutUPP userUPP) { return (*userUPP)(refcon); }
+    inline OSErr                                                InvokeTextMediaUPP(Handle theText, Movie theMovie, short * displayFlag, long refcon, TextMediaUPP userUPP) { return (*userUPP)(theText, theMovie, displayFlag, refcon); }
+    inline OSErr                                                InvokeActionsUPP(void * refcon, Track targetTrack, long targetRefCon, QTEventRecordPtr theEvent, ActionsUPP userUPP) { return (*userUPP)(refcon, targetTrack, targetRefCon, theEvent); }
+    inline OSErr                                                InvokeDoMCActionUPP(void * refcon, short action, void * params, Boolean * handled, DoMCActionUPP userUPP) { return (*userUPP)(refcon, action, params, handled); }
+    inline OSErr                                                InvokeMovieExecuteWiredActionsUPP(Movie theMovie, void * refcon, long flags, QTAtomContainer wiredActions, MovieExecuteWiredActionsUPP userUPP) { return (*userUPP)(theMovie, refcon, flags, wiredActions); }
+    inline void                                                 InvokeMoviePrePrerollCompleteUPP(Movie theMovie, OSErr prerollErr, void * refcon, MoviePrePrerollCompleteUPP userUPP) { (*userUPP)(theMovie, prerollErr, refcon); }
+    inline void                                                 InvokeQTNextTaskNeededSoonerCallbackUPP(TimeValue duration, unsigned long flags, void * refcon, QTNextTaskNeededSoonerCallbackUPP userUPP) { (*userUPP)(duration, flags, refcon); }
+    inline void                                                 InvokeMoviesErrorUPP(OSErr theErr, long refcon, MoviesErrorUPP userUPP) { (*userUPP)(theErr, refcon); }
+    inline ComponentResult                                      InvokeTweenerDataUPP(TweenRecord * tr, void * tweenData, long tweenDataSize, long dataDescriptionSeed, Handle dataDescription, ICMCompletionProcRecordPtr asyncCompletionProc, UniversalProcPtr transferProc, void * refCon, TweenerDataUPP userUPP) { return (*userUPP)(tr, tweenData, tweenDataSize, dataDescriptionSeed, dataDescription, asyncCompletionProc, transferProc, refCon); }
+    inline Boolean                                              InvokeQTEffectListFilterUPP(Component effect, long effectMinSource, long effectMaxSource, OSType majorClass, OSType minorClass, void * refcon, QTEffectListFilterUPP userUPP) { return (*userUPP)(effect, effectMinSource, effectMaxSource, majorClass, minorClass, refcon); }
+  #else
+    #define NewQTCallBackUPP(userRoutine)                       ((QTCallBackUPP)userRoutine)
+    #define NewQTSyncTaskUPP(userRoutine)                       ((QTSyncTaskUPP)userRoutine)
+    #define NewMovieRgnCoverUPP(userRoutine)                    ((MovieRgnCoverUPP)userRoutine)
+    #define NewMovieProgressUPP(userRoutine)                    ((MovieProgressUPP)userRoutine)
+    #define NewMovieDrawingCompleteUPP(userRoutine)             ((MovieDrawingCompleteUPP)userRoutine)
+    #define NewTrackTransferUPP(userRoutine)                    ((TrackTransferUPP)userRoutine)
+    #define NewGetMovieUPP(userRoutine)                         ((GetMovieUPP)userRoutine)
+    #define NewMoviePreviewCallOutUPP(userRoutine)              ((MoviePreviewCallOutUPP)userRoutine)
+    #define NewTextMediaUPP(userRoutine)                        ((TextMediaUPP)userRoutine)
+    #define NewActionsUPP(userRoutine)                          ((ActionsUPP)userRoutine)
+    #define NewDoMCActionUPP(userRoutine)                       ((DoMCActionUPP)userRoutine)
+    #define NewMovieExecuteWiredActionsUPP(userRoutine)         ((MovieExecuteWiredActionsUPP)userRoutine)
+    #define NewMoviePrePrerollCompleteUPP(userRoutine)          ((MoviePrePrerollCompleteUPP)userRoutine)
+    #define NewQTNextTaskNeededSoonerCallbackUPP(userRoutine)   ((QTNextTaskNeededSoonerCallbackUPP)userRoutine)
+    #define NewMoviesErrorUPP(userRoutine)                      ((MoviesErrorUPP)userRoutine)
+    #define NewTweenerDataUPP(userRoutine)                      ((TweenerDataUPP)userRoutine)
+    #define NewQTEffectListFilterUPP(userRoutine)               ((QTEffectListFilterUPP)userRoutine)
+    #define DisposeQTCallBackUPP(userUPP)
+    #define DisposeQTSyncTaskUPP(userUPP)
+    #define DisposeMovieRgnCoverUPP(userUPP)
+    #define DisposeMovieProgressUPP(userUPP)
+    #define DisposeMovieDrawingCompleteUPP(userUPP)
+    #define DisposeTrackTransferUPP(userUPP)
+    #define DisposeGetMovieUPP(userUPP)
+    #define DisposeMoviePreviewCallOutUPP(userUPP)
+    #define DisposeTextMediaUPP(userUPP)
+    #define DisposeActionsUPP(userUPP)
+    #define DisposeDoMCActionUPP(userUPP)
+    #define DisposeMovieExecuteWiredActionsUPP(userUPP)
+    #define DisposeMoviePrePrerollCompleteUPP(userUPP)
+    #define DisposeQTNextTaskNeededSoonerCallbackUPP(userUPP)
+    #define DisposeMoviesErrorUPP(userUPP)
+    #define DisposeTweenerDataUPP(userUPP)
+    #define DisposeQTEffectListFilterUPP(userUPP)
+    #define InvokeQTCallBackUPP(cb, refCon, userUPP)            (*userUPP)(cb, refCon)
+    #define InvokeQTSyncTaskUPP(task, userUPP)                  (*userUPP)(task)
+    #define InvokeMovieRgnCoverUPP(theMovie, changedRgn, refcon, userUPP) (*userUPP)(theMovie, changedRgn, refcon)
+    #define InvokeMovieProgressUPP(theMovie, message, whatOperation, percentDone, refcon, userUPP) (*userUPP)(theMovie, message, whatOperation, percentDone, refcon)
+    #define InvokeMovieDrawingCompleteUPP(theMovie, refCon, userUPP) (*userUPP)(theMovie, refCon)
+    #define InvokeTrackTransferUPP(t, refCon, userUPP)          (*userUPP)(t, refCon)
+    #define InvokeGetMovieUPP(offset, size, dataPtr, refCon, userUPP) (*userUPP)(offset, size, dataPtr, refCon)
+    #define InvokeMoviePreviewCallOutUPP(refcon, userUPP)       (*userUPP)(refcon)
+    #define InvokeTextMediaUPP(theText, theMovie, displayFlag, refcon, userUPP) (*userUPP)(theText, theMovie, displayFlag, refcon)
+    #define InvokeActionsUPP(refcon, targetTrack, targetRefCon, theEvent, userUPP) (*userUPP)(refcon, targetTrack, targetRefCon, theEvent)
+    #define InvokeDoMCActionUPP(refcon, action, params, handled, userUPP) (*userUPP)(refcon, action, params, handled)
+    #define InvokeMovieExecuteWiredActionsUPP(theMovie, refcon, flags, wiredActions, userUPP) (*userUPP)(theMovie, refcon, flags, wiredActions)
+    #define InvokeMoviePrePrerollCompleteUPP(theMovie, prerollErr, refcon, userUPP) (*userUPP)(theMovie, prerollErr, refcon)
+    #define InvokeQTNextTaskNeededSoonerCallbackUPP(duration, flags, refcon, userUPP) (*userUPP)(duration, flags, refcon)
+    #define InvokeMoviesErrorUPP(theErr, refcon, userUPP)       (*userUPP)(theErr, refcon)
+    #define InvokeTweenerDataUPP(tr, tweenData, tweenDataSize, dataDescriptionSeed, dataDescription, asyncCompletionProc, transferProc, refCon, userUPP) (*userUPP)(tr, tweenData, tweenDataSize, dataDescriptionSeed, dataDescription, asyncCompletionProc, transferProc, refCon)
+    #define InvokeQTEffectListFilterUPP(effect, effectMinSource, effectMaxSource, majorClass, minorClass, refcon, userUPP) (*userUPP)(effect, effectMinSource, effectMaxSource, majorClass, minorClass, refcon)
+  #endif
+#endif
 
 /*****
     Connection Speed
@@ -17873,6 +18284,48 @@ InvokeQTBandwidthNotificationUPP(
   void *                      refcon,
   QTBandwidthNotificationUPP  userUPP)                        AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4;
 
+#if __MACH__
+  #ifdef __cplusplus
+    inline MCActionFilterUPP                                    NewMCActionFilterUPP(MCActionFilterProcPtr userRoutine) { return userRoutine; }
+    inline MCActionFilterWithRefConUPP                          NewMCActionFilterWithRefConUPP(MCActionFilterWithRefConProcPtr userRoutine) { return userRoutine; }
+    inline MCActionNotificationUPP                              NewMCActionNotificationUPP(MCActionNotificationProcPtr userRoutine) { return userRoutine; }
+    inline QTMoviePropertyListenerUPP                           NewQTMoviePropertyListenerUPP(QTMoviePropertyListenerProcPtr userRoutine) { return userRoutine; }
+    inline QTTrackPropertyListenerUPP                           NewQTTrackPropertyListenerUPP(QTTrackPropertyListenerProcPtr userRoutine) { return userRoutine; }
+    inline QTBandwidthNotificationUPP                           NewQTBandwidthNotificationUPP(QTBandwidthNotificationProcPtr userRoutine) { return userRoutine; }
+    inline void                                                 DisposeMCActionFilterUPP(MCActionFilterUPP) { }
+    inline void                                                 DisposeMCActionFilterWithRefConUPP(MCActionFilterWithRefConUPP) { }
+    inline void                                                 DisposeMCActionNotificationUPP(MCActionNotificationUPP) { }
+    inline void                                                 DisposeQTMoviePropertyListenerUPP(QTMoviePropertyListenerUPP) { }
+    inline void                                                 DisposeQTTrackPropertyListenerUPP(QTTrackPropertyListenerUPP) { }
+    inline void                                                 DisposeQTBandwidthNotificationUPP(QTBandwidthNotificationUPP) { }
+    inline Boolean                                              InvokeMCActionFilterUPP(MovieController mc, short * action, void * params, MCActionFilterUPP userUPP) { return (*userUPP)(mc, action, params); }
+    inline Boolean                                              InvokeMCActionFilterWithRefConUPP(MovieController mc, short action, void * params, long refCon, MCActionFilterWithRefConUPP userUPP) { return (*userUPP)(mc, action, params, refCon); }
+    inline Boolean                                              InvokeMCActionNotificationUPP(MovieController mc, short action, void * params, UInt32 inFlags, UInt32 * outFlags, void * refCon, MCActionNotificationUPP userUPP) { return (*userUPP)(mc, action, params, inFlags, outFlags, refCon); }
+    inline void                                                 InvokeQTMoviePropertyListenerUPP(Movie inMovie, QTPropertyClass inPropClass, QTPropertyID inPropID, void * inUserData, QTMoviePropertyListenerUPP userUPP) { (*userUPP)(inMovie, inPropClass, inPropID, inUserData); }
+    inline void                                                 InvokeQTTrackPropertyListenerUPP(Track inTrack, QTPropertyClass inPropClass, QTPropertyID inPropID, void * inUserData, QTTrackPropertyListenerUPP userUPP) { (*userUPP)(inTrack, inPropClass, inPropID, inUserData); }
+    inline OSErr                                                InvokeQTBandwidthNotificationUPP(long flags, void * reserved, void * refcon, QTBandwidthNotificationUPP userUPP) { return (*userUPP)(flags, reserved, refcon); }
+  #else
+    #define NewMCActionFilterUPP(userRoutine)                   ((MCActionFilterUPP)userRoutine)
+    #define NewMCActionFilterWithRefConUPP(userRoutine)         ((MCActionFilterWithRefConUPP)userRoutine)
+    #define NewMCActionNotificationUPP(userRoutine)             ((MCActionNotificationUPP)userRoutine)
+    #define NewQTMoviePropertyListenerUPP(userRoutine)          ((QTMoviePropertyListenerUPP)userRoutine)
+    #define NewQTTrackPropertyListenerUPP(userRoutine)          ((QTTrackPropertyListenerUPP)userRoutine)
+    #define NewQTBandwidthNotificationUPP(userRoutine)          ((QTBandwidthNotificationUPP)userRoutine)
+    #define DisposeMCActionFilterUPP(userUPP)
+    #define DisposeMCActionFilterWithRefConUPP(userUPP)
+    #define DisposeMCActionNotificationUPP(userUPP)
+    #define DisposeQTMoviePropertyListenerUPP(userUPP)
+    #define DisposeQTTrackPropertyListenerUPP(userUPP)
+    #define DisposeQTBandwidthNotificationUPP(userUPP)
+    #define InvokeMCActionFilterUPP(mc, action, params, userUPP) (*userUPP)(mc, action, params)
+    #define InvokeMCActionFilterWithRefConUPP(mc, action, params, refCon, userUPP) (*userUPP)(mc, action, params, refCon)
+    #define InvokeMCActionNotificationUPP(mc, action, params, inFlags, outFlags, refCon, userUPP) (*userUPP)(mc, action, params, inFlags, outFlags, refCon)
+    #define InvokeQTMoviePropertyListenerUPP(inMovie, inPropClass, inPropID, inUserData, userUPP) (*userUPP)(inMovie, inPropClass, inPropID, inUserData)
+    #define InvokeQTTrackPropertyListenerUPP(inTrack, inPropClass, inPropID, inUserData, userUPP) (*userUPP)(inTrack, inPropClass, inPropID, inUserData)
+    #define InvokeQTBandwidthNotificationUPP(flags, reserved, refcon, userUPP) (*userUPP)(flags, reserved, refcon)
+  #endif
+#endif
+
 
 
 /* UPP call backs */
@@ -18011,7 +18464,7 @@ enum {
 };
 
 
-#pragma options align=reset
+#pragma pack(pop)
 
 #ifdef __cplusplus
 }

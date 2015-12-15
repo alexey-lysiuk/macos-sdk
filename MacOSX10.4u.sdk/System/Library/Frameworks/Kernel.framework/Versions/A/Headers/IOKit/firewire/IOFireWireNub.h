@@ -42,6 +42,8 @@ class IOConfigDirectory;
 class IOFireWireNub;
 class IOFireWireDevice;
 class IOFireWireUnit;
+class IOFWSimplePhysicalAddressSpace;
+class IOFWSimpleContiguousPhysicalAddressSpace;
 
 enum TerminationState
 {
@@ -89,6 +91,12 @@ protected:
 	
 	virtual TerminationState getTerminationState( void );
 	virtual void setTerminationState( TerminationState state );
+
+	virtual bool isPhysicalAccessEnabled( void );
+
+	virtual IOFWSimpleContiguousPhysicalAddressSpace * createSimpleContiguousPhysicalAddressSpace( vm_size_t size, IODirection direction );
+		
+    virtual IOFWSimplePhysicalAddressSpace * createSimplePhysicalAddressSpace( vm_size_t size, IODirection direction );
 	
 private:
     OSMetaClassDeclareReservedUnused(IOFireWireNubAux, 0);
@@ -262,6 +270,17 @@ protected:
 		{ fAuxiliary->setTerminationState( state ); }
 
 	virtual IOFireWireNubAux * createAuxiliary( void );
+
+public:
+
+	inline bool isPhysicalAccessEnabled( void )
+		{ return fAuxiliary->isPhysicalAccessEnabled(); }
+
+	inline IOFWSimpleContiguousPhysicalAddressSpace * createSimpleContiguousPhysicalAddressSpace( vm_size_t size, IODirection direction )
+		{ return fAuxiliary->createSimpleContiguousPhysicalAddressSpace( size, direction ); }
+		
+    inline IOFWSimplePhysicalAddressSpace * createSimplePhysicalAddressSpace( vm_size_t size, IODirection direction )
+		{ return fAuxiliary->createSimplePhysicalAddressSpace( size, direction ); }
     
 private:
     OSMetaClassDeclareReservedUsed(IOFireWireNub, 0);

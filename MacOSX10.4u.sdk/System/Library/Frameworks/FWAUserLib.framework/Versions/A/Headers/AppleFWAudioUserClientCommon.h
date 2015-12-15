@@ -87,7 +87,7 @@ typedef void (*FWAStreamNotificationProc)( unsigned long isochStreamRef, void*  
 
 
 // update this with the version of the driver in xxxx.xxxx
-const unsigned long kFWADeviceStatusCurrentVersion = 0x00011000;
+const unsigned long kFWADeviceStatusCurrentVersion = 0x00011100;
 
 typedef struct FWADeviceStatus
 {
@@ -140,8 +140,8 @@ enum
 	kWriteQuadletInParamCount = 3,
 	kWriteQuadletOutParamCount = 0,
 	
-	kWriteBlockInParamCount = 4,
-	kWriteBlockOutParamCount = 0,
+	kWriteBlockInParamCount = 3,
+	kWriteBlockOutParamCount = 0xFFFFFFFF,
 	
 	kReadQuadletInParamCount = 2,
 	kReadQuadletOutParamCount = 1,

@@ -171,6 +171,7 @@ public:
 	// OSMetaClassDeclareReservedUsed(IOAudioControl, 2);
 	virtual void sendQueuedNotifications(void);
 
+#if !(defined(__ppc__) && defined(KPI_10_4_0_PPC_COMPAT))
 	// OSMetaClassDeclareReservedUsed(IOAudioControl, 3);
     /*!
      * @function createUserClient
@@ -178,6 +179,9 @@ public:
      * @discussion This function is called by newUserClient() to create a new IOAudioControlUserClient instance.  This function may be overridden by subclasses that need to add functionality
      *  to the IOAudioControlUserClient.  In that case, they must subclass IOAudioControlUserClient
      *  and return a new, initialized instance of that subclass.
+	 *  A derived class that requires overriding of createUserClient should override the version with the properties
+	 *  parameter for Intel targets, and without the properties parameter for PPC targets.  The #if __i386__ directive
+	 *  can be used to select between the two behaviors.
      * @param task The task requesting the new user client.
      * @param securityID Optional security paramater passed in by the client - ignored.
      * @param type Optional user client type passed in by the client.
@@ -187,12 +191,17 @@ public:
      * @result Returns kIOReturnSuccess on success.
      */
     virtual IOReturn createUserClient(task_t task, void *securityID, UInt32 type, IOAudioControlUserClient **newUserClient, OSDictionary *properties);
+#endif
 
 private:
     OSMetaClassDeclareReservedUsed(IOAudioControl, 0);
     OSMetaClassDeclareReservedUsed(IOAudioControl, 1);
     OSMetaClassDeclareReservedUsed(IOAudioControl, 2);
+#if !(defined(__ppc__) && defined(KPI_10_4_0_PPC_COMPAT))
     OSMetaClassDeclareReservedUsed(IOAudioControl, 3);
+#else
+    OSMetaClassDeclareReservedUnused(IOAudioControl, 3);
+#endif
 
     OSMetaClassDeclareReservedUnused(IOAudioControl, 4);
     OSMetaClassDeclareReservedUnused(IOAudioControl, 5);
@@ -320,6 +329,9 @@ public:
      *  IOAudioControl.  This is typically done when the user process needs to register for value change
      *  notifications.  This implementation allocates a new IOAudioControlUserClient object.  There is no
      *  need to call this directly.
+	 *  A derived class that requires overriding of newUserClient should override the version with the properties
+	 *  parameter for Intel targets, and without the properties parameter for PPC targets.  The #if __i386__ directive
+	 *  can be used to select between the two behaviors.
      * @param task The task requesting the new user client.
      * @param securityID Optional security paramater passed in by the client - ignored.
      * @param type Optional user client type passed in by the client - 0 for the default user client type.
@@ -336,6 +348,9 @@ public:
      * @discussion This function is called by newUserClient() to create a new IOAudioControlUserClient instance.  This function may be overridden by subclasses that need to add functionality
      *  to the IOAudioControlUserClient.  In that case, they must subclass IOAudioControlUserClient
      *  and return a new, initialized instance of that subclass.
+	 *  A derived class that requires overriding of createUserClient should override the version with the properties
+	 *  parameter for Intel targets, and without the properties parameter for PPC targets.  The #if __i386__ directive
+	 *  can be used to select between the two behaviors.
      * @param task The task requesting the new user client.
      * @param securityID Optional security paramater passed in by the client - ignored.
      * @param type Optional user client type passed in by the client.

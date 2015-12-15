@@ -3,9 +3,9 @@
  
      Contains:   Nib support for Carbon
  
-     Version:    HIToolbox-223.14~53
+     Version:    HIToolbox-226.1~55
  
-     Copyright:  © 2000-2005 by Apple Computer, Inc., all rights reserved.
+     Copyright:  © 2000-2006 by Apple Computer, Inc., all rights reserved.
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:

@@ -22,6 +22,8 @@
  */
 #if defined(__i386__)
 #include <mach/i386/task.h>
+#elif defined(__x86_64__)
+#include <mach/x86_64/task.h>
 #elif defined(__ppc__)
 #include <mach/ppc/task.h>
 #elif defined(__ppc64__)

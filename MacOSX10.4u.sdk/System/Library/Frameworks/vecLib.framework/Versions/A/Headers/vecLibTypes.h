@@ -4,9 +4,9 @@
      Contains:   Master include for vecLib framework
  
      Version:    Technology: MacOS X
-                 Release:    vecLib-182.18~156
+                 Release:    vecLib-192.12~1
  
-     Copyright:  © 2000-2005 by Apple Computer, Inc., all rights reserved.
+     Copyright:  © 2000-2006 by Apple Computer, Inc., all rights reserved.
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -24,7 +24,7 @@
 #pragma once
 #endif
 
-#pragma options align=mac68k
+#pragma options align=power
 
 #if defined(__ppc__) || defined(__ppc64__)
 #ifdef __VEC__
@@ -38,7 +38,7 @@ typedef vector float                    vFloat;
 typedef vector bool int vBool32;
 #endif  /* defined(__VEC__) */
 
-#elif defined(__i386__)
+#elif defined(__i386__) || defined(__x86_64__)
 #ifdef __SSE__
 #if defined(__GNUC__)
 #if defined(__GNUC_MINOR__) && (((__GNUC__ == 3) && (__GNUC_MINOR__ <= 3)) || (__GNUC__ < 3))

@@ -192,7 +192,6 @@ enum
 /*!
 	@method		arrayOfCDTextBlocksFromPacks:
 	@abstract	Parses raw CD-Text data from a disc into DRCDTextBlock objects.
-	@param		data		NSData containing raw CD-Text PACKs.
 	@discussion	This method can be used to parse any data blob containing CD-Text PACKs,
 				such as the result of +[DRDevice readCDText], or the data returned by the
 				IOKit ioctl DKIOCCDREADTOC with format=5.
@@ -200,6 +199,7 @@ enum
 				The NSData should be sized to fit the exact number of PACKs.  Each PACK
 				occupies 18 bytes, and the 4-byte header from a READ TOC command may
 				optionally be included.
+	@param		packs		NSData containing raw CD-Text PACKs.
 	@result		An autoreleased array of DRCDTextBlock objects describing the information
 				in the raw PACKs, or nil if the data could not be parsed.
 */
@@ -323,7 +323,7 @@ enum
 
 /* ------------------------------------ */
 /*!
-	@category	DRCDTextBlock (PropertyConvenienceMethods)
+	@category	DRCDTextBlock(PropertyConvenienceMethods)
 	@abstract	Convenience methods for a DRCDTextBlock.
 */
 @interface DRCDTextBlock (PropertyConvenienceMethods)
@@ -370,7 +370,7 @@ extern NSString* const DRCDTextLanguageKey					AVAILABLE_MAC_OS_X_VERSION_10_4_A
 				text of the block.  This value is <b>not</b> a CFStringEncoding or
 				NSStringEncoding, and should not be used as such.
 				
-				This property should remain constant once the block is created.  If this
+				This property should remain constant once the block is created. If this
 				property is changed after the block is created, the results are undefined.
 */
 extern NSString* const DRCDTextCharacterCodeKey				AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
@@ -391,7 +391,7 @@ extern NSString* const DRCDTextNSStringEncodingKey			AVAILABLE_MAC_OS_X_VERSION_
 	@const		DRCDTextCopyrightAssertedForSpecialMessagesKey
 	@discussion	Optional property key for a CD-Text block.  The value for this property
 				is an NSNumber, containing a BOOL value indicating whether copyright
-				is asserted on the messages in the block (DRCDTextSpecialMessageKey).
+				is asserted on the messages in the block (@link DRCDTextSpecialMessageKey DRCDTextSpecialMessageKey @/link).
 				
 				If this value is not specified, no copyright is asserted for these items.
 */
@@ -401,8 +401,8 @@ extern NSString* const DRCDTextCopyrightAssertedForSpecialMessagesKey	AVAILABLE_
 	@const		DRCDTextCopyrightAssertedForNamesKey
 	@discussion	Optional property key for a CD-Text block.  The value for this property
 				is an NSNumber, containing a BOOL value indicating whether copyright
-				is asserted on the names in the block.  (DRCDTextPerformerKey,
-				DRCDTextSongwriterKey, DRCDTextComposerKey, DRCDTextArrangerKey)
+				is asserted on the names in the block.  (@link DRCDTextPerformerKey DRCDTextPerformerKey @/link,
+				@link DRCDTextSongwriterKey DRCDTextSongwriterKey @/link, @link DRCDTextComposerKey DRCDTextComposerKey @/link, @link DRCDTextArrangerKey DRCDTextArrangerKey @/link)
 				
 				If this value is not specified, no copyright is asserted for these items.
 */
@@ -412,7 +412,7 @@ extern NSString* const DRCDTextCopyrightAssertedForNamesKey				AVAILABLE_MAC_OS_
 	@const		DRCDTextCopyrightAssertedForTitlesKey
 	@discussion	Optional property key for a CD-Text block.  The value for this property
 				is an NSNumber, containing a BOOL value indicating whether copyright
-				is asserted on the titles of the disc and tracks.  (DRCDTextTitleKey)
+				is asserted on the titles of the disc and tracks.  (@link DRCDTextTitleKey DRCDTextTitleKey @/link)
 				
 				If this value is not specified, no copyright is asserted for these items.
 */
@@ -515,8 +515,8 @@ extern NSString* const DRCDTextClosedKey					AVAILABLE_MAC_OS_X_VERSION_10_4_AND
 				This information can also be specified in the burn and track properties.  CD-Text
 				simply provides an alternative, possibly redundant way to encode this information.
 				If the MCN or ISRC was specified in the properties for the burn or track, this
-				value should be the same.  See the descriptions of kDRMediaCatalogNumberKey
-				and kDRTrackISRCKey for more details on the precise format of the data.
+				value should be the same.  See the descriptions of @link //apple_ref/occ/data/DRMediaCatalogNumberKey DRMediaCatalogNumberKey @/link
+				and @link //apple_ref/occ/data/DRTrackISRCKey DRTrackISRCKey @/link for more details on the precise format of the data.
 */
 extern NSString* const DRCDTextMCNISRCKey					AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 

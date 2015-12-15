@@ -50,7 +50,7 @@
 
 #if (defined(__ppc__) || defined(__ppc64__))
 #include <libkern/ppc/OSByteOrder.h>
-#elif defined(__i386__)
+#elif (defined(__i386__) || defined(__x86_64__))
 #include <libkern/i386/OSByteOrder.h>
 #else
 #include <libkern/machine/OSByteOrder.h>

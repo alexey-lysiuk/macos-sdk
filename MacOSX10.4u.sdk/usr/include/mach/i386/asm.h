@@ -86,7 +86,7 @@
 
 /* There is another definition of ALIGN for .c sources */
 #ifdef ASSEMBLER
-#define ALIGN 2,0x90
+#define ALIGN 4,0x90
 #endif /* ASSEMBLER */
 
 #ifndef FALIGN

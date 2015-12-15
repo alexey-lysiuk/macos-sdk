@@ -36,6 +36,24 @@
 
 __BEGIN_DECLS
 
+/* are we a 64 bit platform ? */
+
+boolean_t ml_is64bit(void);
+
+/* is this a 64bit thread? */
+
+boolean_t ml_thread_is64bit(thread_t);
+
+/* is this a 64bit thread? */
+
+boolean_t ml_state_is64bit(void *);
+
+/* set state of fpu save area for signal handling */
+
+void	ml_fp_setvalid(boolean_t);
+
+void	ml_cpu_set_ldt(int);
+
 /* Interrupt handling */
 
 /* Initialize Interrupts */
@@ -186,27 +204,6 @@ typedef struct ml_cpu_info ml_cpu_info_t;
 /* Get processor info */
 void ml_cpu_get_info(ml_cpu_info_t *ml_cpu_info);
 
-extern uint32_t napCtl;
-extern uint32_t napValid;
-extern uint32_t napInvalid;
-extern uint32_t forcenap;
-extern uint32_t maxBusDelay;
-extern uint32_t C4C2SnoopDelay;
-
-extern void ml_set_maxsnoop(uint32_t maxdelay);
-extern unsigned ml_get_maxsnoop(void);
-extern void ml_set_maxbusdelay(uint32_t mdelay);
-extern void machine_nap_policy(void);
-extern void machine_idle_asm(void);
-extern void ml_hpet_cfg(uint32_t cpu, uint32_t hpetVaddr, uint32_t hpetVect);
-
-#define pmNapHalt	0x00000010
-#define pmNapC1		0x00000008
-#define pmNapC2		0x00000004
-#define pmNapC3		0x00000002
-#define pmNapC4		0x00000001
-#define pmNapMask	0x000000FF
-
 #endif /* __APPLE_API_UNSTABLE */
 
 #ifdef __APPLE_API_PRIVATE
@@ -221,6 +218,15 @@ vm_offset_t ml_io_map(
 /* boot memory allocation */
 vm_offset_t ml_static_malloc(
 	vm_size_t size);
+
+
+extern uint32_t	bounce_pool_base;
+extern uint32_t	bounce_pool_size;
+
+void	ml_get_bouncepool_info(
+			       vm_offset_t *phys_addr,
+			       vm_size_t   *size);
+
 
 #endif /* PEXPERT_KERNEL_PRIVATE || MACH_KERNEL_PRIVATE  */
 
@@ -253,6 +259,14 @@ extern void	ml_cpu_down(void);
 extern int	set_be_bit(void);
 extern int	clr_be_bit(void);
 extern int	be_tracing(void);
+
+extern void ml_set_maxsnoop(uint32_t maxdelay);
+extern unsigned ml_get_maxsnoop(void);
+extern void ml_set_maxbusdelay(uint32_t mdelay);
+extern uint32_t ml_get_maxbusdelay(void);
+extern void ml_hpet_cfg(uint32_t cpu, uint32_t hpetVect);
+
+extern uint64_t tmrCvt(uint64_t time, uint64_t conversion);
 
 #endif /* __APPLE_API_PRIVATE */
 

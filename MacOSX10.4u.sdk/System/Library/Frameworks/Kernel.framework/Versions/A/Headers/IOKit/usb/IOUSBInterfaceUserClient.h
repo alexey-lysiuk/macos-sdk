@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1998-2003 Apple Computer, Inc. All rights reserved.
+ * Copyright (c) 1998-2006 Apple Computer, Inc. All rights reserved.
  *
  * @APPLE_LICENSE_HEADER_START@
  * 
@@ -20,62 +20,6 @@
  * 
  * @APPLE_LICENSE_HEADER_END@
  */
-#ifndef __OPEN_SOURCE__
-/*
- *
- *	$Log: IOUSBInterfaceUserClient.h,v $
- *	Revision 1.35  2005/12/08 05:53:54  nano
- *	Change some comments and variables to indicate that the contiguous memory is required for all low latency isoch on UHCI, not just out
- *	
- *	Revision 1.34  2005/12/07 21:53:33  nano
- *	Bring in fixes from branch PR-4304258 -- Low Latency Audio support in  Yellow
- *	
- *	Revision 1.33.56.1  2005/12/06 20:49:50  nano
- *	LowLatencyPrepareBuffer now returns data, so changed the API.  Boolean to keep track whether our controller needs contig. phys memory for isoch
- *	
- *	Revision 1.33  2005/08/11 03:55:40  nano
- *	Merge branch into TOT to allow user clients to run when called from Rosetta
- *	
- *	Revision 1.32.2.1  2005/08/09 20:30:55  nano
- *	<rdar://problem/4209688> Chardonnay: Modify IOUSBFamily to allow users clients to operate under Rosetta
- *	
- *	Revision 1.32  2005/08/04 20:58:45  nano
- *	Fold in fixes from Rosetta branch into TOT
- *	
- *	Revision 1.31.24.1  2005/08/03 04:54:26  nano
- *	Pass into the user client whether the task is running in Rosetta or not, so we can do appropriate swapping for async calls
- *	
- *	Revision 1.31  2005/05/02 05:38:10  nano
- *	gcc 4.0 fixes
- *	
- *	Revision 1.30.94.1  2005/04/19 04:52:58  nano
- *	Fixes to compile with gcc 4.0
- *	
- *	Revision 1.30  2004/05/17 21:42:00  nano
- *	Made the Device and Interface User Clients subclassable.
- *	
- *	Revision 1.29.16.1  2004/05/17 15:57:29  nano
- *	API Changes for Tiger
- *	
- *	Revision 1.29  2004/02/03 22:09:52  nano
- *	Fix <rdar://problem/3548194>: Remove $ Id $ from source files to prevent conflicts
- *	
- *	Revision 1.28  2003/08/20 19:41:45  nano
- *	
- *	Bug #:
- *	New version's of Nima's USB Prober (2.2b17)
- *	3382540  Panther: Ejecting a USB CardBus card can freeze a machine
- *	3358482  Device Busy message with Modems and IOUSBFamily 201.2.14 after sleep
- *	3385948  Need to implement device recovery on High Speed Transaction errors to full speed devices
- *	3377037  USB EHCI: returnTransactions can cause unstable queue if transactions are aborted
- *	
- *	Also, updated most files to use the id/log functions of cvs
- *	
- *	Submitted by: nano
- *	Reviewed by: rhoads/barryt/nano
- *	
- */
-#endif
 
 //================================================================================================
 //
@@ -279,7 +223,10 @@ public:
     virtual void                                free();
     virtual bool                                willTerminate( IOService * provider, IOOptionBits options );
     virtual bool                                didTerminate( IOService * provider, IOOptionBits options, bool * defer );
-  
+#if !(defined(__ppc__) && defined(KPI_10_4_0_PPC_COMPAT))
+    virtual IOReturn							message( UInt32 type, IOService * provider,  void * argument = 0 );
+#endif
+
     // pseudo IOKit methods - these methods are NOT the IOService:: methods, since both IOService::open
     // and IOService::close require an IOService* as the first parameter
     //

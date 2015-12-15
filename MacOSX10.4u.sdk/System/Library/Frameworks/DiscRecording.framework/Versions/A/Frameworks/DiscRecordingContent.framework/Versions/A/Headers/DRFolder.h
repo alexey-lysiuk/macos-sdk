@@ -18,15 +18,15 @@
 /*!
 	@header		DRFolder.h
 	@abstract	Folder objects used in filesystem creation.
-	@discussion	A @link DRFile DRFile @/link object is a subclass of @link //apple_ref/occ/cl/DRFSObject DRFSObject @/link and represents a folder on the 
-				finished disc. @link DRFolder DRFolders @/link can be either a pointer to an existing folder 
-				(residing on a hard drive for example) or can be a "virtual" folder which exists
+	@discussion	A @link DRFolder DRFolder @/link object is a subclass of @link //apple_ref/occ/cl/DRFSObject DRFSObject @/link and represents a folder on the 
+				finished disc. DRFolders can be either a &ldquo;real&rdquo; folder pointing to an existing folder 
+				(residing on a hard drive for example) or can be a &ldquo;virtual&rdquo; folder which exists
 				only on the resulting burned disc. 
-				A DRFolder pointing to an existing folder ("real" folder) cannot have it's 
+				A DRFolder pointing to an existing folder cannot have it's 
 				contents changed - only those files/folders which are children of the actual folder on disk will 
-				be included on the resulting disc. "Virtual" folders are entirely created 
+				be included on the resulting disc. Virtual folders are entirely created 
 				programatically and any virtual folder structure can exist and be burned 
-				to disc. It is possible to convert a "real" folder to a "virtual" folder 
+				to disc. It is possible to convert a real folder to a virtual folder 
 				using the @link //apple_ref/occ/intm/DRFolder/makeVirtual makeVirtual @/link method.
 */
 
@@ -35,13 +35,15 @@
 
 /*!
 	@class		DRFolder
-	@abstract	represents a folder to be created on the disc.
-	@discussion	DRFolders can be either a pointer to an existing folder on disk or can be a "virtual" folder. 
-				A DRFolder pointing to an existing folder cannot have it's contents changed - only
-				those files/folders which are children of the actual folder on disk will 
-				be included on the resulting disc. "Virtual" folders are entirely created 
+	@abstract	Represents a folder to be created on the burned disc.
+	@discussion	DRFolders can be either a &ldquo;real&rdquo; folder pointing to an existing folder 
+				(residing on a hard drive for example) or can be a &ldquo;virtual&rdquo; folder which exists
+				only on the resulting burned disc. 
+				A DRFolder pointing to an existing folder cannot have it's 
+				contents changed - only those files/folders which are children of the actual folder on disk will 
+				be included on the resulting disc. Virtual folders are entirely created 
 				programatically and any virtual folder structure can exist and be burned 
-				to disc. It is possible to convert a "real" folder to a "virtual" folder 
+				to disc. It is possible to convert a real folder to a virtual folder 
 				using the @link //apple_ref/occ/intm/DRFolder/makeVirtual makeVirtual @/link method.
 */
 @interface DRFolder : DRFSObject
@@ -49,7 +51,7 @@
 
 /*! 
    	@method 		folderWithPath:
-   	@abstract		Creates a "real" folder object
+   	@abstract		Creates a real folder object
 	@discussion		Creates and initializes a DRFolder object that will use the folder contents of
 					the folder located at path as a source.
    	@param 			path	The path to an existing file.
@@ -59,7 +61,7 @@
 
 /*! 
    	@method 		initWithPath:
-   	@abstract		Initializes a "real" file object
+   	@abstract		Initializes a real file object
 	@discussion		Initializes a DRFolder object that will use the folder contents of
 					the folder located at path as a source.
    	@param 			path	The path to an existing folder.
@@ -79,7 +81,7 @@
 
 /*! 
    	@method 		virtualFolderWithName:
-   	@abstract		Creates a "virtual" folder object
+   	@abstract		Creates a virtual folder object
 	@discussion		Creates and initializes a DRFolder object that will be populated with 
 					specified @link //apple_ref/occ/cl/DRFile DRFile @/link and DRFolder objects at runtime.
    	@param 			name	The name of the folder on the output disc.
@@ -89,7 +91,7 @@
 
 /*! 
    	@method 		initWithName:
-   	@abstract		Initializes a "virtual" file object
+   	@abstract		Initializes a virtual file object
 	@discussion		Initializes a DRFolder object that will be populated with 
 					specified @link //apple_ref/occ/cl/DRFile DRFile @/link and DRFolder objects at runtime.
    	@param 			name	The name of the folder on the output disc.
@@ -99,7 +101,7 @@
 
 /*! 
    	@method 		makeVirtual
-   	@abstract		Changes the real DRFolder object into a "virtual" DRFolder object.
+   	@abstract		Changes the real DRFolder object into a virtual DRFolder object.
 	@discussion		The virtual folder created in this way is a snapshot of the on-disk
 					folder at the moment of the call.  The newly created virtual folder
 					will contain <b>real</b> folder and file objects corresponding to the
@@ -118,7 +120,7 @@
    	@abstract		Adds an object reference (either a file or folder) as a child of
 					a virtual folder object.
 	@discussion		This method only applies to virtual folders.  Real folders
-					are considered "leaf nodes" and cannot have children.
+					are considered leaf nodes and cannot have children.
 	@param			child	The child to add to the folder
 */
 - (void) addChild:(DRFSObject*)child;
@@ -128,7 +130,7 @@
    	@abstract		Removes an object reference (either a file or folder) as a child of
 					a virtual folder object.
 	@discussion		This method only applies to virtual folders.  Real folders
-					are considered "leaf nodes" and cannot have children.
+					are considered leaf nodes and cannot have children.
 	@param			child	The child to remove from the folder
 */
 - (void) removeChild:(DRFSObject*)child;
@@ -137,11 +139,11 @@
    	@method 		count
    	@abstract		Returns the number of children of a virtual folder. 
    	@discussion		This method returns a
-					"shallow" count of only those children that are immediately contained 
+					shallow count of only those children that are immediately contained 
 					within the virtual folder.
 					
 					This method only applies to virtual folders.  Real folders
-					are considered "leaf nodes" and should not be passed into this call.
+					are considered leaf nodes and should not be messaged with this call.
 	@result			A count of the number of children.
 */
 - (uint32_t) count;
@@ -156,8 +158,8 @@
 					of your display, and in a consistent manner.
 								
 					This function only applies to virtual folders.  Real folders
-					are considered "leaf nodes" and should not be passed into this call.
-	@param			An NSArray of @link //apple_ref/occ/cl/DRFile DRFile @/link and DRFolder objects.
+					are considered leaf nodes and should not be passed into this call.
+	@result			An NSArray of @link //apple_ref/occ/cl/DRFile DRFile @/link and DRFolder objects.
 */
 - (NSArray*) children;
 

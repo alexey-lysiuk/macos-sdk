@@ -25,6 +25,7 @@
 
 #include <sys/types.h>
 #include <net/ethernet.h>
+#include <sys/param.h>
 
 // Sizes and limits
 #define APPLE80211_ADDR_LEN			6
@@ -32,21 +33,37 @@
 #define APPLE80211_MAX_SSID_LEN		32
 #define APPLE80211_MAX_ANTENNAE		4
 #define APPLE80211_MAX_RADIO		4
-#define APPLE80211_MAX_CHANNELS		32
+#define APPLE80211_MAX_CHANNELS		64
 #define APPLE80211_MAX_STATIONS		128
 #define APPLE80211_MAX_VERSION_LEN	256
-#define APPLE80211_MAX_ROM_SIZE		512
+#define APPLE80211_MAX_ROM_SIZE		32768	// 32 KB
 #define APPLE80211_MAX_RSN_IE_LEN	257		// 255 + type and length bytes
+#define APPLE80211_MAX_CC_LEN		3
+#define APPLE80211_MAX_MCS_INDEX	76
+#define APPLE80211_MAX_MPDU_FACTOR	3
+#define APPLE80211_MAX_MPDU_DENSITY	7
+
+#define APPLE80211_MAP_SIZE( _bits ) (roundup( _bits, NBBY )/NBBY)
 
 enum apple80211_phymode {
-	APPLE80211_MODE_UNKNOWN = 0,
-	APPLE80211_MODE_AUTO	= 0x1,		// autoselect
-	APPLE80211_MODE_11A		= 0x2,		// 5GHz, OFDM
-	APPLE80211_MODE_11B		= 0x4,		// 2GHz, CCK
-	APPLE80211_MODE_11G		= 0x8,		// 2GHz, OFDM
-	APPLE80211_MODE_11N		= 0x10,		// 5GHz, OFDM?
-	APPLE80211_MODE_TURBO_A	= 0x20,		// 5GHz, OFDM, 2x clock
-	APPLE80211_MODE_TURBO_G	= 0x40,		// 2GHz, OFDM, 2x clock
+	APPLE80211_MODE_UNKNOWN			= 0,
+	APPLE80211_MODE_AUTO			= 0x1,		// autoselect
+	APPLE80211_MODE_11A				= 0x2,		// 5GHz, OFDM
+	APPLE80211_MODE_11B				= 0x4,		// 2GHz, CCK
+	APPLE80211_MODE_11G				= 0x8,		// 2GHz, OFDM
+	APPLE80211_MODE_11N				= 0x10,		// 2GHz/5GHz, OFDM
+	APPLE80211_MODE_TURBO_A			= 0x20,		// 5GHz, OFDM, 2x clock
+	APPLE80211_MODE_TURBO_G			= 0x40,		// 2GHz, OFDM, 2x clock
+};
+
+enum apple80211_physubmode {
+	APPLE80211_SUBMODE_UNKNOWN			= 0x0,
+	APPLE80211_SUBMODE_11N_AUTO			= 0x1,	// 11n mode determined by AP capabilities
+	APPLE80211_SUBMODE_11N_LEGACY		= 0x2,	// legacy
+	APPLE80211_SUBMODE_11N_LEGACY_DUP	= 0x4,	// legacy duplicate
+	APPLE80211_SUBMODE_11N_HT			= 0x8,	// high throughput
+	APPLE80211_SUBMODE_11N_HT_DUP		= 0x10,	// high throughput duplicate
+	APPLE80211_SUBMODE_11N_GF			= 0x20,	// green field
 };
 
 // flags
@@ -75,10 +92,11 @@ enum apple80211_state {
 };
 
 enum apple80211_protmode {
-	APPLE80211_PROTMODE_OFF		= 0,	// no protection
-	APPLE80211_PROTMODE_AUTO	= 1,	// auto
-	APPLE80211_PROTMODE_CTS		= 2,	// CTS to self
-	APPLE80211_PROTMODE_RTSCTS	= 3,	// RTS-CTS
+	APPLE80211_PROTMODE_OFF			= 0,	// no protection
+	APPLE80211_PROTMODE_AUTO		= 1,	// auto
+	APPLE80211_PROTMODE_CTS			= 2,	// CTS to self
+	APPLE80211_PROTMODE_RTSCTS		= 3,	// RTS-CTS
+	APPLE80211_PROTMODE_DUAL_CTS	= 4,	// dual CTS
 };
 
 enum apple80211_cipher_type {  
@@ -119,13 +137,34 @@ enum apple80211_authtype_upper
 	APPLE80211_AUTHTYPE_8021X		= 6,	//	802.1x
 };
 
+// Unify association status code and deauth reason codes into a single enum describing
+// common error conditions
 enum apple80211_associate_result
 {
-	APPLE80211_RESULT_RESET				= 0,	// No result yet available
-	APPLE80211_RESULT_SUCCESS			= 1,	// Success
-	APPLE80211_RESULT_INVALID_PARAMS	= 2,	// Invalid association parameters
-	APPLE80211_RESULT_TIMEOUT			= 3,	// Association timed out
-	APPLE80211_RESULT_REFUSED			= 4,	// Association request refused
+	APPLE80211_RESULT_UNAVAILABLE				= 0,  // No association/authentication result ready
+	APPLE80211_RESULT_SUCCESS					= 1,  // APPLE80211_STATUS_SUCCESS and no deauth
+	APPLE80211_RESULT_UNSPECIFIED_FAILURE		= 2,  // APPLE80211_STATUS_UNSPECIFIED_FAILURE
+	APPLE80211_RESULT_UNSUPPORTED_CAPAPBILITIES = 3,  // APPLE80211_STATUS_UNSUPPORTED_CAPABILITIES
+	APPLE80211_RESULT_REASSOCIATION_DENIED		= 4,  // APPLE80211_STATUS_REASSOCIATION_DENIED
+	APPLE80211_RESULT_ASSOCIATION_DENIED		= 5,  // APPLE80211_STATUS_ASSOCIATION_DENIED
+	APPLE80211_RESULT_AUTH_ALG_UNSUPPORTED		= 6,  // APPLE80211_STATUS_AUTH_ALG_UNSUPPORTED
+	APPLE80211_RESULT_INVALID_AUTH_SEQ_NUM		= 7,  // APPLE80211_STATUS_INVALID_AUTH_SEQ_NUM
+	APPLE80211_RESULT_CHALLENGE_FAILURE			= 8,  // APPLE80211_STATUS_CHALLENGE_FAILURE
+	APPLE80211_RESULT_TIMEOUT					= 9,  // APPLE80211_STATUS_TIMEOUT
+	APPLE80211_RESULT_AP_FULL					= 10, // APPLE80211_STATUS_AP_FULL
+	APPLE80211_RESULT_UNSUPPORTED_RATE_SET		= 11, // APPLE80211_STATUS_UNSUPPORTED_RATE_SET
+	APPLE80211_RESULT_SHORT_SLOT_UNSUPPORTED	= 12, // APPLE80211_STATUS_SHORT_SLOT_UNSUPPORTED
+	APPLE80211_RESULT_DSSS_OFDM_UNSUPPORTED		= 13, // APPLE80211_STATUS_DSSS_OFDM_UNSUPPORTED
+	APPLE80211_RESULT_INVALID_IE				= 14, // APPLE80211_STATUS_INVALID_IE
+	APPLE80211_RESULT_INVALID_GROUP_CIPHER		= 15, // APPLE80211_STATUS_INVALID_GROUP_CIPHER
+	APPLE80211_RESULT_INVALID_PAIRWISE_CIPHER	= 16, // APPLE80211_STATUS_INVALID_PAIRWISE_CIPHER
+	APPLE80211_RESULT_INVALID_AKMP				= 17, // APPLE80211_STATUS_INVALID_AKMP
+	APPLE80211_RESULT_UNSUPPORTED_RSN_VERSION	= 18, // APPLE80211_STATUS_UNSUPPORTED_RSN_VERSION
+	APPLE80211_RESULT_INVALID_RSN_CAPABILITIES	= 19, // APPLE80211_STATUS_INVALID_RSN_CAPABILITIES
+	APPLE80211_RESULT_CIPHER_SUITE_REJECTED		= 20, // APPLE80211_STATUS_CIPHER_SUIT_REJECTED
+	APPLE80211_RESULT_INVALID_PMK				= 21, // APPLE80211_REASON_PREV_AUTH_EXPIRED received
+	APPLE80211_RESULT_SUPPLICANT_TIMEOUT		= 22, // RSNSupplicant did not finish handshake
+	APPLE80211_RESULT_UNKNOWN					= 0xffff // Unrecognized error condition
 };
 
 enum apple80211_unit
@@ -137,21 +176,19 @@ enum apple80211_unit
 
 enum apple80211_power_state
 {
-	APPLE80211_POWER_OFF	= 0,
-	APPLE80211_POWER_ON		= 1,
+	APPLE80211_POWER_OFF	= 0,	//	Chain disabled
+	APPLE80211_POWER_ON		= 1,	//	Chain powered on for tx and rx
+	APPLE80211_POWER_TX		= 2,	//	Chain powered on for tx only
+	APPLE80211_POWER_RX		= 3,	//	Chain powered on for rx only
 };
 
 enum apple80211_locale
 {
 	APPLE80211_LOCALE_UNKNOWN	= 0,
-	APPLE80211_LOCALE_USA		= 1,
-	APPLE80211_LOCALE_EUROPE	= 2,
-	APPLE80211_LOCALE_ISRAEL	= 3,
-	APPLE80211_LOCALE_THAILAND	= 4,
-	APPLE80211_LOCALE_JORDAN	= 5,
-	APPLE80211_LOCALE_JAPAN		= 6,
-	APPLE80211_LOCALE_CHINA		= 7,
-	APPLE80211_LOCALE_WORLD		= 8,
+	APPLE80211_LOCALE_FCC		= 1,
+	APPLE80211_LOCALE_ETSI		= 2,
+	APPLE80211_LOCALE_JAPAN		= 3,
+	APPLE80211_LOCALE_KOREA		= 4,
 };
 
 enum apple80211_scan_type
@@ -170,18 +207,26 @@ enum apple80211_int_mit {
 
 enum apple80211_channel_flag
 {
-	APPLE80211_C_FLAG_NONE	= 0x0,	// no flags
-	APPLE80211_C_FLAG_10MHZ	= 0x1,	// 10 MHz wide
-	APPLE80211_C_FLAG_20MHZ = 0x2,	// 20 MHz wide
-	APPLE80211_C_FLAG_40MHZ = 0x3,	// 40 MHz wide
-	APPLE80211_C_FLAG_2GHZ	= 0x8,	// 2.4 GHz
-	APPLE80211_C_FLAG_5GHZ	= 0x10,	// 5 GHz
+	APPLE80211_C_FLAG_NONE		= 0x0,		// no flags
+	APPLE80211_C_FLAG_10MHZ		= 0x1,		// 10 MHz wide
+	APPLE80211_C_FLAG_20MHZ		= 0x2,		// 20 MHz wide
+	APPLE80211_C_FLAG_40MHZ		= 0x4,		// 40 MHz wide
+	APPLE80211_C_FLAG_2GHZ		= 0x8,		// 2.4 GHz
+	APPLE80211_C_FLAG_5GHZ		= 0x10,		// 5 GHz
+	APPLE80211_C_FLAG_IBSS		= 0x20,		// IBSS supported
+	APPLE80211_C_FLAG_HOST_AP	= 0x40,		// HOST AP mode supported
+	APPLE80211_C_FLAG_ACTIVE	= 0x80,		// active scanning supported
+	APPLE80211_C_FLAG_DFS		= 0x100,	// DFS required
+	APPLE80211_C_FLAG_EXT_ABV	= 0x200,	// If 40 Mhz, extension channel above.
+											// If this flag is not set, then the
+											// extension channel is below.
 };
 
 enum apple80211_rate_flag
 {
 	APPLE80211_RATE_FLAG_NONE	= 0x0,	// no flags
 	APPLE80211_RATE_FLAG_BASIC	= 0x1,	// basic rate
+	APPLE80211_RATE_FLAG_HT		= 0x2,	// HT rate computed from MCS index
 };
 
 enum apple80211_short_slot_mode
@@ -193,11 +238,33 @@ enum apple80211_short_slot_mode
 
 enum apple80211_powersave_mode
 {
-	APPLE80211_POWERSAVE_MODE_DISABLED	= 0,
-	APPLE80211_POWERSAVE_MODE_80211		= 1,
-	APPLE80211_POWERSAVE_MODE_VENDOR	= 2,	//	Vendor specific mode, there should be
-};												//  more general apple modes in the future.
-												//  Vendor modes also likely require more info.
+	// Standard modes
+	APPLE80211_POWERSAVE_MODE_DISABLED		= 0,
+	APPLE80211_POWERSAVE_MODE_80211			= 1,
+	APPLE80211_POWERSAVE_MODE_VENDOR		= 2,	//	Vendor specific mode, there should be
+													//  more general apple modes in the future.
+													//  Vendor modes also likely require more info.
+	// Mimo modes
+	APPLE80211_POWERSAVE_MODE_MIMO_STATIC	= 3,
+	APPLE80211_POWERSAVE_MODE_MIMO_DYNAMIC	= 4,
+	APPLE80211_POWERSAVE_MODE_MIMO_MIMO		= 5,
+};
+
+enum apple80211_debug_flag
+{
+	APPLE80211_DEBUG_FLAG_NONE			= 0x0,	// No logging
+	APPLE80211_DEBUG_FLAG_INFORMATIVE	= 0x1,	// Log "interesting" events
+	APPLE80211_DEBUG_FLAG_ERROR			= 0x2,	// Log errors
+	APPLE80211_DEBUG_FLAG_RSN			= 0x4,	// Full RSN supplicant logging
+	APPLE80211_DEBUG_FLAG_SCAN			= 0x8,	// Scan events and information
+};
+
+enum apple80211_guard_interval
+{
+	APPLE80211_GI_SHORT	=	400,	// ns
+	APPLE80211_GI_LONG	=	800,	// ns
+};
+												
 #define APPLE80211_RSC_LEN				 8
 #define APPLE80211_KEY_BUFF_LEN			32
 
@@ -272,6 +339,72 @@ struct apple80211_rate
 #define APPLE80211_REASON_INVALID_RSN_CAPS	22
 #define APPLE80211_REASON_8021X_AUTH_FAILED 23
 
+// Status codes IEEE 7.3.1.9
+#define APPLE80211_STATUS_SUCCESS					0
+#define APPLE80211_STATUS_UNSPECIFIED_FAILURE		1
+// 2-9 reserved
+#define APPLE80211_STATUS_UNSUPPORTED_CAPABILITIES	10
+#define APPLE80211_STATUS_REASSOCIATION_DENIED		11
+#define APPLE80211_STATUS_ASSOCIATION_DENIED		12
+#define APPLE80211_STATUS_AUTH_ALG_UNSUPPORTED		13
+#define	APPLE80211_STATUS_INVALID_AUTH_SEQ_NUM		14
+#define APPLE80211_STATUS_CHALLENGE_FAILURE			15
+#define APPLE80211_STATUS_TIMEOUT					16
+#define APPLE80211_STATUS_AP_FULL					17
+#define APPLE80211_STATUS_UNSUPPORTED_RATE_SET		18
+// 22-24 reserved
+#define APPLE80211_STATUS_SHORT_SLOT_UNSUPPORTED	25
+#define APPLE80211_STATUS_DSSS_OFDM_UNSUPPORTED		26
+// 27-39 reserved
+#define APPLE80211_STATUS_INVALID_IE				40
+#define APPLE80211_STATUS_INVALID_GROUP_CIPHER		41
+#define APPLE80211_STATUS_INVALID_PAIRWISE_CIPHER	42
+#define APPLE80211_STATUS_INVALID_AKMP				43
+#define APPLE80211_STATUS_UNSUPPORTED_RSN_VERSION	44
+#define APPLE80211_STATUS_INVALID_RSN_CAPABILITIES	45
+#define APPLE80211_STATUS_CIPHER_SUITE_REJECTED		46
+// 47 - 65535 reserved
+#define APPLE80211_STATUS_UNAVAILABLE				0xffff
+
+// If mcs index is set to APPLE80211_MCS_INDEX_AUTO, the interface
+// should go to auto rate selection, and abandon any previously 
+// configured static MCS indices
+#define APPLE80211_MCS_INDEX_AUTO	0xffffffff
+
+/*
+DSCP TOS/Traffic class values for WME access categories taken from 
+WiFi WMM Test Plan v 1.3.1 Appendix C.
+
+TOS/Traffic class field looks like:
+
+  0   1   2   3   4   5   6   7
++---+---+---+---+---+---+---+---+
+|          DSCP         |  ECN  |
++---+---+---+---+---+---+---+---+
+
+These bits are numbered according to rfc 2474, but might be misleading.
+It looks like bit 0 is actually the high order bit.
+*/
+
+#define APPLE80211_DSCP_WME_BE	0x00
+#define	APPLE80211_DSCP_WME_BK	0x08
+#define APPLE80211_DSCP_WME_VI	0x28
+#define APPLE80211_DSCP_WME_VO	0x38
+
+// Access category values set in the mbuf
+#define APPLE80211_WME_AC_BE	0
+#define APPLE80211_WME_AC_BK	1
+#define APPLE80211_WME_AC_VI	2
+#define APPLE80211_WME_AC_VO	3
+
+// Working within the limitations of the kpi mbuf routines, the receive interface pointer 
+// is the best place to put this for now since it is not used on the output path. The mbuf 
+// kpi doesn't allow us to access unused flags, or I would put the WME AC in there like 
+// everyone else.
+
+#define APPLE80211_MBUF_SET_WME_AC( m, ac ) mbuf_pkthdr_setrcvif( m, (ifnet_t)ac )
+#define APPLE80211_MBUF_WME_AC( m ) (int)mbuf_pkthdr_rcvif( m )
+
 struct apple80211_scan_result
 {
 	u_int32_t					version;
@@ -333,23 +466,38 @@ enum apple80211_card_capability
 #define APPLE80211_CAP_MAX	18
 
 // Kernel messages
-#define APPLE80211_M_POWER_CHANGED		1
-#define APPLE80211_M_SSID_CHANGED		2
-#define APPLE80211_M_BSSID_CHANGED		3
-#define APPLE80211_M_LINK_CHANGED		4
-#define APPLE80211_M_MIC_ERROR_UCAST	5
-#define APPLE80211_M_MIC_ERROR_MCAST	6
-#define APPLE80211_M_INT_MIT_CHANGED	7
-#define APPLE80211_M_MODE_CHANGED		8
-#define APPLE80211_M_ASSOC_DONE			9
-#define APPLE80211_M_SCAN_DONE			10
+#define APPLE80211_M_POWER_CHANGED			1
+#define APPLE80211_M_SSID_CHANGED			2
+#define APPLE80211_M_BSSID_CHANGED			3
+#define APPLE80211_M_LINK_CHANGED			4
+#define APPLE80211_M_MIC_ERROR_UCAST		5
+#define APPLE80211_M_MIC_ERROR_MCAST		6
+#define APPLE80211_M_INT_MIT_CHANGED		7
+#define APPLE80211_M_MODE_CHANGED			8
+#define APPLE80211_M_ASSOC_DONE				9
+#define APPLE80211_M_SCAN_DONE				10
+#define APPLE80211_M_COUNTRY_CODE_CHANGED	11
 
-#define APPLE80211_M_MAX				10
+#define APPLE80211_M_MAX					11
+#define APPLE80211_M_BUFF_SIZE				APPLE80211_MAP_SIZE( APPLE80211_M_MAX )
 
 struct apple80211_status_msg
 {
-	u_int8_t stat_msgs[ APPLE80211_M_MAX ];
+	u_int8_t stat_msgs[APPLE80211_M_BUFF_SIZE];
 };
+
+// Registry Information
+#define APPLE80211_REGKEY_HARDWARE_VERSION	"IO80211HardwareVersion"
+//#define APPLE80211_REG_FIRMWARE_VERSION	"IO80211FirmwareVersion"
+#define APPLE80211_REGKEY_DRIVER_VERSION	"IO80211DriverVersion"
+#define APPLE80211_REGKEY_LOCALE			"IO80211Locale"
+#define APPLE80211_REGKEY_SSID				"IO80211SSID"
+#define APPLE80211_REGKEY_CHANNEL			"IO80211Channel"
+#define APPLE80211_REGKEY_EXT_CHANNEL		"IO80211ExtensionChannel"
+#define APPLE80211_REGKEY_BAND				"IO80211Band"
+	#define APPLE80211_BAND_2GHZ			"2 GHz"
+	#define APPLE80211_BAND_5GHZ			"5 GHz"
+#define APPLE80211_REGKEY_COUNTRY_CODE		"IO80211CountryCode"
 
 // Userland messages
 #define APPLE80211_M_RSN_AUTH_SUCCESS			254

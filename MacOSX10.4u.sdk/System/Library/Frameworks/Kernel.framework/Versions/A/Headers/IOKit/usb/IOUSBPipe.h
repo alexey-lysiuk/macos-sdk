@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1998-2003 Apple Computer, Inc. All rights reserved.
+ * Copyright (c) 1998-2006 Apple Computer, Inc. All rights reserved.
  *
  * @APPLE_LICENSE_HEADER_START@
  * 
@@ -20,62 +20,6 @@
  * @APPLE_LICENSE_HEADER_END@
  */
 
-#ifndef __OPEN_SOURCE__
-/*
- *
- *	$Log: IOUSBPipe.h,v $
- *	Revision 1.22  2005/12/07 21:53:32  nano
- *	Bring in fixes from branch PR-4304258 -- Low Latency Audio support in  Yellow
- *	
- *	Revision 1.21.132.1  2005/12/02 20:23:51  nano
- *	We need to know the IOUSBInterface when creating our pipes, as we want to know whether a request came in from a Rosetta client
- *	
- *	Revision 1.21  2005/02/14 04:09:19  nano
- *	Bring branches into TOT
- *	
- *	Revision 1.20.82.1  2005/02/09 16:48:52  nano
- *	Fix for <rdar://problem/3731180> Implement SetPipePolicy() for interrupt endpoints, by saving the speed of the ep when we create it
- *	
- *	Revision 1.20  2004/05/21 16:57:47  nano
- *	Merged branches
- *	
- *	Revision 1.19.2.1  2004/05/20 22:35:33  nano
- *	Change headers back to using IOUSBController instead of IOUSBControllerV2.
- *	
- *	Revision 1.19  2004/05/17 21:52:50  nano
- *	Add timeStamp and useTimeStamp to our commands.
- *	
- *	Revision 1.18.16.1  2004/05/17 15:57:27  nano
- *	API Changes for Tiger
- *	
- *	Revision 1.18  2004/02/03 22:09:49  nano
- *	Fix <rdar://problem/3548194>: Remove $ Id $ from source files to prevent conflicts
- *	
- *	Revision 1.17.46.2  2004/04/28 17:26:09  nano
- *	Remove $ ID $ so that we don't get conflicts on merge
- *	
- *	Revision 1.17.46.1  2003/11/04 22:27:37  nano
- *	Work in progress to add time stamping to interrupt handler
- *	
- *	Revision 1.17  2003/08/21 21:50:09  nano
- *	Remove use of compatibility slot in IOUSBPipe.h -- it's not necessary
- *	
- *	Revision 1.16  2003/08/20 19:41:40  nano
- *	
- *	Bug #:
- *	New version's of Nima's USB Prober (2.2b17)
- *	3382540  Panther: Ejecting a USB CardBus card can freeze a machine
- *	3358482  Device Busy message with Modems and IOUSBFamily 201.2.14 after sleep
- *	3385948  Need to implement device recovery on High Speed Transaction errors to full speed devices
- *	3377037  USB EHCI: returnTransactions can cause unstable queue if transactions are aborted
- *	
- *	Also, updated most files to use the id/log functions of cvs
- *	
- *	Submitted by: nano
- *	Reviewed by: rhoads/barryt/nano
- *	
- */
-#endif
 #ifndef _IOKIT_IOUSBPIPE_H
 #define _IOKIT_IOUSBPIPE_H
 

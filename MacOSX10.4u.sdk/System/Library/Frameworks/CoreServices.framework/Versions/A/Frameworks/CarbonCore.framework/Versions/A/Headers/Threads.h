@@ -3,9 +3,9 @@
  
      Contains:   Thread Manager Interfaces.
  
-     Version:    CarbonCore-682.9~1
+     Version:    CarbonCore-682.14~2
  
-     Copyright:  © 1991-2005 by Apple Computer, Inc., all rights reserved.
+     Copyright:  © 1991-2006 by Apple Computer, Inc., all rights reserved.
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:

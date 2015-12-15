@@ -32,9 +32,12 @@ __BEGIN_DECLS
 void	cpu_machine_init(
 	void);
 
-struct i386_saved_state;
 void	cpu_signal_handler(
-	struct i386_saved_state *regs);
+	x86_saved_state_t *regs);
+
+void	handle_pending_TLB_flushes(
+	void);
+
 
 kern_return_t cpu_register(
         int *slot_nump);

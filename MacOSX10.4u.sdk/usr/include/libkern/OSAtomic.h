@@ -91,7 +91,7 @@ int32_t	OSAtomicAnd32Barrier( uint32_t theMask, uint32_t *theValue );
 int32_t	OSAtomicXor32( uint32_t theMask, uint32_t *theValue );
 int32_t	OSAtomicXor32Barrier( uint32_t theMask, uint32_t *theValue );
 
-#if defined(__ppc64__) || defined(__i386__)
+#if defined(__ppc64__) || defined(__i386__) || defined(__x86_64__)
 
 int64_t	OSAtomicAdd64( int64_t theAmount, int64_t *theValue );
 int64_t	OSAtomicAdd64Barrier( int64_t theAmount, int64_t *theValue );
@@ -110,7 +110,7 @@ inline static
 int64_t	OSAtomicDecrement64Barrier( int64_t *theValue )
             { return OSAtomicAdd64Barrier( -1, theValue); }
 
-#endif  /* defined(__ppc64__) || defined(__i386__) */
+#endif  /* defined(__ppc64__) || defined(__i386__) || defined(__x86_64__) */
 
 
 /* Compare and swap.  They return true if the swap occured.
@@ -118,12 +118,12 @@ int64_t	OSAtomicDecrement64Barrier( int64_t *theValue )
 bool    OSAtomicCompareAndSwap32( int32_t oldValue, int32_t newValue, int32_t *theValue );
 bool    OSAtomicCompareAndSwap32Barrier( int32_t oldValue, int32_t newValue, int32_t *theValue );
 
-#if defined(__ppc64__) || defined(__i386__)
+#if defined(__ppc64__) || defined(__i386__) || defined(__x86_64__)
 
 bool    OSAtomicCompareAndSwap64( int64_t oldValue, int64_t newValue, int64_t *theValue );
 bool    OSAtomicCompareAndSwap64Barrier( int64_t oldValue, int64_t newValue, int64_t *theValue );
 
-#endif  /* defined(__ppc64__) || defined(__i386__) */
+#endif  /* defined(__ppc64__) || defined(__i386__) || defined(__x86_64__) */
 
 
 /* Test and set.  They return the original value of the bit, and operate on bit (0x80>>(n&7))

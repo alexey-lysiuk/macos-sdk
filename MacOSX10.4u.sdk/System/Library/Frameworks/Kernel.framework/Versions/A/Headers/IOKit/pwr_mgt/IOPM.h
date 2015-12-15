@@ -23,10 +23,14 @@
 #define _IOKIT_IOPM_H
 
 #include <IOKit/IOTypes.h>
+#include <IOKit/IOMessage.h>
+#include <IOKit/IOReturn.h>
 
 #ifdef __ppc__
 #include <IOKit/pwr_mgt/IOPMDeprecated.h>
 #endif
+
+
 
 enum {
     kIOPMMaxPowerStates = 10,
@@ -113,8 +117,7 @@ enum {
     IOPMLowestState             = kIOPMLowestState
 };
 
-
- // Commands used by power managment command queue
+// Internal commands used by power managment command queue
 enum {
     kIOPMBroadcastAggressiveness = 1,
     kIOPMUnidleDevice
@@ -125,7 +128,85 @@ enum {
     kIOPMUnknown = 0xFFFF
 };
 
-// Power commands issued to root domain
+/*******************************************************************************
+ *
+ * Root Domain property keys of interest
+ *
+ ******************************************************************************/
+
+/* AppleClamshellState 
+ * reflects the state of the clamshell (lid) on a portable.
+ * It has a boolean value.
+ *  true        == clamshell is closed
+ *  false       == clamshell is open
+ *  not present == no clamshell on this hardware
+ */
+#define kAppleClamshellStateKey             "AppleClamshellState"
+
+/* AppleClamshellCausesSleep 
+ * reflects the clamshell close behavior on a portable. 
+ * It has a boolean value.
+ *  true        == system will sleep when clamshell is closed
+ *  false       == system will not sleep on clamshell close 
+ *                  (typically external display mode)
+ *  not present == no clamshell on this hardware
+ */
+#define kAppleClamshellCausesSleepKey       "AppleClamshellCausesSleep"
+
+/*******************************************************************************
+ *
+ * Root Domain general interest messages
+ *
+ ******************************************************************************/
+
+/* kIOPMMessageClamshellStateChange
+ * Delivered as a general interest notification on the IOPMrootDomain
+ * IOPMrootDomain sends this message when state of either AppleClamshellState
+ * or AppleClamshellCausesSleep changes. If this clamshell change results in
+ * a sleep, the sleep will initiate soon AFTER delivery of this message.
+ * The state of both variables is encoded in a bitfield argument sent with
+ * the message. Check bits 0 and 1 using kClamshellStateBit & kClamshellSleepBit
+ */
+enum {
+    kClamshellStateBit = (1 << 0),
+    kClamshellSleepBit = (1 << 1)
+};
+
+#define kIOPMMessageClamshellStateChange   \
+                iokit_family_msg(sub_iokit_powermanagement, 0x100)
+
+/* kIOPMMessageFeatureChange
+ * Delivered when the set of supported features ("Supported Features" dictionary
+ * under IOPMrootDomain registry) changes in some way. Typically addition or
+ * removal of a supported feature.
+ * RootDomain passes no argument with this message.
+ */
+#define kIOPMMessageFeatureChange           \
+                iokit_family_msg(sub_iokit_powermanagement, 0x110)
+
+/* kIOPMMessageInflowDisableCancelled
+ * The battery has drained completely to its "Fully Discharged" state. 
+ * If a user process has disabled battery inflow for battery 
+ * calibration, we forcibly re-enable Inflow at this point.
+ * If inflow HAS been forcibly re-enabled, bit 0
+ * (kInflowForciblyEnabledBit) will be set.
+ */
+enum {
+    kInflowForciblyEnabledBit = (1 << 0)
+};
+
+#define kIOPMMessageInternalBatteryFullyDischarged  \
+                iokit_family_msg(sub_iokit_powermanagement, 0x120)
+
+
+/*******************************************************************************
+ *
+ * Power commands issued to root domain
+ *
+ * These commands are issued from system drivers only:
+ *      ApplePMU, AppleSMU, IOGraphics, AppleACPIFamily
+ *
+ ******************************************************************************/
 enum {
   kIOPMSleepNow                 = (1<<0),  // put machine to sleep now
   kIOPMAllowSleep               = (1<<1),  // allow idle sleep
@@ -136,7 +217,8 @@ enum {
   kIOPMDisableClamshell         = (1<<6),  // do not sleep on clamshell closure
   kIOPMEnableClamshell          = (1<<7),  // sleep on clamshell closure
   kIOPMProcessorSpeedChange     = (1<<8),  // change the processor speed
-  kIOPMOverTemp                 = (1<<9)   // system dangerously hot
+  kIOPMOverTemp                 = (1<<9),  // system dangerously hot
+  kIOPMClamshellOpened          = (1<<10)  // clamshell was opened
 };
 
 /*******************************************************************************
@@ -186,21 +268,28 @@ enum {
 #define kIOPMPSExternalChargeCapableKey             "ExternalChargeCapable"
 #define kIOPMPSBatteryInstalledKey                  "BatteryInstalled"
 #define kIOPMPSIsChargingKey                        "IsCharging"
+#define kIOPMFullyChargedKey                        "FullyCharged"
 #define kIOPMPSAtWarnLevelKey                       "AtWarnLevel"
 #define kIOPMPSAtCriticalLevelKey                   "AtCriticalLevel"
 #define kIOPMPSCurrentCapacityKey                   "CurrentCapacity"
 #define kIOPMPSMaxCapacityKey                       "MaxCapacity"
+#define kIOPMPSDesignCapacityKey                    "DesignCapacity"
 #define kIOPMPSTimeRemainingKey                     "TimeRemaining"
 #define kIOPMPSAmperageKey                          "Amperage"
 #define kIOPMPSVoltageKey                           "Voltage"
 #define kIOPMPSCycleCountKey                        "CycleCount"
+#define kIOPMPSMaxErrKey                            "MaxErr"
 #define kIOPMPSAdapterInfoKey                       "AdapterInfo"
 #define kIOPMPSLocationKey                          "Location"
 #define kIOPMPSErrorConditionKey                    "ErrorCondition"
 #define kIOPMPSManufacturerKey                      "Manufacturer"
+#define kIOPMPSManufactureDateKey                   "ManufactureDate"
 #define kIOPMPSModelKey                             "Model"
 #define kIOPMPSSerialKey                            "Serial"
+#define kIOPMDeviceNameKey                          "DeviceName"
 #define kIOPMPSLegacyBatteryInfoKey                 "LegacyBatteryInfo"
+#define kIOPMPSBatteryHealthKey                     "BatteryHealth"
+#define kIOPMPSHealthConfidenceKey                  "HealthConfidence"
 
 // Definitions for battery location, in case of multiple batteries.
 // A location of 0 is unspecified
@@ -209,6 +298,28 @@ enum {
     kIOPMPSLocationLeft = 1001,
     kIOPMPSLocationRight = 1002
 };
+
+// Battery quality health types, specified by BatteryHealth and HealthConfidence
+// properties in an IOPMPowerSource battery kext.
+enum {
+    kIOPMUndefinedValue = 0,
+    kIOPMPoorValue      = 1,
+    kIOPMFairValue      = 2,
+    kIOPMGoodValue      = 3
+};
+
+// Battery's time remaining estimate is invalid this long (seconds) after a wake
+#define kIOPMPSInvalidWakeSecondsKey           "BatteryInvalidWakeSeconds"
+
+// Battery must wait this long (seconds) after being completely charged before
+// the battery is settled.
+#define kIOPMPSPostChargeWaitSecondsKey        "PostChargeWaitSeconds"
+
+// Battery must wait this long (seconds) after being completely discharged 
+// before the battery is settled.
+#define kIOPMPSPostDishargeWaitSecondsKey      "PostDischargeWaitSeconds"
+
+
 
 // PM Settings Controller setting types
 // Settings types used primarily with:
@@ -267,7 +378,6 @@ enum {
     kIOPMExternalPower
 };
 
-#define kAppleClamshellStateKey             "AppleClamshellState"
 #define kIOREMSleepEnabledKey               "REMSleepEnabled"
 
 // Strings for deciphering the dictionary returned from IOPMCopyBatteryInfo
@@ -277,6 +387,7 @@ enum {
 #define kIOBatteryFlagsKey                  "Flags"
 #define kIOBatteryVoltageKey                "Voltage"
 #define kIOBatteryAmperageKey               "Amperage"
+#define kIOBatteryCycleCountKey             "Cycle Count"
 
 enum {
     kIOBatteryInstalled         = (1 << 2),

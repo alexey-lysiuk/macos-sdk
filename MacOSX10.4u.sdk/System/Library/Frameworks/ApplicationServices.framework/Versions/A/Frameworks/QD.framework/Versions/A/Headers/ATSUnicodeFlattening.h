@@ -3,9 +3,9 @@
  
      Contains:   Public interfaces for Apple Type Services for Unicode Imaging
  
-     Version:    Quickdraw-192.7~21
+     Version:    Quickdraw-192.20~23
  
-     Copyright:  © 2002-2005 by Apple Computer, Inc., all rights reserved.
+     Copyright:  © 2002-2006 by Apple Computer, Inc., all rights reserved.
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:

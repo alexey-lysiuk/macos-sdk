@@ -91,6 +91,8 @@ typedef integer_t	cpu_threadtype_t;
 #define	CPU_TYPE_MC680x0	((cpu_type_t) 6)
 #define CPU_TYPE_X86		((cpu_type_t) 7)
 #define CPU_TYPE_I386		CPU_TYPE_X86		/* compatibility */
+#define	CPU_TYPE_X86_64		(CPU_TYPE_X86 | CPU_ARCH_ABI64)
+
 /* skip CPU_TYPE_MIPS		((cpu_type_t) 8)	*/
 /* skip 			((cpu_type_t) 9)	*/
 #define CPU_TYPE_MC98000	((cpu_type_t) 10)
@@ -211,6 +213,7 @@ typedef integer_t	cpu_threadtype_t;
  */
 
 #define CPU_SUBTYPE_X86_ALL		((cpu_subtype_t)3)
+#define CPU_SUBTYPE_X86_64_ALL		((cpu_subtype_t)3)
 #define CPU_SUBTYPE_X86_ARCH1		((cpu_subtype_t)4)
 
 
@@ -282,5 +285,21 @@ typedef integer_t	cpu_threadtype_t;
 #define CPU_SUBTYPE_POWERPC_SCVger	((cpu_subtype_t) 11)
 #endif
 #define CPU_SUBTYPE_POWERPC_970		((cpu_subtype_t) 100)
+
+/*
+ *      CPU families (sysctl hw.cpufamily)
+ *
+ * NB: the encodings of the CPU families are intentionally arbitrary.
+ * There is no ordering, and you should never try to deduce whether
+ * or not some feature is available based on the family.
+ * Use feature flags (eg, hw.optional.altivec) to test for optional
+ * functionality.
+ */
+#define CPUFAMILY_UNKNOWN    0
+#define CPUFAMILY_POWERPC_G3 0xcee41549
+#define CPUFAMILY_POWERPC_G4 0x77c184ae
+#define CPUFAMILY_POWERPC_G5 0xed76d8aa
+#define CPUFAMILY_INTEL_6_14 0x73d67300  /* Intel Core Solo and Intel Core Duo (32-bit Pentium-M with SSE3) */
+#define CPUFAMILY_INTEL_6_15 0x426f69ef  /* Intel Core 2 */
 
 #endif	/* _MACH_MACHINE_H_ */

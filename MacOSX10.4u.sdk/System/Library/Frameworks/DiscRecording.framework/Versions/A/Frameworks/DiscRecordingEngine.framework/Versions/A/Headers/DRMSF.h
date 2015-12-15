@@ -117,7 +117,7 @@
 	@method		msfByAdding
 	@abstract	Adds an msf to the receiver.
 	@param		msf	The msf to add to the receiver
-	@result		a new DRMSF object totalling the sum of the reciever and msf
+	@result		A new DRMSF object totalling the sum of the reciever and msf
 */
 - (DRMSF*) msfByAdding:(DRMSF*)msf;
 
@@ -140,7 +140,7 @@
 	@method		descriptionWithFormat
 	@abstract	Returns a textual representation of the receiver.
 	@discussion	The format string is very similar to
-				A printf-style format string with %-escaped formatting characters.
+				a printf-style format string with %-escaped formatting characters.
 				
 				<ul>
 				<li>%%	A "%" character</li>
@@ -154,7 +154,7 @@
 				be at least that wide. For example a format specifier of "%02m:%02s" will cause a 
 				DRMSF object representing 3 minutes 9 seconds to be formatted as "03:09". 
 			
-				A formatter is aware of and respects rounding. If a bit of the msf is no zero, but the format
+				A formatter is aware of and respects rounding. If a bit of the msf is not zero, but the format
 				does not display that value, the next higher value will be increased by one to reflect that.
 				Extending our example above, an DRMSF with a value of 3 minutes, 9 seconds, 15 frames using a 
 				format specfier of "%02m:%02s", will be formatted as "03:10" since the 15 frames rounds up the

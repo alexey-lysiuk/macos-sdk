@@ -705,6 +705,13 @@ typedef struct __GLIFunctionDispatchRec
 	void (*framebuffer_renderbuffer_EXT) (GLIContext ctx, GLenum target, GLenum attachment, GLenum renderbuffertarget, GLuint renderbuffer);
 	void (*get_framebuffer_attachment_parameteriv_EXT) (GLIContext ctx, GLenum target, GLenum attachment, GLenum pname, GLint *params);
 	void (*generate_mipmap_EXT) (GLIContext ctx, GLenum target);
+
+	void (*buffer_parameteri_APPLE) (GLIContext ctx, GLenum target, GLenum pname, GLint param);
+	void (*flush_mapped_buffer_range_APPLE) (GLIContext ctx, GLenum target, GLintptrARB offset, GLsizeiptrARB size);
+    
+	void (*program_env_parameters4fv_EXT)(GLIContext ctx, GLenum target, GLuint index, GLsizei count, const GLfloat *params);
+	void (*program_local_parameters4fv_EXT)(GLIContext ctx, GLenum target, GLuint index, GLsizei count, const GLfloat *params);
+
 } GLIFunctionDispatch;
 
 #ifdef __cplusplus

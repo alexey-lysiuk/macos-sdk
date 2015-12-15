@@ -6,6 +6,12 @@
 *  Copyright (c) 2003 Apple Computer, Inc. All rights reserved.
 *
 *	$Log: IOFWDCL.h,v $
+*	Revision 1.12.4.2  2006/04/19 23:16:48  ayanowit
+*	Merge in ChardLondon changes.
+*	
+*	Revision 1.12.4.1.2.1  2006/04/19 17:51:43  ayanowit
+*	Merged in changes for ChardLondon
+*	
 *	Revision 1.12.4.1  2005/08/06 01:31:31  collin
 *	*** empty log message ***
 *	
@@ -157,7 +163,11 @@ class IOFWDCL : public OSObject
 		
 		virtual IOReturn				compile( IODCLProgram & , bool & ) = 0 ;
 		virtual void					link () = 0 ;
-		virtual void					relink ( IOFWDCL * ) = 0 ;
+		
+		OSMetaClassDeclareReservedUnused ( IOFWDCL, 4 ) ;		// used to be relink()
+		
+public :
+			
 		virtual bool					interrupt( bool &, IOFWDCL * & ) = 0 ;
 		virtual void					finalize ( IODCLProgram & ) ;
 		virtual IOReturn				importUserDCL (
@@ -187,6 +197,7 @@ class IOFWDCL : public OSObject
     OSMetaClassDeclareReservedUnused ( IOFWDCL, 1 ) ;
     OSMetaClassDeclareReservedUnused ( IOFWDCL, 2 ) ;
     OSMetaClassDeclareReservedUnused ( IOFWDCL, 3 ) ;
+	//	OSMetaClassDeclareReservedUnused ( ***, 4 ) ;			// used above
 
 } ;
 

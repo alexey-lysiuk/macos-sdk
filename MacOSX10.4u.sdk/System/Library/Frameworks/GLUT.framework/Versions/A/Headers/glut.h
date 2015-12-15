@@ -173,6 +173,7 @@ extern "C" {
 #if (GLUT_API_VERSION >= 3)
 #define GLUT_LUMINANCE			512
 #endif
+#define GLUT_NO_RECOVERY    1024
 
 /* Mouse buttons. */
 #define GLUT_LEFT_BUTTON		0

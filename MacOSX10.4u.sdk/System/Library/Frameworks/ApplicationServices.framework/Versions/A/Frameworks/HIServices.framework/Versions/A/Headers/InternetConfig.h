@@ -3,9 +3,9 @@
  
      Contains:   Internet Config interfaces
  
-     Version:    HIServices-169~50
+     Version:    HIServices-169~377
  
-     Copyright:  © 1999-2005 by Apple Computer, Inc., all rights reserved.
+     Copyright:  © 1999-2006 by Apple Computer, Inc., all rights reserved.
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:

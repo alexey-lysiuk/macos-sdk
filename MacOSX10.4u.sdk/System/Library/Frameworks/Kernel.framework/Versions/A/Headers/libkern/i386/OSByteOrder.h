@@ -43,8 +43,7 @@ _OSSwapInt16(
     uint16_t        data
 )
 {
-    __asm__ ("rolw   $8, %w0" : "+r" (data));
-    return data;
+    return ((data << 8) | (data >> 8));
 }
 
 OS_INLINE
@@ -57,6 +56,7 @@ _OSSwapInt32(
     return data;
 }
 
+#if defined(__i386__)
 OS_INLINE
 uint64_t
 _OSSwapInt64(
@@ -69,6 +69,19 @@ _OSSwapInt64(
              : "+A" (data));
     return data;
 }
+#elif defined(__x86_64__)
+OS_INLINE
+uint64_t
+_OSSwapInt64(
+    uint64_t        data
+)
+{
+    __asm__ ("bswap   %0" : "+r" (data));
+    return data;
+}
+#else
+#error Unknown architecture
+#endif
 
 /* Functions for byte reversed loads. */
 

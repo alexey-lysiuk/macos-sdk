@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1998-2003 Apple Computer, Inc. All rights reserved.
+ * Copyright (c) 1998-2006 Apple Computer, Inc. All rights reserved.
  *
  * @APPLE_LICENSE_HEADER_START@
  * 
@@ -20,93 +20,6 @@
  * 
  * @APPLE_LICENSE_HEADER_END@
  */
-#ifndef __OPEN_SOURCE__
-/*
- *
- *	$Log: IOUSBHIDDriver.h,v $
- *	Revision 1.39  2005/10/25 22:22:09  nano
- *	Change back _abortExpected to the original _deviceIsDead so we don't brake our subclassing kexts.  #define it in the .cpp to something that makes sense
- *	
- *	Revision 1.38  2005/10/25 15:20:30  nano
- *	Bring in branches to TOT
- *	
- *	Revision 1.37.118.2  2005/10/20 05:03:24  nano
- *	Implement the timeout on PortSuspend and reset the data toggle before suspending
- *	
- *	Revision 1.37.118.1  2005/10/14 20:23:34  nano
- *	New branch for rdar://4150399 on top of latest
- *	
- *	Revision 1.37.104.1  2005/09/12 16:44:42  nano
- *	In order to add support for subclasses to implement port suspend, add an API that will do that, aborting the pending reads first and rearming them upon resume
- *	
- *	Revision 1.37  2004/12/20 19:02:57  nano
- *	Update from branch to call handleReportWithTime
- *	
- *	Revision 1.36.64.1  2004/12/20 18:25:08  nano
- *	Call handleReportWithTime(), instead of just plain handleReport
- *	
- *	Revision 1.36  2004/05/28 04:25:32  nano
- *	Merged branch to implement the country code
- *	
- *	Revision 1.35.2.1  2004/05/28 02:48:34  nano
- *	Implement newCountryCodeNumber
- *	
- *	Revision 1.35  2004/05/21 16:57:47  nano
- *	Merged branches
- *	
- *	Revision 1.34.2.1  2004/05/20 22:32:10  nano
- *	If we get an unsupported error from our new read (with time stamp), issue the old read.
- *	
- *	Revision 1.34  2004/05/17 21:42:47  nano
- *	Use new Read() that includes a timestamp.
- *	
- *	Revision 1.33.6.1  2004/05/17 15:57:28  nano
- *	API Changes for Tiger
- *	
- *	Revision 1.33  2004/03/29 18:41:21  nano
- *	Fix for rdar://3602420 by calling handleReport on a callout thread
- *	
- *	Revision 1.32.4.1  2004/03/26 22:53:48  nano
- *	Fix rdar://3602420 by calling handleReport on a callout thread so that we don't block the USB workloop if somebody (HID System) blocks us
- *	
- *	Revision 1.32  2004/03/03 21:57:18  nano
- *	Fix to rdar://3544116: 8A44:mouse sometimes frozen on wake from sleep by reverting to the previous behavior of clearing a stall on a callout thread.
- *	
- *	Revision 1.31.8.1  2004/03/01 17:06:01  nano
- *	Clear pipe stalls on a callout thread, as we did before.
- *	
- *	Revision 1.31  2004/02/03 22:09:51  nano
- *	Fix <rdar://problem/3548194>: Remove $ Id $ from source files to prevent conflicts
- *	
- *	Revision 1.30  2003/12/02 16:32:59  nano
- *	3437485  7B81 Panic in IOUSBHIDDriver after loading mouse on boot
- *	3496814  Merlot: Credit Card swiper stopped working in Panther
- *	
- *	Revision 1.29.6.1  2003/11/11 17:54:18  nano
- *	Fix #3437485 by assigning our command gate to a local variable until we are ready to exit the start() method.  This will avoid a race where we would assume that the gate was already added as an event source before it actually was
- *	
- *	Revision 1.29  2003/10/14 21:09:33  nano
- *	Add personality for FlashGate device (#3249559).  Add personality to test fix to make interface open call thru runAction (for US Internal USB Modem).
- *	
- *	Revision 1.28.40.1  2003/09/25 19:44:25  nano
- *	Remove separate threads to clear endpoint as we now can do it on the calling thread.
- *	
- *	Revision 1.28  2003/08/20 19:41:44  nano
- *	
- *	Bug #:
- *	New version's of Nima's USB Prober (2.2b17)
- *	3382540  Panther: Ejecting a USB CardBus card can freeze a machine
- *	3358482  Device Busy message with Modems and IOUSBFamily 201.2.14 after sleep
- *	3385948  Need to implement device recovery on High Speed Transaction errors to full speed devices
- *	3377037  USB EHCI: returnTransactions can cause unstable queue if transactions are aborted
- *	
- *	Also, updated most files to use the id/log functions of cvs
- *	
- *	Submitted by: nano
- *	Reviewed by: rhoads/barryt/nano
- *	
- */
-#endif
 
 #ifndef IOUSBHIDDRIVER_H
 #define IOUSBHIDDRIVER_H
@@ -233,7 +146,10 @@ public:
     virtual bool		start(IOService * provider);
     virtual bool		didTerminate( IOService * provider, IOOptionBits options, bool * defer );
     virtual bool		willTerminate( IOService * provider, IOOptionBits options );
+    virtual void		stop(IOService *  provider);
+#if !(defined(__ppc__) && defined(KPI_10_4_0_PPC_COMPAT))
     virtual void		free();
+#endif
     virtual IOReturn 	message( UInt32 type, IOService * provider,  void * argument = 0 );
     
 
@@ -303,6 +219,7 @@ public:
     OSMetaClassDeclareReservedUsed(IOUSBHIDDriver,  0);
     virtual IOReturn    RearmInterruptRead();
     
+#if !(defined(__ppc__) && defined(KPI_10_4_0_PPC_COMPAT))
     /*!
 		@function SuspendPort
 	 @abstract Suspends the port for this device or optionally sets a timeout to suspend after a period of inactivity.
@@ -321,6 +238,11 @@ public:
 	
     OSMetaClassDeclareReservedUsed(IOUSBHIDDriver,  3);
     virtual void		LogMemReport(UInt8 level, IOMemoryDescriptor * reportBuffer, IOByteCount size);
+#else
+    OSMetaClassDeclareReservedUnused(IOUSBHIDDriver,  1);
+    OSMetaClassDeclareReservedUnused(IOUSBHIDDriver,  2);
+    OSMetaClassDeclareReservedUnused(IOUSBHIDDriver,  3);
+#endif
 
     OSMetaClassDeclareReservedUnused(IOUSBHIDDriver,  4);
     OSMetaClassDeclareReservedUnused(IOUSBHIDDriver,  5);

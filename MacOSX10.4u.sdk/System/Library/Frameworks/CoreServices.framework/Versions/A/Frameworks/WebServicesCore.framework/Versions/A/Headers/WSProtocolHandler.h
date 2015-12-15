@@ -3,9 +3,9 @@
  
      Contains:   WebServicesCore Method implementation API
  
-     Version:    WebServices-26~67
+     Version:    WebServices-26~367
  
-     Copyright:  © 2002-2005 by Apple Computer, Inc., all rights reserved
+     Copyright:  © 2002-2006 by Apple Computer, Inc., all rights reserved
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:

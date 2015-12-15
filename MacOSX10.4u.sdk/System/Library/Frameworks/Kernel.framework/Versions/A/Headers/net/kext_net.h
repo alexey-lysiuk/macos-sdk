@@ -47,9 +47,7 @@
  *  the 'where' NKE.  If the latter is NULL, the flags indicate "first"
  *  or "last"
  */
-#if __DARWIN_ALIGN_POWER
-#pragma options align=power
-#endif
+#pragma pack(4)
 
 struct so_nke
 {	unsigned int nke_handle;
@@ -58,9 +56,7 @@ struct so_nke
 	unsigned long reserved[4];	/* for future use */
 };
 
-#if __DARWIN_ALIGN_POWER
-#pragma options align=reset
-#endif
+#pragma pack()
 
 #endif /* NET_KEXT_NET_H */
 

@@ -20,7 +20,7 @@
  * which different scales in a graphics environment can differ before
  * they should be considered "degenerate".   That is, when one vector is
  * a million times longer than another, changces are that the second will
- * be less than a pixel long, and therefore was probably meant to be
+ * be less than a pixel int, and therefore was probably meant to be
  * degenerate (by the CAD package, etc.)  But what should this tolerance
  * be?  At least 1 in onethousand (since screen sizes are 1K pixels), but
  * les than 1 in 4 million (since this is the limit of single-precision

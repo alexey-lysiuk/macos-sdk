@@ -30,6 +30,16 @@
  * Revision History
  *
  * $Log: IOATABusCommand.h,v $
+ * Revision 1.9  2006/06/17 01:01:19  barras
+ * Bug #: 4588941
+ * Submitted by:
+ * Reviewed by:
+ *
+ * Revision 1.8  2006/06/09 01:37:17  barras
+ * Bug #: 4575901  IOATAFamily changes for support using IODMACommand for 64-bit.
+ * Submitted by: Larry Barras
+ * Reviewed by:
+ *
  * Revision 1.7  2002/11/09 03:46:38  barras
  *
  * Bug #: 3083512, 3090979
@@ -246,6 +256,34 @@ private:
     OSMetaClassDeclareReservedUnused(IOATABusCommand, 18);
     OSMetaClassDeclareReservedUnused(IOATABusCommand, 19);
     OSMetaClassDeclareReservedUnused(IOATABusCommand, 20);
+};
+
+#include <IOKit/IODMACommand.h>
+
+class IOATABusCommand64 : public IOATABusCommand
+{
+
+	OSDeclareDefaultStructors( IOATABusCommand64 )
+	
+	public:
+	
+	// new features
+	static IOATABusCommand64* allocateCmd32(void);	
+	virtual IODMACommand* GetDMACommand( void );
+	
+	
+	
+	// overrides for IODMACommand setup
+	virtual void zeroCommand(void);  	 
+	virtual void setBuffer ( IOMemoryDescriptor* inDesc);
+	virtual void setCommandInUse( bool inUse = true);
+	virtual void executeCallback(void);
+
+
+	protected:
+	IODMACommand* _dmaCmd;
+	virtual bool init();  
+	virtual void free();
 };
 
 #endif /*_IOATABUSCOMMAND_H*/

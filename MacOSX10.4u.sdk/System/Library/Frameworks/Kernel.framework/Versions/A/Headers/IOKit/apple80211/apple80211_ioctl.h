@@ -88,7 +88,6 @@ struct apple80211req
 #define	APPLE80211_IOC_ASSOCIATE				20	// req_type
 #define APPLE80211_IOC_ASSOCIATE_RESULT			21	// req_type
 #define APPLE80211_IOC_DISASSOCIATE				22	// req_type
-
 #define APPLE80211_IOC_STATUS_DEV_NAME			23	// req_type
 
 #define APPLE80211_IOC_IBSS_MODE				24	// req_type
@@ -100,13 +99,11 @@ struct apple80211req
 #define		APPLE80211_IOC_HOST_AP_MODE_STOP	2	// req_val
 
 #define APPLE80211_IOC_AP_MODE					26	// req_type (apple80211_apmode)
-
 #define APPLE80211_IOC_SUPPORTED_CHANNELS		27	// req_type
 #define APPLE80211_IOC_LOCALE					28	// req_type
 #define APPLE80211_IOC_DEAUTH					29  // req_type
 #define APPLE80211_IOC_COUNTERMEASURES			30	// req_type
 #define APPLE80211_IOC_FRAG_THRESHOLD			31	// req_type
-
 #define APPLE80211_IOC_RATE_SET					32	// req_type
 #define APPLE80211_IOC_SHORT_SLOT				33	// req_type
 #define APPLE80211_IOC_MULTICAST_RATE			34	// req_type
@@ -121,14 +118,27 @@ struct apple80211req
 #define APPLE80211_IOC_DRIVER_VERSION			43	// req_type
 #define APPLE80211_IOC_HARDWARE_VERSION			44	// req_type
 #define APPLE80211_IOC_RAND						45	// req_type
-
 #define APPLE80211_IOC_RSN_IE					46	// req_type
-
 #define APPLE80211_IOC_BACKGROUND_SCAN			47	// req_type
-
 #define APPLE80211_IOC_AP_IE_LIST				48	// req_type
-
 #define APPLE80211_IOC_STATS					49	// req_type
+#define APPLE80211_IOC_ASSOCIATION_STATUS		50  // req_type
+#define APPLE80211_IOC_COUNTRY_CODE				51	// req_type
+#define APPLE80211_IOC_DEBUG_FLAGS				52	// req_type
+#define APPLE80211_IOC_LAST_RX_PKT_DATA			53	// req_type
+#define APPLE80211_IOC_RADIO_INFO				54	// req_type
+#define APPLE80211_IOC_GUARD_INTERVAL			55	// req_type
+#define APPLE80211_IOC_MIMO_POWERSAVE			56	// req_type
+#define APPLE80211_IOC_MCS						57	// req_type
+#define APPLE80211_IOC_RIFS						58	// req_type
+#define APPLE80211_IOC_LDPC						59	// req_type
+#define APPLE80211_IOC_MSDU						60	// req_type
+#define APPLE80211_IOC_MPDU						61	// req_type
+#define APPLE80211_IOC_BLOCK_ACK				62	// req_type
+#define APPLE80211_IOC_PLS						63	// req_type
+#define APPLE80211_IOC_PSMP						64	// req_type
+#define APPLE80211_IOC_PHY_SUB_MODE				65	// req_type
+#define APPLE80211_IOC_MCS_INDEX_SET			66	// req_type
 
 #define APPLE80211_IOC_CARD_SPECIFIC			255	// req_type
 
@@ -173,7 +183,10 @@ struct apple80211_rssi_data
 	u_int32_t	version;
 	u_int32_t	num_radios;
 	u_int32_t	rssi_unit;
-	int32_t		rssi[APPLE80211_MAX_RADIO];
+	int32_t		rssi[APPLE80211_MAX_RADIO];		// control channel
+	int32_t		aggregate_rssi;					// aggregate control channel rssi
+	int32_t		rssi_ext[APPLE80211_MAX_RADIO];	// extension channel rssi
+	int32_t		aggregate_rssi_ext;				// aggregate extension channel rssi
 };
 
 struct apple80211_power_data
@@ -187,6 +200,12 @@ struct apple80211_assoc_result_data
 {
 	u_int32_t	version;
 	u_int32_t	result;
+};
+
+struct apple80211_assoc_status_data
+{
+	u_int32_t	version;
+	u_int32_t	status;
 };
 
 struct apple80211_rate_data
@@ -239,7 +258,10 @@ struct apple80211_noise_data
 	u_int32_t	version;
 	u_int32_t	num_radios;
 	u_int32_t	noise_unit;
-	int32_t		noise[APPLE80211_MAX_RADIO];
+	int32_t		noise[APPLE80211_MAX_RADIO];		// control channel
+	int32_t		aggregate_noise;					// aggregate control channel noise
+	int32_t		noise_ext[APPLE80211_MAX_RADIO];	// extension channel noise
+	int32_t		aggregate_noise_ext;				// aggregate extension channel noise
 };
 
 struct apple80211_intmit_data
@@ -371,8 +393,8 @@ struct apple80211_version_data
 struct apple80211_rom_data
 {
 	u_int32_t	version;
-	u_int16_t	rom_len;
-	u_int8_t	rom[APPLE80211_MAX_ROM_SIZE];
+	u_int32_t	rom_len;
+	u_int8_t	rom[1];	// variable length
 };
 
 struct apple80211_rand_data
@@ -402,6 +424,99 @@ struct apple80211_stats_data
 	u_int32_t	tx_errors;
 	u_int32_t	rx_frame_count;
 	u_int32_t	rx_errors;
+};
+
+struct apple80211_country_code_data
+{
+	u_int32_t	version;
+	u_int8_t	cc[APPLE80211_MAX_CC_LEN];
+};
+
+struct apple80211_last_rx_pkt_data
+{
+	u_int32_t	version;
+	u_int32_t	rate;
+	int32_t		rssi;
+	u_int32_t	num_streams;	// number of spatial streams
+	struct ether_addr sa;		// source address
+};
+
+struct apple80211_radio_info_data
+{
+	u_int32_t	version;
+	u_int32_t	count;		// number of rf chains
+};
+
+struct apple80211_guard_interval_data
+{
+	u_int32_t	version;
+	u_int32_t	interval;	// apple80211_guard_interval
+};
+
+struct apple80211_mcs_data
+{
+	u_int32_t	version;
+	u_int32_t	index;		// 0 to APPLE80211_MAX_MCS_INDEX
+};
+
+struct apple80211_rifs_data
+{
+	u_int32_t	version;
+	u_int32_t	enabled;
+};
+
+struct apple80211_ldpc_data
+{
+	u_int32_t	version;
+	u_int32_t	enabled;
+};
+
+struct apple80211_msdu_data
+{
+	u_int32_t	version;
+	u_int32_t	max_length;		// 3839 or 7935 bytes
+};
+
+struct apple80211_mpdu_data
+{
+	u_int32_t	version;
+	u_int32_t	max_factor;		// 0 - APPLE80211_MAX_MPDU_FACTOR
+	u_int32_t	max_density;	// 0 - APPLE80211_MAX_MPDU_DENSITY
+};
+
+struct apple80211_block_ack_data
+{
+	u_int32_t	version;
+	u_int8_t	ba_enabled;				// block ack enabled
+	u_int8_t	immediate_ba_enabled;	// immediate block ack enabled
+	u_int8_t	cbba_enabled;			// compressed bitmap block ack enabled
+	u_int8_t	implicit_ba_enabled;	// implicit block ack enabled
+};
+
+struct apple80211_pls_data
+{
+	u_int32_t	version;
+	u_int32_t	enabled;	// phy level spoofing enabled
+};
+
+struct apple80211_psmp_data
+{
+	u_int32_t	version;
+	u_int32_t	enabled;
+};
+
+struct apple80211_physubmode_data
+{
+	u_int32_t	version;
+	u_int32_t	phy_mode;		// one apple80211_phymode
+	u_int32_t	phy_submode;	// one apple80211_physubmode
+	u_int32_t	flags;			// apple80211_channel_flag vector
+};
+
+struct apple80211_mcs_index_set_data
+{
+	u_int32_t	version;
+	u_int8_t	mcs_set_map[APPLE80211_MAP_SIZE( APPLE80211_MAX_MCS_INDEX + 1 )];
 };
 
 #endif // _APPLE80211_IOCTL_H_

@@ -3,9 +3,9 @@
  
      Contains:   SearchKit Interfaces.
  
-     Version:    SearchKit-147.2~100
+     Version:    SearchKit-147.2~480
  
-     Copyright:  © 2004-2005 by Apple Computer, Inc., all rights reserved
+     Copyright:  © 2004-2006 by Apple Computer, Inc., all rights reserved
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:

@@ -141,7 +141,7 @@ AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 */
 extern CFURLRef
 DRFSObjectCopyRealURL(
-	const DRFSObjectRef		objectRef)
+	const DRFSObjectRef		object)
 AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
@@ -402,9 +402,9 @@ AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 					
 
 	@param	object				The file or folder object to query.
-	@param	outExplicitMask		On output, contains the object's explicit mask. May be 
+	@param	explicitMask		On output, contains the object's explicit mask. May be 
 								<tt>NULL</tt> on input.
-	@param	outEffectiveMask	On output, contains the object's effective mask. May be 
+	@param	effectiveMask		On output, contains the object's effective mask. May be 
 								<tt>NULL</tt> on input.
 	@result			For convenience, the file or folder object's effective mask is returned.
 */

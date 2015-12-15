@@ -28,7 +28,7 @@
 					@link //apple_ref/occ/instm/DRBurnProgressPanel/beginProgressPanelForBurn:layout: beginProgressPanelForBurn:layout: @/link for a non-modal panel.
 
 					A @link //apple_ref/occ/cl/DRBurnProgressPanel DRBurnProgressPanel @/link sends a 
-					@link //apple_ref/occ/instm/NSObject(DRBurnProgressPanelDelegateMethods)/burnProgressPanel:burnDidFinish: burnProgressPanel:burnDidFinish: @/link message to it's delegate 
+					@link //apple_ref/occ/instm/NSObject/burnProgressPanel:burnDidFinish: burnProgressPanel:burnDidFinish: @/link message to it's delegate 
 					when the burn completes. This method allows the delegate 
 					to take over end-of-burn handling from the burn progress 
 					panel to customize error dialogs or user notification.
@@ -74,7 +74,7 @@ AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 					@link //apple_ref/occ/instm/DRBurnProgressPanel/beginProgressPanelForBurn:layout: beginProgressPanelForBurn:layout: @/link for a non-modal panel.
 
 					A DRBurnProgressPanel sends a 
-					@link //apple_ref/occ/instm/NSObject(DRBurnProgressPanelDelegateMethods)/burnProgressPanel:burnDidFinish: burnProgressPanel:burnDidFinish: @/link message to it's delegate 
+					@link //apple_ref/occ/instm/NSObject/burnProgressPanel:burnDidFinish: burnProgressPanel:burnDidFinish: @/link message to it's delegate 
 					when the burn completes. This method allows the delegate 
 					to take over end-of-burn handling from the burn progress 
 					panel to customize error dialogs or user notification.
@@ -165,7 +165,7 @@ AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 - (void) setVerboseProgressStatus:(BOOL)verbose;
 
 /*!
-	@method			verboseProgressStatus:
+	@method			verboseProgressStatus
 	@abstract		Returns the vebosity of the panel.
 	@discussion		This method will return <i>YES</i> if the panel will update status 
 					for every change and <i>NO</i> if the panel will filter some status 

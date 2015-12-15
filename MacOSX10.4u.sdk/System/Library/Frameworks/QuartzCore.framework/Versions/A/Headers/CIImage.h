@@ -12,16 +12,16 @@
 @interface CIImage : NSObject <NSCoding, NSCopying>
 {
     void *_state;
-    struct CIImagePrivate *_priv;
+    void *_priv;
 }
 
 /* Pixel formats. */
 
 typedef int CIFormat;
 
-extern CIFormat kCIFormatARGB8 AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;		/* 32bpp,  fixed point */
-extern CIFormat kCIFormatRGBA16 AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;		/* 64bpp,  fixed point */
-extern CIFormat kCIFormatRGBAf AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;		/* 128bpp, floating point */
+extern CIFormat kCIFormatARGB8	AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+extern CIFormat kCIFormatRGBA16	AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+extern CIFormat kCIFormatRGBAf	AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 /* Image dictionary keys. */
 
@@ -54,7 +54,7 @@ extern NSString *kCIImageColorSpace AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
  * flipped vertically when referenced. 'cs' defines the color space
  * that the image is defined in, if nil, the texture is not color matched.*/
 
-+ (CIImage *)imageWithTexture:(unsigned long)name size:(CGSize)size
++ (CIImage *)imageWithTexture:(unsigned int)name size:(CGSize)size
     flipped:(BOOL)flag colorSpace:(CGColorSpaceRef)cs;
 
 + (CIImage *)imageWithContentsOfURL: (NSURL *)url;
@@ -66,8 +66,8 @@ extern NSString *kCIImageColorSpace AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 /* Creates a new image whose data is from the contents of a CVImageBuffer. */
 
 + (CIImage *)imageWithCVImageBuffer:(CVImageBufferRef)imageBuffer;
-+ (CIImage *)imageWithCVImageBuffer:(CVImageBufferRef)imageBuffer options:(NSDictionary *)dict;
-
++ (CIImage *)imageWithCVImageBuffer:(CVImageBufferRef)imageBuffer
+    options:(NSDictionary *)dict;
 
 /* Initializers. */
 
@@ -83,15 +83,15 @@ extern NSString *kCIImageColorSpace AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 - (id)initWithBitmapData:(NSData *)d bytesPerRow:(size_t)bpr size:(CGSize)size
     format:(CIFormat)f colorSpace:(CGColorSpaceRef)c;
 
-- (id)initWithTexture:(unsigned long)name size:(CGSize)size flipped:(BOOL)flag
+- (id)initWithTexture:(unsigned int)name size:(CGSize)size flipped:(BOOL)flag
     colorSpace:(CGColorSpaceRef)cs;
 
 - (id)initWithContentsOfURL: (NSURL *)url;
 - (id)initWithContentsOfURL: (NSURL *)url options:(NSDictionary *)d;
 
 - (id)initWithCVImageBuffer:(CVImageBufferRef)imageBuffer;
-- (id)initWithCVImageBuffer:(CVImageBufferRef)imageBuffer options:(NSDictionary *)dict;
-
+- (id)initWithCVImageBuffer:(CVImageBufferRef)imageBuffer
+    options:(NSDictionary *)dict;
 
 /* Returns a new image representing the original image with the transform
  * 'matrix' appended to it. */

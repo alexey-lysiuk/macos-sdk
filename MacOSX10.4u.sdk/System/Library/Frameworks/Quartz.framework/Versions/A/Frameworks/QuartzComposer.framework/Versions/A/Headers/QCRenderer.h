@@ -67,9 +67,9 @@ The "arguments" parameters is used to passed optional arguments to the patches o
 /*
 Returns a dictionary containing attributes describing the composition and the input / output ports on its root patch.
 The dictionary may define the following composition attributes:
-	- QCCompositionAttributeNameKey: the name of the composition as specified in the information dialog in Quartz Composer (NSString*)
-	- QCCompositionAttributeDescriptionKey: the description of the composition as specified in the information dialog in Quartz Composer (NSString*)
-	- QCCompositionAttributeCopyrightKey: the copyright of the composition as specified in the information dialog in Quartz Composer (NSString*)
+	- QCCompositionAttributeNameKey: the name of the composition as specified in the information dialog in Quartz Composer (NSString)
+	- QCCompositionAttributeDescriptionKey: the description of the composition as specified in the information dialog in Quartz Composer (NSString)
+	- QCCompositionAttributeCopyrightKey: the copyright of the composition as specified in the information dialog in Quartz Composer (NSString)
 The dictionary also contains dictionaries corresponding to the keys identifying each input / output port of the root patch of the composition. Each of those dictionaries defines the following port attributes:
 	- QCPortAttributeTypeKey: the type of the port (NSString)
 	- QCPortAttributeNameKey: the name of the port if available (NSString)

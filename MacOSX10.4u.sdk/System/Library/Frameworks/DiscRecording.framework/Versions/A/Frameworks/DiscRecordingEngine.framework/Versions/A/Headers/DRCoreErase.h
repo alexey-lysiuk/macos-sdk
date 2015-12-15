@@ -78,6 +78,7 @@ AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 	@abstract	Begin the erase process.
 	@param		erase		The eraser object that should be started. If this parameter 
 							is not a valid DRErase oject, the behavior is undefined.
+	@result		An error code indicating if the erase could be started.
 */
 extern
 OSStatus DREraseStart(DREraseRef erase)
@@ -89,6 +90,7 @@ AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 	@discussion	This function obtains a reference to a CFDictionary object containing the status of the erase process, including the 
 				percentage complete and any errors reported. The reference is implicitly retained 
 				by the caller. This is the same dictionary sent to observers of @link kDREraseStatusChangedNotification kDREraseStatusChangedNotification @/link.
+	@param		erase		The eraser object that status is wanted on. 
 	@result		Returns a reference to a CFDictionary object. 
 */
 extern

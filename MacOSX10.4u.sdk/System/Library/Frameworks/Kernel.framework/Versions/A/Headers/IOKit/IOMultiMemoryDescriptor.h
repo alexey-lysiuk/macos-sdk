@@ -80,9 +80,6 @@ protected:
     IOMemoryDescriptor::withRanges;                          /* not supported */
     IOMemoryDescriptor::withSubRange;                        /* not supported */
 
-    // used by IODMACommand
-    virtual IOReturn dmaCommandOperation(DMACommandOps op, void *vData, UInt dataSize) const;
-
 public:
 
 /*! @function withDescriptors
@@ -122,6 +119,11 @@ public:
 
     virtual IOPhysicalAddress getPhysicalSegment( IOByteCount   offset,
                                                   IOByteCount * length );
+
+#if !(defined(__ppc__) && defined(KPI_10_4_0_PPC_COMPAT))
+    virtual addr64_t getPhysicalSegment64(        IOByteCount   offset,
+                                                  IOByteCount * length );
+#endif
 
 /*! @function prepare
     @abstract Prepare the memory for an I/O transfer.

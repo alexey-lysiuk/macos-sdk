@@ -230,8 +230,7 @@ typedef struct DRBurnSessionSetupCallbacks	DRBurnSessionSetupCallbacks;
 							This pointer may be <i>NULL</i> if no custom configuration is required.
 	@param		setupCallbacks	A pointer to a structure of type @link DRBurnSessionSetupCallbacks DRBurnSessionSetupCallbacks @/link. 
 								This pointer may be <i>NULL</i> if no custom behavior is desired.
-	@param		resultCode	A pointer to a SInt8 to hold the result code for the setup dialog. 
-							May be one of the constants defined by @link //apple_ref/c/tag/Burn%32Session%32Dialog%32Result%32Codes Burn Session Dialog Result Codes @/link.
+	@result		Returns one of the constants defined by @link //apple_ref/c/tag/Burn%32Session%32Dialog%32Result%32Codes Burn Session Dialog Result Codes @/link.
 */
 extern SInt8
 DRBurnSessionSetupDialog(
@@ -285,10 +284,10 @@ typedef CALLBACK_API( Boolean , DRBurnSessionBurnCompleteProcPtr )(DRBurnSession
 /*!
 	@struct		DRBurnSessionProgressCallbacks
 	@abstract	Callback functions passed to the progress dialog.
-	@field		version					Identifies the version of this structure.
-	@field		deviceShouldBeTarget	Pointer to a DRBurnSessionProgressBeginNotificationProcPtr. The value of this field may be <i>NULL</i>.
-	@field		containsSuitableMedia	Pointer to a DRBurnSessionProgressFinishNotificationProcPtr. The value of this field may be <i>NULL</i>.
-	@field		deviceSelectionChanged	Pointer to a DRBurnSessionBurnCompleteProcPtr. The value of this field may be <i>NULL</i>.
+	@field		version				Identifies the version of this structure.
+	@field		progressWillBegin	Pointer to a DRBurnSessionProgressBeginNotificationProcPtr. The value of this field may be <i>NULL</i>.
+	@field		progressDidFinish	Pointer to a DRBurnSessionProgressFinishNotificationProcPtr. The value of this field may be <i>NULL</i>.
+	@field		burnDidFinish	Pointer to a DRBurnSessionBurnCompleteProcPtr. The value of this field may be <i>NULL</i>.
 */
 struct DRBurnSessionProgressCallbacks {
 	UInt32											version;

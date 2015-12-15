@@ -18,7 +18,7 @@
 
 /*!
 	@header 	DRDevice.h
-	@abstract	Obtain information about cd/dvd burners connected to the computer.
+	@abstract	Obtain information about CD/DVD burners connected to the computer.
 	@discussion	
 				<h3>About Devices</h3>
 				A @link DRDevice DRDevice @/link represents a physical CD/DVD drive connected to the computer. 
@@ -162,6 +162,7 @@
 	@abstract		Returns a dictionary of information describing the device.
 	@discussion		The information returned include the types of media the devive can write to, how 
 					it's connected and it's identifying information such as the vendor and product name.
+	@result			An NSDictionary containing device information.
 */
 - (NSDictionary*) info;
 
@@ -171,6 +172,7 @@
 	@discussion		In addition to information about the media (type, space available/used, etc),
 					the dictionary returned includes those pieces of information about the device 
 					itself which are in part determined by the media (i.e., maximum burn speed).
+	@result			An NSDictionary containing media information.
 */
 - (NSDictionary*) status;
 
@@ -284,7 +286,7 @@
 /*!
 	@method		writesDVD
 	@discussion	Reports the device's ability to burn to DVD-type media.
-	@result		Returns <i>YES</i> if the device has the ability to write to DVD-R media.
+	@result		Returns <i>YES</i> if the device has the ability to write to DVD media.
 */
 - (BOOL) writesDVD;
 
@@ -464,7 +466,7 @@ extern NSString* const DRDeviceDisappearedNotification	AVAILABLE_MAC_OS_X_VERSIO
 				etc. 
 				
 				The object for this notification is the device who's media is changing state.
-				The userInfo for this notification is the same dictionary returned by <b>status</b> for 
+				The userInfo for this notification is the same dictionary returned by @link //apple_ref/occ/instm/DRDevice/status status @/link for 
 				that device. 
 */
 extern NSString* const DRDeviceStatusChangedNotification	AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
@@ -485,7 +487,7 @@ extern NSString* const DRDeviceSupportLevelKey					AVAILABLE_MAC_OS_X_VERSION_10
 /*!
 	@const		DRDeviceIORegistryEntryPathKey
 	@discussion	One of the keys in the dictionary returned by the @link //apple_ref/occ/instm/DRDevice/info info @/link method.
-				NString containing the path of the device in the IO Registry.
+				NSString containing the path of the device in the IO Registry.
 */
 extern NSString* const DRDeviceIORegistryEntryPathKey			AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
@@ -499,35 +501,35 @@ extern NSString* const DRDeviceWriteCapabilitiesKey				AVAILABLE_MAC_OS_X_VERSIO
 /*!
 	@const		DRDeviceVendorNameKey
 	@discussion	One of the keys in the dictionary returned by the @link //apple_ref/occ/instm/DRDevice/info info @/link method.
-				NString containing the vendor name extracted from the device.
+				NSString containing the vendor name extracted from the device.
 */
 extern NSString* const DRDeviceVendorNameKey					AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 /*!
 	@const		DRDeviceProductNameKey
 	@discussion	One of the keys in the dictionary returned by the @link //apple_ref/occ/instm/DRDevice/info info @/link method.
-				NString containing the product name extracted from the device.
+				NSString containing the product name extracted from the device.
 */
 extern NSString* const DRDeviceProductNameKey					AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 /*!
 	@const		DRDeviceFirmwareRevisionKey
 	@discussion	One of the keys in the dictionary returned by the @link //apple_ref/occ/instm/DRDevice/info info @/link method.
-				NString containing the firmeware revision extracted from the device.
+				NSString containing the firmeware revision extracted from the device.
 */
 extern NSString* const DRDeviceFirmwareRevisionKey				AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 /*!
 	@const		DRDevicePhysicalInterconnectKey
 	@discussion	One of the keys in the dictionary returned by the @link //apple_ref/occ/instm/DRDevice/info info @/link method.
-				NString describing the connection of the device to the computer.
+				NSString describing the connection of the device to the computer.
 */
 extern NSString* const DRDevicePhysicalInterconnectKey			AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 /*!
 	@const		DRDevicePhysicalInterconnectLocationKey
 	@discussion	One of the keys in the dictionary returned by the @link //apple_ref/occ/instm/DRDevice/info info @/link method.
-				NString describing the location of the device (internal/external/unknown).
+				NSString describing the location of the device (e.g. internal/external).
 */
 extern NSString* const DRDevicePhysicalInterconnectLocationKey	AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
@@ -637,21 +639,21 @@ extern NSString* const DRDevicePhysicalInterconnectUSB			AVAILABLE_MAC_OS_X_VERS
 /* Physical interconnect locations */
 /*!
 	@const		DRDevicePhysicalInterconnectLocationInternal
-	@discussion	One of the possible values of the DRDevicePhysicalInterconnectLocationKey.
+	@discussion	One of the possible values of the @link DRDevicePhysicalInterconnectLocationKey DRDevicePhysicalInterconnectLocationKey @/link.
 				Device is connected to the machine internally.
 */
 extern NSString* const DRDevicePhysicalInterconnectLocationInternal		AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 /*!
 	@const		DRDevicePhysicalInterconnectLocationExternal
-	@discussion	One of the possible values of the DRDevicePhysicalInterconnectLocationKey.
+	@discussion	One of the possible values of the @link DRDevicePhysicalInterconnectLocationKey DRDevicePhysicalInterconnectLocationKey @/link.
 				Device is connected to the machine externally.
 */
 extern NSString* const DRDevicePhysicalInterconnectLocationExternal		AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 /*!
 	@const		DRDevicePhysicalInterconnectLocationUnknown
-	@discussion	One of the possible values of the DRDevicePhysicalInterconnectLocationKey.
+	@discussion	One of the possible values of the @link DRDevicePhysicalInterconnectLocationKey DRDevicePhysicalInterconnectLocationKey @/link.
 				It's not known how the device is connected.
 */
 extern NSString* const DRDevicePhysicalInterconnectLocationUnknown		AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
@@ -662,105 +664,105 @@ extern NSString* const DRDevicePhysicalInterconnectLocationUnknown		AVAILABLE_MA
 /*!
 	@const 		DRDeviceCanWriteKey
 	@discussion	One of the keys in the @link DRDeviceWriteCapabilitiesKey DRDeviceWriteCapabilitiesKey @/link dictionary.
-				NSNumber indicating whether the device can write to some type of media.
+				NSNumber containing a boolean value indicating whether the device can write to some type of media.
 */
 extern NSString* const DRDeviceCanWriteKey						AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 /*!
 	@const		DRDeviceCanWriteCDKey
 	@discussion	One of the keys in the @link DRDeviceWriteCapabilitiesKey DRDeviceWriteCapabilitiesKey @/link dictionary.
-				NSNumber indicating whether the device can write to some type of CD based media.
+				NSNumber containing a boolean value indicating whether the device can write to some type of CD based media.
 */
 extern NSString* const DRDeviceCanWriteCDKey					AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 /*!
 	@const		DRDeviceCanWriteCDRKey
 	@discussion	One of the keys in the @link DRDeviceWriteCapabilitiesKey DRDeviceWriteCapabilitiesKey @/link dictionary.
-				NSNumber indicating whether the device can write to CD-R media.
+				NSNumber containing a boolean value indicating whether the device can write to CD-R media.
 */
 extern NSString* const DRDeviceCanWriteCDRKey					AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 /*!
 	@const		DRDeviceCanWriteCDRWKey
 	@discussion	One of the keys in the @link DRDeviceWriteCapabilitiesKey DRDeviceWriteCapabilitiesKey @/link dictionary.
-				NSNumber indicating whether the device can write to CD-RW media.
+				NSNumber containing a boolean value indicating whether the device can write to CD-RW media.
 */
 extern NSString* const DRDeviceCanWriteCDRWKey					AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 /*!
 	@const		DRDeviceCanWriteDVDKey
 	@discussion	One of the keys in the @link DRDeviceWriteCapabilitiesKey DRDeviceWriteCapabilitiesKey @/link dictionary.
-				NSNumber indicating whether the device can write to some type of DVD based media.
+				NSNumber containing a boolean value indicating whether the device can write to some type of DVD based media.
 */
 extern NSString* const DRDeviceCanWriteDVDKey					AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 /*!
 	@const		DRDeviceCanWriteDVDRKey
 	@discussion	One of the keys in the @link DRDeviceWriteCapabilitiesKey DRDeviceWriteCapabilitiesKey @/link dictionary.
-				NSNumber indicating whether the device can write to DVD-R media.
+				NSNumber containing a boolean value indicating whether the device can write to DVD-R media.
 */
 extern NSString* const DRDeviceCanWriteDVDRKey					AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 /*!
 	@const		DRDeviceCanWriteDVDRWKey
 	@discussion	One of the keys in the @link DRDeviceWriteCapabilitiesKey DRDeviceWriteCapabilitiesKey @/link dictionary.
-				NSNumber indicating whether the device can write to DVD-RW media.
+				NSNumber containing a boolean value indicating whether the device can write to DVD-RW media.
 */
 extern NSString* const DRDeviceCanWriteDVDRWKey					AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 /*!
 	@const		DRDeviceCanWriteDVDRAMKey
 	@discussion	One of the keys in the @link DRDeviceWriteCapabilitiesKey DRDeviceWriteCapabilitiesKey @/link dictionary.
-				NSNumber indicating whether the device can write to DVD-RAM media.
+				NSNumber containing a boolean value indicating whether the device can write to DVD-RAM media.
 */
 extern NSString* const DRDeviceCanWriteDVDRAMKey				AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 /*!
 	@const		DRDeviceCanWriteDVDPlusRKey
 	@discussion	One of the keys in the @link DRDeviceWriteCapabilitiesKey DRDeviceWriteCapabilitiesKey @/link dictionary.
-				NSNumber indicating whether the device can write to DVD+R media.
+				NSNumber containing a boolean value indicating whether the device can write to DVD+R media.
 */
 extern NSString* const DRDeviceCanWriteDVDPlusRKey				AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
 
 /*!
 	@const		DRDeviceCanWriteDVDPlusRDoubleLayerKey
 	@discussion	One of the keys in the @link DRDeviceWriteCapabilitiesKey DRDeviceWriteCapabilitiesKey @/link dictionary.
-				NSNumber indicating whether the device can write to DVD+R media.
+				NSNumber containing a boolean value indicating whether the device can write to DVD+R media.
 */
 extern NSString* const DRDeviceCanWriteDVDPlusRDoubleLayerKey	AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 /*!
 	@const		DRDeviceCanWriteDVDPlusRWKey
 	@discussion	One of the keys in the @link DRDeviceWriteCapabilitiesKey DRDeviceWriteCapabilitiesKey @/link dictionary.
-				NSNumber indicating whether the device can write to DVD+RW media.
+				NSNumber containing a boolean value indicating whether the device can write to DVD+RW media.
 */
 extern NSString* const DRDeviceCanWriteDVDPlusRWKey				AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
 
 /*!
 	@const		DRDeviceCanWriteCDTextKey
 	@discussion	One of the keys in the @link DRDeviceWriteCapabilitiesKey DRDeviceWriteCapabilitiesKey @/link dictionary.
-				NSNumber indicating whether the device can write CD-Text information to media.
+				NSNumber containing a boolean value indicating whether the device can write CD-Text information to media.
 */
 extern NSString* const DRDeviceCanWriteCDTextKey				AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 /*!
 	@const		DRDeviceCanWriteIndexPointsKey
 	@discussion	One of the keys in the @link DRDeviceWriteCapabilitiesKey DRDeviceWriteCapabilitiesKey @/link dictionary.
-				NSNumber indicating whether the device can write index points to CD media.
+				NSNumber containing a boolean value indicating whether the device can write index points to CD media.
 */
 extern NSString* const DRDeviceCanWriteIndexPointsKey			AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
 
 /*!
 	@const		DRDeviceCanWriteISRCKey
 	@discussion	One of the keys in the @link DRDeviceWriteCapabilitiesKey DRDeviceWriteCapabilitiesKey @/link dictionary.
-				NSNumber indicating whether the device can write ISRC to CD media.
+				NSNumber containing a boolean value indicating whether the device can write ISRC to CD media.
 */
 extern NSString* const DRDeviceCanWriteISRCKey					AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
 
 /*!
-	@const		DRDeviceCanWriteCDRawKey
+	@const		DRDeviceCanWriteCDTAOKey
 	@discussion	One of the keys in the @link DRDeviceWriteCapabilitiesKey DRDeviceWriteCapabilitiesKey @/link dictionary.
-				NSNumber indicating whether the device supports a TAO (track-at-once)
+				NSNumber containing a boolean value indicating whether the device supports a TAO (track-at-once)
 				burn strategy for CD.
 */
 extern NSString* const DRDeviceCanWriteCDTAOKey					AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
@@ -768,7 +770,7 @@ extern NSString* const DRDeviceCanWriteCDTAOKey					AVAILABLE_MAC_OS_X_VERSION_1
 /*!
 	@const		DRDeviceCanWriteCDSAOKey
 	@discussion	One of the keys in the @link DRDeviceWriteCapabilitiesKey DRDeviceWriteCapabilitiesKey @/link dictionary.
-				NSNumber indicating whether the device supports a SAO (session-at-once)
+				NSNumber containing a boolean value indicating whether the device supports a SAO (session-at-once)
 				burn strategy for CD.
 */
 extern NSString* const DRDeviceCanWriteCDSAOKey					AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
@@ -776,7 +778,7 @@ extern NSString* const DRDeviceCanWriteCDSAOKey					AVAILABLE_MAC_OS_X_VERSION_1
 /*!
 	@const		DRDeviceCanWriteCDRawKey
 	@discussion	One of the keys in the @link DRDeviceWriteCapabilitiesKey DRDeviceWriteCapabilitiesKey @/link dictionary.
-				NSNumber indicating whether the device supports a raw mode burn strategy for CD.
+				NSNumber containing a boolean value indicating whether the device supports a raw mode burn strategy for CD.
 				Raw mode is sometimes incorrectly referred to as DAO (disc-at-once).
 */
 extern NSString* const DRDeviceCanWriteCDRawKey					AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
@@ -784,7 +786,7 @@ extern NSString* const DRDeviceCanWriteCDRawKey					AVAILABLE_MAC_OS_X_VERSION_1
 /*!
 	@const		DRDeviceCanWriteDVDDAOKey
 	@discussion	One of the keys in the @link DRDeviceWriteCapabilitiesKey DRDeviceWriteCapabilitiesKey @/link dictionary.
-				NSNumber indicating whether the device supports a DAO (disc-at-once)
+				NSNumber containing a boolean value indicating whether the device supports a DAO (disc-at-once)
 				burn strategy on DVD media.
 */
 extern NSString* const DRDeviceCanWriteDVDDAOKey				AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
@@ -792,28 +794,28 @@ extern NSString* const DRDeviceCanWriteDVDDAOKey				AVAILABLE_MAC_OS_X_VERSION_1
 /*!
 	@const		DRDeviceCanTestWriteCDKey
 	@discussion	One of the keys in the @link DRDeviceWriteCapabilitiesKey DRDeviceWriteCapabilitiesKey @/link dictionary.
-				NSNumber indicating whether the device can perform a test burn to CD media.
+				NSNumber containing a boolean value indicating whether the device can perform a test burn to CD media.
 */
 extern NSString* const DRDeviceCanTestWriteCDKey				AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 /*!
 	@const		DRDeviceCanTestWriteDVDKey
 	@discussion	One of the keys in the @link DRDeviceWriteCapabilitiesKey DRDeviceWriteCapabilitiesKey @/link dictionary.
-				NSNumber indicating whether the device can perform a test burn to DVD media.
+				NSNumber containing a boolean value indicating whether the device can perform a test burn to DVD media.
 */
 extern NSString* const DRDeviceCanTestWriteDVDKey				AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 /*!
 	@const		DRDeviceCanUnderrunProtectCDKey
 	@discussion	One of the keys in the @link DRDeviceWriteCapabilitiesKey DRDeviceWriteCapabilitiesKey @/link dictionary.
-				NSNumber indicating whether the device supports burn underrun protection when writing to CD media.
+				NSNumber containing a boolean value indicating whether the device supports burn underrun protection when writing to CD media.
 */
 extern NSString* const DRDeviceCanUnderrunProtectCDKey			AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 /*!
 	@const		DRDeviceCanUnderrunProtectDVDKey
 	@discussion	One of the keys in the @link DRDeviceWriteCapabilitiesKey DRDeviceWriteCapabilitiesKey @/link dictionary.
-				NSNumber indicating whether the device supports burn underrun protection when writing to DVD media.
+				NSNumber containing a boolean value indicating whether the device supports burn underrun protection when writing to DVD media.
 */
 extern NSString* const DRDeviceCanUnderrunProtectDVDKey			AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
@@ -826,14 +828,14 @@ extern NSString* const DRDeviceCanUnderrunProtectDVDKey			AVAILABLE_MAC_OS_X_VER
 /*!
 	@const		DRDeviceIsBusyKey
 	@discussion	One of the keys in the dictionary returned by the @link //apple_ref/occ/instm/DRDevice/status status @/link method.
-				NSNumber indicating whether the device is busy or not.
+				NSNumber containing a boolean value indicating whether the device is busy or not.
 */
 extern NSString* const DRDeviceIsBusyKey						AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 /*!
 	@const		DRDeviceIsTrayOpenKey
 	@discussion	One of the keys in the dictionary returned by the @link //apple_ref/occ/instm/DRDevice/status status @/link method.
-				NSNumber indicating whether the device's tray is open or not.
+				NSNumber containing a boolean value indicating whether the device's tray is open or not.
 */
 extern NSString* const DRDeviceIsTrayOpenKey					AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
@@ -877,7 +879,7 @@ extern NSString* const DRDeviceBurnSpeedsKey					AVAILABLE_MAC_OS_X_VERSION_10_2
 /*!
 	@const		DRDeviceTrackRefsKey
 	@discussion One of the keys in the dictionary returned by the @link //apple_ref/occ/instm/DRDevice/status status @/link method.
-				NSArray containing a list of DRTrack objects describing any tracks that
+				NSArray containing a list of @link //apple_ref/occ/cl/DRTrack DRTrack @/link objects describing any tracks that
 				are already on the disc.
 */
 extern NSString* const DRDeviceTrackRefsKey						AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
@@ -885,8 +887,8 @@ extern NSString* const DRDeviceTrackRefsKey						AVAILABLE_MAC_OS_X_VERSION_10_3
 /*!
 	@const		DRDeviceTrackInfoKey
 	@discussion One of the keys in the dictionary returned by the @link //apple_ref/occ/instm/DRDevice/status status @/link method.
-				NSDictionary containing NSDictionaries describing the tracks.  DRTracks
-				from the DRDeviceTrackRefsKey are used as keys into this dictionary.
+				NSDictionary containing NSDictionaries describing the tracks.  @link //apple_ref/occ/cl/DRTrack DRTracks @/link
+				from the @link DRDeviceTrackRefsKey DRDeviceTrackRefsKey @/link are used as keys into this dictionary.
 */
 extern NSString* const DRDeviceTrackInfoKey						AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
 
@@ -926,35 +928,40 @@ extern NSString* const DRDeviceMediaBSDNameKey					AVAILABLE_MAC_OS_X_VERSION_10
 /*!
 	@const		DRDeviceMediaIsBlankKey
 	@discussion	One of the keys in the @link DRDeviceMediaInfoKey DRDeviceMediaInfoKey @/link dictionary.
-				NSNumber indicating whether data bas previously been written to the media.
+				NSNumber containing a boolean value indicating whether data has previously been written to the media.
 */
 extern NSString* const DRDeviceMediaIsBlankKey					AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 /*!
 	@const		DRDeviceMediaIsAppendableKey
 	@discussion	One of the keys in the @link DRDeviceMediaInfoKey DRDeviceMediaInfoKey @/link dictionary.
-				NSNumber indicating that data can be appended to the exisiting data (if any).
+				NSNumber containing a boolean value indicating that data can be appended to the exisiting data (if any).
 */
 extern NSString* const DRDeviceMediaIsAppendableKey				AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 /*!
 	@const		DRDeviceMediaIsOverwritableKey
 	@discussion	One of the keys in the @link DRDeviceMediaInfoKey DRDeviceMediaInfoKey @/link dictionary.
-				NSNumber indicating that data can be appended to the exisiting data (if any).
+				NSNumber containing a boolean value indicating that the data on the disc (if any) can be overwritten.
+				Rewritable media can always be erased, and then rewritten in its entirety, so it is always considered overwritable.
+
+				Write-once media, if its blank, can also be written in its entirety and is also considered overwritable.
+
+				Write-once media, that has been partially written, can never again enter a state where it is entirely writable and will have lost its overwritable designation.
 */
 extern NSString* const DRDeviceMediaIsOverwritableKey			AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
 
 /*!
 	@const		DRDeviceMediaIsErasableKey
 	@discussion	One of the keys in the @link DRDeviceMediaInfoKey DRDeviceMediaInfoKey @/link dictionary.
-				NSNumber indicating whether this media can be erased.
+				NSNumber containing a boolean value indicating whether this media can be erased.
 */
 extern NSString* const DRDeviceMediaIsErasableKey				AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 /*!
 	@const		DRDeviceMediaIsReservedKey
 	@discussion	One of the keys in the @link DRDeviceMediaInfoKey DRDeviceMediaInfoKey @/link dictionary.
-				NSNumber indicating whether the media is reserved for exclusive use by 
+				NSNumber containing a boolean value indicating whether the media is reserved for exclusive use by 
 				the current process.
 */
 extern NSString* const DRDeviceMediaIsReservedKey				AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
@@ -962,14 +969,20 @@ extern NSString* const DRDeviceMediaIsReservedKey				AVAILABLE_MAC_OS_X_VERSION_
 /*!
 	@const		DRDeviceMediaOverwritableSpaceKey
 	@discussion	One of the keys in the @link DRDeviceMediaInfoKey DRDeviceMediaInfoKey @/link dictionary.
-				MSF value of the amount of writable space available on the media to be written to.
+				MSF value of the amount of writable space available on the media to be written to - if that media can be overwritten. 
+				Media that can be overwitten is designated through the @link DRDeviceMediaIsOverwritableKey DRDeviceMediaIsOverwritableKey @/link.
+				
+				The overwritable space is the amount of space on the disc that would be available if any data currently
+				on the disc is first erased. 
 */
 extern NSString* const DRDeviceMediaOverwritableSpaceKey		AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
 
 /*!
 	@const		DRDeviceMediaFreeSpaceKey
 	@discussion	One of the keys in the @link DRDeviceMediaInfoKey DRDeviceMediaInfoKey @/link dictionary.
-				MSF value of the amount of space available on the media to be written to.
+				MSF value of the amount of space available on the media to be written to. If the media already contains data 
+				and this value will be less than the normal maximum size of the disc. This value will normally only 
+				be used if the intent is to append data onto an open disc.
 */
 extern NSString* const DRDeviceMediaFreeSpaceKey				AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
@@ -983,14 +996,20 @@ extern NSString* const DRDeviceMediaUsedSpaceKey				AVAILABLE_MAC_OS_X_VERSION_1
 /*!
 	@const		DRDeviceMediaBlocksOverwritableKey
 	@discussion	One of the keys in the @link DRDeviceMediaInfoKey DRDeviceMediaInfoKey @/link dictionary.
-				NSNumber containing the amount of writable space available (in blocks) on the media to be written to.
+				NSNumber containing the total amount of writable space available (in blocks) on the media to be written to - if that media can be overwritten. 
+				Media that can be overwitten is designated through the @link DRDeviceMediaIsOverwritableKey DRDeviceMediaIsOverwritableKey @/link.
+
+				The overwritable space is the amount of space on the disc that would be available if any data currently
+				on the disc is first erased. 
 */
 extern NSString* const DRDeviceMediaBlocksOverwritableKey		AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
 
 /*!
 	@const		DRDeviceMediaBlocksFreeKey
 	@discussion	One of the keys in the @link DRDeviceMediaInfoKey DRDeviceMediaInfoKey @/link dictionary.
-				NSNumber containing the amount of space available (in blocks) on the media to be written to.
+				NSNumber containing the amount of space available (in blocks) on the media to be written to. If the media already contains data 
+				and this value will be less than the normal maximum size of the disc. This value will normally only 
+				be used if the intent is to append data onto an open disc.
 */
 extern NSString* const DRDeviceMediaBlocksFreeKey				AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
@@ -1019,7 +1038,7 @@ extern NSString* const DRDeviceMediaTrackCountKey				AVAILABLE_MAC_OS_X_VERSION_
 /*!
 	@const		DRDeviceMediaSessionCountKey
 	@discussion	One of the keys in the @link DRDeviceMediaInfoKey DRDeviceMediaInfoKey @/link dictionary.
-				NSNumber containing the sessions of tracks present on the media.
+				NSNumber containing the current number of sessions present on the media.
 */
 extern NSString* const DRDeviceMediaSessionCountKey				AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 

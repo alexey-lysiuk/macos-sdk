@@ -3,9 +3,9 @@
  
      Contains:   QuickTime Image Compression Interfaces.
  
-     Version:    QuickTime 7.0.4
+     Version:    QuickTime 7.1.2
  
-     Copyright:  © 1990-2005 by Apple Computer, Inc., all rights reserved
+     Copyright:  © 1990-2006 by Apple Computer, Inc., all rights reserved
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -35,7 +35,12 @@
 extern "C" {
 #endif
 
-#pragma options align=mac68k
+#pragma pack(push, 2)
+
+
+#ifndef AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER
+ #define AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER   WEAK_IMPORT_ATTRIBUTE
+#endif
 
 struct MatrixRecord {
   Fixed               matrix[3][3];
@@ -904,6 +909,72 @@ InvokeICMConvertDataFormatUPP(
   void **                  dstData,
   long *                   dstDataSize,
   ICMConvertDataFormatUPP  userUPP)                           AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+
+#if __MACH__
+  #ifdef __cplusplus
+    inline ICMDataUPP                                           NewICMDataUPP(ICMDataProcPtr userRoutine) { return userRoutine; }
+    inline ICMFlushUPP                                          NewICMFlushUPP(ICMFlushProcPtr userRoutine) { return userRoutine; }
+    inline ICMCompletionUPP                                     NewICMCompletionUPP(ICMCompletionProcPtr userRoutine) { return userRoutine; }
+    inline ICMProgressUPP                                       NewICMProgressUPP(ICMProgressProcPtr userRoutine) { return userRoutine; }
+    inline StdPixUPP                                            NewStdPixUPP(StdPixProcPtr userRoutine) { return userRoutine; }
+    inline QDPixUPP                                             NewQDPixUPP(QDPixProcPtr userRoutine) { return userRoutine; }
+    inline ICMAlignmentUPP                                      NewICMAlignmentUPP(ICMAlignmentProcPtr userRoutine) { return userRoutine; }
+    inline ICMCursorShieldedUPP                                 NewICMCursorShieldedUPP(ICMCursorShieldedProcPtr userRoutine) { return userRoutine; }
+    inline ICMMemoryDisposedUPP                                 NewICMMemoryDisposedUPP(ICMMemoryDisposedProcPtr userRoutine) { return userRoutine; }
+    inline ICMConvertDataFormatUPP                              NewICMConvertDataFormatUPP(ICMConvertDataFormatProcPtr userRoutine) { return userRoutine; }
+    inline void                                                 DisposeICMDataUPP(ICMDataUPP) { }
+    inline void                                                 DisposeICMFlushUPP(ICMFlushUPP) { }
+    inline void                                                 DisposeICMCompletionUPP(ICMCompletionUPP) { }
+    inline void                                                 DisposeICMProgressUPP(ICMProgressUPP) { }
+    inline void                                                 DisposeStdPixUPP(StdPixUPP) { }
+    inline void                                                 DisposeQDPixUPP(QDPixUPP) { }
+    inline void                                                 DisposeICMAlignmentUPP(ICMAlignmentUPP) { }
+    inline void                                                 DisposeICMCursorShieldedUPP(ICMCursorShieldedUPP) { }
+    inline void                                                 DisposeICMMemoryDisposedUPP(ICMMemoryDisposedUPP) { }
+    inline void                                                 DisposeICMConvertDataFormatUPP(ICMConvertDataFormatUPP) { }
+    inline OSErr                                                InvokeICMDataUPP(Ptr * dataP, long bytesNeeded, long refcon, ICMDataUPP userUPP) { return (*userUPP)(dataP, bytesNeeded, refcon); }
+    inline OSErr                                                InvokeICMFlushUPP(Ptr data, long bytesAdded, long refcon, ICMFlushUPP userUPP) { return (*userUPP)(data, bytesAdded, refcon); }
+    inline void                                                 InvokeICMCompletionUPP(OSErr result, short flags, long refcon, ICMCompletionUPP userUPP) { (*userUPP)(result, flags, refcon); }
+    inline OSErr                                                InvokeICMProgressUPP(short message, Fixed completeness, long refcon, ICMProgressUPP userUPP) { return (*userUPP)(message, completeness, refcon); }
+    inline void                                                 InvokeStdPixUPP(PixMap * src, Rect * srcRect, MatrixRecord * matrix, short mode, RgnHandle mask, PixMap * matte, Rect * matteRect, short flags, StdPixUPP userUPP) { (*userUPP)(src, srcRect, matrix, mode, mask, matte, matteRect, flags); }
+    inline void                                                 InvokeQDPixUPP(PixMap * src, Rect * srcRect, MatrixRecord * matrix, short mode, RgnHandle mask, PixMap * matte, Rect * matteRect, short flags, QDPixUPP userUPP) { (*userUPP)(src, srcRect, matrix, mode, mask, matte, matteRect, flags); }
+    inline void                                                 InvokeICMAlignmentUPP(Rect * rp, long refcon, ICMAlignmentUPP userUPP) { (*userUPP)(rp, refcon); }
+    inline void                                                 InvokeICMCursorShieldedUPP(const Rect * r, void * refcon, long flags, ICMCursorShieldedUPP userUPP) { (*userUPP)(r, refcon, flags); }
+    inline void                                                 InvokeICMMemoryDisposedUPP(Ptr memoryBlock, void * refcon, ICMMemoryDisposedUPP userUPP) { (*userUPP)(memoryBlock, refcon); }
+    inline OSErr                                                InvokeICMConvertDataFormatUPP(void * refCon, long flags, Handle desiredFormat, Handle sourceDataFormat, void * srcData, long srcDataSize, void ** dstData, long * dstDataSize, ICMConvertDataFormatUPP userUPP) { return (*userUPP)(refCon, flags, desiredFormat, sourceDataFormat, srcData, srcDataSize, dstData, dstDataSize); }
+  #else
+    #define NewICMDataUPP(userRoutine)                          ((ICMDataUPP)userRoutine)
+    #define NewICMFlushUPP(userRoutine)                         ((ICMFlushUPP)userRoutine)
+    #define NewICMCompletionUPP(userRoutine)                    ((ICMCompletionUPP)userRoutine)
+    #define NewICMProgressUPP(userRoutine)                      ((ICMProgressUPP)userRoutine)
+    #define NewStdPixUPP(userRoutine)                           ((StdPixUPP)userRoutine)
+    #define NewQDPixUPP(userRoutine)                            ((QDPixUPP)userRoutine)
+    #define NewICMAlignmentUPP(userRoutine)                     ((ICMAlignmentUPP)userRoutine)
+    #define NewICMCursorShieldedUPP(userRoutine)                ((ICMCursorShieldedUPP)userRoutine)
+    #define NewICMMemoryDisposedUPP(userRoutine)                ((ICMMemoryDisposedUPP)userRoutine)
+    #define NewICMConvertDataFormatUPP(userRoutine)             ((ICMConvertDataFormatUPP)userRoutine)
+    #define DisposeICMDataUPP(userUPP)
+    #define DisposeICMFlushUPP(userUPP)
+    #define DisposeICMCompletionUPP(userUPP)
+    #define DisposeICMProgressUPP(userUPP)
+    #define DisposeStdPixUPP(userUPP)
+    #define DisposeQDPixUPP(userUPP)
+    #define DisposeICMAlignmentUPP(userUPP)
+    #define DisposeICMCursorShieldedUPP(userUPP)
+    #define DisposeICMMemoryDisposedUPP(userUPP)
+    #define DisposeICMConvertDataFormatUPP(userUPP)
+    #define InvokeICMDataUPP(dataP, bytesNeeded, refcon, userUPP) (*userUPP)(dataP, bytesNeeded, refcon)
+    #define InvokeICMFlushUPP(data, bytesAdded, refcon, userUPP) (*userUPP)(data, bytesAdded, refcon)
+    #define InvokeICMCompletionUPP(result, flags, refcon, userUPP) (*userUPP)(result, flags, refcon)
+    #define InvokeICMProgressUPP(message, completeness, refcon, userUPP) (*userUPP)(message, completeness, refcon)
+    #define InvokeStdPixUPP(src, srcRect, matrix, mode, mask, matte, matteRect, flags, userUPP) (*userUPP)(src, srcRect, matrix, mode, mask, matte, matteRect, flags)
+    #define InvokeQDPixUPP(src, srcRect, matrix, mode, mask, matte, matteRect, flags, userUPP) (*userUPP)(src, srcRect, matrix, mode, mask, matte, matteRect, flags)
+    #define InvokeICMAlignmentUPP(rp, refcon, userUPP)          (*userUPP)(rp, refcon)
+    #define InvokeICMCursorShieldedUPP(r, refcon, flags, userUPP) (*userUPP)(r, refcon, flags)
+    #define InvokeICMMemoryDisposedUPP(memoryBlock, refcon, userUPP) (*userUPP)(memoryBlock, refcon)
+    #define InvokeICMConvertDataFormatUPP(refCon, flags, desiredFormat, sourceDataFormat, srcData, srcDataSize, dstData, dstDataSize, userUPP) (*userUPP)(refCon, flags, desiredFormat, sourceDataFormat, srcData, srcDataSize, dstData, dstDataSize)
+  #endif
+#endif
 
 /*
  *  CodecManagerVersion()
@@ -6969,6 +7040,24 @@ InvokeQTComponentPropertyListenerFilterUPP(
   const void *                                          inFilterProcRefCon,
   QTComponentPropertyListenerFilterUPP                  userUPP) AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
 
+#if __MACH__
+  #ifdef __cplusplus
+    inline QTComponentPropertyListenerUPP                       NewQTComponentPropertyListenerUPP(QTComponentPropertyListenerProcPtr userRoutine) { return userRoutine; }
+    inline QTComponentPropertyListenerFilterUPP                 NewQTComponentPropertyListenerFilterUPP(QTComponentPropertyListenerFilterProcPtr userRoutine) { return userRoutine; }
+    inline void                                                 DisposeQTComponentPropertyListenerUPP(QTComponentPropertyListenerUPP) { }
+    inline void                                                 DisposeQTComponentPropertyListenerFilterUPP(QTComponentPropertyListenerFilterUPP) { }
+    inline void                                                 InvokeQTComponentPropertyListenerUPP(ComponentInstance inComponent, ComponentPropertyClass inPropClass, ComponentPropertyID inPropID, void * inUserData, QTComponentPropertyListenerUPP userUPP) { (*userUPP)(inComponent, inPropClass, inPropID, inUserData); }
+    inline Boolean                                              InvokeQTComponentPropertyListenerFilterUPP(QTComponentPropertyListenersRef inCollection, const QTComponentPropertyListenerCollectionContext * inCollectionContext, ComponentInstance inNotifier, ComponentPropertyClass inPropClass, ComponentPropertyID inPropID, QTComponentPropertyListenerUPP inListenerCallbackProc, const void * inListenerProcRefCon, const void * inFilterProcRefCon, QTComponentPropertyListenerFilterUPP userUPP) { return (*userUPP)(inCollection, inCollectionContext, inNotifier, inPropClass, inPropID, inListenerCallbackProc, inListenerProcRefCon, inFilterProcRefCon); }
+  #else
+    #define NewQTComponentPropertyListenerUPP(userRoutine)      ((QTComponentPropertyListenerUPP)userRoutine)
+    #define NewQTComponentPropertyListenerFilterUPP(userRoutine) ((QTComponentPropertyListenerFilterUPP)userRoutine)
+    #define DisposeQTComponentPropertyListenerUPP(userUPP)
+    #define DisposeQTComponentPropertyListenerFilterUPP(userUPP)
+    #define InvokeQTComponentPropertyListenerUPP(inComponent, inPropClass, inPropID, inUserData, userUPP) (*userUPP)(inComponent, inPropClass, inPropID, inUserData)
+    #define InvokeQTComponentPropertyListenerFilterUPP(inCollection, inCollectionContext, inNotifier, inPropClass, inPropID, inListenerCallbackProc, inListenerProcRefCon, inFilterProcRefCon, userUPP) (*userUPP)(inCollection, inCollectionContext, inNotifier, inPropClass, inPropID, inListenerCallbackProc, inListenerProcRefCon, inFilterProcRefCon)
+  #endif
+#endif
+
 /*
  *  QTComponentPropertyListenerCollectionCreate()
  *  
@@ -7365,6 +7454,82 @@ enum {
     kQTAddComponentPropertyListenerSelect      = -14,
     kQTRemoveComponentPropertyListenerSelect   = -15
 };
+/* Aperture modes */
+
+/*
+ *  Summary:
+ *    Aperture modes
+ *  
+ *  Discussion:
+ *    You can set the aperture mode property on a movie to indicate
+ *    whether aspect ratio and clean aperture correction should be
+ *    performed (kQTPropertyClass_Visual /
+ *    kQTVisualPropertyID_ApertureMode). When a movie is in clean,
+ *    production or encoded pixels aperture mode, each track's
+ *    dimensions are overriden by special dimensions for that mode. The
+ *    original track dimensions are preserved and can be restored by
+ *    setting the movie into classic aperture mode. Aperture modes are
+ *    not saved in movies. 
+ *    You can set the aperture mode property on a decompression session
+ *    options object to indicate whether pixel buffers should be tagged
+ *    to enable aspect ratio and clean aperture correction
+ *    (kQTPropertyClass_ICMDecompressionSessionOptions /
+ *    kICMDecompressionSessionOptionsPropertyID_ApertureMode).
+ */
+enum {
+
+  /*
+   * An aperture mode which gives compatibility with behavior in
+   * QuickTime 7.0.x and earlier. 
+   * A movie in classic aperture mode uses track dimensions as set in
+   * NewMovieTrack and SetTrackDimensions. 
+   * A decompression session in classic aperture mode does not set the
+   * clean aperture or pixel aspect ratio attachments on emitted pixel
+   * buffers. 
+   * Movies default to classic aperture mode. If you call
+   * SetTrackDimensions on a track, the movie is automatically switched
+   * into classic aperture mode.
+   */
+  kQTApertureMode_Classic       = 'clas',
+
+  /*
+   * An aperture mode for general display. 
+   * Where possible, video will be displayed at the correct pixel
+   * aspect ratio, trimmed to the clean aperture. A movie in clean
+   * aperture mode sets each track's dimensions to match its
+   * kQTVisualPropertyID_CleanApertureDimensions. 
+   * A decompression session in clean aperture mode sets the clean
+   * aperture and pixel aspect ratio attachments on emitted pixel
+   * buffers based on the image description.
+   */
+  kQTApertureMode_CleanAperture = 'clea',
+
+  /*
+   * An aperture mode for modal use in authoring applications. 
+   *  Where possible, video will be displayed at the correct pixel
+   * aspect ratio, but without trimming to the clean aperture so that
+   * the edge processing region can be viewed. A movie in production
+   * aperture mode sets each track's dimensions to match its
+   * kQTVisualPropertyID_ProductionApertureDimensions. 
+   * A decompression session in production aperture mode sets the pixel
+   * aspect ratio attachments on emitted pixel buffers based on the
+   * image description.
+   */
+  kQTApertureMode_ProductionAperture = 'prod',
+
+  /*
+   * An aperture mode for technical use. 
+   * Displays all encoded pixels with no aspect ratio or clean aperture
+   * compensation. A movie in encoded pixels aperture mode sets each
+   * track's dimensions to match its
+   * kQTVisualPropertyID_EncodedPixelsDimensions. 
+   * A decompression session in encoded pixels aperture mode does not
+   * set the clean aperture or pixel aspect ratio attachments on
+   * emitted pixel buffers.
+   */
+  kQTApertureMode_EncodedPixels = 'enco'
+};
+
 /* Property interface for Image Descriptions */
 
 /*
@@ -7557,7 +7722,57 @@ enum {
    * InterestingTime APIs. Setting a step duration with value zero
    * removes any current step duration.
    */
-  kICMImageDescriptionPropertyID_StepDuration = 'step' /* TimeRecord (base ignored), Read/Write */
+  kICMImageDescriptionPropertyID_StepDuration = 'step', /* TimeRecord (base ignored), Read/Write */
+
+  /*
+   * The clean aperture as a FixedRect in source coordinates, within
+   * the rectangle defined by the image description width and height,
+   * suitable for use as a source rectangle in a decompression
+   * sequence. 
+   * For historical reasons, the DVCPROHD codecs store the production
+   * aperture display dimensions in the image description width and
+   * height; the actual encoded dimensions are smaller. For DVCPROHD,
+   * the clip rect will be relative to the image description width and
+   * height, not the encoded dimensions.
+   */
+  kICMImageDescriptionPropertyID_CleanApertureClipRect = 'cacr', /* FixedRect, Read */
+
+  /*
+   * A matrix transforming the clean aperture clip rect to the origin,
+   * scaled to the clean aperture display dimensions. 
+   * For historical reasons, the DVCPROHD codecs store the production
+   * aperture display dimensions in the image description width and
+   * height; the actual encoded dimensions are smaller. For DVCPROHD,
+   * the matrix will be relative to the image description width and
+   * height, not the encoded dimensions.
+   */
+  kICMImageDescriptionPropertyID_CleanApertureMatrix = 'camx', /* MatrixRecord, Read */
+
+  /*
+   * A matrix transforming the image to the origin, scaled to the
+   * production aperture display dimensions. 
+   * For historical reasons, the DVCPROHD codecs store the production
+   * aperture display dimensions in the image description width and
+   * height; the actual encoded dimensions are smaller. For DVCPROHD,
+   * the matrix will be relative to the image description width and
+   * height, not the encoded dimensions.
+   */
+  kICMImageDescriptionPropertyID_ProductionApertureMatrix = 'pamx', /* MatrixRecord, Read */
+
+  /*
+   * A localized, human readable string summarizing the image as a
+   * CFString, ie: "Apple DV, 720 x 480 (640 x 480), Millions". 
+   *  The elements are: the codec name, the encoded pixels dimensions,
+   * then parenthetically the clean aperture mode dimensions, but only
+   * if they are different from the encoded pixels dimensions; then the
+   * depth. 
+   * The codec name shall be from the localized decompressor component
+   * name string if exactly one decompressor with the correct cType is
+   * available; otherwise the string in the image description shall be
+   * used. The caller of GetProperty is responsible for releasing this
+   * CFString, eg, by calling CFRelease.
+   */
+  kICMImageDescriptionPropertyID_SummaryString = 'isum' /* CFStringRef, Read - caller of GetProperty must call CFRelease*/
 };
 
 /*
@@ -8522,7 +8737,15 @@ enum {
    * default, the output-ahead time will be determined from the visual
    * context.
    */
-  kICMDecompressionSessionOptionsPropertyID_OutputAheadTime = 'futu' /* TimeRecord, Read/Write */
+  kICMDecompressionSessionOptionsPropertyID_OutputAheadTime = 'futu', /* TimeRecord, Read/Write */
+
+  /*
+   * You can set the aperture mode property on a decompression session
+   * options object to indicate whether pixel buffers should be tagged
+   * to enable aspect ratio and clean aperture correction. The default
+   * aperture mode for a decompression session is clean aperture mode.
+   */
+  kICMDecompressionSessionOptionsPropertyID_ApertureMode = 'apmd' /* OSType, Read/Write */
 };
 
 
@@ -9437,7 +9660,7 @@ enum {
    * The compressor will set this flag to indicate that it will not be
    * able to output encoded frames in the coming pass. If this flag is
    * not set, then the client is allowed to set the
-   * kICMCompressionPassMode_OutputEncodedFrames flag before calling
+   * kICMCompressionPassMode_OutputEncodedFrames flag when calling
    * ICMCompressionSessionBeginPass.
    */
   kICMCompressionPassMode_NotReadyToOutputEncodedFrames = 1L << 4
@@ -9450,8 +9673,9 @@ enum {
  *    Queries whether a compression session supports multipass encoding.
  *  
  *  Discussion:
- *    Even if this function returns false, if you passed true to
- *    ICMCompressionSessionOptionsSetMultiPass, you must call
+ *    Even if this function returns false, if you set the
+ *    kICMCompressionSessionOptionsPropertyID_MultiPassStorage property
+ *    on the CompressionSessionOptions, you must call
  *    ICMCompressionSessionBeginPass and ICMCompressionSessionEndPass.
  *  
  *  Parameters:
@@ -9495,9 +9719,6 @@ ICMCompressionSessionSupportsMultiPassEncoding(
  *  Discussion:
  *    The source frames and frame options for each display timestamp
  *    should be the same across passes. 
- *    The client must have enabled multipass compression in the
- *    compression session options by calling
- *    ICMCompressionSessionOptionsSetMultiPassEnabled. 
  *    During multipass compression, valid displayTimeStamps must be
  *    passed to ICMCompressionSessionEncodeFrame since they are used to
  *    index the compressor's stored state. 
@@ -9845,6 +10066,46 @@ enum {
 
 
 /*
+ *  ICMSimpleBoundaryConditions
+ *  
+ *  Summary:
+ *    Indicates whether and how a compression session's frames will be
+ *    concatenated with other compressed frames to form a longer series.
+ *  
+ *  Discussion:
+ *    Some clients divide a long series of frames into several shorter
+ *    segments, each of which is then compressed by an independent
+ *    compression session. Boundary conditions tell the compressor
+ *    about how each session fits into the greater series: does this
+ *    session stand alone, or will it be used to encode the first
+ *    segment, a middle segment, or the last segment in a longer
+ *    continuum? 
+ *    This information enables compressors to ensure that compressed
+ *    segments can be concatenated smoothly -- for example, avoiding
+ *    data rate spikes where segments are joined. 
+ *    By default, a session is assumed to stand alone.
+ */
+struct ICMSimpleBoundaryConditions {
+
+  /*
+   * True if frames compressed in a separate session will be
+   * concatenated before the beginning of this one. False if this is a
+   * stand-alone session, or if this session will encode the first
+   * segment of a multi-segment compression. By default, false.
+   */
+  Boolean             moreFramesBeforeStart;
+
+  /*
+   * True if frames compressed in a separate session will be
+   * concatenated following the end of this one. False if this is a
+   * stand-alone session, or if this session will encode the last
+   * segment of a multi-segment compression. By default, false.
+   */
+  Boolean             moreFramesAfterEnd;
+};
+typedef struct ICMSimpleBoundaryConditions ICMSimpleBoundaryConditions;
+
+/*
  *  Summary:
  *    Properties of compression sessions options objects.
  */
@@ -10154,7 +10415,22 @@ enum {
    * description and may affect scaling in some scaling modes. By
    * default, this is all zeros, meaning unset.
    */
-  kICMCompressionSessionOptionsPropertyID_FieldInfo = 'fiel' /* FieldInfoImageDescriptionExtension2, Read/Write */
+  kICMCompressionSessionOptionsPropertyID_FieldInfo = 'fiel', /* FieldInfoImageDescriptionExtension2, Read/Write */
+
+  /*
+   * Indicates whether and how a compression session's frames will be
+   * concatenated with other compressed frames to form a longer series.
+   */
+  kICMCompressionSessionOptionsPropertyID_SimpleBoundaryConditions = 'ends', /* ICMSimpleBoundaryConditions struct, Read/Write */
+
+  /*
+   * Requests additional distortion to be applied to the aspect ratio
+   * in the kICMScalingMode_Letterbox and kICMScalingMode_Trim scaling
+   * modes. Values greater than fixed1 mean wider, values less than
+   * fixed1 mean narrower. For example, a value of X2Fix(2.0) would
+   * make the picture aspect ratio twice as wide.
+   */
+  kICMCompressionSessionOptionsPropertyID_ExtraAspectRatioStretchFactor = 'exsf' /* Fixed, Default fixed1, Read/Write */
 };
 
 
@@ -10393,10 +10669,8 @@ enum {
  *  Discussion:
  *    If you pass NULL for directoryRef, the ICM will use the user's
  *    temporary items folder. 
- *    If you pass NULL for fileName, the ICM will pick a unique name. 
- *    If you pass the name of a file that already exists, the ICM will
- *    assume you are continuing a previous multipass session where you
- *    left off. 
+ *    If you pass NULL for fileName, the ICM will pick a unique name.
+ *    
  *    The file will be deleted when the multipass storage is released,
  *    unless you set the kICMMultiPassStorage_DoNotDeleteWhenDone flag.
  *  
@@ -12322,8 +12596,47 @@ QTPixelBufferContextCreate(
   QTVisualContextRef *  newPixelBufferContext)                AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
+#if TARGET_OS_WIN32
+/*
+ *  QTDirect3DTextureContextCreate()
+ *  
+ *  Summary:
+ *    Creates a new Direct3D texture context for the given Direct3D
+ *    device and pixel format.
+ *  
+ *  Discussion:
+ *    This function will fail if the graphics hardware is insufficient.
+ *  
+ *  Parameters:
+ *    
+ *    allocator:
+ *      [in]  Allocator used to create the texture context.
+ *    
+ *    d3dDevice:
+ *      [in]  Direct3D device used to create textures.
+ *    
+ *    d3dPixelFormat:
+ *      [in]  Direct3D pixel format used to create the Direct3D device.
+ *    
+ *    attributes:
+ *      [in]  Dictionary of attributes.
+ *    
+ *    newTextureContext:
+ *      [out] Points to a variable to recieve the new Direct3D texture
+ *      context.
+ *  
+ *  Availability:
+ *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib 6.6 and later
+ */
 
-#pragma options align=reset
+
+#endif  /* TARGET_OS_WIN32 */
+
+
+#pragma pack(pop)
 
 #ifdef __cplusplus
 }

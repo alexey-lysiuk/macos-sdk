@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1998-2003 Apple Computer, Inc. All rights reserved.
+ * Copyright (c) 1998-2006 Apple Computer, Inc. All rights reserved.
  *
  * @APPLE_LICENSE_HEADER_START@
  * 
@@ -20,92 +20,6 @@
  * @APPLE_LICENSE_HEADER_END@
  */
 
-#ifndef __OPEN_SOURCE__
-/*
- *
- *	$Log: IOUSBDevice.h,v $
- *	Revision 1.47  2005/12/07 21:53:32  nano
- *	Bring in fixes from branch PR-4304258 -- Low Latency Audio support in  Yellow
- *	
- *	Revision 1.46.16.1  2005/12/02 20:24:14  nano
- *	MakePipe now takes an IOUSBInterface
- *	
- *	Revision 1.46  2005/10/25 15:20:29  nano
- *	Bring in branches to TOT
- *	
- *	Revision 1.45.4.2  2005/10/20 20:21:09  nano
- *	Fixes after code review
- *	
- *	Revision 1.45.4.1  2005/10/14 20:23:34  nano
- *	New branch for rdar://4150399 on top of latest
- *	
- *	Revision 1.45  2005/09/27 13:52:36  nano
- *	Bring PR-4262712 into TOT
- *	
- *	Revision 1.44.162.1  2005/09/23 04:30:54  rhoads
- *	make sure that the root hub DeviceRequest calls are gated
- *	
- *	Revision 1.44.152.1  2005/09/12 16:48:50  nano
- *	In SuspendDevice(), it we are holding the gate then use commandSleep()/wake.  This works around a problem where a client issues this call from a timer event, which holds the gate
- *	
- *	Revision 1.44  2004/08/23 20:00:47  nano
- *	Merge fix for rdar://3769499 (UTF16-UTF8 conversion)
- *	
- *	Revision 1.43.20.1  2004/08/20 16:32:09  nano
- *	Make string descriptor deal with unicode characters that are > 127, so we create correct UTF-8 strings
- *	
- *	Revision 1.43  2004/05/21 16:57:47  nano
- *	Merged branches
- *	
- *	Revision 1.42.2.1  2004/05/20 22:35:33  nano
- *	Change headers back to using IOUSBController instead of IOUSBControllerV2.
- *	
- *	Revision 1.42  2004/05/17 21:52:50  nano
- *	Add timeStamp and useTimeStamp to our commands.
- *	
- *	Revision 1.41.6.1  2004/05/17 15:57:27  nano
- *	API Changes for Tiger
- *	
- *	Revision 1.41  2004/04/22 04:09:47  nano
- *	Integrate fixes for rdar://3630366 -- Bluetooth extra reset time workaround
- *	
- *	Revision 1.40  2004/02/03 22:09:49  nano
- *	Fix <rdar://problem/3548194>: Remove $ Id $ from source files to prevent conflicts
- *	
- *	Revision 1.39.44.1  2004/04/06 18:11:23  nano
- *	Add _addExtraResetTime field
- *	
- *	Revision 1.39.18.2  2004/04/28 17:26:09  nano
- *	Remove $ ID $ so that we don't get conflicts on merge
- *	
- *	Revision 1.39.18.1  2003/11/04 22:27:37  nano
- *	Work in progress to add time stamping to interrupt handler
- *	
- *	Revision 1.39  2003/09/10 19:07:17  nano
- *	Merge in branches to fix #3406994 (make SuspendDevice synchronous)
- *	
- *	Revision 1.38.26.1  2003/09/10 18:33:59  nano
- *	Couple of booleans to support synchronous DeviceSuspend
- *	
- *	Revision 1.38  2003/08/21 21:50:09  nano
- *	Remove use of compatibility slot in IOUSBPipe.h -- it's not necessary
- *	
- *	Revision 1.37  2003/08/20 19:41:40  nano
- *	
- *	Bug #:
- *	New version's of Nima's USB Prober (2.2b17)
- *	3382540  Panther: Ejecting a USB CardBus card can freeze a machine
- *	3358482  Device Busy message with Modems and IOUSBFamily 201.2.14 after sleep
- *	3385948  Need to implement device recovery on High Speed Transaction errors to full speed devices
- *	3377037  USB EHCI: returnTransactions can cause unstable queue if transactions are aborted
- *	
- *	Also, updated most files to use the id/log functions of cvs
- *	
- *	Submitted by: nano
- *	Reviewed by: rhoads/barryt/nano
- *	
- */
-#endif
 #ifndef _IOKIT_IOUSBDEVICE_H
 #define _IOKIT_IOUSBDEVICE_H
 
@@ -176,7 +90,6 @@ protected:
         thread_call_t			_doPortReEnumerateThread;
         bool					_resetInProgress;
         bool					_portHasBeenReset;
-        bool					_deviceterminating;
         IORecursiveLock*		_getConfigLock;
         bool					_doneWaiting;                   // Obsolete
         bool					_notifiedWhileBooting;          // Obsolete
@@ -188,6 +101,8 @@ protected:
         bool					_addExtraResetTime;
 		bool					_suspendCommand;
 		IOCommandGate *			_commandGate;
+		OSSet *					_openInterfaces;
+		bool					_resetCommand;
     };
     ExpansionData * _expansionData;
 
@@ -223,6 +138,14 @@ public:
     virtual IOReturn 	message( UInt32 type, IOService * provider,  void * argument = 0 );
     virtual bool 	willTerminate( IOService * provider, IOOptionBits options );
     virtual bool 	didTerminate( IOService * provider, IOOptionBits options, bool * defer );
+	
+#if !(defined(__ppc__) && defined(KPI_10_4_0_PPC_COMPAT))
+	virtual bool	handleIsOpen(const IOService *forClient) const;
+	virtual bool	handleOpen(IOService *forClient, IOOptionBits options, void *arg);
+	virtual void	handleClose(IOService *forClient, IOOptionBits options);
+    virtual bool	terminate( IOOptionBits options = 0 );
+    virtual bool	requestTerminate( IOService * provider, IOOptionBits options );
+#endif
 
     virtual void SetPort(void *port);			// Obsolete, do NOT use
 
@@ -473,6 +396,7 @@ public:
      */
     virtual void	DisplayUserNotification(UInt32 notificationType);
     
+#if !(defined(__ppc__) && defined(KPI_10_4_0_PPC_COMPAT))
     OSMetaClassDeclareReservedUsed(IOUSBDevice,  5);
 	/*!
         @function MakePipe
@@ -482,6 +406,9 @@ public:
 	 */
     virtual IOUSBPipe*	MakePipe(const IOUSBEndpointDescriptor *ep, IOUSBInterface *interface);
     
+#else
+    OSMetaClassDeclareReservedUnused(IOUSBDevice,  5);
+#endif
 	
     OSMetaClassDeclareReservedUnused(IOUSBDevice,  6);
     OSMetaClassDeclareReservedUnused(IOUSBDevice,  7);

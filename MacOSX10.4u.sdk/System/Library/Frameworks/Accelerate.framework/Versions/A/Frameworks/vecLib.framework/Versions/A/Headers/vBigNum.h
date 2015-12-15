@@ -3,9 +3,9 @@
  
      Contains:   Algebraic and logical operations on large operands.
  
-     Version:    vecLib-182.18~156
+     Version:    vecLib-192.12~1
  
-     Copyright:  © 1999-2005 by Apple Computer, Inc., all rights reserved.
+     Copyright:  © 1999-2006 by Apple Computer, Inc., all rights reserved.
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -35,9 +35,9 @@
 extern "C" {
 #endif
 
-#pragma options align=mac68k
+#pragma options align=power
 
-#if defined(__ppc__) || defined(__ppc64__) || defined(__i386__)
+#if defined(__ppc__) || defined(__ppc64__) || defined(__i386__) || defined(__x86_64__)
 /************************************************************************************
 *                                                                                   *
 *  This library provides a set of subroutines for basic algebraic and some logical  *
@@ -330,7 +330,7 @@ union vS1024 {
   }                       s;
 };
 typedef union vS1024                    vS1024;
-#elif defined(__i386__) && defined(__SSE2__)
+#elif (defined(__i386__) || defined(__x86_64__)) && defined(__SSE2__)
 union vU128 {
   vUInt32             v;
   struct {
@@ -1639,7 +1639,7 @@ vR1024Rotate(
 
 #endif  /* defined(__VEC__) || defined(__SSE2__) */
 
-#endif  /* defined(__ppc__) || defined(__ppc64__) || defined(__i386__) */
+#endif  /* defined(__ppc__) || defined(__ppc64__) || defined(__i386__) || defined(__x86_64__) */
 
 
 #pragma options align=reset

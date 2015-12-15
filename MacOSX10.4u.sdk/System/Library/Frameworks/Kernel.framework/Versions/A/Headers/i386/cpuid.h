@@ -93,7 +93,9 @@
 #define CPUID_FEATURE_SMX     _HBit(6)	/* SMX */
 #define CPUID_FEATURE_EST     _HBit(7)	/* Enhanced SpeedsTep (GV3) */
 #define CPUID_FEATURE_TM2     _HBit(8)	/* Thermal Monitor 2 */
-#define CPUID_FEATURE_CID     _HBit(9)	/* L1 Context ID */
+#define CPUID_FEATURE_SSSE3   _HBit(9)	/* Supplemental SSE3 instructions */
+#define CPUID_FEATURE_MNI     CPUID_FEATURE_SSSE3
+#define CPUID_FEATURE_CID     _HBit(10)	/* L1 Context ID */
 #define CPUID_FEATURE_CX16    _HBit(13)	/* CmpXchg16b instruction */
 #define CPUID_FEATURE_xTPR    _HBit(14)	/* Send Task PRiority msgs */
 
@@ -267,6 +269,7 @@
 #define	CPUID_CACHE_UCACHE_512K	   0x43	/* 2nd-level cache, 512K */
 #define	CPUID_CACHE_UCACHE_1M	   0x44	/* 2nd-level cache, 1M */
 #define	CPUID_CACHE_UCACHE_2M	   0x45	/* 2nd-level cache, 2M */
+#define CPUID_CACHE_UCACHE_4M      0x49 /* 2nd-level cache, 4M */
 #define CPUID_CACHE_ITLB_64        0x50 /* Instruction TLB, 64 entries */
 #define CPUID_CACHE_ITLB_128       0x51 /* Instruction TLB, 128 entries */
 #define CPUID_CACHE_ITLB_256       0x52 /* Instruction TLB, 256 entries */

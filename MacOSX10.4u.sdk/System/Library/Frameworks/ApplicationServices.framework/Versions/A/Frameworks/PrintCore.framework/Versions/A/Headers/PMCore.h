@@ -3,9 +3,9 @@
  
      Contains:   Carbon Printing Manager Interfaces.
  
-     Version:    PrintingCore-177.6~50
+     Version:    PrintingCore-177.13~32
  
-     Copyright:  © 1998-2005 by Apple Computer, Inc., all rights reserved
+     Copyright:  © 1998-2006 by Apple Computer, Inc., all rights reserved
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:

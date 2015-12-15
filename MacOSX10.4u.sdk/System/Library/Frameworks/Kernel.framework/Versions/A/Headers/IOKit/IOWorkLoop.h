@@ -258,6 +258,7 @@ public:
 			       void *arg0 = 0, void *arg1 = 0,
 			       void *arg2 = 0, void *arg3 = 0);
 
+#if !(defined(__ppc__) && defined(KPI_10_4_0_PPC_COMPAT))
 /*! @function runEventSources
     @discussion Consists of the inner 2 loops of the threadMain function(qv).
     The outer loop terminates when there is no more work, and the inside loop
@@ -279,9 +280,13 @@ public:
 */
     OSMetaClassDeclareReservedUsed(IOWorkLoop, 1);
     virtual bool runEventSources();
+#endif
 
 protected:
 
+#if (defined(__ppc__) && defined(KPI_10_4_0_PPC_COMPAT))
+    OSMetaClassDeclareReservedUnused(IOWorkLoop, 1);
+#endif
     OSMetaClassDeclareReservedUnused(IOWorkLoop, 2);
     OSMetaClassDeclareReservedUnused(IOWorkLoop, 3);
     OSMetaClassDeclareReservedUnused(IOWorkLoop, 4);

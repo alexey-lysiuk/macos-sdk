@@ -1978,6 +1978,13 @@
 #define glGetProgramivARB(target, pname, params) \
 	(*(CGL_MACRO_CONTEXT)->disp.get_programiv_ARB)(CGL_MACRO_CONTEXT_RENDERER, target, pname, params)
 
+/* GL_EXT_gpu_program_parameters */
+#define glProgramEnvParameters4fvEXT(target, index, count, params) \
+(*(CGL_MACRO_CONTEXT)->disp.program_env_parameters4fv_EXT)(CGL_MACRO_CONTEXT_RENDERER, target, index, count, params)
+
+#define glProgramLocalParameters4fvEXT(target, index, count, params) \
+(*(CGL_MACRO_CONTEXT)->disp.program_local_parameters4fv_EXT)(CGL_MACRO_CONTEXT_RENDERER, target, index, count, params)
+
 /* GL_ARB_vertex_blend */
 #define glWeightbvARB(size, weights) \
 	(*(CGL_MACRO_CONTEXT)->disp.weightbv_ARB)(CGL_MACRO_CONTEXT_RENDERER, size, weights)
@@ -2466,6 +2473,13 @@
 
 #define glSwapAPPLE() \
 	(*(CGL_MACRO_CONTEXT)->disp.swap_APPLE)(CGL_MACRO_CONTEXT_RENDERER)
+
+/* GL_APPLE_flush_buffer_range */
+#define glBufferParameteriAPPLE(target, pname, param) \
+	(*(CGL_MACRO_CONTEXT)->disp.buffer_parameteri_APPLE)(CGL_MACRO_CONTEXT_RENDERER, target, pname, param)
+
+#define glFlushMappedBufferRangeAPPLE(target, offset, size) \
+	(*(CGL_MACRO_CONTEXT)->disp.flush_mapped_buffer_range_APPLE)(CGL_MACRO_CONTEXT_RENDERER, target, offset, size)
 
 
 /*********** ATI Extensions *************************************************/

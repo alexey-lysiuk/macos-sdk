@@ -5,7 +5,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <JavaVM/jni.h>
+#import "jni.h"
 
 // This is implemented by a com.apple.eawt.CocoaComponent. It receives messages
 //  from java safely on the AppKit thread. See the com.apple.eawt.CocoaComponent

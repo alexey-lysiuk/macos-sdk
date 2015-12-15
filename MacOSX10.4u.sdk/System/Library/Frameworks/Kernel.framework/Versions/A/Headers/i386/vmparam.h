@@ -26,7 +26,9 @@
 #include <sys/resource.h>
 
 /* Rosetta dependency on this address */
-#define	USRSTACK	(0xC0000000)
+#define	USRSTACK	VM_USRSTACK32
+
+#define	USRSTACK64	VM_USRSTACK64
 
 /*
  * Virtual memory related constants, all in bytes
@@ -38,10 +40,10 @@
 #define	MAXDSIZ		(RLIM_INFINITY)		/* max data size */
 #endif
 #ifndef	DFLSSIZ
-#define	DFLSSIZ		(8*1024*1024 - 7*4*1024)	/* initial stack size limit */
+#define	DFLSSIZ		(8*1024*1024)		/* initial stack size limit */
 #endif
 #ifndef	MAXSSIZ
-#define	MAXSSIZ		(64*1024*1024 - 7*4*1024)	/* max stack size */
+#define	MAXSSIZ		(64*1024*1024)		/* max stack size */
 #endif
 #ifndef	DFLCSIZ
 #define DFLCSIZ		(0)			/* initial core size limit */

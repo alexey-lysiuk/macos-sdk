@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1998-2003 Apple Computer, Inc. All rights reserved.
+ * Copyright (c) 1998-2006 Apple Computer, Inc. All rights reserved.
  *
  * @APPLE_LICENSE_HEADER_START@
  * 
@@ -20,64 +20,10 @@
  * @APPLE_LICENSE_HEADER_END@
  */
 
-#ifndef __OPEN_SOURCE__
-/*
- *
- *	$Log: IOUSBControllerV2.h,v $
- *	Revision 1.17  2005/11/28 23:09:07  rhoads
- *	roll in changes from the UHCI rewrite branch
- *	
- *	Revision 1.16.2.2  2005/11/23 22:30:40  rhoads
- *	more isoch changes
- *	
- *	Revision 1.16.2.1  2005/11/22 17:28:32  rhoads
- *	fix a short packet problem as well as isoch
- *	
- *	Revision 1.16  2005/10/26 21:25:21  nano
- *	Bring in branches to TOT
- *	
- *	Revision 1.15.150.1  2005/10/25 15:52:59  rhoads
- *	moved some SPI from AppleUSBEHCI to IOUSBControllerV2 so that it can be shared with AppleUSBUHCI
- *	
- *	Revision 1.15  2004/09/23 02:19:50  rhoads
- *	changes for hisgh speed isoch
- *	
- *	Revision 1.14.42.1  2004/09/21 18:08:29  rhoads
- *	checking preliminary stuff in for safe keeping
- *	
- *	Revision 1.14  2004/05/17 21:52:50  nano
- *	Add timeStamp and useTimeStamp to our commands.
- *	
- *	Revision 1.13.16.1  2004/05/17 15:57:27  nano
- *	API Changes for Tiger
- *	
- *	Revision 1.13  2004/02/03 22:09:49  nano
- *	Fix <rdar://problem/3548194>: Remove $ Id $ from source files to prevent conflicts
- *	
- *	Revision 1.12.48.2  2004/04/28 17:26:09  nano
- *	Remove $ ID $ so that we don't get conflicts on merge
- *	
- *	Revision 1.12.48.1  2003/11/04 22:27:37  nano
- *	Work in progress to add time stamping to interrupt handler
- *	
- *	Revision 1.12  2003/08/20 19:41:40  nano
- *	
- *	Bug #:
- *	New version's of Nima's USB Prober (2.2b17)
- *	3382540  Panther: Ejecting a USB CardBus card can freeze a machine
- *	3358482  Device Busy message with Modems and IOUSBFamily 201.2.14 after sleep
- *	3385948  Need to implement device recovery on High Speed Transaction errors to full speed devices
- *	3377037  USB EHCI: returnTransactions can cause unstable queue if transactions are aborted
- *	
- *	Also, updated most files to use the id/log functions of cvs
- *	
- *	Submitted by: nano
- *	Reviewed by: rhoads/barryt/nano
- *	
- */
-#endif
 #ifndef _IOKIT_IOUSBCONTROLLERV2_H
 #define _IOKIT_IOUSBCONTROLLERV2_H
+
+#include <IOKit/IODMACommand.h>
 
 #include <IOKit/usb/IOUSBControllerListElement.h>
 #include <IOKit/usb/IOUSBController.h>
@@ -136,6 +82,7 @@ protected:
     #define _currentSizeOfCommandPool			_expansionData->_currentSizeOfCommandPool
     #define _currentSizeOfIsocCommandPool		_expansionData->_currentSizeOfIsocCommandPool
     #define _controllerSpeed					_expansionData->_controllerSpeed
+	#define _activeIsochTransfers				_expansionData->_activeIsochTransfers
 
 	// this class's expansion data
 	#define _isochEPList						_v2ExpansionData->_isochEPList
@@ -143,15 +90,17 @@ protected:
 	#define _returnIsochDoneQueueThread			_v2ExpansionData->_returnIsochDoneQueueThread
 	
     virtual bool 		init( OSDictionary *  propTable );
-    virtual bool 		start( IOService *  provider );
+ #if !(defined(__ppc__) && defined(KPI_10_4_0_PPC_COMPAT))
+   	virtual bool 		start( IOService *  provider );
     virtual void		free();
+#endif
 
     static IOReturn  DoCreateEP(OSObject *owner,
                            void *arg0, void *arg1,
                            void *arg2, void *arg3);
 
     static void		clearTTHandler( 
-			    OSObject *	target,
+							OSObject *	target,
                             void *	parameter,
                             IOReturn	status,
                             UInt32	bufferSizeRemaining );
@@ -351,6 +300,7 @@ public:
 														UInt8				interval);
 
 
+#if !(defined(__ppc__) && defined(KPI_10_4_0_PPC_COMPAT))
     OSMetaClassDeclareReservedUsed(IOUSBControllerV2,  9);
 	virtual IOUSBControllerIsochEndpoint*		IOUSBControllerV2::AllocateIsochEP(void);	
 	
@@ -384,8 +334,35 @@ public:
     OSMetaClassDeclareReservedUsed(IOUSBControllerV2,  19);
     virtual void								ReturnIsochDoneQueue(IOUSBControllerIsochEndpoint*);
 
+    OSMetaClassDeclareReservedUsed(IOUSBControllerV2,  20);
+	virtual IODMACommand						*GetNewDMACommand();
+	
+    OSMetaClassDeclareReservedUsed(IOUSBControllerV2,  21);
+	/*!
+		@function GetLowLatencyOptionsAndPhysicalMask
+	 @abstract Low Latency transfers require that the client have access to the memory after the Isochronous I/O request has already been scheduled. This might be used, for example to fill in outgoing data "just in time." Some controllers, however, may have requirements which need to be followed in order to make sure that the memory buffer isn't moved after the call is made. This call will return an IOOptionBits and mach_vm_address_t which can be used in a call to IOBufferMemoryDescriptor::inTaskWithPhysicalMask which will help meet these requirements.
+	 @param optionBits Pointer to an an IOOptionBits. The only bit which may be returned is kIOMemoryPhysicallyContiguous. Other bits, e.g. direction bits, must be ORd in by the client as needed. This call replaces the old property based method of obtaining this information.
+	 @param physicalMask  Pointer to a mach_vm_address_t which should be used in the call to IOBufferMemoryDescriptor::inTaskWithPhysicalMask and will guarantee that when the memory is wired down it will be accessible by both the client and the USB controller at the same time.
+	 @result returns kIOReturnSuccess if the method is implemented by the controller, otherwise 
+	 */
+    virtual IOReturn 		GetLowLatencyOptionsAndPhysicalMask(IOOptionBits *optionBits, mach_vm_address_t *physicalMask);
+	
+#else
+    OSMetaClassDeclareReservedUnused(IOUSBControllerV2,   9);
+    OSMetaClassDeclareReservedUnused(IOUSBControllerV2,  10);
+    OSMetaClassDeclareReservedUnused(IOUSBControllerV2,  11);
+    OSMetaClassDeclareReservedUnused(IOUSBControllerV2,  12);
+    OSMetaClassDeclareReservedUnused(IOUSBControllerV2,  13);
+    OSMetaClassDeclareReservedUnused(IOUSBControllerV2,  14);
+    OSMetaClassDeclareReservedUnused(IOUSBControllerV2,  15);
+    OSMetaClassDeclareReservedUnused(IOUSBControllerV2,  16);
+    OSMetaClassDeclareReservedUnused(IOUSBControllerV2,  17);
+    OSMetaClassDeclareReservedUnused(IOUSBControllerV2,  18);
+    OSMetaClassDeclareReservedUnused(IOUSBControllerV2,  19);
     OSMetaClassDeclareReservedUnused(IOUSBControllerV2,  20);
     OSMetaClassDeclareReservedUnused(IOUSBControllerV2,  21);
+#endif
+	
     OSMetaClassDeclareReservedUnused(IOUSBControllerV2,  22);
     OSMetaClassDeclareReservedUnused(IOUSBControllerV2,  23);
     OSMetaClassDeclareReservedUnused(IOUSBControllerV2,  24);

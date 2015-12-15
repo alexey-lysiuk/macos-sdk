@@ -3,9 +3,9 @@
  
      Contains:   Master include for ColorSync private framework
  
-     Version:    ColorSync-174~3
+     Version:    ColorSync-174.1~170
  
-     Copyright:  © 2000-2005 by Apple Computer, Inc., all rights reserved.
+     Copyright:  © 2000-2006 by Apple Computer, Inc., all rights reserved.
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:

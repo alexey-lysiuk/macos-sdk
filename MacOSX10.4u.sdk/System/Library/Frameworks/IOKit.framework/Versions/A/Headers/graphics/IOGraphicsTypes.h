@@ -239,7 +239,9 @@ enum {
 
     kIOSystemPowerAttribute		= 'spwr',
     kIOVRAMSaveAttribute		= 'vrsv',
-    kIODeferCLUTSetAttribute		= 'vclt'
+    kIODeferCLUTSetAttribute		= 'vclt',
+
+    kIOClamshellStateAttribute		= 'clam'
 };
 
 // values for kIOMirrorAttribute

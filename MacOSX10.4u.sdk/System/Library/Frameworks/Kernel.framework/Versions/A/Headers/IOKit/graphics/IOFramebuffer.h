@@ -148,7 +148,9 @@ enum {
     kIOFBNotifyDidPowerOn	= 8,
 
     kIOFBNotifyWillChangeSpeed	= 9,
-    kIOFBNotifyDidChangeSpeed	= 10
+    kIOFBNotifyDidChangeSpeed	= 10,
+
+    kIOFBNotifyClamshellChange	= 20
 };
 
 enum {

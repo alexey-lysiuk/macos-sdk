@@ -109,8 +109,10 @@ public:
 	virtual IOReturn getNearestStartTime(IOAudioStream *audioStream, IOAudioTimeStamp *ioTimeStamp, UInt32 isInput);
 	virtual IOReturn getClientNearestStartTime(IOAudioStream *audioStream, IOAudioTimeStamp *ioTimeStamp, UInt32 isInput);
 	virtual IOReturn safeRegisterClientBuffer(UInt32 audioStreamIndex, void *sourceBuffer, UInt32 bufSizeInBytes, UInt32 bufferSetID);
+#if !(defined(__ppc__) && defined(KPI_10_4_0_PPC_COMPAT))
     // OSMetaClassDeclareReservedUsed(IOAudioEngineUserClient, 5);	
     virtual bool initWithAudioEngine(IOAudioEngine *engine, task_t task, void *securityToken, UInt32 type, OSDictionary *properties);
+#endif
 
 private:
     OSMetaClassDeclareReservedUsed(IOAudioEngineUserClient, 0);
@@ -118,7 +120,11 @@ private:
     OSMetaClassDeclareReservedUsed(IOAudioEngineUserClient, 2);
     OSMetaClassDeclareReservedUsed(IOAudioEngineUserClient, 3);
     OSMetaClassDeclareReservedUsed(IOAudioEngineUserClient, 4);
+#if !(defined(__ppc__) && defined(KPI_10_4_0_PPC_COMPAT))
     OSMetaClassDeclareReservedUsed(IOAudioEngineUserClient, 5);
+#else
+    OSMetaClassDeclareReservedUnused(IOAudioEngineUserClient, 5);
+#endif
 
     OSMetaClassDeclareReservedUnused(IOAudioEngineUserClient, 6);
     OSMetaClassDeclareReservedUnused(IOAudioEngineUserClient, 7);

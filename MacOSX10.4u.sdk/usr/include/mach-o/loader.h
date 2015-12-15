@@ -425,6 +425,7 @@ struct section_64 { /* for 64-bit architectures */
 #define	S_INTERPOSING			0xd	/* section with only pairs of
 						   function pointers for
 						   interposing */
+#define	S_16BYTE_LITERALS	0xe	/* section with only 16 byte literals */
 /*
  * Constants for the section attributes part of the flags field of a section
  * structure.

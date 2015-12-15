@@ -109,9 +109,7 @@ struct statfs {
 
 #define	MFSTYPENAMELEN	16	/* length of fs type name including null */
 
-#if __DARWIN_ALIGN_POWER
-#pragma options align=power
-#endif
+#pragma pack(4)
 
 struct vfsstatfs {
 	uint32_t	f_bsize;	/* fundamental file system block size */
@@ -132,9 +130,7 @@ struct vfsstatfs {
 	void		*f_reserved[2];		/* For future use == 0 */
 };
 
-#if __DARWIN_ALIGN_POWER
-#pragma options align=reset
-#endif
+#pragma pack()
 
 #define VFSATTR_INIT(s)			((s)->f_supported = (s)->f_active = 0LL)
 #define VFSATTR_SET_SUPPORTED(s, a)	((s)->f_supported |= VFSATTR_ ## a)
@@ -173,9 +169,7 @@ struct vfsstatfs {
 /*
  * New VFS_STAT argument structure.
  */
-#if __DARWIN_ALIGN_POWER
-#pragma options align=power
-#endif
+#pragma pack(4)
 
 struct vfs_attr {
 	uint64_t	f_supported;
@@ -213,9 +207,7 @@ struct vfs_attr {
 	uint16_t	f_carbon_fsid;	/* same as Carbon's FSVolumeInfo.filesystemID */
 };
 
-#if __DARWIN_ALIGN_POWER
-#pragma options align=reset
-#endif
+#pragma pack()
 
 /*
  * User specifiable flags.

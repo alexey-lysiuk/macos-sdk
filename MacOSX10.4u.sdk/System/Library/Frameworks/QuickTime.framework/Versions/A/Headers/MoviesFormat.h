@@ -3,9 +3,9 @@
  
      Contains:   QuickTime Interfaces.
  
-     Version:    QuickTime 7.0.4
+     Version:    QuickTime 7.1.2
  
-     Copyright:  © 1990-2005 by Apple Computer, Inc., all rights reserved
+     Copyright:  © 1990-2006 by Apple Computer, Inc., all rights reserved
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -32,7 +32,7 @@
 #pragma once
 #endif
 
-#pragma options align=mac68k
+#pragma pack(push, 2)
 
 enum {
   kMovieVersion                 = 0     /* version number of the format here described */
@@ -453,6 +453,42 @@ struct TrackLoadSettingsAtom {
   TrackLoadSettings   settings;
 };
 typedef struct TrackLoadSettingsAtom    TrackLoadSettingsAtom;
+struct TrackCleanApertureDimensions {
+  long                flags;                  /* 1 byte of version / 3 bytes of flags */
+  FixedPoint          cleanApertureDimensions;
+};
+typedef struct TrackCleanApertureDimensions TrackCleanApertureDimensions;
+struct TrackCleanApertureDimensionsAtom {
+  long                size;
+  long                atomType;               /* = 'tapt' */
+
+  TrackCleanApertureDimensions  cleanApertureDimensions;
+};
+typedef struct TrackCleanApertureDimensionsAtom TrackCleanApertureDimensionsAtom;
+struct TrackProductionApertureDimensions {
+  long                flags;                  /* 1 byte of version / 3 bytes of flags */
+  FixedPoint          productionApertureDimensions;
+};
+typedef struct TrackProductionApertureDimensions TrackProductionApertureDimensions;
+struct TrackProductionApertureDimensionsAtom {
+  long                size;
+  long                atomType;               /* = 'prof' */
+
+  TrackProductionApertureDimensions  productionApertureDimensions;
+};
+typedef struct TrackProductionApertureDimensionsAtom TrackProductionApertureDimensionsAtom;
+struct TrackEncodedPixelsDimensions {
+  long                flags;                  /* 1 byte of version / 3 bytes of flags */
+  FixedPoint          encodedPixelsDimensions;
+};
+typedef struct TrackEncodedPixelsDimensions TrackEncodedPixelsDimensions;
+struct TrackEncodedPixelsDimensionsAtom {
+  long                size;
+  long                atomType;               /* = 'enof' */
+
+  TrackEncodedPixelsDimensions  encodedPixelsDimensions;
+};
+typedef struct TrackEncodedPixelsDimensionsAtom TrackEncodedPixelsDimensionsAtom;
 struct TrackDirectory {
   long                size;
   long                atomType;               /* = 'trak' */
@@ -624,7 +660,11 @@ enum {
   FileTypeAID                   = 'ftyp',
   SecureContentInfoAID          = 'sinf',
   SecureContentSchemeTypeAID    = 'schm',
-  SecureContentSchemeInfoAID    = 'schi'
+  SecureContentSchemeInfoAID    = 'schi',
+  TrackApertureModeDimensionsAID = 'tapt', /* container atom including TrackCleanApertureDimensionsAID, TrackProductionApertureDimensionsAID and TrackEncodedPixelsDimensionsAID */
+  TrackCleanApertureDimensionsAID = 'clef',
+  TrackProductionApertureDimensionsAID = 'prof',
+  TrackEncodedPixelsDimensionsAID = 'enof'
 };
 
 /* Text ATOM definitions*/
@@ -780,7 +820,7 @@ struct SecureContentSchemeInfoAtom {
 };
 typedef struct SecureContentSchemeInfoAtom SecureContentSchemeInfoAtom;
 
-#pragma options align=reset
+#pragma pack(pop)
 
 
 #endif /* __MOVIESFORMAT__ */

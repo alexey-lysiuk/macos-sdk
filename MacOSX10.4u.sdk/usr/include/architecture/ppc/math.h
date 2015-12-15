@@ -74,17 +74,22 @@ extern "C" {
 	#error "Unsupported value of __FLT_EVAL_METHOD__."
 #endif /* __FLT_EVAL_METHOD__ */
 
-#define	HUGE_VAL	1e500
-#define	HUGE_VALF	1e50f
-#define	HUGE_VALL	1e500L
-
-#define INFINITY	HUGE_VALF
 
 #if defined(__GNUC__)
-#define NAN		__builtin_nanf("0x7fc00000") /* Constant expression, can be used as initializer. */
+	#define	HUGE_VAL	__builtin_huge_val()
+	#define	HUGE_VALF	__builtin_huge_valf()
+	#define	HUGE_VALL	__builtin_huge_vall()
+	#define NAN			__builtin_nanf("0x7fc00000") /* Constant expression, can be used as initializer. */
+	#define __MATH_H_ALWAYS_INLINE__		__attribute__ ((always_inline))
 #else
-#define NAN		__nan( )
+	#define	HUGE_VAL	1e500
+	#define	HUGE_VALF	1e50f
+	#define	HUGE_VALL	1e500L
+	#define NAN		__nan( )
+	#define __MATH_H_ALWAYS_INLINE__
 #endif
+
+#define INFINITY	HUGE_VALF
 
 /******************************************************************************
 *      Taxonomy of floating point data types                                  *
@@ -136,83 +141,215 @@ extern unsigned int __math_errhandling ( void );
 ********************************************************************************/
 
 #if (__WANT_LONG_DOUBLE_FORMAT__ - 0L == 128L)
-#define      fpclassify( x )    ( ( sizeof ( (x) ) == sizeof(double) ) ?           \
-                              __fpclassifyd  ( (double)(x) ) :                           \
-                                ( sizeof ( (x) ) == sizeof( float) ) ?            \
-                              __fpclassifyf ( (float)(x) ) :                            \
-                              __fpclassify  ( ( long double )(x) ) )
-#define      isnormal( x )      ( ( sizeof ( (x) ) == sizeof(double) ) ?           \
-                              __isnormald ( (double)(x) ) :                              \
-                                ( sizeof ( (x) ) == sizeof( float) ) ?            \
-                              __isnormalf ( (float)(x) ) :                              \
-                              __isnormal  ( ( long double )(x) ) )
-#define      isfinite( x )      ( ( sizeof ( (x) ) == sizeof(double) ) ?           \
-                              __isfinited ( (double)(x) ) :                              \
-                                ( sizeof ( (x) ) == sizeof( float) ) ?            \
-                              __isfinitef ( (float)(x) ) :                              \
-                              __isfinite  ( ( long double )(x) ) )
-#define      isinf( x )         ( ( sizeof ( (x) ) == sizeof(double) ) ?           \
-                              __isinfd ( (double)(x) ) :                                 \
-                                ( sizeof ( (x) ) == sizeof( float) ) ?            \
-                              __isinff ( (float)(x) ) :                                 \
-                              __isinf  ( ( long double )(x) ) )
-#define      isnan( x )         ( ( sizeof ( (x) ) == sizeof(double) ) ?           \
-                              __isnand ( (double)(x) ) :                                 \
-                                ( sizeof ( (x) ) == sizeof( float) ) ?            \
-                              __isnanf ( (float)(x) ) :                                 \
-                              __isnan  ( ( long double )(x) ) )
-#define      signbit( x )       ( ( sizeof ( (x) ) == sizeof(double) ) ?           \
-                              __signbitd ( (double)(x) ) :                               \
-                                ( sizeof ( (x) ) == sizeof( float) ) ?            \
-                              __signbitf ( (float)(x) ) :                               \
-                              __signbitl  ( ( long double )(x) ) )
+	#define fpclassify(x)	\
+		(	sizeof (x) == sizeof(float )	?	__fpclassifyf((float)x)	\
+		:	sizeof (x) == sizeof(double)	?	__fpclassifyd((double)x)	\
+											:	__fpclassify ((long double)x))
 
-extern int  __fpclassify( long double );
-extern int  __isnormal( long double );
-extern int  __isfinite( long double );
-extern int  __isinf( long double );
-extern int  __isnan( long double );
-extern int  __signbitl( long double );
+	extern int __fpclassifyf(float      );
+	extern int __fpclassifyd(double     );
+	extern int __fpclassify (long double);
+
+	#if defined( __GNUC__ )
+		#define isnormal(x)	\
+			(	sizeof (x) == sizeof(float )	?	__inline_isnormalf((float)(x))	\
+			:	sizeof (x) == sizeof(double)	?	__inline_isnormald((double)(x))	\
+												:	__inline_isnormal ((long double)(x)))
+
+		#define isfinite(x)	\
+			(	sizeof (x) == sizeof(float )	?	__inline_isfinitef((float)(x))	\
+			:	sizeof (x) == sizeof(double)	?	__inline_isfinited((double)(x))	\
+												:	__inline_isfinite ((long double)(x)))
+
+		#define isinf(x)	\
+			(	sizeof (x) == sizeof(float )	?	__inline_isinff((float)(x))	\
+			:	sizeof (x) == sizeof(double)	?	__inline_isinfd((double)(x))	\
+												:	__inline_isinf ((long double)(x)))
+
+		#define isnan(x)	\
+			(	sizeof (x) == sizeof(float )	?	__inline_isnanf((float)(x))	\
+			:	sizeof (x) == sizeof(double)	?	__inline_isnand((double)(x))	\
+												:	__inline_isnan ((long double)(x)))
+
+		#define signbit(x)	\
+			(	sizeof (x) == sizeof(float )	?	__inline_signbitf((float)(x))	\
+			:	sizeof (x) == sizeof(double)	?	__inline_signbitd((double)(x))	\
+												:	__inline_signbit((long double)(x)))
+
+		static __inline__ int __inline_isfinitef	(float      ) __MATH_H_ALWAYS_INLINE__;
+		static __inline__ int __inline_isfinited	(double     ) __MATH_H_ALWAYS_INLINE__;
+		static __inline__ int __inline_isfinite		(long double) __MATH_H_ALWAYS_INLINE__;
+		static __inline__ int __inline_isinff		(float      ) __MATH_H_ALWAYS_INLINE__;
+		static __inline__ int __inline_isinfd		(double     ) __MATH_H_ALWAYS_INLINE__;
+		static __inline__ int __inline_isinf		(long double) __MATH_H_ALWAYS_INLINE__;
+		static __inline__ int __inline_isnanf		(float      ) __MATH_H_ALWAYS_INLINE__;
+		static __inline__ int __inline_isnand		(double     ) __MATH_H_ALWAYS_INLINE__;
+		static __inline__ int __inline_isnan		(long double) __MATH_H_ALWAYS_INLINE__;
+		static __inline__ int __inline_isnormalf    (float      ) __MATH_H_ALWAYS_INLINE__;
+		static __inline__ int __inline_isnormald    (double     ) __MATH_H_ALWAYS_INLINE__;
+		static __inline__ int __inline_isnormal     (long double) __MATH_H_ALWAYS_INLINE__;
+		static __inline__ int __inline_signbitf     (float      ) __MATH_H_ALWAYS_INLINE__;
+		static __inline__ int __inline_signbitd     (double     ) __MATH_H_ALWAYS_INLINE__;
+		static __inline__ int __inline_signbit      (long double) __MATH_H_ALWAYS_INLINE__;
+		
+		static __inline__ int __inline_isinff( float __x ) { return __builtin_fabsf(__x) == __builtin_inff(); }
+		static __inline__ int __inline_isinfd( double __x ) { return __builtin_fabs(__x) == __builtin_inf(); }
+		static __inline__ int __inline_isinf( long double __x ) { return __builtin_fabsl(__x) == __builtin_infl(); }
+		static __inline__ int __inline_isfinitef( float __x ) { return __x == __x && __builtin_fabsf(__x) != __builtin_inff(); }
+		static __inline__ int __inline_isfinited( double __x ) { return __x == __x && __builtin_fabs(__x) != __builtin_inf(); }
+		static __inline__ int __inline_isfinite( long double __x ) { return __x == __x && __builtin_fabsl(__x) != __builtin_infl(); }
+		static __inline__ int __inline_isnanf( float __x ) { return __x != __x; }
+		static __inline__ int __inline_isnand( double __x ) { return __x != __x; }
+		static __inline__ int __inline_isnan( long double __x ) { return __x != __x; }
+		static __inline__ int __inline_signbitf( float __x ) { union{ float __f; unsigned int __u; }__u = {__x}; return (int)(__u.__u >> 31); }
+		static __inline__ int __inline_signbitd( double __x ) { union{ double __f; unsigned long long __u; }__u = {__x}; return (int)(__u.__u >> 63); }
+		static __inline__ int __inline_signbit( long double __x ){ union{ long double __ld; long long __p[2]; }__u = {__x}; return (int) ((unsigned long long) __u.__p[0] >> 63); } 
+		static __inline__ int __inline_isnormalf( float __x ) { float fabsf = __builtin_fabsf(__x); if( __x != __x ) return 0; return fabsf < __builtin_inff() && fabsf >= __FLT_MIN__; }  
+		static __inline__ int __inline_isnormald( double __x ) { double fabsf = __builtin_fabs(__x); if( __x != __x ) return 0; return fabsf < __builtin_inf() && fabsf >= __DBL_MIN__; }  
+		static __inline__ int __inline_isnormal( long double __x ) { long double fabsf = __builtin_fabsl(__x); if( __x != __x ) return 0; return fabsf < __builtin_infl() && fabsf >= __LDBL_MIN__; }  
+		
+	#else
+
+		#define isnormal(x)	\
+			(	sizeof (x) == sizeof(float )	?	__isnormalf((float)(x))	\
+			:	sizeof (x) == sizeof(double)	?	__isnormald((double)(x))	\
+												:	__isnormal ((long double)(x)))
+
+		#define isfinite(x)	\
+			(	sizeof (x) == sizeof(float )	?	__isfinitef((float)(x))	\
+			:	sizeof (x) == sizeof(double)	?	__isfinited((double)(x))	\
+												:	__isfinite ((long double)(x)))
+
+		#define isinf(x)	\
+			(	sizeof (x) == sizeof(float )	?	__isinff((float)(x))	\
+			:	sizeof (x) == sizeof(double)	?	__isinfd((double)(x))	\
+												:	__isinf ((long double)(x)))
+
+		#define isnan(x)	\
+			(	sizeof (x) == sizeof(float )	?	__isnanf((float)(x))	\
+			:	sizeof (x) == sizeof(double)	?	__isnand((double)(x))	\
+												:	__isnan ((long double)(x)))
+
+		#define signbit(x)	\
+			(	sizeof (x) == sizeof(float )	?	__signbitf((float)(x))	\
+			:	sizeof (x) == sizeof(double)	?	__signbitd((double)(x))	\
+												:	__signbitl((long double)(x)))
+
+
+		extern int __isnormalf  (float      );
+		extern int __isnormald  (double     );
+		extern int __isnormal   (long double);
+
+		extern int __isfinitef  (float      );
+		extern int __isfinited  (double     );
+		extern int __isfinite   (long double);
+
+		extern int __isinff     (float      );
+		extern int __isinfd     (double     );
+		extern int __isinf      (long double);
+
+		extern int __isnanf     (float      );
+		extern int __isnand     (double     );
+		extern int __isnan      (long double);
+
+		extern int __signbitf   (float      );
+		extern int __signbitd   (double     );
+		extern int __signbitl   (long double);
+
+	#endif
 
 #else
-#define fpclassify( x )	( ( sizeof ( (x) ) == sizeof( float) ) ? \
-							__fpclassifyf ( (float)(x) ) : __fpclassifyd  ( (double)(x) ) )
+	#define fpclassify(x)	\
+		(	sizeof (x) == sizeof(float )	?	__fpclassifyf((float)(x))	:	__fpclassifyd((double)(x))	)
 
-#define isnormal( x )   ( ( sizeof ( (x) ) == sizeof( float) ) ? \
-							__isnormalf ( (float)(x) ) : __isnormald  ( (double)(x) ) ) 
+	extern int __fpclassifyf(float      );
+	extern int __fpclassifyd(double     );
 
-#define isfinite( x )   ( ( sizeof ( (x) ) == sizeof( float) ) ? \
-							__isfinitef ( (float)(x) ) : __isfinited  ( (double)(x) ) )  
+	#if defined( __GNUC__ )
+		#define isnormal(x)	\
+			(	sizeof (x) == sizeof(float )	?	__inline_isnormalf((float)(x))	:	__inline_isnormald((double)(x))	)
 
-#define isinf( x )      ( ( sizeof ( (x) ) == sizeof( float) ) ? \
-							__isinff ( (float)(x) ) : __isinfd  ( (double)(x) ) )   
+		#define isfinite(x)	\
+			(	sizeof (x) == sizeof(float )	?	__inline_isfinitef((float)(x))	:	__inline_isfinited((double)(x))	)
 
-#define isnan( x )      ( ( sizeof ( (x) ) == sizeof( float) ) ? \
-							__isnanf ( (float)(x) ) : __isnand  ( (double)(x) ) ) 
+		#define isinf(x)	\
+			(	sizeof (x) == sizeof(float )	?	__inline_isinff((float)(x))		:	__inline_isinfd((double)(x))	)
 
-#define signbit( x )    ( ( sizeof ( (x) ) == sizeof( float) ) ? \
-							__signbitf ( (float)(x) ) : __signbitd  ( (double)(x) ) ) 
+		#define isnan(x)	\
+			(	sizeof (x) == sizeof(float )	?	__inline_isnanf((float)(x))		:	__inline_isnand((double)(x))	)
+
+		#define signbit(x)	\
+			(	sizeof (x) == sizeof(float )	?	__inline_signbitf((float)(x))	:	__inline_signbitd((double)(x))	)
+
+		static __inline__ int __inline_isfinitef	(float      ) __MATH_H_ALWAYS_INLINE__;
+		static __inline__ int __inline_isfinited	(double     ) __MATH_H_ALWAYS_INLINE__;
+		static __inline__ int __inline_isfinite		(long double) __MATH_H_ALWAYS_INLINE__;
+		static __inline__ int __inline_isinff		(float      ) __MATH_H_ALWAYS_INLINE__;
+		static __inline__ int __inline_isinfd		(double     ) __MATH_H_ALWAYS_INLINE__;
+		static __inline__ int __inline_isinf		(long double) __MATH_H_ALWAYS_INLINE__;
+		static __inline__ int __inline_isnanf		(float      ) __MATH_H_ALWAYS_INLINE__;
+		static __inline__ int __inline_isnand		(double     ) __MATH_H_ALWAYS_INLINE__;
+		static __inline__ int __inline_isnan		(long double) __MATH_H_ALWAYS_INLINE__;
+		static __inline__ int __inline_isnormalf    (float      ) __MATH_H_ALWAYS_INLINE__;
+		static __inline__ int __inline_isnormald    (double     ) __MATH_H_ALWAYS_INLINE__;
+		static __inline__ int __inline_isnormal     (long double) __MATH_H_ALWAYS_INLINE__;
+		static __inline__ int __inline_signbitf     (float      ) __MATH_H_ALWAYS_INLINE__;
+		static __inline__ int __inline_signbitd     (double     ) __MATH_H_ALWAYS_INLINE__;
+		static __inline__ int __inline_signbit      (long double) __MATH_H_ALWAYS_INLINE__;
+		
+		static __inline__ int __inline_isinff( float __x ) { return __builtin_fabsf(__x) == __builtin_inff(); }
+		static __inline__ int __inline_isinfd( double __x ) { return __builtin_fabs(__x) == __builtin_inf(); }
+		static __inline__ int __inline_isinf( long double __x ) { return __builtin_fabsl(__x) == __builtin_infl(); }
+		static __inline__ int __inline_isfinitef( float __x ) { return __x == __x && __builtin_fabsf(__x) != __builtin_inff(); }
+		static __inline__ int __inline_isfinited( double __x ) { return __x == __x && __builtin_fabs(__x) != __builtin_inf(); }
+		static __inline__ int __inline_isfinite( long double __x ) { return __x == __x && __builtin_fabsl(__x) != __builtin_infl(); }
+		static __inline__ int __inline_isnanf( float __x ) { return __x != __x; }
+		static __inline__ int __inline_isnand( double __x ) { return __x != __x; }
+		static __inline__ int __inline_isnan( long double __x ) { return __x != __x; }
+		static __inline__ int __inline_signbitf( float __x ) { union{ float __f; unsigned int __u; }__u = {__x}; return (int)(__u.__u >> 31); }
+		static __inline__ int __inline_signbitd( double __x ) { union{ double __f; unsigned long long __u; }__u = {__x}; return (int)(__u.__u >> 63); }
+		static __inline__ int __inline_signbit( long double __x ){ union{ long double __ld; unsigned long long __p; }__u = {__x}; return (int) ((unsigned long long) __u.__p >> 63); } 
+		static __inline__ int __inline_isnormalf( float __x ) { float fabsf = __builtin_fabsf(__x); if( __x != __x ) return 0; return fabsf < __builtin_inff() && fabsf >= __FLT_MIN__; }  
+		static __inline__ int __inline_isnormald( double __x ) { double fabsf = __builtin_fabs(__x); if( __x != __x ) return 0; return fabsf < __builtin_inf() && fabsf >= __DBL_MIN__; }  
+		static __inline__ int __inline_isnormal( long double __x ) { long double fabsf = __builtin_fabsl(__x); if( __x != __x ) return 0; return fabsf < __builtin_infl() && fabsf >= __LDBL_MIN__; }  
+		
+	#else
+
+		#define isnormal(x)	\
+			(	sizeof (x) == sizeof(float )	?	__isnormalf((float)(x))	:	__isnormald((double)(x))	)
+
+		#define isfinite(x)	\
+			(	sizeof (x) == sizeof(float )	?	__isfinitef((float)(x))	:	__isfinited((double)(x))	)
+
+		#define isinf(x)	\
+			(	sizeof (x) == sizeof(float )	?	__isinff((float)(x))	:	__isinfd((double)(x))		)
+
+		#define isnan(x)	\
+			(	sizeof (x) == sizeof(float )	?	__isnanf((float)(x))	:	__isnand((double)(x))		)
+
+		#define signbit(x)	\
+			(	sizeof (x) == sizeof(float )	?	__signbitf((float)(x))	:	__signbitd((double)(x))		)
+
+
+		extern int __isnormalf  (float      );
+		extern int __isnormald  (double     );
+
+		extern int __isfinitef  (float      );
+		extern int __isfinited  (double     );
+
+		extern int __isinff     (float      );
+		extern int __isinfd     (double     );
+
+		extern int __isnanf     (float      );
+		extern int __isnand     (double     );
+
+		extern int __signbitf   (float      );
+		extern int __signbitd   (double     );
+
+	#endif
 							  
 #endif /* __WANT_LONG_DOUBLE_FORMAT__ */
                               
-extern int  __fpclassifyd( double );
-extern int  __fpclassifyf( float );
-
-extern int  __isnormald( double );
-extern int  __isnormalf( float );
-
-extern int  __isfinited( double );
-extern int  __isfinitef( float );
-
-extern int  __isinfd( double );
-extern int  __isinff( float );
-
-extern int  __isnand( double );
-extern int  __isnanf( float );
-
-extern int  __signbitd( double );
-extern int  __signbitf( float );
-
 
 /********************************************************************************
 *                                                                               *
@@ -471,11 +608,46 @@ extern double y0 ( double );
 extern double y1 ( double );
 extern double yn ( int, double );
 
-#if __DARWIN_UNIX03
-extern double scalb ( double, double )  __DARWIN_ALIAS(scalb); /* UNIX03 legacy signature */
+/* 
+ * Scalb Travellers' advisory:
+ * ---------------------------
+ *
+ * Reduction of Information advisory -- This advisory may constitute "too much information". Readers who are easily panicked 
+ *                                      or confused may be needlessly panicked or confused by this advisory.
+ *
+ * We are in the process of retiring the legacy scalb.  IEEE-754 did not specify what the argument types should be
+ * for scalb.  We guessed scalb(double, int) -- ints are faster to use here -- but our guess and what later standards
+ * standard eventually settled on did not agree. To be compliant with these standards, our scalb needs to be scalb(double, double).
+ * Unfortunately, we have a commitment to be binary compatible with old software compiled against scalb(double, int)
+ * for older operating systems, so the old symbol _scalb must live on in perpetuity in the __ppc__ binary interface to service 
+ * this need. To deal with this problem, we have introduced a new binary symbol _scalb$UNIX2003 and did some magic below
+ * so that when you now compile against scalb() on a __ppc__ application, you get linked to _scalb$UNIX2003 instead. Thus, 
+ * this constitutes a source level *** API CHANGE *** from  scalb( double, int ) to scalb( double, double) on __ppc__ only 
+ * that your source will need to contend with if you compile with this header.  On __ppc__, all ints are exactly representable 
+ * as doubles so from an arithmetic standpoint, this should cause no changes arithmetically from parameters of int type, but there 
+ * remains the danger of triggering various compiler warnings that might balloon to more serious problems under -Werror. 
+ *
+ * On __ppc64__, __i386__ and future archs, scalb has always been scalb( double, double) and will continue to be so. Thus, this change
+ * will make scalb on all platforms behave identically, with the same parameter types. The change will also eliminate GCC warnings about 
+ * the math.h scalb declaration not matching the gcc4 builtin version. 
+ *
+ * The intent is that you will "never know" that a change occurred, and your code should "just do the right thing" without modification.
+ * However, if you would like to sidestep any problems associated with this move, it is suggested that you use the C99 scalbn or scalbln 
+ * or single/long double variants as appropriate instead. Their behavior and type is rigorously defined. There should be no hidden arithmetic 
+ * "gotchas" if you simply replace all legacy calls to scalb with scalbn, since they essentially do the same thing.  If you 
+ * decide to take this step, you should exercise due diligence to make sure that scalbn is present in the oldest version of 
+ * MacOS X that you support. Otherwise, your application may fail to load on older systems. C99 support was introduced in MacOS X.3.9. 
+ *
+ * Use of the symbol _scalb$UNIX2003 should not in itself be construed to mean that scalb$UNIX2003 necessarily is UNIX 2003 compliant. 
+ * UNIX is a registered trademark of The Open Group. 
+ */
+ 
+/* maps to _scalb$UNIX2003 on __ppc__ and _scalb elsewhere */
+#if defined( __ppc__ )
+	extern double scalb ( double, double )  __asm("_scalb$UNIX2003" ); 
 #else
-extern double scalb ( double, int ); /* Mac OS X legacy signature */
-#endif /* __DARWIN_UNIX03 */
+	extern double scalb ( double, double );
+#endif
 
 #define M_E         2.71828182845904523536028747135266250   /* e */
 #define M_LOG2E     1.44269504088896340735992468100189214   /* log_2(e) */
@@ -496,7 +668,7 @@ extern int signgam;
 
 #endif /* !defined(_ANSI_SOURCE) */
 
-#if !defined(__NOEXTENSIONS__) && !defined(_POSIX_C_SOURCE)
+#if !defined(__NOEXTENSIONS__) && (!defined(_POSIX_C_SOURCE) || defined(_DARWIN_C_SOURCE))
 #define __WANT_EXTENSIONS__
 #endif
 
@@ -517,9 +689,9 @@ typedef struct __complex_s {
 /*
  * XOPEN/SVID
  */
-#if !defined(_ANSI_SOURCE) && !defined(_POSIX_C_SOURCE)
+#if !defined(_ANSI_SOURCE) && (!defined(_POSIX_C_SOURCE) || defined(_DARWIN_C_SOURCE))
 
-#if !defined(_XOPEN_SOURCE)
+#if (!defined(_XOPEN_SOURCE) || defined(_DARWIN_C_SOURCE))
 enum fdversion {_fdlibm_ieee = -1, _fdlibm_svid, _fdlibm_xopen, _fdlibm_posix}; /* Legacy fdlibm constructs */
 #define fdlibm_ieee _fdlibm_ieee
 #define fdlibm_svid _fdlibm_svid
@@ -569,15 +741,15 @@ struct exception {
 #define	TLOSS		5
 #define	PLOSS		6
 
-#endif /* !_XOPEN_SOURCE */
-#endif /* !_ANSI_SOURCE && !_POSIX_C_SOURCE */
+#endif /* (!_XOPEN_SOURCE || _DARWIN_C_SOURCE) */
+#endif /* !_ANSI_SOURCE && (!_POSIX_C_SOURCE || _DARWIN_C_SOURCE) */
 
-#if !defined(_ANSI_SOURCE) && !defined(_POSIX_C_SOURCE)
+#if !defined(_ANSI_SOURCE) && (!defined(_POSIX_C_SOURCE) || defined(_DARWIN_C_SOURCE))
 extern int finite ( double );
 
 extern double gamma ( double );
 
-#if !defined(_XOPEN_SOURCE)
+#if (!defined(_XOPEN_SOURCE) || defined(_DARWIN_C_SOURCE))
 
 #if !defined(__cplusplus)
 extern int matherr ( struct exception * );
@@ -601,8 +773,8 @@ extern double drem ( double, double );
 extern double gamma_r ( double, int * );
 extern double lgamma_r ( double, int * );
 #endif /* _REENTRANT */
-#endif /* !_XOPEN_SOURCE */
-#endif /* !_ANSI_SOURCE && !_POSIX_C_SOURCE */
+#endif /* (!_XOPEN_SOURCE || _DARWIN_C_SOURCE) */
+#endif /* !_ANSI_SOURCE && (!_POSIX_C_SOURCE || _DARWIN_C_SOURCE) */
 
 #endif /* __WANT_EXTENSIONS__ */
 
@@ -616,13 +788,13 @@ extern double lgamma_r ( double, int * );
 #define __FSELS(e,t,f) (((e) >= 0.0f) ? (t) : (f))
 #define __FSEL(e,t,f) (((e) >= 0.0) ? (t) : (f))
 
-static inline float __fastmath_floorf( float f ) __attribute__((always_inline));
-static inline float __fastmath_floorf( float f )
+static __inline__ float __fastmath_floorf( float f ) __attribute__((__always_inline__));
+static __inline__ float __fastmath_floorf( float f )
 {
     float b, c, d, e, g, h, t;
 
-    c = __FSELS( f, -0x1.0p+23f, 0x1.0p+23f );          b = fabsf( f ); 
-    d = f - c;                                          e = b - 0x1.0p+23f;                        
+    c = __FSELS( f, -8388608.f, 8388608.f );          b = fabsf( f ); 
+    d = f - c;                                          e = b - 8388608.f;                        
 	__asm__("" : "+f" (d));	/* Tell compiler value of d cannot be optimized away. */
 	d = d + c;
     g = f - d;
@@ -631,13 +803,13 @@ static inline float __fastmath_floorf( float f )
     return __FSELS( e, f, t );
 }
 
-static inline float __fastmath_ceilf( float f ) __attribute__((always_inline));
-static inline float __fastmath_ceilf( float f )
+static __inline__ float __fastmath_ceilf( float f ) __attribute__((__always_inline__));
+static __inline__ float __fastmath_ceilf( float f )
 {
     float b, c, d, e, g, h, t;
 
-    c = __FSELS( f, -0x1.0p+23f, 0x1.0p+23f );          b = fabsf( f ); 
-    d = f - c;                                          e = b - 0x1.0p+23f;                        
+    c = __FSELS( f, -8388608.f, 8388608.f );          b = fabsf( f ); 
+    d = f - c;                                          e = b - 8388608.f;                        
 	__asm__("" : "+f" (d));	/* Tell compiler value of d cannot be optimized away. */
 	d = d + c;
     g = d - f;
@@ -646,13 +818,13 @@ static inline float __fastmath_ceilf( float f )
     return __FSELS( e, f, t );
 }
 
-static inline double __fastmath_floor( double f ) __attribute__((always_inline));
-static inline double __fastmath_floor( double f )
+static __inline__ double __fastmath_floor( double f ) __attribute__((__always_inline__));
+static __inline__ double __fastmath_floor( double f )
 {
     double b, c, d, e, g, h, t;
 
-    c = __FSEL( f, -0x1.0p+52, 0x1.0p+52 );             b = fabs( f );      
-    d = f - c;                                          e = b - 0x1.0p+52;                    
+    c = __FSEL( f, -4503599627370496., 4503599627370496. );             b = fabs( f );      
+    d = f - c;                                          e = b - 4503599627370496.;                    
 	__asm__("" : "+f" (d));	/* Tell compiler value of d cannot be optimized away. */
 	d = d + c;
     g = f - d;
@@ -661,13 +833,13 @@ static inline double __fastmath_floor( double f )
     return __FSEL( e, f, t );
 }
 
-static inline double __fastmath_ceil( double f ) __attribute__((always_inline));
-static inline double __fastmath_ceil( double f )
+static __inline__ double __fastmath_ceil( double f ) __attribute__((__always_inline__));
+static __inline__ double __fastmath_ceil( double f )
 {
     double b, c, d, e, g, h, t;
 
-    c = __FSEL( f, -0x1.0p+52, 0x1.0p+52 );             b = fabs( f );      
-    d = f - c;                                          e = b - 0x1.0p+52;                    
+    c = __FSEL( f, -4503599627370496., 4503599627370496. );             b = fabs( f );      
+    d = f - c;                                          e = b - 4503599627370496.;                    
 	__asm__("" : "+f" (d));	/* Tell compiler value of d cannot be optimized away. */
 	d = d + c;
     g = d - f;

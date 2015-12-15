@@ -525,10 +525,10 @@ enum {
 				
 				Because the content creation API is able to generate multiple filesystems
 				which require multiple varied naming conventions, a sensible system for
-				naming is required.  Thus each file has a "base name" which corresponds
+				naming is required.  Thus each file has a base name which corresponds
 				to its default name in any filesystem.
 				
-				Whenever possible, the "base name" will be used in the generated filesystem
+				Whenever possible, the base name will be used in the generated filesystem
 				without modification.  If the name cannot be used as-is (if, for example, it
 				contains illegal characters, exceeds the length requirements, doesn't
 				meet the required format, or a name collision is detected) then an acceptable
@@ -549,10 +549,10 @@ enum {
 				
 				Because the content creation API is able to generate multiple filesystems
 				which require multiple varied naming conventions, a sensible system for
-				naming is required.  Thus each file has a "base name" which corresponds
+				naming is required.  Thus each file has a base name which corresponds
 				to its default name in any filesystem.
 				
-				Whenever possible, the "base name" will be used in the generated filesystem
+				Whenever possible, the base name will be used in the generated filesystem
 				without modification.  If the name cannot be used as-is (if, for example, it
 				contains illegal characters, exceeds the length requirements, doesn't
 				meet the required format, or a name collision is detected) then an acceptable
@@ -569,7 +569,7 @@ enum {
 	@method		specificNameForFilesystem:
 	@abstract	Returns a single filesystem-specific name for the receiver.
 	@param		filesystem	The filesystem to return the name from.
-	@result		The name of the file.
+	@result		An NSString containing the name of the file.
 */
 - (NSString*) specificNameForFilesystem:(NSString*)filesystem;
 
@@ -584,6 +584,11 @@ enum {
 /*!
 	@method		setSpecificName:forFilesystem:
 	@abstract	Sets the name used for the receiver in a particular filesystem.
+	@discussion	Every effort will be made to use the name passed in.  However, if
+				a name is illegal, it will be modified to fit the rules for the 
+				filesystem's names.  Because of this, you should always call
+				@link //apple_ref/occ/instm/DRFSObject/specificNameForFilesystem: specificNameForFilesystem: @/link after to ensure
+				that you are always displaying the most current names to the user.	
 	@param		name	The name to set.
 	@param		filesystem	The filesystem to set the name for.
 */
@@ -600,8 +605,7 @@ enum {
 				filesystem's names.  Because of this, you should always call
 				@link //apple_ref/occ/instm/DRFSObject/specificNames specificNames @/link after @link //apple_ref/occ/instm/DRFSObject/setSpecificNames: setSpecificNames: @/link to ensure
 				that you are always displaying the most current names to the user.
-	@param		name	The name to set.
-	@param		filesystem	The filesystem to set the name for.
+	@param		specificNames	The names to set.
 */
 - (void) setSpecificNames:(NSDictionary*)specificNames;
 
@@ -623,20 +627,22 @@ enum {
 	@discussion	The dictionary will return only the names which are indicated by the
 				receiver's effective mask.  If the receiver's effective mask is zero, an
 				empty dictionary is returned.
-	@param		filesystem	The filesystem to set the name for.
-	@result		The name of the file mangled for filesystem constraints.
+	@result		An NSDictionary containing the filesystem-specific mangled file names.
 */
 - (NSDictionary*) mangledNames;
 
 /*!
 	@method		propertyForKey:inFilesystem:mergeWithOtherFilesystems:
 	@abstract	Returns a file/folder property specified by key for the specified filesystem.
-	@discussion	If the property key is not set for the specific filesystem queried and 
-				merge is <i>YES</i> then the umbrella @link DRAllFilesystems DRAllFilesystems @/link property will be 
-				checked. Returns nil if the property key cannot be found.
+	@discussion	Normally you would call this method with merge set to <i>YES</i> since you are interested in the 
+				property that will be used when writing the object to disc. But if you have a need to determine
+				what property is set just for a specific filesystem, then pass in <i>NO</i> for merge. In this case 
+				only the specific filesystem is checked. So if @link DRHFSPlus DRHFSPlus @/link is passed in for filesystem and
+				merge is <i>NO</i> then the property returned is the value set for the HFS+ filesytem only. If
+				that property has not been directly set for HFS+ yet, then the returned value will be nil.
 	@param		key	The property to return.
 	@param		filesystem	The filesystem to look in.
-	@param		merge		If <i>YES</i>, look for the property in the umbrella @link DRAllFilesystems DRAllFilesystems @/link.
+	@param		merge		If <i>YES</i>, also look for the property in the umbrella @link DRAllFilesystems DRAllFilesystems @/link.
 	@result		The value associated with the property.
 */
 - (id) propertyForKey:(NSString*)key inFilesystem:(NSString*)filesystem mergeWithOtherFilesystems:(BOOL)merge;
@@ -644,11 +650,15 @@ enum {
 /*!
 	@method		propertiesForFilesystem:mergeWithOtherFilesystems:
 	@abstract	Returns all the filesystem properties set for the specified filesystem.
-	@discussion	If merge is <i>YES</i> then the umbrella @link DRAllFilesystems DRAllFilesystems @/link property will be 
-				checked.
+	@discussion	Normally you would call this method with merge set to <i>YES</i> since you are interested in the 
+ 				set of properties that will be used when writing the object to disc. But if you have a need to determine
+ 				what properties are set just for a specific filesystem, then pass in <i>NO</i> for merge. In this case 
+ 				only the specific filesystem is checked. So if filesystem is set to @link DRHFSPlus DRHFSPlus @/link and
+ 				merge is <i>NO</i> then the properties dictionary contains the values set for the HFS+ filesytem only. If
+ 				no properties have been directly set for HFS+ yet, then this properties dictionary will be empty.
 	@param		filesystem	The filesystem to look in.
-	@param		merge		If <i>YES</i>, look for the properties in the umbrella DRAllFilesystems.
-	@result		The value associated with the property.
+	@param		merge		If <i>YES</i>, also look for properties in the umbrella @link DRAllFilesystems DRAllFilesystems @/link.
+	@result		A dictionary of property values.
 */
 - (NSDictionary*) propertiesForFilesystem:(NSString*)filesystem mergeWithOtherFilesystems:(BOOL)merge;
 
@@ -656,7 +666,8 @@ enum {
 	@method		setProperty:forKey:inFilesystem:
 	@abstract	Sets the value of the receiver's property specified by key for the specific
 				filesystem.
-	@discussion	@link DRAllFilesystems DRAllFilesystems @/link may be specified as the filesystem in which case
+	@discussion	The property is set only in the filesystem dictionary specified by filesystem. 
+ 				@link DRAllFilesystems DRAllFilesystems @/link may be specified as the filesystem in which case
 				the umbrella property affecting all filesystems at once will be set. Setting
 				a property for @link DRAllFilesystems DRAllFilesystems @/link does not preclude setting a filesystem specific 
 				property.
@@ -670,7 +681,8 @@ enum {
 	@method		setProperties:inFilesystem:
 	@abstract	Sets the value of all the receiver's properties specified by the keys in properties
 				for the specific filesystem.
-	@discussion	DRAllFilesystems may be specified as the filesystem 
+	@discussion	The properties are set only in the filesystem dictionary specified by filesystem. 
+				@link DRAllFilesystems DRAllFilesystems @/link may be specified as the filesystem 
 				in which case he umbrella property affecting all filesystems at once will be set. 
 				Setting properties for @link DRAllFilesystems DRAllFilesystems @/link does not preclude setting a filesystem specific 
 				property.
@@ -691,8 +703,10 @@ enum {
 /*!
 	@method		setExplicitFilesystemMask:
 	@abstract	Sets the filesystems the receiver will be included on.
-	@discussion	The explicit mask for an item cannot be more inclusive than the 
-				effective mask of it's parent.
+	@discussion	The effective mask for an item cannot be more inclusive than the 
+				effective mask of it's parent. If the mask set for a child is more inclusive than its parent's mask,
+				those filesystems not allowed by the parent will be stripped from the resulting effective mask of the
+				child.
 	@param		mask	A filesystem mask
 */
 - (void) setExplicitFilesystemMask:(DRFilesystemInclusionMask)mask;
@@ -921,7 +935,7 @@ extern NSString* const DRMacWindowView					AVAILABLE_MAC_OS_X_VERSION_10_2_AND_L
 
 /*!
 	@const		DRMacFinderFlags
-	@discussion	NSNumber containing the item's Finder flags (MacOS only). The "invisible" bit is ignored - use DRInvisible instead.
+	@discussion	NSNumber containing the item's Finder flags (MacOS only). The invisible bit is ignored - use DRInvisible instead.
 */
 extern NSString* const DRMacFinderFlags					AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 

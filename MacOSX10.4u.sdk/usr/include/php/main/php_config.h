@@ -4,7 +4,6 @@
 #define ZEND_API
 #define ZEND_DLEXPORT
 
-#ifndef NETWARE
 
 /* Define if on AIX 3.
    System headers sometimes define this.
@@ -105,11 +104,26 @@
 /* The number of bytes in a int.  */
 #define SIZEOF_INT 4
 
+/* The number of bytes in a intmax_t.  */
+#define SIZEOF_INTMAX_T 0
+
 /* The number of bytes in a long.  */
 #define SIZEOF_LONG 4
 
 /* The number of bytes in a long long.  */
 #define SIZEOF_LONG_LONG 8
+
+/* The number of bytes in a long long int.  */
+#define SIZEOF_LONG_LONG_INT 8
+
+/* The number of bytes in a ptrdiff_t.  */
+#define SIZEOF_PTRDIFF_T 0
+
+/* The number of bytes in a size_t.  */
+#define SIZEOF_SIZE_T 4
+
+/* The number of bytes in a ssize_t.  */
+#define SIZEOF_SSIZE_T 0
 
 /* Define if you have the acosh function.  */
 #define HAVE_ACOSH 1
@@ -219,6 +233,9 @@
 /* Define if you have the getcwd function.  */
 #define HAVE_GETCWD 1
 
+/* Define if you have the getgroups function.  */
+#define HAVE_GETGROUPS 1
+
 /* Define if you have the gethostbyaddr_r function.  */
 /* #undef HAVE_GETHOSTBYADDR_R */
 
@@ -308,6 +325,9 @@
 
 /* Define if you have the ldap_parse_reference function.  */
 #define HAVE_LDAP_PARSE_REFERENCE 1
+
+/* Define if you have the ldap_parse_result function.  */
+#define HAVE_LDAP_PARSE_RESULT 1
 
 /* Define if you have the ldap_start_tls_s function.  */
 #define HAVE_LDAP_START_TLS_S 1
@@ -1487,6 +1507,9 @@
 /* #undef HAVE_GD_DYNAMIC_CTX_EX */
 
 /*   */
+/* #undef HAVE_GD_GIF_CTX */
+
+/*   */
 /* #undef HAVE_GD_JPG */
 
 /*   */
@@ -1773,6 +1796,9 @@
 
 /*   */
 /* #undef HAVE_ORALDAP */
+
+/*   */
+/* #undef HAVE_ORALDAP_10 */
 
 /*   */
 #define HAVE_LDAP 1
@@ -2093,6 +2119,27 @@
 /* #undef HAVE_EMPRESS */
 
 /*   */
+/* #undef AIX */
+
+/*   */
+/* #undef HPUX */
+
+/*   */
+/* #undef LINUX */
+
+/*   */
+/* #undef NEUTRINO */
+
+/*   */
+/* #undef ISOLARIS */
+
+/*   */
+/* #undef SOLARIS */
+
+/*   */
+/* #undef UNIXWARE */
+
+/*   */
 /* #undef HAVE_BIRDSTEP */
 
 /*   */
@@ -2185,11 +2232,17 @@
 /* Whether to have pg_config.h */
 /* #undef HAVE_PG_CONFIG_H */
 
+/* Whether to have pg_config.h */
+/* #undef HAVE_PG_CONFIG_H */
+
 /* Whether to build PostgreSQL support or not */
 /* #undef HAVE_PGSQL */
 
 /* PostgreSQL 7.2.0 or later */
 /* #undef HAVE_PQESCAPE */
+
+/* PostgreSQL 7.3.0 or later */
+/* #undef HAVE_PQUNESCAPEBYTEA */
 
 /* PostgreSQL 7.0.x or later */
 /* #undef HAVE_PQSETNONBLOCKING */
@@ -2203,7 +2256,49 @@
 /* PostgreSQL 7.0.x or later */
 /* #undef HAVE_PQCLIENTENCODING */
 
-/* Whether libpq is compiled with --enable-multibye */
+/* PostgreSQL 7.4 or later */
+/* #undef HAVE_PQPARAMETERSTATUS */
+
+/* PostgreSQL 7.4 or later */
+/* #undef HAVE_PQPROTOCOLVERSION */
+
+/* PostgreSQL 7.4 or later */
+/* #undef HAVE_PGTRANSACTIONSTATUS */
+
+/* PostgreSQL 7.4 or later */
+/* #undef HAVE_PQEXECPARAMS */
+
+/* PostgreSQL 7.4 or later */
+/* #undef HAVE_PQPREPARE */
+
+/* PostgreSQL 7.4 or later */
+/* #undef HAVE_PQEXECPREPARED */
+
+/* PostgreSQL 7.4 or later */
+/* #undef HAVE_PQRESULTERRORFIELD */
+
+/* PostgreSQL 7.4 or later */
+/* #undef HAVE_PQSENDQUERYPARAMS */
+
+/* PostgreSQL 7.4 or later */
+/* #undef HAVE_PQSENDPREPARE */
+
+/* PostgreSQL 7.4 or later */
+/* #undef HAVE_PQSENDQUERYPREPARED */
+
+/* PostgreSQL 7.4 or later */
+/* #undef HAVE_PQPUTCOPYDATA */
+
+/* PostgreSQL 7.4 or later */
+/* #undef HAVE_PQPUTCOPYEND */
+
+/* PostgreSQL 7.4 or later */
+/* #undef HAVE_PQGETCOPYDATA */
+
+/* PostgreSQL 7.4 or later */
+/* #undef HAVE_PQSETERRORVERBOSITY */
+
+/* Whether libpq is compiled with --enable-multibyte */
 /* #undef HAVE_PGSQL_WITH_MULTIBYTE_SUPPORT */
 
 /* Whether to build pgsql as dynamic module */
@@ -2321,6 +2416,9 @@
 #define HAVE_FLUSHIO 1
 
 /*   */
+#define HAVE_REGEX_T_RE_MAGIC 1
+
+/*   */
 #define HSREGEX 1
 
 /*   */
@@ -2328,6 +2426,9 @@
 
 /*   */
 #define REGEX 1
+
+/* 1 */
+#define HAVE_REGEX_T_RE_MAGIC 1
 
 /*  see #24142  */
 #define PHP_ROUND_FUZZ 0.5
@@ -2524,6 +2625,12 @@
 /*   */
 #define ZEND_DEBUG 0
 
+/* Use Zend memory manager */
+#define USE_ZEND_ALLOC 1
+
+/* Use Zend memory manager */
+#define USE_ZEND_ALLOC 1
+
 /*   */
 /* #undef ZTS */
 
@@ -2552,10 +2659,16 @@
 /* #undef PTHREADS */
 
 /* PHP build date */
-#define PHP_BUILD_DATE "2005-12-25"
+#define PHP_BUILD_DATE "2006-07-25"
+
+/* hardcode for each of the cross compiler host */
+#define PHP_OS "Darwin"
+
+/* hardcode for each of the cross compiler host */
+#define PHP_UNAME "Darwin b37.apple.com 8.0 Darwin Kernel Version 8.3.0: Mon Oct 3 20:04:04 PDT 2005; root:xnu-792.6.22.obj~2/RELEASE_PPC Power Macintosh powerpc"
 
 /* uname -a output */
-#define PHP_UNAME "Darwin b37.apple.com 8.0 Darwin Kernel Version 8.0.0: Tue Nov 15 13:23:51 PST 2005; root:xnu-792.99.1.obj~6/RELEASE_PPC Power Macintosh powerpc"
+#define PHP_UNAME "Darwin b37.apple.com 8.0 Darwin Kernel Version 8.3.0: Mon Oct 3 20:04:04 PDT 2005; root:xnu-792.6.22.obj~2/RELEASE_PPC Power Macintosh powerpc"
 
 /* uname output */
 #define PHP_OS "Darwin"
@@ -2563,7 +2676,6 @@
 /*   */
 #define HAVE_BUILD_DEFS_H 1
 
-#endif
 
 #ifdef HAVE_STDLIB_H
 # include <stdlib.h>
@@ -2571,6 +2683,10 @@
 
 #ifdef HAVE_SYS_TYPES_H
 # include <sys/types.h>
+#endif
+
+#ifdef HAVE_SYS_SELECT_H 
+#include <sys/select.h> 
 #endif
 
 #ifdef HAVE_IEEEFP_H
@@ -2616,6 +2732,13 @@ int zend_sprintf(char *buffer, const char *format, ...);
 #define zend_finite(a) ((fpclassify((a))!=FP_INFINITE&&fpclassify((a))!=FP_NAN)?1:0)
 #else
 #define zend_finite(a) (zend_isnan(a) ? 0 : zend_isinf(a) ? 0 : 1)
+#endif
+
+#ifdef NETWARE
+#ifdef USE_WINSOCK
+#/*This detection against winsock is of no use*/ undef HAVE_SOCKLEN_T
+#/*This detection against winsock is of no use*/ undef HAVE_SYS_SOCKET_H
+#endif
 #endif
 
 /*

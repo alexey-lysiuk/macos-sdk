@@ -306,10 +306,11 @@ protected:
 		// some of our subclasses didn't have room for expansion data, so
 		// we've reserved space for their use here.
 		
-		void *		fSubclassMembers;
-		int			fMaxSpeed;
-		int			fAckCode;
-		UInt32		fResponseCode;
+		void *			fSubclassMembers;
+		int				fMaxSpeed;
+		int				fAckCode;
+		UInt32			fResponseCode;
+		UInt32			fFastRetryCount;
 	} 
 	MemberVariables;
 
@@ -384,6 +385,12 @@ public:
 	
 	void setResponseCode( UInt32 rcode );
 	UInt32 getResponseCode( void ) const;
+
+	void setFastRetryCount( UInt32 count ) 
+		{ fMembers->fFastRetryCount = count; };
+
+	UInt32 getFastRetryCount( void ) 
+		{ return fMembers->fFastRetryCount; };
 
 private:
     OSMetaClassDeclareReservedUnused(IOFWAsyncCommand, 0);
@@ -486,6 +493,7 @@ protected:
 	typedef struct 
 	{ 
 		bool 	fDeferredNotify;
+		bool	fFastRetryOnBusy;
 	}
 	MemberVariables;
 		
@@ -528,6 +536,9 @@ public:
 
 	void setDeferredNotify( bool state ) 
 		{ ((MemberVariables*)fMembers->fSubclassMembers)->fDeferredNotify = state; };
+
+	void setFastRetryOnBusy( bool state ) 
+		{ ((MemberVariables*)fMembers->fSubclassMembers)->fFastRetryOnBusy = state; };
 	
 private:
 

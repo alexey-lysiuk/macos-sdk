@@ -44,6 +44,7 @@
 #include <IOKit/IOService.h>
 #include <IOKit/IOWorkLoop.h>
 #include <IOKit/IOCommandGate.h>
+#include <IOKit/IODMACommand.h>
 #include <IOKit/IOInterruptEventSource.h>
 #include <IOKit/IOFilterInterruptEventSource.h>
 #include <IOKit/IOTimerEventSource.h>
@@ -59,8 +60,15 @@
 //ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
 
 
-#define kIOPropertySCSIDeviceFeaturesKey		"SCSI Device Features"
-#define kIOPropertySCSI_I_T_NexusFeaturesKey	"SCSI I_T Nexus Features"
+#define kIOPropertySCSIDeviceFeaturesKey			"SCSI Device Features"
+#define kIOPropertySCSI_I_T_NexusFeaturesKey		"SCSI I_T Nexus Features"
+
+// This is the alignment mask used when allocating per-task HBA data. It allows
+// the HBA to declare whether or not it supports 64-bit addressability and what the
+// minimum byte alignment is for the data. E.g. By specifying 0x0000FFFFFFFFFFFEULL,
+// the controller would be indicating that it supports 48-bits of addressability, but
+// at a minimum of being 2-byte aligned.
+#define kIOMinimumHBADataAlignmentMaskKey			"HBA Data Alignment"
 
 // The Feature Selectors used to identify features of the SCSI Parallel
 // Interface.  These are used by the DoesHBASupportSCSIParallelFeature
@@ -366,8 +374,27 @@ public:
 	
 	virtual bool	DoesHBAPerformAutoSense ( void );
 	
+	/*!
+		@function ReportHBAConstraints
+		@abstract Called to report the I/O constraints for this controller.
+		A list of valid keys includes:
+			kIOMaximumSegmentCountReadKey, (required)
+			kIOMaximumSegmentCountWriteKey, (required)
+			kIOMaximumSegmentByteCountReadKey, (required)
+			kIOMaximumSegmentByteCountWriteKey, (required)
+			kIOMinimumSegmentAlignmentByteCountKey, (required)
+			kIOMaximumSegmentAddressableBitCountKey, (required)
+			kIOMinimumHBADataAlignmentMaskKey (required).
+		NB: These keys and their values are described in this header and <IOKit/IOKitKeys.h>
+		@param constraints. An OSDictionary object used to aggregate the key/value pairs.
+		Subclasses must set the required keys if they override this method. If a subclass does
+		not provide the required keys, the system will panic.
+	*/
+	OSMetaClassDeclareReservedUsed ( IOSCSIParallelInterfaceController, 2 );
+	
+	virtual void	ReportHBAConstraints ( OSDictionary * constraints );
+	
 	// Padding for the Client API
-	OSMetaClassDeclareReservedUnused ( IOSCSIParallelInterfaceController, 2 );
 	OSMetaClassDeclareReservedUnused ( IOSCSIParallelInterfaceController, 3 );
 	OSMetaClassDeclareReservedUnused ( IOSCSIParallelInterfaceController, 4 );
 	OSMetaClassDeclareReservedUnused ( IOSCSIParallelInterfaceController, 5 );
@@ -413,6 +440,7 @@ protected:
 		@param  targetID SCSIDeviceIdentifier of desired targetID.
 		@param	properties A dictionary of properties to associate with the device
 				upon creation. The list of valid property keys is as follows:
+				kIOPropertySASAddressKey,
 				kIOPropertyFibreChannelNodeWorldWideNameKey,
 				kIOPropertyFibreChannelPortWorldWideNameKey,
 				kIOPropertyFibreChannelAddressIdentifierKey, and
@@ -461,6 +489,7 @@ protected:
 		@param device A pointer to a valid IOSCSIParallelInterfaceDevice.
 		@param key A pointer to a valid OSString object which represents the key.
 		A list of valid keys includes:
+			kIOPropertySASAddressKey,
 			kIOPropertyFibreChannelNodeWorldWideNameKey,
 			kIOPropertyFibreChannelPortWorldWideNameKey,
 			kIOPropertyFibreChannelAddressIdentifierKey, and
@@ -1034,6 +1063,17 @@ protected:
 	*/
 	
 	UInt64	GetDataBufferOffset ( SCSIParallelTaskIdentifier parallelTask );
+
+	/*!
+		@function GetDMACommand
+		@abstract Method to retrieve a pointer to an IODMACommand from the request.
+		@param parallelTask A valid SCSIParallelTaskIdentifier.
+		@result returns pointer to an IODMACommand which is used in conjunction
+		with the task.
+	*/
+	
+	IODMACommand * GetDMACommand ( 
+							SCSIParallelTaskIdentifier 	parallelTask );
 	
 	/*!
 		@function GetTimeoutDuration
@@ -1345,8 +1385,20 @@ protected:
 	
 	virtual bool		FilterInterruptRequest ( void );
 	
+	/*!
+		@function InitializeDMASpecification
+		@abstract Called to initialize an IODMACommand with a DMA specification.
+		@param command A pointer to a valid IODMACommand object. Subclasses
+		should override this method and call IODMACommand::initWithSpecification()
+		supplying the proper arguments to that method based on the DMA strategy.
+		@result boolean value indicating success or failure.
+	*/
+	OSMetaClassDeclareReservedUsed ( IOSCSIParallelInterfaceController, 11 );
+	
+	virtual bool	InitializeDMASpecification ( IODMACommand * command );
+	
+	
 	// Padding for the Child Class API
-	OSMetaClassDeclareReservedUnused ( IOSCSIParallelInterfaceController, 11 );
 	OSMetaClassDeclareReservedUnused ( IOSCSIParallelInterfaceController, 12 );
 	OSMetaClassDeclareReservedUnused ( IOSCSIParallelInterfaceController, 13 );
 	OSMetaClassDeclareReservedUnused ( IOSCSIParallelInterfaceController, 14 );

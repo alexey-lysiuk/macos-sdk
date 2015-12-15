@@ -331,8 +331,10 @@ public:
 
 protected:
 	
+#if !(defined(__ppc__) && defined(KPI_10_4_0_PPC_COMPAT))
 	// OSMetaClassDeclareReservedUsed(IOAudioEngine, 12);
     virtual IOReturn createUserClient(task_t task, void *securityID, UInt32 type, IOAudioEngineUserClient **newUserClient, OSDictionary *properties);
+#endif
 	
 private:
 	OSMetaClassDeclareReservedUsed(IOAudioEngine, 0);
@@ -347,7 +349,11 @@ private:
 	OSMetaClassDeclareReservedUsed(IOAudioEngine, 9);
 	OSMetaClassDeclareReservedUsed(IOAudioEngine, 10);
 	OSMetaClassDeclareReservedUsed(IOAudioEngine, 11);
+#if !(defined(__ppc__) && defined(KPI_10_4_0_PPC_COMPAT))
 	OSMetaClassDeclareReservedUsed(IOAudioEngine, 12);
+#else
+	OSMetaClassDeclareReservedUnused(IOAudioEngine, 12);
+#endif
 
 	OSMetaClassDeclareReservedUnused(IOAudioEngine, 13);
 	OSMetaClassDeclareReservedUnused(IOAudioEngine, 14);
@@ -504,6 +510,9 @@ public:
      *  to connect to this service.  It allocates a new IOAudioEngineUserClient object and increments
      *  the number of connections for this audio engine.  If this is the first user client for this IOAudioEngine,
      *  it calls startAudioEngine().  There is no need to call this function directly.
+	 *  A derived class that requires overriding of newUserClient should override the version with the properties
+	 *  parameter for Intel targets, and without the properties parameter for PPC targets.  The #if __i386__ directive
+	 *  can be used to select between the two behaviors.
      * @param task The task requesting the new user client.
      * @param securityID Optional security paramater passed in by the client - ignored.
      * @param type Optional user client type passed in by the client - ignored.

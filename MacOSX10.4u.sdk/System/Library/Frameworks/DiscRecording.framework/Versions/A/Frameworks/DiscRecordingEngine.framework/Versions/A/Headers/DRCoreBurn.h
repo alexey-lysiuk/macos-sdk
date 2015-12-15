@@ -100,6 +100,7 @@ AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 						options are a lone DRTrack object, and a CFArray of homogeneous CFArrays of 
 						DRTracks. If  the layout is not one of these kinds, or if any of the objects is 
 						not valid, this function's behavior is undefined.
+	@result		An error code indicating if the burn could begin.
 */
 extern
 OSStatus DRBurnWriteLayout(DRBurnRef burn, CFTypeRef layout)
@@ -128,6 +129,8 @@ AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 	@abstract	Obtains the progress and status of the burn.
 	@discussion	Returns a CFDictionary object containing the progress and status of the burn. 
 				This dictionary will contain the state, percentage complete, and any errors reported.
+	@param		burn	The burn for which status is wanted. If this parameter is not a valid
+				DRBurn object, the behavior is undefined.
 	@result		Returns a reference to a CFDictionary object. The reference is implicitly retained 
 				by the caller. This is the same dictionary sent to observers of the 
 				@link kDRBurnStatusChangedNotification kDRBurnStatusChangedNotification @/link notification.

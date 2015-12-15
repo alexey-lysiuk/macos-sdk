@@ -3,9 +3,9 @@
  
      Contains:   AltiVec DSP Interfaces
  
-     Version:    vecLib-182.18~156
+     Version:    vecLib-192.12~1
  
-     Copyright:  © 2000-2005 by Apple Computer, Inc., all rights reserved.
+     Copyright:  © 2000-2006 by Apple Computer, Inc., all rights reserved.
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -16,8 +16,17 @@
 #ifndef __VDSP__
 #define __VDSP__
 
-#include <CoreServices/../Frameworks/CarbonCore.framework/Headers/MacTypes.h>
-#include "vDSP_translate.h"
+/*  For documentation on vDSP, see _vDSP Library_ at
+    http://developer.apple.com/documentation/Performance/index-date.html or
+    search for "vDSP Library" at http://developer.apple.com.
+*/
+
+#if defined __ppc__ || defined __i386__
+#ifndef __VDSP_TRANSLATE__
+#include <vecLib/vDSP_translate.h>
+#endif
+
+#endif
 
 
 #include <AvailabilityMacros.h>
@@ -30,7 +39,19 @@
 extern "C" {
 #endif
 
-#pragma options align=mac68k
+#pragma options align=power
+
+typedef unsigned long                   vDSP_Length;
+/*    vDSP_Length is for numbers of elements in arrays and indices of
+    elements in arrays.
+
+    (It is also used for the base-two logarithm of numbers of elements,
+    although a much smaller type is suitable for that.)
+    */
+typedef long                            vDSP_Stride;
+/*    vDSP_Stride is for differences of indices of elements (which of
+    course includes strides).
+    */
 
 struct DSPComplex {
   float               real;
@@ -54,38 +75,32 @@ struct DSPDoubleSplitComplex {
 typedef struct DSPDoubleSplitComplex    DSPDoubleSplitComplex;
 typedef struct OpaqueFFTSetup*          FFTSetup;
 typedef struct OpaqueFFTSetupD*         FFTSetupD;
-typedef SInt32 FFTDirection;
+
+typedef int                             FFTDirection;
+typedef int                             FFTRadix;
 enum {
   kFFTDirection_Forward         = 1,
   kFFTDirection_Inverse         = -1
 };
 
-typedef SInt32 FFTRadix;
 enum {
   kFFTRadix2                    = 0,
   kFFTRadix3                    = 1,
   kFFTRadix5                    = 2
 };
 
-/*
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-    The criteria to invoke the PowerPC vector implementation is subject to     
-    change and become less restrictive in the future.                          
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-*/
+enum {
+  vDSP_HALF_WINDOW              = 1,
+  vDSP_HANN_DENORM              = 0,
+  vDSP_HANN_NORM                = 2
+};
 
 
 
+/*  create_fftsetup and create_ffsetupD allocate memory and prepare constants
+    used by single- and double-precision FFT routines, respectively.
 
-
-/*
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-    Functions create_fftsetup and destroy_fftsetup.
-              create_fftsetupD and destroy_fftsetupD.
-              
-    create_fftsetup will allocate memory and setup a weight array used by      
-    the FFT. The call destroy_fftsetup will free the array.                    
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
+    destroy_fftsetup and destroy_fftsetupD free the memory.
 */
 /*
  *  vDSP_create_fftsetup()
@@ -97,8 +112,8 @@ enum {
  */
 extern FFTSetup 
 vDSP_create_fftsetup(
-  UInt32     log2n,
-  FFTRadix   radix)                                           AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  vDSP_Length   __vDSP_log2n,
+  FFTRadix      __vDSP_radix)                                 AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
 /*
@@ -110,7 +125,7 @@ vDSP_create_fftsetup(
  *    Non-Carbon CFM:   in vecLib 1.0 and later
  */
 extern void 
-vDSP_destroy_fftsetup(FFTSetup setup)                         AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+vDSP_destroy_fftsetup(FFTSetup __vDSP_setup)                  AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
 /*
@@ -123,8 +138,8 @@ vDSP_destroy_fftsetup(FFTSetup setup)                         AVAILABLE_MAC_OS_X
  */
 extern FFTSetupD 
 vDSP_create_fftsetupD(
-  UInt32     log2n,
-  FFTRadix   radix)                                           AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  vDSP_Length   __vDSP_log2n,
+  FFTRadix      __vDSP_radix)                                 AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
 /*
@@ -136,24 +151,12 @@ vDSP_create_fftsetupD(
  *    Non-Carbon CFM:   not available
  */
 extern void 
-vDSP_destroy_fftsetupD(FFTSetupD setup)                       AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+vDSP_destroy_fftsetupD(FFTSetupD __vDSP_setup)                AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
 
-/*
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-    Functions ctoz and ztoc.
-              ctozD and ztocD.
-    
-    ctoz converts a complex array to a complex-split array
-    ztoc converts a complex-split array to a complex array
-    
-    Criteria to invoke PowerPC vector code:    
-        1. size > 3
-        2. strideC = 2
-        3. strideZ = 1
-        4. C is 16-byte aligned and Z.realp and Z.imagp are 16-byte aligned.
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
+/*  ctoz and ctozD convert a complex array to a complex-split array.
+    ztoc and ztocD convert a complex-split array to a complex array.
 */
 /*
  *  vDSP_ctoz()
@@ -165,11 +168,11 @@ vDSP_destroy_fftsetupD(FFTSetupD setup)                       AVAILABLE_MAC_OS_X
  */
 extern void 
 vDSP_ctoz(
-  const DSPComplex   C[],
-  SInt32             strideC,
-  DSPSplitComplex *  Z,
-  SInt32             strideZ,
-  UInt32             size)                                    AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  const DSPComplex   __vDSP_C[],
+  vDSP_Stride        __vDSP_strideC,
+  DSPSplitComplex *  __vDSP_Z,
+  vDSP_Stride        __vDSP_strideZ,
+  vDSP_Length        __vDSP_size)                             AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
 /*
@@ -182,11 +185,11 @@ vDSP_ctoz(
  */
 extern void 
 vDSP_ztoc(
-  const DSPSplitComplex *  Z,
-  SInt32                   strideZ,
-  DSPComplex               C[],
-  SInt32                   strideC,
-  UInt32                   size)                              AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  const DSPSplitComplex *  __vDSP_Z,
+  vDSP_Stride              __vDSP_strideZ,
+  DSPComplex               __vDSP_C[],
+  vDSP_Stride              __vDSP_strideC,
+  vDSP_Length              __vDSP_size)                       AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
 /*
@@ -199,11 +202,11 @@ vDSP_ztoc(
  */
 extern void 
 vDSP_ctozD(
-  const DSPDoubleComplex   C[],
-  SInt32                   strideC,
-  DSPDoubleSplitComplex *  Z,
-  SInt32                   strideZ,
-  UInt32                   size)                              AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  const DSPDoubleComplex   __vDSP_C[],
+  vDSP_Stride              __vDSP_strideC,
+  DSPDoubleSplitComplex *  __vDSP_Z,
+  vDSP_Stride              __vDSP_strideZ,
+  vDSP_Length              __vDSP_size)                       AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
 /*
@@ -216,33 +219,20 @@ vDSP_ctozD(
  */
 extern void 
 vDSP_ztocD(
-  const DSPDoubleSplitComplex *  Z,
-  SInt32                         strideZ,
-  DSPDoubleComplex               C[],
-  SInt32                         strideC,
-  UInt32                         size)                        AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  const DSPDoubleSplitComplex *  __vDSP_Z,
+  vDSP_Stride                    __vDSP_strideZ,
+  DSPDoubleComplex               __vDSP_C[],
+  vDSP_Stride                    __vDSP_strideC,
+  vDSP_Length                    __vDSP_size)                 AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
 
-/*
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-    Functions fft_zip and fft_zipt 
-              fft_zipD and fft_ziptD
-              
-    In-place Split Complex Fourier Transform with or without temporary memory.
-            
-      Criteria to invoke PowerPC vector code:    
-        
-        1. ioData.realp and ioData.imagp must be 16-byte aligned.
-        2. stride = 1
-        3. 2 <= log2n <= 20
-        4. bufferTemp.realp and bufferTemp.imagp must be 16-byte aligned.
-      
-      If any of the above criteria are not satisfied, the PowerPC scalar code
-      implementation will be used.  The size of temporary memory for each part
-      is the lower value of 4*n and 16k.  Direction can be either
-      kFFTDirection_Forward or kFFTDirection_Inverse.
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
+/*  In-place complex Discrete Fourier Transform routines.
+
+    fft_zip Single-precision without temporary memory.
+    fft_zipt    Single-precision with temporary memory.
+    fft_zipD    Double-precision without temporary memory.
+    fft_ziptD   Double-precision with temporary memory.
 */
 /*
  *  vDSP_fft_zip()
@@ -254,11 +244,11 @@ vDSP_ztocD(
  */
 extern void 
 vDSP_fft_zip(
-  FFTSetup           setup,
-  DSPSplitComplex *  ioData,
-  SInt32             stride,
-  UInt32             log2n,
-  FFTDirection       direction)                               AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  FFTSetup           __vDSP_setup,
+  DSPSplitComplex *  __vDSP_ioData,
+  vDSP_Stride        __vDSP_stride,
+  vDSP_Length        __vDSP_log2n,
+  FFTDirection       __vDSP_direction)                        AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
 /*
@@ -271,12 +261,12 @@ vDSP_fft_zip(
  */
 extern void 
 vDSP_fft_zipt(
-  FFTSetup           setup,
-  DSPSplitComplex *  ioData,
-  SInt32             stride,
-  DSPSplitComplex *  bufferTemp,
-  UInt32             log2n,
-  FFTDirection       direction)                               AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  FFTSetup           __vDSP_setup,
+  DSPSplitComplex *  __vDSP_ioData,
+  vDSP_Stride        __vDSP_stride,
+  DSPSplitComplex *  __vDSP_bufferTemp,
+  vDSP_Length        __vDSP_log2n,
+  FFTDirection       __vDSP_direction)                        AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
 /*
@@ -289,11 +279,11 @@ vDSP_fft_zipt(
  */
 extern void 
 vDSP_fft_zipD(
-  FFTSetupD                setup,
-  DSPDoubleSplitComplex *  ioData,
-  SInt32                   stride,
-  UInt32                   log2n,
-  FFTDirection             direction)                         AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  FFTSetupD                __vDSP_setup,
+  DSPDoubleSplitComplex *  __vDSP_ioData,
+  vDSP_Stride              __vDSP_stride,
+  vDSP_Length              __vDSP_log2n,
+  FFTDirection             __vDSP_direction)                  AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
 /*
@@ -306,37 +296,21 @@ vDSP_fft_zipD(
  */
 extern void 
 vDSP_fft_ziptD(
-  FFTSetupD                setup,
-  DSPDoubleSplitComplex *  ioData,
-  SInt32                   stride,
-  DSPDoubleSplitComplex *  bufferTemp,
-  UInt32                   log2n,
-  FFTDirection             direction)                         AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  FFTSetupD                __vDSP_setup,
+  DSPDoubleSplitComplex *  __vDSP_ioData,
+  vDSP_Stride              __vDSP_stride,
+  DSPDoubleSplitComplex *  __vDSP_bufferTemp,
+  vDSP_Length              __vDSP_log2n,
+  FFTDirection             __vDSP_direction)                  AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
 
-/*
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-     Functions fft_zop and fft_zopt
-               fft_zopD and fft_zoptD
-     
-     Out-of-place Split Complex Fourier Transform with or without temporary
-     memory
-            
-      Criteria to invoke PowerPC vector code:  
-        
-        1. signal.realp and signal.imagp must be 16-byte aligned.
-        2. signalStride = 1
-        3. result.realp and result.imagp must be 16-byte aligned.
-        4. strideResult = 1
-        5. 2 <= log2n <= 20
-        6. bufferTemp.realp and bufferTemp.imagp must be 16-byte aligned.
-      
-      If any of the above criteria are not satisfied, the PowerPC scalar code
-      implementation will be used.  The size of temporary memory for each part
-      is the lower value of 4*n and 16k.  Direction can be either
-      kFFTDirection_Forward or kFFTDirection_Inverse.
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
+/*  Out-of-place complex Discrete Fourier Transform routines.
+
+    fft_zop Single-precision without temporary memory.
+    fft_zopt    Single-precision with temporary memory.
+    fft_zopD    Double-precision without temporary memory.
+    fft_zoptD   Double-precision with temporary memory.
 */
 /*
  *  vDSP_fft_zop()
@@ -348,13 +322,13 @@ vDSP_fft_ziptD(
  */
 extern void 
 vDSP_fft_zop(
-  FFTSetup           setup,
-  DSPSplitComplex *  signal,
-  SInt32             signalStride,
-  DSPSplitComplex *  result,
-  SInt32             strideResult,
-  UInt32             log2n,
-  FFTDirection       direction)                               AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  FFTSetup           __vDSP_setup,
+  DSPSplitComplex *  __vDSP_signal,
+  vDSP_Stride        __vDSP_signalStride,
+  DSPSplitComplex *  __vDSP_result,
+  vDSP_Stride        __vDSP_strideResult,
+  vDSP_Length        __vDSP_log2n,
+  FFTDirection       __vDSP_direction)                        AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
 /*
@@ -367,14 +341,14 @@ vDSP_fft_zop(
  */
 extern void 
 vDSP_fft_zopt(
-  FFTSetup           setup,
-  DSPSplitComplex *  signal,
-  SInt32             signalStride,
-  DSPSplitComplex *  result,
-  SInt32             strideResult,
-  DSPSplitComplex *  bufferTemp,
-  UInt32             log2n,
-  FFTDirection       direction)                               AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  FFTSetup           __vDSP_setup,
+  DSPSplitComplex *  __vDSP_signal,
+  vDSP_Stride        __vDSP_signalStride,
+  DSPSplitComplex *  __vDSP_result,
+  vDSP_Stride        __vDSP_strideResult,
+  DSPSplitComplex *  __vDSP_bufferTemp,
+  vDSP_Length        __vDSP_log2n,
+  FFTDirection       __vDSP_direction)                        AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
 /*
@@ -387,13 +361,13 @@ vDSP_fft_zopt(
  */
 extern void 
 vDSP_fft_zopD(
-  FFTSetupD                setup,
-  DSPDoubleSplitComplex *  signal,
-  SInt32                   signalStride,
-  DSPDoubleSplitComplex *  result,
-  SInt32                   strideResult,
-  UInt32                   log2n,
-  FFTDirection             direction)                         AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  FFTSetupD                __vDSP_setup,
+  DSPDoubleSplitComplex *  __vDSP_signal,
+  vDSP_Stride              __vDSP_signalStride,
+  DSPDoubleSplitComplex *  __vDSP_result,
+  vDSP_Stride              __vDSP_strideResult,
+  vDSP_Length              __vDSP_log2n,
+  FFTDirection             __vDSP_direction)                  AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
 /*
@@ -406,35 +380,23 @@ vDSP_fft_zopD(
  */
 extern void 
 vDSP_fft_zoptD(
-  FFTSetupD                setup,
-  DSPDoubleSplitComplex *  signal,
-  SInt32                   signalStride,
-  DSPDoubleSplitComplex *  result,
-  SInt32                   strideResult,
-  DSPDoubleSplitComplex *  bufferTemp,
-  UInt32                   log2n,
-  FFTDirection             direction)                         AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  FFTSetupD                __vDSP_setup,
+  DSPDoubleSplitComplex *  __vDSP_signal,
+  vDSP_Stride              __vDSP_signalStride,
+  DSPDoubleSplitComplex *  __vDSP_result,
+  vDSP_Stride              __vDSP_strideResult,
+  DSPDoubleSplitComplex *  __vDSP_bufferTemp,
+  vDSP_Length              __vDSP_log2n,
+  FFTDirection             __vDSP_direction)                  AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
 
-/*
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-    Functions fft_zrip and fft_zript
-              fft_zripD and fft_zriptD
-              
-    In-Place Real Fourier Transform with or without temporary memory,
-    split Complex Format
-            
-      Criteria to invoke PowerPC vector code:    
-        1. ioData.realp and ioData.imagp must be 16-byte aligned.
-        2. stride = 1
-        3. 3 <= log2n <= 13
-      
-      If any of the above criteria are not satisfied, the PowerPC scalar code
-      implementation will be used.  The size of temporary memory for each part
-      is the lower value of 4*n and 16k.  Direction can be either
-      kFFTDirection_Forward or kFFTDirection_Inverse.
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
+/*  In-place real-to-complex Discrete Fourier Transform routines.
+
+    fft_zrip    Single-precision without temporary memory.
+    fft_zript   Single-precision with temporary memory.
+    fft_zripD   Double-precision without temporary memory.
+    fft_zriptD  Double-precision with temporary memory.
 */
 /*
  *  vDSP_fft_zrip()
@@ -446,11 +408,11 @@ vDSP_fft_zoptD(
  */
 extern void 
 vDSP_fft_zrip(
-  FFTSetup           setup,
-  DSPSplitComplex *  ioData,
-  SInt32             stride,
-  UInt32             log2n,
-  FFTDirection       direction)                               AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  FFTSetup           __vDSP_setup,
+  DSPSplitComplex *  __vDSP_ioData,
+  vDSP_Stride        __vDSP_stride,
+  vDSP_Length        __vDSP_log2n,
+  FFTDirection       __vDSP_direction)                        AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
 /*
@@ -463,12 +425,12 @@ vDSP_fft_zrip(
  */
 extern void 
 vDSP_fft_zript(
-  FFTSetup           setup,
-  DSPSplitComplex *  ioData,
-  SInt32             stride,
-  DSPSplitComplex *  bufferTemp,
-  UInt32             log2n,
-  FFTDirection       direction)                               AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  FFTSetup           __vDSP_setup,
+  DSPSplitComplex *  __vDSP_ioData,
+  vDSP_Stride        __vDSP_stride,
+  DSPSplitComplex *  __vDSP_bufferTemp,
+  vDSP_Length        __vDSP_log2n,
+  FFTDirection       __vDSP_direction)                        AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
 /*
@@ -481,11 +443,11 @@ vDSP_fft_zript(
  */
 extern void 
 vDSP_fft_zripD(
-  FFTSetupD                setup,
-  DSPDoubleSplitComplex *  ioData,
-  SInt32                   stride,
-  UInt32                   log2n,
-  FFTDirection             flag)                              AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  FFTSetupD                __vDSP_setup,
+  DSPDoubleSplitComplex *  __vDSP_ioData,
+  vDSP_Stride              __vDSP_stride,
+  vDSP_Length              __vDSP_log2n,
+  FFTDirection             __vDSP_flag)                       AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
 /*
@@ -498,35 +460,21 @@ vDSP_fft_zripD(
  */
 extern void 
 vDSP_fft_zriptD(
-  FFTSetupD                setup,
-  DSPDoubleSplitComplex *  ioData,
-  SInt32                   stride,
-  DSPDoubleSplitComplex *  bufferTemp,
-  UInt32                   log2n,
-  SInt32                   flag)                              AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  FFTSetupD                __vDSP_setup,
+  DSPDoubleSplitComplex *  __vDSP_ioData,
+  vDSP_Stride              __vDSP_stride,
+  DSPDoubleSplitComplex *  __vDSP_bufferTemp,
+  vDSP_Length              __vDSP_log2n,
+  FFTDirection             __vDSP_flag)                       AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
 
-/*
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-    Functions fft_zrop and fft_zropt
-              fft_zropD and fft_zroptD
-              
-    Out-of-Place Real Fourier Transform with or without temporary memory,
-    split Complex Format
-            
-      Criteria to invoke PowerPC vector code:  
-        1. signal.realp and signal.imagp must be 16-byte aligned.
-        2. signalStride = 1
-        3. result.realp and result.imagp must be be 16-byte aligned.
-        4. strideResult = 1
-        5. 3 <= log2n <= 13
-      
-      If any of the above criteria are not satisfied, the PowerPC scalar code
-      implementation will be used.  The size of temporary memory for each part
-      is the lower value of 4*n and 16k.  Direction can be either
-      kFFTDirection_Forward or kFFTDirection_Inverse.
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
+/*  Out-of-place real-to-complex Discrete Fourier Transform routines.
+
+    fft_zrop    Single-precision without temporary memory.
+    fft_zropt   Single-precision with temporary memory.
+    fft_zropD   Double-precision without temporary memory.
+    fft_zroptD  Double-precision with temporary memory.
 */
 /*
  *  vDSP_fft_zrop()
@@ -538,13 +486,13 @@ vDSP_fft_zriptD(
  */
 extern void 
 vDSP_fft_zrop(
-  FFTSetup           setup,
-  DSPSplitComplex *  signal,
-  SInt32             signalStride,
-  DSPSplitComplex *  result,
-  SInt32             strideResult,
-  UInt32             log2n,
-  FFTDirection       direction)                               AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  FFTSetup           __vDSP_setup,
+  DSPSplitComplex *  __vDSP_signal,
+  vDSP_Stride        __vDSP_signalStride,
+  DSPSplitComplex *  __vDSP_result,
+  vDSP_Stride        __vDSP_strideResult,
+  vDSP_Length        __vDSP_log2n,
+  FFTDirection       __vDSP_direction)                        AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
 /*
@@ -557,14 +505,14 @@ vDSP_fft_zrop(
  */
 extern void 
 vDSP_fft_zropt(
-  FFTSetup           setup,
-  DSPSplitComplex *  signal,
-  SInt32             signalStride,
-  DSPSplitComplex *  result,
-  SInt32             strideResult,
-  DSPSplitComplex *  bufferTemp,
-  UInt32             log2n,
-  FFTDirection       direction)                               AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  FFTSetup           __vDSP_setup,
+  DSPSplitComplex *  __vDSP_signal,
+  vDSP_Stride        __vDSP_signalStride,
+  DSPSplitComplex *  __vDSP_result,
+  vDSP_Stride        __vDSP_strideResult,
+  DSPSplitComplex *  __vDSP_bufferTemp,
+  vDSP_Length        __vDSP_log2n,
+  FFTDirection       __vDSP_direction)                        AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
 /*
@@ -577,13 +525,13 @@ vDSP_fft_zropt(
  */
 extern void 
 vDSP_fft_zropD(
-  FFTSetupD                setup,
-  DSPDoubleSplitComplex *  signal,
-  SInt32                   signalStride,
-  DSPDoubleSplitComplex *  result,
-  SInt32                   strideResult,
-  UInt32                   log2n,
-  SInt32                   flag)                              AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  FFTSetupD                __vDSP_setup,
+  DSPDoubleSplitComplex *  __vDSP_signal,
+  vDSP_Stride              __vDSP_signalStride,
+  DSPDoubleSplitComplex *  __vDSP_result,
+  vDSP_Stride              __vDSP_strideResult,
+  vDSP_Length              __vDSP_log2n,
+  FFTDirection             __vDSP_flag)                       AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
 /*
@@ -596,38 +544,23 @@ vDSP_fft_zropD(
  */
 extern void 
 vDSP_fft_zroptD(
-  FFTSetupD                setup,
-  DSPDoubleSplitComplex *  signal,
-  SInt32                   signalStride,
-  DSPDoubleSplitComplex *  result,
-  SInt32                   strideResult,
-  DSPDoubleSplitComplex *  bufferTemp,
-  UInt32                   log2n,
-  SInt32                   flag)                              AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  FFTSetupD                __vDSP_setup,
+  DSPDoubleSplitComplex *  __vDSP_signal,
+  vDSP_Stride              __vDSP_signalStride,
+  DSPDoubleSplitComplex *  __vDSP_result,
+  vDSP_Stride              __vDSP_strideResult,
+  DSPDoubleSplitComplex *  __vDSP_bufferTemp,
+  vDSP_Length              __vDSP_log2n,
+  FFTDirection             __vDSP_flag)                       AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
 
-/*
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-    Functions fft2d_zip and fft2d_zipt
-              fft2d_zipD and fft2d_ziptD
-              
-    In-place two dimensional Split Complex Fourier Transform with or without
-    temporary memory
-            
-      Criteria to invoke PowerPC vector code:  
-        1. ioData.realp and ioData.imagp must be 16-byte aligned.
-        2. strideInRow = 1;
-        3. strideInCol must be a multiple of 4
-        4. 2 <= log2nInRow <= 12
-        5. 2 <= log2nInCol <= 12
-        6. bufferTemp.realp and bufferTemp.imagp must be 16-byte aligned.
-      
-      If any of the above criteria are not satisfied, the PowerPC scalar code
-      implementation will be used.  The size of temporary memory for each part
-      is the lower value of 4*n and 16k.  ( log2n = log2nInRow + log2nInCol ) 
-      Direction can be either kFFTDirection_Forward or kFFTDirection_Inverse.
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
+/*  In-place two-dimensional complex Discrete Fourier Transform routines.
+
+    fft2d_zip   Single-precision without temporary memory.
+    fft2d_zipt  Single-precision with temporary memory.
+    fft2d_zipD  Double-precision without temporary memory.
+    fft2d_ziptD Double-precision with temporary memory.
 */
 /*
  *  vDSP_fft2d_zip()
@@ -639,13 +572,13 @@ vDSP_fft_zroptD(
  */
 extern void 
 vDSP_fft2d_zip(
-  FFTSetup           setup,
-  DSPSplitComplex *  ioData,
-  SInt32             strideInRow,
-  SInt32             strideInCol,
-  UInt32             log2nInCol,
-  UInt32             log2nInRow,
-  FFTDirection       direction)                               AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  FFTSetup           __vDSP_setup,
+  DSPSplitComplex *  __vDSP_ioData,
+  vDSP_Stride        __vDSP_strideInRow,
+  vDSP_Stride        __vDSP_strideInCol,
+  vDSP_Length        __vDSP_log2nInCol,
+  vDSP_Length        __vDSP_log2nInRow,
+  FFTDirection       __vDSP_direction)                        AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
 /*
@@ -658,14 +591,14 @@ vDSP_fft2d_zip(
  */
 extern void 
 vDSP_fft2d_zipt(
-  FFTSetup           setup,
-  DSPSplitComplex *  ioData,
-  SInt32             strideInRow,
-  SInt32             strideInCol,
-  DSPSplitComplex *  bufferTemp,
-  UInt32             log2nInCol,
-  UInt32             log2nInRow,
-  FFTDirection       direction)                               AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  FFTSetup           __vDSP_setup,
+  DSPSplitComplex *  __vDSP_ioData,
+  vDSP_Stride        __vDSP_strideInRow,
+  vDSP_Stride        __vDSP_strideInCol,
+  DSPSplitComplex *  __vDSP_bufferTemp,
+  vDSP_Length        __vDSP_log2nInCol,
+  vDSP_Length        __vDSP_log2nInRow,
+  FFTDirection       __vDSP_direction)                        AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
 /*
@@ -678,13 +611,13 @@ vDSP_fft2d_zipt(
  */
 extern void 
 vDSP_fft2d_zipD(
-  FFTSetupD                setup,
-  DSPDoubleSplitComplex *  ioData,
-  SInt32                   strideInRow,
-  SInt32                   strideInCol,
-  UInt32                   log2nInCol,
-  UInt32                   log2nInRow,
-  FFTDirection             direction)                         AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  FFTSetupD                __vDSP_setup,
+  DSPDoubleSplitComplex *  __vDSP_ioData,
+  vDSP_Stride              __vDSP_strideInRow,
+  vDSP_Stride              __vDSP_strideInCol,
+  vDSP_Length              __vDSP_log2nInCol,
+  vDSP_Length              __vDSP_log2nInRow,
+  FFTDirection             __vDSP_direction)                  AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
 /*
@@ -697,42 +630,23 @@ vDSP_fft2d_zipD(
  */
 extern void 
 vDSP_fft2d_ziptD(
-  FFTSetupD                setup,
-  DSPDoubleSplitComplex *  ioData,
-  SInt32                   strideInRow,
-  SInt32                   strideInCol,
-  DSPDoubleSplitComplex *  bufferTemp,
-  UInt32                   log2nInCol,
-  UInt32                   log2nInRow,
-  FFTDirection             direction)                         AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  FFTSetupD                __vDSP_setup,
+  DSPDoubleSplitComplex *  __vDSP_ioData,
+  vDSP_Stride              __vDSP_strideInRow,
+  vDSP_Stride              __vDSP_strideInCol,
+  DSPDoubleSplitComplex *  __vDSP_bufferTemp,
+  vDSP_Length              __vDSP_log2nInCol,
+  vDSP_Length              __vDSP_log2nInRow,
+  FFTDirection             __vDSP_direction)                  AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
 
-/*
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-    Functions fft2d_zop and fft2d_zopt
-              fft2d_zopD and fft2d_zoptD
-              
-    Out-of-Place two dimemsional Split Complex Fourier Transform with or
-    without temporary memory
-            
-      Criteria to invoke PowerPC vector code:  
-        
-        1. signal.realp and signal.imagp must be 16-byte aligned.
-        2. signalStrideInRow = 1;
-        3. signalStrideInCol must be a multiple of 4
-        4. result.realp and result.imagp must be 16-byte aligned.
-        5. strideResultInRow = 1;
-        6. strideResultInCol must be a multiple of 4
-        7. 2 <= log2nInRow <= 12
-        8. 2 <= log2nInCol <= 12
-        9. bufferTemp.realp and bufferTemp.imagp must be 16-byte aligned.
+/*  Out-of-place two-dimensional complex Discrete Fourier Transform routines.
 
-      If any of the above criteria are not satisfied, the PowerPC scalar code
-      implementation will be used.  The size of temporary memory for each part
-      is the lower value of 4*n and 16k.  ( log2n = log2nInRow + log2nInCol ) 
-      Direction can be either kFFTDirection_Forward or kFFTDirection_Inverse.
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
+    fft2d_zip   Single-precision without temporary memory.
+    fft2d_zipt  Single-precision with temporary memory.
+    fft2d_zipD  Double-precision without temporary memory.
+    fft2d_ziptD Double-precision with temporary memory.
 */
 /*
  *  vDSP_fft2d_zop()
@@ -744,16 +658,16 @@ vDSP_fft2d_ziptD(
  */
 extern void 
 vDSP_fft2d_zop(
-  FFTSetup           setup,
-  DSPSplitComplex *  signal,
-  SInt32             signalStrideInRow,
-  SInt32             signalStrideInCol,
-  DSPSplitComplex *  result,
-  SInt32             strideResultInRow,
-  SInt32             strideResultInCol,
-  UInt32             log2nInCol,
-  UInt32             log2nInRow,
-  SInt32             flag)                                    AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  FFTSetup           __vDSP_setup,
+  DSPSplitComplex *  __vDSP_signal,
+  vDSP_Stride        __vDSP_signalStrideInRow,
+  vDSP_Stride        __vDSP_signalStrideInCol,
+  DSPSplitComplex *  __vDSP_result,
+  vDSP_Stride        __vDSP_strideResultInRow,
+  vDSP_Stride        __vDSP_strideResultInCol,
+  vDSP_Length        __vDSP_log2nInCol,
+  vDSP_Length        __vDSP_log2nInRow,
+  FFTDirection       __vDSP_flag)                             AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
 /*
@@ -766,17 +680,17 @@ vDSP_fft2d_zop(
  */
 extern void 
 vDSP_fft2d_zopt(
-  FFTSetup           setup,
-  DSPSplitComplex *  signal,
-  SInt32             signalStrideInRow,
-  SInt32             signalStrideInCol,
-  DSPSplitComplex *  result,
-  SInt32             strideResultInRow,
-  SInt32             strideResultInCol,
-  DSPSplitComplex *  bufferTemp,
-  UInt32             log2nInCol,
-  UInt32             log2nInRow,
-  SInt32             flag)                                    AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  FFTSetup           __vDSP_setup,
+  DSPSplitComplex *  __vDSP_signal,
+  vDSP_Stride        __vDSP_signalStrideInRow,
+  vDSP_Stride        __vDSP_signalStrideInCol,
+  DSPSplitComplex *  __vDSP_result,
+  vDSP_Stride        __vDSP_strideResultInRow,
+  vDSP_Stride        __vDSP_strideResultInCol,
+  DSPSplitComplex *  __vDSP_bufferTemp,
+  vDSP_Length        __vDSP_log2nInCol,
+  vDSP_Length        __vDSP_log2nInRow,
+  FFTDirection       __vDSP_flag)                             AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
 /*
@@ -789,16 +703,16 @@ vDSP_fft2d_zopt(
  */
 extern void 
 vDSP_fft2d_zopD(
-  FFTSetupD                setup,
-  DSPDoubleSplitComplex *  signal,
-  SInt32                   signalStrideInRow,
-  SInt32                   signalStrideInCol,
-  DSPDoubleSplitComplex *  result,
-  SInt32                   strideResultInRow,
-  SInt32                   strideResultInCol,
-  UInt32                   log2nInCol,
-  UInt32                   log2nInRow,
-  SInt32                   flag)                              AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  FFTSetupD                __vDSP_setup,
+  DSPDoubleSplitComplex *  __vDSP_signal,
+  vDSP_Stride              __vDSP_signalStrideInRow,
+  vDSP_Stride              __vDSP_signalStrideInCol,
+  DSPDoubleSplitComplex *  __vDSP_result,
+  vDSP_Stride              __vDSP_strideResultInRow,
+  vDSP_Stride              __vDSP_strideResultInCol,
+  vDSP_Length              __vDSP_log2nInCol,
+  vDSP_Length              __vDSP_log2nInRow,
+  FFTDirection             __vDSP_flag)                       AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
 /*
@@ -811,41 +725,27 @@ vDSP_fft2d_zopD(
  */
 extern void 
 vDSP_fft2d_zoptD(
-  FFTSetupD                setup,
-  DSPDoubleSplitComplex *  signal,
-  SInt32                   signalStrideInRow,
-  SInt32                   signalStrideInCol,
-  DSPDoubleSplitComplex *  result,
-  SInt32                   strideResultInRow,
-  SInt32                   strideResultInCol,
-  DSPDoubleSplitComplex *  bufferTemp,
-  UInt32                   log2nInCol,
-  UInt32                   log2nInRow,
-  SInt32                   flag)                              AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  FFTSetupD                __vDSP_setup,
+  DSPDoubleSplitComplex *  __vDSP_signal,
+  vDSP_Stride              __vDSP_signalStrideInRow,
+  vDSP_Stride              __vDSP_signalStrideInCol,
+  DSPDoubleSplitComplex *  __vDSP_result,
+  vDSP_Stride              __vDSP_strideResultInRow,
+  vDSP_Stride              __vDSP_strideResultInCol,
+  DSPDoubleSplitComplex *  __vDSP_bufferTemp,
+  vDSP_Length              __vDSP_log2nInCol,
+  vDSP_Length              __vDSP_log2nInRow,
+  FFTDirection             __vDSP_flag)                       AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
 
-/*
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-    Functions fft2d_zrip and fft2d_zript
-              fft2d_zripD and fft2d_zriptD
-              
-    In-place two dimensional Real Fourier Transform with or without temporary
-    memory, Split Complex Format
-            
-      Criteria to invoke PowerPC vector code:  
-        1. ioData.realp and ioData.imagp must be 16-byte aligned.
-        2. strideInRow = 1;
-        3. strideInCol must be a multiple of 4
-        4. 3 <= log2nInRow <= 12
-        5. 3 <= log2nInCol <= 13
-        6. bufferTemp.realp and bufferTemp.imagp must be 16-byte aligned.
+/*  In-place two-dimensional real-to-complex Discrete Fourier Transform
+    routines.
 
-      If any of the above criteria are not satisfied, the PowerPC scalar code
-      implementation will be used.  The size of temporary memory for each part
-      is the lower value of 4*n and 16k.  ( log2n = log2nInRow + log2nInCol ) 
-      Direction can be either kFFTDirection_Forward or kFFTDirection_Inverse.
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
+    fft2d_zrip      Single-precision without temporary memory.
+    fft2d_zript     Single-precision with temporary memory.
+    fft2d_zripD     Double-precision without temporary memory.
+    fft2d_zriptD    Double-precision with temporary memory.
 */
 /*
  *  vDSP_fft2d_zrip()
@@ -857,13 +757,13 @@ vDSP_fft2d_zoptD(
  */
 extern void 
 vDSP_fft2d_zrip(
-  FFTSetup           setup,
-  DSPSplitComplex *  ioData,
-  SInt32             strideInRow,
-  SInt32             strideInCol,
-  UInt32             log2nInCol,
-  UInt32             log2nInRow,
-  FFTDirection       direction)                               AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  FFTSetup           __vDSP_setup,
+  DSPSplitComplex *  __vDSP_ioData,
+  vDSP_Stride        __vDSP_strideInRow,
+  vDSP_Stride        __vDSP_strideInCol,
+  vDSP_Length        __vDSP_log2nInCol,
+  vDSP_Length        __vDSP_log2nInRow,
+  FFTDirection       __vDSP_direction)                        AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
 /*
@@ -876,14 +776,14 @@ vDSP_fft2d_zrip(
  */
 extern void 
 vDSP_fft2d_zript(
-  FFTSetup           setup,
-  DSPSplitComplex *  ioData,
-  SInt32             strideInRow,
-  SInt32             strideInCol,
-  DSPSplitComplex *  bufferTemp,
-  UInt32             log2nInCol,
-  UInt32             log2nInRow,
-  FFTDirection       direction)                               AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  FFTSetup           __vDSP_setup,
+  DSPSplitComplex *  __vDSP_ioData,
+  vDSP_Stride        __vDSP_strideInRow,
+  vDSP_Stride        __vDSP_strideInCol,
+  DSPSplitComplex *  __vDSP_bufferTemp,
+  vDSP_Length        __vDSP_log2nInCol,
+  vDSP_Length        __vDSP_log2nInRow,
+  FFTDirection       __vDSP_direction)                        AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
 /*
@@ -896,13 +796,13 @@ vDSP_fft2d_zript(
  */
 extern void 
 vDSP_fft2d_zripD(
-  FFTSetupD                setup,
-  DSPDoubleSplitComplex *  signal,
-  SInt32                   strideInRow,
-  SInt32                   strideInCol,
-  UInt32                   log2nInCol,
-  UInt32                   log2nInRow,
-  SInt32                   flag)                              AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  FFTSetupD                __vDSP_setup,
+  DSPDoubleSplitComplex *  __vDSP_signal,
+  vDSP_Stride              __vDSP_strideInRow,
+  vDSP_Stride              __vDSP_strideInCol,
+  vDSP_Length              __vDSP_log2nInCol,
+  vDSP_Length              __vDSP_log2nInRow,
+  FFTDirection             __vDSP_flag)                       AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
 /*
@@ -915,41 +815,24 @@ vDSP_fft2d_zripD(
  */
 extern void 
 vDSP_fft2d_zriptD(
-  FFTSetupD                setup,
-  DSPDoubleSplitComplex *  signal,
-  SInt32                   strideInRow,
-  SInt32                   strideInCol,
-  DSPDoubleSplitComplex *  bufferTemp,
-  UInt32                   log2nInCol,
-  UInt32                   log2nInRow,
-  SInt32                   flag)                              AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  FFTSetupD                __vDSP_setup,
+  DSPDoubleSplitComplex *  __vDSP_signal,
+  vDSP_Stride              __vDSP_strideInRow,
+  vDSP_Stride              __vDSP_strideInCol,
+  DSPDoubleSplitComplex *  __vDSP_bufferTemp,
+  vDSP_Length              __vDSP_log2nInCol,
+  vDSP_Length              __vDSP_log2nInRow,
+  FFTDirection             __vDSP_flag)                       AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
 
-/*
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-    Functions fft2d_zrop and fft2d_zropt
-              fft2d_zropD and fft2d_zroptD
-              
-    Out-of-Place Two-Dimemsional Real Fourier Transform with or without
-    temporary memory, Split Complex Format
-            
-      Criteria to invoke PowerPC vector code:  
-        1. signal.realp and signal.imagp must be 16-byte aligned.
-        2. signalStrideInRow = 1;
-        3. signalStrideInCol must be a multiple of 4
-        4. result.realp and result.imagp must be 16-byte aligned.
-        5. strideResultInRow = 1;
-        6. strideResultInCol must be a multiple of 4
-        7. 3 <= log2nInRow <= 12
-        8. 3 <= log2nInCol <= 13
-        9. bufferTemp.realp and bufferTemp.imagp must be 16-byte aligned.
+/*  Out-of-place two-dimensional real-to-complex Discrete Fourier Transform
+    routines.
 
-      If any of the above criteria are not satisfied, the PowerPC scalar code
-      implementation will be used.  The size of temporary memory for each part
-      is the lower value of 4*n and 16k.  ( log2n = log2nInRow + log2nInCol ) 
-      Direction can be either kFFTDirection_Forward or kFFTDirection_Inverse.
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
+    fft2d_zrop      Single-precision without temporary memory.
+    fft2d_zropt     Single-precision with temporary memory.
+    fft2d_zropD     Double-precision without temporary memory.
+    fft2d_zroptD    Double-precision with temporary memory.
 */
 /*
  *  vDSP_fft2d_zrop()
@@ -961,16 +844,16 @@ vDSP_fft2d_zriptD(
  */
 extern void 
 vDSP_fft2d_zrop(
-  FFTSetup           setup,
-  DSPSplitComplex *  signal,
-  SInt32             signalStrideInRow,
-  SInt32             signalStrideInCol,
-  DSPSplitComplex *  result,
-  SInt32             strideResultInRow,
-  SInt32             strideResultInCol,
-  UInt32             log2nInCol,
-  UInt32             log2nInRow,
-  SInt32             flag)                                    AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  FFTSetup           __vDSP_setup,
+  DSPSplitComplex *  __vDSP_signal,
+  vDSP_Stride        __vDSP_signalStrideInRow,
+  vDSP_Stride        __vDSP_signalStrideInCol,
+  DSPSplitComplex *  __vDSP_result,
+  vDSP_Stride        __vDSP_strideResultInRow,
+  vDSP_Stride        __vDSP_strideResultInCol,
+  vDSP_Length        __vDSP_log2nInCol,
+  vDSP_Length        __vDSP_log2nInRow,
+  FFTDirection       __vDSP_flag)                             AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
 /*
@@ -983,17 +866,17 @@ vDSP_fft2d_zrop(
  */
 extern void 
 vDSP_fft2d_zropt(
-  FFTSetup           setup,
-  DSPSplitComplex *  signal,
-  SInt32             signalStrideInRow,
-  SInt32             signalStrideInCol,
-  DSPSplitComplex *  result,
-  SInt32             strideResultInRow,
-  SInt32             strideResultInCol,
-  DSPSplitComplex *  bufferTemp,
-  UInt32             log2nInCol,
-  UInt32             log2nInRow,
-  SInt32             flag)                                    AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  FFTSetup           __vDSP_setup,
+  DSPSplitComplex *  __vDSP_signal,
+  vDSP_Stride        __vDSP_signalStrideInRow,
+  vDSP_Stride        __vDSP_signalStrideInCol,
+  DSPSplitComplex *  __vDSP_result,
+  vDSP_Stride        __vDSP_strideResultInRow,
+  vDSP_Stride        __vDSP_strideResultInCol,
+  DSPSplitComplex *  __vDSP_bufferTemp,
+  vDSP_Length        __vDSP_log2nInCol,
+  vDSP_Length        __vDSP_log2nInRow,
+  FFTDirection       __vDSP_flag)                             AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
 /*
@@ -1006,16 +889,16 @@ vDSP_fft2d_zropt(
  */
 extern void 
 vDSP_fft2d_zropD(
-  FFTSetupD                setup,
-  DSPDoubleSplitComplex *  ioData,
-  SInt32                   Kr,
-  SInt32                   Kc,
-  DSPDoubleSplitComplex *  ioData2,
-  SInt32                   Ir,
-  SInt32                   Ic,
-  UInt32                   log2nc,
-  UInt32                   log2nr,
-  SInt32                   flag)                              AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  FFTSetupD                __vDSP_setup,
+  DSPDoubleSplitComplex *  __vDSP_ioData,
+  vDSP_Stride              __vDSP_Kr,
+  vDSP_Stride              __vDSP_Kc,
+  DSPDoubleSplitComplex *  __vDSP_ioData2,
+  vDSP_Stride              __vDSP_Ir,
+  vDSP_Stride              __vDSP_Ic,
+  vDSP_Length              __vDSP_log2nc,
+  vDSP_Length              __vDSP_log2nr,
+  FFTDirection             __vDSP_flag)                       AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
 /*
@@ -1028,38 +911,26 @@ vDSP_fft2d_zropD(
  */
 extern void 
 vDSP_fft2d_zroptD(
-  FFTSetupD                setup,
-  DSPDoubleSplitComplex *  ioData,
-  SInt32                   Kr,
-  SInt32                   Kc,
-  DSPDoubleSplitComplex *  ioData2,
-  SInt32                   Ir,
-  SInt32                   Ic,
-  DSPDoubleSplitComplex *  temp,
-  UInt32                   log2nc,
-  UInt32                   log2nr,
-  SInt32                   flag)                              AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  FFTSetupD                __vDSP_setup,
+  DSPDoubleSplitComplex *  __vDSP_ioData,
+  vDSP_Stride              __vDSP_Kr,
+  vDSP_Stride              __vDSP_Kc,
+  DSPDoubleSplitComplex *  __vDSP_ioData2,
+  vDSP_Stride              __vDSP_Ir,
+  vDSP_Stride              __vDSP_Ic,
+  DSPDoubleSplitComplex *  __vDSP_temp,
+  vDSP_Length              __vDSP_log2nc,
+  vDSP_Length              __vDSP_log2nr,
+  FFTDirection             __vDSP_flag)                       AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
 
-/*
-________________________________________________________________________________
-      Functions fftm_zip and fftm_zipt
-                fftm_zipD and fftm_ziptD
-                
-      In-Place multiple One_Dimensional Complex Fourier Transform with or 
-      without temporary memory, Split Complex Format
-      
-         Criteria to invoke PowerPC vector code:
-            1. signal.realp and signal.imagp must be 16-byte aligned.
-            2. signalStride = 1;
-            3. fftStride must be a multiple of 4
-            4. 2 <= log2n <= 12
-            5. temp.realp and temp.imagp must be 16-byte aligned.
-         
-         If any of the above criteria are not satisfied, the PowerPC scalar code
-         implementation will be used.
-________________________________________________________________________________
+/*  In-place multiple complex Discrete Fourier Transform routines.
+
+    fftm_zip    Single-precision without temporary memory.
+    fftm_zipt   Single-precision with temporary memory.
+    fftm_zipD   Double-precision without temporary memory.
+    fftm_ziptD  Double-precision with temporary memory.
 */
 /*
  *  vDSP_fftm_zip()
@@ -1071,13 +942,13 @@ ________________________________________________________________________________
  */
 extern void 
 vDSP_fftm_zip(
-  FFTSetup           setup,
-  DSPSplitComplex *  signal,
-  SInt32             signalStride,
-  SInt32             fftStride,
-  UInt32             log2n,
-  UInt32             numFFT,
-  SInt32             flag)                                    AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  FFTSetup           __vDSP_setup,
+  DSPSplitComplex *  __vDSP_signal,
+  vDSP_Stride        __vDSP_signalStride,
+  vDSP_Stride        __vDSP_fftStride,
+  vDSP_Length        __vDSP_log2n,
+  vDSP_Length        __vDSP_numFFT,
+  FFTDirection       __vDSP_flag)                             AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
 /*
@@ -1090,14 +961,14 @@ vDSP_fftm_zip(
  */
 extern void 
 vDSP_fftm_zipt(
-  FFTSetup           setup,
-  DSPSplitComplex *  signal,
-  SInt32             signalStride,
-  SInt32             fftStride,
-  DSPSplitComplex *  temp,
-  UInt32             log2n,
-  UInt32             numFFT,
-  SInt32             flag)                                    AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  FFTSetup           __vDSP_setup,
+  DSPSplitComplex *  __vDSP_signal,
+  vDSP_Stride        __vDSP_signalStride,
+  vDSP_Stride        __vDSP_fftStride,
+  DSPSplitComplex *  __vDSP_temp,
+  vDSP_Length        __vDSP_log2n,
+  vDSP_Length        __vDSP_numFFT,
+  FFTDirection       __vDSP_flag)                             AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
 /*
@@ -1110,13 +981,13 @@ vDSP_fftm_zipt(
  */
 extern void 
 vDSP_fftm_zipD(
-  FFTSetupD                setup,
-  DSPDoubleSplitComplex *  signal,
-  SInt32                   signalStride,
-  SInt32                   fftStride,
-  UInt32                   log2n,
-  UInt32                   numFFT,
-  SInt32                   flag)                              AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  FFTSetupD                __vDSP_setup,
+  DSPDoubleSplitComplex *  __vDSP_signal,
+  vDSP_Stride              __vDSP_signalStride,
+  vDSP_Stride              __vDSP_fftStride,
+  vDSP_Length              __vDSP_log2n,
+  vDSP_Length              __vDSP_numFFT,
+  FFTDirection             __vDSP_flag)                       AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
 /*
@@ -1129,38 +1000,23 @@ vDSP_fftm_zipD(
  */
 extern void 
 vDSP_fftm_ziptD(
-  FFTSetupD                setup,
-  DSPDoubleSplitComplex *  signal,
-  SInt32                   signalStride,
-  SInt32                   fftStride,
-  DSPDoubleSplitComplex *  temp,
-  UInt32                   log2n,
-  UInt32                   numFFT,
-  SInt32                   flag)                              AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  FFTSetupD                __vDSP_setup,
+  DSPDoubleSplitComplex *  __vDSP_signal,
+  vDSP_Stride              __vDSP_signalStride,
+  vDSP_Stride              __vDSP_fftStride,
+  DSPDoubleSplitComplex *  __vDSP_temp,
+  vDSP_Length              __vDSP_log2n,
+  vDSP_Length              __vDSP_numFFT,
+  FFTDirection             __vDSP_flag)                       AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
 
-/*
-________________________________________________________________________________
-      Functions fftm_zop and fftm_zopt
-                fftm_zopD and fftm_zoptD
-                
-      Out-Of-Place multiple One_Dimensional Complex Fourier Transform with or 
-      without temporary memory, Split Complex Format
-      
-         Criteria to invoke PowerPC vector code:
-            1. signal.realp and signal.imagp must be 16-byte aligned.
-            2. signalStride = 1;
-            3. fftStride must be a multiple of 4
-            4. result.realp and result.imagp must be 16-byte aligned.
-            5. resultStride = 1;
-            6. rfftStride must be a multiple of 4
-            7. 2 <= log2n <= 12
-            8. temp.realp and temp.imagp must be 16-byte aligned.
-        
-        If any of the above criteria are not satisfied, the PowerPC scalar code
-        implementation will be used.
-________________________________________________________________________________
+/*  Out-of-place multiple complex Discrete Fourier Transform routines.
+
+    fftm_zop    Single-precision without temporary memory.
+    fftm_zopt   Single-precision with temporary memory.
+    fftm_zopD   Double-precision without temporary memory.
+    fftm_zoptD  Double-precision with temporary memory.
 */
 /*
  *  vDSP_fftm_zop()
@@ -1172,16 +1028,16 @@ ________________________________________________________________________________
  */
 extern void 
 vDSP_fftm_zop(
-  FFTSetup           setup,
-  DSPSplitComplex *  signal,
-  SInt32             signalStride,
-  SInt32             fftStride,
-  DSPSplitComplex *  result,
-  SInt32             resultStride,
-  SInt32             rfftStride,
-  UInt32             log2n,
-  UInt32             numFFT,
-  SInt32             flag)                                    AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  FFTSetup           __vDSP_setup,
+  DSPSplitComplex *  __vDSP_signal,
+  vDSP_Stride        __vDSP_signalStride,
+  vDSP_Stride        __vDSP_fftStride,
+  DSPSplitComplex *  __vDSP_result,
+  vDSP_Stride        __vDSP_resultStride,
+  vDSP_Stride        __vDSP_rfftStride,
+  vDSP_Length        __vDSP_log2n,
+  vDSP_Length        __vDSP_numFFT,
+  FFTDirection       __vDSP_flag)                             AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
 /*
@@ -1194,17 +1050,17 @@ vDSP_fftm_zop(
  */
 extern void 
 vDSP_fftm_zopt(
-  FFTSetup           setup,
-  DSPSplitComplex *  signal,
-  SInt32             signalStride,
-  SInt32             fftStride,
-  DSPSplitComplex *  result,
-  SInt32             resultStride,
-  SInt32             rfftStride,
-  DSPSplitComplex *  temp,
-  UInt32             log2n,
-  UInt32             numFFT,
-  SInt32             flag)                                    AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  FFTSetup           __vDSP_setup,
+  DSPSplitComplex *  __vDSP_signal,
+  vDSP_Stride        __vDSP_signalStride,
+  vDSP_Stride        __vDSP_fftStride,
+  DSPSplitComplex *  __vDSP_result,
+  vDSP_Stride        __vDSP_resultStride,
+  vDSP_Stride        __vDSP_rfftStride,
+  DSPSplitComplex *  __vDSP_temp,
+  vDSP_Length        __vDSP_log2n,
+  vDSP_Length        __vDSP_numFFT,
+  FFTDirection       __vDSP_flag)                             AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
 /*
@@ -1217,16 +1073,16 @@ vDSP_fftm_zopt(
  */
 extern void 
 vDSP_fftm_zopD(
-  FFTSetupD                setup,
-  DSPDoubleSplitComplex *  signal,
-  SInt32                   signalStride,
-  SInt32                   fftStride,
-  DSPDoubleSplitComplex *  result,
-  SInt32                   resultStride,
-  SInt32                   rfftStride,
-  UInt32                   log2n,
-  UInt32                   numFFT,
-  SInt32                   flag)                              AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  FFTSetupD                __vDSP_setup,
+  DSPDoubleSplitComplex *  __vDSP_signal,
+  vDSP_Stride              __vDSP_signalStride,
+  vDSP_Stride              __vDSP_fftStride,
+  DSPDoubleSplitComplex *  __vDSP_result,
+  vDSP_Stride              __vDSP_resultStride,
+  vDSP_Stride              __vDSP_rfftStride,
+  vDSP_Length              __vDSP_log2n,
+  vDSP_Length              __vDSP_numFFT,
+  FFTDirection             __vDSP_flag)                       AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
 /*
@@ -1239,37 +1095,25 @@ vDSP_fftm_zopD(
  */
 extern void 
 vDSP_fftm_zoptD(
-  FFTSetupD                setup,
-  DSPDoubleSplitComplex *  signal,
-  SInt32                   signalStride,
-  SInt32                   fftStride,
-  DSPDoubleSplitComplex *  result,
-  SInt32                   resultStride,
-  SInt32                   rfftStride,
-  DSPDoubleSplitComplex *  temp,
-  UInt32                   log2n,
-  UInt32                   numFFT,
-  SInt32                   flag)                              AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  FFTSetupD                __vDSP_setup,
+  DSPDoubleSplitComplex *  __vDSP_signal,
+  vDSP_Stride              __vDSP_signalStride,
+  vDSP_Stride              __vDSP_fftStride,
+  DSPDoubleSplitComplex *  __vDSP_result,
+  vDSP_Stride              __vDSP_resultStride,
+  vDSP_Stride              __vDSP_rfftStride,
+  DSPDoubleSplitComplex *  __vDSP_temp,
+  vDSP_Length              __vDSP_log2n,
+  vDSP_Length              __vDSP_numFFT,
+  FFTDirection             __vDSP_flag)                       AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
+/*  In-place multiple real-to-complex Discrete Fourier Transform routines.
 
-/*
-________________________________________________________________________________
-      Functions fftm_zrip and fftm_zript
-                fftm_zripD and fftm_zriptD
-                
-      In-Place multiple One_Dimensional Real Fourier Transform with or 
-      without temporary memory, Split Complex Format
-      
-         Criteria to invoke PowerPC vector code:
-            1. signal.realp and signal.imagp must be 16-byte aligned.
-            2. signalStride = 1;
-            3. fftStride must be a multiple of 4
-            4. 3 <= log2n <= 13
-            5. temp.realp and temp.imagp must be 16-byte aligned.
-        If any of the above criteria are not satisfied, the PowerPC scalar code
-        implementation will be used.
-________________________________________________________________________________
+    fftm_zip    Single-precision without temporary memory.
+    fftm_zipt   Single-precision with temporary memory.
+    fftm_zipD   Double-precision without temporary memory.
+    fftm_ziptD  Double-precision with temporary memory.
 */
 /*
  *  vDSP_fftm_zrip()
@@ -1281,13 +1125,13 @@ ________________________________________________________________________________
  */
 extern void 
 vDSP_fftm_zrip(
-  FFTSetup           setup,
-  DSPSplitComplex *  signal,
-  SInt32             signalStride,
-  SInt32             fftStride,
-  UInt32             log2n,
-  UInt32             numFFT,
-  SInt32             flag)                                    AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  FFTSetup           __vDSP_setup,
+  DSPSplitComplex *  __vDSP_signal,
+  vDSP_Stride        __vDSP_signalStride,
+  vDSP_Stride        __vDSP_fftStride,
+  vDSP_Length        __vDSP_log2n,
+  vDSP_Length        __vDSP_numFFT,
+  FFTDirection       __vDSP_flag)                             AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
 /*
@@ -1300,14 +1144,14 @@ vDSP_fftm_zrip(
  */
 extern void 
 vDSP_fftm_zript(
-  FFTSetup           setup,
-  DSPSplitComplex *  signal,
-  SInt32             signalStride,
-  SInt32             fftStride,
-  DSPSplitComplex *  temp,
-  UInt32             log2n,
-  UInt32             numFFT,
-  SInt32             flag)                                    AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  FFTSetup           __vDSP_setup,
+  DSPSplitComplex *  __vDSP_signal,
+  vDSP_Stride        __vDSP_signalStride,
+  vDSP_Stride        __vDSP_fftStride,
+  DSPSplitComplex *  __vDSP_temp,
+  vDSP_Length        __vDSP_log2n,
+  vDSP_Length        __vDSP_numFFT,
+  FFTDirection       __vDSP_flag)                             AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
 /*
@@ -1320,13 +1164,13 @@ vDSP_fftm_zript(
  */
 extern void 
 vDSP_fftm_zripD(
-  FFTSetupD                setup,
-  DSPDoubleSplitComplex *  signal,
-  SInt32                   signalStride,
-  SInt32                   fftStride,
-  UInt32                   log2n,
-  UInt32                   numFFT,
-  SInt32                   flag)                              AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  FFTSetupD                __vDSP_setup,
+  DSPDoubleSplitComplex *  __vDSP_signal,
+  vDSP_Stride              __vDSP_signalStride,
+  vDSP_Stride              __vDSP_fftStride,
+  vDSP_Length              __vDSP_log2n,
+  vDSP_Length              __vDSP_numFFT,
+  FFTDirection             __vDSP_flag)                       AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
 /*
@@ -1339,38 +1183,23 @@ vDSP_fftm_zripD(
  */
 extern void 
 vDSP_fftm_zriptD(
-  FFTSetupD                setup,
-  DSPDoubleSplitComplex *  signal,
-  SInt32                   signalStride,
-  SInt32                   fftStride,
-  DSPDoubleSplitComplex *  temp,
-  UInt32                   log2n,
-  UInt32                   numFFT,
-  SInt32                   flag)                              AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  FFTSetupD                __vDSP_setup,
+  DSPDoubleSplitComplex *  __vDSP_signal,
+  vDSP_Stride              __vDSP_signalStride,
+  vDSP_Stride              __vDSP_fftStride,
+  DSPDoubleSplitComplex *  __vDSP_temp,
+  vDSP_Length              __vDSP_log2n,
+  vDSP_Length              __vDSP_numFFT,
+  FFTDirection             __vDSP_flag)                       AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
 
-/*
-________________________________________________________________________________
-      Functions fftm_zrop and fftm_zropt
-                fftm_zropD and fftm_zroptD
-                
-      Out-Of-Place multiple One_Dimensional Real Fourier Transform with or 
-      without temporary memory, Split Complex Format
-      
-         Criteria to invoke PowerPC vector code:
-            1. signal.realp and signal.imagp must be 16-byte aligned.
-            2. signalStride = 1;
-            3. fftStride must be a multiple of 4
-            4. result.realp and result.imagp must be 16-byte aligned.
-            5. resultStride = 1;
-            6. rfftStride must be a multiple of 4
-            7. 3 <= log2n <= 13
-            8. temp.realp and temp.imagp must be 16-byte aligned.
-         
-         If any of the above criteria are not satisfied, the PowerPC scalar code
-         implementation will be used.
-________________________________________________________________________________
+/*  Out-of-place multiple real-to-complex Discrete Fourier Transform routines.
+
+    fftm_zrop   Single-precision without temporary memory.
+    fftm_zropt  Single-precision with temporary memory.
+    fftm_zropD  Double-precision without temporary memory.
+    fftm_zroptD Double-precision with temporary memory.
 */
 /*
  *  vDSP_fftm_zrop()
@@ -1382,16 +1211,16 @@ ________________________________________________________________________________
  */
 extern void 
 vDSP_fftm_zrop(
-  FFTSetup           setup,
-  DSPSplitComplex *  signal,
-  SInt32             signalStride,
-  SInt32             fftStride,
-  DSPSplitComplex *  result,
-  SInt32             resultStride,
-  SInt32             rfftStride,
-  UInt32             log2n,
-  UInt32             numFFT,
-  SInt32             flag)                                    AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  FFTSetup           __vDSP_setup,
+  DSPSplitComplex *  __vDSP_signal,
+  vDSP_Stride        __vDSP_signalStride,
+  vDSP_Stride        __vDSP_fftStride,
+  DSPSplitComplex *  __vDSP_result,
+  vDSP_Stride        __vDSP_resultStride,
+  vDSP_Stride        __vDSP_rfftStride,
+  vDSP_Length        __vDSP_log2n,
+  vDSP_Length        __vDSP_numFFT,
+  FFTDirection       __vDSP_flag)                             AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
 /*
@@ -1404,17 +1233,17 @@ vDSP_fftm_zrop(
  */
 extern void 
 vDSP_fftm_zropt(
-  FFTSetup           setup,
-  DSPSplitComplex *  signal,
-  SInt32             signalStride,
-  SInt32             fftStride,
-  DSPSplitComplex *  result,
-  SInt32             resultStride,
-  SInt32             rfftStride,
-  DSPSplitComplex *  temp,
-  UInt32             log2n,
-  UInt32             numFFT,
-  SInt32             flag)                                    AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  FFTSetup           __vDSP_setup,
+  DSPSplitComplex *  __vDSP_signal,
+  vDSP_Stride        __vDSP_signalStride,
+  vDSP_Stride        __vDSP_fftStride,
+  DSPSplitComplex *  __vDSP_result,
+  vDSP_Stride        __vDSP_resultStride,
+  vDSP_Stride        __vDSP_rfftStride,
+  DSPSplitComplex *  __vDSP_temp,
+  vDSP_Length        __vDSP_log2n,
+  vDSP_Length        __vDSP_numFFT,
+  FFTDirection       __vDSP_flag)                             AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
 /*
@@ -1427,16 +1256,16 @@ vDSP_fftm_zropt(
  */
 extern void 
 vDSP_fftm_zropD(
-  FFTSetupD                setup,
-  DSPDoubleSplitComplex *  signal,
-  SInt32                   signalStride,
-  SInt32                   fftStride,
-  DSPDoubleSplitComplex *  result,
-  SInt32                   resultStride,
-  SInt32                   rfftStride,
-  UInt32                   log2n,
-  UInt32                   numFFT,
-  SInt32                   flag)                              AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  FFTSetupD                __vDSP_setup,
+  DSPDoubleSplitComplex *  __vDSP_signal,
+  vDSP_Stride              __vDSP_signalStride,
+  vDSP_Stride              __vDSP_fftStride,
+  DSPDoubleSplitComplex *  __vDSP_result,
+  vDSP_Stride              __vDSP_resultStride,
+  vDSP_Stride              __vDSP_rfftStride,
+  vDSP_Length              __vDSP_log2n,
+  vDSP_Length              __vDSP_numFFT,
+  FFTDirection             __vDSP_flag)                       AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
 /*
@@ -1449,38 +1278,25 @@ vDSP_fftm_zropD(
  */
 extern void 
 vDSP_fftm_zroptD(
-  FFTSetupD                setup,
-  DSPDoubleSplitComplex *  signal,
-  SInt32                   signalStride,
-  SInt32                   fftStride,
-  DSPDoubleSplitComplex *  result,
-  SInt32                   resultStride,
-  SInt32                   rfftStride,
-  DSPDoubleSplitComplex *  temp,
-  UInt32                   log2n,
-  UInt32                   numFFT,
-  SInt32                   flag)                              AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  FFTSetupD                __vDSP_setup,
+  DSPDoubleSplitComplex *  __vDSP_signal,
+  vDSP_Stride              __vDSP_signalStride,
+  vDSP_Stride              __vDSP_fftStride,
+  DSPDoubleSplitComplex *  __vDSP_result,
+  vDSP_Stride              __vDSP_resultStride,
+  vDSP_Stride              __vDSP_rfftStride,
+  DSPDoubleSplitComplex *  __vDSP_temp,
+  vDSP_Length              __vDSP_log2n,
+  vDSP_Length              __vDSP_numFFT,
+  FFTDirection             __vDSP_flag)                       AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
+/*  Non-power-of-two out-of-place complex Discrete Fourier Transform routines.
 
-/*
-________________________________________________________________________________
-      Functions fft3_zop and fft5_zop
-                fft3_zopD and fft5_zopD
-                
-      Out-Of-Place One_Dimensional Complex Fourier Transform in base-3 and 
-      base-5 with or without temporary memory, Split Complex Format 
-      
-         Criteria to invoke PowerPC vector code:
-            1. signal.realp and signal.imagp must be 16-byte aligned.
-            2. signalStride = 1;
-            3. result.realp and result.imagp must be 16-byte aligned.
-            4. resultStride = 1;
-            5. 3 <= log2n 
-         
-         If any of the above criteria are not satisfied, the PowerPC scalar code
-         implementation will be used.
-________________________________________________________________________________
+    fft3_zop    3*2**n elements, single-precision without temporary memory.
+    fft3_zopD   3*2**n elements, double-precision without temporary memory.
+    fft5_zop    5*2**n elements, single-precision without temporary memory.
+    fft5_zopD   5*2**n elements, double-precision without temporary memory.
 */
 /*
  *  vDSP_fft3_zop()
@@ -1492,13 +1308,13 @@ ________________________________________________________________________________
  */
 extern void 
 vDSP_fft3_zop(
-  FFTSetup           setup,
-  DSPSplitComplex *  signal,
-  SInt32             signalStride,
-  DSPSplitComplex *  result,
-  SInt32             resultStride,
-  UInt32             log2n,
-  SInt32             flag)                                    AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  FFTSetup           __vDSP_setup,
+  DSPSplitComplex *  __vDSP_signal,
+  vDSP_Stride        __vDSP_signalStride,
+  DSPSplitComplex *  __vDSP_result,
+  vDSP_Stride        __vDSP_resultStride,
+  vDSP_Length        __vDSP_log2n,
+  FFTDirection       __vDSP_flag)                             AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
 /*
@@ -1511,13 +1327,13 @@ vDSP_fft3_zop(
  */
 extern void 
 vDSP_fft5_zop(
-  FFTSetup           setup,
-  DSPSplitComplex *  signal,
-  SInt32             signalStride,
-  DSPSplitComplex *  result,
-  SInt32             resultStride,
-  UInt32             log2n,
-  SInt32             flag)                                    AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  FFTSetup           __vDSP_setup,
+  DSPSplitComplex *  __vDSP_signal,
+  vDSP_Stride        __vDSP_signalStride,
+  DSPSplitComplex *  __vDSP_result,
+  vDSP_Stride        __vDSP_resultStride,
+  vDSP_Length        __vDSP_log2n,
+  FFTDirection       __vDSP_flag)                             AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
 /*
@@ -1530,13 +1346,13 @@ vDSP_fft5_zop(
  */
 extern void 
 vDSP_fft3_zopD(
-  FFTSetupD                setup,
-  DSPDoubleSplitComplex *  ioData,
-  SInt32                   K,
-  DSPDoubleSplitComplex *  ioData2,
-  SInt32                   L,
-  UInt32                   log2n,
-  SInt32                   flag)                              AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  FFTSetupD                __vDSP_setup,
+  DSPDoubleSplitComplex *  __vDSP_ioData,
+  vDSP_Stride              __vDSP_K,
+  DSPDoubleSplitComplex *  __vDSP_ioData2,
+  vDSP_Stride              __vDSP_L,
+  vDSP_Length              __vDSP_log2n,
+  FFTDirection             __vDSP_flag)                       AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
 /*
@@ -1549,35 +1365,16 @@ vDSP_fft3_zopD(
  */
 extern void 
 vDSP_fft5_zopD(
-  FFTSetupD                setup,
-  DSPDoubleSplitComplex *  ioData,
-  SInt32                   K,
-  DSPDoubleSplitComplex *  ioData2,
-  SInt32                   L,
-  UInt32                   log2n,
-  SInt32                   flag)                              AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  FFTSetupD                __vDSP_setup,
+  DSPDoubleSplitComplex *  __vDSP_ioData,
+  vDSP_Stride              __vDSP_K,
+  DSPDoubleSplitComplex *  __vDSP_ioData2,
+  vDSP_Stride              __vDSP_L,
+  vDSP_Length              __vDSP_log2n,
+  FFTDirection             __vDSP_flag)                       AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
-
-/*
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-    Function conv
-             convD
-             
-    Floating Point Convolution and Correlation in Single and Double Precision
-      
-      Criteria to invoke PowerPC vector code:  
-        1. signal and result must have relative alignement.
-        2. 4 <= lenFilter <= 256
-        3. lenResult > 36
-        4. signalStride = 1
-        5. strideResult = 1
-      
-      If any of the above criteria are not satisfied, the PowerPC scalar code
-      implementation will be used.  strideFilter can be positive for
-      correlation or negative for convolution.
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-*/
+/* Convolution (or correlation), single-precision.*/
 /*
  *  vDSP_conv()
  *  
@@ -1588,16 +1385,17 @@ vDSP_fft5_zopD(
  */
 extern void 
 vDSP_conv(
-  const float   signal[],
-  SInt32        signalStride,
-  const float   filter[],
-  SInt32        strideFilter,
-  float         result[],
-  SInt32        strideResult,
-  SInt32        lenResult,
-  SInt32        lenFilter)                                    AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  const float   __vDSP_signal[],
+  vDSP_Stride   __vDSP_signalStride,
+  const float   __vDSP_filter[],
+  vDSP_Stride   __vDSP_strideFilter,
+  float         __vDSP_result[],
+  vDSP_Stride   __vDSP_strideResult,
+  vDSP_Length   __vDSP_lenResult,
+  vDSP_Length   __vDSP_lenFilter)                             AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
+/* Convolution (or correlation), double-precision.*/
 /*
  *  vDSP_convD()
  *  
@@ -1608,34 +1406,17 @@ vDSP_conv(
  */
 extern void 
 vDSP_convD(
-  const double   signal[],
-  SInt32         signalStride,
-  const double   filter[],
-  SInt32         strideFilter,
-  double         result[],
-  SInt32         strideResult,
-  SInt32         lenResult,
-  SInt32         lenFilter)                                   AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  const double   __vDSP_signal[],
+  vDSP_Stride    __vDSP_signalStride,
+  const double   __vDSP_filter[],
+  vDSP_Stride    __vDSP_strideFilter,
+  double         __vDSP_result[],
+  vDSP_Stride    __vDSP_strideResult,
+  vDSP_Length    __vDSP_lenResult,
+  vDSP_Length    __vDSP_lenFilter)                            AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
-/*
-_______________________________________________________________________________
-     Functions f3x3, f5x5, and imgfir
-               f3x3D, f5x5D and imgfirD
-               
-     Filter, 3x3, 5x5, MxN Single and Double Precision Convolution
-     
-       Criteria to invoke PowerPC vector code:
-         1. signal, filter, and result must have relative alignment and
-            be 16-byte aligned.
-         2. for f3x3, NC >= 18
-         3. for f5x5, NC >= 20
-         4. for imgfir, NC >= 20
-       
-       If any of the above criteria are not satisfied, the PowerPC scalar code
-       implementation will be used.
-_______________________________________________________________________________
-*/
+/* 3*3 filter convolution, single-precision.*/
 /*
  *  vDSP_f3x3()
  *  
@@ -1646,13 +1427,14 @@ _______________________________________________________________________________
  */
 extern void 
 vDSP_f3x3(
-  float *  signal,
-  SInt32   rowStride,
-  SInt32   colStride,
-  float *  filter,
-  float *  result)                                            AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  float *       __vDSP_signal,
+  vDSP_Length   __vDSP_rows,
+  vDSP_Length   __vDSP_cols,
+  float *       __vDSP_filter,
+  float *       __vDSP_result)                                AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
+/* 3*3 filter convolution, double-precision.*/
 /*
  *  vDSP_f3x3D()
  *  
@@ -1663,13 +1445,14 @@ vDSP_f3x3(
  */
 extern void 
 vDSP_f3x3D(
-  double *  signal,
-  SInt32    rowStride,
-  SInt32    colStride,
-  double *  filter,
-  double *  result)                                           AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  double *      __vDSP_signal,
+  vDSP_Length   __vDSP_rows,
+  vDSP_Length   __vDSP_cols,
+  double *      __vDSP_filter,
+  double *      __vDSP_result)                                AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
+/* 5*5 filter convolution, single-precision.*/
 /*
  *  vDSP_f5x5()
  *  
@@ -1680,13 +1463,14 @@ vDSP_f3x3D(
  */
 extern void 
 vDSP_f5x5(
-  float *  signal,
-  SInt32   rowStride,
-  SInt32   colStride,
-  float *  filter,
-  float *  result)                                            AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  float *       __vDSP_signal,
+  vDSP_Length   __vDSP_rows,
+  vDSP_Length   __vDSP_cols,
+  float *       __vDSP_filter,
+  float *       __vDSP_result)                                AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
+/* 5*5 filter convolution, double-precision.*/
 /*
  *  vDSP_f5x5D()
  *  
@@ -1697,13 +1481,14 @@ vDSP_f5x5(
  */
 extern void 
 vDSP_f5x5D(
-  double *  signal,
-  SInt32    rowStride,
-  SInt32    colStride,
-  double *  filter,
-  double *  result)                                           AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  double *      __vDSP_signal,
+  vDSP_Length   __vDSP_rows,
+  vDSP_Length   __vDSP_cols,
+  double *      __vDSP_filter,
+  double *      __vDSP_result)                                AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
+/* General two-dimensional (image) convolution, single-precision.*/
 /*
  *  vDSP_imgfir()
  *  
@@ -1714,15 +1499,16 @@ vDSP_f5x5D(
  */
 extern void 
 vDSP_imgfir(
-  float *  signal,
-  SInt32   numRow,
-  SInt32   numCol,
-  float *  filter,
-  float *  result,
-  SInt32   fnumRow,
-  SInt32   fnumCol)                                           AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  float *       __vDSP_signal,
+  vDSP_Length   __vDSP_numRow,
+  vDSP_Length   __vDSP_numCol,
+  float *       __vDSP_filter,
+  float *       __vDSP_result,
+  vDSP_Length   __vDSP_fnumRow,
+  vDSP_Length   __vDSP_fnumCol)                               AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
+/* General two-dimensional (image) convolution, double-precision.*/
 /*
  *  vDSP_imgfirD()
  *  
@@ -1733,32 +1519,16 @@ vDSP_imgfir(
  */
 extern void 
 vDSP_imgfirD(
-  double *  signal,
-  SInt32    numRow,
-  SInt32    numCol,
-  double *  filter,
-  double *  result,
-  SInt32    fnumRow,
-  SInt32    fnumCol)                                          AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  double *      __vDSP_signal,
+  vDSP_Length   __vDSP_numRow,
+  vDSP_Length   __vDSP_numCol,
+  double *      __vDSP_filter,
+  double *      __vDSP_result,
+  vDSP_Length   __vDSP_fnumRow,
+  vDSP_Length   __vDSP_fnumCol)                               AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
-
-/*
-_______________________________________________________________________________
-     Function mtrans
-              mtransD
-              
-     Single and Double Precision Matrix Transpose
-     
-       Criteria to invoke PowerPC vector code:
-         1. a = c
-         2. a and c must be 16-byte aligned.
-         3. M must be a multiple of 8.
-       
-       If any of the above criteria are not satisfied, the PowerPC scalar code
-       implementation will be used.
-_______________________________________________________________________________
-*/
+/* Matrix transpose, single-precision.*/
 /*
  *  vDSP_mtrans()
  *  
@@ -1769,14 +1539,15 @@ _______________________________________________________________________________
  */
 extern void 
 vDSP_mtrans(
-  float *  a,
-  SInt32   aStride,
-  float *  c,
-  SInt32   cStride,
-  SInt32   M,
-  SInt32   N)                                                 AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  float *       __vDSP_a,
+  vDSP_Stride   __vDSP_aStride,
+  float *       __vDSP_c,
+  vDSP_Stride   __vDSP_cStride,
+  vDSP_Length   __vDSP_M,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
+/* Matrix transpose, double-precision.*/
 /*
  *  vDSP_mtransD()
  *  
@@ -1787,31 +1558,15 @@ vDSP_mtrans(
  */
 extern void 
 vDSP_mtransD(
-  double *  a,
-  SInt32    aStride,
-  double *  c,
-  SInt32    cStride,
-  SInt32    M,
-  SInt32    N)                                                AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  double *      __vDSP_a,
+  vDSP_Stride   __vDSP_aStride,
+  double *      __vDSP_c,
+  vDSP_Stride   __vDSP_cStride,
+  vDSP_Length   __vDSP_M,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
-/*
-_______________________________________________________________________________
-      Function mmul
-               mmulD
-               
-      Single and Double Precision Matrix Multiply
-      
-        Criteria to invoke PowerPC vector code:
-          1. a, b, c must be 16-byte aligned.
-          2. M >= 8.
-          3. N >= 32.
-          4. P is a multiple of 8.
-        
-        If any of the above criteria are not satisfied, the PowerPC scalar code
-        implementation will be used.
-_______________________________________________________________________________
-*/
+/* Matrix multiply, single-precision.*/
 /*
  *  vDSP_mmul()
  *  
@@ -1822,17 +1577,18 @@ _______________________________________________________________________________
  */
 extern void 
 vDSP_mmul(
-  float *  a,
-  SInt32   aStride,
-  float *  b,
-  SInt32   bStride,
-  float *  c,
-  SInt32   cStride,
-  SInt32   M,
-  SInt32   N,
-  SInt32   P)                                                 AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  float *       __vDSP_a,
+  vDSP_Stride   __vDSP_aStride,
+  float *       __vDSP_b,
+  vDSP_Stride   __vDSP_bStride,
+  float *       __vDSP_c,
+  vDSP_Stride   __vDSP_cStride,
+  vDSP_Length   __vDSP_M,
+  vDSP_Length   __vDSP_N,
+  vDSP_Length   __vDSP_P)                                     AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
+/* Matrix multiply, double-precision.*/
 /*
  *  vDSP_mmulD()
  *  
@@ -1843,35 +1599,18 @@ vDSP_mmul(
  */
 extern void 
 vDSP_mmulD(
-  double *  a,
-  SInt32    aStride,
-  double *  b,
-  SInt32    bStride,
-  double *  c,
-  SInt32    cStride,
-  SInt32    M,
-  SInt32    N,
-  SInt32    P)                                                AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  double *      __vDSP_a,
+  vDSP_Stride   __vDSP_aStride,
+  double *      __vDSP_b,
+  vDSP_Stride   __vDSP_bStride,
+  double *      __vDSP_c,
+  vDSP_Stride   __vDSP_cStride,
+  vDSP_Length   __vDSP_M,
+  vDSP_Length   __vDSP_N,
+  vDSP_Length   __vDSP_P)                                     AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
-/*
-_______________________________________________________________________________
-      Function zmma, zmms, zmsm, and zmmul
-               zmmaD, zmmsD, zmsmD, and zmmulD
-               
-      Single and Double Precision Complex Split Matrix mul/add, mul/sub, sub/mul, 
-                                                       and mul
-      
-        Criteria to invoke PowerPC vector code:
-          1. a, b, c, and d must be 16-byte aligned.
-          2. N is a multiple of 4.
-          3. P is a multiple of 4.
-          4. I, J, K, L = 1;
-          
-       If any of the above criteria are not satisfied, the PowerPC scalar code
-       implementation will be used.
-_______________________________________________________________________________
-*/
+/* Complex-split matrix multiply and add, single-precision.*/
 /*
  *  vDSP_zmma()
  *  
@@ -1882,19 +1621,20 @@ _______________________________________________________________________________
  */
 extern void 
 vDSP_zmma(
-  DSPSplitComplex *  a,
-  SInt32             i,
-  DSPSplitComplex *  b,
-  SInt32             j,
-  DSPSplitComplex *  c,
-  SInt32             k,
-  DSPSplitComplex *  d,
-  SInt32             l,
-  SInt32             M,
-  SInt32             N,
-  SInt32             P)                                       AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  DSPSplitComplex *  __vDSP_a,
+  vDSP_Stride        __vDSP_i,
+  DSPSplitComplex *  __vDSP_b,
+  vDSP_Stride        __vDSP_j,
+  DSPSplitComplex *  __vDSP_c,
+  vDSP_Stride        __vDSP_k,
+  DSPSplitComplex *  __vDSP_d,
+  vDSP_Stride        __vDSP_l,
+  vDSP_Length        __vDSP_M,
+  vDSP_Length        __vDSP_N,
+  vDSP_Length        __vDSP_P)                                AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
+/* Complex-split matrix multiply and add, double-precision.*/
 /*
  *  vDSP_zmmaD()
  *  
@@ -1905,19 +1645,20 @@ vDSP_zmma(
  */
 extern void 
 vDSP_zmmaD(
-  DSPDoubleSplitComplex *  a,
-  SInt32                   i,
-  DSPDoubleSplitComplex *  b,
-  SInt32                   j,
-  DSPDoubleSplitComplex *  c,
-  SInt32                   k,
-  DSPDoubleSplitComplex *  d,
-  SInt32                   l,
-  SInt32                   M,
-  SInt32                   N,
-  SInt32                   P)                                 AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  DSPDoubleSplitComplex *  __vDSP_a,
+  vDSP_Stride              __vDSP_i,
+  DSPDoubleSplitComplex *  __vDSP_b,
+  vDSP_Stride              __vDSP_j,
+  DSPDoubleSplitComplex *  __vDSP_c,
+  vDSP_Stride              __vDSP_k,
+  DSPDoubleSplitComplex *  __vDSP_d,
+  vDSP_Stride              __vDSP_l,
+  vDSP_Length              __vDSP_M,
+  vDSP_Length              __vDSP_N,
+  vDSP_Length              __vDSP_P)                          AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
+/* Complex-split matrix multiply and subtract, single-precision.*/
 /*
  *  vDSP_zmms()
  *  
@@ -1928,19 +1669,20 @@ vDSP_zmmaD(
  */
 extern void 
 vDSP_zmms(
-  DSPSplitComplex *  a,
-  SInt32             i,
-  DSPSplitComplex *  b,
-  SInt32             j,
-  DSPSplitComplex *  c,
-  SInt32             k,
-  DSPSplitComplex *  d,
-  SInt32             l,
-  SInt32             M,
-  SInt32             N,
-  SInt32             P)                                       AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  DSPSplitComplex *  __vDSP_a,
+  vDSP_Stride        __vDSP_i,
+  DSPSplitComplex *  __vDSP_b,
+  vDSP_Stride        __vDSP_j,
+  DSPSplitComplex *  __vDSP_c,
+  vDSP_Stride        __vDSP_k,
+  DSPSplitComplex *  __vDSP_d,
+  vDSP_Stride        __vDSP_l,
+  vDSP_Length        __vDSP_M,
+  vDSP_Length        __vDSP_N,
+  vDSP_Length        __vDSP_P)                                AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
+/* Complex-split matrix multiply and subtract, double-precision.*/
 /*
  *  vDSP_zmmsD()
  *  
@@ -1951,19 +1693,20 @@ vDSP_zmms(
  */
 extern void 
 vDSP_zmmsD(
-  DSPDoubleSplitComplex *  a,
-  SInt32                   i,
-  DSPDoubleSplitComplex *  b,
-  SInt32                   j,
-  DSPDoubleSplitComplex *  c,
-  SInt32                   k,
-  DSPDoubleSplitComplex *  d,
-  SInt32                   l,
-  SInt32                   M,
-  SInt32                   N,
-  SInt32                   P)                                 AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  DSPDoubleSplitComplex *  __vDSP_a,
+  vDSP_Stride              __vDSP_i,
+  DSPDoubleSplitComplex *  __vDSP_b,
+  vDSP_Stride              __vDSP_j,
+  DSPDoubleSplitComplex *  __vDSP_c,
+  vDSP_Stride              __vDSP_k,
+  DSPDoubleSplitComplex *  __vDSP_d,
+  vDSP_Stride              __vDSP_l,
+  vDSP_Length              __vDSP_M,
+  vDSP_Length              __vDSP_N,
+  vDSP_Length              __vDSP_P)                          AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
+/* Complex-split matrix subtract and multiply, single-precision.*/
 /*
  *  vDSP_zmsm()
  *  
@@ -1974,19 +1717,20 @@ vDSP_zmmsD(
  */
 extern void 
 vDSP_zmsm(
-  DSPSplitComplex *  a,
-  SInt32             i,
-  DSPSplitComplex *  b,
-  SInt32             j,
-  DSPSplitComplex *  c,
-  SInt32             k,
-  DSPSplitComplex *  d,
-  SInt32             l,
-  SInt32             M,
-  SInt32             N,
-  SInt32             P)                                       AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  DSPSplitComplex *  __vDSP_a,
+  vDSP_Stride        __vDSP_i,
+  DSPSplitComplex *  __vDSP_b,
+  vDSP_Stride        __vDSP_j,
+  DSPSplitComplex *  __vDSP_c,
+  vDSP_Stride        __vDSP_k,
+  DSPSplitComplex *  __vDSP_d,
+  vDSP_Stride        __vDSP_l,
+  vDSP_Length        __vDSP_M,
+  vDSP_Length        __vDSP_N,
+  vDSP_Length        __vDSP_P)                                AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
+/* Complex-split matrix subtract and multiply, double-precision.*/
 /*
  *  vDSP_zmsmD()
  *  
@@ -1997,19 +1741,20 @@ vDSP_zmsm(
  */
 extern void 
 vDSP_zmsmD(
-  DSPDoubleSplitComplex *  a,
-  SInt32                   i,
-  DSPDoubleSplitComplex *  b,
-  SInt32                   j,
-  DSPDoubleSplitComplex *  c,
-  SInt32                   k,
-  DSPDoubleSplitComplex *  d,
-  SInt32                   l,
-  SInt32                   M,
-  SInt32                   N,
-  SInt32                   P)                                 AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  DSPDoubleSplitComplex *  __vDSP_a,
+  vDSP_Stride              __vDSP_i,
+  DSPDoubleSplitComplex *  __vDSP_b,
+  vDSP_Stride              __vDSP_j,
+  DSPDoubleSplitComplex *  __vDSP_c,
+  vDSP_Stride              __vDSP_k,
+  DSPDoubleSplitComplex *  __vDSP_d,
+  vDSP_Stride              __vDSP_l,
+  vDSP_Length              __vDSP_M,
+  vDSP_Length              __vDSP_N,
+  vDSP_Length              __vDSP_P)                          AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
+/* Complex-split matrix multiply, single-precision.*/
 /*
  *  vDSP_zmmul()
  *  
@@ -2020,17 +1765,18 @@ vDSP_zmsmD(
  */
 extern void 
 vDSP_zmmul(
-  DSPSplitComplex *  a,
-  SInt32             i,
-  DSPSplitComplex *  b,
-  SInt32             j,
-  DSPSplitComplex *  c,
-  SInt32             k,
-  SInt32             M,
-  SInt32             N,
-  SInt32             P)                                       AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  DSPSplitComplex *  __vDSP_a,
+  vDSP_Stride        __vDSP_i,
+  DSPSplitComplex *  __vDSP_b,
+  vDSP_Stride        __vDSP_j,
+  DSPSplitComplex *  __vDSP_c,
+  vDSP_Stride        __vDSP_k,
+  vDSP_Length        __vDSP_M,
+  vDSP_Length        __vDSP_N,
+  vDSP_Length        __vDSP_P)                                AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
+/* Complex-split matrix multiply, double-precision.*/
 /*
  *  vDSP_zmmulD()
  *  
@@ -2041,35 +1787,18 @@ vDSP_zmmul(
  */
 extern void 
 vDSP_zmmulD(
-  DSPDoubleSplitComplex *  a,
-  SInt32                   i,
-  DSPDoubleSplitComplex *  b,
-  SInt32                   j,
-  DSPDoubleSplitComplex *  c,
-  SInt32                   k,
-  SInt32                   M,
-  SInt32                   N,
-  SInt32                   P)                                 AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  DSPDoubleSplitComplex *  __vDSP_a,
+  vDSP_Stride              __vDSP_i,
+  DSPDoubleSplitComplex *  __vDSP_b,
+  vDSP_Stride              __vDSP_j,
+  DSPDoubleSplitComplex *  __vDSP_c,
+  vDSP_Stride              __vDSP_k,
+  vDSP_Length              __vDSP_M,
+  vDSP_Length              __vDSP_N,
+  vDSP_Length              __vDSP_P)                          AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
-/*
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-    Function vadd
-             vaddD
-    
-    Floating Point Add in Single and Double Precision
-    
-      Criteria to invoke PowerPC vector code:  
-        1. input1 and input2 and result are all relatively aligned.
-        2. size >= 8
-        3. stride1 = 1
-        4. stride2 = 1
-        5. strideResult = 1
-      
-      If any of the above criteria are not satisfied, the PowerPC scalar code
-      implementation will be used.
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-*/
+/* Vector add, single-precision.*/
 /*
  *  vDSP_vadd()
  *  
@@ -2080,15 +1809,16 @@ vDSP_zmmulD(
  */
 extern void 
 vDSP_vadd(
-  const float   input1[],
-  SInt32        stride1,
-  const float   input2[],
-  SInt32        stride2,
-  float         result[],
-  SInt32        strideResult,
-  UInt32        size)                                         AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  const float   __vDSP_input1[],
+  vDSP_Stride   __vDSP_stride1,
+  const float   __vDSP_input2[],
+  vDSP_Stride   __vDSP_stride2,
+  float         __vDSP_result[],
+  vDSP_Stride   __vDSP_strideResult,
+  vDSP_Length   __vDSP_size)                                  AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
+/* Vector add, double-precision.*/
 /*
  *  vDSP_vaddD()
  *  
@@ -2099,33 +1829,16 @@ vDSP_vadd(
  */
 extern void 
 vDSP_vaddD(
-  const double   input1[],
-  SInt32         stride1,
-  const double   input2[],
-  SInt32         stride2,
-  double         result[],
-  SInt32         strideResult,
-  UInt32         size)                                        AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  const double   __vDSP_input1[],
+  vDSP_Stride    __vDSP_stride1,
+  const double   __vDSP_input2[],
+  vDSP_Stride    __vDSP_stride2,
+  double         __vDSP_result[],
+  vDSP_Stride    __vDSP_strideResult,
+  vDSP_Length    __vDSP_size)                                 AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
-/*
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-    Function vsub
-             vsubD
-             
-     Floating Point Substract in Single and Double Precision
-      
-      Criteria to invoke PowerPC vector code:  
-        1. input1 and input2 and result are all relatively aligned.
-        2. size >= 8
-        3. stride1 = 1
-        4. stride2 = 1
-        5. strideResult = 1
-      
-      If any of the above criteria are not satisfied, the PowerPC scalar code
-      implementation will be used.
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-*/
+/* Vector subtract, single-precision.*/
 /*
  *  vDSP_vsub()
  *  
@@ -2136,15 +1849,16 @@ vDSP_vaddD(
  */
 extern void 
 vDSP_vsub(
-  const float   input1[],
-  SInt32        stride1,
-  const float   input2[],
-  SInt32        stride2,
-  float         result[],
-  SInt32        strideResult,
-  UInt32        size)                                         AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  const float   __vDSP_input1[],
+  vDSP_Stride   __vDSP_stride1,
+  const float   __vDSP_input2[],
+  vDSP_Stride   __vDSP_stride2,
+  float         __vDSP_result[],
+  vDSP_Stride   __vDSP_strideResult,
+  vDSP_Length   __vDSP_size)                                  AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
+/* Vector subtract, double-precision.*/
 /*
  *  vDSP_vsubD()
  *  
@@ -2155,33 +1869,16 @@ vDSP_vsub(
  */
 extern void 
 vDSP_vsubD(
-  const double   input1[],
-  SInt32         stride1,
-  const double   input2[],
-  SInt32         stride2,
-  double         result[],
-  SInt32         strideResult,
-  UInt32         size)                                        AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  const double   __vDSP_input1[],
+  vDSP_Stride    __vDSP_stride1,
+  const double   __vDSP_input2[],
+  vDSP_Stride    __vDSP_stride2,
+  double         __vDSP_result[],
+  vDSP_Stride    __vDSP_strideResult,
+  vDSP_Length    __vDSP_size)                                 AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
-/*
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-    Function vmul
-             vmulD
-             
-    Floating Point Multiply in Single and Double Precision
-    
-      Criteria to invoke PowerPC vector code:  
-        1. input1 and input2 and result must be all relatively aligned.
-        2. size >= 8
-        3. stride1 = 1
-        4. stride2 = 1
-        5. strideResult = 1
-      
-      If any of the above criteria are not satisfied, the PowerPC scalar code
-      implementation will be used.
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-*/
+/* Vector multiply, single-precision.*/
 /*
  *  vDSP_vmul()
  *  
@@ -2192,15 +1889,16 @@ vDSP_vsubD(
  */
 extern void 
 vDSP_vmul(
-  const float   input1[],
-  SInt32        stride1,
-  const float   input2[],
-  SInt32        stride2,
-  float         result[],
-  SInt32        strideResult,
-  UInt32        size)                                         AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  const float   __vDSP_input1[],
+  vDSP_Stride   __vDSP_stride1,
+  const float   __vDSP_input2[],
+  vDSP_Stride   __vDSP_stride2,
+  float         __vDSP_result[],
+  vDSP_Stride   __vDSP_strideResult,
+  vDSP_Length   __vDSP_size)                                  AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
+/* Vector multiply, double-precision.*/
 /*
  *  vDSP_vmulD()
  *  
@@ -2211,32 +1909,16 @@ vDSP_vmul(
  */
 extern void 
 vDSP_vmulD(
-  const double   input1[],
-  SInt32         stride1,
-  const double   input2[],
-  SInt32         stride2,
-  double         result[],
-  SInt32         strideResult,
-  UInt32         size)                                        AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  const double   __vDSP_input1[],
+  vDSP_Stride    __vDSP_stride1,
+  const double   __vDSP_input2[],
+  vDSP_Stride    __vDSP_stride2,
+  double         __vDSP_result[],
+  vDSP_Stride    __vDSP_strideResult,
+  vDSP_Length    __vDSP_size)                                 AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
-/*
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-    Function vsmul
-             vsmulD
-    
-    Floating Point - Scalar Multiply in Single and Double Precision
-    
-      Criteria to invoke PowerPC vector code:  
-        1. input1 and result are all relatively aligned.
-        2. size >= 8
-        3. stride1 = 1
-        5. strideResult = 1
-      
-      If any of the above criteria are not satisfied, the PowerPC scalar code
-      implementation will be used.
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-*/
+/* Vector-scalar multiply, single-precision.*/
 /*
  *  vDSP_vsmul()
  *  
@@ -2247,14 +1929,15 @@ vDSP_vmulD(
  */
 extern void 
 vDSP_vsmul(
-  const float    input1[],
-  SInt32         stride1,
-  const float *  input2,
-  float          result[],
-  SInt32         strideResult,
-  UInt32         size)                                        AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  const float    __vDSP_input1[],
+  vDSP_Stride    __vDSP_stride1,
+  const float *  __vDSP_input2,
+  float          __vDSP_result[],
+  vDSP_Stride    __vDSP_strideResult,
+  vDSP_Length    __vDSP_size)                                 AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
+/* Vector-scalar multiply, double-precision.*/
 /*
  *  vDSP_vsmulD()
  *  
@@ -2265,32 +1948,15 @@ vDSP_vsmul(
  */
 extern void 
 vDSP_vsmulD(
-  const double    input1[],
-  SInt32          stride1,
-  const double *  input2,
-  double          result[],
-  SInt32          strideResult,
-  UInt32          size)                                       AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  const double    __vDSP_input1[],
+  vDSP_Stride     __vDSP_stride1,
+  const double *  __vDSP_input2,
+  double          __vDSP_result[],
+  vDSP_Stride     __vDSP_strideResult,
+  vDSP_Length     __vDSP_size)                                AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
-
-/*
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-    Function vsq
-             vsqD
-    
-    Floating Point Square in Single and Double Precision
-      
-      Criteria to invoke PowerPC vector code:  
-        1. input and result are relatively aligned.
-        2. size >= 8
-        3. strideInput = 1
-        4. strideResult = 1
-      
-      If any of the above criteria are not satisfied, the PowerPC scalar code
-      implementation will be used.
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-*/
+/* Vector square, single-precision.*/
 /*
  *  vDSP_vsq()
  *  
@@ -2301,13 +1967,14 @@ vDSP_vsmulD(
  */
 extern void 
 vDSP_vsq(
-  const float   input[],
-  SInt32        strideInput,
-  float         result[],
-  SInt32        strideResult,
-  UInt32        size)                                         AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  const float   __vDSP_input[],
+  vDSP_Stride   __vDSP_strideInput,
+  float         __vDSP_result[],
+  vDSP_Stride   __vDSP_strideResult,
+  vDSP_Length   __vDSP_size)                                  AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
+/* Vector square, double-precision.*/
 /*
  *  vDSP_vsqD()
  *  
@@ -2318,31 +1985,15 @@ vDSP_vsq(
  */
 extern void 
 vDSP_vsqD(
-  const double   input[],
-  SInt32         strideInput,
-  double         result[],
-  SInt32         strideResult,
-  UInt32         size)                                        AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  const double   __vDSP_input[],
+  vDSP_Stride    __vDSP_strideInput,
+  double         __vDSP_result[],
+  vDSP_Stride    __vDSP_strideResult,
+  vDSP_Length    __vDSP_size)                                 AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
 
-/*
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-    Function vssq
-             vssqD
-             
-    Floating Point Signed Square in Single and Double Precision
-      
-      Criteria to invoke PowerPC vector code:  
-        1. input and result must be all relatively aligned.
-        2. size >= 8
-        3. strideInput = 1
-        4. strideResult = 1
-      
-      If any of the above criteria are not satisfied, the PowerPC scalar code
-      implementation will be used.
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-*/
+/* Vector signed square, single-precision.*/
 /*
  *  vDSP_vssq()
  *  
@@ -2353,13 +2004,14 @@ vDSP_vsqD(
  */
 extern void 
 vDSP_vssq(
-  const float   input[],
-  SInt32        strideInput,
-  float         result[],
-  SInt32        strideResult,
-  UInt32        size)                                         AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  const float   __vDSP_input[],
+  vDSP_Stride   __vDSP_strideInput,
+  float         __vDSP_result[],
+  vDSP_Stride   __vDSP_strideResult,
+  vDSP_Length   __vDSP_size)                                  AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
+/* Vector signed square, double-precision.*/
 /*
  *  vDSP_vssqD()
  *  
@@ -2370,30 +2022,14 @@ vDSP_vssq(
  */
 extern void 
 vDSP_vssqD(
-  const double   input[],
-  SInt32         strideInput,
-  double         result[],
-  SInt32         strideResult,
-  UInt32         size)                                        AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  const double   __vDSP_input[],
+  vDSP_Stride    __vDSP_strideInput,
+  double         __vDSP_result[],
+  vDSP_Stride    __vDSP_strideResult,
+  vDSP_Length    __vDSP_size)                                 AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
-/*
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-    Function dotpr
-             dotprD
-    
-    Floating Point Dot product in Single and Double Precision
-    
-      Criteria to invoke PowerPC vector code:  
-        1. input1 and input2 are relatively aligned.
-        2. size >= 20
-        3. stride1 = 1
-        4. stride2 = 1
-      
-      If any of the above criteria are not satisfied, the PowerPC scalar code
-      implementation will be used.
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-*/
+/* Dot product, single-precision.*/
 /*
  *  vDSP_dotpr()
  *  
@@ -2404,14 +2040,15 @@ vDSP_vssqD(
  */
 extern void 
 vDSP_dotpr(
-  const float   input1[],
-  SInt32        stride1,
-  const float   input2[],
-  SInt32        stride2,
-  float *       result,
-  UInt32        size)                                         AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  const float   __vDSP_input1[],
+  vDSP_Stride   __vDSP_stride1,
+  const float   __vDSP_input2[],
+  vDSP_Stride   __vDSP_stride2,
+  float *       __vDSP_result,
+  vDSP_Length   __vDSP_size)                                  AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
+/* Dot product, double-precision.*/
 /*
  *  vDSP_dotprD()
  *  
@@ -2422,33 +2059,15 @@ vDSP_dotpr(
  */
 extern void 
 vDSP_dotprD(
-  const double   input1[],
-  SInt32         stride1,
-  const double   input2[],
-  SInt32         stride2,
-  double *       result,
-  UInt32         size)                                        AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  const double   __vDSP_input1[],
+  vDSP_Stride    __vDSP_stride1,
+  const double   __vDSP_input2[],
+  vDSP_Stride    __vDSP_stride2,
+  double *       __vDSP_result,
+  vDSP_Length    __vDSP_size)                                 AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
-/*
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-    Function vam
-             vamD
-             
-    Floating Point vadd and Multiply in Single and Double Precision
-    
-      Criteria to invoke PowerPC vector code:  
-        1. input1, input2, input_3 and result are all relatively aligned.
-        2. size >= 8
-        3. stride1 = 1
-        4. stride2 = 1
-        5. stride_3 = 1
-        6. strideResult = 1
-      
-      If any of the above criteria are not satisfied, the PowerPC scalar code
-      implementation will be used.
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-*/
+/* Vector add and multiply, single-precision.*/
 /*
  *  vDSP_vam()
  *  
@@ -2459,17 +2078,18 @@ vDSP_dotprD(
  */
 extern void 
 vDSP_vam(
-  const float   input1[],
-  SInt32        stride1,
-  const float   input2[],
-  SInt32        stride2,
-  const float   input3[],
-  SInt32        stride3,
-  float         result[],
-  SInt32        strideResult,
-  UInt32        size)                                         AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  const float   __vDSP_input1[],
+  vDSP_Stride   __vDSP_stride1,
+  const float   __vDSP_input2[],
+  vDSP_Stride   __vDSP_stride2,
+  const float   __vDSP_input3[],
+  vDSP_Stride   __vDSP_stride3,
+  float         __vDSP_result[],
+  vDSP_Stride   __vDSP_strideResult,
+  vDSP_Length   __vDSP_size)                                  AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
+/* Vector add and multiply, double-precision.*/
 /*
  *  vDSP_vamD()
  *  
@@ -2480,37 +2100,18 @@ vDSP_vam(
  */
 extern void 
 vDSP_vamD(
-  const double   input1[],
-  SInt32         stride1,
-  const double   input2[],
-  SInt32         stride2,
-  const double   input3[],
-  SInt32         stride3,
-  double         result[],
-  SInt32         strideResult,
-  UInt32         size)                                        AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  const double   __vDSP_input1[],
+  vDSP_Stride    __vDSP_stride1,
+  const double   __vDSP_input2[],
+  vDSP_Stride    __vDSP_stride2,
+  const double   __vDSP_input3[],
+  vDSP_Stride    __vDSP_stride3,
+  double         __vDSP_result[],
+  vDSP_Stride    __vDSP_strideResult,
+  vDSP_Length    __vDSP_size)                                 AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
-/*
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-    Function zconv
-             zconvD
-                
-    Split Complex Convolution and Correlation in Single and Double Precision
-      
-      Criteria to invoke PowerPC vector code:  
-        1. signal->realp, signal->imagp, result->realp, result->imagp
-           must be relatively aligned.
-        2. 4 <= lenFilter <= 128
-        3. lenResult > 20
-        4. signalStride = 1
-        5. strideResult = 1
-      
-      If any of the above criteria are not satisfied, the PowerPC scalar code
-      implementation will be used.  strideFilter can be positive for correlation
-      or negative for convolution
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-*/
+/* Complex-split convolution, single-precision.*/
 /*
  *  vDSP_zconv()
  *  
@@ -2521,16 +2122,17 @@ vDSP_vamD(
  */
 extern void 
 vDSP_zconv(
-  DSPSplitComplex *  signal,
-  SInt32             signalStride,
-  DSPSplitComplex *  filter,
-  SInt32             strideFilter,
-  DSPSplitComplex *  result,
-  SInt32             strideResult,
-  SInt32             lenResult,
-  SInt32             lenFilter)                               AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  DSPSplitComplex *  __vDSP_signal,
+  vDSP_Stride        __vDSP_signalStride,
+  DSPSplitComplex *  __vDSP_filter,
+  vDSP_Stride        __vDSP_strideFilter,
+  DSPSplitComplex *  __vDSP_result,
+  vDSP_Stride        __vDSP_strideResult,
+  vDSP_Length        __vDSP_lenResult,
+  vDSP_Length        __vDSP_lenFilter)                        AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
+/* Complex-split convolution, double-precision.*/
 /*
  *  vDSP_zconvD()
  *  
@@ -2541,35 +2143,17 @@ vDSP_zconv(
  */
 extern void 
 vDSP_zconvD(
-  DSPDoubleSplitComplex *  signal,
-  SInt32                   signalStride,
-  DSPDoubleSplitComplex *  filter,
-  SInt32                   strideFilter,
-  DSPDoubleSplitComplex *  result,
-  SInt32                   strideResult,
-  SInt32                   lenResult,
-  SInt32                   lenFilter)                         AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  DSPDoubleSplitComplex *  __vDSP_signal,
+  vDSP_Stride              __vDSP_signalStride,
+  DSPDoubleSplitComplex *  __vDSP_filter,
+  vDSP_Stride              __vDSP_strideFilter,
+  DSPDoubleSplitComplex *  __vDSP_result,
+  vDSP_Stride              __vDSP_strideResult,
+  vDSP_Length              __vDSP_lenResult,
+  vDSP_Length              __vDSP_lenFilter)                  AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
-/*
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-    Function zvadd
-             zvaddD
-    
-    Split Complex vadd in Single and Double Precision
-      
-      Criteria to invoke PowerPC vector code:  
-        1. input1.realp, input1.imagp, input2.realp, input2.imagp,
-           result.realp, result.imagp must be all relatively aligned.
-        2. size >= 8
-        3. stride1 = 1
-        4. stride2 = 1
-        5. strideResult = 1
-      
-      If any of the above criteria are not satisfied, the PowerPC scalar code
-      implementation will be used.
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-*/
+/* Complex-split vector add, single-precision.*/
 /*
  *  vDSP_zvadd()
  *  
@@ -2580,15 +2164,16 @@ vDSP_zconvD(
  */
 extern void 
 vDSP_zvadd(
-  DSPSplitComplex *  input1,
-  SInt32             stride1,
-  DSPSplitComplex *  input2,
-  SInt32             stride2,
-  DSPSplitComplex *  result,
-  SInt32             strideResult,
-  UInt32             size)                                    AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  DSPSplitComplex *  __vDSP_input1,
+  vDSP_Stride        __vDSP_stride1,
+  DSPSplitComplex *  __vDSP_input2,
+  vDSP_Stride        __vDSP_stride2,
+  DSPSplitComplex *  __vDSP_result,
+  vDSP_Stride        __vDSP_strideResult,
+  vDSP_Length        __vDSP_size)                             AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
+/* Complex-split vector add, double-precision.*/
 /*
  *  vDSP_zvaddD()
  *  
@@ -2599,34 +2184,16 @@ vDSP_zvadd(
  */
 extern void 
 vDSP_zvaddD(
-  DSPDoubleSplitComplex *  input1,
-  SInt32                   stride1,
-  DSPDoubleSplitComplex *  input2,
-  SInt32                   stride2,
-  DSPDoubleSplitComplex *  result,
-  SInt32                   strideResult,
-  UInt32                   size)                              AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  DSPDoubleSplitComplex *  __vDSP_input1,
+  vDSP_Stride              __vDSP_stride1,
+  DSPDoubleSplitComplex *  __vDSP_input2,
+  vDSP_Stride              __vDSP_stride2,
+  DSPDoubleSplitComplex *  __vDSP_result,
+  vDSP_Stride              __vDSP_strideResult,
+  vDSP_Length              __vDSP_size)                       AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
-/*
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-    Function zvsub
-             zvsubD
-             
-    Split Complex Substract in Single and Double Precision
-      
-      Criteria to invoke PowerPC vector code:  
-        1. input1.realp, input1.imagp, input2.realp, input2.imagp,
-           result.realp, result.imagp must be all relatively aligned.
-        2. size >= 8
-        3. stride1 = 1
-        4. stride2 = 1
-        5. strideResult = 1
-      
-      If any of the above criteria are not satisfied, the PowerPC scalar code
-      implementation will be used.
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-*/
+/* Complex-split vector subtract, single-precision.*/
 /*
  *  vDSP_zvsub()
  *  
@@ -2637,15 +2204,16 @@ vDSP_zvaddD(
  */
 extern void 
 vDSP_zvsub(
-  DSPSplitComplex *  input1,
-  SInt32             stride1,
-  DSPSplitComplex *  input2,
-  SInt32             stride2,
-  DSPSplitComplex *  result,
-  SInt32             strideResult,
-  UInt32             size)                                    AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  DSPSplitComplex *  __vDSP_input1,
+  vDSP_Stride        __vDSP_stride1,
+  DSPSplitComplex *  __vDSP_input2,
+  vDSP_Stride        __vDSP_stride2,
+  DSPSplitComplex *  __vDSP_result,
+  vDSP_Stride        __vDSP_strideResult,
+  vDSP_Length        __vDSP_size)                             AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
+/* Complex-split vector subtract, double-precision.*/
 /*
  *  vDSP_zvsubD()
  *  
@@ -2656,34 +2224,16 @@ vDSP_zvsub(
  */
 extern void 
 vDSP_zvsubD(
-  DSPDoubleSplitComplex *  input1,
-  SInt32                   stride1,
-  DSPDoubleSplitComplex *  input2,
-  SInt32                   stride2,
-  DSPDoubleSplitComplex *  result,
-  SInt32                   strideResult,
-  UInt32                   size)                              AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  DSPDoubleSplitComplex *  __vDSP_input1,
+  vDSP_Stride              __vDSP_stride1,
+  DSPDoubleSplitComplex *  __vDSP_input2,
+  vDSP_Stride              __vDSP_stride2,
+  DSPDoubleSplitComplex *  __vDSP_result,
+  vDSP_Stride              __vDSP_strideResult,
+  vDSP_Length              __vDSP_size)                       AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
-/*
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-    Function zvmul
-             zvmulD
-             
-    Split Complex Multiply in Single and Double Precision
-      
-      Criteria to invoke PowerPC vector code:  
-        1. input1.realp, input1.imagp, input2.realp, input2.imagp,
-           result.realp, result.imagp must be all relatively aligned.
-        2. size >= 8
-        3. stride1 = 1
-        4. stride2 = 1
-        5. strideResult = 1
-
-      If any of the above criteria are not satisfied, the PowerPC scalar code
-      implementation will be used.  The conjugate value can be 1 or -1.
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-*/
+/* Complex-split vector multiply, single-precision.*/
 /*
  *  vDSP_zvmul()
  *  
@@ -2694,16 +2244,17 @@ vDSP_zvsubD(
  */
 extern void 
 vDSP_zvmul(
-  DSPSplitComplex *  input1,
-  SInt32             stride1,
-  DSPSplitComplex *  input2,
-  SInt32             stride2,
-  DSPSplitComplex *  result,
-  SInt32             strideResult,
-  UInt32             size,
-  SInt32             conjugate)                               AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  DSPSplitComplex *  __vDSP_input1,
+  vDSP_Stride        __vDSP_stride1,
+  DSPSplitComplex *  __vDSP_input2,
+  vDSP_Stride        __vDSP_stride2,
+  DSPSplitComplex *  __vDSP_result,
+  vDSP_Stride        __vDSP_strideResult,
+  vDSP_Length        __vDSP_size,
+  int                __vDSP_conjugate)                        AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
+/* Complex-split vector multiply, double-precision.*/
 /*
  *  vDSP_zvmulD()
  *  
@@ -2714,34 +2265,17 @@ vDSP_zvmul(
  */
 extern void 
 vDSP_zvmulD(
-  DSPDoubleSplitComplex *  input1,
-  SInt32                   stride1,
-  DSPDoubleSplitComplex *  input2,
-  SInt32                   stride2,
-  DSPDoubleSplitComplex *  result,
-  SInt32                   strideResult,
-  UInt32                   size,
-  SInt32                   conjugate)                         AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  DSPDoubleSplitComplex *  __vDSP_input1,
+  vDSP_Stride              __vDSP_stride1,
+  DSPDoubleSplitComplex *  __vDSP_input2,
+  vDSP_Stride              __vDSP_stride2,
+  DSPDoubleSplitComplex *  __vDSP_result,
+  vDSP_Stride              __vDSP_strideResult,
+  vDSP_Length              __vDSP_size,
+  int                      __vDSP_conjugate)                  AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
-/*
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-    Function zdotpr
-             zdotprD
-             
-    Split Complex Dot product in Single and Double Precision
-    
-      Criteria to invoke PowerPC vector code:  
-        1. input1.realp, input1.imagp, input2.realp, input2.imagp are all
-           relatively aligned.
-        2. size >= 20
-        3. stride1 = 1
-        4. stride2 = 1
-      
-      If any of the above criteria are not satisfied, the PowerPC scalar code
-      implementation will be used.
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-*/
+/* Complex-split dot product, single-precision.*/
 /*
  *  vDSP_zdotpr()
  *  
@@ -2752,14 +2286,15 @@ vDSP_zvmulD(
  */
 extern void 
 vDSP_zdotpr(
-  DSPSplitComplex *  input1,
-  SInt32             stride1,
-  DSPSplitComplex *  input2,
-  SInt32             stride2,
-  DSPSplitComplex *  result,
-  UInt32             size)                                    AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  DSPSplitComplex *  __vDSP_input1,
+  vDSP_Stride        __vDSP_stride1,
+  DSPSplitComplex *  __vDSP_input2,
+  vDSP_Stride        __vDSP_stride2,
+  DSPSplitComplex *  __vDSP_result,
+  vDSP_Length        __vDSP_size)                             AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
+/* Complex-split dot product, double-precision.*/
 /*
  *  vDSP_zdotprD()
  *  
@@ -2770,32 +2305,15 @@ vDSP_zdotpr(
  */
 extern void 
 vDSP_zdotprD(
-  DSPDoubleSplitComplex *  input1,
-  SInt32                   stride1,
-  DSPDoubleSplitComplex *  input2,
-  SInt32                   stride2,
-  DSPDoubleSplitComplex *  result,
-  UInt32                   size)                              AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  DSPDoubleSplitComplex *  __vDSP_input1,
+  vDSP_Stride              __vDSP_stride1,
+  DSPDoubleSplitComplex *  __vDSP_input2,
+  vDSP_Stride              __vDSP_stride2,
+  DSPDoubleSplitComplex *  __vDSP_result,
+  vDSP_Length              __vDSP_size)                       AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
-/*
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-    Function zidotpr
-             zidotprD
-             
-    Split Complex Inner Dot product in Single and Double Precision
-    
-      Criteria to invoke PowerPC vector code:  
-        1. input1.realp, input1.imagp, input2.realp, input2.imagp must be
-           all relatively aligned.
-        2. size >= 20
-        3. stride1 = 1
-        4. stride2 = 1
-      
-      If any of the above criteria are not satisfied, the PowerPC scalar code
-      implementation will be used.
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-*/
+/* Complex-split inner (conjugate) dot product, single-precision.*/
 /*
  *  vDSP_zidotpr()
  *  
@@ -2806,14 +2324,15 @@ vDSP_zdotprD(
  */
 extern void 
 vDSP_zidotpr(
-  DSPSplitComplex *  input1,
-  SInt32             stride1,
-  DSPSplitComplex *  input2,
-  SInt32             stride2,
-  DSPSplitComplex *  result,
-  UInt32             size)                                    AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  DSPSplitComplex *  __vDSP_input1,
+  vDSP_Stride        __vDSP_stride1,
+  DSPSplitComplex *  __vDSP_input2,
+  vDSP_Stride        __vDSP_stride2,
+  DSPSplitComplex *  __vDSP_result,
+  vDSP_Length        __vDSP_size)                             AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
+/* Complex-split inner (conjugate) dot product, double-precision.*/
 /*
  *  vDSP_zidotprD()
  *  
@@ -2824,32 +2343,15 @@ vDSP_zidotpr(
  */
 extern void 
 vDSP_zidotprD(
-  DSPDoubleSplitComplex *  input1,
-  SInt32                   stride1,
-  DSPDoubleSplitComplex *  input2,
-  SInt32                   stride2,
-  DSPDoubleSplitComplex *  result,
-  UInt32                   size)                              AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  DSPDoubleSplitComplex *  __vDSP_input1,
+  vDSP_Stride              __vDSP_stride1,
+  DSPDoubleSplitComplex *  __vDSP_input2,
+  vDSP_Stride              __vDSP_stride2,
+  DSPDoubleSplitComplex *  __vDSP_result,
+  vDSP_Length              __vDSP_size)                       AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
-
-/*
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-    Function zrdotpr
-             zrdotprD
-                
-    Split Complex - Real Dot product in Single and Double Precision
-      
-      Criteria to invoke PowerPC vector code:  
-        1. input1.realp, input1.imagp, input2 are must be relatively aligned.
-        2. size >= 16
-        3. stride1 = 1
-        4. stride2 = 1
-      
-      If any of the above criteria are not satisfied, the PowerPC scalar code
-      implementation will be used.
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-*/
+/* Dot product of complex-split with real, single-precision.*/
 /*
  *  vDSP_zrdotpr()
  *  
@@ -2860,14 +2362,15 @@ vDSP_zidotprD(
  */
 extern void 
 vDSP_zrdotpr(
-  DSPSplitComplex *  input1,
-  SInt32             stride1,
-  const float        input2[],
-  SInt32             stride2,
-  DSPSplitComplex *  result,
-  UInt32             size)                                    AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  DSPSplitComplex *  __vDSP_input1,
+  vDSP_Stride        __vDSP_stride1,
+  const float        __vDSP_input2[],
+  vDSP_Stride        __vDSP_stride2,
+  DSPSplitComplex *  __vDSP_result,
+  vDSP_Length        __vDSP_size)                             AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
+/* Dot product of complex-split with real, double-precision.*/
 /*
  *  vDSP_zrdotprD()
  *  
@@ -2878,35 +2381,15 @@ vDSP_zrdotpr(
  */
 extern void 
 vDSP_zrdotprD(
-  DSPDoubleSplitComplex *  input1,
-  SInt32                   stride1,
-  const double             input2[],
-  SInt32                   stride2,
-  DSPDoubleSplitComplex *  result,
-  UInt32                   size)                              AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  DSPDoubleSplitComplex *  __vDSP_input1,
+  vDSP_Stride              __vDSP_stride1,
+  const double             __vDSP_input2[],
+  vDSP_Stride              __vDSP_stride2,
+  DSPDoubleSplitComplex *  __vDSP_result,
+  vDSP_Length              __vDSP_size)                       AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
-/*
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-    Function zvcma
-             zvcmaD
-             
-    Split Complex Conjugate Multiply And vadd in Single and Double Precision
-    
-      Criteria to invoke PowerPC vector code:  
-        1. input1.realp, input1.imagp, input2.realp, input2.imagp,
-          input_3.realp, input_3.imagp, result.realp, result.imagp
-          must be all relatively aligned.
-        2. size >= 8
-        3. stride1 = 1
-        4. stride2 = 1
-        5. stride_3 = 1
-        6. strideResult = 1
-      
-      If any of the above criteria are not satisfied, the PowerPC scalar code
-      implementation will be used.
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-*/
+/* Complex-split conjugate multiply and add, single-precision.*/
 /*
  *  vDSP_zvcma()
  *  
@@ -2917,17 +2400,18 @@ vDSP_zrdotprD(
  */
 extern void 
 vDSP_zvcma(
-  const DSPSplitComplex *  input1,
-  SInt32                   stride1,
-  const DSPSplitComplex *  input2,
-  SInt32                   stride2,
-  DSPSplitComplex *        input3,
-  SInt32                   stride3,
-  DSPSplitComplex *        result,
-  SInt32                   strideResult,
-  UInt32                   size)                              AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  const DSPSplitComplex *  __vDSP_input1,
+  vDSP_Stride              __vDSP_stride1,
+  const DSPSplitComplex *  __vDSP_input2,
+  vDSP_Stride              __vDSP_stride2,
+  DSPSplitComplex *        __vDSP_input3,
+  vDSP_Stride              __vDSP_stride3,
+  DSPSplitComplex *        __vDSP_result,
+  vDSP_Stride              __vDSP_strideResult,
+  vDSP_Length              __vDSP_size)                       AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
+/* Complex-split conjugate multiply and add, double-precision.*/
 /*
  *  vDSP_zvcmaD()
  *  
@@ -2938,36 +2422,18 @@ vDSP_zvcma(
  */
 extern void 
 vDSP_zvcmaD(
-  DSPDoubleSplitComplex *  input1,
-  SInt32                   stride1,
-  DSPDoubleSplitComplex *  input2,
-  SInt32                   stride2,
-  DSPDoubleSplitComplex *  input3,
-  SInt32                   stride3,
-  DSPDoubleSplitComplex *  result,
-  SInt32                   strideResult,
-  UInt32                   size)                              AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  DSPDoubleSplitComplex *  __vDSP_input1,
+  vDSP_Stride              __vDSP_stride1,
+  DSPDoubleSplitComplex *  __vDSP_input2,
+  vDSP_Stride              __vDSP_stride2,
+  DSPDoubleSplitComplex *  __vDSP_input3,
+  vDSP_Stride              __vDSP_stride3,
+  DSPDoubleSplitComplex *  __vDSP_result,
+  vDSP_Stride              __vDSP_strideResult,
+  vDSP_Length              __vDSP_size)                       AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
-/*
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-    Function zrvadd
-             zrvaddD
-             
-    Split Complex - Real Add in Single and Double Precision
-      
-      Criteria to invoke PowerPC vector code:  
-        1. input1.realp, input1.imagp, input2, result.realp, result.imagp
-           are all relatively aligned.
-        2. size >= 8
-        3. stride1 = 1
-        4. stride2 = 1
-        5. strideResult = 1
-      
-      If any of the above criteria are not satisfied, the PowerPC scalar code
-      implementation will be used.
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-*/
+/* Add complex-split and real, single-precision.*/
 /*
  *  vDSP_zrvadd()
  *  
@@ -2978,15 +2444,16 @@ vDSP_zvcmaD(
  */
 extern void 
 vDSP_zrvadd(
-  DSPSplitComplex *  input1,
-  SInt32             stride1,
-  const float        input2[],
-  SInt32             stride2,
-  DSPSplitComplex *  result,
-  SInt32             strideResult,
-  UInt32             size)                                    AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  DSPSplitComplex *  __vDSP_input1,
+  vDSP_Stride        __vDSP_stride1,
+  const float        __vDSP_input2[],
+  vDSP_Stride        __vDSP_stride2,
+  DSPSplitComplex *  __vDSP_result,
+  vDSP_Stride        __vDSP_strideResult,
+  vDSP_Length        __vDSP_size)                             AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
+/* Add complex-split and real, double-precision.*/
 /*
  *  vDSP_zrvaddD()
  *  
@@ -2997,34 +2464,16 @@ vDSP_zrvadd(
  */
 extern void 
 vDSP_zrvaddD(
-  DSPDoubleSplitComplex *  input1,
-  SInt32                   stride1,
-  const double             input2[],
-  SInt32                   stride2,
-  DSPDoubleSplitComplex *  result,
-  SInt32                   strideResult,
-  UInt32                   size)                              AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  DSPDoubleSplitComplex *  __vDSP_input1,
+  vDSP_Stride              __vDSP_stride1,
+  const double             __vDSP_input2[],
+  vDSP_Stride              __vDSP_stride2,
+  DSPDoubleSplitComplex *  __vDSP_result,
+  vDSP_Stride              __vDSP_strideResult,
+  vDSP_Length              __vDSP_size)                       AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
-/*
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-    Function zrvsub
-             zrvsubD
-                
-    Split Complex - Real Substract in Single and Double Precision
-    
-      Criteria to invoke PowerPC vector code:  
-        1. input1.realp, input1.imagp, input2, result.realp, result.imagp
-           must be all relatively aligned.
-        2. size >= 8
-        3. stride1 = 1
-        4. stride2 = 1
-        5. strideResult = 1
-      
-      If any of the above criteria are not satisfied, the PowerPC scalar code
-      implementation will be used.
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-*/
+/* Subtract real from complex-split, single-precision.*/
 /*
  *  vDSP_zrvsub()
  *  
@@ -3035,15 +2484,16 @@ vDSP_zrvaddD(
  */
 extern void 
 vDSP_zrvsub(
-  DSPSplitComplex *  input1,
-  SInt32             stride1,
-  const float        input2[],
-  SInt32             stride2,
-  DSPSplitComplex *  result,
-  SInt32             strideResult,
-  UInt32             size)                                    AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  DSPSplitComplex *  __vDSP_input1,
+  vDSP_Stride        __vDSP_stride1,
+  const float        __vDSP_input2[],
+  vDSP_Stride        __vDSP_stride2,
+  DSPSplitComplex *  __vDSP_result,
+  vDSP_Stride        __vDSP_strideResult,
+  vDSP_Length        __vDSP_size)                             AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
+/* Subtract real from complex-split, double-precision.*/
 /*
  *  vDSP_zrvsubD()
  *  
@@ -3054,34 +2504,16 @@ vDSP_zrvsub(
  */
 extern void 
 vDSP_zrvsubD(
-  DSPDoubleSplitComplex *  input1,
-  SInt32                   stride1,
-  const double             input2[],
-  SInt32                   stride2,
-  DSPDoubleSplitComplex *  result,
-  SInt32                   strideResult,
-  UInt32                   size)                              AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  DSPDoubleSplitComplex *  __vDSP_input1,
+  vDSP_Stride              __vDSP_stride1,
+  const double             __vDSP_input2[],
+  vDSP_Stride              __vDSP_stride2,
+  DSPDoubleSplitComplex *  __vDSP_result,
+  vDSP_Stride              __vDSP_strideResult,
+  vDSP_Length              __vDSP_size)                       AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
-/*
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-    Function zrvmul
-             zrvmulD
-             
-    Split Complex - Real Multiply
-    
-      Criteria to invoke PowerPC vector code:  
-        1. input1.realp, input1.imagp, input2, result.realp, result.imagp
-           must be all relatively aligned.
-        2. size >= 8
-        3. stride1 = 1
-        4. stride2 = 1
-        5. strideResult = 1
-      
-      If any of the above criteria are not satisfied, the PowerPC scalar code
-      implementation will be used.
-ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ
-*/
+/* Multiply complex-split and real, single-precision.*/
 /*
  *  vDSP_zrvmul()
  *  
@@ -3092,15 +2524,16 @@ vDSP_zrvsubD(
  */
 extern void 
 vDSP_zrvmul(
-  DSPSplitComplex *  input1,
-  SInt32             stride1,
-  const float        input2[],
-  SInt32             stride2,
-  DSPSplitComplex *  result,
-  SInt32             strideResult,
-  UInt32             size)                                    AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  DSPSplitComplex *  __vDSP_input1,
+  vDSP_Stride        __vDSP_stride1,
+  const float        __vDSP_input2[],
+  vDSP_Stride        __vDSP_stride2,
+  DSPSplitComplex *  __vDSP_result,
+  vDSP_Stride        __vDSP_strideResult,
+  vDSP_Length        __vDSP_size)                             AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
+/* Multiply complex-split and real, double-precision.*/
 /*
  *  vDSP_zrvmulD()
  *  
@@ -3111,18 +2544,16 @@ vDSP_zrvmul(
  */
 extern void 
 vDSP_zrvmulD(
-  DSPDoubleSplitComplex *  input1,
-  SInt32                   stride1,
-  const double             input2[],
-  SInt32                   stride2,
-  DSPDoubleSplitComplex *  result,
-  SInt32                   strideResult,
-  UInt32                   size)                              AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  DSPDoubleSplitComplex *  __vDSP_input1,
+  vDSP_Stride              __vDSP_stride1,
+  const double             __vDSP_input2[],
+  vDSP_Stride              __vDSP_stride2,
+  DSPDoubleSplitComplex *  __vDSP_result,
+  vDSP_Stride              __vDSP_strideResult,
+  vDSP_Length              __vDSP_size)                       AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
-
-
-/*Vector Double Precision to Single Precision Convert*/
+/* Vector convert double-precision to single-precision.*/
 /*
  *  vDSP_vdpsp()
  *  
@@ -3133,14 +2564,14 @@ vDSP_zrvmulD(
  */
 extern void 
 vDSP_vdpsp(
-  double *       A,
-  int            I,
-  float *        C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Single Precision to Double Precision Convert*/
+/* Vector convert single-precision to double-precision.*/
 /*
  *  vDSP_vspdp()
  *  
@@ -3151,14 +2582,14 @@ vDSP_vdpsp(
  */
 extern void 
 vDSP_vspdp(
-  float *        A,
-  int            I,
-  double *       C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Integer Absolute Value*/
+/* Vector absolute value, integer.*/
 /*
  *  vDSP_vabsi()
  *  
@@ -3169,14 +2600,14 @@ vDSP_vspdp(
  */
 extern void 
 vDSP_vabsi(
-  int *          A,
-  int            I,
-  int *          C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  int *         __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  int *         __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Equivalence, 32-bit Logical*/
+/* Vector (bit-wise) equivalence (not (A xor B)), integer.*/
 /*
  *  vDSP_veqvi()
  *  
@@ -3187,16 +2618,16 @@ vDSP_vabsi(
  */
 extern void 
 vDSP_veqvi(
-  unsigned int *  A,
-  int             I,
-  unsigned int *  B,
-  int             J,
-  unsigned int *  C,
-  int             K,
-  unsigned int    N)                                          AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  int *         __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  int *         __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  int *         __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Integer Divide*/
+/* Vector divide, integer.*/
 /*
  *  vDSP_vdivi()
  *  
@@ -3207,16 +2638,16 @@ vDSP_veqvi(
  */
 extern void 
 vDSP_vdivi(
-  int *          A,
-  int            I,
-  int *          B,
-  int            J,
-  int *          C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  int *         __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  int *         __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  int *         __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Integer Fill*/
+/* Vector fill, integer.*/
 /*
  *  vDSP_vfilli()
  *  
@@ -3227,13 +2658,13 @@ vDSP_vdivi(
  */
 extern void 
 vDSP_vfilli(
-  int *          A,
-  int *          C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  int *         __vDSP_A,
+  int *         __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Integer Scalar Add*/
+/* Vector-scalar add, integer.*/
 /*
  *  vDSP_vsaddi()
  *  
@@ -3244,15 +2675,15 @@ vDSP_vfilli(
  */
 extern void 
 vDSP_vsaddi(
-  int *          A,
-  int            I,
-  int *          B,
-  int *          C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  int *         __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  int *         __vDSP_B,
+  int *         __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Integer Scalar Divide*/
+/* Vector-scalar divide, integer.*/
 /*
  *  vDSP_vsdivi()
  *  
@@ -3263,23 +2694,15 @@ vDSP_vsaddi(
  */
 extern void 
 vDSP_vsdivi(
-  int *          A,
-  int            I,
-  int *          B,
-  int *          C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  int *         __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  int *         __vDSP_B,
+  int *         __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*
-  ////////////////////////////////////////
-                                        // 
-    New Single Precision Functions      //
-                                        //
-  ////////////////////////////////////////
-*/
-
-/*Accumulating Autospectrum*/
+/* Complex-split accumulating autospectrum, single-precision.*/
 /*
  *  vDSP_zaspec()
  *  
@@ -3290,2403 +2713,12 @@ vDSP_vsdivi(
  */
 extern void 
 vDSP_zaspec(
-  DSPSplitComplex *  A,
-  float *            C,
-  unsigned int       N)                                       AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  DSPSplitComplex *  __vDSP_A,
+  float *            __vDSP_C,
+  vDSP_Length        __vDSP_N)                                AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Create Blackman Window*/
-/*
- *  vDSP_blkman_window()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_blkman_window(
-  float *        C,
-  unsigned int   N,
-  int            FLAG)                                        AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Coherence Function*/
-/*
- *  vDSP_zcoher()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_zcoher(
-  float *            A,
-  float *            B,
-  DSPSplitComplex *  C,
-  float *            D,
-  unsigned int       N)                                       AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Complex/Real Down Sample with Anti-aliasing*/
-/*
- *  vDSP_zrdesamp()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_zrdesamp(
-  DSPSplitComplex *  A,
-  int                I,
-  float *            B,
-  DSPSplitComplex *  C,
-  int                N,
-  int                M)                                       AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Complex Vector Divide by Real Vector*/
-/*
- *  vDSP_zrvdiv()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_zrvdiv(
-  DSPSplitComplex *  A,
-  int                I,
-  float *            B,
-  int                J,
-  DSPSplitComplex *  C,
-  int                K,
-  unsigned int       N)                                       AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Transfer Function*/
-/*
- *  vDSP_ztrans()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_ztrans(
-  float *            A,
-  DSPSplitComplex *  B,
-  DSPSplitComplex *  C,
-  unsigned int       N)                                       AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Complex Vector Divide by Complex Vector*/
-/*
- *  vDSP_zvdiv()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_zvdiv(
-  DSPSplitComplex *  A,
-  int                I,
-  DSPSplitComplex *  B,
-  int                J,
-  DSPSplitComplex *  C,
-  int                K,
-  unsigned int       N)                                       AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Complex Number Accumulating Cross-Spectrum*/
-/*
- *  vDSP_zcspec()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_zcspec(
-  DSPSplitComplex *  A,
-  DSPSplitComplex *  B,
-  DSPSplitComplex *  C,
-  unsigned int       N)                                       AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Complex Vector Absolute Value*/
-/*
- *  vDSP_zvabs()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_zvabs(
-  DSPSplitComplex *  A,
-  int                I,
-  float *            C,
-  int                K,
-  unsigned int       N)                                       AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Complex Vector Conjugate and Multiply*/
-/*
- *  vDSP_zvcmul()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_zvcmul(
-  DSPSplitComplex *  A,
-  int                I,
-  DSPSplitComplex *  B,
-  int                J,
-  DSPSplitComplex *  C,
-  int                K,
-  unsigned int       N)                                       AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Complex Vector Conjugate */
-/*
- *  vDSP_zvconj()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_zvconj(
-  DSPSplitComplex *  A,
-  int                I,
-  DSPSplitComplex *  C,
-  int                K,
-  unsigned int       N)                                       AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Complex Vector Scalar Multiply*/
-/*
- *  vDSP_zvzsml()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_zvzsml(
-  DSPSplitComplex *  A,
-  int                I,
-  DSPSplitComplex *  B,
-  DSPSplitComplex *  C,
-  int                K,
-  unsigned int       N)                                       AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Complex Vector Fill */
-/*
- *  vDSP_zvfill()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_zvfill(
-  DSPSplitComplex *  A,
-  DSPSplitComplex *  C,
-  int                K,
-  unsigned int       N)                                       AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Complex Vector Magnitudes Squared*/
-/*
- *  vDSP_zvmags()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_zvmags(
-  DSPSplitComplex *  A,
-  int                I,
-  float *            C,
-  int                K,
-  unsigned int       N)                                       AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Complex Vector Magnitudes Square and Add*/
-/*
- *  vDSP_zvmgsa()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_zvmgsa(
-  DSPSplitComplex *  A,
-  int                I,
-  float *            B,
-  int                J,
-  float *            C,
-  int                K,
-  unsigned int       N)                                       AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Complex Vector Move*/
-/*
- *  vDSP_zvmov()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_zvmov(
-  DSPSplitComplex *  A,
-  int                I,
-  DSPSplitComplex *  C,
-  int                K,
-  unsigned int       N)                                       AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Complex Vector Negate*/
-/*
- *  vDSP_zvneg()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_zvneg(
-  DSPSplitComplex *  A,
-  int                I,
-  DSPSplitComplex *  C,
-  int                K,
-  unsigned int       N)                                       AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Complex Vector Phase*/
-/*
- *  vDSP_zvphas()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_zvphas(
-  DSPSplitComplex *  A,
-  int                I,
-  float *            C,
-  int                K,
-  unsigned int       N)                                       AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Complex Vector Scalar Multiply Add*/
-/*
- *  vDSP_zvsma()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_zvsma(
-  DSPSplitComplex *  A,
-  int                I,
-  DSPSplitComplex *  B,
-  DSPSplitComplex *  C,
-  int                K,
-  DSPSplitComplex *  D,
-  int                L,
-  unsigned int       N)                                       AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Difference Equation, 2 Poles, 2 Zeros*/
-/*
- *  vDSP_deq22()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_deq22(
-  float *        A,
-  int            I,
-  float *        B,
-  float *        C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Convolution with Decimation*/
-/*
- *  vDSP_desamp()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_desamp(
-  float *        A,
-  int            I,
-  float *        B,
-  float *        C,
-  unsigned int   N,
-  unsigned int   M)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Create Hamming Window*/
-/*
- *  vDSP_hamm_window()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_hamm_window(
-  float *        C,
-  unsigned int   N,
-  int            FLAG)                                        AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Create Hanning Window*/
-/*
- *  vDSP_hann_window()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_hann_window(
-  float *        C,
-  unsigned int   N,
-  int            FLAG)                                        AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Maximum Magnitude*/
-/*
- *  vDSP_maxmgv()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_maxmgv(
-  const float *  A,
-  int            I,
-  float *        C,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Maximum Magnitude with Index*/
-/*
- *  vDSP_maxmgvi()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_maxmgvi(
-  float *        A,
-  int            I,
-  float *        C,
-  int *          IC,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Maximum Value*/
-/*
- *  vDSP_maxv()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_maxv(
-  float *        A,
-  int            I,
-  float *        C,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Maximum Value with Index*/
-/*
- *  vDSP_maxvi()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_maxvi(
-  float *        A,
-  int            I,
-  float *        C,
-  int *          IC,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Mean Magnitude*/
-/*
- *  vDSP_meamgv()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_meamgv(
-  float *        A,
-  int            I,
-  float *        C,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Mean Value*/
-/*
- *  vDSP_meanv()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_meanv(
-  float *        A,
-  int            I,
-  float *        C,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Mean Square Value*/
-/*
- *  vDSP_measqv()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_measqv(
-  float *        A,
-  int            I,
-  float *        C,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Minimum Magnitude*/
-/*
- *  vDSP_minmgv()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_minmgv(
-  float *        A,
-  int            I,
-  float *        C,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Minimum Magnitude with Index*/
-/*
- *  vDSP_minmgvi()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_minmgvi(
-  float *        A,
-  int            I,
-  float *        C,
-  int *          IC,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Minimum Value*/
-/*
- *  vDSP_minv()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_minv(
-  float *        A,
-  int            I,
-  float *        C,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Minimum Value with Index*/
-/*
- *  vDSP_minvi()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_minvi(
-  float *        A,
-  int            I,
-  float *        C,
-  int *          IC,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Out-Of-Place Real Matrix Move*/
-/*
- *  vDSP_mmov()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_mmov(
-  float *        A,
-  float *        C,
-  unsigned int   NC,
-  unsigned int   NR,
-  unsigned int   TCA,
-  unsigned int   TCC)                                         AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Mean of Signed Squares*/
-/*
- *  vDSP_mvessq()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_mvessq(
-  float *        A,
-  int            I,
-  float *        C,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Find Zero Crossing*/
-/*
- *  vDSP_nzcros()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_nzcros(
-  float *         A,
-  int             I,
-  unsigned int    B,
-  int *           C,
-  unsigned int *  D,
-  unsigned int    N)                                          AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Retangular to Polar*/
-/*
- *  vDSP_polar()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_polar(
-  float *        A,
-  int            I,
-  float *        C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Polar to Rectangular*/
-/*
- *  vDSP_rect()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_rect(
-  float *        A,
-  int            I,
-  float *        C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Root-Mean-Square*/
-/*
- *  vDSP_rmsqv()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_rmsqv(
-  float *        A,
-  int            I,
-  float *        C,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Scalar Vector Divide*/
-/*
- *  vDSP_svdiv()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_svdiv(
-  float *        A,
-  float *        B,
-  int            J,
-  float *        C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Sum*/
-/*
- *  vDSP_sve()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_sve(
-  float *        A,
-  int            I,
-  float *        C,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Sum of Magnitude*/
-/*
- *  vDSP_svemg()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_svemg(
-  float *        A,
-  int            I,
-  float *        C,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Sum of Square*/
-/*
- *  vDSP_svesq()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_svesq(
-  float *        A,
-  int            I,
-  float *        C,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Sum of Signed Square*/
-/*
- *  vDSP_svs()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_svs(
-  float *        A,
-  int            I,
-  float *        C,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Add, Add, and Multiply*/
-/*
- *  vDSP_vaam()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vaam(
-  float *        A,
-  int            I,
-  float *        B,
-  int            J,
-  float *        C,
-  int            K,
-  float *        D,
-  int            L,
-  float *        E,
-  int            M,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Absolute Value*/
-/*
- *  vDSP_vabs()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vabs(
-  float *        A,
-  int            I,
-  float *        C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Add, Subtract, and Multiply*/
-/*
- *  vDSP_vasbm()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vasbm(
-  float *        A,
-  int            I,
-  float *        B,
-  int            J,
-  float *        C,
-  int            K,
-  float *        D,
-  int            L,
-  float *        E,
-  int            M,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Add and Scalar Multiply*/
-/*
- *  vDSP_vasm()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vasm(
-  float *        A,
-  int            I,
-  float *        B,
-  int            J,
-  float *        C,
-  float *        D,
-  int            L,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Linear Average*/
-/*
- *  vDSP_vavlin()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vavlin(
-  float *        A,
-  int            I,
-  float *        B,
-  float *        C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Clip and Count*/
-/*
- *  vDSP_vclipc()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vclipc(
-  float *         A,
-  int             I,
-  float *         B,
-  float *         C,
-  float *         D,
-  int             L,
-  unsigned int    N,
-  unsigned int *  NLOW,
-  unsigned int *  NHI)                                        AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Clip*/
-/*
- *  vDSP_vclip()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vclip(
-  float *        A,
-  int            I,
-  float *        B,
-  float *        C,
-  float *        D,
-  int            L,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Clear*/
-/*
- *  vDSP_vclr()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vclr(
-  float *        C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Compress*/
-/*
- *  vDSP_vcmprs()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vcmprs(
-  float *        A,
-  int            I,
-  float *        B,
-  int            J,
-  float *        C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Convert to Decibels, Power, or Amplitude*/
-/*
- *  vDSP_vdbcon()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vdbcon(
-  float *        A,
-  int            I,
-  float *        B,
-  float *        C,
-  int            K,
-  unsigned int   N,
-  unsigned int   F)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Distance*/
-/*
- *  vDSP_vdist()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vdist(
-  float *        A,
-  int            I,
-  float *        B,
-  int            J,
-  float *        C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Divide*/
-/*
- *  vDSP_vdiv()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vdiv(
-  float *        A,
-  int            I,
-  float *        B,
-  int            J,
-  float *        C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Envelope*/
-/*
- *  vDSP_venvlp()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_venvlp(
-  float *        A,
-  int            I,
-  float *        B,
-  int            J,
-  float *        C,
-  int            K,
-  float *        D,
-  int            L,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Fill*/
-/*
- *  vDSP_vfill()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vfill(
-  float *        A,
-  float *        C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Single Precision to 8-bit Integer Convert with Round towards Zero*/
-/*
- *  vDSP_vfix8()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vfix8(
-  float *        A,
-  int            I,
-  char *         C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Single Precision to 16-bit Integer Convert with Round towards Zero*/
-/*
- *  vDSP_vfix16()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vfix16(
-  float *        A,
-  int            I,
-  short *        C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Single Precision to 32-bit Integer Convert with Round towards Zero*/
-/*
- *  vDSP_vfix32()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vfix32(
-  float *        A,
-  int            I,
-  int *          C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Single Precision to 8-bit Integer Convert with Round to Nearest*/
-/*
- *  vDSP_vfixr8()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vfixr8(
-  float *        A,
-  int            I,
-  char *         C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Single Precision to 16-bit Integer Convert with Round to Nearest*/
-/*
- *  vDSP_vfixr16()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vfixr16(
-  float *        A,
-  int            I,
-  short *        C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Single Precision to 32-bit Integer Convert with Round to Nearest*/
-/*
- *  vDSP_vfixr32()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vfixr32(
-  float *        A,
-  int            I,
-  int *          C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Single Precision to 8-bit Integer Convert with Round towards Zero*/
-/*
- *  vDSP_vfixu8()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vfixu8(
-  float *          A,
-  int              I,
-  unsigned char *  C,
-  int              K,
-  unsigned int     N)                                         AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Single Precision to 16-bit Integer Convert with Round towards Zero*/
-/*
- *  vDSP_vfixu16()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vfixu16(
-  float *           A,
-  int               I,
-  unsigned short *  C,
-  int               K,
-  unsigned int      N)                                        AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Single Precision to 32-bit Integer Convert with Round towards Zero*/
-/*
- *  vDSP_vfixu32()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vfixu32(
-  float *         A,
-  int             I,
-  unsigned int *  C,
-  int             K,
-  unsigned int    N)                                          AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Single Precision to 8-bit Integer Convert with Round to Nearest*/
-/*
- *  vDSP_vfixru8()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vfixru8(
-  float *          A,
-  int              I,
-  unsigned char *  C,
-  int              K,
-  unsigned int     N)                                         AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Single Precision to 16-bit Integer Convert with Round to Nearest*/
-/*
- *  vDSP_vfixru16()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vfixru16(
-  float *           A,
-  int               I,
-  unsigned short *  C,
-  int               K,
-  unsigned int      N)                                        AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Single Precision to 32-bit Integer Convert with Round to Nearest*/
-/*
- *  vDSP_vfixru32()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vfixru32(
-  float *         A,
-  int             I,
-  unsigned int *  C,
-  int             K,
-  unsigned int    N)                                          AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector 8-bit Integer to Single Precision Convert*/
-/*
- *  vDSP_vflt8()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vflt8(
-  char *         A,
-  int            I,
-  float *        C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector 16-bit Integer to Single Precision Convert*/
-/*
- *  vDSP_vflt16()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vflt16(
-  short *        A,
-  int            I,
-  float *        C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector 32-bit Integer to Single Precision Convert*/
-/*
- *  vDSP_vflt32()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vflt32(
-  int *          A,
-  int            I,
-  float *        C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector 8-bit Unsigned Integer to Single Precision Convert*/
-/*
- *  vDSP_vfltu8()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vfltu8(
-  unsigned char *  A,
-  int              I,
-  float *          C,
-  int              K,
-  unsigned int     N)                                         AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector 16-bit Unsigned Integer to Single Precision Convert*/
-/*
- *  vDSP_vfltu16()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vfltu16(
-  unsigned short *  A,
-  int               I,
-  float *           C,
-  int               K,
-  unsigned int      N)                                        AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector 32-bit Unisgned Integer to Single Precision Convert*/
-/*
- *  vDSP_vfltu32()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vfltu32(
-  unsigned int *  A,
-  int             I,
-  float *         C,
-  int             K,
-  unsigned int    N)                                          AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Truncate to Fraction*/
-/*
- *  vDSP_vfrac()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vfrac(
-  float *        A,
-  int            I,
-  float *        C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Gather*/
-/*
- *  vDSP_vgathr()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vgathr(
-  float *        A,
-  int *          B,
-  int            J,
-  float *        C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Gather, Absolute Pointers*/
-/*
- *  vDSP_vgathra()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vgathra(
-  float **       A,
-  int            I,
-  float *        C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Tapered Ramp*/
-/*
- *  vDSP_vgen()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vgen(
-  float *        A,
-  float *        B,
-  float *        C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Generate by Extrapolation and Interpolation*/
-/*
- *  vDSP_vgenp()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vgenp(
-  float *        A,
-  int            I,
-  float *        B,
-  int            J,
-  float *        C,
-  int            K,
-  unsigned int   N,
-  unsigned int   M)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Inverted Clip*/
-/*
- *  vDSP_viclip()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_viclip(
-  float *        A,
-  int            I,
-  float *        B,
-  float *        C,
-  float *        D,
-  int            L,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Index  */
-/*
- *  vDSP_vindex()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vindex(
-  float *        A,
-  float *        B,
-  int            J,
-  float *        C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Interpolation*/
-/*
- *  vDSP_vintb()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vintb(
-  float *        A,
-  int            I,
-  float *        B,
-  int            J,
-  float *        C,
-  float *        D,
-  int            L,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Test Limit*/
-/*
- *  vDSP_vlim()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vlim(
-  float *        A,
-  int            I,
-  float *        B,
-  float *        C,
-  float *        D,
-  int            L,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Linear Interpolation */
-/*
- *  vDSP_vlint()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vlint(
-  float *        A,
-  float *        B,
-  int            J,
-  float *        C,
-  int            K,
-  unsigned int   N,
-  unsigned int   M)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Mulitply and Add*/
-/*
- *  vDSP_vma()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vma(
-  float *        A,
-  int            I,
-  float *        B,
-  int            J,
-  float *        C,
-  int            K,
-  float *        D,
-  int            L,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Maxima*/
-/*
- *  vDSP_vmax()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vmax(
-  float *        A,
-  int            I,
-  float *        B,
-  int            J,
-  float *        C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Maximum Magnitude */
-/*
- *  vDSP_vmaxmg()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vmaxmg(
-  float *        A,
-  int            I,
-  float *        B,
-  int            J,
-  float *        C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Minima*/
-/*
- *  vDSP_vmin()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vmin(
-  float *        A,
-  int            I,
-  float *        B,
-  int            J,
-  float *        C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Minimum Magnitude*/
-/*
- *  vDSP_vminmg()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vminmg(
-  float *        A,
-  int            I,
-  float *        B,
-  int            J,
-  float *        C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Multiply, Multiply, and Add*/
-/*
- *  vDSP_vmma()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vmma(
-  float *        A,
-  int            I,
-  float *        B,
-  int            J,
-  float *        C,
-  int            K,
-  float *        D,
-  int            L,
-  float *        E,
-  int            M,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Multiply, Multiply, and Subtract*/
-/*
- *  vDSP_vmmsb()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vmmsb(
-  float *        A,
-  int            I,
-  float *        B,
-  int            J,
-  float *        C,
-  int            K,
-  float *        D,
-  int            L,
-  float *        E,
-  int            M,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Multiply and Scalar Add*/
-/*
- *  vDSP_vmsa()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vmsa(
-  float *        A,
-  int            I,
-  float *        B,
-  int            J,
-  float *        C,
-  float *        D,
-  int            L,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Multiply and Subtract*/
-/*
- *  vDSP_vmsb()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vmsb(
-  float *        A,
-  int            I,
-  float *        B,
-  int            J,
-  float *        C,
-  int            K,
-  float *        D,
-  int            L,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Negative Absolute Value */
-/*
- *  vDSP_vnabs()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vnabs(
-  float *        A,
-  int            I,
-  float *        C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector negate*/
-/*
- *  vDSP_vneg()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vneg(
-  float *        A,
-  int            I,
-  float *        C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Polynomial*/
-/*
- *  vDSP_vpoly()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vpoly(
-  float *        A,
-  int            I,
-  float *        B,
-  int            J,
-  float *        C,
-  int            K,
-  unsigned int   N,
-  unsigned int   P)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Pythagoras */
-/*
- *  vDSP_vpythg()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vpythg(
-  float *        A,
-  int            I,
-  float *        B,
-  int            J,
-  float *        C,
-  int            K,
-  float *        D,
-  int            L,
-  float *        E,
-  int            M,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Quadratic Interpolation*/
-/*
- *  vDSP_vqint()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vqint(
-  float *        A,
-  float *        B,
-  int            J,
-  float *        C,
-  int            K,
-  unsigned int   N,
-  unsigned int   M)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Build Ramped Vector*/
-/*
- *  vDSP_vramp()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vramp(
-  float *        A,
-  float *        B,
-  float *        C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Running Sum Integration*/
-/*
- *  vDSP_vrsum()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vrsum(
-  float *        A,
-  int            I,
-  float *        S,
-  float *        C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Reverse Order In-Place*/
-/*
- *  vDSP_vrvrs()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vrvrs(
-  float *        C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Scalar Add*/
-/*
- *  vDSP_vsadd()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vsadd(
-  float *        A,
-  int            I,
-  float *        B,
-  float *        C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Subtract and Multiply*/
-/*
- *  vDSP_vsbm()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vsbm(
-  float *        A,
-  int            I,
-  float *        B,
-  int            J,
-  float *        C,
-  int            K,
-  float *        D,
-  int            L,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Subtract, Subtract, and Multiply*/
-/*
- *  vDSP_vsbsbm()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vsbsbm(
-  float *        A,
-  int            I,
-  float *        B,
-  int            J,
-  float *        C,
-  int            K,
-  float *        D,
-  int            L,
-  float *        E,
-  int            M,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Subtract and Scalar Multiply*/
-/*
- *  vDSP_vsbsm()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vsbsm(
-  float *        A,
-  int            I,
-  float *        B,
-  int            J,
-  float *        C,
-  float *        D,
-  int            L,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Scalar Divdie*/
-/*
- *  vDSP_vsdiv()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vsdiv(
-  float *        A,
-  int            I,
-  float *        B,
-  float *        C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Simpson Integration*/
-/*
- *  vDSP_vsimps()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vsimps(
-  float *        A,
-  int            I,
-  float *        B,
-  float *        C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Scalar Multiply and Vector Add*/
-/*
- *  vDSP_vsma()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vsma(
-  const float *  A,
-  int            I,
-  const float *  B,
-  const float *  C,
-  int            K,
-  float *        D,
-  int            L,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Scalar Multiply and Scalar Add */
-/*
- *  vDSP_vsmsa()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vsmsa(
-  float *        A,
-  int            I,
-  float *        B,
-  float *        C,
-  float *        D,
-  int            L,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Scalar Multiply and Vector Subtract */
-/*
- *  vDSP_vsmsb()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vsmsb(
-  float *        A,
-  int            I,
-  float *        B,
-  float *        C,
-  int            K,
-  float *        D,
-  int            L,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector In-Place Sort */
-/*
- *  vDSP_vsort()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vsort(
-  float *        C,
-  unsigned int   N,
-  int            OFLAG)                                       AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Integer In-Place Sort*/
-/*
- *  vDSP_vsorti()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vsorti(
-  float *        C,
-  int *          IC,
-  int *          List_addr,
-  unsigned int   N,
-  int            OFLAG)                                       AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Swap */
-/*
- *  vDSP_vswap()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vswap(
-  float *        A,
-  int            I,
-  float *        B,
-  int            J,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Sliding Window Sum */
-/*
- *  vDSP_vswsum()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vswsum(
-  float *        A,
-  int            I,
-  float *        C,
-  int            K,
-  unsigned int   N,
-  unsigned int   P)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Interpolation, Table Lookup*/
-/*
- *  vDSP_vtabi()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vtabi(
-  float *        A,
-  int            I,
-  float *        S1,
-  float *        S2,
-  float *        C,
-  unsigned int   M,
-  float *        D,
-  int            L,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Threshold*/
-/*
- *  vDSP_vthr()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vthr(
-  float *        A,
-  int            I,
-  float *        B,
-  float *        C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Threshold with Zero Fill*/
-/*
- *  vDSP_vthres()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vthres(
-  float *        A,
-  int            I,
-  float *        B,
-  float *        C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Threshold with Signed Constant*/
-/*
- *  vDSP_vthrsc()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vthrsc(
-  float *        A,
-  int            I,
-  float *        B,
-  float *        C,
-  float *        D,
-  int            L,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Tapered Merge of Two Vectors*/
-/*
- *  vDSP_vtmerg()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vtmerg(
-  float *        A,
-  int            I,
-  float *        B,
-  int            J,
-  float *        C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Vector Trapezoidal Integration*/
-/*
- *  vDSP_vtrapz()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_vtrapz(
-  float *        A,
-  int            I,
-  float *        B,
-  float *        C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Wiener Levinson*/
-/*
- *  vDSP_wiener()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_wiener(
-  int      L,
-  float *  A,
-  float *  C,
-  float *  F,
-  float *  P,
-  int      IFLG,
-  int *    IERR)                                              AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-
-
-/*
-  ////////////////////////////////////////
-                                        // 
-    New Double Precision Functions      //
-                                        //
-  ////////////////////////////////////////
-*/
-
-/*Autocorrelation*/
-/*
- *  vDSP_acorD()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_acorD(
-  double *  A,
-  double *  C,
-  int       N,
-  int       M)                                                AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*
- *  vDSP_acorfD()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_acorfD(
-  double *  A,
-  double *  C,
-  int       N,
-  int       M)                                                AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*
- *  vDSP_acortD()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 and later in vecLib.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern void 
-vDSP_acortD(
-  double *  A,
-  double *  C,
-  int       N,
-  int       M)                                                AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*Accumulating Autospectrum*/
+/* Complex-split accumulating autospectrum, double-precision.*/
 /*
  *  vDSP_zaspecD()
  *  
@@ -5698,11 +2730,27 @@ vDSP_acortD(
 extern void 
 vDSP_zaspecD(
   DSPDoubleSplitComplex *  A,
-  double *                 C,
-  unsigned int             N)                                 AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *                 __vDSP_C,
+  vDSP_Length              __vDSP_N)                          AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Create Blackman Window*/
+/* Create Blackman window, single-precision.*/
+/*
+ *  vDSP_blkman_window()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_blkman_window(
+  float *       __vDSP_C,
+  vDSP_Length   __vDSP_N,
+  int           __vDSP_FLAG)                                  AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Create Blackman window, double-precision.*/
 /*
  *  vDSP_blkman_windowD()
  *  
@@ -5713,12 +2761,30 @@ vDSP_zaspecD(
  */
 extern void 
 vDSP_blkman_windowD(
-  double *       C,
-  unsigned int   N,
-  int            FLAG)                                        AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_C,
+  vDSP_Length   __vDSP_N,
+  int           __vDSP_FLAG)                                  AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Coherence Function*/
+/* Complex-split coherence function, single-precision.*/
+/*
+ *  vDSP_zcoher()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_zcoher(
+  float *            __vDSP_A,
+  float *            __vDSP_B,
+  DSPSplitComplex *  __vDSP_C,
+  float *            __vDSP_D,
+  vDSP_Length        __vDSP_N)                                AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Complex-split coherence function, double-precision.*/
 /*
  *  vDSP_zcoherD()
  *  
@@ -5729,14 +2795,33 @@ vDSP_blkman_windowD(
  */
 extern void 
 vDSP_zcoherD(
-  double *                 A,
-  double *                 B,
-  DSPDoubleSplitComplex *  C,
-  double *                 D,
-  unsigned int             N)                                 AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *                 __vDSP_A,
+  double *                 __vDSP_B,
+  DSPDoubleSplitComplex *  __vDSP_C,
+  double *                 __vDSP_D,
+  vDSP_Length              __vDSP_N)                          AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Complex/Real Down Sample with Anti-aliasing*/
+/* Complex-split anti-aliasing down-sample with real filter, single-precision.*/
+/*
+ *  vDSP_zrdesamp()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_zrdesamp(
+  DSPSplitComplex *  __vDSP_A,
+  vDSP_Stride        __vDSP_I,
+  float *            __vDSP_B,
+  DSPSplitComplex *  __vDSP_C,
+  vDSP_Length        __vDSP_N,
+  vDSP_Length        __vDSP_M)                                AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Complex-split anti-aliasing down-sample with real filter, double-precision.*/
 /*
  *  vDSP_zrdesampD()
  *  
@@ -5748,14 +2833,34 @@ vDSP_zcoherD(
 extern void 
 vDSP_zrdesampD(
   DSPDoubleSplitComplex *  A,
-  int                      I,
-  double *                 B,
-  DSPDoubleSplitComplex *  C,
-  int                      N,
-  int                      M)                                 AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  vDSP_Stride              __vDSP_I,
+  double *                 __vDSP_B,
+  DSPDoubleSplitComplex *  __vDSP_C,
+  vDSP_Length              __vDSP_N,
+  vDSP_Length              __vDSP_M)                          AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Complex Vector Divide by Real Vector*/
+/* Vector complex-split divide by real, single-precision.*/
+/*
+ *  vDSP_zrvdiv()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_zrvdiv(
+  DSPSplitComplex *  __vDSP_A,
+  vDSP_Stride        __vDSP_I,
+  float *            __vDSP_B,
+  vDSP_Stride        __vDSP_J,
+  DSPSplitComplex *  __vDSP_C,
+  vDSP_Stride        __vDSP_K,
+  vDSP_Length        __vDSP_N)                                AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector complex-split divide by real, double-precision.*/
 /*
  *  vDSP_zrvdivD()
  *  
@@ -5767,15 +2872,69 @@ vDSP_zrdesampD(
 extern void 
 vDSP_zrvdivD(
   DSPDoubleSplitComplex *  A,
-  int                      I,
-  double *                 B,
-  int                      J,
-  DSPDoubleSplitComplex *  C,
-  int                      K,
-  unsigned int             N)                                 AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  vDSP_Stride              __vDSP_I,
+  double *                 __vDSP_B,
+  vDSP_Stride              __vDSP_J,
+  DSPDoubleSplitComplex *  __vDSP_C,
+  vDSP_Stride              __vDSP_K,
+  vDSP_Length              __vDSP_N)                          AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Complex Vector Divide by Complex Vector*/
+/* Transfer function (B/A), single-precision.*/
+/*
+ *  vDSP_ztrans()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_ztrans(
+  float *            __vDSP_A,
+  DSPSplitComplex *  __vDSP_B,
+  DSPSplitComplex *  __vDSP_C,
+  vDSP_Length        __vDSP_N)                                AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Transfer function (B/A), double-precision.*/
+/*
+ *  vDSP_ztransD()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_ztransD(
+  double *                 __vDSP_A,
+  DSPDoubleSplitComplex *  __vDSP_B,
+  DSPDoubleSplitComplex *  __vDSP_C,
+  vDSP_Length              __vDSP_N)                          AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Complex-split vector divide, single-precision.*/
+/*
+ *  vDSP_zvdiv()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_zvdiv(
+  DSPSplitComplex *  __vDSP_A,
+  vDSP_Stride        __vDSP_I,
+  DSPSplitComplex *  __vDSP_B,
+  vDSP_Stride        __vDSP_J,
+  DSPSplitComplex *  __vDSP_C,
+  vDSP_Stride        __vDSP_K,
+  vDSP_Length        __vDSP_N)                                AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Complex-split vector divide, double-precision.*/
 /*
  *  vDSP_zvdivD()
  *  
@@ -5787,15 +2946,32 @@ vDSP_zrvdivD(
 extern void 
 vDSP_zvdivD(
   DSPDoubleSplitComplex *  A,
-  int                      I,
-  DSPDoubleSplitComplex *  B,
-  int                      J,
-  DSPDoubleSplitComplex *  C,
-  int                      K,
-  unsigned int             N)                                 AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  vDSP_Stride              __vDSP_I,
+  DSPDoubleSplitComplex *  __vDSP_B,
+  vDSP_Stride              __vDSP_J,
+  DSPDoubleSplitComplex *  __vDSP_C,
+  vDSP_Stride              __vDSP_K,
+  vDSP_Length              __vDSP_N)                          AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Complex Number Accumulating Cross-Spectrum*/
+/* Complex-split accumulating cross-spectrum, single-precision.*/
+/*
+ *  vDSP_zcspec()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_zcspec(
+  DSPSplitComplex *  __vDSP_A,
+  DSPSplitComplex *  __vDSP_B,
+  DSPSplitComplex *  __vDSP_C,
+  vDSP_Length        __vDSP_N)                                AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Complex-split accumulating cross-spectrum, double-precision.*/
 /*
  *  vDSP_zcspecD()
  *  
@@ -5807,14 +2983,14 @@ vDSP_zvdivD(
 extern void 
 vDSP_zcspecD(
   DSPDoubleSplitComplex *  A,
-  DSPDoubleSplitComplex *  B,
-  DSPDoubleSplitComplex *  C,
-  unsigned int             N)                                 AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  DSPDoubleSplitComplex *  __vDSP_B,
+  DSPDoubleSplitComplex *  __vDSP_C,
+  vDSP_Length              __vDSP_N)                          AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Transfer Function*/
+/* Complex-split vector absolute value, single-precision.*/
 /*
- *  vDSP_ztransD()
+ *  vDSP_zvabs()
  *  
  *  Availability:
  *    Mac OS X:         in version 10.4 and later in vecLib.framework
@@ -5822,14 +2998,15 @@ vDSP_zcspecD(
  *    Non-Carbon CFM:   not available
  */
 extern void 
-vDSP_ztransD(
-  double *                 A,
-  DSPDoubleSplitComplex *  B,
-  DSPDoubleSplitComplex *  C,
-  unsigned int             N)                                 AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+vDSP_zvabs(
+  DSPSplitComplex *  __vDSP_A,
+  vDSP_Stride        __vDSP_I,
+  float *            __vDSP_C,
+  vDSP_Stride        __vDSP_K,
+  vDSP_Length        __vDSP_N)                                AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Complex Vector Absolute Value*/
+/* Complex-split vector absolute value, double-precision.*/
 /*
  *  vDSP_zvabsD()
  *  
@@ -5840,14 +3017,34 @@ vDSP_ztransD(
  */
 extern void 
 vDSP_zvabsD(
-  DSPDoubleSplitComplex *  A,
-  int                      I,
-  double *                 C,
-  int                      K,
-  unsigned int             N)                                 AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  DSPDoubleSplitComplex *  __vDSP_A,
+  vDSP_Stride              __vDSP_I,
+  double *                 __vDSP_C,
+  vDSP_Stride              __vDSP_K,
+  vDSP_Length              __vDSP_N)                          AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Complex Vector Conjugate and Multiply*/
+/* Complex-split vector conjugate and multiply, single-precision.*/
+/*
+ *  vDSP_zvcmul()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_zvcmul(
+  DSPSplitComplex *  __vDSP_A,
+  vDSP_Stride        __vDSP_I,
+  DSPSplitComplex *  __vDSP_B,
+  vDSP_Stride        __vDSP_J,
+  DSPSplitComplex *  __vDSP_C,
+  vDSP_Stride        __vDSP_K,
+  vDSP_Length        __vDSP_N)                                AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Complex-split vector conjugate and multiply, double-precision.*/
 /*
  *  vDSP_zvcmulD()
  *  
@@ -5858,16 +3055,34 @@ vDSP_zvabsD(
  */
 extern void 
 vDSP_zvcmulD(
-  DSPDoubleSplitComplex *  A,
-  int                      I,
-  DSPDoubleSplitComplex *  B,
-  int                      J,
-  DSPDoubleSplitComplex *  C,
-  int                      K,
-  unsigned int             N)                                 AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  DSPDoubleSplitComplex *  __vDSP_A,
+  vDSP_Stride              __vDSP_I,
+  DSPDoubleSplitComplex *  __vDSP_B,
+  vDSP_Stride              __vDSP_J,
+  DSPDoubleSplitComplex *  __vDSP_C,
+  vDSP_Stride              __vDSP_K,
+  vDSP_Length              __vDSP_N)                          AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Complex Vector Conjugate */
+/* Complex-split vector conjugate, single-precision.*/
+/*
+ *  vDSP_zvconj()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_zvconj(
+  DSPSplitComplex *  __vDSP_A,
+  vDSP_Stride        __vDSP_I,
+  DSPSplitComplex *  __vDSP_C,
+  vDSP_Stride        __vDSP_K,
+  vDSP_Length        __vDSP_N)                                AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Complex-split vector conjugate, double-precision.*/
 /*
  *  vDSP_zvconjD()
  *  
@@ -5878,14 +3093,33 @@ vDSP_zvcmulD(
  */
 extern void 
 vDSP_zvconjD(
-  DSPDoubleSplitComplex *  A,
-  int                      I,
-  DSPDoubleSplitComplex *  C,
-  int                      K,
-  unsigned int             N)                                 AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  DSPDoubleSplitComplex *  __vDSP_A,
+  vDSP_Stride              __vDSP_I,
+  DSPDoubleSplitComplex *  __vDSP_C,
+  vDSP_Stride              __vDSP_K,
+  vDSP_Length              __vDSP_N)                          AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Complex Vector Scalar Multiply*/
+/* Complex-split vector multiply with scalar, single-precision.*/
+/*
+ *  vDSP_zvzsml()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_zvzsml(
+  DSPSplitComplex *  __vDSP_A,
+  vDSP_Stride        __vDSP_I,
+  DSPSplitComplex *  __vDSP_B,
+  DSPSplitComplex *  __vDSP_C,
+  vDSP_Stride        __vDSP_K,
+  vDSP_Length        __vDSP_N)                                AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Complex-split vector multiply with scalar, double-precision.*/
 /*
  *  vDSP_zvzsmlD()
  *  
@@ -5896,15 +3130,32 @@ vDSP_zvconjD(
  */
 extern void 
 vDSP_zvzsmlD(
-  DSPDoubleSplitComplex *  A,
-  int                      I,
-  DSPDoubleSplitComplex *  B,
-  DSPDoubleSplitComplex *  C,
-  int                      K,
-  unsigned int             N)                                 AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  DSPDoubleSplitComplex *  __vDSP_A,
+  vDSP_Stride              __vDSP_I,
+  DSPDoubleSplitComplex *  __vDSP_B,
+  DSPDoubleSplitComplex *  __vDSP_C,
+  vDSP_Stride              __vDSP_K,
+  vDSP_Length              __vDSP_N)                          AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Complex Vector Fill */
+/* Complex-split vector fill, single-precision.*/
+/*
+ *  vDSP_zvfill()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_zvfill(
+  DSPSplitComplex *  __vDSP_A,
+  DSPSplitComplex *  __vDSP_C,
+  vDSP_Stride        __vDSP_K,
+  vDSP_Length        __vDSP_N)                                AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Complex-split vector fill, double-precision.*/
 /*
  *  vDSP_zvfillD()
  *  
@@ -5915,13 +3166,31 @@ vDSP_zvzsmlD(
  */
 extern void 
 vDSP_zvfillD(
-  DSPDoubleSplitComplex *  A,
-  DSPDoubleSplitComplex *  C,
-  int                      K,
-  unsigned int             N)                                 AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  DSPDoubleSplitComplex *  __vDSP_A,
+  DSPDoubleSplitComplex *  __vDSP_C,
+  vDSP_Stride              __vDSP_K,
+  vDSP_Length              __vDSP_N)                          AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Complex Vector Magnitudes Squared*/
+/* Complex-split vector magnitudes squared, single-precision.*/
+/*
+ *  vDSP_zvmags()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_zvmags(
+  DSPSplitComplex *  __vDSP_A,
+  vDSP_Stride        __vDSP_I,
+  float *            __vDSP_C,
+  vDSP_Stride        __vDSP_K,
+  vDSP_Length        __vDSP_N)                                AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Complex-split vector magnitudes squared, double-precision.*/
 /*
  *  vDSP_zvmagsD()
  *  
@@ -5932,14 +3201,34 @@ vDSP_zvfillD(
  */
 extern void 
 vDSP_zvmagsD(
-  DSPDoubleSplitComplex *  A,
-  int                      I,
-  double *                 C,
-  int                      K,
-  unsigned int             N)                                 AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  DSPDoubleSplitComplex *  __vDSP_A,
+  vDSP_Stride              __vDSP_I,
+  double *                 __vDSP_C,
+  vDSP_Stride              __vDSP_K,
+  vDSP_Length              __vDSP_N)                          AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Complex Vector Magnitudes Square and Add*/
+/* Complex-split vector magnitudes square and add, single-precision.*/
+/*
+ *  vDSP_zvmgsa()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_zvmgsa(
+  DSPSplitComplex *  __vDSP_A,
+  vDSP_Stride        __vDSP_I,
+  float *            __vDSP_B,
+  vDSP_Stride        __vDSP_J,
+  float *            __vDSP_C,
+  vDSP_Stride        __vDSP_K,
+  vDSP_Length        __vDSP_N)                                AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Complex-split vector magnitudes square and add, double-precision.*/
 /*
  *  vDSP_zvmgsaD()
  *  
@@ -5950,16 +3239,34 @@ vDSP_zvmagsD(
  */
 extern void 
 vDSP_zvmgsaD(
-  DSPDoubleSplitComplex *  A,
-  int                      I,
-  double *                 B,
-  int                      J,
-  double *                 C,
-  int                      K,
-  unsigned int             N)                                 AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  DSPDoubleSplitComplex *  __vDSP_A,
+  vDSP_Stride              __vDSP_I,
+  double *                 __vDSP_B,
+  vDSP_Stride              __vDSP_J,
+  double *                 __vDSP_C,
+  vDSP_Stride              __vDSP_K,
+  vDSP_Length              __vDSP_N)                          AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Complex Vector Move*/
+/* Complex-split vector move, single-precision.*/
+/*
+ *  vDSP_zvmov()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_zvmov(
+  DSPSplitComplex *  __vDSP_A,
+  vDSP_Stride        __vDSP_I,
+  DSPSplitComplex *  __vDSP_C,
+  vDSP_Stride        __vDSP_K,
+  vDSP_Length        __vDSP_N)                                AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Complex-split vector move, double-precision.*/
 /*
  *  vDSP_zvmovD()
  *  
@@ -5970,14 +3277,32 @@ vDSP_zvmgsaD(
  */
 extern void 
 vDSP_zvmovD(
-  DSPDoubleSplitComplex *  A,
-  int                      I,
-  DSPDoubleSplitComplex *  C,
-  int                      K,
-  unsigned int             N)                                 AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  DSPDoubleSplitComplex *  __vDSP_A,
+  vDSP_Stride              __vDSP_I,
+  DSPDoubleSplitComplex *  __vDSP_C,
+  vDSP_Stride              __vDSP_K,
+  vDSP_Length              __vDSP_N)                          AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Complex Vector Negate*/
+/* Complex-split vector negate, single-precision.*/
+/*
+ *  vDSP_zvneg()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_zvneg(
+  DSPSplitComplex *  __vDSP_A,
+  vDSP_Stride        __vDSP_I,
+  DSPSplitComplex *  __vDSP_C,
+  vDSP_Stride        __vDSP_K,
+  vDSP_Length        __vDSP_N)                                AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Complex-split vector negate, double-precision.*/
 /*
  *  vDSP_zvnegD()
  *  
@@ -5988,14 +3313,32 @@ vDSP_zvmovD(
  */
 extern void 
 vDSP_zvnegD(
-  DSPDoubleSplitComplex *  A,
-  int                      I,
-  DSPDoubleSplitComplex *  C,
-  int                      K,
-  unsigned int             N)                                 AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  DSPDoubleSplitComplex *  __vDSP_A,
+  vDSP_Stride              __vDSP_I,
+  DSPDoubleSplitComplex *  __vDSP_C,
+  vDSP_Stride              __vDSP_K,
+  vDSP_Length              __vDSP_N)                          AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Complex Vector Phase*/
+/* Complex-split vector phase, single-precision.*/
+/*
+ *  vDSP_zvphas()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_zvphas(
+  DSPSplitComplex *  __vDSP_A,
+  vDSP_Stride        __vDSP_I,
+  float *            __vDSP_C,
+  vDSP_Stride        __vDSP_K,
+  vDSP_Length        __vDSP_N)                                AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Complex-split vector phase, double-precision.*/
 /*
  *  vDSP_zvphasD()
  *  
@@ -6006,14 +3349,35 @@ vDSP_zvnegD(
  */
 extern void 
 vDSP_zvphasD(
-  DSPDoubleSplitComplex *  A,
-  int                      I,
-  double *                 C,
-  int                      K,
-  unsigned int             N)                                 AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  DSPDoubleSplitComplex *  __vDSP_A,
+  vDSP_Stride              __vDSP_I,
+  double *                 __vDSP_C,
+  vDSP_Stride              __vDSP_K,
+  vDSP_Length              __vDSP_N)                          AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Complex Vector Scalar Multiply Add*/
+/* Complex-split vector multiply by scalar and add, single-precision.*/
+/*
+ *  vDSP_zvsma()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_zvsma(
+  DSPSplitComplex *  __vDSP_A,
+  vDSP_Stride        __vDSP_I,
+  DSPSplitComplex *  __vDSP_B,
+  DSPSplitComplex *  __vDSP_C,
+  vDSP_Stride        __vDSP_K,
+  DSPSplitComplex *  __vDSP_D,
+  vDSP_Stride        __vDSP_L,
+  vDSP_Length        __vDSP_N)                                AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Complex-split vector multiply by scalar and add, double-precision.*/
 /*
  *  vDSP_zvsmaD()
  *  
@@ -6024,17 +3388,36 @@ vDSP_zvphasD(
  */
 extern void 
 vDSP_zvsmaD(
-  DSPDoubleSplitComplex *  A,
-  int                      I,
-  DSPDoubleSplitComplex *  B,
-  DSPDoubleSplitComplex *  C,
-  int                      K,
-  DSPDoubleSplitComplex *  D,
-  int                      L,
-  unsigned int             N)                                 AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  DSPDoubleSplitComplex *  __vDSP_A,
+  vDSP_Stride              __vDSP_I,
+  DSPDoubleSplitComplex *  __vDSP_B,
+  DSPDoubleSplitComplex *  __vDSP_C,
+  vDSP_Stride              __vDSP_K,
+  DSPDoubleSplitComplex *  __vDSP_D,
+  vDSP_Stride              __vDSP_L,
+  vDSP_Length              __vDSP_N)                          AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Difference Equation, 2 Poles, 2 Zeros*/
+/* Difference equation, 2 poles, 2 zeros, single-precision.*/
+/*
+ *  vDSP_deq22()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_deq22(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_B,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Difference equation, 2 poles, 2 zeros, double-precision.*/
 /*
  *  vDSP_deq22D()
  *  
@@ -6045,15 +3428,34 @@ vDSP_zvsmaD(
  */
 extern void 
 vDSP_deq22D(
-  double *       A,
-  int            I,
-  double *       B,
-  double *       C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_B,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Convolution with Decimation*/
+/* Convolution with decimation (desampling), single-precision.*/
+/*
+ *  vDSP_desamp()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_desamp(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_B,
+  float *       __vDSP_C,
+  vDSP_Length   __vDSP_N,
+  vDSP_Length   __vDSP_M)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Convolution with decimation (desampling), double-precision.*/
 /*
  *  vDSP_desampD()
  *  
@@ -6064,15 +3466,31 @@ vDSP_deq22D(
  */
 extern void 
 vDSP_desampD(
-  double *       A,
-  int            I,
-  double *       B,
-  double *       C,
-  unsigned int   N,
-  unsigned int   M)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_B,
+  double *      __vDSP_C,
+  vDSP_Length   __vDSP_N,
+  vDSP_Length   __vDSP_M)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Create Hamming Window*/
+/* Create Hamming window, single-precision.*/
+/*
+ *  vDSP_hamm_window()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_hamm_window(
+  float *       __vDSP_C,
+  vDSP_Length   __vDSP_N,
+  int           __vDSP_FLAG)                                  AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Create Hamming window, double-precision.*/
 /*
  *  vDSP_hamm_windowD()
  *  
@@ -6083,12 +3501,28 @@ vDSP_desampD(
  */
 extern void 
 vDSP_hamm_windowD(
-  double *       C,
-  unsigned int   N,
-  int            FLAG)                                        AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_C,
+  vDSP_Length   __vDSP_N,
+  int           __vDSP_FLAG)                                  AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Create Hanning Window*/
+/* Create Hanning window, single-precision.*/
+/*
+ *  vDSP_hann_window()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_hann_window(
+  float *       __vDSP_C,
+  vDSP_Length   __vDSP_N,
+  int           __vDSP_FLAG)                                  AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Create Hanning window, double-precision.*/
 /*
  *  vDSP_hann_windowD()
  *  
@@ -6099,12 +3533,29 @@ vDSP_hamm_windowD(
  */
 extern void 
 vDSP_hann_windowD(
-  double *       C,
-  unsigned int   N,
-  int            FLAG)                                        AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_C,
+  vDSP_Length   __vDSP_N,
+  int           __vDSP_FLAG)                                  AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Maximum Magnitude*/
+/* Maximum magnitude of vector, single-precision.*/
+/*
+ *  vDSP_maxmgv()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_maxmgv(
+  const float *  __vDSP_A,
+  vDSP_Stride    __vDSP_I,
+  float *        __vDSP_C,
+  vDSP_Length    __vDSP_N)                                    AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Maximum magnitude of vector, double-precision.*/
 /*
  *  vDSP_maxmgvD()
  *  
@@ -6115,13 +3566,31 @@ vDSP_hann_windowD(
  */
 extern void 
 vDSP_maxmgvD(
-  double *       A,
-  int            I,
-  double *       C,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  const double *  __vDSP_A,
+  vDSP_Stride     __vDSP_I,
+  double *        __vDSP_C,
+  vDSP_Length     __vDSP_N)                                   AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Maximum Magnitude with Index*/
+/* Maximum magnitude of vector, with index, single-precision.*/
+/*
+ *  vDSP_maxmgvi()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_maxmgvi(
+  float *        __vDSP_A,
+  vDSP_Stride    __vDSP_I,
+  float *        __vDSP_C,
+  vDSP_Length *  __vDSP_IC,
+  vDSP_Length    __vDSP_N)                                    AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Maximum magnitude of vector, with index, double-precision.*/
 /*
  *  vDSP_maxmgviD()
  *  
@@ -6132,14 +3601,31 @@ vDSP_maxmgvD(
  */
 extern void 
 vDSP_maxmgviD(
-  double *       A,
-  int            I,
-  double *       C,
-  int *          IC,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *       __vDSP_A,
+  vDSP_Stride    __vDSP_I,
+  double *       __vDSP_C,
+  vDSP_Length *  __vDSP_IC,
+  vDSP_Length    __vDSP_N)                                    AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Maximum Value*/
+/* Maximum value of vector, single-precision.*/
+/*
+ *  vDSP_maxv()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_maxv(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_C,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Maximum value of vector, double-precision.*/
 /*
  *  vDSP_maxvD()
  *  
@@ -6150,13 +3636,31 @@ vDSP_maxmgviD(
  */
 extern void 
 vDSP_maxvD(
-  double *       A,
-  int            I,
-  double *       C,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_C,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Maximum Value with Index*/
+/* Maximum value of vector, with index, single-precision.*/
+/*
+ *  vDSP_maxvi()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_maxvi(
+  float *        __vDSP_A,
+  vDSP_Stride    __vDSP_I,
+  float *        __vDSP_C,
+  vDSP_Length *  __vDSP_IC,
+  vDSP_Length    __vDSP_N)                                    AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Maximum value of vector, with index, double-precision.*/
 /*
  *  vDSP_maxviD()
  *  
@@ -6167,14 +3671,31 @@ vDSP_maxvD(
  */
 extern void 
 vDSP_maxviD(
-  double *       A,
-  int            I,
-  double *       C,
-  int *          IC,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *       __vDSP_A,
+  vDSP_Stride    __vDSP_I,
+  double *       __vDSP_C,
+  vDSP_Length *  __vDSP_IC,
+  vDSP_Length    __vDSP_N)                                    AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Mean Magnitude*/
+/* Mean magnitude of vector, single-precision.*/
+/*
+ *  vDSP_meamgv()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_meamgv(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_C,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Mean magnitude of vector, double-precision.*/
 /*
  *  vDSP_meamgvD()
  *  
@@ -6185,13 +3706,30 @@ vDSP_maxviD(
  */
 extern void 
 vDSP_meamgvD(
-  double *       A,
-  int            I,
-  double *       C,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_C,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Mean Value*/
+/* Mean of vector, single-precision.*/
+/*
+ *  vDSP_meanv()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_meanv(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_C,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Mean of vector, double-precision.*/
 /*
  *  vDSP_meanvD()
  *  
@@ -6202,13 +3740,30 @@ vDSP_meamgvD(
  */
 extern void 
 vDSP_meanvD(
-  double *       A,
-  int            I,
-  double *       C,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_C,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Mean Square Value*/
+/* Mean square of vector, single-precision.*/
+/*
+ *  vDSP_measqv()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_measqv(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_C,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Mean square of vector, double-precision.*/
 /*
  *  vDSP_measqvD()
  *  
@@ -6219,13 +3774,30 @@ vDSP_meanvD(
  */
 extern void 
 vDSP_measqvD(
-  double *       A,
-  int            I,
-  double *       C,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_C,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Minimum Magnitude*/
+/* Minimum magnitude of vector, single-precision.*/
+/*
+ *  vDSP_minmgv()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_minmgv(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_C,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Minimum magnitude of vector, double-precision.*/
 /*
  *  vDSP_minmgvD()
  *  
@@ -6236,13 +3808,31 @@ vDSP_measqvD(
  */
 extern void 
 vDSP_minmgvD(
-  double *       A,
-  int            I,
-  double *       C,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_C,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Minimum Magnitude with Index*/
+/* Minimum magnitude of vector, with index, single-precision.*/
+/*
+ *  vDSP_minmgvi()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_minmgvi(
+  float *        __vDSP_A,
+  vDSP_Stride    __vDSP_I,
+  float *        __vDSP_C,
+  vDSP_Length *  __vDSP_IC,
+  vDSP_Length    __vDSP_N)                                    AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Minimum magnitude of vector, with index, double-precision.*/
 /*
  *  vDSP_minmgviD()
  *  
@@ -6253,14 +3843,31 @@ vDSP_minmgvD(
  */
 extern void 
 vDSP_minmgviD(
-  double *       A,
-  int            I,
-  double *       C,
-  int *          IC,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *       __vDSP_A,
+  vDSP_Stride    __vDSP_I,
+  double *       __vDSP_C,
+  vDSP_Length *  __vDSP_IC,
+  vDSP_Length    __vDSP_N)                                    AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Minimum Value*/
+/* Minimum value of vector, single-precision.*/
+/*
+ *  vDSP_minv()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_minv(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_C,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Minimum value of vector, double-precision.*/
 /*
  *  vDSP_minvD()
  *  
@@ -6271,13 +3878,31 @@ vDSP_minmgviD(
  */
 extern void 
 vDSP_minvD(
-  double *       A,
-  int            I,
-  double *       C,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_C,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Minimum Value with Index*/
+/* Minimum value of vector, with index, single-precision.*/
+/*
+ *  vDSP_minvi()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_minvi(
+  float *        __vDSP_A,
+  vDSP_Stride    __vDSP_I,
+  float *        __vDSP_C,
+  vDSP_Length *  __vDSP_IC,
+  vDSP_Length    __vDSP_N)                                    AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Minimum value of vector, with index, double-precision.*/
 /*
  *  vDSP_minviD()
  *  
@@ -6288,14 +3913,33 @@ vDSP_minvD(
  */
 extern void 
 vDSP_minviD(
-  double *       A,
-  int            I,
-  double *       C,
-  int *          IC,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *       __vDSP_A,
+  vDSP_Stride    __vDSP_I,
+  double *       __vDSP_C,
+  vDSP_Length *  __vDSP_IC,
+  vDSP_Length    __vDSP_N)                                    AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Out-Of-Place Real Matrix Move*/
+/* Matrix move, single-precision.*/
+/*
+ *  vDSP_mmov()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_mmov(
+  float *       __vDSP_A,
+  float *       __vDSP_C,
+  vDSP_Length   __vDSP_NC,
+  vDSP_Length   __vDSP_NR,
+  vDSP_Length   __vDSP_TCA,
+  vDSP_Length   __vDSP_TCC)                                   AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Matrix move, double-precision.*/
 /*
  *  vDSP_mmovD()
  *  
@@ -6306,15 +3950,32 @@ vDSP_minviD(
  */
 extern void 
 vDSP_mmovD(
-  double *       A,
-  double *       C,
-  unsigned int   NC,
-  unsigned int   NR,
-  unsigned int   TCA,
-  unsigned int   TCC)                                         AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  double *      __vDSP_C,
+  vDSP_Length   __vDSP_NC,
+  vDSP_Length   __vDSP_NR,
+  vDSP_Length   __vDSP_TCA,
+  vDSP_Length   __vDSP_TCC)                                   AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Mean of Signed Squares*/
+/* Mean of signed squares of vector, single-precision.*/
+/*
+ *  vDSP_mvessq()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_mvessq(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_C,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Mean of signed squares of vector, double-precision.*/
 /*
  *  vDSP_mvessqD()
  *  
@@ -6325,13 +3986,32 @@ vDSP_mmovD(
  */
 extern void 
 vDSP_mvessqD(
-  double *       A,
-  int            I,
-  double *       C,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_C,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Find Zero Crossing*/
+/* Find zero crossing, single-precision.*/
+/*
+ *  vDSP_nzcros()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_nzcros(
+  float *        __vDSP_A,
+  vDSP_Stride    __vDSP_I,
+  vDSP_Length    __vDSP_B,
+  vDSP_Length *  __vDSP_C,
+  vDSP_Length *  __vDSP_D,
+  vDSP_Length    __vDSP_N)                                    AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Find zero crossing, double-precision.*/
 /*
  *  vDSP_nzcrosD()
  *  
@@ -6342,15 +4022,33 @@ vDSP_mvessqD(
  */
 extern void 
 vDSP_nzcrosD(
-  double *        A,
-  int             I,
-  unsigned int    B,
-  int *           C,
-  unsigned int *  D,
-  unsigned int    N)                                          AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *       __vDSP_A,
+  vDSP_Stride    __vDSP_I,
+  vDSP_Length    __vDSP_B,
+  vDSP_Length *  __vDSP_C,
+  vDSP_Length *  __vDSP_D,
+  vDSP_Length    __vDSP_N)                                    AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Retangular to Polar*/
+/* Convert rectangular to polar, single-precision.*/
+/*
+ *  vDSP_polar()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_polar(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Convert rectangular to polar, double-precision.*/
 /*
  *  vDSP_polarD()
  *  
@@ -6361,14 +4059,32 @@ vDSP_nzcrosD(
  */
 extern void 
 vDSP_polarD(
-  double *       A,
-  int            I,
-  double *       C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Polar to Rectangular*/
+/* Convert polar to rectangular, single-precision.*/
+/*
+ *  vDSP_rect()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_rect(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Convert polar to rectangular, double-precision.*/
 /*
  *  vDSP_rectD()
  *  
@@ -6379,14 +4095,31 @@ vDSP_polarD(
  */
 extern void 
 vDSP_rectD(
-  double *       A,
-  int            I,
-  double *       C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Root-Mean-Square*/
+/* Root-mean-square of vector, single-precision.*/
+/*
+ *  vDSP_rmsqv()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_rmsqv(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_C,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Root-mean-square of vector, double-precision.*/
 /*
  *  vDSP_rmsqvD()
  *  
@@ -6397,13 +4130,32 @@ vDSP_rectD(
  */
 extern void 
 vDSP_rmsqvD(
-  double *       A,
-  int            I,
-  double *       C,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_C,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Scalar Vector Divide*/
+/* Scalar-vector divide, single-precision.*/
+/*
+ *  vDSP_svdiv()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_svdiv(
+  float *       __vDSP_A,
+  float *       __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Scalar-vector divide, double-precision.*/
 /*
  *  vDSP_svdivD()
  *  
@@ -6414,15 +4166,32 @@ vDSP_rmsqvD(
  */
 extern void 
 vDSP_svdivD(
-  double *       A,
-  double *       B,
-  int            J,
-  double *       C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  double *      __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Sum*/
+/* Sum of vector elements, single-precision.*/
+/*
+ *  vDSP_sve()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_sve(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_C,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Sum of vector elements, double-precision.*/
 /*
  *  vDSP_sveD()
  *  
@@ -6433,13 +4202,30 @@ vDSP_svdivD(
  */
 extern void 
 vDSP_sveD(
-  double *       A,
-  int            I,
-  double *       C,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_C,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Sum of Magnitude*/
+/* Sum of vector elements magnitudes, single-precision.*/
+/*
+ *  vDSP_svemg()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_svemg(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_C,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Sum of vector elements' magnitudes, double-precision.*/
 /*
  *  vDSP_svemgD()
  *  
@@ -6450,13 +4236,30 @@ vDSP_sveD(
  */
 extern void 
 vDSP_svemgD(
-  double *       A,
-  int            I,
-  double *       C,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_C,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Sum of Square*/
+/* Sum of vector elements' squares, single-precision.*/
+/*
+ *  vDSP_svesq()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_svesq(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_C,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Sum of vector elements' squares, double-precision.*/
 /*
  *  vDSP_svesqD()
  *  
@@ -6467,13 +4270,30 @@ vDSP_svemgD(
  */
 extern void 
 vDSP_svesqD(
-  double *       A,
-  int            I,
-  double *       C,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_C,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Sum of Signed Square*/
+/* Sum of vector elements' signed squares, single-precision.*/
+/*
+ *  vDSP_svs()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_svs(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_C,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Sum of vector elements' signed squares, double-precision.*/
 /*
  *  vDSP_svsD()
  *  
@@ -6484,15 +4304,15 @@ vDSP_svesqD(
  */
 extern void 
 vDSP_svsD(
-  double *       A,
-  int            I,
-  double *       C,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_C,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Transfer Function*/
+/* Vector add, add, and multiply, single-precision.*/
 /*
- *  vDSP_ztransD()
+ *  vDSP_vaam()
  *  
  *  Availability:
  *    Mac OS X:         in version 10.4 and later in vecLib.framework
@@ -6500,14 +4320,21 @@ vDSP_svsD(
  *    Non-Carbon CFM:   not available
  */
 extern void 
-vDSP_ztransD(
-  double *                 A,
-  DSPDoubleSplitComplex *  B,
-  DSPDoubleSplitComplex *  C,
-  unsigned int             N)                                 AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+vDSP_vaam(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  float *       __vDSP_D,
+  vDSP_Stride   __vDSP_L,
+  float *       __vDSP_E,
+  vDSP_Stride   __vDSP_M,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Add, Add, and Multiply*/
+/* Vector add, add, and multiply, double-precision.*/
 /*
  *  vDSP_vaamD()
  *  
@@ -6518,20 +4345,38 @@ vDSP_ztransD(
  */
 extern void 
 vDSP_vaamD(
-  double *       A,
-  int            I,
-  double *       B,
-  int            J,
-  double *       C,
-  int            K,
-  double *       D,
-  int            L,
-  double *       E,
-  int            M,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  double *      __vDSP_D,
+  vDSP_Stride   __vDSP_L,
+  double *      __vDSP_E,
+  vDSP_Stride   __vDSP_M,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Absolute Value*/
+/* Vector absolute value, single-precision.*/
+/*
+ *  vDSP_vabs()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vabs(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector absolute value, double-precision.*/
 /*
  *  vDSP_vabsD()
  *  
@@ -6542,14 +4387,38 @@ vDSP_vaamD(
  */
 extern void 
 vDSP_vabsD(
-  double *       A,
-  int            I,
-  double *       C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Add, Subtract, and Multiply*/
+/* Vector add, subtract, and multiply, single-precision.*/
+/*
+ *  vDSP_vasbm()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vasbm(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  float *       __vDSP_D,
+  vDSP_Stride   __vDSP_L,
+  float *       __vDSP_E,
+  vDSP_Stride   __vDSP_M,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector add, subtract, and multiply, double-precision.*/
 /*
  *  vDSP_vasbmD()
  *  
@@ -6560,20 +4429,41 @@ vDSP_vabsD(
  */
 extern void 
 vDSP_vasbmD(
-  double *       A,
-  int            I,
-  double *       B,
-  int            J,
-  double *       C,
-  int            K,
-  double *       D,
-  int            L,
-  double *       E,
-  int            M,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  double *      __vDSP_D,
+  vDSP_Stride   __vDSP_L,
+  double *      __vDSP_E,
+  vDSP_Stride   __vDSP_M,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Add and Scalar Multiply*/
+/* Vector add and scalar multiply, single-precision.*/
+/*
+ *  vDSP_vasm()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vasm(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  float *       __vDSP_C,
+  float *       __vDSP_D,
+  vDSP_Stride   __vDSP_L,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector add and scalar multiply, double-precision.*/
 /*
  *  vDSP_vasmD()
  *  
@@ -6584,17 +4474,36 @@ vDSP_vasbmD(
  */
 extern void 
 vDSP_vasmD(
-  double *       A,
-  int            I,
-  double *       B,
-  int            J,
-  double *       C,
-  double *       D,
-  int            L,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  double *      __vDSP_C,
+  double *      __vDSP_D,
+  vDSP_Stride   __vDSP_L,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Linear Average*/
+/* Vector linear average, single-precision.*/
+/*
+ *  vDSP_vavlin()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vavlin(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_B,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector linear average, double-precision.*/
 /*
  *  vDSP_vavlinD()
  *  
@@ -6605,17 +4514,17 @@ vDSP_vasmD(
  */
 extern void 
 vDSP_vavlinD(
-  double *       A,
-  int            I,
-  double *       B,
-  double *       C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_B,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Clip and Count*/
+/* Vector clip, single-precision.*/
 /*
- *  vDSP_vclipcD()
+ *  vDSP_vclip()
  *  
  *  Availability:
  *    Mac OS X:         in version 10.4 and later in vecLib.framework
@@ -6623,19 +4532,17 @@ vDSP_vavlinD(
  *    Non-Carbon CFM:   not available
  */
 extern void 
-vDSP_vclipcD(
-  double *        A,
-  int             I,
-  double *        B,
-  double *        C,
-  double *        D,
-  int             L,
-  unsigned int    N,
-  unsigned int *  NLOW,
-  unsigned int *  NHI)                                        AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+vDSP_vclip(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_B,
+  float *       __vDSP_C,
+  float *       __vDSP_D,
+  vDSP_Stride   __vDSP_L,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Clip*/
+/* Vector clip, double-precision.*/
 /*
  *  vDSP_vclipD()
  *  
@@ -6646,16 +4553,76 @@ vDSP_vclipcD(
  */
 extern void 
 vDSP_vclipD(
-  double *       A,
-  int            I,
-  double *       B,
-  double *       C,
-  double *       D,
-  int            L,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_B,
+  double *      __vDSP_C,
+  double *      __vDSP_D,
+  vDSP_Stride   __vDSP_L,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Clear*/
+/* Vector clip and count, single-precision.*/
+/*
+ *  vDSP_vclipc()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vclipc(
+  float *        __vDSP_A,
+  vDSP_Stride    __vDSP_I,
+  float *        __vDSP_B,
+  float *        __vDSP_C,
+  float *        __vDSP_D,
+  vDSP_Stride    __vDSP_L,
+  vDSP_Length    __vDSP_N,
+  vDSP_Length *  __vDSP_NLOW,
+  vDSP_Length *  __vDSP_NHI)                                  AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector clip and count, double-precision.*/
+/*
+ *  vDSP_vclipcD()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vclipcD(
+  double *       __vDSP_A,
+  vDSP_Stride    __vDSP_I,
+  double *       __vDSP_B,
+  double *       __vDSP_C,
+  double *       __vDSP_D,
+  vDSP_Stride    __vDSP_L,
+  vDSP_Length    __vDSP_N,
+  vDSP_Length *  __vDSP_NLOW,
+  vDSP_Length *  __vDSP_NHI)                                  AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector clear, single-precision.*/
+/*
+ *  vDSP_vclr()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vclr(
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector clear, double-precision.*/
 /*
  *  vDSP_vclrD()
  *  
@@ -6666,12 +4633,32 @@ vDSP_vclipD(
  */
 extern void 
 vDSP_vclrD(
-  double *       C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Compress*/
+/* Vector compress, single-precision.*/
+/*
+ *  vDSP_vcmprs()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vcmprs(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector compress, double-precision.*/
 /*
  *  vDSP_vcmprsD()
  *  
@@ -6682,16 +4669,36 @@ vDSP_vclrD(
  */
 extern void 
 vDSP_vcmprsD(
-  double *       A,
-  int            I,
-  double *       B,
-  int            J,
-  double *       C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Convert to Decibels, Power, or Amplitude*/
+/* Vector convert to decibels, power, or amplitude, single-precision.*/
+/*
+ *  vDSP_vdbcon()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vdbcon(
+  float *        __vDSP_A,
+  vDSP_Stride    __vDSP_I,
+  float *        __vDSP_B,
+  float *        __vDSP_C,
+  vDSP_Stride    __vDSP_K,
+  vDSP_Length    __vDSP_N,
+  unsigned int   __vDSP_F)                                    AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector convert to decibels, power, or amplitude, double-precision.*/
 /*
  *  vDSP_vdbconD()
  *  
@@ -6702,16 +4709,36 @@ vDSP_vcmprsD(
  */
 extern void 
 vDSP_vdbconD(
-  double *       A,
-  int            I,
-  double *       B,
-  double *       C,
-  int            K,
-  unsigned int   N,
-  unsigned int   F)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *       __vDSP_A,
+  vDSP_Stride    __vDSP_I,
+  double *       __vDSP_B,
+  double *       __vDSP_C,
+  vDSP_Stride    __vDSP_K,
+  vDSP_Length    __vDSP_N,
+  unsigned int   __vDSP_F)                                    AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Distance*/
+/* Vector distance, single-precision.*/
+/*
+ *  vDSP_vdist()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vdist(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector distance, double-precision.*/
 /*
  *  vDSP_vdistD()
  *  
@@ -6722,16 +4749,36 @@ vDSP_vdbconD(
  */
 extern void 
 vDSP_vdistD(
-  double *       A,
-  int            I,
-  double *       B,
-  int            J,
-  double *       C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Divide*/
+/* Vector divide, single-precision.*/
+/*
+ *  vDSP_vdiv()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vdiv(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector divide, double-precision.*/
 /*
  *  vDSP_vdivD()
  *  
@@ -6742,16 +4789,38 @@ vDSP_vdistD(
  */
 extern void 
 vDSP_vdivD(
-  double *       A,
-  int            I,
-  double *       B,
-  int            J,
-  double *       C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Envelope*/
+/* Vector envelope, single-precision.*/
+/*
+ *  vDSP_venvlp()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_venvlp(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  float *       __vDSP_D,
+  vDSP_Stride   __vDSP_L,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector envelope, double-precision.*/
 /*
  *  vDSP_venvlpD()
  *  
@@ -6762,18 +4831,35 @@ vDSP_vdivD(
  */
 extern void 
 vDSP_venvlpD(
-  double *       A,
-  int            I,
-  double *       B,
-  int            J,
-  double *       C,
-  int            K,
-  double *       D,
-  int            L,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  double *      __vDSP_D,
+  vDSP_Stride   __vDSP_L,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Fill*/
+/* Vector fill, single-precision.*/
+/*
+ *  vDSP_vfill()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vfill(
+  float *       __vDSP_A,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector fill, double-precision.*/
 /*
  *  vDSP_vfillD()
  *  
@@ -6784,13 +4870,31 @@ vDSP_venvlpD(
  */
 extern void 
 vDSP_vfillD(
-  double *       A,
-  double *       C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Double Precision to 8-bit Integer Convert with Round towards Zero*/
+/* Vector convert to 8-bit integer, round toward zero, single-precision.*/
+/*
+ *  vDSP_vfix8()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vfix8(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  char *        __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector convert to 8-bit integer, round toward zero, double-precision.*/
 /*
  *  vDSP_vfix8D()
  *  
@@ -6801,14 +4905,32 @@ vDSP_vfillD(
  */
 extern void 
 vDSP_vfix8D(
-  double *       A,
-  int            I,
-  char *         C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  char *        __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Double Precision to 16-bit Integer Convert with Round towards Zero*/
+/* Vector convert to 16-bit integer, round toward zero, single-precision.*/
+/*
+ *  vDSP_vfix16()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vfix16(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  short *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector convert to 16-bit integer, round toward zero, double-precision.*/
 /*
  *  vDSP_vfix16D()
  *  
@@ -6819,14 +4941,32 @@ vDSP_vfix8D(
  */
 extern void 
 vDSP_vfix16D(
-  double *       A,
-  int            I,
-  short *        C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  short *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Double Precision to 32-bit Integer Convert with Round towards Zero*/
+/* Vector convert to 32-bit integer, round toward zero, single-precision.*/
+/*
+ *  vDSP_vfix32()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vfix32(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  int *         __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector convert to 32-bit integer, round toward zero, double-precision.*/
 /*
  *  vDSP_vfix32D()
  *  
@@ -6837,14 +4977,32 @@ vDSP_vfix16D(
  */
 extern void 
 vDSP_vfix32D(
-  double *       A,
-  int            I,
-  int *          C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  int *         __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Double Precision to 8-bit Integer Convert with Round to Nearest*/
+/* Vector convert to 8-bit integer, round to nearest, single-precision.*/
+/*
+ *  vDSP_vfixr8()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vfixr8(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  char *        __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector convert to 8-bit integer, round to nearest, double-precision.*/
 /*
  *  vDSP_vfixr8D()
  *  
@@ -6855,14 +5013,32 @@ vDSP_vfix32D(
  */
 extern void 
 vDSP_vfixr8D(
-  double *       A,
-  int            I,
-  char *         C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  char *        __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Double Precision to 16-bit Integer Convert with Round to Nearest*/
+/* Vector convert to 16-bit integer, round to nearest, single-precision.*/
+/*
+ *  vDSP_vfixr16()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vfixr16(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  short *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector convert to 16-bit integer, round to nearest, double-precision.*/
 /*
  *  vDSP_vfixr16D()
  *  
@@ -6873,14 +5049,32 @@ vDSP_vfixr8D(
  */
 extern void 
 vDSP_vfixr16D(
-  double *       A,
-  int            I,
-  short *        C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  short *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Double Precision to 32-bit Integer Convert with Round to Nearest*/
+/* Vector convert to 32-bit integer, round to nearest, single-precision.*/
+/*
+ *  vDSP_vfixr32()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vfixr32(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  int *         __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector convert to 32-bit integer, round to nearest, double-precision.*/
 /*
  *  vDSP_vfixr32D()
  *  
@@ -6891,14 +5085,32 @@ vDSP_vfixr16D(
  */
 extern void 
 vDSP_vfixr32D(
-  double *       A,
-  int            I,
-  int *          C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  int *         __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Double Precision to 8-bit Integer Convert with Round towards Zero*/
+/* Vector convert to unsigned 8-bit integer, toward zero, single-precision.*/
+/*
+ *  vDSP_vfixu8()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vfixu8(
+  float *          __vDSP_A,
+  vDSP_Stride      __vDSP_I,
+  unsigned char *  __vDSP_C,
+  vDSP_Stride      __vDSP_K,
+  vDSP_Length      __vDSP_N)                                  AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector convert to unsigned 8-bit integer, toward zero, double-precision.*/
 /*
  *  vDSP_vfixu8D()
  *  
@@ -6909,14 +5121,32 @@ vDSP_vfixr32D(
  */
 extern void 
 vDSP_vfixu8D(
-  double *         A,
-  int              I,
-  unsigned char *  C,
-  int              K,
-  unsigned int     N)                                         AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *         __vDSP_A,
+  vDSP_Stride      __vDSP_I,
+  unsigned char *  __vDSP_C,
+  vDSP_Stride      __vDSP_K,
+  vDSP_Length      __vDSP_N)                                  AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Double Precision to 16-bit Integer Convert with Round towards Zero*/
+/* Vector convert to unsigned 16-bit integer, toward zero, single-precision.*/
+/*
+ *  vDSP_vfixu16()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vfixu16(
+  float *           __vDSP_A,
+  vDSP_Stride       __vDSP_I,
+  unsigned short *  __vDSP_C,
+  vDSP_Stride       __vDSP_K,
+  vDSP_Length       __vDSP_N)                                 AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector convert to unsigned 16-bit integer, toward zero, double-precision.*/
 /*
  *  vDSP_vfixu16D()
  *  
@@ -6927,14 +5157,32 @@ vDSP_vfixu8D(
  */
 extern void 
 vDSP_vfixu16D(
-  double *          A,
-  int               I,
-  unsigned short *  C,
-  int               K,
-  unsigned int      N)                                        AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *          __vDSP_A,
+  vDSP_Stride       __vDSP_I,
+  unsigned short *  __vDSP_C,
+  vDSP_Stride       __vDSP_K,
+  vDSP_Length       __vDSP_N)                                 AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Double Precision to 32-bit Integer Convert with Round towards Zero*/
+/* Vector convert to unsigned 32-bit integer, toward zero, single-precision.*/
+/*
+ *  vDSP_vfixu32()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vfixu32(
+  float *         __vDSP_A,
+  vDSP_Stride     __vDSP_I,
+  unsigned int *  __vDSP_C,
+  vDSP_Stride     __vDSP_K,
+  vDSP_Length     __vDSP_N)                                   AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector convert to unsigned 32-bit integer, toward zero, double-precision.*/
 /*
  *  vDSP_vfixu32D()
  *  
@@ -6945,14 +5193,32 @@ vDSP_vfixu16D(
  */
 extern void 
 vDSP_vfixu32D(
-  double *        A,
-  int             I,
-  unsigned int *  C,
-  int             K,
-  unsigned int    N)                                          AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *        __vDSP_A,
+  vDSP_Stride     __vDSP_I,
+  unsigned int *  __vDSP_C,
+  vDSP_Stride     __vDSP_K,
+  vDSP_Length     __vDSP_N)                                   AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Double Precision to 8-bit Integer Convert with Round to Nearest*/
+/* Vector convert to unsigned 8-bit integer, to nearest, single-precision.*/
+/*
+ *  vDSP_vfixru8()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vfixru8(
+  float *          __vDSP_A,
+  vDSP_Stride      __vDSP_I,
+  unsigned char *  __vDSP_C,
+  vDSP_Stride      __vDSP_K,
+  vDSP_Length      __vDSP_N)                                  AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector convert to unsigned 8-bit integer, to nearest, double-precision.*/
 /*
  *  vDSP_vfixru8D()
  *  
@@ -6963,14 +5229,32 @@ vDSP_vfixu32D(
  */
 extern void 
 vDSP_vfixru8D(
-  double *         A,
-  int              I,
-  unsigned char *  C,
-  int              K,
-  unsigned int     N)                                         AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *         __vDSP_A,
+  vDSP_Stride      __vDSP_I,
+  unsigned char *  __vDSP_C,
+  vDSP_Stride      __vDSP_K,
+  vDSP_Length      __vDSP_N)                                  AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Double Precision to 16-bit Integer Convert with Round to Nearest*/
+/* Vector convert to unsigned 16-bit integer, to nearest, single-precision.*/
+/*
+ *  vDSP_vfixru16()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vfixru16(
+  float *           __vDSP_A,
+  vDSP_Stride       __vDSP_I,
+  unsigned short *  __vDSP_C,
+  vDSP_Stride       __vDSP_K,
+  vDSP_Length       __vDSP_N)                                 AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector convert to unsigned 16-bit integer, to nearest, double-precision.*/
 /*
  *  vDSP_vfixru16D()
  *  
@@ -6981,14 +5265,32 @@ vDSP_vfixru8D(
  */
 extern void 
 vDSP_vfixru16D(
-  double *          A,
-  int               I,
-  unsigned short *  C,
-  int               K,
-  unsigned int      N)                                        AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *          __vDSP_A,
+  vDSP_Stride       __vDSP_I,
+  unsigned short *  __vDSP_C,
+  vDSP_Stride       __vDSP_K,
+  vDSP_Length       __vDSP_N)                                 AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Double Precision to 32-bit Integer Convert with Round to Nearest*/
+/* Vector convert to unsigned 32-bit integer, to nearest, single-precision.*/
+/*
+ *  vDSP_vfixru32()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vfixru32(
+  float *         __vDSP_A,
+  vDSP_Stride     __vDSP_I,
+  unsigned int *  __vDSP_C,
+  vDSP_Stride     __vDSP_K,
+  vDSP_Length     __vDSP_N)                                   AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector convert to unsigned 32-bit integer, to nearest, double-precision.*/
 /*
  *  vDSP_vfixru32D()
  *  
@@ -6999,14 +5301,32 @@ vDSP_vfixru16D(
  */
 extern void 
 vDSP_vfixru32D(
-  double *        A,
-  int             I,
-  unsigned int *  C,
-  int             K,
-  unsigned int    N)                                          AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *        __vDSP_A,
+  vDSP_Stride     __vDSP_I,
+  unsigned int *  __vDSP_C,
+  vDSP_Stride     __vDSP_K,
+  vDSP_Length     __vDSP_N)                                   AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector 8-bit Integer to Double Precision Convert*/
+/* Vector convert from 8-bit integer, single-precision.*/
+/*
+ *  vDSP_vflt8()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vflt8(
+  char *        A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector convert from 8-bit integer, double-precision.*/
 /*
  *  vDSP_vflt8D()
  *  
@@ -7017,14 +5337,32 @@ vDSP_vfixru32D(
  */
 extern void 
 vDSP_vflt8D(
-  char *         A,
-  int            I,
-  double *       C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  char *        A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector 16-bit Integer to Double Precision Convert*/
+/* Vector convert from 16-bit integer, single-precision.*/
+/*
+ *  vDSP_vflt16()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vflt16(
+  short *       A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector convert from 16-bit integer, double-precision.*/
 /*
  *  vDSP_vflt16D()
  *  
@@ -7035,14 +5373,32 @@ vDSP_vflt8D(
  */
 extern void 
 vDSP_vflt16D(
-  short *        A,
-  int            I,
-  double *       C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  short *       A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector 32-bit Integer to Double Precision Convert*/
+/* Vector convert from 32-bit integer, single-precision.*/
+/*
+ *  vDSP_vflt32()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vflt32(
+  int *         __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector convert from 32-bit integer, double-precision.*/
 /*
  *  vDSP_vflt32D()
  *  
@@ -7053,14 +5409,32 @@ vDSP_vflt16D(
  */
 extern void 
 vDSP_vflt32D(
-  int *          A,
-  int            I,
-  double *       C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  int *         __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector 8-bit Unsigned Integer to Double Precision Convert*/
+/* Vector convert from 8-bit integer, single-precision.*/
+/*
+ *  vDSP_vfltu8()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vfltu8(
+  unsigned char *  A,
+  vDSP_Stride      __vDSP_I,
+  float *          __vDSP_C,
+  vDSP_Stride      __vDSP_K,
+  vDSP_Length      __vDSP_N)                                  AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector convert from 8-bit integer, double-precision.*/
 /*
  *  vDSP_vfltu8D()
  *  
@@ -7072,13 +5446,31 @@ vDSP_vflt32D(
 extern void 
 vDSP_vfltu8D(
   unsigned char *  A,
-  int              I,
-  double *         C,
-  int              K,
-  unsigned int     N)                                         AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  vDSP_Stride      __vDSP_I,
+  double *         __vDSP_C,
+  vDSP_Stride      __vDSP_K,
+  vDSP_Length      __vDSP_N)                                  AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector 16-bit Unsigned Integer to Double Precision Convert*/
+/* Vector convert from 16-bit integer, single-precision.*/
+/*
+ *  vDSP_vfltu16()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vfltu16(
+  unsigned short *  A,
+  vDSP_Stride       __vDSP_I,
+  float *           __vDSP_C,
+  vDSP_Stride       __vDSP_K,
+  vDSP_Length       __vDSP_N)                                 AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector convert from 16-bit integer, double-precision.*/
 /*
  *  vDSP_vfltu16D()
  *  
@@ -7090,13 +5482,31 @@ vDSP_vfltu8D(
 extern void 
 vDSP_vfltu16D(
   unsigned short *  A,
-  int               I,
-  double *          C,
-  int               K,
-  unsigned int      N)                                        AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  vDSP_Stride       __vDSP_I,
+  double *          __vDSP_C,
+  vDSP_Stride       __vDSP_K,
+  vDSP_Length       __vDSP_N)                                 AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector 32-bit Unisgned Integer to Double Precision Convert*/
+/* Vector convert from 32-bit integer, single-precision.*/
+/*
+ *  vDSP_vfltu32()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vfltu32(
+  unsigned int *  __vDSP_A,
+  vDSP_Stride     __vDSP_I,
+  float *         __vDSP_C,
+  vDSP_Stride     __vDSP_K,
+  vDSP_Length     __vDSP_N)                                   AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector convert from 32-bit integer, double-precision.*/
 /*
  *  vDSP_vfltu32D()
  *  
@@ -7107,14 +5517,32 @@ vDSP_vfltu16D(
  */
 extern void 
 vDSP_vfltu32D(
-  unsigned int *  A,
-  int             I,
-  double *        C,
-  int             K,
-  unsigned int    N)                                          AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  unsigned int *  __vDSP_A,
+  vDSP_Stride     __vDSP_I,
+  double *        __vDSP_C,
+  vDSP_Stride     __vDSP_K,
+  vDSP_Length     __vDSP_N)                                   AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Truncate to Fraction*/
+/* Vector fraction part (subtract integer toward zero), single-precision.*/
+/*
+ *  vDSP_vfrac()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vfrac(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector fraction part (subtract integer toward zero), double-precision.*/
 /*
  *  vDSP_vfracD()
  *  
@@ -7125,14 +5553,33 @@ vDSP_vfltu32D(
  */
 extern void 
 vDSP_vfracD(
-  double *       A,
-  int            I,
-  double *       C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Gather*/
+/* Vector gather, single-precision.*/
+/*
+ *  vDSP_vgathr()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vgathr(
+  float *        __vDSP_A,
+  vDSP_Length *  __vDSP_B,
+  vDSP_Stride    __vDSP_J,
+  float *        __vDSP_C,
+  vDSP_Stride    __vDSP_K,
+  vDSP_Length    __vDSP_N)                                    AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector gather, double-precision.*/
 /*
  *  vDSP_vgathrD()
  *  
@@ -7143,15 +5590,33 @@ vDSP_vfracD(
  */
 extern void 
 vDSP_vgathrD(
-  double *       A,
-  int *          B,
-  int            J,
-  double *       C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *       __vDSP_A,
+  vDSP_Length *  __vDSP_B,
+  vDSP_Stride    __vDSP_J,
+  double *       __vDSP_C,
+  vDSP_Stride    __vDSP_K,
+  vDSP_Length    __vDSP_N)                                    AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Gather, Absolute Pointers*/
+/* Vector gather, absolute pointers, single-precision.*/
+/*
+ *  vDSP_vgathra()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vgathra(
+  float **      A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector gather, absolute pointers, double-precision.*/
 /*
  *  vDSP_vgathraD()
  *  
@@ -7162,14 +5627,32 @@ vDSP_vgathrD(
  */
 extern void 
 vDSP_vgathraD(
-  double **      A,
-  int            I,
-  double *       C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double **     A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Tapered Ramp*/
+/* Vector generate tapered ramp, single-precision.*/
+/*
+ *  vDSP_vgen()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vgen(
+  float *       __vDSP_A,
+  float *       __vDSP_B,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector generate tapered ramp, double-precision.*/
 /*
  *  vDSP_vgenD()
  *  
@@ -7180,14 +5663,35 @@ vDSP_vgathraD(
  */
 extern void 
 vDSP_vgenD(
-  double *       A,
-  double *       B,
-  double *       C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  double *      __vDSP_B,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Generate by Extrapolation and Interpolation*/
+/* Vector generate by extrapolation and interpolation, single-precision.*/
+/*
+ *  vDSP_vgenp()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vgenp(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N,
+  vDSP_Length   __vDSP_M)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector generate by extrapolation and interpolation, double-precision.*/
 /*
  *  vDSP_vgenpD()
  *  
@@ -7198,17 +5702,37 @@ vDSP_vgenD(
  */
 extern void 
 vDSP_vgenpD(
-  double *       A,
-  int            I,
-  double *       B,
-  int            J,
-  double *       C,
-  int            K,
-  unsigned int   N,
-  unsigned int   M)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N,
+  vDSP_Length   __vDSP_M)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Inverted Clip*/
+/* Vector inverted clip, single-precision.*/
+/*
+ *  vDSP_viclip()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_viclip(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_B,
+  float *       __vDSP_C,
+  float *       __vDSP_D,
+  vDSP_Stride   __vDSP_L,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector inverted clip, double-precision.*/
 /*
  *  vDSP_viclipD()
  *  
@@ -7219,16 +5743,35 @@ vDSP_vgenpD(
  */
 extern void 
 vDSP_viclipD(
-  double *       A,
-  int            I,
-  double *       B,
-  double *       C,
-  double *       D,
-  int            L,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_B,
+  double *      __vDSP_C,
+  double *      __vDSP_D,
+  vDSP_Stride   __vDSP_L,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Index  */
+/* Vector index (C[i] = A[truncate[B[i]]), single-precision.*/
+/*
+ *  vDSP_vindex()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vindex(
+  float *       __vDSP_A,
+  float *       __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector index (C[i] = A[truncate[B[i]]), double-precision.*/
 /*
  *  vDSP_vindexD()
  *  
@@ -7239,15 +5782,36 @@ vDSP_viclipD(
  */
 extern void 
 vDSP_vindexD(
-  double *       A,
-  double *       B,
-  int            J,
-  double *       C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  double *      __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Interpolation*/
+/* Vector interpolation between vectors, single-precision.*/
+/*
+ *  vDSP_vintb()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vintb(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  float *       __vDSP_C,
+  float *       __vDSP_D,
+  vDSP_Stride   __vDSP_L,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector interpolation between vectors, double-precision.*/
 /*
  *  vDSP_vintbD()
  *  
@@ -7258,17 +5822,37 @@ vDSP_vindexD(
  */
 extern void 
 vDSP_vintbD(
-  double *       A,
-  int            I,
-  double *       B,
-  int            J,
-  double *       C,
-  double *       D,
-  int            L,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  double *      __vDSP_C,
+  double *      __vDSP_D,
+  vDSP_Stride   __vDSP_L,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Test Limit*/
+/* Vector test limit, single-precision.*/
+/*
+ *  vDSP_vlim()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vlim(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_B,
+  float *       __vDSP_C,
+  float *       __vDSP_D,
+  vDSP_Stride   __vDSP_L,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector test limit, double-precision.*/
 /*
  *  vDSP_vlimD()
  *  
@@ -7279,16 +5863,36 @@ vDSP_vintbD(
  */
 extern void 
 vDSP_vlimD(
-  double *       A,
-  int            I,
-  double *       B,
-  double *       C,
-  double *       D,
-  int            L,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_B,
+  double *      __vDSP_C,
+  double *      __vDSP_D,
+  vDSP_Stride   __vDSP_L,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Linear Interpolation */
+/* Vector linear interpolation, single-precision.*/
+/*
+ *  vDSP_vlint()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vlint(
+  float *       __vDSP_A,
+  float *       __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N,
+  vDSP_Length   __vDSP_M)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector linear interpolation, double-precision.*/
 /*
  *  vDSP_vlintD()
  *  
@@ -7299,16 +5903,38 @@ vDSP_vlimD(
  */
 extern void 
 vDSP_vlintD(
-  double *       A,
-  double *       B,
-  int            J,
-  double *       C,
-  int            K,
-  unsigned int   N,
-  unsigned int   M)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  double *      __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N,
+  vDSP_Length   __vDSP_M)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Mulitply and Add*/
+/* Vector multiply and add, single-precision.*/
+/*
+ *  vDSP_vma()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vma(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  float *       __vDSP_D,
+  vDSP_Stride   __vDSP_L,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector multiply and add, double-precision.*/
 /*
  *  vDSP_vmaD()
  *  
@@ -7319,18 +5945,38 @@ vDSP_vlintD(
  */
 extern void 
 vDSP_vmaD(
-  double *       A,
-  int            I,
-  double *       B,
-  int            J,
-  double *       C,
-  int            K,
-  double *       D,
-  int            L,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  double *      __vDSP_D,
+  vDSP_Stride   __vDSP_L,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Maxima*/
+/* Vector maxima, single-precision.*/
+/*
+ *  vDSP_vmax()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vmax(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector maxima, double-precision.*/
 /*
  *  vDSP_vmaxD()
  *  
@@ -7341,16 +5987,36 @@ vDSP_vmaD(
  */
 extern void 
 vDSP_vmaxD(
-  double *       A,
-  int            I,
-  double *       B,
-  int            J,
-  double *       C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Maximum Magnitude */
+/* Vector maximum magnitude, single-precision.*/
+/*
+ *  vDSP_vmaxmg()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vmaxmg(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector maximum magnitude, double-precision.*/
 /*
  *  vDSP_vmaxmgD()
  *  
@@ -7361,16 +6027,36 @@ vDSP_vmaxD(
  */
 extern void 
 vDSP_vmaxmgD(
-  double *       A,
-  int            I,
-  double *       B,
-  int            J,
-  double *       C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Minima*/
+/* Vector minima, single-precision.*/
+/*
+ *  vDSP_vmin()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vmin(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector minima, double-precision.*/
 /*
  *  vDSP_vminD()
  *  
@@ -7381,16 +6067,36 @@ vDSP_vmaxmgD(
  */
 extern void 
 vDSP_vminD(
-  double *       A,
-  int            I,
-  double *       B,
-  int            J,
-  double *       C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Minimum Magnitude*/
+/* Vector minimum magnitude, single-precision.*/
+/*
+ *  vDSP_vminmg()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vminmg(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector minimum magnitude, double-precision.*/
 /*
  *  vDSP_vminmgD()
  *  
@@ -7401,16 +6107,40 @@ vDSP_vminD(
  */
 extern void 
 vDSP_vminmgD(
-  double *       A,
-  int            I,
-  double *       B,
-  int            J,
-  double *       C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Multiply, Multiply, and Add*/
+/* Vector multiply, multiply, and add, single-precision.*/
+/*
+ *  vDSP_vmma()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vmma(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  float *       __vDSP_D,
+  vDSP_Stride   __vDSP_L,
+  float *       __vDSP_E,
+  vDSP_Stride   __vDSP_M,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector multiply, multiply, and add, double-precision.*/
 /*
  *  vDSP_vmmaD()
  *  
@@ -7421,20 +6151,44 @@ vDSP_vminmgD(
  */
 extern void 
 vDSP_vmmaD(
-  double *       A,
-  int            I,
-  double *       B,
-  int            J,
-  double *       C,
-  int            K,
-  double *       D,
-  int            L,
-  double *       E,
-  int            M,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  double *      __vDSP_D,
+  vDSP_Stride   __vDSP_L,
+  double *      __vDSP_E,
+  vDSP_Stride   __vDSP_M,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Multiply, Multiply, and Subtract*/
+/* Vector multiply, multiply, and subtract, single-precision.*/
+/*
+ *  vDSP_vmmsb()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vmmsb(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  float *       __vDSP_D,
+  vDSP_Stride   __vDSP_L,
+  float *       __vDSP_E,
+  vDSP_Stride   __vDSP_M,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector multiply, multiply, and subtract, double-precision.*/
 /*
  *  vDSP_vmmsbD()
  *  
@@ -7445,20 +6199,41 @@ vDSP_vmmaD(
  */
 extern void 
 vDSP_vmmsbD(
-  double *       A,
-  int            I,
-  double *       B,
-  int            J,
-  double *       C,
-  int            K,
-  double *       D,
-  int            L,
-  double *       E,
-  int            M,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  double *      __vDSP_D,
+  vDSP_Stride   __vDSP_L,
+  double *      __vDSP_E,
+  vDSP_Stride   __vDSP_M,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Multiply and Scalar Add*/
+/* Vector multiply and scalar add, single-precision.*/
+/*
+ *  vDSP_vmsa()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vmsa(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  float *       __vDSP_C,
+  float *       __vDSP_D,
+  vDSP_Stride   __vDSP_L,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector multiply and scalar add, double-precision.*/
 /*
  *  vDSP_vmsaD()
  *  
@@ -7469,17 +6244,39 @@ vDSP_vmmsbD(
  */
 extern void 
 vDSP_vmsaD(
-  double *       A,
-  int            I,
-  double *       B,
-  int            J,
-  double *       C,
-  double *       D,
-  int            L,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  double *      __vDSP_C,
+  double *      __vDSP_D,
+  vDSP_Stride   __vDSP_L,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Multiply and Subtract*/
+/* Vector multiply and subtract, single-precision.*/
+/*
+ *  vDSP_vmsb()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vmsb(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  float *       __vDSP_D,
+  vDSP_Stride   __vDSP_L,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector multiply and subtract, double-precision.*/
 /*
  *  vDSP_vmsbD()
  *  
@@ -7490,18 +6287,36 @@ vDSP_vmsaD(
  */
 extern void 
 vDSP_vmsbD(
-  double *       A,
-  int            I,
-  double *       B,
-  int            J,
-  double *       C,
-  int            K,
-  double *       D,
-  int            L,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  double *      __vDSP_D,
+  vDSP_Stride   __vDSP_L,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Negative Absolute Value */
+/* Vector negative absolute value, single-precision.*/
+/*
+ *  vDSP_vnabs()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vnabs(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector negative absolute value, double-precision.*/
 /*
  *  vDSP_vnabsD()
  *  
@@ -7512,14 +6327,32 @@ vDSP_vmsbD(
  */
 extern void 
 vDSP_vnabsD(
-  double *       A,
-  int            I,
-  double *       C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector negate*/
+/* Vector negate, single-precision.*/
+/*
+ *  vDSP_vneg()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vneg(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector negate, double-precision.*/
 /*
  *  vDSP_vnegD()
  *  
@@ -7530,14 +6363,35 @@ vDSP_vnabsD(
  */
 extern void 
 vDSP_vnegD(
-  double *       A,
-  int            I,
-  double *       C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Polynomial*/
+/* Vector polynomial, single-precision.*/
+/*
+ *  vDSP_vpoly()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vpoly(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N,
+  vDSP_Length   __vDSP_P)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector polynomial, single-precision.*/
 /*
  *  vDSP_vpolyD()
  *  
@@ -7548,17 +6402,41 @@ vDSP_vnegD(
  */
 extern void 
 vDSP_vpolyD(
-  double *       A,
-  int            I,
-  double *       B,
-  int            J,
-  double *       C,
-  int            K,
-  unsigned int   N,
-  unsigned int   P)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N,
+  vDSP_Length   __vDSP_P)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Pythagoras */
+/* Vector Pythagoras, single-precision.*/
+/*
+ *  vDSP_vpythg()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vpythg(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  float *       __vDSP_D,
+  vDSP_Stride   __vDSP_L,
+  float *       __vDSP_E,
+  vDSP_Stride   __vDSP_M,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector Pythagoras, double-precision.*/
 /*
  *  vDSP_vpythgD()
  *  
@@ -7569,20 +6447,40 @@ vDSP_vpolyD(
  */
 extern void 
 vDSP_vpythgD(
-  double *       A,
-  int            I,
-  double *       B,
-  int            J,
-  double *       C,
-  int            K,
-  double *       D,
-  int            L,
-  double *       E,
-  int            M,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  double *      __vDSP_D,
+  vDSP_Stride   __vDSP_L,
+  double *      __vDSP_E,
+  vDSP_Stride   __vDSP_M,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Quadratic Interpolation*/
+/* Vector quadratic interpolation, single-precision.*/
+/*
+ *  vDSP_vqint()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vqint(
+  float *       __vDSP_A,
+  float *       __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N,
+  vDSP_Length   __vDSP_M)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector quadratic interpolation, double-precision.*/
 /*
  *  vDSP_vqintD()
  *  
@@ -7593,16 +6491,34 @@ vDSP_vpythgD(
  */
 extern void 
 vDSP_vqintD(
-  double *       A,
-  double *       B,
-  int            J,
-  double *       C,
-  int            K,
-  unsigned int   N,
-  unsigned int   M)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  double *      __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N,
+  vDSP_Length   __vDSP_M)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Build Ramped Vector*/
+/* Vector build ramp, single-precision.*/
+/*
+ *  vDSP_vramp()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vramp(
+  float *       __vDSP_A,
+  float *       __vDSP_B,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector build ramp, double-precision.*/
 /*
  *  vDSP_vrampD()
  *  
@@ -7613,14 +6529,33 @@ vDSP_vqintD(
  */
 extern void 
 vDSP_vrampD(
-  double *       A,
-  double *       B,
-  double *       C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  double *      __vDSP_B,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Running Sum Integration*/
+/* Vector running sum integration, single-precision.*/
+/*
+ *  vDSP_vrsum()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vrsum(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_S,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector running sum integration, double-precision.*/
 /*
  *  vDSP_vrsumD()
  *  
@@ -7631,15 +6566,31 @@ vDSP_vrampD(
  */
 extern void 
 vDSP_vrsumD(
-  double *       A,
-  int            I,
-  double *       S,
-  double *       C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_S,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Reverse Order In-Place*/
+/* Vector reverse order, in-place, single-precision.*/
+/*
+ *  vDSP_vrvrs()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vrvrs(
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector reverse order, in-place, double-precision.*/
 /*
  *  vDSP_vrvrsD()
  *  
@@ -7650,12 +6601,31 @@ vDSP_vrsumD(
  */
 extern void 
 vDSP_vrvrsD(
-  double *       C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Scalar Add*/
+/* Vector-scalar add, single-precision.*/
+/*
+ *  vDSP_vsadd()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vsadd(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_B,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector-scalar add, double-precision.*/
 /*
  *  vDSP_vsaddD()
  *  
@@ -7666,15 +6636,37 @@ vDSP_vrvrsD(
  */
 extern void 
 vDSP_vsaddD(
-  double *       A,
-  int            I,
-  double *       B,
-  double *       C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_B,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Subtract and Multiply*/
+/* Vector subtract and multiply, single-precision.*/
+/*
+ *  vDSP_vsbm()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vsbm(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  float *       __vDSP_D,
+  vDSP_Stride   __vDSP_L,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector subtract and multiply, double-precision.*/
 /*
  *  vDSP_vsbmD()
  *  
@@ -7685,18 +6677,42 @@ vDSP_vsaddD(
  */
 extern void 
 vDSP_vsbmD(
-  double *       A,
-  int            I,
-  double *       B,
-  int            J,
-  double *       C,
-  int            K,
-  double *       D,
-  int            L,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  double *      __vDSP_D,
+  vDSP_Stride   __vDSP_L,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Subtract, Subtract, and Multiply*/
+/* Vector subtract, subtract, and multiply, single-precision.*/
+/*
+ *  vDSP_vsbsbm()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vsbsbm(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  float *       __vDSP_D,
+  vDSP_Stride   __vDSP_L,
+  float *       __vDSP_E,
+  vDSP_Stride   __vDSP_M,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector subtract, subtract, and multiply, double-precision.*/
 /*
  *  vDSP_vsbsbmD()
  *  
@@ -7707,20 +6723,41 @@ vDSP_vsbmD(
  */
 extern void 
 vDSP_vsbsbmD(
-  double *       A,
-  int            I,
-  double *       B,
-  int            J,
-  double *       C,
-  int            K,
-  double *       D,
-  int            L,
-  double *       E,
-  int            M,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  double *      __vDSP_D,
+  vDSP_Stride   __vDSP_L,
+  double *      __vDSP_E,
+  vDSP_Stride   __vDSP_M,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Subtract and Scalar Multiply*/
+/* Vector subtract and scalar multiply, single-precision.*/
+/*
+ *  vDSP_vsbsm()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vsbsm(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  float *       __vDSP_C,
+  float *       __vDSP_D,
+  vDSP_Stride   __vDSP_L,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector subtract and scalar multiply, double-precision.*/
 /*
  *  vDSP_vsbsmD()
  *  
@@ -7731,17 +6768,36 @@ vDSP_vsbsbmD(
  */
 extern void 
 vDSP_vsbsmD(
-  double *       A,
-  int            I,
-  double *       B,
-  int            J,
-  double *       C,
-  double *       D,
-  int            L,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  double *      __vDSP_C,
+  double *      __vDSP_D,
+  vDSP_Stride   __vDSP_L,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Scalar Divdie*/
+/* Vector-scalar divide, single-precision.*/
+/*
+ *  vDSP_vsdiv()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vsdiv(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_B,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector-scalar divide, double-precision.*/
 /*
  *  vDSP_vsdivD()
  *  
@@ -7752,15 +6808,34 @@ vDSP_vsbsmD(
  */
 extern void 
 vDSP_vsdivD(
-  double *       A,
-  int            I,
-  double *       B,
-  double *       C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_B,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Simpson Integration*/
+/* Vector Simpson integration, single-precision.*/
+/*
+ *  vDSP_vsimps()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vsimps(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_B,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector Simpson integration, double-precision.*/
 /*
  *  vDSP_vsimpsD()
  *  
@@ -7771,15 +6846,36 @@ vDSP_vsdivD(
  */
 extern void 
 vDSP_vsimpsD(
-  double *       A,
-  int            I,
-  double *       B,
-  double *       C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_B,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Scalar Multiply and Vector Add*/
+/* Vector-scalar multiply and vector add, single-precision.*/
+/*
+ *  vDSP_vsma()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vsma(
+  const float *  __vDSP_A,
+  vDSP_Stride    __vDSP_I,
+  const float *  __vDSP_B,
+  const float *  __vDSP_C,
+  vDSP_Stride    __vDSP_K,
+  float *        __vDSP_D,
+  vDSP_Stride    __vDSP_L,
+  vDSP_Length    __vDSP_N)                                    AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector-scalar multiply and vector add, double-precision.*/
 /*
  *  vDSP_vsmaD()
  *  
@@ -7790,17 +6886,37 @@ vDSP_vsimpsD(
  */
 extern void 
 vDSP_vsmaD(
-  double *       A,
-  int            I,
-  double *       B,
-  double *       C,
-  int            K,
-  double *       D,
-  int            L,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  const double *  __vDSP_A,
+  vDSP_Stride     __vDSP_I,
+  const double *  __vDSP_B,
+  const double *  __vDSP_C,
+  vDSP_Stride     __vDSP_K,
+  double *        __vDSP_D,
+  vDSP_Stride     __vDSP_L,
+  vDSP_Length     __vDSP_N)                                   AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Scalar Multiply and Scalar Add */
+/* Vector-scalar multiply and scalar add, single-precision.*/
+/*
+ *  vDSP_vsmsa()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vsmsa(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_B,
+  float *       __vDSP_C,
+  float *       __vDSP_D,
+  vDSP_Stride   __vDSP_L,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector-scalar multiply and scalar add, double-precision.*/
 /*
  *  vDSP_vsmsaD()
  *  
@@ -7811,16 +6927,37 @@ vDSP_vsmaD(
  */
 extern void 
 vDSP_vsmsaD(
-  double *       A,
-  int            I,
-  double *       B,
-  double *       C,
-  double *       D,
-  int            L,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_B,
+  double *      __vDSP_C,
+  double *      __vDSP_D,
+  vDSP_Stride   __vDSP_L,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Scalar Multiply and Vector Subtract */
+/* Vector scalar multiply and vector subtract, single-precision.*/
+/*
+ *  vDSP_vsmsb()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vsmsb(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_B,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  float *       __vDSP_D,
+  vDSP_Stride   __vDSP_L,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector scalar multiply and vector subtract, double-precision.*/
 /*
  *  vDSP_vsmsbD()
  *  
@@ -7831,17 +6968,33 @@ vDSP_vsmsaD(
  */
 extern void 
 vDSP_vsmsbD(
-  double *       A,
-  int            I,
-  double *       B,
-  double *       C,
-  int            K,
-  double *       D,
-  int            L,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_B,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  double *      __vDSP_D,
+  vDSP_Stride   __vDSP_L,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector In-Place Sort */
+/* Vector sort, in-place, single-precision.*/
+/*
+ *  vDSP_vsort()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vsort(
+  float *       __vDSP_C,
+  vDSP_Length   __vDSP_N,
+  int           __vDSP_OFLAG)                                 AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector sort, in-place, double-precision.*/
 /*
  *  vDSP_vsortD()
  *  
@@ -7852,12 +7005,30 @@ vDSP_vsmsbD(
  */
 extern void 
 vDSP_vsortD(
-  double *       C,
-  unsigned int   N,
-  int            OFLAG)                                       AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_C,
+  vDSP_Length   __vDSP_N,
+  int           __vDSP_OFLAG)                                 AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Integer In-Place Sort*/
+/* Vector sort, in-place, integer, single-precision.*/
+/*
+ *  vDSP_vsorti()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vsorti(
+  float *        __vDSP_C,
+  vDSP_Length *  __vDSP_IC,
+  vDSP_Length *  __vDSP_List_addr,
+  vDSP_Length    __vDSP_N,
+  int            __vDSP_OFLAG)                                AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector sort, in-place, integer, double-precision.*/
 /*
  *  vDSP_vsortiD()
  *  
@@ -7868,14 +7039,32 @@ vDSP_vsortD(
  */
 extern void 
 vDSP_vsortiD(
-  double *       C,
-  int *          IC,
-  int *          List_addr,
-  unsigned int   N,
-  int            OFLAG)                                       AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *       __vDSP_C,
+  vDSP_Length *  __vDSP_IC,
+  vDSP_Length *  __vDSP_List_addr,
+  vDSP_Length    __vDSP_N,
+  int            __vDSP_OFLAG)                                AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Swap */
+/* Vector swap, single-precision.*/
+/*
+ *  vDSP_vswap()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vswap(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector swap, double-precision.*/
 /*
  *  vDSP_vswapD()
  *  
@@ -7886,14 +7075,33 @@ vDSP_vsortiD(
  */
 extern void 
 vDSP_vswapD(
-  double *       A,
-  int            I,
-  double *       B,
-  int            J,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Sliding Window Sum */
+/* Vector sliding window sum, single-precision.*/
+/*
+ *  vDSP_vswsum()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vswsum(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N,
+  vDSP_Length   __vDSP_P)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector sliding window sum, double-precision.*/
 /*
  *  vDSP_vswsumD()
  *  
@@ -7904,15 +7112,37 @@ vDSP_vswapD(
  */
 extern void 
 vDSP_vswsumD(
-  double *       A,
-  int            I,
-  double *       C,
-  int            K,
-  unsigned int   N,
-  unsigned int   P)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N,
+  vDSP_Length   __vDSP_P)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Interpolation, Table Lookup*/
+/* Vector table lookup and interpolation, single-precision.*/
+/*
+ *  vDSP_vtabi()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vtabi(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_S1,
+  float *       __vDSP_S2,
+  float *       __vDSP_C,
+  vDSP_Length   __vDSP_M,
+  float *       __vDSP_D,
+  vDSP_Stride   __vDSP_L,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector table lookup and interpolation, double-precision.*/
 /*
  *  vDSP_vtabiD()
  *  
@@ -7923,18 +7153,37 @@ vDSP_vswsumD(
  */
 extern void 
 vDSP_vtabiD(
-  double *       A,
-  int            I,
-  double *       S1,
-  double *       S2,
-  double *       C,
-  unsigned int   M,
-  double *       D,
-  int            L,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_S1,
+  double *      __vDSP_S2,
+  double *      __vDSP_C,
+  vDSP_Length   __vDSP_M,
+  double *      __vDSP_D,
+  vDSP_Stride   __vDSP_L,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Threshold*/
+/* Vector threshold, single-precision.*/
+/*
+ *  vDSP_vthr()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vthr(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_B,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector threshold, double-precision.*/
 /*
  *  vDSP_vthrD()
  *  
@@ -7945,15 +7194,34 @@ vDSP_vtabiD(
  */
 extern void 
 vDSP_vthrD(
-  double *       A,
-  int            I,
-  double *       B,
-  double *       C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_B,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Threshold with Zero Fill*/
+/* Vector threshold with zero fill, single-precision.*/
+/*
+ *  vDSP_vthres()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vthres(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_B,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector threshold with zero fill, double-precision.*/
 /*
  *  vDSP_vthresD()
  *  
@@ -7964,15 +7232,35 @@ vDSP_vthrD(
  */
 extern void 
 vDSP_vthresD(
-  double *       A,
-  int            I,
-  double *       B,
-  double *       C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_B,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Threshold with Signed Constant*/
+/* Vector threshold with signed constant, single-precision.*/
+/*
+ *  vDSP_vthrsc()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vthrsc(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_B,
+  float *       __vDSP_C,
+  float *       __vDSP_D,
+  vDSP_Stride   __vDSP_L,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector threshold with signed constant, double-precision.*/
 /*
  *  vDSP_vthrscD()
  *  
@@ -7983,16 +7271,36 @@ vDSP_vthresD(
  */
 extern void 
 vDSP_vthrscD(
-  double *       A,
-  int            I,
-  double *       B,
-  double *       C,
-  double *       D,
-  int            L,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_B,
+  double *      __vDSP_C,
+  double *      __vDSP_D,
+  vDSP_Stride   __vDSP_L,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Tapered Merge of Two Vectors*/
+/* Vector tapered merge, single-precision.*/
+/*
+ *  vDSP_vtmerg()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vtmerg(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector tapered merge, double-precision.*/
 /*
  *  vDSP_vtmergD()
  *  
@@ -8003,16 +7311,35 @@ vDSP_vthrscD(
  */
 extern void 
 vDSP_vtmergD(
-  double *       A,
-  int            I,
-  double *       B,
-  int            J,
-  double *       C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_B,
+  vDSP_Stride   __vDSP_J,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Vector Trapezoidal Integration*/
+/* Vector trapezoidal integration, single-precision.*/
+/*
+ *  vDSP_vtrapz()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_vtrapz(
+  float *       __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  float *       __vDSP_B,
+  float *       __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Vector trapezoidal integration, double-precision.*/
 /*
  *  vDSP_vtrapzD()
  *  
@@ -8023,15 +7350,35 @@ vDSP_vtmergD(
  */
 extern void 
 vDSP_vtrapzD(
-  double *       A,
-  int            I,
-  double *       B,
-  double *       C,
-  int            K,
-  unsigned int   N)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  double *      __vDSP_A,
+  vDSP_Stride   __vDSP_I,
+  double *      __vDSP_B,
+  double *      __vDSP_C,
+  vDSP_Stride   __vDSP_K,
+  vDSP_Length   __vDSP_N)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
-/*Wiener Levinson*/
+/* Wiener Levinson, single-precision.*/
+/*
+ *  vDSP_wiener()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in vecLib.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+vDSP_wiener(
+  vDSP_Length   __vDSP_L,
+  float *       __vDSP_A,
+  float *       __vDSP_C,
+  float *       __vDSP_F,
+  float *       __vDSP_P,
+  int           __vDSP_IFLG,
+  int *         __vDSP_IERR)                                  AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Wiener Levinson, double-precision.*/
 /*
  *  vDSP_wienerD()
  *  
@@ -8042,13 +7389,13 @@ vDSP_vtrapzD(
  */
 extern void 
 vDSP_wienerD(
-  int       L,
-  double *  A,
-  double *  C,
-  double *  F,
-  double *  P,
-  int       IFLG,
-  int *     IERR)                                             AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+  vDSP_Length   __vDSP_L,
+  double *      __vDSP_A,
+  double *      __vDSP_C,
+  double *      __vDSP_F,
+  double *      __vDSP_P,
+  int           __vDSP_IFLG,
+  int *         __vDSP_IERR)                                  AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
 
@@ -8067,7 +7414,6 @@ enum {
   FFT_RADIX3                    = kFFTRadix3,
   FFT_RADIX5                    = kFFTRadix5
 };
-
 
 typedef DSPComplex                      COMPLEX;
 typedef DSPSplitComplex                 COMPLEX_SPLIT;

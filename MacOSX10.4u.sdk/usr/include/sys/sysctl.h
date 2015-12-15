@@ -620,6 +620,7 @@ extern struct loadavg averunnable;
  *   hw.optional.sse           - Streaming SIMD Extensions
  *   hw.optional.sse2          - Streaming SIMD Extensions 2
  *   hw.optional.sse3          - Streaming SIMD Extensions 3
+ *   hw.optional.x86_64        - 64-bit support
  */
 
 

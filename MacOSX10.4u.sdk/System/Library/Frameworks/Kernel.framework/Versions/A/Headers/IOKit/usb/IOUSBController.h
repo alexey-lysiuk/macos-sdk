@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1998-2003 Apple Computer, Inc. All rights reserved.
+ * Copyright (c) 1998-2006 Apple Computer, Inc. All rights reserved.
  *
  * @APPLE_LICENSE_HEADER_START@
  * 
@@ -20,80 +20,6 @@
  * @APPLE_LICENSE_HEADER_END@
  */
 
-#ifndef __OPEN_SOURCE__
-/*
- *
- *	$Log: IOUSBController.h,v $
- *	Revision 1.43.6.1  2005/12/22 04:26:05  nano
- *	Bring in fixes for 4386903, 4389601, 4387897 and 4332763
- *	
- *	Revision 1.43.8.1  2005/12/20 23:54:50  nano
- *	Fixes to debounce overcurrent notifications and to only display 1 notification per ganged hub
- *	
- *	Revision 1.43  2005/12/14 03:53:54  nano
- *	Bring in branch fixes
- *	
- *	Revision 1.42.80.1  2005/12/13 22:16:53  rhoads
- *	errata bit for the Isoch Lookahead issue
- *	
- *	Revision 1.42  2005/07/19 20:05:07  rhoads
- *	roll in the big karma-dill merge changes
- *	
- *	Revision 1.41.2.1  2005/07/15 21:09:55  rhoads
- *	merge in the karma branch
- *	
- *	Revision 1.41  2005/07/08 15:28:07  rhoads
- *	roll in the NEC errata changes
- *	
- *	Revision 1.40.112.1  2005/06/30 16:16:47  rhoads
- *	new errata bit for the 20050623 Errata from NEC
- *	
- *	Revision 1.40  2004/08/23 20:00:47  nano
- *	Merge fix for rdar://3769499 (UTF16-UTF8 conversion)
- *	
- *	Revision 1.39.16.1  2004/08/16 17:16:10  nano
- *	Make new branch with all the rdar:3760284
- *	
- *	Revision 1.39.14.1  2004/08/16 15:47:26  nano
- *	Define errata for NEC OHCI wraparound bug
- *	
- *	Revision 1.39  2004/05/17 21:52:50  nano
- *	Add timeStamp and useTimeStamp to our commands.
- *	
- *	Revision 1.38.6.1  2004/05/17 15:57:27  nano
- *	API Changes for Tiger
- *	
- *	Revision 1.38  2004/03/16 18:05:40  rhoads
- *	added an errata for the Agere EHCI host controller
- *	
- *	Revision 1.37  2004/02/03 22:09:49  nano
- *	Fix <rdar://problem/3548194>: Remove $ Id $ from source files to prevent conflicts
- *	
- *	Revision 1.36.48.3  2004/04/28 17:26:09  nano
- *	Remove $ ID $ so that we don't get conflicts on merge
- *	
- *	Revision 1.36.48.2  2003/11/05 21:12:00  nano
- *	More work on timestamping transactions
- *	
- *	Revision 1.36.48.1  2003/11/04 22:27:37  nano
- *	Work in progress to add time stamping to interrupt handler
- *	
- *	Revision 1.36  2003/08/20 19:41:40  nano
- *	
- *	Bug #:
- *	New version's of Nima's USB Prober (2.2b17)
- *	3382540  Panther: Ejecting a USB CardBus card can freeze a machine
- *	3358482  Device Busy message with Modems and IOUSBFamily 201.2.14 after sleep
- *	3385948  Need to implement device recovery on High Speed Transaction errors to full speed devices
- *	3377037  USB EHCI: returnTransactions can cause unstable queue if transactions are aborted
- *	
- *	Also, updated most files to use the id/log functions of cvs
- *	
- *	Submitted by: nano
- *	Reviewed by: rhoads/barryt/nano
- *	
- */
-#endif
 #ifndef _IOKIT_IOUSBCONTROLLER_H
 #define _IOKIT_IOUSBCONTROLLER_H
 
@@ -142,7 +68,8 @@ enum
 	kErrataICH6PowerSequencing		= (1 << 11),	// needs special power sequencing for early Transition machines
 	kErrataICH7ISTBuffer			= (1 << 12),	// buffer for Isochronous Scheduling Threshold
 	kErrataUHCISupportsOvercurrent	= (1 << 13),	// UHCI controller supports overcurrent detection
-	kErrataNeedsOvercurrentDebounce = (1 << 14)		// The overcurrent indicator should be debounced by 10ms
+	kErrataNeedsOvercurrentDebounce = (1 << 14),	// The overcurrent indicator should be debounced by 10ms
+	kErrataSupportsPortResumeEnable = (1 << 15)		// UHCI has resume enable bits at config address 0xC4
 };
 
 enum
@@ -242,8 +169,9 @@ protected:
         UInt32			_currentSizeOfCommandPool;
         UInt32			_currentSizeOfIsocCommandPool;
         UInt8			_controllerSpeed;	// Controller speed, passed down for splits
-        thread_call_t		_terminatePCCardThread;
+        thread_call_t	_terminatePCCardThread;
         bool			_addressPending[128];
+		SInt32			_activeIsochTransfers;				// isochronous transfers in the queue
     };
     ExpansionData *_expansionData;
 
@@ -263,12 +191,16 @@ protected:
 
     // The following methods do not use and upper case initial letter because they are part of IOKit
     //
+
+public:
     virtual bool 		init( OSDictionary *  propTable );
     virtual bool 		start( IOService *  provider );
     virtual void 		stop( IOService * provider );
     virtual bool 		finalize(IOOptionBits options);
     virtual IOReturn 		message( UInt32 type, IOService * provider,  void * argument = 0 );
- 
+
+protected:
+		
     IOReturn			getNubResources( IOService *  regEntry );
 
     virtual UInt32 		GetErrataBits(
@@ -1146,7 +1078,18 @@ public:
     OSMetaClassDeclareReservedUsed(IOUSBController,  17);
     virtual IOReturn 		CheckForDisjointDescriptor(IOUSBCommand *command, UInt16 maxPacketSize);
     
+#if !(defined(__ppc__) && defined(KPI_10_4_0_PPC_COMPAT))
+    /*!
+		@function UIMCreateIsochTransfer
+	 @abstract UIM function, Do a transfer on an Isocchronous endpoint.
+	 @param command  an IOUSBIsocCommand object with all the necessary information
+	 */
+    OSMetaClassDeclareReservedUsed(IOUSBController,  18);
+	virtual IOReturn UIMCreateIsochTransfer(IOUSBIsocCommand *command);
+#else
     OSMetaClassDeclareReservedUnused(IOUSBController,  18);
+#endif
+
     OSMetaClassDeclareReservedUnused(IOUSBController,  19);
     
 private:

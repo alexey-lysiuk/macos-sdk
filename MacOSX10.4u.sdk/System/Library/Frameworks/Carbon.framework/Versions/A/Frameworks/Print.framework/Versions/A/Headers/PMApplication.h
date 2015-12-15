@@ -3,9 +3,9 @@
  
      Contains:   Carbon Printing Manager Interfaces.
  
-     Version:    Printing-192.3~52
+     Version:    Printing-192.4~200
  
-     Copyright:  © 1998-2005 by Apple Computer, Inc., all rights reserved
+     Copyright:  © 1998-2006 by Apple Computer, Inc., all rights reserved
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:

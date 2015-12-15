@@ -68,9 +68,7 @@
 #include <sys/queue.h>
 #include <sys/kernel_types.h>
 
-#if __DARWIN_ALIGN_POWER
-#pragma options align=power
-#endif
+#pragma pack(4)
 
 /* for the compat sake;  */
 struct extern_file {
@@ -85,9 +83,7 @@ struct extern_file {
 	caddr_t	f_data;		/* vnode or socket or SHM or semaphore */
 };
 
-#if __DARWIN_ALIGN_POWER
-#pragma options align=reset
-#endif
+#pragma pack()
 
 __BEGIN_DECLS
 int file_socket(int, socket_t *);

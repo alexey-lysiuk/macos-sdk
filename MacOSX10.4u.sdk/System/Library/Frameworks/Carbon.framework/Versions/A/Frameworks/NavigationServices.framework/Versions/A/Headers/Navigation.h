@@ -3,9 +3,9 @@
  
      Contains:   Navigation Services Interfaces
  
-     Version:    NavigationServices-128.3~129
+     Version:    NavigationServices-130~241
  
-     Copyright:  © 1996-2005 by Apple Computer, Inc., all rights reserved
+     Copyright:  © 1996-2006 by Apple Computer, Inc., all rights reserved
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:

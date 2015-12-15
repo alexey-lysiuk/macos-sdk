@@ -26,7 +26,7 @@
 
 /* default list of mibs to load */
 
-#define DEFAULT_MIBS "IP-MIB:IF-MIB:TCP-MIB:UDP-MIB:HOST-RESOURCES-MIB:SNMPv2-MIB:RFC1213-MIB:NOTIFICATION-LOG-MIB:UCD-SNMP-MIB:UCD-DEMO-MIB:SNMP-TARGET-MIB:NET-SNMP-AGENT-MIB:HOST-RESOURCES-TYPES:SNMP-VIEW-BASED-ACM-MIB:SNMP-COMMUNITY-MIB:NET-SNMP-EXTEND-MIB:UCD-DLMOD-MIB:SNMP-FRAMEWORK-MIB:SNMP-MPD-MIB:SNMP-USER-BASED-SM-MIB:SNMP-NOTIFICATION-MIB:SNMPv2-TM"
+#define DEFAULT_MIBS "SNMPv2-MIB:RFC1213-MIB:SNMP-VIEW-BASED-ACM-MIB:SNMP-COMMUNITY-MIB:HOST-RESOURCES-MIB:HOST-RESOURCES-TYPES:SNMP-FRAMEWORK-MIB:SNMP-MPD-MIB:SNMP-USER-BASED-SM-MIB"
 
 /* default location to look for mibs to load using the above tokens
    and/or those in the MIBS envrionment variable*/
@@ -117,13 +117,13 @@
 #define LOGFILE "/var/log/snmpd.log"
 
 /* default system contact */
-#define SYS_CONTACT "root@@no.where"
+#define SYS_CONTACT "postmaster@example.com"
 
 /* system location */
 #define SYS_LOC "Unknown"
 
 /* Use libwrap to handle allow/deny hosts? */
-#define USE_LIBWRAP 1
+/* #undef USE_LIBWRAP */
 
 /* Use dmalloc to do malloc debugging? */
 /* #undef HAVE_DMALLOC_H */
@@ -154,7 +154,7 @@
 /* #undef NO_ROOT_ACCESS */
 
 /* If we don't want to use kmem. */
-/* #undef NO_KMEM_USAGE */
+#define NO_KMEM_USAGE 1
 
 /* If you don't want the agent to report on variables it doesn't have data for */
 #define NO_DUMMY_VALUES 1
@@ -1025,7 +1025,7 @@
 #define HAVE_NETINET_IN_PCB_H 1
 
 /* define if you have <sys/disklabel.h> */
-#define HAVE_SYS_DISKLABEL_H 1
+/* #undef HAVE_SYS_DISKLABEL_H */
 
 /* define if you are using linux and /proc/net/dev has the compressed
    field, which exists in linux kernels 2.2 and greater. */
@@ -1339,7 +1339,7 @@
 #define LASTFIELD -1      /* internal define */
 
 /* configure options specified */
-#define CONFIGURE_OPTIONS "\"'--mandir=/usr/share/man' '--infodir=/usr/share/info' '--disable-dependency-tracking' '--with-libwrap' '--with-defaults' '--prefix=/usr' '--with-persistent-directory=/var/db/net-snmp' '--with-mib-modules=host' 'CPPFLAGS=-I/System/Library/Frameworks/System.framework/PrivateHeaders' '--sysconfdir=/etc' 'CFLAGS=-arch i386 -arch ppc -g -Os -pipe -arch i386 -arch ppc -pipe' 'LDFLAGS=-arch i386 -arch ppc            '\""
+#define CONFIGURE_OPTIONS "\"'--mandir=/usr/share/man' '--infodir=/usr/share/info' '--disable-dependency-tracking' '--prefix=/usr' '--sysconfdir=/etc' '--with-persistent-directory=/var/db/net-snmp' '--with-defaults' '--with-mib-modules=host' '--with-out-mib-modules=mibII/icmp host/hr_swrun' '--with-sys-contact=postmaster@example.com' '--enable-mini-agent' '--without-kmem-usage' 'CFLAGS=-arch i386 -arch ppc -g -Os -pipe -DBUILD=19.1 -DMACOSX_DEPLOYMENT_TARGET=10.4 -I/System/Library/Frameworks/System.framework/PrivateHeaders -arch i386 -arch ppc -pipe' 'LDFLAGS=-arch i386 -arch ppc            '\""
 
 /* got socklen_t? */
 #define HAVE_SOCKLEN_T 1

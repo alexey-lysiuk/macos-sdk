@@ -24,7 +24,7 @@
 
 #if (defined(__ppc__) || defined(__ppc64__))
 #include "architecture/ppc/math.h"
-#elif defined (__i386__)
+#elif (defined (__i386__) || defined( __x86_64__ ))
 #include "architecture/i386/math.h"
 #else
 #error Unknown architecture

@@ -351,27 +351,33 @@ protected:
         UInt64       maxWriteSegmentTransfer;
         UInt64       maxReadSegmentByteTransfer;
         UInt64       maxWriteSegmentByteTransfer;
+        UInt64       minSegmentAlignmentByteTransfer;
+        UInt64       maxSegmentWidthByteTransfer;
     };
     ExpansionData * _expansionData;
 
-    #define _mediaDirtied                 \
+    #define _mediaDirtied                    \
               IOBlockStorageDriver::_expansionData->mediaDirtied
-    #define _maxReadBlockTransfer         \
+    #define _maxReadBlockTransfer            \
               IOBlockStorageDriver::_expansionData->maxReadBlockTransfer
-    #define _maxWriteBlockTransfer        \
+    #define _maxWriteBlockTransfer           \
               IOBlockStorageDriver::_expansionData->maxWriteBlockTransfer
-    #define _powerEventNotifier           \
+    #define _powerEventNotifier              \
               IOBlockStorageDriver::_expansionData->powerEventNotifier
-    #define _deblockRequestWriteLockCount \
+    #define _deblockRequestWriteLockCount    \
               IOBlockStorageDriver::_expansionData->deblockRequestWriteLockCount
-    #define _maxReadSegmentTransfer       \
+    #define _maxReadSegmentTransfer          \
               IOBlockStorageDriver::_expansionData->maxReadSegmentTransfer
-    #define _maxWriteSegmentTransfer      \
+    #define _maxWriteSegmentTransfer         \
               IOBlockStorageDriver::_expansionData->maxWriteSegmentTransfer
-    #define _maxReadSegmentByteTransfer   \
+    #define _maxReadSegmentByteTransfer      \
               IOBlockStorageDriver::_expansionData->maxReadSegmentByteTransfer
-    #define _maxWriteSegmentByteTransfer  \
+    #define _maxWriteSegmentByteTransfer     \
               IOBlockStorageDriver::_expansionData->maxWriteSegmentByteTransfer
+    #define _minSegmentAlignmentByteTransfer \
+              IOBlockStorageDriver::_expansionData->minSegmentAlignmentByteTransfer
+    #define _maxSegmentWidthByteTransfer     \
+              IOBlockStorageDriver::_expansionData->maxSegmentWidthByteTransfer
 
     OSSet *         _openClients;
     OSNumber *      _statistics[kStatisticsCount];

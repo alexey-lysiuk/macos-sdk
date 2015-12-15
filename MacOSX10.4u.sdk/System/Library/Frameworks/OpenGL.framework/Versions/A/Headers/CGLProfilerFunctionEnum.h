@@ -64,13 +64,9 @@ typedef enum
 	kCGLFEglBeginQuery,
 	kCGLFEglBindAttribLocationARB,
 	kCGLFEglBindBuffer,
-#if GL_EXT_framebuffer_object
 	kCGLFEglBindFramebufferEXT,
-#endif
 	kCGLFEglBindProgramARB,
-#if GL_EXT_framebuffer_object
 	kCGLFEglBindRenderbufferEXT,
-#endif
 	kCGLFEglBindTexture,
 	kCGLFEglBindVertexArrayEXT,
 	kCGLFEglBitmap,
@@ -80,15 +76,10 @@ typedef enum
 	kCGLFEglBlendFunc,
 	kCGLFEglBlendFuncSeparate,
 	kCGLFEglBufferData,
-#if GL_APPLE_flush_buffer_range
-	kCGLFEglBufferParameteriAPPLE,
-#endif
 	kCGLFEglBufferSubData,
 	kCGLFEglCallList,
 	kCGLFEglCallLists,
-#if GL_EXT_framebuffer_object
 	kCGLFEglCheckFramebufferStatusEXT,
-#endif
 	kCGLFEglClear,
 	kCGLFEglClearAccum,
 	kCGLFEglClearColor,
@@ -171,16 +162,12 @@ typedef enum
 	kCGLFEglCullFace,
 	kCGLFEglDeleteBuffers,
 	kCGLFEglDeleteFencesAPPLE,
-#if GL_EXT_framebuffer_object
 	kCGLFEglDeleteFramebuffersEXT,
-#endif
 	kCGLFEglDeleteLists,
 	kCGLFEglDeleteObjectARB,
 	kCGLFEglDeleteProgramsARB,
 	kCGLFEglDeleteQueries,
-#if GL_EXT_framebuffer_object
 	kCGLFEglDeleteRenderbuffersEXT,
-#endif
 	kCGLFEglDeleteTextures,
 	kCGLFEglDeleteVertexArraysEXT,
 	kCGLFEglDepthBoundsEXT,
@@ -230,9 +217,6 @@ typedef enum
 	kCGLFEglFinishObjectAPPLE,
 	kCGLFEglFinishRenderAPPLE,
 	kCGLFEglFlush,
-#if GL_APPLE_flush_buffer_range
-	kCGLFEglFlushMappedBufferRangeAPPLE,
-#endif
 	kCGLFEglFlushRenderAPPLE,
 	kCGLFEglFlushVertexArrayRangeEXT,
 	kCGLFEglFogCoordPointer,
@@ -244,28 +228,20 @@ typedef enum
 	kCGLFEglFogfv,
 	kCGLFEglFogi,
 	kCGLFEglFogiv,
-#if GL_EXT_framebuffer_object
 	kCGLFEglFramebufferRenderbufferEXT,
 	kCGLFEglFramebufferTexture1DEXT,
 	kCGLFEglFramebufferTexture2DEXT,
 	kCGLFEglFramebufferTexture3DEXT,
-#endif
 	kCGLFEglFrontFace,
 	kCGLFEglFrustum,
 	kCGLFEglGenBuffers,
-#if GL_EXT_framebuffer_object
 	kCGLFEglGenerateMipmapEXT,
-#endif
 	kCGLFEglGenFencesAPPLE,
-#if GL_EXT_framebuffer_object
 	kCGLFEglGenFramebuffersEXT,
-#endif
 	kCGLFEglGenLists,
 	kCGLFEglGenProgramsARB,
 	kCGLFEglGenQueries,
-#if GL_EXT_framebuffer_object
 	kCGLFEglGenRenderbuffersEXT,
-#endif
 	kCGLFEglGenTextures,
 	kCGLFEglGenVertexArraysEXT,
 	kCGLFEglGetActiveAttribARB,
@@ -294,9 +270,7 @@ typedef enum
 	kCGLFEglGetFinalCombinerInputParameterfvNV,
 	kCGLFEglGetFinalCombinerInputParameterivNV,
 	kCGLFEglGetFloatv,
-#if GL_EXT_framebuffer_object
 	kCGLFEglGetFramebufferAttachmentParameterivEXT,
-#endif
 	kCGLFEglGetHandleARB,
 	kCGLFEglGetHistogram,
 	kCGLFEglGetHistogramParameterfv,
@@ -331,9 +305,7 @@ typedef enum
 	kCGLFEglGetQueryObjectiv,
 	kCGLFEglGetQueryObjectuiv,
 	kCGLFEglGetQueryiv,
-#if GL_EXT_framebuffer_object
 	kCGLFEglGetRenderbufferParameterivEXT,
-#endif
 	kCGLFEglGetSeparableFilter,
 	kCGLFEglGetShaderInfoLog,
 	kCGLFEglGetShaderSourceARB,
@@ -376,16 +348,12 @@ typedef enum
 	kCGLFEglIsBuffer,
 	kCGLFEglIsEnabled,
 	kCGLFEglIsFenceAPPLE,
-#if GL_EXT_framebuffer_object
 	kCGLFEglIsFramebufferEXT,
-#endif
 	kCGLFEglIsList,
 	kCGLFEglIsProgram,
 	kCGLFEglIsProgramARB,
 	kCGLFEglIsQuery,
-#if GL_EXT_framebuffer_object
 	kCGLFEglIsRenderbufferEXT,
-#endif
 	kCGLFEglIsShader,
 	kCGLFEglIsTexture,
 	kCGLFEglIsVertexArrayEXT,
@@ -553,9 +521,7 @@ typedef enum
 	kCGLFEglRectiv,
 	kCGLFEglRects,
 	kCGLFEglRectsv,
-#if GL_EXT_framebuffer_object
 	kCGLFEglRenderbufferStorageEXT,
-#endif
 	kCGLFEglRenderMode,
 	kCGLFEglResetHistogram,
 	kCGLFEglResetMinmax,
@@ -767,6 +733,10 @@ typedef enum
 	kCGLFEglWindowPos3iv,
 	kCGLFEglWindowPos3s,
 	kCGLFEglWindowPos3sv,
+
+	/* APPLE_flush_buffer_range */
+	kCGLFEglBufferParameteriAPPLE,
+	kCGLFEglFlushMappedBufferRangeAPPLE,
 
 	kCGLFENumFunctions
 } CGLProfilerFunctionEnum;

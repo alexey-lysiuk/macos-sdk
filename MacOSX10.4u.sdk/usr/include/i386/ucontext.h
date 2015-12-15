@@ -33,19 +33,31 @@ struct mcontext
 struct __darwin_mcontext
 #endif /* _POSIX_C_SOURCE */
 {
-	i386_exception_state_t	es;
-	i386_thread_state_t 	ss;	
-	i386_float_state_t	fs;
+#if __LP64__
+	x86_exception_state64_t	es;
+	x86_thread_state64_t 	ss;	
+	x86_float_state64_t	fs;
+#else
+	x86_exception_state32_t	es;
+	x86_thread_state32_t 	ss;	
+	x86_float_state32_t	fs;
+#endif
 };
 
 #ifndef _POSIX_C_SOURCE
-#define I386_MCONTEXT_SIZE	(i386_THREAD_STATE_COUNT + i386_FLOAT_STATE_COUNT + I386_EXCEPTION_STATE_COUNT) * sizeof(int)
+#if __LP64__
+#define I386_MCONTEXT_SIZE	(x86_THREAD_STATE64_COUNT + x86_FLOAT_STATE64_COUNT + x86_EXCEPTION_STATE64_COUNT) * sizeof(int)
+#else
+#define I386_MCONTEXT_SIZE	(x86_THREAD_STATE32_COUNT + x86_FLOAT_STATE32_COUNT + x86_EXCEPTION_STATE32_COUNT) * sizeof(int)
+#endif
 #endif /* _POSIX_C_SOURCE */
 
 #ifndef _MCONTEXT_T
 #define _MCONTEXT_T
 typedef __darwin_mcontext_t	mcontext_t;
 #endif
+
+
 
 
 #endif /* _I386_UCONTEXT_H_ */

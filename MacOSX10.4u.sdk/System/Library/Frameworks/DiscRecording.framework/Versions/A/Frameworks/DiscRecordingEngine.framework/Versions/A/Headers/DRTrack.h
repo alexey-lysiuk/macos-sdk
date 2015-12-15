@@ -173,7 +173,7 @@
 					
 					Returns the calculated maximum speed the at which the receiver can produce data. 
 					This value should be used when setting up a burn to limit the burn speed
-   	@param 			interval	The length of the test in seconds.
+   	@param 			length	The length of the test in bytes.
    	@result			The maximum speed data can be produced at.
 */
 - (float) testProductionSpeedForLength:(uint32_t)length;
@@ -191,6 +191,7 @@
 				involved) can cause this call to take 30 seconds or more. Since your
 				main thread should not be allowed to block for this long, you may wish
 				to call this function on a separate thread.
+	@result		The estimated length of the track.
 */
 - (uint64_t) estimateLength;
 #endif
@@ -214,6 +215,7 @@
    					of the track data itself is returned. This is a simple wrapper to obtain the 
    					@link DRTrackLengthKey DRTrackLengthKey @/link. If the @link DRTrackLengthKey DRTrackLengthKey @/link property has not been set for the track
    					this method will return a zero-length @link //apple_ref/occ/cl/DRMSF DRMSF @/link object (0m:0s:0f).
+	@result			A DRMSF representing the length of the track.
 */
 - (DRMSF*) length;
 
@@ -223,7 +225,7 @@
     @discussion		This is a simple wrapper to obtain the @link DRPreGapLengthKey DRPreGapLengthKey @/link. If the @link DRPreGapLengthKey DRPreGapLengthKey @/link 
     				property has not been set for the track this method will return a zero-length @link //apple_ref/occ/cl/DRMSF DRMSF @/link 
     				object (0m:0s:0f).
-  	
+  	@result			A DRMSF representing the length of the pre gap.
 */
 - (DRMSF*) preGap;
 

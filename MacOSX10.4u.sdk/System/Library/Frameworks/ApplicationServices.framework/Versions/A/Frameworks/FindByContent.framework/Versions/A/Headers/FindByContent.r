@@ -3,9 +3,9 @@
  
      Contains:   Public search interface for the Find by Content shared library
  
-     Version:    FindByContent-110~556
+     Version:    FindByContent-110~883
  
-     Copyright:  © 1997-2005 by Apple Computer, Inc., all rights reserved.
+     Copyright:  © 1997-2006 by Apple Computer, Inc., all rights reserved.
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:

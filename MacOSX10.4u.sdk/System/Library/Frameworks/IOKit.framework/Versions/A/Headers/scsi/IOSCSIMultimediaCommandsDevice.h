@@ -200,10 +200,12 @@ protected:
     struct IOSCSIMultimediaCommandsDeviceExpansionData
 	{
 		IONotifier *		fPowerDownNotifier;
+		bool				fDeviceSupportsPowerOff;
 	};
     IOSCSIMultimediaCommandsDeviceExpansionData * fIOSCSIMultimediaCommandsDeviceReserved;
 	
-	#define fPowerDownNotifier 	fIOSCSIMultimediaCommandsDeviceReserved->fPowerDownNotifier
+	#define fPowerDownNotifier 			fIOSCSIMultimediaCommandsDeviceReserved->fPowerDownNotifier
+	#define fDeviceSupportsPowerOff 	fIOSCSIMultimediaCommandsDeviceReserved->fDeviceSupportsPowerOff
 	
 	// This method will retreive the SCSI Primary Command Set object for
 	// the class.  For subclasses, this will be overridden using a
@@ -239,6 +241,8 @@ protected:
 		kPollingMode_NewMedia 		= 1,
 		kPollingMode_MediaRemoval	= 2
 	};
+	
+	virtual IOReturn	setProperties ( OSObject * properties );
 	
 	virtual void 		CreateStorageServiceNub ( void );
 	virtual bool		DetermineDeviceCharacteristics ( void );

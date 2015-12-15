@@ -77,6 +77,12 @@ protected:
 	
 	void setUnitCount( UInt32 count );
 	UInt32 getUnitCount( void );
+
+	bool isPhysicalAccessEnabled( void );
+
+	virtual IOFWSimpleContiguousPhysicalAddressSpace * createSimpleContiguousPhysicalAddressSpace( vm_size_t size, IODirection direction );
+		
+    virtual IOFWSimplePhysicalAddressSpace * createSimplePhysicalAddressSpace( vm_size_t size, IODirection direction );
 		
 private:
     OSMetaClassDeclareReservedUnused(IOFireWireDeviceAux, 0);

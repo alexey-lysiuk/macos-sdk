@@ -83,6 +83,7 @@
 #include <IOKit/IOLib.h>
 #include <IOKit/IOService.h>
 #include <IOKit/IOCommandGate.h>
+#include <IOKit/IOWorkLoop.h>
 
 // SCSI Architecture Model Family includes
 #include <IOKit/scsi/SCSITask.h>
@@ -165,7 +166,13 @@ enum
 	// autosense data when a kSCSITaskStatus_CHECK_CONDITION is set,
 	// then the protocol layer should return true. E.g. FireWire
 	// transport drivers should respond true to this.
-	kSCSIProtocolFeature_ProtocolAlwaysReportsAutosenseData	= 11
+	kSCSIProtocolFeature_ProtocolAlwaysReportsAutosenseData	= 11,
+	
+	// kSCSIProtocolFeature_ProtocolSpecificPowerOff:
+	// Used to determine if the SCSI Protocol Services Driver supports
+	// removing the power to the drive. This is used for aggressive
+	// power management, specifically for ATAPI devices on ATA buses.
+	kSCSIProtocolFeature_ProtocolSpecificPowerOff			= 12
 	
 };
 
@@ -250,7 +257,10 @@ public:
 protected:
 	
 	// Reserve space for future expansion.
-	struct IOSCSIProtocolInterfaceExpansionData { };
+	struct IOSCSIProtocolInterfaceExpansionData
+	{
+		IOWorkLoop *	fWorkLoop;
+	};
 	IOSCSIProtocolInterfaceExpansionData * fIOSCSIProtocolInterfaceReserved;
 	
 	// ------ Power Management Support ------

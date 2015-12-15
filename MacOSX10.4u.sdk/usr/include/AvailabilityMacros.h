@@ -73,8 +73,6 @@
 #define MAC_OS_X_VERSION_10_2 1020
 #define MAC_OS_X_VERSION_10_3 1030
 #define MAC_OS_X_VERSION_10_4 1040
-#define MAC_OS_X_VERSION_10_5 1050
-
 
 
 /* 
@@ -85,7 +83,7 @@
     #ifdef __ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__
         #define MAC_OS_X_VERSION_MIN_REQUIRED __ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__
     #else
-        #if __ppc64__ || __i386__
+        #if __ppc64__ || __i386__ || __x86_64__
             #define MAC_OS_X_VERSION_MIN_REQUIRED MAC_OS_X_VERSION_10_4
         #else
             #define MAC_OS_X_VERSION_MIN_REQUIRED MAC_OS_X_VERSION_10_1

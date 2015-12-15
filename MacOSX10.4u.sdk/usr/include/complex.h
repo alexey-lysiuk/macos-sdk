@@ -80,7 +80,7 @@ extern double creal( double complex );
 #define __WANT_LONG_DOUBLE_FORMAT__ 64
 #endif
 #endif
-#elif defined(__i386__)
+#elif defined(__i386__) || defined( __x86_64__ )
 #else
 #error Unknown Architecture
 #endif

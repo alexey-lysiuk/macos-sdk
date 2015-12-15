@@ -194,7 +194,7 @@ AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 */
 extern CFArrayRef
 DRFolderCopyChildren(
-	const DRFolderRef	virtualFolder)
+	const DRFolderRef	folder)
 AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 

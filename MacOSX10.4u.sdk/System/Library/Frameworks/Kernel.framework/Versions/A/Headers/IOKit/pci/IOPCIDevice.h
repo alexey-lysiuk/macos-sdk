@@ -213,13 +213,21 @@ struct IOPCIPhysicalAddress {
 #define kIOPMPCIConfigSpaceVolatileKey	"IOPMPCIConfigSpaceVolatile"
 
 // pci express link status
-#define kIOPCIExpressLinkStatusKey	"IOPCIExpressLinkStatus"
+#define kIOPCIExpressLinkStatusKey	 "IOPCIExpressLinkStatus"
+// pci express link capabilities
+#define kIOPCIExpressLinkCapabilitiesKey "IOPCIExpressLinkCapabilities"
 
 enum {
     kIOPCIDevicePowerStateCount = 3,
     kIOPCIDeviceOffState	= 0,
     kIOPCIDeviceDozeState	= 1,
     kIOPCIDeviceOnState		= 2,
+};
+
+enum
+{
+    // bits getInterruptType result
+    kIOInterruptTypePCIMessaged = 0x00010000
 };
 
 /*! @class IOPCIDevice : public IOService
@@ -293,6 +301,7 @@ class IOPCIDevice : public IOService
 
     friend class IOPCIBridge;
     friend class IOPCI2PCIBridge;
+    friend class IOPCIMessagedInterruptController;
 
 protected:
     IOPCIBridge *	parent;
@@ -306,6 +315,11 @@ protected:
 	bool					PMsleepEnabled;		// T if a client has enabled PCI Power Management
 	UInt8					PMcontrolStatus;	// if >0 this device supports PCI Power Management
 	UInt16					sleepControlBits;	// bits to set the control/status register to for sleep
+
+	UInt16					expressConfig;
+	UInt16					msiConfig;
+	UInt8					msiBlockSize;
+	UInt8					msiMode;
     };
 
 /*! @var reserved
@@ -332,6 +346,7 @@ public:
                                      SInt32       *	score );
     virtual IOService * matchLocation( IOService * client );
     virtual IOReturn getResources( void );
+    virtual IOReturn setProperties(OSObject * properties);
 
     /* Config space accessors */
 

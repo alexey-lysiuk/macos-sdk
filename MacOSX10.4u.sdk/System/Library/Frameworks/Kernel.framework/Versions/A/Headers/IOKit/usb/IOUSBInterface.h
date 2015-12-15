@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1998-2003 Apple Computer, Inc. All rights reserved.
+ * Copyright (c) 1998-2006 Apple Computer, Inc. All rights reserved.
  *
  * @APPLE_LICENSE_HEADER_START@
  * 
@@ -21,62 +21,6 @@
  * @APPLE_LICENSE_HEADER_END@
  */
 
-#ifndef __OPEN_SOURCE__
-/*
- *
- *	$Log: IOUSBInterface.h,v $
- *	Revision 1.24  2005/01/28 23:43:33  nano
- *	Add uid for Mass Storage devices:  <rdar://problem/3918165> USB should add a GUID for mass storage devices to allow for USB booting
- *	
- *	Revision 1.23  2004/11/11 22:22:45  nano
- *	Fix for <rdar://problem/3875705> Tiger: Q16B EVT Build run in fail Checkconfig Bluetooth *2.
- *	
- *	Revision 1.22.26.1  2004/11/04 19:34:37  nano
- *	Change the MakeDevice USBErrors() to be just logs.
- *	
- *	Revision 1.22.32.1  2004/12/13 20:45:05  nano
- *	Add the GUID for mass storage devices
- *	
- *	Revision 1.22  2004/09/09 04:52:59  nano
- *	Merge branch PR-3731180 into TOT
- *	
- *	Revision 1.21.50.1  2004/09/07 19:44:35  nano
- *	IOUSBInterfaceUserClient needs to call ClosePipes(), so  make it a friend.
- *	
- *	Revision 1.21  2004/02/03 22:09:49  nano
- *	Fix <rdar://problem/3548194>: Remove $ Id $ from source files to prevent conflicts
- *
- *	Revision 1.19.36.1  2003/12/21 22:42:46  nano
- *	Merge branch:  New methods to implement fix for rdar://3479244.
- *
- *	Revision 1.21.44.1  2004/08/26 19:32:31  nano
- *	IOUSBUserClient needs to call ClosePipes()
- *	
- *	Revision 1.21  2004/02/03 22:09:49  nano
- *	Fix <rdar://problem/3548194>: Remove $ Id $ from source files to prevent conflicts
- *	
- *	Revision 1.20  2003/10/14 22:05:30  nano
- *	New methods to support calling super::open thru runAction.
- *	
- *	Revision 1.19.4.1  2003/08/22 21:13:12  nano
- *	Add the gate to IOUSBInterface and call super::open through it
- *	
- *	Revision 1.19  2003/08/20 19:41:40  nano
- *	
- *	Bug #:
- *	New version's of Nima's USB Prober (2.2b17)
- *	3382540  Panther: Ejecting a USB CardBus card can freeze a machine
- *	3358482  Device Busy message with Modems and IOUSBFamily 201.2.14 after sleep
- *	3385948  Need to implement device recovery on High Speed Transaction errors to full speed devices
- *	3377037  USB EHCI: returnTransactions can cause unstable queue if transactions are aborted
- *	
- *	Also, updated most files to use the id/log functions of cvs
- *	
- *	Submitted by: nano
- *	Reviewed by: rhoads/barryt/nano
- *	
- */
-#endif
 #ifndef _IOKIT_IOUSBINTERFACE_H
 #define _IOKIT_IOUSBINTERFACE_H
 
@@ -116,8 +60,9 @@ protected:
     UInt8				_iInterface;
 
     struct ExpansionData {
-        IOCommandGate	*		_gate;
-        IOWorkLoop	*		_workLoop;
+        IOCommandGate		*_gate;
+        IOWorkLoop			*_workLoop;
+		bool				_needToClose;
     };
     ExpansionData * _expansionData;
 
@@ -139,6 +84,9 @@ public:
     virtual bool 	finalize(IOOptionBits options);
     virtual void 	stop(IOService *  provider);
     virtual IOReturn 	message( UInt32 type, IOService * provider,  void * argument = 0 );
+#if !(defined(__ppc__) && defined(KPI_10_4_0_PPC_COMPAT))
+    virtual bool 	didTerminate( IOService * provider, IOOptionBits options, bool * defer );
+#endif
     virtual void 	free();	
 
     /*!

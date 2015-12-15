@@ -46,7 +46,8 @@ extern int PEGetPlatformEpoch( void );
 enum {
   kPEHaltCPU,
   kPERestartCPU,
-  kPEHangCPU
+  kPEHangCPU,
+  kPEUPSDelayHaltCPU
 };
 extern int (*PE_halt_restart)(unsigned int type);
 extern int PEHaltRestart(unsigned int type);

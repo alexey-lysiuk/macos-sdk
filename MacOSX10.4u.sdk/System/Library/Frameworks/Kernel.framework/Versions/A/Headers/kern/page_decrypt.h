@@ -23,12 +23,10 @@
 #ifndef _KERN_PAGE_DECRYPT_H
 #define _KERN_PAGE_DECRYPT_H
 
-typedef	int	  (*dsmos_page_transform_hook_t) (void*);
-extern	void	dsmos_page_transform_hook(dsmos_page_transform_hook_t hook);	/* exported */
+typedef	int	  (*dsmos_page_transform_hook_t) (const void*,void*);
+extern	void	dsmos_page_transform_hook(dsmos_page_transform_hook_t hook,
+					  void (*commpage_setup_dsmos_blob)(void**, int));	/* exported */
 
-extern	int		dsmos_page_transform(void*);
+extern	int		dsmos_page_transform(const void*,void*);
 
 #endif	/* _KERN_PAGE_DECRYPT_H */
-
-
-

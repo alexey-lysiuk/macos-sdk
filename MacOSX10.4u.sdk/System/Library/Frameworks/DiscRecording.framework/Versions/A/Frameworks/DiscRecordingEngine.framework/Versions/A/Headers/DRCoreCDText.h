@@ -217,7 +217,6 @@ enum
 /*!
 	@function	DRCDTextBlockCreateArrayFromPackList
 	@abstract	Parses raw CD-Text data into DRCDTextBlock objects.
-	@param		data		CFDataRef containing raw CD-Text PACKs.
 	@discussion	You can use this function to parse any data blob containing CD-Text PACKs,
 				such as the result of DRDeviceReadCDText, or the data returned by the
 				IOKit ioctl DKIOCCDREADTOC with format=5.  
@@ -225,6 +224,7 @@ enum
 				The CFData should be sized to fit the exact number of PACKs.  Each PACK
 				occupies 18 bytes, and the 4-byte header from a READ TOC command may
 				optionally be included.
+	@param		packs		CFDataRef containing raw CD-Text PACKs.
 	@result		A CFArray object containing DRCDTextBlock objects describing the information
 				in the raw PACKs, or NULL if the data could not be parsed.  The caller
 				is responsible for releasing this array.
@@ -363,7 +363,7 @@ AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 							of tracks in the language block, the function creates new entries in
 							the track array as needed.
 	@param		key			A key indicating the value to set.
-	@param		string		The new textual value.
+	@param		value		The new textual value.
 	@discussion	The CD-Text value may be a CFString, CFData, or CFNumber object, but should correspond
 				to the type defined in the description of the key.
 				

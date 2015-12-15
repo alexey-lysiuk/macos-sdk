@@ -3,9 +3,9 @@
  
      Contains:   Quickdraw Text Interfaces.
  
-     Version:    Quickdraw-192.7~21
+     Version:    Quickdraw-192.20~23
  
-     Copyright:  © 1983-2005 by Apple Computer, Inc., all rights reserved.
+     Copyright:  © 1983-2006 by Apple Computer, Inc., all rights reserved.
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:

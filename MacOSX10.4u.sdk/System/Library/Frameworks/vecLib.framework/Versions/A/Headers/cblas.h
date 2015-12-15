@@ -688,22 +688,23 @@ typedef void (*BLASParamErrorProc)(const char *funcName, const char *paramName, 
 void SetBLASParamErrorProc(BLASParamErrorProc ErrorProc);
 
 #if defined(__ppc__) || defined(__ppc64__)
-    #ifdef __VEC__
-        typedef vector float			VectorFloat;
-        typedef vector float	                ConstVectorFloat; 
+    #if defined( __VEC__ )
+        typedef vector float	VectorFloat;
+        typedef vector float	ConstVectorFloat; 
     #endif
 
-#elif defined(__i386__)
-    typedef float __M128  __attribute__((vector_size (16)));
+#elif defined(__i386__) || defined( __x86_64__ )
+    #if defined( __SSE__ )
+		typedef float __M128  __attribute__((vector_size (16)));
 
-    typedef __M128  				VectorFloat;
-    typedef VectorFloat				ConstVectorFloat;
-    
+		typedef __M128			VectorFloat;
+		typedef VectorFloat		ConstVectorFloat;
+    #endif
 #else
-#error Unknown architecture
+	#error Unknown architecture
 #endif
 
-#if defined(__VEC__) || defined(__i386__)
+#if defined(__VEC__) || defined(__SSE__)
 /*
    -------------------------------------------------------------------------------------------------
    These routines provide optimized, SIMD-only support for common small matrix multiplications.
@@ -763,7 +764,7 @@ void dMultVecMat_32x32(const double X[32], const double A[32][32], double Y[32])
 void dMultMatVec_32x32(const double A[32][32], const double X[32], double Y[32]);
 void dMultMatMat_32x32(const double A[32][32], const double B[32][32], double C[32][32]);
 
-#endif /* defined(__VEC__) || defined(__i386__) */
+#endif /* defined(__VEC__) || defined(__SSE__) */
 #endif  /* end #ifdef CBLAS_ENUM_ONLY */
 
 #ifdef __cplusplus

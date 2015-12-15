@@ -53,7 +53,9 @@ class IOLocalConfigDirectory;
 class IOFWLocalIsochPort;
 class IOFireWirePowerManager;
 class IOFireWireBus;
-class IOFWDCLPool ;
+class IOFWDCLPool;
+class IOFWSimpleContiguousPhysicalAddressSpace;
+class IOFWSimplePhysicalAddressSpace;
 
 #pragma mark -
 
@@ -89,6 +91,14 @@ class IOFireWireBusAux : public OSObject
 		virtual IOFWDCLPool *							createDCLPool ( unsigned capacity ) const = 0 ;
 		virtual IOFWBufferFillIsochPort *				createBufferFillIsochPort() const = 0 ;
 		virtual UInt8 getMaxRec( void ) = 0;
+
+		virtual UInt64 getFireWirePhysicalAddressMask( void ) = 0;
+		virtual UInt32 getFireWirePhysicalAddressBits( void ) = 0;
+		virtual UInt64 getFireWirePhysicalBufferMask( void ) = 0;
+		virtual UInt32 getFireWirePhysicalBufferBits( void ) = 0;
+
+		virtual IOFWSimpleContiguousPhysicalAddressSpace * createSimpleContiguousPhysicalAddressSpace( vm_size_t size, IODirection direction ) = 0;
+		virtual IOFWSimplePhysicalAddressSpace * createSimplePhysicalAddressSpace( vm_size_t size, IODirection direction ) = 0;
 
 	private:
 		OSMetaClassDeclareReservedUsed(IOFireWireBusAux, 0);
@@ -300,6 +310,47 @@ protected:
 		// note: The returned port must have one of the init() functions 
 		// called on it before it can be used!
 		IOFWBufferFillIsochPort *					createBufferFillIsochPort() ;
+
+		// get the physical addressing limitations for this controller
+
+		// returns the physical mask for memory addressable by the bus and this controller's DMA engine
+		// intended for use with IOBufferMemoryDescriptor::inTaskWithPhysicalMask()
+		// all current hardware is 32 bit --- currently returns 0x00000000FFFFFFFF
+		// this API is intended for allocating physical buffers. 
+		// it will not return more than 48 bits so that buffer addresses can be turned into FWAddresses
+		inline UInt64 getFireWirePhysicalAddressMask( void )
+			{ return fAuxiliary->getFireWirePhysicalAddressMask(); }
+		
+		// returns a count of the maximum addressing bits supported by the bus and this controller
+		// intended for use with IODMACommand::withSpecification()
+		// all current hardware is 32 bit --- currently returns 32
+		// this API is intended for allocating physical buffers. 
+		// it will not return more than 48 bits so that buffer addresses can be turned into FWAddresses
+		inline UInt32 getFireWirePhysicalAddressBits( void )
+			{ return fAuxiliary->getFireWirePhysicalAddressBits(); }
+
+		// returns the physical mask for memory addressable by this controller's DMA engine
+		// intended for use with IOBufferMemoryDescriptor::inTaskWithPhysicalMask()
+		// all current hardware is 32 bit --- currently returns 0x00000000FFFFFFFF
+		// this API is to allocate isoch and other buffers that don't need to be addressable by the bus 
+		// it may someday return as high 64 bits
+		inline UInt64 getFireWirePhysicalBufferMask( void )
+			{ return fAuxiliary->getFireWirePhysicalBufferMask(); }
+		
+		// returns a count of the maximum addressing bits supported by this controller
+		// intended for use with IODMACommand::withSpecification()
+		// all current hardware is 32 bit --- currently returns 32
+		// this API is to allocate isoch and other buffers that don't need to be addressable by the bus 
+		// it may someday return as high 64 bits
+		inline UInt32 getFireWirePhysicalBufferBits( void )
+			{ return fAuxiliary->getFireWirePhysicalBufferBits(); }
+
+		inline IOFWSimpleContiguousPhysicalAddressSpace * createSimpleContiguousPhysicalAddressSpace( vm_size_t size, IODirection direction )
+			{ return fAuxiliary->createSimpleContiguousPhysicalAddressSpace( size, direction ); }
+			
+		inline IOFWSimplePhysicalAddressSpace * createSimplePhysicalAddressSpace( vm_size_t size, IODirection direction )
+			{ return fAuxiliary->createSimplePhysicalAddressSpace( size, direction ); }
+			
 
 	private:
 	

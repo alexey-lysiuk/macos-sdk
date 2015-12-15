@@ -3,9 +3,9 @@
  
      Contains:   QuickTime Interfaces.
  
-     Version:    QuickTime 7.0.4
+     Version:    QuickTime 7.1.2
  
-     Copyright:  © 1990-2005 by Apple Computer, Inc., all rights reserved
+     Copyright:  © 1990-2006 by Apple Computer, Inc., all rights reserved
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -37,7 +37,7 @@
 extern "C" {
 #endif
 
-#pragma options align=mac68k
+#pragma pack(push, 2)
 
 typedef CALLBACK_API( void , PrePrerollCompleteProcPtr )(MediaHandler mh, OSErr err, void *refcon);
 typedef STACK_UPP_TYPE(PrePrerollCompleteProcPtr)               PrePrerollCompleteUPP;
@@ -1774,6 +1774,141 @@ MediaGGetLatency(
   TimeRecord *   latency)                                     AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
 
 
+/* Aperture Mode Support*/
+
+/*
+ *  MediaSetTrackApertureModeDimensionsUsingSampleDescription()
+ *  
+ *  Summary:
+ *    Sets the three aperture mode dimension properties on the track,
+ *    calculating the values using the provided sample description.
+ *  
+ *  Parameters:
+ *    
+ *    mh:
+ *      [in] The media handler.
+ *    
+ *    sampleDesc:
+ *      [in] The sample description handle.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 (or QuickTime 7.1) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern ComponentResult 
+MediaSetTrackApertureModeDimensionsUsingSampleDescription(
+  MediaHandler              mh,
+  SampleDescriptionHandle   sampleDesc)                       AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+
+
+/*
+ *  MediaGetApertureModeClipRectForSampleDescriptionIndex()
+ *  
+ *  Summary:
+ *    Calculates a source clip rectangle appropriate for the current
+ *    aperture mode and the given sample description.
+ *  
+ *  Discussion:
+ *    If the track's aperture mode is kQTApertureMode_CleanAperture,
+ *    the rectangle should be the clean aperture as described by the
+ *    sample description (see
+ *    kICMImageDescriptionPropertyID_CleanApertureClipRect); otherwise
+ *    it should be the full dimensions of the sample description.
+ *  
+ *  Parameters:
+ *    
+ *    mh:
+ *      [in] The media handler.
+ *    
+ *    sampleDescIndex:
+ *      [in] Indicates the sample description index of sample
+ *      description in the media
+ *    
+ *    clipFixedRectOut:
+ *      [out] Points to a variable to receive the clip rectangle.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 (or QuickTime 7.1) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern ComponentResult 
+MediaGetApertureModeClipRectForSampleDescriptionIndex(
+  MediaHandler   mh,
+  long           sampleDescIndex,
+  FixedRect *    clipFixedRectOut)                            AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+
+
+/*
+ *  MediaGetApertureModeMatrixForSampleDescriptionIndex()
+ *  
+ *  Summary:
+ *    Calculates a matrix appropriate for the current aperture mode and
+ *    the given sample description.
+ *  
+ *  Discussion:
+ *    If the track's aperture mode is kQTApertureMode_CleanAperture or
+ *    kQTApertureMode_ProductionAperture, the matrix should scale
+ *    horizontally to compensate for the pixel aspect ratio. Otherwise
+ *    the matrix should be identity. If the track's aperture mode is
+ *    kQTApertureMode_CleanAperture, the matrix should translate the
+ *    top-left point of the clean aperture to the origin. (See
+ *    kICMImageDescriptionPropertyID_CleanApertureMatrix and
+ *    kICMImageDescriptionPropertyID_ProductionApertureMatrix.)
+ *  
+ *  Parameters:
+ *    
+ *    mh:
+ *      [in] The media handler.
+ *    
+ *    sampleDescIndex:
+ *      [in] Indicates the sample description index of sample
+ *      description in the media
+ *    
+ *    matrixOut:
+ *      [out] Points to a variable to receive the matrix.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 (or QuickTime 7.1) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern ComponentResult 
+MediaGetApertureModeMatrixForSampleDescriptionIndex(
+  MediaHandler    mh,
+  long            sampleDescIndex,
+  MatrixRecord *  matrixOut)                                  AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+
+
+/*
+ *  MediaGenerateApertureModeDimensions()
+ *  
+ *  Summary:
+ *    Examines a movie and sets up track aperture mode dimensions.
+ *  
+ *  Discussion:
+ *    If the sample descriptions tracks lack tags describing clean
+ *    aperture and pixel aspect ratio information, the media data may
+ *    be scanned to see if the correct values can be divined and
+ *    attached. Then the aperture mode dimensions should be calculated
+ *    and set, as by
+ *    MediaSetTrackApertureModeDimensionsUsingSampleDescription.
+ *  
+ *  Parameters:
+ *    
+ *    mh:
+ *      [in] The media handler.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 (or QuickTime 7.1) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern ComponentResult 
+MediaGenerateApertureModeDimensions(MediaHandler mh)          AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+
+
 
 
 
@@ -1880,7 +2015,11 @@ enum {
     kMediaNavigateTargetRefConSelect           = 0x056B,
     kMediaGGetIdleManagerSelect                = 0x056C,
     kMediaGSetIdleManagerSelect                = 0x056D,
-    kMediaGGetLatencySelect                    = 0x0571
+    kMediaGGetLatencySelect                    = 0x0571,
+    kMediaSetTrackApertureModeDimensionsUsingSampleDescriptionSelect = 0x0579,
+    kMediaGetApertureModeClipRectForSampleDescriptionIndexSelect = 0x057A,
+    kMediaGetApertureModeMatrixForSampleDescriptionIndexSelect = 0x057B,
+    kMediaGenerateApertureModeDimensionsSelect = 0x057C
 };
 /*
  *  NewPrePrerollCompleteUPP()
@@ -1919,8 +2058,20 @@ InvokePrePrerollCompleteUPP(
   void *                 refcon,
   PrePrerollCompleteUPP  userUPP)                             AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
+#if __MACH__
+  #ifdef __cplusplus
+    inline PrePrerollCompleteUPP                                NewPrePrerollCompleteUPP(PrePrerollCompleteProcPtr userRoutine) { return userRoutine; }
+    inline void                                                 DisposePrePrerollCompleteUPP(PrePrerollCompleteUPP) { }
+    inline void                                                 InvokePrePrerollCompleteUPP(MediaHandler mh, OSErr err, void * refcon, PrePrerollCompleteUPP userUPP) { (*userUPP)(mh, err, refcon); }
+  #else
+    #define NewPrePrerollCompleteUPP(userRoutine)               ((PrePrerollCompleteUPP)userRoutine)
+    #define DisposePrePrerollCompleteUPP(userUPP)
+    #define InvokePrePrerollCompleteUPP(mh, err, refcon, userUPP) (*userUPP)(mh, err, refcon)
+  #endif
+#endif
 
-#pragma options align=reset
+
+#pragma pack(pop)
 
 #ifdef __cplusplus
 }

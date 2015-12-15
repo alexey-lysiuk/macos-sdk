@@ -1,5 +1,5 @@
 /*
-	Copyright:	(c) 1999 by Apple Computer, Inc., all rights reserved.
+	Copyright:	(c) 1999 - 2006 by Apple Computer, Inc., all rights reserved.
 */
 
 #ifndef _CGLRENDERERS_H

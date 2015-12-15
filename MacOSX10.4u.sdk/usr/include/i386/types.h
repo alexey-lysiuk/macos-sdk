@@ -88,7 +88,11 @@ typedef	long long		int64_t;
 #endif
 typedef	unsigned long long	u_int64_t;
 
+#if __LP64__
+typedef int64_t			register_t;
+#else
 typedef int32_t			register_t;
+#endif
 
 #ifndef _INTPTR_T
 #define _INTPTR_T

@@ -3,9 +3,9 @@
  
      Contains:   Gestalt Interfaces.
  
-     Version:    CarbonCore-682.9~1
+     Version:    CarbonCore-682.14~2
  
-     Copyright:  © 1988-2005 by Apple Computer, Inc.  All rights reserved
+     Copyright:  © 1988-2006 by Apple Computer, Inc.  All rights reserved
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -1175,7 +1175,8 @@
 #define gestaltX86HasSMX 				6					/*  SMX */
 #define gestaltX86HasEST 				7					/*  Enhanced SpeedsTep (GV3) */
 #define gestaltX86HasTM2 				8					/*  Thermal Monitor 2 */
-#define gestaltX86HasCID 				9					/*  L1 Context ID */
+#define gestaltX86HasSupplementalSSE3 	9					/*  Supplemental SSE3 instructions */
+#define gestaltX86HasCID 				10					/*  L1 Context ID */
 #define gestaltX86HasCX16 				13					/*  CmpXchg16b instruction */
 #define gestaltX86HasxTPR 				14					/*  Send Task PRiority msgs */
 

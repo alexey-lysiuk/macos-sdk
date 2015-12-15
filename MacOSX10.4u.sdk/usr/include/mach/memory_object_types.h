@@ -66,6 +66,8 @@
 
 #include <mach/port.h>
 #include <mach/message.h>
+#include <mach/vm_prot.h>
+#include <mach/vm_sync.h>
 #include <mach/vm_types.h>
 #include <mach/machine/vm_types.h>
 
@@ -75,6 +77,8 @@
 
 typedef unsigned long long	memory_object_offset_t;
 typedef unsigned long long	memory_object_size_t;
+typedef natural_t		memory_object_cluster_size_t;
+
 
 /*
  * Temporary until real EMMI version gets re-implemented
@@ -177,8 +181,6 @@ typedef int      memory_object_info_data_t[MEMORY_OBJECT_INFO_MAX];
 #define MEMORY_OBJECT_ATTRIBUTE_INFO	14
 #define MEMORY_OBJECT_BEHAVIOR_INFO 	15	
 
-
-typedef natural_t memory_object_cluster_size_t;
 
 struct memory_object_perf_info {
 	memory_object_cluster_size_t	cluster_size;

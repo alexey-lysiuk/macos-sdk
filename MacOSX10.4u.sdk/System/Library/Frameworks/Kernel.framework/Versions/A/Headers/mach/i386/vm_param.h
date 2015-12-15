@@ -112,11 +112,27 @@
 					~(I386_PGBYTES-1))
 #define i386_trunc_page(x)	(((pmap_paddr_t)(x)) & ~(I386_PGBYTES-1))
 
-#ifdef PAE
-#define VM_MAX_PAGE_ADDRESS     0x00000000FFE00000ULL  /* should be -NBPDE */
-#else
-#define VM_MAX_PAGE_ADDRESS     0x00000000FFC00000ULL  /* should be -NBPDE */
-#endif
+
+
+#define VM_MIN_ADDRESS64	((user_addr_t) 0x0000000000000000ULL)
+/*
+ * default top of user stack... it grows down from here
+ */
+#define VM_USRSTACK64		((user_addr_t) 0x00007FFF5FC00000ULL)
+#define VM_DYLD64		((user_addr_t) 0x00007FFF5FC00000ULL)
+#define VM_LIB64_SHR_DATA	((user_addr_t) 0x00007FFF60000000ULL)
+#define VM_LIB64_SHR_TEXT	((user_addr_t) 0x00007FFF80000000ULL)
+/*
+ * the end of the usable user address space , for now about 47 bits.
+ * the 64 bit commpage is past the end of this
+ */
+#define VM_MAX_PAGE_ADDRESS	((user_addr_t) 0x00007FFFFFE00000ULL)
+/*
+ * canonical end of user address space for limits checking
+ */
+#define VM_MAX_USER_PAGE_ADDRESS ((user_addr_t)0x00007FFFFFFFF000ULL)
+
+
 
 /* system-wide values */
 #define MACH_VM_MIN_ADDRESS		((mach_vm_offset_t) 0)
@@ -124,7 +140,11 @@
 
 /* process-relative values (all 32-bit legacy only for now) */
 #define VM_MIN_ADDRESS		((vm_offset_t) 0)
-#define VM_MAX_ADDRESS		((vm_offset_t) (VM_MAX_PAGE_ADDRESS & 0xFFFFFFFF))
+#define VM_USRSTACK32		((vm_offset_t) 0xC0000000)
+#define VM_MAX_ADDRESS		((vm_offset_t) 0xFFE00000)
+
+
+
 
 
 #endif	/* _MACH_I386_VM_PARAM_H_ */

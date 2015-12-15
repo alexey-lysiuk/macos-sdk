@@ -93,7 +93,7 @@ AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 				succeed: ask the user to remove some data and try the burn again.
 	@param		numBlocks		The number of blocks on the disc.
 	@param		blockSize		The size of blocks on the disc (usually 2048).
-	@param		mask			The requested filesystem mask, or @link kDRFilesystemMaskDefault kDRFilesystemMaskDefault @/link.
+	@param		fsMask			The requested filesystem mask, or @link kDRFilesystemMaskDefault kDRFilesystemMaskDefault @/link.
 	@result		The number of blocks needed for filesystem overhead on a typical disc of this size.
 */
 extern UInt64

@@ -32,6 +32,12 @@
 
 #include <IOKit/IOBufferMemoryDescriptor.h>
 #include <IOKit/IOUserClient.h>
+#include <IOKit/IODMACommand.h>
+
+enum
+{
+    kFWSBP2ConstraintForceDoubleBuffer		= (1 << 0)
+};
 
 // login option flags
 enum
@@ -157,27 +163,27 @@ protected:
     IOFireWireSBP2LUN * 	fLUN;
     IOFireWireUnit *		fUnit;
     IOFireWireController *	fControl;
-    void *					fUnused1;
-    void *	  				fUnused2;
-
+    IODMACommand *			fDMACommand;
+	void *					fUnused2;
+	
     UInt32			fCommandFlags;
     UInt32			fMaxPayloadSize;
     UInt32			fTimeoutDuration;
     UInt32			fGeneration;
     void *			fRefCon;
-    
+
 	//
     // orb
     //
 	
-	IOBufferMemoryDescriptor *	fORBDescriptor;
+	IOMemoryDescriptor *		fORBDescriptor;
     FWSBP2ORB *					fORBBuffer;
 	
     FWAddress 					fORBPseudoAddress;
     IOFWAddressSpace *			fORBPseudoAddressSpace;
 
     IOFWAddressSpace *			fORBPhysicalAddressSpace;
-	IOPhysicalAddress			fORBPhysicalAddress;
+	FWAddress					fORBPhysicalAddress;
 
 	//
     // page table
@@ -187,7 +193,8 @@ protected:
     IOBufferMemoryDescriptor *	fPageTableDescriptor;
 
     IOFWAddressSpace *			fPageTablePhysicalAddressSpace;
-	IOPhysicalAddress			fPageTablePhysicalAddress;
+	FWAddress					fPageTablePhysicalAddress;
+	UInt32						fPageTablePhysicalLength;
 	
 	IOFWAddressSpace *			fPageTablePseudoAddressSpace;   
 	FWAddress					fPageTablePseudoAddress;
@@ -212,6 +219,9 @@ protected:
 	
     UInt32					fFetchAgentWriteRetries;
     UInt32					fPTECount;
+    UInt32					fFetchAgentWriteRetryInterval;
+
+	UInt32					fConstraintOptions;
 	
     virtual IOReturn allocateResources( void );
     virtual void free( void );
@@ -355,7 +365,7 @@ public:
 
     /*! 
         @function getCommandFlags
-        @abstract Gets configuration flags for the ORB.
+        @abstract Sets configuration flags for the ORB.
         @discussion Returns the current configuration flags set on this ORB.
         @result Return The current ORB flags.
     */
@@ -464,6 +474,25 @@ protected:
     virtual void setFetchAgentWriteRetries( UInt32 retries );
 
     virtual void prepareFastStartPacket( IOBufferMemoryDescriptor * descriptor );
+
+	UInt32 getFetchAgentWriteRetryInterval( void );
+    void setFetchAgentWriteRetryInterval( UInt32 interval );
+
+	IOReturn completeBufferAddressSpace( void );
+	IOReturn prepareBufferAddressSpace( IOMemoryDescriptor * memoryDescriptor );
+
+public:
+
+    /*!
+		@function setBufferConstraints
+		@abstract Configures page table generation parameters
+		@discussion Sets the maximums size of any page table segment and the required alignemnt.  Double buffering
+		may be used to satisfy these constraints. The only supported option is kFWSBP2ConstraintForceDoubleBuffer which
+		forces a page aligned double buffering of the entire descriptor.
+        @result May return an error if there is a problem allocating the underlying resources or if buffers are currently attached.
+	*/
+
+	IOReturn setBufferConstraints( UInt64 maxSegmentSize, UInt32 alignment, UInt32 options = 0);
 
 };
     

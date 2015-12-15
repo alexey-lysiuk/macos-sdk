@@ -29,6 +29,8 @@
 #if defined(KERNEL) && defined(__cplusplus)
 
 #include <IOKit/network/IOEthernetInterface.h>
+#include <net/if_var.h>
+#include <sys/queue.h>
 
 enum IO80211LinkState
 {
@@ -44,6 +46,10 @@ typedef enum IO80211LinkState IO80211LinkState;
 #define kIO80211InterfaceClass     "IO80211Interface"
 
 class RSNSupplicant;
+class IOTimerEventSource;
+class IOGatedOutputQueue;
+class IO80211Controller;
+struct rsn_pmksa_node;
 
 /*!	@class IO80211Interface
 	@abstract The 80211 interface object. 
@@ -130,11 +136,11 @@ public:
 		*/
 	void				setScanTimeout( unsigned int timeout );
 	
-	/*! @function scanTimout
+	/*! @function scanTimeout
 		@abstract <abstract>.
 		@discussion ???. 
 		*/
-	unsigned int		scanTimout();
+	unsigned int		scanTimeout();
 	
 	/*! @function setAuthTimeout
 		@abstract <abstract>.
@@ -184,7 +190,7 @@ public:
 		*/
 	void terminateSupplicant();
 	
-	/*! @function terminateSupplicant
+	/*! @function resetSupplicant
 		@abstract <abstract>.
 		@discussion ???. 
 		*/
@@ -220,6 +226,30 @@ public:
 		*/
 	void inputEAPOLFrame( mbuf_t m );
 	
+	/*! @function cachePMKSA
+		@abstract <abstract>.
+		@discussion ???. 
+		*/
+	void cachePMKSA( UInt8 * pmk, size_t pmkLen, struct ether_addr * aa, UInt8 * pmkID );
+	
+	/*! @function pmksaLookup
+		@abstract <abstract>.
+		@discussion ???. 
+		*/
+	struct rsn_pmksa_node * pmksaLookup( struct ether_addr * authenticatorEA, UInt8 * pmkID );
+	
+	/*! @function shouldRoam
+		@abstract <abstract>.
+		@discussion ???. 
+		*/
+	bool shouldRoam( struct apple80211_scan_result * asr );
+	
+	/*! @function willRoam
+		@abstract <abstract>.
+		@discussion ???. 
+		*/
+	void willRoam( struct ether_addr * bssid );
+	
 	/*! @function inputPacket
 		@abstract <abstract>.
 		@discussion ???. 
@@ -228,6 +258,86 @@ public:
                                UInt32        length  = 0,
                                IOOptionBits  options = 0,
                                void *        param   = 0);
+	
+	/*! @function outputPacket
+		@abstract <abstract>.
+		@discussion ???. 
+		*/						   
+	virtual UInt32	outputPacket( mbuf_t m, void * param );
+	
+	/*! @function getBSDName
+		@abstract <abstract>.
+		@discussion ???. 
+		*/
+	const char * getBSDName();
+	
+	/*! @function getStatusDevName
+		@abstract <abstract>.
+		@discussion ???. 
+		*/
+	char * getStatusDevName();
+	
+	/*! @function setCountermeasuresTimer
+		@abstract <abstract>.
+		@discussion ???. 
+		*/
+	void setCountermeasuresTimer( IOTimerEventSource * timer );
+	
+	/*! @function stopCountermeasures
+		@abstract <abstract>.
+		@discussion ???. 
+		*/
+	static void stopCountermeasures( OSObject *owner, IOTimerEventSource *sender );
+	
+	/*! @function updateChannelProperty
+		@abstract <abstract>.
+		@discussion ???. 
+		*/
+	void updateChannelProperty();
+	
+	/*! @function updateSSIDProperty
+		@abstract <abstract>.
+		@discussion ???. 
+		*/
+	void updateSSIDProperty();
+	
+	/*! @function updateStaticProperties
+		@abstract <abstract>.
+		@discussion ???. 
+		*/
+	void updateStaticProperties();
+	
+	/*! @function updateCountryCodeProperty
+		@abstract <abstract>.
+		@discussion ???. 
+		*/
+	void updateCountryCodeProperty( bool shouldLog );
+	
+	/*! @function performCountryCodeOpGated
+		@abstract ???.
+		@discussion ???. 
+		*/
+	static IOReturn	performCountryCodeOpGated( OSObject *owner, void * inInterface, void * inParams, void *arg2, void *arg3 );
+	
+	/*! @function configureAntennae
+		@abstract ???.
+		@discussion ???. 
+		*/
+	void configureAntennae();
+	
+	/*! @function setDebugFlags
+		@abstract ???.
+		@discussion ???. 
+		*/
+	void setDebugFlags( UInt32 debugFlags );
+	
+	/*! @function debugFlags
+		@abstract ???.
+		@discussion ???. 
+		*/
+	UInt32 debugFlags();
+	
+	IOGatedOutputQueue * getOutputQueue();
 	
 #if defined( _MODERN_BPF )
 	
@@ -269,7 +379,7 @@ protected:
 									   void					*arg0,
 									   void					*arg1);
 									   
-	/*! @function bpfTap
+	/*! @function performGatedCommand
 		@abstract <abstract>.
 		@discussion ???. 
 		*/
@@ -280,6 +390,13 @@ protected:
 		@discussion ???, followed by a call to super::free().
 		*/
 	virtual void		free();
+	
+	/*! @function powerChangeHandler
+		@abstract <abstract>.
+		@discussion ???. 
+		*/
+	static IOReturn powerChangeHandler( void *target, void *refCon, UInt32 messageType,
+										  IOService *service, void *messageArgument, vm_size_t argSize );
 	
 private:
 	
@@ -294,9 +411,24 @@ private:
 		@discussion ???. 
 		*/
 	void awsRespond( mbuf_t m, struct AWSRequest * requestList, size_t numRequests, UInt16 packetID );
+	
+	/*! @function purgePMKSACache
+		@abstract <abstract>.
+		@discussion ???. 
+		*/
+	void purgePMKSACache();
+	
+	/*! @function freePMKSACache
+		@abstract <abstract>.
+		@discussion ???. 
+		*/
+	void freePMKSACache();
 		
 	ifnet_t		wlt_if;
 	int			_minor;
+	u_int32_t	_devUnit;
+	char *		_statusDevName;
+	size_t		_statusDevNameLen;
 	
 	bool		_poweredOnByUser;
 	bool		_enabledBySystem;	// IFF_UP flag set?
@@ -313,6 +445,27 @@ private:
 	RSNSupplicant * _rsnSupplicant;
 	
 	ifmultiaddr_t	_awsAddr;
+	
+	IOTimerEventSource * _countermeasuresTimer;
+	
+	char _bsdName[IFNAMSIZ];
+	
+	//struct rsn_pmksa_node * _pmksaCacheHead;
+	LIST_HEAD( , rsn_pmksa_node ) _pmksaCacheHead;
+	
+	IONotifier * _powerChangeNotifier;
+	IOLock *	_powerChangeWakeUpLock;
+	
+	UInt32	_debugFlags;
+	
+	IOGatedOutputQueue * _outputQueue;
+	
+	IO80211Controller * _controller;
+	
+	void * _llAddr;
+	UInt8 _ifiType;
+	
+	bool _wmeSupported;
 	
 public:
 

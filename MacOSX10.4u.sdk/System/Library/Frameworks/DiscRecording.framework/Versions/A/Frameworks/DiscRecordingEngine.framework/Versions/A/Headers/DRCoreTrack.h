@@ -95,7 +95,7 @@ typedef struct DRTrackProductionInfo DRTrackProductionInfo;
 	@abstract	Creates a new track object.
 	@param		properties	A CFDictionary object containing the track properties. If this
 							parameter is not a valid CFDictionary object the behavior is undefined.
-	@param		callbacks	A pointer to a @link DRTrackCallbackProc DRTrackCallbackProc @/link callback. If this callback is NULL
+	@param		callback	A pointer to a @link DRTrackCallbackProc DRTrackCallbackProc @/link callback. If this callback is NULL
 							the behavior is undefined.
 	@result		A reference to the new DRTrack object.
 */

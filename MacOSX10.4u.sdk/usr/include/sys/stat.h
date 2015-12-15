@@ -122,6 +122,7 @@ typedef __darwin_off_t		off_t;
 typedef	__darwin_time_t		time_t;
 #endif
 
+
 /* [XSI] The timespec structure may be defined as described in <time.h> */
 #ifndef _TIMESPEC
 #define _TIMESPEC
@@ -129,6 +130,7 @@ struct timespec {
 	time_t	tv_sec;		/* seconds */
 	long	tv_nsec;	/* and nanoseconds */
 };
+
 // LP64todo - should this move?
 #endif	/* _TIMESPEC */
 

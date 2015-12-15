@@ -45,6 +45,8 @@ typedef boolean_t EFI_BOOLEAN;
 typedef void      VOID;
 typedef VOID *    EFI_HANDLE;
 
+typedef uint64_t  EFI_PTR64;
+typedef uint64_t  EFI_HANDLE64;
 /*
 
 Portions Copyright 2004, Intel Corporation
@@ -432,6 +434,47 @@ typedef struct {
 
 } __attribute__((aligned(8))) EFI_RUNTIME_SERVICES;
 
+typedef struct {
+  EFI_TABLE_HEADER              Hdr;
+
+  //
+  // Time services
+  //
+  EFI_PTR64                  GetTime;
+  EFI_PTR64                  SetTime;
+  EFI_PTR64           GetWakeupTime;
+  EFI_PTR64           SetWakeupTime;
+
+  //
+  // Virtual memory services
+  //
+  EFI_PTR64   SetVirtualAddressMap;
+  EFI_PTR64           ConvertPointer;
+
+  //
+  // Variable services
+  //
+  EFI_PTR64             GetVariable;
+  EFI_PTR64    GetNextVariableName;
+  EFI_PTR64              SetVariable;
+
+  //
+  // Misc
+  //
+  EFI_PTR64  GetNextHighMonotonicCount;
+  EFI_PTR64              ResetSystem;
+
+#ifdef TIANO_EXTENSION_FLAG
+  //
+  // ////////////////////////////////////////////////////
+  // Extended EFI Services
+    //////////////////////////////////////////////////////
+  //
+  EFI_PTR64 ReportStatusCode;
+#endif
+
+} __attribute__((aligned(8))) EFI_RUNTIME_SERVICES_64;
+
 //
 // EFI Configuration Table
 //
@@ -445,6 +488,7 @@ typedef struct {
 //
 #define EFI_SYSTEM_TABLE_SIGNATURE      0x5453595320494249ULL
 #define EFI_SYSTEM_TABLE_REVISION       ((EFI_SPECIFICATION_MAJOR_REVISION << 16) | (EFI_SPECIFICATION_MINOR_REVISION))
+#define EFI_2_00_SYSTEM_TABLE_REVISION  ((2 << 16) | 00)
 #define EFI_1_02_SYSTEM_TABLE_REVISION  ((1 << 16) | 02)
 #define EFI_1_10_SYSTEM_TABLE_REVISION  ((1 << 16) | 10)
 
@@ -470,5 +514,30 @@ typedef struct EFI_SYSTEM_TABLE {
   EFI_CONFIGURATION_TABLE       *ConfigurationTable;
 
 } __attribute__((aligned(8))) EFI_SYSTEM_TABLE;
+
+typedef struct EFI_SYSTEM_TABLE_64 {
+  EFI_TABLE_HEADER              Hdr;
+
+  EFI_PTR64                     FirmwareVendor;
+  EFI_UINT32                    FirmwareRevision;
+
+  EFI_UINT32                    __pad;
+
+  EFI_HANDLE64                  ConsoleInHandle;
+  EFI_PTR64			ConIn;
+
+  EFI_HANDLE64                  ConsoleOutHandle;
+  EFI_PTR64			ConOut;
+
+  EFI_HANDLE64                  StandardErrorHandle;
+  EFI_PTR64			StdErr;
+
+  EFI_PTR64                     RuntimeServices;
+  EFI_PTR64			BootServices;
+
+  EFI_UINT64                    NumberOfTableEntries;
+  EFI_PTR64                     ConfigurationTable;
+
+} __attribute__((aligned(8))) EFI_SYSTEM_TABLE_64;
 
 #endif /* _PEXPERT_I386_EFI_H */

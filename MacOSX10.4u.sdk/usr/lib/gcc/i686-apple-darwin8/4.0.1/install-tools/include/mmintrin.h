@@ -35,7 +35,8 @@
 # error "MMX instruction set not enabled"
 #else
 /* The data type intended for user use.  */
-typedef int __m64 __attribute__ ((__vector_size__ (8)));
+/* APPLE LOCAL 4505813 */
+typedef long long __m64 __attribute__ ((__vector_size__ (8)));
 
 /* Internal data types for implementing the intrinsics.  */
 typedef int __v2si __attribute__ ((__vector_size__ (8)));

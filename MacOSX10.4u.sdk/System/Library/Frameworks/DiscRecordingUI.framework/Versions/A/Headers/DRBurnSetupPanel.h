@@ -16,7 +16,7 @@
 */
 
 /*!	@header		DRBurnSetupPanel.h
-	@abstract	Panel to create and configure a DRBurn object.
+	@abstract	Panel to create and configure a @link //apple_ref/occ/cl/DRBurn DRBurn @/link object.
 	@discussion The @link //apple_ref/occ/cl/DRBurnSetupPanel DRBurnSetupPanel @/link supports choosing the the device to use, whether or not
 				to verify the burned data and how to handle the burned disc when it completes.
 */
@@ -26,8 +26,7 @@
 
 /*!
 	@class		DRBurnSetupPanel
-	@abstract 	Manages a panel that allows users to specify the
-				parameters of an burn.
+	@abstract 	Manages a panel that allows users to specify the parameters of an burn.
 	@discussion	This class supports choosing the the device to use, whether or not
 				to verify the burned data and how to handle the burned disc when it completes.
 */
@@ -62,7 +61,7 @@
 /*!
 	@method		setDefaultButtonTitle:
 	@abstract	Sets the title for the receiver's default button to title.
-	@discussion	Normally, the default button is “Burn”.
+	@discussion	Normally, the default button is &ldquo;Burn&rdquo;.
 */
 - (void) setDefaultButtonTitle:(NSString*)title;
 

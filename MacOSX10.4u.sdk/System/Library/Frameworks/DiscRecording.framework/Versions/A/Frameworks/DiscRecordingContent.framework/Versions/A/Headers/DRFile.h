@@ -19,7 +19,7 @@
 	@abstract	File objects used in filesystem creation.
 	@discussion	A @link DRFile DRFile @/link object is a subclass of @link //apple_ref/occ/cl/DRFSObject DRFSObject @/link and represents a file on the 
 				finished disc. A file can be either a pointer to an exiting file (residing on a hard drive for example)
-				or can be created at burn time from data passed into the file object as requested. DRFiles can only exist inside of "virtual"
+				or can be created at burn time from data passed into the file object as requested. DRFiles can only exist inside of virtual
 				@link //apple_ref/occ/cl/DRFolder DRFolder @/link objects.
 */
 
@@ -31,7 +31,7 @@
 	@class		DRFile
 	@abstract	Represents a file to be created on the disc.
 	@discussion A file can be either a pointer to an exiting file (residing on a hard drive for example)
-				or can be created at burn time from data passed into the file object as requested. DRFiles can only exist inside of "virtual"
+				or can be created at burn time from data passed into the file object as requested. DRFiles can only exist inside of virtual
 				@link //apple_ref/occ/cl/DRFolder DRFolder @/link objects.
 */
 @interface DRFile : DRFSObject
@@ -39,7 +39,7 @@
 
 /*! 
    	@method 		fileWithPath:
-   	@abstract		Creates a "real" file object
+   	@abstract		Creates a real file object
 	@discussion		This type of DRFile reads in data from an 
 					existing file located at path and burns that data to disc.
    	@param 			path	The path to an existing file.
@@ -49,7 +49,7 @@
 
 /*! 
    	@method 		initWithPath:
-   	@abstract		Initializes a "real" file object
+   	@abstract		Initializes a real file object
 	@discussion		This type of DRFile reads in data from an 
 					existing file located at path and burns that data to disc.
    	@param 			path	The path to an existing file.
@@ -68,7 +68,7 @@
 
 /*! 
    	@method 		virtualFileWithName:data:
-   	@abstract		Creates a "virtual" file object
+   	@abstract		Creates a virtual file object
 	@discussion		This type of DRFile burns the data passed in to disc, creating a
 					file with the passed in name.
    	@param 			name	The name of the file on disc.
@@ -79,7 +79,7 @@
 
 /*! 
    	@method 		virtualFileWithName:dataProducer:
-   	@abstract		Creates a "virtual" file object
+   	@abstract		Creates a virtual file object
 	@discussion		This type of DRFile burns the data produced to the output disc, creating a
 					file with the passed in name.
    	@param 			name	The name of the file on disc.
@@ -90,7 +90,7 @@
 
 /*! 
    	@method 		initWithName:data:
-   	@abstract		Initializes a "virtual" file object
+   	@abstract		Initializes a virtual file object
 	@discussion		This type of DRFile burns the data passed in to the output disc, creating a
 					file with the passed in name.
    	@param 			name	The name of the file on output disc.
@@ -101,7 +101,7 @@
 
 /*! 
    	@method 		initWithName:dataProducer:
-   	@abstract		Initializes a "virtual" file object
+   	@abstract		Initializes a virtual file object
 	@discussion		This type of DRFile burns the data produced to the output disc, creating a
 					file with the passed in name.
    	@param 			name		The name of the file on output disc.
@@ -207,7 +207,7 @@ enum
 /*!
 	@protocol	DRFileDataProduction
 	@abstract	Informal protocol describing methods implemented by the file data producer.
-	@discussion	The DRFileDataProduction informal protocol defines those methods that a file data producer 
+	@discussion	This protocol defines those methods that a file data producer 
 				instance must implement. A file data producer is the object that
 				resposible for providing the file data to the burn engine on request
 */
@@ -215,16 +215,14 @@ enum
 
 /*! 
    	@method 		calculateSizeOfFile:fork:estimating:
-   	@abstract		Calculates the size of a file's fork.
+   	@abstract		Calculates the size of the specified fork of a file.
    	@discussion		This method may be sent at any time after the file object has been instantiated. 
-					Requests that the recevier calculate the file size of file fork (for instance data or resource).
+					Requests that the recevier calculate the byte size of a file's fork (for instance, data fork or resource fork).
 
 					If estimate is <i>YES</i>, you are being asked for an estimate of the final 
 					fork size, perhaps to provide an estimate of the track size, and do not 
 					have to be exact.  Estimates should err on the high side; it's better to 
-					overestimate than underestimate.
-					
-					An estimate call may be made at any time.
+					overestimate than underestimate. An estimate call may be made at any time.
 
 					If estimate is <i>NO</i>, you are being asked for
 					the actual fork size, to be used in the burn.  This call is only
@@ -252,22 +250,23 @@ enum
 
 /*! 
    	@method 		produceFile:fork:intoBuffer:length:atAddress:blockSize:
-   	@abstract		Calculates the size of a file's fork.
+   	@abstract		Produces the specified fork contents for burning.
    	@discussion		Sent during the burn (after the @link //apple_ref/occ/intfm/DRFileDataProduction/prepareFileForBurn prepareFileForBurn @/link message) requesting that the receiver
-					produce the data fork contents. 
+					produce the specified fork contents. 
 									
 					The recevier should fill up the buffer passed in as full as possible 
-					and then return control to the caller. Since while burning, keeping the drive's buffer full is 
-					of utmost importance, you should not perform lengthy operations or block for data in this method.
+					and then return control to the caller. While burning keeping the drive's buffer full is 
+					of utmost importance, so you should not perform lengthy operations or block for data in this method.
 					This method should return the number of bytes actually in the buffer or 0 to indicate that there
 					was an error producing the data.
 					
 					You may be asked to produce twice, once during the actual burn and once during 
-					verification.
+					verification depending on the verification type of the track.
    	@param 			file	The file object.
    	@param 			fork	The fork of the file to produce.
    	@param			buffer	The buffer to produce data into.
    	@param			bufferLength	The length of the buffer to produce data into
+   	@param			address	The byte address in the file that the burn engine is requesting
    	@param			blockSize	The size of the track blocks
 	@result			The number of bytes produced.
 */
@@ -276,7 +275,7 @@ enum
 /*! 
    	@method 		prepareFileForVerification:
    	@abstract		Prepare the file object for verification.
-   	@discussion		Sent during the burn (after production, before the @link //apple_ref/occ/intfm/DRFileDataProduction/cleanupFileAfterBurn cleanupFileAfterBurn @/link message) to 
+   	@discussion		Sent during the burn (after production and before the @link //apple_ref/occ/intfm/DRFileDataProduction/cleanupFileAfterBurn: cleanupFileAfterBurn: @/link message) to 
    					indicate that verification is about to begin. Now would be a good
 					time to rewind to the start of the file, reset state machines, or do whatever else 
 					is needed to prepare to produce again.
@@ -287,13 +286,11 @@ enum
 
 /*! 
    	@method 		cleanupFileAfterBurn:
-   	@abstract		Cleanup the file once the burn is complete.
+   	@abstract		Cleanup the file object once the burn is complete.
    	@discussion		Sent to the receiver after the burn completes. This would be an appropriate 
 					place to close files, or do any other teardown work needed.  This message will 
 					always be sent regardless of whether the burn succeeded or failed
    	@param 			file	The file object.
-   	@param 			fork	The fork of the file whose size is to be calculated.
-   	@param			estimate	If the file size should be estimated or exact.
 */
 - (void) cleanupFileAfterBurn:(DRFile*)file;
 

@@ -196,6 +196,8 @@ public:
 	virtual IOReturn beginIOCriticalSection( void );
 	virtual void endIOCriticalSection( void );
 
+    virtual bool finalize( IOOptionBits options );
+
 protected:
 
     OSMetaClassDeclareReservedUnused(IOFireWireSBP2Target, 0);

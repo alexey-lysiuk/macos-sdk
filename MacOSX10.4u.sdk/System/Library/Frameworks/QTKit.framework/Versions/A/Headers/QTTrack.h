@@ -21,6 +21,7 @@ QTKIT_EXTERN NSString *QTTrackCreationTimeAttribute					AVAILABLE_MAC_OS_X_VERSI
 QTKIT_EXTERN NSString *QTTrackDimensionsAttribute					AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;  // NSValue (NSSize)
 QTKIT_EXTERN NSString *QTTrackDisplayNameAttribute					AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;  // NSString
 QTKIT_EXTERN NSString *QTTrackEnabledAttribute						AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;  // NSNumber (BOOL)
+QTKIT_EXTERN NSString *QTTrackHasApertureModeDimensionsAttribute	AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;  // NSNumber (BOOL)
 QTKIT_EXTERN NSString *QTTrackIDAttribute							AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;  // NSNumber (long)
 QTKIT_EXTERN NSString *QTTrackLayerAttribute						AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;  // NSNumber (short)
 QTKIT_EXTERN NSString *QTTrackMediaTypeAttribute					AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;  // NSString
@@ -80,3 +81,14 @@ QTKIT_EXTERN NSString *QTTrackVolumeAttribute						AVAILABLE_MAC_OS_X_VERSION_10
 - (void)addImage:(NSImage *)image forDuration:(QTTime)duration withAttributes:(NSDictionary *)attributes;
 
 @end
+
+@interface QTTrack (QTTrackVisualSupport)
+
+- (NSSize)apertureModeDimensionsForMode:(NSString *)mode;
+- (void)setApertureModeDimensions:(NSSize)dimensions forMode:(NSString *)mode;
+
+- (void)generateApertureModeDimensions;
+- (void)removeApertureModeDimensions;
+
+@end
+

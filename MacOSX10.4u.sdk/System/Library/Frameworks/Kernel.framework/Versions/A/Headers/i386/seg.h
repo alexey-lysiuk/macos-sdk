@@ -55,6 +55,7 @@
 
 #include <mach_kdb.h>
 #include <stdint.h>
+#include <mach/vm_types.h>
 #include <architecture/i386/sel.h>
 
 /*
@@ -91,9 +92,9 @@ selector_to_sel(uint16_t selector)
 #define	LDTSZ_MIN	17		/* kernel ldt entries used by the system */
 
 #if	MACH_KDB
-#define	GDTSZ		17
+#define	GDTSZ		19
 #else
-#define	GDTSZ		16
+#define	GDTSZ		18
 #endif
 
 /*
@@ -109,7 +110,7 @@ selector_to_sel(uint16_t selector)
  * Real segment descriptor.
  */
 struct real_descriptor {
-	unsigned int	limit_low:16,	/* limit 0..15 */
+	uint32_t	limit_low:16,	/* limit 0..15 */
 			base_low:16,	/* base  0..15 */
 			base_med:8,	/* base  16..23 */
 			access:8,	/* access byte */
@@ -117,13 +118,33 @@ struct real_descriptor {
 			granularity:4,	/* granularity */
 			base_high:8;	/* base 24..31 */
 };
-
+struct real_descriptor64 {
+	uint32_t	limit_low16:16,	/* limit 0..15 */
+			base_low16:16,	/* base  0..15 */
+			base_med8:8,	/* base  16..23 */
+			access8:8,	/* access byte */
+			limit_high4:4,	/* limit 16..19 */
+			granularity4:4,	/* granularity */
+			base_high8:8,	/* base 24..31 */
+			base_top32:32,	/* base 32..63 */
+			reserved32:32;	/* reserved/zero */
+};
 struct real_gate {
-	unsigned int	offset_low:16,	/* offset 0..15 */
+	uint32_t	offset_low:16,	/* offset 0..15 */
 			selector:16,
 			word_count:8,
 			access:8,
 			offset_high:16;	/* offset 16..31 */
+};
+struct real_gate64 {
+	uint32_t	offset_low16:16,	/* offset 0..15 */
+			selector16:16,
+			IST:3,
+			zeroes5:5,
+			access8:8,
+			offset_high16:16,	/* offset 16..31 */
+			offset_top32:32,	/* offset 32..63 */
+			reserved32:32;		/* reserved/zero */
 };
 
 /*
@@ -132,13 +153,25 @@ struct real_gate {
  * at runtime.
  */
 struct fake_descriptor {
-	unsigned int	offset:32;		/* offset */
-	unsigned int	lim_or_seg:20;		/* limit */
+	uint32_t	offset:32;		/* offset */
+	uint32_t	lim_or_seg:20;		/* limit */
 						/* or segment, for gate */
-	unsigned int	size_or_wdct:4;		/* size/granularity */
+	uint32_t	size_or_wdct:4;		/* size/granularity */
 						/* word count, for gate */
-	unsigned int	access:8;		/* access */
+	uint32_t	access:8;		/* access */
 };
+struct fake_descriptor64 {
+	uint32_t	offset[2];		/* offset [0..31,32..63] */
+	uint32_t	lim_or_seg:20;		/* limit */
+						/* or segment, for gate */
+	uint32_t	size_or_IST:4;		/* size/granularity */
+						/* IST for gates */
+	uint32_t	access:8;		/* access */
+	uint32_t	reserved:32;		/* reserved/zero */
+};
+#define	FAKE_UBER64(addr32)	{ (uint32_t) (addr32), KERNEL_UBER_BASE_HI32 }
+#define	FAKE_COMPAT(addr32)	{ (uint32_t) (addr32), 0x0 }
+#define	UBER64(addr32)		((addr64_t) addr32 + KERNEL_UBER_BASE)
 
 /*
  * Boot-time data for master (or only) CPU
@@ -147,6 +180,12 @@ extern struct fake_descriptor	master_idt[IDTSZ];
 extern struct fake_descriptor	master_gdt[GDTSZ];
 extern struct fake_descriptor	master_ldt[LDTSZ];
 extern struct i386_tss		master_ktss;
+extern struct sysenter_stack	master_sstk;
+
+extern struct fake_descriptor64	master_idt64[IDTSZ];
+extern struct fake_descriptor64	kernel_ldt_desc64;
+extern struct fake_descriptor64	kernel_tss_desc64;
+extern struct x86_64_tss	master_ktss64;
 
 __BEGIN_DECLS
 
@@ -154,6 +193,11 @@ extern char			df_task_stack[];
 extern char			df_task_stack_end[];
 extern struct i386_tss		master_dftss;
 extern void			df_task_start(void);
+
+extern char			mc_task_stack[];
+extern char			mc_task_stack_end[];
+extern struct i386_tss		master_mctss;
+extern void			mc_task_start(void);
 
 #if	MACH_KDB
 extern char			db_stack_store[];
@@ -166,6 +210,7 @@ __END_DECLS
 
 #endif	/*__ASSEMBLER__*/
 
+#define	SZ_64		0x2			/* 64-bit segment */
 #define	SZ_32		0x4			/* 32-bit segment */
 #define	SZ_G		0x8			/* 4K limit field */
 
@@ -213,18 +258,25 @@ __END_DECLS
  * Convert selector to descriptor table index.
  */
 #define	sel_idx(sel)	(selector_to_sel(sel).index)
+#define SEL_TO_INDEX(s)	((s)>>3)
 
 #define NULL_SEG	0
 
 /*
  * User descriptors for MACH - 32-bit flat address space
  */
-#define	USER_SCALL	0x07		/* system call gate */
-#define	USER_RPC	0x0f		/* mach rpc call gate */
-#define	SYSENTER_CS	0x17		/* sysenter kernel code segment */
-#define	SYSENTER_DS	0x1f		/* sysenter kernel data segment */
-#define	USER_CS		0x27		/* user code segment */
-#define	USER_DS		0x2f		/* user data segment */
+#define	SYSENTER_CS	0x07		/* sysenter kernel code segment */
+#define	SYSENTER_DS	0x0f		/* sysenter kernel data segment */
+#define	USER_CS		0x17		/* user code segment
+					   Must be SYSENTER_CS+16 for sysexit */
+/* Special case: sysenter with EFL_TF (trace bit) set - use iret not sysexit */
+#define SYSENTER_TF_CS	(USER_CS|0x10000)
+#define	USER_DS		0x1f		/* user data segment 
+					   Must be SYSENTER_CS+24 for sysexit */
+#define	USER64_CS	0x27		/* 64-bit user code segment 
+					   Must be USER_CS+16 for sysret */
+#define	USER64_DS	USER_DS		/* 64-bit user data segment == 32-bit */
+#define	SYSCALL_CS	0x2f		/* 64-bit syscall pseudo-segment */
 #define	USER_CTHREAD	0x37		/* user cthread area */
 #define	USER_SETTABLE	0x3f		/* start of user settable ldt entries */
 #define	USLDTSZ		10		/* number of user settable entries */
@@ -235,13 +287,12 @@ __END_DECLS
 #define	KERNEL_CS	0x08		/* kernel code */
 #define	KERNEL_DS	0x10		/* kernel data */
 #define	KERNEL_LDT	0x18		/* master LDT */
-#define	KERNEL_TSS	0x20		/* master TSS (uniprocessor) */
+#define	KERNEL_LDT_2	0x20		/* master LDT expanded for 64-bit */
+#define	KERNEL_TSS	0x28		/* master TSS */
+#define	KERNEL_TSS_2	0x30		/* master TSS expanded for 64-bit */
 
-#define	BSD_SCALL_SEL	0x28		/* BSD System calls */
-#define	MACHDEP_SCALL_SEL 0x38		/* Machdep System calls */
+#define	MC_TSS		0x38		/* machine-check handler TSS */
 
-#define	USER_FPREGS	0x40		/* user-mode access to saved
-					   floating-point registers */
 #define	CPU_DATA_GS	0x48		/* per-cpu data */
 
 #define	DF_TSS		0x50		/* double-fault handler TSS */
@@ -253,8 +304,11 @@ __END_DECLS
 #define USER_WINDOW_SEL	0x70		/* window for copyin/copyout */
 #define PHYS_WINDOW_SEL	0x78		/* window for copyin/copyout */
 
+#define	KERNEL64_CS	0x80		/* kernel 64-bit code */
+#define	KERNEL64_SS	0x88		/* kernel 64-bit (syscall) stack */
+
 #if	MACH_KDB
-#define	DEBUG_TSS	0x80		/* debug TSS (uniprocessor) */
+#define	DEBUG_TSS	0x90		/* debug TSS (uniprocessor) */
 #endif
 
 struct __gdt_desc_struct {

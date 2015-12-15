@@ -96,12 +96,23 @@ struct IOVirtualRange
     IOVirtualAddress	address;
     IOByteCount		length;
 };
+struct IOAddressRange
+{
+    mach_vm_address_t	address;
+    mach_vm_size_t	length;
+};
 #else
 typedef struct 
 {
     IOVirtualAddress	address;
     IOByteCount		length;
 } IOVirtualRange;
+
+struct IOAddressRange
+{
+    mach_vm_address_t	address;
+    mach_vm_size_t	length;
+};
 #endif
 
 /*

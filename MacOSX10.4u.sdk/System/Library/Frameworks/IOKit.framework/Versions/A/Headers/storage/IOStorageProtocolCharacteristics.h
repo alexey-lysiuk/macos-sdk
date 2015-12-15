@@ -167,6 +167,46 @@ Example:
 
 
 /*!
+@defined kIOPropertySASAddressKey
+@discussion This key is the unique 64-bit SAS Address for the device server
+node located at this port, or for the initiating host port.
+
+Requirement: Mandatory for SAS.
+
+Example:
+<pre>
+@textblock
+<dict>
+	<key>Protocol Characteristics</key>
+	<dict>
+		<key>Physical Interconnect</key>
+		<string>SAS</string>
+		<key>Physical Interconnect Location</key>
+		<string>External</string>
+		<key>SAS Address</key>
+		<data>0011223344556677</data>
+	</dict>
+</dict>
+@/textblock
+</pre>
+
+Example2:
+<pre>
+@textblock
+<dict>
+	<key>Controller Characteristics</key>
+	<dict>
+		<key>SAS Address</key>
+		<data>0011223344556677</data>
+	</dict>
+</dict>
+@/textblock
+</pre>
+*/
+#define kIOPropertySASAddressKey					"SAS Address"
+
+
+/*!
 @defined kIOPropertyFibreChannelNodeWorldWideNameKey
 @discussion This key is the unique 64-bit World Wide Name for the device server
 node located at this port, or for the initiating host port.
@@ -1026,6 +1066,33 @@ Example:
 */
 #define kIOPropertyPortSpeed1GigabitKey					"1 Gigabit"
 
+/*!
+@defined kIOPropertyPortSpeed1_5GigabitKey
+@discussion This key defines the value of 1.5 Gigabit for the key
+kIOPropertyPortSpeedKey. If the speed of the port is 1.5 Gigabits
+per second and is not automatically determined (i.e. the user
+configured the port to be exactly this speed),
+this key should be used.
+
+Note: This value can change. It is not a static value.
+
+Requirement: Optional for any interconnect.
+
+Example:
+<pre>
+@textblock
+<dict>
+	<key>Controller Characteristics</key>
+	<dict>
+		<key>Port Speed</key>
+		<string>1.5 Gigabit</string>
+	</dict>
+</dict>
+@/textblock
+</pre>
+*/
+#define kIOPropertyPortSpeed1_5GigabitKey				"1.5 Gigabit"
+
 
 /*!
 @defined kIOPropertyPortSpeed2GigabitKey
@@ -1056,6 +1123,34 @@ Example:
 
 
 /*!
+@defined kIOPropertyPortSpeed3GigabitKey
+@discussion This key defines the value of 3 Gigabit for the key
+kIOPropertyPortSpeedKey. If the speed of the port is 3 Gigabits
+per second and is not automatically determined (i.e. the user
+configured the port to be exactly this speed),
+this key should be used.
+
+Note: This value can change. It is not a static value.
+
+Requirement: Optional for any interconnect.
+
+Example:
+<pre>
+@textblock
+<dict>
+	<key>Controller Characteristics</key>
+	<dict>
+		<key>Port Speed</key>
+		<string>3 Gigabit</string>
+	</dict>
+</dict>
+@/textblock
+</pre>
+*/
+#define kIOPropertyPortSpeed3GigabitKey					"3 Gigabit"
+
+
+/*!
 @defined kIOPropertyPortSpeed4GigabitKey
 @discussion This key defines the value of 4 Gigabit for the key
 kIOPropertyPortSpeedKey. If the speed of the port is 4 Gigabits
@@ -1081,6 +1176,61 @@ Example:
 </pre>
 */
 #define kIOPropertyPortSpeed4GigabitKey					"4 Gigabit"
+
+/*!
+@defined kIOPropertyPortSpeed6GigabitKey
+@discussion This key defines the value of 6 Gigabit for the key
+kIOPropertyPortSpeedKey. If the speed of the port is 6 Gigabits
+per second and is not automatically determined (i.e. the user
+configured the port to be exactly this speed),
+this key should be used.
+
+Note: This value can change. It is not a static value.
+
+Requirement: Optional for any interconnect.
+
+Example:
+<pre>
+@textblock
+<dict>
+	<key>Controller Characteristics</key>
+	<dict>
+		<key>Port Speed</key>
+		<string>6 Gigabit</string>
+	</dict>
+</dict>
+@/textblock
+</pre>
+*/
+#define kIOPropertyPortSpeed6GigabitKey					"6 Gigabit"
+
+
+/*!
+@defined kIOPropertyPortSpeed8GigabitKey
+@discussion This key defines the value of 8 Gigabit for the key
+kIOPropertyPortSpeedKey. If the speed of the port is 8 Gigabits
+per second and is not automatically determined (i.e. the user
+configured the port to be exactly this speed),
+this key should be used.
+
+Note: This value can change. It is not a static value.
+
+Requirement: Optional for any interconnect.
+
+Example:
+<pre>
+@textblock
+<dict>
+	<key>Controller Characteristics</key>
+	<dict>
+		<key>Port Speed</key>
+		<string>8 Gigabit</string>
+	</dict>
+</dict>
+@/textblock
+</pre>
+*/
+#define kIOPropertyPortSpeed8GigabitKey					"8 Gigabit"
 
 
 /*!
@@ -1139,6 +1289,33 @@ Example:
 
 
 /*!
+@defined kIOPropertyPortSpeedAutomatic1_5GigabitKey
+@discussion This key defines the value of Automatic (1.5 Gigabit) for the key
+kIOPropertyPortSpeedKey. If the speed of the port is
+1.5 Gigabits per second and is automatically determined by host
+software, this key should be used.
+
+Note: This value can change. It is not a static value.
+
+Requirement: Optional for any interconnect.
+
+Example:
+<pre>
+@textblock
+<dict>
+	<key>Controller Characteristics</key>
+	<dict>
+		<key>Port Speed</key>
+		<string>Automatic (1.5 Gigabit)</string>
+	</dict>
+</dict>
+@/textblock
+</pre>
+*/
+#define kIOPropertyPortSpeedAutomatic1_5GigabitKey		"Automatic (1.5 Gigabit)"
+
+
+/*!
 @defined kIOPropertyPortSpeedAutomatic2GigabitKey
 @discussion This key defines the value of Automatic (2 Gigabit)
 for the key kIOPropertyPortSpeedKey. If the speed of the port is
@@ -1166,6 +1343,33 @@ Example:
 
 
 /*!
+@defined kIOPropertyPortSpeedAutomatic3GigabitKey
+@discussion This key defines the value of Automatic (3 Gigabit)
+for the key kIOPropertyPortSpeedKey. If the speed of the port is
+3 Gigabits per second and is automatically determined by host
+software, this key should be used.
+
+Note: This value can change. It is not a static value.
+
+Requirement: Optional for any interconnect.
+
+Example:
+<pre>
+@textblock
+<dict>
+	<key>Controller Characteristics</key>
+	<dict>
+		<key>Port Speed</key>
+		<string>Automatic (3 Gigabit)</string>
+	</dict>
+</dict>
+@/textblock
+</pre>
+*/
+#define kIOPropertyPortSpeedAutomatic3GigabitKey		"Automatic (3 Gigabit)"
+
+
+/*!
 @defined kIOPropertyPortSpeedAutomatic4GigabitKey
 @discussion This key defines the value of Automatic (4 Gigabit)
 for the key kIOPropertyPortSpeedKey. If the speed of the port is
@@ -1190,6 +1394,60 @@ Example:
 </pre>
 */
 #define kIOPropertyPortSpeedAutomatic4GigabitKey		"Automatic (4 Gigabit)"
+
+
+/*!
+@defined kIOPropertyPortSpeedAutomatic6GigabitKey
+@discussion This key defines the value of Automatic (6 Gigabit)
+for the key kIOPropertyPortSpeedKey. If the speed of the port is
+6 Gigabits per second and is automatically determined by host
+software, this key should be used.
+
+Note: This value can change. It is not a static value.
+
+Requirement: Optional for any interconnect.
+
+Example:
+<pre>
+@textblock
+<dict>
+	<key>Controller Characteristics</key>
+	<dict>
+		<key>Port Speed</key>
+		<string>Automatic (6 Gigabit)</string>
+	</dict>
+</dict>
+@/textblock
+</pre>
+*/
+#define kIOPropertyPortSpeedAutomatic6GigabitKey		"Automatic (6 Gigabit)"
+
+
+/*!
+@defined kIOPropertyPortSpeedAutomatic8GigabitKey
+@discussion This key defines the value of Automatic (8 Gigabit)
+for the key kIOPropertyPortSpeedKey. If the speed of the port is
+8 Gigabits per second and is automatically determined by host
+software, this key should be used.
+
+Note: This value can change. It is not a static value.
+
+Requirement: Optional for any interconnect.
+
+Example:
+<pre>
+@textblock
+<dict>
+	<key>Controller Characteristics</key>
+	<dict>
+		<key>Port Speed</key>
+		<string>Automatic (8 Gigabit)</string>
+	</dict>
+</dict>
+@/textblock
+</pre>
+*/
+#define kIOPropertyPortSpeedAutomatic8GigabitKey		"Automatic (8 Gigabit)"
 
 
 /*!
@@ -1421,7 +1679,7 @@ Example:
 @/textblock
 </pre>
 */
-#define kIOPropertySCSIParallelSignalingTypeSEKey				"Single Ended"
+#define kIOPropertySCSIParallelSignalingTypeSEKey		"Single Ended"
 
 
 /*!

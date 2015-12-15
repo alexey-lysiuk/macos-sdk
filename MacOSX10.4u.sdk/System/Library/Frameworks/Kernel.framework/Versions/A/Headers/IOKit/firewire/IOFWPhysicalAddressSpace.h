@@ -24,6 +24,7 @@
 #define _IOKIT_IOFWPHYSICALADDRESSSPACE_H
 
 #include <IOKit/firewire/IOFWAddressSpace.h>
+#include <IOKit/IODMACommand.h>
 
 /*
  * Direct physical memory <-> FireWire address.
@@ -34,6 +35,12 @@
  */
 
 class IOFWPhysicalAddressSpace;
+
+struct FWSegment
+{
+	FWAddress	address;
+	UInt32		length;
+};
 
 #pragma mark -
 
@@ -64,6 +71,25 @@ protected:
     
 	ExpansionData *reserved;
 	
+	IODMACommand *	fDMACommand;
+	bool			fDMACommandPrepared;
+	
+public:
+    virtual bool init( IOFWAddressSpace * primary );
+	virtual	void free();
+
+	void setDMACommand( IODMACommand * dma_command );
+	IODMACommand * getDMACommand( void ); 
+	UInt64 getPhysicalSegment( UInt64 offset, UInt64 * length );
+	
+	IOReturn prepare( void );
+	IOReturn synchronize( IOOptionBits options );
+	IOReturn complete( void );
+
+	bool isPrepared( void );
+
+	IOReturn getSegments( UInt64 * offset, FWSegment * fw_segments, UInt32 * num_segments );
+	
 private:
     OSMetaClassDeclareReservedUnused(IOFWPhysicalAddressSpaceAux, 0);
     OSMetaClassDeclareReservedUnused(IOFWPhysicalAddressSpaceAux, 1);
@@ -88,12 +114,13 @@ class IOFWPhysicalAddressSpace : public IOFWAddressSpace
 
 protected:
     
-	IOMemoryDescriptor *	fMem;
-    vm_size_t				fLen;
+	IOMemoryDescriptor *	fMem;	// unused
+    vm_size_t				fLen;	// unused
 	
     virtual	void 					free();
 
 public:
+	virtual bool init( IOFireWireBus * bus );
     virtual bool initWithDesc(IOFireWireBus *bus,
                                         IOMemoryDescriptor *mem);
 
@@ -103,8 +130,42 @@ public:
     virtual UInt32 doWrite(UInt16 nodeID, IOFWSpeed &speed, FWAddress addr, UInt32 len,
                            const void *buf, IOFWRequestRefCon refcon);
 
-protected:
+	IOMemoryDescriptor * getMemoryDescriptor( void );
+
+	IOReturn setMemoryDescriptor( IOMemoryDescriptor * descriptor );
+
+	UInt64 getLength( void );
+
+	inline void setDMACommand( IODMACommand * dma_command )
+		{ ((IOFWPhysicalAddressSpaceAux*)fIOFWAddressSpaceExpansion->fAuxiliary)->setDMACommand( dma_command ); };
+		
+	inline IODMACommand * getDMACommand( void )
+		{ return ((IOFWPhysicalAddressSpaceAux*)fIOFWAddressSpaceExpansion->fAuxiliary)->getDMACommand(); };
+
+	virtual bool initWithDMACommand( IOFireWireBus * control, IODMACommand * command );
 	
+	inline IOReturn prepare( void )
+		{ return ((IOFWPhysicalAddressSpaceAux*)fIOFWAddressSpaceExpansion->fAuxiliary)->prepare(); };
+
+	inline IOReturn synchronize( IOOptionBits options )
+		{ return ((IOFWPhysicalAddressSpaceAux*)fIOFWAddressSpaceExpansion->fAuxiliary)->synchronize( options ); };
+		 
+	inline IOReturn complete( void )
+		{ return ((IOFWPhysicalAddressSpaceAux*)fIOFWAddressSpaceExpansion->fAuxiliary)->complete(); };
+
+	inline bool isPrepared( void )
+		{ return ((IOFWPhysicalAddressSpaceAux*)fIOFWAddressSpaceExpansion->fAuxiliary)->isPrepared(); };
+
+	inline IOReturn getSegments( UInt64 * offset, FWSegment * fw_segments, UInt32 * num_segments )
+		{ return ((IOFWPhysicalAddressSpaceAux*)fIOFWAddressSpaceExpansion->fAuxiliary)->getSegments( offset, fw_segments, num_segments ); };
+
+	IOReturn checkMemoryInRange( IOMemoryDescriptor * memory );
+		
+protected:
+
+	UInt64 getPhysicalSegment( UInt64 offset, UInt64 * length )
+		{ return ((IOFWPhysicalAddressSpaceAux*)fIOFWAddressSpaceExpansion->fAuxiliary)->getPhysicalSegment( offset, length); };
+			
 	virtual IOFWAddressSpaceAux * createAuxiliary( void );
     	
 };

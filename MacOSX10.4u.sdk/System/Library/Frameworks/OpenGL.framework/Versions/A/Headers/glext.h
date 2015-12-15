@@ -55,6 +55,7 @@ extern "C" {
 #define GL_ARB_point_parameters             1
 #define GL_ARB_vertex_program               1
 #define GL_ARB_fragment_program             1
+#define GL_ARB_fragment_program_shadow      1
 #define GL_ARB_texture_mirrored_repeat      1
 #define GL_ARB_depth_texture                1
 #define GL_ARB_shadow                       1
@@ -72,6 +73,8 @@ extern "C" {
 #define GL_ARB_texture_rectangle            1
 #define GL_ARB_draw_buffers                 1
 #define GL_ARB_pixel_buffer_object          1
+#define GL_ARB_shader_texture_lod           1
+#define GL_ARB_texture_float                1
 #define GL_EXT_clip_volume_hint             1
 #define GL_EXT_rescale_normal               1
 #define GL_EXT_blend_color                  1
@@ -101,6 +104,9 @@ extern "C" {
 #define GL_EXT_texture_mirror_clamp         1
 #define GL_EXT_texture_compression_dxt1     1
 #define GL_EXT_framebuffer_object           1
+#define GL_EXT_packed_depth_stencil         1
+#define GL_EXT_gpu_program_parameters       1
+#define GL_APPLE_flush_buffer_range         1
 #define GL_APPLE_specular_vector            1
 #define GL_APPLE_transform_hint             1
 #define GL_APPLE_packed_pixels              1
@@ -632,6 +638,30 @@ typedef long GLsizeiptrARB;
 #define GL_PIXEL_PACK_BUFFER_BINDING_ARB                0x88ED
 #define GL_PIXEL_UNPACK_BUFFER_BINDING_ARB              0x88EF
 #endif
+
+#if GL_ARB_texture_float
+#define GL_TEXTURE_RED_TYPE_ARB             0x8C10
+#define GL_TEXTURE_GREEN_TYPE_ARB           0x8C11
+#define GL_TEXTURE_BLUE_TYPE_ARB            0x8C12
+#define GL_TEXTURE_ALPHA_TYPE_ARB           0x8C13
+#define GL_TEXTURE_LUMINANCE_TYPE_ARB       0x8C14
+#define GL_TEXTURE_INTENSITY_TYPE_ARB       0x8C15
+#define GL_TEXTURE_DEPTH_TYPE_ARB           0x8C16
+#define GL_UNSIGNED_NORMALIZED_ARB          0x8C17
+#define GL_RGBA32F_ARB                      0x8814
+#define GL_RGB32F_ARB                       0x8815
+#define GL_ALPHA32F_ARB                     0x8816
+#define GL_INTENSITY32F_ARB                 0x8817
+#define GL_LUMINANCE32F_ARB                 0x8818
+#define GL_LUMINANCE_ALPHA32F_ARB           0x8819
+#define GL_RGBA16F_ARB                      0x881A
+#define GL_RGB16F_ARB                       0x881B
+#define GL_ALPHA16F_ARB                     0x881C
+#define GL_INTENSITY16F_ARB                 0x881D
+#define GL_LUMINANCE16F_ARB                 0x881E
+#define GL_LUMINANCE_ALPHA16F_ARB           0x881F
+#endif
+
 
 #if GL_EXT_abgr
 #define GL_ABGR_EXT                       0x8000
@@ -1378,7 +1408,6 @@ typedef long GLsizeiptrARB;
 #define GL_FRAMEBUFFER_COMPLETE_EXT                        0x8CD5
 #define GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT_EXT           0x8CD6
 #define GL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT_EXT   0x8CD7
-#define GL_FRAMEBUFFER_INCOMPLETE_DUPLICATE_ATTACHMENT_EXT 0x8CD8
 #define GL_FRAMEBUFFER_INCOMPLETE_DIMENSIONS_EXT           0x8CD9
 #define GL_FRAMEBUFFER_INCOMPLETE_FORMATS_EXT              0x8CDA
 #define GL_FRAMEBUFFER_INCOMPLETE_DRAW_BUFFER_EXT          0x8CDB
@@ -1389,6 +1418,13 @@ typedef long GLsizeiptrARB;
 #define GL_MAX_COLOR_ATTACHMENTS_EXT       0x8CDF
 #define GL_MAX_RENDERBUFFER_SIZE_EXT       0x84E8
 #define GL_INVALID_FRAMEBUFFER_OPERATION_EXT 0x0506
+#endif
+
+#if GL_EXT_packed_depth_stencil
+#define GL_DEPTH_STENCIL_EXT					0x84F9
+#define GL_UNSIGNED_INT_24_8_EXT				0x84FA
+#define GL_DEPTH24_STENCIL8_EXT					0x88F0
+#define GL_TEXTURE_STENCIL_SIZE_EXT				0x88F1
 #endif
 
 #if GL_APPLE_vertex_array_range
@@ -1480,6 +1516,11 @@ typedef long GLsizeiptrARB;
 #define GL_VERTEX_ATTRIB_MAP2_COEFF_APPLE                0x8A07
 #define GL_VERTEX_ATTRIB_MAP2_ORDER_APPLE                0x8A08
 #define GL_VERTEX_ATTRIB_MAP2_DOMAIN_APPLE               0x8A09
+#endif
+
+#if GL_APPLE_flush_buffer_range
+#define GL_BUFFER_SERIALIZED_MODIFY_APPLE 0x8A12
+#define GL_BUFFER_FLUSHING_UNMAP_APPLE    0x8A13
 #endif
 
 
@@ -2707,6 +2748,11 @@ typedef void (* glProgramLocalParameter4dvARBProcPtr) (GLenum target, GLuint ind
 typedef void (* glProgramLocalParameter4fARBProcPtr) (GLenum target, GLuint index, GLfloat x, GLfloat y, GLfloat z, GLfloat w);
 typedef void (* glProgramLocalParameter4fvARBProcPtr) (GLenum target, GLuint index, const GLfloat *params);
 
+#if GL_EXT_gpu_program_parameters
+typedef void (* glProgramEnvParameters4fvEXTProcPtr) (GLenum target, GLuint index, GLSizei count, const GLfloat *params);
+typedef void (* glProgramLocalParameters4fvEXTProcPtr) (GLenum target, GLuint index, GLSizei count, const GLfloat *params);
+#endif
+
 typedef void (* glGetProgramEnvParameterdvARBProcPtr) (GLenum target, GLuint index, GLdouble *params);
 typedef void (* glGetProgramEnvParameterfvARBProcPtr) (GLenum target, GLuint index, GLfloat *params);
 typedef void (* glGetProgramLocalParameterdvARBProcPtr) (GLenum target, GLuint index, GLdouble *params);
@@ -2733,6 +2779,11 @@ extern void glProgramLocalParameter4fvARB(GLenum target, GLuint index, const GLf
 
 extern void glGetProgramEnvParameterdvARB(GLenum target, GLuint index, GLdouble *params);
 extern void glGetProgramEnvParameterfvARB(GLenum target, GLuint index, GLfloat *params);
+#if GL_EXT_gpu_program_parameters
+extern void glProgramEnvParameters4fvEXT(GLenum target, GLuint index, GLsizei count, const GLfloat *params);
+extern void glProgramLocalParameters4fvEXT(GLenum target, GLuint index, GLsizei count, const GLfloat *params);
+#endif
+
 extern void glGetProgramLocalParameterdvARB(GLenum target, GLuint index, GLdouble *params);
 extern void glGetProgramLocalParameterfvARB(GLenum target, GLuint index, GLfloat *params);
 
@@ -3679,6 +3730,16 @@ extern void glMapVertexAttrib1dAPPLE(GLuint index, GLuint size, GLdouble u1, GLd
 extern void glMapVertexAttrib1fAPPLE(GLuint index, GLuint size, GLfloat u1, GLfloat u2, GLint stride, GLint order, const GLfloat *points);
 extern void glMapVertexAttrib2dAPPLE(GLuint index, GLuint size, GLdouble u1, GLdouble u2, GLint ustride, GLint uorder, GLdouble v1, GLdouble v2, GLint vstride, GLint vorder, const GLdouble *points);
 extern void glMapVertexAttrib2fAPPLE(GLuint index, GLuint size, GLfloat u1, GLfloat u2, GLint ustride, GLint uorder, GLfloat v1, GLfloat v2, GLint vstride, GLint vorder, const GLfloat *points);
+#endif /* GL_GLEXT_FUNCTION_POINTERS */
+#endif
+
+#if GL_APPLE_flush_buffer_range
+#ifdef GL_GLEXT_FUNCTION_POINTERS
+typedef void (* glBufferParameteriAPPLEProcPtr) (GLenum target, GLenum pname, GLint param);
+typedef void (* glFlushMappedBufferRangeAPPLEProcPtr) (GLenum target, GLintptr offset, GLsizeiptr size);
+#else
+extern void glBufferParameteriAPPLE(GLenum target, GLenum pname, GLint param);
+extern void glFlushMappedBufferRangeAPPLE(GLenum target, GLintptr offset, GLsizeiptr size);
 #endif /* GL_GLEXT_FUNCTION_POINTERS */
 #endif
 

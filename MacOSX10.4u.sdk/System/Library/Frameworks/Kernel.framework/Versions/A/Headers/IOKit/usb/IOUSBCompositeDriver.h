@@ -2,7 +2,7 @@
  *
  * @APPLE_LICENSE_HEADER_START@
  * 
- * Copyright (c) 1998-2003 Apple Computer, Inc.  All Rights Reserved.
+ * Copyright (c) 1998-2006 Apple Computer, Inc.  All Rights Reserved.
  * 
  * This file contains Original Code and/or Modifications of Original Code
  * as defined in and that are subject to the Apple Public Source License
@@ -22,31 +22,6 @@
  * @APPLE_LICENSE_HEADER_END@
  */
 
-#ifndef __OPEN_SOURCE__
-/*
- *
- *	$Log: IOUSBCompositeDriver.h,v $
- *	Revision 1.5  2005/09/23 19:24:17  nano
- *	Bring in changes from DillDenverBranch into TOT
- *	
- *	Revision 1.4.176.2  2005/09/21 16:57:08  nano
- *	Turns out that hubs will keep their ports suspended on wake, so all we need to do is suspend them at start if the property exists
- *	
- *	Revision 1.4  2004/06/04 04:03:49  nano
- *	Fix rdar://3658665 where ReConfigureDevice() was using an united variable
- *	
- *	Revision 1.3  2004/05/28 14:36:24  nano
- *	Don't virutalize inline calls
- *	
- *	Revision 1.2  2004/05/17 21:39:42  nano
- *	New subclassable driver for USB Composite devices.
- *	
- *	Revision 1.1.2.1  2004/05/17 15:57:25  nano
- *	API Changes for Tiger
- *	
- *	
- */
-#endif
 #ifndef _IOKIT_IOUSBCompositeDriver_H
 #define _IOKIT_IOUSBCompositeDriver_H
 

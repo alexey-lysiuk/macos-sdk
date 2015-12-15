@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1998-2003 Apple Computer, Inc. All rights reserved.
+ * Copyright (c) 1998-2006 Apple Computer, Inc. All rights reserved.
  *
  * @APPLE_LICENSE_HEADER_START@
  * 
@@ -21,104 +21,6 @@
  * @APPLE_LICENSE_HEADER_END@
  */
 
-#ifndef __OPEN_SOURCE__
-/*
- *
- *	$Log: USB.h,v $
- *	Revision 1.56  2005/12/07 21:53:32  nano
- *	Bring in fixes from branch PR-4304258 -- Low Latency Audio support in  Yellow
- *	
- *	Revision 1.55.24.1  2005/12/06 20:40:30  nano
- *	Add some defines for property names.  Also, add the new version for LowLatencyUserBufferInfoV2, although no one should be using the old one
- *	
- *	Revision 1.55  2005/09/23 19:24:17  nano
- *	Bring in changes from DillDenverBranch into TOT
- *	
- *	Revision 1.54.50.1  2005/09/21 17:01:43  nano
- *	Listen to the kIOUSBMessagePortWasNotSuspended message
- *	
- *	Revision 1.54  2005/05/13 20:54:20  nano
- *	Added kIOUSBDeviceNotHighSpeed to be used by the EHCI driver to indicate that a device was not high speed, instead of not responding.
- *	
- *	Revision 1.53.42.1  2005/05/13 20:30:31  nano
- *	Branch with kprintfs for enumeration debugging at bootup and fix for rdar://3806588
- *	
- *	Revision 1.53  2004/12/20 18:16:01  rhoads
- *	change the name of some constants for the new split isoch stuff
- *	
- *	Revision 1.52.14.1  2004/11/18 15:50:08  rhoads
- *	checking in new split algorithms for safe keeping
- *	
- *	Revision 1.52  2004/09/24 22:36:13  nano
- *	Add kUSBProductIDMask for new matching criteria
- *	
- *	Revision 1.51  2004/09/24 20:02:42  nano
- *	<rdar://problem/3613639> Increase USB isoc bandwidth limit on FS bus to 1162 bytes
- *	
- *	Revision 1.50  2004/05/17 21:52:50  nano
- *	Add timeStamp and useTimeStamp to our commands.
- *	
- *	Revision 1.49.6.1  2004/05/17 15:57:27  nano
- *	API Changes for Tiger
- *	
- *	Revision 1.49  2004/04/22 04:09:48  nano
- *	Integrate fixes for rdar://3630366 -- Bluetooth extra reset time workaround
- *	
- *	Revision 1.48  2004/03/03 22:01:23  nano
- *	Merge branch
- *	
- *	Revision 1.47.8.1  2004/03/01 17:06:29  nano
- *	New error code to return when we get a synchronous call while on the workloop thread (kIOUSBSyncRequestOnWLThread).
- *	
- *	Revision 1.47  2004/02/03 22:09:49  nano
- *	Fix <rdar://problem/3548194>: Remove $ Id $ from source files to prevent conflicts
- *	
- *	Revision 1.46  2003/12/09 01:12:30  rhoads
- *	add new macro for munging high bandwidth high speed packet sizes
- *	
- *	Revision 1.45.16.3  2003/12/04 20:39:25  rhoads
- *	bug fix to the mungeMaxPacketSize macro
- *	
- *	Revision 1.45.16.2  2003/11/20 20:29:46  barryt
- *	Fix off by one error in shift
- *	
- *	Revision 1.45.16.1  2003/11/20 19:52:34  barryt
- *	Munge high-speed, high-bandwidth endpoint sizes to be correct.
- *	
- *	Revision 1.45.2.2  2004/04/28 17:26:09  nano
- *	Remove $ ID $ so that we don't get conflicts on merge
- *	
- *	Revision 1.45.2.1  2003/11/04 22:27:37  nano
- *	Work in progress to add time stamping to interrupt handler
- *	
- *	Revision 1.45  2003/10/14 22:06:18  nano
- *	Ådded kCallInterfaceOpenWithGate.
- *	
- *	Revision 1.44  2003/09/10 19:07:17  nano
- *	Merge in branches to fix #3406994 (make SuspendDevice synchronous)
- *	
- *	Revision 1.43.2.1  2003/09/10 18:33:40  nano
- *	Add port has been suspended message.
- *	
- *	Revision 1.43  2003/09/10 16:28:00  nano
- *	Added missing iFunction in IOUSBInterfaceAssociationDescriptor.
- *	
- *	Revision 1.42  2003/08/20 19:41:40  nano
- *	
- *	Bug #:
- *	New version's of Nima's USB Prober (2.2b17)
- *	3382540  Panther: Ejecting a USB CardBus card can freeze a machine
- *	3358482  Device Busy message with Modems and IOUSBFamily 201.2.14 after sleep
- *	3385948  Need to implement device recovery on High Speed Transaction errors to full speed devices
- *	3377037  USB EHCI: returnTransactions can cause unstable queue if transactions are aborted
- *	
- *	Also, updated most files to use the id/log functions of cvs
- *	
- *	Submitted by: nano
- *	Reviewed by: rhoads/barryt/nano
- *	
- */
-#endif
 #ifndef _USB_H
 #define _USB_H
 
@@ -507,6 +409,7 @@ Completion Code         Error Returned              Description
 #define kIOUSBMessagePortHasBeenSuspended   iokit_usb_msg(13)  // 0xe0000400d  Message sent to a device indicating that the port it is attached to has been suspended
 #define kIOUSBMessageFromThirdParty         iokit_usb_msg(14)  // 0xe0000400e  Message sent from a third party.  Uses IOUSBThirdPartyParam to encode the sender's ID
 #define kIOUSBMessagePortWasNotSuspended    iokit_usb_msg(15)  // 0xe0000400f  Message indicating that the hub driver received a resume request for a port that was not suspended
+#define kIOUSBMessageExpressCardCantWake    iokit_usb_msg(16)  // 0xe00004010  Message from a driver to a bus that an express card will disconnect on sleep and thus shouldn't wake
 
 // Obsolete
 //
@@ -1083,6 +986,7 @@ enum {
 #define kUSBProductIDMask						"idProductMask"
 #define kUSBPreferredConfiguration				"Preferred Configuration"
 #define kUSBSuspendPort							"kSuspendPort"
+#define kUSBExpressCardCantWake					"ExpressCardCantWake"
 #define kUSBControllerNeedsContiguousMemoryForIsoch	"Need contiguous memory for isoch"
 /*!
 @enum USBReEnumerateOptions

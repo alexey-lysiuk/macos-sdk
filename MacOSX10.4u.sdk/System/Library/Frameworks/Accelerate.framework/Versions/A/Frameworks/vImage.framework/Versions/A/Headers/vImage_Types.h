@@ -82,7 +82,7 @@ enum
     kvImageDoNotTile                    = 	16,	/* Pass to turn off internal tiling. Use this if you want to do your own tiling, or to use the Min/Max filters in place. AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER*/
     kvImageHighQualityResampling		= 	32,	/* Use a higher quality, slower resampling filter for Geometry operations (shear, scale, rotate, affine transform, etc.) AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER*/
     kvImageTruncateKernel               =   64, /* Use only the part of the kernel that overlaps the image. For integer kernels, real_divisor = divisor * (sum of used kernel elements) / (sum of kernel elements). This should preserve image brightness at the edges. Convolution only. AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER */
-    kvImageGetTempBufferSize            =   128 /* The function will return the number of bytes required for the temp buffer. If this value is negative, it is an error, per standard usage.  AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER */
+    kvImageGetTempBufferSize            =  128 /* The function will return the number of bytes required for the temp buffer. If this value is negative, it is an error, per standard usage.  AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER */
 };
 
 

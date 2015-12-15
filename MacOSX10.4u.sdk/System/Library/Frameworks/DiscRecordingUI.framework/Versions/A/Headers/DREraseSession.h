@@ -189,7 +189,7 @@ typedef CALLBACK_API( Boolean , DREraseSessionMediaCheckProcPtr )(DREraseSession
 	@typedef	DREraseSessionDeviceSelectionNotificationProcPtr
 	@abstract	Callback used to notify the application of a new device selected.
 	@param		eraseSession	The erase session object.
-	@param		device			The newly selected device.
+	@param		selectedDevice	The newly selected device.
 */
 typedef CALLBACK_API( void , DREraseSessionDeviceSelectionNotificationProcPtr )(DREraseSessionRef eraseSession, DRDeviceRef selectedDevice);
 
@@ -221,9 +221,7 @@ typedef struct DREraseSessionSetupCallbacks	DREraseSessionSetupCallbacks;
 								This pointer may be <i>NULL</i> if no custom configuration is required.
 	@param		setupCallbacks	A pointer to a structure of type @link DREraseSessionSetupCallbacks DREraseSessionSetupCallbacks @/link. 
 								This pointer may be <i>NULL</i> if no custom behavior is desired.
-	@param		resultCode		A pointer to a SInt8 to hold the result code for the setup dialog.
-								May be one of the constants defined by @link //apple_ref/c/tag/Erase%32Session%32Dialog%32Result%32Codes Erase Session Dialog Result Codes @/link.
-	@result		An OSStatus.
+	@result		Returns one of the constants defined by @link //apple_ref/c/tag/Erase%32Session%32Dialog%32Result%32Codes Erase Session Dialog Result Codes @/link.
 */
 extern SInt8
 DREraseSessionSetupDialog(
@@ -278,9 +276,9 @@ typedef CALLBACK_API( Boolean , DREraseSessionEraseCompleteProcPtr )(DREraseSess
 	@struct		DREraseSessionProgressCallbacks
 	@abstract	Callback functions passed to the progress dialog.
 	@field		version					Identifies the version of this structure.
-	@field		deviceShouldBeTarget	Pointer to a DREraseSessionProgressBeginNotificationProcPtr. The value of this field may be <i>NULL</i>.
-	@field		containsSuitableMedia	Pointer to a DREraseSessionProgressFinishNotificationProcPtr. The value of this field may be <i>NULL</i>.
-	@field		deviceSelectionChanged	Pointer to a DREraseSessionEraseCompleteProcPtr. The value of this field may be <i>NULL</i>.
+	@field		progressWillBegin		Pointer to a DREraseSessionProgressBeginNotificationProcPtr. The value of this field may be <i>NULL</i>.
+	@field		progressDidFinish		Pointer to a DREraseSessionProgressFinishNotificationProcPtr. The value of this field may be <i>NULL</i>.
+	@field		eraseDidFinish			Pointer to a DREraseSessionEraseCompleteProcPtr. The value of this field may be <i>NULL</i>.
 */
 struct DREraseSessionProgressCallbacks {
 	UInt32											version;
@@ -342,7 +340,6 @@ typedef struct DREraseSessionProgressDialogOptions	DREraseSessionProgressDialogO
 	@param		options			A pointer to a structure of type @link DREraseSessionSetupDialogOptions DREraseSessionSetupDialogOptions @/link. 
 	@param		progressCallbacks	A pointer to a structure of type @link DREraseSessionProgressCallbacks DREraseSessionProgressCallbacks @/link. 
 									This pointer may be <i>NULL</i> if no custom behavior is desired.
-	@result		An OSStatus.
 */
 extern void
 DREraseSessionBeginProgressDialog(

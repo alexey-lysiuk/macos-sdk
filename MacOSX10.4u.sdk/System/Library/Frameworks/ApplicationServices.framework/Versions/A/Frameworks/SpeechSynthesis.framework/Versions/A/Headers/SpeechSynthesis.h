@@ -3,9 +3,9 @@
  
      Contains:   Speech Interfaces.
  
-     Version:    SpeechSynthesis-3.4.4~167
+     Version:    SpeechSynthesis-3.5.19~10
  
-     Copyright:  © 1989-2005 by Apple Computer, Inc., all rights reserved.
+     Copyright:  © 1989-2006 by Apple Computer, Inc., all rights reserved.
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:

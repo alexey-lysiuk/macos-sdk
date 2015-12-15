@@ -3,9 +3,9 @@
  
      Contains:   QuickTime Interfaces.
  
-     Version:    QuickTime 7.0.4
+     Version:    QuickTime 7.1.2
  
-     Copyright:  © 1990-2005 by Apple Computer, Inc., all rights reserved
+     Copyright:  © 1990-2006 by Apple Computer, Inc., all rights reserved
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -100,6 +100,34 @@
 	#define SC_STRCAT(a,b) SC_GLUE(a,b)
 	#define ADD_SC_BASENAME(name) SC_STRCAT(SC_BASENAME(),name)
 
+	EXTERN_API( ComponentResult  ) ADD_SC_BASENAME(AudioInvokeLegacyCodecOptionsDialog) (SC_GLOBALS());
+
+	EXTERN_API( ComponentResult  ) ADD_SC_BASENAME(AudioFillBuffer) (SC_GLOBALS() ADD_SC_COMMA SCAudioInputDataProc  inInputDataProc, void * inInputDataProcRefCon, UInt32 * ioOutputDataPacketSize, AudioBufferList * outOutputData, AudioStreamPacketDescription * outPacketDescription);
+
+	EXTERN_API( ComponentResult  ) ADD_SC_BASENAME(AudioReset) (SC_GLOBALS());
+
+#endif	/* SC_BASENAME */
+
+/*
+	Example usage:
+
+		#define SC_BASENAME()	Fred
+		#define SC_GLOBALS()	FredGlobalsHandle
+		#include <QuickTime/QuickTimeComponents.k.h>
+
+	To specify that your component implementation does not use globals, do not #define SC_GLOBALS
+*/
+#ifdef SC_BASENAME
+	#ifndef SC_GLOBALS
+		#define SC_GLOBALS() 
+		#define ADD_SC_COMMA 
+	#else
+		#define ADD_SC_COMMA ,
+	#endif
+	#define SC_GLUE(a,b) a##b
+	#define SC_STRCAT(a,b) SC_GLUE(a,b)
+	#define ADD_SC_BASENAME(name) SC_STRCAT(SC_BASENAME(),name)
+
 	EXTERN_API( ComponentResult  ) ADD_SC_BASENAME(GetCompressionExtended) (SC_GLOBALS() ADD_SC_COMMA SCParams * params, Point  where, SCModalFilterUPP  filterProc, SCModalHookUPP  hookProc, long  refcon, StringPtr  customName);
 
 	EXTERN_API( ComponentResult  ) ADD_SC_BASENAME(PositionRect) (SC_GLOBALS() ADD_SC_COMMA Rect * rp, Point * where);
@@ -158,11 +186,12 @@
 
 	EXTERN_API( ComponentResult  ) ADD_SC_BASENAME(CopyCompressionSessionOptions) (SC_GLOBALS() ADD_SC_COMMA ICMCompressionSessionOptionsRef * outOptions);
 
-	EXTERN_API( ComponentResult  ) ADD_SC_BASENAME(AudioInvokeLegacyCodecOptionsDialog) (SC_GLOBALS());
-
 
 	/* MixedMode ProcInfo constants for component calls */
 	enum {
+		uppSCAudioInvokeLegacyCodecOptionsDialogProcInfo = 0x000000F0,
+		uppSCAudioFillBufferProcInfo = 0x0003FFF0,
+		uppSCAudioResetProcInfo = 0x000000F0,
 		uppSCGetCompressionExtendedProcInfo = 0x000FFFF0,
 		uppSCPositionRectProcInfo = 0x00000FF0,
 		uppSCPositionDialogProcInfo = 0x00000EF0,
@@ -191,8 +220,7 @@
 		uppSCSetSettingsFromAtomContainerProcInfo = 0x000003F0,
 		uppSCCompressSequenceFrameAsyncProcInfo = 0x000FFFF0,
 		uppSCAsyncIdleProcInfo = 0x000000F0,
-		uppSCCopyCompressionSessionOptionsProcInfo = 0x000003F0,
-		uppSCAudioInvokeLegacyCodecOptionsDialogProcInfo = 0x000000F0
+		uppSCCopyCompressionSessionOptionsProcInfo = 0x000003F0
 	};
 
 #endif	/* SC_BASENAME */

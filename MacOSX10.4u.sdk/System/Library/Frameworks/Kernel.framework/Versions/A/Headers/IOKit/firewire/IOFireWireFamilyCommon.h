@@ -29,6 +29,9 @@
  */
 /*
 	$Log: IOFireWireFamilyCommon.h,v $
+	Revision 1.55.4.2  2006/03/10 03:59:44  collin
+	*** empty log message ***
+	
 	Revision 1.55.4.1  2005/08/06 01:31:31  collin
 	*** empty log message ***
 	
@@ -890,7 +893,8 @@ enum
 enum IOFWWriteFlags
 {
 	kIOFWWriteFlagsNone				= 0x0000000,
-	kIOFWWriteFlagsDeferredNotify 	= 0x00000001
+	kIOFWWriteFlagsDeferredNotify 	= 0x00000001,
+	kIOFWWriteFastRetryOnBusy		= 0x00000002
 };
 
 //

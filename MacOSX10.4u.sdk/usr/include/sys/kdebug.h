@@ -83,11 +83,12 @@ __BEGIN_DECLS
 #define DBG_MIG				255
 
 /* **** The Kernel Debug Sub Classes for Mach (DBG_MACH) **** */
+#define	DBG_MACH_EXCP_KTRAP_x86	0x02	/* Kernel Traps on x86 */
 #define	DBG_MACH_EXCP_DFLT	0x03	/* Data Translation Fault */
 #define	DBG_MACH_EXCP_IFLT	0x04	/* Inst Translation Fault */
 #define	DBG_MACH_EXCP_INTR	0x05	/* Interrupts */
 #define	DBG_MACH_EXCP_ALNG	0x06	/* Alignment Exception */
-#define	DBG_MACH_EXCP_TRAP	0x07	/* Traps */
+#define	DBG_MACH_EXCP_UTRAP_x86	0x07	/* User Traps on x86 */
 #define	DBG_MACH_EXCP_FP	0x08	/* FP Unavail */
 #define	DBG_MACH_EXCP_DECI	0x09	/* Decrementer Interrupt */
 #define	DBG_MACH_CHUD		0x0A	/* CHUD */
@@ -215,6 +216,10 @@ __BEGIN_DECLS
 /* The Kernel Debug Sub Classes for DBG_TRACE */
 #define DBG_TRACE_DATA      0
 #define DBG_TRACE_STRING    1
+
+/* The Kernel Debug Sub Classes for DBG_MISC */
+#define DBG_EVENT	0x10
+#define	DBG_BUFFER	0x20
 
 /* The Kernel Debug Sub Classes for DBG_DYLD */
 #define DBG_DYLD_STRING   5

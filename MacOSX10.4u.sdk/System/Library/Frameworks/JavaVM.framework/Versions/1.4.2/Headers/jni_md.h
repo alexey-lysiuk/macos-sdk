@@ -12,7 +12,11 @@
 #define JNIIMPORT
 #define JNICALL
 
+#ifdef __LP64__
+typedef int jint;
+#else
 typedef long jint;
+#endif
 typedef long long jlong;
 typedef signed char jbyte;
 

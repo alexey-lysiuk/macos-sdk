@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1998-2003 Apple Computer, Inc. All rights reserved.
+ * Copyright (c) 1998-2006 Apple Computer, Inc. All rights reserved.
  *
  * @APPLE_LICENSE_HEADER_START@
  * 
@@ -21,65 +21,6 @@
  * @APPLE_LICENSE_HEADER_END@
  */
 
-#ifndef __OPEN_SOURCE__
-/*
- *
- *	$Log: IOUSBLog.h,v $
- *	Revision 1.27.36.1  2005/12/19 18:12:16  rhoads
- *	turn off logging and change versions for GMc1
- *	
- *	Revision 1.27  2005/10/18 22:26:21  nano
- *	Bring in branch to fix <rdar://problem/2719803> USBLog doesn't guard against input strings which are too long
- *	
- *	Revision 1.26.4.1  2005/09/28 22:13:07  nano
- *	Fixing USBLogs
- *	
- *	Revision 1.26  2005/09/16 20:22:54  nano
- *	Enable logging for TOT
- *	
- *	Revision 1.25  2005/08/25 17:47:11  nano
- *	GM all strings and remove logging
- *	
- *	Revision 1.24  2005/04/21 21:50:33  nano
- *	Update with new IDs
- *	
- *	Revision 1.23.38.1  2005/04/12 15:35:25  nano
- *	Bringup/Fixes for Micron module
- *	
- *	Revision 1.23  2004/10/26 22:32:01  nano
- *	Remove USB Loggging for Tiger
- *	
- *	Revision 1.22  2004/02/03 22:09:49  nano
- *	Fix <rdar://problem/3548194>: Remove $ Id $ from source files to prevent conflicts
- *	
- *	Revision 1.21  2003/10/14 22:05:38  nano
- *	Logging enabled.
- *	
- *	Revision 1.20.10.1  2003/09/17 20:57:44  nano
- *	Change some logging to level 5 and add more info, just for testing
- *	
- *	Revision 1.20.14.1  2003/09/25 19:58:30  nano
- *	Back to logging
- *	
- *	Revision 1.20  2003/09/05 22:38:50  nano
- *	Removed logging --set to Production
- *	
- *	Revision 1.19  2003/08/20 19:41:40  nano
- *	
- *	Bug #:
- *	New version's of Nima's USB Prober (2.2b17)
- *	3382540  Panther: Ejecting a USB CardBus card can freeze a machine
- *	3358482  Device Busy message with Modems and IOUSBFamily 201.2.14 after sleep
- *	3385948  Need to implement device recovery on High Speed Transaction errors to full speed devices
- *	3377037  USB EHCI: returnTransactions can cause unstable queue if transactions are aborted
- *	
- *	Also, updated most files to use the id/log functions of cvs
- *	
- *	Submitted by: nano
- *	Reviewed by: rhoads/barryt/nano
- *	
- */
-#endif
 #ifndef _IOKIT_IOUSBLOG_H
 #define _IOKIT_IOUSBLOG_H
 

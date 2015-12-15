@@ -94,9 +94,7 @@ typedef	integer_t	host_flavor_t;
 #define HOST_MACH_MSG_TRAP	8	/* Has mach_msg_trap */
 
 
-#if __DARWIN_ALIGN_POWER
-#pragma options align=power
-#endif
+#pragma pack(4)
 
 struct host_basic_info {
 	integer_t		max_cpus;		/* max number of CPUs possible */
@@ -112,9 +110,7 @@ struct host_basic_info {
 	uint64_t		max_mem;		/* actual size of physical memory */
 };
 
-#if __DARWIN_ALIGN_POWER
-#pragma options align=reset
-#endif
+#pragma pack()
 
 typedef	struct host_basic_info	host_basic_info_data_t;
 typedef struct host_basic_info	*host_basic_info_t;

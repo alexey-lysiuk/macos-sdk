@@ -3,9 +3,9 @@
  
      Contains:   QuickTime Interfaces.
  
-     Version:    QuickTime 7.0.4
+     Version:    QuickTime 7.1.2
  
-     Copyright:  © 1990-2005 by Apple Computer, Inc., all rights reserved
+     Copyright:  © 1990-2006 by Apple Computer, Inc., all rights reserved
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -261,6 +261,14 @@
 
 	EXTERN_API( ComponentResult  ) ADD_MEDIA_BASENAME(GGetLatency) (MEDIA_GLOBALS() ADD_MEDIA_COMMA TimeRecord * latency);
 
+	EXTERN_API( ComponentResult  ) ADD_MEDIA_BASENAME(SetTrackApertureModeDimensionsUsingSampleDescription) (MEDIA_GLOBALS() ADD_MEDIA_COMMA SampleDescriptionHandle  sampleDesc);
+
+	EXTERN_API( ComponentResult  ) ADD_MEDIA_BASENAME(GetApertureModeClipRectForSampleDescriptionIndex) (MEDIA_GLOBALS() ADD_MEDIA_COMMA long  sampleDescIndex, FixedRect * clipFixedRectOut);
+
+	EXTERN_API( ComponentResult  ) ADD_MEDIA_BASENAME(GetApertureModeMatrixForSampleDescriptionIndex) (MEDIA_GLOBALS() ADD_MEDIA_COMMA long  sampleDescIndex, MatrixRecord * matrixOut);
+
+	EXTERN_API( ComponentResult  ) ADD_MEDIA_BASENAME(GenerateApertureModeDimensions) (MEDIA_GLOBALS());
+
 #endif	/* MEDIA_BASENAME */
 
 
@@ -366,7 +374,11 @@ enum {
 	uppMediaNavigateTargetRefConProcInfo = 0x00000FF0,
 	uppMediaGGetIdleManagerProcInfo = 0x000003F0,
 	uppMediaGSetIdleManagerProcInfo = 0x000003F0,
-	uppMediaGGetLatencyProcInfo = 0x000003F0
+	uppMediaGGetLatencyProcInfo = 0x000003F0,
+	uppMediaSetTrackApertureModeDimensionsUsingSampleDescriptionProcInfo = 0x000003F0,
+	uppMediaGetApertureModeClipRectForSampleDescriptionIndexProcInfo = 0x00000FF0,
+	uppMediaGetApertureModeMatrixForSampleDescriptionIndexProcInfo = 0x00000FF0,
+	uppMediaGenerateApertureModeDimensionsProcInfo = 0x000000F0
 };
 
 
