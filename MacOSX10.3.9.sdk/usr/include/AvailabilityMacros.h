@@ -167,9 +167,6 @@
 
 
 
-
-
-
 /*
  * AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER
  * 
@@ -217,10 +214,6 @@
 #else
     #define DEPRECATED_IN_MAC_OS_X_VERSION_10_1_AND_LATER
 #endif
-
-
-
-
 
 
 
@@ -283,8 +276,6 @@
 #else
     #define DEPRECATED_IN_MAC_OS_X_VERSION_10_2_AND_LATER
 #endif
-
-
 
 
 
@@ -362,9 +353,6 @@
 
 
 
-
-
-
 /*
  * AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER
  * 
@@ -429,7 +417,7 @@
 /*
  * AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4
  * 
- * Used on declarations introduced in Mac OS X 10.2, 
+ * Used on declarations introduced in Mac OS X 10.3, 
  * but later deprecated in Mac OS X 10.4
  */
 #if MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_4

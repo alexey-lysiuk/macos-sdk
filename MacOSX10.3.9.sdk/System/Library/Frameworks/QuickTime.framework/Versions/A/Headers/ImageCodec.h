@@ -450,7 +450,7 @@ InvokeImageCodecDrawBandCompleteUPP(
   ImageCodecDrawBandCompleteUPP  userUPP)                     AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 #if __MACH__
-  #ifdef __cplusplus
+  #if defined(__cplusplus) && defined(__GNUC__) && (__GNUC__ >= 4)
     inline ImageCodecTimeTriggerUPP                             NewImageCodecTimeTriggerUPP(ImageCodecTimeTriggerProcPtr userRoutine) { return userRoutine; }
     inline ImageCodecDrawBandCompleteUPP                        NewImageCodecDrawBandCompleteUPP(ImageCodecDrawBandCompleteProcPtr userRoutine) { return userRoutine; }
     inline void                                                 DisposeImageCodecTimeTriggerUPP(ImageCodecTimeTriggerUPP) { }
@@ -1162,7 +1162,7 @@ InvokeImageCodecMPDrawBandUPP(
   ImageCodecMPDrawBandUPP          userUPP)                   AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 #if __MACH__
-  #ifdef __cplusplus
+  #if defined(__cplusplus) && defined(__GNUC__) && (__GNUC__ >= 4)
     inline ImageCodecMPDrawBandUPP                              NewImageCodecMPDrawBandUPP(ImageCodecMPDrawBandProcPtr userRoutine) { return userRoutine; }
     inline void                                                 DisposeImageCodecMPDrawBandUPP(ImageCodecMPDrawBandUPP) { }
     inline ComponentResult                                      InvokeImageCodecMPDrawBandUPP(void * refcon, ImageSubCodecDecompressRecord * drp, ImageCodecMPDrawBandUPP userUPP) { return (*userUPP)(refcon, drp); }

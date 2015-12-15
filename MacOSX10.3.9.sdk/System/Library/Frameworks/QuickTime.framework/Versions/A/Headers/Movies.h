@@ -12441,7 +12441,7 @@ InvokeQTEffectListFilterUPP(
   QTEffectListFilterUPP  userUPP)                             AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 #if __MACH__
-  #ifdef __cplusplus
+  #if defined(__cplusplus) && defined(__GNUC__) && (__GNUC__ >= 4)
     inline QTCallBackUPP                                        NewQTCallBackUPP(QTCallBackProcPtr userRoutine) { return userRoutine; }
     inline QTSyncTaskUPP                                        NewQTSyncTaskUPP(QTSyncTaskProcPtr userRoutine) { return userRoutine; }
     inline MovieRgnCoverUPP                                     NewMovieRgnCoverUPP(MovieRgnCoverProcPtr userRoutine) { return userRoutine; }
@@ -18285,7 +18285,7 @@ InvokeQTBandwidthNotificationUPP(
   QTBandwidthNotificationUPP  userUPP)                        AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4;
 
 #if __MACH__
-  #ifdef __cplusplus
+  #if defined(__cplusplus) && defined(__GNUC__) && (__GNUC__ >= 4)
     inline MCActionFilterUPP                                    NewMCActionFilterUPP(MCActionFilterProcPtr userRoutine) { return userRoutine; }
     inline MCActionFilterWithRefConUPP                          NewMCActionFilterWithRefConUPP(MCActionFilterWithRefConProcPtr userRoutine) { return userRoutine; }
     inline MCActionNotificationUPP                              NewMCActionNotificationUPP(MCActionNotificationProcPtr userRoutine) { return userRoutine; }

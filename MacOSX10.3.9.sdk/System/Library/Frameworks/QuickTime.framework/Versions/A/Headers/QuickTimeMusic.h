@@ -3102,7 +3102,7 @@ InvokeTunePlayCallBackUPP(
   TunePlayCallBackUPP  userUPP)                               AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 #if __MACH__
-  #ifdef __cplusplus
+  #if defined(__cplusplus) && defined(__GNUC__) && (__GNUC__ >= 4)
     inline MusicMIDISendUPP                                     NewMusicMIDISendUPP(MusicMIDISendProcPtr userRoutine) { return userRoutine; }
     inline MusicOfflineDataUPP                                  NewMusicOfflineDataUPP(MusicOfflineDataProcPtr userRoutine) { return userRoutine; }
     inline TuneCallBackUPP                                      NewTuneCallBackUPP(TuneCallBackProcPtr userRoutine) { return userRoutine; }

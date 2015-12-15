@@ -2515,7 +2515,7 @@ InvokeRTPPBCallbackUPP(
   RTPPBCallbackUPP  userUPP)                                  AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 #if __MACH__
-  #ifdef __cplusplus
+  #if defined(__cplusplus) && defined(__GNUC__) && (__GNUC__ >= 4)
     inline RTPMPDataReleaseUPP                                  NewRTPMPDataReleaseUPP(RTPMPDataReleaseProcPtr userRoutine) { return userRoutine; }
     inline RTPPBCallbackUPP                                     NewRTPPBCallbackUPP(RTPPBCallbackProcPtr userRoutine) { return userRoutine; }
     inline void                                                 DisposeRTPMPDataReleaseUPP(RTPMPDataReleaseUPP) { }

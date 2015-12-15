@@ -911,7 +911,7 @@ InvokeICMConvertDataFormatUPP(
   ICMConvertDataFormatUPP  userUPP)                           AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 #if __MACH__
-  #ifdef __cplusplus
+  #if defined(__cplusplus) && defined(__GNUC__) && (__GNUC__ >= 4)
     inline ICMDataUPP                                           NewICMDataUPP(ICMDataProcPtr userRoutine) { return userRoutine; }
     inline ICMFlushUPP                                          NewICMFlushUPP(ICMFlushProcPtr userRoutine) { return userRoutine; }
     inline ICMCompletionUPP                                     NewICMCompletionUPP(ICMCompletionProcPtr userRoutine) { return userRoutine; }
@@ -7041,7 +7041,7 @@ InvokeQTComponentPropertyListenerFilterUPP(
   QTComponentPropertyListenerFilterUPP                  userUPP) AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
 
 #if __MACH__
-  #ifdef __cplusplus
+  #if defined(__cplusplus) && defined(__GNUC__) && (__GNUC__ >= 4)
     inline QTComponentPropertyListenerUPP                       NewQTComponentPropertyListenerUPP(QTComponentPropertyListenerProcPtr userRoutine) { return userRoutine; }
     inline QTComponentPropertyListenerFilterUPP                 NewQTComponentPropertyListenerFilterUPP(QTComponentPropertyListenerFilterProcPtr userRoutine) { return userRoutine; }
     inline void                                                 DisposeQTComponentPropertyListenerUPP(QTComponentPropertyListenerUPP) { }

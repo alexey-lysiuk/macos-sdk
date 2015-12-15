@@ -2059,7 +2059,7 @@ InvokePrePrerollCompleteUPP(
   PrePrerollCompleteUPP  userUPP)                             AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 #if __MACH__
-  #ifdef __cplusplus
+  #if defined(__cplusplus) && defined(__GNUC__) && (__GNUC__ >= 4)
     inline PrePrerollCompleteUPP                                NewPrePrerollCompleteUPP(PrePrerollCompleteProcPtr userRoutine) { return userRoutine; }
     inline void                                                 DisposePrePrerollCompleteUPP(PrePrerollCompleteUPP) { }
     inline void                                                 InvokePrePrerollCompleteUPP(MediaHandler mh, OSErr err, void * refcon, PrePrerollCompleteUPP userUPP) { (*userUPP)(mh, err, refcon); }
