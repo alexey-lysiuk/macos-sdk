@@ -182,13 +182,6 @@
 		ComponentResult result = badComponentSelector;
 		ProcInfoType theProcInfo;
 		
-	#ifdef GET_OVERRIDE_COMPONENT
-		if ((params->what != kComponentOpenSelect) && (params->what != kComponentCloseSelect)) {   
-			if (GET_OVERRIDE_COMPONENT() != NULL) {
-				return DelegateComponentCall(params, GET_OVERRIDE_COMPONENT());
-			}
-		}
-	#endif // GET_OVERRIDE_COMPONENT
 		theProc = COMPONENTSELECTORLOOKUP(params->what, &theProcInfo);
 
 		if (theProc) {
@@ -281,8 +274,10 @@
 	
 	#define ComponentDelegate(procName)			{kCOMPONENT_DELEGATE, 0},
 	
-
-	#define ComponentRangeUnused(rangeNum)
+	
+	#define ComponentRangeUnused(rangeNum) \
+		static CDHCONST cdhDispatchInfoRecord cdh_GLUE2(cdhDispatchInfo,rangeNum)[1] = {{0, 0}};	\
+		enum {cdh_GLUE2(cdhDispatchMax,rangeNum) = 0};
 		
 	#define ComponentRangeBegin(rangeNum)	\
 		static CDHCONST cdhDispatchInfoRecord cdh_GLUE2(cdhDispatchInfo,rangeNum)[] = {

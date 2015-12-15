@@ -1,1 +1,0 @@
-../../../../System/Library/Frameworks/QuickTime.framework/Headers/HIMovieView.h

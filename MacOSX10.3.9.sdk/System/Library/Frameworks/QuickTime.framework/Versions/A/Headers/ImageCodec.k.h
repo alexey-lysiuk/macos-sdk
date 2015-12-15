@@ -3,9 +3,9 @@
  
      Contains:   QuickTime Interfaces.
  
-     Version:    QuickTime 7.0.2
+     Version:    QuickTime_6
  
-     Copyright:  © 1990-2005 by Apple Computer, Inc., all rights reserved
+     Copyright:  © 1990-2003 by Apple Computer, Inc., all rights reserved
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -139,20 +139,6 @@
 
 	EXTERN_API( ComponentResult  ) ADD_IMAGECODEC_BASENAME(DITLValidateInput) (IMAGECODEC_GLOBALS() ADD_IMAGECODEC_COMMA Boolean * ok);
 
-	EXTERN_API( ComponentResult  ) ADD_IMAGECODEC_BASENAME(GetPreferredChunkSizeAndAlignment) (IMAGECODEC_GLOBALS() ADD_IMAGECODEC_COMMA ImageDescriptionHandle  desc, Fixed  frameRate, UInt32  dataRate, long * bytesPerChunk, long * alignment);
-
-	EXTERN_API( ComponentResult  ) ADD_IMAGECODEC_BASENAME(PrepareToCompressFrames) (IMAGECODEC_GLOBALS() ADD_IMAGECODEC_COMMA ICMCompressorSessionRef  session, ICMCompressionSessionOptionsRef  compressionSessionOptions, ImageDescriptionHandle  imageDescription, void * reserved, CFDictionaryRef * compressorPixelBufferAttributesOut);
-
-	EXTERN_API( ComponentResult  ) ADD_IMAGECODEC_BASENAME(EncodeFrame) (IMAGECODEC_GLOBALS() ADD_IMAGECODEC_COMMA ICMCompressorSourceFrameRef  sourceFrame, UInt32  flags);
-
-	EXTERN_API( ComponentResult  ) ADD_IMAGECODEC_BASENAME(CompleteFrame) (IMAGECODEC_GLOBALS() ADD_IMAGECODEC_COMMA ICMCompressorSourceFrameRef  sourceFrame, UInt32  flags);
-
-	EXTERN_API( ComponentResult  ) ADD_IMAGECODEC_BASENAME(BeginPass) (IMAGECODEC_GLOBALS() ADD_IMAGECODEC_COMMA ICMCompressionPassModeFlags  passModeFlags, UInt32  flags, ICMMultiPassStorageRef  multiPassStorage);
-
-	EXTERN_API( ComponentResult  ) ADD_IMAGECODEC_BASENAME(EndPass) (IMAGECODEC_GLOBALS());
-
-	EXTERN_API( ComponentResult  ) ADD_IMAGECODEC_BASENAME(ProcessBetweenPasses) (IMAGECODEC_GLOBALS() ADD_IMAGECODEC_COMMA ICMMultiPassStorageRef  multiPassStorage, Boolean * interpassProcessingDoneOut, ICMCompressionPassModeFlags * requestedNextPassModeFlagsOut);
-
 	EXTERN_API( ComponentResult  ) ADD_IMAGECODEC_BASENAME(Preflight) (IMAGECODEC_GLOBALS() ADD_IMAGECODEC_COMMA CodecDecompressParams * params);
 
 	EXTERN_API( ComponentResult  ) ADD_IMAGECODEC_BASENAME(Initialize) (IMAGECODEC_GLOBALS() ADD_IMAGECODEC_COMMA ImageSubCodecDecompressCapabilities * cap);
@@ -172,8 +158,6 @@
 	EXTERN_API( ComponentResult  ) ADD_IMAGECODEC_BASENAME(ScheduleFrame) (IMAGECODEC_GLOBALS() ADD_IMAGECODEC_COMMA const ImageSubCodecDecompressRecord * drp, ImageCodecTimeTriggerUPP  triggerProc, void * triggerProcRefCon);
 
 	EXTERN_API( ComponentResult  ) ADD_IMAGECODEC_BASENAME(CancelTrigger) (IMAGECODEC_GLOBALS());
-
-	EXTERN_API( ComponentResult  ) ADD_IMAGECODEC_BASENAME(DecodeBand) (IMAGECODEC_GLOBALS() ADD_IMAGECODEC_COMMA ImageSubCodecDecompressRecord * drp, unsigned long  flags);
 
 
 	/* MixedMode ProcInfo constants for component calls */
@@ -229,13 +213,6 @@
 		uppImageCodecDITLItemProcInfo = 0x00002BF0,
 		uppImageCodecDITLRemoveProcInfo = 0x00000BF0,
 		uppImageCodecDITLValidateInputProcInfo = 0x000003F0,
-		uppImageCodecGetPreferredChunkSizeAndAlignmentProcInfo = 0x0003FFF0,
-		uppImageCodecPrepareToCompressFramesProcInfo = 0x0003FFF0,
-		uppImageCodecEncodeFrameProcInfo = 0x00000FF0,
-		uppImageCodecCompleteFrameProcInfo = 0x00000FF0,
-		uppImageCodecBeginPassProcInfo = 0x00003FF0,
-		uppImageCodecEndPassProcInfo = 0x000000F0,
-		uppImageCodecProcessBetweenPassesProcInfo = 0x00003FF0,
 		uppImageCodecPreflightProcInfo = 0x000003F0,
 		uppImageCodecInitializeProcInfo = 0x000003F0,
 		uppImageCodecBeginBandProcInfo = 0x00003FF0,
@@ -245,8 +222,7 @@
 		uppImageCodecQueueStoppingProcInfo = 0x000000F0,
 		uppImageCodecDroppingFrameProcInfo = 0x000003F0,
 		uppImageCodecScheduleFrameProcInfo = 0x00003FF0,
-		uppImageCodecCancelTriggerProcInfo = 0x000000F0,
-		uppImageCodecDecodeBandProcInfo = 0x00000FF0
+		uppImageCodecCancelTriggerProcInfo = 0x000000F0
 	};
 
 #endif	/* IMAGECODEC_BASENAME */

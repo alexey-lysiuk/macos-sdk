@@ -25,25 +25,24 @@ extern "C" {
 */
 extern OSStatus
 AUMIDIControllerCreate(			CFStringRef				inVirtualDestinationName,
-								AUMIDIControllerRef *	outController)				AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+								AUMIDIControllerRef *	outController);
 
 extern OSStatus
-AUMIDIControllerDispose(		AUMIDIControllerRef		inController)				AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+AUMIDIControllerDispose(		AUMIDIControllerRef		inController);
 
 extern OSStatus
 AUMIDIControllerMapChannelToAU(	AUMIDIControllerRef		inController,
 								SInt32					inSourceMIDIChannel,
 								AudioUnit				inAudioUnit,
 								SInt32					inDestMIDIChannel,
-								Boolean					inCreateDefaultControlMappings)
-																					AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+								Boolean					inCreateDefaultControlMappings);
 
 
 extern OSStatus
 AUMIDIControllerMapEventToParameter(	AUMIDIControllerRef		inController,
 										UInt8					inMIDIStatusByte,
 										UInt16					inMIDIControl,
-										const AudioUnitParameter *inParameter)		AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+										const AudioUnitParameter *inParameter);
 
 // this will remove any mapping held by this controller
 // to the specified audio unit - whether those are:
@@ -53,25 +52,25 @@ AUMIDIControllerMapEventToParameter(	AUMIDIControllerRef		inController,
 // Typically, this is done when (and should be done) when an AU no longer
 // should receive MIDI events for its parameters (or the AU is being disposed)
 extern OSStatus
-AUMIDIControllerUnmapAudioUnit(		AUMIDIControllerRef		inController,
-									AudioUnit				inAudioUnit)			AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
+AUMIDIControllerUnmapAudioUnit(	AUMIDIControllerRef		inController,
+								AudioUnit				inAudioUnit);
 										
 /*
 	$$$ need description of timestamps in the packets (if any) are treated -- needs
 	to factor in the AU's latency $$$
 */
 extern OSStatus
-AUMIDIControllerHandleMIDI(			AUMIDIControllerRef		inController,
-									const MIDIPacketList *	inMIDIPacketList)		AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+AUMIDIControllerHandleMIDI(		AUMIDIControllerRef		inController,
+								const MIDIPacketList *	inMIDIPacketList);
 
 
 extern OSStatus
-AUMIDIControllerConnectSource(		AUMIDIControllerRef		inController,
-									MIDIEndpointRef			inSource)				AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+AUMIDIControllerConnectSource(		AUMIDIControllerRef	inController,
+									MIDIEndpointRef		inSource);
 
 extern OSStatus
-AUMIDIControllerDisconnectSource(	AUMIDIControllerRef		inController,
-									MIDIEndpointRef			inSource)				AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+AUMIDIControllerDisconnectSource(	AUMIDIControllerRef	inController,
+									MIDIEndpointRef		inSource);
 
 /*
 	Tells an AUMIDIController to generate an XML description of the control/NRPN 
@@ -81,8 +80,8 @@ AUMIDIControllerDisconnectSource(	AUMIDIControllerRef		inController,
 	ones for that destination.
 */
 extern OSStatus
-AUMIDIControllerExportXMLNames(		AUMIDIControllerRef		inController,
-									CFURLRef *				outXMLFileURL)			AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+AUMIDIControllerExportXMLNames(	AUMIDIControllerRef		inController,
+								CFURLRef *				outXMLFileURL);
 
 
 #ifdef __cplusplus

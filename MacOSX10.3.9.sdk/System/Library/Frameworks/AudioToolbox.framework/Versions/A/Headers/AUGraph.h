@@ -17,47 +17,46 @@
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	AUGraph.h
 
-	Subsystem for maintaining arbitrary graphs of AudioUnits.
+	Subsystem  for maintaining arbitrary graphs of AudioUnits
 
-	The AUGraph APIs are responsible for representing the description of a set
-	of AudioUnit components, as well as the audio connections between their
-	inputs and outputs.  This representation may be saved/restored persistently
-	and "instantiated" (AUGraphOpen() ) by opening all of the AudioUnits, and
-	making the physical connections between them stored in the representation. 
-	Thus the AUGraph is a description of the various AudioUnits and their
-	connections, but also may manage the actual instantiated AudioUnits if
-	AUGraphOpen() is actually called. The AUGraph, in essence, is a complete
-	description of an audio signal processing network.
+	The AUGraph APIs are responsible for representing the description of a
+	set of AudioUnit components, as well as the audio connections between
+	their inputs and outputs.  This representation may be saved/restored persistently
+	and "instantiated" (AUGraphOpen() ) by opening all of the AudioUnits, and making the
+	physical connections between them stored in the representation.  Thus the AUGraph is
+	a description of the various AudioUnits and their connections, but also may
+	manage the actual instantiated AudioUnits if AUGraphOpen() is actually called.
+	The AUGraph, in essence, is a complete description of an audio signal processing
+	network.
 
-	The AUGraph may be introspected, in order to get complete information about
-	all of the AudioUnits in the graph.  The various nodes (AUNode) in the
-	AUGraph representing AudioUnits may be added or removed, and the connections
-	between them modified.
+	The AUGraph may be introspected, in order to get complete information about all
+	of the AudioUnits in the graph.  The various nodes (AUNode) in the AUGraph 
+	representing AudioUnits may be added or removed, and the connections between
+	them modified.
 
 	An AUNode representing an AudioUnit component is created by specifying a
 	ComponentDescription record (from the Component Manager), as well as
 	optional "class" data, which is passed to the AudioUnit when it is opened.
 	This "class" data is in an arbitrary format, and may differ depending on the
-	particular AudioUnit.  In general, the data will be used by the AudioUnit to
-	configure itself when it is opened (in object-oriented terms, it corresponds
-	to constructor arguments).  In addition, certain AudioUnits may provide
-	their own class data when they are closed, allowing their current state to
-	be saved for the next time they are instantiated.  This provides a general
-	mechanism for persistence.
+	particular AudioUnit.  In general, the data will be used by the AudioUnit
+	to configure itself when it is opened (in object-oriented terms, it corresponds
+	to constructor arguments).  In addition, certain AudioUnits may provide their
+	own class data when they are closed, allowing their current state to be saved
+	for the next time they are instantiated.  This provides a general mechanism
+	for persistence.
 
 	An AUGraph's state can be manipulated in both the rendering thread and in
-	other threads. Consequently, any activities that effect the state of the
-	graph are guarded with locks.
+	other threads. Consequently, any activities that effect the state of the graph
+	are guarded with locks.
 
-	To avoid spinning or waiting in the render thread (a bad idea!), many of the
-	calls to AUGraph can return: kAUGraphErr_CannotDoInCurrentContext. This
-	result is only generated when you call an AUGraph API from its render
-	callback. It means that the lock that it required was held at that time, by
-	another thread. If you see this result code, you can generally attempt the
-	action again - typically the NEXT render cycle (so in the mean time the lock
-	can be cleared), or you can delegate that call to another thread in your
-	app. You should not spin or put-to-sleep the render thread as a general
-	rule.
+	To avoid spinning or waiting in the render thread (a bad idea!), many of the calls
+	to AUGraph can return: kAUGraphErr_CannotDoInCurrentContext. This result is only
+	generated when you call an AUGraph API from its render callback. It means that
+	the lock that it required was held at that time, by another thread. If you see 
+	this result code, you can generally attempt the action again - typically the
+	NEXT render cycle (so in the mean time the lock can be cleared), or you can
+	delegate that call to another thread in your app. You should
+	not spin or put-to-sleep the render thread as a general rule.
 
 	The only exception to this is trying to remove an output node or a sub-graph
 	FROM the render callback in a running graph (see below)
@@ -67,17 +66,8 @@
 #ifndef __AUGraph
 #define __AUGraph
 
-#include <AvailabilityMacros.h>
-#if !defined(__COREAUDIO_USE_FLAT_INCLUDES__)
-	#include <CoreServices/CoreServices.h>
-	#include <AudioUnit/AudioUnit.h>
-		// AUNTComponent.h contains declarations for the V1 AU's which are deprecated
-	#include <AudioUnit/AUNTComponent.h>
-#else
-	#include <CoreServices.h>
-	#include <AudioUnit.h>
-	#include <AUNTComponent.h>
-#endif
+#include <CoreServices/CoreServices.h>
+#include <AudioUnit/AudioUnit.h>
 
 #if defined(__cplusplus)
 extern "C"
@@ -98,195 +88,160 @@ struct AudioUnitNodeConnection
 };
 typedef struct AudioUnitNodeConnection AudioUnitNodeConnection;
 
-enum
-{
+enum {
 	kAUGraphErr_NodeNotFound 				= -10860,
 	kAUGraphErr_InvalidConnection 			= -10861,
+	//AUGraph's can only contain one OutputUnit
+	// this error is returned if trying to add a second output unit
 	kAUGraphErr_OutputNodeErr				= -10862,
-		//	AUGraphs can only contain one OutputUnit.
-		//	this error is returned if trying to add a second output unit
-
-	kAUGraphErr_CannotDoInCurrentContext	= -10863,
 		// This result can be returned by a number of the API calls
 		// (including AUGraphUpdate)
 		// See the comments for AUGraphUpdate
-
+	kAUGraphErr_CannotDoInCurrentContext	= -10863,
+	// You can only have audio units of either 'aunt' or the new types
+	// in the same graph...
 	kAUGraphErr_InvalidAudioUnit			= -10864
-		// You can only have audio units of either 'aunt' (V1) or the new types (V2)
-		// in the same graph.
 };
 
 // construction / destruction
-extern OSStatus
-NewAUGraph(			AUGraph			*outGraph)						AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
-
-extern OSStatus
-DisposeAUGraph(		AUGraph			inGraph)						AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+extern OSStatus NewAUGraph(			AUGraph			*outGraph );
+extern OSStatus DisposeAUGraph(		AUGraph			inGraph );
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	AUGraphNewNode
-
-	This creates a node in the graph that is an AudioUnit, using the supplied
-	ComponentDescription to find and open that unit.
+	This creates a node in the graph that is an AudioUnit, using
+	the supplied ComponentDescription to find and open that unit
 	
-	AudioUnits can also be reinstantiated from a saved state with serialized
-	data - "class data" in the arguments below.
+	AudioUnits can also be reinstantiated from a saved state with
+	serialized data - "class data" in the arguments below.
 	
-	Audio Units use a CFPropertyList (a constrained CFDictionary) to handle
-	class data. In that case a size of zero should be passed in and the graph
-	will take a retain on the CFPropertyList, which will be released when the
-	node is removed from the graph.
+	Audio Units use a CFPropertyList (a constrained CFDictionary)
+	to handle class data. In that case a size of zero should be passed in
+	and the graph will take a retain on the CFPropertyList, which will
+	be released when the node is removed from the graph.
 	
-	Because a CFPropertyList definition of the AU state contains the component
-	description this call can be used with inDescription set to NULL and
-	inClassDataSize to zero iff inClassData is one of these structures (which
-	should be the normal case).
-
-	(Passing a non-zero size was a previously drafted version of this API which
-	is no longer supported as audio units now are expected to support the
-	CFPropertyList version)... So, inClassDataSize should always be zero) - this
-	parameter maybe re-tasked for some other usage later on.
-
-	Of course, if you have no class data, set both size and ptr to 0.
-
+	Because a CFPropertyList definition of the AU state contains the component description
+	this call can be used with inDescription set to NULL and inClassDataSize to zero iff inClassData
+	is one of these structures (which should be the normal case).
+	
+	(Passing a non-zero size was a previously drafted version of this API which is no longer supported
+	as audio units now are expected to support the CFPropertyList version)... So, inClassDataSize should
+	always be zero) - this parameter maybe re-tasked for some other usage later on.
+	
+	If you have no class data of course, set both size and ptr to 0.
+	
 	The call returns the new AUNode in outNode.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-extern OSStatus
-AUGraphNewNode(	AUGraph						inGraph,
-				const ComponentDescription	*inDescription,
-				UInt32						inClassDataSize,// reserved: must be zero
-				const void					*inClassData,
-				AUNode						*outNode)				AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+extern OSStatus AUGraphNewNode(	AUGraph						inGraph,
+								const ComponentDescription	*inDescription,
+								UInt32						inClassDataSize, //reserved -> set to zero
+								const void					*inClassData,
+								AUNode						*outNode);
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	AUGraphNewNodeSubGraph
-	
-	This will create a node that represents a contained or member AUGraph.
-	The AUGraph can be retrieved through the GetNodeInfoSubGraph call.
-	The member AUGraph is owned by the parent graph and will be disposed when
-	either:
+	This will create a node that represents a contained or member AUGraph
+	The AUGraph can be retrieved through the GetNodeInfoSubGraph call
+	The member AUGraph is owned by the parent graph and will be 
+	disposed when either:
 	(1) The parent graph is disposed
 	(2) The node is removed from the parent AUGraph
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-extern OSStatus
-AUGraphNewNodeSubGraph( AUGraph				inGraph,
-						AUNode				*outNode);
+extern OSStatus AUGraphNewNodeSubGraph (AUGraph				inGraph,
+									AUNode					*outNode);
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	AUGraphRemoveNode
-
-	Nodes can be removed from any thread context. However, the output node of
-	the AUGraph, or a node that represents a sub-graph, cannot be removed from
-	within the RenderCallback of the AUGraph (the graph would be running at that
-	time and in the process of rendering). In that case an error
-	(kAUGraphErr_CannotDoInCurrentContext) is returned. (The graph's output unit
-	can be removed from any other thread of course).
+	Nodes can be removed from any thread context
+	However, the output node of the AUGraph, or a node that represents
+	a sub-graph, cannot be removed from within the RenderCallback of the AUGraph.
+	(ie. the graph would be running at that time and in the process of rendering)
+	In that case an error (kAUGraphErr_CannotDoInCurrentContext) is returned. 
+	(The graph's output unit can be removed from any other thread of course).
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-extern OSStatus
-AUGraphRemoveNode(  AUGraph			inGraph,
-					AUNode			inNode)							AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+extern OSStatus AUGraphRemoveNode (AUGraph			inGraph,
+									AUNode			inNode);
 
-extern OSStatus
-AUGraphGetNodeCount(AUGraph			inGraph,
-					UInt32 			*outNumberOfNodes)				AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+extern OSStatus AUGraphGetNodeCount (AUGraph		inGraph,
+									UInt32 			*outNumberOfNodes );
 
-extern OSStatus
-AUGraphGetIndNode(  AUGraph			inGraph,
-					UInt32 			inIndex,
-					AUNode			*outNode)						AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+extern OSStatus AUGraphGetIndNode(AUGraph			inGraph,
+								UInt32 				inIndex,
+								AUNode 		 		*outNode);
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	AUGraphGetNodeInfo
-
-	You can pass in NULL for any of the out parameters if you're not interested
-	in that value.
-
+	You can pass in NULL for any of the out parameters if you're not interested in 
+	that value.
+	
 	outClassDataSize should be set to zero - it is ignored
-
-	outClassData should be passed a pointer to a CFPropertyListRef - this will
-	handle then contain the current state of the audio unit, represented in this
-	structure. If the application wants to use it, it should call CFRetain on
-	the return value.
-
+	
+	outClassData should be passed a pointer to a CFPropertyListRef - this will handle then contain
+	the current state of the audio unit, represented in this structure. If the application wants
+	to use it, it should call CFRetain on the return value.
+	
 	See the comments on AUGraphNewNode for how the class data is handled
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-extern OSStatus
-AUGraphGetNodeInfo(	AUGraph				inGraph,
-					AUNode				inNode,
-					ComponentDescription *outDescription,
-					UInt32				*outClassDataSize,
-					void				**outClassData,
-					AudioUnit			*outAudioUnit)				AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+extern OSStatus AUGraphGetNodeInfo(	AUGraph				inGraph,
+								AUNode					inNode,
+								ComponentDescription	*outDescription,
+								UInt32					*outClassDataSize,
+								void					**outClassData,
+								AudioUnit 				*outAudioUnit);
 
-extern OSStatus
-AUGraphGetNodeInfoSubGraph(	const AUGraph		inGraph,
-							AUNode				inNode,
-							AUGraph				*outSubGraph)		AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+extern OSStatus AUGraphGetNodeInfoSubGraph (const AUGraph		inGraph,
+								const AUNode				inNode,
+								AUGraph						*outSubGraph);
 								
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	AUGraphIsNodeSubGraph
-
 	This returns true if the specified node is a subgraph
 	it returns false if the specified node is not a subgraph
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-extern OSStatus
-AUGraphIsNodeSubGraph(		const AUGraph		inGraph,
-							AUNode				inNode,
-							Boolean*			outFlag)			AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+extern OSStatus AUGraphIsNodeSubGraph (const AUGraph	inGraph,
+								const AUNode			inNode,
+								Boolean*				outFlag);
 								
 // connect a node's output to a node's input
-extern OSStatus
-AUGraphConnectNodeInput(	AUGraph			inGraph,
-							AUNode			inSourceNode,
-							UInt32			inSourceOutputNumber,
-							AUNode			inDestNode,
-							UInt32			inDestInputNumber)		AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+extern OSStatus AUGraphConnectNodeInput(	AUGraph			inGraph,
+									AUNode			inSourceNode,
+									UInt32			inSourceOutputNumber,
+									AUNode			inDestNode,
+									UInt32			inDestInputNumber	);
 
 // disconnect a node's input
-extern OSStatus
-AUGraphDisconnectNodeInput(	AUGraph			inGraph,
-							AUNode			inDestNode,
-							UInt32			inDestInputNumber)		AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+extern OSStatus AUGraphDisconnectNodeInput(	AUGraph			inGraph,
+									AUNode			inDestNode,
+									UInt32			inDestInputNumber	);
 
 // start with a clean slate (all connections of all nodes)
-extern OSStatus
-AUGraphClearConnections(	AUGraph			inGraph)				AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+extern OSStatus AUGraphClearConnections(	AUGraph			inGraph );
 
 
-extern OSStatus
-AUGraphGetNumberOfConnections(	AUGraph		inGraph,
-								UInt32		*outNumConnections)		AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER;
+extern OSStatus AUGraphGetNumberOfConnections(	AUGraph		inGraph,
+                                                UInt32		*outNumberOfConnections );
 
 // this returns the number of connections where the specified node is 
 // either a source or a destination in the connection
-extern OSStatus
-AUGraphCountNodeConnections(	AUGraph 	inGraph,
-								AUNode 		inNode,
-								UInt32 		*outNumConnections)		AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
+extern
+OSStatus	AUGraphCountNodeConnections (AUGraph 			inGraph,
+										AUNode 				inNode,
+										UInt32 				*outNumConnections);
 
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-	Returns a list of connections where the specified node is either a source or
-	destination. Pass in a number of connection structures that are used to
-	receive the connection info. On input, ioNumConnections contains the number
-	of connection structs that can be returned. On output, ioNumConnections
-	contains the number of connections returned. The connections are returned in
-	the order that they were made in the graph.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-extern OSStatus
-AUGraphGetNodeConnections(		AUGraph						inGraph,
+// returns a list of connections where the specified node is either a source or destination
+// Pass in a number of connection structures that are used to receive the connection info
+// On input, ioNumConnections contains the number of connection structs that can be returned
+// On output, ioNumConnections contains the number of connections returned
+// The connections are returned in the order that the conn. were made in the graph
+extern
+OSStatus	AUGraphGetNodeConnections (AUGraph				inGraph,
 								AUNode						inNode,
 								AudioUnitNodeConnection		*outConnections,
-								UInt32						*ioNumConnections)	AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
+								UInt32						*ioNumConnections);
 
 // it's OK to pass in NULL for any of the last four arguments
-extern OSStatus
-AUGraphGetConnectionInfo(	AUGraph		inGraph,
-							UInt32		inConnectionIndex,
-							AUNode		*outSourceNode,
-							UInt32		*outSourceOutputNumber,
-							AUNode		*outDestNode,
-							UInt32		*outDestInputNumber)		AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER;
+extern OSStatus AUGraphGetConnectionInfo(	AUGraph		inGraph,
+                                                UInt32		inConnectionIndex,
+                                                AUNode		*outSourceNode,
+                                                UInt32		*outSourceOutputNumber,
+                                                AUNode		*outDestNode,
+                                                UInt32		*outDestInputNumber );
 
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -325,9 +280,8 @@ AUGraphGetConnectionInfo(	AUGraph		inGraph,
 	to explicitly call AUGraphUpdate again to have the processing of the events occur.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-extern OSStatus
-AUGraphUpdate(		AUGraph			inGraph,
-					Boolean			*outIsUpdated)					AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+extern OSStatus AUGraphUpdate(		AUGraph			inGraph,
+									Boolean			*outIsUpdated );
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	The following calls must be made in this order:
@@ -335,8 +289,8 @@ AUGraphUpdate(		AUGraph			inGraph,
 	AUGraphOpen()			
 			- AudioUnits are open but not initialized (no resource allocation occurs here)
 	AUGraphInitialize()			
-			- AudioUnitInitialize() is called on each opened node/AudioUnit
-				(get ready to render) and SubGraph
+			- AudioUnitInitialize() is called on each opened node
+				- AudioUnit (get ready to render) and SubGraph
 	AUGraphStart()	
 			- ...Start() is called on the "head" node(s) of the AUGraph	(now rendering starts)
 	AUGraphStop()					
@@ -347,44 +301,33 @@ AUGraphUpdate(		AUGraph			inGraph,
 			- all AudioUnits are closed - leaving only its nodal representation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-extern OSStatus
-AUGraphOpen(			AUGraph		inGraph)						AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+extern OSStatus AUGraphOpen(				AUGraph			inGraph );
 
-extern OSStatus
-AUGraphClose(			AUGraph		inGraph)						AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+extern OSStatus AUGraphClose(				AUGraph			inGraph );
 
-extern OSStatus
-AUGraphInitialize(		AUGraph		inGraph)						AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+extern OSStatus AUGraphInitialize(			AUGraph			inGraph );
 
-extern OSStatus
-AUGraphUninitialize(	AUGraph		inGraph)						AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+extern OSStatus AUGraphUninitialize(		AUGraph			inGraph );
 
-extern OSStatus
-AUGraphStart(			AUGraph		inGraph)						AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+extern OSStatus AUGraphStart(		AUGraph			inGraph );
 
-extern OSStatus
-AUGraphStop(			AUGraph		inGraph)						AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+extern OSStatus AUGraphStop(		AUGraph			inGraph );
 
 
-extern OSStatus
-AUGraphIsOpen(			AUGraph		inGraph,
-						Boolean		*outIsOpen)						AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+extern OSStatus AUGraphIsOpen (AUGraph			inGraph,
+								Boolean			*outIsOpen );
 							
-extern OSStatus
-AUGraphIsInitialized(	AUGraph		inGraph,
-						Boolean		*outIsInitialized)				AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+extern OSStatus AUGraphIsInitialized (AUGraph		inGraph,
+									Boolean			*outIsInitialized );
 							
-extern OSStatus
-AUGraphIsRunning(		AUGraph		inGraph,
-						Boolean		*outIsRunning)					AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+extern OSStatus AUGraphIsRunning (AUGraph			inGraph,
+									Boolean			*outIsRunning );
 						
-extern OSStatus
-AUGraphGetCPULoad(		AUGraph		inGraph,
-						Float32		*outAverageCPULoad)				AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER;
+extern OSStatus AUGraphGetCPULoad(		AUGraph		inGraph,
+										Float32		*outAverageCPULoad );
 
-extern OSStatus
-AUGraphGetMaxCPULoad(	AUGraph		inGraph,
-						Float32		*outMaxLoad)					AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
+extern OSStatus AUGraphGetMaxCPULoad(AUGraph		inGraph,
+										Float32		*outMaxLoad );
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	AUGraph Render Notifications
@@ -400,35 +343,28 @@ AUGraphGetMaxCPULoad(	AUGraph		inGraph,
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	These calls are used for an AUGraph that has AudioUnits of 'aunt' type
-	see <AudioUnit/AUNTComponent.h> (V1)
-	
-	These API are deprecated (as is the V1 AU) and developers should only be using the V2
-	based AU's (and their supporting API)...
+	see <AudioUnit/AUNTComponent.h>
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-extern OSStatus
-AUGraphSetRenderNotification(		AUGraph					inGraph,
-									AudioUnitRenderCallback inCallback,
-									void 					*inRefCon)	AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER DEPRECATED_IN_MAC_OS_X_VERSION_10_3_AND_LATER;
+extern OSStatus AUGraphSetRenderNotification(	AUGraph					inGraph,
+												AudioUnitRenderCallback inCallback,
+												void 					*inRefCon );
 
-extern OSStatus
-AUGraphRemoveRenderNotification(	AUGraph					inGraph,
-									AudioUnitRenderCallback inCallback,
-									void 					*inRefCon)	AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER DEPRECATED_IN_MAC_OS_X_VERSION_10_3_AND_LATER;
+extern OSStatus AUGraphRemoveRenderNotification(AUGraph					inGraph,
+												AudioUnitRenderCallback inCallback,
+												void 					*inRefCon );
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	These calls are used for an AUGraph that has AudioUnits of 'auxx' type
 	where xx is a type that corresponds to one of the various types 
 	of the AudioUnit v2 - see <AudioUnit/AUComponent.h>
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-extern OSStatus
-AUGraphAddRenderNotify(			AUGraph					inGraph,
-								AURenderCallback 		inCallback,
-								void 					*inRefCon)		AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+extern OSStatus AUGraphAddRenderNotify(			AUGraph					inGraph,
+												AURenderCallback 		inCallback,
+												void 					*inRefCon );
 
-extern OSStatus
-AUGraphRemoveRenderNotify(		AUGraph					inGraph,
-								AURenderCallback 		inCallback,
-								void 					*inRefCon)		AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+extern OSStatus AUGraphRemoveRenderNotify(		AUGraph					inGraph,
+												AURenderCallback 		inCallback,
+												void 					*inRefCon );
 
 #if defined(__cplusplus)
 }

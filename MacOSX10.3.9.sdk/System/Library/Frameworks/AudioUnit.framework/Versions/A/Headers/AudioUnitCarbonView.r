@@ -3,9 +3,10 @@
  
      Contains:   AudioUnitCarbonView Interfaces
  
-     Version:    Mac OS X
+     Version:    Technology: Mac OS X
+                 Release:    Mac OS X
  
-     Copyright:  © 2002-2004 by Apple Computer, Inc., all rights reserved.
+     Copyright:  © 2002 by Apple Computer, Inc., all rights reserved.
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -17,8 +18,13 @@
 #ifndef __AUDIOUNITCARBONVIEW_R__
 #define __AUDIOUNITCARBONVIEW_R__
 
-#define kAudioUnitCarbonViewComponentType   'auvw'
-#define kAUCarbonViewSubType_Generic		'gnrc'
+#ifndef __CONDITIONALMACROS_R__
+#include "ConditionalMacros.r"
+#endif
+
+#define kAudioUnitCarbonViewComponentType  'auvw'
+#define kAUCarbonViewSubType_Generic 	'gnrc'
+
 
 #endif /* __AUDIOUNITCARBONVIEW_R__ */
 

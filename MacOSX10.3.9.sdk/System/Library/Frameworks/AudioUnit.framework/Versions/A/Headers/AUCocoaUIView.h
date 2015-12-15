@@ -22,14 +22,9 @@
 
 // Returns the version of the interface you are implementing
 // In Mac OS X v10.3, this is 0
-- (unsigned)interfaceVersion;
+- (unsigned) interfaceVersion;
 
-// Returns the NSView responsible for displaying the interface for the provided AudioUnit.
-//
-// This function is a factory function: each call to it must return a unique view.
-// Each view must be returned with a retain count of 1 and autoreleased.
-// It is the client's responsibility to retain the returned view and to release the view when it's
-// no longer needed.
-- (NSView *)uiViewForAudioUnit:(AudioUnit)inAudioUnit withSize:(NSSize)inPreferredSize;
+// Returns the NSView responsible for displaying the interface for the provided AudioUnit
+- (NSView *) uiViewForAudioUnit:(AudioUnit)inAudioUnit withSize:(NSSize)inPreferredSize;
 
 @end

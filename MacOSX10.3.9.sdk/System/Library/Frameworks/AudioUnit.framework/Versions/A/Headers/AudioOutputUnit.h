@@ -3,9 +3,10 @@
  
      Contains:   AudioOutputUnit Interfaces
  
-     Version:    Mac OS X
+     Version:    Technology: System 9, X
+                 Release:    Mac OS X
  
-     Copyright:  © 2000-2004 by Apple Computer, Inc., all rights reserved.
+     Copyright:  © 2000-2002 by Apple Computer, Inc., all rights reserved.
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -16,12 +17,10 @@
 #ifndef __AUDIOOUTPUTUNIT__
 #define __AUDIOOUTPUTUNIT__
 
-#include <AvailabilityMacros.h>
-#if !defined(__COREAUDIO_USE_FLAT_INCLUDES__)
-	#include <AudioUnit/AUComponent.h>
-#else
-	#include <AUComponent.h>
-#endif
+#include <AudioUnit/AUComponent.h>
+
+
+
 
 #if PRAGMA_ONCE
 #pragma once
@@ -36,30 +35,45 @@ extern "C" {
 #endif
 
 #if PRAGMA_STRUCT_ALIGN
-	#pragma options align=mac68k
+    #pragma options align=mac68k
 #elif PRAGMA_STRUCT_PACKPUSH
-	#pragma pack(push, 2)
+    #pragma pack(push, 2)
 #elif PRAGMA_STRUCT_PACK
-	#pragma pack(2)
+    #pragma pack(2)
 #endif
 
 
-//-----------------------------------------------------------------------------
-//	Start/stop methods for audio output units
-//-----------------------------------------------------------------------------
-extern ComponentResult
-AudioOutputUnitStart(	AudioUnit	ci)											AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+/*
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   ranges
+*/
 
-extern ComponentResult
-AudioOutputUnitStop(	AudioUnit	ci)											AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
-
-//-----------------------------------------------------------------------------
-//	Selectors for component calls
-//-----------------------------------------------------------------------------
 enum {
-	kAudioOutputUnitRange						= 0x0200,	// selector range
-	kAudioOutputUnitStartSelect					= 0x0201,
-	kAudioOutputUnitStopSelect					= 0x0202
+  kAudioOutputUnitRange         = 0x0200
+};
+
+
+/*
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    Start/stop methods for audio output units
+*/
+EXTERN_API( ComponentResult )
+AudioOutputUnitStart(AudioUnit ci)                            FIVEWORDINLINE(0x2F3C, 0x0000, 0x0201, 0x7000, 0xA82A);
+
+
+EXTERN_API( ComponentResult )
+AudioOutputUnitStop(AudioUnit ci)                             FIVEWORDINLINE(0x2F3C, 0x0000, 0x0202, 0x7000, 0xA82A);
+
+
+
+
+
+/* UPP call backs */
+
+/* selectors for component calls */
+enum {
+    kAudioOutputUnitStartSelect                = 0x0201,
+    kAudioOutputUnitStopSelect                 = 0x0202
 };
 
 

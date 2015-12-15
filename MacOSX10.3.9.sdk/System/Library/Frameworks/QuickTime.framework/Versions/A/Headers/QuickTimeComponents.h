@@ -3,9 +3,9 @@
  
      Contains:   QuickTime Interfaces.
  
-     Version:    QuickTime 7.0.2
+     Version:    QuickTime_6
  
-     Copyright:  © 1990-2005 by Apple Computer, Inc., all rights reserved
+     Copyright:  © 1990-2003 by Apple Computer, Inc., all rights reserved
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -258,41 +258,11 @@ ClockGetRateChangeConstraints(
 
 
 
-
-/*
-   ************************************************
-   Standard Compression component type and subtypes
-   ************************************************
-*/
-
-/*
- */
+/* StdCompression component type and subtypes*/
 enum {
   StandardCompressionType       = 'scdi',
   StandardCompressionSubType    = 'imag',
-
-  /*
-   * StandardCompressionSubTypeSound is the legacy StandardCompression
-   * component that uses the SoundMgr.  It is limited to mono/stereo,
-   * and to sample rates under 64kHz. It is still present in QuickTime
-   * to support older apps (use of the new
-   * StandardCompressionSubTypeAudio requires app developers to modify
-   * their code).
-   */
-  StandardCompressionSubTypeSound = 'soun',
-
-  /*
-   * StandardCompressionSubTypeAudio is the StandardCompression
-   * component that adds the ability to configure multi-channel, high
-   * sample rate output formats.  It uses CoreAudio internally instead
-   * of the SoundMgr, and has a full set of component properties to
-   * make configuration easier, especially when the developer wishes to
-   * bring up his/her own dialog rather than the default dialog.  See
-   * StandardCompressionSubTypeAudio Properties below for a full list
-   * of Component Properties supported by the
-   * StandardCompressionSubTypeAudio component.
-   */
-  StandardCompressionSubTypeAudio = 'audi'
+  StandardCompressionSubTypeSound = 'soun'
 };
 
 typedef CALLBACK_API( Boolean , SCModalFilterProcPtr )(DialogRef theDialog, EventRecord *theEvent, short *itemHit, long refcon);
@@ -337,6 +307,8 @@ enum {
 enum {
   scUserCancelled               = 1
 };
+
+
 
 /* Component selectors*/
 enum {
@@ -470,513 +442,6 @@ struct QTSettingsVersionAtomRecord {
   short               reserved;               /* should be 0*/
 };
 typedef struct QTSettingsVersionAtomRecord QTSettingsVersionAtomRecord;
-/* Video Specific Definitions for B frame / multi pass support*/
-
-
-/*
- *  SCVideoMultiPassEncodingSettings
- *  
- *  Summary:
- *    Struct for passing multi pass encoding settings through
- *    scVideoMultiPassEncodingSettingsType
- */
-struct SCVideoMultiPassEncodingSettings {
-
-  /*
-   * True if multi pass encoding can be performed.
-   */
-  Boolean             allowMultiPassEncoding;
-  unsigned char       maxEncodingPassCount;
-};
-typedef struct SCVideoMultiPassEncodingSettings SCVideoMultiPassEncodingSettings;
-
-/*
- *  Summary:
- *    SCGetInfo/SetInfo Selectors
- */
-enum {
-
-  /*
-   * Specifies if frame reordering can occur in encoding.
-   */
-  scVideoAllowFrameReorderingType = 'bfra', /* pointer to Boolean*/
-
-  /*
-   * The settings to control multi pass encoding.
-   */
-  scVideoMultiPassEncodingSettingsType = 'mpes' /* pointer to SCVideoMutiPassEncodingSettings struct*/
-};
-
-
-/*
- *  Summary:
- *    Preference Flags for scPreferenceFlagsType
- *  
- *  Discussion:
- *    Preference flags that specify how StdCompression should handle
- *    frame reordering and multi pass encoding settings.
- */
-enum {
-
-  /*
-   * Indicates the client is ready to use the ICM compression session
-   * API to perform compression operations. StdCompression disables
-   * frame reordering and multi pass encoding if this flag is cleared.
-   */
-  scAllowEncodingWithCompressionSession = 1L << 8,
-
-  /*
-   * Indicates the client does not want the user to change the frame
-   * reordering setting.
-   */
-  scDisableFrameReorderingItem  = 1L << 9,
-
-  /*
-   * Indicates the client does not want the user to change the multi
-   * pass encoding setting
-   */
-  scDisableMultiPassEncodingItem = 1L << 10
-};
-
-
-/*
-   ******************************************
-   StandardCompressionSubTypeAudio Properties
-   ******************************************
-*/
-
-
-/*
-   In StandardCompressionSubTypeAudio, instead of using Get/SetInfo, the developer will
-   get and set component properties.  (QTGetComponentPropertyInfo(), QTGetComponentProperty(),
-   QTSetComponentProperty(), QTAddComponentPropertyListener(), QTRemoveComponentPropertyListener())
-   These properties have a class and ID, instead of just a single selector.
-   Note that implementers of MovieExport "from procedures" getProperty procs (that choose
-   to opt-in to the new support; see kQTMovieExporterPropertyID_EnableHighResolutionAudioFeatures
-   in this header) will need to support these property IDs as new selectors.  In other
-   words, the MovieExporter getProperty proc API is not changing to add a class.  The
-   class is implied in that case.  Such procs, of course, do not implement any of the
-   list properties, or the non-settable properties, as well as some others.  The
-   properties getProperty procs can implement are marked below with the word "DataProc".
-*/
-
-
-
-/*
- *  Summary:
- *    ComponentPropertyClasses for StandardCompressionSubTypeAudio
- */
-enum {
-
-  /*
-   * All Component Properties used by StandardCompressionSubTypeAudio
-   * component use kQTPropertyClass_SCAudio, except for the following:
-   * kQTAudioPropertyID_FormatString - use kQTPropertyClass_Audio (see
-   * Movies.h) kQTAudioPropertyID_ChannelLayoutString - use
-   * kQTPropertyClass_Audio (see Movies.h)
-   * kQTAudioPropertyID_SampleRateString - use kQTPropertyClass_Audio
-   * (see Movies.h) kQTAudioPropertyID_SampleSizeString - use
-   * kQTPropertyClass_Audio (see Movies.h)
-   * kQTAudioPropertyID_BitRateString - use kQTPropertyClass_Audio (see
-   * Movies.h) kQTAudioPropertyID_SummaryString - use
-   * kQTPropertyClass_Audio (see Movies.h)
-   */
-  kQTPropertyClass_SCAudio      = 'scda'
-};
-
-
-
-
-/*
- *  Summary:
- *    ComponentPropertyID selectors for kQTPropertyClass_SCAudio
- */
-enum {
-
-  /*
-   * kQTSCAudioPropertyID_ClientRestrictedCompressionFormatList:
-   * Specifies a client-restricted set of output compression formats
-   * that should be listed as available. Use QTGetComponentPropertyInfo
-   * to discover the number of bytes you should allocate to hold the
-   * array.
-   */
-  kQTSCAudioPropertyID_ClientRestrictedCompressionFormatList = 'crf#', /* C-style array of OSType's, Read/Write/Listen*/
-
-  /*
-   * kQTSCAudioPropertyID_AvailableCompressionFormatList: Specifies the
-   * list of available output compression formats. By default, this
-   * list includes all the kAudioEncoderComponentType components and
-   * kSoundCompressor type components on the system. The list may be
-   * restricted by clients using the
-   * kQTSCAudioPropertyID_ClientRestrictedCompressionFormatList
-   * property. Use QTGetComponentPropertyInfo to discover the number of
-   * bytes you should allocate to hold the array.
-   */
-  kQTSCAudioPropertyID_AvailableCompressionFormatList = 'acf#', /* C-style array of OSType's, Read/Listen */
-
-  /*
-   * kQTSCAudioPropertyID_AvailableCompressionFormatNamesList:
-   * Specifies the human readable names for corresponding to each item
-   * in kQTSCAudioPropertyID_AvailableCompressionFormatList. Caller
-   * assumes responsibility for CFRelease()'ing the resulting
-   * CFArrayRef.
-   */
-  kQTSCAudioPropertyID_AvailableCompressionFormatNamesList = 'cnm#', /* CFArrayRef of CFStringRef's, Read/Write */
-
-  /*
-   * kQTSCAudioPropertyID_HasLegacyCodecOptionsDialog: Some compression
-   * formats have format-specific properties that are only accessible
-   * via a compressor-provided dialog. 
-   * kQTSCAudioPropertyID_HasLegacyCodecOptionsDialog lets you know if
-   * the current compression format has such a dialog.
-   */
-  kQTSCAudioPropertyID_HasLegacyCodecOptionsDialog = 'opn?', /* Boolean, Read/Listen */
-
-  /*
-   * kQTSCAudioPropertyID_ConstantBitRateFormatsOnly: By default,
-   * constant as well as variable bit rate compression formats are
-   * shown in the available format list. a client may restrict the
-   * available formats to constant bit rate formats only by setting
-   * this property to true.
-   */
-  kQTSCAudioPropertyID_ConstantBitRateFormatsOnly = '!vbr', /* Boolean, Read/Write/Listen */
-
-  /*
-   * kQTSCAudioPropertyID_ClientRestrictedSampleRateList: Specifies a
-   * client-restricted set of output sample rate ranges that should be
-   * listed as available. Use QTGetComponentPropertyInfo to discover
-   * the number of bytes you should allocate to hold the array.
-   */
-  kQTSCAudioPropertyID_ClientRestrictedSampleRateList = 'crr#', /* C-style array of AudioValueRange's, Read/Write/Listen */
-
-  /*
-   * kQTSCAudioPropertyID_AvailableSampleRateList: Specifies a list of
-   * available output sample rates.  This list is compression format
-   * specific, and takes into account any restrictions imposed by a
-   * client using the
-   * kQTSCAudioPropertyID_ClientRestrictedSampleRateList property. Use
-   * QTGetComponentPropertyInfo to discover the number of bytes you
-   * should allocate to hold the array.
-   */
-  kQTSCAudioPropertyID_AvailableSampleRateList = 'avr#', /* C-style array of AudioValueRange's, Read/Listen*/
-
-  /*
-   * kQTSCAudioPropertyID_ApplicableSampleRateList: Specifies which of
-   * the value ranges in the
-   * kQTSCAudioPropertyID_AvailableSampleRateList are currently
-   * applicable. The kQTSCAudioPropertyID_AvailableSampleRateList takes
-   * into account client restrictions, and a compression format's
-   * general sample rate restrictions. 
-   * kQTSCAudioPropertyID_ApplicableSampleRateList further filters the
-   * list to just those sample rates that are legal and valid given the
-   * current codec configuration.  Use QTGetComponentPropertyInfo to
-   * discover the number of bytes you should allocate to hold the array.
-   */
-  kQTSCAudioPropertyID_ApplicableSampleRateList = 'apr#', /* C-style array of AudioValueRanges, Read/Listen*/
-
-  /*
-   * kQTSCAudioPropertyID_SampleRateRecommended: Clients not wishing to
-   * set an output sample rate manually may set the output rate to the
-   * recommended rate.  Some compressors can perform rate conversion,
-   * and can pick optimal settings for a desired bitrate (AAC is an
-   * example).  For other formats, the "Recommended" rate is simply the
-   * closest output rate to the input rate that's allowed by the output
-   * format.  kQTSCAudioPropertyID_SampleRateIsRecommended is
-   * read-only.  To set the sample rate to recommended, a client sets
-   * the kQTSCAudioPropertyID_BasicDescription with mSampleRate = 0.0. 
-   * To unset the sample rate as recommended, the client sets the
-   * kQTSCAudioPropertyID_BasicDescription with a non-zero mSampleRate
-   * field.
-   */
-  kQTSCAudioPropertyID_SampleRateIsRecommended = 'reco', /* Boolean, Read/Listen*/
-
-  /*
-   * kQTSCAudioPropertyID_InputMagicCookie: Some decompressors make use
-   * of untyped codec-specific data (a magic cookie) in order to decode
-   * their input. Magic cookies are variable size, so you must call
-   * QTGetComponentPropertyInfo in order to discover the size of the
-   * buffer you should allocate to hold the cookie.
-   */
-  kQTSCAudioPropertyID_InputMagicCookie = 'ikki', /* void * (opaque data), Read/Write/Listen */
-
-  /*
-   * kQTSCAudioPropertyID_MagicCookie: Some compressors make use of
-   * untyped codec-specific data (a magic cookie) in order to configure
-   * their output. Magic cookies are variable size, so you must call
-   * QTGetComponentPropertyInfo in order to discover the size of the
-   * buffer you should allocate to hold the cookie.
-   */
-  kQTSCAudioPropertyID_MagicCookie = 'kuki', /* void * (opaque data), Read/Write/Listen */
-
-  /*
-   * kQTSCAudioPropertyID_ClientRestrictedLPCMBitsPerChannelList:
-   * Specifies a client-restricted set of output bits per channel that
-   * should be listed as available. Use QTGetComponentPropertyInfo to
-   * discover the number of bytes you should allocate to hold the array.
-   */
-  kQTSCAudioPropertyID_ClientRestrictedLPCMBitsPerChannelList = 'crb#', /* C-style array of UInt32's, Read/Write/Listen */
-
-  /*
-   * kQTSCAudioPropertyID_AvailableLPCMBitsPerChannelList: Specifies a
-   * list of available bits-per-channel.  This list is specific to
-   * LPCM, and takes into account any restrictions imposed by a client
-   * using the
-   * kQTSCAudioPropertyID_ClientRestrictedLPCMBitsPerChannelList
-   * property. Use QTGetComponentPropertyInfo to discover the number of
-   * bytes you should allocate to hold the array.
-   */
-  kQTSCAudioPropertyID_AvailableLPCMBitsPerChannelList = 'avb#', /* C-style array of UInt32's, Read/Listen */
-
-  /*
-   * kQTSCAudioPropertyID_ApplicableLPCMBitsPerChannelList: Specifies
-   * which of the values in the
-   * kQTSCAudioPropertyID_AvailableLPCMBitsPerChannelList are currently
-   * applicable. The
-   * kQTSCAudioPropertyID_AvailableLPCMBitsPerChannelList takes into
-   * account client restrictions, and LPCM's general bits per channel
-   * restrictions. 
-   * kQTSCAudioPropertyID_ApplicableLPCMBitsPerChannelList further
-   * filters the list to just those bits per channel that are legal and
-   * valid given the current LPCM configuration.  Use
-   * QTGetComponentPropertyInfo to discover the number of bytes you
-   * should allocate to hold the array.
-   */
-  kQTSCAudioPropertyID_ApplicableLPCMBitsPerChannelList = 'apb#', /* C-style array of UInt32's, Read/Listen*/
-
-  /*
-   * kQTSCAudioPropertyID_InputChannelLayout: Specifies the audio
-   * channel layout of the input description.  AudioChannelLayout is a
-   * variable size struct, so use QTGetComponentPropertyInfo to
-   * discover the number of bytes you should allocate.
-   */
-  kQTSCAudioPropertyID_InputChannelLayout = 'icly', /* AudioChannelLayout (variable-size), Read/Write/Listen */
-
-  /*
-   * kQTSCAudioPropertyID_InputChannelLayoutName: Specifies the human
-   * readable name for kQTSCAudioPropertyID_InputChannelLayout (if one
-   * exists).  Caller assumes responsibility for CFRelease()'ing the
-   * resulting string.
-   */
-  kQTSCAudioPropertyID_InputChannelLayoutName = 'icln', /* CFStringRef, Read */
-
-  /*
-   * kQTSCAudioPropertyID_ChannelLayout: Specifies the audio channel
-   * layout of the output description.  AudioChannelLayout is a
-   * variable size struct, so use QTGetComponentPropertyInfo to
-   * discover the number of bytes you should allocate.
-   */
-  kQTSCAudioPropertyID_ChannelLayout = 'clay', /* AudioChannelLayout (variable-size), Read/Write/Listen */
-
-  /*
-   * kQTSCAudioPropertyID_ChannelLayoutName: Specifies the human
-   * readable name for kQTSCAudioPropertyID_ChannelLayout (if one
-   * exists).  Caller assumes responsibility for CFRelease()'ing the
-   * resulting string.
-   */
-  kQTSCAudioPropertyID_ChannelLayoutName = 'clyn', /* CFStringRef, Read */
-
-  /*
-   * kQTSCAudioPropertyID_ClientRestrictedChannelLayoutTagList:
-   * Specifies a client-restricted set of channel layout tags that
-   * should be listed as available. Use QTGetComponentPropertyInfo to
-   * discover the number of bytes you should allocate to hold the array.
-   */
-  kQTSCAudioPropertyID_ClientRestrictedChannelLayoutTagList = 'crl#', /* C-style array of AudioChannelLayoutTag's, Read/Write*/
-
-  /*
-   * kQTSCAudioPropertyID_AvailableChannelLayoutTagList: Specifies a
-   * list of available audio channel layout tags.  This list is
-   * compression format specific, and takes into account any
-   * restrictions imposed by a client using the
-   * kQTSCAudioPropertyID_ClientRestrictedChannelLayoutTagList
-   * property. Use QTGetComponentPropertyInfo to discover the number of
-   * bytes you should allocate to hold the array.
-   */
-  kQTSCAudioPropertyID_AvailableChannelLayoutTagList = 'avl#', /* C-style array of AudioChannelLayoutTag's, Read/Listen */
-
-  /*
-   * kQTSCAudioPropertyID_AvailableChannelLayoutTagNamesList: Specifies
-   * the human readable names for the AudioChannelLayoutTags in
-   * kQTSCAudioPropertyID_AvailableChannelLayoutTagList. Each element
-   * in the array is a CFStringRef.  Caller assumes responsibility for
-   * CFRelease()'ing the array.
-   */
-  kQTSCAudioPropertyID_AvailableChannelLayoutTagNamesList = 'vln#', /* CFArrayRef, Read*/
-
-  /*
-   * kQTSCAudioPropertyID_ApplicableChannelLayoutTagList: Specifies
-   * which of the values in the
-   * kQTSCAudioPropertyID_AvailableChannelLayoutTagList are currently
-   * applicable. The kQTSCAudioPropertyID_AvailableChannelLayoutTagList
-   * takes into account client restrictions, and the current output
-   * format's general channel layout restrictions. 
-   * kQTSCAudioPropertyID_ApplicableChannelLayoutTagList further
-   * filters the list to just those channel layouts that are legal and
-   * valid given the current codec configuration.  Use
-   * QTGetComponentPropertyInfo to discover the number of bytes you
-   * should allocate to hold the array.
-   */
-  kQTSCAudioPropertyID_ApplicableChannelLayoutTagList = 'apl#', /* C-style array of AudioChannelLayoutTag's, Read/Listen*/
-
-  /*
-   * kQTSCAudioPropertyID_ApplicableChannelLayoutTagNamesList:
-   * Specifies the human readable names for the AudioChannelLayoutTags
-   * in kQTSCAudioPropertyID_ApplicableChannelLayoutTagList. Each
-   * element in the array is a CFStringRef.  Caller assumes
-   * responsibility for CFRelease()'ing the array.
-   */
-  kQTSCAudioPropertyID_ApplicableChannelLayoutTagNamesList = 'pln#', /* CFArrayRef, Read*/
-
-  /*
-   * kQTSCAudioPropertyID_ClientRestrictedLPCMFlags: Specifies a
-   * client-restricted set of flags corresponding to the mFormatFlags
-   * fields in an AudioStreamBasicDescription.  Data type is a
-   * SCAudioFormatFlagsRestrictions struct. For instance, if a client
-   * wishes to specify to the StandardAudioCompression component that
-   * his file format requires little endian pcm data, he may set this
-   * property, with formatFlagsMask set to kAudioFormatFlagIsBigEndian,
-   * and formatFlagsValues set to zero (indicating that the IsBigEndian
-   * bit should be interpreted as LittleEndian only).
-   */
-  kQTSCAudioPropertyID_ClientRestrictedLPCMFlags = 'crlp', /* SCAudioFormatFlagsRestrictions (see below), Read/Write/Listen */
-
-  /*
-   * kQTSCAudioPropertyID_InputSoundDescription: Specifies the current
-   * input description as a SoundDescriptionHandle (lowest possible
-   * version for the current format).  When calling
-   * QTGetComponentProperty, the caller passes a pointer to an
-   * unallocated Handle, and assumes responsibility for calling
-   * DisposeHandle() when done.
-   */
-  kQTSCAudioPropertyID_InputSoundDescription = 'isdh', /* SoundDescriptionHandle, Read/Write */
-
-  /*
-   * kQTSCAudioPropertyID_SoundDescription: Specifies the current
-   * output description as a SoundDescriptionHandle (lowest possible
-   * version for the current format).  When calling
-   * QTGetComponentProperty, the caller passes a pointer to an
-   * unallocated Handle, and assumes responsibility for calling
-   * DisposeHandle() when done.
-   */
-  kQTSCAudioPropertyID_SoundDescription = 'osdh', /* SoundDescriptionHandle, Read/Write */
-
-  /*
-   * kQTSCAudioPropertyID_InputBasicDescription: Specifies the current
-   * input description as an AudioStreamBasicDescription.
-   */
-  kQTSCAudioPropertyID_InputBasicDescription = 'isbd', /* AudioStreamBasicDescription, Read/Write/Listen/DataProc */
-
-  /*
-   * kQTSCAudioPropertyID_BasicDescription: Specifies the current
-   * output description as an AudioStreamBasicDescription.
-   */
-  kQTSCAudioPropertyID_BasicDescription = 'osbd', /* AudioStreamBasicDescription, Read/Write/Listen/DataProc */
-
-  /*
-   * kQTSCAudioPropertyID_CodecSpecificSettingsArray: Some compressors
-   * publish a CFArray of CFDictionaries that describe various
-   * parameters specific to the configuring of the codec.  This array
-   * of dictionaries can be parsed to generate UI.  When any value in
-   * the array changes, a client should call QTSetComponentProperty,
-   * passing the entire array.
-   */
-  kQTSCAudioPropertyID_CodecSpecificSettingsArray = 'cdst', /* CFArrayRef, Read/Write */
-                                        /* Old Sound Get/SetInfo types as property id's.*/
-
-  /*
-   * kQTSCAudioPropertyID_SettingsState: Used to save off the current
-   * state of the StandardCompressionSubTypeAudio component, such that
-   * the state may be restored at a later time with a single call.  The
-   * Handle returned from from QTGetComponentProperty(...
-   * kQTSCAudioPropertyID_SettingsState ...) contains classic atoms
-   * that have not been Endian flipped, so this Handle is not suitable
-   * for writing to disk.  If you wish to store settings from a
-   * scdi/audi component instance to disk (as a compression preset,
-   * etc.), use SCGetSettingsAsAtomContainer(), the result of which is
-   * a QTAtomContainer filled with settings that have been Endian
-   * flipped.  To restore a settings QTAtomContainer from disk at a
-   * later time, use SCSetSettingsFromAtomContainer().  Note that a
-   * scdi/audi instance will accept (via
-   * SCSetSettingsFromAtomContainer()) a QTAtomContainer produced by a
-   * legacy scdi/soun component.  And the QTAtomContainer produced by
-   * an scdi/audi component (using SCGetSettingsAsAtomContainer()) will
-   * contain settings that are backward compatible with a scdi/soun
-   * component, so long as the current state of the scdi/audi component
-   * instance reflects an output format capable of being described by a
-   * SoundDescriptionV1. Also note that the
-   * kQTSCAudioPropertyID_SettingsState Handle from a scdi/audi
-   * component and the Handle produced from a scdi/soun component's
-   * SCGetInfo(... scSettingsStateType ...) are not compatible with one
-   * another.
-   */
-  kQTSCAudioPropertyID_SettingsState = scSettingsStateType, /* Handle, Read/Write */
-
-  /*
-   * kQTSCAudioPropertyID_ExtendedProcs: Used to get/set an
-   * SCExtendedProcs struct.
-   */
-  kQTSCAudioPropertyID_ExtendedProcs = scExtendedProcsType, /* SCExtendedProcs struct, Read/Write/Listen */
-
-  /*
-   * kQTSCAudioPropertyID_PreferenceFlags: Used to specify dialog
-   * preferences, such as scUseMovableModal.
-   */
-  kQTSCAudioPropertyID_PreferenceFlags = scPreferenceFlagsType, /* SInt32, Read/Write/Listen */
-
-  /*
-   * kQTSCAudioPropertyID_WindowOptions: Used to set an
-   * SCWindowSettings struct, which tells the dialog about its parent
-   * window, so that it can draw itself as a sheet on top of the parent
-   * window.
-   */
-  kQTSCAudioPropertyID_WindowOptions = scWindowOptionsType /* SCWindowSettings struct, Read/Write/Listen */
-};
-
-
-/*
-   These are for movie export getProperty procs only (not SCAudio), so that variable size
-   properties can be handled in that API where there is no associated size parameter.
-   The getProperty proc can be asked the size first, then the caller can allocate memory
-   for the associated SCAudio property and call the getProperty proc again to get the
-   property.
-*/
-enum {
-  movieExportChannelLayoutSize  = 'clsz', /* UInt32.  Proc only*/
-  movieExportMagicCookieSize    = 'mcsz', /* UInt32.  Proc only*/
-  movieExportUseHighResolutionAudioProperties = 'hrau' /* Boolean. Proc only*/
-};
-
-
-/*
- *  SCAudioFormatFlagsRestrictions
- *  
- *  Summary:
- *    Struct describing the restrictions a client wishes to impose on
- *    the mFormatFlags fields of an AudioStreamBasicDescription.  In
- *    formatFlagsMask, the client specifies the fields to be
- *    restricted, and in formatFlagsValues, the client specifies the
- *    restricted value of each field set in the mask.
- */
-struct SCAudioFormatFlagsRestrictions {
-
-  /*
-   * NOTE: Currently QuickTime only supports restrictions on the
-   * following bits: kAudioFormatFlagIsFloat,
-   * kAudioFormatFlagIsBigEndian, kAudioFormatFlagIsSignedInteger. If
-   * other bits are set in the formatFlagsMask, paramErr will be
-   * returned.
-   */
-  UInt32              formatFlagsMask;
-
-  /*
-   * NOTE regarding the kAudioFormatFlagIsSignedInteger flag: Integer
-   * samples over 8 bits must always be signed.  Setting this bit
-   * applies to 8 bit integer samples only.
-   */
-  UInt32              formatFlagsValues;
-};
-typedef struct SCAudioFormatFlagsRestrictions SCAudioFormatFlagsRestrictions;
-
 #define SCGetCompression(ci, params, where) SCGetCompressionExtended(ci,params,where,0,0,0,0)
 /** These are Progress procedures **/
 /*
@@ -1429,62 +894,6 @@ extern ComponentResult
 SCAsyncIdle(ComponentInstance ci)                             AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
-/*
- *  SCCopyCompressionSessionOptions()
- *  
- *  Summary:
- *    Retrieve relevant settings in a form of compression session
- *    options that can be given to a compression session. The caller
- *    must release it when it is done.
- *  
- *  Parameters:
- *    
- *    ci:
- *      A component instance of type StdCompression subtype
- *      StandardCompressionSubTypeVideo.
- *    
- *    outOptions:
- *      A pointer to ICMCompressionSettionOptionsRef where a reference
- *      to a new instance of ICM Compression Session Options object is
- *      returned.
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern ComponentResult 
-SCCopyCompressionSessionOptions(
-  ComponentInstance                  ci,
-  ICMCompressionSessionOptionsRef *  outOptions)              AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*
- *  SCAudioInvokeLegacyCodecOptionsDialog()
- *  
- *  Discussion:
- *    If kQTSCAudioPropertyID_HasLegacyCodecOptionsDialog is true,
- *    SCAudioInvokeLegacyCodecOptionsDialog invokes the compressor's
- *    options dialog. Note - this call blocks until the options dialog
- *    "OK" or "Cancel" buttons are pressed.
- *  
- *  Parameters:
- *    
- *    ci:
- *      The client's connection to a StdAudio Compression component
- *  
- *  Result:
- *    ComponentResult
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern ComponentResult 
-SCAudioInvokeLegacyCodecOptionsDialog(ComponentInstance ci)   AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
 
 
 
@@ -1846,16 +1255,6 @@ enum {
   kMovieExportRelativeTime      = 2
 };
 
-/* Movie exporter property class*/
-enum {
-  kQTPropertyClass_MovieExporter = 'spit'
-};
-
-/* kPropertyClass_MovieExporter IDs*/
-enum {
-  kQTMovieExporterPropertyID_EnableHighResolutionAudioFeatures = 'hrau' /* value is Boolean*/
-};
-
 enum {
   kMIDIImportSilenceBefore      = 1 << 0,
   kMIDIImportSilenceAfter       = 1 << 1,
@@ -1961,10 +1360,7 @@ enum {
   kQTFileTypePDF                = 'PDF ',
   kQTFileType3GPP               = '3gpp',
   kQTFileTypeAMR                = 'amr ',
-  kQTFileTypeSDV                = 'sdv ',
-  kQTFileType3GP2               = '3gp2',
-  kQTFileTypeAMC                = 'amc ',
-  kQTFileTypeJPEG2000           = 'jp2 '
+  kQTFileTypeSDV                = 'sdv '
 };
 
 /* QTAtomTypes for atoms in import/export settings containers*/
@@ -2020,7 +1416,6 @@ struct MovieExportGetDataParams {
 typedef struct MovieExportGetDataParams MovieExportGetDataParams;
 typedef CALLBACK_API( OSErr , MovieExportGetDataProcPtr )(void *refCon, MovieExportGetDataParams *params);
 typedef CALLBACK_API( OSErr , MovieExportGetPropertyProcPtr )(void *refcon, long trackID, OSType propertyType, void *propertyValue);
-typedef CALLBACK_API( OSErr , MovieExportStageReachedCallbackProcPtr )(OSType inStage, Movie inMovie, ComponentInstance inDataHandler, Handle inDataRef, OSType inDataRefType, void *refCon);
 enum {
   kQTPresetsListResourceType    = 'stg#',
   kQTPresetsPlatformListResourceType = 'stgp'
@@ -2071,7 +1466,6 @@ struct QTMovieExportSourceRecord {
 typedef struct QTMovieExportSourceRecord QTMovieExportSourceRecord;
 typedef STACK_UPP_TYPE(MovieExportGetDataProcPtr)               MovieExportGetDataUPP;
 typedef STACK_UPP_TYPE(MovieExportGetPropertyProcPtr)           MovieExportGetPropertyUPP;
-typedef STACK_UPP_TYPE(MovieExportStageReachedCallbackProcPtr)  MovieExportStageReachedCallbackUPP;
 /*
  *  NewSCModalFilterUPP()
  *  
@@ -2117,17 +1511,6 @@ extern MovieExportGetPropertyUPP
 NewMovieExportGetPropertyUPP(MovieExportGetPropertyProcPtr userRoutine) AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 /*
- *  NewMovieExportStageReachedCallbackUPP()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   available as macro/inline
- */
-extern MovieExportStageReachedCallbackUPP
-NewMovieExportStageReachedCallbackUPP(MovieExportStageReachedCallbackProcPtr userRoutine) AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
-
-/*
  *  DisposeSCModalFilterUPP()
  *  
  *  Availability:
@@ -2170,17 +1553,6 @@ DisposeMovieExportGetDataUPP(MovieExportGetDataUPP userUPP)   AVAILABLE_MAC_OS_X
  */
 extern void
 DisposeMovieExportGetPropertyUPP(MovieExportGetPropertyUPP userUPP) AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
-
-/*
- *  DisposeMovieExportStageReachedCallbackUPP()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   available as macro/inline
- */
-extern void
-DisposeMovieExportStageReachedCallbackUPP(MovieExportStageReachedCallbackUPP userUPP) AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
 
 /*
  *  InvokeSCModalFilterUPP()
@@ -2243,24 +1615,6 @@ InvokeMovieExportGetPropertyUPP(
   OSType                     propertyType,
   void *                     propertyValue,
   MovieExportGetPropertyUPP  userUPP)                         AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
-
-/*
- *  InvokeMovieExportStageReachedCallbackUPP()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   available as macro/inline
- */
-extern OSErr
-InvokeMovieExportStageReachedCallbackUPP(
-  OSType                              inStage,
-  Movie                               inMovie,
-  ComponentInstance                   inDataHandler,
-  Handle                              inDataRef,
-  OSType                              inDataRefType,
-  void *                              refCon,
-  MovieExportStageReachedCallbackUPP  userUPP)                AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
 
 /*
  *  MovieImportHandle()
@@ -3271,23 +2625,6 @@ enum {
   movieExportTimeScale          = 'tmsc' /* pointer to TimeScale*/
 };
 
-/* Component Properties specific to Movie Export components*/
-enum {
-  kQTMovieExporterPropertyID_StageReachedCallback = 'stgr', /* value is a MovieExportStageReachedCallbackProcRecord*/
-  kQTMovieExporterPropertyID_DeinterlaceVideo = 'dint' /* value is a Boolean */
-};
-
-/* Stages passed to MovieExportStageReachedCallbackProc*/
-enum {
-  kQTMovieExportStage_EmptyMovieCreated = 'empt',
-  kQTMovieExportStage_AllTracksAddedToMovie = 'trax'
-};
-
-struct MovieExportStageReachedCallbackProcRecord {
-  MovieExportStageReachedCallbackUPP  stageReachedCallbackProc;
-  void *              stageReachedCallbackRefCon;
-};
-typedef struct MovieExportStageReachedCallbackProcRecord MovieExportStageReachedCallbackProcRecord;
 /*
  *  GraphicsImageImportSetSequenceEnabled()
  *  
@@ -4741,98 +4078,6 @@ extern ComponentResult
 DataHRenameFile(
   DataHandler   dh,
   Handle        newDataRef)                                   AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
-
-
-/* selector 74 skipped */
-/* selector 75 skipped */
-/* selector 76 skipped */
-/* selector 77 skipped */
-/*
- *  DataHGetAvailableFileSize64()
- *  
- *  Summary:
- *    Returns the amount of contiguous data from the start of the file
- *    that's currently available for reading.
- *  
- *  Discussion:
- *    The 64-bit variant of DataHGetAvailableFileSize. Note that all
- *    data handlers that support fast-start playback, e.g. an http data
- *    handler, must implement DataHGetAvailableFileSize. Those that
- *    support files larger than 2 GB must also implement
- *    DataHGetAvailableFileSize64.
- *  
- *  Parameters:
- *    
- *    dh:
- *      Component instance / instance globals.
- *    
- *    fileSize:
- *      Points to a variable to receive the amount of contiguous data
- *      from the start of the file that's currently available for
- *      reading.
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern ComponentResult 
-DataHGetAvailableFileSize64(
-  DataHandler   dh,
-  wide *        fileSize)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*
- *  DataHGetDataAvailability64()
- *  
- *  Summary:
- *    Checks the availability of the specified range of data and
- *    returns the first range of missing data needed to satisfy a read
- *    request. Returns an empty range starting at the end of the
- *    specified range when a read request for the specified range can
- *    be satisfied immediately.
- *  
- *  Discussion:
- *    The 64-bit variant of DataHGetDataAvailability. Note that all
- *    data handlers that support fast-start playback, e.g. an http data
- *    handler, should implement DataHGetDataAvailability. Those that
- *    support files larger than 2 GB should also implement
- *    DataHGetDataAvailability64.
- *  
- *  Parameters:
- *    
- *    dh:
- *      Component instance / instance globals.
- *    
- *    offset:
- *      The start of the requested range of data.
- *    
- *    len:
- *      The length of the requested range of data.
- *    
- *    missing_offset:
- *      The offset from the start of the file of the first byte of data
- *      within the requested range that's not yet available. If the
- *      entire range is available, the offset returned is the offset of
- *      the first byte after the requested range.
- *    
- *    missing_len:
- *      The length of the range of data starting at missing_offset
- *      that's not yet available. If the entire range of data is
- *      available, the length returned is 0.
- *  
- *  Availability:
- *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern ComponentResult 
-DataHGetDataAvailability64(
-  DataHandler   dh,
-  const wide *  offset,
-  long          len,
-  wide *        missing_offset,
-  long *        missing_len)                                  AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
 
@@ -6726,8 +5971,8 @@ typedef struct VDIIDCFeatureSettings    VDIIDCFeatureSettings;
    Flags for use in VDIIDCFeatureCapabilities.flags & VDIIDCFeatureState.flags
    When indicating capabilities, the flag being set indicates that the feature can be put into the given state.
    When indicating/setting state, the flag represents the current/desired state.
-   Note that certain combinations of flags are valid for capabilities (i.e. vdIIDCFeatureFlagOn | vdIIDCFeatureFlagOff)
-   but are mutually exclusive for state.
+   Note that certain combinations of flags are valid for cababilities (i.e. vdIIDCFeatureFlagOn | vdIIDCFeatureFlagOff)
+   but are mutally exclusive for state.
 */
 enum {
   vdIIDCFeatureFlagOn           = (1 << 0),
@@ -6771,8 +6016,8 @@ typedef struct VDIIDCTriggerSettings    VDIIDCTriggerSettings;
    Flags for use in VDIIDCTriggerCapabilities.flags & VDIIDCTriggerState.flags
    When indicating capabilities, the flag being set indicates that the trigger can be put into the given state.
    When indicating/setting state, the flag represents the current/desired state.
-   Note that certain combinations of flags are valid for capabilities (i.e. vdIIDCTriggerFlagOn | vdIIDCTriggerFlagOff)
-   but are mutually exclusive for state.
+   Note that certain combinations of flags are valid for cababilities (i.e. vdIIDCTriggerFlagOn | vdIIDCTriggerFlagOff)
+   but are mutally exclusive for state.
 */
 enum {
   vdIIDCTriggerFlagOn           = (1 << 0),
@@ -6821,8 +6066,8 @@ typedef struct VDIIDCLightingHintSettings VDIIDCLightingHintSettings;
    Flags for use in VDIIDCLightingHintSettings.capabilityFlags & VDIIDCLightingHintSettings.capabilityFlags
    When indicating capabilities, the flag being set indicates that the hint can be applied.
    When indicating/setting state, the flag represents the current/desired hints applied/to apply.
-   Certain combinations of flags are valid for capabilities (i.e. vdIIDCLightingHintNormal | vdIIDCLightingHintLow)
-   but are mutually exclusive for state.
+   Certain combinations of flags are valid for cababilities (i.e. vdIIDCLightingHintNormal | vdIIDCLightingHintLow)
+   but are mutally exclusive for state.
 */
 enum {
   vdIIDCLightingHintNormal      = (1 << 0),
@@ -7542,8 +6787,7 @@ enum {
   seqGrabDontMakeMovie          = 32,
   seqGrabPreExtendFile          = 64,
   seqGrabDataProcIsInterruptSafe = 128,
-  seqGrabDataProcDoesOverlappingReads = 256,
-  seqGrabDontPreAllocateFileSize = 512  /* Don't set the size of the file before capture unless the file has been pre-extended */
+  seqGrabDataProcDoesOverlappingReads = 256
 };
 
 typedef unsigned long                   SeqGrabDataOutputEnum;
@@ -7552,8 +6796,7 @@ enum {
   seqGrabPreview                = 2,
   seqGrabPlayDuringRecord       = 4,
   seqGrabLowLatencyCapture      = 8,    /* return the freshest frame possible, for live work (videoconferencing, live broadcast, live image processing) */
-  seqGrabAlwaysUseTimeBase      = 16,   /* Tell VDIGs to use TimebaseTime always, rather than creating uniform frame durations, for more accurate live sync with audio */
-  seqGrabRecordPreferQualityOverFrameRate = 32 /* quality is more important than frame rate: client rather drop frame instead of lower quality to achieve full frame rate */
+  seqGrabAlwaysUseTimeBase      = 16    /* Tell VDIGs to use TimebaseTime always, rather than creating uniform frame durations, for more accurate live sync with audio */
 };
 
 typedef unsigned long                   SeqGrabUsageEnum;
@@ -7678,83 +6921,13 @@ enum {
   seqGrabSettingsPreviewOnly    = 1
 };
 
-
-
-/*
- *  Summary:
- *    Bit fields used in SGGetChannelPlayFlags and SGSetChannelPlayFlags
- */
 enum {
-
-  /*
-   * Play flag specifying that the SGChannel should use its default
-   * preview/playthru methodology.  Currently it is only used by the
-   * VideoMediaType SGChannel.
-   */
   channelPlayNormal             = 0,
-
-  /*
-   * Play flag specifying that the SGChannel should sacrifice playback
-   * quality to achieve the specified playback rate.  Currently it is
-   * only used by the VideoMediaType SGChannel.
-   */
-  channelPlayFast               = 1L << 0,
-
-  /*
-   * Play flag specifying that the SGChannel should play its data at
-   * the highest possible quality. This option sacrifices playback rate
-   * for the sake of image quality. It may reduce the amount of
-   * processor time available to other programs in the computer. This
-   * option should not affect the quality of the recorded data,
-   * however.  Currently it is only used by the VideoMediaType
-   * SGChannel.
-   */
-  channelPlayHighQuality        = 1L << 1,
-
-  /*
-   * Play flag specifying that the SGChannel should try to play all of
-   * the data it captures, even the data that is stored in offscreen
-   * buffers. This option is useful when you want to be sure that the
-   * user sees as much of the captured data as possible. The sequence
-   * grabber component sets this flag to 1 to play all the captured
-   * data. The sequence grabber component may combine this flag with
-   * any of the other values for the playFlags parameter.  Currently it
-   * is only used by the VideoMediaType SGChannel.
-   */
-  channelPlayAllData            = 1L << 2,
-
-  /*
-   * Play flag specifying that the SGChannel should preview/play raw
-   * audio samples just after they are captured from its recording
-   * device.  Currently it is only used by the SGAudioMediaType
-   * SGChannel.
-   */
-  channelPlayPreMix             = 1L << 3,
-
-  /*
-   * Play flag specifying that the SGChannel should preview/play audio
-   * samples just after they are mixed down to the client-specified
-   * movie track channel layout.  Currently it is only used by the
-   * SGAudioMediaType SGChannel.
-   */
-  channelPlayPostMix            = 1L << 4,
-
-  /*
-   * Play flag specifying that the SGChannel should preview/play audio
-   * samples just before they are interleaved/converted/compressed to
-   * the client-specified movie track format.  Currently it is only
-   * used by the SGAudioMediaType SGChannel.
-   */
-  channelPlayPreConversion      = 1L << 5,
-
-  /*
-   * Play flag specifying that the SGChannel should preview/play audio
-   * samples after they have been interleaved/converted/compressed to
-   * the client-specified movie track format.  Currently it is only
-   * used by the SGAudioMediaType SGChannel.
-   */
-  channelPlayPostConversion     = 1L << 6
+  channelPlayFast               = 1,
+  channelPlayHighQuality        = 2,
+  channelPlayAllData            = 4
 };
+
 
 /*
  *  SGInitialize()
@@ -10148,819 +9321,6 @@ SGGetUserVideoCompressorList(
   Handle *    compressorTypes)                                AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
-
-/*** Sequence Grab AUDIO CHANNEL Component Stuff ***/
-/* -----------------------------------------------------------------------------
-|                                                                               |
-| *************************************                                         |
-| * SGAUDIOCHANNEL COMPONENT SUBTYPE  *                                         |
-| *************************************                                         |
-|   SGAudioMediaType channel (aka SGAudioChannel) is a new Sequence Grabber     |
-|   channel that enables multi-channel, high sample rate, wide bit-depth audio  |
-|   recording, as well as writing of vbr audio compression formats.             |
-|   SGAudioChannel is meant to replace the SoundMediaType SGChannel, as it can  |
-|   do everything the old channel can do, and enables new features.             |
-|                                                                               |
- ------------------------------------------------------------------------------*/
-enum {
-  SGAudioMediaType              = 'audi'
-};
-
-/* -----------------------------------------------------------------------------
-|                                                                               |
-|   COMPONENT PROPERTY CLASSES used by SGAudioChannel                           |
-|                                                                               |
-|   Note: QTComponentProperty API's are defined in ImageCompression.h:          |
-|       QTGetComponentPropertyInfo                                              |
-|       QTGetComponentProperty                                                  |
-|       QTSetComponentProperty                                                  |
-|       QTAddComponentPropertyListener                                          |
-|       QTRemoveComponentPropertyListener                                       |
-|                                                                               |
-|   Discussion: SGAudioMediaType channel uses standard QT Component Property    |
-|   selectors to get, set, and listen to properties.  Component properties      |
-|   take a property class as well as a property id.  SGAudioMediaType uses      |
-|   the following property classes (see each property ID's discussion           |
-|   for the specific property classes it understands)                           |
-|                                                                               |
- ------------------------------------------------------------------------------*/
-
-/*
- *  Summary:
- *    ComponentPropertyClass constants used by SGAudioChannel
- */
-enum {
-
-  /*
-   * kQTPropertyClass_SGAudio: Used with properties that pertain to the
-   * SGChannel as a whole, or to the output of an SGAudioChannel (i.e.
-   * the resulting track in a QuickTime movie)
-   */
-  kQTPropertyClass_SGAudio      = 'audo',
-
-  /*
-   * kQTPropertyClass_SGAudioRecordDevice: Used with properties that
-   * pertain specifically to the physical settings of the device *FROM*
-   * which SGAudioChannel is set to record or preview
-   */
-  kQTPropertyClass_SGAudioRecordDevice = 'audr',
-
-  /*
-   * kQTPropertyClass_SGAudioPreviewDevice: Used with properties that
-   * pertain specifically to the physical settings of the device *TO*
-   * which SGAudioChannel is set to preview
-   */
-  kQTPropertyClass_SGAudioPreviewDevice = 'audp'
-};
-
-
-/* -----------------------------------------------------------------------------
-|                                                                               |
-|   COMPONENT PROPERTY ID'S used by SGAudioMediaType channel                    |
-|                                                                               |
-|   In addition to the Property ID's declared below, SGAudioMediaType channel   |
-|   responds to kComponentPropertyClassPropertyInfo/kComponentPropertyInfoList, |
-|   which returns a CFDataRef containing an array of ComponentPropertyInfo      |
-|   structs (defined in ImageCompression.h)                                     |
-|                                                                               |
-|   Besides Component Property API's, SGAudioChannel responds to the following  |
-|   old-style Sequence Grabber Channel property selectors:                      |
-|                                                                               |
-|       SGGetChannelUsage()                                                     |
-|       SGSetChannelUsage()                                                     |
-|           SGAudioChannel responds to the following usage flags:               |
-|               seqGrabRecord                                                   |
-|               seqGrabPreview                                                  |
-|               seqGrabPlayDuringRecord                                         |
-|                                                                               |
-|       SGGetChannelInfo()                                                      |
-|                                                                               |
-|       SGGetChannelPlayFlags()                                                 |
-|       SGSetChannelPlayFlags()                                                 |
-|           SGAudioChannel responds to the following play flags:                |
-|               channelPlayPreMix                                               |
-|               channelPlayPostMix                                              |
-|               channelPlayPreConversion                                        |
-|               channelPlayPostConversion                                       |
-|                                                                               |
-|       SGGetChannelRefCon()                                                    |
-|       SGSetChannelRefCon()                                                    |
-|                                                                               |
-|       SGGetChannelTimeBase()                                                  |
-|                                                                               |
-|       SGSetChannelSettingsStateChanging()                                     |
-|       SGGetChannelSettings()                                                  |
-|       SGSetChannelSettings()                                                  |
-|                                                                               |
-|       SGGetDataRate()                                                         |
-|                                                                               |
-|       SGGetChannelTimeScale()                                                 |
-|                                                                               |
- ------------------------------------------------------------------------------*/
-
-/*
- *  Summary:
- *    ComponentPropertyID constants used by SGAudioChannel
- */
-enum {
-
-  /*
-   * kQTSGAudioPropertyID_DeviceListWithAttributes: Used to get a
-   * CFArray of CFDictionaryRef's.  Each dictionary represents
-   * attributes of one audio device. See below for list of supported
-   * dictionary keys.  Note: all keys are not guaranteed to be present
-   * for a given device. If the device list changes (i.e. a device is
-   * hotplugged or unplugged), listeners of this property will be
-   * notified. Note - caller is responsible for calling CFRelease() on
-   * the resulting CFArray.
-   */
-  kQTSGAudioPropertyID_DeviceListWithAttributes = '#dva', /* Data: CFArrayRef, R/W/L: Read/Listen, Class(es): kQTPropertyClass_SGAudio  */
-
-  /*
-   * kQTSGAudioPropertyID_DeviceAttributes: Used to get a
-   * CFDictionaryRef representing attributes of the specified audio
-   * device (record or preview). See below for list of supported
-   * dictionary keys.  Note: all keys are not guaranteed to be present
-   * for a given device. Note - caller is responsible for calling
-   * CFRelease() on the resulting CFDictionary.
-   */
-  kQTSGAudioPropertyID_DeviceAttributes = 'deva', /* Data: CFDictionaryRef, R/W/L: Read, Class(es): kQTPropertyClass_SGAudioRecordDevice, kQTPropertyClass_SGAudioPreviewDevice */
-
-  /*
-   * kQTSGAudioPropertyID_DeviceUID: Used to get the audio device
-   * unique id for the current recording or preview, or set the current
-   * recording or preview device to the specified audio device unique
-   * id.  You may obtain the list of devices on the system using
-   * kQTSGAudioPropertyID_DeviceListWithAttributes.  Note - caller is
-   * responsible for calling CFRelease() on the resulting CFString.
-   */
-  kQTSGAudioPropertyID_DeviceUID = 'uid ', /* Data: CFStringRef, R/W/L: Read/Write, Class(es): kQTPropertyClass_SGAudioRecordDevice, kQTPropertyClass_SGAudioPreviewDevice */
-
-  /*
-   * kQTSGAudioPropertyID_DeviceAlive: If the device in question dies
-   * (is hot unplugged) listeners of this property will be notified. 
-   * If a record/preview operation is in progress, it will be stopped,
-   * but it is left to the client to select a new device.
-   */
-  kQTSGAudioPropertyID_DeviceAlive = 'aliv', /* Data: Boolean, R/W/L: Read/Listen, Class(es): kQTPropertyClass_SGAudioRecordDevice, kQTPropertyClass_SGAudioPreviewDevice */
-
-  /*
-   * kQTSGAudioPropertyID_DeviceHogged: If the device in question
-   * becomes hogged or unhogged by another process, listeners of this
-   * property will be notified. SGAudioMediaType channel does not hogs
-   * devices, but if a client has reason to gain exclusive access to a
-   * device, he may set this property to his process id (obtained by
-   * calling getpid()).
-   */
-  kQTSGAudioPropertyID_DeviceHogged = 'hogg', /* Data: pid_t, R/W/L: Read/Write/Listen, Class(es): kQTPropertyClass_SGAudioRecordDevice, kQTPropertyClass_SGAudioPreviewDevice */
-
-  /*
-   * kQTSGAudioPropertyID_DeviceInUse: If the device in question starts
-   * to be used (for instance, another process starts performing i/o
-   * with the device), listeners of this property will be notified.
-   */
-  kQTSGAudioPropertyID_DeviceInUse = 'used', /* Data: Boolean, R/W/L: Read/Listen, Class(es): kQTPropertyClass_SGAudioRecordDevice, kQTPropertyClass_SGAudioPreviewDevice */
-
-  /*
-   * kQTSGAudioPropertyID_HardwarePlaythruEnabled: Use this property to
-   * set hardware playthru during seqGrabPreview or
-   * seqGrabPlayDuringRecord operations. Setting this value will have
-   * no effect if the record device and preview device are not the
-   * same.  Also, some devices do not support hardware playthru. 
-   * Devices report whether or not they support this feature through
-   * the kQTSGAudioPropertyID_DeviceListWithAttributes property.
-   */
-  kQTSGAudioPropertyID_HardwarePlaythruEnabled = 'hard', /* Data: Boolean, R/W/L: Read/Write, Class(es): kQTPropertyClass_SGAudioRecordDevice */
-
-  /*
-   * kQTSGAudioPropertyID_ChannelLayout: Used to get/set a spatial or
-   * discrete channel layout.  If used with kQTPropertyClass_SGAudio,
-   * the AudioChannelLayout refers to the channels in the resulting
-   * QuickTime movie sound track.  If used with
-   * kQTPropertyClass_SGAudioRecordDevice, the AudioChannelLayout
-   * refers to the input channels on the record device.  If used with
-   * kQTPropertyClass_SGAudioPreviewDevice, the AudioChannelLayout
-   * refers to the preview device output channels.  Note -
-   * AudioChannelLayout is a variable size struct, so before calling
-   * QTGetComponentProperty, you should call QTGetComponentPropertyInfo
-   * to discover the size of the block of memory you should allocate to
-   * hold the result.
-   */
-  kQTSGAudioPropertyID_ChannelLayout = 'clay', /* Data: AudioChannelLayout, R/W/L: Read/Write, Class(es): kQTPropertyClass_SGAudio, kQTPropertyClass_SGAudioRecordDevice, kQTPropertyClass_SGAudioPreviewDevice */
-
-  /*
-   * kQTSGAudioPropertyID_ChannelMap: Allows a client to enable or
-   * disable channels on a recording device, as well as reorder them or
-   * duplicate them to several output channels.  This property need not
-   * be set if a client wishes to capture all channels from the record
-   * device (this is the DEFAULT behavior).  Each element in the SInt32
-   * array represents one output bus (into the SGAudioChannel) from the
-   * record device.  The value of each element is the source channel
-   * (zero-based) on the input device that should feed the specified
-   * output. CHANNEL-DISABLING EXAMPLE: if you wish to capture just the
-   * 1st, 3rd, and 5th channels from a 6-channel input device, your
-   * channel map should be: SInt32 map[3] = { 0, 2, 4 }.
-   * CHANNEL-REORDERING EXAMPLE: if you wish to capture both channels
-   * from a stereo input device, but you know the left and right
-   * channels are reversed in the data source, you set your channel map
-   * to: SInt32 map[2] = { 1, 0 }. CHANNEL-DUPLICATION EXAMPLE: if you
-   * wish to duplicate the second source channel into 4 outputs, set
-   * your channel map thusly: SInt32 map[4] = { 1, 1, 1, 1 }. EMPTY
-   * CHANNEL EXAMPLE: if you need to produce a conformant stream of
-   * audio, say, a 6-channel stream to send to an external 5.1 AC3
-   * encoder, but you only have audio for the L, R, and C channels (on
-   * record device channels 0, 1, and 2), you may set your channel map
-   * thusly:  SInt32 map[6] = { 0, 1, 2, -1, -1, -1 }.  The last 3
-   * channels will be filled with silence.
-   */
-  kQTSGAudioPropertyID_ChannelMap = 'cmap', /* Data: C-style array of SInt32's, R/W/L: Read/Write, Class(es): kQTPropertyClass_SGAudioRecordDevice */
-
-  /*
-   * kQTSGAudioPropertyID_MagicCookie: Used to get or set
-   * compressor-specific out-of-band settings.  This is property is
-   * only applicable to compressed formats that use a cookie (i.e. AAC,
-   * AMR)
-   */
-  kQTSGAudioPropertyID_MagicCookie = 'kuki', /* Data: void * (opaque), R/W/L: Read/Write, Class(es): kQTPropertyClass_SGAudio     */
-
-  /*
-   * kQTSGAudioPropertyID_StreamFormat: For kQTPropertyClass_SGAudio,
-   * get/set the format of the audio as it will be written to the
-   * destination QuickTime movie track.  For
-   * kQTPropertyClass_SGAudioRecordDevice, get/set the format of audio
-   * as it is physically recorded on the device (must be one of the
-   * formats passed in kQTSGAudioPropertyID_StreamFormatList) Note that
-   * the mChannelsPerFrame of the StreamFormat read from the
-   * RecordDevice will not reflect channels that have been enabled or
-   * disabled with the ChannelMap property.
-   */
-  kQTSGAudioPropertyID_StreamFormat = 'frmt', /* Data: AudioStreamBasicDescription, R/W/L: Read/Write/Listen, Class(es): kQTPropertyClass_SGAudio, kQTPropertyClass_SGAudioRecordDevice, kQTPropertyClass_SGAudioPreviewDevice */
-
-  /*
-   * kQTSGAudioPropertyID_StreamFormatList: Used to get an array of
-   * AudioStreamBasicDescriptions that describe valid combinations of
-   * settings supported by the physical device in its current
-   * configuration (sample rate, bit depth, number of channels).
-   */
-  kQTSGAudioPropertyID_StreamFormatList = '#frm', /* Data: C-style array of AudioStreamBasicDescription's, R/W/L: Read/Listen, Class(es): kQTPropertyClass_SGAudioRecordDevice, kQTPropertyClass_SGAudioPreviewDevice */
-
-  /*
-   * kQTSGAudioPropertyID_SoundDescription: The sound description that
-   * describes the data written to the QuickTime movie track.  A
-   * QTGetComponentProperty call allocates the SoundDescriptionHandle
-   * for you.  Caller should declare a SoundDescriptionHandle and set
-   * it to NULL, and pass its address to QTGetComponentProperty. 
-   * Caller must DisposeHandle() the resulting SoundDescriptionHandle
-   * when done with it.
-   */
-  kQTSGAudioPropertyID_SoundDescription = 'snds', /* Data: SoundDescriptionHandle, R/W/L: Read/Write, Class(es): kQTPropertyClass_SGAudio */
-
-  /*
-   * kQTSGAudioPropertyID_InputSelection: Some devices allow switching
-   * between data sources, such as analog, adat, sdi, aes/ebu, spdif.
-   * Use this property to change the current input selection.  Note
-   * that when input selection changes, the StreamFormat of the device
-   * may change as well (In particular, the number of channels may
-   * change).
-   */
-  kQTSGAudioPropertyID_InputSelection = 'inpt', /* Data: OSType, R/W/L: Read/Write/Listen, Class(es): kQTPropertyClass_SGAudioRecordDevice */
-
-  /*
-   * kQTSGAudioPropertyID_InputListWithAttributes: Used to get the list
-   * of available input sources for a given device.  A CFArrayRef of
-   * CFDictionaryRef's is returned, where each CFDictionaryRef
-   * represents the attributes of one input (see below for a list of
-   * valid keys). The caller is responsible for CFRelease()'ing the
-   * returned array.
-   */
-  kQTSGAudioPropertyID_InputListWithAttributes = '#inp', /* Data: CFArrayRef, R/W/L: Read/Listen, Class(es): kQTPropertyClass_SGAudioRecordDevice */
-
-  /*
-   * kQTSGAudioPropertyID_OutputSelection: Some devices allow switching
-   * between output destinations, such as analog, adat, sdi, aes/ebu,
-   * spdif. Use this property to change the current output selection. 
-   * Note that when output selection changes, the StreamFormat of the
-   * device may change as well (In particular, the number of channels
-   * may change).
-   */
-  kQTSGAudioPropertyID_OutputSelection = 'otpt', /* Data: OSType, R/W/L: Read/Write/Listen, Class(es): kQTPropertyClass_SGAudioPreviewDevice */
-
-  /*
-   * kQTSGAudioPropertyID_OutputListWithAttributes: Used to get the
-   * list of available output destinations for a given device.  A
-   * CFArrayRef of CFDictionaryRef's is returned, where each
-   * CFDictionaryRef represents the attributes of one output (see below
-   * for a list of valid keys). The caller is responsible for
-   * CFRelease()'ing the returned array.
-   */
-  kQTSGAudioPropertyID_OutputListWithAttributes = '#otp', /* Data: CFArrayRef, R/W/L: Read/Listen, Class(es): kQTPropertyClass_SGAudioPreviewDevice */
-
-  /*
-   * kQTSGAudioPropertyID_LevelMetersEnabled: When used with
-   * kQTPropertyClass_SGAudioRecordDevice or
-   * kQTPropertyClass_SGAudioPreviewDevice, this turns device level
-   * metering on/off.  When used with kQTPropertyClass_SGAudio, this
-   * turns output level metering on/off.  When level meters are
-   * enabled, use kQTSGAudioPropertyID_AveragePowerLevels to get
-   * instantaneous levels.  Use kQTSGAudioPropertyID_PeakHoldLevels to
-   * get peak-hold style meters (better for clipping detection, etc). 
-   * Level meters should only be enabled if you intend to poll for
-   * levels, as they incur an added CPU load when enabled.
-   */
-  kQTSGAudioPropertyID_LevelMetersEnabled = 'lmet', /* Data: Boolean, R/W/L: Read/Write, Class(es): kQTPropertyClass_SGAudioRecordDevice, kQTPropertyClass_SGAudioPreviewDevice, kQTPropertyClass_SGAudio */
-
-  /*
-   * kQTSGAudioPropertyID_PeakHoldLevels:
-   * kQTSGAudioPropertyID_PeakHoldLevelsmay only be read when level
-   * meters are enabled.  The result is an array of Float32 values, one
-   * for each channel on the device (or output) in question.  values
-   * are in dB.  Poll for PeakHoldLevels as often as you would like to
-   * update ui or look for clipping.  Note that the number of elements
-   * in the float-32 array will be equal to the number of input
-   * channels on your record device for
-   * kQTPropertyClass_SGAudioRecordDevice (or the number of elements in
-   * your kQTSGAudioPropertyID_ChannelMap, if you've set one), equal to
-   * the number of output channels on your preview device for
-   * kQTPropertyClass_SGAudioPreviewDevice, and equal to the number of
-   * channels in your kQTSGAudioPropertyID_StreamFormat
-   * (format.mChannelsPerFrame) for kQTPropertyClass_SGAudio.  Also
-   * note that if you have requested hardware playthru, level metering
-   * is unavailable.  Also note that if no channel mixdown is being
-   * performed between record device and output formats, then
-   * kQTSGAudioPropertyID_PeakHoldLevels for
-   * kQTPropertyClass_SGAudioRecordDevice and kQTPropertyClass_SGAudio
-   * will be equivalent.
-   */
-  kQTSGAudioPropertyID_PeakHoldLevels = 'phlv', /* Data: C-style array of Float32's, R/W/L: Read, Class(es): kQTPropertyClass_SGAudioRecordDevice, kQTPropertyClass_SGAudioPreviewDevice, kQTPropertyClass_SGAudio */
-
-  /*
-   * kQTSGAudioPropertyID_AveragePowerLevels:
-   * kQTSGAudioPropertyID_AveragePowerLevels may only be read when
-   * level meters are enabled.  The result is an array of Float32
-   * values, one for each channel on the device (or output) in
-   * question.  values are in dB.  Poll for AveragePowerLevels as
-   * frequently as you would like to update ui.  Note that the number
-   * of elements in the float-32 array will be equal to the number of
-   * input channels on your record device for
-   * kQTPropertyClass_SGAudioRecordDevice (or the number of elements in
-   * your kQTSGAudioPropertyID_ChannelMap, if you've set one), equal to
-   * the number of output channels on your preview device for
-   * kQTPropertyClass_SGAudioPreviewDevice, and equal to the number of
-   * channels in your kQTSGAudioPropertyID_StreamFormat
-   * (format.mChannelsPerFrame) for kQTPropertyClass_SGAudio.  Also
-   * note that if you have requested hardware playthru, level metering
-   * is unavailable.  Also note that if no channel mixdown is being
-   * performed between record device and output formats, then
-   * kQTSGAudioPropertyID_PeakHoldLevels for
-   * kQTPropertyClass_SGAudioRecordDevice and kQTPropertyClass_SGAudio
-   * will be equivalent.
-   */
-  kQTSGAudioPropertyID_AveragePowerLevels = 'aplv', /* Data: C-style array of Float32's, R/W/L: Read, Class(es): kQTPropertyClass_SGAudioRecordDevice, kQTPropertyClass_SGAudioPreviewDevice, kQTPropertyClass_SGAudio */
-
-  /*
-   * kQTSGAudioPropertyID_MasterGain: With
-   * kQTPropertyClass_SGAudioRecordDevice, this property gets/sets
-   * master gain on the physical recording device with 0.0 = minimum
-   * volume and 1.0 = the max volume of the device.  With
-   * kQTPropertyClass_SGAudioPreviewDevice, this property gets/sets
-   * master gain on the physical previewing device with 0.0 = minimum
-   * volume and 1.0 = the max volume of the device.  With
-   * kQTPropertyClass_SGAudio, this property gets/sets the master gain
-   * (volume) of the recorded audio data in software (pre-mixdown) min
-   * = 0.0, max = unbounded.  Normally you wouldn't set the volume
-   * greater than 1.0, but if the source material provided by the
-   * device is too soft, a gain of > 1.0 may be set to boost the gain. 
-   * Note that some devices do not respond to this property setting.
-   */
-  kQTSGAudioPropertyID_MasterGain = 'mgan', /* Data: Float32, R/W/L: Read/Write, Class(es): kQTPropertyClass_SGAudio, kQTPropertyClass_SGAudioRecordDevice, kQTPropertyClass_SGAudioPreviewDevice */
-
-  /*
-   * kQTSGAudioPropertyID_PerChannelGain: With
-   * kQTPropertyClass_SGAudioRecordDevice, this property gets/sets the
-   * gain of each channel on the physical recording device.  Note that
-   * the number of channels in the array for
-   * kQTPropertyClass_SGAudioRecordDevice and
-   * kQTPropertyClass_SGAudioPreviewDevice is equal to the total number
-   * of channels on the device, which can be discovered using the
-   * kQTSGAudioPropertyID_StreamFormat (on the recording device or
-   * preview device).  The number of channels (and order of channels)
-   * in the array for the kQTPropertyClass_SGAudio class must
-   * correspond to the valence of channels on output (which is affected
-   * by a channel map, if you've set one).  With
-   * kQTPropertyClass_SGAudio, this property gets/sets the gain
-   * (volume) of each channel of recorded audio data in software. 
-   * Levels set on the record device or preview device must adhere to
-   * min = 0.0, max = 1.0.  Levels set in software may be set to values
-   * greater than 1.0 in order to boost low signals.  Caller may
-   * specify that a particular channel gain level should be left alone
-   * by setting the value to -1.0.  For instance, to set the gain of
-   * channels 1, 2, and 3 to 0.5 on a 6 channel device, pass the
-   * following array values in a SetProperty call: { 0.5, 0.5, 0.5,
-   * -1., -1., -1. }.
-   */
-  kQTSGAudioPropertyID_PerChannelGain = 'cgan', /* Data: C-style array of Float32's, R/W/L: Read/Write, Class(es): kQTPropertyClass_SGAudio, kQTPropertyClass_SGAudioRecordDevice, kQTPropertyClass_SGAudioPreviewDevice              */
-
-  /*
-   * kQTSGAudioPropertyID_MixerCoefficients: If you wish to perform a
-   * custom mix-down from the incoming record device channel valence
-   * (discoverable using a combination of 
-   * kQTPropertyClass_SGAudioRecordDevice /
-   * kQTSGAudioPropertyID_StreamFormat &
-   * kQTPropertyClass_SGAudioRecordDevice /
-   * kQTSGAudioPropertyID_ChannelMap) to a different output number of
-   * channels
-   * (kQTPropertyClass_SGAudio-kQTSGAudioPropertyID_StreamFormat), you
-   * may specify your own set of mixer coefficients which will be set
-   * as volume values at each crosspoint in SGAudioMediaType's internal
-   * matrix mixer. The value you pass is a two-dimensional array of
-   * Float32's where the first dimension (rows) is the input channel
-   * and the second dimension (columns) is the output channel.  Each
-   * Float32 value is the gain level to apply.
-   */
-  kQTSGAudioPropertyID_MixerCoefficients = 'mixc', /* Data: C-style array of Float32's, R/W/L: Read/Write, Class(es): kQTPropertyClass_SGAudio*/
-
-  /*
-   * kQTSGAudioPropertyID_Settings: This property takes supercedes the
-   * SGGet/SetChannelSettings calls.  SGAudioMediaType channel accepts
-   * old-style 'soun' SGChannel settings in a QTSetComponentProperty
-   * call, but always produces new-style settings in a
-   * QTGetComponentProperty call.
-   */
-  kQTSGAudioPropertyID_Settings = 'setu', /* Data: UserData, R/W/L: Read/Write, Class(es): kQTPropertyClass_SGAudio */
-
-  /*
-   * kQTSGAudioPropertyID_ChunkSize: Use this property to get/set the
-   * number of seconds of audio that the SGAudioChannel should buffer
-   * before writing.
-   */
-  kQTSGAudioPropertyID_ChunkSize = 'chnk', /* Data: Float32, R/W/L: Read/Write, Class(es): kQTPropertyClass_SGAudio */
-
-  /*
-   * kQTSGAudioPropertyID_SoftPreviewLatency: If previewing or playing
-   * thru while recording (and
-   * kQTSGAudioPropertyID_HardwarePlaythruEnabled is not in use), a
-   * client may specify in seconds the amount of latency to introduce
-   * before beginning playback. By default, soft preview latency is 0
-   * seconds.  As soon as audio data arrives from the recording device,
-   * it is eligible to be played out to the preview device.  This
-   * property may be of use if software preview breaks up due to the
-   * recording device not delivering samples fast enough for the
-   * preview device.
-   */
-  kQTSGAudioPropertyID_SoftPreviewLatency = 'slat', /* Data: Float32, R/W/L: Read/Write, Class(es): kQTPropertyClass_SGAudio */
-
-  /*
-   * kQTSGAudioPropertyID_PreMixCallback: If you wish to receive a
-   * callback when new audio samples become available from the
-   * recording device (before they've been mixed down), set
-   * kQTSGAudioPropertyID_PreMixCallback using an SGAudioCallbackStruct
-   * containing a pointer to your SGAudioCallback function and a
-   * refcon.  If you've previously registered a callback and no longer
-   * wish to receive it, call QTSetComponentProperty again, this time
-   * passing NULL for your inputProc and 0 for your inputRefCon.
-   */
-  kQTSGAudioPropertyID_PreMixCallback = '_mxc', /* Data: SGAudioCallbackStruct, R/W/L: Read/Write, Class(es): kQTPropertyClass_SGAudio */
-
-  /*
-   * kQTSGAudioPropertyID_PreMixCallbackFormat: Call
-   * QTGetComponentProperty with
-   * kQTSGAudioPropertyID_PreMixCallbackFormat to discover the format
-   * of the audio that will be received in your Pre-Mix
-   * SGAudioCallback.  Note that the format may not be available until
-   * you've called SGPrepare().
-   */
-  kQTSGAudioPropertyID_PreMixCallbackFormat = '_mcf', /* Data: AudioStreamBasicDescription, R/W/L: Read, Class(es): kQTPropertyClass_SGAudio*/
-
-  /*
-   * kQTSGAudioPropertyID_PostMixCallback: If you wish to receive a
-   * callback after audio samples have been mixed (the first step after
-   * they are received from a recording device by SGAudioMediaType
-   * channel), set kQTSGAudioPropertyID_PostMixCallback using an
-   * SGAudioCallbackStruct containing a pointer to your SGAudioCallback
-   * function and a refcon.  If you've previously registered a callback
-   * and no longer wish to receive it, call QTSetComponentProperty
-   * again, this time passing NULL for your inputProc and 0 for your
-   * inputRefCon.
-   */
-  kQTSGAudioPropertyID_PostMixCallback = 'mx_c', /* Data: SGAudioCallbackStruct, R/W/L: Read/Write, Class(es): kQTPropertyClass_SGAudio */
-
-  /*
-   * kQTSGAudioPropertyID_PostMixCallbackFormat: Call
-   * QTGetComponentProperty with
-   * kQTSGAudioPropertyID_PostMixCallbackFormat to discover the format
-   * of the audio that will be received in your Post-Mix
-   * SGAudioCallback.  Note that the format may not be available until
-   * you've called SGPrepare().
-   */
-  kQTSGAudioPropertyID_PostMixCallbackFormat = 'm_cf', /* Data: AudioStreamBasicDescription, R/W/L: Read, Class(es): kQTPropertyClass_SGAudio*/
-
-  /*
-   * kQTSGAudioPropertyID_PreConversionCallback: If you wish to receive
-   * a callback just before audio samples are about to be sent through
-   * an AudioConverter (for format conversion or compression), set
-   * kQTSGAudioPropertyID_PreConversionCallback using an
-   * SGAudioCallbackStruct containing a pointer to your SGAudioCallback
-   * function and a refcon.  If you've previously registered a callback
-   * and no longer wish to receive it, call QTSetComponentProperty
-   * again, this time passing NULL for your inputProc and 0 for your
-   * inputRefCon.
-   */
-  kQTSGAudioPropertyID_PreConversionCallback = '_cvc', /* Data: SGAudioCallbackStruct, R/W/L: Read/Write, Class(es): kQTPropertyClass_SGAudio */
-
-  /*
-   * kQTSGAudioPropertyID_PreConversionCallbackFormat: Call
-   * QTGetComponentProperty with
-   * kQTSGAudioPropertyID_PreConversionCallbackFormat to discover the
-   * format of the audio that will be received in your Pre-Conversion
-   * SGAudioCallback.  Note that the format may not be available until
-   * you've called SGPrepare().
-   */
-  kQTSGAudioPropertyID_PreConversionCallbackFormat = '_ccf', /* Data: AudioStreamBasicDescription, R/W/L: Read, Class(es): kQTPropertyClass_SGAudio*/
-
-  /*
-   * kQTSGAudioPropertyID_PostConversionCallback: If you wish to
-   * receive a callback right after audio samples have been sent
-   * through an AudioConverter (for format conversion or compression),
-   * set kQTSGAudioPropertyID_PostConversionCallback using an
-   * SGAudioCallbackStruct containing a pointer to your SGAudioCallback
-   * function and a refcon.  If you've previously registered a callback
-   * and no longer wish to receive it, call QTSetComponentProperty
-   * again, this time passing NULL for your inputProc and 0 for your
-   * inputRefCon.
-   */
-  kQTSGAudioPropertyID_PostConversionCallback = 'cv_c', /* Data: SGAudioCallbackStruct, R/W/L: Read/Write, Class(es): kQTPropertyClass_SGAudio */
-
-  /*
-   * kQTSGAudioPropertyID_PostConversionCallbackFormat: Call
-   * QTGetComponentProperty with
-   * kQTSGAudioPropertyID_PostConversionCallbackFormat to discover the
-   * format of the audio that will be received in your Post-Conversion
-   * SGAudioCallback.  Note that the format may not be available until
-   * you've called SGPrepare().
-   */
-  kQTSGAudioPropertyID_PostConversionCallbackFormat = 'c_cf' /* Data: AudioStreamBasicDescription, R/W/L: Read, Class(es): kQTPropertyClass_SGAudio*/
-};
-
-
-
-/* -----------------------------------------------------------------------------
-|                                                                               |
-|   SGAudioMediaType Channel - Device Attribute Keys                            |
-|                                                                               |
-|   These dictionary keys may be used to parse CFDictionaries returned by       |
-|   kQTSGAudioPropertyID_DeviceListWithAttributes &                             |
-|   kQTSGAudioPropertyID_DeviceAttributes                                       |
-|                                                                               |
- ------------------------------------------------------------------------------*/
-
-/*
- *  Summary:
- *    Device Attribute Key constants used by SGAudioChannel
- */
-enum {
-
-  /*
-   * kQTAudioDeviceAttribute_DeviceUIDKey: value = CFStringRef. A
-   * unique identifier for the device.
-   */
-  kQTAudioDeviceAttribute_DeviceUIDKey = kQTSGAudioPropertyID_DeviceUID,
-
-  /*
-   * kQTAudioDeviceAttribute_DeviceNameKey: value = CFStringRef.  The
-   * device printable name (suitable for gui).
-   */
-  kQTAudioDeviceAttribute_DeviceNameKey = 'name',
-
-  /*
-   * kQTAudioDeviceAttribute_DeviceManufacturerKey: value =
-   * CFStringRef.  Device manufacturer printable name (suitable for
-   * gui).
-   */
-  kQTAudioDeviceAttribute_DeviceManufacturerKey = 'manu',
-
-  /*
-   * kQTAudioDeviceAttribute_DeviceTransportTypeKey: value =
-   * CFNumberRef. Wraps an OSType (i.e. '1394' for fw, see
-   * IOAudioTypes.h).
-   */
-  kQTAudioDeviceAttribute_DeviceTransportTypeKey = 'tran',
-
-  /*
-   * kQTAudioDeviceAttribute_DeviceAliveKey: value = CFBooleanRef. 
-   * True if device is present.
-   */
-  kQTAudioDeviceAttribute_DeviceAliveKey = kQTSGAudioPropertyID_DeviceAlive,
-
-  /*
-   * kQTAudioDeviceAttribute_DeviceCanRecordKey: value = CFBooleanRef. 
-   * True if device can be used for recording (some can only do
-   * playback)
-   */
-  kQTAudioDeviceAttribute_DeviceCanRecordKey = 'rec ',
-
-  /*
-   * kQTAudioDeviceAttribute_DeviceCanPreviewKey: value = CFBooleanRef.
-   *  True if device can be used to preview a grab.
-   */
-  kQTAudioDeviceAttribute_DeviceCanPreviewKey = 'prev',
-
-  /*
-   * kQTAudioDeviceAttribute_DeviceHoggedKey: value = CFNumberRef. 
-   * CFNumber wraps the unique process ID that is hogging the device,
-   * or -1 if the device is currently not being hogged.  Process id
-   * comes from getpid().
-   */
-  kQTAudioDeviceAttribute_DeviceHoggedKey = kQTSGAudioPropertyID_DeviceHogged,
-
-  /*
-   * kQTAudioDeviceAttribute_DeviceInUseKey: value = CFBooleanRef. 
-   * True if someone is performing IO w/ the device (in any process).
-   */
-  kQTAudioDeviceAttribute_DeviceInUseKey = kQTSGAudioPropertyID_DeviceInUse,
-
-  /*
-   * kQTAudioDeviceAttribute_DeviceSupportsHardwarePlaythruKey: value =
-   * CFBooleanRef.  True if the device supports hardware playthru of
-   * inputs to outputs.
-   */
-  kQTAudioDeviceAttribute_DeviceSupportsHardwarePlaythruKey = 'hard',
-
-  /*
-   * kQTAudioDeviceAttribute_InputSelectionKey: value = CFNumberRef. 
-   * CFNumber wraps an OSType (device may or may not have an input
-   * selection)
-   */
-  kQTAudioDeviceAttribute_InputSelectionKey = kQTSGAudioPropertyID_InputSelection,
-
-  /*
-   * kQTAudioDeviceAttribute_InputListWithAttributesKey: value =
-   * CFArrayRef.  Same as kQTSGAudioPropertyID_InputListWithAttributes.
-   */
-  kQTAudioDeviceAttribute_InputListWithAttributesKey = kQTSGAudioPropertyID_InputListWithAttributes,
-  kQTAudioDeviceAttribute_OutputSelectionKey = kQTSGAudioPropertyID_OutputSelection,
-
-  /*
-   * kQTAudioDeviceAttribute_OutputListWithAttributesKey: value =
-   * CFArrayRef.  Same as kQTSGAudioPropertyID_OutputListWithAttributes.
-   */
-  kQTAudioDeviceAttribute_OutputListWithAttributesKey = kQTSGAudioPropertyID_OutputListWithAttributes,
-
-  /*
-   * kQTAudioDeviceAttribute_DefaultInputDeviceKey: value =
-   * CFBooleanRef.  True if it's the user-selected default input in
-   * AudioMidiSetup.
-   */
-  kQTAudioDeviceAttribute_DefaultInputDeviceKey = 'dIn ',
-
-  /*
-   * kQTAudioDeviceAttribute_DefaultOutputDeviceKey: value =
-   * CFBooleanRef.  True if it's the user-selected default output in
-   * AudioMidiSetup.
-   */
-  kQTAudioDeviceAttribute_DefaultOutputDeviceKey = 'dOut',
-
-  /*
-   * kQTAudioDeviceAttribute_DefaultSystemOutputDeviceKey: value =
-   * CFBooleanRef.  True if it's the user-selected device where system
-   * alerts plays.
-   */
-  kQTAudioDeviceAttribute_DefaultSystemOutputDeviceKey = 'sOut',
-
-  /*
-   * kQTAudioDeviceAttribute_IsCoreAudioDeviceKey: value =
-   * CFBooleanRef.  True if the device is a Core Audio device.
-   */
-  kQTAudioDeviceAttribute_IsCoreAudioDeviceKey = 'hal!'
-};
-
-
-/* -----------------------------------------------------------------------------
-|                                                                               |
-|   SGAudioMediaType Channel - Device Attribute Keys for Inputs & Outputs       |
-|                                                                               |
-|   These dictionary keys may be used to parse CFDictionaries returned by       |
-|   kQTSGAudioPropertyID_InputListWithAttributes &                              |
-|   kQTSGAudioPropertyID_OutputListWithAttributes.                              |
-|                                                                               |
- ------------------------------------------------------------------------------*/
-
-/*
- *  Summary:
- *    Device Attribute Key constants for Inputs and Outputs used by
- *    SGAudioChannel
- */
-enum {
-
-  /*
-   * kQTAudioDeviceAttribute_DeviceInputID: value = CFNumberRef that
-   * wraps an OSType.
-   */
-  kQTAudioDeviceAttribute_DeviceInputID = 'inID',
-
-  /*
-   * kQTAudioDeviceAttribute_DeviceInputDescription: value =
-   * CFStringRef containing a string suitable for ui display.
-   */
-  kQTAudioDeviceAttribute_DeviceInputDescription = 'inds',
-
-  /*
-   * kQTAudioDeviceAttribute_DeviceOutputID: value = CFNumberRef that
-   * wraps an OSType.
-   */
-  kQTAudioDeviceAttribute_DeviceOutputID = 'otID',
-
-  /*
-   * kQTAudioDeviceAttribute_DeviceOutputDescription: value =
-   * CFStringRef containing a string suitable for ui display.
-   */
-  kQTAudioDeviceAttribute_DeviceOutputDescription = 'otds'
-};
-
-
-/* -----------------------------------------------------------------------------
-|                                                                               |
-|   SG SETTINGS CODES USED BY SGAudioMediaType SGChannel                        |
-|                                                                               |
- ------------------------------------------------------------------------------*/
-enum {
-  sgcAudioRecordDeviceSettingsAtom = kQTPropertyClass_SGAudioRecordDevice,
-  sgcAudioPreviewDeviceSettingsAtom = kQTPropertyClass_SGAudioPreviewDevice,
-  sgcAudioOutputSettingsAtom    = kQTPropertyClass_SGAudio,
-  sgcAudioSettingsVersion       = 'vers',
-  sgcAudioDeviceUID             = kQTAudioDeviceAttribute_DeviceUIDKey,
-  sgcAudioDeviceName            = kQTAudioDeviceAttribute_DeviceNameKey,
-  sgcAudioStreamFormat          = kQTSGAudioPropertyID_StreamFormat,
-  sgcAudioInputSelection        = kQTSGAudioPropertyID_InputSelection,
-  sgcAudioOutputSelection       = kQTSGAudioPropertyID_OutputSelection,
-  sgcAudioChannelMap            = kQTSGAudioPropertyID_ChannelMap,
-  sgcAudioMasterGain            = kQTSGAudioPropertyID_MasterGain,
-  sgcAudioPerChannelGain        = kQTSGAudioPropertyID_PerChannelGain,
-  sgcAudioLevelMetersEnabled    = kQTSGAudioPropertyID_LevelMetersEnabled,
-  sgcAudioChannelLayout         = kQTSGAudioPropertyID_ChannelLayout,
-  sgcAudioMagicCookie           = kQTSGAudioPropertyID_MagicCookie,
-  sgcAudioHardwarePlaythruEnabled = kQTSGAudioPropertyID_HardwarePlaythruEnabled,
-  sgcAudioMixerCoefficients     = kQTSGAudioPropertyID_MixerCoefficients,
-  sgcAudioChunkSize             = kQTSGAudioPropertyID_ChunkSize,
-  sgcAudioSoftPreviewLatency    = kQTSGAudioPropertyID_SoftPreviewLatency
-};
-
-/* -----------------------------------------------------------------------------
-|                                                                               |
-|   SGAudioMediaType Channel Callback Declarations                              |
-|                                                                               |
- ------------------------------------------------------------------------------*/
-
-typedef UInt32                          SGAudioCallbackFlags;
-
-/*
- *  SGAudioCallback
- *  
- *  Discussion:
- *    Clients define an SGAudioCallback to tap into an SGAudio channel,
- *    and gain access to its data at various point along the signal
- *    flow chain.  Clients should be aware that they may be called back
- *    on threads other than the thread on which they registered for the
- *    callback. They should do as little work as possible inside their
- *    callback, returning control as soon as possible to the calling
- *    SGAudio channel.
- *  
- *  Parameters:
- *    
- *    c:
- *      The SGChannel originating this callback
- *    
- *    inRefCon:
- *      The refCon assigned by the client when filling out an
- *      SGAudioCallbackStruct
- *    
- *    ioFlags:
- *      This flags field is currently unused.
- *    
- *    inTimeStamp:
- *      The time stamp associated with the first sample passed in inData
- *    
- *    inNumberPackets:
- *      The number of data packets (if dealing with LPCM formats,
- *      number of packets is the same as number of frames) held in
- *      inData.
- *    
- *    inData:
- *      A bufferlist containing the requested sample data.
- *    
- *    inPacketDescriptions:
- *      If the packets contained in inData are of variable size,
- *      inPacketDescriptions will contain an array of inNumberPackets
- *      packet descriptions.
- *  
- *  Result:
- *    OSStatus Your SGAudioCallback function should return noErr.
- */
-typedef CALLBACK_API_C( OSStatus , SGAudioCallback )(SGChannel c, void *inRefCon, SGAudioCallbackFlags *ioFlags, const AudioTimeStamp *inTimeStamp, const UInt32 *inNumberPackets, const AudioBufferList *inData, const AudioStreamPacketDescription *inPacketDescriptions);
-struct SGAudioCallbackStruct {
-  SGAudioCallback     inputProc;
-  void *              inputProcRefCon;
-};
-typedef struct SGAudioCallbackStruct    SGAudioCallbackStruct;
 /*** Sequence Grab SOUND CHANNEL Component Stuff ***/
 
 /*
@@ -12473,8 +10833,6 @@ enum {
     kSCSetSettingsFromAtomContainerSelect      = 0x001C,
     kSCCompressSequenceFrameAsyncSelect        = 0x001D,
     kSCAsyncIdleSelect                         = 0x001E,
-    kSCCopyCompressionSessionOptionsSelect     = 0x001F,
-    kSCAudioInvokeLegacyCodecOptionsDialogSelect = 0x0081,
     kTweenerInitializeSelect                   = 0x0001,
     kTweenerDoTweenSelect                      = 0x0002,
     kTweenerResetSelect                        = 0x0003,
@@ -12630,8 +10988,6 @@ enum {
     kDataHUseTemporaryDataRefSelect            = 0x0047,
     kDataHGetTemporaryDataRefCapabilitiesSelect = 0x0048,
     kDataHRenameFileSelect                     = 0x0049,
-    kDataHGetAvailableFileSize64Select         = 0x004E,
-    kDataHGetDataAvailability64Select          = 0x004F,
     kDataHPlaybackHintsSelect                  = 0x0103,
     kDataHPlaybackHints64Select                = 0x010E,
     kDataHGetDataRateSelect                    = 0x0110,

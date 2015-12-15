@@ -3,9 +3,9 @@
  
      Contains:   QuickTime Interfaces.
  
-     Version:    QuickTime 7.0.2
+     Version:    QuickTime_6
  
-     Copyright:  © 1990-2005 by Apple Computer, Inc., all rights reserved
+     Copyright:  © 1990-2003 by Apple Computer, Inc., all rights reserved
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -156,10 +156,6 @@
 
 	EXTERN_API( ComponentResult  ) ADD_SC_BASENAME(AsyncIdle) (SC_GLOBALS());
 
-	EXTERN_API( ComponentResult  ) ADD_SC_BASENAME(CopyCompressionSessionOptions) (SC_GLOBALS() ADD_SC_COMMA ICMCompressionSessionOptionsRef * outOptions);
-
-	EXTERN_API( ComponentResult  ) ADD_SC_BASENAME(AudioInvokeLegacyCodecOptionsDialog) (SC_GLOBALS());
-
 
 	/* MixedMode ProcInfo constants for component calls */
 	enum {
@@ -190,9 +186,7 @@
 		uppSCGetSettingsAsAtomContainerProcInfo = 0x000003F0,
 		uppSCSetSettingsFromAtomContainerProcInfo = 0x000003F0,
 		uppSCCompressSequenceFrameAsyncProcInfo = 0x000FFFF0,
-		uppSCAsyncIdleProcInfo = 0x000000F0,
-		uppSCCopyCompressionSessionOptionsProcInfo = 0x000003F0,
-		uppSCAudioInvokeLegacyCodecOptionsDialogProcInfo = 0x000000F0
+		uppSCAsyncIdleProcInfo = 0x000000F0
 	};
 
 #endif	/* SC_BASENAME */
@@ -869,10 +863,6 @@ enum {
 
 	EXTERN_API( ComponentResult  ) ADD_DATAH_BASENAME(RenameFile) (DATAH_GLOBALS() ADD_DATAH_COMMA Handle  newDataRef);
 
-	EXTERN_API( ComponentResult  ) ADD_DATAH_BASENAME(GetAvailableFileSize64) (DATAH_GLOBALS() ADD_DATAH_COMMA wide * fileSize);
-
-	EXTERN_API( ComponentResult  ) ADD_DATAH_BASENAME(GetDataAvailability64) (DATAH_GLOBALS() ADD_DATAH_COMMA const wide * offset, long  len, wide * missing_offset, long * missing_len);
-
 	EXTERN_API( ComponentResult  ) ADD_DATAH_BASENAME(PlaybackHints) (DATAH_GLOBALS() ADD_DATAH_COMMA long  flags, unsigned long  minFileOffset, unsigned long  maxFileOffset, long  bytesPerSecond);
 
 	EXTERN_API( ComponentResult  ) ADD_DATAH_BASENAME(PlaybackHints64) (DATAH_GLOBALS() ADD_DATAH_COMMA long  flags, const wide * minFileOffset, const wide * maxFileOffset, long  bytesPerSecond);
@@ -1164,8 +1154,6 @@ enum {
 	uppDataHUseTemporaryDataRefProcInfo = 0x000003F0,
 	uppDataHGetTemporaryDataRefCapabilitiesProcInfo = 0x000003F0,
 	uppDataHRenameFileProcInfo = 0x000003F0,
-	uppDataHGetAvailableFileSize64ProcInfo = 0x000003F0,
-	uppDataHGetDataAvailability64ProcInfo = 0x0000FFF0,
 	uppDataHPlaybackHintsProcInfo = 0x0000FFF0,
 	uppDataHPlaybackHints64ProcInfo = 0x0000FFF0,
 	uppDataHGetDataRateProcInfo = 0x00000FF0,
