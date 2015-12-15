@@ -167,5 +167,8 @@ enum reloc_type_x86_64
 	X86_64_RELOC_BRANCH,		// a CALL/JMP instruction with 32-bit displacement
 	X86_64_RELOC_GOT_LOAD,		// a MOVQ load of a GOT entry
 	X86_64_RELOC_GOT,			// other GOT references
-	X86_64_RELOC_SUBTRACTOR		// must be followed by a X86_64_RELOC_UNSIGNED
+	X86_64_RELOC_SUBTRACTOR,	// must be followed by a X86_64_RELOC_UNSIGNED
+	X86_64_RELOC_SIGNED_1,		// for signed 32-bit displacement with a -1 addend
+	X86_64_RELOC_SIGNED_2,		// for signed 32-bit displacement with a -2 addend
+	X86_64_RELOC_SIGNED_4,		// for signed 32-bit displacement with a -4 addend
 };

@@ -3,7 +3,7 @@
  
      Contains:   Finder flags and container types.
  
-     Version:    CarbonCore-682.14~2
+     Version:    CarbonCore-682.14~33
  
      Copyright:  © 1990-2006 by Apple Computer, Inc., all rights reserved
  

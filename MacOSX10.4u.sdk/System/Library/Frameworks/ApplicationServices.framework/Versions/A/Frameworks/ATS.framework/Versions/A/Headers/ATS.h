@@ -3,7 +3,7 @@
  
      Contains:   Master include for ATS private framework
  
-     Version:    ATS-184.6.1~49
+     Version:    ATS-184.6.1~105
  
      Copyright:  © 1999-2006 by Apple Computer, Inc., all rights reserved.
  

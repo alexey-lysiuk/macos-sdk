@@ -3,7 +3,7 @@
  
      Contains:   Master include for vecLib framework
  
-     Version:    vecLib-192.12~1
+     Version:    vecLib-192.16
  
      Copyright:  © 2000-2006 by Apple Computer, Inc., all rights reserved.
  
@@ -15,6 +15,7 @@
 */
 #ifndef __VECLIB__
 #define __VECLIB__
+
 
 #ifndef __VECLIBTYPES__
 #include <vecLib/vecLibTypes.h>

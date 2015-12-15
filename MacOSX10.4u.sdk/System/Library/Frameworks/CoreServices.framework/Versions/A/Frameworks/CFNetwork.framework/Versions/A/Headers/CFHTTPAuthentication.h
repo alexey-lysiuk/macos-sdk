@@ -3,7 +3,7 @@
  
      Contains:   CoreFoundation Network HTTP authentication header
  
-     Version:    CFNetwork-129.16~87
+     Version:    CFNetwork-129.16~130
  
      Copyright:  © 2001-2006 by Apple Computer, Inc., all rights reserved
  

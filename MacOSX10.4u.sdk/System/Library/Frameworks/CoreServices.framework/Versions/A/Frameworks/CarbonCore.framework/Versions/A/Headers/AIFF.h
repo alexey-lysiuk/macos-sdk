@@ -3,7 +3,7 @@
  
      Contains:   Definition of AIFF file format components.
  
-     Version:    CarbonCore-682.14~2
+     Version:    CarbonCore-682.14~33
  
      Copyright:  © 1989-2006 by Apple Computer, Inc., all rights reserved.
  

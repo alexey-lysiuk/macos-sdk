@@ -3,8 +3,7 @@
  
      Contains:   Master include for vecLib framework
  
-     Version:    Technology: MacOS X
-                 Release:    vecLib-192.12~1
+     Version:    vecLib-192.16
  
      Copyright:  © 2000-2006 by Apple Computer, Inc., all rights reserved.
  

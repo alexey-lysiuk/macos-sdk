@@ -3,7 +3,7 @@
  
      Contains:   Public interface to the font access and data management functions of ATS.
  
-     Version:    ATS-184.6.1~49
+     Version:    ATS-184.6.1~105
  
      Copyright:  © 2000-2006 by Apple Computer, Inc., all rights reserved.
  

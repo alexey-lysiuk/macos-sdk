@@ -3,7 +3,7 @@
  
      Contains:   AppleEvent Data Model Interfaces.
  
-     Version:    AppleEvents-316.2~361
+     Version:    AppleEvents-316.2~424
  
      Copyright:  © 1996-2006 by Apple Computer, Inc., all rights reserved
  

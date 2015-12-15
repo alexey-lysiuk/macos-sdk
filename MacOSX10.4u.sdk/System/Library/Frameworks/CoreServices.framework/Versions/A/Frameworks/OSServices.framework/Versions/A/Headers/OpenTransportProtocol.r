@@ -3,9 +3,9 @@
  
      Contains:   Definitions likely to be used by low-level protocol stack implementation.
  
-     Version:    OpenTransport-105~481
+     Version:    OpenTransport-105~509
  
-     Copyright:  © 1993-2005 by Apple Computer, Inc. and Mentat Inc., all rights reserved.
+     Copyright:  © 1993-2006 by Apple Computer, Inc. and Mentat Inc., all rights reserved.
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:

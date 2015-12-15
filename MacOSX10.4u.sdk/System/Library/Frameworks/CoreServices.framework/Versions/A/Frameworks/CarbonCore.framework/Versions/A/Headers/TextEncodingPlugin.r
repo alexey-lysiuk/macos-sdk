@@ -3,7 +3,7 @@
  
      Contains:   Required interface for Text Encoding Converter-Plugins
  
-     Version:    CarbonCore-682.14~2
+     Version:    CarbonCore-682.14~33
  
      Copyright:  © 1996-2006 by Apple Computer, Inc., all rights reserved.
  

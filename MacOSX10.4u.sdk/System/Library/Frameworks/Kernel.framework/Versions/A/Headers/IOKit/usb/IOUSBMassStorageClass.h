@@ -415,8 +415,6 @@ protected:
     OSMetaClassDeclareReservedUsed( IOUSBMassStorageClass, 2 );
 	virtual void		FinishDeviceRecovery( IOReturn	status );
 
-	static void			sCallFinishDeviceRecovery ( void * obj );
-
 	static void			DeviceRecoveryCompletionAction(
 		                	void *			target,
 		                	void *			parameter,
