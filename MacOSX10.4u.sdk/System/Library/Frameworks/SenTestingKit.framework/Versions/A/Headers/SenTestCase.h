@@ -50,6 +50,7 @@
 #define STAssertFalseNoThrow(expression, description, ...)
 
 /*" These marcos are deprecated "*/
+#ifdef STEnableDeprecatedAssertionMacros
 #define should(expression) 
 #define should1(expression,description)
 #define shouldnt(expression)
@@ -66,6 +67,7 @@
 #define should1noraise(expression,description)
 #define shouldntnoraise(expression)
 #define shouldnt1noraise(expression,description)
+#endif
 
 
 #import "SenTestCase_Macros.h"

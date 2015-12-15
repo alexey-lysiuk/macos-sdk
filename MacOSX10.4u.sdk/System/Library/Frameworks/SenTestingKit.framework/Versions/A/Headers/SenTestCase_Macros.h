@@ -31,47 +31,56 @@
 #import "SenTestingUtilities.h"
 
 #undef STFail
-#undef fail
-#undef fail1
 
 #undef STAssertNil
 
 #undef STAssertNotNil
 
 #undef STAssertTrue
-#undef should
-#undef should1
 
 #undef STAssertFalse
-#undef shouldnt
-#undef shouldnt1
 
 #undef STAssertEquals
 #undef STAssertEqualObjects
 #undef STAssertEqualsWithAccuracy
-#undef shouldBeEqual
-#undef shouldBeEqual1
 
 #undef STAssertThrows
 #undef STAssertThrowsSpecific
 #undef STAssertThrowsSpecificNamed
-#undef shouldRaise
-#undef shouldRaise1
 
 #undef STAssertNoThrow
 #undef STAssertNoThrowSpecific
 #undef STAssertNoThrowSpecificNamed
-#undef shouldntRaise
-#undef shouldntRaise1
 
 #undef STAssertTrueNoThrow
-#undef shouldnoraise
-#undef should1noraise
 
 #undef STAssertFalseNoThrow
+
+/* 
+    The following macros are deprecated.  If you have code that uses them and you
+    don't wish to migrate to the modern macros immediately, add the following line
+    before importing this header or any header that imports it:
+    
+    #define STEnableDeprecatedAssertionMacros 1
+ */
+#ifdef STEnableDeprecatedAssertionMacros
+#undef fail
+#undef fail1
+#undef should
+#undef should1
+#undef shouldnt
+#undef shouldnt1
+#undef shouldBeEqual
+#undef shouldBeEqual1
+#undef shouldRaise
+#undef shouldRaise1
+#undef shouldntRaise
+#undef shouldntRaise1
+#undef shouldnoraise
+#undef should1noraise
 #undef shouldntnoraise
 #undef shouldnt1noraise
-
+#endif /* STEnableDeprecatedAssertionMacros */
 
 /*" Generates a failure when !{ [a1 isEqualTo:a2] } is false 
 	(or one is nil and the other is not). 
@@ -558,6 +567,8 @@ do { \
 } while (0)
 
 
+#ifdef STEnableDeprecatedAssertionMacros
+
 /*" This macro has been deprecated as of Feb 2004.
     Generates a failure unconditionally.
 "*/
@@ -644,3 +655,4 @@ do { \
 "*/
 #define shouldnt1noraise(expression, description)  STAssertFalseNoThrow(expression, description)
 
+#endif /* STEnableDeprecatedAssertionMacros */

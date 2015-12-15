@@ -30,6 +30,10 @@
 #ifndef _OBJC_OBJC_H_
 #define _OBJC_OBJC_H_
 
+#if __ppc64__
+    #error 64-bit not supported
+#endif
+
 #import <objc/objc-api.h>		// for OBJC_EXPORT
 
 typedef struct objc_class *Class;

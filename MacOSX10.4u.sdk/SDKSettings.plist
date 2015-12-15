@@ -8,7 +8,6 @@
     name = "Mac OS X 10.4 (Universal)"; 
     supportsZeroLink = YES;
     buildSettings =  {
-        "MACOSX_DEPLOYMENT_TARGET_i386" = "10.4"; 
-        "MACOSX_DEPLOYMENT_TARGET_ppc" = "10.3"; 
+        "MACOSX_DEPLOYMENT_TARGET" = "10.4"; 
     };
 }

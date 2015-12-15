@@ -43,6 +43,8 @@
 #include <exception>
 #include <string>
 
+#pragma GCC visibility push(default)
+
 namespace std 
 {
   /** Logic errors represent problems in the internal logic of a program;
@@ -143,5 +145,7 @@ namespace std
     explicit underflow_error(const string&  __arg);
   };
 } // namespace std
+
+#pragma GCC visibility pop
 
 #endif /* _GLIBCXX_STDEXCEPT */

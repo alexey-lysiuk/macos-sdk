@@ -125,6 +125,10 @@ extern void swap_prebind_cksum_command(
     struct prebind_cksum_command *cksum_cmd,
     enum NXByteOrder target_byte_sex);
 
+extern void swap_uuid_command(
+    struct uuid_command *uuid_cmd,
+    enum NXByteOrder target_byte_sex);
+
 extern void swap_twolevel_hint(
     struct twolevel_hint *hints,
     uint32_t nhints,

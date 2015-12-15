@@ -80,6 +80,9 @@ typedef enum
 	kCGLFEglBlendFunc,
 	kCGLFEglBlendFuncSeparate,
 	kCGLFEglBufferData,
+#if GL_APPLE_flush_buffer_range
+	kCGLFEglBufferParameteriAPPLE,
+#endif
 	kCGLFEglBufferSubData,
 	kCGLFEglCallList,
 	kCGLFEglCallLists,
@@ -227,6 +230,9 @@ typedef enum
 	kCGLFEglFinishObjectAPPLE,
 	kCGLFEglFinishRenderAPPLE,
 	kCGLFEglFlush,
+#if GL_APPLE_flush_buffer_range
+	kCGLFEglFlushMappedBufferRangeAPPLE,
+#endif
 	kCGLFEglFlushRenderAPPLE,
 	kCGLFEglFlushVertexArrayRangeEXT,
 	kCGLFEglFogCoordPointer,
