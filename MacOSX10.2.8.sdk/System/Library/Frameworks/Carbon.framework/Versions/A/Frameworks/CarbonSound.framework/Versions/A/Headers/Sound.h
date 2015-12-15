@@ -3,7 +3,7 @@
  
      Contains:   Sound Manager Interfaces.
  
-     Version:    CarbonSound-94~538
+     Version:    CarbonSound-94~666
  
      Copyright:  © 1986-2003 by Apple Computer, Inc., all rights reserved
  
