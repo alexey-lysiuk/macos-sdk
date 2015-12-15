@@ -1,7 +1,7 @@
 /*
      File:       AvailabilityMacros.h
  
-     Copyright:  (c) 2001-2005 by Apple Computer, Inc., all rights reserved.
+     Copyright:  (c) 2001-2006 by Apple Computer, Inc., all rights reserved.
 
      More Info:  See TechNote 2064
 
@@ -92,13 +92,13 @@
 #endif
 
 /*
- * if max OS not specified, assume largerof(10.4, min)
+ * if max OS not specified, assume largerof(10.2, min)
  */
 #ifndef MAC_OS_X_VERSION_MAX_ALLOWED
-    #if MAC_OS_X_VERSION_MIN_REQUIRED > MAC_OS_X_VERSION_10_4
+    #if MAC_OS_X_VERSION_MIN_REQUIRED > MAC_OS_X_VERSION_10_2
         #define MAC_OS_X_VERSION_MAX_ALLOWED MAC_OS_X_VERSION_MIN_REQUIRED
     #else
-        #define MAC_OS_X_VERSION_MAX_ALLOWED MAC_OS_X_VERSION_10_4
+        #define MAC_OS_X_VERSION_MAX_ALLOWED MAC_OS_X_VERSION_10_2
     #endif
 #endif
 
@@ -167,9 +167,6 @@
 
 
 
-
-
-
 /*
  * AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER
  * 
@@ -217,10 +214,6 @@
 #else
     #define DEPRECATED_IN_MAC_OS_X_VERSION_10_1_AND_LATER
 #endif
-
-
-
-
 
 
 
@@ -283,8 +276,6 @@
 #else
     #define DEPRECATED_IN_MAC_OS_X_VERSION_10_2_AND_LATER
 #endif
-
-
 
 
 
@@ -362,9 +353,6 @@
 
 
 
-
-
-
 /*
  * AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER
  * 
@@ -429,7 +417,7 @@
 /*
  * AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4
  * 
- * Used on declarations introduced in Mac OS X 10.2, 
+ * Used on declarations introduced in Mac OS X 10.3, 
  * but later deprecated in Mac OS X 10.4
  */
 #if MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_4
