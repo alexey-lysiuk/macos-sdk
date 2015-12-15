@@ -1849,6 +1849,7 @@ private:
     void driver_acked ( void );
     void start_ack_timer ( void );
     void stop_ack_timer ( void );
+
     unsigned long compute_settle_time ( void );
     IOReturn startSettleTimer ( unsigned long delay );
     IOReturn changeState ( void );

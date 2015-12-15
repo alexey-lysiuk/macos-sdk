@@ -150,7 +150,9 @@ enum {
     kIOFBNotifyWillChangeSpeed	= 9,
     kIOFBNotifyDidChangeSpeed	= 10,
 
-    kIOFBNotifyClamshellChange	= 20
+    kIOFBNotifyClamshellChange	= 20,
+
+    kIOFBNotifyCaptureChange	= 30
 };
 
 enum {

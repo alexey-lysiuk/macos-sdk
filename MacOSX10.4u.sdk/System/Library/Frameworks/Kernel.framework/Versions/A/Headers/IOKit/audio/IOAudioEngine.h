@@ -624,7 +624,7 @@ public:
      *  be acquired before the first call to getState() and held until after the last call to setState().
      *  Be careful not to return from the code acquiring the lock while the lock is being held.  That
      *  will cause a deadlock situation.
-     * @result The current state of the IOAudioEngine: kAudioEngineRunning, kAudioEngineStopped.
+     * @result The current state of the IOAudioEngine: kIOAudioEngineRunning, kIO AudioEngineStopped.
      */
     virtual IOAudioEngineState getState();
 

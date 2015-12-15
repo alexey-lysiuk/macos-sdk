@@ -66,8 +66,10 @@ class IOSCSITargetDevice : public IOSCSIPrimaryCommandsDevice
 public:
 	
 	static bool			Create ( IOSCSIProtocolServices * provider );
-	virtual IOReturn 	message ( UInt32 type, IOService * nub, void * arg );
+	void				Ping ( void );
 	
+	virtual IOReturn 	message ( UInt32 type, IOService * nub, void * arg );
+
 protected:
 	
 	friend class SCSITargetDevicePathManager;
@@ -109,7 +111,7 @@ protected:
 	
 	void	ScanForLogicalUnits ( OSArray * lunMaskList );
 	void 	RetrieveCharacteristicsFromProvider ( void );
-
+	
 	bool	DetermineTargetCharacteristics ( void );
 	bool	VerifyTargetPresence ( void );
 	bool	SetCharacteristicsFromINQUIRY ( SCSICmd_INQUIRY_StandardDataAll * inquiryBuffer );
@@ -156,8 +158,14 @@ protected:
 	void	PublishReportDeviceIdentifierData (
 						IOService * 			object,
 						SCSILogicalUnitNumber 	logicalUnit );
+	bool	CompareINQUIRYVitalProductData ( IOService * object, SCSILogicalUnitNumber logicalUnit );
+	
+	OSString *	RetrieveUnitSerialNumber ( IOService * object, SCSILogicalUnitNumber logicalUnit );
+	OSArray *	RetrieveDeviceIdentifiers ( IOService * object, SCSILogicalUnitNumber logicalUnit );
 	
 	void	SetLogicalUnitNumber ( SCSITaskIdentifier request, SCSILogicalUnitNumber logicalUnit );
+	
+	void	HandleDynamicLUNChange ( void );
 	
 	// Power management overrides
 	virtual UInt32		GetInitialPowerState ( void );
@@ -175,14 +183,20 @@ protected:
 	
 	virtual void		detach ( IOService * provider );
 	virtual void		free ( void );
-	
+    
 private:
 	
 	// LUN Mask methods
 	static void	VerifyLUNs ( OSObject * target, OSArray * lunMaskList );
 	
 	// Reserve space for future expansion.
-	struct IOSCSITargetDeviceExpansionData { };
+	struct IOSCSITargetDeviceExpansionData
+	{
+		UInt32							fLogicalUnitScanState;
+		UInt64							fLastCommandTime;
+		queue_head_t					fLogicalUnitList;
+		IOSimpleLock *					fLogicalUnitLock;
+	};
 	IOSCSITargetDeviceExpansionData * fIOSCSITargetDeviceReserved;
 	
 	OSSet *							fClients;

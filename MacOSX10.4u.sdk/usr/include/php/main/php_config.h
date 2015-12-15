@@ -647,6 +647,9 @@
 /* Define if you have the <floatingpoint.h> header file.  */
 /* #undef HAVE_FLOATINGPOINT_H */
 
+/* Define if you have the <gcrypt.h> header file.  */
+/* #undef HAVE_GCRYPT_H */
+
 /* Define if you have the <grp.h> header file.  */
 #define HAVE_GRP_H 1
 
@@ -688,6 +691,9 @@
 
 /* Define if you have the <netinet/tcp.h> header file.  */
 #define HAVE_NETINET_TCP_H 1
+
+/* Define if you have the <openssl/crypto.h> header file.  */
+#define HAVE_OPENSSL_CRYPTO_H 1
 
 /* Define if you have the <pwd.h> header file.  */
 #define HAVE_PWD_H 1
@@ -1212,6 +1218,18 @@
 /*   */
 /* #undef HAVE_OPENSSL_EXT */
 
+/* Whether to build pcre as dynamic module */
+/* #undef COMPILE_DL_PCRE */
+
+/*   */
+#define HAVE_BUNDLED_PCRE 1
+
+/*   */
+/* #undef HAVE_PCRE */
+
+/* Whether to build pcre as dynamic module */
+/* #undef COMPILE_DL_PCRE */
+
 /* Whether to build zlib as dynamic module */
 /* #undef COMPILE_DL_ZLIB */
 
@@ -1253,6 +1271,15 @@
 
 /* Whether to build ctype as dynamic module */
 /* #undef COMPILE_DL_CTYPE */
+
+/* Have cURL with  SSL support */
+#define HAVE_CURL_SSL 1
+
+/* Have cURL with OpenSSL support */
+#define HAVE_CURL_OPENSSL 1
+
+/* Have cURL with GnuTLS support */
+/* #undef HAVE_CURL_GNUTLS */
 
 /*   */
 #define HAVE_CURL 1
@@ -2199,18 +2226,6 @@
 /* Whether to build pcntl as dynamic module */
 /* #undef COMPILE_DL_PCNTL */
 
-/* Whether to build pcre as dynamic module */
-/* #undef COMPILE_DL_PCRE */
-
-/*   */
-#define HAVE_BUNDLED_PCRE 1
-
-/*   */
-/* #undef HAVE_PCRE */
-
-/* Whether to build pcre as dynamic module */
-/* #undef COMPILE_DL_PCRE */
-
 /* Whether to build pdf as dynamic module */
 /* #undef COMPILE_DL_PDF */
 
@@ -2321,6 +2336,9 @@
 
 /* Whether you have qtdom */
 /* #undef HAVE_QTDOM */
+
+/*   */
+/* #undef HAVE_RL_CALLBACK_READ_CHAR */
 
 /* Whether to build readline as dynamic module */
 /* #undef COMPILE_DL_READLINE */
@@ -2659,16 +2677,16 @@
 /* #undef PTHREADS */
 
 /* PHP build date */
-#define PHP_BUILD_DATE "2006-09-12"
+#define PHP_BUILD_DATE "2007-04-25"
 
 /* hardcode for each of the cross compiler host */
 #define PHP_OS "Darwin"
 
 /* hardcode for each of the cross compiler host */
-#define PHP_UNAME "Darwin b09.apple.com 8.0 Darwin Kernel Version 8.3.0: Mon Oct 3 20:04:04 PDT 2005; root:xnu-792.6.22.obj~2/RELEASE_PPC Power Macintosh powerpc"
+#define PHP_UNAME "Darwin b22.apple.com 8.0 Darwin Kernel Version 8.8.4: Sun Oct 29 15:30:27 PST 2006; root:xnu-792.16.4.obj~1/RELEASE_PPC Power Macintosh powerpc"
 
 /* uname -a output */
-#define PHP_UNAME "Darwin b09.apple.com 8.0 Darwin Kernel Version 8.3.0: Mon Oct 3 20:04:04 PDT 2005; root:xnu-792.6.22.obj~2/RELEASE_PPC Power Macintosh powerpc"
+#define PHP_UNAME "Darwin b22.apple.com 8.0 Darwin Kernel Version 8.8.4: Sun Oct 29 15:30:27 PST 2006; root:xnu-792.16.4.obj~1/RELEASE_PPC Power Macintosh powerpc"
 
 /* uname output */
 #define PHP_OS "Darwin"

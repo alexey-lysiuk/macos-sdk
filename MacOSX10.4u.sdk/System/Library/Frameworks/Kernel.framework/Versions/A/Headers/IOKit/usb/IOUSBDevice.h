@@ -103,6 +103,9 @@ protected:
 		IOCommandGate *			_commandGate;
 		OSSet *					_openInterfaces;
 		bool					_resetCommand;
+		IOReturn				_resetError;
+		IOReturn				_suspendError;
+        thread_call_t			_doMessageClientsThread;
     };
     ExpansionData * _expansionData;
 
@@ -437,7 +440,10 @@ private:
    
     static void 	ProcessPortReEnumerateEntry(OSObject *target, thread_call_param_t options);
     void 		ProcessPortReEnumerate(UInt32 options);
-
+	
+    static void 	DoMessageClientsEntry(OSObject *target, thread_call_param_t messageStruct);
+    void 		DoMessageClients( void * messageStructPtr);
+	
     static void 	DisplayUserNotificationForDeviceEntry (OSObject *owner, IOTimerEventSource *sender);
     void		DisplayUserNotificationForDevice( );
     

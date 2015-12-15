@@ -103,7 +103,7 @@ struct	nfsmount {
 	char	*nm_authstr;		/* Authenticator string */
 	char	*nm_verfstr;		/* and the verifier */
 	int	nm_verflen;
-	u_char	nm_verf[NFSX_V3WRITEVERF]; /* V3 write verifier */
+	uint64_t nm_verf;		/* V3 write verifier */
 	NFSKERBKEY_T nm_key;		/* and the session key */
 	int	nm_numuids;		/* Number of nfsuid mappings */
 	TAILQ_HEAD(, nfsuid) nm_uidlruhead; /* Lists of nfsuid mappings */

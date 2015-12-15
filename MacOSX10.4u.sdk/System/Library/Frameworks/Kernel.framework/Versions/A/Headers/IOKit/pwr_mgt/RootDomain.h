@@ -25,6 +25,7 @@
 #include <IOKit/IOService.h>
 #include <IOKit/pwr_mgt/IOPM.h>
 
+class IOPMWorkArbiter;
 class IOPMPowerStateQueue;
 class RootDomainUserClient;
 
@@ -75,6 +76,8 @@ OSDeclareDefaultStructors(IOPMrootDomain)
 public:
 
     class IOService * wrangler;			// we tickle the wrangler on button presses, etc
+    
+    IOPMWorkArbiter * getPMArbiter(void);
 
     static IOPMrootDomain * construct( void );
     virtual bool start( IOService * provider );
@@ -212,9 +215,14 @@ private:
     
     IOLock                  *featuresDictLock;  // guards supportedFeatures
     IOPMPowerStateQueue     *pmPowerStateQueue;
+    
+    IOWorkLoop              *arbiterWorkLoop;
+    IOPMWorkArbiter         *pmArbiter;
+    
     unsigned int user_spindown;       // User's selected disk spindown value
 
     unsigned int systemBooting:1;
+    unsigned int systemShutdown:1;
     unsigned int ignoringClamshell:1;
     unsigned int allowSleep:1;
     unsigned int sleepIsSupported:1;

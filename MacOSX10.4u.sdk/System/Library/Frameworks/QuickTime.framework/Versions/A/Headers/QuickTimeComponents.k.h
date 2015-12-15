@@ -3,9 +3,9 @@
  
      Contains:   QuickTime Interfaces.
  
-     Version:    QuickTime 7.1.2
+     Version:    QuickTime 7.2.1
  
-     Copyright:  © 1990-2006 by Apple Computer, Inc., all rights reserved
+     Copyright:  © 1990-2006 by Apple Inc., all rights reserved
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -303,6 +303,22 @@
 
 	EXTERN_API( HandlerError  ) ADD_TC_BASENAME(GetDisplayOptions) (TC_GLOBALS() ADD_TC_COMMA TCTextOptionsPtr  textOptions);
 
+	EXTERN_API( HandlerError  ) ADD_TC_BASENAME(GetCurrentFrameAndTimeCodeDef) (TC_GLOBALS() ADD_TC_COMMA SInt64 * outFrameNum, TimeCodeDef * outTCDef);
+
+	EXTERN_API( HandlerError  ) ADD_TC_BASENAME(GetFrameAndTimeCodeDefAtTime) (TC_GLOBALS() ADD_TC_COMMA const TimeValue64 * mediaTime, SInt64 * outFrameNum, TimeCodeDef * outTCDef);
+
+	EXTERN_API( HandlerError  ) ADD_TC_BASENAME(TimeCodeTimeToString) (TC_GLOBALS() ADD_TC_COMMA const TimeCodeDef * tCDef, const SMPTETime * tCTime, CFStringRef * outTCStr);
+
+	EXTERN_API( HandlerError  ) ADD_TC_BASENAME(TimeCodeCounterToString) (TC_GLOBALS() ADD_TC_COMMA const TimeCodeDef * tCDef, const TimeCode64Counter * tCCounter, CFStringRef * outTCStr);
+
+	EXTERN_API( HandlerError  ) ADD_TC_BASENAME(TimeCodeTimeToFrameNumber) (TC_GLOBALS() ADD_TC_COMMA const TimeCodeDef * tCDef, const SMPTETime * tCTime, SInt64 * outFrameNum);
+
+	EXTERN_API( HandlerError  ) ADD_TC_BASENAME(TimeCodeCounterToFrameNumber) (TC_GLOBALS() ADD_TC_COMMA const TimeCodeDef * tCDef, const TimeCode64Counter * tCCounter, SInt64 * outFrameNum);
+
+	EXTERN_API( HandlerError  ) ADD_TC_BASENAME(FrameNumberToTimeCodeTime) (TC_GLOBALS() ADD_TC_COMMA const SInt64 * frameNumber, const TimeCodeDef * tCDef, SMPTETime * outTCTime);
+
+	EXTERN_API( HandlerError  ) ADD_TC_BASENAME(FrameNumberToTimeCodeCounter) (TC_GLOBALS() ADD_TC_COMMA const SInt64 * frameNumber, const TimeCodeDef * tCDef, TimeCode64Counter * outTCCounter);
+
 
 	/* MixedMode ProcInfo constants for component calls */
 	enum {
@@ -316,7 +332,15 @@
 		uppTCSetTimeCodeFlagsProcInfo = 0x00000FF0,
 		uppTCGetTimeCodeFlagsProcInfo = 0x000003F0,
 		uppTCSetDisplayOptionsProcInfo = 0x000003F0,
-		uppTCGetDisplayOptionsProcInfo = 0x000003F0
+		uppTCGetDisplayOptionsProcInfo = 0x000003F0,
+		uppTCGetCurrentFrameAndTimeCodeDefProcInfo = 0x00000FF0,
+		uppTCGetFrameAndTimeCodeDefAtTimeProcInfo = 0x00003FF0,
+		uppTCTimeCodeTimeToStringProcInfo = 0x00003FF0,
+		uppTCTimeCodeCounterToStringProcInfo = 0x00003FF0,
+		uppTCTimeCodeTimeToFrameNumberProcInfo = 0x00003FF0,
+		uppTCTimeCodeCounterToFrameNumberProcInfo = 0x00003FF0,
+		uppTCFrameNumberToTimeCodeTimeProcInfo = 0x00003FF0,
+		uppTCFrameNumberToTimeCodeCounterProcInfo = 0x00003FF0
 	};
 
 #endif	/* TC_BASENAME */

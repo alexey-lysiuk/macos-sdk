@@ -3,7 +3,7 @@
  
      Contains:   Toolbar and Toolbar Item API
  
-     Version:    HIToolbox-226.1~151
+     Version:    HIToolbox-227.3~63
  
      Copyright:  © 2001-2006 by Apple Computer, Inc., all rights reserved.
  
@@ -175,6 +175,49 @@ enum {
    * automatically for you.
    */
   kHICommandHideToolbar         = 'tbhd',
+
+  /*
+   * This command causes a window's toolbar visibility to be toggled;
+   * if the toolbar is currently visible, then the toolbar is hidden,
+   * and vice versa. You can set a menu item's command to this ID and
+   * it will be handled and updated automatically for you. The text of
+   * the menu item will also be updated to indicate whether the toolbar
+   * will be shown or hidden. The standard window frame view sends a
+   * command event with this command ID when the toolbar button is
+   * clicked. Available in Mac OS X 10.5 and later.
+   */
+  kHICommandToggleToolbar       = 'tbtg',
+
+  /*
+   * This command causes the visibility of all toolbars with the same
+   * ID as the toolbar in the target window to be toggled. The standard
+   * window frame view sends a command event with this command ID when
+   * the toolbar button is option-clicked. Available in Mac OS X 10.5
+   * and later.
+   */
+  kHICommandToggleAllToolbars   = 'tbta',
+
+  /*
+   * This command causes the display mode and size of a window's
+   * toolbar to be cycled to the next smaller combination. For example,
+   * if the toolbar is currently displaying IconOnly at the Normal
+   * size, then the toolbar will switch display size to Small. The
+   * standard window frame view sends a command event with this command
+   * ID when the toolbar button is command-clicked. Available in Mac OS
+   * X 10.5 and later.
+   */
+  kHICommandCycleToolbarModeSmaller = 'tbms',
+
+  /*
+   * This command causes the display mode and size of a window's
+   * toolbar to be cycled to the next larger combination. For example,
+   * if the toolbar is currently displaying IconOnly at the Normal
+   * size, then the toolbar will switch display mode to IconAndLabel
+   * and display size to Small. The standard window frame view sends a
+   * command event with this command ID when the toolbar button is
+   * command-shift-clicked. Available in Mac OS X 10.5 and later.
+   */
+  kHICommandCycleToolbarModeLarger = 'tbml',
 
   /*
    * This command, when specified as a toolbar item’s command ID, will

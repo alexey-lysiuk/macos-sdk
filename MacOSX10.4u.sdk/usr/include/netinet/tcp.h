@@ -104,17 +104,20 @@ struct tcphdr {
 #define	TCPOPT_EOL		0
 #define	TCPOPT_NOP		1
 #define	TCPOPT_MAXSEG		2
-#define    TCPOLEN_MAXSEG		4
+#define TCPOLEN_MAXSEG		4
 #define TCPOPT_WINDOW		3
-#define    TCPOLEN_WINDOW		3
+#define TCPOLEN_WINDOW		3
 #define TCPOPT_SACK_PERMITTED	4		/* Experimental */
 #define    TCPOLEN_SACK_PERMITTED	2
 #define TCPOPT_SACK		5		/* Experimental */
+#define TCPOLEN_SACK		8		/* len of sack block */
 #define TCPOPT_TIMESTAMP	8
-#define    TCPOLEN_TIMESTAMP		10
-#define    TCPOLEN_TSTAMP_APPA		(TCPOLEN_TIMESTAMP+2) /* appendix A */
-#define    TCPOPT_TSTAMP_HDR		\
+#define TCPOLEN_TIMESTAMP	10
+#define TCPOLEN_TSTAMP_APPA		(TCPOLEN_TIMESTAMP+2) /* appendix A */
+#define TCPOPT_TSTAMP_HDR		\
     (TCPOPT_NOP<<24|TCPOPT_NOP<<16|TCPOPT_TIMESTAMP<<8|TCPOLEN_TIMESTAMP)
+
+#define	MAX_TCPOPTLEN		40	/* Absolute maximum TCP options len */
 
 #define	TCPOPT_CC		11		/* CC options: RFC-1644 */
 #define TCPOPT_CCNEW		12
@@ -123,6 +126,17 @@ struct tcphdr {
 #define	   TCPOLEN_CC_APPA		(TCPOLEN_CC+2)
 #define	   TCPOPT_CC_HDR(ccopt)		\
     (TCPOPT_NOP<<24|TCPOPT_NOP<<16|(ccopt)<<8|TCPOLEN_CC)
+#define	TCPOPT_SIGNATURE		19	/* Keyed MD5: RFC 2385 */
+#define	   TCPOLEN_SIGNATURE		18
+
+/* Option definitions */
+#define TCPOPT_SACK_PERMIT_HDR	\
+(TCPOPT_NOP<<24|TCPOPT_NOP<<16|TCPOPT_SACK_PERMITTED<<8|TCPOLEN_SACK_PERMITTED)
+#define	TCPOPT_SACK_HDR		(TCPOPT_NOP<<24|TCPOPT_NOP<<16|TCPOPT_SACK<<8)
+/* Miscellaneous constants */
+#define	MAX_SACK_BLKS	6	/* Max # SACK blocks stored at sender side */
+#define	TCP_MAX_SACK	3	/* MAX # SACKs sent in any segment */
+
 
 /*
  * Default maximum segment size for TCP.
@@ -177,9 +191,9 @@ struct tcphdr {
  */
 #define	TCP_NODELAY	0x01	/* don't delay send to coalesce packets */
 #ifndef _POSIX_C_SOURCE
-#define	TCP_MAXSEG	0x02	/* set maximum segment size */
-#define TCP_NOPUSH	0x04	/* don't push last block of write */
-#define TCP_NOOPT	0x08	/* don't use TCP options */
+#define TCP_MAXSEG		0x02	/* set maximum segment size */
+#define TCP_NOPUSH		0x04	/* don't push last block of write */
+#define TCP_NOOPT		0x08	/* don't use TCP options */
 #define TCP_KEEPALIVE	0x10	/* idle time used when SO_KEEPALIVE is enabled */
 #endif /* _POSIX_C_SOURCE */
 

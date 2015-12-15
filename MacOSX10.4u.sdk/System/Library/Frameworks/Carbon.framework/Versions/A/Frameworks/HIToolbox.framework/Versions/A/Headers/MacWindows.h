@@ -3,7 +3,7 @@
  
      Contains:   Window Manager Interfaces
  
-     Version:    HIToolbox-226.1~151
+     Version:    HIToolbox-227.3~63
  
      Copyright:  © 1997-2006 by Apple Computer, Inc., all rights reserved
  
@@ -8436,6 +8436,106 @@ ShowHideWindowToolbar(
  */
 extern Boolean 
 IsWindowToolbarVisible(WindowRef inWindow)                    AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+
+
+/*
+    About Custom Toolbar Views
+    
+    A window with a custom toolbar view does not have an HIToolbarRef. No API that takes an HIToolbarRef will work.
+    
+    When a custom toolbar view is provided for a window, the Window Manager will:
+        - set the view's HIViewID to kHIViewWindowToolbarID
+        - embed the toolbar view in the root view of the window
+        - make the toolbar view invisible
+        
+    These aspects of the standard toolbar support also work with custom toolbar views:
+        - unmodified clicks on the toolbar button to show and hide the toolbar
+        - ShowHideWindowToolbar and IsWindowToolbarVisible
+        - kHICommandShow/HideToolbar and kHICommandToggleToolbar
+        
+    These aspects of the standard toolbar support do _not_ work with custom toolbar views:
+        - option-click on toolbar button to toggle all windows with the same toolbar
+        - command-click and command-shift-click on toolbar button to change display mode and size
+        - command-option click on toolbar button to display config sheet
+        
+    A custom toolbar view must handle these events:
+        - kEventControlGetOptimalBounds
+        - kEventControlSetData with kHIToolbarViewDrawBackgroundTag
+        - kEventControlDraw and draw, or not, as requested by the background tag
+        
+    A custom toolbar view may optionally handle:
+        - kEventWindowAttributesChanged to be notified when window style changes
+        - kHICommandCustomizeToolbar to present its own toolbar customization dialog
+        - kHICommandToggleAllToolbars to implement multi-window toggling
+        - kHICommandCycleToolbarModeSmaller/Larger to change display mode and size
+*/
+
+/*
+ */
+enum {
+
+  /*
+   * A SetControlData tag that is used by the standard window frame
+   * view to inform the toolbar view whether the view should draw its
+   * background or leave its background transparent. The data for this
+   * tag is a Boolean. If the data value is true, the toolbar view
+   * should draw its background as it desires. If the data value is
+   * false, the toolbar view should leave its background transparent so
+   * that the window's root view can show through the toolbar view.
+   * Currently, the toolbar view will be asked to leave its background
+   * transparent for windows with the textured or unified appearance.
+   */
+  kHIToolbarViewDrawBackgroundTag = 'back'
+};
+
+/*
+ *  HIWindowSetToolbarView()
+ *  
+ *  Summary:
+ *    Sets a custom toolbar view for a window.
+ *  
+ *  Discussion:
+ *    This API is provided for use by applications that cannot use the
+ *    HIToolbarRef API. For best compatibility with future versions of
+ *    Mac OS X, we highly recommend that you use the HIToolbar API if
+ *    possible. However, if HIToolbar is not sufficient for your needs,
+ *    you can provide a custom toolbar view that will be placed at the
+ *    standard location inside the window frame. You are responsible
+ *    for defining the appearance and behavior of the view. You cannot
+ *    use this API to customize the view that is associated with an
+ *    HIToolbarRef; a window with an HIToolbarRef uses a standard
+ *    HIToolbox-provided view that cannot be customized. When using a
+ *    custom toolbar view, no API that takes an HIToolbarRef will work
+ *    with that window.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    inWindow:
+ *      The window whose toolbar view to set.
+ *    
+ *    inView:
+ *      The custom toolbar view for the window. You may pass NULL to
+ *      remove the custom view from the window. Setting a custom view
+ *      will also remove any HIToolbarRef that is associated with the
+ *      window. 
+ *      
+ *      After a custom toolbar view has been set, the window owns the
+ *      view and will release it automatically when the window is
+ *      destroyed, or when a different custom view or standard
+ *      HIToolbar is set for the window.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 and later in Carbon.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSStatus 
+HIWindowSetToolbarView(
+  WindowRef   inWindow,
+  void *      inView)         /* can be NULL */               AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
 /*ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ*/

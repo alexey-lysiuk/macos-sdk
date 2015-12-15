@@ -117,6 +117,7 @@ protected:
     UInt32		fROMGeneration;
     IORecursiveLock *fROMLock;
     RegistrationState	fRegistrationState;
+	UInt32		fROMReadRetry;
 	
 /*! @struct ExpansionData
     @discussion This structure will be used to expand the capablilties of the class in the future.

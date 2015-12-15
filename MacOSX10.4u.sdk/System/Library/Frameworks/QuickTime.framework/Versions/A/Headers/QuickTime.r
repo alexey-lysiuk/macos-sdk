@@ -3,9 +3,9 @@
  
      Contains:   Master include for all of QuickTime on OS X
  
-     Version:    QuickTime 7.1.2
+     Version:    QuickTime 7.2.1
  
-     Copyright:  © 1999-2006 by Apple Computer, Inc., all rights reserved.
+     Copyright:  © 1999-2006 by Apple Inc., all rights reserved.
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:

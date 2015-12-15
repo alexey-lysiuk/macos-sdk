@@ -3,9 +3,9 @@
  
      Contains:   QuickTime Image Compression Interfaces.
  
-     Version:    QuickTime 7.1.2
+     Version:    QuickTime 7.2.1
  
-     Copyright:  © 1990-2006 by Apple Computer, Inc., all rights reserved
+     Copyright:  © 1990-2006 by Apple Inc., all rights reserved
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -39,8 +39,27 @@ extern "C" {
 
 
 #ifndef AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER
- #define AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER   WEAK_IMPORT_ATTRIBUTE
+#define AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER       WEAK_IMPORT_ATTRIBUTE
 #endif
+#ifndef AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5
+#define AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5       AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER
+#endif
+#ifndef AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5
+#define AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5       AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER
+#endif
+#ifndef AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5
+#define AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5       AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER
+#endif
+#ifndef AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5
+#define AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5       AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+#endif
+#ifndef AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5
+#define AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5       AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER
+#endif
+
+/* QuickTime is not available to 64-bit clients */
+
+#if !__LP64__
 
 struct MatrixRecord {
   Fixed               matrix[3][3];
@@ -7205,7 +7224,7 @@ QTComponentPropertyListenerCollectionRemoveListener(
  *      The data parameter to pass to the filter function.
  *    
  *    inFlags:
- *      Flags.
+ *      Flags.  Must be set to 0.
  *  
  *  Availability:
  *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
@@ -12634,6 +12653,10 @@ QTPixelBufferContextCreate(
 
 
 #endif  /* TARGET_OS_WIN32 */
+
+
+#endif // !__LP64__
+
 
 
 #pragma pack(pop)

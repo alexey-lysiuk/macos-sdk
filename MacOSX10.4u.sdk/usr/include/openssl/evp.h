@@ -111,9 +111,6 @@
 #ifndef OPENSSL_NO_CAST
 #include <openssl/cast.h>
 #endif
-#ifndef OPENSSL_NO_IDEA
-#include <openssl/idea.h>
-#endif
 #ifndef OPENSSL_NO_MDC2
 #include <openssl/mdc2.h>
 #endif
@@ -708,13 +705,6 @@ const EVP_MD *EVP_dev_crypto_md5(void);
 #ifndef OPENSSL_NO_RC4
 const EVP_CIPHER *EVP_rc4(void);
 const EVP_CIPHER *EVP_rc4_40(void);
-#endif
-#ifndef OPENSSL_NO_IDEA
-const EVP_CIPHER *EVP_idea_ecb(void);
-const EVP_CIPHER *EVP_idea_cfb64(void);
-# define EVP_idea_cfb EVP_idea_cfb64
-const EVP_CIPHER *EVP_idea_ofb(void);
-const EVP_CIPHER *EVP_idea_cbc(void);
 #endif
 #ifndef OPENSSL_NO_RC2
 const EVP_CIPHER *EVP_rc2_ecb(void);

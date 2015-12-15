@@ -644,7 +644,11 @@ extern double yn ( int, double );
  
 /* maps to _scalb$UNIX2003 on __ppc__ and _scalb elsewhere */
 #if defined( __ppc__ )
-	extern double scalb ( double, double )  __asm("_scalb$UNIX2003" ); 
+    #if defined( __GNUC__ )
+        extern double scalb ( double, double )  __asm("_scalb$UNIX2003" ); 
+    #else
+        extern double scalb ( double , int );  
+    #endif
 #else
 	extern double scalb ( double, double );
 #endif

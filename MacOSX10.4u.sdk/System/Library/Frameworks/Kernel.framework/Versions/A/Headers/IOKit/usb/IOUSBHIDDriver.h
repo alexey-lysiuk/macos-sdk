@@ -116,6 +116,7 @@ class IOUSBHIDDriver : public IOHIDDevice
 		UInt8							_interfaceNumber;
 		bool							_logHIDReports;
 		UInt8							_hidLoggingLevel;
+		AbsoluteTime					_interruptTimeStamp;
     };
     IOUSBHIDDriverExpansionData *_usbHIDExpansionData;
     

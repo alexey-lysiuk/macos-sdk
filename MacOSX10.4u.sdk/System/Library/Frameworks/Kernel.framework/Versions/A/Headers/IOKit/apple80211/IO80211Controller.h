@@ -28,6 +28,12 @@
  */
 #if defined(KERNEL) && defined(__cplusplus)
 
+#include <libkern/version.h>
+
+#if VERSION_MAJOR > 8
+	#define _MODERN_BPF
+#endif
+
 #include <IOKit/network/IOEthernetController.h>
 
 #include <sys/param.h>
@@ -40,7 +46,24 @@
 #define IO80211_LEGACY_COMPAT
 #endif 
 
-#define DEFAULT_SCAN_TIME		3	// seconds
+#ifdef IO80211_LEGACY_COMPAT
+#ifndef __STRUCT_WEPNETWORK__
+#define __STRUCT_WEPNETWORK__
+// Have to redifine this here because can't include AirPortComm.h; this header file is used by all the vendors
+typedef struct WepNetwork
+{
+//	UInt32	keyLen;					// zero keyLen ==> encryption off
+	UInt16	bssType;				// selects Infra/IBSS
+	UInt16	keyLen;					// zero keyLen ==> encryption off
+	UInt8	key[16];				// WEP key (5 or 13 bytes)
+	UInt16	authentication;			// open system, or shared key
+	char	ssid[34];               // Network name.
+	UInt8	rsnKey[32];				// RSN keys are bigger
+} WepNetwork;
+typedef WepNetwork *WepNetworkPtr;
+#endif
+#endif
+
 #define AUTH_TIMEOUT			15	// seconds
 
 /*! @enum LinkSpeed.
@@ -72,6 +95,12 @@ enum IO80211SystemPowerState
 };
 typedef enum IO80211SystemPowerState IO80211SystemPowerState;
 
+enum IO80211FeatureCode
+{
+	kIO80211Feature80211n = 1,
+};
+typedef enum IO80211FeatureCode IO80211FeatureCode;
+
 #define IO80211_LOG( _interface, _level, _msg, ... )	do{ if( _interface && ( _interface->debugFlags() & _level ) ) IOLog( _msg, ##__VA_ARGS__ ); }while(0)
 
 class IO80211Interface;
@@ -88,22 +117,22 @@ class IO80211Controller : public IOEthernetController
 
 	#ifdef IO80211_LEGACY_COMPAT
 	private:
-		struct apple80211_key			_lastAssocKey;
 		struct apple80211_assoc_data	_lastAssocData;
-		UInt8							_mcastCipher;
 		bool							_interferenceRobustness;
 		IO80211Scanner					*_scanner;
+		WepNetwork						_lastLegacyAssocInfo;
 
 	public:
 		IOReturn newUserClient( task_t owningTask, void * securityID, UInt32 type, 
 						OSDictionary * properties, IOUserClient ** handler );
 		IOReturn queueCommand( UInt8 commandCode, void *arguments, void *returnValue );
 		static IOReturn execCommand( OSObject * obj, void *field0, void *field1, void *field2, void *field3 );
+		
+		SInt32 getLastAssocData( struct apple80211_assoc_data * ad);
+		SInt32 setLastAssocData( struct apple80211_assoc_data * ad);
 
-		IOReturn getLastAssocKey(struct apple80211_key* key, UInt8* mcastCipher);
-		IOReturn setLastAssocKey(struct apple80211_key* key, UInt8 mcastCipher);
-		SInt32 getLastAssocData( struct apple80211_assoc_data * ad );
-		SInt32 setLastAssocData( struct apple80211_assoc_data * ad );
+		IOReturn getLastLegacyAssocInfo(WepNetworkPtr netPtr );
+		IOReturn setLastLegacyAssocInfo(WepNetworkPtr netPtr );
 		
 		bool getInterferenceRobustness()			{ return _interferenceRobustness; }
 		void setInterferenceRobustness(bool flag)	{ _interferenceRobustness = flag; }
@@ -199,20 +228,12 @@ public:
 		*/
 	virtual bool configureInterface(IONetworkInterface * netIf);
 	
-	/*! @function registerWithPolicyMaker
+		/*! @function registerWithPolicyMaker
 		@abstract ???.
 		@param policyMaker ???.
 		@result Returns ???. 
 		*/ 
     virtual IOReturn			registerWithPolicyMaker(IOService *policyMaker);
-	
-	/*! @function scanTimeForRequest
-		@abstract ???.
-		@param policyMaker ???.
-		@result Returns ???. 
-		*/ 
-	virtual UInt32				scanTimeForRequest( IO80211Interface * interface, 
-													struct apple80211_scan_data * sd ) { return DEFAULT_SCAN_TIME; }
 	
 	/*! @function inputMonitorPacket
 		@abstract ???.
@@ -683,6 +704,10 @@ public:
 	
 	UInt32 radioCountForInterface( IO80211Interface * interface );
 
+	virtual SInt32 enableFeature( IO80211FeatureCode feature, void * refcon ) { return EOPNOTSUPP; }
+	
+	SInt32 doFeatureCheck();
+
 protected:
 	
 		/*! @function powerDownHandler
@@ -732,7 +757,6 @@ private:
 	IOService	*	_provider;
 	
 	bool _ifAttachPending;
-	
 
 		// Virtual function padding
 	OSMetaClassDeclareReservedUnused( IO80211Controller,  0);

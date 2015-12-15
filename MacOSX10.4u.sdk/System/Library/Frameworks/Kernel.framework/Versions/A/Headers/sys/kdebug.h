@@ -168,6 +168,7 @@ __BEGIN_DECLS
 #define DBG_IOBLUETOOTH		46	/* Bluetooth */
 #define DBG_IOFIREWIRE		47	/* FireWire */
 #define DBG_IOINFINIBAND	48	/* Infiniband */
+#define DBG_IOCPUPM		49	/* CPU Power Management */
 
 /* Backwards compatibility */
 #define	DBG_IOPOINTING		DBG_IOHID			/* OBSOLETE: Use DBG_IOHID instead */
@@ -231,6 +232,12 @@ __BEGIN_DECLS
 #define DKIO_META	0x08
 #define DKIO_PAGING	0x10
 
+/* The Kernel Debug Modifiers for the DBG_IOCPUPM sub-class */
+#define DCPM_PSTATE		0x0001
+#define DCPM_IDLE_CSTATE	0x0002
+#define DCPM_IDLE_HALT		0x0003
+#define DCPM_IDLE_LOOP		0x0004
+
 /**********************************************************************/
 
 #define KDBG_CODE(Class, SubClass, code) (((Class & 0xff) << 24) | ((SubClass & 0xff) << 16) | ((code & 0x3fff)  << 2))
@@ -250,6 +257,7 @@ __BEGIN_DECLS
 #define DYLDDBG_CODE(SubClass,code) KDBG_CODE(DBG_DYLD, SubClass, code)
 #define QTDBG_CODE(SubClass,code) KDBG_CODE(DBG_QT, SubClass, code)
 #define APPSDBG_CODE(SubClass,code) KDBG_CODE(DBG_APPS, SubClass, code)
+#define CPUPM_CODE(code) IOKDBG_CODE(DBG_IOCPUPM, code)
 
 /*   Usage:
 * kernel_debug((KDBG_CODE(DBG_NETWORK, DNET_PROTOCOL, 51) | DBG_FUNC_START), 

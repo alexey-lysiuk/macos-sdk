@@ -374,6 +374,9 @@ public:
 	
 	virtual bool	DoesHBAPerformAutoSense ( void );
 	
+
+#if !(defined(__ppc__) && defined(KPI_10_4_0_PPC_COMPAT))
+	
 	/*!
 		@function ReportHBAConstraints
 		@abstract Called to report the I/O constraints for this controller.
@@ -393,6 +396,12 @@ public:
 	OSMetaClassDeclareReservedUsed ( IOSCSIParallelInterfaceController, 2 );
 	
 	virtual void	ReportHBAConstraints ( OSDictionary * constraints );
+
+#else
+	
+	OSMetaClassDeclareReservedUnused ( IOSCSIParallelInterfaceController, 2 );
+	
+#endif
 	
 	// Padding for the Client API
 	OSMetaClassDeclareReservedUnused ( IOSCSIParallelInterfaceController, 3 );
@@ -1384,7 +1393,8 @@ protected:
 	OSMetaClassDeclareReservedUsed ( IOSCSIParallelInterfaceController, 10 );
 	
 	virtual bool		FilterInterruptRequest ( void );
-	
+
+#if !(defined(__ppc__) && defined(KPI_10_4_0_PPC_COMPAT))
 	/*!
 		@function InitializeDMASpecification
 		@abstract Called to initialize an IODMACommand with a DMA specification.
@@ -1394,8 +1404,14 @@ protected:
 		@result boolean value indicating success or failure.
 	*/
 	OSMetaClassDeclareReservedUsed ( IOSCSIParallelInterfaceController, 11 );
-	
+
 	virtual bool	InitializeDMASpecification ( IODMACommand * command );
+	
+#else
+	
+	OSMetaClassDeclareReservedUnused ( IOSCSIParallelInterfaceController, 11 );
+	
+#endif
 	
 	
 	// Padding for the Child Class API

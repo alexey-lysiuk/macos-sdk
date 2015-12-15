@@ -2749,8 +2749,8 @@ typedef void (* glProgramLocalParameter4fARBProcPtr) (GLenum target, GLuint inde
 typedef void (* glProgramLocalParameter4fvARBProcPtr) (GLenum target, GLuint index, const GLfloat *params);
 
 #if GL_EXT_gpu_program_parameters
-typedef void (* glProgramEnvParameters4fvEXTProcPtr) (GLenum target, GLuint index, GLSizei count, const GLfloat *params);
-typedef void (* glProgramLocalParameters4fvEXTProcPtr) (GLenum target, GLuint index, GLSizei count, const GLfloat *params);
+typedef void (* glProgramEnvParameters4fvEXTProcPtr) (GLenum target, GLuint index, GLsizei count, const GLfloat *params);
+typedef void (* glProgramLocalParameters4fvEXTProcPtr) (GLenum target, GLuint index, GLsizei count, const GLfloat *params);
 #endif
 
 typedef void (* glGetProgramEnvParameterdvARBProcPtr) (GLenum target, GLuint index, GLdouble *params);

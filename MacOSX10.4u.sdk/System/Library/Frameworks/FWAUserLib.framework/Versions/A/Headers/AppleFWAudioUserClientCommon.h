@@ -14,6 +14,8 @@
 #ifndef _AppleFWAudioUserClientCommon_H
 #define _AppleFWAudioUserClientCommon_H
 
+#define CURRENT_DEVICE_STATUS_VERSION (0x00012000)
+
 #define kNumInputClientBuffers			1
 #define kMIDIInputClientBufferSize 		(2 * 32)
 #define kMIDIInputRingBufferSize 		(8 * kMIDIInputClientBufferSize * kNumInputClientBuffers )
@@ -23,7 +25,20 @@
 #define kMIDIOutputRingBufferSize		(8 * kMIDIOutputClientBufferSize *  kNumOutputClientBuffers)
 
 #define kFWAStreamIdentSize 			(36)
-#define kFWAStreamEndpointIndentifier "kFWAudioStreamEndpointIdentifier"
+#define kFWAStreamEndpointIndentifier	"kFWAudioStreamEndpointIdentifier"
+#define kAudioPlugPropertiesKey			"AudioPlugProperties"
+#define kMIDIPlugPropertiesKey			"MIDIPlugProperties"
+
+#define kMIDIPropertiesIsPrivateKey		"MIDIPropertyIsPrivate"
+#define kMIDIPropertiesIsEmbeddedKey	"MIDIPropertyIsEmbedded"
+
+#define kFWAGetCurrentClockSourcePlugKey	'clkp'
+
+#define kFWAMaxPropertyKeyLength (256)
+#define kFWAMaxPropertyValueLength (4096 - (kFWAMaxPropertyKeyLength + 8))
+#define kFWAMaxPathLength (512)
+
+#include <libkern/OSTypes.h>
 
 enum {
 	kCurrentEraseHeadMeterArrayOffset = 0,
@@ -34,14 +49,30 @@ enum {
 	kGetFixedHeaderCountMeterArrayOffset = 5,
 	kGetBigPacketCountMeterArrayOffset = 6,
 	kLastTimeStampMeterArrayOffset = 7,
+	kLastTimeStampMeterArrayOffset2 = 8,
+	kInputPacketCountMeterArrayOffset = 9
+	
 };
-
 
 enum 
 {
 	kMIDIStreamOut = 0,
-	kMIDIStreamIn = 1
+	kMIDIStreamIn = 1,
+	// OR this will the above to indicate that the MIDI buffer is a structure defined below.
+	kMIDITimeStamp = 0x80000000UL
 };
+
+typedef struct FWAMIDIInputBufferWithTimeStamp
+{
+	UInt64		timeStamp;
+	UInt8		midiBuffer[kMIDIInputClientBufferSize];
+} FWAMIDIInputBufferWithTimeStamp;
+
+typedef struct FWAMIDIOutputBufferWithTimeStamp
+{
+	UInt64		timeStamp;
+	UInt8		midiBuffer[kMIDIOutputClientBufferSize];
+} FWAMIDIOutputBufferWithTimeStamp;
 
 enum FWAStreamDirection
 {
@@ -51,11 +82,10 @@ enum FWAStreamDirection
 
 typedef enum FWAStreamDirection FWAStreamDirection;
 
-
 typedef struct FWAMIDIReadBuffer
 {
-	unsigned long			bufSize;
-	unsigned long 			mrBuf[kMIDIInputClientBufferSize];	
+	UInt32			bufSize;
+	UInt32 			mrBuf[kMIDIInputClientBufferSize];	
 
 } FWAMIDIReadBuf;
 
@@ -63,15 +93,19 @@ enum FWAudioType
 {
 	kIEC60958		= 0x00,
 	kRawAudio		= 0x40,
-	kMIDI			= 0x80
+	kMIDI			= 0x80,
+	kAncillaryData	= 0xC0,
+	kAllEventTypes  = 0xFF
 };
 typedef enum FWAudioType FWAudioType, *FWAudioTypePtr;
 
 enum FWAMIDIDataInfo 
 {
-    kFWAMIDIPlugName		= 'mnam',
-	kFWAMIDIPlugIdent		= 'midn',
-	kFWAMIDIGetIndexedPlug 	= 0xFFFFFFFF,
+    kFWAMIDIPlugName				= 'mnam',
+	kFWAMIDIPlugIdent				= 'midn',		// Used with MIDI unique plug ID
+	kFWAMIDIPlugPropertyPrivate		= 'priv',
+	kFWAMIDIPlugPropertyEmbedded	= 'embd',	
+	kFWAMIDIGetIndexedPlug			= 0xFFFFFFFF
 };
 
 enum FWAStreamState 
@@ -82,30 +116,37 @@ enum FWAStreamState
     kFWAStreamResumed	= 3
 };
 
+enum
+{
+	kFWAPlugNotConnected = 0xFF,
+	kFWAUnusedIsochChannelID = 0xFF
+};
+
 typedef enum FWAStreamState FWAStreamState;
-typedef void (*FWAStreamNotificationProc)( unsigned long isochStreamRef, void*  refCon);
+typedef void (*FWAStreamNotificationProc)(UInt32 isochStreamRef, void* refCon);
 
 
+// Moved to AppleFWAudioUserLib.cpp
 // update this with the version of the driver in xxxx.xxxx
-const unsigned long kFWADeviceStatusCurrentVersion = 0x00011100;
+extern const UInt32 kFWADeviceStatusCurrentVersion;
 
 typedef struct FWADeviceStatus
 {
-	unsigned long	version;	
-	unsigned long	sampleCounter;
-	unsigned long	inputSampleFrame;
-	unsigned long	outputSampleFrame;
-	unsigned long	inputClipSampleFrame;
-	unsigned long	outputClipSampleFrame;
-	unsigned long	meterData[1];	//numInputChannels + numInputChannels
+	UInt32			version;	
+	UInt32			sampleCounter;
+	UInt32			inputSampleFrame;
+	UInt32			outputSampleFrame;
+	UInt32			inputClipSampleFrame;
+	UInt32			outputClipSampleFrame;
+	UInt32			meterData[1];	//numInputChannels + numInputChannels
 } FWADeviceStatusRec, *FWADeviceStatusRecPtr;
 
 typedef struct FWACreateStreamRec
 {
-	unsigned long 	owningIsochStreamRef;
-	unsigned long 	channelNumber;
-	unsigned long 	direction;
-	unsigned long 	numAudioChannels;
+	UInt32			owningIsochStreamRef;
+	UInt32			channelNumber;
+	UInt32			direction;
+	UInt32			numAudioChannels;
     char			streamName[64];
 	unsigned char	streamIdent[kFWAStreamIdentSize];
 	bool			streamIdentIsNull;
@@ -114,21 +155,66 @@ typedef struct FWACreateStreamRec
 
 typedef struct FWACreateMIDIPlugRec
 {
-	unsigned long 	owningMIDIStreamRef;
-	unsigned long 	mpxID;
+	UInt32			owningMIDIStreamRef;
+	UInt32			mpxID;
     char			plugName[64];
 	unsigned char	plugIdent[kFWAStreamIdentSize];
 	bool			plugIdentIsNull;
 } FWACreateMIDIPlugRec, *FWACreateMIDIPlugRecPtr;
 
+typedef struct FWACreateFWAudioPlugRec
+{
+	UInt32			owningAudioStreamRef;
+	UInt32			channelID;
+    char			plugName[64];
+	unsigned char	plugIdent[kFWAStreamIdentSize];
+	bool			plugIdentIsNull;
+} FWACreateFWAudioPlugRec, *FWACreateFWAudioPlugRecPtr;
 
 typedef struct FWACreateDeviceRec
 {
-	unsigned long 	vendorID;
+	UInt32			vendorID;
     char			deviceName[64];
 	char			guidStr[64];
 
 } FWACreateDeviceRec, *FWACreateDeviceRecPtr;
+
+typedef struct FWASetPluginPathRec
+{
+	UInt32			owningEngineRef;
+	UInt32			vendorID;
+	UInt32			modelID;	
+    char			pluginPath[kFWAMaxPathLength];
+	bool			pluginPathIsNull;
+	bool			cacheValues;
+} FWASetPluginPathRec, *FWASetPluginPathRecPtr;
+
+typedef struct FWASetPlugPropertyRec
+{
+	UInt32			owningPlugRef;
+    char			plugPropertyKey[kFWAMaxPropertyKeyLength];
+	char			plugPropertyValue[kFWAMaxPropertyValueLength];
+	bool			plugPropertyValueIsNull;
+
+} FWASetPlugPropertyRec, *FWASetPlugPropertyRecPtr;
+
+typedef struct FWACreateMIDIDeviceNubRec
+{
+	UInt32			owningDevice;
+	UInt32			vendorID;
+	UInt32			modelID;
+	char			deviceName[64];
+	char			guidStr[64];
+    char			iconFilePath[256];
+	char			editorPath[256];
+} FWACreateMIDIDeviceNubRec, *FWACreateMIDIDeviceNubRecPtr;
+
+typedef struct FWAGetPropertyRec
+{
+	UInt32			key;
+	UInt32			size;
+    char			data[1024];
+} FWAGetPropertyRec, *FWAGetPropertyRecPtr;
 
 enum
 {
@@ -311,12 +397,77 @@ enum
 	kSetAutoLoadInParamCount 						= 1,
 	kSetAutoLoadOutParamCount 						= 0,	
 
-	kGetPropertyInParamCount 						= 2,
-	kGetPropertyOutParamCount 						= 0,	
+	kGetPropertyInParamCount 						= 0xFFFFFFFF,
+	kGetPropertyOutParamCount 						= 0xFFFFFFFF,	
 	
 	kSetPropertyInParamCount 						= 2,
-	kSetPropertyOutParamCount 						= 0	
+	kSetPropertyOutParamCount 						= 0,
 	
+	kSetPluginPathInParamCount 						= 0xFFFFFFFF,
+	kSetPluginPathOutParamCount 					= 0xFFFFFFFF,
+	
+	kCreateFWAudioPlugInParamCount					= 0xFFFFFFFF,			
+	kCreateFWAudioPlugOutParamCount					= 0xFFFFFFFF,
+	
+	kDisposeFWAudioPlugInParamCount 				= 1,
+	kDisposeFWAudioPlugOutParamCount				= 0,
+	
+	kSetFWAudioMIDIPlugChannelInParamCount			= 2,
+	kSetFWAudioMIDIPlugChannelOutParamCount			= 0,
+	
+	kGetFWAudioMIDIPlugChannelInParamCount			= 1,
+	kGetFWAudioMIDIPlugChannelOutParamCount			= 2,
+	
+	kGetFWAudioPlugChannelInParamCount				= 1,
+	kGetFWAudioPlugChannelOutParamCount				= 1,
+	
+	kSetFWAudioPlugChannelInParamCount				= 2,
+	kSetFWAudioPlugChannelOutParamCount				= 0,
+	
+	kAttachFWAudioStreamInParamCount 				= 2,
+	kAttachFWAudioStreamOutParamCount				= 0,
+	
+	kAttachFWAudioMIDIStreamInParamCount 			= 2,
+	kAttachFWAudioMIDIStreamOutParamCount			= 0,
+	
+	kSetFWAudioPlugPropertyInParamCount 			= 0xFFFFFFFF,
+	kSetFWAudioPlugPropertyOutParamCount			= 0xFFFFFFFF,
+	
+	kSetFWAudioMIDIPlugPropertyInParamCount 		= 0xFFFFFFFF,
+	kSetFWAudioMIDIPlugPropertyOutParamCount		= 0xFFFFFFFF,
+	
+	kOpenLocalWithInterfaceInParamCount 			= 0,
+	kOpenLocalWithInterfaceOutParamCount			= 0,
+	
+	kOpenWithServiceInParamCount 					= 0,
+	kOpenWithServiceOutParamCount					= 0,
+	
+	kGetMaxSpeedInParamCount						= 0,
+	kGetMaxSpeedOutParamCount						= 1,	
+	
+	kGetSessionRefInParamCount						= 0,
+	kGetSessionRefOutParamCount						= 0,
+	
+	kReserveIsochSequencesInParamCount				= 3,
+	kReserveIsochSequencesOutParamCount				= 0,
+
+	kCreateFWAudioMIDIDeviceNubInParamCount 		= 0xFFFFFFFF,
+	kCreateFWAudioMIDIDeviceNubOutParamCount 		= 0xFFFFFFFF,
+	
+	kDisposeFWAudioMIDIDeviceNubInParamCount		= 1, 
+	kDisposeFWAudioMIDIDeviceNubOutParamCount		= 0,
+	
+	kGetIndexedFWAudioPlugInParamCount				= 3, 
+	kGetIndexedFWAudioPlugOutParamCount				= 1,
+
+	kGetIndexedFWAudioMIDIPlugInParamCount			= 3, 
+	kGetIndexedFWAudioMIDIPlugOutParamCount			= 1,
+	
+	kMIDIDeviceNubAttachMIDIPlugInParamCount		= 2,
+	kMIDIDeviceNubAttachMIDIPlugOutParamCount		= 0,
+	
+	kMIDIDeviceNubDetachMIDIPlugInParamCount		= 1,
+	kMIDIDeviceNubDetachMIDIPlugOutParamCount		= 0	
 };
 
 // Index into our API
@@ -402,7 +553,33 @@ enum
 	kFWAGetProperty,
 	kFWASetProperty,
 
-//  -----------------------
+// V7   -----------------------
+
+	kFWASetPluginPath,
+	kFWACreateFWAudioPlug,
+	kFWADisposeFWAudioPlug,
+	kFWASetFWAudioMIDIPlugChannel,
+	kFWASetFWAudioPlugChannel,
+	kFWAGetFWAudioMIDIPlugChannel,
+	kFWAGetFWAudioPlugChannel,
+	kFWAAttachFWAudioStream,
+	kFWAAttachFWAudioMIDIStream,
+	kFWASetFWAudioPlugProperty,
+	kFWASetFWAudioMIDIPlugProperty,
+	kFWAOpenLocalWithInterface,
+	kFWAOpenWithService,
+	kFWAGetSessionRef,
+	kFWAGetMaxSpeed,
+	kFWAReserveIsochSequences,
+	kFWACreateFWAudioMIDIDeviceNub,
+	kFWADisposeFWAudioMIDIDeviceNub,
+	kFWAGetIndexedFWAudioPlug, 
+	kFWAGetIndexedFWAudioMIDIPlug,  
+	kFWAMIDIDeviceNubAttachMIDIPlug,
+	kFWAMIDIDeviceNubDetachMIDIPlug,
+
+
+//   ------------------------
 	
 	kFWANumberFWAMethods			// Keep kFWANumberFWAMethods last!! (current count )
 };

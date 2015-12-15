@@ -3,7 +3,7 @@
  
      Contains:   ATSUI types and constants.
  
-     Version:    Quickdraw-192.20~75
+     Version:    Quickdraw-192.24~58
  
      Copyright:  © 2003-2006 by Apple Computer, Inc., all rights reserved.
  

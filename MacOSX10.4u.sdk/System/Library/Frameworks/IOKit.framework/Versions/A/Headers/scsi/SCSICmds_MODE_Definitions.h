@@ -61,7 +61,7 @@ enum
 	kModeSenseParameterHeader10_LongLBAMask	=  (1 << kModeSenseParameterHeader10_LongLBABit),
 };
 
-// SBC definitions for Device Specific Paramter in the Mode Sense Header Block
+// SBC definitions for Device Specific Parameter in the Mode Sense Header Block
 enum
 {
 	kModeSenseSBCDeviceSpecific_WriteProtectBit	 =  7,

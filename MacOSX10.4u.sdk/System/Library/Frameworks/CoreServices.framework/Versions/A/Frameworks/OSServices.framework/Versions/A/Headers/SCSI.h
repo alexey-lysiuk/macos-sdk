@@ -3,7 +3,7 @@
  
      Contains:   SCSI Family Interfaces.
  
-     Version:    OSServices-101.1~600
+     Version:    OSServices-101.1~790
  
      Copyright:  © 1986-2006 by Apple Computer, Inc., all rights reserved
  

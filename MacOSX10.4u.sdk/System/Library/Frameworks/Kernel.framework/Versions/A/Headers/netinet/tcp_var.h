@@ -232,6 +232,15 @@ struct	tcpstat {
 	u_long	tcps_badsyn;		/* bogus SYN, e.g. premature ACK */
 	u_long	tcps_mturesent;		/* resends due to MTU discovery */
 	u_long	tcps_listendrop;	/* listen queue overflows */
+
+	/* SACK related stats */
+	u_long	tcps_sack_recovery_episode; /* SACK recovery episodes */
+	u_long  tcps_sack_rexmits;	    /* SACK rexmit segments   */
+	u_long  tcps_sack_rexmit_bytes;	    /* SACK rexmit bytes      */
+	u_long  tcps_sack_rcv_blocks;	    /* SACK blocks (options) received */
+	u_long  tcps_sack_send_blocks;	    /* SACK blocks (options) sent     */
+	u_long  tcps_sack_sboverflow;	    /* SACK sendblock overflow   */
+
 };
 
 /*

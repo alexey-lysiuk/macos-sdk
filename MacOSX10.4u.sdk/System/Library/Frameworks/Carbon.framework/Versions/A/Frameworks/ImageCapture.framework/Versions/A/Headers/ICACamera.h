@@ -3,7 +3,7 @@
  
      Contains:   Digital still camera-specific selectors and structures
  
-     Version:    ImageCaptureFramework-328~140
+     Version:    ImageCaptureFramework-328~385
  
      Copyright:  © 2000-2006 by Apple Computer, Inc., all rights reserved.
  

@@ -3,9 +3,9 @@
  
      Contains:   AltiVec DSP Interfaces
  
-     Version:    vecLib-192.16
+     Version:    vecLib-192.17
  
-     Copyright:  © 2000-2006 by Apple Computer, Inc., all rights reserved.
+     Copyright:  © 2000-2007 by Apple Computer, Inc., all rights reserved.
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -48,7 +48,7 @@ extern "C" {
 	vDSP_Version1 is a minor version number.
 */
 #define	vDSP_Version0	192
-#define	vDSP_Version1	16
+#define	vDSP_Version1	17
 
 
 typedef unsigned long                   vDSP_Length;

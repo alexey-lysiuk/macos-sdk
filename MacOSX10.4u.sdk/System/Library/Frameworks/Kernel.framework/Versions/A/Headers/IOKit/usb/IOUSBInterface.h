@@ -84,6 +84,7 @@ public:
     virtual bool 	finalize(IOOptionBits options);
     virtual void 	stop(IOService *  provider);
     virtual IOReturn 	message( UInt32 type, IOService * provider,  void * argument = 0 );
+    virtual bool		terminate( IOOptionBits options = 0 );
 #if !(defined(__ppc__) && defined(KPI_10_4_0_PPC_COMPAT))
     virtual bool 	didTerminate( IOService * provider, IOOptionBits options, bool * defer );
 #endif

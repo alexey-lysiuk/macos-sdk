@@ -666,6 +666,7 @@ enum {
     kConnectionSupportsLLDDCSense	= 'lddc',
     kConnectionSupportsHLDDCSense	= 'hddc',
     kConnectionEnable			= 'enab',
+    kConnectionProbe			= 'prob',
     kConnectionChanged			= 'chng',
     kConnectionPower			= 'powr',
     kConnectionPostWake			= 'pwak',

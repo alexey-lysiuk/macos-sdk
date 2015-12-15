@@ -160,6 +160,8 @@ public:
 
     virtual bool start( IOService * provider );
 
+    virtual void stop( IOService * provider );
+
     virtual bool configure( IOService * provider );
 
     /* * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -294,10 +296,9 @@ protected:
 	uint32_t		    hotplugCount;
 	uint8_t			    presence;
 	uint8_t			    waitingLinkEnable;
-	uint8_t			    hotplugFirstBus;
-	uint8_t			    hotplugLastBus;
+	uint8_t			    linkChangeOnly;
 	uint8_t			    interruptEnablePending;
-	uint8_t			    __reserved[3];
+	uint8_t			    __reserved[4];
     // hotp/
     };
 
@@ -318,6 +319,8 @@ public:
                                 SInt32 *	score );
 
     virtual bool start( IOService * provider );
+
+    virtual void stop( IOService * provider );
 
     virtual bool configure( IOService * provider );
 

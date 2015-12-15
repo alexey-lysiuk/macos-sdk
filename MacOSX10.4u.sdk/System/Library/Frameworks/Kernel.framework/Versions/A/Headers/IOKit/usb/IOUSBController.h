@@ -1092,7 +1092,7 @@ public:
 
     OSMetaClassDeclareReservedUnused(IOUSBController,  19);
     
-private:
+protected:
     void	IncreaseIsocCommandPool();
     void 	IncreaseCommandPool();
     void	ParsePCILocation(const char *str, int *deviceNum, int *functionNum);

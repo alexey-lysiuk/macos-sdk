@@ -178,6 +178,8 @@
 #define CPUID_MODEL_P6A             0xA /* Intel PIII Xeon model A */
 #define CPUID_MODEL_P6B             0xB /* Intel PIII model B */
 #define CPUID_MODEL_PMD             0xD /* Intel Pentium M model D */
+#define CPUID_MODEL_CORE            0xE /* Intel Core Solo & Duo */
+#define CPUID_MODEL_CORE2	    0xF /* Intel Core2 Duo */
 
 #define CPUID_MODEL_ATHLON_M1       0x1 /* AMD Athlon Model 1 */
 #define CPUID_MODEL_ATHLON_M2       0x2 /* AMD Athlon Model 2 */

@@ -410,6 +410,7 @@ Completion Code         Error Returned              Description
 #define kIOUSBMessageFromThirdParty         iokit_usb_msg(14)  // 0xe0000400e  Message sent from a third party.  Uses IOUSBThirdPartyParam to encode the sender's ID
 #define kIOUSBMessagePortWasNotSuspended    iokit_usb_msg(15)  // 0xe0000400f  Message indicating that the hub driver received a resume request for a port that was not suspended
 #define kIOUSBMessageExpressCardCantWake    iokit_usb_msg(16)  // 0xe00004010  Message from a driver to a bus that an express card will disconnect on sleep and thus shouldn't wake
+#define kIOUSBMessageCompositeDriverReconfigured    iokit_usb_msg(17)  // 0xe00004011  Message from the composite driver indicating that it has finished re-configuring the device after a reset
 
 // Obsolete
 //

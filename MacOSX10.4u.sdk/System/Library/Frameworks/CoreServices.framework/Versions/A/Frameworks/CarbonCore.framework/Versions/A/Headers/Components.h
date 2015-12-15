@@ -3,7 +3,7 @@
  
      Contains:   Component Manager Interfaces.
  
-     Version:    CarbonCore-682.14~33
+     Version:    CarbonCore-682.26~1
  
      Copyright:  © 1991-2006 by Apple Computer, Inc., all rights reserved.
  

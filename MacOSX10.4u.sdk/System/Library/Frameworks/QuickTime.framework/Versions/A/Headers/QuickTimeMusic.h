@@ -3,9 +3,9 @@
  
      Contains:   QuickTime Interfaces.
  
-     Version:    QuickTime 7.1.2
+     Version:    QuickTime 7.2.1
  
-     Copyright:  © 1990-2006 by Apple Computer, Inc., all rights reserved
+     Copyright:  © 1990-2006 by Apple Inc., all rights reserved
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -42,6 +42,10 @@ extern "C" {
 #endif
 
 #pragma pack(push, 2)
+
+/* QuickTime is not available to 64-bit clients */
+
+#if !__LP64__
 
 enum {
   kaiToneDescType               = 'tone',
@@ -198,10 +202,10 @@ typedef struct QTMIDIPortList           QTMIDIPortList;
 typedef QTMIDIPortList *                QTMIDIPortListPtr;
 typedef QTMIDIPortListPtr *             QTMIDIPortListHandle;
 /*
- *  QTMIDIGetMIDIPorts()
+ *  QTMIDIGetMIDIPorts()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -210,14 +214,14 @@ extern ComponentResult
 QTMIDIGetMIDIPorts(
   QTMIDIComponent         ci,
   QTMIDIPortListHandle *  inputPorts,
-  QTMIDIPortListHandle *  outputPorts)                        AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  QTMIDIPortListHandle *  outputPorts)                        AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  QTMIDIUseSendPort()
+ *  QTMIDIUseSendPort()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -226,14 +230,14 @@ extern ComponentResult
 QTMIDIUseSendPort(
   QTMIDIComponent   ci,
   long              portIndex,
-  long              inUse)                                    AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long              inUse)                                    AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  QTMIDISendMIDI()
+ *  QTMIDISendMIDI()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -242,7 +246,7 @@ extern ComponentResult
 QTMIDISendMIDI(
   QTMIDIComponent    ci,
   long               portIndex,
-  MusicMIDIPacket *  mp)                                      AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  MusicMIDIPacket *  mp)                                      AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 
@@ -709,10 +713,10 @@ typedef struct InstrumentInfoList       InstrumentInfoList;
 typedef InstrumentInfoList *            InstrumentInfoListPtr;
 typedef InstrumentInfoListPtr *         InstrumentInfoListHandle;
 /*
- *  MusicGetDescription()
+ *  MusicGetDescription()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -720,14 +724,14 @@ typedef InstrumentInfoListPtr *         InstrumentInfoListHandle;
 extern ComponentResult 
 MusicGetDescription(
   MusicComponent            mc,
-  SynthesizerDescription *  sd)                               AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  SynthesizerDescription *  sd)                               AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  MusicGetPart()
+ *  MusicGetPart()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -737,14 +741,14 @@ MusicGetPart(
   MusicComponent   mc,
   long             part,
   long *           midiChannel,
-  long *           polyphony)                                 AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long *           polyphony)                                 AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  MusicSetPart()
+ *  MusicSetPart()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -754,14 +758,14 @@ MusicSetPart(
   MusicComponent   mc,
   long             part,
   long             midiChannel,
-  long             polyphony)                                 AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long             polyphony)                                 AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  MusicSetPartInstrumentNumber()
+ *  MusicSetPartInstrumentNumber()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -770,7 +774,7 @@ extern ComponentResult
 MusicSetPartInstrumentNumber(
   MusicComponent   mc,
   long             part,
-  long             instrumentNumber)                          AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long             instrumentNumber)                          AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 #if OLDROUTINENAMES
@@ -778,10 +782,10 @@ MusicSetPartInstrumentNumber(
 #endif
 
 /*
- *  MusicGetPartInstrumentNumber()
+ *  MusicGetPartInstrumentNumber()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -789,14 +793,14 @@ MusicSetPartInstrumentNumber(
 extern ComponentResult 
 MusicGetPartInstrumentNumber(
   MusicComponent   mc,
-  long             part)                                      AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long             part)                                      AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  MusicStorePartInstrument()
+ *  MusicStorePartInstrument()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -805,15 +809,15 @@ extern ComponentResult
 MusicStorePartInstrument(
   MusicComponent   mc,
   long             part,
-  long             instrumentNumber)                          AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long             instrumentNumber)                          AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 
 /*
- *  MusicGetPartAtomicInstrument()
+ *  MusicGetPartAtomicInstrument()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -823,14 +827,14 @@ MusicGetPartAtomicInstrument(
   MusicComponent      mc,
   long                part,
   AtomicInstrument *  ai,
-  long                flags)                                  AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long                flags)                                  AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  MusicSetPartAtomicInstrument()
+ *  MusicSetPartAtomicInstrument()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -840,15 +844,15 @@ MusicSetPartAtomicInstrument(
   MusicComponent        mc,
   long                  part,
   AtomicInstrumentPtr   aiP,
-  long                  flags)                                AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long                  flags)                                AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 
 /*
- *  MusicGetPartKnob()
+ *  MusicGetPartKnob()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -857,14 +861,14 @@ extern ComponentResult
 MusicGetPartKnob(
   MusicComponent   mc,
   long             part,
-  long             knobID)                                    AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long             knobID)                                    AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  MusicSetPartKnob()
+ *  MusicSetPartKnob()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -874,14 +878,14 @@ MusicSetPartKnob(
   MusicComponent   mc,
   long             part,
   long             knobID,
-  long             knobValue)                                 AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long             knobValue)                                 AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  MusicGetKnob()
+ *  MusicGetKnob()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -889,14 +893,14 @@ MusicSetPartKnob(
 extern ComponentResult 
 MusicGetKnob(
   MusicComponent   mc,
-  long             knobID)                                    AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long             knobID)                                    AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  MusicSetKnob()
+ *  MusicSetKnob()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -905,14 +909,14 @@ extern ComponentResult
 MusicSetKnob(
   MusicComponent   mc,
   long             knobID,
-  long             knobValue)                                 AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long             knobValue)                                 AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  MusicGetPartName()
+ *  MusicGetPartName()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -921,14 +925,14 @@ extern ComponentResult
 MusicGetPartName(
   MusicComponent   mc,
   long             part,
-  StringPtr        name)                                      AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  StringPtr        name)                                      AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  MusicSetPartName()
+ *  MusicSetPartName()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -937,14 +941,14 @@ extern ComponentResult
 MusicSetPartName(
   MusicComponent   mc,
   long             part,
-  StringPtr        name)                                      AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  StringPtr        name)                                      AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  MusicFindTone()
+ *  MusicFindTone()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -954,14 +958,14 @@ MusicFindTone(
   MusicComponent     mc,
   ToneDescription *  td,
   long *             libraryIndexOut,
-  unsigned long *    fit)                                     AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  unsigned long *    fit)                                     AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  MusicPlayNote()
+ *  MusicPlayNote()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -971,14 +975,14 @@ MusicPlayNote(
   MusicComponent   mc,
   long             part,
   long             pitch,
-  long             velocity)                                  AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long             velocity)                                  AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  MusicResetPart()
+ *  MusicResetPart()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -986,14 +990,14 @@ MusicPlayNote(
 extern ComponentResult 
 MusicResetPart(
   MusicComponent   mc,
-  long             part)                                      AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long             part)                                      AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  MusicSetPartController()
+ *  MusicSetPartController()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1003,7 +1007,7 @@ MusicSetPartController(
   MusicComponent    mc,
   long              part,
   MusicController   controllerNumber,
-  long              controllerValue)                          AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long              controllerValue)                          AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 #if OLDROUTINENAMES
@@ -1011,10 +1015,10 @@ MusicSetPartController(
 #endif
 
 /*
- *  MusicGetPartController()
+ *  MusicGetPartController()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1023,14 +1027,14 @@ extern ComponentResult
 MusicGetPartController(
   MusicComponent    mc,
   long              part,
-  MusicController   controllerNumber)                         AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  MusicController   controllerNumber)                         AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  MusicGetMIDIProc()
+ *  MusicGetMIDIProc()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1039,14 +1043,14 @@ extern ComponentResult
 MusicGetMIDIProc(
   MusicComponent      mc,
   MusicMIDISendUPP *  midiSendProc,
-  long *              refCon)                                 AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long *              refCon)                                 AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  MusicSetMIDIProc()
+ *  MusicSetMIDIProc()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1055,14 +1059,14 @@ extern ComponentResult
 MusicSetMIDIProc(
   MusicComponent     mc,
   MusicMIDISendUPP   midiSendProc,
-  long               refCon)                                  AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long               refCon)                                  AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  MusicGetInstrumentNames()
+ *  MusicGetInstrumentNames()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1073,14 +1077,14 @@ MusicGetInstrumentNames(
   long             modifiableInstruments,
   Handle *         instrumentNames,
   Handle *         instrumentCategoryLasts,
-  Handle *         instrumentCategoryNames)                   AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  Handle *         instrumentCategoryNames)                   AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  MusicGetDrumNames()
+ *  MusicGetDrumNames()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1090,27 +1094,27 @@ MusicGetDrumNames(
   MusicComponent   mc,
   long             modifiableInstruments,
   Handle *         instrumentNumbers,
-  Handle *         instrumentNames)                           AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  Handle *         instrumentNames)                           AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  MusicGetMasterTune()
+ *  MusicGetMasterTune()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  */
 extern ComponentResult 
-MusicGetMasterTune(MusicComponent mc)                         AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+MusicGetMasterTune(MusicComponent mc)                         AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  MusicSetMasterTune()
+ *  MusicSetMasterTune()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1118,15 +1122,15 @@ MusicGetMasterTune(MusicComponent mc)                         AVAILABLE_MAC_OS_X
 extern ComponentResult 
 MusicSetMasterTune(
   MusicComponent   mc,
-  long             masterTune)                                AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long             masterTune)                                AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 
 /*
- *  MusicGetInstrumentAboutInfo()
+ *  MusicGetInstrumentAboutInfo()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1135,14 +1139,14 @@ extern ComponentResult
 MusicGetInstrumentAboutInfo(
   MusicComponent         mc,
   long                   part,
-  InstrumentAboutInfo *  iai)                                 AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  InstrumentAboutInfo *  iai)                                 AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  MusicGetDeviceConnection()
+ *  MusicGetDeviceConnection()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1152,14 +1156,14 @@ MusicGetDeviceConnection(
   MusicComponent   mc,
   long             index,
   long *           id1,
-  long *           id2)                                       AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long *           id2)                                       AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  MusicUseDeviceConnection()
+ *  MusicUseDeviceConnection()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1168,14 +1172,14 @@ extern ComponentResult
 MusicUseDeviceConnection(
   MusicComponent   mc,
   long             id1,
-  long             id2)                                       AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long             id2)                                       AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  MusicGetKnobSettingStrings()
+ *  MusicGetKnobSettingStrings()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1187,14 +1191,14 @@ MusicGetKnobSettingStrings(
   long             isGlobal,
   Handle *         settingsNames,
   Handle *         settingsCategoryLasts,
-  Handle *         settingsCategoryNames)                     AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  Handle *         settingsCategoryNames)                     AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  MusicGetMIDIPorts()
+ *  MusicGetMIDIPorts()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1203,14 +1207,14 @@ extern ComponentResult
 MusicGetMIDIPorts(
   MusicComponent   mc,
   long *           inputPortCount,
-  long *           outputPortCount)                           AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long *           outputPortCount)                           AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  MusicSendMIDI()
+ *  MusicSendMIDI()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1219,15 +1223,15 @@ extern ComponentResult
 MusicSendMIDI(
   MusicComponent     mc,
   long               portIndex,
-  MusicMIDIPacket *  mp)                                      AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  MusicMIDIPacket *  mp)                                      AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 
 /*
- *  MusicStartOffline()
+ *  MusicStartOffline()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1239,14 +1243,14 @@ MusicStartOffline(
   UnsignedFixed *       sampleRate,
   unsigned short *      sampleSize,
   MusicOfflineDataUPP   dataProc,
-  long                  dataProcRefCon)                       AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long                  dataProcRefCon)                       AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  MusicSetOfflineTimeTo()
+ *  MusicSetOfflineTimeTo()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1254,14 +1258,14 @@ MusicStartOffline(
 extern ComponentResult 
 MusicSetOfflineTimeTo(
   MusicComponent   mc,
-  long             newTimeStamp)                              AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long             newTimeStamp)                              AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  MusicGetInstrumentKnobDescription()
+ *  MusicGetInstrumentKnobDescription()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1270,14 +1274,14 @@ extern ComponentResult
 MusicGetInstrumentKnobDescription(
   MusicComponent     mc,
   long               knobIndex,
-  KnobDescription *  mkd)                                     AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  KnobDescription *  mkd)                                     AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  MusicGetDrumKnobDescription()
+ *  MusicGetDrumKnobDescription()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1286,14 +1290,14 @@ extern ComponentResult
 MusicGetDrumKnobDescription(
   MusicComponent     mc,
   long               knobIndex,
-  KnobDescription *  mkd)                                     AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  KnobDescription *  mkd)                                     AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  MusicGetKnobDescription()
+ *  MusicGetKnobDescription()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1302,14 +1306,14 @@ extern ComponentResult
 MusicGetKnobDescription(
   MusicComponent     mc,
   long               knobIndex,
-  KnobDescription *  mkd)                                     AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  KnobDescription *  mkd)                                     AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  MusicGetInfoText()
+ *  MusicGetInfoText()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1319,7 +1323,7 @@ MusicGetInfoText(
   MusicComponent   mc,
   long             selector,
   Handle *         textH,
-  Handle *         styleH)                                    AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  Handle *         styleH)                                    AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 enum {
@@ -1329,10 +1333,10 @@ enum {
 };
 
 /*
- *  MusicGetInstrumentInfo()
+ *  MusicGetInstrumentInfo()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1341,30 +1345,30 @@ extern ComponentResult
 MusicGetInstrumentInfo(
   MusicComponent              mc,
   long                        getInstrumentInfoFlags,
-  InstrumentInfoListHandle *  infoListH)                      AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  InstrumentInfoListHandle *  infoListH)                      AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 
 
 
 /*
- *  MusicTask()
+ *  MusicTask()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  */
 extern ComponentResult 
-MusicTask(MusicComponent mc)                                  AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+MusicTask(MusicComponent mc)                                  AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  MusicSetPartInstrumentNumberInterruptSafe()
+ *  MusicSetPartInstrumentNumberInterruptSafe()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1373,14 +1377,14 @@ extern ComponentResult
 MusicSetPartInstrumentNumberInterruptSafe(
   MusicComponent   mc,
   long             part,
-  long             instrumentNumber)                          AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long             instrumentNumber)                          AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  MusicSetPartSoundLocalization()
+ *  MusicSetPartSoundLocalization()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1389,14 +1393,14 @@ extern ComponentResult
 MusicSetPartSoundLocalization(
   MusicComponent   mc,
   long             part,
-  Handle           data)                                      AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  Handle           data)                                      AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  MusicGenericConfigure()
+ *  MusicGenericConfigure()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1406,14 +1410,14 @@ MusicGenericConfigure(
   MusicComponent   mc,
   long             mode,
   long             flags,
-  long             baseResID)                                 AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long             baseResID)                                 AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  MusicGenericGetPart()
+ *  MusicGenericGetPart()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1422,14 +1426,14 @@ extern ComponentResult
 MusicGenericGetPart(
   MusicComponent   mc,
   long             partNumber,
-  GCPart **        part)                                      AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  GCPart **        part)                                      AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  MusicGenericGetKnobList()
+ *  MusicGenericGetKnobList()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1438,14 +1442,14 @@ extern ComponentResult
 MusicGenericGetKnobList(
   MusicComponent                      mc,
   long                                knobType,
-  GenericKnobDescriptionListHandle *  gkdlH)                  AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  GenericKnobDescriptionListHandle *  gkdlH)                  AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  MusicGenericSetResourceNumbers()
+ *  MusicGenericSetResourceNumbers()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1453,14 +1457,14 @@ MusicGenericGetKnobList(
 extern ComponentResult 
 MusicGenericSetResourceNumbers(
   MusicComponent   mc,
-  Handle           resourceIDH)                               AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  Handle           resourceIDH)                               AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  MusicDerivedMIDISend()
+ *  MusicDerivedMIDISend()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1468,14 +1472,14 @@ MusicGenericSetResourceNumbers(
 extern ComponentResult 
 MusicDerivedMIDISend(
   MusicComponent     mc,
-  MusicMIDIPacket *  packet)                                  AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  MusicMIDIPacket *  packet)                                  AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  MusicDerivedSetKnob()
+ *  MusicDerivedSetKnob()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1488,14 +1492,14 @@ MusicDerivedSetKnob(
   long                      knobValue,
   long                      partNumber,
   GCPart *                  p,
-  GenericKnobDescription *  gkd)                              AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  GenericKnobDescription *  gkd)                              AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  MusicDerivedSetPart()
+ *  MusicDerivedSetPart()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1504,14 +1508,14 @@ extern ComponentResult
 MusicDerivedSetPart(
   MusicComponent   mc,
   long             partNumber,
-  GCPart *         p)                                         AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  GCPart *         p)                                         AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  MusicDerivedSetInstrument()
+ *  MusicDerivedSetInstrument()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1520,14 +1524,14 @@ extern ComponentResult
 MusicDerivedSetInstrument(
   MusicComponent   mc,
   long             partNumber,
-  GCPart *         p)                                         AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  GCPart *         p)                                         AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  MusicDerivedSetPartInstrumentNumber()
+ *  MusicDerivedSetPartInstrumentNumber()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1536,14 +1540,14 @@ extern ComponentResult
 MusicDerivedSetPartInstrumentNumber(
   MusicComponent   mc,
   long             partNumber,
-  GCPart *         p)                                         AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  GCPart *         p)                                         AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  MusicDerivedSetMIDI()
+ *  MusicDerivedSetMIDI()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1553,14 +1557,14 @@ MusicDerivedSetMIDI(
   MusicComponent     mc,
   MusicMIDISendUPP   midiProc,
   long               refcon,
-  long               midiChannel)                             AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long               midiChannel)                             AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  MusicDerivedStorePartInstrument()
+ *  MusicDerivedStorePartInstrument()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1570,27 +1574,27 @@ MusicDerivedStorePartInstrument(
   MusicComponent   mc,
   long             partNumber,
   GCPart *         p,
-  long             instrumentNumber)                          AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long             instrumentNumber)                          AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  MusicDerivedOpenResFile()
+ *  MusicDerivedOpenResFile()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  */
 extern ComponentResult 
-MusicDerivedOpenResFile(MusicComponent mc)                    AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+MusicDerivedOpenResFile(MusicComponent mc)                    AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  MusicDerivedCloseResFile()
+ *  MusicDerivedCloseResFile()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1598,7 +1602,7 @@ MusicDerivedOpenResFile(MusicComponent mc)                    AVAILABLE_MAC_OS_X
 extern ComponentResult 
 MusicDerivedCloseResFile(
   MusicComponent   mc,
-  short            resRefNum)                                 AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  short            resRefNum)                                 AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 
@@ -1666,10 +1670,10 @@ enum {
     Note Allocator Prototypes
 --------------------------------*/
 /*
- *  NARegisterMusicDevice()
+ *  NARegisterMusicDevice()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1679,14 +1683,14 @@ NARegisterMusicDevice(
   NoteAllocator             na,
   OSType                    synthType,
   Str31                     name,
-  SynthesizerConnections *  connections)                      AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  SynthesizerConnections *  connections)                      AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  NAUnregisterMusicDevice()
+ *  NAUnregisterMusicDevice()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1694,14 +1698,14 @@ NARegisterMusicDevice(
 extern ComponentResult 
 NAUnregisterMusicDevice(
   NoteAllocator   na,
-  long            index)                                      AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long            index)                                      AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  NAGetRegisteredMusicDevice()
+ *  NAGetRegisteredMusicDevice()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1713,27 +1717,27 @@ NAGetRegisteredMusicDevice(
   OSType *                  synthType,
   Str31                     name,
   SynthesizerConnections *  connections,
-  MusicComponent *          mc)                               AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  MusicComponent *          mc)                               AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  NASaveMusicConfiguration()
+ *  NASaveMusicConfiguration()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  */
 extern ComponentResult 
-NASaveMusicConfiguration(NoteAllocator na)                    AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+NASaveMusicConfiguration(NoteAllocator na)                    AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  NANewNoteChannel()
+ *  NANewNoteChannel()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1742,14 +1746,14 @@ extern ComponentResult
 NANewNoteChannel(
   NoteAllocator   na,
   NoteRequest *   noteRequest,
-  NoteChannel *   outChannel)                                 AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  NoteChannel *   outChannel)                                 AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  NADisposeNoteChannel()
+ *  NADisposeNoteChannel()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1757,14 +1761,14 @@ NANewNoteChannel(
 extern ComponentResult 
 NADisposeNoteChannel(
   NoteAllocator   na,
-  NoteChannel     noteChannel)                                AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  NoteChannel     noteChannel)                                AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  NAGetNoteChannelInfo()
+ *  NAGetNoteChannelInfo()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1774,14 +1778,14 @@ NAGetNoteChannelInfo(
   NoteAllocator   na,
   NoteChannel     noteChannel,
   long *          index,
-  long *          part)                                       AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long *          part)                                       AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  NAPrerollNoteChannel()
+ *  NAPrerollNoteChannel()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1789,14 +1793,14 @@ NAGetNoteChannelInfo(
 extern ComponentResult 
 NAPrerollNoteChannel(
   NoteAllocator   na,
-  NoteChannel     noteChannel)                                AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  NoteChannel     noteChannel)                                AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  NAUnrollNoteChannel()
+ *  NAUnrollNoteChannel()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1804,15 +1808,15 @@ NAPrerollNoteChannel(
 extern ComponentResult 
 NAUnrollNoteChannel(
   NoteAllocator   na,
-  NoteChannel     noteChannel)                                AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  NoteChannel     noteChannel)                                AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 
 /*
- *  NASetNoteChannelVolume()
+ *  NASetNoteChannelVolume()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1821,14 +1825,14 @@ extern ComponentResult
 NASetNoteChannelVolume(
   NoteAllocator   na,
   NoteChannel     noteChannel,
-  Fixed           volume)                                     AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  Fixed           volume)                                     AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  NAResetNoteChannel()
+ *  NAResetNoteChannel()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1836,14 +1840,14 @@ NASetNoteChannelVolume(
 extern ComponentResult 
 NAResetNoteChannel(
   NoteAllocator   na,
-  NoteChannel     noteChannel)                                AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  NoteChannel     noteChannel)                                AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  NAPlayNote()
+ *  NAPlayNote()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1853,14 +1857,14 @@ NAPlayNote(
   NoteAllocator   na,
   NoteChannel     noteChannel,
   long            pitch,
-  long            velocity)                                   AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long            velocity)                                   AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  NASetController()
+ *  NASetController()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1870,14 +1874,14 @@ NASetController(
   NoteAllocator   na,
   NoteChannel     noteChannel,
   long            controllerNumber,
-  long            controllerValue)                            AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long            controllerValue)                            AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  NASetKnob()
+ *  NASetKnob()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1887,14 +1891,14 @@ NASetKnob(
   NoteAllocator   na,
   NoteChannel     noteChannel,
   long            knobNumber,
-  long            knobValue)                                  AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long            knobValue)                                  AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  NAFindNoteChannelTone()
+ *  NAFindNoteChannelTone()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1904,14 +1908,14 @@ NAFindNoteChannelTone(
   NoteAllocator      na,
   NoteChannel        noteChannel,
   ToneDescription *  td,
-  long *             instrumentNumber)                        AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long *             instrumentNumber)                        AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  NASetInstrumentNumber()
+ *  NASetInstrumentNumber()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1920,7 +1924,7 @@ extern ComponentResult
 NASetInstrumentNumber(
   NoteAllocator   na,
   NoteChannel     noteChannel,
-  long            instrumentNumber)                           AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long            instrumentNumber)                           AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 
@@ -1930,10 +1934,10 @@ NASetInstrumentNumber(
 #define NASetInstrument(ci, noteChannel,instrumentNumber ) NASetInstrumentNumber(ci, noteChannel,instrumentNumber)
 #endif
 /*
- *  NAPickInstrument()
+ *  NAPickInstrument()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1947,14 +1951,14 @@ NAPickInstrument(
   unsigned long      flags,
   long               refCon,
   long               reserved1,
-  long               reserved2)                               AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long               reserved2)                               AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  NAPickArrangement()
+ *  NAPickArrangement()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1967,15 +1971,15 @@ NAPickArrangement(
   long             zero1,
   long             zero2,
   Track            t,
-  StringPtr        songName)                                  AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  StringPtr        songName)                                  AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 
 /*
- *  NAStuffToneDescription()
+ *  NAStuffToneDescription()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -1984,14 +1988,14 @@ extern ComponentResult
 NAStuffToneDescription(
   NoteAllocator      na,
   long               gmNumber,
-  ToneDescription *  td)                                      AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  ToneDescription *  td)                                      AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  NACopyrightDialog()
+ *  NACopyrightDialog()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -2005,7 +2009,7 @@ NACopyrightDialog(
   StringPtr        other,
   StringPtr        title,
   ModalFilterUPP   filterProc,
-  long             refCon)                                    AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long             refCon)                                    AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 
@@ -2015,10 +2019,10 @@ NACopyrightDialog(
 */
 
 /*
- *  NAGetIndNoteChannel()
+ *  NAGetIndNoteChannel()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -2028,15 +2032,15 @@ NAGetIndNoteChannel(
   NoteAllocator   na,
   long            index,
   NoteChannel *   nc,
-  long *          seed)                                       AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long *          seed)                                       AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 
 /*
- *  NAGetMIDIPorts()
+ *  NAGetMIDIPorts()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -2045,14 +2049,14 @@ extern ComponentResult
 NAGetMIDIPorts(
   NoteAllocator           na,
   QTMIDIPortListHandle *  inputPorts,
-  QTMIDIPortListHandle *  outputPorts)                        AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  QTMIDIPortListHandle *  outputPorts)                        AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  NAGetNoteRequest()
+ *  NAGetNoteRequest()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -2061,14 +2065,14 @@ extern ComponentResult
 NAGetNoteRequest(
   NoteAllocator   na,
   NoteChannel     noteChannel,
-  NoteRequest *   nrOut)                                      AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  NoteRequest *   nrOut)                                      AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  NASendMIDI()
+ *  NASendMIDI()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -2077,14 +2081,14 @@ extern ComponentResult
 NASendMIDI(
   NoteAllocator      na,
   NoteChannel        noteChannel,
-  MusicMIDIPacket *  mp)                                      AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  MusicMIDIPacket *  mp)                                      AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  NAPickEditInstrument()
+ *  NAPickEditInstrument()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -2097,14 +2101,14 @@ NAPickEditInstrument(
   long               refCon,
   NoteChannel        nc,
   AtomicInstrument   ai,
-  long               flags)                                   AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long               flags)                                   AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  NANewNoteChannelFromAtomicInstrument()
+ *  NANewNoteChannelFromAtomicInstrument()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -2114,14 +2118,14 @@ NANewNoteChannelFromAtomicInstrument(
   NoteAllocator         na,
   AtomicInstrumentPtr   instrument,
   long                  flags,
-  NoteChannel *         outChannel)                           AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  NoteChannel *         outChannel)                           AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  NASetAtomicInstrument()
+ *  NASetAtomicInstrument()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -2131,16 +2135,16 @@ NASetAtomicInstrument(
   NoteAllocator         na,
   NoteChannel           noteChannel,
   AtomicInstrumentPtr   instrument,
-  long                  flags)                                AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long                  flags)                                AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 
 
 /*
- *  NAGetKnob()
+ *  NAGetKnob()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -2150,27 +2154,27 @@ NAGetKnob(
   NoteAllocator   na,
   NoteChannel     noteChannel,
   long            knobNumber,
-  long *          knobValue)                                  AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long *          knobValue)                                  AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  NATask()
+ *  NATask()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  */
 extern ComponentResult 
-NATask(NoteAllocator na)                                      AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+NATask(NoteAllocator na)                                      AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  NASetNoteChannelBalance()
+ *  NASetNoteChannelBalance()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -2179,14 +2183,14 @@ extern ComponentResult
 NASetNoteChannelBalance(
   NoteAllocator   na,
   NoteChannel     noteChannel,
-  long            balance)                                    AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long            balance)                                    AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  NASetInstrumentNumberInterruptSafe()
+ *  NASetInstrumentNumberInterruptSafe()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -2195,14 +2199,14 @@ extern ComponentResult
 NASetInstrumentNumberInterruptSafe(
   NoteAllocator   na,
   NoteChannel     noteChannel,
-  long            instrumentNumber)                           AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long            instrumentNumber)                           AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  NASetNoteChannelSoundLocalization()
+ *  NASetNoteChannelSoundLocalization()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -2211,14 +2215,14 @@ extern ComponentResult
 NASetNoteChannelSoundLocalization(
   NoteAllocator   na,
   NoteChannel     noteChannel,
-  Handle          data)                                       AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  Handle          data)                                       AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  NAGetController()
+ *  NAGetController()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -2228,7 +2232,7 @@ NAGetController(
   NoteAllocator   na,
   NoteChannel     noteChannel,
   long            controllerNumber,
-  long *          controllerValue)                            AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long *          controllerValue)                            AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 
@@ -2262,10 +2266,10 @@ enum {
 
 
 /*
- *  TuneSetHeader()
+ *  TuneSetHeader()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -2273,14 +2277,14 @@ enum {
 extern ComponentResult 
 TuneSetHeader(
   TunePlayer       tp,
-  unsigned long *  header)                                    AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  unsigned long *  header)                                    AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  TuneGetTimeBase()
+ *  TuneGetTimeBase()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -2288,14 +2292,14 @@ TuneSetHeader(
 extern ComponentResult 
 TuneGetTimeBase(
   TunePlayer   tp,
-  TimeBase *   tb)                                            AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  TimeBase *   tb)                                            AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  TuneSetTimeScale()
+ *  TuneSetTimeScale()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -2303,14 +2307,14 @@ TuneGetTimeBase(
 extern ComponentResult 
 TuneSetTimeScale(
   TunePlayer   tp,
-  TimeScale    scale)                                         AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  TimeScale    scale)                                         AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  TuneGetTimeScale()
+ *  TuneGetTimeScale()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -2318,14 +2322,14 @@ TuneSetTimeScale(
 extern ComponentResult 
 TuneGetTimeScale(
   TunePlayer   tp,
-  TimeScale *  scale)                                         AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  TimeScale *  scale)                                         AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  TuneGetIndexedNoteChannel()
+ *  TuneGetIndexedNoteChannel()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -2334,7 +2338,7 @@ extern ComponentResult
 TuneGetIndexedNoteChannel(
   TunePlayer     tp,
   long           i,
-  NoteChannel *  nc)                                          AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  NoteChannel *  nc)                                          AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 
@@ -2351,10 +2355,10 @@ enum {
 };
 
 /*
- *  TuneQueue()
+ *  TuneQueue()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -2368,14 +2372,14 @@ TuneQueue(
   unsigned long     tuneStopPosition,
   unsigned long     queueFlags,
   TuneCallBackUPP   callBackProc,
-  long              refCon)                                   AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long              refCon)                                   AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  TuneInstant()
+ *  TuneInstant()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -2384,14 +2388,14 @@ extern ComponentResult
 TuneInstant(
   TunePlayer       tp,
   unsigned long *  tune,
-  unsigned long    tunePosition)                              AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  unsigned long    tunePosition)                              AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  TuneGetStatus()
+ *  TuneGetStatus()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -2399,7 +2403,7 @@ TuneInstant(
 extern ComponentResult 
 TuneGetStatus(
   TunePlayer    tp,
-  TuneStatus *  status)                                       AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  TuneStatus *  status)                                       AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /* Values for stopping. */
@@ -2411,10 +2415,10 @@ enum {
 };
 
 /*
- *  TuneStop()
+ *  TuneStop()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -2422,15 +2426,15 @@ enum {
 extern ComponentResult 
 TuneStop(
   TunePlayer   tp,
-  long         stopFlags)                                     AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long         stopFlags)                                     AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 
 /*
- *  TuneSetVolume()
+ *  TuneSetVolume()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -2438,53 +2442,53 @@ TuneStop(
 extern ComponentResult 
 TuneSetVolume(
   TunePlayer   tp,
-  Fixed        volume)                                        AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  Fixed        volume)                                        AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  TuneGetVolume()
+ *  TuneGetVolume()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  */
 extern ComponentResult 
-TuneGetVolume(TunePlayer tp)                                  AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+TuneGetVolume(TunePlayer tp)                                  AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  TunePreroll()
+ *  TunePreroll()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  */
 extern ComponentResult 
-TunePreroll(TunePlayer tp)                                    AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+TunePreroll(TunePlayer tp)                                    AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  TuneUnroll()
+ *  TuneUnroll()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  */
 extern ComponentResult 
-TuneUnroll(TunePlayer tp)                                     AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+TuneUnroll(TunePlayer tp)                                     AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  TuneSetNoteChannels()
+ *  TuneSetNoteChannels()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -2495,14 +2499,14 @@ TuneSetNoteChannels(
   unsigned long         count,
   NoteChannel *         noteChannelList,
   TunePlayCallBackUPP   playCallBackProc,
-  long                  refCon)                               AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long                  refCon)                               AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  TuneSetPartTranspose()
+ *  TuneSetPartTranspose()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -2512,28 +2516,28 @@ TuneSetPartTranspose(
   TunePlayer      tp,
   unsigned long   part,
   long            transpose,
-  long            velocityShift)                              AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long            velocityShift)                              AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 
 /*
- *  TuneGetNoteAllocator()
+ *  TuneGetNoteAllocator()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  */
 extern NoteAllocator 
-TuneGetNoteAllocator(TunePlayer tp)                           AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+TuneGetNoteAllocator(TunePlayer tp)                           AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  TuneSetSofter()
+ *  TuneSetSofter()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -2541,27 +2545,27 @@ TuneGetNoteAllocator(TunePlayer tp)                           AVAILABLE_MAC_OS_X
 extern ComponentResult 
 TuneSetSofter(
   TunePlayer   tp,
-  long         softer)                                        AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long         softer)                                        AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  TuneTask()
+ *  TuneTask()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
  */
 extern ComponentResult 
-TuneTask(TunePlayer tp)                                       AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+TuneTask(TunePlayer tp)                                       AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  TuneSetBalance()
+ *  TuneSetBalance()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -2569,14 +2573,14 @@ TuneTask(TunePlayer tp)                                       AVAILABLE_MAC_OS_X
 extern ComponentResult 
 TuneSetBalance(
   TunePlayer   tp,
-  long         balance)                                       AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long         balance)                                       AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  TuneSetSoundLocalization()
+ *  TuneSetSoundLocalization()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -2584,14 +2588,14 @@ TuneSetBalance(
 extern ComponentResult 
 TuneSetSoundLocalization(
   TunePlayer   tp,
-  Handle       data)                                          AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  Handle       data)                                          AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  TuneSetHeaderWithSize()
+ *  TuneSetHeaderWithSize()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -2600,7 +2604,7 @@ extern ComponentResult
 TuneSetHeaderWithSize(
   TunePlayer       tp,
   unsigned long *  header,
-  unsigned long    size)                                      AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  unsigned long    size)                                      AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /* flags for part mix. */
@@ -2611,10 +2615,10 @@ enum {
 
 
 /*
- *  TuneSetPartMix()
+ *  TuneSetPartMix()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -2625,14 +2629,14 @@ TuneSetPartMix(
   unsigned long   partNumber,
   long            volume,
   long            balance,
-  long            mixFlags)                                   AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long            mixFlags)                                   AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 /*
- *  TuneGetPartMix()
+ *  TuneGetPartMix()   *** DEPRECATED ***
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.5
  *    CarbonLib:        in CarbonLib 1.0 and later
  *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
  *    Windows:          in qtmlClient.lib 3.0 and later
@@ -2643,7 +2647,7 @@ TuneGetPartMix(
   unsigned long   partNumber,
   long *          volumeOut,
   long *          balanceOut,
-  long *          mixFlagsOut)                                AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  long *          mixFlagsOut)                                AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 
 
@@ -2963,7 +2967,7 @@ enum {
  *    Non-Carbon CFM:   available as macro/inline
  */
 extern MusicMIDISendUPP
-NewMusicMIDISendUPP(MusicMIDISendProcPtr userRoutine)         AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+NewMusicMIDISendUPP(MusicMIDISendProcPtr userRoutine)         AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 /*
  *  NewMusicOfflineDataUPP()
@@ -2974,7 +2978,7 @@ NewMusicMIDISendUPP(MusicMIDISendProcPtr userRoutine)         AVAILABLE_MAC_OS_X
  *    Non-Carbon CFM:   available as macro/inline
  */
 extern MusicOfflineDataUPP
-NewMusicOfflineDataUPP(MusicOfflineDataProcPtr userRoutine)   AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+NewMusicOfflineDataUPP(MusicOfflineDataProcPtr userRoutine)   AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 /*
  *  NewTuneCallBackUPP()
@@ -2985,7 +2989,7 @@ NewMusicOfflineDataUPP(MusicOfflineDataProcPtr userRoutine)   AVAILABLE_MAC_OS_X
  *    Non-Carbon CFM:   available as macro/inline
  */
 extern TuneCallBackUPP
-NewTuneCallBackUPP(TuneCallBackProcPtr userRoutine)           AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+NewTuneCallBackUPP(TuneCallBackProcPtr userRoutine)           AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 /*
  *  NewTunePlayCallBackUPP()
@@ -2996,7 +3000,7 @@ NewTuneCallBackUPP(TuneCallBackProcPtr userRoutine)           AVAILABLE_MAC_OS_X
  *    Non-Carbon CFM:   available as macro/inline
  */
 extern TunePlayCallBackUPP
-NewTunePlayCallBackUPP(TunePlayCallBackProcPtr userRoutine)   AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+NewTunePlayCallBackUPP(TunePlayCallBackProcPtr userRoutine)   AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 /*
  *  DisposeMusicMIDISendUPP()
@@ -3007,7 +3011,7 @@ NewTunePlayCallBackUPP(TunePlayCallBackProcPtr userRoutine)   AVAILABLE_MAC_OS_X
  *    Non-Carbon CFM:   available as macro/inline
  */
 extern void
-DisposeMusicMIDISendUPP(MusicMIDISendUPP userUPP)             AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+DisposeMusicMIDISendUPP(MusicMIDISendUPP userUPP)             AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 /*
  *  DisposeMusicOfflineDataUPP()
@@ -3018,7 +3022,7 @@ DisposeMusicMIDISendUPP(MusicMIDISendUPP userUPP)             AVAILABLE_MAC_OS_X
  *    Non-Carbon CFM:   available as macro/inline
  */
 extern void
-DisposeMusicOfflineDataUPP(MusicOfflineDataUPP userUPP)       AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+DisposeMusicOfflineDataUPP(MusicOfflineDataUPP userUPP)       AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 /*
  *  DisposeTuneCallBackUPP()
@@ -3029,7 +3033,7 @@ DisposeMusicOfflineDataUPP(MusicOfflineDataUPP userUPP)       AVAILABLE_MAC_OS_X
  *    Non-Carbon CFM:   available as macro/inline
  */
 extern void
-DisposeTuneCallBackUPP(TuneCallBackUPP userUPP)               AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+DisposeTuneCallBackUPP(TuneCallBackUPP userUPP)               AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 /*
  *  DisposeTunePlayCallBackUPP()
@@ -3040,7 +3044,7 @@ DisposeTuneCallBackUPP(TuneCallBackUPP userUPP)               AVAILABLE_MAC_OS_X
  *    Non-Carbon CFM:   available as macro/inline
  */
 extern void
-DisposeTunePlayCallBackUPP(TunePlayCallBackUPP userUPP)       AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+DisposeTunePlayCallBackUPP(TunePlayCallBackUPP userUPP)       AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 /*
  *  InvokeMusicMIDISendUPP()
@@ -3055,7 +3059,7 @@ InvokeMusicMIDISendUPP(
   ComponentInstance  self,
   long               refCon,
   MusicMIDIPacket *  mmp,
-  MusicMIDISendUPP   userUPP)                                 AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  MusicMIDISendUPP   userUPP)                                 AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 /*
  *  InvokeMusicOfflineDataUPP()
@@ -3070,7 +3074,7 @@ InvokeMusicOfflineDataUPP(
   Ptr                  SoundData,
   long                 numBytes,
   long                 myRefCon,
-  MusicOfflineDataUPP  userUPP)                               AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  MusicOfflineDataUPP  userUPP)                               AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 /*
  *  InvokeTuneCallBackUPP()
@@ -3084,7 +3088,7 @@ extern void
 InvokeTuneCallBackUPP(
   const TuneStatus *  status,
   long                refCon,
-  TuneCallBackUPP     userUPP)                                AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  TuneCallBackUPP     userUPP)                                AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 /*
  *  InvokeTunePlayCallBackUPP()
@@ -3099,7 +3103,7 @@ InvokeTunePlayCallBackUPP(
   unsigned long *      event,
   long                 seed,
   long                 refCon,
-  TunePlayCallBackUPP  userUPP)                               AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  TunePlayCallBackUPP  userUPP)                               AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_5;
 
 #if __MACH__
   #ifdef __cplusplus
@@ -3248,6 +3252,9 @@ enum {
     kTuneSetPartMixSelect                      = 0x001D,
     kTuneGetPartMixSelect                      = 0x001E
 };
+
+#endif // !__LP64__
+
 
 
 #pragma pack(pop)

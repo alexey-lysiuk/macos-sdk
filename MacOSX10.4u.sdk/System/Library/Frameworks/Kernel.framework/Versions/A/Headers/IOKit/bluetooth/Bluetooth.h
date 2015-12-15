@@ -639,6 +639,11 @@ enum
 		kBluetoothHCICommandWriteDeviceAddress							= 0x0001, 
 		kBluetoothHCICommandWriteHoppingChannels						= 0x0012,
 		kBluetoothHCICommandInvalidateFlashAndReboot					= 0x0017,
+		kBluetoothHCICommandEnableHIDEmulation							= 0x003B,
+		kBluetoothHCICommandEnableRadio									= 0x0034,
+		kBluetoothHCIGetHIDDeviceList									= 0x0036,
+		kBluetoothHCIAddHIDDevice										= 0x0037,
+		kBluetoothHCIRemoveHIDDevice									= 0x0039,
 
 	kBluetoothHCICommandGroupMax										= 0x40, 
 	kBluetoothHCICommandMax												= 0x03FF

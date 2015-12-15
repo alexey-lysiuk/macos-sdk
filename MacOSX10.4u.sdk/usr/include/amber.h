@@ -33,3 +33,4 @@ void amber_external_trace_thread_exited(unsigned int thread_id);
 void amber_external_trace_exit(void);
 
 #endif /* _AMBER_H_ */
+

@@ -109,6 +109,7 @@ struct nfsbuf {
 	volatile long		nb_refs;	/* outstanding references. */
 	long			nb_bufsize;	/* buffer size */
 	daddr64_t		nb_lblkno;	/* logical block number. */
+	uint64_t		nb_verf;	/* V3 write verifier */
 	time_t			nb_timestamp;	/* buffer timestamp */
 	int			nb_error;	/* errno value. */
 	u_int32_t		nb_valid;	/* valid pages in buf */
@@ -414,6 +415,7 @@ void nfs_buf_release(struct nfsbuf *, int);
 int nfs_buf_iowait(struct nfsbuf *);
 void nfs_buf_iodone(struct nfsbuf *);
 void nfs_buf_write_delayed(struct nfsbuf *, proc_t);
+void nfs_buf_check_write_verifier(struct nfsnode *, struct nfsbuf *);
 void nfs_buf_freeup(int);
 void nfs_buf_refget(struct nfsbuf *bp);
 void nfs_buf_refrele(struct nfsbuf *bp);

@@ -36,6 +36,8 @@
 
 #include <kern/etimer.h>
 
+void resetPop(void);
+
 struct cpu_data;
 
 #endif /* _I386_RTCLOCK_H_ */

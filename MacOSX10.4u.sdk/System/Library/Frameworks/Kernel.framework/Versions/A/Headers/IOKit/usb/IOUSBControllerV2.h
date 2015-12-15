@@ -219,6 +219,7 @@ public:
     @param functionAddress USB device ID of device
     @param endpointNumber  endpoint address of the endpoint in the device
     @param maxPacketSize   maximum packet size of this endpoint
+    @param direction       Specifies direction for the endpoint. kUSBIn or KUSBOut.
     @param highSpeedHub    If non zero, this is a full speed device, the address of the high speed hub to
                            address split transactions to.
     @param highSpeedPort   If highSpeedHub is non zero, the hub port to address split transactions to
@@ -287,9 +288,11 @@ public:
     @param functionAddress USB device ID of device
     @param endpointNumber  endpoint address of the endpoint in the device
     @param maxPacketSize   maximum packet size of this endpoint
+    @param direction       Specifies direction for the endpoint. kUSBIn or KUSBOut.
     @param highSpeedHub    If non zero, this is a full speed device, the address of the high speed hub to
                            address split transactions to.
     @param highSpeedPort   If highSpeedHub is non zero, the hub port to address split transactions to
+	@param interval		   The raw bInterval value from the endpoint descriptor. Needs to be adjusted in the UIM for HS endpoints.
 */
     virtual IOReturn 		UIMCreateIsochEndpoint(		short				functionAddress,
                                                         short				endpointNumber,

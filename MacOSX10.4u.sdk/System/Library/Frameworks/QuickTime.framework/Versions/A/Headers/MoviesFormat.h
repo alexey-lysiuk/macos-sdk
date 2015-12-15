@@ -3,9 +3,9 @@
  
      Contains:   QuickTime Interfaces.
  
-     Version:    QuickTime 7.1.2
+     Version:    QuickTime 7.2.1
  
-     Copyright:  © 1990-2006 by Apple Computer, Inc., all rights reserved
+     Copyright:  © 1990-2006 by Apple Inc., all rights reserved
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -33,6 +33,10 @@
 #endif
 
 #pragma pack(push, 2)
+
+/* QuickTime is not available to 64-bit clients */
+
+#if !__LP64__
 
 enum {
   kMovieVersion                 = 0     /* version number of the format here described */
@@ -167,18 +171,31 @@ struct SampleDependencyAtom {
   UInt8               sampleDependencyTable[1];
 };
 typedef struct SampleDependencyAtom     SampleDependencyAtom;
+/*
+NOTE: The values for these flags that shipped with QuickTime 7.0 were incorrect. 
+They matched neither the specification nor the implementation -- the "Yes" and "No" bits
+were reversed.  The flags have been corrected but renamed to ensure that code using
+the incorrect flags is reviewed by developers.
+enum {
+    kQTSampleDependency_DependsOnOthers = 1<<5,         // INCORRECT VALUE
+    kQTSampleDependency_DoesNotDependOnOthers = 1<<4,   // INCORRECT VALUE
+    kQTSampleDependency_IsDependedOnByOthers = 1<<3,    // INCORRECT VALUE
+    kQTSampleDependency_IsNotDependedOnByOthers = 1<<2, // INCORRECT VALUE
+    kQTSampleDependency_HasRedundantCoding = 1<<1,      // INCORRECT VALUE
+    kQTSampleDependency_HasNoRedundantCoding = 1<<0     // INCORRECT VALUE
+};
+*/
 /* Values for entries in SampleDependencyAtom.sampleDependencyTable[]*/
 enum {
                                         /* bit 0x80 is reserved; bit combinations 0x30, 0xC0 and 0x03 are reserved*/
   kQTSampleDependency_EarlierDisplayTimesAllowed = 1 << 6, /* corresponds to flag mediaSampleEarlierDisplayTimesAllowed except at different bit offset*/
-  kQTSampleDependency_DependsOnOthers = 1 << 5, /* ie: not an I picture*/
-  kQTSampleDependency_DoesNotDependOnOthers = 1 << 4, /* ie: an I picture*/
-  kQTSampleDependency_IsDependedOnByOthers = 1 << 3,
-  kQTSampleDependency_IsNotDependedOnByOthers = 1 << 2, /* mediaSampleDroppable*/
-  kQTSampleDependency_HasRedundantCoding = 1 << 1,
-  kQTSampleDependency_HasNoRedundantCoding = 1 << 0
+  kQTSampleDependency_DoesNotDependOnOthers_Corrected = 1 << 5, /* ie: an I picture*/
+  kQTSampleDependency_DependsOnOthers_Corrected = 1 << 4, /* ie: not an I picture*/
+  kQTSampleDependency_IsNotDependedOnByOthers_Corrected = 1 << 3, /* mediaSampleDroppable*/
+  kQTSampleDependency_IsDependedOnByOthers_Corrected = 1 << 2,
+  kQTSampleDependency_HasNoRedundantCoding_Corrected = 1 << 1,
+  kQTSampleDependency_HasRedundantCoding_Corrected = 1 << 0
 };
-
 
 struct CompositionShiftLeastGreatestAtom {
   long                size;
@@ -819,6 +836,9 @@ struct SecureContentSchemeInfoAtom {
   long                atomType;               /* = 'schi' */
 };
 typedef struct SecureContentSchemeInfoAtom SecureContentSchemeInfoAtom;
+
+#endif // !__LP64__
+
 
 #pragma pack(pop)
 

@@ -455,7 +455,8 @@ enum {
 	kIOAudioDeviceTransportTypeFireWire				= '1394',
 	kIOAudioDeviceTransportTypeNetwork				= 'ntwk',
 	kIOAudioDeviceTransportTypeWireless				= 'wrls',
-	kIOAudioDeviceTransportTypeOther				= 'othr'
+	kIOAudioDeviceTransportTypeOther				= 'othr',
+	kIOAudioDeviceTransportTypeBluetooth			= 'blue'
 };
 
 // types that go nowhere

@@ -3,7 +3,7 @@
  
      Contains:   Carbon Event Manager
  
-     Version:    HIToolbox-226.1~151
+     Version:    HIToolbox-227.3~63
  
      Copyright:  © 1999-2006 by Apple Computer, Inc., all rights reserved.
  
@@ -4075,7 +4075,9 @@ enum {
     kEventWindowMeasureTitle            = 1010,
     kEventWindowDrawGrowBox             = 1011,
     kEventWindowGetGrowImageRegion      = 1012,
-    kEventWindowPaint                   = 1013
+    kEventWindowPaint                   = 1013,
+    kEventWindowAttributesChanged       = 1019,
+    kEventWindowTitleChanged            = 1020
     
     On window handlers:
     
@@ -7762,6 +7764,71 @@ enum {
 enum {
   kEventWindowPaint             = 1013
 };
+
+/*
+ *  kEventClassWindow / kEventWindowAttributesChanged
+ *  
+ *  Summary:
+ *    Sent by the Window Manager when a windowÕs attributes have
+ *    changed.
+ *  
+ *  Discussion:
+ *    This event is only sent to windows that use an HIView-based
+ *    window frame. It is not sent to windows that use a WDEF-based
+ *    window frame. At the time that the event is sent, the window's
+ *    attributes have already been changed, so an event hander for this
+ *    event can simply call GetWindowAttributes to get the new
+ *    attributes. This event is sent to all handlers registered for it
+ *    on the window event target. It does not propagate past the window.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    --> kEventParamDirectObject (in, typeWindowRef)
+ *          The window whose attributes have changed.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+ *    CarbonLib:        not available
+ */
+enum {
+  kEventWindowAttributesChanged = 1019
+};
+
+/*
+ *  kEventClassWindow / kEventWindowTitleChanged
+ *  
+ *  Summary:
+ *    Sent by the Window Manager when a windowÕs title changes.
+ *  
+ *  Discussion:
+ *    In Mac OS X 10.2 through 10.4, this event is only sent to windows
+ *    that use an HIView to draw their window frames. Windows that use
+ *    a WDEF to draw their frames do not receive this event on those
+ *    versions of Mac OS X. In Mac OS X 10.5 and later, this event is
+ *    always sent when a windowÕs title changes, regardless of whether
+ *    the window uses an HIView or WDEF to draw its frame. This event
+ *    is sent to all handlers registered for it on the window event
+ *    target. It does not propagate past the window.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    --> kEventParamDirectObject (in, typeWindowRef)
+ *          The window whose title was changed.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.2 and later in Carbon.framework
+ *    CarbonLib:        not available
+ */
+enum {
+  kEventWindowTitleChanged      = 1020
+};
+
 
 /*--------------------------------------------------------------------------------------*/
 /*  Menu Events                                                                         */

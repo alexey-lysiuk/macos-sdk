@@ -308,23 +308,9 @@ protected:
     IOMemoryMap *	ioMap;
     OSObject *          slotNameProperty;
 
-/*! @struct ExpansionData
-    @discussion This structure will be used to expand the capablilties of the IOWorkLoop in the future.
-    */    
-    struct ExpansionData {
-	bool					PMsleepEnabled;		// T if a client has enabled PCI Power Management
-	UInt8					PMcontrolStatus;	// if >0 this device supports PCI Power Management
-	UInt16					sleepControlBits;	// bits to set the control/status register to for sleep
-
-	UInt16					expressConfig;
-	UInt16					msiConfig;
-	UInt8					msiBlockSize;
-	UInt8					msiMode;
-    };
-
 /*! @var reserved
     Reserved for future use.  (Internal use only)  */
-    ExpansionData *reserved;
+    struct IOPCIDeviceExpansionData * reserved;
 
 public:
     IOPCIAddressSpace	space;

@@ -3,7 +3,7 @@
  
      Contains:   Color Picker package Interfaces.
  
-     Version:    CommonPanels-73.2~615
+     Version:    CommonPanels-73.2~861
  
      Copyright:  © 1987-2006 by Apple Computer, Inc., all rights reserved
  

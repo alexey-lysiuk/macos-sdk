@@ -155,12 +155,17 @@ protected:
     // Reserve space for future expansion.
     struct ExpansionData
 	{
-		bool		fResetInProgress;
-		OSSet *		fClients;
-		IOUSBPipe * fPotentiallyStalledPipe;
-		bool        fUseUSBResetNotBOReset;
-		bool		fAbortCurrentSCSITaskInProgress;
-        bool        fDeviceAttached;
+		bool                    fResetInProgress;
+		OSSet *                 fClients;
+		IOUSBPipe *             fPotentiallyStalledPipe;
+		bool                    fUseUSBResetNotBOReset;
+		bool                    fAbortCurrentSCSITaskInProgress;
+        IOMemoryDescriptor *	fCBIMemoryDescriptor;
+		IOMemoryDescriptor *	fBulkOnlyCBWMemoryDescriptor;
+		IOMemoryDescriptor *	fBulkOnlyCSWMemoryDescriptor;
+        bool                    fDeviceAttached;
+		bool                    fWaitingForReconfigurationMessage;
+        bool                    fTerminating;
 	};
     ExpansionData *				reserved;
 	
@@ -169,7 +174,12 @@ protected:
 	#define fPotentiallyStalledPipe				reserved->fPotentiallyStalledPipe
     #define fUseUSBResetNotBOReset				reserved->fUseUSBResetNotBOReset
 	#define fAbortCurrentSCSITaskInProgress		reserved->fAbortCurrentSCSITaskInProgress
+    #define fCBIMemoryDescriptor				reserved->fCBIMemoryDescriptor
+	#define	fBulkOnlyCBWMemoryDescriptor		reserved->fBulkOnlyCBWMemoryDescriptor
+	#define	fBulkOnlyCSWMemoryDescriptor		reserved->fBulkOnlyCSWMemoryDescriptor
     #define fDeviceAttached                     reserved->fDeviceAttached
+	#define fWaitingForReconfigurationMessage	reserved->fWaitingForReconfigurationMessage
+    #define fTerminating                        reserved->fTerminating
 	
 	// Enumerated constants used to control various aspects of this
 	// driver.
@@ -386,6 +396,10 @@ public:
     
 	virtual bool        willTerminate(  IOService *     provider, 
                                         IOOptionBits    options );
+										
+	virtual bool        didTerminate(	IOService *     provider, 
+                                        IOOptionBits    options, 
+										bool *			defer );
                                         
 	virtual bool		handleOpen( IOService *		client,
 									IOOptionBits	options,
@@ -421,7 +435,7 @@ protected:
 		                	IOReturn		status,
 		                	UInt32			bufferSizeRemaining );
 
-    void                ResetDeviceNow( void );
+    void                ResetDeviceNow( bool waitForReset );
 	void                AbortCurrentSCSITask( void );
 	 
 	// Space reserved for future expansion.
