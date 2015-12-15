@@ -3,9 +3,9 @@
  
      Contains:   QuickTime Interfaces.
  
-     Version:    QuickTime_6
+     Version:    QuickTime 7.1.2
  
-     Copyright:  © 1990-2003 by Apple Computer, Inc., all rights reserved
+     Copyright:  © 1990-2006 by Apple Computer, Inc., all rights reserved
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -100,6 +100,34 @@
 	#define SC_STRCAT(a,b) SC_GLUE(a,b)
 	#define ADD_SC_BASENAME(name) SC_STRCAT(SC_BASENAME(),name)
 
+	EXTERN_API( ComponentResult  ) ADD_SC_BASENAME(AudioInvokeLegacyCodecOptionsDialog) (SC_GLOBALS());
+
+	EXTERN_API( ComponentResult  ) ADD_SC_BASENAME(AudioFillBuffer) (SC_GLOBALS() ADD_SC_COMMA SCAudioInputDataProc  inInputDataProc, void * inInputDataProcRefCon, UInt32 * ioOutputDataPacketSize, AudioBufferList * outOutputData, AudioStreamPacketDescription * outPacketDescription);
+
+	EXTERN_API( ComponentResult  ) ADD_SC_BASENAME(AudioReset) (SC_GLOBALS());
+
+#endif	/* SC_BASENAME */
+
+/*
+	Example usage:
+
+		#define SC_BASENAME()	Fred
+		#define SC_GLOBALS()	FredGlobalsHandle
+		#include <QuickTime/QuickTimeComponents.k.h>
+
+	To specify that your component implementation does not use globals, do not #define SC_GLOBALS
+*/
+#ifdef SC_BASENAME
+	#ifndef SC_GLOBALS
+		#define SC_GLOBALS() 
+		#define ADD_SC_COMMA 
+	#else
+		#define ADD_SC_COMMA ,
+	#endif
+	#define SC_GLUE(a,b) a##b
+	#define SC_STRCAT(a,b) SC_GLUE(a,b)
+	#define ADD_SC_BASENAME(name) SC_STRCAT(SC_BASENAME(),name)
+
 	EXTERN_API( ComponentResult  ) ADD_SC_BASENAME(GetCompressionExtended) (SC_GLOBALS() ADD_SC_COMMA SCParams * params, Point  where, SCModalFilterUPP  filterProc, SCModalHookUPP  hookProc, long  refcon, StringPtr  customName);
 
 	EXTERN_API( ComponentResult  ) ADD_SC_BASENAME(PositionRect) (SC_GLOBALS() ADD_SC_COMMA Rect * rp, Point * where);
@@ -156,9 +184,14 @@
 
 	EXTERN_API( ComponentResult  ) ADD_SC_BASENAME(AsyncIdle) (SC_GLOBALS());
 
+	EXTERN_API( ComponentResult  ) ADD_SC_BASENAME(CopyCompressionSessionOptions) (SC_GLOBALS() ADD_SC_COMMA ICMCompressionSessionOptionsRef * outOptions);
+
 
 	/* MixedMode ProcInfo constants for component calls */
 	enum {
+		uppSCAudioInvokeLegacyCodecOptionsDialogProcInfo = 0x000000F0,
+		uppSCAudioFillBufferProcInfo = 0x0003FFF0,
+		uppSCAudioResetProcInfo = 0x000000F0,
 		uppSCGetCompressionExtendedProcInfo = 0x000FFFF0,
 		uppSCPositionRectProcInfo = 0x00000FF0,
 		uppSCPositionDialogProcInfo = 0x00000EF0,
@@ -186,7 +219,8 @@
 		uppSCGetSettingsAsAtomContainerProcInfo = 0x000003F0,
 		uppSCSetSettingsFromAtomContainerProcInfo = 0x000003F0,
 		uppSCCompressSequenceFrameAsyncProcInfo = 0x000FFFF0,
-		uppSCAsyncIdleProcInfo = 0x000000F0
+		uppSCAsyncIdleProcInfo = 0x000000F0,
+		uppSCCopyCompressionSessionOptionsProcInfo = 0x000003F0
 	};
 
 #endif	/* SC_BASENAME */
@@ -863,6 +897,10 @@ enum {
 
 	EXTERN_API( ComponentResult  ) ADD_DATAH_BASENAME(RenameFile) (DATAH_GLOBALS() ADD_DATAH_COMMA Handle  newDataRef);
 
+	EXTERN_API( ComponentResult  ) ADD_DATAH_BASENAME(GetAvailableFileSize64) (DATAH_GLOBALS() ADD_DATAH_COMMA wide * fileSize);
+
+	EXTERN_API( ComponentResult  ) ADD_DATAH_BASENAME(GetDataAvailability64) (DATAH_GLOBALS() ADD_DATAH_COMMA const wide * offset, long  len, wide * missing_offset, long * missing_len);
+
 	EXTERN_API( ComponentResult  ) ADD_DATAH_BASENAME(PlaybackHints) (DATAH_GLOBALS() ADD_DATAH_COMMA long  flags, unsigned long  minFileOffset, unsigned long  maxFileOffset, long  bytesPerSecond);
 
 	EXTERN_API( ComponentResult  ) ADD_DATAH_BASENAME(PlaybackHints64) (DATAH_GLOBALS() ADD_DATAH_COMMA long  flags, const wide * minFileOffset, const wide * maxFileOffset, long  bytesPerSecond);
@@ -1154,6 +1192,8 @@ enum {
 	uppDataHUseTemporaryDataRefProcInfo = 0x000003F0,
 	uppDataHGetTemporaryDataRefCapabilitiesProcInfo = 0x000003F0,
 	uppDataHRenameFileProcInfo = 0x000003F0,
+	uppDataHGetAvailableFileSize64ProcInfo = 0x000003F0,
+	uppDataHGetDataAvailability64ProcInfo = 0x0000FFF0,
 	uppDataHPlaybackHintsProcInfo = 0x0000FFF0,
 	uppDataHPlaybackHints64ProcInfo = 0x0000FFF0,
 	uppDataHGetDataRateProcInfo = 0x00000FF0,

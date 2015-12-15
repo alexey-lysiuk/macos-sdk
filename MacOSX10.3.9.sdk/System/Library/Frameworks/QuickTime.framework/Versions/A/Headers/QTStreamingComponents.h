@@ -3,9 +3,9 @@
  
      Contains:   QuickTime Interfaces.
  
-     Version:    QuickTime_6
+     Version:    QuickTime 7.1.2
  
-     Copyright:  © 1990-2003 by Apple Computer, Inc., all rights reserved
+     Copyright:  © 1990-2006 by Apple Computer, Inc., all rights reserved
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -40,7 +40,7 @@
 extern "C" {
 #endif
 
-#pragma options align=mac68k
+#pragma pack(push, 2)
 
 /*============================================================================
         Stream Sourcer
@@ -2514,8 +2514,26 @@ InvokeRTPPBCallbackUPP(
   void *            inRefCon,
   RTPPBCallbackUPP  userUPP)                                  AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
+#if __MACH__
+  #ifdef __cplusplus
+    inline RTPMPDataReleaseUPP                                  NewRTPMPDataReleaseUPP(RTPMPDataReleaseProcPtr userRoutine) { return userRoutine; }
+    inline RTPPBCallbackUPP                                     NewRTPPBCallbackUPP(RTPPBCallbackProcPtr userRoutine) { return userRoutine; }
+    inline void                                                 DisposeRTPMPDataReleaseUPP(RTPMPDataReleaseUPP) { }
+    inline void                                                 DisposeRTPPBCallbackUPP(RTPPBCallbackUPP) { }
+    inline void                                                 InvokeRTPMPDataReleaseUPP(UInt8 * inData, void * inRefCon, RTPMPDataReleaseUPP userUPP) { (*userUPP)(inData, inRefCon); }
+    inline void                                                 InvokeRTPPBCallbackUPP(OSType inSelector, void * ioParams, void * inRefCon, RTPPBCallbackUPP userUPP) { (*userUPP)(inSelector, ioParams, inRefCon); }
+  #else
+    #define NewRTPMPDataReleaseUPP(userRoutine)                 ((RTPMPDataReleaseUPP)userRoutine)
+    #define NewRTPPBCallbackUPP(userRoutine)                    ((RTPPBCallbackUPP)userRoutine)
+    #define DisposeRTPMPDataReleaseUPP(userUPP)
+    #define DisposeRTPPBCallbackUPP(userUPP)
+    #define InvokeRTPMPDataReleaseUPP(inData, inRefCon, userUPP) (*userUPP)(inData, inRefCon)
+    #define InvokeRTPPBCallbackUPP(inSelector, ioParams, inRefCon, userUPP) (*userUPP)(inSelector, ioParams, inRefCon)
+  #endif
+#endif
 
-#pragma options align=reset
+
+#pragma pack(pop)
 
 #ifdef __cplusplus
 }

@@ -22,7 +22,12 @@
 //=============================================================================
 
 //	System Includes
-#include <CoreAudio/CoreAudioTypes.h>
+#include <AvailabilityMacros.h>
+#if !defined(__COREAUDIO_USE_FLAT_INCLUDES__)
+	#include <CoreAudio/CoreAudioTypes.h>
+#else
+	#include <CoreAudioTypes.h>
+#endif
 
 #if defined(__cplusplus)
 extern "C"
@@ -43,21 +48,41 @@ enum {
 
 struct AudioPanningInfo {
 		// the panning mode to be used for the pan
-	UInt32				mPanningMode;
+	UInt32						mPanningMode;
 		// these coordinates are specified as in the AudioChannelDescription struct in CoreAudioTypes.h
-	UInt32				mCoordinateFlags;
-	Float32				mCoordinates[3];
+	UInt32						mCoordinateFlags;
+	Float32						mCoordinates[3];
 	
 		// mGainScale is used to multiply the panning values 
 		// - in typical usage you are applying an existing volume
 		// value in 0 -> 1 (where 1 is unity gain) to the panned values.
 		// 1 would give you panning at unity
 		// 0 would give you back a matrix of zeroes:-)
-	Float32				mGainScale;
+	Float32						mGainScale;
 		// This is the channel map that is going to be used to determine channel volumes for this pan
 	const AudioChannelLayout*	mOutputChannelMap;
 };
 typedef struct AudioPanningInfo AudioPanningInfo;
+
+enum {
+	kAudioBalanceFadeType_MaxUnityGain = 0,
+		// the gain value never exceeds 1.0, the opposite channel fades out. 
+		// This can reduce overall loudness when the balance or fade is not in the center.
+		
+	kAudioBalanceFadeType_EqualPower = 1
+		// The overall loudness remains constant, but gain can exceed 1.0.
+		// the gain value is 1.0 when the balance and fade are in the center.
+		// From there they can increase to +3dB (1.414) and decrease to -inf dB (0.0).
+};
+	
+struct AudioBalanceFade
+{
+	Float32						mLeftRightBalance;		// -1 is full left, 0 is center, +1 is full right
+	Float32						mBackFrontFade;			// -1 is full rear, 0 is center, +1 is full front
+	UInt32						mType;					// max unity gain, or equal power.
+	const AudioChannelLayout*	mChannelLayout;
+};
+typedef struct AudioBalanceFade AudioBalanceFade;
 
 //=============================================================================
 //	Properties - for various format structures.
@@ -81,25 +106,33 @@ enum
 		//	Returns whether or not a format has a variable number of bytes per
 		//	packet. The specifier is an AudioStreamBasicDescription describing
 		//	the format to ask about. The value is a UInt32 where non-zero means
-		//	the format is variable bytes pers packet.
+		//	the format is variable bytes per packet.
 	
 	kAudioFormatProperty_FormatIsExternallyFramed		= 'fexf',
-		//	Returns whether or not a format has a requires external framing information. 
+		//	Returns whether or not a format requires external framing information,
+		//  i.e. AudioStreamPacketDescriptions. 
 		//  The specifier is an AudioStreamBasicDescription describing
 		//	the format to ask about. The value is a UInt32 where non-zero means
-		//	the format is externally framed. For instance, AAC is an externally 
-		//  framed format, whereas MP3 isn't (for MP3 all the "framing" is in the 
-		//  bit stream you pass to the codec).
+		//	the format is externally framed. Any format which has variable byte sized packets
+		//  requires AudioStreamPacketDescriptions.
 	
 	kAudioFormatProperty_EncodeFormatIDs				= 'acof',
 		// No specifier needed. Must be set to NULL.
-		// Returns an array of UInt32 format IDs for formats that are valid input formats 
-		// for the converter. 
+		// Returns an array of UInt32 format IDs for formats that are valid output formats 
+		// for a converter. 
 	
 	kAudioFormatProperty_DecodeFormatIDs				= 'acif',
 		// No specifier needed. Must be set to NULL.
-		// Returns an array of UInt32 format IDs for formats that are valid output formats 
-		// for the converter. 
+		// Returns an array of UInt32 format IDs for formats that are valid input formats 
+		// for a converter. 
+	
+	kAudioFormatProperty_Encoders				= 'aven',
+		// The specifier is the format that you are interested in, e.g. 'aac '
+		// Returns an array of AudioClassDescriptions for all installed encoders for the given format 
+	
+	kAudioFormatProperty_Decoders				= 'avde',
+		// The specifier is the format that you are interested in, e.g. 'aac '
+		// Returns an array of AudioClassDescriptions for all installed decoders for the given format 
 	
 	kAudioFormatProperty_AvailableEncodeBitRates		= 'aebr',
 		//  The specifier is a UInt32 format ID.
@@ -126,8 +159,16 @@ enum
 		//	AudioStreamBasicDescription describing the format to ask about.
 		//	The value is a CFStringRef. The caller is responsible for releasing the
 		//	returned string. For some formats (eg, Linear PCM) you will get back a
-		//	descriptive string (for eg. 16-bit, interleaved, etc...)
-	
+		//	descriptive string (e.g. 16-bit, interleaved, etc...)
+
+    kAudioFormatProperty_ASBDFromESDS                   = 'essd',
+		//	Returns an audio stream description for a given ESDS. The specifier is an
+		//	ESDS. The value is a AudioStreamBasicDescription. 
+        
+    kAudioFormatProperty_ChannelLayoutFromESDS          = 'escl',
+		//	Returns an audio channel layout for a given ESDS. The specifier is an
+		//	ESDS. The value is a AudioChannelLayout. 
+
 //=============================================================================
 //	The following properties concern the AudioChannelLayout struct (speaker layouts)
 //=============================================================================
@@ -158,7 +199,7 @@ enum
 	kAudioFormatProperty_BitmapForLayoutTag				= 'bmtg',
 		// Returns a bitmap for an AudioChannelLayoutTag, if there is one.
 		// The specifier is a AudioChannelLayoutTag  containing the layout tag.
-		// The value is an UInt32 bitmap.
+		// The value is an UInt32 bitmap. The bits are as defined in CoreAudioTypes.h.
 		// To go in the other direction, i.e. get a layout tag for a bitmap, 
 		// use kAudioFormatProperty_TagForChannelLayout where your layout tag 
 		// is kAudioChannelLayoutTag_UseChannelBitmap and the bitmap is filled in.
@@ -176,13 +217,12 @@ enum
 		//	returned string.
 	
 	kAudioFormatProperty_MatrixMixMap					= 'mmap',
-		//	Returns a matrix of scaling coefficients for moving audio from one channel map 
+		//	Returns a matrix of scaling coefficients for converting audio from one channel map 
 		//  to another in a standard way, if one is known. Otherwise an error is returned.
 		//  The specifier is an array of two pointers to AudioChannelLayout structures. 
 		//  The first points to the input layout, the second to the output layout.
         //  The value is a two dimensional array of Float32 where the first dimension (rows) 
         //  is the input channel and the second dimension (columns) is the output channel. 
-        //  The Float32 at that point represents the attenuation or gain to apply.
 	
     kAudioFormatProperty_ChannelMap						= 'chmp',
         //  Returns an array of SInt32 for reordering input channels.
@@ -198,7 +238,11 @@ enum
 		//  If the layout tag is 'kAudioChannelLayoutTag_UseChannelDescriptions' it returns
 		// 	the number of channel descriptions.
 				
-	kAudioFormatProperty_PanningMatrix					= 'panm'
+	kAudioFormatProperty_TagsForNumberOfChannels		= 'tagc',
+		//  returns an array of AudioChannelLayoutTags for the number of channels specified.
+		//  The specifier is a UInt32 number of channels. 
+				
+	kAudioFormatProperty_PanningMatrix					= 'panm',
 		//  This call will pass in an AudioPanningInfo struct that specifies one of the
 		//  kPanningMode_ constants for the panning algorithm and an AudioChannelLayout
 		//	to describe the destination channel layout. As in kAudioFormatProperty_MatrixMixMap
@@ -214,6 +258,13 @@ enum
 		//	The volume values will typically be presented within a 0->1 range (where 1 is unity gain)
 		//	For stereo formats, vector based panning is equivalent to the equal-power pan mode.
 		
+	kAudioFormatProperty_BalanceFade					= 'balf'
+		//  get an array of coefficients for applying left/right balance and front/back fade.
+		//  The specifier is an AudioBalanceFade struct. 
+		//	the return value is an array of Float32 values of the number of channels
+		// 	represented by this specified channel layout.  
+		//	The volume values will typically be presented within a 0->1 range (where 1 is unity gain)
+				
 };
 
 //=============================================================================
@@ -230,8 +281,8 @@ enum
 extern OSStatus
 AudioFormatGetPropertyInfo(	AudioFormatPropertyID	inPropertyID,
 							UInt32					inSpecifierSize,
-							void*					inSpecifier,
-							UInt32*					outPropertyDataSize);
+							const void*				inSpecifier,
+							UInt32*					outPropertyDataSize)	AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
 
 //-----------------------------------------------------------------------------
 //	AudioFormatGetProperty
@@ -245,10 +296,9 @@ AudioFormatGetPropertyInfo(	AudioFormatPropertyID	inPropertyID,
 extern OSStatus
 AudioFormatGetProperty(	AudioFormatPropertyID	inPropertyID,
 						UInt32					inSpecifierSize,
-						void*					inSpecifier,
+						const void*				inSpecifier,
 						UInt32*					ioPropertyDataSize,
-						void*					outPropertyData);
-
+						void*					outPropertyData)			AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
 
 
 //-----------------------------------------------------------------------------

@@ -3,9 +3,9 @@
  
      Contains:   QuickTime VR interfaces
  
-     Version:    QuickTime_6
+     Version:    QuickTime 7.1.2
  
-     Copyright:  © 1997-2003 by Apple Computer, Inc., all rights reserved.
+     Copyright:  © 1997-2006 by Apple Computer, Inc., all rights reserved.
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -36,7 +36,7 @@
 extern "C" {
 #endif
 
-#pragma options align=mac68k
+#pragma pack(push, 2)
 
 typedef struct OpaqueQTVRInstance*      QTVRInstance;
 
@@ -554,6 +554,42 @@ InvokeQTVRBackBufferImagingUPP(
   SInt32                    refCon,
   QTVRBackBufferImagingUPP  userUPP)                          AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
+#if __MACH__
+  #ifdef __cplusplus
+    inline QTVRLeavingNodeUPP                                   NewQTVRLeavingNodeUPP(QTVRLeavingNodeProcPtr userRoutine) { return userRoutine; }
+    inline QTVREnteringNodeUPP                                  NewQTVREnteringNodeUPP(QTVREnteringNodeProcPtr userRoutine) { return userRoutine; }
+    inline QTVRMouseOverHotSpotUPP                              NewQTVRMouseOverHotSpotUPP(QTVRMouseOverHotSpotProcPtr userRoutine) { return userRoutine; }
+    inline QTVRImagingCompleteUPP                               NewQTVRImagingCompleteUPP(QTVRImagingCompleteProcPtr userRoutine) { return userRoutine; }
+    inline QTVRBackBufferImagingUPP                             NewQTVRBackBufferImagingUPP(QTVRBackBufferImagingProcPtr userRoutine) { return userRoutine; }
+    inline void                                                 DisposeQTVRLeavingNodeUPP(QTVRLeavingNodeUPP) { }
+    inline void                                                 DisposeQTVREnteringNodeUPP(QTVREnteringNodeUPP) { }
+    inline void                                                 DisposeQTVRMouseOverHotSpotUPP(QTVRMouseOverHotSpotUPP) { }
+    inline void                                                 DisposeQTVRImagingCompleteUPP(QTVRImagingCompleteUPP) { }
+    inline void                                                 DisposeQTVRBackBufferImagingUPP(QTVRBackBufferImagingUPP) { }
+    inline OSErr                                                InvokeQTVRLeavingNodeUPP(QTVRInstance qtvr, UInt32 fromNodeID, UInt32 toNodeID, Boolean * cancel, SInt32 refCon, QTVRLeavingNodeUPP userUPP) { return (*userUPP)(qtvr, fromNodeID, toNodeID, cancel, refCon); }
+    inline OSErr                                                InvokeQTVREnteringNodeUPP(QTVRInstance qtvr, UInt32 nodeID, SInt32 refCon, QTVREnteringNodeUPP userUPP) { return (*userUPP)(qtvr, nodeID, refCon); }
+    inline OSErr                                                InvokeQTVRMouseOverHotSpotUPP(QTVRInstance qtvr, UInt32 hotSpotID, UInt32 flags, SInt32 refCon, QTVRMouseOverHotSpotUPP userUPP) { return (*userUPP)(qtvr, hotSpotID, flags, refCon); }
+    inline OSErr                                                InvokeQTVRImagingCompleteUPP(QTVRInstance qtvr, SInt32 refCon, QTVRImagingCompleteUPP userUPP) { return (*userUPP)(qtvr, refCon); }
+    inline OSErr                                                InvokeQTVRBackBufferImagingUPP(QTVRInstance qtvr, Rect * drawRect, UInt16 areaIndex, UInt32 flagsIn, UInt32 * flagsOut, SInt32 refCon, QTVRBackBufferImagingUPP userUPP) { return (*userUPP)(qtvr, drawRect, areaIndex, flagsIn, flagsOut, refCon); }
+  #else
+    #define NewQTVRLeavingNodeUPP(userRoutine)                  ((QTVRLeavingNodeUPP)userRoutine)
+    #define NewQTVREnteringNodeUPP(userRoutine)                 ((QTVREnteringNodeUPP)userRoutine)
+    #define NewQTVRMouseOverHotSpotUPP(userRoutine)             ((QTVRMouseOverHotSpotUPP)userRoutine)
+    #define NewQTVRImagingCompleteUPP(userRoutine)              ((QTVRImagingCompleteUPP)userRoutine)
+    #define NewQTVRBackBufferImagingUPP(userRoutine)            ((QTVRBackBufferImagingUPP)userRoutine)
+    #define DisposeQTVRLeavingNodeUPP(userUPP)
+    #define DisposeQTVREnteringNodeUPP(userUPP)
+    #define DisposeQTVRMouseOverHotSpotUPP(userUPP)
+    #define DisposeQTVRImagingCompleteUPP(userUPP)
+    #define DisposeQTVRBackBufferImagingUPP(userUPP)
+    #define InvokeQTVRLeavingNodeUPP(qtvr, fromNodeID, toNodeID, cancel, refCon, userUPP) (*userUPP)(qtvr, fromNodeID, toNodeID, cancel, refCon)
+    #define InvokeQTVREnteringNodeUPP(qtvr, nodeID, refCon, userUPP) (*userUPP)(qtvr, nodeID, refCon)
+    #define InvokeQTVRMouseOverHotSpotUPP(qtvr, hotSpotID, flags, refCon, userUPP) (*userUPP)(qtvr, hotSpotID, flags, refCon)
+    #define InvokeQTVRImagingCompleteUPP(qtvr, refCon, userUPP) (*userUPP)(qtvr, refCon)
+    #define InvokeQTVRBackBufferImagingUPP(qtvr, drawRect, areaIndex, flagsIn, flagsOut, refCon, userUPP) (*userUPP)(qtvr, drawRect, areaIndex, flagsIn, flagsOut, refCon)
+  #endif
+#endif
+
 /*
   =================================================================================================
     QTVR Intercept Struct, Callback, Routine Descriptors 
@@ -630,6 +666,18 @@ InvokeQTVRInterceptUPP(
   SInt32            refCon,
   Boolean *         cancel,
   QTVRInterceptUPP  userUPP)                                  AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+
+#if __MACH__
+  #ifdef __cplusplus
+    inline QTVRInterceptUPP                                     NewQTVRInterceptUPP(QTVRInterceptProcPtr userRoutine) { return userRoutine; }
+    inline void                                                 DisposeQTVRInterceptUPP(QTVRInterceptUPP) { }
+    inline void                                                 InvokeQTVRInterceptUPP(QTVRInstance qtvr, QTVRInterceptPtr qtvrMsg, SInt32 refCon, Boolean * cancel, QTVRInterceptUPP userUPP) { (*userUPP)(qtvr, qtvrMsg, refCon, cancel); }
+  #else
+    #define NewQTVRInterceptUPP(userRoutine)                    ((QTVRInterceptUPP)userRoutine)
+    #define DisposeQTVRInterceptUPP(userUPP)
+    #define InvokeQTVRInterceptUPP(qtvr, qtvrMsg, refCon, cancel, userUPP) (*userUPP)(qtvr, qtvrMsg, refCon, cancel)
+  #endif
+#endif
 
 /*
   =================================================================================================
@@ -2237,7 +2285,7 @@ typedef QTVRBackBufferImagingUPP        BackBufferImagingUPP;
 
 
 
-#pragma options align=reset
+#pragma pack(pop)
 
 #ifdef __cplusplus
 }

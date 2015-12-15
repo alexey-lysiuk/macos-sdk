@@ -301,6 +301,13 @@ enum
 		//	kind of default system device is being queried. Note that this property can
 		//	only be queried for output.
 	
+	kAudioDevicePropertyIOCycleUsage							= 'ncyc',
+		//	A Float32 whose range is from 0 to 1. This value indicates how
+		//	much of the client portion of the IO cycle the process will
+		//	use. The client portion of the IO cycle is the portion of the
+		//	cycle in which the device calls the IOProcs so this property does
+		//	not the apply to the duration of the entire cycle.
+		
 	kAudioDeviceProcessorOverload						= 'over',
 		//	This property exists so that clients can be told when
 		//	they are overloading the the IO thread. When the HAL dectects

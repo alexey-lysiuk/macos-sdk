@@ -1,5 +1,5 @@
 /*
-     File:       AudioToolbox/AudioCodec.h
+     File:       AudioUnit/AudioCodec.h
 
      Contains:   A component API for encoding/decoding audio data.
 
@@ -22,8 +22,9 @@
 //=============================================================================
 
 #include <TargetConditionals.h>
+#include <AvailabilityMacros.h>
 
-#if	TARGET_OS_MAC && TARGET_RT_MAC_MACHO
+#if !defined(__COREAUDIO_USE_FLAT_INCLUDES__)
 	#include <CoreServices/CoreServices.h>
 	#include <CoreAudio/CoreAudioTypes.h>
 #else
@@ -86,15 +87,15 @@ extern "C"
 //	-	Should there be standard properties for the important configuration
 //		things, like bit rate, profile, etc. that aren't covered in an
 //		AudioStreamBasicDescription? If so what are they and what do they
-//		look like. If there were standared properties for this stuff, then
+//		look like. If there were standard properties for this stuff, then
 //		it would be possible to create a standard UI for the majority of
 //		the codecs out there which would greatly simplify the process of
 //		creating an AudioCodec component.
 //
 //	-	UI for configuring a codec. Because of the way things are layered
-//		on X, it is highly desireable to not include any UI code in the
-//		AudioCodec component. But, it is also desireable to allow the codec
-//		the opportunity to present it's own UI for configuration. In fact,
+//		on X, it is highly desirable to not include any UI code in the
+//		AudioCodec component. But, it is also desirable to allow the codec
+//		the opportunity to present its own UI for configuration. In fact,
 //		this is how QT works with codecs now. AudioUnits have the exact same
 //		problem, so likely the solution here is similar to the solution
 //		being worked on for AudioUnits.
@@ -151,18 +152,22 @@ enum
 {
 
 	kAudioCodecPropertyNameCFString							= 'lnam',
-		//	the name of the codec's format as a CFStringRef. The CFStringRef
+		//	the name of the codec component as a CFStringRef. The CFStringRef
 		//	retrieved via this property must be released by the caller.
 		
 	kAudioCodecPropertyManufacturerCFString					= 'lmak',
 		//	the manufacturer of the codec as a CFStringRef. The CFStringRef 
 		//	retrieved via this property must be released by the caller.
 	
+	kAudioCodecPropertyFormatCFString						= 'lfor',
+		//	the name of the codec's format as a CFStringRef. The CFStringRef
+		//	retrieved via this property must be released by the caller.
+		
 	kAudioCodecPropertyRequiresPacketDescription			= 'pakd',
 		//	A UInt32 where a non-zero value indicates that the format the codec implements
 		//	requires that an AudioStreamPacketDescription array must be supplied with any data
 		//	in that format. Note that this implies that data must also be handled strictly in
-		//	packets. For a decoder, this applies to input data. For an encoder, it appies to
+		//	packets. For a decoder, this applies to input data. For an encoder, it applies to
 		//	output data.
 		
 	kAudioCodecPropertyPacketFrameSize						= 'pakf',
@@ -187,19 +192,19 @@ enum
 	
 	kAudioCodecPropertyCurrentInputFormat					= 'ifmt',
 		//	An AudioStreamBasicDescription describing the format the codec
-		//	expects it's input data in
+		//	expects its input data in
 	
 	kAudioCodecPropertySupportedInputFormats				= 'ifm#',
-		//	An array of the AudioStreamBasicDescription's the codec supports
-		//	for input data
+		//	An array of AudioStreamBasicDescription structs describing what formats 
+		//	the codec supports for input data
 	
 	kAudioCodecPropertyCurrentOutputFormat					= 'ofmt',
 		//	An AudioStreamBasicDescription describing the format the codec
-		//	provides it's output data in
+		//	provides its output data in
 	
 	kAudioCodecPropertySupportedOutputFormats				= 'ofm#',
-		//	An array of the AudioStreamBasicDescription's the codec supports
-		//	for output data
+		//	An array of AudioStreamBasicDescription structs describing what formats 
+		//	the codec supports for output data
 	
 	kAudioCodecPropertyMagicCookie							= 'kuki',
 		//	An untyped buffer of out of band configuration data the codec
@@ -225,7 +230,7 @@ enum
 		//	encoders.
 
 	kAudioCodecPropertyAvailableBitRates					= 'brt#',
-		//	An array of UInt32's that indicate the target bit rates
+		//	An array of UInt32 that indicates the target bit rates
 		//	supported by the encoder. This property is only relevant to
 		//	encoders.
 		//	Deprecated. Replaced with kAudioCodecPropertyAvailableBitRateRange
@@ -288,39 +293,75 @@ enum
 
 	kAudioCodecPropertyZeroFramesPadded						= 'pad0',
 		//	A UInt32 indicating the number of zeroes (samples) that were appended
-		//	to the last packet of input data to mae a complete packet encoding.
+		//	to the last packet of input data to make a complete packet encoding.
 
 	kAudioCodecPropertyAvailableNumberChannels				= 'cmnc',
 		//	An array of UInt32 that specifies the number of channels the codec is capable of encoding to.
 		//	0xFFFFFFFF means any number of channels.
 
 	kAudioCodecPropertyPrimeMethod							= 'prmm',
-		// a UInt32 specifying priming method.
-		// see explanation for struct AudioCodecPrimeInfo below along with enum constants
+		//	A UInt32 specifying priming method.
+		//	see explanation for struct AudioCodecPrimeInfo below along with enum constants
 
 	kAudioCodecPropertyPrimeInfo							= 'prim',
-		//  A pointer to AudioCodecPrimeInfo
+		//	A pointer to AudioCodecPrimeInfo
 
 	kAudioCodecDoesSampleRateConversion						= 'lmrc',
-		//	a UInt32 indicating if the codec wants to do a sample rate conversion (if 
+		//	A UInt32 indicating if the codec wants to do a sample rate conversion (if 
 		//	necessary) because it can do it in a way that is meaningful for quality.
 		//	Value is 1 if true, 0 otherwise.
 		
 	kAudioCodecPropertyInputChannelLayout					= 'icl ',
-		// An AudioChannelLayout that specifies the channel layout that the codec is using for input.
-		// Settable on encoders.
+		//	An AudioChannelLayout that specifies the channel layout that the codec is using for input.
+		//	Settable on encoders.
 	
 	kAudioCodecPropertyOutputChannelLayout					= 'ocl ',
-		// An AudioChannelLayout that specifies the channel layout that the codec is using for output.
-		// If settable on a encoder, it means the encoder can re-map channels
+		//	An AudioChannelLayout that specifies the channel layout that the codec is using for output.
+		//	If settable on a encoder, it means the encoder can re-map channels
 
 	kAudioCodecPropertyAvailableInputChannelLayouts			= 'aicl',
-		//	An array of AudioChannelLayoutTags that specifies what channel layouts the codec is
+		//	An array of AudioChannelLayoutTag that specifies what channel layouts the codec is
 		//	capable of using on input.
 
-	kAudioCodecPropertyAvailableOutputChannelLayouts		= 'aocl'
-		//	An array of AudioChannelLayoutTags that specifies what channel layouts the codec is
+	kAudioCodecPropertyAvailableOutputChannelLayouts		= 'aocl',
+		//	An array of AudioChannelLayoutTag that specifies what channel layouts the codec is
 		//	capable of using on output.
+
+	kAudioCodecPropertySettings								= 'acs ',
+		//	A CFDictionaryRef that lists both the settable codec settings and their values.
+	
+	kAudioCodecBitRateFormat								= 'acbf',
+		//	A UInt32 indicating what bit rate format an encoder will target, eg Constant Bit Rate
+		//	(CBR), Average Bit Rate (ABR), or Variable Bit Rate (VBR). See the enums below.
+		//	Only needs to be settable if the codec supports multiple bit rate strategies.
+		
+	kAudioCodecExtendFrequencies							= 'acef',
+		//	A UInt32 indicating whether an encoder should extend its cutoff frequency
+		//	if such an option exists. 0 == extended frequencies off, 1 == extended frequencies on
+		//	eg some encoders normally cut off the signal at 16 kHz but can encode up to 20 kHz if 
+		//	asked to
+		
+	kAudioCodecInputFormatsForOutputFormat					= 'if4o',
+		//	An array of AudioStreamBasicDescription indicating what the codec supports
+		//  for input data given an output format that's passed in as the first member of
+		//	the array (and is overwritten on the reply). Always a subset of 
+		//	kAudioCodecPropertySupportedInputFormats
+		
+	kAudioCodecOutputFormatsForInputFormat					= 'of4i',
+		//	An array of AudioStreamBasicDescription indicating what the codec supports
+		//	for output data given an input format that's passed in as the first member of
+		//	the array (and is overwritten on the reply). Always a subset of 
+		//	kAudioCodecPropertySupportedOutputFormats
+
+	kAudioCodecUseRecommendedSampleRate						= 'ursr',
+		//	For encoders that do sample rate conversion, a UInt32 indicating whether or
+		//	not the encoder is using the recommended sample rate for the given input. 
+		//	A value of 0 indicates it isn't, 1 indicates it is.
+		
+	kAudioCodecOutputPrecedence								= 'oppr'
+		//	For encoders that do sample rate conversion, a UInt32 indicating whether the
+		//	bitrate, sample rate, nor either have precedence of the other.
+		//	See enum below
 };
 
 // constants to be used with kAudioCodecPropertyQualitySetting
@@ -343,11 +384,73 @@ enum
 											// both leading and trailing frames assumed to be silence
 };
 
-typedef struct AudioCodecPrimeInfo {
+// constants to be used with kAudioCodecBitRateFormat
+enum
+{
+	kAudioCodecBitRateFormat_CBR 	= 0,	// Every encoded frame is the same size
+											// eg IMA, MACE, old MP3, most early audio codecs
+	kAudioCodecBitRateFormat_ABR 	= 1,	// Encoder attempts to keep close to the given bit rate, can vary
+											// eg modern MP3 CBR, AAC (anything that has a "minimum" frame size 
+											// or implements a bit pool for "CBR")
+	kAudioCodecBitRateFormat_VBR 	= 2		// Encoder varies frames size attempting to maintain constant quality
+											// eg MP3 VBR (Xing), AAC VBR
+};
+
+// constants to be used with kAudioCodecOutputPrecedence
+enum
+{
+	kAudioCodecOutputPrecedenceNone			= 0,	// Change in the bit rate or the sample rate are constrained by
+													// the other value.
+	kAudioCodecOutputPrecedenceBitRate		= 1,	// The bit rate may be changed freely, 
+													// adjusting the sample rate if necessary
+	kAudioCodecOutputPrecedenceSampleRate 	= 2		// The sample rate may be changed freely, 
+													// adjusting the bit rate if necessary
+};
+
+typedef struct AudioCodecPrimeInfo 
+{
 	UInt32		leadingFrames;
 	UInt32		trailingFrames;
 } AudioCodecPrimeInfo;
 
+//=============================================================================
+// Constants for kAudioCodecPropertySettings
+//=============================================================================
+
+#define kAudioSettings_TopLevelKey		"name"
+#define kAudioSettings_Version			"version"
+#define kAudioSettings_Parameters 		"parameters"
+#define kAudioSettings_SettingKey		"key"
+#define kAudioSettings_SettingName 		"name"
+#define kAudioSettings_ValueType 		"value type"
+#define kAudioSettings_AvailableValues	"available values"
+#define kAudioSettings_LimitedValues	"limited values"
+#define kAudioSettings_CurrentValue 	"current value"
+#define kAudioSettings_Summary 			"summary"
+#define kAudioSettings_Hint 			"hint"
+#define kAudioSettings_Unit 			"unit" // kHz, kbps, etc.
+
+// constants to be used with kAudioSettings_Hint (deprecated, use kAudioSettingsFlags_XX below)
+enum
+{
+	kHintBasic		= 0,
+	kHintAdvanced	= 1,
+	kHintHidden		= 2
+};
+
+// constants to be used with kAudioSettings_Hint
+enum {
+	kAudioSettingsFlags_ExpertParameter = (1L << 0),
+		// If set, then the parameter is an expert parameter.
+	kAudioSettingsFlags_InvisibleParameter = (1L << 1),
+		// If set, then the parameter should not be displayed.
+	kAudioSettingsFlags_MetaParameter = (1L << 2),
+		// If set, then changing this parameter may affect the values of other parameters. 
+		// If not set, then this parameter can be set without affecting the values of other parameters.
+	kAudioSettingsFlags_UserInterfaceParameter = (1L << 3)
+		// If set, then this is only a user interface element and not reflected in the codec's bit stream.
+};
+	
 //=============================================================================
 //	Status values returned from the AudioCodecProduceOutputPacket routine
 //=============================================================================
@@ -433,7 +536,7 @@ EXTERN_API(ComponentResult)
 AudioCodecGetPropertyInfo(	AudioCodec				inCodec,
 							AudioCodecPropertyID	inPropertyID,
 							UInt32*					outSize,
-							Boolean*				outWritable);
+							Boolean*				outWritable)		AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 //-----------------------------------------------------------------------------
 //	AudioCodecGetProperty
@@ -447,7 +550,7 @@ EXTERN_API(ComponentResult)
 AudioCodecGetProperty(	AudioCodec				inCodec,
 						AudioCodecPropertyID	inPropertyID,
 						UInt32*					ioPropertyDataSize,
-						void*					outPropertyData);
+						void*					outPropertyData)		AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 //-----------------------------------------------------------------------------
 //	AudioCodecSetProperty
@@ -459,7 +562,7 @@ EXTERN_API(ComponentResult)
 AudioCodecSetProperty(	AudioCodec				inCodec,
 						AudioCodecPropertyID	inPropertyID,
 						UInt32					inPropertyDataSize,
-						const void*				inPropertyData);
+						const void*				inPropertyData)			AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 //=============================================================================
 //	Codec Data Handling Routines
@@ -470,7 +573,7 @@ AudioCodecSetProperty(	AudioCodec				inCodec,
 //
 //	This call will allocate any buffers needed and otherwise set the codec
 //	up to perform the indicated translation. If an argument is NULL, any
-//	previously set proeprties will be used for preparing the codec for work.
+//	previously set properties will be used for preparing the codec for work.
 //	Note that this routine will also validate the format information as useable.
 //-----------------------------------------------------------------------------
 	
@@ -479,7 +582,8 @@ AudioCodecInitialize(	AudioCodec							inCodec,
 						const AudioStreamBasicDescription*	inInputFormat,
 						const AudioStreamBasicDescription*	inOutputFormat,
 						const void*							inMagicCookie,
-						UInt32								inMagicCookieByteSize);
+						UInt32								inMagicCookieByteSize)
+																		AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 //-----------------------------------------------------------------------------
 //	AudioCodecUninitialize
@@ -490,7 +594,7 @@ AudioCodecInitialize(	AudioCodec							inCodec,
 //-----------------------------------------------------------------------------
 	
 EXTERN_API(ComponentResult)
-AudioCodecUninitialize(AudioCodec inCodec);
+AudioCodecUninitialize(AudioCodec inCodec)								AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 //-----------------------------------------------------------------------------
 //	AudioCodecAppendInputData
@@ -514,7 +618,8 @@ AudioCodecAppendInputData(	AudioCodec							inCodec,
 							const void*							inInputData,
 							UInt32*								ioInputDataByteSize,
 							UInt32*								ioNumberPackets,
-							const AudioStreamPacketDescription*	inPacketDescription);
+							const AudioStreamPacketDescription*	inPacketDescription)
+																		AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 //-----------------------------------------------------------------------------
 //	AudioCodecProduceOutputPackets
@@ -542,7 +647,8 @@ AudioCodecProduceOutputPackets(	AudioCodec						inCodec,
 								UInt32*							ioOutputDataByteSize,
 								UInt32*							ioNumberPackets,
 								AudioStreamPacketDescription*	outPacketDescription,
-								UInt32*							outStatus);
+								UInt32*							outStatus)
+																		AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 //-----------------------------------------------------------------------------
 //	AudioCodecReset
@@ -553,7 +659,7 @@ AudioCodecProduceOutputPackets(	AudioCodec						inCodec,
 //-----------------------------------------------------------------------------
 	
 EXTERN_API(ComponentResult)
-AudioCodecReset(AudioCodec inCodec);
+AudioCodecReset(AudioCodec inCodec)										AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 #if defined(__cplusplus)
 }

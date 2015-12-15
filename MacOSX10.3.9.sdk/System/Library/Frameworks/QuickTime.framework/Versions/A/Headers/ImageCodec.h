@@ -3,9 +3,9 @@
  
      Contains:   QuickTime Interfaces.
  
-     Version:    QuickTime_6
+     Version:    QuickTime 7.1.2
  
-     Copyright:  © 1990-2003 by Apple Computer, Inc., all rights reserved
+     Copyright:  © 1990-2006 by Apple Computer, Inc., all rights reserved
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -41,7 +41,7 @@
 extern "C" {
 #endif
 
-#pragma options align=mac68k
+#pragma pack(push, 2)
 
 /*
    The following GX types were previously in GXTypes.h, but that header
@@ -107,7 +107,9 @@ enum {
   codecImageBufferIsInAGPMemory = 1L << 4, /* codec image buffer is in AGP space, byte writes are OK */
   codecImageBufferIsInPCIMemory = 1L << 5, /* codec image buffer is across a PCI bus; byte writes are bad */
   codecImageBufferMemoryFlagsValid = 1L << 6, /* set by ImageCodecNewImageBufferMemory/NewImageGWorld to indicate that it set the AGP/PCI flags (supported in QuickTime 6.0 and later) */
-  codecDrawsHigherQualityScaled = 1L << 7 /* codec will draw higher-quality image if it performs scaling (eg, wipe effect with border) */
+  codecDrawsHigherQualityScaled = 1L << 7, /* codec will draw higher-quality image if it performs scaling (eg, wipe effect with border) */
+  codecSupportsOutOfOrderDisplayTimes = 1L << 8, /* codec supports frames queued in one order for display in a different order, eg, IPB content */
+  codecSupportsScheduledBackwardsPlaybackWithDifferenceFrames = 1L << 9 /* codec can use additional buffers to minimise redecoding during backwards playback */
 };
 
 struct CodecCapabilities {
@@ -315,7 +317,7 @@ struct CodecDecompressParams {
   OSType              taskName;               /* preferred name (type) for MP tasks implementing this operation*/
 
                                               /* The following fields only exist for QuickTime 6.0 and greater */
-  Boolean             bidirectionalPredictionMode;
+  Boolean             pad3;
   UInt8               destinationBufferMemoryPreference; /* a codec's PreDecompress/Preflight call can set this to express a preference about what kind of memory its destination buffer should go into.  no guarantees.*/
   UInt8               codecBufferMemoryPreference; /* may indicate preferred kind of memory that NewImageGWorld/NewImageBufferMemory should create its buffer in, if applicable.*/
   Boolean             onlyUseCodecIfItIsInUserPreferredCodecList; /* set to prevent this codec from being used unless it is in the userPreferredCodec list*/
@@ -325,6 +327,16 @@ struct CodecDecompressParams {
                                               /* The following fields only exist for QuickTime 6.5 and greater */
   UInt8               deinterlaceRequest;     /* set by the ICM before PreDecompress/Preflight */
   UInt8               deinterlaceAnswer;      /* codec should set this in PreDecompress/Preflight if it will satisfy the deinterlaceRequest */
+
+                                              /* The following fields only exist for QuickTime 7.0 and greater */
+  UInt8               pad4[2];
+  long                reserved2;
+  UInt32              reserved3;
+  long                reserved4;
+  void *              reserved5;
+  void *              reserved6;
+  void *              reserved7;
+  void *              reserved8;
 };
 typedef struct CodecDecompressParams    CodecDecompressParams;
 enum {
@@ -437,6 +449,24 @@ InvokeImageCodecDrawBandCompleteUPP(
   UInt32                         drawBandCompleteFlags,
   ImageCodecDrawBandCompleteUPP  userUPP)                     AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
+#if __MACH__
+  #ifdef __cplusplus
+    inline ImageCodecTimeTriggerUPP                             NewImageCodecTimeTriggerUPP(ImageCodecTimeTriggerProcPtr userRoutine) { return userRoutine; }
+    inline ImageCodecDrawBandCompleteUPP                        NewImageCodecDrawBandCompleteUPP(ImageCodecDrawBandCompleteProcPtr userRoutine) { return userRoutine; }
+    inline void                                                 DisposeImageCodecTimeTriggerUPP(ImageCodecTimeTriggerUPP) { }
+    inline void                                                 DisposeImageCodecDrawBandCompleteUPP(ImageCodecDrawBandCompleteUPP) { }
+    inline void                                                 InvokeImageCodecTimeTriggerUPP(void * refcon, ImageCodecTimeTriggerUPP userUPP) { (*userUPP)(refcon); }
+    inline void                                                 InvokeImageCodecDrawBandCompleteUPP(void * refcon, ComponentResult drawBandResult, UInt32 drawBandCompleteFlags, ImageCodecDrawBandCompleteUPP userUPP) { (*userUPP)(refcon, drawBandResult, drawBandCompleteFlags); }
+  #else
+    #define NewImageCodecTimeTriggerUPP(userRoutine)            ((ImageCodecTimeTriggerUPP)userRoutine)
+    #define NewImageCodecDrawBandCompleteUPP(userRoutine)       ((ImageCodecDrawBandCompleteUPP)userRoutine)
+    #define DisposeImageCodecTimeTriggerUPP(userUPP)
+    #define DisposeImageCodecDrawBandCompleteUPP(userUPP)
+    #define InvokeImageCodecTimeTriggerUPP(refcon, userUPP)     (*userUPP)(refcon)
+    #define InvokeImageCodecDrawBandCompleteUPP(refcon, drawBandResult, drawBandCompleteFlags, userUPP) (*userUPP)(refcon, drawBandResult, drawBandCompleteFlags)
+  #endif
+#endif
+
 struct ImageSubCodecDecompressCapabilities {
   long                recordSize;             /* sizeof(ImageSubCodecDecompressCapabilities)*/
   long                decompressRecordSize;   /* size of your codec's decompress record*/
@@ -455,7 +485,19 @@ struct ImageSubCodecDecompressCapabilities {
                                               /* The following fields only exist for QuickTime 5.0.1 and greater */
   Boolean             isChildCodec;           /* set by base codec before calling Initialize*/
   UInt8               reserved1;
-  UInt8               pad4[2];
+  UInt8               pad4[1];
+
+                                              /* The following fields only exist for QuickTime 7.0 and greater */
+  Boolean             subCodecIsMultiBufferAware; /* set if subcodec always draws using ImageSubCodecDecompressRecord.baseAddr/rowBytes passed to ImageCodecDrawBand, and always writes every pixel in the buffer*/
+  Boolean             subCodecSupportsOutOfOrderDisplayTimes;
+  Boolean             subCodecSupportsScheduledBackwardsPlaybackWithDifferenceFrames;
+  Boolean             subCodecNeedsHelpReportingNonDisplayableFrames;
+  Boolean             baseCodecShouldCallDecodeBandForAllFrames;
+
+  UInt8               pad5[2];
+  Boolean             subCodecSupportsDrawInDecodeOrder; /* indicates that it's okay for the subcodec to get a single DrawBand call for each frame in decode order even when frames need reordering.  (This will only happen when other circumstances allow it.)*/
+  Boolean             subCodecSupportsDecodeSmoothing; /* Frame-reordering subcodecs should set this to indicate that they can safely decode a non-droppable frame before drawing the previous non-droppable frame.  This enables smoother playback in GWorlds.*/
+  UInt8               pad6[4];
 };
 typedef struct ImageSubCodecDecompressCapabilities ImageSubCodecDecompressCapabilities;
 enum {
@@ -480,6 +522,11 @@ struct ImageSubCodecDecompressRecord {
                                               /* The following fields only exist for QuickTime 5.0 and greater */
   ImageCodecDrawBandCompleteUPP  drawBandCompleteUPP; /* only used if subcodec set subCodecCallsDrawBandComplete; if drawBandCompleteUPP is non-nil, codec must call it when a frame is finished, but may return from DrawBand before the frame is finished. */
   void *              drawBandCompleteRefCon; /* Note: do not call drawBandCompleteUPP directly from a hardware interrupt; instead, use DTInstall to run a function at deferred task time, and call drawBandCompleteUPP from that. */
+
+                                              /* The following fields only exist for QuickTime 7.0 and greater */
+  void *              reserved1;
+  long                reserved2;
+  long                reserved3;
 };
 typedef struct ImageSubCodecDecompressRecord ImageSubCodecDecompressRecord;
 /*
@@ -968,13 +1015,36 @@ enum {
 };
 
 
-/* Additional Image Description Extensions*/
-enum {
-  kColorInfoImageDescriptionExtension = 'colr', /* image description extension describing the color properties    */
-  kPixelAspectRatioImageDescriptionExtension = 'pasp', /* image description extension describing the pixel aspect ratio*/
-  kCleanApertureImageDescriptionExtension = 'clap' /* image description extension describing the pixel aspect ratio*/
-};
 
+/*
+ *  Summary:
+ *    Additional Image Description Extensions
+ */
+enum {
+
+  /*
+   * Image description extension describing the color properties.
+   */
+  kColorInfoImageDescriptionExtension = 'colr',
+
+  /*
+   * Image description extension describing the pixel aspect ratio.
+   */
+  kPixelAspectRatioImageDescriptionExtension = 'pasp', /* big-endian PixelAspectRatioImageDescriptionExtension */
+
+  /*
+   * Image description extension describing the clean aperture.
+   */
+  kCleanApertureImageDescriptionExtension = 'clap', /* big-endian CleanApertureImageDescriptionExtension */
+
+  /*
+   * Specifies the offset in bytes from the start of one pixel row to
+   * the next. Only valid for chunky pixel formats. If present, this
+   * image description extension overrides other conventions for
+   * calculating rowBytes.
+   */
+  kQTRowBytesImageDescriptionExtension = 'rowb' /* big-endian SInt32 */
+};
 
 /* Color Info Image Description Extension types*/
 enum {
@@ -1047,9 +1117,9 @@ struct CleanApertureImageDescriptionExtension {
   UInt32              cleanApertureWidthD;
   UInt32              cleanApertureHeightN;   /* height of clean aperture, numerator, denominator*/
   UInt32              cleanApertureHeightD;
-  UInt32              horizOffN;              /* horizontal offset of clean aperture center minus (width-1)/2, numerator, denominator */
+  SInt32              horizOffN;              /* horizontal offset of clean aperture center minus (width-1)/2, numerator, denominator */
   UInt32              horizOffD;
-  UInt32              vertOffN;               /* vertical offset of clean aperture center minus (height-1)/2, numerator, denominator */
+  SInt32              vertOffN;               /* vertical offset of clean aperture center minus (height-1)/2, numerator, denominator */
   UInt32              vertOffD;
 };
 typedef struct CleanApertureImageDescriptionExtension CleanApertureImageDescriptionExtension;
@@ -1091,10 +1161,24 @@ InvokeImageCodecMPDrawBandUPP(
   ImageSubCodecDecompressRecord *  drp,
   ImageCodecMPDrawBandUPP          userUPP)                   AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
+#if __MACH__
+  #ifdef __cplusplus
+    inline ImageCodecMPDrawBandUPP                              NewImageCodecMPDrawBandUPP(ImageCodecMPDrawBandProcPtr userRoutine) { return userRoutine; }
+    inline void                                                 DisposeImageCodecMPDrawBandUPP(ImageCodecMPDrawBandUPP) { }
+    inline ComponentResult                                      InvokeImageCodecMPDrawBandUPP(void * refcon, ImageSubCodecDecompressRecord * drp, ImageCodecMPDrawBandUPP userUPP) { return (*userUPP)(refcon, drp); }
+  #else
+    #define NewImageCodecMPDrawBandUPP(userRoutine)             ((ImageCodecMPDrawBandUPP)userRoutine)
+    #define DisposeImageCodecMPDrawBandUPP(userUPP)
+    #define InvokeImageCodecMPDrawBandUPP(refcon, drp, userUPP) (*userUPP)(refcon, drp)
+  #endif
+#endif
+
 /*  codec selectors 0-127 are reserved by Apple */
 /*  codec selectors 128-191 are subtype specific */
 /*  codec selectors 192-255 are vendor specific */
-/*  codec selectors 256-32767 are available for general use */
+/*  codec selectors 256-511 are available for general use */
+/*  codec selectors 512-1023 are reserved by Apple */
+/*  codec selectors 1024-32767 are available for general use */
 /*  negative selectors are reserved by the Component Manager */
 /*
  *  ImageCodecGetCodecInfo()
@@ -1948,6 +2032,333 @@ ImageCodecDITLValidateInput(
   Boolean *           ok)                                     AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
+/* (Selector 52 skipped) */
+/* (Selector 53 skipped) */
+/*
+ *  ImageCodecGetPreferredChunkSizeAndAlignment()
+ *  
+ *  Summary:
+ *    Returns the preferences of an image decompressor for the chunking
+ *    of image data within a container, e.g. a movie file.
+ *  
+ *  Discussion:
+ *    If you are writing image data to a container, you can optimize
+ *    the subsequent loading of the image data for playback and other
+ *    operations by chunking multiple samples of image data together.
+ *    This function can be called to determine whether an image
+ *    decompressor has special chunking preferences.
+ *  
+ *  Parameters:
+ *    
+ *    ci:
+ *      Component instance / instance globals.
+ *    
+ *    desc:
+ *      The image description for the image data to be chunked.
+ *    
+ *    frameRate:
+ *      Mean frame rate in frames per second as in SCTemporalSettings;
+ *      0 if not known or not applicable.
+ *    
+ *    dataRate:
+ *      Mean data rate in bytes per second as in SCDataRateSettings; 0
+ *      if not known.
+ *    
+ *    bytesPerChunk:
+ *      Points to a variable to receive the preferred maximum size in
+ *      bytes of each chunk of image data. It is not safe to pass NULL
+ *      for this parameter.
+ *    
+ *    alignment:
+ *      Points to a variable to receive the preferred boundary for
+ *      chunk alignment in bytes, e.g. 512. It is not safe to pass NULL
+ *      for this parameter.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern ComponentResult 
+ImageCodecGetPreferredChunkSizeAndAlignment(
+  ComponentInstance        ci,
+  ImageDescriptionHandle   desc,
+  Fixed                    frameRate,
+  UInt32                   dataRate,
+  long *                   bytesPerChunk,
+  long *                   alignment)                         AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+
+/* B-Frame Capable Image Compressor Component API */
+/*
+ *  ImageCodecPrepareToCompressFrames()
+ *  
+ *  Summary:
+ *    Prepares the compressor to receive frames.
+ *  
+ *  Discussion:
+ *    The compressor should record session and retain
+ *    compressionSessionOptions for use in later calls. 
+ *    The compressor may modify imageDescription at this point. 
+ *     The compressor should create and return pixel buffer attributes,
+ *    which the ICM will release. 
+ *    (Note: this replaces ImageCodecPreCompress.)
+ *  
+ *  Parameters:
+ *    
+ *    ci:
+ *      Component instance / instance globals.
+ *    
+ *    session:
+ *      The compressor session reference. The compressor should store
+ *      this in its globals; it will need it when calling the ICM back
+ *      (eg, to call ICMEncodedFrameCreateMutable and
+ *      ICMCompressorSessionEmitEncodedFrame). 
+ *      This is not a CF type. Do not call CFRetain or CFRelease on it.
+ *    
+ *    compressionSessionOptions:
+ *      The session options from the client. The compressor should
+ *      retain this and use the settings to guide compression.
+ *    
+ *    imageDescription:
+ *      The image description. The compressor may add image description
+ *      extensions.
+ *    
+ *    reserved:
+ *      Reserved for future use.  Ignore this parameter.
+ *    
+ *    compressorPixelBufferAttributesOut:
+ *      The compressor should create a pixel buffer attributes
+ *      dictionary and set compressorPixelBufferAttributesOut to it. 
+ *      The ICM will release it.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern ComponentResult 
+ImageCodecPrepareToCompressFrames(
+  ComponentInstance                 ci,
+  ICMCompressorSessionRef           session,
+  ICMCompressionSessionOptionsRef   compressionSessionOptions,
+  ImageDescriptionHandle            imageDescription,
+  void *                            reserved,
+  CFDictionaryRef *                 compressorPixelBufferAttributesOut) AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  ImageCodecEncodeFrame()
+ *  
+ *  Summary:
+ *    Presents the compressor with a frame to encode.
+ *  
+ *  Discussion:
+ *    The compressor may encode the frame immediately or queue it for
+ *    later encoding. If the compressor queues the frame for later
+ *    decode, it must retain it (by calling
+ *    ICMCompressorSourceFrameRetain) and release it when it is done
+ *    with it (by calling ICMCompressorSourceFrameRelease). 
+ *    Pixel buffers are guaranteed to conform to the pixel buffer
+ *    attributes returned by ImageCodecPrepareToCompressFrames. 
+ *     During multipass encoding, if the compressor requested the
+ *    kICMCompressionPassMode_NoSourceFrames flag, the source frame
+ *    pixel buffers may be NULL. 
+ *    (Note: this replaces ImageCodecBandCompress.)
+ *  
+ *  Parameters:
+ *    
+ *    ci:
+ *      Component instance / instance globals.
+ *    
+ *    sourceFrame:
+ *      The source frame to encode.
+ *    
+ *    flags:
+ *      Reserved; ignore.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern ComponentResult 
+ImageCodecEncodeFrame(
+  ComponentInstance             ci,
+  ICMCompressorSourceFrameRef   sourceFrame,
+  UInt32                        flags)                        AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  ImageCodecCompleteFrame()
+ *  
+ *  Summary:
+ *    Directs the compressor to finish with a queued source frame,
+ *    either emitting or dropping it.
+ *  
+ *  Discussion:
+ *    This frame does not necessarily need to be the first or only
+ *    source frame emitted or dropped during this call, but the
+ *    compressor must call either ICMCompressorSessionDropFrame or
+ *    ICMCompressorSessionEmitEncodedFrame with this frame before
+ *    returning. 
+ *    The ICM will call this function to force frames to be encoded for
+ *    the following reasons: (a) the maximum frame delay count or
+ *    maximum frame delay time in the compressionSessionOptions does
+ *    not permit frames to be queued; (b) the client has called
+ *    ICMCompressionSessionCompleteFrames.
+ *  
+ *  Parameters:
+ *    
+ *    ci:
+ *      Component instance / instance globals.
+ *    
+ *    sourceFrame:
+ *      The source frame that must be completed.
+ *    
+ *    flags:
+ *      Reserved; ignore.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern ComponentResult 
+ImageCodecCompleteFrame(
+  ComponentInstance             ci,
+  ICMCompressorSourceFrameRef   sourceFrame,
+  UInt32                        flags)                        AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  ImageCodecBeginPass()
+ *  
+ *  Summary:
+ *    Notifies the compressor that it should operate in multipass mode
+ *    and use the given multipass storage.
+ *  
+ *  Parameters:
+ *    
+ *    ci:
+ *      Component instance / instance globals.
+ *    
+ *    passModeFlags:
+ *      Indicates how the compressor should operate in this pass. 
+ *       If the kICMCompressionPassMode_WriteToMultiPassStorage flag is
+ *      set, the compressor may gather information of interest and
+ *      store it in multiPassStorage. 
+ *      If the kICMCompressionPassMode_ReadFromMultiPassStorage flag is
+ *      set, the compressor may retrieve information from
+ *      multiPassStorage. 
+ *      If the kICMCompressionPassMode_OutputEncodedFrames flag is set,
+ *      the compressor must encode or drop every frame by calling
+ *      ICMCompressorSessionDropFrame or
+ *      ICMCompressorSessionEmitEncodedFrame. If that flag is not set,
+ *      the compressor should not call these routines.
+ *    
+ *    flags:
+ *      Reserved.  Ignore this parameter.
+ *    
+ *    multiPassStorage:
+ *      The multipass storage object that the compressor should use to
+ *      store and retrieve information between passes.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern ComponentResult 
+ImageCodecBeginPass(
+  ComponentInstance             ci,
+  ICMCompressionPassModeFlags   passModeFlags,
+  UInt32                        flags,
+  ICMMultiPassStorageRef        multiPassStorage)             AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  ImageCodecEndPass()
+ *  
+ *  Summary:
+ *    Notifies the compressor that a pass is over.
+ *  
+ *  Parameters:
+ *    
+ *    ci:
+ *      Component instance / instance globals.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern ComponentResult 
+ImageCodecEndPass(ComponentInstance ci)                       AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  ImageCodecProcessBetweenPasses()
+ *  
+ *  Summary:
+ *    Gives the compressor an opportunity to perform processing between
+ *    passes.
+ *  
+ *  Discussion:
+ *    This function will be called repeatedly until it returns true in
+ *    *interpassProcessingDoneOut. 
+ *    The compressor may read and write to multiPassStorage. 
+ *    The compressor should indicate which type of pass it would prefer
+ *    to perform next by setting *requestedNextPassTypeOut.
+ *  
+ *  Parameters:
+ *    
+ *    ci:
+ *      Component instance / instance globals.
+ *    
+ *    multiPassStorage:
+ *      The multipass storage object that the compressor should use to
+ *      store and retrieve information between passes.
+ *    
+ *    interpassProcessingDoneOut:
+ *      Points to a Boolean. Set this to false if you want your
+ *      ImageCodecProcessBetweenPasses function to be called again to
+ *      perform more processing, true if not.
+ *    
+ *    requestedNextPassModeFlagsOut:
+ *      Set *requestedNextPassModeFlagsOut to indicate the type of pass
+ *      that should be performed next: 
+ *      To recommend a repeated analysis pass, set it to
+ *      kICMCompressionPassMode_ReadFromMultiPassStorage |
+ *      kICMCompressionPassMode_WriteToMultiPassStorage. 
+ *      To recommend a final encoding pass, set it to
+ *      kICMCompressionPassMode_ReadFromMultiPassStorage |
+ *      kICMCompressionPassMode_OutputEncodedFrames. 
+ *      If source frame buffers are not necessary for the recommended
+ *      pass (eg, because all the required data has been copied into
+ *      multipass storage), set kICMCompressionPassMode_NoSourceFrames.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern ComponentResult 
+ImageCodecProcessBetweenPasses(
+  ComponentInstance              ci,
+  ICMMultiPassStorageRef         multiPassStorage,
+  Boolean *                      interpassProcessingDoneOut,
+  ICMCompressionPassModeFlags *  requestedNextPassModeFlagsOut) AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+
+/* (Selector 61 skipped) */
+/* (Selector 62 skipped) */
+/* (Selector 63 skipped) */
+/* (Selector 64 skipped) */
+/* (Selector 65 skipped) */
+/* (Selector 66 skipped) */
 /*
  *  ImageCodecPreflight()
  *  
@@ -2098,6 +2509,22 @@ extern ComponentResult
 ImageCodecCancelTrigger(ComponentInstance ci)                 AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
+/*
+ *  ImageCodecDecodeBand()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern ComponentResult 
+ImageCodecDecodeBand(
+  ComponentInstance                ci,
+  ImageSubCodecDecompressRecord *  drp,
+  unsigned long                    flags)                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
 
 
 
@@ -2154,6 +2581,13 @@ enum {
     kImageCodecDITLItemSelect                  = 0x0031,
     kImageCodecDITLRemoveSelect                = 0x0032,
     kImageCodecDITLValidateInputSelect         = 0x0033,
+    kImageCodecGetPreferredChunkSizeAndAlignmentSelect = 0x0036,
+    kImageCodecPrepareToCompressFramesSelect   = 0x0037,
+    kImageCodecEncodeFrameSelect               = 0x0038,
+    kImageCodecCompleteFrameSelect             = 0x0039,
+    kImageCodecBeginPassSelect                 = 0x003A,
+    kImageCodecEndPassSelect                   = 0x003B,
+    kImageCodecProcessBetweenPassesSelect      = 0x003C,
     kImageCodecPreflightSelect                 = 0x0200,
     kImageCodecInitializeSelect                = 0x0201,
     kImageCodecBeginBandSelect                 = 0x0202,
@@ -2163,7 +2597,8 @@ enum {
     kImageCodecQueueStoppingSelect             = 0x0206,
     kImageCodecDroppingFrameSelect             = 0x0207,
     kImageCodecScheduleFrameSelect             = 0x0208,
-    kImageCodecCancelTriggerSelect             = 0x0209
+    kImageCodecCancelTriggerSelect             = 0x0209,
+    kImageCodecDecodeBandSelect                = 0x020F
 };
 
 
@@ -2285,6 +2720,96 @@ enum {
     kQTPhotoDefineQuantizationTableSelect      = 0x0103
 };
 
+/*
+ *  Summary:
+ *    Properties for image compressor components
+ */
+enum {
+
+  /*
+   * Property class for image compressor components.
+   */
+  kQTPropertyClass_ImageCompressor = 'imco'
+};
+
+
+/*
+ *  Summary:
+ *    Enforced properties for image compressor components
+ *  
+ *  Discussion:
+ *    Image compressors that sometimes or always restrict image
+ *    dimensions, clean aperture and/or pixel aspect ratio should
+ *    support these properties. 
+ *    If these properties can change dynamically for a compressor (eg,
+ *    in response to user interaction) then the properties should be
+ *    listenable, and the compressor should call the listeners whenever
+ *    the properties change. (In this case, the component's
+ *    GetComponentPropertyInfo function should set the
+ *    kComponentPropertyFlagWillNotifyListeners flag.) 
+ *    If a compressor has a mode in which these properties are
+ *    flexible, then when the component is in that mode, (a) the
+ *    component's GetComponentProperty function should return
+ *    kQTPropertyAskLaterErr for these properties, and (b) the
+ *    component's GetComponentPropertyInfo function should set the
+ *    kComponentPropertyFlagCanGetLater flag for these properties.
+ */
+enum {
+
+  /*
+   * The encoded width enforced for compressed frames.
+   */
+  kICMImageCompressorPropertyID_EnforcedEncodedWidth = 'enwi', /* SInt32, Read/Sometimes Listen */
+
+  /*
+   * The encoded height enforced for compressed frames.
+   */
+  kICMImageCompressorPropertyID_EnforcedEncodedHeight = 'enhe', /* SInt32, Read/Sometimes Listen */
+
+  /*
+   * The clean aperture enforced for compressed frames.
+   */
+  kICMImageCompressorPropertyID_EnforcedCleanAperture = 'encl', /* CleanApertureImageDescriptionExtension, Read/Sometimes Listen */
+
+  /*
+   * The pixel aspect ratio enforced for compressed frames.
+   */
+  kICMImageCompressorPropertyID_EnforcedPixelAspectRatio = 'enpa', /* PixelAspectRatioImageDescriptionExtension, Read/Sometimes Listen */
+
+  /*
+   * The number and order of fields enforced for compressed frames.
+   */
+  kICMImageCompressorPropertyID_EnforcedFieldInfo = 'enfi' /* FieldInfoImageDescriptionExtension2, Read/Sometimes Listen */
+};
+
+
+
+/*
+ *  Summary:
+ *    DV Compressor Component Properties.
+ */
+enum {
+
+  /*
+   * Property class for DV compressors.  (Applicable to DV25, DV50,
+   * NTSC, PAL, PROPAL.)
+   */
+  kQTPropertyClass_DVCompressor = 'dvco',
+
+  /*
+   * If set, indicates that the compressed frames should be marked as
+   * progressive-scan. By default, this flag is clear, meaning that
+   * frames should be marked as interlaced.
+   */
+  kDVCompressorPropertyID_ProgressiveScan = 'prog', /* Boolean, Read/Write */
+
+  /*
+   * If set, indicates that the compressor should use a 16:9 picture
+   * aspect ratio. If clear, the compressor will use the default 4:3
+   * picture aspect ratio.
+   */
+  kDVCompressorPropertyID_AspectRatio16x9 = '16x9' /* Boolean, Read/Write */
+};
 
 
 
@@ -2325,8 +2850,26 @@ struct EffectSource {
   TimeValue           lastFrameTimeScale;     /* time scale of this source frame, only has meaning if above fields are valid*/
 };
 
+struct ICMFrameTimeRecord_QT3 {
+  wide                value;                  /* frame display time*/
+  long                scale;                  /* timescale of value/duration fields*/
+  void *              base;                   /* timebase*/
+
+  long                duration;               /* duration frame is to be displayed (0 if unknown)*/
+  Fixed               rate;                   /* rate of timebase relative to wall-time*/
+
+  long                recordSize;             /* total number of bytes in ICMFrameTimeRecord*/
+
+  long                frameNumber;            /* number of frame, zero if not known*/
+
+  long                flags;
+
+  wide                virtualStartTime;       /* conceptual start time*/
+  long                virtualDuration;        /* conceptual duration*/
+};
+typedef struct ICMFrameTimeRecord_QT3   ICMFrameTimeRecord_QT3;
 struct EffectsFrameParams {
-  ICMFrameTimeRecord  frameTime;              /* timing data*/
+  ICMFrameTimeRecord_QT3  frameTime;          /* timing data (uses non-extended ICMFrameTimeRecord)*/
   long                effectDuration;         /* the duration of a single effect frame*/
   Boolean             doAsync;                /* set to true if the effect can go async*/
   unsigned char       pad[3];
@@ -2978,7 +3521,7 @@ enum {
 };
 /* UPP call backs */
 
-#pragma options align=reset
+#pragma pack(pop)
 
 #ifdef __cplusplus
 }

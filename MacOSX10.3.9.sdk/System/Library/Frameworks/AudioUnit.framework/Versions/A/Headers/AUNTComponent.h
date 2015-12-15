@@ -6,7 +6,7 @@
      Version:    Technology: System 9, X
                  Release:    Mac OS X
  
-     Copyright:  © 2002 by Apple Computer, Inc., all rights reserved.
+     Copyright:  © 2002-2003 by Apple Computer, Inc., all rights reserved.
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -14,11 +14,19 @@
                      http://developer.apple.com/bugreporter/
  
 */
+/*
+	All of the API and structs in this file are deprecated. See AUComponent.h for the Replacement AU V2 API 
+	that should be used instead
+*/
 #ifndef __AUNTCOMPONENT__
 #define __AUNTCOMPONENT__
 
-#include <AudioUnit/AUComponent.h>
-
+#include <AvailabilityMacros.h>
+#if !defined(__COREAUDIO_USE_FLAT_INCLUDES__)
+	#include <AudioUnit/AUComponent.h>
+#else
+	#include <AUComponent.h>
+#endif
 
 #if PRAGMA_ONCE
 #pragma once
@@ -41,89 +49,97 @@ extern "C" {
 #endif
 
 
-/*
-  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-   AudioUnit component types and subtypes
-*/
-enum {
-  kAudioUnitComponentType       = FOUR_CHAR_CODE('aunt'),
-  kAudioUnitSubType_Output      = FOUR_CHAR_CODE('out '),
-  kAudioUnitID_HALOutput        = FOUR_CHAR_CODE('ahal'),
-  kAudioUnitID_DefaultOutput    = FOUR_CHAR_CODE('def '),
-  kAudioUnitID_SystemOutput     = FOUR_CHAR_CODE('sys '),
-  kAudioUnitID_GenericOutput    = FOUR_CHAR_CODE('genr'),
-  kAudioUnitSubType_MusicDevice = FOUR_CHAR_CODE('musd'),
-  kAudioUnitID_DLSSynth         = FOUR_CHAR_CODE('dls '),
-  kAudioUnitSubType_SampleRateConverter = FOUR_CHAR_CODE('srcv'),
-  kAudioUnitID_PolyphaseSRC     = FOUR_CHAR_CODE('poly'),
-  kAudioUnitSubType_FormatConverter = FOUR_CHAR_CODE('fmtc'),
-  kAudioUnitID_Interleaver      = FOUR_CHAR_CODE('inlv'),
-  kAudioUnitID_Deinterleaver    = FOUR_CHAR_CODE('dnlv'),
-  kAudioUnitID_AUConverter      = FOUR_CHAR_CODE('conv'),
-  kAudioUnitSubType_Effect      = FOUR_CHAR_CODE('efct'),
-  kAudioUnitID_MatrixReverb     = FOUR_CHAR_CODE('mrev'),
-  kAudioUnitID_Delay            = FOUR_CHAR_CODE('dely'),
-  kAudioUnitID_LowPassFilter    = FOUR_CHAR_CODE('lpas'),
-  kAudioUnitID_HighPassFilter   = FOUR_CHAR_CODE('hpas'),
-  kAudioUnitID_BandPassFilter   = FOUR_CHAR_CODE('bpas'),
-  kAudioUnitID_PeakLimiter      = FOUR_CHAR_CODE('lmtr'),
-  kAudioUnitID_DynamicsProcessor = FOUR_CHAR_CODE('dcmp'),
-  kAudioUnitSubType_Mixer       = FOUR_CHAR_CODE('mixr'),
-  kAudioUnitID_StereoMixer      = FOUR_CHAR_CODE('smxr'),
-  kAudioUnitID_3DMixer          = FOUR_CHAR_CODE('3dmx')
+//-----------------------------------------------------------------------------
+//	AudioUnit v1 component types and subtypes
+//-----------------------------------------------------------------------------
+enum
+{
+	kAudioUnitComponentType					= 'aunt',
+	kAudioUnitSubType_Output				= 'out ',
+	kAudioUnitID_HALOutput					= 'ahal',
+	kAudioUnitID_DefaultOutput				= 'def ',
+	kAudioUnitID_SystemOutput				= 'sys ',
+	kAudioUnitID_GenericOutput				= 'genr',
+	kAudioUnitSubType_MusicDevice 			= 'musd',
+	kAudioUnitID_DLSSynth					= 'dls ',
+	kAudioUnitSubType_SampleRateConverter	= 'srcv',
+	kAudioUnitID_PolyphaseSRC				= 'poly',
+	kAudioUnitSubType_FormatConverter 		= 'fmtc',
+	kAudioUnitID_Interleaver				= 'inlv',
+	kAudioUnitID_Deinterleaver				= 'dnlv',
+	kAudioUnitID_AUConverter				= 'conv',
+	kAudioUnitSubType_Effect				= 'efct',
+	kAudioUnitID_MatrixReverb				= 'mrev',
+	kAudioUnitID_Delay						= 'dely',
+	kAudioUnitID_LowPassFilter				= 'lpas',
+	kAudioUnitID_HighPassFilter				= 'hpas',
+	kAudioUnitID_BandPassFilter				= 'bpas',
+	kAudioUnitID_PeakLimiter				= 'lmtr',
+	kAudioUnitID_DynamicsProcessor			= 'dcmp',
+	kAudioUnitSubType_Mixer					= 'mixr',
+	kAudioUnitID_StereoMixer				= 'smxr',
+	kAudioUnitID_3DMixer					= '3dmx'
 };
 
+typedef OSStatus
+(*AudioUnitRenderCallback)(	void *						inRefCon,
+							AudioUnitRenderActionFlags	inActionFlags,
+							const AudioTimeStamp *		inTimeStamp,
+							UInt32						inBusNumber,
+							AudioBuffer *				ioData);
 
-typedef CALLBACK_API_C( OSStatus , AudioUnitRenderCallback )(void *inRefCon, AudioUnitRenderActionFlags inActionFlags, const AudioTimeStamp *inTimeStamp, UInt32 inBusNumber, AudioBuffer *ioData);
-EXTERN_API( ComponentResult )
-AudioUnitSetRenderNotification(
-  AudioUnit                 ci,
-  AudioUnitRenderCallback   inProc,
-  void *                    inProcRefCon)                     FIVEWORDINLINE(0x2F3C, 0x0008, 0x000C, 0x7000, 0xA82A);
-
-
-EXTERN_API( ComponentResult )
-AudioUnitRemoveRenderNotification(
-  AudioUnit                 ci,
-  AudioUnitRenderCallback   inProc,
-  void *                    inProcRefCon)                     FIVEWORDINLINE(0x2F3C, 0x0008, 0x000D, 0x7000, 0xA82A);
+extern ComponentResult
+AudioUnitSetRenderNotification(		AudioUnit					ci,
+									AudioUnitRenderCallback		inProc,
+									void *						inProcRefCon)		AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER DEPRECATED_IN_MAC_OS_X_VERSION_10_3_AND_LATER;
 
 
-
-EXTERN_API( ComponentResult )
-AudioUnitRenderSlice(
-  AudioUnit                    ci,
-  AudioUnitRenderActionFlags   inActionFlags,
-  const AudioTimeStamp *       inTimeStamp,
-  UInt32                       inOutputBusNumber,
-  AudioBuffer *                ioData)                        FIVEWORDINLINE(0x2F3C, 0x0010, 0x0008, 0x7000, 0xA82A);
+extern ComponentResult
+AudioUnitRemoveRenderNotification(	AudioUnit					ci,
+									AudioUnitRenderCallback		inProc,
+									void *						inProcRefCon)		AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER DEPRECATED_IN_MAC_OS_X_VERSION_10_3_AND_LATER;
 
 
+extern ComponentResult
+AudioUnitRenderSlice(				AudioUnit					ci,
+									AudioUnitRenderActionFlags	inActionFlags,
+									const AudioTimeStamp *		inTimeStamp,
+									UInt32						inOutputBusNumber,
+									AudioBuffer *				ioData)				AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER DEPRECATED_IN_MAC_OS_X_VERSION_10_3_AND_LATER;
 
-
-/* UPP call backs */
-
-/* selectors for component calls */
-enum {
+//-----------------------------------------------------------------------------
+//	Selectors for component calls
+//-----------------------------------------------------------------------------
+enum
+{
     kAudioUnitSetRenderNotificationSelect      = 0x000C,
     kAudioUnitRemoveRenderNotificationSelect   = 0x000D,
     kAudioUnitRenderSliceSelect                = 0x0008
 };
-typedef CALLBACK_API_C( ComponentResult , AudioUnitRenderSliceProc )(void *inComponentStorage, AudioUnitRenderActionFlags inActionFlags, const AudioTimeStamp *inTimeStamp, UInt32 inOutputBusNumber, AudioBuffer *ioData);
-/*
-  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    These are the properties that are unique to V1 'aunt' type AudioUnits
-  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-*/
+
+typedef ComponentResult
+(*AudioUnitRenderSliceProc)(	void *						inComponentStorage,
+								AudioUnitRenderActionFlags	inActionFlags,
+								const AudioTimeStamp *		inTimeStamp,
+								UInt32 						inOutputBusNumber,
+								AudioBuffer *				ioData);
+
+
+//-----------------------------------------------------------------------------
+//	Properties that are unique to V1 'aunt' type AudioUnits
+//-----------------------------------------------------------------------------
 
 /* This defines a callback function which renders audio into an input of an AudioUnit*/
-struct AudioUnitInputCallback {
-  AudioUnitRenderCallback  inputProc;
-  void *              inputProcRefCon;
+struct AudioUnitInputCallback
+{
+	AudioUnitRenderCallback		inputProc;
+	void *              		inputProcRefCon;
 };
 typedef struct AudioUnitInputCallback   AudioUnitInputCallback;
-enum {
-  kAudioUnitProperty_SetInputCallback = 7
+
+enum
+{
+	kAudioUnitProperty_SetInputCallback = 7
 };
 
 

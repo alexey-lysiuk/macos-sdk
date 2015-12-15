@@ -1,7 +1,7 @@
 /*=============================================================================
 	AudioUnitUtilities.h
 		
-	Copyright (c) 2002-2003 Apple Computer, Inc.  All Rights Reserved
+	Copyright (c) 2002-2004 Apple Computer, Inc.  All Rights Reserved
 =============================================================================*/
 
 // Utilities for use of AudioUnit clients - higher-level functions.
@@ -10,7 +10,12 @@
 #ifndef __AudioUnitUtilities_h__
 #define __AudioUnitUtilities_h__
 
-#include <AudioUnit/AudioUnit.h>
+#include <AvailabilityMacros.h>
+#if !defined(__COREAUDIO_USE_FLAT_INCLUDES__)
+	#include <AudioUnit/AudioUnit.h>
+#else
+	#include <AudioUnit.h>
+#endif
 
 #ifdef __cplusplus
 extern "C" {
@@ -40,20 +45,20 @@ AUListenerCreate(					AUParameterListenerProc			inProc,
 									CFRunLoopRef					inRunLoop,
 									CFStringRef						inRunLoopMode,
 									Float32							inNotificationInterval,
-									AUParameterListenerRef *		outListener);
+									AUParameterListenerRef *		outListener)	AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 extern OSStatus
-AUListenerDispose(					AUParameterListenerRef			inListener);
+AUListenerDispose(					AUParameterListenerRef			inListener)		AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 extern OSStatus
 AUListenerAddParameter(				AUParameterListenerRef			inListener, 
 									void *							inObject,
-									const AudioUnitParameter *		inParameter);
+									const AudioUnitParameter *		inParameter)	AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 extern OSStatus
 AUListenerRemoveParameter(			AUParameterListenerRef			inListener, 
 									void *							inObject, 
-									const AudioUnitParameter *		inParameter);
+									const AudioUnitParameter *		inParameter)	AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
 extern OSStatus
@@ -61,13 +66,14 @@ AUParameterSet(						AUParameterListenerRef			inSendingListener,
 									void *							inSendingObject,
 									const AudioUnitParameter *		inParameter,
 									Float32							inValue,
-									UInt32							inBufferOffsetInFrames);
+									UInt32							inBufferOffsetInFrames)
+																					AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
 extern OSStatus
 AUParameterListenerNotify(			AUParameterListenerRef			inSendingListener,
 									void *							inSendingObject,
-									const AudioUnitParameter *		inParameter);
+									const AudioUnitParameter *		inParameter)	AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 /* ============================================================================= */
 
@@ -95,20 +101,20 @@ typedef struct AudioUnitEvent {
 	}									mArgument;
 } AudioUnitEvent;
 
-typedef void (*AUEventListenerProc)(		void *						inCallbackRefCon,
-											void *						inObject,
-											const AudioUnitEvent *		inEvent,
-											UInt64						inEventHostTime,
-											Float32						inParameterValue);
+typedef void (*AUEventListenerProc)(void *						inCallbackRefCon,
+									void *						inObject,
+									const AudioUnitEvent *		inEvent,
+									UInt64						inEventHostTime,
+									Float32						inParameterValue);
 
 extern OSStatus
-AUEventListenerCreate(				AUEventListenerProc				inProc,
-									void *							inCallbackRefCon,
-									CFRunLoopRef					inRunLoop,
-									CFStringRef						inRunLoopMode,
-									Float32							inNotificationInterval,		// seconds
-									Float32							inValueChangeGranularity,	// seconds
-									AUEventListenerRef *			outListener);
+AUEventListenerCreate(				AUEventListenerProc			inProc,
+									void *						inCallbackRefCon,
+									CFRunLoopRef				inRunLoop,
+									CFStringRef					inRunLoopMode,
+									Float32						inNotificationInterval,		// seconds
+									Float32						inValueChangeGranularity,	// seconds
+									AUEventListenerRef *		outListener)		AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
 	// use AUListenerDispose
 	// may use AUListenerAddParameter and AUListenerRemoveParameter with AUEventListerRef's,
 	// in addition to AUEventListenerAddEventType / AUEventListenerRemoveEventType
@@ -139,9 +145,9 @@ AUEventListenerCreate(				AUEventListenerProc				inProc,
 	// callback than the theoretical maximum (notification interval / granularity).
 
 extern OSStatus
-AUEventListenerAddEventType(		AUEventListenerRef				inListener,
-									void *							inObject,
-									const AudioUnitEvent *			inEvent);
+AUEventListenerAddEventType(		AUEventListenerRef			inListener,
+									void *						inObject,
+									const AudioUnitEvent *		inEvent)		AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
 	// inEvent can specify creation of a listener for
 	//		- a parameter change
 	//		- a parameter change begin/end gesture
@@ -149,31 +155,31 @@ AUEventListenerAddEventType(		AUEventListenerRef				inListener,
 	// i.e., all types of AudioUnitEvents
 	
 extern OSStatus
-AUEventListenerRemoveEventType(		AUEventListenerRef				inListener,
-									void *							inObject,
-									const AudioUnitEvent *			inEvent);			
+AUEventListenerRemoveEventType(		AUEventListenerRef			inListener,
+									void *						inObject,
+									const AudioUnitEvent *		inEvent)		AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;			
 
 extern OSStatus
-AUEventListenerNotify(				AUEventListenerRef				inSendingListener,
-									void *							inSendingObject,
-									const AudioUnitEvent *			inEvent);
+AUEventListenerNotify(				AUEventListenerRef			inSendingListener,
+									void *						inSendingObject,
+									const AudioUnitEvent *		inEvent)		AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
 									
 /* ============================================================================= */
 
 extern Float32
-AUParameterValueFromLinear(			Float32							inLinearValue,		// 0-1
-									const AudioUnitParameter *		inParameter);
+AUParameterValueFromLinear(			Float32						inLinearValue,		// 0-1
+									const AudioUnitParameter *	inParameter)	AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 extern Float32
-AUParameterValueToLinear(			Float32							inParameterValue,
-									const AudioUnitParameter *		inParameter);		// returns 0-1
+AUParameterValueToLinear(			Float32						inParameterValue,
+									const AudioUnitParameter *	inParameter)	AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+										// returns 0-1
 									
 extern char *
-AUParameterFormatValue(				double							inParameterValue,
-									const AudioUnitParameter *		inParameter,
-									char *							inTextBuffer,
-									UInt32							inDigits);
-
+AUParameterFormatValue(				double						inParameterValue,
+									const AudioUnitParameter *	inParameter,
+									char *						inTextBuffer,
+									UInt32						inDigits)		AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 #ifdef __cplusplus
 }

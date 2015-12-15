@@ -3,9 +3,9 @@
  
      Contains:   QuickTime Interfaces.
  
-     Version:    QuickTime_6
+     Version:    QuickTime 7.1.2
  
-     Copyright:  © 1990-2003 by Apple Computer, Inc., all rights reserved
+     Copyright:  © 1990-2006 by Apple Computer, Inc., all rights reserved
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -41,7 +41,7 @@
 extern "C" {
 #endif
 
-#pragma options align=mac68k
+#pragma pack(push, 2)
 
 enum {
   kaiToneDescType               = 'tone',
@@ -3101,6 +3101,36 @@ InvokeTunePlayCallBackUPP(
   long                 refCon,
   TunePlayCallBackUPP  userUPP)                               AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
+#if __MACH__
+  #ifdef __cplusplus
+    inline MusicMIDISendUPP                                     NewMusicMIDISendUPP(MusicMIDISendProcPtr userRoutine) { return userRoutine; }
+    inline MusicOfflineDataUPP                                  NewMusicOfflineDataUPP(MusicOfflineDataProcPtr userRoutine) { return userRoutine; }
+    inline TuneCallBackUPP                                      NewTuneCallBackUPP(TuneCallBackProcPtr userRoutine) { return userRoutine; }
+    inline TunePlayCallBackUPP                                  NewTunePlayCallBackUPP(TunePlayCallBackProcPtr userRoutine) { return userRoutine; }
+    inline void                                                 DisposeMusicMIDISendUPP(MusicMIDISendUPP) { }
+    inline void                                                 DisposeMusicOfflineDataUPP(MusicOfflineDataUPP) { }
+    inline void                                                 DisposeTuneCallBackUPP(TuneCallBackUPP) { }
+    inline void                                                 DisposeTunePlayCallBackUPP(TunePlayCallBackUPP) { }
+    inline ComponentResult                                      InvokeMusicMIDISendUPP(ComponentInstance self, long refCon, MusicMIDIPacket * mmp, MusicMIDISendUPP userUPP) { return (*userUPP)(self, refCon, mmp); }
+    inline ComponentResult                                      InvokeMusicOfflineDataUPP(Ptr SoundData, long numBytes, long myRefCon, MusicOfflineDataUPP userUPP) { return (*userUPP)(SoundData, numBytes, myRefCon); }
+    inline void                                                 InvokeTuneCallBackUPP(const TuneStatus * status, long refCon, TuneCallBackUPP userUPP) { (*userUPP)(status, refCon); }
+    inline void                                                 InvokeTunePlayCallBackUPP(unsigned long * event, long seed, long refCon, TunePlayCallBackUPP userUPP) { (*userUPP)(event, seed, refCon); }
+  #else
+    #define NewMusicMIDISendUPP(userRoutine)                    ((MusicMIDISendUPP)userRoutine)
+    #define NewMusicOfflineDataUPP(userRoutine)                 ((MusicOfflineDataUPP)userRoutine)
+    #define NewTuneCallBackUPP(userRoutine)                     ((TuneCallBackUPP)userRoutine)
+    #define NewTunePlayCallBackUPP(userRoutine)                 ((TunePlayCallBackUPP)userRoutine)
+    #define DisposeMusicMIDISendUPP(userUPP)
+    #define DisposeMusicOfflineDataUPP(userUPP)
+    #define DisposeTuneCallBackUPP(userUPP)
+    #define DisposeTunePlayCallBackUPP(userUPP)
+    #define InvokeMusicMIDISendUPP(self, refCon, mmp, userUPP)  (*userUPP)(self, refCon, mmp)
+    #define InvokeMusicOfflineDataUPP(SoundData, numBytes, myRefCon, userUPP) (*userUPP)(SoundData, numBytes, myRefCon)
+    #define InvokeTuneCallBackUPP(status, refCon, userUPP)      (*userUPP)(status, refCon)
+    #define InvokeTunePlayCallBackUPP(event, seed, refCon, userUPP) (*userUPP)(event, seed, refCon)
+  #endif
+#endif
+
 
 /* selectors for component calls */
 enum {
@@ -3220,7 +3250,7 @@ enum {
 };
 
 
-#pragma options align=reset
+#pragma pack(pop)
 
 #ifdef __cplusplus
 }

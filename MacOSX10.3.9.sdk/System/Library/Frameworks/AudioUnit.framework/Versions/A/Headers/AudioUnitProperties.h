@@ -54,7 +54,7 @@ enum
 	kAudioUnitProperty_MaximumFramesPerSlice		= 14,
 	kAudioUnitProperty_SetExternalBuffer			= 15,
 	kAudioUnitProperty_ParameterValueStrings		= 16,
-	kAudioUnitProperty_MIDIControlMapping			= 17,
+	kAudioUnitProperty_MIDIControlMapping			= 17, // deprecated see kAudioUnitProperty_ParameterMIDIMapping
 	kAudioUnitProperty_GetUIComponentList			= 18,
 	kAudioUnitProperty_AudioChannelLayout			= 19,  
 	kAudioUnitProperty_TailTime						= 20,
@@ -80,6 +80,11 @@ enum
 		// this is the new property to retrieve the actual parameter value from a parameter name
 	kAudioUnitProperty_ParameterValueFromString		= 38,
 	kAudioUnitProperty_IconLocation					= 39,
+	kAudioUnitProperty_PresentationLatency			= 40,
+	kAudioUnitProperty_AllParameterMIDIMappings		= 41,
+	kAudioUnitProperty_AddParameterMIDIMapping		= 42,
+	kAudioUnitProperty_RemoveParameterMIDIMapping   = 43,
+	kAudioUnitProperty_HotMapParameterMIDIMapping   = 44,
 	
 // Applicable to MusicDevices				(1000 -> 1999)
 	kMusicDeviceProperty_InstrumentCount 			= 1000,
@@ -93,16 +98,18 @@ enum
 	kMusicDeviceProperty_SoundBankData				= 1008,
 	kMusicDeviceProperty_PartGroup					= 1010,
 	kMusicDeviceProperty_StreamFromDisk				= 1011,
+	kMusicDeviceProperty_SoundBankFSRef				= 1012,
 	
 	
 // Applicable to "output" AudioUnits		(2000 -> 2999)
 	kAudioOutputUnitProperty_CurrentDevice			= 2000,
 	kAudioOutputUnitProperty_IsRunning				= 2001,
-	kAudioOutputUnitProperty_ChannelMap				= 2002, //this will also work with AUConverter
+	kAudioOutputUnitProperty_ChannelMap				= 2002, // this will also work with AUConverter
 	kAudioOutputUnitProperty_EnableIO				= 2003,
 	kAudioOutputUnitProperty_StartTime				= 2004,
 	kAudioOutputUnitProperty_SetInputCallback		= 2005,
 	kAudioOutputUnitProperty_HasIO					= 2006,
+	kAudioOutputUnitProperty_StartTimestampsAtZero  = 2007, // this will also work with AUConverter
 
 // miscellaneous AudioUnit - specific properties
 	kAudioUnitProperty_SpatializationAlgorithm		= 3000,
@@ -115,6 +122,7 @@ enum
 	kAudioUnitProperty_PannerMode					= 3008,
 	kAudioUnitProperty_MatrixDimensions				= 3009,
 	kAudioUnitProperty_3DMixerDistanceParams		= 3010,
+	kAudioUnitProperty_MeterClipping				= 3011, // returns a AudioUnitMeterClipping struct
 
 // offline unit properties
 	kAudioOfflineUnitProperty_InputSize				= 3020,
@@ -180,7 +188,7 @@ enum
 		call to AudioUnitGetProperty will return the following status:
 			kAudioUnitErr_PropertyNotInUse
 			
-		For eg, imagine that you have an AUConverter unit that can convert between
+		For example, imagine that you have an AUConverter unit that can convert between
 		2 different AudioChannelLayout structures. However, the user has set up this
 		unit just with calls to the StreamDescription.. ie, the ACM property has never
 		been set. As there are several differenct ACM versions that can represent a
@@ -230,7 +238,14 @@ enum
 		when an output unit has been enabled for input, this callback can be used to provide
 		a single callback to the client from the input I/O proc, in order to notify the
 		client that input is available and may be obtained by calling AudioUnitRender.
-
+	
+	kAudioOutputUnitProperty_StartTimestampsAtZero  UInt32, read/write, defaults to true
+		Apple output units typically begin their stream of timestamps presented to their
+		inputs at sample time 0. Some applications may wish to receive the HAL's timestamps
+		directly instead. When this property is set to false, the output unit's sample times
+		will be direct reflections of the HAL's -- except when a sample rate conversion
+		makes this impossible.
+	
 	kAudioUnitProperty_ParameterValueName			AudioUnitParameterValueName read-only
 		This property is used with parameters that are marked with the
 		kAudioUnitParameterFlag_HasName parameter info flag. This indicates that some
@@ -300,7 +315,145 @@ enum
 		With PresentPreset the client of the AU owns the CFString when it retrieves the
 		preset with PresentPreset and is expected to release this (as with ALL properties 
 		that retrieve a CF object from an AU)
-	
+
+	kAudioUnitProperty_PresentationLatency					(Input/Output Scope) Float64 (write only)
+		This property is set by a host to describe to the AU the presentation latency of both
+		any of its input and/or output audio data. 
+		It describes this latency in seconds. A value of zero means either no latency
+		or an unknown latency.
+		
+		This is a write only property because the host is telling the AU the latency of both the data it provides
+		it for input and the latency from getting the data from the AU until it is presented.
+		
+		The property is should be set on each active input and output bus (Scope/Element pair). For example, an
+		AU with multiple outputs will have the output data it produces processed by different AU's, etc before it
+		is mixed and presented. Thus, in this case, each output element could have a different presentation latency.
+		
+		This should not be confused with the Latency property, where the AU describes to the host any processing latency
+		it introduces between its input and its output.
+		
+		For input:
+			Describes how long ago the audio given to an AU was acquired. For instance, when reading from 
+			a file to the first AU, then its input presentation latency will be zero. When processing audio input from a 
+			device, then this initial input latency will be the presentation latency of the device itself
+			- , the device's safety offset and latency.
+			
+			The next AU's (connected to that first AU) input presentation latency will be the input presentation latency 
+			of the first AU, plus the processing latency (as expressed by kAudioUnitProperty_Latency) of the first AU.
+			
+		For output:
+			Describes how long before the output audio of an AU is to be presented. For instance, when writing
+			to a file, then the last AU's output presentation latency will be zero. When the audio from that AU
+			is to be played to an AudioDevice, then that initial presentation latency will be the latency of
+			the device itself - which is the I/O buffer size, and the device's safety offset and latency
+			
+			The previous AU's (connected to this last AU) output presenation latency will be that initial presentation
+			latency plus the processing latency (as expressed by kAudioUnitProperty_Latency) of the last AU.
+			
+		Thus, for a given AU anywhere within a mixing graph, the input and output presentation latencies describe
+		to that AU how long from the moment of generation it will take for its input to arrive, and how long
+		it will take for its output to be presented. 
+		
+		An example usage for this property is for an AU to provide accurate metering for its output, 
+		where it is generating output that will be presented at some future time (as presented by the output 
+		presentation latency time) to the user.
+*/
+
+/*
+	Parameter To MIDI Mapping Properties
+		These properties are used to:
+			Describe a current set of mappings between MIDI messages and Parameter value setting
+			Create a mapping between a parameter and a MIDI message through either:
+				- explicitly adding (or removing) the mapping
+				- telling the AU to hot-map the next MIDI message to a specified Parameter
+			The same MIDI Message can map to one or more parameters
+			
+		In general usage, these properties only apply to AU's that implement the MIDI API
+		AU Instruments (type=='aumu') and Music Effects (type == 'aumf')
+
+		These properties are used in the Global scope. The scope and element members of the structure describe
+		the scope and element of the parameter. In all usages, mScope, mElement and mParameterID must be
+		correctly specified.
+
+		
+		* The AUParameterMIDIMapping Structure
+
+		Command				mStatus			mData1			
+		Note Off			0x8n			Note Num		
+		Note On				0x9n			Note Num		
+		Key Pressure		0xAn			Note Num		
+		Control Change		0xBn			ControllerID	
+		Patch Change		0xCn			Patch Num		
+		Channel Pressure	DxDn			0 (Unused)		
+		Pitch Bend			0xEn			0 (Unused)		
+		
+		(where n is 0-0xF to correspond to MIDI channels 1-16)
+		
+		Details:
+
+		In general MIDI Commands can be mapped to either a specific channel as specified in the mStatus bit.
+		If the kAUParameterMIDIMapping_AnyChannelFlag bit is set mStatus is a MIDI channel message, then the 
+		MIDI channel number in the status byte is ignored; the mapping is from the specified MIDI message on ANY channel.
+		
+		For note commands (note on, note off, key pressure), the MIDI message can trigger either with just a specific
+		note number, or any note number if the kAUParameterMIDIMapping_AnyNoteFlag bit is set. In these instances, the
+		note number is used as the trigger value (for instance, a note message could be used to set the 
+		cut off frequency of a filter).
+		
+		When the parameter mapping list changes through addition/replace, removal, the implementation should
+		fire a notification on the kAudioUnitProperty_AllParameterMIDIMappings property. The host can then
+		retrieve the full set of mappings for the AU
+		
+		When a hot mapping is made, the notification should just be delivered for the HotMap property. The host can
+		retrieve the last current hot mapping made through getting the value of that property.
+		
+		The Properties:								
+		
+		kAudioUnitProperty_AllParameterMIDIMappings							array of AUParameterMIDIMapping (read/write)
+			This property is used to both retreive and set the current mapping state between (some/many/all of) its parameters
+			and MIDI messages. When set, it should replace any previous mapped settings the AU had.
+		
+			If this property is implemented by a non-MIDI capable AU (such as an 'aufx' type), then the property is
+			read only, and recommends a suggested set of mappings for the host to perform. In this case, it is the 
+			host's responsibility to map MIDI message to the AU parameters. As described previously, there are a set
+			of default mappings (see AudioToolbox/AUMIDIController.h) that the host can recommend to the user 
+			in this circumstance.
+			
+			This property's size will be very dynamic, depending on the number of mappings currently in affect, so the 
+			caller should always get the size of the property first before retrieving it. The AU should return an error
+			if the caller doesn't provide enough space to return all of the current mappings.
+			
+		kAudioUnitProperty_AddParameterMIDIMapping							array of AUParameterMIDIMapping (write only)
+			This property is used to Add mappings to the existing set of mappings the AU possesses. It will replace
+			an existing mapping for the scope/element/paramID (so the feature only allows one mapping for a given parameter).
+		
+		kAudioUnitProperty_RemoveParameterMIDIMapping						array of AUParameterMIDIMapping (write only)
+			This property is used to remove the specified mappings from the AU. If a mapping is specified that does not
+			currently exist in the AU, then it should just be ignored. The Scope/Element/ParameterID is used to find the
+			mapping to remove.
+
+		kAudioUnitProperty_HotMapParameterMIDIMapping								AUParameterMIDIMapping (read/write)
+			This property is used in two ways, determined by the value supplied by the caller.
+			(1) If a mapping struct is provided, then that struct provides *all* of the information that the AU should
+			use to map the parameter, *except* for the MIDI message. The AU should then listen for the next MIDI message
+			and associate that MIDI message with the supplied AUParameter mapping. When this MIDI message is received and
+			the mapping made, the AU should also issue a notification on this property 
+			(kAudioUnitProperty_HotMapParameterMIDIMapping) to indicate to the host that the mapping has been made. The host
+			can then retrieve the mapping that was made by getting the value of this property.
+			
+			To avoid possible confusion, it is recommended that once the host has retrieved this mapping (if it is 
+			presenting a UI to describe the mappings for example), that it then clears the mapping state as described next.
+			
+			Thus, the only time this property will return a valid value is when the AU has made a mapping. If the AU's mapping
+			state has been cleared (or it has not been asked to make a mapping), then the AU should return 
+			kAudioUnitErr_InvalidPropertyValue if the host tries to read this value.
+			
+			(2) If the value passed in is NULL, then if the AU had a parameter that it was in the process of mapping, it
+			should disregard that (stop listening to the MIDI messages to create a mapping) and discard the partially 
+			mapped struct. If the value is NULL and the AU is not in the process of mapping, the AU can ignore the request.
+			
+			At all times, the _AllMappings property will completely describe the current known state of the AU's mappings
+			of MIDI messages to parameters.
 */
 
 
@@ -346,7 +499,8 @@ enum {
 	k3DMixerRenderingFlags_DopplerShift				= (1L << 1),
 	k3DMixerRenderingFlags_DistanceAttenuation		= (1L << 2),
 	k3DMixerRenderingFlags_DistanceFilter			= (1L << 3),
-	k3DMixerRenderingFlags_DistanceDiffusion		= (1L << 4)
+	k3DMixerRenderingFlags_DistanceDiffusion		= (1L << 4),
+	k3DMixerRenderingFlags_LinearDistanceAttenuation	= (1L << 5)
 };
 
 	
@@ -395,16 +549,16 @@ typedef struct AudioUnitExternalBuffer {
 } AudioUnitExternalBuffer;
 
 // if one of these channel valences is -1 and the other is positive:
-// for eg: in == -1, out == 2
+// e.g.: in == -1, out == 2
 // This means the unit can handle any number of channels on input
 // but provids 2 on output
 // If in and out channels are different negative numbers, then
 // the unit can handle any number of channels in and out:
-// for eg: in == -1, out == -2
+// e.g.: in == -1, out == -2
 // If both of these valences are -1, then the unit can handle
 // any number of channels in and out PROVIDED they are the same
 // number of channels 
-// for eg: in == -1, out == -1
+// e.g.: in == -1, out == -1
 // (this is the typical case for an effect unit, and unless the effect unit
 // has channel restrictions, it won't publish this property just for the -1->-1 case
 typedef struct AUChannelInfo {
@@ -441,10 +595,6 @@ typedef struct AUPreset {
 // with a part-based preset that is set on the part scope. The value of this key is
 // audio unit defined
 #define kAUPresetPartKey			"part"
-
-
-
-// Host Call Backs
 
 // If the host is unable to provide the requested information
 // then it can return the kAudioUnitErr_CannotDoInCurrentContext error code
@@ -567,8 +717,7 @@ typedef UInt32		AudioUnitParameterUnit;
 // if the "unit" field contains a value not in the enum above, then assume kAudioUnitParameterUnit_Generic
 typedef struct AudioUnitParameterInfo
 {
-	char 					name[52];			// UTF8 encoded C string, may be treated as 56 characters
-												// if kAudioUnitParameterFlag_HasCFNameString not set
+	char 					name[52];			// UTF8 encoded C string (originally). 
 	CFStringRef				unitName;			// only valid if kAudioUnitParameterFlag_HasUnitName
 	UInt32					clumpID;			// only valid if kAudioUnitParameterFlag_HasClump
 	CFStringRef				cfNameString;		// only valid if kAudioUnitParameterFlag_HasCFNameString
@@ -603,6 +752,8 @@ enum
 // THESE ARE THE VALID RANGES OF PARAMETER FLAGS
 // -------------------------------
 	kAudioUnitParameterFlag_CFNameRelease		= (1L << 4),
+
+	kAudioUnitParameterFlag_MeterReadOnly		= (1L << 15),
 
 	// bit positions 18,17,16 are set aside for display scales. bit 19 is reserved.
 	kAudioUnitParameterFlag_DisplayMask			= (7L << 16) | (1L << 22),
@@ -660,7 +811,8 @@ enum
 enum {
 	kOtherPluginFormat_Undefined	= 0, //reserving this value for future use
 	kOtherPluginFormat_kMAS			= 1,
-	kOtherPluginFormat_kVST			= 2
+	kOtherPluginFormat_kVST			= 2,
+	kOtherPluginFormat_AU			= 3
 };
 /*
 struct AudioClassDescription {
@@ -712,7 +864,10 @@ typedef struct AudioUnitPresetMAS_Settings
 
 // AU-VST - the CFDataRef data contains VST chunk data with no additional information. 
 
-// new for 10.2
+// AU - AU - this allows manufacturers to deprecate older AU's and replace them with new ones. The data
+// for the older AU is the aupreset CFDictionary that that AU generated.
+
+// new for 10.2 - this usage is deprecated... see AUParameterMIDIMapping
 typedef struct AudioUnitMIDIControlMapping
 {
 	UInt16					midiNRPN;
@@ -721,6 +876,52 @@ typedef struct AudioUnitMIDIControlMapping
 	AudioUnitElement		element;
 	AudioUnitParameterID	parameter;
 } AudioUnitMIDIControlMapping;
+
+enum {
+	kAUParameterMIDIMapping_AnyChannelFlag		= (1L << 0),
+		// If this flag is set and mStatus is a MIDI channel message, then the MIDI channel number 
+		// in the status byte is ignored; the mapping is from the specified MIDI message on ANY channel.
+
+	kAUParameterMIDIMapping_AnyNoteFlag			= (1L << 1),
+		// If this flag is set and mStatus is a Note On, Note Off, or Polyphonic Pressure message,
+		// the message's note number is ignored; the mapping is from ANY note number.
+
+	kAUParameterMIDIMapping_SubRange			= (1L << 2),
+		// set this flag if the midi control should map only to a sub-range of the parameter's value
+		// then specify that range in the mSubRangeMin and mSubRangeMax members
+
+	kAUParameterMIDIMapping_Toggle				= (1L << 3),
+		// this is only useful for boolean typed parameters. When set, it means that the parameter's
+		// value should be toggled (if true, become false and vice versa) when the represented MIDI message
+		// is received
+	
+	kAUParameterMIDIMapping_Bipolar				= (1L << 4),
+		// this can be set to when mapping a MIDI Controller to indicate that the parameter (typically a boolean
+		// style parameter) will only have its value changed to either the on or off state of a MIDI controller message
+		// (0 < 64 is off, 64 < 127 is on) such as the sustain pedal. The seeting of the next flag
+		// (kAUParameterMIDIMapping_Bipolar_On) determine whether the parameter is mapped to the on or off
+		// state of the controller
+	kAUParameterMIDIMapping_Bipolar_On			= (1L << 5)
+		// only a valid flag if kAUParameterMIDIMapping_Bipolar is set
+};
+
+// The reserved fields here are being used to reserve space (as well as align to 64 bit size) for future use
+// When/If these fields are used, the names of the fields will be changed to reflect their functionality
+// so, apps should NOT refer to these reserved fields directly by name
+typedef struct AUParameterMIDIMapping
+{
+	AudioUnitScope			mScope;
+	AudioUnitElement		mElement;
+	AudioUnitParameterID	mParameterID;
+	UInt32					mFlags;
+	Float32					mSubRangeMin;
+	Float32					mSubRangeMax;
+	UInt8					mStatus;
+	UInt8					mData1;
+	UInt8					reserved1; // MUST be set to zero
+	UInt8					reserved2; // MUST be set to zero
+	UInt32					reserved3; // MUST be set to zero
+} AUParameterMIDIMapping;
 
 // new for 10.3
 typedef struct AudioOutputUnitStartAtTimeParams {
@@ -734,6 +935,21 @@ typedef struct MixerDistanceParams {
 	Float32					mMaxDistance;
 	Float32					mMaxAttenuation;	// in decibels
 } MixerDistanceParams;
+
+#if MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_4
+// returned by kAudioUnitProperty_MeterClipping
+typedef struct AudioUnitMeterClipping
+{
+	// the maximum value seen on the channel since the last time the property was retrieved
+	Float32 peakValueSinceLastCall; 
+	
+	// true if there was an infinite value on this channel.
+	Boolean sawInfinity;
+	
+	// true if there was a floating point Not-A-Number value on this channel.
+	Boolean sawNotANumber;
+} AudioUnitMeterClipping;
+#endif
 
 
 #endif // __AudioUnitProperties

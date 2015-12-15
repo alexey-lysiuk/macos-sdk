@@ -1,7 +1,7 @@
 /*
-     File:       AvailabilityMacros.h (QuickTime 7.0 edition)
+     File:       AvailabilityMacros.h
  
-     Copyright:  (c) 2001-2005 by Apple Computer, Inc., all rights reserved.
+     Copyright:  (c) 2001-2006 by Apple Computer, Inc., all rights reserved.
 
      More Info:  See TechNote 2064
 
@@ -73,8 +73,6 @@
 #define MAC_OS_X_VERSION_10_2 1020
 #define MAC_OS_X_VERSION_10_3 1030
 #define MAC_OS_X_VERSION_10_4 1040
-#define MAC_OS_X_VERSION_10_5 1050
-
 
 
 /* 
@@ -85,7 +83,7 @@
     #ifdef __ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__
         #define MAC_OS_X_VERSION_MIN_REQUIRED __ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__
     #else
-        #if __ppc64__
+        #if __ppc64__ || __i386__ || __x86_64__
             #define MAC_OS_X_VERSION_MIN_REQUIRED MAC_OS_X_VERSION_10_4
         #else
             #define MAC_OS_X_VERSION_MIN_REQUIRED MAC_OS_X_VERSION_10_1
@@ -94,10 +92,10 @@
 #endif
 
 /*
- * if max OS not specified, assume largerof(10.4, min) (Modified for QuickTime)
+ * if max OS not specified, assume largerof(10.3, min)
  */
 #ifndef MAC_OS_X_VERSION_MAX_ALLOWED
-    #if MAC_OS_X_VERSION_MIN_REQUIRED > MAC_OS_X_VERSION_10_4
+    #if MAC_OS_X_VERSION_MIN_REQUIRED > MAC_OS_X_VERSION_10_3
         #define MAC_OS_X_VERSION_MAX_ALLOWED MAC_OS_X_VERSION_MIN_REQUIRED
     #else
         #define MAC_OS_X_VERSION_MAX_ALLOWED MAC_OS_X_VERSION_10_3
@@ -118,6 +116,8 @@
  * only certain compilers support __attribute((weak_import))__
  */
 #if defined(__GNUC__) && ((__GNUC__ >= 4) || ((__GNUC__ == 3) && (__GNUC_MINOR__ >= 1))) && (MAC_OS_X_VERSION_MIN_REQUIRED >= 1020)
+    #define WEAK_IMPORT_ATTRIBUTE __attribute__((weak_import))
+#elif defined(__MWERKS__) && (__MWERKS__ >= 0x3205) && (MAC_OS_X_VERSION_MIN_REQUIRED >= 1020)
     #define WEAK_IMPORT_ATTRIBUTE __attribute__((weak_import))
 #else
     #define WEAK_IMPORT_ATTRIBUTE
@@ -368,9 +368,9 @@
 /*
  * AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER
  * 
- * Used on declarations introduced in Mac OS X 10.4 (Modified for QuickTime)
+ * Used on declarations introduced in Mac OS X 10.4 
  */
-#if MAC_OS_X_VERSION_MAX_ALLOWED < MAC_OS_X_VERSION_10_3
+#if MAC_OS_X_VERSION_MAX_ALLOWED < MAC_OS_X_VERSION_10_4
     #define AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER     UNAVAILABLE_ATTRIBUTE
 #elif MAC_OS_X_VERSION_MIN_REQUIRED < MAC_OS_X_VERSION_10_4
     #define AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER     WEAK_IMPORT_ATTRIBUTE

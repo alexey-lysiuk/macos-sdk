@@ -18,6 +18,7 @@
 
 #include <AudioToolbox/AudioConverter.h>
 #include <AudioToolbox/AudioFile.h>
+#include <AudioToolbox/AudioFileComponent.h>
 #include <AudioToolbox/AudioFormat.h>
 #include <AudioToolbox/AudioUnitUtilities.h>
 #include <AudioToolbox/AUGraph.h>

@@ -3,9 +3,9 @@
  
      Contains:   QuickTime Interfaces.
  
-     Version:    QuickTime_6
+     Version:    QuickTime 7.1.2
  
-     Copyright:  © 1990-2003 by Apple Computer, Inc., all rights reserved
+     Copyright:  © 1990-2006 by Apple Computer, Inc., all rights reserved
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -32,7 +32,7 @@
 #pragma once
 #endif
 
-#pragma options align=mac68k
+#pragma pack(push, 2)
 
 enum {
   kMovieVersion                 = 0     /* version number of the format here described */
@@ -146,6 +146,59 @@ struct ShadowSyncAtom {
   ShadowSync          shadowSyncTable[1];
 };
 typedef struct ShadowSyncAtom           ShadowSyncAtom;
+/* CompositionOffsetEntry maps sample numbers to composition offsets. */
+struct CompositionOffsetEntry {
+  long                sampleCount;
+  TimeValue           displayOffset;
+};
+typedef struct CompositionOffsetEntry   CompositionOffsetEntry;
+struct CompositionOffsetAtom {
+  long                size;
+  long                atomType;               /* = 'ctts' */
+  long                flags;                  /* 1 byte of version / 3 bytes of flags */
+  long                numEntries;
+  CompositionOffsetEntry  compositionOffsetTable[1];
+};
+typedef struct CompositionOffsetAtom    CompositionOffsetAtom;
+struct SampleDependencyAtom {
+  long                size;
+  long                atomType;               /* = 'sdtp' */
+  long                flags;                  /* 1 byte of version / 3 bytes of flags */
+  UInt8               sampleDependencyTable[1];
+};
+typedef struct SampleDependencyAtom     SampleDependencyAtom;
+/* Values for entries in SampleDependencyAtom.sampleDependencyTable[]*/
+enum {
+                                        /* bit 0x80 is reserved; bit combinations 0x30, 0xC0 and 0x03 are reserved*/
+  kQTSampleDependency_EarlierDisplayTimesAllowed = 1 << 6, /* corresponds to flag mediaSampleEarlierDisplayTimesAllowed except at different bit offset*/
+  kQTSampleDependency_DependsOnOthers = 1 << 5, /* ie: not an I picture*/
+  kQTSampleDependency_DoesNotDependOnOthers = 1 << 4, /* ie: an I picture*/
+  kQTSampleDependency_IsDependedOnByOthers = 1 << 3,
+  kQTSampleDependency_IsNotDependedOnByOthers = 1 << 2, /* mediaSampleDroppable*/
+  kQTSampleDependency_HasRedundantCoding = 1 << 1,
+  kQTSampleDependency_HasNoRedundantCoding = 1 << 0
+};
+
+
+struct CompositionShiftLeastGreatestAtom {
+  long                size;
+  long                atomType;               /* = 'cslg' */
+  long                flags;                  /* 1 byte of version / 3 bytes of flags */
+  SInt32              compositionOffsetToDTDDeltaShift;
+  SInt32              leastDecodeToDisplayDelta;
+  SInt32              greatestDecodeToDisplayDelta;
+  SInt32              displayStartTime;
+  SInt32              displayEndTime;
+};
+typedef struct CompositionShiftLeastGreatestAtom CompositionShiftLeastGreatestAtom;
+struct PartialSyncSampleAtom {
+  long                size;
+  long                atomType;               /* = 'stps' */
+  long                flags;                  /* 1 byte of version / 3 bytes of flags */
+  long                numEntries;
+  UInt32              partialSyncSampleTable[1];
+};
+typedef struct PartialSyncSampleAtom    PartialSyncSampleAtom;
 struct SampleTableAtom {
   long                size;
   long                atomType;               /* = 'stbl' */
@@ -400,6 +453,42 @@ struct TrackLoadSettingsAtom {
   TrackLoadSettings   settings;
 };
 typedef struct TrackLoadSettingsAtom    TrackLoadSettingsAtom;
+struct TrackCleanApertureDimensions {
+  long                flags;                  /* 1 byte of version / 3 bytes of flags */
+  FixedPoint          cleanApertureDimensions;
+};
+typedef struct TrackCleanApertureDimensions TrackCleanApertureDimensions;
+struct TrackCleanApertureDimensionsAtom {
+  long                size;
+  long                atomType;               /* = 'tapt' */
+
+  TrackCleanApertureDimensions  cleanApertureDimensions;
+};
+typedef struct TrackCleanApertureDimensionsAtom TrackCleanApertureDimensionsAtom;
+struct TrackProductionApertureDimensions {
+  long                flags;                  /* 1 byte of version / 3 bytes of flags */
+  FixedPoint          productionApertureDimensions;
+};
+typedef struct TrackProductionApertureDimensions TrackProductionApertureDimensions;
+struct TrackProductionApertureDimensionsAtom {
+  long                size;
+  long                atomType;               /* = 'prof' */
+
+  TrackProductionApertureDimensions  productionApertureDimensions;
+};
+typedef struct TrackProductionApertureDimensionsAtom TrackProductionApertureDimensionsAtom;
+struct TrackEncodedPixelsDimensions {
+  long                flags;                  /* 1 byte of version / 3 bytes of flags */
+  FixedPoint          encodedPixelsDimensions;
+};
+typedef struct TrackEncodedPixelsDimensions TrackEncodedPixelsDimensions;
+struct TrackEncodedPixelsDimensionsAtom {
+  long                size;
+  long                atomType;               /* = 'enof' */
+
+  TrackEncodedPixelsDimensions  encodedPixelsDimensions;
+};
+typedef struct TrackEncodedPixelsDimensionsAtom TrackEncodedPixelsDimensionsAtom;
 struct TrackDirectory {
   long                size;
   long                atomType;               /* = 'trak' */
@@ -485,12 +574,27 @@ typedef struct MovieDirectory           MovieDirectory;
 /* Movie formats and tags */
 enum {
                                         /* some system defined format IDs */
+  QT_MOVIE_TYPE                 = 'moov',
+  QT_TRACK_TYPE                 = 'trak',
+  QT_MEDIA_TYPE                 = 'mdia',
+  QT_VIDEO_TYPE                 = 'vide',
+  QT_SOUND_TYPE                 = 'soun'
+};
+
+enum {
   MOVIE_TYPE                    = 'moov',
   TRACK_TYPE                    = 'trak',
-  MEDIA_TYPE                    = 'mdia',
   VIDEO_TYPE                    = 'vide',
   SOUND_TYPE                    = 'soun'
 };
+
+#if !TARGET_OS_WIN32
+/* The name "MEDIA_TYPE" has a name space collision on Win32.*/
+enum {
+  MEDIA_TYPE                    = 'mdia'
+};
+
+#endif  /* !TARGET_OS_WIN32 */
 
 /* atom id's */
 enum {
@@ -525,6 +629,10 @@ enum {
   STChunkOffsetAID              = 'stco',
   STChunkOffset64AID            = 'co64',
   STSampleIDAID                 = 'stid',
+  STCompositionOffsetAID        = 'ctts',
+  STSampleDependencyAID         = 'sdtp',
+  STCompositionShiftLeastGreatestAID = 'cslg',
+  STPartialSyncSampleAID        = 'stps',
   DataRefContainerAID           = 'drfc',
   TrackReferenceAID             = 'tref',
   ColorTableAID                 = 'ctab',
@@ -552,7 +660,11 @@ enum {
   FileTypeAID                   = 'ftyp',
   SecureContentInfoAID          = 'sinf',
   SecureContentSchemeTypeAID    = 'schm',
-  SecureContentSchemeInfoAID    = 'schi'
+  SecureContentSchemeInfoAID    = 'schi',
+  TrackApertureModeDimensionsAID = 'tapt', /* container atom including TrackCleanApertureDimensionsAID, TrackProductionApertureDimensionsAID and TrackEncodedPixelsDimensionsAID */
+  TrackCleanApertureDimensionsAID = 'clef',
+  TrackProductionApertureDimensionsAID = 'prof',
+  TrackEncodedPixelsDimensionsAID = 'enof'
 };
 
 /* Text ATOM definitions*/
@@ -620,7 +732,7 @@ enum {
   kDataRate1MbpsRate            = 100000L,
   kDataRateT1Rate               = 150000L,
   kDataRateInfiniteRate         = 0x7FFFFFFF,
-  kDataRateDefaultIfNotSet      = kDataRateISDNRate
+  kDataRateDefaultIfNotSet      = kDataRate384kbpsRate
 };
 
 struct QTAltDataRateRecord {
@@ -708,7 +820,7 @@ struct SecureContentSchemeInfoAtom {
 };
 typedef struct SecureContentSchemeInfoAtom SecureContentSchemeInfoAtom;
 
-#pragma options align=reset
+#pragma pack(pop)
 
 
 #endif /* __MOVIESFORMAT__ */

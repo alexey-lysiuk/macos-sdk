@@ -3,9 +3,9 @@
  
      Contains:   QuickTime Interfaces.
  
-     Version:    QuickTime_6
+     Version:    QuickTime 7.1.2
  
-     Copyright:  © 1990-2003 by Apple Computer, Inc., all rights reserved
+     Copyright:  © 1990-2006 by Apple Computer, Inc., all rights reserved
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -40,7 +40,7 @@
 extern "C" {
 #endif
 
-#pragma options align=mac68k
+#pragma pack(push, 2)
 
 enum {
   kQTSInfiniteDuration          = 0x7FFFFFFF,
@@ -2601,8 +2601,32 @@ InvokeQTSModalFilterUPP(
   void *               inRefCon,
   QTSModalFilterUPP    userUPP)                               AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
+#if __MACH__
+  #ifdef __cplusplus
+    inline QTSNotificationUPP                                   NewQTSNotificationUPP(QTSNotificationProcPtr userRoutine) { return userRoutine; }
+    inline QTSPanelFilterUPP                                    NewQTSPanelFilterUPP(QTSPanelFilterProcPtr userRoutine) { return userRoutine; }
+    inline QTSModalFilterUPP                                    NewQTSModalFilterUPP(QTSModalFilterProcPtr userRoutine) { return userRoutine; }
+    inline void                                                 DisposeQTSNotificationUPP(QTSNotificationUPP) { }
+    inline void                                                 DisposeQTSPanelFilterUPP(QTSPanelFilterUPP) { }
+    inline void                                                 DisposeQTSModalFilterUPP(QTSModalFilterUPP) { }
+    inline ComponentResult                                      InvokeQTSNotificationUPP(ComponentResult inErr, OSType inNotificationType, void * inNotificationParams, void * inRefCon, QTSNotificationUPP userUPP) { return (*userUPP)(inErr, inNotificationType, inNotificationParams, inRefCon); }
+    inline Boolean                                              InvokeQTSPanelFilterUPP(QTSPanelFilterParams * inParams, void * inRefCon, QTSPanelFilterUPP userUPP) { return (*userUPP)(inParams, inRefCon); }
+    inline Boolean                                              InvokeQTSModalFilterUPP(DialogPtr inDialog, const EventRecord * inEvent, SInt16 * ioItemHit, void * inRefCon, QTSModalFilterUPP userUPP) { return (*userUPP)(inDialog, inEvent, ioItemHit, inRefCon); }
+  #else
+    #define NewQTSNotificationUPP(userRoutine)                  ((QTSNotificationUPP)userRoutine)
+    #define NewQTSPanelFilterUPP(userRoutine)                   ((QTSPanelFilterUPP)userRoutine)
+    #define NewQTSModalFilterUPP(userRoutine)                   ((QTSModalFilterUPP)userRoutine)
+    #define DisposeQTSNotificationUPP(userUPP)
+    #define DisposeQTSPanelFilterUPP(userUPP)
+    #define DisposeQTSModalFilterUPP(userUPP)
+    #define InvokeQTSNotificationUPP(inErr, inNotificationType, inNotificationParams, inRefCon, userUPP) (*userUPP)(inErr, inNotificationType, inNotificationParams, inRefCon)
+    #define InvokeQTSPanelFilterUPP(inParams, inRefCon, userUPP) (*userUPP)(inParams, inRefCon)
+    #define InvokeQTSModalFilterUPP(inDialog, inEvent, ioItemHit, inRefCon, userUPP) (*userUPP)(inDialog, inEvent, ioItemHit, inRefCon)
+  #endif
+#endif
 
-#pragma options align=reset
+
+#pragma pack(pop)
 
 #ifdef __cplusplus
 }

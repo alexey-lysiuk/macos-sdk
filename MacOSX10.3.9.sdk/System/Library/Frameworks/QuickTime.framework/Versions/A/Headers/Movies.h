@@ -3,15 +3,38 @@
  
      Contains:   QuickTime Interfaces.
  
-     Version:    QuickTime_6
+     Version:    QuickTime 7.1.2
  
-     Copyright:  © 1990-2003 by Apple Computer, Inc., all rights reserved
+     Copyright:  © 1990-2006 by Apple Computer, Inc., all rights reserved
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
                      http://developer.apple.com/bugreporter/
  
+*/
+/*
+    Important note regarding availability macros
+    ============================================
+    
+    QuickTime APIs that were introduced in QuickTime 6.0 and later are tagged with 
+    availability macros indicating the first Mac OS X version in which they were 
+    *always* available.  Such APIs may also be present on systems running earlier 
+    Mac OS X releases when QuickTime updates have been installed.
+    
+    For example, QTNewDataReferenceFromCFURL was introduced in QuickTime 6.4.
+    It is always available on Mac OS X 10.3, which shipped with QuickTime 6.4.
+    However, QuickTime 6.4 can also be installed as an update to Mac OS X 10.2.x,
+    so QTNewDataReferenceFromCFURL is also available on some systems running 
+    Mac OS X 10.2.x.
+    
+    QuickTime 6.0 / Mac OS X 10.2  :  AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER
+    QuickTime 6.4 / Mac OS X 10.3  :  AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
+    QuickTime 7.0 / Mac OS X 10.4  :  AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER
+    
+    As described in /usr/include/AvailabilityMacros.h, you can use the
+    MAC_OS_X_VERSION_MIN_REQUIRED macro to weak-link to the APIs that may not be 
+    available on the Mac OS X versions your software targets.
 */
 #ifndef __MOVIES__
 #define __MOVIES__
@@ -20,8 +43,16 @@
 #include <Carbon/Carbon.h>
 #endif
 
+#ifndef __COREAUDIO__
+#include <CoreAudio/CoreAudio.h>
+#endif
+
 #ifndef __IMAGECOMPRESSION__
 #include <QuickTime/ImageCompression.h>
+#endif
+
+#ifndef __QUICKTIMEERRORS__
+#include <QuickTime/QuickTimeErrors.h>
 #endif
 
 
@@ -36,12 +67,10 @@
 extern "C" {
 #endif
 
-#pragma options align=mac68k
+#pragma pack(push, 2)
 
-
-#if TARGET_API_MAC_OSX
-    #include <CoreAudio/CoreAudio.h>
-#endif
+/* This sets the user defined exportset name i.e. fw_QuickTime_XManchego, available on 10.5 or later, and comment [4486184] */
+/* NOTE:  Requires Interfacer-35 or later */
 
 /*  "kFix1" is defined in FixMath as "fixed1"  */
 /* error codes are in Errors.[haa] */
@@ -90,7 +119,8 @@ enum {
   ResourceDataHandlerSubType    = 'rsrc',
   URLDataHandlerSubType         = 'url ',
   AliasDataHandlerSubType       = 'alis',
-  WiredActionHandlerType        = 'wire'
+  WiredActionHandlerType        = 'wire',
+  kQTQuartzComposerMediaType    = 'qtz '
 };
 
 enum {
@@ -102,7 +132,8 @@ enum {
   kCharacteristicCanStep        = 'step',
   kCharacteristicHasNoDuration  = 'noti',
   kCharacteristicHasSkinData    = 'skin',
-  kCharacteristicProvidesKeyFocus = 'keyf'
+  kCharacteristicProvidesKeyFocus = 'keyf',
+  kCharacteristicSupportsDisplayOffsets = 'dtdd'
 };
 
 enum {
@@ -153,6 +184,12 @@ enum {
   DoTheRightThing               = 0
 };
 
+/* property types*/
+typedef OSType                          QTPropertyClass;
+typedef OSType                          QTPropertyID;
+typedef OSType                          QTPropertyValueType;
+typedef void *                          QTPropertyValuePtr;
+typedef const void *                    ConstQTPropertyValuePtr;
 typedef struct MovieType**              Movie;
 typedef Movie *                         PtrToMovie;
 typedef struct TrackType**              Track;
@@ -174,8 +211,6 @@ struct SampleDescription {
 typedef struct SampleDescription        SampleDescription;
 typedef SampleDescription *             SampleDescriptionPtr;
 typedef SampleDescriptionPtr *          SampleDescriptionHandle;
-typedef struct QTBandwidthUsageRecord**  QTBandwidthReference;
-typedef struct QTScheduledBandwidthUsageRecord**  QTScheduledBandwidthReference;
 enum {
   kQTNetworkStatusNoNetwork     = -2,
   kQTNetworkStatusUncertain     = -1,
@@ -225,6 +260,331 @@ struct SoundDescriptionV1 {
 typedef struct SoundDescriptionV1       SoundDescriptionV1;
 typedef SoundDescriptionV1 *            SoundDescriptionV1Ptr;
 typedef SoundDescriptionV1Ptr *         SoundDescriptionV1Handle;
+/*
+   Definitions for SoundDescriptionV2:
+        LPCMFrame = one uncompressed sample in each of the channels (ie. 44100Hz audio has
+                44100 LPCMFrames per second, whether it is mono, stereo, 5.1, or whatever).
+                In other words, LPCMFrames/audioSampleRate is duration in seconds.
+        AudioPacket = For compressed audio, an AudioPacket is the natural compressed access
+                unit of that format.  For uncompressed audio, an AudioPacket is simply one
+                LPCMFrame.
+*/
+/* version 2 of the SoundDescription record*/
+struct SoundDescriptionV2 {
+  SInt32              descSize;               /* total size of SoundDescription including extra data */
+  OSType              dataFormat;             /* 'lpcm' for uncompressed, compression type otherwise (eg. 'ima4') */
+  SInt32              resvd1;                 /* reserved for apple use. Must be set to zero */
+  SInt16              resvd2;                 /* reserved for apple use. Must be set to zero */
+  SInt16              dataRefIndex;
+  SInt16              version;                /* which version is this data (2 in this case) */
+  SInt16              revlevel;               /* what version of that codec did this */
+  SInt32              vendor;                 /* whose  codec compressed this data */
+
+  SInt16              always3;                /* Reserved, must be set to 3 */
+  SInt16              always16;               /* Reserved, must be set to 16 (0x0010) */
+  SInt16              alwaysMinus2;           /* Reserved, must be set to -2 (0xFFFE) */
+  SInt16              always0;                /* Reserved, must be set to 0 */
+  UInt32              always65536;            /* Reserved, must be set to 65536 (0x00010000) */
+
+  UInt32              sizeOfStructOnly;       /* must be set to sizeof(SoundDescriptionV2), ie. offset to extensions */
+  Float64             audioSampleRate;        /* audio frames per second, eg. 44100.0 */
+  UInt32              numAudioChannels;       /* any channel assignment info will be in an extension */
+
+  SInt32              always7F000000;         /* Reserved, must be set to 0x7F000000 */
+  UInt32              constBitsPerChannel;    /* only set if constant (and only for uncompressed audio) */
+
+  UInt32              formatSpecificFlags;    /* eg. see LPCM flag definitions in CoreAudioTypes.h */
+  UInt32              constBytesPerAudioPacket; /* only set if constant */
+  UInt32              constLPCMFramesPerAudioPacket; /* only set if constant */
+
+                                              /* additional atom based extensions ([long size, long type, some data], repeat)*/
+};
+typedef struct SoundDescriptionV2       SoundDescriptionV2;
+typedef SoundDescriptionV2 *            SoundDescriptionV2Ptr;
+typedef SoundDescriptionV2Ptr *         SoundDescriptionV2Handle;
+enum {
+  kQTSoundDescriptionKind_Movie_Version1 = 'mvv1',
+  kQTSoundDescriptionKind_Movie_Version2 = 'mvv2',
+  kQTSoundDescriptionKind_Movie_LowestPossibleVersion = 'mvlo',
+  kQTSoundDescriptionKind_Movie_AnyVersion = 'mvny'
+};
+
+typedef FourCharCode                    QTSoundDescriptionKind;
+/*
+ *  QTSoundDescriptionCreate()
+ *  
+ *  Summary:
+ *    QTSoundDescriptionCreate creates a SoundDescription of the
+ *    requested kind from an AudioStreamBasicDescription, optional
+ *    AudioChannelLayout, and optional magic cookie. 
+ *    QTSoundDescriptionCreate allocates the returned
+ *    SoundDescriptionHandle, and the caller is responsible for
+ *    disposing it.
+ *  
+ *  Parameters:
+ *    
+ *    inASBD:
+ *      a description of the format
+ *    
+ *    inLayout:
+ *      the audio channel layout (can be NULL if there isn't one)
+ *    
+ *    inLayoutSize:
+ *      size of the audio channel layout (should be 0 if inLayout is
+ *      NULL)
+ *    
+ *    inMagicCookie:
+ *      the magic cookie for the decompressor (can be NULL if there
+ *      isn't one)
+ *    
+ *    inMagicCookieSize:
+ *      size of the magic cookie (should be 0 if inMagicCookie is NULL)
+ *    
+ *    inRequestedKind:
+ *      the kind of SoundDescription to create
+ *    
+ *    outSoundDesc:
+ *      the resulting SoundDescription.  Caller must dispose with
+ *      DisposeHandle.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSStatus 
+QTSoundDescriptionCreate(
+  AudioStreamBasicDescription *  inASBD,
+  AudioChannelLayout *           inLayout,
+  ByteCount                      inLayoutSize,
+  void *                         inMagicCookie,
+  ByteCount                      inMagicCookieSize,
+  QTSoundDescriptionKind         inRequestedKind,
+  SoundDescriptionHandle *       outSoundDesc)                AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  QTSoundDescriptionConvert()
+ *  
+ *  Summary:
+ *    Converts from one kind of SoundDescription to another. Note that
+ *    fromKind is reserved for future expansion.  You must set it to
+ *    kSoundDescriptionKind_Movie_AnyVersion. You can specify (via
+ *    toKind) that you would like a specific SoundDescription version,
+ *    the lowest possible version (given the constraints of the format
+ *    described by fromDescription), or any version of SoundDescription
+ *    at all. QTSoundDescriptionConvert allocates the returned
+ *    SoundDescriptionHandle and the caller is responsible for
+ *    disposing it.
+ *  
+ *  Parameters:
+ *    
+ *    fromKind:
+ *      reserved, must be set to kSoundDescriptionKind_Movie_AnyVersion
+ *    
+ *    fromDescription:
+ *      input description to be converted
+ *    
+ *    toKind:
+ *      kind of description toDescription will be
+ *    
+ *    toDescription:
+ *      the resulting SoundDescription.  Caller must dispose with
+ *      DisposeHandle.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSStatus 
+QTSoundDescriptionConvert(
+  QTSoundDescriptionKind    fromKind,
+  SoundDescriptionHandle    fromDescription,
+  QTSoundDescriptionKind    toKind,
+  SoundDescriptionHandle *  toDescription)                    AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+
+/* SoundDescription Properties*/
+
+/*
+ */
+enum {
+
+  /*
+   * Properties of a SoundDescription
+   */
+  kQTPropertyClass_SoundDescription = 'sdes' /* class for SoundDescription properties*/
+};
+
+
+/*
+ */
+enum {
+
+  /*
+   * kQTSoundDescriptionPropertyID_AudioChannelLayout: Value is
+   * AudioChannelLayout (Get/Set) Note that this is a variable sized
+   * property (since it may contain an array of ChannelDescriptions;
+   * see CoreAudioTypes.h).  You must get the size first (by calling
+   * QTSoundDescriptionGetPropertyInfo), allocate a struct of that
+   * size, and then get the property.
+   */
+  kQTSoundDescriptionPropertyID_AudioChannelLayout = 'clay',
+
+  /*
+   * kQTSoundDescriptionPropertyID_MagicCookie: Value is opaque bytes
+   * (Get/Set) Note that this is a variable sized property (since it is
+   * completely defined by the codec in question).  You must get the
+   * size first (by calling QTSoundDescriptionGetPropertyInfo),
+   * allocate a struct of that size, and then get the property.
+   */
+  kQTSoundDescriptionPropertyID_MagicCookie = 'kuki',
+
+  /*
+   * kQTSoundDescriptionPropertyID_AudioStreamBasicDescription: Value
+   * is AudioStreamBasicDescription (Get only)
+   */
+  kQTSoundDescriptionPropertyID_AudioStreamBasicDescription = 'asbd',
+
+  /*
+   * kQTSoundDescriptionPropertyID_BitRate: Value is UInt32 in bits per
+   * second (Get only) kQTSoundDescriptionPropertyID_BitRate Note that
+   * this property may not be available for formats that are inherently
+   * very variable in bitrate and highly source-data dependent (such as
+   * Apple Lossless).
+   */
+  kQTSoundDescriptionPropertyID_BitRate = 'brat',
+
+  /*
+   * kQTSoundDescriptionPropertyID_UserReadableText: Value is
+   * CFStringRef (Get only) QTSoundDescriptionGetProperty does a
+   * CFRetain of the returned CFString on behalf of the caller, so the
+   * caller is responsible for calling CFRelease on the returned
+   * CFString.
+   */
+  kQTSoundDescriptionPropertyID_UserReadableText = 'text'
+};
+
+/*
+ *  QTSoundDescriptionGetPropertyInfo()
+ *  
+ *  Summary:
+ *    Gets info about a particular property of a SoundDescription.
+ *  
+ *  Parameters:
+ *    
+ *    inDesc:
+ *      SoundDescription being interrogated
+ *    
+ *    inPropClass:
+ *      class of property being requested
+ *    
+ *    inPropID:
+ *      ID of property being requested
+ *    
+ *    outPropType:
+ *      type of property is returned here (can be NULL)
+ *    
+ *    outPropValueSize:
+ *      size of property is returned here (can be NULL)
+ *    
+ *    outPropertyFlags:
+ *      property flags are returned here (can be NULL)
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSStatus 
+QTSoundDescriptionGetPropertyInfo(
+  SoundDescriptionHandle   inDesc,
+  QTPropertyClass          inPropClass,
+  QTPropertyID             inPropID,
+  QTPropertyValueType *    outPropType,
+  ByteCount *              outPropValueSize,
+  UInt32 *                 outPropertyFlags)                  AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  QTSoundDescriptionGetProperty()
+ *  
+ *  Summary:
+ *    Gets a particular property of a SoundDescription.
+ *  
+ *  Parameters:
+ *    
+ *    inDesc:
+ *      SoundDescription being interrogated
+ *    
+ *    inPropClass:
+ *      class of property being requested
+ *    
+ *    inPropID:
+ *      ID of property being requested
+ *    
+ *    inPropValueSize:
+ *      size of property value buffer
+ *    
+ *    outPropValueAddress:
+ *      pointer to property value buffer
+ *    
+ *    outPropValueSizeUsed:
+ *      actual size of returned property value (can be NULL)
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSStatus 
+QTSoundDescriptionGetProperty(
+  SoundDescriptionHandle   inDesc,
+  QTPropertyClass          inPropClass,
+  QTPropertyID             inPropID,
+  ByteCount                inPropValueSize,
+  QTPropertyValuePtr       outPropValueAddress,
+  ByteCount *              outPropValueSizeUsed)              AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  QTSoundDescriptionSetProperty()
+ *  
+ *  Summary:
+ *    Sets a particular property of a SoundDescription.
+ *  
+ *  Parameters:
+ *    
+ *    inDesc:
+ *      SoundDescription being modified
+ *    
+ *    inPropClass:
+ *      class of property being set
+ *    
+ *    inPropID:
+ *      ID of property being set
+ *    
+ *    inPropValueSize:
+ *      size of property value buffer
+ *    
+ *    inPropValueAddress:
+ *      pointer to property value buffer
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSStatus 
+QTSoundDescriptionSetProperty(
+  SoundDescriptionHandle    inDesc,
+  QTPropertyClass           inPropClass,
+  QTPropertyID              inPropID,
+  ByteCount                 inPropValueSize,
+  ConstQTPropertyValuePtr   inPropValueAddress)               AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
 
 
 enum {
@@ -945,12 +1305,7 @@ enum {
   kMediaPropertyHasActions      = 105
 };
 
-/* property types*/
-typedef OSType                          QTPropertyClass;
-typedef OSType                          QTPropertyID;
-typedef OSType                          QTPropertyValueType;
-typedef void *                          QTPropertyValuePtr;
-typedef const void *                    ConstQTPropertyValuePtr;
+
 /* TimeBase and TimeRecord moved to MacTypes.h */
 typedef UInt32 TimeBaseFlags;
 enum {
@@ -1080,9 +1435,22 @@ enum {
 /* Add/GetMediaSample flags */
 enum {
   mediaSampleNotSync            = 1 << 0, /* sample is not a sync sample (eg. is frame differenced */
-  mediaSampleShadowSync         = 1 << 1 /* sample is a shadow sync */
+  mediaSampleShadowSync         = 1 << 1, /* sample is a shadow sync */
+  mediaSampleDroppable          = 1 << 27, /* sample is not required to be decoded for later samples to be decoded properly */
+  mediaSamplePartialSync        = 1 << 16, /* sample is a partial sync (e.g., I frame after open GOP) */
+  mediaSampleHasRedundantCoding = 1 << 24, /* sample is known to contain redundant coding */
+  mediaSampleHasNoRedundantCoding = 1 << 25, /* sample is known not to contain redundant coding */
+  mediaSampleIsDependedOnByOthers = 1 << 26, /* one or more other samples depend upon the decode of this sample */
+  mediaSampleIsNotDependedOnByOthers = 1 << 27, /* synonym for mediaSampleDroppable */
+  mediaSampleDependsOnOthers    = 1 << 28, /* sample's decode depends upon decode of other samples */
+  mediaSampleDoesNotDependOnOthers = 1 << 29, /* sample's decode does not depend upon decode of other samples */
+  mediaSampleEarlierDisplayTimesAllowed = 1 << 30 /* samples later in decode order may have earlier display times */
 };
 
+/*
+MediaSampleFlags is defined in ImageCompression.h:
+typedef UInt32 MediaSampleFlags;
+*/
 enum {
   pasteInParallel               = 1 << 0,
   showUserSettingsDialog        = 1 << 1,
@@ -1096,6 +1464,7 @@ enum {
   nextTimeTrackEdit             = 1 << 2,
   nextTimeSyncSample            = 1 << 3,
   nextTimeStep                  = 1 << 4,
+  nextTimePartialSyncSample     = 1 << 5,
   nextTimeEdgeOK                = 1 << 14,
   nextTimeIgnoreActiveSegment   = 1 << 15
 };
@@ -1184,6 +1553,12 @@ enum {
   movieTrackEnabledOnly         = 1 << 2
 };
 
+/*
+   Opaque replacement for SampleReferenceRecord/SampleReference64Record arrays able to carry information
+   not described in those arrays of those records
+*/
+typedef const struct OpaqueQTSampleTable*  QTSampleTableRef;
+typedef struct OpaqueQTSampleTable*     QTMutableSampleTableRef;
 struct SampleReferenceRecord {
   long                dataOffset;
   long                dataSize;
@@ -1258,7 +1633,6 @@ enum {
  *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
- *    Windows:          in qtmlClient.lib 6.5 and later
  */
 extern OSErr 
 EnterMoviesOnThread(UInt32 inFlags)                           AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
@@ -1271,7 +1645,6 @@ EnterMoviesOnThread(UInt32 inFlags)                           AVAILABLE_MAC_OS_X
  *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
- *    Windows:          in qtmlClient.lib 6.5 and later
  */
 extern OSErr 
 ExitMoviesOnThread(void)                                      AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
@@ -2294,8 +2667,250 @@ SetMovieVideoOutput(
 
 
 /*************************
+ * Audio Context
+ *************************/
+/*
+   The QTAudioContextRef type encapsulates a connection to an audio output device.
+   It represents a destination audio rendering environment that can be used for
+   playback of a movie.
+*/
+typedef struct QTAudioContextRefType*   QTAudioContextRef;
+/*
+ *  QTAudioContextRetain()
+ *  
+ *  Summary:
+ *    Retains a QTAudioContext object by incrementing its reference
+ *    count. You should retain the object when you receive it from
+ *    elsewhere (that is, you did not create it) and you want it to
+ *    persist. If you retain a QTAudioContext object you are
+ *    responsible for releasing it. The same audio context is returned
+ *    for convenience. If audioContext is NULL, nothing happens.
+ *  
+ *  Parameters:
+ *    
+ *    audioContext:
+ *      [in] The audio context to retain.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern QTAudioContextRef 
+QTAudioContextRetain(QTAudioContextRef audioContext)          AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  QTAudioContextRelease()
+ *  
+ *  Summary:
+ *    Release a QTAudioContext object by decrementing its reference
+ *    count. If that count consequently becomes zero the memory
+ *    allocated to the object is deallocated and the object is
+ *    destroyed. If you create or explicitly retain a QTAudioContext
+ *    object, you are responsible for releasing it when you no longer
+ *    need it. If audioContext is NULL, nothing happens.
+ *  
+ *  Parameters:
+ *    
+ *    audioContext:
+ *      [in] The audio context to release.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern void 
+QTAudioContextRelease(QTAudioContextRef audioContext)         AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  QTAudioContextCreateForAudioDevice()
+ *  
+ *  Summary:
+ *    Creates a QTAudioContext object that encapsulates a connection to
+ *    an audio output device. This object is suitable for passing to
+ *    SetMovieAudioContext or NewMovieFromProperties, which targets the
+ *    audio output of the movie to that device. A QTAudioContext object
+ *    cannot be associated with more than one movie. Each movie needs
+ *    its own connection to the device. In order to play more than one
+ *    movie to a particular device, create a QTAudioContext object for
+ *    each movie. You are responsible for releasing the QTAudioContext
+ *    object created by this routine. After calling
+ *    SetMovieAudioContext or NewMovieFromProperties, you can release
+ *    the object since these APIs will retain it for their own use. On
+ *    Windows, the audioDeviceUID is the GUID of a DirectSound device,
+ *    stringified using such Win32 functions as StringFromCLSID() or
+ *    StringFromGUID2(), then wrapped in a CFStringRef using
+ *    CFStringCreateWithCharacters().  After passing the audioDeviceUID
+ *    CFStringRef to QTAudioContextCreateForAudioDevice(), remember to
+ *    CFRelease() the CFStringRef you created.
+ *  
+ *  Parameters:
+ *    
+ *    allocator:
+ *      [in]  Allocator used to create the audio context.
+ *    
+ *    audioDeviceUID:
+ *      [in]  Audio device UID.  NULL means the default CoreAudio
+ *      device.
+ *    
+ *    options:
+ *      [in]  Reserved.  Pass NULL.
+ *    
+ *    newAudioContextOut:
+ *      [out] Points to a variable to receive the new audio context.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSStatus 
+QTAudioContextCreateForAudioDevice(
+  CFAllocatorRef       allocator,
+  CFStringRef          audioDeviceUID,
+  CFDictionaryRef      options,
+  QTAudioContextRef *  newAudioContextOut)                    AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+
+/******************************************
+ * Using Audio/Visual contexts with movies
+ *****************************************/
+/*
+ *  SetMovieVisualContext()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSStatus 
+SetMovieVisualContext(
+  Movie                movie,
+  QTVisualContextRef   visualContext)                         AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  GetMovieVisualContext()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSStatus 
+GetMovieVisualContext(
+  Movie                 movie,
+  QTVisualContextRef *  visualContext)                        AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  SetMovieAudioContext()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSStatus 
+SetMovieAudioContext(
+  Movie               movie,
+  QTAudioContextRef   audioContext)                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  GetMovieAudioContext()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSStatus 
+GetMovieAudioContext(
+  Movie                movie,
+  QTAudioContextRef *  audioContext)                          AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+
+/*************************
 * calls for getting/saving movies
 **************************/
+/** Properties for NewMovieFromProperties */
+enum {
+  kQTPropertyClass_DataLocation = 'dloc',
+  kQTDataLocationPropertyID_DataReference = 'dref', /* DataReferenceRecord (for semantics of NewMovieFromDataRef)*/
+  kQTDataLocationPropertyID_CFStringNativePath = 'cfnp',
+  kQTDataLocationPropertyID_CFStringPosixPath = 'cfpp',
+  kQTDataLocationPropertyID_CFStringHFSPath = 'cfhp',
+  kQTDataLocationPropertyID_CFStringWindowsPath = 'cfwp',
+  kQTDataLocationPropertyID_CFURL = 'cfur',
+  kQTDataLocationPropertyID_QTDataHandler = 'qtdh', /* for semantics of NewMovieFromStorageOffset*/
+  kQTDataLocationPropertyID_Scrap = 'scrp',
+  kQTDataLocationPropertyID_LegacyMovieResourceHandle = 'rezh', /* QTNewMovieUserProcInfo * (for semantics of NewMovieFromHandle)*/
+  kQTDataLocationPropertyID_MovieUserProc = 'uspr', /* for semantics of NewMovieFromUserProc*/
+  kQTDataLocationPropertyID_ResourceFork = 'rfrk', /* for semantics of NewMovieFromFile*/
+  kQTDataLocationPropertyID_DataFork = 'dfrk', /* for semantics of NewMovieFromDataFork64*/
+  kQTPropertyClass_Context      = 'ctxt', /* Media Contexts*/
+  kQTContextPropertyID_AudioContext = 'audi',
+  kQTContextPropertyID_VisualContext = 'visu',
+  kQTPropertyClass_MovieResourceLocator = 'rloc',
+  kQTMovieResourceLocatorPropertyID_LegacyResID = 'rezi', /* (input/result property)*/
+  kQTMovieResourceLocatorPropertyID_LegacyResName = 'rezn', /* (result property)*/
+  kQTMovieResourceLocatorPropertyID_FileOffset = 'foff', /* NewMovieFromDataFork[64]*/
+  kQTMovieResourceLocatorPropertyID_Callback = 'calb', /* NewMovieFromUserProc(getProc,refcon)*/
+                                        /* Uses kQTMovieDefaultDataRefPropertyID for default dataref*/
+  kQTPropertyClass_MovieInstantiation = 'mins',
+  kQTMovieInstantiationPropertyID_DontResolveDataRefs = 'rdrn',
+  kQTMovieInstantiationPropertyID_DontAskUnresolvedDataRefs = 'aurn',
+  kQTMovieInstantiationPropertyID_DontAutoAlternates = 'aaln',
+  kQTMovieInstantiationPropertyID_DontUpdateForeBackPointers = 'fbpn',
+  kQTMovieInstantiationPropertyID_AsyncOK = 'asok',
+  kQTMovieInstantiationPropertyID_IdleImportOK = 'imok',
+  kQTMovieInstantiationPropertyID_DontAutoUpdateClock = 'aucl',
+  kQTMovieInstantiationPropertyID_ResultDataLocationChanged = 'dlch', /* (result property)*/
+  kQTPropertyClass_NewMovieProperty = 'mprp',
+  kQTNewMoviePropertyID_DefaultDataRef = 'ddrf', /* DataReferenceRecord*/
+  kQTNewMoviePropertyID_Active  = 'actv',
+  kQTNewMoviePropertyID_DontInteractWithUser = 'intn'
+};
+
+/** Property value for kQTDataLocationPropertyID_MovieUserProc */
+struct QTNewMovieUserProcRecord {
+  GetMovieUPP         getMovieUserProc;
+  void *              getMovieUserProcRefcon;
+  DataReferenceRecord  defaultDataRef;
+};
+typedef struct QTNewMovieUserProcRecord QTNewMovieUserProcRecord;
+/** Property structure for NewMovieFromProperties */
+struct QTNewMoviePropertyElement {
+  QTPropertyClass     propClass;
+  QTPropertyID        propID;
+  ByteCount           propValueSize;
+  QTPropertyValuePtr  propValueAddress;
+  OSStatus            propStatus;
+};
+typedef struct QTNewMoviePropertyElement QTNewMoviePropertyElement;
+/*
+ *  NewMovieFromProperties()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSStatus 
+NewMovieFromProperties(
+  ItemCount                    inputPropertyCount,
+  QTNewMoviePropertyElement *  inputProperties,
+  ItemCount                    outputPropertyCount,
+  QTNewMoviePropertyElement *  outputProperties,
+  Movie *                      theMovie)                      AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
 /*
  *  NewMovie()
  *  
@@ -3464,6 +4079,154 @@ SetMediaTimeScale(
 
 
 /*
+ *  GetMediaDecodeDuration()
+ *  
+ *  Summary:
+ *    Returns the decode duration of a media.
+ *  
+ *  Discussion:
+ *    A media's decode duration is the sum of the decode durations of
+ *    its samples.
+ *  
+ *  Parameters:
+ *    
+ *    theMedia:
+ *      The media for this operation. Your application obtains this
+ *      media identifier from such functions as NewTrackMedia and
+ *      GetTrackMedia.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern TimeValue64 
+GetMediaDecodeDuration(Media theMedia)                        AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  GetMediaAdvanceDecodeTime()
+ *  
+ *  Summary:
+ *    Returns the advance decode time of a media.
+ *  
+ *  Discussion:
+ *    A media's advance decode time is the absolute value of the
+ *    greatest-magnitude negative display offset of its samples, or
+ *    zero if there are no samples with negative display offsets. 
+ *     This is the amount that the decode time axis must be adjusted
+ *    ahead of the display time axis to ensure that no sample's
+ *    adjusted decode time is later than its display time. 
+ *    For media without nonzero display offsets, the advance decode
+ *    time is zero.
+ *  
+ *  Parameters:
+ *    
+ *    theMedia:
+ *      The media for this operation. Your application obtains this
+ *      media identifier from such functions as NewTrackMedia and
+ *      GetTrackMedia.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern TimeValue64 
+GetMediaAdvanceDecodeTime(Media theMedia)                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  GetMediaDisplayDuration()
+ *  
+ *  Summary:
+ *    Returns the display duration of a media.
+ *  
+ *  Discussion:
+ *    A media's display duration is its display end time minus its
+ *    display start time. For media without nonzero display offsets,
+ *    the decode duration and display duration are the same, so
+ *    GetMediaDisplayDuration and GetMediaDisplayDuration are
+ *    equivalent to GetMediaDuration.
+ *  
+ *  Parameters:
+ *    
+ *    theMedia:
+ *      The media for this operation. Your application obtains this
+ *      media identifier from such functions as NewTrackMedia and
+ *      GetTrackMedia.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern TimeValue64 
+GetMediaDisplayDuration(Media theMedia)                       AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  GetMediaDisplayStartTime()
+ *  
+ *  Summary:
+ *    Returns the display start time of a media.
+ *  
+ *  Discussion:
+ *    A media's display start time is the earliest display time of any
+ *    of its samples. For media without nonzero display offsets, the
+ *    display start time is always zero.
+ *  
+ *  Parameters:
+ *    
+ *    theMedia:
+ *      The media for this operation. Your application obtains this
+ *      media identifier from such functions as NewTrackMedia and
+ *      GetTrackMedia.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern TimeValue64 
+GetMediaDisplayStartTime(Media theMedia)                      AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  GetMediaDisplayEndTime()
+ *  
+ *  Summary:
+ *    Returns the display end time of a media.
+ *  
+ *  Discussion:
+ *    A media's display end time is the sum of the display time and
+ *    decode duration of the sample with the greatest display time. For
+ *    media without nonzero display offsets, the display end time is
+ *    the same as the media decode duration, which is the same as the
+ *    media duration.
+ *  
+ *  Parameters:
+ *    
+ *    theMedia:
+ *      The media for this operation. Your application obtains this
+ *      media identifier from such functions as NewTrackMedia and
+ *      GetTrackMedia.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern TimeValue64 
+GetMediaDisplayEndTime(Media theMedia)                        AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
  *  GetMediaDuration()
  *  
  *  Availability:
@@ -3828,7 +4591,236 @@ GetMediaSyncSampleCount(Media theMedia)                       AVAILABLE_MAC_OS_X
 
 
 /*
+ *  MediaContainsDisplayOffsets()
+ *  
+ *  Summary:
+ *    Tests whether a media contains display offsets.
+ *  
+ *  Parameters:
+ *    
+ *    theMedia:
+ *      The media for this operation. Your application obtains this
+ *      media identifier from such functions as NewTrackMedia and
+ *      GetTrackMedia.
+ *  
+ *  Result:
+ *    True, if the media is valid and contains at least one sample with
+ *    a nonzero display offset.  False otherwise.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern Boolean 
+MediaContainsDisplayOffsets(Media theMedia)                   AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  SampleNumToMediaDecodeTime()
+ *  
+ *  Summary:
+ *    Finds the decode time for a specified sample.
+ *  
+ *  Parameters:
+ *    
+ *    theMedia:
+ *      The media for this operation. Your application obtains this
+ *      media identifier from such functions as NewTrackMedia and
+ *      GetTrackMedia.
+ *    
+ *    logicalSampleNum:
+ *      The sample number.
+ *    
+ *    sampleDecodeTime:
+ *      A pointer to a time value. The function updates this time value
+ *      to indicate the decode time of the sample specified by the
+ *      logicalSampleNum parameter. This time value is expressed in the
+ *      media's time scale. Set this parameter to NULL if you do not
+ *      want this information.
+ *    
+ *    sampleDecodeDuration:
+ *      A pointer to a time value. The function updates this time value
+ *      to indicate the decode duration of the sample specified by the
+ *      logicalSampleNum parameter. This time value is expressed in the
+ *      media's time scale. Set this parameter to NULL if you do not
+ *      want this information.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern void 
+SampleNumToMediaDecodeTime(
+  Media          theMedia,
+  SInt64         logicalSampleNum,
+  TimeValue64 *  sampleDecodeTime,
+  TimeValue64 *  sampleDecodeDuration)                        AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  MediaDecodeTimeToSampleNum()
+ *  
+ *  Summary:
+ *    Finds the sample for a specified decode time.
+ *  
+ *  Parameters:
+ *    
+ *    theMedia:
+ *      The media for this operation. Your application obtains this
+ *      media identifier from such functions as NewTrackMedia and
+ *      GetTrackMedia.
+ *    
+ *    decodeTime:
+ *      The decode time for which you are retrieving sample
+ *      information. You must specify this value in the media's time
+ *      scale.
+ *    
+ *    sampleNum:
+ *      Points to a variable that is to receive the sample number. The
+ *      function returns the sample number that identifies the sample
+ *      that contains data for the specified decode time, or zero if it
+ *      is not found.
+ *    
+ *    sampleDecodeTime:
+ *      A pointer to a time value. The function updates this time value
+ *      to indicate the decode time of the sample specified by the
+ *      logicalSampleNum parameter. This time value is expressed in the
+ *      media's time scale. Set this parameter to NULL if you do not
+ *      want this information.
+ *    
+ *    sampleDecodeDuration:
+ *      A pointer to a time value. The function updates this time value
+ *      to indicate the decode duration of the sample specified by the
+ *      logicalSampleNum parameter. This time value is expressed in the
+ *      media's time scale. Set this parameter to NULL if you do not
+ *      want this information.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern void 
+MediaDecodeTimeToSampleNum(
+  Media          theMedia,
+  TimeValue64    decodeTime,
+  SInt64 *       sampleNum,
+  TimeValue64 *  sampleDecodeTime,
+  TimeValue64 *  sampleDecodeDuration)                        AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  SampleNumToMediaDisplayTime()
+ *  
+ *  Summary:
+ *    Finds the display time for a specified sample.
+ *  
+ *  Parameters:
+ *    
+ *    theMedia:
+ *      The media for this operation. Your application obtains this
+ *      media identifier from such functions as NewTrackMedia and
+ *      GetTrackMedia.
+ *    
+ *    logicalSampleNum:
+ *      The sample number.
+ *    
+ *    sampleDisplayTime:
+ *      A pointer to a time value. The function updates this time value
+ *      to indicate the display time of the sample specified by the
+ *      logicalSampleNum parameter. This time value is expressed in the
+ *      media's time scale. Set this parameter to NULL if you do not
+ *      want this information.
+ *    
+ *    sampleDisplayDuration:
+ *      A pointer to a time value. The function updates this time value
+ *      to indicate the display duration of the sample specified by the
+ *      logicalSampleNum parameter. This time value is expressed in the
+ *      media's time scale. Set this parameter to NULL if you do not
+ *      want this information.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern void 
+SampleNumToMediaDisplayTime(
+  Media          theMedia,
+  SInt64         logicalSampleNum,
+  TimeValue64 *  sampleDisplayTime,
+  TimeValue64 *  sampleDisplayDuration)                       AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  MediaDisplayTimeToSampleNum()
+ *  
+ *  Summary:
+ *    Finds the sample number for a specified display time.
+ *  
+ *  Parameters:
+ *    
+ *    theMedia:
+ *      The media for this operation. Your application obtains this
+ *      media identifier from such functions as NewTrackMedia and
+ *      GetTrackMedia.
+ *    
+ *    displayTime:
+ *      The display time for which you are retrieving sample
+ *      information. You must specify this value in the media's time
+ *      scale.
+ *    
+ *    sampleNum:
+ *      Points to a long integer that is to receive the sample number.
+ *      The function returns the sample number that identifies the
+ *      sample for the specified display time, or zero if it is not
+ *      found.
+ *    
+ *    sampleDisplayTime:
+ *      A pointer to a time value. The function updates this time value
+ *      to indicate the display time of the sample specified by the
+ *      logicalSampleNum parameter. This time value is expressed in the
+ *      media's time scale. Set this parameter to NULL if you do not
+ *      want this information.
+ *    
+ *    sampleDisplayDuration:
+ *      A pointer to a time value. The function updates this time value
+ *      to indicate the display duration of the sample specified by the
+ *      logicalSampleNum parameter. This time value is expressed in the
+ *      media's time scale. Set this parameter to NULL if you do not
+ *      want this information.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern void 
+MediaDisplayTimeToSampleNum(
+  Media          theMedia,
+  TimeValue64    displayTime,
+  SInt64 *       sampleNum,
+  TimeValue64 *  sampleDisplayTime,
+  TimeValue64 *  sampleDisplayDuration)                       AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
  *  SampleNumToMediaTime()
+ *  
+ *  Summary:
+ *    Finds the media time for a specified sample.
+ *  
+ *  Discussion:
+ *    For media with display offsets, SampleNumToMediaTime is ambiguous
+ *    and will return kQTMediaHasDisplayOffsetsErr. Call
+ *    SampleNumToMediaDecodeTime or SampleNumToMediaDisplayTime instead.
  *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
@@ -3847,6 +4839,14 @@ SampleNumToMediaTime(
 /*
  *  MediaTimeToSampleNum()
  *  
+ *  Summary:
+ *    Finds the sample number for a specified media time.
+ *  
+ *  Discussion:
+ *    For media with display offsets, MediaTimeToSampleNum is ambiguous
+ *    and will return kQTMediaHasDisplayOffsetsErr. Call
+ *    MediaDecodeTimeToSampleNum or MediaDisplayTimeToSampleNum instead.
+ *  
  *  Availability:
  *    Mac OS X:         in version 10.0 and later in QuickTime.framework
  *    CarbonLib:        in CarbonLib 1.0 and later
@@ -3861,6 +4861,193 @@ MediaTimeToSampleNum(
   TimeValue *  sampleTime,
   TimeValue *  sampleDuration)                                AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
+
+/*
+ *  AddMediaSample2()
+ *  
+ *  Summary:
+ *    Adds sample data and a description to a media. AddMediaSample2
+ *    extends and supercedes AddMediaSample.
+ *  
+ *  Parameters:
+ *    
+ *    theMedia:
+ *      The media for this operation.  Your application obtains this
+ *      media identifier from such functions as NewTrackMedia and
+ *      GetTrackMedia.
+ *    
+ *    dataIn:
+ *      Points to sample data.
+ *    
+ *    size:
+ *      The number of bytes of sample data to be added to the media.
+ *      This parameter indicates the total number of bytes in the
+ *      sample data to be added to the media, not the number of bytes
+ *      per sample. Use the numberOfSamples parameter to indicate the
+ *      number of samples that are contained in the sample data.
+ *    
+ *    decodeDurationPerSample:
+ *      The duration of each sample to be added. You must specify this
+ *      parameter in the media time scale. For example, if you are
+ *      adding sound that was sampled at 22 kHz to a media that
+ *      contains a sound track with the same time scale, you would set
+ *      durationPerSample to 1. Similarly, if you are adding video that
+ *      was recorded at 10 frames per second to a video media that has
+ *      a time scale of 600, you would set this parameter to 60 to add
+ *      a single sample.
+ *    
+ *    displayOffset:
+ *      The offset from decode time to display time of each sample to
+ *      be added. You must specify this parameter in the media time
+ *      scale. If the decode times and display times for the samples
+ *      are identical, pass zero.
+ *    
+ *    sampleDescriptionH:
+ *      A handle to a SampleDescription structure. Some media
+ *      structures may require sample descriptions. There are different
+ *      descriptions for different types of samples. For example, a
+ *      media that contains compressed video requires that you supply
+ *      an ImageDescription structure. A media that contains sound
+ *      requires that you supply a SoundDescription structure.
+ *    
+ *    numberOfSamples:
+ *      The number of samples contained in the sample data to be added
+ *      to the media.
+ *    
+ *    sampleFlags:
+ *      Specifies the media sample flags for the samples to be added.
+ *    
+ *    sampleDecodeTimeOut:
+ *      A pointer to a time value. After adding the sample data to the
+ *      media, the AddMediaSample function returns the decode time
+ *      where the first sample was inserted in the time value referred
+ *      to by this parameter. If you don't want to receive this
+ *      information, set this parameter to NULL.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern OSErr 
+AddMediaSample2(
+  Media                     theMedia,
+  const UInt8 *             dataIn,
+  ByteCount                 size,
+  TimeValue64               decodeDurationPerSample,
+  TimeValue64               displayOffset,
+  SampleDescriptionHandle   sampleDescriptionH,
+  ItemCount                 numberOfSamples,
+  MediaSampleFlags          sampleFlags,
+  TimeValue64 *             sampleDecodeTimeOut)           /* can be NULL */ AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  AddMediaSampleFromEncodedFrame()
+ *  
+ *  Summary:
+ *    Adds sample data and description from an encoded frame to a media.
+ *  
+ *  Discussion:
+ *    This is a convenience API to make it easy to add frames emitted
+ *    by ICM compression session APIs to media.
+ *  
+ *  Parameters:
+ *    
+ *    theMedia:
+ *      The media for this operation.  Your application obtains this
+ *      media identifier from such functions as NewTrackMedia and
+ *      GetTrackMedia.
+ *    
+ *    encodedFrame:
+ *      An encoded frame token returned by an ICMCompressionSequence.
+ *    
+ *    sampleDecodeTimeOut:
+ *      A pointer to a time value. After adding the sample data to the
+ *      media, the function returns the decode time where the first
+ *      sample was inserted in the time value referred to by this
+ *      parameter. If you don't want to receive this information, set
+ *      this parameter to NULL.
+ *  
+ *  Result:
+ *    An operating system result code.
+ *    kQTMediaDoesNotSupportDisplayOffsetsErr if the media does not
+ *    support nonzero display offsets. kQTDisplayTimeAlreadyInUseErr if
+ *    there is already a sample with this display time.
+ *    kQTDisplayTimeTooEarlyErr if a sample's display time would be
+ *    earlier than the display time of an existing sample that does not
+ *    have the mediaSampleEarlierDisplayTimesAllowed flag set.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern OSErr 
+AddMediaSampleFromEncodedFrame(
+  Media                theMedia,
+  ICMEncodedFrameRef   encodedFrame,
+  TimeValue64 *        sampleDecodeTimeOut)       /* can be NULL */ AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  AddSampleTableToMedia()
+ *  
+ *  Summary:
+ *    Adds sample references from a sample table to a media.
+ *    AddSampleTableToMedia supercedes AddMediaSampleReferences and
+ *    AddMediaSampleReferences64.
+ *  
+ *  Parameters:
+ *    
+ *    theMedia:
+ *      The media for this operation.  Your application obtains this
+ *      media identifier from such functions as NewTrackMedia and
+ *      GetTrackMedia.
+ *    
+ *    sampleTable:
+ *      The sample table containing sample references to be added to
+ *      the media.
+ *    
+ *    startSampleNum:
+ *      The sample number of the first sample reference in the sample
+ *      table to be added to the media.  The first sample's number is 1.
+ *    
+ *    numberOfSamples:
+ *      The number of sample references from the sample table to be
+ *      added to the media.
+ *    
+ *    sampleDecodeTimeOut:
+ *      A pointer to a time value. After adding the sample references
+ *      to the media, the function returns the decode time where the
+ *      first sample was inserted in the time value referred to by this
+ *      parameter. If you don't want to receive this information, set
+ *      this parameter to NULL.
+ *  
+ *  Result:
+ *    An operating system result code.
+ *    kQTMediaDoesNotSupportDisplayOffsetsErr if the media does not
+ *    support nonzero display offsets. kQTDisplayTimeAlreadyInUseErr if
+ *    there is already a sample with this display time.
+ *    kQTDisplayTimeTooEarlyErr if a sample's display time would be
+ *    earlier than the display time of an existing sample that does not
+ *    have the mediaSampleEarlierDisplayTimesAllowed flag set.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern OSErr 
+AddSampleTableToMedia(
+  Media              theMedia,
+  QTSampleTableRef   sampleTable,
+  SInt64             startSampleNum,
+  SInt64             numberOfSamples,
+  TimeValue64 *      sampleDecodeTimeOut)       /* can be NULL */ AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
 /*
@@ -3943,6 +5130,183 @@ AddMediaSampleReferences64(
 
 
 /*
+ *  ExtendMediaDecodeDurationToDisplayEndTime()
+ *  
+ *  Summary:
+ *    Prepares a media for the addition of a completely new sequence of
+ *    samples by ensuring that the media display end time is not later
+ *    than the media decode end time.
+ *  
+ *  Discussion:
+ *    After adding a complete, well-formed set of samples to a media,
+ *    the media's display end time should be the same as the media's
+ *    decode end time (also called the media decode duration). 
+ *    However, this is not necessarily the case after individual
+ *    sample-adding operations, and hence it is possible for a media to
+ *    be left with a display end time later than its decode end time --
+ *    if adding a sequence of frames is aborted halfway, for example.
+ *    
+ *    This may make it difficult to add a new group of samples, because
+ *    a well-formed group of samples' earliest display time should be
+ *    the same as the first frame's decode time.  If such a well-formed
+ *    group is added to an incompletely finished media, frames from the
+ *    old and new groups frames might collide in display time. 
+ *     ExtendMediaDecodeDurationToDisplayEndTime prevents any such
+ *    collision or overlap by extending the last sample's decode
+ *    duration as necessary.  It ensures that the next added sample
+ *    will have a decode time no earlier than the media's display end
+ *    time.  If this was already the case, it makes no change to the
+ *    media. 
+ *    You can call ExtendMediaDecodeDurationToDisplayEndTime before you
+ *    begin adding samples to a media if you're not certain that the
+ *    media was left in a well-finished state.  You do not need to call
+ *    it before adding samples to a newly created media, nor should you
+ *    call it in between samples from the same compression session.
+ *  
+ *  Parameters:
+ *    
+ *    theMedia:
+ *      The media for this operation.  Your application obtains this
+ *      media identifier from such functions as NewTrackMedia and
+ *      GetTrackMedia.
+ *    
+ *    mediaChanged:
+ *      Points to a variable which will be set to true if any samples
+ *      in the media were adjusted, false otherwise. If you don't want
+ *      to receive this information, set this parameter to NULL.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern OSErr 
+ExtendMediaDecodeDurationToDisplayEndTime(
+  Media      theMedia,
+  Boolean *  mediaChanged)                                    AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  GetMediaSample2()
+ *  
+ *  Summary:
+ *    Retrieves sample data from a media file. GetMediaSample2 extends
+ *    and supercedes GetMediaSample.
+ *  
+ *  Discussion:
+ *    GetMediaSample2 will only return multiple samples that all have
+ *    the same decode duration per sample, the same display offset, the
+ *    same sample description, and the same size per sample.
+ *  
+ *  Parameters:
+ *    
+ *    theMedia:
+ *      The media for this operation.  Your application obtains this
+ *      media identifier from such functions as NewTrackMedia and
+ *      GetTrackMedia.
+ *    
+ *    dataOut:
+ *      Points to a buffer to receive sample data. The buffer must be
+ *      large enough to contain at least maxDataSize bytes. If you do
+ *      not want to receive sample data, pass NULL.
+ *    
+ *    maxDataSize:
+ *      The maximum number of bytes of data to receive.
+ *    
+ *    size:
+ *      Points to a long integer to receive the number of bytes of
+ *      sample data returned. Pass NULL if you are not interested this
+ *      information.
+ *    
+ *    decodeTime:
+ *      The decode time for which you are retrieving sample
+ *      information. You must specify this value in the media's time
+ *      scale.
+ *    
+ *    sampleDecodeTime:
+ *      A pointer to a time value. The function updates this time value
+ *      to indicate the actual decode time of the returned sample data.
+ *      (The returned time may differ from the time you specified with
+ *      the decodeTime parameter. This will occur if the time you
+ *      specified falls in the middle of a sample.) If you are not
+ *      interested in this information, set this parameter to NULL.
+ *    
+ *    decodeDurationPerSample:
+ *      A pointer to a time value. The function updates this time value
+ *      to indicate the decode duration of each of the returned
+ *      samples. This time value is expressed in the media's time
+ *      scale. Set this parameter to NULL if you don't want this
+ *      information.
+ *    
+ *    displayOffset:
+ *      A pointer to a time value. The function updates this time value
+ *      to indicate the display offset of the returned sample.  This
+ *      time value is expressed in the media's time scale. Set this
+ *      parameter to NULL if you don't want this information.
+ *    
+ *    sampleDescriptionH:
+ *      A handle to a SampleDescription structure. The function returns
+ *      the sample description corresponding to the returned sample
+ *      data.  The function resizes this handle as appropriate. If you
+ *      don't want a SampleDescription structure, set this parameter to
+ *      NULL.
+ *    
+ *    sampleDescriptionIndex:
+ *      A pointer to a long integer. The function returns an index
+ *      value to the SampleDescription structure that corresponds to
+ *      the returned sample data. You can retrieve the structure by
+ *      calling GetMediaSampleDescription and passing this index in the
+ *      index parameter. If you don't want this information, set this
+ *      parameter to NULL.
+ *    
+ *    maxNumberOfSamples:
+ *      The maximum number of samples to be returned. The Movie Toolbox
+ *      does not return more samples than you specify with this
+ *      parameter. If you set this parameter to 0, the Movie Toolbox
+ *      uses a value that is appropriate for the media, and returns
+ *      that value in the field referenced by the numberOfSamples
+ *      parameter.
+ *    
+ *    numberOfSamples:
+ *      A pointer to a long integer. The function updates the field
+ *      referred to by this parameter with the number of samples it
+ *      actually returns. If you don't want this information, set this
+ *      parameter to NULL.
+ *    
+ *    sampleFlags:
+ *      A pointer to a short integer in which the function returns
+ *      media sample flags for the returned samples. If you don't want
+ *      this information, set this parameter to NULL.
+ *  
+ *  Result:
+ *    An operating system result code. maxSizeToGrowTooSmall if the
+ *    sample data is larger than maxDataSize.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern OSErr 
+GetMediaSample2(
+  Media                     theMedia,
+  UInt8 *                   dataOut,
+  ByteCount                 maxDataSize,
+  ByteCount *               size,
+  TimeValue64               decodeTime,
+  TimeValue64 *             sampleDecodeTime,
+  TimeValue64 *             decodeDurationPerSample,
+  TimeValue64 *             displayOffset,
+  SampleDescriptionHandle   sampleDescriptionH,
+  ItemCount *               sampleDescriptionIndex,
+  ItemCount                 maxNumberOfSamples,
+  ItemCount *               numberOfSamples,
+  MediaSampleFlags *        sampleFlags)                      AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
  *  GetMediaSample()
  *  
  *  Availability:
@@ -3965,6 +5329,73 @@ GetMediaSample(
   long                      maxNumberOfSample,
   long *                    numberOfSamples,
   short *                   sampleFlags)                      AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+
+
+/*
+ *  CopyMediaMutableSampleTable()
+ *  
+ *  Summary:
+ *    Obtains information about sample references in a media in the
+ *    form of a sample table. CopyMediaMutableSampleTable supercedes
+ *    GetMediaSampleReferences and GetMediaSampleReferences64.
+ *  
+ *  Discussion:
+ *    When you are done with the returned sample table, release it with
+ *    QTSampleTableRelease. 
+ *    To find out how many samples were returned in the sample table,
+ *    call QTSampleTableGetNumberOfSamples.
+ *  
+ *  Parameters:
+ *    
+ *    theMedia:
+ *      The media for this operation.  Your application obtains this
+ *      media identifier from such functions as NewTrackMedia and
+ *      GetTrackMedia.
+ *    
+ *    startDecodeTime:
+ *      The starting decode time of the sample references to be
+ *      retrieved. You must specify this value in the media's time
+ *      scale.
+ *    
+ *    sampleStartDecodeTime:
+ *      A pointer to a time value. The function updates this time value
+ *      to indicate the actual decode time of the first returned sample
+ *      reference. (The returned time may differ from the time you
+ *      specified with the startDecodeTime parameter.  This will occur
+ *      if the time you specified falls in the middle of a sample.) If
+ *      you are not interested in this information, set this parameter
+ *      to NULL.
+ *    
+ *    maxNumberOfSamples:
+ *      The maximum number of sample references to be returned. If you
+ *      set this parameter to 0, the Movie Toolbox uses a value that is
+ *      appropriate to the media.
+ *    
+ *    maxDecodeDuration:
+ *      The maximum decode duration to be returned. The function does
+ *      not return samples with greater decode duration than you
+ *      specify with this parameter. If you set this parameter to 0,
+ *      the Movie Toolbox uses a value that is appropriate for the
+ *      media.
+ *    
+ *    sampleTableOut:
+ *      A pointer to a sample table reference to receive the newly
+ *      created mutable sample table.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern OSErr 
+CopyMediaMutableSampleTable(
+  Media                      theMedia,
+  TimeValue64                startDecodeTime,
+  TimeValue64 *              sampleStartDecodeTime,
+  SInt64                     maxNumberOfSamples,
+  TimeValue64                maxDecodeDuration,
+  QTMutableSampleTableRef *  sampleTableOut)                  AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
 /*
@@ -4098,6 +5529,15 @@ GetMediaShadowSync(
 /*************************
 * Editing Routines
 **************************/
+/*
+    When inserting media that might have nonzero display offsets into a track, use display time:
+      InsertMediaIntoTrack( track, 
+                            0,                                 // track start time
+                            GetMediaDisplayStartTime( media ), // media start time
+                            GetMediaDisplayDuration( media ), 
+                            fixed1 );                          // normal speed
+    It is safe to use these display time calls for media without display offsets.
+*/
 /*
  *  InsertMediaIntoTrack()
  *  
@@ -4776,6 +6216,51 @@ QTGetMIMETypeInfo(
 * Movie Timebase Conversion Routines
 **************************/
 /*
+ *  TrackTimeToMediaDisplayTime()
+ *  
+ *  Summary:
+ *    Converts a track's time value to a display time value that is
+ *    appropriate to the track's media, using the track's edit list.
+ *    This is a 64-bit replacement for TrackTimeToMediaTime.
+ *  
+ *  Discussion:
+ *    This function maps the track time through the track's edit list
+ *    to come up with the media time. This time value contains the
+ *    track's time value according to the media's time coordinate
+ *    system. If the time you specified lies outside of the movie's
+ *    active segment or corresponds to empty space in the track, this
+ *    function returns a value of -1. Hence you can use it to determine
+ *    whether a specified track edit is empty.
+ *  
+ *  Parameters:
+ *    
+ *    value:
+ *      The track's time value; must be expressed in the time scale of
+ *      the movie that contains the track.
+ *    
+ *    theTrack:
+ *      The track for this operation.  Your application obtains this
+ *      track identifier from such functions as NewMovieTrack and
+ *      GetMovieTrack.
+ *  
+ *  Result:
+ *    The corresponding time in media display time, in the media's time
+ *    coordinate system. If the track time corresponds to empty space,
+ *    this function returns a value of -1.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern TimeValue64 
+TrackTimeToMediaDisplayTime(
+  TimeValue64   value,
+  Track         theTrack)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
  *  TrackTimeToMediaTime()
  *  
  *  Availability:
@@ -4788,6 +6273,44 @@ extern TimeValue
 TrackTimeToMediaTime(
   TimeValue   value,
   Track       theTrack)                                       AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+
+
+/*
+ *  GetTrackEditRate64()
+ *  
+ *  Summary:
+ *    Returns the rate of the track edit of a specified track at an
+ *    indicated time. This is a 64-bit replacement for GetTrackEditRate.
+ *  
+ *  Discussion:
+ *    This function is useful if you are stepping through track edits
+ *    directly in your application or if you are a client of
+ *    QuickTime's base media handler.
+ *  
+ *  Parameters:
+ *    
+ *    theTrack:
+ *      The track identifier for which the rate of a track edit (at the
+ *      time given in the atTime parameter) is to be determined.
+ *    
+ *    atTime:
+ *      Indicates a time value at which the rate of a track edit (of a
+ *      track identified in the parameter theTrack) is to be determined.
+ *  
+ *  Result:
+ *    The rate of the track edit of the specified track at the
+ *    specified time.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern Fixed 
+GetTrackEditRate64(
+  Track         theTrack,
+  TimeValue64   atTime)                                       AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
 /*
@@ -4874,6 +6397,51 @@ GetTrackDataSize64(
   TimeValue   startTime,
   TimeValue   duration,
   wide *      dataSize)                                       AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+
+
+/*
+ *  GetMediaDataSizeTime64()
+ *  
+ *  Summary:
+ *    Determines the size, in bytes, of the sample data in a media
+ *    segment. This function uses 64-bit time values and returns a
+ *    64-bit size.
+ *  
+ *  Discussion:
+ *    The only difference between this function and GetMediaDataSize64
+ *    is that it uses 64-bit time values.
+ *  
+ *  Parameters:
+ *    
+ *    theMedia:
+ *      The media for this operation.  Your application obtains this
+ *      media identifier from such functions as NewTrackMedia and
+ *      GetTrackMedia.
+ *    
+ *    startDisplayTime:
+ *      A time value specifying the starting point of the segment in
+ *      media display time.
+ *    
+ *    displayDuration:
+ *      A time value that specifies the duration of the segment in
+ *      media display time.
+ *    
+ *    dataSize:
+ *      Points to a variable to receive the size, in bytes, of the
+ *      sample data in the defined media segment.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern OSErr 
+GetMediaDataSizeTime64(
+  Media         theMedia,
+  TimeValue64   startDisplayTime,
+  TimeValue64   displayDuration,
+  SInt64 *      dataSize)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
 /*
@@ -5287,6 +6855,133 @@ GetMoviePropertyAtom(
   Movie              theMovie,
   QTAtomContainer *  propertyAtom)                            AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
+
+/*
+ *  GetMediaNextInterestingDecodeTime()
+ *  
+ *  Summary:
+ *    Searches for decode times of interest in a media.
+ *  
+ *  Discussion:
+ *    This function takes the same flags as GetMediaNextInterestingTime.
+ *  
+ *  Parameters:
+ *    
+ *    theMedia:
+ *      The media for this operation.  Your application obtains this
+ *      media identifier from such functions as NewTrackMedia and
+ *      GetTrackMedia.
+ *    
+ *    interestingTimeFlags:
+ *      Contains flags that determine the search criteria. Note that
+ *      you may set only one of the nextTimeMediaSample,
+ *      nextTimeMediaEdit or nextTimeSyncSample flags to 1.  Set unused
+ *      flags to 0.
+ *    
+ *    decodeTime:
+ *      Specifies a time value that establishes the starting point for
+ *      the search. This time value must be expressed in the media's
+ *      time scale.
+ *    
+ *    rate:
+ *      The search direction. Negative values cause the Movie Toolbox
+ *      to search backward from the starting point specified in the
+ *      decodeTime parameter. Other values cause a forward search.
+ *    
+ *    interestingDecodeTime:
+ *      A pointer to a time value. The Movie Toolbox returns the first
+ *      decode time value it finds that meets the search criteria
+ *      specified in the flags parameter. This time value is in the
+ *      media's time scale. If there are no times that meet the search
+ *      criteria you specify, the Movie Toolbox sets this value to -1.
+ *      Set this parameter to NULL if you are not interested in this
+ *      information.
+ *    
+ *    interestingDecodeDuration:
+ *      A pointer to a time value. The Movie Toolbox returns the decode
+ *      duration of the interesting time. This time value is in the
+ *      media's time coordinate system. Set this parameter to NULL if
+ *      you don't want this information; this lets the function work
+ *      faster.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern void 
+GetMediaNextInterestingDecodeTime(
+  Media          theMedia,
+  short          interestingTimeFlags,
+  TimeValue64    decodeTime,
+  Fixed          rate,
+  TimeValue64 *  interestingDecodeTime,
+  TimeValue64 *  interestingDecodeDuration)                   AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  GetMediaNextInterestingDisplayTime()
+ *  
+ *  Summary:
+ *    Searches for display times of interest in a media.
+ *  
+ *  Discussion:
+ *    This function takes the same flags as GetMediaNextInterestingTime.
+ *  
+ *  Parameters:
+ *    
+ *    theMedia:
+ *      The media for this operation.  Your application obtains this
+ *      media identifier from such functions as NewTrackMedia and
+ *      GetTrackMedia.
+ *    
+ *    interestingTimeFlags:
+ *      Contains flags that determine the search criteria. Note that
+ *      you may set only one of the nextTimeMediaSample,
+ *      nextTimeMediaEdit or nextTimeSyncSample flags to 1. Set unused
+ *      flags to 0.
+ *    
+ *    displayTime:
+ *      Specifies a time value that establishes the starting point for
+ *      the search. This time value must be expressed in the media's
+ *      time scale.
+ *    
+ *    rate:
+ *      The search direction. Negative values cause the Movie Toolbox
+ *      to search backward from the starting point specified in the
+ *      time parameter. Other values cause a forward search.
+ *    
+ *    interestingDisplayTime:
+ *      A pointer to a time value. The Movie Toolbox returns the first
+ *      display time value it finds that meets the search criteria
+ *      specified in the flags parameter. This time value is in the
+ *      media's time scale. If there are no times that meet the search
+ *      criteria you specify, the Movie Toolbox sets this value to -1.
+ *      Set this parameter to NULL if you are not interested in this
+ *      information.
+ *    
+ *    interestingDisplayDuration:
+ *      A pointer to a time value. The Movie Toolbox returns the
+ *      display duration of the interesting time. This time value is in
+ *      the media's time coordinate system. Set this parameter to NULL
+ *      if you don't want this information; this lets the function work
+ *      faster.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern void 
+GetMediaNextInterestingDisplayTime(
+  Media          theMedia,
+  short          interestingTimeFlags,
+  TimeValue64    displayTime,
+  Fixed          rate,
+  TimeValue64 *  interestingDisplayTime,
+  TimeValue64 *  interestingDisplayDuration)                  AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
 
 /*
@@ -6110,7 +7805,6 @@ GetMovieLoadState(Movie theMovie)                             AVAILABLE_MAC_OS_X
  *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
- *    Windows:          in qtmlClient.lib 6.5 and later
  */
 extern OSErr 
 AttachMovieToCurrentThread(Movie m)                           AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
@@ -6123,7 +7817,6 @@ AttachMovieToCurrentThread(Movie m)                           AVAILABLE_MAC_OS_X
  *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
- *    Windows:          in qtmlClient.lib 6.5 and later
  */
 extern OSErr 
 DetachMovieFromCurrentThread(Movie m)                         AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
@@ -6136,7 +7829,6 @@ DetachMovieFromCurrentThread(Movie m)                         AVAILABLE_MAC_OS_X
  *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
- *    Windows:          in qtmlClient.lib 6.5 and later
  */
 extern OSErr 
 GetMovieThreadAttachState(
@@ -6208,6 +7900,7 @@ enum {
   kQTHFSPathStyle               = 1,
   kQTWindowsPathStyle           = 2
 };
+
 
 typedef unsigned long                   QTPathStyle;
 /*
@@ -8365,6 +10058,1439 @@ QTGetEffectSpeed(
   Fixed *           pFPS)                                     AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
+
+
+/* Movie Audio APIs*/
+
+/*
+    SetMovieAudioGain:
+    This API sets the audio gain level for the mixed audio output of a movie.  This alters the
+    perceived volume of the movie's playback.  The gain level is multiplicative; eg. 0.0
+    is silent, 0.5 is -6dB, 1.0 is 0dB (ie. the audio from the movie is not
+    modified), 2.0 is +6dB, etc.  The gain level can be set higher than 1.0 in order
+    to allow quiet movies to be boosted in volume.  Settings higher than 1.0 may result in
+    audio clipping, of course.  The setting is not stored in the movie.  It is only used until
+    the movie is closed, at which time it is not saved.
+ */
+/*
+ *  SetMovieAudioGain()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSStatus 
+SetMovieAudioGain(
+  Movie     m,
+  Float32   gain,
+  UInt32    flags)                                            AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  GetMovieAudioGain()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSStatus 
+GetMovieAudioGain(
+  Movie      m,
+  Float32 *  gain,
+  UInt32     flags)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+    SetTrackAudioGain:
+    This API sets the audio gain level for the audio output of a track.  This alters the
+    perceived volume of the track's playback.  The gain level is multiplicative; eg. 0.0
+    is silent, 0.5 is -6dB, 1.0 is 0dB (ie. the audio from the track is not
+    modified), 2.0 is +6dB, etc.  The gain level can be set higher than 1.0 in order
+    to allow quiet tracks to be boosted in volume.  Settings higher than 1.0 may result in
+    audio clipping, of course.  The setting is not stored in the movie.  It is only used until
+    the movie is closed, at which time it is not saved.
+ */
+/*
+ *  SetTrackAudioGain()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSStatus 
+SetTrackAudioGain(
+  Track     t,
+  Float32   gain,
+  UInt32    flags)                                            AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  GetTrackAudioGain()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSStatus 
+GetTrackAudioGain(
+  Track      t,
+  Float32 *  gain,
+  UInt32     flags)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+    SetMovieAudioBalance:
+    This API sets the audio balance level for the mixed audio output of a movie.  -1.0
+    means full left, 0.0 means centered, and 1.0 means full right.  The setting is not
+    stored in the movie.  It is only used until the movie is closed, at which time it
+    is not saved.
+ */
+/*
+ *  SetMovieAudioBalance()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSStatus 
+SetMovieAudioBalance(
+  Movie     m,
+  Float32   leftRight,
+  UInt32    flags)                                            AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  GetMovieAudioBalance()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSStatus 
+GetMovieAudioBalance(
+  Movie      m,
+  Float32 *  leftRight,
+  UInt32     flags)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+    SetMovieAudioMute:
+    This API mutes or unmutes the mixed audio output from a movie.
+ */
+/*
+ *  SetMovieAudioMute()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSStatus 
+SetMovieAudioMute(
+  Movie     m,
+  Boolean   muted,
+  UInt32    flags)                                            AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  GetMovieAudioMute()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSStatus 
+GetMovieAudioMute(
+  Movie      m,
+  Boolean *  muted,
+  UInt32     flags)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+    SetTrackAudioMute:
+    This API mutes or unmutes the audio output from a track.
+ */
+/*
+ *  SetTrackAudioMute()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSStatus 
+SetTrackAudioMute(
+  Track     t,
+  Boolean   muted,
+  UInt32    flags)                                            AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  GetTrackAudioMute()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSStatus 
+GetTrackAudioMute(
+  Track      t,
+  Boolean *  muted,
+  UInt32     flags)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+
+
+/*
+ */
+enum {
+
+  /*
+   * Properties of an audio presentation (eg. a movie's audio)
+   */
+  kQTPropertyClass_Audio        = 'audi'
+};
+
+
+/*
+ */
+enum {
+
+  /*
+   * kQTAudioPropertyID_Gain:  Value is Float32.  Get/Set/Listenable
+   * The audio gain of a movie or track.  The gain level is
+   * multiplicative; eg. 0.0 is silent, 0.5 is -6dB, 1.0 is 0dB (ie.
+   * the audio from the movie is not modified), 2.0 is +6dB, etc.  The
+   * gain level can be set higher than 1.0 in order to allow quiet
+   * movies/tracks to be boosted in volume. Settings higher than 1.0
+   * may result in audio clipping, of course. The setting is not stored
+   * in the movie/track.  It is only used until the movie/track is
+   * disposed.
+   */
+  kQTAudioPropertyID_Gain       = 'gain', /* value is Float32. Gettable/Settable.*/
+
+  /*
+   * kQTAudioPropertyID_Mute:  Value is Boolean.  Get/Set/Listenable
+   * The audio mute state of a movie or track.  If true, the
+   * movie/track is muted.  The setting is not stored in the
+   * movie/track.  It is only used until the movie/track is disposed.
+   */
+  kQTAudioPropertyID_Mute       = 'mute', /* value is Boolean. Gettable/Settable.*/
+
+  /*
+   * kQTAudioPropertyID_Balance:  Value is Float32.  Get/Set/Listenable
+   * The audio balance of a movie.  -1.0 means full left, 0.0 means
+   * centered, and 1.0 means full right.  The setting is not stored in
+   * the movie.  It is only used until the movie is disposed.  This is
+   * only supported for movies, not tracks.
+   */
+  kQTAudioPropertyID_Balance    = 'bala', /* value is Float32. Gettable/Settable.*/
+
+  /*
+   * kQTAudioPropertyID_RateChangesPreservePitch:   Value is Boolean. 
+   * Get/Set When the playback rate is not unity, audio must be
+   * resampled in order to play at the new rate.  The default
+   * resampling affects the pitch of the audio (eg, playing at 2x speed
+   * raises the pitch by an octave, 1/2x lowers an octave). If this
+   * property is set on the Movie, an alternative algorithm may be
+   * used, which alters the speed without changing the pitch.  As this
+   * is more computationally expensive, this property may be silently
+   * ignored on some slow CPUs. Media handlers may query this movie
+   * property and honor it when performing Scaled Edits. This property
+   * can be specified as a property to the NewMovieFromProperties()
+   * API. Currently, it has no effect when set on an open movie.
+   */
+  kQTAudioPropertyID_RateChangesPreservePitch = 'aucp', /* value is Boolean.  Gettable/Settable.*/
+
+  /*
+   * kQTAudioPropertyID_Pitch:   Value is Float32.  Get/Set/Listenable
+   * Movie pitch adjustment.  Adjusts the pitch of all audio tracks
+   * that contribute to the AudioContext mix.  Pitch control takes
+   * effect only if kQTAudioPropertyID_RateChangesPreservePitch is in
+   * effect, otherwise returns kQTMessageNotHandledErr. The Float32
+   * value is specified in cents: 0.0 == no change, 1.0 == one cent up,
+   * 100.0 == one semi-tone up, -1.0 == one cent down. The most useful
+   * ranges for pitch are +/- 1200. (ie, one octave)
+   */
+  kQTAudioPropertyID_Pitch      = 'pitc', /* value is Float32. Get/Set/Listenable.*/
+
+  /*
+   * kQTAudioPropertyID_RenderQuality:   Value is UInt32.  Get/Set
+   * Movie audio render quality takes effect for movie playback. UInt32
+   * values are as defined in <AudioUnit/AudioUnitProperties.h> and
+   * vary from 0x00 (kRenderQuality_Min) to 0x7F (kRenderQuality_Max).
+   * We also define a special value
+   * (kQTAudioRenderQuality_PlaybackDefault) which resets the quality
+   * settings of the playback processing chain to values that are
+   * chosen to be an optimal balance of performance and quality.
+   */
+  kQTAudioPropertyID_RenderQuality = 'qual', /* value is UInt32.  Gettable/Settable.*/
+  kQTAudioRenderQuality_PlaybackDefault = 0x8000, /* defined to be outside the CoreAudio valid range*/
+
+  /*
+   * kQTAudioPropertyID_ChannelLayout:  Value is AudioChannelLayout. 
+   * Get/Set The AudioChannelLayout of a track, or other audio stream. 
+   * Currently only settable/gettable for tracks.  (See
+   * kQTAudioPropertyID_SummaryChannelLayout if you want to get the
+   * summary AudioChannelLayout of a movie.) Note that this is a
+   * variable sized property (since it may contain an array of
+   * ChannelDescriptions; see CoreAudioTypes.h).  You must get the size
+   * first (by calling QTGetTrackPropertyInfo), allocate a struct of
+   * that size, and then get the property.
+   */
+  kQTAudioPropertyID_ChannelLayout = 'tlay', /* value is AudioChannelLayout. Gettable/Settable.*/
+
+  /*
+   * kQTAudioPropertyID_SummaryChannelLayout:  Value is
+   * AudioChannelLayout.  Get-only The summary AudioChannelLayout of a
+   * movie, or other grouping of audio streams. All like-labelled
+   * channels are combined, so there are no duplicates.  For example,
+   * if there is a stereo (L/R) track, 5 single-channel tracks marked
+   * Left, Right, Left Surround, Right Surround and Center, and a 4
+   * channel track marked L/R/Ls/Rs, then the summary
+   * AudioChannelLayout will be L/R/Ls/Rs/C. It will _not_ be
+   * L/R/L/R/Ls/Rs/C/L/R/Ls/Rs. Note that this is a variable sized
+   * property (since it may contain an array of ChannelDescriptions;
+   * see CoreAudioTypes.h).  You must get the size first (by calling,
+   * for example, QTGetMoviePropertyInfo) allocate a struct of that
+   * size, and then get the property.
+   */
+  kQTAudioPropertyID_SummaryChannelLayout = 'clay', /* value is AudioChannelLayout. Gettable.*/
+
+  /*
+   * kQTAudioPropertyID_DeviceChannelLayout:  Value is
+   * AudioChannelLayout.  Get-only The AudioChannelLayout of the device
+   * this movie is playing to.  Note that this is a variable sized
+   * property (since it may contain an array of ChannelDescriptions;
+   * see CoreAudioTypes.h).  You must get the size first (by calling,
+   * for example, QTGetMoviePropertyInfo) allocate a struct of that
+   * size, and then get the property.
+   */
+  kQTAudioPropertyID_DeviceChannelLayout = 'dcly', /* value is AudioChannelLayout. Gettable.*/
+
+  /*
+   * kQTAudioPropertyID_DeviceASBD:  Value is
+   * AudioStreamBasicDescription.  Get-only Returns the
+   * AudioStreamBasicDescription of the device this movie is playing
+   * to. The interesting fields are the sample rate, which reflects
+   * device's current state, and the number of channels, which matches
+   * what is reported by kQTAudioPropertyID_DeviceChannelLayout.
+   */
+  kQTAudioPropertyID_DeviceASBD = 'dasd', /* value is AudioStreamBasicDescription. Gettable.*/
+
+  /*
+   * kQTAudioPropertyID_SummaryASBD:  Value is
+   * AudioStreamBasicDescription.  Get-only Returns the
+   * AudioStreamBasicDescription corresponding to the Summary Mix of a
+   * movie.  This will describe non-interleaved, Float32 linear PCM
+   * data, with a sample rate equal to the highest audio sample rate
+   * found among the sound tracks contributing to the AudioContext mix,
+   * and a number of channels that matches what is reported by
+   * kQTAudioPropertyID_SummaryChannelLayout.
+   */
+  kQTAudioPropertyID_SummaryASBD = 'sasd', /* value is AudioStreamBasicDescription. Gettable.*/
+
+  /*
+   * kQTAudioPropertyID_FormatString:  Value is CFStringRef.  Get-only
+   * kQTAudioPropertyID_FormatString returns a localized, human
+   * readable string describing the audio format as a CFStringRef, i.e.
+   * "MPEG Layer 3". You may get this property from a SoundDescription
+   * Handle by calling QTSoundDescriptionGetProperty(), or from a
+   * StandardAudioCompression (scdi/audi) component instance by calling
+   * QTGetComponentProperty().
+   */
+  kQTAudioPropertyID_FormatString = 'fstr', /* value is CFStringRef.  Gettable.*/
+
+  /*
+   * kQTAudioPropertyID_ChannelLayoutString:  Value is CFStringRef. 
+   * Get-only kQTAudioPropertyID_ChannelLayoutString returns a
+   * localized, human readable string describing the audio channel
+   * layout as a CFStringRef, i.e. "5.0 (L R C Ls Rs)". You may get
+   * this property from a SoundDescription Handle by calling
+   * QTSoundDescriptionGetProperty(), or from a
+   * StandardAudioCompression (scdi/audi) component instance by calling
+   * QTGetComponentProperty().
+   */
+  kQTAudioPropertyID_ChannelLayoutString = 'lstr', /* value is CFStringRef.  Gettable.*/
+
+  /*
+   * kQTAudioPropertyID_SampleRateString:  Value is CFStringRef. 
+   * Get-only kQTAudioPropertyID_SampleRateString returns a localized,
+   * human readable string describing the audio sample rate as a
+   * CFStringRef, i.e. "44.100 kHz". You may get this property from a
+   * SoundDescription Handle by calling
+   * QTSoundDescriptionGetProperty(), or from a
+   * StandardAudioCompression (scdi/audi) component instance by calling
+   * QTGetComponentProperty().
+   */
+  kQTAudioPropertyID_SampleRateString = 'rstr', /* value is CFStringRef.  Gettable.*/
+
+  /*
+   * kQTAudioPropertyID_SampleSizeString:  Value is CFStringRef. 
+   * Get-only kQTAudioPropertyID_SampleSizeString returns a localized,
+   * human readable string describing the audio sample size as a
+   * CFStringRef, i.e. "24-bit". Note, this property will only return a
+   * valid string if the format is uncompressed (LPCM) audio. You may
+   * get this property from a SoundDescription Handle by calling
+   * QTSoundDescriptionGetProperty(), or from a
+   * StandardAudioCompression (scdi/audi) component instance by calling
+   * QTGetComponentProperty().
+   */
+  kQTAudioPropertyID_SampleSizeString = 'sstr', /* value is CFStringRef.  Gettable.*/
+
+  /*
+   * kQTAudioPropertyID_BitRateString:  Value is CFStringRef.  Get-only
+   * kQTAudioPropertyID_BitRateString returns a localized, human
+   * readable string describing the audio bit rate as a CFStringRef,
+   * i.e. "12 kbps". You may get this property from a SoundDescription
+   * Handle by calling QTSoundDescriptionGetProperty(), or from a
+   * StandardAudioCompression (scdi/audi) component instance by calling
+   * QTGetComponentProperty().
+   */
+  kQTAudioPropertyID_BitRateString = 'bstr', /* value is CFStringRef.  Gettable.*/
+
+  /*
+   * kQTAudioPropertyID_SummaryString:  Value is CFStringRef.  Get-only
+   * kQTAudioPropertyID_SummaryString returns a localized, human
+   * readable string summarizing the audio as a CFStringRef, i.e.
+   * "16-bit Integer (Big Endian), Stereo (L R), 48.000 kHz". You may
+   * get this property from a SoundDescription Handle calling
+   * QTSoundDescriptionGetProperty(), or from a
+   * StandardAudioCompression (scdi/audi) component instance by calling
+   * QTGetComponentProperty().
+   */
+  kQTAudioPropertyID_SummaryString = 'asum' /* value is CFStringRef.  Gettable.*/
+};
+
+
+
+/* whichMixToMeter constants*/
+
+/*
+ */
+enum {
+
+  /*
+   * kQTAudioMeter_DeviceMix: Meter the movie's mix to the device
+   * channel layout. To determine the channel layout of this mix, call
+   * QTGetMovieProperty(..., kQTAudioPropertyID_DeviceChannelLayout,
+   * ...).
+   */
+  kQTAudioMeter_DeviceMix       = kQTAudioPropertyID_DeviceChannelLayout,
+
+  /*
+   * kQTAudioMeter_StereoMix: Meter a stereo (two-channel) mix of the
+   * enabled sound tracks in the movie. This option is offered only for
+   * MovieAudioFrequencyMetering.
+   */
+  kQTAudioMeter_StereoMix       = 'stmx',
+
+  /*
+   * kQTAudioMeter_MonoMix: Meter a monarual (one-channel) mix of the
+   * enabled sound tracks in the movie. This option is offered only for
+   * MovieAudioFrequencyMetering.
+   */
+  kQTAudioMeter_MonoMix         = 'momx'
+};
+
+/*
+    SetMovieAudioVolumeMeteringEnabled:
+    This API enables or disables volume metering of a particular mix of this movie.  The only possible
+    mix to meter is currently kQTAudioMeter_DeviceMix.  See kQTAudioMeter_DeviceMix above to see
+    how to determine the channel layout of the movie's device mix.
+ */
+/*
+ *  SetMovieAudioVolumeMeteringEnabled()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSStatus 
+SetMovieAudioVolumeMeteringEnabled(
+  Movie          m,
+  FourCharCode   whatMixToMeter,
+  Boolean        enabled)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  GetMovieAudioVolumeMeteringEnabled()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSStatus 
+GetMovieAudioVolumeMeteringEnabled(
+  Movie          m,
+  FourCharCode   whatMixToMeter,
+  Boolean *      enabled)                                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+    GetMovieAudioVolumeLevels:
+    This API returns the current volume meter levels of the movie.  It can return both average power
+    levels and peak hold levels.  whatMixToMeter must be set to kQTAudioMeter_DeviceMix.  Either
+    QTAudioVolumeLevels parameter may be nil.  If non-nil, each must have its numChannels field set to
+    the number of channels in the movie's device mix, and must be allocated large enough to hold levels
+    for all those channels.  See kQTAudioMeter_DeviceMix above to see how to determine the channel
+    layout of the device mix. The levels returned are measured in decibels, where 0.0 means full volume,
+    -6.0 means half volume, -12.0 means quarter volume, and -inf means silence.
+ */
+struct QTAudioVolumeLevels {
+  UInt32              numChannels;
+  Float32             level[1];               /* numChannels entries*/
+};
+typedef struct QTAudioVolumeLevels      QTAudioVolumeLevels;
+/*
+ *  GetMovieAudioVolumeLevels()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSStatus 
+GetMovieAudioVolumeLevels(
+  Movie                  m,
+  FourCharCode           whatMixToMeter,
+  QTAudioVolumeLevels *  pAveragePowerLevels,
+  QTAudioVolumeLevels *  pPeakHoldLevels)                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* 
+    SetTrackAudioVolumeMeteringEnabled:
+    This API enables or disables volume metering of a particular track of this movie.
+    This API should be used in preference to the legacy SoundMedia interface, but
+    may interfere with its operation if both are in use at the same time.
+*/
+/*
+ *  SetTrackAudioVolumeMeteringEnabled()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSStatus 
+SetTrackAudioVolumeMeteringEnabled(
+  Track     t,
+  Boolean   enabled)                                          AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  GetTrackAudioVolumeMeteringEnabled()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSStatus 
+GetTrackAudioVolumeMeteringEnabled(
+  Track      t,
+  Boolean *  enabled)                                         AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+
+/*
+    GetTrackAudioVolumeLevels:
+    This API returns the current volume meter levels of the track.  It can return both average power
+    levels and peak hold levels.  Either QTAudioVolumeLevels parameter may be nil.  If non-nil,
+    each must have its numChannels field set to the number of channels of interest, and must be
+    allocated large enough to hold levels for all those channels.
+    The levels returned are measured in decibels, where 0.0 means full volume,
+    -6.0 means half volume, -12.0 means quarter volume, and -inf means silence.
+*/
+/*
+ *  GetTrackAudioVolumeLevels()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSStatus 
+GetTrackAudioVolumeLevels(
+  Track                  t,
+  QTAudioVolumeLevels *  pAveragePowerLevels,
+  QTAudioVolumeLevels *  pPeakHoldLevels)                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+
+/*
+    SetMovieAudioFrequencyMeteringNumBands:
+    This API configures and enables (or disables) frequency metering for a movie.
+    Note that ioNumBands is an in/out parameter.  You specify the number of frequency bands you
+    want to meter, and if that number is higher than is possible (determined by, among other things,
+    the sample rate of the audio being metered), this API will return the number of bands it is
+    actually going to meter.  ioNumBands can be nil or a pointer to 0 to disable metering.
+    whatMixToMeter must be set to kQTAudioMeter_StereoMix, kQTAudioMeter_MonoMix, or
+    kQTAudioMeter_DeviceMix.  When metering movies playing to audio devices that offer a
+    large number of channels, it may be prohibitively expensive to perform spectral analysis
+    on every channel; in these cases, stereo or mono mix metering may be preferable.
+ */
+/*
+ *  SetMovieAudioFrequencyMeteringNumBands()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSStatus 
+SetMovieAudioFrequencyMeteringNumBands(
+  Movie          m,
+  FourCharCode   whatMixToMeter,
+  UInt32 *       ioNumBands)                                  AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  GetMovieAudioFrequencyMeteringNumBands()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSStatus 
+GetMovieAudioFrequencyMeteringNumBands(
+  Movie          m,
+  FourCharCode   whatMixToMeter,
+  UInt32 *       outNumBands)                                 AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+    GetMovieAudioFrequencyMeteringBandFrequencies:
+    This API returns the actual chosen middle frequency for each band in the configured
+    frequency metering of a movie.  This is useful for labeling visual meters
+    in a user interface.  Frequencies are returned in Hz.  whatMixToMeter must be set
+    to the same value that was passed most recently to SetMovieAudioFrequencyMeteringNumBands().
+ */
+/*
+ *  GetMovieAudioFrequencyMeteringBandFrequencies()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSStatus 
+GetMovieAudioFrequencyMeteringBandFrequencies(
+  Movie          m,
+  FourCharCode   whatMixToMeter,
+  UInt32         numBands,
+  Float32 *      outBandFrequencies)                          AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+    GetMovieAudioFrequencyLevels:
+    This API returns the current frequency meter levels of the movie. pAveragePowerLevels should
+    have its numChannels field set to the number of channels being metered, and its numBands field
+    set to the number of bands being metered (as previously configured).  pAveragePowerLevels must be
+    allocated large enough to hold levels for all bands in all channels.  The levels are returned with
+    all the band levels for the first channel first, then all the band levels for the second channel, etc.
+    whatMixToMeter must be set  to the same value that was passed most recently to
+    SetMovieAudioFrequencyMeteringNumBands().
+ */
+struct QTAudioFrequencyLevels {
+  UInt32              numChannels;
+  UInt32              numFrequencyBands;
+                                              /* numChannels * numFrequencyBands entries, with the frequency bands for a single channel stored contiguously.*/
+  Float32             level[1];
+};
+typedef struct QTAudioFrequencyLevels   QTAudioFrequencyLevels;
+/*
+ *  GetMovieAudioFrequencyLevels()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSStatus 
+GetMovieAudioFrequencyLevels(
+  Movie                     m,
+  FourCharCode              whatMixToMeter,
+  QTAudioFrequencyLevels *  pAveragePowerLevels)              AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+
+/* Movie Audio Extraction*/
+
+/*
+    MovieAudioExtractionBegin:
+    This API must be called before doing any movie audio extraction.  The returned session
+    object is to be passed to the other movie audio extraction APIs.  Note that the extracted
+    format defaults to the aggregate channel layout of the movie (eg. all Rights mixed together,
+    all Left Surrounds mixed together, etc), 32-bit float, de-interleaved, with the sample rate
+    set to the highest sample rate found in the movie.  You can get this info, and you can also
+    set the format to be something else (as long as it is uncompressed, and you do it before
+    the first call to MovieAudioExtractionFillBuffer). 
+ */
+typedef struct MovieAudioExtractionRefRecord*  MovieAudioExtractionRef;
+/*
+ *  MovieAudioExtractionBegin()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSStatus 
+MovieAudioExtractionBegin(
+  Movie                      m,
+  UInt32                     flags,
+  MovieAudioExtractionRef *  outSession)                      AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+    MovieAudioExtractionEnd:
+    This API must be called when movie audio extraction is complete.
+ */
+/*
+ *  MovieAudioExtractionEnd()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSStatus 
+MovieAudioExtractionEnd(MovieAudioExtractionRef session)      AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/* Movie audio extraction property classes*/
+
+/*
+ */
+enum {
+
+  /*
+   * Properties of the movie being extracted from
+   */
+  kQTPropertyClass_MovieAudioExtraction_Movie = 'xmov',
+
+  /*
+   * Properties of the output audio
+   */
+  kQTPropertyClass_MovieAudioExtraction_Audio = 'xaud'
+};
+
+/* "Movie class" property IDs*/
+
+/*
+ */
+enum {
+
+  /*
+   * kQTMovieAudioExtractionMoviePropertyID_CurrentTime: Value is
+   * TimeRecord (set & get) When setting, set the timescale to anything
+   * you want (output audio sample rate, movie timescale) When getting,
+   * the timescale will be output audio sample rate for best accuracy.
+   */
+  kQTMovieAudioExtractionMoviePropertyID_CurrentTime = 'time', /* value is TimeRecord. Gettable/Settable.*/
+
+  /*
+   * kQTMovieAudioExtractionMoviePropertyID_AllChannelsDiscrete: Value
+   * is Boolean (set & get) Set to implement export of all audio
+   * channels without mixing. When this is set and the extraction asbd
+   * or channel layout are read back, you will get information relating
+   * to the re-mapped movie.
+   */
+  kQTMovieAudioExtractionMoviePropertyID_AllChannelsDiscrete = 'disc', /* value is Boolean. Gettable/Settable.*/
+
+  /*
+   * kQTMovieAudioExtractionAudioPropertyID_RenderQuality: Value is
+   * UInt32 (set & get) Set the render quality to be used for this
+   * audio extraction session. UInt32 values are as defined in
+   * <AudioUnit/AudioUnitProperties.h> and vary from 0x00
+   * (kRenderQuality_Min) to 0x7F (kRenderQuality_Max). We also define
+   * a special value (kQTAudioRenderQuality_PlaybackDefault) which
+   * resets the quality settings to the same values that were chosen by
+   * default for playback.
+   */
+  kQTMovieAudioExtractionAudioPropertyID_RenderQuality = 'qual' /* value is UInt32. Gettable/Settable.*/
+};
+
+/* "Output Audio class" property IDs*/
+
+/*
+ */
+enum {
+
+  /*
+   * 
+   * QTMovieAudioExtractionAudioPropertyID_AudioStreamBasicDescription:
+   * Value is AudioStreamBasicDescription (get any time, set before
+   * first MovieAudioExtractionFillBuffer call) If you get this
+   * property immediately after beginning an audio extraction session,
+   * it will tell you the default extraction format for the movie. 
+   * This will include the number of channels in the default movie mix.
+   * If you set the output AudioStreamBasicDescription, it is
+   * recommended that you also set the output channel layout.  If your
+   * output ASBD has a different number of channels that the default
+   * extraction mix, you _must_ set the output channel layout. You can
+   * only set PCM output formats.  Setting a compressed output format
+   * will fail.
+   */
+  kQTMovieAudioExtractionAudioPropertyID_AudioStreamBasicDescription = 'asbd',
+
+  /*
+   * kQTMovieAudioExtractionAudioPropertyID_AudioChannelLayout: Value
+   * is AudioChannelLayout (get any time, set before first
+   * MovieAudioExtractionFillBuffer call) If you get this property
+   * immediately after beginning an audio extraction session, it will
+   * tell you what the channel layout is for the default extraction mix.
+   */
+  kQTMovieAudioExtractionAudioPropertyID_AudioChannelLayout = 'clay'
+};
+
+/*
+ *  MovieAudioExtractionGetPropertyInfo()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSStatus 
+MovieAudioExtractionGetPropertyInfo(
+  MovieAudioExtractionRef   session,
+  QTPropertyClass           inPropClass,
+  QTPropertyID              inPropID,
+  QTPropertyValueType *     outPropType,
+  ByteCount *               outPropValueSize,
+  UInt32 *                  outPropertyFlags)                 AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  MovieAudioExtractionGetProperty()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSStatus 
+MovieAudioExtractionGetProperty(
+  MovieAudioExtractionRef   session,
+  QTPropertyClass           inPropClass,
+  QTPropertyID              inPropID,
+  ByteCount                 inPropValueSize,
+  QTPropertyValuePtr        outPropValueAddress,
+  ByteCount *               outPropValueSizeUsed)             AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  MovieAudioExtractionSetProperty()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSStatus 
+MovieAudioExtractionSetProperty(
+  MovieAudioExtractionRef   session,
+  QTPropertyClass           inPropClass,
+  QTPropertyID              inPropID,
+  ByteCount                 inPropValueSize,
+  ConstQTPropertyValuePtr   inPropValueAddress)               AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+    MovieAudioExtractionFillBuffer:
+    Each call to MovieAudioExtractionFillBuffer will continue where the last call left off.
+    It will extract as many of the requested PCM frames as it can, given the limits of the
+    buffer(s) supplied, and the limits of the input movie.  ioNumFrames will be updated
+    with the exact number of valid frames being returned.
+    When there is no more audio to extract from the movie, MovieAudioExtractionFillBuffer
+    will continue to return noErr, but no audio data will be returned.  outFlags will have
+    the kQTMovieAudioExtractionComplete bit set in this case.  It is possible that the
+    kQTMovieAudioExtractionComplete bit will accompany the last buffer of valid data.
+ */
+enum {
+  kQTMovieAudioExtractionComplete = (1L << 0)
+};
+
+/*
+ *  MovieAudioExtractionFillBuffer()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSStatus 
+MovieAudioExtractionFillBuffer(
+  MovieAudioExtractionRef   session,
+  UInt32 *                  ioNumFrames,
+  AudioBufferList *         ioData,
+  UInt32 *                  outFlags)                         AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+
+/* Movie Visual Adjustment APIs*/
+
+
+/*
+ *  Summary:
+ *    Visual movie properties.
+ */
+enum {
+
+  /*
+   * Class for visual properties.
+   */
+  kQTPropertyClass_Visual       = 'visu',
+
+  /*
+   * The hue adjustment for the movie.   The value is a Float32 between
+   * -1.0 and 1.0, with 0.0 meaning no adjustment. This adjustment
+   * wraps around, such that -1.0 and 1.0 yield the same result.
+   */
+  kQTVisualPropertyID_Hue       = 'vhue', /* Float32, Read/Write */
+
+  /*
+   * The color saturation adjustment for the movie.  The value is a
+   * Float32 percentage (1.0f = 100%), such that 0.0 gives grayscale.
+   */
+  kQTVisualPropertyID_Saturation = 'vsat', /* Float32, Read/Write */
+
+  /*
+   * The brightness adjustment for the movie.  The value is a Float32
+   * for which -1.0 means full black, 0.0 means no adjustment, and 1.0
+   * means full white.
+   */
+  kQTVisualPropertyID_Brightness = 'vbrt', /* Float32, Read/Write */
+
+  /*
+   * The contrast adjustment for the movie.  The value is a Float32
+   * percentage (1.0f = 100%), such that 0.0 gives solid grey.
+   */
+  kQTVisualPropertyID_Contrast  = 'vcon' /* Float32, Read/Write */
+};
+
+
+/*
+ *  SetMovieVisualHue()
+ *  
+ *  Summary:
+ *    This API sets the hue adjustment for the movie.
+ *  
+ *  Discussion:
+ *    See kQTPropertyClass_Visual/kQTVisualPropertyID_Hue for details.
+ *    The setting is not stored in the movie.  It is only used until
+ *    the movie is closed, at which time it is not saved.
+ *  
+ *  Parameters:
+ *    
+ *    movie:
+ *      [in]  The movie.
+ *    
+ *    hue:
+ *      [in]  New hue adjustment.
+ *    
+ *    flags:
+ *      [in]  Reserved. Pass 0.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSStatus 
+SetMovieVisualHue(
+  Movie     movie,
+  Float32   hue,
+  UInt32    flags)                                            AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  GetMovieVisualHue()
+ *  
+ *  Summary:
+ *    This API gets the hue adjustment for the movie.
+ *  
+ *  Discussion:
+ *    See kQTPropertyClass_Visual/kQTVisualPropertyID_Hue for details.
+ *  
+ *  Parameters:
+ *    
+ *    movie:
+ *      [in]  The movie.
+ *    
+ *    hueOut:
+ *      [out] Current hue adjustment.
+ *    
+ *    flags:
+ *      [in]  Reserved. Pass 0.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSStatus 
+GetMovieVisualHue(
+  Movie      movie,
+  Float32 *  hueOut,
+  UInt32     flags)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+
+/*
+ *  SetMovieVisualSaturation()
+ *  
+ *  Summary:
+ *    This API sets the color saturation adjustment for the movie.
+ *  
+ *  Discussion:
+ *    See kQTPropertyClass_Visual/kQTVisualPropertyID_Saturation for
+ *    details. The setting is not stored in the movie.  It is only used
+ *    until the movie is closed, at which time it is not saved.
+ *  
+ *  Parameters:
+ *    
+ *    movie:
+ *      [in]  The movie.
+ *    
+ *    saturation:
+ *      [in]  New saturation adjustment.
+ *    
+ *    flags:
+ *      [in]  Reserved. Pass 0.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSStatus 
+SetMovieVisualSaturation(
+  Movie     movie,
+  Float32   saturation,
+  UInt32    flags)                                            AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  GetMovieVisualSaturation()
+ *  
+ *  Summary:
+ *    This API gets the color saturation adjustment for the movie.
+ *  
+ *  Discussion:
+ *    See kQTPropertyClass_Visual/kQTVisualPropertyID_Saturation for
+ *    details.
+ *  
+ *  Parameters:
+ *    
+ *    movie:
+ *      [in]  The movie.
+ *    
+ *    saturationOut:
+ *      [out] Current saturation adjustment.
+ *    
+ *    flags:
+ *      [in]  Reserved. Pass 0.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSStatus 
+GetMovieVisualSaturation(
+  Movie      movie,
+  Float32 *  saturationOut,
+  UInt32     flags)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+
+/*
+ *  SetMovieVisualBrightness()
+ *  
+ *  Summary:
+ *    This API sets the brightness adjustment for the movie.
+ *  
+ *  Discussion:
+ *    See kQTPropertyClass_Visual/kQTVisualPropertyID_Brightness for
+ *    details. The setting is not stored in the movie.  It is only used
+ *    until the movie is closed, at which time it is not saved.
+ *  
+ *  Parameters:
+ *    
+ *    movie:
+ *      [in]  The movie.
+ *    
+ *    brightness:
+ *      [in]  New brightness adjustment.
+ *    
+ *    flags:
+ *      [in]  Reserved. Pass 0.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSStatus 
+SetMovieVisualBrightness(
+  Movie     movie,
+  Float32   brightness,
+  UInt32    flags)                                            AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  GetMovieVisualBrightness()
+ *  
+ *  Summary:
+ *    This API gets the brightness adjustment for the movie.
+ *  
+ *  Discussion:
+ *    See kQTPropertyClass_Visual/kQTVisualPropertyID_Brightness for
+ *    details.
+ *  
+ *  Parameters:
+ *    
+ *    movie:
+ *      [in]  The movie.
+ *    
+ *    brightnessOut:
+ *      [out] Current brightness adjustment.
+ *    
+ *    flags:
+ *      [in]  Reserved. Pass 0.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSStatus 
+GetMovieVisualBrightness(
+  Movie      movie,
+  Float32 *  brightnessOut,
+  UInt32     flags)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  SetMovieVisualContrast()
+ *  
+ *  Summary:
+ *    This API sets the contrast adjustment for the movie.
+ *  
+ *  Discussion:
+ *    See kQTPropertyClass_Visual/kQTVisualPropertyID_Contrast for
+ *    details. The setting is not stored in the movie.  It is only used
+ *    until the movie is closed, at which time it is not saved.
+ *  
+ *  Parameters:
+ *    
+ *    movie:
+ *      [in]  The movie.
+ *    
+ *    contrast:
+ *      [in]  New contrast adjustment.
+ *    
+ *    flags:
+ *      [in]  Reserved. Pass 0.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSStatus 
+SetMovieVisualContrast(
+  Movie     movie,
+  Float32   contrast,
+  UInt32    flags)                                            AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  GetMovieVisualContrast()
+ *  
+ *  Summary:
+ *    This API gets the contrast adjustment for the movie.
+ *  
+ *  Discussion:
+ *    See kQTPropertyClass_Visual/kQTVisualPropertyID_Contrast for
+ *    details.
+ *  
+ *  Parameters:
+ *    
+ *    movie:
+ *      [in]  The movie.
+ *    
+ *    contrastOut:
+ *      [out] Current contrast adjustment.
+ *    
+ *    flags:
+ *      [in]  Reserved. Pass 0.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSStatus 
+GetMovieVisualContrast(
+  Movie      movie,
+  Float32 *  contrastOut,
+  UInt32     flags)                                           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+
+/* Movie Aperture APIs*/
+
+
+/*
+ *  Summary:
+ *    Visual properties of movies for aperture modes.
+ */
+enum {
+
+  /*
+   * You can set the aperture mode property on a movie to indicate
+   * whether aspect ratio and clean aperture correction should be
+   * performed. The values for this property have the prefix
+   * kQTApertureMode_ and are in ImageCompression.h. 
+   * When a movie is in clean, production or encoded pixels aperture
+   * mode, each track's dimensions are overriden by special dimensions
+   * for that mode. The original track dimensions are preserved and can
+   * be restored by setting the movie into classic aperture mode.
+   */
+  kQTVisualPropertyID_ApertureMode = 'apmd' /* OSType, Read/Write/Listen */
+};
+
+
+/*
+ *  Summary:
+ *    Visual properties of tracks for aperture modes
+ *  
+ *  Discussion:
+ *    A track's dimensions may vary depending on the movie's aperture
+ *    mode. The dimensions for a given aperture mode may be accessed
+ *    using these properties.
+ */
+enum {
+
+  /*
+   * The track dimensions used in QuickTime 7.0.x and earlier. Setting
+   * this property is equivalent to calling SetTrackDimensions, except
+   * that SetTrackDimensions also changes the aperture mode to
+   * kQTApertureMode_Classic, and setting this property does not.
+   */
+  kQTVisualPropertyID_ClassicDimensions = 'cldi', /* FixedPoint, Read/Write */
+
+  /*
+   * The track dimensions to use in clean aperture mode.
+   */
+  kQTVisualPropertyID_CleanApertureDimensions = 'cadi', /* FixedPoint, Read/Write */
+
+  /*
+   * The track dimensions to use in production aperture mode.
+   */
+  kQTVisualPropertyID_ProductionApertureDimensions = 'prdi', /* FixedPoint, Read/Write */
+
+  /*
+   * The track dimensions to use in encoded pixels aperture mode.
+   */
+  kQTVisualPropertyID_EncodedPixelsDimensions = 'endi', /* FixedPoint, Read/Write */
+
+  /*
+   * True if aperture mode dimensions have been set on this movie, even
+   * if they are all identical to the classic dimensions (as is the
+   * case for content with square pixels and no edge processing
+   * region). 
+   * This property can also be tested on a movie, where it is true if
+   * any track has aperture mode dimensions.
+   */
+  kQTVisualPropertyID_HasApertureModeDimensions = 'hamd' /* Boolean, Read */
+};
+
+
+/*
+ *  Summary:
+ *    Media Characteristics
+ */
+enum {
+
+  /*
+   * Indicates that a media handler supports aperture modes, which
+   * enable video to be automatically scaled and cropped to compensate
+   * for non-square pixel aspect ratios and to trim possibly-dirty edge
+   * processing regions. The dimensions of such a track may change when
+   * the movie's aperture mode is changed.
+   */
+  kCharacteristicSupportsApertureModes = 'apmd'
+};
+
+/*
+ *  SetTrackApertureModeDimensionsUsingSampleDescription()
+ *  
+ *  Summary:
+ *    Sets a track's aperture mode dimensions using values calculated
+ *    using a sample description.
+ *  
+ *  Discussion:
+ *    This function should be used to add information needed to support
+ *    aperture modes to newly created tracks. This information is
+ *    calculated using the given sample description. If sampleDesc is
+ *    NULL, the track's first sample description is used.
+ *  
+ *  Parameters:
+ *    
+ *    track:
+ *      [in] The track.
+ *    
+ *    sampleDesc:
+ *      [in] The sample description handle.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 (or QuickTime 7.1) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSErr 
+SetTrackApertureModeDimensionsUsingSampleDescription(
+  Track                     track,
+  SampleDescriptionHandle   sampleDesc)       /* can be NULL */ AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+
+
+/*
+ *  GenerateMovieApertureModeDimensions()
+ *  
+ *  Summary:
+ *    Examines a movie and sets up track aperture mode dimensions.
+ *  
+ *  Discussion:
+ *    This function can be used to add information needed to support
+ *    aperture modes to movies created with applications and/or
+ *    versions of QuickTime that did not support aperture mode
+ *    dimensions. If the image descriptions in video tracks lack tags
+ *    describing clean aperture and pixel aspect ratio information, the
+ *    media data may be scanned to see if the correct values can be
+ *    divined and attached. Then the aperture mode dimensions are
+ *    calculated and set for each track. Afterwards, the
+ *    kQTVisualPropertyID_HasApertureModeDimensions property will be
+ *    set to true for these tracks. Tracks which do not support
+ *    aperture modes are not changed.
+ *  
+ *  Parameters:
+ *    
+ *    movie:
+ *      [in] The movie.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 (or QuickTime 7.1) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSErr 
+GenerateMovieApertureModeDimensions(Movie movie)              AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+
+
+/*
+ *  GenerateTrackApertureModeDimensions()
+ *  
+ *  Summary:
+ *    Examines a track and sets up aperture mode dimensions.
+ *  
+ *  Discussion:
+ *    This function can be used to add information needed to support
+ *    aperture modes to tracks created with applications and/or
+ *    versions of QuickTime that did not support aperture mode
+ *    dimensions. If the image descriptions in video tracks lack tags
+ *    describing clean aperture and pixel aspect ratio information, the
+ *    media data may be scanned to see if the correct values can be
+ *    divined and attached. Then the aperture mode dimensions are
+ *    calculated and set. Afterwards, the
+ *    kQTVisualPropertyID_HasApertureModeDimensions property will be
+ *    set to true for these tracks. Tracks which do not support
+ *    aperture modes are not changed.
+ *  
+ *  Parameters:
+ *    
+ *    track:
+ *      [in] The track.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 (or QuickTime 7.1) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSErr 
+GenerateTrackApertureModeDimensions(Track track)              AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+
+
+/*
+ *  RemoveMovieApertureModeDimensions()
+ *  
+ *  Summary:
+ *    Removes aperture mode dimension information from a movie.
+ *  
+ *  Discussion:
+ *    This function removes aperture mode dimension information from a
+ *    movie's tracks. It does not attempt to modify sample
+ *    descriptions, so it may not completely reverse the effect of
+ *    GenerateMovieApertureModeDimensions. It sets the
+ *    kQTVisualPropertyID_HasApertureModeDimensions property to false.
+ *  
+ *  Parameters:
+ *    
+ *    movie:
+ *      [in] The movie.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 (or QuickTime 7.1) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSErr 
+RemoveMovieApertureModeDimensions(Movie movie)                AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+
+
+/*
+ *  RemoveTrackApertureModeDimensions()
+ *  
+ *  Summary:
+ *    Removes aperture mode dimension information from a track.
+ *  
+ *  Discussion:
+ *    This function removes aperture mode dimension information from a
+ *    track. It does not attempt to modify sample descriptions, so it
+ *    may not completely reverse the effect of
+ *    GenerateTrackApertureModeDimensions. It sets the
+ *    kQTVisualPropertyID_HasApertureModeDimensions property to false.
+ *  
+ *  Parameters:
+ *    
+ *    track:
+ *      [in] The track.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 (or QuickTime 7.1) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSErr 
+RemoveTrackApertureModeDimensions(Track track)                AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+
+
+
 /*****
     Error reporting
 *****/
@@ -8670,142 +11796,12 @@ QTGetDataRefMaxFileOffset(
 
 
 
-/*****
-    Bandwidth management support
-*****/
-enum {
-  ConnectionSpeedPrefsType      = 'cspd',
-  BandwidthManagementPrefsType  = 'bwmg'
-};
-
-
-struct ConnectionSpeedPrefsRecord {
-  long                connectionSpeed;
-};
-typedef struct ConnectionSpeedPrefsRecord ConnectionSpeedPrefsRecord;
-typedef ConnectionSpeedPrefsRecord *    ConnectionSpeedPrefsPtr;
-typedef ConnectionSpeedPrefsPtr *       ConnectionSpeedPrefsHandle;
-struct BandwidthManagementPrefsRecord {
-  Boolean             overrideConnectionSpeedForBandwidth;
-};
-typedef struct BandwidthManagementPrefsRecord BandwidthManagementPrefsRecord;
-typedef BandwidthManagementPrefsRecord * BandwidthManagementPrefsPtr;
-typedef BandwidthManagementPrefsPtr *   BandwidthManagementPrefsHandle;
 enum {
   kQTIdlePriority               = 10,
   kQTNonRealTimePriority        = 20,
   kQTRealTimeSharedPriority     = 25,
   kQTRealTimePriority           = 30
 };
-
-enum {
-  kQTBandwidthNotifyNeedToStop  = 1L << 0,
-  kQTBandwidthNotifyGoodToGo    = 1L << 1,
-  kQTBandwidthChangeRequest     = 1L << 2,
-  kQTBandwidthQueueRequest      = 1L << 3,
-  kQTBandwidthScheduledRequest  = 1L << 4,
-  kQTBandwidthVoluntaryRelease  = 1L << 5
-};
-
-typedef CALLBACK_API( OSErr , QTBandwidthNotificationProcPtr )(long flags, void *reserved, void *refcon);
-struct QTScheduledBandwidthRecord {
-  long                recordSize;             /* total number of bytes in QTScheduledBandwidthRecord*/
-
-  long                priority;
-  long                dataRate;
-  CompTimeValue       startTime;              /* bandwidth usage start time*/
-  CompTimeValue       duration;               /* duration of bandwidth usage (0 if unknown)*/
-  CompTimeValue       prerollDuration;        /* time for negotiation before startTime (0 if unknown)*/
-  TimeScale           scale;                  /* timescale of value/duration/prerollDuration fields*/
-  TimeBase            base;                   /* timebase*/
-};
-typedef struct QTScheduledBandwidthRecord QTScheduledBandwidthRecord;
-typedef QTScheduledBandwidthRecord *    QTScheduledBandwidthPtr;
-typedef QTScheduledBandwidthPtr *       QTScheduledBandwidthHandle;
-typedef STACK_UPP_TYPE(QTBandwidthNotificationProcPtr)          QTBandwidthNotificationUPP;
-/*
- *  QTBandwidthRequest()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0.2 and later
- *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
- *    Windows:          in qtmlClient.lib 4.0 and later
- */
-extern OSErr 
-QTBandwidthRequest(
-  long                         priority,
-  QTBandwidthNotificationUPP   callback,
-  const void *                 refcon,
-  QTBandwidthReference *       bwRef,
-  long                         flags)                         AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
-
-
-/*
- *  QTBandwidthRequestForTimeBase()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.1 and later
- *    Non-Carbon CFM:   in QuickTimeLib 4.1 and later
- *    Windows:          in qtmlClient.lib 4.1 and later
- */
-extern OSErr 
-QTBandwidthRequestForTimeBase(
-  TimeBase                     tb,
-  long                         priority,
-  QTBandwidthNotificationUPP   callback,
-  const void *                 refcon,
-  QTBandwidthReference *       bwRef,
-  long                         flags)                         AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
-
-
-/*
- *  QTBandwidthRelease()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0.2 and later
- *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
- *    Windows:          in qtmlClient.lib 4.0 and later
- */
-extern OSErr 
-QTBandwidthRelease(
-  QTBandwidthReference   bwRef,
-  long                   flags)                               AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
-
-
-/*
- *  QTScheduledBandwidthRequest()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.1 and later
- *    Non-Carbon CFM:   in QuickTimeLib 4.1 and later
- *    Windows:          in qtmlClient.lib 4.1 and later
- */
-extern OSErr 
-QTScheduledBandwidthRequest(
-  QTScheduledBandwidthPtr          scheduleRec,
-  QTBandwidthNotificationUPP       notificationCallback,
-  void *                           refcon,
-  QTScheduledBandwidthReference *  sbwRef,
-  long                             flags)                     AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
-
-
-/*
- *  QTScheduledBandwidthRelease()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.1 and later
- *    Non-Carbon CFM:   in QuickTimeLib 4.1 and later
- *    Windows:          in qtmlClient.lib 4.1 and later
- */
-extern OSErr 
-QTScheduledBandwidthRelease(
-  QTScheduledBandwidthReference   sbwRef,
-  long                            flags)                      AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
 /*
@@ -8996,17 +11992,6 @@ extern QTEffectListFilterUPP
 NewQTEffectListFilterUPP(QTEffectListFilterProcPtr userRoutine) AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 /*
- *  NewQTBandwidthNotificationUPP()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0.2 and later
- *    Non-Carbon CFM:   available as macro/inline
- */
-extern QTBandwidthNotificationUPP
-NewQTBandwidthNotificationUPP(QTBandwidthNotificationProcPtr userRoutine) AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
-
-/*
  *  DisposeQTCallBackUPP()
  *  
  *  Availability:
@@ -9192,17 +12177,6 @@ DisposeTweenerDataUPP(TweenerDataUPP userUPP)                 AVAILABLE_MAC_OS_X
  */
 extern void
 DisposeQTEffectListFilterUPP(QTEffectListFilterUPP userUPP)   AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
-
-/*
- *  DisposeQTBandwidthNotificationUPP()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0.2 and later
- *    Non-Carbon CFM:   available as macro/inline
- */
-extern void
-DisposeQTBandwidthNotificationUPP(QTBandwidthNotificationUPP userUPP) AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 /*
  *  InvokeQTCallBackUPP()
@@ -9466,28 +12440,128 @@ InvokeQTEffectListFilterUPP(
   void *                 refcon,
   QTEffectListFilterUPP  userUPP)                             AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
-/*
- *  InvokeQTBandwidthNotificationUPP()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0.2 and later
- *    Non-Carbon CFM:   available as macro/inline
- */
-extern OSErr
-InvokeQTBandwidthNotificationUPP(
-  long                        flags,
-  void *                      reserved,
-  void *                      refcon,
-  QTBandwidthNotificationUPP  userUPP)                        AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+#if __MACH__
+  #ifdef __cplusplus
+    inline QTCallBackUPP                                        NewQTCallBackUPP(QTCallBackProcPtr userRoutine) { return userRoutine; }
+    inline QTSyncTaskUPP                                        NewQTSyncTaskUPP(QTSyncTaskProcPtr userRoutine) { return userRoutine; }
+    inline MovieRgnCoverUPP                                     NewMovieRgnCoverUPP(MovieRgnCoverProcPtr userRoutine) { return userRoutine; }
+    inline MovieProgressUPP                                     NewMovieProgressUPP(MovieProgressProcPtr userRoutine) { return userRoutine; }
+    inline MovieDrawingCompleteUPP                              NewMovieDrawingCompleteUPP(MovieDrawingCompleteProcPtr userRoutine) { return userRoutine; }
+    inline TrackTransferUPP                                     NewTrackTransferUPP(TrackTransferProcPtr userRoutine) { return userRoutine; }
+    inline GetMovieUPP                                          NewGetMovieUPP(GetMovieProcPtr userRoutine) { return userRoutine; }
+    inline MoviePreviewCallOutUPP                               NewMoviePreviewCallOutUPP(MoviePreviewCallOutProcPtr userRoutine) { return userRoutine; }
+    inline TextMediaUPP                                         NewTextMediaUPP(TextMediaProcPtr userRoutine) { return userRoutine; }
+    inline ActionsUPP                                           NewActionsUPP(ActionsProcPtr userRoutine) { return userRoutine; }
+    inline DoMCActionUPP                                        NewDoMCActionUPP(DoMCActionProcPtr userRoutine) { return userRoutine; }
+    inline MovieExecuteWiredActionsUPP                          NewMovieExecuteWiredActionsUPP(MovieExecuteWiredActionsProcPtr userRoutine) { return userRoutine; }
+    inline MoviePrePrerollCompleteUPP                           NewMoviePrePrerollCompleteUPP(MoviePrePrerollCompleteProcPtr userRoutine) { return userRoutine; }
+    inline QTNextTaskNeededSoonerCallbackUPP                    NewQTNextTaskNeededSoonerCallbackUPP(QTNextTaskNeededSoonerCallbackProcPtr userRoutine) { return userRoutine; }
+    inline MoviesErrorUPP                                       NewMoviesErrorUPP(MoviesErrorProcPtr userRoutine) { return userRoutine; }
+    inline TweenerDataUPP                                       NewTweenerDataUPP(TweenerDataProcPtr userRoutine) { return userRoutine; }
+    inline QTEffectListFilterUPP                                NewQTEffectListFilterUPP(QTEffectListFilterProcPtr userRoutine) { return userRoutine; }
+    inline void                                                 DisposeQTCallBackUPP(QTCallBackUPP) { }
+    inline void                                                 DisposeQTSyncTaskUPP(QTSyncTaskUPP) { }
+    inline void                                                 DisposeMovieRgnCoverUPP(MovieRgnCoverUPP) { }
+    inline void                                                 DisposeMovieProgressUPP(MovieProgressUPP) { }
+    inline void                                                 DisposeMovieDrawingCompleteUPP(MovieDrawingCompleteUPP) { }
+    inline void                                                 DisposeTrackTransferUPP(TrackTransferUPP) { }
+    inline void                                                 DisposeGetMovieUPP(GetMovieUPP) { }
+    inline void                                                 DisposeMoviePreviewCallOutUPP(MoviePreviewCallOutUPP) { }
+    inline void                                                 DisposeTextMediaUPP(TextMediaUPP) { }
+    inline void                                                 DisposeActionsUPP(ActionsUPP) { }
+    inline void                                                 DisposeDoMCActionUPP(DoMCActionUPP) { }
+    inline void                                                 DisposeMovieExecuteWiredActionsUPP(MovieExecuteWiredActionsUPP) { }
+    inline void                                                 DisposeMoviePrePrerollCompleteUPP(MoviePrePrerollCompleteUPP) { }
+    inline void                                                 DisposeQTNextTaskNeededSoonerCallbackUPP(QTNextTaskNeededSoonerCallbackUPP) { }
+    inline void                                                 DisposeMoviesErrorUPP(MoviesErrorUPP) { }
+    inline void                                                 DisposeTweenerDataUPP(TweenerDataUPP) { }
+    inline void                                                 DisposeQTEffectListFilterUPP(QTEffectListFilterUPP) { }
+    inline void                                                 InvokeQTCallBackUPP(QTCallBack cb, long refCon, QTCallBackUPP userUPP) { (*userUPP)(cb, refCon); }
+    inline void                                                 InvokeQTSyncTaskUPP(void * task, QTSyncTaskUPP userUPP) { (*userUPP)(task); }
+    inline OSErr                                                InvokeMovieRgnCoverUPP(Movie theMovie, RgnHandle changedRgn, long refcon, MovieRgnCoverUPP userUPP) { return (*userUPP)(theMovie, changedRgn, refcon); }
+    inline OSErr                                                InvokeMovieProgressUPP(Movie theMovie, short message, short whatOperation, Fixed percentDone, long refcon, MovieProgressUPP userUPP) { return (*userUPP)(theMovie, message, whatOperation, percentDone, refcon); }
+    inline OSErr                                                InvokeMovieDrawingCompleteUPP(Movie theMovie, long refCon, MovieDrawingCompleteUPP userUPP) { return (*userUPP)(theMovie, refCon); }
+    inline OSErr                                                InvokeTrackTransferUPP(Track t, long refCon, TrackTransferUPP userUPP) { return (*userUPP)(t, refCon); }
+    inline OSErr                                                InvokeGetMovieUPP(long offset, long size, void * dataPtr, void * refCon, GetMovieUPP userUPP) { return (*userUPP)(offset, size, dataPtr, refCon); }
+    inline Boolean                                              InvokeMoviePreviewCallOutUPP(long refcon, MoviePreviewCallOutUPP userUPP) { return (*userUPP)(refcon); }
+    inline OSErr                                                InvokeTextMediaUPP(Handle theText, Movie theMovie, short * displayFlag, long refcon, TextMediaUPP userUPP) { return (*userUPP)(theText, theMovie, displayFlag, refcon); }
+    inline OSErr                                                InvokeActionsUPP(void * refcon, Track targetTrack, long targetRefCon, QTEventRecordPtr theEvent, ActionsUPP userUPP) { return (*userUPP)(refcon, targetTrack, targetRefCon, theEvent); }
+    inline OSErr                                                InvokeDoMCActionUPP(void * refcon, short action, void * params, Boolean * handled, DoMCActionUPP userUPP) { return (*userUPP)(refcon, action, params, handled); }
+    inline OSErr                                                InvokeMovieExecuteWiredActionsUPP(Movie theMovie, void * refcon, long flags, QTAtomContainer wiredActions, MovieExecuteWiredActionsUPP userUPP) { return (*userUPP)(theMovie, refcon, flags, wiredActions); }
+    inline void                                                 InvokeMoviePrePrerollCompleteUPP(Movie theMovie, OSErr prerollErr, void * refcon, MoviePrePrerollCompleteUPP userUPP) { (*userUPP)(theMovie, prerollErr, refcon); }
+    inline void                                                 InvokeQTNextTaskNeededSoonerCallbackUPP(TimeValue duration, unsigned long flags, void * refcon, QTNextTaskNeededSoonerCallbackUPP userUPP) { (*userUPP)(duration, flags, refcon); }
+    inline void                                                 InvokeMoviesErrorUPP(OSErr theErr, long refcon, MoviesErrorUPP userUPP) { (*userUPP)(theErr, refcon); }
+    inline ComponentResult                                      InvokeTweenerDataUPP(TweenRecord * tr, void * tweenData, long tweenDataSize, long dataDescriptionSeed, Handle dataDescription, ICMCompletionProcRecordPtr asyncCompletionProc, UniversalProcPtr transferProc, void * refCon, TweenerDataUPP userUPP) { return (*userUPP)(tr, tweenData, tweenDataSize, dataDescriptionSeed, dataDescription, asyncCompletionProc, transferProc, refCon); }
+    inline Boolean                                              InvokeQTEffectListFilterUPP(Component effect, long effectMinSource, long effectMaxSource, OSType majorClass, OSType minorClass, void * refcon, QTEffectListFilterUPP userUPP) { return (*userUPP)(effect, effectMinSource, effectMaxSource, majorClass, minorClass, refcon); }
+  #else
+    #define NewQTCallBackUPP(userRoutine)                       ((QTCallBackUPP)userRoutine)
+    #define NewQTSyncTaskUPP(userRoutine)                       ((QTSyncTaskUPP)userRoutine)
+    #define NewMovieRgnCoverUPP(userRoutine)                    ((MovieRgnCoverUPP)userRoutine)
+    #define NewMovieProgressUPP(userRoutine)                    ((MovieProgressUPP)userRoutine)
+    #define NewMovieDrawingCompleteUPP(userRoutine)             ((MovieDrawingCompleteUPP)userRoutine)
+    #define NewTrackTransferUPP(userRoutine)                    ((TrackTransferUPP)userRoutine)
+    #define NewGetMovieUPP(userRoutine)                         ((GetMovieUPP)userRoutine)
+    #define NewMoviePreviewCallOutUPP(userRoutine)              ((MoviePreviewCallOutUPP)userRoutine)
+    #define NewTextMediaUPP(userRoutine)                        ((TextMediaUPP)userRoutine)
+    #define NewActionsUPP(userRoutine)                          ((ActionsUPP)userRoutine)
+    #define NewDoMCActionUPP(userRoutine)                       ((DoMCActionUPP)userRoutine)
+    #define NewMovieExecuteWiredActionsUPP(userRoutine)         ((MovieExecuteWiredActionsUPP)userRoutine)
+    #define NewMoviePrePrerollCompleteUPP(userRoutine)          ((MoviePrePrerollCompleteUPP)userRoutine)
+    #define NewQTNextTaskNeededSoonerCallbackUPP(userRoutine)   ((QTNextTaskNeededSoonerCallbackUPP)userRoutine)
+    #define NewMoviesErrorUPP(userRoutine)                      ((MoviesErrorUPP)userRoutine)
+    #define NewTweenerDataUPP(userRoutine)                      ((TweenerDataUPP)userRoutine)
+    #define NewQTEffectListFilterUPP(userRoutine)               ((QTEffectListFilterUPP)userRoutine)
+    #define DisposeQTCallBackUPP(userUPP)
+    #define DisposeQTSyncTaskUPP(userUPP)
+    #define DisposeMovieRgnCoverUPP(userUPP)
+    #define DisposeMovieProgressUPP(userUPP)
+    #define DisposeMovieDrawingCompleteUPP(userUPP)
+    #define DisposeTrackTransferUPP(userUPP)
+    #define DisposeGetMovieUPP(userUPP)
+    #define DisposeMoviePreviewCallOutUPP(userUPP)
+    #define DisposeTextMediaUPP(userUPP)
+    #define DisposeActionsUPP(userUPP)
+    #define DisposeDoMCActionUPP(userUPP)
+    #define DisposeMovieExecuteWiredActionsUPP(userUPP)
+    #define DisposeMoviePrePrerollCompleteUPP(userUPP)
+    #define DisposeQTNextTaskNeededSoonerCallbackUPP(userUPP)
+    #define DisposeMoviesErrorUPP(userUPP)
+    #define DisposeTweenerDataUPP(userUPP)
+    #define DisposeQTEffectListFilterUPP(userUPP)
+    #define InvokeQTCallBackUPP(cb, refCon, userUPP)            (*userUPP)(cb, refCon)
+    #define InvokeQTSyncTaskUPP(task, userUPP)                  (*userUPP)(task)
+    #define InvokeMovieRgnCoverUPP(theMovie, changedRgn, refcon, userUPP) (*userUPP)(theMovie, changedRgn, refcon)
+    #define InvokeMovieProgressUPP(theMovie, message, whatOperation, percentDone, refcon, userUPP) (*userUPP)(theMovie, message, whatOperation, percentDone, refcon)
+    #define InvokeMovieDrawingCompleteUPP(theMovie, refCon, userUPP) (*userUPP)(theMovie, refCon)
+    #define InvokeTrackTransferUPP(t, refCon, userUPP)          (*userUPP)(t, refCon)
+    #define InvokeGetMovieUPP(offset, size, dataPtr, refCon, userUPP) (*userUPP)(offset, size, dataPtr, refCon)
+    #define InvokeMoviePreviewCallOutUPP(refcon, userUPP)       (*userUPP)(refcon)
+    #define InvokeTextMediaUPP(theText, theMovie, displayFlag, refcon, userUPP) (*userUPP)(theText, theMovie, displayFlag, refcon)
+    #define InvokeActionsUPP(refcon, targetTrack, targetRefCon, theEvent, userUPP) (*userUPP)(refcon, targetTrack, targetRefCon, theEvent)
+    #define InvokeDoMCActionUPP(refcon, action, params, handled, userUPP) (*userUPP)(refcon, action, params, handled)
+    #define InvokeMovieExecuteWiredActionsUPP(theMovie, refcon, flags, wiredActions, userUPP) (*userUPP)(theMovie, refcon, flags, wiredActions)
+    #define InvokeMoviePrePrerollCompleteUPP(theMovie, prerollErr, refcon, userUPP) (*userUPP)(theMovie, prerollErr, refcon)
+    #define InvokeQTNextTaskNeededSoonerCallbackUPP(duration, flags, refcon, userUPP) (*userUPP)(duration, flags, refcon)
+    #define InvokeMoviesErrorUPP(theErr, refcon, userUPP)       (*userUPP)(theErr, refcon)
+    #define InvokeTweenerDataUPP(tr, tweenData, tweenDataSize, dataDescriptionSeed, dataDescription, asyncCompletionProc, transferProc, refCon, userUPP) (*userUPP)(tr, tweenData, tweenDataSize, dataDescriptionSeed, dataDescription, asyncCompletionProc, transferProc, refCon)
+    #define InvokeQTEffectListFilterUPP(effect, effectMinSource, effectMaxSource, majorClass, minorClass, refcon, userUPP) (*userUPP)(effect, effectMinSource, effectMaxSource, majorClass, minorClass, refcon)
+  #endif
+#endif
 
 /*****
     Connection Speed
 *****/
 enum {
+  ConnectionSpeedPrefsType      = 'cspd',
   ConnectionSpeedIsValidPrefsType = 'vspd'
 };
 
+struct ConnectionSpeedPrefsRecord {
+  long                connectionSpeed;
+};
+typedef struct ConnectionSpeedPrefsRecord ConnectionSpeedPrefsRecord;
+typedef ConnectionSpeedPrefsRecord *    ConnectionSpeedPrefsPtr;
+typedef ConnectionSpeedPrefsPtr *       ConnectionSpeedPrefsHandle;
 /*
  *  QTGetConnectionSpeedFromPrefs()
  *  
@@ -11448,7 +14522,8 @@ enum {
   mcActionGetConnectionStatus   = 98,   /* param is QTConnectionStatusPtr*/
   mcActionChapterListChanged    = 99,   /* no param */
   mcActionMovieLoadStateChanged = 100,  /* param is SInt32, new load state*/
-  mcActionEditStateChanged      = 101   /* param is a Boolean, editing enabled?*/
+  mcActionEditStateChanged      = 101,  /* param is a Boolean, editing enabled?*/
+  mcActionCurrentChapterChanged = 102   /* param is a UInt32, new chapter index */
 };
 
 typedef short                           mcAction;
@@ -12934,7 +16009,6 @@ SetTimeBaseOffsetTimeBase(
  *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
- *    Windows:          in qtmlClient.lib 6.5 and later
  */
 extern OSErr 
 AttachTimeBaseToCurrentThread(TimeBase tb)                    AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
@@ -12947,7 +16021,6 @@ AttachTimeBaseToCurrentThread(TimeBase tb)                    AVAILABLE_MAC_OS_X
  *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
- *    Windows:          in qtmlClient.lib 6.5 and later
  */
 extern OSErr 
 DetachTimeBaseFromCurrentThread(TimeBase tb)                  AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
@@ -12960,7 +16033,6 @@ DetachTimeBaseFromCurrentThread(TimeBase tb)                  AVAILABLE_MAC_OS_X
  *    Mac OS X:         in version 10.3 (or QuickTime 6.4) and later in QuickTime.framework
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
- *    Windows:          in qtmlClient.lib 6.5 and later
  */
 extern OSErr 
 GetTimeBaseThreadAttachState(
@@ -13231,6 +16303,1602 @@ QTRemoveMoviePropertyListener(
 
 
 
+/****************************************
+*                                       *
+*   T R A C K  P R O P E R T I E S      *
+*                                       *
+****************************************/
+
+typedef CALLBACK_API( void , QTTrackPropertyListenerProcPtr )(Track inTrack, QTPropertyClass inPropClass, QTPropertyID inPropID, void *inUserData);
+typedef STACK_UPP_TYPE(QTTrackPropertyListenerProcPtr)          QTTrackPropertyListenerUPP;
+/*
+ *  QTGetTrackPropertyInfo()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSErr 
+QTGetTrackPropertyInfo(
+  Track                  inTrack,
+  QTPropertyClass        inPropClass,
+  QTPropertyID           inPropID,
+  QTPropertyValueType *  outPropType,
+  ByteCount *            outPropValueSize,
+  UInt32 *               outPropertyFlags)                    AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  QTGetTrackProperty()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSErr 
+QTGetTrackProperty(
+  Track                inTrack,
+  QTPropertyClass      inPropClass,
+  QTPropertyID         inPropID,
+  ByteCount            inPropValueSize,
+  QTPropertyValuePtr   outPropValueAddress,
+  ByteCount *          outPropValueSizeUsed)                  AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  QTSetTrackProperty()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSErr 
+QTSetTrackProperty(
+  Track                     inTrack,
+  QTPropertyClass           inPropClass,
+  QTPropertyID              inPropID,
+  ByteCount                 inPropValueSize,
+  ConstQTPropertyValuePtr   inPropValueAddress)               AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  QTAddTrackPropertyListener()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSErr 
+QTAddTrackPropertyListener(
+  Track                        inTrack,
+  QTPropertyClass              inPropClass,
+  QTPropertyID                 inPropID,
+  QTTrackPropertyListenerUPP   inListenerProc,
+  void *                       inUserData)                    AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  QTRemoveTrackPropertyListener()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern OSErr 
+QTRemoveTrackPropertyListener(
+  Track                        inTrack,
+  QTPropertyClass              inPropClass,
+  QTPropertyID                 inPropID,
+  QTTrackPropertyListenerUPP   inListenerProc,
+  void *                       inUserData)                    AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+
+/****************************************
+*                                       *
+*     Q T S A M P L E T A B L E         *
+*                                       *
+****************************************/
+
+typedef long                            QTSampleDescriptionID;
+/*
+ *  QTSampleTableCreateMutable()
+ *  
+ *  Summary:
+ *    Creates a new empty sample table.
+ *  
+ *  Discussion:
+ *    The newly created sample table will contain no sample references.
+ *    When sample references are added, their durations and display
+ *    offsets will be interpreted according to the sample table's
+ *    current timescale.
+ *  
+ *  Parameters:
+ *    
+ *    allocator:
+ *      The allocator to use for the new sample table.
+ *    
+ *    timescale:
+ *      The timescale to use for durations and display offsets.
+ *    
+ *    hints:
+ *      Reserved.  Pass NULL.
+ *    
+ *    newSampleTable:
+ *      Points to a variable to receive the new sample table.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern OSStatus 
+QTSampleTableCreateMutable(
+  CFAllocatorRef             allocator,
+  TimeScale                  timescale,
+  void *                     hints,
+  QTMutableSampleTableRef *  newSampleTable)                  AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  QTSampleTableRetain()
+ *  
+ *  Summary:
+ *    Increments the retain count of a sample table.
+ *  
+ *  Discussion:
+ *    The same sample table is returned for convenience. If sampleTable
+ *    is NULL, nothing happens.
+ *  
+ *  Parameters:
+ *    
+ *    sampleTable:
+ *      The sample table.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern QTSampleTableRef 
+QTSampleTableRetain(QTSampleTableRef sampleTable)             AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  QTSampleTableRelease()
+ *  
+ *  Summary:
+ *    Decrements the retain count of a sample table.
+ *  
+ *  Discussion:
+ *    If the retain count decreases to zero, the sample table is
+ *    disposed. If sampleTable is NULL, nothing happens.
+ *  
+ *  Parameters:
+ *    
+ *    sampleTable:
+ *      The sample table.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern void 
+QTSampleTableRelease(QTSampleTableRef sampleTable)            AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  QTSampleTableCreateMutableCopy()
+ *  
+ *  Summary:
+ *    Copies a sample table.
+ *  
+ *  Discussion:
+ *    All the sample references and sample descriptions in the sample
+ *    table are copied.
+ *  
+ *  Parameters:
+ *    
+ *    allocator:
+ *      The allocator to use for the new sample table.
+ *    
+ *    sampleTable:
+ *      The sample table to copy.
+ *    
+ *    hints:
+ *      Reserved, set to NULL.
+ *    
+ *    newSampleTable:
+ *      Points to a variable to receive the new sample table.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern OSStatus 
+QTSampleTableCreateMutableCopy(
+  CFAllocatorRef             allocator,
+  QTSampleTableRef           sampleTable,
+  void *                     hints,
+  QTMutableSampleTableRef *  newSampleTable)                  AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  QTSampleTableGetTypeID()
+ *  
+ *  Summary:
+ *    Returns the CFTypeID for QTSampleTableRef.
+ *  
+ *  Discussion:
+ *    You could use this to test whether a CFTypeRef that extracted
+ *    from a CF container such as a CFArray was a QTSampleTableRef.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern CFTypeID 
+QTSampleTableGetTypeID(void)                                  AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  QTSampleTableSetTimeScale()
+ *  
+ *  Summary:
+ *    Changes the timescale of a sample table.
+ *  
+ *  Discussion:
+ *    The durations and display offsets of all the sample references in
+ *    the sample table are scaled from the old timescale to the new
+ *    timescale. No durations will be scaled to a value less than 1.
+ *    Display offsets will be adjusted to avoid display time collisions.
+ *  
+ *  Parameters:
+ *    
+ *    sampleTable:
+ *      The sample table.
+ *    
+ *    newTimeScale:
+ *      The new timescale.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern OSStatus 
+QTSampleTableSetTimeScale(
+  QTMutableSampleTableRef   sampleTable,
+  TimeScale                 newTimeScale)                     AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  QTSampleTableGetTimeScale()
+ *  
+ *  Summary:
+ *    Returns the timescale of a sample table.
+ *  
+ *  Discussion:
+ *    Returns 0 if sampleTable is NULL.
+ *  
+ *  Parameters:
+ *    
+ *    sampleTable:
+ *      The sample table.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern TimeScale 
+QTSampleTableGetTimeScale(QTSampleTableRef sampleTable)       AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+
+/*
+ *  Summary:
+ *    Attribute flags for QTSampleTableGetNextAttributeChange
+ */
+enum {
+
+  /*
+   * Set this flag to find first num such that samples num-1 and num
+   * are not adjacent, ie, dataOffset of num-1 + dataSize of num-1 !=
+   * dataOffset of num
+   */
+  kQTSampleTableAttribute_DiscontiguousData = 1L << 0,
+
+  /*
+   * Set this flag to find the first sample with data size per sample
+   * different from that of the starting sample.
+   */
+  kQTSampleTableAttribute_DataSizePerSampleChange = 1L << 1,
+
+  /*
+   * Set this flag to find the first sample with decode duration
+   * different from that of the starting sample.
+   */
+  kQTSampleTableAttribute_DecodeDurationChange = 1L << 2,
+
+  /*
+   * Set this flag to find the first sample with display offset
+   * different from that of the starting sample.
+   */
+  kQTSampleTableAttribute_DisplayOffsetChange = 1L << 3,
+
+  /*
+   * Set this flag to find the first sample with sample description ID
+   * different from that of the starting sample.
+   */
+  kQTSampleTableAttribute_SampleDescriptionIDChange = 1L << 4,
+
+  /*
+   * Set this flag to find the first sample with any media sample flags
+   * different from those of the starting sample.
+   */
+  kQTSampleTableAttribute_SampleFlagsChange = 1L << 5,
+
+  /*
+   * If no flags are set, find the first sample with any attribute
+   * different from the starting sample.
+   */
+  kQTSampleTableAnyAttributeChange = 0
+};
+
+typedef UInt32                          QTSampleTableAttribute;
+/*
+ *  QTSampleTableGetNextAttributeChange()
+ *  
+ *  Summary:
+ *    Finds the next sample number at which one or more of given sample
+ *    attributes change.
+ *  
+ *  Parameters:
+ *    
+ *    sampleTable:
+ *      The sample table.
+ *    
+ *    startSampleNum:
+ *      A sample number.
+ *    
+ *    attributeMask:
+ *      A collection of flags that indicates which kinds of attribute
+ *      changes to search for.
+ *    
+ *    sampleNumOut:
+ *      Points to a variable to receive the next sample number after
+ *      startSampleNum at which any of the requested attributes
+ *      changes. If no attribute changes are found, this variable is
+ *      set to zero.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern OSStatus 
+QTSampleTableGetNextAttributeChange(
+  QTSampleTableRef         sampleTable,
+  SInt64                   startSampleNum,
+  QTSampleTableAttribute   attributeMask,
+  SInt64 *                 sampleNumOut)                      AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+
+/*
+ *  QTSampleTableAddSampleDescription()
+ *  
+ *  Summary:
+ *    Adds a sample description to a sample table, returning a sample
+ *    description ID that can be used to refer to it.
+ *  
+ *  Discussion:
+ *    You can use the returned sample description ID when adding
+ *    samples to the sample table. 
+ *    Note: Sample description IDs are local to each sample table. The
+ *    same sample description handle may have different IDs when
+ *    referenced in different sample tables.
+ *  
+ *  Parameters:
+ *    
+ *    sampleTable:
+ *      The sample table.
+ *    
+ *    sampleDescriptionH:
+ *      The sample description handle. The QTSampleTable will make its
+ *      own copy of this handle.
+ *    
+ *    mediaSampleDescriptionIndex:
+ *      Indicates the sample description index of this sample
+ *      description in a media. Pass zero for sample descriptions you
+ *      add to sample tables, to indicate that this was not retrieved
+ *      from a media.
+ *    
+ *    sampleDescriptionIDOut:
+ *      Points to a variable to receive a sample description ID.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern OSStatus 
+QTSampleTableAddSampleDescription(
+  QTMutableSampleTableRef   sampleTable,
+  SampleDescriptionHandle   sampleDescriptionH,
+  long                      mediaSampleDescriptionIndex,
+  QTSampleDescriptionID *   sampleDescriptionIDOut)           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  QTSampleTableCopySampleDescription()
+ *  
+ *  Summary:
+ *    Retrieves a sample description from a sample table.
+ *  
+ *  Discussion:
+ *    The caller is responsible for disposing the returned sampled
+ *    description handle with DisposeHandle.
+ *  
+ *  Parameters:
+ *    
+ *    sampleTable:
+ *      The sample table.
+ *    
+ *    sampleDescriptionID:
+ *      The sample description ID.
+ *    
+ *    mediaSampleDescriptionIndexOut:
+ *      Points to a variable to receive a media sample description
+ *      index. If the sample description came from a media, this is the
+ *      index that could be passed to GetMediaSampleDescription to
+ *      retrieve the same sample description handle. The index will be
+ *      zero if the sample description did not come directly from a
+ *      media. Pass NULL if you do not want to receive this information.
+ *    
+ *    sampleDescriptionHOut:
+ *      Points to a variable to receive a newly allocated sample
+ *      description handle. Pass NULL if you do not want one.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern OSStatus 
+QTSampleTableCopySampleDescription(
+  QTSampleTableRef           sampleTable,
+  QTSampleDescriptionID      sampleDescriptionID,
+  long *                     mediaSampleDescriptionIndexOut,
+  SampleDescriptionHandle *  sampleDescriptionHOut)           AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  QTSampleTableAddSampleReferences()
+ *  
+ *  Summary:
+ *    Adds sample references to a sample table.
+ *  
+ *  Discussion:
+ *    Note that you must pass the data size per sample, not the total
+ *    size of all the samples as with some other APIs.
+ *  
+ *  Parameters:
+ *    
+ *    sampleTable:
+ *      The sample table.
+ *    
+ *    dataOffset:
+ *      Specifies the offset at which the first sample begins.
+ *    
+ *    dataSizePerSample:
+ *      Specifies the number of bytes of data per sample.
+ *    
+ *    decodeDurationPerSample:
+ *      Specifies the decode duration of each sample.
+ *    
+ *    displayOffset:
+ *      Specifies the offset from decode time to display time of each
+ *      sample. If the decode times and display times will be the same,
+ *      pass 0.
+ *    
+ *    numberOfSamples:
+ *      Specifies the number of samples.  Must be greater than zero.
+ *    
+ *    sampleFlags:
+ *      Specifies the media sample flags for all samples.
+ *    
+ *    sampleDescriptionID:
+ *      Specifies the ID of a sample description that has been added to
+ *      the sample table with QTSampleTableAddSampleDescription.
+ *    
+ *    newSampleNumOut:
+ *      Points to a variable to receive the sample number of the first
+ *      sample that was added.  Pass NULL if you don't want this
+ *      information.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern OSStatus 
+QTSampleTableAddSampleReferences(
+  QTMutableSampleTableRef   sampleTable,
+  SInt64                    dataOffset,
+  ByteCount                 dataSizePerSample,
+  TimeValue64               decodeDurationPerSample,
+  TimeValue64               displayOffset,
+  SInt64                    numberOfSamples,
+  MediaSampleFlags          sampleFlags,
+  QTSampleDescriptionID     sampleDescriptionID,
+  SInt64 *                  newSampleNumOut)                  AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  QTSampleTableGetNumberOfSamples()
+ *  
+ *  Summary:
+ *    Returns the number of samples in a sample table.
+ *  
+ *  Discussion:
+ *    Returns 0 if sampleTable is NULL.
+ *  
+ *  Parameters:
+ *    
+ *    sampleTable:
+ *      The sample table.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern SInt64 
+QTSampleTableGetNumberOfSamples(QTSampleTableRef sampleTable) AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  QTSampleTableReplaceRange()
+ *  
+ *  Summary:
+ *    Replaces a range of samples in a sample table with a range of
+ *    samples from another sample table. Can also be used to delete a
+ *    range of samples, or to insert samples without removing any.
+ *  
+ *  Discussion:
+ *    This function removes destSampleCount samples from
+ *    destSampleTable starting with destStartingSampleNum, and then
+ *    inserts sourceSampleCount samples from sourceSampleTable starting
+ *    with sourceStartingSampleNum where the removed samples were.
+ *    Sample descriptions will be copied if necessary and new sample
+ *    description IDs defined.
+ *  
+ *  Parameters:
+ *    
+ *    destSampleTable:
+ *      The sample table to be modified.
+ *    
+ *    destStartingSampleNum:
+ *      The first sample number in destSampleTable to be replaced or
+ *      deleted, or the sample number at which samples should be
+ *      inserted.
+ *    
+ *    destSampleCount:
+ *      The number of samples to be removed from destSampleTable. Pass
+ *      0 to insert without removing samples.
+ *    
+ *    sourceSampleTable:
+ *      The sample table from which samples should be copied, or NULL
+ *      to delete samples.
+ *    
+ *    sourceStartingSampleNum:
+ *      The first sample number to be copied. Ignored when deleting
+ *      samples.
+ *    
+ *    sourceSampleCount:
+ *      The number of samples which should be copied. Pass 0 to delete
+ *      samples.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern OSStatus 
+QTSampleTableReplaceRange(
+  QTMutableSampleTableRef   destSampleTable,
+  SInt64                    destStartingSampleNum,
+  SInt64                    destSampleCount,
+  QTSampleTableRef          sourceSampleTable,
+  SInt64                    sourceStartingSampleNum,
+  SInt64                    sourceSampleCount)                AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+
+/*
+ *  QTSampleTableGetDataOffset()
+ *  
+ *  Summary:
+ *    Returns the data offset of a sample.
+ *  
+ *  Discussion:
+ *    Returns 0 if the sample table is NULL, or if the sample number is
+ *    out of range.
+ *  
+ *  Parameters:
+ *    
+ *    sampleTable:
+ *      The sample table.
+ *    
+ *    sampleNum:
+ *      The sample number.  The first sample's number is 1.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern SInt64 
+QTSampleTableGetDataOffset(
+  QTSampleTableRef   sampleTable,
+  SInt64             sampleNum)                               AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  QTSampleTableGetDataSizePerSample()
+ *  
+ *  Summary:
+ *    Returns the data size of a sample.
+ *  
+ *  Discussion:
+ *    Returns 0 if the sample table is NULL, or if the sample number is
+ *    out of range.
+ *  
+ *  Parameters:
+ *    
+ *    sampleTable:
+ *      The sample table.
+ *    
+ *    sampleNum:
+ *      The sample number.  The first sample's number is 1.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern ByteCount 
+QTSampleTableGetDataSizePerSample(
+  QTSampleTableRef   sampleTable,
+  SInt64             sampleNum)                               AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  QTSampleTableGetDecodeDuration()
+ *  
+ *  Summary:
+ *    Returns the decode duration of a sample.
+ *  
+ *  Discussion:
+ *    Returns 0 if the sample table is NULL, or if the sample number is
+ *    out of range.
+ *  
+ *  Parameters:
+ *    
+ *    sampleTable:
+ *      The sample table.
+ *    
+ *    sampleNum:
+ *      The sample number.  The first sample's number is 1.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern TimeValue64 
+QTSampleTableGetDecodeDuration(
+  QTSampleTableRef   sampleTable,
+  SInt64             sampleNum)                               AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  QTSampleTableGetDisplayOffset()
+ *  
+ *  Summary:
+ *    Returns the offset from decode time to display time of a sample.
+ *  
+ *  Discussion:
+ *    Returns 0 if the sample table is NULL, or if the sample number is
+ *    out of range.
+ *  
+ *  Parameters:
+ *    
+ *    sampleTable:
+ *      The sample table.
+ *    
+ *    sampleNum:
+ *      The sample number.  The first sample's number is 1.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern TimeValue64 
+QTSampleTableGetDisplayOffset(
+  QTSampleTableRef   sampleTable,
+  SInt64             sampleNum)                               AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  QTSampleTableGetSampleDescriptionID()
+ *  
+ *  Summary:
+ *    Returns the sample description ID of a sample.
+ *  
+ *  Discussion:
+ *    Returns 0 if the sample table is NULL, or if the sample number is
+ *    out of range.
+ *  
+ *  Parameters:
+ *    
+ *    sampleTable:
+ *      The sample table.
+ *    
+ *    sampleNum:
+ *      The sample number.  The first sample's number is 1.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern QTSampleDescriptionID 
+QTSampleTableGetSampleDescriptionID(
+  QTSampleTableRef   sampleTable,
+  SInt64             sampleNum)                               AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  QTSampleTableGetSampleFlags()
+ *  
+ *  Summary:
+ *    Returns the media sample flags of a sample.
+ *  
+ *  Parameters:
+ *    
+ *    sampleTable:
+ *      The sample table.
+ *    
+ *    sampleNum:
+ *      The sample number.  The first sample's number is 1.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern MediaSampleFlags 
+QTSampleTableGetSampleFlags(
+  QTSampleTableRef   sampleTable,
+  SInt64             sampleNum)                               AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+
+/*
+ *  Summary:
+ *    Properties of sample tables
+ */
+enum {
+
+  /*
+   * Property class for sample tables.
+   */
+  kQTPropertyClass_SampleTable  = 'qtst',
+
+  /*
+   * The total decode duration of all samples in the sample table. 
+   * Read-only.
+   */
+  kQTSampleTablePropertyID_TotalDecodeDuration = 'tded', /* TimeValue64, Read */
+
+  /*
+   * The least display offset in the table. (-50 is a lesser offset
+   * than 20.)  Read-only.
+   */
+  kQTSampleTablePropertyID_MinDisplayOffset = '<ddd', /* TimeValue64, Read */
+
+  /*
+   * The greatest display offset in the table. (20 is a greater offset
+   * than -50.)  Read-only.
+   */
+  kQTSampleTablePropertyID_MaxDisplayOffset = '>ddd', /* TimeValue64, Read */
+
+  /*
+   * The least display time of all samples in the table, relative to
+   * the decode time of the first sample in the table.  Read-only.
+   */
+  kQTSampleTablePropertyID_MinRelativeDisplayTime = '<dis', /* TimeValue64, Read */
+
+  /*
+   * The greatest display time of all samples in the table, relative to
+   * the decode time of the first sample in the table.  Read-only.
+   */
+  kQTSampleTablePropertyID_MaxRelativeDisplayTime = '>dis' /* TimeValue64, Read */
+};
+
+
+/*
+ *  QTSampleTableGetPropertyInfo()
+ *  
+ *  Summary:
+ *    Returns information about the properties of a sample table.
+ *  
+ *  Parameters:
+ *    
+ *    sampleTable:
+ *      The sample table.
+ *    
+ *    inPropClass:
+ *      A property class.
+ *    
+ *    inPropID:
+ *      A property ID.
+ *    
+ *    outPropType:
+ *      A pointer to memory allocated to hold the property type on
+ *      return. Pass NULL if you do not want this information.
+ *    
+ *    outPropValueSize:
+ *      A pointer to memory allocated to hold the size of the property
+ *      value on return. Pass NULL if you do not want this information.
+ *    
+ *    outPropertyFlags:
+ *      A pointer to memory allocated to hold property flags on return.
+ *      Pass NULL if you do not want this information.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern OSStatus 
+QTSampleTableGetPropertyInfo(
+  QTSampleTableRef       sampleTable,
+  QTPropertyClass        inPropClass,
+  QTPropertyID           inPropID,
+  QTPropertyValueType *  outPropType,            /* can be NULL */
+  ByteCount *            outPropValueSize,       /* can be NULL */
+  UInt32 *               outPropertyFlags)       /* can be NULL */ AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  QTSampleTableGetProperty()
+ *  
+ *  Summary:
+ *    Returns the value of a specific sample table property.
+ *  
+ *  Parameters:
+ *    
+ *    sampleTable:
+ *      The sample table.
+ *    
+ *    inPropClass:
+ *      A property class.
+ *    
+ *    inPropID:
+ *      A property ID.
+ *    
+ *    inPropValueSize:
+ *      The size of the buffer allocated to hold the property value.
+ *    
+ *    outPropValueAddress:
+ *      A pointer to the buffer allocated to hold the property value.
+ *    
+ *    outPropValueSizeUsed:
+ *      On return, the actual size of the value written to the buffer.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern OSStatus 
+QTSampleTableGetProperty(
+  QTSampleTableRef     sampleTable,
+  QTPropertyClass      inPropClass,
+  QTPropertyID         inPropID,
+  ByteCount            inPropValueSize,
+  QTPropertyValuePtr   outPropValueAddress,
+  ByteCount *          outPropValueSizeUsed)       /* can be NULL */ AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  QTSampleTableSetProperty()
+ *  
+ *  Summary:
+ *    Sets the value of a specific sample table property.
+ *  
+ *  Parameters:
+ *    
+ *    sampleTable:
+ *      The sample table.
+ *    
+ *    inPropClass:
+ *      A property class.
+ *    
+ *    inPropID:
+ *      A property ID.
+ *    
+ *    inPropValueSize:
+ *      The size of the property value.
+ *    
+ *    inPropValueAddress:
+ *      A pointer to the property value.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern OSStatus 
+QTSampleTableSetProperty(
+  QTSampleTableRef          sampleTable,
+  QTPropertyClass           inPropClass,
+  QTPropertyID              inPropID,
+  ByteCount                 inPropValueSize,
+  ConstQTPropertyValuePtr   inPropValueAddress)               AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+
+
+
+/****************************************************************************
+*                                                                           *
+*           M E T A  D A T A                                                *
+*                                                                           *
+* QUICKTIME METADATA API OVERVIEW                                           *
+*                                                                           *
+* A QTMetaDataRef represents a metadata repository consisting of one or     *
+* more native metadata containers. The QuickTime MetaData API supports      *
+* unified access to and management of these containers.                     *
+*                                                                           *
+* Each container may be addressed by its storage format                     *
+* (kQTMetaDataStorageFormat). Initially, there is support for classic       *
+* QuickTime UserData, iTunes metadata, and a richer QuickTime metadata      *
+* container format. A QTMetaDataRef may have one or all of these. No        *
+* direct access to the native storage containers is provided.               *
+*                                                                           *
+* Each container consists of some number of metadata items. Metadata items  *
+* correspond to individually labeled values with characteristics such as    *
+* keys, data types, locale information, etc. What are called items here     *
+* are sometimes referred to as attributes or properties in other metadata   *
+* systems. Here, the focus is on the management of the pieces of metadata   *
+* instead of the associations with objects. This parallels existing         *
+* management of the classic QuickTime UserData construct.                   *
+*                                                                           *
+* QTMetaDataRefs may be associated with the Movie, Track and Media levels.  *
+* This parallels UserData placement today but provides access to other      *
+* kinds of metadata storage at those levels.                                *
+*                                                                           *
+* A metadata item is assigned a runtime identifier (QTMetaDataItem) that    *
+* along with the QTMetaDataRef identifies the particular item (and value)   *
+* across all native containers managed by the QTMetaDataRef.                *
+*                                                                           *
+* Each item is addressed by a key (or label). The key is not necessarily    *
+* unique within its container as it is possible to have multiple items      *
+* with the same key (e.g., multiple author items). Operations exist to      *
+* enumerate all items or only items with a particular key.                  *
+*                                                                           *
+* Because a QTMetaDataRef may provide access to different native metadata   *
+* containers with differing key structures (a four-char-code for one, a     *
+* string for another, etc.), the key structure is also specified. A         *
+* QTMetaDataKeyFormat indicates the key structure in APIs accepting keys.   *
+* This is also done because some container formats allow multiple key       *
+* structures or multiple versions of key structures.                        *
+*                                                                           *
+* To allow unified access across disparate containers, a wildcard storage   *
+* format can be specified. This will direct operations like searches        *
+* across container formats. A special key format called                     *
+* kQTMetaDataKeyFormatCommon indicates one of a set of common keys that     *
+* can be handled by native containers (e.g., copyright).                    *
+*                                                                           *
+* So, both of these modes of operation are possible: - access metadata      *
+* regardless of native container format through the use a common key -      *
+* access metadata natively using a native key format                        *
+*                                                                           *
+****************************************************************************/
+/* Opaque reference to a metadata object*/
+typedef struct OpaqueQTMetaDataRef*     QTMetaDataRef;
+/* Opaque identifier for metadata item*/
+typedef UInt64                          QTMetaDataItem;
+enum {
+  kQTMetaDataItemUninitialized  = 0     /* Uninitialized metadata item identifier*/
+};
+
+/*
+    Metadata Storage Format.
+*/
+typedef OSType                          QTMetaDataStorageFormat;
+enum {
+  kQTMetaDataStorageFormatWildcard = 0  /* Wildcard storage format*/
+};
+
+/*
+    Metadata Key Format.
+*/
+typedef OSType                          QTMetaDataKeyFormat;
+enum {
+  kQTMetaDataKeyFormatWildcard  = 0     /* Match any key regardless of key format*/
+};
+
+/****************************************
+ *  Common Key Format                   *
+ ***************************************/
+enum {
+  kQTMetaDataKeyFormatCommon    = 'comn'
+};
+
+/* Pre-defined meta keys*/
+enum {
+  kQTMetaDataCommonKeyAuthor    = 'auth',
+  kQTMetaDataCommonKeyComment   = 'cmmt',
+  kQTMetaDataCommonKeyCopyright = 'cprt',
+  kQTMetaDataCommonKeyDirector  = 'dtor',
+  kQTMetaDataCommonKeyDisplayName = 'name',
+  kQTMetaDataCommonKeyInformation = 'info',
+  kQTMetaDataCommonKeyKeywords  = 'keyw',
+  kQTMetaDataCommonKeyProducer  = 'prod',
+  kQTMetaDataCommonKeyAlbum     = 'albm',
+  kQTMetaDataCommonKeyArtist    = 'arts',
+  kQTMetaDataCommonKeyArtwork   = 'artw',
+  kQTMetaDataCommonKeyChapterName = 'chap',
+  kQTMetaDataCommonKeyComposer  = 'comp',
+  kQTMetaDataCommonKeyDescription = 'desc',
+  kQTMetaDataCommonKeyGenre     = 'genr',
+  kQTMetaDataCommonKeyOriginalFormat = 'orif',
+  kQTMetaDataCommonKeyOriginalSource = 'oris',
+  kQTMetaDataCommonKeyPerformers = 'perf',
+  kQTMetaDataCommonKeySoftware  = 'soft',
+  kQTMetaDataCommonKeyWriter    = 'wrtr'
+};
+
+
+/****************************************
+ *  QuickTime Native Metadata Format    *
+ ***************************************/
+/* QTMetaDataStorageFormat type*/
+enum {
+  kQTMetaDataStorageFormatQuickTime = 'mdta' /* QuickTime metadata storage format*/
+};
+
+/* QTMetaDataKeyFormat type*/
+enum {
+  kQTMetaDataKeyFormatQuickTime = 'mdta' /* Reverse DNS format*/
+};
+
+/****************************************
+ *  iTunes Native Metadata Format       *
+ ***************************************/
+/* QTMetaDataStorageFormat type*/
+enum {
+  kQTMetaDataStorageFormatiTunes = 'itms' /* iTunes metadata storage format*/
+};
+
+/* QTMetaDataKeyFormat type*/
+enum {
+  kQTMetaDataKeyFormatiTunesShortForm = 'itsk', /* FourCharCode*/
+  kQTMetaDataKeyFormatiTunesLongForm = 'itlk' /* Reverse DNS format*/
+};
+
+/* The list of keys for iTunes metadata is TBA.*/
+
+/****************************************
+ *  UserData Native Format              *
+ ***************************************/
+/* QTMetaDataStorageFormat type*/
+enum {
+  kQTMetaDataStorageFormatUserData = 'udta' /* UserData storage format*/
+};
+
+/* QTMetaDataKeyFormat type*/
+enum {
+  kQTMetaDataKeyFormatUserData  = 'udta' /* FourCharCode*/
+};
+
+/* The list of keys are the User Data Identifiers (e.g. kUserDataTextAuthor, kUserDataTextCopyright, etc.)*/
+
+/*
+    Mapping from common keys to user data identifiers:
+    
+    kQTMetaDataCommonKeyAuthor                  -> kUserDataTextAuthor
+    kQTMetaDataCommonKeyComment                 -> kUserDataTextComment
+    kQTMetaDataCommonKeyCopyright               -> kUserDataTextCopyright
+    kQTMetaDataCommonKeyDirector                -> kUserDataTextDirector
+    kQTMetaDataCommonKeyDisplayName             -> kUserDataTextFullName
+    kQTMetaDataCommonKeyInformation             -> kUserDataTextInformation
+    kQTMetaDataCommonKeyKeywords                -> kUserDataTextKeywords
+    kQTMetaDataCommonKeyProducer                -> kUserDataTextProducer
+    kQTMetaDataCommonKeyAlbum                   -> kUserDataTextAlbum
+    kQTMetaDataCommonKeyArtist                  -> kUserDataTextArtist
+    kQTMetaDataCommonKeyChapterName             -> kUserDataTextChapter
+    kQTMetaDataCommonKeyComposer                -> kUserDataTextComposer
+    kQTMetaDataCommonKeyDescription             -> kUserDataTextDescription
+    kQTMetaDataCommonKeyGenre                   -> kUserDataTextGenre
+    kQTMetaDataCommonKeyOriginalFormat          -> kUserDataTextOriginalFormat
+    kQTMetaDataCommonKeyOriginalSource          -> kUserDataTextOriginalSource
+    kQTMetaDataCommonKeyPerformers              -> kUserDataTextPerformers
+    kQTMetaDataCommonKeySoftware                -> kUserDataTextSoftware
+    kQTMetaDataCommonKeyWriter                  -> kUserDataTextWriter
+*/
+/****************************************
+ *  Metadata Property Class ID          *
+ ***************************************/
+enum {
+  kPropertyClass_MetaData       = 'meta'
+};
+
+/* Metadata Property ID */
+
+/*
+ */
+enum {
+
+  /*
+   * kQTMetaDataPropertyID_StorageFormats: The list of storage formats
+   * (QTMetaDataStorageFormat) associated with this QTMetaDataRef
+   * object. Return - C-style array of OSTypes, Read
+   */
+  kQTMetaDataPropertyID_StorageFormats = 'fmts',
+
+  /*
+   * kQTMetaDataPropertyID_OwnerType: The owner type associated with
+   * this QTMetaDataRef object. Return - OSType (QT_MOVIE_TYPE,
+   * QT_TRACK_TYPE, QT_MEDIA_TYPE), Read
+   */
+  kQTMetaDataPropertyID_OwnerType = 'ownt',
+
+  /*
+   * kQTMetaDataPropertyID_Owner: The owner associated with this
+   * QTMetaDataRef object. The QTMetaDataRef object does not
+   * necessarily need to have an owner. Return - Movie, Track, or
+   * Media, Read
+   */
+  kQTMetaDataPropertyID_Owner   = 'ownr'
+};
+
+/* 
+    Metadata Item Property Class ID 
+*/
+enum {
+  kPropertyClass_MetaDataItem   = 'mdit'
+};
+
+/* Metadata Item Property ID */
+
+/*
+ */
+enum {
+
+  /*
+   * kQTMetaDataItemPropertyID_Value: The value of the metadata item.
+   * Return - C-style array of UInt8, Read
+   */
+  kQTMetaDataItemPropertyID_Value = 'valu',
+
+  /*
+   * kQTMetaDataItemPropertyID_DataType: The value type of the metadata
+   * item. Return - UInt32, Read/Write
+   */
+  kQTMetaDataItemPropertyID_DataType = 'dtyp',
+
+  /*
+   * kQTMetaDataItemPropertyID_StorageFormat: The storage format
+   * (QTMetaDataStorageFormat). Return - QTMetaDataStorageFormat, Read
+   */
+  kQTMetaDataItemPropertyID_StorageFormat = 'sfmt',
+
+  /*
+   * kQTMetaDataItemPropertyID_Key: The key associated with the
+   * metadata item. Return - C-style array of UInt8, Read/Write
+   */
+  kQTMetaDataItemPropertyID_Key = 'key ',
+
+  /*
+   * kQTMetaDataItemPropertyID_KeyFormat: The format of the key used.
+   * Return - OSType, Read/Write
+   */
+  kQTMetaDataItemPropertyID_KeyFormat = 'keyf',
+
+  /*
+   * kQTMetaDataItemPropertyID_Locale: The locale identifier based on
+   * the naming convention defined by the International Components for
+   * Unicode (ICU). The identifier consists of two pieces of ordered
+   * information: a language code and a region code. The language code
+   * is based on the ISO 639-1 standard, which defines two-character
+   * codes, such as "en" and "fr", for the world's most commonly used
+   * languages. If a two-letter code is not available, then ISO 639-2
+   * three-letter identifiers are accepted as well, for example "haw"
+   * for Hawaiian. The region code is defined by ISO 3166-1. The region
+   * code is in all caps and appended, after an underscore, after the
+   * language code, for example "en_US", "en_GB", and "fr_FR". Return -
+   * C-string, Read/Write
+   */
+  kQTMetaDataItemPropertyID_Locale = 'loc '
+};
+
+/* Well-known data type code*/
+enum {
+  kQTMetaDataTypeBinary         = 0,
+  kQTMetaDataTypeUTF8           = 1,
+  kQTMetaDataTypeUTF16BE        = 2,
+  kQTMetaDataTypeMacEncodedText = 3,
+  kQTMetaDataTypeJPEGImage      = 13,
+  kQTMetaDataTypePNGImage       = 14,
+  kQTMetaDataTypeSignedIntegerBE = 21,  /* The size of the integer is defined by the value size*/
+  kQTMetaDataTypeUnsignedIntegerBE = 22, /* The size of the integer is defined by the value size*/
+  kQTMetaDataTypeFloat32BE      = 23,
+  kQTMetaDataTypeFloat64BE      = 24,
+  kQTMetaDataTypeBMPImage       = 27
+};
+
+
+/****************************************
+ *  QTMetaDataRef Access                *
+ ***************************************/
+/*
+ *  QTCopyMovieMetaData()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern OSStatus 
+QTCopyMovieMetaData(
+  Movie            inMovie,
+  QTMetaDataRef *  outMetaData)                               AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  QTCopyTrackMetaData()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern OSStatus 
+QTCopyTrackMetaData(
+  Track            inTrack,
+  QTMetaDataRef *  outMetaData)                               AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  QTCopyMediaMetaData()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern OSStatus 
+QTCopyMediaMetaData(
+  Media            inMedia,
+  QTMetaDataRef *  outMetaData)                               AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  QTMetaDataRetain()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern QTMetaDataRef 
+QTMetaDataRetain(QTMetaDataRef inMetaData)                    AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  QTMetaDataRelease()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern void 
+QTMetaDataRelease(QTMetaDataRef inMetaData)                   AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/****************************************
+ *  Metadata Item Routines              *
+ ***************************************/
+/*
+ *  QTMetaDataGetPropertyInfo()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern OSStatus 
+QTMetaDataGetPropertyInfo(
+  QTMetaDataRef          inMetaData,
+  QTPropertyClass        inPropClass,
+  QTPropertyID           inPropID,
+  QTPropertyValueType *  outPropType,
+  ByteCount *            outPropValueSize,
+  UInt32 *               outPropFlags)                        AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  QTMetaDataGetProperty()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern OSStatus 
+QTMetaDataGetProperty(
+  QTMetaDataRef        inMetaData,
+  QTPropertyClass      inPropClass,
+  QTPropertyID         inPropID,
+  ByteCount            inPropValueSize,
+  QTPropertyValuePtr   outPropValueAddress,
+  ByteCount *          outPropValueSizeUsed)                  AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  QTMetaDataSetProperty()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern OSStatus 
+QTMetaDataSetProperty(
+  QTMetaDataRef             inMetaData,
+  QTPropertyClass           inPropClass,
+  QTPropertyID              inPropID,
+  ByteCount                 inPropValueSize,
+  ConstQTPropertyValuePtr   inPropValueAddress)               AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  QTMetaDataGetItemValue()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern OSStatus 
+QTMetaDataGetItemValue(
+  QTMetaDataRef    inMetaData,
+  QTMetaDataItem   inItem,
+  UInt8 *          outValuePtr,
+  ByteCount        inValueSize,
+  ByteCount *      outActualSize)                             AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  QTMetaDataGetNextItem()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern OSStatus 
+QTMetaDataGetNextItem(
+  QTMetaDataRef             inMetaData,
+  QTMetaDataStorageFormat   inMetaDataFormat,
+  QTMetaDataItem            inCurrentItem,
+  QTMetaDataKeyFormat       inKeyFormat,
+  const UInt8 *             inKeyPtr,
+  ByteCount                 inKeySize,
+  QTMetaDataItem *          outNextItem)                      AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  QTMetaDataGetItemPropertyInfo()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern OSStatus 
+QTMetaDataGetItemPropertyInfo(
+  QTMetaDataRef          inMetaData,
+  QTMetaDataItem         inItem,
+  QTPropertyClass        inPropClass,
+  QTPropertyID           inPropID,
+  QTPropertyValueType *  outPropType,
+  ByteCount *            outPropValueSize,
+  UInt32 *               outPropFlags)                        AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  QTMetaDataGetItemProperty()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern OSStatus 
+QTMetaDataGetItemProperty(
+  QTMetaDataRef        inMetaData,
+  QTMetaDataItem       inItem,
+  QTPropertyClass      inPropClass,
+  QTPropertyID         inPropID,
+  ByteCount            inPropValueSize,
+  QTPropertyValuePtr   outPropValueAddress,
+  ByteCount *          outPropValueSizeUsed)                  AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  QTMetaDataSetItemProperty()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern OSStatus 
+QTMetaDataSetItemProperty(
+  QTMetaDataRef             inMetaData,
+  QTMetaDataItem            inItem,
+  QTPropertyClass           inPropClass,
+  QTPropertyID              inPropID,
+  ByteCount                 inPropValueSize,
+  ConstQTPropertyValuePtr   inPropValueAddress)               AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  QTMetaDataGetItemCountWithKey()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern OSStatus 
+QTMetaDataGetItemCountWithKey(
+  QTMetaDataRef             inMetaData,
+  QTMetaDataStorageFormat   inMetaDataFormat,
+  QTMetaDataKeyFormat       inKeyFormat,
+  const UInt8 *             inKeyPtr,
+  ByteCount                 inKeySize,
+  ItemCount *               outCount)                         AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  QTMetaDataAddItem()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern OSStatus 
+QTMetaDataAddItem(
+  QTMetaDataRef             inMetaData,
+  QTMetaDataStorageFormat   inMetaDataFormat,
+  QTMetaDataKeyFormat       inKeyFormat,
+  const UInt8 *             inKeyPtr,
+  ByteCount                 inKeySize,
+  const UInt8 *             inValuePtr,
+  ByteCount                 inValueSize,
+  UInt32                    inDataType,
+  QTMetaDataItem *          outItem)                          AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  QTMetaDataSetItem()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern OSStatus 
+QTMetaDataSetItem(
+  QTMetaDataRef    inMetaData,
+  QTMetaDataItem   inItem,
+  UInt8 *          inValuePtr,
+  ByteCount        inValueSize,
+  UInt32           inDataType)                                AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  QTMetaDataRemoveItem()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern OSStatus 
+QTMetaDataRemoveItem(
+  QTMetaDataRef    inMetaData,
+  QTMetaDataItem   inItem)                                    AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+/*
+ *  QTMetaDataRemoveItemsWithKey()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ *    Windows:          in qtmlClient.lib version 10.4 (or QuickTime 7.0) and later
+ */
+extern OSStatus 
+QTMetaDataRemoveItemsWithKey(
+  QTMetaDataRef             inMetaData,
+  QTMetaDataStorageFormat   inMetaDataFormat,
+  QTMetaDataKeyFormat       inKeyFormat,
+  const UInt8 *             inKeyPtr,
+  ByteCount                 inKeySize)                        AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+
+
 /*
  *  MusicMediaGetIndexedTunePlayer()
  *  
@@ -13247,7 +17915,147 @@ MusicMediaGetIndexedTunePlayer(
   ComponentInstance *  tp)                                    AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
-/* UPP call backs */
+
+
+
+typedef struct QTBandwidthUsageRecord**  QTBandwidthReference;
+typedef struct QTScheduledBandwidthUsageRecord**  QTScheduledBandwidthReference;
+enum {
+  BandwidthManagementPrefsType  = 'bwmg'
+};
+
+
+struct BandwidthManagementPrefsRecord {
+  Boolean             overrideConnectionSpeedForBandwidth;
+};
+typedef struct BandwidthManagementPrefsRecord BandwidthManagementPrefsRecord;
+typedef BandwidthManagementPrefsRecord * BandwidthManagementPrefsPtr;
+typedef BandwidthManagementPrefsPtr *   BandwidthManagementPrefsHandle;
+enum {
+  kQTBandwidthNotifyNeedToStop  = 1L << 0,
+  kQTBandwidthNotifyGoodToGo    = 1L << 1,
+  kQTBandwidthChangeRequest     = 1L << 2,
+  kQTBandwidthQueueRequest      = 1L << 3,
+  kQTBandwidthScheduledRequest  = 1L << 4,
+  kQTBandwidthVoluntaryRelease  = 1L << 5
+};
+
+typedef CALLBACK_API( OSErr , QTBandwidthNotificationProcPtr )(long flags, void *reserved, void *refcon);
+struct QTScheduledBandwidthRecord {
+  long                recordSize;             /* total number of bytes in QTScheduledBandwidthRecord*/
+
+  long                priority;
+  long                dataRate;
+  CompTimeValue       startTime;              /* bandwidth usage start time*/
+  CompTimeValue       duration;               /* duration of bandwidth usage (0 if unknown)*/
+  CompTimeValue       prerollDuration;        /* time for negotiation before startTime (0 if unknown)*/
+  TimeScale           scale;                  /* timescale of value/duration/prerollDuration fields*/
+  TimeBase            base;                   /* timebase*/
+};
+typedef struct QTScheduledBandwidthRecord QTScheduledBandwidthRecord;
+typedef QTScheduledBandwidthRecord *    QTScheduledBandwidthPtr;
+typedef QTScheduledBandwidthPtr *       QTScheduledBandwidthHandle;
+typedef STACK_UPP_TYPE(QTBandwidthNotificationProcPtr)          QTBandwidthNotificationUPP;
+/*
+ *  QTBandwidthRequest()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    No longer need to call bandwidth management functions.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ */
+extern OSErr 
+QTBandwidthRequest(
+  long                         priority,
+  QTBandwidthNotificationUPP   callback,
+  const void *                 refcon,
+  QTBandwidthReference *       bwRef,
+  long                         flags)                         AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4;
+
+
+/*
+ *  QTBandwidthRequestForTimeBase()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    No longer need to call bandwidth management functions.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.1 and later
+ *    Windows:          in qtmlClient.lib 4.1 and later
+ */
+extern OSErr 
+QTBandwidthRequestForTimeBase(
+  TimeBase                     tb,
+  long                         priority,
+  QTBandwidthNotificationUPP   callback,
+  const void *                 refcon,
+  QTBandwidthReference *       bwRef,
+  long                         flags)                         AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4;
+
+
+/*
+ *  QTBandwidthRelease()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    No longer need to call bandwidth management functions.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.0 and later
+ *    Windows:          in qtmlClient.lib 4.0 and later
+ */
+extern OSErr 
+QTBandwidthRelease(
+  QTBandwidthReference   bwRef,
+  long                   flags)                               AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4;
+
+
+/*
+ *  QTScheduledBandwidthRequest()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    No longer need to call bandwidth management functions.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.1 and later
+ *    Windows:          in qtmlClient.lib 4.1 and later
+ */
+extern OSErr 
+QTScheduledBandwidthRequest(
+  QTScheduledBandwidthPtr          scheduleRec,
+  QTBandwidthNotificationUPP       notificationCallback,
+  void *                           refcon,
+  QTScheduledBandwidthReference *  sbwRef,
+  long                             flags)                     AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4;
+
+
+/*
+ *  QTScheduledBandwidthRelease()   *** DEPRECATED ***
+ *  
+ *  Deprecated:
+ *    No longer need to call bandwidth management functions.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework but deprecated in 10.4
+ *    CarbonLib:        in CarbonLib 1.1 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 4.1 and later
+ *    Windows:          in qtmlClient.lib 4.1 and later
+ */
+extern OSErr 
+QTScheduledBandwidthRelease(
+  QTScheduledBandwidthReference   sbwRef,
+  long                            flags)                      AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4;
+
+
 /*
  *  NewMCActionFilterUPP()
  *  
@@ -13293,6 +18101,28 @@ extern QTMoviePropertyListenerUPP
 NewQTMoviePropertyListenerUPP(QTMoviePropertyListenerProcPtr userRoutine) AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
 
 /*
+ *  NewQTTrackPropertyListenerUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 9.9 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ */
+extern QTTrackPropertyListenerUPP
+NewQTTrackPropertyListenerUPP(QTTrackPropertyListenerProcPtr userRoutine) AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+/*
+ *  NewQTBandwidthNotificationUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ */
+extern QTBandwidthNotificationUPP
+NewQTBandwidthNotificationUPP(QTBandwidthNotificationProcPtr userRoutine) AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4;
+
+/*
  *  DisposeMCActionFilterUPP()
  *  
  *  Availability:
@@ -13335,6 +18165,28 @@ DisposeMCActionNotificationUPP(MCActionNotificationUPP userUPP) AVAILABLE_MAC_OS
  */
 extern void
 DisposeQTMoviePropertyListenerUPP(QTMoviePropertyListenerUPP userUPP) AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
+
+/*
+ *  DisposeQTTrackPropertyListenerUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 9.9 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ */
+extern void
+DisposeQTTrackPropertyListenerUPP(QTTrackPropertyListenerUPP userUPP) AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+/*
+ *  DisposeQTBandwidthNotificationUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ */
+extern void
+DisposeQTBandwidthNotificationUPP(QTBandwidthNotificationUPP userUPP) AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4;
 
 /*
  *  InvokeMCActionFilterUPP()
@@ -13401,6 +18253,82 @@ InvokeQTMoviePropertyListenerUPP(
   void *                      inUserData,
   QTMoviePropertyListenerUPP  userUPP)                        AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
 
+/*
+ *  InvokeQTTrackPropertyListenerUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 9.9 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ */
+extern void
+InvokeQTTrackPropertyListenerUPP(
+  Track                       inTrack,
+  QTPropertyClass             inPropClass,
+  QTPropertyID                inPropID,
+  void *                      inUserData,
+  QTTrackPropertyListenerUPP  userUPP)                        AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+
+/*
+ *  InvokeQTBandwidthNotificationUPP()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0.2 and later
+ *    Non-Carbon CFM:   available as macro/inline
+ */
+extern OSErr
+InvokeQTBandwidthNotificationUPP(
+  long                        flags,
+  void *                      reserved,
+  void *                      refcon,
+  QTBandwidthNotificationUPP  userUPP)                        AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_4;
+
+#if __MACH__
+  #ifdef __cplusplus
+    inline MCActionFilterUPP                                    NewMCActionFilterUPP(MCActionFilterProcPtr userRoutine) { return userRoutine; }
+    inline MCActionFilterWithRefConUPP                          NewMCActionFilterWithRefConUPP(MCActionFilterWithRefConProcPtr userRoutine) { return userRoutine; }
+    inline MCActionNotificationUPP                              NewMCActionNotificationUPP(MCActionNotificationProcPtr userRoutine) { return userRoutine; }
+    inline QTMoviePropertyListenerUPP                           NewQTMoviePropertyListenerUPP(QTMoviePropertyListenerProcPtr userRoutine) { return userRoutine; }
+    inline QTTrackPropertyListenerUPP                           NewQTTrackPropertyListenerUPP(QTTrackPropertyListenerProcPtr userRoutine) { return userRoutine; }
+    inline QTBandwidthNotificationUPP                           NewQTBandwidthNotificationUPP(QTBandwidthNotificationProcPtr userRoutine) { return userRoutine; }
+    inline void                                                 DisposeMCActionFilterUPP(MCActionFilterUPP) { }
+    inline void                                                 DisposeMCActionFilterWithRefConUPP(MCActionFilterWithRefConUPP) { }
+    inline void                                                 DisposeMCActionNotificationUPP(MCActionNotificationUPP) { }
+    inline void                                                 DisposeQTMoviePropertyListenerUPP(QTMoviePropertyListenerUPP) { }
+    inline void                                                 DisposeQTTrackPropertyListenerUPP(QTTrackPropertyListenerUPP) { }
+    inline void                                                 DisposeQTBandwidthNotificationUPP(QTBandwidthNotificationUPP) { }
+    inline Boolean                                              InvokeMCActionFilterUPP(MovieController mc, short * action, void * params, MCActionFilterUPP userUPP) { return (*userUPP)(mc, action, params); }
+    inline Boolean                                              InvokeMCActionFilterWithRefConUPP(MovieController mc, short action, void * params, long refCon, MCActionFilterWithRefConUPP userUPP) { return (*userUPP)(mc, action, params, refCon); }
+    inline Boolean                                              InvokeMCActionNotificationUPP(MovieController mc, short action, void * params, UInt32 inFlags, UInt32 * outFlags, void * refCon, MCActionNotificationUPP userUPP) { return (*userUPP)(mc, action, params, inFlags, outFlags, refCon); }
+    inline void                                                 InvokeQTMoviePropertyListenerUPP(Movie inMovie, QTPropertyClass inPropClass, QTPropertyID inPropID, void * inUserData, QTMoviePropertyListenerUPP userUPP) { (*userUPP)(inMovie, inPropClass, inPropID, inUserData); }
+    inline void                                                 InvokeQTTrackPropertyListenerUPP(Track inTrack, QTPropertyClass inPropClass, QTPropertyID inPropID, void * inUserData, QTTrackPropertyListenerUPP userUPP) { (*userUPP)(inTrack, inPropClass, inPropID, inUserData); }
+    inline OSErr                                                InvokeQTBandwidthNotificationUPP(long flags, void * reserved, void * refcon, QTBandwidthNotificationUPP userUPP) { return (*userUPP)(flags, reserved, refcon); }
+  #else
+    #define NewMCActionFilterUPP(userRoutine)                   ((MCActionFilterUPP)userRoutine)
+    #define NewMCActionFilterWithRefConUPP(userRoutine)         ((MCActionFilterWithRefConUPP)userRoutine)
+    #define NewMCActionNotificationUPP(userRoutine)             ((MCActionNotificationUPP)userRoutine)
+    #define NewQTMoviePropertyListenerUPP(userRoutine)          ((QTMoviePropertyListenerUPP)userRoutine)
+    #define NewQTTrackPropertyListenerUPP(userRoutine)          ((QTTrackPropertyListenerUPP)userRoutine)
+    #define NewQTBandwidthNotificationUPP(userRoutine)          ((QTBandwidthNotificationUPP)userRoutine)
+    #define DisposeMCActionFilterUPP(userUPP)
+    #define DisposeMCActionFilterWithRefConUPP(userUPP)
+    #define DisposeMCActionNotificationUPP(userUPP)
+    #define DisposeQTMoviePropertyListenerUPP(userUPP)
+    #define DisposeQTTrackPropertyListenerUPP(userUPP)
+    #define DisposeQTBandwidthNotificationUPP(userUPP)
+    #define InvokeMCActionFilterUPP(mc, action, params, userUPP) (*userUPP)(mc, action, params)
+    #define InvokeMCActionFilterWithRefConUPP(mc, action, params, refCon, userUPP) (*userUPP)(mc, action, params, refCon)
+    #define InvokeMCActionNotificationUPP(mc, action, params, inFlags, outFlags, refCon, userUPP) (*userUPP)(mc, action, params, inFlags, outFlags, refCon)
+    #define InvokeQTMoviePropertyListenerUPP(inMovie, inPropClass, inPropID, inUserData, userUPP) (*userUPP)(inMovie, inPropClass, inPropID, inUserData)
+    #define InvokeQTTrackPropertyListenerUPP(inTrack, inPropClass, inPropID, inUserData, userUPP) (*userUPP)(inTrack, inPropClass, inPropID, inUserData)
+    #define InvokeQTBandwidthNotificationUPP(flags, reserved, refcon, userUPP) (*userUPP)(flags, reserved, refcon)
+  #endif
+#endif
+
+
+
+/* UPP call backs */
 
 /* selectors for component calls */
 enum {
@@ -13536,7 +18464,7 @@ enum {
 };
 
 
-#pragma options align=reset
+#pragma pack(pop)
 
 #ifdef __cplusplus
 }

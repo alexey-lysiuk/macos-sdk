@@ -3,9 +3,9 @@
  
      Contains:   QuickTime Image Compression Interfaces.
  
-     Version:    QuickTime_6
+     Version:    QuickTime 7.1.2
  
-     Copyright:  © 1990-2003 by Apple Computer, Inc., all rights reserved
+     Copyright:  © 1990-2006 by Apple Computer, Inc., all rights reserved
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -57,6 +57,9 @@
 #define kDVCPro50PALCodecType 			'dv5p'
 #define kDVCPro100NTSCCodecType 		'dv1n'
 #define kDVCPro100PALCodecType 			'dv1p'
+#define kDVCPROHD720pCodecType 			'dvhp'
+#define kDVCPROHD1080i60CodecType 		'dvh6'
+#define kDVCPROHD1080i50CodecType 		'dvh5'
 #define kBaseCodecType 					'base'
 #define kFLCCodecType 					'flic'
 #define kTargaCodecType 				'tga '
@@ -88,6 +91,7 @@
 #define k4444YpCbCrA8RCodecType 		'r408'				/*  Component Y'CbCrA 8-bit 4:4:4:4, rendering format. full range alpha, zero biased yuv */
 #define kJPEG2000CodecType 				'mjp2'
 #define kPixletCodecType 				'pxlt'
+#define kH264CodecType 					'avc1'
 
 #define codecInfoDoes1 					0x00000001			/*  codec can work with 1-bit pixels  */
 #define codecInfoDoes2 					0x00000002			/*  codec can work with 2-bit pixels  */
@@ -109,7 +113,9 @@
 #define codecInfoDoesVertFlip 			0x00020000			/*  codec can flip vertically on decompress  */
 #define codecInfoHasEffectParameterList  0x00040000			/*  codec implements get effects parameter list call, once was codecInfoDoesSkew  */
 #define codecInfoDoesBlend 				0x00080000			/*  codec can blend on decompress  */
+#define codecInfoDoesReorder 			0x00080000			/*  codec can rearrange frames during compression  */
 #define codecInfoDoesWarp 				0x00100000			/*  codec can warp arbitrarily on decompress  */
+#define codecInfoDoesMultiPass 			0x00100000			/*  codec can perform multi-pass compression  */
 #define codecInfoDoesRecompress 		0x00200000			/*  codec can recompress image without accumulating errors  */
 #define codecInfoDoesSpool 				0x00400000			/*  codec can spool image data  */
 #define codecInfoDoesRateConstrain 		0x00800000			/*  codec can data rate constrain  */
