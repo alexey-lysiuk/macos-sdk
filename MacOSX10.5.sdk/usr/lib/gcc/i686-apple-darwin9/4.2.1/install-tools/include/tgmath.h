@@ -83,7 +83,8 @@ Boston, MA 02111-1307, USA.  */
 #define __TGMATH_CPLX(z,R,C)                                                  \
   __builtin_choose_expr (__tg_cplx(z),                                        \
                          __tg_choose (__real__(z), C##f(z), (C)(z), C##l(z)), \
-                         __tg_choose (z, R##f(z), (R)(z), R##l(z)))
+			 /* APPLE LOCAL shorten-64-to-32 4604239 */	      \
+                         __tg_choose (z, R##f((float)z), (R)(z), R##l(z)))
 
 #define __TGMATH_CPLX_2(z1,z2,R,C)                                             \
   __builtin_choose_expr (__tg_cplx(z1) || __tg_cplx(z2),                       \
@@ -95,7 +96,8 @@ Boston, MA 02111-1307, USA.  */
 #define __TGMATH_REAL(x,R) \
   __tg_choose (x, R##f(x), (R)(x), R##l(x))
 #define __TGMATH_REAL_2(x,y,R) \
-  __tg_choose_2 (x, y, R##f(x,y), (R)(x,y), R##l(x,y))
+  /* APPLE LOCAL shorten-64-to-32 4604239 */	      \
+  __tg_choose_2 (x, y, R##f((float)x,(float)y), (R)(x,y), R##l(x,y))
 #define __TGMATH_REAL_3(x,y,z,R) \
   __tg_choose_3 (x, y, z, R##f(x,y,z), (R)(x,y,z), R##l(x,y,z))
 #define __TGMATH_REAL_1_2(x,y,R) \
