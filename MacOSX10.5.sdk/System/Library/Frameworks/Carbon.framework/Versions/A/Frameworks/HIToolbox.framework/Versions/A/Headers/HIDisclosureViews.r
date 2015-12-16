@@ -3,7 +3,7 @@
  
      Contains:   API and type definitions related to disclosure views.
  
-     Version:    HIToolbox-343~1
+     Version:    HIToolbox-343.0.1~1
  
      Copyright:  © 1999-2006 by Apple Computer, Inc., all rights reserved.
  

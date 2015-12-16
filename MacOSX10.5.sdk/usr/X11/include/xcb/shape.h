@@ -298,6 +298,14 @@ typedef struct xcb_shape_get_rectangles_reply_t {
     uint32_t rectangles_len; /**<  */
 } xcb_shape_get_rectangles_reply_t;
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_shape_op_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_shape_op_t)
+ */
 
 /*****************************************************************************
  **
@@ -311,6 +319,15 @@ typedef struct xcb_shape_get_rectangles_reply_t {
 void
 xcb_shape_op_next (xcb_shape_op_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_shape_op_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -324,6 +341,14 @@ xcb_shape_op_next (xcb_shape_op_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_shape_op_end (xcb_shape_op_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_shape_kind_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_shape_kind_t)
+ */
 
 /*****************************************************************************
  **
@@ -337,6 +362,15 @@ xcb_shape_op_end (xcb_shape_op_iterator_t i  /**< */);
 void
 xcb_shape_kind_next (xcb_shape_kind_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_shape_kind_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -350,6 +384,14 @@ xcb_shape_kind_next (xcb_shape_kind_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_shape_kind_end (xcb_shape_kind_iterator_t i  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -363,6 +405,17 @@ xcb_shape_kind_end (xcb_shape_kind_iterator_t i  /**< */);
 xcb_shape_query_version_cookie_t
 xcb_shape_query_version (xcb_connection_t *c  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -376,6 +429,18 @@ xcb_shape_query_version (xcb_connection_t *c  /**< */);
 xcb_shape_query_version_cookie_t
 xcb_shape_query_version_unchecked (xcb_connection_t *c  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_shape_query_version_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -393,6 +458,17 @@ xcb_shape_query_version_reply (xcb_connection_t                  *c  /**< */,
                                xcb_shape_query_version_cookie_t   cookie  /**< */,
                                xcb_generic_error_t              **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -422,6 +498,14 @@ xcb_shape_rectangles_checked (xcb_connection_t      *c  /**< */,
                               uint32_t               rectangles_len  /**< */,
                               const xcb_rectangle_t *rectangles  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -451,6 +535,17 @@ xcb_shape_rectangles (xcb_connection_t      *c  /**< */,
                       uint32_t               rectangles_len  /**< */,
                       const xcb_rectangle_t *rectangles  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -476,6 +571,14 @@ xcb_shape_mask_checked (xcb_connection_t *c  /**< */,
                         int16_t           y_offset  /**< */,
                         xcb_pixmap_t      source_bitmap  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -501,6 +604,17 @@ xcb_shape_mask (xcb_connection_t *c  /**< */,
                 int16_t           y_offset  /**< */,
                 xcb_pixmap_t      source_bitmap  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -528,6 +642,14 @@ xcb_shape_combine_checked (xcb_connection_t *c  /**< */,
                            int16_t           y_offset  /**< */,
                            xcb_window_t      source_window  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -555,6 +677,17 @@ xcb_shape_combine (xcb_connection_t *c  /**< */,
                    int16_t           y_offset  /**< */,
                    xcb_window_t      source_window  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -576,6 +709,14 @@ xcb_shape_offset_checked (xcb_connection_t *c  /**< */,
                           int16_t           x_offset  /**< */,
                           int16_t           y_offset  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -597,6 +738,14 @@ xcb_shape_offset (xcb_connection_t *c  /**< */,
                   int16_t           x_offset  /**< */,
                   int16_t           y_offset  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -612,6 +761,17 @@ xcb_shape_query_extents_cookie_t
 xcb_shape_query_extents (xcb_connection_t *c  /**< */,
                          xcb_window_t      destination_window  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -627,6 +787,18 @@ xcb_shape_query_extents_cookie_t
 xcb_shape_query_extents_unchecked (xcb_connection_t *c  /**< */,
                                    xcb_window_t      destination_window  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_shape_query_extents_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -644,6 +816,17 @@ xcb_shape_query_extents_reply (xcb_connection_t                  *c  /**< */,
                                xcb_shape_query_extents_cookie_t   cookie  /**< */,
                                xcb_generic_error_t              **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -661,6 +844,14 @@ xcb_shape_select_input_checked (xcb_connection_t *c  /**< */,
                                 xcb_window_t      destination_window  /**< */,
                                 uint8_t           enable  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -678,6 +869,14 @@ xcb_shape_select_input (xcb_connection_t *c  /**< */,
                         xcb_window_t      destination_window  /**< */,
                         uint8_t           enable  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -693,6 +892,17 @@ xcb_shape_input_selected_cookie_t
 xcb_shape_input_selected (xcb_connection_t *c  /**< */,
                           xcb_window_t      destination_window  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -708,6 +918,18 @@ xcb_shape_input_selected_cookie_t
 xcb_shape_input_selected_unchecked (xcb_connection_t *c  /**< */,
                                     xcb_window_t      destination_window  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_shape_input_selected_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -725,6 +947,14 @@ xcb_shape_input_selected_reply (xcb_connection_t                   *c  /**< */,
                                 xcb_shape_input_selected_cookie_t   cookie  /**< */,
                                 xcb_generic_error_t               **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -742,6 +972,17 @@ xcb_shape_get_rectangles (xcb_connection_t *c  /**< */,
                           xcb_window_t      window  /**< */,
                           xcb_shape_kind_t  source_kind  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -798,6 +1039,18 @@ xcb_shape_get_rectangles_rectangles_length (const xcb_shape_get_rectangles_reply
 xcb_rectangle_iterator_t
 xcb_shape_get_rectangles_rectangles_iterator (const xcb_shape_get_rectangles_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_shape_get_rectangles_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **

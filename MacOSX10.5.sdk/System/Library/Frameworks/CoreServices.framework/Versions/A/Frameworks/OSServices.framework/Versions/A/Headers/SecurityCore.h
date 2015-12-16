@@ -3,7 +3,7 @@
  
      Contains:   Master include for SecurityCore private framework
  
-     Version:    SecurityCore-29877~392
+     Version:    SecurityCore-29877~541
  
      Copyright:  © 2000-2006 by Apple Computer, Inc., all rights reserved.
  

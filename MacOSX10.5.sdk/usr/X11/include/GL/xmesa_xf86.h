@@ -41,6 +41,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #include "scrnintstr.h"
 #include "pixmapstr.h"
+#include "gcstruct.h"
 
 typedef struct _XMesaImageRec XMesaImage;
 
@@ -123,8 +124,7 @@ do { \
 do { \
     /* Assumes: Images are always in ZPixmap format */ \
     (void) __d; \
-    if (__sx || __sy) /* The non-trivial case */ \
-	XMesaPutImageHelper(__d,__b,__gc,__i,__sx,__sy,__x,__y,__w,__h); \
+    ASSERT(!__sx && !__sy); /* The SubImage case */     \
     ValidateGC(__b, __gc); \
     (*__gc->ops->PutImage)(__b, __gc, ((XMesaDrawable)(__b))->depth, \
 			   __x, __y, __w, __h, 0, ZPixmap, \

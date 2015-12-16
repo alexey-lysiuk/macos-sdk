@@ -149,7 +149,7 @@ extern int sys_nerr;
  */
 #if defined(X_NOT_POSIX)
 #include <fcntl.h>
-#if defined(USL) || defined(CRAY) || defined(MOTOROLA) || (defined(i386) && (defined(SYSV) || defined(SVR4))) || defined(__sxg__)
+#if defined(USL) || defined(CRAY) || defined(MOTOROLA) || (defined(__i386__) && (defined(SYSV) || defined(SVR4))) || defined(__sxg__)
 #include <unistd.h>
 #endif
 #ifdef WIN32

@@ -51,7 +51,11 @@
     #if defined(__WIN32__)
         #define NS_REQUIRES_NIL_TERMINATION
     #else
+        #if defined(__APPLE_CC__) && (__APPLE_CC__ >= 5549)
+            #define NS_REQUIRES_NIL_TERMINATION __attribute__((sentinel(0,1)))
+        #else
         #define NS_REQUIRES_NIL_TERMINATION __attribute__((sentinel))
+        #endif
     #endif
 #endif
 

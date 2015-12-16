@@ -205,6 +205,14 @@ typedef struct xcb_shm_create_pixmap_request_t {
     uint32_t       offset; /**<  */
 } xcb_shm_create_pixmap_request_t;
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_shm_seg_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_shm_seg_t)
+ */
 
 /*****************************************************************************
  **
@@ -218,6 +226,15 @@ typedef struct xcb_shm_create_pixmap_request_t {
 void
 xcb_shm_seg_next (xcb_shm_seg_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_shm_seg_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -231,6 +248,14 @@ xcb_shm_seg_next (xcb_shm_seg_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_shm_seg_end (xcb_shm_seg_iterator_t i  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -244,6 +269,17 @@ xcb_shm_seg_end (xcb_shm_seg_iterator_t i  /**< */);
 xcb_shm_query_version_cookie_t
 xcb_shm_query_version (xcb_connection_t *c  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -257,6 +293,18 @@ xcb_shm_query_version (xcb_connection_t *c  /**< */);
 xcb_shm_query_version_cookie_t
 xcb_shm_query_version_unchecked (xcb_connection_t *c  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_shm_query_version_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -274,6 +322,17 @@ xcb_shm_query_version_reply (xcb_connection_t                *c  /**< */,
                              xcb_shm_query_version_cookie_t   cookie  /**< */,
                              xcb_generic_error_t            **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -293,6 +352,14 @@ xcb_shm_attach_checked (xcb_connection_t *c  /**< */,
                         uint32_t          shmid  /**< */,
                         uint8_t           read_only  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -312,6 +379,17 @@ xcb_shm_attach (xcb_connection_t *c  /**< */,
                 uint32_t          shmid  /**< */,
                 uint8_t           read_only  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -327,6 +405,14 @@ xcb_void_cookie_t
 xcb_shm_detach_checked (xcb_connection_t *c  /**< */,
                         xcb_shm_seg_t     shmseg  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -342,6 +428,17 @@ xcb_void_cookie_t
 xcb_shm_detach (xcb_connection_t *c  /**< */,
                 xcb_shm_seg_t     shmseg  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -385,6 +482,14 @@ xcb_shm_put_image_checked (xcb_connection_t *c  /**< */,
                            xcb_shm_seg_t     shmseg  /**< */,
                            uint32_t          offset  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -428,6 +533,14 @@ xcb_shm_put_image (xcb_connection_t *c  /**< */,
                    xcb_shm_seg_t     shmseg  /**< */,
                    uint32_t          offset  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -459,6 +572,17 @@ xcb_shm_get_image (xcb_connection_t *c  /**< */,
                    xcb_shm_seg_t     shmseg  /**< */,
                    uint32_t          offset  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -490,6 +614,18 @@ xcb_shm_get_image_unchecked (xcb_connection_t *c  /**< */,
                              xcb_shm_seg_t     shmseg  /**< */,
                              uint32_t          offset  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_shm_get_image_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -507,6 +643,17 @@ xcb_shm_get_image_reply (xcb_connection_t            *c  /**< */,
                          xcb_shm_get_image_cookie_t   cookie  /**< */,
                          xcb_generic_error_t        **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -534,6 +681,14 @@ xcb_shm_create_pixmap_checked (xcb_connection_t *c  /**< */,
                                xcb_shm_seg_t     shmseg  /**< */,
                                uint32_t          offset  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **

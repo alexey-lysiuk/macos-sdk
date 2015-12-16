@@ -3,7 +3,7 @@
  
      Contains:   Type definitions from the former Quickdraw.i
  
-     Version:    Quickdraw-242~2
+     Version:    Quickdraw-242~80
  
      Copyright:  © 2005-2006 by Apple Inc. all rights reserved.
  

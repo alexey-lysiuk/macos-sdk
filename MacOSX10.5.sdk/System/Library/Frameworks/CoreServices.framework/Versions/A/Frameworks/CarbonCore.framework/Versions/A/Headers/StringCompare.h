@@ -3,7 +3,7 @@
  
      Contains:   Public interfaces for String Comparison and related operations
  
-     Version:    CarbonCore-783~2
+     Version:    CarbonCore-783~118
  
      Copyright:  © 1985-2006 by Apple Inc., all rights reserved.
  

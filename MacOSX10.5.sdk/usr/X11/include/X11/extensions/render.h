@@ -26,10 +26,10 @@
 #ifndef _RENDER_H_
 #define _RENDER_H_
 
-typedef unsigned long	Glyph;
-typedef unsigned long	GlyphSet;
-typedef unsigned long	Picture;
-typedef unsigned long	PictFormat;
+typedef XID		Glyph;
+typedef XID		GlyphSet;
+typedef XID		Picture;
+typedef XID		PictFormat;
 
 #define RENDER_NAME	"RENDER"
 #define RENDER_MAJOR	0

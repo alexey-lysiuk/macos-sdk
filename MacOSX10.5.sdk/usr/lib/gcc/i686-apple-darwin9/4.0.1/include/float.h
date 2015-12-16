@@ -126,9 +126,11 @@ Boston, MA 02111-1307, USA.  */
 #define LDBL_MIN	__LDBL_MIN__
 
 /* Addition rounds to 0: zero, 1: nearest, 2: +inf, 3: -inf, -1: unknown.  */
-/* ??? This is supposed to change with calls to fesetround in <fenv.h>.  */
+/* APPLE LOCAL begin ARM 5526308 */
+/* This changes with calls to fesetround in <fenv.h>.  */
 #undef FLT_ROUNDS
-#define FLT_ROUNDS 1
+#define FLT_ROUNDS (__builtin_flt_rounds ())
+/* APPLE LOCAL end ARM 5526308 */
 
 #if defined (__STDC_VERSION__) && __STDC_VERSION__ >= 199901L
 /* The floating-point expression evaluation method.

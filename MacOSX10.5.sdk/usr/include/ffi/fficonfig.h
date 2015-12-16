@@ -6,6 +6,10 @@
 	NOTE: This file was added by PyObjC.
 */
 
+#if defined(__APPLE__) && defined(__MACH__) && !defined(MACOSX)
+	#define MACOSX
+#endif
+
 #ifndef MACOSX
 #error "This file is only supported on Mac OS X"
 #endif

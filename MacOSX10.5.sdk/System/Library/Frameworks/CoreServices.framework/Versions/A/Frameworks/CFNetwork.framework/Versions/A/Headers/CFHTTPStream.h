@@ -3,9 +3,7 @@
  
      Contains:   CoreFoundation Network HTTP streams header
  
-     Version:    CFNetwork-219~1
- 
-     Copyright:  © 2001-2006 by Apple Computer, Inc., all rights reserved
+     Copyright:  Copyright (c) 2001-2008, Apple Inc. All rights reserved.
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -32,7 +30,7 @@
 
 
 
-#include <AvailabilityMacros.h>
+#include <Availability.h>
 
 #if PRAGMA_ONCE
 #pragma once
@@ -57,7 +55,7 @@ extern "C" {
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-extern const SInt32 kCFStreamErrorDomainHTTP                         AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER;
+CFN_EXPORT const SInt32 kCFStreamErrorDomainHTTP                         __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_1_2);
 
 /*
  *  CFStreamErrorHTTP
@@ -96,7 +94,7 @@ typedef enum CFStreamErrorHTTP CFStreamErrorHTTP;
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-extern const CFStringRef kCFStreamPropertyHTTPResponseHeader         AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER;
+CFN_EXPORT const CFStringRef kCFStreamPropertyHTTPResponseHeader         __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_1_2);
 
 
 /*
@@ -113,7 +111,7 @@ extern const CFStringRef kCFStreamPropertyHTTPResponseHeader         AVAILABLE_M
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-extern const CFStringRef kCFStreamPropertyHTTPFinalURL               AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+CFN_EXPORT const CFStringRef kCFStreamPropertyHTTPFinalURL               __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_1_2);
 
 /*
  *  kCFStreamPropertyHTTPFinalRequest
@@ -129,7 +127,7 @@ extern const CFStringRef kCFStreamPropertyHTTPFinalURL               AVAILABLE_M
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-extern const CFStringRef kCFStreamPropertyHTTPFinalRequest           AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+CFN_EXPORT const CFStringRef kCFStreamPropertyHTTPFinalRequest           __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_1_2);
 
 /*
  *  kCFStreamPropertyHTTPProxy
@@ -149,7 +147,7 @@ extern const CFStringRef kCFStreamPropertyHTTPFinalRequest           AVAILABLE_M
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-extern const CFStringRef kCFStreamPropertyHTTPProxy                  AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+CFN_EXPORT const CFStringRef kCFStreamPropertyHTTPProxy                  __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_1_2);
 
 
 /*
@@ -164,7 +162,7 @@ extern const CFStringRef kCFStreamPropertyHTTPProxy                  AVAILABLE_M
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-extern const CFStringRef kCFStreamPropertyHTTPProxyHost              AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+CFN_EXPORT const CFStringRef kCFStreamPropertyHTTPProxyHost              __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_1_2);
 
 
 /*
@@ -178,7 +176,7 @@ extern const CFStringRef kCFStreamPropertyHTTPProxyHost              AVAILABLE_M
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-extern const CFStringRef kCFStreamPropertyHTTPProxyPort              AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+CFN_EXPORT const CFStringRef kCFStreamPropertyHTTPProxyPort              __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_1_2);
 /* matches kSCPropNetProxiesHTTPPort */
 
 
@@ -193,7 +191,7 @@ extern const CFStringRef kCFStreamPropertyHTTPProxyPort              AVAILABLE_M
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-extern const CFStringRef kCFStreamPropertyHTTPSProxyHost             AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+CFN_EXPORT const CFStringRef kCFStreamPropertyHTTPSProxyHost             __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_1_2);
 /* matches kSCPropNetProxiesHTTPSProxy */
 
 
@@ -208,7 +206,7 @@ extern const CFStringRef kCFStreamPropertyHTTPSProxyHost             AVAILABLE_M
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-extern const CFStringRef kCFStreamPropertyHTTPSProxyPort             AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+CFN_EXPORT const CFStringRef kCFStreamPropertyHTTPSProxyPort             __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_1_2);
 /* matches kSCPropNetProxiesHTTPSPort */
 
 
@@ -224,7 +222,7 @@ extern const CFStringRef kCFStreamPropertyHTTPSProxyPort             AVAILABLE_M
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-extern const CFStringRef kCFStreamPropertyHTTPShouldAutoredirect     AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+CFN_EXPORT const CFStringRef kCFStreamPropertyHTTPShouldAutoredirect     __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_1_2);
 
 
 /*
@@ -242,7 +240,7 @@ extern const CFStringRef kCFStreamPropertyHTTPShouldAutoredirect     AVAILABLE_M
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-extern const CFStringRef kCFStreamPropertyHTTPAttemptPersistentConnection AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+CFN_EXPORT const CFStringRef kCFStreamPropertyHTTPAttemptPersistentConnection __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_1_2);
 
 
 /*
@@ -259,7 +257,7 @@ extern const CFStringRef kCFStreamPropertyHTTPAttemptPersistentConnection AVAILA
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-extern const CFStringRef kCFStreamPropertyHTTPRequestBytesWrittenCount AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
+CFN_EXPORT const CFStringRef kCFStreamPropertyHTTPRequestBytesWrittenCount __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_1_2);
 
 
 /*********************/
@@ -301,10 +299,10 @@ extern const CFStringRef kCFStreamPropertyHTTPRequestBytesWrittenCount AVAILABLE
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-extern CFReadStreamRef 
+CFN_EXPORT CFReadStreamRef 
 CFReadStreamCreateForHTTPRequest(
   CFAllocatorRef     alloc,
-  CFHTTPMessageRef   request)                                 AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER;
+  CFHTTPMessageRef   request)                                 __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_1_2);
 
 
 /*
@@ -351,11 +349,11 @@ CFReadStreamCreateForHTTPRequest(
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-extern CFReadStreamRef 
+CFN_EXPORT CFReadStreamRef 
 CFReadStreamCreateForStreamedHTTPRequest(
   CFAllocatorRef     alloc,
   CFHTTPMessageRef   requestHeaders,
-  CFReadStreamRef    requestBody)                             AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
+  CFReadStreamRef    requestBody)                             __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_1_2);
 
 
 /*
@@ -381,10 +379,10 @@ CFReadStreamCreateForStreamedHTTPRequest(
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-extern void 
+CFN_EXPORT void 
 CFHTTPReadStreamSetRedirectsAutomatically(
   CFReadStreamRef   httpStream,
-  Boolean           shouldAutoRedirect)                       AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3;
+  Boolean           shouldAutoRedirect)                       __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_1,__MAC_10_3,__IPHONE_NA,__IPHONE_NA);
 
 
 /*
@@ -412,11 +410,11 @@ CFHTTPReadStreamSetRedirectsAutomatically(
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-extern void 
+CFN_EXPORT void 
 CFHTTPReadStreamSetProxy(
   CFReadStreamRef   httpStream,
   CFStringRef       proxyHost,
-  CFIndex           proxyPort)                                AVAILABLE_MAC_OS_X_VERSION_10_1_AND_LATER_BUT_DEPRECATED_IN_MAC_OS_X_VERSION_10_3;
+  CFIndex           proxyPort)                                __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_1,__MAC_10_3,__IPHONE_NA,__IPHONE_NA);
 
 
 

@@ -29,6 +29,8 @@
 #include <X11/extensions/Xfixes.h>
 #include <X11/Xfuncproto.h>
 
+#define XDAMAGE_1_1_INTERFACE
+
 typedef XID Damage;
 
 typedef struct {
@@ -62,6 +64,9 @@ XDamageDestroy (Display *dpy, Damage damage);
 void
 XDamageSubtract (Display *dpy, Damage damage, 
 		 XserverRegion repair, XserverRegion parts);
+
+void
+XDamageAdd (Display *dpy, Drawable drawable, XserverRegion region);
 
 _XFUNCPROTOEND
 

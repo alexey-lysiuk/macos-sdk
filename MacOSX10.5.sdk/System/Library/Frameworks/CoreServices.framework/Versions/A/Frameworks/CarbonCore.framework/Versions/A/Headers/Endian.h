@@ -3,7 +3,7 @@
  
      Contains:   Endian swapping utilties
  
-     Version:    CarbonCore-783~2
+     Version:    CarbonCore-783~118
  
      Copyright:  © 1997-2006 by Apple Computer, Inc., all rights reserved
  

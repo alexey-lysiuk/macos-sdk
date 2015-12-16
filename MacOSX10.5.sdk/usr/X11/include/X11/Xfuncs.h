@@ -89,6 +89,10 @@ void bcopy();
 #define atexit(f) on_exit(f, 0)
 #endif
 
+#if defined WIN32 && defined __MINGW32__
+#define bcopy(b1,b2,len) memmove(b2, b1, (size_t)(len))
+#endif
+
 #endif /* !(defined(XFree86LOADER) && defined(IN_MODULE)) */
 
 #endif /* _XFUNCS_H_ */

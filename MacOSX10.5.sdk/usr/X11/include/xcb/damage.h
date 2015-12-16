@@ -17,7 +17,7 @@
 #include "xfixes.h"
 
 #define XCB_DAMAGE_MAJOR_VERSION 1
-#define XCB_DAMAGE_MINOR_VERSION 0
+#define XCB_DAMAGE_MINOR_VERSION 1
   
 extern xcb_extension_t xcb_damage_id;
 
@@ -129,6 +129,20 @@ typedef struct xcb_damage_subtract_request_t {
     xcb_xfixes_region_t parts; /**<  */
 } xcb_damage_subtract_request_t;
 
+/** Opcode for xcb_damage_add. */
+#define XCB_DAMAGE_ADD 4
+
+/**
+ * @brief xcb_damage_add_request_t
+ **/
+typedef struct xcb_damage_add_request_t {
+    uint8_t             major_opcode; /**<  */
+    uint8_t             minor_opcode; /**<  */
+    uint16_t            length; /**<  */
+    xcb_drawable_t      drawable; /**<  */
+    xcb_xfixes_region_t region; /**<  */
+} xcb_damage_add_request_t;
+
 /** Opcode for xcb_damage_notify. */
 #define XCB_DAMAGE_NOTIFY 0
 
@@ -146,6 +160,14 @@ typedef struct xcb_damage_notify_event_t {
     xcb_rectangle_t     geometry; /**<  */
 } xcb_damage_notify_event_t;
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_damage_damage_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_damage_damage_t)
+ */
 
 /*****************************************************************************
  **
@@ -159,6 +181,15 @@ typedef struct xcb_damage_notify_event_t {
 void
 xcb_damage_damage_next (xcb_damage_damage_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_damage_damage_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -172,6 +203,14 @@ xcb_damage_damage_next (xcb_damage_damage_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_damage_damage_end (xcb_damage_damage_iterator_t i  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -189,6 +228,17 @@ xcb_damage_query_version (xcb_connection_t *c  /**< */,
                           uint32_t          client_major_version  /**< */,
                           uint32_t          client_minor_version  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -206,6 +256,18 @@ xcb_damage_query_version_unchecked (xcb_connection_t *c  /**< */,
                                     uint32_t          client_major_version  /**< */,
                                     uint32_t          client_minor_version  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_damage_query_version_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -223,6 +285,17 @@ xcb_damage_query_version_reply (xcb_connection_t                   *c  /**< */,
                                 xcb_damage_query_version_cookie_t   cookie  /**< */,
                                 xcb_generic_error_t               **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -242,6 +315,14 @@ xcb_damage_create_checked (xcb_connection_t    *c  /**< */,
                            xcb_drawable_t       drawable  /**< */,
                            uint8_t              level  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -261,6 +342,17 @@ xcb_damage_create (xcb_connection_t    *c  /**< */,
                    xcb_drawable_t       drawable  /**< */,
                    uint8_t              level  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -276,6 +368,14 @@ xcb_void_cookie_t
 xcb_damage_destroy_checked (xcb_connection_t    *c  /**< */,
                             xcb_damage_damage_t  damage  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -291,6 +391,17 @@ xcb_void_cookie_t
 xcb_damage_destroy (xcb_connection_t    *c  /**< */,
                     xcb_damage_damage_t  damage  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -310,6 +421,14 @@ xcb_damage_subtract_checked (xcb_connection_t    *c  /**< */,
                              xcb_xfixes_region_t  repair  /**< */,
                              xcb_xfixes_region_t  parts  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -328,6 +447,59 @@ xcb_damage_subtract (xcb_connection_t    *c  /**< */,
                      xcb_damage_damage_t  damage  /**< */,
                      xcb_xfixes_region_t  repair  /**< */,
                      xcb_xfixes_region_t  parts  /**< */);
+
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
+
+/*****************************************************************************
+ **
+ ** xcb_void_cookie_t xcb_damage_add_checked
+ ** 
+ ** @param xcb_connection_t    *c
+ ** @param xcb_drawable_t       drawable
+ ** @param xcb_xfixes_region_t  region
+ ** @returns xcb_void_cookie_t
+ **
+ *****************************************************************************/
+ 
+xcb_void_cookie_t
+xcb_damage_add_checked (xcb_connection_t    *c  /**< */,
+                        xcb_drawable_t       drawable  /**< */,
+                        xcb_xfixes_region_t  region  /**< */);
+
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
+
+/*****************************************************************************
+ **
+ ** xcb_void_cookie_t xcb_damage_add
+ ** 
+ ** @param xcb_connection_t    *c
+ ** @param xcb_drawable_t       drawable
+ ** @param xcb_xfixes_region_t  region
+ ** @returns xcb_void_cookie_t
+ **
+ *****************************************************************************/
+ 
+xcb_void_cookie_t
+xcb_damage_add (xcb_connection_t    *c  /**< */,
+                xcb_drawable_t       drawable  /**< */,
+                xcb_xfixes_region_t  region  /**< */);
 
 
 #endif

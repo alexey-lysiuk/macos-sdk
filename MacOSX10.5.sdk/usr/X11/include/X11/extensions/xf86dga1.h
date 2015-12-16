@@ -57,7 +57,7 @@ Bool XF86DGAQueryExtension(
 Status XF86DGAGetVideoLL(
     Display*			/* dpy */,
     int				/* screen */,
-    int *			/* base addr */,
+    unsigned int *		/* base addr */,
     int *			/* width */,
     int *			/* bank_size */,
     int *			/* ram_size */ 

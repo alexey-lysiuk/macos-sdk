@@ -3,7 +3,7 @@
  
      Contains:   Video Driver Interfaces.
  
-     Version:    Quickdraw-242~2
+     Version:    Quickdraw-242~80
  
      Copyright:  © 1986-2006 by Apple Computer, Inc., all rights reserved
  

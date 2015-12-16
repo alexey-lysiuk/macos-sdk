@@ -3,7 +3,7 @@
  
      Contains:   Quickdraw Text Interfaces.
  
-     Version:    Quickdraw-242~2
+     Version:    Quickdraw-242~80
  
      Copyright:  © 1983-2006 by Apple Inc. all rights reserved.
  

@@ -55,6 +55,8 @@
 extern "C" {
 #endif
 
+#include "fficonfig.h"
+
 /*	Specify which architecture libffi is configured for. */
 #ifdef MACOSX
 #	if defined(__i386__) || defined(__x86_64__)
@@ -71,7 +73,6 @@ extern "C" {
 /* ---- System configuration information --------------------------------- */
 
 #include "ffitarget.h"
-#include "fficonfig.h"
 
 #ifndef LIBFFI_ASM
 

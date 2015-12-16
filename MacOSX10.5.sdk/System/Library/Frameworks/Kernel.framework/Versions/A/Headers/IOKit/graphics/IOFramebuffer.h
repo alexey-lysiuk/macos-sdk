@@ -328,7 +328,7 @@ public:
     static void initialize();
 
     virtual bool requestTerminate( IOService * provider, IOOptionBits options );
-    virtual IOService * IOFramebuffer::probe( IOService * provider, SInt32 * score );
+    virtual IOService * probe( IOService * provider, SInt32 * score );
     virtual bool start( IOService * provider );
     virtual void stop( IOService * provider );
     virtual void free();

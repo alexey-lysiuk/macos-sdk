@@ -237,7 +237,7 @@ extern void XtProcessUnlock(
 
 #elif !defined(XTHREADS) && !defined(X_FORCE_USE_MTSAFE_API)
 /* Use regular, unsafe API. */
-# if defined(X_NOT_POSIX) && !defined(i386) && !defined(SYSV)
+# if defined(X_NOT_POSIX) && !defined(__i386__) && !defined(SYSV)
 extern struct passwd *getpwuid(), *getpwnam();
 # endif
 typedef int _Xgetpwparams;	/* dummy */

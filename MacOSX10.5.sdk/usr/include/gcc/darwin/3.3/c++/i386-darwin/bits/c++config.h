@@ -95,7 +95,7 @@
 /* config.h.in.  Generated automatically from configure.in by autoheader.  */
 
 /* Define if you have a working `mmap' system call.  */
-/* #undef _GLIBCPP_HAVE_MMAP */
+#define _GLIBCPP_HAVE_MMAP 1
 
 // Define if GCC supports weak symbols.
 #define _GLIBCPP_SUPPORTS_WEAK __GXX_WEAK__

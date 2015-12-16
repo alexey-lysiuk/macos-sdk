@@ -3,7 +3,7 @@
  
      Contains:   AppleEvents Registry Interface.
  
-     Version:    AppleEvents-402~2
+     Version:    AppleEvents-402~78
  
      Copyright:  © 1993-2006 by Apple Computer, Inc., all rights reserved
  

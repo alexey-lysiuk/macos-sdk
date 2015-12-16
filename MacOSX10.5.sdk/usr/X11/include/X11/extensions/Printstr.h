@@ -758,7 +758,7 @@ typedef struct _XpContext {
         struct _XpClient *clientHead; /* list of clients */
         CARD32 state;
         VisualID pageWin;
-        DevUnion *devPrivates;
+        PrivateRec *devPrivates;
         XpDriverFuncs funcs;
 	ClientPtr clientSlept;
 	int imageRes;
@@ -766,11 +766,9 @@ typedef struct _XpContext {
 
 #include <X11/fonts/fontstruct.h>	/* FontResolutionPtr */
 
-extern Bool XpAllocateContextPrivate(int, unsigned);
 extern FontResolutionPtr XpGetClientResolutions(ClientPtr, int *);
 extern XpContextPtr XpContextOfClient(ClientPtr);
 extern XpContextPtr XpGetPrintContext(ClientPtr);
-extern int XpAllocateContextPrivateIndex(void);
 extern int XpRehashPrinterList(void);
 extern void XpSetFontResFunc(ClientPtr);
 extern void XpUnsetFontResFunc(ClientPtr);

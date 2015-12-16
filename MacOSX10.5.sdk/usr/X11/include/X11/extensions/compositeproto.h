@@ -1,5 +1,6 @@
 /*
- * $Id: compositeproto.h,v 1.2 2004/07/31 06:16:50 anholt Exp $
+ * $Id: compositeproto.h,v 1.4 2004/07/08 07:20:55 keithp Exp $
+ *
  *
  * Copyright © 2006 Sun Microsystems
  *
@@ -50,7 +51,6 @@
 
 #define Window CARD32
 #define Region CARD32
-#define Pixmap CARD32
 
 /* 
  * requests and replies
@@ -187,6 +187,5 @@ typedef struct {
 
 #undef Window
 #undef Region
-#undef Pixmap
 
 #endif /* _COMPOSITEPROTO_H_ */

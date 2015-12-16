@@ -1,5 +1,3 @@
-/* $XdotOrg: xc/lib/xtrans/Xtransint.h,v 1.2 2004/04/23 18:44:27 eich Exp $ */
-/* $Xorg: Xtransint.h,v 1.4 2001/02/09 02:04:06 xorgcvs Exp $ */
 /*
 
 Copyright 1993, 1994, 1998  The Open Group
@@ -26,10 +24,7 @@ not be used in advertising or otherwise to promote the sale, use or
 other dealings in this Software without prior written authorization
 from The Open Group.
 
-*/
-/* $XFree86: xc/lib/xtrans/Xtransint.h,v 3.41 2003/08/28 00:35:23 tsi Exp $ */
-
-/* Copyright 1993, 1994 NCR Corporation - Dayton, Ohio, USA
+ * Copyright 1993, 1994 NCR Corporation - Dayton, Ohio, USA
  *
  * All Rights Reserved
  *
@@ -374,16 +369,17 @@ typedef struct _Xtransport_table {
 #define TRANS_DISABLED	(1<<2)	/* Don't open this one */
 #define TRANS_NOLISTEN  (1<<3)  /* Don't listen on this one */
 #define TRANS_NOUNLINK	(1<<4)	/* Dont unlink transport endpoints */
+#define TRANS_ABSTRACT	(1<<5)	/* Use abstract sockets if available */
 
 /* Flags to preserve when setting others */
-#define TRANS_KEEPFLAGS	(TRANS_NOUNLINK)
+#define TRANS_KEEPFLAGS	(TRANS_NOUNLINK|TRANS_ABSTRACT)
 
 /*
  * readv() and writev() don't exist or don't work correctly on some
  * systems, so they may be emulated.
  */
 
-#if defined(CRAY) || (defined(SYSV) && defined(i386) && !defined(__SCO__) && !defined(sun)) || defined(WIN32) || defined(__sxg__) || defined(__UNIXOS2__)
+#if defined(CRAY) || (defined(SYSV) && defined(__i386__) && !defined(__SCO__) && !defined(sun)) || defined(WIN32) || defined(__sxg__) || defined(__UNIXOS2__)
 
 #define READV(ciptr, iov, iovcnt)	TRANS(ReadV)(ciptr, iov, iovcnt)
 
@@ -397,10 +393,10 @@ static	int TRANS(ReadV)(
 
 #define READV(ciptr, iov, iovcnt)	readv(ciptr->fd, iov, iovcnt)
 
-#endif /* CRAY || (SYSV && i386) || WIN32 || __sxg__ || */
+#endif /* CRAY || (SYSV && __i386__) || WIN32 || __sxg__ || */
 
 
-#if defined(CRAY) || (defined(SYSV) && defined(i386) && !defined(__SCO__) && !defined(sun)) || defined(WIN32) || defined(__sxg__) || defined(__UNIXOS2__)
+#if defined(CRAY) || (defined(SYSV) && defined(__i386__) && !defined(__SCO__) && !defined(sun)) || defined(WIN32) || defined(__sxg__) || defined(__UNIXOS2__)
 
 #define WRITEV(ciptr, iov, iovcnt)	TRANS(WriteV)(ciptr, iov, iovcnt)
 

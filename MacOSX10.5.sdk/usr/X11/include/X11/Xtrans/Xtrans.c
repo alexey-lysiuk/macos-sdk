@@ -1,5 +1,3 @@
-/* $XdotOrg: xc/lib/xtrans/Xtrans.c,v 1.4 2004/11/15 15:06:56 ago Exp $ */
-/* $Xorg: Xtrans.c,v 1.4 2001/02/09 02:04:06 xorgcvs Exp $ */
 /*
 
 Copyright 1993, 1994, 1998  The Open Group
@@ -26,10 +24,7 @@ not be used in advertising or otherwise to promote the sale, use or
 other dealings in this Software without prior written authorization
 from The Open Group.
 
-*/
-/* $XFree86: xc/lib/xtrans/Xtrans.c,v 3.33 2003/08/11 17:41:29 eich Exp $ */
-
-/* Copyright 1993, 1994 NCR Corporation - Dayton, Ohio, USA
+ * Copyright 1993, 1994 NCR Corporation - Dayton, Ohio, USA
  *
  * All Rights Reserved
  *
@@ -53,7 +48,9 @@ from The Open Group.
  */
 
 #include <ctype.h>
+#ifdef HAVE_LAUNCHD
 #include <launch.h>
+#endif
 
 /*
  * The transport table contains a definition for every transport (protocol)
@@ -361,12 +358,14 @@ TRANS(ParseAddress) (char *address, char **protocol, char **host, char **port)
      */
 #endif
 
+#ifdef HAVE_LAUNCHD
     /* launchd sockets will look like 'local//tmp/launch-XgkNns/:0' */
     if(address != NULL && strlen(address)>8 && (!strncmp(address,"local//",7))) {
       _protocol="local";
       _host="";
       _port=address+6;
     }
+#endif
 
     /*
      * Now that we have all of the components, allocate new
@@ -866,7 +865,9 @@ TRANS(Connect) (XtransConnInfo ciptr, char *address)
 	return -1;
     }
 
+#ifdef HAVE_LAUNCHD
     if (!host || !*host) host=strdup("");
+#endif
 
     if (!port || !*port)
     {
@@ -1062,20 +1063,22 @@ TRANS(MakeAllCOTSServerListeners) (char *port, int *partial, int *count_ret,
 {
     char		buffer[256]; /* ??? What size ?? */
     XtransConnInfo	ciptr, temp_ciptrs[NUMTRANS];
-    int			status, i, j, launchd_fd;
+    int			status, i, j;
+#ifdef HAVE_LAUNCHD
+    int                 launchd_fd;
+    launch_data_t       sockets_dict, checkin_request, checkin_response;
+    launch_data_t       listening_fd_array, listening_fd;
+#endif
+
 #if defined(IPv6) && defined(AF_INET6)
     int		ipv6_succ = 0;
 #endif
-    launch_data_t sockets_dict, checkin_response;
-    launch_data_t checkin_request;
-    launch_data_t listening_fd_array, listening_fd;
-
     PRMSG (2,"MakeAllCOTSServerListeners(%s,%p)\n",
 	   port ? port : "NULL", ciptrs_ret, 0);
 
     *count_ret = 0;
 
-#ifdef TRANS_REOPEN
+#ifdef HAVE_LAUNCHD
     /* Get launchd fd */
     if ((checkin_request = launch_data_new_string(LAUNCH_KEY_CHECKIN)) == NULL) {
       fprintf(stderr,"launch_data_new_string(\"" LAUNCH_KEY_CHECKIN "\") Unable to create string.\n");
@@ -1088,29 +1091,31 @@ TRANS(MakeAllCOTSServerListeners) (char *port, int *partial, int *count_ret,
 	}
 
     if (LAUNCH_DATA_ERRNO == launch_data_get_type(checkin_response)) {
-       fprintf(stderr,"Check-in failed: %s\n",strerror(launch_data_get_errno(checkin_response)));
+      // ignore EACCES, which is common if we weren't started by launchd
+      if (launch_data_get_errno(checkin_response) != EACCES)
+       fprintf(stderr,"launchd check-in failed: %s\n",strerror(launch_data_get_errno(checkin_response)));
 	   goto not_launchd;
 	} 
 
 	sockets_dict = launch_data_dict_lookup(checkin_response, LAUNCH_JOBKEY_SOCKETS);
     if (NULL == sockets_dict) {
-       fprintf(stderr,"No sockets found to answer requests on!\n");
+       fprintf(stderr,"launchd check-in: no sockets found to answer requests on!\n");
 	   goto not_launchd;
 	}
 
     if (launch_data_dict_get_count(sockets_dict) > 1) {
-       fprintf(stderr,"Some sockets will be ignored!\n");
+       fprintf(stderr,"launchd check-in: some sockets will be ignored!\n");
 	   goto not_launchd;
 	}
 
     listening_fd_array = launch_data_dict_lookup(sockets_dict, ":0");
     if (NULL == listening_fd_array) {
-       fprintf(stderr,"No known sockets found to answer requests on!\n");
+       fprintf(stderr,"launchd check-in: No known sockets found to answer requests on!\n");
 	   goto not_launchd;
 	}
 
     if (launch_data_array_get_count(listening_fd_array)!=1) {
-       fprintf(stderr,"Expected 1 socket from launchd, got %d)\n",
+       fprintf(stderr,"launchd check-in: Expected 1 socket from launchd, got %d)\n",
                        launch_data_array_get_count(listening_fd_array));
 	   goto not_launchd;
 	}
@@ -1372,7 +1377,7 @@ static int TRANS(WriteV) (XtransConnInfo ciptr, struct iovec *iov, int iovcnt)
 
 #endif /* CRAY */
 
-#if (defined(SYSV) && defined(i386) && !defined(__SCO__) && !defined(sun)) || defined(WIN32) || defined(__sxg__) || defined(__UNIXOS2__)
+#if (defined(SYSV) && defined(__i386__) && !defined(__SCO__) && !defined(sun)) || defined(WIN32) || defined(__sxg__) || defined(__UNIXOS2__)
 
 /*
  * emulate readv
@@ -1402,9 +1407,9 @@ static int TRANS(ReadV) (XtransConnInfo ciptr, struct iovec *iov, int iovcnt)
     return total;
 }
 
-#endif /* SYSV && i386 || WIN32 || __sxg__ */
+#endif /* SYSV && __i386__ || WIN32 || __sxg__ */
 
-#if (defined(SYSV) && defined(i386) && !defined(__SCO__) && !defined(sun)) || defined(WIN32) || defined(__sxg__) || defined(__UNIXOS2__)
+#if (defined(SYSV) && defined(__i386__) && !defined(__SCO__) && !defined(sun)) || defined(WIN32) || defined(__sxg__) || defined(__UNIXOS2__)
 
 /*
  * emulate writev
@@ -1434,7 +1439,7 @@ static int TRANS(WriteV) (XtransConnInfo ciptr, struct iovec *iov, int iovcnt)
     return total;
 }
 
-#endif /* SYSV && i386 || WIN32 || __sxg__ */
+#endif /* SYSV && __i386__ || WIN32 || __sxg__ */
 
 
 #if (defined(_POSIX_SOURCE) && !defined(AIXV3) && !defined(__QNX__)) || defined(hpux) || defined(USG) || defined(SVR4) || defined(__SCO__)

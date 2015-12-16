@@ -43,7 +43,7 @@
                 #define MD_EXPORT extern
         #endif
         #define MD_AVAIL AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER
-        #define MD_AVAIL_LEOPARD AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER
+        #define MD_AVAIL_LEOPARD AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER
         #if defined(__cplusplus)
                 #define MD_BEGIN_C_DECLS extern "C" {
                 #define MD_END_C_DECLS   }

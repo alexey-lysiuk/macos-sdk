@@ -181,6 +181,14 @@ typedef struct xcb_res_query_client_pixmap_bytes_reply_t {
     uint32_t bytes_overflow; /**<  */
 } xcb_res_query_client_pixmap_bytes_reply_t;
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_res_client_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_res_client_t)
+ */
 
 /*****************************************************************************
  **
@@ -194,6 +202,15 @@ typedef struct xcb_res_query_client_pixmap_bytes_reply_t {
 void
 xcb_res_client_next (xcb_res_client_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_res_client_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -207,6 +224,14 @@ xcb_res_client_next (xcb_res_client_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_res_client_end (xcb_res_client_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_res_type_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_res_type_t)
+ */
 
 /*****************************************************************************
  **
@@ -220,6 +245,15 @@ xcb_res_client_end (xcb_res_client_iterator_t i  /**< */);
 void
 xcb_res_type_next (xcb_res_type_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_res_type_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -233,6 +267,14 @@ xcb_res_type_next (xcb_res_type_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_res_type_end (xcb_res_type_iterator_t i  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -250,6 +292,17 @@ xcb_res_query_version (xcb_connection_t *c  /**< */,
                        uint8_t           client_major  /**< */,
                        uint8_t           client_minor  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -267,6 +320,18 @@ xcb_res_query_version_unchecked (xcb_connection_t *c  /**< */,
                                  uint8_t           client_major  /**< */,
                                  uint8_t           client_minor  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_res_query_version_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -284,6 +349,14 @@ xcb_res_query_version_reply (xcb_connection_t                *c  /**< */,
                              xcb_res_query_version_cookie_t   cookie  /**< */,
                              xcb_generic_error_t            **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -297,6 +370,17 @@ xcb_res_query_version_reply (xcb_connection_t                *c  /**< */,
 xcb_res_query_clients_cookie_t
 xcb_res_query_clients (xcb_connection_t *c  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -349,6 +433,18 @@ xcb_res_query_clients_clients_length (const xcb_res_query_clients_reply_t *R  /*
 xcb_res_client_iterator_t
 xcb_res_query_clients_clients_iterator (const xcb_res_query_clients_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_res_query_clients_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -366,6 +462,14 @@ xcb_res_query_clients_reply (xcb_connection_t                *c  /**< */,
                              xcb_res_query_clients_cookie_t   cookie  /**< */,
                              xcb_generic_error_t            **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -381,6 +485,17 @@ xcb_res_query_client_resources_cookie_t
 xcb_res_query_client_resources (xcb_connection_t *c  /**< */,
                                 uint32_t          xid  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -435,6 +550,18 @@ xcb_res_query_client_resources_types_length (const xcb_res_query_client_resource
 xcb_res_type_iterator_t
 xcb_res_query_client_resources_types_iterator (const xcb_res_query_client_resources_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_res_query_client_resources_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -452,6 +579,14 @@ xcb_res_query_client_resources_reply (xcb_connection_t                         *
                                       xcb_res_query_client_resources_cookie_t   cookie  /**< */,
                                       xcb_generic_error_t                     **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -467,6 +602,17 @@ xcb_res_query_client_pixmap_bytes_cookie_t
 xcb_res_query_client_pixmap_bytes (xcb_connection_t *c  /**< */,
                                    uint32_t          xid  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -482,6 +628,18 @@ xcb_res_query_client_pixmap_bytes_cookie_t
 xcb_res_query_client_pixmap_bytes_unchecked (xcb_connection_t *c  /**< */,
                                              uint32_t          xid  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_res_query_client_pixmap_bytes_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **

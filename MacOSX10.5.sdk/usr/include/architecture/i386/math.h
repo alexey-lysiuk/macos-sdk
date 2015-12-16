@@ -64,7 +64,7 @@ extern "C" {
 	#define	HUGE_VALF	__builtin_huge_valf()
 	#define	HUGE_VALL	__builtin_huge_vall()
     #define NAN         __builtin_nanf("0x7fc00000") /* Constant expression, can be used as initializer. */
-    #define __MATH_H_ALWAYS_INLINE__		__attribute__ ((always_inline))
+    #define __MATH_H_ALWAYS_INLINE__		__attribute__ ((__always_inline__))
 #else
     #define	HUGE_VAL	1e500
     #define	HUGE_VALF	1e50f

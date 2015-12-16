@@ -3,9 +3,7 @@
  
      Contains:   Support for computing which proxy applies when
  
-     Version:    CFNetwork-219~1
- 
-     Copyright:  © 2006 by Apple Computer, Inc., all rights reserved
+     Copyright:  Copyright (c) 2006-2008, Apple Inc. All rights reserved.
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -62,7 +60,7 @@
     (such as the Keychain).
 */
 
-#include <AvailabilityMacros.h>
+#include <Availability.h>
 
 #if PRAGMA_ONCE
 #pragma once
@@ -86,8 +84,8 @@ extern "C" {
  *    
  *    proxySettings:
  *      A dictionary describing the available proxy settings; the
- *      dictionary's format should match that described in and returned
- *      by SystemConfiguration.framework
+ *      dictionary's format should match the dictionary returned
+ *      by CFNetworkCopySystemProxySettings described below.
  *  
  *  Result:
  *    An array of dictionaries; each dictionary describes a single
@@ -99,10 +97,10 @@ extern "C" {
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-extern CFArrayRef 
+CFN_EXPORT CFArrayRef 
 CFNetworkCopyProxiesForURL(
   CFURLRef          url,
-  CFDictionaryRef   proxySettings)                            AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+  CFDictionaryRef   proxySettings)                            __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_1_2);
 
 
 
@@ -134,8 +132,45 @@ CFNetworkCopyProxiesForURL(
  *      Upon failure, an error object explaining the failure.
  */
 typedef CALLBACK_API_C( void , CFProxyAutoConfigurationResultCallback )(void *client, CFArrayRef proxyList, CFErrorRef error);
+
 /*
  *  CFNetworkCopyProxiesForAutoConfigurationScript()
+ *  
+ *  Discussion:
+ *    Synchronously executes the given proxy autoconfiguration script
+ *    and returns a valid proxyList and NULL error upon success or a
+ *    NULL proxyList and valid error on failure.
+ *  
+ *  Parameters:
+ *    
+ *    proxyAutoConfigurationScript:
+ *      A CFString containing the code of the script to be executed.
+ *    
+ *    targetURL:
+ *      The URL that should be input in to the autoconfiguration script.
+ *    
+ *    error:
+ *      A return argument that will contain a valid error in case of
+ *      failure.
+ *  
+ *  Result:
+ *    An array of dictionaries describing the proxies returned by the
+ *    script or NULL on failure.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 and later in CoreServices.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+CFN_EXPORT CFArrayRef 
+CFNetworkCopyProxiesForAutoConfigurationScript(
+  CFStringRef   proxyAutoConfigurationScript,
+  CFURLRef      targetURL,
+  CFErrorRef *  error)                                        __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_1_2);
+
+
+/*
+ *  CFNetworkExecuteProxyAutoConfigurationScript()
  *  
  *  Discussion:
  *    Begins the process of executing proxyAutoConfigurationScript to
@@ -145,7 +180,9 @@ typedef CALLBACK_API_C( void , CFProxyAutoConfigurationResultCallback )(void *cl
  *    run loop, passing a valid proxyList and NULL error upon success,
  *    or a NULL proxyList and valid error on failure.  The caller
  *    should invalidate the returned run loop source if it wishes to
- *    terminate the request before completion.
+ *    terminate the request before completion. The returned
+ *    RunLoopSource will be removed from all run loops and modes on
+ *    which it was scheduled after the callback returns.
  *  
  *  Parameters:
  *    
@@ -153,21 +190,31 @@ typedef CALLBACK_API_C( void , CFProxyAutoConfigurationResultCallback )(void *cl
  *      A CFString containing the code of the script to be executed.
  *    
  *    targetURL:
- *      The URL that should be input in to the autoconfiguration script
+ *      The URL that should be passed to the autoconfiguration script.
+ *    
+ *    cb:
+ *      A client callback to notify the caller of completion.
+ *    
+ *    clientContext:
+ *      a stream context containing a client info object and optionally
+ *      retain / release callbacks for said info object.
  *  
  *  Result:
- *    An array of dictionaries describing the proxies returned by the
- *    script.
+ *    A CFRunLoopSource which the client can use to schedule execution
+ *    of the AutoConfiguration Script.
  *  
  *  Availability:
  *    Mac OS X:         in version 10.5 and later in CoreServices.framework
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-extern CFArrayRef 
-CFNetworkCopyProxiesForAutoConfigurationScript(
-  CFStringRef   proxyAutoConfigurationScript,
-  CFURLRef      targetURL)                                    AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+CFN_EXPORT CFRunLoopSourceRef 
+CFNetworkExecuteProxyAutoConfigurationScript(
+  CFStringRef                              proxyAutoConfigurationScript,
+  CFURLRef                                 targetURL,
+  CFProxyAutoConfigurationResultCallback   cb,
+  CFStreamClientContext *                  clientContext)     __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_1_2);
+
 
 
 /*
@@ -184,12 +231,12 @@ CFNetworkCopyProxiesForAutoConfigurationScript(
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-extern CFRunLoopSourceRef 
+CFN_EXPORT CFRunLoopSourceRef 
 CFNetworkExecuteProxyAutoConfigurationURL(
   CFURLRef                                 proxyAutoConfigURL,
   CFURLRef                                 targetURL,
   CFProxyAutoConfigurationResultCallback   cb,
-  CFStreamClientContext *                  clientContext)     AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+  CFStreamClientContext *                  clientContext)     __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_1_2);
 
 
 
@@ -206,7 +253,7 @@ CFNetworkExecuteProxyAutoConfigurationURL(
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-extern const CFStringRef kCFProxyTypeKey                             AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+CFN_EXPORT const CFStringRef kCFProxyTypeKey                             __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_1_2);
 
 /*
  *  kCFProxyHostNameKey
@@ -220,7 +267,7 @@ extern const CFStringRef kCFProxyTypeKey                             AVAILABLE_M
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-extern const CFStringRef kCFProxyHostNameKey                         AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+CFN_EXPORT const CFStringRef kCFProxyHostNameKey                         __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_1_2);
 
 /*
  *  kCFProxyPortNumberKey
@@ -234,7 +281,7 @@ extern const CFStringRef kCFProxyHostNameKey                         AVAILABLE_M
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-extern const CFStringRef kCFProxyPortNumberKey                       AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+CFN_EXPORT const CFStringRef kCFProxyPortNumberKey                       __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_1_2);
 
 /*
  *  kCFProxyAutoConfigurationURLKey
@@ -250,7 +297,7 @@ extern const CFStringRef kCFProxyPortNumberKey                       AVAILABLE_M
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-extern const CFStringRef kCFProxyAutoConfigurationURLKey             AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+CFN_EXPORT const CFStringRef kCFProxyAutoConfigurationURLKey             __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_1_2);
 
 /*
  *  kCFProxyUsernameKey
@@ -266,7 +313,7 @@ extern const CFStringRef kCFProxyAutoConfigurationURLKey             AVAILABLE_M
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-extern const CFStringRef kCFProxyUsernameKey                         AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+CFN_EXPORT const CFStringRef kCFProxyUsernameKey                         __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_1_2);
 
 /*
  *  kCFProxyPasswordKey
@@ -282,7 +329,7 @@ extern const CFStringRef kCFProxyUsernameKey                         AVAILABLE_M
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-extern const CFStringRef kCFProxyPasswordKey                         AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+CFN_EXPORT const CFStringRef kCFProxyPasswordKey                         __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_1_2);
 
 /* 
     Possible values for kCFProxyTypeKey:
@@ -301,7 +348,7 @@ extern const CFStringRef kCFProxyPasswordKey                         AVAILABLE_M
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-extern const CFStringRef kCFProxyTypeNone                            AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+CFN_EXPORT const CFStringRef kCFProxyTypeNone                            __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_1_2);
 /*
  *  kCFProxyTypeHTTP
  *  
@@ -310,7 +357,7 @@ extern const CFStringRef kCFProxyTypeNone                            AVAILABLE_M
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-extern const CFStringRef kCFProxyTypeHTTP                            AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+CFN_EXPORT const CFStringRef kCFProxyTypeHTTP                            __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_1_2);
 /*
  *  kCFProxyTypeHTTPS
  *  
@@ -319,7 +366,7 @@ extern const CFStringRef kCFProxyTypeHTTP                            AVAILABLE_M
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-extern const CFStringRef kCFProxyTypeHTTPS                           AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+CFN_EXPORT const CFStringRef kCFProxyTypeHTTPS                           __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_1_2);
 /*
  *  kCFProxyTypeSOCKS
  *  
@@ -328,7 +375,7 @@ extern const CFStringRef kCFProxyTypeHTTPS                           AVAILABLE_M
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-extern const CFStringRef kCFProxyTypeSOCKS                           AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+CFN_EXPORT const CFStringRef kCFProxyTypeSOCKS                           __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_1_2);
 /*
  *  kCFProxyTypeFTP
  *  
@@ -337,7 +384,7 @@ extern const CFStringRef kCFProxyTypeSOCKS                           AVAILABLE_M
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-extern const CFStringRef kCFProxyTypeFTP                             AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+CFN_EXPORT const CFStringRef kCFProxyTypeFTP                             __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_1_2);
 /*
  *  kCFProxyTypeAutoConfigurationURL
  *  
@@ -346,7 +393,65 @@ extern const CFStringRef kCFProxyTypeFTP                             AVAILABLE_M
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-extern const CFStringRef kCFProxyTypeAutoConfigurationURL            AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+CFN_EXPORT const CFStringRef kCFProxyTypeAutoConfigurationURL            __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_1_2);
+
+
+#if TARGET_OS_MAC
+/*!
+	@function CFNetworkCopySystemProxySettings
+	@discussion Returns a CFDictionary containing the current system internet proxy settings.
+	@result Returns a dictionary containing key-value pairs that represent
+		the current internet proxy settings.  See below for definitions of the keys and
+		values.
+		NULL if no proxy settings have been defined or if an error
+		was encountered.
+		The caller is responsible for releasing the returned dictionary.
+*/
+CFN_EXPORT CFDictionaryRef
+CFNetworkCopySystemProxySettings( void )					__OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_1_2);
+
+
+/*
+ *  kCFNetworkProxiesHTTPEnable
+ *  
+ *  Discussion:
+ *    Key for the enabled status of the HTTP proxy; value is a
+ *    CFNumber.  The proxy is enabled if the key is present and has a non-zero value.
+ */
+CFN_EXPORT const CFStringRef kCFNetworkProxiesHTTPEnable		__OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_1_2);
+/*
+ *  kCFNetworkProxiesHTTPPort
+ *  
+ *  Discussion:
+ *    Key for the port number associated with the HTTP proxy; value is a
+ *    CFNumber which is the port number.
+ */
+CFN_EXPORT const CFStringRef kCFNetworkProxiesHTTPPort			__OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_1_2);
+/*
+ *  kCFNetworkProxiesHTTPProxy
+ *  
+ *  Discussion:
+ *    Key for the host name associated with the HTTP proxy; value is a
+ *    CFString which is the proxy host name.
+ */
+CFN_EXPORT const CFStringRef kCFNetworkProxiesHTTPProxy			__OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_1_2);
+/*
+ *  kCFNetworkProxiesProxyAutoConfigEnable
+ *  
+ *  Discussion:
+ *    Key for the enabled status ProxyAutoConfig (PAC); value is a
+ *    CFNumber.  ProxyAutoConfig is enabled if the key is present and has a non-zero value.
+ */
+CFN_EXPORT const CFStringRef kCFNetworkProxiesProxyAutoConfigEnable	__OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_1_2);
+/*
+ *  kCFNetworkProxiesSOCKSProxy
+ *  
+ *  Discussion:
+ *    Key for the url which indicates the location of the ProxyAutoConfig (PAC) file; value is a
+ *    CFString which is url for the PAC file.
+ */
+CFN_EXPORT const CFStringRef kCFNetworkProxiesProxyAutoConfigURLString	__OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_1_2);
+#endif // TARGET_OS_MAC
 
 #ifdef __cplusplus
 }

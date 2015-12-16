@@ -193,6 +193,14 @@ typedef struct xcb_composite_release_overlay_window_request_t {
     xcb_window_t window; /**<  */
 } xcb_composite_release_overlay_window_request_t;
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -210,6 +218,17 @@ xcb_composite_query_version (xcb_connection_t *c  /**< */,
                              uint32_t          client_major_version  /**< */,
                              uint32_t          client_minor_version  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -227,6 +246,18 @@ xcb_composite_query_version_unchecked (xcb_connection_t *c  /**< */,
                                        uint32_t          client_major_version  /**< */,
                                        uint32_t          client_minor_version  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_composite_query_version_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -244,6 +275,17 @@ xcb_composite_query_version_reply (xcb_connection_t                      *c  /**
                                    xcb_composite_query_version_cookie_t   cookie  /**< */,
                                    xcb_generic_error_t                  **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -261,6 +303,14 @@ xcb_composite_redirect_window_checked (xcb_connection_t *c  /**< */,
                                        xcb_window_t      window  /**< */,
                                        uint8_t           update  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -278,6 +328,17 @@ xcb_composite_redirect_window (xcb_connection_t *c  /**< */,
                                xcb_window_t      window  /**< */,
                                uint8_t           update  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -295,6 +356,14 @@ xcb_composite_redirect_subwindows_checked (xcb_connection_t *c  /**< */,
                                            xcb_window_t      window  /**< */,
                                            uint8_t           update  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -312,6 +381,17 @@ xcb_composite_redirect_subwindows (xcb_connection_t *c  /**< */,
                                    xcb_window_t      window  /**< */,
                                    uint8_t           update  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -329,6 +409,14 @@ xcb_composite_unredirect_window_checked (xcb_connection_t *c  /**< */,
                                          xcb_window_t      window  /**< */,
                                          uint8_t           update  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -346,6 +434,17 @@ xcb_composite_unredirect_window (xcb_connection_t *c  /**< */,
                                  xcb_window_t      window  /**< */,
                                  uint8_t           update  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -363,6 +462,14 @@ xcb_composite_unredirect_subwindows_checked (xcb_connection_t *c  /**< */,
                                              xcb_window_t      window  /**< */,
                                              uint8_t           update  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -380,6 +487,17 @@ xcb_composite_unredirect_subwindows (xcb_connection_t *c  /**< */,
                                      xcb_window_t      window  /**< */,
                                      uint8_t           update  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -397,6 +515,14 @@ xcb_composite_create_region_from_border_clip_checked (xcb_connection_t    *c  /*
                                                       xcb_xfixes_region_t  region  /**< */,
                                                       xcb_window_t         window  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -414,6 +540,17 @@ xcb_composite_create_region_from_border_clip (xcb_connection_t    *c  /**< */,
                                               xcb_xfixes_region_t  region  /**< */,
                                               xcb_window_t         window  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -431,6 +568,14 @@ xcb_composite_name_window_pixmap_checked (xcb_connection_t *c  /**< */,
                                           xcb_window_t      window  /**< */,
                                           xcb_pixmap_t      pixmap  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -448,6 +593,14 @@ xcb_composite_name_window_pixmap (xcb_connection_t *c  /**< */,
                                   xcb_window_t      window  /**< */,
                                   xcb_pixmap_t      pixmap  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -463,6 +616,17 @@ xcb_composite_get_overlay_window_cookie_t
 xcb_composite_get_overlay_window (xcb_connection_t *c  /**< */,
                                   xcb_window_t      window  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -478,6 +642,18 @@ xcb_composite_get_overlay_window_cookie_t
 xcb_composite_get_overlay_window_unchecked (xcb_connection_t *c  /**< */,
                                             xcb_window_t      window  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_composite_get_overlay_window_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -495,6 +671,17 @@ xcb_composite_get_overlay_window_reply (xcb_connection_t                        
                                         xcb_composite_get_overlay_window_cookie_t   cookie  /**< */,
                                         xcb_generic_error_t                       **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -510,6 +697,14 @@ xcb_void_cookie_t
 xcb_composite_release_overlay_window_checked (xcb_connection_t *c  /**< */,
                                               xcb_window_t      window  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **

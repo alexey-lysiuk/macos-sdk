@@ -1,4 +1,3 @@
-/* $Xorg: Xtransutil.c,v 1.4 2001/02/09 02:04:07 xorgcvs Exp $ */
 /*
 
 Copyright 1993, 1994, 1998  The Open Group
@@ -25,10 +24,7 @@ not be used in advertising or otherwise to promote the sale, use or
 other dealings in this Software without prior written authorization
 from The Open Group.
 
-*/
-/* $XFree86: xc/lib/xtrans/Xtransutil.c,v 3.26 2003/07/09 15:27:30 tsi Exp $ */
-
-/* Copyright 1993, 1994 NCR Corporation - Dayton, Ohio, USA
+ * Copyright 1993, 1994 NCR Corporation - Dayton, Ohio, USA
  *
  * All Rights Reserved
  *
@@ -660,8 +656,10 @@ trans_mkdir(char *path, int mode)
 		    return -1;
 		}
 #endif
-		/*	  	PRMSG(1, "mkdir: Owner of %s should be set to root\n",
-				path, 0, 0); */
+#ifndef __APPLE_CC__
+	  	PRMSG(1, "mkdir: Owner of %s should be set to root\n",
+		      path, 0, 0);
+#endif
 	    }
 	    
 	    if (updateMode && !updatedMode) {

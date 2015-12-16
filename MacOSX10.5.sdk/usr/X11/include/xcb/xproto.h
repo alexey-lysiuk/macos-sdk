@@ -4241,6 +4241,14 @@ typedef struct xcb_no_operation_request_t {
     uint16_t length; /**<  */
 } xcb_no_operation_request_t;
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_char2b_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_char2b_t)
+ */
 
 /*****************************************************************************
  **
@@ -4254,6 +4262,15 @@ typedef struct xcb_no_operation_request_t {
 void
 xcb_char2b_next (xcb_char2b_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_char2b_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -4267,6 +4284,14 @@ xcb_char2b_next (xcb_char2b_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_char2b_end (xcb_char2b_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_window_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_window_t)
+ */
 
 /*****************************************************************************
  **
@@ -4280,6 +4305,15 @@ xcb_char2b_end (xcb_char2b_iterator_t i  /**< */);
 void
 xcb_window_next (xcb_window_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_window_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -4293,6 +4327,14 @@ xcb_window_next (xcb_window_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_window_end (xcb_window_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_pixmap_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_pixmap_t)
+ */
 
 /*****************************************************************************
  **
@@ -4306,6 +4348,15 @@ xcb_window_end (xcb_window_iterator_t i  /**< */);
 void
 xcb_pixmap_next (xcb_pixmap_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_pixmap_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -4319,6 +4370,14 @@ xcb_pixmap_next (xcb_pixmap_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_pixmap_end (xcb_pixmap_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_cursor_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_cursor_t)
+ */
 
 /*****************************************************************************
  **
@@ -4332,6 +4391,15 @@ xcb_pixmap_end (xcb_pixmap_iterator_t i  /**< */);
 void
 xcb_cursor_next (xcb_cursor_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_cursor_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -4345,6 +4413,14 @@ xcb_cursor_next (xcb_cursor_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_cursor_end (xcb_cursor_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_font_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_font_t)
+ */
 
 /*****************************************************************************
  **
@@ -4358,6 +4434,15 @@ xcb_cursor_end (xcb_cursor_iterator_t i  /**< */);
 void
 xcb_font_next (xcb_font_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_font_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -4371,6 +4456,14 @@ xcb_font_next (xcb_font_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_font_end (xcb_font_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_gcontext_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_gcontext_t)
+ */
 
 /*****************************************************************************
  **
@@ -4384,6 +4477,15 @@ xcb_font_end (xcb_font_iterator_t i  /**< */);
 void
 xcb_gcontext_next (xcb_gcontext_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_gcontext_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -4397,6 +4499,14 @@ xcb_gcontext_next (xcb_gcontext_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_gcontext_end (xcb_gcontext_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_colormap_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_colormap_t)
+ */
 
 /*****************************************************************************
  **
@@ -4410,6 +4520,15 @@ xcb_gcontext_end (xcb_gcontext_iterator_t i  /**< */);
 void
 xcb_colormap_next (xcb_colormap_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_colormap_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -4423,6 +4542,14 @@ xcb_colormap_next (xcb_colormap_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_colormap_end (xcb_colormap_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_atom_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_atom_t)
+ */
 
 /*****************************************************************************
  **
@@ -4436,6 +4563,15 @@ xcb_colormap_end (xcb_colormap_iterator_t i  /**< */);
 void
 xcb_atom_next (xcb_atom_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_atom_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -4449,6 +4585,14 @@ xcb_atom_next (xcb_atom_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_atom_end (xcb_atom_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_drawable_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_drawable_t)
+ */
 
 /*****************************************************************************
  **
@@ -4462,6 +4606,15 @@ xcb_atom_end (xcb_atom_iterator_t i  /**< */);
 void
 xcb_drawable_next (xcb_drawable_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_drawable_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -4475,6 +4628,14 @@ xcb_drawable_next (xcb_drawable_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_drawable_end (xcb_drawable_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_fontable_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_fontable_t)
+ */
 
 /*****************************************************************************
  **
@@ -4488,6 +4649,15 @@ xcb_drawable_end (xcb_drawable_iterator_t i  /**< */);
 void
 xcb_fontable_next (xcb_fontable_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_fontable_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -4501,6 +4671,14 @@ xcb_fontable_next (xcb_fontable_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_fontable_end (xcb_fontable_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_visualid_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_visualid_t)
+ */
 
 /*****************************************************************************
  **
@@ -4514,6 +4692,15 @@ xcb_fontable_end (xcb_fontable_iterator_t i  /**< */);
 void
 xcb_visualid_next (xcb_visualid_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_visualid_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -4527,6 +4714,14 @@ xcb_visualid_next (xcb_visualid_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_visualid_end (xcb_visualid_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_timestamp_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_timestamp_t)
+ */
 
 /*****************************************************************************
  **
@@ -4540,6 +4735,15 @@ xcb_visualid_end (xcb_visualid_iterator_t i  /**< */);
 void
 xcb_timestamp_next (xcb_timestamp_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_timestamp_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -4553,6 +4757,14 @@ xcb_timestamp_next (xcb_timestamp_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_timestamp_end (xcb_timestamp_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_keysym_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_keysym_t)
+ */
 
 /*****************************************************************************
  **
@@ -4566,6 +4778,15 @@ xcb_timestamp_end (xcb_timestamp_iterator_t i  /**< */);
 void
 xcb_keysym_next (xcb_keysym_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_keysym_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -4579,6 +4800,14 @@ xcb_keysym_next (xcb_keysym_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_keysym_end (xcb_keysym_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_keycode_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_keycode_t)
+ */
 
 /*****************************************************************************
  **
@@ -4592,6 +4821,15 @@ xcb_keysym_end (xcb_keysym_iterator_t i  /**< */);
 void
 xcb_keycode_next (xcb_keycode_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_keycode_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -4605,6 +4843,14 @@ xcb_keycode_next (xcb_keycode_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_keycode_end (xcb_keycode_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_button_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_button_t)
+ */
 
 /*****************************************************************************
  **
@@ -4618,6 +4864,15 @@ xcb_keycode_end (xcb_keycode_iterator_t i  /**< */);
 void
 xcb_button_next (xcb_button_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_button_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -4631,6 +4886,14 @@ xcb_button_next (xcb_button_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_button_end (xcb_button_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_point_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_point_t)
+ */
 
 /*****************************************************************************
  **
@@ -4644,6 +4907,15 @@ xcb_button_end (xcb_button_iterator_t i  /**< */);
 void
 xcb_point_next (xcb_point_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_point_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -4657,6 +4929,14 @@ xcb_point_next (xcb_point_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_point_end (xcb_point_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_rectangle_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_rectangle_t)
+ */
 
 /*****************************************************************************
  **
@@ -4670,6 +4950,15 @@ xcb_point_end (xcb_point_iterator_t i  /**< */);
 void
 xcb_rectangle_next (xcb_rectangle_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_rectangle_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -4683,6 +4972,14 @@ xcb_rectangle_next (xcb_rectangle_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_rectangle_end (xcb_rectangle_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_arc_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_arc_t)
+ */
 
 /*****************************************************************************
  **
@@ -4696,6 +4993,15 @@ xcb_rectangle_end (xcb_rectangle_iterator_t i  /**< */);
 void
 xcb_arc_next (xcb_arc_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_arc_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -4709,6 +5015,14 @@ xcb_arc_next (xcb_arc_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_arc_end (xcb_arc_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_format_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_format_t)
+ */
 
 /*****************************************************************************
  **
@@ -4722,6 +5036,15 @@ xcb_arc_end (xcb_arc_iterator_t i  /**< */);
 void
 xcb_format_next (xcb_format_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_format_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -4735,6 +5058,14 @@ xcb_format_next (xcb_format_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_format_end (xcb_format_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_visualtype_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_visualtype_t)
+ */
 
 /*****************************************************************************
  **
@@ -4748,6 +5079,15 @@ xcb_format_end (xcb_format_iterator_t i  /**< */);
 void
 xcb_visualtype_next (xcb_visualtype_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_visualtype_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -4800,6 +5140,14 @@ xcb_depth_visuals_length (const xcb_depth_t *R  /**< */);
 xcb_visualtype_iterator_t
 xcb_depth_visuals_iterator (const xcb_depth_t *R  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_depth_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_depth_t)
+ */
 
 /*****************************************************************************
  **
@@ -4813,6 +5161,15 @@ xcb_depth_visuals_iterator (const xcb_depth_t *R  /**< */);
 void
 xcb_depth_next (xcb_depth_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_depth_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -4852,6 +5209,14 @@ xcb_screen_allowed_depths_length (const xcb_screen_t *R  /**< */);
 xcb_depth_iterator_t
 xcb_screen_allowed_depths_iterator (const xcb_screen_t *R  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_screen_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_screen_t)
+ */
 
 /*****************************************************************************
  **
@@ -4865,6 +5230,15 @@ xcb_screen_allowed_depths_iterator (const xcb_screen_t *R  /**< */);
 void
 xcb_screen_next (xcb_screen_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_screen_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -4956,6 +5330,14 @@ xcb_setup_request_authorization_protocol_data_length (const xcb_setup_request_t 
 xcb_generic_iterator_t
 xcb_setup_request_authorization_protocol_data_end (const xcb_setup_request_t *R  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_setup_request_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_setup_request_t)
+ */
 
 /*****************************************************************************
  **
@@ -4969,6 +5351,15 @@ xcb_setup_request_authorization_protocol_data_end (const xcb_setup_request_t *R 
 void
 xcb_setup_request_next (xcb_setup_request_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_setup_request_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -5021,6 +5412,14 @@ xcb_setup_failed_reason_length (const xcb_setup_failed_t *R  /**< */);
 xcb_generic_iterator_t
 xcb_setup_failed_reason_end (const xcb_setup_failed_t *R  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_setup_failed_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_setup_failed_t)
+ */
 
 /*****************************************************************************
  **
@@ -5034,6 +5433,15 @@ xcb_setup_failed_reason_end (const xcb_setup_failed_t *R  /**< */);
 void
 xcb_setup_failed_next (xcb_setup_failed_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_setup_failed_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -5086,6 +5494,14 @@ xcb_setup_authenticate_reason_length (const xcb_setup_authenticate_t *R  /**< */
 xcb_generic_iterator_t
 xcb_setup_authenticate_reason_end (const xcb_setup_authenticate_t *R  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_setup_authenticate_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_setup_authenticate_t)
+ */
 
 /*****************************************************************************
  **
@@ -5099,6 +5515,15 @@ xcb_setup_authenticate_reason_end (const xcb_setup_authenticate_t *R  /**< */);
 void
 xcb_setup_authenticate_next (xcb_setup_authenticate_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_setup_authenticate_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -5216,6 +5641,14 @@ xcb_setup_roots_length (const xcb_setup_t *R  /**< */);
 xcb_screen_iterator_t
 xcb_setup_roots_iterator (const xcb_setup_t *R  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_setup_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_setup_t)
+ */
 
 /*****************************************************************************
  **
@@ -5229,6 +5662,15 @@ xcb_setup_roots_iterator (const xcb_setup_t *R  /**< */);
 void
 xcb_setup_next (xcb_setup_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_setup_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -5242,6 +5684,14 @@ xcb_setup_next (xcb_setup_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_setup_end (xcb_setup_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_client_message_data_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_client_message_data_t)
+ */
 
 /*****************************************************************************
  **
@@ -5255,6 +5705,15 @@ xcb_setup_end (xcb_setup_iterator_t i  /**< */);
 void
 xcb_client_message_data_next (xcb_client_message_data_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_client_message_data_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -5268,6 +5727,17 @@ xcb_client_message_data_next (xcb_client_message_data_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_client_message_data_end (xcb_client_message_data_iterator_t i  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -5305,6 +5775,14 @@ xcb_create_window_checked (xcb_connection_t *c  /**< */,
                            uint32_t          value_mask  /**< */,
                            const uint32_t   *value_list  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -5342,6 +5820,17 @@ xcb_create_window (xcb_connection_t *c  /**< */,
                    uint32_t          value_mask  /**< */,
                    const uint32_t   *value_list  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -5361,6 +5850,14 @@ xcb_change_window_attributes_checked (xcb_connection_t *c  /**< */,
                                       uint32_t          value_mask  /**< */,
                                       const uint32_t   *value_list  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -5380,6 +5877,14 @@ xcb_change_window_attributes (xcb_connection_t *c  /**< */,
                               uint32_t          value_mask  /**< */,
                               const uint32_t   *value_list  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -5395,6 +5900,17 @@ xcb_get_window_attributes_cookie_t
 xcb_get_window_attributes (xcb_connection_t *c  /**< */,
                            xcb_window_t      window  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -5410,6 +5926,18 @@ xcb_get_window_attributes_cookie_t
 xcb_get_window_attributes_unchecked (xcb_connection_t *c  /**< */,
                                      xcb_window_t      window  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_get_window_attributes_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -5427,6 +5955,17 @@ xcb_get_window_attributes_reply (xcb_connection_t                    *c  /**< */
                                  xcb_get_window_attributes_cookie_t   cookie  /**< */,
                                  xcb_generic_error_t                **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -5442,6 +5981,14 @@ xcb_void_cookie_t
 xcb_destroy_window_checked (xcb_connection_t *c  /**< */,
                             xcb_window_t      window  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -5457,6 +6004,17 @@ xcb_void_cookie_t
 xcb_destroy_window (xcb_connection_t *c  /**< */,
                     xcb_window_t      window  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -5472,6 +6030,14 @@ xcb_void_cookie_t
 xcb_destroy_subwindows_checked (xcb_connection_t *c  /**< */,
                                 xcb_window_t      window  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -5487,6 +6053,17 @@ xcb_void_cookie_t
 xcb_destroy_subwindows (xcb_connection_t *c  /**< */,
                         xcb_window_t      window  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -5504,6 +6081,14 @@ xcb_change_save_set_checked (xcb_connection_t *c  /**< */,
                              uint8_t           mode  /**< */,
                              xcb_window_t      window  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -5521,6 +6106,17 @@ xcb_change_save_set (xcb_connection_t *c  /**< */,
                      uint8_t           mode  /**< */,
                      xcb_window_t      window  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -5542,6 +6138,14 @@ xcb_reparent_window_checked (xcb_connection_t *c  /**< */,
                              int16_t           x  /**< */,
                              int16_t           y  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -5563,6 +6167,17 @@ xcb_reparent_window (xcb_connection_t *c  /**< */,
                      int16_t           x  /**< */,
                      int16_t           y  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -5578,6 +6193,14 @@ xcb_void_cookie_t
 xcb_map_window_checked (xcb_connection_t *c  /**< */,
                         xcb_window_t      window  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -5593,6 +6216,17 @@ xcb_void_cookie_t
 xcb_map_window (xcb_connection_t *c  /**< */,
                 xcb_window_t      window  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -5608,6 +6242,14 @@ xcb_void_cookie_t
 xcb_map_subwindows_checked (xcb_connection_t *c  /**< */,
                             xcb_window_t      window  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -5623,6 +6265,17 @@ xcb_void_cookie_t
 xcb_map_subwindows (xcb_connection_t *c  /**< */,
                     xcb_window_t      window  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -5638,6 +6291,14 @@ xcb_void_cookie_t
 xcb_unmap_window_checked (xcb_connection_t *c  /**< */,
                           xcb_window_t      window  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -5653,6 +6314,17 @@ xcb_void_cookie_t
 xcb_unmap_window (xcb_connection_t *c  /**< */,
                   xcb_window_t      window  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -5668,6 +6340,14 @@ xcb_void_cookie_t
 xcb_unmap_subwindows_checked (xcb_connection_t *c  /**< */,
                               xcb_window_t      window  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -5683,6 +6363,17 @@ xcb_void_cookie_t
 xcb_unmap_subwindows (xcb_connection_t *c  /**< */,
                       xcb_window_t      window  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -5702,6 +6393,14 @@ xcb_configure_window_checked (xcb_connection_t *c  /**< */,
                               uint16_t          value_mask  /**< */,
                               const uint32_t   *value_list  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -5721,6 +6420,17 @@ xcb_configure_window (xcb_connection_t *c  /**< */,
                       uint16_t          value_mask  /**< */,
                       const uint32_t   *value_list  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -5738,6 +6448,14 @@ xcb_circulate_window_checked (xcb_connection_t *c  /**< */,
                               uint8_t           direction  /**< */,
                               xcb_window_t      window  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -5755,6 +6473,14 @@ xcb_circulate_window (xcb_connection_t *c  /**< */,
                       uint8_t           direction  /**< */,
                       xcb_window_t      window  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -5770,6 +6496,17 @@ xcb_get_geometry_cookie_t
 xcb_get_geometry (xcb_connection_t *c  /**< */,
                   xcb_drawable_t    drawable  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -5785,6 +6522,18 @@ xcb_get_geometry_cookie_t
 xcb_get_geometry_unchecked (xcb_connection_t *c  /**< */,
                             xcb_drawable_t    drawable  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_get_geometry_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -5802,6 +6551,14 @@ xcb_get_geometry_reply (xcb_connection_t           *c  /**< */,
                         xcb_get_geometry_cookie_t   cookie  /**< */,
                         xcb_generic_error_t       **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -5817,6 +6574,17 @@ xcb_query_tree_cookie_t
 xcb_query_tree (xcb_connection_t *c  /**< */,
                 xcb_window_t      window  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -5871,6 +6639,18 @@ xcb_query_tree_children_length (const xcb_query_tree_reply_t *R  /**< */);
 xcb_window_iterator_t
 xcb_query_tree_children_iterator (const xcb_query_tree_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_query_tree_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -5888,6 +6668,14 @@ xcb_query_tree_reply (xcb_connection_t         *c  /**< */,
                       xcb_query_tree_cookie_t   cookie  /**< */,
                       xcb_generic_error_t     **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -5907,6 +6695,17 @@ xcb_intern_atom (xcb_connection_t *c  /**< */,
                  uint16_t          name_len  /**< */,
                  const char       *name  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -5926,6 +6725,18 @@ xcb_intern_atom_unchecked (xcb_connection_t *c  /**< */,
                            uint16_t          name_len  /**< */,
                            const char       *name  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_intern_atom_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -5943,6 +6754,14 @@ xcb_intern_atom_reply (xcb_connection_t          *c  /**< */,
                        xcb_intern_atom_cookie_t   cookie  /**< */,
                        xcb_generic_error_t      **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -5958,6 +6777,17 @@ xcb_get_atom_name_cookie_t
 xcb_get_atom_name (xcb_connection_t *c  /**< */,
                    xcb_atom_t        atom  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -6012,6 +6842,18 @@ xcb_get_atom_name_name_length (const xcb_get_atom_name_reply_t *R  /**< */);
 xcb_generic_iterator_t
 xcb_get_atom_name_name_end (const xcb_get_atom_name_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_get_atom_name_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -6029,6 +6871,17 @@ xcb_get_atom_name_reply (xcb_connection_t            *c  /**< */,
                          xcb_get_atom_name_cookie_t   cookie  /**< */,
                          xcb_generic_error_t        **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -6056,6 +6909,14 @@ xcb_change_property_checked (xcb_connection_t *c  /**< */,
                              uint32_t          data_len  /**< */,
                              const void       *data  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -6083,6 +6944,17 @@ xcb_change_property (xcb_connection_t *c  /**< */,
                      uint32_t          data_len  /**< */,
                      const void       *data  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -6100,6 +6972,14 @@ xcb_delete_property_checked (xcb_connection_t *c  /**< */,
                              xcb_window_t      window  /**< */,
                              xcb_atom_t        property  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -6117,6 +6997,14 @@ xcb_delete_property (xcb_connection_t *c  /**< */,
                      xcb_window_t      window  /**< */,
                      xcb_atom_t        property  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -6142,6 +7030,17 @@ xcb_get_property (xcb_connection_t *c  /**< */,
                   uint32_t          long_offset  /**< */,
                   uint32_t          long_length  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -6206,6 +7105,18 @@ xcb_get_property_value_length (const xcb_get_property_reply_t *R  /**< */);
 xcb_generic_iterator_t
 xcb_get_property_value_end (const xcb_get_property_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_get_property_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -6223,6 +7134,14 @@ xcb_get_property_reply (xcb_connection_t           *c  /**< */,
                         xcb_get_property_cookie_t   cookie  /**< */,
                         xcb_generic_error_t       **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -6238,6 +7157,17 @@ xcb_list_properties_cookie_t
 xcb_list_properties (xcb_connection_t *c  /**< */,
                      xcb_window_t      window  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -6292,6 +7222,18 @@ xcb_list_properties_atoms_length (const xcb_list_properties_reply_t *R  /**< */)
 xcb_atom_iterator_t
 xcb_list_properties_atoms_iterator (const xcb_list_properties_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_list_properties_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -6309,6 +7251,17 @@ xcb_list_properties_reply (xcb_connection_t              *c  /**< */,
                            xcb_list_properties_cookie_t   cookie  /**< */,
                            xcb_generic_error_t          **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -6328,6 +7281,14 @@ xcb_set_selection_owner_checked (xcb_connection_t *c  /**< */,
                                  xcb_atom_t        selection  /**< */,
                                  xcb_timestamp_t   time  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -6347,6 +7308,14 @@ xcb_set_selection_owner (xcb_connection_t *c  /**< */,
                          xcb_atom_t        selection  /**< */,
                          xcb_timestamp_t   time  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -6362,6 +7331,17 @@ xcb_get_selection_owner_cookie_t
 xcb_get_selection_owner (xcb_connection_t *c  /**< */,
                          xcb_atom_t        selection  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -6377,6 +7357,18 @@ xcb_get_selection_owner_cookie_t
 xcb_get_selection_owner_unchecked (xcb_connection_t *c  /**< */,
                                    xcb_atom_t        selection  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_get_selection_owner_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -6394,6 +7386,17 @@ xcb_get_selection_owner_reply (xcb_connection_t                  *c  /**< */,
                                xcb_get_selection_owner_cookie_t   cookie  /**< */,
                                xcb_generic_error_t              **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -6417,6 +7420,14 @@ xcb_convert_selection_checked (xcb_connection_t *c  /**< */,
                                xcb_atom_t        property  /**< */,
                                xcb_timestamp_t   time  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -6440,6 +7451,17 @@ xcb_convert_selection (xcb_connection_t *c  /**< */,
                        xcb_atom_t        property  /**< */,
                        xcb_timestamp_t   time  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -6461,6 +7483,14 @@ xcb_send_event_checked (xcb_connection_t *c  /**< */,
                         uint32_t          event_mask  /**< */,
                         const char       *event  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -6482,6 +7512,14 @@ xcb_send_event (xcb_connection_t *c  /**< */,
                 uint32_t          event_mask  /**< */,
                 const char       *event  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -6511,6 +7549,17 @@ xcb_grab_pointer (xcb_connection_t *c  /**< */,
                   xcb_cursor_t      cursor  /**< */,
                   xcb_timestamp_t   time  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -6540,6 +7589,18 @@ xcb_grab_pointer_unchecked (xcb_connection_t *c  /**< */,
                             xcb_cursor_t      cursor  /**< */,
                             xcb_timestamp_t   time  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_grab_pointer_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -6557,6 +7618,17 @@ xcb_grab_pointer_reply (xcb_connection_t           *c  /**< */,
                         xcb_grab_pointer_cookie_t   cookie  /**< */,
                         xcb_generic_error_t       **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -6572,6 +7644,14 @@ xcb_void_cookie_t
 xcb_ungrab_pointer_checked (xcb_connection_t *c  /**< */,
                             xcb_timestamp_t   time  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -6587,6 +7667,17 @@ xcb_void_cookie_t
 xcb_ungrab_pointer (xcb_connection_t *c  /**< */,
                     xcb_timestamp_t   time  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -6618,6 +7709,14 @@ xcb_grab_button_checked (xcb_connection_t *c  /**< */,
                          uint8_t           button  /**< */,
                          uint16_t          modifiers  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -6649,6 +7748,17 @@ xcb_grab_button (xcb_connection_t *c  /**< */,
                  uint8_t           button  /**< */,
                  uint16_t          modifiers  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -6668,6 +7778,14 @@ xcb_ungrab_button_checked (xcb_connection_t *c  /**< */,
                            xcb_window_t      grab_window  /**< */,
                            uint16_t          modifiers  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -6687,6 +7805,17 @@ xcb_ungrab_button (xcb_connection_t *c  /**< */,
                    xcb_window_t      grab_window  /**< */,
                    uint16_t          modifiers  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -6706,6 +7835,14 @@ xcb_change_active_pointer_grab_checked (xcb_connection_t *c  /**< */,
                                         xcb_timestamp_t   time  /**< */,
                                         uint16_t          event_mask  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -6725,6 +7862,14 @@ xcb_change_active_pointer_grab (xcb_connection_t *c  /**< */,
                                 xcb_timestamp_t   time  /**< */,
                                 uint16_t          event_mask  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -6748,6 +7893,17 @@ xcb_grab_keyboard (xcb_connection_t *c  /**< */,
                    uint8_t           pointer_mode  /**< */,
                    uint8_t           keyboard_mode  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -6771,6 +7927,18 @@ xcb_grab_keyboard_unchecked (xcb_connection_t *c  /**< */,
                              uint8_t           pointer_mode  /**< */,
                              uint8_t           keyboard_mode  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_grab_keyboard_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -6788,6 +7956,17 @@ xcb_grab_keyboard_reply (xcb_connection_t            *c  /**< */,
                          xcb_grab_keyboard_cookie_t   cookie  /**< */,
                          xcb_generic_error_t        **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -6803,6 +7982,14 @@ xcb_void_cookie_t
 xcb_ungrab_keyboard_checked (xcb_connection_t *c  /**< */,
                              xcb_timestamp_t   time  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -6818,6 +8005,17 @@ xcb_void_cookie_t
 xcb_ungrab_keyboard (xcb_connection_t *c  /**< */,
                      xcb_timestamp_t   time  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -6843,6 +8041,14 @@ xcb_grab_key_checked (xcb_connection_t *c  /**< */,
                       uint8_t           pointer_mode  /**< */,
                       uint8_t           keyboard_mode  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -6868,6 +8074,17 @@ xcb_grab_key (xcb_connection_t *c  /**< */,
               uint8_t           pointer_mode  /**< */,
               uint8_t           keyboard_mode  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -6887,6 +8104,14 @@ xcb_ungrab_key_checked (xcb_connection_t *c  /**< */,
                         xcb_window_t      grab_window  /**< */,
                         uint16_t          modifiers  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -6906,6 +8131,17 @@ xcb_ungrab_key (xcb_connection_t *c  /**< */,
                 xcb_window_t      grab_window  /**< */,
                 uint16_t          modifiers  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -6923,6 +8159,14 @@ xcb_allow_events_checked (xcb_connection_t *c  /**< */,
                           uint8_t           mode  /**< */,
                           xcb_timestamp_t   time  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -6940,6 +8184,17 @@ xcb_allow_events (xcb_connection_t *c  /**< */,
                   uint8_t           mode  /**< */,
                   xcb_timestamp_t   time  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -6953,6 +8208,14 @@ xcb_allow_events (xcb_connection_t *c  /**< */,
 xcb_void_cookie_t
 xcb_grab_server_checked (xcb_connection_t *c  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -6966,6 +8229,17 @@ xcb_grab_server_checked (xcb_connection_t *c  /**< */);
 xcb_void_cookie_t
 xcb_grab_server (xcb_connection_t *c  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -6979,6 +8253,14 @@ xcb_grab_server (xcb_connection_t *c  /**< */);
 xcb_void_cookie_t
 xcb_ungrab_server_checked (xcb_connection_t *c  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -6992,6 +8274,14 @@ xcb_ungrab_server_checked (xcb_connection_t *c  /**< */);
 xcb_void_cookie_t
 xcb_ungrab_server (xcb_connection_t *c  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -7007,6 +8297,17 @@ xcb_query_pointer_cookie_t
 xcb_query_pointer (xcb_connection_t *c  /**< */,
                    xcb_window_t      window  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -7022,6 +8323,18 @@ xcb_query_pointer_cookie_t
 xcb_query_pointer_unchecked (xcb_connection_t *c  /**< */,
                              xcb_window_t      window  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_query_pointer_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -7039,6 +8352,14 @@ xcb_query_pointer_reply (xcb_connection_t            *c  /**< */,
                          xcb_query_pointer_cookie_t   cookie  /**< */,
                          xcb_generic_error_t        **e  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_timecoord_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_timecoord_t)
+ */
 
 /*****************************************************************************
  **
@@ -7052,6 +8373,15 @@ xcb_query_pointer_reply (xcb_connection_t            *c  /**< */,
 void
 xcb_timecoord_next (xcb_timecoord_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_timecoord_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -7065,6 +8395,14 @@ xcb_timecoord_next (xcb_timecoord_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_timecoord_end (xcb_timecoord_iterator_t i  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -7084,6 +8422,17 @@ xcb_get_motion_events (xcb_connection_t *c  /**< */,
                        xcb_timestamp_t   start  /**< */,
                        xcb_timestamp_t   stop  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -7142,6 +8491,18 @@ xcb_get_motion_events_events_length (const xcb_get_motion_events_reply_t *R  /**
 xcb_timecoord_iterator_t
 xcb_get_motion_events_events_iterator (const xcb_get_motion_events_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_get_motion_events_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -7159,6 +8520,14 @@ xcb_get_motion_events_reply (xcb_connection_t                *c  /**< */,
                              xcb_get_motion_events_cookie_t   cookie  /**< */,
                              xcb_generic_error_t            **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -7180,6 +8549,17 @@ xcb_translate_coordinates (xcb_connection_t *c  /**< */,
                            int16_t           src_x  /**< */,
                            int16_t           src_y  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -7201,6 +8581,18 @@ xcb_translate_coordinates_unchecked (xcb_connection_t *c  /**< */,
                                      int16_t           src_x  /**< */,
                                      int16_t           src_y  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_translate_coordinates_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -7218,6 +8610,17 @@ xcb_translate_coordinates_reply (xcb_connection_t                    *c  /**< */
                                  xcb_translate_coordinates_cookie_t   cookie  /**< */,
                                  xcb_generic_error_t                **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -7247,6 +8650,14 @@ xcb_warp_pointer_checked (xcb_connection_t *c  /**< */,
                           int16_t           dst_x  /**< */,
                           int16_t           dst_y  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -7276,6 +8687,17 @@ xcb_warp_pointer (xcb_connection_t *c  /**< */,
                   int16_t           dst_x  /**< */,
                   int16_t           dst_y  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -7295,6 +8717,14 @@ xcb_set_input_focus_checked (xcb_connection_t *c  /**< */,
                              xcb_window_t      focus  /**< */,
                              xcb_timestamp_t   time  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -7314,6 +8744,14 @@ xcb_set_input_focus (xcb_connection_t *c  /**< */,
                      xcb_window_t      focus  /**< */,
                      xcb_timestamp_t   time  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -7327,6 +8765,17 @@ xcb_set_input_focus (xcb_connection_t *c  /**< */,
 xcb_get_input_focus_cookie_t
 xcb_get_input_focus (xcb_connection_t *c  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -7340,6 +8789,18 @@ xcb_get_input_focus (xcb_connection_t *c  /**< */);
 xcb_get_input_focus_cookie_t
 xcb_get_input_focus_unchecked (xcb_connection_t *c  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_get_input_focus_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -7357,6 +8818,14 @@ xcb_get_input_focus_reply (xcb_connection_t              *c  /**< */,
                            xcb_get_input_focus_cookie_t   cookie  /**< */,
                            xcb_generic_error_t          **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -7370,6 +8839,17 @@ xcb_get_input_focus_reply (xcb_connection_t              *c  /**< */,
 xcb_query_keymap_cookie_t
 xcb_query_keymap (xcb_connection_t *c  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -7383,6 +8863,18 @@ xcb_query_keymap (xcb_connection_t *c  /**< */);
 xcb_query_keymap_cookie_t
 xcb_query_keymap_unchecked (xcb_connection_t *c  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_query_keymap_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -7400,6 +8892,17 @@ xcb_query_keymap_reply (xcb_connection_t           *c  /**< */,
                         xcb_query_keymap_cookie_t   cookie  /**< */,
                         xcb_generic_error_t       **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -7419,6 +8922,14 @@ xcb_open_font_checked (xcb_connection_t *c  /**< */,
                        uint16_t          name_len  /**< */,
                        const char       *name  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -7438,6 +8949,17 @@ xcb_open_font (xcb_connection_t *c  /**< */,
                uint16_t          name_len  /**< */,
                const char       *name  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -7453,6 +8975,14 @@ xcb_void_cookie_t
 xcb_close_font_checked (xcb_connection_t *c  /**< */,
                         xcb_font_t        font  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -7468,6 +8998,14 @@ xcb_void_cookie_t
 xcb_close_font (xcb_connection_t *c  /**< */,
                 xcb_font_t        font  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_fontprop_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_fontprop_t)
+ */
 
 /*****************************************************************************
  **
@@ -7481,6 +9019,15 @@ xcb_close_font (xcb_connection_t *c  /**< */,
 void
 xcb_fontprop_next (xcb_fontprop_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_fontprop_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -7494,6 +9041,14 @@ xcb_fontprop_next (xcb_fontprop_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_fontprop_end (xcb_fontprop_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_charinfo_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_charinfo_t)
+ */
 
 /*****************************************************************************
  **
@@ -7507,6 +9062,15 @@ xcb_fontprop_end (xcb_fontprop_iterator_t i  /**< */);
 void
 xcb_charinfo_next (xcb_charinfo_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_charinfo_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -7520,6 +9084,14 @@ xcb_charinfo_next (xcb_charinfo_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_charinfo_end (xcb_charinfo_iterator_t i  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -7535,6 +9107,17 @@ xcb_query_font_cookie_t
 xcb_query_font (xcb_connection_t *c  /**< */,
                 xcb_fontable_t    font  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -7628,6 +9211,18 @@ xcb_query_font_char_infos_length (const xcb_query_font_reply_t *R  /**< */);
 xcb_charinfo_iterator_t
 xcb_query_font_char_infos_iterator (const xcb_query_font_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_query_font_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -7645,6 +9240,14 @@ xcb_query_font_reply (xcb_connection_t         *c  /**< */,
                       xcb_query_font_cookie_t   cookie  /**< */,
                       xcb_generic_error_t     **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -7664,6 +9267,17 @@ xcb_query_text_extents (xcb_connection_t   *c  /**< */,
                         uint32_t            string_len  /**< */,
                         const xcb_char2b_t *string  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -7683,6 +9297,18 @@ xcb_query_text_extents_unchecked (xcb_connection_t   *c  /**< */,
                                   uint32_t            string_len  /**< */,
                                   const xcb_char2b_t *string  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_query_text_extents_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -7739,6 +9365,14 @@ xcb_str_name_length (const xcb_str_t *R  /**< */);
 xcb_generic_iterator_t
 xcb_str_name_end (const xcb_str_t *R  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_str_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_str_t)
+ */
 
 /*****************************************************************************
  **
@@ -7752,6 +9386,15 @@ xcb_str_name_end (const xcb_str_t *R  /**< */);
 void
 xcb_str_next (xcb_str_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_str_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -7765,6 +9408,14 @@ xcb_str_next (xcb_str_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_str_end (xcb_str_iterator_t i  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -7784,6 +9435,17 @@ xcb_list_fonts (xcb_connection_t *c  /**< */,
                 uint16_t          pattern_len  /**< */,
                 const char       *pattern  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -7829,6 +9491,18 @@ xcb_list_fonts_names_length (const xcb_list_fonts_reply_t *R  /**< */);
 xcb_str_iterator_t
 xcb_list_fonts_names_iterator (const xcb_list_fonts_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_list_fonts_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -7846,6 +9520,14 @@ xcb_list_fonts_reply (xcb_connection_t         *c  /**< */,
                       xcb_list_fonts_cookie_t   cookie  /**< */,
                       xcb_generic_error_t     **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -7865,6 +9547,17 @@ xcb_list_fonts_with_info (xcb_connection_t *c  /**< */,
                           uint16_t          pattern_len  /**< */,
                           const char       *pattern  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -7962,6 +9655,18 @@ xcb_list_fonts_with_info_name_length (const xcb_list_fonts_with_info_reply_t *R 
 xcb_generic_iterator_t
 xcb_list_fonts_with_info_name_end (const xcb_list_fonts_with_info_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_list_fonts_with_info_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -7979,6 +9684,17 @@ xcb_list_fonts_with_info_reply (xcb_connection_t                   *c  /**< */,
                                 xcb_list_fonts_with_info_cookie_t   cookie  /**< */,
                                 xcb_generic_error_t               **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -7998,6 +9714,14 @@ xcb_set_font_path_checked (xcb_connection_t *c  /**< */,
                            uint32_t          path_len  /**< */,
                            const char       *path  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -8017,6 +9741,14 @@ xcb_set_font_path (xcb_connection_t *c  /**< */,
                    uint32_t          path_len  /**< */,
                    const char       *path  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -8030,6 +9762,17 @@ xcb_set_font_path (xcb_connection_t *c  /**< */,
 xcb_get_font_path_cookie_t
 xcb_get_font_path (xcb_connection_t *c  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -8069,6 +9812,18 @@ xcb_get_font_path_path_length (const xcb_get_font_path_reply_t *R  /**< */);
 xcb_str_iterator_t
 xcb_get_font_path_path_iterator (const xcb_get_font_path_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_get_font_path_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -8086,6 +9841,17 @@ xcb_get_font_path_reply (xcb_connection_t            *c  /**< */,
                          xcb_get_font_path_cookie_t   cookie  /**< */,
                          xcb_generic_error_t        **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -8109,6 +9875,14 @@ xcb_create_pixmap_checked (xcb_connection_t *c  /**< */,
                            uint16_t          width  /**< */,
                            uint16_t          height  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -8132,6 +9906,17 @@ xcb_create_pixmap (xcb_connection_t *c  /**< */,
                    uint16_t          width  /**< */,
                    uint16_t          height  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -8147,6 +9932,14 @@ xcb_void_cookie_t
 xcb_free_pixmap_checked (xcb_connection_t *c  /**< */,
                          xcb_pixmap_t      pixmap  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -8162,6 +9955,17 @@ xcb_void_cookie_t
 xcb_free_pixmap (xcb_connection_t *c  /**< */,
                  xcb_pixmap_t      pixmap  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -8183,6 +9987,14 @@ xcb_create_gc_checked (xcb_connection_t *c  /**< */,
                        uint32_t          value_mask  /**< */,
                        const uint32_t   *value_list  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -8204,6 +10016,17 @@ xcb_create_gc (xcb_connection_t *c  /**< */,
                uint32_t          value_mask  /**< */,
                const uint32_t   *value_list  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -8223,6 +10046,14 @@ xcb_change_gc_checked (xcb_connection_t *c  /**< */,
                        uint32_t          value_mask  /**< */,
                        const uint32_t   *value_list  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -8242,6 +10073,17 @@ xcb_change_gc (xcb_connection_t *c  /**< */,
                uint32_t          value_mask  /**< */,
                const uint32_t   *value_list  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -8261,6 +10103,14 @@ xcb_copy_gc_checked (xcb_connection_t *c  /**< */,
                      xcb_gcontext_t    dst_gc  /**< */,
                      uint32_t          value_mask  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -8280,6 +10130,17 @@ xcb_copy_gc (xcb_connection_t *c  /**< */,
              xcb_gcontext_t    dst_gc  /**< */,
              uint32_t          value_mask  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -8301,6 +10162,14 @@ xcb_set_dashes_checked (xcb_connection_t *c  /**< */,
                         uint16_t          dashes_len  /**< */,
                         const uint8_t    *dashes  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -8322,6 +10191,17 @@ xcb_set_dashes (xcb_connection_t *c  /**< */,
                 uint16_t          dashes_len  /**< */,
                 const uint8_t    *dashes  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -8347,6 +10227,14 @@ xcb_set_clip_rectangles_checked (xcb_connection_t      *c  /**< */,
                                  uint32_t               rectangles_len  /**< */,
                                  const xcb_rectangle_t *rectangles  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -8372,6 +10260,17 @@ xcb_set_clip_rectangles (xcb_connection_t      *c  /**< */,
                          uint32_t               rectangles_len  /**< */,
                          const xcb_rectangle_t *rectangles  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -8387,6 +10286,14 @@ xcb_void_cookie_t
 xcb_free_gc_checked (xcb_connection_t *c  /**< */,
                      xcb_gcontext_t    gc  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -8402,6 +10309,17 @@ xcb_void_cookie_t
 xcb_free_gc (xcb_connection_t *c  /**< */,
              xcb_gcontext_t    gc  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -8427,6 +10345,14 @@ xcb_clear_area_checked (xcb_connection_t *c  /**< */,
                         uint16_t          width  /**< */,
                         uint16_t          height  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -8452,6 +10378,17 @@ xcb_clear_area (xcb_connection_t *c  /**< */,
                 uint16_t          width  /**< */,
                 uint16_t          height  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -8483,6 +10420,14 @@ xcb_copy_area_checked (xcb_connection_t *c  /**< */,
                        uint16_t          width  /**< */,
                        uint16_t          height  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -8514,6 +10459,17 @@ xcb_copy_area (xcb_connection_t *c  /**< */,
                uint16_t          width  /**< */,
                uint16_t          height  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -8547,6 +10503,14 @@ xcb_copy_plane_checked (xcb_connection_t *c  /**< */,
                         uint16_t          height  /**< */,
                         uint32_t          bit_plane  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -8580,6 +10544,17 @@ xcb_copy_plane (xcb_connection_t *c  /**< */,
                 uint16_t          height  /**< */,
                 uint32_t          bit_plane  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -8603,6 +10578,14 @@ xcb_poly_point_checked (xcb_connection_t  *c  /**< */,
                         uint32_t           points_len  /**< */,
                         const xcb_point_t *points  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -8626,6 +10609,17 @@ xcb_poly_point (xcb_connection_t  *c  /**< */,
                 uint32_t           points_len  /**< */,
                 const xcb_point_t *points  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -8649,6 +10643,14 @@ xcb_poly_line_checked (xcb_connection_t  *c  /**< */,
                        uint32_t           points_len  /**< */,
                        const xcb_point_t *points  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -8672,6 +10674,14 @@ xcb_poly_line (xcb_connection_t  *c  /**< */,
                uint32_t           points_len  /**< */,
                const xcb_point_t *points  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_segment_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_segment_t)
+ */
 
 /*****************************************************************************
  **
@@ -8685,6 +10695,15 @@ xcb_poly_line (xcb_connection_t  *c  /**< */,
 void
 xcb_segment_next (xcb_segment_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_segment_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -8698,6 +10717,17 @@ xcb_segment_next (xcb_segment_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_segment_end (xcb_segment_iterator_t i  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -8719,6 +10749,14 @@ xcb_poly_segment_checked (xcb_connection_t    *c  /**< */,
                           uint32_t             segments_len  /**< */,
                           const xcb_segment_t *segments  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -8740,6 +10778,17 @@ xcb_poly_segment (xcb_connection_t    *c  /**< */,
                   uint32_t             segments_len  /**< */,
                   const xcb_segment_t *segments  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -8761,6 +10810,14 @@ xcb_poly_rectangle_checked (xcb_connection_t      *c  /**< */,
                             uint32_t               rectangles_len  /**< */,
                             const xcb_rectangle_t *rectangles  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -8782,6 +10839,17 @@ xcb_poly_rectangle (xcb_connection_t      *c  /**< */,
                     uint32_t               rectangles_len  /**< */,
                     const xcb_rectangle_t *rectangles  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -8803,6 +10871,14 @@ xcb_poly_arc_checked (xcb_connection_t *c  /**< */,
                       uint32_t          arcs_len  /**< */,
                       const xcb_arc_t  *arcs  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -8824,6 +10900,17 @@ xcb_poly_arc (xcb_connection_t *c  /**< */,
               uint32_t          arcs_len  /**< */,
               const xcb_arc_t  *arcs  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -8849,6 +10936,14 @@ xcb_fill_poly_checked (xcb_connection_t  *c  /**< */,
                        uint32_t           points_len  /**< */,
                        const xcb_point_t *points  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -8874,6 +10969,17 @@ xcb_fill_poly (xcb_connection_t  *c  /**< */,
                uint32_t           points_len  /**< */,
                const xcb_point_t *points  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -8895,6 +11001,14 @@ xcb_poly_fill_rectangle_checked (xcb_connection_t      *c  /**< */,
                                  uint32_t               rectangles_len  /**< */,
                                  const xcb_rectangle_t *rectangles  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -8916,6 +11030,17 @@ xcb_poly_fill_rectangle (xcb_connection_t      *c  /**< */,
                          uint32_t               rectangles_len  /**< */,
                          const xcb_rectangle_t *rectangles  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -8937,6 +11062,14 @@ xcb_poly_fill_arc_checked (xcb_connection_t *c  /**< */,
                            uint32_t          arcs_len  /**< */,
                            const xcb_arc_t  *arcs  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -8958,6 +11091,17 @@ xcb_poly_fill_arc (xcb_connection_t *c  /**< */,
                    uint32_t          arcs_len  /**< */,
                    const xcb_arc_t  *arcs  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -8993,6 +11137,14 @@ xcb_put_image_checked (xcb_connection_t *c  /**< */,
                        uint32_t          data_len  /**< */,
                        const uint8_t    *data  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -9028,6 +11180,14 @@ xcb_put_image (xcb_connection_t *c  /**< */,
                uint32_t          data_len  /**< */,
                const uint8_t    *data  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -9055,6 +11215,17 @@ xcb_get_image (xcb_connection_t *c  /**< */,
                uint16_t          height  /**< */,
                uint32_t          plane_mask  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -9121,6 +11292,18 @@ xcb_get_image_data_length (const xcb_get_image_reply_t *R  /**< */);
 xcb_generic_iterator_t
 xcb_get_image_data_end (const xcb_get_image_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_get_image_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -9138,6 +11321,17 @@ xcb_get_image_reply (xcb_connection_t        *c  /**< */,
                      xcb_get_image_cookie_t   cookie  /**< */,
                      xcb_generic_error_t    **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -9163,6 +11357,14 @@ xcb_poly_text_8_checked (xcb_connection_t *c  /**< */,
                          uint32_t          items_len  /**< */,
                          const uint8_t    *items  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -9188,6 +11390,17 @@ xcb_poly_text_8 (xcb_connection_t *c  /**< */,
                  uint32_t          items_len  /**< */,
                  const uint8_t    *items  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -9213,6 +11426,14 @@ xcb_poly_text_16_checked (xcb_connection_t *c  /**< */,
                           uint32_t          items_len  /**< */,
                           const uint8_t    *items  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -9238,6 +11459,17 @@ xcb_poly_text_16 (xcb_connection_t *c  /**< */,
                   uint32_t          items_len  /**< */,
                   const uint8_t    *items  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -9263,6 +11495,14 @@ xcb_image_text_8_checked (xcb_connection_t *c  /**< */,
                           int16_t           y  /**< */,
                           const char       *string  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -9288,6 +11528,17 @@ xcb_image_text_8 (xcb_connection_t *c  /**< */,
                   int16_t           y  /**< */,
                   const char       *string  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -9313,6 +11564,14 @@ xcb_image_text_16_checked (xcb_connection_t   *c  /**< */,
                            int16_t             y  /**< */,
                            const xcb_char2b_t *string  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -9338,6 +11597,17 @@ xcb_image_text_16 (xcb_connection_t   *c  /**< */,
                    int16_t             y  /**< */,
                    const xcb_char2b_t *string  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -9359,6 +11629,14 @@ xcb_create_colormap_checked (xcb_connection_t *c  /**< */,
                              xcb_window_t      window  /**< */,
                              xcb_visualid_t    visual  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -9380,6 +11658,17 @@ xcb_create_colormap (xcb_connection_t *c  /**< */,
                      xcb_window_t      window  /**< */,
                      xcb_visualid_t    visual  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -9395,6 +11684,14 @@ xcb_void_cookie_t
 xcb_free_colormap_checked (xcb_connection_t *c  /**< */,
                            xcb_colormap_t    cmap  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -9410,6 +11707,17 @@ xcb_void_cookie_t
 xcb_free_colormap (xcb_connection_t *c  /**< */,
                    xcb_colormap_t    cmap  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -9427,6 +11735,14 @@ xcb_copy_colormap_and_free_checked (xcb_connection_t *c  /**< */,
                                     xcb_colormap_t    mid  /**< */,
                                     xcb_colormap_t    src_cmap  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -9444,6 +11760,17 @@ xcb_copy_colormap_and_free (xcb_connection_t *c  /**< */,
                             xcb_colormap_t    mid  /**< */,
                             xcb_colormap_t    src_cmap  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -9459,6 +11786,14 @@ xcb_void_cookie_t
 xcb_install_colormap_checked (xcb_connection_t *c  /**< */,
                               xcb_colormap_t    cmap  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -9474,6 +11809,17 @@ xcb_void_cookie_t
 xcb_install_colormap (xcb_connection_t *c  /**< */,
                       xcb_colormap_t    cmap  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -9489,6 +11835,14 @@ xcb_void_cookie_t
 xcb_uninstall_colormap_checked (xcb_connection_t *c  /**< */,
                                 xcb_colormap_t    cmap  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -9504,6 +11858,14 @@ xcb_void_cookie_t
 xcb_uninstall_colormap (xcb_connection_t *c  /**< */,
                         xcb_colormap_t    cmap  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -9519,6 +11881,17 @@ xcb_list_installed_colormaps_cookie_t
 xcb_list_installed_colormaps (xcb_connection_t *c  /**< */,
                               xcb_window_t      window  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -9573,6 +11946,18 @@ xcb_list_installed_colormaps_cmaps_length (const xcb_list_installed_colormaps_re
 xcb_colormap_iterator_t
 xcb_list_installed_colormaps_cmaps_iterator (const xcb_list_installed_colormaps_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_list_installed_colormaps_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -9590,6 +11975,14 @@ xcb_list_installed_colormaps_reply (xcb_connection_t                       *c  /
                                     xcb_list_installed_colormaps_cookie_t   cookie  /**< */,
                                     xcb_generic_error_t                   **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -9611,6 +12004,17 @@ xcb_alloc_color (xcb_connection_t *c  /**< */,
                  uint16_t          green  /**< */,
                  uint16_t          blue  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -9632,6 +12036,18 @@ xcb_alloc_color_unchecked (xcb_connection_t *c  /**< */,
                            uint16_t          green  /**< */,
                            uint16_t          blue  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_alloc_color_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -9649,6 +12065,14 @@ xcb_alloc_color_reply (xcb_connection_t          *c  /**< */,
                        xcb_alloc_color_cookie_t   cookie  /**< */,
                        xcb_generic_error_t      **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -9668,6 +12092,17 @@ xcb_alloc_named_color (xcb_connection_t *c  /**< */,
                        uint16_t          name_len  /**< */,
                        const char       *name  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -9687,6 +12122,18 @@ xcb_alloc_named_color_unchecked (xcb_connection_t *c  /**< */,
                                  uint16_t          name_len  /**< */,
                                  const char       *name  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_alloc_named_color_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -9704,6 +12151,14 @@ xcb_alloc_named_color_reply (xcb_connection_t                *c  /**< */,
                              xcb_alloc_named_color_cookie_t   cookie  /**< */,
                              xcb_generic_error_t            **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -9725,6 +12180,17 @@ xcb_alloc_color_cells (xcb_connection_t *c  /**< */,
                        uint16_t          colors  /**< */,
                        uint16_t          planes  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -9824,6 +12290,18 @@ xcb_alloc_color_cells_masks_length (const xcb_alloc_color_cells_reply_t *R  /**<
 xcb_generic_iterator_t
 xcb_alloc_color_cells_masks_end (const xcb_alloc_color_cells_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_alloc_color_cells_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -9841,6 +12319,14 @@ xcb_alloc_color_cells_reply (xcb_connection_t                *c  /**< */,
                              xcb_alloc_color_cells_cookie_t   cookie  /**< */,
                              xcb_generic_error_t            **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -9866,6 +12352,17 @@ xcb_alloc_color_planes (xcb_connection_t *c  /**< */,
                         uint16_t          greens  /**< */,
                         uint16_t          blues  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -9930,6 +12427,18 @@ xcb_alloc_color_planes_pixels_length (const xcb_alloc_color_planes_reply_t *R  /
 xcb_generic_iterator_t
 xcb_alloc_color_planes_pixels_end (const xcb_alloc_color_planes_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_alloc_color_planes_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -9947,6 +12456,17 @@ xcb_alloc_color_planes_reply (xcb_connection_t                 *c  /**< */,
                               xcb_alloc_color_planes_cookie_t   cookie  /**< */,
                               xcb_generic_error_t             **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -9968,6 +12488,14 @@ xcb_free_colors_checked (xcb_connection_t *c  /**< */,
                          uint32_t          pixels_len  /**< */,
                          const uint32_t   *pixels  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -9989,6 +12517,14 @@ xcb_free_colors (xcb_connection_t *c  /**< */,
                  uint32_t          pixels_len  /**< */,
                  const uint32_t   *pixels  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_coloritem_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_coloritem_t)
+ */
 
 /*****************************************************************************
  **
@@ -10002,6 +12538,15 @@ xcb_free_colors (xcb_connection_t *c  /**< */,
 void
 xcb_coloritem_next (xcb_coloritem_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_coloritem_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -10015,6 +12560,17 @@ xcb_coloritem_next (xcb_coloritem_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_coloritem_end (xcb_coloritem_iterator_t i  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -10034,6 +12590,14 @@ xcb_store_colors_checked (xcb_connection_t      *c  /**< */,
                           uint32_t               items_len  /**< */,
                           const xcb_coloritem_t *items  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -10053,6 +12617,17 @@ xcb_store_colors (xcb_connection_t      *c  /**< */,
                   uint32_t               items_len  /**< */,
                   const xcb_coloritem_t *items  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -10076,6 +12651,14 @@ xcb_store_named_color_checked (xcb_connection_t *c  /**< */,
                                uint16_t          name_len  /**< */,
                                const char       *name  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -10099,6 +12682,14 @@ xcb_store_named_color (xcb_connection_t *c  /**< */,
                        uint16_t          name_len  /**< */,
                        const char       *name  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_rgb_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_rgb_t)
+ */
 
 /*****************************************************************************
  **
@@ -10112,6 +12703,15 @@ xcb_store_named_color (xcb_connection_t *c  /**< */,
 void
 xcb_rgb_next (xcb_rgb_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_rgb_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -10125,6 +12725,14 @@ xcb_rgb_next (xcb_rgb_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_rgb_end (xcb_rgb_iterator_t i  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -10144,6 +12752,17 @@ xcb_query_colors (xcb_connection_t *c  /**< */,
                   uint32_t          pixels_len  /**< */,
                   const uint32_t   *pixels  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -10202,6 +12821,18 @@ xcb_query_colors_colors_length (const xcb_query_colors_reply_t *R  /**< */);
 xcb_rgb_iterator_t
 xcb_query_colors_colors_iterator (const xcb_query_colors_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_query_colors_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -10219,6 +12850,14 @@ xcb_query_colors_reply (xcb_connection_t           *c  /**< */,
                         xcb_query_colors_cookie_t   cookie  /**< */,
                         xcb_generic_error_t       **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -10238,6 +12877,17 @@ xcb_lookup_color (xcb_connection_t *c  /**< */,
                   uint16_t          name_len  /**< */,
                   const char       *name  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -10257,6 +12907,18 @@ xcb_lookup_color_unchecked (xcb_connection_t *c  /**< */,
                             uint16_t          name_len  /**< */,
                             const char       *name  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_lookup_color_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -10274,6 +12936,17 @@ xcb_lookup_color_reply (xcb_connection_t           *c  /**< */,
                         xcb_lookup_color_cookie_t   cookie  /**< */,
                         xcb_generic_error_t       **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -10309,6 +12982,14 @@ xcb_create_cursor_checked (xcb_connection_t *c  /**< */,
                            uint16_t          x  /**< */,
                            uint16_t          y  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -10344,6 +13025,17 @@ xcb_create_cursor (xcb_connection_t *c  /**< */,
                    uint16_t          x  /**< */,
                    uint16_t          y  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -10379,6 +13071,14 @@ xcb_create_glyph_cursor_checked (xcb_connection_t *c  /**< */,
                                  uint16_t          back_green  /**< */,
                                  uint16_t          back_blue  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -10414,6 +13114,17 @@ xcb_create_glyph_cursor (xcb_connection_t *c  /**< */,
                          uint16_t          back_green  /**< */,
                          uint16_t          back_blue  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -10429,6 +13140,14 @@ xcb_void_cookie_t
 xcb_free_cursor_checked (xcb_connection_t *c  /**< */,
                          xcb_cursor_t      cursor  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -10444,6 +13163,17 @@ xcb_void_cookie_t
 xcb_free_cursor (xcb_connection_t *c  /**< */,
                  xcb_cursor_t      cursor  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -10471,6 +13201,14 @@ xcb_recolor_cursor_checked (xcb_connection_t *c  /**< */,
                             uint16_t          back_green  /**< */,
                             uint16_t          back_blue  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -10498,6 +13236,14 @@ xcb_recolor_cursor (xcb_connection_t *c  /**< */,
                     uint16_t          back_green  /**< */,
                     uint16_t          back_blue  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -10519,6 +13265,17 @@ xcb_query_best_size (xcb_connection_t *c  /**< */,
                      uint16_t          width  /**< */,
                      uint16_t          height  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -10540,6 +13297,18 @@ xcb_query_best_size_unchecked (xcb_connection_t *c  /**< */,
                                uint16_t          width  /**< */,
                                uint16_t          height  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_query_best_size_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -10557,6 +13326,14 @@ xcb_query_best_size_reply (xcb_connection_t              *c  /**< */,
                            xcb_query_best_size_cookie_t   cookie  /**< */,
                            xcb_generic_error_t          **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -10574,6 +13351,17 @@ xcb_query_extension (xcb_connection_t *c  /**< */,
                      uint16_t          name_len  /**< */,
                      const char       *name  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -10591,6 +13379,18 @@ xcb_query_extension_unchecked (xcb_connection_t *c  /**< */,
                                uint16_t          name_len  /**< */,
                                const char       *name  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_query_extension_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -10608,6 +13408,14 @@ xcb_query_extension_reply (xcb_connection_t              *c  /**< */,
                            xcb_query_extension_cookie_t   cookie  /**< */,
                            xcb_generic_error_t          **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -10621,6 +13429,17 @@ xcb_query_extension_reply (xcb_connection_t              *c  /**< */,
 xcb_list_extensions_cookie_t
 xcb_list_extensions (xcb_connection_t *c  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -10660,6 +13479,18 @@ xcb_list_extensions_names_length (const xcb_list_extensions_reply_t *R  /**< */)
 xcb_str_iterator_t
 xcb_list_extensions_names_iterator (const xcb_list_extensions_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_list_extensions_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -10677,6 +13508,17 @@ xcb_list_extensions_reply (xcb_connection_t              *c  /**< */,
                            xcb_list_extensions_cookie_t   cookie  /**< */,
                            xcb_generic_error_t          **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -10698,6 +13540,14 @@ xcb_change_keyboard_mapping_checked (xcb_connection_t   *c  /**< */,
                                      uint8_t             keysyms_per_keycode  /**< */,
                                      const xcb_keysym_t *keysyms  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -10719,6 +13569,14 @@ xcb_change_keyboard_mapping (xcb_connection_t   *c  /**< */,
                              uint8_t             keysyms_per_keycode  /**< */,
                              const xcb_keysym_t *keysyms  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -10736,6 +13594,17 @@ xcb_get_keyboard_mapping (xcb_connection_t *c  /**< */,
                           xcb_keycode_t     first_keycode  /**< */,
                           uint8_t           count  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -10792,6 +13661,18 @@ xcb_get_keyboard_mapping_keysyms_length (const xcb_get_keyboard_mapping_reply_t 
 xcb_keysym_iterator_t
 xcb_get_keyboard_mapping_keysyms_iterator (const xcb_get_keyboard_mapping_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_get_keyboard_mapping_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -10809,6 +13690,17 @@ xcb_get_keyboard_mapping_reply (xcb_connection_t                   *c  /**< */,
                                 xcb_get_keyboard_mapping_cookie_t   cookie  /**< */,
                                 xcb_generic_error_t               **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -10826,6 +13718,14 @@ xcb_change_keyboard_control_checked (xcb_connection_t *c  /**< */,
                                      uint32_t          value_mask  /**< */,
                                      const uint32_t   *value_list  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -10843,6 +13743,14 @@ xcb_change_keyboard_control (xcb_connection_t *c  /**< */,
                              uint32_t          value_mask  /**< */,
                              const uint32_t   *value_list  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -10856,6 +13764,17 @@ xcb_change_keyboard_control (xcb_connection_t *c  /**< */,
 xcb_get_keyboard_control_cookie_t
 xcb_get_keyboard_control (xcb_connection_t *c  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -10869,6 +13788,18 @@ xcb_get_keyboard_control (xcb_connection_t *c  /**< */);
 xcb_get_keyboard_control_cookie_t
 xcb_get_keyboard_control_unchecked (xcb_connection_t *c  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_get_keyboard_control_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -10886,6 +13817,17 @@ xcb_get_keyboard_control_reply (xcb_connection_t                   *c  /**< */,
                                 xcb_get_keyboard_control_cookie_t   cookie  /**< */,
                                 xcb_generic_error_t               **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -10901,6 +13843,14 @@ xcb_void_cookie_t
 xcb_bell_checked (xcb_connection_t *c  /**< */,
                   int8_t            percent  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -10916,6 +13866,17 @@ xcb_void_cookie_t
 xcb_bell (xcb_connection_t *c  /**< */,
           int8_t            percent  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -10939,6 +13900,14 @@ xcb_change_pointer_control_checked (xcb_connection_t *c  /**< */,
                                     uint8_t           do_acceleration  /**< */,
                                     uint8_t           do_threshold  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -10962,6 +13931,14 @@ xcb_change_pointer_control (xcb_connection_t *c  /**< */,
                             uint8_t           do_acceleration  /**< */,
                             uint8_t           do_threshold  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -10975,6 +13952,17 @@ xcb_change_pointer_control (xcb_connection_t *c  /**< */,
 xcb_get_pointer_control_cookie_t
 xcb_get_pointer_control (xcb_connection_t *c  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -10988,6 +13976,18 @@ xcb_get_pointer_control (xcb_connection_t *c  /**< */);
 xcb_get_pointer_control_cookie_t
 xcb_get_pointer_control_unchecked (xcb_connection_t *c  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_get_pointer_control_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -11005,6 +14005,17 @@ xcb_get_pointer_control_reply (xcb_connection_t                  *c  /**< */,
                                xcb_get_pointer_control_cookie_t   cookie  /**< */,
                                xcb_generic_error_t              **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -11026,6 +14037,14 @@ xcb_set_screen_saver_checked (xcb_connection_t *c  /**< */,
                               uint8_t           prefer_blanking  /**< */,
                               uint8_t           allow_exposures  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -11047,6 +14066,14 @@ xcb_set_screen_saver (xcb_connection_t *c  /**< */,
                       uint8_t           prefer_blanking  /**< */,
                       uint8_t           allow_exposures  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -11060,6 +14087,17 @@ xcb_set_screen_saver (xcb_connection_t *c  /**< */,
 xcb_get_screen_saver_cookie_t
 xcb_get_screen_saver (xcb_connection_t *c  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -11073,6 +14111,18 @@ xcb_get_screen_saver (xcb_connection_t *c  /**< */);
 xcb_get_screen_saver_cookie_t
 xcb_get_screen_saver_unchecked (xcb_connection_t *c  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_get_screen_saver_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -11090,6 +14140,17 @@ xcb_get_screen_saver_reply (xcb_connection_t               *c  /**< */,
                             xcb_get_screen_saver_cookie_t   cookie  /**< */,
                             xcb_generic_error_t           **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -11111,6 +14172,14 @@ xcb_change_hosts_checked (xcb_connection_t *c  /**< */,
                           uint16_t          address_len  /**< */,
                           const char       *address  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -11171,6 +14240,14 @@ xcb_host_address_length (const xcb_host_t *R  /**< */);
 xcb_generic_iterator_t
 xcb_host_address_end (const xcb_host_t *R  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_host_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_host_t)
+ */
 
 /*****************************************************************************
  **
@@ -11184,6 +14261,15 @@ xcb_host_address_end (const xcb_host_t *R  /**< */);
 void
 xcb_host_next (xcb_host_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_host_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -11197,6 +14283,14 @@ xcb_host_next (xcb_host_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_host_end (xcb_host_iterator_t i  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -11210,6 +14304,17 @@ xcb_host_end (xcb_host_iterator_t i  /**< */);
 xcb_list_hosts_cookie_t
 xcb_list_hosts (xcb_connection_t *c  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -11249,6 +14354,18 @@ xcb_list_hosts_hosts_length (const xcb_list_hosts_reply_t *R  /**< */);
 xcb_host_iterator_t
 xcb_list_hosts_hosts_iterator (const xcb_list_hosts_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_list_hosts_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -11266,6 +14383,17 @@ xcb_list_hosts_reply (xcb_connection_t         *c  /**< */,
                       xcb_list_hosts_cookie_t   cookie  /**< */,
                       xcb_generic_error_t     **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -11281,6 +14409,14 @@ xcb_void_cookie_t
 xcb_set_access_control_checked (xcb_connection_t *c  /**< */,
                                 uint8_t           mode  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -11296,6 +14432,17 @@ xcb_void_cookie_t
 xcb_set_access_control (xcb_connection_t *c  /**< */,
                         uint8_t           mode  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -11311,6 +14458,14 @@ xcb_void_cookie_t
 xcb_set_close_down_mode_checked (xcb_connection_t *c  /**< */,
                                  uint8_t           mode  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -11326,6 +14481,17 @@ xcb_void_cookie_t
 xcb_set_close_down_mode (xcb_connection_t *c  /**< */,
                          uint8_t           mode  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -11341,6 +14507,14 @@ xcb_void_cookie_t
 xcb_kill_client_checked (xcb_connection_t *c  /**< */,
                          uint32_t          resource  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -11356,6 +14530,17 @@ xcb_void_cookie_t
 xcb_kill_client (xcb_connection_t *c  /**< */,
                  uint32_t          resource  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -11377,6 +14562,14 @@ xcb_rotate_properties_checked (xcb_connection_t *c  /**< */,
                                int16_t           delta  /**< */,
                                const xcb_atom_t *atoms  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -11398,6 +14591,17 @@ xcb_rotate_properties (xcb_connection_t *c  /**< */,
                        int16_t           delta  /**< */,
                        const xcb_atom_t *atoms  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -11413,6 +14617,14 @@ xcb_void_cookie_t
 xcb_force_screen_saver_checked (xcb_connection_t *c  /**< */,
                                 uint8_t           mode  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -11428,6 +14640,14 @@ xcb_void_cookie_t
 xcb_force_screen_saver (xcb_connection_t *c  /**< */,
                         uint8_t           mode  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -11445,6 +14665,17 @@ xcb_set_pointer_mapping (xcb_connection_t *c  /**< */,
                          uint8_t           map_len  /**< */,
                          const uint8_t    *map  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -11462,6 +14693,18 @@ xcb_set_pointer_mapping_unchecked (xcb_connection_t *c  /**< */,
                                    uint8_t           map_len  /**< */,
                                    const uint8_t    *map  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_set_pointer_mapping_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -11479,6 +14722,14 @@ xcb_set_pointer_mapping_reply (xcb_connection_t                  *c  /**< */,
                                xcb_set_pointer_mapping_cookie_t   cookie  /**< */,
                                xcb_generic_error_t              **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -11492,6 +14743,17 @@ xcb_set_pointer_mapping_reply (xcb_connection_t                  *c  /**< */,
 xcb_get_pointer_mapping_cookie_t
 xcb_get_pointer_mapping (xcb_connection_t *c  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -11544,6 +14806,18 @@ xcb_get_pointer_mapping_map_length (const xcb_get_pointer_mapping_reply_t *R  /*
 xcb_generic_iterator_t
 xcb_get_pointer_mapping_map_end (const xcb_get_pointer_mapping_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_get_pointer_mapping_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -11561,6 +14835,14 @@ xcb_get_pointer_mapping_reply (xcb_connection_t                  *c  /**< */,
                                xcb_get_pointer_mapping_cookie_t   cookie  /**< */,
                                xcb_generic_error_t              **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -11578,6 +14860,17 @@ xcb_set_modifier_mapping (xcb_connection_t    *c  /**< */,
                           uint8_t              keycodes_per_modifier  /**< */,
                           const xcb_keycode_t *keycodes  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -11595,6 +14888,18 @@ xcb_set_modifier_mapping_unchecked (xcb_connection_t    *c  /**< */,
                                     uint8_t              keycodes_per_modifier  /**< */,
                                     const xcb_keycode_t *keycodes  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_set_modifier_mapping_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -11612,6 +14917,14 @@ xcb_set_modifier_mapping_reply (xcb_connection_t                   *c  /**< */,
                                 xcb_set_modifier_mapping_cookie_t   cookie  /**< */,
                                 xcb_generic_error_t               **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -11625,6 +14938,17 @@ xcb_set_modifier_mapping_reply (xcb_connection_t                   *c  /**< */,
 xcb_get_modifier_mapping_cookie_t
 xcb_get_modifier_mapping (xcb_connection_t *c  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -11677,6 +15001,18 @@ xcb_get_modifier_mapping_keycodes_length (const xcb_get_modifier_mapping_reply_t
 xcb_keycode_iterator_t
 xcb_get_modifier_mapping_keycodes_iterator (const xcb_get_modifier_mapping_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_get_modifier_mapping_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -11694,6 +15030,17 @@ xcb_get_modifier_mapping_reply (xcb_connection_t                   *c  /**< */,
                                 xcb_get_modifier_mapping_cookie_t   cookie  /**< */,
                                 xcb_generic_error_t               **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -11707,6 +15054,14 @@ xcb_get_modifier_mapping_reply (xcb_connection_t                   *c  /**< */,
 xcb_void_cookie_t
 xcb_no_operation_checked (xcb_connection_t *c  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **

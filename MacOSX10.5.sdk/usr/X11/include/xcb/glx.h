@@ -3034,6 +3034,14 @@ typedef struct xcb_glx_get_query_objectuiv_arb_reply_t {
     uint8_t  pad2[12]; /**<  */
 } xcb_glx_get_query_objectuiv_arb_reply_t;
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_glx_pixmap_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_glx_pixmap_t)
+ */
 
 /*****************************************************************************
  **
@@ -3047,6 +3055,15 @@ typedef struct xcb_glx_get_query_objectuiv_arb_reply_t {
 void
 xcb_glx_pixmap_next (xcb_glx_pixmap_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_glx_pixmap_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -3060,6 +3077,14 @@ xcb_glx_pixmap_next (xcb_glx_pixmap_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_glx_pixmap_end (xcb_glx_pixmap_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_glx_context_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_glx_context_t)
+ */
 
 /*****************************************************************************
  **
@@ -3073,6 +3098,15 @@ xcb_glx_pixmap_end (xcb_glx_pixmap_iterator_t i  /**< */);
 void
 xcb_glx_context_next (xcb_glx_context_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_glx_context_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -3086,6 +3120,14 @@ xcb_glx_context_next (xcb_glx_context_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_glx_context_end (xcb_glx_context_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_glx_pbuffer_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_glx_pbuffer_t)
+ */
 
 /*****************************************************************************
  **
@@ -3099,6 +3141,15 @@ xcb_glx_context_end (xcb_glx_context_iterator_t i  /**< */);
 void
 xcb_glx_pbuffer_next (xcb_glx_pbuffer_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_glx_pbuffer_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -3112,6 +3163,14 @@ xcb_glx_pbuffer_next (xcb_glx_pbuffer_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_glx_pbuffer_end (xcb_glx_pbuffer_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_glx_window_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_glx_window_t)
+ */
 
 /*****************************************************************************
  **
@@ -3125,6 +3184,15 @@ xcb_glx_pbuffer_end (xcb_glx_pbuffer_iterator_t i  /**< */);
 void
 xcb_glx_window_next (xcb_glx_window_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_glx_window_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -3138,6 +3206,14 @@ xcb_glx_window_next (xcb_glx_window_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_glx_window_end (xcb_glx_window_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_glx_fbconfig_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_glx_fbconfig_t)
+ */
 
 /*****************************************************************************
  **
@@ -3151,6 +3227,15 @@ xcb_glx_window_end (xcb_glx_window_iterator_t i  /**< */);
 void
 xcb_glx_fbconfig_next (xcb_glx_fbconfig_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_glx_fbconfig_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -3164,6 +3249,14 @@ xcb_glx_fbconfig_next (xcb_glx_fbconfig_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_glx_fbconfig_end (xcb_glx_fbconfig_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_glx_drawable_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_glx_drawable_t)
+ */
 
 /*****************************************************************************
  **
@@ -3177,6 +3270,15 @@ xcb_glx_fbconfig_end (xcb_glx_fbconfig_iterator_t i  /**< */);
 void
 xcb_glx_drawable_next (xcb_glx_drawable_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_glx_drawable_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -3190,6 +3292,14 @@ xcb_glx_drawable_next (xcb_glx_drawable_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_glx_drawable_end (xcb_glx_drawable_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_glx_float32_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_glx_float32_t)
+ */
 
 /*****************************************************************************
  **
@@ -3203,6 +3313,15 @@ xcb_glx_drawable_end (xcb_glx_drawable_iterator_t i  /**< */);
 void
 xcb_glx_float32_next (xcb_glx_float32_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_glx_float32_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -3216,6 +3335,14 @@ xcb_glx_float32_next (xcb_glx_float32_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_glx_float32_end (xcb_glx_float32_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_glx_float64_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_glx_float64_t)
+ */
 
 /*****************************************************************************
  **
@@ -3229,6 +3356,15 @@ xcb_glx_float32_end (xcb_glx_float32_iterator_t i  /**< */);
 void
 xcb_glx_float64_next (xcb_glx_float64_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_glx_float64_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -3242,6 +3378,14 @@ xcb_glx_float64_next (xcb_glx_float64_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_glx_float64_end (xcb_glx_float64_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_glx_bool32_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_glx_bool32_t)
+ */
 
 /*****************************************************************************
  **
@@ -3255,6 +3399,15 @@ xcb_glx_float64_end (xcb_glx_float64_iterator_t i  /**< */);
 void
 xcb_glx_bool32_next (xcb_glx_bool32_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_glx_bool32_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -3268,6 +3421,14 @@ xcb_glx_bool32_next (xcb_glx_bool32_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_glx_bool32_end (xcb_glx_bool32_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_glx_context_tag_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_glx_context_tag_t)
+ */
 
 /*****************************************************************************
  **
@@ -3281,6 +3442,15 @@ xcb_glx_bool32_end (xcb_glx_bool32_iterator_t i  /**< */);
 void
 xcb_glx_context_tag_next (xcb_glx_context_tag_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_glx_context_tag_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -3294,6 +3464,17 @@ xcb_glx_context_tag_next (xcb_glx_context_tag_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_glx_context_tag_end (xcb_glx_context_tag_iterator_t i  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -3313,6 +3494,14 @@ xcb_glx_render_checked (xcb_connection_t      *c  /**< */,
                         uint32_t               data_len  /**< */,
                         const uint8_t         *data  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -3332,6 +3521,17 @@ xcb_glx_render (xcb_connection_t      *c  /**< */,
                 uint32_t               data_len  /**< */,
                 const uint8_t         *data  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -3355,6 +3555,14 @@ xcb_glx_render_large_checked (xcb_connection_t      *c  /**< */,
                               uint32_t               data_len  /**< */,
                               const uint8_t         *data  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -3378,6 +3586,17 @@ xcb_glx_render_large (xcb_connection_t      *c  /**< */,
                       uint32_t               data_len  /**< */,
                       const uint8_t         *data  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -3401,6 +3620,14 @@ xcb_glx_create_context_checked (xcb_connection_t  *c  /**< */,
                                 xcb_glx_context_t  share_list  /**< */,
                                 uint8_t            is_direct  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -3424,6 +3651,17 @@ xcb_glx_create_context (xcb_connection_t  *c  /**< */,
                         xcb_glx_context_t  share_list  /**< */,
                         uint8_t            is_direct  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -3439,6 +3677,14 @@ xcb_void_cookie_t
 xcb_glx_destroy_context_checked (xcb_connection_t  *c  /**< */,
                                  xcb_glx_context_t  context  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -3454,6 +3700,14 @@ xcb_void_cookie_t
 xcb_glx_destroy_context (xcb_connection_t  *c  /**< */,
                          xcb_glx_context_t  context  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -3473,6 +3727,17 @@ xcb_glx_make_current (xcb_connection_t      *c  /**< */,
                       xcb_glx_context_t      context  /**< */,
                       xcb_glx_context_tag_t  old_context_tag  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -3492,6 +3757,18 @@ xcb_glx_make_current_unchecked (xcb_connection_t      *c  /**< */,
                                 xcb_glx_context_t      context  /**< */,
                                 xcb_glx_context_tag_t  old_context_tag  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_make_current_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -3509,6 +3786,14 @@ xcb_glx_make_current_reply (xcb_connection_t               *c  /**< */,
                             xcb_glx_make_current_cookie_t   cookie  /**< */,
                             xcb_generic_error_t           **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -3524,6 +3809,17 @@ xcb_glx_is_direct_cookie_t
 xcb_glx_is_direct (xcb_connection_t  *c  /**< */,
                    xcb_glx_context_t  context  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -3539,6 +3835,18 @@ xcb_glx_is_direct_cookie_t
 xcb_glx_is_direct_unchecked (xcb_connection_t  *c  /**< */,
                              xcb_glx_context_t  context  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_is_direct_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -3556,6 +3864,14 @@ xcb_glx_is_direct_reply (xcb_connection_t            *c  /**< */,
                          xcb_glx_is_direct_cookie_t   cookie  /**< */,
                          xcb_generic_error_t        **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -3573,6 +3889,17 @@ xcb_glx_query_version (xcb_connection_t *c  /**< */,
                        uint32_t          major_version  /**< */,
                        uint32_t          minor_version  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -3590,6 +3917,18 @@ xcb_glx_query_version_unchecked (xcb_connection_t *c  /**< */,
                                  uint32_t          major_version  /**< */,
                                  uint32_t          minor_version  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_query_version_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -3607,6 +3946,17 @@ xcb_glx_query_version_reply (xcb_connection_t                *c  /**< */,
                              xcb_glx_query_version_cookie_t   cookie  /**< */,
                              xcb_generic_error_t            **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -3622,6 +3972,14 @@ xcb_void_cookie_t
 xcb_glx_wait_gl_checked (xcb_connection_t      *c  /**< */,
                          xcb_glx_context_tag_t  context_tag  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -3637,6 +3995,17 @@ xcb_void_cookie_t
 xcb_glx_wait_gl (xcb_connection_t      *c  /**< */,
                  xcb_glx_context_tag_t  context_tag  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -3652,6 +4021,14 @@ xcb_void_cookie_t
 xcb_glx_wait_x_checked (xcb_connection_t      *c  /**< */,
                         xcb_glx_context_tag_t  context_tag  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -3667,6 +4044,17 @@ xcb_void_cookie_t
 xcb_glx_wait_x (xcb_connection_t      *c  /**< */,
                 xcb_glx_context_tag_t  context_tag  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -3688,6 +4076,14 @@ xcb_glx_copy_context_checked (xcb_connection_t      *c  /**< */,
                               uint32_t               mask  /**< */,
                               xcb_glx_context_tag_t  src_context_tag  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -3709,6 +4105,17 @@ xcb_glx_copy_context (xcb_connection_t      *c  /**< */,
                       uint32_t               mask  /**< */,
                       xcb_glx_context_tag_t  src_context_tag  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -3726,6 +4133,14 @@ xcb_glx_swap_buffers_checked (xcb_connection_t      *c  /**< */,
                               xcb_glx_context_tag_t  context_tag  /**< */,
                               xcb_glx_drawable_t     drawable  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -3743,6 +4158,17 @@ xcb_glx_swap_buffers (xcb_connection_t      *c  /**< */,
                       xcb_glx_context_tag_t  context_tag  /**< */,
                       xcb_glx_drawable_t     drawable  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -3766,6 +4192,14 @@ xcb_glx_use_x_font_checked (xcb_connection_t      *c  /**< */,
                             uint32_t               count  /**< */,
                             uint32_t               list_base  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -3789,6 +4223,17 @@ xcb_glx_use_x_font (xcb_connection_t      *c  /**< */,
                     uint32_t               count  /**< */,
                     uint32_t               list_base  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -3810,6 +4255,14 @@ xcb_glx_create_glx_pixmap_checked (xcb_connection_t *c  /**< */,
                                    xcb_pixmap_t      pixmap  /**< */,
                                    xcb_glx_pixmap_t  glx_pixmap  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -3831,6 +4284,14 @@ xcb_glx_create_glx_pixmap (xcb_connection_t *c  /**< */,
                            xcb_pixmap_t      pixmap  /**< */,
                            xcb_glx_pixmap_t  glx_pixmap  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -3846,6 +4307,17 @@ xcb_glx_get_visual_configs_cookie_t
 xcb_glx_get_visual_configs (xcb_connection_t *c  /**< */,
                             uint32_t          screen  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -3900,6 +4372,18 @@ xcb_glx_get_visual_configs_property_list_length (const xcb_glx_get_visual_config
 xcb_generic_iterator_t
 xcb_glx_get_visual_configs_property_list_end (const xcb_glx_get_visual_configs_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_visual_configs_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -3917,6 +4401,17 @@ xcb_glx_get_visual_configs_reply (xcb_connection_t                     *c  /**< 
                                   xcb_glx_get_visual_configs_cookie_t   cookie  /**< */,
                                   xcb_generic_error_t                 **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -3932,6 +4427,14 @@ xcb_void_cookie_t
 xcb_glx_destroy_glx_pixmap_checked (xcb_connection_t *c  /**< */,
                                     xcb_glx_pixmap_t  glx_pixmap  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -3947,6 +4450,17 @@ xcb_void_cookie_t
 xcb_glx_destroy_glx_pixmap (xcb_connection_t *c  /**< */,
                             xcb_glx_pixmap_t  glx_pixmap  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -3968,6 +4482,14 @@ xcb_glx_vendor_private_checked (xcb_connection_t      *c  /**< */,
                                 uint32_t               data_len  /**< */,
                                 const uint8_t         *data  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -3989,6 +4511,14 @@ xcb_glx_vendor_private (xcb_connection_t      *c  /**< */,
                         uint32_t               data_len  /**< */,
                         const uint8_t         *data  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -4010,6 +4540,17 @@ xcb_glx_vendor_private_with_reply (xcb_connection_t      *c  /**< */,
                                    uint32_t               data_len  /**< */,
                                    const uint8_t         *data  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -4070,6 +4611,18 @@ xcb_glx_vendor_private_with_reply_data_2_length (const xcb_glx_vendor_private_wi
 xcb_generic_iterator_t
 xcb_glx_vendor_private_with_reply_data_2_end (const xcb_glx_vendor_private_with_reply_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_vendor_private_with_reply_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -4087,6 +4640,14 @@ xcb_glx_vendor_private_with_reply_reply (xcb_connection_t                       
                                          xcb_glx_vendor_private_with_reply_cookie_t   cookie  /**< */,
                                          xcb_generic_error_t                        **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -4102,6 +4663,17 @@ xcb_glx_query_extensions_string_cookie_t
 xcb_glx_query_extensions_string (xcb_connection_t *c  /**< */,
                                  uint32_t          screen  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -4117,6 +4689,18 @@ xcb_glx_query_extensions_string_cookie_t
 xcb_glx_query_extensions_string_unchecked (xcb_connection_t *c  /**< */,
                                            uint32_t          screen  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_query_extensions_string_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -4134,6 +4718,14 @@ xcb_glx_query_extensions_string_reply (xcb_connection_t                         
                                        xcb_glx_query_extensions_string_cookie_t   cookie  /**< */,
                                        xcb_generic_error_t                      **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -4151,6 +4743,17 @@ xcb_glx_query_server_string (xcb_connection_t *c  /**< */,
                              uint32_t          screen  /**< */,
                              uint32_t          name  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -4207,6 +4810,18 @@ xcb_glx_query_server_string_string_length (const xcb_glx_query_server_string_rep
 xcb_generic_iterator_t
 xcb_glx_query_server_string_string_end (const xcb_glx_query_server_string_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_query_server_string_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -4224,6 +4839,17 @@ xcb_glx_query_server_string_reply (xcb_connection_t                      *c  /**
                                    xcb_glx_query_server_string_cookie_t   cookie  /**< */,
                                    xcb_generic_error_t                  **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -4245,6 +4871,14 @@ xcb_glx_client_info_checked (xcb_connection_t *c  /**< */,
                              uint32_t          str_len  /**< */,
                              const uint8_t    *string  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -4266,6 +4900,14 @@ xcb_glx_client_info (xcb_connection_t *c  /**< */,
                      uint32_t          str_len  /**< */,
                      const uint8_t    *string  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -4281,6 +4923,17 @@ xcb_glx_get_fb_configs_cookie_t
 xcb_glx_get_fb_configs (xcb_connection_t *c  /**< */,
                         uint32_t          screen  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -4335,6 +4988,18 @@ xcb_glx_get_fb_configs_property_list_length (const xcb_glx_get_fb_configs_reply_
 xcb_generic_iterator_t
 xcb_glx_get_fb_configs_property_list_end (const xcb_glx_get_fb_configs_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_fb_configs_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -4352,6 +5017,17 @@ xcb_glx_get_fb_configs_reply (xcb_connection_t                 *c  /**< */,
                               xcb_glx_get_fb_configs_cookie_t   cookie  /**< */,
                               xcb_generic_error_t             **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -4377,6 +5053,14 @@ xcb_glx_create_pixmap_checked (xcb_connection_t *c  /**< */,
                                uint32_t          num_attribs  /**< */,
                                const uint32_t   *attribs  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -4402,6 +5086,17 @@ xcb_glx_create_pixmap (xcb_connection_t *c  /**< */,
                        uint32_t          num_attribs  /**< */,
                        const uint32_t   *attribs  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -4417,6 +5112,14 @@ xcb_void_cookie_t
 xcb_glx_destroy_pixmap_checked (xcb_connection_t *c  /**< */,
                                 xcb_glx_pixmap_t  glx_pixmap  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -4432,6 +5135,17 @@ xcb_void_cookie_t
 xcb_glx_destroy_pixmap (xcb_connection_t *c  /**< */,
                         xcb_glx_pixmap_t  glx_pixmap  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -4461,6 +5175,14 @@ xcb_glx_create_new_context_checked (xcb_connection_t  *c  /**< */,
                                     uint8_t            reserved1  /**< */,
                                     uint16_t           reserved2  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -4490,6 +5212,14 @@ xcb_glx_create_new_context (xcb_connection_t  *c  /**< */,
                             uint8_t            reserved1  /**< */,
                             uint16_t           reserved2  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -4505,6 +5235,17 @@ xcb_glx_query_context_cookie_t
 xcb_glx_query_context (xcb_connection_t  *c  /**< */,
                        xcb_glx_context_t  context  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -4559,6 +5300,18 @@ xcb_glx_query_context_attribs_length (const xcb_glx_query_context_reply_t *R  /*
 xcb_generic_iterator_t
 xcb_glx_query_context_attribs_end (const xcb_glx_query_context_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_query_context_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -4576,6 +5329,14 @@ xcb_glx_query_context_reply (xcb_connection_t                *c  /**< */,
                              xcb_glx_query_context_cookie_t   cookie  /**< */,
                              xcb_generic_error_t            **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -4597,6 +5358,17 @@ xcb_glx_make_context_current (xcb_connection_t      *c  /**< */,
                               xcb_glx_drawable_t     read_drawable  /**< */,
                               xcb_glx_context_t      context  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -4618,6 +5390,18 @@ xcb_glx_make_context_current_unchecked (xcb_connection_t      *c  /**< */,
                                         xcb_glx_drawable_t     read_drawable  /**< */,
                                         xcb_glx_context_t      context  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_make_context_current_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -4635,6 +5419,17 @@ xcb_glx_make_context_current_reply (xcb_connection_t                       *c  /
                                     xcb_glx_make_context_current_cookie_t   cookie  /**< */,
                                     xcb_generic_error_t                   **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -4658,6 +5453,14 @@ xcb_glx_create_pbuffer_checked (xcb_connection_t   *c  /**< */,
                                 uint32_t            num_attribs  /**< */,
                                 const uint32_t     *attribs  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -4681,6 +5484,17 @@ xcb_glx_create_pbuffer (xcb_connection_t   *c  /**< */,
                         uint32_t            num_attribs  /**< */,
                         const uint32_t     *attribs  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -4696,6 +5510,14 @@ xcb_void_cookie_t
 xcb_glx_destroy_pbuffer_checked (xcb_connection_t  *c  /**< */,
                                  xcb_glx_pbuffer_t  pbuffer  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -4711,6 +5533,14 @@ xcb_void_cookie_t
 xcb_glx_destroy_pbuffer (xcb_connection_t  *c  /**< */,
                          xcb_glx_pbuffer_t  pbuffer  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -4726,6 +5556,17 @@ xcb_glx_get_drawable_attributes_cookie_t
 xcb_glx_get_drawable_attributes (xcb_connection_t   *c  /**< */,
                                  xcb_glx_drawable_t  drawable  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -4780,6 +5621,18 @@ xcb_glx_get_drawable_attributes_attribs_length (const xcb_glx_get_drawable_attri
 xcb_generic_iterator_t
 xcb_glx_get_drawable_attributes_attribs_end (const xcb_glx_get_drawable_attributes_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_drawable_attributes_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -4797,6 +5650,17 @@ xcb_glx_get_drawable_attributes_reply (xcb_connection_t                         
                                        xcb_glx_get_drawable_attributes_cookie_t   cookie  /**< */,
                                        xcb_generic_error_t                      **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -4816,6 +5680,14 @@ xcb_glx_change_drawable_attributes_checked (xcb_connection_t   *c  /**< */,
                                             uint32_t            num_attribs  /**< */,
                                             const uint32_t     *attribs  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -4835,6 +5707,17 @@ xcb_glx_change_drawable_attributes (xcb_connection_t   *c  /**< */,
                                     uint32_t            num_attribs  /**< */,
                                     const uint32_t     *attribs  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -4860,6 +5743,14 @@ xcb_glx_create_window_checked (xcb_connection_t   *c  /**< */,
                                uint32_t            num_attribs  /**< */,
                                const uint32_t     *attribs  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -4885,6 +5776,17 @@ xcb_glx_create_window (xcb_connection_t   *c  /**< */,
                        uint32_t            num_attribs  /**< */,
                        const uint32_t     *attribs  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -4900,6 +5802,14 @@ xcb_void_cookie_t
 xcb_glx_delete_window_checked (xcb_connection_t *c  /**< */,
                                xcb_glx_window_t  glxwindow  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -4915,6 +5825,17 @@ xcb_void_cookie_t
 xcb_glx_delete_window (xcb_connection_t *c  /**< */,
                        xcb_glx_window_t  glxwindow  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -4934,6 +5855,14 @@ xcb_glx_new_list_checked (xcb_connection_t      *c  /**< */,
                           uint32_t               list  /**< */,
                           uint32_t               mode  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -4953,6 +5882,17 @@ xcb_glx_new_list (xcb_connection_t      *c  /**< */,
                   uint32_t               list  /**< */,
                   uint32_t               mode  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -4968,6 +5908,14 @@ xcb_void_cookie_t
 xcb_glx_end_list_checked (xcb_connection_t      *c  /**< */,
                           xcb_glx_context_tag_t  context_tag  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -4983,6 +5931,17 @@ xcb_void_cookie_t
 xcb_glx_end_list (xcb_connection_t      *c  /**< */,
                   xcb_glx_context_tag_t  context_tag  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -5002,6 +5961,14 @@ xcb_glx_delete_lists_checked (xcb_connection_t      *c  /**< */,
                               uint32_t               list  /**< */,
                               int32_t                range  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -5021,6 +5988,14 @@ xcb_glx_delete_lists (xcb_connection_t      *c  /**< */,
                       uint32_t               list  /**< */,
                       int32_t                range  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -5038,6 +6013,17 @@ xcb_glx_gen_lists (xcb_connection_t      *c  /**< */,
                    xcb_glx_context_tag_t  context_tag  /**< */,
                    int32_t                range  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -5055,6 +6041,18 @@ xcb_glx_gen_lists_unchecked (xcb_connection_t      *c  /**< */,
                              xcb_glx_context_tag_t  context_tag  /**< */,
                              int32_t                range  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_gen_lists_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -5072,6 +6070,17 @@ xcb_glx_gen_lists_reply (xcb_connection_t            *c  /**< */,
                          xcb_glx_gen_lists_cookie_t   cookie  /**< */,
                          xcb_generic_error_t        **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -5091,6 +6100,14 @@ xcb_glx_feedback_buffer_checked (xcb_connection_t      *c  /**< */,
                                  int32_t                size  /**< */,
                                  int32_t                type  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -5110,6 +6127,17 @@ xcb_glx_feedback_buffer (xcb_connection_t      *c  /**< */,
                          int32_t                size  /**< */,
                          int32_t                type  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -5127,6 +6155,14 @@ xcb_glx_select_buffer_checked (xcb_connection_t      *c  /**< */,
                                xcb_glx_context_tag_t  context_tag  /**< */,
                                int32_t                size  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -5144,6 +6180,14 @@ xcb_glx_select_buffer (xcb_connection_t      *c  /**< */,
                        xcb_glx_context_tag_t  context_tag  /**< */,
                        int32_t                size  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -5161,6 +6205,17 @@ xcb_glx_render_mode (xcb_connection_t      *c  /**< */,
                      xcb_glx_context_tag_t  context_tag  /**< */,
                      uint32_t               mode  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -5217,6 +6272,18 @@ xcb_glx_render_mode_data_length (const xcb_glx_render_mode_reply_t *R  /**< */);
 xcb_generic_iterator_t
 xcb_glx_render_mode_data_end (const xcb_glx_render_mode_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_render_mode_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -5234,6 +6301,14 @@ xcb_glx_render_mode_reply (xcb_connection_t              *c  /**< */,
                            xcb_glx_render_mode_cookie_t   cookie  /**< */,
                            xcb_generic_error_t          **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -5249,6 +6324,17 @@ xcb_glx_finish_cookie_t
 xcb_glx_finish (xcb_connection_t      *c  /**< */,
                 xcb_glx_context_tag_t  context_tag  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -5264,6 +6350,18 @@ xcb_glx_finish_cookie_t
 xcb_glx_finish_unchecked (xcb_connection_t      *c  /**< */,
                           xcb_glx_context_tag_t  context_tag  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_finish_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -5281,6 +6379,17 @@ xcb_glx_finish_reply (xcb_connection_t         *c  /**< */,
                       xcb_glx_finish_cookie_t   cookie  /**< */,
                       xcb_generic_error_t     **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -5300,6 +6409,14 @@ xcb_glx_pixel_storef_checked (xcb_connection_t      *c  /**< */,
                               uint32_t               pname  /**< */,
                               xcb_glx_float32_t      datum  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -5319,6 +6436,17 @@ xcb_glx_pixel_storef (xcb_connection_t      *c  /**< */,
                       uint32_t               pname  /**< */,
                       xcb_glx_float32_t      datum  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -5338,6 +6466,14 @@ xcb_glx_pixel_storei_checked (xcb_connection_t      *c  /**< */,
                               uint32_t               pname  /**< */,
                               int32_t                datum  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -5357,6 +6493,14 @@ xcb_glx_pixel_storei (xcb_connection_t      *c  /**< */,
                       uint32_t               pname  /**< */,
                       int32_t                datum  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -5388,6 +6532,17 @@ xcb_glx_read_pixels (xcb_connection_t      *c  /**< */,
                      uint8_t                swap_bytes  /**< */,
                      uint8_t                lsb_first  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -5458,6 +6613,18 @@ xcb_glx_read_pixels_data_length (const xcb_glx_read_pixels_reply_t *R  /**< */);
 xcb_generic_iterator_t
 xcb_glx_read_pixels_data_end (const xcb_glx_read_pixels_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_read_pixels_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -5475,6 +6642,14 @@ xcb_glx_read_pixels_reply (xcb_connection_t              *c  /**< */,
                            xcb_glx_read_pixels_cookie_t   cookie  /**< */,
                            xcb_generic_error_t          **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -5492,6 +6667,17 @@ xcb_glx_get_booleanv (xcb_connection_t      *c  /**< */,
                       xcb_glx_context_tag_t  context_tag  /**< */,
                       int32_t                pname  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -5548,6 +6734,18 @@ xcb_glx_get_booleanv_data_length (const xcb_glx_get_booleanv_reply_t *R  /**< */
 xcb_generic_iterator_t
 xcb_glx_get_booleanv_data_end (const xcb_glx_get_booleanv_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_booleanv_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -5565,6 +6763,14 @@ xcb_glx_get_booleanv_reply (xcb_connection_t               *c  /**< */,
                             xcb_glx_get_booleanv_cookie_t   cookie  /**< */,
                             xcb_generic_error_t           **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -5582,6 +6788,17 @@ xcb_glx_get_clip_plane (xcb_connection_t      *c  /**< */,
                         xcb_glx_context_tag_t  context_tag  /**< */,
                         int32_t                plane  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -5638,6 +6855,18 @@ xcb_glx_get_clip_plane_data_length (const xcb_glx_get_clip_plane_reply_t *R  /**
 xcb_glx_float64_iterator_t
 xcb_glx_get_clip_plane_data_iterator (const xcb_glx_get_clip_plane_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_clip_plane_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -5655,6 +6884,14 @@ xcb_glx_get_clip_plane_reply (xcb_connection_t                 *c  /**< */,
                               xcb_glx_get_clip_plane_cookie_t   cookie  /**< */,
                               xcb_generic_error_t             **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -5672,6 +6909,17 @@ xcb_glx_get_doublev (xcb_connection_t      *c  /**< */,
                      xcb_glx_context_tag_t  context_tag  /**< */,
                      uint32_t               pname  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -5728,6 +6976,18 @@ xcb_glx_get_doublev_data_length (const xcb_glx_get_doublev_reply_t *R  /**< */);
 xcb_glx_float64_iterator_t
 xcb_glx_get_doublev_data_iterator (const xcb_glx_get_doublev_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_doublev_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -5745,6 +7005,14 @@ xcb_glx_get_doublev_reply (xcb_connection_t              *c  /**< */,
                            xcb_glx_get_doublev_cookie_t   cookie  /**< */,
                            xcb_generic_error_t          **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -5760,6 +7028,17 @@ xcb_glx_get_error_cookie_t
 xcb_glx_get_error (xcb_connection_t      *c  /**< */,
                    xcb_glx_context_tag_t  context_tag  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -5775,6 +7054,18 @@ xcb_glx_get_error_cookie_t
 xcb_glx_get_error_unchecked (xcb_connection_t      *c  /**< */,
                              xcb_glx_context_tag_t  context_tag  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_error_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -5792,6 +7083,14 @@ xcb_glx_get_error_reply (xcb_connection_t            *c  /**< */,
                          xcb_glx_get_error_cookie_t   cookie  /**< */,
                          xcb_generic_error_t        **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -5809,6 +7108,17 @@ xcb_glx_get_floatv (xcb_connection_t      *c  /**< */,
                     xcb_glx_context_tag_t  context_tag  /**< */,
                     uint32_t               pname  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -5865,6 +7175,18 @@ xcb_glx_get_floatv_data_length (const xcb_glx_get_floatv_reply_t *R  /**< */);
 xcb_glx_float32_iterator_t
 xcb_glx_get_floatv_data_iterator (const xcb_glx_get_floatv_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_floatv_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -5882,6 +7204,14 @@ xcb_glx_get_floatv_reply (xcb_connection_t             *c  /**< */,
                           xcb_glx_get_floatv_cookie_t   cookie  /**< */,
                           xcb_generic_error_t         **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -5899,6 +7229,17 @@ xcb_glx_get_integerv (xcb_connection_t      *c  /**< */,
                       xcb_glx_context_tag_t  context_tag  /**< */,
                       uint32_t               pname  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -5955,6 +7296,18 @@ xcb_glx_get_integerv_data_length (const xcb_glx_get_integerv_reply_t *R  /**< */
 xcb_generic_iterator_t
 xcb_glx_get_integerv_data_end (const xcb_glx_get_integerv_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_integerv_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -5972,6 +7325,14 @@ xcb_glx_get_integerv_reply (xcb_connection_t               *c  /**< */,
                             xcb_glx_get_integerv_cookie_t   cookie  /**< */,
                             xcb_generic_error_t           **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -5991,6 +7352,17 @@ xcb_glx_get_lightfv (xcb_connection_t      *c  /**< */,
                      uint32_t               light  /**< */,
                      uint32_t               pname  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -6049,6 +7421,18 @@ xcb_glx_get_lightfv_data_length (const xcb_glx_get_lightfv_reply_t *R  /**< */);
 xcb_glx_float32_iterator_t
 xcb_glx_get_lightfv_data_iterator (const xcb_glx_get_lightfv_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_lightfv_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -6066,6 +7450,14 @@ xcb_glx_get_lightfv_reply (xcb_connection_t              *c  /**< */,
                            xcb_glx_get_lightfv_cookie_t   cookie  /**< */,
                            xcb_generic_error_t          **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -6085,6 +7477,17 @@ xcb_glx_get_lightiv (xcb_connection_t      *c  /**< */,
                      uint32_t               light  /**< */,
                      uint32_t               pname  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -6143,6 +7546,18 @@ xcb_glx_get_lightiv_data_length (const xcb_glx_get_lightiv_reply_t *R  /**< */);
 xcb_generic_iterator_t
 xcb_glx_get_lightiv_data_end (const xcb_glx_get_lightiv_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_lightiv_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -6160,6 +7575,14 @@ xcb_glx_get_lightiv_reply (xcb_connection_t              *c  /**< */,
                            xcb_glx_get_lightiv_cookie_t   cookie  /**< */,
                            xcb_generic_error_t          **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -6179,6 +7602,17 @@ xcb_glx_get_mapdv (xcb_connection_t      *c  /**< */,
                    uint32_t               target  /**< */,
                    uint32_t               query  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -6237,6 +7671,18 @@ xcb_glx_get_mapdv_data_length (const xcb_glx_get_mapdv_reply_t *R  /**< */);
 xcb_glx_float64_iterator_t
 xcb_glx_get_mapdv_data_iterator (const xcb_glx_get_mapdv_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_mapdv_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -6254,6 +7700,14 @@ xcb_glx_get_mapdv_reply (xcb_connection_t            *c  /**< */,
                          xcb_glx_get_mapdv_cookie_t   cookie  /**< */,
                          xcb_generic_error_t        **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -6273,6 +7727,17 @@ xcb_glx_get_mapfv (xcb_connection_t      *c  /**< */,
                    uint32_t               target  /**< */,
                    uint32_t               query  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -6331,6 +7796,18 @@ xcb_glx_get_mapfv_data_length (const xcb_glx_get_mapfv_reply_t *R  /**< */);
 xcb_glx_float32_iterator_t
 xcb_glx_get_mapfv_data_iterator (const xcb_glx_get_mapfv_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_mapfv_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -6348,6 +7825,14 @@ xcb_glx_get_mapfv_reply (xcb_connection_t            *c  /**< */,
                          xcb_glx_get_mapfv_cookie_t   cookie  /**< */,
                          xcb_generic_error_t        **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -6367,6 +7852,17 @@ xcb_glx_get_mapiv (xcb_connection_t      *c  /**< */,
                    uint32_t               target  /**< */,
                    uint32_t               query  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -6425,6 +7921,18 @@ xcb_glx_get_mapiv_data_length (const xcb_glx_get_mapiv_reply_t *R  /**< */);
 xcb_generic_iterator_t
 xcb_glx_get_mapiv_data_end (const xcb_glx_get_mapiv_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_mapiv_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -6442,6 +7950,14 @@ xcb_glx_get_mapiv_reply (xcb_connection_t            *c  /**< */,
                          xcb_glx_get_mapiv_cookie_t   cookie  /**< */,
                          xcb_generic_error_t        **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -6461,6 +7977,17 @@ xcb_glx_get_materialfv (xcb_connection_t      *c  /**< */,
                         uint32_t               face  /**< */,
                         uint32_t               pname  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -6519,6 +8046,18 @@ xcb_glx_get_materialfv_data_length (const xcb_glx_get_materialfv_reply_t *R  /**
 xcb_glx_float32_iterator_t
 xcb_glx_get_materialfv_data_iterator (const xcb_glx_get_materialfv_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_materialfv_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -6536,6 +8075,14 @@ xcb_glx_get_materialfv_reply (xcb_connection_t                 *c  /**< */,
                               xcb_glx_get_materialfv_cookie_t   cookie  /**< */,
                               xcb_generic_error_t             **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -6555,6 +8102,17 @@ xcb_glx_get_materialiv (xcb_connection_t      *c  /**< */,
                         uint32_t               face  /**< */,
                         uint32_t               pname  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -6613,6 +8171,18 @@ xcb_glx_get_materialiv_data_length (const xcb_glx_get_materialiv_reply_t *R  /**
 xcb_generic_iterator_t
 xcb_glx_get_materialiv_data_end (const xcb_glx_get_materialiv_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_materialiv_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -6630,6 +8200,14 @@ xcb_glx_get_materialiv_reply (xcb_connection_t                 *c  /**< */,
                               xcb_glx_get_materialiv_cookie_t   cookie  /**< */,
                               xcb_generic_error_t             **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -6647,6 +8225,17 @@ xcb_glx_get_pixel_mapfv (xcb_connection_t      *c  /**< */,
                          xcb_glx_context_tag_t  context_tag  /**< */,
                          uint32_t               map  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -6703,6 +8292,18 @@ xcb_glx_get_pixel_mapfv_data_length (const xcb_glx_get_pixel_mapfv_reply_t *R  /
 xcb_glx_float32_iterator_t
 xcb_glx_get_pixel_mapfv_data_iterator (const xcb_glx_get_pixel_mapfv_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_pixel_mapfv_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -6720,6 +8321,14 @@ xcb_glx_get_pixel_mapfv_reply (xcb_connection_t                  *c  /**< */,
                                xcb_glx_get_pixel_mapfv_cookie_t   cookie  /**< */,
                                xcb_generic_error_t              **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -6737,6 +8346,17 @@ xcb_glx_get_pixel_mapuiv (xcb_connection_t      *c  /**< */,
                           xcb_glx_context_tag_t  context_tag  /**< */,
                           uint32_t               map  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -6793,6 +8413,18 @@ xcb_glx_get_pixel_mapuiv_data_length (const xcb_glx_get_pixel_mapuiv_reply_t *R 
 xcb_generic_iterator_t
 xcb_glx_get_pixel_mapuiv_data_end (const xcb_glx_get_pixel_mapuiv_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_pixel_mapuiv_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -6810,6 +8442,14 @@ xcb_glx_get_pixel_mapuiv_reply (xcb_connection_t                   *c  /**< */,
                                 xcb_glx_get_pixel_mapuiv_cookie_t   cookie  /**< */,
                                 xcb_generic_error_t               **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -6827,6 +8467,17 @@ xcb_glx_get_pixel_mapusv (xcb_connection_t      *c  /**< */,
                           xcb_glx_context_tag_t  context_tag  /**< */,
                           uint32_t               map  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -6883,6 +8534,18 @@ xcb_glx_get_pixel_mapusv_data_length (const xcb_glx_get_pixel_mapusv_reply_t *R 
 xcb_generic_iterator_t
 xcb_glx_get_pixel_mapusv_data_end (const xcb_glx_get_pixel_mapusv_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_pixel_mapusv_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -6900,6 +8563,14 @@ xcb_glx_get_pixel_mapusv_reply (xcb_connection_t                   *c  /**< */,
                                 xcb_glx_get_pixel_mapusv_cookie_t   cookie  /**< */,
                                 xcb_generic_error_t               **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -6917,6 +8588,17 @@ xcb_glx_get_polygon_stipple (xcb_connection_t      *c  /**< */,
                              xcb_glx_context_tag_t  context_tag  /**< */,
                              uint8_t                lsb_first  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -6973,6 +8655,18 @@ xcb_glx_get_polygon_stipple_data_length (const xcb_glx_get_polygon_stipple_reply
 xcb_generic_iterator_t
 xcb_glx_get_polygon_stipple_data_end (const xcb_glx_get_polygon_stipple_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_polygon_stipple_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -6990,6 +8684,14 @@ xcb_glx_get_polygon_stipple_reply (xcb_connection_t                      *c  /**
                                    xcb_glx_get_polygon_stipple_cookie_t   cookie  /**< */,
                                    xcb_generic_error_t                  **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -7007,6 +8709,17 @@ xcb_glx_get_string (xcb_connection_t      *c  /**< */,
                     xcb_glx_context_tag_t  context_tag  /**< */,
                     uint32_t               name  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -7063,6 +8776,18 @@ xcb_glx_get_string_string_length (const xcb_glx_get_string_reply_t *R  /**< */);
 xcb_generic_iterator_t
 xcb_glx_get_string_string_end (const xcb_glx_get_string_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_string_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -7080,6 +8805,14 @@ xcb_glx_get_string_reply (xcb_connection_t             *c  /**< */,
                           xcb_glx_get_string_cookie_t   cookie  /**< */,
                           xcb_generic_error_t         **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -7099,6 +8832,17 @@ xcb_glx_get_tex_envfv (xcb_connection_t      *c  /**< */,
                        uint32_t               target  /**< */,
                        uint32_t               pname  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -7157,6 +8901,18 @@ xcb_glx_get_tex_envfv_data_length (const xcb_glx_get_tex_envfv_reply_t *R  /**< 
 xcb_glx_float32_iterator_t
 xcb_glx_get_tex_envfv_data_iterator (const xcb_glx_get_tex_envfv_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_tex_envfv_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -7174,6 +8930,14 @@ xcb_glx_get_tex_envfv_reply (xcb_connection_t                *c  /**< */,
                              xcb_glx_get_tex_envfv_cookie_t   cookie  /**< */,
                              xcb_generic_error_t            **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -7193,6 +8957,17 @@ xcb_glx_get_tex_enviv (xcb_connection_t      *c  /**< */,
                        uint32_t               target  /**< */,
                        uint32_t               pname  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -7251,6 +9026,18 @@ xcb_glx_get_tex_enviv_data_length (const xcb_glx_get_tex_enviv_reply_t *R  /**< 
 xcb_generic_iterator_t
 xcb_glx_get_tex_enviv_data_end (const xcb_glx_get_tex_enviv_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_tex_enviv_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -7268,6 +9055,14 @@ xcb_glx_get_tex_enviv_reply (xcb_connection_t                *c  /**< */,
                              xcb_glx_get_tex_enviv_cookie_t   cookie  /**< */,
                              xcb_generic_error_t            **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -7287,6 +9082,17 @@ xcb_glx_get_tex_gendv (xcb_connection_t      *c  /**< */,
                        uint32_t               coord  /**< */,
                        uint32_t               pname  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -7345,6 +9151,18 @@ xcb_glx_get_tex_gendv_data_length (const xcb_glx_get_tex_gendv_reply_t *R  /**< 
 xcb_glx_float64_iterator_t
 xcb_glx_get_tex_gendv_data_iterator (const xcb_glx_get_tex_gendv_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_tex_gendv_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -7362,6 +9180,14 @@ xcb_glx_get_tex_gendv_reply (xcb_connection_t                *c  /**< */,
                              xcb_glx_get_tex_gendv_cookie_t   cookie  /**< */,
                              xcb_generic_error_t            **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -7381,6 +9207,17 @@ xcb_glx_get_tex_genfv (xcb_connection_t      *c  /**< */,
                        uint32_t               coord  /**< */,
                        uint32_t               pname  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -7439,6 +9276,18 @@ xcb_glx_get_tex_genfv_data_length (const xcb_glx_get_tex_genfv_reply_t *R  /**< 
 xcb_glx_float32_iterator_t
 xcb_glx_get_tex_genfv_data_iterator (const xcb_glx_get_tex_genfv_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_tex_genfv_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -7456,6 +9305,14 @@ xcb_glx_get_tex_genfv_reply (xcb_connection_t                *c  /**< */,
                              xcb_glx_get_tex_genfv_cookie_t   cookie  /**< */,
                              xcb_generic_error_t            **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -7475,6 +9332,17 @@ xcb_glx_get_tex_geniv (xcb_connection_t      *c  /**< */,
                        uint32_t               coord  /**< */,
                        uint32_t               pname  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -7533,6 +9401,18 @@ xcb_glx_get_tex_geniv_data_length (const xcb_glx_get_tex_geniv_reply_t *R  /**< 
 xcb_generic_iterator_t
 xcb_glx_get_tex_geniv_data_end (const xcb_glx_get_tex_geniv_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_tex_geniv_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -7550,6 +9430,14 @@ xcb_glx_get_tex_geniv_reply (xcb_connection_t                *c  /**< */,
                              xcb_glx_get_tex_geniv_cookie_t   cookie  /**< */,
                              xcb_generic_error_t            **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -7575,6 +9463,17 @@ xcb_glx_get_tex_image (xcb_connection_t      *c  /**< */,
                        uint32_t               type  /**< */,
                        uint8_t                swap_bytes  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -7639,6 +9538,18 @@ xcb_glx_get_tex_image_data_length (const xcb_glx_get_tex_image_reply_t *R  /**< 
 xcb_generic_iterator_t
 xcb_glx_get_tex_image_data_end (const xcb_glx_get_tex_image_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_tex_image_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -7656,6 +9567,14 @@ xcb_glx_get_tex_image_reply (xcb_connection_t                *c  /**< */,
                              xcb_glx_get_tex_image_cookie_t   cookie  /**< */,
                              xcb_generic_error_t            **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -7675,6 +9594,17 @@ xcb_glx_get_tex_parameterfv (xcb_connection_t      *c  /**< */,
                              uint32_t               target  /**< */,
                              uint32_t               pname  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -7733,6 +9663,18 @@ xcb_glx_get_tex_parameterfv_data_length (const xcb_glx_get_tex_parameterfv_reply
 xcb_glx_float32_iterator_t
 xcb_glx_get_tex_parameterfv_data_iterator (const xcb_glx_get_tex_parameterfv_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_tex_parameterfv_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -7750,6 +9692,14 @@ xcb_glx_get_tex_parameterfv_reply (xcb_connection_t                      *c  /**
                                    xcb_glx_get_tex_parameterfv_cookie_t   cookie  /**< */,
                                    xcb_generic_error_t                  **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -7769,6 +9719,17 @@ xcb_glx_get_tex_parameteriv (xcb_connection_t      *c  /**< */,
                              uint32_t               target  /**< */,
                              uint32_t               pname  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -7827,6 +9788,18 @@ xcb_glx_get_tex_parameteriv_data_length (const xcb_glx_get_tex_parameteriv_reply
 xcb_generic_iterator_t
 xcb_glx_get_tex_parameteriv_data_end (const xcb_glx_get_tex_parameteriv_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_tex_parameteriv_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -7844,6 +9817,14 @@ xcb_glx_get_tex_parameteriv_reply (xcb_connection_t                      *c  /**
                                    xcb_glx_get_tex_parameteriv_cookie_t   cookie  /**< */,
                                    xcb_generic_error_t                  **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -7865,6 +9846,17 @@ xcb_glx_get_tex_level_parameterfv (xcb_connection_t      *c  /**< */,
                                    int32_t                level  /**< */,
                                    uint32_t               pname  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -7925,6 +9917,18 @@ xcb_glx_get_tex_level_parameterfv_data_length (const xcb_glx_get_tex_level_param
 xcb_glx_float32_iterator_t
 xcb_glx_get_tex_level_parameterfv_data_iterator (const xcb_glx_get_tex_level_parameterfv_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_tex_level_parameterfv_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -7942,6 +9946,14 @@ xcb_glx_get_tex_level_parameterfv_reply (xcb_connection_t                       
                                          xcb_glx_get_tex_level_parameterfv_cookie_t   cookie  /**< */,
                                          xcb_generic_error_t                        **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -7963,6 +9975,17 @@ xcb_glx_get_tex_level_parameteriv (xcb_connection_t      *c  /**< */,
                                    int32_t                level  /**< */,
                                    uint32_t               pname  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -8023,6 +10046,18 @@ xcb_glx_get_tex_level_parameteriv_data_length (const xcb_glx_get_tex_level_param
 xcb_generic_iterator_t
 xcb_glx_get_tex_level_parameteriv_data_end (const xcb_glx_get_tex_level_parameteriv_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_tex_level_parameteriv_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -8040,6 +10075,14 @@ xcb_glx_get_tex_level_parameteriv_reply (xcb_connection_t                       
                                          xcb_glx_get_tex_level_parameteriv_cookie_t   cookie  /**< */,
                                          xcb_generic_error_t                        **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -8057,6 +10100,17 @@ xcb_glx_is_list (xcb_connection_t      *c  /**< */,
                  xcb_glx_context_tag_t  context_tag  /**< */,
                  uint32_t               list  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -8074,6 +10128,18 @@ xcb_glx_is_list_unchecked (xcb_connection_t      *c  /**< */,
                            xcb_glx_context_tag_t  context_tag  /**< */,
                            uint32_t               list  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_is_list_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -8091,6 +10157,17 @@ xcb_glx_is_list_reply (xcb_connection_t          *c  /**< */,
                        xcb_glx_is_list_cookie_t   cookie  /**< */,
                        xcb_generic_error_t      **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -8106,6 +10183,14 @@ xcb_void_cookie_t
 xcb_glx_flush_checked (xcb_connection_t      *c  /**< */,
                        xcb_glx_context_tag_t  context_tag  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -8121,6 +10206,14 @@ xcb_void_cookie_t
 xcb_glx_flush (xcb_connection_t      *c  /**< */,
                xcb_glx_context_tag_t  context_tag  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -8140,6 +10233,17 @@ xcb_glx_are_textures_resident (xcb_connection_t      *c  /**< */,
                                int32_t                n  /**< */,
                                const uint32_t        *textures  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -8198,6 +10302,18 @@ xcb_glx_are_textures_resident_data_length (const xcb_glx_are_textures_resident_r
 xcb_generic_iterator_t
 xcb_glx_are_textures_resident_data_end (const xcb_glx_are_textures_resident_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_are_textures_resident_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -8215,6 +10331,17 @@ xcb_glx_are_textures_resident_reply (xcb_connection_t                        *c 
                                      xcb_glx_are_textures_resident_cookie_t   cookie  /**< */,
                                      xcb_generic_error_t                    **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -8234,6 +10361,14 @@ xcb_glx_delete_textures_checked (xcb_connection_t      *c  /**< */,
                                  int32_t                n  /**< */,
                                  const uint32_t        *textures  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -8253,6 +10388,14 @@ xcb_glx_delete_textures (xcb_connection_t      *c  /**< */,
                          int32_t                n  /**< */,
                          const uint32_t        *textures  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -8270,6 +10413,17 @@ xcb_glx_gen_textures (xcb_connection_t      *c  /**< */,
                       xcb_glx_context_tag_t  context_tag  /**< */,
                       int32_t                n  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -8326,6 +10480,18 @@ xcb_glx_gen_textures_data_length (const xcb_glx_gen_textures_reply_t *R  /**< */
 xcb_generic_iterator_t
 xcb_glx_gen_textures_data_end (const xcb_glx_gen_textures_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_gen_textures_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -8343,6 +10509,14 @@ xcb_glx_gen_textures_reply (xcb_connection_t               *c  /**< */,
                             xcb_glx_gen_textures_cookie_t   cookie  /**< */,
                             xcb_generic_error_t           **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -8360,6 +10534,17 @@ xcb_glx_is_texture (xcb_connection_t      *c  /**< */,
                     xcb_glx_context_tag_t  context_tag  /**< */,
                     uint32_t               texture  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -8377,6 +10562,18 @@ xcb_glx_is_texture_unchecked (xcb_connection_t      *c  /**< */,
                               xcb_glx_context_tag_t  context_tag  /**< */,
                               uint32_t               texture  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_is_texture_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -8394,6 +10591,14 @@ xcb_glx_is_texture_reply (xcb_connection_t             *c  /**< */,
                           xcb_glx_is_texture_cookie_t   cookie  /**< */,
                           xcb_generic_error_t         **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -8417,6 +10622,17 @@ xcb_glx_get_color_table (xcb_connection_t      *c  /**< */,
                          uint32_t               type  /**< */,
                          uint8_t                swap_bytes  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -8479,6 +10695,18 @@ xcb_glx_get_color_table_data_length (const xcb_glx_get_color_table_reply_t *R  /
 xcb_generic_iterator_t
 xcb_glx_get_color_table_data_end (const xcb_glx_get_color_table_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_color_table_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -8496,6 +10724,14 @@ xcb_glx_get_color_table_reply (xcb_connection_t                  *c  /**< */,
                                xcb_glx_get_color_table_cookie_t   cookie  /**< */,
                                xcb_generic_error_t              **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -8515,6 +10751,17 @@ xcb_glx_get_color_table_parameterfv (xcb_connection_t      *c  /**< */,
                                      uint32_t               target  /**< */,
                                      uint32_t               pname  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -8573,6 +10820,18 @@ xcb_glx_get_color_table_parameterfv_data_length (const xcb_glx_get_color_table_p
 xcb_glx_float32_iterator_t
 xcb_glx_get_color_table_parameterfv_data_iterator (const xcb_glx_get_color_table_parameterfv_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_color_table_parameterfv_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -8590,6 +10849,14 @@ xcb_glx_get_color_table_parameterfv_reply (xcb_connection_t                     
                                            xcb_glx_get_color_table_parameterfv_cookie_t   cookie  /**< */,
                                            xcb_generic_error_t                          **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -8609,6 +10876,17 @@ xcb_glx_get_color_table_parameteriv (xcb_connection_t      *c  /**< */,
                                      uint32_t               target  /**< */,
                                      uint32_t               pname  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -8667,6 +10945,18 @@ xcb_glx_get_color_table_parameteriv_data_length (const xcb_glx_get_color_table_p
 xcb_generic_iterator_t
 xcb_glx_get_color_table_parameteriv_data_end (const xcb_glx_get_color_table_parameteriv_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_color_table_parameteriv_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -8684,6 +10974,14 @@ xcb_glx_get_color_table_parameteriv_reply (xcb_connection_t                     
                                            xcb_glx_get_color_table_parameteriv_cookie_t   cookie  /**< */,
                                            xcb_generic_error_t                          **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -8707,6 +11005,17 @@ xcb_glx_get_convolution_filter (xcb_connection_t      *c  /**< */,
                                 uint32_t               type  /**< */,
                                 uint8_t                swap_bytes  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -8769,6 +11078,18 @@ xcb_glx_get_convolution_filter_data_length (const xcb_glx_get_convolution_filter
 xcb_generic_iterator_t
 xcb_glx_get_convolution_filter_data_end (const xcb_glx_get_convolution_filter_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_convolution_filter_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -8786,6 +11107,14 @@ xcb_glx_get_convolution_filter_reply (xcb_connection_t                         *
                                       xcb_glx_get_convolution_filter_cookie_t   cookie  /**< */,
                                       xcb_generic_error_t                     **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -8805,6 +11134,17 @@ xcb_glx_get_convolution_parameterfv (xcb_connection_t      *c  /**< */,
                                      uint32_t               target  /**< */,
                                      uint32_t               pname  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -8863,6 +11203,18 @@ xcb_glx_get_convolution_parameterfv_data_length (const xcb_glx_get_convolution_p
 xcb_glx_float32_iterator_t
 xcb_glx_get_convolution_parameterfv_data_iterator (const xcb_glx_get_convolution_parameterfv_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_convolution_parameterfv_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -8880,6 +11232,14 @@ xcb_glx_get_convolution_parameterfv_reply (xcb_connection_t                     
                                            xcb_glx_get_convolution_parameterfv_cookie_t   cookie  /**< */,
                                            xcb_generic_error_t                          **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -8899,6 +11259,17 @@ xcb_glx_get_convolution_parameteriv (xcb_connection_t      *c  /**< */,
                                      uint32_t               target  /**< */,
                                      uint32_t               pname  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -8957,6 +11328,18 @@ xcb_glx_get_convolution_parameteriv_data_length (const xcb_glx_get_convolution_p
 xcb_generic_iterator_t
 xcb_glx_get_convolution_parameteriv_data_end (const xcb_glx_get_convolution_parameteriv_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_convolution_parameteriv_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -8974,6 +11357,14 @@ xcb_glx_get_convolution_parameteriv_reply (xcb_connection_t                     
                                            xcb_glx_get_convolution_parameteriv_cookie_t   cookie  /**< */,
                                            xcb_generic_error_t                          **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -8997,6 +11388,17 @@ xcb_glx_get_separable_filter (xcb_connection_t      *c  /**< */,
                               uint32_t               type  /**< */,
                               uint8_t                swap_bytes  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -9059,6 +11461,18 @@ xcb_glx_get_separable_filter_rows_and_cols_length (const xcb_glx_get_separable_f
 xcb_generic_iterator_t
 xcb_glx_get_separable_filter_rows_and_cols_end (const xcb_glx_get_separable_filter_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_separable_filter_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -9076,6 +11490,14 @@ xcb_glx_get_separable_filter_reply (xcb_connection_t                       *c  /
                                     xcb_glx_get_separable_filter_cookie_t   cookie  /**< */,
                                     xcb_generic_error_t                   **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -9101,6 +11523,17 @@ xcb_glx_get_histogram (xcb_connection_t      *c  /**< */,
                        uint8_t                swap_bytes  /**< */,
                        uint8_t                reset  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -9165,6 +11598,18 @@ xcb_glx_get_histogram_data_length (const xcb_glx_get_histogram_reply_t *R  /**< 
 xcb_generic_iterator_t
 xcb_glx_get_histogram_data_end (const xcb_glx_get_histogram_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_histogram_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -9182,6 +11627,14 @@ xcb_glx_get_histogram_reply (xcb_connection_t                *c  /**< */,
                              xcb_glx_get_histogram_cookie_t   cookie  /**< */,
                              xcb_generic_error_t            **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -9201,6 +11654,17 @@ xcb_glx_get_histogram_parameterfv (xcb_connection_t      *c  /**< */,
                                    uint32_t               target  /**< */,
                                    uint32_t               pname  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -9259,6 +11723,18 @@ xcb_glx_get_histogram_parameterfv_data_length (const xcb_glx_get_histogram_param
 xcb_glx_float32_iterator_t
 xcb_glx_get_histogram_parameterfv_data_iterator (const xcb_glx_get_histogram_parameterfv_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_histogram_parameterfv_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -9276,6 +11752,14 @@ xcb_glx_get_histogram_parameterfv_reply (xcb_connection_t                       
                                          xcb_glx_get_histogram_parameterfv_cookie_t   cookie  /**< */,
                                          xcb_generic_error_t                        **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -9295,6 +11779,17 @@ xcb_glx_get_histogram_parameteriv (xcb_connection_t      *c  /**< */,
                                    uint32_t               target  /**< */,
                                    uint32_t               pname  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -9353,6 +11848,18 @@ xcb_glx_get_histogram_parameteriv_data_length (const xcb_glx_get_histogram_param
 xcb_generic_iterator_t
 xcb_glx_get_histogram_parameteriv_data_end (const xcb_glx_get_histogram_parameteriv_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_histogram_parameteriv_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -9370,6 +11877,14 @@ xcb_glx_get_histogram_parameteriv_reply (xcb_connection_t                       
                                          xcb_glx_get_histogram_parameteriv_cookie_t   cookie  /**< */,
                                          xcb_generic_error_t                        **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -9395,6 +11910,17 @@ xcb_glx_get_minmax (xcb_connection_t      *c  /**< */,
                     uint8_t                swap_bytes  /**< */,
                     uint8_t                reset  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -9459,6 +11985,18 @@ xcb_glx_get_minmax_data_length (const xcb_glx_get_minmax_reply_t *R  /**< */);
 xcb_generic_iterator_t
 xcb_glx_get_minmax_data_end (const xcb_glx_get_minmax_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_minmax_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -9476,6 +12014,14 @@ xcb_glx_get_minmax_reply (xcb_connection_t             *c  /**< */,
                           xcb_glx_get_minmax_cookie_t   cookie  /**< */,
                           xcb_generic_error_t         **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -9495,6 +12041,17 @@ xcb_glx_get_minmax_parameterfv (xcb_connection_t      *c  /**< */,
                                 uint32_t               target  /**< */,
                                 uint32_t               pname  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -9553,6 +12110,18 @@ xcb_glx_get_minmax_parameterfv_data_length (const xcb_glx_get_minmax_parameterfv
 xcb_glx_float32_iterator_t
 xcb_glx_get_minmax_parameterfv_data_iterator (const xcb_glx_get_minmax_parameterfv_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_minmax_parameterfv_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -9570,6 +12139,14 @@ xcb_glx_get_minmax_parameterfv_reply (xcb_connection_t                         *
                                       xcb_glx_get_minmax_parameterfv_cookie_t   cookie  /**< */,
                                       xcb_generic_error_t                     **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -9589,6 +12166,17 @@ xcb_glx_get_minmax_parameteriv (xcb_connection_t      *c  /**< */,
                                 uint32_t               target  /**< */,
                                 uint32_t               pname  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -9647,6 +12235,18 @@ xcb_glx_get_minmax_parameteriv_data_length (const xcb_glx_get_minmax_parameteriv
 xcb_generic_iterator_t
 xcb_glx_get_minmax_parameteriv_data_end (const xcb_glx_get_minmax_parameteriv_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_minmax_parameteriv_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -9664,6 +12264,14 @@ xcb_glx_get_minmax_parameteriv_reply (xcb_connection_t                         *
                                       xcb_glx_get_minmax_parameteriv_cookie_t   cookie  /**< */,
                                       xcb_generic_error_t                     **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -9683,6 +12291,17 @@ xcb_glx_get_compressed_tex_image_arb (xcb_connection_t      *c  /**< */,
                                       uint32_t               target  /**< */,
                                       int32_t                level  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -9741,6 +12360,18 @@ xcb_glx_get_compressed_tex_image_arb_data_length (const xcb_glx_get_compressed_t
 xcb_generic_iterator_t
 xcb_glx_get_compressed_tex_image_arb_data_end (const xcb_glx_get_compressed_tex_image_arb_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_compressed_tex_image_arb_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -9758,6 +12389,17 @@ xcb_glx_get_compressed_tex_image_arb_reply (xcb_connection_t                    
                                             xcb_glx_get_compressed_tex_image_arb_cookie_t   cookie  /**< */,
                                             xcb_generic_error_t                           **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -9777,6 +12419,14 @@ xcb_glx_delete_queries_arb_checked (xcb_connection_t      *c  /**< */,
                                     int32_t                n  /**< */,
                                     const uint32_t        *ids  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -9796,6 +12446,14 @@ xcb_glx_delete_queries_arb (xcb_connection_t      *c  /**< */,
                             int32_t                n  /**< */,
                             const uint32_t        *ids  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -9813,6 +12471,17 @@ xcb_glx_gen_queries_arb (xcb_connection_t      *c  /**< */,
                          xcb_glx_context_tag_t  context_tag  /**< */,
                          int32_t                n  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -9869,6 +12538,18 @@ xcb_glx_gen_queries_arb_data_length (const xcb_glx_gen_queries_arb_reply_t *R  /
 xcb_generic_iterator_t
 xcb_glx_gen_queries_arb_data_end (const xcb_glx_gen_queries_arb_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_gen_queries_arb_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -9886,6 +12567,14 @@ xcb_glx_gen_queries_arb_reply (xcb_connection_t                  *c  /**< */,
                                xcb_glx_gen_queries_arb_cookie_t   cookie  /**< */,
                                xcb_generic_error_t              **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -9903,6 +12592,17 @@ xcb_glx_is_query_arb (xcb_connection_t      *c  /**< */,
                       xcb_glx_context_tag_t  context_tag  /**< */,
                       uint32_t               id  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -9920,6 +12620,18 @@ xcb_glx_is_query_arb_unchecked (xcb_connection_t      *c  /**< */,
                                 xcb_glx_context_tag_t  context_tag  /**< */,
                                 uint32_t               id  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_is_query_arb_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -9937,6 +12649,14 @@ xcb_glx_is_query_arb_reply (xcb_connection_t               *c  /**< */,
                             xcb_glx_is_query_arb_cookie_t   cookie  /**< */,
                             xcb_generic_error_t           **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -9956,6 +12676,17 @@ xcb_glx_get_queryiv_arb (xcb_connection_t      *c  /**< */,
                          uint32_t               target  /**< */,
                          uint32_t               pname  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -10014,6 +12745,18 @@ xcb_glx_get_queryiv_arb_data_length (const xcb_glx_get_queryiv_arb_reply_t *R  /
 xcb_generic_iterator_t
 xcb_glx_get_queryiv_arb_data_end (const xcb_glx_get_queryiv_arb_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_queryiv_arb_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -10031,6 +12774,14 @@ xcb_glx_get_queryiv_arb_reply (xcb_connection_t                  *c  /**< */,
                                xcb_glx_get_queryiv_arb_cookie_t   cookie  /**< */,
                                xcb_generic_error_t              **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -10050,6 +12801,17 @@ xcb_glx_get_query_objectiv_arb (xcb_connection_t      *c  /**< */,
                                 uint32_t               id  /**< */,
                                 uint32_t               pname  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -10108,6 +12870,18 @@ xcb_glx_get_query_objectiv_arb_data_length (const xcb_glx_get_query_objectiv_arb
 xcb_generic_iterator_t
 xcb_glx_get_query_objectiv_arb_data_end (const xcb_glx_get_query_objectiv_arb_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_query_objectiv_arb_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -10125,6 +12899,14 @@ xcb_glx_get_query_objectiv_arb_reply (xcb_connection_t                         *
                                       xcb_glx_get_query_objectiv_arb_cookie_t   cookie  /**< */,
                                       xcb_generic_error_t                     **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -10144,6 +12926,17 @@ xcb_glx_get_query_objectuiv_arb (xcb_connection_t      *c  /**< */,
                                  uint32_t               id  /**< */,
                                  uint32_t               pname  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -10202,6 +12995,18 @@ xcb_glx_get_query_objectuiv_arb_data_length (const xcb_glx_get_query_objectuiv_a
 xcb_generic_iterator_t
 xcb_glx_get_query_objectuiv_arb_data_end (const xcb_glx_get_query_objectuiv_arb_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_glx_get_query_objectuiv_arb_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **

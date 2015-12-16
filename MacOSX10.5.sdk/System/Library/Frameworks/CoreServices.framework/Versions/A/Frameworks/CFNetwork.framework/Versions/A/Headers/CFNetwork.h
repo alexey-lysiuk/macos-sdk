@@ -1,13 +1,11 @@
 /*
-     File:       CFNetwork/CFNetwork.h
+    File:       CFNetwork/CFNetwork.h
  
-     Contains:   CoreFoundation Network header
+    Contains:   CoreFoundation Network header
  
-     Version:    CFNetwork-219~1
+    Copyright:  Copyright (c) 2001-2008, Apple Inc. All rights reserved.
  
-     Copyright:  © 2001-2006 by Apple Computer, Inc., all rights reserved
- 
-     Bugs?:      For bug reports, consult the following page on
+    Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
  
                      http://developer.apple.com/bugreporter/

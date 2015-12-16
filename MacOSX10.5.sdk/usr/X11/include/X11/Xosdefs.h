@@ -86,7 +86,7 @@ in this Software without prior written authorization from The Open Group.
 #endif
 #endif
 
-#ifdef i386
+#ifdef __i386__
 #ifdef SYSV
 #if !defined(ISC) && !defined(__SCO__) && !defined(_SEQUENT_) && \
 	!defined(__UNIXWARE__) && !defined(sun)
@@ -133,7 +133,7 @@ in this Software without prior written authorization from The Open Group.
 #define NULL_NOT_ZERO
 #endif
 
-#ifdef __DARWIN__
+#ifdef __APPLE__
 #define NULL_NOT_ZERO
 #endif
 

@@ -1028,6 +1028,82 @@ typedef struct GLXCreateGLXPixmapWithConfigSGIX {
 #define sz_xGLXCreateGLXPixmapWithConfigSGIXReq 28
 
 /*
+** glXCreateGLXPbufferSGIX request
+*/
+typedef struct GLXCreateGLXPbufferSGIX {
+    CARD8	reqType;
+    CARD8	glxCode;
+    CARD16	length B16;
+    CARD32	vendorCode B32;		/* vendor-specific opcode */
+    CARD32	pad1 B32;   /* unused; corresponds to contextTag in header */
+    CARD32	screen B32;
+    GLXFBConfigID fbconfig B32;
+    GLXPbuffer	pbuffer B32;
+    CARD32	width B32;
+    CARD32	height B32;
+    /* followed by attribute list */
+} xGLXCreateGLXPbufferSGIXReq;
+#define sz_xGLXCreateGLXPbufferSGIXReq 32
+
+/*
+** glXDestroyGLXPbufferSGIX request
+*/
+typedef struct GLXDestroyGLXPbuffer {
+    CARD8	reqType;
+    CARD8	glxCode;
+    CARD16	length B16;
+    CARD32	vendorCode B32;		/* vendor-specific opcode */
+    CARD32	pad1 B32;   /* unused; corresponds to contextTag in header */
+    GLXPbuffer	pbuffer B32;
+} xGLXDestroyGLXPbufferSGIXReq;
+#define sz_xGLXDestroyGLXPbufferSGIXReq 16
+
+/*
+** glXChangeDrawableAttributesSGIX request
+*/
+typedef struct GLXChangeDrawableAttributesSGIX {
+    CARD8	reqType;
+    CARD8	glxCode;
+    CARD16	length B16;
+    CARD32	vendorCode B32;		/* vendor-specific opcode */
+    CARD32	pad1 B32;   /* unused; corresponds to contextTag in header */
+    GLXDrawable drawable B32;
+    CARD32	numAttribs B32;
+    /* followed by attribute list */
+} xGLXChangeDrawableAttributesSGIXReq;
+#define sz_xGLXChangeDrawableAttributesSGIXReq 20
+
+/*
+** glXGetDrawableAttributesSGIX request
+*/
+typedef struct GLXGetDrawableAttributesSGIX {
+    CARD8	reqType;
+    CARD8	glxCode;
+    CARD16	length B16;
+    CARD32	vendorCode B32;		/* vendor-specific opcode */
+    CARD32	pad1 B32;   /* unused; corresponds to contextTag in header */
+    GLXDrawable drawable B32;
+} xGLXGetDrawableAttributesSGIXReq;
+#define sz_xGLXGetDrawableAttributesSGIXReq 16
+
+/*
+** glXGetDrawableAttributesSGIX reply
+*/
+typedef struct {
+    BYTE	type;			/* X_Reply */
+    CARD8	unused;			/* not used */
+    CARD16	sequenceNumber B16;
+    CARD32	length B32;
+    CARD32	numAttribs B32;
+    CARD32	pad2 B32;
+    CARD32	pad3 B32;
+    CARD32	pad4 B32;
+    CARD32	pad5 B32;
+    CARD32	pad6 B32;
+} xGLXGetDrawableAttributesSGIXReply;
+#define sz_xGLXGetDrawableAttributesSGIXReply 32
+
+/*
 ** glXJoinSwapGroupSGIX request
 */
 typedef struct GLXJoinSwapGroupSGIX {

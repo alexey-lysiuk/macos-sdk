@@ -3,7 +3,7 @@
  
      Contains:   Header file for HITextLengthFilter object.
  
-     Version:    HIToolbox-343~1
+     Version:    HIToolbox-343.0.1~1
  
      Copyright:  © 1984-2006 by Apple Computer, Inc., all rights reserved.
  

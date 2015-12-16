@@ -1100,6 +1100,14 @@ typedef struct xcb_render_create_conical_gradient_request_t {
     uint32_t              num_stops; /**<  */
 } xcb_render_create_conical_gradient_request_t;
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_render_glyph_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_render_glyph_t)
+ */
 
 /*****************************************************************************
  **
@@ -1113,6 +1121,15 @@ typedef struct xcb_render_create_conical_gradient_request_t {
 void
 xcb_render_glyph_next (xcb_render_glyph_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_render_glyph_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -1126,6 +1143,14 @@ xcb_render_glyph_next (xcb_render_glyph_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_render_glyph_end (xcb_render_glyph_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_render_glyphset_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_render_glyphset_t)
+ */
 
 /*****************************************************************************
  **
@@ -1139,6 +1164,15 @@ xcb_render_glyph_end (xcb_render_glyph_iterator_t i  /**< */);
 void
 xcb_render_glyphset_next (xcb_render_glyphset_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_render_glyphset_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -1152,6 +1186,14 @@ xcb_render_glyphset_next (xcb_render_glyphset_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_render_glyphset_end (xcb_render_glyphset_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_render_picture_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_render_picture_t)
+ */
 
 /*****************************************************************************
  **
@@ -1165,6 +1207,15 @@ xcb_render_glyphset_end (xcb_render_glyphset_iterator_t i  /**< */);
 void
 xcb_render_picture_next (xcb_render_picture_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_render_picture_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -1178,6 +1229,14 @@ xcb_render_picture_next (xcb_render_picture_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_render_picture_end (xcb_render_picture_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_render_pictformat_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_render_pictformat_t)
+ */
 
 /*****************************************************************************
  **
@@ -1191,6 +1250,15 @@ xcb_render_picture_end (xcb_render_picture_iterator_t i  /**< */);
 void
 xcb_render_pictformat_next (xcb_render_pictformat_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_render_pictformat_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -1204,6 +1272,14 @@ xcb_render_pictformat_next (xcb_render_pictformat_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_render_pictformat_end (xcb_render_pictformat_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_render_fixed_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_render_fixed_t)
+ */
 
 /*****************************************************************************
  **
@@ -1217,6 +1293,15 @@ xcb_render_pictformat_end (xcb_render_pictformat_iterator_t i  /**< */);
 void
 xcb_render_fixed_next (xcb_render_fixed_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_render_fixed_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -1230,6 +1315,14 @@ xcb_render_fixed_next (xcb_render_fixed_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_render_fixed_end (xcb_render_fixed_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_render_directformat_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_render_directformat_t)
+ */
 
 /*****************************************************************************
  **
@@ -1243,6 +1336,15 @@ xcb_render_fixed_end (xcb_render_fixed_iterator_t i  /**< */);
 void
 xcb_render_directformat_next (xcb_render_directformat_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_render_directformat_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -1256,6 +1358,14 @@ xcb_render_directformat_next (xcb_render_directformat_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_render_directformat_end (xcb_render_directformat_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_render_pictforminfo_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_render_pictforminfo_t)
+ */
 
 /*****************************************************************************
  **
@@ -1269,6 +1379,15 @@ xcb_render_directformat_end (xcb_render_directformat_iterator_t i  /**< */);
 void
 xcb_render_pictforminfo_next (xcb_render_pictforminfo_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_render_pictforminfo_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -1282,6 +1401,14 @@ xcb_render_pictforminfo_next (xcb_render_pictforminfo_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_render_pictforminfo_end (xcb_render_pictforminfo_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_render_pictvisual_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_render_pictvisual_t)
+ */
 
 /*****************************************************************************
  **
@@ -1295,6 +1422,15 @@ xcb_render_pictforminfo_end (xcb_render_pictforminfo_iterator_t i  /**< */);
 void
 xcb_render_pictvisual_next (xcb_render_pictvisual_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_render_pictvisual_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -1347,6 +1483,14 @@ xcb_render_pictdepth_visuals_length (const xcb_render_pictdepth_t *R  /**< */);
 xcb_render_pictvisual_iterator_t
 xcb_render_pictdepth_visuals_iterator (const xcb_render_pictdepth_t *R  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_render_pictdepth_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_render_pictdepth_t)
+ */
 
 /*****************************************************************************
  **
@@ -1360,6 +1504,15 @@ xcb_render_pictdepth_visuals_iterator (const xcb_render_pictdepth_t *R  /**< */)
 void
 xcb_render_pictdepth_next (xcb_render_pictdepth_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_render_pictdepth_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -1399,6 +1552,14 @@ xcb_render_pictscreen_depths_length (const xcb_render_pictscreen_t *R  /**< */);
 xcb_render_pictdepth_iterator_t
 xcb_render_pictscreen_depths_iterator (const xcb_render_pictscreen_t *R  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_render_pictscreen_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_render_pictscreen_t)
+ */
 
 /*****************************************************************************
  **
@@ -1412,6 +1573,15 @@ xcb_render_pictscreen_depths_iterator (const xcb_render_pictscreen_t *R  /**< */
 void
 xcb_render_pictscreen_next (xcb_render_pictscreen_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_render_pictscreen_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -1425,6 +1595,14 @@ xcb_render_pictscreen_next (xcb_render_pictscreen_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_render_pictscreen_end (xcb_render_pictscreen_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_render_indexvalue_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_render_indexvalue_t)
+ */
 
 /*****************************************************************************
  **
@@ -1438,6 +1616,15 @@ xcb_render_pictscreen_end (xcb_render_pictscreen_iterator_t i  /**< */);
 void
 xcb_render_indexvalue_next (xcb_render_indexvalue_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_render_indexvalue_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -1451,6 +1638,14 @@ xcb_render_indexvalue_next (xcb_render_indexvalue_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_render_indexvalue_end (xcb_render_indexvalue_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_render_color_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_render_color_t)
+ */
 
 /*****************************************************************************
  **
@@ -1464,6 +1659,15 @@ xcb_render_indexvalue_end (xcb_render_indexvalue_iterator_t i  /**< */);
 void
 xcb_render_color_next (xcb_render_color_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_render_color_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -1477,6 +1681,14 @@ xcb_render_color_next (xcb_render_color_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_render_color_end (xcb_render_color_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_render_pointfix_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_render_pointfix_t)
+ */
 
 /*****************************************************************************
  **
@@ -1490,6 +1702,15 @@ xcb_render_color_end (xcb_render_color_iterator_t i  /**< */);
 void
 xcb_render_pointfix_next (xcb_render_pointfix_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_render_pointfix_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -1503,6 +1724,14 @@ xcb_render_pointfix_next (xcb_render_pointfix_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_render_pointfix_end (xcb_render_pointfix_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_render_linefix_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_render_linefix_t)
+ */
 
 /*****************************************************************************
  **
@@ -1516,6 +1745,15 @@ xcb_render_pointfix_end (xcb_render_pointfix_iterator_t i  /**< */);
 void
 xcb_render_linefix_next (xcb_render_linefix_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_render_linefix_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -1529,6 +1767,14 @@ xcb_render_linefix_next (xcb_render_linefix_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_render_linefix_end (xcb_render_linefix_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_render_triangle_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_render_triangle_t)
+ */
 
 /*****************************************************************************
  **
@@ -1542,6 +1788,15 @@ xcb_render_linefix_end (xcb_render_linefix_iterator_t i  /**< */);
 void
 xcb_render_triangle_next (xcb_render_triangle_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_render_triangle_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -1555,6 +1810,14 @@ xcb_render_triangle_next (xcb_render_triangle_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_render_triangle_end (xcb_render_triangle_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_render_trapezoid_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_render_trapezoid_t)
+ */
 
 /*****************************************************************************
  **
@@ -1568,6 +1831,15 @@ xcb_render_triangle_end (xcb_render_triangle_iterator_t i  /**< */);
 void
 xcb_render_trapezoid_next (xcb_render_trapezoid_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_render_trapezoid_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -1581,6 +1853,14 @@ xcb_render_trapezoid_next (xcb_render_trapezoid_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_render_trapezoid_end (xcb_render_trapezoid_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_render_glyphinfo_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_render_glyphinfo_t)
+ */
 
 /*****************************************************************************
  **
@@ -1594,6 +1874,15 @@ xcb_render_trapezoid_end (xcb_render_trapezoid_iterator_t i  /**< */);
 void
 xcb_render_glyphinfo_next (xcb_render_glyphinfo_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_render_glyphinfo_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -1607,6 +1896,14 @@ xcb_render_glyphinfo_next (xcb_render_glyphinfo_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_render_glyphinfo_end (xcb_render_glyphinfo_iterator_t i  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -1624,6 +1921,17 @@ xcb_render_query_version (xcb_connection_t *c  /**< */,
                           uint32_t          client_major_version  /**< */,
                           uint32_t          client_minor_version  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -1641,6 +1949,18 @@ xcb_render_query_version_unchecked (xcb_connection_t *c  /**< */,
                                     uint32_t          client_major_version  /**< */,
                                     uint32_t          client_minor_version  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_render_query_version_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -1658,6 +1978,14 @@ xcb_render_query_version_reply (xcb_connection_t                   *c  /**< */,
                                 xcb_render_query_version_cookie_t   cookie  /**< */,
                                 xcb_generic_error_t               **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -1671,6 +1999,17 @@ xcb_render_query_version_reply (xcb_connection_t                   *c  /**< */,
 xcb_render_query_pict_formats_cookie_t
 xcb_render_query_pict_formats (xcb_connection_t *c  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -1788,6 +2127,18 @@ xcb_render_query_pict_formats_subpixels_length (const xcb_render_query_pict_form
 xcb_generic_iterator_t
 xcb_render_query_pict_formats_subpixels_end (const xcb_render_query_pict_formats_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_render_query_pict_formats_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -1805,6 +2156,14 @@ xcb_render_query_pict_formats_reply (xcb_connection_t                        *c 
                                      xcb_render_query_pict_formats_cookie_t   cookie  /**< */,
                                      xcb_generic_error_t                    **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -1820,6 +2179,17 @@ xcb_render_query_pict_index_values_cookie_t
 xcb_render_query_pict_index_values (xcb_connection_t        *c  /**< */,
                                     xcb_render_pictformat_t  format  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -1874,6 +2244,18 @@ xcb_render_query_pict_index_values_values_length (const xcb_render_query_pict_in
 xcb_render_indexvalue_iterator_t
 xcb_render_query_pict_index_values_values_iterator (const xcb_render_query_pict_index_values_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_render_query_pict_index_values_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -1891,6 +2273,17 @@ xcb_render_query_pict_index_values_reply (xcb_connection_t                      
                                           xcb_render_query_pict_index_values_cookie_t   cookie  /**< */,
                                           xcb_generic_error_t                         **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -1914,6 +2307,14 @@ xcb_render_create_picture_checked (xcb_connection_t        *c  /**< */,
                                    uint32_t                 value_mask  /**< */,
                                    const uint32_t          *value_list  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -1937,6 +2338,17 @@ xcb_render_create_picture (xcb_connection_t        *c  /**< */,
                            uint32_t                 value_mask  /**< */,
                            const uint32_t          *value_list  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -1956,6 +2368,14 @@ xcb_render_change_picture_checked (xcb_connection_t     *c  /**< */,
                                    uint32_t              value_mask  /**< */,
                                    const uint32_t       *value_list  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -1975,6 +2395,17 @@ xcb_render_change_picture (xcb_connection_t     *c  /**< */,
                            uint32_t              value_mask  /**< */,
                            const uint32_t       *value_list  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -1998,6 +2429,14 @@ xcb_render_set_picture_clip_rectangles_checked (xcb_connection_t      *c  /**< *
                                                 uint32_t               rectangles_len  /**< */,
                                                 const xcb_rectangle_t *rectangles  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -2021,6 +2460,17 @@ xcb_render_set_picture_clip_rectangles (xcb_connection_t      *c  /**< */,
                                         uint32_t               rectangles_len  /**< */,
                                         const xcb_rectangle_t *rectangles  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -2036,6 +2486,14 @@ xcb_void_cookie_t
 xcb_render_free_picture_checked (xcb_connection_t     *c  /**< */,
                                  xcb_render_picture_t  picture  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -2051,6 +2509,17 @@ xcb_void_cookie_t
 xcb_render_free_picture (xcb_connection_t     *c  /**< */,
                          xcb_render_picture_t  picture  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -2088,6 +2557,14 @@ xcb_render_composite_checked (xcb_connection_t     *c  /**< */,
                               uint16_t              width  /**< */,
                               uint16_t              height  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -2125,6 +2602,17 @@ xcb_render_composite (xcb_connection_t     *c  /**< */,
                       uint16_t              width  /**< */,
                       uint16_t              height  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -2154,6 +2642,14 @@ xcb_render_trapezoids_checked (xcb_connection_t             *c  /**< */,
                                uint32_t                      traps_len  /**< */,
                                const xcb_render_trapezoid_t *traps  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -2183,6 +2679,17 @@ xcb_render_trapezoids (xcb_connection_t             *c  /**< */,
                        uint32_t                      traps_len  /**< */,
                        const xcb_render_trapezoid_t *traps  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -2212,6 +2719,14 @@ xcb_render_triangles_checked (xcb_connection_t            *c  /**< */,
                               uint32_t                     triangles_len  /**< */,
                               const xcb_render_triangle_t *triangles  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -2241,6 +2756,17 @@ xcb_render_triangles (xcb_connection_t            *c  /**< */,
                       uint32_t                     triangles_len  /**< */,
                       const xcb_render_triangle_t *triangles  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -2270,6 +2796,14 @@ xcb_render_tri_strip_checked (xcb_connection_t            *c  /**< */,
                               uint32_t                     points_len  /**< */,
                               const xcb_render_pointfix_t *points  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -2299,6 +2833,17 @@ xcb_render_tri_strip (xcb_connection_t            *c  /**< */,
                       uint32_t                     points_len  /**< */,
                       const xcb_render_pointfix_t *points  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -2328,6 +2873,14 @@ xcb_render_tri_fan_checked (xcb_connection_t            *c  /**< */,
                             uint32_t                     points_len  /**< */,
                             const xcb_render_pointfix_t *points  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -2357,6 +2910,17 @@ xcb_render_tri_fan (xcb_connection_t            *c  /**< */,
                     uint32_t                     points_len  /**< */,
                     const xcb_render_pointfix_t *points  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -2374,6 +2938,14 @@ xcb_render_create_glyph_set_checked (xcb_connection_t        *c  /**< */,
                                      xcb_render_glyphset_t    gsid  /**< */,
                                      xcb_render_pictformat_t  format  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -2391,6 +2963,17 @@ xcb_render_create_glyph_set (xcb_connection_t        *c  /**< */,
                              xcb_render_glyphset_t    gsid  /**< */,
                              xcb_render_pictformat_t  format  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -2408,6 +2991,14 @@ xcb_render_reference_glyph_set_checked (xcb_connection_t      *c  /**< */,
                                         xcb_render_glyphset_t  gsid  /**< */,
                                         xcb_render_glyphset_t  existing  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -2425,6 +3016,17 @@ xcb_render_reference_glyph_set (xcb_connection_t      *c  /**< */,
                                 xcb_render_glyphset_t  gsid  /**< */,
                                 xcb_render_glyphset_t  existing  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -2440,6 +3042,14 @@ xcb_void_cookie_t
 xcb_render_free_glyph_set_checked (xcb_connection_t      *c  /**< */,
                                    xcb_render_glyphset_t  glyphset  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -2455,6 +3065,17 @@ xcb_void_cookie_t
 xcb_render_free_glyph_set (xcb_connection_t      *c  /**< */,
                            xcb_render_glyphset_t  glyphset  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -2480,6 +3101,14 @@ xcb_render_add_glyphs_checked (xcb_connection_t             *c  /**< */,
                                uint32_t                      data_len  /**< */,
                                const uint8_t                *data  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -2505,6 +3134,17 @@ xcb_render_add_glyphs (xcb_connection_t             *c  /**< */,
                        uint32_t                      data_len  /**< */,
                        const uint8_t                *data  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -2524,6 +3164,14 @@ xcb_render_free_glyphs_checked (xcb_connection_t         *c  /**< */,
                                 uint32_t                  glyphs_len  /**< */,
                                 const xcb_render_glyph_t *glyphs  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -2543,6 +3191,17 @@ xcb_render_free_glyphs (xcb_connection_t         *c  /**< */,
                         uint32_t                  glyphs_len  /**< */,
                         const xcb_render_glyph_t *glyphs  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -2574,6 +3233,14 @@ xcb_render_composite_glyphs_8_checked (xcb_connection_t        *c  /**< */,
                                        uint32_t                 glyphcmds_len  /**< */,
                                        const uint8_t           *glyphcmds  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -2605,6 +3272,17 @@ xcb_render_composite_glyphs_8 (xcb_connection_t        *c  /**< */,
                                uint32_t                 glyphcmds_len  /**< */,
                                const uint8_t           *glyphcmds  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -2636,6 +3314,14 @@ xcb_render_composite_glyphs_16_checked (xcb_connection_t        *c  /**< */,
                                         uint32_t                 glyphcmds_len  /**< */,
                                         const uint8_t           *glyphcmds  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -2667,6 +3353,17 @@ xcb_render_composite_glyphs_16 (xcb_connection_t        *c  /**< */,
                                 uint32_t                 glyphcmds_len  /**< */,
                                 const uint8_t           *glyphcmds  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -2698,6 +3395,14 @@ xcb_render_composite_glyphs_32_checked (xcb_connection_t        *c  /**< */,
                                         uint32_t                 glyphcmds_len  /**< */,
                                         const uint8_t           *glyphcmds  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -2729,6 +3434,17 @@ xcb_render_composite_glyphs_32 (xcb_connection_t        *c  /**< */,
                                 uint32_t                 glyphcmds_len  /**< */,
                                 const uint8_t           *glyphcmds  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -2752,6 +3468,14 @@ xcb_render_fill_rectangles_checked (xcb_connection_t      *c  /**< */,
                                     uint32_t               rects_len  /**< */,
                                     const xcb_rectangle_t *rects  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -2775,6 +3499,17 @@ xcb_render_fill_rectangles (xcb_connection_t      *c  /**< */,
                             uint32_t               rects_len  /**< */,
                             const xcb_rectangle_t *rects  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -2796,6 +3531,14 @@ xcb_render_create_cursor_checked (xcb_connection_t     *c  /**< */,
                                   uint16_t              x  /**< */,
                                   uint16_t              y  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -2817,6 +3560,14 @@ xcb_render_create_cursor (xcb_connection_t     *c  /**< */,
                           uint16_t              x  /**< */,
                           uint16_t              y  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_render_transform_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_render_transform_t)
+ */
 
 /*****************************************************************************
  **
@@ -2830,6 +3581,15 @@ xcb_render_create_cursor (xcb_connection_t     *c  /**< */,
 void
 xcb_render_transform_next (xcb_render_transform_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_render_transform_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -2843,6 +3603,17 @@ xcb_render_transform_next (xcb_render_transform_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_render_transform_end (xcb_render_transform_iterator_t i  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -2860,6 +3631,14 @@ xcb_render_set_picture_transform_checked (xcb_connection_t       *c  /**< */,
                                           xcb_render_picture_t    picture  /**< */,
                                           xcb_render_transform_t  transform  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -2877,6 +3656,14 @@ xcb_render_set_picture_transform (xcb_connection_t       *c  /**< */,
                                   xcb_render_picture_t    picture  /**< */,
                                   xcb_render_transform_t  transform  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -2892,6 +3679,17 @@ xcb_render_query_filters_cookie_t
 xcb_render_query_filters (xcb_connection_t *c  /**< */,
                           xcb_drawable_t    drawable  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -2972,6 +3770,18 @@ xcb_render_query_filters_filters_length (const xcb_render_query_filters_reply_t 
 xcb_str_iterator_t
 xcb_render_query_filters_filters_iterator (const xcb_render_query_filters_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_render_query_filters_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -2989,6 +3799,17 @@ xcb_render_query_filters_reply (xcb_connection_t                   *c  /**< */,
                                 xcb_render_query_filters_cookie_t   cookie  /**< */,
                                 xcb_generic_error_t               **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -3012,6 +3833,14 @@ xcb_render_set_picture_filter_checked (xcb_connection_t         *c  /**< */,
                                        uint32_t                  values_len  /**< */,
                                        const xcb_render_fixed_t *values  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -3035,6 +3864,14 @@ xcb_render_set_picture_filter (xcb_connection_t         *c  /**< */,
                                uint32_t                  values_len  /**< */,
                                const xcb_render_fixed_t *values  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_render_animcursorelt_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_render_animcursorelt_t)
+ */
 
 /*****************************************************************************
  **
@@ -3048,6 +3885,15 @@ xcb_render_set_picture_filter (xcb_connection_t         *c  /**< */,
 void
 xcb_render_animcursorelt_next (xcb_render_animcursorelt_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_render_animcursorelt_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -3061,6 +3907,17 @@ xcb_render_animcursorelt_next (xcb_render_animcursorelt_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_render_animcursorelt_end (xcb_render_animcursorelt_iterator_t i  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -3080,6 +3937,14 @@ xcb_render_create_anim_cursor_checked (xcb_connection_t                 *c  /**<
                                        uint32_t                          cursors_len  /**< */,
                                        const xcb_render_animcursorelt_t *cursors  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -3099,6 +3964,14 @@ xcb_render_create_anim_cursor (xcb_connection_t                 *c  /**< */,
                                uint32_t                          cursors_len  /**< */,
                                const xcb_render_animcursorelt_t *cursors  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_render_spanfix_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_render_spanfix_t)
+ */
 
 /*****************************************************************************
  **
@@ -3112,6 +3985,15 @@ xcb_render_create_anim_cursor (xcb_connection_t                 *c  /**< */,
 void
 xcb_render_spanfix_next (xcb_render_spanfix_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_render_spanfix_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -3125,6 +4007,14 @@ xcb_render_spanfix_next (xcb_render_spanfix_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_render_spanfix_end (xcb_render_spanfix_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_render_trap_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_render_trap_t)
+ */
 
 /*****************************************************************************
  **
@@ -3138,6 +4028,15 @@ xcb_render_spanfix_end (xcb_render_spanfix_iterator_t i  /**< */);
 void
 xcb_render_trap_next (xcb_render_trap_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_render_trap_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -3151,6 +4050,17 @@ xcb_render_trap_next (xcb_render_trap_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_render_trap_end (xcb_render_trap_iterator_t i  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -3174,6 +4084,14 @@ xcb_render_add_traps_checked (xcb_connection_t        *c  /**< */,
                               uint32_t                 traps_len  /**< */,
                               const xcb_render_trap_t *traps  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -3197,6 +4115,17 @@ xcb_render_add_traps (xcb_connection_t        *c  /**< */,
                       uint32_t                 traps_len  /**< */,
                       const xcb_render_trap_t *traps  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -3214,6 +4143,14 @@ xcb_render_create_solid_fill_checked (xcb_connection_t     *c  /**< */,
                                       xcb_render_picture_t  picture  /**< */,
                                       xcb_render_color_t    color  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -3231,6 +4168,17 @@ xcb_render_create_solid_fill (xcb_connection_t     *c  /**< */,
                               xcb_render_picture_t  picture  /**< */,
                               xcb_render_color_t    color  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -3252,6 +4200,14 @@ xcb_render_create_linear_gradient_checked (xcb_connection_t      *c  /**< */,
                                            xcb_render_pointfix_t  p2  /**< */,
                                            uint32_t               num_stops  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -3273,6 +4229,17 @@ xcb_render_create_linear_gradient (xcb_connection_t      *c  /**< */,
                                    xcb_render_pointfix_t  p2  /**< */,
                                    uint32_t               num_stops  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -3298,6 +4265,14 @@ xcb_render_create_radial_gradient_checked (xcb_connection_t      *c  /**< */,
                                            xcb_render_fixed_t     outer_radius  /**< */,
                                            uint32_t               num_stops  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -3323,6 +4298,17 @@ xcb_render_create_radial_gradient (xcb_connection_t      *c  /**< */,
                                    xcb_render_fixed_t     outer_radius  /**< */,
                                    uint32_t               num_stops  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -3344,6 +4330,14 @@ xcb_render_create_conical_gradient_checked (xcb_connection_t      *c  /**< */,
                                             xcb_render_fixed_t     angle  /**< */,
                                             uint32_t               num_stops  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **

@@ -25,7 +25,7 @@ in this Software without prior written authorization from The Open Group.
  */
 /* $XFree86: xc/lib/Xaw/XawInit.h,v 1.12 2001/01/17 19:42:36 dawes Exp $ */
 
-/* $XdotOrg: lib/Xaw/include/X11/Xaw/XawInit.h,v 1.3 2005/07/03 07:00:56 daniels Exp $ */
+/* $XdotOrg: xc/lib/Xaw/XawInit.h,v 1.2 2004/04/23 18:43:38 eich Exp $ */
 #ifndef _XawInit_h
 #define _XawInit_h
 

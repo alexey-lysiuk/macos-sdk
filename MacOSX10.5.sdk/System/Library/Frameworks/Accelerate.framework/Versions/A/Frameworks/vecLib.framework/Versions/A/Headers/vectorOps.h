@@ -3,9 +3,9 @@
  
      Contains:   vector and matrix functions for AltiVec
  
-     Version:    vecLib-238.0
+     Version:    vecLib-240.0
  
-     Copyright:  © 1999-2007 by Apple Computer, Inc., all rights reserved.
+     Copyright:  © 1999-2008 by Apple Computer, Inc., all rights reserved.
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -683,7 +683,7 @@ vSgemtx(
     width   width of the matrix (it is multiple 
                 of 4)                               
     A       matrix A, and depending on forma:   
-                if forma='n', A is used in  the     
+                if forma='N', A is used in  the     
                 computation, and A has m rows and   
                 n columns                           
                 if forma='T', A(T) is used in the   
@@ -691,12 +691,12 @@ vSgemtx(
                 m columns                           
     forma   indicates the form of matrix A to   
                 use in the computation, where:      
-                if forma='n', A is used in  the     
+                if forma='N', A is used in  the     
                 computation                         
                 if forma='T', A(T) is used in  the  
                 computation                         
     b       matrix b, and depending on formb:   
-                if formb='n', b is used in  the     
+                if formb='N', b is used in  the     
                 computation, and b has m rows and   
                 n columns                           
                 if formb='T', b(T) is used in the   
@@ -704,7 +704,7 @@ vSgemtx(
                 m columns                           
     formb   indicates the form of matrix b to   
                 use in the computation, where:      
-                if forma='n', b is used in  the     
+                if forma='N', b is used in  the     
                 computation                         
                 if forma='T', b(T) is used in  the  
                 computation                         
@@ -740,7 +740,7 @@ vSgeadd(
     width   width of the matrix (it is multiple 
                 of 4)                               
     A       matrix A, and depending on forma:   
-                if forma='n', A is used in  the     
+                if forma='N', A is used in  the     
                 computation, and A has m rows and   
                 n columns                           
                 if forma='T', A(T) is used in the   
@@ -748,12 +748,12 @@ vSgeadd(
                 m columns                           
     forma   indicates the form of matrix A to   
                 use in the computation, where:      
-                if forma='n', A is used in  the     
+                if forma='N', A is used in  the     
                 computation                         
                 if forma='T', A(T) is used in  the  
                 computation                         
     b       matrix b, and depending on formb:   
-                if formb='n', b is used in  the     
+                if formb='N', b is used in  the     
                 computation, and b has m rows and   
                 n columns                           
                 if formb='T', b(T) is used in the   
@@ -761,7 +761,7 @@ vSgeadd(
                 m columns                           
     formb   indicates the form of matrix b to   
                 use in the computation, where:      
-                if forma='n', b is used in  the     
+                if forma='N', b is used in  the     
                 computation                         
                 if forma='T', b(T) is used in  the  
                 computation                         
@@ -799,7 +799,7 @@ vSgesub(
     n       width of  matrix b  (it is multiple 
                 of 4)                               
     A       matrix A, and depending on forma:   
-                if forma='n', A is used in  the     
+                if forma='N', A is used in  the     
                 computation, and A has l rows and   
                 m columns                           
                 if forma='T', A(T) is used in the   
@@ -807,12 +807,12 @@ vSgesub(
                 l columns                           
     forma   indicates the form of matrix A to   
                 use in the computation, where:      
-                if forma='n', A is used in  the     
+                if forma='N', A is used in  the     
                 computation                         
                 if forma='T', A(T) is used in  the  
                 computation                         
     b       matrix b, and depending on formb:   
-                if formb='n', b is used in  the     
+                if formb='N', b is used in  the     
                 computation, and b has m rows and   
                 n columns                           
                 if formb='T', b(T) is used in the   
@@ -820,7 +820,7 @@ vSgesub(
                 m columns                           
     formb   indicates the form of matrix b to   
                 use in the computation, where:      
-                if forma='n', b is used in  the     
+                if forma='N', b is used in  the     
                 computation                         
                 if forma='T', b(T) is used in  the  
                 computation                         
@@ -855,17 +855,17 @@ vSgemul(
     l       number of rows in matrix c (it is   
                 multiple of 4)                      
     m       has the following meaning:          
-                if forma='n', it is the number of   
+                if forma='N', it is the number of   
                 columns in matrix A                 
                 if forma='T', it is the number of   
                 rows in matrix A. In addition       
-                if formb='n', it is the number of   
+                if formb='N', it is the number of   
                 rows in matrix b                    
                 if formb='T', it is the number of   
                 columns in matrix b                 
     n       columns in  matrix c                
     A       matrix A, and depending on forma:   
-                if forma='n', A is used in  the     
+                if forma='N', A is used in  the     
                 computation, and A has l rows and   
                 m columns                           
                 if forma='T', A(T) is used in the   
@@ -873,12 +873,12 @@ vSgemul(
                 l columns                           
     forma   indicates the form of matrix A to   
                 use in the computation, where:      
-                if forma='n', A is used in  the     
+                if forma='N', A is used in  the     
                 computation                         
                 if forma='T', A(T) is used in  the  
                 computation                         
     b       matrix b, and depending on formb:   
-                if formb='n', b is used in  the     
+                if formb='N', b is used in  the     
                 computation, and b has m rows and   
                 n columns                           
                 if formb='T', b(T) is used in the   
@@ -886,7 +886,7 @@ vSgemul(
                 m columns                           
     formb   indicates the form of matrix b to   
                 use in the computation, where:      
-                if forma='n', b is used in  the     
+                if forma='N', b is used in  the     
                 computation                         
                 if forma='T', b(T) is used in  the  
                 computation                         
@@ -968,35 +968,41 @@ vSgetmo(
 
 
 
-/*************************************************************
- vSgevv is a new function. It takes matrix A and 
- multiplies it by matrix b and puts the result in
- matrix m.                                       
-    l       is the height of the matrix         
-    n       is the width of the matrix          
-    A       array of vFloats of at least  
-                l *  m in length                                 
-    b       array of vFloats of at least  
-                m * n in length                                 
-    m       array of vFloats, containing  
-                the results of multiplication. It   
-                is m * n in size                                
-*************************************************************/
 /*
- *  vSgevv()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in vecLib.framework
- *    CarbonLib:        not in Carbon, but vecLib is compatible with CarbonLib
- *    Non-Carbon CFM:   in vecLib 1.0 and later
- */
+	vsGevv puts the outer product of vectors A and B into matrix M.
+
+	Input:
+
+		l is the number of elements in A and the number of rows in M.
+		n is the number of elements in B and the number of columns in N.
+		A is a vector of L floating-point numbers.
+		B is a vector of M floating-point numbers.
+		M is an array with space for L*N floating-point numbers.
+
+	Output:
+
+		For 0 <= i < l and 0 <= j < n, C[i*n + j] = A[i] * B[j].
+
+	Note:
+
+		In the comments above, array elements are floating-point objects, in
+		spite of the fact that the arrays are passed to the routine as pointers
+		to vFloat.  For example, if A contains four floating-point numbers, l
+		is 4, even though A contains only one vFloat object.
+
+	Availability:
+
+		Mac OS X:        In version 10.0 and later in vecLib.framework.
+		CarbonLib:       Not in Carbon, but vecLib is compatible with CarbonLib.
+		Non-Carbon CFM:  In vecLib 1.0 and later.
+*/
 extern void 
 vSgevv(
   int32_t        l,
   int32_t        n,
-  const vFloat   a[],
-  const vFloat   b[],
-  vFloat         m[])                                         AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+  const vFloat   A[],
+  const vFloat   B[],
+  vFloat         M[]) AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
 #endif	// defined _AltiVecPIMLanguageExtensionsAreEnabled || defined __SSE__

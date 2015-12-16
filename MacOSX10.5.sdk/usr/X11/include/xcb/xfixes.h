@@ -674,6 +674,14 @@ typedef struct xcb_xfixes_show_cursor_request_t {
     xcb_window_t window; /**<  */
 } xcb_xfixes_show_cursor_request_t;
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -691,6 +699,17 @@ xcb_xfixes_query_version (xcb_connection_t *c  /**< */,
                           uint32_t          client_major_version  /**< */,
                           uint32_t          client_minor_version  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -708,6 +727,18 @@ xcb_xfixes_query_version_unchecked (xcb_connection_t *c  /**< */,
                                     uint32_t          client_major_version  /**< */,
                                     uint32_t          client_minor_version  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_xfixes_query_version_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -725,6 +756,17 @@ xcb_xfixes_query_version_reply (xcb_connection_t                   *c  /**< */,
                                 xcb_xfixes_query_version_cookie_t   cookie  /**< */,
                                 xcb_generic_error_t               **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -746,6 +788,14 @@ xcb_xfixes_change_save_set_checked (xcb_connection_t *c  /**< */,
                                     uint8_t           map  /**< */,
                                     xcb_window_t      window  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -767,6 +817,17 @@ xcb_xfixes_change_save_set (xcb_connection_t *c  /**< */,
                             uint8_t           map  /**< */,
                             xcb_window_t      window  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -786,6 +847,14 @@ xcb_xfixes_select_selection_input_checked (xcb_connection_t *c  /**< */,
                                            xcb_atom_t        selection  /**< */,
                                            uint32_t          event_mask  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -805,6 +874,17 @@ xcb_xfixes_select_selection_input (xcb_connection_t *c  /**< */,
                                    xcb_atom_t        selection  /**< */,
                                    uint32_t          event_mask  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -822,6 +902,14 @@ xcb_xfixes_select_cursor_input_checked (xcb_connection_t *c  /**< */,
                                         xcb_window_t      window  /**< */,
                                         uint32_t          event_mask  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -839,6 +927,14 @@ xcb_xfixes_select_cursor_input (xcb_connection_t *c  /**< */,
                                 xcb_window_t      window  /**< */,
                                 uint32_t          event_mask  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -852,6 +948,17 @@ xcb_xfixes_select_cursor_input (xcb_connection_t *c  /**< */,
 xcb_xfixes_get_cursor_image_cookie_t
 xcb_xfixes_get_cursor_image (xcb_connection_t *c  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -904,6 +1011,18 @@ xcb_xfixes_get_cursor_image_cursor_image_length (const xcb_xfixes_get_cursor_ima
 xcb_generic_iterator_t
 xcb_xfixes_get_cursor_image_cursor_image_end (const xcb_xfixes_get_cursor_image_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_xfixes_get_cursor_image_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -921,6 +1040,14 @@ xcb_xfixes_get_cursor_image_reply (xcb_connection_t                      *c  /**
                                    xcb_xfixes_get_cursor_image_cookie_t   cookie  /**< */,
                                    xcb_generic_error_t                  **e  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_xfixes_region_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_xfixes_region_t)
+ */
 
 /*****************************************************************************
  **
@@ -934,6 +1061,15 @@ xcb_xfixes_get_cursor_image_reply (xcb_connection_t                      *c  /**
 void
 xcb_xfixes_region_next (xcb_xfixes_region_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_xfixes_region_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -947,6 +1083,17 @@ xcb_xfixes_region_next (xcb_xfixes_region_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_xfixes_region_end (xcb_xfixes_region_iterator_t i  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -966,6 +1113,14 @@ xcb_xfixes_create_region_checked (xcb_connection_t      *c  /**< */,
                                   uint32_t               rectangles_len  /**< */,
                                   const xcb_rectangle_t *rectangles  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -985,6 +1140,17 @@ xcb_xfixes_create_region (xcb_connection_t      *c  /**< */,
                           uint32_t               rectangles_len  /**< */,
                           const xcb_rectangle_t *rectangles  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -1002,6 +1168,14 @@ xcb_xfixes_create_region_from_bitmap_checked (xcb_connection_t    *c  /**< */,
                                               xcb_xfixes_region_t  region  /**< */,
                                               xcb_pixmap_t         bitmap  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -1019,6 +1193,17 @@ xcb_xfixes_create_region_from_bitmap (xcb_connection_t    *c  /**< */,
                                       xcb_xfixes_region_t  region  /**< */,
                                       xcb_pixmap_t         bitmap  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -1038,6 +1223,14 @@ xcb_xfixes_create_region_from_window_checked (xcb_connection_t    *c  /**< */,
                                               xcb_window_t         window  /**< */,
                                               xcb_shape_kind_t     kind  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -1057,6 +1250,17 @@ xcb_xfixes_create_region_from_window (xcb_connection_t    *c  /**< */,
                                       xcb_window_t         window  /**< */,
                                       xcb_shape_kind_t     kind  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -1074,6 +1278,14 @@ xcb_xfixes_create_region_from_gc_checked (xcb_connection_t    *c  /**< */,
                                           xcb_xfixes_region_t  region  /**< */,
                                           xcb_gcontext_t       gc  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -1091,6 +1303,17 @@ xcb_xfixes_create_region_from_gc (xcb_connection_t    *c  /**< */,
                                   xcb_xfixes_region_t  region  /**< */,
                                   xcb_gcontext_t       gc  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -1108,6 +1331,14 @@ xcb_xfixes_create_region_from_picture_checked (xcb_connection_t     *c  /**< */,
                                                xcb_xfixes_region_t   region  /**< */,
                                                xcb_render_picture_t  picture  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -1125,6 +1356,17 @@ xcb_xfixes_create_region_from_picture (xcb_connection_t     *c  /**< */,
                                        xcb_xfixes_region_t   region  /**< */,
                                        xcb_render_picture_t  picture  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -1140,6 +1382,14 @@ xcb_void_cookie_t
 xcb_xfixes_destroy_region_checked (xcb_connection_t    *c  /**< */,
                                    xcb_xfixes_region_t  region  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -1155,6 +1405,17 @@ xcb_void_cookie_t
 xcb_xfixes_destroy_region (xcb_connection_t    *c  /**< */,
                            xcb_xfixes_region_t  region  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -1174,6 +1435,14 @@ xcb_xfixes_set_region_checked (xcb_connection_t      *c  /**< */,
                                uint32_t               rectangles_len  /**< */,
                                const xcb_rectangle_t *rectangles  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -1193,6 +1462,17 @@ xcb_xfixes_set_region (xcb_connection_t      *c  /**< */,
                        uint32_t               rectangles_len  /**< */,
                        const xcb_rectangle_t *rectangles  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -1210,6 +1490,14 @@ xcb_xfixes_copy_region_checked (xcb_connection_t    *c  /**< */,
                                 xcb_xfixes_region_t  source  /**< */,
                                 xcb_xfixes_region_t  destination  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -1227,6 +1515,17 @@ xcb_xfixes_copy_region (xcb_connection_t    *c  /**< */,
                         xcb_xfixes_region_t  source  /**< */,
                         xcb_xfixes_region_t  destination  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -1246,6 +1545,14 @@ xcb_xfixes_union_region_checked (xcb_connection_t    *c  /**< */,
                                  xcb_xfixes_region_t  source2  /**< */,
                                  xcb_xfixes_region_t  destination  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -1265,6 +1572,17 @@ xcb_xfixes_union_region (xcb_connection_t    *c  /**< */,
                          xcb_xfixes_region_t  source2  /**< */,
                          xcb_xfixes_region_t  destination  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -1284,6 +1602,14 @@ xcb_xfixes_intersect_region_checked (xcb_connection_t    *c  /**< */,
                                      xcb_xfixes_region_t  source2  /**< */,
                                      xcb_xfixes_region_t  destination  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -1303,6 +1629,17 @@ xcb_xfixes_intersect_region (xcb_connection_t    *c  /**< */,
                              xcb_xfixes_region_t  source2  /**< */,
                              xcb_xfixes_region_t  destination  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -1322,6 +1659,14 @@ xcb_xfixes_subtract_region_checked (xcb_connection_t    *c  /**< */,
                                     xcb_xfixes_region_t  source2  /**< */,
                                     xcb_xfixes_region_t  destination  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -1341,6 +1686,17 @@ xcb_xfixes_subtract_region (xcb_connection_t    *c  /**< */,
                             xcb_xfixes_region_t  source2  /**< */,
                             xcb_xfixes_region_t  destination  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -1360,6 +1716,14 @@ xcb_xfixes_invert_region_checked (xcb_connection_t    *c  /**< */,
                                   xcb_rectangle_t      bounds  /**< */,
                                   xcb_xfixes_region_t  destination  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -1379,6 +1743,17 @@ xcb_xfixes_invert_region (xcb_connection_t    *c  /**< */,
                           xcb_rectangle_t      bounds  /**< */,
                           xcb_xfixes_region_t  destination  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -1398,6 +1773,14 @@ xcb_xfixes_translate_region_checked (xcb_connection_t    *c  /**< */,
                                      int16_t              dx  /**< */,
                                      int16_t              dy  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -1417,6 +1800,17 @@ xcb_xfixes_translate_region (xcb_connection_t    *c  /**< */,
                              int16_t              dx  /**< */,
                              int16_t              dy  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -1434,6 +1828,14 @@ xcb_xfixes_region_extents_checked (xcb_connection_t    *c  /**< */,
                                    xcb_xfixes_region_t  source  /**< */,
                                    xcb_xfixes_region_t  destination  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -1451,6 +1853,14 @@ xcb_xfixes_region_extents (xcb_connection_t    *c  /**< */,
                            xcb_xfixes_region_t  source  /**< */,
                            xcb_xfixes_region_t  destination  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -1466,6 +1876,17 @@ xcb_xfixes_fetch_region_cookie_t
 xcb_xfixes_fetch_region (xcb_connection_t    *c  /**< */,
                          xcb_xfixes_region_t  region  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -1520,6 +1941,18 @@ xcb_xfixes_fetch_region_rectangles_length (const xcb_xfixes_fetch_region_reply_t
 xcb_rectangle_iterator_t
 xcb_xfixes_fetch_region_rectangles_iterator (const xcb_xfixes_fetch_region_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_xfixes_fetch_region_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -1537,6 +1970,17 @@ xcb_xfixes_fetch_region_reply (xcb_connection_t                  *c  /**< */,
                                xcb_xfixes_fetch_region_cookie_t   cookie  /**< */,
                                xcb_generic_error_t              **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -1558,6 +2002,14 @@ xcb_xfixes_set_gc_clip_region_checked (xcb_connection_t    *c  /**< */,
                                        int16_t              x_origin  /**< */,
                                        int16_t              y_origin  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -1579,6 +2031,17 @@ xcb_xfixes_set_gc_clip_region (xcb_connection_t    *c  /**< */,
                                int16_t              x_origin  /**< */,
                                int16_t              y_origin  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -1602,6 +2065,14 @@ xcb_xfixes_set_window_shape_region_checked (xcb_connection_t    *c  /**< */,
                                             int16_t              y_offset  /**< */,
                                             xcb_xfixes_region_t  region  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -1625,6 +2096,17 @@ xcb_xfixes_set_window_shape_region (xcb_connection_t    *c  /**< */,
                                     int16_t              y_offset  /**< */,
                                     xcb_xfixes_region_t  region  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -1646,6 +2128,14 @@ xcb_xfixes_set_picture_clip_region_checked (xcb_connection_t     *c  /**< */,
                                             int16_t               x_origin  /**< */,
                                             int16_t               y_origin  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -1667,6 +2157,17 @@ xcb_xfixes_set_picture_clip_region (xcb_connection_t     *c  /**< */,
                                     int16_t               x_origin  /**< */,
                                     int16_t               y_origin  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -1686,6 +2187,14 @@ xcb_xfixes_set_cursor_name_checked (xcb_connection_t *c  /**< */,
                                     uint16_t          nbytes  /**< */,
                                     const uint8_t    *name  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -1705,6 +2214,14 @@ xcb_xfixes_set_cursor_name (xcb_connection_t *c  /**< */,
                             uint16_t          nbytes  /**< */,
                             const uint8_t    *name  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -1720,6 +2237,17 @@ xcb_xfixes_get_cursor_name_cookie_t
 xcb_xfixes_get_cursor_name (xcb_connection_t *c  /**< */,
                             xcb_cursor_t      cursor  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -1774,6 +2302,18 @@ xcb_xfixes_get_cursor_name_name_length (const xcb_xfixes_get_cursor_name_reply_t
 xcb_generic_iterator_t
 xcb_xfixes_get_cursor_name_name_end (const xcb_xfixes_get_cursor_name_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_xfixes_get_cursor_name_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -1791,6 +2331,14 @@ xcb_xfixes_get_cursor_name_reply (xcb_connection_t                     *c  /**< 
                                   xcb_xfixes_get_cursor_name_cookie_t   cookie  /**< */,
                                   xcb_generic_error_t                 **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -1804,6 +2352,17 @@ xcb_xfixes_get_cursor_name_reply (xcb_connection_t                     *c  /**< 
 xcb_xfixes_get_cursor_image_and_name_cookie_t
 xcb_xfixes_get_cursor_image_and_name (xcb_connection_t *c  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -1895,6 +2454,18 @@ xcb_xfixes_get_cursor_image_and_name_cursor_image_length (const xcb_xfixes_get_c
 xcb_generic_iterator_t
 xcb_xfixes_get_cursor_image_and_name_cursor_image_end (const xcb_xfixes_get_cursor_image_and_name_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_xfixes_get_cursor_image_and_name_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -1912,6 +2483,17 @@ xcb_xfixes_get_cursor_image_and_name_reply (xcb_connection_t                    
                                             xcb_xfixes_get_cursor_image_and_name_cookie_t   cookie  /**< */,
                                             xcb_generic_error_t                           **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -1929,6 +2511,14 @@ xcb_xfixes_change_cursor_checked (xcb_connection_t *c  /**< */,
                                   xcb_cursor_t      source  /**< */,
                                   xcb_cursor_t      destination  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -1946,6 +2536,17 @@ xcb_xfixes_change_cursor (xcb_connection_t *c  /**< */,
                           xcb_cursor_t      source  /**< */,
                           xcb_cursor_t      destination  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -1965,6 +2566,14 @@ xcb_xfixes_change_cursor_by_name_checked (xcb_connection_t *c  /**< */,
                                           uint16_t          nbytes  /**< */,
                                           const uint8_t    *name  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -1984,6 +2593,17 @@ xcb_xfixes_change_cursor_by_name (xcb_connection_t *c  /**< */,
                                   uint16_t          nbytes  /**< */,
                                   const uint8_t    *name  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -2009,6 +2629,14 @@ xcb_xfixes_expand_region_checked (xcb_connection_t    *c  /**< */,
                                   uint16_t             top  /**< */,
                                   uint16_t             bottom  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -2034,6 +2662,17 @@ xcb_xfixes_expand_region (xcb_connection_t    *c  /**< */,
                           uint16_t             top  /**< */,
                           uint16_t             bottom  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -2049,6 +2688,14 @@ xcb_void_cookie_t
 xcb_xfixes_hide_cursor_checked (xcb_connection_t *c  /**< */,
                                 xcb_window_t      window  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -2064,6 +2711,17 @@ xcb_void_cookie_t
 xcb_xfixes_hide_cursor (xcb_connection_t *c  /**< */,
                         xcb_window_t      window  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -2079,6 +2737,14 @@ xcb_void_cookie_t
 xcb_xfixes_show_cursor_checked (xcb_connection_t *c  /**< */,
                                 xcb_window_t      window  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **

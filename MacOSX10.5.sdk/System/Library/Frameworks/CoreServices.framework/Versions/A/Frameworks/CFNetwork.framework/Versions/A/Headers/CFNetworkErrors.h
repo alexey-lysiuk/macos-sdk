@@ -3,9 +3,7 @@
  
      Contains:   CFNetwork error header
  
-     Version:    CFNetwork-219~1
- 
-     Copyright:  © 2006 by Apple Computer, Inc., all rights reserved
+     Copyright:  Copyright (c) 2006-2008, Apple Inc. All rights reserved.
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -26,7 +24,7 @@
 
 
 
-#include <AvailabilityMacros.h>
+#include <Availability.h>
 
 #if PRAGMA_ONCE
 #pragma once
@@ -52,7 +50,7 @@ extern "C" {
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-extern const CFStringRef kCFErrorDomainCFNetwork                     AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+CFN_EXPORT const CFStringRef kCFErrorDomainCFNetwork                     __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_1_2);
 
 /*
  *  kCFErrorDomainWinSock
@@ -66,7 +64,7 @@ extern const CFStringRef kCFErrorDomainCFNetwork                     AVAILABLE_M
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-extern const CFStringRef kCFErrorDomainWinSock                       AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+CFN_EXPORT const CFStringRef kCFErrorDomainWinSock                       __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_1_2);
 
 
 /*
@@ -110,7 +108,8 @@ enum CFNetworkErrors {
   kCFErrorHTTPRedirectionLoopDetected = 304,
   kCFErrorHTTPBadURL            = 305,
   kCFErrorHTTPProxyConnectionFailure = 306,
-  kCFErrorHTTPBadProxyCredentials = 307
+  kCFErrorHTTPBadProxyCredentials = 307,
+  kCFErrorPACFileError          = 308
 };
 typedef enum CFNetworkErrors CFNetworkErrors;
 
@@ -129,7 +128,7 @@ typedef enum CFNetworkErrors CFNetworkErrors;
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-extern const CFStringRef kCFGetAddrInfoFailureKey                    AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+CFN_EXPORT const CFStringRef kCFGetAddrInfoFailureKey                    __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_1_2);
 
 /*
  *  kCFSOCKSStatusCodeKey
@@ -143,7 +142,7 @@ extern const CFStringRef kCFGetAddrInfoFailureKey                    AVAILABLE_M
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-extern const CFStringRef kCFSOCKSStatusCodeKey                       AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+CFN_EXPORT const CFStringRef kCFSOCKSStatusCodeKey                       __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_1_2);
 
 /*
  *  kCFSOCKSVersionKey
@@ -158,7 +157,7 @@ extern const CFStringRef kCFSOCKSStatusCodeKey                       AVAILABLE_M
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-extern const CFStringRef kCFSOCKSVersionKey                          AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+CFN_EXPORT const CFStringRef kCFSOCKSVersionKey                          __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_1_2);
 
 /*
  *  kCFSOCKSNegotiationMethodKey
@@ -173,7 +172,7 @@ extern const CFStringRef kCFSOCKSVersionKey                          AVAILABLE_M
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-extern const CFStringRef kCFSOCKSNegotiationMethodKey                AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+CFN_EXPORT const CFStringRef kCFSOCKSNegotiationMethodKey                __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_1_2);
 
 /*
  *  kCFDNSServiceFailureKey
@@ -188,7 +187,7 @@ extern const CFStringRef kCFSOCKSNegotiationMethodKey                AVAILABLE_M
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-extern const CFStringRef kCFDNSServiceFailureKey                     AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+CFN_EXPORT const CFStringRef kCFDNSServiceFailureKey                     __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_1_2);
 
 /*
  *  kCFFTPStatusCodeKey
@@ -203,7 +202,7 @@ extern const CFStringRef kCFDNSServiceFailureKey                     AVAILABLE_M
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-extern const CFStringRef kCFFTPStatusCodeKey                         AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+CFN_EXPORT const CFStringRef kCFFTPStatusCodeKey                         __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_1_2);
 
 #if PRAGMA_ENUM_ALWAYSINT
     #pragma enumsalwaysint reset

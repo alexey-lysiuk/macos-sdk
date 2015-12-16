@@ -25,12 +25,12 @@
 #ifndef _XRENDER_H_
 #define _XRENDER_H_
 
-#include <X11/extensions/render.h>
-
 #include <X11/Xlib.h>
 #include <X11/Xfuncproto.h>
 #include <X11/Xosdefs.h>
 #include <X11/Xutil.h>
+
+#include <X11/extensions/render.h>
 
 typedef struct {
     short   red;

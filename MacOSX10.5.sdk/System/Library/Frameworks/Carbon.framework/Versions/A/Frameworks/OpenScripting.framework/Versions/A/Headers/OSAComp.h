@@ -3,7 +3,7 @@
  
      Contains:   AppleScript Component Implementor's Interfaces.
  
-     Version:    OSA-122~23
+     Version:    OSA-122~37
  
      Copyright:  © 1992-2006 by Apple Computer, Inc., all rights reserved
  

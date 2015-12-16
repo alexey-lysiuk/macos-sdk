@@ -1,5 +1,5 @@
 /* Xplugin.h -- windowing API for rootless X11 server
-   $Id: Xplugin.h,v 1.4 2003/03/03 23:30:53 jharper Exp $
+   $Id: Xplugin.h,v 1.4 2003-03-03 23:30:53 jharper Exp $
 
    Copyright (c) 2002 Apple Computer, Inc. All rights reserved.
 
@@ -98,6 +98,9 @@ enum xp_event_type_enum {
 
     /* Sent when a window has been moved. Arg is of type xp_window_id. */
     XP_EVENT_WINDOW_MOVED	= 1 << 5,
+    
+    /* Spaces.app caused us to change spaces Arg is of type uint32_t. */
+    XP_EVENT_SPACE_CHANGED  = 1 << 6,
 };
 
 /* Function type used to receive events. */

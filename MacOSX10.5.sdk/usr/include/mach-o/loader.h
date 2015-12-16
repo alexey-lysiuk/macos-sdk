@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1999-2003 Apple Computer, Inc.  All Rights Reserved.
+ * Copyright (c) 1999-2008 Apple Inc.  All Rights Reserved.
  *
  * @APPLE_LICENSE_HEADER_START@
  * 
@@ -263,6 +263,8 @@ struct load_command {
 #define LC_CODE_SIGNATURE 0x1d	/* local of code signature */
 #define LC_SEGMENT_SPLIT_INFO 0x1e /* local of info to split segments */
 #define LC_REEXPORT_DYLIB (0x1f | LC_REQ_DYLD) /* load and re-export dylib */
+#define	LC_LAZY_LOAD_DYLIB 0x20	/* delay load of dylib until first use */
+#define	LC_ENCRYPTION_INFO 0x21	/* encrypted segment information */
 
 /*
  * A variable length string in a load command is represented by an lc_str
@@ -449,6 +451,9 @@ struct section_64 { /* for 64-bit architectures */
 						   literals */
 #define	S_DTRACE_DOF			0xf	/* section contains 
 						   DTrace Object Format */
+#define	S_LAZY_DYLIB_SYMBOL_POINTERS	0x10	/* section with only lazy
+						   symbol pointers to lazy
+						   loaded dylibs */
 /*
  * Constants for the section attributes part of the flags field of a section
  * structure.
@@ -1105,6 +1110,19 @@ struct linkedit_data_command {
     uint32_t	cmdsize;	/* sizeof(struct linkedit_data_command) */
     uint32_t	dataoff;	/* file offset of data in __LINKEDIT segment */
     uint32_t	datasize;	/* file size of data in __LINKEDIT segment  */
+};
+
+/*
+ * The encryption_info_command contains the file offset and size of an
+ * of an encrypted segment.
+ */
+struct encryption_info_command {
+   uint32_t	cmd;		/* LC_ENCRYPTION_INFO */
+   uint32_t	cmdsize;	/* sizeof(struct encryption_info_command) */
+   uint32_t	cryptoff;	/* file offset of encrypted range */
+   uint32_t	cryptsize;	/* file size of encrypted range */
+   uint32_t	cryptid;	/* which enryption system,
+				   0 means not-encrypted yet */
 };
 
 /*

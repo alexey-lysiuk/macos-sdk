@@ -187,6 +187,8 @@ typedef struct xcb_sync_initialize_request_t {
     uint8_t  major_opcode; /**<  */
     uint8_t  minor_opcode; /**<  */
     uint16_t length; /**<  */
+    uint8_t  desired_major_version; /**<  */
+    uint8_t  desired_minor_version; /**<  */
 } xcb_sync_initialize_request_t;
 
 /**
@@ -484,6 +486,14 @@ typedef struct xcb_sync_alarm_notify_event_t {
     xcb_timestamp_t  timestamp; /**<  */
 } xcb_sync_alarm_notify_event_t;
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_sync_alarm_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_sync_alarm_t)
+ */
 
 /*****************************************************************************
  **
@@ -497,6 +507,15 @@ typedef struct xcb_sync_alarm_notify_event_t {
 void
 xcb_sync_alarm_next (xcb_sync_alarm_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_sync_alarm_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -510,6 +529,14 @@ xcb_sync_alarm_next (xcb_sync_alarm_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_sync_alarm_end (xcb_sync_alarm_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_sync_counter_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_sync_counter_t)
+ */
 
 /*****************************************************************************
  **
@@ -523,6 +550,15 @@ xcb_sync_alarm_end (xcb_sync_alarm_iterator_t i  /**< */);
 void
 xcb_sync_counter_next (xcb_sync_counter_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_sync_counter_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -536,6 +572,14 @@ xcb_sync_counter_next (xcb_sync_counter_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_sync_counter_end (xcb_sync_counter_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_sync_int64_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_sync_int64_t)
+ */
 
 /*****************************************************************************
  **
@@ -549,6 +593,15 @@ xcb_sync_counter_end (xcb_sync_counter_iterator_t i  /**< */);
 void
 xcb_sync_int64_next (xcb_sync_int64_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_sync_int64_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -601,6 +654,14 @@ xcb_sync_systemcounter_name_length (const xcb_sync_systemcounter_t *R  /**< */);
 xcb_generic_iterator_t
 xcb_sync_systemcounter_name_end (const xcb_sync_systemcounter_t *R  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_sync_systemcounter_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_sync_systemcounter_t)
+ */
 
 /*****************************************************************************
  **
@@ -614,6 +675,15 @@ xcb_sync_systemcounter_name_end (const xcb_sync_systemcounter_t *R  /**< */);
 void
 xcb_sync_systemcounter_next (xcb_sync_systemcounter_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_sync_systemcounter_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -627,6 +697,14 @@ xcb_sync_systemcounter_next (xcb_sync_systemcounter_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_sync_systemcounter_end (xcb_sync_systemcounter_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_sync_trigger_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_sync_trigger_t)
+ */
 
 /*****************************************************************************
  **
@@ -640,6 +718,15 @@ xcb_sync_systemcounter_end (xcb_sync_systemcounter_iterator_t i  /**< */);
 void
 xcb_sync_trigger_next (xcb_sync_trigger_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_sync_trigger_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -653,6 +740,14 @@ xcb_sync_trigger_next (xcb_sync_trigger_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_sync_trigger_end (xcb_sync_trigger_iterator_t i  /**< */);
 
+/**
+ * Get the next element of the iterator
+ * @param i Pointer to a xcb_sync_waitcondition_iterator_t
+ *
+ * Get the next element in the iterator. The member rem is
+ * decreased by one. The member data points to the next
+ * element. The member index is increased by sizeof(xcb_sync_waitcondition_t)
+ */
 
 /*****************************************************************************
  **
@@ -666,6 +761,15 @@ xcb_sync_trigger_end (xcb_sync_trigger_iterator_t i  /**< */);
 void
 xcb_sync_waitcondition_next (xcb_sync_waitcondition_iterator_t *i  /**< */);
 
+/**
+ * Return the iterator pointing to the last element
+ * @param i An xcb_sync_waitcondition_iterator_t
+ * @return  The iterator pointing to the last element
+ *
+ * Set the current element in the iterator to the last element.
+ * The member rem is set to 0. The member data points to the
+ * last element.
+ */
 
 /*****************************************************************************
  **
@@ -679,32 +783,71 @@ xcb_sync_waitcondition_next (xcb_sync_waitcondition_iterator_t *i  /**< */);
 xcb_generic_iterator_t
 xcb_sync_waitcondition_end (xcb_sync_waitcondition_iterator_t i  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
  ** xcb_sync_initialize_cookie_t xcb_sync_initialize
  ** 
  ** @param xcb_connection_t *c
+ ** @param uint8_t           desired_major_version
+ ** @param uint8_t           desired_minor_version
  ** @returns xcb_sync_initialize_cookie_t
  **
  *****************************************************************************/
  
 xcb_sync_initialize_cookie_t
-xcb_sync_initialize (xcb_connection_t *c  /**< */);
+xcb_sync_initialize (xcb_connection_t *c  /**< */,
+                     uint8_t           desired_major_version  /**< */,
+                     uint8_t           desired_minor_version  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
  ** xcb_sync_initialize_cookie_t xcb_sync_initialize_unchecked
  ** 
  ** @param xcb_connection_t *c
+ ** @param uint8_t           desired_major_version
+ ** @param uint8_t           desired_minor_version
  ** @returns xcb_sync_initialize_cookie_t
  **
  *****************************************************************************/
  
 xcb_sync_initialize_cookie_t
-xcb_sync_initialize_unchecked (xcb_connection_t *c  /**< */);
+xcb_sync_initialize_unchecked (xcb_connection_t *c  /**< */,
+                               uint8_t           desired_major_version  /**< */,
+                               uint8_t           desired_minor_version  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_sync_initialize_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -722,6 +865,14 @@ xcb_sync_initialize_reply (xcb_connection_t              *c  /**< */,
                            xcb_sync_initialize_cookie_t   cookie  /**< */,
                            xcb_generic_error_t          **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -735,6 +886,17 @@ xcb_sync_initialize_reply (xcb_connection_t              *c  /**< */,
 xcb_sync_list_system_counters_cookie_t
 xcb_sync_list_system_counters (xcb_connection_t *c  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -774,6 +936,18 @@ xcb_sync_list_system_counters_counters_length (const xcb_sync_list_system_counte
 xcb_sync_systemcounter_iterator_t
 xcb_sync_list_system_counters_counters_iterator (const xcb_sync_list_system_counters_reply_t *R  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_sync_list_system_counters_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -791,6 +965,17 @@ xcb_sync_list_system_counters_reply (xcb_connection_t                        *c 
                                      xcb_sync_list_system_counters_cookie_t   cookie  /**< */,
                                      xcb_generic_error_t                    **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -808,6 +993,14 @@ xcb_sync_create_counter_checked (xcb_connection_t   *c  /**< */,
                                  xcb_sync_counter_t  id  /**< */,
                                  xcb_sync_int64_t    initial_value  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -825,6 +1018,17 @@ xcb_sync_create_counter (xcb_connection_t   *c  /**< */,
                          xcb_sync_counter_t  id  /**< */,
                          xcb_sync_int64_t    initial_value  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -840,6 +1044,14 @@ xcb_void_cookie_t
 xcb_sync_destroy_counter_checked (xcb_connection_t   *c  /**< */,
                                   xcb_sync_counter_t  counter  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -855,6 +1067,14 @@ xcb_void_cookie_t
 xcb_sync_destroy_counter (xcb_connection_t   *c  /**< */,
                           xcb_sync_counter_t  counter  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -870,6 +1090,17 @@ xcb_sync_query_counter_cookie_t
 xcb_sync_query_counter (xcb_connection_t   *c  /**< */,
                         xcb_sync_counter_t  counter  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -885,6 +1116,18 @@ xcb_sync_query_counter_cookie_t
 xcb_sync_query_counter_unchecked (xcb_connection_t   *c  /**< */,
                                   xcb_sync_counter_t  counter  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_sync_query_counter_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -902,6 +1145,17 @@ xcb_sync_query_counter_reply (xcb_connection_t                 *c  /**< */,
                               xcb_sync_query_counter_cookie_t   cookie  /**< */,
                               xcb_generic_error_t             **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -919,6 +1173,14 @@ xcb_sync_await_checked (xcb_connection_t               *c  /**< */,
                         uint32_t                        wait_list_len  /**< */,
                         const xcb_sync_waitcondition_t *wait_list  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -936,6 +1198,17 @@ xcb_sync_await (xcb_connection_t               *c  /**< */,
                 uint32_t                        wait_list_len  /**< */,
                 const xcb_sync_waitcondition_t *wait_list  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -953,6 +1226,14 @@ xcb_sync_change_counter_checked (xcb_connection_t   *c  /**< */,
                                  xcb_sync_counter_t  counter  /**< */,
                                  xcb_sync_int64_t    amount  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -970,6 +1251,17 @@ xcb_sync_change_counter (xcb_connection_t   *c  /**< */,
                          xcb_sync_counter_t  counter  /**< */,
                          xcb_sync_int64_t    amount  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -987,6 +1279,14 @@ xcb_sync_set_counter_checked (xcb_connection_t   *c  /**< */,
                               xcb_sync_counter_t  counter  /**< */,
                               xcb_sync_int64_t    value  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -1004,6 +1304,17 @@ xcb_sync_set_counter (xcb_connection_t   *c  /**< */,
                       xcb_sync_counter_t  counter  /**< */,
                       xcb_sync_int64_t    value  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -1023,6 +1334,14 @@ xcb_sync_create_alarm_checked (xcb_connection_t *c  /**< */,
                                uint32_t          value_mask  /**< */,
                                const uint32_t   *value_list  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -1042,6 +1361,17 @@ xcb_sync_create_alarm (xcb_connection_t *c  /**< */,
                        uint32_t          value_mask  /**< */,
                        const uint32_t   *value_list  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -1061,6 +1391,14 @@ xcb_sync_change_alarm_checked (xcb_connection_t *c  /**< */,
                                uint32_t          value_mask  /**< */,
                                const uint32_t   *value_list  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -1080,6 +1418,17 @@ xcb_sync_change_alarm (xcb_connection_t *c  /**< */,
                        uint32_t          value_mask  /**< */,
                        const uint32_t   *value_list  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -1095,6 +1444,14 @@ xcb_void_cookie_t
 xcb_sync_destroy_alarm_checked (xcb_connection_t *c  /**< */,
                                 xcb_sync_alarm_t  alarm  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -1110,6 +1467,14 @@ xcb_void_cookie_t
 xcb_sync_destroy_alarm (xcb_connection_t *c  /**< */,
                         xcb_sync_alarm_t  alarm  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -1125,6 +1490,17 @@ xcb_sync_query_alarm_cookie_t
 xcb_sync_query_alarm (xcb_connection_t *c  /**< */,
                       xcb_sync_alarm_t  alarm  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -1140,6 +1516,18 @@ xcb_sync_query_alarm_cookie_t
 xcb_sync_query_alarm_unchecked (xcb_connection_t *c  /**< */,
                                 xcb_sync_alarm_t  alarm  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_sync_query_alarm_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -1157,6 +1545,17 @@ xcb_sync_query_alarm_reply (xcb_connection_t               *c  /**< */,
                             xcb_sync_query_alarm_cookie_t   cookie  /**< */,
                             xcb_generic_error_t           **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -1174,6 +1573,14 @@ xcb_sync_set_priority_checked (xcb_connection_t *c  /**< */,
                                uint32_t          id  /**< */,
                                int32_t           priority  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -1191,6 +1598,14 @@ xcb_sync_set_priority (xcb_connection_t *c  /**< */,
                        uint32_t          id  /**< */,
                        int32_t           priority  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -1206,6 +1621,17 @@ xcb_sync_get_priority_cookie_t
 xcb_sync_get_priority (xcb_connection_t *c  /**< */,
                        uint32_t          id  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -1221,6 +1647,18 @@ xcb_sync_get_priority_cookie_t
 xcb_sync_get_priority_unchecked (xcb_connection_t *c  /**< */,
                                  uint32_t          id  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_sync_get_priority_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **

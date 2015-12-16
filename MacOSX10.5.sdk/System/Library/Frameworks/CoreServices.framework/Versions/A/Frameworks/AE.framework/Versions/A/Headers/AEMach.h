@@ -3,7 +3,7 @@
  
      Contains:   AppleEvent over mach_msg interfaces
  
-     Version:    AppleEvents-402~2
+     Version:    AppleEvents-402~78
  
      Copyright:  © 2000-2006 by Apple Computer, Inc., all rights reserved.
  

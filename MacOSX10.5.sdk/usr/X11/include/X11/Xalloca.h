@@ -62,7 +62,8 @@ from The Open Group.
 #define XALLOCA_H 1
 
 #ifndef INCLUDE_ALLOCA_H
-# if defined(__SUNPRO_C)  /* Need to add more here to match Imake *.cf's */
+/* Need to add more here to match Imake *.cf's */
+# if defined(HAVE_ALLOCA_H) || defined(__SUNPRO_C) || defined(__SUNPRO_CC)
 #  define INCLUDE_ALLOCA_H
 # endif
 #endif
@@ -111,16 +112,14 @@ from The Open Group.
  * decide that you don't want to use alloca, you might want to fix it here.
  */
 /* alloca might be a macro taking one arg (hi, Sun!), so give it one. */
-#        ifndef __sgi			/* IRIX 5/6 has definition */
-#         ifndef __QNX__
+#        if !defined(__sgi) && !defined(__QNX__) && !defined(__cplusplus)
 #          define __Xnullarg		/* as nothing */
 #          ifndef X_NOT_STDC_ENV
              extern void *alloca(__Xnullarg);
 #          else
              extern char *alloca(__Xnullarg);
 #          endif
-#         endif /* __QNX__ */
-#        endif /* __sgi */
+#        endif /* !__sgi && !__QNX && !__cplusplus */
 #        define ALLOCATE_LOCAL(size) alloca((int)(size))
 #      endif /* who does alloca */
 #    endif /* NCR */

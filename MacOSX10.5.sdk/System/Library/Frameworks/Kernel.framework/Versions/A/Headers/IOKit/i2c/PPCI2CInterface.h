@@ -461,7 +461,7 @@ protected:
     bool readPmuI2C( UInt8 address, UInt8 subAddress, UInt8 * buffer, IOByteCount count );
 
     // set up interface for PMU transfer if needed
-    bool PPCI2CInterface::retrieveProperty(IOService *provider);
+    bool retrieveProperty(IOService *provider);
 
     // Returns the mask to use with the register:
     UInt8 shiftedMask(UInt8 mask, UInt8 shift);

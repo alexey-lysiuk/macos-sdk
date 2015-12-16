@@ -151,7 +151,7 @@ SOFTWARE.
 
 #define DevicePresence(dpy, type, _class)                       \
     {                                                           \
-        extern int_XiGetDevicePresenceNotifyEvent(Display *);   \
+        extern int _XiGetDevicePresenceNotifyEvent(Display *);  \
         type = _XiGetDevicePresenceNotifyEvent(dpy);            \
         _class =  (0x10000 | _devicePresence);                  \
     }

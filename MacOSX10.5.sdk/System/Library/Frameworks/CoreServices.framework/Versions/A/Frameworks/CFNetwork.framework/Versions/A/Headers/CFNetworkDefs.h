@@ -3,9 +3,7 @@
  
      Contains:   CoreFoundation Network header
  
-     Version:    CFNetwork-219~1
- 
-     Copyright:  © 2001-2006 by Apple Computer, Inc., all rights reserved
+     Copyright:  Copyright (c) 2001-2008, Apple Inc. All rights reserved.
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -30,12 +28,12 @@
 /* Standard incantation for exporting/importing DLL symbols */
 #if defined(__WIN32__)
   #if defined(CFNETWORK_BUILDING_DLL)
-        #define APPLE_WIN_API __declspec(dllexport) extern
+        #define CFN_EXPORT __declspec(dllexport) extern
  #else
-      #define APPLE_WIN_API __declspec(dllimport) extern
+      #define CFN_EXPORT __declspec(dllimport) extern
  #endif
 #else
-    #define APPLE_WIN_API extern
+    #define CFN_EXPORT extern
 #endif
 
 

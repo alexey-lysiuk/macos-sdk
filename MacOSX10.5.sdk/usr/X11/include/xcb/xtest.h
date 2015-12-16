@@ -125,6 +125,14 @@ typedef struct xcb_test_grab_control_request_t {
     uint8_t  pad0[3]; /**<  */
 } xcb_test_grab_control_request_t;
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -142,6 +150,17 @@ xcb_test_get_version (xcb_connection_t *c  /**< */,
                       uint8_t           major_version  /**< */,
                       uint16_t          minor_version  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -159,6 +178,18 @@ xcb_test_get_version_unchecked (xcb_connection_t *c  /**< */,
                                 uint8_t           major_version  /**< */,
                                 uint16_t          minor_version  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_test_get_version_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -176,6 +207,14 @@ xcb_test_get_version_reply (xcb_connection_t               *c  /**< */,
                             xcb_test_get_version_cookie_t   cookie  /**< */,
                             xcb_generic_error_t           **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -193,6 +232,17 @@ xcb_test_compare_cursor (xcb_connection_t *c  /**< */,
                          xcb_window_t      window  /**< */,
                          xcb_cursor_t      cursor  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will cause
+ * a reply to be generated. Any returned error will be
+ * placed in the event queue.
+ */
 
 /*****************************************************************************
  **
@@ -210,6 +260,18 @@ xcb_test_compare_cursor_unchecked (xcb_connection_t *c  /**< */,
                                    xcb_window_t      window  /**< */,
                                    xcb_cursor_t      cursor  /**< */);
 
+/**
+ * Return the reply
+ * @param c      The connection
+ * @param cookie The cookie
+ * @param e      The xcb_generic_error_t supplied
+ *
+ * Returns the reply of the request asked by
+ * 
+ * The parameter @p e supplied to this function must be NULL if
+ * xcb_test_compare_cursor_unchecked(). is used.
+ * Otherwise, it stores the error if any.
+ */
 
 /*****************************************************************************
  **
@@ -227,6 +289,17 @@ xcb_test_compare_cursor_reply (xcb_connection_t                  *c  /**< */,
                                xcb_test_compare_cursor_cookie_t   cookie  /**< */,
                                xcb_generic_error_t              **e  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -254,6 +327,14 @@ xcb_test_fake_input_checked (xcb_connection_t *c  /**< */,
                              uint16_t          rootY  /**< */,
                              uint8_t           deviceid  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **
@@ -281,6 +362,17 @@ xcb_test_fake_input (xcb_connection_t *c  /**< */,
                      uint16_t          rootY  /**< */,
                      uint8_t           deviceid  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ * This form can be used only if the request will not cause
+ * a reply to be generated. Any returned error will be
+ * saved for handling by xcb_request_check().
+ */
 
 /*****************************************************************************
  **
@@ -296,6 +388,14 @@ xcb_void_cookie_t
 xcb_test_grab_control_checked (xcb_connection_t *c  /**< */,
                                uint8_t           impervious  /**< */);
 
+/**
+ * Delivers a request to the X server
+ * @param c The connection
+ * @return A cookie
+ *
+ * Delivers a request to the X server.
+ * 
+ */
 
 /*****************************************************************************
  **

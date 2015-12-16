@@ -1,4 +1,3 @@
-/* $Xorg: Xtranslcl.c,v 1.6 2001/02/09 02:04:06 xorgcvs Exp $ */
 /*
 
 Copyright 1993, 1994, 1998  The Open Group
@@ -25,10 +24,7 @@ not be used in advertising or otherwise to promote the sale, use or
 other dealings in this Software without prior written authorization
 from The Open Group.
 
-*/
-/* $XFree86: xc/lib/xtrans/Xtranslcl.c,v 3.40tsi Exp $ */
-
-/* Copyright 1993, 1994 NCR Corporation - Dayton, Ohio, USA
+ * Copyright 1993, 1994 NCR Corporation - Dayton, Ohio, USA
  *
  * All Rights Reserved
  *
@@ -846,7 +842,7 @@ TRANS(NAMEDOpenServer)(XtransConnInfo ciptr, char *port)
 			    NAMEDNODENAME, port);
 	}
     } else {
-	(void) sprintf(server_path, sizeof(server_path), "%s%ld",
+	(void) snprintf(server_path, sizeof(server_path), "%s%ld",
 		       NAMEDNODENAME, (long)getpid());
     }
 

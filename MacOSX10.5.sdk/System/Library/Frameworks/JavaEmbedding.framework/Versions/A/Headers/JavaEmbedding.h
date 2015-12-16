@@ -3,7 +3,7 @@
  
      Contains:   Master include for JavaEmbedding
  
-     Version:    JavaEmbeddingStub-2~140
+     Version:    JavaEmbeddingStub-2~225
  
      Copyright:  © 2001-2006 by Apple Computer, Inc., all rights reserved.
  

@@ -102,6 +102,7 @@ typedef struct SendDataContext
 // IOBluetoothHCIController
 //====================================================================================================
 
+class IOBluetoothHCIPacketLogUserClient;
 class IOBluetoothHCIController : public IOService
 {
 	// We don't make many friends, but at least we have a few...
@@ -572,8 +573,8 @@ public:
 	virtual Boolean IsAllowedIncomingRFCOMMChannelForDevice( BluetoothRFCOMMChannelID incomingChannelID, IOBluetoothDevice *device );
 
 	// Enabled state for RFCOMM channels:
-	virtual void IOBluetoothHCIController::SetEnabledIncomingRFCOMMChannel( OSNumber *channelIDNumber, bool ShouldBeEnabled);
-	virtual void IOBluetoothHCIController::SetEnabledIncomingRFCOMMChannel( BluetoothRFCOMMChannelID incomingChannelID, bool ShouldBeEnabled);
+	virtual void SetEnabledIncomingRFCOMMChannel( OSNumber *channelIDNumber, bool ShouldBeEnabled);
+	virtual void SetEnabledIncomingRFCOMMChannel( BluetoothRFCOMMChannelID incomingChannelID, bool ShouldBeEnabled);
 
     virtual Boolean ShouldRunInactivityTimer();
     virtual void	SetRunInactivityTimer( Boolean shouldRun );
@@ -1114,7 +1115,7 @@ protected:
 	OSMetaClassDeclareReservedUsed(	IOBluetoothHCIController,  17 );
 	virtual void handleIdleTimeout();
 
-	static IOReturn IOBluetoothHCIController::terminateAction(	OSObject	*owner, 
+	static IOReturn terminateAction(	OSObject	*owner, 
 														void		*arg1, 
 														void		*arg2, 
 														void		*arg3, 
