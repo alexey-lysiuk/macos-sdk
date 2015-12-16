@@ -3,7 +3,7 @@
  
      Contains:   The Apple disk partition scheme as defined in Inside Macintosh: Volume V.
  
-     Version:    OSServices-101.1~709
+     Version:    OSServices-101.1~790
  
      Copyright:  © 2000-2006 by Apple Computer, Inc., all rights reserved
  

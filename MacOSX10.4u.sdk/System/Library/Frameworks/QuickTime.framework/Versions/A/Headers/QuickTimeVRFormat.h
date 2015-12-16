@@ -3,9 +3,9 @@
  
      Contains:   QuickTime VR interfaces
  
-     Version:    QuickTime 7.1.3
+     Version:    QuickTime 7.2.1
  
-     Copyright:  © 1997-2006 by Apple Computer, Inc., all rights reserved.
+     Copyright:  © 1997-2006 by Apple Inc., all rights reserved.
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -37,6 +37,10 @@
 #endif
 
 #pragma pack(push, 2)
+
+/* QuickTime is not available to 64-bit clients */
+
+#if !__LP64__
 
 
 /* File Format Version numbers */
@@ -493,6 +497,9 @@ typedef QTVRPanoSampleAtom              VRPanoSampleAtom;
 typedef QTVRTrackRefEntry               VRTrackRefEntry;
 typedef QTVRObjectSampleAtom            VRObjectSampleAtom;
 #endif  /* OLDROUTINENAMES */
+
+
+#endif // !__LP64__
 
 
 

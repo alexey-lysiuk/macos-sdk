@@ -1847,9 +1847,12 @@ private:
     void all_done ( void );
     void all_acked ( void );
     void driver_acked ( void );
+public:
+    void all_acked_threaded (void );    
+    void driver_acked_threaded ( void );
+private:
     void start_ack_timer ( void );
     void stop_ack_timer ( void );
-
     unsigned long compute_settle_time ( void );
     IOReturn startSettleTimer ( unsigned long delay );
     IOReturn changeState ( void );

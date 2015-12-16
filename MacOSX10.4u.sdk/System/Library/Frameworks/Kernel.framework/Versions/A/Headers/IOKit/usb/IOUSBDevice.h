@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1998-2006 Apple Computer, Inc. All rights reserved.
+ * Copyright (c) 1998-2007 Apple Inc. All rights reserved.
  *
  * @APPLE_LICENSE_HEADER_START@
  * 
@@ -343,9 +343,10 @@ public:
 
     virtual void 	DisplayNotEnoughPowerNotice();
     
-    // this is a non-virtual function so that we don't have to take up a binary compatibility slot.
+    // these are non-virtual functions so that we don't have to take up a binary compatibility slot.
     UInt16	GetbcdUSB(void);
     UInt8	GetProtocol(void);
+	void	SetBusPowerAvailable(UInt32 newPower);
 
     OSMetaClassDeclareReservedUsed(IOUSBDevice,  0);
     /*!

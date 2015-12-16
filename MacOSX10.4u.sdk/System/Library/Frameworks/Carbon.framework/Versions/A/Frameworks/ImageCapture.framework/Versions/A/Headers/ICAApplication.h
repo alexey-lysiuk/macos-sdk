@@ -3,7 +3,7 @@
  
      Contains:   General purpose Image Capture definitions
  
-     Version:    ImageCaptureFramework-328~60
+     Version:    ImageCaptureFramework-328~385
  
      Copyright:  © 2000-2006 by Apple Computer, Inc., all rights reserved.
  

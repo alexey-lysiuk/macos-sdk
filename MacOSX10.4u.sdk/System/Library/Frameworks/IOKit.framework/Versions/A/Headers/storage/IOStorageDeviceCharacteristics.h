@@ -141,35 +141,6 @@ Example:
 
 
 /*!
-@defined kIOPropertyProductSerialNumberKey
-@discussion This key is used to define the Product Serial Number for a
-particular device and it has an associated data.
-
-Requirement: Mandatory
-
-Example:
-<pre>
-@textblock
-<dict>
-	<key>Device Characteristics</key>
-	<dict>
-		<key>Vendor Name</key>
-		<string>Apple</string>
-		<key>Product Name</key>
-		<string>iPod</string>
-		<key>Product Revision Level</key>
-		<string>1.0</string>
-		<key>Serial Number</key>
-		<string>123456789</string>
-	</dict>
-</dict>
-@/textblock
-</pre>
-*/
-#define kIOPropertyProductSerialNumberKey		"Serial Number"
-
-
-/*!
 @defined kIOPropertySupportedCDFeaturesKey
 @discussion This key is used to define the supported CD Features for a
 particular optical device and it has an associated bitfield. See

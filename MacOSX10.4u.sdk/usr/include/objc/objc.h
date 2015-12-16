@@ -30,7 +30,7 @@
 #ifndef _OBJC_OBJC_H_
 #define _OBJC_OBJC_H_
 
-#if __ppc64__
+#if __LP64__
     #error 64-bit not supported
 #endif
 

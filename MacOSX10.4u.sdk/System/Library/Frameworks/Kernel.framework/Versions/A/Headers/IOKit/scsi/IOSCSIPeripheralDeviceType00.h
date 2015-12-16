@@ -47,41 +47,14 @@ class IOSCSIPeripheralDeviceType00 : public IOSCSIBlockCommandsDevice
 protected:
 	
 	// Reserve space for future expansion.
-	struct IOSCSIPeripheralDeviceType00ExpansionData
-	{
-		OSSet *	fClients;
-	};
+	struct IOSCSIPeripheralDeviceType00ExpansionData { };
 	IOSCSIPeripheralDeviceType00ExpansionData * fIOSCSIPeripheralDeviceType00Reserved;
 	
 public:
 	
-	bool				init ( OSDictionary * propTable );
-	virtual bool		start ( IOService * provider );
-	virtual void		free ( void );
-
-	virtual bool		handleOpen (
-							  IOService * 	client,
-							  IOOptionBits 	options,
-							  void * 		access );
-	
-	virtual void		handleClose (
-							IOService * 	client,
-							IOOptionBits 	options );
-	
-	virtual bool		handleIsOpen ( const IOService * client ) const;
-	
-    virtual IOReturn	newUserClient (
-    						   task_t			owningTask,
-    						   void *			securityID,
-    						   UInt32			type,
-    						   OSDictionary * 	properties,
-    						   IOUserClient **	handler );
-	virtual void 		CreateStorageServiceNub ( void );
-
-	virtual char *		GetVendorString ( void );
-	virtual char *		GetProductString ( void );
-	virtual char *		GetRevisionString ( void );
-	
+	bool			init ( OSDictionary * propTable );
+	virtual bool	start ( IOService * provider );
+	virtual void	stop ( IOService *  provider );
 	
 private:
 	

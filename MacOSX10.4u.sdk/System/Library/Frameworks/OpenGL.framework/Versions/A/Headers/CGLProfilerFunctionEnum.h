@@ -737,6 +737,10 @@ typedef enum
 	/* APPLE_flush_buffer_range */
 	kCGLFEglBufferParameteriAPPLE,
 	kCGLFEglFlushMappedBufferRangeAPPLE,
+	
+	/* GL_EXT_gpu_program_parameters */
+	kCGLFEglProgramEnvParameters4fvEXT,
+	kCGLFEglProgramLocalParameters4fvEXT,
 
 	kCGLFENumFunctions
 } CGLProfilerFunctionEnum;

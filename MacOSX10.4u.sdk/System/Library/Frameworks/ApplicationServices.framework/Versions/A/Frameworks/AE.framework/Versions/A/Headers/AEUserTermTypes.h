@@ -3,7 +3,7 @@
  
      Contains:   AppleEvents AEUT resource format Interfaces.
  
-     Version:    AppleEvents-316.2~483
+     Version:    AppleEvents-316.2~623
  
      Copyright:  © 1991-2006 by Apple Computer, Inc., all rights reserved
  

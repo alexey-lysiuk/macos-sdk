@@ -3,7 +3,7 @@
  
      Contains:   Interface to API for using the NSL User Interface
  
-     Version:    CommonPanels-73.2~699
+     Version:    CommonPanels-73.2~861
  
      Copyright:  © 1997-2006 by Apple Computer, Inc., all rights reserved
  

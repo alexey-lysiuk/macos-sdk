@@ -857,9 +857,6 @@
 /* Define if you have the socket library (-lsocket).  */
 /* #undef HAVE_LIBSOCKET */
 
-/* Define if you have the sqlcli library (-lsqlcli).  */
-/* #undef HAVE_LIBSQLCLI */
-
 /* Define if processor uses big-endian word */
 #define WORDS_BIGENDIAN 
 
@@ -1746,6 +1743,9 @@
 /*   */
 /* #undef HAVE_IMAP2004 */
 
+/* Whether utf8_mime2text() has new signature */
+/* #undef HAVE_NEW_MIME2TEXT */
+
 /*   */
 /* #undef HAVE_IMAP2001 */
 
@@ -1787,15 +1787,6 @@
 
 /* Whether to build interbase as dynamic module */
 /* #undef COMPILE_DL_INTERBASE */
-
-/* Whether thttpd is available */
-/* #undef IRCG_WITH_THTTPD */
-
-/* Whether you want IRCG support */
-/* #undef HAVE_IRCG */
-
-/* Whether to build ircg as dynamic module */
-/* #undef COMPILE_DL_IRCG */
 
 /*   */
 /* #undef HAVE_JAVA */
@@ -2207,12 +2198,6 @@
 
 /* Whether to build overload as dynamic module */
 /* #undef COMPILE_DL_OVERLOAD */
-
-/* Whether to build ovrimos as dynamic module */
-/* #undef COMPILE_DL_OVRIMOS */
-
-/*   */
-/* #undef HAVE_LIBSQLCLI */
 
 /*   */
 /* #undef HAVE_FORK */
@@ -2677,16 +2662,16 @@
 /* #undef PTHREADS */
 
 /* PHP build date */
-#define PHP_BUILD_DATE "2007-01-08"
+#define PHP_BUILD_DATE "2008-02-22"
 
 /* hardcode for each of the cross compiler host */
 #define PHP_OS "Darwin"
 
 /* hardcode for each of the cross compiler host */
-#define PHP_UNAME "Darwin b42.apple.com 8.0 Darwin Kernel Version 8.3.0: Mon Oct 3 20:04:04 PDT 2005; root:xnu-792.6.22.obj~2/RELEASE_PPC Power Macintosh powerpc"
+#define PHP_UNAME "Darwin b37.apple.com 8.0 Darwin Kernel Version 8.8.4: Sun Oct 29 15:30:27 PST 2006; root:xnu-792.16.4.obj~1/RELEASE_PPC Power Macintosh powerpc"
 
 /* uname -a output */
-#define PHP_UNAME "Darwin b42.apple.com 8.0 Darwin Kernel Version 8.3.0: Mon Oct 3 20:04:04 PDT 2005; root:xnu-792.6.22.obj~2/RELEASE_PPC Power Macintosh powerpc"
+#define PHP_UNAME "Darwin b37.apple.com 8.0 Darwin Kernel Version 8.8.4: Sun Oct 29 15:30:27 PST 2006; root:xnu-792.16.4.obj~1/RELEASE_PPC Power Macintosh powerpc"
 
 /* uname output */
 #define PHP_OS "Darwin"

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1998-2006 Apple Computer, Inc. All rights reserved.
+ * Copyright (c) 1998-2002 Apple Computer, Inc. All rights reserved.
  *
  * @APPLE_LICENSE_HEADER_START@
  * 
@@ -57,8 +57,6 @@ enum
 // General IOKit headers
 #include <IOKit/IOLib.h>
 #include <IOKit/IOMemoryDescriptor.h>
-#include <IOKit/IOService.h>
-#include <IOKit/IOUserClient.h>
 
 // Generic IOKit storage related headers
 #include <IOKit/storage/IOStorage.h>
@@ -98,7 +96,6 @@ protected:
 		bool				fWriteCacheEnabled;
 		bool				fDeviceIsShared;
 		UInt64				fMediumBlockCount64;
-		bool				fDeviceHasSATTranslation;
 	};
     IOSCSIBlockCommandsDeviceExpansionData * fIOSCSIBlockCommandsDeviceReserved;
 	
@@ -120,9 +117,7 @@ protected:
 	// ReportMediumTotalBlockCount() should be used to retrieve it and the member routine
 	// SetMediumCharacteristics() should be used to set it.
 	#define fMediumBlockCount64	fIOSCSIBlockCommandsDeviceReserved->fMediumBlockCount64
-	
-	#define fDeviceHasSATTranslation fIOSCSIBlockCommandsDeviceReserved->fDeviceHasSATTranslation
-	
+
 private:
 	/* OBSOLETE. Use IOSCSIPrimaryCommandsDevice::Get/SetANSIVersion */
 	UInt8				fANSIVersion;

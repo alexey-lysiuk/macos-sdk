@@ -30,6 +30,8 @@
 #include <IOKit/usb/IOUSBController.h>
 #include <IOKit/usb/IOUSBControllerV2.h>
 
+class IOUSBInterface;
+
 /*!
     @class IOUSBPipe
     @abstract The object representing an open pipe for a device.

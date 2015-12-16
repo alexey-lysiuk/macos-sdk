@@ -3,7 +3,7 @@
  
      Contains:   Public interfaces for Apple Type Services components.
  
-     Version:    ATS-184.7.7~1
+     Version:    ATS-184.7.7~42
  
      Copyright:  © 1997-2006 by Apple Computer, Inc., all rights reserved.
  

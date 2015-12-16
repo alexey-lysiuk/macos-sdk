@@ -219,6 +219,7 @@ public:
     @param functionAddress USB device ID of device
     @param endpointNumber  endpoint address of the endpoint in the device
     @param maxPacketSize   maximum packet size of this endpoint
+    @param direction       Specifies direction for the endpoint. kUSBIn or KUSBOut.
     @param highSpeedHub    If non zero, this is a full speed device, the address of the high speed hub to
                            address split transactions to.
     @param highSpeedPort   If highSpeedHub is non zero, the hub port to address split transactions to
@@ -287,9 +288,11 @@ public:
     @param functionAddress USB device ID of device
     @param endpointNumber  endpoint address of the endpoint in the device
     @param maxPacketSize   maximum packet size of this endpoint
+    @param direction       Specifies direction for the endpoint. kUSBIn or KUSBOut.
     @param highSpeedHub    If non zero, this is a full speed device, the address of the high speed hub to
                            address split transactions to.
     @param highSpeedPort   If highSpeedHub is non zero, the hub port to address split transactions to
+	@param interval		   The raw bInterval value from the endpoint descriptor. Needs to be adjusted in the UIM for HS endpoints.
 */
     virtual IOReturn 		UIMCreateIsochEndpoint(		short				functionAddress,
                                                         short				endpointNumber,
@@ -302,10 +305,10 @@ public:
 
 #if !(defined(__ppc__) && defined(KPI_10_4_0_PPC_COMPAT))
     OSMetaClassDeclareReservedUsed(IOUSBControllerV2,  9);
-	virtual IOUSBControllerIsochEndpoint*		IOUSBControllerV2::AllocateIsochEP(void);	
+	virtual IOUSBControllerIsochEndpoint*		AllocateIsochEP(void);	
 	
     OSMetaClassDeclareReservedUsed(IOUSBControllerV2,  10);
-	virtual IOReturn							IOUSBControllerV2::DeallocateIsochEP(IOUSBControllerIsochEndpoint *pEP);
+	virtual IOReturn							DeallocateIsochEP(IOUSBControllerIsochEndpoint *pEP);
 
 	OSMetaClassDeclareReservedUsed(IOUSBControllerV2,  11);
     virtual IOUSBControllerIsochEndpoint* 	FindIsochronousEndpoint(short functionNumber, short endpointNumber, short direction, IOUSBControllerIsochEndpoint* *pEDBack);

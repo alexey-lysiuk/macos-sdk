@@ -857,7 +857,8 @@ _mm_cvtss_sd (__m128d __A, __m128 __B)
   return (__m128d)__builtin_ia32_cvtss2sd ((__v2df) __A, (__v4sf)__B);
 }
 
-#define _mm_shuffle_pd(__A, __B, __C) ((__m128d)__builtin_ia32_shufpd ((__v2df)__A, (__v2df)__B, (__C)))
+/* APPLE LOCAL 5814283 */
+#define _mm_shuffle_pd(__A, __B, __C) ((__m128d)__builtin_ia32_shufpd ((__v2df)(__A), (__v2df)(__B), (__C)))
 
 static __inline __m128d __attribute__((__always_inline__))
 _mm_unpackhi_pd (__m128d __A, __m128d __B)
@@ -1329,9 +1330,11 @@ _mm_mulhi_epu16 (__m128i __A, __m128i __B)
   return (__m128i)__builtin_ia32_pmulhuw128 ((__v8hi)__A, (__v8hi)__B);
 }
 
-#define _mm_shufflehi_epi16(__A, __B) ((__m128i)__builtin_ia32_pshufhw ((__v8hi)__A, __B))
-#define _mm_shufflelo_epi16(__A, __B) ((__m128i)__builtin_ia32_pshuflw ((__v8hi)__A, __B))
-#define _mm_shuffle_epi32(__A, __B) ((__m128i)__builtin_ia32_pshufd ((__v4si)__A, __B))
+/* APPLE LOCAL begin 5814283 */
+#define _mm_shufflehi_epi16(__A, __B) ((__m128i)__builtin_ia32_pshufhw ((__v8hi)(__A), __B))
+#define _mm_shufflelo_epi16(__A, __B) ((__m128i)__builtin_ia32_pshuflw ((__v8hi)(__A), __B))
+#define _mm_shuffle_epi32(__A, __B) ((__m128i)__builtin_ia32_pshufd ((__v4si)(__A), __B))
+/* APPLE LOCAL end 5814283 */
 
 static __inline void __attribute__((__always_inline__))
 _mm_maskmoveu_si128 (__m128i __A, __m128i __B, char *__C)

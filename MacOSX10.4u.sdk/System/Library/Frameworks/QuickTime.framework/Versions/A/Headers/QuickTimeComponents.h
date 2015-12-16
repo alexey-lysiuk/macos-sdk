@@ -3,9 +3,9 @@
  
      Contains:   QuickTime Interfaces.
  
-     Version:    QuickTime 7.1.3
+     Version:    QuickTime 7.2.1
  
-     Copyright:  © 1990-2006 by Apple Computer, Inc., all rights reserved
+     Copyright:  © 1990-2006 by Apple Inc., all rights reserved
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -34,6 +34,7 @@
 
 
 
+
 #include <AvailabilityMacros.h>
 
 #if PRAGMA_ONCE
@@ -45,6 +46,10 @@ extern "C" {
 #endif
 
 #pragma pack(push, 2)
+
+/* QuickTime is not available to 64-bit clients */
+
+#if !__LP64__
 
 enum {
   clockComponentType            = 'clok',
@@ -946,10 +951,10 @@ enum {
    * kQTSCAudioPropertyID_RenderQuality: Specifies the quality with
    * which QuickTime should render the audio stream during the
    * compression/decompression/transcode operation.  Accepted constants
-   * are those used by AudioUnits (defined in AudioUnitProperties.h):
-   * kRenderQuality_Max, kRenderQuality_High, kRenderQuality_Medium,
-   * kRenderQuality_Low, kRenderQuality_Min. This property is available
-   * in QT 7.1 and later.
+   * are defined in Movies.h: kQTAudioRenderQuality_Max,
+   * kQTAudioRenderQuality_High, kQTAudioRenderQuality_Medium,
+   * kQTAudioRenderQuality_Low, kQTAudioRenderQuality_Min. This
+   * property is available in QT 7.1 and later.
    */
   kQTSCAudioPropertyID_RenderQuality = 'qlty', /* UInt32, Read/Write/Listen*/
 
@@ -971,7 +976,28 @@ enum {
    * window, so that it can draw itself as a sheet on top of the parent
    * window.
    */
-  kQTSCAudioPropertyID_WindowOptions = scWindowOptionsType /* SCWindowSettings struct, Read/Write/Listen */
+  kQTSCAudioPropertyID_WindowOptions = scWindowOptionsType, /* SCWindowSettings struct, Read/Write/Listen */
+
+  /*
+   * kQTSCAudioPropertyID_PreviewSourceMovie: Used for audio preview
+   * purposes. If a source movie has been specified prior to invoking
+   * the StdAudio dialog using SCRequestImageSettings(), the StdAudio
+   * dialog ui will contain an additional "preview/stop" button and a
+   * "play source" check box to allow quick toggling between the source
+   * audio and the encoded result.  The StdAudio dialog ui previews
+   * from the movie's current time (obtained from GetMovieTime()) and
+   * loops a segment of up to 10 seconds, starting at that time.  If
+   * the current movie time is at the end of the movie, the preview
+   * begins at the start of the movie instead.
+   */
+  kQTSCAudioPropertyID_PreviewSourceMovie = 'prmv', /* Movie, Read/Write*/
+
+  /*
+   * kQTSCAudioPropertyID_PreviewSourceTrack: Used to specify a
+   * particular track for audio preview. The track must be found in the
+   * movie specified by kQTSCAudioPropertyID_PreviewSourceMovie.
+   */
+  kQTSCAudioPropertyID_PreviewSourceTrack = 'prtk' /* Track, Read/Write*/
 };
 
 
@@ -1794,6 +1820,8 @@ struct TCTextOptions {
 };
 typedef struct TCTextOptions            TCTextOptions;
 typedef TCTextOptions *                 TCTextOptionsPtr;
+
+typedef SInt64                          TimeCode64Counter;
 /*
  *  TCGetCurrentTimeCode()
  *  
@@ -1974,6 +2002,289 @@ TCGetDisplayOptions(
   MediaHandler       mh,
   TCTextOptionsPtr   textOptions)                             AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
+
+/* The following are the 64-bit TimeCode Media API's*/
+/*
+ *  TCGetCurrentFrameAndTimeCodeDef()
+ *  
+ *  Summary:
+ *    Retrieves the frame number and time code format information for
+ *    the current movie time.
+ *  
+ *  Parameters:
+ *    
+ *    mh:
+ *      The time code media handler.
+ *    
+ *    outFrameNum:
+ *      Pointer to a field that receives the current frame number.
+ *    
+ *    outTCDef:
+ *      Pointer to field that receives the time code format information.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 (or QuickTime 7.1) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern HandlerError 
+TCGetCurrentFrameAndTimeCodeDef(
+  MediaHandler   mh,
+  SInt64 *       outFrameNum,
+  TimeCodeDef *  outTCDef)                                    AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+
+
+/*
+ *  TCGetFrameAndTimeCodeDefAtTime()
+ *  
+ *  Summary:
+ *    Retrieves the frame number and time code format information for a
+ *    specific movie time.
+ *  
+ *  Parameters:
+ *    
+ *    mh:
+ *      The time code media handler.
+ *    
+ *    mediaTime:
+ *      A const pointer to the field containing the media time at which
+ *      time code information is required.
+ *    
+ *    outFrameNum:
+ *      Pointer to a field that receives the frame number at time
+ *      mediaTime.
+ *    
+ *    outTCDef:
+ *      Pointer to field that receives the time code format information.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 (or QuickTime 7.1) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern HandlerError 
+TCGetFrameAndTimeCodeDefAtTime(
+  MediaHandler         mh,
+  const TimeValue64 *  mediaTime,
+  SInt64 *             outFrameNum,
+  TimeCodeDef *        outTCDef)                              AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+
+
+/*
+ *  TCTimeCodeTimeToString()
+ *  
+ *  Summary:
+ *    Converts a time value into a text string in the (-) HH:MM:SS:FF
+ *    format.
+ *  
+ *  Parameters:
+ *    
+ *    mh:
+ *      The time code media handler.
+ *    
+ *    tCDef:
+ *      A const pointer to a TimeCodeDef that contains time code format
+ *      info for the conversion.
+ *    
+ *    tCTime:
+ *      A const pointer to a SMPTETime structure that contains the time
+ *      value to convert.
+ *    
+ *    outTCStr:
+ *      Pointer to a CFStringRef that is to receive the converted time
+ *      value. Client responsible for disposing string.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 (or QuickTime 7.1) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern HandlerError 
+TCTimeCodeTimeToString(
+  MediaHandler         mh,
+  const TimeCodeDef *  tCDef,
+  const SMPTETime *    tCTime,
+  CFStringRef *        outTCStr)                              AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+
+
+/*
+ *  TCTimeCodeCounterToString()
+ *  
+ *  Summary:
+ *    Converts a counter value into a text string.
+ *  
+ *  Parameters:
+ *    
+ *    mh:
+ *      The time code media handler.
+ *    
+ *    tCDef:
+ *      A const pointer to a TimeCodeDef that contains time code format
+ *      info for the conversion.
+ *    
+ *    tCCounter:
+ *      A const pointer to a TimeCode64Counter that contains the
+ *      counter value to convert.
+ *    
+ *    outTCStr:
+ *      Pointer to a CFStringRef that is to receive the converted time
+ *      value. Client reponsible for disposing string.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 (or QuickTime 7.1) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern HandlerError 
+TCTimeCodeCounterToString(
+  MediaHandler               mh,
+  const TimeCodeDef *        tCDef,
+  const TimeCode64Counter *  tCCounter,
+  CFStringRef *              outTCStr)                        AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+
+
+/*
+ *  TCTimeCodeTimeToFrameNumber()
+ *  
+ *  Summary:
+ *    Converts a time value into its corresponding frame number.
+ *  
+ *  Parameters:
+ *    
+ *    mh:
+ *      The time code media handler.
+ *    
+ *    tCDef:
+ *      A const pointer to a TimeCodeDef that contains time code format
+ *      info for the conversion.
+ *    
+ *    tCTime:
+ *      A const pointer to a SMPTETime structure that contains the time
+ *      value to convert.
+ *    
+ *    outFrameNum:
+ *      Pointer to a field that is to receive the frame number
+ *      corresponding to the time value in tCTime.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 (or QuickTime 7.1) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern HandlerError 
+TCTimeCodeTimeToFrameNumber(
+  MediaHandler         mh,
+  const TimeCodeDef *  tCDef,
+  const SMPTETime *    tCTime,
+  SInt64 *             outFrameNum)                           AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+
+
+/*
+ *  TCTimeCodeCounterToFrameNumber()
+ *  
+ *  Summary:
+ *    Converts a counter value into its corresponding frame number.
+ *  
+ *  Parameters:
+ *    
+ *    mh:
+ *      The time code media handler.
+ *    
+ *    tCDef:
+ *      A const pointer to a TimeCodeDef that contains format info for
+ *      the conversion.
+ *    
+ *    tCCounter:
+ *      A const pointer to a TimeCode64Counter that contains the
+ *      counter value to convert.
+ *    
+ *    outFrameNum:
+ *      Pointer to a field that is to receive the frame number
+ *      corresponding to the counter value in tCCounter.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 (or QuickTime 7.1) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern HandlerError 
+TCTimeCodeCounterToFrameNumber(
+  MediaHandler               mh,
+  const TimeCodeDef *        tCDef,
+  const TimeCode64Counter *  tCCounter,
+  SInt64 *                   outFrameNum)                     AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+
+
+/*
+ *  TCFrameNumberToTimeCodeTime()
+ *  
+ *  Summary:
+ *    Converts a frame number to its corresponding timecode time value.
+ *  
+ *  Parameters:
+ *    
+ *    mh:
+ *      The time code media handler.
+ *    
+ *    frameNumber:
+ *      A const pointer to the field containing the frame number that
+ *      is to be converted.
+ *    
+ *    tCDef:
+ *      A const pointer to a TimeCodeDef that contains format info for
+ *      the conversion.
+ *    
+ *    outTCTime:
+ *      Pointer to a SMPTETime structure that is to receive the time
+ *      value.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 (or QuickTime 7.1) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern HandlerError 
+TCFrameNumberToTimeCodeTime(
+  MediaHandler         mh,
+  const SInt64 *       frameNumber,
+  const TimeCodeDef *  tCDef,
+  SMPTETime *          outTCTime)                             AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+
+
+/*
+ *  TCFrameNumberToTimeCodeCounter()
+ *  
+ *  Summary:
+ *    Converts a frame number to its corresponding counter value.
+ *  
+ *  Parameters:
+ *    
+ *    mh:
+ *      The time code media handler.
+ *    
+ *    frameNumber:
+ *      A const pointer to the field containing the frame number that
+ *      is to be converted.
+ *    
+ *    tCDef:
+ *      A const pointer to a TimeCodeDef that contains format info for
+ *      the conversion.
+ *    
+ *    outTCCounter:
+ *      Pointer to a TimeCode64Counter that is to receive the counter
+ *      value.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.5 (or QuickTime 7.1) and later in QuickTime.framework
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+extern HandlerError 
+TCFrameNumberToTimeCodeCounter(
+  MediaHandler         mh,
+  const SInt64 *       frameNumber,
+  const TimeCodeDef *  tCDef,
+  TimeCode64Counter *  outTCCounter)                          AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
 
 
 
@@ -10623,10 +10934,34 @@ enum {
   kQTSGAudioPropertyID_ChannelMap = 'cmap', /* Data: C-style array of SInt32's, R/W/L: Read/Write, Class(es): kQTPropertyClass_SGAudioRecordDevice */
 
   /*
+   * kQTSGAudioPropertyID_CodecSpecificSettingsArray: Used to get or
+   * set compressor-specific out-of-band settings.  This property is
+   * only applicable when you are encoding to a compressed output
+   * format (i.e. AAC, AMR).  This property is analogous to SCAudio's
+   * kQTSCAudioPropertyID_CodecSpecificSettingsArray property (defined
+   * in this header), or an AudioConverter's
+   * kAudioConverterPropertySettings property (defined in
+   * <AudioToolbox/AudioConverter.h>).  Note that not all compressed
+   * formats expose a settings array. Older codecs may only expose a
+   * magic cookie for out-of-band data (see the following property). 
+   * When an audio compressor exposes a settings array, prefer it over
+   * a magic cookie, as the settings array is richer. The
+   * CodecSpecificSettingsArray is a CFArray of CFDictionaries, where
+   * each dictionary represents one node in the audio converter's
+   * processing chain.   The dictionary keys are defined in
+   * <AudioUnit/AudioCodec.h>. For further information, see technotes:
+   * <http://developer.apple.com/qa/qa2006/qa1437.html>
+   * <http://developer.apple.com/qa/qa2006/qa1390.html>
+   */
+  kQTSGAudioPropertyID_CodecSpecificSettingsArray = 'cdst', /* Data: CFArrayRef,  Read/Write, Class(es): kQTPropertyClass_SGAudio*/
+
+  /*
    * kQTSGAudioPropertyID_MagicCookie: Used to get or set
    * compressor-specific out-of-band settings.  This is property is
-   * only applicable to compressed formats that use a cookie (i.e. AAC,
-   * AMR)
+   * only applicable to compressed formats that use a cookie.  The
+   * kQTSGAudioPropertyID_CodecSpecificSettingsArray property should be
+   * preferred over kQTSGAudioPropertyID_MagicCookie whenever a
+   * compressor supports it.
    */
   kQTSGAudioPropertyID_MagicCookie = 'kuki', /* Data: void * (opaque), R/W/L: Read/Write, Class(es): kQTPropertyClass_SGAudio     */
 
@@ -11162,6 +11497,7 @@ enum {
   sgcAudioPerChannelGain        = kQTSGAudioPropertyID_PerChannelGain,
   sgcAudioLevelMetersEnabled    = kQTSGAudioPropertyID_LevelMetersEnabled,
   sgcAudioChannelLayout         = kQTSGAudioPropertyID_ChannelLayout,
+  sgcAudioCodecSpecificSettingsArray = kQTSGAudioPropertyID_CodecSpecificSettingsArray,
   sgcAudioMagicCookie           = kQTSGAudioPropertyID_MagicCookie,
   sgcAudioHardwarePlaythruEnabled = kQTSGAudioPropertyID_HardwarePlaythruEnabled,
   sgcAudioMixerCoefficients     = kQTSGAudioPropertyID_MixerCoefficients,
@@ -12888,6 +13224,14 @@ enum {
     kTCGetTimeCodeFlagsSelect                  = 0x0109,
     kTCSetDisplayOptionsSelect                 = 0x010A,
     kTCGetDisplayOptionsSelect                 = 0x010B,
+    kTCGetCurrentFrameAndTimeCodeDefSelect     = 0x010C,
+    kTCGetFrameAndTimeCodeDefAtTimeSelect      = 0x010D,
+    kTCTimeCodeTimeToStringSelect              = 0x010E,
+    kTCTimeCodeCounterToStringSelect           = 0x010F,
+    kTCTimeCodeTimeToFrameNumberSelect         = 0x0110,
+    kTCTimeCodeCounterToFrameNumberSelect      = 0x0111,
+    kTCFrameNumberToTimeCodeTimeSelect         = 0x0112,
+    kTCFrameNumberToTimeCodeCounterSelect      = 0x0113,
     kMovieImportHandleSelect                   = 0x0001,
     kMovieImportFileSelect                     = 0x0002,
     kMovieImportSetSampleDurationSelect        = 0x0003,
@@ -13343,6 +13687,9 @@ enum {
     kQTVideoOutputBaseSetEchoPortSelect        = 0x0012,
     kQTVideoOutputCopyIndAudioOutputDeviceUIDSelect = 0x0016
 };
+
+#endif // !__LP64__
+
 
 
 #pragma pack(pop)

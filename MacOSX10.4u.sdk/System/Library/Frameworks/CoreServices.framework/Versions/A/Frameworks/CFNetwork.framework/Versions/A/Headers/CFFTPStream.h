@@ -3,7 +3,7 @@
  
      Contains:   CoreFoundation FTP stream header
  
-     Version:    CFNetwork-129.20~17
+     Version:    CFNetwork-129.20~93
  
      Copyright:  © 2001-2006 by Apple Computer, Inc., all rights reserved
  

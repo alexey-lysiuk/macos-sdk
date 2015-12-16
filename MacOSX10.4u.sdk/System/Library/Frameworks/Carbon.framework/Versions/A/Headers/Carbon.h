@@ -3,7 +3,7 @@
  
      Contains:   Master include for all of Carbon
  
-     Version:    Carbon-129~3512
+     Version:    Carbon-129~3631
  
      Copyright:  © 2000-2006 by Apple Computer, Inc., all rights reserved.
  
@@ -15,6 +15,10 @@
 */
 #ifndef __CARBON__
 #define __CARBON__
+
+#if __LP64__
+    #error 64-bit not supported
+#endif
 
 #ifndef __CORESERVICES__
 #include <CoreServices/CoreServices.h>

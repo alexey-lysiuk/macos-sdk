@@ -26,8 +26,6 @@
 #define _IOKIT_HID_IOHIDEVENTSERVICE_H
 
 #include <IOKit/IOService.h>
-#include <IOKit/IOWorkLoop.h>
-#include <IOKit/IOTimerEventSource.h>
 #include <IOKit/hidsystem/IOHIDTypes.h>
 #include <IOKit/hid/IOHIDInterface.h>
 #include <IOKit/hid/IOHIDElement.h>
@@ -80,10 +78,6 @@ private:
 
 
     struct ExpansionData { 
-        IOWorkLoop *            workLoop;
-        IOTimerEventSource 	*   ejectTimerEventSource;
-        UInt32                  ejectState;
-        IOOptionBits            ejectOptions;
     };
     /*! @var reserved
         Reserved for future use.  (Internal use only)  */
@@ -116,8 +110,6 @@ private:
     IOFixed                 determineResolution ( IOHIDElement * element );
                                     
     static bool 			_publishNotificationHandler(void * target, void * ref, IOService * newService );
-
-    void                    ejectTimerCallback(IOTimerEventSource *sender);
     
 protected:
 

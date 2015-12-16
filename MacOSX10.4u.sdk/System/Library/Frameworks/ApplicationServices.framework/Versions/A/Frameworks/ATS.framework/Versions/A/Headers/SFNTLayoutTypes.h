@@ -3,7 +3,7 @@
  
      Contains:   SFNT file layout structures and constants.
  
-     Version:    ATS-184.7.7~1
+     Version:    ATS-184.7.7~42
  
      Copyright:  © 1994-2006 by Apple Computer, Inc., all rights reserved.
  

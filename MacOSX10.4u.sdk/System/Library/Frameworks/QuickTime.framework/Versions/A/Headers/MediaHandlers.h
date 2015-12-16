@@ -3,9 +3,9 @@
  
      Contains:   QuickTime Interfaces.
  
-     Version:    QuickTime 7.1.3
+     Version:    QuickTime 7.2.1
  
-     Copyright:  © 1990-2006 by Apple Computer, Inc., all rights reserved
+     Copyright:  © 1990-2006 by Apple Inc., all rights reserved
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -38,6 +38,10 @@ extern "C" {
 #endif
 
 #pragma pack(push, 2)
+
+/* QuickTime is not available to 64-bit clients */
+
+#if !__LP64__
 
 typedef CALLBACK_API( void , PrePrerollCompleteProcPtr )(MediaHandler mh, OSErr err, void *refcon);
 typedef STACK_UPP_TYPE(PrePrerollCompleteProcPtr)               PrePrerollCompleteUPP;
@@ -2069,6 +2073,10 @@ InvokePrePrerollCompleteUPP(
     #define InvokePrePrerollCompleteUPP(mh, err, refcon, userUPP) (*userUPP)(mh, err, refcon)
   #endif
 #endif
+
+
+#endif // !__LP64__
+
 
 
 #pragma pack(pop)

@@ -3,7 +3,7 @@
  
      Contains:   Interface to Quickdraw Graphics
  
-     Version:    Quickdraw-192.24~2
+     Version:    Quickdraw-192.24~58
  
      Copyright:  © 1985-2006 by Apple Computer, Inc., all rights reserved
  

@@ -28,6 +28,15 @@
 #include <IOKit/usb/IOUSBController.h>
 #include <IOKit/usb/USBHub.h>
 
+// this is a legacy name for a property that was available on some very old machines
+#define kAppleCurrentAvailable	"AAPL,current-available"
+
+typedef struct AppleRootHubExtraPowerRequest
+{
+	SInt32			requestedExtraPower;					// total "extra" power requested on my port - above and beyond the 500ms available on a root hub (negative to give it back)
+	UInt32			extraPowerAvailable;					// total "extra" power available after returning from the call - should be zero on the call in
+} AppleRootHubExtraPowerRequest;
+
 class IOUSBRootHubDevice : public IOUSBDevice
 {
     OSDeclareDefaultStructors(IOUSBRootHubDevice)
@@ -49,11 +58,12 @@ public:
 												void *		arg3 );
     
 	// IOKit methods
-    virtual bool 	init();
-	virtual bool 	start( IOService * provider );
-    virtual void 	stop( IOService *provider );
-    virtual void	free();
-
+    virtual bool		init();
+	virtual bool		start( IOService * provider );
+    virtual void		stop( IOService *provider );
+    virtual void		free();
+    virtual IOReturn 	message( UInt32 type, IOService * provider,  void * argument = 0 );
+	
 	// a non static but non-virtual function
 	IOReturn DeviceRequestWorker(IOUSBDevRequest *request, UInt32 noDataTimeout, UInt32 completionTimeout, IOUSBCompletion *completion);
     

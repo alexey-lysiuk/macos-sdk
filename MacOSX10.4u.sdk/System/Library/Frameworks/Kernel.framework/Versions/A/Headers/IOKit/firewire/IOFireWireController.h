@@ -430,8 +430,7 @@ protected:
 	friend class IOFWCompareAndSwapCommand;
 	friend class IOFWAsyncCommand;
 	friend class IOFireWireAVCTargetSpace ;
-	friend class IOFireWireNub;
-
+	
 #if FIRELOGCORE
 	friend class IOFireLog;
 #endif
@@ -538,8 +537,6 @@ protected:
 	UInt32 fIOCriticalSectionCount;
 
 	UInt32 fHubPort;
-	
-	bool fInstantiated;
 	
 /*! @struct ExpansionData
     @discussion This structure will be used to expand the capablilties of the class in the future.
@@ -878,9 +875,6 @@ protected:
 
 public:
 	bool isPhysicalAccessEnabledForNodeID( UInt16 nodeID );
-
-protected:
-	IOService *findKeyswitchDevice( void );
 	
 private:
     OSMetaClassDeclareReservedUnused(IOFireWireController, 0);

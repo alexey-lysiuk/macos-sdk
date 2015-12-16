@@ -147,11 +147,6 @@ protected:
 										SCSICmdField6Bit 			PAGE_CODE,
 										SCSICmdField2Byte 			ALLOCATION_LENGTH,
 										bool *						use10ByteModeSense );
-	bool							RetrieveINQUIRYData (
-										UInt8						EVPD,
-										UInt8						inquiryPage,
-										UInt8 *						inquiryBuffer,
-										UInt16 *					dataSize );
 	
 	// This flag is set if the device responds to a MODE_SENSE_10 command
 	// with the page code set to 0x1A (Power Conditions Mode Page)
@@ -731,15 +726,6 @@ public:
 							SCSICmdField3Byte 			BUFFER_OFFSET,
 							SCSICmdField3Byte 			PARAMETER_LIST_LENGTH,
 							SCSICmdField1Byte 			CONTROL );
-	
-	// The SPC-3 INQUIRY command as defined in section 6.4.1 of SPC-3.
-	bool				INQUIRY (
-							SCSITaskIdentifier			request,
-  							IOMemoryDescriptor *		dataBuffer,
-    						SCSICmdField1Bit 			EVPD,
-    						SCSICmdField1Byte 			PAGE_CODE,
-    						SCSICmdField2Byte 			ALLOCATION_LENGTH,
-    						SCSICmdField1Byte 			CONTROL );
 	
 private:
 	

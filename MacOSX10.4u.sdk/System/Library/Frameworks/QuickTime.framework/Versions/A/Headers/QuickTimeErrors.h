@@ -3,9 +3,9 @@
  
      Contains:   QuickTime Error codes.
  
-     Version:    QuickTime 7.1.3
+     Version:    QuickTime 7.2.1
  
-     Copyright:  © 1999-2006 by Apple Computer, Inc., all rights reserved.
+     Copyright:  © 1999-2006 by Apple Inc., all rights reserved.
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -22,6 +22,10 @@
 #if PRAGMA_ONCE
 #pragma once
 #endif
+
+/* QuickTime is not available to 64-bit clients */
+
+#if !__LP64__
 
 enum {
   kQTMediaDoesNotSupportDisplayOffsetsErr = -9460, /* Returned by new (B-frame-aware) media APIs that attempt to set nonzero decode to display deltas on media that do not support them. */
@@ -55,6 +59,15 @@ enum {
 enum {
   kICMCodecCantQueueOutOfOrderErr = -8995
 };
+
+enum {
+  vdImageDescStaleErr           = -2210, /* The ImageDescription previously returned from VDGetImageDescription is no longer valid */
+  vdHardwareGoneErr             = -2211, /* The hardware device providing video frames has been unplugged */
+  vdDontHaveThatUniqueIDErr     = -2212 /* The hardware device does not have the ID you are asking for */
+};
+
+
+#endif // !__LP64__
 
 
 

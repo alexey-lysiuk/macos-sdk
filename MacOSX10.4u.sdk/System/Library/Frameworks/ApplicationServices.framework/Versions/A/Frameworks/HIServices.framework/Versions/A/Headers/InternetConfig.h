@@ -3,7 +3,7 @@
  
      Contains:   Internet Config interfaces
  
-     Version:    HIServices-169~504
+     Version:    HIServices-169~651
  
      Copyright:  © 1999-2006 by Apple Computer, Inc., all rights reserved.
  

@@ -243,6 +243,7 @@ struct load_command {
 				   mapped */
 #define	LC_ROUTINES_64	0x1a	/* 64-bit image routines */
 #define LC_UUID		0x1b	/* the uuid */
+#define LC_CODE_SIGNATURE 0x1d	/* local of code signature */
 
 /*
  * A variable length string in a load command is represented by an lc_str

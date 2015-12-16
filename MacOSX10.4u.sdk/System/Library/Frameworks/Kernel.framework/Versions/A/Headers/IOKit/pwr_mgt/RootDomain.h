@@ -222,7 +222,6 @@ private:
     unsigned int user_spindown;       // User's selected disk spindown value
 
     unsigned int systemBooting:1;
-    unsigned int systemShutdown:1;
     unsigned int ignoringClamshell:1;
     unsigned int allowSleep:1;
     unsigned int sleepIsSupported:1;

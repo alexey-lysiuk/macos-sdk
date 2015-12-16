@@ -396,21 +396,22 @@ Completion Code         Error Returned              Description
 @defined IOUSBFamily message codes
 @discussion  Messages specific to the IOUSBFamily.  Note that the iokit_usb_msg(x) translates to 0xe0004xxx, where xxx is the value in parenthesis as a hex number.
 */
-#define iokit_usb_msg(message)              (UInt32)(sys_iokit|sub_iokit_usb|message)
-#define kIOUSBMessageHubResetPort           iokit_usb_msg(1)   // 0xe00004001  Message sent to a hub to reset a particular port
-#define kIOUSBMessageHubSuspendPort         iokit_usb_msg(2)   // 0xe00004002  Message sent to a hub to suspend a particular port
-#define kIOUSBMessageHubResumePort          iokit_usb_msg(3)   // 0xe00004003  Message sent to a hub to resume a particular port
-#define kIOUSBMessageHubIsDeviceConnected   iokit_usb_msg(4)   // 0xe00004004  Message sent to a hub to inquire whether a particular port has a device connected or not
-#define kIOUSBMessageHubIsPortEnabled       iokit_usb_msg(5)   // 0xe00004005  Message sent to a hub to inquire whether a particular port is enabled or not
-#define kIOUSBMessageHubReEnumeratePort     iokit_usb_msg(6)   // 0xe00004006  Message sent to a hub to reenumerate the device attached to a particular port
-#define kIOUSBMessagePortHasBeenReset       iokit_usb_msg(10)  // 0xe0000400a  Message sent to a device indicating that the port it is attached to has been reset
-#define kIOUSBMessagePortHasBeenResumed     iokit_usb_msg(11)  // 0xe0000400b  Message sent to a device indicating that the port it is attached to has been resumed
-#define kIOUSBMessageHubPortClearTT         iokit_usb_msg(12)  // 0xe0000400c  Message sent to a hub to clear the transaction translator
-#define kIOUSBMessagePortHasBeenSuspended   iokit_usb_msg(13)  // 0xe0000400d  Message sent to a device indicating that the port it is attached to has been suspended
-#define kIOUSBMessageFromThirdParty         iokit_usb_msg(14)  // 0xe0000400e  Message sent from a third party.  Uses IOUSBThirdPartyParam to encode the sender's ID
-#define kIOUSBMessagePortWasNotSuspended    iokit_usb_msg(15)  // 0xe0000400f  Message indicating that the hub driver received a resume request for a port that was not suspended
-#define kIOUSBMessageExpressCardCantWake    iokit_usb_msg(16)  // 0xe00004010  Message from a driver to a bus that an express card will disconnect on sleep and thus shouldn't wake
+#define iokit_usb_msg(message)						(UInt32)(sys_iokit|sub_iokit_usb|message)
+#define kIOUSBMessageHubResetPort					iokit_usb_msg(1)   // 0xe00004001  Message sent to a hub to reset a particular port
+#define kIOUSBMessageHubSuspendPort					iokit_usb_msg(2)   // 0xe00004002  Message sent to a hub to suspend a particular port
+#define kIOUSBMessageHubResumePort					iokit_usb_msg(3)   // 0xe00004003  Message sent to a hub to resume a particular port
+#define kIOUSBMessageHubIsDeviceConnected			iokit_usb_msg(4)   // 0xe00004004  Message sent to a hub to inquire whether a particular port has a device connected or not
+#define kIOUSBMessageHubIsPortEnabled				iokit_usb_msg(5)   // 0xe00004005  Message sent to a hub to inquire whether a particular port is enabled or not
+#define kIOUSBMessageHubReEnumeratePort				iokit_usb_msg(6)   // 0xe00004006  Message sent to a hub to reenumerate the device attached to a particular port
+#define kIOUSBMessagePortHasBeenReset				iokit_usb_msg(10)  // 0xe0000400a  Message sent to a device indicating that the port it is attached to has been reset
+#define kIOUSBMessagePortHasBeenResumed				iokit_usb_msg(11)  // 0xe0000400b  Message sent to a device indicating that the port it is attached to has been resumed
+#define kIOUSBMessageHubPortClearTT					iokit_usb_msg(12)  // 0xe0000400c  Message sent to a hub to clear the transaction translator
+#define kIOUSBMessagePortHasBeenSuspended			iokit_usb_msg(13)  // 0xe0000400d  Message sent to a device indicating that the port it is attached to has been suspended
+#define kIOUSBMessageFromThirdParty					iokit_usb_msg(14)  // 0xe0000400e  Message sent from a third party.  Uses IOUSBThirdPartyParam to encode the sender's ID
+#define kIOUSBMessagePortWasNotSuspended			iokit_usb_msg(15)  // 0xe0000400f  Message indicating that the hub driver received a resume request for a port that was not suspended
+#define kIOUSBMessageExpressCardCantWake			iokit_usb_msg(16)  // 0xe00004010  Message from a driver to a bus that an express card will disconnect on sleep and thus shouldn't wake
 #define kIOUSBMessageCompositeDriverReconfigured    iokit_usb_msg(17)  // 0xe00004011  Message from the composite driver indicating that it has finished re-configuring the device after a reset
+#define kIOUSBMessageRequestExtraPower				iokit_usb_msg(18)  // 0xe00004012  Message indicating a desire to have more power than the 500ma normally available
 
 // Obsolete
 //
