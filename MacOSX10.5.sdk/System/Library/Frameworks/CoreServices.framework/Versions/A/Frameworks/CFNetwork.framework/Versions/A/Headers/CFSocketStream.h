@@ -59,7 +59,23 @@ extern "C" {
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFStreamPropertySSLPeerCertificates        __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFStreamPropertySSLPeerCertificates        __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0);
+
+/*
+ *  kCFStreamPropertySSLPeerTrust
+ *  
+ *  Discussion:
+ *    Stream property value for copy operations.  Returns a SecTrustRef
+ *    which was a result of the SSL handshake.  See SSLCopyPeerTrust in
+ *    Security/SecureTransport.h for more information.
+ *  
+ *  Availability:
+ *    iPhone:           in version 2.0 and later in CFNetwork.framework
+ *    Mac OS X:         not available
+ *    CarbonLib:        not available
+ *    Non-Carbon CFM:   not available
+ */
+CFN_EXPORT const CFStringRef kCFStreamPropertySSLPeerTrust               __OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_2_0);
 
 /*
  *  kCFStreamPropertySSLSettings
@@ -74,7 +90,7 @@ CFN_EXPORT const CFStringRef kCFStreamPropertySSLPeerCertificates        __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFStreamPropertySSLSettings                __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFStreamPropertySSLSettings                __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0);
 
 /*
  *  kCFStreamSSLLevel
@@ -89,7 +105,7 @@ CFN_EXPORT const CFStringRef kCFStreamPropertySSLSettings                __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFStreamSSLLevel                           __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFStreamSSLLevel                           __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0);
 
 /*
  *  kCFStreamSSLAllowsExpiredCertificates
@@ -105,7 +121,7 @@ CFN_EXPORT const CFStringRef kCFStreamSSLLevel                           __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFStreamSSLAllowsExpiredCertificates       __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFStreamSSLAllowsExpiredCertificates       __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0);
 
 /*
  *  kCFStreamSSLAllowsExpiredRoots
@@ -121,7 +137,7 @@ CFN_EXPORT const CFStringRef kCFStreamSSLAllowsExpiredCertificates       __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFStreamSSLAllowsExpiredRoots              __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFStreamSSLAllowsExpiredRoots              __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0);
 
 /*
  *  kCFStreamSSLAllowsAnyRoot
@@ -137,7 +153,7 @@ CFN_EXPORT const CFStringRef kCFStreamSSLAllowsExpiredRoots              __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFStreamSSLAllowsAnyRoot                   __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFStreamSSLAllowsAnyRoot                   __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0);
 
 /*
  *  kCFStreamSSLValidatesCertificateChain
@@ -153,7 +169,7 @@ CFN_EXPORT const CFStringRef kCFStreamSSLAllowsAnyRoot                   __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFStreamSSLValidatesCertificateChain       __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFStreamSSLValidatesCertificateChain       __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0);
 
 /*
  *  kCFStreamSSLPeerName
@@ -170,7 +186,7 @@ CFN_EXPORT const CFStringRef kCFStreamSSLValidatesCertificateChain       __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFStreamSSLPeerName                        __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFStreamSSLPeerName                        __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0);
 
 /*
  *  kCFStreamSSLCertificates
@@ -186,7 +202,7 @@ CFN_EXPORT const CFStringRef kCFStreamSSLPeerName                        __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFStreamSSLCertificates                    __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFStreamSSLCertificates                    __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0);
 
 /*
  *  kCFStreamSSLIsServer
@@ -203,7 +219,7 @@ CFN_EXPORT const CFStringRef kCFStreamSSLCertificates                    __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFStreamSSLIsServer                        __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFStreamSSLIsServer                        __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0);
 /*
  *  kCFStreamErrorDomainWinSock
  *  
@@ -218,7 +234,7 @@ CFN_EXPORT const CFStringRef kCFStreamSSLIsServer                        __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFIndex kCFStreamErrorDomainWinSock                     __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_1_2);
+CFN_EXPORT const CFIndex kCFStreamErrorDomainWinSock                     __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_2_0);
 /*
  *  kCFStreamErrorDomainSOCKS
  *  
@@ -545,7 +561,7 @@ CFN_EXPORT const CFStringRef kCFStreamPropertyShouldCloseNativeSocket;
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFStreamPropertySocketRemoteHost           __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFStreamPropertySocketRemoteHost           __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0);
 
 
 /*
@@ -560,7 +576,7 @@ CFN_EXPORT const CFStringRef kCFStreamPropertySocketRemoteHost           __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFStreamPropertySocketRemoteNetService     __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFStreamPropertySocketRemoteNetService     __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0);
 
 
 /*
@@ -607,7 +623,7 @@ CFStreamCreatePairWithSocketToCFHost(
   CFHostRef           host,
   SInt32              port,
   CFReadStreamRef *   readStream,        /* can be NULL */
-  CFWriteStreamRef *  writeStream)       /* can be NULL */    __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_1_2);
+  CFWriteStreamRef *  writeStream)       /* can be NULL */    __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0);
 
 
 /*
@@ -651,7 +667,7 @@ CFStreamCreatePairWithSocketToNetService(
   CFAllocatorRef      alloc,
   CFNetServiceRef     service,
   CFReadStreamRef *   readStream,        /* can be NULL */
-  CFWriteStreamRef *  writeStream)       /* can be NULL */    __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_1_2);
+  CFWriteStreamRef *  writeStream)       /* can be NULL */    __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0);
 
 
 
@@ -752,7 +768,7 @@ CFSocketStreamPairSetSecurityProtocol(
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFStreamPropertyProxyLocalBypass           __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFStreamPropertyProxyLocalBypass           __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0);
 
 #if PRAGMA_ENUM_ALWAYSINT
     #pragma enumsalwaysint reset

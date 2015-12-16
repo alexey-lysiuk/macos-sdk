@@ -19,7 +19,11 @@
 
 #include <TargetConditionals.h>
 
+#if TARGET_OS_IPHONE
+#include <CoreGraphics/CoreGraphics.h>
+#else
 #include <ApplicationServices/ApplicationServices.h>
+#endif
 #include <CoreVideo/CVBuffer.h>
 
 #if defined(__cplusplus)
@@ -54,6 +58,8 @@ CV_EXPORT const CFStringRef	kCVImageBufferDisplayHeightKey AVAILABLE_MAC_OS_X_VE
 
 CV_EXPORT const CFStringRef kCVImageBufferGammaLevelKey AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;				// CFNumber describing the gamma level, used in absence of (or ignorance of) kCVImageBufferTransferFunctionKey
 
+CV_EXPORT const CFStringRef kCVImageBufferICCProfileKey AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER;				// CFData representation of the ICC profile
+
 CV_EXPORT const CFStringRef kCVImageBufferYCbCrMatrixKey AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;				// CFString describing the color matrix for YCbCr->RGB. This key can be one of the following values:
 CV_EXPORT const CFStringRef	kCVImageBufferYCbCrMatrix_ITU_R_709_2 AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;			// CFString
 CV_EXPORT const CFStringRef	kCVImageBufferYCbCrMatrix_ITU_R_601_4 AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;			// CFString
@@ -66,8 +72,10 @@ CV_EXPORT const CFStringRef	kCVImageBufferColorPrimaries_SMPTE_C AVAILABLE_MAC_O
 
 CV_EXPORT const CFStringRef kCVImageBufferTransferFunctionKey AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;				// CFString describing the transfer function. This key can be one of the following values
 CV_EXPORT const CFStringRef	kCVImageBufferTransferFunction_ITU_R_709_2 AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
-CV_EXPORT const CFStringRef	kCVImageBufferTransferFunction_EBU_3213 AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
-CV_EXPORT const CFStringRef	kCVImageBufferTransferFunction_SMPTE_C AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
+CV_EXPORT const CFStringRef	kCVImageBufferTransferFunction_SMPTE_240M_1995 AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER;
+CV_EXPORT const CFStringRef	kCVImageBufferTransferFunction_UseGamma AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER;
+CV_EXPORT const CFStringRef	kCVImageBufferTransferFunction_EBU_3213 AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER_BUT_DEPRECATED;			// Should not be used.
+CV_EXPORT const CFStringRef	kCVImageBufferTransferFunction_SMPTE_C AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER_BUT_DEPRECATED;			// Should not be used.
 
 /* Chroma siting information. For progressive images, only the TopField value is used. */
 CV_EXPORT const CFStringRef kCVImageBufferChromaLocationTopFieldKey AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;			// CFString with one of the following CFString values

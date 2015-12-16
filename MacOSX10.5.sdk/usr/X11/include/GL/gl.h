@@ -1,8 +1,8 @@
 /*
  * Mesa 3-D graphics library
- * Version:  7.0
+ * Version:  6.5.1
  *
- * Copyright (C) 1999-2007  Brian Paul   All Rights Reserved.
+ * Copyright (C) 1999-2006  Brian Paul   All Rights Reserved.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a
  * copy of this software and associated documentation files (the "Software"),
@@ -84,8 +84,7 @@
 #include <windows.h>
 #endif
 
-#if defined(_WIN32) && !defined(_WINGDI_) && !defined(_GNU_H_WINDOWS32_DEFINES) \
-     && !defined(OPENSTEP) && !defined(__CYGWIN__) || defined(__MINGW32__)
+#if defined(_WIN32) && !defined(_WINGDI_) && !defined(_GNU_H_WINDOWS32_DEFINES) && !defined(OPENSTEP) && !defined(__CYGWIN__)
 #include <GL/mesa_wgl.h>
 #endif
 
@@ -2162,11 +2161,11 @@ typedef void (APIENTRYP PFNGLMULTITEXCOORD4SVARBPROC) (GLenum target, const GLsh
 #define GL_DEBUG_PRINT_MESA               0x875A
 #define GL_DEBUG_ASSERT_MESA              0x875B
 
-GLAPI GLhandleARB GLAPIENTRY glCreateDebugObjectMESA (void);
-GLAPI void GLAPIENTRY glClearDebugLogMESA (GLhandleARB obj, GLenum logType, GLenum shaderType);
-GLAPI void GLAPIENTRY glGetDebugLogMESA (GLhandleARB obj, GLenum logType, GLenum shaderType, GLsizei maxLength,
+GLAPI GLhandleARB APIENTRY glCreateDebugObjectMESA (void);
+GLAPI void APIENTRY glClearDebugLogMESA (GLhandleARB obj, GLenum logType, GLenum shaderType);
+GLAPI void APIENTRY glGetDebugLogMESA (GLhandleARB obj, GLenum logType, GLenum shaderType, GLsizei maxLength,
                                          GLsizei *length, GLcharARB *debugLog);
-GLAPI GLsizei GLAPIENTRY glGetDebugLogLengthMESA (GLhandleARB obj, GLenum logType, GLenum shaderType);
+GLAPI GLsizei APIENTRY glGetDebugLogLengthMESA (GLhandleARB obj, GLenum logType, GLenum shaderType);
 
 #endif /* GL_MESA_shader_debug */
 

@@ -216,7 +216,8 @@ are reserved in the protocol for errors and replies. */
 #define ColormapNotify		32
 #define ClientMessage		33
 #define MappingNotify		34
-#define LASTEvent		35	/* must be bigger than any event # */
+#define GenericEvent		35
+#define LASTEvent		36	/* must be bigger than any event # */
 
 
 /* Key masks. Used as modifiers to GrabButton and GrabKey, results of QueryPointer,

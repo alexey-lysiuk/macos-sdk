@@ -52,8 +52,8 @@ typedef int		FcBool;
  */
 
 #define FC_MAJOR	2
-#define FC_MINOR	5
-#define FC_REVISION	0
+#define FC_MINOR	4
+#define FC_REVISION	2
 
 #define FC_VERSION	((FC_MAJOR * 10000) + (FC_MINOR * 100) + (FC_REVISION))
 
@@ -136,8 +136,6 @@ typedef int		FcBool;
 #define FC_WEIGHT_ULTRABOLD	    FC_WEIGHT_EXTRABOLD
 #define FC_WEIGHT_BLACK		    210
 #define FC_WEIGHT_HEAVY		    FC_WEIGHT_BLACK
-#define FC_WEIGHT_EXTRABLACK	    215
-#define FC_WEIGHT_ULTRABLACK	    FC_WEIGHT_EXTRABLACK
 
 #define FC_SLANT_ROMAN		    0
 #define FC_SLANT_ITALIC		    100
@@ -228,6 +226,7 @@ typedef struct _FcValue {
 	const FcMatrix	*m;
 	const FcCharSet	*c;
 	void		*f;
+	const FcPattern	*p;
 	const FcLangSet	*l;
     } u;
 } FcValue;
@@ -249,10 +248,7 @@ typedef enum _FcMatchKind {
 } FcMatchKind;
 
 typedef enum _FcLangResult {
-    FcLangEqual = 0,
-    FcLangDifferentCountry = 1,
-    FcLangDifferentTerritory = 1,
-    FcLangDifferentLang = 2
+    FcLangEqual, FcLangDifferentCountry, FcLangDifferentLang
 } FcLangResult;
 
 typedef enum _FcSetName {
@@ -369,10 +365,10 @@ FcPublic FcStrList *
 FcConfigGetCacheDirs (FcConfig	*config);
 
 FcPublic int
-FcConfigGetRescanInterval (FcConfig *config);
+FcConfigGetRescanInverval (FcConfig *config);
 
 FcPublic FcBool
-FcConfigSetRescanInterval (FcConfig *config, int rescanInterval);
+FcConfigSetRescanInverval (FcConfig *config, int rescanInterval);
 
 FcPublic FcFontSet *
 FcConfigGetFonts (FcConfig	*config,
@@ -551,12 +547,6 @@ FcPublic FcBool
 FcInitBringUptoDate (void);
 
 /* fclang.c */
-FcPublic FcStrSet *
-FcGetLangs (void);
-
-FcPublic const FcCharSet *
-FcLangGetCharSet (const FcChar8 *lang);
-
 FcPublic FcLangSet*
 FcLangSetCreate (void);
 
@@ -891,25 +881,25 @@ FcPublic FcStrSet *
 FcStrSetCreate (void);
 
 FcPublic FcBool
-FcStrSetMember (FcStrSet *set, const FcChar8 *s);
+FcStrSetMember (FcPublic FcStrSet *set, const FcChar8 *s);
 
 FcPublic FcBool
-FcStrSetEqual (FcStrSet *sa, FcStrSet *sb);
+FcStrSetEqual (FcPublic FcStrSet *sa, FcPublic FcStrSet *sb);
 
 FcPublic FcBool
-FcStrSetAdd (FcStrSet *set, const FcChar8 *s);
+FcStrSetAdd (FcPublic FcStrSet *set, const FcChar8 *s);
 
 FcPublic FcBool
-FcStrSetAddFilename (FcStrSet *set, const FcChar8 *s);
+FcStrSetAddFilename (FcPublic FcStrSet *set, const FcChar8 *s);
 
 FcPublic FcBool
-FcStrSetDel (FcStrSet *set, const FcChar8 *s);
+FcStrSetDel (FcPublic FcStrSet *set, const FcChar8 *s);
 
 FcPublic void
-FcStrSetDestroy (FcStrSet *set);
+FcStrSetDestroy (FcPublic FcStrSet *set);
 
 FcPublic FcStrList *
-FcStrListCreate (FcStrSet *set);
+FcStrListCreate (FcPublic FcStrSet *set);
 
 FcPublic FcChar8 *
 FcStrListNext (FcStrList *list);
@@ -924,18 +914,5 @@ FcConfigParseAndLoad (FcConfig *config, const FcChar8 *file, FcBool complain);
 _FCFUNCPROTOEND
 
 #undef FC_ATTRIBUTE_SENTINEL
-
-
-#ifndef _FCINT_H_
-
-/*
- * Deprecated functions are placed here to help users fix their code without
- * digging through documentation
- */
- 
-#define FcConfigGetRescanInverval   FcConfigGetRescanInverval_REPLACE_BY_FcConfigGetRescanInterval
-#define FcConfigSetRescanInverval   FcConfigSetRescanInverval_REPLACE_BY_FcConfigSetRescanInterval
-
-#endif
 
 #endif /* _FONTCONFIG_H_ */

@@ -45,7 +45,7 @@ extern "C" {
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const SInt32 kCFStreamErrorDomainFTP                          __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_1_2);
+CFN_EXPORT const SInt32 kCFStreamErrorDomainFTP                          __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0);
 
 
 /*
@@ -70,7 +70,7 @@ as definition) indicates the value type of the property.
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFStreamPropertyFTPUserName                __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFStreamPropertyFTPUserName                __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0);
 
 
 /*
@@ -86,7 +86,7 @@ CFN_EXPORT const CFStringRef kCFStreamPropertyFTPUserName                __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFStreamPropertyFTPPassword                __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFStreamPropertyFTPPassword                __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0);
 
 
 /*
@@ -102,7 +102,7 @@ CFN_EXPORT const CFStringRef kCFStreamPropertyFTPPassword                __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFStreamPropertyFTPUsePassiveMode          __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFStreamPropertyFTPUsePassiveMode          __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0);
 
 
 /*
@@ -117,7 +117,7 @@ CFN_EXPORT const CFStringRef kCFStreamPropertyFTPUsePassiveMode          __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFStreamPropertyFTPResourceSize            __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFStreamPropertyFTPResourceSize            __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0);
 
 
 /*
@@ -135,7 +135,7 @@ CFN_EXPORT const CFStringRef kCFStreamPropertyFTPResourceSize            __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFStreamPropertyFTPFetchResourceInfo       __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFStreamPropertyFTPFetchResourceInfo       __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0);
 
 
 /*
@@ -150,7 +150,7 @@ CFN_EXPORT const CFStringRef kCFStreamPropertyFTPFetchResourceInfo       __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFStreamPropertyFTPFileTransferOffset      __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFStreamPropertyFTPFileTransferOffset      __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0);
 
 
 /*
@@ -166,7 +166,7 @@ CFN_EXPORT const CFStringRef kCFStreamPropertyFTPFileTransferOffset      __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFStreamPropertyFTPAttemptPersistentConnection __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFStreamPropertyFTPAttemptPersistentConnection __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0);
 
 
 /*
@@ -183,7 +183,7 @@ CFN_EXPORT const CFStringRef kCFStreamPropertyFTPAttemptPersistentConnection __O
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFStreamPropertyFTPProxy                   __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFStreamPropertyFTPProxy                   __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0);
 
 
 /*
@@ -201,7 +201,7 @@ CFN_EXPORT const CFStringRef kCFStreamPropertyFTPProxy                   __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFStreamPropertyFTPProxyHost               __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFStreamPropertyFTPProxyHost               __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0);
 
 
 /*
@@ -219,7 +219,7 @@ CFN_EXPORT const CFStringRef kCFStreamPropertyFTPProxyHost               __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFStreamPropertyFTPProxyPort               __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFStreamPropertyFTPProxyPort               __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0);
 
 /*
  *  kCFStreamPropertyFTPProxyUser
@@ -229,7 +229,7 @@ CFN_EXPORT const CFStringRef kCFStreamPropertyFTPProxyPort               __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFStreamPropertyFTPProxyUser               __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFStreamPropertyFTPProxyUser               __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0);
 /*
  *  kCFStreamPropertyFTPProxyPassword
  *  
@@ -238,7 +238,7 @@ CFN_EXPORT const CFStringRef kCFStreamPropertyFTPProxyUser               __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFStreamPropertyFTPProxyPassword           __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFStreamPropertyFTPProxyPassword           __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0);
 
 
 /*
@@ -260,7 +260,7 @@ CFFTPCreateParsedResourceListing.
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFFTPResourceMode                          __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFFTPResourceMode                          __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0);
 
 
 /*
@@ -275,7 +275,7 @@ CFN_EXPORT const CFStringRef kCFFTPResourceMode                          __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFFTPResourceName                          __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFFTPResourceName                          __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0);
 
 
 /*
@@ -290,7 +290,7 @@ CFN_EXPORT const CFStringRef kCFFTPResourceName                          __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFFTPResourceOwner                         __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFFTPResourceOwner                         __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0);
 
 
 /*
@@ -305,7 +305,7 @@ CFN_EXPORT const CFStringRef kCFFTPResourceOwner                         __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFFTPResourceGroup                         __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFFTPResourceGroup                         __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0);
 
 
 /*
@@ -321,7 +321,7 @@ CFN_EXPORT const CFStringRef kCFFTPResourceGroup                         __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFFTPResourceLink                          __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFFTPResourceLink                          __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0);
 
 
 /*
@@ -336,7 +336,7 @@ CFN_EXPORT const CFStringRef kCFFTPResourceLink                          __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFFTPResourceSize                          __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFFTPResourceSize                          __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0);
 
 
 /*
@@ -351,7 +351,7 @@ CFN_EXPORT const CFStringRef kCFFTPResourceSize                          __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFFTPResourceType                          __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFFTPResourceType                          __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0);
 
 
 /*
@@ -366,7 +366,7 @@ CFN_EXPORT const CFStringRef kCFFTPResourceType                          __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFFTPResourceModDate                       __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFFTPResourceModDate                       __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0);
 
 
 /*
@@ -408,7 +408,7 @@ CFN_EXPORT const CFStringRef kCFFTPResourceModDate                       __OSX_A
 CFN_EXPORT CFReadStreamRef 
 CFReadStreamCreateWithFTPURL(
   CFAllocatorRef   alloc,
-  CFURLRef         ftpURL)                                    __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_1_2);
+  CFURLRef         ftpURL)                                    __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0);
 
 
 
@@ -458,7 +458,7 @@ CFFTPCreateParsedResourceListing(
   CFAllocatorRef     alloc,
   const UInt8 *      buffer,
   CFIndex            bufferLength,
-  CFDictionaryRef *  parsed)                                  __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_1_2);
+  CFDictionaryRef *  parsed)                                  __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0);
 
 
 
@@ -500,7 +500,7 @@ CFFTPCreateParsedResourceListing(
 CFN_EXPORT CFWriteStreamRef 
 CFWriteStreamCreateWithFTPURL(
   CFAllocatorRef   alloc,
-  CFURLRef         ftpURL)                                    __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_1_2);
+  CFURLRef         ftpURL)                                    __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0);
 
 
 

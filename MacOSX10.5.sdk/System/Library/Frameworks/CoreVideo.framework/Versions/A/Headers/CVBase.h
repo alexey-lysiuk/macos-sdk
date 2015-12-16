@@ -2,7 +2,7 @@
  *  CVBase.h
  *  CoreVideo
  *
- *  Copyright (c) 2004 Apple Computer, Inc. All rights reserved.
+ *  Copyright (c) 2004-2008 Apple Computer, Inc. All rights reserved.
  *
  */
  
@@ -19,11 +19,20 @@
 #include <TargetConditionals.h>
 #include <AvailabilityMacros.h>
 
+#ifndef AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER
+#define AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER       WEAK_IMPORT_ATTRIBUTE
+#endif
+
 #include <CoreFoundation/CFBase.h>
 
 #if defined(__cplusplus)
 extern "C" {
 #endif
+
+#define COREVIDEO_SUPPORTS_OPENGL 		(TARGET_OS_MAC && ! TARGET_OS_IPHONE)
+#define COREVIDEO_SUPPORTS_COLORSPACE 	(TARGET_OS_MAC && ! TARGET_OS_IPHONE)
+#define COREVIDEO_SUPPORTS_DISPLAYLINK 	(! TARGET_OS_IPHONE)
+#define COREVIDEO_SUPPORTS_IOSURFACE	(TARGET_OS_MAC && (MAC_OS_X_VERSION_MAX_ALLOWED >= 1060))
 
 #define CV_EXPORT CF_EXPORT 
 #define CV_INLINE CF_INLINE
@@ -49,7 +58,7 @@ typedef uint64_t CVOptionFlags;
     @field          flags
                         A set of flags that indicate the SMPTE state.
     @field          hours
-                        The number of hourse in the full message.
+                        The number of hours in the full message.
     @field          minutes
                         The number of minutes in the full message.
     @field          seconds

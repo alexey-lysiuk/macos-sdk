@@ -1212,6 +1212,38 @@ typedef struct _xEvent {
     } u;
 } xEvent;
 
+/*********************************************************
+ *
+ * Generic event
+ * 
+ * Those events are not part of the core protocol spec and can be used by
+ * various extensions.
+ * type is always GenericEvent
+ * extension is the minor opcode of the extension the event belongs to.
+ * evtype is the actual event type, unique __per extension__. 
+ *
+ * GenericEvents can be longer than 32 bytes, with the length field
+ * specifying the number of 4 byte blocks after the first 32 bytes. 
+ *
+ *
+ */
+typedef struct 
+{
+    BYTE    type;
+    CARD8   extension;
+    CARD16  sequenceNumber B16;
+    CARD32  length B32;
+    CARD16  evtype B16;
+    CARD16  pad2 B16;
+    CARD32  pad3 B32;
+    CARD32  pad4 B32;
+    CARD32  pad5 B32;
+    CARD32  pad6 B32;
+    CARD32  pad7 B32;
+} xGenericEvent;
+
+
+
 /* KeymapNotify events are not included in the above union because they
    are different from all other events: they do not have a "detail"
    or "sequenceNumber", so there is room for a 248-bit key mask. */

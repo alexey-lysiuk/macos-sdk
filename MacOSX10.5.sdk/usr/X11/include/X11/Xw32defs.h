@@ -44,7 +44,7 @@ typedef char *caddr_t;
 #define putenv	    _putenv
 #define read	   _read
 #define rmdir	_rmdir
-#define sleep(x) _sleep((x) * 1000)
+#define sleep(x) Sleep((x) * 1000)
 #define stat	 _stat
 #define sys_errlist _sys_errlist
 #define sys_nerr    _sys_nerr

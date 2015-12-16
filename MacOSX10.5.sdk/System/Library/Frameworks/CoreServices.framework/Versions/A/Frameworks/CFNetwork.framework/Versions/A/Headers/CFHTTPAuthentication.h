@@ -97,7 +97,7 @@ typedef enum CFStreamErrorHTTPAuthentication CFStreamErrorHTTPAuthentication;
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFHTTPAuthenticationUsername               __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFHTTPAuthenticationUsername               __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0);
 
 /*
  *  kCFHTTPAuthenticationPassword
@@ -112,7 +112,7 @@ CFN_EXPORT const CFStringRef kCFHTTPAuthenticationUsername               __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFHTTPAuthenticationPassword               __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFHTTPAuthenticationPassword               __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0);
 
 /*
  *  kCFHTTPAuthenticationAccountDomain
@@ -127,7 +127,7 @@ CFN_EXPORT const CFStringRef kCFHTTPAuthenticationPassword               __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFHTTPAuthenticationAccountDomain          __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFHTTPAuthenticationAccountDomain          __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0);
 
 /*
  *  CFHTTPAuthenticationGetTypeID()
@@ -144,7 +144,7 @@ CFN_EXPORT const CFStringRef kCFHTTPAuthenticationAccountDomain          __OSX_A
  *    Non-Carbon CFM:   not available
  */
 CFN_EXPORT CFTypeID 
-CFHTTPAuthenticationGetTypeID(void)                           __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_1_2);
+CFHTTPAuthenticationGetTypeID(void)                           __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_2_0);
 
 
 
@@ -182,7 +182,7 @@ CFHTTPAuthenticationGetTypeID(void)                           __OSX_AVAILABLE_ST
 CFN_EXPORT CFHTTPAuthenticationRef 
 CFHTTPAuthenticationCreateFromResponse(
   CFAllocatorRef     alloc,
-  CFHTTPMessageRef   response)                                __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_1_2);
+  CFHTTPMessageRef   response)                                __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_2_0);
 
 
 
@@ -228,7 +228,7 @@ CFHTTPAuthenticationCreateFromResponse(
 CFN_EXPORT Boolean 
 CFHTTPAuthenticationIsValid(
   CFHTTPAuthenticationRef   auth,
-  CFStreamError *           error)       /* can be NULL */    __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_1_2);
+  CFStreamError *           error)       /* can be NULL */    __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_2_0);
 
 
 
@@ -265,7 +265,7 @@ CFHTTPAuthenticationIsValid(
 CFN_EXPORT Boolean 
 CFHTTPAuthenticationAppliesToRequest(
   CFHTTPAuthenticationRef   auth,
-  CFHTTPMessageRef          request)                          __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_1_2);
+  CFHTTPMessageRef          request)                          __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_2_0);
 
 
 
@@ -298,7 +298,7 @@ CFHTTPAuthenticationAppliesToRequest(
  *    Non-Carbon CFM:   not available
  */
 CFN_EXPORT Boolean 
-CFHTTPAuthenticationRequiresOrderedRequests(CFHTTPAuthenticationRef auth) __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_1_2);
+CFHTTPAuthenticationRequiresOrderedRequests(CFHTTPAuthenticationRef auth) __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_2_0);
 
 
 
@@ -352,7 +352,7 @@ CFHTTPMessageApplyCredentials(
   CFHTTPAuthenticationRef   auth,
   CFStringRef               username,
   CFStringRef               password,
-  CFStreamError *           error)          /* can be NULL */ __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_1_2);
+  CFStreamError *           error)          /* can be NULL */ __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_2_0);
 
 
 
@@ -403,7 +403,7 @@ CFHTTPMessageApplyCredentialDictionary(
   CFHTTPMessageRef          request,
   CFHTTPAuthenticationRef   auth,
   CFDictionaryRef           dict,
-  CFStreamError *           error)         /* can be NULL */  __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_1_2);
+  CFStreamError *           error)         /* can be NULL */  __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0);
 
 
 
@@ -438,7 +438,7 @@ CFHTTPMessageApplyCredentialDictionary(
  *    Non-Carbon CFM:   not available
  */
 CFN_EXPORT CFStringRef 
-CFHTTPAuthenticationCopyRealm(CFHTTPAuthenticationRef auth)   __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_1_2);
+CFHTTPAuthenticationCopyRealm(CFHTTPAuthenticationRef auth)   __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_2_0);
 
 
 
@@ -473,7 +473,7 @@ CFHTTPAuthenticationCopyRealm(CFHTTPAuthenticationRef auth)   __OSX_AVAILABLE_ST
  *    Non-Carbon CFM:   not available
  */
 CFN_EXPORT CFArrayRef 
-CFHTTPAuthenticationCopyDomains(CFHTTPAuthenticationRef auth) __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_1_2);
+CFHTTPAuthenticationCopyDomains(CFHTTPAuthenticationRef auth) __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_2_0);
 
 
 
@@ -506,7 +506,7 @@ CFHTTPAuthenticationCopyDomains(CFHTTPAuthenticationRef auth) __OSX_AVAILABLE_ST
  *    Non-Carbon CFM:   not available
  */
 CFN_EXPORT CFStringRef 
-CFHTTPAuthenticationCopyMethod(CFHTTPAuthenticationRef auth)  __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_1_2);
+CFHTTPAuthenticationCopyMethod(CFHTTPAuthenticationRef auth)  __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_2_0);
 
 
 
@@ -538,7 +538,7 @@ CFHTTPAuthenticationCopyMethod(CFHTTPAuthenticationRef auth)  __OSX_AVAILABLE_ST
  *    Non-Carbon CFM:   not available
  */
 CFN_EXPORT Boolean 
-CFHTTPAuthenticationRequiresUserNameAndPassword(CFHTTPAuthenticationRef auth) __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_1_2);
+CFHTTPAuthenticationRequiresUserNameAndPassword(CFHTTPAuthenticationRef auth) __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0);
 
 
 
@@ -571,7 +571,7 @@ CFHTTPAuthenticationRequiresUserNameAndPassword(CFHTTPAuthenticationRef auth) __
  *    Non-Carbon CFM:   not available
  */
 CFN_EXPORT Boolean 
-CFHTTPAuthenticationRequiresAccountDomain(CFHTTPAuthenticationRef auth) __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_1_2);
+CFHTTPAuthenticationRequiresAccountDomain(CFHTTPAuthenticationRef auth) __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0);
 
 
 

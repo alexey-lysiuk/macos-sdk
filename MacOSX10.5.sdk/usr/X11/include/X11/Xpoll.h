@@ -91,7 +91,7 @@ from The Open Group.
 
 #ifdef CSRG_BASED
 #include <sys/param.h>
-# if BSD < 199103 || defined(__APPLE__)
+# if BSD < 199103
 typedef long fd_mask;
 # endif
 #endif

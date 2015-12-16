@@ -62,6 +62,7 @@ enum {
   kCVPixelFormatType_422YpCbCr10    = 'v210',     /* Component Y'CbCr 10-bit 4:2:2 */
   kCVPixelFormatType_444YpCbCr10    = 'v410',     /* Component Y'CbCr 10-bit 4:4:4 */
   kCVPixelFormatType_420YpCbCr8Planar = 'y420',   /* Planar Component Y'CbCr 8-bit 4:2:0.  baseAddr points to a big-endian CVPlanarPixelBufferInfo_YCbCrPlanar struct */
+  kCVPixelFormatType_422YpCbCr_4A_8BiPlanar = 'a2vy', /* First plane: Video-range Component Y'CbCr 8-bit 4:2:2, ordered Cb Y'0 Cr Y'1; second plane: alpha 8-bit 0-255 */
 };
 
 /*
@@ -98,6 +99,7 @@ CV_EXPORT const CFStringRef kCVPixelBufferBytesPerRowAlignmentKey AVAILABLE_MAC_
 CV_EXPORT const CFStringRef kCVPixelBufferCGBitmapContextCompatibilityKey AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;  // CFBoolean
 CV_EXPORT const CFStringRef kCVPixelBufferCGImageCompatibilityKey AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;	    // CFBoolean
 CV_EXPORT const CFStringRef kCVPixelBufferOpenGLCompatibilityKey AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;	    // CFBoolean
+CV_EXPORT const CFStringRef kCVPixelBufferPlaneAlignmentKey; // AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER;		    // CFNumber
 
 /*!
     @typedef	CVPixelBufferRef
@@ -144,7 +146,7 @@ CV_EXPORT CVReturn CVPixelBufferCreateResolvedAttributesDictionary(CFAllocatorRe
     @param      width   Width of the PixelBuffer in pixels.
     @param      height  Height of the PixelBuffer in pixels.
     @param	pixelFormatType		Pixel format indentified by its respective OSType.
-    @param	pixelBufferAttributes      A dictionary with additonal attributes for a a pixel buffer. This parameter is optional. See PixelBufferAttributes for more details.
+    @param	pixelBufferAttributes      A dictionary with additional attributes for a a pixel buffer. This parameter is optional. See PixelBufferAttributes for more details.
     @param      pixelBufferOut          The new pixel buffer will be returned here
     @result	returns kCVReturnSuccess on success.
 */    
@@ -168,7 +170,7 @@ typedef void (*CVPixelBufferReleaseBytesCallback)( void *releaseRefCon, const vo
     @param      bytesPerRow		Row bytes of the pixel storage memory.
     @param      releaseCallback         CVPixelBufferReleaseBytePointerCallback function that gets called when the PixelBuffer gets destroyed.
     @param      releaseRefCon           User data identifying the PixelBuffer for the release callback.
-    @param      pixelBufferAttributes      A dictionary with additonal attributes for a a pixel buffer. This parameter is optional. See PixelBufferAttributes for more details.
+    @param      pixelBufferAttributes      A dictionary with additional attributes for a a pixel buffer. This parameter is optional. See PixelBufferAttributes for more details.
     @param      pixelBufferOut          The new pixel buffer will be returned here
     @result	returns kCVReturnSuccess on success.
 */
@@ -201,7 +203,7 @@ typedef void (*CVPixelBufferReleasePlanarBytesCallback)( void *releaseRefCon, co
     @param	planeBytesPerRow	Array of plane bytesPerRow values.
     @param	releaseCallback		CVPixelBufferReleaseBytePointerCallback function that gets called when the PixelBuffer gets destroyed.
     @param	releaseRefCon		User data identifying the PixelBuffer for the release callback.
-    @param	pixelBufferAttributes      A dictionary with additonal attributes for a a pixel buffer. This parameter is optional. See PixelBufferAttributes for more details.
+    @param	pixelBufferAttributes      A dictionary with additional attributes for a a pixel buffer. This parameter is optional. See PixelBufferAttributes for more details.
     @param      pixelBufferOut          The new pixel buffer will be returned here
     @result	returns kCVReturnSuccess on success.
 */

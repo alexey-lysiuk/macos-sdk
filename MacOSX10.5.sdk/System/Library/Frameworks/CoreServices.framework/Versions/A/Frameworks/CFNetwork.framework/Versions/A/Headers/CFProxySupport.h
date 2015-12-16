@@ -100,7 +100,7 @@ extern "C" {
 CFN_EXPORT CFArrayRef 
 CFNetworkCopyProxiesForURL(
   CFURLRef          url,
-  CFDictionaryRef   proxySettings)                            __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_1_2);
+  CFDictionaryRef   proxySettings)                            __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_2_0);
 
 
 
@@ -166,7 +166,7 @@ CFN_EXPORT CFArrayRef
 CFNetworkCopyProxiesForAutoConfigurationScript(
   CFStringRef   proxyAutoConfigurationScript,
   CFURLRef      targetURL,
-  CFErrorRef *  error)                                        __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_1_2);
+  CFErrorRef *  error)                                        __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_2_0);
 
 
 /*
@@ -213,7 +213,7 @@ CFNetworkExecuteProxyAutoConfigurationScript(
   CFStringRef                              proxyAutoConfigurationScript,
   CFURLRef                                 targetURL,
   CFProxyAutoConfigurationResultCallback   cb,
-  CFStreamClientContext *                  clientContext)     __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_1_2);
+  CFStreamClientContext *                  clientContext)     __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_2_0);
 
 
 
@@ -236,7 +236,7 @@ CFNetworkExecuteProxyAutoConfigurationURL(
   CFURLRef                                 proxyAutoConfigURL,
   CFURLRef                                 targetURL,
   CFProxyAutoConfigurationResultCallback   cb,
-  CFStreamClientContext *                  clientContext)     __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_1_2);
+  CFStreamClientContext *                  clientContext)     __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_2_0);
 
 
 
@@ -253,7 +253,7 @@ CFNetworkExecuteProxyAutoConfigurationURL(
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFProxyTypeKey                             __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFProxyTypeKey                             __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_2_0);
 
 /*
  *  kCFProxyHostNameKey
@@ -267,7 +267,7 @@ CFN_EXPORT const CFStringRef kCFProxyTypeKey                             __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFProxyHostNameKey                         __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFProxyHostNameKey                         __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_2_0);
 
 /*
  *  kCFProxyPortNumberKey
@@ -281,7 +281,7 @@ CFN_EXPORT const CFStringRef kCFProxyHostNameKey                         __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFProxyPortNumberKey                       __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFProxyPortNumberKey                       __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_2_0);
 
 /*
  *  kCFProxyAutoConfigurationURLKey
@@ -297,7 +297,7 @@ CFN_EXPORT const CFStringRef kCFProxyPortNumberKey                       __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFProxyAutoConfigurationURLKey             __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFProxyAutoConfigurationURLKey             __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_2_0);
 
 /*
  *  kCFProxyUsernameKey
@@ -313,7 +313,7 @@ CFN_EXPORT const CFStringRef kCFProxyAutoConfigurationURLKey             __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFProxyUsernameKey                         __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFProxyUsernameKey                         __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_2_0);
 
 /*
  *  kCFProxyPasswordKey
@@ -329,7 +329,7 @@ CFN_EXPORT const CFStringRef kCFProxyUsernameKey                         __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFProxyPasswordKey                         __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFProxyPasswordKey                         __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_2_0);
 
 /* 
     Possible values for kCFProxyTypeKey:
@@ -348,7 +348,7 @@ CFN_EXPORT const CFStringRef kCFProxyPasswordKey                         __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFProxyTypeNone                            __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFProxyTypeNone                            __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_2_0);
 /*
  *  kCFProxyTypeHTTP
  *  
@@ -357,7 +357,7 @@ CFN_EXPORT const CFStringRef kCFProxyTypeNone                            __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFProxyTypeHTTP                            __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFProxyTypeHTTP                            __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_2_0);
 /*
  *  kCFProxyTypeHTTPS
  *  
@@ -366,7 +366,7 @@ CFN_EXPORT const CFStringRef kCFProxyTypeHTTP                            __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFProxyTypeHTTPS                           __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFProxyTypeHTTPS                           __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_2_0);
 /*
  *  kCFProxyTypeSOCKS
  *  
@@ -375,7 +375,7 @@ CFN_EXPORT const CFStringRef kCFProxyTypeHTTPS                           __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFProxyTypeSOCKS                           __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFProxyTypeSOCKS                           __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_2_0);
 /*
  *  kCFProxyTypeFTP
  *  
@@ -384,7 +384,7 @@ CFN_EXPORT const CFStringRef kCFProxyTypeSOCKS                           __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFProxyTypeFTP                             __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFProxyTypeFTP                             __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_2_0);
 /*
  *  kCFProxyTypeAutoConfigurationURL
  *  
@@ -393,7 +393,7 @@ CFN_EXPORT const CFStringRef kCFProxyTypeFTP                             __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFProxyTypeAutoConfigurationURL            __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFProxyTypeAutoConfigurationURL            __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_2_0);
 
 
 #if TARGET_OS_MAC
@@ -408,7 +408,7 @@ CFN_EXPORT const CFStringRef kCFProxyTypeAutoConfigurationURL            __OSX_A
 		The caller is responsible for releasing the returned dictionary.
 */
 CFN_EXPORT CFDictionaryRef
-CFNetworkCopySystemProxySettings( void )					__OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_1_2);
+CFNetworkCopySystemProxySettings( void )					__OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_2_0);
 
 
 /*
@@ -418,7 +418,7 @@ CFNetworkCopySystemProxySettings( void )					__OSX_AVAILABLE_STARTING(__MAC_NA,_
  *    Key for the enabled status of the HTTP proxy; value is a
  *    CFNumber.  The proxy is enabled if the key is present and has a non-zero value.
  */
-CFN_EXPORT const CFStringRef kCFNetworkProxiesHTTPEnable		__OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFNetworkProxiesHTTPEnable		__OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_2_0);
 /*
  *  kCFNetworkProxiesHTTPPort
  *  
@@ -426,7 +426,7 @@ CFN_EXPORT const CFStringRef kCFNetworkProxiesHTTPEnable		__OSX_AVAILABLE_STARTI
  *    Key for the port number associated with the HTTP proxy; value is a
  *    CFNumber which is the port number.
  */
-CFN_EXPORT const CFStringRef kCFNetworkProxiesHTTPPort			__OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFNetworkProxiesHTTPPort			__OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_2_0);
 /*
  *  kCFNetworkProxiesHTTPProxy
  *  
@@ -434,7 +434,7 @@ CFN_EXPORT const CFStringRef kCFNetworkProxiesHTTPPort			__OSX_AVAILABLE_STARTIN
  *    Key for the host name associated with the HTTP proxy; value is a
  *    CFString which is the proxy host name.
  */
-CFN_EXPORT const CFStringRef kCFNetworkProxiesHTTPProxy			__OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFNetworkProxiesHTTPProxy			__OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_2_0);
 /*
  *  kCFNetworkProxiesProxyAutoConfigEnable
  *  
@@ -442,7 +442,7 @@ CFN_EXPORT const CFStringRef kCFNetworkProxiesHTTPProxy			__OSX_AVAILABLE_STARTI
  *    Key for the enabled status ProxyAutoConfig (PAC); value is a
  *    CFNumber.  ProxyAutoConfig is enabled if the key is present and has a non-zero value.
  */
-CFN_EXPORT const CFStringRef kCFNetworkProxiesProxyAutoConfigEnable	__OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFNetworkProxiesProxyAutoConfigEnable	__OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_2_0);
 /*
  *  kCFNetworkProxiesSOCKSProxy
  *  
@@ -450,7 +450,7 @@ CFN_EXPORT const CFStringRef kCFNetworkProxiesProxyAutoConfigEnable	__OSX_AVAILA
  *    Key for the url which indicates the location of the ProxyAutoConfig (PAC) file; value is a
  *    CFString which is url for the PAC file.
  */
-CFN_EXPORT const CFStringRef kCFNetworkProxiesProxyAutoConfigURLString	__OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFNetworkProxiesProxyAutoConfigURLString	__OSX_AVAILABLE_STARTING(__MAC_NA,__IPHONE_2_0);
 #endif // TARGET_OS_MAC
 
 #ifdef __cplusplus

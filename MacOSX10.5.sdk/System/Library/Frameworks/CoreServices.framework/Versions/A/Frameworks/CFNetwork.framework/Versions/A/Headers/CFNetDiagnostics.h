@@ -120,7 +120,7 @@ CFN_EXPORT CFNetDiagnosticRef
 CFNetDiagnosticCreateWithStreams(
   CFAllocatorRef     alloc,
   CFReadStreamRef    readStream,
-  CFWriteStreamRef   writeStream)                             __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_1_2);
+  CFWriteStreamRef   writeStream)                             __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0);
 
 
 /*
@@ -149,7 +149,7 @@ CFNetDiagnosticCreateWithStreams(
 CFN_EXPORT CFNetDiagnosticRef 
 CFNetDiagnosticCreateWithURL(
   CFAllocatorRef   alloc,
-  CFURLRef         url)                                       __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_1_2);
+  CFURLRef         url)                                       __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0);
 
 
 
@@ -180,7 +180,7 @@ CFNetDiagnosticCreateWithURL(
 CFN_EXPORT void 
 CFNetDiagnosticSetName(
   CFNetDiagnosticRef   details,
-  CFStringRef          name)                                  __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_1_2);
+  CFStringRef          name)                                  __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0);
 
 
 
@@ -208,7 +208,7 @@ CFNetDiagnosticSetName(
  *    Non-Carbon CFM:   not available
  */
 CFN_EXPORT CFNetDiagnosticStatus 
-CFNetDiagnosticDiagnoseProblemInteractively(CFNetDiagnosticRef details) __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_1_2);
+CFNetDiagnosticDiagnoseProblemInteractively(CFNetDiagnosticRef details) __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0);
 
 
 
@@ -244,7 +244,7 @@ CFNetDiagnosticDiagnoseProblemInteractively(CFNetDiagnosticRef details) __OSX_AV
 CFN_EXPORT CFNetDiagnosticStatus 
 CFNetDiagnosticCopyNetworkStatusPassively(
   CFNetDiagnosticRef   details,
-  CFStringRef *        description)                           __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_1_2);
+  CFStringRef *        description)                           __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0);
 
 
 

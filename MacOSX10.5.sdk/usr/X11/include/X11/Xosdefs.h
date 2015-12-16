@@ -135,6 +135,16 @@ in this Software without prior written authorization from The Open Group.
 
 #ifdef __APPLE__
 #define NULL_NOT_ZERO
+
+/* Defining any of these will sanitize the namespace to JUST want is defined by
+ * that particular standard.  If that happens, we don't get some expected
+ * prototypes, typedefs, etc (like fd_mask).  We can define _DARWIN_C_SOURCE to
+ * loosen our belts a tad.
+ */
+#if defined(_XOPEN_SOURCE) || defined(_POSIX_SOURCE) || defined(_POSIX_C_SOURCE)
+#define _DARWIN_C_SOURCE
+#endif
+
 #endif
 
 #ifdef __GNU__
@@ -156,7 +166,7 @@ in this Software without prior written authorization from The Open Group.
 #endif
 
 #if defined(__OpenBSD__) || defined(__NetBSD__) || defined(__FreeBSD__) \
-	|| defined(__Darwin__) || defined(__DragonFly__)
+	|| defined(__APPLE__) || defined(__DragonFly__)
 # ifndef CSRG_BASED
 #  define CSRG_BASED
 # endif

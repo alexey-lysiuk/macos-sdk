@@ -3,7 +3,7 @@
  
      Contains:   Keychain API's with Human Interfaces
  
-     Version:    SecurityHI-30817~412
+     Version:    SecurityHI-30817~522
  
      Copyright:  © 2000-2006 by Apple Computer, Inc., all rights reserved
  

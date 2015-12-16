@@ -49,7 +49,7 @@ extern "C" {
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFHTTPVersion1_0                           __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFHTTPVersion1_0                           __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_2_0);
 
 
 /*
@@ -63,7 +63,7 @@ CFN_EXPORT const CFStringRef kCFHTTPVersion1_0                           __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFHTTPVersion1_1                           __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFHTTPVersion1_1                           __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_2_0);
 
 
 /*
@@ -77,7 +77,7 @@ CFN_EXPORT const CFStringRef kCFHTTPVersion1_1                           __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFHTTPAuthenticationSchemeBasic            __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFHTTPAuthenticationSchemeBasic            __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_2_0);
 
 
 /*
@@ -91,7 +91,7 @@ CFN_EXPORT const CFStringRef kCFHTTPAuthenticationSchemeBasic            __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFHTTPAuthenticationSchemeDigest           __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFHTTPAuthenticationSchemeDigest           __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_2_0);
 
 /*
  *  kCFHTTPAuthenticationSchemeNTLM
@@ -104,7 +104,7 @@ CFN_EXPORT const CFStringRef kCFHTTPAuthenticationSchemeDigest           __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFHTTPAuthenticationSchemeNTLM             __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFHTTPAuthenticationSchemeNTLM             __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_2_0);
 
 /*
  *  kCFHTTPAuthenticationSchemeNegotiate
@@ -117,7 +117,7 @@ CFN_EXPORT const CFStringRef kCFHTTPAuthenticationSchemeNTLM             __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const CFStringRef kCFHTTPAuthenticationSchemeNegotiate        __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_1_2);
+CFN_EXPORT const CFStringRef kCFHTTPAuthenticationSchemeNegotiate        __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_2_0);
 
 
 /*
@@ -147,7 +147,7 @@ typedef struct __CFHTTPMessage*         CFHTTPMessageRef;
  *    Non-Carbon CFM:   not available
  */
 CFN_EXPORT CFTypeID 
-CFHTTPMessageGetTypeID(void)                                  __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_1_2);
+CFHTTPMessageGetTypeID(void)                                  __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_2_0);
 
 
 /*
@@ -194,7 +194,7 @@ CFHTTPMessageCreateRequest(
   CFAllocatorRef   alloc,
   CFStringRef      requestMethod,
   CFURLRef         url,
-  CFStringRef      httpVersion)                               __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_1_2);
+  CFStringRef      httpVersion)                               __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_2_0);
 
 
 /*
@@ -241,7 +241,7 @@ CFHTTPMessageCreateResponse(
   CFAllocatorRef   alloc,
   CFIndex          statusCode,
   CFStringRef      statusDescription,
-  CFStringRef      httpVersion)                               __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_1_2);
+  CFStringRef      httpVersion)                               __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_2_0);
 
 
 /*
@@ -279,7 +279,7 @@ CFHTTPMessageCreateResponse(
 CFN_EXPORT CFHTTPMessageRef 
 CFHTTPMessageCreateEmpty(
   CFAllocatorRef   alloc,
-  Boolean          isRequest)                                 __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_1_2);
+  Boolean          isRequest)                                 __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_2_0);
 
 
 /*
@@ -316,7 +316,7 @@ CFHTTPMessageCreateEmpty(
 CFN_EXPORT CFHTTPMessageRef 
 CFHTTPMessageCreateCopy(
   CFAllocatorRef     alloc,
-  CFHTTPMessageRef   message)                                 __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_1_2);
+  CFHTTPMessageRef   message)                                 __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_2_0);
 
 
 /*
@@ -345,7 +345,7 @@ CFHTTPMessageCreateCopy(
  *    Non-Carbon CFM:   not available
  */
 CFN_EXPORT Boolean 
-CFHTTPMessageIsRequest(CFHTTPMessageRef message)              __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_1_2);
+CFHTTPMessageIsRequest(CFHTTPMessageRef message)              __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_2_0);
 
 
 /*
@@ -373,7 +373,7 @@ CFHTTPMessageIsRequest(CFHTTPMessageRef message)              __OSX_AVAILABLE_ST
  *    Non-Carbon CFM:   not available
  */
 CFN_EXPORT CFStringRef 
-CFHTTPMessageCopyVersion(CFHTTPMessageRef message)            __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_1_2);
+CFHTTPMessageCopyVersion(CFHTTPMessageRef message)            __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_2_0);
 
 
 /*
@@ -401,7 +401,7 @@ CFHTTPMessageCopyVersion(CFHTTPMessageRef message)            __OSX_AVAILABLE_ST
  *    Non-Carbon CFM:   not available
  */
 CFN_EXPORT CFDataRef 
-CFHTTPMessageCopyBody(CFHTTPMessageRef message)               __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_1_2);
+CFHTTPMessageCopyBody(CFHTTPMessageRef message)               __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_2_0);
 
 
 /*
@@ -431,7 +431,7 @@ CFHTTPMessageCopyBody(CFHTTPMessageRef message)               __OSX_AVAILABLE_ST
 CFN_EXPORT void 
 CFHTTPMessageSetBody(
   CFHTTPMessageRef   message,
-  CFDataRef          bodyData)                                __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_1_2);
+  CFDataRef          bodyData)                                __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_2_0);
 
 
 /*
@@ -465,7 +465,7 @@ CFHTTPMessageSetBody(
 CFN_EXPORT CFStringRef 
 CFHTTPMessageCopyHeaderFieldValue(
   CFHTTPMessageRef   message,
-  CFStringRef        headerField)                             __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_1_2);
+  CFStringRef        headerField)                             __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_2_0);
 
 
 /*
@@ -493,7 +493,7 @@ CFHTTPMessageCopyHeaderFieldValue(
  *    Non-Carbon CFM:   not available
  */
 CFN_EXPORT CFDictionaryRef 
-CFHTTPMessageCopyAllHeaderFields(CFHTTPMessageRef message)    __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_1_2);
+CFHTTPMessageCopyAllHeaderFields(CFHTTPMessageRef message)    __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_2_0);
 
 
 /*
@@ -528,7 +528,7 @@ CFN_EXPORT void
 CFHTTPMessageSetHeaderFieldValue(
   CFHTTPMessageRef   message,
   CFStringRef        headerField,
-  CFStringRef        value)                                   __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_1_2);
+  CFStringRef        value)                                   __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_2_0);
 
 
 /*
@@ -567,7 +567,7 @@ CFN_EXPORT Boolean
 CFHTTPMessageAppendBytes(
   CFHTTPMessageRef   message,
   const UInt8 *      newBytes,
-  CFIndex            numBytes)                                __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_1_2);
+  CFIndex            numBytes)                                __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_2_0);
 
 
 /*
@@ -595,7 +595,7 @@ CFHTTPMessageAppendBytes(
  *    Non-Carbon CFM:   not available
  */
 CFN_EXPORT Boolean 
-CFHTTPMessageIsHeaderComplete(CFHTTPMessageRef message)       __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_1_2);
+CFHTTPMessageIsHeaderComplete(CFHTTPMessageRef message)       __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_2_0);
 
 
 /*
@@ -624,7 +624,7 @@ CFHTTPMessageIsHeaderComplete(CFHTTPMessageRef message)       __OSX_AVAILABLE_ST
  *    Non-Carbon CFM:   not available
  */
 CFN_EXPORT CFDataRef 
-CFHTTPMessageCopySerializedMessage(CFHTTPMessageRef request)  __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_1_2);
+CFHTTPMessageCopySerializedMessage(CFHTTPMessageRef request)  __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_2_0);
 
 
 /*********************/
@@ -655,7 +655,7 @@ CFHTTPMessageCopySerializedMessage(CFHTTPMessageRef request)  __OSX_AVAILABLE_ST
  *    Non-Carbon CFM:   not available
  */
 CFN_EXPORT CFURLRef 
-CFHTTPMessageCopyRequestURL(CFHTTPMessageRef request)         __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_1_2);
+CFHTTPMessageCopyRequestURL(CFHTTPMessageRef request)         __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_2_0);
 
 
 /*
@@ -682,7 +682,7 @@ CFHTTPMessageCopyRequestURL(CFHTTPMessageRef request)         __OSX_AVAILABLE_ST
  *    Non-Carbon CFM:   not available
  */
 CFN_EXPORT CFStringRef 
-CFHTTPMessageCopyRequestMethod(CFHTTPMessageRef request)      __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_1_2);
+CFHTTPMessageCopyRequestMethod(CFHTTPMessageRef request)      __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_2_0);
 
 
 /*
@@ -737,7 +737,7 @@ CFHTTPMessageAddAuthentication(
   CFStringRef        username,
   CFStringRef        password,
   CFStringRef        authenticationScheme,
-  Boolean            forProxy)                                __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_1_2);
+  Boolean            forProxy)                                __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_2_0);
 
 
 /**********************/
@@ -768,7 +768,7 @@ CFHTTPMessageAddAuthentication(
  *    Non-Carbon CFM:   not available
  */
 CFN_EXPORT CFIndex 
-CFHTTPMessageGetResponseStatusCode(CFHTTPMessageRef response) __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_1_2);
+CFHTTPMessageGetResponseStatusCode(CFHTTPMessageRef response) __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_2_0);
 
 
 /*
@@ -797,7 +797,7 @@ CFHTTPMessageGetResponseStatusCode(CFHTTPMessageRef response) __OSX_AVAILABLE_ST
  *    Non-Carbon CFM:   not available
  */
 CFN_EXPORT CFStringRef 
-CFHTTPMessageCopyResponseStatusLine(CFHTTPMessageRef response) __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_1_2);
+CFHTTPMessageCopyResponseStatusLine(CFHTTPMessageRef response) __OSX_AVAILABLE_STARTING(__MAC_10_1,__IPHONE_2_0);
 
 
 

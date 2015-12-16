@@ -84,7 +84,7 @@ typedef struct __CFNetServiceBrowser*   CFNetServiceBrowserRef;
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const SInt32 kCFStreamErrorDomainMach                         __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_1_2);
+CFN_EXPORT const SInt32 kCFStreamErrorDomainMach                         __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_2_0);
 #endif  /* defined(__MACH__) */
 
 /*
@@ -101,7 +101,7 @@ CFN_EXPORT const SInt32 kCFStreamErrorDomainMach                         __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const SInt32 kCFStreamErrorDomainNetServices                  __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_1_2);
+CFN_EXPORT const SInt32 kCFStreamErrorDomainNetServices                  __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_2_0);
 
 
 
@@ -350,7 +350,7 @@ typedef CALLBACK_API_C( void , CFNetServiceBrowserClientCallBack )(CFNetServiceB
  *    Non-Carbon CFM:   not available
  */
 CFN_EXPORT CFTypeID 
-CFNetServiceGetTypeID(void)                                   __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_1_2);
+CFNetServiceGetTypeID(void)                                   __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_2_0);
 
 
 /*
@@ -368,7 +368,7 @@ CFNetServiceGetTypeID(void)                                   __OSX_AVAILABLE_ST
  *    Non-Carbon CFM:   not available
  */
 CFN_EXPORT CFTypeID 
-CFNetServiceMonitorGetTypeID(void)                            __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_1_2);
+CFNetServiceMonitorGetTypeID(void)                            __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0);
 
 
 /*
@@ -386,7 +386,7 @@ CFNetServiceMonitorGetTypeID(void)                            __OSX_AVAILABLE_ST
  *    Non-Carbon CFM:   not available
  */
 CFN_EXPORT CFTypeID 
-CFNetServiceBrowserGetTypeID(void)                            __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_1_2);
+CFNetServiceBrowserGetTypeID(void)                            __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_2_0);
 
 
 
@@ -445,7 +445,7 @@ CFNetServiceCreate(
   CFStringRef      domain,
   CFStringRef      serviceType,
   CFStringRef      name,
-  SInt32           port)                                      __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_1_2);
+  SInt32           port)                                      __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_2_0);
 
 
 
@@ -483,7 +483,7 @@ CFNetServiceCreate(
 CFN_EXPORT CFNetServiceRef 
 CFNetServiceCreateCopy(
   CFAllocatorRef    alloc,
-  CFNetServiceRef   service)                                  __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_1_2);
+  CFNetServiceRef   service)                                  __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0);
 
 
 
@@ -514,7 +514,7 @@ CFNetServiceCreateCopy(
  *    Non-Carbon CFM:   not available
  */
 CFN_EXPORT CFStringRef 
-CFNetServiceGetDomain(CFNetServiceRef theService)             __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_1_2);
+CFNetServiceGetDomain(CFNetServiceRef theService)             __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_2_0);
 
 
 
@@ -545,7 +545,7 @@ CFNetServiceGetDomain(CFNetServiceRef theService)             __OSX_AVAILABLE_ST
  *    Non-Carbon CFM:   not available
  */
 CFN_EXPORT CFStringRef 
-CFNetServiceGetType(CFNetServiceRef theService)               __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_1_2);
+CFNetServiceGetType(CFNetServiceRef theService)               __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_2_0);
 
 
 
@@ -576,7 +576,7 @@ CFNetServiceGetType(CFNetServiceRef theService)               __OSX_AVAILABLE_ST
  *    Non-Carbon CFM:   not available
  */
 CFN_EXPORT CFStringRef 
-CFNetServiceGetName(CFNetServiceRef theService)               __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_1_2);
+CFNetServiceGetName(CFNetServiceRef theService)               __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_2_0);
 
 
 
@@ -626,7 +626,7 @@ CFN_EXPORT Boolean
 CFNetServiceRegisterWithOptions(
   CFNetServiceRef   theService,
   CFOptionFlags     options,
-  CFStreamError *   error)            /* can be NULL */       __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_1_2);
+  CFStreamError *   error)            /* can be NULL */       __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0);
 
 
 
@@ -675,7 +675,7 @@ CFN_EXPORT Boolean
 CFNetServiceResolveWithTimeout(
   CFNetServiceRef   theService,
   CFTimeInterval    timeout,
-  CFStreamError *   error)            /* can be NULL */       __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_1_2);
+  CFStreamError *   error)            /* can be NULL */       __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0);
 
 
 
@@ -699,7 +699,7 @@ CFNetServiceResolveWithTimeout(
  *    Non-Carbon CFM:   not available
  */
 CFN_EXPORT void 
-CFNetServiceCancel(CFNetServiceRef theService)                __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_1_2);
+CFNetServiceCancel(CFNetServiceRef theService)                __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_2_0);
 
 
 
@@ -732,7 +732,7 @@ CFNetServiceCancel(CFNetServiceRef theService)                __OSX_AVAILABLE_ST
  *    Non-Carbon CFM:   not available
  */
 CFN_EXPORT CFStringRef 
-CFNetServiceGetTargetHost(CFNetServiceRef theService)         __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_1_2);
+CFNetServiceGetTargetHost(CFNetServiceRef theService)         __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0);
 
 
 
@@ -762,7 +762,7 @@ CFNetServiceGetTargetHost(CFNetServiceRef theService)         __OSX_AVAILABLE_ST
  *    Non-Carbon CFM:   not available
  */
 CFN_EXPORT SInt32 
-CFNetServiceGetPortNumber(CFNetServiceRef theService)         __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_1_2);
+CFNetServiceGetPortNumber(CFNetServiceRef theService)         __OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_2_0);
 
 
 
@@ -796,7 +796,7 @@ CFNetServiceGetPortNumber(CFNetServiceRef theService)         __OSX_AVAILABLE_ST
  *    Non-Carbon CFM:   not available
  */
 CFN_EXPORT CFArrayRef 
-CFNetServiceGetAddressing(CFNetServiceRef theService)         __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_1_2);
+CFNetServiceGetAddressing(CFNetServiceRef theService)         __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_2_0);
 
 
 
@@ -830,7 +830,7 @@ CFNetServiceGetAddressing(CFNetServiceRef theService)         __OSX_AVAILABLE_ST
  *    Non-Carbon CFM:   not available
  */
 CFN_EXPORT CFDataRef 
-CFNetServiceGetTXTData(CFNetServiceRef theService)            __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_1_2);
+CFNetServiceGetTXTData(CFNetServiceRef theService)            __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0);
 
 
 
@@ -863,7 +863,7 @@ CFNetServiceGetTXTData(CFNetServiceRef theService)            __OSX_AVAILABLE_ST
 CFN_EXPORT Boolean 
 CFNetServiceSetTXTData(
   CFNetServiceRef   theService,
-  CFDataRef         txtRecord)                                __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_1_2);
+  CFDataRef         txtRecord)                                __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0);
 
 
 
@@ -902,7 +902,7 @@ CFNetServiceSetTXTData(
 CFN_EXPORT CFDictionaryRef 
 CFNetServiceCreateDictionaryWithTXTData(
   CFAllocatorRef   alloc,
-  CFDataRef        txtRecord)                                 __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_1_2);
+  CFDataRef        txtRecord)                                 __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0);
 
 
 
@@ -949,7 +949,7 @@ CFNetServiceCreateDictionaryWithTXTData(
 CFN_EXPORT CFDataRef 
 CFNetServiceCreateTXTDataWithDictionary(
   CFAllocatorRef    alloc,
-  CFDictionaryRef   keyValuePairs)                            __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_1_2);
+  CFDictionaryRef   keyValuePairs)                            __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0);
 
 
 
@@ -1000,7 +1000,7 @@ CFN_EXPORT Boolean
 CFNetServiceSetClient(
   CFNetServiceRef              theService,
   CFNetServiceClientCallBack   clientCB,            /* can be NULL */
-  CFNetServiceClientContext *  clientContext)       /* can be NULL */ __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_1_2);
+  CFNetServiceClientContext *  clientContext)       /* can be NULL */ __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_2_0);
 
 
 
@@ -1035,7 +1035,7 @@ CFN_EXPORT void
 CFNetServiceScheduleWithRunLoop(
   CFNetServiceRef   theService,
   CFRunLoopRef      runLoop,
-  CFStringRef       runLoopMode)                              __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_1_2);
+  CFStringRef       runLoopMode)                              __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_2_0);
 
 
 
@@ -1071,7 +1071,7 @@ CFN_EXPORT void
 CFNetServiceUnscheduleFromRunLoop(
   CFNetServiceRef   theService,
   CFRunLoopRef      runLoop,
-  CFStringRef       runLoopMode)                              __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_1_2);
+  CFStringRef       runLoopMode)                              __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_2_0);
 
 
 
@@ -1117,7 +1117,7 @@ CFNetServiceMonitorCreate(
   CFAllocatorRef                      alloc,
   CFNetServiceRef                     theService,
   CFNetServiceMonitorClientCallBack   clientCB,
-  CFNetServiceClientContext *         clientContext)          __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_1_2);
+  CFNetServiceClientContext *         clientContext)          __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0);
 
 
 
@@ -1143,7 +1143,7 @@ CFNetServiceMonitorCreate(
  *    Non-Carbon CFM:   not available
  */
 CFN_EXPORT void 
-CFNetServiceMonitorInvalidate(CFNetServiceMonitorRef monitor) __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_1_2);
+CFNetServiceMonitorInvalidate(CFNetServiceMonitorRef monitor) __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0);
 
 
 
@@ -1189,7 +1189,7 @@ CFN_EXPORT Boolean
 CFNetServiceMonitorStart(
   CFNetServiceMonitorRef    monitor,
   CFNetServiceMonitorType   recordType,
-  CFStreamError *           error)            /* can be NULL */ __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_1_2);
+  CFStreamError *           error)            /* can be NULL */ __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0);
 
 
 
@@ -1223,7 +1223,7 @@ CFNetServiceMonitorStart(
 CFN_EXPORT void 
 CFNetServiceMonitorStop(
   CFNetServiceMonitorRef   monitor,
-  CFStreamError *          error)         /* can be NULL */   __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_1_2);
+  CFStreamError *          error)         /* can be NULL */   __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0);
 
 
 
@@ -1261,7 +1261,7 @@ CFN_EXPORT void
 CFNetServiceMonitorScheduleWithRunLoop(
   CFNetServiceMonitorRef   monitor,
   CFRunLoopRef             runLoop,
-  CFStringRef              runLoopMode)                       __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_1_2);
+  CFStringRef              runLoopMode)                       __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0);
 
 
 
@@ -1296,7 +1296,7 @@ CFN_EXPORT void
 CFNetServiceMonitorUnscheduleFromRunLoop(
   CFNetServiceMonitorRef   monitor,
   CFRunLoopRef             runLoop,
-  CFStringRef              runLoopMode)                       __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_1_2);
+  CFStringRef              runLoopMode)                       __OSX_AVAILABLE_STARTING(__MAC_10_4,__IPHONE_2_0);
 
 
 
@@ -1337,7 +1337,7 @@ CFN_EXPORT CFNetServiceBrowserRef
 CFNetServiceBrowserCreate(
   CFAllocatorRef                      alloc,
   CFNetServiceBrowserClientCallBack   clientCB,
-  CFNetServiceClientContext *         clientContext)          __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_1_2);
+  CFNetServiceClientContext *         clientContext)          __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_2_0);
 
 
 
@@ -1360,7 +1360,7 @@ CFNetServiceBrowserCreate(
  *    Non-Carbon CFM:   not available
  */
 CFN_EXPORT void 
-CFNetServiceBrowserInvalidate(CFNetServiceBrowserRef browser) __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_1_2);
+CFNetServiceBrowserInvalidate(CFNetServiceBrowserRef browser) __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_2_0);
 
 
 
@@ -1408,7 +1408,7 @@ CFN_EXPORT Boolean
 CFNetServiceBrowserSearchForDomains(
   CFNetServiceBrowserRef   browser,
   Boolean                  registrationDomains,
-  CFStreamError *          error)                     /* can be NULL */ __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_1_2);
+  CFStreamError *          error)                     /* can be NULL */ __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_2_0);
 
 
 
@@ -1459,7 +1459,7 @@ CFNetServiceBrowserSearchForServices(
   CFNetServiceBrowserRef   browser,
   CFStringRef              domain,
   CFStringRef              serviceType,
-  CFStreamError *          error)             /* can be NULL */ __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_1_2);
+  CFStreamError *          error)             /* can be NULL */ __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_2_0);
 
 
 
@@ -1495,7 +1495,7 @@ CFNetServiceBrowserSearchForServices(
 CFN_EXPORT void 
 CFNetServiceBrowserStopSearch(
   CFNetServiceBrowserRef   browser,
-  CFStreamError *          error)         /* can be NULL */   __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_1_2);
+  CFStreamError *          error)         /* can be NULL */   __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_2_0);
 
 
 
@@ -1533,7 +1533,7 @@ CFN_EXPORT void
 CFNetServiceBrowserScheduleWithRunLoop(
   CFNetServiceBrowserRef   browser,
   CFRunLoopRef             runLoop,
-  CFStringRef              runLoopMode)                       __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_1_2);
+  CFStringRef              runLoopMode)                       __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_2_0);
 
 
 
@@ -1568,7 +1568,7 @@ CFN_EXPORT void
 CFNetServiceBrowserUnscheduleFromRunLoop(
   CFNetServiceBrowserRef   browser,
   CFRunLoopRef             runLoop,
-  CFStringRef              runLoopMode)                       __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_1_2);
+  CFStringRef              runLoopMode)                       __OSX_AVAILABLE_STARTING(__MAC_10_2,__IPHONE_2_0);
 
 
 #ifdef __MACH__

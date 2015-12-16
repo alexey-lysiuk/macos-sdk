@@ -19,13 +19,19 @@
 
 #include <CoreVideo/CVReturn.h>
 #include <CoreVideo/CVBase.h>
+#if COREVIDEO_SUPPORTS_DISPLAYLINK
 #include <CoreVideo/CVHostTime.h>
 #include <CoreVideo/CVDisplayLink.h>
+#endif
 #include <CoreVideo/CVBuffer.h>
 #include <CoreVideo/CVPixelBuffer.h>
 #include <CoreVideo/CVPixelBufferPool.h>
+
+#if COREVIDEO_SUPPORTS_OPENGL
 #include <CoreVideo/CVOpenGLBuffer.h>
 #include <CoreVideo/CVOpenGLBufferPool.h>
 #include <CoreVideo/CVOpenGLTexture.h>
 #include <CoreVideo/CVOpenGLTextureCache.h>
+#endif // COREVIDEO_SUPPORTS_OPENGL
+
 #include <CoreVideo/CVPixelFormatDescription.h>

@@ -64,7 +64,7 @@ typedef struct __CFHost*                CFHostRef;
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const SInt32 kCFStreamErrorDomainNetDB                        __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_1_2);
+CFN_EXPORT const SInt32 kCFStreamErrorDomainNetDB                        __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0);
 
 
 /*
@@ -78,7 +78,7 @@ CFN_EXPORT const SInt32 kCFStreamErrorDomainNetDB                        __OSX_A
  *    CarbonLib:        not available
  *    Non-Carbon CFM:   not available
  */
-CFN_EXPORT const SInt32 kCFStreamErrorDomainSystemConfiguration          __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_1_2);
+CFN_EXPORT const SInt32 kCFStreamErrorDomainSystemConfiguration          __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0);
 
 
 
@@ -197,7 +197,7 @@ typedef CALLBACK_API_C( void , CFHostClientCallBack )(CFHostRef theHost, CFHostI
  *    Non-Carbon CFM:   not available
  */
 CFN_EXPORT CFTypeID 
-CFHostGetTypeID(void)                                         __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_1_2);
+CFHostGetTypeID(void)                                         __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0);
 
 
 /*
@@ -233,7 +233,7 @@ CFHostGetTypeID(void)                                         __OSX_AVAILABLE_ST
 CFN_EXPORT CFHostRef 
 CFHostCreateWithName(
   CFAllocatorRef   allocator,
-  CFStringRef      hostname)                                  __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_1_2);
+  CFStringRef      hostname)                                  __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0);
 
 
 /*
@@ -269,7 +269,7 @@ CFHostCreateWithName(
 CFN_EXPORT CFHostRef 
 CFHostCreateWithAddress(
   CFAllocatorRef   allocator,
-  CFDataRef        addr)                                      __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_1_2);
+  CFDataRef        addr)                                      __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0);
 
 
 /*
@@ -306,7 +306,7 @@ CFHostCreateWithAddress(
 CFN_EXPORT CFHostRef 
 CFHostCreateCopy(
   CFAllocatorRef   alloc,
-  CFHostRef        host)                                      __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_1_2);
+  CFHostRef        host)                                      __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0);
 
 
 /*
@@ -351,7 +351,7 @@ CFN_EXPORT Boolean
 CFHostStartInfoResolution(
   CFHostRef        theHost,
   CFHostInfoType   info,
-  CFStreamError *  error)         /* can be NULL */           __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_1_2);
+  CFStreamError *  error)         /* can be NULL */           __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0);
 
 
 /*
@@ -390,7 +390,7 @@ CFHostStartInfoResolution(
 CFN_EXPORT CFArrayRef 
 CFHostGetAddressing(
   CFHostRef   theHost,
-  Boolean *   hasBeenResolved)       /* can be NULL */        __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_1_2);
+  Boolean *   hasBeenResolved)       /* can be NULL */        __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0);
 
 
 /*
@@ -428,7 +428,7 @@ CFHostGetAddressing(
 CFN_EXPORT CFArrayRef 
 CFHostGetNames(
   CFHostRef   theHost,
-  Boolean *   hasBeenResolved)       /* can be NULL */        __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_1_2);
+  Boolean *   hasBeenResolved)       /* can be NULL */        __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0);
 
 
 /*
@@ -470,7 +470,7 @@ CFHostGetNames(
 CFN_EXPORT CFDataRef 
 CFHostGetReachability(
   CFHostRef   theHost,
-  Boolean *   hasBeenResolved)       /* can be NULL */        __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_1_2);
+  Boolean *   hasBeenResolved)       /* can be NULL */        __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0);
 
 
 /*
@@ -501,7 +501,7 @@ CFHostGetReachability(
 CFN_EXPORT void 
 CFHostCancelInfoResolution(
   CFHostRef        theHost,
-  CFHostInfoType   info)                                      __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_1_2);
+  CFHostInfoType   info)                                      __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0);
 
 
 /*
@@ -546,7 +546,7 @@ CFN_EXPORT Boolean
 CFHostSetClient(
   CFHostRef              theHost,
   CFHostClientCallBack   clientCB,            /* can be NULL */
-  CFHostClientContext *  clientContext)       /* can be NULL */ __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_1_2);
+  CFHostClientContext *  clientContext)       /* can be NULL */ __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0);
 
 
 /*
@@ -585,7 +585,7 @@ CFN_EXPORT void
 CFHostScheduleWithRunLoop(
   CFHostRef      theHost,
   CFRunLoopRef   runLoop,
-  CFStringRef    runLoopMode)                                 __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_1_2);
+  CFStringRef    runLoopMode)                                 __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0);
 
 
 /*
@@ -624,7 +624,7 @@ CFN_EXPORT void
 CFHostUnscheduleFromRunLoop(
   CFHostRef      theHost,
   CFRunLoopRef   runLoop,
-  CFStringRef    runLoopMode)                                 __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_1_2);
+  CFStringRef    runLoopMode)                                 __OSX_AVAILABLE_STARTING(__MAC_10_3,__IPHONE_2_0);
 
 
 

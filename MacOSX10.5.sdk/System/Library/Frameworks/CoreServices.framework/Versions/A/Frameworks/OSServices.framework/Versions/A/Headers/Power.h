@@ -3,7 +3,7 @@
  
      Contains:   Power Manager Interfaces.
  
-     Version:    OSServices-208~138
+     Version:    OSServices-208~152
  
      Copyright:  © 1990-2006 by Apple Computer, Inc.  All rights reserved
  
