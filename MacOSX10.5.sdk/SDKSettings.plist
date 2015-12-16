@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CustomProperties</key>
+	<dict>
+		<key>KERNEL_EXTENSION_HEADER_SEARCH_PATHS</key>
+		<string>$(KERNEL_FRAMEWORK)/PrivateHeaders $(KERNEL_FRAMEWORK_HEADERS)</string>
+	</dict>
+	<key>DefaultProperties</key>
+	<dict>
+		<key>MACOSX_DEPLOYMENT_TARGET</key>
+		<string>10.5</string>
+	</dict>
+	<key>MaximumDeploymentTarget</key>
+	<string>10.5</string>
+	<key>MinimumSupportedToolsVersion</key>
+	<string>3.0</string>
+	<key>isBaseSDK</key>
+	<string>YES</string>
+	<key>name</key>
+	<string>Mac OS X 10.5</string>
+	<key>supportsZeroLink</key>
+	<string>NO</string>
+</dict>
+</plist>
