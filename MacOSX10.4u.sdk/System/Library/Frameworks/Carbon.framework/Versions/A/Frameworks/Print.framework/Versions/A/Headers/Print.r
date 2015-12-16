@@ -3,7 +3,7 @@
  
      Contains:   Printing functions with UI
  
-     Version:    Printing-192.4~592
+     Version:    Printing-192.4~393
  
      Copyright:  © 2000-2006 by Apple Computer, Inc., all rights reserved.
  

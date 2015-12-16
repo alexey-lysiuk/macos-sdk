@@ -3,7 +3,7 @@
  
      Contains:   Collection Manager Interfaces
  
-     Version:    CarbonCore-682.26~1
+     Version:    CarbonCore-682.18~1
  
      Copyright:  © 1989-2006 by Apple Computer, Inc., all rights reserved
  

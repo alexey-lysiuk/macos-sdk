@@ -3,9 +3,9 @@
  
      Contains:   Basic Algebraic Operations for AltiVec
  
-     Version:    vecLib-192.17
+     Version:    vecLib-192.15~2
  
-     Copyright:  © 1999-2007 by Apple Computer, Inc., all rights reserved.
+     Copyright:  © 1999-2006 by Apple Computer, Inc., all rights reserved.
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -142,7 +142,6 @@ Following is a short description of functions in this section:
       Rotate2      Rotate by two factors( only apply to 64 bit operation )     
                                                                                  
 */
-
 
 /*
  *  vU8Divide()

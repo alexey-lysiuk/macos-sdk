@@ -64,6 +64,7 @@ typedef WepNetwork *WepNetworkPtr;
 #endif
 #endif
 
+#define DEFAULT_SCAN_TIME		3	// seconds
 #define AUTH_TIMEOUT			15	// seconds
 
 /*! @enum LinkSpeed.
@@ -95,12 +96,6 @@ enum IO80211SystemPowerState
 };
 typedef enum IO80211SystemPowerState IO80211SystemPowerState;
 
-enum IO80211FeatureCode
-{
-	kIO80211Feature80211n = 1,
-};
-typedef enum IO80211FeatureCode IO80211FeatureCode;
-
 #define IO80211_LOG( _interface, _level, _msg, ... )	do{ if( _interface && ( _interface->debugFlags() & _level ) ) IOLog( _msg, ##__VA_ARGS__ ); }while(0)
 
 class IO80211Interface;
@@ -117,7 +112,9 @@ class IO80211Controller : public IOEthernetController
 
 	#ifdef IO80211_LEGACY_COMPAT
 	private:
+		struct apple80211_key			_lastAssocKey;
 		struct apple80211_assoc_data	_lastAssocData;
+		UInt8							_mcastCipher;
 		bool							_interferenceRobustness;
 		IO80211Scanner					*_scanner;
 		WepNetwork						_lastLegacyAssocInfo;
@@ -127,9 +124,12 @@ class IO80211Controller : public IOEthernetController
 						OSDictionary * properties, IOUserClient ** handler );
 		IOReturn queueCommand( UInt8 commandCode, void *arguments, void *returnValue );
 		static IOReturn execCommand( OSObject * obj, void *field0, void *field1, void *field2, void *field3 );
+
+		IOReturn getLastAssocKey(struct apple80211_key* key, UInt8* mcastCipher);
+		IOReturn setLastAssocKey(struct apple80211_key* key, UInt8 mcastCipher);
 		
-		SInt32 getLastAssocData( struct apple80211_assoc_data * ad);
-		SInt32 setLastAssocData( struct apple80211_assoc_data * ad);
+		SInt32 getLastAssocData( struct apple80211_assoc_data * ad );
+		SInt32 setLastAssocData( struct apple80211_assoc_data * ad );
 
 		IOReturn getLastLegacyAssocInfo(WepNetworkPtr netPtr );
 		IOReturn setLastLegacyAssocInfo(WepNetworkPtr netPtr );
@@ -228,12 +228,20 @@ public:
 		*/
 	virtual bool configureInterface(IONetworkInterface * netIf);
 	
-		/*! @function registerWithPolicyMaker
+	/*! @function registerWithPolicyMaker
 		@abstract ???.
 		@param policyMaker ???.
 		@result Returns ???. 
 		*/ 
     virtual IOReturn			registerWithPolicyMaker(IOService *policyMaker);
+	
+	/*! @function scanTimeForRequest
+		@abstract ???.
+		@param policyMaker ???.
+		@result Returns ???. 
+		*/ 
+	virtual UInt32				scanTimeForRequest( IO80211Interface * interface, 
+													struct apple80211_scan_data * sd ) { return DEFAULT_SCAN_TIME; }
 	
 	/*! @function inputMonitorPacket
 		@abstract ???.
@@ -704,10 +712,6 @@ public:
 	
 	UInt32 radioCountForInterface( IO80211Interface * interface );
 
-	virtual SInt32 enableFeature( IO80211FeatureCode feature, void * refcon ) { return EOPNOTSUPP; }
-	
-	SInt32 doFeatureCheck();
-
 protected:
 	
 		/*! @function powerDownHandler
@@ -757,6 +761,7 @@ private:
 	IOService	*	_provider;
 	
 	bool _ifAttachPending;
+	
 
 		// Virtual function padding
 	OSMetaClassDeclareReservedUnused( IO80211Controller,  0);

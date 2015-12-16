@@ -3,7 +3,7 @@
  
      Contains:   Master include for ApplicationServices public framework
  
-     Version:    ApplicationServices-22~2319
+     Version:    ApplicationServices-22~1974
  
      Copyright:  © 2000-2006 by Apple Computer, Inc., all rights reserved.
  

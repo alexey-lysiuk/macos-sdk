@@ -3,7 +3,7 @@
  
      Contains:   Master include for LangAnalysis private framework
  
-     Version:    LanguageAnalysis-164.2.17~316
+     Version:    LanguageAnalysis-164.2.17~55
  
      Copyright:  © 1999-2006 by Apple Computer, Inc., all rights reserved.
  

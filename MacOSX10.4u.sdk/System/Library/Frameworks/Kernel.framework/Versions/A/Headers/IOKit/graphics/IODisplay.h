@@ -208,7 +208,7 @@ protected:
     UInt32	fCurrentPowerState;
     SInt32	fMinBrightness;
     SInt32	fMaxBrightness;
-    UInt16	fMaxBrightnessLevel[kIODisplayNumPowerStates];
+    UInt8	fMaxBrightnessLevel[kIODisplayNumPowerStates];
 
 public:
     virtual IOService * probe( IOService *, SInt32 * );

@@ -3,9 +3,9 @@
  
      Contains:   QuickTime Interfaces.
  
-     Version:    QuickTime 7.2.1
+     Version:    QuickTime 7.1.3
  
-     Copyright:  © 1990-2006 by Apple Inc., all rights reserved
+     Copyright:  © 1990-2006 by Apple Computer, Inc., all rights reserved
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -42,10 +42,6 @@ extern "C" {
 #endif
 
 #pragma pack(push, 2)
-
-/* QuickTime is not available to 64-bit clients */
-
-#if !__LP64__
 
 /*
    The following GX types were previously in GXTypes.h, but that header
@@ -2071,15 +2067,12 @@ ImageCodecDITLValidateInput(
  *    bytesPerChunk:
  *      Points to a variable to receive the preferred maximum size in
  *      bytes of each chunk of image data. It is not safe to pass NULL
- *      for this parameter. The codec may indicate that it has no
- *      preference regarding chunk sizing by setting the variable to 0.
+ *      for this parameter.
  *    
  *    alignment:
  *      Points to a variable to receive the preferred boundary for
  *      chunk alignment in bytes, e.g. 512. It is not safe to pass NULL
- *      for this parameter. The codec may indicate that it has no
- *      preference regarding chunk alignment by setting the variable to
- *      0.
+ *      for this parameter.
  *  
  *  Availability:
  *    Mac OS X:         in version 10.4 (or QuickTime 7.0) and later in QuickTime.framework
@@ -3527,10 +3520,6 @@ enum {
     kCurveGetAtomDataFromVectorStreamSelect    = 0x010D
 };
 /* UPP call backs */
-
-#endif // !__LP64__
-
-
 
 #pragma pack(pop)
 

@@ -3,9 +3,9 @@
  
      Contains:   AltiVec DSP Interfaces
  
-     Version:    vecLib-192.17
+     Version:    vecLib-192.15~2
  
-     Copyright:  © 2000-2007 by Apple Computer, Inc., all rights reserved.
+     Copyright:  © 2000-2006 by Apple Computer, Inc., all rights reserved.
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -40,16 +40,6 @@ extern "C" {
 #endif
 
 #pragma options align=power
-
-
-/*	These symbols describe the vecLib version associated with this header.
-
-	vDSP_Version0 is a major version number.
-	vDSP_Version1 is a minor version number.
-*/
-#define	vDSP_Version0	192
-#define	vDSP_Version1	17
-
 
 typedef unsigned long                   vDSP_Length;
 /*    vDSP_Length is for numbers of elements in arrays and indices of
@@ -653,10 +643,10 @@ vDSP_fft2d_ziptD(
 
 /*  Out-of-place two-dimensional complex Discrete Fourier Transform routines.
 
-    fft2d_zop   Single-precision without temporary memory.
-    fft2d_zopt  Single-precision with temporary memory.
-    fft2d_zopD  Double-precision without temporary memory.
-    fft2d_zoptD Double-precision with temporary memory.
+    fft2d_zip   Single-precision without temporary memory.
+    fft2d_zipt  Single-precision with temporary memory.
+    fft2d_zipD  Double-precision without temporary memory.
+    fft2d_ziptD Double-precision with temporary memory.
 */
 /*
  *  vDSP_fft2d_zop()

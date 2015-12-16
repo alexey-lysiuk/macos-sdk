@@ -3,7 +3,7 @@
  
      Contains:   Speech Interfaces.
  
-     Version:    SpeechSynthesis-3.5.19~278
+     Version:    SpeechSynthesis-3.5.19~133
  
      Copyright:  © 1989-2006 by Apple Computer, Inc., all rights reserved.
  

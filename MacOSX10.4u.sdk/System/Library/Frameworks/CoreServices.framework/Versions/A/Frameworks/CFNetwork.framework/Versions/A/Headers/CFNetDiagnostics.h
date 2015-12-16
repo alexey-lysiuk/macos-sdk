@@ -4,7 +4,7 @@
      Contains:   CFNetDiagnostics interface
  
      Version:    Technology: 1.0
-                 Release:    CFNetwork-129.20~93
+                 Release:    CFNetwork-129.20~17
  
      Copyright:  © 2004-2006 by Apple Computer, Inc., all rights reserved
  

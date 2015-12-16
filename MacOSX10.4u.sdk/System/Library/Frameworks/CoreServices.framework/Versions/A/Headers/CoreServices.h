@@ -3,9 +3,9 @@
  
      Contains:   Master include for CoreServices (non-UI toolbox)
  
-     Version:    CoreServices-17~2493
+     Version:    CoreServices-17~1800
  
-     Copyright:  © 1999-2006 by Apple Computer, Inc., all rights reserved.
+     Copyright:  © 1999-2005 by Apple Computer, Inc., all rights reserved.
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -16,6 +16,9 @@
 #ifndef __CORESERVICES__
 #define __CORESERVICES__
 
+#if __ppc64__
+    #error 64-bit not supported
+#endif
 
 #ifndef __CARBONCORE__
 #include <CarbonCore/CarbonCore.h>

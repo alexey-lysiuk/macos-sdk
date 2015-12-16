@@ -62,8 +62,7 @@ enum {
     kUSBHubPortSuspendChangeFeature     = 18,
     kUSBHubPortOverCurrentChangeFeature = 19,
     kUSBHubPortResetChangeFeature       = 20,
-    kUSBHubPortTestFeature				= 21,
-	kUSBHubPortIndicatorFeature			= 22
+    kUSBHubPortTestFeature		= 21
 };
 
     /*!
@@ -107,34 +106,8 @@ enum {
     kNoPowerSwitchingBit    = (1 << 1),
     kCompoundDeviceBit      = (1 << 2),
     kPerPortOverCurrentBit  = (1 << 3),
-    kNoOverCurrentBit       = (1 << 4),
-	
-	kHubPortIndicatorBit	= 7,
-	kHubPortIndicatorMask	= 0x0080
+    kNoOverCurrentBit       = (1 << 4)
 };
-
-/*!
-@enum PowerSwitching
- @discussion 
- */
-enum {
-	kHubSupportsGangPower	= 0,
-	kHubSupportsIndividualPortPower = 1,
-	kHubPortSetPowerOff		= 0,
-	kHubPortSetPowerOn		= 1
-};
-
-/*!
-@enum PortIndicatorSelectors
- @discussion 
- */
-enum {
-	kHubPortIndicatorAutomatic	= 0,
-	kHubPortIndicatorAmber,
-	kHubPortIndicatorGreen,
-	kHubPortIndicatorOff
-};
-
 
 /*!
 @enum Hub Device Requests
@@ -222,9 +195,9 @@ struct IOUSBHubPortClearTTParam {
     UInt32	 options;
 #if 0
     UInt8 	 deviceAddress;  <<0
-	UInt8	 endpointNum;    <<8
-	UInt8 	 endpointType;	 <<16 // As split transaction. 00 Control, 10 Bulk
-	UInt8 	 IN;		 <<24 // Direction, 1 = IN, 0 = OUT
+        UInt8	 endpointNum;    <<8
+            UInt8 	 endpointType;	 <<16 // As split transaction. 00 Control, 10 Bulk
+                UInt8 	 IN;		 <<24 // Direction, 1 = IN, 0 = OUT
 #endif
 };
 

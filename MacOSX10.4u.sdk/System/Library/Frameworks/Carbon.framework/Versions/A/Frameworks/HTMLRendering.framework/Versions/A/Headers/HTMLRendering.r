@@ -3,7 +3,7 @@
  
      Contains:   HTML Rendering Library Interfaces.
  
-     Version:    HTMLRenderingLib-66.1~1791
+     Version:    HTMLRenderingLib-66.1~1492
  
      Copyright:  © 1999-2006 by Apple Computer, Inc., all rights reserved
  

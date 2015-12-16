@@ -3,7 +3,7 @@
  
      Contains:   Types, constants, prototypes for Unicode Utilities (Unicode input and text utils)
  
-     Version:    CarbonCore-682.26~1
+     Version:    CarbonCore-682.18~1
  
      Copyright:  © 1997-2006 by Apple Computer, Inc., all rights reserved.
  

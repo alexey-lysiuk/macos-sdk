@@ -140,9 +140,6 @@ struct apple80211req
 #define APPLE80211_IOC_PHY_SUB_MODE				65	// req_type
 #define APPLE80211_IOC_MCS_INDEX_SET			66	// req_type
 
-#define APPLE80211_IOC_CACHE_THRESH_BCAST		67	// req_type
-#define	APPLE80211_IOC_CACHE_THRESH_DIRECT		68	// req_type
-
 #define APPLE80211_IOC_CARD_SPECIFIC			255	// req_type
 
 // Kernel interface
@@ -172,7 +169,7 @@ struct apple80211_bssid_data
 struct apple80211_capability_data
 {
 	u_int32_t	version;
-	u_int8_t	capabilities[APPLE80211_MAP_SIZE( APPLE80211_CAP_MAX + 1 )];
+	u_int32_t	capabilities[APPLE80211_CAP_MAX];
 };
 
 struct apple80211_state_data
@@ -327,7 +324,6 @@ struct apple80211_assoc_data
 	struct apple80211_key	ad_key;	
 	u_int16_t				ad_rsn_ie_len;
 	u_int8_t				ad_rsn_ie[ APPLE80211_MAX_RSN_IE_LEN ];
-	u_int32_t				ad_flags;		// apple80211_assoc_flags
 };
 
 struct apple80211_deauth_data

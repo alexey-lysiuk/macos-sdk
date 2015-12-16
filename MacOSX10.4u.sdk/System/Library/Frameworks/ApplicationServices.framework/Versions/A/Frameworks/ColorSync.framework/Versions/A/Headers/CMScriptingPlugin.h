@@ -3,7 +3,7 @@
  
      Contains:   ColorSync Scripting Plugin API
  
-     Version:    ColorSync-174.3.3~45
+     Version:    ColorSync-174.3.3~4
  
      Copyright:  © 1998-2006 by Apple Computer, Inc., all rights reserved.
  

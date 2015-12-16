@@ -3,9 +3,9 @@
  
      Contains:   QuickTime Interfaces.
  
-     Version:    QuickTime 7.2.1
+     Version:    QuickTime 7.1.3
  
-     Copyright:  © 1990-2006 by Apple Inc., all rights reserved
+     Copyright:  © 1990-2006 by Apple Computer, Inc., all rights reserved
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -31,7 +31,6 @@
     QuickTime 6.0 / Mac OS X 10.2  :  AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER
     QuickTime 6.4 / Mac OS X 10.3  :  AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER
     QuickTime 7.0 / Mac OS X 10.4  :  AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER
-    QuickTime 7.2 / Mac OS X 10.5  :  AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER
     
     As described in /usr/include/AvailabilityMacros.h, you can use the
     MAC_OS_X_VERSION_MIN_REQUIRED macro to weak-link to the APIs that may not be 
@@ -46,10 +45,6 @@
 
 #ifndef __COREAUDIO__
 #include <CoreAudio/CoreAudio.h>
-#endif
-
-#ifndef __AUDIOUNIT__
-#include <AudioUnit/AudioUnit.h>
 #endif
 
 #ifndef __IMAGECOMPRESSION__
@@ -74,14 +69,8 @@ extern "C" {
 
 #pragma pack(push, 2)
 
-/* QuickTime is not available to 64-bit clients */
-
-#if !__LP64__
-
 /* This sets the user defined exportset name i.e. fw_QuickTime_XManchego, available on 10.5 or later, and comment [4486184] */
 /* NOTE:  Requires Interfacer-35 or later */
-/* <exportset=fw_QuickTime_XManchego> */
-/* <exportset=fw_QuickTime_XMaguro> */
 
 /*  "kFix1" is defined in FixMath as "fixed1"  */
 /* error codes are in Errors.[haa] */
@@ -131,8 +120,7 @@ enum {
   URLDataHandlerSubType         = 'url ',
   AliasDataHandlerSubType       = 'alis',
   WiredActionHandlerType        = 'wire',
-  kQTQuartzComposerMediaType    = 'qtz ',
-  TimeCode64MediaType           = 'tc64'
+  kQTQuartzComposerMediaType    = 'qtz '
 };
 
 enum {
@@ -238,9 +226,8 @@ typedef long                            QTAtomID;
 typedef Float64                         QTFloatDouble;
 /* QTFloatSingle is the 32-bit IEEE-754 standard*/
 typedef Float32                         QTFloatSingle;
-/*************************
- * SoundDescription
- *************************/
+
+
 struct SoundDescription {
   long                descSize;               /* total size of SoundDescription including extra data */
   long                dataFormat;             /* sound format */
@@ -597,58 +584,6 @@ QTSoundDescriptionSetProperty(
   QTPropertyID              inPropID,
   ByteCount                 inPropValueSize,
   ConstQTPropertyValuePtr   inPropValueAddress)               AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-
-/* Sound Description Extensions*/
-
-/*
- *  AddSoundDescriptionExtension()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- */
-extern OSErr 
-AddSoundDescriptionExtension(
-  SoundDescriptionHandle   desc,
-  Handle                   extension,
-  OSType                   idType)                            AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
-
-
-/*
- *  GetSoundDescriptionExtension()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- */
-extern OSErr 
-GetSoundDescriptionExtension(
-  SoundDescriptionHandle   desc,
-  Handle *                 extension,
-  OSType                   idType)                            AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
-
-
-/*
- *  RemoveSoundDescriptionExtension()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- */
-extern OSErr 
-RemoveSoundDescriptionExtension(
-  SoundDescriptionHandle   desc,
-  OSType                   idType)                            AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
-
-
 
 
 
@@ -2731,7 +2666,6 @@ SetMovieVideoOutput(
   ComponentInstance   vout)                                   AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
-
 /*************************
  * Audio Context
  *************************/
@@ -2842,271 +2776,6 @@ QTAudioContextCreateForAudioDevice(
 
 
 
-/*************************
- * Audio Context Inserts
- *************************/
-/*
-   Theory of operations:
-    To register for a Movie Audio Context Insert during playback:
-        1) Get the movie's current audio context: GetMovieAudioContext()
-        2) Register the application insert: QTAudioContextRegisterInsert()
-    To unregister a Movie Audio Context Insert:
-        Call QTAudioContextRegisterInsert() with a NULL QTAudioContextInsertRegistryInfoRef
-           If the registry ptr is non-NULL but the processDataCallback is NULL, this has the same effect.
-    To register for a Track Audio Context Insert during playback:
-        Set the kQTAudioPropertyID_RegisterAudioContextInsert property on the track,
-            providing the same registry info structure that is used for the QTAudioContextRegisterInsert() call.
-    To unregister a Track Audio Context Insert:
-        Set the kQTAudioPropertyID_RegisterAudioContextInsert property on the track,
-            with a NULL processDataCallback
-*/
-
-
-/*
- *  AudioContextInsertProcessDataCallback
- *  
- *  Summary:
- *    A client-supplied function to be called during playback to get
- *    data from the audio insert.
- *  
- *  Discussion:
- *    This routine is called by the Audio Context for each buffer of
- *    audio data it renders. The client receives a source buffer list
- *    and a destination buffer list, and it is responsible for
- *    supplying output buffers to the destination buffer list. This
- *    routine is generally called on the IOProc at high thread
- *    priority, and so should not do memory allocation or release,
- *    acquire mutex resources, nor take very long to process.
- *  
- *  Parameters:
- *    
- *    inUserData:
- *      An opaque pointer to the client's data.
- *    
- *    ioRenderFlags:
- *      A field that contains render action flags (see AUComponent.h).
- *    
- *    inTimeStamp:
- *      An AudioTimeStamp that indicates the start time of the buffer
- *      to be processed. During normal playback or audio extraction,
- *      the timestamp mSampleTime is normalized to the movie time that
- *      this particular input sample buffer represents, expressed in
- *      the sample rate being processed. During reverse playback, the
- *      first Process Data call after Reset will contain a timestamp
- *      designating the movie time, but subsequent timestamps will
- *      advance forward instead of in reverse.
- *    
- *    inNumberFrames:
- *      A UInt32 that specifies the number of frames to be rendered.
- *    
- *    inInputData:
- *      An AudioBufferList used to pass input data to the insert.
- *    
- *    outOutputData:
- *      An AudioBufferList to receive the processed data that is
- *      produced by the insert. QuickTime sets buffer pointers in the
- *      list to NULL. The client must set the buffer pointers to refer
- *      to either its own allocated buffers or to be copies of the
- *      buffer pointers received in inInputData.
- */
-typedef CALLBACK_API( OSStatus , AudioContextInsertProcessDataCallback )(void *inUserData, AudioUnitRenderActionFlags *ioRenderFlags, const AudioTimeStamp *inTimeStamp, UInt32 inNumberFrames, AudioBufferList *inInputData, AudioBufferList *outOutputData);
-
-/*
- *  AudioContextInsertResetCallback
- *  
- *  Summary:
- *    A client-supplied function to be called to initialize and reset
- *    for processing data.
- *  
- *  Discussion:
- *    This routine is called by the Audio Context to initialize for
- *    rendering. The client is told the sample rate and the maximum
- *    number of frames it will be asked to process on any single
- *    ProcessData callback (ie, inNumberFrames will always be <=
- *    inMaxFrames). On return, the client reports its processing
- *    latency and tail times. This callback is invoked whenever the
- *    rendering chain is interrupted (eg, when playback jumps to a new
- *    point or changes direction). The client should call
- *    AudioUnitReset on any audio units in use, and should be prepared
- *    to respond to changes of sample rate or maxframes.
- *  
- *  Parameters:
- *    
- *    inUserData:
- *      An opaque pointer to the client's data.
- *    
- *    inSampleRate:
- *      A Float64 that will specifies the sample rate of the data to be
- *      processed.
- *    
- *    inMaxFrames:
- *      A UInt32 that specifies the maximum number of maximum frame
- *      count that will be processed in a single call.
- *    
- *    outLatency:
- *      A pointer to a Float64 that specifies the insert's render
- *      latency, in seconds. Latency data will be pulled and discarded
- *      by QuickTime after each reset.
- *    
- *    outTailTime:
- *      A pointer to a Float64 that specifies the insert's tail render
- *      time, in seconds.
- */
-typedef CALLBACK_API( OSStatus , AudioContextInsertResetCallback )(void *inUserData, Float64 inSampleRate, UInt32 inMaxFrames, Float64 *outLatency, Float64 *outTailTime);
-
-/*
- *  AudioContextInsertFinalizeCallback
- *  
- *  Summary:
- *    A client-supplied function to be called to release any resources
- *    in use by the insert.
- *  
- *  Discussion:
- *    This routine is called when the Audio Context is being disposed
- *    (ie, the MovieAudioContext has been reset or the movie was
- *    disposed). Once this callback returns, no more calls for this
- *    registered insert will be made.
- *  
- *  Parameters:
- *    
- *    inUserData:
- *      An opaque pointer to the client's data.
- */
-typedef CALLBACK_API( OSStatus , AudioContextInsertFinalizeCallback )(void * inUserData);
-
-/*
- *  QTAudioContextInsertRegistryInfo
- *  
- *  Summary:
- *    Parameters for registering an Audio Context insert
- *  
- *  Discussion:
- *    This is used with QTAudioContextRegisterInsert() and the Movie
- *    Audio Extraction
- *    kQTMovieAudioExtractionAudioPropertyID_RegisterMovieInsert
- *    property.
- */
-struct QTAudioContextInsertRegistryInfo {
-
-  /*
-   * client user data to be passed to all client-specified callbacks.
-   */
-  void *              userData;
-
-  /*
-   * The size of the input channel layout structure.
-   */
-  UInt32              inputChannelLayoutSize;
-
-  /*
-   * An AudioChannelLayout that describes the channel layout (and,
-   * implicitly, channel valence) of the data that the insert expects
-   * as input.
-   */
-  AudioChannelLayout * inputChannelLayout;
-
-  /*
-   * The size of the output channel layout structure.
-   */
-  UInt32              outputChannelLayoutSize;
-
-  /*
-   * An AudioChannelLayout that describes the channel layout (and,
-   * implicitly, channel valence) of the processed data that the insert
-   * will output.
-   */
-  AudioChannelLayout * outputChannelLayout;
-
-  /*
-   * Client-specified process data callback.
-   */
-  AudioContextInsertProcessDataCallback  processDataCallback;
-
-  /*
-   * Client-specified reset callback.
-   */
-  AudioContextInsertResetCallback  resetCallback;
-
-  /*
-   * Client-specified finalize callback (may be NULL). NOTE: Calls to
-   * the client callbacks are interlocked with respect to each other:
-   * there will never be simultaneous calls, with an identical
-   * inUserData, on different threads.
-   */
-  AudioContextInsertFinalizeCallback  finalizeCallback;
-};
-typedef struct QTAudioContextInsertRegistryInfo QTAudioContextInsertRegistryInfo;
-typedef QTAudioContextInsertRegistryInfo * QTAudioContextInsertRegistryInfoRef;
-/*
- *  QTAudioContextRegisterInsert()
- *  
- *  Summary:
- *    Register an audio insert with QuickTime
- *  
- *  Discussion:
- *    This routine is called to register an application to tap into the
- *    audio playback stream, via callbacks during audio rendering. The
- *    inAudioContext parameter refers to a Movie Audio Context that has
- *    not yet been associated with a movie. Once the application has
- *    successfully registered its insert, it may associate a movie with
- *    this Audio Context by calling SetMovieAudioContext(). The
- *    application must then be prepared to handle callbacks, which may
- *    be executed on different threads, until the Finalize callback
- *    with a matching userData parameter, is received. The application
- *    may supply a NULL Finalize callback if it has its own logic for
- *    detecting when it may release its insert resources.
- *  
- *  Parameters:
- *    
- *    inAudioContext:
- *      A QTAudioContextRef that specifies the Audio Context to tap
- *      into.
- *    
- *    inRegistryInfoSize:
- *      Size, in bytes, of the supplied
- *      QTAudioContextInsertRegistryInfo structure.
- *    
- *    inRegistryInfo:
- *      Pointer to a QTAudioContextInsertRegistryInfo structure
- *      containing setup parameters for the Audio Context insert and
- *      callbacks.
- *  
- *  Result:
- *    readErr Cannot register an insert on a movie containing protected
- *    data.
- *  
- *  Availability:
- *    Mac OS X:         in version 10.5 (or QuickTime 7.2) and later in QuickTime.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern OSStatus 
-QTAudioContextRegisterInsert(
-  QTAudioContextRef                     inAudioContext,
-  UInt32                                inRegistryInfoSize,
-  QTAudioContextInsertRegistryInfoRef   inRegistryInfo)       AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
-
-
-
-/* Track-level Audio Context Insert property (kQTPropertyClass_Audio)*/
-
-/*
- */
-enum {
-
-  /*
-   * kQTAudioPropertyID_RegisterAudioContextInsert: Value is
-   * QTAudioContextInsertRegistryInfoRef  (Get/Set) Set on a Track to
-   * register/unregister an Audio Context Insert for that specific
-   * track.    When this property is read back (QTGetTrackProperty) the
-   * channel layout pointers will will be NULL.  To unregister, supply
-   * a NULL processDataCallback (in which case the rest of the registry
-   * info will be ignored).
-   */
-  kQTAudioPropertyID_RegisterAudioContextInsert = 'regt' /* value is QTAudioContextInsertRegistryInfoRef. Get/Set.*/
-};
-
-
 /******************************************
  * Using Audio/Visual contexts with movies
  *****************************************/
@@ -3203,13 +2872,11 @@ enum {
   kQTMovieInstantiationPropertyID_IdleImportOK = 'imok',
   kQTMovieInstantiationPropertyID_DontAutoUpdateClock = 'aucl',
   kQTMovieInstantiationPropertyID_ResultDataLocationChanged = 'dlch', /* (result property)*/
-  kQTMovieInstantiationPropertyID_AllowMediaOptimization = 'amop',
   kQTPropertyClass_NewMovieProperty = 'mprp',
   kQTNewMoviePropertyID_DefaultDataRef = 'ddrf', /* DataReferenceRecord*/
   kQTNewMoviePropertyID_Active  = 'actv',
   kQTNewMoviePropertyID_DontInteractWithUser = 'intn'
 };
-
 
 /** Property value for kQTDataLocationPropertyID_MovieUserProc */
 struct QTNewMovieUserProcRecord {
@@ -3477,6 +3144,62 @@ extern void
 SetMoviePreferredRate(
   Movie   theMovie,
   Fixed   rate)                                               AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+
+
+/*
+ *  GetMoviePreferredVolume()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ */
+extern short 
+GetMoviePreferredVolume(Movie theMovie)                       AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+
+
+/*
+ *  SetMoviePreferredVolume()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ */
+extern void 
+SetMoviePreferredVolume(
+  Movie   theMovie,
+  short   volume)                                             AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+
+
+/*
+ *  GetMovieVolume()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ */
+extern short 
+GetMovieVolume(Movie theMovie)                                AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+
+
+/*
+ *  SetMovieVolume()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ */
+extern void 
+SetMovieVolume(
+  Movie   theMovie,
+  short   volume)                                             AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
 /*
@@ -4089,6 +3812,34 @@ SelectMovieAlternates(Movie theMovie)                         AVAILABLE_MAC_OS_X
 
 
 /*
+ *  GetTrackVolume()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ */
+extern short 
+GetTrackVolume(Track theTrack)                                AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+
+
+/*
+ *  SetTrackVolume()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ */
+extern void 
+SetTrackVolume(
+  Track   theTrack,
+  short   volume)                                             AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+
+
+/*
  *  GetTrackMatrix()
  *  
  *  Availability:
@@ -4177,6 +3928,35 @@ GetTrackDisplayMatrix(
   Track           theTrack,
   MatrixRecord *  matrix)                                     AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
+
+/*
+ *  GetTrackSoundLocalizationSettings()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ */
+extern OSErr 
+GetTrackSoundLocalizationSettings(
+  Track     theTrack,
+  Handle *  settings)                                         AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+
+
+/*
+ *  SetTrackSoundLocalizationSettings()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ */
+extern OSErr 
+SetTrackSoundLocalizationSettings(
+  Track    theTrack,
+  Handle   settings)                                          AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
 /*************************
@@ -6430,30 +6210,6 @@ QTGetMIMETypeInfo(
   OSType        infoSelector,
   void *        infoDataPtr,
   long *        infoDataSize)                                 AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
-
-
-
-/****************************
-* Movie importer properties
-*****************************/
-
-/*
- */
-enum {
-  kQTPropertyClass_MovieImporter = 'eat ',
-
-  /*
-   * kQTMovieImporterPropertyID_AllowMediaOptimization: Value is
-   * Boolean (get/set) Allow QuickTime importers to optimize the media
-   * representation during import. This may create media that is not
-   * fully compatible with applications that use older low-level APIs
-   * to access and manipulate media samples.  For instance, this
-   * property allows the MP3 importer to create VBR sample tables,
-   * which may be incompatible with applications that use
-   * GetMediaSample and SoundConverter to manually decode audio samples.
-   */
-  kQTMovieImporterPropertyID_AllowMediaOptimization = 'amop' /* Boolean*/
-};
 
 
 /*************************
@@ -9684,6 +9440,55 @@ QTDoTweenPtr(
   long        resultSize)                                     AVAILABLE_MAC_OS_X_VERSION_10_2_AND_LATER;
 
 
+/*****
+    Sound Description Manipulations
+*****/
+/*
+ *  AddSoundDescriptionExtension()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ */
+extern OSErr 
+AddSoundDescriptionExtension(
+  SoundDescriptionHandle   desc,
+  Handle                   extension,
+  OSType                   idType)                            AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+
+
+/*
+ *  GetSoundDescriptionExtension()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ */
+extern OSErr 
+GetSoundDescriptionExtension(
+  SoundDescriptionHandle   desc,
+  Handle *                 extension,
+  OSType                   idType)                            AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+
+
+/*
+ *  RemoveSoundDescriptionExtension()
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.0 and later in QuickTime.framework
+ *    CarbonLib:        in CarbonLib 1.0 and later
+ *    Non-Carbon CFM:   in QuickTimeLib 3.0 and later
+ *    Windows:          in qtmlClient.lib 3.0 and later
+ */
+extern OSErr 
+RemoveSoundDescriptionExtension(
+  SoundDescriptionHandle   desc,
+  OSType                   idType)                            AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
+
 
 /*****
     Preferences
@@ -10255,7 +10060,7 @@ QTGetEffectSpeed(
 
 
 
-/* Movie Audio/Sound APIs*/
+/* Movie Audio APIs*/
 
 /*
     SetMovieAudioGain:
@@ -10520,13 +10325,15 @@ enum {
   /*
    * kQTAudioPropertyID_RenderQuality:   Value is UInt32.  Get/Set
    * Movie audio render quality takes effect for movie playback. UInt32
-   * values vary from 0x00 (kQTAudioRenderQuality_Min) to 0x7F
-   * (kQTAudioRenderQuality_Max). We also define a special value
+   * values are as defined in <AudioUnit/AudioUnitProperties.h> and
+   * vary from 0x00 (kRenderQuality_Min) to 0x7F (kRenderQuality_Max).
+   * We also define a special value
    * (kQTAudioRenderQuality_PlaybackDefault) which resets the quality
    * settings of the playback processing chain to values that are
    * chosen to be an optimal balance of performance and quality.
    */
   kQTAudioPropertyID_RenderQuality = 'qual', /* value is UInt32.  Gettable/Settable.*/
+  kQTAudioRenderQuality_PlaybackDefault = 0x8000, /* defined to be outside the CoreAudio valid range*/
 
   /*
    * kQTAudioPropertyID_ChannelLayout:  Value is AudioChannelLayout. 
@@ -10665,53 +10472,7 @@ enum {
 
 
 
-
-/*
- *  Audio Render Quality constants
- *  
- *  Summary:
- *    Render quality is an integer that ranges from
- *    kQTAudioRenderQuality_Min to kQTAudioRenderQuality_Max.
- *    kQTAudioRenderQuality_Low, kQTAudioRenderQuality_Medium, and
- *    kQTAudioRenderQuality_High are the preferred values.
- */
-enum {
-
-  /*
-   * The maximum value.
-   */
-  kQTAudioRenderQuality_Max     = 0x7F,
-
-  /*
-   * A value that increases quality but requires more computational
-   * resources.
-   */
-  kQTAudioRenderQuality_High    = 0x60,
-
-  /*
-   * A value that represents a good quality/performance tradeoff.
-   */
-  kQTAudioRenderQuality_Medium  = 0x40,
-
-  /*
-   * A value that reduces quality for better performance.
-   */
-  kQTAudioRenderQuality_Low     = 0x20,
-
-  /*
-   * The minimum value.
-   */
-  kQTAudioRenderQuality_Min     = 0x00,
-
-  /*
-   * A QuickTime-specific value that selects optimal settings for
-   * playback.
-   */
-  kQTAudioRenderQuality_PlaybackDefault = 0x8000
-};
-
-
-/* whatMixToMeter constants*/
+/* whichMixToMeter constants*/
 
 /*
  */
@@ -11038,7 +10799,7 @@ enum {
    * you want (output audio sample rate, movie timescale) When getting,
    * the timescale will be output audio sample rate for best accuracy.
    */
-  kQTMovieAudioExtractionMoviePropertyID_CurrentTime = 'time', /* value is TimeRecord. Get/Set.*/
+  kQTMovieAudioExtractionMoviePropertyID_CurrentTime = 'time', /* value is TimeRecord. Gettable/Settable.*/
 
   /*
    * kQTMovieAudioExtractionMoviePropertyID_AllChannelsDiscrete: Value
@@ -11047,34 +10808,32 @@ enum {
    * or channel layout are read back, you will get information relating
    * to the re-mapped movie.
    */
-  kQTMovieAudioExtractionMoviePropertyID_AllChannelsDiscrete = 'disc', /* value is Boolean. Get/Set.*/
+  kQTMovieAudioExtractionMoviePropertyID_AllChannelsDiscrete = 'disc', /* value is Boolean. Gettable/Settable.*/
 
   /*
    * kQTMovieAudioExtractionAudioPropertyID_RenderQuality: Value is
    * UInt32 (set & get) Set the render quality to be used for this
-   * audio extraction session. UInt32 values vary from 0x00
-   * (kQTAudioRenderQuality_Min) to 0x7F (kQTAudioRenderQuality_Max).
-   * We also define a special value
-   * (kQTAudioRenderQuality_PlaybackDefault) which resets the quality
-   * settings to the same values that were chosen by default for
-   * playback.
+   * audio extraction session. UInt32 values are as defined in
+   * <AudioUnit/AudioUnitProperties.h> and vary from 0x00
+   * (kRenderQuality_Min) to 0x7F (kRenderQuality_Max). We also define
+   * a special value (kQTAudioRenderQuality_PlaybackDefault) which
+   * resets the quality settings to the same values that were chosen by
+   * default for playback.
    */
-  kQTMovieAudioExtractionAudioPropertyID_RenderQuality = 'qual' /* value is UInt32. Get/Set.*/
+  kQTMovieAudioExtractionAudioPropertyID_RenderQuality = 'qual' /* value is UInt32. Gettable/Settable.*/
 };
-
 
 /* "Output Audio class" property IDs*/
 
 /*
  */
 enum {
-                                        /* kQTPropertyClass_MovieAudioExtraction_Audio*/
 
   /*
    * 
    * QTMovieAudioExtractionAudioPropertyID_AudioStreamBasicDescription:
-   * Value is AudioStreamBasicDescription.  Get/Set. (get any time, set
-   * before first MovieAudioExtractionFillBuffer call) If you get this
+   * Value is AudioStreamBasicDescription (get any time, set before
+   * first MovieAudioExtractionFillBuffer call) If you get this
    * property immediately after beginning an audio extraction session,
    * it will tell you the default extraction format for the movie. 
    * This will include the number of channels in the default movie mix.
@@ -11085,33 +10844,17 @@ enum {
    * only set PCM output formats.  Setting a compressed output format
    * will fail.
    */
-  kQTMovieAudioExtractionAudioPropertyID_AudioStreamBasicDescription = 'asbd', /* value is AudioStreamBasicDescription. Get/Set.*/
+  kQTMovieAudioExtractionAudioPropertyID_AudioStreamBasicDescription = 'asbd',
 
   /*
    * kQTMovieAudioExtractionAudioPropertyID_AudioChannelLayout: Value
-   * is AudioChannelLayout.  Get/Set. (get any time, set before first
+   * is AudioChannelLayout (get any time, set before first
    * MovieAudioExtractionFillBuffer call) If you get this property
    * immediately after beginning an audio extraction session, it will
    * tell you what the channel layout is for the default extraction mix.
    */
-  kQTMovieAudioExtractionAudioPropertyID_AudioChannelLayout = 'clay', /* value is AudioChannelLayout. Get/Set.*/
-
-  /*
-   * kQTMovieAudioExtractionAudioPropertyID_RemainingAudioDuration:
-   * Value is TimeRecord. Get only. Returns the total duration of audio
-   * data that can be expected from the audio extraction session as
-   * currently configured.  This is computed by examining all tracks
-   * that contribute to the audio mix, finding the highest end time
-   * among them, adding in all relevant tail times from any Audio
-   * Context Inserts that have been registered, and subtracting any
-   * extraction start time that has been set.  If this property is
-   * queried once extraction has started, it will return the remaining
-   * duration, or zero once extraction has advanced to the end of all
-   * contributing audio tracks.
-   */
-  kQTMovieAudioExtractionAudioPropertyID_RemainingAudioDuration = 'dura' /* value is TimeRecord. Get only.*/
+  kQTMovieAudioExtractionAudioPropertyID_AudioChannelLayout = 'clay'
 };
-
 
 /*
  *  MovieAudioExtractionGetPropertyInfo()
@@ -11196,245 +10939,6 @@ MovieAudioExtractionFillBuffer(
   AudioBufferList *         ioData,
   UInt32 *                  outFlags)                         AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
 
-
-
-/* Audio Context Insert properties for MovieAudioExtraction*/
-
-/*
-   Theory of operations:
-    To register for a Movie Audio Context Insert during Movie Audio Extraction:
-        Set the kQTMovieAudioExtractionAudioPropertyID_RegisterMovieInsert
-            property on the extraction session, providing the same registry info structure
-            that is used for the QTAudioContextRegisterInsert call.
-    To register for a Track Audio Context Insert during Movie Audio Extraction:
-        Set the kQTMovieAudioExtractionAudioPropertyID_RegisterTrackInsert
-            property on the extraction session, providing a QTAudioTrackInsertRegistryInfoRef,
-            described below.
-    Note: Once extraction has begun (ie, MovieAudioExtractionFillBuffer() has been
-            called), attempts to set these properties will return qtReadOnlyErr.
-            This is consistent with the behavior of most extraction properties.
-*/
-
-
-/*
- *  QTAudioTrackInsertRegistryInfo
- *  
- *  Summary:
- *    Parameters for registering an Audio Context Track Insert during
- *    Movie Audio Extraction
- *  
- *  Discussion:
- *    This is used with the
- *    kQTMovieAudioExtractionMoviePropertyID_RegisterTrackInsert
- *    property.
- */
-struct QTAudioTrackInsertRegistryInfo {
-
-  /*
-   * The track of the source movie on which to apply the insert.
-   */
-  Track               track;
-
-  /*
-   * The Audio Context Insert registration info (channel layouts,
-   * callbacks).
-   */
-  QTAudioContextInsertRegistryInfo  regInfo;
-};
-typedef struct QTAudioTrackInsertRegistryInfo QTAudioTrackInsertRegistryInfo;
-typedef QTAudioTrackInsertRegistryInfo * QTAudioTrackInsertRegistryInfoRef;
-/* Movie and Track level audio context inserts for extraction (kQTPropertyClass_MovieAudioExtraction_Audio)*/
-
-/*
- */
-enum {
-
-  /*
-   * kQTMovieAudioExtractionAudioPropertyID_RegisterMovieInsert: Value
-   * is QTAudioContextInsertRegistryInfoRef  (Get/Set) Set on an
-   * extraction session to register/unregister an Audio Context Insert
-   * for the movie summary mix.  When this property is read back
-   * (MovieAudioExtractionGetProperty) the channel layout pointers will
-   * will be NULL. To unregister, supply a NULL processDataCallback (in
-   * which case the rest of the registry info will be ignored).
-   */
-  kQTMovieAudioExtractionAudioPropertyID_RegisterMovieInsert = 'regm', /* value is QTAudioContextInsertRegistryInfoRef. Get/Set.*/
-
-  /*
-   * kQTMovieAudioExtractionAudioPropertyID_RegisterTrackInsert: Value
-   * is QTAudioTrackInsertRegistryInfoRef  (Get/Set) Set on an
-   * extraction session to register/unregister an Audio Context Insert
-   * for a particular track of the movie.  When this property is read
-   * back (MovieAudioExtractionGetProperty) the channel layout pointers
-   * will will be NULL. To unregister, supply a NULL
-   * processDataCallback (in which case the rest of the registry info
-   * will be ignored).
-   */
-  kQTMovieAudioExtractionAudioPropertyID_RegisterTrackInsert = 'regt' /* value is QTAudioTrackInsertRegistryInfoRef. Get/Set.*/
-};
-
-
-#define kQTMovieAudioExtractionMoviePropertyID_RegisterInsert  Use kQTPropertyClass_MovieAudioExtraction_Audio / kQTMovieAudioExtractionAudioPropertyID_RegisterMovieInsert instead!
-
-/* Legacy Audio/Sound APIs*/
-
-/*
- *  GetMoviePreferredVolume()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- */
-extern short 
-GetMoviePreferredVolume(Movie theMovie)                       AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
-
-
-/*
- *  SetMoviePreferredVolume()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- */
-extern void 
-SetMoviePreferredVolume(
-  Movie   theMovie,
-  short   volume)                                             AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
-
-
-/*
- *  GetMovieVolume()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- */
-extern short 
-GetMovieVolume(Movie theMovie)                                AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
-
-
-/*
- *  SetMovieVolume()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- */
-extern void 
-SetMovieVolume(
-  Movie   theMovie,
-  short   volume)                                             AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
-
-
-/*
- *  GetTrackVolume()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- */
-extern short 
-GetTrackVolume(Track theTrack)                                AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
-
-
-/*
- *  SetTrackVolume()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- */
-extern void 
-SetTrackVolume(
-  Track   theTrack,
-  short   volume)                                             AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
-
-
-/*
- *  GetTrackSoundLocalizationSettings()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- */
-extern OSErr 
-GetTrackSoundLocalizationSettings(
-  Track     theTrack,
-  Handle *  settings)                                         AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
-
-
-/*
- *  SetTrackSoundLocalizationSettings()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.0 and later in QuickTime.framework
- *    CarbonLib:        in CarbonLib 1.0 and later
- *    Non-Carbon CFM:   in QuickTimeLib 2.5 and later
- *    Windows:          in qtmlClient.lib 3.0 and later
- */
-extern OSErr 
-SetTrackSoundLocalizationSettings(
-  Track    theTrack,
-  Handle   settings)                                          AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
-
-
-
-/* Performance properties*/
-
-
-/*
- */
-enum {
-  kQTPropertyClass_Performance  = 'perf',
-
-  /*
-   * kQTPerformancePropertyID_MediaStallCount:  Value is UInt32. 
-   * Get/Set/Listenable Media stalls occur when a media handler is
-   * unable to provide its media data at the time required for seamless
-   * playback.  The exact interpretation of a track's MediaStallCount
-   * property is media-handler dependent, but may indicate conditions
-   * such as a video frame not decoded in time, the sound queue runs
-   * dry, etc.  When requested on a specific track, this property
-   * returns the current stall count of that track.  When requested on
-   * a movie, it returns the accumulated MediaStallCounts for all the
-   * tracks in the movie. The track property may be set to zero to
-   * reset it.  Setting the movie property to zero resets all the track
-   * counts. Setting the value to anything other than zero yields
-   * paramErr. The movie toolbox defers property-changed notifications
-   * to any property listeners until the next time the movie is idled.
-   */
-  kQTPerformancePropertyID_MediaStallCount = 'stal', /* UInt32, Get/Set/Listenable */
-
-  /*
-   * kQTPerformancePropertyID_AudioIOOverloadCount:  Value is UInt32. 
-   * Get/Set/Listenable Audio I/O overloads occur when the
-   * high-priority audio processing thread does not provide the
-   * requested buffer of data in time to ensure seamless playback. 
-   * This movie property accumulates the number of Audio Device I/O
-   * overloads that are detected during playback of a movie.  I/O
-   * overloads that are detected when the movie is not playing (but
-   * other movies may be playing), are not counted. This property may
-   * be set to zero to reset the counter.  Setting the value to
-   * anything other than zero yields paramErr. The movie toolbox defers
-   * property-changed notifications to any property listeners until the
-   * next time the movie is idled.
-   */
-  kQTPerformancePropertyID_AudioIOOverloadCount = 'ovct' /* UInt32, Get/Set/Listenable*/
-};
 
 
 /* Movie Visual Adjustment APIs*/
@@ -18068,8 +17572,7 @@ enum {
   kQTMetaDataTypeUnsignedIntegerBE = 22, /* The size of the integer is defined by the value size*/
   kQTMetaDataTypeFloat32BE      = 23,
   kQTMetaDataTypeFloat64BE      = 24,
-  kQTMetaDataTypeBMPImage       = 27,
-  kQTMetaDataTypeQuickTimeMetaData = 28
+  kQTMetaDataTypeBMPImage       = 27
 };
 
 
@@ -18145,38 +17648,6 @@ QTMetaDataRetain(QTMetaDataRef inMetaData)                    AVAILABLE_MAC_OS_X
  */
 extern void 
 QTMetaDataRelease(QTMetaDataRef inMetaData)                   AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
-
-
-/*
- *  QTMetaDataCreateFromBuffer()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.5 (or QuickTime 7.2) and later in QuickTime.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern OSStatus 
-QTMetaDataCreateFromBuffer(
-  const UInt8 *    inBufferPtr,
-  ByteCount        inBufferSize,
-  QTMetaDataRef *  outMetaData)                               AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
-
-
-/*
- *  QTMetaDataGetBytes()
- *  
- *  Availability:
- *    Mac OS X:         in version 10.5 (or QuickTime 7.2) and later in QuickTime.framework
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
-extern OSStatus 
-QTMetaDataGetBytes(
-  QTMetaDataRef   inMetaData,
-  ByteCount       inBufferSize,
-  UInt8 *         inBufferPtr,
-  ByteCount *     outBufferSizeNeeded)                        AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
-
 
 
 /****************************************
@@ -18991,9 +18462,6 @@ enum {
     kMCSetControllerCapabilitiesSelect         = 0x0036,
     kMusicMediaGetIndexedTunePlayerSelect      = 0x0101
 };
-
-#endif // !__LP64__
-
 
 
 #pragma pack(pop)

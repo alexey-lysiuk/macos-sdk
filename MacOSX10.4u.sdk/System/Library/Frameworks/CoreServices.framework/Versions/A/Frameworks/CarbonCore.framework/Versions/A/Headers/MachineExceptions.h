@@ -3,9 +3,9 @@
  
      Contains:   Processor Exception Handling Interfaces.
  
-     Version:    CarbonCore-682.26~1
+     Version:    CarbonCore-682.11~29
  
-     Copyright:  © 1993-2006 by Apple Computer, Inc., all rights reserved.
+     Copyright:  ï¿½ 1993-2005 by Apple Computer, Inc., all rights reserved.
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -111,7 +111,7 @@ struct FPUInformationPowerPC {
 };
 typedef struct FPUInformationPowerPC    FPUInformationPowerPC;
 union Vector128 {
-#ifdef __VEC__
+#ifdef __APPLE_ALTIVEC__
  vector unsigned int         v;
 #endif
   unsigned long       l[4];

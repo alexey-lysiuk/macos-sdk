@@ -3,9 +3,10 @@
  
      Contains:   Master include for vecLib framework
  
-     Version:    vecLib-192.17
+     Version:    Technology: MacOS X
+                 Release:    vecLib-192.15~2
  
-     Copyright:  © 2000-2007 by Apple Computer, Inc., all rights reserved.
+     Copyright:  © 2000-2006 by Apple Computer, Inc., all rights reserved.
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -40,7 +41,11 @@ typedef vector bool int vBool32;
 #elif defined(__i386__) || defined(__x86_64__)
 #ifdef __SSE__
 #if defined(__GNUC__)
+#if defined(__GNUC_MINOR__) && (((__GNUC__ == 3) && (__GNUC_MINOR__ <= 3)) || (__GNUC__ < 3))
+typedef int __m128 __attribute__((vector_size (16)));
+#else /* gcc-3.5 or later */
 #include <xmmintrin.h>
+#endif /* __GNUC__ */
 typedef float                   vFloat          __attribute__ ((__vector_size__ (16)));
 #else /* not __GNUC__ */
 #include <xmmintrin.h>
@@ -51,7 +56,8 @@ typedef __m128                          vFloat;
 #ifdef __SSE2__
 #if defined(__GNUC__)
 #if defined(__GNUC_MINOR__) && (((__GNUC__ == 3) && (__GNUC_MINOR__ <= 3)) || (__GNUC__ < 3))
-#include <xmmintrin.h>
+typedef int __m128i __attribute__((vector_size (16)));
+typedef int __m128d __attribute__((vector_size (16)));
 typedef __m128i vUInt8;
 typedef __m128i vSInt8;
 typedef __m128i vUInt16;
@@ -63,7 +69,7 @@ typedef __m128i vUInt64;
 typedef __m128i vSInt64;
 typedef __m128d vDouble;
 #else /* gcc-3.5 or later */
-#include <emmintrin.h>
+#include <xmmintrin.h>
 typedef unsigned char           vUInt8          __attribute__ ((__vector_size__ (16)));
 typedef char                    vSInt8          __attribute__ ((__vector_size__ (16)));
 typedef unsigned short          vUInt16         __attribute__ ((__vector_size__ (16)));
@@ -76,7 +82,7 @@ typedef long long               vSInt64         __attribute__ ((__vector_size__ 
 typedef double                  vDouble         __attribute__ ((__vector_size__ (16)));
 #endif /* __GNUC__ <= 3.3 */
 #else /* not __GNUC__ */
-#include <emmintrin.h>
+#include <xmmintrin.h>
 typedef __m128i                         vUInt8;
 typedef __m128i                         vSInt8;
 typedef __m128i                         vUInt16;

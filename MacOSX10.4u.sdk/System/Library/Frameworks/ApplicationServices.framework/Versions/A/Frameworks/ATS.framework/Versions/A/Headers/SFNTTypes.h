@@ -3,7 +3,7 @@
  
      Contains:   Font file structures.
  
-     Version:    ATS-184.7.7~42
+     Version:    ATS-184.7.7~1
  
      Copyright:  © 1994-2006 by Apple Computer, Inc., all rights reserved.
  

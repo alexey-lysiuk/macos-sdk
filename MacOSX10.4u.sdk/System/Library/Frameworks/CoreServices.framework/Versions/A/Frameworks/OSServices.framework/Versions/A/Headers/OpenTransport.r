@@ -3,7 +3,7 @@
  
      Contains:   Open Transport client interface file.
  
-     Version:    OpenTransport-105~810
+     Version:    OpenTransport-105~509
  
      Copyright:  © 1985-2006 by Apple Computer, Inc., all rights reserved
  

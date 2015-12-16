@@ -334,7 +334,6 @@ enum {
 #define kIOPMSettingReduceBrightnessKey             "ReduceBrightness"
 #define kIOPMSettingDisplaySleepUsesDimKey          "Display Sleep Uses Dim"
 #define kIOPMSettingTimeZoneOffsetKey               "TimeZoneOffsetSeconds"
-#define kIOPMSettingMobileMotionModuleKey           "MobileMotionModule"
 
 // Setting controlling drivers can register to receive scheduled wake data
 // Either in "CF seconds" type, or structured calendar data in a formatted
