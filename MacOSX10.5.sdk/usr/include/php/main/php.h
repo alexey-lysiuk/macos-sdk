@@ -2,7 +2,7 @@
    +----------------------------------------------------------------------+
    | PHP Version 5                                                        |
    +----------------------------------------------------------------------+
-   | Copyright (c) 1997-2007 The PHP Group                                |
+   | Copyright (c) 1997-2008 The PHP Group                                |
    +----------------------------------------------------------------------+
    | This source file is subject to version 3.01 of the PHP license,      |
    | that is bundled with this package in the file LICENSE, and is        |
@@ -17,7 +17,7 @@
    +----------------------------------------------------------------------+
  */
 
-/* $Id: php.h,v 1.221.2.4.2.7 2007/01/01 09:36:11 sebastian Exp $ */
+/* $Id: php.h,v 1.221.2.4.2.9 2007/12/31 07:20:15 sebastian Exp $ */
 
 #ifndef PHP_H
 #define PHP_H
@@ -325,10 +325,6 @@ int php_register_internal_extensions(TSRMLS_D);
 int php_mergesort(void *base, size_t nmemb, register size_t size, int (*cmp)(const void *, const void * TSRMLS_DC) TSRMLS_DC);
 
 PHPAPI void php_register_pre_request_shutdown(void (*func)(void *), void *userdata);
-
-PHPAPI int cfg_get_long(char *varname, long *result);
-PHPAPI int cfg_get_double(char *varname, double *result);
-PHPAPI int cfg_get_string(char *varname, char **result);
 
 PHPAPI void php_com_initialize(TSRMLS_D);
 END_EXTERN_C()

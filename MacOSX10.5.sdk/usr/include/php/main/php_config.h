@@ -5,7 +5,7 @@
    +----------------------------------------------------------------------+
    | Zend Engine                                                          |
    +----------------------------------------------------------------------+
-   | Copyright (c) 1998-2007 Zend Technologies Ltd. (http://www.zend.com) |
+   | Copyright (c) 1998-2008 Zend Technologies Ltd. (http://www.zend.com) |
    +----------------------------------------------------------------------+
    | This source file is subject to version 2.00 of the Zend license,     |
    | that is bundled with this package in the file LICENSE, and is        |
@@ -20,7 +20,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: acconfig.h,v 1.40.2.1.2.1 2007/01/01 09:35:45 sebastian Exp $ */
+/* $Id: acconfig.h,v 1.40.2.1.2.2 2007/12/31 07:20:02 sebastian Exp $ */
 
 #define ZEND_API
 #define ZEND_DLEXPORT
@@ -1812,9 +1812,6 @@
 /* whether to have multibyte string support */
 #define HAVE_MBSTRING 1
 
-/* Define if stdarg.h is available */
-#define HAVE_STDARG_PROTOTYPES 1
-
 /* whether to have multibyte regex support */
 #define HAVE_MBREGEX 1
 
@@ -2192,6 +2189,9 @@
 
 /* Whether to build pdo_oci as dynamic module */
 /* #undef COMPILE_DL_PDO_OCI */
+
+/*   */
+/* #undef PHP_PDO_OCI_CLIENT_VERSION */
 
 /*   */
 /* #undef HAVE_ODBC_H */
@@ -2884,16 +2884,16 @@
 /* #undef PTHREADS */
 
 /* PHP build date */
-#define PHP_BUILD_DATE "2008-06-27"
+#define PHP_BUILD_DATE "2008-08-22"
 
 /* hardcode for each of the cross compiler host */
 #define PHP_OS "Darwin"
 
 /* hardcode for each of the cross compiler host */
-#define PHP_UNAME "Darwin b74.apple.com 9.0 Darwin Kernel Version 9.2.0: Mon Feb 18 15:29:49 PST 2008; root:xnu-1228.3.14~1/RELEASE_I386 i386"
+#define PHP_UNAME "Darwin b71.apple.com 9.0 Darwin Kernel Version 9.3.0: Tue Jul 8 19:15:46 PDT 2008; root:xnu-1228.5.90~10/RELEASE_I386 i386"
 
 /* uname -a output */
-#define PHP_UNAME "Darwin b74.apple.com 9.0 Darwin Kernel Version 9.2.0: Mon Feb 18 15:29:49 PST 2008; root:xnu-1228.3.14~1/RELEASE_I386 i386"
+#define PHP_UNAME "Darwin b71.apple.com 9.0 Darwin Kernel Version 9.3.0: Tue Jul 8 19:15:46 PDT 2008; root:xnu-1228.5.90~10/RELEASE_I386 i386"
 
 /* uname output */
 #define PHP_OS "Darwin"

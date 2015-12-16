@@ -2,7 +2,7 @@
    +----------------------------------------------------------------------+
    | PHP Version 5                                                        |
    +----------------------------------------------------------------------+
-   | Copyright (c) 1997-2007 The PHP Group                                |
+   | Copyright (c) 1997-2008 The PHP Group                                |
    +----------------------------------------------------------------------+
    | This source file is subject to version 3.01 of the PHP license,      |
    | that is bundled with this package in the file LICENSE, and is        |
@@ -16,7 +16,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: php_ini.h,v 1.45.2.3.2.2 2007/08/02 23:57:52 stas Exp $ */
+/* $Id: php_ini.h,v 1.45.2.3.2.4 2007/12/31 07:20:15 sebastian Exp $ */
 
 #ifndef PHP_INI_H
 #define PHP_INI_H
@@ -27,7 +27,10 @@ BEGIN_EXTERN_C()
 int php_init_config(TSRMLS_D);
 int php_shutdown_config(void);
 void php_ini_register_extensions(TSRMLS_D);
-zval *cfg_get_entry(char *name, uint name_length);
+PHPAPI zval *cfg_get_entry(char *name, uint name_length);
+PHPAPI int cfg_get_long(char *varname, long *result);
+PHPAPI int cfg_get_double(char *varname, double *result);
+PHPAPI int cfg_get_string(char *varname, char **result);
 END_EXTERN_C()
 
 #define PHP_INI_USER	ZEND_INI_USER

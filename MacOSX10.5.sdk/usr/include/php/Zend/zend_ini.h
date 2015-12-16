@@ -2,7 +2,7 @@
    +----------------------------------------------------------------------+
    | Zend Engine                                                          |
    +----------------------------------------------------------------------+
-   | Copyright (c) 1998-2007 Zend Technologies Ltd. (http://www.zend.com) |
+   | Copyright (c) 1998-2008 Zend Technologies Ltd. (http://www.zend.com) |
    +----------------------------------------------------------------------+
    | This source file is subject to version 2.00 of the Zend license,     |
    | that is bundled with this package in the file LICENSE, and is        |
@@ -16,7 +16,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: zend_ini.h,v 1.34.2.1.2.4 2007/08/02 23:57:21 stas Exp $ */
+/* $Id: zend_ini.h,v 1.34.2.1.2.7 2007/12/31 07:20:03 sebastian Exp $ */
 
 #ifndef ZEND_INI_H
 #define ZEND_INI_H
@@ -96,6 +96,7 @@ ZEND_API int zend_register_ini_entries(zend_ini_entry *ini_entry, int module_num
 ZEND_API void zend_unregister_ini_entries(int module_number TSRMLS_DC);
 ZEND_API void zend_ini_refresh_caches(int stage TSRMLS_DC);
 ZEND_API int zend_alter_ini_entry(char *name, uint name_length, char *new_value, uint new_value_length, int modify_type, int stage);
+ZEND_API int zend_alter_ini_entry_ex(char *name, uint name_length, char *new_value, uint new_value_length, int modify_type, int stage, int force_change);
 ZEND_API int zend_restore_ini_entry(char *name, uint name_length, int stage);
 ZEND_API void display_ini_entries(zend_module_entry *module);
 
