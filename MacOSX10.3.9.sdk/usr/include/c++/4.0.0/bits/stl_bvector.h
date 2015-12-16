@@ -117,7 +117,7 @@ namespace _GLIBCXX_STD
     void
     _M_bump_up()
     {
-      if (_M_offset++ == _S_word_bit - 1)
+      if (_M_offset++ == int(_S_word_bit) - 1)
 	{
 	  _M_offset = 0;
 	  ++_M_p;
@@ -129,7 +129,7 @@ namespace _GLIBCXX_STD
     {
       if (_M_offset-- == 0)
 	{
-	  _M_offset = _S_word_bit - 1;
+	  _M_offset = int(_S_word_bit) - 1;
 	  --_M_p;
 	}
     }
@@ -138,11 +138,11 @@ namespace _GLIBCXX_STD
     _M_incr(ptrdiff_t __i)
     {
       difference_type __n = __i + _M_offset;
-      _M_p += __n / _S_word_bit;
-      __n = __n % _S_word_bit;
+      _M_p += __n / int(_S_word_bit);
+      __n = __n % int(_S_word_bit);
       if (__n < 0)
 	{
-	  _M_offset = static_cast<unsigned int>(__n + _S_word_bit);
+	  _M_offset = static_cast<unsigned int>(__n + int(_S_word_bit));
 	  --_M_p;
 	}
       else
@@ -180,7 +180,8 @@ namespace _GLIBCXX_STD
   inline ptrdiff_t
   operator-(const _Bit_iterator_base& __x, const _Bit_iterator_base& __y)
   {
-    return _S_word_bit * (__x._M_p - __y._M_p) + __x._M_offset - __y._M_offset;
+    return (int(_S_word_bit) * (__x._M_p - __y._M_p)
+	    + __x._M_offset - __y._M_offset);
   }
 
   struct _Bit_iterator : public _Bit_iterator_base
@@ -384,7 +385,8 @@ namespace _GLIBCXX_STD
 
       _Bit_type*
       _M_allocate(size_t __n)
-      { return _M_impl.allocate((__n + _S_word_bit - 1) / _S_word_bit); }
+      { return _M_impl.allocate((__n + int(_S_word_bit) - 1)
+				/ int(_S_word_bit)); }
 
       void
       _M_deallocate()
@@ -448,12 +450,25 @@ template<typename _Alloc>
 
   protected:
     void
+    _M_fill(iterator __first, iterator __last, bool __x)
+    {
+      if (__first._M_p != __last._M_p)
+        {
+          std::fill(__first._M_p + 1, __last._M_p, __x ? ~0 : 0);
+          std::fill(__first, iterator(__first._M_p + 1, 0), __x);
+          std::fill(iterator(__last._M_p, 0), __last, __x);
+        }
+      else
+        std::fill(__first, __last, __x);
+    }
+
+    void
     _M_initialize(size_type __n)
     {
       _Bit_type* __q = this->_M_allocate(__n);
       this->_M_impl._M_end_of_storage = (__q
-					 + ((__n + _S_word_bit - 1)
-					    / _S_word_bit));
+					 + ((__n + int(_S_word_bit) - 1)
+					    / int(_S_word_bit)));
       this->_M_impl._M_start = iterator(__q, 0);
       this->_M_impl._M_finish = this->_M_impl._M_start + difference_type(__n);
     }
@@ -477,8 +492,9 @@ template<typename _Alloc>
 	  *__i++ = __x;
 	  this->_M_impl._M_finish = std::copy(__position, end(), __i);
 	  this->_M_deallocate();
-	  this->_M_impl._M_end_of_storage = (__q + ((__len + _S_word_bit - 1)
-						    / _S_word_bit));
+	  this->_M_impl._M_end_of_storage = (__q + ((__len
+						     + int(_S_word_bit) - 1)
+						    / int(_S_word_bit)));
 	  this->_M_impl._M_start = iterator(__q, 0);
 	}
     }
@@ -543,8 +559,9 @@ template<typename _Alloc>
 		this->_M_impl._M_finish = std::copy(__position, end(), __i);
 		this->_M_deallocate();
 		this->_M_impl._M_end_of_storage = (__q
-						   + ((__len + _S_word_bit - 1)
-						      / _S_word_bit));
+						   + ((__len
+						       + int(_S_word_bit) - 1)
+						      / int(_S_word_bit)));
 		this->_M_impl._M_start = iterator(__q, 0);
 	      }
 	  }
@@ -782,8 +799,8 @@ template<typename _Alloc>
 					      iterator(__q, 0));
 	  this->_M_deallocate();
 	  this->_M_impl._M_start = iterator(__q, 0);
-	  this->_M_impl._M_end_of_storage = (__q + (__n + _S_word_bit - 1)
-					     / _S_word_bit);
+	  this->_M_impl._M_end_of_storage = (__q + (__n + int(_S_word_bit) - 1)
+					     / int(_S_word_bit));
 	}
     }
 
@@ -876,7 +893,7 @@ template<typename _Alloc>
 	{
 	  std::copy_backward(__position, end(),
 			     this->_M_impl._M_finish + difference_type(__n));
-	  std::fill(__position, __position + difference_type(__n), __x);
+	  _M_fill(__position, __position + difference_type(__n), __x);
 	  this->_M_impl._M_finish += difference_type(__n);
 	}
       else
@@ -884,12 +901,13 @@ template<typename _Alloc>
 	  const size_type __len = size() + std::max(size(), __n);
 	  _Bit_type * __q = this->_M_allocate(__len);
 	  iterator __i = std::copy(begin(), __position, iterator(__q, 0));
-	  std::fill_n(__i, __n, __x);
+	  _M_fill(__i, __i + difference_type(__n), __x);
 	  this->_M_impl._M_finish = std::copy(__position, end(),
 					      __i + difference_type(__n));
 	  this->_M_deallocate();
-	  this->_M_impl._M_end_of_storage = (__q + ((__len + _S_word_bit - 1)
-						    / _S_word_bit));
+	  this->_M_impl._M_end_of_storage = (__q + ((__len
+						     + int(_S_word_bit) - 1)
+						    / int(_S_word_bit)));
 	  this->_M_impl._M_start = iterator(__q, 0);
 	}
     }

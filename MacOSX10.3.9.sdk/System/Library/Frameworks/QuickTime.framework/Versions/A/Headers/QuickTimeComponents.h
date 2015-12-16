@@ -2472,7 +2472,7 @@ InvokeMovieExportStageReachedCallbackUPP(
   MovieExportStageReachedCallbackUPP  userUPP)                AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
 
 #if __MACH__
-  #if defined(__cplusplus) && defined(__GNUC__) && (__GNUC__ >= 4)
+  #ifdef __cplusplus
     inline SCModalFilterUPP                                     NewSCModalFilterUPP(SCModalFilterProcPtr userRoutine) { return userRoutine; }
     inline SCModalHookUPP                                       NewSCModalHookUPP(SCModalHookProcPtr userRoutine) { return userRoutine; }
     inline MovieExportGetDataUPP                                NewMovieExportGetDataUPP(MovieExportGetDataProcPtr userRoutine) { return userRoutine; }
@@ -12696,7 +12696,7 @@ InvokeSGDisplayCompressBottleUPP(
   SGDisplayCompressBottleUPP  userUPP)                        AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 #if __MACH__
-  #if defined(__cplusplus) && defined(__GNUC__) && (__GNUC__ >= 4)
+  #ifdef __cplusplus
     inline DataHCompletionUPP                                   NewDataHCompletionUPP(DataHCompletionProcPtr userRoutine) { return userRoutine; }
     inline VdigIntUPP                                           NewVdigIntUPP(VdigIntProcPtr userRoutine) { return userRoutine; }
     inline StartDocumentHandlerUPP                              NewStartDocumentHandlerUPP(StartDocumentHandler userRoutine) { return userRoutine; }

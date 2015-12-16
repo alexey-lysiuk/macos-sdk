@@ -2602,7 +2602,7 @@ InvokeQTSModalFilterUPP(
   QTSModalFilterUPP    userUPP)                               AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 #if __MACH__
-  #if defined(__cplusplus) && defined(__GNUC__) && (__GNUC__ >= 4)
+  #ifdef __cplusplus
     inline QTSNotificationUPP                                   NewQTSNotificationUPP(QTSNotificationProcPtr userRoutine) { return userRoutine; }
     inline QTSPanelFilterUPP                                    NewQTSPanelFilterUPP(QTSPanelFilterProcPtr userRoutine) { return userRoutine; }
     inline QTSModalFilterUPP                                    NewQTSModalFilterUPP(QTSModalFilterProcPtr userRoutine) { return userRoutine; }

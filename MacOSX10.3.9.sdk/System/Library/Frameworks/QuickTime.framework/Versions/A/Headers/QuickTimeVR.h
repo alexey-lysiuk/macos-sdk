@@ -555,7 +555,7 @@ InvokeQTVRBackBufferImagingUPP(
   QTVRBackBufferImagingUPP  userUPP)                          AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 #if __MACH__
-  #if defined(__cplusplus) && defined(__GNUC__) && (__GNUC__ >= 4)
+  #ifdef __cplusplus
     inline QTVRLeavingNodeUPP                                   NewQTVRLeavingNodeUPP(QTVRLeavingNodeProcPtr userRoutine) { return userRoutine; }
     inline QTVREnteringNodeUPP                                  NewQTVREnteringNodeUPP(QTVREnteringNodeProcPtr userRoutine) { return userRoutine; }
     inline QTVRMouseOverHotSpotUPP                              NewQTVRMouseOverHotSpotUPP(QTVRMouseOverHotSpotProcPtr userRoutine) { return userRoutine; }
@@ -668,7 +668,7 @@ InvokeQTVRInterceptUPP(
   QTVRInterceptUPP  userUPP)                                  AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 #if __MACH__
-  #if defined(__cplusplus) && defined(__GNUC__) && (__GNUC__ >= 4)
+  #ifdef __cplusplus
     inline QTVRInterceptUPP                                     NewQTVRInterceptUPP(QTVRInterceptProcPtr userRoutine) { return userRoutine; }
     inline void                                                 DisposeQTVRInterceptUPP(QTVRInterceptUPP) { }
     inline void                                                 InvokeQTVRInterceptUPP(QTVRInstance qtvr, QTVRInterceptPtr qtvrMsg, SInt32 refCon, Boolean * cancel, QTVRInterceptUPP userUPP) { (*userUPP)(qtvr, qtvrMsg, refCon, cancel); }

@@ -1,10 +1,24 @@
-{
-    DefaultProperties =  {
-        "MACOSX_DEPLOYMENT_TARGET" = "10.3";
-    };
-    CustomProperties = {
-	"KERNEL_EXTENSION_HEADER_SEARCH_PATHS" = "$(KERNEL_FRAMEWORK_HEADERS) $(KERNEL_FRAMEWORK_HEADERS)/bsd $(KERNEL_FRAMEWORK)/PrivateHeaders";
-    }; 
-    name = "Mac OS X 10.3.9"; 
-    supportsZeroLink = YES;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>isBaseSDK</key>
+	<string>YES</string>
+	<key>CustomProperties</key>
+	<dict>
+		<key>KERNEL_EXTENSION_HEADER_SEARCH_PATHS</key>
+		<string>$(KERNEL_FRAMEWORK_HEADERS) $(KERNEL_FRAMEWORK_HEADERS)/bsd $(KERNEL_FRAMEWORK)/PrivateHeaders</string>
+	</dict>
+	<key>DefaultProperties</key>
+	<dict>
+		<key>MACOSX_DEPLOYMENT_TARGET</key>
+		<string>10.3</string>
+	</dict>
+	<key>MaximumDeploymentTarget</key>
+	<string>10.3</string>
+	<key>name</key>
+	<string>Mac OS X 10.3.9</string>
+	<key>supportsZeroLink</key>
+	<string>YES</string>
+</dict>
+</plist>

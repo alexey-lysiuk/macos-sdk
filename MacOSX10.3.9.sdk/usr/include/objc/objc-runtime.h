@@ -61,11 +61,7 @@ struct objc_module {
 
 struct objc_super {
 	id receiver;
-#ifdef __cplusplus
-	Class super_class;
-#else
 	Class class;
-#endif
 };
 
 /*

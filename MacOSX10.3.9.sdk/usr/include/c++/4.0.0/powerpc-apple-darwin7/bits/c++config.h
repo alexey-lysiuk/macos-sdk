@@ -523,7 +523,7 @@ namespace std
 #define _GLIBCXX_HAVE_MEMORY_H 1
 
 /* Define to 1 if you have a working `mmap' system call. */
-#define _GLIBCXX_HAVE_MMAP 1
+/* #undef _GLIBCXX_HAVE_MMAP */
 
 /* Define to 1 if you have the `modff' function. */
 #define _GLIBCXX_HAVE_MODFF 1
