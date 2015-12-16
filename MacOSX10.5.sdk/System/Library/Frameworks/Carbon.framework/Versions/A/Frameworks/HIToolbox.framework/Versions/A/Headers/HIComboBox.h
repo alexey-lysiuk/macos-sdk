@@ -3,7 +3,7 @@
  
      Contains:   Definition of the combo box view provided by HIToolbox.
  
-     Version:    HIToolbox-343.0.1~1
+     Version:    HIToolbox-343.0.1~2
  
      Copyright:  © 2006 by Apple Computer, Inc., all rights reserved.
  

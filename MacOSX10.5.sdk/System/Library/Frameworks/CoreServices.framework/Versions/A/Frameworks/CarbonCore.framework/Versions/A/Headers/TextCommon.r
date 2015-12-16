@@ -3,7 +3,7 @@
  
      Contains:   TextEncoding-related types and constants, and prototypes for related functions
  
-     Version:    CarbonCore-783~118
+     Version:    CarbonCore-783~134
  
      Copyright:  © 1995-2006 by Apple Computer, Inc., all rights reserved.
  

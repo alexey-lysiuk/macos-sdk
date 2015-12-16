@@ -3,7 +3,7 @@
  
      Contains:   Public interface for FontSync
  
-     Version:    Quickdraw-242~80
+     Version:    Quickdraw-242~94
  
      Copyright:  © 1999-2006 by Apple Inc. all rights reserved.
  

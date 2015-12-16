@@ -3,7 +3,7 @@
  
      Contains:   Definitions of controls provided by the Control Manager
  
-     Version:    HIToolbox-343.0.1~1
+     Version:    HIToolbox-343.0.1~2
  
      Copyright:  © 1999-2006 by Apple Computer, Inc., all rights reserved.
  

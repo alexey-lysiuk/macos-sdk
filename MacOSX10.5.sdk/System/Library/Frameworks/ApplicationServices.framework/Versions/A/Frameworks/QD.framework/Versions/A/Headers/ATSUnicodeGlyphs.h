@@ -3,7 +3,7 @@
  
      Contains:   ATSUI glyph handling functions.
  
-     Version:    Quickdraw-242~80
+     Version:    Quickdraw-242~94
  
      Copyright:  © 2003-2006 by Apple Inc. all rights reserved.
  

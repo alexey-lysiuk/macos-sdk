@@ -3,7 +3,7 @@
  
      Contains:   Generic Abstract Shape API
  
-     Version:    HIServices-247.0.1~1
+     Version:    HIServices-247.0.1~2
  
      Copyright:  © 2001-2006 by Apple Computer, Inc., all rights reserved.
  

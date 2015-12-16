@@ -3,7 +3,7 @@
  
      Contains:   Master include for HIServices framework
  
-     Version:    HIServices-247.0.1~1
+     Version:    HIServices-247.0.1~2
  
      Copyright:  © 2002-2006 by Apple Computer, Inc., all rights reserved.
  
