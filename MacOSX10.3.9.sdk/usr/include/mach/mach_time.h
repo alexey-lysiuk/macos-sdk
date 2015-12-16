@@ -33,6 +33,10 @@
 
 #include <mach/mach_types.h>
 
+#if __cplusplus
+extern "C" {
+#endif
+
 uint64_t			mach_absolute_time(void);
 
 kern_return_t		mach_wait_until(
@@ -48,5 +52,9 @@ typedef struct mach_timebase_info	mach_timebase_info_data_t;
 
 kern_return_t		mach_timebase_info(
 						mach_timebase_info_t	info);
+
+#if __cplusplus
+}
+#endif
 
 #endif /* _MACH_MACH_TIME_H_ */

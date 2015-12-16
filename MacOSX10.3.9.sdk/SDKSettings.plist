@@ -13,12 +13,22 @@
 	<dict>
 		<key>MACOSX_DEPLOYMENT_TARGET</key>
 		<string>10.3</string>
+		<key>PLATFORM_NAME</key>
+		<string>macosx</string>
 	</dict>
 	<key>MaximumDeploymentTarget</key>
 	<string>10.3</string>
-	<key>name</key>
+	<key>FamilyName</key>
+	<string>Mac OS X</string>
+	<key>FamilyIdentifier</key>
+	<string>macosx</string>
+	<key>Version</key>
+	<string>10.3.9</string>
+	<key>DisplayName</key>
 	<string>Mac OS X 10.3.9</string>
-	<key>supportsZeroLink</key>
-	<string>YES</string>
+	<key>CanonicalName</key>
+	<string>macosx10.3.9</string>
+	<key>MinimalDisplayName</key>
+	<string>10.3.9</string>
 </dict>
 </plist>

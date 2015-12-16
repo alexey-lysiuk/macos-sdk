@@ -30,6 +30,10 @@
 #ifndef _OBJC_OBJC_H_
 #define _OBJC_OBJC_H_
 
+#if __i386__ || __x86_64__
+    #error Building for Intel is not supported in 10.3.9 SDK
+#endif
+
 #import <objc/objc-api.h>		// for OBJC_EXPORT
 
 typedef struct objc_class *Class;

@@ -16,6 +16,9 @@
 #ifndef __CORESERVICES__
 #define __CORESERVICES__
 
+#if __i386__ || __x86_64__
+    #error Building for Intel is not supported in 10.3.9 SDK
+#endif
 
 #ifndef __CARBONCORE__
 #include <CarbonCore/CarbonCore.h>

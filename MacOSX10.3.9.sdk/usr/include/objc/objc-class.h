@@ -169,7 +169,11 @@ struct objc_method_list {
 
 /* Protocol support */
 
+#ifdef __OBJC__
 @class Protocol;
+#else
+typedef struct objc_object Protocol;
+#endif
 
 struct objc_protocol_list {
 	struct objc_protocol_list *next;
