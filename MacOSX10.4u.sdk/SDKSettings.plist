@@ -18,10 +18,6 @@
 	</dict>
 	<key>MaximumDeploymentTarget</key>
 	<string>10.4</string>
-	<key>FamilyName</key>
-	<string>Mac OS X</string>
-	<key>FamilyIdentifier</key>
-	<string>macosx</string>
 	<key>Version</key>
 	<string>10.4</string>
 	<key>DisplayName</key>
@@ -30,5 +26,7 @@
 	<string>macosx10.4</string>
 	<key>MinimalDisplayName</key>
 	<string>10.4</string>
+	<key>SupportedBuildToolComponents</key>
+	<array/>
 </dict>
 </plist>
