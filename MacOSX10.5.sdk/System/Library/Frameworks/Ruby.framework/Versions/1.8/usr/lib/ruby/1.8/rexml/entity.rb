@@ -73,6 +73,7 @@ module REXML
 		# all entities -- both %ent; and &ent; entities.  This differs from
 		# +value()+ in that +value+ only replaces %ent; entities.
 		def unnormalized
+      document.record_entity_expansion
 			v = value()
 			return nil if v.nil?
 			@unnormalized = Text::unnormalize(v, parent)
@@ -89,6 +90,12 @@ module REXML
 
 		# Write out a fully formed, correct entity definition (assuming the Entity
 		# object itself is valid.)
+    #
+    # out::
+    #   An object implementing <TT>&lt;&lt;<TT> to which the entity will be
+    #   output
+    # indent::
+    #   *DEPRECATED* and ignored
 		def write out, indent=-1
 			out << '<!ENTITY '
 			out << '% ' if @reference

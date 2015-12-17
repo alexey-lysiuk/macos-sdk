@@ -14277,6 +14277,8 @@ extern EventTargetRef
 GetMenuEventTarget(MenuRef inMenu)                            AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
+#endif  /* !__LP64__ */
+
 /*
  *  GetApplicationEventTarget()
  *  
@@ -14292,7 +14294,7 @@ GetMenuEventTarget(MenuRef inMenu)                            AVAILABLE_MAC_OS_X
  *    An EventTargetRef.
  *  
  *  Availability:
- *    Mac OS X:         in version 10.0 and later in Carbon.framework [32-bit only]
+ *    Mac OS X:         in version 10.0 and later in Carbon.framework
  *    CarbonLib:        in CarbonLib 1.1 and later
  *    Non-Carbon CFM:   not available
  */
@@ -14300,6 +14302,7 @@ extern EventTargetRef
 GetApplicationEventTarget(void)                               AVAILABLE_MAC_OS_X_VERSION_10_0_AND_LATER;
 
 
+#if !__LP64__
 /*
  *  GetUserFocusEventTarget()
  *  

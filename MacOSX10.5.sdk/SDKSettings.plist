@@ -22,16 +22,16 @@
 	<string>Apple Mac OS X</string>
 	<key>DocSetFeedURL</key>
 	<string>http://developer.apple.com/rss/adcdocsets.atom</string>
-	<key>FamilyIdentifier</key>
-	<string>macosx</string>
-	<key>FamilyName</key>
-	<string>Mac OS X</string>
 	<key>MaximumDeploymentTarget</key>
 	<string>10.5</string>
 	<key>MinimalDisplayName</key>
 	<string>10.5</string>
 	<key>MinimumSupportedToolsVersion</key>
-	<string>3.1</string>
+	<string>3.2</string>
+	<key>SupportedBuildToolComponents</key>
+	<array>
+		<string>com.apple.compilers.gcc.headers.4_2</string>
+	</array>
 	<key>Version</key>
 	<string>10.5</string>
 	<key>isBaseSDK</key>

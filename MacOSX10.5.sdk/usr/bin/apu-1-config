@@ -34,7 +34,7 @@ LDFLAGS="-L/usr/lib"
 APRUTIL_LIBNAME="aprutil-${APRUTIL_MAJOR_VERSION}"
 
 APU_SOURCE_DIR="/SourceCache/apr/apr-12/apr-util/apr-util"
-APU_BUILD_DIR="/var/tmp/apr/apr-12~149/apr-util"
+APU_BUILD_DIR="/var/tmp/apr/apr-12~35/apr-util"
 APR_XML_EXPAT_OLD=""
 APU_DB_VERSION="0"
 

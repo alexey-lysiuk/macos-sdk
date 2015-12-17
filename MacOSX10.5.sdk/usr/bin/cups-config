@@ -14,7 +14,7 @@
 #   file is missing or damaged, see the license at "http://www.cups.org/".
 #
 
-VERSION="1.3.3"
+VERSION="1.3.10"
 APIVERSION="1.3"
 
 prefix=/
@@ -34,7 +34,7 @@ INSTALLSTATIC=
 # flags for C++ compiler:
 CFLAGS=""
 LDFLAGS=""
-LIBS="-weak_framework Kerberos -framework CoreFoundation -framework Security -lz -lpthread -framework CoreFoundation "
+LIBS="-weak_framework Kerberos -framework CoreFoundation -framework Security -lz -lpthread -lresolv -framework CoreFoundation "
 IMGLIBS="  "
 
 # Check for local invocation...

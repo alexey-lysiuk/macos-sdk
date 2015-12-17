@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $Id: net-snmp-config.in 16569 2007-06-29 22:18:27Z tanders $
+# $Id: net-snmp-config.in 17139 2008-07-30 17:28:08Z dts12 $
 #
 # this shell script is designed to merely dump the configuration
 # information about how the net-snmp package was compiled.  The
@@ -38,10 +38,10 @@ NSC_LIBS=""
 NSC_AGENTLIBS=" "
 NSC_PREFIX=$prefix
 NSC_EXEC_PREFIX=$exec_prefix
-NSC_SRCDIR=/var/tmp/net_snmp/net_snmp-112~107/net-snmp
+NSC_SRCDIR=/var/tmp/net_snmp/net_snmp-121~16/net-snmp
 NSC_INCDIR=${NSC_PREFIX}/include
 NSC_BASE_SUBAGENT_LIBS="-lnetsnmpagent -lnetsnmphelpers -lnetsnmp"
-NSC_BASE_AGENT_LIBS="-lnetsnmpmibs -lnetsnmpagent -lnetsnmphelpers -lnetsnmp"
+NSC_BASE_AGENT_LIBS="-lnetsnmpagent -lnetsnmphelpers -lnetsnmpmibs -lnetsnmp"
 NSC_SRC_LIBDIRS="agent/.libs snmplib/.libs agent/helpers/.libs"
 NSC_SRC_LIBDEPS="agent/.libs/libnetsnmpmibs.a agent/.libs/libnetsnmpagent.a agent/helpers/.libs/libnetsnmphelpers.a snmplib/.libs/libnetsnmp.a"
 
@@ -58,6 +58,7 @@ else
     *) optarg= ;;
   esac
 
+  unset shifted
   case $1 in
     --prefix=*)
       prefix=$optarg
@@ -82,7 +83,7 @@ else
       echo "indent -orig -nbc -bap -nut -nfca `(cd $NSC_INCDIR/net-snmp; perl -n -e 'print "-T $1 " if (/}\s*(netsnmp_\w+)\s*;/);' */*.h)`"
       ;;
     --configure-options|--con*)
-      echo "'--prefix=/usr' '--mandir=/usr/share/man' '--infodir=/usr/share/info' '--disable-dependency-tracking' '--sysconfdir=/etc' '--with-install-prefix=/BinaryCache/net_snmp/net_snmp-112~107/Root' '--with-default-snmp-version=2' '--with-persistent-directory=/var/db/net-snmp' '--with-defaults' '--without-rpm' '--with-sys-contact=postmaster@example.com' '--with-mib-modules=host ucd-snmp/diskio ucd-snmp/loadave ucd-snmp/lmSensorsTables' '--disable-static' '--disable-embedded-perl' '--without-kmem-usage' 'CFLAGS=  -g -Os -pipe -DBUILD=112 -DMACOSX_DEPLOYMENT_TARGET=10.5 -F/System/Library/PrivateFrameworks/ -F/System/Library/Frameworks/   -pipe' 'CXXFLAGS=  -g -Os -pipe -DBUILD=112 -DMACOSX_DEPLOYMENT_TARGET=10.5 -F/System/Library/PrivateFrameworks/ -F/System/Library/Frameworks/   -pipe' 'LDFLAGS=             '"
+      echo "'--prefix=/usr' '--mandir=/usr/share/man' '--infodir=/usr/share/info' '--disable-dependency-tracking' '--sysconfdir=/etc' '--with-install-prefix=/BinaryCache/net_snmp/net_snmp-121~16/Root' '--with-default-snmp-version=2' '--with-persistent-directory=/var/db/net-snmp' '--with-defaults' '--without-rpm' '--with-sys-contact=postmaster@example.com' '--with-mib-modules=host ucd-snmp/diskio ucd-snmp/loadave ucd-snmp/lmSensorsTables' '--disable-static' '--enable-ipv6' '--with-perl-modules' '--disable-embedded-perl' '--without-kmem-usage' 'CFLAGS=  -g -Os -pipe -DBUILD=121 -DMACOSX_DEPLOYMENT_TARGET=10.5 -F/System/Library/PrivateFrameworks/ -F/System/Library/Frameworks/   -pipe' 'CXXFLAGS=  -g -Os -pipe -DBUILD=121 -DMACOSX_DEPLOYMENT_TARGET=10.5 -F/System/Library/PrivateFrameworks/ -F/System/Library/Frameworks/   -pipe' 'LDFLAGS=             '"
       ;;
     --snmpd-module-list|--mod*)
       
@@ -104,10 +105,10 @@ echo   ucd-snmp/diskio  ucd-snmp/loadave  host/hr_system  host/hr_storage  host/
       ;;
     #################################################### compile
     --base-cflags)
-      echo   -g -Os -pipe -DBUILD=112 -DMACOSX_DEPLOYMENT_TARGET=10.5 -F/System/Library/PrivateFrameworks/ -F/System/Library/Frameworks/   -pipe -Udarwin9 -Ddarwin9=darwin9  -I${NSC_INCLUDEDIR}
+      echo -DNETSNMP_ENABLE_IPV6   -g -Os -pipe -DBUILD=121 -DMACOSX_DEPLOYMENT_TARGET=10.5 -F/System/Library/PrivateFrameworks/ -F/System/Library/Frameworks/   -pipe -Udarwin9 -Ddarwin9=darwin9  -I${NSC_INCLUDEDIR}
       ;;
     --cflags|--cf*)
-      echo   -g -Os -pipe -DBUILD=112 -DMACOSX_DEPLOYMENT_TARGET=10.5 -F/System/Library/PrivateFrameworks/ -F/System/Library/Frameworks/   -pipe -Udarwin9 -Ddarwin9=darwin9   -I. -I${NSC_INCLUDEDIR}
+      echo -DNETSNMP_ENABLE_IPV6   -g -Os -pipe -DBUILD=121 -DMACOSX_DEPLOYMENT_TARGET=10.5 -F/System/Library/PrivateFrameworks/ -F/System/Library/Frameworks/   -pipe -Udarwin9 -Ddarwin9=darwin9   -I. -I${NSC_INCLUDEDIR}
       ;;
     --srcdir)
       echo $NSC_SRCDIR
@@ -178,7 +179,7 @@ echo   ucd-snmp/diskio  ucd-snmp/loadave  host/hr_system  host/hr_storage  host/
       ;;
     ####################################################
     --version|--ver*)
-      echo 5.4.1
+      echo 5.4.2.1
       ;;
     --help)
       usage="yes"
@@ -201,6 +202,7 @@ echo   ucd-snmp/diskio  ucd-snmp/loadave  host/hr_system  host/hr_storage  host/
       Xalgorithm="DES"
       token=rwuser
       shift
+      shifted=1
       while test "x$done" = "x" -a "x$1" != "x" ; do
 	case $1 in
 	    -A|-a)
@@ -315,6 +317,7 @@ echo   ucd-snmp/diskio  ucd-snmp/loadave  host/hr_system  host/hr_storage  host/
     ####################################################
     --compile-subagent)
       shift
+      shifted=1
       while test "x$done" = "x" -a "x$1" != "x" ; do
 	case $1 in
             --norm)
@@ -637,7 +640,7 @@ EOF
         echo "Ack.  Can't create $tmpfile."
 	exit 1
       fi
-      cmd="gcc $cflags   -g -Os -pipe -DBUILD=112 -DMACOSX_DEPLOYMENT_TARGET=10.5 -F/System/Library/PrivateFrameworks/ -F/System/Library/Frameworks/   -pipe -Udarwin9 -Ddarwin9=darwin9  -I. -I${NSC_INCLUDEDIR} -o $outname $tmpfile $cfiles $NSC_LDFLAGS $NSC_LIBDIR $NSC_BASE_AGENT_LIBS $NSC_AGENTLIBS $ldflags"
+      cmd="gcc $cflags -DNETSNMP_ENABLE_IPV6   -g -Os -pipe -DBUILD=121 -DMACOSX_DEPLOYMENT_TARGET=10.5 -F/System/Library/PrivateFrameworks/ -F/System/Library/Frameworks/   -pipe -Udarwin9 -Ddarwin9=darwin9  -I. -I${NSC_INCLUDEDIR} -o $outname $tmpfile $cfiles $NSC_LDFLAGS $NSC_LIBDIR $NSC_BASE_AGENT_LIBS $NSC_AGENTLIBS $ldflags"
       echo "running: $cmd"
       `$cmd`
       if test "x$norm" != "x1" ; then
@@ -656,7 +659,9 @@ EOF
       usage="yes"
       ;;
   esac
-  shift
+  if [ "x$shifted" = "x" ] ; then
+      shift
+  fi
   done
 fi
 
