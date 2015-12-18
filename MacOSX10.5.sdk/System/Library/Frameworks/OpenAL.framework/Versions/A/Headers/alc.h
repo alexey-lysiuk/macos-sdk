@@ -179,7 +179,7 @@ ALC_API void            ALC_APIENTRY alcSuspendContext( ALCcontext *context );
 
 ALC_API void            ALC_APIENTRY alcDestroyContext( ALCcontext *context );
 
-ALC_API ALCcontext *    ALC_APIENTRY alcGetCurrentContext( ALCvoid );
+ALC_API ALCcontext *    ALC_APIENTRY alcGetCurrentContext( void );
 
 ALC_API ALCdevice*      ALC_APIENTRY alcGetContextsDevice( ALCcontext *context );
 

@@ -69,4 +69,6 @@
 + (void) addMapCoercionTo:(JNFTypeCoercer *)coercer;
 + (void) addSetCoercionTo:(JNFTypeCoercer *)coercer;
 
++ (JNFTypeCoercer *) defaultCoercer; // returns autoreleased copy, not shared, not thread safe
+
 @end

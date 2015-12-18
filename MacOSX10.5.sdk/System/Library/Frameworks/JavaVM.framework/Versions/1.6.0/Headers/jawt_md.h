@@ -1,7 +1,7 @@
 //
 //  jawt_md.h
 //
-//  Copyright (c) 2002 Apple computer Inc. All rights reserved.
+//  Copyright (c) 2002-2008 Apple Inc. All rights reserved.
 //
 
 #ifndef _JAVASOFT_JAWT_MD_H_

@@ -54,6 +54,9 @@
 
 // JNF_COCOA_ENTER - Place at the beginning of every JNI method
 //
+// Sets up an exception handler and an autorelease pool if one is
+// not already setup.
+//
 // Note: if the native method executes before AppKit is
 // initialized, use JNF_COCOA_DURING.
 #define JNF_COCOA_ENTER(env)									\
@@ -64,11 +67,27 @@
 
 // JNF_COCOA_EXIT - Place at the end of every JNI method
 //
-// Use this macro to match JNF_COCOA_ENTER
+// Catches NSExceptions and re-throws them as Java exceptions.
+// Use this macro to match JNF_COCOA_ENTER.
 #define JNF_COCOA_EXIT(env)										\
 	JNF_COCOA_HANDLE(env)										\
 	if (_token) JNFNativeMethodExit(_token);					\
 }
+
+// JNF_CHECK_AND_RETHROW_EXCEPTION - rethrows exceptions from Java
+//
+// Takes an exception thrown from Java, and transforms it into an
+// NSException. The NSException should bubble up to the upper-most
+// JNF_COCOA_ENTER/JNF_COCOA_EXIT pair, and then be re-thrown as
+// a Java exception when returning from JNI. This check should be
+// done after raw JNI operations which could cause a Java exception
+// to be be thrown. The JNF{Get/Set/Call}  macros below do this
+// check automatically.
+#define JNF_CHECK_AND_RETHROW_EXCEPTION(env)							\
+	{																	\
+		jthrowable _exception = (*env)->ExceptionOccurred(env);			\
+		if (_exception) [JNFException raise:env throwable:_exception];	\
+	}
 
 
 // Use JNF_CLASS_CACHE, JNF_MEMBER_CACHE, JNF_STATIC_MEMBER_CACHE

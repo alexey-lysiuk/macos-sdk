@@ -1,7 +1,7 @@
 /*
  JNFThread.h
  Java Native Foundation
- Copyright (c) 2008, Apple Inc.
+ Copyright (c) 2008-2009, Apple Inc.
  All rights reserved.
  
  Functions to help obtain a JNIEnv pointer in places where one cannot be passed
@@ -13,7 +13,8 @@
 
 enum {
 	JNFThreadDetachImmediately = (1 << 1),
-	JNFThreadDetachOnThreadDeath = (1 << 2)
+	JNFThreadDetachOnThreadDeath = (1 << 2),
+	JNFThreadSetSystemClassLoaderOnAttach = (1 << 3)
 };
 
 typedef jlong JNFThreadContext;

@@ -1828,9 +1828,7 @@ _MPIsFullyInitialized(void)                                   AVAILABLE_MAC_OS_X
 
 typedef CALLBACK_API_C( Boolean , MPIsFullyInitializedProc )(void);
 #define kMPUnresolvedCFragSymbolAddress 0
-#define MPLibraryIsLoaded()     \
-            ( ( (UInt32)_MPIsFullyInitialized != (UInt32)kMPUnresolvedCFragSymbolAddress ) &&   \
-              ( _MPIsFullyInitialized () ) )
+#define MPLibraryIsLoaded()     (true)
 /*
    ¤
    ===========================================================================================

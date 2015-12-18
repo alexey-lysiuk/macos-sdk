@@ -21,10 +21,10 @@ FOUNDATION_EXPORT NSString *NSURLFileScheme;
         
 // Convenience initializers
 - initWithScheme:(NSString *)scheme host:(NSString *)host path:(NSString *)path;
-- initFileURLWithPath:(NSString *)path isDirectory:(BOOL)isDir AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
+- initFileURLWithPath:(NSString *)path isDirectory:(BOOL)isDir AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
 - initFileURLWithPath:(NSString *)path;  // Better to use initFileURLWithPath:isDirectory: if you know if the path is a file vs directory, as it saves an i/o.
 
-+ (id)fileURLWithPath:(NSString *)path isDirectory:(BOOL) isDir AVAILABLE_MAC_OS_X_VERSION_10_4_AND_LATER;
++ (id)fileURLWithPath:(NSString *)path isDirectory:(BOOL) isDir AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
 + (id)fileURLWithPath:(NSString *)path; // Better to use fileURLWithPath:isDirectory: if you know if the path is a file vs directory, as it saves an i/o.
 
 // These methods expect their string arguments to contain any percent escape codes that are necessary

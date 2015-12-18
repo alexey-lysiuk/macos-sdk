@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>BuildVersion</key>
-	<string>7</string>
+	<string>9</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.5.10</string>
 	<key>CFBundleVersion</key>
@@ -11,6 +11,6 @@
 	<key>ProjectName</key>
 	<string>MacOSXSDK10_5</string>
 	<key>SourceVersion</key>
-	<string>3200000</string>
+	<string>3320000</string>
 </dict>
 </plist>

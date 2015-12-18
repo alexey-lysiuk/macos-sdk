@@ -14,7 +14,6 @@
 #import <Foundation/Foundation.h>
 
 #import <JavaNativeFoundation/JNFJNI.h>
-#import <JavaNativeFoundation/JNFException.h>
 
 // Some exception class names.
 // These strings contain the full class name of each Java exception, so
@@ -43,11 +42,15 @@ __attribute__((visibility("default")))
 }
 
 + (void)raiseUnnamedException:(JNIEnv *)env;
++ (void)raise:(JNIEnv *)env throwable:(jthrowable)throwable;
 + (void)raise:(JNIEnv *)env as:(const char *)javaExceptionType reason:(const char *)reasonMsg;
+
+- init:(JNIEnv *)env throwable:(jthrowable)throwable;
+- init:(JNIEnv *)env as:(const char *)javaExceptionType reason:(const char *)reasonMsg;
+
 + (void)throwToJava:(JNIEnv *)env exception:(NSException *)exception;
 + (void)throwToJava:(JNIEnv *)env exception:(NSException *)exception as:(const char *)javaExceptionType;
 
-- init:(JNIEnv *)env as:(const char *)javaExceptionType reason:(const char *)reasonMsg;
 - (void)raiseToJava:(JNIEnv *)env;
 
 @end
