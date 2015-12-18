@@ -44,6 +44,8 @@ typedef long long __m64 __attribute__ ((__vector_size__ (8), __may_alias__));
 typedef int __v2si __attribute__ ((__vector_size__ (8)));
 typedef short __v4hi __attribute__ ((__vector_size__ (8)));
 typedef char __v8qi __attribute__ ((__vector_size__ (8)));
+/* LLVM LOCAL */
+typedef long long __v1di __attribute__ ((__vector_size__ (8)));
 
 /* APPLE LOCAL begin nodebug inline 4152603 */
 #define __always_inline__ __always_inline__, __nodebug__

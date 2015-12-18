@@ -243,9 +243,10 @@ _mm_sign_pi32 (__m64 __X, __m64 __Y)
 #define _mm_alignr_epi8(__X, __Y, __N) \
   ((__m128i)__builtin_ia32_palignr128 ((__v2di)(__X), (__v2di)(__Y), (__N) * 8))
 /* APPLE LOCAL end 5814283 */
-
+/* LLVM LOCAL begin */
 #define _mm_alignr_pi8(__X, __Y, __N) \
-  ((__m64)__builtin_ia32_palignr ((long long) (__X), (long long) (__Y), (__N) * 8))
+  ((__m64)__builtin_ia32_palignr ((__v1di) (__X), (__v1di) (__Y), (__N) * 8))
+/* LLVM LOCAL end */
 
 /* APPLE LOCAL begin radar 5618945 */
 __STATIC_INLINE __m128i __attribute__((__always_inline__))

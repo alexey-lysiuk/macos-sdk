@@ -67,6 +67,11 @@ extern uint8_t *getsectiondata(
 extern const struct segment_command *getsegbyname(
     const char *segname);
 
+extern uint8_t *getsegmentdata(
+    const struct mach_header *mhp,
+    const char *segname,
+    unsigned long *size);
+
 #else /* defined(__LP64__) */
 /*
  * Runtime interfaces for 64-bit Mach-O programs.
@@ -83,6 +88,11 @@ extern uint8_t *getsectiondata(
 
 extern const struct segment_command_64 *getsegbyname(
     const char *segname);
+
+extern uint8_t *getsegmentdata(
+    const struct mach_header_64 *mhp,
+    const char *segname,
+    unsigned long *size);
 
 #endif /* defined(__LP64__) */
 

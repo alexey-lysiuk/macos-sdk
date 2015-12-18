@@ -3,7 +3,7 @@
  
      Contains:   Ink Manager
  
-     Version:    InkFramework-104~226
+     Version:    InkFramework-104~232
  
      Copyright:  © 2003-2008 by Apple Computer, Inc., all rights reserved.
  

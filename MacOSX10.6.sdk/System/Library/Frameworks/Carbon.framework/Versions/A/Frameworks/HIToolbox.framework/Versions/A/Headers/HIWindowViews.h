@@ -3,7 +3,7 @@
  
      Contains:   Definition of the window-related views provided by HIToolbox.
  
-     Version:    HIToolbox-437~147
+     Version:    HIToolbox-437~175
  
      Copyright:  © 2006-2008 by Apple Computer, Inc., all rights reserved.
  
