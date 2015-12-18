@@ -262,7 +262,9 @@ IOSurfaceRef IOSurfaceLookupFromMachPort(mach_port_t port)
    would be considered invalid (such as kIOSurfacePixelFormat).
       
 */   
-size_t	IOSurfaceGetPropertyMaximum(CFStringRef property);
+size_t	IOSurfaceGetPropertyMaximum(CFStringRef property)
+	IOSFC_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_NA);
+
 
 /* 
    If a property has a particular alignment requirement, then IOSurfaceGetPropertyAlignment() will return it.  
@@ -277,11 +279,13 @@ size_t	IOSurfaceGetPropertyMaximum(CFStringRef property);
    kIOSurfacePlaneBytesPerRow
    
 */   
-size_t	IOSurfaceGetPropertyAlignment(CFStringRef property);
+size_t	IOSurfaceGetPropertyAlignment(CFStringRef property)
+	IOSFC_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_NA);
 
 /* This is a convenience function to automatically align property values.  For properties with no alignment
    requirements, the original value will be returned. */
-size_t	IOSurfaceAlignProperty(CFStringRef property, size_t value);
+size_t	IOSurfaceAlignProperty(CFStringRef property, size_t value)
+	IOSFC_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_NA);
 
 __END_DECLS
 

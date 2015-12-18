@@ -10,6 +10,7 @@ extern "C" {
 #endif
 
 #include <OpenCL/cl.h>
+#include <OpenCL/cl_gl.h>
 #include <AvailabilityMacros.h>
 
 // Context GL sharing

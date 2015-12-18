@@ -86,47 +86,6 @@ typedef struct _cl_image_format {
 } cl_image_format;
 
 
-/******************************************************************************/
-
-// Macro names and corresponding values defined by OpenCL
-
-#define CL_CHAR_BIT         8
-#define CL_SCHAR_MAX        127
-#define CL_SCHAR_MIN        (-127-1)
-#define CL_CHAR_MAX         CL_SCHAR_MAX
-#define CL_CHAR_MIN         CL_SCHAR_MIN
-#define CL_UCHAR_MAX        255
-#define CL_SHRT_MAX         32767
-#define CL_SHRT_MIN         (-32767-1)
-#define CL_USHRT_MAX        65535
-#define CL_INT_MAX          2147483647
-#define CL_INT_MIN          (-2147483647-1)
-#define CL_UINT_MAX         0xffffffffU
-#define CL_LONG_MAX         ((cl_long) 0x7FFFFFFFFFFFFFFFLL)
-#define CL_LONG_MIN         ((cl_long) -0x7FFFFFFFFFFFFFFFLL - 1LL)
-#define CL_ULONG_MAX        ((cl_ulong) 0xFFFFFFFFFFFFFFFFULL)
-
-#define CL_FLT_DIG          6
-#define CL_FLT_MANT_DIG     24
-#define CL_FLT_MAX_10_EXP   +38
-#define CL_FLT_MAX_EXP      +128
-#define CL_FLT_MIN_10_EXP   -37
-#define CL_FLT_MIN_EXP      -125
-#define CL_FLT_RADIX        2
-#define CL_FLT_MAX          0x1.fffffep127f
-#define CL_FLT_MIN          0x1.0p-126f
-#define CL_FLT_EPSILON      0x1.0p-23f
-
-#define CL_DBL_DIG          15
-#define CL_DBL_MANT_DIG     53
-#define CL_DBL_MAX_10_EXP   +308
-#define CL_DBL_MAX_EXP      +1024
-#define CL_DBL_MIN_10_EXP   -307
-#define CL_DBL_MIN_EXP      -1021
-#define CL_DBL_RADIX        2
-#define CL_DBL_MAX          0x1.fffffffffffffp1023
-#define CL_DBL_MIN          0x1.0p-1022
-#define CL_DBL_EPSILON      0x1.0p-52
 
 /******************************************************************************/
 
@@ -178,6 +137,7 @@ typedef struct _cl_image_format {
 #define CL_INVALID_GL_OBJECT                        -60
 #define CL_INVALID_BUFFER_SIZE                      -61
 #define CL_INVALID_MIP_LEVEL                        -62
+#define CL_INVALID_GLOBAL_WORK_SIZE                 -63
 
 // OpenCL Version
 #define CL_VERSION_1_0                              1
@@ -251,6 +211,8 @@ typedef struct _cl_image_format {
 #define CL_DEVICE_VERSION                           0x102F
 #define CL_DEVICE_EXTENSIONS                        0x1030
 #define CL_DEVICE_PLATFORM                          0x1031
+// 0x1032 reserved for CL_DEVICE_DOUBLE_FP_CONFIG
+// 0x1033 reserved for CL_DEVICE_HALF_FP_CONFIG
 	
 // cl_device_fp_config - bitfield
 #define CL_FP_DENORM                                (1 << 0)
@@ -473,7 +435,7 @@ clGetDeviceInfo(cl_device_id    /* device */,
 
 // Context APIs  
 extern CL_API_ENTRY cl_context CL_API_CALL
-clCreateContext(cl_context_properties * /* properties */,
+clCreateContext(const cl_context_properties * /* properties */,
                 cl_uint                 /* num_devices */,
                 const cl_device_id *    /* devices */,
                 void (*pfn_notify)(const char *, const void *, size_t, void *) /* pfn_notify */,
@@ -481,7 +443,7 @@ clCreateContext(cl_context_properties * /* properties */,
                 cl_int *                /* errcode_ret */) CL_API_SUFFIX__VERSION_1_0;
 
 extern CL_API_ENTRY cl_context CL_API_CALL
-clCreateContextFromType(cl_context_properties * /* properties */,
+clCreateContextFromType(const cl_context_properties * /* properties */,
                         cl_device_type          /* device_type */,
                         void (*pfn_notify)(const char *, const void *, size_t, void *) /* pfn_notify */,
                         void *                  /* user_data */,
@@ -902,7 +864,7 @@ clEnqueueBarrier(cl_command_queue /* command_queue */) CL_API_SUFFIX__VERSION_1_
 // check to make sure the address is not NULL, before using or 
 // calling the returned function address.
 //
-void *clGetExtensionFunctionAddress(const char * /* func_name */) CL_API_SUFFIX__VERSION_1_0;
+extern CL_API_ENTRY void * CL_API_CALL clGetExtensionFunctionAddress(const char * /* func_name */) CL_API_SUFFIX__VERSION_1_0;
 
 #ifdef __cplusplus
 }

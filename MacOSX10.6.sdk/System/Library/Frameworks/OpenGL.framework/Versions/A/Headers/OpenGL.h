@@ -105,7 +105,7 @@ extern CGLError CGLSetGlobalOption(CGLGlobalOption pname, const GLint *params);
 extern CGLError CGLGetGlobalOption(CGLGlobalOption pname, GLint *params);
 #endif
 
-extern CGLError CGLSetOption(CGLGlobalOption pname, GLint param); /* Use CGLSetGlobalOption */
+extern CGLError CGLSetOption(CGLGlobalOption pname, GLint param);  /* Use CGLSetGlobalOption */
 extern CGLError CGLGetOption(CGLGlobalOption pname, GLint *param); /* Use CGLGetGlobalOption */
 
 /*

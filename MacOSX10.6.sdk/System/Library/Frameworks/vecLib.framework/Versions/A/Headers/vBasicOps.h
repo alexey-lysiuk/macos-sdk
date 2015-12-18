@@ -5,7 +5,7 @@
  
      Version:    vecLib-268.0
  
-     Copyright:  © 1999-2009 by Apple Computer, Inc., all rights reserved.
+     Copyright:  © 1999-2010 by Apple Computer, Inc., all rights reserved.
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:

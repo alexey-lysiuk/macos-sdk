@@ -3,7 +3,7 @@
  
      Contains:   International Date and Time Interfaces (previously in TextUtils)
  
-     Version:    CarbonCore-859.2~1
+     Version:    CarbonCore-859.2~134
  
      Copyright:  © 1994-2008 by Apple Computer, Inc., all rights reserved.
  

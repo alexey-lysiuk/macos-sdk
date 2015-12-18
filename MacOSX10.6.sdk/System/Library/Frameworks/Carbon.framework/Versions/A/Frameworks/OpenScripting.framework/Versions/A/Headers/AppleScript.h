@@ -3,7 +3,7 @@
  
      Contains:   AppleScript Specific Interfaces.
  
-     Version:    OSA-136~14
+     Version:    OSA-136~143
  
      Copyright:  © 1992-2008 by Apple Computer, Inc., all rights reserved
  

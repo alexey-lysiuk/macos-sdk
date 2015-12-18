@@ -1,5 +1,5 @@
 /*******************************************************************************
- * Copyright:  (c) 2007-2008 by Apple, Inc., All Rights Reserved.
+ * Copyright:  (c) 2007-2009 by Apple, Inc., All Rights Reserved.
  ******************************************************************************/
 
 #ifndef __OPENCL_H
@@ -14,14 +14,13 @@ extern "C" {
 #include <OpenGL/CGLDevice.h>
 #include <OpenCL/cl.h>
 #include <OpenCL/cl_gl.h>
+#include <OpenCL/cl_gl_ext.h>
 #include <OpenCL/cl_ext.h>
 
 	
 #ifdef __cplusplus
 }
 #endif
-
-#define CL_DEVICE_COMPILER_NOT_AVAILABLE            -3
 
 #endif  // __OPENCL_H
 

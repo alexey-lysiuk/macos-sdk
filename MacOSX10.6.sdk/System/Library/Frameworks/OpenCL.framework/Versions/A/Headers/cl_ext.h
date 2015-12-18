@@ -12,8 +12,6 @@ extern "C" {
 #include <OpenCL/cl.h>
 #include <AvailabilityMacros.h>
 
-#include <OpenCL/cl_gl_ext.h>
-
 // Memory object destruction
 //
 // Apple extension for use to manage externally allocated buffers used with cl_mem objects with CL_MEM_USE_HOST_PTR
@@ -59,6 +57,10 @@ extern void clLogMessagesToStderrAPPLE(   const char * /* errstr */,
                                           size_t       /* cb */, 
                                           void *       /* user_data */ )    CL_EXTENSION_WEAK_LINK AVAILABLE_MAC_OS_X_VERSION_10_6_AND_LATER;
     
+
+// Symbol for cl_khr_fp64 extension, supported by some devices.
+#define CL_DEVICE_DOUBLE_FP_CONFIG          0x1032
+
 
 
 #ifdef __cplusplus
