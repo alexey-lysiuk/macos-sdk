@@ -20,7 +20,11 @@
 #import <JavaVM/jni.h>
 
 #if !defined(JNF_EXPORT)
-	#define JNF_EXPORT extern
+	#ifdef __cplusplus
+		#define JNF_EXPORT extern "C"
+	#else
+		#define JNF_EXPORT extern
+	#endif
 #endif
 
 #import <JavaNativeFoundation/JNFException.h>
@@ -38,7 +42,8 @@
 // Use this macro only if you don't want any autorelease pool set or
 // Other JNFThreadContext setup (ie, if the AppKit isn't running
 // yet).  Usually, you want to use JNF_COCOA_ENTER & JNF_COCOA_EXIT
-#define JNF_COCOA_DURING(env)   @try {
+#define JNF_COCOA_DURING(env)									\
+@try {
 
 
 // JNF_COCOA_HANDLE - Close of JNF_COCOA_DURING
@@ -71,7 +76,9 @@
 // Use this macro to match JNF_COCOA_ENTER.
 #define JNF_COCOA_EXIT(env)										\
 	JNF_COCOA_HANDLE(env)										\
-	if (_token) JNFNativeMethodExit(_token);					\
+	@finally {													\
+		if (_token) JNFNativeMethodExit(_token);				\
+	}															\
 }
 
 // JNF_CHECK_AND_RETHROW_EXCEPTION - rethrows exceptions from Java
@@ -174,6 +181,18 @@ JNF_EXPORT BOOL JNFIsInstanceOf(JNIEnv *env, jobject obj, JNFClassInfo *clazz);
 
 // Creating instances
 JNF_EXPORT jobject JNFNewObject(JNIEnv *env, JNFMemberInfo *constructor, ...);
+
+// Creating arrays
+JNF_EXPORT jobjectArray		JNFNewObjectArray	(JNIEnv *env, JNFClassInfo *clazz, jsize length);
+JNF_EXPORT jbooleanArray	JNFNewBooleanArray	(JNIEnv *env, jsize length);
+JNF_EXPORT jbyteArray		JNFNewByteArray		(JNIEnv *env, jsize length);
+JNF_EXPORT jcharArray		JNFNewCharArray		(JNIEnv *env, jsize length);
+JNF_EXPORT jshortArray		JNFNewShortArray	(JNIEnv *env, jsize length);
+JNF_EXPORT jintArray		JNFNewIntArray		(JNIEnv *env, jsize length);
+JNF_EXPORT jlongArray		JNFNewLongArray		(JNIEnv *env, jsize length);
+JNF_EXPORT jfloatArray		JNFNewFloatArray	(JNIEnv *env, jsize length);
+JNF_EXPORT jdoubleArray		JNFNewDoubleArray	(JNIEnv *env, jsize length);
+
 
 // Non-static getters
 JNF_EXPORT jobject  JNFGetObjectField (JNIEnv *env, jobject obj, JNFMemberInfo *field);

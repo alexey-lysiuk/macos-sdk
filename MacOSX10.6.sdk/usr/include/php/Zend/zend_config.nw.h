@@ -17,7 +17,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: zend_config.nw.h,v 1.8.2.1.2.1.2.2 2008/12/31 11:15:32 sebastian Exp $ */
+/* $Id: zend_config.nw.h 272370 2008-12-31 11:15:49Z sebastian $ */
 
 #ifndef ZEND_CONFIG_NW_H
 #define ZEND_CONFIG_NW_H

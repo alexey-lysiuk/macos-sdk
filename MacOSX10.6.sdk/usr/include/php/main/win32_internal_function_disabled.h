@@ -16,7 +16,7 @@
    +----------------------------------------------------------------------+
  */
 
-/* $Id: win32_internal_function_disabled.h,v 1.1.2.2 2009/01/16 13:52:13 pajoye Exp $ */
+/* $Id: win32_internal_function_disabled.h 273638 2009-01-16 13:52:13Z pajoye $ */
 
 /* 5 means the min version is 5 (XP/2000), 6 (2k8/vista), etc. */
 

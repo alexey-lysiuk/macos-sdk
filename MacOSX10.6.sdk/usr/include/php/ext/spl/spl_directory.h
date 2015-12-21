@@ -16,7 +16,7 @@
    +----------------------------------------------------------------------+
  */
 
-/* $Id: spl_directory.h,v 1.12.2.5.2.4.2.14 2009/06/04 14:46:26 colder Exp $ */
+/* $Id: spl_directory.h 283689 2009-07-08 03:06:59Z iliaa $ */
 
 #ifndef SPL_DIRECTORY_H
 #define SPL_DIRECTORY_H
@@ -129,6 +129,7 @@ static inline spl_filesystem_object* spl_filesystem_iterator_to_object(spl_files
 
 #define SPL_FILE_DIR_KEY_AS_PATHNAME       0x00000000 /* make RecursiveDirectoryTree::key() return getPathname() */
 #define SPL_FILE_DIR_KEY_AS_FILENAME       0x00000100 /* make RecursiveDirectoryTree::key() return getFilename() */
+#define SPL_FILE_DIR_FOLLOW_SYMLINKS       0x00000200 /* make RecursiveDirectoryTree::hasChildren() follow symlinks */
 #define SPL_FILE_DIR_KEY_MODE_MASK         0x00000F00 /* mask RecursiveDirectoryTree::key() */
 #define SPL_FILE_DIR_KEY(intern,mode)      ((intern->flags&SPL_FILE_DIR_KEY_MODE_MASK)==mode)
 

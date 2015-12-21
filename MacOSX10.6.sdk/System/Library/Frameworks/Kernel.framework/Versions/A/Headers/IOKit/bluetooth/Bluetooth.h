@@ -36,6 +36,7 @@
 //===========================================================================================================================
 
 typedef UInt16		BluetoothConnectionHandle;		// Upper 4 bits are reserved.
+typedef uint8_t		BluetoothLMPHandle;
 enum
 {
     kBluetoothConnectionHandleNone	= 0xffff
@@ -68,27 +69,60 @@ enum
 	kBluetoothKeyTypeChangedCombination				= 0x06,
 };
 
-// Packet types (Bluetooth spec section 4.3.5 Create Connection and 4.3.7 Add SCO Connection)
+// Packet types (Bluetooth spec section 7.1.5 - Create Connection)
 
 typedef UInt16		BluetoothPacketType;
 enum
 {
-	kBluetoothPacketTypeDM1		= 0x0008, 
-	kBluetoothPacketTypeDH1		= 0x0010, 
-	kBluetoothPacketTypeHV1		= 0x0020, 	// SCO only
-	kBluetoothPacketTypeHV2		= 0x0040, 	// SCO only
-	kBluetoothPacketTypeHV3		= 0x0080, 	// SCO only
-	kBluetoothPacketTypeDV		= 0x0100, 	// SCO only
-	kBluetoothPacketTypeAUX		= 0x0200, 
-	kBluetoothPacketTypeDM3		= 0x0400, 
-	kBluetoothPacketTypeDH3		= 0x0800, 
-	kBluetoothPacketTypeDM5		= 0x4000, 
-	kBluetoothPacketTypeDH5		= 0x8000, 
+	kBluetoothPacketTypeReserved1	= 0x0001, 
+	kBluetoothPacketType2DH1Omit	= 0x0002,	// Masks OUT this packet type
+	kBluetoothPacketType3DH1Omit	= 0x0004,	// Masks OUT this packet type
+
+	kBluetoothPacketTypeDM1			= 0x0008, 
+	kBluetoothPacketTypeDH1			= 0x0010, 
+	kBluetoothPacketTypeHV1			= 0x0020, 	// Reserved
+	kBluetoothPacketTypeHV2			= 0x0040, 	// Reserved
+	kBluetoothPacketTypeHV3			= 0x0080, 	// Reserved
+	kBluetoothPacketTypeDV			= 0x0100, 	// Reserved
+	kBluetoothPacketType2DH3Omit	= 0x0100,	// Masks OUT this packet type
+	kBluetoothPacketType3DH3Omit	= 0x0200,	// Masks OUT this packet type
+	kBluetoothPacketTypeAUX			= 0x0200,	// Deprecated
 	
-	// All other values are reserved for future use.
+	kBluetoothPacketTypeDM3			= 0x0400, 
+	kBluetoothPacketTypeDH3			= 0x0800,
+	
+	kBluetoothPacketType2DH5Omit	= 0x1000,	// Masks OUT this packet type
+	kBluetoothPacketType3DM5Omit	= 0x2000,	// Masks OUT this packet type 
+	
+	kBluetoothPacketTypeDM5			= 0x4000, 
+	kBluetoothPacketTypeDH5			= 0x8000, 
 	
 	kBluetoothPacketTypeEnd
 };
+
+// Setup Synchronous Packet types (Bluetooth 2.1 spec section 7.1.26 - Setup Synchronous Command)
+
+enum
+{
+	kBluetoothSynchronousConnectionPacketTypeHV1			= 0x0001,
+	kBluetoothSynchronousConnectionPacketTypeHV2			= 0x0002,
+	kBluetoothSynchronousConnectionPacketTypeHV3			= 0x0004,
+	kBluetoothSynchronousConnectionPacketTypeEV3			= 0x0008,
+	kBluetoothSynchronousConnectionPacketTypeEV4			= 0x0010,
+	kBluetoothSynchronousConnectionPacketTypeEV5			= 0x0020,
+
+	// masking out certain types:
+	
+	kBluetoothSynchronousConnectionPacketType2EV3Omit		= 0x0040,
+	kBluetoothSynchronousConnectionPacketType3EV3Omit		= 0x0080,
+	kBluetoothSynchronousConnectionPacketType2EV5Omit		= 0x0100,
+	kBluetoothSynchronousConnectionPacketType3EV5Omit		= 0x0200,
+	
+	kBluetoothSynchronousConnectionPacketTypeAll			= 0xFFFF,
+
+	kBluetoothSynchronousConnectionPacketTypeEnd
+};
+
 
 // LAP/Inquiry Access Codes
 
@@ -279,7 +313,7 @@ enum
 {
 	kBluetoothL2CAPChannelNull					= 0x0000, 	// Illegal, should not be used
 	kBluetoothL2CAPChannelSignalling	 		= 0x0001, 	// L2CAP signalling channel
-	kBluetoothL2CAPChannelConnectionLessData	= 0x0002, 	// L2CA connection less data
+	kBluetoothL2CAPChannelConnectionLessData	= 0x0002, 	// L2CAP connection less data
 	kBluetoothL2CAPChannelAMPManagerProtocol	= 0x0003,	// AMP Manager Protocol
 	
 	// Range 0x0003 to 0x003F reserved for future use.
@@ -1129,8 +1163,8 @@ enum BluetoothHCIGeneralFlowControlStates
 	kHCIACLDataPacketsOnHCISCODataPacketsOff	= 0x01,
 	kHCIACLDataPacketsOffHCISCODataPacketsOn	= 0x02,
 	kHCIACLDataPacketsOnHCISCODataPacketsOn		= 0x03,
-};
-
+};		
+		
 typedef SInt8 BluetoothHCITransmitPowerLevel;
 typedef UInt8 BluetoothHCITransmitPowerLevelType;
 enum BluetoothHCITransmitReadPowerLevelTypes
@@ -1163,9 +1197,6 @@ enum BluetoothHCIHoldModeActivityStates
 	kSuspendInquiryScan				= 0x02,
 	kSuspendPeriodicInquiries		= 0x03,
 };
-
-typedef UInt16	BluetoothHCIVoiceSetting;
-typedef UInt8 	BluetoothHCISupportedIAC;
 
 typedef UInt8 BluetoothHCIAuthenticationEnable;
 enum BluetoothHCIAuthentionEnableModes
@@ -1222,10 +1253,11 @@ struct	BluetoothHCIInquiryResult
 	BluetoothClockOffset				clockOffset;
 };
 
+#define kBluetoothHCIInquiryResultsMaxResults 50
 typedef struct	BluetoothHCIInquiryResults	BluetoothHCIInquiryResults;
 struct	BluetoothHCIInquiryResults
 {
-	BluetoothHCIInquiryResult		results[50];
+	BluetoothHCIInquiryResult		results[kBluetoothHCIInquiryResultsMaxResults];
 	IOItemCount						count;
 };
 
@@ -1448,6 +1480,58 @@ enum BluetoothLinkTypes
 	kBluetoothESCOConnection	= 2,
     kBluetoothLinkTypeNone		= 0xff
 };
+
+typedef UInt16		BluetoothHCIVoiceSetting; // 10 bits meaningful
+typedef UInt8		BluetoothHCISupportedIAC;
+
+typedef uint32_t	BluetoothHCITransmitBandwidth;
+typedef uint32_t	BluetoothHCIReceiveBandwidth;
+typedef uint16_t	BluetoothHCIMaxLatency;
+typedef uint8_t		BluetoothHCIRetransmissionEffort;		
+enum BluetoothHCIRetransmissionEffortTypes
+{
+	kHCIRetransmissionEffortTypeNone								= 0x00,
+	kHCIRetransmissionEffortTypeAtLeastOneAndOptimizeForPower		= 0x01,
+	kHCIRetransmissionEffortTypeAtLeastOneAndOptimizeLinkQuality	= 0x02,
+	kHCIRetransmissionEffortTypeDontCare							= 0xFF,
+};
+		
+
+// Setup Synchronous Packet types (Bluetooth 2.1 spec section 7.7.35  - Setup Synchronous Command Complete Event)
+
+typedef uint8_t		BluetoothAirMode;
+enum
+{
+	kBluetoothAirModeULawLog				= 0x00,
+	kBluetoothAirModeALawLog				= 0x01,
+	kBluetoothAirModeCVSD					= 0x02,
+	kBluetoothAirModeTransparentData		= 0x03
+};
+
+typedef struct	BluetoothSynchronousConnectionInfo		BluetoothSynchronousConnectionInfo;
+struct	BluetoothSynchronousConnectionInfo
+{
+	BluetoothHCITransmitBandwidth		transmitBandWidth;
+	BluetoothHCIReceiveBandwidth		receiveBandWidth;
+	BluetoothHCIMaxLatency				maxLatency;
+	BluetoothHCIVoiceSetting			voiceSetting;
+	BluetoothHCIRetransmissionEffort	retransmissionEffort;
+	BluetoothPacketType					packetType;
+};
+
+typedef struct	BluetoothHCIEventSynchronousConnectionCompleteResults 	BluetoothHCIEventSynchronousConnectionCompleteResults;
+struct			BluetoothHCIEventSynchronousConnectionCompleteResults
+{
+	BluetoothConnectionHandle			connectionHandle;
+	BluetoothDeviceAddress				deviceAddress;
+	BluetoothLinkType					linkType;
+	uint8_t								transmissionInterval;
+	uint8_t								retransmissionWindow;
+	uint16_t							receivePacketLength;
+	uint16_t							transmitPacketLength;
+	BluetoothAirMode					airMode;
+};
+
 
 typedef UInt8	BluetoothHCIStatus;
 typedef UInt8	BluetoothHCIEventStatus;

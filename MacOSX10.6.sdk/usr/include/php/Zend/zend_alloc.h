@@ -17,7 +17,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: zend_alloc.h,v 1.63.2.2.2.12.2.10 2009/06/28 09:48:48 pajoye Exp $ */
+/* $Id: zend_alloc.h 287992 2009-09-03 14:33:11Z dmitry $ */
 
 #ifndef ZEND_ALLOC_H
 #define ZEND_ALLOC_H
@@ -26,6 +26,20 @@
 
 #include "../TSRM/TSRM.h"
 #include "zend.h"
+
+#ifndef ZEND_MM_ALIGNMENT
+# define ZEND_MM_ALIGNMENT 8
+# define ZEND_MM_ALIGNMENT_LOG2 3
+#elif ZEND_MM_ALIGNMENT < 4
+# undef ZEND_MM_ALIGNMENT
+# undef ZEND_MM_ALIGNMENT_LOG2
+# define ZEND_MM_ALIGNMENT 4
+# define ZEND_MM_ALIGNMENT_LOG2 2
+#endif
+
+#define ZEND_MM_ALIGNMENT_MASK ~(ZEND_MM_ALIGNMENT-1)
+
+#define ZEND_MM_ALIGNED_SIZE(size)	(((size) + ZEND_MM_ALIGNMENT - 1) & ZEND_MM_ALIGNMENT_MASK)
 
 typedef struct _zend_leak_info {
 	void *addr;

@@ -16,7 +16,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: php_getopt.h,v 1.1.2.4 2008/12/31 11:15:47 sebastian Exp $ */
+/* $Id: php_getopt.h 272370 2008-12-31 11:15:49Z sebastian $ */
 
 #ifndef PHP_GETOPT_H
 #define PHP_GETOPT_H

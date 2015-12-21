@@ -42,7 +42,7 @@
  * @const kCWPCOTransitionTimeNotSupported Association was denied because the requesting station does not support the 
  * PCO transition time required by the AP.
  * @const kCWRefNotBoundErr No interface is bound to the CWInterface.
- * @const kCWIPCErr Error communicating with a separate process.
+ * @const kCWIPCError Error communicating with a separate process.
  * @const kCWOpNotPermitted Calling process does not have permission to perform this operation.
  * @const kCWError Generic error, no specific error code exists to describe the error condition.
  */
@@ -298,5 +298,31 @@ extern NSString * const kCWScanKeyDwellTime __OSX_AVAILABLE_STARTING( __MAC_10_6
  * between intervals of off-channel activity during the scan request.  Defaults to driver default.
  */
 extern NSString * const kCWScanKeyRestTime __OSX_AVAILABLE_STARTING( __MAC_10_6, __IPHONE_NA );
+
+#pragma mark Cipher Key Flags
+/*! @group Cipher Key Flags */
+/*!
+ * @const kCWCipherKeyFlagsMulticast
+ * @discussion Cipher key will be used for multicast packets.
+ */
+extern NSUInteger const kCWCipherKeyFlagsMulticast __OSX_AVAILABLE_STARTING( __MAC_10_6, __IPHONE_NA );
+
+/*!
+ * @const kCWCipherKeyFlagsTx
+ * @discussion Cipher key will be used for packets sent from the interface.
+ */
+extern NSUInteger const kCWCipherKeyFlagsTx __OSX_AVAILABLE_STARTING( __MAC_10_6, __IPHONE_NA );
+
+/*!
+ * @const kCWCipherKeyFlagsRx
+ * @discussion Cipher key will be used for packets received by the interface.
+ */
+extern NSUInteger const kCWCipherKeyFlagsRx __OSX_AVAILABLE_STARTING( __MAC_10_6, __IPHONE_NA );
+
+/*!
+ * @const kCWCipherKeyFlagsUnicast
+ * @discussion Cipher key will be used for unicast packets.
+ */
+extern NSUInteger const kCWCipherKeyFlagsUnicast __OSX_AVAILABLE_STARTING( __MAC_10_6, __IPHONE_NA );	
 
 #endif /* _CORE_WLAN_GLOBALS_H_ */

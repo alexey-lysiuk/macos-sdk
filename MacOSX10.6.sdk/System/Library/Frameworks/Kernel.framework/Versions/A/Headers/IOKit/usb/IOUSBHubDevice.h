@@ -25,6 +25,15 @@
 /*
  *
  *	$Log: IOUSBHubDevice.h,v $
+ *	Revision 1.11  2009/09/12 03:42:16  rhoads
+ *	merge in the changes for the 390.3.4b QL
+ *
+ *	Revision 1.10.52.1  2009/09/10 18:50:52  nano
+ *	<rdar://problem/7134800> Task: Extra Current support for Ibex Peak RMHs -- look for a property that tells us to ask our USB plane parent for the extra current.  This will allow the RMH to pass on the request to it's parent.
+ *	
+ *	Revision 1.10  2009/05/07 19:43:09  nano
+ *	Move our SnowLeopard branch to TOT
+ *	
  *	Revision 1.6.102.3  2008/06/16 22:02:16  nano
  *	Bring in changes from Foxound 320.2.19
  *	
@@ -144,6 +153,7 @@ private:
 		UInt32					_canRequestExtraPower;			// If 0, this hub does not support requesting extra power from its parent, non-zero:  how much power we need to request in order to give out _extraPowerForPorts
 		UInt32					_extraPowerForPorts;			// Of the power requested from our parent, how much can we parcel out -- the rest is consumed by voltage drop thru the cable
 		UInt32					_extraPowerAllocated;			// Amount of power that we actually got from our parent
+		bool					_requestFromParent;				// True if we are to request the extra power from our parent, without modifying the request.  Used for RMHs
 	};
     ExpansionData			*_expansionData;
 	

@@ -16,7 +16,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: php_browscap.h,v 1.13.2.1.2.1.2.2 2008/12/31 11:15:45 sebastian Exp $ */
+/* $Id: php_browscap.h 272370 2008-12-31 11:15:49Z sebastian $ */
 
 #ifndef PHP_BROWSCAP_H
 #define PHP_BROWSCAP_H

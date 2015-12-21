@@ -155,12 +155,21 @@ FOUNDATION_EXPORT double NSFoundationVersionNumber;
 #define NSFoundationVersionNumber10_5_4 677.19
 #define NSFoundationVersionNumber10_5_5 677.21
 #define NSFoundationVersionNumber10_5_6 677.22
+#define NSFoundationVersionNumber10_5_7 677.24
+#define NSFoundationVersionNumber10_5_8 677.26
+#define NSFoundationVersionNumber10_6 751.00
+#define NSFoundationVersionNumber10_6_1 751.00
+#define NSFoundationVersionNumber10_6_2 751.14
+#define NSFoundationVersionNumber10_6_3 751.21
 #endif
 
 #if TARGET_OS_IPHONE
 #define NSFoundationVersionNumber_iPhoneOS_2_0	678.24
 #define NSFoundationVersionNumber_iPhoneOS_2_1  678.26
 #define NSFoundationVersionNumber_iPhoneOS_2_2  678.29
+#define NSFoundationVersionNumber_iPhoneOS_3_0  678.47
+#define NSFoundationVersionNumber_iPhoneOS_3_1  678.51
+#define NSFoundationVersionNumber_iPhoneOS_3_2  678.60
 #endif
 
 #if __LP64__ || TARGET_OS_EMBEDDED || TARGET_OS_IPHONE || TARGET_OS_WIN32 || NS_BUILD_32_LIKE_64

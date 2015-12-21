@@ -71,7 +71,7 @@
 //	IOBluetoothDevice
 //====================================================================================================================
 
-@interface IOBluetoothDevice : IOBluetoothObject
+@interface IOBluetoothDevice : IOBluetoothObject <NSCoding>
 {
     id									mServerDevice;
     
@@ -174,15 +174,6 @@
 */
 
 - (IOBluetoothDeviceRef)getDeviceRef;
-
-/*!
-    @method		isEqual:
-	@abstract	Compares two IOBluetoothDevice objects.
-    @param		cmpObject	The object to compare to the target IOBluetoothDevice object
-	@result		Returns TRUE if the cmpObject represents the same remote device as the target.
-*/
-
-- (BOOL)isEqual:(id)cmpObject;
 
 // L2CAP channel.
 
@@ -928,9 +919,6 @@
 
 #endif /* BLUETOOTH_VERSION_MAX_ALLOWED >= BLUETOOTH_VERSION_2_0 */
 
-- (NSString *)description;
-- (id)initWithCoder:(NSCoder *)coder;
-- (void)encodeWithCoder:(NSCoder *)coder;
 - (id)awakeAfterUsingCoder:(NSCoder *)coder;
 
 @end

@@ -17,7 +17,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: zend_execute.h,v 1.84.2.4.2.8.2.15 2009/06/09 09:26:02 pajoye Exp $ */
+/* $Id: zend_execute.h 287992 2009-09-03 14:33:11Z dmitry $ */
 
 #ifndef ZEND_EXECUTE_H
 #define ZEND_EXECUTE_H
@@ -144,8 +144,10 @@ struct _zend_vm_stack {
 	void **top;
 	void **end;
 	zend_vm_stack prev;
-	void *elements[1];
 };
+
+#define ZEND_VM_STACK_ELEMETS(stack) \
+	((void**)(((char*)(stack)) + ZEND_MM_ALIGNED_SIZE(sizeof(struct _zend_vm_stack))))
 
 #define ZEND_VM_STACK_GROW_IF_NEEDED(count)							\
 	do {															\
@@ -156,10 +158,10 @@ struct _zend_vm_stack {
 	} while (0)
 
 static inline zend_vm_stack zend_vm_stack_new_page(int count) {
-	zend_vm_stack page = (zend_vm_stack)emalloc(sizeof(*page)+sizeof(page->elements[0])*(count-1));
+	zend_vm_stack page = (zend_vm_stack)emalloc(ZEND_MM_ALIGNED_SIZE(sizeof(*page)) + sizeof(void*) * count);
 
-	page->top = page->elements;
-	page->end = page->elements + count;
+	page->top = ZEND_VM_STACK_ELEMETS(page);
+	page->end = page->top + count;
 	page->prev = NULL;
 	return page;
 }
@@ -207,7 +209,7 @@ static inline void *zend_vm_stack_pop(TSRMLS_D)
 {
 	void *el = *(--EG(argument_stack)->top);
 
-	if (UNEXPECTED(EG(argument_stack)->top == EG(argument_stack)->elements)) {
+	if (UNEXPECTED(EG(argument_stack)->top == ZEND_VM_STACK_ELEMETS(EG(argument_stack)))) {
 		zend_vm_stack p = EG(argument_stack);
 		EG(argument_stack) = p->prev;
 		efree(p);
@@ -221,15 +223,32 @@ static inline void *zend_vm_stack_alloc(size_t size TSRMLS_DC)
 
 	size = (size + (sizeof(void*) - 1)) / sizeof(void*);
 
-	ZEND_VM_STACK_GROW_IF_NEEDED((int)size);
+	/* the following comparison must be optimized out at compile time */
+	if (ZEND_MM_ALIGNMENT > sizeof(void*)) {
+		int extra = (ZEND_MM_ALIGNMENT - ((zend_uintptr_t)EG(argument_stack)->top & (ZEND_MM_ALIGNMENT - 1))) / sizeof(void*);
+
+		if (UNEXPECTED(size + extra + ZEND_MM_ALIGNED_SIZE(sizeof(void*)) / sizeof(void*) >
+		    EG(argument_stack)->end - EG(argument_stack)->top)) {
+			zend_vm_stack_extend(size TSRMLS_CC);
+		} else {
+			void **old_top = EG(argument_stack)->top;
+
+			EG(argument_stack)->top += extra;
+			/* store old top on the stack */
+			*EG(argument_stack)->top = (void*)old_top;
+			EG(argument_stack)->top += ZEND_MM_ALIGNED_SIZE(sizeof(void*)) / sizeof(void*);
+		}
+	} else {
+		ZEND_VM_STACK_GROW_IF_NEEDED((int)size);
+	}
 	ret = (void*)EG(argument_stack)->top;
 	EG(argument_stack)->top += size;
 	return ret;
 }
 
-static inline void zend_vm_stack_free(void *ptr TSRMLS_DC)
+static inline void zend_vm_stack_free_int(void *ptr TSRMLS_DC)
 {	
-	if (UNEXPECTED(EG(argument_stack)->elements == (void**)ptr)) {
+	if (UNEXPECTED(ZEND_VM_STACK_ELEMETS(EG(argument_stack)) == (void**)ptr)) {
 		zend_vm_stack p = EG(argument_stack);
 
 		EG(argument_stack) = p->prev;
@@ -239,10 +258,28 @@ static inline void zend_vm_stack_free(void *ptr TSRMLS_DC)
 	}
 }
 
+static inline void zend_vm_stack_free(void *ptr TSRMLS_DC)
+{	
+	if (UNEXPECTED(ZEND_VM_STACK_ELEMETS(EG(argument_stack)) == (void**)ptr)) {
+		zend_vm_stack p = EG(argument_stack);
+
+		EG(argument_stack) = p->prev;
+		efree(p);
+	} else {
+		/* the following comparison must be optimized out at compile time */
+		if (ZEND_MM_ALIGNMENT > sizeof(void*)) {
+			ptr = (void*)(((char*)ptr) - ZEND_MM_ALIGNED_SIZE(sizeof(void*)));
+			EG(argument_stack)->top = *(void***)ptr;
+		} else {
+			EG(argument_stack)->top = (void**)ptr;
+		}
+	}
+}
+
 static inline void** zend_vm_stack_push_args(int count TSRMLS_DC)
 {
 
-	if (UNEXPECTED(EG(argument_stack)->top - EG(argument_stack)->elements < count)  || 
+	if (UNEXPECTED(EG(argument_stack)->top - ZEND_VM_STACK_ELEMETS(EG(argument_stack)) < count)  || 
 		UNEXPECTED(EG(argument_stack)->top == EG(argument_stack)->end)) {
 		zend_vm_stack p = EG(argument_stack);
 
@@ -253,14 +290,14 @@ static inline void** zend_vm_stack_push_args(int count TSRMLS_DC)
 		while (count-- > 0) {
 			void *data = *(--p->top);
 
-			if (UNEXPECTED(p->top == p->elements)) {
+			if (UNEXPECTED(p->top == ZEND_VM_STACK_ELEMETS(p))) {
 				zend_vm_stack r = p;
 
 				EG(argument_stack)->prev = p->prev;
 				p = p->prev;
 				efree(r);
 			}
-			*(EG(argument_stack)->elements + count) = data;
+			*(ZEND_VM_STACK_ELEMETS(EG(argument_stack)) + count) = data;
 		}
 		return EG(argument_stack)->top++;
 	}
@@ -278,7 +315,7 @@ static inline void zend_vm_stack_clear_multiple(TSRMLS_D)
 		*p = NULL;
 		zval_ptr_dtor(&q);
 	}
-	zend_vm_stack_free(p TSRMLS_CC);
+	zend_vm_stack_free_int(p TSRMLS_CC);
 }
 
 static inline zval** zend_vm_stack_get_arg(int requested_arg TSRMLS_DC)
@@ -351,6 +388,8 @@ ZEND_API zval** zend_get_compiled_variable_value(const zend_execute_data *execut
 #define ZEND_USER_OPCODE_CONTINUE   0 /* execute next opcode */
 #define ZEND_USER_OPCODE_RETURN     1 /* exit from executor (return from function) */
 #define ZEND_USER_OPCODE_DISPATCH   2 /* call original opcode handler */
+#define ZEND_USER_OPCODE_ENTER      3 /* enter into new op_array without recursion */
+#define ZEND_USER_OPCODE_LEAVE      4 /* return to calling op_array within the same executor */
 
 #define ZEND_USER_OPCODE_DISPATCH_TO 0x100 /* call original handler of returned opcode */
 

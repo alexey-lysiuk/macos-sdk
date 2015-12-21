@@ -17,7 +17,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: datetime.h,v 1.23.2.2.2.1.2.2 2008/12/31 11:15:44 sebastian Exp $ */
+/* $Id: datetime.h 272370 2008-12-31 11:15:49Z sebastian $ */
 
 #ifndef DATETIME_H
 #define DATETIME_H

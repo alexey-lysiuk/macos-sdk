@@ -17,7 +17,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: zend_ini_scanner.h,v 1.14.2.1.2.2.2.4 2008/12/31 11:15:32 sebastian Exp $ */
+/* $Id: zend_ini_scanner.h 272370 2008-12-31 11:15:49Z sebastian $ */
 
 #ifndef _ZEND_INI_SCANNER_H
 #define _ZEND_INI_SCANNER_H

@@ -17,7 +17,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: tsrm_virtual_cwd.h,v 1.48.2.5.2.8.2.7 2009/06/16 00:07:04 pajoye Exp $ */
+/* $Id: tsrm_virtual_cwd.h 287673 2009-08-25 09:16:53Z pajoye $ */
 
 #ifndef VIRTUAL_CWD_H
 #define VIRTUAL_CWD_H
@@ -288,7 +288,7 @@ CWD_API realpath_cache_bucket* realpath_cache_lookup(const char *path, int path_
 /* rename on windows will fail if newname already exists.
    MoveFileEx has to be used */
 #if defined(TSRM_WIN32)
-# define VCWD_RENAME(oldname, newname) (MoveFileEx(oldname, newname, MOVEFILE_REPLACE_EXISTING) == 0 ? -1 : 0)
+# define VCWD_RENAME(oldname, newname) (MoveFileEx(oldname, newname, MOVEFILE_REPLACE_EXISTING|MOVEFILE_COPY_ALLOWED) == 0 ? -1 : 0)
 #else
 # define VCWD_RENAME(oldname, newname) rename(oldname, newname)
 #endif
@@ -311,8 +311,13 @@ CWD_API realpath_cache_bucket* realpath_cache_lookup(const char *path, int path_
 #define VCWD_REALPATH(path, real_path) tsrm_realpath(path, real_path TSRMLS_CC)
 
 #if HAVE_UTIME
-#define VCWD_UTIME(path, time) utime(path, time)
+# ifdef TSRM_WIN32
+#  define VCWD_UTIME(path, time) win32_utime(path, time)
+# else
+#  define VCWD_UTIME(path, time) utime(path, time)
+# endif
 #endif
+
 #define VCWD_CHMOD(path, mode) chmod(path, mode)
 #if !defined(TSRM_WIN32) && !defined(NETWARE)
 #define VCWD_CHOWN(path, owner, group) chown(path, owner, group)

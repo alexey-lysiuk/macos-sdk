@@ -20,7 +20,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: acconfig.h,v 1.40.2.1.2.1.2.3 2008/12/31 11:15:31 sebastian Exp $ */
+/* $Id: acconfig.h 272370 2008-12-31 11:15:49Z sebastian $ */
 
 #ifndef ZEND_API
 
@@ -437,9 +437,6 @@
 /* Define if you have the realpath function.  */
 #define HAVE_REALPATH 1
 
-/* Define if you have the res_search function.  */
-#define HAVE_RES_SEARCH 1
-
 /* Define if you have the rl_completion_matches function.  */
 /* #undef HAVE_RL_COMPLETION_MATCHES */
 
@@ -626,6 +623,9 @@
 /* Define if you have the <arpa/nameser.h> header file.  */
 #define HAVE_ARPA_NAMESER_H 1
 
+/* Define if you have the <arpa/nameser_compat.h> header file.  */
+#define HAVE_ARPA_NAMESER_COMPAT_H 1
+
 /* Define if you have the <assert.h> header file.  */
 #define HAVE_ASSERT_H 1
 
@@ -640,6 +640,9 @@
 
 /* Define if you have the <dlfcn.h> header file.  */
 #define HAVE_DLFCN_H 1
+
+/* Define if you have the <dns.h> header file.  */
+#define HAVE_DNS_H 1
 
 /* Define if you have the <errno.h> header file.  */
 #define HAVE_ERRNO_H 1
@@ -664,9 +667,6 @@
 
 /* Define if you have the <locale.h> header file.  */
 #define HAVE_LOCALE_H 1
-
-/* Define if you have the <mach-o/dyld.h> header file.  */
-#define HAVE_MACH_O_DYLD_H 1
 
 /* Define if you have the <malloc.h> header file.  */
 /* #undef HAVE_MALLOC_H */
@@ -832,9 +832,6 @@
 
 /* Define if you have the m library (-lm).  */
 #define HAVE_LIBM 1
-
-/* Enabling BIND8 compatibility for Panther */
-/* #undef BIND_8_COMPAT */
 
 /* Define if the target system has /dev/urandom device */
 #define HAVE_DEV_URANDOM 1
@@ -1053,13 +1050,22 @@
 #define HAVE_INET_ATON 1
 
 /*   */
-/* #undef HAVE_LIBRESOLV */
+#define HAVE_LIBRESOLV 1
 
 /*   */
 #define HAVE_INET_ATON 1
 
 /*   */
 /* #undef HAVE_LIBBIND */
+
+/*   */
+#define HAVE_NANOSLEEP 1
+
+/*   */
+#define HAVE_NANOSLEEP 1
+
+/*   */
+/* #undef HAVE_LIBRT */
 
 /*   */
 /* #undef HAVE_FOPENCOOKIE */
@@ -1426,6 +1432,12 @@
 
 /*   */
 /* #undef HAVE_ENCHANT */
+
+/*   */
+/* #undef HAVE_ENCHANT_BROKER_SET_PARAM */
+
+/*   */
+/* #undef ENCHANT_VERSION_STRING */
 
 /* Whether you want EXIF (metadata from images) support */
 #define HAVE_EXIF 1
@@ -2466,64 +2478,43 @@
 /* #undef ENABLE_CHROOT_FUNC */
 
 /*   */
-/* #undef HAVE_RES_NMKQUERY */
+/* #undef HAVE_RES_NSEARCH */
 
 /*   */
-/* #undef HAVE_RES_NMKQUERY */
+/* #undef HAVE_RES_NSEARCH */
 
 /*   */
-/* #undef HAVE_LIBRESOLV */
+#define HAVE_LIBRESOLV 1
 
 /*   */
-/* #undef HAVE_RES_NMKQUERY */
+/* #undef HAVE_RES_NSEARCH */
 
 /*   */
 /* #undef HAVE_LIBBIND */
 
 /*   */
-/* #undef HAVE_RES_NMKQUERY */
+/* #undef HAVE_RES_NSEARCH */
 
 /*   */
 /* #undef HAVE_LIBSOCKET */
 
 /*   */
-/* #undef HAVE_RES_NSEND */
+#define HAVE_DNS_SEARCH 1
 
 /*   */
-/* #undef HAVE_RES_NSEND */
+#define HAVE_DNS_SEARCH 1
 
 /*   */
-/* #undef HAVE_LIBRESOLV */
+#define HAVE_LIBRESOLV 1
 
 /*   */
-/* #undef HAVE_RES_NSEND */
-
-/*   */
-/* #undef HAVE_LIBBIND */
-
-/*   */
-/* #undef HAVE_RES_NSEND */
-
-/*   */
-/* #undef HAVE_LIBSOCKET */
-
-/*   */
-#define HAVE_RES_SEARCH 1
-
-/*   */
-#define HAVE_RES_SEARCH 1
-
-/*   */
-/* #undef HAVE_LIBRESOLV */
-
-/*   */
-#define HAVE_RES_SEARCH 1
+#define HAVE_DNS_SEARCH 1
 
 /*   */
 /* #undef HAVE_LIBBIND */
 
 /*   */
-#define HAVE_RES_SEARCH 1
+#define HAVE_DNS_SEARCH 1
 
 /*   */
 /* #undef HAVE_LIBSOCKET */
@@ -2535,7 +2526,7 @@
 #define HAVE_DN_EXPAND 1
 
 /*   */
-/* #undef HAVE_LIBRESOLV */
+#define HAVE_LIBRESOLV 1
 
 /*   */
 #define HAVE_DN_EXPAND 1
@@ -2556,7 +2547,7 @@
 #define HAVE_DN_SKIPNAME 1
 
 /*   */
-/* #undef HAVE_LIBRESOLV */
+#define HAVE_LIBRESOLV 1
 
 /*   */
 #define HAVE_DN_SKIPNAME 1
@@ -2571,43 +2562,22 @@
 /* #undef HAVE_LIBSOCKET */
 
 /*   */
-#define HAVE_RES_MKQUERY 1
+#define HAVE_RES_SEARCH 1
 
 /*   */
-#define HAVE_RES_MKQUERY 1
+#define HAVE_RES_SEARCH 1
 
 /*   */
-/* #undef HAVE_LIBRESOLV */
+#define HAVE_LIBRESOLV 1
 
 /*   */
-#define HAVE_RES_MKQUERY 1
-
-/*   */
-/* #undef HAVE_LIBBIND */
-
-/*   */
-#define HAVE_RES_MKQUERY 1
-
-/*   */
-/* #undef HAVE_LIBSOCKET */
-
-/*   */
-#define HAVE_RES_SEND 1
-
-/*   */
-#define HAVE_RES_SEND 1
-
-/*   */
-/* #undef HAVE_LIBRESOLV */
-
-/*   */
-#define HAVE_RES_SEND 1
+#define HAVE_RES_SEARCH 1
 
 /*   */
 /* #undef HAVE_LIBBIND */
 
 /*   */
-#define HAVE_RES_SEND 1
+#define HAVE_RES_SEARCH 1
 
 /*   */
 /* #undef HAVE_LIBSOCKET */
@@ -2757,7 +2727,7 @@
 /* #undef COMPILE_DL_XSL */
 
 /*   */
-/* #undef HAVE_ZIP */
+#define HAVE_ZIP 1
 
 /* Whether to build zip as dynamic module */
 /* #undef COMPILE_DL_ZIP */
@@ -2820,7 +2790,7 @@
 /* #undef ZTS */
 
 /*   */
-/* #undef ZEND_MULTIBYTE */
+#define ZEND_MULTIBYTE 1
 
 /* Define if the target system is darwin */
 #define DARWIN 1
@@ -2853,16 +2823,16 @@
 /* #undef PTHREADS */
 
 /* PHP build date */
-#define PHP_BUILD_DATE "2010-07-19"
+#define PHP_BUILD_DATE "2010-06-24"
 
 /* hardcode for each of the cross compiler host */
 #define PHP_OS "Darwin"
 
 /* hardcode for each of the cross compiler host */
-#define PHP_UNAME "Darwin sundevil.apple.com 10.0 Darwin Kernel Version 10.0.0: Fri Jul 31 22:47:34 PDT 2009; root:xnu-1456.1.25~1/RELEASE_I386 i386"
+#define PHP_UNAME "Darwin hokies.apple.com 10.0 Darwin Kernel Version 10.0.0: Fri Jul 31 22:46:25 PDT 2009; root:xnu-1456.1.25~1/RELEASE_X86_64 x86_64"
 
 /* uname -a output */
-#define PHP_UNAME "Darwin sundevil.apple.com 10.0 Darwin Kernel Version 10.0.0: Fri Jul 31 22:47:34 PDT 2009; root:xnu-1456.1.25~1/RELEASE_I386 i386"
+#define PHP_UNAME "Darwin hokies.apple.com 10.0 Darwin Kernel Version 10.0.0: Fri Jul 31 22:46:25 PDT 2009; root:xnu-1456.1.25~1/RELEASE_X86_64 x86_64"
 
 /* uname output */
 #define PHP_OS "Darwin"
@@ -2948,15 +2918,6 @@ int zend_sprintf(char *buffer, const char *format, ...);
 #/*This detection against winsock is of no use*/ undef HAVE_SOCKLEN_T
 #/*This detection against winsock is of no use*/ undef HAVE_SYS_SOCKET_H
 #endif
-#endif
-
-/*
- * Don't use <mach-o/dyld.h> on Mac OS X / Darwin if dl*() functions are available.
- * Because this header is processed multiple times during compilation (thanks to lack of
- * #ifdef protectors), this logic had to move here.
- */
-#if defined(HAVE_DLFCN_H) && defined(HAVE_MACH_O_DYLD_H)
-#/* This symbol must be allowed to be cleared. */ undef HAVE_MACH_O_DYLD_H
 #endif
 
 /*

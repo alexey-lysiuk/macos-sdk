@@ -13,9 +13,11 @@
 #import <JavaNativeFoundation/JNFJObjectWrapper.h>
 #import <JavaNativeFoundation/JNFString.h>
 #import <JavaNativeFoundation/JNFNumber.h>
+#import <JavaNativeFoundation/JNFDate.h>
 #import <JavaNativeFoundation/JNFPath.h>
 #import <JavaNativeFoundation/JNFTypeCoercion.h>
 #import <JavaNativeFoundation/JNFThread.h>
+#import <JavaNativeFoundation/JNFRunnable.h>
 #import <JavaNativeFoundation/JNFRunLoop.h>
 #import <JavaNativeFoundation/JNFException.h>
 #import <JavaNativeFoundation/JNFAssert.h>

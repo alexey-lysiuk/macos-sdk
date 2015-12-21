@@ -12,7 +12,7 @@
 #define JNIIMPORT
 #define JNICALL
 
-#if __LP64__
+#if defined(__LP64__) && __LP64__ /* for -Wundef */
 typedef int jint;
 #else
 typedef long jint;

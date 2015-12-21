@@ -9,7 +9,7 @@
                  This file may contain unreleased API's
  
      BuildInfo:  Built by:            root
-                 On:                  Wed Jul 21 03:42:15 2010
+                 On:                  Thu Apr 15 17:29:35 2010
                  With Interfacer:     3.0d46   (Mac OS X for PowerPC)
                  From:                SFNTTypes.i
                      Revision:        1.4

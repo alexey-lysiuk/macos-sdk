@@ -17,7 +17,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: php_hash_md.h,v 1.2.2.4.2.2.2.3 2008/12/31 11:15:37 sebastian Exp $ */
+/* $Id: php_hash_md.h 272370 2008-12-31 11:15:49Z sebastian $ */
 
 #ifndef PHP_HASH_MD_H
 #define PHP_HASH_MD_H

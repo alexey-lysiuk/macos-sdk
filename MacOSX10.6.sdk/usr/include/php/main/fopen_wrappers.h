@@ -16,7 +16,7 @@
    +----------------------------------------------------------------------+
  */
 
-/* $Id: fopen_wrappers.h,v 1.44.2.1.2.2.2.7 2009/01/16 10:06:10 pajoye Exp $ */
+/* $Id: fopen_wrappers.h 273621 2009-01-16 10:06:10Z pajoye $ */
 
 #ifndef FOPEN_WRAPPERS_H
 #define FOPEN_WRAPPERS_H

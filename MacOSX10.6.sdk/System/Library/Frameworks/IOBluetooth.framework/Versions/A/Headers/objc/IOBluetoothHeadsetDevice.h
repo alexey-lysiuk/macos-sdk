@@ -81,4 +81,40 @@
 
 @end
 
+@interface IOBluetoothDevice ( HeadsetAdditions )
+/*!
+ @method		headsetAudioGatewayServiceRecord
+ @abstract		Return the headset gateway SDP record
+ @discussion	Returns the headsetgateway SDP record.
+ @result		The headset gateway SDP record
+ */
+- (IOBluetoothSDPServiceRecord *)headsetAudioGatewayServiceRecord;
+
+/*!
+ @method		isHeadsetAudioGateway
+ @abstract		Return the devices support for headset gateway
+ @discussion	Returns the devices support for headset gateway (obtained from the devices SDP record).
+ @result		YES if the device supports headset gateway; otherwise, NO.
+ */
+- (BOOL)isHeadsetAudioGateway;
+
+/*!
+ @method		headsetDeviceServiceRecord
+ @abstract		Return the headset device SDP record
+ @discussion	Returns the headset device SDP record.
+ @result		The headset device SDP record
+ */
+- (IOBluetoothSDPServiceRecord *)headsetDeviceServiceRecord;
+
+/*!
+ @method		isHeadsetDevice
+ @abstract		Return the devices support for headset device
+ @discussion	Returns the devices support for headset device (obtained from the devices SDP record).
+ @result		YES if the device supports headset device; otherwise, NO.
+ */
+- (BOOL)isHeadsetDevice;
+
+@end
+
+
 #endif /* BLUETOOTH_VERSION_MAX_ALLOWED >= BLUETOOTH_VERSION_2_0 */

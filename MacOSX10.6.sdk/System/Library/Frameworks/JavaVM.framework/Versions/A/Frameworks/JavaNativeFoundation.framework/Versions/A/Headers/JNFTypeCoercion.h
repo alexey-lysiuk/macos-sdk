@@ -1,7 +1,7 @@
 /*
  JNFTypeCoercion.h
  Java Native Foundation
- Copyright (c) 2008, Apple Inc.
+ Copyright (c) 2008-2009, Apple Inc.
  All rights reserved.
  
  Type Coercion system that translates between Java VM objects and Objective-C Foundation objects.
@@ -65,6 +65,7 @@
 
 + (void) addStringCoercionTo:(JNFTypeCoercer *)coercer;
 + (void) addNumberCoercionTo:(JNFTypeCoercer *)coercer;
++ (void) addDateCoercionTo:(JNFTypeCoercer *)coercer;
 + (void) addListCoercionTo:(JNFTypeCoercer *)coercer;
 + (void) addMapCoercionTo:(JNFTypeCoercer *)coercer;
 + (void) addSetCoercionTo:(JNFTypeCoercer *)coercer;

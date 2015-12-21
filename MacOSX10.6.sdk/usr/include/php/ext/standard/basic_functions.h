@@ -17,7 +17,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: basic_functions.h,v 1.139.2.4.2.6.2.11 2008/12/31 11:15:44 sebastian Exp $ */
+/* $Id: basic_functions.h 286378 2009-07-26 22:59:46Z jani $ */
 
 #ifndef BASIC_FUNCTIONS_H
 #define BASIC_FUNCTIONS_H
@@ -32,7 +32,6 @@
 
 #include "zend_highlight.h"
 
-#include "url_scanner.h"
 #include "url_scanner_ex.h"
 
 extern zend_module_entry basic_functions_module;
@@ -207,8 +206,6 @@ typedef struct _php_basic_globals {
 	/* var.c */
 	zend_class_entry *incomplete_class;
 
-	/* url_scanner.c */
-	url_adapt_state_t url_adapt_state;
 	/* url_scanner_ex.re */
 	url_adapt_state_ex_t url_adapt_state_ex;
 

@@ -76,7 +76,7 @@
 				RFCOMM channels.
 	@discussion	The given selector will be called on the target object whenever an RFCOMM channel with the given
 				attributes is opened.  The selector should accept two arguments.  The first is the user 
-				notification object.  The second is the IOBluetoothL2CAPChannel that was opened.
+				notification object.  The second is the IOBluetoothRFCOMMChannel that was opened.
 	@param		object		Target object
 	@param		selector	Selector to be called on the target object when a new RFCOMM channel is opened.
 				the format for the selector is: 
@@ -314,6 +314,13 @@
 
 - (IOReturn)setDelegate:(id)delegate;
 
+/*!
+ @method	delegate
+ @abstract	Returns the object delegate
+ @result	the current delegate, or nil
+ */
+- (id) delegate;
+
 #endif /* BLUETOOTH_VERSION_MAX_ALLOWED >= BLUETOOTH_VERSION_1_2 */
 
 /*!
@@ -375,6 +382,7 @@
 // these are the methods that may be implemented:
 
 @protocol IOBluetoothRFCOMMChannelDelegate
+@optional
 - (void)rfcommChannelData:(IOBluetoothRFCOMMChannel*)rfcommChannel data:(void *)dataPointer length:(size_t)dataLength;
 - (void)rfcommChannelOpenComplete:(IOBluetoothRFCOMMChannel*)rfcommChannel status:(IOReturn)error;
 - (void)rfcommChannelClosed:(IOBluetoothRFCOMMChannel*)rfcommChannel;

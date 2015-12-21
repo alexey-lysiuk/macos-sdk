@@ -17,7 +17,7 @@
 */
 
 
-/* $Id: php_ereg.h,v 1.24.2.5 2009/05/28 21:57:24 scottmac Exp $ */
+/* $Id: php_ereg.h 281350 2009-05-28 21:57:24Z scottmac $ */
 
 #ifndef EREG_H
 #define EREG_H

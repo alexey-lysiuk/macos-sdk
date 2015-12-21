@@ -119,6 +119,19 @@ CFN_EXPORT const CFStringRef kCFHTTPAuthenticationSchemeNTLM			 __OSX_AVAILABLE_
  */
 CFN_EXPORT const CFStringRef kCFHTTPAuthenticationSchemeNegotiate		__OSX_AVAILABLE_STARTING(__MAC_10_5,__IPHONE_2_0);
 
+/*
+ *  kCFHTTPAuthenticationSchemeNegotiate2
+ *  
+ *  Discussion:
+ *	HTTP Negotiate authentication scheme.
+ *  
+ *  Availability:
+ *	Mac OS X:		 in version 10.6 and later in CoreServices.framework
+ *	CarbonLib:		not available
+ *	Non-Carbon CFM:   not available
+ */
+CFN_EXPORT const CFStringRef kCFHTTPAuthenticationSchemeNegotiate2		__OSX_AVAILABLE_STARTING(__MAC_10_6,__IPHONE_NA);
+	
 
 /*
  *  CFHTTPMessageRef

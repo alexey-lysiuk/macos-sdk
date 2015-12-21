@@ -17,7 +17,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: zend_multibyte.h,v 1.3.2.3.2.1.2.4 2008/12/31 11:15:32 sebastian Exp $ */
+/* $Id: zend_multibyte.h 272370 2008-12-31 11:15:49Z sebastian $ */
 
 #ifndef ZEND_MULTIBYTE_H
 #define ZEND_MULTIBYTE_H

@@ -32,12 +32,14 @@
 	
 	BluetoothHCIEventMask		_eventCodeMask;
 	BluetoothClassOfDevice		_cachedClassOfDevice;
-	id							_delegate;
+	id __weak					_delegate;
 	NSTimer *					_timerClassOfDeviceSetting;
 	void *						_eventListener;
 
 	void *__strong				_expansion[4];
 }
+
+@property(assign) id __weak delegate;
 
 //---------------------------------------------------------------------------------------------------------------------------
 /*!	@method		controllerWithDelegate
@@ -46,23 +48,6 @@
 */
 
 + (IOBluetoothHostController *)defaultController;
-
-//---------------------------------------------------------------------------------------------------------------------------
-/*!	@method		setDelegate
-	@abstract   Set the delegate that will receive delegate messages, as defined below.
-	@param		id	The object that should receive delegate messages.
-	@discussion All delegate methods are optional, although it would be a good idea to implement them all.
-*/
-
-- (void)setDelegate:(id)delegate;
-
-//---------------------------------------------------------------------------------------------------------------------------
-/*!	@method		delegate
-	@abstract	Returns the current delegate, if any.
-	@result		Returns delegate object, otherwise returns nil.
-*/
-
-- (id)delegate;
 
 //---------------------------------------------------------------------------------------------------------------------------
 /*!	@method		classOfDevice

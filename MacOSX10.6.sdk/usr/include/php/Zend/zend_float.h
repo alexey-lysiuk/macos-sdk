@@ -16,7 +16,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: zend_float.h,v 1.2.2.5 2009/03/18 10:18:09 dmitry Exp $ */
+/* $Id: zend_float.h 277398 2009-03-18 10:18:10Z dmitry $ */
 
 #ifndef ZEND_FLOAT_H
 #define ZEND_FLOAT_H

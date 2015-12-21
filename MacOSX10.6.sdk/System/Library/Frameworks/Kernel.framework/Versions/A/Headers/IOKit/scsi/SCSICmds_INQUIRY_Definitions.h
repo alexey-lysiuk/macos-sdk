@@ -530,14 +530,14 @@ enum
 
 
 /*!
-@constant kINQUIRY_VERSION_DESCRIPTOR_MaxCount
+@define kINQUIRY_VERSION_DESCRIPTOR_MaxCount
 Maximum number of INQUIRY version descriptors supported.
 */
 #define	kINQUIRY_VERSION_DESCRIPTOR_MaxCount		8
 
 
-/*
-@constant kINQUIRY_VERSION_DESCRIPTOR_SAT
+/*!
+@enum kINQUIRY_VERSION_DESCRIPTOR_SAT
 SAT specification version descriptor.
 */
 enum
@@ -546,7 +546,7 @@ enum
 };
 
 
-/*!
+/*
 IORegistry property names for information derived from the Inquiry data.
 The Peripheral Device Type is the only property that the 
 generic Logical Unit Drivers will use to match. These properties are
@@ -561,13 +561,13 @@ Peripheral Device Type and the Vendor Identification.
 */
 
 /*!
-@constant kIOPropertySCSIPeripheralDeviceType
+@define kIOPropertySCSIPeripheralDeviceType
 SCSI Peripheral Device Type as reported in the INQUIRY data.
 */
 #define kIOPropertySCSIPeripheralDeviceType			"Peripheral Device Type"
 
 /*!
-@constant kIOPropertySCSIPeripheralDeviceTypeSize
+@define kIOPropertySCSIPeripheralDeviceTypeSize
 Size of the kIOPropertySCSIPeripheralDeviceType key.
 */
 #define kIOPropertySCSIPeripheralDeviceTypeSize		8
@@ -575,21 +575,21 @@ Size of the kIOPropertySCSIPeripheralDeviceType key.
 /* These properties are listed in order of matching priority */
 
 /*!
-@constant kIOPropertySCSIVendorIdentification
+@define kIOPropertySCSIVendorIdentification
 Vendor ID as reported in the INQUIRY data. Additional space characters (0x20)
 are truncated.
 */
 #define kIOPropertySCSIVendorIdentification			"Vendor Identification"
 
 /*!
-@constant kIOPropertySCSIProductIdentification
+@define kIOPropertySCSIProductIdentification
 Product ID as reported in the INQUIRY data. Additional space characters (0x20)
 are truncated.
 */
 #define kIOPropertySCSIProductIdentification		"Product Identification"
 
 /*!
-@constant kIOPropertySCSIProductRevisionLevel
+@define kIOPropertySCSIProductRevisionLevel
 Product Revision Level as reported in the INQUIRY data.
 */
 #define kIOPropertySCSIProductRevisionLevel			"Product Revision Level"
@@ -645,7 +645,7 @@ typedef struct SCSICmd_INQUIRY_Page80_Header
 
 
 /*!
-@constant kIOPropertySCSIINQUIRYUnitSerialNumber
+@define kIOPropertySCSIINQUIRYUnitSerialNumber
 Key that describes the INQUIRY Unit Serial Number in the IORegistry.
 */
 #define kIOPropertySCSIINQUIRYUnitSerialNumber		"INQUIRY Unit Serial Number"
@@ -842,35 +842,35 @@ enum
 
 
 /*!
-@constant kIOPropertySCSIINQUIRYDeviceIdentification
+@define kIOPropertySCSIINQUIRYDeviceIdentification
 Device Identification key.
 */
 #define kIOPropertySCSIINQUIRYDeviceIdentification		"INQUIRY Device Identification"
 
 
 /*!
-@constant kIOPropertySCSIINQUIRYDeviceIdCodeSet
+@define kIOPropertySCSIINQUIRYDeviceIdCodeSet
 Code Set type key.
 */
 #define kIOPropertySCSIINQUIRYDeviceIdCodeSet			"Code Set"
 
 
 /*!
-@constant kIOPropertySCSIINQUIRYDeviceIdType
+@define kIOPropertySCSIINQUIRYDeviceIdType
 Identifier Type key.
 */
 #define kIOPropertySCSIINQUIRYDeviceIdType				"Identifier Type"
 
 
 /*!
-@constant kIOPropertySCSIINQUIRYDeviceIdAssociation
+@define kIOPropertySCSIINQUIRYDeviceIdAssociation
 Association key.
 */
 #define kIOPropertySCSIINQUIRYDeviceIdAssociation		"Association"
 
 
 /*!
-@constant kIOPropertySCSIINQUIRYDeviceIdentifier
+@define kIOPropertySCSIINQUIRYDeviceIdentifier
 Identifier key (data or string).
 */
 #define kIOPropertySCSIINQUIRYDeviceIdentifier			"Identifier"
@@ -900,21 +900,21 @@ typedef struct SCSICmd_INQUIRY_Page89_Data
 
 
 /*!
-@constant kIOPropertySATVendorIdentification
+@define kIOPropertySATVendorIdentification
 Vendor Identification of the SATL.
 */
 #define kIOPropertySATVendorIdentification			"SAT Vendor Identification"
 
 
 /*!
-@constant kIOPropertySATProductIdentification
+@define kIOPropertySATProductIdentification
 Product Identification of the SATL.
 */
 #define kIOPropertySATProductIdentification			"SAT Product Identification"
 
 
 /*!
-@constant kIOPropertySATProductRevisonLevel
+@define kIOPropertySATProductRevisonLevel
 Product Revision Level of the SATL.
 */
 #define kIOPropertySATProductRevisonLevel			"SAT Product Revision Level"

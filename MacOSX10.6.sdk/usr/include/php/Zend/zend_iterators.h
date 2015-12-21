@@ -17,7 +17,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: zend_iterators.h,v 1.10.2.1.2.2.2.2 2008/12/31 11:15:32 sebastian Exp $ */
+/* $Id: zend_iterators.h 272370 2008-12-31 11:15:49Z sebastian $ */
 
 /* These iterators were designed to operate within the foreach()
  * structures provided by the engine, but could be extended for use

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2000-2008 Apple Inc. All rights reserved.
+ * Copyright (c) 2000-2009 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
  * 
@@ -187,12 +187,17 @@ struct PE_Video {
 	char		v_pixelFormat[64];
 	unsigned long	v_offset;	/* offset into video memory to start at */
 	unsigned long	v_length;	/* length of video memory (0 for v_rowBytes * v_height) */
-	long		v_resv[ 2 ];
+	unsigned char	v_rotate;	/* Rotation: 0:normal, 1:right 90, 2:left 180, 3:left 90 */
+	unsigned char	v_scale;	/* Scale Factor for both X & Y */
+	char		reserved1[2];
+	long		reserved2;
 };
 
 typedef struct PE_Video       PE_Video;
 
 extern void initialize_screen(PE_Video *, unsigned int);
+
+extern void dim_screen(void);
 
 extern int PE_current_console(
 	PE_Video *info);
@@ -280,11 +285,14 @@ extern void PE_cpu_machine_quiesce(
 
 extern void pe_init_debug(void);
 
+extern boolean_t PE_imgsrc_mount_supported(void);
+
 #ifdef __arm__
 typedef void (*perfmon_interrupt_handler_func)(cpu_id_t source);
 extern kern_return_t PE_cpu_perfmon_interrupt_install_handler(perfmon_interrupt_handler_func handler);
 extern void PE_cpu_perfmon_interrupt_enable(cpu_id_t target, boolean_t enable);
 #endif
+
 
 __END_DECLS
 

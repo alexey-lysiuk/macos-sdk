@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2000-2008 Apple Computer, Inc. All rights reserved.
+ * Copyright (c) 2000-2009 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
  * 
@@ -95,6 +95,7 @@
 #define KEV_DL_PROTO_DETACHED	15
 #define KEV_DL_LINK_ADDRESS_CHANGED	16
 #define KEV_DL_WAKEFLAGS_CHANGED	17
+#define KEV_DL_IF_IDLE_ROUTE_REFCNT	18
 
 #include <net/if_var.h>
 #include <sys/types.h>
@@ -275,6 +276,7 @@ struct	ifreq {
 		struct	ifdevmtu ifru_devmtu;
 		struct	ifkpi	ifru_kpi;
 		u_int32_t ifru_wake_flags;
+		u_int32_t ifru_route_refcnt;
 	} ifr_ifru;
 #define	ifr_addr	ifr_ifru.ifru_addr	/* address */
 #define	ifr_dstaddr	ifr_ifru.ifru_dstaddr	/* other end of p-to-p link */
@@ -294,6 +296,7 @@ struct	ifreq {
 #define ifr_intval	ifr_ifru.ifru_intval	/* integer value */
 #define ifr_kpi		ifr_ifru.ifru_kpi
 #define ifr_wake_flags	ifr_ifru.ifru_wake_flags /* wake capabilities of devive */
+#define ifr_route_refcnt ifr_ifru.ifru_route_refcnt /* route references on interface */
 };
 
 #define	_SIZEOF_ADDR_IFREQ(ifr) \
@@ -313,6 +316,17 @@ struct rslvmulti_req {
      struct sockaddr **llsa;
 };
 
+
+
+
+#pragma pack(4)
+struct  ifdrv {
+	char		ifd_name[IFNAMSIZ];     /* if name, e.g. "en0" */
+	unsigned long	ifd_cmd;
+	size_t		ifd_len;
+	void		*ifd_data;
+};
+#pragma pack()
 
 
 /* 

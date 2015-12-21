@@ -16,7 +16,7 @@
   +----------------------------------------------------------------------+
 */
 
-/* $Id: php_stream_transport.h,v 1.10.2.1.2.4.2.3 2009/02/02 09:41:46 pajoye Exp $ */
+/* $Id: php_stream_transport.h 275024 2009-02-02 09:41:46Z pajoye $ */
 #ifdef PHP_WIN32
 #include "config.w32.h"
 #include <Ws2tcpip.h>

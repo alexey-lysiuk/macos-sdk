@@ -16,7 +16,7 @@
    +----------------------------------------------------------------------+
  */
 
-/* $Id: php_streams.h,v 1.103.2.1.2.4.2.10 2009/04/19 17:10:34 lbarnaud Exp $ */
+/* $Id: php_streams.h 279002 2009-04-19 17:10:35Z lbarnaud $ */
 
 #ifndef PHP_STREAMS_H
 #define PHP_STREAMS_H

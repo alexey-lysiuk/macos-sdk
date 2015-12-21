@@ -24,6 +24,30 @@
 /*
  *
  *	$Log: IOUSBDevice.h,v $
+ *	Revision 1.65  2009/10/18 20:20:37  nano
+ *	Bring in fixes in 390.4.0 QL:  7310698 7301024 7307079 and 7310698
+ *
+ *	Revision 1.64.32.4  2009/10/15 21:17:43  nano
+ *	If OverrideAtLocationID does not see a override property, return true
+ *	
+ *	Revision 1.64.32.3.2.1  2009/10/15 21:36:27  nano
+ *	If OverrideAtLocationID does not see a override property, return true
+ *	
+ *	Revision 1.64.32.3  2009/10/14 19:16:15  nano
+ *	Minor name changes
+ *	
+ *	Revision 1.64.32.2  2009/10/14 19:05:21  nano
+ *	7284477 7293893 Simplify scheme to decide whether we want to override a property for a hub at a particular ID for a particular MacModel.  Added a IOUSBDevice API that tells us if we are in the right model and locationID to override a property
+ *	
+ *	Revision 1.64.32.1  2009/10/08 19:55:56  nano
+ *	rdar://7284477 Allow us to overide the config descriptor of a 2514 hub on a K23F
+ *	
+ *	Revision 1.64  2009/09/08 12:28:45  nano
+ *	<rdar://problem/7195788> IOUSBDevice headerdoc comment problem - GetNumConfigs name is wrong, should be GetNumConfigurations
+ *	
+ *	Revision 1.63  2009/05/07 19:43:09  nano
+ *	Move our SnowLeopard branch to TOT
+ *	
  *	Revision 1.57.84.6  2009/03/13 22:45:11  nano
  *	Bring in branches to fix 6676089 6675858 6567987 6490273
  *	
@@ -202,7 +226,8 @@ protected:
 		bool					_deviceIsInternal;					// Will be set if all our upstream hubs are captive (internal to the computer)
 		bool					_deviceIsInternalIsValid;			// true if we have already determined whether the device is internal
 		bool					_newGetConfigLock;					// new lock, taken within the WL gate, when doing a GetConfig
-		UInt32					_resetAndReEnumerateLock;			// "Lock" to prevent us from doing a reset or a re-enumerate while the other one is in progress				
+		UInt32					_resetAndReEnumerateLock;			// "Lock" to prevent us from doing a reset or a re-enumerate while the other one is in progress		
+		UInt32					_locationID;
     };	
     ExpansionData * _expansionData;
 
@@ -357,7 +382,7 @@ public:
     */
     virtual UInt16 GetDeviceRelease(void);
     /*!
-        @function GetNumConfigs
+        @function GetNumConfigurations
         returns the number of configs in the device config descriptor
     */
     virtual UInt8 GetNumConfigurations(void);
@@ -565,12 +590,20 @@ public:
 	 @function				GetExtraPowerAllocated
 	 @abstract				Clients can use this API to ask how much extra power has already been reserved by this device.  Units are milliAmps (mA).
 	 @param type			Indicates whether the allocated power was to be used during wake or sleep (One of kUSBPowerDuringSleep or kUSBPowerDuringWake)
-	 @result				Amount of power allocated, in mA.  .
+	 @result				Amount of power allocated, in mA.
 	 
 	 */
-	virtual UInt32	GetExtraPowerAllocated(UInt32 type);
+	virtual UInt32			GetExtraPowerAllocated(UInt32 type);
     
-    OSMetaClassDeclareReservedUnused(IOUSBDevice,  12);
+    OSMetaClassDeclareReservedUsed(IOUSBDevice,  12);
+    /*!
+	 @function				DoLocationOverrideAndModelMatch
+	 @abstract				Will look for a kOverrideIfAtLocationID array proerty with locationID entries and a "MacModel" property.  If any of the locationIDs match to the Mac Model, will return true.
+	 						If there is no kOverrideAtLocationID property, it will also return true.
+	 @result				True if we have a match, false otherwise
+	 */
+	virtual	bool			DoLocationOverrideAndModelMatch();
+	
     OSMetaClassDeclareReservedUnused(IOUSBDevice,  13);
     OSMetaClassDeclareReservedUnused(IOUSBDevice,  14);
     OSMetaClassDeclareReservedUnused(IOUSBDevice,  15);

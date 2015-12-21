@@ -34,7 +34,8 @@ enum IOBluetoothSCODriverPropertiesPublic
 	kIOBluetoothSCOAudioDriverPropertyUsesExternalErrorUI				= 'scoa',
 };
 
-
+// Notification when the button is pressed
+#define kIOBluetoothRFCOMMAudioControllerButtonPressedNotification	@"IOBluetoothRFCOMMAudioControllerButtonPressed"
 
 //====================================================================================================================
 //	IOBluetoothRFCOMMAudioController
@@ -53,13 +54,15 @@ enum IOBluetoothSCODriverPropertiesPublic
 	IOBluetoothRFCOMMChannel *		mRFCOMMChannel;
 	IOBluetoothUserNotification *	mRFCOMMChannelNotification;
 	
-	id								mDelegate;	
+	id __weak						mDelegate;	
 
 	BOOL							mIsInternalVolumeChange;
 	
 	void *							mReserved;
 	
 }
+
+@property(assign) id __weak delegate;
 
 // ---------------------------------------------------
 // Init's
@@ -90,13 +93,18 @@ enum IOBluetoothSCODriverPropertiesPublic
 - (id) initForConnectionToDevice: (IOBluetoothDevice *)device
 						delegate: (id)inDelegate;
 
-- (void) dealloc;
-- (void) setDelegate:(id)delegate;
-
-
 // ---------------------------------------------------
 // CoreAudio stuff
 //
+
+/*!
+ @method		getDriverIDForDevice
+ @abstract		Get the driver ID string used by the device
+ @discussion	
+ @result		The driver ID this object is attached to, nil if not attached
+ */
++ (NSString *)getDriverIDForDevice:(IOBluetoothDevice*)inDevice;
+
 /*!
 	@method		getAudioDeviceID
 	@abstract	Get the audio device ID this object is attached to

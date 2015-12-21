@@ -17,7 +17,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: zend_highlight.h,v 1.25.2.1.2.1.2.2 2008/12/31 11:15:32 sebastian Exp $ */
+/* $Id: zend_highlight.h 272370 2008-12-31 11:15:49Z sebastian $ */
 
 #ifndef ZEND_HIGHLIGHT_H
 #define ZEND_HIGHLIGHT_H

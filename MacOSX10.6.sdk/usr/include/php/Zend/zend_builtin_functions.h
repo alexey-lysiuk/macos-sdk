@@ -17,7 +17,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: zend_builtin_functions.h,v 1.17.2.2.2.1.2.2 2008/12/31 11:15:31 sebastian Exp $ */
+/* $Id: zend_builtin_functions.h 272370 2008-12-31 11:15:49Z sebastian $ */
 
 #ifndef ZEND_BUILTIN_FUNCTIONS_H
 #define ZEND_BUILTIN_FUNCTIONS_H

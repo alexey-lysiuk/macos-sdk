@@ -17,7 +17,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: zend_compile.h,v 1.316.2.8.2.12.2.40 2009/06/05 23:20:59 shire Exp $ */
+/* $Id: zend_compile.h 281737 2009-06-05 23:20:59Z shire $ */
 
 #ifndef ZEND_COMPILE_H
 #define ZEND_COMPILE_H

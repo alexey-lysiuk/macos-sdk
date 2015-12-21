@@ -62,16 +62,15 @@
 /*! @methodgroup Getting a configuration */
 /*!
  * @method
- * @result An CWConfiguration object.
+ * @result A CWConfiguration object.
  * @abstract Creates and returns an CWConfiguration.
  * @discussion This method is the designated initializer for the CWConfiguration class.
-
  */
 - (CWConfiguration*)init __OSX_AVAILABLE_STARTING( __MAC_10_6, __IPHONE_NA );
 
 /*!
  * @method
- * @result An CWConfiguration object.
+ * @result A CWConfiguration object.
  * @abstract Convenience method for getting an CWConfiguration object.
  */
 + (CWConfiguration*)configuration __OSX_AVAILABLE_STARTING( __MAC_10_6, __IPHONE_NA );

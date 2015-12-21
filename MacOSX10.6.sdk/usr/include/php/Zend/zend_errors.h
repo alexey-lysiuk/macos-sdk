@@ -17,7 +17,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: zend_errors.h,v 1.18.2.1.2.5.2.4 2008/12/31 11:15:32 sebastian Exp $ */
+/* $Id: zend_errors.h 272370 2008-12-31 11:15:49Z sebastian $ */
 
 #ifndef ZEND_ERRORS_H
 #define ZEND_ERRORS_H

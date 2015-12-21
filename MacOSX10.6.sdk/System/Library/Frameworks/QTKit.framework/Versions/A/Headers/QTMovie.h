@@ -1,7 +1,7 @@
 /*
 	File:		QTMovie.h
 
-	Copyright:	(c)2004-2009 by Apple Inc., all rights reserved.
+	Copyright:	(c)2004-2010 by Apple Inc., all rights reserved.
 
 */
 /*!
@@ -33,15 +33,15 @@
 					that is not currently set as editable (for instance, by calling appendSelectionFromMovie: on an uneditable movie).
 */
 
-#import <Cocoa/Cocoa.h>
-
-#if !__LP64__
-	#import <QuickTime/QuickTime.h>
-#endif
-
 #import <QTKit/QTKitDefines.h>
 #import <QTKit/QTTime.h>
 #import <QTKit/QTTimeRange.h>
+
+#import <Cocoa/Cocoa.h>
+
+#if !__LP64__
+#import <QuickTime/QuickTime.h>
+#endif
 
 @class QTMovie;
 @class QTTrack;
@@ -879,10 +879,8 @@ typedef NSInteger QTMovieLoadState;
 					when the QTMovie object is deallocated. Passing YES effectively transfers ownership of the Movie to QTKit.
 					Most applications will probably want to pass YES; passing NO means that the application wants to call DisposeMovie itself,
 					perhaps so that it can operate on a Movie after it has been disassociated from a QTMovie object.
-					Command-line tools that pass NO for the dispose parameter must make sure to release the active autorelease pool
+					Clients that pass NO for the dispose parameter must invalidate the QTMovie object (by calling -[QTMovie invalidate])
 					before calling DisposeMovie on the specified QuickTime movie. Failure to do this may result in a crash.
-					Tools that need to call DisposeMovie before releasing the main autorelease pool can create
-					another autorelease pool associated with the movie.
 	@param			errorPtr
 					A pointer to an NSError object; if a movie cannot be created, an NSError object is returned in this location.
 	@result			An autoreleased QTMovie object.
@@ -995,10 +993,8 @@ typedef NSInteger QTMovieLoadState;
 					when the QTMovie object is deallocated. Passing YES effectively transfers ownership of the Movie to QTKit.
 					Most applications will probably want to pass YES; passing NO means that the application wants to call DisposeMovie itself,
 					perhaps so that it can operate on a Movie after it has been disassociated from a QTMovie object.
-					Command-line tools that pass NO for the dispose parameter must make sure to release the active autorelease pool
+					Clients that pass NO for the dispose parameter must invalidate the QTMovie object (by calling -[QTMovie invalidate])
 					before calling DisposeMovie on the specified QuickTime movie. Failure to do this may result in a crash.
-					Tools that need to call DisposeMovie before releasing the main autorelease pool can create
-					another autorelease pool associated with the movie.
 	@param			errorPtr
 					A pointer to an NSError object; if a movie cannot be created, an NSError object is returned in this location.
 	@result			A QTMovie object.

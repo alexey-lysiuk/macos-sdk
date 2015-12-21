@@ -79,6 +79,8 @@ public:
 	UInt32								mTimeout;									// Timeout for request to complete, in milliseconds.
 	UInt32								mControlFlags;
 	int									mPID;										// Creating Task
+	bool								mHCIRequestDeleteWasCalled;					// Fixed rdar://problem/7044168
+	
 	
 public:
 

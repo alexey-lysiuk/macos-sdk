@@ -1,7 +1,7 @@
 /*
 	File:		QTMovieLayer.h
 
-	Copyright:	(c)2005-2009 by Apple Inc., all rights reserved.
+	Copyright:	(c)2005-2010 by Apple Inc., all rights reserved.
 
 */
 

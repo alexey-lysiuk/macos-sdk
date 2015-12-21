@@ -154,7 +154,6 @@ IOSCSIArchitectureModelFamily's CFBundle identifier.
 #include <IOKit/scsi/SCSITask.h>
 
 
-
 /*!
 @enum SCSI Protocol Interface Device Notification values
 @discussion

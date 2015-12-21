@@ -16,7 +16,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: quot_print.h,v 1.13.2.1.2.1.2.3 2008/12/31 11:15:45 sebastian Exp $ */
+/* $Id: quot_print.h 272370 2008-12-31 11:15:49Z sebastian $ */
 
 #ifndef QUOT_PRINT_H
 #define QUOT_PRINT_H

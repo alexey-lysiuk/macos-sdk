@@ -81,11 +81,19 @@ class IOBluetoothHIDDriver : public IOHIDDevice
     { 
         OSArray*    _sendQueue;
 		
-		UInt8 *interruptBuffer;
-		UInt32 interruptBufferUsed;
+		uint8_t		*interruptBuffer;
+		uint32_t	interruptBufferUsed;
 		
-		UInt8 *controlBuffer;
-		UInt32 controlBufferUsed;
+		uint8_t		*controlBuffer;
+		uint32_t	controlBufferUsed;
+
+		uint8_t		deviceSupportsSuspend;
+
+		uint32_t	getReportTimeoutMS;
+		uint32_t	setReportTimeoutMS;
+		
+		uint32_t	outstandingMemoryBlockCount;
+		bool		waitingForMemoryBlockCount;
     };
     ExpansionData	*_expansionData;
 	
@@ -120,6 +128,7 @@ public:
 	virtual OSString*	newSerialNumberString() const;
 	virtual OSNumber*	newLocationIDNumber() const;
     virtual OSNumber*	newCountryCodeNumber() const;
+	virtual OSNumber*	newReportIntervalNumber() const;
 
 	// Main UserLand Entry Points
     virtual IOReturn	getReport( IOMemoryDescriptor* report, IOHIDReportType reportType, IOOptionBits options = 0 );
@@ -160,6 +169,7 @@ public:
 	static	IOReturn	staticProcessCommandAction( OSObject* owner, void* arg1, void* arg2, void* arg3, void* arg4 );
 	static	IOReturn	staticGetDevicePropertiesAction( OSObject* owner, void* arg1, void* arg2, void* arg3, void* arg4 );
 	static	IOReturn	staticInterruptChannelOpeningAction( OSObject* owner, void* newService, void* arg2, void* arg3, void* arg4 );
+	static	IOReturn	staticWillTerminateAction( OSObject* owner, void* arg1, void* arg2, void* arg3, void* arg4 );
 	
 	// Work Loop Methods
 	virtual void		closeDownServicesWL();
@@ -180,21 +190,26 @@ public:
 	
 private:
 	// Lazy Interrupt Channel Methods
-	static bool			interruptChannelOpeningCallback(	void* me, void* ignoreMe, IOService* newService, IONotifier *notifier );
+	static	bool		interruptChannelOpeningCallback(	void* me, void* ignoreMe, IOService* newService, IONotifier *notifier );
     static	IOReturn 	powerStateHandler( void *target, void *refCon, UInt32 messageType, IOService *service, void *messageArgument, vm_size_t argSize );
-																				
 
 public:
     OSMetaClassDeclareReservedUsed( IOBluetoothHIDDriver,  0 );
-    virtual void        sendDeviceDisconnectNotifications( void );
+    virtual void        	sendDeviceDisconnectNotifications( void );
 
 	OSMetaClassDeclareReservedUsed( IOBluetoothHIDDriver,  1 );
-	virtual IOReturn	setPowerStateWL( unsigned long powerStateOrdinal, IOService* whatDevice ); 
+	virtual IOReturn		setPowerStateWL( unsigned long powerStateOrdinal, IOService* whatDevice ); 
+    
+	OSMetaClassDeclareReservedUsed( IOBluetoothHIDDriver,  2 );
+    virtual void        	sendDeviceConnectNotifications( void );
+
+	OSMetaClassDeclareReservedUsed( IOBluetoothHIDDriver,  3 );
+    virtual void        	decrementOutstandingMemoryBlockCount( void );
+
+	OSMetaClassDeclareReservedUsed( IOBluetoothHIDDriver,  4 );
+    virtual IOReturn       	willTerminateWL( void );
 
 public:    
-    OSMetaClassDeclareReservedUnused( IOBluetoothHIDDriver,  2 );
-    OSMetaClassDeclareReservedUnused( IOBluetoothHIDDriver,  3 );
-    OSMetaClassDeclareReservedUnused( IOBluetoothHIDDriver,  4 );
     OSMetaClassDeclareReservedUnused( IOBluetoothHIDDriver,  5 );
     OSMetaClassDeclareReservedUnused( IOBluetoothHIDDriver,  6 );
     OSMetaClassDeclareReservedUnused( IOBluetoothHIDDriver,  7 );

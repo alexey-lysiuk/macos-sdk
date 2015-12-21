@@ -16,7 +16,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: php_open_temporary_file.h,v 1.13.2.1.2.4.2.2 2008/12/31 11:15:47 sebastian Exp $ */
+/* $Id: php_open_temporary_file.h 272370 2008-12-31 11:15:49Z sebastian $ */
 
 #ifndef PHP_OPEN_TEMPORARY_FILE_H
 #define PHP_OPEN_TEMPORARY_FILE_H

@@ -5,7 +5,7 @@
  
      Version:   Mac OS X
  
-     Copyright: © 2005 - 2006 by Apple Computer, Inc., all rights reserved.
+     Copyright © 2001-2010 Apple Computer, Inc. All rights reserved.
  
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:

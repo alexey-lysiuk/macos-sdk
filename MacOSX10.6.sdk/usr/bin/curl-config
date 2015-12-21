@@ -6,7 +6,7 @@
 #                            | (__| |_| |  _ <| |___
 #                             \___|\___/|_| \_\_____|
 #
-# Copyright (C) 2001 - 2008, Daniel Stenberg, <daniel@haxx.se>, et al.
+# Copyright (C) 2001 - 2009, Daniel Stenberg, <daniel@haxx.se>, et al.
 #
 # This software is licensed as described in the file COPYING, which
 # you should have received as part of this distribution. The terms
@@ -19,12 +19,9 @@
 # This software is distributed on an "AS IS" basis, WITHOUT WARRANTY OF ANY
 # KIND, either express or implied.
 #
-# $Id: curl-config.in,v 1.35 2008-09-03 19:10:48 danf Exp $
+# $Id: curl-config.in,v 1.36 2009-03-20 12:42:29 bagder Exp $
 ###########################################################################
-#
-# The idea to this kind of setup info script was stolen from numerous
-# other packages, such as neon, libxml and gnome.
-#
+
 prefix=/usr
 exec_prefix=${prefix}
 includedir=${prefix}/include
@@ -91,7 +88,7 @@ while test $# -gt 0; do
         done
 	;;
     --version)
-	echo libcurl 7.19.4
+	echo libcurl 7.19.7
 	exit 0
 	;;
 
@@ -103,20 +100,20 @@ while test $# -gt 0; do
 	# dash as that's used for things like version 1.2.3-CVS
 	cpatch=`echo $checkfor | cut -d. -f3 | cut -d- -f1`
         checknum=`echo "$cmajor*256*256 + $cminor*256 + ${cpatch:-0}" | bc`
-        numuppercase=`echo 071304 | tr 'a-f' 'A-F'`
+        numuppercase=`echo 071307 | tr 'a-f' 'A-F'`
         nownum=`echo "obase=10; ibase=16; $numuppercase" | bc`
 
 	if test "$nownum" -ge "$checknum"; then
 	  # silent success
 	  exit 0
 	else
-	  echo "requested version $checkfor is newer than existing 7.19.4"
+	  echo "requested version $checkfor is newer than existing 7.19.7"
 	  exit 1
 	fi
 	;;
 
     --vernum)
-	echo 071304
+	echo 071307
 	exit 0
 	;;
 
@@ -139,14 +136,13 @@ while test $# -gt 0; do
 	   CURLLIBDIR=""
 	fi
 	if test "Xyes" = "Xyes"; then
-	  echo ${CURLLIBDIR}-lcurl -lssl -lcrypto -Wl,-weak-lldap -dynamic -Os -pipe -g0 -Wno-system-headers -Wl,-search_paths_first -Wl,-weak-lgssapi_krb5 -Wl,-weak-lkrb5 -Wl,-weak-lk5crypto -Wl,-weak-lcom_err -Wl,-weak-lresolv -lssl -lcrypto -lz -lz 
+	  echo ${CURLLIBDIR}-lcurl
 	else
-	  echo ${CURLLIBDIR}-lcurl 
+	  echo ${CURLLIBDIR}-lcurl
 	fi
 	;;
 
     --static-libs)
-	echo ${exec_prefix}/lib/libcurl.a -lssl -lcrypto -Wl,-weak-lldap -dynamic -Os -pipe -g0 -Wno-system-headers -Wl,-search_paths_first -Wl,-weak-lgssapi_krb5 -Wl,-weak-lkrb5 -Wl,-weak-lk5crypto -Wl,-weak-lcom_err -Wl,-weak-lresolv -lssl -lcrypto -lz -lz 
 	;;
 
     *)

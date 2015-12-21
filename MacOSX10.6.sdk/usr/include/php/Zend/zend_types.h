@@ -17,7 +17,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: zend_types.h,v 1.6.2.2.2.3.2.5 2009/06/05 11:21:31 lbarnaud Exp $ */
+/* $Id: zend_types.h 281712 2009-06-05 11:21:31Z lbarnaud $ */
 
 #ifndef ZEND_TYPES_H
 #define ZEND_TYPES_H

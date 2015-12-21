@@ -27,7 +27,7 @@
 
 #pragma mark === IOBluetoothOBEXSession ===
 
-@interface IOBluetoothOBEXSession : OBEXSession
+@interface IOBluetoothOBEXSession : OBEXSession <IOBluetoothRFCOMMChannelDelegate>
 {
 	/* All instance variables are protected. Use accessors to get to them if you need to. */
 	

@@ -17,7 +17,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: zend_istdiostream.h,v 1.6.2.1.2.1.2.2 2008/12/31 11:15:32 sebastian Exp $ */
+/* $Id: zend_istdiostream.h 272370 2008-12-31 11:15:49Z sebastian $ */
 
 #ifndef _ZEND_STDIOSTREAM
 #define _ZEND_STDIOSTREAM

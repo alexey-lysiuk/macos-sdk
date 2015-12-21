@@ -84,6 +84,8 @@
 #define CPUID_FEATURE_PBE     _Bit(31)	/* Pend Break Enable */
 
 #define CPUID_FEATURE_SSE3    _HBit(0)	/* Streaming SIMD extensions 3 */
+#define CPUID_FEATURE_PCLMULQDQ _HBit(1) /* PCLMULQDQ Instruction */
+
 #define CPUID_FEATURE_MONITOR _HBit(3)	/* Monitor/mwait */
 #define CPUID_FEATURE_DSCPL   _HBit(4)	/* Debug Store CPL */
 #define CPUID_FEATURE_VMX     _HBit(5)	/* VMX */
@@ -95,11 +97,13 @@
 #define CPUID_FEATURE_CX16    _HBit(13)	/* CmpXchg16b instruction */
 #define CPUID_FEATURE_xTPR    _HBit(14)	/* Send Task PRiority msgs */
 #define CPUID_FEATURE_PDCM    _HBit(15)	/* Perf/Debug Capability MSR */
+
 #define CPUID_FEATURE_DCA     _HBit(18)	/* Direct Cache Access */
 #define CPUID_FEATURE_SSE4_1  _HBit(19)	/* Streaming SIMD extensions 4.1 */
 #define CPUID_FEATURE_SSE4_2  _HBit(20)	/* Streaming SIMD extensions 4.2 */
 #define CPUID_FEATURE_xAPIC   _HBit(21)	/* Extended APIC Mode */
 #define CPUID_FEATURE_POPCNT  _HBit(23)	/* POPCNT instruction */
+#define CPUID_FEATURE_AES     _HBit(25)	/* AES instructions */
 #define CPUID_FEATURE_VMM     _HBit(31)	/* VMM (Hypervisor) present */
 
 /*
@@ -108,17 +112,35 @@
  */
 #define CPUID_EXTFEATURE_SYSCALL   _Bit(11)	/* SYSCALL/sysret */
 #define CPUID_EXTFEATURE_XD	   _Bit(20)	/* eXecute Disable */
+
+#define CPUID_EXTFEATURE_1GBPAGE   _Bit(26)     /* 1G-Byte Page support */
 #define CPUID_EXTFEATURE_RDTSCP	   _Bit(27)	/* RDTSCP */
 #define CPUID_EXTFEATURE_EM64T	   _Bit(29)	/* Extended Mem 64 Technology */
 
-#define CPUID_EXTFEATURE_LAHF	   _HBit(20)	/* LAFH/SAHF instructions */
+#define CPUID_EXTFEATURE_LAHF	   _HBit(0)	/* LAHF/SAHF instructions */
 
+/*
+ * The CPUID_EXTFEATURE_XXX values define 64-bit values
+ * returned in %ecx:%edx to a CPUID request with %eax of 0x80000007: 
+ */
+#define CPUID_EXTFEATURE_TSCI      _Bit(8)	/* TSC Invariant */
 
 #define	CPUID_CACHE_SIZE	16	/* Number of descriptor values */
 
 #define CPUID_MWAIT_EXTENSION	_Bit(0)	/* enumeration of WMAIT extensions */
 #define CPUID_MWAIT_BREAK	_Bit(1)	/* interrupts are break events	   */
 
+#define CPUID_MODEL_YONAH	14
+#define CPUID_MODEL_MEROM	15
+#define CPUID_MODEL_PENRYN	23
+#define CPUID_MODEL_NEHALEM	26
+#define CPUID_MODEL_ATOM	28
+#define CPUID_MODEL_FIELDS	30	/* Lynnfield, Clarksfield, Jasper */
+#define CPUID_MODEL_DALES	31	/* Havendale, Auburndale */
+#define CPUID_MODEL_NEHALEM_EX	46
+#define CPUID_MODEL_DALES_32NM	37	/* Clarkdale, Arrandale */
+#define CPUID_MODEL_WESTMERE	44	/* Gulftown, Westmere-EP, Westmere-WS */
+#define CPUID_MODEL_WESTMERE_EX	47
 
 #ifndef ASSEMBLER
 #include <stdint.h>
@@ -168,13 +190,41 @@ typedef struct {
 #define CACHE_DESC(value,type,size,linesize,text) \
 	{ value, type, size, linesize, text }
 
+/* Monitor/mwait Leaf: */
+typedef struct {
+	uint32_t	linesize_min;
+	uint32_t	linesize_max;
+	uint32_t	extensions;
+	uint32_t	sub_Cstates;
+} cpuid_mwait_leaf_t;
+
+/* Thermal and Power Management Leaf: */
+typedef struct {
+	boolean_t	sensor;
+	boolean_t	dynamic_acceleration;
+	boolean_t	invariant_APIC_timer;
+	uint32_t	thresholds;
+	boolean_t	ACNT_MCNT;
+} cpuid_thermal_leaf_t;
+
+/* Architectural Performance Monitoring Leaf: */
+typedef struct {
+	uint8_t		version;
+	uint8_t		number;
+	uint8_t		width;
+	uint8_t		events_number;
+	uint32_t	events;
+	uint8_t		fixed_number;
+	uint8_t		fixed_width;
+} cpuid_arch_perf_leaf_t;
+
 /* Physical CPU info - this is exported out of the kernel (kexts), so be wary of changes */
 typedef struct {
 	char		cpuid_vendor[16];
 	char		cpuid_brand_string[48];
 	const char	*cpuid_model_string;
 
-	cpu_type_t	cpuid_type;					/* this is *not* a cpu_type_t in our <mach/machine.h> */
+	cpu_type_t	cpuid_type;	/* this is *not* a cpu_type_t in our <mach/machine.h> */
 	uint8_t		cpuid_family;
 	uint8_t		cpuid_model;
 	uint8_t		cpuid_extmodel;
@@ -198,27 +248,15 @@ typedef struct {
 	cpu_type_t	cpuid_cpu_type;			/* <mach/machine.h> */
 	cpu_subtype_t	cpuid_cpu_subtype;		/* <mach/machine.h> */	
 
-	/* Monitor/mwait Leaf: */
-	uint32_t	cpuid_mwait_linesize_min;
-	uint32_t	cpuid_mwait_linesize_max;
-	uint32_t	cpuid_mwait_extensions;
-	uint32_t	cpuid_mwait_sub_Cstates;
+	/* Per-vendor info */
+	cpuid_mwait_leaf_t	cpuid_mwait_leaf;	
+#define cpuid_mwait_linesize_max	cpuid_mwait_leaf.linesize_max
+#define cpuid_mwait_linesize_min	cpuid_mwait_leaf.linesize_min
+#define cpuid_mwait_extensions		cpuid_mwait_leaf.extensions
+#define cpuid_mwait_sub_Cstates		cpuid_mwait_leaf.sub_Cstates
+	cpuid_thermal_leaf_t	cpuid_thermal_leaf;
+	cpuid_arch_perf_leaf_t	cpuid_arch_perf_leaf;
 
-	/* Thermal and Power Management Leaf: */
-	boolean_t	cpuid_thermal_sensor;
-	boolean_t	cpuid_thermal_dynamic_acceleration;
-	uint32_t	cpuid_thermal_thresholds;
-	boolean_t	cpuid_thermal_ACNT_MCNT;
-
-	/* Architectural Performance Monitoring Leaf: */
-	uint8_t		cpuid_arch_perf_version;
-	uint8_t		cpuid_arch_perf_number;
-	uint8_t		cpuid_arch_perf_width;
-	uint8_t		cpuid_arch_perf_events_number;
-	uint32_t	cpuid_arch_perf_events;
-	uint8_t		cpuid_arch_perf_fixed_number;
-	uint8_t		cpuid_arch_perf_fixed_width;
-	
 	/* Cache details: */
 	uint32_t	cpuid_cache_linesize;
 	uint32_t	cpuid_cache_L2_associativity;
@@ -244,6 +282,13 @@ typedef struct {
 	/* Max leaf ids available from CPUID */
 	uint32_t	cpuid_max_basic;
 	uint32_t	cpuid_max_ext;
+
+	/* Family-specific info links */
+	uint32_t		cpuid_cpufamily;
+	cpuid_mwait_leaf_t	*cpuid_mwait_leafp;	
+	cpuid_thermal_leaf_t	*cpuid_thermal_leafp;
+	cpuid_arch_perf_leaf_t	*cpuid_arch_perf_leafp;
+
 } i386_cpu_info_t;
 
 #ifdef __cplusplus
@@ -264,6 +309,7 @@ extern char *		cpuid_get_extfeature_names(uint64_t, char *, unsigned);
 extern uint64_t		cpuid_features(void);
 extern uint64_t		cpuid_extfeatures(void);
 extern uint32_t		cpuid_family(void);
+extern uint32_t		cpuid_cpufamily(void);
 	
 extern void		cpuid_get_info(i386_cpu_info_t *info_p);
 extern i386_cpu_info_t	*cpuid_info(void);

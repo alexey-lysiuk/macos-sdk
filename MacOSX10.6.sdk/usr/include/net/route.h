@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2000-2008 Apple Inc. All rights reserved.
+ * Copyright (c) 2000-2009 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
  * 
@@ -105,6 +105,7 @@ struct rt_metrics {
  */
 #define	RTM_RTTUNIT	1000000	/* units for rtt, rttvar, as units per sec */
 
+
 /*
  * We distinguish between routes to hosts and routes to networks,
  * preferring the former if available.  For each route we infer
@@ -141,7 +142,8 @@ struct rt_metrics {
 #define	RTF_MULTICAST	0x800000	/* route represents a mcast address */
 #define RTF_IFSCOPE	0x1000000	/* has valid interface scope */
 #define RTF_CONDEMNED	0x2000000	/* defunct; no longer modifiable */
-					/* 0x4000000 and up unassigned */
+#define RTF_IFREF	0x4000000	/* route holds a ref to interface */
+					/* 0x8000000 and up unassigned */
 
 /*
  * Routing statistics.

@@ -17,7 +17,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: zend_operators.h,v 1.94.2.4.2.10.2.16 2009/06/04 18:20:42 mattwil Exp $ */
+/* $Id: zend_operators.h 281670 2009-06-04 18:20:45Z mattwil $ */
 
 #ifndef ZEND_OPERATORS_H
 #define ZEND_OPERATORS_H

@@ -17,7 +17,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: php_variables.h,v 1.22.2.3.2.2.2.2 2008/12/31 11:15:48 sebastian Exp $ */
+/* $Id: php_variables.h 272370 2008-12-31 11:15:49Z sebastian $ */
 
 #ifndef PHP_VARIABLES_H
 #define PHP_VARIABLES_H

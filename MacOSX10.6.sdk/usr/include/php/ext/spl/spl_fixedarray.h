@@ -17,7 +17,7 @@
   +----------------------------------------------------------------------+
 */
 
-/* $Id: spl_fixedarray.h,v 1.1.2.3 2008/12/31 11:15:43 sebastian Exp $ */
+/* $Id: spl_fixedarray.h 272370 2008-12-31 11:15:49Z sebastian $ */
 
 #ifndef SPL_FIXEDARRAY_H
 #define SPL_FIXEDARRAY_H

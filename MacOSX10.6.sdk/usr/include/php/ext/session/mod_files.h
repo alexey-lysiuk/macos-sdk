@@ -16,7 +16,7 @@
    +----------------------------------------------------------------------+
  */
 
-/* $Id: mod_files.h,v 1.11.2.1.2.1.2.2 2008/12/31 11:15:42 sebastian Exp $ */
+/* $Id: mod_files.h 272370 2008-12-31 11:15:49Z sebastian $ */
 
 #ifndef MOD_FILES_H
 #define MOD_FILES_H

@@ -19,7 +19,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: zend_stream.h,v 1.8.2.1.2.1.2.6 2009/06/16 14:33:33 felipe Exp $ */
+/* $Id: zend_stream.h 282248 2009-06-16 14:33:33Z felipe $ */
 
 #ifndef ZEND_STREAM_H
 #define ZEND_STREAM_H

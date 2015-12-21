@@ -17,7 +17,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: zend_objects_API.h,v 1.20.2.1.2.4.2.5 2008/12/31 11:15:32 sebastian Exp $ */
+/* $Id: zend_objects_API.h 272370 2008-12-31 11:15:49Z sebastian $ */
 
 #ifndef ZEND_OBJECTS_API_H
 #define ZEND_OBJECTS_API_H

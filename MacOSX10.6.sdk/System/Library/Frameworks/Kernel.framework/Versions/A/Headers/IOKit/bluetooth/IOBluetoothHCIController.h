@@ -47,6 +47,15 @@ class IOBluetoothHCIPacketLogUserClient;
 
 #define kNoReturnParam					NULL
 
+typedef	uint16_t	DevicePublishNotificationStateType;
+enum DevicePublishNotificationStateTypes
+{
+	kHasNotRegisteredForDevicePublishNotification		= 0x0001,
+	kHasRegisteredForDevicePublishNotification			= 0x0002,
+	kDevicePublishNotificationCalled					= 0x0004,
+	kDevicePublishNotificationProcessed					= 0x0008
+};
+
 typedef UInt32 HCIDataHandlerType;
 enum HCIDataHandlerTypes
 {
@@ -98,6 +107,19 @@ typedef struct SendDataContext
 	// ReturnValue:
 	IOReturn sendingWasSuccessful;
 } SendDataContext;
+
+
+//====================================================================================================
+// Keep track of hearing devices
+//====================================================================================================
+typedef struct HearingDeviceListType
+{
+	BluetoothDeviceAddress					mDeviceAddress;
+	bool									mRemoveDeviceCalled;
+	DevicePublishNotificationStateType		mDevicePublishNotificationState;
+	HearingDeviceListType *					mNextDevice;
+	HearingDeviceListType *					mPreviousDevice;
+} HearingDeviceListType;
 
 //====================================================================================================
 // IOBluetoothHCIController
@@ -265,10 +287,14 @@ protected:
                                                         void *arg4 );
 
     virtual IOReturn	AddPacketLogUserClient( IOBluetoothHCIPacketLogUserClient *newPacketLogUserClient );
-
+	
+	virtual bool		PacketLogFillBufferedData();
+	
     virtual void		PacketLogClientClosed( IOBluetoothHCIPacketLogUserClient *packetLogClient );
 	
-    virtual void		LogPacket( UInt8 packetType, void *packetData, UInt32 packetSize );
+    virtual void		LogPacket( UInt8 packetType, void *packetData, size_t packetSize );
+
+	static IOReturn		LogPacketAction( OSObject *owner, void *arg1, void *arg2, void *arg3, void *arg4 );
 
 	virtual	void		DesyncIncomingData( IOBluetoothIncomingDataAction action, UInt8 *inDataPtr, UInt32 inDataSize );
     
@@ -523,7 +549,7 @@ public:
 	
 			IOReturn	DisposeRequestsForTaskID( task_t inTaskID );
 	
-			IOReturn	KillAllPendingRequests( Boolean destroy );
+			IOReturn	KillAllPendingRequests( Boolean destroy, Boolean includeIdleRequests );
                         void	SendingRequest( IOBluetoothHCIRequest *requestPtr );
                         void	DecrementActiveConnections(  );
 
@@ -973,53 +999,60 @@ protected:
 		void	*mUnsedPointer1, *mUnsedPointer2;
 
 		// Max number of HCI command allowed;
-		UInt8				mNumberOfCommandsAllowedByHardware;
-		UInt8				mNumConfiguredHIDDevices;
-		UInt8				mControllerSleepFlags;
+		UInt8									mNumberOfCommandsAllowedByHardware;
+		UInt8									mNumConfiguredHIDDevices;
+		UInt8									mControllerSleepFlags;
 		
 		// This pointer is depreacted and free for future uses.
-		void*				mUnusedPointer;
+		void*									mUnusedPointer;
 
 		// AFH support:
 		// the mask for the channels to use:
-		UInt8				mMaskByte[10];
+		UInt8									mMaskByte[10];
 
 		// AirPort changes notifications:
-		IONotifier *				windowServerNotifier;
-		IONotifier *				mAirPortPCI;
-		Boolean						mProcessingConnectionRequest;
-		Boolean						mWaitingForCompletedACLPacketsToSleep;
+		IONotifier 								*windowServerNotifier;
+		IONotifier 								*mAirPortPCI;
+		Boolean									mProcessingConnectionRequest;
+		Boolean									mWaitingForCompletedACLPacketsToSleep;
 
         // SCO Support
-		UInt8				mNumSCOConnections;
-		UInt8				*mSCOPacketBuffer;
-		UInt16				mNumBufferedSCOBytes;
-		AbsoluteTime		mBufferedSCOPacketTimestamp;
+		UInt8									mNumSCOConnections;
+		UInt8									*mSCOPacketBuffer;
+		UInt16									mNumBufferedSCOBytes;
+		AbsoluteTime							mBufferedSCOPacketTimestamp;
 		
 		// Repository for the packets when logging at boot
-		OSArray				*mRepositoryForBoot;
-		UInt16				mMaxNumberOfBootPackets;
+		OSArray									*mRepositoryForBoot;
+		UInt16									mMaxNumberOfBootPackets;
 		
-		IOService			*mOverriddenControllerProvider;
+		IOService								*mOverriddenControllerProvider;
 		
-		size_t				mHCIRequestListSize;
-		uint32_t			mNewRequestIndex;
+		size_t									mHCIRequestListSize;
+		uint32_t								mNewRequestIndex;
 		
 		IOBluetoothInactivityTimerEventSource	*mIdleTimer;
-		Boolean				mSystemOnTheWayToSleep;
+		Boolean									mSystemOnTheWayToSleep;
 
 		// New Airport notifications:
-		IONotifier *				mIO80211Interface;
+		IONotifier 								*mIO80211Interface;
 
-		UInt32				mNextAvailableSCOSequenceNumber;
-		UInt32				mCurrentlyExecutingSCOSequenceNumber;
+		UInt32									mNextAvailableSCOSequenceNumber;
+		UInt32									mCurrentlyExecutingSCOSequenceNumber;
 		
-		Boolean				mNeedToCleanUpWaitForAckQueue;
+		Boolean									mNeedToCleanUpWaitForAckQueue;
+		Boolean									mResettingDevice;
 		
+		HearingDeviceListType 					*mConnectedHearingDeviceListHead;
+		HearingDeviceListType 					*mConnectedHearingDeviceListTail;
+
 	} ExpansionData;
 
 	ExpansionData*		mExpansionData;
 	
+#define	mConnectedHearingDeviceListTail			IOBluetoothHCIController::mExpansionData->mConnectedHearingDeviceListTail
+#define	mConnectedHearingDeviceListHead			IOBluetoothHCIController::mExpansionData->mConnectedHearingDeviceListHead
+#define	mResettingDevice						IOBluetoothHCIController::mExpansionData->mResettingDevice
 #define	mNeedToCleanUpWaitForAckQueue			IOBluetoothHCIController::mExpansionData->mNeedToCleanUpWaitForAckQueue
 #define mNextAvailableSCOSequenceNumber			IOBluetoothHCIController::mExpansionData->mNextAvailableSCOSequenceNumber
 #define mCurrentlyExecutingSCOSequenceNumber	IOBluetoothHCIController::mExpansionData->mCurrentlyExecutingSCOSequenceNumber
@@ -1294,16 +1327,43 @@ protected:
 	OSMetaClassDeclareReservedUsed(	IOBluetoothHCIController,  51 );
 	virtual IOReturn	RemovePacket(IOMemoryDescriptor	*memDescriptor);
 
+public:
+	OSMetaClassDeclareReservedUsed(	IOBluetoothHCIController,  52 );
+	IOReturn 			exitHIDSniff(bool	 exitSniff);
+	
+public:
+	OSMetaClassDeclareReservedUsed(	IOBluetoothHCIController,  53 );
+	virtual IOReturn	WaitForControllerPowerStateWithTimeout( IOBluetoothHCIControllerInternalPowerState	powerState,
+															    UInt32										waitTimeInMicroSecond);
+public:
+	OSMetaClassDeclareReservedUsed(	IOBluetoothHCIController,  54 );
+	void				SetHCIDriverExistsVariableTo( bool isLoaded );
+	
+public:
+	OSMetaClassDeclareReservedUsed(	IOBluetoothHCIController,  55 );
+	virtual	IOReturn	ToggleLMPLogging( );
+	
+public:
+	OSMetaClassDeclareReservedUsed(	IOBluetoothHCIController,  56 );
+	virtual	HearingDeviceListType * 	FindHearingDeviceWithAddress( const BluetoothDeviceAddress *inDeviceAddress );
+	
+public:
+	OSMetaClassDeclareReservedUsed(	IOBluetoothHCIController,  57 );
+	virtual	IOReturn	AddHearingDevice( IOBluetoothDevice *inDevice );
+	
+public:
+	OSMetaClassDeclareReservedUsed(	IOBluetoothHCIController,  58 );
+	virtual	IOReturn	RemoveHearingDevice( IOBluetoothDevice *inDevice, bool all );
+	
+public:
+	OSMetaClassDeclareReservedUsed(	IOBluetoothHCIController,  59 );
+	virtual	IOReturn	SetDevicePublishNotificationState( const BluetoothDeviceAddress *inDeviceAddress, DevicePublishNotificationStateType state );
+	
+public:
+	OSMetaClassDeclareReservedUsed(	IOBluetoothHCIController,  60 );
+	virtual	DevicePublishNotificationStateType *	GetDevicePublishNotificationState( const BluetoothDeviceAddress *inDeviceAddress );
+	
 private:
-	OSMetaClassDeclareReservedUnused(	IOBluetoothHCIController,  52 );
-	OSMetaClassDeclareReservedUnused(	IOBluetoothHCIController,  53 );
-	OSMetaClassDeclareReservedUnused(	IOBluetoothHCIController,  54 );
-	OSMetaClassDeclareReservedUnused(	IOBluetoothHCIController,  55 );
-	OSMetaClassDeclareReservedUnused(	IOBluetoothHCIController,  56 );
-	OSMetaClassDeclareReservedUnused(	IOBluetoothHCIController,  57 );
-	OSMetaClassDeclareReservedUnused(	IOBluetoothHCIController,  58 );
-	OSMetaClassDeclareReservedUnused(	IOBluetoothHCIController,  59 );
-	OSMetaClassDeclareReservedUnused(	IOBluetoothHCIController,  60 );
 	OSMetaClassDeclareReservedUnused(	IOBluetoothHCIController,  61 );
 	OSMetaClassDeclareReservedUnused(	IOBluetoothHCIController,  62 );
 	OSMetaClassDeclareReservedUnused(	IOBluetoothHCIController,  63 );

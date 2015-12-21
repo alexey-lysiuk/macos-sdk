@@ -55,7 +55,7 @@
 	
 	// Delegate stuff.
 
-	id							mDelegate;
+	id __weak					mDelegate;
 	
 	// Activity timer.
 	
@@ -78,6 +78,7 @@
 	void *						mReserved2;
  }
 
+@property(assign) id delegate;
 
 //------------------------------------------
 // Object construction.
@@ -113,27 +114,6 @@
 //------------------------------------------
 // Accessors
 //------------------------------------------
-
-/*!
-	@method     setDelegate:
-	@abstract   Manually set the delegate
-	@discussion The only way to receive OBEXFileTransferServices transfer operation updates are through
-				using the provided delegate methods below.  The return values from all transfer operations
-				on this object are only initial values reflecting the state of this object, not the transfers
-				as a whole.
-				Note that prior to 10.5, the delegate was erroneously retained by the FTS object. In 10.5 and later it is not retained.
-	@param		inDelegate An object that implements the methods defined in the 
-				OBEXFileTransferServicesDelegate category
-*/
-- (void) setDelegate: (id) inDelegate;
-	
-/*!
-	@method     delegate
-	@abstract   Get the delegate
-	@discussion Get the delegate
-	@result		The delegate object
-*/
-- (id) delegate;
 
 
 /*!

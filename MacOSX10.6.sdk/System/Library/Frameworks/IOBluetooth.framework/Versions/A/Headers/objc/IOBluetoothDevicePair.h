@@ -39,7 +39,7 @@
 
 @interface	IOBluetoothDevicePair : NSObject
 {
-	id							_delegate;
+	id __weak					_delegate;
 	IOBluetoothDevice *			_device;
 	BOOL						_busy;
 	BOOL						_isHandlerSetup;
@@ -49,6 +49,8 @@
 	uint32_t					_totalAttempts;
 	__strong void *				_expansion;
 }
+
+@property(assign) id __weak delegate;
 
 /*!
     @method		pairWithDevice:
@@ -66,14 +68,6 @@
 */
 
 - (IOReturn)start;
-
-/*!
-    @method		setDelegate:
-	@abstract	Set the delegate object. It is not retained.
-	@param		device		The IOBluetoothDevice object that the IOBluetoothDevicePair object with which to perform a pairing.
-*/
-
-- (void)setDelegate:(id)delegate;
 
 /*!
     @method		device

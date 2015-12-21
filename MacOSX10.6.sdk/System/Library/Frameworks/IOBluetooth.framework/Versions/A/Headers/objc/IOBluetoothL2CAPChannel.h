@@ -278,6 +278,14 @@
 
 - (IOReturn)setDelegate:(id)channelDelegate withConfiguration:(NSDictionary*)channelConfiguration;
 
+/*!
+ @method		delegate
+ @abstract		Returns the currently assigned delegate
+ @discussion	An incoming channel is one that was initiated by a remote device.
+ @result		Returns the current delegate, or nil if one is not set.
+ */
+- (id) delegate;
+
 #endif /* BLUETOOTH_VERSION_MAX_ALLOWED >= BLUETOOTH_VERSION_2_0 */
 
 /*!
@@ -345,9 +353,6 @@
 */
 
 - (IOBluetoothUserNotification *)registerForChannelCloseNotification:(id)observer selector:(SEL)inSelector;
-
-- (NSString *)description;
-
 @end
 
 #if BLUETOOTH_VERSION_MAX_ALLOWED >= BLUETOOTH_VERSION_1_2

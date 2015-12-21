@@ -16,14 +16,14 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: php_standard.h,v 1.24.2.2.2.1.2.3 2008/12/31 11:15:45 sebastian Exp $ */
+/* $Id: php_standard.h 286857 2009-08-05 23:20:17Z scottmac $ */
 
 #include "basic_functions.h"
 #include "php_math.h"
 #include "php_string.h"
 #include "base64.h"
 #include "php_dir.h"
-#include "dns.h"
+#include "php_dns.h"
 #include "php_mail.h"
 #include "md5.h"
 #include "sha1.h"

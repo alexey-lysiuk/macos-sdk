@@ -16,7 +16,7 @@
   +----------------------------------------------------------------------+
 */
 
-/* $Id: php_content_types.h,v 1.12.2.1.2.1.2.2 2008/12/31 11:15:47 sebastian Exp $ */
+/* $Id: php_content_types.h 272370 2008-12-31 11:15:49Z sebastian $ */
 
 #ifndef PHP_CONTENT_TYPES_H
 #define PHP_CONTENT_TYPES_H

@@ -61,7 +61,8 @@
         unsigned int     importTips:1;
         unsigned int     restoreFromMetaData:1;
         unsigned int     prefsNeedSync:1;
-        unsigned int     _reserved:24;
+        unsigned int     waitingForReset:1;
+        unsigned int     _reserved:23;
     } _flags;
 }
 

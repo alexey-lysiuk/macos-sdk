@@ -17,7 +17,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: zend_config.w32.h,v 1.39.2.2.2.2.2.3 2008/12/31 11:15:32 sebastian Exp $ */
+/* $Id: zend_config.w32.h 272370 2008-12-31 11:15:49Z sebastian $ */
 
 #ifndef ZEND_CONFIG_W32_H
 #define ZEND_CONFIG_W32_H

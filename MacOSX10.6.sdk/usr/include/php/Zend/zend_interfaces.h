@@ -16,7 +16,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: zend_interfaces.h,v 1.11.2.1.2.2.2.4 2008/12/31 11:15:32 sebastian Exp $ */
+/* $Id: zend_interfaces.h 272370 2008-12-31 11:15:49Z sebastian $ */
 
 #ifndef ZEND_INTERFACES_H
 #define ZEND_INTERFACES_H

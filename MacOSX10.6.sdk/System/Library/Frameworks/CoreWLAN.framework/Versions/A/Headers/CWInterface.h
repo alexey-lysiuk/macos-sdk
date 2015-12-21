@@ -330,6 +330,32 @@
  */
 - (BOOL)setChannel:(NSUInteger)channel error:(NSError**)error __OSX_AVAILABLE_STARTING( __MAC_10_6, __IPHONE_NA );
 
+/*!
+ * @method
+ * @param key An NSData object containing the pairwise master key (PMK).  
+ * @param error An NSError object passed by reference, which will be populated with error code and error description
+ * if an error occurs during the execution of the method.  This parameter is optional and can be passed as <i>nil</i>.
+ * @result A BOOL value which will indicate whether or not a failure occured.  <i>YES</i> indicates no error occured.
+ * @abstract Sets the interface pairwise master key (PMK).
+ * @discussion <i>key</i> must be 32 octets.  If <i>key</i> is <i>nil</i>, 
+ * this method clears the PMK for the interface.
+ */
+- (BOOL)setPairwiseMasterKey:(NSData*)key error:(NSError**)error __OSX_AVAILABLE_STARTING( __MAC_10_6, __IPHONE_NA );
+
+/*!
+ * @method
+ * @param key An NSData object containing the WEP key.  
+ * @param flags An NSUInteger indicating which cipher key flags to use for the specified key. 
+ * @param index An NSUInteger indicating which default key index to use for the specified key.
+ * @param error An NSError object passed by reference, which will be populated with error code and error description
+ * if an error occurs during the execution of the method.  This parameter is optional and can be passed as <i>nil</i>.
+ * @result A BOOL value which will indicate whether or not a failure occured.  <i>YES</i> indicates no error occured. 
+ * @abstract Sets the interface WEP key.
+ * @discussion <i>key</i> must be 5 octets for WEP-40 or 13 octets for WEP-104. If <i>key</i> is <i>nil</i>, 
+ * this method clears the WEP key for the interface.  <i>index</i> must correspond to default key index 1-4.
+ */
+- (BOOL)setWEPKey:(NSData*)key flags:(NSUInteger)flags index:(NSUInteger)index error:(NSError**)error __OSX_AVAILABLE_STARTING( __MAC_10_6, __IPHONE_NA );
+
 /*! @methodgroup Scanning for networks */
 /*!
  * @method

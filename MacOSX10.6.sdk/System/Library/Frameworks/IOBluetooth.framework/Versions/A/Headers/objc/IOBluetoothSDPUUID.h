@@ -171,8 +171,6 @@
 
 - (BOOL)isEqualToUUID:(IOBluetoothSDPUUID *)otherUUID;
 
-- (id)initWithCoder:(NSCoder *)coder;
-- (void)encodeWithCoder:(NSCoder *)coder;
 - (Class)classForCoder;
 - (Class)classForArchiver;
 - (Class)classForPortCoder;

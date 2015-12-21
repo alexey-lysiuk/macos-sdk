@@ -235,6 +235,9 @@ typedef __darwin_pid_t	pid_t;
 
 #define F_ADDFILESIGS	61		/* add signature from same file (used by dyld for shared libs) */
 
+#define F_GETPROTECTIONCLASS	62		/* Get the protection class of a file from the EA, returns int */
+#define F_SETPROTECTIONCLASS	63		/* Set the protection class of a file for the EA, requires int */
+
 // FS-specific fcntl()'s numbers begin at 0x00010000 and go up
 #define FCNTL_FS_SPECIFIC_BASE  0x00010000
 

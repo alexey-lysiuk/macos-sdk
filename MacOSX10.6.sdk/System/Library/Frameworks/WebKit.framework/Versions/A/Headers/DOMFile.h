@@ -24,13 +24,14 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
  */
 
-#import <WebKit/DOMObject.h>
+#import <WebKit/DOMBlob.h>
 
 #if WEBKIT_VERSION_MAX_ALLOWED >= WEBKIT_VERSION_4_0
 
 @class NSString;
 
-@interface DOMFile : DOMObject
+@interface DOMFile : DOMBlob
+@property(readonly, copy) NSString *name;
 @property(readonly, copy) NSString *fileName;
 @property(readonly) unsigned long long fileSize;
 @end

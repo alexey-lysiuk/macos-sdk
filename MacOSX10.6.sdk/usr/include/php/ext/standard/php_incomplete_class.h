@@ -16,7 +16,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: php_incomplete_class.h,v 1.17.2.2.2.1.2.4 2008/12/31 11:15:45 sebastian Exp $ */
+/* $Id: php_incomplete_class.h 272370 2008-12-31 11:15:49Z sebastian $ */
 
 #ifndef PHP_INCOMPLETE_CLASS_H
 #define PHP_INCOMPLETE_CLASS_H

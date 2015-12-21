@@ -1,5 +1,5 @@
 /*
- * $RCSId: xc/lib/fontconfig/fontconfig/fontconfig.h,v 1.30 2002/09/26 00:17:27 keithp Exp $
+ * fontconfig/fontconfig/fontconfig.h
  *
  * Copyright © 2001 Keith Packard
  *
@@ -13,9 +13,9 @@
  * representations about the suitability of this software for any purpose.  It
  * is provided "as is" without express or implied warranty.
  *
- * KEITH PACKARD DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE,
+ * THE AUTHOR(S) DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE,
  * INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS, IN NO
- * EVENT SHALL KEITH PACKARD BE LIABLE FOR ANY SPECIAL, INDIRECT OR
+ * EVENT SHALL THE AUTHOR(S) BE LIABLE FOR ANY SPECIAL, INDIRECT OR
  * CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE,
  * DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
  * TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
@@ -52,8 +52,8 @@ typedef int		FcBool;
  */
 
 #define FC_MAJOR	2
-#define FC_MINOR	6
-#define FC_REVISION	0
+#define FC_MINOR	7
+#define FC_REVISION	3
 
 #define FC_VERSION	((FC_MAJOR * 10000) + (FC_MINOR * 100) + (FC_REVISION))
 
@@ -342,6 +342,9 @@ FcConfigFilename (const FcChar8 *url);
 FcPublic FcConfig *
 FcConfigCreate (void);
 
+FcPublic FcConfig *
+FcConfigReference (FcConfig *config);
+
 FcPublic void
 FcConfigDestroy (FcConfig *config);
 
@@ -435,6 +438,9 @@ FcCharSetUnion (const FcCharSet *a, const FcCharSet *b);
 
 FcPublic FcCharSet*
 FcCharSetSubtract (const FcCharSet *a, const FcCharSet *b);
+
+FcPublic FcBool
+FcCharSetMerge (FcCharSet *a, const FcCharSet *b, FcBool *changed);
 
 FcPublic FcBool
 FcCharSetHasChar (const FcCharSet *fcs, FcChar32 ucs4);
@@ -591,6 +597,9 @@ FcLangSetEqual (const FcLangSet *lsa, const FcLangSet *lsb);
 FcPublic FcChar32
 FcLangSetHash (const FcLangSet *ls);
 
+FcPublic FcStrSet *
+FcLangSetGetLangs (const FcLangSet *ls);
+
 /* fclist.c */
 FcPublic FcObjectSet *
 FcObjectSetCreate (void);
@@ -740,6 +749,9 @@ FcPatternDuplicate (const FcPattern *p);
 FcPublic void
 FcPatternReference (FcPattern *p);
 
+FcPublic FcPattern *
+FcPatternFilter (FcPattern *p, const FcObjectSet *os);
+
 FcPublic void
 FcValueDestroy (FcValue v);
 
@@ -819,10 +831,13 @@ FcPublic FcResult
 FcPatternGetLangSet (const FcPattern *p, const char *object, int n, FcLangSet **ls);
 
 FcPublic FcPattern *
-FcPatternVaBuild (FcPattern *orig, va_list va);
+FcPatternVaBuild (FcPattern *p, va_list va);
     
 FcPublic FcPattern *
-FcPatternBuild (FcPattern *orig, ...) FC_ATTRIBUTE_SENTINEL(0);
+FcPatternBuild (FcPattern *p, ...) FC_ATTRIBUTE_SENTINEL(0);
+
+FcPublic FcChar8 *
+FcPatternFormat (FcPattern *pat, const FcChar8 *format);
 
 /* fcstr.c */
 

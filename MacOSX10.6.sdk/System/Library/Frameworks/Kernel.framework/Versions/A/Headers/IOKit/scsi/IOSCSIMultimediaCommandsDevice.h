@@ -1037,7 +1037,6 @@ public:
 	
 	IOReturn	RequestIdle ( void );
 	
-	
 private:
 	
 	// Space reserved for future expansion.

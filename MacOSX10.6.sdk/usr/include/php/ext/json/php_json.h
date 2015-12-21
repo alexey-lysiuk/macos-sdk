@@ -16,7 +16,7 @@
   +----------------------------------------------------------------------+
 */
 
-/* $Id: php_json.h,v 1.8.2.2.2.7 2009/05/31 18:55:10 andrei Exp $ */
+/* $Id: php_json.h 283185 2009-06-30 17:52:21Z stas $ */
 
 #ifndef PHP_JSON_H
 #define PHP_JSON_H
@@ -26,6 +26,12 @@
 
 extern zend_module_entry json_module_entry;
 #define phpext_json_ptr &json_module_entry
+
+#if defined(PHP_WIN32) && defined(JSON_EXPORTS)
+#define PHP_JSON_API __declspec(dllexport)
+#else
+#define PHP_JSON_API PHPAPI
+#endif
 
 #ifdef ZTS
 #include "TSRM.h"
@@ -41,8 +47,8 @@ ZEND_END_MODULE_GLOBALS(json)
 # define JSON_G(v) (json_globals.v)
 #endif
 
-PHPAPI void php_json_encode(smart_str *buf, zval *val, int options TSRMLS_DC);
-PHPAPI void php_json_decode(zval *return_value, char *str, int str_len, zend_bool assoc, long depth TSRMLS_DC);
+PHP_JSON_API void php_json_encode(smart_str *buf, zval *val, int options TSRMLS_DC);
+PHP_JSON_API void php_json_decode(zval *return_value, char *str, int str_len, zend_bool assoc, long depth TSRMLS_DC);
 
 #endif  /* PHP_JSON_H */
 

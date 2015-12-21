@@ -119,7 +119,6 @@ public:
 	
 	bool				init	( OSDictionary * propTable );
 	virtual bool		start	( IOService * provider );
-	virtual void 		stop	( IOService *  provider );
 	virtual void		free	( void );
 	
 	virtual IOReturn	message ( UInt32 type, IOService * nub, void * arg );

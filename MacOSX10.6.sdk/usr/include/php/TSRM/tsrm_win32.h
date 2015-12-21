@@ -16,7 +16,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: tsrm_win32.h,v 1.19.2.1.2.1.2.3 2009/05/17 19:42:53 pajoye Exp $ */
+/* $Id: tsrm_win32.h 289780 2009-10-19 23:38:55Z pajoye $ */
 
 #ifndef TSRM_WIN32_H
 #define TSRM_WIN32_H
@@ -64,6 +64,7 @@ typedef struct {
 	int				shm_size;
 	char			*comspec;
 	HANDLE impersonation_token;
+	PSID			impersonation_token_sid;
 } tsrm_win32_globals;
 
 #ifdef ZTS
@@ -89,6 +90,7 @@ typedef struct {
 #define	SHM_RND		FILE_MAP_WRITE
 #define	SHM_REMAP	FILE_MAP_COPY
 
+char * tsrm_win32_get_path_sid_key(const char *pathname  TSRMLS_DC);
 
 TSRM_API void tsrm_win32_startup(void);
 TSRM_API void tsrm_win32_shutdown(void);
@@ -97,6 +99,7 @@ TSRM_API FILE *popen_ex(const char *command, const char *type, const char *cwd, 
 TSRM_API FILE *popen(const char *command, const char *type);
 TSRM_API int pclose(FILE *stream);
 TSRM_API int tsrm_win32_access(const char *pathname, int mode);
+TSRM_API int win32_utime(const char *filename, struct utimbuf *buf);
 
 TSRM_API int shmget(int key, int size, int flags);
 TSRM_API void *shmat(int key, const void *shmaddr, int flags);

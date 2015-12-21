@@ -17,7 +17,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: zend_language_scanner.h,v 1.19.2.1.2.1.2.5 2008/12/31 11:15:32 sebastian Exp $ */
+/* $Id: zend_language_scanner.h 272370 2008-12-31 11:15:49Z sebastian $ */
 
 #ifndef ZEND_SCANNER_H
 #define ZEND_SCANNER_H

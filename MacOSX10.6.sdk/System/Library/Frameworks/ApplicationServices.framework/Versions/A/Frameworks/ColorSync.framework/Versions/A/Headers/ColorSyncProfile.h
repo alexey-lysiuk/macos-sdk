@@ -247,6 +247,17 @@ CSEXTERN void ColorSyncIterateInstalledProfiles (ColorSyncProfileIterateCallback
     *
     */
 
+    /********************************************************************************************
+    *                                                                                           *
+    *   For further information on ICC profiles refer to ICC profile specification published    *
+    *   by International Color Consortium at www.color.org                                      *
+    *                                                                                           *
+    *   ICC header file (ICC.h) containing programmatic definitions of ICC data types can be    *
+    *   downloaded from the Technical Notes web page of ICC website at                          *
+    *   www.color.org/technotes.xalter                                                          *
+    *                                                                                           *
+    ********************************************************************************************/
+
 #ifdef __cplusplus
 }
 #endif

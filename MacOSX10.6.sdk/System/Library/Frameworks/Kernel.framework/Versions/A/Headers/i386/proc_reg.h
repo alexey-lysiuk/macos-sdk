@@ -461,5 +461,8 @@ __END_DECLS
 
 #define MSR_IA32_BIOS_SIGN_ID	0x08B
 
+#define MSR_FLEX_RATIO		0x194
+#define MSR_PLATFORM_INFO	0x0ce
+#define MSR_CORE_THREAD_COUNT	0x035
 
 #endif	/* _I386_PROC_REG_H_ */

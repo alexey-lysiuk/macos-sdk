@@ -1,7 +1,7 @@
 /*
 	File:		QTCaptureFileOutput.h
 
-	Copyright:	(c)2008-2009 by Apple Inc., all rights reserved.
+	Copyright:	(c)2008-2010 by Apple Inc., all rights reserved.
 
 */
 

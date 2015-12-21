@@ -16,7 +16,7 @@
   +----------------------------------------------------------------------+
 */
 
-/* $Id: logos.h,v 1.14.2.3.2.2.2.3 2008/12/31 11:15:47 sebastian Exp $ */
+/* $Id: logos.h 272370 2008-12-31 11:15:49Z sebastian $ */
 
 #define CONTEXT_TYPE_IMAGE_GIF "Content-Type: image/gif"
 

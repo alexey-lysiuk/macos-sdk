@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2008 Apple Computer, Inc. All rights reserved.
+ * Copyright (c) 2004-2010 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
  * 
@@ -1754,6 +1754,8 @@ extern errno_t ifmaddr_lladdress(ifmultiaddr_t ifmaddr,
  */
 extern ifnet_t ifmaddr_ifnet(ifmultiaddr_t ifmaddr);
 
+
 __END_DECLS
 
 #endif /* __KPI_INTERFACE__ */
+

@@ -1,7 +1,7 @@
 /*
 	File:		QTKitDefines.h
 
-	Copyright:	(c)2004-2009 by Apple Inc., all rights reserved.
+	Copyright:	(c)2004-2010 by Apple Inc., all rights reserved.
 
 */
 
@@ -86,6 +86,7 @@
 #define QTKIT_VERSION_7_0           70000
 #define QTKIT_VERSION_7_2           70200
 #define QTKIT_VERSION_7_6_3         70603
+#define QTKIT_VERSION_7_6_6         70606
 
 #ifndef QTKIT_VERSION_MIN_REQUIRED
     #if MAC_OS_X_VERSION_MIN_REQUIRED >= MAC_OS_X_VERSION_10_6
@@ -98,7 +99,7 @@
 #endif
 
 #ifndef QTKIT_VERSION_MAX_ALLOWED
-    #define QTKIT_VERSION_MAX_ALLOWED QTKIT_VERSION_7_6_3
+    #define QTKIT_VERSION_MAX_ALLOWED QTKIT_VERSION_7_6_6
 #endif
 
 // error on bad values
@@ -159,6 +160,19 @@
 	#define AVAILABLE_QTKIT_VERSION_7_6_3_AND_LATER WEAK_IMPORT_ATTRIBUTE
 #else
 	#define AVAILABLE_QTKIT_VERSION_7_6_3_AND_LATER
+#endif
+
+/*
+ * AVAILABLE_QTKIT_VERSION_7_6_6_AND_LATER
+ * 
+ * Used on declarations introduced in QTKit 7.6.6
+ */
+#if QTKIT_VERSION_MAX_ALLOWED < QTKIT_VERSION_7_6_6
+	#define AVAILABLE_QTKIT_VERSION_7_6_6_AND_LATER UNAVAILABLE_ATTRIBUTE
+#elif (QTKIT_VERSION_MIN_REQUIRED < QTKIT_VERSION_7_6_6) || (MAC_OS_X_VERSION_MIN_REQUIRED < MAC_OS_X_VERSION_10_6)
+	#define AVAILABLE_QTKIT_VERSION_7_6_6_AND_LATER WEAK_IMPORT_ATTRIBUTE
+#else
+	#define AVAILABLE_QTKIT_VERSION_7_6_6_AND_LATER
 #endif
 
 /*

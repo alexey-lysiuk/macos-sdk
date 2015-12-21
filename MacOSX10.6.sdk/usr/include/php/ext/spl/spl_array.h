@@ -16,7 +16,7 @@
    +----------------------------------------------------------------------+
  */
 
-/* $Id: spl_array.h,v 1.13.2.2.2.4.2.2 2008/12/31 11:15:43 sebastian Exp $ */
+/* $Id: spl_array.h 272370 2008-12-31 11:15:49Z sebastian $ */
 
 #ifndef SPL_ARRAY_H
 #define SPL_ARRAY_H

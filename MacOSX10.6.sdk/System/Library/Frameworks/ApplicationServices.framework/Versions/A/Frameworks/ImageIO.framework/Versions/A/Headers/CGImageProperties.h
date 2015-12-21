@@ -221,6 +221,7 @@ CG_EXTERN const CFStringRef kCGImagePropertyGIFLoopCount  __OSX_AVAILABLE_STARTI
 CG_EXTERN const CFStringRef kCGImagePropertyGIFDelayTime  __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA);
 CG_EXTERN const CFStringRef kCGImagePropertyGIFImageColorMap  __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA);
 CG_EXTERN const CFStringRef kCGImagePropertyGIFHasGlobalColorMap  __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_NA);
+CG_EXTERN const CFStringRef kCGImagePropertyGIFUnclampedDelayTime  __OSX_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_NA);
 
 /* Possible keys for kCGImagePropertyPNGDictionary */
 

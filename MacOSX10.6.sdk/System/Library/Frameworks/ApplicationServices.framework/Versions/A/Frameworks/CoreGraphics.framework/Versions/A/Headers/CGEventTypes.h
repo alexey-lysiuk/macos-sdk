@@ -333,7 +333,7 @@ enum {
      contains continuous, pixel-based scrolling data. The value is non-zero
      when the scrolling data is pixel-based and zero when the scrolling data
      is line-based. */
-  kCGScrollWheelEventIsContinuous = 88
+  kCGScrollWheelEventIsContinuous = 88    
 };
 typedef uint32_t CGEventField;
 

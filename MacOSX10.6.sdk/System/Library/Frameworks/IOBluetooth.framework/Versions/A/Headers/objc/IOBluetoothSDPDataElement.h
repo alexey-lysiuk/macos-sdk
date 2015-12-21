@@ -67,7 +67,7 @@
                 must contain sub-elements that will be parsed out individually.
 */
 
-@interface IOBluetoothSDPDataElement : NSObject {
+@interface IOBluetoothSDPDataElement : NSObject <NSCoding> {
     BluetoothSDPDataElementTypeDescriptor	mTypeDescriptor;
     BluetoothSDPDataElementSizeDescriptor	mSizeDescriptor;
     UInt32									mSize;
@@ -259,19 +259,5 @@
 */
 
 - (BOOL)containsValue:(NSObject *)cmpValue;
-
-/*!
-    @method isEqual:
-    @abstract Compares the target data element with the given object.
-    @discussion This method will compare a data element with either another data element or a data element value.
-    @param cmpObject The object to compare with.
-    @result Returns TRUE if the target data element is the same as the given object or if it's value matches the
-            given object.
-*/
-
-- (BOOL)isEqual:(id)cmpObject;
-
-- (id)initWithCoder:(NSCoder *)coder;
-- (void)encodeWithCoder:(NSCoder *)coder;
 
 @end

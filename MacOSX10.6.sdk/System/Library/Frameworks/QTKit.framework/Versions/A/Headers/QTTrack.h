@@ -1,7 +1,7 @@
 /*
 	File:		QTTrack.h
 
-	Copyright:	(c)2004-2009 by Apple Inc., all rights reserved.
+	Copyright:	(c)2004-2010 by Apple Inc., all rights reserved.
 
 */
 /*!
@@ -184,7 +184,7 @@ QTKIT_EXTERN NSString * const QTTrackVolumeAttribute						AVAILABLE_QTKIT_VERSIO
 	QTTrackHelper		*_trackHelper;
 	QTMovie				*_movie;
 	QTInvalidationSet	*_children;
-	long				_cachedTrackID;
+	int32_t				_cachedTrackID;
 	long				_reserved1;
 	long				_reserved2;
 	long				_reserved3;

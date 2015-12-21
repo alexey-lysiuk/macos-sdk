@@ -18,7 +18,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: zend_API.h,v 1.207.2.8.2.8.2.24 2008/12/31 11:15:31 sebastian Exp $ */
+/* $Id: zend_API.h 286469 2009-07-28 21:12:42Z jani $ */
 
 #ifndef ZEND_API_H
 #define ZEND_API_H
@@ -90,7 +90,7 @@ typedef struct _zend_fcall_info_cache {
 #define ZEND_NS_RAW_FENTRY(ns, zend_name, name, arg_info, flags)	ZEND_RAW_FENTRY(ZEND_NS_NAME(ns, zend_name), name, arg_info, flags)
 #define ZEND_NS_RAW_NAMED_FE(ns, zend_name, name, arg_info)			ZEND_NS_RAW_FENTRY(ns, #zend_name, name, arg_info, 0)
 
-#define ZEND_NS_NAMED_FE(ns, zend_name, name, arg_info)
+#define ZEND_NS_NAMED_FE(ns, zend_name, name, arg_info)	ZEND_NS_FENTRY(ns, #zend_name, name, arg_info, 0)
 #define ZEND_NS_FE(ns, name, arg_info)					ZEND_NS_FENTRY(ns, name, ZEND_FN(name), arg_info, 0)
 #define ZEND_NS_DEP_FE(ns, name, arg_info)				ZEND_NS_FENTRY(ns, name, ZEND_FN(name), arg_info, ZEND_ACC_DEPRECATED)
 #define ZEND_NS_FALIAS(ns, name, alias, arg_info)		ZEND_NS_FENTRY(ns, name, ZEND_FN(alias), arg_info, 0)

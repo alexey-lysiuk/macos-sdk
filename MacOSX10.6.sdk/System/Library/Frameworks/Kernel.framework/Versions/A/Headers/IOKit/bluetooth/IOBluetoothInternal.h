@@ -95,7 +95,8 @@ struct	IOBluetoothHCIUnifiedInquiryResult
 enum BluetoothHCIExtendedInquiryResponseDataTypesAppleSpecificInfo
 {
 	kBluetoothHCIExtendedInquiryResponseDataTypeAppleSpecificInfoReserved					=	0x00,
-	kBluetoothHCIExtendedInquiryResponseDataTypeAppleSpecificInfoModelIdentifier			=	0x01	/* UTF8String char data */
+	kBluetoothHCIExtendedInquiryResponseDataTypeAppleSpecificInfoModelIdentifier			=	0x01,	/* UTF8String char data */
+	kBluetoothHCIExtendedInquiryResponseDataTypeAppleSpecificInfoThirdPartyAdvertising		=	0x02,
 };
 
 #endif /* BLUETOOTH_VERSION_MAX_ALLOWED >= BLUETOOTH_VERSION_2_0 */

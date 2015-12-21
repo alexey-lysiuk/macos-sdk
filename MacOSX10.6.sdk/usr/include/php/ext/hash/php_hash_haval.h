@@ -16,7 +16,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: php_hash_haval.h,v 1.2.2.3.2.1.2.2 2008/12/31 11:15:37 sebastian Exp $ */
+/* $Id: php_hash_haval.h 272370 2008-12-31 11:15:49Z sebastian $ */
 
 #ifndef PHP_HASH_HAVAL_H
 #define PHP_HASH_HAVAL_H

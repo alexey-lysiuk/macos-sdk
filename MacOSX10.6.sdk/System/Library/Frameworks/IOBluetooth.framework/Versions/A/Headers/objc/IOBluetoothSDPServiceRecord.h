@@ -20,11 +20,11 @@
                 dictionary is keyed off of the attribute ID of each attribute represented as an NSNumber.
 */
 
-@interface IOBluetoothSDPServiceRecord : NSObject {
+@interface IOBluetoothSDPServiceRecord : NSObject <NSCoding> {
     NSDictionary		*mAttributeDictionary;
     IOBluetoothDevice	*mDeviceForService;
     
-    void				*_mReserved;
+    NSArray *sortedAttributes;
 }
 
 #if BLUETOOTH_VERSION_MAX_ALLOWED >= BLUETOOTH_VERSION_2_1_1
@@ -195,7 +195,14 @@
 
 - (BOOL)hasServiceFromArray:(NSArray *)array;
 
-- (id)initWithCoder:(NSCoder *)coder;
-- (void)encodeWithCoder:(NSCoder *)coder;
+/*!
+ @method		sortedAttributes:
+ @abstract		Returns a sorted array of SDP attributes
+ @discussion	This method will walk all the elements of the service record and return an array of 
+				IOBluetoothSDPServiceAttribute objects sorted by attributeID
+ @result		Returns a sorted array of SDP attributes
+ */
+
+@property(readonly, copy) NSArray *sortedAttributes;
 
 @end

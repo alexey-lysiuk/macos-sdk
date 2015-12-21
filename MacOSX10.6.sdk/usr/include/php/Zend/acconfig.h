@@ -17,7 +17,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: acconfig.h,v 1.40.2.1.2.1.2.3 2008/12/31 11:15:31 sebastian Exp $ */
+/* $Id: acconfig.h 272370 2008-12-31 11:15:49Z sebastian $ */
 
 #if defined(__GNUC__) && __GNUC__ >= 4
 # define ZEND_API __attribute__ ((visibility("default")))

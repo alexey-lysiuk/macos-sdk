@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2000-2008 Apple Inc. All rights reserved.
+ * Copyright (c) 2000-2010 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
  * 
@@ -134,6 +134,12 @@
 #define SIOCGIFBOND	_IOWR('i', 71, struct ifreq)	/* get bond if config */
 #define	SIOCIFCREATE	_IOWR('i', 120, struct ifreq)	/* create clone if */
 #define	SIOCIFDESTROY	 _IOW('i', 121, struct ifreq)	/* destroy clone if */
+#define SIOCIFCREATE2   _IOWR('i', 122, struct ifreq)   /* create clone if with data */
+
+#define SIOCSDRVSPEC    _IOW('i', 123, struct ifdrv)    /* set driver-specific
+                                                                  parameters */
+#define SIOCGDRVSPEC    _IOWR('i', 123, struct ifdrv)   /* get driver-specific
+                                                                  parameters */
 #define	SIOCSIFVLAN	 _IOW('i', 126, struct ifreq)	/* set VLAN config */
 #define	SIOCGIFVLAN	_IOWR('i', 127, struct ifreq)	/* get VLAN config */
 #define	SIOCSETVLAN	SIOCSIFVLAN
@@ -151,5 +157,7 @@
 #define	SIOCGIFKPI	_IOWR('i', 135, struct ifreq) /* get interface kext param */
 
 #define	SIOCGIFWAKEFLAGS _IOWR('i', 136, struct ifreq) /* get interface wake property flags */
+
+
 
 #endif /* !_SYS_SOCKIO_H_ */

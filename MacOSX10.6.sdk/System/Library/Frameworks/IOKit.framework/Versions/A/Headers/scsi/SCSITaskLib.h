@@ -184,9 +184,6 @@ typedef void ( *SCSITaskCallbackFunction ) ( SCSIServiceResponse 	serviceRespons
 											 UInt64 				bytesTransferred,
 											 void *					refCon );
 
-typedef struct SCSITaskInterface
-{
-
 /*! 
 	@class SCSITaskInterface
     @abstract Basic interface for a SCSITask.  
@@ -196,13 +193,15 @@ typedef struct SCSITaskInterface
     you can manipulate SCSITasks to send to the device.
 */
 
-/* headerdoc parse workaround	
-class SCSITaskInterface: public IUnknown {
-public:
-*/
+typedef struct SCSITaskInterface
+{
+
 	IUNKNOWN_C_GUTS;
 	
+	/*! Interface version */
 	UInt16	version;
+	
+	/*! Interface revision */
 	UInt16	revision;
 	
 	/*! @function IsTaskActive
@@ -463,8 +462,6 @@ public:
 } SCSITaskInterface;
 
 
-typedef struct SCSITaskDeviceInterface
-{
 /*! 
 	@class SCSITaskDeviceInterface
     @abstract Basic interface for a SCSITask Device.  
@@ -474,13 +471,15 @@ typedef struct SCSITaskDeviceInterface
     CreateSCSITask method to create new SCSITask instances for this device.
 */
 
-/* headerdoc parse workaround	
-class SCSITaskDeviceInterface: public IUnknown {
-public:
-*/
+typedef struct SCSITaskDeviceInterface
+{
+
 	IUNKNOWN_C_GUTS;
 
+	/*! Interface version */
 	UInt16	version;
+	
+	/*! Interface revision */
 	UInt16	revision;
 	
 	/*! @function IsExclusiveAccessAvailable
@@ -565,8 +564,6 @@ public:
 } SCSITaskDeviceInterface;
 
 
-typedef struct MMCDeviceInterface
-{
 /*! 
 	@class MMCDeviceInterface
     @abstract Basic interface for an MMC-2 Compliant Device.  
@@ -576,13 +573,15 @@ typedef struct MMCDeviceInterface
     MMC-2 calls to the device without getting exclusive access first.
 */
 
-/* headerdoc parse workaround	
-class MMCDeviceInterface: public IUnknown {
-public:
-*/
+typedef struct MMCDeviceInterface
+{
+
 	IUNKNOWN_C_GUTS;
 
+	/*! Interface version */
 	UInt16	version;
+	
+	/*! Interface revision */
 	UInt16	revision;
 	
 	/*! @function Inquiry

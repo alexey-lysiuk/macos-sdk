@@ -65,6 +65,10 @@ enum {
 typedef struct jetsam_priority_entry {
 	pid_t pid;
 	uint32_t flags;
+	int32_t hiwat_pages;
+	int32_t hiwat_reserved1;
+	int32_t hiwat_reserved2;
+	int32_t hiwat_reserved3;
 } jetsam_priority_entry_t;
 
 /*
@@ -105,8 +109,9 @@ typedef struct jetsam_snapshot {
 } jetsam_snapshot_t;
 
 enum {
-	kJetsamFlagsFrontmost =	(1 << 0),
-	kJetsamFlagsKilled =	(1 << 1)
+	kJetsamFlagsFrontmost =		(1 << 0),
+	kJetsamFlagsKilled =		(1 << 1),
+	kJetsamFlagsKilledHiwat =	(1 << 2)
 };
 
 #endif /* SYS_KERN_MEMORYSTATUS_H */

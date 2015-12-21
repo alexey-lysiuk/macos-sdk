@@ -17,7 +17,7 @@
   +----------------------------------------------------------------------+
 */
 
-/* $Id: xml_common.h,v 1.23.2.1.2.2.2.4 2008/12/31 11:15:36 sebastian Exp $ */
+/* $Id: xml_common.h 272370 2008-12-31 11:15:49Z sebastian $ */
 
 #ifndef PHP_XML_COMMON_H
 #define PHP_XML_COMMON_H

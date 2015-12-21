@@ -17,7 +17,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: php_scandir.h,v 1.12.2.1.2.1.2.3 2008/12/31 11:15:47 sebastian Exp $ */
+/* $Id: php_scandir.h 272370 2008-12-31 11:15:49Z sebastian $ */
 
 #ifndef PHP_SCANDIR_H
 #define PHP_SCANDIR_H

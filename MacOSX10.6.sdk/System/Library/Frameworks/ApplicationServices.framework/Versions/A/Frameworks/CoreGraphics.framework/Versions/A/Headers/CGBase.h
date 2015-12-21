@@ -86,7 +86,7 @@
 # endif
 #endif /* !defined(CG_INLINE) */
 
-#if !defined(__GNUC__) && !defined(__MWERKS__)
+#if !(defined(__GNUC__) || (defined(__MWERKS__) && !defined(__WIN32__)))
 # define __attribute__(attribute)
 #endif
 

@@ -299,7 +299,7 @@ private:
 
     static  void  sendAllKextPersonalitiesToCatalog(
         bool startMatching = false);
-    virtual void  sendPersonalitiesToCatalog(
+    virtual OSReturn  sendPersonalitiesToCatalog(
         bool      startMatching    = false,
         OSArray * personalityNames = NULL);
     

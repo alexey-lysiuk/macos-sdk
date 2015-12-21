@@ -16,7 +16,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: php_hash_gost.h,v 1.2.2.4.2.1.2.2 2008/12/31 11:15:37 sebastian Exp $ */
+/* $Id: php_hash_gost.h 272370 2008-12-31 11:15:49Z sebastian $ */
 
 #ifndef PHP_HASH_GOST_H
 #define PHP_HASH_GOST_H

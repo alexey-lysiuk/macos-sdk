@@ -1,10 +1,9 @@
 /*
  * "$Id: ppd.h 7791 2008-07-24 00:55:30Z mike $"
  *
- *   PostScript Printer Description definitions for the Common UNIX Printing
- *   System (CUPS).
+ *   PostScript Printer Description definitions for CUPS.
  *
- *   Copyright 2007-2008 by Apple Inc.
+ *   Copyright 2007-2010 by Apple Inc.
  *   Copyright 1997-2007 by Easy Software Products, all rights reserved.
  *
  *   These coded instructions, statements, and computer programs are the
@@ -115,7 +114,10 @@ typedef enum ppd_status_e		/**** Status Codes @since CUPS 1.1.19/Mac OS X 10.3@ 
   PPD_ILLEGAL_OPTION_KEYWORD,		/* Illegal option keyword string */
   PPD_ILLEGAL_TRANSLATION,		/* Illegal translation string */
   PPD_ILLEGAL_WHITESPACE,		/* Illegal whitespace character */
-  PPD_BAD_CUSTOM_PARAM			/* Bad custom parameter */
+  PPD_BAD_CUSTOM_PARAM,			/* Bad custom parameter */
+  PPD_MISSING_OPTION_KEYWORD,		/* Missing option keyword */
+  PPD_BAD_VALUE,			/* Bad value string */
+  PPD_MAX_STATUS			/* @private@ */
 } ppd_status_t;
 
 enum ppd_conform_e			/**** Conformance Levels @since CUPS 1.1.19/Mac OS X 10.3@ ****/
@@ -331,6 +333,9 @@ typedef struct ppd_file_s		/**** PPD File ****/
 
   /**** New in CUPS 1.4/Mac OS X 10.6 ****/
   cups_array_t	*cups_uiconstraints;	/* cupsUIConstraints @since CUPS 1.4/Mac OS X 10.6@ @private@ */
+
+  /**** New in CUPS 1.5 ****/
+  void		*pwg;			/* PWG to/from PPD mappings */
 } ppd_file_t;
 
 
@@ -394,19 +399,20 @@ extern ppd_option_t	*ppdNextOption(ppd_file_t *ppd) _CUPS_API_1_2;
 extern int		ppdLocalize(ppd_file_t *ppd) _CUPS_API_1_2;
 extern ppd_file_t	*ppdOpen2(cups_file_t *fp) _CUPS_API_1_2;
 
-/**** New in CUPS 1.3 ****/
+/**** New in CUPS 1.3/Mac OS X 10.5 ****/
 extern const char	*ppdLocalizeIPPReason(ppd_file_t *ppd,
 			                      const char *reason,
 					      const char *scheme,
 					      char *buffer,
 					      size_t bufsize) _CUPS_API_1_3;
 
-/**** New in CUPS 1.4 ****/
+/**** New in CUPS 1.4/Mac OS X 10.6 ****/
 extern int		ppdInstallableConflict(ppd_file_t *ppd,
 			                       const char *option,
-					       const char *choice);
+					       const char *choice)
+					           _CUPS_API_1_4;
 extern ppd_attr_t	*ppdLocalizeAttr(ppd_file_t *ppd, const char *keyword,
-			                 const char *spec);
+			                 const char *spec) _CUPS_API_1_4;
 extern const char	*ppdLocalizeMarkerName(ppd_file_t *ppd,
 			                       const char *name) _CUPS_API_1_4;
 extern int		ppdPageSizeLimits(ppd_file_t *ppd,

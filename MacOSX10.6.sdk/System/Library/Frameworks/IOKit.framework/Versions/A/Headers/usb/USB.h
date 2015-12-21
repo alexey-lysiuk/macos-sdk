@@ -403,6 +403,8 @@ Completion Code         Error Returned              Description
 #define kIOUSBMessageHubSetPortRecoveryTime			iokit_usb_msg(0x12)		// 0xe0004012  Message sent to a hub to set the # of ms required when resuming a particular port
 #define kIOUSBMessageOvercurrentCondition			iokit_usb_msg(0x13)     // 0xe0004013  Message sent to the clients of the device's hub parent, when a device causes an overcurrent condition.  The message argument contains the locationID of the device
 #define kIOUSBMessageNotEnoughPower					iokit_usb_msg(0x14)     // 0xe0004014  Message sent to the clients of the device's hub parent, when a device causes an low power notice to be displayed.  The message argument contains the locationID of the device
+#define kIOUSBMessageController						iokit_usb_msg(0x15)		// 0xe0004015  Generic message sent from controller user client to controllers 
+#define	kIOUSBMessageRootHubWakeEvent				iokit_usb_msg(0x16)		// 0xe0004016  Message from the HC Wakeup code indicating that a Root Hub port has a wake event
 
 // Obsolete
 //
@@ -671,10 +673,7 @@ typedef struct {
     @struct IOUSBDevRequest
     @discussion Parameter block for control requests, using a simple pointer
     for the data to be transferred.
-    @field rdDirection Direction of data part of request: kUSBIn or kUSBOut
-    @field rqType Request type: kUSBStandard, kUSBClass or kUSBVendor
-    @field rqRecipient Target of the request: kUSBDevice, kUSBInterface,
-	kUSBEndpoint or kUSBOther
+    @field bmRequestType Request type: kUSBStandard, kUSBClass or kUSBVendor
     @field bRequest Request code
     @field wValue 16 bit parameter for request, host endianess
     @field wIndex 16 bit parameter for request, host endianess
@@ -698,10 +697,7 @@ typedef IOUSBDevRequest * IOUSBDeviceRequestPtr;
     @struct IOUSBDevRequestTO
     @discussion Parameter block for control requests with timeouts, using a simple pointer
     for the data to be transferred.  Same as a IOUSBDevRequest except for the two extra timeout fields.
-    @field rdDirection Direction of data part of request: kUSBIn or kUSBOut
-    @field rqType Request type: kUSBStandard, kUSBClass or kUSBVendor
-    @field rqRecipient Target of the request: kUSBDevice, kUSBInterface,
-	kUSBEndpoint or kUSBOther
+    @field bmRequestType Request type: kUSBStandard, kUSBClass or kUSBVendor
     @field bRequest Request code
     @field wValue 16 bit parameter for request, host endianess
     @field wIndex 16 bit parameter for request, host endianess
@@ -709,8 +705,8 @@ typedef IOUSBDevRequest * IOUSBDeviceRequestPtr;
     @field pData Pointer to data for request - data returned in bus endianess
     @field wLenDone Set by standard completion routine to number of data bytes
 	actually transferred
-	@field noDataTimeout Specifies a time value in milliseconds. Once the request is queued on the bus, if no data is transferred in this amount of time, the request will be aborted and returned.
-	@field completionTimeout Specifies a time value in milliseconds. Once the request is queued on the bus, if the entire request is not completed in this amount of time, the request will be aborted and returned 
+    @field noDataTimeout Specifies a time value in milliseconds. Once the request is queued on the bus, if no data is transferred in this amount of time, the request will be aborted and returned.
+    @field completionTimeout Specifies a time value in milliseconds. Once the request is queued on the bus, if the entire request is not completed in this amount of time, the request will be aborted and returned 
 */
 typedef struct {
     UInt8       bmRequestType;
@@ -751,10 +747,7 @@ typedef struct
     @struct IOUSBDevRequestDesc
     @discussion Parameter block for control requests, using a memory descriptor
     for the data to be transferred.  Only available in the kernel.
-    @field rdDirection Direction of data part of request: kUSBIn or kUSBOut
-    @field rqType Request type: kUSBStandard, kUSBClass or kUSBVendor
-    @field rqRecipient Target of the request: kUSBDevice, kUSBInterface,
-        kUSBEndpoint or kUSBOther
+    @field bmRequestType Request type: kUSBStandard, kUSBClass or kUSBVendor
     @field bRequest Request code
     @field wValue 16 bit parameter for request, host endianess
     @field wIndex 16 bit parameter for request, host endianess
@@ -879,7 +872,7 @@ enum {
         };
 
 /*!
-    @enum kIOUSBFindInterfaceDontCare
+    @enum kIOUSBVendorIDAppleComputer
     @discussion USB Vendor ID for Apple Computer, Inc. 
 */
 enum {
@@ -1000,6 +993,8 @@ enum {
 #define kUSBHubDontAllowLowPower				"kUSBHubDontAllowLowPower"
 #define kUSBDeviceResumeRecoveryTime			"kUSBDeviceResumeRecoveryTime"
 #define kUSBOutOfSpecMPSOK						"Out of spec MPS OK"
+#define kConfigurationDescriptorOverride		"ConfigurationDescriptorOverride"
+#define kOverrideIfAtLocationID					"OverrideIfAtLocationID"
 
 /*!
 @enum USBReEnumerateOptions
@@ -1040,6 +1035,7 @@ typedef enum {
 		kUSBInformationDevicePortIsInTestModeBit		= 8,
 		kUSBInformationDeviceIsRootHub					= 9,
 		kUSBInformationRootHubisBuiltIn					= 10,
+		kUSBInformationDeviceIsRemote					= 11,
 		kUSBInformationDeviceIsCaptiveMask				= (1 << kUSBInformationDeviceIsCaptiveBit),
 		kUSBInformationDeviceIsAttachedToRootHubMask	= (1 << kUSBInformationDeviceIsAttachedToRootHubBit),
 		kUSBInformationDeviceIsInternalMask				= (1 << kUSBInformationDeviceIsInternalBit),
@@ -1050,7 +1046,8 @@ typedef enum {
 		kUSBInformationDeviceOvercurrentMask			= (1 << kUSBInformationDeviceOvercurrentBit),
 		kUSBInformationDevicePortIsInTestModeMask		= (1 << kUSBInformationDevicePortIsInTestModeBit),
 		kUSBInformationDeviceIsRootHubMask				= (1 << kUSBInformationDeviceIsRootHub),
-		kUSBInformationRootHubisBuiltInMask				= (1 << kUSBInformationRootHubisBuiltIn)
+		kUSBInformationRootHubisBuiltInMask				= (1 << kUSBInformationRootHubisBuiltIn),
+		kUSBInformationDeviceIsRemoteMask				= (1 << kUSBInformationDeviceIsRemote)
 	} USBDeviceInformationBits;
 	
 	/*!
