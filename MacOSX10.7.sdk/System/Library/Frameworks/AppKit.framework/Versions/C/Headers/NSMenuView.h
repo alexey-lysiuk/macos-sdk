@@ -15,6 +15,7 @@
 #import <AppKit/NSMenuItemCell.h>
 @class NSScreen;
 
+NS_AUTOMATED_REFCOUNT_WEAK_UNAVAILABLE
 @interface NSMenuView : NSView {
     /*All instance variables are private*/
     @private

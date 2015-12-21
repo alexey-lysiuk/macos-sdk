@@ -91,15 +91,6 @@ extern const char kSBXProfilePureComputation[];
  */
 void sandbox_free_error(char *errorbuf);
 
-
-#ifdef __APPLE_API_PRIVATE
-#ifndef _SANDBOX_INTERNAL_
-#define _SANDBOX_INDIRECT_
-#include <sandbox/private.h>
-#undef _SANDBOX_INDIRECT_
-#endif
-#endif
-
 __END_DECLS
 
 #endif /* _SANDBOX_H_ */

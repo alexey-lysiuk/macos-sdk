@@ -94,7 +94,7 @@ typedef NSUInteger NSWhoseSubelementIdentifier;
 - (void)setContainerClassDescription:(NSScriptClassDescription *)classDesc;
 - (NSScriptClassDescription *)keyClassDescription;
 
-- (NSInteger *)indicesOfObjectsByEvaluatingWithContainer:(id)container count:(NSInteger *)count;
+- (NSInteger *)indicesOfObjectsByEvaluatingWithContainer:(id)container count:(NSInteger *)count NS_RETURNS_INNER_POINTER;
     // Returning with count == -1 is shorthand for all indices.
     // count == 0 means no objects match.
 - (id)objectsByEvaluatingWithContainers:(id)containers;

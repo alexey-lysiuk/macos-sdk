@@ -11,6 +11,7 @@
 
 @class NSArray, NSBundle, NSPointerArray, NSView;
 
+NS_AUTOMATED_REFCOUNT_WEAK_UNAVAILABLE
 NS_CLASS_AVAILABLE(10_5, NA)
 @interface NSViewController : NSResponder <NSCoding>
 {

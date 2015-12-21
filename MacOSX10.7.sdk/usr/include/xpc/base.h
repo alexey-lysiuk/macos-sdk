@@ -11,9 +11,9 @@ __BEGIN_DECLS
 
 #pragma mark Attribute Shims
 #ifdef __GNUC__
-#define XPC_CONSTRUCTOR		__attribute__((constructor))
+#define XPC_CONSTRUCTOR	__attribute__((constructor))
 #define XPC_NORETURN		__attribute__((__noreturn__))
-#define XPC_NOTHROW			__attribute__((__nothrow__))
+#define XPC_NOTHROW		__attribute__((__nothrow__))
 #define XPC_NONNULL1		__attribute__((__nonnull__(1)))
 #define XPC_NONNULL2		__attribute__((__nonnull__(2)))
 #define XPC_NONNULL3		__attribute__((__nonnull__(3)))
@@ -21,10 +21,10 @@ __BEGIN_DECLS
 #define XPC_NONNULL5		__attribute__((__nonnull__(5)))
 #define XPC_NONNULL6		__attribute__((__nonnull__(6)))
 #define XPC_NONNULL7		__attribute__((__nonnull__(7)))
-#define XPC_NONNULL_ALL		__attribute__((__nonnull__))
+#define XPC_NONNULL_ALL	__attribute__((__nonnull__))
 #define XPC_SENTINEL		__attribute__((__sentinel__))
 #define XPC_PURE			__attribute__((__pure__))
-#define XPC_WARN_RESULT		__attribute__((__warn_unused_result__))
+#define XPC_WARN_RESULT	__attribute__((__warn_unused_result__))
 #define XPC_MALLOC			__attribute__((__malloc__))
 #define XPC_UNUSED			__attribute__((unused))
 #define XPC_PACKED			__attribute__((__packed__))
@@ -33,6 +33,7 @@ __BEGIN_DECLS
 #define XPC_NOIMPL			__attribute__((unavailable))
 #define XPC_EXPORT			extern __attribute__((visibility("default")))
 #define XPC_NOEXPORT		__attribute__((visibility("hidden")))
+#define XPC_WEAKIMPORT		extern __attribute__((weak_import))
 #if __clang__
 #define XPC_DEPRECATED(m)	__attribute__((deprecated(m)))
 #else

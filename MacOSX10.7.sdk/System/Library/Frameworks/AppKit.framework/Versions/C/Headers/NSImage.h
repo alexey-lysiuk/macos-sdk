@@ -37,6 +37,7 @@ typedef NSUInteger NSImageCacheMode;
 
 @class _NSImageAuxiliary;
 
+NS_AUTOMATED_REFCOUNT_WEAK_UNAVAILABLE
 @interface NSImage : NSObject <NSCopying, NSCoding, NSPasteboardReading, NSPasteboardWriting>
 {
     /*All instance variables are private*/

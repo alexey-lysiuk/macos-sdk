@@ -44,6 +44,7 @@ enum {
 };
 typedef NSUInteger NSFontRenderingMode;
 
+NS_AUTOMATED_REFCOUNT_WEAK_UNAVAILABLE
 @interface NSFont : NSObject <NSCopying, NSCoding> {
     /* All instance variables are private */
     NSString *_name;

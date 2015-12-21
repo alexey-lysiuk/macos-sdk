@@ -123,6 +123,14 @@
 #define NS_RETURNS_NOT_RETAINED
 #endif
 
+#ifndef NS_RETURNS_INNER_POINTER
+#if __has_attribute(objc_returns_inner_pointer)
+#define NS_RETURNS_INNER_POINTER __attribute__((objc_returns_inner_pointer))
+#else
+#define NS_RETURNS_INNER_POINTER
+#endif
+#endif
+
 // Marks methods and functions which cannot be used when compiling in automatic reference counting mode.
 #if __has_feature(objc_arc)
 #define NS_AUTOMATED_REFCOUNT_UNAVAILABLE __attribute__((unavailable("not available in automatic reference counting mode")))

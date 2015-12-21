@@ -3,7 +3,7 @@
  
      Contains:   Interface to Quickdraw Graphics
  
-     Version:    Quickdraw-282~3
+     Version:    Quickdraw-283~1
  
      Copyright:  © 1985-2008 by Apple, Inc., all rights reserved
  

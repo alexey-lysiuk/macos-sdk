@@ -27,6 +27,7 @@ enum {
 typedef NSInteger NSColorSpaceModel;
 
 
+NS_AUTOMATED_REFCOUNT_WEAK_UNAVAILABLE
 @interface NSColorSpace : NSObject <NSCoding> {
     id _profile;
     struct {

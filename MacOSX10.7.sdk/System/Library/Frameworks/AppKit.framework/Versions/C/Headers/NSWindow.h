@@ -185,6 +185,7 @@ typedef NSUInteger NSWindowButton;
 @class NSEvent;
 @class NSWindowController;
 
+NS_AUTOMATED_REFCOUNT_WEAK_UNAVAILABLE
 @interface NSWindow : NSResponder <NSAnimatablePropertyContainer, NSUserInterfaceValidations, NSUserInterfaceItemIdentification>
 {
     /*All instance variables are private*/
@@ -750,6 +751,7 @@ If the url represents a filename or other resource with a known icon, that icon 
 - (void)windowDidUpdate:(NSNotification *)notification;
 - (void)windowDidChangeScreen:(NSNotification *)notification;
 - (void)windowDidChangeScreenProfile:(NSNotification *)notification;
+- (void)windowDidChangeBackingProperties:(NSNotification *)notification NS_AVAILABLE_MAC(10_7); // added in 10.7.3
 - (void)windowWillBeginSheet:(NSNotification *)notification;
 - (void)windowDidEndSheet:(NSNotification *)notification;
 - (void)windowWillStartLiveResize:(NSNotification *)notification    NS_AVAILABLE_MAC(10_6);
@@ -783,7 +785,19 @@ APPKIT_EXTERN NSString *NSWindowWillMiniaturizeNotification;
 APPKIT_EXTERN NSString *NSWindowWillMoveNotification;
 APPKIT_EXTERN NSString *NSWindowWillBeginSheetNotification;
 APPKIT_EXTERN NSString *NSWindowDidEndSheetNotification;
-APPKIT_EXTERN NSString *NSWindowDidChangeScreenProfileNotification ;
+
+/* NSWindowDidChangeBackingPropertiesNotification is posted on 10.7.3 and later, when a window's backingScaleFactor and/or its colorSpace changes.  When runing on a system version where this new notification is available, applications should use it instead of NSWindowDidChangeScreenProfileNotification to watch for changes to either of these backing store properties.  Many applications won't have any need to watch for this notification, but those that perform sophisticated color handling or manually manage their own caches of window-resolution-and/or/colorspace-appropriate bitmapped images will find this notification useful, as a prompt to invalidate their caches or schedule other reassessment for the new resolution and/or color space as needed.  The notification's userInfo dictionary specifies the window's previous backingScaleFactor and colorSpace.  You can compare these with the window's new backingScaleFactor and colorSpace at the time of the notification, to determine which of these two properties (potentially both) changed.
+*/
+APPKIT_EXTERN NSString * const NSWindowDidChangeBackingPropertiesNotification NS_AVAILABLE_MAC(10_7); // added in 10.7.3; userInfo keys: NSBackingPropertyOldScaleFactorKey, NSBackingPropertyOldColorSpaceKey
+
+APPKIT_EXTERN NSString * const NSBackingPropertyOldScaleFactorKey NS_AVAILABLE_MAC(10_7); // added in 10.7.3; an NSNumber
+APPKIT_EXTERN NSString * const NSBackingPropertyOldColorSpaceKey NS_AVAILABLE_MAC(10_7);  // added in 10.7.3; an NSColorSpace
+
+
+/* NSWindowDidChangeScreenProfileNotification is posted when a window's display's color profile changes, or when the window moves to a display that has a different color profile.  When running on 10.7.3 or later, this notification is still posted for compatibility, but modern applications should instead watch for NSWindowDidChangeBackingPropertiesNotification, which is posted for both color space and resolution changes, and facilitates handling both in a single update and redisplay pass.
+*/
+APPKIT_EXTERN NSString *NSWindowDidChangeScreenProfileNotification;
+
 /* NSWindowWillStartLiveResizeNotification is sent when the user starts a live resize operation via a mouseDown in the resize corner.  The notification will be sent before the window size is changed.  Note that this notification is sent once for a sequence of window resize operations */
 APPKIT_EXTERN NSString * const NSWindowWillStartLiveResizeNotification  NS_AVAILABLE_MAC(10_6);
 /* NSWindowDidEndLiveResizeNotification is sent after the user ends a live resize operation via a mouseUp in the resize corner.  The notification will be sent after the final window size change.    Note that this notification is sent once for a sequence of window resize operations */

@@ -421,6 +421,9 @@ unsigned short MecabraCandidateGetWordReadingLengthAtIndex(MecabraCandidateRef c
 extern
 Boolean MecabraCandidateIsExtensionCandidate(MecabraCandidateRef candidate);
     
+extern
+Boolean MecabraCandidateIsUserWordCandidate(MecabraCandidateRef candidate);
+    
 /*! @function MecabraCandidateRelease
     @abstract Release mecabra candidate object. 
     @param    candidate

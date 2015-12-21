@@ -10,7 +10,7 @@
 #import <IOBluetooth/objc/IOBluetoothHandsFree.h>
 
 @class IOBluetoothDevice;
-@class CAPlayThroughHostController;
+@class CAPlayThroughController;
 
 /*!
  @header
@@ -23,7 +23,7 @@ NS_CLASS_AVAILABLE(10_7, NA)
 	int								_ringAttempt;
 	BOOL							_outstandingCommand;
 	NSTimer *						_outstandingCommandTimer;
-	CAPlayThroughHostController *	_audioPlaythrough;
+	CAPlayThroughController *       _audioPlaythrough;
 	NSMutableArray *				_commandQueue;
 }
 

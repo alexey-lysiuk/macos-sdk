@@ -27,6 +27,7 @@ enum {
 	kJRSUI_Key_arrowsOnly = 16,
 	kJRSUI_Key_frameOnly = 17,
 	kJRSUI_Key_segmentTrailingSeparator = 18,
+	kJRSUI_Key_segmentLeadingSeparator = 29,
 	kJRSUI_Key_maximumValue = 19,
 	kJRSUI_Key_value = 20,
 	kJRSUI_Key_animationStartTime = 21,
@@ -36,7 +37,8 @@ enum {
 	kJRSUI_Key_thumbStart = 25,
 	kJRSUI_Key_windowFrameDrawClipped = 26,
 	kJRSUI_Key_windowFrameDrawTitleSeparator = 27,
-	kJRSUI_Key_windowTitleBarHeight = 28
+	kJRSUI_Key_windowTitleBarHeight = 28,
+	kJRSUI_Key_presentationState = 30
 };
 typedef CFIndex JRSUIKey;
 
@@ -244,6 +246,14 @@ typedef CFIndex JRSUIWindowType;
 
 void JRSUIControlSetWindowType(JRSUIControlRef control, JRSUIWindowType value);
 
+enum {
+	kJRSUI_PresentationState_activeKey = 1,
+	kJRSUI_PresentationState_activeMain = 2,
+	kJRSUI_PresentationState_inactive = 3
+};
+typedef CFIndex JRSUIPresentationState;
+
+void JRSUIControlSetPresentationState(JRSUIControlRef control, JRSUIPresentationState value);
 
 // special setters
 

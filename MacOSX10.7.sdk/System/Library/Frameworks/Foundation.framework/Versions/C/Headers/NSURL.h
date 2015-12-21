@@ -21,6 +21,18 @@ enum {
 };
 #endif
 
+#if MAC_OS_X_VERSION_10_7 <= MAC_OS_X_VERSION_MAX_ALLOWED
+enum {
+    NSURLBookmarkCreationWithSecurityScope = ( 1 << 11 ), /* include information in the bookmark data which allows the same sandboxed process to access the resource after being relaunched */
+    NSURLBookmarkCreationSecurityScopeAllowOnlyReadAccess = ( 1 << 12 ), /* if used with kCFURLBookmarkCreationWithSecurityScope, at resolution time only read access to the resource will be granted */
+};
+
+enum {
+    NSURLBookmarkResolutionWithSecurityScope = ( 1 << 10 ) /* use the secure information included at creation time to provide the ability to access the resource in a sandboxed process */
+};
+#endif
+
+
 typedef NSUInteger NSURLBookmarkCreationOptions;
 typedef NSUInteger NSURLBookmarkResolutionOptions;
 typedef NSUInteger NSURLBookmarkFileCreationOptions;
@@ -142,6 +154,15 @@ FOUNDATION_EXPORT NSString * const NSURLKeysOfUnsetValuesKey NS_AVAILABLE(10_7, 
 /* Given the url of a file which is a Finder "alias" file, return a NSData with the bookmark data from the file.  If bookmarkFileURL points to an alias file created before SnowLeopard which contains Alias Manager information and no bookmark data, then a NSData will be synthesized which contains a approximation of the alias information in a format which can be used to resolve the bookmark.  If an error prevents reading the data or if it is corrupt, NULL will be returned and error will be filled in if errorRef is non-NULL.
 */
 + (NSData *)bookmarkDataWithContentsOfURL:(NSURL *)bookmarkFileURL error:(NSError **)error NS_AVAILABLE(10_6, 4_0);
+
+/*  Given a NSURL created by resolving a bookmark data created with security scope, make the resource referenced by the
+    url accessible to the process.  When access to this resource is no longer needed the client should call
+    stopAccessingSecurityScopedResource.  Each call to startAccessingSecurityScopedResource must be balanced
+    with a call to stopAccessingSecurityScopedResource */
+- (BOOL) startAccessingSecurityScopedResource;
+
+/*  Revokes the access granted to the url by a prior successful call to startAccessingSecurityScopedResource */
+- (void) stopAccessingSecurityScopedResource;
 
 @end
 

@@ -3,7 +3,7 @@
  
      Contains:   TypeSelect Utilties
  
-     Version:    HIToolbox-567.2~1
+     Version:    HIToolbox-568.5~1
  
      Copyright:  © 2000-2008 by Apple Computer, Inc., all rights reserved.
  

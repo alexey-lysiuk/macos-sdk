@@ -9,7 +9,7 @@
 @interface NSValue : NSObject <NSCopying, NSCoding>
 
 - (void)getValue:(void *)value;
-- (const char *)objCType;
+- (const char *)objCType NS_RETURNS_INNER_POINTER;
 
 @end
 

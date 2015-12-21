@@ -59,7 +59,7 @@ typedef NSUInteger NSDataSearchOptions;
 @interface NSData : NSObject <NSCopying, NSMutableCopying, NSCoding>
 
 - (NSUInteger)length;
-- (const void *)bytes;
+- (const void *)bytes NS_RETURNS_INNER_POINTER;
 
 @end
 
@@ -117,7 +117,7 @@ typedef NSUInteger NSDataSearchOptions;
 
 @interface NSMutableData : NSData
 
-- (void *)mutableBytes;
+- (void *)mutableBytes NS_RETURNS_INNER_POINTER;
 - (void)setLength:(NSUInteger)length;
 
 @end

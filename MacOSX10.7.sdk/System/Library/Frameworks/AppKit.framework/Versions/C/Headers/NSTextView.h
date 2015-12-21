@@ -49,6 +49,7 @@ typedef NSUInteger NSSelectionAffinity;
 */
 APPKIT_EXTERN NSString *NSAllRomanInputSourcesLocaleIdentifier NS_AVAILABLE_MAC(10_5);
 
+NS_AUTOMATED_REFCOUNT_WEAK_UNAVAILABLE
 @interface NSTextView : NSText <NSTextInput, NSUserInterfaceValidations, NSTextInputClient, NSTextLayoutOrientationProvider, NSDraggingSource>
 
 /**************************** Initializing ****************************/

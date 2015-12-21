@@ -1208,7 +1208,6 @@ typedef UInt32	IOBluetoothDeviceSearchTypes;
 enum IOBluetoothDeviceSearchTypesBits
 {
     kIOBluetoothDeviceSearchClassic = 1,
-    kIOBluetoothDeviceSearchLE = 2
 };
 
 //===========================================================================================================================

@@ -56,6 +56,7 @@ enum {
 };
 typedef NSUInteger NSFontAction;
 
+NS_AUTOMATED_REFCOUNT_WEAK_UNAVAILABLE
 @interface NSFontManager : NSObject
 {
 /*All instance variables are private*/

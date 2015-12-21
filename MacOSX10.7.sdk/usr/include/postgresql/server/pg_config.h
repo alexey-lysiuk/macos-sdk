@@ -673,13 +673,13 @@
 #define PACKAGE_NAME "PostgreSQL"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "PostgreSQL 9.0.4"
+#define PACKAGE_STRING "PostgreSQL 9.0.5"
 
 /* Define to the one symbol short name of this package. */
 #define PACKAGE_TARNAME "postgresql"
 
 /* Define to the version of this package. */
-#define PACKAGE_VERSION "9.0.4"
+#define PACKAGE_VERSION "9.0.5"
 
 /* Define to the name of the default PostgreSQL service principal in Kerberos.
    (--with-krb-srvnam=NAME) */
@@ -689,13 +689,13 @@
 #define PG_MAJORVERSION "9.0"
 
 /* PostgreSQL version as a string */
-#define PG_VERSION "9.0.4"
+#define PG_VERSION "9.0.5"
 
 /* PostgreSQL version as a number */
-#define PG_VERSION_NUM 90004
+#define PG_VERSION_NUM 90005
 
 /* A string containing the version number, platform, and C compiler */
-#define PG_VERSION_STR "PostgreSQL 9.0.4 on x86_64-apple-darwin11.0, compiled by GCC i686-apple-darwin11-llvm-gcc-4.2 (GCC) 4.2.1 (Based on Apple Inc. build 5658) (LLVM build 2335.15.00), 64-bit"
+#define PG_VERSION_STR "PostgreSQL 9.0.5 on x86_64-apple-darwin11.0, compiled by GCC i686-apple-darwin11-llvm-gcc-4.2 (GCC) 4.2.1 (Based on Apple Inc. build 5658) (LLVM build 2335.15.00), 64-bit"
 
 /* Define to 1 to allow profiling output to be saved separately for each
    process. */

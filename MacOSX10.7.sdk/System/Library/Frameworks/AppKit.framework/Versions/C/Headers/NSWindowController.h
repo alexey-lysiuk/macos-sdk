@@ -10,6 +10,7 @@
 
 @class NSArray, NSDocument, NSWindow;
 
+NS_AUTOMATED_REFCOUNT_WEAK_UNAVAILABLE
 @interface NSWindowController : NSResponder <NSCoding> {
     @private
     NSWindow *_window;

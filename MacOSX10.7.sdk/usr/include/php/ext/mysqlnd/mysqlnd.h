@@ -17,16 +17,17 @@
   |          Ulf Wendel <uwendel@mysql.com>                              |
   +----------------------------------------------------------------------+
 */
-/* $Id: mysqlnd.h 308673 2011-02-25 13:11:49Z andrey $ */
+/* $Id: mysqlnd.h 310735 2011-05-03 09:37:53Z andrey $ */
 
 #ifndef MYSQLND_H
 #define MYSQLND_H
 
-#define MYSQLND_VERSION "mysqlnd 5.0.8-dev - 20102224 - $Revision: 308673 $"
+#define MYSQLND_VERSION "mysqlnd 5.0.8-dev - 20102224 - $Revision: 310735 $"
 #define MYSQLND_VERSION_ID 50008
 
 /* This forces inlining of some accessor functions */
 #define MYSQLND_USE_OPTIMISATIONS 0
+#define AUTOCOMMIT_TX_COMMIT_ROLLBACK
 
 #define MYSQLND_STRING_TO_INT_CONVERSION
 /*
@@ -48,6 +49,10 @@
 #define MYSQLND_DBG_ENABLED 1
 #else
 #define MYSQLND_DBG_ENABLED 0
+#endif
+
+#if defined(MYSQLND_COMPRESSION_WANTED) && defined(HAVE_ZLIB)
+#define MYSQLND_COMPRESSION_ENABLED 1
 #endif
 
 #ifdef ZTS

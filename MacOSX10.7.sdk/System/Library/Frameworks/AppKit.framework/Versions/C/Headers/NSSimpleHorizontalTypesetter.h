@@ -68,6 +68,7 @@ typedef struct _NSTypesetterGlyphInfo {
 
 /* A concrete class that does simple left-to-right typesetting with some support for non-spacing marks.
 */
+NS_AUTOMATED_REFCOUNT_WEAK_UNAVAILABLE
 @interface NSSimpleHorizontalTypesetter : NSTypesetter {
 /* These are read-only ivars */
     /* Global Info */

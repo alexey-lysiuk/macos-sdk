@@ -3,13 +3,14 @@
 SED="/usr/bin/sed"
 prefix="/usr"
 exec_prefix="${prefix}"
-version="5.3.6"
-vernum="50306"
+version="5.3.8"
+vernum="50308"
 include_dir="${prefix}/include/php"
 includes="-I$include_dir -I$include_dir/main -I$include_dir/TSRM -I$include_dir/Zend -I$include_dir/ext -I$include_dir/ext/date/lib"
 ldflags=" "
-libs="-lresolv  -lz -lexslt -ltidy -lresolv -ledit -lncurses -lpq -lpq -liodbc -lldap -llber -liconv -liconv -lfreetype -lpng -lz -ljpeg -lssl -lcrypto -lcurl -lbz2 -lz -lpcre -lssl -lcrypto -lm  -lxml2 -lz -licucore -lm -lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err -lcurl -lxml2 -lz -licucore -lm -liodbc -lxml2 -lz -licucore -lm -lnetsnmp -lcrypto -lxml2 -lz -licucore -lm -lxml2 -lz -licucore -lm -lxml2 -lz -licucore -lm -lxml2 -lz -licucore -lm -lxml2 -lz -licucore -lm -lxml2 -lz -licucore -lm -lxslt -lxml2 -lz -licucore -lm "
+libs="-lresolv  -lz -lexslt -ltidy -lresolv -ledit -lncurses -lpq -lpq -liodbc -lldap -llber -liconv -liconv -lfreetype -lpng -lz -ljpeg -lcrypto -lssl -lcrypto -lcurl -lbz2 -lz -lpcre -lcrypto -lssl -lcrypto -lm  -lxml2 -lz -licucore -lm -lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err -lcurl -lxml2 -lz -licucore -lm -liodbc -lxml2 -lz -licucore -lm -lnetsnmp -lcrypto -lxml2 -lz -licucore -lm -lxml2 -lz -licucore -lm -lxml2 -lz -licucore -lm -lxml2 -lz -licucore -lm -lxml2 -lz -licucore -lm -lxml2 -lz -licucore -lm -lxslt -lxml2 -lz -licucore -lm "
 extension_dir='/usr/lib/php/extensions/no-debug-non-zts-20090626'
+man_dir=`eval echo /usr/share/man`
 program_prefix=""
 program_suffix=""
 exe_extension=""
@@ -59,6 +60,8 @@ case "$1" in
   echo $php_sapis;;
 --configure-options)
   echo $configure_options;;
+--man-dir)
+  echo $man_dir;;
 --version)
   echo $version;;
 --vernum)
@@ -73,6 +76,7 @@ Options:
   --libs              [$libs]
   --extension-dir     [$extension_dir]
   --include-dir       [$include_dir]
+  --man-dir           [$man_dir]
   --php-binary        [$php_binary]
   --php-sapis         [$php_sapis]
   --configure-options [$configure_options]

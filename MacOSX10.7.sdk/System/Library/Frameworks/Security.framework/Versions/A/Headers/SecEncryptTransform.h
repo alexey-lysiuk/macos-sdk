@@ -50,7 +50,8 @@ extern "C" {
 	extern CFStringRef kSecPaddingPKCS5Key;
 	/*! Indicates that PKCS7 padding will be used when encrypting or decrypting. */
 	extern CFStringRef kSecPaddingPKCS7Key;
-	
+    /*! Indicates that PKCS7 padding will be used when encrypting or decrypting. */
+    extern CFStringRef kSecPaddingOAEPKey;
 	/*! Indicates that no mode will be used when encrypting or decrypting. */
 	extern CFStringRef kSecModeNoneKey;
 	/*! Indicates that ECB mode will be used when encrypting or decrypting. */
@@ -87,13 +88,40 @@ extern "C" {
 	extern CFStringRef kSecIVKey;
 
 	/*!
-	    @abstract
-		Specifies the encryption mode.
-	    @discussion
-		This key is optional.  If you do not supply this key,
-		an appropriate value will be supplied for you.
-	*/
+     @abstract
+     Specifies the encryption mode.
+     @discussion
+     This key is optional.  If you do not supply this key,
+     an appropriate value will be supplied for you.
+     */
 	extern CFStringRef kSecEncryptionMode;
+	
+	/*!
+     @abstract
+     Specifies the OAEP message length.
+     @discussion
+     This should be set to a CFNumberRef when the padding is set to OAEP,
+     and a specific messages size is desired.   If unset the minimum padding
+     will be added.   It is ignored when the padding mode is not OAEP.
+     */
+	extern CFStringRef kSecOAEPMessageLengthAttributeName;
+	/*!
+     @abstract
+     Specifies the OAEP encoding paramaters
+     @discussion
+     This should be set to a CFDataRef when the padding is set to OAEP.
+     If unset a zero length CFDataRef is used.   It is ignored by non
+     OAEP padding modes.
+     */
+    extern CFStringRef kSecOAEPEncodingParametersAttributeName;
+	/*!
+     @abstract
+     Specifies the OAEP MGF1 digest algorithm.
+     @discussion
+     This should be set to a digest algorithm when the padding is set to OAEP.
+     If unset SHA1 is used.   It is ifnored by non OAEP padding modes.
+     */
+    extern CFStringRef kSecOAEPMGF1DigestAlgorithmAttributeName;
 	
 	
 	/*!

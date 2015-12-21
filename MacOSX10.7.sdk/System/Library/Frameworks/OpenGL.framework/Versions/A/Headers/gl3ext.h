@@ -184,9 +184,9 @@ typedef void (APIENTRYP PFNGLGETQUERYOBJECTUI64VPROC) (GLuint id, GLenum pname, 
 
 #if GL_EXT_depth_bounds_test
 #ifdef GL3_PROTOTYPES
-typedef void (APIENTRYP PFNGLDEPTHBOUNDSEXTPROC) (GLclampd zmin, GLclampd zmax);
-#else
 extern void glDepthBoundsEXT(GLclampd zmin, GLclampd zmax);
+#else
+typedef void (APIENTRYP PFNGLDEPTHBOUNDSEXTPROC) (GLclampd zmin, GLclampd zmax);
 #endif /* GL3_PROTOTYPES */
 #endif
 

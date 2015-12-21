@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# "$Id: cups-config.in 7394 2008-03-21 23:41:43Z mike $"
+# "$Id: cups-config.in 9153 2010-06-16 00:48:25Z mike $"
 # 
 #   CUPS configuration utility.
 #
@@ -14,9 +14,9 @@
 #   file is missing or damaged, see the license at "http://www.cups.org/".
 #
 
-VERSION="1.5.0"
+VERSION="1.5.1"
 APIVERSION="1.5"
-BUILD="cups-297.2"
+BUILD="cups-297.3"
 
 prefix=/
 exec_prefix=/usr
@@ -156,5 +156,5 @@ while test $# -gt 0; do
 done
 
 #
-# End of "$Id: cups-config.in 7394 2008-03-21 23:41:43Z mike $".
+# End of "$Id: cups-config.in 9153 2010-06-16 00:48:25Z mike $".
 #

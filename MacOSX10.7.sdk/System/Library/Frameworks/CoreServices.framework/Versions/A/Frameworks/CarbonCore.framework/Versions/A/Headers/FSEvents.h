@@ -3,7 +3,7 @@
  
      Contains:   FSEventStream API
  
-     Version:    CarbonCore-960.18~3
+     Version:    CarbonCore-960.20~1
  
      Copyright:  © 2006-2008 by Apple Computer, Inc.  All rights reserved
  

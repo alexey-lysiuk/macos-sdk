@@ -3,7 +3,7 @@
  
      Contains:   Window Manager Interfaces
  
-     Version:    HIToolbox-567.2~1
+     Version:    HIToolbox-568.5~1
  
      Copyright:  © 1997-2008 by Apple Inc., all rights reserved
  
@@ -10011,6 +10011,44 @@ HIWindowInvalidateShadow(WindowRef inWindow)                  AVAILABLE_MAC_OS_X
 /*ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ*/
 /* ¥ Window Scaling for Resolution Independence                                         */
 /*ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ*/
+/*
+ *  HIWindowGetBackingScaleFactor()
+ *  
+ *  Summary:
+ *    Returns the scale factor representing the number of backing store
+ *    pixels corresponding to each linear unit in window space on this
+ *    WindowRef.
+ *  
+ *  Discussion:
+ *    This is generally only necessary when building a bitmap context
+ *    or image whose resolution needs to match that of a particular
+ *    WindowRef. Note that a WindowRef's backing scale factor can
+ *    change over time, such as when the window moves from one display
+ *    to another, or when a display's resolution changes, so clients
+ *    should not cache the value returned by this function.
+ *    HIWindowGetBackingScaleFactor is only available on Mac OS X
+ *    Version 10.7.3 and later.
+ *  
+ *  Mac OS X threading:
+ *    Not thread safe
+ *  
+ *  Parameters:
+ *    
+ *    inWindow:
+ *      The WindowRef whose backing scale factor to provide.
+ *  
+ *  Result:
+ *    The backing scale factor of the window.
+ *  
+ *  Availability:
+ *    Mac OS X:         in version 10.7 and later in Carbon.framework [32-bit only]
+ *    CarbonLib:        not available in CarbonLib 1.x, is available on Mac OS X version 10.7 and later
+ *    Non-Carbon CFM:   not available
+ */
+extern CGFloat 
+HIWindowGetBackingScaleFactor(WindowRef inWindow)             AVAILABLE_MAC_OS_X_VERSION_10_7_AND_LATER;
+
+
 #endif  /* !__LP64__ */
 
 

@@ -1,17 +1,18 @@
 //
 //  JRSAppKitAWT.h
-//  Copyright 2010 Apple Inc. All rights reserved.
+//  Copyright 2010-2011 Apple Inc. All rights reserved.
 //
 
 #import <Cocoa/Cocoa.h>
+#import <JavaRuntimeSupport/JRSDefines.h>
 
+#define JRSAppNameKey @"JRSAppNameKey"
+#define JRSAppIsCommandLineKey @"JRSAppIsCommandLineKey"
+#define JRSAppIsUIElementKey @"JRSAppIsUIElementKey"
+#define JRSAppIsBackgroundOnlyKey @"JRSAppIsBackgroundOnlyKey"
 
 @interface JRSAppKitAWT : NSObject { }
-
-#if MAC_OS_X_VERSION_MAX_ALLOWED < (MAC_OS_X_VERSION_10_5 + 10) // 10.6
-+ (id)awtAppDelegate;
-#else
 + (id <NSApplicationDelegate>)awtAppDelegate;
-#endif
-
++ (void) registerAWTAppWithOptions:(NSDictionary *)options;
++ (BOOL) markAppIsDaemon;
 @end

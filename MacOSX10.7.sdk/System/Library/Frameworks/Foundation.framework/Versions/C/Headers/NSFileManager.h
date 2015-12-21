@@ -229,7 +229,7 @@ typedef NSUInteger NSFileManagerItemReplacementOptions;
 
 /* fileSystemRepresentationWithPath: returns an array of characters suitable for passing to lower-level POSIX style APIs. The string is provided in the representation most appropriate for the filesystem in question.
  */
-- (__strong const char *)fileSystemRepresentationWithPath:(NSString *)path;
+- (__strong const char *)fileSystemRepresentationWithPath:(NSString *)path NS_RETURNS_INNER_POINTER;
 
 /* stringWithFileSystemRepresentation:length: returns an NSString created from an array of bytes that are in the filesystem representation.
  */

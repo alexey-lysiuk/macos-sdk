@@ -24,6 +24,13 @@
 /*
  *
  *	$Log: IOUSBDevice.h,v $
+ *	Revision 1.68.186.1  2011/11/15 15:22:23  nano
+ *	Bring in fixes for the SULionDuchess release: 10361394 10361391 9970923 10016718 10323113
+ *
+
+ *	Revision 1.68.76.6.2.1  2011/10/04 13:52:06  nano
+ *	<rdar://problem/9970923> Macbook Pro6,2 Keyboard/Trackpad not working under lion:  Issue the remote wakeup right after calling SET_CONFIG if our new parameter is true
+ *
  *	Revision 1.68  2010/12/21 21:31:19  rhoads
  *	roll in 8673433, 8774469, 8775377
  *
@@ -633,10 +640,24 @@ public:
 	 */
 	virtual	bool			DoLocationOverrideAndModelMatch();
 	
-    OSMetaClassDeclareReservedUnused(IOUSBDevice,  13);
-    OSMetaClassDeclareReservedUnused(IOUSBDevice,  14);
+    OSMetaClassDeclareReservedUsed(IOUSBDevice,  13);
+    /*!
+	 @function SetConfiguration
+	 Do a USB SetConfiguration call to the device. The caller must have the device open() in order to 
+	 actually cause a configuration change. If the device is currently configured, all IOUSBInterface objects
+	 associated with the device are freed. After the new configuration has been set, all of its IOUSBInterface objects are
+	 instantiated automatically.
+	 @param forClient The client requesting the configuration change
+	 @param configValue The desired configuration value.
+	 @param startInterfaceMatching A boolean specifying whether IOKit should begin the process of finding
+	 @param issueRemoteWakeup A boolean specifying whether we should issue the SetFeature(kUSBFeatureDeviceRemoteWakeup) immediately after setting the configuration, before loading any drivers.
+	 matching drivers for the new IOUSBInterface objects.
+	 */
+    virtual IOReturn SetConfiguration(IOService *forClient, UInt8 configValue, bool startInterfaceMatching, bool issueRemoteWakeup);
+    
+	OSMetaClassDeclareReservedUnused(IOUSBDevice,  14);
     OSMetaClassDeclareReservedUnused(IOUSBDevice,  15);
-    OSMetaClassDeclareReservedUnused(IOUSBDevice,  16);
+	OSMetaClassDeclareReservedUnused(IOUSBDevice,  16);
     OSMetaClassDeclareReservedUnused(IOUSBDevice,  17);
     OSMetaClassDeclareReservedUnused(IOUSBDevice,  18);
     OSMetaClassDeclareReservedUnused(IOUSBDevice,  19);

@@ -98,7 +98,7 @@ FOUNDATION_EXPORT NSString * const NSDecimalNumberDivideByZeroException;
     //   ignore exactnessException
     //   raise on overflow, underflow and divide by zero.
 
-- (const char *)objCType;
+- (const char *)objCType NS_RETURNS_INNER_POINTER;
     // return 'd' for double
     
 - (double)doubleValue;

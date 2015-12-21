@@ -109,8 +109,6 @@ class IOBluetoothHIDDriver : public IOHIDDevice
 		
 		bool					mGotNoDeepSleepAssertionID;
 		
-		uint32_t				mSleepingThreadCount;
-
     };
     ExpansionData	*_expansionData;
 	
@@ -227,8 +225,10 @@ public:
     OSMetaClassDeclareReservedUsed( IOBluetoothHIDDriver,  6 );
 	virtual void			waitForInterruptChannel( void );
 	
+    OSMetaClassDeclareReservedUsed( IOBluetoothHIDDriver,  7 );
+	virtual void			handleStopWL( IOService *  provider );
 	
-    OSMetaClassDeclareReservedUnused( IOBluetoothHIDDriver,  7 );
+	
     OSMetaClassDeclareReservedUnused( IOBluetoothHIDDriver,  8 );
     OSMetaClassDeclareReservedUnused( IOBluetoothHIDDriver,  9 );
     OSMetaClassDeclareReservedUnused( IOBluetoothHIDDriver, 10 );

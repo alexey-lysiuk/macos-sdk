@@ -58,7 +58,7 @@ Boolean IDXUserDictionaryBuild(IDXUserDictionaryRef dictionary, CFArrayRef keyAr
     
 /* Search the user dictionary. */
 extern
-void IDXUserDictionarySearch(IDXUserDictionaryRef dictionary, UniChar *keyBuffer, CFIndex keyLength, IDXUserDictionaryMatchType matchType, IDXUserDictionarySearchCallBack callback, void *userInfo);
+void IDXUserDictionarySearch(IDXUserDictionaryRef dictionary, const UniChar *keyBuffer, CFIndex keyLength, IDXUserDictionaryMatchType matchType, IDXUserDictionarySearchCallBack callback, void *userInfo);
 
 /* Save user dictionary */
 extern

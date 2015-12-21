@@ -47,7 +47,7 @@
 - (id)initRecordDescriptor;
 
 // Return a pointer to the AEDesc that is encapsulated by the object.
-- (const AEDesc *)aeDesc;
+- (const AEDesc *)aeDesc NS_RETURNS_INNER_POINTER;
 
 // Get the four-character type code or the data from a fully-initialized descriptor.
 - (DescType)descriptorType;

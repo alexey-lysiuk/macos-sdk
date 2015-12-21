@@ -1,5 +1,5 @@
 /* main/php_config.h.  Generated automatically by configure.  */
-/* main/php_config.h.in.  Generated automatically from configure.in by autoheader.  */
+/* main/php_config.h.in.  Generated automatically from configure.in by autoheader 2.13.  */
 /* Leave this file alone */
 /*
    +----------------------------------------------------------------------+
@@ -989,6 +989,12 @@
 /* do we have SO_LISTENQxxx? */
 /* #undef HAVE_LQ_SO_LISTENQ */
 
+/* do we have sysconf? */
+/* #undef HAVE_SYSCONF */
+
+/* do we have times? */
+/* #undef HAVE_TIMES */
+
 /* fpm user name */
 /* #undef PHP_FPM_USER */
 
@@ -1296,7 +1302,10 @@
 /* #undef COMPILE_DL_OPENSSL */
 
 /* OpenSSL 0.9.7 or later */
-/* #undef HAVE_DSA_DEFAULT_METHOD */
+#define HAVE_DSA_DEFAULT_METHOD 1
+
+/* OpenSSL 0.9.7 or later */
+#define HAVE_DSA_DEFAULT_METHOD 1
 
 /*   */
 #define HAVE_OPENSSL_EXT 1
@@ -2810,14 +2819,14 @@
 /* Whether to build zip as dynamic module */
 /* #undef COMPILE_DL_ZIP */
 
-/* Whether to build mysqlnd as dynamic module */
-/* #undef COMPILE_DL_MYSQLND */
-
 /* Enable compressed protocol support */
-/* #undef MYSQLND_COMPRESSION_ENABLED */
+#define MYSQLND_COMPRESSION_WANTED 1
 
 /* Enable SSL support */
 #define MYSQLND_SSL_SUPPORTED 1
+
+/* Whether to build mysqlnd as dynamic module */
+/* #undef COMPILE_DL_MYSQLND */
 
 /* Define if int32_t type is present.  */
 #define HAVE_INT32_T 1
@@ -2904,16 +2913,16 @@
 /* #undef PTHREADS */
 
 /* PHP build date */
-#define PHP_BUILD_DATE "2011-09-08"
+#define PHP_BUILD_DATE "2011-11-15"
 
 /* hardcode for each of the cross compiler host */
 #define PHP_OS "Darwin"
 
 /* hardcode for each of the cross compiler host */
-#define PHP_UNAME "Darwin melodie.apple.com 11.0 Darwin Kernel Version 11.0.0: Thu Aug 4 17:20:02 PDT 2011; root:xnu-1699.22.85~5/RELEASE_X86_64 x86_64"
+#define PHP_UNAME "Darwin smile.apple.com 11.0 Darwin Kernel Version 11.0.0: Thu Sep 1 14:38:37 PDT 2011; root:xnu-1699.22.87~9/RELEASE_X86_64 x86_64"
 
 /* uname -a output */
-#define PHP_UNAME "Darwin melodie.apple.com 11.0 Darwin Kernel Version 11.0.0: Thu Aug 4 17:20:02 PDT 2011; root:xnu-1699.22.85~5/RELEASE_X86_64 x86_64"
+#define PHP_UNAME "Darwin smile.apple.com 11.0 Darwin Kernel Version 11.0.0: Thu Sep 1 14:38:37 PDT 2011; root:xnu-1699.22.87~9/RELEASE_X86_64 x86_64"
 
 /* uname output */
 #define PHP_OS "Darwin"
