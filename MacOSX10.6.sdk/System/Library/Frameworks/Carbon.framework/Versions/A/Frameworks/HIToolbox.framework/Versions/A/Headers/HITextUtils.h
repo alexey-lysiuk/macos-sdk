@@ -3,7 +3,7 @@
  
      Contains:   Text utilities provided by HIToolbox.
  
-     Version:    HIToolbox-461~8
+     Version:    HIToolbox-461~4
  
      Copyright:  © 2002-2008 by Apple Computer, Inc., all rights reserved.
  

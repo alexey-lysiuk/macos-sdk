@@ -2823,7 +2823,7 @@
 /* #undef PTHREADS */
 
 /* PHP build date */
-#define PHP_BUILD_DATE "2010-10-24"
+#define PHP_BUILD_DATE "2010-06-24"
 
 /* hardcode for each of the cross compiler host */
 #define PHP_OS "Darwin"

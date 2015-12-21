@@ -3,7 +3,7 @@
  
      Contains:   AppleScript Debugging Interfaces.
  
-     Version:    OSA-137~301
+     Version:    OSA-137~6
  
      Copyright:  © 1992-2008 by Apple Computer, Inc., all rights reserved
  

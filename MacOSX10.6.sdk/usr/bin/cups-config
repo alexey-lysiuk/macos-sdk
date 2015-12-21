@@ -4,7 +4,7 @@
 # 
 #   CUPS configuration utility.
 #
-#   Copyright 2007-2008 by Apple Inc.
+#   Copyright 2007-2010 by Apple Inc.
 #   Copyright 2001-2006 by Easy Software Products, all rights reserved.
 #
 #   These coded instructions, statements, and computer programs are the
@@ -14,9 +14,9 @@
 #   file is missing or damaged, see the license at "http://www.cups.org/".
 #
 
-VERSION="1.4.4"
+VERSION="1.4.6"
 APIVERSION="1.4"
-BUILD="cups-218.12"
+BUILD="cups-218.28"
 
 prefix=/
 exec_prefix=/usr

@@ -22,7 +22,7 @@
  Coercions are passed the Coercion-object that was originally invoked on the
  target object. This permits the lowest level Coercion to be used for subsequent
  object translations for composite objects. The provided List, Map, and Set Coercions
- only handle object heirarchies, and will infinitely recurse if confronted with a
+ only handle object hierarchies, and will infinitely recurse if confronted with a
  cycle in the object graph.
  
  Null and nil are both perfectly valid return types for Coercions, and do not indicate

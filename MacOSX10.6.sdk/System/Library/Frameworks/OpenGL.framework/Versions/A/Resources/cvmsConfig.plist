@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>OpenGL</key>
+	<dict>
+		<key>bytecode</key>
+		<string>/System/Library/Frameworks/OpenGL.framework/Resources/GLByteCodes</string>
+		<key>plugin</key>
+		<string>/System/Library/Frameworks/OpenGL.framework/Libraries/libGLVMPlugin.dylib</string>
+		<key>options</key>
+		<integer>1</integer>
+	</dict>
+	<key>OpenCLCPU</key>
+	<dict>
+		<key>bytecode</key>
+		<string>/System/Library/Frameworks/OpenCL.framework/Resources/runtime</string>
+		<key>plugin</key>
+		<string>/System/Library/Frameworks/OpenCL.framework/Libraries/libCLVMCPUPlugin.dylib</string>
+		<key>options</key>
+		<integer>0</integer>
+	</dict>
+	<key>OpenCLPTX</key>
+	<dict>
+		<key>bytecode</key>
+		<string>/System/Library/Frameworks/OpenCL.framework/Resources/runtime</string>
+		<key>plugin</key>
+		<string>/System/Library/Frameworks/OpenCL.framework/Libraries/libCLVMPTXPlugin.dylib</string>
+		<key>options</key>
+		<integer>4</integer>
+	</dict>
+	<key>OpenCLAMDil</key>
+	<dict>
+		<key>bytecode</key>
+		<string>/System/Library/Frameworks/OpenCL.framework/Resources/runtime</string>
+		<key>plugin</key>
+		<string>/System/Library/Frameworks/OpenCL.framework/Libraries/libCLVMAMDilPlugin.dylib</string>
+		<key>options</key>
+		<integer>4</integer>
+	</dict>
+</dict>
+</plist>

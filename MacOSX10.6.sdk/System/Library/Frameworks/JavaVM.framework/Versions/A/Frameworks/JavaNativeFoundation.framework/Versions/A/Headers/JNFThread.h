@@ -1,7 +1,7 @@
 /*
  JNFThread.h
  Java Native Foundation
- Copyright (c) 2008-2009, Apple Inc.
+ Copyright (c) 2008-2010, Apple Inc.
  All rights reserved.
  
  Functions to help obtain a JNIEnv pointer in places where one cannot be passed
@@ -11,10 +11,12 @@
 #import <JavaNativeFoundation/JNFJNI.h>
 
 
+// Options only apply if thread was not already attached to the JVM.
 enum {
 	JNFThreadDetachImmediately = (1 << 1),
 	JNFThreadDetachOnThreadDeath = (1 << 2),
-	JNFThreadSetSystemClassLoaderOnAttach = (1 << 3)
+	JNFThreadSetSystemClassLoaderOnAttach = (1 << 3),
+	JNFThreadAttachAsDaemon = (1 << 4)
 };
 
 typedef jlong JNFThreadContext;
@@ -26,7 +28,7 @@ typedef jlong JNFThreadContext;
  * whenever possible, since this method is particularly expensive to the Java VM if 
  * used repeatedly.
  *
- * Provide a pointer to a BOOL to pass to JNFReleaseEnv().
+ * Provide a pointer to a JNFThreadContext to pass to JNFReleaseEnv().
  */
 JNF_EXPORT JNIEnv *JNFObtainEnv(JNFThreadContext *context);
 
@@ -35,3 +37,15 @@ JNF_EXPORT JNIEnv *JNFObtainEnv(JNFThreadContext *context);
  * it was not already attached.
  */
 JNF_EXPORT void JNFReleaseEnv(JNIEnv *env, JNFThreadContext *context);
+
+
+#if __BLOCKS__
+
+/*
+ * Performs the same attach/detach as JNFObtainEnv() and JNFReleaseEnv(), but executes a
+ * block that accepts the obtained JNIEnv.
+ */
+typedef void (^JNIEnvBlock)(JNIEnv *);
+JNF_EXPORT void JNFPerformEnvBlock(JNFThreadContext context, JNIEnvBlock block);
+
+#endif

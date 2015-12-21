@@ -3,7 +3,7 @@
  
      Contains:   Icon Utilities and Icon Services Interfaces.
  
-     Version:    LaunchServices-362.1~23
+     Version:    LaunchServices-362.1~19
  
      Copyright:  © 1990-2008 by Apple Computer, Inc. All rights reserved
  

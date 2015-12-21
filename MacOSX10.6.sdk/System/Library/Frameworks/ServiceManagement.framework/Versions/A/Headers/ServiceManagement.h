@@ -7,7 +7,6 @@
 #define __SERVICE_MANAGEMENT_H__
 
 #include <ServiceManagement/SMErrors.h>
-#include <ServiceManagement/SMLoginItem.h>
 #include <CoreFoundation/CoreFoundation.h>
 
 #if !TARGET_OS_EMBEDDED

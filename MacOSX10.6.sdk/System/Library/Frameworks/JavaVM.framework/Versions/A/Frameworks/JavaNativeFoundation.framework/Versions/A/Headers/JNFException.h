@@ -38,6 +38,7 @@ JNF_EXPORT const char *kRuntimeException;
 __attribute__((visibility("default")))
 #endif
 @interface JNFException : NSException {
+@private
     jthrowable _javaException;
 }
 

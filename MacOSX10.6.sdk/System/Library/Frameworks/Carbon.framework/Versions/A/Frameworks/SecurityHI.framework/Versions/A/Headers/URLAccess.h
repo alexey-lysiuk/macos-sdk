@@ -3,7 +3,7 @@
  
      Contains:   URL Access Interfaces.
  
-     Version:    SecurityHI-36638~1020
+     Version:    SecurityHI-36638~802
  
      Copyright:  © 1994-2008 by Apple Computer, Inc., all rights reserved
  
