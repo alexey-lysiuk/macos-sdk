@@ -3,7 +3,7 @@
  
      Contains:   Window Manager Interfaces
  
-     Version:    HIToolbox-568.5~1
+     Version:    HIToolbox-569.7~1
  
      Copyright:  © 1997-2008 by Apple Inc., all rights reserved
  
@@ -72,10 +72,11 @@
 #define kWindowInWindowMenuAttribute 	0x08000000
 #define kWindowLiveResizeAttribute 		0x10000000
 #define kWindowIgnoreClicksAttribute 	0x20000000
-#define kWindowFrameworkScaledAttribute  0x00100000
+#define kWindowHighResolutionCapableAttribute  0x00100000
 #define kWindowStandardDocumentAttributes  0x1F
 #define kWindowStandardFloatingAttributes  0x09
 
+#define kWindowFrameworkScaledAttribute  0x00100000
 #define kWindowDefProcType 				'WDEF'
 #define kStandardWindowDefinition 		0					/*  for document windows and dialogs */
 #define kRoundWindowDefinition 			1					/*  old Desk Accessory-style window */

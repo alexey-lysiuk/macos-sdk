@@ -2,7 +2,7 @@
   +----------------------------------------------------------------------+
   | PHP Version 5                                                        |
   +----------------------------------------------------------------------+
-  | Copyright (c) 2006-2011 The PHP Group                                |
+  | Copyright (c) 2006-2012 The PHP Group                                |
   +----------------------------------------------------------------------+
   | This source file is subject to version 3.01 of the PHP license,      |
   | that is bundled with this package in the file LICENSE, and is        |
@@ -17,12 +17,12 @@
   |          Ulf Wendel <uwendel@mysql.com>                              |
   +----------------------------------------------------------------------+
 */
-/* $Id: mysqlnd.h 310735 2011-05-03 09:37:53Z andrey $ */
+/* $Id: mysqlnd.h 321634 2012-01-01 13:15:04Z felipe $ */
 
 #ifndef MYSQLND_H
 #define MYSQLND_H
 
-#define MYSQLND_VERSION "mysqlnd 5.0.8-dev - 20102224 - $Revision: 310735 $"
+#define MYSQLND_VERSION "mysqlnd 5.0.8-dev - 20102224 - $Revision: 321634 $"
 #define MYSQLND_VERSION_ID 50008
 
 /* This forces inlining of some accessor functions */

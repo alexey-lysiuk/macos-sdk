@@ -10,19 +10,17 @@
 				 ***		This API may be removed any time in the future. 
  */
 
-
-#if BLUETOOTH_VERSION_MAX_ALLOWED >= BLUETOOTH_VERSION_2_0
-
 #import <Foundation/Foundation.h>
 #import <IOBluetooth/Bluetooth.h>
 #import <CoreAudio/AudioHardware.h>
 
-@class IOBluetoothSCOAudioDevice;
 @class IOBluetoothDevice;
 @class IOBluetoothRFCOMMChannel;
 @class IOBluetoothUserNotification;
+@class IOBluetoothSCOAudioDevice;
 @class IOBluetoothSDPServiceRecord;
 
+@protocol IOBluetoothRFCOMMAudioDelegate;
 
 //  These values are for apps that try to use our drivers through CoreAudio
 //
@@ -57,13 +55,12 @@ enum IOBluetoothSCODriverPropertiesPublic
 	BluetoothRFCOMMChannelID		mOutgoingRFCOMMChannelID;
 	IOBluetoothRFCOMMChannel *		mRFCOMMChannel;
 	IOBluetoothUserNotification *	mRFCOMMChannelNotification;
-	
-	id								mDelegate;	
 
 	BOOL							mIsInternalVolumeChange;
 	
 	void *							mReserved;
 	
+    id <IOBluetoothRFCOMMAudioDelegate> mDelegate;	
 }
 
 @property(assign) id delegate;
@@ -263,7 +260,7 @@ enum IOBluetoothSCODriverPropertiesPublic
 //===============================================
 //  Delegate Inteface - DEPRECATED in 10.7
 //===============================================
-@protocol IOBluetoothRFCOMMAudioDelegate
+@protocol IOBluetoothRFCOMMAudioDelegate <NSObject>
 @optional
 - (void) audioDevice:(id)device deviceConnectionOpened:(IOReturn)status;
 - (void) audioDevice:(id)device deviceConnectionClosed:(IOReturn)status;
@@ -279,6 +276,3 @@ enum IOBluetoothSCODriverPropertiesPublic
 - (void) audioDevice:(id)device scoDone:(IOReturn)status;
 
 @end
-
-#endif /* BLUETOOTH_VERSION_MAX_ALLOWED >= BLUETOOTH_VERSION_2_0 */
-

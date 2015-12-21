@@ -3,7 +3,7 @@
  
      Contains:   AppleScript Registry constants.
  
-     Version:    OSA-143~22
+     Version:    OSA-143.1~1
  
      Copyright:  © 1991-2008 by Apple Computer, Inc., all rights reserved
  

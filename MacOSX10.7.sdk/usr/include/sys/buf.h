@@ -1025,6 +1025,14 @@ uint32_t	buf_redundancy_flags(buf_t);
  */
 void	buf_set_redundancy_flags(buf_t, uint32_t);
 
+/*!
+ @function buf_attr
+ @abstract Gets the attributes for this buf.
+ @param bp Buffer whose attributes to get.
+ @return bufattr_t.
+ */
+bufattr_t buf_attr(buf_t);
+
 
 
 __END_DECLS

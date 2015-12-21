@@ -3,7 +3,7 @@
 
     Contains:   API for communicating with CoreMediaIO hardware
 
-    Copyright:  © 2005-2010 by Apple Inc., all rights reserved.
+    Copyright:  © 2005-2011 by Apple Inc., all rights reserved.
 */
 
 
@@ -450,6 +450,8 @@ enum
                         For example, the user might close the FireWire iSight's privacy iris or close the clamshell on a Mac Book or Mac Book Pro. While suspended the device still responds
                         to all requests just as if it was active, but the stream(s) will not provide/accept any data.
                         This property is never settable.
+    @constant       kCMIODevicePropertyLinkedAndSyncedCoreAudioDeviceUID
+                        Identical to kCMIODevicePropertyLinkedCoreAudioDeviceUID, except that it only returns a UID if the linked CoreAudio device shares the same hardware clock (CFStringRef)
 */
 enum
 {
@@ -476,7 +478,8 @@ enum
     kCMIODevicePropertyCanProcessRS422Command       = 'r422',
     kCMIODevicePropertyLinkedCoreAudioDeviceUID     = 'plud',
     kCMIODevicePropertyVideoDigitizerComponents     = 'vdig', 
-    kCMIODevicePropertySuspendedByUser              = 'sbyu'
+    kCMIODevicePropertySuspendedByUser              = 'sbyu',
+    kCMIODevicePropertyLinkedAndSyncedCoreAudioDeviceUID = 'plsd'
 };
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -1307,6 +1307,7 @@ enum BluetoothHCITimeoutValues
 };
 
 #define		BluetoothGetSlotsFromSeconds( inSeconds )		( (inSeconds/.000625 ) )
+#define		BluetoothGetSecondsFromSlots( inSlots )			( (inSlots*.000625 ) )
 
 
 // Link Keys

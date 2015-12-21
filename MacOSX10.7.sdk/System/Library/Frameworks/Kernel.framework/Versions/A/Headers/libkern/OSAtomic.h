@@ -557,7 +557,6 @@ static __inline__ void OSSynchronizeIO(void)
 {
 }
 #endif
-
 #if defined(__cplusplus)
 }
 #endif

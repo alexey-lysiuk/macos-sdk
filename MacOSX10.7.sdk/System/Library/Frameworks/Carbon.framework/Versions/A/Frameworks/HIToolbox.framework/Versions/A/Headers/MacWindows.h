@@ -3,7 +3,7 @@
  
      Contains:   Window Manager Interfaces
  
-     Version:    HIToolbox-568.5~1
+     Version:    HIToolbox-569.7~1
  
      Copyright:  © 1997-2008 by Apple Inc., all rights reserved
  
@@ -574,17 +574,16 @@ enum {
   kHIWindowBitCompositing       = 20,
 
   /*
-   * This window's context should be scaled to match the display scale
-   * factor. This attribute can only be used when
-   * kHIWindowBitCompositing is also enabled. When this attribute is
-   * enabled, you may not draw with QuickDraw in the window. If this
-   * attribute is enabled and if the scale factor is something other
-   * than 1.0, the window's scale mode will be
-   * kHIWindowScaleModeFrameworkScaled. You may only specify this
-   * attribute at window creation time. Available for all windows in
-   * Mac OS X 10.4 and later.
+   * This window's backing store can be scaled as necessary for high
+   * resolution drawing. This attribute is only consulted/respected if
+   * the app's Info.plist includes NSHighResolutionCapable with a value
+   * of true. This attribute can only be used when
+   * kHIWindowBitCompositing is also enabled for the window. When this
+   * attribute is enabled, you may not draw with QuickDraw in the
+   * window. You may only specify this attribute at window creation
+   * time. Available for all windows in 10.7.4 and later.
    */
-  kHIWindowBitFrameworkScaled   = 21,
+  kHIWindowBitHighResolutionCapable = 21,
 
   /*
    * This window has no shadow. Available for all windows on Mac OS X.
@@ -881,9 +880,9 @@ enum {
   kWindowIgnoreClicksAttribute  = (1 << (kHIWindowBitIgnoreClicks - 1)),
 
   /*
-   * See kHIWindowBitFrameworkScaled.
+   * See kHIWindowBitHighResolutionCapable.
    */
-  kWindowFrameworkScaledAttribute = (1 << (kHIWindowBitFrameworkScaled - 1)),
+  kWindowHighResolutionCapableAttribute = (1 << (kHIWindowBitHighResolutionCapable - 1)),
 
   /*
    * The minimum set of window attributes commonly used by document
@@ -907,6 +906,35 @@ enum
   kWindowNoConstrainAttribute              = 0x80000000 // force unsigned by specifying the constant explicitly
 };
 typedef OptionBits                      WindowAttributes;
+
+/*
+ *  Summary:
+ *    DEPRECATED Window attribute bits.
+ */
+enum {
+
+  /*
+   * DEPRECATED name and functionality. Replaced conceptually by
+   * kHIWindowBitHighResolutionCapable.
+   */
+  kHIWindowBitFrameworkScaled   = kHIWindowBitHighResolutionCapable
+};
+
+
+/*
+ *  Summary:
+ *    DEPRECATED Window attribute bitmasks.
+ */
+enum {
+
+  /*
+   * DEPRECATED name and functionality. Replaced conceptually by
+   * kWindowHighResolutionCapableAttribute.
+   */
+  kWindowFrameworkScaledAttribute = kWindowHighResolutionCapableAttribute
+};
+
+
 /*ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ*/
 /* ¥ Window Definition Type                                                             */
 /*ÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑÑ*/

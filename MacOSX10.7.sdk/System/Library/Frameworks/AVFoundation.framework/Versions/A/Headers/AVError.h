@@ -68,4 +68,6 @@ enum {
 	AVErrorDeviceIsNotAvailableInBackground				= -11837,
 #endif
 	AVErrorOperationNotSupportedForAsset				= -11838,
+	
+	AVErrorDecoderTemporarilyUnavailable				= -11839,  // userInfo may contain AVErrorMediaTypeKey & AVErrorMediaSubTypeKey, if available
 };

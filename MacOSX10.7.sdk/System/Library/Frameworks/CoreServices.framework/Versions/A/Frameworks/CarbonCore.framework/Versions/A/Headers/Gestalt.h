@@ -3,7 +3,7 @@
  
      Contains:   Gestalt Interfaces.
  
-     Version:    CarbonCore-960.20~1
+     Version:    CarbonCore-960.24~1
  
      Copyright:  © 1988-2008 by Apple Computer, Inc.  All rights reserved
  

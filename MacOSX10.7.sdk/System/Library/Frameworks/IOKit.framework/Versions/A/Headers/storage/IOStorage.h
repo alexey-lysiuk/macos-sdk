@@ -30,6 +30,7 @@
 #ifndef _IOSTORAGE_H
 #define _IOSTORAGE_H
 
+#include <sys/kernel_types.h>
 #include <IOKit/IOTypes.h>
 
 /*!

@@ -51,6 +51,7 @@ NS_AUTOMATED_REFCOUNT_WEAK_UNAVAILABLE
 	unsigned int builtIn:1;
 	unsigned int needsToExpand:1;
 	unsigned int useEPSOnResolutionMismatch:1;
+	unsigned int matchesOnlyOnBestFittingAxis:1;
 	unsigned int colorMatchPreferred:1;
 	unsigned int multipleResolutionMatching:1;
 	unsigned int focusedWhilePrinting:1;
@@ -61,10 +62,10 @@ NS_AUTOMATED_REFCOUNT_WEAK_UNAVAILABLE
 	unsigned int dirtied:1;
         unsigned int cacheMode:2;
         unsigned int sampleMode:3;
-        unsigned int reserved2:1;
+        unsigned int resMatchPreferred:1;
         unsigned int isTemplate:1;
         unsigned int failedToExpand:1;
-        unsigned int reserved1:9;
+        unsigned int reserved1:8;
     } _flags;
     volatile id _reps;
     _NSImageAuxiliary *_imageAuxiliary;
@@ -96,6 +97,8 @@ NS_AUTOMATED_REFCOUNT_WEAK_UNAVAILABLE
 - (BOOL)prefersColorMatch;
 - (void)setMatchesOnMultipleResolution:(BOOL)flag;
 - (BOOL)matchesOnMultipleResolution;
+- (BOOL)matchesOnlyOnBestFittingAxis NS_AVAILABLE_MAC(10_7); // Available in MacOSX 10.7.4
+- (void)setMatchesOnlyOnBestFittingAxis:(BOOL)flag NS_AVAILABLE_MAC(10_7); // Available in MacOSX 10.7.4
 - (void)drawAtPoint:(NSPoint)point fromRect:(NSRect)fromRect operation:(NSCompositingOperation)op fraction:(CGFloat)delta;
 - (void)drawInRect:(NSRect)rect fromRect:(NSRect)fromRect operation:(NSCompositingOperation)op fraction:(CGFloat)delta;
 - (void)drawInRect:(NSRect)dstSpacePortionRect fromRect:(NSRect)srcSpacePortionRect operation:(NSCompositingOperation)op fraction:(CGFloat)requestedAlpha respectFlipped:(BOOL)respectContextIsFlipped hints:(NSDictionary *)hints NS_AVAILABLE_MAC(10_6);
@@ -198,6 +201,8 @@ NS_AUTOMATED_REFCOUNT_WEAK_UNAVAILABLE
  */
 - (BOOL)hitTestRect:(NSRect)testRectDestSpace withImageDestinationRect:(NSRect)imageRectDestSpace context:(NSGraphicsContext *)context hints:(NSDictionary *)hints flipped:(BOOL)flipped NS_AVAILABLE_MAC(10_6); 
 
+- (CGFloat)recommendedLayerContentsScale:(CGFloat)preferredContentsScale NS_AVAILABLE_MAC(10_7);
+- (id)layerContentsForContentsScale:(CGFloat)layerContentsScale NS_AVAILABLE_MAC(10_7);
 @end
 
 APPKIT_EXTERN NSString *const NSImageHintCTM NS_AVAILABLE_MAC(10_6); // value is NSAffineTransform
@@ -215,9 +220,12 @@ APPKIT_EXTERN NSString *const NSImageHintInterpolation NS_AVAILABLE_MAC(10_6); /
 @end
 
 @interface NSBundle(NSBundleImageExtension)
+- (NSImage *)imageForResource:(NSString *)name NS_AVAILABLE_MAC(10_7); /* May return nil if no file found */
+
+/* Neither of the following methods can return images with multiple representations in different files (for example, MyImage.png and MyImage@2x.png.) The above method is generally prefered.
+ */
 - (NSString *)pathForImageResource:(NSString *)name;	/* May return nil if no file found */
 - (NSURL *)URLForImageResource:(NSString *)name NS_AVAILABLE_MAC(10_6); /* May return nil if no file found */
-- (NSImage *)imageForResource:(NSString *)name NS_AVAILABLE_MAC(10_7); /* May return nil if no file found */
 @end
 
 @interface NSImage (NSDeprecated)

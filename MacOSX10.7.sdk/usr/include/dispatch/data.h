@@ -92,7 +92,7 @@ DISPATCH_EXPORT const dispatch_block_t _dispatch_data_destructor_free;
  * @result		A newly created dispatch data object.
  */
 __OSX_AVAILABLE_STARTING(__MAC_10_7,__IPHONE_NA)
-DISPATCH_EXPORT DISPATCH_MALLOC DISPATCH_WARN_RESULT DISPATCH_NOTHROW
+DISPATCH_EXPORT DISPATCH_WARN_RESULT DISPATCH_NOTHROW
 dispatch_data_t
 dispatch_data_create(const void *buffer,
 	size_t size,

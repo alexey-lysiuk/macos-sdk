@@ -2800,17 +2800,6 @@
 /* GL_ATI_blend_equation_separate */
 #define glBlendEquationSeparateATI glBlendEquationSeparateEXT
 
-/* GL_ATI_pn_triangles */
-#define glPNTrianglesiATI(pname, param) \
-	(*(AGL_MACRO_CONTEXT)->disp.pn_trianglesi_ATI)(AGL_MACRO_CONTEXT_RENDERER, pname, param)
-
-#define glPNTrianglesfATI(pname, param) \
-	(*(AGL_MACRO_CONTEXT)->disp.pn_trianglesf_ATI)(AGL_MACRO_CONTEXT_RENDERER, pname, param)
-
-/* GL_ATIX_pn_triangles */
-#define glPNTrianglesiATIX glPNTrianglesiATI
-#define glPNTrianglesfATIX glPNTrianglesfATI
-
 /*********** NVIDIA Extensions **********************************************/
 
 /* GL_NV_point_sprite */

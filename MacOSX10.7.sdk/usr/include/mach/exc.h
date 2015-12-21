@@ -146,7 +146,7 @@ __END_DECLS
 		integer_t code[2];
 		int flavor;
 		mach_msg_type_number_t old_stateCnt;
-		natural_t old_state[144];
+		natural_t old_state[224];
 	} __Request__exception_raise_state_t;
 #ifdef  __MigPackStructs
 #pragma pack()
@@ -168,7 +168,7 @@ __END_DECLS
 		integer_t code[2];
 		int flavor;
 		mach_msg_type_number_t old_stateCnt;
-		natural_t old_state[144];
+		natural_t old_state[224];
 	} __Request__exception_raise_state_identity_t;
 #ifdef  __MigPackStructs
 #pragma pack()
@@ -211,7 +211,7 @@ union __RequestUnion__exc_subsystem {
 		kern_return_t RetCode;
 		int flavor;
 		mach_msg_type_number_t new_stateCnt;
-		natural_t new_state[144];
+		natural_t new_state[224];
 	} __Reply__exception_raise_state_t;
 #ifdef  __MigPackStructs
 #pragma pack()
@@ -226,7 +226,7 @@ union __RequestUnion__exc_subsystem {
 		kern_return_t RetCode;
 		int flavor;
 		mach_msg_type_number_t new_stateCnt;
-		natural_t new_state[144];
+		natural_t new_state[224];
 	} __Reply__exception_raise_state_identity_t;
 #ifdef  __MigPackStructs
 #pragma pack()

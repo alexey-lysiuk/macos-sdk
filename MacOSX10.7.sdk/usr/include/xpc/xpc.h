@@ -461,7 +461,7 @@ xpc_copy_description(xpc_object_t object);
  * A new null object.
  */
 __OSX_AVAILABLE_STARTING(__MAC_10_7, __IPHONE_5_0)
-XPC_EXPORT XPC_MALLOC XPC_WARN_RESULT
+XPC_EXPORT XPC_WARN_RESULT
 xpc_object_t
 xpc_null_create(void);
 
@@ -479,7 +479,7 @@ xpc_null_create(void);
  * A new Boolean object. 
  */
 __OSX_AVAILABLE_STARTING(__MAC_10_7, __IPHONE_5_0)
-XPC_EXPORT XPC_MALLOC
+XPC_EXPORT
 xpc_object_t
 xpc_bool_create(bool value);
 

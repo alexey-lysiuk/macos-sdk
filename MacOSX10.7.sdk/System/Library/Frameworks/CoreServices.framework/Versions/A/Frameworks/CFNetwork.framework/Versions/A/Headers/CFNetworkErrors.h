@@ -105,6 +105,7 @@ enum CFNetworkErrors {
   kCFErrorPACFileError = 308,
   kCFErrorPACFileAuth = 309,
   kCFErrorHTTPSProxyConnectionFailure = 310,
+  kCFStreamErrorHTTPSProxyFailureUnexpectedResponseToCONNECTMethod = 311,
 	
   // Error codes for CFURLConnection and CFURLProtocol
   kCFURLErrorUnknown = -998,

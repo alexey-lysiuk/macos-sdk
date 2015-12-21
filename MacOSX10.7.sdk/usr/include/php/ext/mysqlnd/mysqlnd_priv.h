@@ -2,7 +2,7 @@
   +----------------------------------------------------------------------+
   | PHP Version 5                                                        |
   +----------------------------------------------------------------------+
-  | Copyright (c) 2006-2011 The PHP Group                                |
+  | Copyright (c) 2006-2012 The PHP Group                                |
   +----------------------------------------------------------------------+
   | This source file is subject to version 3.01 of the PHP license,      |
   | that is bundled with this package in the file LICENSE, and is        |
@@ -18,7 +18,7 @@
   +----------------------------------------------------------------------+
 */
 
-/* $Id: mysqlnd_priv.h 311643 2011-05-31 10:35:07Z andrey $ */
+/* $Id: mysqlnd_priv.h 321634 2012-01-01 13:15:04Z felipe $ */
 
 #ifndef MYSQLND_PRIV_H
 #define MYSQLND_PRIV_H
@@ -147,15 +147,8 @@
 
 #define SET_STMT_ERROR(stmt, a, b, c)	SET_CLIENT_ERROR((stmt)->error_info, a, b, c)
 
-
-#ifdef ZTS
 #define CONN_GET_STATE(c)		(c)->m->get_state((c) TSRMLS_CC)
 #define CONN_SET_STATE(c, s)	(c)->m->set_state((c), (s) TSRMLS_CC)
-#else
-#define CONN_GET_STATE(c)		((c)->state)
-#define CONN_SET_STATE(c, s)	((c)->state = (s))
-#endif
-
 
 /* PS stuff */
 typedef void (*ps_field_fetch_func)(zval *zv, const MYSQLND_FIELD * const field,
