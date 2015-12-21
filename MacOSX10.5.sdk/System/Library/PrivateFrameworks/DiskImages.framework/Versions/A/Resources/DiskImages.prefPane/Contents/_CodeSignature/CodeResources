@@ -13,7 +13,7 @@
 			<key>omit</key>
 			<true/>
 			<key>weight</key>
-			<real>10</real>
+			<real>30</real>
 		</dict>
 		<key>^Resources/.*\.lproj/locversion.plist$</key>
 		<dict>
@@ -55,7 +55,7 @@
 			<key>optional</key>
 			<true/>
 			<key>weight</key>
-			<real>20</real>
+			<real>5</real>
 		</dict>
 		<key>^version.plist$</key>
 		<true/>
