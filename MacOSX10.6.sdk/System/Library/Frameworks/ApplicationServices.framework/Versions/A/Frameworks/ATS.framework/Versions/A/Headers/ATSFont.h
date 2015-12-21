@@ -11,7 +11,7 @@
                  This file may contain unreleased API's
  
      BuildInfo:  Built by:            root
-                 On:                  Thu Apr 15 17:29:35 2010
+                 On:                  Sun Oct 24 03:29:41 2010
                  With Interfacer:     3.0d46   (Mac OS X for PowerPC)
                  From:                ATSFont.i
                      Revision:        

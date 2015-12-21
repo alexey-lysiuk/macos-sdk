@@ -3,7 +3,7 @@
  
      Contains:   Services to load and share file lists.
  
-     Version:    LaunchServices-362.1~19
+     Version:    LaunchServices-362.1~23
  
      Copyright:  © 2005-2008 by Apple Computer, Inc., all rights reserved.
  

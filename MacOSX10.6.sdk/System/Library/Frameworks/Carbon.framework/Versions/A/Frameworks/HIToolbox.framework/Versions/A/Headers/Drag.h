@@ -3,7 +3,7 @@
  
      Contains:   Drag and Drop Interfaces.
  
-     Version:    HIToolbox-461~4
+     Version:    HIToolbox-461~8
  
      Copyright:  © 1992-2008 by Apple Computer, Inc., all rights reserved.
  

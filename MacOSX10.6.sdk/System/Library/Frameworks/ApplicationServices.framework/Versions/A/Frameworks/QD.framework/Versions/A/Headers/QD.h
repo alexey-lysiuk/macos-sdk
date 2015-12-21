@@ -3,7 +3,7 @@
  
      Contains:   Master include for QD private framework
  
-     Version:    Quickdraw-264.2~10
+     Version:    Quickdraw-264.2~13
  
      Copyright:  © 1999-2008 by Apple Computer, Inc., all rights reserved.
  

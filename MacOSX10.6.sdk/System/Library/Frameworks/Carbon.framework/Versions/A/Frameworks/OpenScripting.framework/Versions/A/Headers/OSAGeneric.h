@@ -3,7 +3,7 @@
  
      Contains:   AppleScript Generic Component Interfaces.
  
-     Version:    OSA-137~6
+     Version:    OSA-137~301
  
      Copyright:  © 1992-2008 by Apple Computer, Inc., all rights reserved
  

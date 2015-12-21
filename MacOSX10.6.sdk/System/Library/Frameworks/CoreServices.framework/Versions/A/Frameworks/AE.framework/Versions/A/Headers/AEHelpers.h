@@ -3,7 +3,7 @@
  
      Contains:   AEPrint, AEBuild and AEStream for Carbon
  
-     Version:    AppleEvents-496.4~14
+     Version:    AppleEvents-496.4~18
  
      Copyright:  © 1999-2008 by Apple Computer, Inc., all rights reserved.
  

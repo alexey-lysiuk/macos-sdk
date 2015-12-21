@@ -286,6 +286,14 @@ struct nlist_64 {
  */
 #define N_ARM_THUMB_DEF	0x0008 /* symbol is a Thumb function (ARM) */
 
+/*
+ * The N_SYMBOL_RESOLVER bit of the n_desc field indicates that the
+ * that the function is actually a resolver function and should
+ * be called to get the address of the real function to use.
+ * This bit is only available in .o files (MH_OBJECT filetype)
+ */
+#define N_SYMBOL_RESOLVER  0x0100 
+
 #ifndef __STRICT_BSD__
 #if __cplusplus
 extern "C" {

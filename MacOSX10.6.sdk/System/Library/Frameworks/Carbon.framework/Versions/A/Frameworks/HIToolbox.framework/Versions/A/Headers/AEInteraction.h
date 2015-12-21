@@ -3,7 +3,7 @@
  
      Contains:   AppleEvent functions that deal with Events and interacting with user
  
-     Version:    HIToolbox-461~4
+     Version:    HIToolbox-461~8
  
      Copyright:  © 2000-2008 by Apple Computer, Inc., all rights reserved.
  
