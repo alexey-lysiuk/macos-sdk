@@ -154,12 +154,6 @@ If the operation succeeded for every file, the error parameter will be nil.  If 
 /* Attempt to hide all other applications. */
 - (void)hideOtherApplications;
 
-/* Get the mount paths of all local volumes, that is, volumes that are backed by a physical device and are not a network mount. */
-- (NSArray *)mountedLocalVolumePaths;
-
-/* Get the mount paths of all volumes backed by removable media, such as DVDs. */
-- (NSArray *)mountedRemovableMedia;
-
 /* Get the URL for the application with the given identifier.  This uses various heuristics in case multiple apps have the same bundle ID.  This returns nil if no app has the bundle identifier.*/
 - (NSURL *)URLForApplicationWithBundleIdentifier:(NSString *)bundleIdentifier NS_AVAILABLE_MAC(10_6);
 
@@ -362,6 +356,12 @@ APPKIT_EXTERN NSString * NSWorkspaceDuplicateOperation;
 
 /* Get an NSDictionary representing the currently frontmost app, with the above keys.  The NSWorkspaceApplicationKey is also provided.  On Mac OS X 10.7 and later, prefer to use -frontmostApplication. */
 - (NSDictionary *)activeApplication;
+
+/* Get the mount paths of all volumes. Despite its name, this method returns URLs for network volumes as well. On Mac OS X 10.6 and later, prefer using the mountedVolumeURLs... method in NSFileManager instead. */
+- (NSArray *)mountedLocalVolumePaths;
+
+/* Get the mount paths of all volumes backed by removable media, such as DVDs. On Mac OS X 10.6 and later, prefer using the mountedVolumeURLs... method in NSFileManager instead. */
+- (NSArray *)mountedRemovableMedia;
 
 
 /* Gets an array of NSDictionaries with the above keys.  In addition, the NSWorkspaceApplicationKey is provided, and vends an instance of NSRunningApplication.  This method does not return applications that are UIElement or BackgroundOnly.  To access the entire list of running applications, use the -[NSWorkspace runningApplications] method, declared in NSRunningApplication.h.

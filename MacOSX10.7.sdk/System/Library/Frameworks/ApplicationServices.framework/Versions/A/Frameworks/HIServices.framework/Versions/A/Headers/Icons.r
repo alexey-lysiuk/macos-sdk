@@ -3,7 +3,7 @@
  
      Contains:   Icon Utilities and Icon Services Interfaces.
  
-     Version:    HIServices-381~11
+     Version:    HIServices-382.2~1
  
      Copyright:  © 1990-2008 by Apple Computer, Inc. All rights reserved
  

@@ -170,7 +170,7 @@ FOUNDATION_EXPORT NSUInteger NSExtraRefCount(id object) NS_AUTOMATED_REFCOUNT_UN
 
 // After using a CFBridgingRetain on an NSObject, the caller must take responsibility for calling CFRelease at an appropriate time.
 NS_INLINE CF_RETURNS_RETAINED CFTypeRef CFBridgingRetain(id X) {
-    return (__bridge_retain CFTypeRef)X;
+    return (__bridge_retained CFTypeRef)X;
 }
 
 NS_INLINE id CFBridgingRelease(CFTypeRef CF_CONSUMED X) {

@@ -3,7 +3,7 @@
  
      Contains:   Master include for AE private framework
  
-     Version:    AppleEvents-527.6~1
+     Version:    AppleEvents-527.7~1
  
      Copyright:  © 1999-2008 by Apple Computer, Inc., all rights reserved.
  

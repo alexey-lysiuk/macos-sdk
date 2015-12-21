@@ -3,7 +3,7 @@
  
      Contains:   Interface for UTC to Local Time conversion and 64 Bit Clock routines
  
-     Version:    CarbonCore-960.13~3
+     Version:    CarbonCore-960.18~3
  
      Copyright:  © 1999-2008 by Apple Inc., all rights reserved.
  

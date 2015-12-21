@@ -1220,7 +1220,7 @@
 #define NETSNMP_CAN_USE_SYSCTL 1
 
 /* configure options specified */
-#define NETSNMP_CONFIGURE_OPTIONS " '--prefix=/usr' '--mandir=/usr/share/man' '--infodir=/usr/share/info' '--disable-dependency-tracking' '--sysconfdir=/etc' '--with-install-prefix=/BinaryCache/net_snmp/net_snmp-132~74/Root' '--with-default-snmp-version=2' '--with-persistent-directory=/var/db/net-snmp' '--with-defaults' '--without-rpm' '--with-sys-contact=postmaster@example.com' '--with-mib-modules=host ucd-snmp/diskio ucd-snmp/loadave ' '--disable-static' '--enable-ipv6' '--with-perl-modules' '--disable-embedded-perl' '--without-kmem-usage' 'CFLAGS=-arch x86_64 -arch i386 -g -Os -pipe -DBUILD=132 -DMACOSX_DEPLOYMENT_TARGET=10.7 -F/System/Library/PrivateFrameworks/ -F/System/Library/Frameworks/' 'LDFLAGS=-arch x86_64 -arch i386            '"
+#define NETSNMP_CONFIGURE_OPTIONS " '--prefix=/usr' '--mandir=/usr/share/man' '--infodir=/usr/share/info' '--disable-dependency-tracking' '--sysconfdir=/etc' '--with-install-prefix=/BinaryCache/net_snmp/net_snmp-132~60/Root' '--with-default-snmp-version=2' '--with-persistent-directory=/var/db/net-snmp' '--with-defaults' '--without-rpm' '--with-sys-contact=postmaster@example.com' '--with-mib-modules=host ucd-snmp/diskio ucd-snmp/loadave ' '--disable-static' '--enable-ipv6' '--with-perl-modules' '--disable-embedded-perl' '--without-kmem-usage' 'CFLAGS=-arch x86_64 -arch i386 -g -Os -pipe -DBUILD=132 -DMACOSX_DEPLOYMENT_TARGET=10.7 -F/System/Library/PrivateFrameworks/ -F/System/Library/Frameworks/' 'LDFLAGS=-arch x86_64 -arch i386            '"
 
 /* default location to look for mibs to load using the above tokens and/or
    those in the MIBS envrionment variable */

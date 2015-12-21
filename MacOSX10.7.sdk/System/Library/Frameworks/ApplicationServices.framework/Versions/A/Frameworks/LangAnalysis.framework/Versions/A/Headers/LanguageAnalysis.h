@@ -3,7 +3,7 @@
  
      Contains:   Language Analysis Manager Interfaces
  
-     Version:    LanguageAnalysis-233~1
+     Version:    LanguageAnalysis-233~2
  
      Copyright:  © 1996-2008 by Apple Inc., all rights reserved
  

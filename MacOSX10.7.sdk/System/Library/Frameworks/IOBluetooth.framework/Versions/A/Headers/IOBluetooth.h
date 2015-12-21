@@ -62,6 +62,7 @@
 		#import <IOBluetooth/objc/IOBluetoothHandsFree.h>
 		#import <IOBluetooth/objc/IOBluetoothHandsFreeDevice.h>
 
+        #import <CoreBluetooth/CoreBluetooth.h>
 	#if defined(__cplusplus)
 	}
 	#endif

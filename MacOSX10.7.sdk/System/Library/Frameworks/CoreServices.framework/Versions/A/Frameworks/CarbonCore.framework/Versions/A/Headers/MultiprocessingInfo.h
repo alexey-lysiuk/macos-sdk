@@ -3,7 +3,7 @@
  
      Contains:   Multiprocessing Information interfaces
  
-     Version:    CarbonCore-960.13~3
+     Version:    CarbonCore-960.18~3
  
      Copyright:  © 1995-2008 DayStar Digital, Inc.
  

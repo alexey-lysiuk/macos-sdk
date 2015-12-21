@@ -3,7 +3,7 @@
  
      Contains:   AppleEvent Package Interfaces.
  
-     Version:    AppleEvents-527.6~1
+     Version:    AppleEvents-527.7~1
  
      Copyright:  © 1989-2008 by Apple Computer, Inc., all rights reserved
  

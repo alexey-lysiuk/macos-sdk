@@ -102,6 +102,11 @@
 #define __has_feature(x) 0
 #endif
 
+// Some compilers provide the capability to test if certain attributes are available. This macro provides a compatibility path for other compilers.
+#ifndef __has_attribute
+#define __has_attribute(x) 0
+#endif
+
 // Marks methods and functions which return an object that needs to be released by the caller but whose names are not consistent with Cocoa naming rules. The recommended fix to this is to rename the methods or functions, but this macro can be used to let the clang static analyzer know of any exceptions that cannot be fixed.
 // This macro is ONLY to be used in exceptional circumstances, not to annotate functions which conform to the Cocoa naming rules.
 #if __has_feature(attribute_ns_returns_retained)
@@ -123,6 +128,13 @@
 #define NS_AUTOMATED_REFCOUNT_UNAVAILABLE __attribute__((unavailable("not available in automatic reference counting mode")))
 #else
 #define NS_AUTOMATED_REFCOUNT_UNAVAILABLE
+#endif
+
+// Marks classes which cannot participate in the ARC weak reference feature.
+#if __has_attribute(objc_arc_weak_reference_unavailable)
+#define NS_AUTOMATED_REFCOUNT_WEAK_UNAVAILABLE __attribute__((objc_arc_weak_reference_unavailable))
+#else
+#define NS_AUTOMATED_REFCOUNT_WEAK_UNAVAILABLE
 #endif
 
 #if !defined(NS_UNAVAILABLE)
@@ -201,8 +213,8 @@
 #define NS_AVAILABLE_IPHONE(_ios) NS_AVAILABLE_IOS(_ios)
 #define NS_DEPRECATED_IPHONE(_iosIntro, _iosDep) NS_DEPRECATED_IOS(_iosIntro, _iosDep)
 
-// This macro is to be used by system frameworks to support the weak linking of classes.
-#if (__MAC_OS_X_VERSION_MIN_REQUIRED >= __MAC_10_7 || __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_3_1) && \
+// This macro is to be used by system frameworks to support the weak linking of classes. Weak linking is supported on iOS 3.1 and Mac OS X 10.6.8 or later.
+#if (__MAC_OS_X_VERSION_MIN_REQUIRED >= __MAC_10_6 || __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_3_1) && \
     ((__has_feature(objc_weak_class) || \
      (defined(__llvm__) && defined(__APPLE_CC__) && (__APPLE_CC__ >= 5658)) || \
      (defined(__APPLE_CC__) && (__APPLE_CC__ >= 5666))))

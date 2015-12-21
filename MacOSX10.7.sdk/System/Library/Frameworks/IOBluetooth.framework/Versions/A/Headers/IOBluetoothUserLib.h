@@ -1194,6 +1194,23 @@ struct 	IOBluetoothDeviceSearchAttributes
 	IOBluetoothDeviceSearchDeviceAttributes	*attributeList;	
 };
 
+//--------------------------------------------------------------------------------------------------------------------------
+/*!	@typedef		IOBluetoothDeviceSearchTypes
+ */
+
+typedef UInt32	IOBluetoothDeviceSearchTypes;
+
+//--------------------------------------------------------------------------------------------------------------------------
+/*!	@enum		IOBluetoothDeviceSearchTypesBits
+	@abstract	Bits to determine what Bluetooth devices to search for
+ */
+
+enum IOBluetoothDeviceSearchTypesBits
+{
+    kIOBluetoothDeviceSearchClassic = 1,
+    kIOBluetoothDeviceSearchLE = 2
+};
+
 //===========================================================================================================================
 // Local Device Interaction
 //===========================================================================================================================

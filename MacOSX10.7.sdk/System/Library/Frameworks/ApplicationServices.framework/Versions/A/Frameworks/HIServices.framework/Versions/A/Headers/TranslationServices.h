@@ -3,7 +3,7 @@
  
      Contains:   Translation Services Interfaces.
  
-     Version:    HIServices-381~11
+     Version:    HIServices-382.2~1
  
      Copyright:  © 2003-2008 by Apple Computer, Inc., all rights reserved.
  

@@ -36,13 +36,9 @@ enum {
 */
     NSPathStyleStandard,
     
-/* The navigation bar display style and behavior. Similar to the NSPathStyleStandard with the navigation bar drawing style, which looks like a segemented button with large chevrons between cells. Also known as the "bread crumb" style.
-*/
-    NSPathStyleNavigationBar,
-    
 /* The pop up display style and behavior. Only the last path component is displayed with an image/icon and path component. The full path is shown when you click on the cell. If the cell isEditable, an option will be shown to select a different path.
 */
-    NSPathStylePopUp,
+    NSPathStylePopUp = 2,
 };
 
 typedef NSInteger NSPathStyle;
@@ -158,4 +154,11 @@ NS_CLASS_AVAILABLE(10_5, NA)
 - (void)pathCell:(NSPathCell *)pathCell willPopUpMenu:(NSMenu *)menu;
 
 @end
+
+
+enum {
+/* This style is deprecated as of Mac OS X 10.7. Please use one of the other NSPathStyle values.
+*/
+    NSPathStyleNavigationBar = 1
+};
 

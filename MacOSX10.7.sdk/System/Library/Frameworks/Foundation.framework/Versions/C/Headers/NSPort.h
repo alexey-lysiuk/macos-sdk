@@ -73,6 +73,7 @@ FOUNDATION_EXPORT NSString * const NSPortDidBecomeInvalidNotification;
 
 #if (TARGET_OS_MAC && !(TARGET_OS_EMBEDDED || TARGET_OS_IPHONE)) || (TARGET_OS_EMBEDDED || TARGET_OS_IPHONE)
 
+NS_AUTOMATED_REFCOUNT_WEAK_UNAVAILABLE 
 @interface NSMachPort : NSPort {
     @private
     id _delegate;
@@ -121,6 +122,7 @@ enum {
 
 // A subclass of NSPort which can be used for local
 // message sending on all platforms.
+NS_AUTOMATED_REFCOUNT_WEAK_UNAVAILABLE 
 @interface NSMessagePort : NSPort {
     @private
     void * __strong _port;

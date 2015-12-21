@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1998-2009 Apple Inc. All rights reserved.
+ * Copyright (c) 1998-2011 Apple Inc. All rights reserved.
  *
  * @APPLE_LICENSE_HEADER_START@
  * 
@@ -362,6 +362,9 @@ public:
 	virtual bool		ReportMediumWriteProtection ( void );
 	
 	virtual IOReturn	message ( UInt32 type, IOService * nub, void * arg );
+	
+	// ---- Called prior to restarting or shutting down ----
+	virtual void systemWillShutdown ( IOOptionBits specifier );
 	
 protected:
 	

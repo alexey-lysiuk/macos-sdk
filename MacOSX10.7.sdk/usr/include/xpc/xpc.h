@@ -2403,6 +2403,8 @@ xpc_main(xpc_connection_handler_t handler);
  * unwind their existing transactions. After this error is delivered to a
  * connection's event handler, no more messages will be delivered to the 
  * connection.
+ *
+ * IMPORTANT: This function is not safe to call before xpc_main().
  */
 __OSX_AVAILABLE_STARTING(__MAC_10_7, __IPHONE_5_0)
 XPC_EXPORT
@@ -2419,6 +2421,8 @@ xpc_transaction_begin(void);
  *
  * See the discussion for {@link xpc_transaction_begin()} for details regarding
  * the XPC runtime's idle-exit policy.
+ *
+ * IMPORTANT: This function is not safe to call before xpc_main().
  */
 __OSX_AVAILABLE_STARTING(__MAC_10_7, __IPHONE_5_0)
 XPC_EXPORT

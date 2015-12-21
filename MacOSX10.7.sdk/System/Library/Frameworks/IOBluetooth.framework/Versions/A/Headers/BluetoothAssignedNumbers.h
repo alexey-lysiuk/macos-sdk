@@ -255,6 +255,9 @@ enum
     kBluetoothDeviceClassMinorPeripheral2SensingDevice		= 0x04,		// [XX0100] Sensing device
     kBluetoothDeviceClassMinorPeripheral2DigitizerTablet	= 0x05,		// [XX0101] Digitizer Tablet	
     kBluetoothDeviceClassMinorPeripheral2CardReader			= 0x06,		// [XX0110] Card Reader
+    kBluetoothDeviceClassMinorPeripheral2DigitalPen         = 0x07,     // [XX0111] Digital Pen
+    kBluetoothDeviceClassMinorPeripheral2HandheldScanner    = 0x08,     // [XX1000] Handheld scanner for bar-codes, RFID, etc.
+    kBluetoothDeviceClassMinorPeripheral2GesturalInputDevice = 0x09,    // [XX1001] Handheld gestural input device (e.g., "wand" form factor)
     
 	kBluetoothDeviceClassMinorPeripheral2AnyPointing		= 'poin',	// Anything under MinorPeripheral1Pointing
 	

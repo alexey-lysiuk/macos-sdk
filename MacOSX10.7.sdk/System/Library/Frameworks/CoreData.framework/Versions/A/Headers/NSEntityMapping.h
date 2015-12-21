@@ -28,7 +28,7 @@ NS_CLASS_AVAILABLE(10_5,3_0)
 @private
     void *_reserved;
     void *_reserved1;
-    void *_reserved2;
+    NSDictionary *_mappingsByName;
     NSString *_name;
     NSEntityMappingType _mappingType;
     NSString *_sourceEntityName;

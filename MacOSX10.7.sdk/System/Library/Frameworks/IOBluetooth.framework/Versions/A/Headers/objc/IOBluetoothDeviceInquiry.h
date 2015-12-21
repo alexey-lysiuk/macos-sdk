@@ -124,6 +124,23 @@
 - (uint8_t)inquiryLength;
 
 //---------------------------------------------------------------------------------------------------------------------------
+/*!	@method		setSearchType
+	@abstract   Set the devices that are found. 
+	@param		searchType		Bluetooth versions the search will discover.
+	@discussion A default of kIOBluetoothDeviceSearchClassic is used, unless a different value is specified using this method.
+*/
+
+- (void)setSearchType:(IOBluetoothDeviceSearchTypes)searchType;
+
+//---------------------------------------------------------------------------------------------------------------------------
+/*!	@method		searchType
+	@abstract   Returns the search type that will be performed.
+	@result		The search type that will be performed.
+*/
+
+- (IOBluetoothDeviceSearchTypes)searchType;
+
+//---------------------------------------------------------------------------------------------------------------------------
 /*!	@method		setUpdateNewDeviceNames
 	@abstract   Sets whether or not the inquiry object will retrieve the names of devices found during the search.
 	@param		inValue		Pass TRUE if names are to be updated, otherwise pass FALSE.

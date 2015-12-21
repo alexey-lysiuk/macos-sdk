@@ -3,7 +3,7 @@
  
      Contains:   FPCE Floating-Point Definitions and Declarations.
  
-     Version:    CarbonCore-960.13~3
+     Version:    CarbonCore-960.18~3
  
      Copyright:  © 1987-2008 by Apple Computer, Inc., all rights reserved.
  

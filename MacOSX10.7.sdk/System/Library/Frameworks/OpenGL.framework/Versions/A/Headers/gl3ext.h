@@ -29,6 +29,7 @@ extern "C" {
 #define GL_ARB_instanced_arrays                    1
 #define GL_ARB_occlusion_query2                    1
 #define GL_ARB_sampler_objects                     1
+#define GL_ARB_shader_bit_encoding                 1
 #define GL_ARB_texture_rgb10_a2ui                  1
 #define GL_ARB_timer_query                         1
 #define GL_EXT_depth_bounds_test                   1
@@ -54,6 +55,9 @@ extern "C" {
 
 #if GL_ARB_sampler_objects
 #define GL_SAMPLER_BINDING                  0x8919
+#endif
+
+#if GL_ARB_shader_bit_encoding
 #endif
 
 #if GL_ARB_texture_rgb10_a2ui

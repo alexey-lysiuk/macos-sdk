@@ -79,10 +79,11 @@ FOUNDATION_EXPORT void NSSetUncaughtExceptionHandler(NSUncaughtExceptionHandler 
 
 @class NSAssertionHandler;
 
-#if !defined(NS_BLOCK_ASSERTIONS) && defined(__STDC_VERSION__) && (199901L <= __STDC_VERSION__) && (defined(__GNUC__) || 0)
+#if defined(__STDC_VERSION__) && (199901L <= __STDC_VERSION__) && (defined(__GNUC__) || 0)
+
+#if !defined(NS_BLOCK_ASSERTIONS)
 
 #if !defined(_NSAssertBody)
-
 #define NSAssert(condition, desc, ...) \
     do {			\
 	if (!(condition)) {	\
@@ -91,19 +92,9 @@ FOUNDATION_EXPORT void NSSetUncaughtExceptionHandler(NSUncaughtExceptionHandler 
 	    	lineNumber:__LINE__ description:(desc), ##__VA_ARGS__]; \
 	}			\
     } while(0)
-
-#define NSAssert1(condition, desc, arg1) NSAssert((condition), (desc), (arg1))
-#define NSAssert2(condition, desc, arg1, arg2) NSAssert((condition), (desc), (arg1), (arg2))
-#define NSAssert3(condition, desc, arg1, arg2, arg3) NSAssert((condition), (desc), (arg1), (arg2), (arg3))
-#define NSAssert4(condition, desc, arg1, arg2, arg3, arg4) NSAssert((condition), (desc), (arg1), (arg2), (arg3), (arg4))
-#define NSAssert5(condition, desc, arg1, arg2, arg3, arg4, arg5) NSAssert((condition), (desc), (arg1), (arg2), (arg3), (arg4), (arg5))
-
-#define NSParameterAssert(condition) NSAssert((condition), @"Invalid parameter not satisfying: %s", #condition)
-
 #endif
 
 #if !defined(_NSCAssertBody)
-
 #define NSCAssert(condition, desc, ...) \
     do {			\
 	if (!(condition)) {	\
@@ -112,15 +103,36 @@ FOUNDATION_EXPORT void NSSetUncaughtExceptionHandler(NSUncaughtExceptionHandler 
 	    	lineNumber:__LINE__ description:(desc), ##__VA_ARGS__]; \
 	}			\
     } while(0)
+#endif
 
+#else // NS_BLOCK_ASSERTIONS defined
+
+#if !defined(_NSAssertBody)
+#define NSAssert(condition, desc, ...) do {} while (0)
+#endif
+
+#if !defined(_NSCAssertBody)
+#define NSCAssert(condition, desc, ...) do {} while (0)
+#endif
+
+#endif
+
+#if !defined(_NSAssertBody)
+#define NSAssert1(condition, desc, arg1) NSAssert((condition), (desc), (arg1))
+#define NSAssert2(condition, desc, arg1, arg2) NSAssert((condition), (desc), (arg1), (arg2))
+#define NSAssert3(condition, desc, arg1, arg2, arg3) NSAssert((condition), (desc), (arg1), (arg2), (arg3))
+#define NSAssert4(condition, desc, arg1, arg2, arg3, arg4) NSAssert((condition), (desc), (arg1), (arg2), (arg3), (arg4))
+#define NSAssert5(condition, desc, arg1, arg2, arg3, arg4, arg5) NSAssert((condition), (desc), (arg1), (arg2), (arg3), (arg4), (arg5))
+#define NSParameterAssert(condition) NSAssert((condition), @"Invalid parameter not satisfying: %s", #condition)
+#endif
+
+#if !defined(_NSCAssertBody)
 #define NSCAssert1(condition, desc, arg1) NSCAssert((condition), (desc), (arg1))
 #define NSCAssert2(condition, desc, arg1, arg2) NSCAssert((condition), (desc), (arg1), (arg2))
 #define NSCAssert3(condition, desc, arg1, arg2, arg3) NSCAssert((condition), (desc), (arg1), (arg2), (arg3))
 #define NSCAssert4(condition, desc, arg1, arg2, arg3, arg4) NSCAssert((condition), (desc), (arg1), (arg2), (arg3), (arg4))
 #define NSCAssert5(condition, desc, arg1, arg2, arg3, arg4, arg5) NSCAssert((condition), (desc), (arg1), (arg2), (arg3), (arg4), (arg5))
-
 #define NSCParameterAssert(condition) NSCAssert((condition), @"Invalid parameter not satisfying: %s", #condition)
-
 #endif
 
 #endif

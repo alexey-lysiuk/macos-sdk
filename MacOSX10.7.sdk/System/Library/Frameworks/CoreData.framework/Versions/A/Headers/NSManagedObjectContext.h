@@ -128,7 +128,7 @@ NS_CLASS_AVAILABLE(10_4,3_0)
   id _editors;
   id* _debuggingRecords;
   id _childObjectStores;
-  void *_reserved2;
+  id _reserved2;
 }
 
 - (id)initWithConcurrencyType:(NSManagedObjectContextConcurrencyType)ct NS_AVAILABLE(10_7, NA);

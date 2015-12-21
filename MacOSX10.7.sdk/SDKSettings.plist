@@ -11,6 +11,8 @@
 	</dict>
 	<key>DefaultProperties</key>
 	<dict>
+		<key>DEFAULT_COMPILER</key>
+		<string>com.apple.compilers.llvm.clang.1_0</string>
 		<key>MACOSX_DEPLOYMENT_TARGET</key>
 		<string>10.7</string>
 		<key>PLATFORM_NAME</key>

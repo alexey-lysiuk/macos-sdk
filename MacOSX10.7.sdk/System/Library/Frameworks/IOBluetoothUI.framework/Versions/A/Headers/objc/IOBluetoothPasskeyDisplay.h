@@ -26,6 +26,7 @@ typedef enum {
 	NSMutableArray *			mPasskeyCharacters;
 	NSUInteger					mPasskeyIndex;
 	BOOL						mPasskeyIndicatorEnabled;
+    BOOL                        mSSPDevice;
 }
 
 @property (retain) NSImage * returnImage;
@@ -45,6 +46,8 @@ typedef enum {
 - (void) setPasskeyIndicatorEnabled:(BOOL)inEnabled;
 
 - (void) setupUIForDevice:(IOBluetoothDevice *)device;
+
+- (void) setupUIForSSPDevice:(IOBluetoothDevice *)device;
 
 @end
 

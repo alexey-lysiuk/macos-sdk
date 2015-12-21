@@ -108,6 +108,8 @@ class IOBluetoothHIDDriver : public IOHIDDevice
 		bool					mCloseDownServicesCalled;
 		
 		bool					mGotNoDeepSleepAssertionID;
+		
+		uint32_t				mSleepingThreadCount;
 
     };
     ExpansionData	*_expansionData;

@@ -233,6 +233,10 @@ enum {
     kTickScale        = (kSecondScale / 100)
 };
 
+enum {
+    kIOConnectMethodVarOutputSize = -3
+};
+
 /* compatibility types */
 
 

@@ -3,7 +3,7 @@
  
      Contains:   Nib support for Carbon
  
-     Version:    HIToolbox-566~1
+     Version:    HIToolbox-567.2~1
  
      Copyright:  © 2000-2008 by Apple Computer, Inc., all rights reserved.
  

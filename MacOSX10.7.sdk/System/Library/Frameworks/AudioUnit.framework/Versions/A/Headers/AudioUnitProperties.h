@@ -2322,161 +2322,6 @@ enum {
 };
 
 //=====================================================================================================================
-#pragma mark -
-#pragma mark Desktop Apple Specific Properties
-
-
-#if !TARGET_OS_IPHONE
-
-//=====================================================================================================================
-#pragma mark - DLSMusicDevice and Internal Reverb
-/*!
-    @enum           Generic Property IDs
-    @abstract       The collection of general audio unit property IDs
-	
-	@constant		kAudioUnitProperty_ReverbRoomType
-	@discussion			Scope:
-						Value Type:
-						Access:
-
-	@constant		kAudioUnitProperty_UsesInternalReverb
-	@discussion			Scope:
-						Value Type:
-						Access:
-
-	@constant		kMusicDeviceProperty_InstrumentName
-	@discussion			Scope:
-						Value Type:
-						Access:
-
-	@constant		kMusicDeviceProperty_InstrumentNumber
-	@discussion			Scope:
-						Value Type:
-						Access:
-
-	@constant		kMusicDeviceProperty_BankName
-	@discussion			Scope:
-						Value Type:
-						Access:
-
-	@constant		kMusicDeviceProperty_SoundBankData
-	@discussion			Scope:
-						Value Type:
-						Access:
-
-	@constant		kMusicDeviceProperty_StreamFromDisk
-	@discussion			Scope:
-						Value Type:
-						Access:
-
-	@constant		kMusicDeviceProperty_SoundBankFSRef
-	@discussion			Scope:
-						Value Type:
-						Access:
-
-	@constant		kMusicDeviceProperty_SoundBankURL
-	@discussion			Scope:
-						Value Type:
-						Access:
-*/
-enum {
-	kAudioUnitProperty_ReverbRoomType				= 10,
-
-	// 3DMixer, DLSMusicDevice
-	kAudioUnitProperty_UsesInternalReverb			= 1005,
-
-	// DLS Music Device
-	kMusicDeviceProperty_InstrumentName				= 1001,
-	kMusicDeviceProperty_InstrumentNumber 			= 1004,
-	kMusicDeviceProperty_UsesInternalReverb			= kAudioUnitProperty_UsesInternalReverb,
-	kMusicDeviceProperty_BankName					= 1007,
-	kMusicDeviceProperty_SoundBankData				= 1008,
-	kMusicDeviceProperty_StreamFromDisk				= 1011,
-	kMusicDeviceProperty_SoundBankFSRef				= 1012,
-	kMusicDeviceProperty_SoundBankURL				= 1100
-};
-
-/*!
-	@enum	Reverb Room Types
-	@discussion Used to specify room type (as identified by a factory preset number) on Apple audio 
-				units that use internal reverb.
-*/
-enum {
-	kReverbRoomType_SmallRoom		= 0,
-	kReverbRoomType_MediumRoom		= 1,
-	kReverbRoomType_LargeRoom		= 2,
-	kReverbRoomType_MediumHall		= 3,
-	kReverbRoomType_LargeHall		= 4,
-	kReverbRoomType_Plate			= 5,
-	kReverbRoomType_MediumChamber	= 6,
-	kReverbRoomType_LargeChamber	= 7,
-	kReverbRoomType_Cathedral		= 8,
-	kReverbRoomType_LargeRoom2		= 9,
-	kReverbRoomType_MediumHall2		= 10,
-	kReverbRoomType_MediumHall3		= 11,
-	kReverbRoomType_LargeHall2		= 12	
-};
-
-//=====================================================================================================================
-#pragma mark - AUSampler
-
-/*!
-	@enum			Apple AUSampler Property IDs
-	@abstract		The collection of property IDs for the Apple AUSampler audio unit.
-
-	@discussion		The AUSampler audio unit lets a client create an editable, interactive
-					sampler synthesizer instrument.
-
-	@constant		kAUSamplerProperty_BankAndPreset
-	@discussion		Scope:			Global
-					Value Type:		AUSamplerBankPresetData
-					Access:			Write
-						Load a preset from an external DLS or Soundfont2 bank file.
-*/
-enum {
-// range (4100->4999)
-	kAUSamplerProperty_BankAndPreset				= 4100
-};
-
-/*
-	@struct			AUSamplerBankPresetData
-	@abstract		Used for loading a preset from an external bank file (i.e. DLS or SoundFont).  
-					The property accepts an AUSamplerBankPresetData struct. The fields of this struct represent values for MIDI controllers 0 and 32 
-					and the MIDI present change message that would be sent to a GM2-compatible synth for program changes.
-					Use the provided constants (kAUSampler_DefaultMelodicBankMSB , kAUSampler_DefaultPercussionBankMSB) to designate 
-					melodic or percussion banks per the GM2 specification (GM-compatible DLS or Soundfont banks).
-					For custom non-GM-compatible DLS and Soundfont banks, use the actual MSB/LSB values associated with the desired preset.
-
-	@field			bankURL
-						The URL of the path to the bank file.   Caller is responsible for releasing the provided CFURLRef.
-	@field			bankMSB
-						The most significant byte value for a particular bank variation within that file.  Range is 0 to 127.  
-						Use kAUSampler_DefaultMelodicBankMSB by default.
-	@field			bankLSB
-						The least significant byte value for a particular bank variation within that file.  Range is 0 to 127.
-						Use kAUSampler_DefaultBankLSB by default.
-	@field			presetID
-						The numeric ID of a particular preset within that bank to load.  Range is 0 to 127.
-	@field			reserved
-						Reserved for future use
- */
-
-enum 
-{
-	kAUSampler_DefaultPercussionBankMSB	=	0x78,
-	kAUSampler_DefaultMelodicBankMSB	=	0x79,
-	kAUSampler_DefaultBankLSB			=	0x00
-};
-
-typedef struct AUSamplerBankPresetData {
-	CFURLRef				bankURL;
-	UInt8					bankMSB;
-	UInt8					bankLSB;
-	UInt8					presetID;
-	UInt8					reserved;
-} AUSamplerBankPresetData;
-
-//=====================================================================================================================
 #pragma mark - AUScheduledSoundPlayer
 /*!
     @enum           Apple AUScheduledSoundPlayer Property IDs
@@ -2806,6 +2651,170 @@ struct ScheduledAudioFileRegion {
 };
 
 //=====================================================================================================================
+#pragma mark -
+#pragma mark Desktop Apple Specific Properties
+
+
+#if !TARGET_OS_IPHONE
+
+//=====================================================================================================================
+#pragma mark - DLSMusicDevice and Internal Reverb
+/*!
+    @enum           Generic Property IDs
+    @abstract       The collection of general audio unit property IDs
+	
+	@constant		kAudioUnitProperty_ReverbRoomType
+	@discussion			Scope:
+						Value Type:
+						Access:
+
+	@constant		kAudioUnitProperty_UsesInternalReverb
+	@discussion			Scope:
+						Value Type:
+						Access:
+
+	@constant		kMusicDeviceProperty_InstrumentName
+	@discussion			Scope:
+						Value Type:
+						Access:
+
+	@constant		kMusicDeviceProperty_InstrumentNumber
+	@discussion			Scope:
+						Value Type:
+						Access:
+
+	@constant		kMusicDeviceProperty_BankName
+	@discussion			Scope:
+						Value Type:
+						Access:
+
+	@constant		kMusicDeviceProperty_SoundBankData
+	@discussion			Scope:
+						Value Type:
+						Access:
+
+	@constant		kMusicDeviceProperty_StreamFromDisk
+	@discussion			Scope:
+						Value Type:
+						Access:
+
+	@constant		kMusicDeviceProperty_SoundBankFSRef
+	@discussion			Scope:
+						Value Type:
+						Access:
+
+	@constant		kMusicDeviceProperty_SoundBankURL
+	@discussion			Scope:
+						Value Type:
+						Access:
+*/
+enum {
+	kAudioUnitProperty_ReverbRoomType				= 10,
+
+	// 3DMixer, DLSMusicDevice
+	kAudioUnitProperty_UsesInternalReverb			= 1005,
+
+	// DLS Music Device
+	kMusicDeviceProperty_InstrumentName				= 1001,
+	kMusicDeviceProperty_InstrumentNumber 			= 1004,
+	kMusicDeviceProperty_UsesInternalReverb			= kAudioUnitProperty_UsesInternalReverb,
+	kMusicDeviceProperty_BankName					= 1007,
+	kMusicDeviceProperty_SoundBankData				= 1008,
+	kMusicDeviceProperty_StreamFromDisk				= 1011,
+	kMusicDeviceProperty_SoundBankFSRef				= 1012,
+	kMusicDeviceProperty_SoundBankURL				= 1100
+};
+
+/*!
+	@enum	Reverb Room Types
+	@discussion Used to specify room type (as identified by a factory preset number) on Apple audio 
+				units that use internal reverb.
+*/
+enum {
+	kReverbRoomType_SmallRoom		= 0,
+	kReverbRoomType_MediumRoom		= 1,
+	kReverbRoomType_LargeRoom		= 2,
+	kReverbRoomType_MediumHall		= 3,
+	kReverbRoomType_LargeHall		= 4,
+	kReverbRoomType_Plate			= 5,
+	kReverbRoomType_MediumChamber	= 6,
+	kReverbRoomType_LargeChamber	= 7,
+	kReverbRoomType_Cathedral		= 8,
+	kReverbRoomType_LargeRoom2		= 9,
+	kReverbRoomType_MediumHall2		= 10,
+	kReverbRoomType_MediumHall3		= 11,
+	kReverbRoomType_LargeHall2		= 12	
+};
+
+//=====================================================================================================================
+#pragma mark - AUSampler
+
+/*!
+	@enum			Apple AUSampler Property IDs
+	@abstract		The collection of property IDs for the Apple AUSampler audio unit.
+ 
+	@discussion		The AUSampler audio unit lets a client create an editable, interactive
+					sampler synthesizer instrument.
+ 
+	@constant		kAUSamplerProperty_LoadPresetFromBank
+	@discussion			Scope:			Global
+						Value Type:		AUSamplerBankPresetData
+						Access:			Write
+							Load a preset from an external DLS or Soundfont2 bank file.
+ 
+	@constant		kAUSamplerProperty_LoadAudioFiles
+	@discussion			Scope:			Global
+						Value Type:		CFArrayRef
+						Access:			Write
+							Create a new preset from a list of audio file paths.  The CFArray should contain a set
+							of CFURLRefs, one per file.  The previous preset will be completely cleared.
+ */
+enum {
+	// range (4100->4999)
+	kAUSamplerProperty_LoadPresetFromBank			= 4100,
+	kAUSamplerProperty_LoadAudioFiles				= 4101
+};
+
+/*
+	@struct			AUSamplerBankPresetData
+	@abstract		Used for loading a preset from an external bank file (i.e. DLS or SoundFont).  
+					The property accepts an AUSamplerBankPresetData struct. The fields of this struct represent values for MIDI controllers 0 and 32 
+					and the MIDI present change message that would be sent to a GM2-compatible synth for program changes.
+					Use the provided constants (kAUSampler_DefaultMelodicBankMSB , kAUSampler_DefaultPercussionBankMSB) to designate 
+					melodic or percussion banks per the GM2 specification (GM-compatible DLS or Soundfont banks).
+					For custom non-GM-compatible DLS and Soundfont banks, use the actual MSB/LSB values associated with the desired preset.
+
+	@field			bankURL
+						The URL of the path to the bank file.   Caller is responsible for releasing the provided CFURLRef.
+	@field			bankMSB
+						The most significant byte value for a particular bank variation within that file.  Range is 0 to 127.  
+						Use kAUSampler_DefaultMelodicBankMSB by default.
+	@field			bankLSB
+						The least significant byte value for a particular bank variation within that file.  Range is 0 to 127.
+						Use kAUSampler_DefaultBankLSB by default.
+	@field			presetID
+						The numeric ID of a particular preset within that bank to load.  Range is 0 to 127.
+	@field			reserved
+						Reserved for future use
+ */
+
+enum 
+{
+	kAUSampler_DefaultPercussionBankMSB	=	0x78,
+	kAUSampler_DefaultMelodicBankMSB	=	0x79,
+	kAUSampler_DefaultBankLSB			=	0x00
+};
+
+typedef struct AUSamplerBankPresetData {
+	CFURLRef				bankURL;
+	UInt8					bankMSB;
+	UInt8					bankLSB;
+	UInt8					presetID;
+	UInt8					reserved;
+} AUSamplerBankPresetData;
+
+
+//=====================================================================================================================
 #pragma mark - AUDeferredRenderer
 /*!
 	@enum			AUDeferredRenderer
@@ -3100,6 +3109,11 @@ enum {
 	kAudioUnitProperty_SpeakerConfiguration			= 3001
 };
 
+	// Deprecated.  Use kAUSamplerProperty_LoadPresetFromBank
+enum {
+	kAUSamplerProperty_BankAndPreset				= 4100
+};
+	
 	// Deprecated in favor of the newer AudioChannelLayout
 	// structure and its supporting property.
 enum {

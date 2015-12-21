@@ -20,6 +20,16 @@ struct IDXUserDictionaryEntry {
 	UInt32        seed;
 };
 
+enum {
+    IDXUserDictionaryDefault                       = 0,
+    IDXUserDictionaryPrefix                        = 1 << 1,
+    IDXUserDictionaryCommonPrefix                  = 1 << 2,
+    IDXUserDictionaryWildcard                      = 1 << 3,
+    IDXUserDictionaryJapaneseAmbiguousVoiceSound   = 1 << 4,
+    IDXUserDictionaryJapaneseAmbiguousSmallKana    = 1 << 5
+};
+typedef unsigned IDXUserDictionaryMatchType;
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -48,8 +58,7 @@ Boolean IDXUserDictionaryBuild(IDXUserDictionaryRef dictionary, CFArrayRef keyAr
     
 /* Search the user dictionary. */
 extern
-void IDXUserDictionarySearch(IDXUserDictionaryRef dictionary, UniChar *keyBuffer, CFIndex keyLength, int voiceAmbi, int smallAmbi,
-                             Boolean prefixSearch, Boolean wildcardSearch, IDXUserDictionarySearchCallBack callback, void *userInfo );
+void IDXUserDictionarySearch(IDXUserDictionaryRef dictionary, UniChar *keyBuffer, CFIndex keyLength, IDXUserDictionaryMatchType matchType, IDXUserDictionarySearchCallBack callback, void *userInfo);
 
 /* Save user dictionary */
 extern

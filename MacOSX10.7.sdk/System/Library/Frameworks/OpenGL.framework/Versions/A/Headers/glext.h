@@ -1926,10 +1926,6 @@ typedef uint64_t GLuint64EXT;
 #define GL_QUADS_FOLLOW_PROVOKING_VERTEX_CONVENTION      0x8E4C
 #endif
 
-#if GL_EXT_vertex_array_bgra
-#define GL_BGRA                                 0x80E1
-#endif
-
 #if GL_EXT_framebuffer_sRGB
 #define GL_FRAMEBUFFER_SRGB_EXT                 0x8DB9
 #define GL_FRAMEBUFFER_SRGB_CAPABLE_EXT         0x8DBA

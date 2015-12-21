@@ -3,7 +3,7 @@
  
      Contains:   Window Manager Interfaces
  
-     Version:    HIToolbox-566~1
+     Version:    HIToolbox-567.2~1
  
      Copyright:  © 1997-2008 by Apple Inc., all rights reserved
  
@@ -709,8 +709,18 @@ enum {
 
   /*
    * Indicates that this window can coexist on a fullscreen space with
-   * a fullscreen window, but is not necessarily capapble of becoming
-   * fullscreen itself. Available in Mac OS X 10.7 and later.
+   * a fullscreen window of another application, but is not capable of
+   * becoming fullscreen itself.
+   * This window attribute is used in conjunction with the
+   * kHIWindowCanJoinAllSpaces Availability option to allow the window
+   * to move across FullScreen workspaces. For applications that are
+   * BackgroundOnly or UIElements, this is the default behavior when
+   * kHIWindowCanJoinAllSpaces is also set. For other applications,
+   * kHIWindowBitFullScreenAuxiliary must be specified, and is
+   * supported for window classes including kUtilityWindowClass, and
+   * kFloatingWindowClass with a WindowActivationScope of
+   * kWindowActivationScopeIndependent or kWindowActivationScopeNone.
+   * Available in Mac OS X 10.7 and later.
    */
   kHIWindowBitFullScreenAuxiliary = 46
 };

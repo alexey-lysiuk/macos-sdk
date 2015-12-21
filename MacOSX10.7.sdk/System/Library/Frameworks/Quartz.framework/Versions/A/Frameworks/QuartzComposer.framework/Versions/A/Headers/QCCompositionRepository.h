@@ -32,6 +32,10 @@ Returns a unique and persistent identifier for the composition if its comes from
 
 /* System-wide composition repository */
 @interface QCCompositionRepository : NSObject
+{
+@private
+    dispatch_queue_t			cq;	
+}
 
 /*
 Returns the shared instance of the QCCompositionRepository.

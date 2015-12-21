@@ -3,7 +3,7 @@
  
      Contains:   Script Manager interfaces
  
-     Version:    CarbonCore-960.13~3
+     Version:    CarbonCore-960.18~3
  
      Copyright:  © 1986-2008 by Apple Inc., all rights reserved
  
