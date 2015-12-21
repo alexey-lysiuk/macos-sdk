@@ -2,7 +2,7 @@
   +----------------------------------------------------------------------+
   | PHP Version 5                                                        |
   +----------------------------------------------------------------------+
-  | Copyright (c) 1997-2009 The PHP Group                                |
+  | Copyright (c) 1997-2010 The PHP Group                                |
   +----------------------------------------------------------------------+
   | This source file is subject to version 3.01 of the PHP license,      |
   | that is bundled with this package in the file LICENSE, and is        |
@@ -16,7 +16,7 @@
   +----------------------------------------------------------------------+
 */
 
-/* $Id: php_json.h 283185 2009-06-30 17:52:21Z stas $ */
+/* $Id: php_json.h 299535 2010-05-20 19:37:52Z iliaa $ */
 
 #ifndef PHP_JSON_H
 #define PHP_JSON_H
@@ -49,6 +49,16 @@ ZEND_END_MODULE_GLOBALS(json)
 
 PHP_JSON_API void php_json_encode(smart_str *buf, zval *val, int options TSRMLS_DC);
 PHP_JSON_API void php_json_decode(zval *return_value, char *str, int str_len, zend_bool assoc, long depth TSRMLS_DC);
+
+#define PHP_JSON_HEX_TAG	(1<<0)
+#define PHP_JSON_HEX_AMP	(1<<1)
+#define PHP_JSON_HEX_APOS	(1<<2)
+#define PHP_JSON_HEX_QUOT	(1<<3)
+#define PHP_JSON_FORCE_OBJECT	(1<<4)
+#define PHP_JSON_NUMERIC_CHECK	(1<<5)
+
+#define PHP_JSON_OUTPUT_ARRAY 0
+#define PHP_JSON_OUTPUT_OBJECT 1
 
 #endif  /* PHP_JSON_H */
 

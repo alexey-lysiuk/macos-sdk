@@ -447,8 +447,9 @@ protected:
 				kIOPropertySASAddressKey,
 				kIOPropertyFibreChannelNodeWorldWideNameKey,
 				kIOPropertyFibreChannelPortWorldWideNameKey,
-				kIOPropertyFibreChannelAddressIdentifierKey, and
-				kIOPropertyFibreChannelALPAKey.
+				kIOPropertyFibreChannelAddressIdentifierKey, 
+				kIOPropertyFibreChannelALPAKey, and
+				kIOPropertyRetryCountKey.
 				These keys are defined in
 				<IOKit/storage/IOStorageProtocolCharacteristics.h> and the values
 				associated with these keys must be of the proper type/size,
@@ -1541,8 +1542,9 @@ private:
 	// These shall not be overridden by the HBA child classes.
 	bool			start ( IOService * 				provider );
 	void			stop ( 	IOService *  				provider );
-
-
+	virtual void	free ( void );
+	
+	
 protected:
 	
 	// These may be overriden by the HBA child classes if necessary, but should

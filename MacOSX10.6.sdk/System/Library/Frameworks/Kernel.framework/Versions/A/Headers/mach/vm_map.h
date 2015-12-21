@@ -263,7 +263,7 @@ kern_return_t vm_remap
 	vm_address_t *target_address,
 	vm_size_t size,
 	vm_address_t mask,
-	boolean_t anywhere,
+	int flags,
 	vm_map_t src_task,
 	vm_address_t src_address,
 	boolean_t copy,
@@ -696,7 +696,7 @@ __END_DECLS
 		vm_address_t target_address;
 		vm_size_t size;
 		vm_address_t mask;
-		boolean_t anywhere;
+		int flags;
 		vm_address_t src_address;
 		boolean_t copy;
 		vm_inherit_t inheritance;

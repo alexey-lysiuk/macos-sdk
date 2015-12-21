@@ -24,6 +24,7 @@
 
 #import <IOKit/bluetooth/IOBluetoothTypes.h>
 #import <IOKit/bluetooth/IOBluetoothInternal.h>
+#import <IOKit/bluetooth/IOBluetoothUserClientSharedPriv.h>
 
 //====================================================================================================
 // Forward declarations
@@ -46,6 +47,16 @@ class IOBluetoothHCIPacketLogUserClient;
 //====================================================================================================
 
 #define kNoReturnParam					NULL
+
+enum
+{
+	kRadioPowerInitialState		= 0,
+	kRadioPoweringOff			= 1,
+	kRadioPoweringOn			= 2,
+	kRadioPoweredOff			= 3,
+	kRadioPoweredOn				= 4,
+	kRadioPowerError			= 5
+};
 
 typedef	uint16_t	DevicePublishNotificationStateType;
 enum DevicePublishNotificationStateTypes
@@ -288,7 +299,7 @@ protected:
 
     virtual IOReturn	AddPacketLogUserClient( IOBluetoothHCIPacketLogUserClient *newPacketLogUserClient );
 	
-	virtual bool		PacketLogFillBufferedData();
+	virtual bool		PacketLogFillBufferedData( IOBluetoothHCIPacketLogUserClient	* packetLogClient );
 	
     virtual void		PacketLogClientClosed( IOBluetoothHCIPacketLogUserClient *packetLogClient );
 	
@@ -568,6 +579,16 @@ public:
 										IOByteCount							inCommandDataSize,
 										IOByteCount 						outBufferSize,
 										UInt8 * 							outBuffer );
+	
+	virtual IOReturn	BluetoothHCIBroadcomBFCSuspend(	BluetoothHCIRequestID					inID,
+													   BluetoothConnectionHandle				inConnectionHandle,
+													   BluetoothBroadcomBFCSuspendResumeData *	outBFCSuspend );
+	
+	virtual IOReturn	BluetoothHCIBroadcomBFCResume(  BluetoothHCIRequestID					inID,
+													  BluetoothConnectionHandle				inConnectionHandle,
+													  const BluetoothDeviceAddress *			inAddress,
+													  BluetoothBroadcomBFCSuspendResumeData	* inBFCResume );
+	
 
 	// IOBluetoothDevice object management
     
@@ -1023,8 +1044,8 @@ protected:
 		AbsoluteTime							mBufferedSCOPacketTimestamp;
 		
 		// Repository for the packets when logging at boot
-		OSArray									*mRepositoryForBoot;
-		UInt16									mMaxNumberOfBootPackets;
+		OSArray									*mRepositoryForLoggingBuffer;
+		UInt16									mMaxNumberOfLoggingBufferPackets;
 		
 		IOService								*mOverriddenControllerProvider;
 		
@@ -1046,42 +1067,63 @@ protected:
 		HearingDeviceListType 					*mConnectedHearingDeviceListHead;
 		HearingDeviceListType 					*mConnectedHearingDeviceListTail;
 
+		Boolean									mCompletedEventTimerActivated;
+		IOTimerEventSource						*mWaitForNumberOfCompletedPacketEventTimer;
+		
+		uint8_t									mRadioPowerState;
+		
+		Boolean									mKillAllPendingRequestsCalled;
+		
+		UInt16									mIndexOfLoggingBufferPacketsIn;
+		UInt16									mIndexOfLoggingBufferPacketsOut;
+		Boolean									mNewUserClientFirstCallToPacketLogFillBufferedData;
+		Boolean									mLoggingBufferHasBeenEmptied;
+
 	} ExpansionData;
 
 	ExpansionData*		mExpansionData;
 	
-#define	mConnectedHearingDeviceListTail			IOBluetoothHCIController::mExpansionData->mConnectedHearingDeviceListTail
-#define	mConnectedHearingDeviceListHead			IOBluetoothHCIController::mExpansionData->mConnectedHearingDeviceListHead
-#define	mResettingDevice						IOBluetoothHCIController::mExpansionData->mResettingDevice
-#define	mNeedToCleanUpWaitForAckQueue			IOBluetoothHCIController::mExpansionData->mNeedToCleanUpWaitForAckQueue
-#define mNextAvailableSCOSequenceNumber			IOBluetoothHCIController::mExpansionData->mNextAvailableSCOSequenceNumber
-#define mCurrentlyExecutingSCOSequenceNumber	IOBluetoothHCIController::mExpansionData->mCurrentlyExecutingSCOSequenceNumber
+#define	mKillAllPendingRequestsCalled				IOBluetoothHCIController::mExpansionData->mKillAllPendingRequestsCalled
+#define	mRadioPowerState							IOBluetoothHCIController::mExpansionData->mRadioPowerState
+#define	mWaitForNumberOfCompletedPacketEventTimer	IOBluetoothHCIController::mExpansionData->mWaitForNumberOfCompletedPacketEventTimer
+#define	mCompletedEventTimerActivated				IOBluetoothHCIController::mExpansionData->mCompletedEventTimerActivated
+#define	mConnectedHearingDeviceListTail				IOBluetoothHCIController::mExpansionData->mConnectedHearingDeviceListTail
+#define	mConnectedHearingDeviceListHead				IOBluetoothHCIController::mExpansionData->mConnectedHearingDeviceListHead
+#define	mResettingDevice							IOBluetoothHCIController::mExpansionData->mResettingDevice
+#define	mNeedToCleanUpWaitForAckQueue				IOBluetoothHCIController::mExpansionData->mNeedToCleanUpWaitForAckQueue
+#define mNextAvailableSCOSequenceNumber				IOBluetoothHCIController::mExpansionData->mNextAvailableSCOSequenceNumber
+#define mCurrentlyExecutingSCOSequenceNumber		IOBluetoothHCIController::mExpansionData->mCurrentlyExecutingSCOSequenceNumber
 
-#define mNumberOfCommandsAllowedByHardware		IOBluetoothHCIController::mExpansionData->mNumberOfCommandsAllowedByHardware
-#define	mNumConfiguredHIDDevices				IOBluetoothHCIController::mExpansionData->mNumConfiguredHIDDevices
-#define mControllerSleepFlags					IOBluetoothHCIController::mExpansionData->mControllerSleepFlags
-#define mSleepWakeNotifier						IOBluetoothHCIController::mExpansionData->mSleepWakeNotifier
+#define mNumberOfCommandsAllowedByHardware			IOBluetoothHCIController::mExpansionData->mNumberOfCommandsAllowedByHardware
+#define	mNumConfiguredHIDDevices					IOBluetoothHCIController::mExpansionData->mNumConfiguredHIDDevices
+#define mControllerSleepFlags						IOBluetoothHCIController::mExpansionData->mControllerSleepFlags
+#define mSleepWakeNotifier							IOBluetoothHCIController::mExpansionData->mSleepWakeNotifier
 
-#define mMaskByte								IOBluetoothHCIController::mExpansionData->mMaskByte
-#define windowServerNotifier					IOBluetoothHCIController::mExpansionData->windowServerNotifier
-#define mAirPortPCI								IOBluetoothHCIController::mExpansionData->mAirPortPCI
-#define mProcessingConnectionRequest			IOBluetoothHCIController::mExpansionData->mProcessingConnectionRequest
-#define mWaitingForCompletedACLPacketsToSleep   IOBluetoothHCIController::mExpansionData->mWaitingForCompletedACLPacketsToSleep
+#define mMaskByte									IOBluetoothHCIController::mExpansionData->mMaskByte
+#define windowServerNotifier						IOBluetoothHCIController::mExpansionData->windowServerNotifier
+#define mAirPortPCI									IOBluetoothHCIController::mExpansionData->mAirPortPCI
+#define mProcessingConnectionRequest				IOBluetoothHCIController::mExpansionData->mProcessingConnectionRequest
+#define mWaitingForCompletedACLPacketsToSleep   	IOBluetoothHCIController::mExpansionData->mWaitingForCompletedACLPacketsToSleep
 
-#define	mNumSCOConnections						IOBluetoothHCIController::mExpansionData->mNumSCOConnections
-#define mSCOPacketBuffer						IOBluetoothHCIController::mExpansionData->mSCOPacketBuffer
-#define mNumBufferedSCOBytes					IOBluetoothHCIController::mExpansionData->mNumBufferedSCOBytes
-#define mBufferedSCOPacketTimestamp				IOBluetoothHCIController::mExpansionData->mBufferedSCOPacketTimestamp
-#define mRepositoryForBoot						IOBluetoothHCIController::mExpansionData->mRepositoryForBoot
-#define mMaxNumberOfBootPackets					IOBluetoothHCIController::mExpansionData->mMaxNumberOfBootPackets
-#define mOverriddenControllerProvider			IOBluetoothHCIController::mExpansionData->mOverriddenControllerProvider
-#define mHCIRequestListSize						IOBluetoothHCIController::mExpansionData->mHCIRequestListSize
-#define mNewRequestIndex						IOBluetoothHCIController::mExpansionData->mNewRequestIndex
-#define mIdleTimer								IOBluetoothHCIController::mExpansionData->mIdleTimer
-#define mSystemOnTheWayToSleep					IOBluetoothHCIController::mExpansionData->mSystemOnTheWayToSleep
-#define mIO80211Interface						IOBluetoothHCIController::mExpansionData->mIO80211Interface
+#define	mNumSCOConnections							IOBluetoothHCIController::mExpansionData->mNumSCOConnections
+#define mSCOPacketBuffer							IOBluetoothHCIController::mExpansionData->mSCOPacketBuffer
+#define mNumBufferedSCOBytes						IOBluetoothHCIController::mExpansionData->mNumBufferedSCOBytes
+#define mBufferedSCOPacketTimestamp					IOBluetoothHCIController::mExpansionData->mBufferedSCOPacketTimestamp
+#define mRepositoryForLoggingBuffer					IOBluetoothHCIController::mExpansionData->mRepositoryForLoggingBuffer
+#define mMaxNumberOfLoggingBufferPackets			IOBluetoothHCIController::mExpansionData->mMaxNumberOfLoggingBufferPackets
+#define mOverriddenControllerProvider				IOBluetoothHCIController::mExpansionData->mOverriddenControllerProvider
+#define mHCIRequestListSize							IOBluetoothHCIController::mExpansionData->mHCIRequestListSize
+#define mNewRequestIndex							IOBluetoothHCIController::mExpansionData->mNewRequestIndex
+#define mIdleTimer									IOBluetoothHCIController::mExpansionData->mIdleTimer
+#define mSystemOnTheWayToSleep						IOBluetoothHCIController::mExpansionData->mSystemOnTheWayToSleep
+#define mIO80211Interface							IOBluetoothHCIController::mExpansionData->mIO80211Interface
 
-	enum {
+#define mIndexOfLoggingBufferPacketsIn							IOBluetoothHCIController::mExpansionData->mIndexOfLoggingBufferPacketsIn
+#define mIndexOfLoggingBufferPacketsOut							IOBluetoothHCIController::mExpansionData->mIndexOfLoggingBufferPacketsOut
+#define mNewUserClientFirstCallToPacketLogFillBufferedData		IOBluetoothHCIController::mExpansionData->mNewUserClientFirstCallToPacketLogFillBufferedData
+#define mLoggingBufferHasBeenEmptied							IOBluetoothHCIController::mExpansionData->mLoggingBufferHasBeenEmptied
+	
+enum {
 		kIOBluetoothHCIControllerSleepFlagInquiryScanWasEnabled	= 0x01
 	};
 
@@ -1205,7 +1247,7 @@ public:
 	virtual	IOReturn	BluetoothHCIReadSimplePairingMode(	BluetoothHCIRequestID				inID,
 															BluetoothHCISimplePairingMode	*	outMode );
 
-
+	
 	OSMetaClassDeclareReservedUsed(	IOBluetoothHCIController,  25 );
 	virtual	IOReturn	BluetoothHCIWriteSimplePairingMode(	BluetoothHCIRequestID				inID,
 															BluetoothHCISimplePairingMode		inMode );
@@ -1337,34 +1379,37 @@ public:
 															    UInt32										waitTimeInMicroSecond);
 public:
 	OSMetaClassDeclareReservedUsed(	IOBluetoothHCIController,  54 );
-	void				SetHCIDriverExistsVariableTo( bool isLoaded );
-	
-public:
-	OSMetaClassDeclareReservedUsed(	IOBluetoothHCIController,  55 );
 	virtual	IOReturn	ToggleLMPLogging( );
 	
 public:
-	OSMetaClassDeclareReservedUsed(	IOBluetoothHCIController,  56 );
+	OSMetaClassDeclareReservedUsed(	IOBluetoothHCIController,  55 );
 	virtual	HearingDeviceListType * 	FindHearingDeviceWithAddress( const BluetoothDeviceAddress *inDeviceAddress );
 	
 public:
-	OSMetaClassDeclareReservedUsed(	IOBluetoothHCIController,  57 );
+	OSMetaClassDeclareReservedUsed(	IOBluetoothHCIController,  56 );
 	virtual	IOReturn	AddHearingDevice( IOBluetoothDevice *inDevice );
 	
 public:
-	OSMetaClassDeclareReservedUsed(	IOBluetoothHCIController,  58 );
+	OSMetaClassDeclareReservedUsed(	IOBluetoothHCIController,  57 );
 	virtual	IOReturn	RemoveHearingDevice( IOBluetoothDevice *inDevice, bool all );
 	
 public:
-	OSMetaClassDeclareReservedUsed(	IOBluetoothHCIController,  59 );
+	OSMetaClassDeclareReservedUsed(	IOBluetoothHCIController,  58 );
 	virtual	IOReturn	SetDevicePublishNotificationState( const BluetoothDeviceAddress *inDeviceAddress, DevicePublishNotificationStateType state );
 	
 public:
-	OSMetaClassDeclareReservedUsed(	IOBluetoothHCIController,  60 );
+	OSMetaClassDeclareReservedUsed(	IOBluetoothHCIController,  59 );
 	virtual	DevicePublishNotificationStateType *	GetDevicePublishNotificationState( const BluetoothDeviceAddress *inDeviceAddress );
 	
+public:
+	OSMetaClassDeclareReservedUsed(	IOBluetoothHCIController,  60 );
+	virtual	void	WaitForCompletedPacketEventTimeOutHandler( );
+	
+public:
+	OSMetaClassDeclareReservedUsed(	IOBluetoothHCIController,  61 );
+	void cleanUpOrphanedHCIRequest(void);
+	
 private:
-	OSMetaClassDeclareReservedUnused(	IOBluetoothHCIController,  61 );
 	OSMetaClassDeclareReservedUnused(	IOBluetoothHCIController,  62 );
 	OSMetaClassDeclareReservedUnused(	IOBluetoothHCIController,  63 );
 };

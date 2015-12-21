@@ -25,6 +25,33 @@
 /*
  *
  *	$Log: IOUSBHubDevice.h,v $
+ *	Revision 1.13  2010/09/03 18:55:56  nano
+ *	Bring in fix for 8001699 to TOT
+ *
+ *	Revision 1.12.86.2  2010/09/01 15:03:52  nano
+ *	Renamed a method to be more generic
+ *
+ *	Revision 1.12.86.1  2010/08/31 22:37:53  nano
+ *	Implement messages that allow us to send general interest notifications for devices to release and reclaim extra current
+ *
+ *	Revision 1.12.4.1  2010/06/01 16:51:29  nano
+ *	Safekeeping of some work to send extra current messages
+ *
+ *	Revision 1.12  2010/05/20 17:44:23  nano
+ *	Bring in fixes from PR-7481369 to TOT
+ *
+ *	Revision 1.11.214.4  2010/05/14 21:48:44  nano
+ *	finish work with allocating/deallocating power thru gate
+ *
+ *	Revision 1.11.214.3  2010/05/14 20:52:31  nano
+ *	Allocate/release the extra current through the gate
+ *
+ *	Revision 1.11.214.2  2010/05/10 19:56:57  nano
+ *	Continue with implementation of sleep current budgeting
+ *
+ *	Revision 1.11.214.1  2010/05/08 03:35:48  nano
+ *	Initial work on budgeting sleep current
+ *
  *	Revision 1.11  2009/09/12 03:42:16  rhoads
  *	merge in the changes for the 390.3.4b QL
  *
@@ -154,6 +181,10 @@ private:
 		UInt32					_extraPowerForPorts;			// Of the power requested from our parent, how much can we parcel out -- the rest is consumed by voltage drop thru the cable
 		UInt32					_extraPowerAllocated;			// Amount of power that we actually got from our parent
 		bool					_requestFromParent;				// True if we are to request the extra power from our parent, without modifying the request.  Used for RMHs
+		UInt32					_maxPortSleepCurrent;			// Maximum current per port during sleep
+		UInt32					_extraSleepPowerAllocated;		// Amount of sleep power that we actually got from our parent
+		UInt32					_canRequestExtraSleepPower;		// If 0, this hub does not support requesting extra sleep power from its parent, non-zero:  how much power we need to request in order to give out _extraPowerForPorts
+		UInt32					_standardPortSleepCurrent;		// Standard current that can be drawn in sleep -- usually 1 USB load
 	};
     ExpansionData			*_expansionData;
 	
@@ -163,6 +194,18 @@ protected:
 	virtual void			SetHubCharacteristics(UInt32);
 	virtual bool			InitializeCharacteristics(void);					// used at start
 	
+	// these are called through the workloop
+	static IOReturn			GatedRequestExtraPower(OSObject *target, void *arg0, void *arg1, void *arg2, void *arg3);
+	static IOReturn			GatedReturnExtraPower(OSObject *target, void *arg0, void *arg1, void *arg2, void *arg3);
+	static IOReturn			GatedRequestSleepPower(OSObject *target, void *arg0, void *arg1, void *arg2, void *arg3);
+	static IOReturn			GatedReturnSleepPower(OSObject *target, void *arg0, void *arg1, void *arg2, void *arg3);
+
+	// a non static but non-virtual function
+	IOReturn				RequestExtraPower(uint64_t requestedPower, uint64_t *powerAllocated);
+	IOReturn				RequestSleepPower(uint64_t requestedPower, uint64_t *powerAllocated);
+	IOReturn				ReturnExtraPower(uint64_t returnedPower);
+	IOReturn				ReturnSleepPower(uint64_t returnedPower);
+
 public:
 	// static constructor
     static IOUSBHubDevice	*NewHubDevice(void);
@@ -230,8 +273,13 @@ public:
     OSMetaClassDeclareReservedUsed(IOUSBHubDevice,  4);
 	virtual	UInt32			GetSleepCurrent();
 	
-    OSMetaClassDeclareReservedUnused(IOUSBHubDevice,  5);
-    OSMetaClassDeclareReservedUnused(IOUSBHubDevice,  6);
+    OSMetaClassDeclareReservedUsed(IOUSBHubDevice,  5);
+	
+	virtual void			InitializeExtraPower(UInt32 maxPortCurrent, UInt32 totalExtraCurrent, UInt32 maxPortCurrentInSleep, UInt32 totalExtraCurrentInSleep);
+	
+    OSMetaClassDeclareReservedUsed(IOUSBHubDevice,  6);
+	virtual void			SendExtraPowerMessage(UInt32 type, UInt32 returnedPower);
+
     OSMetaClassDeclareReservedUnused(IOUSBHubDevice,  7);
     OSMetaClassDeclareReservedUnused(IOUSBHubDevice,  8);
     OSMetaClassDeclareReservedUnused(IOUSBHubDevice,  9);

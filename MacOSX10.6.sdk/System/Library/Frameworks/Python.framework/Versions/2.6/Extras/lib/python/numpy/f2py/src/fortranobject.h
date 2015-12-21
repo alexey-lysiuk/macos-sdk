@@ -12,6 +12,31 @@ extern "C" {
 #define PY_ARRAY_UNIQUE_SYMBOL PyArray_API
 #include "numpy/arrayobject.h"
 
+/*
+ * Python 3 support macros
+ */
+#if PY_VERSION_HEX >= 0x03000000
+#define PyString_Check PyBytes_Check
+#define PyString_GET_SIZE PyBytes_GET_SIZE
+#define PyString_AS_STRING PyBytes_AS_STRING
+#define PyString_FromString PyBytes_FromString
+#define PyString_ConcatAndDel PyBytes_ConcatAndDel
+#define PyString_AsString PyBytes_AsString
+
+#define PyInt_Check PyLong_Check
+#define PyInt_FromLong PyLong_FromLong
+#define PyInt_AS_LONG PyLong_AsLong
+#define PyInt_AsLong PyLong_AsLong
+
+#define PyNumber_Int PyNumber_Long
+#endif
+
+#if (PY_VERSION_HEX < 0x02060000)
+#define Py_TYPE(o)    (((PyObject*)(o))->ob_type)
+#define Py_REFCNT(o)  (((PyObject*)(o))->ob_refcnt)
+#define Py_SIZE(o)    (((PyVarObject*)(o))->ob_size)
+#endif
+
   /*
 #ifdef F2PY_REPORT_ATEXIT_DISABLE
 #undef F2PY_REPORT_ATEXIT
@@ -51,7 +76,7 @@ extern "C" {
 123456789-123456789-123456789-123456789-123456789-123456789-123456789-12
 
 PyFortranObject represents various Fortran objects:
-Fortran (module) routines, COMMON blocks, module data. 
+Fortran (module) routines, COMMON blocks, module data.
 
 Author: Pearu Peterson <pearu@cens.ioc.ee>
 */
@@ -84,17 +109,31 @@ typedef struct {
 typedef struct {
   PyObject_HEAD
   int len;                   /* Number of attributes */
-  FortranDataDef *defs;      /* An array of FortranDataDef's */ 
+  FortranDataDef *defs;      /* An array of FortranDataDef's */
   PyObject       *dict;      /* Fortran object attribute dictionary */
 } PyFortranObject;
 
-#define PyFortran_Check(op) ((op)->ob_type == &PyFortran_Type)
-#define PyFortran_Check1(op) (0==strcmp((op)->ob_type->tp_name,"fortran"))
+#define PyFortran_Check(op) (Py_TYPE(op) == &PyFortran_Type)
+#define PyFortran_Check1(op) (0==strcmp(Py_TYPE(op)->tp_name,"fortran"))
 
   extern PyTypeObject PyFortran_Type;
   extern int F2PyDict_SetItemString(PyObject* dict, char *name, PyObject *obj);
   extern PyObject * PyFortranObject_New(FortranDataDef* defs, f2py_void_func init);
   extern PyObject * PyFortranObject_NewAsAttr(FortranDataDef* defs);
+
+#if PY_VERSION_HEX >= 0x03000000
+
+PyObject * F2PyCapsule_FromVoidPtr(void *ptr, void (*dtor)(PyObject *));
+void * F2PyCapsule_AsVoidPtr(PyObject *obj);
+int F2PyCapsule_Check(PyObject *ptr);
+
+#else
+
+PyObject * F2PyCapsule_FromVoidPtr(void *ptr, void (*dtor)(void *));
+void * F2PyCapsule_AsVoidPtr(PyObject *ptr);
+int F2PyCapsule_Check(PyObject *ptr);
+
+#endif
 
 #define ISCONTIGUOUS(m) ((m)->flags & NPY_CONTIGUOUS)
 #define F2PY_INTENT_IN 1
@@ -106,6 +145,20 @@ typedef struct {
 #define F2PY_INTENT_C 64
 #define F2PY_OPTIONAL 128
 #define F2PY_INTENT_INPLACE 256
+#define F2PY_INTENT_ALIGNED4 512
+#define F2PY_INTENT_ALIGNED8 1024
+#define F2PY_INTENT_ALIGNED16 2048
+
+#define ARRAY_ISALIGNED(ARR, SIZE) ((size_t)(PyArray_DATA(ARR)) % (SIZE) == 0)
+#define F2PY_ALIGN4(intent) (intent & F2PY_INTENT_ALIGNED4)
+#define F2PY_ALIGN8(intent) (intent & F2PY_INTENT_ALIGNED8)
+#define F2PY_ALIGN16(intent) (intent & F2PY_INTENT_ALIGNED16)
+
+#define F2PY_GET_ALIGNMENT(intent) \
+	(F2PY_ALIGN4(intent) ? 4 : \
+	 (F2PY_ALIGN8(intent) ? 8 : \
+	  (F2PY_ALIGN16(intent) ? 16 : 1) ))
+#define F2PY_CHECK_ALIGNMENT(arr, intent) ARRAY_ISALIGNED(arr, F2PY_GET_ALIGNMENT(intent))
 
   extern PyArrayObject* array_from_pyobj(const int type_num,
 					 npy_intp *dims,
@@ -117,6 +170,7 @@ typedef struct {
 #ifdef DEBUG_COPY_ND_ARRAY
   extern void dump_attrs(const PyArrayObject* arr);
 #endif
+
 
 #ifdef __cplusplus
 }

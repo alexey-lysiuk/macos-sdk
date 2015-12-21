@@ -3,7 +3,7 @@
  
      Contains:   Master include for SecurityHI private framework
  
-     Version:    SecurityHI-36638~802
+     Version:    SecurityHI-36638~1292
  
      Copyright:  © 2000-2008 by Apple Inc., all rights reserved.
  

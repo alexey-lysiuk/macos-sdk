@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2000 Apple Computer, Inc. All rights reserved.
+ * Copyright (c) 2000-2010 Apple Computer, Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
  * 
@@ -70,6 +70,7 @@ struct ifmibdata {
 	unsigned int		ifmd_filler[4];	/* for future expansion */
 	struct if_data64	ifmd_data; /* generic information and statistics */
 };
+
 
 /*
  * sysctl MIB tags at the net.link.generic level

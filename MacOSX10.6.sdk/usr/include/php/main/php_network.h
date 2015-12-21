@@ -2,7 +2,7 @@
    +----------------------------------------------------------------------+
    | PHP Version 5                                                        |
    +----------------------------------------------------------------------+
-   | Copyright (c) 1997-2009 The PHP Group                                |
+   | Copyright (c) 1997-2010 The PHP Group                                |
    +----------------------------------------------------------------------+
    | This source file is subject to version 3.01 of the PHP license,      |
    | that is bundled with this package in the file LICENSE, and is        |
@@ -16,7 +16,7 @@
    +----------------------------------------------------------------------+
  */
 
-/* $Id: php_network.h 273010 2009-01-07 20:21:46Z felipe $ */
+/* $Id: php_network.h 293036 2010-01-03 09:23:27Z sebastian $ */
 
 #ifndef _PHP_NETWORK_H
 #define _PHP_NETWORK_H
@@ -34,10 +34,16 @@
 #endif
 
 #ifdef PHP_WIN32
-#define EWOULDBLOCK WSAEWOULDBLOCK
-#define EINPROGRESS	WSAEWOULDBLOCK
-#	define fsync _commit
-#	define ftruncate(a, b) chsize(a, b)
+# ifdef EWOULDBLOCK
+#  undef EWOULDBLOCK
+# endif
+# ifdef EINPROGRESS
+#  undef EINPROGRESS
+# endif
+# define EWOULDBLOCK WSAEWOULDBLOCK
+# define EINPROGRESS	WSAEWOULDBLOCK
+# define fsync _commit
+# define ftruncate(a, b) chsize(a, b)
 #endif /* defined(PHP_WIN32) */
 
 #ifndef EWOULDBLOCK

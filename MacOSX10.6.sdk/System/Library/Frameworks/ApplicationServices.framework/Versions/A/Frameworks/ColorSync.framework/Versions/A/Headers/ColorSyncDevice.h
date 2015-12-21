@@ -126,7 +126,7 @@ CSEXTERN bool ColorSyncRegisterDevice (CFStringRef deviceClass, CFUUIDRef device
     *   <<
     *
     * Notes:    1. Scope for factory profiles is exactly the same as the device scope.
-    *           2. Pass CFNullRef in lieu of the profile URL or no URl key/value pair at all if 
+    *           2. Pass kCFNull in lieu of the profile URL or no URl key/value pair at all if 
     *              factory profile is not available. This will enable setting custom profile.
     *           3. For the reasons of compatibility with legacy API, it is recommended that the
     *              profile keys are created as CFStrings from uint32_t numbers as follows:
@@ -169,7 +169,7 @@ CSEXTERN bool ColorSyncDeviceSetCustomProfiles (CFStringRef deviceClass, CFUUIDR
     *
     * Notes:    1. Profile scope for custom profiles cannot exceed scope of the factory profiles.
     *           2. There is only one host scope and user scope per dictionary (i.e. per call)
-    *           3. Pass CFNullRef in lieu of the profile URL to unset the custom profile and
+    *           3. Pass kCFNull in lieu of the profile URL to unset the custom profile and
     *              reset the current profile to the factory profile.
     *
     *   returns true on success and false in case of failure

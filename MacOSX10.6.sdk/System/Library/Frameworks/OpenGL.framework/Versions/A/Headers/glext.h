@@ -116,6 +116,7 @@ extern "C" {
 #define GL_EXT_framebuffer_object           1
 #define GL_EXT_framebuffer_blit             1
 #define GL_EXT_framebuffer_multisample      1
+#define GL_EXT_framebuffer_multisample_blit_scaled      1
 #define GL_EXT_packed_depth_stencil         1
 #define GL_EXT_gpu_program_parameters       1
 #define GL_EXT_geometry_shader4             1
@@ -129,6 +130,7 @@ extern "C" {
 #define GL_EXT_texture_shared_exponent      1
 #define GL_EXT_provoking_vertex             1
 #define GL_EXT_vertex_array_bgra            1
+#define GL_EXT_texture_sRGB_decode          1
 #define GL_APPLE_flush_buffer_range         1
 #define GL_APPLE_specular_vector            1
 #define GL_APPLE_transform_hint             1
@@ -1692,6 +1694,11 @@ typedef unsigned short GLhalf;
 #define GL_MAX_SAMPLES_EXT                        0x8D57
 #endif
 
+#if GL_EXT_framebuffer_multisample_blit_scaled
+#define GL_SCALED_RESOLVE_FASTEST_EXT             0x90BA
+#define GL_SCALED_RESOLVE_NICEST_EXT              0x90BB
+#endif
+
 #if GL_ARB_framebuffer_object
 #define GL_INVALID_FRAMEBUFFER_OPERATION  0x0506
 #define GL_FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING 0x8210
@@ -1953,6 +1960,12 @@ typedef unsigned short GLhalf;
 #define GL_RGB9_E5_EXT                          0x8C3D
 #define GL_UNSIGNED_INT_5_9_9_9_REV_EXT         0x8C3E
 #define GL_TEXTURE_SHARED_SIZE_EXT              0x8C3F
+#endif
+	
+#if GL_EXT_texture_sRGB_decode
+#define GL_TEXTURE_SRGB_DECODE_EXT             0x8A48
+#define GL_DECODE_EXT                          0x8A49
+#define GL_SKIP_DECODE_EXT                     0x8A4A
 #endif
 
 #if GL_APPLE_vertex_array_range

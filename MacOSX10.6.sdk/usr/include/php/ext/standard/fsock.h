@@ -2,7 +2,7 @@
    +----------------------------------------------------------------------+
    | PHP Version 5                                                        |
    +----------------------------------------------------------------------+
-   | Copyright (c) 1997-2009 The PHP Group                                |
+   | Copyright (c) 1997-2010 The PHP Group                                |
    +----------------------------------------------------------------------+
    | This source file is subject to version 3.01 of the PHP license,      |
    | that is bundled with this package in the file LICENSE, and is        |
@@ -18,7 +18,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: fsock.h 272370 2008-12-31 11:15:49Z sebastian $ */
+/* $Id: fsock.h 293036 2010-01-03 09:23:27Z sebastian $ */
 
 /* Synced with php 3.0 revision 1.24 1999-06-18 [ssb] */
 

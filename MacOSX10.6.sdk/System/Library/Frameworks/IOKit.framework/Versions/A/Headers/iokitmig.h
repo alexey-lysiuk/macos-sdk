@@ -28,7 +28,7 @@ typedef function_table_entry   *function_table_t;
 #endif /* AUTOTEST */
 
 #ifndef	iokit_MSG_COUNT
-#define	iokit_MSG_COUNT	68
+#define	iokit_MSG_COUNT	72
 #endif	/* iokit_MSG_COUNT */
 
 #include <mach/std_types.h>
@@ -3201,7 +3201,7 @@ union __ReplyUnion__iokit_subsystem {
     { "io_connect_unmap_memory_from_task", 2864 },\
     { "io_connect_method", 2865 },\
     { "io_connect_async_method", 2866 },\
-    { "io_registry_entry_get_registry_entry_id", 2867 }
+    { "io_registry_entry_get_registry_entry_id", 2871 }
 #endif
 
 #ifdef __AfterMigUserHeader

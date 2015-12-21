@@ -2,7 +2,7 @@
    +----------------------------------------------------------------------+
    | Zend Engine                                                          |
    +----------------------------------------------------------------------+
-   | Copyright (c) 1998-2009 Zend Technologies Ltd. (http://www.zend.com) |
+   | Copyright (c) 1998-2010 Zend Technologies Ltd. (http://www.zend.com) |
    +----------------------------------------------------------------------+
    | This source file is subject to version 2.00 of the Zend license,     |
    | that is bundled with this package in the file LICENSE, and is        | 
@@ -17,7 +17,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: zend_execute.h 287992 2009-09-03 14:33:11Z dmitry $ */
+/* $Id: zend_execute.h 299766 2010-05-26 00:00:58Z felipe $ */
 
 #ifndef ZEND_EXECUTE_H
 #define ZEND_EXECUTE_H
@@ -135,6 +135,8 @@ static inline int i_zend_is_true(zval *op)
 }
 
 ZEND_API int zval_update_constant(zval **pp, void *arg TSRMLS_DC);
+ZEND_API int zval_update_constant_inline_change(zval **pp, void *arg TSRMLS_DC);
+ZEND_API int zval_update_constant_no_inline_change(zval **pp, void *arg TSRMLS_DC);
 ZEND_API int zval_update_constant_ex(zval **pp, void *arg, zend_class_entry *scope TSRMLS_DC);
 
 /* dedicated Zend executor functions - do not use! */
@@ -228,7 +230,7 @@ static inline void *zend_vm_stack_alloc(size_t size TSRMLS_DC)
 		int extra = (ZEND_MM_ALIGNMENT - ((zend_uintptr_t)EG(argument_stack)->top & (ZEND_MM_ALIGNMENT - 1))) / sizeof(void*);
 
 		if (UNEXPECTED(size + extra + ZEND_MM_ALIGNED_SIZE(sizeof(void*)) / sizeof(void*) >
-		    EG(argument_stack)->end - EG(argument_stack)->top)) {
+		    (zend_uintptr_t)(EG(argument_stack)->end - EG(argument_stack)->top))) {
 			zend_vm_stack_extend(size TSRMLS_CC);
 		} else {
 			void **old_top = EG(argument_stack)->top;

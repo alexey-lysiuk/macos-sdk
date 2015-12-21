@@ -2,7 +2,7 @@
    +----------------------------------------------------------------------+
    | PHP Version 5                                                        |
    +----------------------------------------------------------------------+
-   | Copyright (c) 1997-2008 The PHP Group                                |
+   | Copyright (c) 1997-2010 The PHP Group                                |
    +----------------------------------------------------------------------+
    | This source file is subject to version 3.01 of the PHP license,      |
    | that is bundled with this package in the file LICENSE, and is        |
@@ -18,7 +18,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: php_dns.h 287120 2009-08-11 22:07:35Z scottmac $ */
+/* $Id: php_dns.h 293211 2010-01-07 11:02:39Z sebastian $ */
 
 #ifndef PHP_DNS_H
 #define PHP_DNS_H
@@ -28,8 +28,6 @@
     	((int)dns_search(res, dname, class, type, answer, anslen, (struct sockaddr *)&from, &fromsize))
 #define php_dns_free_handle(res) \
 		dns_free(res)
-#define php_dns_errno(_res) \
-			(NO_DATA)
 
 #elif defined(HAVE_RES_NSEARCH)
 #define php_dns_search(res, dname, class, type, answer, anslen) \
@@ -37,15 +35,11 @@
 #define php_dns_free_handle(res) \
 			res_nclose(res); \
 			php_dns_free_res(*res)
-#define php_dns_errno(res) \
-			(res->res_h_errno)
 
 #elif defined(HAVE_RES_SEARCH)
 #define php_dns_search(res, dname, class, type, answer, anslen) \
 			res_search(dname, class, type, answer, anslen)
 #define php_dns_free_handle(res) /* noop */
-#define php_dns_errno(res) \
-			(_res.res_h_errno)
 
 #endif
 

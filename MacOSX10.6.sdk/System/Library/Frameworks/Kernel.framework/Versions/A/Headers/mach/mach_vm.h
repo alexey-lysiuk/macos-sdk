@@ -246,7 +246,7 @@ kern_return_t mach_vm_remap
 	mach_vm_address_t *target_address,
 	mach_vm_size_t size,
 	mach_vm_offset_t mask,
-	boolean_t anywhere,
+	int flags,
 	vm_map_t src_task,
 	mach_vm_address_t src_address,
 	boolean_t copy,
@@ -572,7 +572,7 @@ __END_DECLS
 		mach_vm_address_t target_address;
 		mach_vm_size_t size;
 		mach_vm_offset_t mask;
-		boolean_t anywhere;
+		int flags;
 		mach_vm_address_t src_address;
 		boolean_t copy;
 		vm_inherit_t inheritance;

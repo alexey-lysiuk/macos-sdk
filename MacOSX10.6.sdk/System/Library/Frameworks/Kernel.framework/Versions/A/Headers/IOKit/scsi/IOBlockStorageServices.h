@@ -65,6 +65,7 @@ protected:
 	
 	virtual bool		attach ( IOService * provider );
 	virtual void		detach ( IOService * provider );
+	virtual void		free ( void );
     virtual IOReturn	newUserClient (
     						   task_t			owningTask,
     						   void *			securityID,

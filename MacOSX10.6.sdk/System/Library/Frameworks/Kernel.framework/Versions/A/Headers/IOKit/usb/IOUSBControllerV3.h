@@ -24,6 +24,7 @@
 #define _IOKIT_IOUSBCONTROLLERV3_H
 
 #include <IOKit/pci/IOPCIDevice.h>
+#include <IOKit/pwr_mgt/RootDomain.h>
 
 #include <IOKit/usb/IOUSBControllerV2.h>
 #include <IOKit/usb/IOUSBHubDevice.h>
@@ -106,6 +107,9 @@ class IOUSBControllerV3 : public IOUSBControllerV2
 		struct V3ExpansionData { 
 			uint32_t				_rootHubPollingRate32;
 			bool					_rootHubTransactionWasAborted;
+			IOPMDriverAssertionID	_externalUSBDeviceAssertionID;		// power manager assertion that we have an external USB device
+			SInt32					_externalDeviceCount;				// the count of external devices in this controller - changed through the WL gate
+			UInt32					_inCheckPowerModeSleeping;			// The CheckPowerModeGated
 		};
 		V3ExpansionData *_v3ExpansionData;
 
@@ -120,6 +124,9 @@ class IOUSBControllerV3 : public IOUSBControllerV2
 		virtual IOReturn				powerStateDidChangeTo ( IOPMPowerFlags capabilities, unsigned long stateNumber, IOService* whatDevice);
 		virtual void					powerChangeDone ( unsigned long fromState);
 		virtual void					systemWillShutdown( IOOptionBits specifier );
+		virtual bool					willTerminate(IOService * provider, IOOptionBits options);
+		virtual bool					didTerminate( IOService * provider, IOOptionBits options, bool * defer );
+
 		virtual void					free(void);
 	
 		// IOUSBController methods
@@ -137,6 +144,9 @@ class IOUSBControllerV3 : public IOUSBControllerV2
 		virtual IOReturn		IsocIO(IOMemoryDescriptor *buffer, UInt64 frameStart, UInt32 numFrames, IOUSBIsocFrame *frameList, USBDeviceAddress address, Endpoint *endpoint, IOUSBIsocCompletion *completion );
 		virtual IOReturn		IsocIO(IOMemoryDescriptor *buffer, UInt64 frameStart, UInt32 numFrames, IOUSBLowLatencyIsocFrame *frameList, USBDeviceAddress address, Endpoint *endpoint, IOUSBLowLatencyIsocCompletion *completion, UInt32 updateFrequency );	
 
+		// we override this one to add some stuff which requires the _device iVar
+		virtual UInt32			GetErrataBits(UInt16 vendorID, UInt16 deviceID, UInt16 revisionID );    
+	
 		// IOUSBControllerV2 methods
 		// we override these to deal with methods attempting to go through the workloop while we are in sleep
 		virtual IOReturn 		OpenPipe(USBDeviceAddress address, UInt8 speed, Endpoint *endpoint);
@@ -151,6 +161,7 @@ class IOUSBControllerV3 : public IOUSBControllerV2
 		static IOReturn					DoEnableAddressEndpoints(OSObject *owner, void *arg0, void *arg1, void *arg2, void *arg3 );
 		static IOReturn					DoEnableAllEndpoints(OSObject *owner, void *arg0, void *arg1, void *arg2, void *arg3 );
 		static IOReturn					GatedPowerChange(OSObject *owner, void *arg0, void *arg1, void *arg2, void *arg3 );
+		static IOReturn					ChangeExternalDeviceCount(OSObject *owner, void *arg0, void *arg1, void *arg2, void *arg3 );
 
 		// also on the workloop
 	    static void						RootHubTimerFired(OSObject *owner, IOTimerEventSource *sender);
@@ -193,13 +204,15 @@ class IOUSBControllerV3 : public IOUSBControllerV2
 		virtual IOReturn				EnableAddressEndpoints(USBDeviceAddress address, bool enable);
 		virtual bool					IsControllerAvailable(void);
 		virtual IOReturn				HandlePowerChange(unsigned long powerStateOrdinal);
-		virtual	UInt32					AllocateExtraRootHubPortPower(UInt32 extraPowerRequested);
-		virtual	void					ReturnExtraRootHubPortPower(UInt32 extraPowerReturned);
+		virtual	UInt32					AllocateExtraRootHubPortPower(UInt32 extraPowerRequested);		// DEPRECATED
+		virtual	void					ReturnExtraRootHubPortPower(UInt32 extraPowerReturned);			// DEPRECATED
 	
 	OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  0);
 	virtual IOReturn				RootHubStartTimer32(uint32_t pollingRate);
 	
-	OSMetaClassDeclareReservedUnused(IOUSBControllerV3,  1);
+	OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  1);
+	virtual IOReturn				CheckPMAssertions(IOUSBDevice *forDevice, bool deviceBeingAdded);
+	
 	OSMetaClassDeclareReservedUnused(IOUSBControllerV3,  2);
 	OSMetaClassDeclareReservedUnused(IOUSBControllerV3,  3);
 	OSMetaClassDeclareReservedUnused(IOUSBControllerV3,  4);

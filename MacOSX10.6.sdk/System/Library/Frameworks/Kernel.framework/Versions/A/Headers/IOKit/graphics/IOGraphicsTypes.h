@@ -31,7 +31,7 @@
 extern "C" {
 #endif
 
-#define IOGRAPHICSTYPES_REV     24
+#define IOGRAPHICSTYPES_REV     28
 
 typedef SInt32  IOIndex;
 typedef UInt32  IOSelect;
@@ -710,6 +710,8 @@ enum {
     kConnectionControllerDitherControl   = '\0gdc',
 
     kConnectionDisplayFlags              = 'dflg',
+
+    kConnectionEnableAudio               = 'aud ',
 };
 
 // kConnectionFlags values
@@ -750,10 +752,11 @@ enum {
 #define kIODisplaySupportsBasicAudioKey "IODisplaySupportsBasicAudio"
 #define kIODisplaySupportsYCbCr444Key   "IODisplaySupportsYCbCr444"
 #define kIODisplaySupportsYCbCr422Key   "IODisplaySupportsYCbCr422"
+#define kIODisplaySelectedColorModeKey  "cmod"
 
 enum
 { 
-    kIODisplayColorMode = kConnectionColorMode,
+    kIODisplayColorMode         = kConnectionColorMode,
 };
 
 #if 0
@@ -817,6 +820,12 @@ enum
     kIODisplayNeedsCEAUnderscan      = 0x00000001,
 };
 
+enum
+{
+	kIODisplayPowerStateOff       =	0,
+	kIODisplayPowerStateMinUsable =	1,
+	kIODisplayPowerStateOn        = 2,
+};
 
 #define IO_DISPLAY_CAN_FILL             0x00000040
 #define IO_DISPLAY_CAN_BLIT             0x00000020
@@ -985,7 +994,9 @@ enum {
     // DisplayPort link event
     kIOFBDisplayPortLinkChangeInterruptType = 'dplk',
     // MCCS
-    kIOFBMCCSInterruptType                  = 'mccs'
+    kIOFBMCCSInterruptType                  = 'mccs',
+    // early vram notification
+    kIOFBWakeInterruptType                  = 'vwak'
 };
 
 // IOAppleTimingID's
@@ -1091,6 +1102,8 @@ enum {
 };
 #endif
 
+#define kIOHibernateEFIGfxStatusKey    "IOHibernateEFIGfxStatus"
+
 // CFNumber/CFData
 #define kIOFBAVSignalTypeKey            "av-signal-type"
 enum {
@@ -1110,6 +1123,7 @@ enum {
 #define kIOFBModeTMKey                  "TM"
 #define kIOFBModeAIDKey                 "AID"
 #define kIOFBModeDFKey                  "DF"
+#define kIOFBModePIKey                  "PI"
 
 // display property keys
 
@@ -1217,20 +1231,22 @@ enum {
 #define kIODisplayMinValueKey           "min"
 #define kIODisplayMaxValueKey           "max"
 
-#define kIODisplayBrightnessKey         "brightness"
-#define kIODisplayContrastKey           "contrast"
-#define kIODisplayHorizontalPositionKey "horizontal-position"
-#define kIODisplayHorizontalSizeKey     "horizontal-size"
-#define kIODisplayVerticalPositionKey   "vertical-position"
-#define kIODisplayVerticalSizeKey       "vertical-size"
-#define kIODisplayTrapezoidKey          "trapezoid"
-#define kIODisplayPincushionKey         "pincushion"
-#define kIODisplayParallelogramKey      "parallelogram"
-#define kIODisplayRotationKey           "rotation"
-#define kIODisplayTheatreModeKey        "theatre-mode"
-#define kIODisplayTheatreModeWindowKey  "theatre-mode-window"
-#define kIODisplayOverscanKey           "oscn"
-#define kIODisplayVideoBestKey          "vbst"
+#define kIODisplayBrightnessKey             "brightness"
+#define kIODisplayLinearBrightnessKey       "linear-brightness"
+#define kIODisplayUsableLinearBrightnessKey "usable-linear-brightness"
+#define kIODisplayContrastKey               "contrast"
+#define kIODisplayHorizontalPositionKey     "horizontal-position"
+#define kIODisplayHorizontalSizeKey     	"horizontal-size"
+#define kIODisplayVerticalPositionKey   	"vertical-position"
+#define kIODisplayVerticalSizeKey           "vertical-size"
+#define kIODisplayTrapezoidKey              "trapezoid"
+#define kIODisplayPincushionKey             "pincushion"
+#define kIODisplayParallelogramKey          "parallelogram"
+#define kIODisplayRotationKey               "rotation"
+#define kIODisplayTheatreModeKey            "theatre-mode"
+#define kIODisplayTheatreModeWindowKey      "theatre-mode-window"
+#define kIODisplayOverscanKey               "oscn"
+#define kIODisplayVideoBestKey              "vbst"
 
 #define kIODisplaySpeakerVolumeKey              "speaker-volume"
 #define kIODisplaySpeakerSelectKey              "speaker-select"
@@ -1244,6 +1260,9 @@ enum {
 #define kIODisplayPowerModeKey                  "power-mode"
 #define kIODisplayManufacturerSpecificKey       "manufacturer-specific"
 
+#define kIODisplayPowerStateKey       			"dsyp"
+
+#define kIODisplayControllerIDKey				"IODisplayControllerID"
 
 #define kIODisplayRedGammaScaleKey      "rgsc"
 #define kIODisplayGreenGammaScaleKey    "ggsc"

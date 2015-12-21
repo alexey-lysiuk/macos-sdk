@@ -3,7 +3,7 @@
  
      Contains:   64-bit integer math Interfaces.
  
-     Version:    CarbonCore-861.13~4
+     Version:    CarbonCore-861.39~1
  
      Copyright:  © 1994-2008 by Apple Computer, Inc., all rights reserved
  

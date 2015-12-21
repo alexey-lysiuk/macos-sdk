@@ -3,7 +3,7 @@
  
      Contains:   Macros to handle exceptions and assertions.
  
-     Version:    CarbonCore-861.13~4
+     Version:    CarbonCore-861.39~1
  
      Copyright:  © 1989-2008 by Apple Computer, Inc., all rights reserved.
  

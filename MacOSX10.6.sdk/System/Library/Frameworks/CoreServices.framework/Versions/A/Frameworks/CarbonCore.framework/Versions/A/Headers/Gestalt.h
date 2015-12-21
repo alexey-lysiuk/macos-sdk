@@ -3,7 +3,7 @@
  
      Contains:   Gestalt Interfaces.
  
-     Version:    CarbonCore-861.13~4
+     Version:    CarbonCore-861.39~1
  
      Copyright:  © 1988-2008 by Apple Computer, Inc.  All rights reserved
  

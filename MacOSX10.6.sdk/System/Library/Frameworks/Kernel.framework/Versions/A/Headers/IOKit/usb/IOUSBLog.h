@@ -77,7 +77,16 @@ enum
 // Enums for the private kIOUSBMessageController message
 enum
 {
-	kIOUSBMessageControllerDoGPIOReset = 0x00000001
+	kIOUSBMessageControllerDoGPIOReset = 0x00000001,
+	kIOUSBMessageControllerDoPrintACPI = 0x00000002,
+	
+	kIOUSBMessageControllerDumpQueues						= 0x00000003,
+	kIOUSBMessageControllerDumpQueuesMask					= 0x0000FFFF,			// for this message, we use the top 16 bits for options
+	kIOUSBMessageControllerDumpQueuesOptionsMask			= 0xFFFF0000,
+	kIOUSBMessageControllerDumpQueuesPrintSkippedOptionMask = (1 << 16),
+	kIOUSBMessageControllerDumpQueuesPrintTDsMask			= (1 << 17),
+	kIOUSBMessageControllerDumpQueuesPrintDoneQueue			= (1 << 18)				// For OHCI
+	
 };
 #endif
 

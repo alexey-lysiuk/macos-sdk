@@ -229,6 +229,7 @@ typedef struct vm_statistics64	vm_statistics64_data_t;
 #define VM_FLAGS_ANYWHERE	0x0001
 #define VM_FLAGS_PURGABLE	0x0002
 #define VM_FLAGS_NO_CACHE	0x0010
+#define VM_FLAGS_OVERWRITE	0x4000	/* delete any existing mappings first */
 
 /*
  * VM_FLAGS_SUPERPAGE_MASK
@@ -257,9 +258,13 @@ typedef struct vm_statistics64	vm_statistics64_data_t;
 				 VM_FLAGS_ANYWHERE |		\
 				 VM_FLAGS_PURGABLE |		\
 				 VM_FLAGS_NO_CACHE |		\
+				 VM_FLAGS_OVERWRITE |		\
 				 VM_FLAGS_SUPERPAGE_MASK |	\
 				 VM_FLAGS_ALIAS_MASK)
 #define VM_FLAGS_USER_MAP	VM_FLAGS_USER_ALLOCATE
+#define VM_FLAGS_USER_REMAP	(VM_FLAGS_FIXED |    \
+				 VM_FLAGS_ANYWHERE | \
+				 VM_FLAGS_OVERWRITE)
 
 #define VM_MEMORY_MALLOC 1
 #define VM_MEMORY_MALLOC_SMALL 2

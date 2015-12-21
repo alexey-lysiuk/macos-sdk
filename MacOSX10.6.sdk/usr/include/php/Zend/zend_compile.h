@@ -2,7 +2,7 @@
    +----------------------------------------------------------------------+
    | Zend Engine                                                          |
    +----------------------------------------------------------------------+
-   | Copyright (c) 1998-2009 Zend Technologies Ltd. (http://www.zend.com) |
+   | Copyright (c) 1998-2010 Zend Technologies Ltd. (http://www.zend.com) |
    +----------------------------------------------------------------------+
    | This source file is subject to version 2.00 of the Zend license,     |
    | that is bundled with this package in the file LICENSE, and is        |
@@ -17,7 +17,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: zend_compile.h 281737 2009-06-05 23:20:59Z shire $ */
+/* $Id: zend_compile.h 300345 2010-06-10 09:13:22Z dmitry $ */
 
 #ifndef ZEND_COMPILE_H
 #define ZEND_COMPILE_H
@@ -687,9 +687,9 @@ int zendlex(znode *zendlval TSRMLS_DC);
 #define ZEND_CT	(1<<0)
 #define ZEND_RT (1<<1)
 
-#define ZEND_FETCH_STANDARD		0
-#define ZEND_FETCH_ADD_LOCK		(1<<0)
-#define ZEND_FETCH_MAKE_REF		(1<<1)
+#define ZEND_FETCH_STANDARD	    0x00000000
+#define ZEND_FETCH_ADD_LOCK	    0x08000000
+#define ZEND_FETCH_MAKE_REF	    0x04000000
 
 #define ZEND_FE_FETCH_BYREF	1
 #define ZEND_FE_FETCH_WITH_KEY	2

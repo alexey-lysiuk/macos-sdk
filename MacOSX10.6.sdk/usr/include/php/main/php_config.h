@@ -5,7 +5,7 @@
    +----------------------------------------------------------------------+
    | Zend Engine                                                          |
    +----------------------------------------------------------------------+
-   | Copyright (c) 1998-2009 Zend Technologies Ltd. (http://www.zend.com) |
+   | Copyright (c) 1998-2010 Zend Technologies Ltd. (http://www.zend.com) |
    +----------------------------------------------------------------------+
    | This source file is subject to version 2.00 of the Zend license,     |
    | that is bundled with this package in the file LICENSE, and is        |
@@ -20,7 +20,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: acconfig.h 272370 2008-12-31 11:15:49Z sebastian $ */
+/* $Id: acconfig.h 293155 2010-01-05 20:46:53Z sebastian $ */
 
 #ifndef ZEND_API
 
@@ -178,6 +178,9 @@
 
 /* Define if you have the chroot function.  */
 #define HAVE_CHROOT 1
+
+/* Define if you have the clearenv function.  */
+/* #undef HAVE_CLEARENV */
 
 /* Define if you have the crypt function.  */
 #define HAVE_CRYPT 1
@@ -380,6 +383,9 @@
 /* Define if you have the memmove function.  */
 #define HAVE_MEMMOVE 1
 
+/* Define if you have the mempcpy function.  */
+/* #undef HAVE_MEMPCPY */
+
 /* Define if you have the mkfifo function.  */
 #define HAVE_MKFIFO 1
 
@@ -463,6 +469,9 @@
 
 /* Define if you have the setpriority function.  */
 /* #undef HAVE_SETPRIORITY */
+
+/* Define if you have the setproctitle function.  */
+/* #undef HAVE_SETPROCTITLE */
 
 /* Define if you have the setsid function.  */
 #define HAVE_SETSID 1
@@ -548,6 +557,9 @@
 /* Define if you have the strpbrk function.  */
 #define HAVE_STRPBRK 1
 
+/* Define if you have the strpncpy function.  */
+/* #undef HAVE_STRPNCPY */
+
 /* Define if you have the strptime function.  */
 #define HAVE_STRPTIME 1
 
@@ -623,11 +635,11 @@
 /* Define if you have the <arpa/nameser.h> header file.  */
 #define HAVE_ARPA_NAMESER_H 1
 
-/* Define if you have the <arpa/nameser_compat.h> header file.  */
-#define HAVE_ARPA_NAMESER_COMPAT_H 1
-
 /* Define if you have the <assert.h> header file.  */
 #define HAVE_ASSERT_H 1
+
+/* Define if you have the <atomic.h> header file.  */
+/* #undef HAVE_ATOMIC_H */
 
 /* Define if you have the <crypt.h> header file.  */
 /* #undef HAVE_CRYPT_H */
@@ -710,6 +722,9 @@
 /* Define if you have the <stdint.h> header file.  */
 #define HAVE_STDINT_H 1
 
+/* Define if you have the <stdio.h> header file.  */
+/* #undef HAVE_STDIO_H */
+
 /* Define if you have the <stdlib.h> header file.  */
 #define HAVE_STDLIB_H 1
 
@@ -781,6 +796,9 @@
 
 /* Define if you have the <sys/types.h> header file.  */
 #define HAVE_SYS_TYPES_H 1
+
+/* Define if you have the <sys/uio.h> header file.  */
+/* #undef HAVE_SYS_UIO_H */
 
 /* Define if you have the <sys/un.h> header file.  */
 #define HAVE_SYS_UN_H 1
@@ -941,6 +959,39 @@
 /* Whether you have a Continuity Server */
 /* #undef HAVE_CONTINUITY */
 
+/* do we have prctl? */
+/* #undef HAVE_PRCTL */
+
+/* do we have clock_gettime? */
+/* #undef HAVE_CLOCK_GETTIME */
+
+/* do we have clock_get_time? */
+/* #undef HAVE_CLOCK_GET_TIME */
+
+/* do we have ptrace? */
+/* #undef HAVE_PTRACE */
+
+/* do we have mach_vm_read? */
+/* #undef HAVE_MACH_VM_READ */
+
+/* /proc/pid/mem interface */
+/* #undef PROC_MEM_FILE */
+
+/* Define to 1 if gcc supports __sync_bool_compare_and_swap() a.o. */
+/* #undef HAVE_BUILTIN_ATOMIC */
+
+/* do we have TCP_INFO? */
+/* #undef HAVE_LQ_TCP_INFO */
+
+/* do we have SO_LISTENQxxx? */
+/* #undef HAVE_LQ_SO_LISTENQ */
+
+/* fpm user name */
+/* #undef PHP_FPM_USER */
+
+/* fpm group name */
+/* #undef PHP_FPM_GROUP */
+
 /*   */
 /* #undef WITH_ZEUS */
 
@@ -1059,15 +1110,6 @@
 /* #undef HAVE_LIBBIND */
 
 /*   */
-#define HAVE_NANOSLEEP 1
-
-/*   */
-#define HAVE_NANOSLEEP 1
-
-/*   */
-/* #undef HAVE_LIBRT */
-
-/*   */
 /* #undef HAVE_FOPENCOOKIE */
 
 /*   */
@@ -1135,6 +1177,12 @@
 
 /* Whether struct sockaddr has field sa_len */
 #define HAVE_SOCKADDR_SA_LEN 1
+
+/*   */
+#define HAVE_NANOSLEEP 1
+
+/*   */
+/* #undef HAVE_LIBRT */
 
 /* Define if you have the getaddrinfo function */
 #define HAVE_GETADDRINFO 1
@@ -1694,6 +1742,9 @@
 /*   */
 /* #undef HAVE_LIBICONV */
 
+/* iconv() is aliased to libiconv() in -liconv */
+/* #undef ICONV_ALIASED_LIBICONV */
+
 /*   */
 #define HAVE_ICONV 1
 
@@ -1887,10 +1938,10 @@
 /* #undef HAVE_FREETDS */
 
 /*   */
-/* #undef PHP_MYSQL_UNIX_SOCK_ADDR */
+#define PHP_MYSQL_UNIX_SOCK_ADDR "/var/mysql/mysql.sock"
 
 /*   */
-/* #undef PHP_MYSQL_UNIX_SOCK_ADDR */
+#define PHP_MYSQL_UNIX_SOCK_ADDR "/var/mysql/mysql.sock"
 
 /* Whether you have MySQL */
 #define HAVE_MYSQL 1
@@ -2444,6 +2495,12 @@
 /*   */
 #define HAVE_CRYPT 1
 
+/* whether the compiler supports __alignof__ */
+#define HAVE_ALIGNOF 1
+
+/* whether the compiler supports __attribute__ ((__aligned__)) */
+#define HAVE_ATTRIBUTE_ALIGNED 1
+
 /* Whether PHP has to use its own crypt_r for blowfish, des, ext des and md5 */
 #define PHP_USE_PHP_CRYPT_R 1
 
@@ -2456,8 +2513,14 @@
 /* Whether the system supports extended DES salt */
 #define PHP_EXT_DES_CRYPT 1
 
-/* Whether the system supports extended DES salt */
+/* Whether the system supports MD5 salt */
 #define PHP_MD5_CRYPT 1
+
+/* Whether the system supports SHA512 salt */
+#define PHP_SHA512_CRYPT 1
+
+/* Whether the system supports SHA256 salt */
+#define PHP_SHA256_CRYPT 1
 
 /* Whether the system supports standard DES salt */
 #define PHP_STD_DES_CRYPT 1
@@ -2467,6 +2530,15 @@
 
 /* Whether the system supports extended DES salt */
 #define PHP_EXT_DES_CRYPT 1
+
+/* Whether the system supports MD5 salt */
+#define PHP_MD5_CRYPT 1
+
+/* Whether the system supports SHA512 salt */
+#define PHP_SHA512_CRYPT 1
+
+/* Whether the system supports SHA256 salt */
+#define PHP_SHA256_CRYPT 1
 
 /* Whether PHP has to use its own crypt_r for blowfish, des and ext des */
 #define PHP_USE_PHP_CRYPT_R 1
@@ -2652,7 +2724,7 @@
 /* #undef HAVE_LIBEXPAT */
 
 /*   */
-/* #undef HAVE_WDDX */
+#define HAVE_WDDX 1
 
 /* Whether to build wddx as dynamic module */
 /* #undef COMPILE_DL_WDDX */
@@ -2696,6 +2768,9 @@
 /*   */
 /* #undef HAVE_LIBICONV */
 
+/* iconv() is aliased to libiconv() in -liconv */
+/* #undef ICONV_ALIASED_LIBICONV */
+
 /*   */
 #define HAVE_ICONV 1
 
@@ -2735,8 +2810,11 @@
 /* Whether to build mysqlnd as dynamic module */
 /* #undef COMPILE_DL_MYSQLND */
 
-/* Use mysqlnd internal threading */
-/* #undef MYSQLND_THREADED */
+/* Enable compressed protocol support */
+/* #undef MYSQLND_COMPRESSION_ENABLED */
+
+/* Enable SSL support */
+#define MYSQLND_SSL_SUPPORTED 1
 
 /* Define if int32_t type is present.  */
 #define HAVE_INT32_T 1
@@ -2823,16 +2901,16 @@
 /* #undef PTHREADS */
 
 /* PHP build date */
-#define PHP_BUILD_DATE "2010-06-24"
+#define PHP_BUILD_DATE "2010-12-15"
 
 /* hardcode for each of the cross compiler host */
 #define PHP_OS "Darwin"
 
 /* hardcode for each of the cross compiler host */
-#define PHP_UNAME "Darwin hokies.apple.com 10.0 Darwin Kernel Version 10.0.0: Fri Jul 31 22:46:25 PDT 2009; root:xnu-1456.1.25~1/RELEASE_X86_64 x86_64"
+#define PHP_UNAME "Darwin b01.apple.com 10.0 Darwin Kernel Version 10.0.0: Fri Jul 31 22:46:25 PDT 2009; root:xnu-1456.1.25~1/RELEASE_X86_64 x86_64"
 
 /* uname -a output */
-#define PHP_UNAME "Darwin hokies.apple.com 10.0 Darwin Kernel Version 10.0.0: Fri Jul 31 22:46:25 PDT 2009; root:xnu-1456.1.25~1/RELEASE_X86_64 x86_64"
+#define PHP_UNAME "Darwin b01.apple.com 10.0 Darwin Kernel Version 10.0.0: Fri Jul 31 22:46:25 PDT 2009; root:xnu-1456.1.25~1/RELEASE_X86_64 x86_64"
 
 /* uname output */
 #define PHP_OS "Darwin"
@@ -2931,10 +3009,13 @@ int zend_sprintf(char *buffer, const char *format, ...);
 #  define WORDS_BIGENDIAN 1
 # endif
 #/* This symbol must be allowed to be cleared. */ undef SIZEOF_LONG
+#/* This symbol must be allowed to be cleared. */ undef SIZEOF_SIZE_T
 # ifdef __LP64__
 #/* This symbol should not be modified by configure. */  define SIZEOF_LONG 8
+#/* This symbol should not be modified by configure. */  define SIZEOF_SIZE_T 8
 # else
 #/* This symbol should not be modified by configure. */  define SIZEOF_LONG 4
+#/* This symbol should not be modified by configure. */  define SIZEOF_SIZE_T 4
 # endif
 #endif
 

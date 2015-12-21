@@ -63,6 +63,7 @@ uint32_t CTGetCoreTextVersion( void ) AVAILABLE_MAC_OS_X_VERSION_10_5_AND_LATER;
 #define kCTVersionNumber10_5_3 0x00020002
 #define kCTVersionNumber10_5_5 0x00020003
 #define kCTVersionNumber10_6 0x00030000
+#define kCTVersionNumber10_6_7 0x00030007
 
 #if defined(__cplusplus)
 }

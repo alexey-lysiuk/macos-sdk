@@ -108,7 +108,7 @@ vImage_Error	vImagePremultipliedAlphaBlend_ARGBFFFF( const vImage_Buffer *srcTop
  *      internal representation with saturated clipping, to prevent results > 1.0 and results < 0. The calculation is actually done with negative
  *      numbers internally to make sure that -1.0 is representable where needed.  Values are rounded up by 1/2 ulp before truncation.
  *
- *      This function will work in place.
+ *      This function will work in place.  Pass kvImageDoNotTile to prevent multithreading.
  */
 vImage_Error	vImagePremultiplyData_Planar8( const vImage_Buffer *src, const vImage_Buffer *alpha, const vImage_Buffer *dest, vImage_Flags flags )    AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
 vImage_Error	vImagePremultiplyData_PlanarF( const vImage_Buffer *src, const vImage_Buffer *alpha, const vImage_Buffer *dest, vImage_Flags flags )    AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
@@ -123,14 +123,24 @@ vImage_Error	vImagePremultiplyData_RGBAFFFF( const vImage_Buffer *src, const vIm
  *  This function multiplies color channels by the alpha channel.  
  *      For each color channel:
  *
- *          float destColor = src / srcAlpha;
+ *          float destColor = src / srcAlpha;   // according to current rounding mode
  *          float destAlpha = alpha;            //For interleaved formats only
  *
- *      For calculations involving 8-bit integer data, the calculation is done in a fixed point representation using signed 0.15 fixed point
- *      internal representation with saturated clipping, to prevent results > 1.0 and results < 0. The calculation is actually done with negative
- *      numbers internally to make sure that -1.0 is representable where needed.  Values are rounded up by 1/2 ulp before truncation.
+ *      For calculations involving Planar8 and interleaved 8888 formats, the results will be in accordance with the following formula:
  *
- *      This function will work in place.
+ *          uint8_t srcColor, srcAlpha;     // input color data
+ *          uint8_t destColor = srcAlpha == 0 ? 0 : ( 2 * 255 * MIN( srcColor, srcAlpha) + srcAlpha ) / (2 * srcAlpha);
+ *          uint8_t destAlpha = srcAlpha;
+ *
+ *      ...which is the nearest unpremultiplied result, with clamping to ensure no modulo overflow in cases where srcColor > srcAlpha.
+ *      In the division by zero case, the returned color value is 0.  The accuracy and speed of these functions were improved for X.6.6.
+ *      Before that, the Planar8 and 8888 functions were a bit slower (~2/3) and in about 1% of cases (all near the halfway point), 
+ *      rounded down where it now rounds up. 
+ *
+ *      It should be self-evident that only the positioning of the alpha channel is important for interleaved formats for these functions. 
+ *      So, for example, vImageUnpremultiplyData_RGBA8888 will work for BGRA data too, because the alpha channel is in the same place.
+ *
+ *      This function will work in place.  Pass kvImageDoNotTile to prevent multithreading.
  */
 vImage_Error	vImageUnpremultiplyData_Planar8( const vImage_Buffer *src, const vImage_Buffer *alpha, const vImage_Buffer *dest, vImage_Flags flags )    AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;
 vImage_Error	vImageUnpremultiplyData_PlanarF( const vImage_Buffer *src, const vImage_Buffer *alpha, const vImage_Buffer *dest, vImage_Flags flags )    AVAILABLE_MAC_OS_X_VERSION_10_3_AND_LATER;

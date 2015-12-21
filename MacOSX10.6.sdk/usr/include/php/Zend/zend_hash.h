@@ -2,7 +2,7 @@
    +----------------------------------------------------------------------+
    | Zend Engine                                                          |
    +----------------------------------------------------------------------+
-   | Copyright (c) 1998-2009 Zend Technologies Ltd. (http://www.zend.com) |
+   | Copyright (c) 1998-2010 Zend Technologies Ltd. (http://www.zend.com) |
    +----------------------------------------------------------------------+
    | This source file is subject to version 2.00 of the Zend license,     |
    | that is bundled with this package in the file LICENSE, and is        | 
@@ -17,7 +17,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: zend_hash.h 281050 2009-05-25 01:18:00Z pollita $ */
+/* $Id: zend_hash.h 304083 2010-10-05 11:28:56Z dmitry $ */
 
 #ifndef ZEND_HASH_H
 #define ZEND_HASH_H
@@ -312,7 +312,7 @@ END_EXTERN_C()
 	}																		\
 	if (*tmp >= '0' && *tmp <= '9') { /* possibly a numeric index */		\
 		const char *end = key + length - 1;									\
-		long idx;															\
+		ulong idx;															\
 																			\
 		if ((*end != '\0') /* not a null terminated string */				\
 		 || (*tmp == '0' && length > 2) /* numbers with leading zeros */	\
@@ -328,11 +328,11 @@ END_EXTERN_C()
 		}																	\
 		if (tmp == end) {													\
 			if (*key == '-') {												\
-				idx = -idx;													\
-				if (idx > 0) { /* overflow */								\
+				if (idx-1 > LONG_MAX) { /* overflow */						\
 					break;													\
 				}															\
-			} else if (idx < 0) { /* overflow */							\
+				idx = (ulong)(-(long)idx);									\
+			} else if (idx > LONG_MAX) { /* overflow */						\
 				break;														\
 			}																\
 			return func;													\

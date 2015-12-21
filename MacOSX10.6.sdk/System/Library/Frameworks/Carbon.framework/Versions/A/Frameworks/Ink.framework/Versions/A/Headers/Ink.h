@@ -3,7 +3,7 @@
  
      Contains:   Ink Manager
  
-     Version:    InkFramework-107~11
+     Version:    InkFramework-107~12
  
      Copyright:  © 2003-2008 by Apple Computer, Inc., all rights reserved.
  

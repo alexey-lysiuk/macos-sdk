@@ -257,6 +257,7 @@ protected:
 	
 public:
 	
+    virtual bool    init    ( OSDictionary * dictionary = 0 );
 	virtual bool	start	( IOService * provider );
 	virtual void	free	( void );
 	

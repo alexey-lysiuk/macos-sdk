@@ -2,7 +2,7 @@
    +----------------------------------------------------------------------+
    | PHP Version 5                                                        |
    +----------------------------------------------------------------------+
-   | Copyright (c) 1997-2009 The PHP Group                                |
+   | Copyright (c) 1997-2010 The PHP Group                                |
    +----------------------------------------------------------------------+
    | This source file is subject to version 3.01 of the PHP license,      |
    | that is bundled with this package in the file LICENSE, and is        |
@@ -16,7 +16,7 @@
    +----------------------------------------------------------------------+
  */
 
-/* $Id: spl_dllist.h 272370 2008-12-31 11:15:49Z sebastian $ */
+/* $Id: spl_dllist.h 293730 2010-01-19 13:24:02Z johannes $ */
 
 #ifndef SPL_DLLIST_H
 #define SPL_DLLIST_H
@@ -24,9 +24,9 @@
 #include "php.h"
 #include "php_spl.h"
 
-PHPAPI zend_class_entry *spl_ce_SplDoublyLinkedList;
-PHPAPI zend_class_entry *spl_ce_SplQueue;
-PHPAPI zend_class_entry *spl_ce_SplStack;
+extern PHPAPI zend_class_entry *spl_ce_SplDoublyLinkedList;
+extern PHPAPI zend_class_entry *spl_ce_SplQueue;
+extern PHPAPI zend_class_entry *spl_ce_SplStack;
 
 PHP_MINIT_FUNCTION(spl_dllist);
 

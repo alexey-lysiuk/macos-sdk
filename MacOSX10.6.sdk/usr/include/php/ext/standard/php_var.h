@@ -2,7 +2,7 @@
    +----------------------------------------------------------------------+
    | PHP Version 5                                                        |
    +----------------------------------------------------------------------+
-   | Copyright (c) 1997-2009 The PHP Group                                |
+   | Copyright (c) 1997-2010 The PHP Group                                |
    +----------------------------------------------------------------------+
    | This source file is subject to version 3.01 of the PHP license,      |
    | that is bundled with this package in the file LICENSE, and is        |
@@ -16,7 +16,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: php_var.h 272370 2008-12-31 11:15:49Z sebastian $ */
+/* $Id: php_var.h 301144 2010-07-09 21:19:27Z scottmac $ */
 
 #ifndef PHP_VAR_H
 #define PHP_VAR_H
@@ -33,6 +33,8 @@ PHP_FUNCTION(memory_get_peak_usage);
 
 PHPAPI void php_var_dump(zval **struc, int level TSRMLS_DC);
 PHPAPI void php_var_export(zval **struc, int level TSRMLS_DC);
+PHPAPI void php_var_export_ex(zval **struc, int level, smart_str *buf TSRMLS_DC);
+
 PHPAPI void php_debug_zval_dump(zval **struc, int level TSRMLS_DC);
 
 /* typdef HashTable php_serialize_data_t; */
@@ -60,6 +62,7 @@ PHPAPI int php_var_unserialize(zval **rval, const unsigned char **p, const unsig
 	var_destroy(&(var_hash))
 
 PHPAPI void var_replace(php_unserialize_data_t *var_hash, zval *ozval, zval **nzval);
+PHPAPI void var_push_dtor(php_unserialize_data_t *var_hash, zval **val);
 PHPAPI void var_destroy(php_unserialize_data_t *var_hash);
 
 #define PHP_VAR_UNSERIALIZE_ZVAL_CHANGED(var_hash, ozval, nzval) \

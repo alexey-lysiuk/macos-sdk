@@ -1,7 +1,7 @@
 /*
 	File:		Bluetooth.h
 	Contains:	Public interfaces for Bluetooth technology.
-	Copyright:	(c) 2002-2007 by Apple Inc. All rights reserved.
+	Copyright:	(c) 2010 by Apple, Inc. All rights reserved.
 */
 
 #pragma once
@@ -661,6 +661,8 @@ enum
 		kBluetoothHCICommandUserPasskeyRequestNegativeReply				= 0x002F,
 		kBluetoothHCICommandRemoteOOBDataRequestReply					= 0x0030,
 		kBluetoothHCICommandRemoteOOBDataRequestNegativeReply			= 0x0033,
+		kBluetoothHCICommandIOCapabilityRequestNegativeReply			= 0x0034,
+		
 
 	// Command Group: Link Policy
 	
@@ -709,8 +711,8 @@ enum
 		kBluetoothHCICommandWriteInquiryScanActivity					= 0x001E, 
 		kBluetoothHCICommandReadAuthenticationEnable					= 0x001F, 
 		kBluetoothHCICommandWriteAuthenticationEnable					= 0x0020, 
-		kBluetoothHCICommandReadEncryptionMode							= 0x0021, 
-		kBluetoothHCICommandWriteEncryptionMode							= 0x0022, 
+		kBluetoothHCICommandReadEncryptionMode							= 0x0021,	// DEPRECATED
+		kBluetoothHCICommandWriteEncryptionMode							= 0x0022,	// DEPRECATED
 		kBluetoothHCICommandReadClassOfDevice							= 0x0023,
 		kBluetoothHCICommandWriteClassOfDevice							= 0x0024, 
 		kBluetoothHCICommandReadVoiceSetting							= 0x0025,
@@ -732,10 +734,10 @@ enum
 		kBluetoothHCICommandReadNumberOfSupportedIAC					= 0x0038, 
 		kBluetoothHCICommandReadCurrentIACLAP							= 0x0039, 
 		kBluetoothHCICommandWriteCurrentIACLAP							= 0x003A, 
-		kBluetoothHCICommandReadPageScanPeriodMode						= 0x003B, 
-		kBluetoothHCICommandWritePageScanPeriodMode						= 0x003C, 
-		kBluetoothHCICommandReadPageScanMode							= 0x003D, 
-		kBluetoothHCICommandWritePageScanMode							= 0x003E, 
+		kBluetoothHCICommandReadPageScanPeriodMode						= 0x003B,	// DEPRECATED 
+		kBluetoothHCICommandWritePageScanPeriodMode						= 0x003C,	// DEPRECATED 
+		kBluetoothHCICommandReadPageScanMode							= 0x003D,	// DEPRECATED 
+		kBluetoothHCICommandWritePageScanMode							= 0x003E,	// DEPRECATED 
 		kBluetoothHCICommandSetAFHClassification						= 0x003F, 		
 		kBluetoothHCICommandReadInquiryScanType							= 0x0042, 		
 		kBluetoothHCICommandWriteInquiryScanType						= 0x0043, 		
@@ -746,7 +748,8 @@ enum
 		kBluetoothHCICommandReadAFHChannelAssessmentMode				= 0x0048,
 		kBluetoothHCICommandWriteAFHChannelAssessmentMode				= 0x0049,
 		kBluetoothHCICommandReadExtendedInquiryResponse					= 0x0051, 		
-		kBluetoothHCICommandWriteExtendedInquiryResponse				= 0x0052, 		
+		kBluetoothHCICommandWriteExtendedInquiryResponse				= 0x0052,
+		kBluetoothHCICommandRefreshEncryptionKey						= 0x0053,
 		kBluetoothHCICommandReadSimplePairingMode						= 0x0055,
 		kBluetoothHCICommandWriteSimplePairingMode						= 0x0056,
 		kBluetoothHCICommandReadLocalOOBData							= 0x0057,
@@ -768,7 +771,7 @@ enum
 		kBluetoothHCICommandReadLocalSupportedFeatures					= 0x0003, 
 		kBluetoothHCICommandReadLocalExtendedFeatures					= 0x0004,
 		kBluetoothHCICommandReadBufferSize								= 0x0005, 
-		kBluetoothHCICommandReadCountryCode								= 0x0007, 
+		kBluetoothHCICommandReadCountryCode								= 0x0007,	// DEPRECATED 
 		kBluetoothHCICommandReadDeviceAddress							= 0x0009, 
 	
 	// Command Group: Status
@@ -780,6 +783,10 @@ enum
 		kBluetoothHCICommandReadRSSI									= 0x0005, 
 		kBluetoothHCICommandReadAFHMappings								= 0x0006,
 		kBluetoothHCICommandReadClock									= 0x0007,
+		kBluetoothHCICommandReadEncryptionKeySize						= 0x0008,
+		kBluetoothHCICommandReadLocalAMPInfo							= 0x0009,
+		kBluetoothHCICommandReadLocalAMPASSOC							= 0x000A,
+		kBluetoothHCICommandWriteRemoteAMPASSOC							= 0x000B,
 
 	// Command Group: Testing
 	
@@ -1011,6 +1018,28 @@ struct BluetoothHCIQualityOfServiceSetupParams
 	UInt32		peakBandwidth;
 	UInt32		latency;
 	UInt32		delayVariation;
+};
+
+typedef struct BluetoothHCISetupSynchronousConnectionParams	BluetoothHCISetupSynchronousConnectionParams;
+struct BluetoothHCISetupSynchronousConnectionParams
+{
+	uint32_t		transmitBandwidth;
+	uint32_t		receiveBandwidth;
+	uint16_t		maxLatency;
+	uint16_t		voiceSetting;
+	uint8_t		retransmissionEffort;
+	uint16_t		packetType;
+};
+
+typedef struct BluetoothHCIAcceptSynchronousConnectionRequestParams	BluetoothHCIAcceptSynchronousConnectionRequestParams;
+struct BluetoothHCIAcceptSynchronousConnectionRequestParams
+{
+	uint32_t		transmitBandwidth;
+	uint32_t		receiveBandwidth;
+	uint16_t		maxLatency;
+	uint16_t		contentFormat;
+	uint8_t		retransmissionEffort;
+	uint16_t		packetType;
 };
 
 typedef UInt8										BluetoothHCILoopbackMode;
@@ -1423,6 +1452,12 @@ struct BluetoothKeypressNotification
 		
 typedef SInt8	TransmissionPower;
 
+typedef struct BluetoothAFHHostChannelClassification	BluetoothAFHHostChannelClassification;
+struct BluetoothAFHHostChannelClassification
+{
+	uint8_t		data[ 10 ];			/* 79 bits meaningful */
+};
+
 typedef UInt8	BluetoothAFHMode;
 typedef struct	BluetoothAFHResults					BluetoothAFHResults;
 struct BluetoothAFHResults
@@ -1532,6 +1567,15 @@ struct			BluetoothHCIEventSynchronousConnectionCompleteResults
 	BluetoothAirMode					airMode;
 };
 
+typedef struct	BluetoothHCIEventSynchronousConnectionChangedResults 	BluetoothHCIEventSynchronousConnectionChangedResults;
+struct			BluetoothHCIEventSynchronousConnectionChangedResults
+{
+	BluetoothConnectionHandle			connectionHandle;
+	uint8_t								transmissionInterval;
+	uint8_t								retransmissionWindow;
+	uint16_t							receivePacketLength;
+	uint16_t							transmitPacketLength;
+};
 
 typedef UInt8	BluetoothHCIStatus;
 typedef UInt8	BluetoothHCIEventStatus;
@@ -1570,7 +1614,7 @@ enum
 	kBluetoothHCIEventReadClockOffsetComplete							= 0x1C,
 	kBluetoothHCIEventConnectionPacketType								= 0x1D,
 	kBluetoothHCIEventQoSViolation										= 0x1E,
-	kBluetoothHCIEventPageScanModeChange								= 0x1F,
+	kBluetoothHCIEventPageScanModeChange								= 0x1F,	// DEPRECATED
 	kBluetoothHCIEventPageScanRepetitionModeChange						= 0x20,
 	
 	// [v1.2]
@@ -1583,8 +1627,9 @@ enum
 
 	// [v2.1]
 
-	kBluetoothHCIEventSniffSubstrate									= 0x2E,
+	kBluetoothHCIEventSniffSubrating									= 0x2E,
 	kBluetoothHCIEventExtendedInquiryResult								= 0x2F,
+	kBluetoothHCIEventEncryptionKeyRefreshComplete						= 0x30,
 	kBluetoothHCIEventIOCapabilityRequest								= 0x31,
 	kBluetoothHCIEventIOCapabilityResponse								= 0x32,
 	kBluetoothHCIEventUserConfirmationRequest							= 0x33,
@@ -1596,6 +1641,7 @@ enum
 	kBluetoothHCIEventSniffRequest										= 0x3A,
 	kBluetoothHCIEventUserPasskeyNotification							= 0x3B,
 	kBluetoothHCIEventKeypressNotification								= 0x3C,
+	kBluetoothHCIEventRemoteHostSupportedFeaturesNotification			= 0x3D,
 	
 	kBluetoothHCIEventLogoTesting										= 0xFE,
 	kBluetoothHCIEventVendorSpecific									= 0xFF
@@ -1852,6 +1898,20 @@ struct			BluetoothHCIEventReadRemoteSupportedFeaturesResults
 };
 
 #if BLUETOOTH_VERSION_MAX_ALLOWED >= BLUETOOTH_VERSION_2_1_1
+typedef struct	BluetoothHCIEventFlowSpecificationCompleteResults 	BluetoothHCIEventFlowSpecificationCompleteResults;
+struct			BluetoothHCIEventFlowSpecificationCompleteResults
+{
+	BluetoothHCIStatus							error;
+	BluetoothConnectionHandle					connectionHandle;
+	uint8_t										flags;
+	uint8_t										flowDirection;
+	uint8_t										serviceType;
+	uint32_t									tokenRate;
+	uint32_t									tokenBucketSize;
+	uint32_t									peakBandwidth;
+	uint32_t									accessLatency;
+};
+
 typedef struct	BluetoothHCIEventReadRemoteExtendedFeaturesResults 	BluetoothHCIEventReadRemoteExtendedFeaturesResults;
 struct			BluetoothHCIEventReadRemoteExtendedFeaturesResults
 {

@@ -3,7 +3,7 @@
  
      Contains:   Master include for CarbonSound private framework
  
-     Version:    CarbonSound-109.2~528
+     Version:    CarbonSound-109.2~530
  
      Copyright:  © 1999-2008 by Apple Computer, Inc., all rights reserved.
  

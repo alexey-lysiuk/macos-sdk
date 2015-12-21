@@ -213,7 +213,7 @@ typedef uint32_t  FT_UFast;
     register FT_Int32  t, t2;
 
 
-    asm __volatile__ (
+    __asm__ __volatile__ (
       "smull  %1, %2, %4, %3\n\t"       /* (lo=%1,hi=%2) = a*b */
       "mov    %0, %2, asr #31\n\t"      /* %0  = (hi >> 31) */
       "add    %0, %0, #0x8000\n\t"      /* %0 += 0x8000 */
@@ -228,7 +228,7 @@ typedef uint32_t  FT_UFast;
 
 #endif /* __arm__ && !__thumb__ */
 
-#if defined( i386 )
+#if defined( __i386__ )
 #define FT_MULFIX_ASSEMBLER  FT_MulFix_i386
 
   static __inline__ FT_Int32

@@ -2,7 +2,7 @@
    +----------------------------------------------------------------------+
    | PHP Version 5                                                        |
    +----------------------------------------------------------------------+
-   | Copyright (c) 1997-2009 The PHP Group                                |
+   | Copyright (c) 1997-2010 The PHP Group                                |
    +----------------------------------------------------------------------+
    | This source file is subject to version 3.01 of the PHP license,      |
    | that is bundled with this package in the file LICENSE, and is        |
@@ -16,7 +16,7 @@
    +----------------------------------------------------------------------+
  */
 
-/* $Id: timelib.h 272370 2008-12-31 11:15:49Z sebastian $ */
+/* $Id: timelib.h 302887 2010-08-30 15:32:09Z derick $ */
 
 #ifndef __TIMELIB_H__
 #define __TIMELIB_H__
@@ -109,6 +109,7 @@ timelib_rel_time* timelib_rel_time_clone(timelib_rel_time *tz);
 timelib_time* timelib_time_ctor(void);
 void timelib_time_set_option(timelib_time* tm, int option, void* option_value);
 void timelib_time_dtor(timelib_time* t);
+timelib_time* timelib_time_clone(timelib_time* orig);
 
 timelib_time_offset* timelib_time_offset_ctor(void);
 void timelib_time_offset_dtor(timelib_time_offset* t);

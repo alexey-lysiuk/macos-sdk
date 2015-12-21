@@ -2,7 +2,7 @@
    +----------------------------------------------------------------------+
    | PHP Version 5                                                        |
    +----------------------------------------------------------------------+
-   | Copyright (c) 1997-2009 The PHP Group                                |
+   | Copyright (c) 1997-2010 The PHP Group                                |
    +----------------------------------------------------------------------+
    | This source file is subject to version 3.01 of the PHP license,      |
    | that is bundled with this package in the file LICENSE, and is        |
@@ -14,10 +14,11 @@
    +----------------------------------------------------------------------+
    | Authors: Andi Gutmans <andi@zend.com>                                |
    |          Sascha Schumann <sascha@schumann.cx>                        |
+   |          Pierre Joye <pierre@php.net>                                |
    +----------------------------------------------------------------------+
 */
 
-/* $Id: tsrm_virtual_cwd.h 287673 2009-08-25 09:16:53Z pajoye $ */
+/* $Id: tsrm_virtual_cwd.h 305070 2010-11-04 01:16:20Z pajoye $ */
 
 #ifndef VIRTUAL_CWD_H
 #define VIRTUAL_CWD_H
@@ -107,7 +108,7 @@ typedef unsigned short mode_t;
 #define COPY_WHEN_ABSOLUTE(path) 0
 #endif
 
-#ifndef IS_ABSOLUTE_PATH	
+#ifndef IS_ABSOLUTE_PATH
 #define IS_ABSOLUTE_PATH(path, len) \
 	(IS_SLASH(path[0]))
 #endif
@@ -129,9 +130,16 @@ typedef unsigned short mode_t;
 #endif
 
 #ifdef TSRM_WIN32
+CWD_API int php_sys_stat_ex(const char *path, struct stat *buf, int lstat);
 CWD_API int php_sys_stat(const char *path, struct stat *buf);
+CWD_API int php_sys_lstat(const char *path, struct stat *buf);
+CWD_API int php_sys_readlink(const char *link, char *target, size_t target_len);
 #else
 # define php_sys_stat stat
+# define php_sys_lstat lstat
+# ifdef HAVE_SYMLINK
+# define php_sys_readlink(link, target, target_len) readlink(link, target, target_len)
+# endif
 #endif
 
 typedef struct _cwd_state {
@@ -155,9 +163,7 @@ CWD_API int virtual_open(const char *path TSRMLS_DC, int flags, ...);
 CWD_API int virtual_creat(const char *path, mode_t mode TSRMLS_DC);
 CWD_API int virtual_rename(char *oldname, char *newname TSRMLS_DC);
 CWD_API int virtual_stat(const char *path, struct stat *buf TSRMLS_DC);
-#if !defined(TSRM_WIN32)
 CWD_API int virtual_lstat(const char *path, struct stat *buf TSRMLS_DC);
-#endif
 CWD_API int virtual_unlink(const char *path TSRMLS_DC);
 CWD_API int virtual_mkdir(const char *pathname, mode_t mode TSRMLS_DC);
 CWD_API int virtual_rmdir(const char *pathname TSRMLS_DC);
@@ -188,7 +194,7 @@ CWD_API int virtual_chmod(const char *filename, mode_t mode TSRMLS_DC);
 CWD_API int virtual_chown(const char *filename, uid_t owner, gid_t group, int link TSRMLS_DC);
 #endif
 
-/* One of the following constants must be used as the last argument 
+/* One of the following constants must be used as the last argument
    in virtual_file_ex() call. */
 
 #define CWD_EXPAND   0 /* expand "." and ".." but dont resolve symlinks      */
@@ -216,7 +222,7 @@ typedef struct _realpath_cache_bucket {
 	unsigned char                  is_wvalid;
 	unsigned char                  is_writable;
 #endif
-	struct _realpath_cache_bucket *next;	
+	struct _realpath_cache_bucket *next;
 } realpath_cache_bucket;
 
 typedef struct _virtual_cwd_globals {
@@ -238,10 +244,13 @@ extern virtual_cwd_globals cwd_globals;
 CWD_API void realpath_cache_clean(TSRMLS_D);
 CWD_API void realpath_cache_del(const char *path, int path_len TSRMLS_DC);
 CWD_API realpath_cache_bucket* realpath_cache_lookup(const char *path, int path_len, time_t t TSRMLS_DC);
+CWD_API int realpath_cache_size(TSRMLS_D);
+CWD_API int realpath_cache_max_buckets(TSRMLS_D);
+CWD_API realpath_cache_bucket** realpath_cache_get_buckets(TSRMLS_D);
 
 /* The actual macros to be used in programs using TSRM
  * If the program defines VIRTUAL_DIR it will use the
- * virtual_* functions 
+ * virtual_* functions
  */
 
 #ifdef VIRTUAL_DIR
@@ -258,9 +267,7 @@ CWD_API realpath_cache_bucket* realpath_cache_lookup(const char *path, int path_
 #define VCWD_REALPATH(path, real_path) virtual_realpath(path, real_path TSRMLS_CC)
 #define VCWD_RENAME(oldname, newname) virtual_rename(oldname, newname TSRMLS_CC)
 #define VCWD_STAT(path, buff) virtual_stat(path, buff TSRMLS_CC)
-#if !defined(TSRM_WIN32)
-# define VCWD_LSTAT(path, buff) virtual_lstat(path, buff TSRMLS_CC)
-#endif
+#define VCWD_LSTAT(path, buff) virtual_lstat(path, buff TSRMLS_CC)
 #define VCWD_UNLINK(path) virtual_unlink(path TSRMLS_CC)
 #define VCWD_MKDIR(pathname, mode) virtual_mkdir(pathname, mode TSRMLS_CC)
 #define VCWD_RMDIR(pathname) virtual_rmdir(pathname TSRMLS_CC)

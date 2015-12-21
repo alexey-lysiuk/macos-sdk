@@ -3,7 +3,7 @@
  
      Contains:   API to draw Quickdraw PICTs into CoreGraphics context
  
-     Version:    Quickdraw-264.2~10
+     Version:    Quickdraw-264.3~1
  
      Copyright:  © 2001-2008 by Apple Computer, Inc., all rights reserved.
  

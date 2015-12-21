@@ -26,6 +26,10 @@ Numpy Ufunc C-API
                           *kwds, PyArrayObject **mps)
 
 
+This generic function is called with the ufunc object, the arguments to it,
+and an array of (pointers to) PyArrayObjects which are NULL.  The
+arguments are parsed and placed in mps in construct_loop (construct_arrays)
+
 ::
 
   void
@@ -198,5 +202,22 @@ Numpy Ufunc C-API
                                  newfunc, int
                                  *signature, PyUFuncGenericFunction
                                  *oldfunc)
+
+
+::
+
+  PyObject *
+  PyUFunc_FromFuncAndDataAndSignature(PyUFuncGenericFunction *func, void
+                                      **data, char *types, int
+                                      ntypes, int nin, int nout, int
+                                      identity, char *name, char
+                                      *doc, int check_return, const char
+                                      *signature)
+
+
+::
+
+  int
+  PyUFunc_SetUsesArraysAsData(void **data, size_t i)
 
 

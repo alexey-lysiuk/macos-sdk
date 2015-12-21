@@ -93,6 +93,8 @@ class IOSCSIPrimaryCommandsDevice : public IOSCSIProtocolInterface
 	
 	OSDeclareAbstractStructors ( IOSCSIPrimaryCommandsDevice )
 	
+	friend class SCSITaskUserClient;
+	
 private:
 	
 #ifndef __LP64__

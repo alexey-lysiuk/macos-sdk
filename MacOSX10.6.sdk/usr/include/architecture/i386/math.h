@@ -111,7 +111,7 @@ extern unsigned int __math_errhandling ( void );
 *                                                                               *
 *                              Inquiry macros                                   *
 *                                                                               *
-*   fpclassify      Returns one of the FP_â‰ˆ values.                             *
+*   fpclassify      Returns one of the FP_Å values.                             *
 *   isnormal        Non-zero if and only if the argument x is normalized.       *
 *   isfinite        Non-zero if and only if the argument x is finite.           *
 *   isnan           Non-zero if and only if the argument x is a NaN.            *

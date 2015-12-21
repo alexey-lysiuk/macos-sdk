@@ -3,7 +3,7 @@
 
      Contains:   API for translating between audio data formats.
 
-     Copyright:  (c) 1985-2008 by Apple Inc., all rights reserved.
+     Copyright:  (c) 1985-2008 by Apple, Inc., all rights reserved.
 
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -199,11 +199,12 @@ typedef UInt32							AudioConverterPropertyID;
 	@constant	kAudioConverterPropertySettings
 					Returns the a CFArray of property settings for converters.
 	@constant	kAudioConverterPropertyBitDepthHint
-					A UInt32 of the source bit depth to preserve. This is a hint to some
+					An SInt32 of the source bit depth to preserve. This is a hint to some
 					encoders like lossless about how many bits to preserve in the input. The
 					converter usually tries to preserve as many as possible, but a lossless
 					encoder will do poorly if more bits are supplied than are desired in the
-					output.
+					output. The bit depth is expressed as a negative number if the source was floating point,
+					e.g. -32 for float, -64 for double.
 	@constant	kAudioConverterPropertyFormatList
 					An array of AudioFormatListItem structs describing all the data formats produced by the
 					encoder end of the AudioConverter. If the ioPropertyDataSize parameter indicates that
@@ -699,7 +700,7 @@ AudioConverterConvertBuffer(	AudioConverterRef				inAudioConverter,
 				This callback function supplies input to AudioConverterFillComplexBuffer.
 				
 				The AudioConverter requests a minimum number of packets (*ioNumberDataPackets).
-				The callback may return one or more packets. If this is less than than the minimum,
+				The callback may return one or more packets. If this is less than the minimum,
 				the callback will simply be called again in the near future.
 
 				The callback manipulates the members of ioData to point to one or more buffers

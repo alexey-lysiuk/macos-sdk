@@ -3,7 +3,7 @@
 
      Contains:   API for manipulating Audio Files.
 
-     Copyright:  (c) 1985 - 2008 by Apple Inc., all rights reserved.
+     Copyright:  (c) 1985 - 2008 by Apple, Inc., all rights reserved.
 
      Bugs?:      For bug reports, consult the following page on
                  the World Wide Web:
@@ -465,6 +465,7 @@ typedef struct AudioFilePacketTableInfo AudioFilePacketTableInfo;
 #define kAFInfoDictionary_NominalBitRate                "nominal bit rate"
 #define kAFInfoDictionary_ChannelLayout					"channel layout"
 #define kAFInfoDictionary_ApproximateDurationInSeconds  "approximate duration in seconds"
+#define kAFInfoDictionary_SourceBitDepth				"source bit depth"
 
 //=============================================================================
 //	Routines
@@ -935,7 +936,7 @@ AudioFileRemoveUserData ( AudioFileID			inAudioFile,
     @constant   kAudioFilePropertyChunkIDs 
 					returns an array of OSType four char codes for each kind of chunk in the file.
     @constant   kAudioFilePropertyInfoDictionary 
-					returns a CFDictionary filled with information about the data contined in the file. 
+					returns a CFDictionary filled with information about the data contained in the file. 
 					See dictionary key constants already defined for info string types. 
 					AudioFileComponents are free to add keys to the dictionaries that they return for this property...
 					caller is responsible for releasing the CFObject
@@ -961,6 +962,9 @@ AudioFileRemoveUserData ( AudioFileID			inAudioFile,
 					A void * pointing to memory set up by the caller to contain a fully formatted ID3 tag (get/set v2.2, v2.3, or v2.4, v1 get only).
 					The ID3 tag is not manipulated in anyway either for read or write. 
 					When setting, this property must be called before calling AudioFileWritePackets.
+	@constant	kAudioFilePropertySourceBitDepth
+					For encoded data this property returns the bit depth of the source as an SInt32, if known.
+					The bit depth is expressed as a negative number if the source was floating point, e.g. -32 for float, -64 for double.
 */
 enum
 {
@@ -989,7 +993,8 @@ enum
 	kAudioFilePropertyReserveDuration		=	'rsrv',
 	kAudioFilePropertyEstimatedDuration		=	'edur',
 	kAudioFilePropertyBitRate				=	'brat',
-	kAudioFilePropertyID3Tag				=	'id3t'
+	kAudioFilePropertyID3Tag				=	'id3t',
+	kAudioFilePropertySourceBitDepth		=	'sbtd'
 };
 
 

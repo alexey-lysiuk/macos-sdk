@@ -2,7 +2,7 @@
    +----------------------------------------------------------------------+
    | PHP Version 5                                                        |
    +----------------------------------------------------------------------+
-   | Copyright (c) 1997-2009 The PHP Group                                |
+   | Copyright (c) 1997-2010 The PHP Group                                |
    +----------------------------------------------------------------------+
    | This source file is subject to version 3.01 of the PHP license,      |
    | that is bundled with this package in the file LICENSE, and is        |
@@ -17,26 +17,27 @@
    +----------------------------------------------------------------------+
  */
 
-/* $Revision: 272370 $ */
+/* $Revision: 295968 $ */
 
 #ifndef PHP_ICONV_H
 #define PHP_ICONV_H
 
 #ifdef PHP_WIN32
-#	ifdef PHP_ICONV_EXPORTS
-#		define PHP_ICONV_API __declspec(dllexport)
-#	else
-#		define PHP_ICONV_API __declspec(dllimport)
-#	endif 
+# ifdef PHP_ICONV_EXPORTS
+#  define PHP_ICONV_API __declspec(dllexport)
+# else
+#  define PHP_ICONV_API __declspec(dllimport)
+# endif 
 #elif defined(__GNUC__) && __GNUC__ >= 4
-#	define PHP_ICONV_API __attribute__ ((visibility("default")))
+# define PHP_ICONV_API __attribute__ ((visibility("default")))
 #else
-#	define PHP_ICONV_API
+# define PHP_ICONV_API
 #endif
 
 #ifdef PHP_ATOM_INC
 #include "ext/iconv/php_have_iconv.h"
 #include "ext/iconv/php_have_libiconv.h"
+#include "ext/iconv/php_iconv_aliased_libiconv.h"
 #include "ext/iconv/php_have_glibc_iconv.h"
 #include "ext/iconv/php_have_bsd_iconv.h"
 #include "ext/iconv/php_have_ibm_iconv.h"
@@ -44,7 +45,6 @@
 #include "ext/iconv/php_php_iconv_impl.h"
 #include "ext/iconv/php_php_iconv_h_path.h"
 #endif
-
 
 #ifdef HAVE_ICONV
 extern zend_module_entry iconv_module_entry;
@@ -73,9 +73,9 @@ ZEND_BEGIN_MODULE_GLOBALS(iconv)
 ZEND_END_MODULE_GLOBALS(iconv)
 
 #ifdef ZTS
-#define ICONVG(v) TSRMG(iconv_globals_id, zend_iconv_globals *, v)
+# define ICONVG(v) TSRMG(iconv_globals_id, zend_iconv_globals *, v)
 #else
-#define ICONVG(v) (iconv_globals.v)
+# define ICONVG(v) (iconv_globals.v)
 #endif
 
 #ifdef HAVE_IBM_ICONV
@@ -121,7 +121,6 @@ PHP_ICONV_API php_iconv_err_t php_iconv_string(const char * in_p, size_t in_len,
 #define phpext_iconv_ptr iconv_module_ptr
 
 #endif	/* PHP_ICONV_H */
-
 
 /*
  * Local variables:

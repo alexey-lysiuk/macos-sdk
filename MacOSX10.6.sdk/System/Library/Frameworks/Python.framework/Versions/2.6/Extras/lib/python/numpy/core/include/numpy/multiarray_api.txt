@@ -4,6 +4,14 @@ Numpy C-API
 ===========
 ::
 
+  unsigned int
+  PyArray_GetNDArrayCVersion(void )
+
+
+Included at the very first so not auto-grabbed and thus not labeled.
+
+::
+
   int
   PyArray_SetNumericOps(PyObject *dict)
 
@@ -52,6 +60,8 @@ Get the PyArray_Descr structure for a type.
 
 Get a typeobject from a type-number -- can return NULL.
 
+New reference
+
 ::
 
   char *
@@ -71,7 +81,10 @@ Get pointer to one of correct type for array
   PyObject *
   PyArray_CastToType(PyArrayObject *mp, PyArray_Descr *at, int fortran)
 
+For backward compatibility
+
 Cast an array using typecode structure.
+steals reference to at --- cannot be NULL
 
 ::
 
@@ -100,20 +113,21 @@ Check the type coercion rules.
   npy_bool
   PyArray_CanCastTo(PyArray_Descr *from, PyArray_Descr *to)
 
+leaves reference count alone --- cannot be NULL
 
 ::
 
   int
   PyArray_ObjectType(PyObject *op, int minimum_type)
 
-Return the typecode of the array a Python object would be converted
-to
+Return the typecode of the array a Python object would be converted to
 
 ::
 
   PyArray_Descr *
   PyArray_DescrFromObject(PyObject *op, PyArray_Descr *mintype)
 
+new reference -- accepts NULL for mintype
 
 ::
 
@@ -127,6 +141,8 @@ to
   PyArray_DescrFromScalar(PyObject *sc)
 
 Return descr object from array scalar.
+
+New reference
 
 ::
 
@@ -155,12 +171,23 @@ Get scalar-equivalent to a region of memory described by a descriptor.
 
 Get 0-dim array from scalar
 
+0-dim array from array-scalar object
+always contains a copy of the data
+unless outcode is NULL, it is of void type and the referrer does
+not own it either.
+
+steals reference to outcode
+
 ::
 
   void
   PyArray_ScalarAsCtype(PyObject *scalar, void *ctypeptr)
 
 Convert to c-type
+
+no error checking is performed -- ctypeptr must be same type as scalar
+in case of flexible type, the data is not copied
+into ctypeptr which is expected to be a pointer to pointer
 
 ::
 
@@ -169,6 +196,12 @@ Convert to c-type
                             *ctypeptr, PyArray_Descr *outcode)
 
 Cast Scalar to c-type
+
+The output buffer must be large-enough to receive the value
+Even for flexible types which is different from ScalarAsCtype
+where only a reference for flexible types is returned
+
+This may not work right on narrow builds for NumPy unicode scalars.
 
 ::
 
@@ -184,9 +217,9 @@ Cast Scalar to c-type
   PyArray_ScalarFromObject(PyObject *object)
 
 Get an Array Scalar From a Python Object
-Returns NULL if unsuccessful but error is only
-set if another error occurred. Currently only Numeric-like
-object supported.
+
+Returns NULL if unsuccessful but error is only set if another error occurred.
+Currently only Numeric-like object supported.
 
 ::
 
@@ -220,12 +253,20 @@ as input.
                   min_depth, int max_depth, int flags, PyObject
                   *context)
 
+Does not check for ENSURECOPY and NOTSWAPPED in flags
+Steals a reference to newtype --- which can be NULL
 
 ::
 
   PyObject *
   PyArray_EnsureArray(PyObject *op)
 
+This is a quick wrapper around PyArray_FromAny(op, NULL, 0, 0, ENSUREARRAY)
+that special cases Arrays and PyArray_Scalars up front
+It *steals a reference* to the object
+It also guarantees that the result is PyArray_Type
+Because it decrefs op if any conversion needs to take place
+so it can be used like PyArray_EnsureArray(some_function(...))
 
 ::
 
@@ -295,10 +336,13 @@ for whitespace around the separator is added.
   PyArray_FromIter(PyObject *obj, PyArray_Descr *dtype, intp count)
 
 
+steals a reference to dtype (which cannot be NULL)
+
 ::
 
   PyObject *
   PyArray_Return(PyArrayObject *mp)
+
 
 Return either an array or the appropriate Python object if the array
 is 0d and matches a Python type.
@@ -331,12 +375,10 @@ Set a subset of bytes from each element of the array
   PyArray_Resize(PyArrayObject *self, PyArray_Dims *newshape, int
                  refcheck, NPY_ORDER fortran)
 
-Resize (reallocate data).  Only works if nothing else is referencing
-this array and it is contiguous.
-If refcheck is 0, then the reference count is not checked
-and assumed to be 1.
-You still must own this data and have no weak-references and no base
-object.
+Resize (reallocate data).  Only works if nothing else is referencing this
+array and it is contiguous.  If refcheck is 0, then the reference count is
+not checked and assumed to be 1.  You still must own this data and have no
+weak-references and no base object.
 
 ::
 
@@ -438,11 +480,14 @@ Generic new array creation routine.
 
 Generic new array creation routine.
 
+steals a reference to descr (even on failure)
+
 ::
 
   PyArray_Descr *
   PyArray_DescrNew(PyArray_Descr *base)
 
+base cannot be NULL
 
 ::
 
@@ -494,6 +539,7 @@ Get MultiIterator,
   void
   PyArray_FillObjectArray(PyArrayObject *arr, PyObject *obj)
 
+Assumes contiguous
 
 ::
 
@@ -512,6 +558,20 @@ Get MultiIterator,
 
   PyArray_Descr *
   PyArray_DescrNewByteorder(PyArray_Descr *self, char newendian)
+
+
+returns a copy of the PyArray_Descr structure with the byteorder
+altered:
+no arguments:  The byteorder is swapped (in all subfields as well)
+single argument:  The byteorder is forced to the given state
+(in all subfields as well)
+
+Valid states:  ('big', '>') or ('little' or '<')
+('native', or '=')
+
+If a descr structure with | is encountered it's own
+byte-order is not changed but any fields are:
+
 
 Deep bytorder change of a data-type descriptor
 Leaves reference count of self unchanged --- does not DECREF self ***
@@ -532,6 +592,7 @@ with the axis having the smallest stride.
                        min_depth, int max_depth, int requires, PyObject
                        *context)
 
+steals a reference to descr -- accepts NULL
 
 ::
 
@@ -539,6 +600,7 @@ with the axis having the smallest stride.
   PyArray_FromArray(PyArrayObject *arr, PyArray_Descr *newtype, int
                     flags)
 
+steals reference to newtype --- acc. NULL
 
 ::
 
@@ -564,6 +626,7 @@ with the axis having the smallest stride.
   NPY_SCALARKIND
   PyArray_ScalarKind(int typenum, PyArrayObject **arr)
 
+ScalarKind
 
 ::
 
@@ -577,6 +640,7 @@ with the axis having the smallest stride.
   PyObject *
   PyArray_NewFlagsObject(PyObject *obj)
 
+
 Get New ArrayFlagsObject
 
 ::
@@ -589,7 +653,7 @@ See if array scalars can be cast.
 ::
 
   int
-  PyArray_CompareUCS4(npy_ucs4 *s1, npy_ucs4 *s2, register size_t len)
+  PyArray_CompareUCS4(npy_ucs4 *s1, npy_ucs4 *s2, size_t len)
 
 
 ::
@@ -601,6 +665,8 @@ Adjusts previously broadcasted iterators so that the axis with
 the smallest sum of iterator strides is not iterated over.
 Returns dimension which is smallest in the range [0,multi->nd).
 A -1 is returned if multi->nd == 0.
+
+don't use with PyArray_ITER_GOTO1D because factors are not adjusted
 
 ::
 
@@ -712,7 +778,7 @@ ArgMin
   PyObject *
   PyArray_Reshape(PyArrayObject *self, PyObject *shape)
 
-Reshape an array
+Reshape
 
 ::
 
@@ -728,6 +794,10 @@ New shape for an array
   PyArray_Squeeze(PyArrayObject *self)
 
 
+return a new view of the array object with all of its unit-length
+dimensions squeezed out if needed, otherwise
+return the same array.
+
 ::
 
   PyObject *
@@ -735,6 +805,7 @@ New shape for an array
                *pytype)
 
 View
+steals a reference to type -- accepts NULL
 
 ::
 
@@ -816,6 +887,7 @@ Nonzero
   PyArray_Std(PyArrayObject *self, int axis, int rtype, PyArrayObject
               *out, int variance)
 
+Set variance to 1 to by-pass square-root calculation and return variance
 Std
 
 ::
@@ -885,25 +957,26 @@ Flatten
   PyArray_Ravel(PyArrayObject *a, NPY_ORDER fortran)
 
 Ravel
+Returns a contiguous array
 
 ::
 
   npy_intp
-  PyArray_MultiplyList(register intp *l1, register int n)
+  PyArray_MultiplyList(intp *l1, int n)
 
 Multiply a List
 
 ::
 
   int
-  PyArray_MultiplyIntList(register int *l1, register int n)
+  PyArray_MultiplyIntList(int *l1, int n)
 
 Multiply a List of ints
 
 ::
 
   void *
-  PyArray_GetPtr(PyArrayObject *obj, register intp*ind)
+  PyArray_GetPtr(PyArrayObject *obj, intp*ind)
 
 Produce a pointer into array
 
@@ -920,7 +993,8 @@ Compare Lists
   PyArray_AsCArray(PyObject **op, void *ptr, intp *dims, int
                    nd, PyArray_Descr*typedescr)
 
-Simulat a C-array
+Simulate a C-array
+steals a reference to typedescr -- can be NULL
 
 ::
 
@@ -949,8 +1023,15 @@ Free pointers created if As2D is called
   int
   PyArray_Converter(PyObject *object, PyObject **address)
 
-Useful to pass as converter function for O& processing in
-PyArgs_ParseTuple.
+
+Useful to pass as converter function for O& processing in PyArgs_ParseTuple.
+
+This conversion function can be used with the "O&" argument for
+PyArg_ParseTuple.  It will immediately return an object of array type
+or will convert to a CARRAY any other object.
+
+If you use PyArray_Converter, you must DECREF the array when finished
+as you get a new reference to it.
 
 ::
 
@@ -958,13 +1039,21 @@ PyArgs_ParseTuple.
   PyArray_IntpFromSequence(PyObject *seq, intp *vals, int maxvals)
 
 PyArray_IntpFromSequence
+Returns the number of dimensions or -1 if an error occurred.
+vals must be large enough to hold maxvals
 
 ::
 
   PyObject *
   PyArray_Concatenate(PyObject *op, int axis)
 
+Concatenate
+
 Concatenate an arbitrary Python sequence into an array.
+op is a python object supporting the sequence interface.
+Its elements will be concatenated together to form a single
+multidimensional array. If axis is MAX_DIMS or bigger, then
+each sequence object will be flattened before concatenation
 
 ::
 
@@ -979,6 +1068,7 @@ Numeric.innerproduct(a,v)
   PyArray_MatrixProduct(PyObject *op1, PyObject *op2)
 
 Numeric.matrixproduct(a,v)
+just like inner product but does the swapaxes stuff on the fly
 
 ::
 
@@ -1007,6 +1097,15 @@ Typestr converter
   PyArray_DescrConverter(PyObject *obj, PyArray_Descr **at)
 
 Get typenum from an object -- None goes to PyArray_DEFAULT
+This function takes a Python object representing a type and converts it
+to a the correct PyArray_Descr * structure to describe the type.
+
+Many objects can be used to represent a data-type which in NumPy is
+quite a flexible concept.
+
+This is the central code that converts Python objects to
+Type-descriptor objects that are used throughout numpy.
+new reference in *at
 
 ::
 
@@ -1022,12 +1121,27 @@ Get typenum from an object -- None goes to NULL
 
 Get intp chunk from sequence
 
+This function takes a Python sequence object and allocates and
+fills in an intp array with the converted values.
+
+Remember to free the pointer seq.ptr when done using
+PyDimMem_FREE(seq.ptr)**
+
 ::
 
   int
   PyArray_BufferConverter(PyObject *obj, PyArray_Chunk *buf)
 
 Get buffer chunk from object
+
+this function takes a Python object which exposes the (single-segment)
+buffer interface and returns a pointer to the data segment
+
+You should increment the reference count by one of buf->base
+if you will hang on to a reference
+
+You only get a borrowed reference to the object. Do not free the
+memory...
 
 ::
 
@@ -1063,6 +1177,9 @@ Convert an object to FORTRAN / C / ANY
   PyArray_EquivTypes(PyArray_Descr *typ1, PyArray_Descr *typ2)
 
 
+This function returns true if the two typecodes are
+equivalent (same basic kind and same itemsize).
+
 ::
 
   PyObject *
@@ -1070,12 +1187,18 @@ Convert an object to FORTRAN / C / ANY
 
 Zeros
 
+steal a reference
+accepts NULL type
+
 ::
 
   PyObject *
   PyArray_Empty(int nd, intp *dims, PyArray_Descr *type, int fortran)
 
 Empty
+
+accepts NULL type
+steals referenct to type
 
 ::
 
@@ -1097,7 +1220,10 @@ Arange,
   PyArray_ArangeObj(PyObject *start, PyObject *stop, PyObject
                     *step, PyArray_Descr *dtype)
 
+
 ArangeObj,
+
+this doesn't change the references
 
 ::
 
@@ -1216,13 +1342,22 @@ Get Iterator broadcast to a particular shape
   int
   PyArray_DescrAlignConverter(PyObject *obj, PyArray_Descr **at)
 
+
 Get type-descriptor from an object forcing alignment if possible
 None goes to DEFAULT type.
+
+any object with the .fields attribute and/or .itemsize attribute (if the
+.fields attribute does not give the total size -- i.e. a partial record
+naming).  If itemsize is given it must be >= size computed from fields
+
+The .fields attribute must return a convertible dictionary if present.
+Result inherits from PyArray_VOID.
 
 ::
 
   int
   PyArray_DescrAlignConverter2(PyObject *obj, PyArray_Descr **at)
+
 
 Get type-descriptor from an object forcing alignment if possible
 None goes to NULL.
@@ -1241,10 +1376,13 @@ Convert object to searchsorted side
 
 PyArray_CheckAxis
 
+check that axis is valid
+convert 0-d arrays to 1-d arrays
+
 ::
 
   npy_intp
-  PyArray_OverflowMultiplyList(register intp *l1, register int n)
+  PyArray_OverflowMultiplyList(intp *l1, int n)
 
 Multiply a List of Non-negative numbers with over-flow detection.
 
@@ -1253,4 +1391,48 @@ Multiply a List of Non-negative numbers with over-flow detection.
   int
   PyArray_CompareString(char *s1, char *s2, size_t len)
 
+
+::
+
+  PyObject *
+  PyArray_MultiIterFromObjects(PyObject **mps, int n, int nadd, ... )
+
+Get MultiIterator from array of Python objects and any additional
+
+PyObject **mps -- array of PyObjects
+int n - number of PyObjects in the array
+int nadd - number of additional arrays to include in the iterator.
+
+Returns a multi-iterator object.
+
+::
+
+  int
+  PyArray_GetEndianness(void )
+
+
+::
+
+  unsigned int
+  PyArray_GetNDArrayCFeatureVersion(void )
+
+Returns the built-in (at compilation time) C API version
+
+::
+
+  PyObject *
+  PyArray_Correlate2(PyObject *op1, PyObject *op2, int mode)
+
+correlate(a1,a2,mode)
+
+This function computes the usual correlation (correlate(a1, a2) !=
+correlate(a2, a1), and conjugate the second argument for complex inputs
+
+::
+
+  PyObject*
+  PyArray_NeighborhoodIterNew(PyArrayIterObject *x, intp *bounds, int
+                              mode, PyArrayObject*fill)
+
+A Neighborhood Iterator object.
 

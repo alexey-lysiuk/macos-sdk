@@ -2,7 +2,7 @@
   +----------------------------------------------------------------------+
   | PHP Version 5                                                        |
   +----------------------------------------------------------------------+
-  | Copyright (c) 1997-2009 The PHP Group                                |
+  | Copyright (c) 1997-2010 The PHP Group                                |
   +----------------------------------------------------------------------+
   | This source file is subject to version 3.01 of the PHP license,      |
   | that is bundled with this package in the file LICENSE, and is        |
@@ -17,12 +17,12 @@
   +----------------------------------------------------------------------+
 */
 
-/* $Id: spl_fixedarray.h 272370 2008-12-31 11:15:49Z sebastian $ */
+/* $Id: spl_fixedarray.h 293721 2010-01-19 10:44:36Z johannes $ */
 
 #ifndef SPL_FIXEDARRAY_H
 #define SPL_FIXEDARRAY_H
 
-PHPAPI zend_class_entry *spl_ce_SplFixedArray;
+extern PHPAPI zend_class_entry *spl_ce_SplFixedArray;
 
 PHP_MINIT_FUNCTION(spl_fixedarray);
 

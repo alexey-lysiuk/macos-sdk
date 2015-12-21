@@ -3,6 +3,11 @@
    Copyright (c) 2004 Apple Computer, Inc.
    All rights reserved. */
 
-#import <QuartzCore/CoreImage.h>
-#import <QuartzCore/CoreVideo.h>
-#import <QuartzCore/CoreAnimation.h>
+#ifndef QUARTZCORE_H
+#define QUARTZCORE_H
+
+#include <QuartzCore/CoreImage.h>
+#include <QuartzCore/CoreVideo.h>
+#include <QuartzCore/CoreAnimation.h>
+
+#endif /* QUARTZCORE_H */

@@ -25,6 +25,9 @@
 /*
  *
  *	$Log: IOUSBHubPolicyMaker.h,v $
+ *	Revision 1.10.686.1  2011/04/05 14:51:08  nano
+ *	Fixes from 424.4.0 QL for 9190658 9190542 9195789 9121386 8979458 9121378
+ *
  *	Revision 1.10  2009/05/07 19:43:09  nano
  *	Move our SnowLeopard branch to TOT
  *
@@ -151,8 +154,8 @@ protected:
 	bool								_dontAllowSleepPower;		// If true, we will not allow extra sleep power for a self powered hub.
 	SInt32								_powerStateChangingTo;		// a power state if we are changing to one, or -1 if we are stable
 	unsigned long						_myPowerState;				// my current state (since getPowerState doesn't always change in time)
-	UInt32								_extraPower;				// how much extra power we might be able to get from our parent hub
-	UInt32								_extraPowerRemaining;		// how many milliamps we can still give to any one port
+	UInt32								_extraPower;				// DEPRECATED
+	UInt32								_extraPowerRemaining;		// DEPRECATED
 	UInt32								_hubResumeRecoveryTime;		// # of ms that we will wait before issuing any transactions on our port (nominally 10ms)
     struct ExpansionData 
 	{ 

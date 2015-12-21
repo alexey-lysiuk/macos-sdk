@@ -15,6 +15,7 @@ FT_USE_MODULE( FT_Renderer_Class, ft_raster1_renderer_class )
 FT_USE_MODULE( FT_Renderer_Class, ft_smooth_renderer_class )
 FT_USE_MODULE( FT_Renderer_Class, ft_smooth_lcd_renderer_class )
 FT_USE_MODULE( FT_Renderer_Class, ft_smooth_lcdv_renderer_class )
+FT_USE_MODULE( FT_Module_Class, otv_module_class )
 FT_USE_MODULE( FT_Module_Class, psaux_module_class )
 FT_USE_MODULE( FT_Module_Class, psnames_module_class )
 /* EOF */

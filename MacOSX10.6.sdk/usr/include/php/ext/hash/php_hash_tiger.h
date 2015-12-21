@@ -2,7 +2,7 @@
    +----------------------------------------------------------------------+
    | PHP Version 5                                                        |
    +----------------------------------------------------------------------+
-   | Copyright (c) 1997-2009 The PHP Group                                |
+   | Copyright (c) 1997-2010 The PHP Group                                |
    +----------------------------------------------------------------------+
    | This source file is subject to version 3.01 of the PHP license,      |
    | that is bundled with this package in the file LICENSE, and is        |
@@ -16,7 +16,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: php_hash_tiger.h 272370 2008-12-31 11:15:49Z sebastian $ */
+/* $Id: php_hash_tiger.h 305650 2010-11-22 13:12:28Z iliaa $ */
 
 #ifndef PHP_HASH_TIGER_H
 #define PHP_HASH_TIGER_H
@@ -25,9 +25,9 @@
 typedef struct {
 	php_hash_uint64 state[3];
 	php_hash_uint64 passed;
-	unsigned char passes:1;
-	unsigned char length:7;
 	unsigned char buffer[64];
+	unsigned int passes:1;
+	unsigned int length:7;
 } PHP_TIGER_CTX;
 
 PHP_HASH_API void PHP_3TIGERInit(PHP_TIGER_CTX *context);

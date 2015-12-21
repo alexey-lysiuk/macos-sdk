@@ -2,7 +2,7 @@
    +----------------------------------------------------------------------+
    | PHP Version 5                                                        |
    +----------------------------------------------------------------------+
-   | Copyright (c) 1997-2009 The PHP Group                                |
+   | Copyright (c) 1997-2010 The PHP Group                                |
    +----------------------------------------------------------------------+
    | This source file is subject to version 3.01 of the PHP license,      |
    | that is bundled with this package in the file LICENSE, and is        |
@@ -16,7 +16,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: file.h 272370 2008-12-31 11:15:49Z sebastian $ */
+/* $Id: file.h 305495 2010-11-18 12:10:17Z cataphract $ */
 
 /* Synced with php 3.0 revision 1.30 1999-06-16 [ssb] */
 
@@ -76,6 +76,7 @@ PHPAPI int php_le_stream_context(void);
 PHPAPI int php_set_sock_blocking(int socketd, int block TSRMLS_DC);
 PHPAPI int php_copy_file(char *src, char *dest TSRMLS_DC);
 PHPAPI int php_copy_file_ex(char *src, char *dest, int src_chk TSRMLS_DC);
+PHPAPI int php_copy_file_ctx(char *src, char *dest, int src_chk, php_stream_context *context TSRMLS_DC);
 PHPAPI int php_mkdir_ex(char *dir, long mode, int options TSRMLS_DC);
 PHPAPI int php_mkdir(char *dir, long mode TSRMLS_DC);
 PHPAPI void php_fgetcsv(php_stream *stream, char delimiter, char enclosure, char escape_char, size_t buf_len, char *buf, zval *return_value TSRMLS_DC);
@@ -117,7 +118,7 @@ typedef struct {
 	size_t def_chunk_size;
 	long auto_detect_line_endings;
 	long default_socket_timeout;
-	char *user_agent;
+	char *user_agent; /* for the http wrapper */
 	char *user_stream_current_filename; /* for simple recursion protection */
 	php_stream_context *default_context;
 	HashTable *stream_wrappers;			/* per-request copy of url_stream_wrappers_hash */

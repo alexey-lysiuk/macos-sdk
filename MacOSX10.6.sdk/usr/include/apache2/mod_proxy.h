@@ -247,6 +247,7 @@ typedef struct {
                              * which the backend currently answers. */
     int          need_flush;/* Flag to decide whether we need to flush the
                              * filter chain or not */
+    void         *forward;  /* opaque forward proxy data */
 } proxy_conn_rec;
 
 typedef struct {
@@ -385,6 +386,8 @@ struct proxy_balancer {
 #endif
     void            *context;   /* general purpose storage */
     int             scolonsep;  /* true if ';' seps sticky session paths */
+
+    apr_array_header_t *errstatuses; /* statuses to force members into error */
 };
 
 struct proxy_balancer_method {

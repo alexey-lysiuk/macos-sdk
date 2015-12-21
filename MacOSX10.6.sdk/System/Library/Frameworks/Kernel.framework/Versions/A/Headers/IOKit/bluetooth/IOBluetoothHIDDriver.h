@@ -10,6 +10,8 @@
 #include <IOKit/hid/IOHIDDevice.h>
 #include <IOKit/bluetooth/Bluetooth.h>
 
+#include "IOKit/pwr_mgt/RootDomain.h"
+
 //===========================================================================================================================
 // Forwards
 //===========================================================================================================================
@@ -79,22 +81,35 @@ class IOBluetoothHIDDriver : public IOHIDDevice
 	
     struct ExpansionData 
     { 
-        OSArray*    _sendQueue;
+        OSArray*				_sendQueue;
 		
-		uint8_t		*interruptBuffer;
-		uint32_t	interruptBufferUsed;
+		uint8_t					*interruptBuffer;
+		uint32_t				interruptBufferUsed;
 		
-		uint8_t		*controlBuffer;
-		uint32_t	controlBufferUsed;
+		uint8_t					*controlBuffer;
+		uint32_t				controlBufferUsed;
 
-		uint8_t		deviceSupportsSuspend;
+		uint8_t					deviceSupportsSuspend;
 
-		uint32_t	getReportTimeoutMS;
-		uint32_t	setReportTimeoutMS;
+		uint32_t				getReportTimeoutMS;
+		uint32_t				setReportTimeoutMS;
 		
-		uint32_t	outstandingMemoryBlockCount;
-		bool		waitingForMemoryBlockCount;
-    };
+		uint32_t				outstandingMemoryBlockCount;
+		bool					waitingForMemoryBlockCount;
+
+		IOPMrootDomain *        fRootDomain;
+		IOPMDriverAssertionID   fNoDeepSleepAssertionId;
+    
+		bool					mCommandGateCreated;
+		bool					mCommandGateAdded;
+		bool					mControlChannelRetained;
+		bool					mWorkLoopRetained;
+		
+		bool					mCloseDownServicesCalled;
+		
+		bool					mGotNoDeepSleepAssertionID;
+
+	};
     ExpansionData	*_expansionData;
 	
 public:

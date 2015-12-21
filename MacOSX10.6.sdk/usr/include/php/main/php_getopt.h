@@ -2,7 +2,7 @@
    +----------------------------------------------------------------------+
    | PHP Version 5                                                        |
    +----------------------------------------------------------------------+
-   | Copyright (c) 1997-2009 The PHP Group                                |
+   | Copyright (c) 1997-2010 The PHP Group                                |
    +----------------------------------------------------------------------+
    | This source file is subject to version 3.01 of the PHP license,      |
    | that is bundled with this package in the file LICENSE, and is        |
@@ -16,7 +16,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: php_getopt.h 272370 2008-12-31 11:15:49Z sebastian $ */
+/* $Id: php_getopt.h 293721 2010-01-19 10:44:36Z johannes $ */
 
 #ifndef PHP_GETOPT_H
 #define PHP_GETOPT_H
@@ -41,7 +41,7 @@ typedef struct _opt_struct {
 
 BEGIN_EXTERN_C()
 /* holds the index of the latest fetched element from the opts array */
-PHPAPI int php_optidx;
+extern PHPAPI int php_optidx;
 PHPAPI int php_getopt(int argc, char* const *argv, const opt_struct opts[], char **optarg, int *optind, int show_err, int arg_start);
 END_EXTERN_C()
 

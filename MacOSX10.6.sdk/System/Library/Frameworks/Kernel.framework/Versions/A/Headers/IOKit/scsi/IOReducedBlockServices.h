@@ -61,6 +61,7 @@ protected:
 	
 	virtual bool	attach ( IOService * provider );
 	virtual void	detach ( IOService * provider );
+	virtual void	free ( void );
 	
 	
 public:

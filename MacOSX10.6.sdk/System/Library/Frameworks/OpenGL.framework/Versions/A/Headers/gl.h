@@ -2245,7 +2245,7 @@ typedef void (* glMultiTexCoord4dProcPtr) (GLenum target, GLdouble s, GLdouble t
 typedef void (* glMultiTexCoord4dvProcPtr) (GLenum target, const GLdouble *v);
 typedef void (* glMultiTexCoord4fProcPtr) (GLenum target, GLfloat s, GLfloat t, GLfloat r, GLfloat q);
 typedef void (* glMultiTexCoord4fvProcPtr) (GLenum target, const GLfloat *v);
-typedef void (* glMultiTexCoord4iProcPtr) (GLenum target, GLint, GLint s, GLint t, GLint r);
+typedef void (* glMultiTexCoord4iProcPtr) (GLenum target, GLint s, GLint t, GLint r, GLint q);
 typedef void (* glMultiTexCoord4ivProcPtr) (GLenum target, const GLint *v);
 typedef void (* glMultiTexCoord4sProcPtr) (GLenum target, GLshort s, GLshort t, GLshort r, GLshort q);
 typedef void (* glMultiTexCoord4svProcPtr) (GLenum target, const GLshort *v);
@@ -2846,7 +2846,7 @@ extern void glMultiTexCoord4d (GLenum target, GLdouble s, GLdouble t, GLdouble r
 extern void glMultiTexCoord4dv (GLenum target, const GLdouble *v);
 extern void glMultiTexCoord4f (GLenum target, GLfloat s, GLfloat t, GLfloat r, GLfloat q);
 extern void glMultiTexCoord4fv (GLenum target, const GLfloat *v);
-extern void glMultiTexCoord4i (GLenum target, GLint, GLint s, GLint t, GLint r);
+extern void glMultiTexCoord4i (GLenum target, GLint s, GLint t, GLint r, GLint q);
 extern void glMultiTexCoord4iv (GLenum target, const GLint *v);
 extern void glMultiTexCoord4s (GLenum target, GLshort s, GLshort t, GLshort r, GLshort q);
 extern void glMultiTexCoord4sv (GLenum target, const GLshort *v);

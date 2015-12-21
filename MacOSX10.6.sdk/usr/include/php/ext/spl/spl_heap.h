@@ -2,7 +2,7 @@
    +----------------------------------------------------------------------+
    | PHP Version 5                                                        |
    +----------------------------------------------------------------------+
-   | Copyright (c) 1997-2009 The PHP Group                                |
+   | Copyright (c) 1997-2010 The PHP Group                                |
    +----------------------------------------------------------------------+
    | This source file is subject to version 3.01 of the PHP license,      |
    | that is bundled with this package in the file LICENSE, and is        |
@@ -16,7 +16,7 @@
    +----------------------------------------------------------------------+
  */
 
-/* $Id: spl_heap.h 272370 2008-12-31 11:15:49Z sebastian $ */
+/* $Id: spl_heap.h 293721 2010-01-19 10:44:36Z johannes $ */
 
 #ifndef SPL_HEAP_H
 #define SPL_HEAP_H
@@ -24,11 +24,11 @@
 #include "php.h"
 #include "php_spl.h"
 
-PHPAPI zend_class_entry *spl_ce_SplHeap;
-PHPAPI zend_class_entry *spl_ce_SplMinHeap;
-PHPAPI zend_class_entry *spl_ce_SplMaxHeap;
+extern PHPAPI zend_class_entry *spl_ce_SplHeap;
+extern PHPAPI zend_class_entry *spl_ce_SplMinHeap;
+extern PHPAPI zend_class_entry *spl_ce_SplMaxHeap;
 
-PHPAPI zend_class_entry *spl_ce_SplPriorityQueue;
+extern PHPAPI zend_class_entry *spl_ce_SplPriorityQueue;
 
 PHP_MINIT_FUNCTION(spl_heap);
 

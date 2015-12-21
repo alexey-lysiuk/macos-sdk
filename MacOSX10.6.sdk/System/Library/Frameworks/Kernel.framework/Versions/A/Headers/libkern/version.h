@@ -40,7 +40,7 @@ extern const int version_major;
 /* VERSION_MINOR, version_minor is an integer that represents the minor version
  * of the kernel
  */
-#define VERSION_MINOR		4
+#define VERSION_MINOR		8
 extern const int version_minor;
 
 /* VERSION_VARIANT, version_variant is a string that contains the revision,
@@ -74,7 +74,7 @@ extern const int version_prerelease_level;
 extern const char ostype[];
 
 /* OSRELEASE, osrelease, is a string as returned by uname -r */
-#define OSRELEASE	"10.4.0"
+#define OSRELEASE	"10.8.0"
 extern const char osrelease[];
 
 /* osbuilder is a string as returned by uname -r */

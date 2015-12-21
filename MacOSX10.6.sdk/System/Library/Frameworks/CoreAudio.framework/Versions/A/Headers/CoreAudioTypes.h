@@ -314,6 +314,7 @@ enum
     kAudioFormatAppleLossless           = 'alac',
     kAudioFormatMPEG4AAC_HE             = 'aach',
     kAudioFormatMPEG4AAC_LD             = 'aacl',
+	kAudioFormatMPEG4AAC_ELD            = 'aace',
     kAudioFormatMPEG4AAC_HE_V2          = 'aacp',
     kAudioFormatMPEG4AAC_Spatial        = 'aacs',
     kAudioFormatAMR                     = 'samr',

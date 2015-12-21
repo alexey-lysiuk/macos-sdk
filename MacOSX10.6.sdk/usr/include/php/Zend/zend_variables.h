@@ -2,7 +2,7 @@
    +----------------------------------------------------------------------+
    | Zend Engine                                                          |
    +----------------------------------------------------------------------+
-   | Copyright (c) 1998-2009 Zend Technologies Ltd. (http://www.zend.com) |
+   | Copyright (c) 1998-2010 Zend Technologies Ltd. (http://www.zend.com) |
    +----------------------------------------------------------------------+
    | This source file is subject to version 2.00 of the Zend license,     |
    | that is bundled with this package in the file LICENSE, and is        | 
@@ -17,7 +17,7 @@
    +----------------------------------------------------------------------+
 */
 
-/* $Id: zend_variables.h 279681 2009-05-01 21:46:53Z jani $ */
+/* $Id: zend_variables.h 302152 2010-08-12 17:28:08Z sas $ */
 
 #ifndef ZEND_VARIABLES_H
 #define ZEND_VARIABLES_H
@@ -50,32 +50,42 @@ ZEND_API int zend_print_variable(zval *var);
 ZEND_API void _zval_ptr_dtor(zval **zval_ptr ZEND_FILE_LINE_DC);
 ZEND_API void _zval_internal_dtor(zval *zvalue ZEND_FILE_LINE_DC);
 ZEND_API void _zval_internal_ptr_dtor(zval **zvalue ZEND_FILE_LINE_DC);
+ZEND_API void _zval_dtor_wrapper(zval *zvalue);
 #define zval_copy_ctor(zvalue) _zval_copy_ctor((zvalue) ZEND_FILE_LINE_CC)
 #define zval_dtor(zvalue) _zval_dtor((zvalue) ZEND_FILE_LINE_CC)
 #define zval_ptr_dtor(zval_ptr) _zval_ptr_dtor((zval_ptr) ZEND_FILE_LINE_CC)
 #define zval_internal_dtor(zvalue) _zval_internal_dtor((zvalue) ZEND_FILE_LINE_CC)
 #define zval_internal_ptr_dtor(zvalue) _zval_internal_ptr_dtor((zvalue) ZEND_FILE_LINE_CC)
+#define zval_dtor_wrapper _zval_dtor_wrapper
 
 #if ZEND_DEBUG
 ZEND_API void _zval_copy_ctor_wrapper(zval *zvalue);
-ZEND_API void _zval_dtor_wrapper(zval *zvalue);
 ZEND_API void _zval_ptr_dtor_wrapper(zval **zval_ptr);
 ZEND_API void _zval_internal_dtor_wrapper(zval *zvalue);
 ZEND_API void _zval_internal_ptr_dtor_wrapper(zval **zvalue);
 #define zval_copy_ctor_wrapper _zval_copy_ctor_wrapper
-#define zval_dtor_wrapper _zval_dtor_wrapper
 #define zval_ptr_dtor_wrapper _zval_ptr_dtor_wrapper
 #define zval_internal_dtor_wrapper _zval_internal_dtor_wrapper
 #define zval_internal_ptr_dtor_wrapper _zval_internal_ptr_dtor_wrapper
 #else
 #define zval_copy_ctor_wrapper _zval_copy_ctor_func
-#define zval_dtor_wrapper _zval_dtor_func
 #define zval_ptr_dtor_wrapper _zval_ptr_dtor
 #define zval_internal_dtor_wrapper _zval_internal_dtor
 #define zval_internal_ptr_dtor_wrapper _zval_internal_ptr_dtor
 #endif
 
 ZEND_API void zval_add_ref(zval **p);
+
+ZEND_API void zval_property_ctor(zval **);
+
+#ifdef ZTS
+# define zval_shared_property_ctor zval_property_ctor
+#else
+# define zval_shared_property_ctor zval_add_ref
+#endif
+
+#define zval_copy_property_ctor(ce) ((copy_ctor_func_t) (((ce)->type == ZEND_INTERNAL_CLASS) ? zval_shared_property_ctor : zval_add_ref))
+
 
 END_EXTERN_C()
 

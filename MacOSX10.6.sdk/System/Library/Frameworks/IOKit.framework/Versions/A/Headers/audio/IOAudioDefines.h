@@ -459,6 +459,7 @@
 #define kIOAudioSelectorControlAvailableSelectionsKey	"IOAudioSelectorControlAvailableSelections"
 #define kIOAudioSelectorControlSelectionValueKey		"IOAudioSelectorControlSelectionValue"
 #define kIOAudioSelectorControlSelectionDescriptionKey	"IOAudioSelectorControlSelectionDescriptionKey"
+#define kIOAudioSelectorControlTransportValueKey		"IOAudioSelectorControlTransportValue"					// <rdar://8202424>
 
 #define kIOAudioSelectorControlClockSourceKey				"IOAudioSelectorControlClockSourceKey"
 

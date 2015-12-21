@@ -70,16 +70,16 @@
 #define kIOStorageFeaturesKey "IOStorageFeatures"
 
 /*!
- * @defined kIOStorageFeatureDiscard
+ * @defined kIOStorageFeatureUnmap
  * @abstract
- * Describes the presence of the Discard feature.
+ * Describes the presence of the Unmap feature.
  * @discussion
  * This property describes the ability of the storage stack to delete unused
  * data from the media.  It is one of the feature entries listed under the top-
  * level kIOStorageFeaturesKey property table.  It has an OSBoolean value.
  */
 
-#define kIOStorageFeatureDiscard "Discard"
+#define kIOStorageFeatureUnmap "Unmap"
 
 /*!
  * @defined kIOStorageFeatureForceUnitAccess

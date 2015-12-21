@@ -40,6 +40,7 @@ enum {
     // shared IOMemoryDescriptor options for IOBufferMemoryDescriptor:
     kIOBufferDescriptorMemoryFlags	= kIOMemoryDirectionMask 
 					| kIOMemoryThreadSafe
+					| kIOMemoryClearEncrypt
 };
 
 #define _IOBUFFERMEMORYDESCRIPTOR_INTASKWITHOPTIONS_	1

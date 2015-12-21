@@ -3,7 +3,7 @@
  
      Contains:   Utilites for formatting numbers
  
-     Version:    CarbonCore-861.13~4
+     Version:    CarbonCore-861.39~1
  
      Copyright:  © 1996-2008 by Apple Inc., all rights reserved.
  
