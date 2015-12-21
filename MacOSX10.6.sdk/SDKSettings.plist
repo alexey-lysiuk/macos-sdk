@@ -15,6 +15,8 @@
 		<string>10.6</string>
 		<key>PLATFORM_NAME</key>
 		<string>macosx</string>
+		<key>DEFAULT_COMPILER</key>
+		<string>com.apple.compilers.llvm.clang.1_0</string>
 	</dict>
 	<key>DisplayName</key>
 	<string>Mac OS X 10.6</string>
