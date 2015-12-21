@@ -3,7 +3,7 @@
  
      Contains:   Text Encoding Conversion Interfaces.
  
-     Version:    CarbonCore-859.2~148
+     Version:    CarbonCore-859.2~178
  
      Copyright:  © 1994-2008 Apple Inc. All rights reserved.
  

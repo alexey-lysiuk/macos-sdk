@@ -3,7 +3,7 @@
  
      Contains:   String constants for core uniform type identifiers
  
-     Version:    LaunchServices-360.3~221
+     Version:    LaunchServices-360.3~247
  
      Copyright:  © 2004-2008 by Apple Computer, Inc., all rights reserved.
  

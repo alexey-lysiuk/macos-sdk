@@ -3,7 +3,7 @@
  
      Contains:   API and type definitions related to HISlider.
  
-     Version:    HIToolbox-437~175
+     Version:    HIToolbox-437~177
  
      Copyright:  © 1999-2008 by Apple Computer, Inc., all rights reserved.
  

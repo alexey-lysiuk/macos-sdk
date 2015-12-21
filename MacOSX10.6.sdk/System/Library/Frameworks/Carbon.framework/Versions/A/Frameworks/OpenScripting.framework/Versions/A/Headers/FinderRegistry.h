@@ -3,7 +3,7 @@
  
      Contains:   Data types for Finder AppleEvents
  
-     Version:    OSA-136~63
+     Version:    OSA-136~274
  
      Copyright:  © 1991-2008 by Apple Computer, Inc., all rights reserved.
  
