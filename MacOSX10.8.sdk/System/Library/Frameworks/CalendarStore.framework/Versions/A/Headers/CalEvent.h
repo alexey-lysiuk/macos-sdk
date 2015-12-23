@@ -5,6 +5,8 @@
 //  Copyright 2006 Apple Computer, Inc. All rights reserved.
 //	
 //  This class allows the client to access data about a specific CalTask.
+//
+//  The Calendar Store framework is deprecated.  Please use the Event Kit framework instead.
 
 #import <CalendarStore/CalCalendarItem.h>
 

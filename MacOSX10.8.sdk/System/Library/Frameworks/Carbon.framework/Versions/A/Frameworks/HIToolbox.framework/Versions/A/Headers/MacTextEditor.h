@@ -3,7 +3,7 @@
  
      Contains:   Interfaces for Multilingual Text Engine (MLTE)
  
-     Version:    HIToolbox-624~3
+     Version:    HIToolbox-625~1
  
      Copyright:  © 1996-2008 by Apple Computer, Inc., all rights reserved.
  

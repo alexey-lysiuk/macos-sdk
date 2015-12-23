@@ -34,11 +34,13 @@
 #ifndef XPLUGIN_H
 #define XPLUGIN_H 1
 
-#define XPLUGIN_VERSION 5
+#define XPLUGIN_VERSION 6
 
 #include <Availability.h>
 #if defined(__MAC_OS_X_VERSION_MIN_REQUIRED) && !defined(XPLUGIN_VERSION_MIN_REQUIRED)
-#if __MAC_OS_X_VERSION_MIN_REQUIRED >= 1080
+#if __MAC_OS_X_VERSION_MIN_REQUIRED >= 1082
+#define XPLUGIN_VERSION_MIN_REQUIRED 6
+#elif __MAC_OS_X_VERSION_MIN_REQUIRED >= 1080
 #define XPLUGIN_VERSION_MIN_REQUIRED 5
 #elif __MAC_OS_X_VERSION_MIN_REQUIRED >= 1070
 #define XPLUGIN_VERSION_MIN_REQUIRED 4
@@ -51,43 +53,41 @@
 #endif
 #endif /* __MAC_OS_X_VERSION_MIN_REQUIRED && !XPLUGIN_VERSION_MIN_REQUIRED */
 
-#ifdef XPLUGIN_VERSION_MIN_REQUIRED
-#if XPLUGIN_VERSION_MIN_REQUIRED >= 5
+#if XPLUGIN_VERSION_MIN_REQUIRED >= 6 || !defined(XPLUGIN_VERSION_MIN_REQUIRED)
+#define XPLUGIN_VERSION_6
+#else
+#define XPLUGIN_VERSION_6 __attribute__((weak_import))
+#endif
+
+#if XPLUGIN_VERSION_MIN_REQUIRED >= 5 || !defined(XPLUGIN_VERSION_MIN_REQUIRED)
 #define XPLUGIN_VERSION_5
 #else
 #define XPLUGIN_VERSION_5 __attribute__((weak_import))
 #endif
 
-#if XPLUGIN_VERSION_MIN_REQUIRED >= 4
+#if XPLUGIN_VERSION_MIN_REQUIRED >= 4 || !defined(XPLUGIN_VERSION_MIN_REQUIRED)
 #define XPLUGIN_VERSION_4
 #else
 #define XPLUGIN_VERSION_4 __attribute__((weak_import))
 #endif
 
-#if XPLUGIN_VERSION_MIN_REQUIRED >= 3
+#if XPLUGIN_VERSION_MIN_REQUIRED >= 3 || !defined(XPLUGIN_VERSION_MIN_REQUIRED)
 #define XPLUGIN_VERSION_3
 #else
 #define XPLUGIN_VERSION_3 __attribute__((weak_import))
 #endif
 
-#if XPLUGIN_VERSION_MIN_REQUIRED >= 2
+#if XPLUGIN_VERSION_MIN_REQUIRED >= 2 || !defined(XPLUGIN_VERSION_MIN_REQUIRED)
 #define XPLUGIN_VERSION_2
 #else
 #define XPLUGIN_VERSION_2 __attribute__((weak_import))
 #endif
 
-#if XPLUGIN_VERSION_MIN_REQUIRED >= 1
+#if XPLUGIN_VERSION_MIN_REQUIRED >= 1 || !defined(XPLUGIN_VERSION_MIN_REQUIRED)
 #define XPLUGIN_VERSION_1
 #else
 #define XPLUGIN_VERSION_1 __attribute__((weak_import))
 #endif
-#else
-#define XPLUGIN_VERSION_5
-#define XPLUGIN_VERSION_4
-#define XPLUGIN_VERSION_3
-#define XPLUGIN_VERSION_2
-#define XPLUGIN_VERSION_1
-#endif /* XPLUGIN_VERSION_MIN_REQUIRED */
 
 #include <stdint.h>
 
@@ -762,5 +762,17 @@ typedef void (*xp_dock_event_handler)(xp_dock_event *event);
 
 XPLUGIN_VERSION_5
 extern void xp_dock_event_set_handler(xp_dock_event_handler new_handler);
+
+/* Cause all X11 windows to be ordered above other application windows
+ * Useful for responding to Dock/cmd-tab
+ */
+XPLUGIN_VERSION_6
+extern xp_error xp_window_bring_all_to_front(void);
+
+/* Return XPLUGIN_VERSION for runtime checks of Xplugin's version
+ * Better late than never...
+ */
+XPLUGIN_VERSION_6
+extern uint32_t xp_api_version(void);
 
 #endif /* XPLUGIN_H */

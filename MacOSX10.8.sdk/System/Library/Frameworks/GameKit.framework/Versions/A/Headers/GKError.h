@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <GameKit/GKDefines.h>
 
-extern NSString *GKErrorDomain;
+GK_EXTERN_WEAK NSString *GKErrorDomain;
 
 enum {
     GKErrorUnknown                              = 1,
@@ -28,7 +28,13 @@ enum {
     GKErrorNotSupported                         = 16,
     GKErrorInvalidParameter                     = 17,
     GKErrorUnexpectedConnection                 = 18,
-    GKErrorOffline                              = 19,
+    GKErrorChallengeInvalid                     = 19,
+    GKErrorTurnBasedMatchDataTooLarge           = 20,
+    GKErrorTurnBasedTooManySessions             = 21,
+    GKErrorTurnBasedInvalidParticipant          = 22,
+    GKErrorTurnBasedInvalidTurn                 = 23,
+    GKErrorTurnBasedInvalidState                = 24,
+    GKErrorOffline                              = 25,
 };
 typedef NSInteger GKErrorCode;
 

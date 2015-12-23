@@ -12,6 +12,7 @@
 #endif
 
 #import <GameKit/GKLeaderboard.h>
+#import <GameKit/GKGameCenterViewController.h>
 
 @protocol GKLeaderboardViewControllerDelegate;
 
@@ -19,7 +20,7 @@
 
 #if TARGET_OS_IPHONE
 NS_CLASS_AVAILABLE(NA, 4_1)
-@interface GKLeaderboardViewController : UINavigationController
+@interface GKLeaderboardViewController : GKGameCenterViewController
 @end
 #else
 #import <GameKit/GKDialogController.h>

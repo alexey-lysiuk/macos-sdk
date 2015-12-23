@@ -5,6 +5,7 @@
  *  Copyright 2010 Apple Inc. All rights reserved.
  *
  */
+#import <GameKit/GKDefines.h>
 
 @class GKMatchRequest, GKTurnBasedMatch;
 
@@ -53,6 +54,8 @@ typedef NSInteger GKTurnBasedMatchOutcome;
 // GKTurnBasedMatch represents an ongoing turn-based game among the matched group of participants
 // Existing matches can be shown and new matches created using GKTurnBasedMatchmakerViewController
 // A list of existing matches can be retrieved using +loadMatchesWithCompletionHandler:
+//
+// By default turn based events will badge your app.  To opt out of this add GKGameCenterBadgingDisabled  with a boolean value of YES to your info plist
 
 NS_CLASS_AVAILABLE(10_8, 5_0)
 @interface GKTurnBasedParticipant : NSObject {
@@ -64,6 +67,7 @@ NS_CLASS_AVAILABLE(10_8, 5_0)
 @property(readonly, copy, NS_NONATOMIC_IOSONLY)  NSDate                          *lastTurnDate;
 @property(readonly, NS_NONATOMIC_IOSONLY)        GKTurnBasedParticipantStatus    status;
 @property(assign, NS_NONATOMIC_IOSONLY)          GKTurnBasedMatchOutcome         matchOutcome;
+@property(readonly, copy,NS_NONATOMIC_IOSONLY)  NSDate                          *timeoutDate __OSX_AVAILABLE_STARTING(__MAC_10_9,__IPHONE_6_0);
 
 @end
 
@@ -74,12 +78,9 @@ NS_CLASS_AVAILABLE(10_8, 5_0)
 // If Game Center initiates a match the developer should create a GKTurnBasedMatch from playersToInvite and present a GKTurnbasedMatchmakerViewController.
 - (void)handleInviteFromGameCenter:(NSArray *)playersToInvite;		
 
-// handleTurnEventForMatch is called when a turn is passed to another participant.  Note this may arise from one of the following events:
-//      The local participant has accepted an invite to a new match
-//      The local participant has been passed the turn for an existing match
-//      Another participant has made a turn in an existing match
-// The application needs to be prepared to handle this even while the participant might be engaged in a different match
-- (void)handleTurnEventForMatch:(GKTurnBasedMatch *)match;
+// handleTurnEventForMatch is called when becomes this player's turn.  It may also get called if the player's turn has a timeout and it is about to expire.  Note this may also arise from the player accepting an invite from another player.  Because of this the app needs to be prepared to handle this even while the player is taking a turn in an existing match.  The boolean indicates whether this event launched or brought to forground the app.
+- (void)handleTurnEventForMatch:(GKTurnBasedMatch *)match didBecomeActive:(BOOL)didBecomeActive __OSX_AVAILABLE_STARTING(__MAC_10_9,__IPHONE_6_0);
+- (void)handleTurnEventForMatch:(GKTurnBasedMatch *)match __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_8,__MAC_10_9,__IPHONE_5_0,__IPHONE_6_0);  // this is called only if the new version is not implemented
 
 // handleMatchEnded is called when the match has ended.
 - (void)handleMatchEnded:(GKTurnBasedMatch *)match;
@@ -90,12 +91,20 @@ NS_CLASS_AVAILABLE(10_8, 5_0)
 @interface GKTurnBasedEventHandler : NSObject {
 @private
 	NSObject<GKTurnBasedEventHandlerDelegate>	*_delegate;
+    id _internal1;
+    BOOL _internal2;
 }
 + (GKTurnBasedEventHandler *)sharedTurnBasedEventHandler;
 
 @property (assign, NS_NONATOMIC_IOSONLY) 		NSObject<GKTurnBasedEventHandlerDelegate>	*delegate;
 
 @end
+
+
+// Turn timeout constants
+
+extern NSTimeInterval		GKTurnTimeoutDefault __OSX_AVAILABLE_STARTING(__MAC_10_9,__IPHONE_6_0);	// use a default timeout of one week
+extern NSTimeInterval		GKTurnTimeoutNone __OSX_AVAILABLE_STARTING(__MAC_10_9,__IPHONE_6_0);
 
 NS_CLASS_AVAILABLE(10_8, 5_0)
 @interface GKTurnBasedMatch : NSObject {
@@ -118,6 +127,9 @@ NS_CLASS_AVAILABLE(10_8, 5_0)
 // If the developer wishes to display a message in GKTurnBasedMatchmakerViewController at the end of a turn or end of the match.  Only the current participant can set this.
 @property(readwrite, copy, NS_NONATOMIC_IOSONLY)   NSString                *message;
 
+// Returns the maximum size for the match data.
+@property(readonly, NS_NONATOMIC_IOSONLY)  NSUInteger                      matchDataMaximumSize __OSX_AVAILABLE_STARTING(__MAC_10_9,__IPHONE_6_0);
+
 // Attempt to find a turn-based match for the specified request. Error will be nil on success.
 // Possible reasons for error:
 // 1. Communications failure
@@ -127,21 +139,39 @@ NS_CLASS_AVAILABLE(10_8, 5_0)
 // This method retrieves the list of GKTurnBasedMatches that the current player is or has participated in. The callback’s array contains GKTurnBasedMatches
 + (void)loadMatchesWithCompletionHandler:(void(^)(NSArray *matches, NSError *error))completionHandler;
 
-// Remove a completed match (one with a matchOutcome set) from the player's list of matches. If using the GKTurnBasedMatchmakerViewController UI, this will remove it from the finished sessions.  The developer should not do this without user input.
+// load a match based on a previously known match ID
++ (void)loadMatchWithID:(NSString *)matchID withCompletionHandler:(void(^)(GKTurnBasedMatch *match, NSError *error))completionHandler __OSX_AVAILABLE_STARTING(__MAC_10_8,__IPHONE_5_0);
+
+// Recreate a previously existing turn based match that ended. A new match with the same set of players will be returned by the completion handler. If multiple players do this then multiple new matches will be created. Error will be nil on success.
+// Possible reasons for error:
+// 1. Communications failure
+// 2. Unauthenticated player
+- (void)rematchWithCompletionHandler:(void(^)(GKTurnBasedMatch *match, NSError *error))completionHandler __OSX_AVAILABLE_STARTING(__MAC_10_9,__IPHONE_6_0);
+
+// If the local participant has status invited then accept the invite, otherwise returns an error
+- (void)acceptInviteWithCompletionHandler:(void(^)(GKTurnBasedMatch *match, NSError *error))completionHandler __OSX_AVAILABLE_STARTING(__MAC_10_8,__IPHONE_5_0);
+
+// If the local participant has status invited then decline the invite, otherwise returns an error
+- (void)declineInviteWithCompletionHandler:(void(^)(NSError *error))completionHandler __OSX_AVAILABLE_STARTING(__MAC_10_8,__IPHONE_5_0);
+
+// Remove a declined or completed match (one with a matchOutcome set) from the player's list of matches. If using the GKTurnBasedMatchmakerViewController UI, this will remove it from the finished sessions.  The developer should not do this without user input.
 - (void)removeWithCompletionHandler:(void(^)(NSError *error))completionHandler;
 
 // This method fetches the match data for this match.  This data is the state of the game at this point in time.  This may update the status and/or participant properties if they have changed.
 - (void)loadMatchDataWithCompletionHandler:(void(^)(NSData *matchData, NSError *error))completionHandler;
 
-// Ends the current participant's turn. You may update the matchOutcome for any GKTurnBasedParticipants that you wish to before ending the turn.
+
+// Ends the current player's turn. You may update the matchOutcome for any GKTurnBasedPlayerInfos that you wish to before ending the turn.
 // This will asynchronously report error in these cases:
 // 1. Communications problem
-// 2. Is not current participant's turn
+// 2. Is not current player's turn
 // 3. Session is closed
-- (void)endTurnWithNextParticipant:(GKTurnBasedParticipant *)nextParticipant matchData:(NSData*)matchData completionHandler:(void(^)(NSError *error))completionHandler;
+- (void)endTurnWithNextParticipants:(NSArray *)nextParticipants turnTimeout:(NSTimeInterval)timeout matchData:(NSData*)matchData completionHandler:(void(^)(NSError *error))completionHandler __OSX_AVAILABLE_STARTING(__MAC_10_9,__IPHONE_6_0);
+- (void)endTurnWithNextParticipant:(GKTurnBasedParticipant *)nextParticipant matchData:(NSData*)matchData completionHandler:(void(^)(NSError *error))completionHandler __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_8,__MAC_10_9,__IPHONE_5_0,__IPHONE_6_0);;
 
-// Ends the current participant's turn by quitting the match.  The caller must indicate the next participant and pass in updated matchData (if used)
-- (void)participantQuitInTurnWithOutcome:(GKTurnBasedMatchOutcome)matchOutcome nextParticipant:(GKTurnBasedParticipant *)nextParticipant matchData:(NSData*)matchData completionHandler:(void(^)(NSError *error))completionHandler;
+// Ends the current player's turn by quitting the match.  The caller must indicate the next player and pass in updated matchData (if used)
+- (void)participantQuitInTurnWithOutcome:(GKTurnBasedMatchOutcome)matchOutcome nextParticipants:(NSArray *)nextParticipants turnTimeout:(NSTimeInterval)timeout matchData:(NSData*)matchData completionHandler:(void(^)(NSError *error))completionHandler __OSX_AVAILABLE_STARTING(__MAC_10_9,__IPHONE_6_0);
+- (void)participantQuitInTurnWithOutcome:(GKTurnBasedMatchOutcome)matchOutcome nextParticipant:(GKTurnBasedParticipant *)nextParticipant matchData:(NSData*)matchData completionHandler:(void(^)(NSError *error))completionHandler __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_8,__MAC_10_9,__IPHONE_5_0,__IPHONE_6_0);;
 
 // Abandon the match when it is not the current participant's turn.  In this there is no update to matchData and no need to set nextParticipant.
 - (void)participantQuitOutOfTurnWithOutcome:(GKTurnBasedMatchOutcome)matchOutcome withCompletionHandler:(void(^)(NSError *error))completionHandler;
@@ -149,4 +179,6 @@ NS_CLASS_AVAILABLE(10_8, 5_0)
 // This will end the match for all participants. You must set each participant’s matchOutcome before calling this method.
 - (void)endMatchInTurnWithMatchData:(NSData*)matchData completionHandler:(void(^)(NSError *error))completionHandler;
 
+// saves the matchData for the current turn without ending the turn.  If other players have the game running they will receive a handleTurnEventForMatch to indicate that the matchData has changed.  This is useful to initialize the game state for the first player when they take their turn or for updating the turn data due to the user taking an irreversible action within their turn.
+- (void)saveCurrentTurnWithMatchData:(NSData *)matchData completionHandler:(void(^)(NSError *error))completionHandler __OSX_AVAILABLE_STARTING(__MAC_10_9,__IPHONE_6_0);
 @end

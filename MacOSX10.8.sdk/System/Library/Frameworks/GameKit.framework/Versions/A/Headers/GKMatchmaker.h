@@ -6,6 +6,7 @@
 //
 
 #include <Foundation/Foundation.h>
+#import <GameKit/GKDefines.h>
 
 @class GKPlayer;
 @class GKMatch;
@@ -13,27 +14,67 @@
 // GKMatchRequest represents the parameters needed to create the match.
 NS_CLASS_AVAILABLE(10_8, 4_1)
 @interface GKMatchRequest : NSObject
-@end
-@interface GKMatchRequest (GKAdditions)
+{
+@private
+    id _internal;
+    id _internal2;
+    NSUInteger _internal3;
+}
 @property(assign, NS_NONATOMIC_IOSONLY) NSUInteger minPlayers;     // Minimum number of players for the match
 @property(assign, NS_NONATOMIC_IOSONLY) NSUInteger maxPlayers;     // Maximum number of players for the match
 @property(assign, NS_NONATOMIC_IOSONLY) NSUInteger playerGroup;    // The player group identifier. Matchmaking will only take place between players in the same group.
 @property(assign, NS_NONATOMIC_IOSONLY) uint32_t playerAttributes; // optional flags such that when all player flags are OR'ed together in a match they evaluate to 0xFFFFFFFF
 @property(retain, NS_NONATOMIC_IOSONLY) NSArray *playersToInvite;  // Array of player IDs to invite, or nil if none
 
+// Message sent to invited players, may be modified if using Game Center UI
+@property(nonatomic, copy)   NSString *inviteMessage __OSX_AVAILABLE_STARTING(__MAC_10_9,__IPHONE_6_0);
+
+// Default number of players to to use during matchmaking.  If not set we default to maxPlayers
+@property(nonatomic, assign) NSUInteger defaultNumberOfPlayers __OSX_AVAILABLE_STARTING(__MAC_10_9,__IPHONE_6_0);
+
+// Possible invitee responses
+enum {
+    GKInviteeResponseAccepted           = 0,
+    GKInviteeResponseDeclined           = 1,
+    GKInviteeResponseFailed             = 2,
+    GKInviteeResponseIncompatible       = 3,
+    GKInviteeResponseUnableToConnect    = 4,
+    GKInviteeResponseNoAnswer           = 5,
+};
+typedef NSInteger GKInviteeResponse;
+
+// An inviteeResponseHandler can be set in order to receive responses from programmatically invited players.
+@property(nonatomic, copy) void(^inviteeResponseHandler)(NSString *playerID, GKInviteeResponse response) __OSX_AVAILABLE_STARTING(__MAC_10_9,__IPHONE_6_0);
+
+enum {
+    GKMatchTypePeerToPeer,
+    GKMatchTypeHosted,
+    GKMatchTypeTurnBased
+};
+typedef NSUInteger GKMatchType;
+
+// To determine the maximum allowed players for each type of match supported.
++ (NSUInteger)maxPlayersAllowedForMatchOfType:(GKMatchType)matchType __OSX_AVAILABLE_STARTING(__MAC_10_9,__IPHONE_6_0);
+
 @end
 
 // GKInvite represents an accepted game invite, it is used to create a GKMatchmakerViewController
 NS_CLASS_AVAILABLE(10_8, 4_1)
-@interface GKInvite : NSObject
+@interface GKInvite : NSObject {
+@private
+    id _internal;
+    id _internal2;
+    BOOL _internal3;
+}
 @end
 
 @interface GKInvite (GKAdditions)
 @property(readonly, copy, NS_NONATOMIC_IOSONLY) NSString *inviter;
 @property(readonly, getter=isHosted, NS_NONATOMIC_IOSONLY) BOOL hosted;
+@property(readonly, NS_NONATOMIC_IOSONLY) NSUInteger playerGroup __OSX_AVAILABLE_STARTING(__MAC_10_9,__IPHONE_6_0);      // player group from inviter's match request
+@property(readonly, NS_NONATOMIC_IOSONLY) uint32_t playerAttributes __OSX_AVAILABLE_STARTING(__MAC_10_9,__IPHONE_6_0);   // player attributes from inviter's match request
 @end
 
-@class GKMatchPlayersDataRequest;
 // GKMatchmaker is a singleton object to manage match creation from invites and auto-matching.
 NS_CLASS_AVAILABLE(10_8, 4_1)
 @interface GKMatchmaker : NSObject
@@ -47,6 +88,12 @@ NS_CLASS_AVAILABLE(10_8, 4_1)
 // Either acceptedInvite or playersToInvite will be present, but never both.
 @property(copy, NS_NONATOMIC_IOSONLY) void(^inviteHandler)(GKInvite *acceptedInvite, NSArray *playersToInvite);
 
+
+// Get a match for an accepted invite
+// Possible reasons for error:
+// 1. Communications failure
+// 2. Invite cancelled
+- (void)matchForInvite:(GKInvite *)invite completionHandler:(void(^)(GKMatch *match, NSError *error))completionHandler __OSX_AVAILABLE_STARTING(__MAC_10_9,__IPHONE_6_0);
 
 // Auto-matching or invites to find a peer-to-peer match for the specified request. Error will be nil on success:
 // Possible reasons for error:
@@ -72,6 +119,12 @@ NS_CLASS_AVAILABLE(10_8, 4_1)
 // Cancel matchmaking and any pending invites
 - (void)cancel;
 
+// Cancel a pending invitation to a player
+- (void)cancelInviteToPlayer:(NSString *)playerID __OSX_AVAILABLE_STARTING(__MAC_10_9,__IPHONE_6_0);
+
+// Call this when finished with all programmatic P2P invites/matchmaking, for compatability with connected players using GKMatchmakerViewController.
+- (void)finishMatchmakingForMatch:(GKMatch *)match __OSX_AVAILABLE_STARTING(__MAC_10_9,__IPHONE_6_0);
+
 // Query the server for recent activity in the specified player group. A larger value indicates that a given group has seen more recent activity. Error will be nil on success.
 // Possible reasons for error:
 // 1. Communications failure
@@ -81,5 +134,14 @@ NS_CLASS_AVAILABLE(10_8, 4_1)
 // Possible reasons for error:
 // 1. Communications failure
 - (void)queryActivityWithCompletionHandler:(void(^)(NSInteger activity, NSError *error))completionHandler;
+
+
+// Start browsing for nearby players that can be invited to a match. The reachableHandler will be called for each player found with a compatible game. It may be called more than once for the same player if that player ever becomes unreachable (e.g. moves out of range). You should call stopBrowsingForNearbyPlayers when finished browsing.
+- (void)startBrowsingForNearbyPlayersWithReachableHandler:(void(^)(NSString *playerID, BOOL reachable))reachableHandler
+ __OSX_AVAILABLE_STARTING(__MAC_10_9,__IPHONE_6_0);
+
+// Stop browsing for nearby players.
+- (void)stopBrowsingForNearbyPlayers __OSX_AVAILABLE_STARTING(__MAC_10_9,__IPHONE_6_0);
+
 
 @end

@@ -39,9 +39,19 @@ SOCIAL_CLASS_AVAILABLE(10_8, 6_0)
 // The parameters 
 @property (readonly, NS_NONATOMIC_IOSONLY) NSDictionary *parameters;
 
-// Specify a named MIME multi-part value. As of version 6.0, if you set parameters,
+// Specify a named MIME multi-part value. If you set parameters,
 // the parameters will automatically be added as form data in the multi-part data.
-- (void)addMultipartData:(NSData *)data withName:(NSString *)name type:(NSString*)type; 
+- (void)addMultipartData:(NSData *)data
+                withName:(NSString *)name
+                    type:(NSString *)type
+                filename:(NSString *)filename;
+
+#if !(TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR)
+// DEPRECATED: Please use addMultipartData:withName:type:filename: instead.
+- (void)addMultipartData:(NSData *)data
+                withName:(NSString *)name
+                    type:(NSString*)type __attribute__((deprecated));
+#endif
 
 // Returns a NSURLRequest for use with NSURLConnection.
 // If an account has been set the returned request is either signed (OAuth1),

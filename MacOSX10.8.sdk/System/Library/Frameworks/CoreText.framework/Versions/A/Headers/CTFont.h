@@ -1440,6 +1440,21 @@ extern const CFStringRef kCTBaselineReferenceFont CT_AVAILABLE_STARTING( __MAC_1
 */
 extern const CFStringRef kCTBaselineOriginalFont CT_AVAILABLE_STARTING( __MAC_10_8, __IPHONE_6_0);
 
+
+/*!
+    @function   CTFontCopyDefaultCascadeListForLanguages
+    @abstract   Return an ordered list of CTFontDescriptorRef's for font fallback drived from the system default fallback regine according to the given language preferences. The style of the given is also matched as well as the weight and width of the font is not one of the system UI font, otherwise the UI font fallback is applied.
+
+    @param      font
+                The font reference.
+ 
+    @param      languagePrefList
+                The language preference list - ordered array of CFStringRef's of ISO langauge codes.
+
+    @result     The ordered list of fallback fonts - ordered array of CTFontDescriptors.
+*/
+CFArrayRef CTFontCopyDefaultCascadeListForLanguages( CTFontRef font, CFArrayRef languagePrefList ) CT_AVAILABLE_STARTING( __MAC_10_8, __IPHONE_6_0);
+
 #if defined(__cplusplus)
 }
 #endif

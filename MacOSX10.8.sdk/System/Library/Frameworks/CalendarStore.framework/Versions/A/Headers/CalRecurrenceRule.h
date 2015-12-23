@@ -9,6 +9,8 @@
 //  CalRecurrenceRule or any of its properties. This functionality is achieved by creating a new CalRecurrenceRule, and 
 //  setting an event to use the new rule. When a new recurrence rule is set on an CalEvent, that change is not saved 
 //  until the client has passed the modified event to CalCalendarStore's saveEvent: method.
+//
+//  The Calendar Store framework is deprecated.  Please use the Event Kit framework instead.
 
 /*  Custom classes used by CalRecurrenceRule */
 

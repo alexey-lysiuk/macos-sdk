@@ -21,7 +21,11 @@
 
                 If implementing this protocol, you must also include "IMServiceCapabilityInstantMessagingSupport"
                 in the "IMServiceCapabilities" key in the Info.plist of your service plug-in.
-
+                
+                If your service supports delivery of messages to offline users, you must also include
+                "IMServiceCapabilityOfflineMessagingSupport" in the "IMServiceCapabilities" key in the Info.plist
+                of your service plug-in.
+ 
                 IMServicePlugInInstantMessagingSupport and IMServiceApplicationInstantMessagingSupport are
                 paired protocols.  If your service plug-in's principal class implements the
                 IMServicePlugInInstantMessagingSupport protocol, the IMServiceApplication object handed to your

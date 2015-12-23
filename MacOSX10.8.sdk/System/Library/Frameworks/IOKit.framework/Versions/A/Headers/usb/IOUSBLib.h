@@ -1021,7 +1021,8 @@ typedef struct IOUSBDeviceStruct {
                 to select an alternate setting on an interface.
     @param      self Pointer to the IOUSBDeviceInterface.
     @param      req Pointer to an IOUSBDevRequest containing the request.
-    @param      callback An IOAsyncCallback1 method. A message addressed to this callback is posted to the Async port upon completion.
+    @param      callback An IOAsyncCallback1 method. Upon completion, the arg0 argument of the AsyncCallback1 will contain the number of bytes that were actually transferred.  
+	 			A message addressed to this callback is posted to the Async port upon completion.
     @param      refCon Arbitrary pointer which is passed as a parameter to the callback routine.
     @result     Returns kIOReturnSuccess if successful, kIOReturnNoDevice if there is no connection to an IOService,
                 kIOReturnNotOpen if the device is not open for exclusive access, or kIOUSBNoAsyncPortErr if no Async 
@@ -1126,7 +1127,8 @@ typedef struct IOUSBDeviceStruct182 {
     @availability This function is only available with IOUSBDeviceInterface182 and above.
     @param      self Pointer to the IOUSBDeviceInterface.
     @param      req Pointer to an IOUSBDevRequestTO containing the request.
-    @param      callback An IOAsyncCallback1 method. A message addressed to this callback is posted to the 
+	 @param     callback An IOAsyncCallback1 method. Upon completion, the arg0 argument of the AsyncCallback1 will contain the number of bytes that were actually transferred
+	 			in the DeviceRequest.  A message addressed to this callback is posted to the 
                 Async port upon completion.
     @param      refCon Arbitrary pointer which is passed as a parameter to the callback routine.
     @result     Returns kIOReturnSuccess if successful, kIOReturnNoDevice if there is no connection to an IOService,
@@ -1899,7 +1901,8 @@ typedef struct IOUSBInterfaceStruct {
     @param      self Pointer to the IOUSBInterfaceInterface.
     @param      pipeRef Index of the control pipe to use. Use zero for the default control pipe on the device.
     @param      req Pointer to an IOUSBDevRequest containing the request.
-    @param      callback An IOAsyncCallback1 method. A message addressed to this callback is posted to the Async 
+	 @param     callback An IOAsyncCallback1 method. Upon completion, the arg0 argument of the AsyncCallback1 will contain the number of bytes that were actually transferred.
+	 			A message addressed to this callback is posted to the Async 
                 port upon completion.
     @param      refCon Arbitrary pointer which is passed as a parameter to the callback routine.
     @result     Returns kIOReturnSuccess if successful, kIOReturnNoDevice if there is no connection to an IOService,
@@ -2025,7 +2028,8 @@ typedef struct IOUSBInterfaceStruct {
     @param      pipeRef Index for the desired pipe (1 - GetNumEndpoints).
     @param      buf Buffer to hold the data.
     @param      size The size of the buffer pointed to by buf.
-    @param      callback An IOAsyncCallback1 method. A message addressed to this callback is posted to the Async 
+	@param      callback An IOAsyncCallback1 method. Upon completion, the arg0 argument of the AsyncCallback1 will contain the number of bytes that were actually read.
+	 			A message addressed to this callback is posted to the Async 
                 port upon completion.
     @param      refcon Arbitrary pointer which is passed as a parameter to the callback routine.
     @result     Returns kIOReturnSuccess if successful, kIOReturnNoDevice if there is no connection to an IOService,
@@ -2043,7 +2047,8 @@ typedef struct IOUSBInterfaceStruct {
     @param      pipeRef Index for the desired pipe (1 - GetNumEndpoints).
     @param      buf Buffer to hold the data.
     @param      size The size of the buffer pointed to by buf.
-    @param      callback An IOAsyncCallback1 method. A message addressed to this callback is posted to the Async 
+    @param      callback An IOAsyncCallback1 method. Upon completion, the arg0 argument of the AsyncCallback1 will contain the number of bytes that were actually written.
+	 			A message addressed to this callback is posted to the Async 
                 port upon completion.
     @param      refcon Arbitrary pointer which is passed as a parameter to the callback routine.
     @result     Returns kIOReturnSuccess if successful, kIOReturnNoDevice if there is no connection to an IOService,
@@ -2062,8 +2067,8 @@ typedef struct IOUSBInterfaceStruct {
     @param      frameStart The bus frame number on which to start the read (obtained from GetBusFrameNumber).
     @param      numFrames The number of frames for which to transfer data.
     @param      frameList A pointer to an array of IOUSBIsocFrame structures describing the frames.
-    @param      callback An IOAsyncCallback1 method. A message addressed to this callback is posted to the Async 
-                port upon completion.
+    @param      callback An IOAsyncCallback1 method. Upon completion, the arg0 argument of the AsyncCallback1 will contain the framelist pointer, which can be used to associate the completion with a particular request.
+	 			A message addressed to this callback is posted to the Async port upon completion.
     @param      refcon Arbitrary pointer which is passed as a parameter to the callback routine.
     @result     Returns kIOReturnSuccess if successful, kIOReturnNoDevice if there is no connection to an IOService,
                 or kIOReturnNotOpen if the interface is not open for exclusive access.
@@ -2082,7 +2087,8 @@ typedef struct IOUSBInterfaceStruct {
     @param      frameStart The bus frame number on which to start the write (obtained from GetBusFrameNumber).
     @param      numFrames The number of frames for which to transfer data.
     @param      frameList A pointer to an array of IOUSBIsocFrame structures describing the frames.
-    @param      callback An IOAsyncCallback1 method. A message addressed to this callback is posted to the Async 
+    @param      callback An IOAsyncCallback1 method. Upon completion, the arg0 argument of the AsyncCallback1 will contain the framelist pointer, which can be used to associate the completion with a particular request.
+	 			A message addressed to this callback is posted to the Async 
                 port upon completion.
     @param      refcon Arbitrary pointer which is passed as a parameter to the callback routine.
     @result     Returns kIOReturnSuccess if successful, kIOReturnNoDevice if there is no connection to an IOService,
@@ -2168,7 +2174,8 @@ typedef struct IOUSBInterfaceStruct182 {
     @param      self Pointer to the IOUSBInterfaceInterface.
     @param      pipeRef Index of the control pipe to use. Use zero for the default control pipe on the device.
     @param      req Pointer to an IOUSBDevRequestTO containing the request.
-    @param      callback An IOAsyncCallback1 method. A message addressed to this callback is posted to the Async 
+    @param      callback An IOAsyncCallback1 method. Upon completion, the arg0 argument of the AsyncCallback1 will contain the number of bytes that were actually transferred.
+	 			A message addressed to this callback is posted to the Async 
                 port upon completion.
     @param      refCon Arbitrary pointer which is passed as a parameter to the callback routine.
     @result     Returns kIOReturnSuccess if successful, kIOReturnNoDevice if there is no connection to an IOService, or
@@ -2251,7 +2258,8 @@ typedef struct IOUSBInterfaceStruct182 {
                 data is transferred in this amount of time, the request will be aborted and returned.
     @param      completionTimeout Specifies a time value in milliseconds. Once the request is queued on the bus, if 
                 the entire request is not completed in this amount of time, the request will be aborted and returned.
-    @param      callback An IOAsyncCallback1 method. A message addressed to this callback is posted to the Async port 
+    @param      callback An IOAsyncCallback1 method. Upon completion, the arg0 argument of the AsyncCallback1 will contain the number of bytes that were actually read.
+	 			A message addressed to this callback is posted to the Async port 
                 upon completion.
     @param      refcon Arbitrary pointer which is passed as a parameter to the callback routine.
     @result     Returns kIOReturnSuccess if successful, kIOReturnNoDevice if there is no connection to an IOService, or
@@ -2279,7 +2287,8 @@ typedef struct IOUSBInterfaceStruct182 {
                 data is transferred in this amount of time, the request will be aborted and returned.
     @param      completionTimeout Specifies a time value in milliseconds. Once the request is queued on the bus, if 
                 the entire request is not completed in this amount of time, the request will be aborted and returned.
-    @param      callback An IOAsyncCallback1 method. A message addressed to this callback is posted to the Async port 
+    @param      callback An IOAsyncCallback1 method. Upon completion, the arg0 argument of the AsyncCallback1 will contain the number of bytes that were actually written.
+	   			A message addressed to this callback is posted to the Async port 
                 upon completion.
     @param      refcon Arbitrary pointer which is passed as a parameter to the callback routine.
     @result     Returns kIOReturnSuccess if successful, kIOReturnNoDevice if there is no connection to an IOService, or
@@ -2634,7 +2643,8 @@ typedef struct IOUSBInterfaceStruct192 {
     @param      updateFrequency Specifies how often, in milliseconds, the frame list data should be updated. Valid 
                 range is 0 - 8. If 0, it means that the framelist should be updated at the end of the transfer.
     @param      frameList A pointer to an array of IOUSBLowLatencyIsocFrame structures describing the frames.
-    @param      callback An IOAsyncCallback1 method. A message addressed to this callback is posted to 
+    @param      callback An IOAsyncCallback1 method. Upon completion, the arg0 argument of the AsyncCallback1 will contain the framelist pointer, which can be used to associate the completion with a particular request.
+	 			A message addressed to this callback is posted to 
                 the Async port upon completion.
     @param      refcon Arbitrary pointer which is passed as a parameter to the callback routine.
     @result     Returns kIOReturnSuccess if successful, kIOReturnNoDevice if there is no connection to an IOService, or
@@ -2705,7 +2715,8 @@ typedef struct IOUSBInterfaceStruct192 {
     @param      updateFrequency Specifies how often, in milliseconds, should the frame list data be updated. Valid 
                 range is 0 - 8. If 0, it means that the framelist should be updated at the end of the transfer.
     @param      frameList A pointer to an array of IOUSBLowLatencyIsocFrame structures describing the frames.
-    @param      callback An IOAsyncCallback1 method. A message addressed to this callback is posted to 
+    @param      callback An IOAsyncCallback1 method. Upon completion, the arg0 argument of the AsyncCallback1 will contain the framelist pointer, which can be used to associate the completion with a particular request.
+	 			A message addressed to this callback is posted to 
                 the Async port upon completion.
     @param      refcon Arbitrary pointer which is passed as a parameter to the callback routine.
     @result     Returns kIOReturnSuccess if successful, kIOReturnNoDevice if there is no connection to an IOService, or

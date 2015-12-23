@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <GameKit/GKDefines.h>
 
 @class GKVoiceChat;
 
@@ -28,6 +29,7 @@ typedef NSInteger GKPlayerConnectionState;
 NS_CLASS_AVAILABLE(10_8, 4_1)
 @interface GKMatch : NSObject
 @end
+
 @interface GKMatch (GKAdditions)
 @property(readonly, NS_NONATOMIC_IOSONLY) NSArray *playerIDs;    // NSStrings of player identifiers in the match
 @property(assign, NS_NONATOMIC_IOSONLY) id<GKMatchDelegate> delegate;
@@ -45,6 +47,15 @@ NS_CLASS_AVAILABLE(10_8, 4_1)
 // Will return nil if parental controls are turned on
 - (GKVoiceChat *)voiceChatWithName:(NSString *)name;
 
+// Choose the best host from among the connected players using gathered estimates for bandwidth and packet loss. This is intended for applications that wish to implement a client-server model on top of the match. The returned player ID will be nil if the best host cannot currently be determined (e.g. players are still connecting).
+- (void)chooseBestHostPlayerWithCompletionHandler:(void(^)(NSString *playerID))completionHandler __OSX_AVAILABLE_STARTING(__MAC_10_9,__IPHONE_6_0);
+
+// Auto-matching to recreate a previous peer-to-peer match that became disconnected. A new match with the same set of players will be returned by the completion handler. All players should perform this when the match has ended for auto-matching to succeed. Error will be nil on success.
+// Possible reasons for error:
+// 1. Communications failure
+// 2. Timeout
+- (void)rematchWithCompletionHandler:(void(^)(GKMatch *match, NSError *error))completionHandler __OSX_AVAILABLE_STARTING(__MAC_10_9,__IPHONE_6_0);
+
 @end
 
 @protocol GKMatchDelegate <NSObject>
@@ -56,8 +67,6 @@ NS_CLASS_AVAILABLE(10_8, 4_1)
 // The player state changed (eg. connected or disconnected)
 - (void)match:(GKMatch *)match player:(NSString *)playerID didChangeState:(GKPlayerConnectionState)state;
 
-// The match was unable to connect with the player due to an error.
-- (void)match:(GKMatch *)match connectionWithPlayerFailed:(NSString *)playerID withError:(NSError *)error;
 // The match was unable to be established with any players due to an error.
 - (void)match:(GKMatch *)match didFailWithError:(NSError *)error;
 

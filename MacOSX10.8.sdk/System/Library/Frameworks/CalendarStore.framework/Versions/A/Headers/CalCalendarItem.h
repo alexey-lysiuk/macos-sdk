@@ -6,6 +6,8 @@
 //
 //  This class and its subclasses should be used to get information about CalEvent and CalTasks. Accessors for 
 //  properties common to both of these classes are included here.
+//
+//  The Calendar Store framework is deprecated.  Please use the Event Kit framework instead.
 
 @class CalAlarm;
 @class CalCalendar;

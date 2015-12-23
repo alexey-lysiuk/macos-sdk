@@ -7,6 +7,7 @@
 
 #if TARGET_OS_IPHONE
 #import <UIKit/UIKit.h>
+#import <GameKit/GKGameCenterViewController.h>
 #else
 #import <AppKit/AppKit.h>
 #endif
@@ -16,7 +17,7 @@
 // View controller that provides the standard user interface for achievements. Present modally from the top view controller.
 #if TARGET_OS_IPHONE
 NS_CLASS_AVAILABLE(NA, 4_1)
-@interface GKAchievementViewController : UINavigationController
+@interface GKAchievementViewController : GKGameCenterViewController
 @end
 #else
 #include <GameKit/GKDialogController.h>

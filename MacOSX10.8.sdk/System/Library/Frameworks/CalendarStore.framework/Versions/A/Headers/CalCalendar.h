@@ -6,6 +6,8 @@
 //	
 //	This class can be used to get attributes of a calendar, but cannot be used to get the list of events or tasks in a calendar. 
 //	Instead use CalCalendarStore's eventsFromPredicate: and tasksFromPredicate: methods.
+//
+//  The Calendar Store framework is deprecated.  Please use the Event Kit framework instead.
 
 @class NSColor;
 

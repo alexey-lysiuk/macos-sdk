@@ -77,7 +77,7 @@
  */
 
 #ifndef _DNS_SD_H
-#define _DNS_SD_H 3792700
+#define _DNS_SD_H 3793201
 
 #ifdef  __cplusplus
 extern "C" {
@@ -627,9 +627,9 @@ enum
  *   DNSServiceQueryRecord, it restricts the operation to P2P.
  *
  * - If kDNSServiceInterfaceIndexP2P is passed to DNSServiceResolve, it is
- *   mapped internally to kDNSServiceInterfaceIndexAny, because resolving
- *   a P2P service may create and/or enable an interface whose index is not
- *   known a priori. The resolve callback will indicate the index of the
+ *   mapped internally to kDNSServiceInterfaceIndexAny with the kDNSServiceFlagsIncludeP2P
+ *   set, because resolving a P2P service may create and/or enable an interface whose 
+ *   index is not known a priori. The resolve callback will indicate the index of the
  *   interface via which the service can be accessed.
  *
  * If applications pass kDNSServiceInterfaceIndexAny to DNSServiceBrowse
@@ -1792,6 +1792,57 @@ DNSServiceErrorType DNSSD_API DNSServiceReconfirmRecord
     const void                         *rdata
 );
 
+#ifndef __OPEN_SOURCE__
+
+/* PeerConnectionRelease() Parameters
+ *
+ * Release P2P connection resources associated with the service instance.
+ * When a service is resolved over a P2P interface, a connection is brought up to the
+ * peer advertising the service instance.  This call will free the resources associated
+ * with that connection.  Note that the reference to the service instance will only
+ * be maintained by the mDNSResponder daemon while the browse for the service type is still 
+ * running.  Thus the sequence of calls to discover, resolve, and then terminate the connection 
+ * associated with a given P2P service instance would be:
+ *
+ *   DNSServiceRef BrowseRef, ResolveRef;
+ *      DNSServiceBrowse(&BrowseRef, ...)    // browse for all instances of the service
+ *      DNSServiceResolve(&ResolveRef, ...)  // resolving a service instance creates a 
+ *                                           // connection to the peer device advertising that service
+ *      DNSServiceRefDeallocate(ResolveRef)  // Stop the resolve, which does not close the peer connection
+ *
+ *          // Communicate with the peer application.
+ *         
+ *      PeerConnectionRelease()  // release the connection to the peer device for the specified service instance
+ *
+ *      DNSServiceRefDeallocate(BrowseRef)  // stop the browse  
+ *          // Any further calls to PeerConnectionRelease() will have no affect since the
+ *          // service instance to peer connection relationship is only maintained by the 
+ *          // mDNSResponder daemon while the browse is running.
+ *
+ *
+ * flags:           Not currently used.
+ *
+ * name:            The name of the service instance to be resolved, as reported to the
+ *                  DNSServiceBrowseReply() callback.
+ *
+ * regtype:         The type of the service instance to be resolved, as reported to the
+ *                  DNSServiceBrowseReply() callback.
+ *
+ * domain:          The domain of the service instance to be resolved, as reported to the
+ *                  DNSServiceBrowseReply() callback.
+ *
+ * return value:    Returns kDNSServiceErr_NoError on success or the error that occurred.
+ */
+
+DNSServiceErrorType DNSSD_API PeerConnectionRelease
+(
+    DNSServiceFlags flags,
+    const char      *name,
+    const char      *regtype,
+    const char      *domain
+);
+
+#endif // __OPEN_SOURCE__
 
 /*********************************************************************************************
 *

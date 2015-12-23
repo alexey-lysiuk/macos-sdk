@@ -11,7 +11,8 @@ enum {
     GKVoiceChatPlayerConnected,
     GKVoiceChatPlayerDisconnected,
     GKVoiceChatPlayerSpeaking,
-    GKVoiceChatPlayerSilent
+    GKVoiceChatPlayerSilent,
+    GKVoiceChatPlayerConnecting
 };
 typedef NSInteger GKVoiceChatPlayerState;
 
@@ -19,7 +20,7 @@ typedef NSInteger GKVoiceChatPlayerState;
 NS_CLASS_AVAILABLE(10_8, 4_1)
 @interface GKVoiceChat : NSObject
 @end
-
+	
 @interface GKVoiceChat (GKAdditions)
 - (void)start;  // start receiving audio from the chat
 - (void)stop;   // stop receiving audio from the chat

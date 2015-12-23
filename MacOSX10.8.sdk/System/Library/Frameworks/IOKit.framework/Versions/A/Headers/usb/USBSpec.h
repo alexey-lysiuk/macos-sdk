@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1998-2006 Apple Computer, Inc. All rights reserved.
+ * Copyright © 1998-2012 Apple Inc. All rights reserved.
  *
  * @APPLE_LICENSE_HEADER_START@
  * 
@@ -158,7 +158,7 @@ enum {
 	kUSBFeatureU1Enable				= 48,		// Device
 	kUSBFeatureU2Enable				= 49,		// Device
 	kUSBFeatureLTMEnable			= 50		// Device
-}; 
+};
 
     /*!
     @enum USB Power constants

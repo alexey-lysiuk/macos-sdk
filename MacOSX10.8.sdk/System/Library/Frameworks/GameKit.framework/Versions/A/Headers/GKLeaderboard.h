@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <GameKit/GKDefines.h>
 
 enum {
     GKLeaderboardTimeScopeToday = 0,
@@ -24,14 +25,15 @@ typedef NSInteger GKLeaderboardPlayerScope;
 
 // GKLeaderboard represents the set of high scores for the current game, always including the local player's best score.
 NS_CLASS_AVAILABLE(10_8, 4_1)
-@interface GKLeaderboard : NSObject
+@interface GKLeaderboard : NSObject {
+}
 @end
 
 @interface GKLeaderboard (GKAdditions)
 @property(assign, NS_NONATOMIC_IOSONLY)            GKLeaderboardTimeScope      timeScope;
 @property(assign, NS_NONATOMIC_IOSONLY)            GKLeaderboardPlayerScope    playerScope;        // Filter on friends. Does not apply to leaderboard initialized with players.
 @property(copy, NS_NONATOMIC_IOSONLY)              NSString                    *category;          // leaderboard category.  If nil, then it will fetch the aggregate leaderboard
-@property(readonly, copy, NS_NONATOMIC_IOSONLY)    NSString                    *title;             // Localized category title. Defalts to nil until loaded.
+@property(readonly, copy, NS_NONATOMIC_IOSONLY)    NSString                    *title;             // Localized category title. Defaults to nil until loaded.
 @property(assign, NS_NONATOMIC_IOSONLY)            NSRange                     range;              // Leaderboards start at index 1 and the length should be less than 100. Does not apply to leaderboards initialized with players.  Exception will be thrown if developer tries to set an invalid range
 
 @property(readonly, retain, NS_NONATOMIC_IOSONLY)  NSArray                     *scores;            // Scores are not valid until loadScores: has completed.
@@ -39,13 +41,15 @@ NS_CLASS_AVAILABLE(10_8, 4_1)
 @property(readonly, retain, NS_NONATOMIC_IOSONLY)  GKScore                     *localPlayerScore;  // The local player's score
 @property(readonly, getter=isLoading)   BOOL                        loading;            // true if the leaderboard is currently loading
 
+@property(readonly, retain, NS_NONATOMIC_IOSONLY)  NSString                    *groupIdentifier    __OSX_AVAILABLE_STARTING(__MAC_10_9,__IPHONE_6_0);       // set when leaderboards have been designated a game group; set when loadLeaderboardsWithCompletionHandler has been called for leaderboards that support game groups
+
 // Designated initializer
 // Default is the range 1-10 with Global/AllTime scopes
 // if you want to change the scopes or range, set the properites before loading the scores.
 - (id)init;
 
 // Specify an array of players ids, for example, the players who are in a match together
-// Defaults to AllTime score, if you want to change the timeScope, set the property before loading the scores. Range and playerScope are not applicable.
+// Defaults to AllTime score, if you want to change the timeScope, set the property before loading the scores. Range and playerScope are not applicable. playerIDs may not be nil.
 - (id)initWithPlayerIDs:(NSArray *)playerIDs;
 
 // Load the scores for this leader board asynchronously.  Error will be nil on success.
@@ -59,7 +63,9 @@ NS_CLASS_AVAILABLE(10_8, 4_1)
 // 1. Communications problem
 // 2. Unauthenticated player
 // 3. Leaderboard not present
-+ (void)loadCategoriesWithCompletionHandler:(void(^)(NSArray *categories, NSArray *titles, NSError *error))completionHandler;
++ (void)loadCategoriesWithCompletionHandler:(void(^)(NSArray *categories, NSArray *titles, NSError *error))completionHandler __OSX_AVAILABLE_BUT_DEPRECATED(__MAC_10_8, __MAC_10_9, __IPHONE_4_1, __IPHONE_6_0);
+
++ (void)loadLeaderboardsWithCompletionHandler:(void(^)(NSArray *leaderboards, NSError *error))completionHandler __OSX_AVAILABLE_STARTING(__MAC_10_9,__IPHONE_6_0);
 
 // Set the default leaderboard for the local player per game
 // Possible reasons for error:

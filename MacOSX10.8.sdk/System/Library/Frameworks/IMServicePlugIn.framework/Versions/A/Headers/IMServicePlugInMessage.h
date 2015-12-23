@@ -17,7 +17,11 @@ typedef struct _IMServicePlugInMessageInternal IMServicePlugInMessageInternal;
 + (id) servicePlugInMessageWithContent:(NSAttributedString*)content;
 - (id) initWithContent:(NSAttributedString*)content;
 
++ (id) servicePlugInMessageWithContent:(NSAttributedString*)content date:(NSDate *)date;
+- (id) initWithContent:(NSAttributedString*)content date:(NSDate *)date;
+
 @property (readonly) NSString *guid;
 @property (nonatomic, copy) NSAttributedString *content;
+@property (nonatomic, copy) NSDate *date;
 
 @end

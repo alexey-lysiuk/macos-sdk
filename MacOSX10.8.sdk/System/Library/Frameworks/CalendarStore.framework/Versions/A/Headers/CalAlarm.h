@@ -3,6 +3,8 @@
 //	Calendar Store Framework
 //
 //	Copyright 2006 Apple Computer, Inc. All rights reserved.
+//
+//  The Calendar Store framework is deprecated.  Please use the Event Kit framework instead.
 
 extern NSString * const CalAlarmActionDisplay NS_DEPRECATED_MAC(10_5, 10_8);
 extern NSString * const CalAlarmActionEmail NS_DEPRECATED_MAC(10_5, 10_8);

@@ -6,6 +6,8 @@
 //	
 //	Allows the client to access the user's calendars, events, and tasks. Clients can also save changes to an event, task,
 //  or calendar.
+//
+//  The Calendar Store framework is deprecated.  Please use the Event Kit framework instead. 
 
 @class CalCalendar, CalEvent, CalTask;
 
@@ -18,7 +20,7 @@ typedef enum {
     CalSpanThisEvent,
     CalSpanFutureEvents,
     CalSpanAllEvents
-} CalSpan NS_DEPRECATED_MAC(10_5, 10_8);
+} CalSpan NS_ENUM_DEPRECATED_MAC(10_5, 10_8);
 
 @interface CalCalendarStore : NSObject
 {

@@ -78,6 +78,9 @@ typedef enum clk_sampler_type
 //      CL_CONCURRENT_QUEUE (only allowed for the CPU device)
 //      CL_QUEUE_PRIORITY_LOW (default), CL_QUEUE_PRIORITY_DEFAULT or CL_QUEUE_PRIORITY_HIGH
 //************************************************************************************************************************
+#ifdef AVAILABLE_MAC_OS_X_VERSION_10_8_AND_LATER
+DISPATCH_RETURNS_RETAINED
+#endif
 extern dispatch_queue_t gcl_create_dispatch_queue(cl_queue_flags flags, 
                                                   cl_device_id device_id) GCL_API_SUFFIX__VERSION_1_1;
 

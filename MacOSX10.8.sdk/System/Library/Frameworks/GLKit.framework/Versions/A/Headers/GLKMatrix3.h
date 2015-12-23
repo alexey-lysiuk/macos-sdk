@@ -362,12 +362,12 @@ GLK_INLINE GLKMatrix3 GLKMatrix3Multiply(GLKMatrix3 matrixLeft, GLKMatrix3 matri
 		char pad[16*4 - sizeof(GLKMatrix3)];
 	} ret;
     
-    const __m128 iMatrixLeft0 = _mm_load_ps (&matrixLeft.m[0]); // 0 1 2 3
+    const __m128 iMatrixLeft0 = _mm_loadu_ps(&matrixLeft.m[0]); // 0 1 2 3 // unaligned load
     const __m128 iMatrixLeft1 = _mm_loadu_ps(&matrixLeft.m[3]); // 3 4 5 6 // unaligned load
     const __m128 iMatrixLeft2Tmp = _mm_loadu_ps(&matrixLeft.m[5]); // 5 6 7 8 // unaligned load
     const __m128 iMatrixLeft2 = _mm_shuffle_ps(iMatrixLeft2Tmp, iMatrixLeft2Tmp, _MM_SHUFFLE(0, 3, 2, 1)); // 6 7 8 x
     
-    const __m128 iMatrixRight0 = _mm_load_ps (&matrixRight.m[0]);
+    const __m128 iMatrixRight0 = _mm_loadu_ps(&matrixRight.m[0]);
     const __m128 iMatrixRight1 = _mm_loadu_ps(&matrixRight.m[3]);
     const __m128 iMatrixRight2 = _mm_loadu_ps(&matrixRight.m[5]);
     
@@ -383,7 +383,7 @@ GLK_INLINE GLKMatrix3 GLKMatrix3Multiply(GLKMatrix3 matrixLeft, GLKMatrix3 matri
                      + iMatrixLeft1 * _mm_shuffle_ps(iMatrixRight2, iMatrixRight2, _MM_SHUFFLE(2, 2, 2, 2))
                      + iMatrixLeft2 * _mm_shuffle_ps(iMatrixRight2, iMatrixRight2, _MM_SHUFFLE(3, 3, 3, 3));
     
-    _mm_store_ps(&ret.m.m[0], mm0); // store to indices: 0 1 2 3
+    _mm_storeu_ps(&ret.m.m[0], mm0); //unaligned store to indices: 0 1 2 3
     _mm_storeu_ps(&ret.m.m[3], mm1); //unaligned store to indices: 3 4 5 6
     _mm_storeu_ps(&ret.m.m[6], mm2); //unaligned store to indices: 6 7 8
 		
@@ -420,8 +420,8 @@ GLK_INLINE GLKMatrix3 GLKMatrix3Add(GLKMatrix3 matrixLeft, GLKMatrix3 matrixRigh
 #elif defined(GLK_SSE3_INTRINSICS)
     GLKMatrix3 m;
     
-    _mm_store_ps(&m.m[0], _mm_load_ps(&matrixLeft.m[0]) + _mm_load_ps(&matrixRight.m[0]));
-    _mm_store_ps(&m.m[4], _mm_load_ps(&matrixLeft.m[4]) + _mm_load_ps(&matrixRight.m[4]));
+    _mm_storeu_ps(&m.m[0], _mm_loadu_ps(&matrixLeft.m[0]) + _mm_loadu_ps(&matrixRight.m[0]));
+    _mm_storeu_ps(&m.m[4], _mm_loadu_ps(&matrixLeft.m[4]) + _mm_loadu_ps(&matrixRight.m[4]));
     m.m[8] = matrixLeft.m[8] + matrixRight.m[8];
     
     return m;
@@ -457,8 +457,8 @@ GLK_INLINE GLKMatrix3 GLKMatrix3Subtract(GLKMatrix3 matrixLeft, GLKMatrix3 matri
 #elif defined(GLK_SSE3_INTRINSICS)
     GLKMatrix3 m;
     
-    _mm_store_ps(&m.m[0], _mm_load_ps(&matrixLeft.m[0]) - _mm_load_ps(&matrixRight.m[0]));
-    _mm_store_ps(&m.m[4], _mm_load_ps(&matrixLeft.m[4]) - _mm_load_ps(&matrixRight.m[4]));
+    _mm_storeu_ps(&m.m[0], _mm_loadu_ps(&matrixLeft.m[0]) - _mm_loadu_ps(&matrixRight.m[0]));
+    _mm_storeu_ps(&m.m[4], _mm_loadu_ps(&matrixLeft.m[4]) - _mm_loadu_ps(&matrixRight.m[4]));
     m.m[8] = matrixLeft.m[8] - matrixRight.m[8];
     
     return m;

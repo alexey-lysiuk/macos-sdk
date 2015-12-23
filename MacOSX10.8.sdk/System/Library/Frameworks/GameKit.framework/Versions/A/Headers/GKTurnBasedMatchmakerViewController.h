@@ -13,7 +13,7 @@
 #endif
 #import <GameKit/GameKit.h>
 
-@class GKMatchMakerViewController, GKTurnBasedMatch;
+@class GKMatchmakerViewController, GKTurnBasedMatch;
 
 @protocol GKTurnBasedMatchmakerViewControllerDelegate;
 

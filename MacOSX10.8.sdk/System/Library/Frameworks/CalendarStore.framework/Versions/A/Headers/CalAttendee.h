@@ -3,6 +3,8 @@
 //	Calendar Store Framework
 //
 //  Copyright 2006 Apple Computer, Inc. All rights reserved.
+//
+//  The Calendar Store framework is deprecated.  Please use the Event Kit framework instead.
 
 //  These constants are used to describe the user's confirmation status for an attendee. For now, it is not possible to 
 //  modify an event's attendees or the attendees themselves.

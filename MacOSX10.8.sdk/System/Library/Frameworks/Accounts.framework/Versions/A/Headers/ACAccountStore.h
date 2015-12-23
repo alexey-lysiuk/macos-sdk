@@ -10,14 +10,13 @@
 
 // Options dictionary keys for Facebook access
 ACCOUNTS_EXTERN NSString * const ACFacebookAppIdKey;            // Your Facebook App ID, as it appears on the Facebook website.
-ACCOUNTS_EXTERN NSString * const ACFacebookPermissionsKey;      // An array of of the permissions you're requesting.
-ACCOUNTS_EXTERN NSString * const ACFacebookPermissionGroupKey;  // The group that covers the permissions in ACFacebookPermissionsKey.
-ACCOUNTS_EXTERN NSString * const ACFacebookAppVersionKey;       // Your Facebook app version. Optional.
+ACCOUNTS_EXTERN NSString * const ACFacebookPermissionsKey;      // An array of of the permissions you're requesting. Optional.
+ACCOUNTS_EXTERN NSString * const ACFacebookAudienceKey;         // Only required when posting permissions are requested.
 
 // Options dictionary values for Facebook access
-ACCOUNTS_EXTERN NSString * const ACFacebookPermissionGroupRead;      // Use this when asking for read permissions (e.g. user_about_me).
-ACCOUNTS_EXTERN NSString * const ACFacebookPermissionGroupWrite;     // Use this when asking for write permissions (e.g. "publish_stream").
-ACCOUNTS_EXTERN NSString * const ACFacebookPermissionGroupReadWrite; // Use this when requesting both kinds of permissions.
+ACCOUNTS_EXTERN NSString * const ACFacebookAudienceEveryone;    // Posts from your app are visible to everyone.
+ACCOUNTS_EXTERN NSString * const ACFacebookAudienceFriends;     // Posts are visible only to friends.
+ACCOUNTS_EXTERN NSString * const ACFacebookAudienceOnlyMe;      // Posts are visible to the user only.
 
 typedef NS_ENUM(NSInteger, ACAccountCredentialRenewResult) {
     ACAccountCredentialRenewResultRenewed,  // A new credential was obtained and is now associated with the account.
@@ -26,6 +25,7 @@ typedef NS_ENUM(NSInteger, ACAccountCredentialRenewResult) {
 };
 
 typedef void(^ACAccountStoreSaveCompletionHandler)(BOOL success, NSError *error);
+typedef void(^ACAccountStoreRemoveCompletionHandler)(BOOL success, NSError *error);
 typedef void(^ACAccountStoreRequestAccessCompletionHandler)(BOOL granted, NSError *error);
 typedef void(^ACAccountStoreCredentialRenewalHandler)(ACAccountCredentialRenewResult renewResult, NSError *error);
 
@@ -77,6 +77,10 @@ ACCOUNTS_CLASS_AVAILABLE(10_8, 5_0)
 // For Facebook accounts, if your access token became invalid due to regular expiration, this method will obtain a new one.
 // However, if the user has deauthorized your app, this renewal request will return ACAccountCredentialRenewResultRejected.
 - (void)renewCredentialsForAccount:(ACAccount *)account completion:(ACAccountStoreCredentialRenewalHandler)completionHandler;
+
+// Removes an account from the account store. The completion handler for this method is called on an arbitrary queue.
+// This call will fail if you don't have sufficient rights to remove the account in question.
+- (void)removeAccount:(ACAccount *)account withCompletionHandler:(ACAccountStoreRemoveCompletionHandler)completionHandler;
 
 @end
 

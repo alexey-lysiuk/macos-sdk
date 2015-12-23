@@ -3,7 +3,7 @@
  
      Contains:   Internet Config interfaces
  
-     Version:    HIServices-416~44
+     Version:    HIServices-417~20
  
      Copyright:  © 1999-2008 by Apple Computer, Inc., all rights reserved.
  

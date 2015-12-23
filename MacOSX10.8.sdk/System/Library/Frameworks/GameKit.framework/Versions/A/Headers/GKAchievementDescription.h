@@ -6,6 +6,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <GameKit/GKDefines.h>
+
+#if TARGET_OS_IPHONE
+@class UIImage;
+#else
+@class NSImage;
+#endif
 
 // GKAchievementDescription is a full description of the achievement as defined before app submission in iTunes Connect.
 NS_CLASS_AVAILABLE(10_8, 4_1)
@@ -30,31 +37,20 @@ NS_CLASS_AVAILABLE(10_8, 4_1)
 @property(copy, readonly, NS_NONATOMIC_IOSONLY) NSString *unachievedDescription; // The description for an achieved achievement.
 @property(assign, readonly, NS_NONATOMIC_IOSONLY) NSInteger maximumPoints;         // Maximum points available for completing this achievement.
 @property(getter = isHidden, assign, readonly, NS_NONATOMIC_IOSONLY) BOOL hidden;  // Whether or not the achievement should be listed or displayed if not yet unhidden by the game.
-@end
-
-#if TARGET_OS_IPHONE
-
-@class UIImage;
-@interface GKAchievementDescription (UIKitExtensions)
+@property(retain, readonly, NS_NONATOMIC_IOSONLY) NSString *groupIdentifier __OSX_AVAILABLE_STARTING(__MAC_10_9,__IPHONE_6_0);       // The group identifier for the achievement, if one exists.
+@property(getter = isReplayable, assign, readonly, NS_NONATOMIC_IOSONLY) BOOL replayable  __OSX_AVAILABLE_STARTING(__MAC_10_9,__IPHONE_6_0);  // Whether or not the achievement will be reported by the game when the user earns it again. This allows the achievement to be used for challenges when the recipient has previously earned it.
 
 // Image for completed achievement. Not valid until loadImage: has completed.
-@property(retain, readonly, NS_NONATOMIC_IOSONLY) UIImage *image;
-
+#if TARGET_OS_IPHONE
+@property(nonatomic, retain, readonly) UIImage *image;
 // Asynchronously load the image. Error will be nil on success.
 - (void)loadImageWithCompletionHandler:(void(^)(UIImage *image, NSError *error))completionHandler;
-@end
-
-#else // !TARGET_OS_IPHONE
-
-@class NSImage;
-@interface GKAchievementDescription (AppKitExtensions)
-
-// Image for completed achievement. Not valid until loadImage: has completed.
-@property(retain, readonly, NS_NONATOMIC_IOSONLY) NSImage *image;
-
+#else
+@property(atomic, retain, readonly) NSImage *image;
 // Asynchronously load the image. Error will be nil on success.
 - (void)loadImageWithCompletionHandler:(void(^)(NSImage *image, NSError *error))completionHandler;
+#endif
+
 @end
 
-#endif
                                           

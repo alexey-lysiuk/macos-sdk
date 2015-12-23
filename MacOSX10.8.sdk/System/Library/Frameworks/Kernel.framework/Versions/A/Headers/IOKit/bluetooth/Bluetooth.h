@@ -226,6 +226,12 @@ struct	BluetoothKey
 	uint8_t		data[ 16 ];
 };
 
+typedef struct  BluetoothIRK                BluetoothIRK;
+struct BluetoothIRK
+{
+    uint8_t     data[ 16 ];
+};
+        
 typedef struct	BluetoothPINCode			BluetoothPINCode;
 struct	BluetoothPINCode
 {
