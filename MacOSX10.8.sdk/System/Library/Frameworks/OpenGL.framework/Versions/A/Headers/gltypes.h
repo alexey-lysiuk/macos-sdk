@@ -57,11 +57,12 @@ typedef unsigned short GLushort;
 typedef unsigned int GLuint;
 typedef float GLfloat;
 typedef float GLclampf;
-typedef double GLdouble;
-typedef double GLclampd;
 typedef void GLvoid;
 #endif
-
+#if !(defined __gl_h_ || defined __gl3_h_)
+typedef double GLdouble;
+typedef double GLclampd;
+#endif
 
 #ifndef __gl3_h_
 

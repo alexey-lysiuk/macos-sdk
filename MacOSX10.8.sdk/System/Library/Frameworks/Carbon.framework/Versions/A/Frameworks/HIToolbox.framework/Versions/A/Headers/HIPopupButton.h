@@ -3,7 +3,7 @@
  
      Contains:   Definitions of the popup button and popup arrow views provided by HIToolbox.
  
-     Version:    HIToolbox-625~1
+     Version:    HIToolbox-626.1~1
  
      Copyright:  © 2006-2008 by Apple Computer, Inc., all rights reserved.
  

@@ -14,9 +14,9 @@
 #   file is missing or damaged, see the license at "http://www.cups.org/".
 #
 
-VERSION="1.6svn"
+VERSION="1.6.2"
 APIVERSION="1.6"
-BUILD="cups-327"
+BUILD="cups-327.3"
 
 prefix=/
 exec_prefix=/usr

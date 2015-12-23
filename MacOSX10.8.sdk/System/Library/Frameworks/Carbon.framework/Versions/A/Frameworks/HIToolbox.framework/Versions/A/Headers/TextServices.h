@@ -3,7 +3,7 @@
  
      Contains:   Text Services Manager Interfaces.
  
-     Version:    HIToolbox-625~1
+     Version:    HIToolbox-626.1~1
  
      Copyright:  © 1991-2008 by Apple Computer, Inc., all rights reserved.
  

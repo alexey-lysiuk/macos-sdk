@@ -3,7 +3,7 @@
  
      Contains:   Accessibility Carbon events and API for HIToolbox
  
-     Version:    HIToolbox-625~1
+     Version:    HIToolbox-626.1~1
  
      Copyright:  © 2005-2008 by Apple Computer, Inc., all rights reserved.
  

@@ -37,7 +37,6 @@
 #include <IOKit/IOService.h>
 #include <IOKit/IOReturn.h>
 #include <IOKit/IOMemoryDescriptor.h>
-#include <IOKit/IOSyncer.h>
 
 // SCSI Architecture Model Family includes
 #include <IOKit/scsi/SCSICommandDefinitions.h>

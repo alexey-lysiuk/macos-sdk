@@ -155,8 +155,7 @@ extern CL_API_ENTRY cl_int CL_API_CALL clSetKernelArgByNameAPPLE(cl_kernel    /*
  * the CL_RGBA channel layout.
  */
 #define CL_SFIXED14_APPLE                                 0x10000008      /* Introduced in MacOS X.7. */ 
-#define CL_BIASED_HALF_APPLE                              0x10000009      /* Introduced in MacOS X.7. */ 
-
+#define CL_BIASED_HALF_APPLE                              0x10000009      /* Introduced in MacOS X.7. */
 
   
 /* Extension: YUV image support 
@@ -167,8 +166,10 @@ extern CL_API_ENTRY cl_int CL_API_CALL clSetKernelArgByNameAPPLE(cl_kernel    /*
  */
 #define CL_YCbYCr_APPLE                                   0x10000010      /* Introduced in MacOS X.7. */
 #define CL_CbYCrY_APPLE                                   0x10000011      /* Introduced in MacOS X.7. */
+  
+/* Extension: ABGR and xBGR formats for CoreImage CL-GPU support */
+#define CL_ABGR_APPLE                                     0x10000012
 
-    
 /* Extension: cl_APPLE_fp64_ops
  *
  * This extension if enabled supports double-precision basic arithmetic operations (add, sub, mul, divide and sqrt)

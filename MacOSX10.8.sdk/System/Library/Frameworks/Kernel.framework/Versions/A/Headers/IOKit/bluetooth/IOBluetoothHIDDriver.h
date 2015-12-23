@@ -119,6 +119,10 @@ class IOBluetoothHIDDriver : public IOHIDDevice
         OSString*				connectionNotificationString;
         
 		IOTimerEventSource*		deviceConnectTimer;
+		
+		bool					mNeedToDropData;
+		
+		UInt32					mWakeTime;
     };
     ExpansionData	*_expansionData;
 	

@@ -3,7 +3,7 @@
  
      Contains:   AppleScript Debugging Interfaces.
  
-     Version:    OSA-148.1~1
+     Version:    OSA-148.3~2
  
      Copyright:  © 1992-2008 by Apple Computer, Inc., all rights reserved
  

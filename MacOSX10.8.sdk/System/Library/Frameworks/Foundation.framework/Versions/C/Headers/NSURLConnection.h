@@ -115,8 +115,8 @@
 - (id)initWithRequest:(NSURLRequest *)request delegate:(id)delegate;
 + (NSURLConnection*)connectionWithRequest:(NSURLRequest *)request delegate:(id)delegate;
 
-- (NSURLRequest *)originalRequest NS_AVAILABLE_IOS(5_0);
-- (NSURLRequest *)currentRequest NS_AVAILABLE_IOS(5_0);
+- (NSURLRequest *)originalRequest NS_AVAILABLE(10_8, 5_0);
+- (NSURLRequest *)currentRequest NS_AVAILABLE(10_8, 5_0);
 
 - (void)start NS_AVAILABLE(10_5, 2_0);
 - (void)cancel;

@@ -51,7 +51,6 @@ enum
 // General IOKit headers
 #include <IOKit/IOLib.h>
 #include <IOKit/IOService.h>
-#include <IOKit/IOSyncer.h>
 
 // SCSI Architecture Model Family includes
 #include <IOKit/scsi/IOSCSIProtocolServices.h>

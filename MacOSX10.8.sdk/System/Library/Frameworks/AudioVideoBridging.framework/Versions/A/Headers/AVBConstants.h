@@ -8,6 +8,8 @@
 #ifndef AudioVideoBridging_AVBConstants_h
 #define AudioVideoBridging_AVBConstants_h
 
+#include <Foundation/NSObjCRuntime.h>
+
 #define AVBMACAddressSize												6
 
 #pragma mark Entity Capability Flags

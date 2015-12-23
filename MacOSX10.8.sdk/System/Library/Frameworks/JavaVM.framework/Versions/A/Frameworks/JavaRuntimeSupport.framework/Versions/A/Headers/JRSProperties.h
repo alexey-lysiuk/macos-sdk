@@ -5,3 +5,4 @@
 
 char *JRSCopyOSName();
 char *JRSCopyOSVersion();
+char *JRSCopyOSJavaSupportVersion();

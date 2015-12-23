@@ -67,6 +67,16 @@ class SCSITask;
 //	Class Declaration
 //-----------------------------------------------------------------------------
 
+/*!
+ @class IOSCSIProtocolServices
+ @superclass IOSCSIProtocolInterface
+ @discussion
+ This class defines the public SCSI Protocol Services Layer API for any class
+ that implements SCSI protocol services. A protocol services layer driver is
+ responsible for taking incoming SCSITaskIdentifier objects and translating
+ them to the native command type for the native protocol interface
+ (e.g. SBP-2 ORB on FireWire).
+ */
 class IOSCSIProtocolServices : public IOSCSIProtocolInterface
 {
 	

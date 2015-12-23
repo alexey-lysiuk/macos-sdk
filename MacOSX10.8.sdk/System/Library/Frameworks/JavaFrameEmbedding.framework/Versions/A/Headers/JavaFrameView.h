@@ -7,7 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "jni.h"
+#import <JavaVM/jni.h>
 
 
 @interface JavaFrameView : NSView {

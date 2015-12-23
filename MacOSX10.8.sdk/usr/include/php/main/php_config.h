@@ -2934,16 +2934,16 @@
 /* #undef PTHREADS */
 
 /* PHP build date */
-#define PHP_BUILD_DATE "2012-08-24"
+#define PHP_BUILD_DATE "2012-12-09"
 
 /* hardcode for each of the cross compiler host */
 #define PHP_OS "Darwin"
 
 /* hardcode for each of the cross compiler host */
-#define PHP_UNAME "Darwin b1028.apple.com 12.0 Darwin Kernel Version 12.0.0: Sun Jun 24 23:00:16 PDT 2012; root:xnu-2050.7.9~1/RELEASE_X86_64 x86_64"
+#define PHP_UNAME "Darwin b1032.apple.com 12.0 Darwin Kernel Version 12.0.0: Sun Jun 24 23:00:16 PDT 2012; root:xnu-2050.7.9~1/RELEASE_X86_64 x86_64"
 
 /* uname -a output */
-#define PHP_UNAME "Darwin b1028.apple.com 12.0 Darwin Kernel Version 12.0.0: Sun Jun 24 23:00:16 PDT 2012; root:xnu-2050.7.9~1/RELEASE_X86_64 x86_64"
+#define PHP_UNAME "Darwin b1032.apple.com 12.0 Darwin Kernel Version 12.0.0: Sun Jun 24 23:00:16 PDT 2012; root:xnu-2050.7.9~1/RELEASE_X86_64 x86_64"
 
 /* uname output */
 #define PHP_OS "Darwin"

@@ -127,7 +127,7 @@ enum {
   typeType                      = 'type', /* OSType */
   typeAppParameters             = 'appa',
   typeProperty                  = 'prop',
-  typeFSRef                     = 'fsrf', /* FSRef */
+  typeFSRef                     = 'fsrf', /* FSRef.  Deprecated; use typeFileURL or typeBookmark data to refer to files in AppleEvents */
   typeFileURL                   = 'furl', /* a UTF-8 encoded full path, using native path separators */
   typeBookmarkData              = 'bmrk', /* the bytes of a CFURLBookmarkData */
   typeKeyword                   = 'keyw', /* OSType */
@@ -144,7 +144,7 @@ enum {
 #if !__LP64__
 /*
     FSSpecs are deprecated on Mac OS X, and their use in AppleEvents is discouraged.  You should change
-    your code to use FSRefs.  In __LP64__ code, coercions into typeFSS is not supported,
+    your code to use typeFileURL or typeFileBookmark.  In __LP64__ code, coercions into typeFSS is not supported,
     and coercion from typeFSS is not guaranteed to work correctly in all cases.
 */
 enum {

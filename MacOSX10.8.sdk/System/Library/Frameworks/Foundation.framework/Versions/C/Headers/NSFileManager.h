@@ -273,6 +273,11 @@ extern NSString * const NSUbiquityIdentityDidChangeNotification NS_AVAILABLE(10_
 */
 - (id <NSObject, NSCopying, NSCoding>)ubiquityIdentityToken NS_AVAILABLE(10_8, 6_0);
 
+/* Returns the container directory associated with the specified security application group ID.
+ */
+- (NSURL *)containerURLForSecurityApplicationGroupIdentifier:(NSString *)groupIdentifier NS_AVAILABLE_MAC(10_8); // Available in 10.8.3.
+
+
 @end
 
 /* These delegate methods are for the use of the deprecated handler-taking methods on NSFileManager for copying, moving, linking or deleting files.

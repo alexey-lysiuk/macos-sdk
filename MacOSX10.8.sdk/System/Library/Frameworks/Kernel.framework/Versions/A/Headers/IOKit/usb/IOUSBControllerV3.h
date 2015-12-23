@@ -1,5 +1,5 @@
 /*
- * Copyright © 2007-2008 Apple Inc. All rights reserved.
+ * Copyright © 2007-2012 Apple Inc. All rights reserved.
  *
  * @APPLE_LICENSE_HEADER_START@
  * 
@@ -66,20 +66,21 @@ enum
 	  kIOUSBMaxRootHubTransactions  = 2
 };
 
-
-// Thunderbolt things
-#ifndef kIOThunderboltTunnelEndpointDeviceMIDProp
-#define kIOThunderboltTunnelEndpointDeviceMIDProp	"Tunnel Endpoint Device Model ID"
+#ifndef __OPEN_SOURCE__
+	// Thunderbolt things
+	#ifndef kIOThunderboltTunnelEndpointDeviceMIDProperty
+		#define kIOThunderboltTunnelEndpointDeviceMIDProperty	"Tunnel Endpoint Device Model ID"
+	#endif
+	#ifndef kIOThunderboltTunnelEndpointDeviceVIDProperty
+		#define kIOThunderboltTunnelEndpointDeviceVIDProperty	"Tunnel Endpoint Device Vendor ID"
+	#endif
+	#ifndef  kIOThunderboltAppleDisplay2011DMID
+		#define kIOThunderboltAppleDisplay2011DMID				0x8002
+	#endif
+	#ifndef kIOThunderboltAppleDVID
+		#define kIOThunderboltAppleDVID                         0x0001
+	#endif
 #endif
-#ifndef kIOThunderboltTunnelEndpointDeviceVIDProp
-#define kIOThunderboltTunnelEndpointDeviceVIDProp	"Tunnel Endpoint Device Vendor ID"
-#endif
-
-#define kAppleThunderboltDisplay2011MID				0x8002
-#define kAppleThunderboltVID                        0x0001
-
-
-
 
 /*!
  @class IOUSBControllerV3
@@ -339,7 +340,7 @@ class IOUSBControllerV3 : public IOUSBControllerV2
 											 short		direction);
 	
 	OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  9);
-	virtual IOReturn 		OpenPipe(USBDeviceAddress address, UInt8 speed, Endpoint *endpoint, UInt32 maxStreams, UInt32 maxBurst);
+	virtual IOReturn 		OpenPipe(USBDeviceAddress address, UInt8 speed, Endpoint *endpoint, UInt32 maxStreams, UInt32 maxBurstAndMult);
 
 	/*!
 	 @function UIMMaxSupportedStream
@@ -402,12 +403,12 @@ class IOUSBControllerV3 : public IOUSBControllerV2
 	 @function UIMCreateSSIsochEndpoint
 	 @abstract Create an endpoint in the controller with maxburst capabilities
      if controller does not support superspeed, this method should not be overridden
-	 @param functionNumber  USB device ID of device
-	 @param endpointNumber  endpoint address of the endpoint in the device
-	 @param maxPacketSize   maximum packet size of this endpoint
-	 @param direction       Direction of data flow. kUSBIn or kUSBOut
+	 @param functionNumber		USB device ID of device
+	 @param endpointNumber		endpoint address of the endpoint in the device
+	 @param maxPacketSize		maximum packet size of this endpoint
+	 @param direction			Direction of data flow. kUSBIn or kUSBOut
 	 @param interval		
-	 @param maxBurst		number of extra packets in a burst transfer
+	 @param maxBurstAndMult		number of extra packets in a burst transfer and burst multiplier
 	 */
     virtual IOReturn 		UIMCreateSSIsochEndpoint(
                                                      short				functionAddress,
@@ -415,7 +416,7 @@ class IOUSBControllerV3 : public IOUSBControllerV2
                                                      UInt32				maxPacketSize,
                                                      UInt8				direction,
                                                      UInt8				interval,
-                                                     UInt32             maxBurst);
+                                                     UInt32             maxBurstAndMult);
     
 	OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  15);
 	/*!

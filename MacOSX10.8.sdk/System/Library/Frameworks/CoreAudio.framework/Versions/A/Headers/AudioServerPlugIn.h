@@ -19,7 +19,7 @@
     @header AudioServerPlugIn
     
     An AudioServerPlugIn is a CFPlugIn that is loaded by the host process as a driver. The plug-in
-    bundle is installed in /Library/Audio/PlugIns/HAL. The bundle's name has the suffix ".driver".
+    bundle is installed in /Library/Audio/Plug-Ins/HAL. The bundle's name has the suffix ".driver".
     When loading the plug-in, the host looks for factories with the plug-in type,
     kAudioServerPlugInTypeUUID. The plug-in provides an object that conforms to the interface,
     kAudioServerPlugInDriverInterfaceUUID.

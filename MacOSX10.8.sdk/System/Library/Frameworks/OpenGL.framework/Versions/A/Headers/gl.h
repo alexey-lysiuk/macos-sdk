@@ -2260,7 +2260,7 @@ typedef void (* glPointParameterivProcPtr) (GLenum pname, const GLint *params);
 typedef void (* glBlendFuncSeparateProcPtr) (GLenum srcRGB, GLenum dstRGB, GLenum srcAlpha, GLenum dstAlpha);
 
 typedef void (* glMultiDrawArraysProcPtr) (GLenum mode, const GLint *first, const GLsizei *count, GLsizei primcount);
-typedef void (* glMultiDrawElementsProcPtr) (GLenum mode, const GLsizei *count, GLenum type, const GLvoid **indices, GLsizei primcount);
+typedef void (* glMultiDrawElementsProcPtr) (GLenum mode, const GLsizei *count, GLenum type, const GLvoid* const *indices, GLsizei primcount);
 
 typedef void (* glWindowPos2dProcPtr) (GLdouble x, GLdouble y);
 typedef void (* glWindowPos2dvProcPtr) (const GLdouble *v);
@@ -2347,7 +2347,7 @@ typedef void (* glGetVertexAttribPointervProcPtr) (GLuint index, GLenum pname, G
 typedef void (* glDeleteShaderProcPtr) (GLuint shader);
 typedef void (* glDetachShaderProcPtr) (GLuint program, GLuint shader);
 typedef GLuint (* glCreateShaderProcPtr) (GLenum type);
-typedef void (* glShaderSourceProcPtr) (GLuint shader, GLsizei count, const GLchar **string, const GLint *length);
+typedef void (* glShaderSourceProcPtr) (GLuint shader, GLsizei count, const GLchar* const *string, const GLint *length);
 typedef void (* glCompileShaderProcPtr) (GLuint shader);
 typedef GLuint (* glCreateProgramProcPtr) (void);
 typedef void (* glAttachShaderProcPtr) (GLuint program, GLuint shader);
@@ -2860,7 +2860,7 @@ extern void glPointParameteriv (GLenum pname, const GLint *params);
 extern void glBlendFuncSeparate (GLenum srcRGB, GLenum dstRGB, GLenum srcAlpha, GLenum dstAlpha);
 
 extern void glMultiDrawArrays (GLenum mode, const GLint *first, const GLsizei *count, GLsizei primcount);
-extern void glMultiDrawElements (GLenum mode, const GLsizei *count, GLenum type, const GLvoid **indices, GLsizei primcount);
+extern void glMultiDrawElements (GLenum mode, const GLsizei *count, GLenum type, const GLvoid* const *indices, GLsizei primcount);
 
 extern void glWindowPos2d (GLdouble x, GLdouble y);
 extern void glWindowPos2dv (const GLdouble *v);
@@ -2947,7 +2947,7 @@ extern void glGetVertexAttribPointerv (GLuint index, GLenum pname, GLvoid **poin
 extern void glDeleteShader (GLuint shader);
 extern void glDetachShader (GLuint program, GLuint shader);
 extern GLuint glCreateShader (GLenum type);
-extern void glShaderSource (GLuint shader, GLsizei count, const GLchar **string, const GLint *length);
+extern void glShaderSource (GLuint shader, GLsizei count, const GLchar* const *string, const GLint *length);
 extern void glCompileShader (GLuint shader);
 extern GLuint glCreateProgram (void);
 extern void glAttachShader (GLuint program, GLuint shader);
