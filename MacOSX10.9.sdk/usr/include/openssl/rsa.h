@@ -108,22 +108,22 @@ struct rsa_meth_st
 	const char *name;
 	int (*rsa_pub_enc)(int flen,const unsigned char *from,
 			   unsigned char *to,
-			   RSA *rsa,int padding);
+			   RSA *rsa,int padding) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	int (*rsa_pub_dec)(int flen,const unsigned char *from,
 			   unsigned char *to,
-			   RSA *rsa,int padding);
+			   RSA *rsa,int padding) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	int (*rsa_priv_enc)(int flen,const unsigned char *from,
 			    unsigned char *to,
-			    RSA *rsa,int padding);
+			    RSA *rsa,int padding) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	int (*rsa_priv_dec)(int flen,const unsigned char *from,
 			    unsigned char *to,
-			    RSA *rsa,int padding);
-	int (*rsa_mod_exp)(BIGNUM *r0,const BIGNUM *I,RSA *rsa,BN_CTX *ctx); /* Can be null */
+			    RSA *rsa,int padding) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	int (*rsa_mod_exp)(BIGNUM *r0,const BIGNUM *I,RSA *rsa,BN_CTX *ctx) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER; /* Can be null */
 	int (*bn_mod_exp)(BIGNUM *r, const BIGNUM *a, const BIGNUM *p,
 			  const BIGNUM *m, BN_CTX *ctx,
-			  BN_MONT_CTX *m_ctx); /* Can be null */
-	int (*init)(RSA *rsa);		/* called at new */
-	int (*finish)(RSA *rsa);	/* called at free */
+			  BN_MONT_CTX *m_ctx) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER; /* Can be null */
+	int (*init)(RSA *rsa) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;		/* called at new */
+	int (*finish)(RSA *rsa) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;	/* called at free */
 	int flags;			/* RSA_METHOD_FLAG_* things */
 	char *app_data;			/* may be needed! */
 /* New sign and verify functions: some libraries don't allow arbitrary data
@@ -135,15 +135,15 @@ struct rsa_meth_st
  */
 	int (*rsa_sign)(int type,
 		const unsigned char *m, unsigned int m_length,
-		unsigned char *sigret, unsigned int *siglen, const RSA *rsa);
+		unsigned char *sigret, unsigned int *siglen, const RSA *rsa) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	int (*rsa_verify)(int dtype,
 		const unsigned char *m, unsigned int m_length,
-		unsigned char *sigbuf, unsigned int siglen, const RSA *rsa);
+		unsigned char *sigbuf, unsigned int siglen, const RSA *rsa) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 /* If this callback is NULL, the builtin software RSA key-gen will be used. This
  * is for behavioural compatibility whilst the code gets rewired, but one day
  * it would be nice to assume there are no such things as "builtin software"
  * implementations. */
-	int (*rsa_keygen)(RSA *rsa, int bits, BIGNUM *e, BN_GENCB *cb);
+	int (*rsa_keygen)(RSA *rsa, int bits, BIGNUM *e, BN_GENCB *cb) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	};
 
 struct rsa_st
@@ -286,8 +286,8 @@ int	RSA_up_ref(RSA *r) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 int	RSA_flags(const RSA *r) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 
 #ifdef OPENSSL_FIPS
-RSA *FIPS_rsa_new(void);
-void FIPS_rsa_free(RSA *r);
+RSA *FIPS_rsa_new(void) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+void FIPS_rsa_free(RSA *r) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 #endif
 
 void RSA_set_default_method(const RSA_METHOD *meth) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;

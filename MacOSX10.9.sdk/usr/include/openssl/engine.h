@@ -337,15 +337,15 @@ void ENGINE_load_gmp(void) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 void ENGINE_load_nuron(void) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 void ENGINE_load_sureware(void) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 void ENGINE_load_ubsec(void) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
-#endif
-void ENGINE_load_cryptodev(void) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
-void ENGINE_load_padlock(void) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
-void ENGINE_load_builtin_engines(void) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 #ifdef OPENSSL_SYS_WIN32
 #ifndef OPENSSL_NO_CAPIENG
 void ENGINE_load_capi(void) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 #endif
 #endif
+#endif
+void ENGINE_load_cryptodev(void) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+void ENGINE_load_padlock(void) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+void ENGINE_load_builtin_engines(void) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 
 /* Get and set global flags (ENGINE_TABLE_FLAG_***) for the implementation
  * "registry" handling. */
@@ -708,7 +708,7 @@ typedef int (*dynamic_bind_engine)(ENGINE *e, const char *id,
 void *ENGINE_get_static_state(void) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 
 #if defined(__OpenBSD__) || defined(__FreeBSD__)
-void ENGINE_setup_bsd_cryptodev(void);
+void ENGINE_setup_bsd_cryptodev(void) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 #endif
 
 /* BEGIN ERROR CODES */

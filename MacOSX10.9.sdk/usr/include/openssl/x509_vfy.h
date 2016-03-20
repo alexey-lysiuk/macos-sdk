@@ -141,21 +141,21 @@ DECLARE_STACK_OF(X509_OBJECT)
 typedef struct x509_lookup_method_st
 	{
 	const char *name;
-	int (*new_item)(X509_LOOKUP *ctx);
-	void (*free)(X509_LOOKUP *ctx);
-	int (*init)(X509_LOOKUP *ctx);
-	int (*shutdown)(X509_LOOKUP *ctx);
+	int (*new_item)(X509_LOOKUP *ctx) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	void (*free)(X509_LOOKUP *ctx) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	int (*init)(X509_LOOKUP *ctx) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	int (*shutdown)(X509_LOOKUP *ctx) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	int (*ctrl)(X509_LOOKUP *ctx,int cmd,const char *argc,long argl,
-			char **ret);
+			char **ret) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	int (*get_by_subject)(X509_LOOKUP *ctx,int type,X509_NAME *name,
-			      X509_OBJECT *ret);
+			      X509_OBJECT *ret) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	int (*get_by_issuer_serial)(X509_LOOKUP *ctx,int type,X509_NAME *name,
-				    ASN1_INTEGER *serial,X509_OBJECT *ret);
+				    ASN1_INTEGER *serial,X509_OBJECT *ret) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	int (*get_by_fingerprint)(X509_LOOKUP *ctx,int type,
 				  unsigned char *bytes,int len,
-				  X509_OBJECT *ret);
+				  X509_OBJECT *ret) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	int (*get_by_alias)(X509_LOOKUP *ctx,int type,char *str,int len,
-			    X509_OBJECT *ret);
+			    X509_OBJECT *ret) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	} X509_LOOKUP_METHOD;
 
 /* This structure hold all parameters associated with a verify operation
@@ -192,15 +192,15 @@ struct x509_store_st
 	X509_VERIFY_PARAM *param;
 
 	/* Callbacks for various operations */
-	int (*verify)(X509_STORE_CTX *ctx);	/* called to verify a certificate */
-	int (*verify_cb)(int ok,X509_STORE_CTX *ctx);	/* error callback */
-	int (*get_issuer)(X509 **issuer, X509_STORE_CTX *ctx, X509 *x);	/* get issuers cert from ctx */
-	int (*check_issued)(X509_STORE_CTX *ctx, X509 *x, X509 *issuer); /* check issued */
-	int (*check_revocation)(X509_STORE_CTX *ctx); /* Check revocation status of chain */
-	int (*get_crl)(X509_STORE_CTX *ctx, X509_CRL **crl, X509 *x); /* retrieve CRL */
-	int (*check_crl)(X509_STORE_CTX *ctx, X509_CRL *crl); /* Check CRL validity */
-	int (*cert_crl)(X509_STORE_CTX *ctx, X509_CRL *crl, X509 *x); /* Check certificate against CRL */
-	int (*cleanup)(X509_STORE_CTX *ctx);
+	int (*verify)(X509_STORE_CTX *ctx) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;	/* called to verify a certificate */
+	int (*verify_cb)(int ok,X509_STORE_CTX *ctx) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;	/* error callback */
+	int (*get_issuer)(X509 **issuer, X509_STORE_CTX *ctx, X509 *x) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;	/* get issuers cert from ctx */
+	int (*check_issued)(X509_STORE_CTX *ctx, X509 *x, X509 *issuer) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER; /* check issued */
+	int (*check_revocation)(X509_STORE_CTX *ctx) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER; /* Check revocation status of chain */
+	int (*get_crl)(X509_STORE_CTX *ctx, X509_CRL **crl, X509 *x) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER; /* retrieve CRL */
+	int (*check_crl)(X509_STORE_CTX *ctx, X509_CRL *crl) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER; /* Check CRL validity */
+	int (*cert_crl)(X509_STORE_CTX *ctx, X509_CRL *crl, X509 *x) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER; /* Check certificate against CRL */
+	int (*cleanup)(X509_STORE_CTX *ctx) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 
 	CRYPTO_EX_DATA ex_data;
 	int references;
@@ -239,16 +239,16 @@ struct x509_store_ctx_st      /* X509_STORE_CTX */
 	void *other_ctx;	/* Other info for use with get_issuer() */
 
 	/* Callbacks for various operations */
-	int (*verify)(X509_STORE_CTX *ctx);	/* called to verify a certificate */
-	int (*verify_cb)(int ok,X509_STORE_CTX *ctx);		/* error callback */
-	int (*get_issuer)(X509 **issuer, X509_STORE_CTX *ctx, X509 *x);	/* get issuers cert from ctx */
-	int (*check_issued)(X509_STORE_CTX *ctx, X509 *x, X509 *issuer); /* check issued */
-	int (*check_revocation)(X509_STORE_CTX *ctx); /* Check revocation status of chain */
-	int (*get_crl)(X509_STORE_CTX *ctx, X509_CRL **crl, X509 *x); /* retrieve CRL */
-	int (*check_crl)(X509_STORE_CTX *ctx, X509_CRL *crl); /* Check CRL validity */
-	int (*cert_crl)(X509_STORE_CTX *ctx, X509_CRL *crl, X509 *x); /* Check certificate against CRL */
-	int (*check_policy)(X509_STORE_CTX *ctx);
-	int (*cleanup)(X509_STORE_CTX *ctx);
+	int (*verify)(X509_STORE_CTX *ctx) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;	/* called to verify a certificate */
+	int (*verify_cb)(int ok,X509_STORE_CTX *ctx) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;		/* error callback */
+	int (*get_issuer)(X509 **issuer, X509_STORE_CTX *ctx, X509 *x) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;	/* get issuers cert from ctx */
+	int (*check_issued)(X509_STORE_CTX *ctx, X509 *x, X509 *issuer) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER; /* check issued */
+	int (*check_revocation)(X509_STORE_CTX *ctx) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER; /* Check revocation status of chain */
+	int (*get_crl)(X509_STORE_CTX *ctx, X509_CRL **crl, X509 *x) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER; /* retrieve CRL */
+	int (*check_crl)(X509_STORE_CTX *ctx, X509_CRL *crl) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER; /* Check CRL validity */
+	int (*cert_crl)(X509_STORE_CTX *ctx, X509_CRL *crl, X509 *x) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER; /* Check certificate against CRL */
+	int (*check_policy)(X509_STORE_CTX *ctx) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	int (*cleanup)(X509_STORE_CTX *ctx) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 
 	/* The following is built up */
 	int valid;		/* if 0, rebuild chain */

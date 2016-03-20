@@ -72,7 +72,7 @@ typedef struct stack_st
 	int sorted;
 
 	int num_alloc;
-	int (*comp)(const char * const *, const char * const *);
+	int (*comp)(const char * const *, const char * const *) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	} STACK;
 
 #define M_sk_num(sk)		((sk) ? (sk)->num:-1)

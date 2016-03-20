@@ -84,7 +84,7 @@ typedef struct txt_db_st
 	int num_fields;
 	STACK /* char ** */ *data;
 	LHASH **index;
-	int (**qual)(char **);
+	int (**qual)(char **) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	long error;
 	long arg1;
 	long arg2;

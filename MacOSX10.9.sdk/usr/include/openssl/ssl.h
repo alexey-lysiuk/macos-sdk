@@ -368,36 +368,36 @@ DECLARE_STACK_OF(SSL_CIPHER)
 typedef struct ssl_method_st
 	{
 	int version;
-	int (*ssl_new)(SSL *s);
-	void (*ssl_clear)(SSL *s);
-	void (*ssl_free)(SSL *s);
-	int (*ssl_accept)(SSL *s);
-	int (*ssl_connect)(SSL *s);
-	int (*ssl_read)(SSL *s,void *buf,int len);
-	int (*ssl_peek)(SSL *s,void *buf,int len);
-	int (*ssl_write)(SSL *s,const void *buf,int len);
-	int (*ssl_shutdown)(SSL *s);
-	int (*ssl_renegotiate)(SSL *s);
-	int (*ssl_renegotiate_check)(SSL *s);
+	int (*ssl_new)(SSL *s) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	void (*ssl_clear)(SSL *s) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	void (*ssl_free)(SSL *s) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	int (*ssl_accept)(SSL *s) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	int (*ssl_connect)(SSL *s) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	int (*ssl_read)(SSL *s,void *buf,int len) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	int (*ssl_peek)(SSL *s,void *buf,int len) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	int (*ssl_write)(SSL *s,const void *buf,int len) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	int (*ssl_shutdown)(SSL *s) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	int (*ssl_renegotiate)(SSL *s) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	int (*ssl_renegotiate_check)(SSL *s) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	long (*ssl_get_message)(SSL *s, int st1, int stn, int mt, long
-		max, int *ok);
+		max, int *ok) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	int (*ssl_read_bytes)(SSL *s, int type, unsigned char *buf, int len, 
-		int peek);
-	int (*ssl_write_bytes)(SSL *s, int type, const void *buf_, int len);
-	int (*ssl_dispatch_alert)(SSL *s);
-	long (*ssl_ctrl)(SSL *s,int cmd,long larg,void *parg);
-	long (*ssl_ctx_ctrl)(SSL_CTX *ctx,int cmd,long larg,void *parg);
-	SSL_CIPHER *(*get_cipher_by_char)(const unsigned char *ptr);
-	int (*put_cipher_by_char)(const SSL_CIPHER *cipher,unsigned char *ptr);
-	int (*ssl_pending)(const SSL *s);
-	int (*num_ciphers)(void);
-	SSL_CIPHER *(*get_cipher)(unsigned ncipher);
-	struct ssl_method_st *(*get_ssl_method)(int version);
-	long (*get_timeout)(void);
+		int peek) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	int (*ssl_write_bytes)(SSL *s, int type, const void *buf_, int len) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	int (*ssl_dispatch_alert)(SSL *s) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	long (*ssl_ctrl)(SSL *s,int cmd,long larg,void *parg) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	long (*ssl_ctx_ctrl)(SSL_CTX *ctx,int cmd,long larg,void *parg) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	SSL_CIPHER *(*get_cipher_by_char)(const unsigned char *ptr) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	int (*put_cipher_by_char)(const SSL_CIPHER *cipher,unsigned char *ptr) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	int (*ssl_pending)(const SSL *s) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	int (*num_ciphers)(void) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	SSL_CIPHER *(*get_cipher)(unsigned ncipher) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	struct ssl_method_st *(*get_ssl_method)(int version) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	long (*get_timeout)(void) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	struct ssl3_enc_method *ssl3_enc; /* Extra SSLv3/TLS stuff */
-	int (*ssl_version)(void);
-	long (*ssl_callback_ctrl)(SSL *s, int cb_id, void (*fp)(void));
-	long (*ssl_ctx_callback_ctrl)(SSL_CTX *s, int cb_id, void (*fp)(void));
+	int (*ssl_version)(void) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	long (*ssl_callback_ctrl)(SSL *s, int cb_id, void (*fp)(void)) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	long (*ssl_ctx_callback_ctrl)(SSL_CTX *s, int cb_id, void (*fp)(void)) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	} SSL_METHOD;
 
 /* Lets make this into an ASN.1 type structure as follows
@@ -492,10 +492,13 @@ typedef struct ssl_session_st
 #define SSL_OP_NETSCAPE_REUSE_CIPHER_CHANGE_BUG		0x00000008L
 #define SSL_OP_SSLREF2_REUSE_CERT_TYPE_BUG		0x00000010L
 #define SSL_OP_MICROSOFT_BIG_SSLV3_BUFFER		0x00000020L
-#define SSL_OP_MSIE_SSLV2_RSA_PADDING			0x00000040L /* no effect since 0.9.7h and 0.9.8b */
+#define SSL_OP_SAFARI_ECDHE_ECDSA_BUG			0x00000040L
 #define SSL_OP_SSLEAY_080_CLIENT_DH_BUG			0x00000080L
 #define SSL_OP_TLS_D5_BUG				0x00000100L
 #define SSL_OP_TLS_BLOCK_PADDING_BUG			0x00000200L
+
+/* Hasn't done anything since OpenSSL 0.9.7h, retained for compatibility */
+#define SSL_OP_MSIE_SSLV2_RSA_PADDING			0x0
 
 /* Disable SSL 3.0/TLS 1.0 CBC vulnerability workaround that was added
  * in OpenSSL 0.9.6d.  Usually (depending on the application protocol)
@@ -678,10 +681,10 @@ struct ssl_ctx_st
 	 * If remove_session_cb is not null, it will be called when
 	 * a session-id is removed from the cache.  After the call,
 	 * OpenSSL will SSL_SESSION_free() it. */
-	int (*new_session_cb)(struct ssl_st *ssl,SSL_SESSION *sess);
-	void (*remove_session_cb)(struct ssl_ctx_st *ctx,SSL_SESSION *sess);
+	int (*new_session_cb)(struct ssl_st *ssl,SSL_SESSION *sess) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	void (*remove_session_cb)(struct ssl_ctx_st *ctx,SSL_SESSION *sess) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	SSL_SESSION *(*get_session_cb)(struct ssl_st *ssl,
-		unsigned char *data,int len,int *copy);
+		unsigned char *data,int len,int *copy) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 
 	struct
 		{
@@ -706,7 +709,7 @@ struct ssl_ctx_st
 	int references;
 
 	/* if defined, these override the X509_verify_cert() calls */
-	int (*app_verify_callback)(X509_STORE_CTX *, void *);
+	int (*app_verify_callback)(X509_STORE_CTX *, void *) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	void *app_verify_arg;
 	/* before OpenSSL 0.9.7, 'app_verify_arg' was ignored
 	 * ('app_verify_callback' was called with just one argument) */
@@ -718,15 +721,15 @@ struct ssl_ctx_st
 	void *default_passwd_callback_userdata;
 
 	/* get client cert callback */
-	int (*client_cert_cb)(SSL *ssl, X509 **x509, EVP_PKEY **pkey);
+	int (*client_cert_cb)(SSL *ssl, X509 **x509, EVP_PKEY **pkey) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 
     /* cookie generate callback */
     int (*app_gen_cookie_cb)(SSL *ssl, unsigned char *cookie, 
-        unsigned int *cookie_len);
+        unsigned int *cookie_len) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 
     /* verify cookie callback */
     int (*app_verify_cookie_cb)(SSL *ssl, unsigned char *cookie, 
-        unsigned int cookie_len);
+        unsigned int cookie_len) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 
 	CRYPTO_EX_DATA ex_data;
 
@@ -740,7 +743,7 @@ struct ssl_ctx_st
 
 	/* Default values used when no per-SSL value is defined follow */
 
-	void (*info_callback)(const SSL *ssl,int type,int val); /* used if SSL's info_callback is NULL */
+	void (*info_callback)(const SSL *ssl,int type,int val) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER; /* used if SSL's info_callback is NULL */
 
 	/* what we put in client cert requests */
 	STACK_OF(X509_NAME) *client_CA;
@@ -756,13 +759,13 @@ struct ssl_ctx_st
 	int read_ahead;
 
 	/* callback that allows applications to peek at protocol messages */
-	void (*msg_callback)(int write_p, int version, int content_type, const void *buf, size_t len, SSL *ssl, void *arg);
+	void (*msg_callback)(int write_p, int version, int content_type, const void *buf, size_t len, SSL *ssl, void *arg) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	void *msg_callback_arg;
 
 	int verify_mode;
 	unsigned int sid_ctx_length;
 	unsigned char sid_ctx[SSL_MAX_SID_CTX_LENGTH];
-	int (*default_verify_callback)(int ok,X509_STORE_CTX *ctx); /* called 'verify_callback' in the SSL */
+	int (*default_verify_callback)(int ok,X509_STORE_CTX *ctx) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER; /* called 'verify_callback' in the SSL */
 
 	/* Default generate session ID callback. */
 	GEN_SESSION_CB generate_session_id;
@@ -784,7 +787,7 @@ struct ssl_ctx_st
 
 #ifndef OPENSSL_NO_TLSEXT
 	/* TLS extensions servername callback */
-	int (*tlsext_servername_callback)(SSL*, int *, void *);
+	int (*tlsext_servername_callback)(SSL*, int *, void *) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	void *tlsext_servername_arg;
 	/* RFC 4507 session ticket keys */
 	unsigned char tlsext_tick_key_name[16];
@@ -794,11 +797,11 @@ struct ssl_ctx_st
 	int (*tlsext_ticket_key_cb)(SSL *ssl,
 					unsigned char *name, unsigned char *iv,
 					EVP_CIPHER_CTX *ectx,
-					HMAC_CTX *hctx, int enc);
+					HMAC_CTX *hctx, int enc) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 
 	/* certificate status request info */
 	/* Callback for status request */
-	int (*tlsext_status_cb)(SSL *ssl, void *arg);
+	int (*tlsext_status_cb)(SSL *ssl, void *arg) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	void *tlsext_status_arg;
 #endif
 
@@ -815,7 +818,7 @@ struct ssl_ctx_st
 #define SSL_SESS_CACHE_NO_INTERNAL \
 	(SSL_SESS_CACHE_NO_INTERNAL_LOOKUP|SSL_SESS_CACHE_NO_INTERNAL_STORE)
 
-  struct lhash_st *SSL_CTX_sessions(SSL_CTX *ctx);
+  struct lhash_st *SSL_CTX_sessions(SSL_CTX *ctx) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 #define SSL_CTX_sess_number(ctx) \
 	SSL_CTX_ctrl(ctx,SSL_CTRL_SESS_NUMBER,0,NULL)
 #define SSL_CTX_sess_connect(ctx) \
@@ -900,7 +903,7 @@ struct ssl_st
 
 	/* true when we are actually in SSL_accept() or SSL_connect() */
 	int in_handshake;
-	int (*handshake_func)(SSL *);
+	int (*handshake_func)(SSL *) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 
 	/* Imagine that here's a boolean member "init" that is
 	 * switched as soon as SSL_set_{accept/connect}_state
@@ -941,7 +944,7 @@ struct ssl_st
 	               	 	 * (for non-blocking reads) */
 
 	/* callback that allows applications to peek at protocol messages */
-	void (*msg_callback)(int write_p, int version, int content_type, const void *buf, size_t len, SSL *ssl, void *arg);
+	void (*msg_callback)(int write_p, int version, int content_type, const void *buf, size_t len, SSL *ssl, void *arg) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	void *msg_callback_arg;
 
 	int hit;		/* reusing a previous session */
@@ -996,9 +999,9 @@ struct ssl_st
 	/* Used in SSL2 and SSL3 */
 	int verify_mode;	/* 0 don't care about verify failure.
 				 * 1 fail if verify fails */
-	int (*verify_callback)(int ok,X509_STORE_CTX *ctx); /* fail if callback returns 0 */
+	int (*verify_callback)(int ok,X509_STORE_CTX *ctx) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER; /* fail if callback returns 0 */
 
-	void (*info_callback)(const SSL *ssl,int type,int val); /* optional informational callback */
+	void (*info_callback)(const SSL *ssl,int type,int val) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER; /* optional informational callback */
 
 	int error;		/* error bytes to be written */
 	int error_code;		/* actual code */
@@ -1030,7 +1033,7 @@ struct ssl_st
 	/* TLS extension debug callback */
 	void (*tlsext_debug_cb)(SSL *s, int client_server, int type,
 					unsigned char *data, int len,
-					void *arg);
+					void *arg) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	void *tlsext_debug_arg;
 	char *tlsext_hostname;
 	int servername_done;   /* no further mod of servername 
@@ -1206,6 +1209,8 @@ size_t SSL_get_peer_finished(const SSL *s, void *buf, size_t count) DEPRECATED_I
 #define SSL_AD_CERTIFICATE_UNOBTAINABLE TLS1_AD_CERTIFICATE_UNOBTAINABLE
 #define SSL_AD_UNRECOGNIZED_NAME	TLS1_AD_UNRECOGNIZED_NAME
 #define SSL_AD_BAD_CERTIFICATE_STATUS_RESPONSE TLS1_AD_BAD_CERTIFICATE_STATUS_RESPONSE
+#define SSL_AD_BAD_CERTIFICATE_HASH_VALUE TLS1_AD_BAD_CERTIFICATE_HASH_VALUE
+#define SSL_AD_UNKNOWN_PSK_IDENTITY	TLS1_AD_UNKNOWN_PSK_IDENTITY /* fatal */
 
 #define SSL_ERROR_NONE			0
 #define SSL_ERROR_SSL			1
@@ -1333,12 +1338,12 @@ size_t SSL_get_peer_finished(const SSL *s, void *buf, size_t count) DEPRECATED_I
 	SSL_CTX_ctrl(ctx,SSL_CTRL_EXTRA_CHAIN_CERT,0,(char *)x509)
 
 #ifndef OPENSSL_NO_BIO
-BIO_METHOD *BIO_f_ssl(void);
+BIO_METHOD *BIO_f_ssl(void) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 BIO *BIO_new_ssl(SSL_CTX *ctx,int client) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 BIO *BIO_new_ssl_connect(SSL_CTX *ctx) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 BIO *BIO_new_buffer_ssl_connect(SSL_CTX *ctx) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
-int BIO_ssl_copy_session_id(BIO *to,BIO *from);
-void BIO_ssl_shutdown(BIO *ssl_bio);
+int BIO_ssl_copy_session_id(BIO *to,BIO *from) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+void BIO_ssl_shutdown(BIO *ssl_bio) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 
 #endif
 
@@ -1450,7 +1455,7 @@ SSL_SESSION *d2i_SSL_SESSION(SSL_SESSION **a,const unsigned char **pp,
 X509 *	SSL_get_peer_certificate(const SSL *s) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 #endif
 
-STACK_OF(X509) *SSL_get_peer_cert_chain(const SSL *s);
+STACK_OF(X509) *SSL_get_peer_cert_chain(const SSL *s) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 
 int SSL_CTX_get_verify_mode(const SSL_CTX *ctx) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 int SSL_CTX_get_verify_depth(const SSL_CTX *ctx) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
@@ -1558,7 +1563,7 @@ STACK_OF(X509_NAME) *SSL_dup_CA_list(STACK_OF(X509_NAME) *sk) DEPRECATED_IN_MAC_
 SSL *SSL_dup(SSL *ssl) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 
 X509 *SSL_get_certificate(const SSL *ssl) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
-/* EVP_PKEY */ struct evp_pkey_st *SSL_get_privatekey(SSL *ssl);
+/* EVP_PKEY */ struct evp_pkey_st *SSL_get_privatekey(SSL *ssl) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 
 void SSL_CTX_set_quiet_shutdown(SSL_CTX *ctx,int mode) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 int SSL_CTX_get_quiet_shutdown(const SSL_CTX *ctx) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
@@ -2076,6 +2081,11 @@ void ERR_load_SSL_strings(void) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 #define SSL_R_TLSV1_ALERT_RECORD_OVERFLOW		 1022
 #define SSL_R_TLSV1_ALERT_UNKNOWN_CA			 1048
 #define SSL_R_TLSV1_ALERT_USER_CANCELLED		 1090
+#define SSL_R_TLSV1_BAD_CERTIFICATE_HASH_VALUE		 1114
+#define SSL_R_TLSV1_BAD_CERTIFICATE_STATUS_RESPONSE	 1113
+#define SSL_R_TLSV1_CERTIFICATE_UNOBTAINABLE		 1111
+#define SSL_R_TLSV1_UNRECOGNIZED_NAME			 1112
+#define SSL_R_TLSV1_UNSUPPORTED_EXTENSION		 1110
 #define SSL_R_TLS_CLIENT_CERT_REQ_WITH_ANON_CIPHER	 232
 #define SSL_R_TLS_INVALID_ECPOINTFORMAT_LIST		 227
 #define SSL_R_TLS_PEER_DID_NOT_RESPOND_WITH_CERTIFICATE_LIST 233

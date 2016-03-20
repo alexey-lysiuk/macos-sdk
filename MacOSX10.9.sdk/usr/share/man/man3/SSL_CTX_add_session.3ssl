@@ -124,7 +124,7 @@
 .\" ========================================================================
 .\"
 .IX Title "SSL_CTX_add_session 3"
-.TH SSL_CTX_add_session 3 "2013-03-05" "50" "OpenSSL"
+.TH SSL_CTX_add_session 3 "2014-08-06" "0.9.8" "OpenSSL"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -174,13 +174,14 @@ over the sessions that can be resumed if desired.
 .SH "RETURN VALUES"
 .IX Header "RETURN VALUES"
 The following values are returned by all functions:
-.IP "0" 4
+.IP "\fB0\fR" 4
+.IX Item "0"
 .Vb 3
 \& The operation failed. In case of the add operation, it was tried to add
 \& the same (identical) session twice. In case of the remove operation, the
 \& session was not found in the cache.
 .Ve
-.IP "1" 4
+.IP "\fB1\fR" 4
 .IX Item "1"
 .Vb 1
 \& The operation succeeded.

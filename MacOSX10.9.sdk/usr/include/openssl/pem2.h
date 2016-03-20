@@ -62,7 +62,7 @@ extern "C" {
 #endif
 
 #ifndef HEADER_PEM_H
-void ERR_load_PEM_strings(void);
+void ERR_load_PEM_strings(void) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 #endif
 
 #ifdef __cplusplus

@@ -139,8 +139,8 @@ extern "C" {
 typedef struct X509_objects_st
 	{
 	int nid;
-	int (*a2i)(void);
-	int (*i2a)(void);
+	int (*a2i)(void) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	int (*i2a)(void) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	} X509_OBJECTS;
 
 struct X509_algor_st
@@ -313,7 +313,7 @@ DECLARE_ASN1_SET_OF(X509)
 typedef struct x509_trust_st {
 	int trust;
 	int flags;
-	int (*check_trust)(struct x509_trust_st *, X509 *, int);
+	int (*check_trust)(struct x509_trust_st *, X509 *, int) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	char *name;
 	int arg1;
 	void *arg2;

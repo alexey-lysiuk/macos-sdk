@@ -52,13 +52,8 @@ only when the drift file is present or has just been created in the file system.
 detects changes in the file and re-calculates clock adjustment values appropriately.
 The daemon will exit if the drift file is deleted and is not re-created within one minute.
 .Pp
-As a fail-safe mechanism,
 .Nm pacemaker
-will reset the system clock using
-.Xr settimeofday 2
-if the system clock requires adjustment
-exceeding the maximum value that can be accomodated by adjtime to slew the clock.
-In practice, this extreme case should never occur.
+exits if the clock drift exceeds 500 parts per million.
 .Pp
 The
 .Fl d

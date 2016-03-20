@@ -2149,7 +2149,7 @@
 #define PHP_BLOWFISH_CRYPT 1
 
 /* PHP build date */
-#define PHP_BUILD_DATE "2014-01-19"
+#define PHP_BUILD_DATE "2014-07-29"
 
 /* Define if your system has fork/vfork/CreateProcess */
 #define PHP_CAN_SUPPORT_PROC_OPEN 1
@@ -2227,7 +2227,7 @@
 #define PHP_STD_DES_CRYPT 1
 
 /* uname -a output */
-#define PHP_UNAME "Darwin hikkaduwa.apple.com 13.0 Darwin Kernel Version 13.0.0: Tue Jul 30 20:52:22 PDT 2013; root:xnu-2422.1.53~3/RELEASE_X86_64 x86_64"
+#define PHP_UNAME "Darwin moonwalk.apple.com 13.0 Darwin Kernel Version 13.0.0: Wed Aug 28 10:22:44 PDT 2013; root:xnu-2422.1.53.1~1/RELEASE_X86_64 x86_64"
 
 /* Whether PHP has to use its own crypt_r for blowfish, des and ext des */
 #define PHP_USE_PHP_CRYPT_R 1

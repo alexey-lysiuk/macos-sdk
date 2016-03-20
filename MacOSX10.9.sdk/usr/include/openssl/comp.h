@@ -16,17 +16,17 @@ typedef struct comp_method_st
 	{
 	int type;		/* NID for compression library */
 	const char *name;	/* A text string to identify the library */
-	int (*init)(COMP_CTX *ctx);
-	void (*finish)(COMP_CTX *ctx);
+	int (*init)(COMP_CTX *ctx) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	void (*finish)(COMP_CTX *ctx) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	int (*compress)(COMP_CTX *ctx,
 			unsigned char *out, unsigned int olen,
-			unsigned char *in, unsigned int ilen);
+			unsigned char *in, unsigned int ilen) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	int (*expand)(COMP_CTX *ctx,
 		      unsigned char *out, unsigned int olen,
-		      unsigned char *in, unsigned int ilen);
+		      unsigned char *in, unsigned int ilen) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	/* The following two do NOTHING, but are kept for backward compatibility */
-	long (*ctrl)(void);
-	long (*callback_ctrl)(void);
+	long (*ctrl)(void) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	long (*callback_ctrl)(void) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	} COMP_METHOD;
 
 struct comp_ctx_st

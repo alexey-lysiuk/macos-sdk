@@ -3,6 +3,8 @@
 #ifndef HEADER_EBCDIC_H
 #define HEADER_EBCDIC_H
 
+#include <AvailabilityMacros.h>
+
 #include <sys/types.h>
 
 /* Avoid name clashes with other applications */
@@ -13,7 +15,7 @@
 
 extern const unsigned char os_toascii[256];
 extern const unsigned char os_toebcdic[256];
-void *ebcdic2ascii(void *dest, const void *srce, size_t count);
-void *ascii2ebcdic(void *dest, const void *srce, size_t count);
+void *ebcdic2ascii(void *dest, const void *srce, size_t count) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+void *ascii2ebcdic(void *dest, const void *srce, size_t count) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 
 #endif

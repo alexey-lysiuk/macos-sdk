@@ -549,8 +549,8 @@ typedef struct asn1_method_st
 	{
 	i2d_of_void *i2d;
 	d2i_of_void *d2i;
-	void *(*create)(void);
-	void (*destroy)(void *);
+	void *(*create)(void) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	void (*destroy)(void *) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	} ASN1_METHOD;
 
 /* This is used when parsing some Netscape objects */
@@ -835,7 +835,7 @@ ASN1_UTCTIME *ASN1_UTCTIME_set(ASN1_UTCTIME *s,time_t t) DEPRECATED_IN_MAC_OS_X_
 int ASN1_UTCTIME_set_string(ASN1_UTCTIME *s, const char *str) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 int ASN1_UTCTIME_cmp_time_t(const ASN1_UTCTIME *s, time_t t) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 #if 0
-time_t ASN1_UTCTIME_get(const ASN1_UTCTIME *s);
+time_t ASN1_UTCTIME_get(const ASN1_UTCTIME *s) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 #endif
 
 int ASN1_GENERALIZEDTIME_check(ASN1_GENERALIZEDTIME *a) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;

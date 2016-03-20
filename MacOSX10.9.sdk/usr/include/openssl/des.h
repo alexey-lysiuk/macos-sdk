@@ -199,7 +199,7 @@ void DES_ede3_ofb64_encrypt(const unsigned char *in,unsigned char *out,
 			    DES_cblock *ivec,int *num) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 #if 0
 void DES_xwhite_in2out(const_DES_cblock *DES_key,const_DES_cblock *in_white,
-		       DES_cblock *out_white);
+		       DES_cblock *out_white) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 #endif
 
 int DES_enc_read(int fd,void *buf,int len,DES_key_schedule *sched,

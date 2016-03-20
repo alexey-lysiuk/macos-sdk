@@ -137,28 +137,28 @@ typedef struct DSA_SIG_st
 struct dsa_method
 	{
 	const char *name;
-	DSA_SIG * (*dsa_do_sign)(const unsigned char *dgst, int dlen, DSA *dsa);
+	DSA_SIG * (*dsa_do_sign)(const unsigned char *dgst, int dlen, DSA *dsa) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	int (*dsa_sign_setup)(DSA *dsa, BN_CTX *ctx_in, BIGNUM **kinvp,
-								BIGNUM **rp);
+								BIGNUM **rp) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	int (*dsa_do_verify)(const unsigned char *dgst, int dgst_len,
-							DSA_SIG *sig, DSA *dsa);
+							DSA_SIG *sig, DSA *dsa) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	int (*dsa_mod_exp)(DSA *dsa, BIGNUM *rr, BIGNUM *a1, BIGNUM *p1,
 			BIGNUM *a2, BIGNUM *p2, BIGNUM *m, BN_CTX *ctx,
-			BN_MONT_CTX *in_mont);
+			BN_MONT_CTX *in_mont) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	int (*bn_mod_exp)(DSA *dsa, BIGNUM *r, BIGNUM *a, const BIGNUM *p,
 				const BIGNUM *m, BN_CTX *ctx,
-				BN_MONT_CTX *m_ctx); /* Can be null */
-	int (*init)(DSA *dsa);
-	int (*finish)(DSA *dsa);
+				BN_MONT_CTX *m_ctx) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER; /* Can be null */
+	int (*init)(DSA *dsa) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	int (*finish)(DSA *dsa) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	int flags;
 	char *app_data;
 	/* If this is non-NULL, it is used to generate DSA parameters */
 	int (*dsa_paramgen)(DSA *dsa, int bits,
 			unsigned char *seed, int seed_len,
 			int *counter_ret, unsigned long *h_ret,
-			BN_GENCB *cb);
+			BN_GENCB *cb) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	/* If this is non-NULL, it is used to generate DSA keys */
-	int (*dsa_keygen)(DSA *dsa);
+	int (*dsa_keygen)(DSA *dsa) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	};
 
 struct dsa_st
@@ -213,8 +213,8 @@ const DSA_METHOD *DSA_get_default_method(void) DEPRECATED_IN_MAC_OS_X_VERSION_10
 int	DSA_set_method(DSA *dsa, const DSA_METHOD *) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 
 #ifdef OPENSSL_FIPS
-DSA *	FIPS_dsa_new(void);
-void	FIPS_dsa_free (DSA *r);
+DSA *	FIPS_dsa_new(void) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+void	FIPS_dsa_free (DSA *r) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 #endif
 
 DSA *	DSA_new(void) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
@@ -278,8 +278,8 @@ DH *DSA_dup_DH(const DSA *r) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 #endif
 
 #ifdef OPENSSL_FIPS
-int FIPS_dsa_sig_encode(unsigned char *out, DSA_SIG *sig);
-int FIPS_dsa_sig_decode(DSA_SIG *sig, const unsigned char *in, int inlen);
+int FIPS_dsa_sig_encode(unsigned char *out, DSA_SIG *sig) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+int FIPS_dsa_sig_decode(DSA_SIG *sig, const unsigned char *in, int inlen) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 #endif
 
 /* BEGIN ERROR CODES */

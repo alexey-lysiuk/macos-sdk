@@ -124,7 +124,7 @@
 .\" ========================================================================
 .\"
 .IX Title "SSL_CTX_set_session_id_context 3"
-.TH SSL_CTX_set_session_id_context 3 "2013-03-05" "50" "OpenSSL"
+.TH SSL_CTX_set_session_id_context 3 "2014-08-06" "0.9.8" "OpenSSL"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -186,11 +186,12 @@ a session as described above.
 .IX Header "RETURN VALUES"
 \&\fISSL_CTX_set_session_id_context()\fR and \fISSL_set_session_id_context()\fR
 return the following values:
-.IP "0" 4
+.IP "\fB0\fR" 4
+.IX Item "0"
 The length \fBsid_ctx_len\fR of the session id context \fBsid_ctx\fR exceeded
 the maximum allowed length of \fB\s-1SSL_MAX_SSL_SESSION_ID_LENGTH\s0\fR. The error
 is logged to the error stack.
-.IP "1" 4
+.IP "\fB1\fR" 4
 .IX Item "1"
 The operation succeeded.
 .SH "SEE ALSO"

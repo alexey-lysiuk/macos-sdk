@@ -11,7 +11,7 @@
 .Nd AudioUnit validation
 .Sh SYNOPSIS             \" Section Header - required - don't modify
 .Nm
-.Op Fl [-64 | -ppc]
+.Op Fl [-32 | -ppc]
 .Op Fl s Ar TYPE
 .Op Fl a
 .Op Fl v|vt Ar TYPE SUBT MANU [-w] [-de] [-dw]
@@ -22,8 +22,8 @@ returns: OK: 0, malformed execution: 1, unit not conformant: -1
 .Pp                      \" Inserts a space
 .Sh OPTIONS
 .Bl -tag -width -indent
-.It Fl 64 | ppc        \"-a flag as a list item
-must be specified first. can specify either: -ppc to run using Rosetta on Intel machine, or -64 to run as 64 bit. If neither specified runs as 32 bit native architecture
+.It Fl 32 | ppc        \"-a flag as a list item
+must be specified first. can specify either: -ppc to run using Rosetta on Intel machine, or -32 to run as 32 bit. If neither specified runs as 64 bit native architecture
 .It Fl h                 \"-a flag as a list item
 print help text
 .It Fl a                 \"-a flag as a list item

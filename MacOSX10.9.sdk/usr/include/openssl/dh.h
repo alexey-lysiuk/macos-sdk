@@ -102,18 +102,18 @@ struct dh_method
 	{
 	const char *name;
 	/* Methods here */
-	int (*generate_key)(DH *dh);
-	int (*compute_key)(unsigned char *key,const BIGNUM *pub_key,DH *dh);
+	int (*generate_key)(DH *dh) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	int (*compute_key)(unsigned char *key,const BIGNUM *pub_key,DH *dh) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	int (*bn_mod_exp)(const DH *dh, BIGNUM *r, const BIGNUM *a,
 				const BIGNUM *p, const BIGNUM *m, BN_CTX *ctx,
-				BN_MONT_CTX *m_ctx); /* Can be null */
+				BN_MONT_CTX *m_ctx) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER; /* Can be null */
 
-	int (*init)(DH *dh);
-	int (*finish)(DH *dh);
+	int (*init)(DH *dh) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	int (*finish)(DH *dh) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	int flags;
 	char *app_data;
 	/* If this is non-NULL, it will be used to generate parameters */
-	int (*generate_params)(DH *dh, int prime_len, int generator, BN_GENCB *cb);
+	int (*generate_params)(DH *dh, int prime_len, int generator, BN_GENCB *cb) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	};
 
 struct dh_st
@@ -172,8 +172,8 @@ struct dh_st
 const DH_METHOD *DH_OpenSSL(void) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 
 #ifdef OPENSSL_FIPS
-DH *	FIPS_dh_new(void);
-void	FIPS_dh_free(DH *dh);
+DH *	FIPS_dh_new(void) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+void	FIPS_dh_free(DH *dh) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 #endif
 
 void DH_set_default_method(const DH_METHOD *meth) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
@@ -193,7 +193,7 @@ void *DH_get_ex_data(DH *d, int idx) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LAT
 /* Deprecated version */
 #ifndef OPENSSL_NO_DEPRECATED
 DH *	DH_generate_parameters(int prime_len,int generator,
-		void (*callback)(int,int,void *),void *cb_arg);
+		void (*callback)(int,int,void *),void *cb_arg) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 #endif /* !defined(OPENSSL_NO_DEPRECATED) */
 
 /* New version */

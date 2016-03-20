@@ -114,10 +114,10 @@ void *usr_data;	/* Any extension specific data */
 };
 
 typedef struct X509V3_CONF_METHOD_st {
-char * (*get_string)(void *db, char *section, char *value);
-STACK_OF(CONF_VALUE) * (*get_section)(void *db, char *section);
-void (*free_string)(void *db, char * string);
-void (*free_section)(void *db, STACK_OF(CONF_VALUE) *section);
+char * (*get_string)(void *db, char *section, char *value) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+STACK_OF(CONF_VALUE) * (*get_section)(void *db, char *section) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+void (*free_string)(void *db, char * string) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+void (*free_section)(void *db, STACK_OF(CONF_VALUE) *section) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 } X509V3_CONF_METHOD;
 
 /* Context specific info */
@@ -412,7 +412,7 @@ typedef struct x509_purpose_st {
 	int trust;		/* Default trust ID */
 	int flags;
 	int (*check_purpose)(const struct x509_purpose_st *,
-				const X509 *, int);
+				const X509 *, int) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	char *name;
 	char *sname;
 	void *usr_data;
@@ -734,49 +734,49 @@ DECLARE_ASN1_FUNCTIONS(IPAddressFamily)
  * since some of the encodings (particularly for IP address prefixes
  * and ranges) are a bit tedious to work with directly.
  */
-int v3_asid_add_inherit(ASIdentifiers *asid, int which);
+int v3_asid_add_inherit(ASIdentifiers *asid, int which) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 int v3_asid_add_id_or_range(ASIdentifiers *asid, int which,
-			    ASN1_INTEGER *min, ASN1_INTEGER *max);
+			    ASN1_INTEGER *min, ASN1_INTEGER *max) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 int v3_addr_add_inherit(IPAddrBlocks *addr,
-			const unsigned afi, const unsigned *safi);
+			const unsigned afi, const unsigned *safi) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 int v3_addr_add_prefix(IPAddrBlocks *addr,
 		       const unsigned afi, const unsigned *safi,
-		       unsigned char *a, const int prefixlen);
+		       unsigned char *a, const int prefixlen) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 int v3_addr_add_range(IPAddrBlocks *addr,
 		      const unsigned afi, const unsigned *safi,
-		      unsigned char *min, unsigned char *max);
-unsigned v3_addr_get_afi(const IPAddressFamily *f);
+		      unsigned char *min, unsigned char *max) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+unsigned v3_addr_get_afi(const IPAddressFamily *f) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 int v3_addr_get_range(IPAddressOrRange *aor, const unsigned afi,
 		      unsigned char *min, unsigned char *max,
-		      const int length);
+		      const int length) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 
 /*
  * Canonical forms.
  */
-int v3_asid_is_canonical(ASIdentifiers *asid);
-int v3_addr_is_canonical(IPAddrBlocks *addr);
-int v3_asid_canonize(ASIdentifiers *asid);
-int v3_addr_canonize(IPAddrBlocks *addr);
+int v3_asid_is_canonical(ASIdentifiers *asid) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+int v3_addr_is_canonical(IPAddrBlocks *addr) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+int v3_asid_canonize(ASIdentifiers *asid) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+int v3_addr_canonize(IPAddrBlocks *addr) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 
 /*
  * Tests for inheritance and containment.
  */
-int v3_asid_inherits(ASIdentifiers *asid);
-int v3_addr_inherits(IPAddrBlocks *addr);
-int v3_asid_subset(ASIdentifiers *a, ASIdentifiers *b);
-int v3_addr_subset(IPAddrBlocks *a, IPAddrBlocks *b);
+int v3_asid_inherits(ASIdentifiers *asid) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+int v3_addr_inherits(IPAddrBlocks *addr) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+int v3_asid_subset(ASIdentifiers *a, ASIdentifiers *b) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+int v3_addr_subset(IPAddrBlocks *a, IPAddrBlocks *b) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 
 /*
  * Check whether RFC 3779 extensions nest properly in chains.
  */
-int v3_asid_validate_path(X509_STORE_CTX *);
-int v3_addr_validate_path(X509_STORE_CTX *);
+int v3_asid_validate_path(X509_STORE_CTX *) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+int v3_addr_validate_path(X509_STORE_CTX *) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 int v3_asid_validate_resource_set(STACK_OF(X509) *chain,
 				  ASIdentifiers *ext,
-				  int allow_inheritance);
+				  int allow_inheritance) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 int v3_addr_validate_resource_set(STACK_OF(X509) *chain,
 				  IPAddrBlocks *ext,
-				  int allow_inheritance);
+				  int allow_inheritance) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 
 #endif /* OPENSSL_NO_RFC3779 */
 

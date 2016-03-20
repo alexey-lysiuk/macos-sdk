@@ -139,29 +139,29 @@ typedef struct dso_meth_st
 	/* Loads a shared library, NB: new DSO_METHODs must ensure that a
 	 * successful load populates the loaded_filename field, and likewise a
 	 * successful unload OPENSSL_frees and NULLs it out. */
-	int (*dso_load)(DSO *dso);
+	int (*dso_load)(DSO *dso) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	/* Unloads a shared library */
-	int (*dso_unload)(DSO *dso);
+	int (*dso_unload)(DSO *dso) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	/* Binds a variable */
-	void *(*dso_bind_var)(DSO *dso, const char *symname);
+	void *(*dso_bind_var)(DSO *dso, const char *symname) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	/* Binds a function - assumes a return type of DSO_FUNC_TYPE.
 	 * This should be cast to the real function prototype by the
 	 * caller. Platforms that don't have compatible representations
 	 * for different prototypes (this is possible within ANSI C)
 	 * are highly unlikely to have shared libraries at all, let
 	 * alone a DSO_METHOD implemented for them. */
-	DSO_FUNC_TYPE (*dso_bind_func)(DSO *dso, const char *symname);
+	DSO_FUNC_TYPE (*dso_bind_func)(DSO *dso, const char *symname) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 
 /* I don't think this would actually be used in any circumstances. */
 #if 0
 	/* Unbinds a variable */
-	int (*dso_unbind_var)(DSO *dso, char *symname, void *symptr);
+	int (*dso_unbind_var)(DSO *dso, char *symname, void *symptr) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	/* Unbinds a function */
-	int (*dso_unbind_func)(DSO *dso, char *symname, DSO_FUNC_TYPE symptr);
+	int (*dso_unbind_func)(DSO *dso, char *symname, DSO_FUNC_TYPE symptr) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 #endif
 	/* The generic (yuck) "ctrl()" function. NB: Negative return
 	 * values (rather than zero) indicate errors. */
-	long (*dso_ctrl)(DSO *dso, int cmd, long larg, void *parg);
+	long (*dso_ctrl)(DSO *dso, int cmd, long larg, void *parg) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	/* The default DSO_METHOD-specific function for converting filenames to
 	 * a canonical native form. */
 	DSO_NAME_CONVERTER_FUNC dso_name_converter;
@@ -170,8 +170,8 @@ typedef struct dso_meth_st
 	DSO_MERGER_FUNC dso_merger;
 
 	/* [De]Initialisation handlers. */
-	int (*init)(DSO *dso);
-	int (*finish)(DSO *dso);
+	int (*init)(DSO *dso) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	int (*finish)(DSO *dso) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	} DSO_METHOD;
 
 /**********************************************************************/

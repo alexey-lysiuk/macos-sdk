@@ -234,9 +234,14 @@ int PKCS12_set_mac(PKCS12 *p12, const char *pass, int passlen,
 		   const EVP_MD *md_type) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 int PKCS12_setup_mac(PKCS12 *p12, int iter, unsigned char *salt,
 					 int saltlen, const EVP_MD *md_type) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+#if defined(NETWARE) || defined(OPENSSL_SYS_NETWARE)
+/* Rename these functions to avoid name clashes on NetWare OS */
+unsigned char *OPENSSL_asc2uni(const char *asc, int asclen, unsigned char **uni, int *unilen) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+char *OPENSSL_uni2asc(unsigned char *uni, int unilen) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+#else
 unsigned char *asc2uni(const char *asc, int asclen, unsigned char **uni, int *unilen) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 char *uni2asc(unsigned char *uni, int unilen) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
-
+#endif
 DECLARE_ASN1_FUNCTIONS(PKCS12)
 DECLARE_ASN1_FUNCTIONS(PKCS12_MAC_DATA)
 DECLARE_ASN1_FUNCTIONS(PKCS12_SAFEBAG)

@@ -273,28 +273,28 @@ typedef struct bio_method_st
 	{
 	int type;
 	const char *name;
-	int (*bwrite)(BIO *, const char *, int);
-	int (*bread)(BIO *, char *, int);
-	int (*bputs)(BIO *, const char *);
-	int (*bgets)(BIO *, char *, int);
-	long (*ctrl)(BIO *, int, long, void *);
-	int (*create)(BIO *);
-	int (*destroy)(BIO *);
-        long (*callback_ctrl)(BIO *, int, bio_info_cb *);
+	int (*bwrite)(BIO *, const char *, int) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	int (*bread)(BIO *, char *, int) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	int (*bputs)(BIO *, const char *) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	int (*bgets)(BIO *, char *, int) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	long (*ctrl)(BIO *, int, long, void *) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	int (*create)(BIO *) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	int (*destroy)(BIO *) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+        long (*callback_ctrl)(BIO *, int, bio_info_cb *) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	} BIO_METHOD;
 #else
 typedef struct bio_method_st
 	{
 	int type;
 	const char *name;
-	int (_far *bwrite)();
-	int (_far *bread)();
-	int (_far *bputs)();
-	int (_far *bgets)();
-	long (_far *ctrl)();
-	int (_far *create)();
-	int (_far *destroy)();
-	long (_far *callback_ctrl)();
+	int (_far *bwrite)() DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	int (_far *bread)() DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	int (_far *bputs)() DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	int (_far *bgets)() DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	long (_far *ctrl)() DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	int (_far *create)() DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	int (_far *destroy)() DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	long (_far *callback_ctrl)() DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	} BIO_METHOD;
 #endif
 
@@ -302,7 +302,7 @@ struct bio_st
 	{
 	BIO_METHOD *method;
 	/* bio, mode, argp, argi, argl, ret */
-	long (*callback)(struct bio_st *,int,const char *,int, long,long);
+	long (*callback)(struct bio_st *,int,const char *,int, long,long) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	char *cb_arg; /* first argument for the callback */
 
 	int init;
@@ -637,7 +637,7 @@ BIO_METHOD *BIO_s_null(void) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 BIO_METHOD *BIO_f_null(void) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 BIO_METHOD *BIO_f_buffer(void) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 #ifdef OPENSSL_SYS_VMS
-BIO_METHOD *BIO_f_linebuffer(void);
+BIO_METHOD *BIO_f_linebuffer(void) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 #endif
 BIO_METHOD *BIO_f_nbio_test(void) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 #ifndef OPENSSL_NO_DGRAM

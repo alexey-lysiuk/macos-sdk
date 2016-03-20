@@ -94,11 +94,7 @@
 #endif
 
 /* Generate 80386 code? */
-#if defined(__i386__)                                            
 #undef I386_ONLY
-#else /* !__i386__ */
-#undef I386_ONLY
-#endif /* __i386__ */
 
 #if !(defined(VMS) || defined(__VMS)) /* VMS uses logical names instead */
 #if defined(HEADER_CRYPTLIB_H) && !defined(OPENSSLDIR)
@@ -149,20 +145,20 @@
 /* If this is set to 'unsigned int' on a DEC Alpha, this gives about a
  * %20 speed up (longs are 8 bytes, int's are 4). */
 #ifndef DES_LONG
-#  ifdef __LP64__
-# define DES_LONG unsigned int
-#  else
-# define DES_LONG unsigned long
-#  endif
+#ifdef __LP64__
+#define DES_LONG unsigned int
+#else
+#define DES_LONG unsigned long
+#endif
 #endif
 #endif
 
 #if defined(HEADER_BN_H) && !defined(CONFIG_HEADER_BN_H)
 #define CONFIG_HEADER_BN_H
 #ifdef __LP64__
-#  undef BN_LLONG
+#undef BN_LLONG
 #else
-#  define BN_LLONG
+#define BN_LLONG
 #endif
 
 /* Should we define BN_DIV2W here? */
@@ -171,16 +167,17 @@
 /* The prime number generation stuff may not work when
  * EIGHT_BIT but I don't care since I've only used this mode
  * for debuging the bignum libraries */
-#undef SIXTY_FOUR_BIT_LONG
-
 #ifdef __LP64__
-#define SIXTY_FOUR_BIT
+#define SIXTY_FOUR_BIT_LONG
+#else
+#undef SIXTY_FOUR_BIT_LONG
+#endif
+#undef SIXTY_FOUR_BIT
+#ifdef __LP64__
 #undef THIRTY_TWO_BIT
 #else
-#undef SIXTY_FOUR_BIT
 #define THIRTY_TWO_BIT
-#endif /* __LP64__ */
-
+#endif
 #undef SIXTEEN_BIT
 #undef EIGHT_BIT
 #endif
@@ -195,7 +192,7 @@
 #if defined(HEADER_BF_LOCL_H) && !defined(CONFIG_HEADER_BF_LOCL_H)
 #define CONFIG_HEADER_BF_LOCL_H
 #ifdef __LP64__
-#define BF_PTR2
+#undef BF_PTR
 #else
 #define BF_PTR
 #endif

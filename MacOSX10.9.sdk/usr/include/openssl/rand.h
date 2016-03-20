@@ -82,12 +82,12 @@ extern "C" {
 
 struct rand_meth_st
 	{
-	void (*seed)(const void *buf, int num);
-	int (*bytes)(unsigned char *buf, int num);
-	void (*cleanup)(void);
-	void (*add)(const void *buf, int num, double entropy);
-	int (*pseudorand)(unsigned char *buf, int num);
-	int (*status)(void);
+	void (*seed)(const void *buf, int num) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	int (*bytes)(unsigned char *buf, int num) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	void (*cleanup)(void) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	void (*add)(const void *buf, int num, double entropy) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	int (*pseudorand)(unsigned char *buf, int num) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	int (*status)(void) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	};
 
 #ifdef BN_DEBUG
@@ -125,8 +125,8 @@ void int_RAND_set_callbacks(
 
 #if defined(OPENSSL_SYS_WINDOWS) || defined(OPENSSL_SYS_WIN32)
 
-void RAND_screen(void);
-int RAND_event(UINT, WPARAM, LPARAM);
+void RAND_screen(void) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+int RAND_event(UINT, WPARAM, LPARAM) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 
 #endif
 

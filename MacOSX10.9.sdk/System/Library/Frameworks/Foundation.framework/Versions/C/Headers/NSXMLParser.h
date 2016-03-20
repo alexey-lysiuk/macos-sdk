@@ -4,8 +4,16 @@
 
 #import <Foundation/NSObject.h>
 
-@class NSData, NSDictionary, NSError, NSString, NSURL, NSInputStream;
+@class NSData, NSDictionary, NSError, NSString, NSURL, NSInputStream, NSSet;
 @protocol NSXMLParserDelegate;
+
+NS_ENUM_AVAILABLE(10_9, 8_0)
+typedef NS_ENUM(NSUInteger, NSXMLParserExternalEntityResolvingPolicy) {
+    NSXMLParserResolveExternalEntitiesNever = 0, // default
+    NSXMLParserResolveExternalEntitiesNoNetwork,
+    NSXMLParserResolveExternalEntitiesSameOriginOnly, //only applies to NSXMLParser instances initialized with -initWithContentsOfURL:
+    NSXMLParserResolveExternalEntitiesAlways
+};
 
 @interface NSXMLParser : NSObject {
 @private
@@ -25,11 +33,18 @@
 
 - (void)setShouldProcessNamespaces:(BOOL)shouldProcessNamespaces;
 - (void)setShouldReportNamespacePrefixes:(BOOL)shouldReportNamespacePrefixes;
-- (void)setShouldResolveExternalEntities:(BOOL)shouldResolveExternalEntities;
     
 - (BOOL)shouldProcessNamespaces;
 - (BOOL)shouldReportNamespacePrefixes;
+
+// This property changes whether external entities are disabled entirely (NO), and or using the current setting of the 'externalEntityResolvingPolicy' (YES).
+- (void)setShouldResolveExternalEntities:(BOOL)shouldResolveExternalEntities;
 - (BOOL)shouldResolveExternalEntities;
+
+// The next two properties are really only available in OS X 10.9.5 or later
+@property NSXMLParserExternalEntityResolvingPolicy externalEntityResolvingPolicy NS_AVAILABLE(10_9, 8_0); //defaults to NSXMLNodeLoadExternalEntitiesNever
+
+@property (copy) NSSet *allowedExternalEntityURLs NS_AVAILABLE(10_9, 8_0);
 
 - (BOOL)parse;	// called to start the event-driven parse. Returns YES in the event of a successful parse, and NO in case of error.
 - (void)abortParsing;	// called by the delegate to stop the parse. The delegate will get an error message sent to it.

@@ -164,15 +164,15 @@ krb5_error_code	kssl_sget_tkt(KSSL_CTX *kssl_ctx,  krb5_data *indata,
         krb5_ticket_times *ttimes, KSSL_ERR *kssl_err) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 krb5_error_code kssl_ctx_setkey(KSSL_CTX *kssl_ctx, krb5_keyblock *session) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 void	kssl_err_set(KSSL_ERR *kssl_err, int reason, char *text) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
-void kssl_krb5_free_data_contents(krb5_context context, krb5_data *data);
+void kssl_krb5_free_data_contents(krb5_context context, krb5_data *data) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 krb5_error_code  kssl_build_principal_2(krb5_context context,
 			krb5_principal *princ, int rlen, const char *realm,
-			int slen, const char *svc, int hlen, const char *host);
+			int slen, const char *svc, int hlen, const char *host) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 krb5_error_code  kssl_validate_times(krb5_timestamp atime,
-					krb5_ticket_times *ttimes);
+					krb5_ticket_times *ttimes) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 krb5_error_code  kssl_check_authent(KSSL_CTX *kssl_ctx, krb5_data *authentp,
 			            krb5_timestamp *atimep, KSSL_ERR *kssl_err) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
-unsigned char	*kssl_skip_confound(krb5_enctype enctype, unsigned char *authn);
+unsigned char	*kssl_skip_confound(krb5_enctype enctype, unsigned char *authn) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 
 #ifdef  __cplusplus
 }

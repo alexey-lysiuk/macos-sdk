@@ -368,7 +368,7 @@ void _ossl_old_des_ede3_ofb64_encrypt(unsigned char *in, unsigned char *out,
 	_ossl_old_des_key_schedule ks3, _ossl_old_des_cblock *ivec, int *num) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 #if 0
 void _ossl_old_des_xwhite_in2out(_ossl_old_des_cblock (*des_key), _ossl_old_des_cblock (*in_white),
-	_ossl_old_des_cblock (*out_white));
+	_ossl_old_des_cblock (*out_white)) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 #endif
 
 int _ossl_old_des_enc_read(int fd,char *buf,int len,_ossl_old_des_key_schedule sched,

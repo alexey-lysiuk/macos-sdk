@@ -91,15 +91,15 @@ typedef struct conf_method_st CONF_METHOD;
 struct conf_method_st
 	{
 	const char *name;
-	CONF *(*create)(CONF_METHOD *meth);
-	int (*init)(CONF *conf);
-	int (*destroy)(CONF *conf);
-	int (*destroy_data)(CONF *conf);
-	int (*load_bio)(CONF *conf, BIO *bp, long *eline);
-	int (*dump)(const CONF *conf, BIO *bp);
-	int (*is_number)(const CONF *conf, char c);
-	int (*to_int)(const CONF *conf, char c);
-	int (*load)(CONF *conf, const char *name, long *eline);
+	CONF *(*create)(CONF_METHOD *meth) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	int (*init)(CONF *conf) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	int (*destroy)(CONF *conf) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	int (*destroy_data)(CONF *conf) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	int (*load_bio)(CONF *conf, BIO *bp, long *eline) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	int (*dump)(const CONF *conf, BIO *bp) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	int (*is_number)(const CONF *conf, char c) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	int (*to_int)(const CONF *conf, char c) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+	int (*load)(CONF *conf, const char *name, long *eline) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 	};
 
 /* Module definitions */
@@ -149,7 +149,7 @@ CONF *NCONF_new(CONF_METHOD *meth) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER
 CONF_METHOD *NCONF_default(void) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 CONF_METHOD *NCONF_WIN32(void) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 #if 0 /* Just to give you an idea of what I have in mind */
-CONF_METHOD *NCONF_XML(void);
+CONF_METHOD *NCONF_XML(void) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 #endif
 void NCONF_free(CONF *conf) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 void NCONF_free_data(CONF *conf) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;

@@ -22,8 +22,6 @@
 #define HAVE__BOOL 1
 #define HAVE_STDBOOL_H 1
 #define HAVE_SYS_WAIT_H 1
-#define HAVE_NET_IF_H 1
-#define HAVE_IFADDRS_H 1
 #define HAVE_LIMITS_H 1
 #define HAVE_SYS_FILE_H 1
 #define HAVE_SYS_IOCTL_H 1

@@ -483,8 +483,6 @@ ASN1_STRING *ASN1_STRING_encode(ASN1_STRING *s, i2d_of_void *i2d,
 
 X509_EXTENSION *OCSP_crlID_new(char *url, long *n, char *tim) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 
-X509_EXTENSION *OCSP_crlID_new(char *url, long *n, char *tim) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
-
 X509_EXTENSION *OCSP_accept_responses_new(char **oids) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 
 X509_EXTENSION *OCSP_archive_cutoff_new(char* tim) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;

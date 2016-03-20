@@ -334,9 +334,9 @@ struct bn_gencb_st
 	union
 		{
 		/* if(ver==1) - handles old style callbacks */
-		void (*cb_1)(int, int, void *);
+		void (*cb_1)(int, int, void *) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 		/* if(ver==2) - new callback style */
-		int (*cb_2)(int, int, BN_GENCB *);
+		int (*cb_2)(int, int, BN_GENCB *) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 		} cb;
 	};
 /* Wrapper function to make using BN_GENCB easier,  */
@@ -512,6 +512,8 @@ BIGNUM *BN_mod_inverse(BIGNUM *ret,
 	const BIGNUM *a, const BIGNUM *n,BN_CTX *ctx) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 BIGNUM *BN_mod_sqrt(BIGNUM *ret,
 	const BIGNUM *a, const BIGNUM *n,BN_CTX *ctx) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+
+void	BN_consttime_swap(BN_ULONG swap, BIGNUM *a, BIGNUM *b, int nwords) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 
 /* Deprecated versions */
 #ifndef OPENSSL_NO_DEPRECATED
@@ -742,11 +744,20 @@ int RAND_pseudo_bytes(unsigned char *buf,int num) DEPRECATED_IN_MAC_OS_X_VERSION
 
 #define bn_fix_top(a)		bn_check_top(a)
 
+#define bn_check_size(bn, bits) bn_wcheck_size(bn, ((bits+BN_BITS2-1))/BN_BITS2)
+#define bn_wcheck_size(bn, words) \
+	do { \
+		const BIGNUM *_bnum2 = (bn); \
+		assert(words <= (_bnum2)->dmax && words >= (_bnum2)->top); \
+	} while(0)
+
 #else /* !BN_DEBUG */
 
 #define bn_pollute(a)
 #define bn_check_top(a)
 #define bn_fix_top(a)		bn_correct_top(a)
+#define bn_check_size(bn, bits)
+#define bn_wcheck_size(bn, words)
 
 #endif
 

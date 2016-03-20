@@ -2,7 +2,7 @@
   +----------------------------------------------------------------------+
   | PHP Version 5                                                        |
   +----------------------------------------------------------------------+
-  | Copyright (c) 2006-2013 The PHP Group                                |
+  | Copyright (c) 2006-2014 The PHP Group                                |
   +----------------------------------------------------------------------+
   | This source file is subject to version 3.01 of the PHP license,      |
   | that is bundled with this package in the file LICENSE, and is        |
@@ -17,12 +17,12 @@
   |          Georg Richter <georg@mysql.com>                             |
   +----------------------------------------------------------------------+
 */
-/* $Id: 2d8f599f49e5e8d2f5ba7112b5c444b3e2e48cdf $ */
+/* $Id: c85105d7c6f7d70d609bb4c000257868a40840ab $ */
 
 #ifndef MYSQLND_H
 #define MYSQLND_H
 
-#define MYSQLND_VERSION "mysqlnd 5.0.10 - 20111026 - $Id: 2d8f599f49e5e8d2f5ba7112b5c444b3e2e48cdf $"
+#define MYSQLND_VERSION "mysqlnd 5.0.10 - 20111026 - $Id: c85105d7c6f7d70d609bb4c000257868a40840ab $"
 #define MYSQLND_VERSION_ID 50010
 
 #define MYSQLND_PLUGIN_API_VERSION 1

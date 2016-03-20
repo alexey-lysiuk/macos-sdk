@@ -72,6 +72,8 @@
 #ifndef HEADER_TLS1_H 
 #define HEADER_TLS1_H 
 
+#include <AvailabilityMacros.h>
+
 #include <openssl/buffer.h>
 
 #ifdef  __cplusplus
@@ -80,9 +82,23 @@ extern "C" {
 
 #define TLS1_ALLOW_EXPERIMENTAL_CIPHERSUITES	0
 
+#define TLS1_2_VERSION			0x0303
+#define TLS1_2_VERSION_MAJOR		0x03
+#define TLS1_2_VERSION_MINOR		0x03
+
+#define TLS1_1_VERSION			0x0302
+#define TLS1_1_VERSION_MAJOR		0x03
+#define TLS1_1_VERSION_MINOR		0x02
+
 #define TLS1_VERSION			0x0301
 #define TLS1_VERSION_MAJOR		0x03
 #define TLS1_VERSION_MINOR		0x01
+
+#define TLS1_get_version(s) \
+		((s->version >> 8) == TLS1_VERSION_MAJOR ? s->version : 0)
+
+#define TLS1_get_client_version(s) \
+		((s->client_version >> 8) == TLS1_VERSION_MAJOR ? s->client_version : 0)
 
 #define TLS1_AD_DECRYPTION_FAILED	21
 #define TLS1_AD_RECORD_OVERFLOW		22
@@ -127,8 +143,8 @@ extern "C" {
 
 #define TLSEXT_MAXLEN_host_name 255
 
-const char *SSL_get_servername(const SSL *s, const int type) ;
-int SSL_get_servername_type(const SSL *s) ;
+const char *SSL_get_servername(const SSL *s, const int type) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+int SSL_get_servername_type(const SSL *s) DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 
 #define SSL_set_tlsext_host_name(s,name) \
 SSL_ctrl(s,SSL_CTRL_SET_TLSEXT_HOSTNAME,TLSEXT_NAMETYPE_host_name,(char *)name)
