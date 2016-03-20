@@ -140,6 +140,7 @@ extern "C" {
 #define GL_RGB_422_APPLE                  0x8A1F
 #define GL_UNSIGNED_SHORT_8_8_APPLE       0x85BA
 #define GL_UNSIGNED_SHORT_8_8_REV_APPLE   0x85BB
+#define GL_RGB_RAW_422_APPLE              0x8A51
 #endif
 
 #ifndef GL_APPLE_row_bytes

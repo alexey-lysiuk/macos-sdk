@@ -27,6 +27,7 @@
 
 #include <IOKit/usb/IOUSBDevice.h>						// our superclass
 #include <IOKit/usb/IOUSBHubPolicyMaker.h>
+#include <IOKit/usb/IOUSBControllerV3.h>
 
 // forward refeference. we don't include the header file because it would cause a circular reference
 class IOUSBHubPolicyMaker;

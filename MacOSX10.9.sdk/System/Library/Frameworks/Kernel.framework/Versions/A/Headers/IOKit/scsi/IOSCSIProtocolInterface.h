@@ -132,6 +132,14 @@ The value is a UInt32 corresponding to the number of retries.
  */
 #define kIOPropertyEjectRequireStartStopUnitKey		"Eject Requires START_STOP_UNIT"
 
+/*!
+ @constant kIOPropertyRequiresRestartEjectKey
+ @discussion
+ This key is used to indicate that the device requires a START_STOP_UNIT to eject
+ the device's media prior to restarting to ensuring proper function at next boot cycle.
+ */
+#define kIOPropertyRequiresRestartEjectKey          "Require Restart Eject"
+
 #if defined(KERNEL) && defined(__cplusplus)
 
 

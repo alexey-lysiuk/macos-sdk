@@ -11,8 +11,8 @@
 
 /*!
 	@class		AVB17221ACMPMessage
-	@abstract	AVB17221ACMPMessage encapsulates an IEEE P1722.1 AVDECC Connection Management Protocol message.
-	@discussion	AVB17221ACMPMessage encapsulates an IEEE P1722.1 AVDECC Connection Management Protocol (ACMP) message.
+	@abstract	AVB17221ACMPMessage encapsulates an IEEE Std 1722.1™-2013 AVDECC Connection Management Protocol message.
+	@discussion	AVB17221ACMPMessage encapsulates an IEEE Std 1722.1™-2013 AVDECC Connection Management Protocol (ACMP) message.
  */
 NS_CLASS_AVAILABLE(10_8, NA)
 @interface AVB17221ACMPMessage : NSObject <NSCopying>

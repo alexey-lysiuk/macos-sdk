@@ -25,8 +25,8 @@
 #define _IOKIT_IOUSBLOG_H
 
 #ifdef KERNEL
-#include 	<IOKit/IOService.h>
-#include	<IOKit/IOLib.h>
+    #include 	<IOKit/IOService.h>
+    #include	<IOKit/IOLib.h>
 #endif
 
 #ifdef	__cplusplus

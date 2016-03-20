@@ -100,6 +100,9 @@ enum
 class IOUSBControllerV3 : public IOUSBControllerV2
 {	
     OSDeclareAbstractStructors(IOUSBControllerV3)
+	friend class IOUSBDevice;
+	friend class IOUSBHubDevice;
+	friend class IOUSBRootHubDevice;
 
 	protected:
 		// static variable shared by all instances
@@ -157,10 +160,37 @@ class IOUSBControllerV3 : public IOUSBControllerV2
 			bool								_PMEdisabled;						// tracks when we have disabled the PME handler
 			bool								_minimumIdlePowerStateValid;		// T when we have calculated the minimumIdlePowerState
             bool                                _parentDeviceON;                    // T when our parent device is in the ON power state
+            UInt32                              _thunderboltMaxBusStall;            // RMBS advertisement value when on thunderbolt
+
+            // Support for XHCI Thunderbolt Docks and Extra current
+            SInt32                              _tbCurrentExtra;
+            SInt32                              _tbCurrentExtraInSleep;
+            SInt32                              _tbMaxCurrentPerPort;
+            SInt32                              _tbMaxCurrentPerPortInSleep;
+            SInt32                              _tbExternalSSPorts;
+            SInt32                              _tbUnconnectedExternalSSPorts;
+            SInt32                              _tbRevocableExtraCurrent;
+            SInt32                              _tbExternalNonSSPortsUsingExtraCurrent;
+            UInt32                              _tbCaptiveBitmap;
+            UInt32                              _tbExternalConnectorBitmap;
+            bool                                _tbBitmapsExist;
 		};
 		V3ExpansionData *_v3ExpansionData;
     
-		// IOKit methods
+        // TB-relates expansion data
+        #define _TB_CURRENTEXTRA						_v3ExpansionData->_tbCurrentExtra
+        #define _TB_CURRENTEXTRAINSLEEP                 _v3ExpansionData->_tbCurrentExtraInSleep
+        #define _TB_MAXCURRENTPERPORT                   _v3ExpansionData->_tbMaxCurrentPerPort
+        #define _TB_MAXCURRENTPERPORTINSLEEP			_v3ExpansionData->_tbMaxCurrentPerPortInSleep
+        #define _TB_EXTERNALSSPORTS                     _v3ExpansionData->_tbExternalSSPorts
+        #define _TB_UNCONNECTEDEXTERNALSSPORTS			_v3ExpansionData->_tbUnconnectedExternalSSPorts
+        #define _TB_REVOCABLEEXTRACURRENT               _v3ExpansionData->_tbRevocableExtraCurrent
+        #define _TB_EXTERNALNONSSPORTSUSINGEXTRACURRENT _v3ExpansionData->_tbExternalNonSSPortsUsingExtraCurrent
+        #define _TB_CAPTIVEBITMAP                       _v3ExpansionData->_tbCaptiveBitmap
+        #define _TB_EXTERNALCONNECTORBITMAP             _v3ExpansionData->_tbExternalConnectorBitmap
+        #define _TB_BITMAPS_EXIST                       _v3ExpansionData->_tbBitmapsExist
+
+    // IOKit methods
 		virtual bool					init( OSDictionary *  propTable );
 		virtual bool					start( IOService *  provider );
 		virtual void					stop( IOService * provider );
@@ -493,7 +523,15 @@ class IOUSBControllerV3 : public IOUSBControllerV2
      */
 	virtual UInt64			GetErrata64Bits(UInt16 vendorID, UInt16 deviceID, UInt16 revisionID );
 
-	OSMetaClassDeclareReservedUnused(IOUSBControllerV3,  22);
+    
+    OSMetaClassDeclareReservedUsed(IOUSBControllerV3,  22);
+    /* !
+     @function DoNotPowerOffPortsOnStop
+     @abstract  Used to indicate if ports should be powered down on shutdown or hibernate.
+     @result returs true if the ports should NOT be powered off on shutdown
+     */
+	virtual bool			DoNotPowerOffPortsOnStop(void);
+
 	OSMetaClassDeclareReservedUnused(IOUSBControllerV3,  23);
 	OSMetaClassDeclareReservedUnused(IOUSBControllerV3,  24);
 	OSMetaClassDeclareReservedUnused(IOUSBControllerV3,  25);
@@ -508,6 +546,7 @@ public:
     bool                            GetInternalHubErrataBits(IORegistryEntry* provider, UInt32 portnum, UInt32 locationID, UInt32 *errataBits);
     IOReturn                        GetConnectorType(IORegistryEntry * provider, UInt32 portNumber, UInt32 locationID, UInt8 *connectorType);
     bool                            CanControllerMuxOverToEHCI( IORegistryEntry * provider, UInt32 locationID );
+    void                            UpdateThunderboltExtraCurrentiVars();
 #endif
     
 protected:

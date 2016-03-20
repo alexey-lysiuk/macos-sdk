@@ -17,12 +17,12 @@
   |          Georg Richter <georg@mysql.com>                             |
   +----------------------------------------------------------------------+
 */
-/* $Id: e707c415db32080b3752b232487a435ee0372157 $ */
+/* $Id: 2d8f599f49e5e8d2f5ba7112b5c444b3e2e48cdf $ */
 
 #ifndef MYSQLND_H
 #define MYSQLND_H
 
-#define MYSQLND_VERSION "mysqlnd 5.0.10 - 20111026 - $Id: e707c415db32080b3752b232487a435ee0372157 $"
+#define MYSQLND_VERSION "mysqlnd 5.0.10 - 20111026 - $Id: 2d8f599f49e5e8d2f5ba7112b5c444b3e2e48cdf $"
 #define MYSQLND_VERSION_ID 50010
 
 #define MYSQLND_PLUGIN_API_VERSION 1
@@ -117,7 +117,7 @@ PHPAPI void _mysqlnd_debug(const char *mode TSRMLS_DC);
 #define mysqlnd_reap_async_query(conn)					((conn)->data)->m->reap_query((conn)->data TSRMLS_CC)
 #define mysqlnd_unbuffered_skip_result(result)			(result)->m.skip_result((result) TSRMLS_CC)
 
-PHPAPI enum_func_status _mysqlnd_poll(MYSQLND **r_array, MYSQLND **e_array, MYSQLND ***dont_poll, long sec, long usec, uint * desc_num TSRMLS_DC);
+PHPAPI enum_func_status _mysqlnd_poll(MYSQLND **r_array, MYSQLND **e_array, MYSQLND ***dont_poll, long sec, long usec, int * desc_num TSRMLS_DC);
 
 #define mysqlnd_use_result(conn)		((conn)->data)->m->use_result((conn)->data TSRMLS_CC)
 #define mysqlnd_store_result(conn)		((conn)->data)->m->store_result((conn)->data TSRMLS_CC)

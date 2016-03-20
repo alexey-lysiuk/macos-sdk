@@ -85,18 +85,18 @@ NS_CLASS_AVAILABLE(10_8, NA)
 
 /*!
 	@property	entityDiscovery
-	@abstract	The IEEE P1722.1 entity discovery for the interface.
+	@abstract	The IEEE Std 1722.1™-2013 entity discovery for the interface.
  */
 @property (retain, readonly) AVB17221EntityDiscovery *entityDiscovery;
 
 /*!
 	@property	aecp
-	@abstract	The IEEE P1722.1 AECP interface for the interface.
+	@abstract	The IEEE Std 1722.1™-2013 AECP interface for the interface.
  */
 @property (retain, readonly) AVB17221AECPInterface *aecp;
 /*!
 	@property	acmp
-	@abstract	The IEEE P1722.1 ACMP interface for the interface.
+	@abstract	The IEEE Std 1722.1™-2013 ACMP interface for the interface.
  */
 @property (retain, readonly) AVB17221ACMPInterface *acmp;
 

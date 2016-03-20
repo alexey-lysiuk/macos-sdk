@@ -49,6 +49,7 @@
 
 class IOUSBController;
 class IOUSBControllerV2;
+class IOUSBControllerV3;
 class IOUSBInterface;
 class IOUSBHubPolicyMaker;
 /*!
@@ -130,7 +131,8 @@ protected:
 		UInt32					_wakeUSB3PowerAllocated;			// how much extra "USB3" power during wake did we already give our client
 		bool					_attachedToEnclosureAndUsingExtraWakePower;
 		bool					_deviceIsOnThunderbolt;					// Will be set if all our upstream hubs are on Thunderbolt
-
+        UInt16                  _isochDelay;
+        IOUSBControllerV3 *     _controllerV3;
     };
     ExpansionData * _expansionData;
 
@@ -364,6 +366,9 @@ public:
     UInt8   GetDeviceSubClass(void);
     UInt8	GetProtocol(void);
     UInt32  GetLocationID(void);
+    UInt16  GetIsochDelay(void);
+    bool	IsDeviceInternal(void);
+	
 	void	SetBusPowerAvailable(UInt32 newPower);
 
     OSMetaClassDeclareReservedUsed(IOUSBDevice,  0);
@@ -544,12 +549,18 @@ public:
     OSMetaClassDeclareReservedUsed(IOUSBDevice,  16);
     /*!
 	 @function SetAddress
-	 @param 	Sets the bus address of the device
+	 @param 	address Sets the bus address of the device
 	 */
     virtual void 			SetAddress(USBDeviceAddress address);
     
-
-    OSMetaClassDeclareReservedUnused(IOUSBDevice,  17);
+    OSMetaClassDeclareReservedUsed(IOUSBDevice,  17);
+    /*!
+	 @function SetIsochDelay
+	 @param 	delay Sets the delay, in nanoseconds, from the time a host transmits a packet to the time it is received by the device.  Sum of all the wHubDelay's for the
+     upstream hubs.
+	 */
+    virtual IOReturn 			SetIsochDelay(UInt16 delay);
+    
     OSMetaClassDeclareReservedUnused(IOUSBDevice,  18);
     OSMetaClassDeclareReservedUnused(IOUSBDevice,  19);
 

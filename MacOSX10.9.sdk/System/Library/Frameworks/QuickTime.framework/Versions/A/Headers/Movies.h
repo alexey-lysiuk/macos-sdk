@@ -3253,6 +3253,7 @@ enum {
   kQTMovieInstantiationPropertyID_DontAutoUpdateClock = 'aucl',
   kQTMovieInstantiationPropertyID_ResultDataLocationChanged = 'dlch', /* (result property)*/
   kQTMovieInstantiationPropertyID_AllowMediaOptimization = 'amop',
+  kQTMovieInstantiationPropertyID_GatherRefMovieCounts = 'grmc',
   kQTPropertyClass_NewMovieProperty = 'mprp',
   kQTNewMoviePropertyID_DefaultDataRef = 'ddrf', /* DataReferenceRecord*/
   kQTNewMoviePropertyID_Active  = 'actv',

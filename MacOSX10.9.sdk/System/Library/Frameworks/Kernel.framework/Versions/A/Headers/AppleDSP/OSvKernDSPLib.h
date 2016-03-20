@@ -312,6 +312,10 @@ extern float expf(float);
 extern float logf(float);
 extern float log10f(float);
 extern float sqrtf(float);
+extern float sinf(float);
+extern float cosf(float);
+extern float __sinpif(float);
+extern float __cospif(float);
 
 void vvexpf (float * /* y */, const float * /* x */, const int * /* n */);
 

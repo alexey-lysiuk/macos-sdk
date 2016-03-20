@@ -143,26 +143,29 @@ class IOUSBNotification : public OSObject
 {
     OSDeclareDefaultStructors(IOUSBNotification);
 
-    IOUserClient *              pIOUserClient;              // the IOUserClient object which created this IOUSBNotification
-    IOUSBDevice *               pIOUSBDevice;               // the device whose user client created this note (or the parent of the interface user client)
-    IOUSBInterface *            pIOUSBInterface;            // the interface whose user client create this note (could be NULL)
-    UInt64                      bmNotificationMask;         // a bitmask of the desired bits for this notification
-    OSAsyncReference64          AsyncRef;                   // this contains the callback routine and the refCon in user space
+    IOUserClient *              fpIOUserClient;              // the IOUserClient object which created this IOUSBNotification
+    IOUSBDevice *               fpIOUSBDevice;               // the device whose user client created this note (or the parent of the interface user client)
+    IOUSBInterface *            fpIOUSBInterface;            // the interface whose user client create this note (could be NULL)
+    UInt64                      fbmNotificationMask;         // a bitmask of the desired bits for this notification
+    OSAsyncReference64          fAsyncRef;                   // this contains the callback routine and the refCon in user space
+    UInt64                      fToken;                      // this token is unique for each user client
     
 public:
     static IOUSBNotification*   withUserClient(IOUserClient *pIOUserClient);
 
     // Accessors
-    inline IOUserClient *              GetIOUserClient(void)                                        {return pIOUserClient;}
-    inline IOUSBDevice *               GetIOUSBDevice(void)                                         {return pIOUSBDevice;}
-    inline IOUSBInterface *            GetIOUSBInterface(void)                                      {return pIOUSBInterface;}
-    inline UInt64                      GetNotificationMask(void)                                    {return bmNotificationMask;}
-    inline OSAsyncReference64 *        GetAsyncRefPtr(void)                                         {return &AsyncRef;}
+    inline IOUserClient *              GetIOUserClient(void)                                        {return fpIOUserClient;}
+    inline IOUSBDevice *               GetIOUSBDevice(void)                                         {return fpIOUSBDevice;}
+    inline IOUSBInterface *            GetIOUSBInterface(void)                                      {return fpIOUSBInterface;}
+    inline UInt64                      GetNotificationMask(void)                                    {return fbmNotificationMask;}
+    inline OSAsyncReference64 *        GetAsyncRefPtr(void)                                         {return &fAsyncRef;}
+    inline UInt64                      GetToken(void)                                               {return fToken;}
     
-    inline void                        SetIOUSBDevice(IOUSBDevice *iousbdevice)                     {pIOUSBDevice = iousbdevice;}
-    inline void                        SetIOUSBInterface(IOUSBInterface *iousbinterface)            {pIOUSBInterface = iousbinterface;}
-    inline void                        SetNotificationMask(UInt64 notificationmask)                 {bmNotificationMask = notificationmask;}
-    inline void                        SetAsyncRef(OSAsyncReference64 *pAsyncRef)                   {bcopy(pAsyncRef, &AsyncRef, sizeof(OSAsyncReference64));}
+    inline void                        SetIOUSBDevice(IOUSBDevice *iousbdevice)                     {fpIOUSBDevice = iousbdevice;}
+    inline void                        SetIOUSBInterface(IOUSBInterface *iousbinterface)            {fpIOUSBInterface = iousbinterface;}
+    inline void                        SetNotificationMask(UInt64 notificationmask)                 {fbmNotificationMask = notificationmask;}
+    inline void                        SetAsyncRef(OSAsyncReference64 *pAsyncRef)                   {bcopy(pAsyncRef, &fAsyncRef, sizeof(OSAsyncReference64));}
+    inline void                        SetToken(UInt64 token)                                       {fToken = token;}
     
     // public methods
     IOReturn                            SendNotification(UInt64 notificationmask, void* pToken);

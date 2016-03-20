@@ -13,7 +13,7 @@
 #endif
 #endif
 
-#define APPLE_GRAPHICS_DEVICE_CONTOL_VERSION 0x205
+#define APPLE_GRAPHICS_DEVICE_CONTOL_VERSION 0x20A
 #define APPLE_GRAPHICS_DEVICE_CONTROL_SERVICE "AppleGraphicsDeviceControl"
 
 /* our magic attributes */
@@ -88,6 +88,8 @@
 
 
 
+
+
 #pragma pack(push)
 #pragma pack(1)
 
@@ -131,6 +133,8 @@ typedef enum {
     kAGDCFBSetMode             = 0x703,
     kAGDCFBInjectEvent         = 0x704,
     kAGDCFBDoControl           = 0x705,
+    kAGDCFBDPLinkConfig        = 0x706,
+
     
     //
     // 0x800 – 0x8ff Reserved for common debug!!!
@@ -152,6 +156,8 @@ typedef enum {
     kAGDCStreamAccessAUX           = 0x985,
     kAGDCStreamGetEDID             = 0x986,
     kAGDCStreamSetState            = 0x987,
+    kAGDCDPStreamConfig            = 0x988,
+
 } kAGDCCommand_t;
 
 typedef  enum {
@@ -252,6 +258,7 @@ typedef struct {
     struct {
         uint8_t             size;
         union {
+            uint8_t         block[64];
             uint8_t         b[16];
             uint16_t		s[8];
             uint32_t		l[4];
@@ -353,8 +360,6 @@ typedef struct {
     AGDCStreamState_t               state;      // output
 } AGDCLinkConfig_t;
 
-typedef void *    AGDCLinkAvailable_t __deprecated;
-
 typedef enum {
     kAGDCRegisterLinkInsert             = 0,
     kAGDCRegisterLinkRemove             = 1,
@@ -366,10 +371,6 @@ typedef enum {
 
 
 
-typedef struct {                                                            // Deprecated in V203
-} AGDCGetLinkMaster_t __deprecated;
-typedef  AGDCGetLinkMaster_t AGDCRegisterLinkMaster_t __deprecated;
-
 typedef struct {
     AGDCStreamAddress_t     address;
     AGDCStreamState_t       state;
@@ -380,8 +381,6 @@ typedef struct {
     uint32_t                state;
 } AGDCFBOnline_t;
 
-typedef AGDCFBOnline_t kAppleAFBOnline_t   __deprecated;
-
 typedef struct {
     int32_t                 id;
     uint32_t                modeID;
@@ -391,42 +390,66 @@ typedef struct {
     uint32_t                reserved[7];
 } AGDCFBSetMode_t;
 
-typedef AGDCFBSetMode_t    kAppleAFBSetMode_t __deprecated;
-
 typedef struct {
     int32_t                 id;
     uint32_t                size;
     uint8_t                 data[2*128];
 } AGDCEDID_t;
 
-typedef AGDCEDID_t       kAppleAFBEdid_t __deprecated;
-
 typedef struct {
     int32_t                 id;
     uint32_t                eventID;
 } AGDCFBInjectEvent_t;
 
-typedef AGDCFBInjectEvent_t    kAppleAFBinjectEvent_t __deprecated;
 
 typedef struct {
     int32_t                 id;
     uint64_t                payload[4];
 } AGDCFBDoControl_t;
 
-typedef AGDCFBDoControl_t kAppleAFBdoControl_t __deprecated;
+//
+// Setting any of these bits means the value of the associated blocks in the AGDCDPLinkConfig_t
+// structure are "driver defaults", the value in the fields is to be ignored when these bits are set.
+//
+typedef enum {
+    kAGDCDPLinkConfigFlag_DefaultTraining       = (1 << 0),
+    kAGDCDPLinkConfigFlag_DefaultIdlePatterns   = (1 << 1),
+    kAGDCDPLinkConfigFlag_DefaultVoltage        = (1 << 2),
+    kAGDCDPLinkConfigFlag_DefaultPreEmphasis    = (1 << 3),
+    kAGDCDPLinkConfigFlag_DefaultDownspread     = (1 << 4),
+    kAGDCDPLinkConfigFlag_DefaultScrambler      = (1 << 5),
+} AGDCDPLinkConfigFlags_t;
+
+typedef struct  {
+    uint16_t    version;                // 8 bit high (major); 8 bit low (minor)
+    uint8_t     bitRate;                // same encoding as the spec
+    uint8_t     MSTEnable;              // 0 => No MST support permitted, 1 = MST Enabled, others values are reserved
+    uint16_t    t1Time;                 // minimum duration of the t1 pattern (microseconds)    - ignored if kAGDCDPLinkConfigFlag_DefaultTraining
+    uint16_t    t2Time;                 // minimum duration of the t2 pattern                   - ignored if kAGDCDPLinkConfigFlag_DefaultTraining
+    uint16_t    t3Time;                 // minimum duration of the t3 pattern                   - ignored if kAGDCDPLinkConfigFlag_DefaultTraining
+    uint8_t     idlePatterns;           // minimum number of idle patterns                      - ignored if kAGDCDPLinkConfigFlag_DefaultidlePatterns
+    uint8_t     laneCount;              // number of lanes in the link
+    uint8_t     voltage;                //                                                      - ignored if kAGDCDPLinkConfigFlag_DefaultVoltage
+    uint8_t     preEmphasis;            //                                                      - ignored if kAGDCDPLinkConfigFlag_DefaultpreEmphasis
+    uint8_t     downspread;             //                                                      - ignored if kAGDCDPLinkConfigFlag_DefaultDownspread
+    uint8_t     scrambler;              //                                                      - ignored if kAGDCDPLinkConfigFlag_DefaultScrambler
+    uint8_t     maxBitRate;             // same encoding as the bitRate field
+    uint8_t     maxLaneCount;           // an integer
+    uint8_t     maxDownspread;          // 0 = Off. 1 = 0.5                                     - ignored if kAGDCDPLinkConfigFlag_DefaultDownspread
+    uint8_t     __reservedB[1];         // reserved set to zero
+    uint32_t    flags;                  // AGDCDPLinkConfigFlags_t
+    uint8_t     __reservedC[4];
+} AGDCDPLinkConfig_t;
+
+typedef struct  {
+    uint32_t                    id;
+    AGDCDPLinkConfig_t          config;
+} AGDCFBDPLinkConfig_t;
 
 typedef struct {
-    union {
-        AGDCFBOnline_t          online;
-        AGDCFBSetMode_t         mode;
-        AGDCEDID_t              edid;
-        AGDCFBInjectEvent_t     event;
-        AGDCFBDoControl_t       control;
-        AGDCStreamSetState_t    streamset;
-    };
-} AGDCFBCommandPacket_t __deprecated;
-
-typedef AGDCFBCommandPacket_t kAppleAFBCommandPacket_t __deprecated;
+    AGDCStreamAddress_t         address;
+    AGDCDPLinkConfig_t          config;
+} AGDCDPStreamConfig_t;
 
 typedef struct {
     uint32_t                    NumPStates;
@@ -457,6 +480,9 @@ typedef struct {
                     kAGDCPMCallbackEvent_t event,
                     kAGDCPMCallbackInfo_t *data);
 } AGDCPMRegisterCallback_t;
+
+
+
 
 
 

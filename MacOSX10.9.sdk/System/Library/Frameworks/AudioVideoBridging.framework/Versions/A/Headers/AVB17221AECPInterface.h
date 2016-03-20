@@ -52,8 +52,8 @@ typedef void (^AVB17221AECPInterfaceCompletion)(NSError *, AVB17221AECPMessage *
 
 /*!
 	@class		AVB17221AECPInterface
-	@abstract	AVB17221AECPInterface is a concrete subclass of AVB1722ControlInterface providing the access to the IEEE P1722.1 AVDECC Enumeration and Control Protocol interface.
-	@discussion	AVB17221AECPInterface is a concrete subclass of AVB1722ControlInterface providing the access to the IEEE P1722.1 AVDECC Enumeration and Control Protocol (AECP) interface.
+	@abstract	AVB17221AECPInterface is a concrete subclass of AVB1722ControlInterface providing the access to the IEEE Std 1722.1™-2013 AVDECC Enumeration and Control Protocol interface.
+	@discussion	AVB17221AECPInterface is a concrete subclass of AVB1722ControlInterface providing the access to the IEEE Std 1722.1™-2013 AVDECC Enumeration and Control Protocol (AECP) interface.
 				It provides callbacks per entity EntityID via a handler object implementing the AVB17221AECPClient protocol. AVB17221AECPInterface objects
 				are typically not created directly but are created indirectly and accessed via the aecp property of the AVBInterface object.
  */

@@ -84,12 +84,12 @@ NS_CLASS_AVAILABLE(10_8, NA)
 @property (assign) uint64_t entityID NS_AVAILABLE(10_9, NA);
 /*!
 	@property	vendorID
-	@abstract	The vendor_id of the entity.
+	@abstract	The vendor_id of the entity. This is equivalent to the 32 most significant bits of <code>entityModelID</code>.
  */
 @property (assign) uint32_t vendorID NS_DEPRECATED(10_8, 10_9, NA, NA);
 /*!
 	@property	modelID
-	@abstract	The model_id of the entity.
+	@abstract	The model_id of the entity. This is equivalent to the 32 least significant bits of <code>entityModelID</code>.
  */
 @property (assign) uint32_t modelID NS_DEPRECATED(10_8, 10_9, NA, NA);
 /*!

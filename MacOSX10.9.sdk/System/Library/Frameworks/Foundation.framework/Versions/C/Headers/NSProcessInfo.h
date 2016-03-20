@@ -1,32 +1,32 @@
 /*	NSProcessInfo.h
-	Copyright (c) 1994-2013, Apple Inc. All rights reserved.
-*/
+ Copyright (c) 1994-2013, Apple Inc. All rights reserved.
+ */
 
 #import <Foundation/NSObject.h>
 #import <Foundation/NSDate.h>
 
 enum {	/* Constants returned by -operatingSystem */
-	NSWindowsNTOperatingSystem = 1,
-	NSWindows95OperatingSystem,
-	NSSolarisOperatingSystem,
-	NSHPUXOperatingSystem,
-	NSMACHOperatingSystem,
-	NSSunOSOperatingSystem,
-	NSOSF1OperatingSystem
+    NSWindowsNTOperatingSystem = 1,
+    NSWindows95OperatingSystem,
+    NSSolarisOperatingSystem,
+    NSHPUXOperatingSystem,
+    NSMACHOperatingSystem,
+    NSSunOSOperatingSystem,
+    NSOSF1OperatingSystem
 };
-    
+
 @class NSArray, NSString, NSDictionary;
 
 @interface NSProcessInfo : NSObject {
-    @private	
+@private
     NSDictionary	*environment;
     NSArray		*arguments;
-    NSString		*hostName;    
+    NSString		*hostName;
     NSString		*name;
     NSInteger		automaticTerminationOptOutCounter;
 }
 
-+ (NSProcessInfo *)processInfo;	
++ (NSProcessInfo *)processInfo;
 
 - (NSDictionary *)environment;
 
@@ -46,7 +46,7 @@ enum {	/* Constants returned by -operatingSystem */
 - (NSString *)operatingSystemName;
 
 - (NSString *)operatingSystemVersionString;
-	/* Human readable, localized; appropriate for displaying to user or using in bug emails and such; NOT appropriate for parsing */
+/* Human readable, localized; appropriate for displaying to user or using in bug emails and such; NOT appropriate for parsing */
 
 - (NSUInteger)processorCount NS_AVAILABLE(10_5, 2_0);
 - (NSUInteger)activeProcessorCount NS_AVAILABLE(10_5, 2_0);
@@ -58,7 +58,7 @@ enum {	/* Constants returned by -operatingSystem */
  - NSUserDefaults uses these to prevent process killing between the time at which a default has been set and the time at which the preferences file including that default has been written to disk.
  - NSDocument uses these to prevent process killing between the time at which the user has made a change to a document and the time at which the user's change has been written to disk.
  - You can use these whenever your application defers work that must be done before the application terminates. If for example your application ever defers writing something to disk, and it has an NSSupportsSuddenTermination entry in its Info.plist so as not to contribute to user-visible delays at logout or shutdown time, it must invoke -disableSuddenTermination when the writing is first deferred and -enableSuddenTermination after the writing is actually done.
-*/
+ */
 - (void)disableSuddenTermination NS_AVAILABLE(10_6, NA);
 - (void)enableSuddenTermination NS_AVAILABLE(10_6, NA);
 
@@ -72,7 +72,7 @@ enum {	/* Constants returned by -operatingSystem */
 - (void)enableAutomaticTermination:(NSString *)reason NS_AVAILABLE(10_7, NA);
 
 /*
- * Marks the calling app as supporting automatic termination. Without calling this or setting the equivalent Info.plist key (NSSupportsAutomaticTermination), the above methods (disableAutomaticTermination:/enableAutomaticTermination:) have no effect, 
+ * Marks the calling app as supporting automatic termination. Without calling this or setting the equivalent Info.plist key (NSSupportsAutomaticTermination), the above methods (disableAutomaticTermination:/enableAutomaticTermination:) have no effect,
  * although the counter tracking automatic termination opt-outs is still kept up to date to ensure correctness if this is called later. Currently, passing NO has no effect.
  * This should be called during -applicationDidFinishLaunching or earlier.
  */
@@ -86,9 +86,9 @@ enum {	/* Constants returned by -operatingSystem */
  
  These activities can be used when your application is performing a long-running operation. If the activity can take different amounts of time (for example, calculating the next move in a chess game), it should use this API. This will ensure correct behavior when the amount of data or the capabilities of the user's computer varies. You should put your activity into one of two major categories:
  
-  User initiated: These are finite length activities that the user has explicitly started. Examples include exporting or downloading a user specified file.
+ User initiated: These are finite length activities that the user has explicitly started. Examples include exporting or downloading a user specified file.
  
-  Background: These are finite length activities that are part of the normal operation of your application but are not explicitly started by the user. Examples include autosaving, indexing, and automatic downloading of files.
+ Background: These are finite length activities that are part of the normal operation of your application but are not explicitly started by the user. Examples include autosaving, indexing, and automatic downloading of files.
  
  In addition, if your application requires high priority IO, you can include the 'NSActivityLatencyCritical' flag (using a bitwise or). This should be reserved for activities like audio or video recording.
  
@@ -96,17 +96,17 @@ enum {	/* Constants returned by -operatingSystem */
  
  Be aware that failing to end these activities for an extended period of time can have significant negative impacts to the performance of your user's computer, so be sure to use only the minimum amount of time required. User preferences may override your application’s request.
  
- This API can also be used to control auto termination or sudden termination. 
+ This API can also be used to control auto termination or sudden termination.
  
-    id activity = [[NSProcessInfo processInfo] beginActivityWithOptions:NSActivityAutomaticTerminationDisabled reason:@"Good Reason"];
-    // work
-    [[NSProcessInfo processInfo] endActivity:activity];
+ id activity = [[NSProcessInfo processInfo] beginActivityWithOptions:NSActivityAutomaticTerminationDisabled reason:@"Good Reason"];
+ // work
+ [[NSProcessInfo processInfo] endActivity:activity];
  
  is equivalent to:
  
-    [[NSProcessInfo processInfo] disableAutomaticTermination:@"Good Reason"];
-    // work
-    [[NSProcessInfo processInfo] enableAutomaticTermination:@"Good Reason"]
+ [[NSProcessInfo processInfo] disableAutomaticTermination:@"Good Reason"];
+ // work
+ [[NSProcessInfo processInfo] enableAutomaticTermination:@"Good Reason"]
  
  Since this API returns an object, it may be easier to pair begins and ends. If the object is deallocated before the -endActivity: call, the activity will be automatically ended.
  
@@ -167,4 +167,3 @@ typedef NS_OPTIONS(uint64_t, NSActivityOptions) {
 - (void)performActivityWithOptions:(NSActivityOptions)options reason:(NSString *)reason usingBlock:(void (^)(void))block NS_AVAILABLE(10_9, 7_0);
 #endif
 @end
-

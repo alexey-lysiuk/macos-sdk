@@ -1203,7 +1203,9 @@ enum {
     kUSBGangOverCurrentNotificationType         = 3,
     kUSBiOSDeviceNotEnoughPowerNotificationType = 4,
     kUSBNotEnoughPowerNoACNotificationType      = 5,
-    kUSBUnsupportedNotificationType             = 6
+    kUSBDeviceCountExceededNotificationType     = 6,
+    kUSBEndpointCountExceededNotificationType   = 7,
+    kUSBUnsupportedNotificationType             = 8
 };
 
 /*!
@@ -1348,10 +1350,12 @@ typedef enum {
 #define kAppleRevocableExtraCurrent			"AAPL,revocable-extra-current"
 #define kAppleExternalSuperSpeedPorts		"AAPL,ExternalSSPorts"
 #define kAppleUnconnectedSuperSpeedPorts	"AAPL,UnconnectedSSPorts"
+#define kAppleAcpiRootHubDepth				"AAPL,root-hub-depth"
 
 #define kAppleStandardPortCurrentInSleep	"AAPL,standard-port-current-in-sleep"
 
 #define kAppleInternalUSBDevice				"AAPL,device-internal"
+#define kAppleExternalConnectorBitmap       "AAPL,ExternalConnectorBitmap"
 #define kUSBBusID							"AAPL,bus-id"
 	
 	// Deprecated Names and/or values
@@ -1389,17 +1393,19 @@ enum {
 
 enum {
 	kXHCISSRootHubAddress	= kUSBMaxDevices,
-	kXHCIUSB2RootHubAddress = kUSBMaxDevices+1
+	kXHCIUSB2RootHubAddress = kUSBMaxDevices+1,
+    kSuperSpeedBusBitMask   = 0x01000000
 };
     
 #define ISROOTHUB(a) ((a == kXHCISSRootHubAddress) || (a == kXHCIUSB2RootHubAddress))
 
 // values (in nanoseconds) which are sent to requireMaxBusStall as appropriate
-#define kThunderboltMaxBusStall          25000
 #define kEHCIIsochMaxBusStall            25000
 #define kXHCIIsochMaxBusStall            25000
 #define kOHCIIsochMaxBusStall            25000
 #define kUHCIIsochMaxBusStall            10000
+#define kMaxBusStall10uS                 10000
+#define kMaxBusStall25uS                 25000
 
 #ifdef __cplusplus
 }       

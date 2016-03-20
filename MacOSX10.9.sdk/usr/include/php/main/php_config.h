@@ -994,7 +994,7 @@
 /* #undef HAVE_ISQL_H */
 
 /* whether to enable JavaScript Object Serialization support */
-#define HAVE_JSON 1
+#define HAVE_JSON 1 
 
 /* Define to 1 if you have the `kill' function. */
 #define HAVE_KILL 1
@@ -1760,16 +1760,16 @@
 /* whether you have struct flock */
 #define HAVE_STRUCT_FLOCK 1
 
-/* Define to 1 if `st_blksize' is member of `struct stat'. */
+/* Define to 1 if `st_blksize' is a member of `struct stat'. */
 #define HAVE_STRUCT_STAT_ST_BLKSIZE 1
 
-/* Define to 1 if `st_blocks' is member of `struct stat'. */
+/* Define to 1 if `st_blocks' is a member of `struct stat'. */
 #define HAVE_STRUCT_STAT_ST_BLOCKS 1
 
-/* Define to 1 if `st_rdev' is member of `struct stat'. */
+/* Define to 1 if `st_rdev' is a member of `struct stat'. */
 #define HAVE_STRUCT_STAT_ST_RDEV 1
 
-/* Define to 1 if `tm_zone' is member of `struct tm'. */
+/* Define to 1 if `tm_zone' is a member of `struct tm'. */
 #define HAVE_STRUCT_TM_TM_ZONE 1
 
 /* Define to 1 if your `struct stat' has `st_blksize'. Deprecated, use
@@ -2124,6 +2124,9 @@
 /* Define to the one symbol short name of this package. */
 #define PACKAGE_TARNAME ""
 
+/* Define to the home page for this package. */
+#define PACKAGE_URL ""
+
 /* Define to the version of this package. */
 #define PACKAGE_VERSION ""
 
@@ -2146,7 +2149,7 @@
 #define PHP_BLOWFISH_CRYPT 1
 
 /* PHP build date */
-#define PHP_BUILD_DATE "2013-08-25"
+#define PHP_BUILD_DATE "2014-01-19"
 
 /* Define if your system has fork/vfork/CreateProcess */
 #define PHP_CAN_SUPPORT_PROC_OPEN 1
@@ -2224,7 +2227,7 @@
 #define PHP_STD_DES_CRYPT 1
 
 /* uname -a output */
-#define PHP_UNAME "Darwin jackson.apple.com 13.0 Darwin Kernel Version 13.0.0: Tue Jul 30 20:52:22 PDT 2013; root:xnu-2422.1.53~3/RELEASE_X86_64 x86_64"
+#define PHP_UNAME "Darwin hikkaduwa.apple.com 13.0 Darwin Kernel Version 13.0.0: Tue Jul 30 20:52:22 PDT 2013; root:xnu-2422.1.53~3/RELEASE_X86_64 x86_64"
 
 /* Whether PHP has to use its own crypt_r for blowfish, des and ext des */
 #define PHP_USE_PHP_CRYPT_R 1
@@ -2322,7 +2325,7 @@
 /* #undef TSRM_ST */
 
 /* */
-#define UNDEF_THREADS_HACK 
+#define UNDEF_THREADS_HACK /**/
 
 /* */
 /* #undef UNIXWARE */
@@ -2338,6 +2341,28 @@
 
 /* Define if cross-process locking is required by accept() */
 /* #undef USE_LOCKING */
+
+/* Enable extensions on AIX 3, Interix.  */
+#ifndef _ALL_SOURCE
+# define _ALL_SOURCE 1
+#endif
+/* Enable GNU extensions on systems that have them.  */
+#ifndef _GNU_SOURCE
+# define _GNU_SOURCE 1
+#endif
+/* Enable threading extensions on Solaris.  */
+#ifndef _POSIX_PTHREAD_SEMANTICS
+# define _POSIX_PTHREAD_SEMANTICS 1
+#endif
+/* Enable extensions on HP NonStop.  */
+#ifndef _TANDEM_SOURCE
+# define _TANDEM_SOURCE 1
+#endif
+/* Enable general extensions on Solaris.  */
+#ifndef __EXTENSIONS__
+# define __EXTENSIONS__ 1
+#endif
+
 
 /* */
 /* #undef USE_TRANSFER_TABLES */
@@ -2375,12 +2400,15 @@
 /* */
 /* #undef ZTS */
 
-/* Define to 1 if on AIX 3.
-   System headers sometimes define this.
-   We just want to avoid a redefinition error message.  */
-#ifndef _ALL_SOURCE
-/* # undef _ALL_SOURCE */
-#endif
+/* Define to 1 if on MINIX. */
+/* #undef _MINIX */
+
+/* Define to 2 if the system does not provide POSIX.1 features except with
+   this defined. */
+/* #undef _POSIX_1_SOURCE */
+
+/* Define to 1 if you need to in order for `stat' and other things to work. */
+/* #undef _POSIX_SOURCE */
 
 /* Define to empty if `const' does not conform to ANSI C. */
 /* #undef const */

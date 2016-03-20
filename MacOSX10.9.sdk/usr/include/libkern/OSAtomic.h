@@ -85,7 +85,7 @@ __BEGIN_DECLS
 	This function adds the value given by <code>__theAmount</code> to the
 	value in the memory location referenced by <code>__theValue</code>,
  	storing the result back to that memory location atomically.
- @result Returns the new value.
+    @result Returns the new value.
  */
 __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0)
 int32_t	OSAtomicAdd32( int32_t __theAmount, volatile int32_t *__theValue );
@@ -106,8 +106,9 @@ int32_t	OSAtomicAdd32Barrier( int32_t __theAmount, volatile int32_t *__theValue 
 
 
 /*! @abstract Atomically increments a 32-bit value.
+    @result Returns the new value.
  */
-__header_always_inline
+__inline static
 int32_t	OSAtomicIncrement32( volatile int32_t *__theValue )
             { return OSAtomicAdd32(  1, __theValue); }
 
@@ -118,22 +119,26 @@ int32_t	OSAtomicIncrement32( volatile int32_t *__theValue )
 	except that it also introduces a barrier.
     @result Returns the new value.
  */
-__header_always_inline
+__inline static
 int32_t	OSAtomicIncrement32Barrier( volatile int32_t *__theValue )
             { return OSAtomicAdd32Barrier(  1, __theValue); }
 
-/*! @abstract Atomically decrements a 32-bit value. */
-__header_always_inline
+
+/*! @abstract Atomically decrements a 32-bit value.
+    @result Returns the new value.
+ */
+__inline static
 int32_t	OSAtomicDecrement32( volatile int32_t *__theValue )
             { return OSAtomicAdd32( -1, __theValue); }
 
-/*! @abstract Atomically increments a 32-bit value with a barrier.
+
+/*! @abstract Atomically decrements a 32-bit value with a barrier.
     @discussion
 	This function is equivalent to {@link OSAtomicDecrement32}
 	except that it also introduces a barrier.
     @result Returns the new value.
  */
-__header_always_inline
+__inline static
 int32_t	OSAtomicDecrement32Barrier( volatile int32_t *__theValue )
             { return OSAtomicAdd32Barrier( -1, __theValue); }
 
@@ -143,6 +148,7 @@ int32_t	OSAtomicDecrement32Barrier( volatile int32_t *__theValue )
 	This function adds the value given by <code>__theAmount</code> to the
 	value in the memory location referenced by <code>__theValue</code>,
 	storing the result back to that memory location atomically.
+    @result Returns the new value.
  */
 __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_2_0)
 int64_t	OSAtomicAdd64( int64_t __theAmount, volatile int64_t *__theValue );
@@ -162,10 +168,13 @@ __OSX_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_3_2)
 int64_t	OSAtomicAdd64Barrier( int64_t __theAmount, volatile int64_t *__theValue );
 
 
-/*! @abstract Atomically increments a 64-bit value. */
-__header_always_inline
+/*! @abstract Atomically increments a 64-bit value.
+    @result Returns the new value.
+ */
+__inline static
 int64_t	OSAtomicIncrement64( volatile int64_t *__theValue )
             { return OSAtomicAdd64(  1, __theValue); }
+
 
 /*! @abstract Atomically increments a 64-bit value with a barrier.
     @discussion
@@ -173,18 +182,15 @@ int64_t	OSAtomicIncrement64( volatile int64_t *__theValue )
 	except that it also introduces a barrier.
     @result Returns the new value.
  */
-__header_always_inline
+__inline static
 int64_t	OSAtomicIncrement64Barrier( volatile int64_t *__theValue )
             { return OSAtomicAdd64Barrier(  1, __theValue); }
 
 
 /*! @abstract Atomically decrements a 64-bit value.
-    @discussion
-	This function is equivalent to {@link OSAtomicIncrement64}
-	except that it also introduces a barrier.
     @result Returns the new value.
  */
-__header_always_inline
+__inline static
 int64_t	OSAtomicDecrement64( volatile int64_t *__theValue )
             { return OSAtomicAdd64( -1, __theValue); }
 
@@ -195,7 +201,7 @@ int64_t	OSAtomicDecrement64( volatile int64_t *__theValue )
 	except that it also introduces a barrier.
     @result Returns the new value.
  */
-__header_always_inline
+__inline static
 int64_t	OSAtomicDecrement64Barrier( volatile int64_t *__theValue )
             { return OSAtomicAdd64Barrier( -1, __theValue); }
 

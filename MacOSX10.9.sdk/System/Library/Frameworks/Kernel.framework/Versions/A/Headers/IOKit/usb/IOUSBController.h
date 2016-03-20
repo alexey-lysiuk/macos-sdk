@@ -249,6 +249,8 @@ protected:
         UInt32              _locationID;
         UInt32              _ignoreDisconnectBitmap;            // Port bitmap (adjusted for HS/SS ranges for XHCI controllers)
         UInt32              _watchdogTimerTimeout;
+        bool                _usePCIBusNumber;                   // T if we should use the PCI bus number in the calculations for USB Bus number
+        UInt32              _acpiRootHubDepth;                  // depth of the root hub in the ACPI device tree, this value is either hard coded or set to
     };
     ExpansionData *_expansionData;
 	

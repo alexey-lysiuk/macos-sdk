@@ -23,7 +23,7 @@ typedef void (^AVB17221ACMPInterfaceCompletion)(NSError *error, AVB17221ACMPMess
  @protocol	AVB17221ACMPClient
  @abstract	AVB17221ACMPClient is an objective-c protocol for classes intending to receive callbacks from AVB1722ACMPInterface.
  @discussion	AVB17221ACMPClient is an objective-c protocol for classes intending to receive callbacks from AVB1722ACMPInterface.
- There is a separate callback for each IEEE P1722.1 AVDECC Connection Managment Protocol (ACMP) command and response messages.
+ There is a separate callback for each IEEE Std 1722.1™-2013 AVDECC Connection Managment Protocol (ACMP) command and response messages.
  */
 @protocol AVB17221ACMPClient
 
@@ -51,8 +51,8 @@ typedef void (^AVB17221ACMPInterfaceCompletion)(NSError *error, AVB17221ACMPMess
 
 /*!
 	@class		AVB17221ACMPInterface
-	@abstract	AVB17221ACMPInterface is a concrete subclass of AVB1722ControlInterface providing the access to the IEEE P1722.1 AVDECC Connection Management Protocol interface.
-	@discussion	AVB17221ACMPInterface is a concrete subclass of AVB1722ControlInterface providing the access to the IEEE P1722.1 AVDECC Connection Management Protocol (ACMP) interface.
+	@abstract	AVB17221ACMPInterface is a concrete subclass of AVB1722ControlInterface providing the access to the IEEE Std 1722.1™-2013 AVDECC Connection Management Protocol interface.
+	@discussion	AVB17221ACMPInterface is a concrete subclass of AVB1722ControlInterface providing the access to the IEEE Std 1722.1™-2013 AVDECC Connection Management Protocol (ACMP) interface.
 				It provides callbacks per entity EntityID via a handler object implementing the AVB17221ACMPClient protocol. AVB17221ACMPInterface objects
 				are typically not created directly but are created indirectly and accessed via the acmp property of the AVBInterface object.
  */
@@ -75,7 +75,7 @@ NS_CLASS_AVAILABLE(10_8, NA)
 /*!
 	@property	multicastDestinationAddress
 	@abstract	An AVBMACAddress of the multicast destination MAC address being used for all ACMP messages on the interface.
-	@discussion	The MAC Address pointed to by the property is pre-initialized with the IEEE P1722.1 standard value, 91:e0:f0:01:00:00
+	@discussion	The MAC Address pointed to by the property is pre-initialized with the IEEE Std 1722.1™-2013 standard value, 91:e0:f0:01:00:00
  */
 @property (copy) AVBMACAddress *multicastDestinationAddress;
 
@@ -140,7 +140,7 @@ NS_CLASS_AVAILABLE(10_8, NA)
 	@result		kIOReturnSuccess if the message was successfully sent, otherwise an error indicating failure reason.
 	@discussion	This method synchronizes access to sending ACMP messages, and can safely be called from multiple threads. The completionHandler 
 				is synchronized with the reception of messages from the kernel object providing the command transport. This method handles the retry
-				and message timeout per the IEEE P1722.1 standard timeouts.
+				and message timeout per the IEEE Std 1722.1™-2013 standard timeouts.
  */
 - (BOOL)sendACMPCommandMessage:(AVB17221ACMPMessage *)message completionHandler:(AVB17221ACMPInterfaceCompletion)completionHandler;
 

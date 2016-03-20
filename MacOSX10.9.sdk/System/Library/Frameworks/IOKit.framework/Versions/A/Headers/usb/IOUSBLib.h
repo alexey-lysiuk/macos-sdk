@@ -2779,13 +2779,22 @@ typedef struct IOUSBInterfaceStruct190 {
 				system.  If an interrupt pipe wants to change the polling interval, it can do so with this call.
                 
                 The interface must be open for the pipe to exist.
+     
     @availability This function is only available with IOUSBInterfaceInterface190 and above.
     @param      self Pointer to the IOUSBInterfaceInterface.
     @param      pipeRef Index for the desired pipe (1 - GetNumEndpoints).
-    @param      maxPacketSize The desired size for the isochronous or interrupt pipe. Valid values are 0 through the maxPacketSize 
-                defined in the endpoint descriptor.   
-	@param      maxInterval  the desired polling interval in milliseconds, up to a maximum of 128 ms.  The
-				system can only poll devices powers of 2 (1, 2, 4, 8, 16, 32, 64, or 128 ms).  A value of 0 is illegal.
+    @param      maxPacketSize The desired size for the isochronous or interrupt pipe. For Full Speed endpoints and High Speed endpoints which 
+                are not High Bandwidth (i.e. only a single packet is transferred in a microframe), valid values are 0 through the maxPacketSize
+                defined in the endpoint descriptor. For High Speed High Bandwidth (i.e. 2 or 3 packets transferred in a microframe) and Super Speed endpoints,
+                valid values are 0 and the maxPacketSize of the endpoint. The maxPacketSize of the endpoint is calculated as the base maxPacketSize
+                multiplies by the burst size and the multiplier. See the USB 2.0 and the USB 3.0 specifications for more detail. Using a value of 0 for maxPacketSize
+                maintains the handle for the pipe but unreserves any bandwidth on the bus.
+	@param      maxInterval  applies only to interrupt endpoints. maxInterval has the same value as the bInterval field of the endpoint.
+                For Low Speed and Full Speed interrupt endpoints, it is the desired polling interval in milliseconds, up to a maximum of 128 ms.
+                The system can only poll devices powers of 2 (1, 2, 4, 8, 16, 32, 64, or 128 ms).
+                For High Speed and Super Speed endpoints, maxInterval is used as an exponent for a (2 ^ (maxInterval-1)) value representing the number
+                of 125uS microframes between service intervals. See the USB 2.0 and the USB 3.0 specifications for more info. The lower layers may 
+                schedule the endpoint for service at an interval value equal to or less than the value specified. A value of 0 is illegal.
     @result     Returns kIOReturnSuccess if successful, kIOReturnNoDevice if there is no connection to an IOService, or
                 kIOReturnNotOpen if the interface is not open for exclusive access.  May also return kIOReturnNoBandwidth 
                 if there is not enough bandwidth available on the bus, or kIOReturnBadArgument if the desired 
