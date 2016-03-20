@@ -1,8 +1,11 @@
-/*
- *	CoreBluetooth.h
- *	CoreBluetooth
+/*!
+ *  @header
+ *	@file CoreBluetooth.h
+ *	@framework CoreBluetooth
  *
- *	Copyright 2011 Apple, Inc. All rights reserved.
+ *  @discussion Bluetooth Low Energy framework
+ *
+ *	@copyright 2011 Apple, Inc. All rights reserved.
  */
 
 #import <CoreBluetooth/CBCentralManager.h>

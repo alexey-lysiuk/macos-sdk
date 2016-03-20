@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1998-2012 Apple Computer, Inc. All rights reserved.
+ * Copyright (c) 1998-2013 Apple Computer, Inc. All rights reserved.
  *
  * @APPLE_LICENSE_HEADER_START@
  *
@@ -461,29 +461,7 @@
 #define kIOAudioSelectorControlSelectionDescriptionKey	"IOAudioSelectorControlSelectionDescriptionKey"
 #define kIOAudioSelectorControlTransportValueKey		"IOAudioSelectorControlTransportValue"					// <rdar://8202424>
 
-#define kIOAudioSelectorControlClockSourceKey				"IOAudioSelectorControlClockSourceKey"
+#define kIOAudioSelectorControlClockSourceKey			"IOAudioSelectorControlClockSourceKey"
 
-#ifndef __OPEN_SOURCE__
-
-// <rdar://problem/8642774>
-
-// Device description
-#define kIOAudioEngineDeviceDescription								"IOAudioEngineDeviceDescription"
-#define kIOAudioEngineDeviceDescriptionKey_InputDigitalBoostGain	"driver digital input gain"
-#define kIOAudioEngineDeviceDescriptionKey_PostprocessingInputGain	"post-processing input gain"
-
-// Client descriptions
-#define kIOAudioEngineClientDescription						"IOAudioEngineClientDescription"
-
-#define kIOAudioEngineClientDescriptionKey					"kind"
-
-enum
-{
-	kIOAudioEngineGeneralClient		= 0,
-	kIOAudioEngineVoiceClient		= 1,
-	kIOAudioEngineIronWoodClient	= 2					// <rdar://10855829>
-};
-
-#endif
 
 #endif /* _IOAUDIODEFINES_H */

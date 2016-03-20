@@ -109,11 +109,20 @@ The value is a UInt32 corresponding to the number of retries.
  @constant kIOPropertyAutonomousSpinDownKey
  @discussion
  This key is used to indicate that the device is known to have its own internal logic
- for idle disk spin down. This key is used to mark device which respon poorly to our
+ for idle disk spin down. This key is used to mark device which respond poorly to our
  efforts to manually spin down or spin up the device when it is already in the desired 
  state. 
  */
 #define kIOPropertyAutonomousSpinDownKey			"Autonomous Spin Down"
+
+/*!
+ @constant kIOPropertyDoNotPreventMediumRemovalKey
+ @discussion
+ This key is used to indicate that the device either does not require or respond
+ well to PREVENT_ALLOW_MEDIUM_REMOVAL. This property indicates that the 
+ PREVENT_ALLOW_MEDIUM_REMOVAL should not be used with the specified device.
+ */
+#define kIOPropertyDoNotPreventMediumRemovalKey     "Do Not Prevent Medium Removal"
 
 /*!
  @constant kIOPropertyEjectRequireStartStopUnitKey
@@ -122,6 +131,14 @@ The value is a UInt32 corresponding to the number of retries.
  REMOVAL it still requires a START_STOP_UNIT to eject/unload media. 
  */
 #define kIOPropertyEjectRequireStartStopUnitKey		"Eject Requires START_STOP_UNIT"
+
+/*!
+ @constant kIOPropertyRequiresQuiescingKey
+ @discussion
+ This key is used to indicate that the device requires a few seconds of inactivity before 
+ a system restart. 
+ */
+#define kIOPropertyRequiresQuiescingKey             "Requires Quiescing"
 
 #if defined(KERNEL) && defined(__cplusplus)
 

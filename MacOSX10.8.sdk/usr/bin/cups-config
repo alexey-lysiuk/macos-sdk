@@ -16,7 +16,7 @@
 
 VERSION="1.6.2"
 APIVERSION="1.6"
-BUILD="cups-327.3"
+BUILD="cups-327.7"
 
 prefix=/
 exec_prefix=/usr

@@ -94,10 +94,11 @@ typedef NSInteger CWErr;
 /*!
  * @enum CWPHYMode
  * @const kCWPHYModeNone No PHY mode.
- * @const kCWPHYMode11a IEEE 802.11a PHY.
- * @const kCWPHYMode11b IEEE 802.11b PHY.
- * @const kCWPHYMode11g IEEE 802.11g PHY.
- * @const kCWPHYMode11n IEEE 802.11n PHY.
+ * @const kCWPHYMode11a  IEEE 802.11a PHY.
+ * @const kCWPHYMode11b  IEEE 802.11b PHY.
+ * @const kCWPHYMode11g  IEEE 802.11g PHY.
+ * @const kCWPHYMode11n  IEEE 802.11n PHY.
+ * @const kCWPHYMode11ac IEEE 802.11n PHY.
  * @discussion CoreWLAN physical layer modes.
  */
 enum {
@@ -106,6 +107,7 @@ enum {
 	kCWPHYMode11b		= 2,
 	kCWPHYMode11g		= 3,
 	kCWPHYMode11n		= 4,
+	kCWPHYMode11ac		= 5,
 };
 typedef NSInteger CWPHYMode;
 
@@ -174,12 +176,16 @@ typedef NSInteger CWIBSSModeSecurity;
  * @const kCWChannelWidthUnknown Unknown channel width.
  * @const kCWChannelWidth20MHz 20MHz channel width.
  * @const kCWChannelWidth40MHz 40MHz channel width.
+ * @const kCWChannelWidth80MHz 80MHz channel width.
+ * @const kCWChannelWidth160MHz 160MHz channel width.
  * @discussion CoreWLAN channel widths used for CWChannel.
  */
 enum {
 	kCWChannelWidthUnknown	= 0,
 	kCWChannelWidth20MHz	= 1,
-	kCWChannelWidth40MHz	= 2,	
+	kCWChannelWidth40MHz	= 2,
+	kCWChannelWidth80MHz	= 3,
+	kCWChannelWidth160MHz	= 4,
 };
 typedef NSInteger CWChannelWidth;
 

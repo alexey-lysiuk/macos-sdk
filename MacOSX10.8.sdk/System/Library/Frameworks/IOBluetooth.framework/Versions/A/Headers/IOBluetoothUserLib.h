@@ -220,8 +220,9 @@ extern	void	IOBluetoothRemoveIgnoredHIDDevice( IOBluetoothDeviceRef	device );
 	@param		outServiceRecord A pointer to the newly created IOBluetoothSDPServiceRecordRef.  The assigned RFCOMM
 				channel ID can be retrieved from the service record (as can other assigned parameters.)  This value 
 				only gets set if kIOReturnSuccess is returned.  The caller is responsible for releasing the 
-				IOBluetoothSDPServiceRecordRef by calling IOBluetoothObjectRelease() when done.
+				IOBluetoothSDPServiceRecordRef when done.
 	@result		Returns kIOReturnSuccess if successful.
+
 */
 
 extern IOReturn IOBluetoothAddServiceDict(CFDictionaryRef serviceDict, IOBluetoothSDPServiceRecordRef *outServiceRecord);
@@ -233,6 +234,7 @@ extern IOReturn IOBluetoothAddServiceDict(CFDictionaryRef serviceDict, IOBluetoo
                 IOBluetoothAddServiceDict.
 	@param		serviceRecordHandle The handle of the service to be removed.
 	@result		Returns kIOReturnSuccess if successful.
+
 */
 
 extern IOReturn IOBluetoothRemoveServiceWithRecordHandle( BluetoothSDPServiceRecordHandle serviceRecordHandle );

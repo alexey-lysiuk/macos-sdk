@@ -2,7 +2,7 @@
 //  MessageExport.h
 //  Message
 //  
-//  Copyright © 1999–2012 Apple Inc. All rights reserved.
+//  Copyright © 1999–2013 Apple Inc. All rights reserved.
 //
 
 #include <TargetConditionals.h>

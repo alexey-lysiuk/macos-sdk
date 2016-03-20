@@ -340,6 +340,9 @@
 /* Define to 1 if `long long int' works and is 64 bits. */
 /* #undef HAVE_LONG_LONG_INT_64 */
 
+/* Define to 1 if you have the `mbstowcs_l' function. */
+#define HAVE_MBSTOWCS_L 1
+
 /* Define to 1 if you have the `memmove' function. */
 #define HAVE_MEMMOVE 1
 
@@ -682,13 +685,13 @@
 #define PACKAGE_NAME "PostgreSQL"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "PostgreSQL 9.1.5"
+#define PACKAGE_STRING "PostgreSQL 9.1.9"
 
 /* Define to the one symbol short name of this package. */
 #define PACKAGE_TARNAME "postgresql"
 
 /* Define to the version of this package. */
-#define PACKAGE_VERSION "9.1.5"
+#define PACKAGE_VERSION "9.1.9"
 
 /* Define to the name of the default PostgreSQL service principal in Kerberos.
    (--with-krb-srvnam=NAME) */
@@ -698,13 +701,13 @@
 #define PG_MAJORVERSION "9.1"
 
 /* PostgreSQL version as a string */
-#define PG_VERSION "9.1.5"
+#define PG_VERSION "9.1.9"
 
 /* PostgreSQL version as a number */
-#define PG_VERSION_NUM 90105
+#define PG_VERSION_NUM 90109
 
 /* A string containing the version number, platform, and C compiler */
-#define PG_VERSION_STR "PostgreSQL 9.1.5 on x86_64-apple-darwin12.0, compiled by Apple clang version 4.0 (tags/Apple/clang-418.0.60) (based on LLVM 3.1svn), 64-bit"
+#define PG_VERSION_STR "PostgreSQL 9.1.9 on x86_64-apple-darwin12.0, compiled by Apple clang version 4.0 (tags/Apple/clang-418.0.60) (based on LLVM 3.1svn), 64-bit"
 
 /* Define to 1 to allow profiling output to be saved separately for each
    process. */

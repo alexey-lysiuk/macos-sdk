@@ -146,6 +146,7 @@ __BEGIN_DECLS
 #define	MACH_REMOTE_AST		0x17	/* AST signal issued to remote processor */
 
 #define	MACH_SCHED_LPA_BROKEN	0x18	/* last_processor affinity broken in choose_processor */
+#define MACH_DEEP_IDLE          0x19	/* deep idle on master processor */
 
 /* Codes for pmap (DBG_MACH_PMAP) */     
 #define PMAP__CREATE		0x0
@@ -246,6 +247,7 @@ __BEGIN_DECLS
 #define DBG_DRVSD		19 	/* Secure Digital */
 #define DBG_DRVNAND		20	/* NAND drivers and layers */
 #define DBG_SSD			21	/* SSD */
+#define DBG_DRVSPI		22	/* SPI */
 
 /* Backwards compatibility */
 #define	DBG_DRVPOINTING		DBG_DRVHID		/* OBSOLETE: Use DBG_DRVHID instead */

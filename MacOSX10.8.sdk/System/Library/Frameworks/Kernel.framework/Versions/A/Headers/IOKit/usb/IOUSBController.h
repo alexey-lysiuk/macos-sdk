@@ -1,5 +1,5 @@
 /*
- * Copyright © 1998-2012 Apple Inc. All rights reserved.
+ * Copyright © 1998-2013 Apple Inc. All rights reserved.
  *
  * @APPLE_LICENSE_HEADER_START@
  * 
@@ -57,38 +57,50 @@
 //
 enum
 {
-    kErrataCMDDisableTestMode					= (1 << 0),		// turn off UHCI test mode
-    kErrataOnlySinglePageTransfers				= (1 << 1),		// Don't cross page boundaries in a single transfer
-    kErrataRetryBufferUnderruns					= (1 << 2),		// Don't cross page boundaries in a single transfer
-    kErrataLSHSOpti								= (1 << 3),		// Don't cross page boundaries in a single transfer
-    kErrataDisableOvercurrent					= (1 << 4),		// Always set the NOCP bit in rhDescriptorA register
-    kErrataLucentSuspendResume					= (1 << 5),		// Don't allow port suspend at the root hub
-    kErrataNeedsWatchdogTimer					= (1 << 6),		// Use Watchdog timer to reset confused controllers
-    kErrataNeedsPortPowerOff					= (1 << 7),		// Power off the ports and back on again to clear weird status.
-    kErrataAgereEHCIAsyncSched					= (1 << 8),		// needs workaround for Async Sched bug
-    kErrataNECOHCIIsochWraparound				= (1 << 9),		// needs workaround for NEC isoch buffer wraparound problem
-	kErrataNECIncompleteWrite					= (1 << 10),	// needs workaround for NEC bits not sticking (errata IBB-2UE-00030 Jun 23 2005)
-	kErrataICH6PowerSequencing					= (1 << 11),	// needs special power sequencing for early Transition machines
-	kErrataICH7ISTBuffer						= (1 << 12),	// buffer for Isochronous Scheduling Threshold
-	kErrataUHCISupportsOvercurrent				= (1 << 13),	// UHCI controller supports overcurrent detection
-	kErrataNeedsOvercurrentDebounce				= (1 << 14),	// The overcurrent indicator should be debounced by 10ms
-	kErrataSupportsPortResumeEnable				= (1 << 15),	// UHCI has resume enable bits at config address 0xC4
-	kErrataNoCSonSplitIsoch						= (1 << 16),	// MCP79 - split iscoh is a little different
-	kErrataOHCINoGlobalSuspendOnSleep			= (1 << 17),	// when sleeping, do not put the OHCI controller in SUSPEND state. just leave it Operational with suspended downstream ports
-	kErrataMissingPortChangeInt					= (1 << 18),	// sometimes the port change interrupt may be missing
-	kErrataMCP79IgnoreDisconnect				= (1 << 19),	// MCP79 - need to ignore a connect/disconnect on wake
-	kErrataUse32bitEHCI							= (1 << 20),	// MCP79 - EHCI should only run with 32 bit DMA addresses
-	kErrataUHCISupportsResumeDetectOnConnect	= (1 << 21),	// UHCI controller will generate a ResumeDetect interrupt while in Global Suspend if a device is plugged in
-	kErrataDontUseCompanionController			= (1 << 22),	// For systems which will end up being EHCI only
-	kErrataIgnoreRootHubPowerClearFeature		= (1 << 23),	// MCP89 - don't power off the root hub ports
-	kErrataDisablePCIeLinkOnSleep				= (1 << 24),	// some controllers require us to do some extra work in the PCIe bridge on sleep.. we just set a property
-                                                                // bit 25 is available again
-    kErrataEHCIUseRLvalue                       = (1 << 26)     // we want to program Control and Bulk QHs with the RL on some controllers
+    kErrataCMDDisableTestMode					= (1ULL << 0),		// turn off UHCI test mode
+    kErrataOnlySinglePageTransfers				= (1ULL << 1),		// Don't cross page boundaries in a single transfer
+    kErrataRetryBufferUnderruns					= (1ULL << 2),		// Don't cross page boundaries in a single transfer
+    kErrataLSHSOpti								= (1ULL << 3),		// Don't cross page boundaries in a single transfer
+    kErrataDisableOvercurrent					= (1ULL << 4),		// Always set the NOCP bit in rhDescriptorA register
+    kErrataLucentSuspendResume					= (1ULL << 5),		// Don't allow port suspend at the root hub
+    kErrataNeedsWatchdogTimer					= (1ULL << 6),		// Use Watchdog timer to reset confused controllers
+    kErrataNeedsPortPowerOff                    = (1ULL << 7),		// Power off the ports and back on again to clear weird status.
+    kErrataAgereEHCIAsyncSched					= (1ULL << 8),		// needs workaround for Async Sched bug
+    kErrataNECOHCIIsochWraparound				= (1ULL << 9),		// needs workaround for NEC isoch buffer wraparound problem
+	kErrataNECIncompleteWrite					= (1ULL << 10),		// needs workaround for NEC bits not sticking (errata IBB-2UE-00030 Jun 23 2005)
+	kErrataICH6PowerSequencing					= (1ULL << 11),		// needs special power sequencing for early Transition machines
+	kErrataICH7ISTBuffer						= (1ULL << 12),		// buffer for Isochronous Scheduling Threshold
+	kErrataUHCISupportsOvercurrent				= (1ULL << 13),		// UHCI controller supports overcurrent detection
+	kErrataNeedsOvercurrentDebounce				= (1ULL << 14),		// The overcurrent indicator should be debounced by 10ms
+	kErrataSupportsPortResumeEnable				= (1ULL << 15),		// UHCI has resume enable bits at config address 0xC4
+	kErrataNoCSonSplitIsoch						= (1ULL << 16),		// MCP79 - split iscoh is a little different
+	kErrataOHCINoGlobalSuspendOnSleep			= (1ULL << 17),		// when sleeping, do not put the OHCI controller in SUSPEND state. just leave it Operational with suspended downstream ports
+	kErrataMissingPortChangeInt					= (1ULL << 18),		// sometimes the port change interrupt may be missing
+	kErrataMCP79IgnoreDisconnect				= (1ULL << 19),		// MCP79 - need to ignore a connect/disconnect on wake
+	kErrataUse32bitEHCI							= (1ULL << 20),		// MCP79 - EHCI should only run with 32 bit DMA addresses
+	kErrataUHCISupportsResumeDetectOnConnect    = (1ULL << 21),		// UHCI controller will generate a ResumeDetect interrupt while in Global Suspend if a device is plugged in
+	kErrataDontUseCompanionController			= (1ULL << 22),		// For systems which will end up being EHCI only
+	kErrataIgnoreRootHubPowerClearFeature		= (1ULL << 23),		// MCP89 - don't power off the root hub ports
+	kErrataDisablePCIeLinkOnSleep				= (1ULL << 24),		// some controllers require us to do some extra work in the PCIe bridge on sleep.. we just set a property
+    kErrataXHCISWAssistXHCIIdle                 = (1ULL << 25),		// XHCI requires software assist to go to Idle
+    kErrataEHCIUseRLvalue                       = (1ULL << 26),		// we want to program Control and Bulk QHs with the RL on some controllers
+    kErrataXHCINoMSI                            = (1ULL << 27),		// Don't use MSI Interrupts
+    kErrataXHCIEnableAutoCompliance             = (1ULL << 28),		// Enable auto compliance on this controller
+    kErrataXHCIPPTMuxing                        = (1ULL << 29),		// Has Panther Point muxing implementation
+    kErratakUHCIResetAfterBabble                = (1ULL << 30),		// Used by UHCI for a particular vendor
+    kErrataXHCIParkRing                         = (1ULL << 31),		// Enable Park/Ring
+    kErrataXHCIPantherPoint                     = (1ULL << 32),		// This is an Intel Panther Point controller
+	kErrataXHCISWBandwidthCheck					= (1ULL << 33)		// This XHCI requires software to check the periodic bandwidth before creating an endpoint
+
+#ifndef __OPEN_SOURCE__
+    // Other definitions in private header file
+#endif
 };
 
 enum
 {
-    kUSBWatchdogTimeoutMS = 1000
+    kUSBWatchdogTimeoutMS = 1000,
+    kUSBWatchdogTimeoutMSDuringRestartOff = 100
 };
 
 
@@ -128,6 +140,18 @@ struct ErrataListEntryStruct
 };
 
 typedef struct ErrataListEntryStruct  ErrataListEntry, *ErrataListEntryPtr;
+
+
+struct ErrataList64EntryStruct
+{
+    UInt16 				vendID;
+    UInt16 				deviceID;
+    UInt16 				revisionLo;
+    UInt16 				revisionHi;
+    UInt64 				errata;
+};
+
+typedef struct ErrataList64EntryStruct  ErrataList64Entry, *ErrataList64EntryPtr;
 
 
 struct SleepCurrentPerModelStruct
@@ -222,6 +246,9 @@ protected:
 		UInt32				_isochMaxBusStall;					// value (in ns) of the maximum PCI bus stall allowed for Isoch.
 		SInt32				_activeInterruptTransfers;			// interrupt transfers in the queue
 		IOUSBRootHubDevice	*_rootHubDeviceSS;
+        UInt32              _locationID;
+        UInt32              _ignoreDisconnectBitmap;            // Port bitmap (adjusted for HS/SS ranges for XHCI controllers)
+        UInt32              _watchdogTimerTimeout;
     };
     ExpansionData *_expansionData;
 	
@@ -1113,18 +1140,21 @@ protected:
 	IOACPIPlatformDevice *			CopyACPIDevice( IORegistryEntry * device );
 	bool							DumpUSBACPI( IORegistryEntry * acpiDevice );
 	bool							IsPortInternal( IORegistryEntry * provider, UInt32 portnum, UInt32 locationID );
-    bool                            GetInternalHubErrataBits(IORegistryEntry* provider, UInt32 portnum, UInt32 locationID, UInt32 *errataBits);
     bool                            IsControllerMuxed( IORegistryEntry * provider, UInt32 locationID );
 #ifndef __OPEN_SOURCE__
     bool                            IsPortMuxed(IORegistryEntry * provider, UInt32 portnum, UInt32 locationID, char *muxName);
+    bool                            IsPortMapped(IORegistryEntry * provider, UInt32 portNumber, UInt32 locationID, UInt32 *mappedPort);
 #endif
 	UInt8							GetControllerSpeed() { return (_expansionData ? _expansionData->_controllerSpeed : 255); }
 	
 private:
 	bool							HasExpressCard( IORegistryEntry * acpiDevice, UInt32 * portnum );
 	bool							CheckACPIUPCTable( IORegistryEntry * acpiDevice, UInt32 portnum, UInt32 locationID );
+    IOReturn                        CheckACPIUPCTable( IORegistryEntry * acpiDevice, UInt32 portNumber, UInt32 locationID, UInt8 *connectorType );
+
 #ifndef __OPEN_SOURCE__
     bool                            CheckACPIUPCTableForMuxedMethods( IORegistryEntry * acpiDevice, UInt32 portnum, UInt32 locationID, char* muxName );
+    bool                            CheckACPIForPortMapping( IORegistryEntry * acpiDevice, UInt32 portNumber, UInt32 locationID, UInt32 *mappedPort );
 #endif
     bool                            CheckACPIUPCTableForInternalHubErrataBits( IORegistryEntry* acpiDevice, UInt32 portnum, UInt32 locationID, UInt32* errataBits );
 	int 							calculateUSBDepth(UInt32 locationID);

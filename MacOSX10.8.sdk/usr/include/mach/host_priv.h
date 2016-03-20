@@ -833,7 +833,7 @@ union __RequestUnion__host_priv_subsystem {
 		NDR_record_t NDR;
 		kern_return_t RetCode;
 		mach_msg_type_number_t host_info_outCnt;
-		integer_t host_info_out[15];
+		integer_t host_info_out[18];
 	} __Reply__host_priv_statistics_t;
 #ifdef  __MigPackStructs
 #pragma pack()

@@ -71,7 +71,7 @@
 //	IOBluetoothDevice
 //====================================================================================================================
 
-@interface IOBluetoothDevice : IOBluetoothObject <NSCoding>
+@interface IOBluetoothDevice : IOBluetoothObject <NSCoding, NSSecureCoding>
 {
     id									mServerDevice;
     
@@ -631,11 +631,14 @@
 /*!
     @method		remoteNameRequest:
 	@abstract	Issues a remote name request to the target device.
-	@discussion	If a target is specified, the request is asynchronous and on completion of the REMOTE_NAME_REQUEST
-                command, the method -remoteNameRequestComplete:status:name: will be called on the specified target.
-                If no target is specified, the request is made synchronously and won't return until the request is 
-                complete.  This call with operate with the default page timeout value.  If a different page timeout
-				value is desired, the method -remoteNameRequest:withPageTimeout: should be used instead.
+	@discussion	If a target is specified, the request is asynchronous and on completion of the request, the method
+ 
+				- (void)remoteNameRequestComplete:(IOBluetoothDevice *)device status:(IOReturn)status;
+
+                will be called on the specified target. If no target is specified, the request is made synchronously
+ 				and won't return until the request is complete.  This call with operate with the default page
+ 				timeout value. If a different page timeout value is desired, the method -remoteNameRequest:withPageTimeout:
+ 				should be used instead.
 	@param		target The target to message when the remote name request is complete
     @result		Returns kIOReturnSuccess if the remote name request was successfully issued (and if synchronous, if
                 the request completed successfully).

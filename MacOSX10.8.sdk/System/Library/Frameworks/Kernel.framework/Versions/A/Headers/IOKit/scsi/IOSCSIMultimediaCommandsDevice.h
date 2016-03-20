@@ -235,6 +235,7 @@ protected:
 		bool				fDeviceSupportsAsyncNotification;
 		bool				fDeviceSupportsFastSpindown;
 		UInt8				fCDLoadingMechanism;
+        bool                fDoNotLockMedia;
 	};
     IOSCSIMultimediaCommandsDeviceExpansionData * fIOSCSIMultimediaCommandsDeviceReserved;
 	
@@ -244,6 +245,7 @@ protected:
 	#define fDeviceSupportsAsyncNotification	fIOSCSIMultimediaCommandsDeviceReserved->fDeviceSupportsAsyncNotification
 	#define fDeviceSupportsFastSpindown			fIOSCSIMultimediaCommandsDeviceReserved->fDeviceSupportsFastSpindown
 	#define fCDLoadingMechanism					fIOSCSIMultimediaCommandsDeviceReserved->fCDLoadingMechanism
+    #define fDoNotLockMedia                     fIOSCSIMultimediaCommandsDeviceReserved->fDoNotLockMedia
 	
 #if ( !defined ( __LP64__ ) && !TARGET_OS_EMBEDDED )
 	

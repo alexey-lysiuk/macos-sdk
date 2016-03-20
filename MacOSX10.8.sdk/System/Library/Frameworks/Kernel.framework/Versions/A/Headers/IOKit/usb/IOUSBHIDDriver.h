@@ -1,5 +1,5 @@
 /*
- * Copyright © 1998-2012 Apple Inc. All rights reserved.
+ * Copyright © 1998-2013 Apple Inc. All rights reserved.
  *
  * @APPLE_LICENSE_HEADER_START@
  * 
@@ -71,9 +71,14 @@
 // find that value in the USB HID 1.1 specs. Brent had previously changed it to 256 in the OS 9 HID Driver
 // to  allow for reports spanning multiple packets. 256 may be no more a hard and fast limit, but it's 
 // working for now in OS 9.
-#define kMaxHIDReportSize 256			// Max packet size = 8 for low speed & 64 for high speed.
-#define kHIDDriverRetryCount	3
-#define	kUSBHIDReportLoggingLevel	"USB HID Report Logging Level"
+#define kMaxHIDReportSize               256			// Max packet size = 8 for low speed & 64 for high speed.
+#define kHIDStandardDriverRetryCount    3           // Number of consecutive not responding errors before we issue a reset
+
+#ifndef __OPEN_SOURCE__
+    #define kHIDStandardRetryCountInMS  24          // The equivalent of the standard retry count, in ms, assuming a 8 ms polling rate
+#endif
+
+#define	kUSBHIDReportLoggingLevel       "USB HID Report Logging Level"
 
 
 // power states for the driver (awake or suspended)
@@ -103,7 +108,7 @@ class IOUSBHIDDriver : public IOHIDDevice
     UInt32						_maxReportSize;
     IOBufferMemoryDescriptor *	_buffer;
     IOUSBCompletion				_completion;
-    UInt32						_retryCount;
+    UInt32						_retryCount;                            // This is the "current" retry count
     thread_call_t				_deviceDeadCheckThread;
     thread_call_t				_clearFeatureEndpointHaltThread;
     bool						_deviceDeadThreadActive;
@@ -141,6 +146,8 @@ class IOUSBHIDDriver : public IOHIDDevice
 		bool							_pendingRead;
 		UInt32							_deviceDeadCheckLock;			// "Lock" to prevent us from executing the device dead check while in progress
 		uint64_t						_handleReportTimeStamp;
+        UInt32                          _defaultControlNoDataTimeoutMS;
+        uint32_t                        _defaultRetryCount;
     };
     IOUSBHIDDriverExpansionData *_usbHIDExpansionData;
     

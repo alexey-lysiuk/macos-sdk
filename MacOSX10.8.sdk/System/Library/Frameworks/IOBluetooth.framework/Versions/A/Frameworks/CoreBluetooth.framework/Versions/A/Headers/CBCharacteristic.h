@@ -1,8 +1,8 @@
 /*
- *	CBCharacteristic.h
- *	CoreBluetooth
+ *	@file CBCharacteristic.h
+ *	@framework CoreBluetooth
  *
- *	Copyright 2011 Apple, Inc. All rights reserved.
+ *	@copyright 2011 Apple, Inc. All rights reserved.
  */
 
 #import <CoreBluetooth/CBDefines.h>
@@ -11,6 +11,9 @@
 
 
 
+/*!
+ *  @enum CBCharacteristicProperties
+ */
 enum {
 	CBCharacteristicPropertyBroadcast					= 0x01,
 	CBCharacteristicPropertyRead						= 0x02,
@@ -27,10 +30,10 @@ typedef NSUInteger CBCharacteristicProperties;
 
 @class CBService, CBUUID;
 
-/*
- *  CBCharacteristic
+/*!
+ *  @class CBCharacteristic
  *
- *  Discussion:
+ *  @discussion
  *      Represents a service's characteristic.
  *
  */
@@ -48,64 +51,64 @@ CB_EXTERN_CLASS @interface CBCharacteristic : NSObject
 	BOOL						 _isNotifying;
 }
 
-/*
- *  service
+/*!
+ * @property service
  *
- *  Discussion:
+ *  @discussion
  *      A back-pointer to the service this characteristic belongs to.
  *
  */
 @property(readonly, nonatomic) CBService *service;
 
-/*
- *  UUID
+/*!
+ * @property UUID
  *
- *  Discussion:
+ *  @discussion
  *      The Bluetooth UUID of the characteristic.
  *
  */
 @property(readonly, nonatomic) CBUUID *UUID;
 
-/*
- *  properties
+/*!
+ * @property properties
  *
- *  Discussion:
+ *  @discussion
  *      The properties of the characteristic.
  *
  */
 @property(readonly, nonatomic) CBCharacteristicProperties properties;
 
-/*
- *  value
+/*!
+ * @property value
  *
- *  Discussion:
+ *  @discussion
  *      The value of the characteristic.
  *
  */
 @property(retain, readonly) NSData *value;
 
-/*
- *  descriptors
+/*!
+ * @property descriptors
  *
- *  Discussion:
+ *  @discussion
  *      A list of the CBDescriptors that have so far been discovered in this characteristic.
  *
  */
 @property(retain, readonly) NSArray *descriptors;
 
-/*
- *  isBroadcasted
+/*!
+ * @property isBroadcasted
  *
- *  Discussion:
+ *  @discussion
  *      Whether the characteristic is currently broadcasted or not.
  *
  */
 @property(readonly) BOOL isBroadcasted;
 
-/*
- *  isNotifying
+/*!
+ * @property isNotifying
  *
- *  Discussion:
+ *  @discussion
  *      Whether the characteristic is currently notifying or not.
  *
  */

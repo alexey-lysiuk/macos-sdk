@@ -1,8 +1,8 @@
 /*
- *	CBDescriptor.h
- *	CoreBluetooth
+ *	@file CBDescriptor.h
+ *	@framework CoreBluetooth
  *
- *	Copyright 2011 Apple, Inc. All rights reserved.
+ *	@copyright 2011 Apple, Inc. All rights reserved.
  */
 
 #import <CoreBluetooth/CBDefines.h>
@@ -13,10 +13,10 @@
 
 @class CBCharacteristic, CBUUID;
 
-/*
- *  CBDescriptor
+/*!
+ * @class CBDescriptor
  *
- *  Discussion:
+ *  @discussion
  *      Represents a characteristic's descriptor.
  *
  */
@@ -30,28 +30,28 @@ CB_EXTERN_CLASS @interface CBDescriptor : NSObject
 	id					 _value;
 }
 
-/*
- *  service
+/*!
+ *  @property characteristic
  *
- *  Discussion:
+ *  @discussion
  *      A back-pointer to the characteristic this descriptor belongs to.
  *
  */
 @property(readonly, nonatomic) CBCharacteristic *characteristic;
 
-/*
- *  UUID
+/*!
+ *  @property UUID
  *
- *  Discussion:
+ *  @discussion
  *      The Bluetooth UUID of the descriptor.
  *
  */
 @property(readonly, nonatomic) CBUUID *UUID;
 
-/*
- *  value
+/*!
+ *  @property value
  *
- *  Discussion:
+ *  @discussion
  *      The value of the descriptor.
  *
  */

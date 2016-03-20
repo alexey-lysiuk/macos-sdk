@@ -65,6 +65,7 @@
 }
 
 @property(assign) id delegate;
+
 //---------------------------------------------------------------------------------------------------------------------------
 /*!	@method		inquiryWithDelegate
 	@abstract	Class method to create an inquiry object.
@@ -116,15 +117,7 @@
 				portion of the whole inquiry process.
 */
 
-- (uint8_t)setInquiryLength:(uint8_t)seconds;
-
-//---------------------------------------------------------------------------------------------------------------------------
-/*!	@method		inquiryLength
-	@abstract   Returns the number of seconds the search will be performed.
-	@result		Number of seconds the search will be performed.
-*/
-
-- (uint8_t)inquiryLength;
+@property(assign) uint8_t inquiryLength;
 
 //---------------------------------------------------------------------------------------------------------------------------
 /*!	@method		setSearchType
@@ -133,15 +126,7 @@
 	@discussion A default of kIOBluetoothDeviceSearchClassic is used, unless a different value is specified using this method.
 */
 
-- (void)setSearchType:(IOBluetoothDeviceSearchTypes)searchType;
-
-//---------------------------------------------------------------------------------------------------------------------------
-/*!	@method		searchType
-	@abstract   Returns the search type that will be performed.
-	@result		The search type that will be performed.
-*/
-
-- (IOBluetoothDeviceSearchTypes)searchType;
+@property(assign) IOBluetoothDeviceSearchTypes searchType;
 
 //---------------------------------------------------------------------------------------------------------------------------
 /*!	@method		setUpdateNewDeviceNames
@@ -150,15 +135,7 @@
 	@discussion The default value for the inquiry object is TRUE, unless this method is used to change it.
 */
 
-- (void)setUpdateNewDeviceNames:(BOOL)inValue;
-
-//---------------------------------------------------------------------------------------------------------------------------
-/*!	@method		updateNewDeviceNames
-	@abstract	Returns whether or the inquiry object will perform remote name requests on found devices. 
-	@result		TRUE if the inquiry will get device name for found objects, FALSE if not.
-*/
-
-- (BOOL)updateNewDeviceNames;
+@property(assign) BOOL updateNewDeviceNames;
 
 //---------------------------------------------------------------------------------------------------------------------------
 /*!	@method		foundDevices

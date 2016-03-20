@@ -1,8 +1,11 @@
 /*
- *	CBService.h
- *	CoreBluetooth
+ *	@file CBService.h
+ *	@framework CoreBluetooth
  *
- *	Copyright 2011 Apple, Inc. All rights reserved.
+ *  @discussion A Bluetooth LE service representation. A LE Service provides a number of
+ *		characteristics and may also reference other services.
+ *
+ *	@copyright 2011 Apple, Inc. All rights reserved.
  */
 
 #import <CoreBluetooth/CBDefines.h>
@@ -13,10 +16,10 @@
 
 @class CBPeripheral, CBUUID;
 
-/*
- *  CBService
+/*!
+ * @class CBService
  *
- *  Discussion:
+ * @discussion
  *      Represents a peripheral's service or a service's included service.
  *
  */
@@ -31,37 +34,37 @@ CB_EXTERN_CLASS @interface CBService : NSObject
 	NSArray			*_characteristics;
 }
 
-/*
- *  peripheral
+/*!
+ * @property peripheral
  *
- *  Discussion:
+ * @discussion
  *      A back-pointer to the peripheral this service belongs to.
  *
  */
 @property(readonly, nonatomic) CBPeripheral *peripheral;
 
-/*
- *  UUID
+/*!
+ * @property UUID
  *
- *  Discussion:
+ * @discussion
  *      The Bluetooth UUID of the service.
  *
  */
 @property(readonly, nonatomic) CBUUID *UUID;
 
-/*
- *  includedServices
+/*!
+ * @property includedServices
  *
- *  Discussion:
+ * @discussion
  *      A list of included CBServices that have so far been discovered in this service.
  *
  */
 @property(retain, readonly) NSArray *includedServices;
 
-/*
- *  characteristics
+/*!
+ * @property characteristics
  *
- *  Discussion:
+ * @discussion
  *      A list of CBCharacteristics that have so far been discovered in this service.
  *
  */

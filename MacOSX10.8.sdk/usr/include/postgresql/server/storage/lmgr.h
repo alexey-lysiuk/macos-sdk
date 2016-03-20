@@ -31,6 +31,7 @@ extern void UnlockRelationOid(Oid relid, LOCKMODE lockmode);
 extern void LockRelation(Relation relation, LOCKMODE lockmode);
 extern bool ConditionalLockRelation(Relation relation, LOCKMODE lockmode);
 extern void UnlockRelation(Relation relation, LOCKMODE lockmode);
+extern bool LockHasWaitersRelation(Relation relation, LOCKMODE lockmode);
 
 extern void LockRelationIdForSession(LockRelId *relid, LOCKMODE lockmode);
 extern void UnlockRelationIdForSession(LockRelId *relid, LOCKMODE lockmode);
@@ -58,6 +59,7 @@ extern bool ConditionalXactLockTableWait(TransactionId xid);
 
 /* Lock a VXID (used to wait for a transaction to finish) */
 extern void VirtualXactLockTableInsert(VirtualTransactionId vxid);
+extern void VirtualXactLockTableDelete(VirtualTransactionId vxid);
 extern void VirtualXactLockTableWait(VirtualTransactionId vxid);
 extern bool ConditionalVirtualXactLockTableWait(VirtualTransactionId vxid);
 

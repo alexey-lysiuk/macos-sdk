@@ -55,10 +55,7 @@
 
 		// Profiles - Audio, etc.
 
-		#import <IOBluetooth/objc/IOBluetoothRFCOMMAudioController.h>
-		#import <IOBluetooth/objc/IOBluetoothHandsFreeGateway.h>
 		#import <IOBluetooth/objc/IOBluetoothHandsFreeAudioGateway.h>
-		#import <IOBluetooth/objc/IOBluetoothHeadsetDevice.h>
 		#import <IOBluetooth/objc/IOBluetoothHandsFree.h>
 		#import <IOBluetooth/objc/IOBluetoothHandsFreeDevice.h>
 

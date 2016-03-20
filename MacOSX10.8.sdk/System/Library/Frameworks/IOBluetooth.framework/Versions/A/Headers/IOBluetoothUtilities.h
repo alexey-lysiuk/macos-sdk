@@ -89,7 +89,6 @@ extern	IOReturn	IOBluetoothCFStringToDeviceAddress( CFStringRef inNameString, Bl
 extern	CFStringRef	IOBluetoothCFStringFromDeviceAddress( const BluetoothDeviceAddress *deviceAddress );
 extern	Boolean		IOBluetoothIsFileAppleDesignatedPIMDataAtCFStringPath( CFStringRef inFileName );
 extern	CFStringRef	IOBluetoothGetUniqueFileNameAndWithCFStringPath( CFStringRef inName, CFStringRef inPath );
-extern	Boolean		IOBluetoothLaunchAudioAgent( CFStringRef deviceAddressString, Boolean useA2DP );
 extern	Boolean		IOBluetoothLaunchHandsFreeAgent( CFStringRef deviceAddressString );
 		
 

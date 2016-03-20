@@ -1,21 +1,30 @@
 /*
- *	CBError.h
- *	CoreBluetooth
+ *	@file CBError.h
+ *	@framework CoreBluetooth
  *
- *	Copyright 2011 Apple, Inc. All rights reserved.
+ *  @discussion The possible errors returned during LE transactions.
+ *
+ *	@copyright 2011 Apple, Inc. All rights reserved.
  */
+
+#import <CoreBluetooth/CBDefines.h>
 
 #import <Foundation/Foundation.h>
 
 
 
-extern NSString * const CBErrorDomain;
+/*!
+ * @enum CBError
+ *
+ * @discussion The possible errors returned during LE transactions.
+ */
+CB_EXTERN NSString * const CBErrorDomain;
 enum {
 	CBErrorUnknown,
 };
 typedef NSInteger CBError;
 
-extern NSString * const CBATTErrorDomain;
+CB_EXTERN NSString * const CBATTErrorDomain;
 enum {
 	CBATTErrorInvalidHandle					= 0x01,
 	CBATTErrorReadNotPermitted				= 0x02,
