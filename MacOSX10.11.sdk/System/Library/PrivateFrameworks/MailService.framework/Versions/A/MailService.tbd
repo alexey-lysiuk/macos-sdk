@@ -1,0 +1,13 @@
+---
+archs:           [ x86_64 ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/MailService.framework/Versions/A/MailService
+current-version: 3092.0
+exports:         
+  - archs:           [ x86_64 ]
+    allowed-clients: [ CalendarAgent, Mail, com.apple.MailServiceAgent ]
+    symbols:         [ _MSKVCKeyAccountID, _MSSequenceNumberKey, _MailServiceVersionNumber, 
+                       _MailServiceVersionString ]
+    objc-classes:    [ _MSAttachment, _MSClient, _MSEmailModel, _MSExternalAction, 
+                       _MSExternalAppendAction, _MSExternalUpdatesManager ]
+...

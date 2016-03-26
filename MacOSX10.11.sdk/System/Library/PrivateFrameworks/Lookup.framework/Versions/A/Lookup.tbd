@@ -1,0 +1,17 @@
+---
+archs:           [ i386, x86_64 ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/Lookup.framework/Versions/A/Lookup
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _LUNotificationPopoverWillClose, _LUPartOfSpeechDataDetectedAddress, 
+                       _LUTermOptionDisableSearchTermIndicator, _LUTermOptionKeyClippingRect, 
+                       _LUTermOptionKeyLanguage, _LUTermOptionKeyPartOfSpeech, 
+                       _LUTermOptionKeyScaleFactor, _LookupVersionNumber, 
+                       _LookupVersionString ]
+    objc-classes:    [ _LUAccessibilityTextAccessor, _LUExtractor, _LULogging, 
+                       _LULookupDefinitionModule, _LULookupRemoteViewController, 
+                       _LUPresenter, _LUPresenterAnimationController, _LUSearchTermIndicator, 
+                       _LUTSMDocumentTextAccessor, _LUTextAccessor, _LUTextInputClientTextAccessor, 
+                       _LUTextInputTextAccessor, _LUWebFrameViewTextAccessor ]
+...

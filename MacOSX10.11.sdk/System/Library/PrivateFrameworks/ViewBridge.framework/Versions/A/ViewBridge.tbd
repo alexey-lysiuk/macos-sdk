@@ -1,0 +1,45 @@
+---
+archs:           [ i386, x86_64 ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/ViewBridge.framework/Versions/A/ViewBridge
+exports:         
+  - archs:           [ i386 ]
+    objc-classes:    [ _HostAndService, _HostListenerDelegate, _HostOrService, 
+                       _ListenerDelegate, _NSCFRunLoopObserver, _NSDeferredSheet, 
+                       _NSEventQueue, _NSFakeServiceResponder, _NSLayerCentricRemoteViewForChildWindow, 
+                       _NSRemoteViewControllerAuxiliary, _NSRemoteViewMarshal, 
+                       _NSRendezvousAppModalSessionController, _NSRendezvousChildPanelController, 
+                       _NSRendezvousChildWindowController, _NSRendezvousChildWindowDelegate, 
+                       _NSRendezvousPopoverController, _NSRendezvousPopoverDelegate, 
+                       _NSRendezvousSheetController, _NSRendezvousWindowController, 
+                       _NSSelfDestructingRemoteViewDelegate, _NSServiceViewControllerUnifyingProxy, 
+                       _NSVBAccessoryWindow, _NSVBAccessoryWindowBackstopResponder, 
+                       _NSVBNamedFault, _NSVB_ProxyObject, _NSVB_QueueingProxy, 
+                       _NSVB_TargetedProxy, _NSVB_View, _NSVB_ViewAnimationAttributes, 
+                       _NSVB_ViewServiceBehaviorProxy, _NSVB_ViewServiceFencingControlProxy, 
+                       _NSVB_ViewServiceFencingController, _NSVB_ViewServiceImplicitAnimationDecodingProxy, 
+                       _NSVB_ViewServiceImplicitAnimationEncodingProxy, 
+                       _NSVB_ViewServiceReplyAwaitingTrampoline, _NSVB_ViewServiceReplyControlProxy, 
+                       _NSVB_ViewServiceReplyControlTrampoline, _NSVB_ViewServiceXPCMachSendRight, 
+                       _NSVB_Window, _NSViewBridgeObject, _NSViewBridgeObjectBase, 
+                       _NSViewRemoteBridge, _NSViewServiceApplication, 
+                       _NSViewServiceListenerDelegate, _NSViewServiceMarshal, 
+                       _NSViewService_PKSubsystem, _NSXPCSharedListenerManager, 
+                       _NSXPCSharedListenerManagerDelegate, _ServiceListenerDelegate, 
+                       _ViewHost, _ViewService ]
+  - archs:           [ x86_64 ]
+    objc-ivars:      [ _NSRemoteViewBase._accessoryViewOrigin, _NSRemoteViewBase._accessoryViewVisible, 
+                       _NSRemoteViewBase._accessoryWindow, _NSRemoteViewBase._appNapState, 
+                       _NSRemoteViewBase._delegate, _NSRemoteViewBase._refuseResignFirstResponder, 
+                       _NSRemoteViewBase._resizeTransactionsInProgress, 
+                       _NSRemoteViewBase._serviceConnectionID, _NSRemoteViewBase._serviceListenerEndpoint, 
+                       _NSRemoteViewBase._serviceMarshalConnection ]
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _NSViewBridgeErrorDomain, _NSViewServiceApplicationMain, 
+                       _ViewBridgeAuxiliaryMain ]
+    objc-classes:    [ _NSCFRunLoopSemaphore, _NSLayerCentricRemoteView, 
+                       _NSRemoteView, _NSRemoteViewBase, _NSRemoteViewController, 
+                       _NSViewBridge, _NSViewService, _NSViewServiceAccessoryView, 
+                       _NSViewServiceBridge, _NSWindowCentricRemoteView, 
+                       _NSXPCSharedListener ]
+...

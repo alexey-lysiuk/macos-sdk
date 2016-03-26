@@ -1,0 +1,19 @@
+---
+archs:           [ x86_64 ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/CoreCDP.framework/Versions/A/CoreCDP
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _CDPBackupMetadataDeviceColorKey, _CDPBackupMetadataDeviceEnclosureColorKey, 
+                       _CDPBackupMetadataDeviceModelKey, _CDPBackupMetadataDeviceNameKey, 
+                       _CDPGetFileLoggingEnabled, _CDPSetFileLoggingEnabled, 
+                       _CDPStateErrorDomain, _CDPTelemetryDidChangeLocalSecretKey, 
+                       _CDPTelemetryDidRemoveLocalSecretKey, _CDPTelemetryPCSAlreadyMigrated, 
+                       _CDPTelemetryPCSMigrationFailed, _CDPTelemetryPCSMigrationSucceeded, 
+                       _CoreCDPVersionNumber, _CoreCDPVersionString, __CDPLogInternal, 
+                       __CDPLogInternalV, __CDPStateError, __IARGetModel ]
+    objc-classes:    [ _CDPAccount, _CDPContext, _CDPDevice, _CDPKeychainSync, 
+                       _CDPLocalDevice, _CDPLocalDeviceSecretHandler, _CDPRemoteDeviceSecretValidator, 
+                       _CDPSecureBackupController, _CDPStateController, 
+                       _CDPTelemetryController ]
+...

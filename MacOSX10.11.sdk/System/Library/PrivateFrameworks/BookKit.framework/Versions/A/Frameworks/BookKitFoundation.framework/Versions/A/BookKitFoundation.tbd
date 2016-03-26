@@ -1,0 +1,23 @@
+---
+archs:           [ x86_64 ]
+platform:        macosx
+install-name:    '@rpath/BookKitFoundation.framework/Versions/A/BookKitFoundation'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _BKAssetMetadataContainerXMLPath, _BKAssetMetadataFileManagerXAttrAssetID, 
+                       _BKAssetMetadataFileManagerXAttrAuthor, _BKAssetMetadataFileManagerXAttrExplicit, 
+                       _BKAssetMetadataFileManagerXAttrGenre, _BKAssetMetadataFileManagerXAttrTitle, 
+                       _BKAssetMetadataSinfXMLPath, _BKAssetMetadataiTunesArtworkBackupPath, 
+                       _BKAssetMetadataiTunesArtworkPath, _BKAssetMetadataiTunesMetadataPlistBackupPath, 
+                       _BKAssetMetadataiTunesMetadataPlistPath, _BKBookKitFoundationErrorDomain, 
+                       _BKBookKitFoundationUnderlyingErrorsKey, _BookKitFoundationVersionNumber, 
+                       _BookKitFoundationVersionString, __tr_payload, _copierCopyFileFinished, 
+                       _tr_array, _tr_asset, _tr_dictionary, _tr_error, 
+                       _tr_errorPtr, _tr_exception, _tr_move, _tr_path ]
+    objc-classes:    [ _BKAssetMetadata, _BKAssetMetadataFileManager, _BKAssetMetadataIOTask, 
+                       _BKAssetMetadataInspector, _BKBOMAssetMetadataIOTask, 
+                       _BKBookKitFoundationUtilities, _BKCopyAssetMetadataIOTask, 
+                       _BKInstallAssetMetadataIOTask, _BKMutableAssetMetadata, 
+                       _BKSinfRightsParser, __BKAggregatedAssetData, __BKAggregatedAssetMetadata, 
+                       __BKxPubMetadataInspector ]
+...
