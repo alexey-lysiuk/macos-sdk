@@ -14,6 +14,7 @@ exports:
                        _OS_tcp_connection_msg_out, _OS_tcp_connection_tls_session, 
                        _OS_tcp_connection_watcher, _OS_tcp_listener, _OS_tcp_waldo_tester ]
   - archs:           [ i386, x86_64 ]
+    allowed-clients: [ System ]
     symbols:         [ ___nw_create_backtrace_string, ___nwlog_debug_c, 
                        ___nwlog_debug_magic_c, ___nwlog_err_c, ___nwlog_err_magic_c, 
                        ___nwlog_info_c, ___nwlog_info_magic_c, ___system_networkVersionNumber, 

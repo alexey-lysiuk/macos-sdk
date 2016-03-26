@@ -785,7 +785,7 @@ exports:
                        DesktopServicesPriv, Dock, Finder, FinderKit, ImageKit, 
                        Ink, Printing_UI, QTKit, QTKitServer, QuickTime, 
                        RemoteViewServices, Shortcut, Suggestions, ViewBridge, 
-                       loginwindow ]
+                       loginwindow, Carbon ]
     symbols:         [ _AEGetInteractionAllowed, _AEGetTheCurrentEvent, 
                        _AEInteractWithUser, _AEProcessAppleEvent, _AEProcessEvent, 
                        _AEResetTimer, _AEResumeTheCurrentEvent, _AESend, 

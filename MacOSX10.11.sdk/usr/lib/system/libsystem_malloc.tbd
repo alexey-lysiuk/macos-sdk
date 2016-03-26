@@ -8,6 +8,7 @@ exports:
     symbols:         [ _nanozone_check_counter, _nanozone_check_modulo, 
                        _nanozone_check_start ]
   - archs:           [ i386, x86_64 ]
+    allowed-clients: [ System ]
     symbols:         [ ___disk_stack_logging_log_stack, ___libsystem_mallocVersionNumber, 
                        ___libsystem_mallocVersionString, ___mach_stack_logging_enumerate_records, 
                        ___mach_stack_logging_frames_for_uniqued_stack, 

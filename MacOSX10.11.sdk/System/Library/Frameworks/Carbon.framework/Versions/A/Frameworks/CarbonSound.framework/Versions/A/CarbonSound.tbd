@@ -4,7 +4,7 @@ platform:        macosx
 install-name:    /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CarbonSound.framework/Versions/A/CarbonSound
 exports:         
   - archs:           [ i386 ]
-    allowed-clients: [ QuickTime ]
+    allowed-clients: [ QuickTime, Carbon ]
     symbols:         [ _ClockRestartSound, _ClockUpdateSoundSamples, _CloseMixerSoundComponent, 
                        _CloseSoundOutputDevice, _DisposeSICompletionUPP, 
                        _DisposeSIInterruptUPP, _DisposeSndCallBackUPP, 

@@ -5,6 +5,7 @@ install-name:    /usr/lib/system/libcommonCrypto.dylib
 current-version: 60074.0
 exports:         
   - archs:           [ i386, x86_64 ]
+    allowed-clients: [ System ]
     symbols:         [ _CCAESCmac, _CCAESCmacCreate, _CCAESCmacDestroy, 
                        _CCAESCmacFinal, _CCAESCmacOutputSizeFromContext, 
                        _CCAESCmacUpdate, _CCBigNumAdd, _CCBigNumAddI, _CCBigNumBitCount, 

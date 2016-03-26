@@ -5,7 +5,7 @@ install-name:    /System/Library/Frameworks/Carbon.framework/Versions/A/Framewor
 current-version: 214.0
 exports:         
   - archs:           [ i386, x86_64 ]
-    allowed-clients: [ Ink ]
+    allowed-clients: [ Ink, Carbon ]
     symbols:         [ _ArProbDecodeLu, _AtEnd, _BPNetEvaluate, _BPNetLearnEnable, 
                        _BPNetLoad, _BiGFindBiGrammarIndexByName, _BiGHasWord, 
                        _BiGrammarsLoad, _BigDictAddWordsFrom, _BigDictBuildFromExpressions, 

@@ -64,5 +64,8 @@
 #define __WATCHOS_UNAVAILABLE
 #endif
 
+#ifndef __TVOS_UNAVAILABLE
+#define __TVOS_UNAVAILABLE
+#endif
 
 #endif // __XPC_AVAILABILITY_H__

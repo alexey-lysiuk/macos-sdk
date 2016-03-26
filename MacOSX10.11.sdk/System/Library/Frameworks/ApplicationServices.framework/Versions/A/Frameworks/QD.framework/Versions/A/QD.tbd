@@ -449,6 +449,7 @@ exports:
                        '$ld$hide$os10.9$_ShieldCursor', '$ld$hide$os10.9$_SlopeFromAngle', 
                        '$ld$hide$os10.9$_XorRgn' ]
   - archs:           [ i386, x86_64 ]
+    allowed-clients: [ ApplicationServices ]
     symbols:         [ _ATSApplyMorph, _ATSClearGlyphVector, _ATSGrowGlyphVector, 
                        _ATSInitializeGlyphVector, _ATSUBatchBreakLines, 
                        _ATSUBreakLine, _ATSUClearAttributes, _ATSUClearFontFeatures, 

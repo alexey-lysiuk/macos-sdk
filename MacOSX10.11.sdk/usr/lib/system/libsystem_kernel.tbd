@@ -53,6 +53,7 @@ exports:
                        _setregid, _setreuid, _shmctl, '_sigsuspend$NOCANCEL', 
                        '_waitid$NOCANCEL', '_write$NOCANCEL', '_writev$NOCANCEL' ]
   - archs:           [ i386, x86_64 ]
+    allowed-clients: [ System ]
     symbols:         [ _NDR_record, _____old_semwait_signal_nocancel, _____sigwait_nocancel, 
                        ____kernelVersionNumber, ____kernelVersionString, 
                        ___accept, ___accept_nocancel, ___access_extended, 

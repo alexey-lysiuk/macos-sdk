@@ -4,6 +4,7 @@ platform:        macosx
 install-name:    /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HTMLRendering.framework/Versions/A/HTMLRendering
 exports:         
   - archs:           [ i386 ]
+    allowed-clients: [ Carbon ]
     symbols:         [ '$ld$hide$os10.8$_HRActivate', '$ld$hide$os10.8$_HRDeactivate', 
                        '$ld$hide$os10.8$_HRDisposeReference', '$ld$hide$os10.8$_HRDraw', 
                        '$ld$hide$os10.8$_HRForceQuickdraw', '$ld$hide$os10.8$_HRFreeMemory', 

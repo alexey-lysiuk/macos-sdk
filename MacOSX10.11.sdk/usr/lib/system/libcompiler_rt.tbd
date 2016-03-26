@@ -15,6 +15,7 @@ exports:
                        ___subvti3, ___ucmpti2, ___udivmodti4, ___udivti3, 
                        ___umodti3 ]
   - archs:           [ i386, x86_64 ]
+    allowed-clients: [ System ]
     symbols:         [ '$ld$hide$os10.10$___extendhfsf2', '$ld$hide$os10.10$___truncdfhf2', 
                        '$ld$hide$os10.10$___truncsfhf2', '$ld$hide$os10.10$_atomic_flag_clear', 
                        '$ld$hide$os10.10$_atomic_flag_clear_explicit', 

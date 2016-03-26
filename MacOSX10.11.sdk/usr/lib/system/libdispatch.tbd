@@ -7,6 +7,7 @@ exports:
   - archs:           [ x86_64 ]
     objc-classes:    [ _OS_object ]
   - archs:           [ i386, x86_64 ]
+    allowed-clients: [ System ]
     symbols:         [ __dispatch_begin_NSAutoReleasePool, __dispatch_data_destructor_free, 
                        __dispatch_data_destructor_munmap, __dispatch_data_destructor_none, 
                        __dispatch_data_destructor_vm_deallocate, __dispatch_data_empty, 

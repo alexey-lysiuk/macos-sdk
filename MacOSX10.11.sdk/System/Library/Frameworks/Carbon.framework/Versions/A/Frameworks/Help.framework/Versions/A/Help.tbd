@@ -4,7 +4,7 @@ platform:        macosx
 install-name:    /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Help.framework/Versions/A/Help
 exports:         
   - archs:           [ i386, x86_64 ]
-    allowed-clients: [ PrintingUI ]
+    allowed-clients: [ PrintingUI, Carbon ]
     symbols:         [ _AHGotoApplicationHelp, _AHGotoMainTOC, _AHGotoPage, 
                        _AHLookupAnchor, _AHRegisterHelpBook, _AHRegisterHelpBookWithURL, 
                        _AHSearch, _AppendEncodingHint, _CFStringToCString, 

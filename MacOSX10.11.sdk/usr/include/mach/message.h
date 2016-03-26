@@ -818,7 +818,7 @@ __BEGIN_DECLS
  *		already contain scatter control information to direct the
  *		receiving of the message.
  */
-__WATCHOS_PROHIBITED
+__WATCHOS_PROHIBITED __TVOS_PROHIBITED
 extern mach_msg_return_t	mach_msg_overwrite(
 					mach_msg_header_t *msg,
 					mach_msg_option_t option,
@@ -839,7 +839,7 @@ extern mach_msg_return_t	mach_msg_overwrite(
  *		of that fact, then restart the appropriate parts of the
  *		operation silently (trap version does not restart).
  */
-__WATCHOS_PROHIBITED
+__WATCHOS_PROHIBITED __TVOS_PROHIBITED
 extern mach_msg_return_t	mach_msg(
 					mach_msg_header_t *msg,
 					mach_msg_option_t option,
@@ -855,7 +855,7 @@ extern mach_msg_return_t	mach_msg(
  *		Deallocate a mach voucher created or received in a message.  Drops
  *		one (send right) reference to the voucher.
  */
-__WATCHOS_PROHIBITED
+__WATCHOS_PROHIBITED __TVOS_PROHIBITED
 extern kern_return_t		mach_voucher_deallocate(
 					mach_port_name_t voucher);
 

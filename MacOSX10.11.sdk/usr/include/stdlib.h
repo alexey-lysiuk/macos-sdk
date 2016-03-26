@@ -174,7 +174,7 @@ unsigned long
 unsigned long long
 	 strtoull(const char *, char **, int);
 #endif /* !__DARWIN_NO_LONG_LONG */
-int	 system(const char *) __DARWIN_ALIAS_C(system) __OSX_AVAILABLE_BUT_DEPRECATED_MSG(__MAC_10_0,__MAC_NA,__IPHONE_2_0,__IPHONE_8_0, "Use posix_spawn APIs instead.") __WATCHOS_PROHIBITED;
+int	 system(const char *) __DARWIN_ALIAS_C(system) __OSX_AVAILABLE_BUT_DEPRECATED_MSG(__MAC_10_0,__MAC_NA,__IPHONE_2_0,__IPHONE_8_0, "Use posix_spawn APIs instead.") __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
 size_t	 wcstombs(char * __restrict, const wchar_t * __restrict, size_t);
 int	 wctomb(char *, wchar_t);
 
@@ -264,7 +264,7 @@ int	 cgetset(const char *);
 int	 cgetstr(char *, const char *, char **);
 int	 cgetustr(char *, const char *, char **);
 
-int	 daemon(int, int) __DARWIN_1050(daemon) __OSX_AVAILABLE_BUT_DEPRECATED_MSG(__MAC_10_0, __MAC_10_5, __IPHONE_2_0, __IPHONE_2_0, "Use posix_spawn APIs instead.") __WATCHOS_PROHIBITED;
+int	 daemon(int, int) __DARWIN_1050(daemon) __OSX_AVAILABLE_BUT_DEPRECATED_MSG(__MAC_10_0, __MAC_10_5, __IPHONE_2_0, __IPHONE_2_0, "Use posix_spawn APIs instead.") __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
 char	*devname(dev_t, mode_t);
 char	*devname_r(dev_t, mode_t, char *buf, int len);
 char	*getbsize(int *, long *);

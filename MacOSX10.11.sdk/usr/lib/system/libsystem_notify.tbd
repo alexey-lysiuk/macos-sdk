@@ -5,6 +5,7 @@ install-name:    /usr/lib/system/libsystem_notify.dylib
 current-version: 149.0
 exports:         
   - archs:           [ i386, x86_64 ]
+    allowed-clients: [ System ]
     symbols:         [ ___libsystem_notifyVersionNumber, ___libsystem_notifyVersionString, 
                        __nc_list_append, __nc_list_chop, __nc_list_concat, 
                        __nc_list_count, __nc_list_data, __nc_list_delete, 

@@ -51,7 +51,7 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED
+__WATCHOS_PROHIBITED __TVOS_PROHIBITED
 kern_return_t host_info
 (
 	host_t host,
@@ -242,7 +242,7 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED
+__WATCHOS_PROHIBITED __TVOS_PROHIBITED
 kern_return_t host_request_notification
 (
 	host_t host,
@@ -298,7 +298,7 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED
+__WATCHOS_PROHIBITED __TVOS_PROHIBITED
 kern_return_t host_create_mach_voucher
 (
 	host_t host,
@@ -313,7 +313,7 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED
+__WATCHOS_PROHIBITED __TVOS_PROHIBITED
 kern_return_t host_register_mach_voucher_attr_manager
 (
 	host_t host,
@@ -329,7 +329,7 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED
+__WATCHOS_PROHIBITED __TVOS_PROHIBITED
 kern_return_t host_register_well_known_mach_voucher_attr_manager
 (
 	host_t host,
@@ -345,7 +345,7 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED
+__WATCHOS_PROHIBITED __TVOS_PROHIBITED
 kern_return_t host_set_atm_diagnostic_flag
 (
 	host_priv_t host_priv,
@@ -358,7 +358,7 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED
+__WATCHOS_PROHIBITED __TVOS_PROHIBITED
 kern_return_t host_get_atm_diagnostic_flag
 (
 	host_t host,

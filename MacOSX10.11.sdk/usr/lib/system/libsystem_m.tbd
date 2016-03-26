@@ -5,6 +5,7 @@ install-name:    /usr/lib/system/libsystem_m.dylib
 current-version: 3105.0
 exports:         
   - archs:           [ i386, x86_64 ]
+    allowed-clients: [ System ]
     symbols:         [ __FE_DFL_DISABLE_SSE_DENORMS_ENV, __FE_DFL_ENV, 
                        ___Libm_version, ___cos_d2, ___cos_d4, ___cos_f4, 
                        ___cos_f8, ___cospi, ___cospif, ___exp10, ___exp10f, 

@@ -32,7 +32,7 @@ exports:
                        _DisposeCMProfileFilterUPP, _InvokeCMProfileFilterUPP, 
                        _NCMSetSystemProfile, _NCMUnflattenProfile, _NewCMProfileFilterUPP ]
   - archs:           [ i386, x86_64 ]
-    allowed-clients: [ CSync, DMProxy, com.apple.ColorSyncXPCAgent ]
+    allowed-clients: [ CSync, DMProxy, com.apple.ColorSyncXPCAgent, ApplicationServices ]
     symbols:         [ _AppleCMMApplyTransform, _AppleCMMCreateTransformProperty, 
                        _AppleCMMEvaluateProfileGamma, _AppleCMMInitializeLinkProfile, 
                        _AppleCMMInitializeTransform, _AppleCMMInitializeTransformWithName, 

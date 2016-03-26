@@ -202,7 +202,7 @@ exports:
                        __PBUnmountVol, __PBXGetVolInfoSync, _c2pstr, _c2pstrcpy, 
                        _p2cstr, _p2cstrcpy, _rLongMulDiv, _upperstring ]
   - archs:           [ i386, x86_64 ]
-    allowed-clients: [ AudioToolbox, Foundation, Metadata ]
+    allowed-clients: [ AudioToolbox, Foundation, Metadata, CoreServices ]
     symbols:         [ _AbsoluteDeltaToDuration, _AbsoluteDeltaToNanoseconds, 
                        _AbsoluteToDuration, _AbsoluteToNanoseconds, _AddAbsoluteToAbsolute, 
                        _AddAtomic, _AddAtomic16, _AddAtomic8, _AddCollectionItem, 

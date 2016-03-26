@@ -78,7 +78,7 @@ NS_CLASS_AVAILABLE(10_11, 9_0)
  	@discussion
  		This is used to create a sequencer whose tracks will only send events to external MIDI endpoints.
  */
-- (instancetype)init;
+- (instancetype)init	__TVOS_UNAVAILABLE;
 
 /*! @method initWithAudioEngine:
 	@abstract

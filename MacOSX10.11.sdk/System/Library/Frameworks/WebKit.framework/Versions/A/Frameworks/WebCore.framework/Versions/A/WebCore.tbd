@@ -128,7 +128,7 @@ exports:
                        _WebScriptObjectPrivate.isCreatedByDOMWrapper, _WebScriptObjectPrivate.originRootObject, 
                        _WebScriptObjectPrivate.rootObject ]
   - archs:           [ i386, x86_64 ]
-    allowed-clients: [ WebCoreTestSupport, WebKit2, WebKitLegacy ]
+    allowed-clients: [ WebCoreTestSupport, WebKit2, WebKitLegacy, WebKit ]
     re-exports:      [ /usr/lib/libobjc.A.dylib ]
     symbols:         [ _DOMEventException, _DOMException, _DOMRangeException, 
                        _DOMXPathException, _WebCoreHas3DRendering, __NPN_Construct, 

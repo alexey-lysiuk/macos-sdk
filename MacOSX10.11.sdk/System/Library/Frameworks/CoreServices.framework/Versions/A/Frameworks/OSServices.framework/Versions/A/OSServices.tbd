@@ -27,6 +27,7 @@ exports:
                        _OTUnbind, _OTUseSyncIdleEvents, _PMFeatures, _PMSelectorCount, 
                        _SCSIAction, _SetSpindownDisable, __ISAddFSSpecIconToImage ]
   - archs:           [ i386, x86_64 ]
+    allowed-clients: [ CoreServices ]
     symbols:         [ _AlertSoundPlay, _AlertSoundPlayCustomSound, _BatteryCount, 
                        _CSGetDefaultIdentityAuthority, _CSGetLocalIdentityAuthority, 
                        _CSGetManagedIdentityAuthority, _CSIdentityAddAlias, 

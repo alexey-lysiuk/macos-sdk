@@ -54,6 +54,7 @@ exports:
                        '_system$NOCANCEL', '_tcdrain$NOCANCEL', '_telldir$INODE64', 
                        '_usleep$NOCANCEL', '_wait$NOCANCEL', '_waitpid$NOCANCEL' ]
   - archs:           [ i386, x86_64 ]
+    allowed-clients: [ System ]
     symbols:         [ __CurrentRuneLocale, __DefaultRuneLocale, __Exit, 
                        __NSGetArgc, __NSGetArgv, __NSGetEnviron, __NSGetMachExecuteHeader, 
                        __NSGetProgname, __PathLocale, __Read_RuneMagi, 

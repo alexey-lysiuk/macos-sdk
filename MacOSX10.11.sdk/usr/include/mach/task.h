@@ -88,7 +88,7 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED
+__WATCHOS_PROHIBITED __TVOS_PROHIBITED
 kern_return_t mach_ports_register
 (
 	task_t target_task,
@@ -102,7 +102,7 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED
+__WATCHOS_PROHIBITED __TVOS_PROHIBITED
 kern_return_t mach_ports_lookup
 (
 	task_t target_task,
@@ -130,7 +130,7 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED
+__WATCHOS_PROHIBITED __TVOS_PROHIBITED
 kern_return_t task_set_info
 (
 	task_t target_task,
@@ -145,7 +145,7 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED
+__WATCHOS_PROHIBITED __TVOS_PROHIBITED
 kern_return_t task_suspend
 (
 	task_t target_task
@@ -157,7 +157,7 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED
+__WATCHOS_PROHIBITED __TVOS_PROHIBITED
 kern_return_t task_resume
 (
 	task_t target_task
@@ -169,7 +169,7 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED
+__WATCHOS_PROHIBITED __TVOS_PROHIBITED
 kern_return_t task_get_special_port
 (
 	task_t task,
@@ -183,7 +183,7 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED
+__WATCHOS_PROHIBITED __TVOS_PROHIBITED
 kern_return_t task_set_special_port
 (
 	task_t task,
@@ -197,7 +197,7 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED
+__WATCHOS_PROHIBITED __TVOS_PROHIBITED
 kern_return_t thread_create
 (
 	task_t parent_task,
@@ -210,7 +210,7 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED
+__WATCHOS_PROHIBITED __TVOS_PROHIBITED
 kern_return_t thread_create_running
 (
 	task_t parent_task,
@@ -226,7 +226,7 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED
+__WATCHOS_PROHIBITED __TVOS_PROHIBITED
 kern_return_t task_set_exception_ports
 (
 	task_t task,
@@ -242,7 +242,7 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED
+__WATCHOS_PROHIBITED __TVOS_PROHIBITED
 kern_return_t task_get_exception_ports
 (
 	task_t task,
@@ -260,7 +260,7 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED
+__WATCHOS_PROHIBITED __TVOS_PROHIBITED
 kern_return_t task_swap_exception_ports
 (
 	task_t task,
@@ -333,7 +333,7 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED
+__WATCHOS_PROHIBITED __TVOS_PROHIBITED
 kern_return_t task_policy_set
 (
 	task_t task,
@@ -348,7 +348,7 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED
+__WATCHOS_PROHIBITED __TVOS_PROHIBITED
 kern_return_t task_policy_get
 (
 	task_t task,
@@ -446,7 +446,7 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED
+__WATCHOS_PROHIBITED __TVOS_PROHIBITED
 kern_return_t task_zone_info
 (
 	task_t target_task,
@@ -517,7 +517,7 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED
+__WATCHOS_PROHIBITED __TVOS_PROHIBITED
 kern_return_t task_get_state
 (
 	task_t task,
@@ -532,7 +532,7 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED
+__WATCHOS_PROHIBITED __TVOS_PROHIBITED
 kern_return_t task_set_state
 (
 	task_t task,
@@ -547,7 +547,7 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED
+__WATCHOS_PROHIBITED __TVOS_PROHIBITED
 kern_return_t task_set_phys_footprint_limit
 (
 	task_t task,
@@ -561,7 +561,7 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED
+__WATCHOS_PROHIBITED __TVOS_PROHIBITED
 kern_return_t task_suspend2
 (
 	task_t target_task,
@@ -574,7 +574,7 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED
+__WATCHOS_PROHIBITED __TVOS_PROHIBITED
 kern_return_t task_resume2
 (
 	task_suspension_token_t suspend_token
@@ -598,7 +598,7 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED
+__WATCHOS_PROHIBITED __TVOS_PROHIBITED
 kern_return_t task_get_mach_voucher
 (
 	task_t task,
@@ -612,7 +612,7 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED
+__WATCHOS_PROHIBITED __TVOS_PROHIBITED
 kern_return_t task_set_mach_voucher
 (
 	task_t task,
@@ -625,7 +625,7 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED
+__WATCHOS_PROHIBITED __TVOS_PROHIBITED
 kern_return_t task_swap_mach_voucher
 (
 	task_t task,

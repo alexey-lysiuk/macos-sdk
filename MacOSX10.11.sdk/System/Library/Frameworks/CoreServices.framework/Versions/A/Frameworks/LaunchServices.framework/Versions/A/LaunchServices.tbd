@@ -23,7 +23,7 @@ exports:
                        _LSUserActivity, _LSUserActivityDebuggingManager, 
                        _LSUserActivityInfo, _LSUserActivityManager, _NSUserActivity ]
   - archs:           [ i386, x86_64 ]
-    allowed-clients: [ Foundation ]
+    allowed-clients: [ Foundation, CoreServices ]
     symbols:         [ _AcquireIconRef, _CompositeIconRef, _GetCustomIconsEnabled, 
                        _GetIconRef, _GetIconRefFromComponent, _GetIconRefFromFileInfo, 
                        _GetIconRefFromFolder, _GetIconRefFromIconFamilyPtr, 

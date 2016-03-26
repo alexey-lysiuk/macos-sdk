@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class NSURL, NSError;
 
 
-NS_CLASS_AVAILABLE(10_7, 3_0)
+NS_CLASS_AVAILABLE(10_7, 3_0) __TVOS_UNAVAILABLE
 @interface AVAudioRecorder : NSObject {
 @private
     void *_impl;
@@ -76,7 +76,7 @@ NS_CLASS_AVAILABLE(10_7, 3_0)
 
 
 /* A protocol for delegates of AVAudioRecorder */
-
+__TVOS_UNAVAILABLE
 @protocol AVAudioRecorderDelegate <NSObject>
 @optional 
 

@@ -5,7 +5,7 @@ install-name:    /System/Library/Frameworks/CoreServices.framework/Versions/A/Fr
 current-version: 24.2
 exports:         
   - archs:           [ i386, x86_64 ]
-    allowed-clients: [ Foundation ]
+    allowed-clients: [ Foundation, CoreServices ]
     symbols:         [ _LSSharedFileListAddObserver, _LSSharedFileListAddObserverOnQueue, 
                        _LSSharedFileListCopyProperty, _LSSharedFileListCopySnapshot, 
                        _LSSharedFileListCreate, _LSSharedFileListGetSeedValue, 

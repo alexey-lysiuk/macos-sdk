@@ -156,6 +156,8 @@
 #define __IPHONE_9_0     90000
 /* __IPHONE_NA is not defined to a value but is uses as a token by macros to indicate that the API is unavailable */
 
+#define __TVOS_9_0       90000
+
 #define __WATCHOS_1_0    10000
 #define __WATCHOS_2_0    20000
 
@@ -260,6 +262,33 @@
 
 #ifndef __IOS_DEPRECATED
   #define __IOS_DEPRECATED(_start, _dep, _msg)
+#endif
+
+
+/* for use marking APIs available info for tvOS */
+#if defined(__has_feature)
+  #if __has_feature(attribute_availability_tvos)
+    #define __TVOS_UNAVAILABLE                    __OS_AVAILABILITY(tvos,unavailable)
+    #define __TVOS_PROHIBITED                     __OS_AVAILABILITY(tvos,unavailable)
+    #define __TVOS_AVAILABLE(_vers)               __OS_AVAILABILITY(tvos,introduced=_vers)
+    #define __TVOS_DEPRECATED(_start, _dep, _msg) __TVOS_AVAILABLE(_start) __OS_AVAILABILITY_MSG(tvos,deprecated=_dep,_msg)
+  #endif
+#endif
+
+#ifndef __TVOS_UNAVAILABLE
+  #define __TVOS_UNAVAILABLE
+#endif
+
+#ifndef __TVOS_PROHIBITED
+  #define __TVOS_PROHIBITED
+#endif
+
+#ifndef __TVOS_AVAILABLE
+  #define __TVOS_AVAILABLE(_vers)
+#endif
+
+#ifndef __TVOS_DEPRECATED
+  #define __TVOS_DEPRECATED(_start, _dep, _msg)
 #endif
 
 

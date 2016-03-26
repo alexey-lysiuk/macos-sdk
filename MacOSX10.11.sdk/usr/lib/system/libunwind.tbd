@@ -5,6 +5,7 @@ install-name:    /usr/lib/system/libunwind.dylib
 current-version: 35.3
 exports:         
   - archs:           [ i386, x86_64 ]
+    allowed-clients: [ System ]
     symbols:         [ '$ld$hide$os10.4$__Unwind_Backtrace', '$ld$hide$os10.4$__Unwind_DeleteException', 
                        '$ld$hide$os10.4$__Unwind_FindEnclosingFunction', 
                        '$ld$hide$os10.4$__Unwind_Find_FDE', '$ld$hide$os10.4$__Unwind_ForcedUnwind', 

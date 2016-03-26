@@ -284,7 +284,7 @@ _player = [[AVAudioPlayerNode alloc] init];
 		sample rate and channel count to see if input is enabled.
 */
 
-@property (readonly, nonatomic, nullable) AVAudioInputNode *inputNode;
+@property (readonly, nonatomic, nullable) AVAudioInputNode *inputNode __TVOS_UNAVAILABLE;
 
 
 /*! @property mainMixerNode

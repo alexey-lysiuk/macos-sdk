@@ -5,6 +5,7 @@ install-name:    /System/Library/Frameworks/Carbon.framework/Versions/A/Framewor
 current-version: 5.0
 exports:         
   - archs:           [ i386, x86_64 ]
+    allowed-clients: [ Carbon ]
     symbols:         [ _ICACloseSession, _ICAConvertJPEGDataToICADataInPlace, 
                        _ICAConvertTIFFDataToICADataInPlace, _ICACopyMatchingDeviceDictionaries, 
                        _ICACopyObjectData, _ICACopyObjectPropertyDictionary, 

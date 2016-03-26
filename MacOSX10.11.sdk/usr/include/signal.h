@@ -84,7 +84,7 @@ int	pthread_sigmask(int, const sigset_t *, sigset_t *) __DARWIN_ALIAS(pthread_si
 int	sigaction(int, const struct sigaction * __restrict,
 	    struct sigaction * __restrict);
 int	sigaddset(sigset_t *, int);
-int	sigaltstack(const stack_t * __restrict, stack_t * __restrict)  __DARWIN_ALIAS(sigaltstack) __WATCHOS_PROHIBITED;
+int	sigaltstack(const stack_t * __restrict, stack_t * __restrict)  __DARWIN_ALIAS(sigaltstack) __WATCHOS_PROHIBITED __TVOS_PROHIBITED;
 int	sigdelset(sigset_t *, int);
 int	sigemptyset(sigset_t *);
 int	sigfillset(sigset_t *);

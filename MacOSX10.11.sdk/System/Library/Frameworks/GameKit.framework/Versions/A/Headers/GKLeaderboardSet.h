@@ -42,7 +42,7 @@ NS_ASSUME_NONNULL_END
 
 // Asynchronously load the image. Error will be nil on success.
 #if TARGET_OS_IPHONE
-- (void)loadImageWithCompletionHandler:(void(^__nullable)(UIImage * __nullable image, NSError * __nullable error))completionHandler;
+- (void)loadImageWithCompletionHandler:(void(^__nullable)(UIImage * __nullable image, NSError * __nullable error))completionHandler __TVOS_UNAVAILABLE;
 #else
 - (void)loadImageWithCompletionHandler:(void(^__nullable)(NSImage * __nullable image, NSError * __nullable error))completionHandler;
 #endif

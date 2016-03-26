@@ -5,6 +5,7 @@ install-name:    /usr/lib/system/libmacho.dylib
 current-version: 875.1
 exports:         
   - archs:           [ i386, x86_64 ]
+    allowed-clients: [ System ]
     symbols:         [ _NXCombineCpuSubtypes, _NXFindBestFatArch, _NXGetAllArchInfos, 
                        _NXGetArchInfoFromCpuType, _NXGetArchInfoFromName, 
                        _NXGetLocalArchInfo, _get_edata, _get_end, _get_etext, 

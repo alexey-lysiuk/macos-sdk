@@ -5,7 +5,7 @@ install-name:    /System/Library/Frameworks/Carbon.framework/Versions/A/Framewor
 current-version: 55006.0
 exports:         
   - archs:           [ i386, x86_64 ]
-    allowed-clients: [ AppleShareClient ]
+    allowed-clients: [ AppleShareClient, Carbon ]
     symbols:         [ _DisposeURLNotifyUPP, _DisposeURLSystemEventUPP, 
                        _InvokeURLNotifyUPP, _InvokeURLSystemEventUPP, _KCAddAppleSharePassword, 
                        _KCAddGenericPassword, _KCAddInternetPassword, _KCAddInternetPasswordWithPath, 

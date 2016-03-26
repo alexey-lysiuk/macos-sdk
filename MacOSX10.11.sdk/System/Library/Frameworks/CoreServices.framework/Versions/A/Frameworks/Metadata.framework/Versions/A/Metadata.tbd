@@ -5,7 +5,7 @@ install-name:    /System/Library/Frameworks/CoreServices.framework/Versions/A/Fr
 current-version: 972.7
 exports:         
   - archs:           [ i386, x86_64 ]
-    allowed-clients: [ Foundation ]
+    allowed-clients: [ Foundation, CoreServices ]
     symbols:         [ _MDBackupBegin, _MDBackupCancel, _MDBackupCreate, 
                        _MDBackupEnd, _MDBackupFileWasIndexed, _MDBackupFinishedForVolume, 
                        _MDBackupFlushFallbackBackup, _MDBackupIndexFile, 

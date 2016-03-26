@@ -5,6 +5,7 @@ install-name:    /usr/lib/system/libsystem_sandbox.dylib
 current-version: 459.1.8
 exports:         
   - archs:           [ i386, x86_64 ]
+    allowed-clients: [ System ]
     symbols:         [ _APP_SANDBOX_IOKIT_CLIENT, _APP_SANDBOX_MACH, _APP_SANDBOX_READ, 
                        _APP_SANDBOX_READ_WRITE, _IOS_SANDBOX_APPLICATION_GROUP, 
                        _IOS_SANDBOX_CONTAINER, _IOS_SANDBOX_EXECUTABLE, 

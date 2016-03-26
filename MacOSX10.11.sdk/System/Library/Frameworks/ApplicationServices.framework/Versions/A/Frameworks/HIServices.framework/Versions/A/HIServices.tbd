@@ -35,6 +35,7 @@ exports:
                        __PlotCIconHandleInContext, __PlotIconHandleInContext, 
                        __PlotIconSuiteInContext, __PlotSICNHandleInContext ]
   - archs:           [ i386, x86_64 ]
+    allowed-clients: [ ApplicationServices ]
     symbols:         [ _AXAPIEnabled, _AXIsProcessTrusted, _AXIsProcessTrustedWithOptions, 
                        _AXMakeProcessTrusted, _AXObserverAddNotification, 
                        _AXObserverCreate, _AXObserverCreateWithInfoCallback, 

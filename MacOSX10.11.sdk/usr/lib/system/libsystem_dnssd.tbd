@@ -5,6 +5,7 @@ install-name:    /usr/lib/system/libsystem_dnssd.dylib
 current-version: 624.1.2
 exports:         
   - archs:           [ i386, x86_64 ]
+    allowed-clients: [ System ]
     symbols:         [ _ConvertHeaderBytes, _DNSServiceAddRecord, _DNSServiceBrowse, 
                        _DNSServiceBrowserCreate, _DNSServiceBrowserCreate_rpc, 
                        _DNSServiceConstructFullName, _DNSServiceCreateConnection, 

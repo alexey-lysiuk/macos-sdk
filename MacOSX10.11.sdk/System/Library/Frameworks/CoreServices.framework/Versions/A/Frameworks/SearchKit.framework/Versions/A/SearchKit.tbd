@@ -5,6 +5,7 @@ install-name:    /System/Library/Frameworks/CoreServices.framework/Versions/A/Fr
 current-version: 200.1
 exports:         
   - archs:           [ i386, x86_64 ]
+    allowed-clients: [ CoreServices ]
     symbols:         [ _AIATFree, _AIATGetAllocator, _AIATMalloc, _AIATRegisterReportErrorUPP, 
                        _AIATSetAllocator, _DisposeIASearchIsHitFilterUPP, 
                        _IACFDataDocAccessorCreate, _IACFDataDocAccessorDispose, 

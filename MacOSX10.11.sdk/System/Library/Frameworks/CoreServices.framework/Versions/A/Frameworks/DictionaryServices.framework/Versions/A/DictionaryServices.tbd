@@ -4,6 +4,7 @@ platform:        macosx
 install-name:    /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/DictionaryServices.framework/Versions/A/DictionaryServices
 exports:         
   - archs:           [ i386, x86_64 ]
+    allowed-clients: [ CoreServices ]
     symbols:         [ _DCSActivateDictionaryPanel, _DCSCopyActiveDictionaries, 
                        _DCSCopyAvailableDictionaries, _DCSCopyDefinitionMarkup, 
                        _DCSCopyDefinitions, _DCSCopyInactiveDictionaries, 

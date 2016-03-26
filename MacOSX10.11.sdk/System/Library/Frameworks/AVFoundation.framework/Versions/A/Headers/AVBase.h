@@ -185,3 +185,8 @@
     #define NS_DEPRECATED(a, b, c, d)
 #endif
 
+#ifndef SDK_HIDE_TIDE
+#ifndef __TVOS_PROHIBITED
+	#define __TVOS_PROHIBITED
+#endif
+#endif

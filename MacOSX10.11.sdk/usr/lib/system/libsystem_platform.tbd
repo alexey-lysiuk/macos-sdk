@@ -7,6 +7,7 @@ exports:
   - archs:           [ i386 ]
     symbols:         [ _MKGetTimeBaseInfo, ___in_sigtramp ]
   - archs:           [ i386, x86_64 ]
+    allowed-clients: [ System ]
     symbols:         [ _OSAtomicAdd32, _OSAtomicAdd32Barrier, _OSAtomicAdd64, 
                        _OSAtomicAdd64Barrier, _OSAtomicAnd32, _OSAtomicAnd32Barrier, 
                        _OSAtomicAnd32Orig, _OSAtomicAnd32OrigBarrier, _OSAtomicCompareAndSwap32, 

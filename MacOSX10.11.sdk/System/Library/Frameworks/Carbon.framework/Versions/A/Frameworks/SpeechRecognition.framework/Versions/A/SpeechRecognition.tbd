@@ -4,7 +4,7 @@ platform:        macosx
 install-name:    /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SpeechRecognition.framework/Versions/A/SpeechRecognition
 exports:         
   - archs:           [ i386, x86_64 ]
-    allowed-clients: [ AppKit, LatentSemanticMapping ]
+    allowed-clients: [ AppKit, LatentSemanticMapping, Carbon ]
     symbols:         [ _DisposeSRCallBackUPP, _InvokeSRCallBackUPP, _NewSRCallBackUPP, 
                        _SFSAvatarCaptionVisible, _SFSCopyActiveRecognizer, 
                        _SFSCopyCurrentAvatarIdentifier, _SFSCopyIndAvatarInfo, 

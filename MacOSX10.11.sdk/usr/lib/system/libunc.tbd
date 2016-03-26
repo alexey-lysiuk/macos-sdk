@@ -5,5 +5,6 @@ install-name:    /usr/lib/system/libunc.dylib
 current-version: 29.0
 exports:         
   - archs:           [ i386, x86_64 ]
+    allowed-clients: [ System ]
     symbols:         [ _uncVersionNumber, _uncVersionString ]
 ...

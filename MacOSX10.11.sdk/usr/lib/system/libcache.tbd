@@ -5,6 +5,7 @@ install-name:    /usr/lib/system/libcache.dylib
 current-version: 75.0
 exports:         
   - archs:           [ i386, x86_64 ]
+    allowed-clients: [ System ]
     symbols:         [ __cache_handle_memory_pressure_event, _cache_create, 
                        _cache_destroy, _cache_get_and_retain, _cache_get_cost_hint, 
                        _cache_get_count_hint, _cache_get_info, _cache_get_info_for_key, 

@@ -20,6 +20,7 @@ exports:
     symbols:         [ '_pthread_cond_timedwait$NOCANCEL', '_pthread_cond_wait$NOCANCEL', 
                        '_pthread_join$NOCANCEL', '_sigwait$NOCANCEL' ]
   - archs:           [ i386, x86_64 ]
+    allowed-clients: [ System ]
     symbols:         [ ___is_threaded, ___pthread_init, ___pthread_set_self, 
                        ___pthread_workqueue_setkill, ___system_pthreadVersionNumber, 
                        ___system_pthreadVersionString, ___unix_conforming, 

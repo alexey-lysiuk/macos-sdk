@@ -837,7 +837,7 @@ __BEGIN_DECLS
  *		already contain scatter control information to direct the
  *		receiving of the message.
  */
-__WATCHOS_PROHIBITED
+__WATCHOS_PROHIBITED __TVOS_PROHIBITED
 extern mach_msg_return_t	mach_msg_overwrite(
 					mach_msg_header_t *msg,
 					mach_msg_option_t option,

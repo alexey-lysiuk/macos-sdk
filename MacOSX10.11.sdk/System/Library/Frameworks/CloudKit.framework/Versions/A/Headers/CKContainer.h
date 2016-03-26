@@ -113,7 +113,7 @@ typedef void(^CKApplicationPermissionBlock)(CKApplicationPermissionStatus applic
 /* This fetches all user records that match an entry in the user's address book.
  CKDiscoverAllContactsOperation and CKDiscoverUserInfosOperation are the more configurable,
  CKOperation-based alternatives to these methods */
-- (void)discoverAllContactUserInfosWithCompletionHandler:(void (^)(NSArray <CKDiscoveredUserInfo *> * __nullable userInfos, NSError * __nullable error))completionHandler;
+- (void)discoverAllContactUserInfosWithCompletionHandler:(void (^)(NSArray <CKDiscoveredUserInfo *> * __nullable userInfos, NSError * __nullable error))completionHandler __TVOS_UNAVAILABLE;
 - (void)discoverUserInfoWithEmailAddress:(NSString *)email completionHandler:(void (^)(CKDiscoveredUserInfo * __nullable userInfo, NSError * __nullable error))completionHandler;
 - (void)discoverUserInfoWithUserRecordID:(CKRecordID *)userRecordID completionHandler:(void (^)(CKDiscoveredUserInfo * __nullable userInfo, NSError * __nullable error))completionHandler;
 

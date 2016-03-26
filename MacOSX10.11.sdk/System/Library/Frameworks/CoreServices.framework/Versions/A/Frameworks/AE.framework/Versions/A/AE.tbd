@@ -21,6 +21,7 @@ exports:
                        _NewOSLCountUPP, _NewOSLDisposeTokenUPP, _NewOSLGetErrDescUPP, 
                        _NewOSLGetMarkTokenUPP, _NewOSLMarkUPP ]
   - archs:           [ i386, x86_64 ]
+    allowed-clients: [ CoreServices ]
     symbols:         [ _AEBuildAppleEvent, _AEBuildDesc, _AEBuildParameters, 
                        _AECallObjectAccessor, _AECheckIsRecord, _AECoerceDesc, 
                        _AECoercePtr, _AECoercionHandlersApplyFunction, 

@@ -5,6 +5,7 @@ install-name:    /usr/lib/system/libquarantine.dylib
 current-version: 80.0
 exports:         
   - archs:           [ i386, x86_64 ]
+    allowed-clients: [ System ]
     symbols:         [ ___esp_check, ___esp_check_ns, ___esp_enabled, ___esp_notify, 
                        ___esp_notify_ns, ___libquarantineVersionNumber, 
                        ___libquarantineVersionString, ___qtn_syscall_quarantine_getinfo_fd, 

@@ -89,6 +89,7 @@ exports:
     objc-ivars:      [ _PMInkChecker._consumables, _PMInkChecker._printer, 
                        _PMInkChecker._supplies ]
   - archs:           [ i386, x86_64 ]
+    allowed-clients: [ ApplicationServices ]
     symbols:         [ '$ld$hide$os10.10$_PMFlattenPageFormatToCFData', 
                        '$ld$hide$os10.10$_PMFlattenPageFormatToURL', '$ld$hide$os10.10$_PMFlattenPrintSettingsToCFData', 
                        '$ld$hide$os10.10$_PMFlattenPrintSettingsToURL', 

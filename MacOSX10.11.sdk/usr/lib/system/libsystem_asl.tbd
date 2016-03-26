@@ -5,6 +5,7 @@ install-name:    /usr/lib/system/libsystem_asl.dylib
 current-version: 322.0
 exports:         
   - archs:           [ i386, x86_64 ]
+    allowed-clients: [ System ]
     symbols:         [ _ASL_LEVEL_TO_STRING, ___aslVersionNumber, ___aslVersionString, 
                        __asl_evaluate_send, __asl_fork_child, __asl_lib_log, 
                        __asl_log_args_to_xpc, __asl_msg_dump, __asl_server_cancel_direct_watch, 

@@ -39,6 +39,16 @@
     #endif
 #endif
 
+#ifndef __TV_OS_VERSION_MIN_REQUIRED
+    #ifdef __ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__
+        /* compiler sets __ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__ when -mtvos-version-min is used */
+        #define __TV_OS_VERSION_MIN_REQUIRED __ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__
+        #define __TV_OS_VERSION_MAX_ALLOWED __IPHONE_9_0
+        /* for compatibility with existing code.  New code should use platform specific checks */
+        #define __IPHONE_OS_VERSION_MIN_REQUIRED 90000
+    #endif
+#endif
+
 #ifndef __WATCH_OS_VERSION_MIN_REQUIRED
     #ifdef __ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__
         /* compiler sets __ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__ when -mwatchos-version-min is used */

@@ -5,6 +5,7 @@ install-name:    /usr/lib/system/libsystem_blocks.dylib
 current-version: 65.0
 exports:         
   - archs:           [ i386, x86_64 ]
+    allowed-clients: [ System ]
     symbols:         [ _Block_size, __Block_copy, __Block_copy_collectable, 
                        __Block_extended_layout, __Block_has_signature, 
                        __Block_isDeallocating, __Block_layout, __Block_object_assign, 

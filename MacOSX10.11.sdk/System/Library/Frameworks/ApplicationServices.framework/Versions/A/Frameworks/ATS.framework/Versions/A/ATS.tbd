@@ -28,6 +28,7 @@ exports:
                        _NewATSUDirectLayoutOperationOverrideUPP, _NewFMFontCallbackFilterUPP, 
                        _NewFMFontFamilyCallbackFilterUPP ]
   - archs:           [ i386, x86_64 ]
+    allowed-clients: [ ApplicationServices ]
     symbols:         [ _AGAddAttribute, _AGBeginIteration, _AGComputeByteCapacity, 
                        _AGComputeByteCapacityV, _AGComputeChecksum, _AGComputeIncrementalCapacity, 
                        _AGComputeIncrementalCapacityV, _AGCongruent, _AGFindAttribute, 

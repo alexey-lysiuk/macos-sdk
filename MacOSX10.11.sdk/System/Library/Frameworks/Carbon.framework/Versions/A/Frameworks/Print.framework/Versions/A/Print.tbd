@@ -48,6 +48,7 @@ exports:
                        _PMShowPrintDialogWithOptions, _PMShowPrintDialogWithOptionsAsSheet, 
                        _PMUpdatePrintButton ]
   - archs:           [ i386, x86_64 ]
+    allowed-clients: [ Carbon ]
     symbols:         [ _OpenDotInkWebPage, _PMCreateAddPrinterController, 
                        _PMCreatePrinterSupplyController, _PMPaperCreatePaperSizeString, 
                        _PMPrepareAppKitPageSetupDialog, _PMPrepareAppKitPageSetupDialogWithPrintInfo, 

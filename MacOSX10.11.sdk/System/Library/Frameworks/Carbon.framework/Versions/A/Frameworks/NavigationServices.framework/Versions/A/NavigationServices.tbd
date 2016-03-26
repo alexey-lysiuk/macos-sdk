@@ -5,7 +5,7 @@ install-name:    /System/Library/Frameworks/Carbon.framework/Versions/A/Framewor
 current-version: 220.0
 exports:         
   - archs:           [ i386 ]
-    allowed-clients: [ QuickTime ]
+    allowed-clients: [ QuickTime, Carbon ]
     symbols:         [ _DisposeNavEventUPP, _DisposeNavLoadPreviewUPP, 
                        _DisposeNavObjectFilterUPP, _DisposeNavPreviewUPP, 
                        _InvokeNavEventUPP, _InvokeNavLoadPreviewUPP, _InvokeNavObjectFilterUPP, 

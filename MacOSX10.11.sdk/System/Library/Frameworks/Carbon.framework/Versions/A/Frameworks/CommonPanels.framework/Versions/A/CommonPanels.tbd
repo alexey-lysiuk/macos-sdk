@@ -24,7 +24,7 @@ exports:
                        _gFontPanelRef, _gHandler, _gNSTypographyBundle, 
                        _gSelFontInfo, _kFontPanelDocumentAttributesKey ]
   - archs:           [ i386, x86_64 ]
-    allowed-clients: [ AppKit ]
+    allowed-clients: [ AppKit, Carbon ]
     symbols:         [ _CMCalibrateDisplay, _DisposeCalibrateEventUPP, 
                        _DisposeNColorChangedUPP, _FCAddCollection, _FCAddFontDescriptorToCollection, 
                        _FCCopyCollectionNames, _FCCopyFontDescriptorsInCollection, 

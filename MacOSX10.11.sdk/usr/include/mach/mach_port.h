@@ -90,7 +90,7 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED
+__WATCHOS_PROHIBITED __TVOS_PROHIBITED
 kern_return_t mach_port_allocate_name
 (
 	ipc_space_t task,
@@ -345,7 +345,7 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED
+__WATCHOS_PROHIBITED __TVOS_PROHIBITED
 kern_return_t task_set_port_space
 (
 	ipc_space_t task,

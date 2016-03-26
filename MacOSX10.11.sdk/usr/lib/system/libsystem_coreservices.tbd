@@ -5,6 +5,7 @@ install-name:    /usr/lib/system/libsystem_coreservices.dylib
 current-version: 19.0
 exports:         
   - archs:           [ i386, x86_64 ]
+    allowed-clients: [ System ]
     symbols:         [ _NSGetNextSearchPathEnumeration, _NSStartSearchPathEnumeration, 
                        _NSStartSearchPathEnumerationPrivate, ___coreservicesVersionNumber, 
                        ___coreservicesVersionString, ___dirhelper_create_user_local, 

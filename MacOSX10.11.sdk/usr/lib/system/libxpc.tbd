@@ -8,6 +8,7 @@ exports:
     symbols:         [ __xpc_type_base ]
     objc-classes:    [ _OS_xpc_object ]
   - archs:           [ i386, x86_64 ]
+    allowed-clients: [ System ]
     symbols:         [ _XPC_ACTIVITY_ALLOW_BATTERY, _XPC_ACTIVITY_APP_REFRESH, 
                        _XPC_ACTIVITY_CHECK_IN, _XPC_ACTIVITY_CPU_INTENSIVE, 
                        _XPC_ACTIVITY_DELAY, _XPC_ACTIVITY_DO_IT_LATER, 

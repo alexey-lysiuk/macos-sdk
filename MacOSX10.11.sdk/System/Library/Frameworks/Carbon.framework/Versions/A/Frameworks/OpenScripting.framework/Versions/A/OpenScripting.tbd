@@ -11,6 +11,7 @@ exports:
                        _InvokeOSASendUPP, _NewOSAActiveUPP, _NewOSACreateAppleEventUPP, 
                        _NewOSASendUPP, _OSAGetAppTerminology ]
   - archs:           [ i386, x86_64 ]
+    allowed-clients: [ Carbon ]
     symbols:         [ _ASCopySourceAttributes, _ASGetSourceStyleNames, 
                        _ASGetSourceStyles, _ASInit, _ASSetSourceAttributes, 
                        _ASSetSourceStyles, _OSAAddStorageType, _OSAAuthorizeEvent, 
