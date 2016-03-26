@@ -2,7 +2,7 @@
 archs:           [ x86_64 ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoLibraryPrivate.framework/Versions/A/Frameworks/PAImagingCore.framework/Versions/A/PAImagingCore
-current-version: 335.4
+current-version: 350.22
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CompareLab, _IPACIFilter_PhotoEffect, _IPAPhotoEffectFilter_Input_EffectNumber, 
@@ -66,8 +66,8 @@ exports:
                        _PAPreviewRequest, _PAPreviewSizeCalculator, _PAPreviewSizeCalculator_V0, 
                        _PAPreviewSizeCalculator_V2, _PAPreviewSizeCalculator_V3, 
                        _PAPreviewWriterService, _PARAWDataLoadRequest, 
-                       _PARAWImageLoader, _PARateBehaviorEstimator, _PARenderPipeline, 
-                       _PARenderPipelineFactory, _PARenderPipelineGeometry, 
+                       _PARAWImageLoader, _PARAWSupport, _PARateBehaviorEstimator, 
+                       _PARenderPipeline, _PARenderPipelineFactory, _PARenderPipelineGeometry, 
                        _PARenderPipelineOptions, _PARenderPipelineState, 
                        _PARenderPipelineV1, _PARenderPipelineV2, _PARetouchBuffer, 
                        _PARetouchLevelTileDebug, _PASegmentFileLoadProcessRequest, 

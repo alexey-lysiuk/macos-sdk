@@ -35,7 +35,7 @@ NS_CLASS_AVAILABLE(10_10, 8_0)
  NSQualityOfServiceBackground
     Network requests are discretionary
 
- CKOperations have a default qualityOfService of NSQualityOfServiceBackground.
+ CKOperations have a default qualityOfService of NSQualityOfServiceUtility.
 
  */
 

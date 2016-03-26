@@ -2,7 +2,7 @@
 archs:           [ x86_64 ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoLibraryPrivate.framework/Versions/A/Frameworks/PAImaging.framework/Versions/A/PAImaging
-current-version: 335.4
+current-version: 350.22
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CATransform3DFromNSString, _CGAffineTransformFromNSString, 
@@ -82,7 +82,7 @@ exports:
                        _IPAAdjustmentStackLiveUpgrader_SetVersionInfoToCurrent, 
                        _IPAAdjustmentStackLiveUpgrader_SmartToModern, _IPAAdjustmentStackLiveUpgrader_StripRawDecode, 
                        _IPAAdjustmentStackLiveUpgrader_ToVersion1, _IPAConcreteAdjustmentConversionService, 
-                       _IPAConcreteAdjustmentShim, _IPALiveAdjustmentDataUpgrader, 
+                       _IPAConcreteAdjustmentShim, _IPAGamutCheck, _IPALiveAdjustmentDataUpgrader, 
                        _IPALiveDataUpgrader_FixBogusSLM, _PA2DBufferBackingTile, 
                        _PAAVAssetRequestService, _PAAVAssetResponse, _PAAVItem, 
                        _PAAVItemController, _PAAVItemView, _PAAVItemViewController, 
@@ -226,8 +226,8 @@ exports:
                        _V10RepairResult, __PAAutoAccessTiledImage, __PABrushMaskAdjustmentFilter, 
                        __PACachedEditSession, __PAHistogramKey, __PAHotColdAdjustmentFilter, 
                        __PAImageUpdate, __PAImageUpdateQueue, __PAJobPriorityQueue, 
-                       __PALowPriorityCPUDevice, __PAMaskCacheItem, __PATextureTiledImageTile, 
-                       __PAVersionRenderSession ]
+                       __PALowPriorityCPUDevice, __PAMaskCacheItem, __PAMutableDuplicateEditSession, 
+                       __PATextureTiledImageTile, __PAVersionRenderSession ]
     objc-ivars:      [ _PAAssetClientSampler._ROI, _PAAssetClientSampler._assetClient, 
                        _PAAssetClientSampler._scale, _PAAutoCalculatorImageRequestBase._imageType, 
                        _PAAutoCalculatorImageRequestBase._version, _PABarrier._count, 
@@ -332,6 +332,7 @@ exports:
                        _PATiledImage._extent, _PATiledImage._orientation, 
                        _PATiledImage._originalOrientation, _PAVersionEditSession._nonRawMaster, 
                        _PAVersionEditSession._queue, _PAVersionEditSession._rawMaster, 
-                       _PAVersionEditSession._version, __PATextureTiledImageTile._image, 
-                       __PATextureTiledImageTile._index, __PAVersionRenderSession._sharedEditSession ]
+                       _PAVersionEditSession._trace, _PAVersionEditSession._version, 
+                       __PATextureTiledImageTile._image, __PATextureTiledImageTile._index, 
+                       __PAVersionRenderSession._sharedEditSession ]
 ...

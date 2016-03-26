@@ -2,7 +2,7 @@
 archs:           [ x86_64 ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CloudKitDaemon.framework/Versions/A/CloudKitDaemon
-current-version: 480.0
+current-version: 481.8
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _APSEnvironmentStringFromCKDPAPNSEnv, _CKAllowedSystemFieldNames, 
@@ -60,7 +60,7 @@ exports:
                        _CKDURLRequestHTTPHeader_WWWAuthenticate, _CKDURLRequestHTTPHeader_Warning, 
                        _CKDURLRequestHTTPHeader_XAcceptClientEncoding, 
                        _CKDURLRequestHTTPHeader_XCloudKitProtocolVersion, 
-                       _CKDWeakLinkClass, _CKDWeakLinkSymbol, _CKDatabaseScopeForCKDPRequestOperationHeader_Database, 
+                       _CKDatabaseScopeForCKDPRequestOperationHeader_Database, 
                        _CKFairPlayErrorDomain, _CKInternalErrorCodeForResponseOperationResult, 
                        _CKLogConfigServerDNS, _CKMescalSignatureCurrentVersion, 
                        _CKNSPredicateOperatorTypeForCKDPQueryFilterType, 

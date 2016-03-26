@@ -2,7 +2,7 @@
 archs:           [ x86_64 ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CalendarFoundation.framework/Versions/A/CalendarFoundation
-current-version: 406.0
+current-version: 406.1
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CALPrefAddHolidayCalendar, _CALPrefDefaultAlarmsEnabled, 
@@ -98,10 +98,10 @@ exports:
                        _mt_log_calendar_time_to_leave_notification_action, 
                        _mt_log_calendar_time_to_leave_travel_notification_display_value, 
                        _mt_log_calendar_traveltime, _mt_log_calendar_uselessnobo, 
-                       _mt_log_reminders_connected_icloud_to_car, _mt_log_reminders_creation, 
-                       _mt_log_reminders_geofence, _mt_log_reminders_notification_action, 
-                       _timezonesAreEquivalent, _tzload, _tzname, _tzparse, 
-                       _tzset, _tzsetwall ]
+                       _mt_log_reminder_app_used, _mt_log_reminders_connected_icloud_to_car, 
+                       _mt_log_reminders_creation, _mt_log_reminders_geofence, 
+                       _mt_log_reminders_notification_action, _timezonesAreEquivalent, 
+                       _tzload, _tzname, _tzparse, _tzset, _tzsetwall ]
     objc-classes:    [ _CalAccountsProvider, _CalAccumulatingQueue, _CalContactProvider, 
                        _CalDateRange, _CalDefaults, _CalDescriptionBuilder, 
                        _CalDisjointDateRange, _CalEntitlementsVerifier, 

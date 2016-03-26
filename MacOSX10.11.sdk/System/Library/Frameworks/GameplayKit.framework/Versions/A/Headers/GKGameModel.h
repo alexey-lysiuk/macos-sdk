@@ -12,8 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * Maximum / minimum values for GKGameModel scoreForPlayer. Values must be within these ranges.
  */
-#define GKGameModelMaxScore (1 << 24)
-#define GKGameModelMinScore (-(1 << 24))
+static const NSInteger GKGameModelMaxScore = 1 << 24;
+static const NSInteger GKGameModelMinScore = -(1 << 24);
 
 /**
  * A protocol used to encapsulate the data needed to affect an update to a game model. 
@@ -106,6 +106,8 @@ NS_ASSUME_NONNULL_BEGIN
  * necessarily mean that the player has won. Optionally used by GKMinmaxStrategist to improve move selection.
  */
 - (BOOL)isLossForPlayer:(id<GKGameModelPlayer>)player;
+
+- (void)unapplyGameModelUpdate:(id<GKGameModelUpdate>)gameModelUpdate;
 
 @end
 

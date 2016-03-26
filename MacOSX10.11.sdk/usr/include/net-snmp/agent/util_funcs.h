@@ -18,9 +18,6 @@ config_require(util_funcs/restart)
 extern "C" {
 #endif
 
-#ifdef HAVE_PTHREAD_H
-#include <pthread.h>
-#endif
 #include "struct.h"
 
 typedef struct prefix_info
@@ -34,7 +31,6 @@ typedef struct prefix_info
 typedef struct 
 {
  prefix_cbx **list_head;
- pthread_mutex_t *lockinfo;  
 }netsnmp_prefix_listen_info;
 #endif
 int             shell_command(struct extensible *);
@@ -44,7 +40,7 @@ int             get_exec_output(struct extensible *);
 int             get_exec_pipes(char *cmd, int *fdIn, int *fdOut, int *pid);
 WriteMethod     clear_cache;
 void            print_mib_oid(oid *, size_t);
-void            sprint_mib_oid(char *, oid *, size_t);
+void            sprint_mib_oid(char *, const oid *, size_t);
 int             checkmib(struct variable *, oid *, size_t *, int, size_t *,
                          WriteMethod ** write_method, int);
 char           *find_field(char *, int);
@@ -59,18 +55,14 @@ prefix_cbx *net_snmp_create_prefix_info(unsigned long OnLinkFlag,
 #ifndef WIN32
 int net_snmp_find_prefix_info(prefix_cbx **head,
                               char *address,
-                              prefix_cbx *node_to_find,
-                              pthread_mutex_t *lockid);
+                              prefix_cbx *node_to_find);
 int net_snmp_update_prefix_info(prefix_cbx **head,
-                                prefix_cbx *node_to_update,
-                                pthread_mutex_t *lockid);
+                                prefix_cbx *node_to_update);
 int net_snmp_search_update_prefix_info(prefix_cbx **head,
                                        prefix_cbx *node_to_use,
-                                       int functionality,
-                                       pthread_mutex_t *lockid);
+                                       int functionality);
 int net_snmp_delete_prefix_info(prefix_cbx **head,
-                                char *address,
-                                pthread_mutex_t *lockid);
+                                char *address);
 #endif
 #define NIP6(addr) \
         ntohs((addr).s6_addr16[0]), \

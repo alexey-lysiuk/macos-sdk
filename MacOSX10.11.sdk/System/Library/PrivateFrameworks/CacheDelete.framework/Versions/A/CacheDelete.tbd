@@ -14,9 +14,9 @@ exports:
                        _CacheDeleteRegisterInfoCallbacks, _CacheDeleteRegisterInfoCallbacksForProcess, 
                        _CallCacheD, _CallService, _CallServiceAsync, _addDistributionStat, 
                        _addReportStat, _amountPurged, _connectionIsEntitled, 
-                       _dmlog, _getCacheDeleteXattr, _getLocalVolumes, 
-                       _getRootVolume, _log_user_defaults, _lowSpaceVolumes, 
-                       _normalizeUserMountpoint, _pretty_user_defaults, 
+                       _createCacheDeleteToken, _dmlog, _getCacheDeleteXattr, 
+                       _getLocalVolumes, _getRootVolume, _log_user_defaults, 
+                       _lowSpaceVolumes, _normalizeUserMountpoint, _pretty_user_defaults, 
                        _setReportStat, _validateVolume, _volumeFreespace ]
     objc-classes:    [ _CDService, _CacheDeleteListener, _CacheDeleteRecentInfo, 
                        _CacheDeleteRecentServiceInfo, _CacheDeleteRecentVolumeInfo, 

@@ -2,7 +2,7 @@
 archs:           [ i386, x86_64 ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/PrintCore.framework/Versions/A/PrintCore
-current-version: 472.0
+current-version: 472.2
 exports:         
   - archs:           [ i386 ]
     symbols:         [ '$ld$hide$os10.10$_DisposePMIdleUPP', '$ld$hide$os10.10$_InvokePMIdleUPP', 

@@ -16,7 +16,7 @@
 .\" Please see the License for the specific language governing rights and
 .\" limitations under the License.
 .\"
-.Dd 6 July 2015
+.Dd 7 October 2015
 .Os "Mac OS X"
 .Dt DISKUTIL 8
 .Pp
@@ -683,6 +683,13 @@ and
 parameters in the same manner as the triplet description for the
 .Sy partitionDisk
 verb.
+.Pp
+For one of your triplets, you can optionally specify the
+.Sy R
+meta-size in lieu of a constant number value for the
+.Ar size
+parameter: the substituted value will be exactly the amount of space necessary to complete the
+re-filling of the original partition with all of your triplets.
 .Pp
 .Ar Device
 refers to a volume.
@@ -1645,21 +1652,37 @@ where the multiplier is 1152921504606846976 (1 x 2^60).
 .\" List-End-SizeSuffixes-2
 .El
 .Pp
-In certain contexts (such as when specifying partition triplets) you can provide a relative value as follows:
+In certain contexts (e.g. when specifying partition triplets) you can provide a relative value as follows:
 .\" List-Begin-SizeSuffixes-3
 .Bl -bullet -offset indent
 .It
 .Sy %
 (with a preceding number) is a
 .Sy percentage
-of the whole-disk size.
+of the whole-disk size, the partition map size, or other allocatable size, as appropriate by context.
+Use of
+.Sy %
+is not supported in all situations.
 .It
 .Sy R
 (with no preceding number) specifies the
 .Sy remainder
-of the whole-disk size after all other triplets in the group are taken into account.
+of the whole-disk size or other allocatable size after all other triplets in the group are taken into account.
 It need not be in the last triplet.  It must only appear in at most one triplet among all triplets.
+Use of
+.Sy R
+is not supported in all situations.
 .\" List-End-SizeSuffixes-3
+.El
+.Pp
+You can provide an operating system-defined constant value as follows:
+.\" List-Begin-SizeSuffixes-4
+.Bl -bullet -offset indent
+.It
+.Sy %recovery%
+(with no preceding number) is the
+customary size of Mac OS X Recovery Partitions.
+.\" List-End-SizeSuffixes-4
 .El
 .Pp
 Note again that
@@ -1778,6 +1801,10 @@ diskutil repairMirror /Volumes/MirroredVolume disk3
 Convert volume into RAID volume
 .br
 diskutil enableRAID mirror /Volumes/ExistingVolume
+.Pp
+Erase a partition and shrink to add an associated Recovery Partition
+.br
+diskutil splitPartition disk8s2 JHFS+ MacHD R %Apple_Boot% %noformat% %recovery%
 .\"
 .\"
 .\"

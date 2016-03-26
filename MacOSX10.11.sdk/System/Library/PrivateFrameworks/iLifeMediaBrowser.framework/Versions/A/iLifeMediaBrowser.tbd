@@ -2,7 +2,7 @@
 archs:           [ i386, x86_64 ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/iLifeMediaBrowser.framework/Versions/A/iLifeMediaBrowser
-current-version: 720.0
+current-version: 721.0
 exports:         
   - archs:           [ x86_64 ]
     objc-ivars:      [ _ILChangeManager._groupToOperationMap, _ILChangeManager._operationQueue, 

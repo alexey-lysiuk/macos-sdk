@@ -62,28 +62,31 @@ NS_CLASS_AVAILABLE(10_10, 8_0)
 @end
 
 /* The payload of a push notification delivered in the UIApplication application:didReceiveRemoteNotification: delegate method contains information about the firing subscription.   Use
-   +[CKNotification notificationFromRemoteNotificationDictionary:] to parse that payload. */
+   +[CKNotification notificationFromRemoteNotificationDictionary:] to parse that payload.
+ 
+   On tvOS, alerts, badges, sounds, and categories are not handled in push notifications. However,
+   CKSubscriptions remain available to help you avoid polling the servers */
 
 NS_CLASS_AVAILABLE(10_10, 8_0)
 @interface CKNotificationInfo : NSObject <NSSecureCoding, NSCopying>
 
 /* Optional alert string to display in a push notification. */
-@property (nonatomic, copy, nullable) NSString *alertBody;
+@property (nonatomic, copy, nullable) NSString *alertBody __TVOS_PROHIBITED;
 
 /* Instead of a raw alert string, you may optionally specify a key for a localized string in your app's Localizable.strings file. */
-@property (nonatomic, copy, nullable) NSString *alertLocalizationKey;
+@property (nonatomic, copy, nullable) NSString *alertLocalizationKey __TVOS_PROHIBITED;
 
 /* A list of field names to take from the matching record that is used as substitution variables in a formatted alert string. */
-@property (nonatomic, copy, nullable) NSArray <NSString *> *alertLocalizationArgs;
+@property (nonatomic, copy, nullable) NSArray <NSString *> *alertLocalizationArgs __TVOS_PROHIBITED;
 
 /* A key for a localized string to be used as the alert action in a modal style notification. */
-@property (nonatomic, copy, nullable) NSString *alertActionLocalizationKey;
+@property (nonatomic, copy, nullable) NSString *alertActionLocalizationKey __TVOS_PROHIBITED;
 
 /* The name of an image in your app bundle to be used as the launch image when launching in response to the notification. */
-@property (nonatomic, copy, nullable) NSString *alertLaunchImage;
+@property (nonatomic, copy, nullable) NSString *alertLaunchImage __TVOS_PROHIBITED;
 
 /* The name of a sound file in your app bundle to play upon receiving the notification. */
-@property (nonatomic, copy, nullable) NSString *soundName;
+@property (nonatomic, copy, nullable) NSString *soundName __TVOS_PROHIBITED;
 
 /* A list of keys from the matching record to include in the notification payload.
  Only some keys are allowed.  The value types associated with those keys on the server must be one of these classes:
@@ -95,14 +98,14 @@ NS_CLASS_AVAILABLE(10_10, 8_0)
 @property (nonatomic, copy, nullable) NSArray <NSString *> *desiredKeys;
 
 /* Indicates that the notification should increment the app's badge count. Default value is NO. */
-@property (nonatomic, assign) BOOL shouldBadge;
+@property (nonatomic, assign) BOOL shouldBadge __TVOS_PROHIBITED;
 
 /* Indicates that the notification should be sent with the "content-available" flag to allow for background downloads in the application. 
    Default value is NO. */
-@property (nonatomic, assign) BOOL shouldSendContentAvailable;
+@property (nonatomic, assign) BOOL shouldSendContentAvailable __TVOS_PROHIBITED;
 
 /* Optional property for the category to be sent with the push when this subscription fires. Categories allow you to present custom actions to the user on your push notifications. See UIMutableUserNotificationCategory for more information. */
-@property (nonatomic, copy, nullable) NSString *category NS_AVAILABLE(10_11, 9_0);
+@property (nonatomic, copy, nullable) NSString *category NS_AVAILABLE(10_11, 9_0) __TVOS_PROHIBITED;
 
 @end
 NS_ASSUME_NONNULL_END

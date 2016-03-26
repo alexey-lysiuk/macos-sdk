@@ -344,6 +344,9 @@
 /* Define if compiling with the if-mib/ifXTable module files.  */
 #define USING_IF_MIB_IFXTABLE_MODULE 1
  
+/* Define if compiling with the ucd-snmp/pass_common module files.  */
+#define USING_UCD_SNMP_PASS_COMMON_MODULE 1
+ 
 /* Define if compiling with the header_complex module files.  */
 #define USING_HEADER_COMPLEX_MODULE 1
  

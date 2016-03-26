@@ -2,7 +2,7 @@
 archs:           [ x86_64 ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Parsec.framework/Versions/A/Parsec
-current-version: 972.7
+current-version: 972.16
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _GetActivityName, _PRSFairPlayErrorDomain, _PRSLogInit, 

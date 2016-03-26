@@ -2,7 +2,7 @@
 archs:           [ x86_64 ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CalendarAgent.framework/Versions/A/CalendarAgent
-current-version: 361.0
+current-version: 361.1
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CalAPSKey_Development, _CalAPSKey_PrincipalID, 

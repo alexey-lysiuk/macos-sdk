@@ -29,7 +29,7 @@
 .\" $FreeBSD: src/lib/libc/gen/pselect.3,v 1.4 2002/12/18 10:13:54 ru Exp $
 .\"
 .Dd June 16, 2002
-.Dt PSELECT 3
+.Dt PSELECT 2
 .Os
 .Sh NAME
 .Nm pselect
@@ -37,7 +37,7 @@
 .Sh LIBRARY
 .Lb libc
 .Sh SYNOPSIS
-.In unistd.h
+.In sys/select.h
 .Ft int
 .Fo pselect
 .Fa "int nfds"
@@ -88,11 +88,6 @@ for a more detailed discussion of the semantics of this interface, and
 for macros used to manipulate the
 .Vt "fd_set"
 data type.
-.Sh IMPLEMENTATION NOTES
-The
-.Fn pselect
-function is implemented in the C library as a wrapper around
-.Fn select .
 .Sh RETURN VALUES
 The
 .Fn pselect
@@ -123,5 +118,5 @@ function first appeared in
 .Sh AUTHORS
 The
 .Fn pselect
-function and this manual page were written by
+manual page was written by
 .An Garrett Wollman Aq wollman@FreeBSD.org .

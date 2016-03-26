@@ -2,7 +2,7 @@
 archs:           [ x86_64 ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Safari.framework/Versions/A/Safari
-current-version: 601.1.55
+current-version: 601.3.9
 compatibility-version: 528.0
 exports:         
   - archs:           [ x86_64 ]

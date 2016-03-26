@@ -2,7 +2,7 @@
 archs:           [ x86_64 ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AOSAccounts.framework/Versions/A/AOSAccounts
-current-version: 1.9.67
+current-version: 1.9.96
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _AOSAccountsDebugLoggingEnabled, _AOSAccountsGetLogLevel, 
@@ -17,8 +17,8 @@ exports:
                        _MMAccountCopyProperties, _MMAccountCopyProperty, 
                        _MMAccountCopyPushToken, _MMAccountCopyServiceIDs, 
                        _MMAccountCreate, _MMAccountDeactivate, _MMAccountIsLoggedIn, 
-                       _MMAccountIsPaid, _MMAccountIsVetted, _MMAccountLogin, 
-                       _MMAccountLoginReAuth, _MMAccountLoginReAuthWithContext, 
+                       _MMAccountIsManagedAppleID, _MMAccountIsPaid, _MMAccountIsVetted, 
+                       _MMAccountLogin, _MMAccountLoginReAuth, _MMAccountLoginReAuthWithContext, 
                        _MMAccountLogout, _MMAccountLogoutWithOptions, _MMAccountPostQuotaLimitUserNotification, 
                        _MMAccountRefreshLoggedIn, _MMAccountRefreshProperty, 
                        _MMAccountRemoveProperty, _MMAccountSetDisplayName, 
@@ -88,7 +88,7 @@ exports:
                        _kMMPropertyAccountError, _kMMPropertyAccountErrorInfo, 
                        _kMMPropertyAccountFamilyEnabledKey, _kMMPropertyAccountFamilyMembersKey, 
                        _kMMPropertyAccountFirstNameKey, _kMMPropertyAccountID, 
-                       _kMMPropertyAccountKeychainAcceptApplicantList, 
+                       _kMMPropertyAccountIsManagedAppleID, _kMMPropertyAccountKeychainAcceptApplicantList, 
                        _kMMPropertyAccountKeychainApplicantList, _kMMPropertyAccountKeychainEmptyKeychainSync, 
                        _kMMPropertyAccountKeychainIsRequestPending, _kMMPropertyAccountKeychainNeedsCredentials, 
                        _kMMPropertyAccountKeychainPeerList, _kMMPropertyAccountKeychainRejectApplicantList, 

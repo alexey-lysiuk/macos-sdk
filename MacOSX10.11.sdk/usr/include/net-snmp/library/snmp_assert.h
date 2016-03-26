@@ -96,6 +96,10 @@
 #endif /* not NETSNMP_USE_ASSERT */
 
 
+#define netsnmp_static_assert(x) \
+    do { switch(0) { case (x): case 0: ; } } while(0)
+
+
 /*
  *  EXPERIMENTAL macros. May be removed without warning in future
  * releases. Use at your own risk

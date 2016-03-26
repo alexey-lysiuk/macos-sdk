@@ -2,7 +2,7 @@
 archs:           [ i386, x86_64 ]
 platform:        macosx
 install-name:    /usr/lib/libexpat.1.dylib
-current-version: 7.2
+current-version: 8.0
 compatibility-version: 7.0
 exports:         
   - archs:           [ i386, x86_64 ]
@@ -25,19 +25,19 @@ exports:
                        _XML_SetEndDoctypeDeclHandler, _XML_SetEndElementHandler, 
                        _XML_SetEndNamespaceDeclHandler, _XML_SetEntityDeclHandler, 
                        _XML_SetExternalEntityRefHandler, _XML_SetExternalEntityRefHandlerArg, 
-                       _XML_SetNamespaceDeclHandler, _XML_SetNotStandaloneHandler, 
-                       _XML_SetNotationDeclHandler, _XML_SetParamEntityParsing, 
-                       _XML_SetProcessingInstructionHandler, _XML_SetReturnNSTriplet, 
-                       _XML_SetSkippedEntityHandler, _XML_SetStartCdataSectionHandler, 
-                       _XML_SetStartDoctypeDeclHandler, _XML_SetStartElementHandler, 
-                       _XML_SetStartNamespaceDeclHandler, _XML_SetUnknownEncodingHandler, 
-                       _XML_SetUnparsedEntityDeclHandler, _XML_SetUserData, 
-                       _XML_SetXmlDeclHandler, _XML_StopParser, _XML_UseForeignDTD, 
-                       _XML_UseParserAsHandlerArg, _XmlGetUtf16InternalEncoding, 
-                       _XmlGetUtf16InternalEncodingNS, _XmlGetUtf8InternalEncoding, 
-                       _XmlGetUtf8InternalEncodingNS, _XmlInitEncoding, 
-                       _XmlInitEncodingNS, _XmlInitUnknownEncoding, _XmlInitUnknownEncodingNS, 
-                       _XmlParseXmlDecl, _XmlParseXmlDeclNS, _XmlPrologStateInit, 
-                       _XmlPrologStateInitExternalEntity, _XmlSizeOfUnknownEncoding, 
-                       _XmlUtf16Encode, _XmlUtf8Encode ]
+                       _XML_SetHashSalt, _XML_SetNamespaceDeclHandler, 
+                       _XML_SetNotStandaloneHandler, _XML_SetNotationDeclHandler, 
+                       _XML_SetParamEntityParsing, _XML_SetProcessingInstructionHandler, 
+                       _XML_SetReturnNSTriplet, _XML_SetSkippedEntityHandler, 
+                       _XML_SetStartCdataSectionHandler, _XML_SetStartDoctypeDeclHandler, 
+                       _XML_SetStartElementHandler, _XML_SetStartNamespaceDeclHandler, 
+                       _XML_SetUnknownEncodingHandler, _XML_SetUnparsedEntityDeclHandler, 
+                       _XML_SetUserData, _XML_SetXmlDeclHandler, _XML_StopParser, 
+                       _XML_UseForeignDTD, _XML_UseParserAsHandlerArg, 
+                       _XmlGetUtf16InternalEncoding, _XmlGetUtf16InternalEncodingNS, 
+                       _XmlGetUtf8InternalEncoding, _XmlGetUtf8InternalEncodingNS, 
+                       _XmlInitEncoding, _XmlInitEncodingNS, _XmlInitUnknownEncoding, 
+                       _XmlInitUnknownEncodingNS, _XmlParseXmlDecl, _XmlParseXmlDeclNS, 
+                       _XmlPrologStateInit, _XmlPrologStateInitExternalEntity, 
+                       _XmlSizeOfUnknownEncoding, _XmlUtf16Encode, _XmlUtf8Encode ]
 ...

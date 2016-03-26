@@ -1,7 +1,7 @@
 ---
 archs:           [ x86_64 ]
 platform:        macosx
-install-name:    '@rpath/DuetRecommendation.framework/Versions/A/DuetRecommendation'
+install-name:    /System/Library/PrivateFrameworks/DuetRecommendation.framework/DuetRecommendation
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _DuetRecommendationVersionNumber, _DuetRecommendationVersionString ]

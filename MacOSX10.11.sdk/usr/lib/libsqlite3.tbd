@@ -2,7 +2,7 @@
 archs:           [ i386, x86_64, x86_64h ]
 platform:        macosx
 install-name:    /usr/lib/libsqlite3.dylib
-current-version: 216.0
+current-version: 216.4
 compatibility-version: 9.0
 exports:         
   - archs:           [ i386, x86_64, x86_64h ]

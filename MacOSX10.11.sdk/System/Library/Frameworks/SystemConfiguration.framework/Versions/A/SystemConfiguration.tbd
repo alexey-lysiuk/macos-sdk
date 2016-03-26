@@ -2,7 +2,7 @@
 archs:           [ i386, x86_64 ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration
-current-version: 801.1.1
+current-version: 802.20.7
 exports:         
   - archs:           [ i386, x86_64 ]
     symbols:         [ _CNCopySupportedInterfaces, _CNMarkPortalOffline, 

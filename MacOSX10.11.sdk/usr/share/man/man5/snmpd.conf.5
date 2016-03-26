@@ -1,4 +1,4 @@
-.TH SNMPD.CONF 5 "30 Jun 2010" V5.6 "Net-SNMP"
+.TH SNMPD.CONF 5 "30 Jun 2010" V5.6.2.1 "Net-SNMP"
 .SH NAME
 snmpd.conf - configuration file for the Net-SNMP SNMP agent
 .SH DESCRIPTION
@@ -539,6 +539,18 @@ can be used to provide appropriate type and speed settings for
 interfaces where the agent fails to determine this information correctly.
 TYPE is a type value as given in the IANAifType-MIB,
 and can be specified numerically or by name (assuming this MIB is loaded).
+.IP "interface_fadeout TIMEOUT"
+specifies, for how long the agent keeps entries in \fCifTable\fR after
+appropriate interfaces have been removed from system (typically various ppp,
+tap or tun interfaces). Timeout value is in seconds. Default value is 300
+(=5 minutes).
+.IP "interface_replace_old yes"
+can be used to remove already existing entries in \fCifTable\fR when an
+interface with the same name appears on the system. E.g. when ppp0 interface
+is removed, it is still listed in the table for \fIinterface_fadeout\fR
+seconds. This option ensures, that the old ppp0 interface is removed even
+before the \fIinterface_fadeout\fR timeour when new ppp0 (with different
+\fCifIndex\fR) shows up.
 .SS Host Resources Group
 This requires that the agent was built with support for the
 \fIhost\fR module (which is now included as part of the default build 
@@ -667,6 +679,28 @@ Disks mounted after the agent has started will not be monitored.
 .PP
 If neither any \fIdisk\fR directives or \fIincludeAllDisks\fR are defined,
 then walking the \fCdskTable\fR will fail (\fInoSuchObject\fI).
+.SS Disk I/O Monitoring
+This requires that the agent was built with support for the
+\fIucd-snmp/diskio\fR module (which is not included as part of the
+default build configuration).
+.PP
+By default, all block devices known to the operating system are
+included in the diskIOTable. On platforms other than Linux, this module
+has no configuration directives.
+.PP
+On Linux systems, it is possible to exclude several classes of block
+devices from the diskIOTable in order to avoid cluttering the table with
+useless zero statistics for pseudo-devices that often are not in use but
+are configured by default to exist in most recent Linux distributions.
+.IP "diskio_exclude_fd yes"
+Excludes all Linux floppy disk block devices, whose names start with "fd",
+e.g. "fd0"
+.IP "diskio_exclude_loop yes"
+Excludes all Linux loopback block devices, whose names start with "loop",
+e.g. "loop0"
+.IP "diskio_exclude_ram yes"
+Excludes all LInux ramdisk block devices, whose names start with "ram", e.g.
+"ram0"
 .SS System Load Monitoring
 This requires that the agent was built with support for either the
 \fIucd-snmp/loadave\fR module or the \fIucd-snmp/memory\fR module
@@ -1568,10 +1602,13 @@ spit out some useful debugging information.  First off, please read
 the snmpd manual page on the -D flag.  Then the following
 configuration snmpd.conf token, combined with the -D flag, can produce
 useful output:
-.IP "injectHandler HANDLER modulename"
+.IP "injectHandler HANDLER modulename [beforeThis]"
 This will insert new handlers into the section of the mib tree
-referenced by "modulename".  The types of handlers available for
-insertion are:
+referenced by "modulename".  If "beforeThis" is specified then the
+module will be injected before the named module.  This is useful for
+getting a handler into the exact right position in the chain.
+.IP
+The types of handlers available for insertion are:
 .RS
 .IP stash_cache
 Caches information returned from the lower level.  This
@@ -1585,7 +1622,7 @@ support, which is only a few mib tables.  To use it,
 you need to make sure to install it before the
 table_iterator point in the chain, so to do this:
 
-                  \fCinjectHandler stash_cache NAME table_iterator\fR
+  \fCinjectHandler stash_cache NAME table_iterator\fR
 
 If you want a table to play with, try walking the
 \fCnsModuleTable\fR with and without this injected.

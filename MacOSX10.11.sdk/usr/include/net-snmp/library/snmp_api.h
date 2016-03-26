@@ -115,10 +115,6 @@ typedef struct request_list {
 #endif
 #define SNMP_DEFAULT_PRIV_PROTOLEN  USM_LENGTH_OID_TRANSFORM
 
-/* Moved to output_api.h
-    NETSNMP_IMPORT const char *snmp_api_errstring(int);
-    NETSNMP_IMPORT void     snmp_perror(const char *);
- */
     NETSNMP_IMPORT void     snmp_set_detail(const char *);
 
 #define SNMP_MAX_MSG_SIZE          1472 /* ethernet MTU minus IP/UDP header */
@@ -143,15 +139,22 @@ typedef struct request_list {
     /*
      * to determine type of Report from varbind_list 
      */
-#define REPORT_STATS_LEN 9
+#define REPORT_STATS_LEN  9	/* Length of prefix for MPD/USM report statistic objects */
+#define REPORT_STATS_LEN2 8	/* Length of prefix for Target report statistic objects */
+/* From SNMP-MPD-MIB */
 #define REPORT_snmpUnknownSecurityModels_NUM 1
-#define REPORT_snmpInvalidMsgs_NUM 2
+#define REPORT_snmpInvalidMsgs_NUM           2
+#define REPORT_snmpUnknownPDUHandlers_NUM    3
+/* From SNMP-USER-BASED-SM-MIB */
 #define REPORT_usmStatsUnsupportedSecLevels_NUM 1
 #define REPORT_usmStatsNotInTimeWindows_NUM 2
 #define REPORT_usmStatsUnknownUserNames_NUM 3
 #define REPORT_usmStatsUnknownEngineIDs_NUM 4
-#define REPORT_usmStatsWrongDigests_NUM 5
+#define REPORT_usmStatsWrongDigests_NUM     5
 #define REPORT_usmStatsDecryptionErrors_NUM 6
+/* From SNMP-TARGET-MIB */
+#define REPORT_snmpUnavailableContexts_NUM  4
+#define REPORT_snmpUnknownContexts_NUM      5
 
 #define SNMP_DETAIL_SIZE        512
 
@@ -459,19 +462,10 @@ struct netsnmp_transport_s;
     int             snmp_get_do_debugging(void);
 
 
-/* Moved to output_api.h
-    NETSNMP_IMPORT
-    void            snmp_sess_error(void *, int *, int *, char **);
- */
     NETSNMP_IMPORT
     void            netsnmp_sess_log_error(int priority,
                                            const char *prog_string,
                                            netsnmp_session * ss);
-/* Moved to output_api.h
-    NETSNMP_IMPORT
-    void            snmp_sess_perror(const char *prog_string,
-                                     netsnmp_session * ss);
- */
     const char *    snmp_pdu_type(int type);
 
     /*
@@ -490,10 +484,10 @@ struct netsnmp_transport_s;
 
     NETSNMP_IMPORT int
     netsnmp_sess_config_and_open_transport(netsnmp_session *in_session,
-                                           netsnmp_transport *transport);
+                                           struct netsnmp_transport_s *transport);
 
     /*
-     * EXPERIMENTAL API EXTENSIONS ------------------------------------------ 
+     * EXTENDED SESSION API ------------------------------------------ 
      * 
      * snmp_sess_add_ex, snmp_sess_add, snmp_add 
      * 

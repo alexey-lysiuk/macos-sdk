@@ -2,7 +2,7 @@
 archs:           [ x86_64 ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/VectorKit.framework/Versions/A/VectorKit
-current-version: 1156.1.6
+current-version: 1156.1.14
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _GEOPDCameraPathFrameFromVKCameraFrame, _GEOTileKeyFromVKPoint, 

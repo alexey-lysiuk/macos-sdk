@@ -9,5 +9,6 @@ exports:
                        _kSDSeedProgramOSXPublicSeedString, _kSUPrefOverridesPath, 
                        _kSeedEnrollmentCookiePath, _kSeedEnrollmentCookieProgramKey, 
                        _kSeedProgramPreferenceAppID, _kSeedProgramPreferenceKey ]
-    objc-classes:    [ _SDCatalogUtilities, _SDSeedProgramManager, _SDSeedProgramMigrator ]
+    objc-classes:    [ _SDBuildInfo, _SDCatalogUtilities, _SDSeedProgramManager, 
+                       _SDSeedProgramMigrator ]
 ...

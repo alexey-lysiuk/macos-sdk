@@ -54,7 +54,7 @@ extern "C" {
  
  - LZ4 is an extremely high-performance compressor.  The open source version
    is already one of the fastest compressors of which we are aware, and we
-   have optimzied it still further in our implementation.  The encoded format
+   have optimized it still further in our implementation.  The encoded format
    we produce and consume is compatible with the open source version, except
    that we add a very simple frame to the raw stream to allow some additional
    validation and functionality.

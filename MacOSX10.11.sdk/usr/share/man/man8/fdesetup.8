@@ -1,4 +1,4 @@
-.Dd June 19, 2015
+.Dd October 17, 2015
 .Dt fdesetup 8 
 .Os MacOSX
 .Sh NAME
@@ -28,7 +28,7 @@ With the
 .Sy -keychain
 option, an institutional recovery key can be set up by placing an X.509 asymmetric public certificate in the /Library/Keychains/FileVaultMaster.keychain file. \fBsecurity create-filevaultmaster-keychain\fP can be used to create the keychain. Alternatively a certificate can be passed in by using the
 .Sy -certificate 
-option and entering the path to the DER encoded certificate file. In this case the FileVaultMaster.keychain file will be created using the certificate. With your .cer file, the optional certificate data can be obtained using the base64 tool.  For example: 'base64 /path/to/mycert.cer > /mynewdata.txt', at which point you would copy the data string contained in the text file and place it into the Certificate <data></data> value area of the property list.
+option and entering the path to the DER encoded certificate file. In this case the FileVaultMaster.keychain file will be created using the certificate. With your .cer file, the optional certificate data can be obtained using the base64 tool.  For example: 'base64 /path/to/mycert.cer > /mynewdata.txt', at which point you would copy the data string contained in the text file and place it into the Certificate <data></data> value area of the property list.  The certificate should be self signed, and the common name must be "FileVault Recovery Key"
 .Pp
 Because the user password may not be immediately available, read the DEFERRED ENABLEMENT section below for information on how to delay enabling FileVault until the user logs in or out.
 .Pp
@@ -42,7 +42,15 @@ The
 .Sy list
 command will display the short names and UUIDs of enabled FileVault users. You can use the
 .Sy -extended
-option to display a full list of existing user types along with some additional information.  This information will include if the recovery key was escrowed, though note that it will show "Yes" even if the information has not yet been successfully sent to the server.  The
+option to display a full list of existing user types along with some additional information.  This information will include if the recovery key was escrowed, though note that it will show "Yes" even if the information has not yet been successfully sent to the server.  You can also use the
+.Sy -offline
+option to get a list of currently locked and offline FileVault volumes.  You can use this information as part of the
+.Sy haspersonalrecoverykey
+or
+.Sy hasinstitutionalrecoverykey
+commands.
+.Pp
+The
 .Sy remove
 command will remove a user from FileVault given either the user name or the FileVault UUID.
 .Pp
@@ -56,7 +64,11 @@ Use the
 .Sy haspersonalrecoverykey
 or
 .Sy hasinstitutionalrecoverykey
-commands to see if FileVault has a personal or institutional recovery key set up.  If FileVault is active and the key is set, these commands will return "true", otherwise they will return "false".  Note that "false" may also be returned if any error occurs, or if FileVault is not yet fully enabled.
+commands to see if FileVault has a personal or institutional recovery key set up.  If FileVault is active and the key is set, by default these commands will return "true" or "false".  Note that "false" may also be returned if any error occurs, or if FileVault is not yet fully enabled.   You can use the
+.Sy device
+option to specify either a mount path (e.g. /Volumes/myvolume), a bsd name identifier (e.g. disk0), or Logical Volume or Logical Volume Family UUID (obtained using either the
+.Sy list
+command, or using diskutil(8)).   If you specify a device parameter and it finds the institutional recovery key, a hex representation of the public key hash will be returned in lieu of "true".
 .Pp
 If a user currently has the system unlocked using the recovery key, the
 .Sy usingrecoverykey
@@ -109,9 +121,10 @@ Shows abbreviated help
 .\"             -- list --
 .It Sy list
 .Op Sy -extended
+.Op Fl -offline
 .Op Sy -verbose
 .br
-List enabled users.
+List enabled users, or locked volumes.
 .Pp
 .\"             -- enable --
 .It Sy enable
@@ -224,15 +237,17 @@ Returns status 0 if FileVault is enabled along with the string "true".  Will ret
 .Pp
 .\"             -- haspersonalrecoverykey --
 .It Sy haspersonalrecoverykey
+.Op Fl device
 .Op Fl verbose
 .br
 Returns the string "true" if FileVault contains a personal recovery key.
 .Pp
 .\"             -- hasinstitutionalrecoverykey --
 .It Sy hasinstitutionalrecoverykey
+.Op Fl device
 .Op Fl verbose
 .br
-Returns the string "true" if FileVault contains an institutional recovery key.
+By default, this will return the string "true" if FileVault contains an institutional recovery key.   On volumes specified using the --device option, this will return the hex representation of the public key hash.   This will return "false" if there is no institutional recovery key installed.
 .Pp
 .\"             -- usingrecoverykey --
 .It Sy usingrecoverykey
@@ -298,7 +313,7 @@ Outputs the recovery key and additional system information to stdout in a plist 
 Use the institutional recovery key stored in /Library/Keychains/FileVaultMaster.keychain.
 .Pp
 .It Fl certificate Ar path_to_cer_file
-Use the certificate data located at the path. Any existing /Library/Keychains/FileVaultMaster.keychain file will be moved away with the location logged in the system log.  Do not set this option if your certificate data is located in the input plist information.
+Use the certificate data located at the path. Any existing /Library/Keychains/FileVaultMaster.keychain file will be moved away with the location logged in the system log.  Do not set this option if your certificate data is located in the input plist information.   The common name of the certificate must be "FileVault Recovery Key"
 .Pp
 .It Fl key Ar path_to_keychain_file
 Use the keychain file located at the path containing the private key for the currently installed institiutional recovery key to unlock and authenticate FileVault.
@@ -316,6 +331,12 @@ When using the -defer option, the default action will be to prompt the designate
 .Pp
 .It Fl extended
 Return extended output information for certain commands.  Currently only used for the list command.
+.Pp
+.It Fl offline
+Display the current offline and locked FileVault volumes. Currently only used for the list command.
+.Pp
+.It Fl device Ar bsd_name_or_mount_path_or_lvf_or_lv_UUID
+Device location to be applied for the command.  This can be in the form "disk1", "/Volumes/MyVolume" or a UUID for the Logical Volume or Logical Volume Family of a volume.
 .El
 .Sh DEFERRED ENABLEMENT
 .Pp
@@ -323,7 +344,7 @@ The
 .Sy -defer
 option can be used with the
 .Sy enable
-command option to delay enabling FileVault until after the current (or next) user logs in or out, thus avoiding the need to enter a password when the tool is run. Depending on the options set, the user will either be prompted at logout time for the password, or the user will be prompted to enable FileVault when they log in. If the volume is not already a CoreStorage volume, the system may need to be restarted to start the encryption process. Dialogs are automatically dismissed and canceled after 60 seconds if no interaction occurs.
+command option to delay enabling FileVault until after the current (or next) local user logs in or out, thus avoiding the need to enter a password when the tool is run. Depending on the options set, the user will either be prompted at logout time for the password, or the user will be prompted to enable FileVault when they log in. If the volume is not already a CoreStorage volume, the system may need to be restarted to start the encryption process. Dialogs are automatically dismissed and canceled after 60 seconds if no interaction occurs.
 .Pp
 The
 .Sy -defer
@@ -351,7 +372,9 @@ and
 .Pp
 Note that if the designated user is being prompted at logout to enable FileVault, and doesn't complete the setup, FileVault will not be enabled, but the configuration will remain and be used again for the designated user's next logout (or login if the -forceatlogin option is enabled), thereby 'nagging' the user to enable FileVault.   When using the -forceatlogin option, the user is given a certain number of attempts to enable FileVault, in which they can cancel the operation and continue to use their system without FileVault.  When the number of cancel attempts is reached, the user will not be able to log into their account until FileVault is enabled.    The current value of the user's remaining attempts can be viewed using the
 .Sy showdeferralinfo
-command.   Special values for the -forceatlogin option include setting it to '0' to force the enablement immediately at next login, a '-1' disables the check entirely, and a special value of '9999' means that the user will never be required to enable FileVault.   If a personal recovery key is used, the user should probably be warned ahead of time that, upon successful enablement, they will need to write down and keep in a safe place the FileVault recovery key shown on the screen.
+command.   Special values for the -forceatlogin option include setting it to '0' to force the enablement immediately at next login, a '-1' disables the check entirely, and a special value of '9999' means that the user will never be required to enable FileVault, though it will continually prompt the user until FileVault is enabled.   If a personal recovery key is used, the user should probably be warned ahead of time that, upon successful enablement, they will need to write down and keep in a safe place the FileVault recovery key shown on the screen.
+.Pp
+The designated user must be a local user (or a mobile account user).
 .Pp
 To remove an active deferred enablement configuration, you can use the
 .Sy disable
@@ -482,6 +505,8 @@ Unable to change recovery key.
 Unable to remove recovery key.
 .It 28
 FileVault is either off, busy, or the volume is locked.
+.It 29
+Did not find FileVault information at the specified location.
 .It 99
 Internal error.
 .El

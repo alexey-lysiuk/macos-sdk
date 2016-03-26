@@ -400,20 +400,33 @@ class IOSCSIProtocolInterface : public IOService
 	
 public:
 	
+	/*! @function init
+	@abstract Initializes generic IOService data structures (expansion data, etc).
+	*/
+	virtual bool init( OSDictionary * dictionary = 0 ) APPLE_KEXT_OVERRIDE;
+
 	/*!
 	@function start
 	@abstract During an IOService object's instantiation, starts the IOService object that has been selected to run on the provider.
 	@discussion See IOService.h for details.
 	@result <code>true</code> if the start was successful; <code>false</code> otherwise (which will cause the instance to be detached and usually freed).
 	*/
-	virtual bool	start ( IOService * provider );
+	virtual bool	start ( IOService * provider ) APPLE_KEXT_OVERRIDE;
 	
+	/*!
+	@function stop
+	@abstract During an IOService termination, the stop method is called in its clients before they are detached & it is destroyed.
+	@discussion The termination process for an IOService (the provider) will call stop in each of its clients, after they have closed the provider if they had it open, or immediately on termination.
+	*/
+
+	virtual void	stop ( IOService * provider ) APPLE_KEXT_OVERRIDE;
+
 	/*!
 	@function free
 	@abstract Called to release all resources held by the object.
 	@discussion Release all resources held by the object, then call super::free().  
 	*/	
-	virtual void	free ( void );
+	virtual void	free ( void ) APPLE_KEXT_OVERRIDE;
 
 	/*!
 	@function willTerminate
@@ -423,7 +436,7 @@ public:
 	@param options Options originally passed to terminate().
 	@result <code>true</code>.
 	*/
-	virtual bool	willTerminate ( IOService * provider, IOOptionBits options );
+	virtual bool	willTerminate ( IOService * provider, IOOptionBits options ) APPLE_KEXT_OVERRIDE;
 
 	/*!
 	@function GetUserClientExclusivityState
@@ -457,7 +470,7 @@ public:
 	@param flags Flags that describe the character of "domain power"; they represent the <code>outputPowerCharacter</code> field of a state in the power domain's power state array. 
 	@result A state number. 
 	*/
-	virtual unsigned long	initialPowerStateForDomainState ( IOPMPowerFlags flags );
+	virtual unsigned long	initialPowerStateForDomainState ( IOPMPowerFlags flags ) APPLE_KEXT_OVERRIDE;
 	
 	/*!
 	@function setPowerState
@@ -473,7 +486,7 @@ public:
 	and the "policy implementor" for the device.
 	@result See IOService.h for details.
 	*/
-	virtual IOReturn 	setPowerState ( unsigned long powerStateOrdinal, IOService * whichDevice );
+	virtual IOReturn 	setPowerState ( unsigned long powerStateOrdinal, IOService * whichDevice ) APPLE_KEXT_OVERRIDE;
 	
 	/*!
 	@function IsPowerManagementIntialized
@@ -595,7 +608,7 @@ protected:
 	Subclasses may override this method, but should call super::finalize().
     @result <code>true</code>.
 	*/
-	virtual bool		finalize ( IOOptionBits options );
+	virtual bool		finalize ( IOOptionBits options ) APPLE_KEXT_OVERRIDE;
 	
 	/*!
 	@function sHandleSetPowerState

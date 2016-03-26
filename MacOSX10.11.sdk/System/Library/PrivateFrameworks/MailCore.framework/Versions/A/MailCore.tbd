@@ -2,7 +2,7 @@
 archs:           [ x86_64 ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MailCore.framework/Versions/A/MailCore
-current-version: 3092.0
+current-version: 3111.0
 exports:         
   - archs:           [ x86_64 ]
     allowed-clients: [ CoreSuggestionsTests, DebugBundle, EmailAuthenticationPlugin, 
@@ -149,8 +149,8 @@ exports:
                        _MCPowerManagerTracerIdentifier, _MCProgressKeyWorkScheduler, 
                        _MCProgressUserInfoKeyConnectingAccount, _MCProgressUserInfoKeyFoundMessages, 
                        _MCProgressUserInfoKeyFoundNewUnreadMessageInInbox, 
-                       _MCProgressUserInfoKeySizeInBytes, _MCQuoteIndent, 
-                       _MCQuoteLevelAttributeName, _MCRemoteDraftStorageDisabledTracerIdentifier, 
+                       _MCProgressUserInfoKeySizeInBytes, _MCProgressUserInfoKeyUserInitiated, 
+                       _MCQuoteIndent, _MCQuoteLevelAttributeName, _MCRemoteDraftStorageDisabledTracerIdentifier, 
                        _MCResetDebugLogLevel, _MCResetDebugLogs, _MCSaslMechanismAppleToken, 
                        _MCSaslMechanismCramMd5, _MCSaslMechanismExternal, 
                        _MCSaslMechanismGSSAPI, _MCSaslMechanismNTLanManager, 
@@ -172,11 +172,11 @@ exports:
                        _MCStringKeyHostUnreachableDefaultPorts, _MCStringKeyInsecurePasswordDescription, 
                        _MCStringKeyInsecurePasswordDialogTitle, _MCStringKeyNoSubject, 
                        _MCStringKeyOpeningMailbox, _MCStringKeyPOPLoggingInFormat, 
-                       _MCStringKeyPluralInActivity, _MCStringKeyRebuildingMailboxFormat, 
-                       _MCStringKeyReplySubjectPrefix, _MCStringKeySSLAlertFormat, 
-                       _MCStringKeySSLCertExpired, _MCStringKeySSLCertNotYetValid, 
-                       _MCStringKeySSLCertUntrusted, _MCStringKeySSLConnectionFailureFormat, 
-                       _MCStringKeySSLConnectionFailureFormatDefaultPorts, 
+                       _MCStringKeyPluralInActivity, _MCStringKeyProgressNameDownloadingMessages, 
+                       _MCStringKeyRebuildingMailboxFormat, _MCStringKeyReplySubjectPrefix, 
+                       _MCStringKeySSLAlertFormat, _MCStringKeySSLCertExpired, 
+                       _MCStringKeySSLCertNotYetValid, _MCStringKeySSLCertUntrusted, 
+                       _MCStringKeySSLConnectionFailureFormat, _MCStringKeySSLConnectionFailureFormatDefaultPorts, 
                        _MCStringKeySSLGenericConnectError, _MCStringKeySSLUnknownRootCert, 
                        _MCStringKeySingleInActivity, _MCStringKeyTLSNotSupportedFormat, 
                        _MCStringKeyTransferringMessages, _MCSubjectAttributeName, 
@@ -192,9 +192,9 @@ exports:
                        _createInternetMessageDateFormatter, _mf_stat, _sCommandSpecTable, 
                        _sStringKeyMimeAttachmentFilename ]
     objc-classes:    [ _MCActivity, _MCActivityAggregate, _MCActivityAggregator, 
-                       _MCActivityMonitor, _MCAddressManager, _MCAggregateActivity, 
-                       _MCApopAuthScheme, _MCAppleTokenAuthScheme, _MCArchiveFileWrapper, 
-                       _MCAttachment, _MCAttachmentWrappingTextAttachment, 
+                       _MCActivityMonitor, _MCActivityUpdater, _MCAddressManager, 
+                       _MCAggregateActivity, _MCApopAuthScheme, _MCAppleTokenAuthScheme, 
+                       _MCArchiveFileWrapper, _MCAttachment, _MCAttachmentWrappingTextAttachment, 
                        _MCAuthScheme, _MCByteSet, _MCByteStatusProgressEntry, 
                        _MCCIDURLProtocol, _MCCheckingForMailProgressEntry, 
                        _MCConnectingProgressEntry, _MCConnection, _MCContactsManager, 
@@ -211,7 +211,8 @@ exports:
                        _MCMimeBody, _MCMimeCharset, _MCMimeDataEncoding, 
                        _MCMimeDecodeContext, _MCMimeHeaderScanContext, 
                        _MCMimePart, _MCMonitoredInvocation, _MCMonitoredOperation, 
-                       _MCMutableByteSet, _MCMutableMessageHeaders, _MCNetworkController, 
+                       _MCMovingMessagesProgressEntry, _MCMutableByteSet, 
+                       _MCMutableMessageHeaders, _MCNetworkController, 
                        _MCNtlmAuthScheme, _MCOutgoingMessage, _MCParsedMessage, 
                        _MCPlaceholderArchiveFileWrapper, _MCPlaceholderFileWrapper, 
                        _MCPlainAuthScheme, _MCPowerSourceManager, _MCPriorityInvocation, 
@@ -223,7 +224,8 @@ exports:
                        _MCSocket, _MCStringRenderContext, _MCSubdata, _MCSubjectParser, 
                        _MCTask, _MCTaskHandler, _MCTaskHandlerOperation, 
                        _MCTaskList, _MCTaskManager, _MCTaskOperation, _MCThrowingInvocationOperation, 
-                       _MCURLMatch, _MCURLifier, _MCWorkerThread, _MailCoreFramework, 
+                       _MCTransferringMessagesProgressEntry, _MCURLMatch, 
+                       _MCURLifier, _MCWorkerThread, _MailCoreFramework, 
                        __FormatFlowedWriter, __MCActivityAggregateArrayController, 
                        __MCActivityMonitorMultiTarget, __MCCompositeImageRep, 
                        __MCConnectionAttempt, __MCDisplayNameInfoCacheItem, 

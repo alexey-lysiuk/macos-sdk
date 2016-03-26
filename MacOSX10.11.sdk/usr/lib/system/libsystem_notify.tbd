@@ -2,7 +2,7 @@
 archs:           [ i386, x86_64 ]
 platform:        macosx
 install-name:    /usr/lib/system/libsystem_notify.dylib
-current-version: 149.0
+current-version: 150.20.3
 exports:         
   - archs:           [ i386, x86_64 ]
     allowed-clients: [ System ]

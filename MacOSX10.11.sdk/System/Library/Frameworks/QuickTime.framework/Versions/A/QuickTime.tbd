@@ -2,7 +2,7 @@
 archs:           [ i386 ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/QuickTime.framework/Versions/A/QuickTime
-current-version: 2937.0
+current-version: 2943.0
 exports:         
   - archs:           [ i386 ]
     symbols:         [ _AbortPrePrerollMovie, _AddCallBackToTimeBase, _AddClonedTrackToMovie, 
@@ -1138,7 +1138,8 @@ exports:
                        _QTFileExtensionToFileType, _QTFillOutBasicDescriptionFieldsCompletely, 
                        _QTFindChildByID, _QTFindChildByIndex, _QTFindFolder, 
                        _QTFrameGrayRect, _QTGetAccessKeys, _QTGetAtomDataPtr, 
-                       _QTGetAtomParent, _QTGetAtomTypeAndID, _QTGetAudioChannelCountFromLayout, 
+                       _QTGetAtomDataPtrWithSizeCheck, _QTGetAtomParent, 
+                       _QTGetAtomTypeAndID, _QTGetAudioChannelCountFromLayout, 
                        _QTGetAudioPacketInfo, _QTGetBuyProURL, _QTGetComponentProperty, 
                        _QTGetComponentPropertyInfo, _QTGetConnectionSpeedFromPrefs, 
                        _QTGetCurrentMessageTarget, _QTGetDataHandlerDirectoryDataReference, 

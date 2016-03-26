@@ -1,6 +1,6 @@
 /*
  * table_container.h
- * $Id: table_container.h 18463 2010-04-07 10:40:50Z rstory $
+ * $Id$
  */
 #ifndef _TABLE_CONTAINER_HANDLER_H_
 #define _TABLE_CONTAINER_HANDLER_H_

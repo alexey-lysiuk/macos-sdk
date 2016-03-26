@@ -2,7 +2,7 @@
 archs:           [ i386, x86_64 ]
 platform:        macosx
 install-name:    /usr/lib/libSystem.B.dylib
-current-version: 1225.1.1
+current-version: 1226.10.1
 exports:         
   - archs:           [ i386, x86_64 ]
     re-exports:      [ /usr/lib/system/libcache.dylib, /usr/lib/system/libcommonCrypto.dylib, 

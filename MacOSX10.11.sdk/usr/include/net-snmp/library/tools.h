@@ -8,6 +8,10 @@
 #ifndef _TOOLS_H
 #define _TOOLS_H
 
+#ifdef HAVE_INTTYPES_H
+#include <inttypes.h> /* uintptr_t */
+#endif
+
 #ifdef __cplusplus
 extern          "C" {
 #endif
@@ -73,6 +77,8 @@ extern          "C" {
 
 
 /**
+ * @def NETSNMP_REMOVE_CONST(t, e)
+ *
  * Cast away constness without that gcc -Wcast-qual prints a compiler warning,
  * similar to const_cast<> in C++.
  *
@@ -81,7 +87,7 @@ extern          "C" {
  */
 #if defined(__GNUC__)
 #define NETSNMP_REMOVE_CONST(t, e)                                      \
-    (__extension__ ({ const t tmp = e; (t)(unsigned long)tmp; }))
+    (__extension__ ({ const t tmp = (e); (t)(uintptr_t)tmp; }))
 #else
 #define NETSNMP_REMOVE_CONST(t, e) ((t)(uintptr_t)(e))
 #endif
@@ -107,7 +113,7 @@ extern          "C" {
  *  Expands to string with value of the s. 
  *  If s is macro, the resulting string is value of the macro.
  *  Example: 
- *   #define TEST 1234
+ *   \#define TEST 1234
  *   SNMP_MACRO_VAL_TO_STR(TEST) expands to "1234"
  *   SNMP_MACRO_VAL_TO_STR(TEST+1) expands to "1234+1"
  */
@@ -277,12 +283,16 @@ extern          "C" {
     NETSNMP_IMPORT
     u_long          uatime_hdiff(const_marker_t first, const_marker_t second);      /* 1/100th sec */
     NETSNMP_IMPORT
-    int             atime_ready(const_marker_t pm, int deltaT);
-    int             uatime_ready(const_marker_t pm, unsigned int deltaT);
+    int             atime_ready(const_marker_t pm, int delta_ms);
+    int             uatime_ready(const_marker_t pm, unsigned int delta_ms);
 
     int             marker_tticks(const_marker_t pm);
     int             timeval_tticks(const struct timeval *tv);
+    NETSNMP_IMPORT
     char            *netsnmp_getenv(const char *name);
+    NETSNMP_IMPORT
+    int             netsnmp_setenv(const char *envname, const char *envval,
+                                   int overwrite);
 
     int             netsnmp_addrstr_hton(char *ptr, size_t len);
 

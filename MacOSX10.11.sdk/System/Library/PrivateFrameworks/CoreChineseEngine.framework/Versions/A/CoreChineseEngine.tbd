@@ -2,7 +2,7 @@
 archs:           [ x86_64 ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreChineseEngine.framework/Versions/A/CoreChineseEngine
-current-version: 296.0
+current-version: 296.3
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CCEGetLionUserDictionariesMigrated, _CCEGetPidForApplication, 
@@ -88,6 +88,7 @@ exports:
                        _TCIMWubiPreferencesModule, _TCIMZhuyinPreferencesModule ]
     objc-ivars:      [ _CIMAddressBookReader._cachedEntries, _CIMAddressBookReader._inputMode, 
                        _CIMBaseEngine._candidateCommitHistory, _CIMBaseEngine._candidateSorter, 
+                       _CIMBaseEngine._candidateWindowCurrentlyShownNextToInline, 
                        _CIMBaseEngine._candidates, _CIMBaseEngine._charCode, 
                        _CIMBaseEngine._client, _CIMBaseEngine._currentCandidatesHaveExtendedEmoji, 
                        _CIMBaseEngine._currentlySelectedCandidate, _CIMBaseEngine._facemarksCandidateWindowTriggered, 

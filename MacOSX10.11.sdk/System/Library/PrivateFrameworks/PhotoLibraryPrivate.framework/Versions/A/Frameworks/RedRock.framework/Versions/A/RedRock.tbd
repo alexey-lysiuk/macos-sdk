@@ -2,7 +2,7 @@
 archs:           [ x86_64 ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoLibraryPrivate.framework/Versions/A/Frameworks/RedRock.framework/Versions/A/RedRock
-current-version: 335.4
+current-version: 350.22
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _BackgroundServiceNameForType, _DGSpotPatchInitialAngleValue, 
@@ -57,9 +57,10 @@ exports:
                        _RKImportSuppressPhotoStream, _RKImportTaskName, 
                        _RKImportThumbnailSize, _RKImportType, _RKImportUnsupportedFiles, 
                        _RKImportUnsupportedFilesDestination, _RKImportUnsupportedImageCount, 
-                       _RKImportUseEmbeddedJpeg, _RKImporterAppleScriptActionsKey, 
-                       _RKImporterDestinationNewProjectName, _RKImporterDestinationProjectUuid, 
-                       _RKImporterJobNumber, _RKImporterShouldDeleteLastImportAlbumContentsKey, 
+                       _RKImportUseEmbeddedJpeg, _RKImportVideoComplimentMediaGroupIds, 
+                       _RKImporterAppleScriptActionsKey, _RKImporterDestinationNewProjectName, 
+                       _RKImporterDestinationProjectUuid, _RKImporterJobNumber, 
+                       _RKImporterShouldDeleteLastImportAlbumContentsKey, 
                        _RKInvalidArgumentException, _RKLibraryQueriesFolderName, 
                        _RKLibraryiPodCacheFolderName, _RKLogAlways, _RKMicroSize, 
                        _RKMiniSize, _RKRedRockErrorDomain, _RKRepairLibraryOperationKey, 
@@ -169,9 +170,9 @@ exports:
                        _RKDRDataProducer, _RKDatabase, _RKDelayedExecutor, 
                        _RKDelayedExecutorEventData, _RKDescriptionUtilities, 
                        _RKDeviceThumbnailRequest, _RKDuplicateChecker, 
-                       _RKExportContext, _RKExportMetadataBuilder, _RKExportSettings, 
-                       _RKExporter, _RKExporterForMasters, _RKExporterForVersions, 
-                       _RKFaceChangesHandler, _RKFaceCoordinatesConverter, 
+                       _RKDuplicateInfo, _RKExportContext, _RKExportMetadataBuilder, 
+                       _RKExportSettings, _RKExporter, _RKExporterForMasters, 
+                       _RKExporterForVersions, _RKFaceChangesHandler, _RKFaceCoordinatesConverter, 
                        _RKFaceDetectionImageLoader, _RKFaceDetectionJob, 
                        _RKFaceIdentityCoordinatesConverter, _RKFacesAbstractCleanupWorker, 
                        _RKFacesApiTracingProxy, _RKFacesCleanupService, 

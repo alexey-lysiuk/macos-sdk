@@ -20,7 +20,7 @@
 .\" Use is subject to license terms specified in the COPYING file
 .\" distributed with the Net-SNMP package.
 .\" ******************************************************************/
-.TH SNMPTABLE 1 "25 Jul 2003" V5.6 "Net-SNMP"
+.TH SNMPTABLE 1 "06 Sep 2003" V5.6.2.1 "Net-SNMP"
 .SH NAME
 snmptable - retrieve an SNMP table and display it in tabular form
 .SH SYNOPSIS
@@ -108,6 +108,12 @@ characters.  If
 is less than the length of the contents of
 a single column, then that single column will still be printed.
 .PP
+Note that
+.B snmptable
+REQUIRES  an argument specifying the agent to query
+and exactly one OID argument, as described in the 
+.I snmpcmd(1)
+manual page.  This OID \fBmust\fP be that of a MIB table object.
 .SH EXAMPLES
 $ snmptable -v 2c -c public localhost at.atTable
 

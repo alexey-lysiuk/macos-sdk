@@ -101,52 +101,52 @@ protected:
 	
 	virtual bool		SendSCSICommand ( 	SCSITaskIdentifier 		request, 
 											SCSIServiceResponse * 	serviceResponse,
-											SCSITaskStatus * 		taskStatus );
+											SCSITaskStatus * 		taskStatus ) APPLE_KEXT_OVERRIDE;
 	
-	virtual SCSIServiceResponse	AbortSCSICommand ( SCSITaskIdentifier request );
+	virtual SCSIServiceResponse	AbortSCSICommand ( SCSITaskIdentifier request ) APPLE_KEXT_OVERRIDE;
 	
 	// The IsProtocolServiceSupported will return true if the specified
 	// feature is supported by the protocol layer.  If the service has a value that must be
 	// returned, it will be returned in the serviceValue output parameter.
-	virtual bool	IsProtocolServiceSupported ( SCSIProtocolFeature feature, void * serviceValue );
+	virtual bool	IsProtocolServiceSupported ( SCSIProtocolFeature feature, void * serviceValue ) APPLE_KEXT_OVERRIDE;
 	
-	virtual bool	HandleProtocolServiceFeature ( SCSIProtocolFeature feature, void * serviceValue );
+	virtual bool	HandleProtocolServiceFeature ( SCSIProtocolFeature feature, void * serviceValue ) APPLE_KEXT_OVERRIDE;
 	
 public:
 	
-	bool				init	( OSDictionary * propTable );
-	virtual bool		start	( IOService * provider );
-	virtual void		free	( void );
+	bool				init	( OSDictionary * propTable ) APPLE_KEXT_OVERRIDE;
+	virtual bool		start	( IOService * provider ) APPLE_KEXT_OVERRIDE;
+	virtual void		free	( void ) APPLE_KEXT_OVERRIDE;
 	
-	virtual IOReturn	message ( UInt32 type, IOService * nub, void * arg );
+	virtual IOReturn	message ( UInt32 type, IOService * nub, void * arg ) APPLE_KEXT_OVERRIDE;
 										
 	virtual bool		matchPropertyTable ( OSDictionary * table,
-											 SInt32 * score );
+											 SInt32 * score ) APPLE_KEXT_OVERRIDE;
 	
 	// The ExecuteCommand method will take a SCSITask object and transport
 	// it across the physical wires to the device
-	virtual	void		ExecuteCommand ( SCSITaskIdentifier	request );
+	virtual	void		ExecuteCommand ( SCSITaskIdentifier	request ) APPLE_KEXT_OVERRIDE;
 	
 	// The Task Management function to allow the SCSI Application Layer client to request
 	// that a specific task be aborted.
-	virtual SCSIServiceResponse		AbortTask ( UInt8 theLogicalUnit, SCSITaggedTaskIdentifier theTag );
+	virtual SCSIServiceResponse		AbortTask ( UInt8 theLogicalUnit, SCSITaggedTaskIdentifier theTag ) APPLE_KEXT_OVERRIDE;
 
 	// The Task Management function to allow the SCSI Application Layer client to request
 	// that a all tasks curerntly in the task set be aborted.
-	virtual SCSIServiceResponse		AbortTaskSet ( UInt8 theLogicalUnit );
+	virtual SCSIServiceResponse		AbortTaskSet ( UInt8 theLogicalUnit ) APPLE_KEXT_OVERRIDE;
 
-	virtual SCSIServiceResponse		ClearACA ( UInt8 theLogicalUnit );
+	virtual SCSIServiceResponse		ClearACA ( UInt8 theLogicalUnit ) APPLE_KEXT_OVERRIDE;
 
-	virtual SCSIServiceResponse		ClearTaskSet ( UInt8 theLogicalUnit );
+	virtual SCSIServiceResponse		ClearTaskSet ( UInt8 theLogicalUnit ) APPLE_KEXT_OVERRIDE;
     
-	virtual SCSIServiceResponse		LogicalUnitReset ( UInt8 theLogicalUnit );
+	virtual SCSIServiceResponse		LogicalUnitReset ( UInt8 theLogicalUnit ) APPLE_KEXT_OVERRIDE;
 
-	virtual SCSIServiceResponse		TargetReset ( void );
+	virtual SCSIServiceResponse		TargetReset ( void ) APPLE_KEXT_OVERRIDE;
 
     // ************* Obsoleted Member Routine ****************
     // The AbortCommand method is replaced by the AbortTask Management function and
     // should no longer be called.
-	virtual SCSIServiceResponse		AbortCommand ( SCSITaskIdentifier abortTask );
+	virtual SCSIServiceResponse		AbortCommand ( SCSITaskIdentifier abortTask ) APPLE_KEXT_OVERRIDE;
 	
 private:
 	
@@ -196,7 +196,7 @@ public:
 	
 	// The ExecuteCommand method will take a SCSITask object and transport
 	// it across the physical wires to the device
-	virtual	void		ExecuteCommand ( SCSITaskIdentifier	request );
+	virtual	void		ExecuteCommand ( SCSITaskIdentifier	request ) APPLE_KEXT_OVERRIDE;
 	
 private:
 	

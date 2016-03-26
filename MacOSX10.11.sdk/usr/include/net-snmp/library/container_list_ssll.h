@@ -1,6 +1,6 @@
 /*
  * container_list_sl.h
- * $Id: container_list_ssll.h 18212 2010-02-27 13:11:15Z bvassche $
+ * $Id$
  *
  */
 #ifndef NETSNMP_CONTAINER_SSLL_H

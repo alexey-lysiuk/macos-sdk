@@ -7,6 +7,8 @@
 #ifndef SNMPUSM_H
 #define SNMPUSM_H
 
+#include <net-snmp/library/callback.h>
+
 #ifdef __cplusplus
 extern          "C" {
 #endif
@@ -137,6 +139,9 @@ extern          "C" {
                                                         usmStateReference
                                                         *ref,
                                                         int sec_level);
+    int             usm_clone_usmStateReference(struct usmStateReference *from,
+                                                    struct usmStateReference **to);
+
 
 #ifdef NETSNMP_ENABLE_TESTING_CODE
     void            emergency_print(u_char * field, u_int length);

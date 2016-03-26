@@ -2,7 +2,7 @@
 archs:           [ i386, x86_64 ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/AppKit.framework/Versions/C/AppKit
-current-version: 1404.0
+current-version: 1404.32
 compatibility-version: 45.0
 exports:         
   - archs:           [ i386 ]
@@ -2150,7 +2150,8 @@ exports:
                        _NSBestDepth, _NSBitmapImageRepRespectOrientationKey, 
                        _NSBitsPerPixelFromDepth, _NSBitsPerSampleFromDepth, 
                        _NSBlack, _NSBoldSystemFont, _NSBrowserColumnConfigurationDidChangeNotification, 
-                       _NSBrowserIllegalDelegateException, _NSCalibratedBlackColorSpace, 
+                       _NSBrowserIllegalDelegateException, _NSCGSDisableUpdates, 
+                       _NSCGSEnableUpdates, _NSCalibratedBlackColorSpace, 
                        _NSCalibratedRGBColorSpace, _NSCalibratedWhiteColorSpace, 
                        _NSCarbonWindowPropertyTag, _NSClassAndMethodExceptionInfo, 
                        _NSClickNotification, _NSClipFrameRect, _NSClipRectFill, 
@@ -2657,17 +2658,17 @@ exports:
                        __NSBrowserWillUserResizeColumns, __NSBuildSpellServerName, 
                        __NSBuildSpellServerPortName, __NSButtonMaskFromStyleMask, 
                        __NSBypassUncommittedCATransaction_THIS_MEANS_THERE_IS_AN_APP_BUG, 
-                       __NSCGSToWindowDepth, __NSCachedExposedBindingsPerClass, 
-                       __NSCalculateContainerOrigin, __NSCenteredRectForImage, 
-                       __NSClearButtonRectsInWindow, __NSClearDragRectsInWindow, 
-                       __NSClearFocusRingStyle, __NSClearMarkedRange, __NSClearTrackingRect, 
-                       __NSClearTrackingRects, __NSCloseThemeFile, __NSCocoaViewCreate, 
-                       __NSCocoaViewGetView, __NSCocoaViewRegisterClass, 
-                       __NSCocoaViewSetView, __NSColorDrawSwatchInRectUsingLightBadging, 
-                       __NSColorFromDefault, __NSColorFromValue, __NSColorSpaceNameFromNum, 
-                       __NSColorSpaceNumFromName, __NSCompareBindingCategories, 
-                       __NSCompareBindingConnectors, __NSCompareBindingInformation, 
-                       __NSCompatibleListAlternateSelectedControlColor, 
+                       __NSCGSToWindowDepth, __NSCGSWindowOrderingSynchronizeIfNeeded, 
+                       __NSCachedExposedBindingsPerClass, __NSCalculateContainerOrigin, 
+                       __NSCenteredRectForImage, __NSClearButtonRectsInWindow, 
+                       __NSClearDragRectsInWindow, __NSClearFocusRingStyle, 
+                       __NSClearMarkedRange, __NSClearTrackingRect, __NSClearTrackingRects, 
+                       __NSCloseThemeFile, __NSCocoaViewCreate, __NSCocoaViewGetView, 
+                       __NSCocoaViewRegisterClass, __NSCocoaViewSetView, 
+                       __NSColorDrawSwatchInRectUsingLightBadging, __NSColorFromDefault, 
+                       __NSColorFromValue, __NSColorSpaceNameFromNum, __NSColorSpaceNumFromName, 
+                       __NSCompareBindingCategories, __NSCompareBindingConnectors, 
+                       __NSCompareBindingInformation, __NSCompatibleListAlternateSelectedControlColor, 
                        __NSCompositeButtonImage, __NSCompositeNotScaled, 
                        __NSCompositePushButtonImage, __NSComputeFirstKeyViewVisuallyInDirection, 
                        __NSConcealedBindingsPerClass, __NSContentRectForFrameRect, 

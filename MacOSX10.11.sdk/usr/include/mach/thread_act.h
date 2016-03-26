@@ -48,7 +48,8 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED __TVOS_PROHIBITED
+__WATCHOS_PROHIBITED
+__TVOS_PROHIBITED
 kern_return_t thread_terminate
 (
 	thread_act_t target_act
@@ -60,7 +61,8 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED __TVOS_PROHIBITED
+__WATCHOS_PROHIBITED
+__TVOS_PROHIBITED
 kern_return_t act_get_state
 (
 	thread_act_t target_act,
@@ -75,7 +77,8 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED __TVOS_PROHIBITED
+__WATCHOS_PROHIBITED
+__TVOS_PROHIBITED
 kern_return_t act_set_state
 (
 	thread_act_t target_act,
@@ -90,7 +93,7 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED __TVOS_PROHIBITED
+__WATCHOS_PROHIBITED
 kern_return_t thread_get_state
 (
 	thread_act_t target_act,
@@ -105,7 +108,7 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED __TVOS_PROHIBITED
+__WATCHOS_PROHIBITED
 kern_return_t thread_set_state
 (
 	thread_act_t target_act,
@@ -120,7 +123,7 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED __TVOS_PROHIBITED
+__WATCHOS_PROHIBITED
 kern_return_t thread_suspend
 (
 	thread_act_t target_act
@@ -132,7 +135,7 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED __TVOS_PROHIBITED
+__WATCHOS_PROHIBITED
 kern_return_t thread_resume
 (
 	thread_act_t target_act
@@ -144,7 +147,7 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED __TVOS_PROHIBITED
+__WATCHOS_PROHIBITED
 kern_return_t thread_abort
 (
 	thread_act_t target_act
@@ -156,7 +159,7 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED __TVOS_PROHIBITED
+__WATCHOS_PROHIBITED
 kern_return_t thread_abort_safely
 (
 	thread_act_t target_act
@@ -168,7 +171,8 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED __TVOS_PROHIBITED
+__WATCHOS_PROHIBITED
+__TVOS_PROHIBITED
 kern_return_t thread_depress_abort
 (
 	thread_act_t thread
@@ -180,7 +184,8 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED __TVOS_PROHIBITED
+__WATCHOS_PROHIBITED
+__TVOS_PROHIBITED
 kern_return_t thread_get_special_port
 (
 	thread_act_t thr_act,
@@ -194,7 +199,8 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED __TVOS_PROHIBITED
+__WATCHOS_PROHIBITED
+__TVOS_PROHIBITED
 kern_return_t thread_set_special_port
 (
 	thread_act_t thr_act,
@@ -222,7 +228,8 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED __TVOS_PROHIBITED
+__WATCHOS_PROHIBITED
+__TVOS_PROHIBITED
 kern_return_t thread_set_exception_ports
 (
 	thread_act_t thread,
@@ -238,7 +245,8 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED __TVOS_PROHIBITED
+__WATCHOS_PROHIBITED
+__TVOS_PROHIBITED
 kern_return_t thread_get_exception_ports
 (
 	thread_act_t thread,
@@ -256,7 +264,8 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED __TVOS_PROHIBITED
+__WATCHOS_PROHIBITED
+__TVOS_PROHIBITED
 kern_return_t thread_swap_exception_ports
 (
 	thread_act_t thread,
@@ -397,7 +406,8 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED __TVOS_PROHIBITED
+__WATCHOS_PROHIBITED
+__TVOS_PROHIBITED
 kern_return_t thread_get_mach_voucher
 (
 	thread_act_t thr_act,
@@ -411,7 +421,8 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED __TVOS_PROHIBITED
+__WATCHOS_PROHIBITED
+__TVOS_PROHIBITED
 kern_return_t thread_set_mach_voucher
 (
 	thread_act_t thr_act,
@@ -424,7 +435,8 @@ mig_external
 #else
 extern
 #endif	/* mig_external */
-__WATCHOS_PROHIBITED __TVOS_PROHIBITED
+__WATCHOS_PROHIBITED
+__TVOS_PROHIBITED
 kern_return_t thread_swap_mach_voucher
 (
 	thread_act_t thr_act,

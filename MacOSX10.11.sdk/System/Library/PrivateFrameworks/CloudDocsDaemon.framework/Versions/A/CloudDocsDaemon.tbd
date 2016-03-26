@@ -2,7 +2,7 @@
 archs:           [ x86_64 ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/Versions/A/CloudDocsDaemon
-current-version: 382.0
+current-version: 383.5
 compatibility-version: 0.0
 exports:         
   - archs:           [ x86_64 ]
@@ -65,13 +65,14 @@ exports:
                        _BRCLocalContainer._deepScanStamp, _BRCLocalContainer._delegate, 
                        _BRCLocalContainer._foregroundClients, _BRCLocalContainer._foregroundStateQueue, 
                        _BRCLocalContainer._isInitialCreation, _BRCLocalContainer._lastForegroundClientDescription, 
-                       _BRCLocalContainer._lastInsertedRank, _BRCLocalContainer._lastSyncDownError, 
-                       _BRCLocalContainer._lastSyncUpError, _BRCLocalContainer._lostHeapKey, 
-                       _BRCLocalContainer._mangledID, _BRCLocalContainer._maxLostStamp, 
-                       _BRCLocalContainer._notifyTokenForFramework, _BRCLocalContainer._pendingCoordinatedIOs, 
-                       _BRCLocalContainer._pendingFileCoordinators, _BRCLocalContainer._readerThrottle, 
-                       _BRCLocalContainer._resetTimer, _BRCLocalContainer._serverZone, 
-                       _BRCLocalContainer._session, _BRCLocalContainer._shouldForceContainerForeground, 
+                       _BRCLocalContainer._lastInsertedRank, _BRCLocalContainer._lastSyncDownDate, 
+                       _BRCLocalContainer._lastSyncDownError, _BRCLocalContainer._lastSyncUpError, 
+                       _BRCLocalContainer._lostHeapKey, _BRCLocalContainer._mangledID, 
+                       _BRCLocalContainer._maxLostStamp, _BRCLocalContainer._notifyTokenForFramework, 
+                       _BRCLocalContainer._pendingCoordinatedIOs, _BRCLocalContainer._pendingFileCoordinators, 
+                       _BRCLocalContainer._readerThrottle, _BRCLocalContainer._resetTimer, 
+                       _BRCLocalContainer._serverZone, _BRCLocalContainer._session, 
+                       _BRCLocalContainer._shouldForceContainerForeground, 
                        _BRCLocalContainer._state, _BRCLocalContainer._syncDeadlineToken, 
                        _BRCLocalContainer._syncDeadlineTokenResumer, _BRCLocalContainer._syncDownBlockToPerformForBookmarkData, 
                        _BRCLocalContainer._syncDownOperation, _BRCLocalContainer._syncDownThrottle, 

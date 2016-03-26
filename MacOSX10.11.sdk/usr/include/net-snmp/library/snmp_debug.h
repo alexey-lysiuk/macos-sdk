@@ -15,10 +15,6 @@ extern          "C" {
      */
 
 
-    /*
-     * These functions should not be used, if at all possible.  Instead, use
-     * the macros below. 
-     */
 #if !defined(__GNUC__) || __GNUC__ < 2 || (__GNUC__ == 2 && __GNUC_MINOR__ < 8)
 #define NETSNMP_ATTRIBUTE_FORMAT(type, formatArg, firstArg)
 #else
@@ -26,6 +22,10 @@ extern          "C" {
   __attribute__((__format__( __ ## type ## __, formatArg, firstArg )))
 #endif
 
+    /*
+     * These functions should not be used, if at all possible.  Instead, use
+     * the macros below. 
+     */
     NETSNMP_IMPORT
     void            debugmsg(const char *token, const char *format, ...)
                         NETSNMP_ATTRIBUTE_FORMAT(printf, 2, 3);
@@ -42,6 +42,7 @@ extern          "C" {
     NETSNMP_IMPORT
     void            debugmsg_oid(const char *token, const oid * theoid,
                                  size_t len);
+    NETSNMP_IMPORT
     void            debugmsg_suboid(const char *token, const oid * theoid,
                                     size_t len);
     NETSNMP_IMPORT
@@ -201,8 +202,16 @@ extern          "C" {
 /*****************************************************************/
 #endif /* NETSNMP_NO_DEBUGGING */
 
+#ifdef __cplusplus
+}
+#endif
+
     /* Public macros moved to top-level API header file */
 #include <net-snmp/output_api.h>
+
+#ifdef __cplusplus
+extern          "C" {
+#endif
 
     void            snmp_debug_init(void);
 

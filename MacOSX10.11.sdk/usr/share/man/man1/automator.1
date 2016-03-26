@@ -27,10 +27,11 @@ for this run of
 Set 
 .Ar input
 as the input to 
-.Ar workflow
+.Ar workflow .
 If 
 .Ar input
-is - then the contents of standard input is used.  The newline character (\\n) is the delimiter for multiple strings.
+is - then the contents of standard input is used.  Each newline
+.Po \en Pc Ns -terminated line is treated as one text input item.
 .It Fl v
 Run in verbose mode.
 .El

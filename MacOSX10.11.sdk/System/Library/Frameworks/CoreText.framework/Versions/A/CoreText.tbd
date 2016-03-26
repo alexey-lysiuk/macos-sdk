@@ -24,6 +24,7 @@ exports:
                        _CTFontCollectionSetAttributes, _CTFontCollectionSetExclusionDescriptors, 
                        _CTFontCollectionSetQueryDescriptors, _CTFontCopyAttribute, 
                        _CTFontCopyAvailableTables, _CTFontCopyCharacterSet, 
+                       _CTFontCopyCharacterSetOfDefaultCascadeListForSystemUIFonts, 
                        _CTFontCopyDefaultCascadeList, _CTFontCopyDefaultCascadeListForLanguages, 
                        _CTFontCopyDisplayName, _CTFontCopyFamilyName, _CTFontCopyFeatureSettings, 
                        _CTFontCopyFeatures, _CTFontCopyFeaturesInternal, 

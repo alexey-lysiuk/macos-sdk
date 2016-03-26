@@ -55,32 +55,32 @@ protected:
 	
 public:
 	
-	bool				init ( OSDictionary * propTable );
-	virtual bool		start ( IOService * provider );
-	virtual void		free ( void );
+	bool				init ( OSDictionary * propTable ) APPLE_KEXT_OVERRIDE;
+	virtual bool		start ( IOService * provider ) APPLE_KEXT_OVERRIDE;
+	virtual void		free ( void ) APPLE_KEXT_OVERRIDE;
 
 	virtual bool		handleOpen (
 							  IOService * 	client,
 							  IOOptionBits 	options,
-							  void * 		access );
+							  void * 		access ) APPLE_KEXT_OVERRIDE;
 	
 	virtual void		handleClose (
 							IOService * 	client,
-							IOOptionBits 	options );
+							IOOptionBits 	options ) APPLE_KEXT_OVERRIDE;
 	
-	virtual bool		handleIsOpen ( const IOService * client ) const;
+	virtual bool		handleIsOpen ( const IOService * client ) const APPLE_KEXT_OVERRIDE;
 	
     virtual IOReturn	newUserClient (
     						   task_t			owningTask,
     						   void *			securityID,
     						   UInt32			type,
     						   OSDictionary * 	properties,
-    						   IOUserClient **	handler );
-	virtual void 		CreateStorageServiceNub ( void );
+							   IOUserClient **	handler ) APPLE_KEXT_OVERRIDE;
+	virtual void 		CreateStorageServiceNub ( void ) APPLE_KEXT_OVERRIDE;
 
-	virtual char *		GetVendorString ( void );
-	virtual char *		GetProductString ( void );
-	virtual char *		GetRevisionString ( void );
+	virtual char *		GetVendorString ( void ) APPLE_KEXT_OVERRIDE;
+	virtual char *		GetProductString ( void ) APPLE_KEXT_OVERRIDE;
+	virtual char *		GetRevisionString ( void ) APPLE_KEXT_OVERRIDE;
 	
 	
 private:

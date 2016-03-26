@@ -41,7 +41,8 @@ NS_CLASS_AVAILABLE_MAC(10_11)
     unsigned int    _shouldBeArchived:1;
     unsigned int    _weakHelper:1;
     unsigned int    _frameNeedsUpdate:1;
-    unsigned int    _reservedFlags:29;
+    unsigned int    _frameIsObserved:1;
+    unsigned int    _reservedFlags:28;
 }
 
 

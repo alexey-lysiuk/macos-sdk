@@ -220,7 +220,7 @@ protected:
 	Exits if device has become disconnected.
 	@result <code>true</code> if able to clear the NOT_READY status and <code>false</code> if not.
 	*/
-	virtual bool		ClearNotReadyStatus ( void );
+	virtual bool		ClearNotReadyStatus ( void ) APPLE_KEXT_OVERRIDE;
 	
 	/*!
 	@function IssueRead
@@ -291,7 +291,7 @@ protected:
 	
 	// We override this method to set our power states and register ourselves
 	// as a power policy maker.
-	virtual void 		InitializePowerManagement ( IOService * provider );
+	virtual void 		InitializePowerManagement ( IOService * provider ) APPLE_KEXT_OVERRIDE;
 	
 	/*!
 	@function GetInitialPowerState
@@ -304,7 +304,7 @@ protected:
 	// We override this method so that when we register for power management,
 	// we go to our active power state (which the drive is definitely in
 	// at startup time).
-	virtual UInt32		GetInitialPowerState ( void );
+	virtual UInt32		GetInitialPowerState ( void ) APPLE_KEXT_OVERRIDE;
 	
 	/*!
 	@function GetNumberOfPowerStateTransitions
@@ -319,7 +319,7 @@ protected:
 	// from Fully active to Sleep state so that the idle timer can be adjusted
 	// to the appropriate time period based on the disk spin down time set in
 	// the Energy Saver prefs panel.
-	virtual UInt32		GetNumberOfPowerStateTransitions ( void );
+	virtual UInt32		GetNumberOfPowerStateTransitions ( void ) APPLE_KEXT_OVERRIDE;
 	
 	/*!
 	@function TicklePowerManager
@@ -335,7 +335,7 @@ protected:
 
 	// The TicklePowerManager method is called to tell the power manager that the
 	// device needs to be in a certain power state to handle requests.
-	virtual void		TicklePowerManager ( void );
+	virtual void		TicklePowerManager ( void ) APPLE_KEXT_OVERRIDE;
 	
 	/*!
 	@function HandlePowerChange
@@ -348,7 +348,7 @@ protected:
 	// the power manager thread AND the workloop thread. This routine can
 	// send sync or async calls to the drive without worrying about threading
 	// issues.
-	virtual void		HandlePowerChange ( void );
+	virtual void		HandlePowerChange ( void ) APPLE_KEXT_OVERRIDE;
 	
 	/*!
 	@function HandleCheckPowerState(void)
@@ -365,7 +365,7 @@ protected:
 	object transistions to its maximum power state.
 	*/
 	
-	virtual void		HandleCheckPowerState ( void );
+	virtual void		HandleCheckPowerState ( void ) APPLE_KEXT_OVERRIDE;
 	
 	/*!
 	@function CheckMediaPresence
@@ -385,7 +385,7 @@ protected:
 	for supporting a device must be implemented here.
 	@result <code>true</code> if device could be successfully configured <code>false</code> if not.
 	*/    
-	virtual bool		InitializeDeviceSupport ( void );
+	virtual bool		InitializeDeviceSupport ( void ) APPLE_KEXT_OVERRIDE;
 	
 	/*!
 	@function StartDeviceSupport
@@ -393,7 +393,7 @@ protected:
 	@discussion Called in super class's start() to start device support. Support for starting
 	devices and making them usable must be implemented here. 
 	*/  
-	virtual void		StartDeviceSupport ( void );
+	virtual void		StartDeviceSupport ( void ) APPLE_KEXT_OVERRIDE;
 	
 	/*!
 	@function SuspendDeviceSupport
@@ -401,7 +401,7 @@ protected:
 	@discussion Called to temporarily suspend device support. Support for suspending
 	devices must be implemented here.
 	*/ 
-	virtual void		SuspendDeviceSupport ( void );
+	virtual void		SuspendDeviceSupport ( void ) APPLE_KEXT_OVERRIDE;
 	
 	/*!
 	@function ResumeDeviceSupport
@@ -409,7 +409,7 @@ protected:
 	@discussion Called to temporarily resume device support. Support for resuming
 	devices must be implemented here.
 	*/ 
-	virtual void		ResumeDeviceSupport ( void );
+	virtual void		ResumeDeviceSupport ( void ) APPLE_KEXT_OVERRIDE;
 	
 	/*!
 	@function StopDeviceSupport
@@ -417,7 +417,7 @@ protected:
 	@discussion Called to stop device support. Support for stopping
 	devices must be implemented here.
 	*/ 
-	virtual void		StopDeviceSupport ( void );
+	virtual void		StopDeviceSupport ( void ) APPLE_KEXT_OVERRIDE;
 	
 	/*!
 	@function TerminateDeviceSupport
@@ -425,14 +425,14 @@ protected:
 	@discussion Called to terminate device support. The underlying infrastructure for
 	support a device should be cleaned up here.
 	*/ 
-	virtual void		TerminateDeviceSupport ( void );
+	virtual void		TerminateDeviceSupport ( void ) APPLE_KEXT_OVERRIDE;
 	
 	/*!
 	@function free
 	@abstract Called to release all resources held by the object.
 	@discussion Release all resources held by the object, then call super::free().  
 	*/	
-	virtual void 		free ( void );
+	virtual void 		free ( void ) APPLE_KEXT_OVERRIDE;
 	
 public:
 	

@@ -2,7 +2,7 @@
 archs:           [ i386, x86_64 ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
-current-version: 1253.0
+current-version: 1256.14
 compatibility-version: 150.0
 exports:         
   - archs:           [ i386 ]
@@ -917,8 +917,8 @@ exports:
                        ___CFInitialize, ___CFLibraryVersionShortCircuit__, 
                        ___CFOAInitialize, ___CFOASafe, ___CFObjCIsCollectable, 
                        ___CFObjectAllocRecordAllocationFunction, ___CFObjectAllocSetLastAllocEventNameFunction, 
-                       ___CFPBStart, ___CFRangeMake, ___CFRecordAllocationEvent, 
-                       ___CFRunLoopEnableAuxiliaryAppNapNotifications, 
+                       ___CFPBStart, ___CFPasteboardTypeAbbrev, ___CFRangeMake, 
+                       ___CFRecordAllocationEvent, ___CFRunLoopEnableAuxiliaryAppNapNotifications, 
                        ___CFRunLoopSetOptions, ___CFRunLoopSetOptionsReason, 
                        ___CFSTSubTokenizerCRFSuiteGetTokenRangesFromLabels, 
                        ___CFSTSubTokenizerCRFSuiteLoadModel, ___CFSTSubTokenizerCRFSuiteReleaseTokenRangeBuffer, 

@@ -119,6 +119,7 @@ enum
 #define kUSBHostMessagePortsCreated                   iokit_usbhost_msg(0x104)      // 0xe0005104  Internal use only.  AppleUSBHostController and AppleUSBHub -> clients after all ports have been created.
 #define kUSBHostMessageDeviceConnected                iokit_usbhost_msg(0x105)      // 0xe0005105  Apple Internal use only.  AppleUSBRemovablePort -> clients after a connect.
 #define kUSBHostMessageDeviceDisconnected             iokit_usbhost_msg(0x106)      // 0xe0005106  Apple Internal use only.  AppleUSBRemovablePort -> clients after a disconnect.
+#define kUSBHostMessageControllerPoweredOn            iokit_usbhost_msg(0x107)      // 0xe0005107  Apple Internal use only.  AppleEmbeddedUSBXHCIFL1100 -> FL1100Boot after a stable power state is reached.
 
 // User Message Support
 #define kUSBHostMessageOvercurrentCondition           iokit_usblegacy_err_msg(0x13) // 0xe0004013  Message sent to the clients of the device's hub parent, when a device causes an overcurrent condition.  The message argument contains the locationID of the device
@@ -306,6 +307,7 @@ enum
 #define kUSBHostDevicePropertyConfigurationDescriptorOverride   "kUSBConfigurationDescriptorOverride"
 #define kUSBHostDevicePropertyConfigurationCurrentOverride      "kUSBConfigurationCurrentOverride"
 #define kUSBHostDevicePropertyResetDurationOverride             "kUSBResetDurationOverride"
+#define kUSBHostDevicePropertyDesiredChargingCurrent            "kUSBDesiredChargingCurrent"
 
 #if TARGET_OS_EMBEDDED
 #define kUSBHostInterfacePropertyStringIndex                    "iInterface"
@@ -329,6 +331,7 @@ enum
 #define kUSBHostHubPropertyIdlePolicy                           "kUSBHubIdlePolicy"                     // OSNumber ms to be used as device idle policy
 #define kUSBHostHubPropertyStartupDelay                         "kUSBHubStartupDelay"                   // OSNumber ms delay before creating downstream ports
 #define kUSBHostHubPropertyPortSequenceDelay                    "kUSBHubPortSequenceDelay"              // OSNumber ms delay between port creation
+#define kUSBHostHubPropertyHubPowerSupplyType                   "kUSBHubPowerSupplyType"                // OSNumber for tPowerSupply hub is, 2 for bus-powered, 1 for self
 
 #define kUSBHostControllerPropertyIsochronousRequiresContiguous "kUSBIsochronousRequiresContiguous"
 #define kUSBHostControllerPropertyDebugError                    "kUSBDebugError"

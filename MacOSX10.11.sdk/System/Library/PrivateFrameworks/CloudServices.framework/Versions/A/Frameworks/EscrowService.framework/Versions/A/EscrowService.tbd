@@ -28,6 +28,7 @@ exports:
                        _kEscrowServiceSMSChallengeCodeKey, _kEscrowServiceSMSChallengeDevicesKey, 
                        _kEscrowServiceSMSChallengeLengthKey, _kEscrowServiceSMSChallengeRequiredKey, 
                        _kEscrowServiceSMSTargetInfoKey, _kEscrowServiceSMSTargetRequiredKey, 
-                       _kEscrowServiceStingrayLabel, _kEscrowServiceiCDPLabel ]
+                       _kEscrowServiceSilentAttemptKey, _kEscrowServiceStingrayLabel, 
+                       _kEscrowServiceiCDPLabel ]
     objc-classes:    [ _EscrowService ]
 ...

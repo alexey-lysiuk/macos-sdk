@@ -6,7 +6,8 @@ exports:
   - archs:           [ x86_64 ]
     symbols:         [ _AKAnisetteErrorDomain, _AKAnisetteProvisioningMachService, 
                        _AKAppleIDAuthenticationErrorDomain, _AKAppleIDAuthenticationMachService, 
-                       _AKAuthenticationAlternateDSIDKey, _AKAuthenticationDSIDKey, 
+                       _AKAuthenticationAcceptedTermsKey, _AKAuthenticationAlternateDSIDKey, 
+                       _AKAuthenticationDSIDKey, _AKAuthenticationDidShowServerUIKey, 
                        _AKAuthenticationIDMSTokenKey, _AKAuthenticationIsHSA2Key, 
                        _AKAuthenticationNewAppleIDSetupInfoKey, _AKAuthenticationPasswordKey, 
                        _AKAuthenticationRawPasswordKey, _AKAuthenticationRememberPasswordKey, 

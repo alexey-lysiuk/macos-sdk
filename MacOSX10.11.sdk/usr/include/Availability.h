@@ -130,6 +130,7 @@
 #define __MAC_10_10_2       101002
 #define __MAC_10_10_3       101003
 #define __MAC_10_11         101100
+#define __MAC_10_11_2       101102
 /* __MAC_NA is not defined to a value but is uses as a token by macros to indicate that the API is unavailable */
 
 #define __IPHONE_2_0     20000
@@ -154,9 +155,12 @@
 #define __IPHONE_8_3     80300
 #define __IPHONE_8_4     80400
 #define __IPHONE_9_0     90000
+#define __IPHONE_9_1     90100
+#define __IPHONE_9_2     90200
 /* __IPHONE_NA is not defined to a value but is uses as a token by macros to indicate that the API is unavailable */
 
 #define __TVOS_9_0       90000
+#define __TVOS_9_1       90100
 
 #define __WATCHOS_1_0    10000
 #define __WATCHOS_2_0    20000

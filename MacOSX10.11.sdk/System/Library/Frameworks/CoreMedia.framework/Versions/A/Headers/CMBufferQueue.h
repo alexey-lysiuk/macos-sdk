@@ -561,6 +561,7 @@ typedef void (*CMBufferQueueTriggerCallback)(
 	@constant	kCMBufferQueueTrigger_WhenReset									Trigger fires when CMBufferQueueReset called.  (triggerTime is ignored.)
 	@constant	kCMBufferQueueTrigger_WhenBufferCountBecomesLessThan			Trigger fires when buffer count becomes < the specified threshold number.
 	@constant	kCMBufferQueueTrigger_WhenBufferCountBecomesGreaterThan			Trigger fires when buffer count becomes > the specified threshold number.
+	@constant	kCMBufferQueueTrigger_WhenDurationBecomesGreaterThanOrEqualToAndBufferCountBecomesGreaterThan	Trigger fires when queue duration becomes >= the specified duration and buffer count becomes > the specified threshold number.
 */
 typedef int32_t CMBufferQueueTriggerCondition;
 #if COREMEDIA_USE_DERIVED_ENUMS_FOR_CONSTANTS
@@ -580,6 +581,7 @@ enum
 	kCMBufferQueueTrigger_WhenReset = 9,
 	kCMBufferQueueTrigger_WhenBufferCountBecomesLessThan = 10,
 	kCMBufferQueueTrigger_WhenBufferCountBecomesGreaterThan = 11,
+	kCMBufferQueueTrigger_WhenDurationBecomesGreaterThanOrEqualToAndBufferCountBecomesGreaterThan = 12,
 };
 
 /*!

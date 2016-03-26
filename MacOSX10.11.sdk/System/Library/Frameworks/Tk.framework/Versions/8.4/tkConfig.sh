@@ -53,7 +53,7 @@ TK_LIB_FLAG='-framework Tk'
 
 # String to pass to linker to pick up the Tk library from its
 # build directory.
-TK_BUILD_LIB_SPEC='-F/Library/Caches/com.apple.xbs/Binaries/tcl/tcl-107~132/Objects/OBJROOT1/tk84/Deployment -framework Tk'
+TK_BUILD_LIB_SPEC='-F/Library/Caches/com.apple.xbs/Binaries/tcl/tcl-107~102/Objects/OBJROOT1/tk84/Deployment -framework Tk'
 
 # String to pass to linker to pick up the Tk library from its
 # installed directory.
@@ -84,14 +84,14 @@ TK_STUB_LIB_FLAG='-ltkstub8.4'
 
 # String to pass to linker to pick up the Tk stub library from its
 # build directory.
-TK_BUILD_STUB_LIB_SPEC='-L/Library/Caches/com.apple.xbs/Binaries/tcl/tcl-107~132/Objects/OBJROOT1/tk84/Deployment -ltkstub8.4'
+TK_BUILD_STUB_LIB_SPEC='-L/Library/Caches/com.apple.xbs/Binaries/tcl/tcl-107~102/Objects/OBJROOT1/tk84/Deployment -ltkstub8.4'
 
 # String to pass to linker to pick up the Tk stub library from its
 # installed directory.
 TK_STUB_LIB_SPEC='-L/System/Library/Frameworks/Tk.framework/Versions/8.4 -ltkstub8.4'
 
 # Path to the Tk stub library in the build directory.
-TK_BUILD_STUB_LIB_PATH='/Library/Caches/com.apple.xbs/Binaries/tcl/tcl-107~132/Objects/OBJROOT1/tk84/Deployment/libtkstub8.4.a'
+TK_BUILD_STUB_LIB_PATH='/Library/Caches/com.apple.xbs/Binaries/tcl/tcl-107~102/Objects/OBJROOT1/tk84/Deployment/libtkstub8.4.a'
 
 # Path to the Tk stub library in the install directory.
 TK_STUB_LIB_PATH='/System/Library/Frameworks/Tk.framework/Versions/8.4/libtkstub8.4.a'

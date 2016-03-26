@@ -2,7 +2,7 @@
 archs:           [ i386, x86_64 ]
 platform:        macosx
 install-name:    /usr/lib/system/libcorecrypto.dylib
-current-version: 334.0
+current-version: 335.20.1
 exports:         
   - archs:           [ i386, x86_64 ]
     allowed-clients: [ corecrypto_test, System ]
@@ -41,10 +41,10 @@ exports:
                        _ccder_decode_rsa_pub_x509, _ccder_decode_rsa_pub_x509_n, 
                        _ccder_decode_seqii, _ccder_decode_sequence_tl, 
                        _ccder_decode_tag, _ccder_decode_tl, _ccder_decode_uint, 
-                       _ccder_decode_uint64, _ccder_encode_body, _ccder_encode_body_nocopy, 
-                       _ccder_encode_constructed_tl, _ccder_encode_dhparams, 
-                       _ccder_encode_dhparams_size, _ccder_encode_eckey, 
-                       _ccder_encode_eckey_size, _ccder_encode_implicit_integer, 
+                       _ccder_decode_uint64, _ccder_decode_uint_n, _ccder_encode_body, 
+                       _ccder_encode_body_nocopy, _ccder_encode_constructed_tl, 
+                       _ccder_encode_dhparams, _ccder_encode_dhparams_size, 
+                       _ccder_encode_eckey, _ccder_encode_eckey_size, _ccder_encode_implicit_integer, 
                        _ccder_encode_implicit_octet_string, _ccder_encode_implicit_raw_octet_string, 
                        _ccder_encode_implicit_uint64, _ccder_encode_integer, 
                        _ccder_encode_len, _ccder_encode_octet_string, _ccder_encode_oid, 
@@ -114,16 +114,17 @@ exports:
                        _ccmode_factory_omac_decrypt, _ccmode_factory_omac_encrypt, 
                        _ccmode_factory_xts_decrypt, _ccmode_factory_xts_encrypt, 
                        _ccn_add, _ccn_add1, _ccn_bitlen, _ccn_cmp, _ccn_n, 
-                       _ccn_read_uint, _ccn_set, _ccn_sub1, _ccn_write_int, 
-                       _ccn_write_int_size, _ccn_write_uint, _ccn_write_uint_size, 
-                       _ccn_zero_multi, _ccnistkdf_ctr_hmac, _ccnistkdf_ctr_hmac_fixed, 
-                       _ccnistkdf_fb_hmac, _ccnistkdf_fb_hmac_fixed, _ccpad_cts1_decrypt, 
-                       _ccpad_cts1_encrypt, _ccpad_cts2_decrypt, _ccpad_cts2_encrypt, 
-                       _ccpad_cts3_decrypt, _ccpad_cts3_encrypt, _ccpad_cts_decrypt, 
-                       _ccpad_cts_encrypt, _ccpad_pkcs7_decode, _ccpad_pkcs7_decrypt, 
-                       _ccpad_pkcs7_ecb_decrypt, _ccpad_pkcs7_ecb_encrypt, 
-                       _ccpad_pkcs7_encrypt, _ccpad_xts_decrypt, _ccpad_xts_encrypt, 
-                       _ccpbkdf2_hmac, _ccrc2_cbc_decrypt_mode, _ccrc2_cbc_encrypt_mode, 
+                       _ccn_random_bits, _ccn_read_uint, _ccn_set, _ccn_sub1, 
+                       _ccn_write_int, _ccn_write_int_size, _ccn_write_uint, 
+                       _ccn_write_uint_size, _ccn_zero_multi, _ccnistkdf_ctr_hmac, 
+                       _ccnistkdf_ctr_hmac_fixed, _ccnistkdf_fb_hmac, _ccnistkdf_fb_hmac_fixed, 
+                       _ccpad_cts1_decrypt, _ccpad_cts1_encrypt, _ccpad_cts2_decrypt, 
+                       _ccpad_cts2_encrypt, _ccpad_cts3_decrypt, _ccpad_cts3_encrypt, 
+                       _ccpad_cts_decrypt, _ccpad_cts_encrypt, _ccpad_pkcs7_decode, 
+                       _ccpad_pkcs7_decrypt, _ccpad_pkcs7_ecb_decrypt, 
+                       _ccpad_pkcs7_ecb_encrypt, _ccpad_pkcs7_encrypt, 
+                       _ccpad_xts_decrypt, _ccpad_xts_encrypt, _ccpbkdf2_hmac, 
+                       _ccrc2_cbc_decrypt_mode, _ccrc2_cbc_encrypt_mode, 
                        _ccrc2_cfb8_decrypt_mode, _ccrc2_cfb8_encrypt_mode, 
                        _ccrc2_cfb_decrypt_mode, _ccrc2_cfb_encrypt_mode, 
                        _ccrc2_ctr_crypt_mode, _ccrc2_ecb_decrypt_mode, 

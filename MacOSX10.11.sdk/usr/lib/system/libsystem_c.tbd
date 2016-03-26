@@ -2,7 +2,7 @@
 archs:           [ i386, x86_64 ]
 platform:        macosx
 install-name:    /usr/lib/system/libsystem_c.dylib
-current-version: 1081.1.3
+current-version: 1082.20.4
 exports:         
   - archs:           [ i386 ]
     symbols:         [ __NSSetProgramVars, ___fdnlist, '___opendir2$INODE64$UNIX2003', 
@@ -22,15 +22,14 @@ exports:
                        '_nanosleep$UNIX2003', '_nftw$INODE64$UNIX2003', 
                        '_nftw$UNIX2003', '_nice$UNIX2003', _nlist, '_opendir$INODE64$UNIX2003', 
                        '_opendir$UNIX2003', '_pause$NOCANCEL$UNIX2003', 
-                       '_pause$UNIX2003', '_popen$UNIX2003', '_pselect$NOCANCEL$UNIX2003', 
-                       '_pselect$UNIX2003', '_putenv$UNIX2003', '_realpath$UNIX2003', 
-                       '_recv$NOCANCEL$UNIX2003', '_recv$UNIX2003', '_regcomp$UNIX2003', 
-                       '_rewinddir$INODE64$UNIX2003', '_rewinddir$UNIX2003', 
-                       '_seekdir$INODE64$UNIX2003', '_seekdir$UNIX2003', 
-                       _semctl, '_send$NOCANCEL$UNIX2003', '_send$UNIX2003', 
-                       '_setenv$UNIX2003', '_setkey$UNIX2003', '_setmode$UNIX2003', 
-                       '_setpgrp$UNIX2003', _setregid, _setreuid, _shmctl, 
-                       '_sigaltstack$UNIX2003', '_sigpause$NOCANCEL$UNIX2003', 
+                       '_pause$UNIX2003', '_popen$UNIX2003', '_putenv$UNIX2003', 
+                       '_realpath$UNIX2003', '_recv$NOCANCEL$UNIX2003', 
+                       '_recv$UNIX2003', '_regcomp$UNIX2003', '_rewinddir$INODE64$UNIX2003', 
+                       '_rewinddir$UNIX2003', '_seekdir$INODE64$UNIX2003', 
+                       '_seekdir$UNIX2003', _semctl, '_send$NOCANCEL$UNIX2003', 
+                       '_send$UNIX2003', '_setenv$UNIX2003', '_setkey$UNIX2003', 
+                       '_setmode$UNIX2003', '_setpgrp$UNIX2003', _setregid, 
+                       _setreuid, _shmctl, '_sigaltstack$UNIX2003', '_sigpause$NOCANCEL$UNIX2003', 
                        '_sigpause$UNIX2003', '_sleep$NOCANCEL$UNIX2003', 
                        '_sleep$UNIX2003', '_strerror$UNIX2003', '_strftime$UNIX2003', 
                        '_strftime_l$UNIX2003', '_strptime$UNIX2003', '_strptime_l$UNIX2003', 
@@ -47,12 +46,12 @@ exports:
     symbols:         [ '___opendir2$INODE64', '__seekdir$INODE64', '_creat$NOCANCEL', 
                        '_fdopendir$INODE64', '_ftw$INODE64', '_lockf$NOCANCEL', 
                        '_nanosleep$NOCANCEL', '_nftw$INODE64', _off32, 
-                       _off64, '_opendir$INODE64', '_pause$NOCANCEL', '_pselect$1050', 
-                       '_pselect$NOCANCEL', '_recv$NOCANCEL', '_rewinddir$INODE64', 
-                       '_seekdir$INODE64', '_send$NOCANCEL', _setpgrp, 
-                       _sigaltstack, '_sigpause$NOCANCEL', _skip, '_sleep$NOCANCEL', 
-                       '_system$NOCANCEL', '_tcdrain$NOCANCEL', '_telldir$INODE64', 
-                       '_usleep$NOCANCEL', '_wait$NOCANCEL', '_waitpid$NOCANCEL' ]
+                       _off64, '_opendir$INODE64', '_pause$NOCANCEL', '_recv$NOCANCEL', 
+                       '_rewinddir$INODE64', '_seekdir$INODE64', '_send$NOCANCEL', 
+                       _setpgrp, _sigaltstack, '_sigpause$NOCANCEL', _skip, 
+                       '_sleep$NOCANCEL', '_system$NOCANCEL', '_tcdrain$NOCANCEL', 
+                       '_telldir$INODE64', '_usleep$NOCANCEL', '_wait$NOCANCEL', 
+                       '_waitpid$NOCANCEL' ]
   - archs:           [ i386, x86_64 ]
     allowed-clients: [ System ]
     symbols:         [ __CurrentRuneLocale, __DefaultRuneLocale, __Exit, 
@@ -258,7 +257,6 @@ exports:
                        _opterr, _optind, _optopt, _optreset, _pause, _pclose, 
                        _perror, _popen, '_popen$DARWIN_EXTSN', _posix2time, 
                        _posix_openpt, _posix_spawnp, _printf, _printf_l, 
-                       _pselect, '_pselect$DARWIN_EXTSN', '_pselect$DARWIN_EXTSN$NOCANCEL', 
                        _psignal, _psort, _psort_b, _psort_r, _ptsname, 
                        _putc, _putc_unlocked, _putchar, _putchar_unlocked, 
                        _putenv, _puts, _pututxline, _putw, _putwc, _putwc_l, 

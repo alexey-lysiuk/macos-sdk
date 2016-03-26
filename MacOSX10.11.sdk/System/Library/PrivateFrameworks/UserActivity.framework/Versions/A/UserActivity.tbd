@@ -2,7 +2,7 @@
 archs:           [ x86_64 ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/UserActivity.framework/Versions/A/UserActivity
-current-version: 26.1
+current-version: 26.2
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _GetAuditSessionIDFromToken, _GetEGIDFromToken, 

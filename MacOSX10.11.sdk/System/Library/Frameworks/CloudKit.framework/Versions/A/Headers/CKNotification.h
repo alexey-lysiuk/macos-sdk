@@ -44,29 +44,30 @@ NS_CLASS_AVAILABLE(10_10, 8_0)
 @property (nonatomic, readonly, assign) BOOL isPruned;
 
 
-/* These keys are parsed out of the 'aps' payload from a remote notification dictionary */
+/* These keys are parsed out of the 'aps' payload from a remote notification dictionary.
+ On tvOS, alerts, badges, sounds, and categories are not handled in push notifications. */
 
 /* Optional alert string to display in a push notification. */
-@property (nonatomic, readonly, copy, nullable) NSString *alertBody;
+@property (nonatomic, readonly, copy, nullable) NSString *alertBody __TVOS_PROHIBITED;
 /* Instead of a raw alert string, you may optionally specify a key for a localized string in your app's Localizable.strings file. */
-@property (nonatomic, readonly, copy, nullable) NSString *alertLocalizationKey;
+@property (nonatomic, readonly, copy, nullable) NSString *alertLocalizationKey __TVOS_PROHIBITED;
 /* A list of field names to take from the matching record that is used as substitution variables in a formatted alert string. */
-@property (nonatomic, readonly, copy, nullable) NSArray <NSString *> *alertLocalizationArgs;
+@property (nonatomic, readonly, copy, nullable) NSArray <NSString *> *alertLocalizationArgs __TVOS_PROHIBITED;
 /* A key for a localized string to be used as the alert action in a modal style notification. */
-@property (nonatomic, readonly, copy, nullable) NSString *alertActionLocalizationKey;
+@property (nonatomic, readonly, copy, nullable) NSString *alertActionLocalizationKey __TVOS_PROHIBITED;
 /* The name of an image in your app bundle to be used as the launch image when launching in response to the notification. */
-@property (nonatomic, readonly, copy, nullable) NSString *alertLaunchImage;
+@property (nonatomic, readonly, copy, nullable) NSString *alertLaunchImage __TVOS_PROHIBITED;
 
 /* The number to display as the badge of the application icon */
-@property (nonatomic, readonly, copy, nullable) NSNumber *badge;
+@property (nonatomic, readonly, copy, nullable) NSNumber *badge __TVOS_PROHIBITED;
 /* The name of a sound file in your app bundle to play upon receiving the notification. */
-@property (nonatomic, readonly, copy, nullable) NSString *soundName;
+@property (nonatomic, readonly, copy, nullable) NSString *soundName __TVOS_PROHIBITED;
 
 /* The ID of the subscription that caused this notification to fire */
 @property (nonatomic, readonly, copy, nullable) NSString *subscriptionID NS_AVAILABLE(10_11, 9_0);
 
 /* The category for user-initiated actions in the notification */
-@property (nonatomic, readonly, copy, nullable) NSString *category NS_AVAILABLE(10_11, 9_0);
+@property (nonatomic, readonly, copy, nullable) NSString *category NS_AVAILABLE(10_11, 9_0) __TVOS_PROHIBITED;
 
 @end
 

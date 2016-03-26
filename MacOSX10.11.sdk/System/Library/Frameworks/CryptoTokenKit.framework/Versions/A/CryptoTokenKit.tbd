@@ -43,5 +43,6 @@ exports:
                        _TKSmartCardUserInteractionForSecurePINVerification, 
                        _TKSmartCardUserInteractionForStringEntry, _TKTLVRecord, 
                        _TKTokenDriver, _TKTokenDriverContext, _TKTokenDriverRequest, 
-                       _TKTokenEndpoint, _TKTokenService_Subsystem, _TKTokenSession ]
+                       _TKTokenEndpoint, _TKTokenService_Subsystem, _TKTokenSession, 
+                       __TKSmartCardSlotReservation ]
 ...

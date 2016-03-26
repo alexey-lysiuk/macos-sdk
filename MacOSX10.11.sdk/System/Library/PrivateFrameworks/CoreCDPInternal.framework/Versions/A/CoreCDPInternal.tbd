@@ -1,0 +1,21 @@
+---
+archs:           [ x86_64 ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/CoreCDPInternal.framework/Versions/A/CoreCDPInternal
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _CDPBackupMetadataDeviceColorKey, _CDPBackupMetadataDeviceEnclosureColorKey, 
+                       _CDPBackupMetadataDeviceModelClassKey, _CDPBackupMetadataDeviceModelKey, 
+                       _CDPBackupMetadataDeviceModelVersionKey, _CDPBackupMetadataDeviceNameKey, 
+                       _CDPBackupMetadataDevicePlatformKey, _CoreCDPInternalVersionNumber, 
+                       _CoreCDPInternalVersionString, _MMAOSSafariKeychainData, 
+                       __CDPDLogASLMessage, _kOfflineLocalSecretChangeItemIdentifier ]
+    objc-classes:    [ _CDPDAccount, _CDPDCircleController, _CDPDCircleStateObserver, 
+                       _CDPDClientHandler, _CDPDFollowUpController, _CDPDKeychainSync, 
+                       _CDPDLocalDevice, _CDPDLocalDeviceSecretHandler, 
+                       _CDPDLocalSecretController, _CDPDNetworkObserver, 
+                       _CDPDNetworkObserverClient, _CDPDPCSController, 
+                       _CDPDRemoteDeviceSecretValidator, _CDPDSecureBackupController, 
+                       _CDPDSentinel, _CDPDStateMachine, _CDPDTelemetryController, 
+                       _CDPDXPCListener ]
+...

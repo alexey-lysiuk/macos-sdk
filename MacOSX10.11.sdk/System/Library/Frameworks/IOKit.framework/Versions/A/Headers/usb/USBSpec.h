@@ -516,6 +516,7 @@ enum {
 #define kUSBDeviceSubClass          "bDeviceSubClass"
 #define kUSBDeviceProtocol          "bDeviceProtocol"
 #define kUSBDeviceMaxPacketSize     "bMaxPacketSize0"
+#define kUSBCompatibilityMatch      "USBCompatibilityMatch"
 #define kUSBVendorID                "idVendor"          // good name
 #define kUSBVendorName              kUSBVendorID        // bad name - keep for backward compatibility
 #define kUSBProductID               "idProduct"         // good name

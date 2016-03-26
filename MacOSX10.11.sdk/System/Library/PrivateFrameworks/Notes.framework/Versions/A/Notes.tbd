@@ -6,7 +6,8 @@ current-version: 351.0
 exports:         
   - archs:           [ x86_64 ]
     allowed-clients: [ Notes, NotesAccountNotificationPlugin, NotesAccountSetup, 
-                       NotesIAAccountMigratorPlugin, NotesImporter, com.apple.NotesMigratorService ]
+                       NotesIAAccountMigratorPlugin, NotesImporter, NotesTests, 
+                       com.apple.NotesMigratorService ]
     symbols:         [ _DefaultsKeyUserOptedIntoAttachmentSending, _ICNFMCAccountAccountID, 
                        _ICNFMCAccountAccountIDv2Format, _ICNFMCAccountAccounts, 
                        _ICNFMCAccountAuthenticationScheme, _ICNFMCAccountBecameReachableNotification, 

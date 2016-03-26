@@ -475,7 +475,7 @@ protected:
 	override this behavior.
 	@param provider The provider to be joined to in the power management tree.
 	*/
-	virtual void		InitializePowerManagement ( IOService * provider );
+	virtual void		InitializePowerManagement ( IOService * provider ) APPLE_KEXT_OVERRIDE;
 	
 	/*!
 	@function GetInitialPowerState
@@ -487,7 +487,7 @@ protected:
 	the highest power mode).
 	@result The power state the device is currently in.
 	*/
-	virtual UInt32		GetInitialPowerState ( void );
+	virtual UInt32		GetInitialPowerState ( void ) APPLE_KEXT_OVERRIDE;
 	
 	/*!
 	@function HandlePowerChange
@@ -495,7 +495,7 @@ protected:
 	@discussion This method is called to handle a power change. It is called from a clean thread
 	context (i.e. new thread, no locks held) and can make synchronous or asynchronous calls.
 	*/
-	virtual void		HandlePowerChange ( void );
+	virtual void		HandlePowerChange ( void ) APPLE_KEXT_OVERRIDE;
 	
 	/*!
 	@function HandleCheckPowerState
@@ -505,14 +505,14 @@ protected:
 	to call the superclass' HandleCheckPowerState ( UInt32 maxPowerState ) with the max power state
 	with which the class registered.
 	*/
-	virtual void		HandleCheckPowerState ( void );
+	virtual void		HandleCheckPowerState ( void ) APPLE_KEXT_OVERRIDE;
 	
 	/*!
 	@function TicklePowerManager
 	@abstract Internal method. Do not use.
 	@discussion Internal method. Do not use.
 	*/
-	virtual void		TicklePowerManager ( void );
+	virtual void		TicklePowerManager ( void ) APPLE_KEXT_OVERRIDE;
 	
 	/*!
 	@function HandlePowerOff
@@ -548,7 +548,7 @@ public:
     @param A dictionary that will become the registry entry's property table (retaining it), or zero which will cause an empty property table to be created.
     @result true on success, or false on a resource failure.
     */
-	virtual bool	init ( OSDictionary * propTable = 0 );
+	virtual bool	init ( OSDictionary * propTable = 0 ) APPLE_KEXT_OVERRIDE;
 	
 	/*!
 	@function start
@@ -556,7 +556,7 @@ public:
 	@discussion The <code>start</code> method of an IOService instance is called by its provider when it has been selected (due to its probe score and match category) as the winning client. The client is already attached to the provider when <code>start</code> is called.<br>Implementations of <code>start</code> must call <code>start</code> on their superclass at an appropriate point. If an implementation of <code>start</code> has already called <code>super::start</code> but subsequently determines that it will fail, it must call <code>super::stop</code> to balance the prior call to <code>super::start</code> and prevent reference leaks.
 	@result <code>true</code> if the start was successful; <code>false</code> otherwise (which will cause the instance to be detached and usually freed).
 	*/
-	virtual bool	start ( IOService * provider );
+	virtual bool	start ( IOService * provider ) APPLE_KEXT_OVERRIDE;
 	
 	
 	/*!
@@ -564,7 +564,7 @@ public:
 	@abstract Frees data structures that were allocated during start().
 	@discussion Frees data structures that were allocated during start().
 	*/
-	virtual void	free ( void );
+	virtual void	free ( void ) APPLE_KEXT_OVERRIDE;
 	
 	/*!
 	@function RegisterSCSITaskCompletionRoutine
@@ -584,7 +584,7 @@ public:
 	wire(s) to the device.
 	@param request A valid SCSITaskIdentifier.
 	*/
-	void	ExecuteCommand ( SCSITaskIdentifier	request );
+	void	ExecuteCommand ( SCSITaskIdentifier	request ) APPLE_KEXT_OVERRIDE;
 	
 	/*!
 	@function AbortTask
@@ -596,7 +596,7 @@ public:
 	@param theTag A valid SCSITaggedTaskIdentifier used to identify which task to abort.
 	@result A valid SCSIServiceResponse.
 	*/
-	SCSIServiceResponse		AbortTask ( UInt8 theLogicalUnit, SCSITaggedTaskIdentifier theTag );
+	SCSIServiceResponse		AbortTask ( UInt8 theLogicalUnit, SCSITaggedTaskIdentifier theTag ) APPLE_KEXT_OVERRIDE;
 
 	/*!
 	@function AbortTaskSet
@@ -607,7 +607,7 @@ public:
 	@param theLogicalUnit A logical unit for which to abort the task set.
 	@result A valid SCSIServiceResponse.
 	*/
-	SCSIServiceResponse		AbortTaskSet ( UInt8 theLogicalUnit );
+	SCSIServiceResponse		AbortTaskSet ( UInt8 theLogicalUnit ) APPLE_KEXT_OVERRIDE;
 
 	/*!
 	@function ClearACA
@@ -616,7 +616,7 @@ public:
 	@param theLogicalUnit A logical unit for which to clear the ACA.
 	@result A valid SCSIServiceResponse.
 	*/
-	SCSIServiceResponse		ClearACA ( UInt8 theLogicalUnit );
+	SCSIServiceResponse		ClearACA ( UInt8 theLogicalUnit ) APPLE_KEXT_OVERRIDE;
 
 	/*!
 	@function ClearTaskSet
@@ -625,7 +625,7 @@ public:
 	@param theLogicalUnit A logical unit for which to clear a task set.
 	@result A valid SCSIServiceResponse.
 	*/
-	SCSIServiceResponse		ClearTaskSet ( UInt8 theLogicalUnit );
+	SCSIServiceResponse		ClearTaskSet ( UInt8 theLogicalUnit ) APPLE_KEXT_OVERRIDE;
     
 	/*!
 	@function LogicalUnitReset
@@ -634,7 +634,7 @@ public:
 	@param theLogicalUnit A logical unit for which to clear a task set.
 	@result A valid SCSIServiceResponse.
 	*/
-	SCSIServiceResponse		LogicalUnitReset ( UInt8 theLogicalUnit );
+	SCSIServiceResponse		LogicalUnitReset ( UInt8 theLogicalUnit ) APPLE_KEXT_OVERRIDE;
 
 	/*!
 	@function TargetReset
@@ -642,7 +642,7 @@ public:
 	@discussion The Task Management function to reset a target device.
 	@result A valid SCSIServiceResponse.
 	*/
-	SCSIServiceResponse		TargetReset ( void );
+	SCSIServiceResponse		TargetReset ( void ) APPLE_KEXT_OVERRIDE;
 	
     // ************* Obsoleted Member Routine ****************
 	/*!
@@ -650,7 +650,7 @@ public:
 	@abstract Deprecated. Do not use.
 	@discussion Deprecated. Do not use.
 	*/
-	virtual SCSIServiceResponse		AbortCommand ( SCSITaskIdentifier	request ) __attribute__ ((deprecated));
+	virtual SCSIServiceResponse		AbortCommand ( SCSITaskIdentifier	request ) APPLE_KEXT_OVERRIDE __attribute__ ((deprecated));
 
 	
 	// ---- Method used for determining protocol or physical interconnect characteristics. ----
@@ -664,7 +664,7 @@ public:
 	@param serviceValue A pointer to a value for the protocol feature.
 	@result True if the requested service is supported, otherwise false.
 	*/
-	virtual bool	IsProtocolServiceSupported ( SCSIProtocolFeature feature, void * serviceValue ) = 0;
+	virtual bool	IsProtocolServiceSupported ( SCSIProtocolFeature feature, void * serviceValue ) APPLE_KEXT_OVERRIDE = 0;
 
 	/*!
 	@function HandleProtocolServiceFeature
@@ -676,7 +676,7 @@ public:
 	@param serviceValue A pointer to a value for the protocol feature.
 	@result True if successful, otherwise false.
 	*/
-	virtual bool	HandleProtocolServiceFeature ( SCSIProtocolFeature feature, void * serviceValue ) = 0;
+	virtual bool	HandleProtocolServiceFeature ( SCSIProtocolFeature feature, void * serviceValue ) APPLE_KEXT_OVERRIDE = 0;
 	
 	
 protected:

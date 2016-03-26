@@ -2,7 +2,7 @@
 archs:           [ i386, x86_64 ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreData.framework/Versions/A/CoreData
-current-version: 640.0
+current-version: 641.3
 exports:         
   - archs:           [ i386, x86_64 ]
     symbols:         [ _NSAddedPersistentStoresKey, _NSAffectedObjectsErrorKey, 

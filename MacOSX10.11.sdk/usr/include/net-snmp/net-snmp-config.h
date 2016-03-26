@@ -94,6 +94,9 @@
 /* Define to 1 if you have the <asm/types.h> header file. */
 /* #undef HAVE_ASM_TYPES_H */
 
+/* Define if using MY_INIT() causes a linker error */
+/* #undef HAVE_BROKEN_LIBMYSQLCLIENT */
+
 /* Define to 1 if you have the `cgetnext' function. */
 #define HAVE_CGETNEXT 1
 
@@ -129,11 +132,20 @@
 /* Define to 1 if you have the <dmalloc.h> header file. */
 /* #undef HAVE_DMALLOC_H */
 
+/* Set if the dpkg-query command is available */
+/* #undef HAVE_DPKG_QUERY */
+
 /* Define to 1 if you have the <err.h> header file. */
 #define HAVE_ERR_H 1
 
 /* Define to 1 if you have the `eval_pv' function. */
 /* #undef HAVE_EVAL_PV */
+
+/* Define to 1 if you have the `EVP_MD_CTX_create' function. */
+#define HAVE_EVP_MD_CTX_CREATE /**/
+
+/* Define to 1 if you have the `EVP_MD_CTX_destroy' function. */
+#define HAVE_EVP_MD_CTX_DESTROY /**/
 
 /* Define to 1 if you have the `execv' function. */
 #define HAVE_EXECV 1
@@ -167,6 +179,9 @@
 
 /* Define to 1 if you have the `gethostbyname' function. */
 #define HAVE_GETHOSTBYNAME 1
+
+/* Define to 1 if you have the `gethostbyname2' function. */
+#define HAVE_GETHOSTBYNAME2 1
 
 /* Define to 1 if you have the `gethostname' function. */
 #define HAVE_GETHOSTNAME 1
@@ -209,6 +224,9 @@
 
 /* Define to 1 if you have the `if_freenameindex' function. */
 #define HAVE_IF_FREENAMEINDEX 1
+
+/* Define to 1 if you have the `if_indextoname' function. */
+#define HAVE_IF_INDEXTONAME 1
 
 /* Define to 1 if you have the `if_nameindex' function. */
 #define HAVE_IF_NAMEINDEX 1
@@ -255,11 +273,17 @@
 /* Define to 1 if you have the <iphlpapi.h> header file. */
 /* #undef HAVE_IPHLPAPI_H */
 
+/* Define to 1 if you have the `kinfo_get_cpus' function. */
+/* #undef HAVE_KINFO_GET_CPUS */
+
 /* Define to 1 if you have the `knlist' function. */
 /* #undef HAVE_KNLIST */
 
 /* Define to 1 if you have the <kstat.h> header file. */
 /* #undef HAVE_KSTAT_H */
+
+/* Define to 1 if you have the `kvm_getproc2' function. */
+/* #undef HAVE_KVM_GETPROC2 */
 
 /* Define to 1 if you have the `kvm_getprocs' function. */
 /* #undef HAVE_KVM_GETPROCS */
@@ -397,7 +421,7 @@
 /* #undef HAVE_NETINET6_IN6_PCB_H */
 
 /* Define to 1 if you have the <netinet6/in6_var.h> header file. */
-/* #undef HAVE_NETINET6_IN6_VAR_H */
+#define HAVE_NETINET6_IN6_VAR_H 1
 
 /* Define to 1 if you have the <netinet6/ip6_var.h> header file. */
 /* #undef HAVE_NETINET6_IP6_VAR_H */
@@ -594,14 +618,14 @@
 /* Define to 1 if you have the <rpm/header.h> header file. */
 /* #undef HAVE_RPM_HEADER_H */
 
-/* Define to 1 if you have the <rpm/rpmdb.h> header file. */
-/* #undef HAVE_RPM_RPMDB_H */
-
 /* Define to 1 if you have the <rpm/rpmfileutil.h> header file. */
 /* #undef HAVE_RPM_RPMFILEUTIL_H */
 
 /* Define to 1 if you have the <rpm/rpmlib.h> header file. */
 /* #undef HAVE_RPM_RPMLIB_H */
+
+/* Define to 1 if you have the <rpm/rpmts.h> header file. */
+/* #undef HAVE_RPM_RPMTS_H */
 
 /* Define to 1 if you have the <search.h> header file. */
 #define HAVE_SEARCH_H 1
@@ -708,6 +732,9 @@
 /* Define to 1 if you have the <string.h> header file. */
 #define HAVE_STRING_H 1
 
+/* Define to 1 if you have the `strlcat' function. */
+#define HAVE_STRLCAT 1
+
 /* Define to 1 if you have the `strlcpy' function. */
 #define HAVE_STRLCPY 1
 
@@ -735,6 +762,9 @@
 /* Define to 1 if `d_type' is member of `struct dirent'. */
 #define HAVE_STRUCT_DIRENT_D_TYPE 1
 
+/* Define to 1 if `speed_hi' is member of `struct ethtool_cmd'. */
+/* #undef HAVE_STRUCT_ETHTOOL_CMD_SPEED_HI */
+
 /* Define to 1 if `ifa_next' is member of `struct ifaddr'. */
 /* #undef HAVE_STRUCT_IFADDR_IFA_NEXT */
 
@@ -758,6 +788,9 @@
 
 /* Define to 1 if `if_iqdrops' is member of `struct ifnet'. */
 /* #undef HAVE_STRUCT_IFNET_IF_IQDROPS */
+
+/* Define to 1 if `if_lastchange.tv_nsec' is member of `struct ifnet'. */
+/* #undef HAVE_STRUCT_IFNET_IF_LASTCHANGE_TV_NSEC */
 
 /* Define to 1 if `if_lastchange.tv_sec' is member of `struct ifnet'. */
 /* #undef HAVE_STRUCT_IFNET_IF_LASTCHANGE_TV_SEC */
@@ -827,6 +860,12 @@
 
 /* Define to 1 if `m_mbufs' is member of `struct mbstat'. */
 #define HAVE_STRUCT_MBSTAT_M_MBUFS 1
+
+/* Define to 1 if `msg_control' is member of `struct msghdr'. */
+#define HAVE_STRUCT_MSGHDR_MSG_CONTROL 1
+
+/* Define to 1 if `msg_flags' is member of `struct msghdr'. */
+#define HAVE_STRUCT_MSGHDR_MSG_FLAGS 1
 
 /* Define to 1 if `n_value' is member of `struct nlist64'. */
 /* #undef HAVE_STRUCT_NLIST64_N_VALUE */
@@ -1119,6 +1158,9 @@
 /* Define to 1 if you have the `times' function. */
 #define HAVE_TIMES 1
 
+/* Define if a timezone variable is declared in <sys/time.h> */
+#define HAVE_TIMEZONE_VARIABLE 1
+
 /* Define to 1 if you have the <ufs/ffs/fs.h> header file. */
 /* #undef HAVE_UFS_FFS_FS_H */
 
@@ -1220,7 +1262,7 @@
 #define NETSNMP_CAN_USE_SYSCTL 1
 
 /* configure options specified */
-#define NETSNMP_CONFIGURE_OPTIONS " '--prefix=/usr' '--mandir=/usr/share/man' '--infodir=/usr/share/info' '--disable-dependency-tracking' '--sysconfdir=/etc' '--with-install-prefix=/Library/Caches/com.apple.xbs/Binaries/net_snmp/net_snmp-146~228/Root' '--with-default-snmp-version=2' '--with-persistent-directory=/var/db/net-snmp' '--with-defaults' '--without-rpm' '--with-sys-contact=postmaster@example.com' '--with-mib-modules=host ucd-snmp/diskio ucd-snmp/loadave ' '--disable-static' '--enable-ipv6' '--with-perl-modules' '--disable-perl-cc-checks' '--disable-embedded-perl' '--without-kmem-usage' 'CC=/Applications/Xcode.app/Contents/Developer/Toolchains/OSX10.11.xctoolchain/usr/bin/cc' 'CFLAGS=-arch i386 -arch x86_64 -g -Os -pipe -DBUILD=146 -DMACOSX_DEPLOYMENT_TARGET=10.11 -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.Internal.sdk/System/Library/PrivateFrameworks/ -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.Internal.sdk/System/Library/Frameworks/' 'LDFLAGS=-arch i386 -arch x86_64            '"
+#define NETSNMP_CONFIGURE_OPTIONS " '--prefix=/usr' '--mandir=/usr/share/man' '--infodir=/usr/share/info' '--disable-dependency-tracking' '--sysconfdir=/etc' '--with-install-prefix=/Library/Caches/com.apple.xbs/Binaries/net_snmp/net_snmp-149~23/Root' '--with-default-snmp-version=2' '--with-persistent-directory=/var/db/net-snmp' '--with-defaults' '--without-rpm' '--with-sys-contact=postmaster@example.com' '--with-mib-modules=host ucd-snmp/diskio ucd-snmp/loadave ' '--disable-static' '--enable-ipv6' '--with-perl-modules' '--disable-perl-cc-checks' '--disable-embedded-perl' '--without-kmem-usage' 'CC=/Applications/Xcode.app/Contents/Developer/Toolchains/OSX10.11.xctoolchain/usr/bin/cc' 'CFLAGS=-arch x86_64 -arch i386 -g -Os -pipe -DBUILD=149 -DMACOSX_DEPLOYMENT_TARGET=10.11 -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.Internal.sdk/System/Library/PrivateFrameworks/ -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.Internal.sdk/System/Library/Frameworks/' 'LDFLAGS=-arch x86_64 -arch i386            '"
 
 /* default location to look for mibs to load using the above tokens and/or
    those in the MIBS envrionment variable */
@@ -1271,6 +1313,9 @@
 
 /* ifnet needs to have _KERNEL defined */
 /* #undef NETSNMP_IFNET_NEEDS_KERNEL */
+
+/* ifnet needs to have _KERNEL_STRUCTURES defined */
+/* #undef NETSNMP_IFNET_NEEDS_KERNEL_STRUCTURES */
 
 /* Define to suppress inclusion of deprecated functions */
 /* #undef NETSNMP_NO_DEPRECATED_FUNCTIONS */
@@ -1341,7 +1386,7 @@
 
 /* Define to the full name and version of this package. */
 #ifndef PACKAGE_STRING
-#define PACKAGE_STRING "Net-SNMP 5.6"
+#define PACKAGE_STRING "Net-SNMP 5.6.2.1"
 #endif
 
 /* Define to the one symbol short name of this package. */
@@ -1351,7 +1396,7 @@
 
 /* Define to the version of this package. */
 #ifndef PACKAGE_VERSION
-#define PACKAGE_VERSION "5.6"
+#define PACKAGE_VERSION "5.6.2.1"
 #endif
 
 /* Command to generate ps output, the final column must be the process name
@@ -1568,7 +1613,7 @@
 #endif
 #endif
 
-#if HAVE_DMALLOC_H
+#ifdef HAVE_DMALLOC_H
 #define DMALLOC_FUNC_CHECK
 #endif
 
@@ -1710,6 +1755,7 @@
 #define NETSNMP_HPUX11ID 14
 #define NETSNMP_AIXID 15
 #define NETSNMP_MACOSXID 16
+#define NETSNMP_DRAGONFLYID 17
 #define NETSNMP_UNKNOWNID 255
 
 #ifdef hpux9
@@ -1739,6 +1785,9 @@
 #if defined(__FreeBSD__)
 #define NETSNMP_OSTYPE NETSNMP_FREEBSDID
 #endif
+#if defined(__DragonFly__)
+#define NETSNMP_OSTYPE NETSNMP_DRAGONFLYID
+#endif
 #if defined(irix6) || defined(irix5)
 #define NETSNMP_OSTYPE NETSNMP_IRIXID
 #endif
@@ -1748,7 +1797,7 @@
 #if defined(bsdi2) || defined(bsdi3) || defined(bsdi4)
 #define NETSNMP_OSTYPE NETSNMP_BSDIID
 #endif
-#if defined(openbsd2) || defined(openbsd3) || defined(openbsd4)
+#if defined(openbsd)
 #define NETSNMP_OSTYPE NETSNMP_OPENBSDID
 #endif
 #ifdef WIN32
@@ -1811,7 +1860,7 @@
 
 #define NETSNMP_EXCACHETIME 30
 #define NETSNMP_CACHEFILE ".snmp-exec-cache"
-#define NETSNMP_MAXCACHESIZE (200*80)   /* roughly 200 lines max */
+#define NETSNMP_MAXCACHESIZE (1500*80)   /* roughly 1500 lines max */
 
 /* misc defaults */
 
@@ -1838,9 +1887,6 @@
 
 /* UNdefine to allow specifying zero-length community string */
 /* #define NETSNMP_NO_ZEROLENGTH_COMMUNITY 1 */
-
-/* define to exit the agent on a bad kernel read */
-/* #define NETSNMP_EXIT_ON_BAD_KLREAD  */
 
 /* Number of community strings to store */
 #define NETSNMP_NUM_COMMUNITIES	5
@@ -2199,10 +2245,6 @@
 
 #ifdef NETSNMP_NO_ZEROLENGTH_COMMUNITY
 # define NO_ZEROLENGTH_COMMUNITY NETSNMP_NO_ZEROLENGTH_COMMUNITY
-#endif
-
-#ifdef NETSNMP_EXIT_ON_BAD_KLREAD
-# define EXIT_ON_BAD_KLREAD NETSNMP_EXIT_ON_BAD_KLREAD
 #endif
 
 #define LASTFIELD NETSNMP_LASTFIELD

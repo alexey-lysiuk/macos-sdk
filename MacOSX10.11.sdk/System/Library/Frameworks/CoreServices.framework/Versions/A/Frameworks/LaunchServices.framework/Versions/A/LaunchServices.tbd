@@ -2,7 +2,7 @@
 archs:           [ i386, x86_64 ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices
-current-version: 728.4
+current-version: 728.6
 exports:         
   - archs:           [ i386 ]
     symbols:         [ _FlushIconRefs, _FlushIconRefsByVolume, _GetIconRefFromFSRef, 

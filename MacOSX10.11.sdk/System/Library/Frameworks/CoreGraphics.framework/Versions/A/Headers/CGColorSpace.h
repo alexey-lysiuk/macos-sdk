@@ -65,6 +65,8 @@ CG_EXTERN const CFStringRef kCGColorSpaceGenericRGB
 CG_EXTERN const CFStringRef kCGColorSpaceGenericCMYK
   CG_AVAILABLE_STARTING(__MAC_10_4, __IPHONE_8_0);
   
+CG_EXTERN const CFStringRef kCGColorSpaceDisplayP3
+  CG_AVAILABLE_STARTING(__MAC_10_10, __IPHONE_9_0);
 
 /* The name of the "Generic" linear RGB color space. This is the same as
    `kCGColorSpaceGenericRGB' but with a 1.0 gamma. */
@@ -108,6 +110,8 @@ CG_AVAILABLE_STARTING(__MAC_10_11, __IPHONE_9_0);
 CG_EXTERN const CFStringRef kCGColorSpaceROMMRGB
 CG_AVAILABLE_STARTING(__MAC_10_11, __IPHONE_9_0);
 
+CG_EXTERN const CFStringRef kCGColorSpaceDCIP3
+CG_AVAILABLE_STARTING(__MAC_10_11, __IPHONE_9_0);
 
 /* Create a DeviceGray color space. */
 

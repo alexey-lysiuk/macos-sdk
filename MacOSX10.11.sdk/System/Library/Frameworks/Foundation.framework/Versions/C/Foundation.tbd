@@ -2,7 +2,7 @@
 archs:           [ i386, x86_64 ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation
-current-version: 1252.0
+current-version: 1256.1
 compatibility-version: 300.0
 exports:         
   - archs:           [ i386 ]

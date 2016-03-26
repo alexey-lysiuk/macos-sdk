@@ -14,7 +14,7 @@
  * @addtogroup agent
  * @addtogroup library *
  *
- * $Id: data_list.h 18212 2010-02-27 13:11:15Z bvassche $
+ * $Id$
  *
  * External definitions for functions and variables in netsnmp_data_list.c.
  *

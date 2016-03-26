@@ -2,6 +2,7 @@
 archs:           [ x86_64 ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DataSourceManagement.framework/Versions/A/DataSourceManagement
+current-version: 104.1
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _DSMEncodableResultsDictionaryFromResultsDictionary, 

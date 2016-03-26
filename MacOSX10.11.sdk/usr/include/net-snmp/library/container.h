@@ -12,7 +12,7 @@
 #define NETSNMP_CONTAINER_H
 
 /*
- * $Id: container.h 18910 2010-05-30 19:16:50Z bvassche $
+ * $Id$
  *
  * WARNING: This is a recently created file, and all of it's contents are
  *          subject to change at any time.

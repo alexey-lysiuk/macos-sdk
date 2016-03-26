@@ -58,7 +58,7 @@ protected:
 	OSSet *								fClients;
 	IOSCSIPeripheralDeviceType05 *		fProvider;
 	
-	virtual void	free ( void );			
+	virtual void	free ( void ) APPLE_KEXT_OVERRIDE;
 	
     // Reserve space for future expansion.
     struct IOBDServicesExpansionData { };
@@ -85,39 +85,39 @@ public:
 											UInt64					block,
 											UInt64					nblks,
 											IOStorageAttributes *   attributes,
-											IOStorageCompletion *	completion );
+											IOStorageCompletion *	completion ) APPLE_KEXT_OVERRIDE;
 
-    virtual IOReturn	doEjectMedia ( void );
+    virtual IOReturn	doEjectMedia ( void ) APPLE_KEXT_OVERRIDE;
 
-    virtual IOReturn	doFormatMedia ( UInt64 byteCapacity );
+    virtual IOReturn	doFormatMedia ( UInt64 byteCapacity ) APPLE_KEXT_OVERRIDE;
 
     virtual UInt32		doGetFormatCapacities ( UInt64 *	capacities,
-    											UInt32		capacitiesMaxCount ) const;
-    virtual IOReturn	doSynchronizeCache ( void );
+												UInt32		capacitiesMaxCount ) const APPLE_KEXT_OVERRIDE;
+    virtual IOReturn	doSynchronizeCache ( void ) APPLE_KEXT_OVERRIDE;
 	
-	virtual IOReturn	getWriteCacheState ( bool * enabled );
+	virtual IOReturn	getWriteCacheState ( bool * enabled ) APPLE_KEXT_OVERRIDE;
 	
-	virtual IOReturn	setWriteCacheState ( bool enabled );
+	virtual IOReturn	setWriteCacheState ( bool enabled ) APPLE_KEXT_OVERRIDE;
         
-    virtual char *		getVendorString ( void );
+    virtual char *		getVendorString ( void ) APPLE_KEXT_OVERRIDE;
     
-    virtual char *		getProductString ( void );
+    virtual char *		getProductString ( void ) APPLE_KEXT_OVERRIDE;
     
-    virtual char *		getRevisionString ( void );
+    virtual char *		getRevisionString ( void ) APPLE_KEXT_OVERRIDE;
     
-    virtual char *		getAdditionalDeviceInfoString ( void );
+    virtual char *		getAdditionalDeviceInfoString ( void ) APPLE_KEXT_OVERRIDE;
     
-    virtual IOReturn	reportBlockSize ( UInt64 * blockSize );
+    virtual IOReturn	reportBlockSize ( UInt64 * blockSize ) APPLE_KEXT_OVERRIDE;
     
-    virtual IOReturn	reportEjectability ( bool * isEjectable );
+    virtual IOReturn	reportEjectability ( bool * isEjectable ) APPLE_KEXT_OVERRIDE;
     
-    virtual IOReturn	reportMediaState ( bool * mediaPresent, bool * changed );
+    virtual IOReturn	reportMediaState ( bool * mediaPresent, bool * changed ) APPLE_KEXT_OVERRIDE;
     
-    virtual IOReturn	reportMaxValidBlock ( UInt64 * maxBlock );
+    virtual IOReturn	reportMaxValidBlock ( UInt64 * maxBlock ) APPLE_KEXT_OVERRIDE;
         
-    virtual IOReturn	reportRemovability ( bool * isRemovable );
+    virtual IOReturn	reportRemovability ( bool * isRemovable ) APPLE_KEXT_OVERRIDE;
     
-    virtual IOReturn	reportWriteProtection ( bool * isWriteProtected );
+    virtual IOReturn	reportWriteProtection ( bool * isWriteProtected ) APPLE_KEXT_OVERRIDE;
 
 	/* CD Specific */
 	virtual IOReturn	doAsyncReadCD ( IOMemoryDescriptor * buffer,
@@ -125,13 +125,13 @@ public:
 										UInt32 nblks,
 										CDSectorArea sectorArea,
 										CDSectorType sectorType,
-										IOStorageCompletion completion );
+										IOStorageCompletion completion ) APPLE_KEXT_OVERRIDE;
 	
-	virtual IOReturn	readISRC ( UInt8 track, CDISRC isrc );
+	virtual IOReturn	readISRC ( UInt8 track, CDISRC isrc ) APPLE_KEXT_OVERRIDE;
 	
-	virtual IOReturn	readMCN ( CDMCN mcn);
+	virtual IOReturn	readMCN ( CDMCN mcn) APPLE_KEXT_OVERRIDE;
 	
-	virtual IOReturn	readTOC ( IOMemoryDescriptor * buffer );
+	virtual IOReturn	readTOC ( IOMemoryDescriptor * buffer ) APPLE_KEXT_OVERRIDE;
 	
 	virtual IOReturn	audioPause ( bool pause );
 	
@@ -147,29 +147,29 @@ public:
 	
 	virtual IOReturn	setAudioVolume ( UInt8 leftVolume, UInt8 rightVolume );
 
-	virtual IOReturn	getSpeed ( UInt16 * kilobytesPerSecond );
+	virtual IOReturn	getSpeed ( UInt16 * kilobytesPerSecond ) APPLE_KEXT_OVERRIDE;
 	
-	virtual IOReturn	setSpeed ( UInt16 kilobytesPerSecond );
+	virtual IOReturn	setSpeed ( UInt16 kilobytesPerSecond ) APPLE_KEXT_OVERRIDE;
 	
 	/* DVD Specific */
-	virtual UInt32			getMediaType		( void );
+	virtual UInt32			getMediaType		( void ) APPLE_KEXT_OVERRIDE;
     
 	virtual IOReturn		reportKey			( IOMemoryDescriptor * buffer,
 												  const DVDKeyClass keyClass,
 												  const UInt32 lba,
 												  const UInt8 agid,
-												  const DVDKeyFormat keyFormat );
+												  const DVDKeyFormat keyFormat ) APPLE_KEXT_OVERRIDE;
 												  
 	virtual IOReturn		sendKey				( IOMemoryDescriptor * buffer,
 												  const DVDKeyClass keyClass,
 												  const UInt8 agid,
-												  const DVDKeyFormat keyFormat );
+												  const DVDKeyFormat keyFormat ) APPLE_KEXT_OVERRIDE;
 
 	virtual IOReturn		readDVDStructure 	( 	IOMemoryDescriptor * 		buffer,
 													const UInt8					structureFormat,
 													const UInt32				logicalBlockAddress,
 													const UInt8					layer,
-													const UInt8 				agid );
+													const UInt8 				agid ) APPLE_KEXT_OVERRIDE;
 
 	/* BD Specific */
     virtual IOReturn		readDiscStructure	(	IOMemoryDescriptor * buffer,
@@ -177,42 +177,42 @@ public:
 													UInt32               logicalBlockAddress,
 													UInt8                layer,
 													UInt8                agid,
-													UInt8                mediaType );
+													UInt8                mediaType ) APPLE_KEXT_OVERRIDE;
 
 	/* 10.6.0 */
-    virtual IOReturn		requestIdle ( void );
+    virtual IOReturn		requestIdle ( void ) APPLE_KEXT_OVERRIDE;
 	
 	/* System Specific */
-	virtual IOReturn 	message ( UInt32 type, IOService * provider, void * argument );
-    virtual IOReturn	setProperties ( OSObject * properties );
+	virtual IOReturn 	message ( UInt32 type, IOService * provider, void * argument ) APPLE_KEXT_OVERRIDE;
+    virtual IOReturn	setProperties ( OSObject * properties ) APPLE_KEXT_OVERRIDE;
 
 	/* User Client Specific */
-	virtual bool start ( IOService * provider );
+	virtual bool start ( IOService * provider ) APPLE_KEXT_OVERRIDE;
 	virtual bool open ( IOService * client, IOOptionBits options, IOStorageAccess access );
 	
-	virtual bool handleOpen	( IOService * client, IOOptionBits options, void * access );
-	virtual void handleClose ( IOService * client, IOOptionBits options );
-	virtual bool handleIsOpen ( const IOService * client ) const;
+	virtual bool handleOpen	( IOService * client, IOOptionBits options, void * access ) APPLE_KEXT_OVERRIDE;
+	virtual void handleClose ( IOService * client, IOOptionBits options ) APPLE_KEXT_OVERRIDE;
+	virtual bool handleIsOpen ( const IOService * client ) const APPLE_KEXT_OVERRIDE;
 
 	/* Added with 10.1.3 */
 	virtual IOReturn	readTOC (	IOMemoryDescriptor *	buffer,
 									CDTOCFormat				format,
 									UInt8					msf,
 									UInt8					trackSessionNumber,
-									UInt16 *				actualByteCount ); 
+									UInt16 *				actualByteCount ) APPLE_KEXT_OVERRIDE;
 	
 	/* Added with 10.1.3 */
 	virtual IOReturn	readDiscInfo (	IOMemoryDescriptor *	buffer,
-										UInt16 *				actualByteCount );
+										UInt16 *				actualByteCount ) APPLE_KEXT_OVERRIDE;
 	
 	/* Added with 10.1.3 */
 	virtual IOReturn	readTrackInfo (	IOMemoryDescriptor *	buffer,
 										UInt32					address,
 										CDTrackInfoAddressType	addressType,
-										UInt16 *				actualByteCount );
+										UInt16 *				actualByteCount ) APPLE_KEXT_OVERRIDE;
 	
 	/* Added with 10.5 */
-	virtual IOReturn	splitTrack ( UInt32 address );
+	virtual IOReturn	splitTrack ( UInt32 address ) APPLE_KEXT_OVERRIDE;
 	
 private:
 	

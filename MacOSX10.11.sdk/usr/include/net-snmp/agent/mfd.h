@@ -1,7 +1,7 @@
 /*
  * MIBs For Dummies header
  *
- * $Id: mfd.h 12707 2005-08-30 00:47:11Z rstory $
+ * $Id$
  */
 #ifndef NETSNMP_MFD_H
 #define NETSNMP_MFD_H

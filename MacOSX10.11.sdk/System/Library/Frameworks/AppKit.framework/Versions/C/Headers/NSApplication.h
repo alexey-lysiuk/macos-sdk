@@ -89,11 +89,12 @@ typedef NS_OPTIONS(NSUInteger, NSApplicationPresentationOptions) {
     NSApplicationPresentationDisableForceQuit           = (1 <<  6),    // Cmd+Opt+Esc panel is disabled
     NSApplicationPresentationDisableSessionTermination  = (1 <<  7),    // PowerKey panel and Restart/Shut Down/Log Out disabled
     NSApplicationPresentationDisableHideApplication     = (1 <<  8),    // Application "Hide" menu item is disabled
-    NSApplicationPresentationDisableMenuBarTransparency = (1 <<  9),     // Menu Bar's transparent appearance is disabled
+    NSApplicationPresentationDisableMenuBarTransparency = (1 <<  9),    // Menu Bar's transparent appearance is disabled
 
-    NSApplicationPresentationFullScreen NS_ENUM_AVAILABLE_MAC(10_7) = (1 << 10),                     // Application is in fullscreen mode
-    NSApplicationPresentationAutoHideToolbar NS_ENUM_AVAILABLE_MAC(10_7) = (1 << 11)                 // Fullscreen window toolbar is detached from window and hides/shows with autoHidden menuBar.  May be used only when both NSApplicationPresentationFullScreen and NSApplicationPresentationAutoHideMenuBar are also set
+    NSApplicationPresentationFullScreen NS_ENUM_AVAILABLE_MAC(10_7) = (1 << 10),         // Application is in fullscreen mode
+    NSApplicationPresentationAutoHideToolbar NS_ENUM_AVAILABLE_MAC(10_7) = (1 << 11),    // Fullscreen window toolbar is detached from window and hides/shows with autoHidden menuBar.  May be used only when both NSApplicationPresentationFullScreen and NSApplicationPresentationAutoHideMenuBar are also set
     
+    NSApplicationPresentationDisableCursorLocationAssistance NS_ENUM_AVAILABLE_MAC(10_11_2) = (1 << 12)    // "Shake mouse pointer to locate" is disabled for this application
 } NS_ENUM_AVAILABLE_MAC(10_6);
 
 typedef NS_OPTIONS(NSUInteger, NSApplicationOcclusionState) {

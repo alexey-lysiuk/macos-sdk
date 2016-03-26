@@ -385,6 +385,9 @@ struct	tcpstat {
 	u_int32_t	tcps_ecn_conn_plnoce;	/* Number of connections that received no CE and sufferred packet loss */
 	u_int32_t	tcps_ecn_conn_pl_ce;	/* Number of connections that received CE and sufferred packet loss */
 	u_int32_t	tcps_ecn_conn_nopl_ce;	/* Number of connections that received CE and sufferred no packet loss */
+	u_int32_t	tcps_ecn_fallback_synloss; /* Number of times we did fall back due to SYN-Loss */
+	u_int32_t	tcps_ecn_fallback_reorder; /* Number of times we fallback because we detected the PAWS-issue */
+	u_int32_t	tcps_ecn_fallback_ce;	/* Number of times we fallback because we received too many CEs */
 
 	/* TFO-related statistics */
 	u_int32_t	tcps_tfo_syn_data_rcv;	/* Received a SYN+data with valid cookie */
@@ -398,6 +401,7 @@ struct	tcpstat {
 	u_int32_t	tcps_tfo_syn_loss;	/* SYN+TFO has been lost and we fallback */
 	u_int32_t	tcps_tfo_blackhole;	/* TFO got blackholed by a middlebox. */
 };
+
 
 struct tcpstat_local {
 	u_int64_t badformat;

@@ -4,7 +4,7 @@ platform:        macosx
 install-name:    /usr/lib/libmecabra.dylib
 exports:         
   - archs:           [ i386, x86_64 ]
-    symbols:         [ _BurstTrieCompile, _IndexedSearchDictionaryBuild, 
+    symbols:         [ _BurstTrieCompile, _EmojiDictionaryCompile, _IndexedSearchDictionaryBuild, 
                        _MecabraAcceptCandidate, _MecabraAdaptToContext, 
                        _MecabraAdaptToTokenizedText, _MecabraAdaptToTokenizedTextWithEffectiveTime, 
                        _MecabraAdaptToUntokenizedText, _MecabraAddSpecialtyDictionary, 

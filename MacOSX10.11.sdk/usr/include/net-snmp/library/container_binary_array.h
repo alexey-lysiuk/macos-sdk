@@ -1,6 +1,6 @@
 /*
  * binary_array.h
- * $Id: container_binary_array.h 16726 2007-10-15 20:52:11Z rstory $
+ * $Id$
  */
 
 #ifndef BINARY_ARRAY_H

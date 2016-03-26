@@ -3,7 +3,7 @@
  
      Contains:   Algebraic and logical operations on large operands.
  
-     Version:    vecLib-563.3
+     Version:    vecLib-563.4
  
      Copyright:  Copyright (c) 1999-2015 by Apple Inc. All rights reserved.
  

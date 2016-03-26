@@ -2,7 +2,7 @@
 archs:           [ i386, x86_64 ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/JavaScriptCore.framework/Versions/A/JavaScriptCore
-current-version: 601.1.48
+current-version: 601.3.7
 exports:         
   - archs:           [ i386 ]
     symbols:         [ __ZN3JSC10JSFunction6createERNS_2VMEPNS_14JSGlobalObjectEiRKN3WTF6StringEONSt3__18functionIFxPNS_9ExecStateEEEENS_9IntrinsicEPFxSC_E, 
@@ -408,10 +408,12 @@ exports:
                        __ZN3JSC20WriteBarrierCounters22usesWithBarrierFromCppE, 
                        __ZN3JSC20WriteBarrierCounters25usesWithoutBarrierFromCppE, 
                        __ZN3JSC20createReferenceErrorEPNS_9ExecStateERKN3WTF6StringE, 
-                       __ZN3JSC20dateConstructorTableE, __ZN3JSC20numberPrototypeTableE, 
-                       __ZN3JSC20regExpPrototypeTableE, __ZN3JSC20symbolPrototypeTableE, 
-                       __ZN3JSC21arrayConstructorTableE, __ZN3JSC21booleanPrototypeTableE, 
-                       __ZN3JSC21getInt8ArrayClassInfoEv, __ZN3JSC21gregorianDateTimeToMSERNS_2VMERKN3WTF17GregorianDateTimeEdNS2_8TimeTypeE, 
+                       __ZN3JSC20dateConstructorTableE, __ZN3JSC20failNextNewCodeBlockEPK15OpaqueJSContext, 
+                       __ZN3JSC20failNextNewCodeBlockEPNS_9ExecStateE, 
+                       __ZN3JSC20numberPrototypeTableE, __ZN3JSC20regExpPrototypeTableE, 
+                       __ZN3JSC20symbolPrototypeTableE, __ZN3JSC21arrayConstructorTableE, 
+                       __ZN3JSC21booleanPrototypeTableE, __ZN3JSC21getInt8ArrayClassInfoEv, 
+                       __ZN3JSC21gregorianDateTimeToMSERNS_2VMERKN3WTF17GregorianDateTimeEdNS2_8TimeTypeE, 
                        __ZN3JSC21msToGregorianDateTimeERNS_2VMEdN3WTF8TimeTypeERNS2_17GregorianDateTimeE, 
                        __ZN3JSC21promisePrototypeTableE, __ZN3JSC21throwOutOfMemoryErrorEPNS_9ExecStateE, 
                        __ZN3JSC22ArrayAllocationProfile18updateIndexingTypeEv, 
@@ -1237,6 +1239,7 @@ exports:
                        __ZN9Inspector22InspectorDebuggerAgent20didClearGlobalObjectEv, 
                        __ZN9Inspector22InspectorDebuggerAgent20setBreakpointsActiveERN3WTF6StringEb, 
                        __ZN9Inspector22InspectorDebuggerAgent20setPauseOnExceptionsERN3WTF6StringERKS2_, 
+                       __ZN9Inspector22InspectorDebuggerAgent20setSuppressAllPausesEb, 
                        __ZN9Inspector22InspectorDebuggerAgent21breakpointActionProbeEPN3JSC9ExecStateERKNS_22ScriptBreakpointActionEjjRKN10Deprecated11ScriptValueE, 
                        __ZN9Inspector22InspectorDebuggerAgent21breakpointActionSoundEi, 
                        __ZN9Inspector22InspectorDebuggerAgent21sourceMapURLForScriptERKNS_19ScriptDebugListener6ScriptE, 

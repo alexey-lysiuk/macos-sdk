@@ -139,7 +139,7 @@ exports:
                        _FRToolbarItem._regex, _FRToolbarItem._url, _FRToolbarManager._ToolbarHistoryControl, 
                        _FRToolbarManager._ToolbarPageControl, _FRToolbarManager._accountButton, 
                        _FRToolbarManager._appDelegate, _FRToolbarManager._availableUpdateObserverToken, 
-                       _FRToolbarManager._historyButtonEnabledOverwritten, 
+                       _FRToolbarManager._badgeCountOperationQueue, _FRToolbarManager._historyButtonEnabledOverwritten, 
                        _FRToolbarManager._iconInfoArray, _FRToolbarManager._itemToLoadOnUpdate, 
                        _FRToolbarManager._itemToLoadOnUpdateLaunchedFromNotification, 
                        _FRToolbarManager._itemToSelectOnUpdate, _FRToolbarManager._searchField, 

@@ -84,9 +84,9 @@ GAMECONTROLLER_EXPORT
  @see GCMotion.valueChangedHandler
  */
 #if defined(OS_OBJECT_USE_OBJC) && OS_OBJECT_USE_OBJC==1
-@property (retain) dispatch_queue_t handlerQueue;
+@property (retain) dispatch_queue_t handlerQueue NS_AVAILABLE(10_11, 9_0);
 #else
-@property (assign) dispatch_queue_t handlerQueue;
+@property (assign) dispatch_queue_t handlerQueue NS_AVAILABLE(10_11, 9_0);
 #endif
 
 /**

@@ -2,7 +2,7 @@
 archs:           [ i386, x86_64 ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/HIServices.framework/Versions/A/HIServices
-current-version: 548.0
+current-version: 549.0
 exports:         
   - archs:           [ i386 ]
     symbols:         [ '$ld$hide$os10.4$_HIShapeContainsPoint', '$ld$hide$os10.4$_HIShapeCreateCopy', 

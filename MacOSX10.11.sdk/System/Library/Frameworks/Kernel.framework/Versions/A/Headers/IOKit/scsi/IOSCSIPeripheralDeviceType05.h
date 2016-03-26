@@ -52,9 +52,9 @@ protected:
 	
 public:
     
-    bool			init	( OSDictionary * propTable );
-    virtual bool	start	( IOService * provider );
-    virtual void 	stop	( IOService *  provider );
+    bool			init	( OSDictionary * propTable ) APPLE_KEXT_OVERRIDE;
+    virtual bool	start	( IOService * provider ) APPLE_KEXT_OVERRIDE;
+    virtual void 	stop	( IOService *  provider ) APPLE_KEXT_OVERRIDE;
 	
 private:
 	

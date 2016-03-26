@@ -2,8 +2,8 @@
 archs:           [ x86_64 ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Slideshows.framework/Versions/A/Slideshows
-current-version: 4.3
-compatibility-version: 4.3
+current-version: 4.4
+compatibility-version: 4.4
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _Antialias1D, _AppendIntToString, _Bounce, _CGPointFromCAMLString, 

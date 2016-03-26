@@ -1,6 +1,6 @@
 /*
  * table_array.h
- * $Id: table_array.h 12757 2005-09-12 15:24:16Z dts12 $
+ * $Id$
  */
 #ifndef _TABLE_ARRAY_HANDLER_H_
 #define _TABLE_ARRAY_HANDLER_H_

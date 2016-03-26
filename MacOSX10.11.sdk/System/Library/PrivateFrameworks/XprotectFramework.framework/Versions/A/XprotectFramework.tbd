@@ -10,7 +10,7 @@ exports:
                        _XProtectAnalysis._fileURL, _XProtectAnalysis._lsProperties, 
                        _XProtectAnalysis._workerThread, _XProtectDylibCheck._absolutePath, 
                        _XProtectDylibCheck._executablePath, _XProtectDylibCheck._fat, 
-                       _XProtectDylibCheck._fatArchs, _XProtectDylibCheck._fileHandle, 
+                       _XProtectDylibCheck._fatArchs, _XProtectDylibCheck._fd, 
                        _XProtectDylibCheck._headerLength, _XProtectDylibCheck._isExecutable, 
                        _XProtectDylibCheck._loadCommands, _XProtectDylibCheck._loaderPath, 
                        _XProtectDylibCheck._numCommands, _XProtectDylibCheck._offset, 

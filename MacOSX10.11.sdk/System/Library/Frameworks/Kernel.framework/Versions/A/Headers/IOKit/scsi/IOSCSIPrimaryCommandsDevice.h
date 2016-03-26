@@ -151,7 +151,7 @@ protected:
 	OSDictionary *					fDeviceCharacteristicsDictionary;
 	UInt32							fNumCommandsOutstanding;
 	
-	virtual void 					free ( void );
+	virtual void 					free ( void ) APPLE_KEXT_OVERRIDE;
 	void							SetANSIVersion ( UInt8 );
 	void							SetCMDQUE ( bool value );
 	IOReturn						GetModeSense ( 
@@ -369,16 +369,16 @@ protected:
 	
 public:
 	
-	bool				init ( OSDictionary * propTable );
-	virtual bool		start ( IOService * provider );
-	virtual void		stop ( IOService *  provider );
-	virtual IOReturn 	message ( UInt32 type, IOService * nub, void * arg );
+	bool				init ( OSDictionary * propTable ) APPLE_KEXT_OVERRIDE;
+	virtual bool		start ( IOService * provider ) APPLE_KEXT_OVERRIDE;
+	virtual void		stop ( IOService *  provider ) APPLE_KEXT_OVERRIDE;
+	virtual IOReturn 	message ( UInt32 type, IOService * nub, void * arg ) APPLE_KEXT_OVERRIDE;
 	
 	// The setAgressiveness method is called by the power manager
 	// to notify us of certain power management settings. We override
 	// this method in order to catch the kPMMinutesToSpinDown message
 	// in order to set our idle timer.
-	virtual IOReturn 	setAggressiveness ( unsigned long type, unsigned long minutes );
+	virtual IOReturn 	setAggressiveness ( unsigned long type, unsigned long minutes ) APPLE_KEXT_OVERRIDE;
 	
 	// Methods for getting device information strings
 	virtual char *		GetVendorString ( void );
@@ -396,40 +396,40 @@ public:
 	// -- SCSI Protocol Interface Methods	--
 	// The ExecuteCommand method will take a SCSI Task and transport
 	// it across the physical wire(s) to the device
-	virtual void		ExecuteCommand ( SCSITaskIdentifier request );
+	virtual void		ExecuteCommand ( SCSITaskIdentifier request ) APPLE_KEXT_OVERRIDE;
 	
 	// The Task Management function to allow the SCSI Application Layer client to request
 	// that a specific task be aborted.
-	SCSIServiceResponse		AbortTask ( UInt8 theLogicalUnit, SCSITaggedTaskIdentifier theTag );
+	SCSIServiceResponse		AbortTask ( UInt8 theLogicalUnit, SCSITaggedTaskIdentifier theTag ) APPLE_KEXT_OVERRIDE;
 
 	// The Task Management function to allow the SCSI Application Layer client to request
 	// that a all tasks curerntly in the task set be aborted.
-	SCSIServiceResponse		AbortTaskSet ( UInt8 theLogicalUnit );
+	SCSIServiceResponse		AbortTaskSet ( UInt8 theLogicalUnit ) APPLE_KEXT_OVERRIDE;
 
-	SCSIServiceResponse		ClearACA ( UInt8 theLogicalUnit );
+	SCSIServiceResponse		ClearACA ( UInt8 theLogicalUnit ) APPLE_KEXT_OVERRIDE;
 
-	SCSIServiceResponse		ClearTaskSet ( UInt8 theLogicalUnit );
+	SCSIServiceResponse		ClearTaskSet ( UInt8 theLogicalUnit ) APPLE_KEXT_OVERRIDE;
     
-	SCSIServiceResponse		LogicalUnitReset ( UInt8 theLogicalUnit );
+	SCSIServiceResponse		LogicalUnitReset ( UInt8 theLogicalUnit ) APPLE_KEXT_OVERRIDE;
 
-	SCSIServiceResponse		TargetReset ( void );
+	SCSIServiceResponse		TargetReset ( void ) APPLE_KEXT_OVERRIDE;
 
 	// The AbortCommand method will abort the indicated SCSI Task,
 	// if it is possible and the task has not already completed.
-	virtual SCSIServiceResponse	AbortCommand ( SCSITaskIdentifier request );
+	virtual SCSIServiceResponse	AbortCommand ( SCSITaskIdentifier request ) APPLE_KEXT_OVERRIDE;
 	
 	// The IsProtocolServiceSupported will return true if the specified
 	// feature is supported by the protocol layer.  If the service has a value that must be
 	// returned, it will be returned in the serviceValue output parameter.
 	virtual bool		IsProtocolServiceSupported (
 											SCSIProtocolFeature feature,
-											void *				serviceValue );
+											void *				serviceValue ) APPLE_KEXT_OVERRIDE;
 	
 	// The HandleProtocolServiceFeature will return true if the specified feature could
 	// be handled properly by the protocol layer.
 	virtual bool		HandleProtocolServiceFeature (
 											SCSIProtocolFeature	feature,
-											void *				serviceValue );
+											void *				serviceValue ) APPLE_KEXT_OVERRIDE;
 	
 	// Utility methods for use by all peripheral device objects.
 

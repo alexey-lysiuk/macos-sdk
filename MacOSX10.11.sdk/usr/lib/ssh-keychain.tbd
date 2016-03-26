@@ -1,0 +1,16 @@
+---
+archs:           [ x86_64 ]
+platform:        macosx
+install-name:    /usr/lib/ssh-keychain.dylib
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _C_CloseSession, _C_Finalize, _C_FindObjects, _C_FindObjectsFinal, 
+                       _C_FindObjectsInit, _C_GetAttributeValue, _C_GetFunctionList, 
+                       _C_GetInfo, _C_GetSlotList, _C_GetTokenInfo, _C_Initialize, 
+                       _C_Login, _C_OpenSession, _C_Sign, _C_SignInit, 
+                       _dataFromHex, _dataToHex, _getAvailableSlots, _getCertificateFilter, 
+                       _getProcessName, _getSession, _isCallerEligibleForUse, 
+                       _lastSession, _pkcs11_function_list, _sessions, 
+                       _slots, _stringCpyPaddedWithSpaces ]
+    objc-classes:    [ _KPCertificate, _KPSession, _KPSlot ]
+...

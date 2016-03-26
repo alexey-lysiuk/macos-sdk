@@ -4,16 +4,20 @@ platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreCDP.framework/Versions/A/CoreCDP
 exports:         
   - archs:           [ x86_64 ]
-    symbols:         [ _CDPBackupMetadataDeviceColorKey, _CDPBackupMetadataDeviceEnclosureColorKey, 
-                       _CDPBackupMetadataDeviceModelKey, _CDPBackupMetadataDeviceNameKey, 
-                       _CDPGetFileLoggingEnabled, _CDPSetFileLoggingEnabled, 
-                       _CDPStateErrorDomain, _CDPTelemetryDidChangeLocalSecretKey, 
-                       _CDPTelemetryDidRemoveLocalSecretKey, _CDPTelemetryPCSAlreadyMigrated, 
-                       _CDPTelemetryPCSMigrationFailed, _CDPTelemetryPCSMigrationSucceeded, 
-                       _CoreCDPVersionNumber, _CoreCDPVersionString, __CDPLogInternal, 
-                       __CDPLogInternalV, __CDPStateError, __IARGetModel ]
-    objc-classes:    [ _CDPAccount, _CDPContext, _CDPDevice, _CDPKeychainSync, 
-                       _CDPLocalDevice, _CDPLocalDeviceSecretHandler, _CDPRemoteDeviceSecretValidator, 
-                       _CDPSecureBackupController, _CDPStateController, 
-                       _CDPTelemetryController ]
+    symbols:         [ _CDPDaemonExportedInterface, _CDPGetFileLoggingEnabled, 
+                       _CDPLocalizedString, _CDPSecretTypeLocalizedString, 
+                       _CDPSetFileLoggingEnabled, _CDPStateErrorDomain, 
+                       _CDPUIProviderExportedInterface, _CoreCDPVersionNumber, 
+                       _CoreCDPVersionString, __CDPLogInternal, __CDPLogInternalV, 
+                       __CDPStateError ]
+    objc-classes:    [ _CDPAccount, _CDPContext, _CDPDaemonConnection, 
+                       _CDPDevice, _CDPKeychainSync, _CDPLocalDevice, _CDPLocalDeviceSecretHandler, 
+                       _CDPRemoteDeviceSecretValidator, _CDPStateController, 
+                       _CDPStateUIProviderProxy, _CDPUtilities ]
+    objc-ivars:      [ _CDPDevice._deviceColor, _CDPDevice._enclosureColor, 
+                       _CDPDevice._hasNumericSecret, _CDPDevice._hasRandomSecret, 
+                       _CDPDevice._isUsingMultipleiCSC, _CDPDevice._localizedName, 
+                       _CDPDevice._model, _CDPDevice._modelClass, _CDPDevice._modelVersion, 
+                       _CDPDevice._numericSecretLength, _CDPDevice._platform, 
+                       _CDPDevice._recordDate, _CDPDevice._recordID, _CDPDevice._remainingAttempts ]
 ...

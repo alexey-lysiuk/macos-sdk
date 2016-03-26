@@ -2,7 +2,7 @@
 archs:           [ x86_64 ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/EventKit.framework/Versions/A/EventKit
-current-version: 487.0
+current-version: 487.3
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CalTravelEngineNS_Log_Travel_Engine, _CalTravelEngineNS_Log_Travel_Engine_Throttle, 

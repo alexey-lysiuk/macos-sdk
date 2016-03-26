@@ -346,12 +346,12 @@ NS_CLASS_AVAILABLE(10_10, 9_0)
 /// @param ins INS code of the APDU
 /// @param p1 P1 code of the APDU
 /// @param p2 P2 code of the APDU
-/// @param requestData Data field of the APDU.  Length of the data serves as Lc field of the APDU
+/// @param requestData Data field of the APDU, or nil if no input data field should be present (i.e case1 or case2 APDUs).  Length of the data serves as Lc field of the APDU.
 /// @param le Expected number of bytes to be returned, or nil if no output data are expected (i.e. case1 or case3 APDUs). To get as much bytes as card provides, pass @0.
 /// @param replyData Block of returned data without SW1SW2 bytes, or nil if an error occured.
 /// @param sw SW1SW2 result code
 /// @param error Contains error details when nil is returned.  Specific error is also filled in if there was no communication error, but card returned other SW code than 0x9000.
-- (void)sendIns:(UInt8)ins p1:(UInt8)p1 p2:(UInt8)p2 data:(NSData *)requestData le:(nullable NSNumber *)le
+- (void)sendIns:(UInt8)ins p1:(UInt8)p1 p2:(UInt8)p2 data:(nullable NSData *)requestData le:(nullable NSNumber *)le
           reply:(void(^)(NSData *__nullable replyData, UInt16 sw, NSError *__nullable error))reply;
 
 @end

@@ -1255,6 +1255,7 @@ exports:
                        _kFigMediaValidatorCodecProfileKey_PerProfileConstraints, 
                        _kFigMediaValidatorCodecProfileKey_Profile, _kFigMediaValidatorCodecProfileKey_SupportedProfiles, 
                        _kFigMediaValidatorCodecType_AnyDecodableCodecType, 
+                       _kFigMediaValidatorFormatReader_AnyInstalledFormatReader, 
                        _kFigMediaValidatorKey_AllowMultipleEdits, _kFigMediaValidatorKey_AllowMultipleVideoSampleDescriptions, 
                        _kFigMediaValidatorKey_AllowNonSelfContained, _kFigMediaValidatorKey_AllowedFormatReaders, 
                        _kFigMediaValidatorKey_AudioCodecProfiles, _kFigMediaValidatorKey_AudioCodecs, 

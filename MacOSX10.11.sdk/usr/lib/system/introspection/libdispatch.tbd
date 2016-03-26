@@ -2,7 +2,7 @@
 archs:           [ i386, x86_64 ]
 platform:        macosx
 install-name:    /usr/lib/system/introspection/libdispatch.dylib
-current-version: 500.1.5
+current-version: 501.20.1
 exports:         
   - archs:           [ x86_64 ]
     objc-classes:    [ _OS_object ]

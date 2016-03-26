@@ -267,7 +267,7 @@ protected:
 		kPollingMode_MediaRemoval	= 2
 	};
 	
-	virtual IOReturn	setProperties ( OSObject * properties );
+	virtual IOReturn	setProperties ( OSObject * properties ) APPLE_KEXT_OVERRIDE;
 	
 	virtual void 		CreateStorageServiceNub ( void );
 	virtual bool		DetermineDeviceCharacteristics ( void );
@@ -280,7 +280,7 @@ protected:
 	virtual void		EnablePolling ( void );
 	virtual void		DisablePolling ( void );
 	virtual void		CheckWriteProtection ( void );
-	virtual bool		ClearNotReadyStatus ( void );
+	virtual bool		ClearNotReadyStatus ( void ) APPLE_KEXT_OVERRIDE;
 		
 	virtual IOReturn	GetDeviceConfiguration ( void );
 	virtual IOReturn	GetDeviceConfigurationSize ( UInt32 * size );
@@ -318,61 +318,61 @@ protected:
 
 	// ------ User Client Support ------
 	
-	virtual IOReturn 	HandleSetUserClientExclusivityState ( IOService * userClient, bool state );
+	virtual IOReturn 	HandleSetUserClientExclusivityState ( IOService * userClient, bool state ) APPLE_KEXT_OVERRIDE;
 
 	// ----- Power Management Support ------
 	
 	// We override this method to set our power states and register ourselves
 	// as a power policy maker.
-	virtual void 		InitializePowerManagement ( IOService * provider );
+	virtual void 		InitializePowerManagement ( IOService * provider ) APPLE_KEXT_OVERRIDE;
 	
 	// We override this method so that when we register for power management,
 	// we go to our active power state (which the drive is definitely in
 	// at startup time).
-	virtual UInt32		GetInitialPowerState ( void );
+	virtual UInt32		GetInitialPowerState ( void ) APPLE_KEXT_OVERRIDE;
 
 	// We override this method in order to provide the number of transitions
 	// from Fully active to Sleep state so that the idle timer can be adjusted
 	// to the appropriate time period based on the disk spindown time set in
 	// the Energy Saver prefs panel.
-	virtual UInt32		GetNumberOfPowerStateTransitions ( void );
+	virtual UInt32		GetNumberOfPowerStateTransitions ( void ) APPLE_KEXT_OVERRIDE;
 	
 	// The TicklePowerManager method is called to tell the power manager that the
 	// device needs to be in a certain power state to handle requests.
-	virtual void		TicklePowerManager ( void );
+	virtual void		TicklePowerManager ( void ) APPLE_KEXT_OVERRIDE;
 
 	// The HandlePowerChange method is the state machine for power management.
 	// It is guaranteed to be on its own thread of execution (different from
 	// the power manager thread AND the workloop thread. This routine can
 	// send sync or async calls to the drive without worrying about threading
 	// issues.
-	virtual void		HandlePowerChange ( void );
+	virtual void		HandlePowerChange ( void ) APPLE_KEXT_OVERRIDE;
 
 	// The HandleCheckPowerState (void) method is on the serialized side of the command
 	// gate and can change member variables safely without multi-threading issues.
 	// It's main purpose is to call the superclass' HandleCheckPowerState ( UInt32 maxPowerState )
 	// with the max power state the class registered with.
-	virtual void		HandleCheckPowerState ( void );
+	virtual void		HandleCheckPowerState ( void ) APPLE_KEXT_OVERRIDE;
 
 	// The CheckMediaPresence method is called to see if the media which we
 	// anticipated being there is still there.
 	virtual bool		CheckMediaPresence ( void );
 	
-	virtual bool		InitializeDeviceSupport ( void );
-	virtual void		StartDeviceSupport ( void );
-	virtual void		SuspendDeviceSupport ( void );
-	virtual void		ResumeDeviceSupport ( void );
-	virtual void		StopDeviceSupport ( void );
-	virtual void		TerminateDeviceSupport ( void );
+	virtual bool		InitializeDeviceSupport ( void ) APPLE_KEXT_OVERRIDE;
+	virtual void		StartDeviceSupport ( void ) APPLE_KEXT_OVERRIDE;
+	virtual void		SuspendDeviceSupport ( void ) APPLE_KEXT_OVERRIDE;
+	virtual void		ResumeDeviceSupport ( void ) APPLE_KEXT_OVERRIDE;
+	virtual void		StopDeviceSupport ( void ) APPLE_KEXT_OVERRIDE;
+	virtual void		TerminateDeviceSupport ( void ) APPLE_KEXT_OVERRIDE;
 	
-	virtual void		free ( void );
+	virtual void		free ( void ) APPLE_KEXT_OVERRIDE;
 
-	virtual IOReturn	VerifyDeviceState ( void );
+	virtual IOReturn	VerifyDeviceState ( void ) APPLE_KEXT_OVERRIDE;
 
 
 public:
 	
-	virtual IOReturn 	setAggressiveness ( unsigned long type, unsigned long minutes );
+	virtual IOReturn 	setAggressiveness ( unsigned long type, unsigned long minutes ) APPLE_KEXT_OVERRIDE;
 	
 	virtual IOReturn	SyncReadWrite ( 	IOMemoryDescriptor *	buffer,
 											UInt64					startBlock,

@@ -5,6 +5,7 @@
 //  Copyright (c) 2014 Apple Inc. All rights reserved.
 //
 
+#import <Availability.h>
 #import <Foundation/Foundation.h>
 #import <Metal/MTLDefines.h>
 #import <Metal/MTLTypes.h>
@@ -52,17 +53,19 @@ MTL_EXTERN id <MTLDevice> __nullable MTLCreateSystemDefaultDevice(void) NS_AVAIL
 */
 MTL_EXTERN NSArray <id<MTLDevice>> *MTLCopyAllDevices(void) NS_AVAILABLE_MAC(10_11);
 
-
 typedef NS_ENUM(NSUInteger, MTLFeatureSet)
 {
-    MTLFeatureSet_iOS_GPUFamily1_v1 NS_ENUM_AVAILABLE_IOS(8_0) = 0,
-    MTLFeatureSet_iOS_GPUFamily2_v1 NS_ENUM_AVAILABLE_IOS(8_0) = 1,
+    MTLFeatureSet_iOS_GPUFamily1_v1 NS_ENUM_AVAILABLE_IOS(8_0) __TVOS_UNAVAILABLE = 0,
+    MTLFeatureSet_iOS_GPUFamily2_v1 NS_ENUM_AVAILABLE_IOS(8_0) __TVOS_UNAVAILABLE = 1,
     
-    MTLFeatureSet_iOS_GPUFamily1_v2 NS_ENUM_AVAILABLE_IOS(9_0) = 2,
-    MTLFeatureSet_iOS_GPUFamily2_v2 NS_ENUM_AVAILABLE_IOS(9_0) = 3,
+    MTLFeatureSet_iOS_GPUFamily1_v2 NS_ENUM_AVAILABLE_IOS(9_0) __TVOS_UNAVAILABLE = 2,
+    MTLFeatureSet_iOS_GPUFamily2_v2 NS_ENUM_AVAILABLE_IOS(9_0) __TVOS_UNAVAILABLE = 3,
 
-    MTLFeatureSet_OSX_GPUFamily1_v1 NS_ENUM_AVAILABLE_MAC(10_11)   = 10000,
-} NS_ENUM_AVAILABLE(10_11, 8_0);
+    MTLFeatureSet_OSX_GPUFamily1_v1 NS_ENUM_AVAILABLE_MAC(10_11) = 10000,
+
+    
+
+} NS_ENUM_AVAILABLE(10_11, 8_0) __TVOS_AVAILABLE(9.0);
 
 /*!
  @enum MTLPipelineOption
