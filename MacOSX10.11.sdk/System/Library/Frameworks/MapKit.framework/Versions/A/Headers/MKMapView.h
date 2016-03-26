@@ -25,11 +25,11 @@ NS_ASSUME_NONNULL_BEGIN
 typedef NS_ENUM(NSInteger, MKUserTrackingMode) {
 	MKUserTrackingModeNone = 0, // the user's location is not followed
 	MKUserTrackingModeFollow, // the map follows the user's location
-	MKUserTrackingModeFollowWithHeading, // the map follows the user's location and heading
-} NS_ENUM_AVAILABLE(NA, 5_0) __WATCHOS_PROHIBITED;
+	MKUserTrackingModeFollowWithHeading __TVOS_PROHIBITED, // the map follows the user's location and heading
+} NS_ENUM_AVAILABLE(NA, 5_0) __TVOS_AVAILABLE(9_2) __WATCHOS_PROHIBITED;
 
 #if TARGET_OS_IPHONE
-MK_CLASS_AVAILABLE(NA, 3_0) __WATCHOS_PROHIBITED
+MK_CLASS_AVAILABLE(NA, 3_0) __TVOS_AVAILABLE(9_2) __WATCHOS_PROHIBITED
 @interface MKMapView : UIView <NSCoding>
 #else
 MK_CLASS_AVAILABLE(10_9, NA)
@@ -61,9 +61,6 @@ MK_CLASS_AVAILABLE(10_9, NA)
 // Returns an MKMapRect modified to fit the aspect ratio of the map.
 - (MKMapRect)mapRectThatFits:(MKMapRect)mapRect;
 
-// To be used in testing only
-- (void)_handleSelectionAtPoint:(CGPoint)locationInView;
-
 // Edge padding is the minumum padding on each side around the specified MKMapRect.
 #if TARGET_OS_IPHONE
 - (void)setVisibleMapRect:(MKMapRect)mapRect edgePadding:(UIEdgeInsets)insets animated:(BOOL)animate;
@@ -93,15 +90,15 @@ MK_CLASS_AVAILABLE(10_9, NA)
 @property (nonatomic, getter=isZoomEnabled) BOOL zoomEnabled;
 @property (nonatomic, getter=isScrollEnabled) BOOL scrollEnabled;
 // Rotate and pitch are enabled by default on Mac OS X and on iOS 7.0 and later.
-@property (nonatomic, getter=isRotateEnabled) BOOL rotateEnabled NS_AVAILABLE(10_9, 7_0);
-@property (nonatomic, getter=isPitchEnabled) BOOL pitchEnabled NS_AVAILABLE(10_9, 7_0);
+@property (nonatomic, getter=isRotateEnabled) BOOL rotateEnabled NS_AVAILABLE(10_9, 7_0) __TVOS_PROHIBITED;
+@property (nonatomic, getter=isPitchEnabled) BOOL pitchEnabled NS_AVAILABLE(10_9, 7_0) __TVOS_PROHIBITED;
 
 #if !TARGET_OS_IPHONE
 @property (nonatomic) BOOL showsZoomControls NS_AVAILABLE(10_9, NA);
 #endif
 
 
-@property (nonatomic) BOOL showsCompass NS_AVAILABLE(10_9, 9_0);
+@property (nonatomic) BOOL showsCompass NS_AVAILABLE(10_9, 9_0) __TVOS_PROHIBITED;
 @property (nonatomic) BOOL showsScale NS_AVAILABLE(10_10, 9_0);
 
 @property (nonatomic) BOOL showsPointsOfInterest NS_AVAILABLE(10_9, 7_0); // Affects MKMapTypeStandard and MKMapTypeHybrid
@@ -156,7 +153,7 @@ MK_CLASS_AVAILABLE(10_9, NA)
 typedef NS_ENUM(NSInteger, MKOverlayLevel) {
     MKOverlayLevelAboveRoads = 0, // note that labels include shields and point of interest icons.
     MKOverlayLevelAboveLabels
-} NS_ENUM_AVAILABLE(10_9, 7_0) __WATCHOS_PROHIBITED;
+} NS_ENUM_AVAILABLE(10_9, 7_0) __TVOS_AVAILABLE(9_2) __WATCHOS_PROHIBITED;
 
 @interface MKMapView (OverlaysAPI)
 
@@ -185,7 +182,7 @@ typedef NS_ENUM(NSInteger, MKOverlayLevel) {
 #if TARGET_OS_IPHONE
 // Currently displayed view for overlay; returns nil if the view has not been created yet.
 // Prefer using MKOverlayRenderer and -rendererForOverlay.
-- (MKOverlayView *)viewForOverlay:(id <MKOverlay>)overlay NS_DEPRECATED_IOS(4_0, 7_0);
+- (MKOverlayView *)viewForOverlay:(id <MKOverlay>)overlay NS_DEPRECATED_IOS(4_0, 7_0) __TVOS_PROHIBITED;
 #endif
 
 // These methods operate implicitly on overlays in MKOverlayLevelAboveLabels and may be deprecated in a future release in favor of the methods that specify the level.
@@ -223,7 +220,7 @@ __WATCHOS_PROHIBITED
 
 #if TARGET_OS_IPHONE
 // mapView:annotationView:calloutAccessoryControlTapped: is called when the user taps on left & right callout accessory UIControls.
-- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control;
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control __TVOS_PROHIBITED;
 #endif
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view NS_AVAILABLE(10_9, 4_0);
@@ -235,7 +232,7 @@ __WATCHOS_PROHIBITED
 - (void)mapView:(MKMapView *)mapView didFailToLocateUserWithError:(NSError *)error NS_AVAILABLE(10_9, 4_0);
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view didChangeDragState:(MKAnnotationViewDragState)newState 
-   fromOldState:(MKAnnotationViewDragState)oldState NS_AVAILABLE(10_9, 4_0);
+   fromOldState:(MKAnnotationViewDragState)oldState NS_AVAILABLE(10_9, 4_0) __TVOS_PROHIBITED;
 
 #if TARGET_OS_IPHONE
 - (void)mapView:(MKMapView *)mapView didChangeUserTrackingMode:(MKUserTrackingMode)mode animated:(BOOL)animated NS_AVAILABLE(NA, 5_0);
@@ -246,10 +243,10 @@ __WATCHOS_PROHIBITED
 
 #if TARGET_OS_IPHONE
 // Prefer -mapView:rendererForOverlay:
-- (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id <MKOverlay>)overlay NS_DEPRECATED_IOS(4_0, 7_0);
+- (MKOverlayView *)mapView:(MKMapView *)mapView viewForOverlay:(id <MKOverlay>)overlay NS_DEPRECATED_IOS(4_0, 7_0) __TVOS_PROHIBITED;
 // Called after the provided overlay views have been added and positioned in the map.
 // Prefer -mapView:didAddOverlayRenderers:
-- (void)mapView:(MKMapView *)mapView didAddOverlayViews:(NSArray *)overlayViews NS_DEPRECATED_IOS(4_0, 7_0);
+- (void)mapView:(MKMapView *)mapView didAddOverlayViews:(NSArray *)overlayViews NS_DEPRECATED_IOS(4_0, 7_0) __TVOS_PROHIBITED;
 #endif
 
 @end

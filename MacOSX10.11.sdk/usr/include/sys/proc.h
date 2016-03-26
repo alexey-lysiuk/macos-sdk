@@ -185,7 +185,7 @@ struct extern_proc {
 
 #define	P_THCWD		0x01000000	/* process has thread cwd  */
 #define	P_RESV9		0x02000000	/* (P_VFORK)process has vfork children */
-#define	P_RESV10	0x04000000	/* reserved flag */
+#define	P_ADOPTPERSONA	0x04000000	/* process adopted a persona (used to be P_NOATTACH) */
 #define	P_RESV11	0x08000000	/* (P_INVFORK) proc in vfork */
 
 #define	P_NOSHLIB	0x10000000	/* no shared libs are in use for proc */

@@ -16,7 +16,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-MK_CLASS_AVAILABLE(10_9, 7_0) __WATCHOS_PROHIBITED
+MK_CLASS_AVAILABLE(10_9, 7_0) __TVOS_AVAILABLE(9_2) __WATCHOS_PROHIBITED
 @interface MKDirectionsResponse : NSObject
 
 // Source and destination may be filled with additional details compared to the request object.
@@ -27,7 +27,7 @@ MK_CLASS_AVAILABLE(10_9, 7_0) __WATCHOS_PROHIBITED
 
 @end
 
-MK_CLASS_AVAILABLE(10_9, 7_0) __WATCHOS_PROHIBITED
+MK_CLASS_AVAILABLE(10_9, 7_0) __TVOS_AVAILABLE(9_2) __WATCHOS_PROHIBITED
 @interface MKRoute : NSObject
 
 @property (nonatomic, readonly) NSString *name; // localized description of the route's significant feature, e.g. "US-101"
@@ -45,7 +45,7 @@ MK_CLASS_AVAILABLE(10_9, 7_0) __WATCHOS_PROHIBITED
 
 @end
 
-MK_CLASS_AVAILABLE(10_9, 7_0) __WATCHOS_PROHIBITED
+MK_CLASS_AVAILABLE(10_9, 7_0) __TVOS_AVAILABLE(9_2) __WATCHOS_PROHIBITED
 @interface MKRouteStep : NSObject
 
 @property (nonatomic, readonly) NSString *instructions; // localized written instructions
@@ -59,7 +59,7 @@ MK_CLASS_AVAILABLE(10_9, 7_0) __WATCHOS_PROHIBITED
 
 @end
 
-MK_CLASS_AVAILABLE(10_9, 7_0) __WATCHOS_PROHIBITED
+MK_CLASS_AVAILABLE(10_9, 7_0) __TVOS_AVAILABLE(9_2) __WATCHOS_PROHIBITED
 @interface MKETAResponse : NSObject
 
 // Source and destination may be filled with additional details compared to the request object.

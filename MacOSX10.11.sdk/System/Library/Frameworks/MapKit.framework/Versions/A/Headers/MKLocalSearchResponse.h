@@ -12,7 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-MK_CLASS_AVAILABLE(10_9, 6_1) __WATCHOS_PROHIBITED
+MK_CLASS_AVAILABLE(10_9, 6_1) __TVOS_AVAILABLE(9_2) __WATCHOS_PROHIBITED
 @interface MKLocalSearchResponse : NSObject
 
 // An array of MKMapItems sorted by relevance in descending order

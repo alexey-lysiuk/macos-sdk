@@ -12,7 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-MK_CLASS_AVAILABLE(10_9, 4_0) __WATCHOS_PROHIBITED
+MK_CLASS_AVAILABLE(10_9, 4_0) __TVOS_AVAILABLE(9_2) __WATCHOS_PROHIBITED
 @interface MKPointAnnotation : MKShape
 
 @property (nonatomic, assign) CLLocationCoordinate2D coordinate;

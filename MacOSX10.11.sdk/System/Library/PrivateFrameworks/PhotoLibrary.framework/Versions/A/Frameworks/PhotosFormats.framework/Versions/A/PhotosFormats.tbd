@@ -2,7 +2,7 @@
 archs:           [ x86_64 ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoLibrary.framework/Versions/A/Frameworks/PhotosFormats.framework/Versions/A/PhotosFormats
-current-version: 350.22
+current-version: 370.42
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _PFAssetAdjustmentsBaseVersionKey, _PFAssetAdjustmentsDataBlobKey, 
@@ -10,7 +10,8 @@ exports:
                        _PFReadImageDisplayTimeFromVideoFileAtPath, _PFReadMetadataFromVideoAVAsset, 
                        _PFReadMetadataFromVideoAtPath, _PFReadPairingIdentifierFromCGImageProperties, 
                        _PFReadPairingIdentifierFromImageAtPath, _PFReadPairingIdentifierFromVideoAtPath, 
-                       _PFReadVideoDurationFromVideoFileAtPath, _PFSlowMotionUtilitiesCreateErrorWithDescription, 
+                       _PFReadVideoDurationFromVideoFileAtPath, _PFRemovePairingIdentifierFromCGImageProperties, 
+                       _PFSlowMotionUtilitiesCreateErrorWithDescription, 
                        _PFVideoAVCFObjectBuilderCopyAVCFAsset, _PFVideoAVCFObjectBuilderCreateErrorWithDescription, 
                        _PFVideoAVCFObjectBuilderCreateExportSessionWithExportPreset, 
                        _PFVideoAVCFObjectBuilderCreatePlayerItem, _PFVideoAVCFObjectBuilderCreateWithVideoAsset, 

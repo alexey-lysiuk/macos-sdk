@@ -401,9 +401,14 @@ protected:
     virtual void pipeLockLock();
     virtual void pipeLockUnlock();
 
+
+    OSMetaClassDeclareReservedUsed(IOUSBHostInterface, 70);
+    virtual void destroyPipes();
+
+    OSMetaClassDeclareReservedUsed(IOUSBHostInterface, 71);
+    virtual IOReturn destroyPipesGated();
+
     // Protected pad slots for alternate setting and pipe management
-    OSMetaClassDeclareReservedUnused(IOUSBHostInterface, 70);
-    OSMetaClassDeclareReservedUnused(IOUSBHostInterface, 71);
     OSMetaClassDeclareReservedUnused(IOUSBHostInterface, 72);
     OSMetaClassDeclareReservedUnused(IOUSBHostInterface, 73);
     OSMetaClassDeclareReservedUnused(IOUSBHostInterface, 74);

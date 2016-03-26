@@ -32,6 +32,7 @@
 #import <MapKit/MKPolylineRenderer.h>
 #import <MapKit/MKCircleRenderer.h>
 #import <MapKit/MKLocalSearch.h>
+#import <MapKit/MKLocalSearchCompleter.h>
 #import <MapKit/MKLocalSearchRequest.h>
 #import <MapKit/MKLocalSearchResponse.h>
 #import <MapKit/MKDirectionsRequest.h>

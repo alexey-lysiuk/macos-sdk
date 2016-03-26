@@ -2,7 +2,7 @@
 archs:           [ i386 ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/QuickTime.framework/Versions/A/QuickTime
-current-version: 2943.0
+current-version: 2943.3
 exports:         
   - archs:           [ i386 ]
     symbols:         [ _AbortPrePrerollMovie, _AddCallBackToTimeBase, _AddClonedTrackToMovie, 

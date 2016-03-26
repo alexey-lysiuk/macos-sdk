@@ -58,7 +58,7 @@ NS_CLASS_AVAILABLE(10_11, 9_0)
  * @property matchPath
  * @discussion A string containing a file system path. If the file system path of the executable being evaluated is equal to this string and all other conditions of the rule match, then the rule matches. This property is optional.
  */
-@property (copy, nullable) NSString *matchPath NS_AVAILABLE(10_11, NA);
+@property (copy, nullable) NSString *matchPath NS_AVAILABLE(10_11, 9_3);
 
 /*!
  * @property matchDomains

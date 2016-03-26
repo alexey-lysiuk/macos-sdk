@@ -39,3 +39,4 @@
 #import <CloudKit/CKModifySubscriptionsOperation.h>
 #import <CloudKit/CKModifyRecordZonesOperation.h>
 #import <CloudKit/CKFetchRecordZonesOperation.h>
+#import <CloudKit/CKFetchWebAuthTokenOperation.h>

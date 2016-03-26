@@ -2,7 +2,7 @@
 archs:           [ x86_64 ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Social.framework/Versions/A/Social
-current-version: 538.0
+current-version: 538.2
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CPFileBuildDirectoriesToPath, _PushNotificationDidChangeEventKey_char, 

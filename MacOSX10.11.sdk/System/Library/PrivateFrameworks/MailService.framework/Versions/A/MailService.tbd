@@ -2,7 +2,7 @@
 archs:           [ x86_64 ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MailService.framework/Versions/A/MailService
-current-version: 3111.0
+current-version: 3124.0
 exports:         
   - archs:           [ x86_64 ]
     allowed-clients: [ CalendarAgent, Mail, com.apple.MailServiceAgent ]

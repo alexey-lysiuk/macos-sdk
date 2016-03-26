@@ -2,15 +2,15 @@
 archs:           [ i386, x86_64 ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MessageProtection.framework/Versions/A/MessageProtection
-current-version: 62.0
+current-version: 62.40.2
 exports:         
   - archs:           [ i386, x86_64 ]
-    symbols:         [ _SecExposeStream, _SecMPFIAppendSerialization, _SecMPFICopyProtClass, 
-                       _SecMPFIPurgeAllFromKeychain, _SecMPFIPurgeFromKeychain, 
-                       _SecMPFIUpdateProtClass, _SecMPFullIdentityCreate, 
-                       _SecMPFullIdentityCreateFromCertNames, _SecMPFullIdentityCreateFromData, 
-                       _SecMPFullIdentityCreateFromRefs, _SecMPFullIdentityCreateOTRSessionWith, 
-                       _SecMPFullIdentityCreateOTRSessionWithWithFlags, 
+    symbols:         [ _SecExposeStream, _SecMPCopyProtectedMsgHash, _SecMPFIAppendSerialization, 
+                       _SecMPFICopyProtClass, _SecMPFIPurgeAllFromKeychain, 
+                       _SecMPFIPurgeFromKeychain, _SecMPFIUpdateProtClass, 
+                       _SecMPFullIdentityCreate, _SecMPFullIdentityCreateFromCertNames, 
+                       _SecMPFullIdentityCreateFromData, _SecMPFullIdentityCreateFromRefs, 
+                       _SecMPFullIdentityCreateOTRSessionWith, _SecMPFullIdentityCreateOTRSessionWithWithFlags, 
                        _SecMPFullIdentityCreateWithAccess, _SecMPFullIdentityCreateWithAccessProtClass, 
                        _SecMPFullIdentityCreateWithProtClass, _SecMPPIAppendSerialization, 
                        _SecMPPublicIdentityCopyFromPrivate, _SecMPPublicIdentityCreateFromData, 

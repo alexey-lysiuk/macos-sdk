@@ -131,6 +131,8 @@
 #define __MAC_10_10_3       101003
 #define __MAC_10_11         101100
 #define __MAC_10_11_2       101102
+#define __MAC_10_11_3       101103
+#define __MAC_10_11_4       101104
 /* __MAC_NA is not defined to a value but is uses as a token by macros to indicate that the API is unavailable */
 
 #define __IPHONE_2_0     20000
@@ -157,10 +159,12 @@
 #define __IPHONE_9_0     90000
 #define __IPHONE_9_1     90100
 #define __IPHONE_9_2     90200
+#define __IPHONE_9_3     90300
 /* __IPHONE_NA is not defined to a value but is uses as a token by macros to indicate that the API is unavailable */
 
 #define __TVOS_9_0       90000
 #define __TVOS_9_1       90100
+#define __TVOS_9_2       90200
 
 #define __WATCHOS_1_0    10000
 #define __WATCHOS_2_0    20000
@@ -221,7 +225,7 @@
 
 
 /* for use marking APIs available info for Mac OSX */
-#if defined(__has_feature)
+#if defined(__has_attribute)
   #if __has_attribute(availability)
     #define __OSX_UNAVAILABLE                    __OS_AVAILABILITY(macosx,unavailable)
     #define __OSX_AVAILABLE(_vers)               __OS_AVAILABILITY(macosx,introduced=_vers)
@@ -243,7 +247,7 @@
 
 
 /* for use marking APIs available info for iOS */
-#if defined(__has_feature)
+#if defined(__has_attribute)
   #if __has_attribute(availability)
     #define __IOS_UNAVAILABLE                    __OS_AVAILABILITY(ios,unavailable)
     #define __IOS_PROHIBITED                     __OS_AVAILABILITY(ios,unavailable)

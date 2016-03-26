@@ -2,7 +2,7 @@
 archs:           [ x86_64 ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/VectorKit.framework/Versions/A/VectorKit
-current-version: 1156.1.14
+current-version: 1156.38
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _GEOPDCameraPathFrameFromVKCameraFrame, _GEOTileKeyFromVKPoint, 
@@ -44,10 +44,10 @@ exports:
                        _VKLabelMarkerFeatureHandle, _VKLabelMarkerShield, 
                        _VKMapSnapshot, _VKMapSnapshotCreator, _VKMapSnapshotRequest, 
                        _VKMapSnapshotServer, _VKMapView, _VKNavUserLocationAnnotationMarker, 
-                       _VKPlatform, _VKPolygonFeatureMarker, _VKPolylineGroupOverlay, 
-                       _VKPolylineGroupOverlayPainter, _VKPolylineOverlay, 
-                       _VKPolylineOverlayPainter, _VKPuckAnimator, _VKRasterMapTile, 
-                       _VKRasterMapTileCreator, _VKRasterMapTileRequest, 
+                       _VKObjectBoundsContext, _VKPlatform, _VKPolygonFeatureMarker, 
+                       _VKPolylineGroupOverlay, _VKPolylineGroupOverlayPainter, 
+                       _VKPolylineOverlay, _VKPolylineOverlayPainter, _VKPuckAnimator, 
+                       _VKRasterMapTile, _VKRasterMapTileCreator, _VKRasterMapTileRequest, 
                        _VKRasterMapTileServer, _VKRasterMapTileServerLoadBalancer, 
                        _VKRasterOverlay, _VKRoadFeatureMarker, _VKRouteContext, 
                        _VKSharedResources, _VKShieldArtwork, _VKShieldImage, 

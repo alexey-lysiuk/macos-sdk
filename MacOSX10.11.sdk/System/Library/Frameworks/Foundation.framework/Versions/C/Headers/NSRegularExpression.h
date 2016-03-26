@@ -24,7 +24,7 @@ typedef NS_OPTIONS(NSUInteger, NSRegularExpressionOptions) {
 };
 
 NS_CLASS_AVAILABLE(10_7, 4_0)
-@interface NSRegularExpression : NSObject <NSCopying, NSCoding> {
+@interface NSRegularExpression : NSObject <NSCopying, NSSecureCoding> {
     @protected   // all instance variables are private
     NSString *_pattern;
     NSUInteger _options;

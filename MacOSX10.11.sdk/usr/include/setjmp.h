@@ -66,8 +66,7 @@ typedef int sigjmp_buf[_JBLEN + 1];
 typedef int jmp_buf[_JBLEN];
 typedef int sigjmp_buf[_JBLEN + 1];
 
-#elif !defined(__OPEN_SOURCE__) &&                                             \
-    (defined(__arm64__) || defined(__ARM_ARCH_7K__))
+#elif defined(__arm64__) || defined(__ARM_ARCH_7K__)
 /*
  * _JBLEN is the number of ints required to save the following:
  * r21-r29, sp, fp, lr == 12 registers, 8 bytes each. d8-d15

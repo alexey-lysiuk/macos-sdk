@@ -2,7 +2,7 @@
 archs:           [ x86_64 ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MMCS.framework/Versions/A/MMCS
-current-version: 351.0
+current-version: 357.1
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _C3BaseRelease, _C3BaseRetain, _MMCSComputeSignatureAndRegisterItemWithDescriptor, 
@@ -70,13 +70,13 @@ exports:
                        _kMMCSRequestOptionItemOptions, _kMMCSRequestOptionNetworkServiceType, 
                        _kMMCSRequestOptionPreauthorization, _kMMCSRequestOptionPriority, 
                        _kMMCSRequestOptionQoS, _kMMCSRequestOptionRequiresPowerPluggedIn, 
-                       _kMMCSRequestOptionSourceApplicationBundleIdentifier, 
+                       _kMMCSRequestOptionResumableContainerLimpMode, _kMMCSRequestOptionSourceApplicationBundleIdentifier, 
                        _kMMCSRequestOptionSourceApplicationSecondaryBundleIdentifier, 
-                       _kMMCSRequestOptionStreamOptions, _kMMCSRequestOptionUseProxy, 
-                       _kMMCSRequestTimeoutPeriod, _kMMCSRequestValidateFileContents, 
-                       _kMMCSRequestVendorHintValue, _kMMCSResultError, 
-                       _kMMCSResults, _kMMCSSignature, _kMMCSUnwrappingState, 
-                       _kMMCSWrappingState, _kMME_CLIENT_INFO_HEADER_KEY, 
+                       _kMMCSRequestOptionStreamOptions, _kMMCSRequestOptionUseEdge, 
+                       _kMMCSRequestOptionUseProxy, _kMMCSRequestTimeoutPeriod, 
+                       _kMMCSRequestValidateFileContents, _kMMCSRequestVendorHintValue, 
+                       _kMMCSResultError, _kMMCSResults, _kMMCSSignature, 
+                       _kMMCSUnwrappingState, _kMMCSWrappingState, _kMME_CLIENT_INFO_HEADER_KEY, 
                        _mmcs_engine_create_client_header_value, _mmcs_http_class_description, 
                        _mmcs_http_class_for_string, _mmcs_http_context_cleanup_response, 
                        _mmcs_http_context_create, _mmcs_http_context_get_error, 

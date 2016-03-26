@@ -203,8 +203,15 @@ protected:
 private:
     OSSet * mappings;
     UInt8   sharedInstance;
-    UInt8   __reservedA[3];
+    UInt8   closed;
+    UInt8   __ipcFinal;
+    UInt8   __reservedA[1];
+    volatile SInt32 __ipc;
+#if __LP64__
     void  * __reserved[7];
+#else
+    void  * __reserved[6];
+#endif
 
 public:
    virtual IOReturn externalMethod( uint32_t selector, IOExternalMethodArguments * arguments,

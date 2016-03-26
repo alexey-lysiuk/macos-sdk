@@ -2,7 +2,7 @@
 archs:           [ x86_64 ]
 platform:        macosx
 install-name:    '@rpath/FinderSync.framework/Versions/A/FinderSync'
-current-version: 960.2.6
+current-version: 960.5.3
 exports:         
   - archs:           [ x86_64 ]
     objc-classes:    [ _FIFinderSync, _FIFinderSyncController ]

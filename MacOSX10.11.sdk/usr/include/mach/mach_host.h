@@ -26,7 +26,7 @@ typedef function_table_entry   *function_table_t;
 #endif /* AUTOTEST */
 
 #ifndef	mach_host_MSG_COUNT
-#define	mach_host_MSG_COUNT	28
+#define	mach_host_MSG_COUNT	31
 #endif	/* mach_host_MSG_COUNT */
 
 #include <mach/std_types.h>
@@ -389,6 +389,42 @@ kern_return_t mach_memory_info
 	mach_msg_type_number_t *memory_infoCnt
 );
 
+/* Routine host_set_multiuser_config_flags */
+#ifdef	mig_external
+mig_external
+#else
+extern
+#endif	/* mig_external */
+kern_return_t host_set_multiuser_config_flags
+(
+	host_priv_t host_priv,
+	uint32_t multiuser_flags
+);
+
+/* Routine host_get_multiuser_config_flags */
+#ifdef	mig_external
+mig_external
+#else
+extern
+#endif	/* mig_external */
+kern_return_t host_get_multiuser_config_flags
+(
+	host_t host,
+	uint32_t *multiuser_flags
+);
+
+/* Routine host_check_multiuser_mode */
+#ifdef	mig_external
+mig_external
+#else
+extern
+#endif	/* mig_external */
+kern_return_t host_check_multiuser_mode
+(
+	host_t host,
+	uint32_t *multiuser_mode
+);
+
 __END_DECLS
 
 /********************** Caution **************************/
@@ -699,6 +735,38 @@ __END_DECLS
 #ifdef  __MigPackStructs
 #pragma pack()
 #endif
+
+#ifdef  __MigPackStructs
+#pragma pack(4)
+#endif
+	typedef struct {
+		mach_msg_header_t Head;
+		NDR_record_t NDR;
+		uint32_t multiuser_flags;
+	} __Request__host_set_multiuser_config_flags_t __attribute__((unused));
+#ifdef  __MigPackStructs
+#pragma pack()
+#endif
+
+#ifdef  __MigPackStructs
+#pragma pack(4)
+#endif
+	typedef struct {
+		mach_msg_header_t Head;
+	} __Request__host_get_multiuser_config_flags_t __attribute__((unused));
+#ifdef  __MigPackStructs
+#pragma pack()
+#endif
+
+#ifdef  __MigPackStructs
+#pragma pack(4)
+#endif
+	typedef struct {
+		mach_msg_header_t Head;
+	} __Request__host_check_multiuser_mode_t __attribute__((unused));
+#ifdef  __MigPackStructs
+#pragma pack()
+#endif
 #endif /* !__Request__mach_host_subsystem__defined */
 
 /* union of all requests */
@@ -730,6 +798,9 @@ union __RequestUnion__mach_host_subsystem {
 	__Request__host_set_atm_diagnostic_flag_t Request_host_set_atm_diagnostic_flag;
 	__Request__host_get_atm_diagnostic_flag_t Request_host_get_atm_diagnostic_flag;
 	__Request__mach_memory_info_t Request_mach_memory_info;
+	__Request__host_set_multiuser_config_flags_t Request_host_set_multiuser_config_flags;
+	__Request__host_get_multiuser_config_flags_t Request_host_get_multiuser_config_flags;
+	__Request__host_check_multiuser_mode_t Request_host_check_multiuser_mode;
 };
 #endif /* !__RequestUnion__mach_host_subsystem__defined */
 /* typedefs for all replies */
@@ -1093,6 +1164,44 @@ union __RequestUnion__mach_host_subsystem {
 #ifdef  __MigPackStructs
 #pragma pack()
 #endif
+
+#ifdef  __MigPackStructs
+#pragma pack(4)
+#endif
+	typedef struct {
+		mach_msg_header_t Head;
+		NDR_record_t NDR;
+		kern_return_t RetCode;
+	} __Reply__host_set_multiuser_config_flags_t __attribute__((unused));
+#ifdef  __MigPackStructs
+#pragma pack()
+#endif
+
+#ifdef  __MigPackStructs
+#pragma pack(4)
+#endif
+	typedef struct {
+		mach_msg_header_t Head;
+		NDR_record_t NDR;
+		kern_return_t RetCode;
+		uint32_t multiuser_flags;
+	} __Reply__host_get_multiuser_config_flags_t __attribute__((unused));
+#ifdef  __MigPackStructs
+#pragma pack()
+#endif
+
+#ifdef  __MigPackStructs
+#pragma pack(4)
+#endif
+	typedef struct {
+		mach_msg_header_t Head;
+		NDR_record_t NDR;
+		kern_return_t RetCode;
+		uint32_t multiuser_mode;
+	} __Reply__host_check_multiuser_mode_t __attribute__((unused));
+#ifdef  __MigPackStructs
+#pragma pack()
+#endif
 #endif /* !__Reply__mach_host_subsystem__defined */
 
 /* union of all replies */
@@ -1124,6 +1233,9 @@ union __ReplyUnion__mach_host_subsystem {
 	__Reply__host_set_atm_diagnostic_flag_t Reply_host_set_atm_diagnostic_flag;
 	__Reply__host_get_atm_diagnostic_flag_t Reply_host_get_atm_diagnostic_flag;
 	__Reply__mach_memory_info_t Reply_mach_memory_info;
+	__Reply__host_set_multiuser_config_flags_t Reply_host_set_multiuser_config_flags;
+	__Reply__host_get_multiuser_config_flags_t Reply_host_get_multiuser_config_flags;
+	__Reply__host_check_multiuser_mode_t Reply_host_check_multiuser_mode;
 };
 #endif /* !__RequestUnion__mach_host_subsystem__defined */
 
@@ -1152,7 +1264,10 @@ union __ReplyUnion__mach_host_subsystem {
     { "host_register_well_known_mach_voucher_attr_manager", 224 },\
     { "host_set_atm_diagnostic_flag", 225 },\
     { "host_get_atm_diagnostic_flag", 226 },\
-    { "mach_memory_info", 227 }
+    { "mach_memory_info", 227 },\
+    { "host_set_multiuser_config_flags", 228 },\
+    { "host_get_multiuser_config_flags", 229 },\
+    { "host_check_multiuser_mode", 230 }
 #endif
 
 #ifdef __AfterMigUserHeader

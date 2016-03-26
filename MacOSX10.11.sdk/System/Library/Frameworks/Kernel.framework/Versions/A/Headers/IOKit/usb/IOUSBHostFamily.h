@@ -154,6 +154,7 @@ enum tUSBHostPortType
     kUSBHostPortTypeCaptive,
     kUSBHostPortTypeInternal,
     kUSBHostPortTypeAccessory,
+    kUSBHostPortTypeExpressCard,
     kUSBHostPortTypeCount
 };
 
@@ -270,7 +271,6 @@ enum
 #define kUSBHostMatchingPropertyInterfaceNumber                 "bInterfaceNumber"
 
 #define kUSBHostPropertyLocationID                              "locationID"
-#define kUSBHostPropertyDataToggleResetOverride                 "kUSBDataToggleResetOverride"
 #define kUSBHostPropertyDebugOptions                            "kUSBDebugOptions"
 #define kUSBHostPropertyWakePowerSupply                         "kUSBWakePowerSupply"
 #define kUSBHostPropertySleepPowerSupply                        "kUSBSleepPowerSupply"
@@ -326,6 +326,7 @@ enum
 #define kUSBHostPortPropertyConnectorType                       "UsbConnector"
 #define kUSBHostPortPropertyMux                                 "UsbMux"
 #define kUSBHostPortPropertyCompanionIndex                      "kUSBCompanionIndex"
+#define kUSBHostPortPropertyDisconnectInterval                  "kUSBDisconnectInterval"
 
 #define kUSBHostHubPropertyPowerSupply                          "kUSBHubPowerSupply"                    // OSNumber mA available for downstream ports, 0 for bus-powered
 #define kUSBHostHubPropertyIdlePolicy                           "kUSBHubIdlePolicy"                     // OSNumber ms to be used as device idle policy
@@ -349,10 +350,6 @@ enum
 #define kUSBHostPortPropertyCardReader                          "kUSBHostPortPropertyCardReader"
 
 #define kUSBHostPortPropertyOffset                              "kUSBHostPortPropertyOffset"
-
-#if !TARGET_OS_EMBEDDED
-#define kUSBExpressCardCantWake                                 "kUSBExpressCardCantWake"
-#endif
 
 #pragma mark APCI enumerations
 

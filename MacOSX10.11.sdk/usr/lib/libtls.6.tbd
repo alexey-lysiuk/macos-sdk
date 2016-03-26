@@ -1,0 +1,28 @@
+---
+archs:           [ i386, x86_64 ]
+platform:        macosx
+install-name:    /usr/lib/libtls.6.dylib
+current-version: 7.0
+compatibility-version: 7.0
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _tls_accept_fds, _tls_accept_socket, _tls_check_common_name, 
+                       _tls_check_servername, _tls_check_subject_altname, 
+                       _tls_client, _tls_close, _tls_config_clear_keys, 
+                       _tls_config_free, _tls_config_insecure_noverifycert, 
+                       _tls_config_insecure_noverifyname, _tls_config_new, 
+                       _tls_config_parse_protocols, _tls_config_set_ca_file, 
+                       _tls_config_set_ca_mem, _tls_config_set_ca_path, 
+                       _tls_config_set_cert_file, _tls_config_set_cert_mem, 
+                       _tls_config_set_ciphers, _tls_config_set_dheparams, 
+                       _tls_config_set_ecdhecurve, _tls_config_set_key_file, 
+                       _tls_config_set_key_mem, _tls_config_set_protocols, 
+                       _tls_config_set_verify_depth, _tls_config_verify, 
+                       _tls_configure, _tls_configure_keypair, _tls_configure_server, 
+                       _tls_configure_ssl, _tls_connect, _tls_connect_fds, 
+                       _tls_connect_servername, _tls_connect_socket, _tls_error, 
+                       _tls_free, _tls_host_port, _tls_init, _tls_load_file, 
+                       _tls_match_name, _tls_new, _tls_read, _tls_reset, 
+                       _tls_server, _tls_server_conn, _tls_set_error, _tls_ssl_error, 
+                       _tls_write ]
+...

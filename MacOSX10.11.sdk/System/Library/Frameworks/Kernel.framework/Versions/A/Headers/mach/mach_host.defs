@@ -305,4 +305,15 @@ routine mach_memory_info(
 	out	memory_info	: mach_memory_info_array_t,
 					Dealloc);
 
+/*
+ * Update the global multiuser flags, readable from the commpage
+ */
+routine host_set_multiuser_config_flags(
+		host_priv		: host_priv_t;
+	in	multiuser_flags	: uint32_t);
+
+skip;
+
+skip;
+
 /* vim: set ft=c : */

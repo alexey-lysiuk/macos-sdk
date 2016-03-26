@@ -2,7 +2,7 @@
 archs:           [ i386, x86_64 ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Metadata
-current-version: 972.16
+current-version: 972.29
 exports:         
   - archs:           [ i386, x86_64 ]
     allowed-clients: [ Foundation, CoreServices ]
@@ -291,12 +291,12 @@ exports:
                        __kMDItemFinderLabel, __kMDItemHasCustomIcon, __kMDItemHasExtensionHidden, 
                        __kMDItemImporterResult, __kMDItemInvisibleFileType, 
                        __kMDItemIsEvictedFile, __kMDItemIsExtensionHidden, 
-                       __kMDItemIsStationery, __kMDItemLocked, __kMDItemNodeCount, 
-                       __kMDItemOwnerGroupID, __kMDItemOwnerUserID, __kMDItemPrescanCandidate, 
-                       __kMDItemServerVersion, __kMDItemSortIdentityAttr, 
-                       __kMDItemStaticInterestScore, __kMDItemSupportFileType, 
-                       __kMDItemTextContentIndexExists, __kMDItemTypeCode, 
-                       __kMDItemUserTags, __kMDQueryItemInScopeForRankingOnly, 
+                       __kMDItemIsStationery, __kMDItemLocked, __kMDItemMailAccountsAttributesMissing, 
+                       __kMDItemNodeCount, __kMDItemOwnerGroupID, __kMDItemOwnerUserID, 
+                       __kMDItemPrescanCandidate, __kMDItemServerVersion, 
+                       __kMDItemSortIdentityAttr, __kMDItemStaticInterestScore, 
+                       __kMDItemSupportFileType, __kMDItemTextContentIndexExists, 
+                       __kMDItemTypeCode, __kMDItemUserTags, __kMDQueryItemInScopeForRankingOnly, 
                        __kMDQueryScope, __kMDUserQueryAttributedInputDateKey, 
                        __kMDUserQueryAttributedInputRecipientKey, __kMDUserQueryAttributedInputSenderKey, 
                        __kMDUserQueryAttributedInputTitleKey, __kMDUserQueryAttributedInputTopicKey, 

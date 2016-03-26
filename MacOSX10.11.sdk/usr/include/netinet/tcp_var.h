@@ -109,7 +109,7 @@ struct tcpcb {
 #define	TF_NOPUSH	0x01000		/* don't push */
 #define	TF_REQ_CC	0x02000		/* have/will request CC */
 #define	TF_RCVD_CC	0x04000		/* a CC was received in SYN */
-#define	TF_SENDCCNEW	0x08000		/* send CCnew instead of CC in SYN */
+#define	TF_SENDCCNEW	0x08000		/* Not implemented */
 #define	TF_MORETOCOME	0x10000		/* More data to be appended to sock */
 #define	TF_LQ_OVERFLOW	0x20000		/* listen queue overflow */
 #define	TF_RXWIN0SENT	0x40000		/* sent a receiver win 0 in response */

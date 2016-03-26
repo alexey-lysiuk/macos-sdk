@@ -2,7 +2,7 @@
 archs:           [ x86_64 ]
 platform:        macosx
 install-name:    /usr/lib/libsystemstats.dylib
-current-version: 231.20.9
+current-version: 231.40.7
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ __systemstats_boot, __systemstats_get_property, 
@@ -27,6 +27,6 @@ exports:
                        _systemstats_instance_write_timed_ui_event, _systemstats_instance_write_wake, 
                        _systemstats_queue_flush, _systemstats_queue_or_flush_record, 
                        _systemstats_record_queue_create, _systemstats_resolve_bundle_id_from_cid, 
-                       _systemstats_write_and_dispose_record, _systemstats_write_timed_event, 
-                       _systemstats_write_timed_ui_event ]
+                       _systemstats_write_and_dispose_record, _systemstats_write_hid_activity, 
+                       _systemstats_write_timed_event, _systemstats_write_timed_ui_event ]
 ...

@@ -6,7 +6,7 @@ exports:
   - archs:           [ x86_64 ]
     symbols:         [ _SpotlightDaemonVersionNumber, _SpotlightDaemonVersionString, 
                        _startAllAgents, _startIndexAgent ]
-    objc-classes:    [ _MDAgent, _MDAgentDelegate, _MDClient, _MDIndexAgent, 
-                       _MDSearchAgent, _MDSearchableIndexService, _SpotlightReceiverConnection, 
-                       _SpotlightSender ]
+    objc-classes:    [ _DummyObject, _MDAgent, _MDAgentDelegate, _MDClient, 
+                       _MDIndexAgent, _MDSearchAgent, _MDSearchableIndexService, 
+                       _SpotlightReceiverConnection, _SpotlightSender ]
 ...

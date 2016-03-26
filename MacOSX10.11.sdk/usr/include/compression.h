@@ -106,14 +106,14 @@ extern "C" {
 typedef enum {
 
     /* Commonly-available encoders */
-    COMPRESSION_LZ4     __OSX_AVAILABLE_STARTING(__MAC_10_11, __IPHONE_9_0) = 0x100,
-    COMPRESSION_ZLIB    __OSX_AVAILABLE_STARTING(__MAC_10_11, __IPHONE_9_0) = 0x205,
-    COMPRESSION_LZMA    __OSX_AVAILABLE_STARTING(__MAC_10_11, __IPHONE_9_0) = 0x306,
+    COMPRESSION_LZ4     = 0x100,       // available starting OS X 10.11, iOS 9.0
+    COMPRESSION_ZLIB    = 0x205,       // available starting OS X 10.11, iOS 9.0
+    COMPRESSION_LZMA    = 0x306,       // available starting OS X 10.11, iOS 9.0
 
-    COMPRESSION_LZ4_RAW __OSX_AVAILABLE_STARTING(__MAC_10_11, __IPHONE_9_0) = 0x101,
+    COMPRESSION_LZ4_RAW = 0x101,       // available starting OS X 10.11, iOS 9.0
 
     /* Apple-specific encoders */
-    COMPRESSION_LZFSE   __OSX_AVAILABLE_STARTING(__MAC_10_11, __IPHONE_9_0) = 0x801,
+    COMPRESSION_LZFSE    = 0x801,      // available starting OS X 10.11, iOS 9.0
 
 } compression_algorithm;
 

@@ -2,7 +2,7 @@
 archs:           [ x86_64 ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AOSAccounts.framework/Versions/A/AOSAccounts
-current-version: 1.9.96
+current-version: 1.10.2
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _AOSAccountsDebugLoggingEnabled, _AOSAccountsGetLogLevel, 

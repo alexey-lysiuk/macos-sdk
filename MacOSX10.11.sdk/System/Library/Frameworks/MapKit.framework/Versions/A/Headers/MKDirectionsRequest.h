@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-MK_CLASS_AVAILABLE(10_9, 6_0) __WATCHOS_PROHIBITED
+MK_CLASS_AVAILABLE(10_9, 6_0) __TVOS_AVAILABLE(9_2) __WATCHOS_PROHIBITED
 @interface MKDirectionsRequest : NSObject
 
 @property (nonatomic, strong, nullable) MKMapItem *source;

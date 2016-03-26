@@ -12,11 +12,11 @@ typedef NS_ENUM(NSUInteger, MKPinAnnotationColor) {
     MKPinAnnotationColorRed = 0,
     MKPinAnnotationColorGreen,
     MKPinAnnotationColorPurple
-} NS_ENUM_DEPRECATED(10_9, 10_11, 3_0, 9_0, "Use MKPinAnnotationView's pinTintColor instead") __WATCHOS_PROHIBITED;
+} NS_ENUM_DEPRECATED(10_9, 10_11, 3_0, 9_0, "Use MKPinAnnotationView's pinTintColor instead") __TVOS_PROHIBITED __WATCHOS_PROHIBITED;
 
 NS_ASSUME_NONNULL_BEGIN
 
-MK_CLASS_AVAILABLE(10_9, 3_0) __WATCHOS_PROHIBITED
+MK_CLASS_AVAILABLE(10_9, 3_0) __TVOS_AVAILABLE(9_2) __WATCHOS_PROHIBITED
 @interface MKPinAnnotationView : MKAnnotationView
 
 #if TARGET_OS_IPHONE
@@ -37,7 +37,7 @@ MK_CLASS_AVAILABLE(10_9, 3_0) __WATCHOS_PROHIBITED
 
 @property (nonatomic) BOOL animatesDrop;
 
-@property (nonatomic) MKPinAnnotationColor pinColor NS_DEPRECATED(10_9, 10_11, 3_0, 9_0, "Use pinTintColor instead");
+@property (nonatomic) MKPinAnnotationColor pinColor NS_DEPRECATED(10_9, 10_11, 3_0, 9_0, "Use pinTintColor instead") __TVOS_PROHIBITED;
 
 @end
 

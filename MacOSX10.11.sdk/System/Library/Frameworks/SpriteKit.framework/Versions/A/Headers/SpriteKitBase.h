@@ -25,6 +25,7 @@
 #define SK_EXPORT extern __attribute__((visibility ("default")))
 #endif
 #define SK_AVAILABLE __OSX_AVAILABLE_STARTING
+#define SK_WEAK_LINK __attribute__((weak_import))
 
 #if TARGET_OS_IPHONE
 #define SKColor UIColor

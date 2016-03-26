@@ -2,7 +2,7 @@
 archs:           [ x86_64 ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SocialUI.framework/Versions/A/SocialUI
-current-version: 5091.0
+current-version: 5100.0
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _BuddyPictureNeedsDrawingNotification, _BuildHandleFromID, 
@@ -23,7 +23,8 @@ exports:
                        _PersonPictureChangedNotification, _RecipientBarBottomBaselineToBottomSendingTextContainerDelta, 
                        _RecipientBarRecipientActionsToBottomToBaselineDelta, 
                        _RecipientBarTopToToLabelToBaselineDelta, _RectCenteredInRect, 
-                       _RegisterAMRNBEncoder, _SOAddRecipientFieldControllerDanglingHandleIDsKey, 
+                       _RegisterAMRNBEncoder, _SOAddRecipientFieldCompletionWindowMaxDisplayedRows, 
+                       _SOAddRecipientFieldControllerDanglingHandleIDsKey, 
                        _SOAddRecipientFieldIDSCheckTimeout, _SOBundleImageNamed, 
                        _SOChatDetailsPopoverPreferredMinimumMaximumHeight, 
                        _SOChatDisplayControllerChatDidChangeNotification, 

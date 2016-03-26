@@ -2,7 +2,7 @@
 archs:           [ x86_64 ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CloudPhotoServices.framework/Versions/A/CloudPhotoServices
-current-version: 350.22
+current-version: 370.42
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _AssetManagementAssetCollectionIDKey, _AssetManagementAssetCountKey, 

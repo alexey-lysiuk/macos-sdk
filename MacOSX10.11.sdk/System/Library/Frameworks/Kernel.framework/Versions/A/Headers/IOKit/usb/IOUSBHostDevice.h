@@ -314,7 +314,9 @@ public:
      *
      * @param type <bDescriptorType> of the descriptor to find.
      *
-     * @param length Reference to a uint16_t which will be updated with the length of the descriptor
+     * @param length Reference to a uint16_t which will be updated with the length of the descriptor.  As input, used as 
+     * <code>wLength</code> when fetching variable-length configuration or BOS descriptors, or when fetching nonstandard
+     * descriptor types.
      *
      * @param index Descriptor index value.  Low byte of <code>wValue</code> of the GET_DESCRIPTOR control request described
      * in section 9.4.3 of the USB 2.0 specification.

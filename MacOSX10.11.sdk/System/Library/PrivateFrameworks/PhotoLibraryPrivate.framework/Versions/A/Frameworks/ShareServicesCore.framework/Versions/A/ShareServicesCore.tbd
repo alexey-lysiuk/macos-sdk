@@ -2,7 +2,7 @@
 archs:           [ x86_64 ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoLibraryPrivate.framework/Versions/A/Frameworks/ShareServicesCore.framework/Versions/A/ShareServicesCore
-current-version: 350.22
+current-version: 370.42
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _IPXAssetCountsByType, _IPXLocalizationKeyForAssets, 
@@ -31,7 +31,8 @@ exports:
                        _SBLCloudPhotoLibraryPriorityManager, _SBLCloudPhotoLibraryPriorityStats, 
                        _SBLCloudPhotoLibraryThumbnailManager, _SBLCreateSharedPhotoStreamRequest, 
                        _SBLDownloadProvidersOperation, _SBLFullfillProvidersOperation, 
-                       _SBLMutableCreateSharedPhotoStreamRequest, _SBLMutablePostVersionsToSharedPhotoStreamRequest, 
+                       _SBLLivePhotoBundleCreator, _SBLMutableCreateSharedPhotoStreamRequest, 
+                       _SBLMutablePostVersionsToSharedPhotoStreamRequest, 
                        _SBLMutableSharedPhotoStreamSettings, _SBLMyPhotoStreamItemReference, 
                        _SBLMyPhotoStreamManager, _SBLPostVersionsAsset, 
                        _SBLPostVersionsToSharedPhotoStreamRequest, _SBLPrepareProvidersOperation, 

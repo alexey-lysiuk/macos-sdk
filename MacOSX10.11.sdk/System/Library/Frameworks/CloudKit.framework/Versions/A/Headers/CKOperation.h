@@ -7,8 +7,6 @@
 
 #import <Foundation/Foundation.h>
 
-#import <os/activity.h>
-
 @class CKContainer;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -16,9 +14,6 @@ NS_CLASS_AVAILABLE(10_10, 8_0)
 @interface CKOperation : NSOperation
 
 - (instancetype)init NS_DESIGNATED_INITIALIZER;
-
-- (os_activity_t)activityStart;
-
 
 /* If no container is set, [CKContainer defaultContainer] is used */
 @property (nonatomic, strong, nullable) CKContainer *container;
@@ -45,6 +40,25 @@ NS_CLASS_AVAILABLE(10_10, 8_0)
 
 /* Defaults to YES */
 @property (nonatomic, assign) BOOL allowsCellularAccess;
+
+@property (nonatomic, readonly, copy) NSString *operationID NS_AVAILABLE(10_12, 9_3);
+
+/* 
+   Long lived operations will continue running even if your process exits. If your process remains alive for the lifetime of the long lived operation its behavior is the same as a regular operation.
+
+   Long lived operations can be fetched and replayed from the container via the fetchAllLongLivedOperations: and fetchLongLivedOperationsWithIDs: APIs.
+
+   Long lived operations persist until their -[NSOperation completionBlock] returns or until the operation is cancelled. 
+   Long lived operations may be garbage collected 24 hours after they finish running if no client has replayed them.
+ 
+   The default value for longLived is NO. Changing the value of longLived on an already started operation or on an outstanding long lived operation fetched from CKContainer has no effect.
+ */
+@property (nonatomic, assign, getter=isLongLived) BOOL longLived NS_AVAILABLE(10_12, 9_3);
+
+/*
+   This callback is called after a long lived operation has begun running and is persisted. Once this callback is called the operation will continue running even if the current process exits.
+ */
+@property (nonatomic, strong) void (^longLivedOperationWasPersistedBlock)(void) NS_AVAILABLE(10_12, 9_3);
 
 @end
 NS_ASSUME_NONNULL_END

@@ -2,7 +2,7 @@
 archs:           [ i386, x86_64 ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/AppKit.framework/Versions/C/AppKit
-current-version: 1404.32
+current-version: 1404.46
 compatibility-version: 45.0
 exports:         
   - archs:           [ i386 ]

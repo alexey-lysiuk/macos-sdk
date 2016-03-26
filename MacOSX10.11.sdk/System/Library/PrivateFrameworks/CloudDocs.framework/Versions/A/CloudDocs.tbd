@@ -2,7 +2,7 @@
 archs:           [ i386, x86_64 ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CloudDocs.framework/Versions/A/CloudDocs
-current-version: 383.5
+current-version: 383.12
 compatibility-version: 0.0
 exports:         
   - archs:           [ i386 ]
@@ -16,6 +16,7 @@ exports:
                        _BRContainersMonitor._notifyTokenByContainerID, 
                        _BRContainersMonitor._observersByContainerID, _BRContainersMonitor._queue, 
                        _BRDaemonConnection._isUsingTokenService, _BRDaemonConnection._uuid, 
+                       _BRFetchQuotaOperation._fetchQuotaCompletionBlock, 
                        _BRNotificationQueue._array, _BRNotificationQueue._callbacks, 
                        _BRNotificationQueue._dequeued, _BRNotificationQueue._index, 
                        _BRQueryItem._attrs, _BRQueryItem._btime, _BRQueryItem._containerID, 
@@ -173,7 +174,7 @@ exports:
                        _kBRQueryItemOwnerNameComponentsKey, _kBRQueryItemOwnerNameKey, 
                        _kBRQueryItemTagsKey, _kBRQueryItemULErrorKey, _kBRQueryItemULPercentKey ]
     objc-classes:    [ _BRAccount, _BRContainer, _BRContainersMonitor, 
-                       _BRDaemonConnection, _BRListNonLocalVersionsOperation, 
+                       _BRDaemonConnection, _BRFetchQuotaOperation, _BRListNonLocalVersionsOperation, 
                        _BRNonLocalVersion, _BRNotificationQueue, _BROperation, 
                        _BRQueryItem, _BRReachabilityMonitor, _BRServerInfoRecordInfo, 
                        _BRShareCopyAccessTokenOperation, _BRShareCopyOperation, 

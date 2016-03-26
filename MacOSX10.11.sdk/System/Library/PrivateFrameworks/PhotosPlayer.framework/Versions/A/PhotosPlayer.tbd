@@ -21,8 +21,9 @@ exports:
                        _ISDynamicValueFilter, _ISFilteredAVPlayer, _ISForcePlayrateInput, 
                        _ISForceScrubInput, _ISGestureInput, _ISInput, _ISInputController, 
                        _ISLongPressForceGestureRecognizer, _ISLongPressPlaybackInput, 
-                       _ISMutedAudioInput, _ISOrbVolumeInput, _ISPerformanceDiagnosticsSettings, 
-                       _ISPlaybackController, _ISPlaybackSpec, _ISPlaybackStateTransitionManager, 
+                       _ISManualPlaybackInput, _ISMutedAudioInput, _ISOrbVolumeInput, 
+                       _ISPerformanceDiagnosticsSettings, _ISPlaybackController, 
+                       _ISPlaybackSpec, _ISPlaybackStateTransitionManager, 
                        _ISPlayer, _ISPlayerItem, _ISPlayerItemChef, _ISPlayerLayer, 
                        _ISPlayerSettings, _ISPlayerView, _ISReuseQueue, 
                        _ISRootSettings, _ISScrollViewVitalityController, 
@@ -31,7 +32,8 @@ exports:
                        _ISVitalityAutoplayFilter, _ISVitalityConstantFilter, 
                        _ISVitalityFilter, _ISVitalityInput, _ISVitalitySettings, 
                        _ISVitalitySimpleFilter, _ISVitalitySpecificSettings, 
-                       _IrisAVPlayerLayer, __ISAVPlayerView, __ISCrossfadeFrameLayer, 
-                       __ISCrossfadeView, __ISPlayerDebugView, __ISPlayerImageView, 
-                       __ISPlayerItemChefOperation, __ISTargetView ]
+                       _ISWrappedAVPlayer, _IrisAVPlayerLayer, __ISAVPlayerView, 
+                       __ISCrossfadeFrameLayer, __ISCrossfadeView, __ISPlayerDebugView, 
+                       __ISPlayerImageView, __ISPlayerItemChefOperation, 
+                       __ISTargetView ]
 ...

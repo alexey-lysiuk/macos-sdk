@@ -2,7 +2,7 @@
 archs:           [ i386, x86_64 ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/WebKit.framework/Versions/A/WebKit
-current-version: 601.3.9
+current-version: 601.5.17
 exports:         
   - archs:           [ i386 ]
     objc-classes:    [ _WKAccessibilityWebPageObject, _WKAccessibilityWebPageObjectBase, 
@@ -34,7 +34,7 @@ exports:
                        _WKWebsiteDataTypeWebSQLDatabases, __WKLegacyErrorDomain, 
                        __WKRecoveryAttempterErrorKey, __WKShouldOpenExternalURLsKey, 
                        __WKWebsiteDataTypeHSTSCache, __WKWebsiteDataTypeMediaKeys, 
-                       __WKWebsiteDataTypePlugInData ]
+                       __WKWebsiteDataTypePlugInData, __WKWebsiteDataTypeSearchFieldRecentSearches ]
     objc-classes:    [ _WKBackForwardList, _WKBackForwardListItem, _WKBrowsingContextController, 
                        _WKBrowsingContextGroup, _WKBrowsingContextHandle, 
                        _WKConnection, _WKDOMDocument, _WKDOMElement, _WKDOMNode, 
@@ -402,14 +402,15 @@ exports:
                        _WKPageConfigurationGetContext, _WKPageConfigurationGetPageGroup, 
                        _WKPageConfigurationGetPreferences, _WKPageConfigurationGetRelatedPage, 
                        _WKPageConfigurationGetTypeID, _WKPageConfigurationGetUserContentController, 
-                       _WKPageConfigurationSetContext, _WKPageConfigurationSetPageGroup, 
-                       _WKPageConfigurationSetPreferences, _WKPageConfigurationSetRelatedPage, 
-                       _WKPageConfigurationSetUserContentController, _WKPageCopyActiveURL, 
+                       _WKPageConfigurationGetWebsiteDataStore, _WKPageConfigurationSetContext, 
+                       _WKPageConfigurationSetPageGroup, _WKPageConfigurationSetPreferences, 
+                       _WKPageConfigurationSetRelatedPage, _WKPageConfigurationSetUserContentController, 
+                       _WKPageConfigurationSetWebsiteDataStore, _WKPageCopyActiveURL, 
                        _WKPageCopyApplicationNameForUserAgent, _WKPageCopyCommittedURL, 
                        _WKPageCopyCustomTextEncodingName, _WKPageCopyCustomUserAgent, 
-                       _WKPageCopyPendingAPIRequestURL, _WKPageCopyProvisionalURL, 
-                       _WKPageCopyRelatedPages, _WKPageCopySessionState, 
-                       _WKPageCopyStandardUserAgentWithApplicationName, 
+                       _WKPageCopyPageConfiguration, _WKPageCopyPendingAPIRequestURL, 
+                       _WKPageCopyProvisionalURL, _WKPageCopyRelatedPages, 
+                       _WKPageCopySessionState, _WKPageCopyStandardUserAgentWithApplicationName, 
                        _WKPageCopyTitle, _WKPageCopyUserAgent, _WKPageCountStringMatches, 
                        _WKPageDrawPagesToPDF, _WKPageEndPrinting, _WKPageExecuteCommand, 
                        _WKPageFindString, _WKPageFindStringMatches, _WKPageFixedLayoutSize, 
@@ -460,16 +461,20 @@ exports:
                        _WKPageReload, _WKPageReloadFromOrigin, _WKPageRenderTreeExternalRepresentation, 
                        _WKPageRestoreFromSessionState, _WKPageRubberBandsAtBottom, 
                        _WKPageRubberBandsAtLeft, _WKPageRubberBandsAtRight, 
-                       _WKPageRubberBandsAtTop, _WKPageRunJavaScriptInMainFrame, 
-                       _WKPageRunJavaScriptInMainFrame_b, _WKPageSelectContextMenuItem, 
-                       _WKPageSelectFindMatch, _WKPageSetAddsVisitedLinks, 
-                       _WKPageSetAllowsRemoteInspection, _WKPageSetApplicationNameForUserAgent, 
-                       _WKPageSetBackgroundExtendsBeyondPage, _WKPageSetCustomBackingScaleFactor, 
-                       _WKPageSetCustomTextEncodingName, _WKPageSetCustomUserAgent, 
-                       _WKPageSetEnableHorizontalRubberBanding, _WKPageSetEnableVerticalRubberBanding, 
-                       _WKPageSetFixedLayoutSize, _WKPageSetGapBetweenPages, 
-                       _WKPageSetMaintainsInactiveSelection, _WKPageSetMayStartMediaWhenInWindow, 
-                       _WKPageSetMediaVolume, _WKPageSetMuted, _WKPageSetPageAndTextZoomFactors, 
+                       _WKPageRubberBandsAtTop, _WKPageRunJavaScriptAlertResultListenerCall, 
+                       _WKPageRunJavaScriptAlertResultListenerGetTypeID, 
+                       _WKPageRunJavaScriptConfirmResultListenerCall, _WKPageRunJavaScriptConfirmResultListenerGetTypeID, 
+                       _WKPageRunJavaScriptInMainFrame, _WKPageRunJavaScriptInMainFrame_b, 
+                       _WKPageRunJavaScriptPromptResultListenerCall, _WKPageRunJavaScriptPromptResultListenerGetTypeID, 
+                       _WKPageSelectContextMenuItem, _WKPageSelectFindMatch, 
+                       _WKPageSetAddsVisitedLinks, _WKPageSetAllowsRemoteInspection, 
+                       _WKPageSetApplicationNameForUserAgent, _WKPageSetBackgroundExtendsBeyondPage, 
+                       _WKPageSetCustomBackingScaleFactor, _WKPageSetCustomTextEncodingName, 
+                       _WKPageSetCustomUserAgent, _WKPageSetEnableHorizontalRubberBanding, 
+                       _WKPageSetEnableVerticalRubberBanding, _WKPageSetFixedLayoutSize, 
+                       _WKPageSetGapBetweenPages, _WKPageSetMaintainsInactiveSelection, 
+                       _WKPageSetMayStartMediaWhenInWindow, _WKPageSetMediaVolume, 
+                       _WKPageSetMuted, _WKPageSetPageAndTextZoomFactors, 
                        _WKPageSetPageContextMenuClient, _WKPageSetPageDiagnosticLoggingClient, 
                        _WKPageSetPageFindClient, _WKPageSetPageFindMatchesClient, 
                        _WKPageSetPageFormClient, _WKPageSetPageInjectedBundleClient, 
@@ -734,7 +739,7 @@ exports:
                        _WKWebArchiveResourceCopyData, _WKWebArchiveResourceCopyMIMEType, 
                        _WKWebArchiveResourceCopyTextEncoding, _WKWebArchiveResourceCopyURL, 
                        _WKWebArchiveResourceCreate, _WKWebArchiveResourceGetTypeID, 
-                       _WKWebsiteDataStoreGetTypeID, _WebContentProcessMain, 
-                       _WebContentServiceInitializer ]
+                       _WKWebsiteDataStoreGetTypeID, _WKWindowFeaturesGetTypeID, 
+                       _WebContentProcessMain, _WebContentServiceInitializer ]
     objc-classes:    [ _WKView ]
 ...

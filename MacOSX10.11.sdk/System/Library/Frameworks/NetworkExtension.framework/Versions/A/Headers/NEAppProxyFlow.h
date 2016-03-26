@@ -44,6 +44,10 @@ typedef NS_ENUM(NSInteger, NEAppProxyFlowError) {
 	NEAppProxyFlowErrorTimedOut = 7,
 	/*! @const NEAppProxyFlowErrorInternal An internal error occurred. */
 	NEAppProxyFlowErrorInternal = 8,
+	/*! @const NEAppProxyFlowErrorDatagramTooLarge An attempt was made to write a datagram that is larger than the socket's receive window */
+	NEAppProxyFlowErrorDatagramTooLarge NS_AVAILABLE(10_11, 9_3) = 9,
+	/*! @const NEAppProxyFlowErrorReadAlreadyPending A read operation on the flow is already pending */
+	NEAppProxyFlowErrorReadAlreadyPending NS_AVAILABLE(10_11, 9_3) = 10,
 } NS_ENUM_AVAILABLE(10_11, 9_0);
 
 /*! @const NEAppProxyErrorDomain The NEAppProxyFlow error domain */

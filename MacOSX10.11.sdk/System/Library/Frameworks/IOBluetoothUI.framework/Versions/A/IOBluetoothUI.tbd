@@ -124,8 +124,8 @@ exports:
                        _PlainFormatter._allowDigits, _PlainFormatter._allowLetters, 
                        _PlainFormatter._characterSet, _PlainFormatter._maxChars ]
   - archs:           [ i386, x86_64 ]
-    symbols:         [ _BluetoothAudioNotificationType, _BluetoothInquiryCacheTimeout, 
-                       _BluetoothPreferencesChanged, _DeviceControllerHCIControllerNotificationHandler, 
+    symbols:         [ _BluetoothInquiryCacheTimeout, _BluetoothPreferencesChanged, 
+                       _DeviceControllerHCIControllerNotificationHandler, 
                        _IOBluetoothAlertHCIControllerPublished, _IOBluetoothAlertHCIPowerStateOn, 
                        _IOBluetoothDecodeCommand, _IOBluetoothDecodeEvent, 
                        _IOBluetoothDecodeGroup, _IOBluetoothDecodeManufacturerName, 

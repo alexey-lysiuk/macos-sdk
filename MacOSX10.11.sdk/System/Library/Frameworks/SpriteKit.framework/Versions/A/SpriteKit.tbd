@@ -16,7 +16,8 @@ exports:
                        _SKGetResourceBundle, _SKGetSystemProcessorUtilizationPercent, 
                        _SKGetUserProcessorUtilizationPercent, _SKNodeNameMatches, 
                        _SKSetPrefersFloatFramebuffer, _SKSetPrefersLowPowerGPUs, 
-                       _SKSetPrefersOpenGL, _SKSetResourceBundle ]
+                       _SKSetPrefersOpenGL, _SKSetResourceBundle, _skCurrentTime, 
+                       _skSetTimeOffset ]
     objc-classes:    [ _SK3DNode, _SKAction, _SKActionTable, _SKAttribute, 
                        _SKAttributeValue, _SKAudioNode, _SKButtonNode, 
                        _SKButtonNodeSprite, _SKCameraNode, _SKConstraint, 

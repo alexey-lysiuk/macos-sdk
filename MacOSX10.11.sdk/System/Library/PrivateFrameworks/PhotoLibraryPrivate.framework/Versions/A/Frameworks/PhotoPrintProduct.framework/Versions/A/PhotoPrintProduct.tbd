@@ -2,7 +2,7 @@
 archs:           [ x86_64 ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoLibraryPrivate.framework/Versions/A/Frameworks/PhotoPrintProduct.framework/Versions/A/PhotoPrintProduct
-current-version: 625.13
+current-version: 625.14
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CGAffineTransformConcatPhotoOrientation, _CGContextDrawSelectionInRect, 

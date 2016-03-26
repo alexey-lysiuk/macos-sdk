@@ -31,7 +31,7 @@
  call free( ) on LinearAlgebra objects; this will typically result in leaks.
  */
 #if OS_OBJECT_USE_OBJC
-    OS_OBJECT_DECL(la_object,);
+    OS_OBJECT_DECL(la_object);
 #   define LA_RETURNS_RETAINED OS_OBJECT_RETURNS_RETAINED
 #else
 typedef struct la_s *la_object_t;

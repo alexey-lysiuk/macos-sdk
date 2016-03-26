@@ -136,6 +136,7 @@ exports:
                        __ZN3awd7profile14ProcessingRule29kTruncateToNearestFieldNumberE, 
                        __ZN3awd7profile14ProcessingRule29kTruncateToSigdigsFieldNumberE, 
                        __ZN3awd7profile14ProcessingRule32kRecurseFieldWithRuleFieldNumberE, 
+                       __ZN3awd7profile14ProcessingRule34kTruncateFloatToNearestFieldNumberE, 
                        __ZN3awd7profile14ProcessingRule4SwapEPS1_, __ZN3awd7profile14ProcessingRule5ClearEv, 
                        __ZN3awd7profile14ProcessingRule8CopyFromERKS1_, 
                        __ZN3awd7profile14ProcessingRule9MergeFromERKS1_, 

@@ -2,7 +2,7 @@
 archs:           [ x86_64 ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoLibraryPrivate.framework/Versions/A/Frameworks/UXKit.framework/Versions/A/UXKit
-current-version: 350.22
+current-version: 370.42
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _NSStringFromUXCollectionViewLayoutDropPosition, 

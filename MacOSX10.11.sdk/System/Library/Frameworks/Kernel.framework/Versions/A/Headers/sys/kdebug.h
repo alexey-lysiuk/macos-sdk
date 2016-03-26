@@ -135,6 +135,7 @@ __BEGIN_DECLS
 #define DBG_ARIADNE             43
 #define DBG_DAEMON              44
 #define DBG_ENERGYTRACE         45
+#define DBG_IMG                 49
 
 
 #define DBG_MIG			255
@@ -215,6 +216,9 @@ __BEGIN_DECLS
 #define MACH_THREAD_BIND           0x2a /* Thread was bound (or unbound) to a processor */
 #define MACH_WAITQ_PROMOTE         0x2b /* Thread promoted by waitq boost */
 #define MACH_WAITQ_DEMOTE          0x2c /* Thread demoted from waitq boost */
+#define MACH_SCHED_LOAD            0x2d /* load update */
+#define MACH_REC_CORES_FAILSAFE    0x2e /* recommended processor failsafe kicked in */
+#define MACH_SCHED_QUANTUM_EXPIRED 0x2f /* thread quantum expired */
 
 /* Variants for MACH_MULTIQ_DEQUEUE */
 #define MACH_MULTIQ_BOUND     1
@@ -553,6 +557,7 @@ __BEGIN_DECLS
 
 /* Codes for BANK_ACCOUNT_INFO */
 #define BANK_SETTLE_CPU_TIME		0x1	/* Bank ledger(chit) rolled up to tasks. */
+#define BANK_SECURE_ORIGINATOR_CHANGED	0x2	/* Secure Originator changed. */
 
 /* Codes for ATM_SUBAID_INFO */
 #define ATM_MIN_CALLED				0x1

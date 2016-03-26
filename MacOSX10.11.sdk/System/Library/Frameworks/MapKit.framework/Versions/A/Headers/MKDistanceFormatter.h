@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-MK_CLASS_AVAILABLE(10_9, 7_0)
+MK_CLASS_AVAILABLE(10_9, 7_0) __TVOS_AVAILABLE(9_2)
 @interface MKDistanceFormatter : NSFormatter
 
 // Convenience methods. MKDistanceFormatter also responds to the usual NSFormatter methods.
@@ -24,7 +24,7 @@ typedef NS_ENUM(NSUInteger, MKDistanceFormatterUnits) {
     MKDistanceFormatterUnitsMetric,
     MKDistanceFormatterUnitsImperial,
     MKDistanceFormatterUnitsImperialWithYards
-} NS_ENUM_AVAILABLE(10_9, 7_0);
+} NS_ENUM_AVAILABLE(10_9, 7_0) __TVOS_AVAILABLE(9_2);
 
 @property (assign, NS_NONATOMIC_IOSONLY) MKDistanceFormatterUnits units;
 
@@ -32,7 +32,7 @@ typedef NS_ENUM(NSUInteger, MKDistanceFormatterUnitStyle) {
     MKDistanceFormatterUnitStyleDefault = 0,    // Whether to abbreviate depends on units, locale, and user interface language
     MKDistanceFormatterUnitStyleAbbreviated,    // Ex. km
     MKDistanceFormatterUnitStyleFull            // Ex. kilometers
-} NS_ENUM_AVAILABLE(10_9, 7_0);
+} NS_ENUM_AVAILABLE(10_9, 7_0) __TVOS_AVAILABLE(9_2);
 
 @property (assign, NS_NONATOMIC_IOSONLY) MKDistanceFormatterUnitStyle unitStyle;
 

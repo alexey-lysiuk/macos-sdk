@@ -23,12 +23,12 @@ typedef NS_ENUM(NSUInteger, MKAnnotationViewDragState) {
     MKAnnotationViewDragStateDragging,      // View is dragging ("lift" animations are complete)
     MKAnnotationViewDragStateCanceling,     // View was not dragged and should return to its starting position (e.g. pin drop)
     MKAnnotationViewDragStateEnding         // View was dragged, new coordinate is set and view should return to resting position (e.g. pin drop)
-} NS_ENUM_AVAILABLE(10_9, 4_0) __WATCHOS_PROHIBITED;
+} NS_ENUM_AVAILABLE(10_9, 4_0) __TVOS_PROHIBITED __WATCHOS_PROHIBITED;
 
 @protocol MKAnnotation;
 
 #if TARGET_OS_IPHONE
-MK_CLASS_AVAILABLE(NA, 3_0) __WATCHOS_PROHIBITED
+MK_CLASS_AVAILABLE(NA, 3_0) __TVOS_AVAILABLE(9_2) __WATCHOS_PROHIBITED
 @interface MKAnnotationView : UIView
 #else
 MK_CLASS_AVAILABLE(10_9, NA)
@@ -102,14 +102,14 @@ MK_CLASS_AVAILABLE(10_9, NA)
 
 // If YES and the underlying id<MKAnnotation> responds to setCoordinate:, 
 // the user will be able to drag this annotation view around the map.
-@property (nonatomic, getter=isDraggable) BOOL draggable NS_AVAILABLE(10_9, 4_0);
+@property (nonatomic, getter=isDraggable) BOOL draggable NS_AVAILABLE(10_9, 4_0) __TVOS_PROHIBITED;
 
 // Automatically set to MKAnnotationViewDragStateStarting, Canceling, and Ending when necessary.
 // Implementer is responsible for transitioning to Dragging and None states as appropriate.
-@property (nonatomic) MKAnnotationViewDragState dragState NS_AVAILABLE(10_9, 4_0);
+@property (nonatomic) MKAnnotationViewDragState dragState NS_AVAILABLE(10_9, 4_0) __TVOS_PROHIBITED;
 
 // Developers targeting iOS 4.2 and after must use setDragState:animated: instead of setDragState:.
-- (void)setDragState:(MKAnnotationViewDragState)newDragState animated:(BOOL)animated NS_AVAILABLE(10_9, 4_2);
+- (void)setDragState:(MKAnnotationViewDragState)newDragState animated:(BOOL)animated NS_AVAILABLE(10_9, 4_2) __TVOS_PROHIBITED;
 
 @end
 

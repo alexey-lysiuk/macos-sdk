@@ -2,7 +2,7 @@
 archs:           [ i386, x86_64 ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
-current-version: 1256.14
+current-version: 1258.1
 compatibility-version: 150.0
 exports:         
   - archs:           [ i386 ]

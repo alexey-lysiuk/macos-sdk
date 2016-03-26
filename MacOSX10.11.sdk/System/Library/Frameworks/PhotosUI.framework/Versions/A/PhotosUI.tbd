@@ -2,12 +2,13 @@
 archs:           [ x86_64 ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/PhotosUI.framework/Versions/A/PhotosUI
-current-version: 350.22
+current-version: 370.42
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _PUEditingFullsizeImageDataTypeIdentifer, _PUEditingInitialPayloadTypeIdentifier, 
                        _PhotosUIVersionNumber, _PhotosUIVersionString ]
     objc-classes:    [ _PHEditingExtensionContext, _PHEditingRemoteView, 
                        _PHEditingRemoteViewController, _PHEditingViewService, 
-                       _PUEditingExtensionHostContext, _PUEditingInitialPayload ]
+                       _PHLivePhotoBadge, _PHLivePhotoView, _PUEditingExtensionHostContext, 
+                       _PUEditingInitialPayload ]
 ...

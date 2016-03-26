@@ -4,6 +4,7 @@ platform:        macosx
 install-name:    /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libSparseBLAS.dylib
 exports:         
   - archs:           [ i386, x86_64, x86_64h ]
+    allowed-clients: [ vecLib ]
     symbols:         [ _sparse_commit, _sparse_elementwise_norm_double, 
                        _sparse_elementwise_norm_float, _sparse_extract_block_double, 
                        _sparse_extract_block_float, _sparse_extract_sparse_column_double, 

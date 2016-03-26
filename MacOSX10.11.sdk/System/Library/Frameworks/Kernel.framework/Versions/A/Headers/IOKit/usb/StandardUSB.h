@@ -69,6 +69,8 @@ namespace StandardUSB
         kDescriptorSizeConfiguration = 9,
         kDescriptorSizeInterface = 9,
         kDescriptorSizeEndpoint = 7,
+        kDescriptorSizeStringMinimum = kDescriptorSize,
+        kDescriptorSizeStringMaximum = 255,
         kDescriptorSizeDeviceQualifier = 10,
         kDescriptorSizeInterfaceAssociation = 8,
         kDescriptorSizeBOS = 5,
@@ -79,8 +81,7 @@ namespace StandardUSB
         kDescriptorSizeHubMinimum = 9,
         kDescriptorSizeHubMaximum = 21,
         kDescriptorSizeSuperSpeedHub = 12,
-        kDescriptorSizeSuperSpeedUSBEndpointCompanion = 6,
-        kDescriptorSizeLargestStandard = kDescriptorSizeHubMaximum
+        kDescriptorSizeSuperSpeedUSBEndpointCompanion = 6
     };
     
     typedef enum tDescriptorSize tDescriptorSize;

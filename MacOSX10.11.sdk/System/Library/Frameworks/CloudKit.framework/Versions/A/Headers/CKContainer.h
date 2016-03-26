@@ -118,4 +118,16 @@ typedef void(^CKApplicationPermissionBlock)(CKApplicationPermissionStatus applic
 - (void)discoverUserInfoWithUserRecordID:(CKRecordID *)userRecordID completionHandler:(void (^)(CKDiscoveredUserInfo * __nullable userInfo, NSError * __nullable error))completionHandler;
 
 @end
+
+@interface CKContainer (CKLongLivedOperations)
+/* 
+ Long lived CKOperations returned by this call must be started on an operation queue.
+ Remember to set the callback blocks before starting the operation.
+ If an operation has already completed against the server, and is subsequently resumed, that operation will replay all of
+  its callbacks from the start of the operation, but the request will not be re-sent to the server.
+ If a long lived operation is cancelled or finishes completely it is no longer returned by these calls.
+ */
+- (void)fetchAllLongLivedOperationIDsWithCompletionHandler:(void (^)(NSArray <NSString *> * __nullable outstandingOperationIDs, NSError * __nullable error))completionHandler NS_AVAILABLE(10_12, 9_3);
+- (void)fetchLongLivedOperationWithID:(NSString *)operationID completionHandler:(void (^)(CKOperation * __nullable outstandingOperation, NSError * __nullable error))completionHandler NS_AVAILABLE(10_12, 9_3);
+@end
 NS_ASSUME_NONNULL_END

@@ -186,7 +186,12 @@ CF_RETURNS_RETAINED NS_DEPRECATED_MAC(10_4,10_11);
 	colorSpace:(nullable CGColorSpaceRef)colorSpace NS_AVAILABLE_MAC(10_6);
 #endif
 
-/* Render 'image' into the given CVPixelBuffer. */
+/* Render 'image' into the given CVPixelBuffer. 
+ * In OS X 10.11.3 and iOS 9.3 and later
+ *   CI will color match to the colorspace of the buffer.
+ * otherwise
+ *   CI will color match to the context's output colorspace.
+ */
 - (void)render:(CIImage *)image 
 toCVPixelBuffer:(CVPixelBufferRef)buffer NS_AVAILABLE(10_11,5_0);
 
@@ -197,6 +202,7 @@ toCVPixelBuffer:(CVPixelBufferRef)buffer NS_AVAILABLE(10_11,5_0);
  *      The 'bounds' acts like a clip rect to limit what region of 'buffer' is modified.
  *    In iOS 8 and earlier: The 'bounds' parameter acts to specify the region of 'image' to render.
  *      This region (regarless of its origin) is rendered at upper-left corner of 'buffer'.
+ * If 'colorSpace' is nil, CI will not color match to the destination.
  */
 - (void)render:(CIImage *)image
 toCVPixelBuffer:(CVPixelBufferRef)buffer

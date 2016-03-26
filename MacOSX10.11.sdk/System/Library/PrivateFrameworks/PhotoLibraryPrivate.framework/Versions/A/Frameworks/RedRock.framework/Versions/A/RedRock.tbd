@@ -2,7 +2,7 @@
 archs:           [ x86_64 ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoLibraryPrivate.framework/Versions/A/Frameworks/RedRock.framework/Versions/A/RedRock
-current-version: 350.22
+current-version: 370.42
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _BackgroundServiceNameForType, _DGSpotPatchInitialAngleValue, 
@@ -130,9 +130,9 @@ exports:
                        _kRKExportSettingsKey, _kRKExportVersionKey, _kRKImportMasterKey, 
                        _kRKImportStreamingKey, _kShowAlertWhenExportLibraryFinishedKey, 
                        _kShowAlertWhenExportMastersFinishedKey, _kShowAlertWhenExportVersionsFinishedKey, 
-                       _k_BookFilenamePrefix, _k_BookFilenameSuffix, _k_PrintFilenamePrefix, 
-                       _k_PrintFilenameSuffix, _k_RKExportErrorDomain, 
-                       _k_RKExportErrorKey, _k_RKExportFailureAddIptcToMasterListKey, 
+                       _kUTTypeLivePhotoBundle, _k_BookFilenamePrefix, 
+                       _k_BookFilenameSuffix, _k_PrintFilenamePrefix, _k_PrintFilenameSuffix, 
+                       _k_RKExportErrorDomain, _k_RKExportErrorKey, _k_RKExportFailureAddIptcToMasterListKey, 
                        _k_RKExportFailureVersionNamesKey, _k_RKExportJobDescriptionKey, 
                        _k_RKExportSubtasksTotalKey, _k_RKExportSuccessCountKey, 
                        _k_RKExportSuccessFilePathsKey, _k_RKExportSuccessfulKey, 

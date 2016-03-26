@@ -2,7 +2,7 @@
 archs:           [ i386, x86_64 ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AOSKit.framework/Versions/A/AOSKit
-current-version: 232.0
+current-version: 233.0
 exports:         
   - archs:           [ x86_64 ]
     objc-ivars:      [ _AOSAccountCache._accountDicts, _AOSAccountCache._dsidMappings, 
@@ -54,12 +54,13 @@ exports:
                        _AOSLaunchPushTokenRetrievalThread, _AOSLaunchRampStateRetrievalThread, 
                        _AOSLaunchRegisterDeviceThread, _AOSLaunchStorageUsageThread, 
                        _AOSLaunchSystemCheckThread, _AOSRemoveAccountInfo, 
-                       _AOSShimAccountRefresh, _AOSShimAppleIDForDSID, 
-                       _AOSShimCopyAccountIDs, _AOSShimCopyLoggedInAccount, 
-                       _AOSShimCopyPropertiesForService, _AOSShimIsPCSIdentitySetup, 
-                       _AOSShimServiceIsEnabled, _AOSShimServiceSetEnabled, 
-                       _AOSStoreAccountInfo, _AOSStoreProxyCredentials, 
-                       _AOSTransactionCancel, _AOSTransactionCreate, _AOSTransactionGetCallbackBlock, 
+                       _AOSShimAccountCopyProperty, _AOSShimAccountRefresh, 
+                       _AOSShimAppleIDForDSID, _AOSShimCopyAccountIDs, 
+                       _AOSShimCopyLoggedInAccount, _AOSShimCopyPropertiesForService, 
+                       _AOSShimIsPCSIdentitySetup, _AOSShimServiceIsEnabled, 
+                       _AOSShimServiceSetEnabled, _AOSStoreAccountInfo, 
+                       _AOSStoreProxyCredentials, _AOSTransactionCancel, 
+                       _AOSTransactionCreate, _AOSTransactionGetCallbackBlock, 
                        _AOSTransactionGetCallbackFunction, _AOSTransactionGetCallbackQueue, 
                        _AOSTransactionGetContext, _AOSTransactionGetError, 
                        _AOSTransactionGetResult, _AOSTransactionIsAsync, 
@@ -191,15 +192,15 @@ exports:
                        _kAOSNickNameKey, _kAOSPasswordAuth, _kAOSPasswordChangeTimestampKey, 
                        _kAOSPasswordDialogType, _kAOSPasswordVerifiedNotification, 
                        _kAOSPersonIDKey, _kAOSPhotosFeature, _kAOSPrefsActionKey, 
-                       _kAOSPrefsActionRequiredNotification, _kAOSPrimaryEmailKey, 
-                       _kAOSPrimaryEmailVerifiedKey, _kAOSProtocolKey, 
-                       _kAOSProxyCachedCredentialsKey, _kAOSProxyClientURLKey, 
-                       _kAOSProxyDialogIsPACKey, _kAOSProxyDialogIsRetryKey, 
-                       _kAOSProxyDialogWasCancelledKey, _kAOSProxyDoSavePasswordKey, 
-                       _kAOSProxyPasswordIsSecureKey, _kAOSProxyPasswordKey, 
-                       _kAOSProxyURLKey, _kAOSProxyUsernameKey, _kAOSPushTokenHeaderName, 
-                       _kAOSQuotaKey, _kAOSRampETAKey, _kAOSRampFeatureKey, 
-                       _kAOSRampStatusKey, _kAOSRegistrationTypeHeartbeat, 
+                       _kAOSPrefsActionRequiredNotification, _kAOSPrefsParamsKey, 
+                       _kAOSPrimaryEmailKey, _kAOSPrimaryEmailVerifiedKey, 
+                       _kAOSProtocolKey, _kAOSProxyCachedCredentialsKey, 
+                       _kAOSProxyClientURLKey, _kAOSProxyDialogIsPACKey, 
+                       _kAOSProxyDialogIsRetryKey, _kAOSProxyDialogWasCancelledKey, 
+                       _kAOSProxyDoSavePasswordKey, _kAOSProxyPasswordIsSecureKey, 
+                       _kAOSProxyPasswordKey, _kAOSProxyURLKey, _kAOSProxyUsernameKey, 
+                       _kAOSPushTokenHeaderName, _kAOSQuotaKey, _kAOSRampETAKey, 
+                       _kAOSRampFeatureKey, _kAOSRampStatusKey, _kAOSRegistrationTypeHeartbeat, 
                        _kAOSRegistrationTypeLogin, _kAOSRelayHostKey, _kAOSRelayPortKey, 
                        _kAOSRelaySecretNameKey, _kAOSRelaySecretValueKey, 
                        _kAOSRequestBodyKey, _kAOSRequestHeadersKey, _kAOSRequestMethodKey, 

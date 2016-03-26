@@ -2,7 +2,7 @@
 archs:           [ i386, x86_64 ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork
-current-version: 760.2.5
+current-version: 760.4.2
 exports:         
   - archs:           [ i386 ]
     symbols:         [ '$ld$hide$os10.0$.objc_class_name_NSCachedURLResponse', 

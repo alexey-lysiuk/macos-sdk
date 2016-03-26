@@ -2,7 +2,7 @@
 archs:           [ x86_64 ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ProofReader.framework/Versions/A/ProofReader
-current-version: 328.0
+current-version: 328.2
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _AltAndWrite, _AltOneToMultiChrCnv, _Alt_Str, _AsciiStrCmp, 

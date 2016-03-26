@@ -2,7 +2,7 @@
 archs:           [ x86_64 ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Mail.framework/Versions/A/Mail
-current-version: 3111.0
+current-version: 3124.0
 exports:         
   - archs:           [ x86_64 ]
     allowed-clients: [ CoreSuggestionsTests, DebugBundle, EmailAuthenticationPlugin, 
@@ -322,7 +322,7 @@ exports:
                        _MFEWSCreateItemResponseOperation, _MFEWSCreateMessageRequestOperation, 
                        _MFEWSDeleteFolderRequestOperation, _MFEWSDeleteItemsRequestOperation, 
                        _MFEWSDeleteMailboxTaskOperation, _MFEWSDeliverer, 
-                       _MFEWSDeliveryAccount, _MFEWSFetchMessageMetadataOperation, 
+                       _MFEWSDeliveryAccount, _MFEWSEventFetcher, _MFEWSFetchMessageMetadataOperation, 
                        _MFEWSFindItemsRequestOperation, _MFEWSFindItemsResponseOperation, 
                        _MFEWSFolderHierarchyReconcileTask, _MFEWSGateway, 
                        _MFEWSGetFolderRequestOperation, _MFEWSGetFolderResponseOperation, 

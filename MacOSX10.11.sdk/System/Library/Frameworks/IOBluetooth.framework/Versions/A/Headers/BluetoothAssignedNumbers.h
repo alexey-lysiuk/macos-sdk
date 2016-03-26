@@ -652,7 +652,8 @@ enum BluetoothHCIVersions
 	kBluetoothHCIVersionCoreSpecification2_1EDR												=	0x04,
 	kBluetoothHCIVersionCoreSpecification3_0HS												=	0x05,
 	kBluetoothHCIVersionCoreSpecification4_0												=	0x06,
-	kBluetoothHCIVersionCoreSpecification4_1												=	0x07
+    kBluetoothHCIVersionCoreSpecification4_1												=	0x07,
+    kBluetoothHCIVersionCoreSpecification4_2												=	0x08
 };
 
 
@@ -667,7 +668,8 @@ enum BluetoothLMPVersions
 	kBluetoothLMPVersionCoreSpecification2_1EDR												=	0x04,
 	kBluetoothLMPVersionCoreSpecification3_0HS												=	0x05,
 	kBluetoothLMPVersionCoreSpecification4_0												=	0x06,
-	kBluetoothLMPVersionCoreSpecification4_1												=	0x07
+	kBluetoothLMPVersionCoreSpecification4_1												=	0x07,
+    kBluetoothLMPVersionCoreSpecification4_2												=	0x08
 };
 
 #ifdef	__cplusplus

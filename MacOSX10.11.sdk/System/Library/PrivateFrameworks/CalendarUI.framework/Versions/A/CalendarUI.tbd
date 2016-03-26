@@ -2,7 +2,7 @@
 archs:           [ x86_64 ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CalendarUI.framework/Versions/A/CalendarUI
-current-version: 367.2
+current-version: 367.3
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CALGroupPboardType, _CALLocationPboardType, _CALResourcePboardType, 

@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef void (^MKLocalSearchCompletionHandler)(MKLocalSearchResponse * __nullable response, NSError * __nullable error);
 
-MK_CLASS_AVAILABLE(10_9, 6_1) __WATCHOS_PROHIBITED
+MK_CLASS_AVAILABLE(10_9, 6_1) __TVOS_AVAILABLE(9_2) __WATCHOS_PROHIBITED
 @interface MKLocalSearch : NSObject
 
 // The request will be copied during initialization, so any changes made to the request

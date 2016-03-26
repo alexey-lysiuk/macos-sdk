@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 // MKTileOverlay represents a data source for raster image tiles in the spherical mercator projection (EPSG:3857).
-MK_CLASS_AVAILABLE(10_9, 7_0) __WATCHOS_PROHIBITED
+MK_CLASS_AVAILABLE(10_9, 7_0) __TVOS_AVAILABLE(9_2) __WATCHOS_PROHIBITED
 @interface MKTileOverlay : NSObject <MKOverlay>
 
 - (instancetype)initWithURLTemplate:(nullable NSString *)URLTemplate NS_DESIGNATED_INITIALIZER; // URL template is a string where the substrings "{x}", "{y}", "{z}", and "{scale}" are replaced with values from a tile path to create a URL to load. For example: http://server/path?x={x}&y={y}&z={z}&scale={scale}.

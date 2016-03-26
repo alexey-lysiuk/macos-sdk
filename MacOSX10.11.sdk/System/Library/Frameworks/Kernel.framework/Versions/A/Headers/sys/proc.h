@@ -98,6 +98,8 @@ extern void wakeup_one(caddr_t chan);
 extern int proc_selfpid(void);
 /* this routine returns the pid of the parent of the current process */
 extern int proc_selfppid(void);
+/* this routine returns the csflags of the current process */
+extern int proc_selfcsflags(void);
 /* this routine returns sends a signal signum to the process identified by the pid */
 extern void proc_signal(int pid, int signum);
 /* this routine checks whether any signal identified by the mask are pending in the  process identified by the pid. The check is  on all threads of the process. */

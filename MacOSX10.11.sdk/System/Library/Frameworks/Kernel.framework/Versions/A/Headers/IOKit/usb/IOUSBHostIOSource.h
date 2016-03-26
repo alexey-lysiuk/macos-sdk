@@ -78,12 +78,20 @@ protected:
     virtual void free();
     
     virtual bool initWithOwners(AppleUSBHostController* controller, IOUSBHostDevice* device);
-    
+
+    OSMetaClassDeclareReservedUsed(IOUSBHostIOSource, 0);
+    virtual IOReturn open();
+
+    OSMetaClassDeclareReservedUsed(IOUSBHostIOSource, 1);
+    virtual IOReturn openGated();
+
+    OSMetaClassDeclareReservedUsed(IOUSBHostIOSource, 2);
+    virtual IOReturn destroy();
+
+    OSMetaClassDeclareReservedUsed(IOUSBHostIOSource, 3);
+    virtual IOReturn destroyGated();
+
     // Pad slots for future expansion
-    OSMetaClassDeclareReservedUnused(IOUSBHostIOSource, 0);
-    OSMetaClassDeclareReservedUnused(IOUSBHostIOSource, 1);
-    OSMetaClassDeclareReservedUnused(IOUSBHostIOSource, 2);
-    OSMetaClassDeclareReservedUnused(IOUSBHostIOSource, 3);
     OSMetaClassDeclareReservedUnused(IOUSBHostIOSource, 4);
     OSMetaClassDeclareReservedUnused(IOUSBHostIOSource, 5);
     OSMetaClassDeclareReservedUnused(IOUSBHostIOSource, 6);
@@ -105,7 +113,8 @@ public:
         kStateReady,
         kStateRunningCompletions,
         kStateAborting,
-        kStateInactive
+        kStateInactive,
+        kStateDestroyed
     };
 
     /*!

@@ -2,22 +2,22 @@
 archs:           [ i386, x86_64 ]
 platform:        macosx
 install-name:    /usr/lib/system/libsystem_sandbox.dylib
-current-version: 460.20.9
+current-version: 460.40.33
 exports:         
   - archs:           [ i386, x86_64 ]
     allowed-clients: [ System ]
     symbols:         [ _APP_SANDBOX_IOKIT_CLIENT, _APP_SANDBOX_MACH, _APP_SANDBOX_READ, 
                        _APP_SANDBOX_READ_WRITE, _IOS_SANDBOX_APPLICATION_GROUP, 
                        _IOS_SANDBOX_CONTAINER, _IOS_SANDBOX_EXECUTABLE, 
+                       _IOS_SANDBOX_SYSTEM_CONTAINER, _IOS_SANDBOX_SYSTEM_GROUP, 
                        _SANDBOX_CHECK_CANONICAL, _SANDBOX_CHECK_NO_REPORT, 
                        _SANDBOX_EXTENSION_CANONICAL, _SANDBOX_EXTENSION_DEFAULT, 
                        _SANDBOX_EXTENSION_MAGIC, _SANDBOX_EXTENSION_PREFIXMATCH, 
                        _SANDBOX_EXTENSION_UNRESOLVED, ___libsystem_sandboxVersionNumber, 
-                       ___libsystem_sandboxVersionString, __amkrtemp, _kRootlessDebuggableEntitlement, 
-                       _kSBXProfileNoInternet, _kSBXProfileNoNetwork, _kSBXProfileNoWrite, 
-                       _kSBXProfileNoWriteExceptTemporary, _kSBXProfilePureComputation, 
-                       _rootless_allows_task_for_pid, _rootless_apply, 
-                       _rootless_apply_internal, _rootless_apply_relative, 
+                       ___libsystem_sandboxVersionString, __amkrtemp, _kSBXProfileNoInternet, 
+                       _kSBXProfileNoNetwork, _kSBXProfileNoWrite, _kSBXProfileNoWriteExceptTemporary, 
+                       _kSBXProfilePureComputation, _rootless_allows_task_for_pid, 
+                       _rootless_apply, _rootless_apply_internal, _rootless_apply_relative, 
                        _rootless_check_restricted_flag, _rootless_check_trusted, 
                        _rootless_manifest_free, _rootless_manifest_parse, 
                        _rootless_mkdir_restricted, _rootless_preflight, 

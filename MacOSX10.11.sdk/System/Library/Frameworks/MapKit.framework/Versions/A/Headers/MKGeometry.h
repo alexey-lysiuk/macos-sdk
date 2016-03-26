@@ -38,7 +38,7 @@ NS_INLINE MKCoordinateRegion MKCoordinateRegionMake(CLLocationCoordinate2D cente
 	return region;
 }
 
-MK_EXTERN MKCoordinateRegion MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2D centerCoordinate, CLLocationDistance latitudinalMeters, CLLocationDistance longitudinalMeters);
+MK_EXTERN MKCoordinateRegion MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2D centerCoordinate, CLLocationDistance latitudinalMeters, CLLocationDistance longitudinalMeters) __TVOS_AVAILABLE(9_2);
 
 // Projected geometry is available in iPhone OS 4.0 or later and Mac OS X 10.9 or later
 #if (__IPHONE_4_0 <= __IPHONE_OS_VERSION_MAX_ALLOWED || __MAC_10_9 <= __MAC_OS_X_VERSION_MAX_ALLOWED)
@@ -67,21 +67,21 @@ typedef struct {
 typedef CGFloat MKZoomScale;
 #endif
 
-MK_EXTERN const MKMapSize MKMapSizeWorld NS_AVAILABLE(10_9, 4_0);
+MK_EXTERN const MKMapSize MKMapSizeWorld NS_AVAILABLE(10_9, 4_0) __TVOS_AVAILABLE(9_2);
 // The rect that contains every map point in the world.
-MK_EXTERN const MKMapRect MKMapRectWorld NS_AVAILABLE(10_9, 4_0);
+MK_EXTERN const MKMapRect MKMapRectWorld NS_AVAILABLE(10_9, 4_0) __TVOS_AVAILABLE(9_2);
 
 // Conversion between unprojected and projected coordinates
-MK_EXTERN MKMapPoint MKMapPointForCoordinate(CLLocationCoordinate2D coordinate) NS_AVAILABLE(10_9, 4_0);
-MK_EXTERN CLLocationCoordinate2D MKCoordinateForMapPoint(MKMapPoint mapPoint) NS_AVAILABLE(10_9, 4_0);
+MK_EXTERN MKMapPoint MKMapPointForCoordinate(CLLocationCoordinate2D coordinate) NS_AVAILABLE(10_9, 4_0) __TVOS_AVAILABLE(9_2);
+MK_EXTERN CLLocationCoordinate2D MKCoordinateForMapPoint(MKMapPoint mapPoint) NS_AVAILABLE(10_9, 4_0) __TVOS_AVAILABLE(9_2);
 
 // Conversion between distances and projected coordinates
-MK_EXTERN CLLocationDistance MKMetersPerMapPointAtLatitude(CLLocationDegrees latitude) NS_AVAILABLE(10_9, 4_0);
-MK_EXTERN double MKMapPointsPerMeterAtLatitude(CLLocationDegrees latitude) NS_AVAILABLE(10_9, 4_0);
+MK_EXTERN CLLocationDistance MKMetersPerMapPointAtLatitude(CLLocationDegrees latitude) NS_AVAILABLE(10_9, 4_0) __TVOS_AVAILABLE(9_2);
+MK_EXTERN double MKMapPointsPerMeterAtLatitude(CLLocationDegrees latitude) NS_AVAILABLE(10_9, 4_0) __TVOS_AVAILABLE(9_2);
 
-MK_EXTERN CLLocationDistance MKMetersBetweenMapPoints(MKMapPoint a, MKMapPoint b) NS_AVAILABLE(10_9, 4_0);
+MK_EXTERN CLLocationDistance MKMetersBetweenMapPoints(MKMapPoint a, MKMapPoint b) NS_AVAILABLE(10_9, 4_0) __TVOS_AVAILABLE(9_2);
 
-MK_EXTERN const MKMapRect MKMapRectNull NS_AVAILABLE(10_9, 4_0);
+MK_EXTERN const MKMapRect MKMapRectNull NS_AVAILABLE(10_9, 4_0) __TVOS_AVAILABLE(9_2);
 
 #if (__IPHONE_4_0 <= __IPHONE_OS_VERSION_MAX_ALLOWED || __MAC_10_9 <= __MAC_OS_X_VERSION_MAX_ALLOWED)
 
@@ -153,33 +153,33 @@ NS_INLINE NSString *MKStringFromMapRect(MKMapRect rect) {
 }
 #endif
 
-MK_EXTERN MKMapRect MKMapRectUnion(MKMapRect rect1, MKMapRect rect2) NS_AVAILABLE(10_9, 4_0);
-MK_EXTERN MKMapRect MKMapRectIntersection(MKMapRect rect1, MKMapRect rect2) NS_AVAILABLE(10_9, 4_0);
-MK_EXTERN MKMapRect MKMapRectInset(MKMapRect rect, double dx, double dy) NS_AVAILABLE(10_9, 4_0);
-MK_EXTERN MKMapRect MKMapRectOffset(MKMapRect rect, double dx, double dy) NS_AVAILABLE(10_9, 4_0);
-MK_EXTERN void MKMapRectDivide(MKMapRect rect, MKMapRect *slice, MKMapRect *remainder, double amount, CGRectEdge edge) NS_AVAILABLE(10_9, 4_0);
+MK_EXTERN MKMapRect MKMapRectUnion(MKMapRect rect1, MKMapRect rect2) NS_AVAILABLE(10_9, 4_0) __TVOS_AVAILABLE(9_2);
+MK_EXTERN MKMapRect MKMapRectIntersection(MKMapRect rect1, MKMapRect rect2) NS_AVAILABLE(10_9, 4_0) __TVOS_AVAILABLE(9_2);
+MK_EXTERN MKMapRect MKMapRectInset(MKMapRect rect, double dx, double dy) NS_AVAILABLE(10_9, 4_0) __TVOS_AVAILABLE(9_2);
+MK_EXTERN MKMapRect MKMapRectOffset(MKMapRect rect, double dx, double dy) NS_AVAILABLE(10_9, 4_0) __TVOS_AVAILABLE(9_2);
+MK_EXTERN void MKMapRectDivide(MKMapRect rect, MKMapRect *slice, MKMapRect *remainder, double amount, CGRectEdge edge) NS_AVAILABLE(10_9, 4_0) __TVOS_AVAILABLE(9_2);
 
-MK_EXTERN BOOL MKMapRectContainsPoint(MKMapRect rect, MKMapPoint point) NS_AVAILABLE(10_9, 4_0);
-MK_EXTERN BOOL MKMapRectContainsRect(MKMapRect rect1, MKMapRect rect2) NS_AVAILABLE(10_9, 4_0);
-MK_EXTERN BOOL MKMapRectIntersectsRect(MKMapRect rect1, MKMapRect rect2) NS_AVAILABLE(10_9, 4_0);
+MK_EXTERN BOOL MKMapRectContainsPoint(MKMapRect rect, MKMapPoint point) NS_AVAILABLE(10_9, 4_0) __TVOS_AVAILABLE(9_2);
+MK_EXTERN BOOL MKMapRectContainsRect(MKMapRect rect1, MKMapRect rect2) NS_AVAILABLE(10_9, 4_0) __TVOS_AVAILABLE(9_2);
+MK_EXTERN BOOL MKMapRectIntersectsRect(MKMapRect rect1, MKMapRect rect2) NS_AVAILABLE(10_9, 4_0) __TVOS_AVAILABLE(9_2);
 
-MK_EXTERN MKCoordinateRegion MKCoordinateRegionForMapRect(MKMapRect rect) NS_AVAILABLE(10_9, 4_0);
+MK_EXTERN MKCoordinateRegion MKCoordinateRegionForMapRect(MKMapRect rect) NS_AVAILABLE(10_9, 4_0) __TVOS_AVAILABLE(9_2);
 
-MK_EXTERN BOOL MKMapRectSpans180thMeridian(MKMapRect rect) NS_AVAILABLE(10_9, 4_0);
+MK_EXTERN BOOL MKMapRectSpans180thMeridian(MKMapRect rect) NS_AVAILABLE(10_9, 4_0) __TVOS_AVAILABLE(9_2);
 // For map rects that span the 180th meridian, this returns the portion of the rect
 // that lies outside of the world rect wrapped around to the other side of the
 // world.  The portion of the rect that lies inside the world rect can be 
 // determined with MKMapRectIntersection(rect, MKMapRectWorld).
-MK_EXTERN MKMapRect MKMapRectRemainder(MKMapRect rect) NS_AVAILABLE(10_9, 4_0);
+MK_EXTERN MKMapRect MKMapRectRemainder(MKMapRect rect) NS_AVAILABLE(10_9, 4_0) __TVOS_AVAILABLE(9_2);
 
 
 @interface NSValue (NSValueMapKitGeometryExtensions)
 
-+ (NSValue *)valueWithMKCoordinate:(CLLocationCoordinate2D)coordinate;
-+ (NSValue *)valueWithMKCoordinateSpan:(MKCoordinateSpan)span;
++ (NSValue *)valueWithMKCoordinate:(CLLocationCoordinate2D)coordinate __TVOS_AVAILABLE(9_2);
++ (NSValue *)valueWithMKCoordinateSpan:(MKCoordinateSpan)span __TVOS_AVAILABLE(9_2);
 
-@property (readonly) CLLocationCoordinate2D MKCoordinateValue;
-@property (readonly) MKCoordinateSpan MKCoordinateSpanValue;
+@property (readonly) CLLocationCoordinate2D MKCoordinateValue __TVOS_AVAILABLE(9_2);
+@property (readonly) MKCoordinateSpan MKCoordinateSpanValue __TVOS_AVAILABLE(9_2);
 
 @end
 

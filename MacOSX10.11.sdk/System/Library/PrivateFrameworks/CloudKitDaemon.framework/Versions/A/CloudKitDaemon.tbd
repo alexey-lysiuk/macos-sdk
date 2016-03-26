@@ -2,7 +2,7 @@
 archs:           [ x86_64 ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CloudKitDaemon.framework/Versions/A/CloudKitDaemon
-current-version: 481.8
+current-version: 482.29
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _APSEnvironmentStringFromCKDPAPNSEnv, _CKAllowedSystemFieldNames, 
@@ -75,15 +75,16 @@ exports:
                        _currentCKServerEnvironment, _gSystemAvailabilityGlobalCallback, 
                        _kCKAppIDKey, _kCKAuthTokenKey, _kCKBundleIDKey, 
                        _kCKBundleVersionKey, _kCKContainerIDKey, _kCKDJSONContentType, 
-                       _kCKEnvironmentKey, _kCKHTTPAuthorizationKey, _kCKPartitionKey, 
-                       _kCKRequestLogLevelKey, _kCKRequestTestRunIDKey, 
+                       _kCKDatabaseScopeKey, _kCKEnvironmentKey, _kCKHTTPAuthorizationKey, 
+                       _kCKPartitionKey, _kCKRequestLogLevelKey, _kCKRequestTestRunIDKey, 
                        _kCKRequestUUIDKey, _kCKSignatureVersionKey, _kCKUserContainerIDKey, 
                        _kCKUserIDKey, _prefsFilePathForSwitchApp ]
     objc-classes:    [ _CKDAccountNotifier, _CKDAppContainerTuple, _CKDAssetCache, 
                        _CKDBackingAccount, _CKDBatchGetUserPrivacySettingsOperation, 
                        _CKDClientContext, _CKDCloudDatabaseServer, _CKDContainerPrivacySettings, 
                        _CKDGetAuthTokensForPutURLRequest, _CKDGlobalConfigurationOperation, 
-                       _CKDKeyValueDiskCache, _CKDMetadataCache, _CKDPNotificationSyncResponsePushMessage, 
+                       _CKDKeyValueDiskCache, _CKDLongLivedClientProxy, 
+                       _CKDMetadataCache, _CKDOperationInfoCache, _CKDPNotificationSyncResponsePushMessage, 
                        _CKDPRecord, _CKDPRecordField, _CKDPRecordFieldDerivedField, 
                        _CKDPRecordFieldIdentifier, _CKDPRecordFieldValue, 
                        _CKDPRecordReference, _CKDPRecordType, _CKDPRequestOperation, 
@@ -224,6 +225,7 @@ exports:
                        _CKDPResponseOperationResultErrorClient._has, _CKDPResponseOperationResultErrorClient._oplockFailure, 
                        _CKDPResponseOperationResultErrorClient._type, _CKDPResponseOperationResultErrorClient._uniqueFieldFailure, 
                        _CKDPResponseOperationResultErrorExtension._extensionName, 
+                       _CKDPResponseOperationResultErrorExtension._extensionPayload, 
                        _CKDPResponseOperationResultErrorExtension._has, 
                        _CKDPResponseOperationResultErrorExtension._typeCode, 
                        _CKDPResponseOperationResultErrorServer._has, _CKDPResponseOperationResultErrorServer._type ]

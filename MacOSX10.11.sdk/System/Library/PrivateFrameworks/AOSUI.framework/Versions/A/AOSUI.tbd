@@ -2,7 +2,7 @@
 archs:           [ x86_64 ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AOSUI.framework/Versions/A/AOSUI
-current-version: 418.1
+current-version: 421.0
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _ACPClientSessionApplyChangedCFProperties, _ACPClientSessionClose, 

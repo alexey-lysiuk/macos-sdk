@@ -75,8 +75,9 @@ public:
     virtual IOReturn abort(IOOptionBits options = kAbortAsynchronous, IOReturn withError = kIOReturnAborted, IOService* forClient = NULL);
     
 protected:
+    virtual IOReturn openGated();
     virtual IOReturn closeGated();
-    
+    virtual IOReturn destroyGated();
     virtual IOReturn abortGated(IOOptionBits options, IOReturn withError, IOService* forClient);
 
     // Protected pad slots for IOUSBHostIOSource overrides

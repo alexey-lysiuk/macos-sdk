@@ -15,7 +15,7 @@ module RbConfig
   CONFIG["MAJOR"] = "2"
   CONFIG["MINOR"] = "0"
   CONFIG["TEENY"] = "0"
-  CONFIG["PATCHLEVEL"] = "645"
+  CONFIG["PATCHLEVEL"] = "648"
   CONFIG["INSTALL"] = '/usr/bin/install -c'
   CONFIG["EXEEXT"] = ""
   CONFIG["prefix"] = (TOPDIR || DESTDIR + "/System/Library/Frameworks/Ruby.framework/Versions/2.0/usr")
@@ -190,7 +190,7 @@ module RbConfig
   CONFIG["build_vendor"] = "apple"
   CONFIG["build_cpu"] = "x86_64"
   CONFIG["build"] = "x86_64-apple-darwin15"
-  CONFIG["RUBY_RELEASE_DATE"] = "2015-04-13"
+  CONFIG["RUBY_RELEASE_DATE"] = "2015-12-16"
   CONFIG["RUBY_PROGRAM_VERSION"] = "2.0.0"
   CONFIG["target_alias"] = ""
   CONFIG["host_alias"] = ""

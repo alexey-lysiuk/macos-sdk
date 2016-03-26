@@ -414,14 +414,6 @@ public:
 	virtual bool	start ( IOService * provider ) APPLE_KEXT_OVERRIDE;
 	
 	/*!
-	@function stop
-	@abstract During an IOService termination, the stop method is called in its clients before they are detached & it is destroyed.
-	@discussion The termination process for an IOService (the provider) will call stop in each of its clients, after they have closed the provider if they had it open, or immediately on termination.
-	*/
-
-	virtual void	stop ( IOService * provider ) APPLE_KEXT_OVERRIDE;
-
-	/*!
 	@function free
 	@abstract Called to release all resources held by the object.
 	@discussion Release all resources held by the object, then call super::free().  

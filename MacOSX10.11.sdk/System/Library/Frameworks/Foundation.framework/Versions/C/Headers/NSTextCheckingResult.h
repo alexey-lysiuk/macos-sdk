@@ -36,7 +36,7 @@ NS_ENUM(NSTextCheckingTypes) {
 };
 
 NS_CLASS_AVAILABLE(10_6, 4_0)
-@interface NSTextCheckingResult : NSObject <NSCopying, NSCoding>
+@interface NSTextCheckingResult : NSObject <NSCopying, NSSecureCoding>
 
 /* Mandatory properties, used with all types of results. */
 @property (readonly) NSTextCheckingType resultType;

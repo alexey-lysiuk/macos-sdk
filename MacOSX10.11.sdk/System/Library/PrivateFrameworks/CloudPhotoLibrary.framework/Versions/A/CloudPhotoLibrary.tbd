@@ -24,10 +24,12 @@ exports:
                        _CPLBaseEngineLibrary, _CPLBaseScheduler, _CPLBaseSyncManager, 
                        _CPLBatteryMonitor, _CPLBucketFileStorage, _CPLBucketFileStorageEnumerator, 
                        _CPLBucketFileStorageItem, _CPLChangeBatch, _CPLChangeSession, 
-                       _CPLCloudKitDownloadBatchTask, _CPLCloudKitGetAssetCountsTask, 
-                       _CPLCloudKitRemoveLibraryTask, _CPLCloudKitResourceDownloadTask, 
-                       _CPLCloudKitResourcePublishTask, _CPLCloudKitResourceUploadTask, 
-                       _CPLCloudKitSetupTask, _CPLCloudKitTransport, _CPLCloudKitTransportCancelState, 
+                       _CPLCloudKitCheckRecordsExistenceTask, _CPLCloudKitDownloadBatchTask, 
+                       _CPLCloudKitGetAssetCountsTask, _CPLCloudKitQueryOptions, 
+                       _CPLCloudKitQueryTask, _CPLCloudKitRemoveLibraryTask, 
+                       _CPLCloudKitResourceDownloadTask, _CPLCloudKitResourcePublishTask, 
+                       _CPLCloudKitResourceUploadTask, _CPLCloudKitSetupTask, 
+                       _CPLCloudKitTransport, _CPLCloudKitTransportCancelState, 
                        _CPLCloudKitTransportTask, _CPLCloudKitUploadBatchTask, 
                        _CPLCodingPropertyEntry, _CPLConfiguration, _CPLContainerChange, 
                        _CPLContainerRelation, _CPLContainerRelationChange, 
@@ -62,9 +64,9 @@ exports:
                        _CPLPushChangeSession, _CPLPushToTransportTask, 
                        _CPLRecordChange, _CPLRemoveCloudLibraryTask, _CPLResource, 
                        _CPLResourceIdentity, _CPLResourceIdentityImplementation, 
-                       _CPLResourceTransferTask, _CPLStatistics, _CPLStatus, 
-                       _CPLSyncIndicator, _CPLTransaction, _CPLUploadOperationContext, 
-                       __CPLEngineStoreBatchedTransaction ]
-    objc-ivars:      [ _CPLCloudKitUploadBatchTask._completionHandler, 
+                       _CPLResourceTransferTask, _CPLStatus, _CPLSyncIndicator, 
+                       _CPLTransaction, _CPLUploadOperationContext, __CPLEngineStoreBatchedTransaction ]
+    objc-ivars:      [ _CPLCloudKitCheckRecordsExistenceTask._completionHandler, 
+                       _CPLCloudKitUploadBatchTask._completionHandler, 
                        _CPLCloudKitUploadBatchTask._progressHandler ]
 ...

@@ -2,11 +2,12 @@
 archs:           [ x86_64 ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoLibraryPrivate.framework/Versions/A/Frameworks/MediaConversionService.framework/Versions/A/MediaConversionService
-current-version: 350.22
+current-version: 370.42
 exports:         
   - archs:           [ x86_64 ]
-    symbols:         [ _PAMediaConversionServiceBookmarkKey, _PAMediaConversionServiceConversionEndDateKey, 
-                       _PAMediaConversionServiceConversionStartDateKey, 
+    symbols:         [ _PAMediaConversionColorSpaceForImage, _PAMediaConversionColorSpaceIsValid, 
+                       _PAMediaConversionServiceBookmarkKey, _PAMediaConversionServiceColorSpaceKey, 
+                       _PAMediaConversionServiceConversionEndDateKey, _PAMediaConversionServiceConversionStartDateKey, 
                        _PAMediaConversionServiceErrorDomain, _PAMediaConversionServiceErrorOffendingItemNameKey, 
                        _PAMediaConversionServiceFileSizeKey, _PAMediaConversionServiceFormatConversionOnlyKey, 
                        _PAMediaConversionServiceJobGroupIdentifierKey, 
@@ -29,6 +30,7 @@ exports:
                        _PAMediaConversionServiceResultDataKey, _PAMediaConversionServiceRotationAngleDegreesKey, 
                        _PAMediaConversionServiceScaleFactorKey ]
     objc-classes:    [ _PAImageConversionServiceClient, _PAMediaConversionServiceImageMetadataPolicy, 
-                       _PAMediaConversionServiceImagingUtilities, _PAMediaConversionServiceSharedPhotoStreamImageMetadataPolicy, 
+                       _PAMediaConversionServiceImagingUtilities, _PAMediaConversionServiceOmitVideoComplementImageMetadataPolicy, 
+                       _PAMediaConversionServiceSharedPhotoStreamImageMetadataPolicy, 
                        _PAVideoConversionServiceClient ]
 ...

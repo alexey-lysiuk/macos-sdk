@@ -37,6 +37,7 @@ exports:
                        __ZN3awd7metrics17FaceTimeDTXStatus10SharedDtorEv, 
                        __ZN3awd7metrics17FaceTimeDTXStatus16default_instanceEv, 
                        __ZN3awd7metrics17FaceTimeDTXStatus17default_instance_E, 
+                       __ZN3awd7metrics17FaceTimeDTXStatus17kNonceFieldNumberE, 
                        __ZN3awd7metrics17FaceTimeDTXStatus21CheckTypeAndMergeFromERKN6google8protobuf11MessageLiteE, 
                        __ZN3awd7metrics17FaceTimeDTXStatus21InitAsDefaultInstanceEv, 
                        __ZN3awd7metrics17FaceTimeDTXStatus21kTimestampFieldNumberE, 

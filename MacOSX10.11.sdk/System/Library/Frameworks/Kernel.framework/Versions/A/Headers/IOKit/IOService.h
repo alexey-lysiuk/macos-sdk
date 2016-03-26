@@ -1339,7 +1339,6 @@ private:
     bool terminatePhase1( IOOptionBits options = 0 );
     void scheduleTerminatePhase2( IOOptionBits options = 0 );
     void scheduleStop( IOService * provider );
-    void scheduleFinalize( void );
     static void terminateThread( void * arg, wait_result_t unused );
     static void terminateWorker( IOOptionBits options );
     static void actionWillTerminate( IOService * victim, IOOptionBits options, 

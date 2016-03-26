@@ -5,9 +5,10 @@ install-name:    /System/Library/PrivateFrameworks/CoreFollowUp.framework/Versio
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CoreFollowUpVersionNumber, _CoreFollowUpVersionString, 
-                       _FLDaemonExportedInterface, _FLLoc, _FLLog ]
+                       _FLDaemonExportedInterface, _FLHSA2ActionChangePassword, 
+                       _FLLoc, _FLLog ]
     objc-classes:    [ _FLConstants, _FLDaemon, _FLFollowUpAction, _FLFollowUpController, 
                        _FLFollowUpItem, _FLFollowUpNotification, _FLHSA2LoginNotification, 
                        _FLHSA2PasswordResetNotification, _FLLogController, 
-                       _FLUIHelperController ]
+                       _FLUIHelperController, _FLUtilities ]
 ...
