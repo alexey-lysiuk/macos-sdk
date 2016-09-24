@@ -1,0 +1,12 @@
+--- !tapi-tbd-v2
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: DE7B4D37-0C11-3A5C-9190-BA68CAC0DD07' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/nt.framework/Versions/A/nt
+current-version: 378.0
+objc-constraint: none
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _DigestLogon, _NTLMLogon, _NetLogonChangeTrustPassword, _NetLogonProbe, 
+                       _NetSessionCount, _NtGenericErrnoStatus, _NtStatusToString ]
+...

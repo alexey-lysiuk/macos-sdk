@@ -1,0 +1,14 @@
+--- !tapi-tbd-v2
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: D6EF3CB5-302A-3314-8E82-4421C8A5B18A' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/IMAssistantCore.framework/Versions/A/IMAssistantCore
+current-version: 800.0
+objc-constraint: none
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _IMAssistantContinuityChatsKey, _IMAssistantContinuityHandlesKey, 
+                       _IMAssistantLog ]
+    objc-classes:    [ _IMAssistantIntentHandler, _IMAssistantMessageHandler, _IMAssistantMessageQueryHandler, 
+                       _IMAssistantMessageSearchHandler, _IMAssistantMessageSendingHandler ]
+...

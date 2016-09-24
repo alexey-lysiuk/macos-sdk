@@ -1,0 +1,12 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: E3503904-1CA3-34FD-871C-336929238546', 'x86_64: A41F7B34-D66A-3292-816A-8AE5426C1385' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/PSNormalizer.framework/Versions/A/Libraries/libICC.dylib
+objc-constraint: none
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _ICCConvertData, _ICCDisposeProfile, _ICCDisposeTransform, 
+                       _ICCGetProfileData, _ICCGetProfileSpec, _ICCInitDISTICCUTILS, 
+                       _ICCMakeProfile, _ICCMakeTransform, _ICCTerminate ]
+...

@@ -1,0 +1,19 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: 4D96EF47-C5BF-3A28-B793-5A82964FACC8', 'x86_64: D5A6C630-6D21-39FE-A84E-2C27A682D944' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/EasyConfig.framework/Versions/A/EasyConfig
+objc-constraint: none
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _EasyConfigDeviceProgressNotification, _EasyConfigDeviceStoppedNotification, 
+                       _EasyConfigKey_AdminPassword, _EasyConfigKey_AllowPairing, 
+                       _EasyConfigKey_BundleSeedID, _EasyConfigKey_DeviceID, _EasyConfigKey_FirmwareRevision, 
+                       _EasyConfigKey_Flags, _EasyConfigKey_HardwareRevision, _EasyConfigKey_Language, 
+                       _EasyConfigKey_MFiProtocols, _EasyConfigKey_Manufacturer, 
+                       _EasyConfigKey_Model, _EasyConfigKey_Name, _EasyConfigKey_PlayPassword, 
+                       _EasyConfigKey_Progress, _EasyConfigKey_ReasonError, _EasyConfigKey_Response, 
+                       _EasyConfigKey_SerialNumber, _EasyConfigKey_WiFiPSK, _EasyConfigKey_WiFiSSID, 
+                       _EasyConfigLogControl ]
+    objc-classes:    [ _EasyConfigDevice ]
+...

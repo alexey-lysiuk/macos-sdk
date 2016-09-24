@@ -1,0 +1,24 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: D42AE7B2-9F97-3765-9CE2-11323543D002', 'x86_64: 191B21AA-7BAE-3175-B94E-A921D86E9327' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/DiskManagement.framework/Versions/A/DiskManagement
+objc-constraint: none
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _DMDiskManagementToolDiedNotification, _DMLocalizedUserErrorString, 
+                       _DMMediaTypeCDROM, _DMMediaTypeDVDROM, _DMMediaTypeGeneric, 
+                       _DMMediaTypeIPod, _DMMediaTypeXsanComponent, _DMMediaTypeXsanFilesystem, 
+                       _DMOpticalMediaTypeBDR, _DMOpticalMediaTypeBDRE, _DMOpticalMediaTypeBDROM, 
+                       _DMOpticalMediaTypeCDR, _DMOpticalMediaTypeCDROM, _DMOpticalMediaTypeCDRW, 
+                       _DMOpticalMediaTypeDVDPlusRDoubleLayer, _DMOpticalMediaTypeDVDR, 
+                       _DMOpticalMediaTypeDVDRAM, _DMOpticalMediaTypeDVDRDualLayer, 
+                       _DMOpticalMediaTypeDVDROM, _DMOpticalMediaTypeDVDRW, _DMOpticalMediaTypeDVDplusR, 
+                       _DMOpticalMediaTypeDVDplusRW, _DMOpticalMediaTypeHDDVDR, _DMOpticalMediaTypeHDDVDRAM, 
+                       _DMOpticalMediaTypeHDDVDROM, _DMProtocolATA, _DMProtocolATAPI, 
+                       _DMProtocolDiskImage, _DMProtocolFibreChannel, _DMProtocolFireWire, 
+                       _DMProtocolSAS, _DMProtocolSATA, _DMProtocolSCSI, _DMProtocolUSB, 
+                       _DMUnlocalizedTechnicalErrorString ]
+    objc-classes:    [ _DMAPFS, _DMAppleRAID, _DMCoreStorage, _DMDisk, _DMEraseDisk, 
+                       _DMFilesystem, _DMManager, _DMPartitionDisk, _DMRepairDisk ]
+...

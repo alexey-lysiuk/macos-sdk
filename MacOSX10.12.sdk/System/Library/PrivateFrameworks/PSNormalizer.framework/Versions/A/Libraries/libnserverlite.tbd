@@ -1,0 +1,11 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: 2F773436-34FE-3F20-80E1-DFE5DCF4BFC9', 'x86_64: 13A8F634-66A1-3233-8AF7-130C090ED64E' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/PSNormalizer.framework/Versions/A/Libraries/libnserverlite.dylib
+objc-constraint: none
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _NormalizerDisableDistilling, _NormalizerEnableDistilling, 
+                       _NormalizerServerInit, _NormalizerServerRunJob, _NormalizerServerShutdown ]
+...

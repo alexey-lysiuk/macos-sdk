@@ -1,0 +1,15 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: 377CAC14-88F6-3120-A381-DF2F11EF236E', 'x86_64: 2E56EB36-BF20-3261-9083-3D7AD06A96A2' ]
+platform:        macosx
+install-name:    /usr/lib/libutil.dylib
+objc-constraint: none
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _freemntopts, _getmnt_silent, _getmntoptnum, _getmntopts, 
+                       _getmntoptstr, _humanize_number, _pidfile_close, _pidfile_open, 
+                       _pidfile_remove, _pidfile_write, _realhostname, _realhostname_sa, 
+                       _reexec_to_match_kernel, _reexec_to_match_lp64ness, _tzlink, 
+                       _wipefs_alloc, _wipefs_except_blocks, _wipefs_free, _wipefs_include_blocks, 
+                       _wipefs_wipe ]
+...

@@ -1,0 +1,17 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: DAF89DD1-BB31-3E7A-96C0-5F0DD8681776', 'x86_64: D12709F3-BBE3-3CF7-9070-C2A0803F5526' ]
+platform:        macosx
+install-name:    /usr/lib/libcoretls_cfhelpers.dylib
+current-version: 121.1.1
+objc-constraint: none
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _SSLAllocBuffer, _SSLAllocCopyBuffer, _SSLCopyBuffer, _SSLCopyBufferFromData, 
+                       _SSLCopyBufferTerm, _SSLFreeBuffer, _SSLReallocBuffer, _coretls_cfhelpersVersionNumber, 
+                       _coretls_cfhelpersVersionString, _sslAllocCopy, _sslFree, 
+                       _sslMalloc, _sslRealloc, _tls_copy_buffer_list, _tls_free_buffer_list, 
+                       _tls_helper_SSLProtocol_from_version, _tls_helper_create_peer_acceptable_dn_array, 
+                       _tls_helper_create_peer_trust, _tls_helper_set_identity_from_array, 
+                       _tls_helper_set_peer_pubkey, _tls_helper_version_from_SSLProtocol ]
+...

@@ -1,0 +1,26 @@
+--- !tapi-tbd-v2
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 6768EE5E-0937-3B2C-AAF0-17A1546D0A32' ]
+platform:        macosx
+install-name:    /usr/lib/libIASUnifiedProgress.dylib
+objc-constraint: none
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _gCount, _gDebugString, _kIASClientInfoCompletionHandlerKey, 
+                       _kIASInstallPhaseConclusionDelayKey, _kIASInstallPhaseNameKey, 
+                       _kIASInstallPhasePercentageKey, _kIASPhaseSetupAssistant, 
+                       _kIASUnifedProgressDelegateAnimateKey, _kIASUnifiedProgressDelegateAbortNotificationName, 
+                       _kIASUnifiedProgressDelegateAlternateStatusKey, _kIASUnifiedProgressDelegateBatteryIsLowKey, 
+                       _kIASUnifiedProgressDelegateDoneNotificationName, _kIASUnifiedProgressDelegatePhaseNameKey, 
+                       _kIASUnifiedProgressDelegateProcessIDKey, _kIASUnifiedProgressDelegateProgessUpdatedNotificationName, 
+                       _kIASUnifiedProgressDelegateProgressKey, _kIASUnifiedProgressDelegateStatusKey, 
+                       _kIASUnifiedProgressDelegateStatusUpdatedNotificationName, 
+                       _kIASUnifiedProgressDelegateUUIDKey, _kIASUnifiedProgressManagerServiceName ]
+    objc-classes:    [ _IASUPCaller, _IASUPConnection, _IASUnifiedProgressClient, 
+                       _IASUnifiedProgressManager, _IASUnifiedProgressManagerListener ]
+    objc-ivars:      [ _IASUPConnection._callers, _IASUPConnection._connection, _IASUnifiedProgressManager.currentPhase, 
+                       _IASUnifiedProgressManager.currentPhaseIndex, _IASUnifiedProgressManager.delayForPhase, 
+                       _IASUnifiedProgressManager.lastPhaseProgress, _IASUnifiedProgressManager.phaseArray, 
+                       _IASUnifiedProgressManager.progressDelegate, _IASUnifiedProgressManager.thisPhasePercentage, 
+                       _IASUnifiedProgressManager.totalCompletedProgress ]
+...

@@ -1,0 +1,12 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: 29DF80A1-1616-30A8-866A-29523392CE3B', 'x86_64: 674913D8-7034-30CD-A78A-DB2F0AD77B46' ]
+platform:        macosx
+install-name:    /System/Library/Frameworks/OpenCL.framework/Versions/A/Libraries/sfixed14_rgba.dylib
+objc-constraint: none
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ ___FunctionTableTransposed_AVX10, ___FunctionTableTransposed_SSE3, 
+                       ___FunctionTableTransposed_SSE41, ___FunctionTable_AVX10, 
+                       ___FunctionTable_SSE3, ___FunctionTable_SSE41 ]
+...

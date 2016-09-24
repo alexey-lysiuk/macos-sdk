@@ -1,0 +1,12 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: 49DA6034-DC99-35C6-B382-9831A95A984A', 'x86_64: 3A82B0FB-8BC7-3A68-8FB9-365F5446314D' ]
+platform:        macosx
+install-name:    /System/Library/Frameworks/OpenCL.framework/Versions/A/Libraries/float_rx.dylib
+objc-constraint: none
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ ___FunctionTableTransposed_AVX10, ___FunctionTableTransposed_SSE3, 
+                       ___FunctionTableTransposed_SSE41, ___FunctionTable_AVX10, 
+                       ___FunctionTable_SSE3, ___FunctionTable_SSE41 ]
+...

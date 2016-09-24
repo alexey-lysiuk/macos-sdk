@@ -1,0 +1,10 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: 7640CABB-C614-3E9E-8A27-1AA7D124C6EF', 'x86_64: 8531768D-4B74-3CD6-992D-2FAC8E89F71B' ]
+platform:        macosx
+install-name:    /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Resources/libFontRegistryUI.dylib
+objc-constraint: none
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _CopyConfirmedFontsForAutoActivationRequest, _DownloadFontsForProperties ]
+...

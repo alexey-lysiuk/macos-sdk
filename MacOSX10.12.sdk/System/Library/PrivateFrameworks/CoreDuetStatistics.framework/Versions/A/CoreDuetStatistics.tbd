@@ -1,0 +1,10 @@
+--- !tapi-tbd-v2
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: C1CDC6CE-05CB-3C0C-A4ED-88C5D3EFCC1D' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/CoreDuetStatistics.framework/Versions/A/CoreDuetStatistics
+objc-constraint: none
+exports:         
+  - archs:           [ x86_64 ]
+    objc-classes:    [ _CDSBasisObject, _CDSEngine ]
+...

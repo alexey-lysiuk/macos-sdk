@@ -1,0 +1,25 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: DB320F6B-286C-3E9C-8268-BCC1A3E5AAD1', 'x86_64: 00165541-9431-3B3C-BA7D-468AF7EA7864' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/SMBClient.framework/Versions/A/SMBClient
+objc-constraint: none
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _SMBAllocateAndSetContext, _SMBCheckForAlreadyMountedShare, 
+                       _SMBCloseFile, _SMBConvertFromCodePageToUTF8, _SMBConvertFromUTF16ToUTF8, 
+                       _SMBConvertFromUTF8ToCodePage, _SMBConvertFromUTF8ToUTF16, 
+                       _SMBCreateFile, _SMBCreateNamedStreamFile, _SMBCreateNetBIOSName, 
+                       _SMBCreateURLString, _SMBDeviceIoControl, _SMBFrameworkVersion, 
+                       _SMBGetDfsReferral, _SMBGetNodeStatus, _SMBGetServerProperties, 
+                       _SMBGetShareAttributes, _SMBLogInfo, _SMBMountShare, _SMBMountShareEx, 
+                       _SMBNetFsCancel, _SMBNetFsCloseSession, _SMBNetFsCreateSessionRef, 
+                       _SMBNetFsCreateURL, _SMBNetFsGetMountInfo, _SMBNetFsGetServerInfo, 
+                       _SMBNetFsLockSession, _SMBNetFsMount, _SMBNetFsOpenSession, 
+                       _SMBNetFsParseURL, _SMBNetFsTreeConnectForEnumerateShares, 
+                       _SMBNetFsUnlockSession, _SMBOpenServer, _SMBOpenServerEx, 
+                       _SMBOpenServerWithMountPoint, _SMBQueryDir, _SMBRawTransaction, 
+                       _SMBReadFile, _SMBReleaseServer, _SMBRemountServer, _SMBResolveNetBIOSName, 
+                       _SMBResolveNetBIOSNameEx, _SMBRetainServer, _SMBSetNetworkIdentity, 
+                       _SMBTransactMailSlot, _SMBTransactNamedPipe, _SMBWriteFile ]
+...

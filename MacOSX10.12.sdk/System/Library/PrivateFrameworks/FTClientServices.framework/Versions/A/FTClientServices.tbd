@@ -1,0 +1,17 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: 066222CB-A619-3D1A-BA49-7E1DC04A2BDD', 'x86_64: D0A0BA8C-2736-379F-86C2-E1DBBD55F57C' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/FTClientServices.framework/Versions/A/FTClientServices
+current-version: 800.0
+objc-constraint: none
+exports:         
+  - archs:           [ i386 ]
+    objc-classes:    [ _FTCServiceContainer, _FTCServiceMonitor ]
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _FTCLogPrefix, _FTCServiceAvailabilityAvailabilityKey, _FTCServiceAvailabilityDidChangeNotification, 
+                       _FTCServiceAvailabilityServiceTypeKey, _FTCServiceNameCalling, 
+                       _FTCServiceNameFaceTime, _FTCServiceNameForServiceType, _FTCServiceNameMadrid, 
+                       _FTCServiceNameiMessage, _FTCServiceTypeForServiceName ]
+    objc-classes:    [ _FTCServiceAvailabilityCenter ]
+...

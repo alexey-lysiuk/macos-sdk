@@ -1,0 +1,10 @@
+--- !tapi-tbd-v2
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 75F6AD12-15A3-31F4-A559-14B4B4BCAC40' ]
+platform:        macosx
+install-name:    /usr/lib/libsysdiagnose.dylib
+objc-constraint: none
+exports:         
+  - archs:           [ x86_64 ]
+    objc-classes:    [ _Libsysdiagnose ]
+...

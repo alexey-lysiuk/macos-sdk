@@ -1,0 +1,20 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: 5565FA13-4EF2-363B-A79B-DACE8A12D13A', 'x86_64: 02555355-6C50-3981-B76E-015BADB9BA9D' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/Lookup.framework/Versions/A/Lookup
+objc-constraint: none
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _LUNotificationPopoverWillClose, _LUPartOfSpeechDataDetectedAddress, 
+                       _LUTermOptionDisableSearchTermIndicator, _LUTermOptionKeyClippingRect, 
+                       _LUTermOptionKeyLanguage, _LUTermOptionKeyPartOfSpeech, _LUTermOptionKeyScaleFactor, 
+                       _LUTermOptionKeySearchContext, _LUTermOptionKeySearchDomain, 
+                       _LUTermOptionKeySelectionType, _LUTermOptionKeyTriggerType, 
+                       _LookupVersionNumber, _LookupVersionString ]
+    objc-classes:    [ _LUAccessibilityTextAccessor, _LUExtractor, _LULogging, _LULookupDefinitionModule, 
+                       _LULookupRemoteViewController, _LUPresenter, _LUPresenterAnimationController, 
+                       _LUSearchTermIndicator, _LUTSMDocumentTextAccessor, _LUTextAccessor, 
+                       _LUTextInputClientTextAccessor, _LUTextInputTextAccessor, 
+                       _LUWebFrameViewTextAccessor ]
+...

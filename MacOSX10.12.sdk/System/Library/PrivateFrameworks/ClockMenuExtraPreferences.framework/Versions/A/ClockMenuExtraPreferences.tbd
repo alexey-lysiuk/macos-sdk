@@ -1,0 +1,25 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: 72DCD0EA-DF2C-39D8-9AC4-55C03FC35AFC', 'x86_64: E10DEDA1-E37A-3EAE-944C-52DF01CC24A0' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/ClockMenuExtraPreferences.framework/Versions/A/ClockMenuExtraPreferences
+objc-constraint: none
+exports:         
+  - archs:           [ x86_64 ]
+    objc-ivars:      [ _CLKClockExtraPreferences.is24HourForced, _CLKClockExtraPreferences.locale, 
+                       _CLKClockExtraPreferences.userWantsToShowAMPM, _CLKDistribuitedPreferences.atomicChangePreferencesCount, 
+                       _CLKDistribuitedPreferences.disablePersistentDomainDidChangeNotification, 
+                       _CLKDistribuitedPreferences.isPersistentDomainNameNew, _CLKDistribuitedPreferences.persistentDomainName, 
+                       _CLKLegacyPreferences.preferencesDictionary, _CLKPreferences.dateFormat, 
+                       _CLKPreferences.flashDateSeparators, _CLKPreferences.isAnalog ]
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _CLKAppendAMPMLegacyKey, _CLKAppleDatePreferencesChangedNotification, 
+                       _CLKDisplaySecondsLegacyKey, _CLKErrorLog, _CLKFlashSeparatorsLegacyKey, 
+                       _CLKIsDigitalClockLegacyKey, _CLKLegacyPreferencesDomainName, 
+                       _CLKNoticeLog, _CLKShowDayOfTheWeekLegacyKey, _CLKUse24HourClockLegacyKey, 
+                       __CLKDateFormatKey, __CLKFlashDateSeparatorsKey, __CLKIsAnalogKey, 
+                       __CLKLog, __CLKMenuExtraAddedNotification, __CLKMenuExtraRemovedNotification, 
+                       __CLKNotificationSenderNameKey ]
+    objc-classes:    [ _CLKClockExtraPreferences, _CLKDistribuitedPreferences, _CLKLegacyPreferences, 
+                       _CLKPreferences ]
+...

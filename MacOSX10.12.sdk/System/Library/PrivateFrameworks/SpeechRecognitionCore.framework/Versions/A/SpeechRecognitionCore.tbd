@@ -1,0 +1,19 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: 770178AA-A29C-3CC3-9A60-1F7D626F5A38', 'x86_64: BE386037-4B61-341F-80E2-5D8B5B50C8BC' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/SpeechRecognitionCore.framework/Versions/A/SpeechRecognitionCore
+objc-constraint: none
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _RXAdLibCreate, _RXLanguageModelCreate, _RXLanguageModelCreateWithURL, 
+                       _RXLanguageModelWriteToURL, _RXLanguageObjectAddObject, _RXLanguageObjectAddPhrase, 
+                       _RXLanguageObjectApplyBlock, _RXLanguageObjectGetCount, _RXLanguageObjectGetObjectAtIndex, 
+                       _RXLanguageObjectGetType, _RXLanguageObjectGetTypeID, _RXLanguageObjectRemoveObjectAtIndex, 
+                       _RXLanguageObjectSetObjectAtIndex, _RXObjectCopyProperty, 
+                       _RXObjectSetProperty, _RXPathCreate, _RXRecognitionSystemAddTraining, 
+                       _RXRecognitionSystemCreate, _RXRecognitionSystemGetTypeID, 
+                       _RXRecognizerCreate, _RXRecognizerGetTypeID, _RXVocabularyCreateWithLocale, 
+                       _RXVocabularyCreateWithURL, _RXVocabularyGetTypeID, _RXWordCreate, 
+                       _kRXRecognitionSystemTrainingCategory_Contact, _kRXRecognitionSystemTrainingCategory_Default ]
+...

@@ -1,0 +1,21 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: A1DD8DCA-3E8F-30D3-BDEA-A27E10F6F3CA', 'x86_64: F23E2985-78A3-30D7-BA2D-F52497686CCA' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/PackageKit.framework/Frameworks/PackageUIKit.framework/Versions/A/PackageUIKit
+current-version: 434.0
+objc-constraint: none
+exports:         
+  - archs:           [ x86_64 ]
+    objc-ivars:      [ _PUKApplicationCloser._alert, _PUKApplicationCloser._bundleIdentifiers, 
+                       _PUKApplicationCloser._completionHandler, _PUKApplicationCloser._ignoreOtherUsers, 
+                       _PUKApplicationCloser._isModal, _PUKApplicationCloser._isWaitingOffConsole, 
+                       _PUKApplicationCloser._modalDelegate, _PUKApplicationCloser._modalDelegateContextInfo, 
+                       _PUKApplicationCloser._modalDelegateEndSelector, _PUKApplicationCloser._obtainedPlugInHolds, 
+                       _PUKApplicationCloser._openApplications, _PUKApplicationCloser._openApplicationsQueue, 
+                       _PUKApplicationCloser._openPlugIns, _PUKApplicationCloser._shouldSendQuitEvents, 
+                       _PUKApplicationCloser._waitingTitle, _PUKApplicationCloser._windowForSheet ]
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _PackageUIKitVersionNumber, _PackageUIKitVersionString ]
+    objc-classes:    [ _PUKApplicationCloser ]
+...

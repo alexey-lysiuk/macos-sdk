@@ -1,0 +1,11 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: 25EF1F37-1FEA-34FD-9350-0CD50B467AE3', 'x86_64: B0298928-10FB-3E5B-BF30-3B25AB70CA79' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/GPUCompiler.framework/libmetallinker.dylib
+current-version: 0.0
+objc-constraint: none
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _MTLOptimizeUsedListForFunctionConstants, _MTLRemoveUnusedFunctionConstantsFromUsedList ]
+...

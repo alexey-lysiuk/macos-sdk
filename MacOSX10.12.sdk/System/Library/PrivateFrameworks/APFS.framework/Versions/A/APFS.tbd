@@ -1,0 +1,14 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: E5CA040E-7BBC-3253-8B87-31AA5DDC5BBC', 'x86_64: F1BD89DF-D84F-3256-905D-6D72706474CF' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/APFS.framework/Versions/A/APFS
+objc-constraint: none
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _APFSContainerGetFreespaceInfo, _APFSContainerGetSpaceInfo, 
+                       _APFSContainerResize, _APFSContainerWipeVolumeKeys, _APFSVolumeDelete, 
+                       _APFSVolumeGetSpaceInfo, _kAPFSContainerBlocksizeKey, _kAPFSContainerExtentAddressKey, 
+                       _kAPFSContainerExtentLengthKey, _kAPFSContainerExtentsListKey, 
+                       _kAPFSContainerFSTypeKey, _kAPFSContainerSizeKey, _kAPFSContainerTidemarkKey ]
+...

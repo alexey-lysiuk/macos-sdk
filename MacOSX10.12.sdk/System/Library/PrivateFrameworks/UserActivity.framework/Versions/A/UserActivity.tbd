@@ -1,0 +1,33 @@
+--- !tapi-tbd-v2
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 5F5A9190-3B87-3CF3-9389-60E8E6EB58EA' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/UserActivity.framework/Versions/A/UserActivity
+current-version: 63.2.1
+objc-constraint: none
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _GetAuditSessionIDFromToken, _GetEGIDFromToken, _GetGIDFromToken, 
+                       _GetPIDFromToken, _GetPIDVersionFromToken, _GetUIDFromToken, 
+                       _UAAlwaysAdvertise, _UAContinuityErrorDomain, _UAUserActivityAdvertisePriority, 
+                       _UAUserActivityAlwaysEligibleKey, _UAUserActivityAlwaysPickKey, 
+                       _UAUserActivityEligibleEvenWhenInBackgroundKey, _UAUserActivityHasWebPageURLOptionKey, 
+                       _UAUserActivityIsForPairedDeviceOptionKey, _UAUserActivityIsHighPriorityOptionKey, 
+                       _UAUserActivityIsNotificationOptionKey, _UAUserActivityManagerActivityContinuationIsEnabledChangedNotification, 
+                       _UAUserActivityStreamsPayload, _UAUserActivityTypeNowPlaying, 
+                       _UAUserActivityTypeSiri, _UAUserActivityTypeTeamIDOverideKey, 
+                       _UAUserActivityUserInfoPayload, __LSUserActivityContainsFileProviderURLKey, 
+                       __LSUserActivityContainsUnsynchronizedCloudDocsKey, __LSUserActivityOptionInvalidateAfterFetchKey, 
+                       __UACopyBundleIdentifierForAuditToken, __UACopyCodeSigningIdentifierForAuditToken, 
+                       __UACopyPackedDataForObject, __UACopyPackedDataForObjectWithSubstitution, 
+                       __UACopyUnpackedObjectFromData, __UACopyUnpackedObjectFromDataWithSubstitution, 
+                       __UAGetEUIDFromToken, __UAIsAuditTokenSandboxed, __UAUserActivityContentAttributeSetPayloadKey, 
+                       __UAUserActivityDidContinueToAppStoreApplicationIdentifierKey, 
+                       __UAUserActivityDidContinueToAppStoreNotification, _kUACanModifyAnySuggestedActionEntitlement, 
+                       _kUAIsDefaultFrontmostAppEntitlement ]
+    objc-classes:    [ _UABestAppSuggestion, _UABestAppSuggestionManager, _UAPasteboardGeneration, 
+                       _UAPasteboardItem, _UAPingResults, _UAResumableActivitiesControlManager, 
+                       _UASharedPasteboard, _UASharedPasteboardInfo, _UASharedPasteboardItemInfo, 
+                       _UASharedPasteboardManager, _UASharedPasteboardTypeInfo, _UAUserActivity, 
+                       _UAUserActivityInfo, _UAUserActivityLoggingManager, _UAUserActivityManager ]
+...

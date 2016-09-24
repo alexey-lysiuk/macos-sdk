@@ -1,0 +1,17 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: A96C903E-803C-3B41-B0A7-7C20FE76B7F2', 'x86_64: 50C7DE05-73CB-3D21-BB93-31C384EB6199' ]
+platform:        macosx
+install-name:    /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLImage.dylib
+objc-constraint: none
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _gl_mallocZone, _glgCompress, _glgConvertPixelHeightToBlocks, 
+                       _glgConvertPixelWidthToBlocks, _glgConvertPixels, _glgConvertType, 
+                       _glgCreateProcessor, _glgDecompress, _glgDestroyProcessor, 
+                       _glgGetCompressedBlockBytes, _glgGetCompressedBlockHeight, 
+                       _glgGetCompressedBlockWidth, _glgGetCompressedImageBytes, 
+                       _glgGetCompressedMinBlockDimensions, _glgGetPixelSize, _glgInitializeLibrary, 
+                       _glgPixelCenters, _glgProcessPixelsWithProcessor, _glgSaveImageToFile, 
+                       _glgSaveImageToFileGLG, _glgSetTakeLock, _glgTerminateLibrary ]
+...

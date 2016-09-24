@@ -1,0 +1,11 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: A6F7FDEA-01FB-3ADD-AA71-2B9DE7EB1A73', 'x86_64: 6E4F8AA8-2E61-3DF3-A7FE-86E3D6350E5E' ]
+platform:        macosx
+install-name:    /System/Library/Frameworks/WebKit.framework/Versions/A/Frameworks/WebProcessShim.dylib
+current-version: 602.1.50
+objc-constraint: none
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _WebKitCookieStorageShimInitialize, _WebKitSecItemShimInitialize ]
+...

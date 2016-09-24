@@ -1,0 +1,40 @@
+--- !tapi-tbd-v2
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 3063DBFA-9EA6-3885-90AE-4BAE74F645C3' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/Parsec.framework/Versions/A/Parsec
+current-version: 1070.0
+objc-constraint: none
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _GetActivityName, _PRSLogInit, _PRSParsecVersionNumber, _PRSParsecVersionString, 
+                       _ReleaseActivityName, _decodeImage, _decodeImageAlignment, 
+                       _decodeImageArray, _decodeSFColumnAlignment, _decodeSFImageAlignment, 
+                       _decodeSFRichTextToFormattedText, _decodeSFRowAlignment, _decodeSFTextAlignment, 
+                       _decodeTextAlignment, _gExtraParam, _gPRSLogLevel, _json_char_table, 
+                       _json_parse, _json_utf8_string, _locationLock, _mt_log_Spotlight_rankingAnalytics, 
+                       _register_activity, _resourceResolutionKey ]
+    objc-classes:    [ _PRSAbandonmentFeedback, _PRSActionButton, _PRSAlbum, _PRSAppLinkCardSection, 
+                       _PRSAppLinkSection, _PRSAuxiliaryInfo, _PRSBagHandler, _PRSBaseCardSection, 
+                       _PRSBaseEntry, _PRSBuyButton, _PRSCEPData, _PRSCardSection, 
+                       _PRSColumnSection, _PRSCoreDuet, _PRSCoreParsecQueryTask, 
+                       _PRSDescriptionCardSection, _PRSDictationQueryTask, _PRSEngagementFeedback, 
+                       _PRSFTETask, _PRSFUSEAlbumListCardSection, _PRSFUSETrackListCardSection, 
+                       _PRSFeedback, _PRSFeedbackContext, _PRSFeedbackProxy, _PRSFormattedTextItem, 
+                       _PRSLinkEntry, _PRSLinkTableCardSection, _PRSLogisticWithNaiveBayesEngine, 
+                       _PRSMLFeedback, _PRSMLManager, _PRSMapsEngagementFeedback, 
+                       _PRSModel, _PRSMovie, _PRSMovieListCardSection, _PRSNBRankingFeedback, 
+                       _PRSNaiveBayesCoreEngine, _PRSPreviewFeedback, _PRSQueryTask, 
+                       _PRSRankingKnobs, _PRSRankingManager, _PRSRankingPolicyManager, 
+                       _PRSRankingProperties, _PRSRankingUtilities, _PRSRenderFeedback, 
+                       _PRSRichTitleCardSection, _PRSRowCardSection, _PRSSearchFeedback, 
+                       _PRSSearchSession, _PRSSportsDataCardWithImageCardSection, 
+                       _PRSSportsSummaryScoreCardSection, _PRSStockChartCardSection, 
+                       _PRSTVRowCardSection, _PRSTableAlignmentSchema, _PRSTableRowCardSection, 
+                       _PRSTextColumnsCardSection, _PRSTitleCardSection, _PRSTrackListCardSection, 
+                       _PRSTrailerEntry, _PRSTrailersCardSection, _PRSTwitterCardSection, 
+                       _PRSWebSiteCardSection, _PRSiTunesEngagementFeedback, _SPLogisticWithNaiveBayesEngine ]
+    objc-ivars:      [ _PRSBagHandler._bagQueue, _PRSSearchSession._client, _PRSSearchSession._lastQueryTime, 
+                       _PRSSearchSession._queryLanguage, _PRSSearchSession._sqfData, 
+                       _PRSSearchSession._userAgent ]
+...

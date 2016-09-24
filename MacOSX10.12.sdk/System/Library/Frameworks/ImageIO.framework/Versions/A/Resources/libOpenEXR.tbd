@@ -1,0 +1,11 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64, x86_64h ]
+uuids:           [ 'i386: 23BA709D-B318-3E29-B1F8-F93E31946BDF', 'x86_64: F24E6498-5519-39E4-9897-C1354218D3D2', 
+                   'x86_64h: 3B14EF12-0E07-3EA8-9B03-DAA24E7627F4' ]
+platform:        macosx
+install-name:    /System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libOpenEXR.dylib
+objc-constraint: none
+exports:         
+  - archs:           [ i386, x86_64, x86_64h ]
+    symbols:         [ _cg_EXRProcs ]
+...

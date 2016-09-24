@@ -1,0 +1,14 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: B90C8ADF-D80A-3488-BC3F-5E5770D7CBD8', 'x86_64: 2AF0BBA3-BC15-34A9-80B6-0F8F465646ED' ]
+platform:        macosx
+install-name:    /System/Library/Frameworks/OpenCL.framework/Versions/A/Libraries/half_i.dylib
+objc-constraint: none
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ ___FunctionTableTransposed_F16C, ___FunctionTable_F16C ]
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ ___FunctionTableTransposed_AVX10, ___FunctionTableTransposed_SSE3, 
+                       ___FunctionTableTransposed_SSE41, ___FunctionTable_AVX10, 
+                       ___FunctionTable_SSE3, ___FunctionTable_SSE41 ]
+...

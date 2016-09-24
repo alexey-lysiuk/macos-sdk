@@ -1,0 +1,12 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: BB42E4CF-5889-354E-B0C0-1E377CC50FB9', 'x86_64: A95874E1-B07B-355A-A8FC-DB8ECE6A431E' ]
+platform:        macosx
+install-name:    /usr/lib/log/liblog_audio.dylib
+objc-constraint: none
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _CFStringFromNSAttributedString, _OSLogCopyFormattedString ]
+    weak-def-symbols: [ __ZTINSt3__117bad_function_callE, __ZTISt9bad_alloc, __ZTISt9exception, 
+                        __ZTSNSt3__117bad_function_callE, __ZTSSt9bad_alloc, __ZTSSt9exception ]
+...

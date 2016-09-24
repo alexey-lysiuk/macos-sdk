@@ -1,0 +1,17 @@
+--- !tapi-tbd-v2
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: D36828FC-49D8-3D93-A1D9-7D8D43D8D7BC' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/MailService.framework/Versions/A/MailService
+current-version: 3218.0
+objc-constraint: none
+exports:         
+  - archs:           [ x86_64 ]
+    allowable-clients: [ CalendarAgent, Mail, MailShareExtension, TimeMachine, backupd, 
+                         com.apple.MailServiceAgent ]
+    symbols:         [ _MSErrorDomain, _MSKVCKeyAccountID, _MSPersistenceInfoKeyLastUsedVersionDirectoryName, 
+                       _MSPersistenceInfoKeyVersionDirectoryIdentifiers, _MSSequenceNumberKey, 
+                       _MailServiceVersionNumber, _MailServiceVersionString ]
+    objc-classes:    [ _MSAttachment, _MSClient, _MSEmailModel, _MSExternalAction, 
+                       _MSExternalAppendAction, _MSExternalUpdatesManager, _MSMailPersistenceInfo ]
+...

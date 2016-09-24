@@ -1,0 +1,14 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: E12D4D85-B2BE-362A-8CC3-1637A5481D63', 'x86_64: B5C1A710-5FE2-3107-A5DC-4F964D0DA2D7' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/IMTransferServices.framework/Versions/A/IMTransferServices
+current-version: 800.0
+objc-constraint: none
+exports:         
+  - archs:           [ x86_64 ]
+    objc-ivars:      [ _IMTransferServicesCompressionController._blockMap ]
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _IMTransferServicesErrorDomain ]
+    objc-classes:    [ _IMTransferServicesCompressionController, _IMTransferServicesController ]
+...

@@ -1,0 +1,10 @@
+--- !tapi-tbd-v2
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 46290C1F-7CC2-3CA0-8AD6-6F8CD25C32CB' ]
+platform:        macosx
+install-name:    /usr/lib/libdns_services.dylib
+objc-constraint: none
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _DNSXEnableProxy, _DNSXRefDeAlloc ]
+...

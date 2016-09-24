@@ -1,0 +1,16 @@
+--- !tapi-tbd-v2
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: F2181465-8012-3654-ADA1-355BFAE2C61A' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/Montreal.framework/Versions/A/Montreal
+current-version: 20.0
+objc-constraint: none
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _MRLModelCreate, _MRLModelGetIOMappings, _MRLModelGetOutputSize, 
+                       _MRLModelRecognize, _MRLModelRecognizeIncremental, _MRLModelRecognizeIncrementalTopN, 
+                       _MRLModelRecognizeTopN, _MRLModelRelease, _MRLModelReset, 
+                       _MRLModelStateCreate, _MRLModelStateIsEmpty, _MRLModelStateRelease, 
+                       _MRLModelStateReset, _MRLModelStateRestore, _MRLModelStateSave, 
+                       _kMRLModelFileLocationKey ]
+...

@@ -1,0 +1,19 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: A0F79CB4-1E55-3622-A6DE-65CDE2412DFB', 'x86_64: AE2241BB-0C95-3F4C-B280-24932BE55F36' ]
+platform:        macosx
+install-name:    '/Library/Caches/com.apple.xbs/Binaries/GPUDriversIntel/GPUDriversIntel-10.18.63~6/Symbols/libCLVMIGILPlugin.dylib'
+objc-constraint: none
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _cvmsPluginElementBuild, _cvmsPluginServiceInitialize, _cvmsPluginServiceTerminate ]
+    weak-def-symbols: [ __ZTINSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                        __ZTINSt3__113basic_filebufIcNS_11char_traitsIcEEEE, __ZTINSt3__114basic_ifstreamIcNS_11char_traitsIcEEEE, 
+                        __ZTINSt3__114basic_ofstreamIcNS_11char_traitsIcEEEE, __ZTINSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                        __ZTINSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                        __ZTINSt3__121__basic_string_commonILb1EEE, __ZTSNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                        __ZTSNSt3__113basic_filebufIcNS_11char_traitsIcEEEE, __ZTSNSt3__114basic_ifstreamIcNS_11char_traitsIcEEEE, 
+                        __ZTSNSt3__114basic_ofstreamIcNS_11char_traitsIcEEEE, __ZTSNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                        __ZTSNSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                        __ZTSNSt3__121__basic_string_commonILb1EEE ]
+...

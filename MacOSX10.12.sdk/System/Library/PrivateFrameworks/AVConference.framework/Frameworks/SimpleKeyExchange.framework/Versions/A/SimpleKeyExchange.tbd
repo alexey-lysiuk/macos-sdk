@@ -1,0 +1,18 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: BA01AE66-E741-3003-9C32-3266C5670569', 'x86_64: EEAC9587-4A2B-3E1D-B9D7-ECE86019AEA1' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/AVConference.framework/Frameworks/SimpleKeyExchange.framework/Versions/A/SimpleKeyExchange
+objc-constraint: none
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _SKEState_CopyBlob, _SKEState_CopyBlobSync, _SKEState_CopySecretKey, 
+                       _SKEState_CopySecretKeySync, _SKEState_Create, _SKEState_Destroy, 
+                       _SKEState_Release, _SKEState_SetBlob, _SecKeyExchangeAbortSession, 
+                       _SecKeyExchangeCopyPeerCert, _SecKeyExchangeCopyPeerName, 
+                       _SecKeyExchangeCopySharedSecret, _SecKeyExchangeGetPeerAbortReason, 
+                       _SecKeyExchangeGetPeerCertStatus, _SecKeyExchangeGetPeerSecTrust, 
+                       _SecKeyExchangeNegotiationStatus, _SecKeyExchangeNodeCreateAsInitiator, 
+                       _SecKeyExchangeNodeCreateAsResponder, _SecKeyExchangeNodeRelease, 
+                       _SecKeyExchangeUpdate ]
+...

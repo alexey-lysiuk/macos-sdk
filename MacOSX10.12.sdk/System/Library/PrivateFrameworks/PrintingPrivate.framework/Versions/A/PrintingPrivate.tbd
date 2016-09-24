@@ -1,0 +1,28 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: 548F0DB1-2443-3A4C-85F5-985BA679186B', 'x86_64: 2E6F2B9E-971F-39CA-8D6E-56C0A5ED8CFA' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/PrintingPrivate.framework/Versions/A/PrintingPrivate
+current-version: 171.0
+objc-constraint: none
+exports:         
+  - archs:           [ i386 ]
+    symbols:         [ _PMCreateLocalizedPaperSizeCFStringPrivate, _PMCreatePaperSizeCFStringPrivate ]
+  - archs:           [ x86_64 ]
+    objc-ivars:      [ _PKPrinter._dnssdName, _PKPrinter._identifier, _PKPrinter._txts, 
+                       _PMInkBarView.color, _PMInkBarView.level, _PMInkBarView.threshhold ]
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _CreateTemporaryFile, _HttpConnectionFromURI, _IconForPrinterAtURI, 
+                       _LoadAndGetPMPrinterInfoBundle, _LoadAndGetPrintCocoaUIBundle, 
+                       _PKPrinterBonjourDomain, _PKPrinterInterfaceIndex, _PKPrinterIsLocal, 
+                       _PKPrinterRegistrationType, _PMApplyFileSettingsFromSavePanel, 
+                       _PMCopyUsersDesktopPathPrivate, _PMCopyUsersDocumentFolderURLPrivate, 
+                       _PMCreatePrinterInfoControllerPrivate, _PMDeleteAllProxiesPrivate, 
+                       _PMGetOrientationImage, _PMPaperCreatePaperSizeStringPrivate, 
+                       _PMPrepareAppKitPageSetupDialogWithPrintInfoPrivate, _PMPrepareAppKitPrintDialogWithThumbnailPrivate, 
+                       _PrintingPrivateVersionNumber, _PrintingPrivateVersionString, 
+                       _RequestPrinterAttributes, _ValidatePrinterIconData, _WriteICNSFile, 
+                       _createPaperSizeCFString ]
+    objc-classes:    [ _PKBrowser, _PKNode, _PKPrinter, _PKQueueCreationController, 
+                       _PKServer, _PMInkBarView, _PMInkView, _PMXPCSupport ]
+...

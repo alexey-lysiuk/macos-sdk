@@ -1,0 +1,29 @@
+--- !tapi-tbd-v2
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 779899EF-513E-3132-AFB5-CD7D79C86CB6' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/CoreCDPInternal.framework/Versions/A/CoreCDPInternal
+objc-constraint: none
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _CDPBackupMetadataDeviceColorKey, _CDPBackupMetadataDeviceEnclosureColorKey, 
+                       _CDPBackupMetadataDeviceModelClassKey, _CDPBackupMetadataDeviceModelKey, 
+                       _CDPBackupMetadataDeviceModelVersionKey, _CDPBackupMetadataDeviceNameKey, 
+                       _CDPBackupMetadataDevicePlatformKey, _CDPBackupMetadataMIDKey, 
+                       _CDPBackupMetadataPasswordResetKey, _CDPDConnectionInvalidatedNotification, 
+                       _CoreCDPInternalVersionNumber, _CoreCDPInternalVersionString, 
+                       __CDPDLogASLMessage, _kOfflineLocalSecretChangeItemIdentifier, 
+                       _kRepairCDPStateItemIdentifier ]
+    objc-classes:    [ _CDPAuthenticationHelper, _CDPDAccount, _CDPDBackupInfoRecoveryFlowController, 
+                       _CDPDCircleController, _CDPDCircleProxyImpl, _CDPDCircleStateObserver, 
+                       _CDPDClientHandler, _CDPDDeviceSecretValidator, _CDPDFollowUpController, 
+                       _CDPDKeychainSync, _CDPDLocalDevice, _CDPDLocalDeviceSecretHandler, 
+                       _CDPDLocalSecretController, _CDPDLocalSecretFollowUpProviderImpl, 
+                       _CDPDLockAssertion, _CDPDNetworkObserver, _CDPDNetworkObserverClient, 
+                       _CDPDPCSController, _CDPDPiggybackController, _CDPDProtectedCloudStorageProxyImpl, 
+                       _CDPDRecoveryFlowContext, _CDPDRecoveryFlowController, _CDPDRecoveryOption, 
+                       _CDPDRecoveryValidatedJoinFlowController, _CDPDRemoteDeviceSecretValidator, 
+                       _CDPDRemoteSecretValidationResult, _CDPDSecureBackupConfiguration, 
+                       _CDPDSecureBackupController, _CDPDSecureBackupProxyImpl, _CDPDSecureBackupRecoveryContext, 
+                       _CDPDStateMachine, _CDPDTelemetryController, _CDPDXPCListener ]
+...

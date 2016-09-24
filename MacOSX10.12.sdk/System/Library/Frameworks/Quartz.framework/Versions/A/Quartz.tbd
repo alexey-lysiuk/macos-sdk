@@ -1,0 +1,16 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: 7F5010C4-576C-387F-8EB7-BDA0A0915526', 'x86_64: 09455972-8A33-3D61-B193-BA7E7CF984CA' ]
+platform:        macosx
+install-name:    /System/Library/Frameworks/Quartz.framework/Versions/A/Quartz
+objc-constraint: none
+exports:         
+  - archs:           [ i386, x86_64 ]
+    re-exports:      [ /System/Library/Frameworks/Quartz.framework/Versions/A/Frameworks/ImageKit.framework/Versions/A/ImageKit, 
+                       /System/Library/Frameworks/Quartz.framework/Versions/A/Frameworks/PDFKit.framework/Versions/A/PDFKit, 
+                       /System/Library/Frameworks/Quartz.framework/Versions/A/Frameworks/QuartzComposer.framework/Versions/A/QuartzComposer, 
+                       /System/Library/Frameworks/Quartz.framework/Versions/A/Frameworks/QuartzFilters.framework/Versions/A/QuartzFilters, 
+                       /System/Library/Frameworks/Quartz.framework/Versions/A/Frameworks/QuickLookUI.framework/Versions/A/QuickLookUI, 
+                       /System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore ]
+    symbols:         [ _QuartzVersionNumber, _QuartzVersionString ]
+...

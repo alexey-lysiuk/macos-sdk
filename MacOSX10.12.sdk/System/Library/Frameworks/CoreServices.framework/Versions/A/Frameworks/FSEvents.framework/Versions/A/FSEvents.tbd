@@ -1,0 +1,21 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: DB224822-A5D1-3E68-8711-2583D0D13F1A', 'x86_64: 8836E7D0-844F-36F9-9601-B630BB82336B' ]
+platform:        macosx
+install-name:    /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/FSEvents
+current-version: 1230.0
+objc-constraint: none
+parent-umbrella: CoreServices
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _FSEventStreamCopyDescription, _FSEventStreamCopyPathsBeingWatched, 
+                       _FSEventStreamCreate, _FSEventStreamCreateRelativeToDevice, 
+                       _FSEventStreamFlushAsync, _FSEventStreamFlushSync, _FSEventStreamGetDeviceBeingWatched, 
+                       _FSEventStreamGetLatestEventId, _FSEventStreamInvalidate, 
+                       _FSEventStreamRelease, _FSEventStreamRetain, _FSEventStreamScheduleWithRunLoop, 
+                       _FSEventStreamSetDispatchQueue, _FSEventStreamSetExclusionPaths, 
+                       _FSEventStreamShow, _FSEventStreamStart, _FSEventStreamStop, 
+                       _FSEventStreamUnscheduleFromRunLoop, _FSEventsCopyUUIDForDevice, 
+                       _FSEventsGetCurrentEventId, _FSEventsGetLastEventIdForDeviceBeforeTime, 
+                       _FSEventsPurgeEventsForDeviceUpToEventId ]
+...

@@ -1,0 +1,11 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: 456CDFCF-F6C3-3B72-BBFA-F89BF6C16212', 'x86_64: 03345425-0C96-31E2-8495-D391612CDE19' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/BookmarkDAV.framework/Versions/A/Frameworks/SafariDAVNotifier.framework/Versions/A/SafariDAVNotifier
+objc-constraint: none
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _safariDAVClientNoteWorkToDo, _safariDAVClientNoteWorkToDoWithActivity, 
+                       _sendWorkToDo ]
+...

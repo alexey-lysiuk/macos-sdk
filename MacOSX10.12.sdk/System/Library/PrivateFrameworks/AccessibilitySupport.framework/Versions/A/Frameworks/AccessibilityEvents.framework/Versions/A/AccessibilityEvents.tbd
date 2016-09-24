@@ -1,0 +1,22 @@
+--- !tapi-tbd-v2
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 8FBB79DB-072D-3A23-9A40-B787FDB718F1' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/AccessibilitySupport.framework/Frameworks/AccessibilityEvents.framework/Versions/A/AccessibilityEvents
+objc-constraint: none
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _AccessibilityEventsVersionNumber, _AccessibilityEventsVersionString, 
+                       _kAXETrackingFaceSimilarityPositionalErrorThreshold, _kAXETrackingFaceSimilaritySizeErrorThreshold ]
+    objc-classes:    [ _AXE2DPointSampleSeriesStatistics, _AXEFixedCapacityQueue, 
+                       _AXEFixedDurationQueue, _AXEGeometryUtilities, _AXEMathUtilities, 
+                       _AXEQueue, _AXEScalarSampleSeriesStatistics, _AXEScalarSmoothingFilter, 
+                       _AXETracking2DPointSmoothingFilter, _AXETrackingAbsolutePointerMovementMapper, 
+                       _AXETrackingAccelerationCurve, _AXETrackingCIFaceDetector, 
+                       _AXETrackingFace, _AXETrackingFaceTracker, _AXETrackingMousePointerController, 
+                       _AXETrackingPointerMovement, _AXETrackingPointerMovementMapper, 
+                       _AXETrackingRelativePointerMovementMapper, _AXETrackingTrackingAreaPointMapper, 
+                       _AXETrackingVideoCapturer, _AXETrackingVideoPreviewViewController, 
+                       _AXETrackingVideoPreviewWindowController, _AXEUnboundedQueue, 
+                       __AXEFixedDurationQueueValueWithTimestamp, __AXETrackingTrackedFaceMetadata ]
+...

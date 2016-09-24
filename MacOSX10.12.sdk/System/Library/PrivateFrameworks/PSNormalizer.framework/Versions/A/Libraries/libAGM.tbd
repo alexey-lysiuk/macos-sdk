@@ -1,0 +1,21 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: D013F320-7371-39A4-8211-7C8DA54DE4BB', 'x86_64: CC42108E-7F13-3C3B-8139-C55AE875170A' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/PSNormalizer.framework/Versions/A/Libraries/libAGM.dylib
+objc-constraint: none
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _AGMApplyFunction, _AGMCleanup, _AGMColorSpaceAddRef, _AGMColorSpaceEqual, 
+                       _AGMColorSpaceFillRange, _AGMColorSpaceGetBaseCs, _AGMColorSpaceGetComponents, 
+                       _AGMColorSpaceGetDeviceN, _AGMColorSpaceGetFamily, _AGMColorSpaceGetICC, 
+                       _AGMColorSpaceGetIndexed, _AGMColorSpaceGetPatternBaseCs, 
+                       _AGMColorSpaceGetProfile, _AGMColorSpaceGetSeparation, _AGMColorSpaceRelease, 
+                       _AGMDataSourceEqual, _AGMDeletePtr, _AGMFreeVarArray, _AGMFunctionAddRef, 
+                       _AGMFunctionEqual, _AGMFunctionRelease, _AGMInit, _AGMNewBaseColorSpace, 
+                       _AGMNewCalGrayColorSpace, _AGMNewCalRGBColorSpace, _AGMNewDeviceNColorSpace, 
+                       _AGMNewFunction, _AGMNewICCColorSpace, _AGMNewIndexedColorSpace, 
+                       _AGMNewLabColorSpace, _AGMNewPatternColorSpace, _AGMNewPtr, 
+                       _AGMNewSeparationColorSpace, _AGMNewShading, _AGMSetInternalMemObj, 
+                       _AGMShadeImage, _AGMShadingRelease, _AGMStdClrMgrGetProfileData ]
+...

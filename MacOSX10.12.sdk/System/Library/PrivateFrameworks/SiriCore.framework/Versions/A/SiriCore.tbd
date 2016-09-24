@@ -1,0 +1,31 @@
+--- !tapi-tbd-v2
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: DDB8A8DE-82B4-3470-9E62-1C7C62C2E9BC' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/SiriCore.framework/Versions/A/SiriCore
+current-version: 0.0
+compatibility-version: 0.0
+objc-constraint: none
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _SiriCoreAceSerializationErrorDomain, _SiriCoreAceSerializationErrorUserInfoBytesAvailableKey, 
+                       _SiriCoreAceSerializationErrorUserInfoBytesNeededKey, _SiriCoreAceSerializationErrorUserInfoPlistKey, 
+                       _SiriCoreConnectionTechnologyGetDescription, _SiriCoreDataCompressorErrorDomain, 
+                       _SiriCoreHeartbeatInterval, _SiriCoreHeartbeatTolerance, _SiriCoreLocalSpeechRecognizerTaskDictation, 
+                       _SiriCoreLocalSpeechRecognizerTaskSearchOrMessaging, _SiriCoreLocalSpeechRecognizerTaskTshot, 
+                       _SiriCoreLocalSpeechRecognizerTaskVoiceMail, _SiriCoreSiriConnectionErrorDomain, 
+                       _SiriCoreSiriConnectionHTTPErrorStatusCodeKey, _SiriCoreSiriConnectionHTTPRedirectValueKey, 
+                       _SiriCoreSiriConnectionShouldSkipIDSOnNextAttemptKey, _SiriCoreSiriConnectionShouldSkipTuscanyOnNextAttemptKey, 
+                       _SiriCoreUUIDStringCreate ]
+    objc-classes:    [ _SASetRestrictionsThunk, _SiriCoreAceConnectionAnalysisInfo, 
+                       _SiriCoreAceSerialization, _SiriCoreConnectionMetrics, _SiriCoreConnectionQueueMonitor, 
+                       _SiriCoreConnectionTCPInfoMetrics, _SiriCoreConnectionType, 
+                       _SiriCoreDESEvaluationSession, _SiriCoreDESPreferences, _SiriCoreDataCompressor, 
+                       _SiriCoreDataDecompressor, _SiriCoreErrorInfo, _SiriCoreLocalSpeechDESRecord, 
+                       _SiriCoreLocalSpeechRecognizer, _SiriCoreNetworkManager, _SiriCoreNetworkStreamProvider, 
+                       _SiriCorePingInfo, _SiriCoreSiriBackgroundConnection, _SiriCoreSiriConnection, 
+                       _SiriCoreSiriConnectionInfo, _SiriCoreSpeechPacket, _SiriCoreWLANDelegate, 
+                       _SiriCoreWiFiManagerClient, _SiriCoreZlibDataCompressor, _SiriCoreZlibDataDecompressor, 
+                       __SAMetricsSendCompletionsProxy ]
+    objc-ivars:      [ __SAMetricsSendCompletionsProxy._blocks ]
+...

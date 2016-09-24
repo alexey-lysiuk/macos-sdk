@@ -1,0 +1,14 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: 117705C2-CD40-372A-B491-1B2B14456188', 'x86_64: E8B9E8E7-1F7A-3700-895C-501C12EDD001' ]
+platform:        macosx
+install-name:    /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Resources/libTrueTypeScaler.dylib
+objc-constraint: none
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _TTScalerOpen, __Z10M3x3ConcatPK10Mapping3x3sPS_s, __Z11M3x3InversePK10Mapping3x3sPS_, 
+                       __Z13M3x3NormalizeP10Mapping3x3, __Z13MapMapping3x3P10Mapping3x3PKS_, 
+                       __Z15ResetMapping3x3P10Mapping3x3, __Z16CopyToMapping3x3P10Mapping3x3PKS_, 
+                       __Z16InvertMapping3x3P10Mapping3x3PKS_, __Z7M3x3MulPK10Mapping3x3sP10FixedPointi, 
+                       __Z8M3x3CopyPK10Mapping3x3PS_, __Z9M3x3FlagsPK10Mapping3x3 ]
+...

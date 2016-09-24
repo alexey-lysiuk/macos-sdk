@@ -1,0 +1,17 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: 5877AED5-042E-3995-927E-E96DFF49D501', 'x86_64: 93EAB6A6-3C83-3EAE-9EE9-3A942738BB6D' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/AppleGVACore.framework/Versions/A/AppleGVACore
+current-version: 10.0.20
+objc-constraint: none
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _AVFPixelProcessCore_CreateInstance, _AVFPixelProcessCore_PrepareToTransferImages, 
+                       _AVFPixelProcessCore_SetDestChromaLocation, _AVFPixelProcessCore_SetDestParametricCurves, 
+                       _AVFPixelProcessCore_SetDestYCbCrMatrix, _AVFPixelProcessCore_SetMainMatrix, 
+                       _AVFPixelProcessCore_SetPriority, _AVFPixelProcessCore_SetScaling, 
+                       _AVFPixelProcessCore_SetSourceChromaLocation, _AVFPixelProcessCore_SetSourceParametricCurves, 
+                       _AVFPixelProcessCore_SetSourceYCbCrMatrix, _AVFPixelProcessCore_TransferImageAsync, 
+                       _AVFPixelProcessCore_TransferImageSync, _AVFPixelProcessCore_WaitForAsyncTransfers ]
+...

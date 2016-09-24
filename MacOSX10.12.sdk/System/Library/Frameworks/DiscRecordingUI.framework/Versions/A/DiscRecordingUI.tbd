@@ -1,0 +1,22 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: 0B00A5C9-988A-32FE-B236-9F7D954EA99D', 'x86_64: 94969E2F-0790-3F51-9F62-5688460AF9D8' ]
+platform:        macosx
+install-name:    /System/Library/Frameworks/DiscRecordingUI.framework/Versions/A/DiscRecordingUI
+objc-constraint: none
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _DRBurnIcon, _DRBurnProgressPanelDidFinishNotification, _DRBurnProgressPanelWillBeginNotification, 
+                       _DRBurnSessionBeginProgressDialog, _DRBurnSessionCreate, _DRBurnSessionGetBurn, 
+                       _DRBurnSessionGetTypeID, _DRBurnSessionSetBurn, _DRBurnSessionSetupDialog, 
+                       _DRBurnSetupPanelDefaultButtonDefaultTitle, _DREraseIcon, 
+                       _DREraseProgressPanelDidFinishNotification, _DREraseProgressPanelWillBeginNotification, 
+                       _DREraseSessionBeginProgressDialog, _DREraseSessionCreate, 
+                       _DREraseSessionGetErase, _DREraseSessionGetTypeID, _DREraseSessionSetErase, 
+                       _DREraseSessionSetupDialog, _DRMediaEraseControllerDidFailToEjectNotification, 
+                       _DRSetupPanelPropertiesDidChangeNotification ]
+    objc-classes:    [ _DRBurnProgressPanel, _DRBurnSetupPanel, _DRDeviceArrayController, 
+                       _DRDeviceChooser, _DRDeviceChooserCell, _DRDeviceObjectController, 
+                       _DREraseProgressPanel, _DREraseSetupPanel, _DRMediaEraseController, 
+                       _DROpticalDiscEraseView, _DRSetupPanel ]
+...

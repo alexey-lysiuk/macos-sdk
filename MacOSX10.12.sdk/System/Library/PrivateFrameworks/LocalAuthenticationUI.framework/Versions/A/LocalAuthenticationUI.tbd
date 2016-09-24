@@ -1,0 +1,12 @@
+--- !tapi-tbd-v2
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 266DCBDE-F279-3094-B3AB-A5AFCF740248' ]
+platform:        macosx
+install-name:    '@rpath/LocalAuthenticationUI.framework/Versions/A/LocalAuthenticationUI'
+objc-constraint: none
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _LocalAuthenticationUIVersionNumber, _LocalAuthenticationUIVersionString ]
+    objc-classes:    [ _LAUIAuthenticationSheetController, _LAUIAuthenticationViewController, 
+                       _LAUIShakeAnimation, _LAUIUserPasswordViewController ]
+...

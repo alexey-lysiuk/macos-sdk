@@ -1,0 +1,27 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: CE86A94C-F399-3BE7-B872-7FDF8FD6F067', 'x86_64: 6AE3959E-2D87-3718-B1A3-9059DA459983' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/HDAInterface.framework/Versions/A/HDAInterface
+objc-constraint: none
+exports:         
+  - archs:           [ x86_64 ]
+    objc-ivars:      [ _HDADSPInterface.mInput, _HDAInterface.mConnect, _HDAInterface.mService, 
+                       _HDAMikeyInterface.mInternalMikey, _IOHDAudioCodecDeviceUserClient.appleHDAControllerUserClientBuffer, 
+                       _IOHDAudioCodecDeviceUserClient.appleHDADriverUserClientBuffer, 
+                       _IOHDAudioCodecDeviceUserClient.appleHDA_UserClientBuffer, 
+                       _IOHDAudioCodecDeviceUserClient.gDataPort, _IOHDAudioCodecDeviceUserClient.gDriverObject, 
+                       _IOHDAudioCodecDeviceUserClient.gMasterPort, _IOHDAudioCodecDeviceUserClient.iOHDACodecDeviceUserClientBuffer, 
+                       _IOHDAudioCodecDeviceUserClient.mCodecRegistryEntryID, _IOHDAudioCodecDeviceUserClient.mCodecUserClientIndex, 
+                       _IOHDAudioCodecDeviceUserClient.mControllerRegistryEntryID, 
+                       _IOHDAudioCodecDeviceUserClient.mControllerUserClientIndex, 
+                       _IOHDAudioCodecDeviceUserClient.mEdidPtr, _IOHDAudioCodecDeviceUserClient.mHDAInterruptCountInfoPtr, 
+                       _IOHDAudioCodecDeviceUserClient.mRegElapsedPtr, _IOHDAudioCodecDeviceUserClient.mRegPtr, 
+                       _IOHDAudioCodecDeviceUserClient.ucSecondaryTestBuffer, _IOHDAudioCodecDeviceUserClient.ucStickyStatusBuffer, 
+                       _IOHDAudioCodecDeviceUserClient.ucTestBuffer ]
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _HDAAudioEngineInputClass, _HDAAudioEngineOutputClass, _HDAErrorDomain ]
+    objc-classes:    [ _HDAAudioEngineUserClient, _HDABuiltinCodecInterface, _HDAControllerInterface, 
+                       _HDADSPInterface, _HDADSPUserClient, _HDAInterface, _HDAMikeyInterface, 
+                       _HDAUserClient, _IOHDAudioCodecDeviceUserClient ]
+...

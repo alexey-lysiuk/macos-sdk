@@ -1,0 +1,16 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: 18973480-1C85-36D5-8E6A-3FB8D463006E', 'x86_64: 4B5DE12F-CEA9-3FC3-8DAB-6C4FE2A1A84A' ]
+platform:        macosx
+flags:           [ flat_namespace ]
+install-name:    /usr/lib/libnetsnmphelpers.25.dylib
+current-version: 26.2
+compatibility-version: 26.0
+objc-constraint: none
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _netsnmp_helpers_dummy_text ]
+undefineds:      
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ dyld_stub_binder ]
+...

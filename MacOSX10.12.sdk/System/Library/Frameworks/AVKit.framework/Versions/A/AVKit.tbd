@@ -1,0 +1,17 @@
+--- !tapi-tbd-v2
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: DF87A32C-2B0F-3ADF-B342-CC0C4E093FFB' ]
+platform:        macosx
+install-name:    /System/Library/Frameworks/AVKit.framework/Versions/A/AVKit
+objc-constraint: none
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _AVAddAudibleMediaSelectionOptionsToMenu, _AVAddLegibleMediaSelectionOptionsToMenu, 
+                       _AVAssetSlowMotionTimeRangeFromNormalizedSlowMotionTimeRange, 
+                       _AVKitMediaKeyEventRCDMachServiceName, _AVNormalizedSlowMotionTimeRangeFromAssetSlowMotionTimeRange ]
+    objc-classes:    [ _AVAudioLevelIndicatorView, _AVAudioView, _AVCaptureView, 
+                       _AVChapter, _AVControlsContainerViewController, _AVControlsViewController, 
+                       _AVOutputDeviceMenuController, _AVPlayerController, _AVPlayerControllerTimeResolver, 
+                       _AVPlayerControlsViewController, _AVPlayerView, _AVScrollSliderView, 
+                       _AVShareController, _AVStatusOverlayView, _AVValueTiming ]
+...

@@ -1,0 +1,14 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: B0EEDC66-D360-3A7E-A951-15011F494F72', 'x86_64: 66CA12CE-644A-36F9-BF91-0A93C731496F' ]
+platform:        macosx
+flags:           [ not_app_extension_safe ]
+install-name:    /System/Library/PrivateFrameworks/CoreFP.framework/CoreFP
+current-version: 2.11.7
+compatibility-version: 2.2.19
+objc-constraint: none
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _WIn9UJ86JKdV4dM, _X46O5IeS, _YlCJ3lg, _dku592fbFAj, _fdjkDSAFjklaf2s, 
+                       _lxpgvVMLd0S7uRl ]
+...

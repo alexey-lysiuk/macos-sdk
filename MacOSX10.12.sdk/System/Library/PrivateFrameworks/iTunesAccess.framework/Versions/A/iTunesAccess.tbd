@@ -1,0 +1,12 @@
+--- !tapi-tbd-v2
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 34C92511-8EAC-321D-AF1E-6E17020F2A5B' ]
+platform:        macosx
+flags:           [ not_app_extension_safe ]
+install-name:    /System/Library/PrivateFrameworks/iTunesAccess.framework/Versions/A/iTunesAccess
+objc-constraint: none
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _ITAccessContextCreate, _ITAccessContextRelease, _ITAccessContextRetain, 
+                       _ITAccessCopyArtwork, _ITAccessCopyArtworkWithURL ]
+...
