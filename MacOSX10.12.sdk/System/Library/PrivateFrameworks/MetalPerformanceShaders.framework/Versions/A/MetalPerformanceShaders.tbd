@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FAFA0DF5-4226-3867-A2E2-CAB889DC4490' ]
+uuids:           [ 'x86_64: EDE6F9AA-B863-3936-BA54-177B769080FD' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MetalPerformanceShaders.framework/Versions/A/MetalPerformanceShaders
-current-version: 60.1
+current-version: 61.1
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

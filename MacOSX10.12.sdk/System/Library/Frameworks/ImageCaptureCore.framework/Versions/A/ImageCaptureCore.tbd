@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: C413C1A9-B5CF-340A-993A-8541557D8F8E', 'x86_64: EF8DF81D-3D82-3202-BE75-E49D38EC105D' ]
+uuids:           [ 'i386: FFAD46AA-6030-3104-A882-F99DB2D12829', 'x86_64: 024484A6-B858-30DA-B93E-7F62C1776085' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/ImageCaptureCore.framework/Versions/A/ImageCaptureCore
 objc-constraint: none
@@ -22,10 +22,10 @@ exports:
                        _ICCameraFileProperties._retrievedMetadata, _ICCameraFileProperties._retrievedThumbnail, 
                        _ICCameraFileProperties._sidecarFiles, _ICCameraFileProperties._thumbnail, 
                        _ICCameraFileProperties._thumbnailData, _ICCameraFileProperties._timeLapse, 
-                       _ICCameraFileProperties._width, _ICCameraFolderProperties._creationDate, 
-                       _ICCameraFolderProperties._files, _ICCameraFolderProperties._folders, 
-                       _ICCameraFolderProperties._modificationDate, _ICCameraItemProperties._UTI, 
-                       _ICCameraItemProperties._addedAfterContentCatalogCompleted, 
+                       _ICCameraFileProperties._wasDownloaded, _ICCameraFileProperties._width, 
+                       _ICCameraFolderProperties._creationDate, _ICCameraFolderProperties._files, 
+                       _ICCameraFolderProperties._folders, _ICCameraFolderProperties._modificationDate, 
+                       _ICCameraItemProperties._UTI, _ICCameraItemProperties._addedAfterContentCatalogCompleted, 
                        _ICCameraItemProperties._device, _ICCameraItemProperties._inTemporaryStore, 
                        _ICCameraItemProperties._locked, _ICCameraItemProperties._name, 
                        _ICCameraItemProperties._objectID, _ICCameraItemProperties._parentFolder, 

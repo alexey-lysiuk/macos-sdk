@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3BE07CFE-2CBE-3B7A-96E6-7D691C1BACA8' ]
+uuids:           [ 'x86_64: 5DD0D6FB-7C20-350D-800B-7B4DBFD6376B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SetupAssistantFramework.framework/Versions/A/SetupAssistantFramework
 objc-constraint: none
@@ -13,11 +13,10 @@ exports:
                        _MBRemoveMigrationBuddyCookie, _MBRemoveResumeBuddyCookie, 
                        _MBResumeBuddyCookieIsSet, _MBResumeBuddyCookieReason, _MBSAProtocolInterface, 
                        _MBSetDiagnosticsCookie, _MBSetHardwareWarrantyCookie, _MBSetMigrationBuddyCookie, 
-                       _MBSetResumeBuddyAfterUpdateCookie, _MBSetResumeBuddyCookie, 
-                       _MBSetTheMacBuddyCookie, _MBTheMacBuddyCookieIsSet, _SetupAssistantFrameworkVersionNumber, 
-                       _SetupAssistantFrameworkVersionString, _kMBSetupUserUID, _kSetupAssistantWindowDataKey, 
-                       _kSetupAssistantWindowScreenNumberKey, _kSetupAssistantWindowXPositionKey, 
-                       _kSetupAssistantWindowYPositionKey, _kSetupCompletedNotificationName, 
-                       _processIsRunning, _processIsRunningForUser ]
+                       _MBSetResumeBuddyCookie, _MBSetTheMacBuddyCookie, _MBTheMacBuddyCookieIsSet, 
+                       _SetupAssistantFrameworkVersionNumber, _SetupAssistantFrameworkVersionString, 
+                       _kMBSetupUserUID, _kSetupAssistantWindowDataKey, _kSetupAssistantWindowScreenNumberKey, 
+                       _kSetupAssistantWindowXPositionKey, _kSetupAssistantWindowYPositionKey, 
+                       _kSetupCompletedNotificationName, _processIsRunning, _processIsRunningForUser ]
     objc-classes:    [ _LogSnitch, _MBLogManager, _MBSAConnection, _SALauncher, _SAUserSetupState ]
 ...

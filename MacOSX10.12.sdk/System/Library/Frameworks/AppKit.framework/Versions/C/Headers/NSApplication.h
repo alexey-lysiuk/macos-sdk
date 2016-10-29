@@ -60,6 +60,7 @@ APPKIT_EXTERN const double NSAppKitVersionNumber;
 #define NSAppKitVersionNumber10_11_1 1404.13
 #define NSAppKitVersionNumber10_11_2 1404.34
 #define NSAppKitVersionNumber10_11_3 1404.34
+#define NSAppKitVersionNumber10_12 1504
 
 
 /* Modes passed to NSRunLoop */
@@ -492,6 +493,7 @@ typedef NS_OPTIONS(NSUInteger, NSRemoteNotificationType) {
 
 @property (readonly) NSRemoteNotificationType enabledRemoteNotificationTypes NS_AVAILABLE_MAC(10_7);
 @end
+
 
 /* An Application's startup function */
 

@@ -37,6 +37,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (getter=isSpringLoaded) BOOL springLoaded NS_AVAILABLE_MAC(10_10_3); // sends action on deep-press or extended hover while dragging. Defaults to NO.
 @property NSInteger maxAcceleratorLevel NS_AVAILABLE_MAC(10_10_3);	// Configures the maximum allowed level for an NSMultiLevelAcceleratorButton, allowed values range from [1,5]. Defaults to 2.
 
+@property (nullable, copy) NSColor *bezelColor NS_AVAILABLE_MAC(10_12_1); // The color of the button's bevel, in appearances that support it
+
 @end
 
 

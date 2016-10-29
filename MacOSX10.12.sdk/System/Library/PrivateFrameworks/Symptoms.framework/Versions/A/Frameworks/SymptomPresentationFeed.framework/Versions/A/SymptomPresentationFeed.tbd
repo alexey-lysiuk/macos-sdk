@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 18CC4D23-7E1A-3DA4-9AD7-104EEBEDC7B8' ]
+uuids:           [ 'x86_64: 54F816F5-B12E-3D26-BA59-BE357D8A74C0' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Symptoms.framework/Frameworks/SymptomPresentationFeed.framework/Versions/A/SymptomPresentationFeed
 objc-constraint: none

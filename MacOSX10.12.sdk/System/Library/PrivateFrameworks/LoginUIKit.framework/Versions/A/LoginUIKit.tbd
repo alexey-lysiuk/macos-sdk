@@ -1,13 +1,14 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 1FE3A65C-1761-3E5A-8E66-BD5AFED98E64', 'x86_64: F239A1AB-2F13-3ED6-AA12-4E6B78CEE79D' ]
+uuids:           [ 'i386: 1DB764F3-891C-3E2B-9916-B7E74976B86A', 'x86_64: E8EF0F90-BA96-3DE2-BF77-B27FFEEC81C0' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/LoginUIKit.framework/Versions/A/LoginUIKit
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CNAvatarViewControllerClass, _CNMutableContactClass, _ContactForODRecord, 
-                       _LikenessForODRecord, _LikenessForUID, _PRLikenessClass, _SetPRLikenessInUserRecord ]
+                       _LAContextClass, _LikenessForODRecord, _LikenessForUID, _PRLikenessClass, 
+                       _SetPRLikenessInUserRecord ]
     objc-ivars:      [ _AXProxyUIElement._parent, _AXProxyUIElement._realElement, 
                        _LUIAppleIDViewController._appleIDLabel, _LUIAppleIDViewController._appleIDTextField, 
                        _LUIAppleIDViewController._cancelButton, _LUIAppleIDViewController._infoTextField, 
@@ -70,13 +71,13 @@ exports:
                        _LUIWindowController._mainWindow ]
   - archs:           [ i386, x86_64 ]
     re-exports:      [ /System/Library/PrivateFrameworks/LoginUIKit.framework/Versions/A/Frameworks/LoginUICore.framework/Versions/A/LoginUICore ]
-    symbols:         [ _DelegateInterface, _LUIAttributeTypeAvatarRepresentation, 
-                       _LUIBackgroundPressed, _LUIButtonBack, _LUIButtonCancel, _LUIButtonCancelKey, 
-                       _LUIButtonExit, _LUIButtonGo, _LUIButtonGuestUser, _LUIButtonHint, 
-                       _LUIButtonNetworkStatus, _LUIButtonNext, _LUIButtonPrevious, 
-                       _LUIButtonRestart, _LUIButtonRestartToSafari, _LUIButtonShiftLeft, 
-                       _LUIButtonShiftRight, _LUIButtonShutDown, _LUIButtonSleep, 
-                       _LUIButtonSwitchUser, _LUICacheAndMonitorDesktopPictureForScreenLock, 
+    symbols:         [ _DelegateInterface, _IsLAServiceEnabled, _IsLAServiceEnabledWithError, 
+                       _LUIAttributeTypeAvatarRepresentation, _LUIBackgroundPressed, 
+                       _LUIButtonBack, _LUIButtonCancel, _LUIButtonCancelKey, _LUIButtonExit, 
+                       _LUIButtonGo, _LUIButtonGuestUser, _LUIButtonHint, _LUIButtonNetworkStatus, 
+                       _LUIButtonNext, _LUIButtonPrevious, _LUIButtonRestart, _LUIButtonRestartToSafari, 
+                       _LUIButtonShiftLeft, _LUIButtonShiftRight, _LUIButtonShutDown, 
+                       _LUIButtonSleep, _LUIButtonSwitchUser, _LUICacheAndMonitorDesktopPictureForScreenLock, 
                        _LUICopyDefaultDesktopPictureForEFILogin, _LUICopyDesktopPicture, 
                        _LUICopyDesktopPictureForLoginWindowEFI, _LUICopyDesktopPictureForLoginWindowUI, 
                        _LUICopyDesktopPictureForScreenLock, _LUICopyScreen, _LUICreateCGColorForColor, 

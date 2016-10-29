@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 6AF36154-7F10-3C3B-B24E-9C0A1EB4F236', 'x86_64: 7E5CAA1E-9F18-31B6-A97B-E5DB51448DDE' ]
+uuids:           [ 'i386: BEFA250E-DB89-3BFE-8D79-DA0BC7ABDCB6', 'x86_64: 9E255948-4D31-36E9-894F-5D0524BB61FC' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MultitouchSupport.framework/Versions/A/MultitouchSupport
-current-version: 367.5
+current-version: 368.4
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]
@@ -150,7 +150,7 @@ exports:
                        _MultitouchSupportVersionString, _ParsedMultitouchFrameRepDestroy, 
                        _ParsedMultitouchFrameRepInitialize, _Xpos2Bcol, _Xpos2Ecol_float, 
                        _Ypos2Brow, _Ypos2Erow_float, __GetMTActuationID, __MTActuationCreateFromParameterizedWaveform, 
-                       __MTActuationCreateFromWaveform, __MTActuationLoadActuationsFromData, 
+                       __MTActuationCreateFromWaveform, __MTActuationLoadActuationsFromPropertyList, 
                        __MTDriverCreateSingleResetInfo, ___MTDeviceCreateListForDriverType, 
                        __mthid_anyAvailableDevice, __mthid_anyAvailableDeviceOfType, 
                        __mthid_appendBehaviorToGestureConfiguration, __mthid_copyAvailableDevicesInfo, 

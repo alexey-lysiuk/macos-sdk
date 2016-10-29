@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: EACC9CF1-6128-3704-9946-FD5D33D36082', 'x86_64: 1504D99A-18FE-3151-B671-8FC4BA6F58F4' ]
+uuids:           [ 'i386: CD5EB976-5F38-32C0-A983-7A4BD711C8D3', 'x86_64: 76F22560-5970-35A8-9F91-C0949DE2C431' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Suggestions.framework/Versions/A/Suggestions
-current-version: 194.0
+current-version: 197.0
 objc-constraint: none
 exports:         
   - archs:           [ i386 ]
@@ -50,16 +50,17 @@ exports:
                        _SGTItemMailStatus, _SGTItemMailbox, _SGTMailQueryGeniusAccountKey, 
                        _SGTMailQueryGeniusDisplayNameKey, _SGTMailQueryGeniusImageKey, 
                        _SGTMailQueryGeniusRepresentedObjectKey, _SuggestionsVersionNumber, 
-                       _SuggestionsVersionString, __SGTAppGetDefaultValues, __SGTCreateSimpleQueryEvaluator, 
+                       _SuggestionsVersionString, __MDQueryCreateQueryDictionaryWithOptionsDict_serially, 
+                       __SGTAppGetDefaultValues, __SGTCreateSimpleQueryEvaluator, 
                        __SGTQueryCreateQueryString, __SGTQueryCreateQueryStringWithFuzzyThreshold, 
                        __SGTSanitizeInputString, __SGTSuggestionsPboardType, __valueEvaluator, 
                        _fuzzyQueryStringVersionCreateFromString, _kSGTUserQueryAttributedInputDateEndKey, 
                        _kSGTUserQueryAttributedInputDateKey, _kSGTUserQueryAttributedInputDateStartKey ]
     objc-classes:    [ _SGTCategory, _SGTCompletionTableView, _SGTCompletionWindow, 
-                       _SGTDateSuggester, _SGTDateSuggestion, _SGTFileLabelSuggester, 
-                       _SGTFileLabelSuggestion, _SGTFolderNameField, _SGTFolderSuggester, 
-                       _SGTFolderSuggestion, _SGTHasAttachmentSuggester, _SGTISODateRange, 
-                       _SGTInput, _SGTMailFlagColorSuggester, _SGTMailPrioritySuggester, 
+                       _SGTDFRTokenBarViewController, _SGTDateSuggester, _SGTDateSuggestion, 
+                       _SGTFileLabelSuggester, _SGTFileLabelSuggestion, _SGTFolderNameField, 
+                       _SGTFolderSuggester, _SGTFolderSuggestion, _SGTHasAttachmentSuggester, 
+                       _SGTISODateRange, _SGTInput, _SGTMailFlagColorSuggester, _SGTMailPrioritySuggester, 
                        _SGTMailQueryGenius, _SGTMailStatusSuggester, _SGTMailStatusSuggestion, 
                        _SGTMailboxSuggester, _SGTMailboxSuggestion, _SGTQueryGenius, 
                        _SGTRecentsSuggester, _SGTSearchField, _SGTSearchFieldCell, 

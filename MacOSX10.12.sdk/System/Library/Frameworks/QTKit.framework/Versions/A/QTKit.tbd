@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 950159A8-F25E-317D-AFA5-967139D32A96', 'x86_64: DD63A171-2DE6-3210-89B0-BD5991539755' ]
+uuids:           [ 'i386: C08C1D49-4346-33F2-8B34-FEC4F69569E5', 'x86_64: 5D626E66-BEC5-38A9-9329-3617D4FF034A' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/QTKit.framework/Versions/A/QTKit
 objc-constraint: none

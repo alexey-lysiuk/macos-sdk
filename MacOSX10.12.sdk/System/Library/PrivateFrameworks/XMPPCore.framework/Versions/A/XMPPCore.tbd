@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4AD36EEA-127E-3FC3-A8CF-6902B672FC45' ]
+uuids:           [ 'x86_64: 67352AFC-A326-3065-8358-B65813D4E5A5' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/XMPPCore.framework/Versions/A/XMPPCore
 current-version: 800.0

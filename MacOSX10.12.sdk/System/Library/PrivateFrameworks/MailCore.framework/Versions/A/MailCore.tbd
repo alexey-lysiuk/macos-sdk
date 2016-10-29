@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E675B30B-E264-36AB-829C-4C4F51C89C56' ]
+uuids:           [ 'x86_64: D8C53EFD-9A05-3016-A12A-180B2FB7F2B9' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MailCore.framework/Versions/A/MailCore
-current-version: 3218.0
+current-version: 3251.0
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -211,8 +211,9 @@ exports:
                        __MCMimeEnrichedReaderCommandStackEntry, __MCMimeEnrichedState, 
                        __MCMimeEnrichedWriter, __MCMimeEnrichedWriterCommandStackEntry, 
                        __MCMimeHeaderScanContext, __MCOutgoingMimeBody ]
-    objc-ivars:      [ _MCMessage._dateLastViewedInterval, _MCMessage._dateReceivedInterval, 
-                       _MCMessage._dateSentInterval, _MCMessage._documentID, _MCMessage._inReplyToHeaderDigest, 
+    objc-ivars:      [ _MCMessage._ccRecipients, _MCMessage._dateLastViewedInterval, 
+                       _MCMessage._dateReceivedInterval, _MCMessage._dateSentInterval, 
+                       _MCMessage._documentID, _MCMessage._inReplyToHeaderDigest, 
                        _MCMessage._messageColor, _MCMessage._messageIDHeaderDigest, 
                        _MCMessage._sender, _MCMessage._subject, _MCMessage._toRecipients, 
                        _MCMessage._type, _MCSAXHTMLParsing.attributes, _MCSAXHTMLParsing.encoding, 

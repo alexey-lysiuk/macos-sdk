@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F382B630-D9AC-34ED-8947-1D90BD1B06C2' ]
+uuids:           [ 'x86_64: A130C01E-AC0A-3733-B34C-71741DFFCC7E' ]
 platform:        macosx
 install-name:    /usr/lib/libdscsym.dylib
 current-version: 145.0

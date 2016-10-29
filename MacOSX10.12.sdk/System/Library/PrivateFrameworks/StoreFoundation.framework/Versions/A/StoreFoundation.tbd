@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 633FDEAC-2688-3DE5-A3BE-5640B3E60370' ]
+uuids:           [ 'x86_64: 0B5DA122-238D-3F33-AA72-79D4053A5DA7' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/StoreFoundation.framework/Versions/A/StoreFoundation
 current-version: 379.0
@@ -107,6 +107,7 @@ exports:
                        _kDefaultsNextClientIDPingDateKey, _kDefaultsNotifyUserOfNewUpdatesOnlyKey, 
                        _kDefaultsOSUpdatesSeenByUserKey, _kDefaultsOneHourIntervalKey, 
                        _kDefaultsPKTrustLevel, _kDefaultsPrimaryAccountKey, _kDefaultsPrimaryAccountMigratedKey, 
+                       _kDefaultsPurchaseByTouchIDEnabledDateKey, _kDefaultsPurchaseByTouchIDKey, 
                        _kDefaultsPurchasesInflightKey, _kDefaultsSUScanAutomaticCheckEnabledKey, 
                        _kDefaultsSandboxBagURLKey, _kDefaultsSendCacheBusterKey, 
                        _kDefaultsSendRebuyKey, _kDefaultsSerialDecryptionKey, _kDefaultsShowDebugMenuKey, 

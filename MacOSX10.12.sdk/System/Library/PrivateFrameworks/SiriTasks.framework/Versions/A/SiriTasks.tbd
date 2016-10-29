@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 98BD27FE-617E-306A-A3C2-763E73B06BB8' ]
+uuids:           [ 'x86_64: FCEA91C0-A8C8-3534-AE13-3855E3B9F80B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SiriTasks.framework/Versions/A/SiriTasks
 objc-constraint: none

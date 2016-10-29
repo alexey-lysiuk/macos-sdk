@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F8BC9A0B-D389-339E-9D92-38DEB103DF27' ]
+uuids:           [ 'x86_64: 64BA99C9-AB51-3465-AA18-A5C9FEF9C6AF' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IASUtilities.framework/Versions/A/IASUtilities
 current-version: 119.0

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 6E559190-00E0-357F-8DC4-062283783A47', 'x86_64: 78E2881E-9019-3573-A858-11599935C654' ]
+uuids:           [ 'i386: 779883AB-EC04-3FF3-B53F-DB993823A80B', 'x86_64: BF237CEA-F7CB-3ECD-AAE4-E9589D02C2F9' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/AVFoundation.framework/Versions/A/AVFoundation
 current-version: 2.0
@@ -337,8 +337,8 @@ exports:
                        _AVContentKeyRequest._initializationData, _AVContentKeyRequest._session, 
                        _AVContentKeyRequest._status, _AVContentKeySessionInternal._appIdentifier, 
                        _AVContentKeySessionInternal._decryptorsByInitData, _AVContentKeySessionInternal._delegate, 
-                       _AVContentKeySessionInternal._isExpired, _AVContentKeySessionInternal._protector, 
-                       _AVContentKeySessionInternal._protectorSessionIdentifier, 
+                       _AVContentKeySessionInternal._internal, _AVContentKeySessionInternal._isExpired, 
+                       _AVContentKeySessionInternal._protector, _AVContentKeySessionInternal._protectorSessionIdentifier, 
                        _AVContentKeySessionInternal._storageURL, _AVContentKeySessionInternal._streamDataParsers, 
                        _AVContentKeySessionInternal._threadSafetyQ, _AVContentKeySessionInternal._welf, 
                        _AVCustomVideoCompositorSession._callbackContextToken, _AVCustomVideoCompositorSession._clientCustomCompositor, 
@@ -626,7 +626,8 @@ exports:
                        _AVStreamDataParserInternal._trackFormatDescriptionsByTrackID, 
                        _AVStreamDataParserInternal._trackIDsNotProvidingMedia, _AVStreamDataParserInternal._tracksBecomingReadyByTrackID, 
                        _AVStreamDataParserInternal._typeIdOfInitialFigManifold, _AVStreamSessionInternal._appIdentifier, 
-                       _AVStreamSessionInternal._figCPEProtector, _AVStreamSessionInternal._figCPEProtectorSessionIdentifier, 
+                       _AVStreamSessionInternal._contentKeySessions, _AVStreamSessionInternal._figCPEProtector, 
+                       _AVStreamSessionInternal._figCPEProtectorSessionIdentifier, 
                        _AVStreamSessionInternal._isExpired, _AVStreamSessionInternal._storageURL, 
                        _AVStreamSessionInternal._streamDataParsers, _AVStreamSessionInternal._threadSafetyQ, 
                        _AVStreamSessionInternal._welf, _AVSynchronizedLayerInternal.isVisible, 

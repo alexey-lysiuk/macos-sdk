@@ -721,7 +721,7 @@ vImage_Error vImageConvert_FTo16S( const vImage_Buffer *src, const vImage_Buffer
  in both directions:
 
  vImageConvert_16UToF( int16_buffer, float_buffer, myOffset, myScale, kvImageNoFlags );   //Convert to float
- vImageConvert_FTo16U( float_buffer, int16_buffer, myOffset, myScale, kvImageNoFlags );   //Convert back to int16_t
+ vImageConvert_FTo16U( float_buffer, int16_buffer, myOffset, myScale, kvImageNoFlags );   //Convert back to uint16_t
 
  @param src
  A pointer to a valid and initialized vImage_Buffer struct, that points to a buffer containing source pixels.

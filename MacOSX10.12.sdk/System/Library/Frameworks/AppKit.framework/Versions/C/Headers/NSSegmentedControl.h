@@ -37,7 +37,7 @@ typedef NS_ENUM(NSInteger, NSSegmentStyle) {
     NSInteger _reserved1;
     NSInteger _reserved2;
     NSInteger _reserved3;
-    NSInteger _reserved4;
+    id        _scAux;
 }
 
 @property NSInteger segmentCount;
@@ -78,6 +78,8 @@ typedef NS_ENUM(NSInteger, NSSegmentStyle) {
 /*  This message is valid only for trackingMode=NSSegmentSwitchTrackingMomentaryAccelerator and provides the double value for the selected segment.
  */
 @property (readonly) double doubleValueForSelectedSegment NS_AVAILABLE_MAC(10_10_3);
+
+@property (nullable, copy) NSColor *selectedSegmentBezelColor NS_AVAILABLE_MAC(10_12_1); // The color of the selected segment's bevel, in appearances that support it
 
 @end
 

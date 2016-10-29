@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 2DAB0ED4-EF30-38FB-94E3-D5AF1FFAA785', 'x86_64: C787EE08-C699-3B6E-9E8B-7537190F19F1' ]
+uuids:           [ 'i386: E9EC719B-B58B-3662-B330-B4E4C68D516C', 'x86_64: 3543D0FD-C06E-34C1-8F3E-572F5353E55A' ]
 platform:        macosx
 install-name:    /usr/lib/libmecab.1.0.0.dylib
 objc-constraint: none

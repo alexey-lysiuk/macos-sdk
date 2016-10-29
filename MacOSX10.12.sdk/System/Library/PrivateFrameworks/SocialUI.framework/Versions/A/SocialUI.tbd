@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F6F5FF9E-066F-3A71-896B-2DE60878964F' ]
+uuids:           [ 'x86_64: 6BB8A64A-B570-3600-BBEB-54827F219529' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SocialUI.framework/Versions/A/SocialUI
 current-version: 5500.0
@@ -53,13 +53,15 @@ exports:
                        _RecipientBarBottomBaselineToBottomSendingTextContainerDelta, 
                        _RecipientBarRecipientActionsToBottomToBaselineDelta, _RecipientBarTopToToLabelToBaselineDelta, 
                        _RegisterAMRNBEncoder, _SOAVPopUpSegmentedCellCircleDiameter, 
-                       _SOAVPopUpSegmentedCellCircleStrokeWidth, _SOAddRecipientFieldCompletionWindowMaxDisplayedRows, 
-                       _SOAddRecipientFieldControllerDanglingHandleIDsKey, _SOAddRecipientFieldIDSCheckTimeout, 
-                       _SOBalloonPluginChatGuidKey, _SOBalloonPluginPasteboardType, 
-                       _SOBalloonPluginTranscriptGuidKey, _SOBundleImageNamed, _SOChatDetailsContentWidth, 
-                       _SOChatDetailsPopoverPreferredMinimumMaximumHeight, _SOChatDetailsSideMargin, 
-                       _SOChatDisplayControllerChatDidChangeNotification, _SOChatDisplayControllerChatWillChangeNotification, 
-                       _SOChatDisplayControllerInputLineContentRestorableDataKey, 
+                       _SOAVPopUpSegmentedCellCircleStrokeWidth, _SOAcknowledgementTouchBarItemIdentifier, 
+                       _SOAddRecipientFieldCompletionWindowMaxDisplayedRows, _SOAddRecipientFieldControllerDanglingHandleIDsKey, 
+                       _SOAddRecipientFieldControllerRecipientCandidateListCount, 
+                       _SOAddRecipientFieldControllerRecipientCandidateListTouchBarItemIdentifier, 
+                       _SOAddRecipientFieldIDSCheckTimeout, _SOBalloonPluginChatGuidKey, 
+                       _SOBalloonPluginPasteboardType, _SOBalloonPluginTranscriptGuidKey, 
+                       _SOBundleImageNamed, _SOChatDetailsContentWidth, _SOChatDetailsPopoverPreferredMinimumMaximumHeight, 
+                       _SOChatDetailsSideMargin, _SOChatDisplayControllerChatDidChangeNotification, 
+                       _SOChatDisplayControllerChatWillChangeNotification, _SOChatDisplayControllerInputLineContentRestorableDataKey, 
                        _SOChatDisplayControllerInputLineSelectedRangesKey, _SOChatDisplayControllerLastActivityDateDidChangeNotification, 
                        _SOChatDisplayControllerLastActivityDateKey, _SOChatDisplayControllerNewChatKey, 
                        _SOChatDisplayControllerOldChatKey, _SOChatDisplayControllerOutgoingRecipientHandlesKey, 
@@ -74,6 +76,7 @@ exports:
                        _SOHandleMenuBuddyHandlingSeparatorMenuItemTag, _SOHandleMenuComposeEmailMenuItemTag, 
                        _SOHandleMenuUserSwitchedHandleNotification, _SOInputLineBecameFirstResponderNotification, 
                        _SOInputLineBigmojiFontPointSize, _SOInputLineResignedFirstResponderNotification, 
+                       _SOInputLineTouchBarItemIdentifier, _SOInputLineTouchBarItemIdentifierTextInput, 
                        _SOInputLineViewBorderWidth, _SOInputLineViewCornerRadius, 
                        _SOInputLineViewSmileyButtonWidth, _SOInputLineViewWaveformXRadius, 
                        _SOInputLineViewWaveformYRadius, _SONewChatDisplayControllerCustomTitleKey, 

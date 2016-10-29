@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 3C47924A-3D38-3AC0-8FE7-679350E17C9F', 'x86_64: 32ED1D9C-B9AB-337B-93E5-9DDA8E68F6FB' ]
+uuids:           [ 'i386: 3E167C89-DD48-34DC-8FF2-8A9AB0D2D9C5', 'x86_64: C9AB4AB5-A2E4-344E-B898-097B86DD38D6' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Quartz.framework/Versions/A/Frameworks/PDFKit.framework/Versions/A/PDFKit
 objc-constraint: none
@@ -298,7 +298,8 @@ exports:
                        _PDFViewLayoutPrivate.singlePageContinuousSize, _PDFViewLayoutPrivate.twoUpContinousSize, 
                        _PDFViewPrivate.animateFlag, _PDFViewPrivate.antiAliasing, 
                        _PDFViewPrivate.autoScale, _PDFViewPrivate.controller, _PDFViewPrivate.currentPageIndex, 
-                       _PDFViewPrivate.currentSelection, _PDFViewPrivate.delegate, 
+                       _PDFViewPrivate.currentSelection, _PDFViewPrivate.deepPressTextRecognizer, 
+                       _PDFViewPrivate.deepPressURLRecognizer, _PDFViewPrivate.delegate, 
                        _PDFViewPrivate.delegateOrdersPageDrawing, _PDFViewPrivate.delegateWillScale, 
                        _PDFViewPrivate.destinationHistory, _PDFViewPrivate.disableInterPageSpacing, 
                        _PDFViewPrivate.displayBox, _PDFViewPrivate.displayMode, _PDFViewPrivate.displaysAsBook, 

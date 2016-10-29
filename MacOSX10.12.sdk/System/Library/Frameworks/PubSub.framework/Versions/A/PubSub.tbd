@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 1585A0F6-CF1F-39F0-8500-B187EA300521', 'x86_64: 69420016-D0E9-3863-9E44-CC8C1C98ACB1' ]
+uuids:           [ 'i386: F17AFA45-BE7F-3C86-92DC-3D7B44A8B7C6', 'x86_64: 921868A8-5B9A-3E56-B061-63166210FF18' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/PubSub.framework/Versions/A/PubSub
 objc-constraint: none

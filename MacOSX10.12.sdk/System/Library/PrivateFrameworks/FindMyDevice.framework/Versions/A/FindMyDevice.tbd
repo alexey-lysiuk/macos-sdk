@@ -1,12 +1,13 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5E711005-450E-3F4A-B10C-79AC666BDA87' ]
+uuids:           [ 'x86_64: 3372011B-9589-3F1A-85AF-967AD078ED8F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/FindMyDevice.framework/Versions/A/FindMyDevice
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
-    symbols:         [ _fmdFMMLastOperationResult, _kFMDErrorDomain, _kFMDFMMUAServicesAccessEntitlement, 
+    symbols:         [ _FMDFMMManagerUnregisterErrorDomain, _fmdFMMLastOperationResult, 
+                       _kFMDErrorDomain, _kFMDFMMNeedsLostModeExitAuth, _kFMDFMMUAServicesAccessEntitlement, 
                        _kFMDFMMUserAgentAccessEntitlement, _kFMDLogPrefsChangedDarwinNotification, 
                        _kFMDNotBackedUpPrefDomain, _kFMDPlaySoundStartedDarwinNotification, 
                        _kFMDPlaySoundStoppedDarwinNotification, _kFMDPostWipePrefDomain, 

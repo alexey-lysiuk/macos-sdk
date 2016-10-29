@@ -365,7 +365,8 @@ enum
 	kBluetoothL2CAPChannelReservedStart			= 0x0007,
     kBluetoothL2CAPChannelLEAP					= 0x002A,
     kBluetoothL2CAPChannelLEAS					= 0x002B,
-	kBluetoothL2CAPChannelMagnet				= 0x003A, // Magnet
+    kBluetoothL2CAPChannelMagicPairing			= 0x0030,
+	kBluetoothL2CAPChannelMagnet				= 0x003A,
     kBluetoothL2CAPChannelReservedEnd			= 0x003F,
     
     // Range 0x0040 to 0xFFFF are dynamically allocated.

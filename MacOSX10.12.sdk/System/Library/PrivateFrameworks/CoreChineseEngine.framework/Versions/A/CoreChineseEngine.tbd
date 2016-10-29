@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2DB79BCA-796D-3B88-A73F-E5D93BB8A6E5' ]
+uuids:           [ 'x86_64: AC0F1F7D-1E43-3C6B-9184-F481D08CD01C' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreChineseEngine.framework/Versions/A/CoreChineseEngine
-current-version: 354.0
+current-version: 355.16
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -33,6 +33,8 @@ exports:
                        __CCEPreferencesGet, __CCEPreferencesSet, __CCERunningApplication, 
                        _filePathChanged, _kCIMCangjiePunctuation, _kCIMStatisticsAddSpacesForLatinWordsPreferenceKey, 
                        _kCIMStatisticsAdjustWordFrequencyPreferenceKey, _kCIMStatisticsAutocorrectionEnabledPreferenceKey, 
+                       _kCIMStatisticsCandidateCommitTypeInlineText, _kCIMStatisticsCandidateCommitTypeNumberKeyOrMouseClick, 
+                       _kCIMStatisticsCandidateCommitTypeSpaceOrReturn, _kCIMStatisticsCandidateCommitTypeTouchBar, 
                        _kCIMStatisticsCangjieKey, _kCIMStatisticsEqualsKey, _kCIMStatisticsFuzzyPinyinEnabledPreferenceKey, 
                        _kCIMStatisticsLeftBracketKey, _kCIMStatisticsMinusKey, _kCIMStatisticsRightBracketKey, 
                        _kCIMStatisticsSCIMCandidateWindowOrientationPreferenceKey, 

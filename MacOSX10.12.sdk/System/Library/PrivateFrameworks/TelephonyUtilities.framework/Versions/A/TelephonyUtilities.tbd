@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 792FB51B-EB4B-321E-AA82-B598F1F4F9B6' ]
+uuids:           [ 'x86_64: 307EE1F3-7734-3A87-945D-DAA9B5120466' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/TelephonyUtilities.framework/Versions/A/TelephonyUtilities
 objc-constraint: none

@@ -55,6 +55,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+#pragma mark NSTextField Touch Bar Item Properties
+@interface NSTextField (NSTouchBar)
+
+@property (getter=isAutomaticTextCompletionEnabled) BOOL automaticTextCompletionEnabled NS_AVAILABLE_MAC(10_12_1);
+@property BOOL allowsCharacterPickerTouchBarItem NS_AVAILABLE_MAC(10_12_1);
+
+@end
+
 @interface NSTextField(NSTextFieldConvenience)
 
 /*!
@@ -94,6 +102,12 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @protocol NSTextFieldDelegate <NSControlTextEditingDelegate>
+@optional
+- (nullable NSArray *)textField:(NSTextField *)textField textView:(NSTextView *)textView candidatesForSelectedRange:(NSRange)selectedRange NS_AVAILABLE_MAC(10_12_1);
+
+- (NSArray<NSTextCheckingResult *> *)textField:(NSTextField *)textField textView:(NSTextView *)textView candidates:(NSArray<NSTextCheckingResult *> *)candidates forSelectedRange:(NSRange)selectedRange NS_AVAILABLE_MAC(10_12_1);
+
+- (BOOL)textField:(NSTextField *)textField textView:(NSTextView *)textView shouldSelectCandidateAtIndex:(NSUInteger)index NS_AVAILABLE_MAC(10_12_1);
 @end
 
 @interface NSTextField(NSDeprecated)

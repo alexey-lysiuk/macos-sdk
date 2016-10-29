@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F180449A-1DC4-3D93-94D3-37AEBD1DA69D' ]
+uuids:           [ 'x86_64: 20DB3D61-B223-39D3-82C3-20E4D4255990' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CommerceKit.framework/Versions/A/CommerceKit
 current-version: 379.0
@@ -22,14 +22,16 @@ exports:
                        _CKItemLookupPropertyDeveloperName, _CKItemLookupPropertyDisplayName, 
                        _CKItemLookupPropertyItemIdentifier, _CKItemLookupPropertyProductURL, 
                        _CKItemMediaKindAudio, _CKItemMediaKindForItemKind, _CKItemMediaKindSoftware, 
-                       _CKItemMediaKindUnknown, _CKItemMediaKindVideo, _CKUpToDateFirstCheckinBagKey, 
-                       _CKUpToDateFirstCheckinRequestMLBSerialNumberKey, _CKUpToDateFirstCheckinRequestROMAddressKey, 
+                       _CKItemMediaKindUnknown, _CKItemMediaKindVideo, _CKTouchIDGetPreference, 
+                       _CKTouchIDPreferencePrimaryAccount, _CKTouchIDSetPreference, 
+                       _CKUpToDateFirstCheckinBagKey, _CKUpToDateFirstCheckinRequestMLBSerialNumberKey, 
+                       _CKUpToDateFirstCheckinRequestROMAddressKey, _ISTouchIDForPurchasesStateDidChangeNotification, 
                        _SKErrorDomain, _SSDownloadKindForItemKind, _SSRemoteNotificationKeyAPS, 
                        _SSRemoteNotificationKeyAccountIdentifier, _SSRemoteNotificationKeyActionType, 
                        _SSRemoteNotificationKeyClientIdentifier, _SSRemoteNotificationKeyDownloadKinds, 
                        _SSRemoteNotificationKeyNotificationClass, _SSRemoteNotificationKeyURLString, 
-                       _kCKLaterAgentCommandKey, _kCKLaterAgentMachListenerName, 
-                       _kCKLaterAgentModeKey ]
+                       __touchIDClients, __touchIDPreferencePrimaryAccount, _kCKLaterAgentCommandKey, 
+                       _kCKLaterAgentMachListenerName, _kCKLaterAgentModeKey ]
     objc-classes:    [ _CKAccountAuthentication, _CKAccountStore, _CKAccountStoreClient, 
                        _CKAppStoreLauncher, _CKAppleIDAuthentication, _CKAppleIDCookie, 
                        _CKBag, _CKBagClient, _CKBookCache, _CKBookLibrary, _CKBookLibraryClient, 
@@ -40,11 +42,11 @@ exports:
                        _CKItemTellAFriend, _CKLaterAgent, _CKLicenseAgreementSheet, 
                        _CKMachineAuthorization, _CKPreflightURLRequest, _CKPurchaseController, 
                        _CKPushNotificationManager, _CKRestoreDownloadsRequest, _CKServiceInterface, 
-                       _CKSoftwareMap, _CKSoftwareMapObserver, _CKStoreClient, _CKUpToDate, 
-                       _CKUpdateController, _CKUpdateControllerClient, _CKiTunesAppleIDAuthentication, 
-                       _ISAppleIDCookie, _ISAutomaticDownloadQueue, _ISLoadURLBagOperation, 
-                       _ISProcessPropertyListOperation, _ISURLBag, _ISURLBagContext, 
-                       _ISURLCache, _ISURLCacheGroup, _SSMutableURLRequestProperties, 
+                       _CKSoftwareMap, _CKSoftwareMapObserver, _CKStoreClient, _CKTouchIDSession, 
+                       _CKUpToDate, _CKUpdateController, _CKUpdateControllerClient, 
+                       _CKiTunesAppleIDAuthentication, _ISAppleIDCookie, _ISAutomaticDownloadQueue, 
+                       _ISLoadURLBagOperation, _ISProcessPropertyListOperation, _ISURLBag, 
+                       _ISURLBagContext, _ISURLCache, _ISURLCacheGroup, _SSMutableURLRequestProperties, 
                        _SSRemoteNotification, _SSRestoreContentItem, _SSURLRequestProperties, 
                        _SetupAssistantPlugin ]
     objc-ivars:      [ _CKAccountAuthentication._accountName, _CKAccountAuthentication._attempt, 

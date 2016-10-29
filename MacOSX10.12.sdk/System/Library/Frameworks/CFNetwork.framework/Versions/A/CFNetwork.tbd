@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 6BE76950-82AA-33F1-BDC0-C3AC05C34DF8', 'x86_64: 5E202D72-1AFF-371A-AA88-987098B36971' ]
+uuids:           [ 'i386: 3261744F-889F-3393-8D32-71E463C6445C', 'x86_64: 5FE725AE-960B-34D9-9A4C-E450F4B7306B' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork
-current-version: 807.0.2
+current-version: 807.1.3
 objc-constraint: none
 exports:         
   - archs:           [ i386 ]
@@ -984,15 +984,15 @@ exports:
                        __CFNetworkUnitTestVaryHeaderSupport, __CFNetworkUnitTest_CheckStorageCorrectness_24988003, 
                        __CFNetworkUnitTest_CopyAllHosts, __CFNetworkUnitTest_HTTPEngine_HTTPTrailerProperty, 
                        __CFNetworkUnitTest_HTTPEngine_HTTPTrailerProperty_Background, 
-                       __CFNetworkUnitTest_HTTPSafariCookies, __CFNetworkUnitTest_ReadFromDiskOnDBFirstCreate, 
-                       __CFNetworkUnitWebCacheLoadPerf, __CFServerCopyName, __CFServerCopyServiceType, 
-                       __CFServerCreate, __CFServerGetPort, __CFServerGetTypeID, 
-                       __CFServerInvalidate, __CFServerScheduleWithDispatchQueue, 
-                       __CFServerScheduleWithRunLoopAndMode, __CFServerSetInterface, 
-                       __CFServerStart, __CFSocketStreamCreatePair, __CFStreamErrorFromCFError, 
-                       __CFStringCreateRFC1123DateStringWithGregorianDate, __CFStringCreateRFC2616DateStringWithGregorianDate, 
-                       __CFURLAuthChallengeCreateArchive, __CFURLAuthChallengeCreateFromArchive, 
-                       __CFURLCacheCopyAllHostNamesInPersistentStore, __CFURLCacheCopyAllHostNamesInPersistentStoreForPartition, 
+                       __CFNetworkUnitTest_ReadFromDiskOnDBFirstCreate, __CFNetworkUnitWebCacheLoadPerf, 
+                       __CFServerCopyName, __CFServerCopyServiceType, __CFServerCreate, 
+                       __CFServerGetPort, __CFServerGetTypeID, __CFServerInvalidate, 
+                       __CFServerScheduleWithDispatchQueue, __CFServerScheduleWithRunLoopAndMode, 
+                       __CFServerSetInterface, __CFServerStart, __CFSocketStreamCreatePair, 
+                       __CFStreamErrorFromCFError, __CFStringCreateRFC1123DateStringWithGregorianDate, 
+                       __CFStringCreateRFC2616DateStringWithGregorianDate, __CFURLAuthChallengeCreateArchive, 
+                       __CFURLAuthChallengeCreateFromArchive, __CFURLCacheCopyAllHostNamesInPersistentStore, 
+                       __CFURLCacheCopyAllHostNamesInPersistentStoreForPartition, 
                        __CFURLCacheCopyAllPartitionNames, __CFURLCacheCopyCacheDirectory, 
                        __CFURLCacheCreateFS1, __CFURLCacheCreateFS2, __CFURLCacheCreateFS3, 
                        __CFURLCacheDeleteHostNamesInPersistentStore, __CFURLCacheDeleteHostNamesInPersistentStoreForPartition, 

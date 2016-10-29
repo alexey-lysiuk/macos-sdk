@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: C0A3A650-4765-3244-828F-0DCC8C9D628A', 'x86_64: 837B7ECF-7E62-3210-988C-63D7AB4EAA88' ]
+uuids:           [ 'i386: 971A2673-768A-3281-83A2-83B3C2D600E1', 'x86_64: C25F25D6-51DB-36AE-AA70-822FD5A7F511' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore
 current-version: 1159.0

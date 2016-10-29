@@ -115,7 +115,7 @@ extern const CFStringRef kIOSurfaceIsGlobal					IOSFC_AVAILABLE_BUT_DEPRECATED(_
 extern const CFStringRef kIOSurfacePixelFormat					IOSFC_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_3_0);
 
 /* kIOSurfacePixelSizeCastingAllowed - If false the creator promises that there will be no pixel size casting when used on the GPU.  Default is true.  */
-extern const CFStringRef kIOSurfacePixelSizeCastingAllowed					IOSFC_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_9_0);
+extern const CFStringRef kIOSurfacePixelSizeCastingAllowed					IOSFC_AVAILABLE_STARTING(__MAC_10_12, __IPHONE_10_0);
 
 CFTypeID IOSurfaceGetTypeID(void)
 	IOSFC_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_3_0);

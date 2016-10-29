@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: B3328656-FB95-3D9F-91A6-A6872889F7A7', 'x86_64: DC7FF539-DC4A-339C-81AC-D3E93F537465' ]
+uuids:           [ 'i386: EF4F4EBC-3C0D-3028-A2DA-26B6F33AA4C9', 'x86_64: F5D34A32-7DF2-3CEB-81DC-1003644F75EE' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/OpenCL.framework/Versions/A/Libraries/PTXSM1X.dylib
 objc-constraint: none

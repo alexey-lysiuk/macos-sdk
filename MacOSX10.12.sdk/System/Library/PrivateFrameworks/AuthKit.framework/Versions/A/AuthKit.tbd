@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 40B26C61-82FB-340F-AD14-A69E029172A3' ]
+uuids:           [ 'x86_64: 1F17C097-E310-3F50-AF2C-DE9D41C06382' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AuthKit.framework/Versions/A/AuthKit
 objc-constraint: none

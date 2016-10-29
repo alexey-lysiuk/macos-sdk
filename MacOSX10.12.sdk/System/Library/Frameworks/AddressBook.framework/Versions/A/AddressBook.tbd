@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: B5706616-64A2-3E48-B929-F3009948895C', 'x86_64: 913D8248-4EDD-3E80-B350-71C1A75C12D1' ]
+uuids:           [ 'i386: 12ABD8D7-8E7D-334E-BEF2-9AC336976F0D', 'x86_64: BD34645E-D9D1-3F31-96A9-554DC52DBDB2' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/AddressBook.framework/Versions/A/AddressBook
-current-version: 1755.0
+current-version: 1756.9
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -410,8 +410,8 @@ exports:
                        _ABThrottlingLogger, _ABTimeMachineTempFileHelper, _ABTracedLog, 
                        _ABTrackingArea, _ABURL, _ABUndoManager, _ABUnlinkPeopleCommand, 
                        _ABUserDefaults, _ABVCardFileSerializer, _ABVCardFilenameExpander, 
-                       _ABVCardParser, _ABVCardSharingTask, _ABView, _ABXMLParseNode, 
-                       _ABZeroingWeakReference, _AKAggregateUndoableCommand, _AKAggregateUndoableCommandBuilder, 
+                       _ABVCardParser, _ABView, _ABXMLParseNode, _ABZeroingWeakReference, 
+                       _AKAggregateUndoableCommand, _AKAggregateUndoableCommandBuilder, 
                        _AKCardViewDataSource, _AKCardViewDataSourceFactory, _AKEditPropertyCommand, 
                        _AKSetMeCardCommand, _PHXSource, __ABPersonView ]
 ...

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 47BE12F7-1264-3980-9550-0B19785B4F62' ]
+uuids:           [ 'x86_64: BA2A099B-B46F-3EF4-827F-62015E928984' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AirPlaySender.framework/Versions/A/AirPlaySender
 objc-constraint: none

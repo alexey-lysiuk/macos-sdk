@@ -1,35 +1,41 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 551283E6-B13A-3D93-B014-EE920CF1F18B', 'x86_64: A18D2718-2A49-372A-9791-9986A2F35B3A' ]
+uuids:           [ 'i386: 1C83E2BB-39B5-3BFE-804C-BEC25CA4D9E7', 'x86_64: 3B3A6472-9B38-3013-A116-6391313DC9DB' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ViewBridge.framework/Versions/A/ViewBridge
 objc-constraint: none
 exports:         
   - archs:           [ i386 ]
-    objc-classes:    [ _CALayerHostForRemoteView, _ClientCallsAuxiliary, _ControlListenerDelegate, 
-                       _ControlsAuxiliary, _HostAndService, _HostListenerDelegate, 
-                       _HostOrService, _ListenerDelegate, _NSCFRunLoopObserver, _NSDeferredSheet, 
-                       _NSEventQueue, _NSFakeServiceResponder, _NSObtainingEndpointState, 
-                       _NSRemoteViewControllerAuxiliary, _NSRemoteViewMarshal, _NSRemoteViewSemaphore, 
-                       _NSRendezvousAppModalSessionController, _NSRendezvousChildPanelController, 
-                       _NSRendezvousChildWindowController, _NSRendezvousChildWindowDelegate, 
-                       _NSRendezvousPopoverController, _NSRendezvousPopoverDelegate, 
-                       _NSRendezvousSheetController, _NSRendezvousWindowController, 
-                       _NSSelfDestructingRemoteViewDelegate, _NSServiceViewControllerAuxiliary, 
+    objc-classes:    [ _CALayerHostForRemoteView, _CalledByClient, _ClientCallsAuxiliary, 
+                       _ControlListenerDelegate, _HostAndService, _HostListenerDelegate, 
+                       _HostOrService, _ListenerDelegate, _NSCFRunLoopObserver, _NSCustomTouchBarItemForRemoteView, 
+                       _NSDeferredSheet, _NSEventQueue, _NSFakeServiceResponder, 
+                       _NSGroupTouchBarItemForRemoteView, _NSObtainingEndpointState, 
+                       _NSPanelForServiceViewControllerForTouchBarItem, _NSRemoteViewControllerAuxiliary, 
+                       _NSRemoteViewControllerForTouchBarItem, _NSRemoteViewMarshal, 
+                       _NSRemoteViewSemaphore, _NSRendezvousAppModalSessionController, 
+                       _NSRendezvousChildPanelController, _NSRendezvousChildWindowController, 
+                       _NSRendezvousChildWindowDelegate, _NSRendezvousPopoverController, 
+                       _NSRendezvousPopoverDelegate, _NSRendezvousSheetController, 
+                       _NSRendezvousWindowController, _NSSelfDestructingRemoteViewDelegate, 
+                       _NSServiceViewControllerAuxiliary, _NSServiceViewControllerForTouchBarItem, 
                        _NSServiceViewControllerUnifyingProxy, _NSServiceViewControllerWindow, 
-                       _NSVBAccessoryWindow, _NSVBAccessoryWindowBackstopResponder, 
-                       _NSVBNamedFault, _NSVBObjectDeallocationCanary, _NSVBTestedFault, 
-                       _NSVB_ProxyObject, _NSVB_QueueingProxy, _NSVB_TargetedProxy, 
-                       _NSVB_View, _NSVB_ViewAnimationAttributes, _NSVB_ViewServiceBehaviorProxy, 
-                       _NSVB_ViewServiceFencingControlProxy, _NSVB_ViewServiceFencingController, 
-                       _NSVB_ViewServiceImplicitAnimationDecodingProxy, _NSVB_ViewServiceImplicitAnimationEncodingProxy, 
-                       _NSVB_ViewServiceReplyAwaitingTrampoline, _NSVB_ViewServiceReplyControlProxy, 
-                       _NSVB_ViewServiceReplyControlTrampoline, _NSVB_ViewServiceXPCMachSendRight, 
-                       _NSVB_Window, _NSViewBridgeObject, _NSViewBridgeObjectBase, 
-                       _NSViewRemoteBridge, _NSViewServiceApplication, _NSViewServiceListenerDelegate, 
-                       _NSViewServiceMarshal, _NSViewService_PKSubsystem, _NSXPCSharedListenerManager, 
-                       _NSXPCSharedListenerManagerDelegate, _ServiceListenerDelegate, 
-                       _ViewHost, _ViewService ]
+                       _NSSpaceTouchBarItemForRemoteView, _NSTouchBarForRemoteView, 
+                       _NSTouchBarItemOverlayForRemoteView, _NSTouchBarItemSurprise, 
+                       _NSTouchBarItemViewForServiceViewController, _NSVBAccessoryWindow, 
+                       _NSVBAccessoryWindowBackstopResponder, _NSVBNamedFault, _NSVBObjectDeallocationCanary, 
+                       _NSVBTestedFault, _NSVB_ProxyObject, _NSVB_QueueingProxy, 
+                       _NSVB_TargetedProxy, _NSVB_View, _NSVB_ViewAnimationAttributes, 
+                       _NSVB_ViewServiceBehaviorProxy, _NSVB_ViewServiceFencingControlProxy, 
+                       _NSVB_ViewServiceFencingController, _NSVB_ViewServiceImplicitAnimationDecodingProxy, 
+                       _NSVB_ViewServiceImplicitAnimationEncodingProxy, _NSVB_ViewServiceReplyAwaitingTrampoline, 
+                       _NSVB_ViewServiceReplyControlProxy, _NSVB_ViewServiceReplyControlTrampoline, 
+                       _NSVB_ViewServiceXPCMachSendRight, _NSVB_Window, _NSViewBridgeObject, 
+                       _NSViewBridgeObjectBase, _NSViewRemoteBridge, _NSViewServiceApplication, 
+                       _NSViewServiceListenerDelegate, _NSViewServiceMarshal, _NSViewService_PKSubsystem, 
+                       _NSXPCSharedListenerManager, _NSXPCSharedListenerManagerDelegate, 
+                       _ServiceListenerDelegate, _ViewBridgeUtilities, _ViewHost, 
+                       _ViewService ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ _NSViewBridgeErrorDomain, _NSViewServiceApplicationMain, _ViewBridgeAuxiliaryMain ]
     objc-classes:    [ _NSCFRunLoopSemaphore, _NSLayerCentricRemoteView, _NSRemoteView, 

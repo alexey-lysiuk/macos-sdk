@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 52733D4B-40D3-3154-8DF9-01B8638F10AA' ]
+uuids:           [ 'x86_64: 959D7CB2-9996-31DC-81A5-7A6E043E6283' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SafariShared.framework/Versions/A/SafariShared
-current-version: 602.1.50
+current-version: 602.2.14
 compatibility-version: 0.0
 objc-constraint: none
 exports:         
@@ -140,7 +140,8 @@ exports:
                        _WBSParsecSearchMapsResultInCardPhoneAction, _WBSParsecSearchResultErrorDomain, 
                        _WBSParsecSportsImageErrorDomain, _WBSParsecSportsScoreSummaryErrorDomain, 
                        _WBSParsecTitleCardSectionErrorDomain, _WBSParsecTrailerErrorDomain, 
-                       _WBSParsecTrailersCardSectionErrorDomain, _WBSQuickWebsiteSearchControllerDidFinishLoadingNotification, 
+                       _WBSParsecTrailersCardSectionErrorDomain, _WBSPerformBlockOnRunLoopWithCommonModes, 
+                       _WBSQuickWebsiteSearchControllerDidFinishLoadingNotification, 
                        _WBSQuickWebsiteSearchProviderKey, _WBSQuickWebsiteSearchProviderWasAddedNotification, 
                        _WBSReaderConfigurationJavaScriptEnabledKey, _WBSRecentlyUsedAutoFillSetArrayKey, 
                        _WBSRecentlyUsedAutoFillSetDoNotFillArrayKey, _WBSRecentlyUsedAutoFillSetDoNotFillIdentifier, 

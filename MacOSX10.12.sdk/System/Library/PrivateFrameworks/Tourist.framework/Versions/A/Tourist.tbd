@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FADE88DC-68D3-37EF-87B8-7286F285197A' ]
+uuids:           [ 'x86_64: 12320742-E203-366B-873F-614E7A83AB16' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Tourist.framework/Versions/A/Tourist
 objc-constraint: none

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5DA3EE29-C1CA-3917-9DDB-6F4FDB4DFD0B' ]
+uuids:           [ 'x86_64: 4DC86545-F244-3535-A215-F871417747DB' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ScreenReader.framework/Versions/A/Frameworks/ScreenReaderCore.framework/Versions/A/ScreenReaderCore
 current-version: 390.0
@@ -64,17 +64,17 @@ exports:
                        _kSCRCConfigurationVerbosityCustom, _kSCRCConfigurationVerbosityHigh, 
                        _kSCRCConfigurationVerbosityLevel, _kSCRCConfigurationVerbosityLow, 
                        _kSCRCConfigurationVerbosityMedium, _kSCRCDidChangeCurrentProfileNotification, 
-                       _kSCRCKeyboardKey, _kSCRCMathExpressionKeyBaseObject, _kSCRCMathExpressionKeyChildren, 
-                       _kSCRCMathExpressionKeyCloseOperator, _kSCRCMathExpressionKeyContent, 
-                       _kSCRCMathExpressionKeyDenominatorObject, _kSCRCMathExpressionKeyFontStyle, 
-                       _kSCRCMathExpressionKeyLineThickness, _kSCRCMathExpressionKeyNumeratorObject, 
-                       _kSCRCMathExpressionKeyOpenOperator, _kSCRCMathExpressionKeyOperator, 
-                       _kSCRCMathExpressionKeyOverObject, _kSCRCMathExpressionKeyRadicandObject, 
-                       _kSCRCMathExpressionKeyRootIndexObject, _kSCRCMathExpressionKeySubscriptObject, 
-                       _kSCRCMathExpressionKeySuperscriptObject, _kSCRCMathExpressionKeyType, 
-                       _kSCRCMathExpressionKeyUnderObject, _kSCRCMathExpressionKeyUnichar, 
-                       _kSCRCMathExpressionTermKeyPrefix, _kSCRCMathFontStyleBold, 
-                       _kSCRCMathFontStyleItalic, _kSCRCMathStringAttributeIsNonTechnicalText, 
+                       _kSCRCKeyboardKey, _kSCRCKeyboardKeyModern, _kSCRCMathExpressionKeyBaseObject, 
+                       _kSCRCMathExpressionKeyChildren, _kSCRCMathExpressionKeyCloseOperator, 
+                       _kSCRCMathExpressionKeyContent, _kSCRCMathExpressionKeyDenominatorObject, 
+                       _kSCRCMathExpressionKeyFontStyle, _kSCRCMathExpressionKeyLineThickness, 
+                       _kSCRCMathExpressionKeyNumeratorObject, _kSCRCMathExpressionKeyOpenOperator, 
+                       _kSCRCMathExpressionKeyOperator, _kSCRCMathExpressionKeyOverObject, 
+                       _kSCRCMathExpressionKeyRadicandObject, _kSCRCMathExpressionKeyRootIndexObject, 
+                       _kSCRCMathExpressionKeySubscriptObject, _kSCRCMathExpressionKeySuperscriptObject, 
+                       _kSCRCMathExpressionKeyType, _kSCRCMathExpressionKeyUnderObject, 
+                       _kSCRCMathExpressionKeyUnichar, _kSCRCMathExpressionTermKeyPrefix, 
+                       _kSCRCMathFontStyleBold, _kSCRCMathFontStyleItalic, _kSCRCMathStringAttributeIsNonTechnicalText, 
                        _kSCRCMathStringAttributeSpeakLiteralCharacters, _kSCRCMathStringAttributeSpeakWithPitchInflection, 
                        _kSCRCMathStringAttributeTreePosition, _kSCRCMathTypeFenced, 
                        _kSCRCMathTypeFraction, _kSCRCMathTypeIdentifier, _kSCRCMathTypeLongDivision, 
@@ -250,8 +250,7 @@ exports:
                        _kSCRCUserDefaultsWebPreventKeyboardDOMEventDispatch, _kSCRCUserDefaultsWebRotorItemEnabled, 
                        _kSCRCUserDefaultsWebRotorItemKey, _kSCRCUserDefaultsWebRotorOrdering, 
                        _kSCRCUserDefaultsWebTablesRequireInteraction, _kSCRCUserDefaultsWebpageLoadingBehavior, 
-                       _kSCRCUserDefaultsWordDelimiter, _kSCRKeysToUseForVOModifier, 
-                       _kSCRUserDefaultsDisableFKeys ]
+                       _kSCRCUserDefaultsWordDelimiter, _kSCRKeysToUseForVOModifier ]
     objc-classes:    [ _SCRCArgumentParser, _SCRCArgumentSubcommand, _SCRCColorUtilities, 
                        _SCRCComposedCharacter, _SCRCConfiguration, _SCRCGestureEvent, 
                        _SCRCGestureFactory, _SCRCGestureFinger, _SCRCIndexMap, _SCRCMathExpression, 

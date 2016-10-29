@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: E6B06BB2-432D-3546-8198-C7BFC9DD2CA8', 'x86_64: 9DBD244F-83A0-3593-AA84-313CD5861F2C' ]
+uuids:           [ 'i386: C35625BA-3318-3C52-B762-D91E8B486FC8', 'x86_64: 21889DD8-CE09-3879-91B7-B1579AFFE6B6' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CloudDocs.framework/Versions/A/CloudDocs
-current-version: 483.2
+current-version: 483.3
 compatibility-version: 0.0
 objc-constraint: none
 exports:         

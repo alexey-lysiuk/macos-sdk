@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0D72BC86-30F2-3193-A6A2-7F2C47430BDD' ]
+uuids:           [ 'x86_64: DEFBFE82-D573-3EC5-9CA6-1BEABA13C457' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Swift/libswiftCoreBluetooth.dylib
 current-version: 800.8.18

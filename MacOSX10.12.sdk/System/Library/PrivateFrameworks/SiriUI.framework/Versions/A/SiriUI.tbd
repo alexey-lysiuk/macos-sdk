@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 80223C19-B6BE-3E31-A7D8-6F54BA30837C' ]
+uuids:           [ 'x86_64: 773844B9-41EA-3F5A-ABDA-8ED3DD66D278' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SiriUI.framework/Versions/A/SiriUI
 objc-constraint: none

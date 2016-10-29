@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: B9402B14-B90E-33FE-9EB1-550910D83681', 'x86_64: A6007FBD-25F7-3F52-972A-EEFCE0F6BF70' ]
+uuids:           [ 'i386: CD5C06D1-541D-3260-9DEF-21FF0E2703DF', 'x86_64: 28F3E469-6A93-3406-AF16-F07B622183FA' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/GeoServices.framework/Versions/A/GeoServices
-current-version: 1226.20.7
+current-version: 1228.21.7
 objc-constraint: none
 exports:         
   - archs:           [ i386 ]
@@ -63,7 +63,8 @@ exports:
                        __GEODirectionsError, __GEODirectionsRequestTicket, __GEOEncyclopedicInfo, 
                        __GEOExperimentConfigurationObserverProxy, __GEOExperimentServiceRequester, 
                        __GEOLocationShiftLocation, __GEOLocationShiftRequester, __GEOLocationShifterLocalProxy, 
-                       __GEOLocationShifterRemoteProxy, __GEOMUIDsTicket, __GEOMapItemStorageNotificationTrampoline, 
+                       __GEOLocationShifterRemoteProxy, __GEOMUIDsTicket, __GEOMapItemHandleCacheData, 
+                       __GEOMapItemHandleCacheDelegate, __GEOMapItemStorageNotificationTrampoline, 
                        __GEOMapItemTransitAttribution, __GEOMapItemTransitInfo, __GEOMapItemTransitInfoSnippet, 
                        __GEOMapItemTransitInfoSnippetLabelItem, __GEONSURLSessionWaiter, 
                        __GEONetworkDefaultsLocalProxy, __GEONetworkDefaultsRemoteProxy, 
@@ -279,6 +280,7 @@ exports:
                        _GEOMapItemDetourInfo._detourInfo, _GEOMapRequest._cancellationHandler, 
                        _GEOMapRequest._completionHandler, _GEOMapRequest._isFinished, 
                        _GEOMapRequest._requestManager, _GEOMapService._additionalEnabledMarketsChangedToken, 
+                       _GEOMapService._handleCache, _GEOMapService._handleCacheDelegate, 
                        _GEOMapService._overriddenResultProviderID, _GEOMapService._placeDataObserverQueue, 
                        _GEOMapService._placeDataObservers, _GEOMapService._preferredLanguages, 
                        _GEOMapService._preferredLanguagesLock, _GEOMapURLBuilder._dict, 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: ECCF7F7D-70B2-3D38-8064-D1176395CED1' ]
+uuids:           [ 'x86_64: C634072B-BFB8-3218-B2F3-C13ADAB05B15' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/InternetAccounts.framework/Versions/A/InternetAccounts
 objc-constraint: none

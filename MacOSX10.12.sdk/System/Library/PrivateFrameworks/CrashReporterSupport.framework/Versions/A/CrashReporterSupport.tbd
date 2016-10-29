@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 283EA9B9-F15E-3669-809D-A4456D30561B', 'x86_64: CBB54537-ADE2-3656-8575-504CB7B96172' ]
+uuids:           [ 'i386: 7D0C8D14-A4B3-31FF-B3B7-0EFE27B448E1', 'x86_64: 6097DEDC-EC1C-30B2-AEE7-41B22905DE72' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CrashReporterSupport.framework/Versions/A/CrashReporterSupport
-current-version: 814.0
+current-version: 816.0
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]
@@ -19,9 +19,10 @@ exports:
                        _CRHasBeenAppleInternalRecently, _CRIsAppleInternal, _CRIsAutoSubmitEnabled, 
                        _CRIsSeedBuild, _CRIsThirdPartyApplicationDataSubmissionEnabled, 
                        _CROpenProblemReport, _CRPrimeIsAppleInternal, _CRSaveProblemReport, 
-                       _CRSubmitProblemReport, _CopyUpdatedWhitelistRanges, _CrashReporterSupportVersionNumber, 
-                       _CrashReporterSupportVersionString, __CRAppendProblemReport, 
-                       __CRAsyncLoggingFinish, __CRAutoSubmitEnabledIsSet, __CRCleanUpLegacyLinksInDirectory, 
+                       _CRSubmitProblemReport, _CopyExtensionForProblemType, _CopyUpdatedWhitelistRanges, 
+                       _CrashReporterSupportVersionNumber, _CrashReporterSupportVersionString, 
+                       _OSAWriteLogForSubmission, __CRAppendProblemReport, __CRAsyncLoggingFinish, 
+                       __CRAutoSubmitEnabledIsSet, __CRCleanUpLegacyLinksInDirectory, 
                        __CRCopyAppleEmailAddress, __CRCopyCrashHistoryForProcess, 
                        __CRCopyCrashHistoryURLForProcess, __CRCopyDiagnosticMessagesHistoryValue, 
                        __CRCopyExecutablePathAndNameForPIDDetectingInconsistencies, 
@@ -69,7 +70,8 @@ exports:
                        _kCRProblemReportSubmissionTimeStampKey, _kCRProblemReportSubroutingKey, 
                        _kCRProblemReportSystemProfileKey, _kCRProblemReportURLKey, 
                        _kCRProblemReportUserMissingLibraryKey, _kCRProblemTypeAssumptionViolation, 
-                       _kCRProblemTypeConnectionFailure, _kCRProblemTypeCrash, _kCRProblemTypeDifferentialPrivacy, 
+                       _kCRProblemTypeBridge, _kCRProblemTypeBridgeRestore, _kCRProblemTypeConnectionFailure, 
+                       _kCRProblemTypeCrash, _kCRProblemTypeDifferentialPrivacy, 
                        _kCRProblemTypeExcResource, _kCRProblemTypeGPURestart, _kCRProblemTypeHang, 
                        _kCRProblemTypeHeartbeat, _kCRProblemTypeIOMicroStackShot, 
                        _kCRProblemTypeMemoryResource, _kCRProblemTypeMicroStackShots, 
@@ -82,4 +84,5 @@ exports:
                        _kMsgTracerKeyMessage, _kMsgTracerKeyResult, _kMsgTracerKeySignature, 
                        _kMsgTracerKeySignature2, _kMsgTracerKeySignature3, _kMsgTracerKeyUUID, 
                        _kMsgTracerKeyValue, _kMsgTracerKeyValue2, _kMsgTracerKeyValue3 ]
+    objc-classes:    [ _OSALogWriter ]
 ...

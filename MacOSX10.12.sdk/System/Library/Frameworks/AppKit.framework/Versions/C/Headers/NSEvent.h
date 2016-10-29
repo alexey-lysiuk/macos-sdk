@@ -57,7 +57,8 @@ typedef NS_ENUM(NSUInteger, NSEventType) {        /* various types of events */
     NSEventTypeQuickLook NS_ENUM_AVAILABLE_MAC(10_8) = 33,
     
 #if __LP64__
-    NSEventTypePressure NS_ENUM_AVAILABLE_MAC(10_10_3) = 34
+    NSEventTypePressure NS_ENUM_AVAILABLE_MAC(10_10_3) = 34,
+    NSEventTypeDirectTouch NS_ENUM_AVAILABLE_MAC(10_10) = 37,
 #endif
 };
 
@@ -124,6 +125,7 @@ typedef NS_OPTIONS(unsigned long long, NSEventMask) { /* masks for the types of 
      */
     NSEventMaskSmartMagnify NS_ENUM_AVAILABLE_MAC(10_8) = 1ULL << NSEventTypeSmartMagnify,
     NSEventMaskPressure NS_ENUM_AVAILABLE_MAC(10_10_3) = 1ULL << NSEventTypePressure,
+    NSEventMaskDirectTouch NS_ENUM_AVAILABLE_MAC(10_12_1) = 1ULL << NSEventTypeDirectTouch,
 #endif
     
     NSEventMaskAny              = NSUIntegerMax,
@@ -539,6 +541,16 @@ typedef NS_ENUM(NSInteger, NSPressureBehavior) {
 
 
 - (NSSet<NSTouch *> *)touchesMatchingPhase:(NSTouchPhase)phase inView:(nullable NSView *)view NS_AVAILABLE_MAC(10_6);
+
+/* Only valid for NSEventTypeGesture events. Equivalent to [event touchesMatchingPhase:NSTouchPhaseAny inView:nil] */
+- (NSSet <NSTouch *> *)allTouches NS_AVAILABLE_MAC(10_12);
+
+/* Only valid for NSEventTypeGesture events. Equivalent to [event touchesMatchingPhase:NSTouchPhaseAny inView:view] */
+- (NSSet <NSTouch *> *)touchesForView:(NSView *)view NS_AVAILABLE_MAC(10_12);
+
+/* An array of auxiliary NSTouch’s for the touch events that did not get delivered for a given main touch. This also includes an auxiliary version of the main touch itself. Only valid for NSEventTypeDirectTouch events.
+*/
+- (NSArray <NSTouch *> *)coalescedTouchesForTouch:(NSTouch *)touch NS_AVAILABLE_MAC(10_12_1);
 
 /* The phase of a gesture scroll event. A gesture phrase are all the events that begin with a NSEventPhaseBegan and end with either a NSEventPhaseEnded or NSEventPhaseCancelled. All the gesture events are sent to the view under the cursor when the NSEventPhaseBegan occurred.  A gesture scroll event starts with a NSEventPhaseBegan phase and ends with a NSPhaseEnded. Legacy scroll wheel events (say from a Mighty Mouse) and momentum scroll wheel events have a phase of NSEventPhaseNone.
     Valid for NSEventTypeScrollWheel

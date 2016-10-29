@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 2F0D9EA6-8A89-3EC9-8A4D-50A4504DA6A2', 'x86_64: F10A8D4C-AF4D-3E2B-B609-5258F699A354' ]
+uuids:           [ 'i386: C2D9D4F9-3B0F-3D64-B545-45E2752A2812', 'x86_64: 7D3B5C2E-894C-3E58-AE1D-1639043DBE08' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Resources/ATSHI.dylib
 objc-constraint: none

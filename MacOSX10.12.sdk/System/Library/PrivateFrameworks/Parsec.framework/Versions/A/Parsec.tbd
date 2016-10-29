@@ -1,19 +1,21 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3063DBFA-9EA6-3885-90AE-4BAE74F645C3' ]
+uuids:           [ 'x86_64: 0655B483-157F-38AB-8164-46A1227D828C' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Parsec.framework/Versions/A/Parsec
-current-version: 1070.0
+current-version: 1075.17
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _GetActivityName, _PRSLogInit, _PRSParsecVersionNumber, _PRSParsecVersionString, 
-                       _ReleaseActivityName, _decodeImage, _decodeImageAlignment, 
-                       _decodeImageArray, _decodeSFColumnAlignment, _decodeSFImageAlignment, 
-                       _decodeSFRichTextToFormattedText, _decodeSFRowAlignment, _decodeSFTextAlignment, 
-                       _decodeTextAlignment, _gExtraParam, _gPRSLogLevel, _json_char_table, 
-                       _json_parse, _json_utf8_string, _locationLock, _mt_log_Spotlight_rankingAnalytics, 
-                       _register_activity, _resourceResolutionKey ]
+                       _ReleaseActivityName, _allTimeWindow, _dailyWindow, _days, 
+                       _decodeImage, _decodeImageAlignment, _decodeImageArray, _decodeSFColumnAlignment, 
+                       _decodeSFImageAlignment, _decodeSFRichTextToFormattedText, 
+                       _decodeSFRowAlignment, _decodeSFTextAlignment, _decodeTextAlignment, 
+                       _gExtraParam, _gPRSLogLevel, _hours, _json_char_table, _json_parse, 
+                       _json_utf8_string, _locationLock, _minutes, _mt_log_Spotlight_rankingAnalytics, 
+                       _recentWindow, _recommendedValuesList, _register_activity, 
+                       _resourceResolutionKey, _weeklyWindow, _weeks ]
     objc-classes:    [ _PRSAbandonmentFeedback, _PRSActionButton, _PRSAlbum, _PRSAppLinkCardSection, 
                        _PRSAppLinkSection, _PRSAuxiliaryInfo, _PRSBagHandler, _PRSBaseCardSection, 
                        _PRSBaseEntry, _PRSBuyButton, _PRSCEPData, _PRSCardSection, 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 02614C76-5401-3538-840C-1A9AFE86EBCE', 'x86_64: 558D4451-2D9D-3D47-B3A5-E7C18DF53F1B' ]
+uuids:           [ 'i386: 5505D516-DC0A-37D6-975E-8C803C01380F', 'x86_64: A4D6ADDE-22D9-338A-A191-2952F4BE1572' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/IOSurface.framework/Versions/A/IOSurface
 objc-constraint: none

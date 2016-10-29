@@ -27,7 +27,7 @@ typedef NS_ENUM(NSInteger, LAPolicy)
     ///
     ///             Biometric authentication will get locked after 5 unsuccessful attempts. After that,
     ///             users have to unlock it by entering passcode.
-    LAPolicyDeviceOwnerAuthenticationWithBiometrics NS_ENUM_AVAILABLE(NA, 8_0) __WATCHOS_AVAILABLE(3.0) __TVOS_AVAILABLE(10.0) = kLAPolicyDeviceOwnerAuthenticationWithBiometrics,
+    LAPolicyDeviceOwnerAuthenticationWithBiometrics NS_ENUM_AVAILABLE(10_12, 8_0) __WATCHOS_AVAILABLE(3.0) __TVOS_AVAILABLE(10.0) = kLAPolicyDeviceOwnerAuthenticationWithBiometrics,
 
     /// Device owner was authenticated by Touch ID or device passcode.
     ///
@@ -47,7 +47,7 @@ typedef NS_ENUM(NSInteger, LAPolicy)
 } NS_ENUM_AVAILABLE(10_10, 8_0) __WATCHOS_AVAILABLE(3.0) __TVOS_AVAILABLE(10.0);
 
 /// The maximum value for LAContext touchIDAuthenticationAllowableReuseDuration property.
-extern const NSTimeInterval LATouchIDAuthenticationMaximumAllowableReuseDuration NS_AVAILABLE(NA, 9_0) __WATCHOS_UNAVAILABLE __TVOS_UNAVAILABLE;
+extern const NSTimeInterval LATouchIDAuthenticationMaximumAllowableReuseDuration NS_AVAILABLE(10_12, 9_0) __WATCHOS_UNAVAILABLE __TVOS_UNAVAILABLE;
 
 /// Class that represents an authentication context.
 ///
@@ -106,8 +106,8 @@ NS_CLASS_AVAILABLE(10_10, 8_0) __WATCHOS_AVAILABLE(3.0) __TVOS_AVAILABLE(10.0)
 ///
 /// @param localizedReason Application reason for authentication. This string must be provided in correct
 ///                        localization and should be short and clear. It will be eventually displayed in
-///                        the authentication dialog subtitle. A name of the calling application will be
-///                        already displayed in title, so it should not be duplicated here.
+///                        the authentication dialog. A name of the calling application will be already
+///                        displayed in title, so it should not be duplicated here.
 ///
 /// @warning localizedReason parameter is mandatory and the call will throw NSInvalidArgumentException if
 ///          nil or empty string is specified.
@@ -217,8 +217,8 @@ typedef NS_ENUM(NSInteger, LAAccessControlOperation)
 ///
 /// @param localizedReason Application reason for authentication. This string must be provided in correct
 ///                        localization and should be short and clear. It will be eventually displayed in
-///                        the authentication dialog subtitle. A name of the calling application will be
-///                        already displayed in title, so it should not be duplicated here.
+///                        the authentication dialog. A name of the calling application will be already
+///                        displayed in title, so it should not be duplicated here.
 ///
 /// @param reply Reply block that is executed when access control evaluation finishes.
 ///              success Reply parameter that is YES if the access control has been evaluated successfully or
@@ -282,7 +282,7 @@ typedef NS_ENUM(NSInteger, LAAccessControlOperation)
 ///             the accepted interval.
 ///
 /// @see LATouchIDAuthenticationMaximumAllowableReuseDuration
-@property (nonatomic) NSTimeInterval touchIDAuthenticationAllowableReuseDuration NS_AVAILABLE(NA, 9_0) __WATCHOS_UNAVAILABLE __TVOS_UNAVAILABLE;
+@property (nonatomic) NSTimeInterval touchIDAuthenticationAllowableReuseDuration NS_AVAILABLE(10_12, 9_0) __WATCHOS_UNAVAILABLE __TVOS_UNAVAILABLE;
 
 @end
 

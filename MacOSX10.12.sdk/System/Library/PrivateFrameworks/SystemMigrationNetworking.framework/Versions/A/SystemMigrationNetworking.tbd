@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8898AA82-A447-3B18-BF85-24DEFF6E82A1' ]
+uuids:           [ 'x86_64: 5C00B6B5-4C5E-3D64-9C80-1B53AFDF3458' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SystemMigrationNetworking.framework/Versions/A/SystemMigrationNetworking
 objc-constraint: none

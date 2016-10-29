@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 03DB04E6-6EA7-37AE-A384-FE207D91065B', 'x86_64: A8973360-956A-33BF-9971-14D59C84E0D1' ]
+uuids:           [ 'i386: 5C8B500B-DC54-38F5-8E2D-F779F6A428DE', 'x86_64: 0F16BBE0-3092-390E-96D9-0B5DCC97B317' ]
 platform:        macosx
 install-name:    /usr/lib/system/libsystem_network.dylib
 objc-constraint: none
@@ -259,9 +259,9 @@ exports:
                        _nw_path_set_reason_description, _nw_path_should_fallback, 
                        _nw_path_should_use_proxy, _nw_path_status_get_description, 
                        _nw_path_trigger_agent, _nw_path_trigger_inactive_cellular_agent_if_necessary, 
-                       _nw_path_unassert_agent, _nw_path_uses_interface_type, _nw_path_uses_nexus, 
-                       _nw_path_voluntary_agent_matches_address, _nw_protocol_create, 
-                       _nw_protocol_is_registered, _nw_protocol_modify_parameters, 
+                       _nw_path_unassert_agent, _nw_path_uses_interface_subtype, 
+                       _nw_path_uses_interface_type, _nw_path_uses_nexus, _nw_path_voluntary_agent_matches_address, 
+                       _nw_protocol_create, _nw_protocol_is_registered, _nw_protocol_modify_parameters, 
                        _nw_protocol_register, _nw_protocol_register_extended, _nw_protocol_register_parameter_modifier, 
                        _nw_protocol_set_default_one_to_one_callbacks, _nw_protocol_unregister, 
                        _nw_protocols_are_equal, _nw_queue_async, _nw_queue_cancel_source, 

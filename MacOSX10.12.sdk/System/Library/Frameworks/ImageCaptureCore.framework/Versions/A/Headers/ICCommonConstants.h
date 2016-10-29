@@ -150,6 +150,7 @@ typedef NS_ENUM( NSInteger, ICReturnCode )
     ICReturnDeviceCouldNotUnpair                  = -9952,
     ICReturnDeviceNeedsCredentials                = -9953,
     ICReturnDeviceIsBusyEnumerating               = -9954,
+    ICReturnDeviceCommandGeneralFailure           = -9955
 };
 
 ////------------------------------------------------------------------------------------------------------------------------------

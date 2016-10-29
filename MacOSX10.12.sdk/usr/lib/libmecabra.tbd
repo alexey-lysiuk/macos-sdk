@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 5172796A-3376-3977-884F-32F1812E6AE6', 'x86_64: 267E47DC-D614-33B4-8546-DF3D94937131' ]
+uuids:           [ 'i386: FBD1DF09-58AE-3970-BAB0-5C0DCCD570A0', 'x86_64: 85517A89-7625-3AF7-AC54-E82729271E14' ]
 platform:        macosx
 install-name:    /usr/lib/libmecabra.dylib
 objc-constraint: none
@@ -40,15 +40,15 @@ exports:
                        _MecabraContextAddInlineCandidate, _MecabraContextCreateMutable, 
                        _MecabraContextGetCandidateAtIndex, _MecabraContextGetCandidateCount, 
                        _MecabraContextGetInlineCandidateAtIndex, _MecabraContextGetInlineCandidateCount, 
-                       _MecabraContextRelease, _MecabraContextRemoveCandidatesInRange, 
+                       _MecabraContextGetOption, _MecabraContextRelease, _MecabraContextRemoveCandidatesInRange, 
                        _MecabraContextRemoveInlineCandidatesInRange, _MecabraContextResetCandidateHistory, 
                        _MecabraContextSetAppContext, _MecabraContextSetCandidateHistoryForAnalysisString, 
-                       _MecabraContextSetGeometryModel, _MecabraContextSetRightContextFromString, 
-                       _MecabraContextSetTextContentType, _MecabraConversionCandidateCreate, 
-                       _MecabraCopyEmojiCharacterArrayForString, _MecabraCopyLearningDictionaryNames, 
-                       _MecabraCreate, _MecabraCreateASCIIFromInputKeyString, _MecabraCreateASCIIStringFromCangjie, 
-                       _MecabraCreateASCIIStringFromWubixing, _MecabraCreateAlternateWordArrayForWordAtIndex, 
-                       _MecabraCreateArrayWithContentOfChineseCompletionLearningDictionary, 
+                       _MecabraContextSetGeometryModel, _MecabraContextSetOption, 
+                       _MecabraContextSetRightContextFromString, _MecabraContextSetTextContentType, 
+                       _MecabraConversionCandidateCreate, _MecabraCopyEmojiCharacterArrayForString, 
+                       _MecabraCopyLearningDictionaryNames, _MecabraCreate, _MecabraCreateASCIIFromInputKeyString, 
+                       _MecabraCreateASCIIStringFromCangjie, _MecabraCreateASCIIStringFromWubixing, 
+                       _MecabraCreateAlternateWordArrayForWordAtIndex, _MecabraCreateArrayWithContentOfChineseCompletionLearningDictionary, 
                        _MecabraCreateArrayWithContentOfLegacyChineseCompletionLearningDictionary, 
                        _MecabraCreateArrayWithContentOfLegacyPhraseLearningDictionary, 
                        _MecabraCreateArrayWithContentOfPhraseLearningDictionary, 
@@ -89,13 +89,13 @@ exports:
                        _MecabraWordPropertiesGetSortedRadicalList, _MecabraWordPropertiesRelease, 
                        _MecabraWorkingSetAddString, _MecabraWorkingSetContainsString, 
                        _ReadingLookupDictionaryBuild, _ReverseDictionaryBuild, _SeaweedChineseDictionaryBuild, 
-                       _kMecabraCandidateAttributeIsEndingWithPunctuation, _kMecabraTraditionalChineseArchitectureDictionary, 
-                       _kMecabraTraditionalChineseBiologyDictionary, _kMecabraTraditionalChineseBuddhismDictionary, 
-                       _kMecabraTraditionalChineseChineseMedicineDictionary, _kMecabraTraditionalChineseCommerceDictionary, 
-                       _kMecabraTraditionalChineseCommunicationsDictionary, _kMecabraTraditionalChineseComputerDictionary, 
-                       _kMecabraTraditionalChineseEducationDictionary, _kMecabraTraditionalChineseIndustryDictionary, 
-                       _kMecabraTraditionalChineseLawPoliticsDictionary, _kMecabraTraditionalChineseMilitaryDictionary, 
-                       _kMecabraTraditionalChinesePhysicsChemistryDictionary, _kMecabraTraditionalChineseSportsDictionary, 
-                       _kMecabraTraditionalChineseWesternMedicineDictionary ]
+                       _kMecabraCandidateAttributeIsEndingWithPunctuation, _kMecabraContextOptionSuppressSensitiveWords, 
+                       _kMecabraTraditionalChineseArchitectureDictionary, _kMecabraTraditionalChineseBiologyDictionary, 
+                       _kMecabraTraditionalChineseBuddhismDictionary, _kMecabraTraditionalChineseChineseMedicineDictionary, 
+                       _kMecabraTraditionalChineseCommerceDictionary, _kMecabraTraditionalChineseCommunicationsDictionary, 
+                       _kMecabraTraditionalChineseComputerDictionary, _kMecabraTraditionalChineseEducationDictionary, 
+                       _kMecabraTraditionalChineseIndustryDictionary, _kMecabraTraditionalChineseLawPoliticsDictionary, 
+                       _kMecabraTraditionalChineseMilitaryDictionary, _kMecabraTraditionalChinesePhysicsChemistryDictionary, 
+                       _kMecabraTraditionalChineseSportsDictionary, _kMecabraTraditionalChineseWesternMedicineDictionary ]
     objc-classes:    [ _MecabraFacemarkCandidate ]
 ...

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 8151A7EF-89F0-31DB-B9E6-4ED9C7BCAC2A', 'x86_64: 04170DB9-7A5D-3477-A5B3-6216805E3BC2' ]
+uuids:           [ 'i386: 4F1795BB-7F86-3E22-9A84-5363FFD3F6D9', 'x86_64: 018E6565-860F-39E2-9C2E-D730668CE326' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DataDetectors.framework/Versions/A/DataDetectors
-current-version: 347.0
+current-version: 348.0
 objc-constraint: none
 exports:         
   - archs:           [ i386 ]

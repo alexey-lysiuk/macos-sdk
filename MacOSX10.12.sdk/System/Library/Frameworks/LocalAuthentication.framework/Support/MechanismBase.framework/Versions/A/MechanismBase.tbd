@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 070744E1-48D5-3D27-BEC9-5B48C49B93FC' ]
+uuids:           [ 'x86_64: A2E92533-9B5A-3825-90D9-8C4EA40AF16F' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/LocalAuthentication.framework/Support/MechanismBase.framework/Versions/A/MechanismBase
-current-version: 240.1.5
+current-version: 240.21.1
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

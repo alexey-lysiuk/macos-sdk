@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F4994877-CC17-3491-A6DE-42E2DCF26AA4' ]
+uuids:           [ 'x86_64: E4490AEB-DDF6-3C7A-B0DE-808BB2B80904' ]
 platform:        macosx
 install-name:    /usr/lib/libodmodule.dylib
 objc-constraint: none

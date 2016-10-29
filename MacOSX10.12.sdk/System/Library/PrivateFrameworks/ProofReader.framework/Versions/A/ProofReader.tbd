@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B5415ACD-B959-395D-8136-EAE922F32A73' ]
+uuids:           [ 'x86_64: 3E4B524A-45BF-38A9-B90B-DF1DAB72B38F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ProofReader.framework/Versions/A/ProofReader
-current-version: 375.0
+current-version: 381.0
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -131,6 +131,7 @@ exports:
                        _PRZhuyinContext, _PRZhuyinModification ]
     objc-ivars:      [ _AppleSpell._altBundleURLs, _AppleSpell._assetDataBundleSerialQueue, 
                        _AppleSpell._assetDataBundleURLDictionary, _AppleSpell._autocorrections, 
+                       _AppleSpell._automaticTextCompletionCollapsed, _AppleSpell._automaticTextCompletionEnabled, 
                        _AppleSpell._bindicts, _AppleSpell._capitalizations, _AppleSpell._dataBundle, 
                        _AppleSpell._databaseConnections, _AppleSpell._diagnosticInfo, 
                        _AppleSpell._emojiPredictorDict, _AppleSpell._foundNames, 

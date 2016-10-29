@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AB805178-9A6A-37D4-B131-0BBAE893ACC8' ]
+uuids:           [ 'x86_64: AF4CB1E0-D112-334E-AF33-E62478D6A744' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/UniversalAccess.framework/Versions/A/Libraries/libUAPreferences.dylib
 objc-constraint: none
@@ -8,16 +8,17 @@ exports:
   - archs:           [ x86_64 ]
     symbols:         [ _UAAXShortcutExposedFeatures, _UAAssistiveControlTypeKey, 
                        _UAContrastDidChangeNotification, _UAContrastKey, _UACursorScaleKey, 
-                       _UADomainCloseViewSettingsDidChangeNotification, _UADomainDwellSettingsDidChangeNotification, 
-                       _UADomainExposedFeaturesDidChangeNotification, _UADomainKbdSettingsDidChangeNotification, 
-                       _UADomainMouseSettingsDidChangeNotification, _UADomainScreenGrayscaleChangeNotification, 
-                       _UADomainScreenPolarityDidChangeNotification, _UADomainSettingsDidChangeNotification, 
-                       _UADomainSoundSettingsDidChangeNotification, _UADomainSwitchSettingsDidChangeNotification, 
-                       _UADomainVoiceOverSettingsDidChangeNotification, _UADwellActionTypeKey, 
-                       _UADwellAutoRevertToLeftClickEnabledKey, _UADwellBottomLeftCornerActionTypeKey, 
-                       _UADwellBottomRightCornerActionTypeKey, _UADwellEnabledKey, 
-                       _UADwellHideUIEnabledKey, _UADwellHideUITimeoutKey, _UADwellHomePanelFollowTriggeredHotCornerEnabledKey, 
-                       _UADwellIsSingleActionKey, _UADwellToleranceKey, _UADwellTopLeftCornerActionTypeKey, 
+                       _UADFRZoomEnabledKey, _UADFRZoomLevelKey, _UADomainCloseViewSettingsDidChangeNotification, 
+                       _UADomainDwellSettingsDidChangeNotification, _UADomainExposedFeaturesDidChangeNotification, 
+                       _UADomainKbdSettingsDidChangeNotification, _UADomainMouseSettingsDidChangeNotification, 
+                       _UADomainScreenGrayscaleChangeNotification, _UADomainScreenPolarityDidChangeNotification, 
+                       _UADomainSettingsDidChangeNotification, _UADomainSoundSettingsDidChangeNotification, 
+                       _UADomainSwitchSettingsDidChangeNotification, _UADomainVoiceOverSettingsDidChangeNotification, 
+                       _UADwellActionTypeKey, _UADwellAutoRevertToLeftClickEnabledKey, 
+                       _UADwellBottomLeftCornerActionTypeKey, _UADwellBottomRightCornerActionTypeKey, 
+                       _UADwellEnabledKey, _UADwellHideUIEnabledKey, _UADwellHideUITimeoutKey, 
+                       _UADwellHomePanelFollowTriggeredHotCornerEnabledKey, _UADwellIsSingleActionKey, 
+                       _UADwellToleranceKey, _UADwellTopLeftCornerActionTypeKey, 
                        _UADwellTopRightCornerActionTypeKey, _UADwellWaitTimeAssistiveControlUIKey, 
                        _UADwellWaitTimeDefaultActionKey, _UADwellWaitTimeZoomKey, 
                        _UADwellZoomEnabledKey, _UAFlashScreenEnabledKey, _UAGrayscaleKey, 

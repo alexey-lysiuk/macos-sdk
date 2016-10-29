@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1CE0723B-5F6C-39F2-93C9-5F682D80D6CF' ]
+uuids:           [ 'x86_64: 9515E058-797E-30A6-9A2A-4EFC47548DAA' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Versions/A/PhotoAnalysis
-current-version: 173.0
+current-version: 173.2.6
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -46,9 +46,9 @@ exports:
                        _PHALibraryChangeDetails, _PHALibraryChangeListener, _PHAManager, 
                        _PHAMonitoring, _PHAMonitoringProcessInfo, _PHAMonitoringSystemInfo, 
                        _PHAPendingRequestReference, _PHAPhotoLibraryList, _PHAPhotoLibraryReference, 
-                       _PHAPhotoVisionPhotoKitBridge, _PHAPredicateValidator, _PHAServiceClientHandler, 
-                       _PHAServiceUnavailableClientHandler, _PHASleepWakeMonitor, 
-                       _PHASwizzling, _PHAVisionServiceAssetsAnalyzingOperation, 
+                       _PHAPhotoVisionPhotoKitBridge, _PHAPredicateValidator, _PHAServiceCancelableOperation, 
+                       _PHAServiceClientHandler, _PHAServiceUnavailableClientHandler, 
+                       _PHASleepWakeMonitor, _PHASwizzling, _PHAVisionServiceAssetsAnalyzingOperation, 
                        _PHAVisionServiceFaceProcessingWorker, _PHAVisionServicePersistenceDelegate, 
                        _PHAVisionServicePersistenceDelegateFaceGroupFacesCache, _PHAVisionServiceSceneClassificationWorker, 
                        _PHAVisionServiceSceneClassificationWorkerTaxonomyResolver, 

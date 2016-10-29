@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 1F12F48E-5295-3221-91AE-C5777C8453A7', 'x86_64: 64EB36F5-326C-3169-94BC-53FCA84E189F' ]
+uuids:           [ 'i386: 5959CE96-9BFB-3562-897A-638428155FB6', 'x86_64: 5E2D8D16-DBB9-3389-9CEA-1E4094C34A92' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IntlPreferences.framework/Versions/A/IntlPreferences
 current-version: 216.0

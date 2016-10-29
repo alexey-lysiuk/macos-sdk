@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B46AC2BB-4B82-35E5-B6D7-F942086F68FD' ]
+uuids:           [ 'x86_64: 6C89C66E-A3A1-3457-8864-DD4FEC59D626' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Mail.framework/Versions/A/Mail
-current-version: 3218.0
+current-version: 3251.0
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -353,30 +353,30 @@ exports:
                        _MFLibraryStoreMessageConsumer, _MFLibraryUpgradeStep, _MFLibraryUpgrader, 
                        _MFLocalAccount, _MFLocalRecoveredOrphansUpgradeStep, _MFMailAccount, 
                        _MFMailDropPreferencesManager, _MFMailbox, _MFMailboxDirectoryScanner, 
-                       _MFMessageAddressee, _MFMessageContext, _MFMessageCounts, 
-                       _MFMessageCriterion, _MFMessageDeliverer, _MFMessageFileLocations, 
-                       _MFMessageRouter, _MFMessageRouterUtilities, _MFMessageRule, 
-                       _MFMessageRuleCriterion, _MFMessageSortingInformation, _MFMessageSortingValue, 
-                       _MFMessageStore, _MFMessageThread, _MFMessageWritePreparedStatements, 
-                       _MFNeXTStore, _MFPOPAccount, _MFPOPConnection, _MFPOPMessage, 
-                       _MFPOPSizeEngine, _MFPOPStore, _MFParentalControlAccount, 
-                       _MFParentalControlManager, _MFParentalControlSettings, _MFParentalControlStore, 
-                       _MFPersistenceManager, _MFPersistenceMigratorV2, _MFPersistenceMigratorV3, 
-                       _MFPersistenceMigratorV4, _MFPersistenceVersionUpgrader, _MFPreparedStatement, 
-                       _MFQuoteParser, _MFRecalculateTotalCountsUpgradeStep, _MFRecoveredMessage, 
-                       _MFRecoveredStore, _MFRedundantContentMarkup, _MFRedundantTextIdentifier, 
-                       _MFRemoteAttachmentDataSource, _MFRemoteStore, _MFRemoteStoreAccount, 
-                       _MFRemoteStoreSizeEngine, _MFRemoteURLAttachmentDataSource, 
-                       _MFRemoveCategoryColumnUpgradeStep, _MFRemoveMessagesFromGmailLabelsUpgradeStep, 
-                       _MFRemoveMessagesUpgradeStep, _MFRemoveOrphanedMailboxRowsUpgradeStep, 
-                       _MFRemoveRelevanceColumnUpgradeStep, _MFRemoveUnusedFeedsTableAndMessagesColumnsUpgradeStep, 
-                       _MFReparseInvalidInReplyToHeadersUpgradeStep, _MFReparseReferenceHeadersUpgradeStep, 
-                       _MFResetEWSFolderHierarchyUpgradeStep, _MFResetPartsHaveBeenCachedUpgradeStep, 
-                       _MFRulesUpgrader, _MFSMTPAccount, _MFSMTPConnection, _MFSMTPDeliverer, 
-                       _MFSQLBinding, _MFSQLColumn, _MFSQLDataBinding, _MFSQLDoubleBinding, 
-                       _MFSQLIntegerBinding, _MFSQLRow, _MFSQLStringBinding, _MFSeenMessage, 
-                       _MFSeenMessagesManager, _MFSignature, _MFSignatureManager, 
-                       _MFSizeEngine, _MFSmartMailboxSpecialMailboxCriteriaAccountUpgradeStep, 
+                       _MFMailboxPredictor, _MFMessageAddressee, _MFMessageContext, 
+                       _MFMessageCounts, _MFMessageCriterion, _MFMessageDeliverer, 
+                       _MFMessageFileLocations, _MFMessageRouter, _MFMessageRouterUtilities, 
+                       _MFMessageRule, _MFMessageRuleCriterion, _MFMessageSortingInformation, 
+                       _MFMessageSortingValue, _MFMessageStore, _MFMessageThread, 
+                       _MFMessageWritePreparedStatements, _MFNeXTStore, _MFPOPAccount, 
+                       _MFPOPConnection, _MFPOPMessage, _MFPOPSizeEngine, _MFPOPStore, 
+                       _MFParentalControlAccount, _MFParentalControlManager, _MFParentalControlSettings, 
+                       _MFParentalControlStore, _MFPersistenceManager, _MFPersistenceMigratorV2, 
+                       _MFPersistenceMigratorV3, _MFPersistenceMigratorV4, _MFPersistenceVersionUpgrader, 
+                       _MFPreparedStatement, _MFQuoteParser, _MFRecalculateTotalCountsUpgradeStep, 
+                       _MFRecoveredMessage, _MFRecoveredStore, _MFRedundantContentMarkup, 
+                       _MFRedundantTextIdentifier, _MFRemoteAttachmentDataSource, 
+                       _MFRemoteStore, _MFRemoteStoreAccount, _MFRemoteStoreSizeEngine, 
+                       _MFRemoteURLAttachmentDataSource, _MFRemoveCategoryColumnUpgradeStep, 
+                       _MFRemoveMessagesFromGmailLabelsUpgradeStep, _MFRemoveMessagesUpgradeStep, 
+                       _MFRemoveOrphanedMailboxRowsUpgradeStep, _MFRemoveRelevanceColumnUpgradeStep, 
+                       _MFRemoveUnusedFeedsTableAndMessagesColumnsUpgradeStep, _MFReparseInvalidInReplyToHeadersUpgradeStep, 
+                       _MFReparseReferenceHeadersUpgradeStep, _MFResetEWSFolderHierarchyUpgradeStep, 
+                       _MFResetPartsHaveBeenCachedUpgradeStep, _MFRulesUpgrader, 
+                       _MFSMTPAccount, _MFSMTPConnection, _MFSMTPDeliverer, _MFSQLBinding, 
+                       _MFSQLColumn, _MFSQLDataBinding, _MFSQLDoubleBinding, _MFSQLIntegerBinding, 
+                       _MFSQLRow, _MFSQLStringBinding, _MFSeenMessage, _MFSeenMessagesManager, 
+                       _MFSignature, _MFSignatureManager, _MFSizeEngine, _MFSmartMailboxSpecialMailboxCriteriaAccountUpgradeStep, 
                        _MFSmartMailboxUnreadCountManager, _MFSmartMailboxesUpgrader, 
                        _MFSnippetCalculator, _MFSnippetManager, _MFSoundPlayList, 
                        _MFSpecialMailbox, _MFSpotlightManager, _MFSpotlightQueryResultProcessor, 

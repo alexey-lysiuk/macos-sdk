@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A3455523-5D8D-3352-B206-CB9FC9D9C0D1' ]
+uuids:           [ 'x86_64: A99B2434-4456-3E46-AB7B-080A80D7C509' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/NotesShared.framework/Versions/A/NotesShared
 objc-constraint: none

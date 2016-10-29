@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: BEED825A-88DE-3E7F-B2FF-84DAF0663115', 'x86_64: B82CAA5D-E8E1-376A-961C-37D4F96DCDB4' ]
+uuids:           [ 'i386: D3444970-01F8-389E-B965-4E750DBFE7AC', 'x86_64: 95A941BE-ABAA-3BCE-9CCA-A0C0EB0D7076' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/PreferencePanes.framework/Versions/A/PreferencePanes
 objc-constraint: none

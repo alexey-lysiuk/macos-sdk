@@ -16,8 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 SF_CLASS_AVAILABLE_MAC_SAFARI(10_0)
 @interface SFSafariPageProperties : NSObject
 
-@property (nonatomic, readonly) NSURL *url;
-@property (nonatomic, copy, readonly) NSString *title;
+@property (nonatomic, readonly, nullable) NSURL *url;
+@property (nonatomic, copy, readonly, nullable) NSString *title;
 @property (nonatomic, readonly) BOOL usesPrivateBrowsing;
 @property (nonatomic, readonly, getter=isActive) BOOL active;
 

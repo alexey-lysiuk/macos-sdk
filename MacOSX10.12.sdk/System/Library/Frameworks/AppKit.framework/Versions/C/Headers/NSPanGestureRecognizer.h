@@ -42,4 +42,8 @@ NS_CLASS_AVAILABLE(10_10, NA)
 
 @end
 
+@interface NSPanGestureRecognizer (NSTouchBar)
+@property NSInteger numberOfTouchesRequired NS_AVAILABLE_MAC(10_12_1);
+@end
+
 NS_ASSUME_NONNULL_END

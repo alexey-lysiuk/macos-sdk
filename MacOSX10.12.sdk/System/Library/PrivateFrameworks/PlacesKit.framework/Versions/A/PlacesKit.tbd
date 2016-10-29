@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D0349A5D-59D5-3DAE-A9E6-1FA34E634F50' ]
+uuids:           [ 'x86_64: 63827BB5-8964-3500-AA66-DA2590A048EF' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PlacesKit.framework/Versions/A/PlacesKit
-current-version: 221.1
+current-version: 222.2.1
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: FF3F4D99-A4F5-3983-8563-44BA8216295B', 'x86_64: 170860FB-83D1-3BED-8297-95BBCE94D005' ]
+uuids:           [ 'i386: A61DE1F9-3B38-3269-8462-D5FE99202D68', 'x86_64: 5351CC74-3162-3C59-9508-5EF73289158C' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MTLCompiler.framework/libMTLCompilerHelper.dylib
 objc-constraint: none

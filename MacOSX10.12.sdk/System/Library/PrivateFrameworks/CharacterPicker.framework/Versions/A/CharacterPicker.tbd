@@ -1,16 +1,19 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 562EB5E2-8A2B-38F7-B8D7-1CCB2F520A57', 'x86_64: 67B12D82-48AF-3ABC-B0F3-0236E177F03F' ]
+uuids:           [ 'i386: 5D10AE27-B9F1-34CD-BE66-1D1875840D1D', 'x86_64: AD9632FA-BCED-36FF-B694-E76B045AE44D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CharacterPicker.framework/Versions/A/CharacterPicker
 objc-constraint: none
 exports:         
+  - archs:           [ x86_64 ]
+    objc-classes:    [ _CPKEmojiIMViewController ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ _CPKCategoryTitleFavorites, _CPKCategoryTitleMore, _CPKCategoryTitleRecents, 
                        _CPKCategoryTitleRecentsAndFavorites, _CPKCategoryTitleSearch, 
                        _CPKCategoryTitleSeparator, _CPKCategoryTitleSpace, _CPKCharacterPickerRecentsChangedNotification, 
                        _CPKCharacterPickerWindowWillOpenNotification, _CPKCharacterViewerWindowRevertToPickerNotification, 
                        _CPKCharacterViewerWindowWillOpenNotification ]
-    objc-classes:    [ _CPKDefaultDataSource, _CPKEmojiDataSource, _CPKHorizontalPopupMenu, 
-                       _CPKPopover, _CPKStandardCharacterEntity, _CPKWindow ]
+    objc-classes:    [ _CPKDefaultDataSource, _CPKEmojiDataSource, _CPKEmojiIMDataSource, 
+                       _CPKHorizontalPopupMenu, _CPKPopover, _CPKStandardCharacterEntity, 
+                       _CPKWindow ]
 ...

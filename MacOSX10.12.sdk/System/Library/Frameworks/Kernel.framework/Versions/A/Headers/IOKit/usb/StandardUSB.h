@@ -334,7 +334,8 @@ namespace StandardUSB
         kDeviceCapabilityTypeSuperSpeedPlus         = 10,
         kDeviceCapabilityTypePrecisionMeasurement   = 11,
         kDeviceCapabilityTypeWirelessExt            = 12,
-        kDeviceCapabilityTypeBillboard              = 13
+        kDeviceCapabilityTypeBillboard              = 13,
+        kDeviceCapabilityTypeBillboardAltMode       = 15
     };
     
     typedef enum tDeviceCapabilityType tDeviceCapabilityType;
@@ -517,13 +518,25 @@ namespace StandardUSB
     typedef struct ContainerIDCapabilityDescriptor ContainerIDCapabilityDescriptor;
 
 
-    // USB Billboard 3.1.6.2: Billboard Capability Descriptor
-    struct BillboardAlternateModeCapability
+    // USB Billboard 3.1.6.2: Billboard Capability Descriptor V1.2
+    struct BillboardAltModeCapabilityCompatibility
     {
         uint16_t  wSVID;
-        uint32_t  bAlternateMode;
+        uint32_t  dwAlternateMode;
         uint8_t   iAlternateModeString;
-    };
+    }__attribute__((packed));
+
+    typedef struct BillboardAltModeCapabilityCompatibility BillboardAltModeCapabilityCompatibility;
+
+    // USB Billboard 3.1.6.2: Billboard Capability Descriptor V1.1 and 1.21+
+    struct BillboardAltModeCapability
+    {
+        uint16_t  wSVID;
+        uint8_t   bAlternateMode;
+        uint8_t   iAlternateModeString;
+    }__attribute__((packed));
+
+    typedef struct BillboardAltModeCapability BillboardAltModeCapability;
 
 #ifdef __cplusplus
     // USB Billboard 3.1.6.2: Billboard Capability Descriptor
@@ -532,22 +545,40 @@ namespace StandardUSB
 #else
     struct BillboardCapabilityDescriptor
     {
-        uint8_t                                 bLength;
-        uint8_t                                 bDescriptorType;
-        uint8_t                                 bDevCapabilityType;
+        uint8_t  bLength;
+        uint8_t  bDescriptorType;
+        uint8_t  bDevCapabilityType;
 #endif
-        uint8_t                                 iAddtionalInfoURL;
-        uint8_t                                 bNumberOfAlternateModes;
-        uint8_t                                 bPreferredAlternateMode;
-        uint16_t                                VCONNPower;
-        uint8_t                                 bmConfigured[32];
-        uint16_t                                bcdVersion;
-        uint8_t                                 bAdditonalFailureInfo;
-        uint8_t                                 bReserved;
-        struct BillboardAlternateModeCapability BillboardAlternateModeCapabilities[];
-    } __attribute__((packed));
+        uint8_t  iAddtionalInfoURL;
+        uint8_t  bNumberOfAlternateModes;
+        uint8_t  bPreferredAlternateMode;
+        uint16_t VCONNPower;
+        uint8_t  bmConfigured[32];
+        uint16_t bcdVersion;
+        uint8_t  bAdditonalFailureInfo;
+        uint8_t  bReserved;
+        uint8_t  altModeCapabilities[];
+    }__attribute__((packed));
 
     typedef struct BillboardCapabilityDescriptor BillboardCapabilityDescriptor;
+
+#ifdef __cplusplus
+    // USB Billboard 3.1.6.3: Billboard Capability Descriptor V1.21
+    struct BillboardAltModeCapabilityDescriptor : public DeviceCapabilityDescriptor
+    {
+#else
+    struct BillboardAltModeCapabilityDescriptor
+    {
+        uint8_t   bLength;
+        uint8_t   bDescriptorType;
+        uint8_t   bDevCapabilityType;
+#endif
+        uint8_t   bIndex;
+        uint16_t  dwAlternateModeVdo;
+    }__attribute__((packed));
+
+    typedef struct BillboardAltModeCapabilityDescriptor BillboardAltModeCapabilityDescriptor;
+
 
 
 #ifdef __cplusplus

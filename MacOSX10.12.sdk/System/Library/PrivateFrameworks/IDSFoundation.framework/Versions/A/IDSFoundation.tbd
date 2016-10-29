@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 92AA3B21-1FF0-3789-8F23-5FD3126795E9', 'x86_64: D8A8D887-A0F2-3B8B-87BD-172BA81DC237' ]
+uuids:           [ 'i386: 1216D9A8-5041-36F2-9935-521E1D098D9C', 'x86_64: ACD5ACC0-E6B6-3778-904E-6090CCA03865' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IDSFoundation.framework/Versions/A/IDSFoundation
 current-version: 800.0
@@ -66,8 +66,9 @@ exports:
                        _IDSDSessionMessageSelfSSRC, _IDSDSessionMessageSelfSeqStart, 
                        _IDSDSessionMessageSessionID, _IDSDSessionMessageSingleChannelDirectMode, 
                        _IDSDSessionMessageTransportType, _IDSDSessionMessageUseCloudPairedControlChannel, 
-                       _IDSDSessionMessageUseSecureQRControlMessage, _IDSDSessionMessageUseStunMessageIntegrity, 
-                       _IDSDSessionMessageVersion, _IDSDataChannelErrorDomain, _IDSDataChannelQualityOfServiceDropOperationKey, 
+                       _IDSDSessionMessageUsePhoneContinuityLocalMessage, _IDSDSessionMessageUseSecureQRControlMessage, 
+                       _IDSDSessionMessageUseStunMessageIntegrity, _IDSDSessionMessageVersion, 
+                       _IDSDataChannelErrorDomain, _IDSDataChannelQualityOfServiceDropOperationKey, 
                        _IDSDataChannelQualityOfServiceFamilyKey, _IDSDataChannelQualityOfServiceOffsetBytesKey, 
                        _IDSDataChannelQualityOfServicePayloadTypeKey, _IDSDataChannelQualityOfServiceTimestampValueKey, 
                        _IDSDataChannelQualityOfServiceTransactionIDKey, _IDSDataLengthKey, 

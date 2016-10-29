@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 9D3528E2-7C27-3066-992A-F207F75C6810', 'x86_64: 7DBE70BF-3D84-3023-97BA-9387CC502C59' ]
+uuids:           [ 'i386: 51E38911-FF3F-3701-8560-CA6FBFC98606', 'x86_64: 63FB4B13-C498-3FEA-8D7D-6015AF2134E4' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/iLifeMediaBrowser.framework/Versions/A/iLifeMediaBrowser
-current-version: 731.0
+current-version: 732.0
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -232,8 +232,8 @@ exports:
                        _ILPhotosAllCollectionsGroupTypeIdentifier, _ILPhotosAllMomentsGroupTypeIdentifier, 
                        _ILPhotosAllPhotosAlbumTypeIdentifier, _ILPhotosAllYearsGroupTypeIdentifier, 
                        _ILPhotosBurstGroupTypeIdentifier, _ILPhotosCollectionGroupTypeIdentifier, 
-                       _ILPhotosCommentKey, _ILPhotosDateAsTimerIntervalKey, _ILPhotosFacesAlbumTypeIdentifier, 
-                       _ILPhotosFavoriteKey, _ILPhotosFavoritesGroupTypeIdentifier, 
+                       _ILPhotosCommentKey, _ILPhotosDateAsTimerIntervalKey, _ILPhotosDepthEffectGroupTypeIdentifier, 
+                       _ILPhotosFacesAlbumTypeIdentifier, _ILPhotosFavoriteKey, _ILPhotosFavoritesGroupTypeIdentifier, 
                        _ILPhotosFolderTypeIdentifier, _ILPhotosFrontCameraGroupTypeIdentifier, 
                        _ILPhotosHiddenKey, _ILPhotosImagePathKey, _ILPhotosKeyListKey, 
                        _ILPhotosKeyListStringKey, _ILPhotosKeyPhotoKey, _ILPhotosKeywordsKey, 

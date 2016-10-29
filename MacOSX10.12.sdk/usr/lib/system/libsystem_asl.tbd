@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 44C54853-3B9D-3981-9142-5FDF50704026', 'x86_64: F0987490-8427-367F-B302-A05A7D61FEBF' ]
+uuids:           [ 'i386: D70E3891-7896-374E-AA5A-30C1EA81579B', 'x86_64: 2217DE86-0635-393E-93DD-A1344EC0EF4B' ]
 platform:        macosx
 install-name:    /usr/lib/system/libsystem_asl.dylib
 current-version: 349.1.1

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 79799B8B-B819-3ED0-994E-D6299F614A55', 'x86_64: FA9C130F-5FCE-366B-8ADC-7E2F1C3513D6' ]
+uuids:           [ 'i386: EA40ADA1-3221-35DD-92C4-719C6954DADF', 'x86_64: DD6C3961-D0F9-3461-9DB5-D46BA1FFB93E' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration
-current-version: 888.1.2
+current-version: 888.20.5
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]
@@ -186,22 +186,23 @@ exports:
                        __SCNetworkInterfaceGetHardwareAddress, __SCNetworkInterfaceGetIOInterfaceNamePrefix, 
                        __SCNetworkInterfaceGetIOInterfaceType, __SCNetworkInterfaceGetIOInterfaceUnit, 
                        __SCNetworkInterfaceGetIOPath, __SCNetworkInterfaceGetIORegistryEntryID, 
-                       __SCNetworkInterfaceIsBluetoothP2P, __SCNetworkInterfaceIsBluetoothPAN, 
-                       __SCNetworkInterfaceIsBluetoothPAN_NAP, __SCNetworkInterfaceIsBuiltin, 
-                       __SCNetworkInterfaceIsHiddenConfiguration, __SCNetworkInterfaceIsModemV92, 
-                       __SCNetworkInterfaceIsPhysicalEthernet, __SCNetworkInterfaceIsTethered, 
-                       __SCNetworkInterfaceIsThunderbolt, __SCNetworkMigrationAreConfigurationsIdentical, 
-                       __SCNetworkReachabilityCopyTargetDescription, __SCNetworkReachabilityCopyTargetFlags, 
-                       __SCNetworkServiceCompare, __SCNetworkServiceCopyActive, __SCNetworkServiceIsVPN, 
-                       __SCNetworkServiceSetServiceID, __SCNetworkSetCreateDefault, 
-                       __SCNetworkSetSetSetID, __SCPreferencesCopyComputerName, __SCPreferencesSystemKeychainPasswordItemCopy, 
-                       __SCPreferencesSystemKeychainPasswordItemExists, __SCPreferencesSystemKeychainPasswordItemRemove, 
-                       __SCPreferencesSystemKeychainPasswordItemSet, __SCSecKeychainCopySystemKeychain, 
-                       __SCSecKeychainPasswordItemCopy, __SCSecKeychainPasswordItemExists, 
-                       __SCSecKeychainPasswordItemRemove, __SCSecKeychainPasswordItemSet, 
-                       __SCSerialize, __SCSerializeData, __SCSerializeMultiple, __SCSerializeString, 
-                       __SCUnserialize, __SCUnserializeData, __SCUnserializeMultiple, 
-                       __SCUnserializeString, __SCVLANInterfaceCopyActive, __SCVLANInterfaceUpdateConfiguration, 
+                       __SCNetworkInterfaceIsApplePreconfigured, __SCNetworkInterfaceIsBluetoothP2P, 
+                       __SCNetworkInterfaceIsBluetoothPAN, __SCNetworkInterfaceIsBluetoothPAN_NAP, 
+                       __SCNetworkInterfaceIsBuiltin, __SCNetworkInterfaceIsHiddenConfiguration, 
+                       __SCNetworkInterfaceIsModemV92, __SCNetworkInterfaceIsPhysicalEthernet, 
+                       __SCNetworkInterfaceIsTethered, __SCNetworkInterfaceIsThunderbolt, 
+                       __SCNetworkMigrationAreConfigurationsIdentical, __SCNetworkReachabilityCopyTargetDescription, 
+                       __SCNetworkReachabilityCopyTargetFlags, __SCNetworkServiceCompare, 
+                       __SCNetworkServiceCopyActive, __SCNetworkServiceIsVPN, __SCNetworkServiceSetServiceID, 
+                       __SCNetworkSetCreateDefault, __SCNetworkSetSetSetID, __SCPreferencesCopyComputerName, 
+                       __SCPreferencesSystemKeychainPasswordItemCopy, __SCPreferencesSystemKeychainPasswordItemExists, 
+                       __SCPreferencesSystemKeychainPasswordItemRemove, __SCPreferencesSystemKeychainPasswordItemSet, 
+                       __SCSecKeychainCopySystemKeychain, __SCSecKeychainPasswordItemCopy, 
+                       __SCSecKeychainPasswordItemExists, __SCSecKeychainPasswordItemRemove, 
+                       __SCSecKeychainPasswordItemSet, __SCSerialize, __SCSerializeData, 
+                       __SCSerializeMultiple, __SCSerializeString, __SCUnserialize, 
+                       __SCUnserializeData, __SCUnserializeMultiple, __SCUnserializeString, 
+                       __SCVLANInterfaceCopyActive, __SCVLANInterfaceUpdateConfiguration, 
                        __SC_CFBundleCopyNonLocalizedString, __SC_CFBundleGet, __SC_CFMachPortCreateWithPort, 
                        __SC_CFStringIsValidDNSName, __SC_CFStringIsValidNetBIOSName, 
                        __SC_LOG_DEFAULT, __SC_cfstring_to_cstring, __SC_checkResolverReachabilityByAddress, 

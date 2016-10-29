@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 955170B3-2C2B-3F44-BE8A-11FCBEABC1CF', 'x86_64: 5F260836-48E4-3F57-8553-62D2DA228A1F' ]
+uuids:           [ 'i386: 9E5DA474-529B-3ACB-B098-AC1D0386F989', 'x86_64: FB1702C3-C521-37BD-91CB-559168785D22' ]
 platform:        macosx
 install-name:    /usr/lib/system/libsystem_c.dylib
-current-version: 1158.1.2
+current-version: 1158.20.4
 objc-constraint: none
 parent-umbrella: System
 exports:         
@@ -271,12 +271,12 @@ exports:
                        _tcflow, _tcflush, _tcgetattr, _tcgetpgrp, _tcgetsid, _tcsendbreak, 
                        _tcsetattr, _tcsetpgrp, _tdelete, _telldir, _tempnam, _tfind, 
                        _thread_stack_pcs, _time, _time2posix, _timegm, _timelocal, 
-                       _timeoff, _times, _timezone, _tmpfile, _tmpnam, _toascii, 
-                       _tolower, _tolower_l, _toupper, _toupper_l, _towctrans, _towctrans_l, 
-                       _towlower, _towlower_l, _towupper, _towupper_l, _tre_ast_new_catenation, 
-                       _tre_ast_new_iter, _tre_ast_new_literal, _tre_ast_new_node, 
-                       _tre_ast_new_union, _tre_compile, _tre_fill_pmatch, _tre_free, 
-                       _tre_mem_alloc_impl, _tre_mem_destroy, _tre_mem_new_impl, 
+                       _timeoff, _times, _timezone, _timingsafe_bcmp, _tmpfile, _tmpnam, 
+                       _toascii, _tolower, _tolower_l, _toupper, _toupper_l, _towctrans, 
+                       _towctrans_l, _towlower, _towlower_l, _towupper, _towupper_l, 
+                       _tre_ast_new_catenation, _tre_ast_new_iter, _tre_ast_new_literal, 
+                       _tre_ast_new_node, _tre_ast_new_union, _tre_compile, _tre_fill_pmatch, 
+                       _tre_free, _tre_mem_alloc_impl, _tre_mem_destroy, _tre_mem_new_impl, 
                        _tre_parse, _tre_stack_destroy, _tre_stack_new, _tre_stack_num_objects, 
                        _tre_tnfa_run_backtrack, _tre_tnfa_run_parallel, _tsearch, 
                        _ttyname, _ttyname_r, _ttyslot, _twalk, _tzname, _tzset, _tzsetwall, 

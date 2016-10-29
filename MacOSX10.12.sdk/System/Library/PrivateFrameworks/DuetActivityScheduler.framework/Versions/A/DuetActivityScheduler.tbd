@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B1CFB559-6325-3507-85D3-B91778456CBF' ]
+uuids:           [ 'x86_64: E3BA2443-CFE4-34E2-97F1-8B96C2A4A743' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DuetActivityScheduler.framework/Versions/A/DuetActivityScheduler
 objc-constraint: none

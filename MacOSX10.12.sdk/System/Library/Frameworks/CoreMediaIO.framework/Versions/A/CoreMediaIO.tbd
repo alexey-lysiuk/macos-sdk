@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: FB808BF4-3183-3F7B-AF0B-F68239E227C1', 'x86_64: AEB3C94A-912A-3C23-A3BE-B1E8397A7C1D' ]
+uuids:           [ 'i386: CF4FF3E7-1228-3B8B-A827-5F9AF9A1D5EE', 'x86_64: 4203273F-C174-32D7-8DC7-DB52CDF9EA77' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreMediaIO.framework/Versions/A/CoreMediaIO
 objc-constraint: none

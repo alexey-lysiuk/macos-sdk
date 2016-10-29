@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6D2ECC6A-6C2A-3E8F-8ACD-48B96AE85942' ]
+uuids:           [ 'x86_64: 870FBCB6-E4C0-34FB-91F9-C2223A0BD44E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ConsoleKit.framework/Versions/A/ConsoleKit
 objc-constraint: none

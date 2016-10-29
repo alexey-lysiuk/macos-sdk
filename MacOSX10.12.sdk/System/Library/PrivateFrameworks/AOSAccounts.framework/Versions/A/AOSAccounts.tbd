@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0A19142A-2EFB-3909-B30B-DF196D83D240' ]
+uuids:           [ 'x86_64: AE5BEF32-B7CD-3C29-AE17-C5B490D8A003' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AOSAccounts.framework/Versions/A/AOSAccounts
 current-version: 1.9.95
@@ -104,20 +104,21 @@ exports:
                        _kMMPropertyEnableOption, _kMMPropertyEscrowProxyUrl, _kMMPropertyFMMInUseOwnerAccountID, 
                        _kMMPropertyFMMInUseOwnerDisplayName, _kMMPropertyFMMInUseOwnerFirstName, 
                        _kMMPropertyFMMInUseOwnerLastName, _kMMPropertyFMMRemoveAuthRight, 
-                       _kMMPropertyIMAPHostName, _kMMPropertyIMAPHostPort, _kMMPropertyIMAPSSLRequired, 
-                       _kMMPropertyKeychainAADetailsAEAction, _kMMPropertyKeychainMRDetailsAEAction, 
-                       _kMMPropertyKeychainMRRequestApprovalAEAction, _kMMPropertyKeychainSRCodeAEAction, 
-                       _kMMPropertyKeychainSRDetailsAEAction, _kMMPropertyKeychainWADetailsAEAction, 
-                       _kMMPropertyMailAccountName, _kMMPropertyMailAliasEditionURL, 
-                       _kMMPropertyMailEmailAddress, _kMMPropertyMailFullUserName, 
-                       _kMMPropertyMailStatus, _kMMPropertyMailSupportURL, _kMMPropertyMediaStreamHasThumbnailsOnly, 
-                       _kMMPropertyMediaStreamHasUnimportedAssets, _kMMPropertyMediaStreamLibaryAllCloudOriginalsOnDisk, 
-                       _kMMPropertyMediaStreamLibaryNotConnected, _kMMPropertyMediaStreamLibaryOnHFSVolume, 
-                       _kMMPropertyMediaStreamLibaryReferencedFilesCount, _kMMPropertyMediaStreamLibarySizeOnDisk, 
-                       _kMMPropertyMediaStreamNeedsPassword, _kMMPropertyMobileDocumentsApplicationList, 
-                       _kMMPropertyMobileDocumentsDisplayNameKey, _kMMPropertyMobileDocumentsEnableKey, 
-                       _kMMPropertyMobileDocumentsLiverpoolApplicationList, _kMMPropertyMobileDocumentsMigrationDevices, 
-                       _kMMPropertyMobileDocumentsMigrationDevicesEligable, _kMMPropertyMobileDocumentsMigrationDevicesNotEligableKey, 
+                       _kMMPropertyFMMWipeToken, _kMMPropertyIMAPHostName, _kMMPropertyIMAPHostPort, 
+                       _kMMPropertyIMAPSSLRequired, _kMMPropertyKeychainAADetailsAEAction, 
+                       _kMMPropertyKeychainMRDetailsAEAction, _kMMPropertyKeychainMRRequestApprovalAEAction, 
+                       _kMMPropertyKeychainSRCodeAEAction, _kMMPropertyKeychainSRDetailsAEAction, 
+                       _kMMPropertyKeychainWADetailsAEAction, _kMMPropertyMailAccountName, 
+                       _kMMPropertyMailAliasEditionURL, _kMMPropertyMailEmailAddress, 
+                       _kMMPropertyMailFullUserName, _kMMPropertyMailStatus, _kMMPropertyMailSupportURL, 
+                       _kMMPropertyMediaStreamHasThumbnailsOnly, _kMMPropertyMediaStreamHasUnimportedAssets, 
+                       _kMMPropertyMediaStreamLibaryAllCloudOriginalsOnDisk, _kMMPropertyMediaStreamLibaryNotConnected, 
+                       _kMMPropertyMediaStreamLibaryOnHFSVolume, _kMMPropertyMediaStreamLibaryReferencedFilesCount, 
+                       _kMMPropertyMediaStreamLibarySizeOnDisk, _kMMPropertyMediaStreamNeedsPassword, 
+                       _kMMPropertyMobileDocumentsApplicationList, _kMMPropertyMobileDocumentsDisplayNameKey, 
+                       _kMMPropertyMobileDocumentsEnableKey, _kMMPropertyMobileDocumentsLiverpoolApplicationList, 
+                       _kMMPropertyMobileDocumentsMigrationDevices, _kMMPropertyMobileDocumentsMigrationDevicesEligable, 
+                       _kMMPropertyMobileDocumentsMigrationDevicesNotEligableKey, 
                        _kMMPropertyMobileDocumentsMigrationDevicesUpgradeKey, _kMMPropertyMobileDocumentsMigrationStatusDone, 
                        _kMMPropertyMobileDocumentsMigrationStatusInProcess, _kMMPropertyMobileDocumentsMigrationStatusKey, 
                        _kMMPropertyMobileDocumentsMigrationStatusNone, _kMMPropertyMobileDocumentsOptimizeStorage, 

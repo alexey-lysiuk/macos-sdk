@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3B028257-B679-3A33-836B-8D7856DB653A' ]
+uuids:           [ 'x86_64: 8261C482-8ECA-374C-BE11-9C447D1FB271' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IMDaemonCore.framework/Versions/A/IMDaemonCore
 current-version: 800.0

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 337588F8-80AA-3C6F-B3EB-09C58352DE21', 'x86_64: EBC8F66C-6794-390C-939F-54EBCFD465D2' ]
+uuids:           [ 'i386: 932AA20F-70B5-35C7-80C2-E9CC7FBEB98C', 'x86_64: 6C1C4A07-2E75-352A-9450-F18D4DDBF66E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/GameCenterFoundation.framework/Versions/A/GameCenterFoundation
 objc-constraint: none

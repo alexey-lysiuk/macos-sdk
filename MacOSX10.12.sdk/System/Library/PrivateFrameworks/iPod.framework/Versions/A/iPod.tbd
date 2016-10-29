@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 0CE4ACA8-6116-3FDD-91DC-B48A29253347', 'x86_64: 80E2C9DC-8654-3C28-AD86-80B953241414' ]
+uuids:           [ 'i386: 3B276F7A-535B-3FAF-B4D4-26623E17B5CF', 'x86_64: A639FEB4-725C-3573-8143-6284732ABBB0' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/iPod.framework/Versions/A/iPod
 objc-constraint: none

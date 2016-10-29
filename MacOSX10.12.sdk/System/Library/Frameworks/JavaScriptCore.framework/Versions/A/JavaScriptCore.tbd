@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 1E5BE99A-F18C-39B7-AA30-FB89B65D1186', 'x86_64: AE5E191A-7596-3513-BF3C-7D11263392A4' ]
+uuids:           [ 'i386: 8EE69E25-4CE1-3B52-AD41-2A854FD42F99', 'x86_64: 4CA55701-679C-303C-BF82-BA261BD33B95' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/JavaScriptCore.framework/Versions/A/JavaScriptCore
-current-version: 602.1.50
+current-version: 602.2.14
 objc-constraint: none
 exports:         
   - archs:           [ i386 ]
@@ -1908,8 +1908,9 @@ exports:
                        __ZNK3JSC8JSObject11hasPropertyEPNS_9ExecStateEj, __ZNK3JSC8JSObject11toPrimitiveEPNS_9ExecStateENS_22PreferredPrimitiveTypeE, 
                        __ZNK3JSC8JSObject21findPropertyHashEntryENS_12PropertyNameE, 
                        __ZNK3JSC8JSObject8toNumberEPNS_9ExecStateE, __ZNK3JSC8JSObject8toStringEPNS_9ExecStateE, 
-                       __ZNK3JSC8Profiler8Database4saveEPKc, __ZNK3JSC8Profiler8Database4toJSEPNS_9ExecStateE, 
-                       __ZNK3JSC8Profiler8Database6toJSONEv, __ZNK3JSC9ClassInfo35hasStaticSetterOrReadonlyPropertiesEv, 
+                       __ZNK3JSC8JSString13equalSlowCaseEPNS_9ExecStateEPS0_, __ZNK3JSC8Profiler8Database4saveEPKc, 
+                       __ZNK3JSC8Profiler8Database4toJSEPNS_9ExecStateE, __ZNK3JSC8Profiler8Database6toJSONEv, 
+                       __ZNK3JSC9ClassInfo35hasStaticSetterOrReadonlyPropertiesEv, 
                        __ZNK3JSC9CodeBlock26reoptimizationRetryCounterEv, __ZNK3JSC9CodeBlock4dumpERN3WTF11PrintStreamE, 
                        __ZNK3JSC9Structure43anyObjectInChainMayInterceptIndexedAccessesEv, 
                        __ZNK3WTF10StringImpl10startsWithEPKS0_, __ZNK3WTF10StringImpl10startsWithEPKcjb, 

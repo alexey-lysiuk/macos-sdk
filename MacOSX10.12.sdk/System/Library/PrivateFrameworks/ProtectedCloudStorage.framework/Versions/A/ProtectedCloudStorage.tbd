@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 468DCAA8-0E77-31B5-8FE1-53D6BDE927FD', 'x86_64: A1219818-97B0-3A4D-825B-24ADF9B7C8B6' ]
+uuids:           [ 'i386: 8EF1B3F0-1AAE-363D-BD12-128D2E70721C', 'x86_64: 212CE86F-2BEC-3D04-9E16-5929E6798376' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ProtectedCloudStorage.framework/Versions/A/ProtectedCloudStorage
 objc-constraint: none

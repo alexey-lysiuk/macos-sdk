@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: E8F6D6BF-04D6-31F7-80A1-DE9E93D986BD', 'x86_64: 856F4FB9-AAF2-3FC2-BE19-E7AB494232CC' ]
+uuids:           [ 'i386: 9A01B323-C262-37C7-A577-AEB7ED9A5EB1', 'x86_64: FFB3F28C-B982-34EF-8510-8D6D10975404' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SecurityHI.framework/Versions/A/SecurityHI
 current-version: 55006.0

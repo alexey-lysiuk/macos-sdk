@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C81C2824-1E30-3887-A499-43755EDF27C7' ]
+uuids:           [ 'x86_64: 9F6CFA9A-3109-30C5-B3AB-4745489E7EBD' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CloudKit.framework/Versions/A/CloudKit
-current-version: 638.1
+current-version: 639.2.1
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

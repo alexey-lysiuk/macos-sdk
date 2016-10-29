@@ -1,10 +1,10 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64, x86_64h ]
-uuids:           [ 'i386: FF12A220-F80A-327F-AA28-9BCCBF434C30', 'x86_64: 6CC22156-EC5C-3DC3-8132-41376F090B08', 
-                   'x86_64h: A1D77DB1-2893-3A18-8986-BD78E441D89D' ]
+uuids:           [ 'i386: B9E84439-6A22-3D04-B7E4-BEC4C60DBE93', 'x86_64: 64DC1EBD-E22E-3F8B-B44D-76043CBDC1AD', 
+                   'x86_64h: BE66DAAF-2955-3C36-8D6C-1518503A7F4C' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vImage.framework/Versions/A/vImage
-current-version: 331.4
+current-version: 331.5
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64, x86_64h ]

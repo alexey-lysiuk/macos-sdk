@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 33F71CDC-6403-3A16-ACDC-376922E540EF' ]
+uuids:           [ 'x86_64: C487A57D-0DB6-365C-860E-97EDD28CD5AC' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoLibraryPrivate.framework/Versions/A/Frameworks/Geode.framework/Versions/A/Geode
-current-version: 444.4
+current-version: 451.20.9
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

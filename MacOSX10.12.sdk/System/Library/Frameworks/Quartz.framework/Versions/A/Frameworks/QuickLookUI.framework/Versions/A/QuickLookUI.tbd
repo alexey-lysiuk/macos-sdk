@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 5643C137-6F15-3C0B-8CC8-B387C188C2EE', 'x86_64: 7DBE40A6-3F2F-3AF0-ACF4-8C95B78346C5' ]
+uuids:           [ 'i386: AA4A762E-4718-343D-B683-4C50AEB6F66A', 'x86_64: C610CF2D-4D98-3A40-9F3F-8C50D444F98E' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Quartz.framework/Versions/A/Frameworks/QuickLookUI.framework/Versions/A/QuickLookUI
 current-version: 0.0

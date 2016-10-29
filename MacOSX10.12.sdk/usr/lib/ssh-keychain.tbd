@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 77F4E0B5-9A28-3F87-A514-46A25E6912EF' ]
+uuids:           [ 'x86_64: DC6532B2-764A-3819-829E-AE5D16C568D8' ]
 platform:        macosx
 install-name:    /usr/lib/ssh-keychain.dylib
 objc-constraint: none

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 911C988B-68E7-3708-B7DA-29850B9A2FF9', 'x86_64: B9B92DB5-1C6C-306F-BD29-B1F82EC95283' ]
+uuids:           [ 'i386: 57A2455D-B3C4-3D9E-9ACB-D515264F8E2D', 'x86_64: C79CDF87-7BF8-3E56-A88D-2DD8C97FEDD1' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreUI.framework/Versions/A/CoreUI
-current-version: 424.1
+current-version: 426.9.1
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]
@@ -330,7 +330,9 @@ exports:
                        _kCUIPresentationStateActiveKey, _kCUIPresentationStateActiveMain, 
                        _kCUIPresentationStateInactive, _kCUIPresentationStateKey, 
                        _kCUIPressedPartKey, _kCUIPreviousStateKey, _kCUIPreviousValueKey, 
-                       _kCUIQuartzPen, _kCUIRectanglesKey, _kCUIRendererAllowsVibrancyKey, 
+                       _kCUIQuartzPen, _kCUIRangeSelectorKindDualHandle, _kCUIRangeSelectorKindKey, 
+                       _kCUIRangeSelectorKindMonoHandle, _kCUIRangeSelectorKindNoHandle, 
+                       _kCUIRangeSelectorKindSingleHandle, _kCUIRectanglesKey, _kCUIRendererAllowsVibrancyKey, 
                        _kCUIRendererAlternateSystemThemeKey, _kCUIRendererAlternateSystemThemeWhiteControls, 
                        _kCUIRendererDefaultBlendModeKey, _kCUIRendererThemeFileBundleIdentifierKey, 
                        _kCUIRendererThemeFileNameKey, _kCUIRendererThemeFileURLKey, 
@@ -420,19 +422,20 @@ exports:
                        _kCUIWidgetMenuTitleApple, _kCUIWidgetOverlayScrollBar, _kCUIWidgetPopover, 
                        _kCUIWidgetProgressBar, _kCUIWidgetProgressIndeterminateBar, 
                        _kCUIWidgetProgressRelevance, _kCUIWidgetProgressSpinner, 
-                       _kCUIWidgetProgressSpinnerDeterminate, _kCUIWidgetScrollBar, 
-                       _kCUIWidgetScrollBarTrackCorner, _kCUIWidgetScrollColumnSizer, 
-                       _kCUIWidgetScrollViewFrame, _kCUIWidgetSelectionOverlay, _kCUIWidgetSelectionOverlayFill, 
-                       _kCUIWidgetSlider, _kCUIWidgetSliderThumb, _kCUIWidgetSourceListBackground, 
-                       _kCUIWidgetSourceListBackgroundGradientEnd, _kCUIWidgetSourceListBackgroundGradientStart, 
-                       _kCUIWidgetSourceListSelection, _kCUIWidgetStyledRects, _kCUIWidgetStyledText, 
-                       _kCUIWidgetSynchronization, _kCUIWidgetTab, _kCUIWidgetTabPane, 
-                       _kCUIWidgetTextToken, _kCUIWidgetTickMark, _kCUIWidgetTitleBarCloseBox, 
-                       _kCUIWidgetTitleBarCollapseBox, _kCUIWidgetTitleBarFullScreenEnter, 
-                       _kCUIWidgetTitleBarFullScreenExit, _kCUIWidgetTitleBarToolbarButton, 
-                       _kCUIWidgetTitleBarZoomBox, _kCUIWidgetToolbarBaselineSeparator, 
-                       _kCUIWidgetToolbarDefaultItemsWell, _kCUIWidgetToolbarItemWell, 
-                       _kCUIWidgetToolbarSeparator, _kCUIWidgetToolbarSeparatorInset, 
+                       _kCUIWidgetProgressSpinnerDeterminate, _kCUIWidgetRangeSelectorFill, 
+                       _kCUIWidgetRangeSelectorFrame, _kCUIWidgetScrollBar, _kCUIWidgetScrollBarTrackCorner, 
+                       _kCUIWidgetScrollColumnSizer, _kCUIWidgetScrollViewFrame, 
+                       _kCUIWidgetScrollViewMoreIndicator, _kCUIWidgetSelectionOverlay, 
+                       _kCUIWidgetSelectionOverlayFill, _kCUIWidgetSlider, _kCUIWidgetSliderBackground, 
+                       _kCUIWidgetSliderThumb, _kCUIWidgetSourceListBackground, _kCUIWidgetSourceListBackgroundGradientEnd, 
+                       _kCUIWidgetSourceListBackgroundGradientStart, _kCUIWidgetSourceListSelection, 
+                       _kCUIWidgetStyledRects, _kCUIWidgetStyledText, _kCUIWidgetSynchronization, 
+                       _kCUIWidgetTab, _kCUIWidgetTabPane, _kCUIWidgetTextToken, 
+                       _kCUIWidgetTickMark, _kCUIWidgetTitleBarCloseBox, _kCUIWidgetTitleBarCollapseBox, 
+                       _kCUIWidgetTitleBarFullScreenEnter, _kCUIWidgetTitleBarFullScreenExit, 
+                       _kCUIWidgetTitleBarToolbarButton, _kCUIWidgetTitleBarZoomBox, 
+                       _kCUIWidgetToolbarBaselineSeparator, _kCUIWidgetToolbarDefaultItemsWell, 
+                       _kCUIWidgetToolbarItemWell, _kCUIWidgetToolbarSeparator, _kCUIWidgetToolbarSeparatorInset, 
                        _kCUIWidgetToolbarSpace, _kCUIWidgetToolbarSpaceInset, _kCUIWidgetUnderDesktopView, 
                        _kCUIWidgetUnspecified, _kCUIWidgetVisualEffectView, _kCUIWidgetWindowBottomBar, 
                        _kCUIWidgetWindowFrame, _kCUIWidgetWindowShapeMask, _kCUIWidgetWindowTitleBar, 

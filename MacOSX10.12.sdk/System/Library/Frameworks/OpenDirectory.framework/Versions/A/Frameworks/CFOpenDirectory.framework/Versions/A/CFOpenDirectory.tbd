@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 80A91747-A1D4-359A-B33B-0E5A00078E91', 'x86_64: BDD22B3E-4149-366A-A974-942280861DD4' ]
+uuids:           [ 'i386: 1909650B-59F5-3D6A-B338-6DA0B7D14026', 'x86_64: 7BF3CCCB-B936-31AB-A8E4-330F091EAB9B' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/OpenDirectory.framework/Versions/A/Frameworks/CFOpenDirectory.framework/Versions/A/CFOpenDirectory
 objc-constraint: none

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 793CD806-F2CC-3092-AB04-A306B131BF6C', 'x86_64: B30A0B99-AFDE-3BF8-A04F-761A75A6A3B1' ]
+uuids:           [ 'i386: 42288599-3B1D-3A18-AFE7-4C6E4A5CCC97', 'x86_64: 19494FB5-3F91-3BC6-8267-011E85AA6566' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/GSS.framework/Versions/A/GSS
 objc-constraint: none

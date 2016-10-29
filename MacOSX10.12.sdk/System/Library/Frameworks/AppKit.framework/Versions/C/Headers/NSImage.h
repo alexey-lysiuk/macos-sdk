@@ -228,7 +228,7 @@ typedef NS_ENUM(NSInteger, NSImageResizingMode) {
 
 APPKIT_EXTERN NSString * const NSImageHintCTM NS_AVAILABLE_MAC(10_6); // value is NSAffineTransform
 APPKIT_EXTERN NSString * const NSImageHintInterpolation NS_AVAILABLE_MAC(10_6); // value is NSNumber with NSImageInterpolation enum value
-APPKIT_EXTERN NSString *const NSImageHintUserInterfaceLayoutDirection NS_AVAILABLE_MAC(10_12); // value is NSNumber with NSUserInterfaceLayoutDirection enum value
+APPKIT_EXTERN NSString * const NSImageHintUserInterfaceLayoutDirection NS_AVAILABLE_MAC(10_12); // value is NSNumber with NSUserInterfaceLayoutDirection enum value
 
 @protocol NSImageDelegate <NSObject>
 @optional
@@ -292,8 +292,7 @@ APPKIT_EXTERN NSString *const NSImageHintUserInterfaceLayoutDirection NS_AVAILAB
  
  Some images also contain the word "Freestanding".  This indicates that an image is appropriate for use as a borderless button - it doesn't need any extra bezel artwork behind it.  For example, Safari uses NSImageNameStopProgressTemplate as the stop button in a button on its toolbar, while it uses NSImageNameStopProgressFreestandingTemplate in the downloads window where it appears inline with a progress indicator.
   
- The string value of each symbol is the same as the constant name without the "ImageName" part.  For example, NSImageNameBonjour is @"NSBonjour".  This is documented so that images can be used by name in Interface Builder.     
- 
+ The string value of each symbol is the same as the constant name without the "ImageName" part.  For example, NSImageNameBonjour is @"NSBonjour".  This is documented so that images can be used by name in Interface Builder.
  */
 APPKIT_EXTERN NSString * const NSImageNameQuickLookTemplate NS_AVAILABLE_MAC(10_5);
 APPKIT_EXTERN NSString * const NSImageNameBluetoothTemplate NS_AVAILABLE_MAC(10_5);
@@ -402,7 +401,88 @@ APPKIT_EXTERN NSString * const NSImageNameStatusAvailable NS_AVAILABLE_MAC(10_6)
 APPKIT_EXTERN NSString * const NSImageNameStatusPartiallyAvailable NS_AVAILABLE_MAC(10_6);
 APPKIT_EXTERN NSString * const NSImageNameStatusUnavailable NS_AVAILABLE_MAC(10_6);
 APPKIT_EXTERN NSString * const NSImageNameStatusNone NS_AVAILABLE_MAC(10_6);
-
 APPKIT_EXTERN NSString * const NSImageNameShareTemplate NS_AVAILABLE_MAC(10_8);
+
+/* These images are appropriate for use only in Touch Bar items.
+ */
+APPKIT_EXTERN NSString * const NSImageNameTouchBarAddDetailTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarAddTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarAlarmTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarAudioInputMuteTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarAudioInputTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarAudioOutputMuteTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarAudioOutputVolumeHighTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarAudioOutputVolumeLowTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarAudioOutputVolumeMediumTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarAudioOutputVolumeOffTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarBookmarksTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarColorPickerFill NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarColorPickerFont NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarColorPickerStroke NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarCommunicationAudioTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarCommunicationVideoTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarComposeTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarDeleteTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarDownloadTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarEnterFullScreenTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarExitFullScreenTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarFastForwardTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarFolderCopyToTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarFolderMoveToTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarFolderTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarGetInfoTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarGoBackTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarGoDownTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarGoForwardTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarGoUpTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarHistoryTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarIconViewTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarListViewTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarMailTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarNewFolderTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarNewMessageTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarOpenInBrowserTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarPauseTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarPlayheadTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarPlayPauseTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarPlayTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarQuickLookTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarRecordStartTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarRecordStopTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarRefreshTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarRewindTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarRotateLeftTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarRotateRightTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarSearchTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarShareTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarSidebarTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarSkipAhead15SecondsTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarSkipAhead30SecondsTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarSkipAheadTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarSkipBack15SecondsTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarSkipBack30SecondsTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarSkipBackTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarSkipToEndTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarSkipToStartTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarSlideshowTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarTagIconTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarTextBoldTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarTextBoxTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarTextCenterAlignTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarTextItalicTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarTextJustifiedAlignTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarTextLeftAlignTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarTextListTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarTextRightAlignTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarTextStrikethroughTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarTextUnderlineTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarUserAddTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarUserGroupTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarUserTemplate NS_AVAILABLE_MAC(10_12_1);
+
+/* If you have a volume indicator, use NSImageNameTouchBarAudioOutputVolume{Off,Low,Medium,High}Template, which align the speaker correctly.  For volume controls, use NSImageNameTouchBarVolume{Down,Up}Template.
+ */
+APPKIT_EXTERN NSString * const NSImageNameTouchBarVolumeDownTemplate NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSString * const NSImageNameTouchBarVolumeUpTemplate NS_AVAILABLE_MAC(10_12_1);
 
 NS_ASSUME_NONNULL_END

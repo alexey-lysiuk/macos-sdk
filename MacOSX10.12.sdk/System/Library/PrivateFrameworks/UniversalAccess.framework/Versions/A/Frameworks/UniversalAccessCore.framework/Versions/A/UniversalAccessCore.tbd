@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0598AD1D-BC51-3708-BFDA-B6122EAA2360' ]
+uuids:           [ 'x86_64: DAAF30D6-693C-30A1-A90A-DFBF64CA4F94' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/UniversalAccess.framework/Versions/A/Frameworks/UniversalAccessCore.framework/Versions/A/UniversalAccessCore
 current-version: 236.0
@@ -10,7 +10,9 @@ exports:
     re-exports:      [ /System/Library/PrivateFrameworks/UniversalAccess.framework/Versions/A/Libraries/libUAPreferences.dylib ]
     symbols:         [ _UAAssistiveGetControlType, _UAAssistiveSetControlType, _UACursorGetScale, 
                        _UACursorMaximumScale, _UACursorMinimumScale, _UACursorSetScale, 
-                       _UADwellActionType, _UADwellBottomLeftCornerActionType, _UADwellBottomRightCornerActionType, 
+                       _UADFRInteractiveHUDSetEnabled, _UADFRInteractiveHUDToggle, 
+                       _UADFRZoomableHUDIsEnabled, _UADFRZoomableHUDSetEnabled, _UADwellActionType, 
+                       _UADwellBottomLeftCornerActionType, _UADwellBottomRightCornerActionType, 
                        _UADwellHideUIEnabled, _UADwellHideUITimeout, _UADwellIsAutoRevertToLeftClickEnabled, 
                        _UADwellIsEnabled, _UADwellIsHomePanelAllowedToFollowTriggeredHotCorner, 
                        _UADwellIsRunning, _UADwellIsSingleAction, _UADwellIsZoomEnabled, 
@@ -72,5 +74,5 @@ exports:
                        _UAZoomSetPanningMode, _UAZoomSetScale, _UAZoomShowPreviewIsEnabled, 
                        _UAZoomShowPreviewSetEnabled, _UAZoomSmoothImagesIsEnabled, 
                        _UAZoomSmoothImagesSetEnabled, _UniversalAccessCoreVersionNumber, 
-                       _UniversalAccessCoreVersionString ]
+                       _UniversalAccessCoreVersionString, _kUADFRHUDMachServiceName ]
 ...

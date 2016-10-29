@@ -76,7 +76,8 @@ NS_CLASS_AVAILABLE_MAC(10_10)
     unsigned int _appearsDarker:1;
     unsigned int _inheritsBlendGroup:1;
     unsigned int _registeredForFrameChanges:1;
-    unsigned int _reservedFlags:18 __unused;
+    unsigned int _needsClearProxy:1;
+    unsigned int _reservedFlags:17 __unused;
 }
 
 /* The default value is NSVisualEffectMaterialAppearanceBased; the material is updated to be the correct material based on the appearance set on this view.

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 874ADAEE-4E3B-301A-AA83-8B50ABBFECE1', 'x86_64: ED8BC182-9155-31B6-AB3E-B985F827A762' ]
+uuids:           [ 'i386: E2BDC0C8-FA8A-3689-A833-801958ADE980', 'x86_64: 0C88DFDA-12AD-3EFE-AB5B-996374DE65DB' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/GPUCompiler.framework/libComposeFilters.dylib
 current-version: 0.0

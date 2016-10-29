@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 54C285E7-CF44-3B35-BCF6-728417AF7D61' ]
+uuids:           [ 'x86_64: 8663BD6C-8D41-30F3-B04B-4299F98280E4' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/BluetoothAudio.framework/Versions/A/BluetoothAudio
 objc-constraint: none
@@ -15,11 +15,12 @@ exports:
                        _BluetoothEndpointManagerHandleAllNotNearby, _BluetoothEndpointManagerHandleRemove, 
                        _BluetoothEndpointManagerHandleRemoveAllEvent, _BluetoothEndpointManagerHandleUpdateEvent, 
                        _BluetoothEndpointManagerLogComponent, _BluetoothEndpointStreamAudioCreate, 
-                       _BluetoothEndpointUpdateWithDescription, _kBluetoothEndpointDescriptionProperty_BatteryLevels, 
-                       _kBluetoothEndpointDescriptionProperty_Connected, _kBluetoothEndpointDescriptionProperty_DeviceID, 
-                       _kBluetoothEndpointDescriptionProperty_Features, _kBluetoothEndpointDescriptionProperty_ModelID, 
-                       _kBluetoothEndpointDescriptionProperty_Name, _kBluetoothEndpointDescriptionProperty_Nearby, 
-                       _kBluetoothEndpointDescriptionProperty_Started, _kBluetoothEndpointDescriptionProperty_SupportedFormats ]
+                       _BluetoothEndpointUpdateWithDescription, _BluetoothEndpoint_Disassociate, 
+                       _kBluetoothEndpointDescriptionProperty_BatteryLevels, _kBluetoothEndpointDescriptionProperty_Connected, 
+                       _kBluetoothEndpointDescriptionProperty_DeviceID, _kBluetoothEndpointDescriptionProperty_Features, 
+                       _kBluetoothEndpointDescriptionProperty_ModelID, _kBluetoothEndpointDescriptionProperty_Name, 
+                       _kBluetoothEndpointDescriptionProperty_Nearby, _kBluetoothEndpointDescriptionProperty_Started, 
+                       _kBluetoothEndpointDescriptionProperty_SupportedFormats ]
     objc-classes:    [ _BluetoothBridge ]
     objc-ivars:      [ _BluetoothBridge._connectedSemaphore, _BluetoothBridge._disconnectedSemaphore ]
 ...

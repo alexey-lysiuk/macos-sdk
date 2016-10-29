@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 3110DC54-55F6-3F9E-8547-E1F31FED38AC', 'x86_64: 9B92E49F-5862-35D9-9449-9136446BC1F8' ]
+uuids:           [ 'i386: B6FF68F3-5709-31F5-972C-CE892922F2A9', 'x86_64: 15C4AF49-2F85-3265-B53F-4925616C746E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreSymbolication.framework/Versions/A/CoreSymbolication
 current-version: 61050.0

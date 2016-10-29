@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: F93022D1-A604-3FAB-BEC4-C603B5D9DAC7', 'x86_64: 8A271C61-EA37-3F97-87EA-A73C43B73035' ]
+uuids:           [ 'i386: ED2F6081-84D3-38D7-A51E-1973EA73D5EC', 'x86_64: D1D597FB-B224-3690-AC4F-1675B081B3D1' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/JavaVM.framework/Versions/A/JavaVM
 objc-constraint: none

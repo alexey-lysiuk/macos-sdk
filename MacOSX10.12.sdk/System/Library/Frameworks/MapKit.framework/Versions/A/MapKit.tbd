@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 542C2C5C-4057-3743-BEF3-3A0B10F1F1F8' ]
+uuids:           [ 'x86_64: 339526FC-F2BF-3947-AEC1-6D9B37520473' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/MapKit.framework/Versions/A/MapKit
 current-version: 0.0

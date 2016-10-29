@@ -66,6 +66,7 @@ extern NSString* const MLPhotosFrontCameraGroupTypeIdentifier;
 extern NSString* const MLPhotosPanoramasGroupTypeIdentifier;
 extern NSString* const MLPhotosVideosGroupTypeIdentifier;
 extern NSString* const MLPhotosSloMoGroupTypeIdentifier;
+extern NSString* const MLPhotosDepthEffectGroupTypeIdentifier;
 extern NSString* const MLPhotosTimelapseGroupTypeIdentifier;
 extern NSString* const MLPhotosBurstGroupTypeIdentifier;
 extern NSString* const MLPhotosScreenshotGroupTypeIdentifier;

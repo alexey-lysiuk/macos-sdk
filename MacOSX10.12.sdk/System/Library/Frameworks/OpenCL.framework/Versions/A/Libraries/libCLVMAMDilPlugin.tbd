@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 049715F4-3D40-3F4A-ADA1-C7F1A3BFC757', 'x86_64: 2AFBE82C-46F9-38A3-B2B2-0DE9545CE1A3' ]
+uuids:           [ 'i386: F2EF7029-B2DE-3D3F-B5AF-6A7449CB5B81', 'x86_64: 631FD346-C4B0-37BA-B239-A3DF1691BDD3' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/OpenCL.framework/Versions/A/Libraries/libCLVMAMDilPlugin.dylib
 objc-constraint: none

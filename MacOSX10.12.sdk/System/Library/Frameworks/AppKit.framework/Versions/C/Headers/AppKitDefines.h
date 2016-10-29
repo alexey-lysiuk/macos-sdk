@@ -43,10 +43,6 @@
 #define APPKIT_PRIVATE          __attribute__((visibility("hidden")))
 #endif
 
-//
-// For Windows
-//
-
 #endif
 
 #endif // _APPKITDEFINES_H

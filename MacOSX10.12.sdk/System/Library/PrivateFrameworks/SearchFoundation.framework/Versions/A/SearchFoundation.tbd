@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7F792A21-9565-33F8-B061-8820825831C0' ]
+uuids:           [ 'x86_64: CE2B7224-F022-3335-BFCD-6FD9D9329A98' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SearchFoundation.framework/Versions/A/SearchFoundation
 objc-constraint: none

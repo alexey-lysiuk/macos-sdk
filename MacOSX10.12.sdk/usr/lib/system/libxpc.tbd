@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 28A5B595-3231-36CE-A10D-0A62C7576250', 'x86_64: 2A901937-48E1-3BF2-83F1-2431156D82B7' ]
+uuids:           [ 'i386: 86542B58-70B3-3C95-9F5A-BCA1A506A3F2', 'x86_64: CE86F4BA-EF31-33BD-8AC3-7BF25F632FA9' ]
 platform:        macosx
 install-name:    /usr/lib/system/libxpc.dylib
-current-version: 972.1.5
+current-version: 972.20.3
 objc-constraint: none
 parent-umbrella: System
 exports:         

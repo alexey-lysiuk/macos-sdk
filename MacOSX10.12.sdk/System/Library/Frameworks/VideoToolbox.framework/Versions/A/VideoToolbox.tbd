@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 1861B75E-9DA3-3C6E-B62C-B0E19C8766EF', 'x86_64: 19EEED41-97D4-3BA5-A83F-1A65D25A2E9A' ]
+uuids:           [ 'i386: 873F078C-5A83-31A0-A92E-91708BEB3F4B', 'x86_64: 608597F5-B251-37AA-B364-B5DA023925A5' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/VideoToolbox.framework/Versions/A/VideoToolbox
 objc-constraint: none

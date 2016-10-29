@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 2DECB648-C027-3152-A3EB-F488EB1AF573', 'x86_64: 79F436B9-2361-3496-81E5-5E55104A2C94' ]
+uuids:           [ 'i386: 50187357-7D8A-376E-BB5D-4EDB86306B4C', 'x86_64: E0E894C4-2E43-3852-8E5E-B784ECF77B24' ]
 platform:        macosx
 install-name:    /usr/lib/libdz_notify.dylib
-current-version: 32.1.2
+current-version: 32.20.1
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]

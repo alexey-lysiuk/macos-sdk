@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: B7EB5B96-E59C-3641-9F2D-2AC1C6178173', 'x86_64: EDDF479E-A584-379D-8932-5C33A4A1F5F2' ]
+uuids:           [ 'i386: D78A7CDB-4790-37FB-82A6-5F8A240B3AD6', 'x86_64: D51198EF-D9F3-3608-9229-6135C0D89A4E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/GeoKit.framework/Versions/A/GeoKit
 objc-constraint: none

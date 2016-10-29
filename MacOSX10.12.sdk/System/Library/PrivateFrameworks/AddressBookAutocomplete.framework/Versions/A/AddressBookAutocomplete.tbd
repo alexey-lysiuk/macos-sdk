@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 179BE5EF-E8BF-3308-A172-026D8E3935A5' ]
+uuids:           [ 'x86_64: 57A6B6CC-33D2-3B61-A412-5DB7DEB6C99B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AddressBookAutocomplete.framework/Versions/A/AddressBookAutocomplete
-current-version: 1755.0
+current-version: 1756.9
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

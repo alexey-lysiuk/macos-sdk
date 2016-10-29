@@ -649,6 +649,9 @@ enum BluetoothHCIExtendedInquiryResponseDataTypes
     kBluetoothHCIExtendedInquiryResponseDataTypeServiceData128BitUUID						=	0x21,
     kBluetoothHCIExtendedInquiryResponseDataTypeSecureConnectionsConfirmationValue			=	0x22,
     kBluetoothHCIExtendedInquiryResponseDataTypeSecureConnectionsRandomValue				=	0x23,
+    kBluetoothHCIExtendedInquiryResponseDataTypeURI											=	0x24,
+    kBluetoothHCIExtendedInquiryResponseDataTypeIndoorPositioning							=	0x25,
+    kBluetoothHCIExtendedInquiryResponseDataTypeTransportDiscoveryData						=	0x26,
     kBluetoothHCIExtendedInquiryResponseDataType3DInformationData							=	0x3D,
 	kBluetoothHCIExtendedInquiryResponseDataTypeManufacturerSpecificData					=	0xFF
 };

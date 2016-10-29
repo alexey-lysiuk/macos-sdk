@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CBFD1976-8C69-3010-A881-3D77564CCD66' ]
+uuids:           [ 'x86_64: 10C022DA-84B1-3874-A04A-C93AE1D69F83' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/NetworkDiagnosticsUI.framework/Versions/A/NetworkDiagnosticsUI
 current-version: 119.0

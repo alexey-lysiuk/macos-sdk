@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 63994E32-93AA-38D8-86D3-00715019D812' ]
+uuids:           [ 'x86_64: 1C848BCE-1A9D-3F86-83C4-C762075B3A03' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ShareKit.framework/Versions/A/ShareKit
 current-version: 500.0
@@ -25,6 +25,7 @@ exports:
                        _SHK_kAnimationInfo, _SHK_kImageURL, _SHK_kIsInNotificationCenter, 
                        _SHK_kServiceName, _SHK_kServiceSubclassName, _SHK_kShareImage, 
                        _SHK_kShareImageContentRect, _SHK_kSourceImage, _SHK_kSourceImageContentRect, 
+                       _SHK_kTouchBarCancelButtonItemIdentifier, _SHK_kTouchBarSendButtonItemIdentifier, 
                        _SHK_locationInClientWindow, _SHK_matchingDictionaryForSHKSharingItems, 
                        _SHK_messagesAppIcon, _SHK_mouseDownEventCaught, _SHK_sharingCancelledError, 
                        _SHK_thumbnailImage ]

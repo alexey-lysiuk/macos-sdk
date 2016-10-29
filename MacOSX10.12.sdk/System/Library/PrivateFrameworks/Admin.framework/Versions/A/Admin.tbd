@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 16E45FC8-2968-330E-BB65-AB17C19F3210', 'x86_64: F03F2A59-CCDC-3A15-ADA3-2ED9220BFD05' ]
+uuids:           [ 'i386: 7275F7CD-59F0-3C97-9F34-44DFD132ECEA', 'x86_64: 81AD796B-0DB2-3A9A-BC75-1A4010616E3A' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Admin.framework/Versions/A/Admin
 objc-constraint: none

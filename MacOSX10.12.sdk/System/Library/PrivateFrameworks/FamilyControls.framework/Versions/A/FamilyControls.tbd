@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DB9BD686-7EF5-3ADD-82EB-A08443829D05' ]
+uuids:           [ 'x86_64: C6CA09A1-4275-3FD6-B2F2-D6D7127E6B20' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/FamilyControls.framework/Versions/A/FamilyControls
 objc-constraint: none

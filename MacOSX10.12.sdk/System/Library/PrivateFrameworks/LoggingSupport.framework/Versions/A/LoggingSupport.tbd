@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 57D54492-CCF1-3F78-A1FA-E1724DD1B761' ]
+uuids:           [ 'x86_64: 779CCDC4-CD2B-3446-BD10-CE067F7563F5' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/LoggingSupport.framework/Versions/A/LoggingSupport
-current-version: 518.1.16
+current-version: 518.20.8
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

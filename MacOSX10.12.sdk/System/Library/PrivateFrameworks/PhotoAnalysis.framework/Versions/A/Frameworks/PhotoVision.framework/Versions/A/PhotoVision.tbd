@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 94B044E2-7E69-3A54-A2D5-FC87259BED8C' ]
+uuids:           [ 'x86_64: B12D1106-7751-34A2-93DD-D860BB8269D4' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Versions/A/Frameworks/PhotoVision.framework/Versions/A/PhotoVision
 objc-constraint: none
@@ -21,8 +21,9 @@ exports:
                        _PVNotificationClustererReady, _PVNotificationClusteringFinished, 
                        _PVNotificationClusteringStarted, _PVStartResultClusteringStateRestorationErrorKey, 
                        _PVStartResultClusteringStateRestoredKey, _PVStartResultFailureErrorKey, 
-                       _PVStartResultSuccessKey, _PVWorkingDirectoryURL, _PhotoVisionVersionNumber, 
-                       _PhotoVisionVersionString ]
+                       _PVStartResultSuccessKey, _PVSuggestionUpdateCancelled, _PVSuggestionUpdateFinished, 
+                       _PVSuggestionUpdateProgress, _PVSuggestionUpdateStarted, _PVWorkingDirectoryURL, 
+                       _PhotoVisionVersionNumber, _PhotoVisionVersionString ]
     objc-classes:    [ _PVContext, _PVFace, _PVFaceGroup, _PVFaceprint, _PVImage, 
                        _PVImageLoader, _PVNotification, _PVObject, _PVPerson, _PVSceneTaxonomy, 
                        _PVSceneTaxonomyNode, _PVUserDefaults, _PhotoVision ]

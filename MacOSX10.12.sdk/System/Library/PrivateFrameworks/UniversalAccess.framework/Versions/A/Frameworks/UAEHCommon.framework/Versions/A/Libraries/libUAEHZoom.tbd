@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 769FE6D0-2A6B-3FF8-8D7A-D6353CDE7C3D' ]
+uuids:           [ 'x86_64: C37B6E70-6970-318F-9678-2104496AD6E3' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/UniversalAccess.framework/Versions/A/Frameworks/UAEHCommon.framework/Versions/A/Libraries/libUAEHZoom.dylib
 objc-constraint: none
@@ -25,8 +25,9 @@ exports:
                        _UAEHZoomDriver.mShowPreview, _UAEHZoomDriver.mSmoothImages, 
                        _UAEHZoomDriver.mSpeedFactor, _UAEHZoomDriver.mSuspended, 
                        _UAEHZoomDriver.mZoomActionsCurrentlyDisabled, _UAEHZoomDriver.mZoomFactor, 
-                       _UAEHZoomDriver.mZoomFollowsFocus, _UAEHZoomDriver.mZoomMode, 
-                       _UAEHZoomDriver.mZoomOrigin, _UAEHZoomScreenTransitionStateMachine._isObservingScreenScreenNotifications, 
+                       _UAEHZoomDriver.mZoomFactorBeforeDFRHUDShowing, _UAEHZoomDriver.mZoomFollowsFocus, 
+                       _UAEHZoomDriver.mZoomMode, _UAEHZoomDriver.mZoomOrigin, _UAEHZoomDriver.mZoomedOutForTouchBarZoom, 
+                       _UAEHZoomScreenTransitionStateMachine._isObservingScreenScreenNotifications, 
                        _UAEHZoomScreenTransitionStateMachine._zoomFactorToRestore, 
                        _UAEHZoomScreenTransitionStateMachine._zoomOriginToRestore ]
 ...

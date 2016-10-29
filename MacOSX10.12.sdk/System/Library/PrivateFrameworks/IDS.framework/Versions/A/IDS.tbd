@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 9EC8D79C-E92B-3D09-829F-7F7E833A0DE8', 'x86_64: 67321844-A946-3B8B-98C6-16FAAA83C72B' ]
+uuids:           [ 'i386: 201E6227-F05F-3C81-9243-6AB35F7880F8', 'x86_64: 06281356-59CA-3C3D-9086-F8F7B11BD9C2' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IDS.framework/Versions/A/IDS
 current-version: 800.0

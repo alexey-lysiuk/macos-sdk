@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 30639E3A-8A82-3D10-A2DC-348C569B7E7C' ]
+uuids:           [ 'x86_64: 4A790D13-7810-34C0-95E0-5BC7E91BE75B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MessagesKit.framework/Versions/A/MessagesKit
 current-version: 800.0

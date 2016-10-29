@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7E1DCBF6-F6F7-3509-BCCE-5436C06F4AB9' ]
+uuids:           [ 'x86_64: 84617382-0B8B-3A99-A655-89218DAD7172' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Hypervisor.framework/Versions/A/Hypervisor
 objc-constraint: none

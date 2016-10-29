@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 50BE062E-02C7-3512-AA9A-316EAF041453', 'x86_64: 10BDCD1E-0463-3C53-BF11-C9A0919C1588' ]
+uuids:           [ 'i386: 02B51658-2A6C-30F2-9070-7459F3B32DFC', 'x86_64: F1B84DE8-1257-31EB-BF8D-840341627831' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/IOKit.framework/Versions/A/IOKit
 current-version: 275.0
@@ -78,7 +78,7 @@ exports:
                        _IOConnectSetCFProperty, _IOConnectSetNotificationPort, _IOConnectTrap0, 
                        _IOConnectTrap1, _IOConnectTrap2, _IOConnectTrap3, _IOConnectTrap4, 
                        _IOConnectTrap5, _IOConnectTrap6, _IOConnectUnmapMemory, _IOConnectUnmapMemory64, 
-                       _IOCopySystemLoadAdvisoryDetailed, _IOCreateDisplayInfoDictionary, 
+                       _IOCopyModel, _IOCopySystemLoadAdvisoryDetailed, _IOCreateDisplayInfoDictionary, 
                        _IOCreatePlugInInterfaceForService, _IOCreateReceivePort, 
                        _IODataQueueAllocateNotificationPort, _IODataQueueDataAvailable, 
                        _IODataQueueDequeue, _IODataQueueEnqueue, _IODataQueuePeek, 

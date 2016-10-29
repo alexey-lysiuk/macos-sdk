@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: C6E70166-56F2-3445-90F6-8D11E6A3306E', 'x86_64: D9958C57-9E97-33F5-A21C-B454FDB11548' ]
+uuids:           [ 'i386: 503FF067-D73F-3332-ABE5-C64CAE36921F', 'x86_64: D561391D-80B8-35F8-9EFF-1ACC89895E38' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CommonAuth.framework/Versions/A/CommonAuth
 objc-constraint: none

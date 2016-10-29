@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 19027867-2306-3A30-9E3A-6489348B99DC' ]
+uuids:           [ 'x86_64: 545D6C28-CDD5-36E4-8C9B-740FDE73249F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoLibraryPrivate.framework/Versions/A/Frameworks/RedRock.framework/Versions/A/RedRock
-current-version: 444.4
+current-version: 451.20.9
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

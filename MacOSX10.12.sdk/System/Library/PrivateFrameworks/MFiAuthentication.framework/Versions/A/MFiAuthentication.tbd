@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FF6036A9-CE25-3590-AE15-F1532A5B51A3' ]
+uuids:           [ 'x86_64: ABD8608B-6EC8-39ED-B1F1-D04C3D0F68EB' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MFiAuthentication.framework/Versions/A/MFiAuthentication
 objc-constraint: none

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9F83B46C-45AF-3B87-8232-9A4AFBBEE0F5' ]
+uuids:           [ 'x86_64: 09A3F7F8-E6C6-39AE-8173-58A7B1E55B74' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AmbientDisplay.framework/Versions/A/AmbientDisplay
 objc-constraint: none
@@ -57,7 +57,8 @@ exports:
                        _getAnimationString, _getCompensationState, _getIODisplayServiceForDisplayID, 
                        _getInternalDisplayID, _getRateLimitFromPreferences, _getUpdateRateLimitState, 
                        _getUpdatedBacklightValueAndStoreToContextList, _getUpdatedLuxValue, 
-                       _getUpdatedLuxValueAndStoreToContextList, _getUpdatedSensorValuesAndStoreToContextList, 
+                       _getUpdatedLuxValueAndStoreToContextList, _getUpdatedLuxValueViaHID, 
+                       _getUpdatedLuxValueViaLMU, _getUpdatedSensorValuesAndStoreToContextList, 
                        _hue2RGB, _initDeviceContextList, _initDevices, _initializeContextTimeArrayToNominalMS, 
                        _intelIntegrated, _leftShiftWithLSBextention, _lerpLUT, _lerpTable, 
                        _loadIntentionFromPreferences, _loadIntentionFromPreferencesByUUID, 
@@ -65,11 +66,13 @@ exports:
                        _persistRateLimitToPreferences, _pollBackLightNits, _printContextTimeArray, 
                        _requestAndWaitForAnimationToEndOnDisplay, _saveAmbientAdaptationStateToPreferences, 
                        _saveIntentionToPreferences, _saveSettingsToPreferencesByDisplayID, 
-                       _saveSettingsToPreferencesByDisplayUUID, _setBlackPointOnCurrentIntention, 
-                       _setCompensationFlagOnDisplayID, _setDisplayParameters, _setIntention, 
-                       _setOverridesFound, _setUpdateRateLimitState, _showUI, _stopAccessingLUT, 
-                       _storeBackLightToDeviceContextList, _storeLUXtoDeviceContextList, 
-                       _validDeviceContextList, _validLUT, _warpLUT, _warpPreviousNotWarpedToNextWarpedbyIntention ]
+                       _saveSettingsToPreferencesByDisplayUUID, _setALSLMUdataPort, 
+                       _setBlackPointOnCurrentIntention, _setCompensationFlagOnDisplayID, 
+                       _setDisplayParameters, _setHIDserviceController, _setIntention, 
+                       _setLuxSourceHID, _setOverridesFound, _setUpdateRateLimitState, 
+                       _showUI, _stopAccessingLUT, _storeBackLightToDeviceContextList, 
+                       _storeLUXtoDeviceContextList, _validDeviceContextList, _validLUT, 
+                       _warpLUT, _warpPreviousNotWarpedToNextWarpedbyIntention ]
     objc-classes:    [ _DeviceGammaContext ]
     objc-ivars:      [ _DeviceGammaContext.blueLUT, _DeviceGammaContext.blueTable, 
                        _DeviceGammaContext.blueTableA, _DeviceGammaContext.blueTableB, 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 337681B9-0AB4-3687-B7DD-86B96ED7E178', 'x86_64: 908856E6-2F75-37AB-816A-CCD1256267E1' ]
+uuids:           [ 'i386: BE9ED2AE-8794-3188-B27B-9EB9B986FE1B', 'x86_64: F4F62F5D-D762-38E4-8760-3224443221D7' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/MediaToolbox.framework/Versions/A/MediaToolbox
 objc-constraint: none
@@ -188,7 +188,7 @@ exports:
                        _FigCaptionTimelineGeneratorFinish, _FigCaptureDeviceGetClassID, 
                        _FigCaptureDeviceGetFigBaseObject, _FigCaptureDeviceGetNotificationCenter, 
                        _FigCaptureDeviceGetTypeID, _FigCaptureStreamGetClassID, _FigCaptureStreamGetFigBaseObject, 
-                       _FigCaptureStreamGetTypeID, _FigClosedCaptionsTextRasterizerCreate, 
+                       _FigCaptureStreamGetTypeID, _FigClockIsOctaviaClock, _FigClosedCaptionsTextRasterizerCreate, 
                        _FigClosedCaptionsTextRasterizerSetCommand, _FigComputeMovieDimensions, 
                        _FigConsolidateMovieFragments, _FigCopySetOfFormatReaderSupportedFileExtensions, 
                        _FigCopySetOfFormatReaderSupportedFileTypes, _FigCopySetOfFormatReaderSupportedMIMETypes, 
@@ -325,6 +325,8 @@ exports:
                        _FigMutableMovieGetTypeID, _FigNeroCreate, _FigNeroGetTypeID, 
                        _FigNeroSendAudioInputBuffer, _FigNeroSendMessage, _FigNeroSetup, 
                        _FigNeroStartStream, _FigNeroStopStream, _FigNeroTeardown, 
+                       _FigOctaviaClockCreateConsumingNeroClock, _FigOctaviaVideoRenderPipelineCreate, 
+                       _FigOctaviaVideoRenderPipelineCreateWithFigImageQueueArray, 
                        _FigOfflineAudioRenderPipelineCreate, _FigOpenGLTextureContextCreate, 
                        _FigPhotoCompressionCreateContainerFromImageExt, _FigPhotoCompressionCreateDataContainerFromImage, 
                        _FigPhotoCompressionCreateNativePixelFormatArray, _FigPhotoCompressionDiscardCaches, 

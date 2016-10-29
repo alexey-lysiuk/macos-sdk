@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 5BA474E0-5D7B-30C4-BB13-C1D36F028057', 'x86_64: 181DD005-586A-3D6C-89EC-648F8A254597' ]
+uuids:           [ 'i386: 617323BD-EF0D-3C4A-9F12-69FF3930A2AF', 'x86_64: 0267832E-1B1D-3DE4-87FE-10C4ED9E0C90' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/WebKit.framework/Versions/A/WebKit
-current-version: 602.1.50
+current-version: 602.2.14
 objc-constraint: none
 exports:         
   - archs:           [ i386 ]
@@ -17,11 +17,12 @@ exports:
                        _WKPDFPluginScrollbarLayer, _WKPaymentAuthorizationViewControllerDelegate, 
                        _WKPlaceholderModalWindow, _WKPrintingView, _WKResponderChainSink, 
                        _WKSelectionHandlerWrapper, _WKSharingServicePickerDelegate, 
-                       _WKSwipeCancellationTracker, _WKTextInputPanel, _WKTextInputView, 
-                       _WKTextInputWindowController, _WKUserDataWrapper, _WKViewData, 
-                       _WKViewDynamicSizeComputedFromMinimumDocumentSizeLayoutStrategy, 
+                       _WKSwipeCancellationTracker, _WKTextFunctionBarItemController, 
+                       _WKTextInputPanel, _WKTextInputView, _WKTextInputWindowController, 
+                       _WKUserDataWrapper, _WKViewData, _WKViewDynamicSizeComputedFromMinimumDocumentSizeLayoutStrategy, 
                        _WKViewDynamicSizeComputedFromViewScaleLayoutStrategy, _WKViewFixedSizeLayoutStrategy, 
-                       _WKViewLayoutStrategy, _WKViewViewSizeLayoutStrategy, _WKWindowVisibilityObserver ]
+                       _WKViewLayoutStrategy, _WKViewViewSizeLayoutStrategy, _WKWindowVisibilityObserver, 
+                       __WKTextListFunctionBarViewController ]
   - archs:           [ x86_64 ]
     symbols:         [ _WKActionCanShowMIMETypeKey, _WKActionFrameNameKey, _WKActionIsMainFrameKey, 
                        _WKActionModifierFlagsKey, _WKActionMouseButtonKey, _WKActionOriginalURLRequestKey, 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 4D96EF47-C5BF-3A28-B793-5A82964FACC8', 'x86_64: D5A6C630-6D21-39FE-A84E-2C27A682D944' ]
+uuids:           [ 'i386: BF1CA3EA-D4A4-343F-A642-C88064E6BD6F', 'x86_64: 972E987B-8D8D-3430-A53F-E1CB5B03A004' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/EasyConfig.framework/Versions/A/EasyConfig
 objc-constraint: none

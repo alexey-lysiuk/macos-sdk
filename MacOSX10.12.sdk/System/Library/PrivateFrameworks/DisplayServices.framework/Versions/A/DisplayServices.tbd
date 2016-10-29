@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: E882FD7F-52E0-34E6-8304-878B64073C1F', 'x86_64: 1D2FBC6B-E5C1-32E9-A51D-30690A2E6D5B' ]
+uuids:           [ 'i386: FE40472B-BB2A-357B-B1F9-4E40B46E2290', 'x86_64: 6BF753D7-F766-3F3F-938A-801A888D249B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DisplayServices.framework/Versions/A/DisplayServices
 objc-constraint: none
@@ -45,22 +45,23 @@ exports:
                        _DSIICDeviceSetToDefaults, _DSIICDeviceVendorID, _DSIICDeviceVersion, 
                        _DSLogClose, _DSMachSeconds, _DeviceValueFromAbstract, _DisplayServicesAmbientLightCompensationEnabled, 
                        _DisplayServicesAmbientLightResetChanged, _DisplayServicesBezelButtonsLocked, 
-                       _DisplayServicesBrightnessChangeNotification, _DisplayServicesBrightnessChanged, 
-                       _DisplayServicesCanChangeBrightness, _DisplayServicesCanResetAmbientLight, 
-                       _DisplayServicesCommitSettings, _DisplayServicesCreateBrightnessTable, 
-                       _DisplayServicesEnableAmbientLightCompensation, _DisplayServicesGetAuthorized, 
-                       _DisplayServicesGetBrightness, _DisplayServicesGetBrightnessButtonsEnabled, 
-                       _DisplayServicesGetBrightnessIncrement, _DisplayServicesGetCommitInterval, 
-                       _DisplayServicesGetDevice, _DisplayServicesGetDeviceForDeviceID, 
-                       _DisplayServicesGetDeviceID, _DisplayServicesGetDisplayID, 
-                       _DisplayServicesGetLinearBrightness, _DisplayServicesGetLinearBrightnessUsableRange, 
-                       _DisplayServicesGetPowerButtonEnabled, _DisplayServicesGetPowerMode, 
-                       _DisplayServicesGetPowerSwitchMode, _DisplayServicesHasAmbientLightCompensation, 
-                       _DisplayServicesHasBrightnessButtons, _DisplayServicesHasCommit, 
-                       _DisplayServicesHasOptionsAuthorization, _DisplayServicesHasPowerButton, 
-                       _DisplayServicesHasPowerMode, _DisplayServicesHasTouchSwitchDisable, 
-                       _DisplayServicesIsBuiltInDisplay, _DisplayServicesIsSmartDisplay, 
-                       _DisplayServicesNeedsBrightnessSmoothing, _DisplayServicesRegisterForAmbientLightCompensationNotifications, 
+                       _DisplayServicesBrightnessChangeNotification, _DisplayServicesBrightnessChangeNotificationImmediate, 
+                       _DisplayServicesBrightnessChanged, _DisplayServicesCanChangeBrightness, 
+                       _DisplayServicesCanResetAmbientLight, _DisplayServicesCommitSettings, 
+                       _DisplayServicesCreateBrightnessTable, _DisplayServicesEnableAmbientLightCompensation, 
+                       _DisplayServicesGetAuthorized, _DisplayServicesGetBrightness, 
+                       _DisplayServicesGetBrightnessButtonsEnabled, _DisplayServicesGetBrightnessIncrement, 
+                       _DisplayServicesGetCommitInterval, _DisplayServicesGetDevice, 
+                       _DisplayServicesGetDeviceForDeviceID, _DisplayServicesGetDeviceID, 
+                       _DisplayServicesGetDisplayID, _DisplayServicesGetLinearBrightness, 
+                       _DisplayServicesGetLinearBrightnessUsableRange, _DisplayServicesGetPowerButtonEnabled, 
+                       _DisplayServicesGetPowerMode, _DisplayServicesGetPowerSwitchMode, 
+                       _DisplayServicesHasAmbientLightCompensation, _DisplayServicesHasBrightnessButtons, 
+                       _DisplayServicesHasCommit, _DisplayServicesHasOptionsAuthorization, 
+                       _DisplayServicesHasPowerButton, _DisplayServicesHasPowerMode, 
+                       _DisplayServicesHasTouchSwitchDisable, _DisplayServicesIsBuiltInDisplay, 
+                       _DisplayServicesIsSmartDisplay, _DisplayServicesNeedsBrightnessSmoothing, 
+                       _DisplayServicesRegisterForAmbientLightCompensationNotifications, 
                        _DisplayServicesRegisterForAuthorizationNotifications, _DisplayServicesRegisterForBrightnessChangeNotifications, 
                        _DisplayServicesRegisterForDeviceTerminationNotification, 
                        _DisplayServicesRegisterForDisplayUSBHotplugNotifications, 

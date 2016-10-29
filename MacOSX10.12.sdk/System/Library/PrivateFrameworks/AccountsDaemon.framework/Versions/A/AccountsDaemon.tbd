@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FBCF8698-E67B-32F3-883E-C74C378CE6D2' ]
+uuids:           [ 'x86_64: 71FEC202-1676-3580-B595-AFD8DF96E268' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AccountsDaemon.framework/Versions/A/AccountsDaemon
-current-version: 637.0
+current-version: 637.0.2
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

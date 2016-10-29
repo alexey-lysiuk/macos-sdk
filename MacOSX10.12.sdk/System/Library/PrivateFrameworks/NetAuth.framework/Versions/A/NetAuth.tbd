@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 747FCFFD-3212-3110-892D-26E9AD6BAE2E', 'x86_64: D57D5888-0290-3295-A1C4-D673D4DCB497' ]
+uuids:           [ 'i386: A3E9C0B4-88F0-3BE6-B6AE-7F6296A5C113', 'x86_64: 9507184D-EC62-3CBF-892B-445FEF0DC58C' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/NetAuth.framework/Versions/A/NetAuth
 objc-constraint: none

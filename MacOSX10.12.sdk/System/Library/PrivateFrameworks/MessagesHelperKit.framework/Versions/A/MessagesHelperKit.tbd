@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 79BA217C-D932-3FFC-8E9C-739B8AD6986E' ]
+uuids:           [ 'x86_64: 835995AB-D36F-316C-BC68-8E8043A2B299' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MessagesHelperKit.framework/Versions/A/MessagesHelperKit
 current-version: 800.0

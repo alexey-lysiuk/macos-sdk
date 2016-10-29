@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 684618F6-3A5B-3978-9183-EBA6025D5345', 'x86_64: 88A75A68-6B53-3F97-BA17-66364F95F149' ]
+uuids:           [ 'i386: 6CE35E45-A361-390B-B442-4AD465EBEACC', 'x86_64: 3BAF77B1-1EF2-3249-B1ED-756C326D45CE' ]
 platform:        macosx
 install-name:    /usr/lib/libipsec.A.dylib
 current-version: 300.0

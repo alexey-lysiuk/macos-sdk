@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: C8BE9D19-FBCF-394C-9AA6-E790E6353DC4', 'x86_64: 30FC3C60-CCA9-3E2B-80AA-DE53F5762374' ]
+uuids:           [ 'i386: 63EBC765-4778-3AB5-A44B-6343C36AFF1D', 'x86_64: 505C4AC1-1D7C-3879-AF82-B0CF78A487AD' ]
 platform:        macosx
 install-name:    /usr/lib/libnetwork.dylib
 objc-constraint: none
@@ -253,13 +253,13 @@ exports:
                        _tcp_connection_set_usage_model, _tcp_connection_set_workload, 
                        _tcp_connection_start, _tcp_connection_write, _tcp_connection_write_buffer, 
                        _tcp_connection_write_eof, _tcp_listener_cancel, _tcp_listener_create, 
-                       _tcp_listener_create_launchd, _tcp_listener_get_dns_service_ref, 
-                       _tcp_listener_get_port, _tcp_listener_release, _tcp_listener_retain, 
-                       _tcp_listener_set_accept_handler, _tcp_listener_set_accept_handler_f, 
-                       _tcp_listener_set_error_handler, _tcp_listener_set_error_handler_f, 
-                       _tcp_listener_set_interface, _tcp_listener_set_local_only, 
-                       _tcp_listener_set_port, _tcp_listener_set_register_p2p, _tcp_listener_set_service, 
-                       _tcp_listener_set_tfo, _tcp_listener_start ]
+                       _tcp_listener_create_launchd, _tcp_listener_enable_coprocessor_interface, 
+                       _tcp_listener_get_dns_service_ref, _tcp_listener_get_port, 
+                       _tcp_listener_release, _tcp_listener_retain, _tcp_listener_set_accept_handler, 
+                       _tcp_listener_set_accept_handler_f, _tcp_listener_set_error_handler, 
+                       _tcp_listener_set_error_handler_f, _tcp_listener_set_interface, 
+                       _tcp_listener_set_local_only, _tcp_listener_set_port, _tcp_listener_set_register_p2p, 
+                       _tcp_listener_set_service, _tcp_listener_set_tfo, _tcp_listener_start ]
     objc-classes:    [ _NWConcrete_nw_connection, _NWConcrete_nw_endpoint_fallback, 
                        _NWConcrete_nw_endpoint_flow, _NWConcrete_nw_endpoint_handler, 
                        _NWConcrete_nw_endpoint_proxy, _NWConcrete_nw_endpoint_resolver, 

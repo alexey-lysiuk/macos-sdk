@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8E9EB742-52D3-34E8-9EA9-4CAF3A2F1F72' ]
+uuids:           [ 'x86_64: 51411892-BBB1-3DF1-BB71-85EF9315746B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IMSharedUI.framework/Versions/A/IMSharedUI
 objc-constraint: none

@@ -414,6 +414,7 @@ enum
 #define kUSBHostBillboardDevicePropertyAlternateModeString      "AlternateModeString"
 #define kUSBHostBillboardDevicePropertyAddtionalInfoURLIndex    "iAddtionalInfoURL"
 #define kUSBHostBillboardDevicePropertyAddtionalInfoURL         "AddtionalInfoURL"
+#define kUSBHostBillboardDevicePropertydwAlternateModeVdo       "dwAlternateModeVdo"
 
 #if TARGET_OS_EMBEDDED
 #define kUSBHostInterfacePropertyStringIndex                    "iInterface"
@@ -435,7 +436,6 @@ enum
 #define kUSBHostPortPropertyCompanionIndex                      "kUSBCompanionIndex"
 #define kUSBHostPortPropertyDisconnectInterval                  "kUSBDisconnectInterval"
 #define kUSBHostPortPropertyUsbCPortNumber                      "UsbCPortNumber"
-#define kUSBHostPortPropertyCompanionPresent                    "UsbCompanionPortPresent"               // OSNumber used to determine presence of companion properties
 #define kUSBHostPortPropertyCompanionPortNumber                 "UsbCompanionPortNumber"                // OSData  key to set/get the port number of the companion port
 
 #define kUSBHostHubPropertyPowerSupply                          "kUSBHubPowerSupply"                    // OSNumber mA available for downstream ports, 0 for bus-powered
@@ -453,7 +453,6 @@ enum
 #define kUSBHostControllerPropertyHighSpeedCompanion            "kUSBHighSpeedCompanion"                // OSBoolean false to disable high-speed companion controller
 #define kUSBHostControllerPropertySuperSpeedCompanion           "kUSBSuperSpeedCompanion"               // OSBoolean false to disable superspeed companion controller
 #define kUSBHostControllerPropertyRevision                      "Revision"                              // OSData    Major/minor revision number of controller
-#define kUSBHostControllerPropertyCompanionPresent              "UsbCompanionControllerPresent"         // OSNumber used to determine presence of companion properties
 #define kUSBHostControllerPropertyCompanionControllerName       "UsbCompanionControllerName"            // OSString  key to set/get the name of the service, i.e. companion controller dictionary.
 
 #define kUSBHostPortPropertyExternalDeviceResetController       "kUSBHostPortExternalDeviceResetController"

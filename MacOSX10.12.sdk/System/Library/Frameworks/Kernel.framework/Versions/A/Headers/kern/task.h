@@ -104,6 +104,12 @@ extern task_t	current_task(void);
 extern void		task_reference(task_t	task);
 
 #define TF_NONE                 0
+#define TF_LRETURNWAIT          0x00000100                              /* task is waiting for fork/posix_spawn/exec to complete */
+#define TF_LRETURNWAITER        0x00000200                              /* task is waiting for TF_LRETURNWAIT to get cleared */
+
+#define TPF_NONE                0
+#define TPF_EXEC_COPY           0x00000002                              /* task is the new copy of an exec */
+
 
 __END_DECLS
 

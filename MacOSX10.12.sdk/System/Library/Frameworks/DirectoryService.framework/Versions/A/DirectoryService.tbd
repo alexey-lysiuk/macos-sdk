@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: FC2F24FF-A921-3F2D-A836-AEE50EDA9810', 'x86_64: 829AFAAD-5742-332D-B84D-AF161FB57660' ]
+uuids:           [ 'i386: 9DBF048B-0671-3D8A-80D9-305B9C204BE1', 'x86_64: ECA39F78-A941-34C6-A54F-287B11402A6B' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/DirectoryService.framework/Versions/A/DirectoryService
 objc-constraint: none

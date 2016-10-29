@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5CC38E6B-ED1F-3F05-B15D-2CD8EDFC7C16' ]
+uuids:           [ 'x86_64: 0467AF47-B423-3C0E-89B2-7EBFA2C1F1CD' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Swift/libswiftLocalAuthentication.dylib
 current-version: 800.8.18

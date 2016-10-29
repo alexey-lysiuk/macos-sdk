@@ -1,11 +1,12 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7E99FCAB-F895-35D0-9947-299BF936C6D8' ]
+uuids:           [ 'x86_64: BCD20F32-BF45-3C73-8DCC-20427C8865AA' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PassKitUIFoundation.framework/Versions/A/PassKitUIFoundation
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
-    objc-classes:    [ _PKCheckGlyphLayer, _PKGlyphView, _PKPhoneGlyphLayer, _PKSubglyphView, 
+    objc-classes:    [ _PKAuthenticator, _PKAuthenticatorEvaluationContext, _PKAuthenticatorEvaluationRequest, 
+                       _PKCheckGlyphLayer, _PKGlyphView, _PKPhoneGlyphLayer, _PKSubglyphView, 
                        _PKUISpringAnimationFactory ]
 ...

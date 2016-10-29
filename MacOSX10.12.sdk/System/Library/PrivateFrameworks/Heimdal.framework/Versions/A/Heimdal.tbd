@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 7D41A4D1-8B53-3055-B826-D89D351B650D', 'x86_64: 18C127D7-9C61-3C5B-8C6F-7953760D2674' ]
+uuids:           [ 'i386: 0A420C46-C8D7-31F4-AA80-B3A19F88DF59', 'x86_64: 76D5FA06-C398-3539-A4DD-AFB7A31C547C' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Heimdal.framework/Versions/A/Heimdal
 objc-constraint: none
