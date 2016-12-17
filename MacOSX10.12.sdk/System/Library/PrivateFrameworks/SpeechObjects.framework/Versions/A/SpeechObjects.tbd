@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 5169F7BD-7CDC-3746-9765-1F72A4FB8892', 'x86_64: A4E6E46B-C3AD-36AA-B5EA-E4D7144A82A0' ]
+uuids:           [ 'i386: B5FD424E-A3E0-3D88-A714-5C6413B2127F', 'x86_64: 4913399D-1BB8-3FC8-B09C-37512D448EB7' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SpeechObjects.framework/Versions/A/SpeechObjects
 objc-constraint: none

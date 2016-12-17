@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - Arranged View
 
-NS_CLASS_AVAILABLE_MAC(10_12_1)
+NS_CLASS_AVAILABLE_MAC(10_12_2)
 @interface NSScrubberArrangedView : NSView {
 @private
     os_unfair_lock _flagLock;
@@ -40,7 +40,7 @@ NS_CLASS_AVAILABLE_MAC(10_12_1)
  @class NSScrubberSelectionView
  @abstract The base view class for all selection decorations used by the @c NSScrubber control.
  */
-NS_CLASS_AVAILABLE_MAC(10_12_1)
+NS_CLASS_AVAILABLE_MAC(10_12_2)
 @interface NSScrubberSelectionView : NSScrubberArrangedView {
 #if !__OBJC2__
     void *_selectionViewReserved[4] __unused;
@@ -54,7 +54,7 @@ NS_CLASS_AVAILABLE_MAC(10_12_1)
  @class NSScrubberItemView
  @abstract The base view class that is arranged by a @c NSScrubber control.
  */
-NS_CLASS_AVAILABLE_MAC(10_12_1)
+NS_CLASS_AVAILABLE_MAC(10_12_2)
 @interface NSScrubberItemView : NSScrubberArrangedView {
 @private
     id _background;
@@ -76,7 +76,7 @@ NS_CLASS_AVAILABLE_MAC(10_12_1)
  @class NSScrubberTextItemView
  @abstract A simple @c NSScrubberItemView for displaying text. The -fittingSize method can be used to measure the smallest size for the view which fits the title without truncating.
  */
-NS_CLASS_AVAILABLE_MAC(10_12_1)
+NS_CLASS_AVAILABLE_MAC(10_12_2)
 @interface NSScrubberTextItemView : NSScrubberItemView {
 @private
     NSTextField *_textField;
@@ -97,7 +97,7 @@ NS_CLASS_AVAILABLE_MAC(10_12_1)
  @abstract A simple @c NSScrubberItemView for displaying an image. 
  @discussion If the provided image is larger than the view's frame, it is scaled proportionally to fill the entire frame. The cropped portion of the image is determined by the @c imageAlignment property.
  */
-NS_CLASS_AVAILABLE_MAC(10_12_1)
+NS_CLASS_AVAILABLE_MAC(10_12_2)
 @interface NSScrubberImageItemView : NSScrubberItemView {
 @private
     NSImageView *_imageView;

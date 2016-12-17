@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BCF3AF3A-EAF5-3C3D-8C98-AC0319ABD9EC' ]
+uuids:           [ 'x86_64: 8110F4DD-CCCD-3060-8EFD-0DB52B24F052' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/UserActivity.framework/Versions/A/UserActivity
-current-version: 63.2.2
+current-version: 63.15
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -21,8 +21,8 @@ exports:
                        __UACopyBundleIdentifierForAuditToken, __UACopyCodeSigningIdentifierForAuditToken, 
                        __UACopyPackedDataForObject, __UACopyPackedDataForObjectWithSubstitution, 
                        __UACopyUnpackedObjectFromData, __UACopyUnpackedObjectFromDataWithSubstitution, 
-                       __UAGetEUIDFromToken, __UAIsAuditTokenSandboxed, __UAUserActivityContentAttributeSetPayloadKey, 
-                       __UAUserActivityDidContinueToAppStoreApplicationIdentifierKey, 
+                       __UAGetEUIDFromToken, __UAIsAuditTokenSandboxed, __UAUserActivityContainsCloudDocsKey, 
+                       __UAUserActivityContentAttributeSetPayloadKey, __UAUserActivityDidContinueToAppStoreApplicationIdentifierKey, 
                        __UAUserActivityDidContinueToAppStoreNotification, _kUACanModifyAnySuggestedActionEntitlement, 
                        _kUAIsDefaultFrontmostAppEntitlement ]
     objc-classes:    [ _UABestAppSuggestion, _UABestAppSuggestionManager, _UAPasteboardGeneration, 

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9F6CFA9A-3109-30C5-B3AB-4745489E7EBD' ]
+uuids:           [ 'x86_64: 2AB1D950-7EA5-359C-B17C-42AEFE99D360' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CloudKit.framework/Versions/A/CloudKit
-current-version: 639.2.1
+current-version: 643.5
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -29,11 +29,10 @@ exports:
                        _CKHexCharFromBytes, _CKInternalErrorDomain, _CKInternalUnderlyingHTTPStatusKey, 
                        _CKIsPCSError, _CKIsRunningInCloudD, _CKIsValidOperationForScope, 
                        _CKKeyboardServicesContainerIdentifier, _CKKeynoteShareURLSlug, 
-                       _CKLinkCheck0fd6bdf95f2efb6e65813fd4cd0f5d9af656d08a, _CKLogTrafficFile, 
-                       _CKMailDropContainerIdentifier, _CKModifyRecordAccessOperationAccessGrantedKey, 
-                       _CKModifyRecordAccessOperationAccessRevokedKey, _CKModifyRecordAccessOperationAccessTokenKey, 
-                       _CKModifyRecordAccessOperationActionKey, _CKModifyRecordAccessOperationReferenceIdentifierKey, 
-                       _CKNSIndexSet_enumerateInverseRangesInRange_options_usingBlock, 
+                       _CKLinkCheck0fd6bdf95f2efb6e65813fd4cd0f5d9af656d08a, _CKMailDropContainerIdentifier, 
+                       _CKModifyRecordAccessOperationAccessGrantedKey, _CKModifyRecordAccessOperationAccessRevokedKey, 
+                       _CKModifyRecordAccessOperationAccessTokenKey, _CKModifyRecordAccessOperationActionKey, 
+                       _CKModifyRecordAccessOperationReferenceIdentifierKey, _CKNSIndexSet_enumerateInverseRangesInRange_options_usingBlock, 
                        _CKNSIndexSet_indexSetWithInverseIndexSet, _CKNewsContainerIdentifierPrefix, 
                        _CKNotesContainerIdentifierPrefix, _CKNotesShareURLSlug, _CKNumbersShareURLSlug, 
                        _CKOperationLoggableProgressArguments, _CKOperationProgressCallbackClasses, 

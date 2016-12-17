@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AA2AF429-6802-30E1-B49D-3D8D5B0D3323' ]
+uuids:           [ 'x86_64: 20ABE4E4-10EF-3526-AC4F-FED877BD430A' ]
 platform:        macosx
 install-name:    '@rpath/DFRBrightness.framework/Versions/A/DFRBrightness'
 objc-constraint: none

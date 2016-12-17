@@ -11,6 +11,30 @@
 #ifndef _AppleTextureEncoder_h_
 #define _AppleTextureEncoder_h_     1
 
+/*  ************************************************
+ *  ***  SAVE YOURSELF SOME TIME -- Please Read  ***
+ *  ************************************************
+ *
+ *  This is a low level interface into a software ASTC encoder / decoder.
+ *  The same code is also usable through ImageIO.framework and the 
+ *  CGImageSource / CGImageDestination APIs on iOS/tvOS 10.0 and macOS 12.0 and 
+ *  later. In some cases, particularly for CGImageRef interoperability, 
+ *  that framework can do some things you can not, such as read/write the 
+ *  CGImageRef data directly without making a copy, and defer decoding until 
+ *  needed and then only decode the regions that are needed by the CoreGraphics
+ *  compositor. It also saves a lot of complexity managing alpha information,
+ *  channel order, color spaces an the like and may allow for fast path
+ *  conversion to MTLTexture behind the scenes, without decompression if the 
+ *  hardware supports it.  
+ *
+ *  When possible, you should use the higher level APIs. You may use the MIME
+ *  types CFSTR("org.khronos.astc") or CFSTR("org.khronos.ktx") for ASTC data.
+ *  The latter encodes a richer set of metadata to go with the image such as 
+ *  orientation, alpha and colorspace to help make sure that it is drawn
+ *  correctly. The .astc file format is very basic and should only be used
+ *  when this other information is implicitly assumed and the readers of the
+ *  file are known to handle it correctly.
+ */
 
 #include <os/object.h>
 #include <stdint.h>

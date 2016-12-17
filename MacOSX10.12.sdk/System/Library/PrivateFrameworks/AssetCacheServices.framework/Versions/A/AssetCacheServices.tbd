@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 13E874CA-86AB-33E7-A4D8-544D3B8157CD' ]
+uuids:           [ 'x86_64: 5E08DBDE-1DF0-37AC-9ED0-035A2ED67573' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AssetCacheServices.framework/Versions/A/AssetCacheServices
-current-version: 31.0
+current-version: 31.2
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

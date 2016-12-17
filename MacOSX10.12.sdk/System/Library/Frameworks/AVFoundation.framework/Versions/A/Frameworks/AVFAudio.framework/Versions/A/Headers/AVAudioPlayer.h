@@ -10,6 +10,11 @@
 #import <AVFoundation/AVAudioFormat.h>
 #import <Foundation/Foundation.h>
 #import <AVFAudio/AVAudioSettings.h>
+
+#if TARGET_OS_IPHONE
+#import <AVFAudio/AVAudioSession.h>
+#endif // #if TARGET_OS_EMBEDDED
+
 #import <Availability.h>
 
 NS_ASSUME_NONNULL_BEGIN

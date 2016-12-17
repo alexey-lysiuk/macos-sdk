@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E0D3B235-E8BE-38B7-A108-48790BD23E56' ]
+uuids:           [ 'x86_64: 3B7E3CEE-FC88-3B9E-B280-792E71A4821D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IMSharedUtilities.framework/Versions/A/IMSharedUtilities
 objc-constraint: none
@@ -41,8 +41,10 @@ exports:
                        _IMMessageItemExpireStateExpiringDuration, _IMMessageItemShouldAutomaticallySave, 
                        _IMMessageItemTimeIntervalSinceStartedExpiring, _IMMessageItemTimeIntervalSinceStartedExpiringForTimes, 
                        _IMMessagePayloadProviderExtensionPointName, _IMMessageSummaryInfoContentType, 
+                       _IMMessageSummaryInfoPluginBundleID, _IMMessageSummaryInfoPluginDisplayName, 
                        _IMMessageSummaryInfoSummary, _IMMetricsCollectorEventAcknowledgementSent, 
                        _IMMetricsCollectorEventAppMessageSent, _IMMetricsCollectorEventBubbleImpactSent, 
+                       _IMMetricsCollectorEventCallerIDSwitched, _IMMetricsCollectorEventContactForkedChatCount, 
                        _IMMetricsCollectorEventDTSent, _IMMetricsCollectorEventDetailsViewLaunched, 
                        _IMMetricsCollectorEventFSMSent, _IMMetricsCollectorEventHandwritingDeleted, 
                        _IMMetricsCollectorEventHandwritingInvoked, _IMMetricsCollectorEventHandwritingSent, 
@@ -53,12 +55,17 @@ exports:
                        _IMMetricsCollectorEventPhotoMessage, _IMMetricsCollectorEventPhotosPerMessage, 
                        _IMMetricsCollectorEventQuickLookLaunched, _IMMetricsCollectorEventRichLinkSent, 
                        _IMMetricsCollectorEventSMSReceived, _IMMetricsCollectorEventSMSSent, 
+                       _IMMetricsCollectorEventSOSPhoneMMSFailed, _IMMetricsCollectorEventSOSPhoneMMSSent, 
+                       _IMMetricsCollectorEventSOSPhoneSMSFailed, _IMMetricsCollectorEventSOSPhoneSMSSent, 
+                       _IMMetricsCollectorEventSOSWatchMMSFailed, _IMMetricsCollectorEventSOSWatchMMSSent, 
+                       _IMMetricsCollectorEventSOSWatchSMSFailed, _IMMetricsCollectorEventSOSWatchSMSSent, 
                        _IMMetricsCollectorEventSavedAttachment, _IMMetricsCollectorEventStickerSent, 
                        _IMMetricsCollectorEventStickerSentUsingFastPath, _IMMetricsCollectorEventTextLinkMessage, 
                        _IMMetricsCollectorEventTextMessage, _IMMetricsCollectorEventTextPhotoLinkMessage, 
                        _IMMetricsCollectorEventTextPhotoMessage, _IMMetricsCollectorEventXCTestKey, 
-                       _IMMetricsCollectorEventiMessageReceived, _IMMetricsCollectorEventiMessageSent, 
-                       _IMParserResultsForLogging, _IMSendAdditionalMMCSErrorInfoToMadrid, 
+                       _IMMetricsCollectorEventiMessageAppInstalledCount, _IMMetricsCollectorEventiMessageReceived, 
+                       _IMMetricsCollectorEventiMessageSent, _IMParserResultsForLogging, 
+                       _IMSendAdditionalMMCSErrorInfoToMadrid, _IMSharedHelperAppBlackListed, 
                        _IMSharedHelperCachePathForStickerWithProperties, _IMSharedHelperCombinedPluginPayloadDictionaryData, 
                        _IMSharedHelperCombinedPluginPayloadDictionaryDataWithAttachmentURLs, 
                        _IMSharedHelperDeleteOrphanedStickerMMCSDownloadTokens, _IMSharedHelperEnsureDirectoryExistsAtPath, 

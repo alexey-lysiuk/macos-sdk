@@ -125,7 +125,7 @@ typedef NS_OPTIONS(unsigned long long, NSEventMask) { /* masks for the types of 
      */
     NSEventMaskSmartMagnify NS_ENUM_AVAILABLE_MAC(10_8) = 1ULL << NSEventTypeSmartMagnify,
     NSEventMaskPressure NS_ENUM_AVAILABLE_MAC(10_10_3) = 1ULL << NSEventTypePressure,
-    NSEventMaskDirectTouch NS_ENUM_AVAILABLE_MAC(10_12_1) = 1ULL << NSEventTypeDirectTouch,
+    NSEventMaskDirectTouch NS_ENUM_AVAILABLE_MAC(10_12_2) = 1ULL << NSEventTypeDirectTouch,
 #endif
     
     NSEventMaskAny              = NSUIntegerMax,
@@ -550,7 +550,7 @@ typedef NS_ENUM(NSInteger, NSPressureBehavior) {
 
 /* An array of auxiliary NSTouch’s for the touch events that did not get delivered for a given main touch. This also includes an auxiliary version of the main touch itself. Only valid for NSEventTypeDirectTouch events.
 */
-- (NSArray <NSTouch *> *)coalescedTouchesForTouch:(NSTouch *)touch NS_AVAILABLE_MAC(10_12_1);
+- (NSArray <NSTouch *> *)coalescedTouchesForTouch:(NSTouch *)touch NS_AVAILABLE_MAC(10_12_2);
 
 /* The phase of a gesture scroll event. A gesture phrase are all the events that begin with a NSEventPhaseBegan and end with either a NSEventPhaseEnded or NSEventPhaseCancelled. All the gesture events are sent to the view under the cursor when the NSEventPhaseBegan occurred.  A gesture scroll event starts with a NSEventPhaseBegan phase and ends with a NSPhaseEnded. Legacy scroll wheel events (say from a Mighty Mouse) and momentum scroll wheel events have a phase of NSEventPhaseNone.
     Valid for NSEventTypeScrollWheel

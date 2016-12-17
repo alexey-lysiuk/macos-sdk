@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1FB4C01B-2C52-3452-B445-1A5E3AAFA465' ]
+uuids:           [ 'x86_64: 5A4023E1-A1F1-3ACA-9137-73560059343B' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/MediaPlayer.framework/Versions/A/MediaPlayer
 objc-constraint: none
@@ -118,12 +118,11 @@ exports:
                        _MPShuffleTypeFromMediaRemoteShuffleMode, _MPShuffleTypeToMediaRemoteShuffleMode, 
                        _MPSkipLimitEqualToSkipLimit, _MPSystemAppSpecializedQueueProminentStationIdentifier, 
                        _MPSystemAppSpecializedQueueQuickPlayIdentifier, _MRLanguageOptionGroupsFromMPNowPlayingLanguageOptionGroups, 
-                       _MRLanguageOptionsFromMPNowPlayingLanguageOptions, _NSStringAggregationKeyFromMPMediaType, 
-                       _NSStringFromMPAVItemType, _NSStringFromMPMediaType, __MPContentItemDidChangeNotification, 
-                       __MPMediaItemPropertyAvailableArtworkToken, __MPMediaItemPropertyAvailableScreenshotToken, 
-                       __MPMediaItemPropertyFetchableArtworkSource, __MPMediaItemPropertyFetchableArtworkToken, 
-                       __MPMediaItemPropertyFetchableScreenshotSource, __MPMediaItemPropertyFetchableScreenshotToken, 
-                       __MPNowPlayingInfoPropertyAlbumiTunesStoreAdamIdentifier, 
+                       _MRLanguageOptionsFromMPNowPlayingLanguageOptions, _NSStringFromMPAVItemType, 
+                       __MPContentItemDidChangeNotification, __MPMediaItemPropertyAvailableArtworkToken, 
+                       __MPMediaItemPropertyAvailableScreenshotToken, __MPMediaItemPropertyFetchableArtworkSource, 
+                       __MPMediaItemPropertyFetchableArtworkToken, __MPMediaItemPropertyFetchableScreenshotSource, 
+                       __MPMediaItemPropertyFetchableScreenshotToken, __MPNowPlayingInfoPropertyAlbumiTunesStoreAdamIdentifier, 
                        __MPNowPlayingInfoPropertyArtistiTunesStoreAdamIdentifier, 
                        __MPNowPlayingInfoPropertyArtworkData, __MPNowPlayingInfoPropertyArtworkMIMEType, 
                        __MPNowPlayingInfoPropertyDefaultPlaybackRate, __MPNowPlayingInfoPropertyDownloadProgress, 
@@ -140,8 +139,7 @@ exports:
                        __MPNowPlayingInfoPropertySupportsIsBanned, __MPNowPlayingInfoPropertySupportsIsLiked, 
                        __MPNowPlayingInfoPropertySupportsRewind15Seconds, __MPNowPlayingInfoPropertySupportsWishlisting, 
                        __MPNowPlayingInfoPropertyiTunesStoreIdentifier, __MPNowPlayingInfoPropertyiTunesStoreSubscriptionAdamIdentifier, 
-                       __MRItemDownloadStateForMPDownloadState, __MRMediaRemoteMediaTypeForMPMediaType, 
-                       __MRMediaRemoteNowPlayingMediaTypeForMPNowPlayingMediaType ]
+                       __MRItemDownloadStateForMPDownloadState, __MRMediaRemoteNowPlayingMediaTypeForMPNowPlayingMediaType ]
     objc-classes:    [ _MPAdvanceRepeatModeCommand, _MPAdvanceRepeatModeCommandEvent, 
                        _MPAdvanceShuffleModeCommand, _MPAdvanceShuffleModeCommandEvent, 
                        _MPChangeLanguageOptionCommandEvent, _MPChangePlaybackPositionCommand, 

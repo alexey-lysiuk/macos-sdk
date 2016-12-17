@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AC0F1F7D-1E43-3C6B-9184-F481D08CD01C' ]
+uuids:           [ 'x86_64: 0C1964F0-34A7-3448-A6FE-7D410FB4ABFD' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreChineseEngine.framework/Versions/A/CoreChineseEngine
-current-version: 355.16
+current-version: 356.11
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -48,11 +48,11 @@ exports:
                        _kCIMStatisticsUsesSuchengDynamicPromptPreferenceKey, _kCIMStatisticsWubiXingKey, 
                        _kCIMStatisticsWubihuaInputKeysDefinedPreferenceKey, _kCIMStatisticsZhuyinAdjustsWordFrequencyPreferenceKey, 
                        _kCIMStatisticsZhuyinEtenKey, _kCIMStatisticsZhuyinKey, _kCangjieInputMethodIdentifier, 
-                       _kKeyboardLayoutNameCangjie, _kKeyboardLayoutNamePinyin, _kKeyboardLayoutNameWubihua, 
-                       _kKeyboardLayoutNameWubixing, _kKeyboardLayoutNameZhuyin, 
-                       _kKeyboardLayoutNameZhuyinEten, _kPinyinSimplifiedInputMethodIdentifier, 
-                       _kPinyinTraditionalInputMethodIdentifier, _kSCIMAppIdentifier, 
-                       _kSCIMShowTCIMSettingsKey, _kSuchengInputMethodIdentifier, 
+                       _kKeyboardLayoutNameCangjie, _kKeyboardLayoutNamePinyin, _kKeyboardLayoutNamePinyinWithTraditionalScript, 
+                       _kKeyboardLayoutNameWubihua, _kKeyboardLayoutNameWubixing, 
+                       _kKeyboardLayoutNameZhuyin, _kKeyboardLayoutNameZhuyinEten, 
+                       _kPinyinSimplifiedInputMethodIdentifier, _kPinyinTraditionalInputMethodIdentifier, 
+                       _kSCIMAppIdentifier, _kSCIMShowTCIMSettingsKey, _kSuchengInputMethodIdentifier, 
                        _kTCIMAppIdentifier, _kTCIMShowSCIMSettingsKey, _kWubiHuaMaxNumberOfCharactersInInline, 
                        _kWubiHuaSimplifiedInputMethodIdentifier, _kWubiHuaTraditionalInputMethodIdentifier, 
                        _kWubiXingInputMethodIdentifier, _kZhuyinEtenInputMethodIdentifier, 

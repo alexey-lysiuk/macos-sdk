@@ -20,12 +20,14 @@ API_AVAILABLE(macosx(10.4),ios(3.0))
 #if (!__OBJC2__)
 @private
 	NSString *_versionHashModifier;
-	id _underlyingProperty;
+	id _underlyingProperty2;
 	NSData *_versionHash;
     NSEntityDescription *_entity;
     NSString *_name;
     NSArray *_validationPredicates;
     NSArray *_validationWarnings;
+    __strong void *_extraIvars;
+    NSMutableDictionary *_userInfo;
     struct __propertyDescriptionFlags {
         unsigned int _isReadOnly:1;
         unsigned int _isTransient:1;
@@ -36,10 +38,14 @@ API_AVAILABLE(macosx(10.4),ios(3.0))
         unsigned int _isStoredInExternalRecord:1;
 		unsigned int _extraIvarsAreInDataBlob:1;
         unsigned int _isOrdered:1;
-        unsigned int _reservedPropertyDescription:23;
+        
+        unsigned int _hasMaxValueInExtraIvars:1;
+        unsigned int _hasMinValueInExtraIvars:1;
+        unsigned int _storeBinaryDataExternally:1;
+        unsigned int _reservedAttributeFlagOne:1;
+
+        unsigned int _reservedPropertyDescription:19;
     } _propertyDescriptionFlags;    
-    __strong void *_extraIvars;
-    NSMutableDictionary *_userInfo;
 	long _entitysReferenceIDForProperty;
 #endif
 }

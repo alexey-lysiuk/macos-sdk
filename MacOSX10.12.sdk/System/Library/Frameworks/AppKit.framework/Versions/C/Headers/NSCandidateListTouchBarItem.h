@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 */
 
 #pragma mark NSCandidateListTouchBarItem
-NS_CLASS_AVAILABLE_MAC(10_12_1)
+NS_CLASS_AVAILABLE_MAC(10_12_2)
 @interface NSCandidateListTouchBarItem<CandidateType> : NSTouchBarItem
 #if !__OBJC2__
 {
@@ -81,24 +81,24 @@ NS_CLASS_AVAILABLE_MAC(10_12_1)
 @optional
 
 // Invoked when user touches down on a candidate in the bar.
-- (void)candidateListTouchBarItem:(NSCandidateListTouchBarItem *)anItem beginSelectingCandidateAtIndex:(NSInteger)index NS_AVAILABLE_MAC(10_12_1);
+- (void)candidateListTouchBarItem:(NSCandidateListTouchBarItem *)anItem beginSelectingCandidateAtIndex:(NSInteger)index NS_AVAILABLE_MAC(10_12_2);
 
 // Invoked when user moves from touching one candidate in the bar to another.
-- (void)candidateListTouchBarItem:(NSCandidateListTouchBarItem *)anItem changeSelectionFromCandidateAtIndex:(NSInteger)previousIndex toIndex:(NSInteger)index NS_AVAILABLE_MAC(10_12_1);
+- (void)candidateListTouchBarItem:(NSCandidateListTouchBarItem *)anItem changeSelectionFromCandidateAtIndex:(NSInteger)previousIndex toIndex:(NSInteger)index NS_AVAILABLE_MAC(10_12_2);
 
 // Invoked when user stops touching candidates in the bar. If index==NSNotFound, user didn't select any candidate.
-- (void)candidateListTouchBarItem:(NSCandidateListTouchBarItem *)anItem endSelectingCandidateAtIndex:(NSInteger)index NS_AVAILABLE_MAC(10_12_1);
+- (void)candidateListTouchBarItem:(NSCandidateListTouchBarItem *)anItem endSelectingCandidateAtIndex:(NSInteger)index NS_AVAILABLE_MAC(10_12_2);
 
 // Invoked when -candidateListVisible changed the visibility state.
-- (void)candidateListTouchBarItem:(NSCandidateListTouchBarItem *)anItem changedCandidateListVisibility:(BOOL)isVisible NS_AVAILABLE_MAC(10_12_1);
+- (void)candidateListTouchBarItem:(NSCandidateListTouchBarItem *)anItem changedCandidateListVisibility:(BOOL)isVisible NS_AVAILABLE_MAC(10_12_2);
 @end
 
 @interface NSView (NSCandidateListTouchBarItem)
 // Returns NSCandidateListTouchBarItem used by the receiver when the first responder. The default implementation just returns nil. NSTextInputContext uses the item returned from this method for showing the candidates from input methods.
-@property (nullable, readonly, strong) NSCandidateListTouchBarItem *candidateListTouchBarItem NS_AVAILABLE_MAC(10_12_1);
+@property (nullable, readonly, strong) NSCandidateListTouchBarItem *candidateListTouchBarItem NS_AVAILABLE_MAC(10_12_2);
 @end
 
 // The standard touch bar item identifier for NSCandidateListTouchBarItem. -[NSView candidateListTouchBarItem] concrete overrides should be using this identifier for instantiating the touch bar item.
-APPKIT_EXTERN NSTouchBarItemIdentifier const NSTouchBarItemIdentifierCandidateList NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN NSTouchBarItemIdentifier const NSTouchBarItemIdentifierCandidateList NS_AVAILABLE_MAC(10_12_2);
 
 NS_ASSUME_NONNULL_END

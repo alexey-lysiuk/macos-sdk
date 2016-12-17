@@ -131,7 +131,7 @@ NS_CLASS_AVAILABLE(10_11, 9_0)
  * @param handler A handler called when datagrams have been read, or when an error has occurred.
  * @param minDatagrams The maximum number of datagrams to send to the handler.
  */
-- (void)setReadHandler:(void (^)(NSArray<NSData *> *datagrams, NSError * __nullable error))handler
+- (void)setReadHandler:(void (^)(NSArray<NSData *> * __nullable datagrams, NSError * __nullable error))handler
 		  maxDatagrams:(NSUInteger)maxDatagrams NS_AVAILABLE(10_11, 9_0);
 
 /*!

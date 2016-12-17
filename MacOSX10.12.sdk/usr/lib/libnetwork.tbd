@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 63EBC765-4778-3AB5-A44B-6343C36AFF1D', 'x86_64: 505C4AC1-1D7C-3879-AF82-B0CF78A487AD' ]
+uuids:           [ 'i386: 4383D13B-32F3-3AD3-A351-95799531DA7F', 'x86_64: 66C6E4D6-B39C-3309-80C1-CBBE170DDD51' ]
 platform:        macosx
 install-name:    /usr/lib/libnetwork.dylib
 objc-constraint: none
@@ -34,7 +34,7 @@ exports:
                        _NWConcrete_nw_endpoint_resolver.child_timer, _NWConcrete_nw_endpoint_resolver.connected_child, 
                        _NWConcrete_nw_endpoint_resolver.failed_child_endpoint_handlers, 
                        _NWConcrete_nw_endpoint_resolver.failed_to_start_next_child, 
-                       _NWConcrete_nw_endpoint_resolver.next_child_endpoint_index, 
+                       _NWConcrete_nw_endpoint_resolver.last_resolver_status, _NWConcrete_nw_endpoint_resolver.next_child_endpoint_index, 
                        _NWConcrete_nw_endpoint_resolver.ready_child_endpoint_handlers, 
                        _NWConcrete_nw_endpoint_resolver.resolver, _NWConcrete_nw_endpoint_resolver.trigger_agent_timer, 
                        _NWConcrete_nw_pac_resolver.endpointURL, _NWConcrete_nw_pac_resolver.pacScript, 
@@ -199,16 +199,17 @@ exports:
                        _nw_tls_set_npn_data, _nw_tls_set_npn_enabled, _nw_tls_set_peer_ec_public_key, 
                        _nw_tls_set_peer_hostname, _nw_tls_set_peer_rsa_public_key, 
                        _nw_tls_set_peer_trust, _nw_tls_set_psk_identity, _nw_tls_set_psk_identity_hint, 
-                       _nw_tls_set_psk_secret, _nw_tls_set_session_ticket_enabled, 
-                       _nw_utilities_cidr_string_to_subnet_and_mask, _tcp_connection_accept, 
-                       _tcp_connection_add_event_adaptive_read_timeout, _tcp_connection_add_event_adaptive_write_timeout, 
-                       _tcp_connection_add_event_excessive_keepalives, _tcp_connection_allow_client_socket_access, 
-                       _tcp_connection_are_proxies_supported, _tcp_connection_cancel, 
-                       _tcp_connection_conditions_get_unmet_reason, _tcp_connection_conditions_met, 
-                       _tcp_connection_copy_connected_path, _tcp_connection_copy_context, 
-                       _tcp_connection_copy_description, _tcp_connection_copy_endpoint, 
-                       _tcp_connection_copy_metadata, _tcp_connection_copy_parameters, 
-                       _tcp_connection_copy_proxy, _tcp_connection_copy_socket, _tcp_connection_copy_tcp_info, 
+                       _nw_tls_set_psk_secret, _nw_tls_set_session_resumption_enabled, 
+                       _nw_tls_set_session_ticket_enabled, _nw_utilities_cidr_string_to_subnet_and_mask, 
+                       _tcp_connection_accept, _tcp_connection_add_event_adaptive_read_timeout, 
+                       _tcp_connection_add_event_adaptive_write_timeout, _tcp_connection_add_event_excessive_keepalives, 
+                       _tcp_connection_allow_client_socket_access, _tcp_connection_are_proxies_supported, 
+                       _tcp_connection_cancel, _tcp_connection_conditions_get_unmet_reason, 
+                       _tcp_connection_conditions_met, _tcp_connection_copy_connected_path, 
+                       _tcp_connection_copy_context, _tcp_connection_copy_description, 
+                       _tcp_connection_copy_endpoint, _tcp_connection_copy_metadata, 
+                       _tcp_connection_copy_parameters, _tcp_connection_copy_proxy, 
+                       _tcp_connection_copy_socket, _tcp_connection_copy_tcp_info, 
                        _tcp_connection_create, _tcp_connection_create_inbound, _tcp_connection_create_upgrade, 
                        _tcp_connection_create_with_connected_fd, _tcp_connection_create_with_endpoint_and_parameters, 
                        _tcp_connection_create_with_service, _tcp_connection_create_with_sockaddr, 

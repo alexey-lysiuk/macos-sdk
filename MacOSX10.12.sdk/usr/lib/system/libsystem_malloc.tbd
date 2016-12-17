@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 3309510C-5F80-385F-A298-D1F025F84C58', 'x86_64: 3DD17B88-B7A4-38B9-9E95-AB88E1C3B647' ]
+uuids:           [ 'i386: 1BA5FD5A-DFFC-3EFC-9AB4-2ED0A49EFF6E', 'x86_64: F40DEE3B-386A-3529-A3F7-98117ED55BF4' ]
 platform:        macosx
 install-name:    /usr/lib/system/libsystem_malloc.dylib
-current-version: 116.0
+current-version: 116.30.3
 objc-constraint: none
 parent-umbrella: System
 exports:         

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 9514B3C6-A1DA-3375-9F12-14C17BF1B2D8', 'x86_64: 88C4D4A3-0AFF-3421-870F-1ABD130736C2' ]
+uuids:           [ 'i386: A03C06FC-864C-3C83-B145-AC0D2937DF22', 'x86_64: 63B56FB8-D265-3098-A1CF-9C190CA0FC99' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Backup.framework/Versions/A/Backup
-current-version: 1008.1.18
+current-version: 1008.3.9
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]

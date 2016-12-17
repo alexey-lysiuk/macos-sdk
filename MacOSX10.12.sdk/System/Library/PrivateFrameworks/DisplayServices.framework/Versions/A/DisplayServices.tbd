@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: FE40472B-BB2A-357B-B1F9-4E40B46E2290', 'x86_64: 6BF753D7-F766-3F3F-938A-801A888D249B' ]
+uuids:           [ 'i386: 918D9E1C-116C-303D-9CBB-F70698328281', 'x86_64: 0A48A624-F5E7-3C29-8958-12219060F663' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DisplayServices.framework/Versions/A/DisplayServices
 objc-constraint: none

@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class MPRemoteCommand;
 @class MPSkipIntervalCommand;
 
-MP_API(ios(7.1), tvos(7.1), macos(10.12.1))
+MP_API(ios(7.1), tvos(7.1), macos(10.12.2))
 @interface MPRemoteCommandCenter : NSObject
 
 // Playback Commands
@@ -27,8 +27,8 @@ MP_API(ios(7.1), tvos(7.1), macos(10.12.1))
 @property (nonatomic, readonly) MPRemoteCommand *playCommand;
 @property (nonatomic, readonly) MPRemoteCommand *stopCommand;
 @property (nonatomic, readonly) MPRemoteCommand *togglePlayPauseCommand;
-@property (nonatomic, readonly) MPRemoteCommand *enableLanguageOptionCommand NS_AVAILABLE(10_12_1, 9_0);
-@property (nonatomic, readonly) MPRemoteCommand *disableLanguageOptionCommand NS_AVAILABLE(10_12_1, 9_0);
+@property (nonatomic, readonly) MPRemoteCommand *enableLanguageOptionCommand NS_AVAILABLE(10_12_2, 9_0);
+@property (nonatomic, readonly) MPRemoteCommand *disableLanguageOptionCommand NS_AVAILABLE(10_12_2, 9_0);
 @property (nonatomic, readonly) MPChangePlaybackRateCommand *changePlaybackRateCommand;
 @property (nonatomic, readonly) MPChangeRepeatModeCommand *changeRepeatModeCommand;
 @property (nonatomic, readonly) MPChangeShuffleModeCommand *changeShuffleModeCommand;
@@ -44,7 +44,7 @@ MP_API(ios(7.1), tvos(7.1), macos(10.12.1))
 // Seek Commands
 @property (nonatomic, readonly) MPRemoteCommand *seekForwardCommand;
 @property (nonatomic, readonly) MPRemoteCommand *seekBackwardCommand;
-@property (nonatomic, readonly) MPChangePlaybackPositionCommand *changePlaybackPositionCommand NS_AVAILABLE(10_12_1, 9_1);
+@property (nonatomic, readonly) MPChangePlaybackPositionCommand *changePlaybackPositionCommand NS_AVAILABLE(10_12_2, 9_1);
 
 // Rating Command
 @property (nonatomic, readonly) MPRatingCommand *ratingCommand;

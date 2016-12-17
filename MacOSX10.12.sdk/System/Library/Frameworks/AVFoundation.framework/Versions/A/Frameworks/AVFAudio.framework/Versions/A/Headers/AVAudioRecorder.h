@@ -10,6 +10,11 @@
 #import <AVFoundation/AVAudioFormat.h>
 #import <Foundation/Foundation.h>
 #import <AVFAudio/AVAudioSettings.h>
+
+#if TARGET_OS_IPHONE
+#import <AVFAudio/AVAudioSession.h>
+#endif // #if TARGET_OS_EMBEDDED
+
 #import <Availability.h>
 
 NS_ASSUME_NONNULL_BEGIN
@@ -76,7 +81,7 @@ NS_CLASS_AVAILABLE(10_7, 3_0) __TVOS_UNAVAILABLE __WATCHOS_PROHIBITED
 /* The channels property lets you assign the output to record specific channels as described by AVAudioSession's channels property */
 /* This property is nil valued until set. */
 /* The array must have the same number of channels as returned by the numberOfChannels property. */
-@property(nonatomic, copy, nullable) NSArray<NSNumber *> *channelAssignments NS_AVAILABLE(10_9, 7_0); /* Array of AVAudioSessionChannelDescription objects */
+@property(nonatomic, copy, nullable) NSArray<AVAudioSessionChannelDescription *> *channelAssignments NS_AVAILABLE(10_9, 7_0); /* Array of AVAudioSessionChannelDescription objects */
 #endif
 
 @end

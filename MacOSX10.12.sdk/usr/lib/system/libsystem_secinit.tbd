@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 51B19A10-92C5-3CEF-9284-B25DF4E524EF', 'x86_64: A54B8FEF-E792-3C54-8E0B-E80A376662F2' ]
+uuids:           [ 'i386: 20802F8D-D050-3CD8-A356-253F82AFF866', 'x86_64: 5C1F1E47-0F7D-3E25-8DEB-D9DB1F902281' ]
 platform:        macosx
 install-name:    /usr/lib/system/libsystem_secinit.dylib
 current-version: 24.0

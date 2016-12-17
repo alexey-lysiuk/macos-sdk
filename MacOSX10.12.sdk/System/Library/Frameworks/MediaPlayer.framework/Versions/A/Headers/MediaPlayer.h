@@ -6,6 +6,7 @@
 //
 
 #import <MediaPlayer/MediaPlayerDefines.h>
+#import <TargetConditionals.h>
 
 #if TARGET_OS_IPHONE
 #import <MediaPlayer/MPMediaItemCollection.h>
@@ -17,6 +18,7 @@
 #import <MediaPlayer/MPMoviePlayerController.h>
 #import <MediaPlayer/MPMoviePlayerViewController.h>
 #import <MediaPlayer/MPMusicPlayerController.h>
+#import <MediaPlayer/MPMusicPlayerQueueDescriptor.h>
 #import <MediaPlayer/MPPlayableContentDataSource.h>
 #import <MediaPlayer/MPPlayableContentDelegate.h>
 #import <MediaPlayer/MPPlayableContentManager.h>

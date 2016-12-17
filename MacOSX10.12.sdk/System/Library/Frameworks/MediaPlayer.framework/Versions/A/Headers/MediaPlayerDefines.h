@@ -21,9 +21,21 @@
 #define MP_UNAVAILABLE __attribute__((visibility("default"))) __API_UNAVAILABLE
 
 #if __has_include(<AvailabilityProhibitedInternal.h>)
-#define MP_API_IOS_AVAILABLE_TVOS_PROHIBITED(ver) MP_API(ios(ver), tvos(ver))
-#define MP_API_IOS_AVAILABLE_MACOS_TVOS_PROHIBITED(iosver, macosver, tvosver) MP_API(ios(iosver), tvos(tvosver), macos(macosver))
+#define MP_API_IOS_AVAILABLE_TVOS_PROHIBITED(iosver, macosver, tvosver) MP_API(ios(iosver), tvos(tvosver), macos(macosver)) __TVOS_PROHIBITED
+#define MP_API_IOS_AVAILABLE_MACOS_TVOS_PROHIBITED(iosver, macosver, tvosver) MP_API(ios(iosver), tvos(tvosver), macos(macosver)) __TVOS_PROHIBITED
+#define MP_API_IOS_DEPRECATED_TVOS_PROHIBITED(iosintro, iosdep, macosintro, macosdep, tvosintro, tvosdep) \
+    MP_DEPRECATED("No longer supported", ios(iosintro, iosdep), tvos(tvosintro, tvosdep), macos(macosintro, macosdep)) __TVOS_PROHIBITED
+#define MP_API_IOS_DEPRECATED_MACOS_TVOS_PROHIBITED(iosintro, iosdep, macosintro, macosdep, tvosintro, tvosdep) \
+    MP_DEPRECATED("No longer supported", ios(iosintro, iosdep), tvos(tvosintro, tvosdep), macos(macosintro, macosdep)) __TVOS_PROHIBITED
+#define MP_API_IOS_DEPRECATED_WITH_REPLACEMENT_MACOS_TVOS_PROHIBITED(replacement, iosintro, iosdep, macosintro, macosdep, tvosintro, tvosdep) \
+    MP_DEPRECATED_WITH_REPLACEMENT(replacement, ios(iosintro, iosdep), tvos(tvosintro, tvosdep), macos(macosintro, macosdep)) __TVOS_PROHIBITED
 #else
-#define MP_API_IOS_AVAILABLE_TVOS_PROHIBITED(ver) MP_API(ios(ver))
-#define MP_API_IOS_AVAILABLE_MACOS_TVOS_PROHIBITED(iosver, macosver, tvosver) MP_API(ios(iosver), tvos(tvosver))
+#define MP_API_IOS_AVAILABLE_TVOS_PROHIBITED(iosver, macosver, tvosver) MP_API(ios(iosver), macos(macosver)) __TVOS_PROHIBITED
+#define MP_API_IOS_AVAILABLE_MACOS_TVOS_PROHIBITED(iosver, macosver, tvosver) MP_API(ios(iosver)) __TVOS_PROHIBITED __OS_AVAILABILITY(macosx,unavailable)
+#define MP_API_IOS_DEPRECATED_TVOS_PROHIBITED(iosintro, iosdep, macosintro, macosdep, tvosintro, tvosdep) \
+    MP_DEPRECATED("No longer supported", ios(iosintro, iosdep), macos(macosintro, macosdep)) __TVOS_PROHIBITED
+#define MP_API_IOS_DEPRECATED_MACOS_TVOS_PROHIBITED(iosintro, iosdep, macosintro, macosdep, tvosintro, tvosdep) \
+    MP_DEPRECATED("No longer supported", ios(iosintro, iosdep)) __TVOS_PROHIBITED __OS_AVAILABILITY(macosx,unavailable)
+#define MP_API_IOS_DEPRECATED_WITH_REPLACEMENT_MACOS_TVOS_PROHIBITED(replacement, iosintro, iosdep, macosintro, macosdep, tvosintro, tvosdep) \
+    MP_DEPRECATED_WITH_REPLACEMENT(replacement, ios(iosintro, iosdep)) __TVOS_PROHIBITED __OS_AVAILABILITY(macosx,unavailable)
 #endif

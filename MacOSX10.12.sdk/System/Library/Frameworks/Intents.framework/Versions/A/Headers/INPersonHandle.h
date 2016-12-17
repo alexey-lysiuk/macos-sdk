@@ -7,6 +7,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import <Intents/INPersonHandleLabel.h>
+
 typedef NS_ENUM(NSInteger, INPersonHandleType) {
     INPersonHandleTypeUnknown = 0,
     INPersonHandleTypeEmailAddress,
@@ -20,9 +22,11 @@ API_AVAILABLE(macosx(10.12), ios(10.0))
 
 @property (readonly, copy, NS_NONATOMIC_IOSONLY) NSString *value;
 @property (readonly, NS_NONATOMIC_IOSONLY) INPersonHandleType type;
+@property (readonly, nullable, NS_NONATOMIC_IOSONLY) INPersonHandleLabel label API_AVAILABLE(ios(10.2), macosx(10.12.2));
 
 - (instancetype)init NS_UNAVAILABLE;
-- (instancetype)initWithValue:(NSString *)value type:(INPersonHandleType)type NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithValue:(NSString *)value type:(INPersonHandleType)type label:(nullable INPersonHandleLabel)label NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithValue:(NSString *)value type:(INPersonHandleType)type;
 
 @end
 

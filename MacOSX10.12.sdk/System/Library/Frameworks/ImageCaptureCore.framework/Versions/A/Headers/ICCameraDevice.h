@@ -331,7 +331,7 @@ extern NSString *const ICDownloadSidecarFiles;
     @discussion Use 'requestEnableTethering' and 'requestDisableTethering' to enable or disable tethered capture on the device.
 
 */
-@property             BOOL            tetheredCaptureEnabled;
+@property(readonly)             BOOL            tetheredCaptureEnabled;
 
 /*! 
   @method filesOfType:

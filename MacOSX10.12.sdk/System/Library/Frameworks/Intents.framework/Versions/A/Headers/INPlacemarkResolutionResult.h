@@ -14,7 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 API_AVAILABLE(macosx(10.12), ios(10.0))
 @interface INPlacemarkResolutionResult : INIntentResolutionResult
 
-// This resolution result is for when the app extension wants to tell Siri to proceed with a given placemark. The resolvedPlacemark need not be identical to the input placemark. If the app extension wants to continue with a 'nil' value, it must use +notRequired.
+// This resolution result is for when the app extension wants to tell Siri to proceed, with a given CLPlacemark. The resolvedPlacemark can be different than the original CLPlacemark. This allows app extensions to dynamically fill-in details about the CLPlacemark, as appropriate. To make a new CLPlacemark, see <Intents/CLPlacemark+IntentsAdditions.h>. 
+// Use +notRequired to continue with a 'nil' value.
+
 + (instancetype)successWithResolvedPlacemark:(CLPlacemark *)resolvedPlacemark NS_SWIFT_NAME(success(with:));
 
 // This resolution result is to ask Siri to disambiguate between the provided placemarks.

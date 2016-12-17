@@ -87,7 +87,7 @@ MDL_EXPORT
                     divisions:(int)divisions
                interiorShells:(int)interiorShells
                exteriorShells:(int)exteriorShells
-                  patchRadius:(float)patchRadius NS_DEPRECATED(10_11, 10_12, NA, NA);
+                  patchRadius:(float)patchRadius;
 
 /**
  Initialize a voxel grid from an MDLAsset and dilate the resulting voxels by

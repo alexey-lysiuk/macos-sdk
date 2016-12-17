@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 682DBD6D-93AA-3D78-A3C6-AA62D3A73FEE' ]
+uuids:           [ 'x86_64: EEDA507B-CCB0-38F0-8ACB-1E7E454592A2' ]
 platform:        macosx
 install-name:    /usr/lib/log/liblog_mediaremote.dylib
 objc-constraint: none

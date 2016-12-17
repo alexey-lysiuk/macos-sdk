@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 49DA6034-DC99-35C6-B382-9831A95A984A', 'x86_64: 3A82B0FB-8BC7-3A68-8FB9-365F5446314D' ]
+uuids:           [ 'i386: 9B2E14BF-C90F-3E9A-97D3-2CD9823854EC', 'x86_64: 0D29966A-0F31-3F51-BC1E-D6BD29043D30' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/OpenCL.framework/Versions/A/Libraries/float_rx.dylib
 objc-constraint: none

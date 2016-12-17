@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class NSTouchBarSharingServicePickerViewController, NSPopoverTouchBarItem;
 
-NS_CLASS_AVAILABLE_MAC(10_12_1)
+NS_CLASS_AVAILABLE_MAC(10_12_2)
 @interface NSSharingServicePickerTouchBarItem : NSTouchBarItem {
 @private
     __kindof NSPopoverTouchBarItem *_internalPopoverItem;

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 617323BD-EF0D-3C4A-9F12-69FF3930A2AF', 'x86_64: 0267832E-1B1D-3DE4-87FE-10C4ED9E0C90' ]
+uuids:           [ 'i386: AE56CF8B-2EB2-3463-9F13-CE4F906F7F5F', 'x86_64: 97DE8A89-6B36-3D8C-9317-1D84F291C1FF' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/WebKit.framework/Versions/A/WebKit
-current-version: 602.2.14
+current-version: 602.3.12
 objc-constraint: none
 exports:         
   - archs:           [ i386 ]

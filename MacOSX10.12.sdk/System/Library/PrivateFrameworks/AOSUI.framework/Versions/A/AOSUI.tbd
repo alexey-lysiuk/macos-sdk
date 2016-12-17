@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: ECC8EAC8-69C1-3108-9E2F-7A43FAC8C67B' ]
+uuids:           [ 'x86_64: 1A571200-83DA-32E7-B0CD-E19D8A52511A' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AOSUI.framework/Versions/A/AOSUI
 current-version: 415.0
@@ -236,7 +236,7 @@ exports:
                        _iCloudPrefPaneCDPEnrollViewController, _iCloudPrefPaneCDPOption, 
                        _iCloudPrefPaneTrustedDeviceViewItem, _iCloudRequester, _iCloudServiceGroupRow, 
                        _iCloudServiceGroupRowLoader, _iCloudSetupTopLevel, _iCloudSetupTopLevelViews, 
-                       _iCloudUtilities ]
+                       _iCloudTouchBarController, _iCloudUtilities ]
     objc-ivars:      [ _CastlePlugin._accountDetailsController, _CastlePlugin._accountDetailsControllerNew, 
                        _CastlePlugin._accountList, _CastlePlugin._appleID, _CastlePlugin._authenticationResults, 
                        _CastlePlugin._btmmPasswordSheet, _CastlePlugin._delegate, 

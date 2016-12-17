@@ -436,8 +436,6 @@ typedef struct vm_purgeable_info	*vm_purgeable_info_t;
 /* DHMM data */
 #define VM_MEMORY_DHMM 84
 
-/* memory needed for DFR related actions */
-#define VM_MEMORY_DFR 85
 
 /* memory allocated by SceneKit.framework */
 #define VM_MEMORY_SCENEKIT 86

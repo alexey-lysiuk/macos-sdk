@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 889386AE-EE29-3306-A82D-EF89C6CFB882', 'x86_64: 10152D7F-C7C0-34AA-A295-D712D16C76E6' ]
+uuids:           [ 'i386: 188B3F1C-5FA1-3C3E-9728-BCF82AA1776D', 'x86_64: FEB98F96-A9BB-3E6C-85B4-B466825B8C92' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/LanguageModeling.framework/Versions/A/LanguageModeling
-current-version: 123.0
+current-version: 123.2.4
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]
@@ -38,10 +38,11 @@ exports:
                        _LMLanguageModelIncrementUsageCountWithEffectiveTime, _LMLanguageModelIsAppleColorEmojiCharacter, 
                        _LMLanguageModelJointProbability, _LMLanguageModelJointProbabilityVector, 
                        _LMLanguageModelPerformMaintenance, _LMLanguageModelPerformMaintenanceWithEffectiveTime, 
-                       _LMLanguageModelPreheatResources, _LMLanguageModelPrune, _LMLanguageModelRelease, 
-                       _LMLanguageModelRemoveModelBundlesInDirectory, _LMLanguageModelRemoveObserver, 
-                       _LMLanguageModelRemoveTokenForString, _LMLanguageModelRemoveTransientVocabulary, 
-                       _LMLanguageModelReset, _LMLanguageModelResetDynamicData, _LMLanguageModelRetain, 
+                       _LMLanguageModelPreheatResources, _LMLanguageModelPrune, _LMLanguageModelRecordTokenUsageWithDifferentialPrivacy, 
+                       _LMLanguageModelRelease, _LMLanguageModelRemoveModelBundlesInDirectory, 
+                       _LMLanguageModelRemoveObserver, _LMLanguageModelRemoveTokenForString, 
+                       _LMLanguageModelRemoveTransientVocabulary, _LMLanguageModelReset, 
+                       _LMLanguageModelResetDynamicData, _LMLanguageModelRetain, 
                        _LMLanguageModelSetLogLevel, _LMLanguageModelSetParameterValue, 
                        _LMLanguageModelShouldAdaptToParagraph, _LMLanguageModelShouldAdaptToTokenSequence, 
                        _LMLanguageModelStaticConditionalProbability, _LMLanguageModelTokenHasAttributes, 

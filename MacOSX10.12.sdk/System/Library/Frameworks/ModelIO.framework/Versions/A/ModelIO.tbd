@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A2E14298-F91D-3CBC-AE67-8F27AE989E96' ]
+uuids:           [ 'x86_64: 4035386A-B4BF-3815-AB2E-536B343D438C' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/ModelIO.framework/Versions/A/ModelIO
 objc-constraint: none
@@ -98,20 +98,21 @@ exports:
                        __ZNK7ModelIO12RTRenderable13_intersectRayERKNS_12RTRaySegmentERNS_20RTIntersectionResultE, 
                        __ZNK7ModelIO12RTRenderable17_doesIntersectRayERKNS_12RTRaySegmentE, 
                        __ZNK7ModelIO12RTRenderable6octreeEv, __ZNK7ModelIO12RTRenderable7getAABBEv, 
+                       __ZNK7ModelIO22LambertianDistribution10illuminateERKNS_17BSDFShadingValuesERKNS_24BSDFDerivedShadingValuesE, 
                        __ZNK7ModelIO22LambertianDistribution5sheenERNS_17BSDFShadingValuesERNS_24BSDFDerivedShadingValuesE, 
                        __ZNK7ModelIO22LambertianDistribution7diffuseERNS_17BSDFShadingValuesERNS_24BSDFDerivedShadingValuesE, 
                        __ZNK7ModelIO22LambertianDistribution8specularERNS_17BSDFShadingValuesERNS_24BSDFDerivedShadingValuesE, 
                        __ZNK7ModelIO22LambertianDistribution9clearcoatERNS_17BSDFShadingValuesERNS_24BSDFDerivedShadingValuesE, 
                        __ZNK7ModelIO29RTOctreeAccelerationStructure12intersectRayERKNS_12RTRaySegmentERNS_20RTIntersectionResultE, 
                        __ZNK7ModelIO29RTOctreeAccelerationStructure16doesIntersectRayERKNS_12RTRaySegmentE, 
+                       __ZNK7ModelIO31PhysicallyPlausibleDistribution10illuminateERKNS_17BSDFShadingValuesERKNS_24BSDFDerivedShadingValuesE, 
                        __ZNK7ModelIO31PhysicallyPlausibleDistribution10precomputeERKNS_17BSDFShadingValuesEPNS_14MDLTextureDataES5_RNS_24BSDFDerivedShadingValuesE, 
                        __ZNK7ModelIO31PhysicallyPlausibleDistribution5sheenERNS_17BSDFShadingValuesERNS_24BSDFDerivedShadingValuesE, 
                        __ZNK7ModelIO31PhysicallyPlausibleDistribution7diffuseERNS_17BSDFShadingValuesERNS_24BSDFDerivedShadingValuesE, 
                        __ZNK7ModelIO31PhysicallyPlausibleDistribution8specularERNS_17BSDFShadingValuesERNS_24BSDFDerivedShadingValuesE, 
                        __ZNK7ModelIO31PhysicallyPlausibleDistribution9clearcoatERNS_17BSDFShadingValuesERNS_24BSDFDerivedShadingValuesE, 
                        __ZNK7ModelIO43BidirectionalScatteringDistributionFunction14basePreComputeERKNS_17BSDFShadingValuesEPNS_14MDLTextureDataES5_RNS_24BSDFDerivedShadingValuesE, 
-                       __ZNK7ModelIO6Octree10OctreeNode10testOctantEhRKNS_12RTRaySegmentES4_RNS_20RTIntersectionResultEDv3_fS7_h, 
-                       __ZNK7ModelIO6Octree10OctreeNode12octantCenterEh, __ZNK7ModelIO6Octree10OctreeNode8traceRayERKNS_12RTRaySegmentES4_RNS_20RTIntersectionResultEDv3_fS7_h, 
+                       __ZNK7ModelIO6Octree10OctreeNode12octantCenterEh, __ZNK7ModelIO6Octree10OctreeNode8traceRayERKNS_12RTRaySegmentES4_RNS_20RTIntersectionResultEDv4_fS7_i, 
                        __ZNK7ModelIO6Octree13getLevelCountEv, __ZNK7ModelIO6Octree14getXZSlabCountEi, 
                        __ZNK7ModelIO6Octree8traceRayERKNS_12RTRaySegmentERNS_20RTIntersectionResultE, 
                        __ZNK7ModelIO7RTPlane13_intersectRayERKNS_12RTRaySegmentERNS_20RTIntersectionResultE, 
@@ -120,11 +121,11 @@ exports:
                        __ZNK7ModelIO8RTCamera17positionsPerLightEi, __ZNK7ModelIO8RTCamera22calculateViewTransformEf, 
                        __ZNK7ModelIO8RTCamera22getProjectionTransformEf, __ZNK7ModelIO8RTCamera28calculateProjectionTransformEf, 
                        __ZNK7ModelIO8RTCamera31ray4PositionsAndDirectionsForXYEffiPDv3_fS2_, 
-                       __ZNK7ModelIO8RTCamera8rayForXYEDv2_iS1_, __ZNK7ModelIO8RTCamera8rayForXYEffi, 
+                       __ZNK7ModelIO8RTCamera8rayForXYEDv2_fS1_, __ZNK7ModelIO8RTCamera8rayForXYEffi, 
                        __ZNK7ModelIO8RTSphere13_intersectRayERKNS_12RTRaySegmentERNS_20RTIntersectionResultE, 
                        __ZNK7ModelIO8RTSphere17_doesIntersectRayERKNS_12RTRaySegmentE, 
-                       __ZNK7ModelIO8RTSphere7getAABBEv, __ZNK7ModelIO9SCNOctree13SCNOctreeNode10testOctantEhRKNS_12RTRaySegmentES4_RNS_20RTIntersectionResultEDv3_fS7_hRNSt3__113unordered_setIiNS8_4hashIiEENS8_8equal_toIiEENS8_9allocatorIiEEEE, 
-                       __ZNK7ModelIO9SCNOctree13SCNOctreeNode12octantCenterEh, __ZNK7ModelIO9SCNOctree13SCNOctreeNode8traceRayERKNS_12RTRaySegmentES4_RNS_20RTIntersectionResultEDv3_fS7_hRNSt3__113unordered_setIiNS8_4hashIiEENS8_8equal_toIiEENS8_9allocatorIiEEEE, 
+                       __ZNK7ModelIO8RTSphere7getAABBEv, __ZNK7ModelIO9SCNOctree13SCNOctreeNode12octantCenterEh, 
+                       __ZNK7ModelIO9SCNOctree13SCNOctreeNode8traceRayERKNS_12RTRaySegmentES4_RNS_20RTIntersectionResultEDv3_fS7_hRNSt3__113unordered_setIiNS8_4hashIiEENS8_8equal_toIiEENS8_9allocatorIiEEEE, 
                        __ZNK7ModelIO9SCNOctree13SCNOctreeNode9intersectERKNS_12RTRaySegmentERNS_20RTIntersectionResultERNSt3__113unordered_setIiNS7_4hashIiEENS7_8equal_toIiEENS7_9allocatorIiEEEE, 
                        __ZNK7ModelIO9SCNOctree8traceRayERKNS_12RTRaySegmentERNS_20RTIntersectionResultERNSt3__113unordered_setIiNS6_4hashIiEENS6_8equal_toIiEENS6_9allocatorIiEEEE, 
                        __ZTI18OptimizationEngine, __ZTI21DifferentialEvolution, __ZTI22NewtonRaphsonEvolution, 
@@ -144,8 +145,8 @@ exports:
                        __ZTVN7ModelIO7RTPlaneE, __ZTVN7ModelIO8RTCameraE, __ZTVN7ModelIO8RTSphereE, 
                        _castRay, _castShadowRay, _directionForPixel, _equirectangularCoordinateForDirection, 
                        _kUTType3dObject, _kUTTypeAlembic, _kUTTypePolygon, _kUTTypeStereolithography, 
-                       _kUTTypeUniversalSceneDescription, _sampleTextureAtRay, _sampleTextureAtUV, 
-                       _sampleTextureDataAtRay ]
+                       _kUTTypeUniversalSceneDescription, _sampleTextureAtRay, _sampleTextureDataAtRay, 
+                       _sampleTextureDataAtRayMipMapped ]
     objc-classes:    [ _MDLAreaLight, _MDLAsset, _MDLCamera, _MDLCheckerboardTexture, 
                        _MDLColorSwatchTexture, _MDLInteractiveCameraController, _MDLLight, 
                        _MDLLightProbe, _MDLMaterial, _MDLMaterialProperty, _MDLMaterialPropertyConnection, 
@@ -168,6 +169,7 @@ exports:
                         __ZTINSt3__113basic_filebufIcNS_11char_traitsIcEEEE, __ZTINSt3__114basic_ifstreamIcNS_11char_traitsIcEEEE, 
                         __ZTINSt3__114basic_ofstreamIcNS_11char_traitsIcEEEE, __ZTINSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
                         __ZTINSt3__117bad_function_callE, __ZTINSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                        __ZTINSt3__119basic_istringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
                         __ZTINSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
                         __ZTINSt3__120__vector_base_commonILb1EEE, __ZTINSt3__121__basic_string_commonILb1EEE, 
                         __ZTINSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEEE, 
@@ -189,6 +191,7 @@ exports:
                         __ZTSNSt3__114default_deleteINS_11basic_regexIcNS_12regex_traitsIcEEEEEE, 
                         __ZTSNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
                         __ZTSNSt3__117bad_function_callE, __ZTSNSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                        __ZTSNSt3__119basic_istringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
                         __ZTSNSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
                         __ZTSNSt3__120__vector_base_commonILb1EEE, __ZTSNSt3__121__basic_string_commonILb1EEE, 
                         __ZTSNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEEE, 

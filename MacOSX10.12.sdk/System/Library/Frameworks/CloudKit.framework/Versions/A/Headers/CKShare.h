@@ -52,7 +52,7 @@ NS_CLASS_AVAILABLE(10_12, 10_0)
 @property (nonatomic, assign) CKShareParticipantPermission publicPermission;
 
 /* A URL that can be used to invite participants to this share. Only available after share record has been saved to the server.  This url is stable, and is tied to the rootRecord.  That is, if you share a rootRecord, delete the share, and re-share the same rootRecord via a newly created share, that newly created share's url will be identical to the prior share's url */
-@property (nonatomic, readonly, copy) NSURL *URL;
+@property (nonatomic, readonly, copy, nullable) NSURL *URL;
 
 /* The participants array will contain all participants on the share that the current user has permissions to see. 
    At the minimum that will include the owner and the current user. */

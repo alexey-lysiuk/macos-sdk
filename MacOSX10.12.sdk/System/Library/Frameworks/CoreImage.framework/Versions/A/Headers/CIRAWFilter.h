@@ -49,7 +49,7 @@ CORE_IMAGE_EXPORT NSString *const kCISupportedDecoderVersionsKey NS_AVAILABLE(10
 
 /** NSNumber (float) : A value controlling the amount of baseline exposure applied to the image.
  A value of 0 indicates no baseline exposure, i.e. linear response. Default varies from with camera settings. */
-CORE_IMAGE_EXPORT NSString *const kCIInputBaselineExposureKey NS_AVAILABLE(12_0, 10_0);
+CORE_IMAGE_EXPORT NSString *const kCIInputBaselineExposureKey NS_AVAILABLE(10_12, 10_0);
 
 /** NSNumber (float) : A value in the range of 0...1, controlling the amount of boost applied to the image.
     A value of 0 indicates no boost, i.e. linear response. Default is 1, full boost. */
@@ -61,7 +61,7 @@ CORE_IMAGE_EXPORT NSString *const kCIInputBoostShadowAmountKey NS_AVAILABLE(10_5
 
 /** NSNumber (BOOL) : Setting DisableGamutMap to YES disables gamut mapping.
     The default value is NO. */
-CORE_IMAGE_EXPORT NSString *const kCIInputDisableGamutMapKey NS_AVAILABLE(12_0, 10_0);
+CORE_IMAGE_EXPORT NSString *const kCIInputDisableGamutMapKey NS_AVAILABLE(10_12, 10_0);
 
 /** NSNumber (float): The X value of the chromaticity. You can always query this value and you'll get the current X value for neutral X,Y. */
 CORE_IMAGE_EXPORT NSString *const kCIInputNeutralChromaticityXKey NS_AVAILABLE(10_5, 10_0);

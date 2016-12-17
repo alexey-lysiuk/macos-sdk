@@ -1,7 +1,7 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64, x86_64h ]
-uuids:           [ 'i386: 09B0565A-0A2F-35D8-9FC0-B337988DF3A4', 'x86_64: 0EC2F690-2983-37A3-993E-111BB289018A', 
-                   'x86_64h: F8E835FC-5FEA-328C-9F45-597D896FCE4E' ]
+uuids:           [ 'i386: 6D8AE59D-6410-3551-A6FC-AA1B78DFDF4C', 'x86_64: FD95E8F2-7633-355A-8542-914BEAF7CAEE', 
+                   'x86_64h: 9F5D6C9A-CAF1-3057-9C8C-E62B10B0A136' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SkyLight.framework/Versions/A/SkyLight
 current-version: 600.0

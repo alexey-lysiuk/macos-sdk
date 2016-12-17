@@ -35,10 +35,10 @@ typedef NS_ENUM(NSInteger, CKShareParticipantType) {
     CKShareParticipantTypeOwner = 1,
     CKShareParticipantTypePrivateUser = 3,
     CKShareParticipantTypePublicUser = 4,
-} NS_ENUM_AVAILABLE(10_10, 8_0);
+} NS_ENUM_AVAILABLE(10_12, 10_0);
 
 
-NS_CLASS_AVAILABLE(10_10, 8_0)
+NS_CLASS_AVAILABLE(10_12, 10_0)
 @interface CKShareParticipant : NSObject <NSSecureCoding, NSCopying>
 
 /* Use CKFetchShareParticipantsOperation to create a CKShareParticipant object */

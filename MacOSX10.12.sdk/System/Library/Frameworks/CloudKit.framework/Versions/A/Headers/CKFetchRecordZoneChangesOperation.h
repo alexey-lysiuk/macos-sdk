@@ -23,9 +23,10 @@ NS_CLASS_AVAILABLE(10_12, 10_0)
  include a previousServerChangeToken.
 
  Change tokens are opaque tokens and clients should not infer any behavior based on their content. */
+- (instancetype)init NS_DESIGNATED_INITIALIZER;
 - (instancetype)initWithRecordZoneIDs:(NSArray<CKRecordZoneID *> *)recordZoneIDs optionsByRecordZoneID:(nullable NSDictionary<CKRecordZoneID *, CKFetchRecordZoneChangesOptions *> *)optionsByRecordZoneID;
 
-@property (nonatomic, copy) NSArray<CKRecordZoneID *> *recordZoneIDs;
+@property (nonatomic, copy, nullable) NSArray<CKRecordZoneID *> *recordZoneIDs;
 @property (nonatomic, copy, nullable) NSDictionary<CKRecordZoneID *, CKFetchRecordZoneChangesOptions *> *optionsByRecordZoneID;
 
 /* When set to YES, this operation will send repeated requests to the server until all record changes have been fetched.

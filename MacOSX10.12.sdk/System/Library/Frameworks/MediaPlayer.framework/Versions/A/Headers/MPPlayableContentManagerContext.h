@@ -11,7 +11,7 @@
 /// MPPlayableContentManagerContext represents the current state of
 /// the playable content endpoint. A context is retrievable from an instance
 /// of MPPlayableContentManager.
-MP_API_IOS_AVAILABLE_MACOS_TVOS_PROHIBITED(8.4, 10.12.1, 8.4)
+MP_API_IOS_AVAILABLE_MACOS_TVOS_PROHIBITED(8.4, 10.12.2, 8.4)
 @interface MPPlayableContentManagerContext : NSObject
 
 /// The number of items the content server will display when content limiting is enforced.

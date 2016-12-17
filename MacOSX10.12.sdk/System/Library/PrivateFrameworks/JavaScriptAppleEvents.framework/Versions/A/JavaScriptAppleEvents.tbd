@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8CDC3A4C-5076-38C4-BF6C-235687B53FEC' ]
+uuids:           [ 'x86_64: 7C775C87-1817-3C49-B3B6-DB6FD39052F4' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/JavaScriptAppleEvents.framework/Versions/A/JavaScriptAppleEvents
 objc-constraint: none

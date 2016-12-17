@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 5DF68885-E850-3A0B-8A90-0906C586D950', 'x86_64: 019D8278-2ADA-3BDA-9633-2DC038088B51' ]
+uuids:           [ 'i386: 4C475679-30EE-3E51-869F-285660C6CE50', 'x86_64: D684EC40-3CC1-35CB-B807-01084F32EDDF' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Python.framework/Versions/2.6/Python
 current-version: 2.6.9

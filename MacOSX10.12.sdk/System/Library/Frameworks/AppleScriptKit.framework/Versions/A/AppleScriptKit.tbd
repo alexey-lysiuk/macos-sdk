@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 355E6E68-980A-3755-A3D5-683FB518C33E', 'x86_64: FC65304D-D708-3B4D-B394-4EC88E26846D' ]
+uuids:           [ 'i386: C346A664-7CDB-3CC3-81BD-5ACC3DDBDDF2', 'x86_64: 2F2E3D62-0F22-376C-835D-F38D22729BE8' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/AppleScriptKit.framework/Versions/A/AppleScriptKit
 current-version: 83.0

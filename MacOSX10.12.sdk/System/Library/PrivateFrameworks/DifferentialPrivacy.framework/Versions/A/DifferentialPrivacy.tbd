@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6872D059-E977-3242-86BA-2E9D541F68AE' ]
+uuids:           [ 'x86_64: F0787B0D-F256-35A2-A8A9-EF89A853828C' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DifferentialPrivacy.framework/Versions/A/DifferentialPrivacy
 objc-constraint: none
@@ -14,15 +14,17 @@ exports:
                        _kDPKPAcceptableError, _kDPKPAlgorithmParameters, _kDPKPBudgetKeyName, 
                        _kDPKPDataAlgorithm, _kDPKPFragmentWidth, _kDPKPKeyPatternsAllowed, 
                        _kDPKPNoiseDistribution, _kDPKPPrivacyParameter, _kDPKPPrivatizationAlgorithm, 
-                       _kDPKPPropertiesName, _kDPKPServerAlgorithmString, _kDPKPTransport, 
-                       _kDPKPValueMaximumPossible, _kDPKPValueMaximumTrimmed, _kDPKPValueMinimumPossible, 
-                       _kDPKPValueMinimumTrimmed, _kDPSessionAmount, _kDPSessionSeconds, 
-                       _kDPTArgumentsCVSKey, _kDPTCommandKey, _kDPTCommandQuery, 
-                       _kDPTCommandRecordNumbers, _kDPTCommandRecordStrings, _kDPTCommandRecordWords, 
-                       _kDPTCommandSubmitRecords, _kDPTDataBaseDirectoryPath, _kDPTReadWriteAccessKey, 
-                       _kDPTRecordKey, _kDPTVerboseKey, _kDefaultDimensionality, 
-                       _kSecondsIn12Hours, _kSecondsIn18Hours, _kSecondsIn24Hours, 
-                       _kSecondsIn3Day, _kSecondsIn7Day, _kSecondsInOneDay ]
+                       _kDPKPPropertiesName, _kDPKPServerAlgorithmString, _kDPKPSubmissionPriority, 
+                       _kDPKPTransport, _kDPKPValueMaximumPossible, _kDPKPValueMaximumTrimmed, 
+                       _kDPKPValueMinimumPossible, _kDPKPValueMinimumTrimmed, _kDPSessionAmount, 
+                       _kDPSessionSeconds, _kDPTArgumentsCVSKey, _kDPTCommandKey, 
+                       _kDPTCommandQuery, _kDPTCommandRecordNumbers, _kDPTCommandRecordStrings, 
+                       _kDPTCommandRecordWords, _kDPTCommandSubmitRecords, _kDPTDataBaseDirectoryPath, 
+                       _kDPTReadWriteAccessKey, _kDPTRecordKey, _kDPTVerboseKey, 
+                       _kDefaultDimensionality, _kLowestSubmissionPriority, _kSecondsIn12Hours, 
+                       _kSecondsIn14Day, _kSecondsIn18Hours, _kSecondsIn24Hours, 
+                       _kSecondsIn3Day, _kSecondsIn7Day, _kSecondsInOneDay, _uniformRandomProbability, 
+                       _uniformRandomProbabilityExcludingOne ]
     objc-classes:    [ __DPAlgorithmParameters, __DPBiasedCoin, __DPBlacklist, __DPCMSRandomizer, 
                        __DPCMSRecord, __DPCMSRecordMO, __DPCMSRecordMOConverter, 
                        __DPCMSSample, __DPCMSSequenceMO, __DPCMSSequenceRecord, __DPCMSWordMO, 

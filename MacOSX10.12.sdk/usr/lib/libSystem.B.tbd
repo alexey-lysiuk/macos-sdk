@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: AEE7E545-BC32-31A0-9E53-4FF58D40F26A', 'x86_64: CFC3669C-FB44-3A51-8815-1E84A168F3C5' ]
+uuids:           [ 'i386: 075CF118-0BD5-3526-B6A8-38531A99BF08', 'x86_64: FF55E335-37C3-3567-9415-A3A1473775F5' ]
 platform:        macosx
 install-name:    /usr/lib/libSystem.B.dylib
 current-version: 1238.0

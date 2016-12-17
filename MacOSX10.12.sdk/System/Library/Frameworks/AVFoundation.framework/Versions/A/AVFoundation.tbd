@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 779883AB-EC04-3FF3-B53F-DB993823A80B', 'x86_64: BF237CEA-F7CB-3ECD-AAE4-E9589D02C2F9' ]
+uuids:           [ 'i386: 9A3E50AD-14A1-3B0E-879C-91090C17F341', 'x86_64: 0D0BB4A4-F987-381B-885E-88A81F50FD50' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/AVFoundation.framework/Versions/A/AVFoundation
 current-version: 2.0
@@ -114,7 +114,8 @@ exports:
                        _AVAssetResourceLoadingRequestInternal.cachedData, _AVAssetResourceLoadingRequestInternal.cancelled, 
                        _AVAssetResourceLoadingRequestInternal.contentInformationRequest, 
                        _AVAssetResourceLoadingRequestInternal.dataCachingQueue, _AVAssetResourceLoadingRequestInternal.dataRequest, 
-                       _AVAssetResourceLoadingRequestInternal.figAsset, _AVAssetResourceLoadingRequestInternal.figImageGenerator, 
+                       _AVAssetResourceLoadingRequestInternal.figAsset, _AVAssetResourceLoadingRequestInternal.figCryptor, 
+                       _AVAssetResourceLoadingRequestInternal.figImageGenerator, 
                        _AVAssetResourceLoadingRequestInternal.figPlaybackItem, _AVAssetResourceLoadingRequestInternal.finished, 
                        _AVAssetResourceLoadingRequestInternal.redirect, _AVAssetResourceLoadingRequestInternal.requestDictionary, 
                        _AVAssetResourceLoadingRequestInternal.response, _AVAssetResourceLoadingRequestInternal.sentContentInfo, 
@@ -435,8 +436,7 @@ exports:
                        _AVPlayerInternal.expectedAssetTypes, _AVPlayerInternal.externalPlaybackVideoGravity, 
                        _AVPlayerInternal.figConfigurationQueue, _AVPlayerInternal.figMasterClock, 
                        _AVPlayerInternal.figPlaybackItemToIdentifyNextCurrentItem, 
-                       _AVPlayerInternal.figPlayer, _AVPlayerInternal.iapdExtendedModeIsActive, 
-                       _AVPlayerInternal.items, _AVPlayerInternal.itemsInFigPlayQueue, 
+                       _AVPlayerInternal.figPlayer, _AVPlayerInternal.items, _AVPlayerInternal.itemsInFigPlayQueue, 
                        _AVPlayerInternal.ivarAccessQueue, _AVPlayerInternal.lastItem, 
                        _AVPlayerInternal.layersQ, _AVPlayerInternal.logPerformanceData, 
                        _AVPlayerInternal.multichannelAudioStrategy, _AVPlayerInternal.needsToCreateFigPlayer, 

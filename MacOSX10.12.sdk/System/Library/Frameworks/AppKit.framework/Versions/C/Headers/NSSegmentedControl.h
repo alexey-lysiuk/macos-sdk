@@ -79,7 +79,7 @@ typedef NS_ENUM(NSInteger, NSSegmentStyle) {
  */
 @property (readonly) double doubleValueForSelectedSegment NS_AVAILABLE_MAC(10_10_3);
 
-@property (nullable, copy) NSColor *selectedSegmentBezelColor NS_AVAILABLE_MAC(10_12_1); // The color of the selected segment's bevel, in appearances that support it
+@property (nullable, copy) NSColor *selectedSegmentBezelColor NS_AVAILABLE_MAC(10_12_2); // The color of the selected segment's bevel, in appearances that support it
 
 @end
 

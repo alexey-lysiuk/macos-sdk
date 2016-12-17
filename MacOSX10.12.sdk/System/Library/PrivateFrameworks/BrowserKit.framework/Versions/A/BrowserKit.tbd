@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 74AF929D-1F33-327F-A335-88DA129BF71E', 'x86_64: B28BFA5D-BA98-3AD5-AE62-7B77A48632FB' ]
+uuids:           [ 'i386: B23A1670-468E-36B2-B525-76D664E92B40', 'x86_64: 8BA44EF9-4C58-3CD1-96D8-B4B1F61A0F3F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/BrowserKit.framework/Versions/A/BrowserKit
 current-version: 964.1

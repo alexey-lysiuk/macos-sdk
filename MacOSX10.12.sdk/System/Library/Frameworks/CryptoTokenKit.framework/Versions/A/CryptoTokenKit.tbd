@@ -1,15 +1,15 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 43D0AFB8-A84D-385B-8CCA-61270D98AE88' ]
+uuids:           [ 'x86_64: F48B65DC-66D9-349F-BD8A-15303B161AD6' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CryptoTokenKit.framework/Versions/A/CryptoTokenKit
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _TKACLOperationReadData, _TKDistributedNotificationGroup, 
-                       _TKDistributedNotificationNameNewToken, _TKEntitlementSlotType, 
-                       _TKErrorDomain, _TKNotifyNameFirstSlot, _TKProtocolSlotClientName, 
-                       _TKProtocolSlotRegistryName, _TKProtocolWatcherClientName, 
+                       _TKDistributedNotificationNameNewToken, _TKDistributedNotificationNameUnsupportedToken, 
+                       _TKEntitlementSlotType, _TKErrorDomain, _TKNotifyNameFirstSlot, 
+                       _TKProtocolSlotClientName, _TKProtocolSlotRegistryName, _TKProtocolWatcherClientName, 
                        _TKRegisterOptionRemoveObjects, _TKSlotTypeSmartCard, _TKSmartCardSessionEndPolicyKey, 
                        _TKSmartCardSessionProtocol, _TKSmartCardSessionSensitive, 
                        _TKSmartCardSlotATR, _TKSmartCardSlotMaxInputLength, _TKSmartCardSlotMaxOutputLength, 

@@ -17,7 +17,7 @@ NS_CLASS_AVAILABLE(10_12, 10_0)
 - (instancetype)init NS_DESIGNATED_INITIALIZER;
 - (instancetype)initWithShareMetadatas:(NSArray<CKShareMetadata *> *)shareMetadatas;
 
-@property (nonatomic, copy) NSArray<CKShareMetadata *> *shareMetadatas;
+@property (nonatomic, copy, nullable) NSArray<CKShareMetadata *> *shareMetadatas;
 
 /* Called once for each share metadata that the server processed. If error is nil then the share was successfully accepted. */
 @property (nonatomic, copy, nullable) void (^perShareCompletionBlock)(CKShareMetadata *shareMetadata, CKShare * _Nullable acceptedShare, NSError * _Nullable error);

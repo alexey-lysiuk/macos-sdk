@@ -15,7 +15,7 @@ typedef NSString * NSTouchBarCustomizationIdentifier NS_EXTENSIBLE_STRING_ENUM;
 
 @protocol NSTouchBarDelegate, NSTouchBarProvider;
 
-NS_CLASS_AVAILABLE_MAC(10_12_1)
+NS_CLASS_AVAILABLE_MAC(10_12_2)
 @interface NSTouchBar : NSObject <NSCoding> {
 @private
     id _configuration;
@@ -101,6 +101,12 @@ NS_CLASS_AVAILABLE_MAC(10_12_1)
 @property (copy, nullable) NSTouchBarItemIdentifier principalItemIdentifier;
 
 /*
+    An item identifier designating an item that replaces the standard system escape key. The item may be located in the templateItems set, or provided by the delegate.
+    This property is not archived.
+*/
+@property (copy, nullable) NSTouchBarItemIdentifier escapeKeyReplacementItemIdentifier;
+
+/*
     Items in this set are the first step in resolving instantiated items from their identifiers. If an item identifier is specified in the itemIdentifiers array, and an item with that identifier is in this set, it will be added to the items array in the corresponding location.
  
     This property is archived.
@@ -181,28 +187,28 @@ NS_CLASS_AVAILABLE_MAC(10_12_1)
     The basic method for providing a touch bar. AppKit will key value observe this property, if for some reason you wish to replace a live touch bar wholesale.
     Note that many subclasses of NSResponder already implement this method and conform to this protocol.
 */
-@property (strong, readonly, nullable) NSTouchBar *touchBar NS_AVAILABLE_MAC(10_12_1);
+@property (strong, readonly, nullable) NSTouchBar *touchBar NS_AVAILABLE_MAC(10_12_2);
 @end
 
 @interface NSResponder (NSTouchBarProvider) <NSTouchBarProvider>
 /*
     The touch bar object associated with this responder. If no touch bar is explicitly set, NSResponder will send -makeTouchBar to itself to create the default touch bar for this responder. This property is archived.
 */
-@property (strong, readwrite, nullable) NSTouchBar *touchBar NS_AVAILABLE_MAC(10_12_1);
+@property (strong, readwrite, nullable) NSTouchBar *touchBar NS_AVAILABLE_MAC(10_12_2);
 
 /*
     Subclasses should over-ride this method to create and configure the default touch bar for this responder.
 */
-- (nullable NSTouchBar *)makeTouchBar NS_AVAILABLE_MAC(10_12_1);
+- (nullable NSTouchBar *)makeTouchBar NS_AVAILABLE_MAC(10_12_2);
 @end
 
 
 @interface NSApplication (NSTouchBarCustomization)
 /// Whether or not a menu item to customize the touch bar can be automatically added to the main menu. It will only actually be added when a touch bar hardware or simulator is present. Defaults to NO. Setting this property to YES is the recommended way to add the customization menu item. But if non-standard placement of the menu item is needed, creating a menu item with an action of `toggleTouchBarCustomizationPalette:` can be used instead.
-@property (getter=isAutomaticCustomizeTouchBarMenuItemEnabled) BOOL automaticCustomizeTouchBarMenuItemEnabled NS_AVAILABLE_MAC(10_12_1);
+@property (getter=isAutomaticCustomizeTouchBarMenuItemEnabled) BOOL automaticCustomizeTouchBarMenuItemEnabled NS_AVAILABLE_MAC(10_12_2);
 
 /// Show or dismiss the customization palette for the currently displayed touch bars. NSApplication validates this selector against whether the current touch bars are customizable and, if configured on a menu item, will standardize and localize the title. If the current system does not have touch bar support, the menu item will be automatically hidden.
-- (IBAction)toggleTouchBarCustomizationPalette:(nullable id)sender NS_AVAILABLE_MAC(10_12_1);
+- (IBAction)toggleTouchBarCustomizationPalette:(nullable id)sender NS_AVAILABLE_MAC(10_12_2);
 @end
 
 NS_ASSUME_NONNULL_END

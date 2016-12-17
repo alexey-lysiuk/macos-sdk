@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 262E926D-ED26-3057-8B9E-501FDCBC2F13', 'x86_64: C5D88526-E03B-3EA7-9878-DD45B1371BA7' ]
+uuids:           [ 'i386: 9128D196-2117-365E-B4F0-CB247ADDE131', 'x86_64: A38A11A5-130B-39CE-BEBA-F5427F6801DC' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio
 objc-constraint: none

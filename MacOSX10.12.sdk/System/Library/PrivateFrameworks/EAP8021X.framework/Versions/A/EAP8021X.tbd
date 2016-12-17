@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 47C1271F-DABE-3CAA-A2BD-BBB0CC9D0959', 'x86_64: 7D819C7A-4461-39AB-977F-988E2B88428E' ]
+uuids:           [ 'i386: E1E961A7-9EE9-302B-BC80-A8C1E8573BEE', 'x86_64: 73F03A78-B534-3CAD-BB13-E6DC8F3AC88B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/EAP8021X.framework/Versions/A/EAP8021X
 objc-constraint: none

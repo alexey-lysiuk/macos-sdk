@@ -67,6 +67,7 @@ CB_EXTERN_CLASS @interface CBPeripheral : NSObject <NSCopying>
 	NSMutableDictionary			*_attributes;
 	BOOL						 _isPaired;
 	BOOL						 _isConnectedToSystem;
+    NSInteger                    role;
 }
 
 /*!

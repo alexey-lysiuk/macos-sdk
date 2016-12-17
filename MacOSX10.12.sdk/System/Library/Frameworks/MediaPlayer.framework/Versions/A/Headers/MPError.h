@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-MP_EXTERN NSString * const MPErrorDomain NS_AVAILABLE(10_12_1, 9_3);
+MP_EXTERN NSString * const MPErrorDomain NS_AVAILABLE(10_12_2, 9_3);
 
 // error codes for the MPErrorDomain
 typedef NS_ENUM(NSInteger, MPErrorCode) {
@@ -20,6 +20,7 @@ typedef NS_ENUM(NSInteger, MPErrorCode) {
     MPErrorNetworkConnectionFailed,                 // the device could not connect to the network
     MPErrorNotFound,                                // the id could not be found in the current storefront
     MPErrorNotSupported,                            // the request is not supported (ex: trying to add items to a smart playlist)
+    MPErrorCancelled NS_ENUM_AVAILABLE_IOS(10_1),   // the request was cancelled before it could complete
 } NS_ENUM_AVAILABLE_IOS(9_3);
 
 NS_ASSUME_NONNULL_END

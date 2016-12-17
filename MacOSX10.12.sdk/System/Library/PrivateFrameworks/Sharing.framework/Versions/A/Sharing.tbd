@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: BA29D344-50F4-355A-B004-E3846CCCA4EA', 'x86_64: BF828CFA-08FE-3F33-A6F1-B139EB4B1DE8' ]
+uuids:           [ 'i386: 9DC27EA5-C6DA-3F5D-8838-85CBBCD363D3', 'x86_64: D0A5C682-8996-3851-B332-AD05301E6FA3' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Sharing.framework/Versions/A/Sharing
-current-version: 671.15
+current-version: 696.1.22
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -15,27 +15,31 @@ exports:
                        _SDAutoUnlockManagerMetricBluetoothPeerDiscoveryKey, _SDAutoUnlockManagerMetricBluetoothProxyConnectionKey, 
                        _SDAutoUnlockManagerMetricBluetoothProxyDeviceDiscoveryKey, 
                        _SDAutoUnlockManagerMetricBluetoothTokenExchangeKey, _SDAutoUnlockManagerMetricBluetoothTotalKey, 
-                       _SDAutoUnlockManagerMetricCancelTimeKey, _SDAutoUnlockManagerMetricConnectedBluetoothDevicesKey, 
-                       _SDAutoUnlockManagerMetricDeviceIDKey, _SDAutoUnlockManagerMetricDistanceKey, 
-                       _SDAutoUnlockManagerMetricErrorCodeKey, _SDAutoUnlockManagerMetricErrorDomainKey, 
-                       _SDAutoUnlockManagerMetricErrorStringKey, _SDAutoUnlockManagerMetricErrorTypeKey, 
-                       _SDAutoUnlockManagerMetricKeyDeviceModelKey, _SDAutoUnlockManagerMetricKeyDeviceRSSIKey, 
-                       _SDAutoUnlockManagerMetricLastSleepTypeKey, _SDAutoUnlockManagerMetricProxyDeviceModelKey, 
-                       _SDAutoUnlockManagerMetricProxyDeviceRSSIKey, _SDAutoUnlockManagerMetricSuccessKey, 
-                       _SDAutoUnlockManagerMetricTimeKey, _SDAutoUnlockManagerMetricTimeSinceLastWakeKey, 
-                       _SDAutoUnlockManagerMetricUsingProxyDeviceKey, _SDAutoUnlockManagerMetricUsingToolKey, 
-                       _SDAutoUnlockManagerMetricWiFiResultsKey, _SDAutoUnlockManagerMetricWithinRangeKey, 
-                       _SDAutoUnlockManagerMetricsKey, _SFActivityAdvertiserOptionFlagCopyPasteKey, 
-                       _SFActivityAdvertiserOptionMinorVersionKey, _SFActivityAdvertiserOptionVersionKey, 
-                       _SFActivityScanTypesToString, _SFAppleAccountSignedInNotification, 
-                       _SFAppleAccountSignedOutNotification, _SFAutoUnlockDynamicStoreEnabledKey, 
-                       _SFAutoUnlockDynamicStoreInProgressKey, _SFAutoUnlockDynamicStoreSharingDomainKey, 
-                       _SFAutoUnlockErrorDomain, _SFAutoUnlockManagerAttemptFailedNotification, 
-                       _SFAutoUnlockManagerAutoolUserName, _SFAutoUnlockManagerDevicesChangedNotification, 
-                       _SFAutoUnlockManagerErrorBodyKey, _SFAutoUnlockManagerErrorTitleKey, 
-                       _SFAutoUnlockStateChangedNotification, _SFRemoteHotspotNetworkTypeHSDPA, 
-                       _SFServiceIdentifierAirPlay, _SFServiceIdentifierApplePay, 
-                       _SFServiceIdentifierAutoUnlock, _SFServiceIdentifierControl, 
+                       _SDAutoUnlockManagerMetricCancelReasonKey, _SDAutoUnlockManagerMetricCancelTimeKey, 
+                       _SDAutoUnlockManagerMetricClamshellWaitKey, _SDAutoUnlockManagerMetricConnectedBluetoothDevicesKey, 
+                       _SDAutoUnlockManagerMetricDeviceIDKey, _SDAutoUnlockManagerMetricDisplayWaitKey, 
+                       _SDAutoUnlockManagerMetricDistanceKey, _SDAutoUnlockManagerMetricErrorCodeKey, 
+                       _SDAutoUnlockManagerMetricErrorDomainKey, _SDAutoUnlockManagerMetricErrorStringKey, 
+                       _SDAutoUnlockManagerMetricErrorTypeKey, _SDAutoUnlockManagerMetricKeyDeviceModelKey, 
+                       _SDAutoUnlockManagerMetricKeyDeviceRSSIKey, _SDAutoUnlockManagerMetricLastSleepTypeKey, 
+                       _SDAutoUnlockManagerMetricProxyDeviceModelKey, _SDAutoUnlockManagerMetricProxyDeviceRSSIKey, 
+                       _SDAutoUnlockManagerMetricSuccessKey, _SDAutoUnlockManagerMetricTimeKey, 
+                       _SDAutoUnlockManagerMetricTimeSinceLastWakeKey, _SDAutoUnlockManagerMetricUsingProxyDeviceKey, 
+                       _SDAutoUnlockManagerMetricUsingToolKey, _SDAutoUnlockManagerMetricWiFiResultsKey, 
+                       _SDAutoUnlockManagerMetricWithinRangeKey, _SDAutoUnlockManagerMetricsKey, 
+                       _SFActivityAdvertiserOptionFlagCopyPasteKey, _SFActivityAdvertiserOptionMinorVersionKey, 
+                       _SFActivityAdvertiserOptionVersionKey, _SFActivityScanTypesToString, 
+                       _SFAppleAccountSignedInNotification, _SFAppleAccountSignedOutNotification, 
+                       _SFAutoUnlockDynamicStoreEnabledKey, _SFAutoUnlockDynamicStoreEnabledPath, 
+                       _SFAutoUnlockDynamicStoreInProgressKey, _SFAutoUnlockDynamicStoreInProgressPath, 
+                       _SFAutoUnlockDynamicStoreSharingDomainKey, _SFAutoUnlockErrorDomain, 
+                       _SFAutoUnlockManagerAttemptFailedNotification, _SFAutoUnlockManagerAutoolUserName, 
+                       _SFAutoUnlockManagerDevicesChangedNotification, _SFAutoUnlockManagerErrorBodyKey, 
+                       _SFAutoUnlockManagerErrorTitleKey, _SFAutoUnlockStateChangedNotification, 
+                       _SFNotificationKeyConnectionState, _SFNotificationNamePipeConnectionStateChanged, 
+                       _SFRemoteHotspotNetworkTypeHSDPA, _SFServiceIdentifierAirPlay, 
+                       _SFServiceIdentifierApplePay, _SFServiceIdentifierAutoUnlock, 
+                       _SFServiceIdentifierControl, _SFServiceIdentifierRemoteApp, 
                        _SFServiceIdentifierSetup, _SFServiceIdentifierToUUID, _kSFCompanionAdvertiserDateKey, 
                        _kSFCompanionAdvertiserIdentifierKey, _kSFCompanionAdvertiserServiceTypeKey, 
                        _kSFCompanionAdvertiserStatusKey, _kSFCompanionCompanionActivtiesKey, 

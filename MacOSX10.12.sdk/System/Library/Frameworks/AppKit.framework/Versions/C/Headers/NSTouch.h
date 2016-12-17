@@ -27,12 +27,12 @@ typedef NS_OPTIONS(NSUInteger, NSTouchPhase) {
 typedef NS_ENUM(NSInteger, NSTouchType) {
     NSTouchTypeDirect,      // A direct touch from a finger (on a screen)
     NSTouchTypeIndirect,      // An indirect touch (not a screen)
-} NS_ENUM_AVAILABLE_MAC(10_12_1);
+} NS_ENUM_AVAILABLE_MAC(10_12_2);
 
 typedef NS_OPTIONS(NSUInteger, NSTouchTypeMask) {
     NSTouchTypeMaskDirect      = (1 <<  NSTouchTypeDirect),      // A direct touch from a finger (on a screen)
     NSTouchTypeMaskIndirect    = (1 <<  NSTouchTypeIndirect),      // An indirect touch (not a screen)
-} NS_ENUM_AVAILABLE_MAC(10_12_1);
+} NS_ENUM_AVAILABLE_MAC(10_12_2);
 
 NS_INLINE NSTouchTypeMask NSTouchTypeMaskFromType(NSTouchType type) { return (1 << type); }
 
@@ -79,11 +79,11 @@ NS_CLASS_AVAILABLE(10_6, NA)
 
 @interface NSTouch (NSTouchBar)
 /* A touch can only be one type at a time */
-@property(readonly) NSTouchType type NS_AVAILABLE_MAC(10_12_1);
+@property(readonly) NSTouchType type NS_AVAILABLE_MAC(10_12_2);
 
 /* These two methods are only valid for Direct touches. A nil view means the touch location in the root container of touch. */
-- (NSPoint)locationInView:(nullable NSView *)view NS_AVAILABLE_MAC(10_12_1);
-- (NSPoint)previousLocationInView:(nullable NSView *)view NS_AVAILABLE_MAC(10_12_1);
+- (NSPoint)locationInView:(nullable NSView *)view NS_AVAILABLE_MAC(10_12_2);
+- (NSPoint)previousLocationInView:(nullable NSView *)view NS_AVAILABLE_MAC(10_12_2);
 @end
 
 NS_ASSUME_NONNULL_END

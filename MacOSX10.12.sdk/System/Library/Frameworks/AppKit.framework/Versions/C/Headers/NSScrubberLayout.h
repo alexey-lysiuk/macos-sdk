@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
  @abstract @c NSScrubberLayoutAttributes describes the layout of a single @c NSScrubber item.
  @discussion @c NSScrubberLayout objects transact in terms of @c NSScrubberLayoutAttributes. @c NSScrubberLayoutAttributes can be subclassed if a layout object wants to include more layout information than the base implementation provides. Subclasses of @c NSScrubberLayoutAttributes must implement @c isEqual:, @c hash, and the @c NSCopying protocol.
  */
-NS_CLASS_AVAILABLE_MAC(10_12_1)
+NS_CLASS_AVAILABLE_MAC(10_12_2)
 @interface NSScrubberLayoutAttributes : NSObject <NSCopying> {
 @private
     NSInteger _itemIndex;
@@ -44,7 +44,7 @@ NS_CLASS_AVAILABLE_MAC(10_12_1)
  @class NSScrubberLayout
  @abstract @c NSScrubberLayout is an abstract class that describes the layout of items within a @c NSScrubber control.
  */
-NS_CLASS_AVAILABLE_MAC(10_12_1)
+NS_CLASS_AVAILABLE_MAC(10_12_2)
 @interface NSScrubberLayout : NSObject <NSCoding> {
 @private
     id _private;
@@ -116,7 +116,7 @@ NS_CLASS_AVAILABLE_MAC(10_12_1)
  @abstract @c NSScrubberFlowLayout is a concrete layout object that arranges items end-to-end in a linear strip. It supports a fixed inter-item spacing and both fixed- and variable-sized items.
  @discussion If the associated scrubber's @c delegate conforms to @c NSScrubberFlowLayoutDelegate, and it implements the @c scrubber:layout:sizeForItemAtIndex: method, @c NSScrubberFlowLayout will obtain the item size from the delegate. If the delegate does not implement that method, or if the method returns @c NSZeroSize, it will fall back to using the layout's @c itemSize property. By default, NSScrubberFlowLayout does not invalidate its layout on selection change, highlight change, or visible rectangle change.
  */
-NS_CLASS_AVAILABLE_MAC(10_12_1)
+NS_CLASS_AVAILABLE_MAC(10_12_2)
 @interface NSScrubberFlowLayout : NSScrubberLayout {
 @private
     id _support;
@@ -140,7 +140,7 @@ NS_CLASS_AVAILABLE_MAC(10_12_1)
  @class NSScrubberProportionalLayout
  @abstract @c NSScrubberProportionalLayout is a concrete layout object that sizes each item to some fraction of the scrubber's visible size.
  */
-NS_CLASS_AVAILABLE_MAC(10_12_1)
+NS_CLASS_AVAILABLE_MAC(10_12_2)
 @interface NSScrubberProportionalLayout : NSScrubberLayout {
 @private
     NSInteger _numberOfVisibleItems;

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2270E93E-10DD-3E89-8577-B9362FF48DBA' ]
+uuids:           [ 'x86_64: 6C8F6E0D-C085-3028-A708-52808A4F6647' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ScreenReader.framework/Versions/A/Frameworks/ScreenReaderOutputServer.framework/Versions/A/ScreenReaderOutputServer
 current-version: 390.0
@@ -37,6 +37,7 @@ exports:
                        _kSCROBrailleUnicodeCharacterBase, _kSCROBrailleUnicodeCharacterDot7, 
                        _kSCROBrailleUnicodeCharacterDot78, _kSCROBrailleUnicodeCharacterDot8, 
                        _kSCROBrailleUnicodeCharacterSpace, _kSCROCursorAttribute, 
+                       _kSCROEditableTextAttribute, _kSCROEditableTextPaddingAttribute, 
                        _kSCROFocusedAttribute, _kSCROLanguageAttribute, _kSCROLineFocusAttribute, 
                        _kSCROSelectionAttribute, _kSCROSerializeDefaultSize, _kSCROServerTimeoutNotification, 
                        _kSCROStatusAttribute, _kSCROStatusAttributeCellIndex, _kSCROStatusAttributeCellTitle, 

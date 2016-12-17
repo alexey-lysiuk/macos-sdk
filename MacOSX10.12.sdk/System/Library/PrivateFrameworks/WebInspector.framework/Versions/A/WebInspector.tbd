@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C408DF18-1A13-3338-8766-959257F1A45C' ]
+uuids:           [ 'x86_64: 61F92685-5FF6-357C-9E62-550775797024' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/WebInspector.framework/Versions/A/WebInspector
-current-version: 602.2.14
+current-version: 602.3.12
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

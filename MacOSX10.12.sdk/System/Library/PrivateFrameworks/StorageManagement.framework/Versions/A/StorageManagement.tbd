@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AC28DF41-2FCB-3C00-8DA2-634858DF9D0E' ]
+uuids:           [ 'x86_64: 789F7E4B-3C8F-3124-836F-74AB6E2C59E6' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/StorageManagement.framework/Versions/A/StorageManagement
 objc-constraint: none

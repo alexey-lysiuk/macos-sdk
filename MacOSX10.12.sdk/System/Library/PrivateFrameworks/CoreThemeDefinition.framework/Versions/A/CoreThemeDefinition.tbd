@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 720D4C2C-DB90-3FBA-AFAF-AEA89E9B5217' ]
+uuids:           [ 'x86_64: ED53EAF2-5D9A-339C-A434-EB44665899C7' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/Versions/A/CoreThemeDefinition
-current-version: 285.1
+current-version: 288.2
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

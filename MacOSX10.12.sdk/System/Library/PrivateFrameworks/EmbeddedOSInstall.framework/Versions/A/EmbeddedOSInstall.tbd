@@ -1,8 +1,8 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 543AD2AF-9F69-323C-9A49-F11E675BDB43' ]
+uuids:           [ 'x86_64: F19AFD4A-AAE0-349E-BDE7-F09501CE1AF1' ]
 platform:        macosx
-install-name:    '@rpath/EmbeddedOSInstall.framework/Versions/A/EmbeddedOSInstall'
+install-name:    /System/Library/PrivateFrameworks/EmbeddedOSInstall.framework/Versions/A/EmbeddedOSInstall
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -866,7 +866,7 @@ exports:
                        _EOSESPInstallationOperation, _EOSError, _EOSFDRManager, _EOSForceResetRestoreOperation, 
                        _EOSHealingController, _EOSLocatePreflightContainerRestoreOperation, 
                        _EOSLogBuffer, _EOSMachineSupport, _EOSMembootESPRestoreOperation, 
-                       _EOSNetworkReachabilityCheckOperation, _EOSNetworkReachabilityController, 
+                       _EOSNVRAM, _EOSNetworkReachabilityCheckOperation, _EOSNetworkReachabilityController, 
                        _EOSOperation, _EOSPackagePreflightController, _EOSPersonalizationRestoreOperation, 
                        _EOSPreflightContainer, _EOSPreflightContainerManager, _EOSPreflightFDRRestoreOperation, 
                        _EOSPrepareDeviceRestoreOperation, _EOSPurgePreflightContainersOperation, 

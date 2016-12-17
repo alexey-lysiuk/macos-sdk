@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 7D0C8D14-A4B3-31FF-B3B7-0EFE27B448E1', 'x86_64: 6097DEDC-EC1C-30B2-AEE7-41B22905DE72' ]
+uuids:           [ 'i386: F604ABA9-8DF9-3C6D-995E-16A348DCEBCD', 'x86_64: CB5251B1-5BE5-308B-B30B-0050065E04CC' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CrashReporterSupport.framework/Versions/A/CrashReporterSupport
-current-version: 816.0
+current-version: 817.0
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]

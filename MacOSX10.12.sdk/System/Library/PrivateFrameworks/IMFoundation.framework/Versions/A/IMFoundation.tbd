@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 53E2BCA8-B449-3C07-9AD2-EDC49FBD5643', 'x86_64: CC7A2C30-49ED-3637-A987-DA9EB4BF9EC1' ]
+uuids:           [ 'i386: C7C4399F-3020-3B06-97A5-F0906C53C18E', 'x86_64: 57FF9654-3548-34FD-9306-1A34CE118D9F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IMFoundation.framework/Versions/A/IMFoundation
 current-version: 800.0
@@ -150,9 +150,9 @@ exports:
                        _IMMessageForegroundColorAttributeName, _IMMessagePartAttributeName, 
                        _IMMyNameAttributeName, _IMNetworkChangedNotification, _IMNonBreakingSpaceString, 
                        _IMNormalizeFormattedString, _IMNormalizedPhoneNumberForCFPhoneNumberRef, 
-                       _IMNormalizedPhoneNumberForPhoneNumber, _IMPCDoesInterfaceExist, 
-                       _IMPCInterfaceName, _IMPathsForPlugInsWithExtension, _IMPerfMeasurementInit, 
-                       _IMPerfMeasurementInitAndStart, _IMPerfMeasurementRelease, 
+                       _IMNormalizedPhoneNumberForPhoneNumber, _IMOSLoggingEnabled, 
+                       _IMPCDoesInterfaceExist, _IMPCInterfaceName, _IMPathsForPlugInsWithExtension, 
+                       _IMPerfMeasurementInit, _IMPerfMeasurementInitAndStart, _IMPerfMeasurementRelease, 
                        _IMPerfMeasurementStart, _IMPerfMeasurementStop, _IMPerformPingTest, 
                        _IMPerformSystem, _IMPhoneNumberAttributeName, _IMPhoneNumberRefCopyForPhoneNumber, 
                        _IMPingTestDefaultGateway, _IMPingTestErrorDomain, _IMPluginPayloadAttributeName, 

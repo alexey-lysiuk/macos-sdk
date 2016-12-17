@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 0C56C8F8-F58C-3322-9C78-A3D851097942', 'x86_64: 58268BB1-97B9-3BB7-A51F-947D18F64822' ]
+uuids:           [ 'i386: 984992A0-4517-3ED5-B3F0-484156C384F7', 'x86_64: 8134A62E-48E7-36EF-AF42-DEA21F8EB565' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/GPUSupport.framework/Versions/A/Libraries/libGPUSupport.dylib
 objc-constraint: none

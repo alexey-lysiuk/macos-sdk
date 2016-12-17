@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 54589349-48BD-33C3-AFA5-B27FD7D97D56', 'x86_64: 9701852D-EBE1-3399-8C3F-D4B105349CC4' ]
+uuids:           [ 'i386: DAD2F2C0-3AD7-3039-A313-4B47D6FA5CFE', 'x86_64: 2FF35977-EAD5-31F4-AD1A-890CF9FE0DD4' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Install.framework/Frameworks/DistributionKit.framework/Versions/A/DistributionKit
 current-version: 1000.0

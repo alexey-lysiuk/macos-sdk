@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7B3595C3-8D62-3D1D-8F90-F3F6DEE90B24' ]
+uuids:           [ 'x86_64: 7CF2861F-2632-3ED8-A4C2-698BCC6C0F1B' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreTelephony.framework/Versions/A/CoreTelephony
 current-version: 0.0

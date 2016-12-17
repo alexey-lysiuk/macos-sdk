@@ -58,17 +58,13 @@ uint64_t			mach_approximate_time(void);
 /*
  * like mach_absolute_time, but advances during sleep
  */
-__OSX_AVAILABLE_STARTING(__MAC_10_12, __IPHONE_10_0)
-__TVOS_AVAILABLE(__TVOS_10_0)
-__WATCHOS_AVAILABLE(__WATCHOS_3_0)
+__OSX_AVAILABLE(10.12) __IOS_AVAILABLE(10.0) __TVOS_AVAILABLE(10.0) __WATCHOS_AVAILABLE(3.0)
 uint64_t			mach_continuous_time(void);
 
 /*
  * like mach_approximate_time, but advances during sleep
  */
-__OSX_AVAILABLE_STARTING(__MAC_10_12, __IPHONE_10_0)
-__TVOS_AVAILABLE(__TVOS_10_0)
-__WATCHOS_AVAILABLE(__WATCHOS_3_0)
+__OSX_AVAILABLE(10.12) __IOS_AVAILABLE(10.0) __TVOS_AVAILABLE(10.0) __WATCHOS_AVAILABLE(3.0)
 uint64_t			mach_continuous_approximate_time(void);
 
 

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DD7BD217-DBED-3181-BA7C-9E8A628CD794' ]
+uuids:           [ 'x86_64: 038612AE-3813-304A-A5C7-86F1361F77CC' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Social.framework/Versions/A/Social
-current-version: 545.0
+current-version: 546.1
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

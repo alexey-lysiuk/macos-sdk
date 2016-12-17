@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F9B8E70C-F934-3603-89F0-7742DDA519FE' ]
+uuids:           [ 'x86_64: A76DC97B-EAEB-34EB-83CA-6F16506A782C' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Print.framework/Versions/A/Plugins/PMBrowser.framework/Versions/A/PMBrowser
 current-version: 0.0

@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class NSViewController, NSColor, NSImage, NSString, NSColorList;
 
-NS_CLASS_AVAILABLE_MAC(10_12_1)
+NS_CLASS_AVAILABLE_MAC(10_12_2)
 @interface NSColorPickerTouchBarItem : NSTouchBarItem {
 @private
     id _overlay;

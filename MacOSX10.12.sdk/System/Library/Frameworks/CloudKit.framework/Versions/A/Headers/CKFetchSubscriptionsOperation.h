@@ -14,10 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 NS_CLASS_AVAILABLE(10_10, 8_0) __WATCHOS_PROHIBITED
 @interface CKFetchSubscriptionsOperation : CKDatabaseOperation
 
-- (instancetype)init NS_DESIGNATED_INITIALIZER;
-
 + (instancetype)fetchAllSubscriptionsOperation;
 
+- (instancetype)init NS_DESIGNATED_INITIALIZER;
 - (instancetype)initWithSubscriptionIDs:(NSArray<NSString *> *)subscriptionIDs;
 
 @property (nonatomic, copy, nullable) NSArray<NSString *> *subscriptionIDs;

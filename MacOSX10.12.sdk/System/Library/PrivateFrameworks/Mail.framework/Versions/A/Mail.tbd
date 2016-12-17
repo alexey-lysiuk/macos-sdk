@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6C89C66E-A3A1-3457-8864-DD4FEC59D626' ]
+uuids:           [ 'x86_64: AC2202AE-8CBE-3807-B6B6-3FDCAC553ED6' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Mail.framework/Versions/A/Mail
-current-version: 3251.0
+current-version: 3259.0
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -99,15 +99,16 @@ exports:
                        _MFDefaultsKeyMigrateRulesFromLion, _MFDefaultsKeyMigrateSignaturesFromLion, 
                        _MFDefaultsKeyMigrateSmartMailboxesFromLion, _MFDefaultsKeySQLiteDatabaseIsCorrupted, 
                        _MFDefaultsKeySignaturePlacedAboveQuotedText, _MFDefaultsKeySignatureSelectionFromComposeAccessoryView, 
-                       _MFDefaultsKeySignaturesSelected, _MFDeletePOPMessagesCompletedNotification, 
+                       _MFDefaultsKeySignaturesSelected, _MFDeleteBatchSize, _MFDeletePOPMessagesCompletedNotification, 
                        _MFDeletePOPMessagesStartedNotification, _MFDeletionPolicyStringAfterTimeFromDownload, 
                        _MFDeletionPolicyStringNever, _MFDeletionPolicyStringRightAway, 
                        _MFDeletionPolicyStringWhenRemovedFromInbox, _MFDeliveryAccountWillBeRemovedNotification, 
                        _MFDeliveryAccountsDidChangeNotification, _MFDidModifyEWSCalendarItemNotification, 
                        _MFDidRefreshAccountStatusNotification, _MFDidRefreshInternetStatusNotification, 
                        _MFDidUpdateAccountStatusNotification, _MFDirectoryNameLostAndFound, 
-                       _MFDirectoryNameMail, _MFDirectoryNameMailboxData, _MFDirectoryNameMessageAttachments, 
-                       _MFDirectoryNameMessages, _MFDirectoryNameOfflineCache, _MFDirectoryNameSignatures, 
+                       _MFDirectoryNameMail, _MFDirectoryNameMailboxData, _MFDirectoryNameMailboxDataRebuild, 
+                       _MFDirectoryNameMessageAttachments, _MFDirectoryNameMessages, 
+                       _MFDirectoryNameOfflineCache, _MFDirectoryNameSignatures, 
                        _MFDirectoryNameV1MailData, _MFDirectoryNameVersionedMailData, 
                        _MFDirectoryPrefixTemporaryMessages, _MFEMLXPlistDataExtendedAttribute, 
                        _MFEWSDefaultServerPath, _MFEWSErrorDomain, _MFEWSOfflineIdStringPrefix, 
@@ -244,18 +245,19 @@ exports:
                        _MFStringKeyAppendNotAllowedFormat, _MFStringKeyAppendingMessagesFormat, 
                        _MFStringKeyAppendingSingleMessage, _MFStringKeyAppleNewsRuleName, 
                        _MFStringKeyArchiveMailboxName, _MFStringKeyArchivingMessageFormat, 
-                       _MFStringKeyConnectFailedNoReasonFormat, _MFStringKeyConnectionErrorTitle, 
-                       _MFStringKeyCopyOfFormat, _MFStringKeyCopyingMessageStatus, 
-                       _MFStringKeyCopyingMessagesFormat, _MFStringKeyCouldntReplayOfflineOperationsDetail, 
-                       _MFStringKeyCouldntReplayOfflineOperationsFormat, _MFStringKeyCreateMailboxFailedLocalDescription, 
-                       _MFStringKeyCreateMailboxFailedLocalFormat, _MFStringKeyDeliveryNoConnection, 
-                       _MFStringKeyDraftsSpecialMailboxName, _MFStringKeyErrorTitle, 
-                       _MFStringKeyGenericMailboxPluralType, _MFStringKeyGenericMailboxType, 
-                       _MFStringKeyGetUnreadCountFormat, _MFStringKeyGetUnreadCountsFormat, 
-                       _MFStringKeyGettingHeadersFormat, _MFStringKeyGettingMailboxHierarchyFormat, 
-                       _MFStringKeyGettingMailboxSizeStatusFormat, _MFStringKeyGettingMessageBodyFormat, 
-                       _MFStringKeyIMAPAddingMessages, _MFStringKeyIMAPChangingFlagsTaskName, 
-                       _MFStringKeyIMAPChangingGmailLabelsTaskName, _MFStringKeyInboxSpecialMailboxName, 
+                       _MFStringKeyCannotLoadBodyFormat, _MFStringKeyConnectFailedNoReasonFormat, 
+                       _MFStringKeyConnectionErrorTitle, _MFStringKeyCopyOfFormat, 
+                       _MFStringKeyCopyingMessageStatus, _MFStringKeyCopyingMessagesFormat, 
+                       _MFStringKeyCouldntReplayOfflineOperationsDetail, _MFStringKeyCouldntReplayOfflineOperationsFormat, 
+                       _MFStringKeyCreateMailboxFailedLocalDescription, _MFStringKeyCreateMailboxFailedLocalFormat, 
+                       _MFStringKeyDeliveryNoConnection, _MFStringKeyDraftsSpecialMailboxName, 
+                       _MFStringKeyErrorTitle, _MFStringKeyGenericMailboxPluralType, 
+                       _MFStringKeyGenericMailboxType, _MFStringKeyGetUnreadCountFormat, 
+                       _MFStringKeyGetUnreadCountsFormat, _MFStringKeyGettingHeadersFormat, 
+                       _MFStringKeyGettingMailboxHierarchyFormat, _MFStringKeyGettingMailboxSizeStatusFormat, 
+                       _MFStringKeyGettingMessageBodyFormat, _MFStringKeyIMAPAddingMessages, 
+                       _MFStringKeyIMAPChangingFlagsTaskName, _MFStringKeyIMAPChangingGmailLabelsTaskName, 
+                       _MFStringKeyInboxSpecialMailboxName, _MFStringKeyInsertOrUpdateFailed, 
                        _MFStringKeyInternalDeliveryErrorFormat, _MFStringKeyInvalidMailboxNameFormat, 
                        _MFStringKeyInvalidRuleTitle, _MFStringKeyJunkSpecialMailboxName, 
                        _MFStringKeyMailboxDisplayFormat, _MFStringKeyMailboxExistsFormat, 
@@ -285,13 +287,12 @@ exports:
                        _MFWillRefreshInternetStatusNotification, _MailVersionNumber, 
                        _MailVersionString, _MailboxDisplayIndexKey, _MailboxIsManuallySortedKey, 
                        __MFLibraryStringSearch, _and64, _cacheSizeForFSAndDBType, 
-                       _compareChildrenIndexes, _contentsOfDatabaseDefinition, _databaseIsRemote, 
-                       _findEntity, _getRangeOfMessageFromCacheFileData, _mf_sqlite3_bind_blob, 
-                       _mf_sqlite3_bind_int, _mf_sqlite3_bind_int64, _mf_sqlite3_bind_null, 
-                       _mf_sqlite3_bind_parameter_index, _mf_sqlite3_bind_text, _mf_sqlite3_bind_text_or_null, 
-                       _mf_sqlite3_exec_printf, _mf_sqlite3_get_table_printf, _numberForSortOrder, 
-                       _pageSizeForFSType, _sFileSystemPathKey, _sortOrderForNumber, 
-                       _tablesForBaseTableAndOtherTables, _uuid ]
+                       _compareChildrenIndexes, _databaseIsRemote, _findEntity, _getRangeOfMessageFromCacheFileData, 
+                       _mf_sqlite3_bind_blob, _mf_sqlite3_bind_int, _mf_sqlite3_bind_int64, 
+                       _mf_sqlite3_bind_null, _mf_sqlite3_bind_parameter_index, _mf_sqlite3_bind_text, 
+                       _mf_sqlite3_bind_text_or_null, _mf_sqlite3_exec_printf, _mf_sqlite3_get_table_printf, 
+                       _numberForSortOrder, _pageSizeForFSType, _sFileSystemPathKey, 
+                       _sortOrderForNumber, _tablesForBaseTableAndOtherTables, _uuid ]
     objc-classes:    [ _MFAccount, _MFAccountMappingCleanupUpgradeStep, _MFAccountStatus, 
                        _MFAccountURLMigrator, _MFAccountsFrameworkCleanupUpgradeStep, 
                        _MFAddDeletedColumnUpgradeStep, _MFAddEWSActionColumnsUpgradeStep, 

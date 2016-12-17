@@ -6,17 +6,16 @@
 #import <PDFKit/PDFKitPlatform.h>
 #import <PDFKit/PDFAnnotation.h>
 
-
-@class PDFAnnotationMarkupPrivateVars;
-
 // Types of markup annotations.
-NS_ENUM_DEPRECATED_MAC(10_4, 10_12)
+NS_ENUM_DEPRECATED(10_4, 10_12, NA, NA)
 typedef NS_ENUM(NSInteger, PDFMarkupType)
 {
-    kPDFMarkupTypeHighlight = 0, 
-    kPDFMarkupTypeStrikeOut = 1, 
+    kPDFMarkupTypeHighlight = 0,
+    kPDFMarkupTypeStrikeOut = 1,
     kPDFMarkupTypeUnderline = 2
 };
+
+@class PDFAnnotationMarkupPrivateVars;
 
 NS_CLASS_DEPRECATED_MAC(10_4, 10_12, "Use the PDFAnnotation class directly, setting properties via kPDFAnnotationKey_* keys using method [setValue:forAnnotationKey:]")
 @interface PDFAnnotationMarkup : PDFAnnotation <NSCopying, NSCoding>

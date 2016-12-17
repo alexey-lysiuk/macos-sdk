@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 24F8737B-EEED-3E27-95EF-CE18963A636A', 'x86_64: 56BDF346-4165-3B94-A9F8-12A69F7C4C04' ]
+uuids:           [ 'i386: F53E2FFE-1E8E-3E57-B534-A216EB6C91BF', 'x86_64: 40034A49-DAAB-33C9-B174-035A413C7A0D' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/OpenCL.framework/Versions/A/Libraries/libcl2module.dylib
-current-version: 2.4.3
+current-version: 2.4.4
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]

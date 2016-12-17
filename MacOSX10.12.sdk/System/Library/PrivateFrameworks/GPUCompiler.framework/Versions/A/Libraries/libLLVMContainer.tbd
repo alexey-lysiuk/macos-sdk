@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 65CA332B-2A62-31EE-AD92-239A333ED637', 'x86_64: D50362C8-33B4-33CF-B0D1-6F67EDCB74AC' ]
+uuids:           [ 'i386: 32E94183-A07F-3BCA-A338-2296B4E167BD', 'x86_64: 0035C17F-EC2C-33F4-8FB8-DBCF8CA35C49' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/GPUCompiler.framework//Versions/A/Libraries/libLLVMContainer.dylib
 objc-constraint: none
@@ -1408,7 +1408,7 @@ exports:
                        __ZN4llvm13TargetMachine22setAsmVerbosityDefaultEb, __ZN4llvm13TargetMachineC1ERKNS_6TargetENS_9StringRefES4_S4_RKNS_13TargetOptionsE, 
                        __ZN4llvm13TargetMachineC2ERKNS_6TargetENS_9StringRefES4_S4_RKNS_13TargetOptionsE, 
                        __ZN4llvm13TargetMachineD0Ev, __ZN4llvm13TargetMachineD1Ev, 
-                       __ZN4llvm13TargetMachineD2Ev, __ZN4llvm13X86RegStringsE, __ZN4llvm13createGVNPassEb, 
+                       __ZN4llvm13TargetMachineD2Ev, __ZN4llvm13X86RegStringsE, __ZN4llvm13createGVNPassEbb, 
                        __ZN4llvm13createSpillerERNS_19MachineFunctionPassERNS_15MachineFunctionERNS_10VirtRegMapE, 
                        __ZN4llvm13getMallocTypeEPKNS_8CallInstEPKNS_17TargetLibraryInfoE, 
                        __ZN4llvm13getObjectSizeEPKNS_5ValueERyPKNS_10DataLayoutEPKNS_17TargetLibraryInfoEb, 

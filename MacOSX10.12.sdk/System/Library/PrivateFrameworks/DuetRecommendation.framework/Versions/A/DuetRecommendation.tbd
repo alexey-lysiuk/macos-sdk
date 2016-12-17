@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BFD2CEAE-05A3-32D3-B0A4-CD35B4C84AA2' ]
+uuids:           [ 'x86_64: DB058251-292A-3C00-847B-113269845CE1' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DuetRecommendation.framework/DuetRecommendation
 objc-constraint: none

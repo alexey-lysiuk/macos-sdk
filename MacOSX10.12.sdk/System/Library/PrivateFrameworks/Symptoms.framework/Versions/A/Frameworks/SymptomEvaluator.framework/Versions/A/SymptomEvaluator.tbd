@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 718BC593-2C6A-3E6D-B517-1B011365F483' ]
+uuids:           [ 'x86_64: B92A892A-FD13-3133-8D91-AB9ED7F323D3' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Symptoms.framework/Frameworks/SymptomEvaluator.framework/Versions/A/SymptomEvaluator
 objc-constraint: none

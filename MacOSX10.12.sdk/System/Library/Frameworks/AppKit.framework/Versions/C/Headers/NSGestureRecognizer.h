@@ -96,7 +96,7 @@ NS_CLASS_AVAILABLE_MAC(10_10)
 
 @interface NSGestureRecognizer (NSTouchBar)
 /* Currently, only NSTouchTypeDirect is supported. Defaults to 0 */
-@property NSTouchTypeMask allowedTouchTypes NS_AVAILABLE_MAC(10_12_1);
+@property NSTouchTypeMask allowedTouchTypes NS_AVAILABLE_MAC(10_12_2);
 @end
 
 @protocol NSGestureRecognizerDelegate <NSObject>
@@ -126,7 +126,7 @@ NS_CLASS_AVAILABLE_MAC(10_10)
 
 /* called before touchesBegan:withEvent: is called on the gesture recognizer for a new touch. return NO to prevent the gesture recognizer from seeing this touch
  */
-- (BOOL)gestureRecognizer:(NSGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(NSTouch *)touch NS_AVAILABLE_MAC(10_12_1);
+- (BOOL)gestureRecognizer:(NSGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(NSTouch *)touch NS_AVAILABLE_MAC(10_12_2);
 @end
 
 // the extensions in this header are to be used only by subclasses of NSGestureRecognizer
@@ -173,10 +173,10 @@ NS_CLASS_AVAILABLE_MAC(10_10)
 - (void)magnifyWithEvent:(NSEvent *)event;
 - (void)rotateWithEvent:(NSEvent *)event;
 - (void)pressureChangeWithEvent:(NSEvent *)event NS_AVAILABLE_MAC(10_10_3);
-- (void)touchesBeganWithEvent:(NSEvent *)event NS_AVAILABLE_MAC(10_12_1);
-- (void)touchesMovedWithEvent:(NSEvent *)event NS_AVAILABLE_MAC(10_12_1);
-- (void)touchesEndedWithEvent:(NSEvent *)event NS_AVAILABLE_MAC(10_12_1);
-- (void)touchesCancelledWithEvent:(NSEvent *)event NS_AVAILABLE_MAC(10_12_1);
+- (void)touchesBeganWithEvent:(NSEvent *)event NS_AVAILABLE_MAC(10_12_2);
+- (void)touchesMovedWithEvent:(NSEvent *)event NS_AVAILABLE_MAC(10_12_2);
+- (void)touchesEndedWithEvent:(NSEvent *)event NS_AVAILABLE_MAC(10_12_2);
+- (void)touchesCancelledWithEvent:(NSEvent *)event NS_AVAILABLE_MAC(10_12_2);
 @end
 
 NS_ASSUME_NONNULL_END

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 472960E9-C48C-3BFF-A898-AEC59B5654E1', 'x86_64: BB3F5FB8-BD95-3478-86BF-81866CC837F8' ]
+uuids:           [ 'i386: C6E88780-0981-3354-A0BD-BBC1136840F0', 'x86_64: 05212284-4905-3EF2-B284-DC1794769C13' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ApplePushService.framework/Versions/A/ApplePushService
 objc-constraint: none

@@ -76,6 +76,13 @@ MDL_EXPORT
  */
 - (MDLObject*)objectAtPath:(NSString*)path;
 
+
+- (void)enumerateChildObjectsOfClass:(Class)objectClass
+                                root:(MDLObject*)root
+                          usingBlock:( void(^)(MDLObject* object, BOOL *stop))block
+                         stopPointer:(BOOL *)stopPointer;
+
+
 /*!
  @property transform
  @abstract Short hand property for the MDLTransformComponent.

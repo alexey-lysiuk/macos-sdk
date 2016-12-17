@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6B7F7F17-70E9-3BDB-A015-CCE1288C2C18' ]
+uuids:           [ 'x86_64: 08D85473-12EC-3AB2-BBCA-4D9B9C2E495A' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/EventKit.framework/Versions/A/EventKit
-current-version: 671.1
+current-version: 671.3
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 480FA4A7-07E3-3A38-A557-3672D2B76135' ]
+uuids:           [ 'x86_64: 58A0CEF0-8BF3-3655-8984-36764A1AF9F3' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CalendarFoundation.framework/Versions/A/CalendarFoundation
-current-version: 504.0
+current-version: 504.0.3
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -99,17 +99,18 @@ exports:
                        _localtime_r, _mktime, _mt_log_calendar_account_migration_failed, 
                        _mt_log_calendar_account_refresh_2, _mt_log_calendar_account_types, 
                        _mt_log_calendar_deep_refresh_2, _mt_log_calendar_detached_with_bad_etag, 
-                       _mt_log_calendar_navigation_swipe_lag, _mt_log_calendar_pseudo_event_deletions, 
-                       _mt_log_calendar_pseudoeventconfirmations, _mt_log_calendar_put_failure, 
-                       _mt_log_calendar_queue_got_stuck, _mt_log_calendar_reminders_scheme_usage, 
-                       _mt_log_calendar_suggestions, _mt_log_calendar_time_to_leave_disabled, 
-                       _mt_log_calendar_time_to_leave_event_disabled, _mt_log_calendar_time_to_leave_hypothesis_display_value, 
-                       _mt_log_calendar_time_to_leave_notification_action, _mt_log_calendar_time_to_leave_suggested_event, 
-                       _mt_log_calendar_time_to_leave_travel_notification_display_value, 
+                       _mt_log_calendar_navigation_swipe_lag, _mt_log_calendar_proactive_pseudoevent, 
+                       _mt_log_calendar_proactive_pseudoevent_allday, _mt_log_calendar_proactive_pseudoevent_private, 
+                       _mt_log_calendar_pseudo_event_deletions, _mt_log_calendar_pseudoeventconfirmations, 
+                       _mt_log_calendar_put_failure, _mt_log_calendar_queue_got_stuck, 
+                       _mt_log_calendar_reminders_scheme_usage, _mt_log_calendar_suggestions, 
+                       _mt_log_calendar_time_to_leave_disabled, _mt_log_calendar_time_to_leave_event_disabled, 
+                       _mt_log_calendar_time_to_leave_hypothesis_display_value, _mt_log_calendar_time_to_leave_notification_action, 
+                       _mt_log_calendar_time_to_leave_suggested_event, _mt_log_calendar_time_to_leave_travel_notification_display_value, 
                        _mt_log_calendar_traveltime, _mt_log_calendar_uselessnobo, 
-                       _mt_log_ranked_list, _mt_log_reminder_app_used, _mt_log_reminder_creation_v2, 
-                       _mt_log_reminders_connected_icloud_to_car, _mt_log_reminders_creation, 
-                       _mt_log_reminders_geofence, _mt_log_reminders_notification_action, 
+                       _mt_log_proactive_CalendarEventTTL_calendarEventTypes, _mt_log_ranked_list, 
+                       _mt_log_reminder_app_used, _mt_log_reminder_creation_v2, _mt_log_reminders_connected_icloud_to_car, 
+                       _mt_log_reminders_creation, _mt_log_reminders_geofence, _mt_log_reminders_notification_action, 
                        _mt_log_usage, _timezonesAreEquivalent, _tzload, _tzname, 
                        _tzparse, _tzset, _tzsetwall ]
     objc-classes:    [ _CalAccountsProvider, _CalAccumulatingQueue, _CalCancellableSearch, 

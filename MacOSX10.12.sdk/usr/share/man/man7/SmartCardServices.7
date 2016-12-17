@@ -62,9 +62,9 @@ By default certificates do not need to be trusted to allow association. Certific
 sudo defaults write /Library/Preferences/com.apple.security.smartcard checkCertificateTrust -bool YES
 .Ed
 .Sh CONFIGURATION FILE
-The configuration file is located at 
-.Em /etc/SmartCardLogin.plist
-and has a standard plist format. It may contain the following optional sections:
+The world-readable configuration file should be located at
+.Em /etc/SmartcardLogin.plist
+and should be in a standard plist format. It may contain the following optional sections:
 .Bl -tag -width -indent  \" Begins a tagged list 
 .It Em UserSelectorPath
 This string value points to the custom UserSelector process which is used for associating users with smart cards. If this section is not found or the component at that path does not exist, the system UserSelector is used.

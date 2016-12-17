@@ -133,7 +133,7 @@
 .\" ========================================================================
 .\"
 .IX Title "DBIx::Class::FilterColumn 3"
-.TH DBIx::Class::FilterColumn 3 "2013-12-16" "perl v5.18.2" "User Contributed Perl Documentation"
+.TH DBIx::Class::FilterColumn 3 "2014-01-30" "perl v5.18.2" "User Contributed Perl Documentation"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -228,3 +228,8 @@ and one, using code like this:\-
 .PP
 In this case the \f(CW\*(C`filter_from_storage\*(C'\fR is not required, as just
 passing the database value through to perl does the right thing.
+.SH "INHERITED METHODS"
+.IX Header "INHERITED METHODS"
+.IP "DBIx::Class::Row" 4
+.IX Item "DBIx::Class::Row"
+copy, delete, discard_changes, get_dirty_columns, get_from_storage, get_inflated_columns, has_column_loaded, in_storage, inflate_result, insert, insert_or_update, is_changed, is_column_changed, make_column_dirty, register_column, result_source, set_column, set_columns, set_inflated_columns, throw_exception, update_or_insert

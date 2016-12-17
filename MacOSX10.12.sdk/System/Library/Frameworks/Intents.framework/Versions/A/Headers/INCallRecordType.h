@@ -9,7 +9,6 @@
 #define INCallRecordType_h
 
 #import <Foundation/Foundation.h>
-
 #import <Intents/IntentsDefines.h>
 
 typedef NS_ENUM(NSInteger, INCallRecordType) {
@@ -17,6 +16,6 @@ typedef NS_ENUM(NSInteger, INCallRecordType) {
     INCallRecordTypeOutgoing,
     INCallRecordTypeMissed,
     INCallRecordTypeReceived,
-};
+} API_AVAILABLE(macosx(10.12), ios(10.0));
 
 #endif // INCallRecordType_h

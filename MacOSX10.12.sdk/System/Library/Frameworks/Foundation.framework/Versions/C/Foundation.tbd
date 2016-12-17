@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 82D693A8-8A20-3408-9E4A-0DF3C9F59C05', 'x86_64: B712ED6D-96DB-3798-A8E5-5B0ADF706B33' ]
+uuids:           [ 'i386: 8A394A7C-D0A5-310D-880A-F0792DAB4830', 'x86_64: D820A498-2E62-367D-BC72-5845B14C06E3' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation
-current-version: 1349.0
+current-version: 1349.25
 compatibility-version: 300.0
 objc-constraint: none
 exports:         
@@ -1010,7 +1010,8 @@ exports:
                        __NSExceptionHandlerCount, __NSExceptionObjectFromHandler2, 
                        __NSExceptionRaiser, __NSFCClaimsLog, __NSFCFSEventsLog, __NSFCIP, 
                        __NSFCLog, __NSFCPresenterLog, __NSFCProcessMonitorLog, __NSFCProviderLog, 
-                       __NSFaultInObject, __NSFaultInObjectWithCleanup, __NSFileSandboxingRequestRelatedItemExtension, 
+                       __NSFCShouldLog, __NSFCShouldLogForNewClaim, __NSFaultInObject, 
+                       __NSFaultInObjectWithCleanup, __NSFileSandboxingRequestRelatedItemExtension, 
                        __NSFoundationBundle, __NSFoundationResourceDirectory, __NSFullMethodName, 
                        __NSGetUsingKeyValueGetter, __NSGetVoidValueWithMethod, __NSIndentSpace, 
                        __NSIsLocalizedString, __NSJavaCL, __NSJavaVM, __NSKeyValueCreateImplicitObservationInfo, 

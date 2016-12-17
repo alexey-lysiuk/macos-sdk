@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C3579202-9732-340D-A24F-211199DD6CE5' ]
+uuids:           [ 'x86_64: 8D805DFB-9B7E-373B-BF19-0CD9E7DC94BD' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreSpectrum.framework/Versions/A/CoreSpectrum
 current-version: 23.0

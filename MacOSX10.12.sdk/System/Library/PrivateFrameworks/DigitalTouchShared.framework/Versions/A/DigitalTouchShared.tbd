@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DFF0B9F0-801B-3372-AA73-B7C432DF218C' ]
+uuids:           [ 'x86_64: 0EB2404F-9B36-3BEA-AB32-931061705C81' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DigitalTouchShared.framework/Versions/A/DigitalTouchShared
 objc-constraint: none

@@ -86,7 +86,7 @@ __BEGIN_DECLS
 #endif // __clang 
 
 #if __XPC_TEST__
-#define XPC_TESTSTATIC XPC_TESTEXPORT
+#define XPC_TESTSTATIC 
 #else // __XPC_TEST__
 #define XPC_TESTSTATIC static
 #endif // __XPC_TEST__

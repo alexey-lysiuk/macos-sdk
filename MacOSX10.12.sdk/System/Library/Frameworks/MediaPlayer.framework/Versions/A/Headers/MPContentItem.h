@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// representation outside the client application. Examples of media items that a
 /// developer might want to represent include song files, streaming audio URLs,
 /// or radio stations.
-MP_API(ios(7.1), tvos(7.1), macos(10.12.1))
+MP_API(ios(7.1), tvos(7.1), macos(10.12.2))
 @interface MPContentItem : NSObject
 
 /// Designated initializer. A unique identifier is required to identify the item

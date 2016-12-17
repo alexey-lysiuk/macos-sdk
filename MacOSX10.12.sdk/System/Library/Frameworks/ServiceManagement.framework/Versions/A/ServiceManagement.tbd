@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 482B0D0C-1EDA-3B2C-BC41-4170A9CCF5E6', 'x86_64: 396EA3EA-7600-3899-B36F-C46010422E58' ]
+uuids:           [ 'i386: 7F17B70F-630C-3439-A13F-FD6CBEFC337A', 'x86_64: 4E24C12E-6164-3A7A-8EB8-C2523492BAE8' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/ServiceManagement.framework/Versions/A/ServiceManagement
-current-version: 972.20.3
+current-version: 972.30.7
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]

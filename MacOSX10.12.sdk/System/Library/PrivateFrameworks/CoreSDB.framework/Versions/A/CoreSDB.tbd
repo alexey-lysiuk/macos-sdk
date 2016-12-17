@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: C5956778-C27C-33D7-844F-2D68C1710F48', 'x86_64: C3615C7B-77E0-3285-B0F3-6841C3F4B484' ]
+uuids:           [ 'i386: 56BCB139-E310-399D-A0F6-91109A167BB9', 'x86_64: 2DC88288-75A2-34C7-B1FF-FD7B0EC5C12F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreSDB.framework/Versions/A/CoreSDB
 current-version: 800.0

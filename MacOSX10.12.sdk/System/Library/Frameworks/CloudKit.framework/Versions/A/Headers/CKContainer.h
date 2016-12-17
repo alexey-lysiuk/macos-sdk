@@ -59,10 +59,10 @@ NS_CLASS_AVAILABLE(10_10, 8_0)
  */
 @property (nonatomic, readonly) CKDatabase *privateCloudDatabase;
 @property (nonatomic, readonly) CKDatabase *publicCloudDatabase;
-@property (nonatomic, readonly) CKDatabase *sharedCloudDatabase;
+@property (nonatomic, readonly) CKDatabase *sharedCloudDatabase NS_AVAILABLE(10_12, 10_0);
 
 /* Convenience method, will return a database that's pointer-equal to one of the above properties */
-- (CKDatabase *)databaseWithDatabaseScope:(CKDatabaseScope)databaseScope;
+- (CKDatabase *)databaseWithDatabaseScope:(CKDatabaseScope)databaseScope NS_AVAILABLE(10_12, 10_0);
 
 @end
 
@@ -124,10 +124,10 @@ typedef void(^CKApplicationPermissionBlock)(CKApplicationPermissionStatus applic
 /* This fetches all user records that match an entry in the user's address book.
  CKDiscoverAllContactsOperation and CKDiscoverUserIdentityOperation are the more configurable,
  CKOperation-based alternatives to these methods */
-- (void)discoverAllIdentitiesWithCompletionHandler:(void (^)(NSArray<CKUserIdentity *> * _Nullable userIdentities, NSError * _Nullable error))completionHandler __TVOS_UNAVAILABLE;
-- (void)discoverUserIdentityWithEmailAddress:(NSString *)email completionHandler:(void (^)(CKUserIdentity * _Nullable userInfo, NSError * _Nullable error))completionHandler;
-- (void)discoverUserIdentityWithPhoneNumber:(NSString *)phoneNumber completionHandler:(void (^)(CKUserIdentity * _Nullable userInfo, NSError * _Nullable error))completionHandler;
-- (void)discoverUserIdentityWithUserRecordID:(CKRecordID *)userRecordID completionHandler:(void (^)(CKUserIdentity * _Nullable userInfo, NSError * _Nullable error))completionHandler;
+- (void)discoverAllIdentitiesWithCompletionHandler:(void (^)(NSArray<CKUserIdentity *> * _Nullable userIdentities, NSError * _Nullable error))completionHandler NS_AVAILABLE(10_12, 10_0) __TVOS_UNAVAILABLE;
+- (void)discoverUserIdentityWithEmailAddress:(NSString *)email completionHandler:(void (^)(CKUserIdentity * _Nullable userInfo, NSError * _Nullable error))completionHandler NS_AVAILABLE(10_12, 10_0);
+- (void)discoverUserIdentityWithPhoneNumber:(NSString *)phoneNumber completionHandler:(void (^)(CKUserIdentity * _Nullable userInfo, NSError * _Nullable error))completionHandler NS_AVAILABLE(10_12, 10_0);
+- (void)discoverUserIdentityWithUserRecordID:(CKRecordID *)userRecordID completionHandler:(void (^)(CKUserIdentity * _Nullable userInfo, NSError * _Nullable error))completionHandler NS_AVAILABLE(10_12, 10_0);
 
 - (void)discoverAllContactUserInfosWithCompletionHandler:(void (^)(NSArray<CKDiscoveredUserInfo *> * _Nullable userInfos, NSError * _Nullable error))completionHandler __TVOS_UNAVAILABLE NS_DEPRECATED(10_10, 10_12, 8_0, 10_0, "Use -[CKContainer discoverAllIdentitiesWithCompletionHandler:] instead");
 - (void)discoverUserInfoWithEmailAddress:(NSString *)email completionHandler:(void (^)(CKDiscoveredUserInfo * _Nullable userInfo, NSError * _Nullable error))completionHandler NS_DEPRECATED(10_10, 10_12, 8_0, 10_0, "Use -[CKContainer discoverUserIdentityWithEmailAddress:completionHandler:] instead");
@@ -139,12 +139,12 @@ typedef void(^CKApplicationPermissionBlock)(CKApplicationPermissionStatus applic
 
 /* Fetches share participants matching the provided info .
  CKFetchShareParticipantsOperation is the more configurable, CKOperation-based alternative to these methods. */
-- (void)fetchShareParticipantWithEmailAddress:(NSString *)emailAddress completionHandler:(void (^)(CKShareParticipant *shareParticipant, NSError *error))completionHandler NS_AVAILABLE(10_12, 10_0);
-- (void)fetchShareParticipantWithPhoneNumber:(NSString *)phoneNumber completionHandler:(void (^)(CKShareParticipant *shareParticipant, NSError *error))completionHandler NS_AVAILABLE(10_12, 10_0);
-- (void)fetchShareParticipantWithUserRecordID:(CKRecordID *)userRecordID completionHandler:(void (^)(CKShareParticipant *shareParticipant, NSError *error))completionHandler NS_AVAILABLE(10_12, 10_0);
+- (void)fetchShareParticipantWithEmailAddress:(NSString *)emailAddress completionHandler:(void (^)(CKShareParticipant * _Nullable shareParticipant, NSError * _Nullable error))completionHandler NS_AVAILABLE(10_12, 10_0);
+- (void)fetchShareParticipantWithPhoneNumber:(NSString *)phoneNumber completionHandler:(void (^)(CKShareParticipant * _Nullable shareParticipant, NSError *_Nullable error))completionHandler NS_AVAILABLE(10_12, 10_0);
+- (void)fetchShareParticipantWithUserRecordID:(CKRecordID *)userRecordID completionHandler:(void (^)(CKShareParticipant *_Nullable shareParticipant, NSError *_Nullable error))completionHandler NS_AVAILABLE(10_12, 10_0);
 
-- (void)fetchShareMetadataWithURL:(NSURL *)url completionHandler:(void (^)(CKShareMetadata *metadata, NSError *error))completionHandler NS_AVAILABLE(10_12, 10_0);
-- (void)acceptShareMetadata:(CKShareMetadata *)metadata completionHandler:(void (^)(CKShare *acceptedShare, NSError *error))completionHandler NS_AVAILABLE(10_12, 10_0);
+- (void)fetchShareMetadataWithURL:(NSURL *)url completionHandler:(void (^)(CKShareMetadata *_Nullable metadata, NSError * _Nullable error))completionHandler NS_AVAILABLE(10_12, 10_0);
+- (void)acceptShareMetadata:(CKShareMetadata *)metadata completionHandler:(void (^)(CKShare *_Nullable acceptedShare, NSError *_Nullable error))completionHandler NS_AVAILABLE(10_12, 10_0);
 
 @end
 

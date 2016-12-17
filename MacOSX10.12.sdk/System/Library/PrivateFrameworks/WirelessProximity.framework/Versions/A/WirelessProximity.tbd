@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8A41FDB4-93AE-353C-B055-E98D2AE06A39' ]
+uuids:           [ 'x86_64: B65F3F40-771C-3A4D-977F-29640F0E86B6' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/WirelessProximity.framework/Versions/A/WirelessProximity
 objc-constraint: none
@@ -14,17 +14,17 @@ exports:
                        _WPHomeKitScanDutyCycle, _WPHomeKitScanMaskData, _WPLogInitOnce, 
                        _WPLoggingInit, _WPMagicSwitchAdvertiseTypeInterval, _WPMagicSwitchAdvertisingData, 
                        _WPMagicSwitchScanBlobData, _WPMagicSwitchScanDutyCycle, _WPMagicSwitchScanMaskData, 
-                       _WPMagicSwitchScanPeers, _WPNearbyKeyRSSI, _WPPairingKeyName, 
-                       _WPPairingKeyPaired, _WPPuckType, _WPPuckTypeAirPlaySoloAdvertisingChannel, 
+                       _WPMagicSwitchScanPeers, _WPNearbyKeyRSSI, _WPPairingKeyAdvertisingChannel, 
+                       _WPPairingKeyName, _WPPairingKeyPaired, _WPPuckType, _WPPuckTypeAirPlaySoloAdvertisingChannel, 
                        _WPPuckTypeAirPlaySoloAdvertisingData, _WPPuckTypeAirPlaySoloRSSI, 
                        _WPPuckTypeAirPlaySoloSourcePresence, _WPPuckTypeAirPlaySoloTargetPresence, 
                        _WPTransferMaxDataLength, _WiProxLog, _WiproxBTPairingLaunchNotification, 
                        _kActiveScanning, _kAdvertisingData, _kAdvertisingRate, _kAllowDuplicates, 
                        _kAttributePermissions, _kBlobValue, _kCharacteristicProperties, 
                        _kConnectableAdvert, _kData, _kFoundDevices, _kMaskValue, 
-                       _kPeerTrackingData, _kPeers, _kPriorityValue, _kRemoveServices, 
-                       _kScanWhenLocked, _kScanningOptions, _kUUID, _kWPScanCache, 
-                       _kWriteType, _kZonesToTrack, _kZonesValue ]
+                       _kNearbyScanMode, _kPeerTrackingData, _kPeers, _kPriorityValue, 
+                       _kRemoveServices, _kScanWhenLocked, _kScanningOptions, _kUUID, 
+                       _kWPScanCache, _kWriteType, _kZonesToTrack, _kZonesValue ]
     objc-classes:    [ _WPAWDL, _WPAdvertising, _WPAdvertisingRequest, _WPAirPlaySolo, 
                        _WPCharacteristic, _WPClient, _WPContinuity, _WPDataTransfer, 
                        _WPDeviceScanner, _WPHeySiri, _WPHomeKit, _WPMagicSwitch, 

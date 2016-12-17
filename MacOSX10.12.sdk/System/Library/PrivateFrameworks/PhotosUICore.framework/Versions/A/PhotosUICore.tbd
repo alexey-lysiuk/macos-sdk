@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 30A41D20-7F16-3973-9A94-161B316DB93D' ]
+uuids:           [ 'x86_64: E25F926F-9DC1-3EF6-890E-8C12B29355B7' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotosUICore.framework/Versions/A/PhotosUICore
-current-version: 222.2.1
+current-version: 3130.0.230
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -96,9 +96,10 @@ exports:
                        _kPXFeedbackUserLikedDetailViewSourceMoment, _kPXFeedbackUserLikedDetailViewSourceRelated, 
                        _kPXFeedbackUserLikedDetailViewSourceYear, _kPXFeedbackUserLikedMemoriesKey, 
                        _kPXMemoriesFeedLayoutOrientationKey, _kPXMemoriesFeedLayoutResizingModeKey, 
-                       _kPXPeopleSuggestionViewImageFetchTimeoutDuration, _kPortraitPanoramaThreshold, 
-                       _kQualifiedCroppingThreshold, _px_dispatch_on_main_queue, 
-                       _px_dispatch_on_main_queue_when_idle_after_delay ]
+                       _kPXPeopleSuggestionViewImageFetchTimeoutDuration, _kPXPhotosErrorDomain, 
+                       _kPXPhotosPeopleErrorCodeNoKeyFace, _kPXPhotosPeopleErrorCodeNonVisibleKeyFace, 
+                       _kPortraitPanoramaThreshold, _kQualifiedCroppingThreshold, 
+                       _px_dispatch_on_main_queue, _px_dispatch_on_main_queue_when_idle_after_delay ]
     objc-classes:    [ _PXAngleNumberFilter, _PXAnimatedCounter, _PXAnimatedHeaderView, 
                        _PXAnimatedLabel, _PXArrayChangeDetails, _PXAssetBadgeManager, 
                        _PXAssetReference, _PXAssetsDataSource, _PXAssetsDataSourceChangeTransitionCoordinator, 
@@ -147,27 +148,26 @@ exports:
                        _PXNSRoundedCornerOverlayView, _PXNSScrollView, _PXNSScrollViewController, 
                        _PXNSShapeView, _PXNSTraitCollection, _PXNodeRunner, _PXNonuniformTransform, 
                        _PXNumberFilter, _PXObservable, _PXOperationStatus, _PXOverlayBadgeTileUserData, 
-                       _PXPath, _PXPeopleBaseConfirmationViewController, _PXPeopleCommon, 
-                       _PXPeopleConfirmationSummaryViewController, _PXPeopleDataSource, 
-                       _PXPeopleFaceTileImageManager, _PXPeopleProgressFooterView, 
-                       _PXPeopleProgressManager, _PXPeopleScalableAvatarView, _PXPeopleSimpleConfirmationViewController, 
-                       _PXPeopleSuggestionManager, _PXPeopleSuggestionView, _PXPeopleWelcomeIconView, 
-                       _PXPeopleWidgetUtilities, _PXPersonItem, _PXPhotoAnalysisStatusController, 
-                       _PXPhotoLibraryChangeDistributor, _PXPhotosDataSourceSettings, 
-                       _PXPhotosDetailsAssetsTilingLayout, _PXPhotosDetailsBarSpec, 
-                       _PXPhotosDetailsSettings, _PXPhotosDetailsSpec, _PXPhotosDetailsSpecManager, 
-                       _PXPinchTracker, _PXPlacesMapViewController, _PXPlacesUtils, 
-                       _PXPreloadScheduler, _PXRegionOfInterest, _PXReusableObjectPool, 
-                       _PXRootSettings, _PXRunNode, _PXRunNodeOperation, _PXRunNodeOperationMap, 
-                       _PXScheduler, _PXScrollViewController, _PXScrollViewSpeedometer, 
-                       _PXSectionedChangeDetailsRepository, _PXSectionedDataSource, 
-                       _PXSectionedDataSourceChangeDetails, _PXSectionedDataSourceManager, 
-                       _PXSectionedLayoutContent, _PXSectionedLayoutEngine, _PXSectionedLayoutSnapshot, 
-                       _PXSectionedObjectReference, _PXSectionedSelectionManager, 
-                       _PXSectionedTileIdentifierConverter, _PXSelectionBadgeTileUserData, 
-                       _PXSelectionSnapshot, _PXSettings, _PXSingleTileLayout, _PXSmartScaleView, 
-                       _PXTileIdentifierIdentityConverter, _PXTileIdentifierZeroConverter, 
-                       _PXTileStatePool, _PXTileTransitionSimpleAnimationCoordinator, 
+                       _PXPath, _PXPeopleCommon, _PXPeopleConfirmationSummaryViewController, 
+                       _PXPeopleConfirmationViewController, _PXPeopleFaceTileImageManager, 
+                       _PXPeopleFullscreenConfirmationViewController, _PXPeopleProgressFooterView, 
+                       _PXPeopleProgressManager, _PXPeopleScalableAvatarView, _PXPeopleSuggestionManager, 
+                       _PXPeopleSuggestionView, _PXPeopleWelcomeIconView, _PXPeopleWidgetUtilities, 
+                       _PXPersonItem, _PXPhotoAnalysisStatusController, _PXPhotoLibraryChangeDistributor, 
+                       _PXPhotosDataSourceSettings, _PXPhotosDetailsAssetsTilingLayout, 
+                       _PXPhotosDetailsBarSpec, _PXPhotosDetailsSettings, _PXPhotosDetailsSpec, 
+                       _PXPhotosDetailsSpecManager, _PXPinchTracker, _PXPlacesMapViewController, 
+                       _PXPlacesUtils, _PXPreloadScheduler, _PXRegionOfInterest, 
+                       _PXReusableObjectPool, _PXRootSettings, _PXRunNode, _PXRunNodeOperation, 
+                       _PXRunNodeOperationMap, _PXScheduler, _PXScrollViewController, 
+                       _PXScrollViewSpeedometer, _PXSectionedChangeDetailsRepository, 
+                       _PXSectionedDataSource, _PXSectionedDataSourceChangeDetails, 
+                       _PXSectionedDataSourceManager, _PXSectionedLayoutContent, 
+                       _PXSectionedLayoutEngine, _PXSectionedLayoutSnapshot, _PXSectionedObjectReference, 
+                       _PXSectionedSelectionManager, _PXSectionedTileIdentifierConverter, 
+                       _PXSelectionBadgeTileUserData, _PXSelectionSnapshot, _PXSettings, 
+                       _PXSingleTileLayout, _PXSmartScaleView, _PXTileIdentifierIdentityConverter, 
+                       _PXTileIdentifierZeroConverter, _PXTileStatePool, _PXTileTransitionSimpleAnimationCoordinator, 
                        _PXTileZoomAnimationOptions, _PXTilingChange, _PXTilingChangeEvent, 
                        _PXTilingController, _PXTilingControllerComposition, _PXTilingControllerCompositionEngine, 
                        _PXTilingControllerCompositionInvalidationContext, _PXTilingControllerDebugInfo, 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0B5DA122-238D-3F33-AA72-79D4053A5DA7' ]
+uuids:           [ 'x86_64: E69B2CA5-B8B7-3C45-A417-0B7EACAF35A8' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/StoreFoundation.framework/Versions/A/StoreFoundation
 current-version: 379.0
@@ -83,17 +83,17 @@ exports:
                        _kDefaultsDSIDLessPurchaseKey, _kDefaultsDebugLogLevelKey, 
                        _kDefaultsDidEligibilityCheckKey, _kDefaultsDidPostUpdatesAvailableNotificationDateKey, 
                        _kDefaultsDidStageAppUpdatesDateKey, _kDefaultsDidStartAutoUpdateDateKey, 
-                       _kDefaultsDisableAssetDecryptionKey, _kDefaultsDisableWebKitAppModeKey, 
-                       _kDefaultsDoNotCheckAssetHashesKey, _kDefaultsDoNotCheckDiskSpaceKey, 
-                       _kDefaultsDoNotUseConditionalConnectionKey, _kDefaultsDoNotUseXPCActivityKey, 
-                       _kDefaultsDownloadLocationKey, _kDefaultsDownloadPaddingKey, 
-                       _kDefaultsEnableLocalCachingServerKey, _kDefaultsFadeWhileLoadingKey, 
-                       _kDefaultsFakeFileVaultKeyIsDestroyedOnStandbyKey, _kDefaultsFakePostLogoutUpdateFailureKey, 
-                       _kDefaultsFakePreflightFailureKey, _kDefaultsFakePreflightWarningKey, 
-                       _kDefaultsFakePurchaseDialogKey, _kDefaultsFakeServerLocationKey, 
-                       _kDefaultsFetchReceiptForDamagedApps, _kDefaultsFileSystemBookLibraryKey, 
-                       _kDefaultsFirstCheckinDateKey, _kDefaultsGeniusUpdateDateKey, 
-                       _kDefaultsGeniusUsageKey, _kDefaultsHidePreReleaseOSUpdatesKey, 
+                       _kDefaultsDisableAppStoreBadgeKey, _kDefaultsDisableAssetDecryptionKey, 
+                       _kDefaultsDisableWebKitAppModeKey, _kDefaultsDoNotCheckAssetHashesKey, 
+                       _kDefaultsDoNotCheckDiskSpaceKey, _kDefaultsDoNotUseConditionalConnectionKey, 
+                       _kDefaultsDoNotUseXPCActivityKey, _kDefaultsDownloadLocationKey, 
+                       _kDefaultsDownloadPaddingKey, _kDefaultsEnableLocalCachingServerKey, 
+                       _kDefaultsFadeWhileLoadingKey, _kDefaultsFakeFileVaultKeyIsDestroyedOnStandbyKey, 
+                       _kDefaultsFakePostLogoutUpdateFailureKey, _kDefaultsFakePreflightFailureKey, 
+                       _kDefaultsFakePreflightWarningKey, _kDefaultsFakePurchaseDialogKey, 
+                       _kDefaultsFakeServerLocationKey, _kDefaultsFetchReceiptForDamagedApps, 
+                       _kDefaultsFileSystemBookLibraryKey, _kDefaultsFirstCheckinDateKey, 
+                       _kDefaultsGeniusUpdateDateKey, _kDefaultsGeniusUsageKey, _kDefaultsHidePreReleaseOSUpdatesKey, 
                        _kDefaultsHideStatusTextKey, _kDefaultsIgnorePreflightKey, 
                        _kDefaultsInMemoryDecryption, _kDefaultsInstallAfterLogoutKey, 
                        _kDefaultsKnownAccountsKey, _kDefaultsLastAutoUpdateInvocationKey, 

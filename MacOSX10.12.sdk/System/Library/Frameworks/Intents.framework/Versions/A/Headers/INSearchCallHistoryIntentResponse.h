@@ -13,6 +13,7 @@ typedef NS_ENUM(NSInteger, INSearchCallHistoryIntentResponseCode) {
     INSearchCallHistoryIntentResponseCodeContinueInApp,
     INSearchCallHistoryIntentResponseCodeFailure,
     INSearchCallHistoryIntentResponseCodeFailureRequiringAppLaunch,
+    INSearchCallHistoryIntentResponseCodeFailureAppConfigurationRequired,
 } API_AVAILABLE(macosx(10.12), ios(10.0));
 
 NS_ASSUME_NONNULL_BEGIN

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9A16FBC2-9AAE-3CB2-ADE7-DE60F1BA4BC7' ]
+uuids:           [ 'x86_64: CD0C4F68-C45E-3179-BB43-72D3C9B72BD5' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/BookKit.framework/Versions/A/BookKit
 current-version: 80.0

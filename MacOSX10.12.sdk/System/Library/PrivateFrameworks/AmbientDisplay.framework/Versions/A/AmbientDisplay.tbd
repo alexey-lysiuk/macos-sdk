@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 09A3F7F8-E6C6-39AE-8173-58A7B1E55B74' ]
+uuids:           [ 'x86_64: A45EE7A9-777B-3633-AB5A-A87F31B67615' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AmbientDisplay.framework/Versions/A/AmbientDisplay
 objc-constraint: none

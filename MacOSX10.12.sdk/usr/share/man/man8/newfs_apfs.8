@@ -28,25 +28,25 @@ volume
 .Nm
 .Op Fl o Ar options
 .Op Fl b Ar block-size
-.Op Fl s Ar volume-size
+.Op Fl s Ar volume-size | Fl q Ar volume-quota Fl r Ar volume-reserve
 .Op Fl v Ar volume-name
 .Op Fl E | Fl P
 .Ar special
 .Nm
+.Fl C
 .Op Fl o Ar options
 .Op Fl b Ar block-size
-.Fl C
 .Ar special
 .Nm
+.Fl A
 .Op Fl o Ar options
-.Op Fl s Ar volume-size
+.Op Fl s Ar volume-size | Fl q Ar volume-quota Fl r Ar volume-reserve
 .Op Fl v Ar volume-name
 .Op Fl E | Fl P
-.Fl A
 .Ar special
 .Nm
 .Op Fl o Ar options
-.Op Fl s Ar volume-size
+.Op Fl s Ar volume-size | Fl q Ar volume-quota Fl r Ar volume-reserve
 .Op Fl v Ar volume-name
 .Op Fl E | Fl P
 .Ar special
@@ -78,18 +78,32 @@ although can be specified as simply
 .Pa disk1s2 .
 .Pp
 The options are as follows:
-.Bl -tag -width 14n
+.Bl -tag -width 17n
 .It Fl b Ar block-size
 The block size of the container.
 All volumes within this container will use this block size.
 The default is 4096 bytes.
 .It Fl o Ar options
 Additional (undocumented) formatting options.
+.It Fl q Ar volume-quota
+Places a quota, or upper limit, on the size of the volume.  If specified then no more than this much space will be used for its content,
+even if there is additional free space in the container; however it is not guaranteed that the entire quota will always be available.
+By default a volume has no assigned quota.
+.It Fl r Ar volume-reserve
+Reserves an amount of space for this volume.  If specified it is guaranteed that at least this much space will be available for its content;
+the volume may also grow beyond this size (up to its quota limit, if any) if additional free space in the container.
+By default a volume has no assigned reserve.
 .It Fl s Ar volume-size
 The fixed size of the volume.
-If specified then the volume is guaranteed that exactly this much space will always be available for its content.
-If not specified then the available space is dynamic and determined by the usage of other volumes within the same container.
-The default is 0 (space-sharing).
+If specified then the volume is guaranteed that exactly this much space will be available for its content.
+Setting
+.Fl s
+is equivalant to setting both
+.Fl q
+and
+.Fl r
+to that same value.
+If not specified then the available space is dynamic and determined by the usage of other volumes within the same container (space-sharing).
 .It Fl v Ar volume-name
 The name of the volume.
 The default is 
@@ -110,7 +124,7 @@ all its data and metadata will be encrypted with a single key
 .It Fl P
 Enable per-file encryption
 .Pq Qq content protection
-on the volume.
+on the volume.  The volume metadata is also encrypted.
 .El
 .Sh DIAGNOSTICS
 .Ex -std

@@ -162,7 +162,7 @@ NS_CLASS_AVAILABLE(10_11, 9_0)
  * @param length The exact number of bytes the caller wants to read
  * @param completion The completion handler to be invoked when there is data to read or an error occurred
  */
-- (void)readLength:(NSUInteger)length completionHandler:(void (^)(NSData *data, NSError * __nullable error))completion NS_AVAILABLE(10_11, 9_0);
+- (void)readLength:(NSUInteger)length completionHandler:(void (^)(NSData * __nullable data, NSError * __nullable error))completion NS_AVAILABLE(10_11, 9_0);
 
 /*!
  * @method readMinimumLength:maximumLength:completionHandler:
@@ -189,7 +189,7 @@ NS_CLASS_AVAILABLE(10_11, 9_0)
  * @param maximum The maximum number of bytes the caller wants to read
  * @param completion The completion handler to be invoked when there is data to read or an error occurred
  */
-- (void)readMinimumLength:(NSUInteger)minimum maximumLength:(NSUInteger)maximum completionHandler:(void (^)(NSData *data, NSError * __nullable error))completion NS_AVAILABLE(10_11, 9_0);
+- (void)readMinimumLength:(NSUInteger)minimum maximumLength:(NSUInteger)maximum completionHandler:(void (^)(NSData * __nullable data, NSError * __nullable error))completion NS_AVAILABLE(10_11, 9_0);
 
 /*!
  * @method write:completionHandler:

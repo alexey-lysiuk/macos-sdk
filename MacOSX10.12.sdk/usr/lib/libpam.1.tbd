@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 26F0834E-4704-346C-9E0B-4636CA3EC5AB', 'x86_64: F5408754-4B0F-31C7-9E47-2C7861E04892' ]
+uuids:           [ 'i386: 68A093D0-C55D-30AE-B3A1-EF9285936BE8', 'x86_64: 86F7A9E3-1674-3AC5-A061-FAE868AC0FA1' ]
 platform:        macosx
 install-name:    /usr/lib/libpam.1.dylib
 objc-constraint: none

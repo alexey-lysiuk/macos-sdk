@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 49439E68-D066-32C9-AF5F-A3FFABA169A8' ]
+uuids:           [ 'x86_64: 81CABFD8-B8F6-387C-B694-27385ECA0C7F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoLibraryPrivate.framework/Versions/A/Frameworks/UXKit.framework/Versions/A/UXKit
-current-version: 451.20.9
+current-version: 3130.0.240
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -24,13 +24,13 @@ exports:
                        __animationForViewFromValueToValueKeyPath, __transitionControllerClassForTransition, 
                        __uxImageFromRect, _kDefaultHeaderHeight, _kDefaultRowHeight, 
                        _kDefaultTransitionDuration, _parametersOfSpringAnimation ]
-    objc-classes:    [ _NSViewAnimationContext, _UIMutableIndexPath, _UXAuxiliaryNavigationStore, 
-                       _UXBackButton, _UXBar, _UXBarButtonItem, _UXBarItem, _UXClickEventTracker, 
+    objc-classes:    [ _UIMutableIndexPath, _UXAuxiliaryNavigationStore, _UXBackButton, 
+                       _UXBar, _UXBarButtonItem, _UXBarItem, _UXClickEventTracker, 
                        _UXCollectionClipView, _UXCollectionDocumentView, _UXCollectionReusableView, 
-                       _UXCollectionView, _UXCollectionViewAnimation, _UXCollectionViewCell, 
-                       _UXCollectionViewController, _UXCollectionViewData, _UXCollectionViewFlowLayout, 
-                       _UXCollectionViewFlowLayoutInvalidationContext, _UXCollectionViewIndexPathsSet, 
-                       _UXCollectionViewLayout, _UXCollectionViewLayoutAccessibility, 
+                       _UXCollectionView, _UXCollectionViewAnimation, _UXCollectionViewAnimationContext, 
+                       _UXCollectionViewCell, _UXCollectionViewController, _UXCollectionViewData, 
+                       _UXCollectionViewFlowLayout, _UXCollectionViewFlowLayoutInvalidationContext, 
+                       _UXCollectionViewIndexPathsSet, _UXCollectionViewLayout, _UXCollectionViewLayoutAccessibility, 
                        _UXCollectionViewLayoutAttributes, _UXCollectionViewLayoutInvalidationContext, 
                        _UXCollectionViewLayoutSectionAccessibility, _UXCollectionViewMutableIndexPathsSet, 
                        _UXCollectionViewPanGestureRecognizer, _UXCollectionViewRearrangingCoordinatorDragRecognizer, 
@@ -55,17 +55,16 @@ exports:
                        __UXToolbarItemsContainer, __UXViewControllerOneToOneTransitionContext, 
                        __UXViewControllerTransitionContext, __UXViewControllerTransitionCoordinator, 
                        __UXWindow, __UXWindowState ]
-    objc-ivars:      [ _NSViewAnimationContext._animationCount, _NSViewAnimationContext._completionHandler, 
-                       _NSViewAnimationContext._viewAnimations, _UXCollectionViewAnimation._animationBlock, 
-                       _UXCollectionViewAnimation._collectionViewAnimationFlags, 
+    objc-ivars:      [ _UXCollectionViewAnimation._animationBlock, _UXCollectionViewAnimation._collectionViewAnimationFlags, 
                        _UXCollectionViewAnimation._completionHandlers, _UXCollectionViewAnimation._endFraction, 
                        _UXCollectionViewAnimation._finalLayoutAttributes, _UXCollectionViewAnimation._startFraction, 
                        _UXCollectionViewAnimation._startupHandlers, _UXCollectionViewAnimation._view, 
-                       _UXCollectionViewAnimation._viewType, _UXCollectionViewData._clonedLayoutAttributes, 
-                       _UXCollectionViewData._collectionView, _UXCollectionViewData._collectionViewDataFlags, 
-                       _UXCollectionViewData._contentSize, _UXCollectionViewData._decorationLayoutAttributes, 
-                       _UXCollectionViewData._globalItems, _UXCollectionViewData._invalidatedSupplementaryViews, 
-                       _UXCollectionViewData._lastResultForNumberOfItemsBeforeSection, 
+                       _UXCollectionViewAnimation._viewType, _UXCollectionViewAnimationContext._animationCount, 
+                       _UXCollectionViewAnimationContext._completionHandler, _UXCollectionViewAnimationContext._viewAnimations, 
+                       _UXCollectionViewData._clonedLayoutAttributes, _UXCollectionViewData._collectionView, 
+                       _UXCollectionViewData._collectionViewDataFlags, _UXCollectionViewData._contentSize, 
+                       _UXCollectionViewData._decorationLayoutAttributes, _UXCollectionViewData._globalItems, 
+                       _UXCollectionViewData._invalidatedSupplementaryViews, _UXCollectionViewData._lastResultForNumberOfItemsBeforeSection, 
                        _UXCollectionViewData._lastSectionTestedForNumberOfItemsBeforeSection, 
                        _UXCollectionViewData._layout, _UXCollectionViewData._numItems, 
                        _UXCollectionViewData._numSections, _UXCollectionViewData._screenPageMap, 

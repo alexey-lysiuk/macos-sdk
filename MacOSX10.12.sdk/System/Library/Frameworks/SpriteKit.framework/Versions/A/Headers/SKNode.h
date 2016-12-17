@@ -163,15 +163,6 @@ SK_EXPORT @interface SKNode : NSResponder <NSCopying, NSCoding>
 @property (nonatomic, copy, nullable) NSArray<SKConstraint*> *constraints;
 
 /**
- Optional dictionary of SKAttributeValues
- Attributes can be used with custom SKShaders.
- */
-@property (nonatomic, nonnull, copy) NSDictionary<NSString *, SKAttributeValue *> *attributeValues;
-
-- (nullable SKAttributeValue*)valueForAttributeNamed:(nonnull NSString *)key;
-- (void)setValue:(SKAttributeValue*)value forAttributeNamed:(nonnull NSString *)key NS_SWIFT_NAME(setValue(_:forAttribute:));
-
-/**
  Sets both the x & y scale
  
  @param scale the uniform scale to set.

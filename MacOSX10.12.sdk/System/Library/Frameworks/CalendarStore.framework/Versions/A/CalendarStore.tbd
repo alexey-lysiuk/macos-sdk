@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: AEBE5258-EBEF-3208-8036-8EEAD1486BCE', 'x86_64: 94FD65F3-DA96-3064-A7D6-3AAAFBACFFBD' ]
+uuids:           [ 'i386: D9786826-937B-31AF-BA41-78E637E0641F', 'x86_64: EE39F420-B97D-36CF-9C5D-5093E3DAE8AB' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CalendarStore.framework/Versions/A/CalendarStore
 current-version: 1506.0

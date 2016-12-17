@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 49BF1AA1-9727-3A64-8A95-9450482DFD81', 'x86_64: E20B8507-ECF6-3505-A0C3-F272606F4F78' ]
+uuids:           [ 'i386: A9634860-F785-399D-9DBC-CFAC3EB3F055', 'x86_64: E1400999-1F08-35A1-9D07-27D80A2AF89A' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/SharedFileList.framework/Versions/A/SharedFileList
 current-version: 38.0

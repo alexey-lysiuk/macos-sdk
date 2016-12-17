@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 694E9DFC-5727-365D-A993-2DE95D694682', 'x86_64: CDEBAE8A-A058-3B16-B199-8670278497CC' ]
+uuids:           [ 'i386: A7D67255-2E4D-3E16-B190-E6AAA46C54FE', 'x86_64: CCE689AA-85F3-3587-AE12-1231E8ED127E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DesktopServicesPriv.framework/Versions/A/DesktopServicesPriv
-current-version: 852.1.2
+current-version: 852.3.2
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]
@@ -13,7 +13,7 @@ exports:
                        _DSMoveSyncedDocumentsAndDesktopToHomeDirectory, _DSMoveSyncedDocumentsAndDesktopToHomeDirectory_V1, 
                        _DSMoveSyncedDocumentsAndDesktopToICloud, _DSRunTests, _DSSetSuppressMainThreadOpenPropertyStoreAssert, 
                        _DSSizeICloudCopyMergeStatistics, _DS_CStringICloudFaultName, 
-                       _DS_CopyFaultDictionary, _DS_CopyLogicalFileForICloudFault, 
+                       _DS_CopyFaultDictionary, _DS_CopyICloudMergeDirectories, _DS_CopyLogicalFileForICloudFault, 
                        _DS_CreateFaultFile, _DS_DateIsBusyFolderDate, _DS_DeleteItem, 
                        _DS_DeleteItemDeep, _DS_FaultFileNameForFile, _DS_IsICloudFaultFile, 
                        _DS_IsICloudFaultName, _DeleteNode, _DisposeNode, _DisposeNodeIterator, 

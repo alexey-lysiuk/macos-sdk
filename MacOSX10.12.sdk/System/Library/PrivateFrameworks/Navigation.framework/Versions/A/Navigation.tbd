@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 088D848E-EAA1-3026-A154-FEFFCCDA561B' ]
+uuids:           [ 'x86_64: 9E796A09-C796-3C1C-BA46-9EBF63B7CB32' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Navigation.framework/Versions/A/Navigation
 objc-constraint: none
@@ -48,7 +48,7 @@ exports:
                        _MNGuidanceManager._distanceWhenExecuteAnnounced, _MNGuidanceManager._distanceWhenFirstAnnouncementAllowed, 
                        _MNGuidanceManager._distanceWhenInitialAnnounced, _MNGuidanceManager._distanceWhenPrepareAnnounced, 
                        _MNGuidanceManager._estimateOfTimeToSpeakExecutionAnnouncement, 
-                       _MNGuidanceManager._guidanceState, _MNGuidanceManager._lastUpdateTime, 
+                       _MNGuidanceManager._guidanceState, _MNGuidanceManager._lastRouteMatch, 
                        _MNGuidanceManager._minExecutionDistance, _MNGuidanceManager._navigationSession, 
                        _MNGuidanceManager._pointIndexForCurrentRoadInfo, _MNGuidanceManager._route, 
                        _MNGuidanceManager._shouldAnnounceContinueStraight, _MNGuidanceManager._shouldSkipExecuteAnnounce, 

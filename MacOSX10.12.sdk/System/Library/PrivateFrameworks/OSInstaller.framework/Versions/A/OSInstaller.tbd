@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 40FA7F79-A8C4-3B17-A492-5BBEB32D8FF7' ]
+uuids:           [ 'x86_64: 83D8AB9B-AA96-3AF7-8731-4FD4ED479D9C' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/OSInstaller.framework/Versions/A/OSInstaller
 current-version: 660.0
@@ -45,12 +45,13 @@ exports:
                        _user_approve, _user_input, _writeCSFDEProps, _writeToFile ]
     objc-classes:    [ _OSIAIPostInstall, _OSIAttachLoggingElement, _OSICleanUpElement, 
                        _OSIConvertToCS, _OSIDebuggerTool, _OSIEraseDiskElement, _OSIInstallElement, 
-                       _OSIInstallQueueElement, _OSIInstallRecoverySystemElement, 
-                       _OSIMessageTracer, _OSIMigrateElement, _OSIPowerController, 
-                       _OSIPreSizingElement, _OSIPrepareVolumeElement, _OSIReapPreviousSystem, 
-                       _OSIReapableSpaceChecker, _OSIRepairDiskElement, _OSIRunEFIUpdaterTool, 
-                       _OSIRunFirmwareUpdaterTool, _OSISyntheticChoice, _OSISystemProfiler, 
-                       _OSIUtilities, _OSInstallController, _OSInstallOptions, _OSProductManager ]
+                       _OSIInstallPreflightContainersElement, _OSIInstallQueueElement, 
+                       _OSIInstallRecoverySystemElement, _OSIMessageTracer, _OSIMigrateElement, 
+                       _OSIPowerController, _OSIPreSizingElement, _OSIPrepareVolumeElement, 
+                       _OSIReapPreviousSystem, _OSIReapableSpaceChecker, _OSIRepairDiskElement, 
+                       _OSIRunEFIUpdaterTool, _OSIRunFirmwareUpdaterTool, _OSISyntheticChoice, 
+                       _OSISystemProfiler, _OSIUtilities, _OSInstallController, _OSInstallOptions, 
+                       _OSProductManager ]
     objc-ivars:      [ _OSICleanUpElement._alternateBlessTarget, _OSICleanUpElement._done, 
                        _OSICleanUpElement._error, _OSIEraseDiskElement._done, _OSIEraseDiskElement._error, 
                        _OSIEraseDiskElement._targetDisk, _OSIInstallElement._done, 

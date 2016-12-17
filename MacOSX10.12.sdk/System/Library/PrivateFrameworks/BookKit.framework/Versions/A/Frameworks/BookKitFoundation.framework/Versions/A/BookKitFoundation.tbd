@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A6A5BEE7-D811-35E7-958B-0F17FAAE9B80' ]
+uuids:           [ 'x86_64: B64E6769-0F5D-3E64-9629-B179E69E53BC' ]
 platform:        macosx
 install-name:    '@rpath/BookKitFoundation.framework/Versions/A/BookKitFoundation'
 objc-constraint: none

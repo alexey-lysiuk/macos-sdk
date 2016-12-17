@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 2810D2CA-58EA-3F1A-80BA-A5C3C6B06EC3', 'x86_64: 10613D55-3B2B-305D-9FB4-D0D290621051' ]
+uuids:           [ 'i386: 60FDE393-5954-3CCD-A162-8A7908039464', 'x86_64: A5C444F3-408B-3062-AF4B-BF8CD919F221' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices
-current-version: 775.8.2
+current-version: 775.9.7
 objc-constraint: none
 exports:         
   - archs:           [ i386 ]

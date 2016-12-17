@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 4393260A-D5BD-3A92-9CB5-3DFEFCA33EF5', 'x86_64: 302B8678-D057-3CF8-ACA7-7424A4A6A00A' ]
+uuids:           [ 'i386: 5C993171-9515-31A1-A135-D59B03F0F24C', 'x86_64: 864F3808-FFDD-3C4B-A5B7-F1A6C4668A86' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/DictionaryServices.framework/Versions/A/DictionaryServices
 objc-constraint: none

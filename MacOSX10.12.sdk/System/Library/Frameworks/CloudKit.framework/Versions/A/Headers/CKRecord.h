@@ -109,7 +109,7 @@ NS_CLASS_AVAILABLE(10_10, 8_0)
  
  Whenever possible, it is suggested that you construct your parent hierarchies such that you will only need to share the topmost record of that hierarchy.
 */
-@property (nonatomic, readonly, copy, nullable) CKReference *share;
+@property (nonatomic, readonly, copy, nullable) CKReference *share NS_AVAILABLE(10_12, 10_0);
 
 /* Use a parent reference to teach CloudKit about the hierarchy of your records. This hierarchy of records will be shared if the share reference is set on a record.
  
@@ -120,11 +120,11 @@ NS_CLASS_AVAILABLE(10_10, 8_0)
  You are encouraged to set up the parent relationships as part of normal record saves, even if you're not planning on sharing records at this time.  
  This allows you to share and unshare a hierarchy of records at a later date by only modifying the "top level" record, setting or clearing its 'share' reference.
 */
-@property (nonatomic, copy, nullable) CKReference *parent;
+@property (nonatomic, copy, nullable) CKReference *parent NS_AVAILABLE(10_12, 10_0);
 
 /* Convenience wrappers around creating a CKReference to a parent record. The resulting CKReference will have action = CKReferenceActionNone */
-- (void)setParentReferenceFromRecord:(nullable CKRecord *)parentRecord;
-- (void)setParentReferenceFromRecordID:(nullable CKRecordID *)parentRecordID;
+- (void)setParentReferenceFromRecord:(nullable CKRecord *)parentRecord NS_AVAILABLE(10_12, 10_0);
+- (void)setParentReferenceFromRecordID:(nullable CKRecordID *)parentRecordID NS_AVAILABLE(10_12, 10_0);
 
 @end
 

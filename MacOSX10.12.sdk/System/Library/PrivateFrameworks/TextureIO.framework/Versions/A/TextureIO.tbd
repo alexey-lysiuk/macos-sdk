@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 6395F402-43F8-3B53-87D4-ECB3BE36CCD4', 'x86_64: E6F99639-F673-3055-9078-45A33FFA73F2' ]
+uuids:           [ 'i386: 25FC09C8-79E5-3A4A-8592-8410862F4C34', 'x86_64: 3A9D9FD9-8997-3BD1-8046-76D0BF709806' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/TextureIO.framework/Versions/A/TextureIO
-current-version: 1.35
+current-version: 1.41
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

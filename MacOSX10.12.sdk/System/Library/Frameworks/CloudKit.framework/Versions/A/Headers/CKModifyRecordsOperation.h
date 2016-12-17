@@ -50,7 +50,7 @@ NS_CLASS_AVAILABLE(10_10, 8_0)
 */
 @property (nonatomic, copy, nullable) void (^perRecordProgressBlock)(CKRecord *record, double progress);
 /* Called on success or failure for each record. */
-@property (nonatomic, copy, nullable) void (^perRecordCompletionBlock)(CKRecord * _Nullable record, NSError * _Nullable error);
+@property (nonatomic, copy, nullable) void (^perRecordCompletionBlock)(CKRecord *record, NSError * _Nullable error);
 
 /*  This block is called when the operation completes.
  The [NSOperation completionBlock] will also be called if both are set.

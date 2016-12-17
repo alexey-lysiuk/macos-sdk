@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)acceptsFirstMouse:(nullable NSEvent *)event;
 @property (readwrite, getter=isVertical) BOOL vertical NS_AVAILABLE_MAC(10_12);
 
-@property (nullable, copy) NSColor *trackFillColor NS_AVAILABLE_MAC(10_12_1); // The color of the filled portion of the track, in appearances that support it
+@property (nullable, copy) NSColor *trackFillColor NS_AVAILABLE_MAC(10_12_2); // The color of the filled portion of the track, in appearances that support it
 
 @end
 

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 66C11E94-43DA-3BFE-81B3-D6341E937BE3', 'x86_64: F6B71377-6CF3-3E55-B20F-77F3C76FC9A4' ]
+uuids:           [ 'i386: 5068BCBF-5ABD-33A6-9800-AD9F17FC8390', 'x86_64: D5B9D6B0-E3D6-32A7-ABAB-3F005B3ED81D' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/SecurityInterface.framework/Versions/A/SecurityInterface
-current-version: 55079.1.1
+current-version: 55079.30.2
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

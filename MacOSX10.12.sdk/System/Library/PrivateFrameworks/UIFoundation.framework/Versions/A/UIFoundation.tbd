@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: C64A8853-C241-36C5-A81D-75DC0DE8845A', 'x86_64: D1A3EFF2-0ED0-3B43-895E-E7D8373F3BE4' ]
+uuids:           [ 'i386: B8F76AB2-A134-3F27-A143-18229465CCDF', 'x86_64: A5D57604-6EEC-3851-8647-C9225D528B76' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/UIFoundation.framework/Versions/A/UIFoundation
-current-version: 489.0
+current-version: 490.6
 objc-constraint: none
 exports:         
   - archs:           [ i386 ]

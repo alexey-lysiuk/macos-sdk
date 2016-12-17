@@ -127,6 +127,15 @@ SK_EXPORT @interface SKShapeNode : SKNode
 /* An optional SKShader used for the Shape's Stroke. */
 @property (nonatomic, retain, nullable) SKShader *strokeShader NS_AVAILABLE(10_10, 8_0);
 
+/**
+ Optional dictionary of SKAttributeValues
+ Attributes can be used with custom SKShaders.
+ */
+@property (nonatomic, nonnull, copy) NSDictionary<NSString *, SKAttributeValue *> *attributeValues;
+
+- (nullable SKAttributeValue*)valueForAttributeNamed:(nonnull NSString *)key;
+- (void)setValue:(SKAttributeValue*)value forAttributeNamed:(nonnull NSString *)key NS_SWIFT_NAME(setValue(_:forAttribute:));
+
 @end
 
 NS_ASSUME_NONNULL_END

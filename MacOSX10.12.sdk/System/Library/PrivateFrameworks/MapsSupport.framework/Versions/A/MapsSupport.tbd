@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CBE53088-053F-3DEB-BCD2-A8D2A6A88F59' ]
+uuids:           [ 'x86_64: E07A0263-62C3-359E-93E9-C4B18A68CF12' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MapsSupport.framework/Versions/A/MapsSupport
 objc-constraint: none

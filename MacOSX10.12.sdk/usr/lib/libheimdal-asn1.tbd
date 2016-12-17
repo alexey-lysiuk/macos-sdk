@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: A679B6B5-D408-33FC-858B-9E144ADAA394', 'x86_64: C9B5464F-4A2E-3E3F-B514-B0911B5CB0DA' ]
+uuids:           [ 'i386: 6AD2BF5F-8E01-32D9-B68E-6D130B822B35', 'x86_64: 4ED9F6E3-83BC-3302-B004-C25399DA0333' ]
 platform:        macosx
 install-name:    /usr/lib/libheimdal-asn1.dylib
 objc-constraint: none

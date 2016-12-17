@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: C1D0896D-94BD-3C36-AF68-871391020986', 'x86_64: D02C3A3E-7125-34DD-AFA0-65601344C0AC' ]
+uuids:           [ 'i386: 23A47083-1055-3FC9-B449-0654FB0803F3', 'x86_64: E773D595-E602-3AA5-BA4F-6D8DD6B8BBE7' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MediaControlSender.framework/Versions/A/MediaControlSender
 objc-constraint: none

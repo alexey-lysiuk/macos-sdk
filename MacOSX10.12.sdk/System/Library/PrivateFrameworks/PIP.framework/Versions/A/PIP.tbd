@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FD6DAAF0-6CE8-383F-8A68-14201D8FE32A' ]
+uuids:           [ 'x86_64: FEB78307-F3CD-3C46-939F-C64543F70EA1' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PIP.framework/Versions/A/PIP
-current-version: 50.0
+current-version: 50.2
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

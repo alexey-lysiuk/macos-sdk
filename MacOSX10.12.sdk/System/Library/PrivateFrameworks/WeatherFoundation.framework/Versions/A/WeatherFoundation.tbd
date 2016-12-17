@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0CFB3A9B-3100-39F2-A061-425DC2E53944' ]
+uuids:           [ 'x86_64: FE5773E7-2B91-3BB0-AC2D-975AFF778814' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/WeatherFoundation.framework/Versions/A/WeatherFoundation
 objc-constraint: none

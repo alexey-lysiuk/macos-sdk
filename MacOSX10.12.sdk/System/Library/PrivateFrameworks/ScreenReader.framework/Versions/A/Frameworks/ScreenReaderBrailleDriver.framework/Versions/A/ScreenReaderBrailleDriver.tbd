@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B5FA2586-7A64-3037-A6E0-AA15259C0C50' ]
+uuids:           [ 'x86_64: 17C885FF-0806-3DA9-8D38-5186700A9870' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ScreenReader.framework/Versions/A/Frameworks/ScreenReaderBrailleDriver.framework/Versions/A/ScreenReaderBrailleDriver
 current-version: 390.0
@@ -68,9 +68,10 @@ exports:
                        _kSCRCDidChangeCurrentProfileNotification, _kSCRCUserDefaultsCursorTrackingEnabled, 
                        _kSCRDBaumBrailleConnect12DeviceIdentifier, _kSCRDBaumBrailleConnect24DeviceIdentifier, 
                        _kSCRDBaumBrailleConnect32DeviceIdentifier, _kSCRDBaumBrailleConnect40DeviceIdentifier, 
-                       _kSCRDBaumBrailliant24DeviceIdentifier, _kSCRDBaumBrailliant32DeviceIdentifier, 
-                       _kSCRDBaumBrailliant40DeviceIdentifier, _kSCRDBaumBrailliant64DeviceIdentifier, 
-                       _kSCRDBaumBrailliant80DeviceIdentifier, _kSCRDBaumConnyDeviceIdentifier, 
+                       _kSCRDBaumBrailliant14DeviceIdentifier, _kSCRDBaumBrailliant24DeviceIdentifier, 
+                       _kSCRDBaumBrailliant32DeviceIdentifier, _kSCRDBaumBrailliant40DeviceIdentifier, 
+                       _kSCRDBaumBrailliant64DeviceIdentifier, _kSCRDBaumBrailliant80DeviceIdentifier, 
+                       _kSCRDBaumConnyDeviceIdentifier, _kSCRDBaumPDIBrailliant14DeviceIdentifier, 
                        _kSCRDBaumPDIBrailliant24DeviceIdentifier, _kSCRDBaumPDIBrailliant32DeviceIdentifier, 
                        _kSCRDBaumPDIBrailliant40DeviceIdentifier, _kSCRDBaumPDIBrailliant64DeviceIdentifier, 
                        _kSCRDBaumPDIBrailliant80DeviceIdentifier, _kSCRDBaumPocketVario24DeviceIdentifier, 
@@ -89,10 +90,10 @@ exports:
                        _kSCRDFreedomScientificFocus80ModelName, _kSCRDFreedomScientificFocus84ModelName, 
                        _kSCRDFreedomScientificPacMate20ModelName, _kSCRDFreedomScientificPacMate40ModelName, 
                        _kSCRDHandyTechBluetoothConfigServiceName, _kSCRDHandyTechBluetoothHardwareServiceName, 
-                       _kSCRDHumanwareBrailliantBluetoothName, _kSCRDNinepointSystemsNinepointBluetoothName, 
-                       _kSCRDOrbitReader20DeviceIdentifier, _kSCRDSeikaNotetakerBluetoothNameRegExPattern, 
-                       _kSCRDUSBDeviceDisconnectNotification, _kSCROAlertAttribute, 
-                       _kSCROAlertPriorityAttribute, _kSCROAlertTimeoutAttribute, 
+                       _kSCRDHumanwareBrailliantBluetoothName, _kSCRDNPHB2GDeviceIdentifier, 
+                       _kSCRDNinepointSystemsNinepointBluetoothName, _kSCRDOrbitReader20DeviceIdentifier, 
+                       _kSCRDSeikaNotetakerBluetoothNameRegExPattern, _kSCRDUSBDeviceDisconnectNotification, 
+                       _kSCROAlertAttribute, _kSCROAlertPriorityAttribute, _kSCROAlertTimeoutAttribute, 
                        _kSCROAppTokenAttribute, _kSCROBrailleDisplayBluetoothAddress, 
                        _kSCROBrailleDisplayBluetoothName, _kSCROBrailleDisplayBrailleInputMode, 
                        _kSCROBrailleDisplayDriverIdentifier, _kSCROBrailleDisplayIsPrimary, 
@@ -114,11 +115,11 @@ exports:
                        _kSCROBrailleStatusAttribute, _kSCROBrailleUnicodeCharacterBase, 
                        _kSCROBrailleUnicodeCharacterDot7, _kSCROBrailleUnicodeCharacterDot78, 
                        _kSCROBrailleUnicodeCharacterDot8, _kSCROBrailleUnicodeCharacterSpace, 
-                       _kSCROCursorAttribute, _kSCROFocusedAttribute, _kSCROLanguageAttribute, 
-                       _kSCROLineFocusAttribute, _kSCROSelectionAttribute, _kSCROStatusAttribute, 
-                       _kSCROStatusAttributeCellIndex, _kSCROStatusAttributeCellTitle, 
-                       _kSCROStatusAttributeDotText, _kSCROTechnicalContextAttribute, 
-                       _kSCROTokenAttribute ]
+                       _kSCROCursorAttribute, _kSCROEditableTextAttribute, _kSCROEditableTextPaddingAttribute, 
+                       _kSCROFocusedAttribute, _kSCROLanguageAttribute, _kSCROLineFocusAttribute, 
+                       _kSCROSelectionAttribute, _kSCROStatusAttribute, _kSCROStatusAttributeCellIndex, 
+                       _kSCROStatusAttributeCellTitle, _kSCROStatusAttributeDotText, 
+                       _kSCROTechnicalContextAttribute, _kSCROTokenAttribute ]
     objc-classes:    [ _SCRDFileReader, _SCRDUSBDevice ]
     objc-ivars:      [ _SCRDFileReader._delegate, _SCRDFileReader._fileHandle, _SCRDFileReader._readerThread, 
                        _SCRDFileReader._threadStartCount, _SCRDUSBDevice._device, 

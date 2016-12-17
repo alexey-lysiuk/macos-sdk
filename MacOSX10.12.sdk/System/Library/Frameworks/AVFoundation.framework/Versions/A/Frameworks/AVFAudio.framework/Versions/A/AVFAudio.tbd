@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: CF7AFF8B-2116-3335-A15E-939178A2CBC9', 'x86_64: 18E472FC-5AD7-33B8-8D46-49D5AC2DB13A' ]
+uuids:           [ 'i386: F411961D-D87D-35D8-B43D-DBA096EB0600', 'x86_64: E3CDC215-9272-3F94-8093-865CA181F728' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/AVFoundation.framework/Versions/A/Frameworks/AVFAudio.framework/Versions/A/AVFAudio
 objc-constraint: none
@@ -28,7 +28,8 @@ exports:
                        _AVNumberOfChannelsKey, _AVSampleRateConverterAlgorithmKey, 
                        _AVSampleRateConverterAlgorithm_Mastering, _AVSampleRateConverterAlgorithm_MinimumPhase, 
                        _AVSampleRateConverterAlgorithm_Normal, _AVSampleRateConverterAudioQualityKey, 
-                       _AVSampleRateKey, _AVVoiceActivationDeviceIDKey, _AVVoiceActivationModeKey ]
+                       _AVSampleRateKey, _AVVoiceActivationDeviceIDKey, _AVVoiceActivationModeKey, 
+                       _AVVoiceControllerNoRecordRoute ]
     objc-classes:    [ _AVAudioBuffer, _AVAudioChannelLayout, _AVAudioCompressedBuffer, 
                        _AVAudioConnectionPoint, _AVAudioConverter, _AVAudioEndpointDetector, 
                        _AVAudioEngine, _AVAudioEnvironmentDistanceAttenuationParameters, 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: ACFC15FF-6BB9-3D0F-B94E-617E9D1362DA' ]
+uuids:           [ 'x86_64: 0558CDBA-8127-3C55-825E-6F6A464E2FB4' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ToneKit.framework/Versions/A/ToneKit
 objc-constraint: none

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 44067818-66BA-3B64-9F11-394712913F99' ]
+uuids:           [ 'x86_64: 3CEEC7E9-A4DA-3B79-9E05-906B86E64BA4' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SetupAssistantSupport.framework/Versions/A/SetupAssistantSupport
 current-version: 780.1

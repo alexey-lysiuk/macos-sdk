@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 557E443B-6250-3B69-B883-85F7F2D5A3F3', 'x86_64: 83AAE619-8B39-3A47-B1F5-9D7332C7AE10' ]
+uuids:           [ 'i386: 0B5B6EDB-E892-3AFC-A96E-49F823CE8269', 'x86_64: C15C8D1A-6117-3FEE-8F1E-7B31219A3416' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Calculate.framework/Versions/A/Calculate
 objc-constraint: none

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 9F438C66-C9FE-31F2-AE77-63980DD5718A', 'x86_64: 67B4008D-AAD8-3442-9B7E-3A82DD377AAC' ]
+uuids:           [ 'i386: B60428BB-2672-3951-A8FD-E8C584D5DF70', 'x86_64: 3B682D4D-779D-3521-88AE-2C129E0112BD' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/OpenCL.framework/Versions/A/OpenCL
 objc-constraint: none

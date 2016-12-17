@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A6610BAD-4E44-3FF1-910B-446D6C7ACE71' ]
+uuids:           [ 'x86_64: A3A23B8E-98BC-38BB-A476-F998C56E9448' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AOSUILite.framework/Versions/A/AOSUILite
 current-version: 415.0

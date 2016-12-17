@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: DA419056-66E1-3786-8C19-1E6E3F5C0780', 'x86_64: 84C71E9C-5231-342F-94B1-2BB6860E8AD3' ]
+uuids:           [ 'i386: 7DF3A21C-3250-3BF8-A31F-3747F216115A', 'x86_64: FA735717-BE82-397E-B0DC-71D83682D2F7' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreImage.framework/Versions/A/CoreImage
 current-version: 5.0
@@ -167,18 +167,18 @@ exports:
                        _kCIFormat420v709, _kCIFormat444f601, _kCIFormat444f709, _kCIFormat444v601, 
                        _kCIFormat444v709, _kCIFormatA16, _kCIFormatA2BGR10, _kCIFormatA2RGB10, 
                        _kCIFormatA8, _kCIFormatABGR8, _kCIFormatARGB16, _kCIFormatARGB8, 
-                       _kCIFormatARGBf, _kCIFormatAf, _kCIFormatAh, _kCIFormatBGRA8, 
-                       _kCIFormatBGRX8, _kCIFormatCbYCrY8, _kCIFormatI16, _kCIFormatI8, 
-                       _kCIFormatIf, _kCIFormatIh, _kCIFormatL16, _kCIFormatL8, _kCIFormatLA16, 
-                       _kCIFormatLA8, _kCIFormatLAf, _kCIFormatLAh, _kCIFormatLf, 
-                       _kCIFormatLh, _kCIFormatNil, _kCIFormatR16, _kCIFormatR8, 
-                       _kCIFormatRG16, _kCIFormatRG8, _kCIFormatRGB10WideGamut, _kCIFormatRGB16, 
-                       _kCIFormatRGB8, _kCIFormatRGBA14, _kCIFormatRGBA16, _kCIFormatRGBA8, 
-                       _kCIFormatRGBAf, _kCIFormatRGBAh, _kCIFormatRGBX8, _kCIFormatRGBf, 
-                       _kCIFormatRGBh, _kCIFormatRGf, _kCIFormatRGh, _kCIFormatRf, 
-                       _kCIFormatRh, _kCIFormatXBGR8, _kCIFormatXRGB8, _kCIFormatYCbYCr8, 
-                       _kCIHasCustomInterface, _kCIImageAccumulatorAbortable, _kCIImageAccumulatorColorSpace, 
-                       _kCIImageAlphaOne, _kCIImageApplyColorCorrectionVideoFilter, 
+                       _kCIFormatARGBf, _kCIFormatAf, _kCIFormatAh, _kCIFormatAllowSRGB, 
+                       _kCIFormatBGRA8, _kCIFormatBGRX8, _kCIFormatCbYCrY8, _kCIFormatI16, 
+                       _kCIFormatI8, _kCIFormatIf, _kCIFormatIh, _kCIFormatL16, _kCIFormatL8, 
+                       _kCIFormatLA16, _kCIFormatLA8, _kCIFormatLAf, _kCIFormatLAh, 
+                       _kCIFormatLf, _kCIFormatLh, _kCIFormatNil, _kCIFormatR16, 
+                       _kCIFormatR8, _kCIFormatRG16, _kCIFormatRG8, _kCIFormatRGB10WideGamut, 
+                       _kCIFormatRGB16, _kCIFormatRGB8, _kCIFormatRGBA14, _kCIFormatRGBA16, 
+                       _kCIFormatRGBA8, _kCIFormatRGBAf, _kCIFormatRGBAh, _kCIFormatRGBX8, 
+                       _kCIFormatRGBf, _kCIFormatRGBh, _kCIFormatRGf, _kCIFormatRGh, 
+                       _kCIFormatRf, _kCIFormatRh, _kCIFormatXBGR8, _kCIFormatXRGB8, 
+                       _kCIFormatYCbYCr8, _kCIHasCustomInterface, _kCIImageAccumulatorAbortable, 
+                       _kCIImageAccumulatorColorSpace, _kCIImageAlphaOne, _kCIImageApplyColorCorrectionVideoFilter, 
                        _kCIImageApplyColorspaceCorrectionVideoFilter, _kCIImageApplyGammaCorrectionVideoFilter, 
                        _kCIImageApplyGeometryCorrectionVideoFilter, _kCIImageAutoAdjustCrop, 
                        _kCIImageAutoAdjustEnhance, _kCIImageAutoAdjustFeatures, _kCIImageAutoAdjustLevel, 

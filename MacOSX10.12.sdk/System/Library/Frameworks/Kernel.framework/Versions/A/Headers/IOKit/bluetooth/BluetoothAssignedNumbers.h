@@ -659,7 +659,7 @@ enum BluetoothHCIExtendedInquiryResponseDataTypes
 
 // HCI Versions
 
-enum BluetoothHCIVersions
+typedef enum BluetoothHCIVersions
 {
 	kBluetoothHCIVersionCoreSpecification1_0b												=	0x00,
 	kBluetoothHCIVersionCoreSpecification1_1												=	0x01,
@@ -670,12 +670,12 @@ enum BluetoothHCIVersions
 	kBluetoothHCIVersionCoreSpecification4_0												=	0x06,
     kBluetoothHCIVersionCoreSpecification4_1												=	0x07,
     kBluetoothHCIVersionCoreSpecification4_2												=	0x08
-};
+} BluetoothHCIVersions;
 
 
 // LMP Versions
 
-enum BluetoothLMPVersions
+typedef enum BluetoothLMPVersions
 {
 	kBluetoothLMPVersionCoreSpecification1_0b												=	0x00,
 	kBluetoothLMPVersionCoreSpecification1_1												=	0x01,
@@ -686,7 +686,7 @@ enum BluetoothLMPVersions
 	kBluetoothLMPVersionCoreSpecification4_0												=	0x06,
 	kBluetoothLMPVersionCoreSpecification4_1												=	0x07,
     kBluetoothLMPVersionCoreSpecification4_2												=	0x08
-};
+} BluetoothLMPVersions;
 
 #ifdef	__cplusplus
 	}

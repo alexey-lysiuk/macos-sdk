@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CF86CC43-ECF5-34BD-AD97-5F54DCA743B0' ]
+uuids:           [ 'x86_64: 842780FE-C442-33EB-B962-8B16A91006CA' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotosPlayer.framework/Versions/A/PhotosPlayer
 objc-constraint: none
@@ -17,13 +17,15 @@ exports:
                        _ISSineEaseOut, _ISStringFromPlaybackState, _ISStringFromPlayerItemLoadingTarget, 
                        _PhotosPlayerErrorDomain, _PhotosPlayerVersionNumber, _PhotosPlayerVersionString, 
                        _is_dispatch_on_main_queue ]
-    objc-classes:    [ _ISAVPlayer, _ISAVPlayerLayer, _ISAsset, _ISBasePlayer, _ISBasePlayerNSView, 
-                       _ISBehavior, _ISContainerNSView, _ISCrossfadeChef, _ISCrossfadeChefA2Operation, 
+    objc-classes:    [ _ISAVAssetReaderImageDataGenerator, _ISAVPlayer, _ISAVPlayerLayer, 
+                       _ISAsset, _ISBasePlayer, _ISBasePlayerNSView, _ISBehavior, 
+                       _ISContainerNSView, _ISCrossfadeChef, _ISCrossfadeChefA2Operation, 
                        _ISCrossfadeChefOperation, _ISCrossfadeItem, _ISCrossfadeLayer, 
                        _ISCrossfadeNSView, _ISDefaultBehavior, _ISDeferredDealloc, 
                        _ISDisplayLink, _ISDynamicValueFilter, _ISEditSession, _ISExportDestination, 
                        _ISForcePressLivePhotoPlaybackFilter, _ISFrameProcessingRequest, 
-                       _ISLayerPlayer, _ISLivePhotoAutoplayVitalityFilter, _ISLivePhotoHintBehavior, 
+                       _ISGeneratedImageData, _ISImageDataGenerator, _ISLayerPlayer, 
+                       _ISLivePhotoAutoplayVitalityFilter, _ISLivePhotoHintBehavior, 
                        _ISLivePhotoNSView, _ISLivePhotoPlaybackBehavior, _ISLivePhotoPlaybackFilter, 
                        _ISLivePhotoPlayer, _ISLivePhotoSettleBehavior, _ISLivePhotoVitalityBehavior, 
                        _ISLivePhotoVitalityFilter, _ISLongPressForceGestureRecognizer, 

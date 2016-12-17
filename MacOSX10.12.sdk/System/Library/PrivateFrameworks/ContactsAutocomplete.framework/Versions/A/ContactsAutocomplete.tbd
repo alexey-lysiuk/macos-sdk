@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8279BDE0-142C-3769-9B87-8903C65DE668' ]
+uuids:           [ 'x86_64: 9DECFFBD-1514-3714-AFF8-F764A6D05F6B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ContactsAutocomplete.framework/Versions/A/ContactsAutocomplete
 objc-constraint: none
@@ -34,14 +34,14 @@ exports:
                        _CNAutocompleteProbeKeyUsageMonitorUserActionResultsDisplayedKey, 
                        _CNAutocompleteProbeKeyUsageMonitorUserActionSelectionKey, 
                        _CNAutocompleteProbeKeyUsageMonitorUserIgnoreDelayKey, _CNAutocompleteProbeKeyUsageMonitorVersionKey, 
-                       _CNAutocompleteProbeResultTypeKeyPrediction, _CNAutocompleteProbeResultTypeKeyPureSuggestion, 
-                       _CNAutocompleteProbeSourceTypeKey, _CNAutocompleteProbeSourceTypeKeyCalendarServer, 
-                       _CNAutocompleteProbeSourceTypeKeyContact, _CNAutocompleteProbeSourceTypeKeyDirectoryServer, 
-                       _CNAutocompleteProbeSourceTypeKeyPrediction, _CNAutocompleteProbeSourceTypeKeyPromoted, 
-                       _CNAutocompleteProbeSourceTypeKeyPureSuggestion, _CNAutocompleteProbeSourceTypeKeyRecent, 
-                       _CNAutocompleteProbeSourceTypeKeySuggestion, _CNAutocompleteProbeSourceTypeKeySupplemental, 
-                       _CNAutocompleteProbeSourceTypeKeyUnknown, _CNAutocompleteRejectedResultsKey, 
-                       _CNAutocompleteResultAddressStringForHashingEmailTransform, 
+                       _CNAutocompleteProbeResultTypeKeyOtherResults, _CNAutocompleteProbeResultTypeKeyPrediction, 
+                       _CNAutocompleteProbeResultTypeKeyPureSuggestion, _CNAutocompleteProbeSourceTypeKey, 
+                       _CNAutocompleteProbeSourceTypeKeyCalendarServer, _CNAutocompleteProbeSourceTypeKeyContact, 
+                       _CNAutocompleteProbeSourceTypeKeyDirectoryServer, _CNAutocompleteProbeSourceTypeKeyPrediction, 
+                       _CNAutocompleteProbeSourceTypeKeyPromoted, _CNAutocompleteProbeSourceTypeKeyPureSuggestion, 
+                       _CNAutocompleteProbeSourceTypeKeyRecent, _CNAutocompleteProbeSourceTypeKeySuggestion, 
+                       _CNAutocompleteProbeSourceTypeKeySupplemental, _CNAutocompleteProbeSourceTypeKeyUnknown, 
+                       _CNAutocompleteRejectedResultsKey, _CNAutocompleteResultAddressStringForHashingEmailTransform, 
                        _CNAutocompleteResultAddressStringForHashingPhoneNumberTransform, 
                        _CNAutocompleteResultAddressStringForHashingTransform, _CNAutocompleteResultStringForHashingTransform, 
                        _CNAutocompleteResultUserInfoDescriptionTransform, _ContactsAutocompleteVersionNumber, 

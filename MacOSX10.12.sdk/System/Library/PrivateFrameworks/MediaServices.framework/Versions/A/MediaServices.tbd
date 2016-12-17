@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 357AA94E-B721-3B52-A0CA-1EA5A99202C4' ]
+uuids:           [ 'x86_64: 8EDDB7E2-BD6D-3DDB-97EF-45F109CDDA2A' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MediaServices.framework/Versions/A/MediaServices
 objc-constraint: none

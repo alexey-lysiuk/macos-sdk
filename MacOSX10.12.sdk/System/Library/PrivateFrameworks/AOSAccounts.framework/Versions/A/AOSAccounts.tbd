@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AE5BEF32-B7CD-3C29-AE17-C5B490D8A003' ]
+uuids:           [ 'x86_64: 0BAA7CE9-F498-39F2-A4B5-2B4CBD90ACD7' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AOSAccounts.framework/Versions/A/AOSAccounts
 current-version: 1.9.95
@@ -34,9 +34,9 @@ exports:
                        _MMInvokeDelegatesWithDictionary, _MMIsPCSIdentitySetup, _MMIsSignupAllowed, 
                        _MMMBPostAquaSessionSetup, _MMRecoverKeychainBackup, _MMRegisterCredentials, 
                        _MMRegisterWithICloud, _MMRelayCookie, _MMResendVerificationEmail, 
-                       _MMRetrieveQuotaStorageURL, _MMSendSMSChallenge, _MMServiceCopyProperties, 
-                       _MMServiceCopyProperty, _MMServiceIsAvailable, _MMServiceIsEnabled, 
-                       _MMServiceIsEnabledForDisplay, _MMServiceIsInactiveOrEnabled, 
+                       _MMRetrieveQuotaStorageURL, _MMRetrieveRampState, _MMSendSMSChallenge, 
+                       _MMServiceCopyProperties, _MMServiceCopyProperty, _MMServiceIsAvailable, 
+                       _MMServiceIsEnabled, _MMServiceIsEnabledForDisplay, _MMServiceIsInactiveOrEnabled, 
                        _MMServiceReconcileStatus, _MMServiceRemoveProperty, _MMServiceSetEnabled, 
                        _MMServiceSetEnabledWithCompletion, _MMServiceSetEnabledWithOption, 
                        _MMServiceSetProperty, _MMServiceSetPropertyOnACAccount, _MMServiceSetPropertyWithCompletion, 
@@ -71,14 +71,14 @@ exports:
                        _kMMAccountVerificationFailedNotification, _kMMAccountVettedStatusChangedNotification, 
                        _kMMDefaultPrimaryAccountDescription, _kMMDefaultiCloudDescription, 
                        _kMMIsSignUpRequestKey, _kMMMediaStreamCloudPhotoStreamEnabled, 
-                       _kMMMediaStreamMyPhotoStreamEnabled, _kMMMediaStreamSharedPhotoStreamEnabled, 
-                       _kMMMediaStreamStateKey, _kMMProperty, _kMMPropertyAEAccountID, 
-                       _kMMPropertyAEAction, _kMMPropertyAEAttributes, _kMMPropertyAESendEvent, 
-                       _kMMPropertyAEServiceID, _kMMPropertyAccountAlternateDSID, 
-                       _kMMPropertyAccountAuthToken, _kMMPropertyAccountBeta, _kMMPropertyAccountDSID, 
-                       _kMMPropertyAccountDeleteDataclassActions, _kMMPropertyAccountDescription, 
-                       _kMMPropertyAccountDisplayNameKey, _kMMPropertyAccountError, 
-                       _kMMPropertyAccountErrorInfo, _kMMPropertyAccountFamilyEnabledKey, 
+                       _kMMMediaStreamCloudPhotoStreamRampedState, _kMMMediaStreamMyPhotoStreamEnabled, 
+                       _kMMMediaStreamSharedPhotoStreamEnabled, _kMMMediaStreamStateKey, 
+                       _kMMProperty, _kMMPropertyAEAccountID, _kMMPropertyAEAction, 
+                       _kMMPropertyAEAttributes, _kMMPropertyAESendEvent, _kMMPropertyAEServiceID, 
+                       _kMMPropertyAccountAlternateDSID, _kMMPropertyAccountAuthToken, 
+                       _kMMPropertyAccountBeta, _kMMPropertyAccountDSID, _kMMPropertyAccountDeleteDataclassActions, 
+                       _kMMPropertyAccountDescription, _kMMPropertyAccountDisplayNameKey, 
+                       _kMMPropertyAccountError, _kMMPropertyAccountErrorInfo, _kMMPropertyAccountFamilyEnabledKey, 
                        _kMMPropertyAccountFamilyMembersKey, _kMMPropertyAccountFirstNameKey, 
                        _kMMPropertyAccountID, _kMMPropertyAccountIsManagedAppleID, 
                        _kMMPropertyAccountIsNotesMigrated, _kMMPropertyAccountKeychainAcceptApplicantList, 

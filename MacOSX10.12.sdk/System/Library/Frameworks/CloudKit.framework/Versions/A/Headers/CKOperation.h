@@ -70,7 +70,7 @@ NS_CLASS_AVAILABLE(10_10, 8_0)
 /*
    This callback is called after a long lived operation has begun running and is persisted. Once this callback is called the operation will continue running even if the current process exits.
  */
-@property (nonatomic, strong) void (^longLivedOperationWasPersistedBlock)(void) NS_AVAILABLE(10_12, 9_3);
+@property (nonatomic, strong, nullable) void (^longLivedOperationWasPersistedBlock)(void) NS_AVAILABLE(10_12, 9_3);
 
 @end
 NS_ASSUME_NONNULL_END

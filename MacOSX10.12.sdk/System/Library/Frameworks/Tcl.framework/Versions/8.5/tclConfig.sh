@@ -102,7 +102,7 @@ TCL_LIB_FLAG='-framework Tcl'
 
 # String to pass to linker to pick up the Tcl library from its
 # build directory.
-TCL_BUILD_LIB_SPEC='-F/Library/Caches/com.apple.xbs/Binaries/tcl/tcl-112~560/TempContent/Objects/OBJROOT2/tcl/Deployment -framework Tcl'
+TCL_BUILD_LIB_SPEC='-F/Library/Caches/com.apple.xbs/Binaries/tcl/tcl-112~562/TempContent/Objects/OBJROOT2/tcl/Deployment -framework Tcl'
 
 # String to pass to linker to pick up the Tcl library from its
 # installed directory.
@@ -155,14 +155,14 @@ TCL_STUB_LIB_FLAG='-ltclstub8.5'
 
 # String to pass to linker to pick up the Tcl stub library from its
 # build directory.
-TCL_BUILD_STUB_LIB_SPEC='-L/Library/Caches/com.apple.xbs/Binaries/tcl/tcl-112~560/TempContent/Objects/OBJROOT2/tcl/Deployment -ltclstub8.5'
+TCL_BUILD_STUB_LIB_SPEC='-L/Library/Caches/com.apple.xbs/Binaries/tcl/tcl-112~562/TempContent/Objects/OBJROOT2/tcl/Deployment -ltclstub8.5'
 
 # String to pass to linker to pick up the Tcl stub library from its
 # installed directory.
 TCL_STUB_LIB_SPEC='-L/System/Library/Frameworks/Tcl.framework/Versions/8.5 -ltclstub8.5'
 
 # Path to the Tcl stub library in the build directory.
-TCL_BUILD_STUB_LIB_PATH='/Library/Caches/com.apple.xbs/Binaries/tcl/tcl-112~560/TempContent/Objects/OBJROOT2/tcl/Deployment/libtclstub8.5.a'
+TCL_BUILD_STUB_LIB_PATH='/Library/Caches/com.apple.xbs/Binaries/tcl/tcl-112~562/TempContent/Objects/OBJROOT2/tcl/Deployment/libtclstub8.5.a'
 
 # Path to the Tcl stub library in the install directory.
 TCL_STUB_LIB_PATH='/System/Library/Frameworks/Tcl.framework/Versions/8.5/libtclstub8.5.a'

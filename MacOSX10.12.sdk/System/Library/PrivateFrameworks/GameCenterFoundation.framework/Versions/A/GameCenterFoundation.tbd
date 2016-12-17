@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 932AA20F-70B5-35C7-80C2-E9CC7FBEB98C', 'x86_64: 6C1C4A07-2E75-352A-9450-F18D4DDBF66E' ]
+uuids:           [ 'i386: AD392D1E-8C07-3E86-B43E-A776A28343CE', 'x86_64: 2D5B4F43-4968-3706-80F6-8D231CA0147B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/GameCenterFoundation.framework/Versions/A/GameCenterFoundation
 objc-constraint: none
@@ -28,12 +28,12 @@ exports:
                        _GKMatchPacket._totalLength, _GKMatchPacket._valid, _GKMatchPacket._version, 
                        _GKObserverTrampoline._block, _GKObserverTrampoline._cancellationPredicate, 
                        _GKObserverTrampoline._keyPath, _GKObserverTrampoline._observee, 
-                       _GKObserverTrampoline._options, _GKPlayerCredential._accountName, 
-                       _GKPlayerCredential._altDSID, _GKPlayerCredential._authenticationToken, 
-                       _GKPlayerCredential._environment, _GKPlayerCredential._playerInternal, 
-                       _GKPlayerCredential._rawPassword, _GKPlayerCredential._scope, 
-                       _GKPlayerCredential._scopeModificationDate, _GKPlayerInternal._flags, 
-                       _GKReachability.localWiFiRef, _GKReachability.reachabilityRef, 
+                       _GKObserverTrampoline._options, _GKPlayerCredential._DSID, 
+                       _GKPlayerCredential._accountName, _GKPlayerCredential._altDSID, 
+                       _GKPlayerCredential._authenticationToken, _GKPlayerCredential._environment, 
+                       _GKPlayerCredential._playerInternal, _GKPlayerCredential._rawPassword, 
+                       _GKPlayerCredential._scope, _GKPlayerCredential._scopeModificationDate, 
+                       _GKPlayerInternal._flags, _GKReachability.localWiFiRef, _GKReachability.reachabilityRef, 
                        _GKRecoveryAttempter._attemptRecovery, _GKRequestIdentifier._arguments, 
                        _GKRequestIdentifier._savedHash, _GKRequestIdentifier._selector, 
                        __GKStateMachine._currentState, __GKStateMachine._delegate, 

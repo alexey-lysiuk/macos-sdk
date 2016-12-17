@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 19E55458-3F19-3C8D-ADD3-3ECA40E5561F', 'x86_64: F1376741-14FE-3196-95DE-3961EA349C5C' ]
+uuids:           [ 'i386: DFB4DF95-86F8-3B16-BCAB-C920B3299285', 'x86_64: E2F23F67-7046-3829-81A6-B7B008D3BC4F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AppleScript.framework/Versions/A/AppleScript
 objc-constraint: none

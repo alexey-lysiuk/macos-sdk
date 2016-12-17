@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 95BF9FAC-25EA-3555-A4C4-464465A2D6AD', 'x86_64: 524C9EEC-D186-30B2-8A55-CC11A48CC44C' ]
+uuids:           [ 'i386: 891D348F-FEE2-3706-983F-8C8500FA31E5', 'x86_64: 12AB8AA1-7F0C-3BE3-B6C6-2A4822948E58' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ContactsPersistence.framework/Versions/A/ContactsPersistence
 objc-constraint: none
@@ -62,21 +62,24 @@ exports:
                        _kABCDContactPrivacyFlagsKey, _kABCDContactSortingFirstNameKey, 
                        _kABCDContactSortingLastNameKey, _kABCDContactSuffixKey, _kABCDContactTitleKey, 
                        _kABCDContactTmpHomePageKey, _kABCDContactTmpIdentitiesKey, 
-                       _kABCDSocialProfileBundleIdentifiersKey, _kABCDSocialProfileCustomValueDataKey, 
-                       _kABCDSocialProfileCustomValuesDataKey, _kABCDSocialProfileCustomValuesKey, 
-                       _kABCDSocialProfileDisplayNameKey, _kABCDSocialProfileDisplayValueKey, 
-                       _kABCDSocialProfileServiceNameKey, _kABCDSocialProfileTeamIdentifierKey, 
-                       _kABCDSocialProfileURLStringKey, _kABCDSocialProfileUserIdentifierKey, 
-                       _kABCDSocialProfileUsernameKey, _kABCalenderURIsRelationshipName, 
-                       _kABContactIndexRelationshipName, _kABCoreDataAbstractGroupEntityName, 
-                       _kABCoreDataAddressBookSourceEntityName, _kABCoreDataAlertToneEntityName, 
-                       _kABCoreDataCalendarURIEntityName, _kABCoreDataContactDateComponentsEntityName, 
-                       _kABCoreDataContactEntityName, _kABCoreDataContactIndexEntityName, 
-                       _kABCoreDataCountryEntityName, _kABCoreDataCustomPropertyEntityName, 
-                       _kABCoreDataCustomPropertyValueEntityName, _kABCoreDataDateComponentsEntityName, 
-                       _kABCoreDataDateEntityName, _kABCoreDataDeletedRecordLogEntityName, 
-                       _kABCoreDataDistributionListConfigEntityName, _kABCoreDataEmailAddressEntityName, 
-                       _kABCoreDataGroupEntityName, _kABCoreDataInfoEntityName, _kABCoreDataMailRecentEntityName, 
+                       _kABCDInstantMessagingAddressAddressKey, _kABCDInstantMessagingAddressBundleIdentifiersKey, 
+                       _kABCDInstantMessagingAddressBundleIdentifiersStringKey, _kABCDInstantMessagingAddressTeamIdentifierKey, 
+                       _kABCDInstantMessagingAddressUserIdentifierKey, _kABCDSocialProfileBundleIdentifiersKey, 
+                       _kABCDSocialProfileCustomValueDataKey, _kABCDSocialProfileCustomValuesDataKey, 
+                       _kABCDSocialProfileCustomValuesKey, _kABCDSocialProfileDisplayNameKey, 
+                       _kABCDSocialProfileDisplayValueKey, _kABCDSocialProfileServiceNameKey, 
+                       _kABCDSocialProfileTeamIdentifierKey, _kABCDSocialProfileURLStringKey, 
+                       _kABCDSocialProfileUserIdentifierKey, _kABCDSocialProfileUsernameKey, 
+                       _kABCalenderURIsRelationshipName, _kABContactIndexRelationshipName, 
+                       _kABCoreDataAbstractGroupEntityName, _kABCoreDataAddressBookSourceEntityName, 
+                       _kABCoreDataAlertToneEntityName, _kABCoreDataCalendarURIEntityName, 
+                       _kABCoreDataContactDateComponentsEntityName, _kABCoreDataContactEntityName, 
+                       _kABCoreDataContactIndexEntityName, _kABCoreDataCountryEntityName, 
+                       _kABCoreDataCustomPropertyEntityName, _kABCoreDataCustomPropertyValueEntityName, 
+                       _kABCoreDataDateComponentsEntityName, _kABCoreDataDateEntityName, 
+                       _kABCoreDataDeletedRecordLogEntityName, _kABCoreDataDistributionListConfigEntityName, 
+                       _kABCoreDataEmailAddressEntityName, _kABCoreDataGroupEntityName, 
+                       _kABCoreDataInfoEntityName, _kABCoreDataMailRecentEntityName, 
                        _kABCoreDataMailRecentLastEmailDateEntityName, _kABCoreDataMessagingAddressEntityName, 
                        _kABCoreDataNoteEntityName, _kABCoreDataPhoneNumberEntityName, 
                        _kABCoreDataPostalAddressEntityName, _kABCoreDataPropertyValueEntityName, 

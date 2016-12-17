@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 244A486A-A057-310E-8281-A2B5BD102CD9', 'x86_64: 3C3B49DF-86FF-3FB3-8803-DB45E9BE46DA' ]
+uuids:           [ 'i386: B22DCE5E-7753-33B2-9E69-E19C1FFCE395', 'x86_64: 3F10746E-97BC-3252-8D2B-4D14F2D6FD96' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/APTransport.framework/Versions/A/APTransport
 objc-constraint: none

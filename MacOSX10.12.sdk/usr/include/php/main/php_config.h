@@ -1063,7 +1063,7 @@
 /* #undef HAVE_LIBPAM */
 
 /* Define to 1 if you have the `pq' library (-lpq). */
-/* #undef HAVE_LIBPQ */
+#define HAVE_LIBPQ 1
 
 /* */
 /* #undef HAVE_LIBRARYMANAGER_H */
@@ -1309,7 +1309,7 @@
 /* #undef HAVE_PDO_FIREBIRD */
 
 /* Whether to build PostgreSQL for PDO support or not */
-/* #undef HAVE_PDO_PGSQL */
+#define HAVE_PDO_PGSQL 1
 
 /* */
 /* #undef HAVE_PDO_SQLITELIB */
@@ -1318,28 +1318,28 @@
 #define HAVE_PERROR 1
 
 /* Whether to build PostgreSQL support or not */
-/* #undef HAVE_PGSQL */
+#define HAVE_PGSQL 1
 
 /* Whether libpq is compiled with --enable-multibyte */
-/* #undef HAVE_PGSQL_WITH_MULTIBYTE_SUPPORT */
+#define HAVE_PGSQL_WITH_MULTIBYTE_SUPPORT 1
 
 /* PostgreSQL 7.4 or later */
-/* #undef HAVE_PGTRANSACTIONSTATUS */
+#define HAVE_PGTRANSACTIONSTATUS 1
 
 /* Whether to have pg_config.h */
-/* #undef HAVE_PG_CONFIG_H */
+#define HAVE_PG_CONFIG_H 1
 
 /* PostgreSQL 9.3 or later */
-/* #undef HAVE_PG_LO64 */
+#define HAVE_PG_LO64 1
 
 /* PostgreSQL 8.1 or later */
-/* #undef HAVE_PG_LO_CREATE */
+#define HAVE_PG_LO_CREATE 1
 
 /* PostgreSQL 8.4 or later */
-/* #undef HAVE_PG_LO_IMPORT_WITH_OID */
+#define HAVE_PG_LO_IMPORT_WITH_OID 1
 
 /* PostgreSQL 8.3 or later */
-/* #undef HAVE_PG_LO_TRUNCATE */
+#define HAVE_PG_LO_TRUNCATE 1
 
 /* */
 /* #undef HAVE_PHPDBG */
@@ -1363,76 +1363,76 @@
 #define HAVE_POSIX_READDIR_R 1
 
 /* PostgreSQL 7.0.x or later */
-/* #undef HAVE_PQCLIENTENCODING */
+#define HAVE_PQCLIENTENCODING 1
 
 /* Broken libpq under windows */
-/* #undef HAVE_PQCMDTUPLES */
+#define HAVE_PQCMDTUPLES 1
 
 /* PostgreSQL 7.2.0 or later */
-/* #undef HAVE_PQESCAPE */
+#define HAVE_PQESCAPE 1
 
 /* PostgreSQL 9.0 or later */
-/* #undef HAVE_PQESCAPELITERAL */
+#define HAVE_PQESCAPELITERAL 1
 
 /* PostgreSQL 8.1.4 or later */
-/* #undef HAVE_PQESCAPE_BYTEA_CONN */
+#define HAVE_PQESCAPE_BYTEA_CONN 1
 
 /* PostgreSQL 8.1.4 or later */
-/* #undef HAVE_PQESCAPE_CONN */
+#define HAVE_PQESCAPE_CONN 1
 
 /* PostgreSQL 7.4 or later */
-/* #undef HAVE_PQEXECPARAMS */
+#define HAVE_PQEXECPARAMS 1
 
 /* PostgreSQL 7.4 or later */
-/* #undef HAVE_PQEXECPREPARED */
+#define HAVE_PQEXECPREPARED 1
 
 /* PostgreSQL 7.4 or later */
-/* #undef HAVE_PQFREEMEM */
+#define HAVE_PQFREEMEM 1
 
 /* PostgreSQL 7.4 or later */
-/* #undef HAVE_PQFTABLE */
+#define HAVE_PQFTABLE 1
 
 /* PostgreSQL 7.4 or later */
-/* #undef HAVE_PQGETCOPYDATA */
+#define HAVE_PQGETCOPYDATA 1
 
 /* Older PostgreSQL */
-/* #undef HAVE_PQOIDVALUE */
+#define HAVE_PQOIDVALUE 1
 
 /* PostgreSQL 7.4 or later */
-/* #undef HAVE_PQPARAMETERSTATUS */
+#define HAVE_PQPARAMETERSTATUS 1
 
 /* PostgreSQL 7.4 or later */
-/* #undef HAVE_PQPREPARE */
+#define HAVE_PQPREPARE 1
 
 /* PostgreSQL 7.4 or later */
-/* #undef HAVE_PQPROTOCOLVERSION */
+#define HAVE_PQPROTOCOLVERSION 1
 
 /* PostgreSQL 7.4 or later */
-/* #undef HAVE_PQPUTCOPYDATA */
+#define HAVE_PQPUTCOPYDATA 1
 
 /* PostgreSQL 7.4 or later */
-/* #undef HAVE_PQPUTCOPYEND */
+#define HAVE_PQPUTCOPYEND 1
 
 /* PostgreSQL 7.4 or later */
-/* #undef HAVE_PQRESULTERRORFIELD */
+#define HAVE_PQRESULTERRORFIELD 1
 
 /* PostgreSQL 7.4 or later */
-/* #undef HAVE_PQSENDPREPARE */
+#define HAVE_PQSENDPREPARE 1
 
 /* PostgreSQL 7.4 or later */
-/* #undef HAVE_PQSENDQUERYPARAMS */
+#define HAVE_PQSENDQUERYPARAMS 1
 
 /* PostgreSQL 7.4 or later */
-/* #undef HAVE_PQSENDQUERYPREPARED */
+#define HAVE_PQSENDQUERYPREPARED 1
 
 /* PostgreSQL 7.4 or later */
-/* #undef HAVE_PQSETERRORVERBOSITY */
+#define HAVE_PQSETERRORVERBOSITY 1
 
 /* PostgreSQL 7.0.x or later */
-/* #undef HAVE_PQSETNONBLOCKING */
+#define HAVE_PQSETNONBLOCKING 1
 
 /* PostgreSQL 7.3.0 or later */
-/* #undef HAVE_PQUNESCAPEBYTEA */
+#define HAVE_PQUNESCAPEBYTEA 1
 
 /* do we have prctl? */
 /* #undef HAVE_PRCTL */
@@ -2225,7 +2225,7 @@
 #define PHP_BLOWFISH_CRYPT 1
 
 /* PHP build date */
-#define PHP_BUILD_DATE "2016-09-19"
+#define PHP_BUILD_DATE "2016-10-23"
 
 /* Define if your system has fork/vfork/CreateProcess */
 #define PHP_CAN_SUPPORT_PROC_OPEN 1
@@ -2303,7 +2303,7 @@
 #define PHP_STD_DES_CRYPT 1
 
 /* uname -a output */
-#define PHP_UNAME "Darwin osx237.apple.com 16.0 Darwin Kernel Version 15.0.0: Wed Apr 6 00:55:38 PDT 2016; root:xnu-3247.1.106.2.8~1/DEVELOPMENT_X86_64 x86_64"
+#define PHP_UNAME "Darwin osx300.apple.com 16.0 Darwin Kernel Version 15.0.0: Wed Apr 6 00:55:38 PDT 2016; root:xnu-3247.1.106.2.8~1/DEVELOPMENT_X86_64 x86_64"
 
 /* Whether PHP has to use its own crypt_r for blowfish, des and ext des */
 #define PHP_USE_PHP_CRYPT_R 1

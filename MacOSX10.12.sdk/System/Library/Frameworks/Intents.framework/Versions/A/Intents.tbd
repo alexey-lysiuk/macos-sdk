@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DC15BC29-EF03-321C-AEC2-2EBEF17FB7E1' ]
+uuids:           [ 'x86_64: 2B7F52EB-527A-3139-A7B9-8EB8282742B8' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Intents.framework/Versions/A/Intents
 objc-constraint: none
@@ -152,11 +152,25 @@ exports:
                        _INPaymentsDomainGetIntentResponseDescriptionWithDataClass, 
                        _INPaymentsDomainGetIntentResponseDescriptionWithFacadeClass, 
                        _INPaymentsDomainGetIntentResponseDescriptionWithName, _INPaymentsDomainGetIntentResponseDescriptionWithType, 
-                       _INPhotoAttributeOptionsAddBackingType, _INPhotoAttributeOptionsContainsBackingType, 
-                       _INPhotoAttributeOptionsEnumerateBackingTypes, _INPhotoAttributeOptionsGetNames, 
-                       _INPhotoAttributeOptionsRemoveBackingType, _INPhotosDomainGetIntentDescriptionWithDataClass, 
-                       _INPhotosDomainGetIntentDescriptionWithFacadeClass, _INPhotosDomainGetIntentDescriptionWithName, 
-                       _INPhotosDomainGetIntentDescriptionWithType, _INPhotosDomainGetIntentResponseDescriptionWithDataClass, 
+                       _INPersonHandleLabelGetBackingType, _INPersonHandleLabelGetFacadeObject, 
+                       _INPersonHandleLabelHome, _INPersonHandleLabelHomeFax, _INPersonHandleLabelMain, 
+                       _INPersonHandleLabelMobile, _INPersonHandleLabelOther, _INPersonHandleLabelPager, 
+                       _INPersonHandleLabelSetAddBackingType, _INPersonHandleLabelSetEnumerateBackingTypes, 
+                       _INPersonHandleLabelSetRemoveBackingType, _INPersonHandleLabelWork, 
+                       _INPersonHandleLabelWorkFax, _INPersonHandleLabeliPhone, _INPersonRelationshipAssistant, 
+                       _INPersonRelationshipBrother, _INPersonRelationshipChild, 
+                       _INPersonRelationshipFather, _INPersonRelationshipFriend, 
+                       _INPersonRelationshipGetBackingType, _INPersonRelationshipGetFacadeObject, 
+                       _INPersonRelationshipManager, _INPersonRelationshipMother, 
+                       _INPersonRelationshipParent, _INPersonRelationshipPartner, 
+                       _INPersonRelationshipSetAddBackingType, _INPersonRelationshipSetEnumerateBackingTypes, 
+                       _INPersonRelationshipSetRemoveBackingType, _INPersonRelationshipSister, 
+                       _INPersonRelationshipSpouse, _INPhotoAttributeOptionsAddBackingType, 
+                       _INPhotoAttributeOptionsContainsBackingType, _INPhotoAttributeOptionsEnumerateBackingTypes, 
+                       _INPhotoAttributeOptionsGetNames, _INPhotoAttributeOptionsRemoveBackingType, 
+                       _INPhotosDomainGetIntentDescriptionWithDataClass, _INPhotosDomainGetIntentDescriptionWithFacadeClass, 
+                       _INPhotosDomainGetIntentDescriptionWithName, _INPhotosDomainGetIntentDescriptionWithType, 
+                       _INPhotosDomainGetIntentResponseDescriptionWithDataClass, 
                        _INPhotosDomainGetIntentResponseDescriptionWithFacadeClass, 
                        _INPhotosDomainGetIntentResponseDescriptionWithName, _INPhotosDomainGetIntentResponseDescriptionWithType, 
                        _INPreferredCallProviderGetBackingType, _INPreferredCallProviderGetFacadeType, 
@@ -180,7 +194,8 @@ exports:
                        _INSearchForMessagesIntentResponseCodeGetName, _INSearchForPhotosIntentResponseCodeGetName, 
                        _INSendMessageIntentResponseCodeGetName, _INSetMessageAttributeIntentResponseCodeGetName, 
                        _INShareFileIntentResponseCodeGetName, _INSharedResourcesDirectory, 
-                       _INSiriLogContextIntents, _INStartAudioCallIntentResponseCodeGetName, 
+                       _INSiriIntentsRestrictedWhileLocked, _INSiriLogContextIntents, 
+                       _INSiriSupportedIntentsByExtensions, _INStartAudioCallIntentResponseCodeGetName, 
                        _INStartPhotoPlaybackIntentResponseCodeGetName, _INStartVideoCallIntentResponseCodeGetName, 
                        _INSupportedIntentsByExtensions, _INSupportsPairedDevice, 
                        _INSyncSlotActivityName, _INSyncSlotCarProfileName, _INSyncSlotContactGroupName, 

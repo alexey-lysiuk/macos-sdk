@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 545D6C28-CDD5-36E4-8C9B-740FDE73249F' ]
+uuids:           [ 'x86_64: 4A879E82-00FC-31AF-A12F-4BD1A744B8DB' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoLibraryPrivate.framework/Versions/A/Frameworks/RedRock.framework/Versions/A/RedRock
-current-version: 451.20.9
+current-version: 3130.0.240
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -28,8 +28,7 @@ exports:
                        _RKTinySize, _RKTraceSubsystem, _RKVersionImageDate, _RKVersionMaster, 
                        _RKVersionMasterHeight, _RKVersionMasterWidth, _RKVersionNonRawMasterUuid, 
                        _RKVersionRawMasterUuid, _RKVersionRotation, _RedRockVersionNumber, 
-                       _RedRockVersionString, _gSampleAllThreadsPtr, _gStackFrameworkBundleRef, 
-                       _gTriedToLoadAlready, _getFSRef, _importConcurrencyLimit, 
+                       _RedRockVersionString, _getFSRef, _importConcurrencyLimit, 
                        _k128SlotSize, _k64SlotSize, _kCGImageSourceRawReconstructionMethodVersions, 
                        _kConsolidateImagesWhenExportingLibraryKey, _kCreateMetadataTextFileDirectoryDefault, 
                        _kDGCurvesCustomViewIdentifier, _kDGCurvesInputBlueKey, _kDGCurvesInputGammaKey, 
@@ -82,7 +81,7 @@ exports:
                        _k_RKExportFailureVersionNamesKey, _k_RKExportJobDescriptionKey, 
                        _k_RKExportSubtasksTotalKey, _k_RKExportSuccessCountKey, _k_RKExportSuccessFilePathsKey, 
                        _k_RKExportSuccessfulKey, _k_RKExportVersionNameKey, _k_RKExportWasCancelledKey, 
-                       _k_RKExporterAdditionalFeedbackKey, _roundDGCurvePoint, _runningUnderDebugger ]
+                       _k_RKExporterAdditionalFeedbackKey, _roundDGCurvePoint ]
     objc-classes:    [ _AVAssetFile, _AVCHDAssetFile, _ArchiveTypeToDisplayStringTransformer, 
                        _AssetFile, _AssetLoader, _AudioVolumePercentValueTransformer, 
                        _AudioVolumeValueTransformer, _AvchdDownloadFileOperation, 
@@ -125,12 +124,12 @@ exports:
                        _RKRepairLibraryPermissionsMgr, _RKRepairLibraryPermissionsProgressAdaptor, 
                        _RKSHL, _RKSegmentIndexProvider, _RKStrings, _RKTextAttachmentAtom, 
                        _RKTrackPointContext, _RKVersionMutator, _ReachableHost, _ReconnectTitleValueTransformer, 
-                       _SPODDetector, _SidecarCopyFileOperation, _SidecarFile, _StackDump, 
-                       _StringLengthValueTransformer, _StringToDateValueTransformer, 
-                       _StringToTimeValueTransformer, _StringValueTransformer, _TaskInfo, 
-                       _Times100AsStringValueTransformer, _Times100RoundedAsStringValueTransformer, 
-                       _Times25AsStringValueTransformer, _TrackPoint, _TrackPointLoader, 
-                       _VolumeMountedStatusBoolToStringValueTransformer, ___RKMasterMetadataHelper ]
+                       _SidecarCopyFileOperation, _SidecarFile, _StringLengthValueTransformer, 
+                       _StringToDateValueTransformer, _StringToTimeValueTransformer, 
+                       _StringValueTransformer, _TaskInfo, _Times100AsStringValueTransformer, 
+                       _Times100RoundedAsStringValueTransformer, _Times25AsStringValueTransformer, 
+                       _TrackPoint, _TrackPointLoader, _VolumeMountedStatusBoolToStringValueTransformer, 
+                       ___RKMasterMetadataHelper ]
     objc-ivars:      [ _AssetFile._isSupported, _AssetFile._metadataQueue, _AssetLoader._albumPathStore, 
                        _AssetLoader._dupeDateFormatter, _DGSpotPatchSpot._angle, 
                        _DGSpotPatchSpot._center, _DGSpotPatchSpot._detail, _DGSpotPatchSpot._hasPatch, 
@@ -177,12 +176,6 @@ exports:
                        _RKSegmentIndexProvider._style, _RKTextAttachmentAtom.m_formatString, 
                        _RKTextAttachmentAtom.m_size, _RKTextAttachmentAtom.m_value, 
                        _ReachableHost.mHostAvailable, _ReachableHost.mHostName, _ReachableHost.mReachabilityRef, 
-                       _SPODDetector._currentSPODFileName, _SPODDetector._currentTask, 
-                       _SPODDetector._exceptionBacktrace, _SPODDetector._exceptionTime, 
-                       _SPODDetector._exit, _SPODDetector._mainThreadCalledTime, 
-                       _SPODDetector._outOfSpodTime, _SPODDetector._saveLastMainThreadTime, 
-                       _SPODDetector._spodThreshold, _SPODDetector._startupStats, 
-                       _SPODDetector._timeWhenSPODFound, _SPODDetector._timer, _SPODDetector._timerCalledAtLeastOnce, 
                        _TaskInfo._eventsCurrentPtr, _TaskInfo._eventsData, _TaskInfo._eventsPreviousPtr, 
                        _TaskInfo._lastSampleTime, _TaskInfo._seconds, _TaskInfo._taskCurrentPtr, 
                        _TaskInfo._taskData, _TaskInfo._taskPreviousPtr, _TrackPoint._hdop, 

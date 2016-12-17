@@ -168,7 +168,7 @@ If red, green, blue, or saturation, brightness, or white values are outside of t
 
 #endif // NSCOLOR_USE_CLASS_PROPERTIES
 
-@property (class, strong, readonly) NSColor *scrubberTexturedBackgroundColor NS_AVAILABLE_MAC(10_12_1); // Patterned background color for use in NSScrubber
+@property (class, strong, readonly) NSColor *scrubberTexturedBackgroundColor NS_AVAILABLE_MAC(10_12_2); // Patterned background color for use in NSScrubber
 
 + (NSColor *)colorForControlTint:(NSControlTint)controlTint;	// pass in valid tint to get rough color matching. returns default if invalid tint
 

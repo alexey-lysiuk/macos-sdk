@@ -22,6 +22,4 @@ NS_CLASS_DEPRECATED_MAC(10_5, 10_12, "Use the PDFAnnotation class directly, sett
 - (NSString *) name;
 - (void) setName: (NSString *) name;
 
-- (BOOL) isSignature;
-
 @end

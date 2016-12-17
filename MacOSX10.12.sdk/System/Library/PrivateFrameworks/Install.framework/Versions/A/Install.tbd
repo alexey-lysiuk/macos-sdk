@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 19F09EBB-C246-3C95-9C29-917BFD73E886', 'x86_64: 88677409-144C-383A-9B18-E442A33E1997' ]
+uuids:           [ 'i386: E259A9BB-14C3-37A2-A536-6C5C4E3F11FA', 'x86_64: 60D7E126-AC49-307A-8897-0D6D9E7EE993' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Install.framework/Versions/A/Install
 current-version: 1000.0

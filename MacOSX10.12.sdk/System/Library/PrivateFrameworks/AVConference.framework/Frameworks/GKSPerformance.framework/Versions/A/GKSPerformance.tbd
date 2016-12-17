@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: E0FFA8A8-3495-3ADA-A167-CCA402521FC8', 'x86_64: 66C5F36B-3F98-3EBB-8B37-2E4FDA14B0B6' ]
+uuids:           [ 'i386: 7C82C579-93D8-3AEA-9FDC-1418EAB39475', 'x86_64: 5972D841-ABED-31B7-A7E5-28AFB2BC967C' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AVConference.framework/Frameworks/GKSPerformance.framework/Versions/A/GKSPerformance
 objc-constraint: none
@@ -14,8 +14,8 @@ exports:
                        _AWDAdaptor._videoQualityTimers, _AWDStats.ActualRxBitrateHistogram, 
                        _AWDStats.OWRDHistogram, _AWDStats.PLICounter, _AWDStats.PLRHistogram, 
                        _AWDStats.RTCPSendInterval, _AWDStats.RTTHistogram, _AWDStats.RecommendedRxBitrateHistogram, 
-                       _AWDStats.audioFlush, _AWDStats.audioPauseTime, _AWDStats.audioTiers, 
-                       _AWDStats.avgFrameRateSampleCount, _AWDStats.avgFrameRateSum, 
+                       _AWDStats.aggregatedReport, _AWDStats.audioFlush, _AWDStats.audioPauseTime, 
+                       _AWDStats.audioTiers, _AWDStats.avgFrameRateSampleCount, _AWDStats.avgFrameRateSum, 
                        _AWDStats.avgInterarrivalTime, _AWDStats.avgInterarrivalTimeCount, 
                        _AWDStats.avgJitterBufferSize, _AWDStats.avgJitterBufferSizeCount, 
                        _AWDStats.avgLossRate, _AWDStats.avgLossRateCount, _AWDStats.avgRate, 

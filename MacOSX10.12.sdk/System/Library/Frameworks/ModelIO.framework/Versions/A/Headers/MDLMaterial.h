@@ -366,7 +366,11 @@ MDL_EXPORT
 - (void)setProperty:(MDLMaterialProperty*)property;
 - (void)removeProperty:(MDLMaterialProperty*)property;
 - (nullable MDLMaterialProperty*)propertyNamed:(NSString*)name;
+// Returns the first occurence of the property that matches the semantic.
+// Not recommended to use when there are multiple properties with same semantic.
 - (nullable MDLMaterialProperty*)propertyWithSemantic:(MDLMaterialSemantic)semantic;
+// Returns the complete list of properties that match the semantic (e.g. Kd & Kd_map)
+- (NSArray<MDLMaterialProperty *> *)propertiesWithSemantic:(MDLMaterialSemantic)semantic;
 - (void)removeAllProperties;
 
 @property (nonatomic, readonly, retain) MDLScatteringFunction *scatteringFunction;

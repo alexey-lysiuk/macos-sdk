@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-NS_CLASS_AVAILABLE_MAC(10_12_1)
+NS_CLASS_AVAILABLE_MAC(10_12_2)
 @interface NSGroupTouchBarItem : NSTouchBarItem {
 @private
     NSTouchBar *_groupTouchBar;

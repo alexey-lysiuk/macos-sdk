@@ -148,7 +148,7 @@ MDL_EXPORT
  @abstract Array of buffers containing vertex data
  @discussion The vertex buffers in this array are indexed by the vertex descriptor.
  */
-@property (nonatomic, readonly, retain) NSArray<id<MDLMeshBuffer>> *vertexBuffers;
+@property (nonatomic, readwrite, retain) NSArray<id<MDLMeshBuffer>> *vertexBuffers;
 
 /*!
  @property submeshes
@@ -434,7 +434,7 @@ MDL_EXPORT
 */
 - (instancetype)initCapsuleWithExtent:(vector_float3)extent
                      cylinderSegments:(vector_uint2)segments
-                   hemisphereSegments:(int)hemisphereSegments
+                   hemisphereSegments:(uint32_t)hemisphereSegments
                         inwardNormals:(BOOL)inwardNormals
                          geometryType:(MDLGeometryType)geometryType
                             allocator:(nullable id<MDLMeshBufferAllocator>)allocator;
@@ -539,6 +539,14 @@ MDL_EXPORT
                          geometryType:(MDLGeometryType)geometryType
                         inwardNormals:(BOOL)inwardNormals
                             allocator:(nullable id<MDLMeshBufferAllocator>)allocator;
++ (instancetype)newCapsuleWithHeight:(float)height
+                               radii:(vector_float2)radii
+                      radialSegments:(NSUInteger)radialSegments
+                    verticalSegments:(NSUInteger)verticalSegments
+                  hemisphereSegments:(NSUInteger)hemisphereSegments
+                        geometryType:(MDLGeometryType)geometryType
+                       inwardNormals:(BOOL)inwardNormals
+                           allocator:(nullable id<MDLMeshBufferAllocator>)allocator;
 + (instancetype)newEllipticalConeWithHeight:(float)height
                                       radii:(vector_float2)radii
                              radialSegments:(NSUInteger)radialSegments
@@ -550,6 +558,10 @@ MDL_EXPORT
                               segments:(vector_uint2)segments
                           geometryType:(MDLGeometryType)geometryType
                              allocator:(nullable id<MDLMeshBufferAllocator>)allocator;
++ (instancetype)newIcosahedronWithRadius:(float)radius
+                           inwardNormals:(BOOL)inwardNormals
+                            geometryType:(MDLGeometryType)geometryType
+                               allocator:(nullable id<MDLMeshBufferAllocator>)allocator;
 + (instancetype)newIcosahedronWithRadius:(float)radius
                            inwardNormals:(BOOL)inwardNormals
                                allocator:(nullable id<MDLMeshBufferAllocator>)allocator;

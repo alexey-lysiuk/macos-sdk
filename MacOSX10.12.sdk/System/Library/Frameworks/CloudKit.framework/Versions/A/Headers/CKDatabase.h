@@ -21,7 +21,7 @@ NS_CLASS_AVAILABLE(10_10, 8_0)
 @interface CKDatabase : NSObject
 - (instancetype)init NS_UNAVAILABLE;
 - (void)addOperation:(CKDatabaseOperation *)operation;
-@property (nonatomic, readonly, assign) CKDatabaseScope databaseScope;
+@property (nonatomic, readonly, assign) CKDatabaseScope databaseScope NS_AVAILABLE(10_12, 10_0);
 @end
 
 @interface CKDatabase (ConvenienceMethods)

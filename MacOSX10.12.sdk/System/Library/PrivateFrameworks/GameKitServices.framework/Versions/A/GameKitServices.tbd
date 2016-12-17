@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: B6F63C89-AE2A-39F6-9920-2366E1D530C7', 'x86_64: C20843F8-B7AC-3ADF-BEB4-8F711C7A6686' ]
+uuids:           [ 'i386: B0647B6D-E201-3085-B85A-787AC458FDA8', 'x86_64: 1DB97E29-438A-3C98-BDAA-9716A7BB8C5B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/GameKitServices.framework/Versions/A/GameKitServices
 objc-constraint: none

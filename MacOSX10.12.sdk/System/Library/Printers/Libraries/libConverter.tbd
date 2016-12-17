@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386 ]
-uuids:           [ 'i386: 09C2D032-857C-315F-8DD3-88C344F256BB' ]
+uuids:           [ 'i386: 774BC629-ADE7-314B-A3D0-E32228742290' ]
 platform:        macosx
 install-name:    /System/Library/Printers/Libraries/libConverter.dylib
 current-version: 184.0

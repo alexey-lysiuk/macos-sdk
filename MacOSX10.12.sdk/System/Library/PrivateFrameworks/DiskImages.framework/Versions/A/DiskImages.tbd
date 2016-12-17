@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 423B780A-ED62-3351-9162-EB6809BA1BE7', 'x86_64: D7B9FFE2-65D7-33AE-A50B-6EB46CAC0157' ]
+uuids:           [ 'i386: 57895557-AFDF-3CE1-8119-97BF9F7FFF8B', 'x86_64: E119DFDF-592B-35DF-8D44-73293AF31595' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DiskImages.framework/Versions/A/DiskImages
-current-version: 444.20.3
+current-version: 444.30.5
 compatibility-version: 1.0.8
 objc-constraint: none
 exports:         

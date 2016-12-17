@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BDA4C8D4-F555-39DB-9D1D-16DD66C61914' ]
+uuids:           [ 'x86_64: B6FFFF78-F7D5-377C-B351-3EFED2B98850' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/NearField.framework/Versions/A/NearField
 objc-constraint: none

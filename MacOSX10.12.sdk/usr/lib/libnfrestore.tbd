@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 353349F4-A92B-348B-A58B-1B711BDB165B' ]
+uuids:           [ 'x86_64: 3945EA23-887F-3C64-B857-44C98676485E' ]
 platform:        macosx
 install-name:    /usr/lib/libnfrestore.dylib
 objc-constraint: none

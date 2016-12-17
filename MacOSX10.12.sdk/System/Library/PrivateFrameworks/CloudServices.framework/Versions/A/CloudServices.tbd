@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3DF06BF5-3971-30E8-B007-520A97A19DD0' ]
+uuids:           [ 'x86_64: 4D5CE15B-66D6-3E8F-A390-75B175F3D505' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CloudServices.framework/Versions/A/CloudServices
 objc-constraint: none

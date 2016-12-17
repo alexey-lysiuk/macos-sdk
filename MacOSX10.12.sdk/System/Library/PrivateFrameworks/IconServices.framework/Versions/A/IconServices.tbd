@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: B2624BC9-C02A-3E23-8B99-49974C95566D', 'x86_64: F7B83970-4A72-3186-BBB3-90FA86C3E263' ]
+uuids:           [ 'i386: D727AEFB-A199-353A-9256-1C861B3E4269', 'x86_64: 3F0BD358-D019-3083-82F2-69CCAD5E5D66' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IconServices.framework/Versions/A/IconServices
-current-version: 74.1
+current-version: 74.3
 objc-constraint: none
 exports:         
   - archs:           [ i386 ]

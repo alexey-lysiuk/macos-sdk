@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: C2792E6D-BDFE-3C09-A9F4-8915AF0B664A', 'x86_64: B91A3700-B554-39C4-9483-3D2F82A3DD88' ]
+uuids:           [ 'i386: 81920F00-0DB0-3DB1-A42C-A94E3E1696EB', 'x86_64: 6A2EFE3D-965B-332F-80A9-6970F5D683E7' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SCEP.framework/Versions/A/SCEP
 objc-constraint: none

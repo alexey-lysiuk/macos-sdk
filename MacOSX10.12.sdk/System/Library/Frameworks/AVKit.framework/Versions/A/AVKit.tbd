@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 967D72FD-6575-3A0D-BC9E-9CE8A7913345' ]
+uuids:           [ 'x86_64: C159B9A7-DB28-3394-9674-F7504B317396' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/AVKit.framework/Versions/A/AVKit
 objc-constraint: none

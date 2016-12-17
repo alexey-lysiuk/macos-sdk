@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: BFCE2C89-C34C-3931-A5BA-6C3DDB6304EA', 'x86_64: FDBA87F3-EB0B-395C-B0F7-DEFDAEED7E72' ]
+uuids:           [ 'i386: E91D7F75-CF40-3D28-9887-AA62D4FD831C', 'x86_64: EF4C3C83-6F51-38F7-A3D2-2D46EE4560EB' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AppContainer.framework/Versions/A/AppContainer
 objc-constraint: none

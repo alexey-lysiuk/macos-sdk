@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 71FEC202-1676-3580-B595-AFD8DF96E268' ]
+uuids:           [ 'x86_64: 8D7BC2C8-5645-3B24-ACD4-88887CACBB30' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AccountsDaemon.framework/Versions/A/AccountsDaemon
-current-version: 637.0.2
+current-version: 637.2.9
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -23,10 +23,11 @@ exports:
                        _ACDLogAccessRequest, _ACDManagedObjectModelName, _ACDServerRun, 
                        _ACDisableAccountSync, _ACEnableAccountSync, _ACErrorAccountSyncDomain, 
                        _ACOneTimeLDAPFixAccountSync, _ACOneTimeMigrateAccountSync, 
-                       _ACOneTimeSMTPFixAccountSync, _AccountTypeForWireString, _CPFileBuildDirectoriesToPath, 
-                       _CopyAccountNamesEnabledForDataType, _CopyExternalSourcesEnabledForDataType, 
-                       _GetTetheredSyncingDisabledForDataType, _IATypeForAccountType, 
-                       _PluginIDForAccountType, _SetAccountNameEnabledForDataType, 
+                       _ACOneTimeSMTPFixAccountSync, _AWDAccountsRenewCredentialsBeginReadFrom, 
+                       _AWDAccountsRenewCredentialsEndReadFrom, _AccountTypeForWireString, 
+                       _CPFileBuildDirectoriesToPath, _CopyAccountNamesEnabledForDataType, 
+                       _CopyExternalSourcesEnabledForDataType, _GetTetheredSyncingDisabledForDataType, 
+                       _IATypeForAccountType, _PluginIDForAccountType, _SetAccountNameEnabledForDataType, 
                        _SetExternalSourceEnabledForDataType, _SetTetheredSyncingDisabledForDatatype, 
                        _WireStringForAccountType, __ACDAuthenticationDialogHostBundleID, 
                        __ACDConnectionLogSystem, __ACDLogInternal, __ACDLogSystem, 
@@ -51,9 +52,9 @@ exports:
                        _kICBScopeKey, _kICBSearchBaseKey, _kICBServerAddressKey, 
                        _kICBServerPathKey, _kICBUseAuthenticationKey, _kICBUseKerberosKey, 
                        _kICBUseSSLKey, _syncDataTypeForDataclass, _tetheredSyncSourceTypeForDataType ]
-    objc-classes:    [ _ACDAccessPluginManager, _ACDAccountChange, _ACDAccountNotifier, 
-                       _ACDAccountStore, _ACDAccountStoreFilter, _ACDAccountSync, 
-                       _ACDAuthenticationDialogManager, _ACDAuthenticationDialogRequest, 
+    objc-classes:    [ _ACDAWDMetricsReporter, _ACDAccessPluginManager, _ACDAccountChange, 
+                       _ACDAccountNotifier, _ACDAccountStore, _ACDAccountStoreFilter, 
+                       _ACDAccountSync, _ACDAuthenticationDialogManager, _ACDAuthenticationDialogRequest, 
                        _ACDAuthenticationPluginManager, _ACDClient, _ACDClientAuthorization, 
                        _ACDClientAuthorizationManager, _ACDDatabase, _ACDDatabaseInitializer, 
                        _ACDDatabaseMigrator, _ACDDataclassOwnersManager, _ACDDataclassOwnersManagerInterface, 
@@ -63,8 +64,14 @@ exports:
                        _ACDPreferences, _ACDQueueDictionary, _ACDServer, _ACDTCCUtilities, 
                        _ACDTestManager, _ACDTimeMachineAccountStore, _ACDUserNotification, 
                        _ACRemoteCommandHandler, _ACRemoteDeviceMessage, _ACRemoteDeviceProxy, 
+                       _AWDAccountsRenewCredentialsBegin, _AWDAccountsRenewCredentialsEnd, 
                        __ACDTestServer ]
     objc-ivars:      [ _ACDDatabaseInitializer._accessKeys, _ACDDatabaseInitializer._accountTypes, 
                        _ACDDatabaseInitializer._accounts, _ACDDatabaseInitializer._database, 
-                       _ACDDatabaseInitializer._dataclasses ]
+                       _ACDDatabaseInitializer._dataclasses, _AWDAccountsRenewCredentialsBegin._accountType, 
+                       _AWDAccountsRenewCredentialsBegin._avoidUI, _AWDAccountsRenewCredentialsBegin._clientBundleID, 
+                       _AWDAccountsRenewCredentialsBegin._has, _AWDAccountsRenewCredentialsBegin._shouldForce, 
+                       _AWDAccountsRenewCredentialsBegin._timestamp, _AWDAccountsRenewCredentialsEnd._accountType, 
+                       _AWDAccountsRenewCredentialsEnd._has, _AWDAccountsRenewCredentialsEnd._result, 
+                       _AWDAccountsRenewCredentialsEnd._timestamp ]
 ...

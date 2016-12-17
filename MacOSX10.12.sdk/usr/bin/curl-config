@@ -95,7 +95,7 @@ while test $# -gt 0; do
         ;;
 
     --version)
-        echo libcurl 7.49.1
+        echo libcurl 7.51.0
         exit 0
         ;;
 
@@ -107,20 +107,20 @@ while test $# -gt 0; do
         # dash as that's used for things like version 1.2.3-CVS
         cpatch=`echo $checkfor | cut -d. -f3 | cut -d- -f1`
         checknum=`echo "$cmajor*256*256 + $cminor*256 + ${cpatch:-0}" | bc`
-        numuppercase=`echo 073101 | tr 'a-f' 'A-F'`
+        numuppercase=`echo 073300 | tr 'a-f' 'A-F'`
         nownum=`echo "obase=10; ibase=16; $numuppercase" | bc`
 
         if test "$nownum" -ge "$checknum"; then
           # silent success
           exit 0
         else
-          echo "requested version $checkfor is newer than existing 7.49.1"
+          echo "requested version $checkfor is newer than existing 7.51.0"
           exit 1
         fi
         ;;
 
     --vernum)
-        echo 073101
+        echo 073300
         exit 0
         ;;
 

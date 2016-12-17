@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A7E2022A-2088-3B12-8159-D1FD3399201E' ]
+uuids:           [ 'x86_64: 90A21415-9731-3A83-B105-30963A0C865C' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Contacts.framework/Versions/A/Contacts
 current-version: 0.0
@@ -50,11 +50,11 @@ exports:
                        _CNGroupIdentifierKey, _CNGroupModificationDateKey, _CNGroupNameKey, 
                        _CNHomeLabel, _CNHomePageLabel, _CNInstantMessageAddressBundleIdentifiersKey, 
                        _CNInstantMessageAddressServiceKey, _CNInstantMessageAddressTeamIdentifierKey, 
-                       _CNInstantMessageAddressUsernameKey, _CNInstantMessageServiceAIM, 
-                       _CNInstantMessageServiceFacebook, _CNInstantMessageServiceGaduGadu, 
-                       _CNInstantMessageServiceGoogleTalk, _CNInstantMessageServiceICQ, 
-                       _CNInstantMessageServiceJabber, _CNInstantMessageServiceMSN, 
-                       _CNInstantMessageServiceQQ, _CNInstantMessageServiceSkype, 
+                       _CNInstantMessageAddressUserIdentifierKey, _CNInstantMessageAddressUsernameKey, 
+                       _CNInstantMessageServiceAIM, _CNInstantMessageServiceFacebook, 
+                       _CNInstantMessageServiceGaduGadu, _CNInstantMessageServiceGoogleTalk, 
+                       _CNInstantMessageServiceICQ, _CNInstantMessageServiceJabber, 
+                       _CNInstantMessageServiceMSN, _CNInstantMessageServiceQQ, _CNInstantMessageServiceSkype, 
                        _CNInstantMessageServiceYahoo, _CNLabelContactRelationAssistant, 
                        _CNLabelContactRelationBrother, _CNLabelContactRelationChild, 
                        _CNLabelContactRelationFather, _CNLabelContactRelationFriend, 

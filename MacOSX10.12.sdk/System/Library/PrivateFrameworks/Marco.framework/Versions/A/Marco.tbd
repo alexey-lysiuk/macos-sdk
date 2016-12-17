@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: DC571641-0F73-3DFA-B37A-E94DB4CFA644', 'x86_64: DAF5C34A-7ED2-35C0-A7F0-5199D11BB181' ]
+uuids:           [ 'i386: 31820AAC-9780-329E-B8E3-F0E950B4DD26', 'x86_64: C761F1E8-BDAC-34F8-BEBF-9B812ED294F8' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Marco.framework/Versions/A/Marco
 current-version: 800.0

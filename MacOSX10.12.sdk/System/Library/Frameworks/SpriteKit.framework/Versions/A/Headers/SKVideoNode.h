@@ -9,7 +9,6 @@
  
  */
 
-#if __has_include(<AVFoundation/AVPlayer.h>)
 @class AVPlayer;
 
 
@@ -74,5 +73,3 @@ SK_EXPORT @interface SKVideoNode : SKNode
 @end
 
 NS_ASSUME_NONNULL_END
-
-#endif

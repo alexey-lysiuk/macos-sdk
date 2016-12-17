@@ -14,7 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 API_AVAILABLE(macosx(10.12), ios(10.0))
 @interface INSpeakableStringResolutionResult : INIntentResolutionResult
 
-// This resolution result is for when the app extension wants to tell Siri to proceed with a given string. The resolvedString need not be identical to the input string. If the app extension wants to continue with a 'nil' value, it must use +notRequired.
+// This resolution result is for when the app extension wants to tell Siri to proceed, with a given INSpeakableString. The resolvedString can be different than the original INSpeakableString. This allows app extensions to add a pronunciationHint, or otherwise tweak the string.
+// Use +notRequired to continue with a 'nil' value.
 + (instancetype)successWithResolvedString:(INSpeakableString *)resolvedString NS_SWIFT_NAME(success(with:));
 
 // This resolution result is to ask Siri to disambiguate between the provided strings.

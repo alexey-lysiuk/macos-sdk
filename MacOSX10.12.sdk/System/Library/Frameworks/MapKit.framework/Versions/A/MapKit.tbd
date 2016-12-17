@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 339526FC-F2BF-3947-AEC1-6D9B37520473' ]
+uuids:           [ 'x86_64: 7D07F8B4-921F-386A-BB6F-4D461DED447E' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/MapKit.framework/Versions/A/MapKit
 current-version: 0.0
@@ -33,8 +33,8 @@ exports:
                        _MKDefaultCoordinateRegion, _MKDefaultGuidanceManeuverMetrics, 
                        _MKDirectionBetween, _MKDirectionsErrorCodeKey, _MKDirectionsRequestFileExtension, 
                        _MKErrorDomain, _MKErrorGEOErrorKey, _MKErrorGEOErrorUserInfoKey, 
-                       _MKFlyoverPlaceCardDataPathKey, _MKGetCenterForIntegralFrame, 
-                       _MKGetNextOrientation, _MKGuidanceManeuverArrowMetricsApplyScale, 
+                       _MKErrorGEOTransitIncidentKey, _MKFlyoverPlaceCardDataPathKey, 
+                       _MKGetCenterForIntegralFrame, _MKGetNextOrientation, _MKGuidanceManeuverArrowMetricsApplyScale, 
                        _MKGuidanceManeuverArrowMetricsEqualToArrowMetrics, _MKInfoCardIconFontGlyphAppStoreStarEmpty, 
                        _MKInfoCardIconFontGlyphAppStoreStarFull, _MKInfoCardIconFontGlyphAppStoreStarHalfLTR, 
                        _MKInfoCardIconFontGlyphAppStoreStarHalfRTL, _MKInfoCardIconFontGlyphFeatureAvailable, 
@@ -105,12 +105,13 @@ exports:
                        __MKLaunchOptionsRoutingAvoidTollsKey, __MKLaunchOptionsSearchAlongRouteKey, 
                        __MKMapItemDidResolveAttributionNotification, __MKMapRectThatFits, 
                        __MKRAPIsAvailable, __MKSiriLanguageIsRTLFn, __MKTransitIncidentImage, 
-                       __MKURLHandlerDefaultZoomLevel, __MKUserActivitySharedSessionEntityStringKey, 
-                       __MXExtensionCapabilityBaseMap, __MXExtensionCapabilityPlaceCard, 
-                       __MXExtensionCapabilityRestaurantQueueing, __MXExtensionCapabilityRestaurantReservations, 
-                       __MXExtensionCapabilityRouting, __MXExtensionServiceErrorDomain, 
-                       __MXExtensionServiceErrorOriginalErrorKey, __Z10_splitNodeP14MKQuadTrieNodeP10MKQuadTrie, 
-                       __Z16MKMapRectLEQSize9MKMapRect9MKMapSize, __Z16_depthFirstApplyP14MKQuadTrieNodeU13block_pointerF28MKQuadTrieTraversalDirectiveS0_E, 
+                       __MKURLHandlerDefaultZoomLevel, __MKURLSourceAppIdKey, __MKUserActivitySharedSessionEntityStringKey, 
+                       __MKUserActivitySourceAppIdKey, __MXExtensionCapabilityBaseMap, 
+                       __MXExtensionCapabilityPlaceCard, __MXExtensionCapabilityRestaurantQueueing, 
+                       __MXExtensionCapabilityRestaurantReservations, __MXExtensionCapabilityRouting, 
+                       __MXExtensionServiceErrorDomain, __MXExtensionServiceErrorOriginalErrorKey, 
+                       __Z10_splitNodeP14MKQuadTrieNodeP10MKQuadTrie, __Z16MKMapRectLEQSize9MKMapRect9MKMapSize, 
+                       __Z16_depthFirstApplyP14MKQuadTrieNodeU13block_pointerF28MKQuadTrieTraversalDirectiveS0_E, 
                        __Z17__depthFirstApplyP14MKQuadTrieNodeU13block_pointerF28MKQuadTrieTraversalDirectiveS0_E, 
                        __Z18MKQuadTrieNodeFreeP14MKQuadTrieNode, __Z18MKQuadTrieNodeMake9MKMapRect, 
                        __Z18_breadthFirstApplyP14MKQuadTrieNodeU13block_pointerF28MKQuadTrieTraversalDirectiveS0_E, 

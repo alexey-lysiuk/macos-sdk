@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: BE713700-D794-34CE-9244-7D0851CD366F', 'x86_64: 20468A72-CF24-3871-9A53-31DED54B04FC' ]
+uuids:           [ 'i386: BF04366C-A7BD-3F20-A683-B9D6A0AB6FED', 'x86_64: 258B6CFE-FD64-31C5-9973-2FD80597ECDA' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DFRFoundation.framework/Versions/A/DFRFoundation
-current-version: 104.1
+current-version: 104.14
 objc-constraint: none
 exports:         
   - archs:           [ i386 ]
@@ -21,17 +21,18 @@ exports:
                        _DFRElementGetScaleFactor, _DFRElementGetScreenBounds, _DFRElementGetSize, 
                        _DFRElementGetWhitePoint, _DFRElementMinimizeSystemModal, 
                        _DFRElementPresentSystemModal, _DFRElementSetActive, _DFRElementSetAnimationHandler, 
-                       _DFRElementSetControlStripPresenceForIdentifier, _DFRElementSetPreferredSize, 
-                       _DFRElementSetPreferredSizeWithAttrs, _DFREnableSystemAppModal, 
-                       _DFRFoundationCreateCGEventWithHIDEvent, _DFRFoundationCreateHIDEventWithMouseActivity, 
-                       _DFRFoundationPostEventWithMouseActivity, _DFRFoundationPostHIDKeyboardUsage, 
-                       _DFRFoundationUserDeviceHandshake, _DFRFoundationVersionNumber, 
-                       _DFRFoundationVersionString, _DFRGetScreenRectForPlacement, 
-                       _DFRGetScreenSize, _DFRGetStatus, _DFRLoadSystemExtras, _DFRPresentationModeGetApp, 
-                       _DFRPresentationModeGetAppOverrides, _DFRPresentationModeGetDefault, 
-                       _DFRPresentationModeGetFNBehavior, _DFRPresentationModeSetApp, 
-                       _DFRPresentationModeSetAppOverrides, _DFRPresentationModeSetDefault, 
-                       _DFRPresentationModeSetFNBehavior, _DFRProtocolActive, _DFRProtocolAnimationBezelBrightness, 
+                       _DFRElementSetAnimationPreferredSize, _DFRElementSetControlStripPresenceForIdentifier, 
+                       _DFRElementSetPreferredSize, _DFRElementSetPreferredSizeWithAttrs, 
+                       _DFREnableSystemAppModal, _DFREnableTestMode, _DFRFoundationCreateCGEventWithHIDEvent, 
+                       _DFRFoundationCreateHIDEventWithMouseActivity, _DFRFoundationPostEventWithMouseActivity, 
+                       _DFRFoundationPostHIDKeyboardUsage, _DFRFoundationUserDeviceHandshake, 
+                       _DFRFoundationVersionNumber, _DFRFoundationVersionString, 
+                       _DFRGetScreenRectForPlacement, _DFRGetScreenSize, _DFRGetStatus, 
+                       _DFRLoadSystemExtras, _DFRPresentationModeGetApp, _DFRPresentationModeGetAppOverrides, 
+                       _DFRPresentationModeGetDefault, _DFRPresentationModeGetFNBehavior, 
+                       _DFRPresentationModeSetApp, _DFRPresentationModeSetAppOverrides, 
+                       _DFRPresentationModeSetDefault, _DFRPresentationModeSetFNBehavior, 
+                       _DFRProtocolActive, _DFRProtocolAnimationBezelBrightness, 
                        _DFRProtocolAnimationColorTemperature, _DFRProtocolAnimationDuration, 
                        _DFRProtocolAnimationFence, _DFRProtocolAnimationGlyphBrightness, 
                        _DFRProtocolAnimationTimingFunction, _DFRProtocolButtonAltImage, 
@@ -41,8 +42,9 @@ exports:
                        _DFRProtocolDisplayScale, _DFRProtocolDisplaySizes, _DFRProtocolElementAccessibilityToken, 
                        _DFRProtocolElementBounds, _DFRProtocolIdentifier, _DFRProtocolKey, 
                        _DFRProtocolPlacement, _DFRProtocolPresentationMode, _DFRProtocolService, 
-                       _DFRProtocolStatus, _DFRProtocolSystemModal, _DFRRegisterStatusChangeCallback, 
-                       _DFRSendBarrier, _DFRSetAttributes, _DFRSetCustomization, 
+                       _DFRProtocolStatus, _DFRProtocolSystemModal, _DFRProtocolTestModeData, 
+                       _DFRRegisterStatusChangeCallback, _DFRSendBarrier, _DFRSetAttributes, 
+                       _DFRSetCustomization, _DFRSetEventCapture, _DFRSetIgnoreKeyFocusTheft, 
                        _DFRSetStatus, _DFRSetWhitePoint, _DFRSystemButtonCreate, 
                        _DFRSystemButtonGetIdentifier, _DFRSystemButtonSetAlternateImage, 
                        _DFRSystemButtonSetAlternateNamedImage, _DFRSystemButtonSetBezelTintColor, 

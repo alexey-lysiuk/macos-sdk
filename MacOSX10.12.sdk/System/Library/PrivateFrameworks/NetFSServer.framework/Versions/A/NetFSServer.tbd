@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 00FB74CA-1D74-3C41-A6BC-272E90641C37', 'x86_64: 202D04D5-31E2-3EC8-9471-B124F440CDB9' ]
+uuids:           [ 'i386: 85FCE0FD-6660-327D-99CC-89FDD2AB5093', 'x86_64: 8615A65A-7624-3C2F-8C54-D1E13B835E79' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/NetFSServer.framework/Versions/A/NetFSServer
 objc-constraint: none

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 9D16403F-B540-330A-A41A-2B508D3E736E', 'x86_64: 9A27D11D-953D-33DC-89C5-88E13FB5A899' ]
+uuids:           [ 'i386: 7BD97F0F-2961-3E62-B040-B152FEEA93BD', 'x86_64: FDEF6BE1-F479-3E68-A12B-102C98E98D65' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Assistant.framework/Versions/A/Assistant
 current-version: 21.0

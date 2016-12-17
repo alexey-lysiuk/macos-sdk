@@ -113,6 +113,7 @@ typedef NS_OPTIONS(NSUInteger, PHAssetMediaSubtype) {
     PHAssetMediaSubtypePhotoHDR           = (1UL << 1),
     PHAssetMediaSubtypePhotoScreenshot NS_AVAILABLE(10_11, 9_0) = (1UL << 2),
     PHAssetMediaSubtypePhotoLive NS_AVAILABLE(10_11, 9_1) = (1UL << 3),
+    PHAssetMediaSubtypePhotoDepthEffect NS_AVAILABLE(10_12_2, 10_2) = (1UL << 4),
     
     // Video subtypes
     PHAssetMediaSubtypeVideoStreamed      = (1UL << 16),

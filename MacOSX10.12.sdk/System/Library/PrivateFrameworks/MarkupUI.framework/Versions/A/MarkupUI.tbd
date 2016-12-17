@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4D3F1B15-605C-3C7D-BCE5-940FB9CC14A3' ]
+uuids:           [ 'x86_64: 7EF9E55E-E801-30FD-967D-7FD5328483E1' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MarkupUI.framework/Versions/A/MarkupUI
 objc-constraint: none

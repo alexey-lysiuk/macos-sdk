@@ -20,6 +20,7 @@ NS_CLASS_AVAILABLE(10_12, 10_0)
  If this is your first fetch or if you wish to re-fetch all zones, pass nil for the change token.
  Change token are opaque tokens and clients should not infer any behavior based on their content.
  CKFetchDatabaseChangesOperations are supported in a privateCloudDatabase and sharedCloudDatabase */
+- (instancetype)init NS_DESIGNATED_INITIALIZER;
 - (instancetype)initWithPreviousServerChangeToken:(nullable CKServerChangeToken *)previousServerChangeToken;
 
 @property (nonatomic, copy, nullable) CKServerChangeToken *previousServerChangeToken;

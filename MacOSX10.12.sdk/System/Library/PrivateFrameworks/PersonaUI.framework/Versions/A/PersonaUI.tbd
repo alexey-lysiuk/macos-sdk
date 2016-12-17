@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 710CE460-7895-336B-9A47-1D7C84E1D4DC' ]
+uuids:           [ 'x86_64: B4DF5E5A-1617-3EB7-B93F-0DF5D296FF42' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PersonaUI.framework/Versions/A/PersonaUI
 objc-constraint: none

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 78E838D6-F174-37ED-9C72-B52524FA1973' ]
+uuids:           [ 'x86_64: 9125B173-2942-394F-9861-8C6DEB5B60C8' ]
 platform:        macosx
 install-name:    /usr/lib/libsystemstats.dylib
-current-version: 293.20.4
+current-version: 293.30.15
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -14,19 +14,22 @@ exports:
                        __systemstats_read_uuid, __systemstats_save_current_boot_uuid, 
                        __systemstats_stream_create, __systemstats_stream_write, __systemstats_write, 
                        __systemstats_writers, _absolute_time_to_absolute_milliseconds, 
-                       _get_microstackshots_from_files, _now_in_absolute_milliseconds, 
-                       _now_in_wall_milliseconds, _systemstats_bundle_is_webkit_plugin, 
-                       _systemstats_can_register_for_timed_ui_event, _systemstats_canonicalize_launchd_label, 
-                       _systemstats_checkpoint_async, _systemstats_coalition_id_for_pid, 
-                       _systemstats_create_record, _systemstats_create_record_for_pa_notification, 
-                       _systemstats_create_record_for_ssd_throttling, _systemstats_create_record_from_btleAd, 
-                       _systemstats_create_record_from_btleAds, _systemstats_create_record_from_cstate, 
-                       _systemstats_create_record_from_display_brightness, _systemstats_create_record_from_fan_state, 
-                       _systemstats_create_record_from_gpu_cstates, _systemstats_create_record_from_interrupt_vector, 
-                       _systemstats_create_record_from_keyboard_brightness, _systemstats_create_record_from_memory_pressure, 
-                       _systemstats_create_record_from_smc_key, _systemstats_create_record_from_smc_key_set, 
-                       _systemstats_create_record_from_thermal_levels, _systemstats_create_subrecord_from_time_at_tier, 
-                       _systemstats_dispose_record, _systemstats_foreach_micro, _systemstats_get_battery_charge_graph, 
+                       _descriptionForSleepSubclass, _descriptionForSleepWakeState, 
+                       _descriptionForSwapType, _get_microstackshots_from_files, 
+                       _now_in_absolute_milliseconds, _now_in_wall_milliseconds, 
+                       _systemstatsCopyFilesMatchingCriteria, _systemstatsListFilesMatchingCriteria, 
+                       _systemstats_bundle_is_webkit_plugin, _systemstats_can_register_for_timed_ui_event, 
+                       _systemstats_canonicalize_launchd_label, _systemstats_checkpoint_async, 
+                       _systemstats_coalition_id_for_pid, _systemstats_create_record, 
+                       _systemstats_create_record_for_pa_notification, _systemstats_create_record_for_ssd_throttling, 
+                       _systemstats_create_record_from_btleAd, _systemstats_create_record_from_btleAds, 
+                       _systemstats_create_record_from_cstate, _systemstats_create_record_from_display_brightness, 
+                       _systemstats_create_record_from_fan_state, _systemstats_create_record_from_gpu_cstates, 
+                       _systemstats_create_record_from_interrupt_vector, _systemstats_create_record_from_keyboard_brightness, 
+                       _systemstats_create_record_from_memory_pressure, _systemstats_create_record_from_smc_key, 
+                       _systemstats_create_record_from_smc_key_set, _systemstats_create_record_from_thermal_levels, 
+                       _systemstats_create_subrecord_from_time_at_tier, _systemstats_dispose_record, 
+                       _systemstats_foreach_micro, _systemstats_get_battery_charge_graph, 
                        _systemstats_get_microstackshots, _systemstats_get_time_range_summary, 
                        _systemstats_get_top_coalitions, _systemstats_insert_absolute_time, 
                        _systemstats_insert_and_dispose_subrecord, _systemstats_insert_ssd_throttle_total_time, 

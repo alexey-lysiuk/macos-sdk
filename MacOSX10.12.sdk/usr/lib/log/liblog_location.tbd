@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9850718C-EDF8-3FED-9FFF-2FDB18F465B5' ]
+uuids:           [ 'x86_64: 02E54335-E754-3EF6-B24F-A6644A68593C' ]
 platform:        macosx
 install-name:    /usr/lib/log/liblog_location.dylib
-current-version: 2100.3.14
+current-version: 2100.0.34
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -14,12 +14,13 @@ exports:
                        _CLCopyFormattedStringForIOMessage, _CLCopyFormattedStringForLocalGPSStateMachineLocationSourceState, 
                        _CLCopyFormattedStringForLocationProviderMotionDetected, _CLCopyFormattedStringForLocationProviderNotification, 
                        _CLCopyFormattedStringForLocationStreamingGranularity, _CLCopyFormattedStringForLocationType, 
-                       _CLCopyFormattedStringForNoLocalGPSStateMachineLocationSourceState, 
+                       _CLCopyFormattedStringForMotionActivity, _CLCopyFormattedStringForNoLocalGPSStateMachineLocationSourceState, 
                        _CLCopyFormattedStringForOriginDevice, _CLCopyFormattedStringForPSYSyncRestriction, 
                        _CLCopyFormattedStringForPSYSyncSessionType, _CLCopyFormattedStringForReachability, 
                        _CLCopyFormattedStringForSYSessionState, _CLCopyFormattedStringForSqliteResult, 
                        _CLCopyFormattedStringForStreamingAwareLocationProviderStateMachineLocationSource, 
                        _CLCopyFormattedStringForTelephonyServiceCell, _OSLogCopyFormattedString, 
-                       __Z19CLCopyMASWithFormatP8NSStringz, _liblog_locationVersionNumber, 
-                       _liblog_locationVersionString ]
+                       __Z19CLCopyMASWithFormatP8NSStringz, __Z42CLCopyFormattedStringForMotionActivityTypeP11objc_object, 
+                       __Z48CLCopyFormattedStringForMotionActivityConfidenceP11objc_object, 
+                       _liblog_locationVersionNumber, _liblog_locationVersionString ]
 ...

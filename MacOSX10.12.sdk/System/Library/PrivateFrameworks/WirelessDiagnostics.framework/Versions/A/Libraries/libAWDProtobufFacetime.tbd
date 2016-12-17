@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BC140051-05A4-34EF-9D49-DAE551C0F291' ]
+uuids:           [ 'x86_64: 0B9D1AF5-76E4-3373-9AB9-06BBD7C33E0D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/WirelessDiagnostics.framework/Versions/A/Libraries/libAWDProtobufFacetime.dylib
 objc-constraint: none

@@ -11,13 +11,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class NSSliderAccessory, NSSlider;
 
-typedef CGFloat NSSliderAccessoryWidth _NS_TYPED_EXTENSIBLE_ENUM NS_AVAILABLE_MAC(10_12_1);
+typedef CGFloat NSSliderAccessoryWidth _NS_TYPED_EXTENSIBLE_ENUM NS_AVAILABLE_MAC(10_12_2);
 /// The default width for slider accessories.
-APPKIT_EXTERN const NSSliderAccessoryWidth NSSliderAccessoryWidthDefault NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN const NSSliderAccessoryWidth NSSliderAccessoryWidthDefault NS_AVAILABLE_MAC(10_12_2);
 /// The standard "wide" width for slider accessories.
-APPKIT_EXTERN const NSSliderAccessoryWidth NSSliderAccessoryWidthWide NS_AVAILABLE_MAC(10_12_1);
+APPKIT_EXTERN const NSSliderAccessoryWidth NSSliderAccessoryWidthWide NS_AVAILABLE_MAC(10_12_2);
 
-NS_CLASS_AVAILABLE_MAC(10_12_1)
+NS_CLASS_AVAILABLE_MAC(10_12_2)
 @interface NSSliderTouchBarItem : NSTouchBarItem {
 @private
     __kindof NSView *_view;

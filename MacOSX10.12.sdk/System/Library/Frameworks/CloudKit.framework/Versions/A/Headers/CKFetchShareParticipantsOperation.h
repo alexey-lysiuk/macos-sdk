@@ -14,10 +14,9 @@ NS_CLASS_AVAILABLE(10_12, 10_0)
 @interface CKFetchShareParticipantsOperation : CKOperation
 
 - (instancetype)init NS_DESIGNATED_INITIALIZER;
-
 - (instancetype)initWithUserIdentityLookupInfos:(NSArray<CKUserIdentityLookupInfo *> *)userIdentityLookupInfos;
 
-@property (nonatomic, copy) NSArray<CKUserIdentityLookupInfo *> *userIdentityLookupInfos;
+@property (nonatomic, copy, nullable) NSArray<CKUserIdentityLookupInfo *> *userIdentityLookupInfos;
 
 @property (nonatomic, copy, nullable) void (^shareParticipantFetchedBlock)(CKShareParticipant *participant);
 

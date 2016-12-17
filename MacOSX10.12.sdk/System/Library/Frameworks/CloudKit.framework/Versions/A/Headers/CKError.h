@@ -59,11 +59,11 @@ typedef NS_ENUM(NSInteger, CKErrorCode) {
     CKErrorZoneNotFound                   = 26, /* The specified zone does not exist on the server */
     CKErrorLimitExceeded                  = 27, /* The request to the server was too large. Retry this request as a smaller batch. */
     CKErrorUserDeletedZone                = 28, /* The user deleted this zone through the settings UI. Your client should either remove its local data or prompt the user before attempting to re-upload any data to this zone. */
-    CKErrorTooManyParticipants            = 29, /* A share cannot be saved because there are too many participants attached to the share */
-    CKErrorAlreadyShared                  = 30, /* A record/share cannot be saved, doing so would cause a hierarchy of records to exist in multiple shares */
-    CKErrorReferenceViolation             = 31, /* The target of a record's parent or share reference was not found */
-    CKErrorManagedAccountRestricted       = 32, /* Request was rejected due to a managed account restriction */
-    CKErrorParticipantMayNeedVerification = 33, /* Share Metadata cannot be determined, because the user is not a member of the share.  There are invited participants on the share with email addresses or phone numbers not associated with any iCloud account. The user may be able to join the share if they can associate one of those email addresses or phone numbers with their iCloud account via the system Share Accept UI. Call UIApplication's openURL on this share URL to have the user attempt to verify their information. */
+    CKErrorTooManyParticipants            NS_AVAILABLE(10_12, 10_0) = 29, /* A share cannot be saved because there are too many participants attached to the share */
+    CKErrorAlreadyShared                  NS_AVAILABLE(10_12, 10_0) = 30, /* A record/share cannot be saved, doing so would cause a hierarchy of records to exist in multiple shares */
+    CKErrorReferenceViolation             NS_AVAILABLE(10_12, 10_0) = 31, /* The target of a record's parent or share reference was not found */
+    CKErrorManagedAccountRestricted       NS_AVAILABLE(10_12, 10_0) = 32, /* Request was rejected due to a managed account restriction */
+    CKErrorParticipantMayNeedVerification NS_AVAILABLE(10_12, 10_0) = 33, /* Share Metadata cannot be determined, because the user is not a member of the share.  There are invited participants on the share with email addresses or phone numbers not associated with any iCloud account. The user may be able to join the share if they can associate one of those email addresses or phone numbers with their iCloud account via the system Share Accept UI. Call UIApplication's openURL on this share URL to have the user attempt to verify their information. */
 } NS_ENUM_AVAILABLE(10_10, 8_0);
 
 NS_ASSUME_NONNULL_END

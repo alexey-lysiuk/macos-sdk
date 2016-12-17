@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3E4B524A-45BF-38A9-B90B-DF1DAB72B38F' ]
+uuids:           [ 'x86_64: 3887F3F9-A073-3640-8F67-B674207365E6' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ProofReader.framework/Versions/A/ProofReader
-current-version: 381.0
+current-version: 383.0
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

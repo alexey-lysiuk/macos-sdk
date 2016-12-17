@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class MPRemoteCommand;
 
-MP_API(ios(7.1), tvos(7.1), macos(10.12.1))
+MP_API(ios(7.1), tvos(7.1), macos(10.12.2))
 @interface MPRemoteCommandEvent : NSObject
 
 /// The command that sent the event.
@@ -25,7 +25,7 @@ MP_API(ios(7.1), tvos(7.1), macos(10.12.1))
 
 @end
 
-MP_API(ios(7.1), tvos(7.1), macos(10.12.1))
+MP_API(ios(7.1), tvos(7.1), macos(10.12.2))
 @interface MPSkipIntervalCommandEvent : MPRemoteCommandEvent
 
 /// The chosen interval for this skip command event.
@@ -36,9 +36,9 @@ MP_API(ios(7.1), tvos(7.1), macos(10.12.1))
 typedef NS_ENUM(NSUInteger, MPSeekCommandEventType) {
     MPSeekCommandEventTypeBeginSeeking,
     MPSeekCommandEventTypeEndSeeking
-} NS_ENUM_AVAILABLE(10_12_1, 7_1);
+} NS_ENUM_AVAILABLE(10_12_2, 7_1);
 
-MP_API(ios(7.1), tvos(7.1), macos(10.12.1))
+MP_API(ios(7.1), tvos(7.1), macos(10.12.2))
 @interface MPSeekCommandEvent : MPRemoteCommandEvent
 
 /// The type of seek command event, which specifies whether an external player
@@ -47,7 +47,7 @@ MP_API(ios(7.1), tvos(7.1), macos(10.12.1))
 
 @end
 
-MP_API(ios(7.1), tvos(7.1), macos(10.12.1))
+MP_API(ios(7.1), tvos(7.1), macos(10.12.2))
 @interface MPRatingCommandEvent : MPRemoteCommandEvent
 
 /// The chosen rating for this command event. This value will be within the
@@ -56,7 +56,7 @@ MP_API(ios(7.1), tvos(7.1), macos(10.12.1))
 
 @end
 
-MP_API(ios(7.1), tvos(7.1), macos(10.12.1))
+MP_API(ios(7.1), tvos(7.1), macos(10.12.2))
 @interface MPChangePlaybackRateCommandEvent : MPRemoteCommandEvent
 
 /// The chosen playback rate for this command event. This value will be equal
@@ -66,7 +66,7 @@ MP_API(ios(7.1), tvos(7.1), macos(10.12.1))
 
 @end
 
-MP_API(ios(7.1), tvos(7.1), macos(10.12.1))
+MP_API(ios(7.1), tvos(7.1), macos(10.12.2))
 @interface MPFeedbackCommandEvent : MPRemoteCommandEvent
 
 /// Whether the command event is a negative operation. For example, the command
@@ -82,7 +82,7 @@ MP_API(ios(7.1), tvos(7.1), macos(10.12.1))
 
 @end
 
-MP_API(ios(9.0), tvos(9.0), macos(10.12.1))
+MP_API(ios(9.0), tvos(9.0), macos(10.12.2))
 @interface MPChangeLanguageOptionCommandEvent : MPRemoteCommandEvent
 
 /// The requested language option to change.
@@ -96,7 +96,7 @@ MP_API(ios(9.0), tvos(9.0), macos(10.12.1))
 
 @end
 
-MP_API(ios(8.0), tvos(8.0), macos(10.12.1))
+MP_API(ios(8.0), tvos(8.0), macos(10.12.2))
 @interface MPChangePlaybackPositionCommandEvent : MPRemoteCommandEvent
 
 /// The desired playback position to use when setting the current time of the player.
@@ -104,7 +104,7 @@ MP_API(ios(8.0), tvos(8.0), macos(10.12.1))
 
 @end
 
-MP_API(ios(8.0), tvos(8.0), macos(10.12.1))
+MP_API(ios(8.0), tvos(8.0), macos(10.12.2))
 @interface MPChangeShuffleModeCommandEvent : MPRemoteCommandEvent
 
 /// The desired shuffle type to use when fulfilling the request.
@@ -115,7 +115,7 @@ MP_API(ios(8.0), tvos(8.0), macos(10.12.1))
 
 @end
 
-MP_API(ios(8.0), tvos(8.0), macos(10.12.1))
+MP_API(ios(8.0), tvos(8.0), macos(10.12.2))
 @interface MPChangeRepeatModeCommandEvent : MPRemoteCommandEvent
 
 /// The desired repeat type to use when fulfilling the request.

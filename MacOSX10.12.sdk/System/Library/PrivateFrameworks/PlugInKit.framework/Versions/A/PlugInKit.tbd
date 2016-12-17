@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 966D5575-E092-33A4-8CD8-595EB6AA637A' ]
+uuids:           [ 'x86_64: E41C33BD-8C3F-32B2-A485-A2BFEE148E04' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PlugInKit.framework/Versions/A/PlugInKit
 objc-constraint: none

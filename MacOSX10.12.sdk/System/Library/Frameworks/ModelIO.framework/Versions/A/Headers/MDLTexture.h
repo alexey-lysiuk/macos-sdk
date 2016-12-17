@@ -338,6 +338,15 @@ MDL_EXPORT
                               channelEncoding:(MDLTextureChannelEncoding)channelEncoding
                                     grayscale:(BOOL)grayscale;
 
+/**
+ Create a texture containing cellular noise. 
+ 
+ @param frequency How large the cells will be
+ */
+- (instancetype)initCellularNoiseWithFrequency:(float)frequency
+                                          name:(nullable NSString*)name
+                             textureDimensions:(vector_int2)textureDimensions
+                               channelEncoding:(MDLTextureChannelEncoding)channelEncoding;
 
 @end
 

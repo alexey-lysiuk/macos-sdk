@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FD52F4CA-A836-3EB4-AB0E-0A9F9DA0F8A6' ]
+uuids:           [ 'x86_64: AC6DAF6F-B6CE-3A9B-AD5C-8A96E0168A00' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IMDMessageServices.framework/Versions/A/IMDMessageServices
 current-version: 800.0

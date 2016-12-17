@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 86C08C6F-91BE-372D-BAA6-DB3C57F7E1E4', 'x86_64: AD6A70B6-4186-30E4-826D-5D9D24F09D09' ]
+uuids:           [ 'i386: B18277CC-FF3C-3663-AFE9-541D0C316D07', 'x86_64: F0B19A03-CE92-36E5-8927-F0CB85C7927D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PackageKit.framework/Versions/A/PackageKit
 current-version: 434.0
@@ -81,15 +81,16 @@ exports:
                        _PKInstall._error, _PKInstall._installAnalyzer, _PKInstall._installController, 
                        _PKInstall._installControllerUpdateQueue, _PKInstall._installRequest, 
                        _PKInstall._installSandbox, _PKInstall._installState, _PKInstall._isCancelled, 
-                       _PKInstall._isDone, _PKInstallAnalyzer._atomicallyObsoleteBundles, 
-                       _PKInstallAnalyzer._bundleIdentToXATTRMap, _PKInstallAnalyzer._bundlePathToComponentMap, 
-                       _PKInstallAnalyzer._contentCachingPaths, _PKInstallAnalyzer._deferredInstallPaths, 
-                       _PKInstallAnalyzer._installRequest, _PKInstallAnalyzer._kextPathCount, 
-                       _PKInstallAnalyzer._maskPathsByPackageSpecifier, _PKInstallAnalyzer._obsoletedFiles, 
-                       _PKInstallAnalyzer._potentiallyObsoleteDirectories, _PKInstallAnalyzer._registrationPaths, 
-                       _PKInstallAnalyzer._skipComponentsByPackageSpecifier, _PKInstallAnalyzer._systemLibraryCount, 
-                       _PKInstallAnalyzer._truncateBeforeObsoletingFiles, _PKInstallAnalyzer._xpcCachePathCount, 
-                       _PKInstallClient._conn, _PKInstallClient._delegate, _PKInstallClient._delegateWantsUpdates, 
+                       _PKInstall._isDone, _PKInstall._previousPackageIdentifiersSharingGroupsWithCurrentRequest, 
+                       _PKInstallAnalyzer._atomicallyObsoleteBundles, _PKInstallAnalyzer._bundleIdentToXATTRMap, 
+                       _PKInstallAnalyzer._bundlePathToComponentMap, _PKInstallAnalyzer._contentCachingPaths, 
+                       _PKInstallAnalyzer._deferredInstallPaths, _PKInstallAnalyzer._installRequest, 
+                       _PKInstallAnalyzer._kextPathCount, _PKInstallAnalyzer._maskPathsByPackageSpecifier, 
+                       _PKInstallAnalyzer._obsoletedFiles, _PKInstallAnalyzer._potentiallyObsoleteDirectories, 
+                       _PKInstallAnalyzer._registrationPaths, _PKInstallAnalyzer._skipComponentsByPackageSpecifier, 
+                       _PKInstallAnalyzer._systemLibraryCount, _PKInstallAnalyzer._truncateBeforeObsoletingFiles, 
+                       _PKInstallAnalyzer._xpcCachePathCount, _PKInstallClient._conn, 
+                       _PKInstallClient._delegate, _PKInstallClient._delegateWantsUpdates, 
                        _PKInstallClient._installRequest, _PKInstallClient._installToken, 
                        _PKInstallClient._isInitialized, _PKInstallClient._isRegistering, 
                        _PKInstallClient._lastProgress, _PKInstallClient._statusTimer, 
@@ -142,6 +143,7 @@ exports:
                        _PKInstallRequest._untrustedEnvironment, _PKInstallRequest._useAFSCByDefault, 
                        _PKInstallRequest._useForegroundPriorityForStaging, _PKInstallSandbox._bomPathsByPackageSpecifier, 
                        _PKInstallSandbox._cleanupPaths, _PKInstallSandbox._installRequest, 
+                       _PKInstallSandbox._previousPackageIdentifiersSharingGroupsWithSandbox, 
                        _PKInstallSandbox._relevance, _PKInstallSandbox._sandboxPath, 
                        _PKInstallSandbox._scriptDirsByPackageSpecifier, _PKInstallSandbox._scriptsAttributes, 
                        _PKInstallSandbox._scriptsPath, _PKInstallSandbox._stageDate, 

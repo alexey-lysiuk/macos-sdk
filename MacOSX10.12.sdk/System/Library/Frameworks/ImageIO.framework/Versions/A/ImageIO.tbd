@@ -1,7 +1,7 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64, x86_64h ]
-uuids:           [ 'i386: 0B321748-1503-3AF0-9C8B-91263A0E2E96', 'x86_64: F2DC3293-E37B-3D16-8176-1168199C1C20', 
-                   'x86_64h: 3A122D5C-DA93-371B-9504-DEFEE0358E3E' ]
+uuids:           [ 'i386: E1677C46-8E91-326B-BDEB-6DA28CE9AE74', 'x86_64: A9A63D25-DA38-33C0-98C6-F015952568B2', 
+                   'x86_64h: 564168E7-BEC0-35E3-9BF0-59B65C17225E' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO
 objc-constraint: none

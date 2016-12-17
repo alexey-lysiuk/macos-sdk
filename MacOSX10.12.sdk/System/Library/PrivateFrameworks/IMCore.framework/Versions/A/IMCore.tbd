@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BB4F438F-C938-34BF-A0DD-31F78FF65CBF' ]
+uuids:           [ 'x86_64: 1EC3FA3A-47C3-36A8-B825-0E9165707294' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IMCore.framework/Versions/A/IMCore
 current-version: 800.0
@@ -166,14 +166,15 @@ exports:
                        _IMLocatingChatItem, _IMLocationManager, _IMLocationShareActionChatItem, 
                        _IMMe, _IMMessage, _IMMessageAcknowledgmentChatItem, _IMMessageAcknowledgmentStringHelper, 
                        _IMMessageActionChatItem, _IMMessageAttributionChatItem, _IMMessageChatItem, 
-                       _IMMessageEditChatItem, _IMMessagePartChatItem, _IMMessageStatusChatItem, 
-                       _IMParentalControls, _IMParticipantChangeChatItem, _IMPeople, 
-                       _IMPeopleCollection, _IMPerson, _IMPluginPayload, _IMSPIHandle, 
-                       _IMSPIMessage, _IMSendProgress, _IMSenderChatItem, _IMServiceAgent, 
-                       _IMServiceChatItem, _IMServiceImpl, _IMStickerRegistry, _IMSuggestionsService, 
-                       _IMTextMessagePartChatItem, _IMTranscriptChatItem, _IMTranscriptChatItemRules, 
-                       _IMTranscriptPluginBreadcrumbChatItem, _IMTranscriptPluginChatItem, 
-                       _IMTranscriptPluginStatusChatItem, _IMTypingChatItem, _IMTypingPluginChatItem ]
+                       _IMMessageEditChatItem, _IMMessageEffectControlChatItem, _IMMessagePartChatItem, 
+                       _IMMessageStatusChatItem, _IMParentalControls, _IMParticipantChangeChatItem, 
+                       _IMPeople, _IMPeopleCollection, _IMPerson, _IMPluginPayload, 
+                       _IMSPIHandle, _IMSPIMessage, _IMSendProgress, _IMSenderChatItem, 
+                       _IMServiceAgent, _IMServiceChatItem, _IMServiceImpl, _IMStickerRegistry, 
+                       _IMSuggestionsService, _IMTextMessagePartChatItem, _IMTranscriptChatItem, 
+                       _IMTranscriptChatItemRules, _IMTranscriptPluginBreadcrumbChatItem, 
+                       _IMTranscriptPluginChatItem, _IMTranscriptPluginStatusChatItem, 
+                       _IMTypingChatItem, _IMTypingPluginChatItem ]
     objc-ivars:      [ _IMAccount._accountImage, _IMAccount._asleep, _IMAccount._smallImage, 
                        _IMAccountController._accountMap, _IMAssociatedMessageChatItem._geometryDescriptor, 
                        _IMAttachment._createdDate, _IMAttachment._guid, _IMAttachment._isSticker, 

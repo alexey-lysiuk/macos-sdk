@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: DE2E1719-BEDF-33C7-88EE-D562BFD9BE3B', 'x86_64: 26CB59F5-7D23-312B-9B1E-EB47D6490A16' ]
+uuids:           [ 'i386: 6E9A8BD1-5CA7-351A-9AA4-58CF211EA57B', 'x86_64: 884AE0DB-A1AF-3D0D-BFA6-19C6D47E0009' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CalendarAgentLink.framework/Versions/A/CalendarAgentLink
-current-version: 302.0
+current-version: 302.1
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

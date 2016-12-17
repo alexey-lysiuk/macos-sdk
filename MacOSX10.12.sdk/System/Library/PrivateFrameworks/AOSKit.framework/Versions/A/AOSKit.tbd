@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 923A0590-3092-31FD-8308-FF98406FC69D', 'x86_64: BA381244-EC48-35D8-A106-63CC39B5E1D6' ]
+uuids:           [ 'i386: 0CE20BF3-EC5C-3991-9E19-1FA74AFAB735', 'x86_64: 65BECFB4-57A5-341C-BD5E-750D0A74AF52' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AOSKit.framework/Versions/A/AOSKit
 current-version: 241.0

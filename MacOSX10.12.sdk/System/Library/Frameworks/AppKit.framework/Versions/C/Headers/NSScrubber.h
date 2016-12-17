@@ -15,19 +15,19 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol NSScrubberDataSource <NSObject>
 @required
-- (NSInteger)numberOfItemsForScrubber:(NSScrubber *)scrubber NS_AVAILABLE_MAC(10_12_1);
-- (__kindof NSScrubberItemView *)scrubber:(NSScrubber *)scrubber viewForItemAtIndex:(NSInteger)index NS_AVAILABLE_MAC(10_12_1);
+- (NSInteger)numberOfItemsForScrubber:(NSScrubber *)scrubber NS_AVAILABLE_MAC(10_12_2);
+- (__kindof NSScrubberItemView *)scrubber:(NSScrubber *)scrubber viewForItemAtIndex:(NSInteger)index NS_AVAILABLE_MAC(10_12_2);
 @end
 
 @protocol NSScrubberDelegate <NSObject>
 @optional
-- (void)scrubber:(NSScrubber *)scrubber didSelectItemAtIndex:(NSInteger)selectedIndex NS_AVAILABLE_MAC(10_12_1);
-- (void)scrubber:(NSScrubber *)scrubber didHighlightItemAtIndex:(NSInteger)highlightedIndex NS_AVAILABLE_MAC(10_12_1);
-- (void)scrubber:(NSScrubber *)scrubber didChangeVisibleRange:(NSRange)visibleRange NS_AVAILABLE_MAC(10_12_1);
+- (void)scrubber:(NSScrubber *)scrubber didSelectItemAtIndex:(NSInteger)selectedIndex NS_AVAILABLE_MAC(10_12_2);
+- (void)scrubber:(NSScrubber *)scrubber didHighlightItemAtIndex:(NSInteger)highlightedIndex NS_AVAILABLE_MAC(10_12_2);
+- (void)scrubber:(NSScrubber *)scrubber didChangeVisibleRange:(NSRange)visibleRange NS_AVAILABLE_MAC(10_12_2);
 
-- (void)didBeginInteractingWithScrubber:(NSScrubber *)scrubber NS_AVAILABLE_MAC(10_12_1);
-- (void)didFinishInteractingWithScrubber:(NSScrubber *)scrubber NS_AVAILABLE_MAC(10_12_1);
-- (void)didCancelInteractingWithScrubber:(NSScrubber *)scrubber NS_AVAILABLE_MAC(10_12_1);
+- (void)didBeginInteractingWithScrubber:(NSScrubber *)scrubber NS_AVAILABLE_MAC(10_12_2);
+- (void)didFinishInteractingWithScrubber:(NSScrubber *)scrubber NS_AVAILABLE_MAC(10_12_2);
+- (void)didCancelInteractingWithScrubber:(NSScrubber *)scrubber NS_AVAILABLE_MAC(10_12_2);
 @end
 
 #pragma mark - Associated Types
@@ -42,7 +42,7 @@ NS_ASSUME_NONNULL_BEGIN
 typedef NS_ENUM(NSInteger, NSScrubberMode) {
     NSScrubberModeFixed = 0,
     NSScrubberModeFree
-} NS_ENUM_AVAILABLE_MAC(10_12_1);
+} NS_ENUM_AVAILABLE_MAC(10_12_2);
 
 /*!
  * @typedef NSScrubberAlignment
@@ -58,14 +58,14 @@ typedef NS_ENUM(NSInteger, NSScrubberAlignment) {
     NSScrubberAlignmentLeading,
     NSScrubberAlignmentTrailing,
     NSScrubberAlignmentCenter
-} NS_ENUM_AVAILABLE_MAC(10_12_1);
+} NS_ENUM_AVAILABLE_MAC(10_12_2);
 
 /*!
  * @class NSScrubberSelectionStyle
  * @abstract @c NSScrubberSelectionStyle is an abstract class that provides decorative accessory views for selected and highlighted items within a NSScrubber control. Class properties provide convenient access to built-in styles. For a completely custom style, subclassers can override @c -makeSelectionView to create and configure arbitrary @c NSScrubberSelectionView subclasses.
  *
  */
-NS_CLASS_AVAILABLE_MAC(10_12_1)
+NS_CLASS_AVAILABLE_MAC(10_12_2)
 @interface NSScrubberSelectionStyle : NSObject <NSCoding>
 
 #pragma mark Built-in Styles
@@ -93,7 +93,7 @@ NS_CLASS_AVAILABLE_MAC(10_12_1)
  * Clients provide data to @c NSScrubber via a data source object (see the @c NSScrubberDataSource protocol) and react to user interaction via a delegate object (see the @c NSScrubberDelegate protocol).
  *
  */
-NS_CLASS_AVAILABLE_MAC(10_12_1)
+NS_CLASS_AVAILABLE_MAC(10_12_2)
 @interface NSScrubber : NSView {
 @private
     id _delegate;

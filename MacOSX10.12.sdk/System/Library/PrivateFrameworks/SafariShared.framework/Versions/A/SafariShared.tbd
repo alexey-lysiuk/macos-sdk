@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 959D7CB2-9996-31DC-81A5-7A6E043E6283' ]
+uuids:           [ 'x86_64: F2C0D699-2936-3850-BA76-D9D84934E522' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SafariShared.framework/Versions/A/SafariShared
-current-version: 602.2.14
+current-version: 602.3.12
 compatibility-version: 0.0
 objc-constraint: none
 exports:         
@@ -245,6 +245,7 @@ exports:
                        __ZN12SafariShared28ReaderAvailabilityController21detectAvailabilityNowEv, 
                        __ZN12SafariShared28ReaderAvailabilityController21determineAvailabilityEv, 
                        __ZN12SafariShared28ReaderAvailabilityController21doneWithArticleFinderEv, 
+                       __ZN12SafariShared28ReaderAvailabilityController21originalArticleFinderEv, 
                        __ZN12SafariShared28ReaderAvailabilityController22scheduleDetectionTimerEd, 
                        __ZN12SafariShared28ReaderAvailabilityController24invalidateDetectionTimerEv, 
                        __ZN12SafariShared28ReaderAvailabilityController25checkAvailabilityIfNeededEv, 
@@ -292,7 +293,6 @@ exports:
                        __ZNK12SafariShared24FieldLabelPatternMatcher6searchEPKtS2_, 
                        __ZNK12SafariShared24FieldLabelPatternMatcher7toRangeERKNS0_5MatchE, 
                        __ZNK12SafariShared25ArticleFinderJSController13mainImageNodeEv, 
-                       __ZNK12SafariShared28ReaderAvailabilityController21originalArticleFinderEv, 
                        __ZNK12SafariShared28ReaderAvailabilityController33originalArticleFinderJSControllerEv, 
                        __ZNK12SafariShared33BookmarkAndHistoryCompletionMatch17originalURLStringEv, 
                        __ZNK12SafariShared33BookmarkAndHistoryCompletionMatch20userVisibleURLStringEv, 
@@ -302,7 +302,7 @@ exports:
                        __ZNK12SafariShared33BookmarkAndHistoryCompletionMatch7compareEPS0_, 
                        __ZTVN12SafariShared12JSControllerE, __ZTVN12SafariShared13FrameMetadataE, 
                        __ZTVN12SafariShared18ReaderJSControllerE, __ZTVN12SafariShared25ArticleFinderJSControllerE, 
-                       __ZTVN12SafariShared28ReaderAvailabilityControllerE, _initializeSandbox, 
+                       __ZTVN12SafariShared28ReaderAvailabilityControllerE, _initializeSandboxWithBundleNameAndEmbeddedProfile, 
                        _initializeSandboxWithEmbeddedProfile ]
     objc-classes:    [ _WBSAWDLogger, _WBSAddressBookMatch, _WBSAddressBookMatchMarker, 
                        _WBSAddressBookValueSpecifier, _WBSAsynchronousRequestHelper, 
@@ -319,13 +319,13 @@ exports:
                        _WBSCloudHistoryPushAgent, _WBSCloudHistoryPushAgentProxy, 
                        _WBSCloudHistoryStore, _WBSCloudHistoryThrottler, _WBSCloudHistoryVisit, 
                        _WBSCloudHistoryVisitIdentifier, _WBSCloudTab, _WBSCloudTabCloseRequest, 
-                       _WBSCloudTabDevice, _WBSCloudTabStore, _WBSCompletionListRankingObserver, 
-                       _WBSCompletionQuery, _WBSCredentialMatch, _WBSCreditCardData, 
-                       _WBSCreditCardDataController, _WBSCreditCardFormatter, _WBSDuetSession, 
-                       _WBSEncryptedCloudKeyValueStore, _WBSFeedElement, _WBSFeedEntry, 
-                       _WBSFeedFinderController, _WBSFeedMetadata, _WBSFeedParser, 
-                       _WBSFeedSource, _WBSFluidProgressAnimation, _WBSFluidProgressController, 
-                       _WBSFluidProgressState, _WBSFormAutoFillClassificationToCorrectionsTransformer, 
+                       _WBSCloudTabDevice, _WBSCloudTabStore, _WBSCoalescedAsynchronousWriter, 
+                       _WBSCompletionListRankingObserver, _WBSCompletionQuery, _WBSCredentialMatch, 
+                       _WBSCreditCardData, _WBSCreditCardDataController, _WBSCreditCardFormatter, 
+                       _WBSDuetSession, _WBSEncryptedCloudKeyValueStore, _WBSFeedElement, 
+                       _WBSFeedEntry, _WBSFeedFinderController, _WBSFeedMetadata, 
+                       _WBSFeedParser, _WBSFeedSource, _WBSFluidProgressAnimation, 
+                       _WBSFluidProgressController, _WBSFluidProgressState, _WBSFormAutoFillClassificationToCorrectionsTransformer, 
                        _WBSFormAutoFillCorrectionManager, _WBSFormAutoFillCorrectionsDomainNormalizer, 
                        _WBSFormAutoFillCorrectionsHistoryObserver, _WBSFormAutoFillCorrectionsSQLiteStore, 
                        _WBSFormAutoFillItem, _WBSFormAutoFillMetadataCorrector, _WBSFormAutoFillParsecCrowdsourcedCorrectionsProcessor, 

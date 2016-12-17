@@ -1,18 +1,17 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 084AE849-BCE0-3920-A2C6-AFFC562F82BC' ]
+uuids:           [ 'x86_64: 1A378389-3D3A-36DC-88FB-895820E957A9' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreCDP.framework/Versions/A/CoreCDP
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CDPAuthProviderExportedInterface, _CDPDaemonExportedInterface, 
-                       _CDPDeviceClassToLocKey, _CDPGetFileLoggingEnabled, _CDPIDMSPasswordResetKey, 
-                       _CDPIDMSRecordMIDKey, _CDPLocalizedString, _CDPStateErrorDomain, 
-                       _CDPUIProviderExportedInterface, _CDP_FOLLOWUP_OFFLINE_PASSCODE, 
-                       _CDP_FOLLOWUP_STATE_REPAIR, _CoreCDPVersionNumber, _CoreCDPVersionString, 
-                       __CDPGetLogSystem, __CDPStateError, __CDPSuffixForDeviceClass, 
-                       __CDPSuffixForSecretType ]
+                       _CDPDeviceClassToLocKey, _CDPIDMSPasswordResetKey, _CDPIDMSRecordMIDKey, 
+                       _CDPLocalizedString, _CDPStateErrorDomain, _CDPUIProviderExportedInterface, 
+                       _CDP_FOLLOWUP_OFFLINE_PASSCODE, _CDP_FOLLOWUP_STATE_REPAIR, 
+                       _CoreCDPVersionNumber, _CoreCDPVersionString, __CDPGetLogSystem, 
+                       __CDPStateError, __CDPSuffixForDeviceClass, __CDPSuffixForSecretType ]
     objc-classes:    [ _CDPAccount, _CDPAuthProviderProxy, _CDPContext, _CDPController, 
                        _CDPDaemonConnection, _CDPDevice, _CDPFollowUpContext, _CDPFollowUpController, 
                        _CDPKeychainSync, _CDPLocalDevice, _CDPLocalDeviceSecretHandler, 

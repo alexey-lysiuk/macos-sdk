@@ -1,13 +1,13 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8C4D1E9F-5E35-3CB9-9E7D-DC1983313CA3' ]
+uuids:           [ 'x86_64: 50D31648-1AD9-3F02-9524-1F39F766FC62' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/FMF.framework/Versions/A/FMF
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
-    symbols:         [ _FMFErrorDomain, _FMFGroupIdGroup, _FMFGroupIdOneToOne, _kFMFSyncXPCTimeout, 
-                       _kMapImageKey ]
+    symbols:         [ _FMFErrorDomain, _FMFGroupIdDefault, _FMFGroupIdGroup, _FMFGroupIdOneToOne, 
+                       _kFMFSyncXPCTimeout, _kMapImageKey ]
     objc-classes:    [ _FMFAppAccountInfo, _FMFDevice, _FMFFriendshipRequest, _FMFHandle, 
                        _FMFLocation, _FMFMapImageRequest, _FMFMapSession, _FMFSession, 
                        _FMFSynchronizer ]

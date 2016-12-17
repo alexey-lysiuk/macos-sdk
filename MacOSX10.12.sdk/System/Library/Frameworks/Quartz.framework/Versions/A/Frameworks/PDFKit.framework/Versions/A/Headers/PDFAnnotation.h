@@ -71,7 +71,7 @@ extern NSString* const kPDFAnnotationKey_WidgetFieldType;                   // "
 extern NSString* const kPDFAnnotationKey_WidgetAppearanceDictionary;        // "/MK": Dictionary
 extern NSString* const kPDFAnnotationKey_WidgetMaxLen;                      // "/MaxLen": Integer (See PDF Specification 32000-1:2008, Table 229)
 extern NSString* const kPDFAnnotationKey_WidgetOptions;                     // "/Opt": Array (each element is either a string, or an array of two strings (See PDF Specification 32000-1:2008, Table 231))
-extern NSString* const kPDFAnnotationKey_WidgetTextLabelUI;                 // "/TU": String
+extern NSString* const kPDFAnnotationKey_WidgetTextLabelUI;                   // "/TU": String
 extern NSString* const kPDFAnnotationKey_WidgetValue;                       // "/V": (various)
 
 @class PDFAction, PDFBorder, PDFPage, PDFAnnotationPopup, PDFAnnotationPrivateVars;
@@ -157,6 +157,9 @@ NS_CLASS_AVAILABLE_MAC(10_4)
 
 // Draw method.  Draws in page-space relative to origin of "box" passed in.
 - (void) drawWithBox: (PDFDisplayBox) box PDFKIT_DEPRECATED(10_4, 10_12);
+
+// Draw method.  Draws in page-space relative to origin of "box" passed in and to the given context
+- (void) drawWithBox: (PDFDisplayBox) box inContext: (CGContextRef) context PDFKIT_AVAILABLE(10_12);
 
 // -------- attribute mutations
 

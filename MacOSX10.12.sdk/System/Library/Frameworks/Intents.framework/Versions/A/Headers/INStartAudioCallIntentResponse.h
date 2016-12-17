@@ -13,6 +13,8 @@ typedef NS_ENUM(NSInteger, INStartAudioCallIntentResponseCode) {
     INStartAudioCallIntentResponseCodeContinueInApp,
     INStartAudioCallIntentResponseCodeFailure,
     INStartAudioCallIntentResponseCodeFailureRequiringAppLaunch,
+    INStartAudioCallIntentResponseCodeFailureAppConfigurationRequired,
+    INStartAudioCallIntentResponseCodeFailureCallingServiceNotAvailable,
 } API_AVAILABLE(macosx(10.12), ios(10.0));
 
 NS_ASSUME_NONNULL_BEGIN

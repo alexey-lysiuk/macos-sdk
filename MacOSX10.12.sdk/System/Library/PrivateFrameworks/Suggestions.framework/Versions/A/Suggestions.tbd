@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: CD5EB976-5F38-32C0-A983-7A4BD711C8D3', 'x86_64: 76F22560-5970-35A8-9F91-C0949DE2C431' ]
+uuids:           [ 'i386: 5C7521A1-6C0B-394B-A641-2750432D9DC9', 'x86_64: A202005E-CF88-3F7B-B955-B25FD89EC790' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Suggestions.framework/Versions/A/Suggestions
 current-version: 197.0

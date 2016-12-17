@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6695B8EE-5DF2-3709-88AC-90A42844485A' ]
+uuids:           [ 'x86_64: 0D3116D0-738E-3AE6-B605-9CF1830CF236' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/MetalKit.framework/Versions/A/MetalKit
-current-version: 65.2
+current-version: 71.0
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

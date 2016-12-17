@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EF42B531-E840-359A-B401-35699DBB9C5C' ]
+uuids:           [ 'x86_64: E1C9ECAC-2A7D-3E1F-8B44-547206BC0BB5' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AccessibilitySupport.framework/Versions/A/AccessibilitySupport
 objc-constraint: none

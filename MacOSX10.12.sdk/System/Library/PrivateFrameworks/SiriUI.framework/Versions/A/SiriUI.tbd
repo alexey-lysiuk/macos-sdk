@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 773844B9-41EA-3F5A-ABDA-8ED3DD66D278' ]
+uuids:           [ 'x86_64: 0FA54714-3A55-3C14-9F73-4F11B6B70124' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SiriUI.framework/Versions/A/SiriUI
 objc-constraint: none
@@ -26,14 +26,15 @@ exports:
                        _SiriUIAceObjectViewController, _SiriUIAcousticIDSpinner, 
                        _SiriUIAnimationUtilities, _SiriUIAppInfoRepository, _SiriUIAttributedButtonFooterView, 
                        _SiriUIAttributionImage, _SiriUIButton, _SiriUICard, _SiriUICardAttributeManager, 
-                       _SiriUIClumpView, _SiriUICollectionMenuView, _SiriUICollectionViewItem, 
-                       _SiriUIConfiguration, _SiriUIContentButton, _SiriUIContentCollectionViewCell, 
-                       _SiriUIContentCollectionViewItem, _SiriUIContentLabel, _SiriUIDisambiguationItem, 
-                       _SiriUIFontScalingUtilities, _SiriUIFooterButton, _SiriUIGuideCacheManager, 
-                       _SiriUIHypertextButton, _SiriUIKeyline, _SiriUIObjectPickerButtonView, 
-                       _SiriUIObjectPickerViewController, _SiriUIPreferences, _SiriUIReusableFooterView, 
-                       _SiriUIReusableHeaderView, _SiriUIScrollView, _SiriUISnippetControllerCell, 
-                       _SiriUISnippetManager, _SiriUISnippetViewController, _SiriUISpeechSynthesisVoiceManager, 
+                       _SiriUIClearBackgroundCell, _SiriUIClumpView, _SiriUICollectionMenuView, 
+                       _SiriUICollectionViewItem, _SiriUIConfiguration, _SiriUIContentButton, 
+                       _SiriUIContentCollectionViewCell, _SiriUIContentCollectionViewItem, 
+                       _SiriUIContentLabel, _SiriUIDisambiguationItem, _SiriUIFontScalingUtilities, 
+                       _SiriUIFooterButton, _SiriUIGuideCacheManager, _SiriUIHypertextButton, 
+                       _SiriUIKeyline, _SiriUIObjectPickerButtonView, _SiriUIObjectPickerViewController, 
+                       _SiriUIPreferences, _SiriUIReusableFooterView, _SiriUIReusableHeaderView, 
+                       _SiriUIScrollView, _SiriUISnippetControllerCell, _SiriUISnippetManager, 
+                       _SiriUISnippetViewController, _SiriUISpeechSynthesisVoiceManager, 
                        _SiriUITextView, _SiriUIThumbnailView, _SiriUITitledSectionHeaderView, 
                        _SiriUITwoButtonFooterView, _SiriUIURLSession ]
 ...

@@ -44,6 +44,7 @@
 #define PDFEdgeInsets                                   NSEdgeInsets
 
 // Constants
+#define PDFPointZero                                    NSZeroPoint
 #define PDFSizeZero                                     NSZeroSize
 #define PDFRectZero                                     NSZeroRect
 

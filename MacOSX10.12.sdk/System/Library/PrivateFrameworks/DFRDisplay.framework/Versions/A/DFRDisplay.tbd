@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 16544EC4-A50C-33EF-BA26-92886F214B87' ]
+uuids:           [ 'x86_64: 8F991EC8-3E5E-3DA0-8797-5254D8C8EE83' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DFRDisplay.framework/Versions/A/DFRDisplay
 objc-constraint: none

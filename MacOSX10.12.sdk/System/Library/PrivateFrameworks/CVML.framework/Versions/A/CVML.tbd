@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BF3D7E3F-C2ED-3A83-A09D-849529602753' ]
+uuids:           [ 'x86_64: 95401577-70CF-3525-B611-FD53FCB3A9F2' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CVML.framework/Versions/A/CVML
-current-version: 1.56.10
+current-version: 1.56.20
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -24,7 +24,8 @@ exports:
                        _CVMLFaceGeometryEstimatorInitOption_CameraFocalLength, _CVMLFaceGeometryEstimatorInitOption_ImageSize, 
                        _CVMLFaceGeometryEstimatorProcessOption_EstimatePoseOnly, 
                        _CVMLFaceGeometryEstimatorProcessOption_InputFaceObservation, 
-                       _CVMLFaceIdProcessOption_QueryThreshold, _CVMLFaceLandmarkDetectorProcessOption_InputFaceObservations, 
+                       _CVMLFaceIdProcessOption_QueryThreshold, _CVMLFaceLandmarkDetectorProcessOption_BlinkDetection, 
+                       _CVMLFaceLandmarkDetectorProcessOption_InputFaceObservations, 
                        _CVMLFaceLandmarkDetectorProcessOption_RefineLeftEye, _CVMLFaceLandmarkDetectorProcessOption_RefineMouth, 
                        _CVMLFaceLandmarkDetectorProcessOption_RefineRightEye, _CVMLFaceLandmarkDetectorType, 
                        _CVMLFaceLandmarkDetector_computeCentroid, _CVMLFaceLandmarksRegion_AllPoints, 
@@ -90,7 +91,9 @@ exports:
                        _CVMLRequestOption_CameraPixelFocalLength, _CVMLRequestOption_ClusteringAlgorithm, 
                        _CVMLRequestOption_DetectionLevel, _CVMLRequestOption_DumpIntermediateImages, 
                        _CVMLRequestOption_FaceRectangleDetectorEnableLowMemoryMode, 
-                       _CVMLRequestOption_GetClusteredFaceIds, _CVMLRequestOption_InputClusterIds, 
+                       _CVMLRequestOption_GetClusteredFaceIds, _CVMLRequestOption_GetClusteredFaceIdsForFaceId, 
+                       _CVMLRequestOption_GetDistanceBetweenClustersWithFaceIds, 
+                       _CVMLRequestOption_InputClusterFlags, _CVMLRequestOption_InputClusterIds, 
                        _CVMLRequestOption_InputClusters, _CVMLRequestOption_InputFaceModels, 
                        _CVMLRequestOption_InputFaces, _CVMLRequestOption_InputIdentities, 
                        _CVMLRequestOption_InputImage, _CVMLRequestOption_InputImageprints, 

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 30538C02-C625-3999-8223-ADDE32A4E32D', 'x86_64: 43D40063-BD46-3008-8992-FF092B7C9A58' ]
+uuids:           [ 'i386: 0F4D09EA-68E3-3CB1-B56B-F60B0533B66F', 'x86_64: 00BF8427-967F-3693-A86F-DA0F29B49BF3' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/GenerationalStorage.framework/Versions/A/GenerationalStorage
-current-version: 259.0
+current-version: 259.2
 objc-constraint: none
 exports:         
   - archs:           [ i386 ]

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5C5A18C5-3826-3680-84F0-1B3416D427CD' ]
+uuids:           [ 'x86_64: C77175CC-7953-3B48-8663-1B236BC9B93B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ACDEClient.framework/Versions/A/ACDEClient
 objc-constraint: none

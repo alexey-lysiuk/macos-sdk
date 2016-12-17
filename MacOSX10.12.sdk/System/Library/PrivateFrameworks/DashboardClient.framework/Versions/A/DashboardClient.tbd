@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: FF8DB941-D930-344D-A393-4D2CFD8DA8E3', 'x86_64: AE6F9888-D11C-36CC-804D-8D8B9DA73751' ]
+uuids:           [ 'i386: C32DAA03-F443-39C4-9B0E-DF483FDBBC87', 'x86_64: C34CCEE8-9B79-3FC1-A496-D4381E2FCD91' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DashboardClient.framework/Versions/A/DashboardClient
 objc-constraint: none

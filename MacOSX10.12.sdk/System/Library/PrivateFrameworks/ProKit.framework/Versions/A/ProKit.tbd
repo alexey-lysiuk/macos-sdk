@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 058D4D4B-EDEA-3C53-8AB1-028C30B7DAA2', 'x86_64: E5D98DA0-C140-39B1-9F54-B8C7AD639B80' ]
+uuids:           [ 'i386: 1F89756C-E319-39A9-9828-494138D67660', 'x86_64: C2F16D3C-C581-3D46-929B-396193C2F5F0' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ProKit.framework/Versions/A/ProKit
 current-version: 2001.0

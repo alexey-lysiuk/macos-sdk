@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: FFAD46AA-6030-3104-A882-F99DB2D12829', 'x86_64: 024484A6-B858-30DA-B93E-7F62C1776085' ]
+uuids:           [ 'i386: FDD9D5C2-3567-39EE-952F-6A3BF5E348A8', 'x86_64: 0F899C07-AA23-350E-8670-9090924D670D' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/ImageCaptureCore.framework/Versions/A/ImageCaptureCore
 objc-constraint: none
@@ -65,11 +65,10 @@ exports:
                        _ICDeviceProperties._bonjourServiceName, _ICDeviceProperties._bonjourServiceType, 
                        _ICDeviceProperties._bonjourTXTRecord, _ICDeviceProperties._buttonPressed, 
                        _ICDeviceProperties._canCancelSoftwareInstallation, _ICDeviceProperties._capabilities, 
-                       _ICDeviceProperties._closeSessionBlock, _ICDeviceProperties._closeSessionPending, 
-                       _ICDeviceProperties._connection, _ICDeviceProperties._connectionID, 
-                       _ICDeviceProperties._connectionLock, _ICDeviceProperties._delegate, 
-                       _ICDeviceProperties._deviceID, _ICDeviceProperties._deviceRef, 
-                       _ICDeviceProperties._deviceSoftwareInstallPercentCompleted, 
+                       _ICDeviceProperties._closeSessionPending, _ICDeviceProperties._connection, 
+                       _ICDeviceProperties._connectionID, _ICDeviceProperties._connectionLock, 
+                       _ICDeviceProperties._delegate, _ICDeviceProperties._deviceID, 
+                       _ICDeviceProperties._deviceRef, _ICDeviceProperties._deviceSoftwareInstallPercentCompleted, 
                        _ICDeviceProperties._endpoint, _ICDeviceProperties._fwGUID, 
                        _ICDeviceProperties._hasConfigurableWiFiInterface, _ICDeviceProperties._icon, 
                        _ICDeviceProperties._iconPath, _ICDeviceProperties._installSoftwareRequested, 

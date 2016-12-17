@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CD4F0D6A-0C10-3137-8DF7-096115D1418C' ]
+uuids:           [ 'x86_64: 9C99B8C9-6D7D-3418-9EF2-3545E00DA41F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ContactsUICore.framework/Versions/A/ContactsUICore
 objc-constraint: none
@@ -10,11 +10,12 @@ exports:
                        _CNContactsUIErrorURLKey, _CNContactsUIErrorUserActivityKey, 
                        _CNUIBitmapContextCreate, _CNUICoreIsLogEnabled, _CNUICoreLogCategoryActions, 
                        _CNUICoreLogCategoryLikenesses, _CNUICoreLoggingContext, _CNUICoreLoggingSubsystem, 
-                       _CNUIDrawLikenessPlatterInContext, _CNUILoggingContextCache, 
-                       _CNUIPropertyListRepresentationAttachmentIndexKey, _CNUIPropertyListRepresentationManifestFilename, 
-                       _CNUIUserActionRecentsAddressKindForContactProperty, _CNUIUserActionRecentsBundleIdentifierKey, 
-                       _CNUIUserActionRecentsChangedNotification, _CNUIUserActionRecentsDateKey, 
-                       _CNUIUserActionRecentsDomain, _DrawSilhouetteInContext, __CNUICoreInternalBuild ]
+                       _CNUIDrawLikenessPlatterInContext, _CNUILikenessResolverMaxContacts, 
+                       _CNUILoggingContextCache, _CNUIPropertyListRepresentationAttachmentIndexKey, 
+                       _CNUIPropertyListRepresentationManifestFilename, _CNUIUserActionRecentsAddressKindForContactProperty, 
+                       _CNUIUserActionRecentsBundleIdentifierKey, _CNUIUserActionRecentsChangedNotification, 
+                       _CNUIUserActionRecentsDateKey, _CNUIUserActionRecentsDomain, 
+                       _DrawSilhouetteInContext, __CNUICoreInternalBuild ]
     objc-classes:    [ _CNCapabilities, _CNContactsUIError, _CNLSApplicationWorkspace, 
                        _CNMCProfileConnection, _CNTUCallProvider, _CNTUCallProviderManager, 
                        _CNTUCallProviderManagerDelegate, _CNUIApplicationLaunchOptions, 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 05C9AD84-C10D-3527-BE8F-8F326DF9FE07', 'x86_64: 6CA15481-3E2A-3921-AD9F-F70F0CE6DB3C' ]
+uuids:           [ 'i386: B84BE540-B184-35B2-ACC5-569F6326397C', 'x86_64: EB96FED1-22BD-300C-A1AF-FAAA54047A6B' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/InputMethodKit.framework/Versions/A/InputMethodKit
 objc-constraint: none
@@ -72,12 +72,12 @@ exports:
                        _IMKCandidateSelectionView._candidateController, _IMKCandidateSelectionView._delegate, 
                        _IMKCandidateSelectionView._radarButton, _IMKCandidateSelectionView._selectedIndex, 
                        _IMKCandidateSelectionView._sortingModes, _IMKCandidateSelectionViewButton._mousePointerInside, 
-                       _IMKCandidateSelectionViewButton._properties, _IMKCandidateSelectionViewButton._trackingRectTag, 
-                       _IMKCandidateStepperView._bottomArrowView, _IMKCandidateStepperView._candidateController, 
-                       _IMKCandidateStepperView._initialized, _IMKCandidateStepperView._topArrowView, 
-                       _IMKCandidateUIElement._candidateController, _IMKCandidateUIElement._candidateView, 
-                       _IMKCandidateUIElement._definitionUnit, _IMKCandidateUIProperties._annotationStringProperties, 
-                       _IMKCandidateUIProperties._candidateLeftMarginHorizontal, 
+                       _IMKCandidateSelectionViewButton._properties, _IMKCandidateSelectionViewButton._radarButton, 
+                       _IMKCandidateSelectionViewButton._trackingRectTag, _IMKCandidateStepperView._bottomArrowView, 
+                       _IMKCandidateStepperView._candidateController, _IMKCandidateStepperView._initialized, 
+                       _IMKCandidateStepperView._topArrowView, _IMKCandidateUIElement._candidateController, 
+                       _IMKCandidateUIElement._candidateView, _IMKCandidateUIElement._definitionUnit, 
+                       _IMKCandidateUIProperties._annotationStringProperties, _IMKCandidateUIProperties._candidateLeftMarginHorizontal, 
                        _IMKCandidateUIProperties._candidateLeftMarginVertical, _IMKCandidateUIProperties._candidateThickness, 
                        _IMKCandidateUIProperties._dictionary, _IMKCandidateUIProperties._groupBarThickness, 
                        _IMKCandidateUIProperties._groupStringProperties, _IMKCandidateUIProperties._guideStringProperties, 

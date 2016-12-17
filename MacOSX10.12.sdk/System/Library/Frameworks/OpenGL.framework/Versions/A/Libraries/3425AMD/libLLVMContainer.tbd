@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 7E1718F7-DF99-309B-B848-DC54C8A4FF21', 'x86_64: E8EBD1CF-4606-30EC-9A80-3EF5AB82F8B5' ]
+uuids:           [ 'i386: B84F85C7-065C-3486-A507-F153B149314C', 'x86_64: D8AFCEE5-1E64-3204-9123-972103BF557B' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/OpenGL.framework//Versions/A/Libraries/3425AMD/libLLVMContainer.dylib
 objc-constraint: none

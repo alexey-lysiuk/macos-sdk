@@ -31,6 +31,8 @@ FOUNDATION_EXPORT const unsigned char IntentsVersionString[];
 #import <Intents/INImage.h>
 #import <Intents/INPerson.h>
 #import <Intents/INSpeakableString.h>
+#import <Intents/INPersonHandleLabel.h>
+#import <Intents/INPersonRelationship.h>
 
 // Common Resolution Results
 #import <Intents/INDateComponentsRangeResolutionResult.h>
@@ -64,3 +66,6 @@ FOUNDATION_EXPORT const unsigned char IntentsVersionString[];
 // Utilities
 #import <Intents/CLPlacemark+IntentsAdditions.h>
 #import <Intents/NSUserActivity+IntentsAdditions.h>
+
+// Deprecated
+#import <Intents/INPerson_Deprecated.h>

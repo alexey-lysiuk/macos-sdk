@@ -58,8 +58,8 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark NSTextField Touch Bar Item Properties
 @interface NSTextField (NSTouchBar)
 
-@property (getter=isAutomaticTextCompletionEnabled) BOOL automaticTextCompletionEnabled NS_AVAILABLE_MAC(10_12_1);
-@property BOOL allowsCharacterPickerTouchBarItem NS_AVAILABLE_MAC(10_12_1);
+@property (getter=isAutomaticTextCompletionEnabled) BOOL automaticTextCompletionEnabled NS_AVAILABLE_MAC(10_12_2);
+@property BOOL allowsCharacterPickerTouchBarItem NS_AVAILABLE_MAC(10_12_2);
 
 @end
 
@@ -103,11 +103,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol NSTextFieldDelegate <NSControlTextEditingDelegate>
 @optional
-- (nullable NSArray *)textField:(NSTextField *)textField textView:(NSTextView *)textView candidatesForSelectedRange:(NSRange)selectedRange NS_AVAILABLE_MAC(10_12_1);
+- (nullable NSArray *)textField:(NSTextField *)textField textView:(NSTextView *)textView candidatesForSelectedRange:(NSRange)selectedRange NS_AVAILABLE_MAC(10_12_2);
 
-- (NSArray<NSTextCheckingResult *> *)textField:(NSTextField *)textField textView:(NSTextView *)textView candidates:(NSArray<NSTextCheckingResult *> *)candidates forSelectedRange:(NSRange)selectedRange NS_AVAILABLE_MAC(10_12_1);
+- (NSArray<NSTextCheckingResult *> *)textField:(NSTextField *)textField textView:(NSTextView *)textView candidates:(NSArray<NSTextCheckingResult *> *)candidates forSelectedRange:(NSRange)selectedRange NS_AVAILABLE_MAC(10_12_2);
 
-- (BOOL)textField:(NSTextField *)textField textView:(NSTextView *)textView shouldSelectCandidateAtIndex:(NSUInteger)index NS_AVAILABLE_MAC(10_12_1);
+- (BOOL)textField:(NSTextField *)textField textView:(NSTextView *)textView shouldSelectCandidateAtIndex:(NSUInteger)index NS_AVAILABLE_MAC(10_12_2);
 @end
 
 @interface NSTextField(NSDeprecated)

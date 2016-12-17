@@ -13,7 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 NS_CLASS_AVAILABLE(10_10, 8_0) __WATCHOS_PROHIBITED
 @interface CKModifySubscriptionsOperation : CKDatabaseOperation
 
-- (instancetype)initWithSubscriptionsToSave:(nullable NSArray<CKSubscription *> *)subscriptionsToSave subscriptionIDsToDelete:(nullable NSArray<NSString *> *)subscriptionIDsToDelete NS_DESIGNATED_INITIALIZER;
+- (instancetype)init NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithSubscriptionsToSave:(nullable NSArray<CKSubscription *> *)subscriptionsToSave subscriptionIDsToDelete:(nullable NSArray<NSString *> *)subscriptionIDsToDelete;
 
 @property (nonatomic, copy, nullable) NSArray<CKSubscription *> *subscriptionsToSave;
 @property (nonatomic, copy, nullable) NSArray<NSString *> *subscriptionIDsToDelete;

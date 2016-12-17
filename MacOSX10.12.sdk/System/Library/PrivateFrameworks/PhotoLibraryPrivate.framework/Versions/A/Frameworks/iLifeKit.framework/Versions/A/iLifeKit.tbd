@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D67236F2-9B53-30BF-9DD5-03C40E7F86AE' ]
+uuids:           [ 'x86_64: 4C0DE3E4-1606-3913-A5D5-C99B57772125' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoLibraryPrivate.framework/Versions/A/Frameworks/iLifeKit.framework/Versions/A/iLifeKit
 current-version: 350.16

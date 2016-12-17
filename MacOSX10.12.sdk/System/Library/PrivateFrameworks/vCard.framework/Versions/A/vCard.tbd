@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: C63CE3A8-4D6E-3403-AAB1-235F114F1D54', 'x86_64: 443AB8FC-1C0F-3505-8C90-CDE600C9C73E' ]
+uuids:           [ 'i386: 7739EA9E-3C10-3BFB-B518-6EC62B82F4BC', 'x86_64: 278D1962-FFC8-399C-92FF-1D50383D291F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/vCard.framework/Versions/A/vCard
 current-version: 0.0
@@ -22,7 +22,7 @@ exports:
                        _CNVCardDateScanner._position, _CNVCardDateScanner._string, 
                        _CNVCardEncoding._name, _CNVCardEncoding._stringEncoding, 
                        _CNVCardFilteredPerson._person, _CNVCardFilteredPerson._scope, 
-                       _CNVCardFilteredPersonScope._blacklist, _CNVCardFilteredPersonScope._socialProfileFilterOptions, 
+                       _CNVCardFilteredPersonScope._blacklist, _CNVCardFilteredPersonScope._filterOptions, 
                        _CNVCardLexer._activeTokenSets, _CNVCardLexer._bytes, _CNVCardLexer._cursor, 
                        _CNVCardLexer._data, _CNVCardLexer._errorCount, _CNVCardLexer._length, 
                        _CNVCardLexer._peekedPoint, _CNVCardLexer._unicode, _CNVCardLine._groupedLines, 
@@ -37,7 +37,7 @@ exports:
                        _CNVCardNameComponents._suffix, _CNVCardNameComponents._title, 
                        _CNVCardOptions._availableEncodings, _CNVCardOptions._compressPhotos, 
                        _CNVCardOptions._includeNotes, _CNVCardOptions._includePhotos, 
-                       _CNVCardOptions._includePrivateFields, _CNVCardOptions._includePrivateSocialData, 
+                       _CNVCardOptions._includePrivateBundleIdentifiers, _CNVCardOptions._includePrivateFields, 
                        _CNVCardOptions._includeUserSettings, _CNVCardOptions._maximumEncodingLength, 
                        _CNVCardOptions._maximumImageEncodingLength, _CNVCardOptions._outputVersion, 
                        _CNVCardOptions._prefersUncroppedPhotos, _CNVCardOptions._treatAsUnknownProperties, 
@@ -97,12 +97,14 @@ exports:
                        _CNVCardAlternateBirthdayComponentsKey, _CNVCardBirthdayComponentsKey, 
                        _CNVCardCalendarURIsKey, _CNVCardCardDAVUIDKey, _CNVCardDepartmentNameKey, 
                        _CNVCardEmailKey, _CNVCardFirstNameKey, _CNVCardFormattedNameKey, 
-                       _CNVCardHomeLabel, _CNVCardInstantMessageKey, _CNVCardInstantMessageServiceAIM, 
+                       _CNVCardHomeLabel, _CNVCardInstantMessageBundleIdentifiersKey, 
+                       _CNVCardInstantMessageKey, _CNVCardInstantMessageServiceAIM, 
                        _CNVCardInstantMessageServiceFacebook, _CNVCardInstantMessageServiceGaduGadu, 
                        _CNVCardInstantMessageServiceGoogleTalk, _CNVCardInstantMessageServiceICQ, 
                        _CNVCardInstantMessageServiceJabber, _CNVCardInstantMessageServiceKey, 
                        _CNVCardInstantMessageServiceMSN, _CNVCardInstantMessageServiceQQ, 
                        _CNVCardInstantMessageServiceSkype, _CNVCardInstantMessageServiceYahoo, 
+                       _CNVCardInstantMessageTeamIdentifierKey, _CNVCardInstantMessageUserIdentifierKey, 
                        _CNVCardInstantMessageUsernameKey, _CNVCardIsPrimaryKey, _CNVCardJobTitleKey, 
                        _CNVCardLabelKey, _CNVCardLastNameKey, _CNVCardLineDelimiter, 
                        _CNVCardMaidenNameKey, _CNVCardMiddleNameKey, _CNVCardMobileMeLabel, 

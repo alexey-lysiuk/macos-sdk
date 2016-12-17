@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: F6D7A2A0-66BB-3D19-86CB-0F124587D375', 'x86_64: DFDA8917-45C1-3A65-AB5E-072B44850A6F' ]
+uuids:           [ 'i386: F3544DFE-47E6-3A2F-AEA7-A7999C2C40C5', 'x86_64: D482145A-877D-31FC-A677-BECAE9E25F53' ]
 platform:        macosx
 install-name:    /usr/lib/libcupsimage.2.dylib
 current-version: 2.3

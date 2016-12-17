@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386 ]
-uuids:           [ 'i386: B7A45449-E988-3B87-83D2-9061D097D0A5' ]
+uuids:           [ 'i386: 43CD41FC-CB20-312A-B361-6A6216F56CDC' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/vmutils.framework/Versions/A/vmutils
 current-version: 110.0

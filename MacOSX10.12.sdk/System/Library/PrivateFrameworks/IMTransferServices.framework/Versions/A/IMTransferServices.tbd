@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: E12D4D85-B2BE-362A-8CC3-1637A5481D63', 'x86_64: B5C1A710-5FE2-3107-A5DC-4F964D0DA2D7' ]
+uuids:           [ 'i386: 1CD8118E-333F-319F-AD1B-399E7240BBC6', 'x86_64: 6667165A-E371-3FC7-B99E-4B4FC53ED098' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IMTransferServices.framework/Versions/A/IMTransferServices
 current-version: 800.0

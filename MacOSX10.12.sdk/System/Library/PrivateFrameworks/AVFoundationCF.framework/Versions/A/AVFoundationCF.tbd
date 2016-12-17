@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: F780ED4E-D351-39BE-80C2-F54FBE6A2EE0', 'x86_64: DD0F75E2-7AEF-32E5-A6FC-CACE04E32B5F' ]
+uuids:           [ 'i386: 05AF2A55-B75D-34FA-94C8-FEF3879AA9CE', 'x86_64: 7C7F0D1B-09B5-3ACA-8E4F-F5CE1D2B4D21' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AVFoundationCF.framework/Versions/A/AVFoundationCF
 current-version: 2.0

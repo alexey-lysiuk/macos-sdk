@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 2F773436-34FE-3F20-80E1-DFE5DCF4BFC9', 'x86_64: 13A8F634-66A1-3233-8AF7-130C090ED64E' ]
+uuids:           [ 'i386: 0E7A6D77-B924-389F-9F8D-94F23959D925', 'x86_64: 81FD8901-80B5-3971-AA2F-F090742EC785' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PSNormalizer.framework/Versions/A/Libraries/libnserverlite.dylib
 objc-constraint: none

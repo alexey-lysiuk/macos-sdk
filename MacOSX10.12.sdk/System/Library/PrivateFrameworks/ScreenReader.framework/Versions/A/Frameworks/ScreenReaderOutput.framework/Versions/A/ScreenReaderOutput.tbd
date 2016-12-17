@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8A312A2C-768F-3001-B2D7-3A131D92AEE2' ]
+uuids:           [ 'x86_64: E8BA0D85-FEF7-3EEA-BF7D-059D19B5FB8D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ScreenReader.framework/Versions/A/Frameworks/ScreenReaderOutput.framework/Versions/A/ScreenReaderOutput
 current-version: 390.0
@@ -34,9 +34,10 @@ exports:
                        _kSCROBrailleStatusAttribute, _kSCROBrailleUnicodeCharacterBase, 
                        _kSCROBrailleUnicodeCharacterDot7, _kSCROBrailleUnicodeCharacterDot78, 
                        _kSCROBrailleUnicodeCharacterDot8, _kSCROBrailleUnicodeCharacterSpace, 
-                       _kSCROCursorAttribute, _kSCROFocusedAttribute, _kSCROLanguageAttribute, 
-                       _kSCROLineFocusAttribute, _kSCROSelectionAttribute, _kSCROSerializeDefaultSize, 
-                       _kSCROStatusAttribute, _kSCROStatusAttributeCellIndex, _kSCROStatusAttributeCellTitle, 
+                       _kSCROCursorAttribute, _kSCROEditableTextAttribute, _kSCROEditableTextPaddingAttribute, 
+                       _kSCROFocusedAttribute, _kSCROLanguageAttribute, _kSCROLineFocusAttribute, 
+                       _kSCROSelectionAttribute, _kSCROSerializeDefaultSize, _kSCROStatusAttribute, 
+                       _kSCROStatusAttributeCellIndex, _kSCROStatusAttributeCellTitle, 
                        _kSCROStatusAttributeDotText, _kSCROTechnicalContextAttribute, 
                        _kSCROTokenAttribute ]
     objc-classes:    [ _SCROBrailleClient, _SCROBrailleDisplayAutoDetector, _SCROBrailleDisplayInputManager, 

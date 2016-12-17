@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B50BADFC-6D35-38F9-AC34-3099AC38A0A1' ]
+uuids:           [ 'x86_64: 39BF805D-C389-3ECC-9DF0-3CF2084D9679' ]
 platform:        macosx
 install-name:    /usr/lib/libtailspin.dylib
-current-version: 28.1
+current-version: 31.0
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -25,7 +25,7 @@ exports:
                        _TSPSymbols_SymbolSourceLengthKey, _TSPSymbols_SymbolSourceLineNumberKey, 
                        _TSPSymbols_SymbolSourceOffsetKey, _TSPSymbols_SymbolsDictionaryKey, 
                        _TSPSymbols_UUIDKey, __Z29tailspin_symbol_factory_printP23tailspin_symbol_factory, 
-                       __Z47tailspin_symbol_factory_copy_offsets_for_binaryP23tailspin_symbol_factoryP6binaryPmPPy, 
+                       __Z31order_binary_by_freq_of_offsetsRK6binaryS1_, __Z47tailspin_symbol_factory_copy_offsets_for_binaryP23tailspin_symbol_factoryP6binaryPmPPy, 
                        _do_symbolicate_server, _libtailspinVersionNumber, _libtailspinVersionString, 
                        _tailspin_buffer_size_get, _tailspin_buffer_size_get_default, 
                        _tailspin_buffer_size_is_default, _tailspin_buffer_size_reset, 

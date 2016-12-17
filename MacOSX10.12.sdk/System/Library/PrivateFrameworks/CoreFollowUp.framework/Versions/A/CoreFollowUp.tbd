@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 77BB9AA0-9124-33E0-9D3E-DF705D2372A1' ]
+uuids:           [ 'x86_64: 36D1CD4B-C2E2-3868-8036-EA17B07F672E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreFollowUp.framework/Versions/A/CoreFollowUp
 objc-constraint: none

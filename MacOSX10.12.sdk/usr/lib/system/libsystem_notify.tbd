@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: FEE520B1-7BD3-30E0-ADDE-1A2D72CFEBB1', 'x86_64: D38E3A3C-AEEE-321A-861E-160ABE4B20B4' ]
+uuids:           [ 'i386: C9D40DD9-341A-3732-BBEE-86ABF747C634', 'x86_64: E7FD3A7C-DD07-36E2-9FA4-7561F9F114DA' ]
 platform:        macosx
 install-name:    /usr/lib/system/libsystem_notify.dylib
 current-version: 165.20.1

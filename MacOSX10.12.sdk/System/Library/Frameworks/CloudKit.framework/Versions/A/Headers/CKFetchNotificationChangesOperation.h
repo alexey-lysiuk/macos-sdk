@@ -18,6 +18,7 @@ NS_CLASS_AVAILABLE(10_10, 8_0)
     since that anchor will be fetched.
    If this is your first fetch, pass nil for the change anchor.
    Change anchors are opaque tokens and clients should not infer any behavior based on their content. */
+- (instancetype)init NS_DESIGNATED_INITIALIZER;
 - (instancetype)initWithPreviousServerChangeToken:(nullable CKServerChangeToken *)previousServerChangeToken;
 
 @property (nonatomic, copy, nullable) CKServerChangeToken *previousServerChangeToken;

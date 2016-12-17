@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 154953C8-FA9D-332A-B092-53B22281A091' ]
+uuids:           [ 'x86_64: D8CA9237-5FAB-37EA-8D57-001B15280479' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CalendarNotification.framework/Versions/A/CalendarNotification
 current-version: 0.0

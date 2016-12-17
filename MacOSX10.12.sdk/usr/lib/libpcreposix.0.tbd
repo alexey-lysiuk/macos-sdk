@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 3711DD0F-F948-3633-A960-AD03CC8D89ED', 'x86_64: AC01BC8E-4F5A-31B3-8E17-D1E9EB58C3DE' ]
+uuids:           [ 'i386: 8B11B3F7-6B7A-3582-9DFE-3F3C7BA261FC', 'x86_64: 11AE5E1C-6244-3F2B-81B7-9170592B09AA' ]
 platform:        macosx
 flags:           [ flat_namespace ]
 install-name:    /usr/lib/libpcreposix.0.dylib

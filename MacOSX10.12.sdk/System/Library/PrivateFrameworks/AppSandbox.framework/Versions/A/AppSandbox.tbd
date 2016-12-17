@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 3D7FD342-B46E-3081-AB1D-D44FDF5AD690', 'x86_64: 6A1F1827-EBA8-3652-8397-6B66ECC913A4' ]
+uuids:           [ 'i386: 25F95DD6-924F-3C41-99C9-2512192865D2', 'x86_64: D2C978EB-F4F1-3E79-9DB1-BEE2A92590CE' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AppSandbox.framework/Versions/A/AppSandbox
 objc-constraint: none

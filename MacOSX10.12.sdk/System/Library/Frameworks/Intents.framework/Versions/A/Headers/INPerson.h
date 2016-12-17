@@ -7,6 +7,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import <Intents/INPersonRelationship.h>
+
 @class INImage;
 @class INPersonHandle;
 
@@ -18,14 +20,11 @@ API_AVAILABLE(macosx(10.12), ios(10.0))
 - (instancetype)init NS_UNAVAILABLE;
 
 - (instancetype)initWithPersonHandle:(INPersonHandle *)personHandle
-                nameComponents:(nullable NSPersonNameComponents *)nameComponents
-                   displayName:(nullable NSString *)displayName
-                         image:(nullable INImage *)image
-             contactIdentifier:(nullable NSString *)contactIdentifier
-              customIdentifier:(nullable NSString *)customIdentifier NS_DESIGNATED_INITIALIZER;
-
-// The identity of the person in the application (e.g. email address, phone number, user handle, etc.)
-@property (readonly, copy, nullable, NS_NONATOMIC_IOSONLY) NSString *handle  NS_DEPRECATED(10_12, 10_12, 10_0, 10_0, "Use personHandle instead");
+                      nameComponents:(nullable NSPersonNameComponents *)nameComponents
+                         displayName:(nullable NSString *)displayName
+                               image:(nullable INImage *)image
+                   contactIdentifier:(nullable NSString *)contactIdentifier
+                    customIdentifier:(nullable NSString *)customIdentifier NS_DESIGNATED_INITIALIZER;
 
 // The identity of the person in the application
 @property (readonly, copy, nullable, NS_NONATOMIC_IOSONLY) INPersonHandle *personHandle;
@@ -45,25 +44,8 @@ API_AVAILABLE(macosx(10.12), ios(10.0))
 // This property can be set to the app's identifier for this person
 @property (readonly, copy, nullable, NS_NONATOMIC_IOSONLY) NSString *customIdentifier;
 
-@end
-
-@interface INPerson (INPersonCreation)
-
-//  This is the preferred convenience initializer if the app knows the name components of the person (e.g. given name, family name, etc).
-- (instancetype)initWithHandle:(NSString *)handle
-                nameComponents:(NSPersonNameComponents *)nameComponents
-             contactIdentifier:(nullable NSString *)contactIdentifier NS_DEPRECATED(10_12, 10_12, 10_0, 10_0, "Use the designated initializer instead");
-
-// Use this convenience initializer if the person's name is unknown
-- (instancetype)initWithHandle:(NSString *)handle
-                   displayName:(nullable NSString *)displayName
-             contactIdentifier:(nullable NSString *)contactIdentifier NS_DEPRECATED(10_12, 10_12, 10_0, 10_0, "Use the designated initializer instead");
-
-- (instancetype)initWithHandle:(NSString *)handle
-                nameComponents:(nullable NSPersonNameComponents *)nameComponents
-                   displayName:(nullable NSString *)displayName
-                         image:(nullable INImage *)image
-             contactIdentifier:(nullable NSString *)contactIdentifier NS_DEPRECATED(10_12, 10_12, 10_0, 10_0, "Use the designated initializer instead");
+// This person's relationship to the user
+@property (readonly, copy, nullable, NS_NONATOMIC_IOSONLY) INPersonRelationship relationship API_AVAILABLE(ios(10.2), macosx(10.12.2));
 
 @end
 
@@ -81,13 +63,13 @@ typedef NS_ENUM(NSInteger, INPersonSuggestionType) {
 @property (readonly, NS_NONATOMIC_IOSONLY) INPersonSuggestionType suggestionType;
 
 - (instancetype)initWithPersonHandle:(INPersonHandle *)personHandle
-                nameComponents:(nullable NSPersonNameComponents *)nameComponents
-                   displayName:(nullable NSString *)displayName
-                         image:(nullable INImage *)image
-             contactIdentifier:(nullable NSString *)contactIdentifier
-              customIdentifier:(nullable NSString *)customIdentifier
-                       aliases:(nullable NSArray<INPersonHandle *> *)aliases
-                suggestionType:(INPersonSuggestionType)suggestionType;
+                      nameComponents:(nullable NSPersonNameComponents *)nameComponents
+                         displayName:(nullable NSString *)displayName
+                               image:(nullable INImage *)image
+                   contactIdentifier:(nullable NSString *)contactIdentifier
+                    customIdentifier:(nullable NSString *)customIdentifier
+                             aliases:(nullable NSArray<INPersonHandle *> *)aliases
+                      suggestionType:(INPersonSuggestionType)suggestionType;
 
 @end
 

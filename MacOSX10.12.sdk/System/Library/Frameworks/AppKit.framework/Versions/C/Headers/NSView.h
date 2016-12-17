@@ -294,7 +294,7 @@ typedef NSInteger NSToolTipTag;
 @property (readonly) BOOL mouseDownCanMoveWindow;
 
 /* Deprecated in favor of allowedTouchTypes. Return YES if allowedTouchTypes includes NSTouchTypeMaskIndirect */
-@property BOOL acceptsTouchEvents NS_DEPRECATED_MAC(10_6, 10_12_1);
+@property BOOL acceptsTouchEvents NS_DEPRECATED_MAC(10_6, 10_12_2);
 
 /* In some cases, the user may rest a thumb or other touch on the device. By default, these touches are not delivered and are not included in the event's set of touches. Touches may transition in and out of resting at any time. Unless the view wants restingTouches, began / ended events are simlulated as touches transition from resting to active and vice versa.
 */
@@ -591,7 +591,7 @@ APPKIT_EXTERN NSString * const NSDefinitionPresentationTypeDictionaryApplication
 
 @interface NSView (NSTouchBar)
 /* Defaults to NSTouchTypeDirect if linked on or after 10_12, 0 otherwise */
-@property NSTouchTypeMask allowedTouchTypes NS_AVAILABLE_MAC(10_12_1);
+@property NSTouchTypeMask allowedTouchTypes NS_AVAILABLE_MAC(10_12_2);
 @end
 
 @interface NSView(NSDeprecated)
