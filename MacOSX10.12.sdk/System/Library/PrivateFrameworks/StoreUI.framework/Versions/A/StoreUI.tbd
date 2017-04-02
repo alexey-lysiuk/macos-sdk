@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 664E45C6-5EF6-3C86-B555-7B7ECD3EA0F2' ]
+uuids:           [ 'x86_64: DD6C8085-B9AB-3FB3-BED8-61D7F2972215' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/StoreUI.framework/Versions/A/StoreUI
-current-version: 379.0
+current-version: 379
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

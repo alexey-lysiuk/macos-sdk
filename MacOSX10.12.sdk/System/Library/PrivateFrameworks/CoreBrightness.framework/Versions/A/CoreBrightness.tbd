@@ -1,0 +1,52 @@
+--- !tapi-tbd-v2
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 4779D7FD-EBF4-3E3D-BF89-EAF23BE48162' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/CoreBrightness.framework/Versions/A/CoreBrightness
+objc-constraint: none
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _AlphaArray, _CBAggdCheckKeyCategory, _CBAggdClientAddValueForScalarKey, 
+                       _CBAggdClientSetValueForScalarKey, _CBAggdInit, _CBAggdTerminate, 
+                       _CBU_IsNightShiftSupported, _CCTArray, _CCT_Shifted_Table, 
+                       _CFXChromaticity2CCT, _CFXChromaticity2Tristimulus, _CFXChromaticity2uv, 
+                       _CFXClearReport, _CFXCreate, _CFXEnableBlueLightReduction, 
+                       _CFXEnableFades, _CFXGetBlueLightReductionCCTRange, _CFXGetBlueLightReductionTargetCCT, 
+                       _CFXGetReport, _CFXInitializeBlueLightReduction, _CFXInstallCallback, 
+                       _CFXOverrideBlueLightReductionCCTRange, _CFXOverrideRampPeriod, 
+                       _CFXRelease, _CFXSetBlueLightReductionTargetCCT, _CFXSetBlueReductionFactorOverride, 
+                       _CFXSetWhitePointType, _CFXTristimulus2Chromaticity, _CFXTristimulus2lms, 
+                       _CFXUpdateColorFade, _CFXUpdateCompensatedBacklight, _D65Lab, 
+                       _D65XYX, _D65lms, _DisplayCancelBrightnessFade, _DisplayCancelReflectedBrightnessFade, 
+                       _DisplayCancelVirtualFade, _DisplayClose, _DisplayCopyUserPreference, 
+                       _DisplayCreate, _DisplayGetDeviceBrightness, _DisplayGetLogicalBrightness, 
+                       _DisplayGetProperty, _DisplayGetTypeID, _DisplayGetVirtualBrightness, 
+                       _DisplayGetWeakCap, _DisplayIsNightShiftEnabled, _DisplayLogicalToSliderBrightness, 
+                       _DisplayLuminanceToPerceptualLuminance, _DisplayMilliAmpsToMilliWatts, 
+                       _DisplayNits2milliAmps, _DisplayNotify, _DisplayOpen, _DisplayPerceptualLuminanceToLuminance, 
+                       _DisplayPerceptualLuminanceToReflectedLuminance, _DisplayReflectedLuminanceToPerceptualLuminance, 
+                       _DisplaySetLogicalBrightness, _DisplaySetLogicalBrightnessWithFade, 
+                       _DisplaySetProperty, _DisplaySetReflectedBrightnessWithFade, 
+                       _DisplaySetRestrictionFactorWithFade, _DisplaySetUserPreference, 
+                       _DisplaySetVirtualBrightnessWithFade, _DisplaySliderToLogicalBrightness, 
+                       _DisplaySwitchUser, _DisplayUpdateWeakCapOnSignificantAmbientChange, 
+                       _IOFixedDivide, _IOFixedMultiply, _InvMcatMulMrgbD65, _InvMcatMulMrgbLegacy, 
+                       _LegacyXYZ, _Legacylms, _Mcat, _McatMulMrgbD65, _McatMulMrgbLegacy, 
+                       _MemoryColorCoeff, _ModelMinVersion, _ModelPrefix, _Mrgb2xyzD65, 
+                       _Mrgb2xyzLegacy, __CFXUpdateColorFadeInternal, __DisplayGetAmbient, 
+                       __DisplayGetBrightness, __DisplayGetBrightnessFactor, __DisplayGetBrightnessMaxPhysical, 
+                       __DisplayGetBrightnessMinPhysical, __DisplayLogicalToSliderBrightnessInternal, 
+                       __DisplayPerceptualLuminanceToLuminanceInternal, __DisplayPerceptualLuminanceToReflectedLuminanceInternal, 
+                       __DisplayScheduleAsync, __DisplaySetAmbient, __DisplaySetBrightness, 
+                       __DisplaySetBrightnessFactor, __DisplaySetBrightnessMinPhysicalWithFade, 
+                       __DisplaySetLockState, __DisplaySetRestrictionFactorWithFade, 
+                       __DisplayUnscheduleAsync, __Z16ALSEventCallbackPvS_S_P12__IOHIDEvent, 
+                       __Z22DisplayPropertyChangedPvPK10__CFStringPKv, ___DisplayFadeComputeCurrentFactor, 
+                       ___DisplayFadeUpdateFactorFade, ___DisplayFadeUpdateFade, 
+                       ___DisplayFadeUpdateRestrictionFactorFade, ___DisplayUpdateAAPFactor, 
+                       _convertMachToNanoSeconds, _disp_dispatch_sync, _rampProfile ]
+    objc-classes:    [ _BLControl, _BacklightdExportedObj, _BrightnessSystem, _BrightnessSystemClient, 
+                       _BrightnessSystemClientExportedObj, _BrightnessSystemClientInternal, 
+                       _BrightnessSystemInternal, _CBAdaptationClient, _CBBlueLightClient, 
+                       _CBClient, _NightModeControl, _SunriseSunsetProvider ]
+...

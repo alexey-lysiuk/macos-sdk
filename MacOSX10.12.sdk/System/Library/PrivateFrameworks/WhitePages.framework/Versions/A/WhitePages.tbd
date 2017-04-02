@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 13683466-B9CD-3F50-9F1F-5EA892FD16EC', 'x86_64: 21A5AA13-22C2-3EAA-ACC6-439A0DA9FA39' ]
+uuids:           [ 'i386: 60024032-CA48-3E54-9F44-86719B817662', 'x86_64: FDDBB648-8CD3-3F4F-B9E3-E5DBCE4C1792' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/WhitePages.framework/Versions/A/WhitePages
 objc-constraint: none

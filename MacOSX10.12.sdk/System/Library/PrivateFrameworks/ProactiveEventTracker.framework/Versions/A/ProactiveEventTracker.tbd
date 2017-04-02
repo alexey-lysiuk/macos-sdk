@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 67A5AC66-7838-3A9F-B344-0305E9573BD8' ]
+uuids:           [ 'x86_64: A3BF4134-E228-3B18-A26E-55CC39615DE3' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ProactiveEventTracker.framework/Versions/A/ProactiveEventTracker
 objc-constraint: none

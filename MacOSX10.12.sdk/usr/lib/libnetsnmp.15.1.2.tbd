@@ -5,7 +5,7 @@ platform:        macosx
 flags:           [ not_app_extension_safe ]
 install-name:    /usr/lib/libnetsnmp.15.dylib
 current-version: 17.2
-compatibility-version: 17.0
+compatibility-version: 17
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]

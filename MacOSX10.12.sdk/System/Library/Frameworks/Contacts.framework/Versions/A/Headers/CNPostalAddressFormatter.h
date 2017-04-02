@@ -2,7 +2,7 @@
 //  CNPostalAddressFormatter.h
 //  Contacts
 //
-//  Copyright (c) 2015 Apple Inc. All rights reserved.
+//  Copyright (c) 2015–2016 Apple Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

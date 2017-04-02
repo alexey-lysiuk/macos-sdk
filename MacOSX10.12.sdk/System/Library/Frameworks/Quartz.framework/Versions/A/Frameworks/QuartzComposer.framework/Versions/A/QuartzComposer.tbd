@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 65739134-9F2A-3C56-B684-44EFA6B87CA5', 'x86_64: A13FD5C2-36D1-3B92-88E6-AB4CAF733907' ]
+uuids:           [ 'i386: EA095793-CB99-3AB7-A895-32202EA8A59A', 'x86_64: 94E40A1F-0E11-3713-BC54-00112BDBC9FC' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Quartz.framework/Versions/A/Frameworks/QuartzComposer.framework/Versions/A/QuartzComposer
-current-version: 168.0
+current-version: 168
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

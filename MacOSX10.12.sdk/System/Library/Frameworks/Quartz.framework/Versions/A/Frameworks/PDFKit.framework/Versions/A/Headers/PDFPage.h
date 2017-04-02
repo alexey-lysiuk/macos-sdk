@@ -80,10 +80,16 @@ NS_CLASS_AVAILABLE_MAC(10_4)
 
 // -------- rendering
 
-// Drawing method takes into account page rotation, draws in page space relative to and clipped to the box bounds. If 
+// This method is deprecated in favor of the of the context aware -[PDFPage drawWithBox:toContext:]. If you subclass
+// PDFPage, rendering code will first call -[PDFPage drawWithBox:toContext:]. If your subclass does not override the
+// context-aware function, this original -[PDFPage drawWithBox:] method will be called.
+// Drawing method takes into account page rotation, draws in page space relative to and clipped to the box bounds. If
 // -[displaysAnnotations] is true, also draws any page annotations. Does not clear the background (page white).
 - (void) drawWithBox: (PDFDisplayBox) box PDFKIT_DEPRECATED(10_4, 10_12);
 
+// This method is deprecated in favor of the of the context aware -[PDFPage transformContext:forBox:]. If you subclass
+// PDFPage, rendering code will first call -[PDFPage transformContext:forBox:]. If your subclass does not override the
+// context-aware function, this original -[PDFPage transformContextForBox:] method will be called.
 // Given a display box, will transform the current context to take into account the rotation of the page as well as 
 // the origin of the box with repect to the page's base coordinates system.  This is a convenient method to call from 
 // within -[PDFView drawPage] or from within the draw method a PDFAnnotation subclass.

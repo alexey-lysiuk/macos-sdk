@@ -3,8 +3,8 @@ archs:           [ i386, x86_64 ]
 uuids:           [ 'i386: 34E6F33E-A727-3A53-8661-3F6380019B65', 'x86_64: 42125B35-81D7-3FC4-9475-A26DBE10884D' ]
 platform:        macosx
 install-name:    /usr/lib/libiconv.2.dylib
-current-version: 7.0
-compatibility-version: 7.0
+current-version: 7
+compatibility-version: 7
 objc-constraint: none
 exports:         
   - archs:           [ i386 ]

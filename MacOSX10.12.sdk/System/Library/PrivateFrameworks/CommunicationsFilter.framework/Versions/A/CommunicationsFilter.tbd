@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: BB352F3F-A072-3E9B-B29B-1BD1D01C7D7D', 'x86_64: 3A730E26-05C0-3FAE-8305-8EE526629C3D' ]
+uuids:           [ 'i386: 06634433-C622-3125-8FD6-80D4BBB80097', 'x86_64: 4747FBCF-F2BB-3C06-9C04-4C9F4A5B7869' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CommunicationsFilter.framework/Versions/A/CommunicationsFilter
-current-version: 800.0
+current-version: 800
 objc-constraint: none
 exports:         
   - archs:           [ i386 ]

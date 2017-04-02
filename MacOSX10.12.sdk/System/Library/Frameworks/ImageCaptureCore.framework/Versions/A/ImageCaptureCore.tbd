@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: FDD9D5C2-3567-39EE-952F-6A3BF5E348A8', 'x86_64: 0F899C07-AA23-350E-8670-9090924D670D' ]
+uuids:           [ 'i386: E073E277-4F31-3117-8991-82A1CE3DFAAA', 'x86_64: 22A35555-6025-3EB8-993B-B91141668C6A' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/ImageCaptureCore.framework/Versions/A/ImageCaptureCore
 objc-constraint: none
@@ -18,10 +18,11 @@ exports:
                        _ICCameraFileProperties._highFramerate, _ICCameraFileProperties._metadata, 
                        _ICCameraFileProperties._modificationDate, _ICCameraFileProperties._orientation, 
                        _ICCameraFileProperties._orientationOverridden, _ICCameraFileProperties._originalFilename, 
-                       _ICCameraFileProperties._raw, _ICCameraFileProperties._relatedUUID, 
-                       _ICCameraFileProperties._retrievedMetadata, _ICCameraFileProperties._retrievedThumbnail, 
-                       _ICCameraFileProperties._sidecarFiles, _ICCameraFileProperties._thumbnail, 
-                       _ICCameraFileProperties._thumbnailData, _ICCameraFileProperties._timeLapse, 
+                       _ICCameraFileProperties._originatingAssetID, _ICCameraFileProperties._raw, 
+                       _ICCameraFileProperties._relatedUUID, _ICCameraFileProperties._retrievedMetadata, 
+                       _ICCameraFileProperties._retrievedThumbnail, _ICCameraFileProperties._sidecarFiles, 
+                       _ICCameraFileProperties._thumbnail, _ICCameraFileProperties._thumbnailData, 
+                       _ICCameraFileProperties._timeLapse, _ICCameraFileProperties._useExtensionIcon, 
                        _ICCameraFileProperties._wasDownloaded, _ICCameraFileProperties._width, 
                        _ICCameraFolderProperties._creationDate, _ICCameraFolderProperties._files, 
                        _ICCameraFolderProperties._folders, _ICCameraFolderProperties._modificationDate, 
@@ -162,10 +163,10 @@ exports:
   - archs:           [ i386, x86_64 ]
     symbols:         [ _FallBack, _ICButtonTypeCopy, _ICButtonTypeMail, _ICButtonTypePrint, 
                        _ICButtonTypeScan, _ICButtonTypeTransfer, _ICButtonTypeWeb, 
-                       _ICCameraDeviceCanAcceptPTPCommands, _ICCameraDeviceCanDeleteAllFiles, 
-                       _ICCameraDeviceCanDeleteOneFile, _ICCameraDeviceCanReceiveFile, 
-                       _ICCameraDeviceCanSyncClock, _ICCameraDeviceCanTakePicture, 
-                       _ICCameraDeviceCanTakePictureUsingShutterReleaseOnCamera, 
+                       _ICCachedThumbnailFromExtension, _ICCameraDeviceCanAcceptPTPCommands, 
+                       _ICCameraDeviceCanDeleteAllFiles, _ICCameraDeviceCanDeleteOneFile, 
+                       _ICCameraDeviceCanReceiveFile, _ICCameraDeviceCanSyncClock, 
+                       _ICCameraDeviceCanTakePicture, _ICCameraDeviceCanTakePictureUsingShutterReleaseOnCamera, 
                        _ICCameraDeviceSupportsApplePTP, _ICCreateJPEGThumbnailDataFromURL, 
                        _ICCreateRotatedImageFromCGImage, _ICCreateThumbnailFromIconFile, 
                        _ICCreateThumbnailFromIconRef, _ICDeallocLoggingLazy, _ICDeleteAfterSuccessfulDownload, 
@@ -173,10 +174,11 @@ exports:
                        _ICDeviceLocationDescriptionFireWire, _ICDeviceLocationDescriptionMassStorage, 
                        _ICDeviceLocationDescriptionUSB, _ICDownloadSidecarFiles, 
                        _ICDownloadsDirectoryURL, _ICExtensionsPrefs, _ICGetColorSyncProfileID, 
-                       _ICGetColorSyncProfilePath, _ICInitiateLoggingLazy, _ICLocalizedStatusNotificationKey, 
-                       _ICOverwrite, _ICPerformBlockOnMainThread, _ICRawExtension, 
-                       _ICSaveAsFilename, _ICSavedAncillaryFiles, _ICSavedFilename, 
-                       _ICScannerStatusRequestsOverviewScan, _ICScannerStatusWarmUpDone, 
+                       _ICGetColorSyncProfilePath, _ICGetImageRefForExtension, _ICImageRefDictionary, 
+                       _ICInitiateLoggingLazy, _ICLocalizedStatusNotificationKey, 
+                       _ICOverwrite, _ICPerformBlockOnMainThread, _ICPutImageRefForExtension, 
+                       _ICRawExtension, _ICSaveAsFilename, _ICSavedAncillaryFiles, 
+                       _ICSavedFilename, _ICScannerStatusRequestsOverviewScan, _ICScannerStatusWarmUpDone, 
                        _ICScannerStatusWarmingUp, _ICStatusCodeKey, _ICStatusNotificationKey, 
                        _ICStatusSoftwareInstallation, _ICSubtractTimes, _ICTransportTypeBluetooth, 
                        _ICTransportTypeFireWire, _ICTransportTypeMassStorage, _ICTransportTypeTCPIP, 

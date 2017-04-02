@@ -16,6 +16,6 @@ typedef NS_OPTIONS(NSUInteger, INMessageAttributeOptions) {
     INMessageAttributeOptionUnread = (1UL << 1),
     INMessageAttributeOptionFlagged = (1UL << 2),
     INMessageAttributeOptionUnflagged = (1UL << 3),
-} API_AVAILABLE(macosx(10.12), ios(10.0));
+} API_AVAILABLE(macosx(10.12), ios(10.0), watchos(3.2));
 
 #endif // INMessageAttributeOptions_h

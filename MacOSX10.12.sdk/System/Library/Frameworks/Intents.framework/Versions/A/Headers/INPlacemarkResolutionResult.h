@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-API_AVAILABLE(macosx(10.12), ios(10.0))
+API_AVAILABLE(macosx(10.12), ios(10.0), watchos(3.2))
 @interface INPlacemarkResolutionResult : INIntentResolutionResult
 
 // This resolution result is for when the app extension wants to tell Siri to proceed, with a given CLPlacemark. The resolvedPlacemark can be different than the original CLPlacemark. This allows app extensions to dynamically fill-in details about the CLPlacemark, as appropriate. To make a new CLPlacemark, see <Intents/CLPlacemark+IntentsAdditions.h>. 

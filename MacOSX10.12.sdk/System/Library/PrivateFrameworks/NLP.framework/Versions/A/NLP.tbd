@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: D122F288-0352-36AD-AF1F-CD1E45DE3270', 'x86_64: A96D3C2E-9420-3B1D-9067-763DF6C12043' ]
+uuids:           [ 'i386: B026A003-0289-3FAE-81DF-93DB828A8A35', 'x86_64: B539A9D1-63CF-3712-B291-1596F92F1984' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/NLP.framework/Versions/A/NLP
-current-version: 98.5
+current-version: 98.7
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]

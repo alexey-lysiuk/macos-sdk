@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3C343914-F969-342D-B554-DCC1FBDAC433' ]
+uuids:           [ 'x86_64: A24D27B0-D77F-34EF-B365-CEBCFF4E1B3F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CloudKitDaemon.framework/Versions/A/CloudKitDaemon
-current-version: 643.5
+current-version: 651.14
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -26,6 +26,7 @@ exports:
                        _CKDPushConnectionDidReceiveTokenNotificationIsDarkWakeEnabledKey, 
                        _CKDPushConnectionDidReceiveTokenNotificationIsPublicTokenKey, 
                        _CKDPushConnectionDidReceiveTokenNotificationTokenKey, _CKDRecordCacheSchema, 
+                       _CKDaemonOperationTypeForClass, _CKIsRunningInSyncBubble, 
                        _CKServerOwnerDefaultName, _CKVerifyFilters, _compareVersionStrings, 
                        _gSystemUnlockedGlobalCallback, _kCKTCCDatabaseChangedNotificationName ]
     objc-classes:    [ _CKDAccountNotifier, _CKDAssetCache, _CKDAssetHandle, _CKDBackingAccount, 
@@ -33,8 +34,8 @@ exports:
                        _CKDDirectoryPurger, _CKDDiscoverAllUserIdentitiesOperation, 
                        _CKDDiscoverUserIdentitiesOperation, _CKDFetchShareParticipantsOperation, 
                        _CKDJSONResponseBodyParser, _CKDLongLivedClientProxy, _CKDMetadataCache, 
-                       _CKDOperationInfoCache, _CKDOperationInfoMetadata, _CKDPDate, 
-                       _CKDPDateStatistics, _CKDPIdentifier, _CKDPNotificationSyncResponse, 
+                       _CKDOperationInfoCache, _CKDOperationInfoMetadata, _CKDOperationMetricsCache, 
+                       _CKDPDate, _CKDPDateStatistics, _CKDPIdentifier, _CKDPNotificationSyncResponse, 
                        _CKDPNotificationSyncResponsePushMessage, _CKDPOperation, 
                        _CKDPParticipant, _CKDPRecord, _CKDPRecordChainParent, _CKDPRecordField, 
                        _CKDPRecordFieldIdentifier, _CKDPRecordFieldValue, _CKDPRecordIdentifier, 
@@ -45,9 +46,9 @@ exports:
                        _CKDPResponseOperationResultErrorServer, _CKDPShare, _CKDPShareIdentifier, 
                        _CKDPShareMetadata, _CKDPackageDirectoryPurger, _CKDPipeliningInfo, 
                        _CKDPlaintextResponseBodyParser, _CKDPlistResponseBodyParser, 
-                       _CKDPrivacyManager, _CKDProtobufResponseBodyParser, _CKDProtocolTranslator, 
-                       _CKDPushConnection, _CKDRecordCachePool, _CKDResponseBodyParser, 
-                       _CKDSystemAvailabilityMonitor, _CKDTokenRegistrationScheduler, 
+                       _CKDPowerLogger, _CKDPrivacyManager, _CKDProtobufResponseBodyParser, 
+                       _CKDProtocolTranslator, _CKDPushConnection, _CKDRecordCachePool, 
+                       _CKDResponseBodyParser, _CKDSystemAvailabilityMonitor, _CKDTokenRegistrationScheduler, 
                        _CKDTrafficLogger, _CKDTrafficMetadata, _CKDURLSessionPool, 
                        _CKDVolumeManager ]
     objc-ivars:      [ _CKDPDate._has, _CKDPDate._time, _CKDPDateStatistics._creation, 

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C90B3A30-112D-32DD-8861-3B0316A8E796' ]
+uuids:           [ 'x86_64: B938AA0A-9681-3ACE-805D-30E94AAA3971' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreHandwriting.framework/Versions/A/CoreHandwriting
-current-version: 0.0
+current-version: 0
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

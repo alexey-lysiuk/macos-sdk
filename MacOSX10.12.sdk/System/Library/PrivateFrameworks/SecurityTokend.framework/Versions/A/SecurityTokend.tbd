@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5544945C-A3F0-3588-B533-B4B4262612D8' ]
+uuids:           [ 'x86_64: 0525B4C8-595E-3DF0-A49A-811FE443E5CE' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SecurityTokend.framework/Versions/A/SecurityTokend
-current-version: 55111.0
+current-version: 55111
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

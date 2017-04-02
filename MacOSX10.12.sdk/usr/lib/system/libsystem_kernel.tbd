@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 86124A39-EE15-363C-B502-6FC6A2288A1D', 'x86_64: FCEEBBD4-DF66-34D8-A32F-4F8C8E814E40' ]
+uuids:           [ 'i386: 50D0E6F1-6F9C-303F-BCD6-F72AD4485B6E', 'x86_64: FC51D7B0-8292-3F6A-9231-64340B237EB7' ]
 platform:        macosx
 install-name:    /usr/lib/system/libsystem_kernel.dylib
-current-version: 3789.31.2
+current-version: 3789.51.2
 objc-constraint: none
 parent-umbrella: System
 exports:         
@@ -168,12 +168,12 @@ exports:
                        _fgetattrlist, _fgetxattr, _fhopen, _fileport_makefd, _fileport_makeport, 
                        _flistxattr, _flock, _fpathconf, _fremovexattr, _fs_snapshot_create, 
                        _fs_snapshot_delete, _fs_snapshot_list, _fs_snapshot_mount, 
-                       _fs_snapshot_rename, _fs_snapshot_revert, _fsctl, _fsetattrlist, 
-                       _fsetxattr, _fsgetpath, _fstat, '_fstat$INODE64', _fstat64, 
-                       _fstatat, '_fstatat$INODE64', _fstatat64, _fstatfs, '_fstatfs$INODE64', 
-                       _fstatfs64, _fsync, _ftruncate, _futimes, _get_dp_control_port, 
-                       _getattrlist, _getattrlistat, _getattrlistbulk, _getaudit, 
-                       _getaudit_addr, _getauid, _getdirentries, _getdirentriesattr, 
+                       _fs_snapshot_rename, _fs_snapshot_revert, _fs_snapshot_root, 
+                       _fsctl, _fsetattrlist, _fsetxattr, _fsgetpath, _fstat, '_fstat$INODE64', 
+                       _fstat64, _fstatat, '_fstatat$INODE64', _fstatat64, _fstatfs, 
+                       '_fstatfs$INODE64', _fstatfs64, _fsync, _ftruncate, _futimes, 
+                       _get_dp_control_port, _getattrlist, _getattrlistat, _getattrlistbulk, 
+                       _getaudit, _getaudit_addr, _getauid, _getdirentries, _getdirentriesattr, 
                        _getdtablesize, _getegid, _getentropy, _geteuid, _getfh, _getfsstat, 
                        '_getfsstat$INODE64', _getfsstat64, _getgid, _getgroups, _gethostuuid, 
                        _getiopolicy_np, _getitimer, _getpeername, _getpgid, _getpgrp, 
@@ -245,18 +245,19 @@ exports:
                        _macx_triggers, _madvise, _memorystatus_control, _memorystatus_get_level, 
                        _mig_allocate, _mig_dealloc_reply_port, _mig_deallocate, _mig_get_reply_port, 
                        _mig_put_reply_port, _mig_reply_setup, _mig_strncpy, _mig_strncpy_zerofill, 
-                       _mincore, _minherit, _mk_timer_arm, _mk_timer_cancel, _mk_timer_create, 
-                       _mk_timer_destroy, _mkdir, _mkdirat, _mkfifo, _mknod, _mlock, 
-                       _mlockall, _mmap, _modwatch, _mount, _mprotect, _mremap_encrypted, 
-                       _msg_receive, _msg_rpc, _msg_send, _msgget, _msgrcv, _msgsnd, 
-                       _msgsys, _msync, _munlock, _munlockall, _munmap, _necp_client_action, 
-                       _necp_match_policy, _necp_open, _netagent_trigger, _netname_check_in, 
-                       _netname_check_out, _netname_look_up, _netname_version, _nfsclnt, 
-                       _nfssvc, _non_boost_assertion_token, _normal_boost_assertion_token, 
-                       _open, _open_dprotected_np, _openat, '_openat$NOCANCEL', _openbyid_np, 
-                       _os_channel_advance_slot, _os_channel_attr_clone, _os_channel_attr_create, 
-                       _os_channel_attr_destroy, _os_channel_attr_get, _os_channel_attr_get_key, 
-                       _os_channel_attr_set, _os_channel_attr_set_key, _os_channel_available_slot_count, 
+                       _mincore, _minherit, _mk_timer_arm, _mk_timer_arm_leeway, 
+                       _mk_timer_cancel, _mk_timer_create, _mk_timer_destroy, _mkdir, 
+                       _mkdirat, _mkfifo, _mknod, _mlock, _mlockall, _mmap, _modwatch, 
+                       _mount, _mprotect, _mremap_encrypted, _msg_receive, _msg_rpc, 
+                       _msg_send, _msgget, _msgrcv, _msgsnd, _msgsys, _msync, _munlock, 
+                       _munlockall, _munmap, _necp_client_action, _necp_match_policy, 
+                       _necp_open, _netagent_trigger, _netname_check_in, _netname_check_out, 
+                       _netname_look_up, _netname_version, _nfsclnt, _nfssvc, _non_boost_assertion_token, 
+                       _normal_boost_assertion_token, _open, _open_dprotected_np, 
+                       _openat, '_openat$NOCANCEL', _openbyid_np, _os_channel_advance_slot, 
+                       _os_channel_attr_clone, _os_channel_attr_create, _os_channel_attr_destroy, 
+                       _os_channel_attr_get, _os_channel_attr_get_key, _os_channel_attr_set, 
+                       _os_channel_attr_set_key, _os_channel_available_slot_count, 
                        _os_channel_create, _os_channel_create_extended, _os_channel_destroy, 
                        _os_channel_get_fd, _os_channel_get_next_slot, _os_channel_pending, 
                        _os_channel_read_attr, _os_channel_read_nexus_extension_info, 

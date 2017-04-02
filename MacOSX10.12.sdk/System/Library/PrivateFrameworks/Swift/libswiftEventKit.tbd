@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DA01AB99-0A32-31D5-A4CC-3D929954A8FD' ]
+uuids:           [ 'x86_64: 2CF670F6-CB01-3D50-AB3F-8295E9562793' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Swift/libswiftEventKit.dylib
 current-version: 800.8.18

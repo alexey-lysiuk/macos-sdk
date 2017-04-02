@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5493A1FE-B922-35C0-9B40-D836E263A0E6' ]
+uuids:           [ 'x86_64: AFE848C4-8534-399A-94B1-E6FF83D59095' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreSpotlight.framework/Versions/A/CoreSpotlight
 objc-constraint: none

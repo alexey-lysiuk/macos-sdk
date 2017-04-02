@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1B550C00-92DE-3E88-8328-9782FBF3675F' ]
+uuids:           [ 'x86_64: 90945BCA-3C9F-3E38-8B6B-45342EC3C3C6' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoLibraryPrivate.framework/Versions/A/Frameworks/ShareServicesCore.framework/Versions/A/ShareServicesCore
-current-version: 3130.0.240
+current-version: 3150.4.120
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -19,8 +19,9 @@ exports:
                        _kSBLProgressFormatKey, _kSBLProgressSamplesPerUnitKey, _kSBLProgressTotalCountKey, 
                        _kSBLRecentActivityThumbnailDisplayTypeKey, _kSBLSelectionSummaryKey, 
                        _kSBLShareKitFullscreenKey, _kSBLShareKitPublishLocationKey, 
-                       _kSBLShareKitScreenInfoKey, _kSBLShareKitSessionErroDomain, 
-                       _kSBLShareKitWindowKey, _kSBLShareKitiCloudActionKey, _kSBLSharedPhotoStreamManagerErrorDomain, 
+                       _kSBLShareKitScreenInfoKey, _kSBLShareKitSessionErrorDomain, 
+                       _kSBLShareKitShareableItemErrorDomain, _kSBLShareKitWindowKey, 
+                       _kSBLShareKitiCloudActionKey, _kSBLSharedPhotoStreamManagerErrorDomain, 
                        _kSBLSharesServicesManagerErrorDomain, _kSBLSharesServicesManagerLogDomain, 
                        _kSBLiCloudPhotosDisabledKey, _kShareKitJpegQuality ]
     objc-classes:    [ _PLCloudAssetChangeNotification, _PLCloudCommentsChangeNotification, 

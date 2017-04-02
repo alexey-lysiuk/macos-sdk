@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F0787B0D-F256-35A2-A8A9-EF89A853828C' ]
+uuids:           [ 'x86_64: E455BED5-AD93-327D-B78D-5FDE73FFFF04' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DifferentialPrivacy.framework/Versions/A/DifferentialPrivacy
 objc-constraint: none

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D01F1214-BFC0-35F4-B3E4-4C89C0DD6168' ]
+uuids:           [ 'x86_64: 213C846E-A16F-3551-9E3E-75C09DE1FD5E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SystemMigrationNetworking.framework/Versions/A/SystemMigrationNetworking
 objc-constraint: none
@@ -48,15 +48,16 @@ exports:
                        _SMNPathingAction, _SMNSSLSecurityProvider, _SMNSlingShotAdvertiser, 
                        _SMNSlingShotBrowser, _SMNStatusAction, _SMNTimeCapsuleBrowser, 
                        _SMNUtilities, _SMNWindowsCopyAction, _SMNWindowsDelegateAction, 
-                       _SMNWindowsLogAction, _SMNWindowsSizingAction, _SMNWindowsSystemProfileAction, 
-                       _SMNWirelessConnectAction, _SMNWirelessController, _SMNWirelessDisconnectAction, 
-                       _SMNWirelessInfoAction, _SMNetworkDirectoryEnumerator_ServerSide, 
+                       _SMNWindowsLogAction, _SMNWindowsPathInfoAction, _SMNWindowsSizingAction, 
+                       _SMNWindowsSystemProfileAction, _SMNWirelessConnectAction, 
+                       _SMNWirelessController, _SMNWirelessDisconnectAction, _SMNWirelessInfoAction, 
+                       _SMNetworkDirectoryEnumerator_ServerSide, _SMWindowsCopyPathAction, 
                        _XMArchiveStream, _XMFile ]
     objc-ivars:      [ _SMNSSLSecurityProvider._delegate, _SMNSSLSecurityProvider._secureTransport106Compatibility, 
                        _SMNSSLSecurityProvider._sslContext, _SMNSSLSecurityProvider._sslContextQueue, 
                        _XMArchiveStream._buffer, _XMArchiveStream._delegate, _XMArchiveStream._destination, 
                        _XMArchiveStream._inputFd, _XMArchiveStream._lastReadFile, 
-                       _XMArchiveStream._uniquifying, _XMArchiveStream._writtenLength, 
-                       _XMFile._compression, _XMFile._endOfFile, _XMFile._iconData, 
-                       _XMFile._length, _XMFile._mode, _XMFile._owner, _XMFile._path ]
+                       _XMArchiveStream._writtenLength, _XMFile._compression, _XMFile._endOfFile, 
+                       _XMFile._iconData, _XMFile._length, _XMFile._mode, _XMFile._owner, 
+                       _XMFile._path ]
 ...

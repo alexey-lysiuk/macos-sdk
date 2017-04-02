@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AC2202AE-8CBE-3807-B6B6-3FDCAC553ED6' ]
+uuids:           [ 'x86_64: E84AF290-2041-3526-A646-5B9D80F2EE13' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Mail.framework/Versions/A/Mail
-current-version: 3259.0
+current-version: 3272
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -377,7 +377,8 @@ exports:
                        _MFSMTPAccount, _MFSMTPConnection, _MFSMTPDeliverer, _MFSQLBinding, 
                        _MFSQLColumn, _MFSQLDataBinding, _MFSQLDoubleBinding, _MFSQLIntegerBinding, 
                        _MFSQLRow, _MFSQLStringBinding, _MFSeenMessage, _MFSeenMessagesManager, 
-                       _MFSignature, _MFSignatureManager, _MFSizeEngine, _MFSmartMailboxSpecialMailboxCriteriaAccountUpgradeStep, 
+                       _MFSetPartsHaveBeenCachedUpgradeStep, _MFSignature, _MFSignatureManager, 
+                       _MFSizeEngine, _MFSmartMailboxSpecialMailboxCriteriaAccountUpgradeStep, 
                        _MFSmartMailboxUnreadCountManager, _MFSmartMailboxesUpgrader, 
                        _MFSnippetCalculator, _MFSnippetManager, _MFSoundPlayList, 
                        _MFSpecialMailbox, _MFSpotlightManager, _MFSpotlightQueryResultProcessor, 

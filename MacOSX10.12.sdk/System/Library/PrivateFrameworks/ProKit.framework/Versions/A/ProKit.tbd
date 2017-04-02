@@ -1,10 +1,10 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 1F89756C-E319-39A9-9828-494138D67660', 'x86_64: C2F16D3C-C581-3D46-929B-396193C2F5F0' ]
+uuids:           [ 'i386: 79527725-5FBE-3530-930A-45AD3F4B7C1A', 'x86_64: 84FCD40C-A441-30B7-B2C1-243714BF2676' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ProKit.framework/Versions/A/ProKit
-current-version: 2001.0
-compatibility-version: 100.0
+current-version: 2001
+compatibility-version: 100
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]

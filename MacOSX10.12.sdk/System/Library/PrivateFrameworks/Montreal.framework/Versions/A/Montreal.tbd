@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4114DB57-9186-3144-8BA4-7226293EEE60' ]
+uuids:           [ 'x86_64: B9A26C1B-91CF-3EE0-8949-10B4969DC86E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Montreal.framework/Versions/A/Montreal
-current-version: 20.0
+current-version: 20
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

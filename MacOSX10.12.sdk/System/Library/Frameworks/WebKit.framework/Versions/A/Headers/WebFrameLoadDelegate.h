@@ -55,7 +55,7 @@
 /*!
     @method webView:didStartProvisionalLoadForFrame:
     @abstract Notifies the delegate that the provisional load of a frame has started
-    @param webView The WebView sending the message
+    @param sender The WebView sending the message
     @param frame The frame for which the provisional load has started
     @discussion This method is called after the provisional data source of a frame
     has started to load.
@@ -65,7 +65,7 @@
 /*!
     @method webView:didReceiveServerRedirectForProvisionalLoadForFrame:
     @abstract Notifies the delegate that a server redirect occurred during the provisional load
-    @param webView The WebView sending the message
+    @param sender The WebView sending the message
     @param frame The frame for which the redirect occurred
 */
 - (void)webView:(WebView *)sender didReceiveServerRedirectForProvisionalLoadForFrame:(WebFrame *)frame;
@@ -73,7 +73,7 @@
 /*!
     @method webView:didFailProvisionalLoadWithError:forFrame:
     @abstract Notifies the delegate that the provisional load has failed
-    @param webView The WebView sending the message
+    @param sender The WebView sending the message
     @param error The error that occurred
     @param frame The frame for which the error occurred
     @discussion This method is called after the provisional data source has failed to load.
@@ -84,7 +84,7 @@
 /*!
     @method webView:didCommitLoadForFrame:
     @abstract Notifies the delegate that the load has changed from provisional to committed
-    @param webView The WebView sending the message
+    @param sender The WebView sending the message
     @param frame The frame for which the load has committed
     @discussion This method is called after the provisional data source has become the
     committed data source.
@@ -99,7 +99,7 @@
 /*!
     @method webView:didReceiveTitle:forFrame:
     @abstract Notifies the delegate that the page title for a frame has been received
-    @param webView The WebView sending the message
+    @param sender The WebView sending the message
     @param title The new page title
     @param frame The frame for which the title has been received
     @discussion The title may update during loading; clients should be prepared for this.
@@ -118,7 +118,7 @@
 /*!
     @method webView:didFinishLoadForFrame:
     @abstract Notifies the delegate that the committed load of a frame has completed
-    @param webView The WebView sending the message
+    @param sender The WebView sending the message
     @param frame The frame that finished loading
     @discussion This method is called after the committed data source of a frame has successfully loaded
     and will only be called when all subresources such as images and stylesheets are done loading.
@@ -129,7 +129,7 @@
 /*!
     @method webView:didFailLoadWithError:forFrame:
     @abstract Notifies the delegate that the committed load of a frame has failed
-    @param webView The WebView sending the message
+    @param sender The WebView sending the message
     @param error The error that occurred
     @param frame The frame that failed to load
     @discussion This method is called after a data source has committed but failed to completely load.
@@ -139,7 +139,7 @@
 /*!
     @method webView:didChangeLocationWithinPageForFrame:
     @abstract Notifies the delegate that the scroll position in a frame has changed
-    @param webView The WebView sending the message
+    @param sender The WebView sending the message
     @param frame The frame that scrolled
     @discussion This method is called when anchors within a page have been clicked.
 */
@@ -148,7 +148,7 @@
 /*!
     @method webView:willPerformClientRedirectToURL:delay:fireDate:forFrame:
     @abstract Notifies the delegate that a frame will perform a client-side redirect
-    @param webView The WebView sending the message
+    @param sender The WebView sending the message
     @param URL The URL to be redirected to
     @param seconds Seconds in which the redirect will happen
     @param date The fire date
@@ -161,7 +161,7 @@
 /*!
     @method webView:didCancelClientRedirectForFrame:
     @abstract Notifies the delegate that a pending client-side redirect has been cancelled
-    @param webView The WebView sending the message
+    @param sender The WebView sending the message
     @param frame The frame for which the pending redirect was cancelled
     @discussion A client-side redirect can be cancelled if a frame changes location before the timeout.
 */
@@ -170,7 +170,7 @@
 /*!
     @method webView:willCloseFrame:
     @abstract Notifies the delegate that a frame will be closed
-    @param webView The WebView sending the message
+    @param sender The WebView sending the message
     @param frame The frame that will be closed
     @discussion This method is called right before WebKit is done with the frame
     and the objects that it contains.

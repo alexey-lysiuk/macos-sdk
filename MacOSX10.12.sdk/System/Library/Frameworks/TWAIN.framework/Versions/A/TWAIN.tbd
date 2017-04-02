@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 662F95AC-00A0-3273-B042-9305A013F04F', 'x86_64: 2FE47277-7DBB-3572-BD11-39CE83376EE4' ]
+uuids:           [ 'i386: 8F43A3B6-E787-3F87-B5CE-6C28E00FCA2E', 'x86_64: 870046C5-F052-3F7C-BB2B-452392CAC599' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/TWAIN.framework/Versions/A/TWAIN
 objc-constraint: none

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 86927E40-3663-307A-B5AF-976B8581E3D6' ]
+uuids:           [ 'x86_64: 7F5E4286-F9D2-378C-BDAD-C7B43F33DEF3' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/XPCObjects.framework/Versions/A/XPCObjects
-current-version: 103.0
+current-version: 103
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 5979ADF2-5AD2-3252-9174-0DFDFE78A318', 'x86_64: BC54696F-BED0-3749-921E-22C38246852A' ]
+uuids:           [ 'i386: C21DEBA4-65EC-3EFE-8ABB-617DB5117734', 'x86_64: 2DE3EBB3-A39B-38E0-BAF4-91513CDBF55E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/VideoProcessing.framework/Versions/A/VideoProcessing
 objc-constraint: none

@@ -14,6 +14,6 @@
 typedef NS_OPTIONS(NSUInteger, INCallCapabilityOptions) {
     INCallCapabilityOptionAudioCall = (1UL << 0),
     INCallCapabilityOptionVideoCall = (1UL << 1),
-} API_AVAILABLE(macosx(10.12), ios(10.0));
+} API_AVAILABLE(macosx(10.12), ios(10.0), watchos(3.2));
 
 #endif // INCallCapabilityOptions_h

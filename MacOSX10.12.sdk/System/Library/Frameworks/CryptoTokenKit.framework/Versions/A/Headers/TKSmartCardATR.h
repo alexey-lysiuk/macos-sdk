@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/// Bitmask of available smartcard protocols.
+/// Bitmask of available SmartCard protocols.
 typedef NS_OPTIONS(NSUInteger, TKSmartCardProtocol) {
     TKSmartCardProtocolNone  = 0,
     TKSmartCardProtocolT0    = (1L << 0),

@@ -17,11 +17,11 @@ typedef NS_ENUM(NSInteger, INSearchForMessagesIntentResponseCode) {
     INSearchForMessagesIntentResponseCodeFailure,
     INSearchForMessagesIntentResponseCodeFailureRequiringAppLaunch,
     INSearchForMessagesIntentResponseCodeFailureMessageServiceNotAvailable,
-} API_AVAILABLE(macosx(10.12), ios(10.0));
+} API_AVAILABLE(macosx(10.12), ios(10.0), watchos(3.2));
 
 NS_ASSUME_NONNULL_BEGIN
 
-API_AVAILABLE(macosx(10.12), ios(10.0))
+API_AVAILABLE(macosx(10.12), ios(10.0), watchos(3.2))
 @interface INSearchForMessagesIntentResponse : INIntentResponse
 
 - (id)init NS_UNAVAILABLE;
@@ -34,7 +34,6 @@ API_AVAILABLE(macosx(10.12), ios(10.0))
 @property (readonly, NS_NONATOMIC_IOSONLY) INSearchForMessagesIntentResponseCode code;
 
 @property (readwrite, copy, nullable, NS_NONATOMIC_IOSONLY) NSArray<INMessage *> *messages;
-
 @end
 
 NS_ASSUME_NONNULL_END

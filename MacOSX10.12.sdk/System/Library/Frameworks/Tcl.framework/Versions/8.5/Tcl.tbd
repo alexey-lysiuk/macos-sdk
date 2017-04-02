@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 42CDAD2B-EDA0-3C04-883D-F24EDFEBFF0B', 'x86_64: 260F3014-EA25-3AB2-90A2-62404585E6CA' ]
+uuids:           [ 'i386: 715EBC00-C16C-3CE7-B0E3-D6352852AAD3', 'x86_64: 6E1BDB80-428A-318C-8CEF-17374E3B8084' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Tcl.framework/Versions/8.5/Tcl
 current-version: 8.5.9
@@ -245,6 +245,7 @@ exports:
                        _TclpObjCopyFile, _TclpObjCreateDirectory, _TclpObjDeleteFile, 
                        _TclpObjRemoveDirectory, _TclpObjRenameFile, _TclpObjStat, 
                        _TclpOpenFile, _TclpOpenFileChannel, _TclpReaddir, _TclpRealloc, 
-                       _TclpSetInitialEncodings, _TclpUtfNcmp2, _tclIntPlatStubsPtr, 
-                       _tclIntStubsPtr, _tclPlatStubsPtr, _tclStubsPtr, _tclTomMathStubsPtr ]
+                       _TclpSetInitialEncodings, _TclpUtfNcmp2, _mt_log_BSDServices_ScriptingLanguageUse, 
+                       _pswhitelist, _tclIntPlatStubsPtr, _tclIntStubsPtr, _tclPlatStubsPtr, 
+                       _tclStubsPtr, _tclTomMathStubsPtr ]
 ...

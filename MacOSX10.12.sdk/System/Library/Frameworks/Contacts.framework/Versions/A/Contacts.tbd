@@ -1,10 +1,10 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 90A21415-9731-3A83-B105-30963A0C865C' ]
+uuids:           [ 'x86_64: 917E2E8A-1E67-3160-B0F3-6E4CFC21B46C' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Contacts.framework/Versions/A/Contacts
-current-version: 0.0
-compatibility-version: 0.0
+current-version: 0
+compatibility-version: 0
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -79,6 +79,7 @@ exports:
                        _CNPostalAddressISOCountryCodeKey, _CNPostalAddressLocalizedPropertyNameAttribute, 
                        _CNPostalAddressPostalCodeKey, _CNPostalAddressPropertyAttribute, 
                        _CNPostalAddressStateKey, _CNPostalAddressStreetKey, _CNPostalAddressSubAdministrativeAreaKey, 
+                       _CNPostalAddressSubLocalityKey, _CNReputationStoreDefaultTimeout, 
                        _CNSocialProfileBundleIdentifiersKey, _CNSocialProfileDisplayNameKey, 
                        _CNSocialProfileServiceFacebook, _CNSocialProfileServiceFlickr, 
                        _CNSocialProfileServiceGameCenter, _CNSocialProfileServiceKey, 
@@ -120,8 +121,9 @@ exports:
                        _CNPredicate, _CNPredicateValidator, _CNPreferredApplePersonaIdentifierDescription, 
                        _CNPreferredForImageDescription, _CNPreferredForNameDescription, 
                        _CNPreferredLikenessSourceDescription, _CNPreviousFamilyNameDescription, 
-                       _CNPropertyDescription, _CNSaveRequest, _CNSearchIndexDescription, 
-                       _CNSocialProfile, _CNSocialProfilesDescription, _CNSortingFamilyNameDescription, 
+                       _CNPropertyDescription, _CNReputationHandle, _CNReputationStore, 
+                       _CNSaveRequest, _CNSearchIndexDescription, _CNSocialProfile, 
+                       _CNSocialProfilesDescription, _CNSortingFamilyNameDescription, 
                        _CNSortingGivenNameDescription, _CNSuggestedSaveRequest, _CNTCC, 
                        _CNTextAlertDescription, _CNThumbnailImageDataDescription, 
                        _CNUrlAddressesDescription, _CNXPCDataMapper ]
@@ -135,5 +137,5 @@ exports:
                        _CNContainerPermissions._canCreateContacts, _CNContainerPermissions._canCreateGroups, 
                        _CNContainerPermissions._canDeleteContacts, _CNGroup._creationDate, 
                        _CNGroup._identifier, _CNGroup._modificationDate, _CNGroup._name, 
-                       _CNGroup._snapshot, _CNPostalAddress._subAdministrativeArea ]
+                       _CNGroup._snapshot ]
 ...

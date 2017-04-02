@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9E796A09-C796-3C1C-BA46-9EBF63B7CB32' ]
+uuids:           [ 'x86_64: FFF54736-6C48-39A8-9268-1F27C794EF33' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Navigation.framework/Versions/A/Navigation
 objc-constraint: none
@@ -48,29 +48,28 @@ exports:
                        _MNGuidanceManager._distanceWhenExecuteAnnounced, _MNGuidanceManager._distanceWhenFirstAnnouncementAllowed, 
                        _MNGuidanceManager._distanceWhenInitialAnnounced, _MNGuidanceManager._distanceWhenPrepareAnnounced, 
                        _MNGuidanceManager._estimateOfTimeToSpeakExecutionAnnouncement, 
-                       _MNGuidanceManager._guidanceState, _MNGuidanceManager._lastRouteMatch, 
-                       _MNGuidanceManager._minExecutionDistance, _MNGuidanceManager._navigationSession, 
-                       _MNGuidanceManager._pointIndexForCurrentRoadInfo, _MNGuidanceManager._route, 
-                       _MNGuidanceManager._shouldAnnounceContinueStraight, _MNGuidanceManager._shouldSkipExecuteAnnounce, 
-                       _MNGuidanceManager._shouldSkipInitialAnnounce, _MNGuidanceManager._shouldSkipPrepareAnnounce, 
-                       _MNGuidanceManager._timeLastAnnouncementEnded, _MNGuidanceManager._timeLastAnnouncementStarted, 
-                       _MNGuidanceManager._timeUntilNextAnnouncement, _MNListInstructionContents._branchNames, 
-                       _MNListInstructionContents._destinationName, _MNListInstructionContents._distance, 
-                       _MNListInstructionContents._distanceFormat, _MNListInstructionContents._exitNumber, 
-                       _MNListInstructionContents._instructionFormat, _MNListInstructionContents._intersectionName, 
-                       _MNListInstructionContents._junctionAngle, _MNListInstructionContents._maneuverType, 
-                       _MNListInstructionContents._suppressFallback, _MNListInstructionContents._suppressNames, 
-                       _MNListInstructionContents._toFreeway, _MNListInstructionContents._towardNames, 
-                       _MNListInstructionContents._transportType, _MNNavigationAudioSession._language, 
-                       _MNNavigationAudioSession._sessionType, _MNSettings._acceptFasterReroute, 
-                       _MNSettings._alightSignalTimeBuffer, _MNSettings._backgroundTimeWindow, 
-                       _MNSettings._beepBeforeInstruction, _MNSettings._distanceUnits, 
-                       _MNSettings._drivingVoiceGuidance, _MNSettings._etaRequestInterval, 
-                       _MNSettings._fakeTrafficIncidentAlert, _MNSettings._initialRequestDelay, 
-                       _MNSettings._initialTraceSpeedMultiplier, _MNSettings._isTracePlaybackCameraTestMode, 
-                       _MNSettings._muteSpeechOverride, _MNSettings._pauseSpokenAudio, 
-                       _MNSettings._shouldLoadETAUpdatesFromTrace, _MNSettings._shouldLoadInitialRouteFromTrace, 
-                       _MNSettings._shouldLoadReroutesFromTrace, _MNSettings._speechEnabled, 
-                       _MNSettings._voiceLanguage, _MNSettings._voiceVolume, _MNSettings._walkingVoiceGuidance, 
-                       _MNVoiceController._activeNavigationSession ]
+                       _MNGuidanceManager._guidanceState, _MNGuidanceManager._minExecutionDistance, 
+                       _MNGuidanceManager._navigationSession, _MNGuidanceManager._pointIndexForCurrentRoadInfo, 
+                       _MNGuidanceManager._route, _MNGuidanceManager._shouldAnnounceContinueStraight, 
+                       _MNGuidanceManager._shouldSkipExecuteAnnounce, _MNGuidanceManager._shouldSkipInitialAnnounce, 
+                       _MNGuidanceManager._shouldSkipPrepareAnnounce, _MNGuidanceManager._timeLastAnnouncementEnded, 
+                       _MNGuidanceManager._timeLastAnnouncementStarted, _MNGuidanceManager._timeUntilNextAnnouncement, 
+                       _MNListInstructionContents._branchNames, _MNListInstructionContents._destinationName, 
+                       _MNListInstructionContents._distance, _MNListInstructionContents._distanceFormat, 
+                       _MNListInstructionContents._exitNumber, _MNListInstructionContents._instructionFormat, 
+                       _MNListInstructionContents._intersectionName, _MNListInstructionContents._junctionAngle, 
+                       _MNListInstructionContents._maneuverType, _MNListInstructionContents._suppressFallback, 
+                       _MNListInstructionContents._suppressNames, _MNListInstructionContents._toFreeway, 
+                       _MNListInstructionContents._towardNames, _MNListInstructionContents._transportType, 
+                       _MNNavigationAudioSession._language, _MNNavigationAudioSession._sessionType, 
+                       _MNSettings._acceptFasterReroute, _MNSettings._alightSignalTimeBuffer, 
+                       _MNSettings._backgroundTimeWindow, _MNSettings._beepBeforeInstruction, 
+                       _MNSettings._distanceUnits, _MNSettings._drivingVoiceGuidance, 
+                       _MNSettings._etaRequestInterval, _MNSettings._fakeTrafficIncidentAlert, 
+                       _MNSettings._initialRequestDelay, _MNSettings._initialTraceSpeedMultiplier, 
+                       _MNSettings._isTracePlaybackCameraTestMode, _MNSettings._muteSpeechOverride, 
+                       _MNSettings._pauseSpokenAudio, _MNSettings._shouldLoadETAUpdatesFromTrace, 
+                       _MNSettings._shouldLoadInitialRouteFromTrace, _MNSettings._shouldLoadReroutesFromTrace, 
+                       _MNSettings._speechEnabled, _MNSettings._voiceLanguage, _MNSettings._voiceVolume, 
+                       _MNSettings._walkingVoiceGuidance, _MNVoiceController._activeNavigationSession ]
 ...

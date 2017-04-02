@@ -1,31 +1,4 @@
-.\" Copyright (c) 2015 Apple Inc
-.\" All rights reserved.
-.\"
-.\" Redistribution and use in source and binary forms, with or without
-.\" modification, are permitted provided that the following conditions
-.\" are met:
-.\" 1. Redistributions of source code must retain the above copyright
-.\"    notice, this list of conditions and the following disclaimer.
-.\" 2. Redistributions in binary form must reproduce the above copyright
-.\"    notice, this list of conditions and the following disclaimer in the
-.\"    documentation and/or other materials provided with the distribution.
-.\" 4. Neither the name of Apple Computer nor the names of its contributors
-.\"    may be used to endorse or promote products derived from this software
-.\"    without specific prior written permission.
-.\"
-.\" THIS SOFTWARE IS PROVIDED BY APPLE COMPUTER AND CONTRIBUTORS ``AS IS'' AND
-.\" ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-.\" IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
-.\" ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
-.\" FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-.\" DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
-.\" OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-.\" HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
-.\" LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
-.\" OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
-.\" SUCH DAMAGE.
-.\"
-.\"
+.\" Copyright (c) 2015 Apple Inc. All rights reserved.
 .Dd June 2, 2016
 .Dt os_log 3
 .Os Darwin
@@ -79,10 +52,14 @@ The built-in value type decoders are:
 .Pp
 .nf
 Value type      Custom specifier         Example output
+BOOL            %{BOOL}d                 YES
+bool            %{bool}d                 true
+darwin.errno    %{darwin.errno}d         [32: Broken pipe]
+darwin.mode     %{darwin.mode}d          drwxr-xr-x
+darwin.signal   %{darwin.signal}d        [sigsegv: Segmentation Fault]
 time_t          %{time_t}d               2016-01-12 19:41:37
 timeval         %{timeval}.*P            2016-01-12 19:41:37.774236
 timespec        %{timespec}.*P           2016-01-12 19:41:37.2382382823
-errno           %{errno}d                Broken pipe
 bitrate         %{bitrate}d              123 kbps
 iec-bitrate     %{iec-bitrate}d          118 Kibps
 uuid_t          %{uuid_t}.16P            10742E39-0657-41F8-AB99-878C5EC2DCAA
@@ -122,14 +99,14 @@ Example use of log messages.
 #include <pwd.h>
 #include <errno.h>
 
-int main(int argc, const char * argv[]) {
-    
+int main(int argc, const char * argv[])
+{
     uid_t uid;
 
     os_log(OS_LOG_DEFAULT, "Standard log message.");
     os_log_info(OS_LOG_DEFAULT, "Additional info for troubleshooting.");
     os_log_debug(OS_LOG_DEFAULT, "Debug level messages.");
-    
+
     struct passwd *pwd = getpwuid(uid);
     if (pwd == NULL) {
         os_log_error(OS_LOG_DEFAULT, "failed to lookup user %d", uid);

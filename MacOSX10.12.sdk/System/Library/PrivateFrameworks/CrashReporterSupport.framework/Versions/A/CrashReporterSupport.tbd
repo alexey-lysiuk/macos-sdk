@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: F604ABA9-8DF9-3C6D-995E-16A348DCEBCD', 'x86_64: CB5251B1-5BE5-308B-B30B-0050065E04CC' ]
+uuids:           [ 'i386: 3665EC86-974A-3DAC-BC87-DC50F00023C4', 'x86_64: 43BCC374-CB17-3331-95A0-227672E98003' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CrashReporterSupport.framework/Versions/A/CrashReporterSupport
-current-version: 817.0
+current-version: 823
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]
@@ -72,10 +72,10 @@ exports:
                        _kCRProblemReportUserMissingLibraryKey, _kCRProblemTypeAssumptionViolation, 
                        _kCRProblemTypeBridge, _kCRProblemTypeBridgeRestore, _kCRProblemTypeConnectionFailure, 
                        _kCRProblemTypeCrash, _kCRProblemTypeDifferentialPrivacy, 
-                       _kCRProblemTypeExcResource, _kCRProblemTypeGPURestart, _kCRProblemTypeHang, 
-                       _kCRProblemTypeHeartbeat, _kCRProblemTypeIOMicroStackShot, 
-                       _kCRProblemTypeMemoryResource, _kCRProblemTypeMicroStackShots, 
-                       _kCRProblemTypePanic, _kCRProblemTypeServiceWatchdogTimeout, 
+                       _kCRProblemTypeExcResource, _kCRProblemTypeFirmwareIntegrity, 
+                       _kCRProblemTypeGPURestart, _kCRProblemTypeHang, _kCRProblemTypeHeartbeat, 
+                       _kCRProblemTypeIOMicroStackShot, _kCRProblemTypeMemoryResource, 
+                       _kCRProblemTypeMicroStackShots, _kCRProblemTypePanic, _kCRProblemTypeServiceWatchdogTimeout, 
                        _kCRProblemTypeShutdownStall, _kCRProblemTypeSleepWakeFailure, 
                        _kCRProblemTypeSpin, _kCRProblemTypeSystemInformation, _kCRProblemTypeWakeupsMonitorViolation, 
                        _kCRProblemTypeWatchdogTimeout, _kCRProblemTypeWirelessDiagnostics, 

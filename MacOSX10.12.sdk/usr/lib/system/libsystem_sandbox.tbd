@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: E6C51B17-2771-32AC-BBDA-89A86A59198C', 'x86_64: 7BBFDF96-293F-3DD9-B3A4-7C168280B441' ]
+uuids:           [ 'i386: 66EC57D2-1775-3224-8080-030C7DE8C932', 'x86_64: 87A2327D-B7A1-3E4C-A85D-D3D9484003DB' ]
 platform:        macosx
 install-name:    /usr/lib/system/libsystem_sandbox.dylib
-current-version: 592.31.1
+current-version: 592.50.47
 objc-constraint: none
 parent-umbrella: System
 exports:         

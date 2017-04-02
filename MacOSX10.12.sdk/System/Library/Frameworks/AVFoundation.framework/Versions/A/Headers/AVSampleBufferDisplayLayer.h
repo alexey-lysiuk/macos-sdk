@@ -38,12 +38,12 @@ typedef NS_ENUM(NSInteger, AVQueuedSampleBufferRenderingStatus) {
 	AVQueuedSampleBufferRenderingStatusUnknown,
 	AVQueuedSampleBufferRenderingStatusRendering,
 	AVQueuedSampleBufferRenderingStatusFailed
-} NS_AVAILABLE(10_10, 8_0) __TVOS_PROHIBITED;
+} API_AVAILABLE(macosx(10.10), ios(8.0), tvos(10.2));
 
-AVF_EXPORT NSString *const AVSampleBufferDisplayLayerFailedToDecodeNotification NS_AVAILABLE(10_10, 8_0) __TVOS_PROHIBITED; // decode failed, see NSError in notification payload
-AVF_EXPORT NSString *const AVSampleBufferDisplayLayerFailedToDecodeNotificationErrorKey NS_AVAILABLE(10_10, 8_0) __TVOS_PROHIBITED; // NSError
+AVF_EXPORT NSString *const AVSampleBufferDisplayLayerFailedToDecodeNotification API_AVAILABLE(macosx(10.10), ios(8.0), tvos(10.2)); // decode failed, see NSError in notification payload
+AVF_EXPORT NSString *const AVSampleBufferDisplayLayerFailedToDecodeNotificationErrorKey API_AVAILABLE(macosx(10.10), ios(8.0), tvos(10.2)); // NSError
 
-NS_CLASS_AVAILABLE(10_8, 8_0) __TVOS_PROHIBITED
+API_AVAILABLE(macosx(10.10), ios(8.0), tvos(10.2))
 @interface AVSampleBufferDisplayLayer : CALayer
 {
 @private

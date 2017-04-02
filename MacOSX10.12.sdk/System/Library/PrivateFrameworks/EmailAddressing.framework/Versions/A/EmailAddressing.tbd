@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AB76FEEC-B9BC-3743-AC71-6D7BFCB592F1' ]
+uuids:           [ 'x86_64: 4BE5D833-4CD0-3ACC-814A-349041EED306' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/EmailAddressing.framework/Versions/A/EmailAddressing
-current-version: 3023.0
+current-version: 3032
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F48B65DC-66D9-349F-BD8A-15303B161AD6' ]
+uuids:           [ 'x86_64: 5CA03C62-F48C-3FF5-9FE3-B6A4AED972EA' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CryptoTokenKit.framework/Versions/A/CryptoTokenKit
 objc-constraint: none

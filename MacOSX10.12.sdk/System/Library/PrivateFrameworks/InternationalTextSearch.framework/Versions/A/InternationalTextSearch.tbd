@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BD4BAE53-0318-3012-95FA-3A050EE736D4' ]
+uuids:           [ 'x86_64: 0B23615B-0A24-3E58-98EA-60E21FD47B80' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/InternationalTextSearch.framework/Versions/A/InternationalTextSearch
 objc-constraint: none

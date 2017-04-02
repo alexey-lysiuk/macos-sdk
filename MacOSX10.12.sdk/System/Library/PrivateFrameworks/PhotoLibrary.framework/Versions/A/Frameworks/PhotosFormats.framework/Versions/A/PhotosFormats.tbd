@@ -1,20 +1,23 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 26A5BEDB-CA6F-35B7-A034-DDD94DF7CEA1' ]
+uuids:           [ 'x86_64: A895E98F-3B4D-3408-A32D-3205160D5F53' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoLibrary.framework/Versions/A/Frameworks/PhotosFormats.framework/Versions/A/PhotosFormats
-current-version: 3130.0.240
+current-version: 3150.4.120
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _PFAssetAdjustmentsBaseVersionKey, _PFAssetAdjustmentsDataBlobKey, 
                        _PFAssetAdjustmentsFormatIdentifierKey, _PFAssetAdjustmentsFormatVersionKey, 
-                       _PFReadImageDisplayTimeFromVideoFileAtPath, _PFReadMetadataFromVideoAVAsset, 
-                       _PFReadMetadataFromVideoAtPath, _PFReadPairingIdentifierFromCGImageProperties, 
-                       _PFReadPairingIdentifierFromImageAtPath, _PFReadPairingIdentifierFromVideoAtPath, 
-                       _PFReadVideoDurationFromVideoFileAtPath, _PFRemovePairingIdentifierFromCGImageProperties, 
-                       _PFSlowMotionUtilitiesCreateErrorWithDescription, _PFVideoAVCFObjectBuilderCopyAVCFAsset, 
-                       _PFVideoAVCFObjectBuilderCreateErrorWithDescription, _PFVideoAVCFObjectBuilderCreateExportSessionWithExportPreset, 
+                       _PFMetadataLivePhotoMinimumClientVersion, _PFMetadataLivePhotoPlaybackStyleIdentifier, 
+                       _PFMetadataLivePhotoPlaybackStyleIdentifierAutoloop, _PFMetadataLivePhotoPlaybackStyleIdentifierDefault, 
+                       _PFMetadataOriginatingSignature, _PFReadImageDisplayTimeFromVideoFileAtPath, 
+                       _PFReadMetadataFromVideoAVAsset, _PFReadMetadataFromVideoAtPath, 
+                       _PFReadPairingIdentifierFromCGImageProperties, _PFReadPairingIdentifierFromImageAtPath, 
+                       _PFReadPairingIdentifierFromVideoAtPath, _PFReadVideoDurationFromVideoFileAtPath, 
+                       _PFRemovePairingIdentifierFromCGImageProperties, _PFSlowMotionUtilitiesCreateErrorWithDescription, 
+                       _PFVideoAVCFObjectBuilderCopyAVCFAsset, _PFVideoAVCFObjectBuilderCreateErrorWithDescription, 
+                       _PFVideoAVCFObjectBuilderCreateExportSessionWithExportPreset, 
                        _PFVideoAVCFObjectBuilderCreatePlayerItem, _PFVideoAVCFObjectBuilderCreateWithVideoAsset, 
                        _PFVideoAVCFObjectBuilderDefaultVideoAdjustments, _PFVideoAVCFObjectBuilderGetAudioMix, 
                        _PFVideoAVCFObjectBuilderGetMutableComposition, _PFVideoAVCFObjectBuilderGetTypeID, 
@@ -23,8 +26,9 @@ exports:
                        _PFVideoComplementMetadataTimingInfoKey, _PFVideoComplementMetadataVersionKey, 
                        _PFVideoComplementVideoPathKey, _PhotosFormatsVersionNumber, 
                        _PhotosFormatsVersionString, ___PFVideoAVCFObjectBuilderClassInitialize ]
-    objc-classes:    [ _PFAssetAdjustments, _PFSlowMotionConfiguration, _PFSlowMotionRampConfiguration, 
-                       _PFSlowMotionTimeRangeMapper, _PFSlowMotionTimeRangeMapperScaledRegion, 
-                       _PFSlowMotionUtilities, _PFVideoAVObjectBuilder, _PFVideoAdjustments, 
-                       _PFVideoComplement ]
+    objc-classes:    [ _PFAssetAdjustments, _PFImageMetadata, _PFSlowMotionConfiguration, 
+                       _PFSlowMotionRampConfiguration, _PFSlowMotionTimeRangeMapper, 
+                       _PFSlowMotionTimeRangeMapperScaledRegion, _PFSlowMotionUtilities, 
+                       _PFVideoAVObjectBuilder, _PFVideoAdjustments, _PFVideoComplement, 
+                       _PFVideoMetadata ]
 ...

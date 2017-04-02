@@ -1,22 +1,22 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2AB1D950-7EA5-359C-B17C-42AEFE99D360' ]
+uuids:           [ 'x86_64: 99B370B1-8D3A-3DEB-8E89-5911DDBF4670' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CloudKit.framework/Versions/A/CloudKit
-current-version: 643.5
+current-version: 651.14
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CKAcceptablePredicateValueClasses, _CKAcceptableValueClasses, 
                        _CKAccountChangedNotification, _CKActivitySharingContainerIdentifier, 
-                       _CKAllTokensKey, _CKAppIdentifierFromTeamAppTuple, _CKBackupContainerIdentifierPrefix, 
-                       _CKBluetoothContainerIdentifier, _CKBoolFromCKTernary, _CKBuildVersion, 
-                       _CKCFArrayForEach, _CKCFDictionaryForEach, _CKCNContactEmailAddressesKey, 
-                       _CKCNContactPhoneNumbersKey, _CKCanRetryForError, _CKChainPrivateKeyFieldName, 
-                       _CKCloudDocsContainerIdentifier, _CKCloudDocsShareURLSlug, 
-                       _CKCloudDocsUnitTestContainerIdentifier, _CKCloudPhotosContainerIdentifier, 
-                       _CKContainerEnvironmentFromString, _CKContainerEnvironmentString, 
-                       _CKContainerIDKey, _CKContainerIdentifierIsAppleInternal, 
+                       _CKAllTokensKey, _CKAppIdentifierFromTeamAppTuple, _CKAutoBugCaptureReasonToString, 
+                       _CKBackupContainerIdentifierPrefix, _CKBluetoothContainerIdentifier, 
+                       _CKBoolFromCKTernary, _CKBuildVersion, _CKCFArrayForEach, 
+                       _CKCFDictionaryForEach, _CKCNContactEmailAddressesKey, _CKCNContactPhoneNumbersKey, 
+                       _CKCanRetryForError, _CKChainPrivateKeyFieldName, _CKCloudDocsContainerIdentifier, 
+                       _CKCloudDocsShareURLSlug, _CKCloudDocsUnitTestContainerIdentifier, 
+                       _CKCloudPhotosContainerIdentifier, _CKContainerEnvironmentFromString, 
+                       _CKContainerEnvironmentString, _CKContainerIDKey, _CKContainerIdentifierIsAppleInternal, 
                        _CKCreateDirectoryAtPath, _CKCreateGUID, _CKCurrentQueueIsMainQueue, 
                        _CKCurrentUserDefaultName, _CKDHTTPHeaders, _CKDatabaseScopeFromString, 
                        _CKDatabaseScopeString, _CKDeviceID, _CKEncryptedPublicSharingKeyFieldName, 
@@ -48,8 +48,9 @@ exports:
                        _CKRecordShareInfoKey, _CKRecordShareKey, _CKRecordTypeShare, 
                        _CKRecordTypeUserRecord, _CKRecordZoneDefaultName, _CKReferenceActionValidate, 
                        _CKRegisterRepeatingXPCActivity, _CKRequestUUID, _CKSQLiteJournalSuffixes, 
-                       _CKShareDaemonPrefix, _CKShareThumbnailImageDataKey, _CKShareTitleKey, 
-                       _CKShareTypeKey, _CKShareURLSlugForiWorkShareTitle, _CKSharingContainerSlugForContainerID, 
+                       _CKSafariBookmarksContainerIdentifier, _CKShareDaemonPrefix, 
+                       _CKShareThumbnailImageDataKey, _CKShareTitleKey, _CKShareTypeKey, 
+                       _CKShareURLSlugForiWorkShareTitle, _CKSharingContainerSlugForContainerID, 
                        _CKSharingdContainerIdentifier, _CKShortRandomID, _CKShouldUseNewPredicateValidation, 
                        _CKSocialGamingContainerIdentifier, _CKStringForQOS, _CKStringFromAccountStatus, 
                        _CKStringFromApplicationPermissionStatus, _CKStringFromCapabilities, 
@@ -59,9 +60,9 @@ exports:
                        _CKStringWithDate, _CKStringWithDictionary, _CKStringWithLimitedArray, 
                        _CKStringWithNibbles, _CKStringWithObject, _CKStringWithSet, 
                        _CKTTYCallHistoryContainerIdentifier, _CKTabIndentAtDepth, 
-                       _CKTemporaryDirectory, _CKTernaryFromBOOL, _CKValidateKeyName, 
-                       _CKValidateRecordArrayValue, _CKValueIsAcceptableClass, _CKValueIsAcceptablePredicateClass, 
-                       _CKVettingURLSlug, _CKWarnForInvalidApplicationIdentifier, 
+                       _CKTemporaryDirectory, _CKTernaryFromBOOL, _CKTriggerAutoBugCaptureWithFormatSignature, 
+                       _CKValidateKeyName, _CKValidateRecordArrayValue, _CKValueIsAcceptableClass, 
+                       _CKValueIsAcceptablePredicateClass, _CKVettingURLSlug, _CKWarnForInvalidApplicationIdentifier, 
                        _CKWeakLinkClass, _CKWeakLinkSymbol, _CKWebSharingBaseTokenKey, 
                        _CKWebSharingIsReadOnly, _CKWebSharingIsShared, _CKWebSharingOperationShareActionKey, 
                        _CKWebSharingOperationShareBaseTokenKey, _CKWebSharingOperationSharingKeyKey, 
@@ -81,7 +82,7 @@ exports:
                        _kCKAllowFakeEntitlementsKey, _kCKAllowLightweightPCSEntitlementKey, 
                        _kCKAllowMasqueradingEntitlementKey, _kCKAllowPackagesKey, 
                        _kCKAllowProtectionDataEntitlementKey, _kCKAllowSetEnvironmentEntitlementKey, 
-                       _kCKAnonymousAccountKey, _kCKBehaviorOptionConfigBaseURLKey, 
+                       _kCKAnonymousAccountKey, _kCKAssetChunkLength, _kCKBehaviorOptionConfigBaseURLKey, 
                        _kCKBehaviorOptionSetupBaseURLKey, _kCKBehaviorOptionsChangedKeysKey, 
                        _kCKBehaviorOptionsChangedKeysNotification, _kCKCDBShareResourceProvider, 
                        _kCKCloudKitSystemServiceKey, _kCKCloudServicesCloudKitServiceEntitlementKey, 
@@ -137,11 +138,11 @@ exports:
     objc-classes:    [ _CKAcceptSharesOperation, _CKAcceptSharesOperationInfo, _CKAccountInfo, 
                        _CKAggregateZonePCSOperation, _CKAggregateZonePCSOperationInfo, 
                        _CKApplicationPermissionGroup, _CKArchivedAnchoredPackage, 
-                       _CKAsset, _CKBehaviorOptions, _CKBlockingAsyncQueue, _CKCodeFunctionInvokeOperation, 
-                       _CKCodeFunctionInvokeOperationInfo, _CKCompleteParticipantVettingOperation, 
-                       _CKCompleteParticipantVettingOperationInfo, _CKContactsSupport, 
-                       _CKContainer, _CKContainerID, _CKContainerSetupInfo, _CKDCancelToken, 
-                       _CKDatabase, _CKDatabaseNotification, _CKDatabaseOperation, 
+                       _CKAsset, _CKAssetTransferOptions, _CKBehaviorOptions, _CKBlockingAsyncQueue, 
+                       _CKCodeFunctionInvokeOperation, _CKCodeFunctionInvokeOperationInfo, 
+                       _CKCompleteParticipantVettingOperation, _CKCompleteParticipantVettingOperationInfo, 
+                       _CKContactsSupport, _CKContainer, _CKContainerID, _CKContainerSetupInfo, 
+                       _CKDCancelToken, _CKDatabase, _CKDatabaseNotification, _CKDatabaseOperation, 
                        _CKDatabaseOperationInfo, _CKDatabaseSubscription, _CKDiscoverAllContactsOperation, 
                        _CKDiscoverAllUserIdentitiesOperation, _CKDiscoverUserIdentitiesOperation, 
                        _CKDiscoverUserIdentitiesOperationInfo, _CKDiscoverUserInfosOperation, 

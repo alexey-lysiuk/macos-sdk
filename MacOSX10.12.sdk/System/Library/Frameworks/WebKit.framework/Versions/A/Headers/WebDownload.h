@@ -63,9 +63,6 @@
 
 /*!
     @method downloadWindowForAuthenticationSheet:
-    @abstract
-    @param
-    @result
 */
 - (NSWindow *)downloadWindowForAuthenticationSheet:(WebDownload *)download;
 

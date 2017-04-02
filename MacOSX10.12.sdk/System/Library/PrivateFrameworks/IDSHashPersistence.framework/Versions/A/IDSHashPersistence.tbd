@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8E195512-3442-3A11-A891-146B3D9F51A1' ]
+uuids:           [ 'x86_64: 728E3700-12CC-3CF1-BB6B-9E0E81B10FBC' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IDSHashPersistence.framework/Versions/A/IDSHashPersistence
-current-version: 800.0
+current-version: 800
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

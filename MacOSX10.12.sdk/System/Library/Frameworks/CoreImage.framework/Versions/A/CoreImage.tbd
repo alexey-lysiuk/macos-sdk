@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 7DF3A21C-3250-3BF8-A31F-3747F216115A', 'x86_64: FA735717-BE82-397E-B0DC-71D83682D2F7' ]
+uuids:           [ 'i386: 523EF0FE-5340-352E-A255-D7234DC65734', 'x86_64: 988872A1-9C33-3FD7-9BF9-881F13A30392' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreImage.framework/Versions/A/CoreImage
-current-version: 5.0
+current-version: 5
 compatibility-version: 1.0.1
 objc-constraint: none
 exports:         
@@ -55,29 +55,30 @@ exports:
                        _CIMotionBlur, _CIMultiplyBlendMode, _CIMultiplyCompositing, 
                        _CINinePartStretched, _CINinePartTiled, _CINoiseReduction, 
                        _CIOpTile, _CIOpacity, _CIOverlayBlendMode, _CIPDF417BarcodeGenerator, 
-                       _CIPageCurlTransition, _CIPageCurlWithShadowTransition, _CIParallelogramTile, 
-                       _CIPassThroughColorFilter, _CIPassThroughFilter, _CIPassThroughGeneralAltFilter, 
-                       _CIPassThroughGeneralFilter, _CIPassThroughIntermediateFilter, 
-                       _CIPassThroughWarpFilter, _CIPerspectiveCorrection, _CIPerspectiveTile, 
-                       _CIPerspectiveTransform, _CIPerspectiveTransformWithExtent, 
-                       _CIPhotoEffect, _CIPhotoEffectChrome, _CIPhotoEffectFade, 
-                       _CIPhotoEffectInstant, _CIPhotoEffectMono, _CIPhotoEffectNoir, 
-                       _CIPhotoEffectProcess, _CIPhotoEffectTonal, _CIPhotoEffectTransfer, 
-                       _CIPhotoGrain, _CIPinLightBlendMode, _CIPinchDistortion, _CIPixellate, 
-                       _CIPlugInStandardFilter, _CIPlusDarkerCompositing, _CIPlusLighterCompositing, 
-                       _CIPointillize, _CIPremultiply, _CIProSharpenEdges, _CIPseudoMedian, 
-                       _CIQRCodeGenerator, _CIRAWFilterImpl, _CIRAWGamutMapping, 
-                       _CIRAWTemperatureAdjust, _CIRadialGradient, _CIRandomGenerator, 
-                       _CIRectangleDetector, _CIRectangleGenerator, _CIRedEyeCorrection, 
-                       _CIRedEyeCorrections, _CIRedEyeRepair, _CIReductionFilter, 
-                       _CIReedSolomon, _CIRippleTransition, _CIRowAverage, _CISRGBToneCurveToLinear, 
-                       _CISaturationBlendMode, _CIScreenBlendMode, _CISepiaTone, 
-                       _CIShadedMaterial, _CISharpenLuminance, _CISimpleTile, _CISixfoldReflectedTile, 
-                       _CISixfoldRotatedTile, _CISkyAndGrassAdjust, _CISmartBlackAndWhite, 
-                       _CISmartColorFilter, _CISmartToneFilter, _CISmoothLinearGradient, 
-                       _CISoftCubicUpsample, _CISoftLightBlendMode, _CISourceAtopCompositing, 
-                       _CISourceInCompositing, _CISourceOutCompositing, _CISourceOverCompositing, 
-                       _CISpotColor, _CISpotLight, _CIStarShineGenerator, _CIStraightenFilter, 
+                       _CIPageCurlTransition, _CIPageCurlWithShadowTransition, _CIPaperWash, 
+                       _CIParallelogramTile, _CIPassThroughColorFilter, _CIPassThroughFilter, 
+                       _CIPassThroughGeneralAltFilter, _CIPassThroughGeneralFilter, 
+                       _CIPassThroughIntermediateFilter, _CIPassThroughWarpFilter, 
+                       _CIPerspectiveCorrection, _CIPerspectiveTile, _CIPerspectiveTransform, 
+                       _CIPerspectiveTransformWithExtent, _CIPhotoEffect, _CIPhotoEffectChrome, 
+                       _CIPhotoEffectFade, _CIPhotoEffectInstant, _CIPhotoEffectMono, 
+                       _CIPhotoEffectNoir, _CIPhotoEffectProcess, _CIPhotoEffectTonal, 
+                       _CIPhotoEffectTransfer, _CIPhotoGrain, _CIPinLightBlendMode, 
+                       _CIPinchDistortion, _CIPixellate, _CIPlugInStandardFilter, 
+                       _CIPlusDarkerCompositing, _CIPlusLighterCompositing, _CIPointillize, 
+                       _CIPremultiply, _CIProSharpenEdges, _CIPseudoMedian, _CIQRCodeGenerator, 
+                       _CIRAWFilterImpl, _CIRAWGamutMapping, _CIRAWTemperatureAdjust, 
+                       _CIRadialGradient, _CIRandomGenerator, _CIRectangleDetector, 
+                       _CIRectangleGenerator, _CIRedEyeCorrection, _CIRedEyeCorrections, 
+                       _CIRedEyeRepair, _CIReductionFilter, _CIReedSolomon, _CIRippleTransition, 
+                       _CIRowAverage, _CISRGBToneCurveToLinear, _CISaturationBlendMode, 
+                       _CIScreenBlendMode, _CISepiaTone, _CIShadedMaterial, _CISharpenLuminance, 
+                       _CISimpleTile, _CISixfoldReflectedTile, _CISixfoldRotatedTile, 
+                       _CISkyAndGrassAdjust, _CISmartBlackAndWhite, _CISmartColorFilter, 
+                       _CISmartToneFilter, _CISmoothLinearGradient, _CISoftCubicUpsample, 
+                       _CISoftLightBlendMode, _CISourceAtopCompositing, _CISourceInCompositing, 
+                       _CISourceOutCompositing, _CISourceOverCompositing, _CISpotColor, 
+                       _CISpotLight, _CIStarShineGenerator, _CIStraightenFilter, 
                        _CIStretch, _CIStretchCrop, _CIStripesGenerator, _CISubtractBlendMode, 
                        _CISunbeamsGenerator, _CISwipeTransition, _CITemperatureAndTint, 
                        _CIThermal, _CITile2Filter, _CITileFilter, _CIToneCurve, _CITorusLensDistortion, 

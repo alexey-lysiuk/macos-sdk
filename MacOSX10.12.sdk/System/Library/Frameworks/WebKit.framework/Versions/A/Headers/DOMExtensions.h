@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004-2006 Apple Inc.  All rights reserved.
+ * Copyright (C) 2004-2016 Apple Inc. All rights reserved.
  * Copyright (C) 2006 Samuel Weinig <sam.weinig@gmail.com>
  *
  * Redistribution and use in source and binary forms, with or without
@@ -24,29 +24,14 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
  */
 
-#import <WebKit/DOMAttr.h>
+#import <CoreGraphics/CoreGraphics.h>
 #import <WebKit/DOMCSS.h>
-#import <WebKit/DOMCSSStyleDeclaration.h>
-#import <WebKit/DOMDocument.h>
-#import <WebKit/DOMElement.h>
 #import <WebKit/DOMHTML.h>
-#import <WebKit/DOMHTMLAnchorElement.h>
-#import <WebKit/DOMHTMLAreaElement.h>
-#import <WebKit/DOMHTMLDocument.h>
-#import <WebKit/DOMHTMLElement.h>
-#import <WebKit/DOMHTMLEmbedElement.h>
-#import <WebKit/DOMHTMLImageElement.h>
-#import <WebKit/DOMHTMLInputElement.h>
-#import <WebKit/DOMHTMLLinkElement.h>
-#import <WebKit/DOMHTMLObjectElement.h>
-#import <WebKit/DOMNode.h>
-#import <WebKit/DOMRGBColor.h>
 #import <WebKit/DOMRange.h>
 
 @class NSArray;
 @class NSImage;
 @class NSURL;
-
 
 @interface DOMNode (DOMNodeExtensions)
 - (NSRect)boundingBox NS_AVAILABLE_MAC(10_5);

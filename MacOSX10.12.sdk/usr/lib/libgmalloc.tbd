@@ -3,7 +3,7 @@ archs:           [ i386, x86_64 ]
 uuids:           [ 'i386: E68585D0-E0F9-33F8-9DC5-33459CC7FDAB', 'x86_64: 690A4E20-E012-3BA2-A8E8-C64AC8BB2246' ]
 platform:        macosx
 install-name:    /usr/lib/libgmalloc.dylib
-current-version: 109.0
+current-version: 109
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]

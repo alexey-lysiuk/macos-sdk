@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1EC3FA3A-47C3-36A8-B825-0E9165707294' ]
+uuids:           [ 'x86_64: DFB2FAF3-F357-30F5-BD50-2AF8FB93938C' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IMCore.framework/Versions/A/IMCore
-current-version: 800.0
+current-version: 800
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -77,10 +77,14 @@ exports:
                        _IMChatUnreadCountChangedNotification, _IMChatValueKey, _IMChatWillSendRichLinkMessages, 
                        _IMChatWillSendRichLinkMessagesNotification, _IMCopyDDScannerResultFromAttributedStringData, 
                        _IMCopyGUIDForChatOnAccount, _IMCopyIDForEmailAddress, _IMCopyIDForPhoneNumber, 
-                       _IMCustomStatusMessagesChangedNotification, _IMDaemonConnectionLostNotification, 
-                       _IMDaemonDidConnectNotification, _IMDaemonDidDisconnectNotification, 
-                       _IMDaemonDidWillConnectNotification, _IMDaemonWillConnectNotification, 
-                       _IMDisplayStatusTextNotification, _IMEmotePrefixes, _IMFMFSessionActiveDeviceChangedNotification, 
+                       _IMCoreAutomationHookChatGUIDKey, _IMCoreAutomationHookErrorDomain, 
+                       _IMCoreAutomationHookGroupIDKey, _IMCoreAutomationHookNameKey, 
+                       _IMCoreAutomationHookParameterError, _IMCoreAutomationHookParameterErrorLocation, 
+                       _IMCoreAutomationHookParticipantsKey, _IMCustomStatusMessagesChangedNotification, 
+                       _IMDaemonConnectionLostNotification, _IMDaemonDidConnectNotification, 
+                       _IMDaemonDidDisconnectNotification, _IMDaemonDidWillConnectNotification, 
+                       _IMDaemonWillConnectNotification, _IMDisplayStatusTextNotification, 
+                       _IMEmotePrefixes, _IMFMFSessionActiveDeviceChangedNotification, 
                        _IMFMFSessionHandleLocationRefreshedNotification, _IMFMFSessionLocationReceivedNotification, 
                        _IMFMFSessionRelationshipStatusDidChangeNotification, _IMFileTransferCreatedNotification, 
                        _IMFileTransferFinishedNotification, _IMFileTransferRefreshAllNotification, 
@@ -118,7 +122,7 @@ exports:
                        _IMSPIMarkSPIMessagesAsPlayed, _IMSPIMarkSPIMessagesAsRead, 
                        _IMSPIMarkSPIMessagesAsSaved, _IMSPIQueryChatsWithUnplayedAudioMessages, 
                        _IMSPIQueryHasConversationWithID, _IMSPIQueryLastReceivedMessage, 
-                       _IMSPIQueryMessageWithRowID, _IMSPIQueryMessagesWithAttributes, 
+                       _IMSPIQueryMessageWithGUID, _IMSPIQueryMessageWithRowID, _IMSPIQueryMessagesWithAttributes, 
                        _IMSPIQueryMessagesWithChatIdentifiers, _IMSPIQueryMessagesWithIDs, 
                        _IMSPIQueryMessagesWithPerson, _IMSPIQueryUnreadMessages, 
                        _IMSPIQueryUnreadMessagesWithIDs, _IMSPISMSService, _IMSPISendMessageWithAttachments, 
@@ -148,17 +152,18 @@ exports:
                        __IMReplaceChatItemsWithChatItemsForItems, __IMSPIMessageFromRecord, 
                        __IMServiceDidConnectNotification, __IMStringFromIMChatJoinState, 
                        __IMStringFromIMChatParticipantState, __IMTypingMessageTimeout, 
-                       __NSStringFromIMMessageError, _kIMTranscriptPluginBreadcrumbTextReceiverIdentifier, 
-                       _kIMTranscriptPluginBreadcrumbTextSenderIdentifier, _kNewValueKey, 
-                       _kOldValueKey, _localizedTextForAppName ]
+                       __NSStringFromIMMessageError, _kHasViewedPotentialSpamChat, 
+                       _kIMTranscriptPluginBreadcrumbTextReceiverIdentifier, _kIMTranscriptPluginBreadcrumbTextSenderIdentifier, 
+                       _kNewValueKey, _kOldValueKey, _kWasAutoDetectedForSpam, _localizedTextForAppName ]
     objc-classes:    [ _IMAccount, _IMAccountController, _IMAddressBook, _IMAggregateAcknowledgmentChatItem, 
                        _IMAnimatedEmojiMessagePartChatItem, _IMAssociatedMessageChatItem, 
                        _IMAssociatedStickerChatItem, _IMAttachment, _IMAttachmentMessagePartChatItem, 
-                       _IMAudioMessageChatItem, _IMBalloonAppExtension, _IMBalloonBrowserPlugin, 
+                       _IMAudioMessageChatItem, _IMAutomation, _IMAutomationGroupChat, 
+                       _IMAutomationMessageSend, _IMBalloonAppExtension, _IMBalloonBrowserPlugin, 
                        _IMBalloonPlugin, _IMBalloonPluginAttributionController, _IMBalloonPluginDataSource, 
                        _IMBalloonPluginManager, _IMChat, _IMChatHistoryController, 
-                       _IMChatItem, _IMChatRegistry, _IMDDController, _IMDaemonController, 
-                       _IMDaemonListener, _IMDateChatItem, _IMDirectlyObservableObject, 
+                       _IMChatItem, _IMChatRegistry, _IMCoreAutomationHook, _IMDDController, 
+                       _IMDaemonController, _IMDaemonListener, _IMDateChatItem, _IMDirectlyObservableObject, 
                        _IMEmoteMessageChatItem, _IMErrorMessagePartChatItem, _IMExpirableMessageChatItem, 
                        _IMExpressiveSendAsTextChatItem, _IMFMFSession, _IMFileTransferCenter, 
                        _IMGroupActionChatItem, _IMGroupTitleChangeChatItem, _IMHandle, 

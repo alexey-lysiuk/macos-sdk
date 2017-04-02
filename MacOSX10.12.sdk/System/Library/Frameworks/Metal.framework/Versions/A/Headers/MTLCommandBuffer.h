@@ -118,6 +118,20 @@ NS_AVAILABLE(10_11, 8_0)
  */
 @property (nullable, copy, atomic) NSString *label;
 
+@property (readonly) CFTimeInterval kernelStartTime NS_AVAILABLE_IOS(10_3);
+@property (readonly) CFTimeInterval kernelEndTime NS_AVAILABLE_IOS(10_3);
+
+/*!
+ @property GPUStartTime
+ @abstract The host time in seconds that GPU starts exeucting this command buffer. Returns zero if it has not started. This usually can be called in command buffer completion handler.
+ */
+@property (readonly) CFTimeInterval GPUStartTime NS_AVAILABLE_IOS(10_3);
+/*!
+ @property GPUEndTime
+ @abstract The host time in seconds that GPU finishes exeucting this command buffer. Returns zero if CPU has not received completion notification. This usually can be called in command buffer completion handler.
+ */
+@property (readonly) CFTimeInterval GPUEndTime NS_AVAILABLE_IOS(10_3);
+
 /*!
  @method enqueue
  @abstract Append this command buffer to the end of its MTLCommandQueue.

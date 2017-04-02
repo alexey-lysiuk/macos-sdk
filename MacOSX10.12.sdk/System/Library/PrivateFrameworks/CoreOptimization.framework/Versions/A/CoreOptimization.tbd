@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 10480AF8-B80F-3914-A406-3647D80E6EF5' ]
+uuids:           [ 'x86_64: 89A9CEB2-F453-3BB3-BDF0-4FEFA23B3066' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreOptimization.framework/Versions/A/CoreOptimization
 objc-constraint: none

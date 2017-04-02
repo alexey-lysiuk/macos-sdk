@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 7E577B91-BC58-3B14-9777-40F928CD6EC8', 'x86_64: 9C419A26-9621-3C50-A9DD-B6DC3BCDDCA0' ]
+uuids:           [ 'i386: E9F38C63-55E1-39BB-90B3-0B58F921E201', 'x86_64: 93C07539-51A7-3178-B2C9-5D6482CC726E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/WebFilterDNS.framework/Versions/A/WebFilterDNS
 objc-constraint: none

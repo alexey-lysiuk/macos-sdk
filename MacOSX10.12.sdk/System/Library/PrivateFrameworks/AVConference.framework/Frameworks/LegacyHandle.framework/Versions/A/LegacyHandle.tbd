@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 93CDE77D-1472-3900-BF8F-6AEFFE906474', 'x86_64: 4BF84D3F-BCB4-35ED-989D-E5E82E82F111' ]
+uuids:           [ 'i386: B20B9D3A-FD26-3B87-BA8C-F5835ACF4AEC', 'x86_64: 57D158BB-72A0-3C9A-A9CF-12B95DE627FD' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AVConference.framework/Frameworks/LegacyHandle.framework/Versions/A/LegacyHandle
 objc-constraint: none

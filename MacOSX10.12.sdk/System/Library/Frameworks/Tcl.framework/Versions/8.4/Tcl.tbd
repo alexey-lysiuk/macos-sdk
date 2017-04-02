@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: E444A4B3-3D03-3251-8862-8EF4F2B57FE7', 'x86_64: BEC23595-5C12-36EF-9A18-F8F8A5327783' ]
+uuids:           [ 'i386: F30F7F1A-C9A7-3567-93FC-7CB41D9E0000', 'x86_64: 8570A7B7-3663-3E31-9574-0BB980E770FB' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Tcl.framework/Versions/8.4/Tcl
 current-version: 8.4.19
@@ -284,17 +284,18 @@ exports:
                        _TclpSetInitialEncodings, _TclpSetVariables, _TclpStrftime, 
                        _TclpTempFileName, _TclpThreadCreate, _TclpThreadDataKeyGet, 
                        _TclpThreadDataKeyInit, _TclpThreadDataKeySet, _TclpThreadExit, 
-                       _TclpUnloadFile, _TclpUtfNcmp2, _TclpUtime, _binfo, _tclArrayHashKeyType, 
-                       _tclArraySearchType, _tclBooleanType, _tclBuiltinFuncTable, 
-                       _tclByteArrayType, _tclByteCodeType, _tclDefaultEncodingDir, 
-                       _tclDoubleType, _tclEmptyString, _tclEmptyStringRep, _tclEndOffsetType, 
-                       _tclExecutableName, _tclForeachInfoType, _tclFreeObjList, 
-                       _tclIndexType, _tclInstructionTable, _tclIntPlatStubs, _tclIntPlatStubsPtr, 
-                       _tclIntStubs, _tclIntStubsPtr, _tclIntType, _tclListType, 
-                       _tclMacOSXDarwinRelease, _tclNativeExecutableName, _tclNativeFilesystem, 
-                       _tclNsNameType, _tclObjHashKeyType, _tclObjMutex, _tclOneWordHashKeyType, 
-                       _tclOriginalNotifier, _tclPlatStubs, _tclPlatStubsPtr, _tclPlatform, 
-                       _tclProcBodyType, _tclStringHashKeyType, _tclStringType, _tclStubs, 
-                       _tclStubsPtr, _tclWideIntType, _tclpFileAttrProcs, _tclpFileAttrStrings, 
+                       _TclpUnloadFile, _TclpUtfNcmp2, _TclpUtime, _binfo, _mt_log_BSDServices_ScriptingLanguageUse, 
+                       _pswhitelist, _tclArrayHashKeyType, _tclArraySearchType, _tclBooleanType, 
+                       _tclBuiltinFuncTable, _tclByteArrayType, _tclByteCodeType, 
+                       _tclDefaultEncodingDir, _tclDoubleType, _tclEmptyString, _tclEmptyStringRep, 
+                       _tclEndOffsetType, _tclExecutableName, _tclForeachInfoType, 
+                       _tclFreeObjList, _tclIndexType, _tclInstructionTable, _tclIntPlatStubs, 
+                       _tclIntPlatStubsPtr, _tclIntStubs, _tclIntStubsPtr, _tclIntType, 
+                       _tclListType, _tclMacOSXDarwinRelease, _tclNativeExecutableName, 
+                       _tclNativeFilesystem, _tclNsNameType, _tclObjHashKeyType, 
+                       _tclObjMutex, _tclOneWordHashKeyType, _tclOriginalNotifier, 
+                       _tclPlatStubs, _tclPlatStubsPtr, _tclPlatform, _tclProcBodyType, 
+                       _tclStringHashKeyType, _tclStringType, _tclStubs, _tclStubsPtr, 
+                       _tclWideIntType, _tclpFileAttrProcs, _tclpFileAttrStrings, 
                        _theFilesystemEpoch ]
 ...

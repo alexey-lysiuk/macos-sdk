@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FC4FD590-26F4-39D1-99EC-3FBF806322E7' ]
+uuids:           [ 'x86_64: 91546191-9B99-3A1E-8953-F2E194ECAD35' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Jet.framework/Versions/A/Jet
 objc-constraint: none
@@ -20,7 +20,7 @@ exports:
                        __Z24jet_debug_option_get_intP8NSString, __Z25jet_debug_option_get_boolP8NSString, 
                        __Z25xglPrintFramebufferStatusv, __Z27jet_debug_option_get_stringP8NSString, 
                        __Z27xglPrintVertexAttribIntegerPKcjj, __Z29jet_Metal_Device_is_supportedPU19objcproto9MTLDevice11objc_object, 
-                       __Z38jet_texture_format_is_framebuffer_only18jet_texture_format, 
+                       __Z30jet_get_info_plist_flag_is_setP8NSString, __Z38jet_texture_format_is_framebuffer_only18jet_texture_format, 
                        __Z43jet_convert_pixel_data_rgb_565_to_rgba_8888PKvPvjj, __Z45jet_convert_pixel_data_rgba_4444_to_rgba_8888PKvPvjj, 
                        __Z45jet_convert_pixel_data_rgba_5551_to_rgba_8888PKvPvjj, 
                        __Z45jet_convert_pixel_data_rgba_fp32_to_rgba_fp16PKvPvjj, 

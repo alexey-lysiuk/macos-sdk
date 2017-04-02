@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 72BE55D1-5CB9-3E89-ACB9-4B2B060D7E6A', 'x86_64: ACD20DC1-FBDE-3E1B-91BF-867FE7849CBC' ]
+uuids:           [ 'i386: F3D2AEE1-BF05-3912-9917-6D320F5865D0', 'x86_64: 8D7E1E97-7B6A-3CE8-B8BB-67B7D3BEC30E' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SecurityHI.framework/Versions/A/SecurityHI
-current-version: 55006.0
+current-version: 55006
 objc-constraint: none
 parent-umbrella: Carbon
 exports:         

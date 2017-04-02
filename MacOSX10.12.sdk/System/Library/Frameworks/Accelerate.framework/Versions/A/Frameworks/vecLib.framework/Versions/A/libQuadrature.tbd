@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 120F6228-A3D4-3184-89D7-785ADC2AC715' ]
+uuids:           [ 'x86_64: EF56C8E6-DE22-3C69-B543-A8648F335FDD' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libQuadrature.dylib
 objc-constraint: none

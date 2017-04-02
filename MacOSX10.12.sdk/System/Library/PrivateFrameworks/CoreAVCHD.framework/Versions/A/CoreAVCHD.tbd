@@ -1,10 +1,10 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: F1CA3E84-F193-3ED1-A51B-F280879C51D3', 'x86_64: 5E1B0512-E50B-3534-99EF-AD15E601877A' ]
+uuids:           [ 'i386: 3FBB1F5F-508D-3EC8-8F15-86F356377B2B', 'x86_64: 3F6857D1-AE7C-3593-B064-930F5BB7269E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreAVCHD.framework/Versions/A/CoreAVCHD
-current-version: 5900.0
-compatibility-version: 5600.0
+current-version: 5900
+compatibility-version: 5600
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]

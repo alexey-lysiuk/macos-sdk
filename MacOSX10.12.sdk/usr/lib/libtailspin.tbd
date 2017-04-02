@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 39BF805D-C389-3ECC-9DF0-3CF2084D9679' ]
+uuids:           [ 'x86_64: 92B517D3-2464-3D01-B355-ED041641F263' ]
 platform:        macosx
 install-name:    /usr/lib/libtailspin.dylib
-current-version: 31.0
+current-version: 31.2
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

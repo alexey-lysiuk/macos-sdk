@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8FE4F93B-04FC-36E1-9077-7D87635BB7F6' ]
+uuids:           [ 'x86_64: 08BDA9FC-1BC6-36B7-9FE4-386F872FAEB0' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/NetworkMenusCommon.framework/NetworkMenusCommon
 objc-constraint: none

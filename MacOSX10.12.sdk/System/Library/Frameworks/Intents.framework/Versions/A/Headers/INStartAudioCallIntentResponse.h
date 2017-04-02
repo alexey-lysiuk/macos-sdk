@@ -15,11 +15,11 @@ typedef NS_ENUM(NSInteger, INStartAudioCallIntentResponseCode) {
     INStartAudioCallIntentResponseCodeFailureRequiringAppLaunch,
     INStartAudioCallIntentResponseCodeFailureAppConfigurationRequired,
     INStartAudioCallIntentResponseCodeFailureCallingServiceNotAvailable,
-} API_AVAILABLE(macosx(10.12), ios(10.0));
+} API_AVAILABLE(macosx(10.12), ios(10.0), watchos(3.2));
 
 NS_ASSUME_NONNULL_BEGIN
 
-API_AVAILABLE(macosx(10.12), ios(10.0))
+API_AVAILABLE(macosx(10.12), ios(10.0), watchos(3.2))
 @interface INStartAudioCallIntentResponse : INIntentResponse
 
 - (id)init NS_UNAVAILABLE;
@@ -30,7 +30,6 @@ API_AVAILABLE(macosx(10.12), ios(10.0))
 - (instancetype)initWithCode:(INStartAudioCallIntentResponseCode)code userActivity:(nullable NSUserActivity *)userActivity NS_DESIGNATED_INITIALIZER;
 
 @property (readonly, NS_NONATOMIC_IOSONLY) INStartAudioCallIntentResponseCode code;
-
 @end
 
 NS_ASSUME_NONNULL_END

@@ -1,10 +1,10 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BC802D69-83B7-3967-B24B-4300F6F6B315' ]
+uuids:           [ 'x86_64: 8D7CE8DD-1626-37D4-8E2C-F3C1C9FC142D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SlideshowKit.framework/Frameworks/OpusKit.framework/Versions/A/OpusKit
-current-version: 0.0
-compatibility-version: 0.0
+current-version: 0
+compatibility-version: 0
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

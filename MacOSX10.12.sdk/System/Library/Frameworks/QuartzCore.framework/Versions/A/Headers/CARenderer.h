@@ -1,6 +1,6 @@
 /* CoreAnimation - CARenderer.h
 
-   Copyright (c) 2007-2016, Apple Inc.
+   Copyright (c) 2007-2017, Apple Inc.
    All rights reserved. */
 
 /* This class lets an application manually drive the rendering of a

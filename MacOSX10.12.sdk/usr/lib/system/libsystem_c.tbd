@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: D68A6BBC-1A46-3361-BEE4-BB29ACB36294', 'x86_64: 2F881962-03CB-3B9D-A782-D98C1BBA4E3D' ]
+uuids:           [ 'i386: 2252D116-215B-3C01-A85F-0AAC10DB36CC', 'x86_64: B03F8915-1E9B-3C84-AED5-68E2E0031630' ]
 platform:        macosx
 install-name:    /usr/lib/system/libsystem_c.dylib
-current-version: 1158.30.7
+current-version: 1158.50.2
 objc-constraint: none
 parent-umbrella: System
 exports:         
@@ -53,18 +53,19 @@ exports:
                        '$ld$weak$os10.11$_clock_gettime', '$ld$weak$os10.11$_clock_settime', 
                        '$ld$weak$os10.11$_dirname_r', '$ld$weak$os10.11$_getentropy', 
                        '$ld$weak$os10.11$_mkostemp', '$ld$weak$os10.11$_mkostemps', 
-                       __CurrentRuneLocale, __DefaultRuneLocale, __Exit, __NSGetArgc, 
-                       __NSGetArgv, __NSGetEnviron, __NSGetMachExecuteHeader, __NSGetProgname, 
-                       __PathLocale, __Read_RuneMagi, ___Balloc_D2A, ___Bfree_D2A, 
-                       ___ULtod_D2A, ____mb_cur_max, ____mb_cur_max_l, ____runetype, 
-                       ____runetype_l, ____tolower, ____tolower_l, ____toupper, ____toupper_l, 
-                       ___add_ovflpage, ___addel, ___any_on_D2A, ___assert_rtn, ___b2d_D2A, 
-                       ___big_delete, ___big_insert, ___big_keydata, ___big_return, 
-                       ___big_split, ___bigtens_D2A, ___bt_close, ___bt_cmp, ___bt_defcmp, 
-                       ___bt_defpfx, ___bt_delete, ___bt_dleaf, ___bt_fd, ___bt_free, 
-                       ___bt_get, ___bt_new, ___bt_open, ___bt_pgin, ___bt_pgout, 
-                       ___bt_put, ___bt_ret, ___bt_search, ___bt_seq, ___bt_setcur, 
-                       ___bt_split, ___bt_sync, ___buf_free, ___cVersionNumber, ___cVersionString, 
+                       '$ld$weak$os10.11$_timingsafe_bcmp', __CurrentRuneLocale, 
+                       __DefaultRuneLocale, __Exit, __NSGetArgc, __NSGetArgv, __NSGetEnviron, 
+                       __NSGetMachExecuteHeader, __NSGetProgname, __PathLocale, __Read_RuneMagi, 
+                       ___Balloc_D2A, ___Bfree_D2A, ___ULtod_D2A, ____mb_cur_max, 
+                       ____mb_cur_max_l, ____runetype, ____runetype_l, ____tolower, 
+                       ____tolower_l, ____toupper, ____toupper_l, ___add_ovflpage, 
+                       ___addel, ___any_on_D2A, ___assert_rtn, ___b2d_D2A, ___big_delete, 
+                       ___big_insert, ___big_keydata, ___big_return, ___big_split, 
+                       ___bigtens_D2A, ___bt_close, ___bt_cmp, ___bt_defcmp, ___bt_defpfx, 
+                       ___bt_delete, ___bt_dleaf, ___bt_fd, ___bt_free, ___bt_get, 
+                       ___bt_new, ___bt_open, ___bt_pgin, ___bt_pgout, ___bt_put, 
+                       ___bt_ret, ___bt_search, ___bt_seq, ___bt_setcur, ___bt_split, 
+                       ___bt_sync, ___buf_free, ___cVersionNumber, ___cVersionString, 
                        ___call_hash, ___cleanup, ___cmp_D2A, ___collate_equiv_match, 
                        ___collate_load_error, ___collate_lookup, ___copybits_D2A, 
                        ___cxa_atexit, ___cxa_finalize, ___cxa_finalize_ranges, ___cxa_thread_atexit, 

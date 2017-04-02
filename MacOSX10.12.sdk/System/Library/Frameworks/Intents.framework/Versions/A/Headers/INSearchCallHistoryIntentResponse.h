@@ -14,11 +14,11 @@ typedef NS_ENUM(NSInteger, INSearchCallHistoryIntentResponseCode) {
     INSearchCallHistoryIntentResponseCodeFailure,
     INSearchCallHistoryIntentResponseCodeFailureRequiringAppLaunch,
     INSearchCallHistoryIntentResponseCodeFailureAppConfigurationRequired,
-} API_AVAILABLE(macosx(10.12), ios(10.0));
+} API_AVAILABLE(macosx(10.12), ios(10.0), watchos(3.2));
 
 NS_ASSUME_NONNULL_BEGIN
 
-API_AVAILABLE(macosx(10.12), ios(10.0))
+API_AVAILABLE(macosx(10.12), ios(10.0), watchos(3.2))
 @interface INSearchCallHistoryIntentResponse : INIntentResponse
 
 - (id)init NS_UNAVAILABLE;
@@ -29,7 +29,6 @@ API_AVAILABLE(macosx(10.12), ios(10.0))
 - (instancetype)initWithCode:(INSearchCallHistoryIntentResponseCode)code userActivity:(nullable NSUserActivity *)userActivity NS_DESIGNATED_INITIALIZER;
 
 @property (readonly, NS_NONATOMIC_IOSONLY) INSearchCallHistoryIntentResponseCode code;
-
 @end
 
 NS_ASSUME_NONNULL_END

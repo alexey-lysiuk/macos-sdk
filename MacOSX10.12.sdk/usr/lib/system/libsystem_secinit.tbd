@@ -1,12 +1,12 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 20802F8D-D050-3CD8-A356-253F82AFF866', 'x86_64: 5C1F1E47-0F7D-3E25-8DEB-D9DB1F902281' ]
+uuids:           [ 'i386: C109B933-EF89-3B0F-B14B-A85649439678', 'x86_64: F78B847B-3565-3E4B-98A6-F7AD40392E2D' ]
 platform:        macosx
 install-name:    /usr/lib/system/libsystem_secinit.dylib
-current-version: 24.0
+current-version: 24.50.4
 objc-constraint: none
 parent-umbrella: System
 exports:         
   - archs:           [ i386, x86_64 ]
-    symbols:         [ __libsecinit_initializer, __libsecinit_is_active, __secinit_set_embedded_crash_message ]
+    symbols:         [ __libsecinit_initializer ]
 ...

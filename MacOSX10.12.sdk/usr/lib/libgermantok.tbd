@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: F8C19EF7-03A4-33E6-A938-C9A0D446C7B9', 'x86_64: C35BED09-0631-31F8-91C4-EC5994CC4FAF' ]
+uuids:           [ 'i386: 325FAF24-BB5C-303D-95CF-4AC615474779', 'x86_64: 35A589D9-5F0E-31D7-9188-37237CC471EC' ]
 platform:        macosx
 install-name:    /usr/lib/libgermantok.dylib
 objc-constraint: none

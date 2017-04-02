@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 59EC7719-3077-35E3-B55D-0C192C5B2485', 'x86_64: AEAA4A7F-2296-3E7E-93A0-28CB59A47AA3' ]
+uuids:           [ 'i386: 5E629188-9162-38BF-A6AE-71C0AEF04FE1', 'x86_64: 4645401F-7A0E-3CC8-9839-F2EED0FFC9F7' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/XprotectFramework.framework/Versions/A/XprotectFramework
 objc-constraint: none

@@ -125,6 +125,7 @@ typedef CF_ENUM(int, CFNetworkErrors) {
   kCFURLErrorFileIsDirectory = -1101,
   kCFURLErrorNoPermissionsToReadFile = -1102,
   kCFURLErrorDataLengthExceedsMaximum = -1103,
+  kCFURLErrorFileOutsideSafeArea = -1104,
   // SSL errors
   kCFURLErrorSecureConnectionFailed = -1200,
   kCFURLErrorServerCertificateHasBadDate = -1201,

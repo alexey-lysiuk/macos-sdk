@@ -1,11 +1,11 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: F2ECF6E5-6B8E-3385-9446-AA8F2C4CF421', 'x86_64: C36B13D0-3E4E-30FA-B6B3-07589401D37D' ]
+uuids:           [ 'i386: B674A507-E84D-3C45-A5AD-5B5B38CD163C', 'x86_64: 1279F4D4-115F-3D6D-8144-C3AF2396983E' ]
 platform:        macosx
 flags:           [ flat_namespace ]
 install-name:    /usr/lib/libnetsnmpagent.25.dylib
 current-version: 26.2
-compatibility-version: 26.0
+compatibility-version: 26
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]

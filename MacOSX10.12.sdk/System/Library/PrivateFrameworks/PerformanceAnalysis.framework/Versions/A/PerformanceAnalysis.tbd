@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: D68875D3-A78C-369C-BCC0-EA808CA4A651', 'x86_64: 2D5D4A56-5F67-3BBB-9AAC-95FAC199877C' ]
+uuids:           [ 'i386: CC0B841B-3390-3941-BB35-026FEA7113A4', 'x86_64: BB9C90BB-29D7-3ED0-81CE-BFFE4A1F3C66' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PerformanceAnalysis.framework/Versions/A/PerformanceAnalysis
-current-version: 145.0
+current-version: 148.3
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

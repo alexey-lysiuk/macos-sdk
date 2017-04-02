@@ -205,8 +205,11 @@ _player = [[AVAudioPlayerNode alloc] init];
 	@abstract
 		Pause the engine.
 	@discussion
-		Stops the flow of audio through the engine, but does not deallocate the resources allocated
-		by prepare. Resume the engine by invoking start again.
+		Stops the audio hardware and the flow of audio through the engine, but does not deallocate
+		the resources allocated by prepare. Resume the engine by invoking start again.
+ 
+		It is recommended that the engine be paused or stopped (as applicable) when not in use, to
+		minimize power consumption.
 */
 - (void)pause;
 
@@ -221,7 +224,10 @@ _player = [[AVAudioPlayerNode alloc] init];
 
 /*! @method stop
 	@abstract
-		Stop the engine. Releases the resources allocated by prepare.
+		Stops the audio hardware and the engine. Releases the resources allocated by prepare.
+ 
+		It is recommended that the engine be paused or stopped (as applicable) when not in use, to
+		minimize power consumption.
 */
 - (void)stop;
 

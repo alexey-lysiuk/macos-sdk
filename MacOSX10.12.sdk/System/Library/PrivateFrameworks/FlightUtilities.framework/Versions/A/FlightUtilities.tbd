@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 83E00359-D0BD-3E22-BE5F-664F927753FB' ]
+uuids:           [ 'x86_64: F8AE323A-FD22-3EEA-A9F5-70455063D43B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/FlightUtilities.framework/Versions/A/FlightUtilities
-current-version: 80.0
+current-version: 80
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

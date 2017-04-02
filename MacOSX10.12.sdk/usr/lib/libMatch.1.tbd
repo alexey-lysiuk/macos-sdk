@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 72C45F20-D6D4-30F1-B4E6-E339AE0015A5', 'x86_64: 5D52A207-E2AF-3E05-8C51-91C1D82FCEE8' ]
+uuids:           [ 'i386: 71BFA1CF-A08E-3014-86EE-A2611ACA1860', 'x86_64: 3262B756-7E6E-31DA-A6F5-8A42D8B933EB' ]
 platform:        macosx
 install-name:    /usr/lib/libMatch.1.dylib
 objc-constraint: none

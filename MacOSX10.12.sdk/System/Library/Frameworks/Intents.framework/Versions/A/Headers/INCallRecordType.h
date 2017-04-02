@@ -16,6 +16,6 @@ typedef NS_ENUM(NSInteger, INCallRecordType) {
     INCallRecordTypeOutgoing,
     INCallRecordTypeMissed,
     INCallRecordTypeReceived,
-} API_AVAILABLE(macosx(10.12), ios(10.0));
+} API_AVAILABLE(macosx(10.12), ios(10.0), watchos(3.2));
 
 #endif // INCallRecordType_h

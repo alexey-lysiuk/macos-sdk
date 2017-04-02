@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 412A2E33-B9C5-3797-922A-5F919E59BD5C' ]
+uuids:           [ 'x86_64: 228672F1-1ED3-3004-B161-90E3E14F8478' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/SceneKit.framework/Versions/A/SceneKit
-current-version: 186.0
+current-version: 186
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -147,17 +147,17 @@ exports:
                        _SCNHitTestResult, _SCNIKConstraint, _SCNImageSource, _SCNKeyedUnarchiver, 
                        _SCNLayer, _SCNLevelOfDetail, _SCNLight, _SCNLightProbes, 
                        _SCNLookAtConstraint, _SCNMaterial, _SCNMaterialProperty, 
-                       _SCNMorpher, _SCNNode, _SCNNodeReference, _SCNOffscreenRenderer, 
-                       _SCNParticlePropertyController, _SCNParticleSystem, _SCNPhysicsBallSocketJoint, 
-                       _SCNPhysicsBehavior, _SCNPhysicsBody, _SCNPhysicsCharacter, 
-                       _SCNPhysicsContact, _SCNPhysicsCustomField, _SCNPhysicsDragField, 
-                       _SCNPhysicsField, _SCNPhysicsHingeJoint, _SCNPhysicsLinearGravityField, 
-                       _SCNPhysicsMagneticField, _SCNPhysicsNoiseField, _SCNPhysicsRadialGravityField, 
-                       _SCNPhysicsShape, _SCNPhysicsSliderJoint, _SCNPhysicsSpringField, 
-                       _SCNPhysicsTurbulenceField, _SCNPhysicsVehicle, _SCNPhysicsVehicleWheel, 
-                       _SCNPhysicsVortexField, _SCNPhysicsWorld, _SCNPlane, _SCNProgram, 
-                       _SCNPyramid, _SCNReferenceNode, _SCNRenderer, _SCNScene, _SCNSceneSource, 
-                       _SCNShape, _SCNSkinner, _SCNSphere, _SCNTechnique, _SCNText, 
-                       _SCNTextureSource, _SCNTorus, _SCNTransaction, _SCNTransformConstraint, 
-                       _SCNTube, _SCNView, __SCNShadableCompilationIssue ]
+                       _SCNMetalLayer, _SCNMorpher, _SCNNode, _SCNNodeReference, 
+                       _SCNOffscreenRenderer, _SCNParticlePropertyController, _SCNParticleSystem, 
+                       _SCNPhysicsBallSocketJoint, _SCNPhysicsBehavior, _SCNPhysicsBody, 
+                       _SCNPhysicsCharacter, _SCNPhysicsContact, _SCNPhysicsCustomField, 
+                       _SCNPhysicsDragField, _SCNPhysicsField, _SCNPhysicsHingeJoint, 
+                       _SCNPhysicsLinearGravityField, _SCNPhysicsMagneticField, _SCNPhysicsNoiseField, 
+                       _SCNPhysicsRadialGravityField, _SCNPhysicsShape, _SCNPhysicsSliderJoint, 
+                       _SCNPhysicsSpringField, _SCNPhysicsTurbulenceField, _SCNPhysicsVehicle, 
+                       _SCNPhysicsVehicleWheel, _SCNPhysicsVortexField, _SCNPhysicsWorld, 
+                       _SCNPlane, _SCNProgram, _SCNPyramid, _SCNReferenceNode, _SCNRenderer, 
+                       _SCNScene, _SCNSceneSource, _SCNShape, _SCNSkinner, _SCNSphere, 
+                       _SCNTechnique, _SCNText, _SCNTextureSource, _SCNTorus, _SCNTransaction, 
+                       _SCNTransformConstraint, _SCNTube, _SCNView, __SCNShadableCompilationIssue ]
 ...

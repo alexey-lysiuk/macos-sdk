@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F3A5C381-B7D2-3BE1-AB30-3426922C3938' ]
+uuids:           [ 'x86_64: 4977039B-FC27-3D6E-9B3E-81B3071ADBB3' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AudioServerApplication.framework/Versions/A/AudioServerApplication
 objc-constraint: none

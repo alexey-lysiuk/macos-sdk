@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: EA6013B6-733D-330C-9377-C9D11462CBA3', 'x86_64: 3F4530C9-8BE1-3AA7-9A82-98694D240866' ]
+uuids:           [ 'i386: 34E46B19-A065-3BBC-BBC0-2BE5E313D444', 'x86_64: 2085E7A7-9A34-3735-87F4-F174EF8EABF0' ]
 platform:        macosx
 install-name:    /usr/lib/liblangid.dylib
 objc-constraint: none

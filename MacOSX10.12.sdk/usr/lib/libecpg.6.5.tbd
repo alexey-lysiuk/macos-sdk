@@ -1,10 +1,10 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B93D7450-9FC4-348F-9C8E-8EB986ECABCF' ]
+uuids:           [ 'x86_64: 9B6864D3-2575-3348-958D-ACB5CE1E8EEB' ]
 platform:        macosx
 install-name:    /usr/lib/libecpg.6.dylib
 current-version: 6.5
-compatibility-version: 6.0
+compatibility-version: 6
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

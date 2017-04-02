@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: DAA9890C-D9B8-3A1C-86C2-717ADD4D9231', 'x86_64: D4B76B20-7777-39C9-8365-FC0C0DE17AB0' ]
+uuids:           [ 'i386: A55F9740-3B6B-37C9-8996-7E4C1EF514DE', 'x86_64: 00D257AA-283D-3395-B9B0-FEB70764080B' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/IOBluetooth.framework/Versions/A/IOBluetooth
 objc-constraint: none

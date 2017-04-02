@@ -1,10 +1,10 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: A747261A-C735-3C8E-BE92-DD555EC88BEB', 'x86_64: 187E26FA-7642-37AD-B085-D540C14B0C1D' ]
+uuids:           [ 'i386: 5EDCFFFE-3F64-350B-847E-D950FE06B3BC', 'x86_64: 2CBB45AD-B52F-3C82-B830-2CFA70002450' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/DVDPlayback.framework/Versions/A/DVDPlayback
-current-version: 5960.0
-compatibility-version: 5000.0
+current-version: 5960
+compatibility-version: 5000
 objc-constraint: none
 exports:         
   - archs:           [ i386 ]

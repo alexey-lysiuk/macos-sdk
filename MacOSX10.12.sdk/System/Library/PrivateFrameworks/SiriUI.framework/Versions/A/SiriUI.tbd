@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0FA54714-3A55-3C14-9F73-4F11B6B70124' ]
+uuids:           [ 'x86_64: 565F6837-F0C0-3261-B8D5-FE7EE4C81DE6' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SiriUI.framework/Versions/A/SiriUI
 objc-constraint: none
@@ -13,15 +13,15 @@ exports:
                        _SiriUIDefaultWindowWidth, _SiriUIGetLanguageCode, _SiriUIInvokeOnMainQueue, 
                        _SiriUILocalizedListStringForString, _SiriUILocalizedRelativeDateStringForDateWithWantsAgo, 
                        _SiriUIRectInset, _SiriUISetLanguageCode, _SiriUISnippetPluginErrorDomain, 
-                       _SiriUIUtteranceWidthForAvailableWidth, _UIRectCenteredIntegralRect, 
-                       _UIRectCenteredIntegralRectScale, _UIRectCenteredYInRect, 
-                       _kRadarComposeClassificationField, _kRadarComposeComponentNameField, 
-                       _kRadarComposeComponentVersionField, _kRadarComposeDescriptionField, 
-                       _kRadarComposeReproducibleField, _kRadarComposeTitleField, 
-                       _kSiriUICardCategoryCalculator, _kSiriUICardCategoryDictionary, 
-                       _kSiriUICardCategoryMicroblogFacebook, _kSiriUICardCategoryMicroblogTwitter, 
-                       _kSiriUICardCategoryMicroblogWeibo, _kSiriUICardCategoryStocks, 
-                       _kSiriUICardCategoryWeather ]
+                       _SiriUIUtteranceBaselineToBaselineSpacing, _SiriUIUtteranceWidthForAvailableWidth, 
+                       _UIRectCenteredIntegralRect, _UIRectCenteredIntegralRectScale, 
+                       _UIRectCenteredYInRect, _kRadarComposeClassificationField, 
+                       _kRadarComposeComponentNameField, _kRadarComposeComponentVersionField, 
+                       _kRadarComposeDescriptionField, _kRadarComposeReproducibleField, 
+                       _kRadarComposeTitleField, _kSiriUICardCategoryCalculator, 
+                       _kSiriUICardCategoryDictionary, _kSiriUICardCategoryMicroblogFacebook, 
+                       _kSiriUICardCategoryMicroblogTwitter, _kSiriUICardCategoryMicroblogWeibo, 
+                       _kSiriUICardCategoryStocks, _kSiriUICardCategoryWeather ]
     objc-classes:    [ _AFUISiriSession, _AFUISiriViewController, _SiriUIAceObjectCollectionViewItem, 
                        _SiriUIAceObjectViewController, _SiriUIAcousticIDSpinner, 
                        _SiriUIAnimationUtilities, _SiriUIAppInfoRepository, _SiriUIAttributedButtonFooterView, 

@@ -1,10 +1,10 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 66A5B266-1344-38CC-97F9-B58B51A2D26B', 'x86_64: 2D3593DF-8DF9-3813-B0C2-6938BC77FC79' ]
+uuids:           [ 'i386: 733435CC-5996-31E1-BC28-63CAC6628E31', 'x86_64: 5880F20C-5732-3285-B4F8-E2CBB464D950' ]
 platform:        macosx
 install-name:    /usr/lib/libedit.3.dylib
-current-version: 3.0
-compatibility-version: 2.0
+current-version: 3
+compatibility-version: 2
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]

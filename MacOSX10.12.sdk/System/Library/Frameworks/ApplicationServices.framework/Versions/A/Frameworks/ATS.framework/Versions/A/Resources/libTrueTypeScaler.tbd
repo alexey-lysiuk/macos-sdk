@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 14E0A33F-D894-3CE3-9265-9DAD9093D8B1', 'x86_64: D0D7DA50-DF52-3D24-AFD2-03B336AA1929' ]
+uuids:           [ 'i386: 8746C218-F9C1-3241-A19E-3813D29BD483', 'x86_64: D951545E-3D83-3A3E-A3FE-22A23D485ACD' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Resources/libTrueTypeScaler.dylib
 objc-constraint: none

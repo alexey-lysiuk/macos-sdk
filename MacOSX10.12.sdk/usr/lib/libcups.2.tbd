@@ -1,10 +1,10 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: F450D585-C346-3FCF-9397-4A7D87C76A27', 'x86_64: 78243BA4-43AB-3364-8111-8D54D3382621' ]
+uuids:           [ 'i386: 43FB4807-F4E4-3D64-9869-282795386D68', 'x86_64: F7AC4FF1-9755-3CFF-8CE3-F4FFACC43BEC' ]
 platform:        macosx
 install-name:    /usr/lib/libcups.2.dylib
 current-version: 2.12
-compatibility-version: 2.0
+compatibility-version: 2
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]

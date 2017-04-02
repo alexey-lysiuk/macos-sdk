@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 439CB13E-6D56-3E2C-B76A-4CC4F4800ACD', 'x86_64: 1A318923-1200-3B06-B432-5007D82F195D' ]
+uuids:           [ 'i386: 6629C3DA-A8E6-3FD6-A760-63283F62086A', 'x86_64: 7AA011A9-DC21-3488-BF73-3B5B14D1FDD6' ]
 platform:        macosx
 install-name:    /usr/lib/system/libkeymgr.dylib
-current-version: 28.0
+current-version: 28
 objc-constraint: none
 parent-umbrella: System
 exports:         

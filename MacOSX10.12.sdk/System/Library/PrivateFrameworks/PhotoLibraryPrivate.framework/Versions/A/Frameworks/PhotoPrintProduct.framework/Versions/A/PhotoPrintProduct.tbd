@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3FBBF7E1-C57A-3F62-8205-517FBAFEFCDC' ]
+uuids:           [ 'x86_64: 85026DFA-6114-3885-8E2F-9D34A80CB5C1' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoLibraryPrivate.framework/Versions/A/Frameworks/PhotoPrintProduct.framework/Versions/A/PhotoPrintProduct
-current-version: 657.0
+current-version: 658
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -597,7 +597,6 @@ exports:
                        _NSStringFromKHCGSize, _NSUserDefaultsGetPhotoPrintProductSoftwareUpdateNamespace, 
                        _NoneEmailThemeIdentifier, _NoneEmailThemeModelId, _PhotoPrintProductVersionNumber, 
                        _PhotoPrintProductVersionString, _ReleaseInfo, _ReleaseSegmentedArtCache, 
-                       _UXCollectionViewElementKindCell, _UXCollectionViewElementKindDecorationView, 
                        __Z20freeFragmentedMatrixPPvm, __Z24allocateFragmentedMatrixmmm, 
                        ___compareItemByScoreDescending, ___comparePhotoGroupsByTime, 
                        ___comparePhotosByScore, ___comparePhotosByScoreDescending, 

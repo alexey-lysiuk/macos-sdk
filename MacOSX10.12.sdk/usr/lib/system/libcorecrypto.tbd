@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 6B90D96B-887B-320C-A390-03BBAE921F6C', 'x86_64: 2074B932-FD79-30A9-8E90-AF25C49F2AF1' ]
+uuids:           [ 'i386: 24E8E515-1B00-3F7D-8367-CE2002E6FBA5', 'x86_64: 8A39EE06-121C-3731-A9E9-35847064B3EE' ]
 platform:        macosx
 install-name:    /usr/lib/system/libcorecrypto.dylib
-current-version: 442.30.20
+current-version: 442.50.19
 objc-constraint: none
 parent-umbrella: System
 exports:         
@@ -63,16 +63,17 @@ exports:
                        _ccdes_ctr_crypt_mode, _ccdes_ecb_decrypt_mode, _ccdes_ecb_encrypt_mode, 
                        _ccdes_key_is_weak, _ccdes_key_set_odd_parity, _ccdes_ofb_crypt_mode, 
                        _ccdh_compute_key, _ccdh_compute_shared_secret, _ccdh_export_pub, 
-                       _ccdh_generate_key, _ccdh_gp_rfc2409group02, _ccdh_gp_rfc3526group05, 
-                       _ccdh_gp_rfc3526group14, _ccdh_gp_rfc3526group15, _ccdh_gp_rfc3526group16, 
-                       _ccdh_gp_rfc3526group17, _ccdh_gp_rfc3526group18, _ccdh_gp_rfc5114_MODP_1024_160, 
-                       _ccdh_gp_rfc5114_MODP_2048_224, _ccdh_gp_rfc5114_MODP_2048_256, 
-                       _ccdh_import_full, _ccdh_import_priv, _ccdh_import_pub, _ccdh_init_gp, 
-                       _ccdh_init_gp_from_bytes, _ccdh_init_gp_with_order, _ccdigest, 
-                       _ccdigest_init, _ccdigest_oid_lookup, _ccdigest_update, _ccdrbg_factory_nistctr, 
-                       _ccdrbg_factory_nisthmac, _ccec_compact_export, _ccec_compact_generate_key, 
-                       _ccec_compact_import_priv, _ccec_compact_import_priv_size, 
-                       _ccec_compact_import_pub, _ccec_compact_import_pub_size, _ccec_compact_transform_key, 
+                       _ccdh_generate_key, _ccdh_gp_apple768, _ccdh_gp_rfc2409group02, 
+                       _ccdh_gp_rfc3526group05, _ccdh_gp_rfc3526group14, _ccdh_gp_rfc3526group15, 
+                       _ccdh_gp_rfc3526group16, _ccdh_gp_rfc3526group17, _ccdh_gp_rfc3526group18, 
+                       _ccdh_gp_rfc5114_MODP_1024_160, _ccdh_gp_rfc5114_MODP_2048_224, 
+                       _ccdh_gp_rfc5114_MODP_2048_256, _ccdh_import_full, _ccdh_import_priv, 
+                       _ccdh_import_pub, _ccdh_init_gp, _ccdh_init_gp_from_bytes, 
+                       _ccdh_init_gp_with_order, _ccdigest, _ccdigest_init, _ccdigest_oid_lookup, 
+                       _ccdigest_update, _ccdrbg_factory_nistctr, _ccdrbg_factory_nisthmac, 
+                       _ccec_compact_export, _ccec_compact_generate_key, _ccec_compact_import_priv, 
+                       _ccec_compact_import_priv_size, _ccec_compact_import_pub, 
+                       _ccec_compact_import_pub_size, _ccec_compact_transform_key, 
                        _ccec_compute_key, _ccec_cp_192, _ccec_cp_224, _ccec_cp_256, 
                        _ccec_cp_384, _ccec_cp_521, _ccec_curve_for_length_lookup, 
                        _ccec_der_export_diversified_pub, _ccec_der_export_diversified_pub_size, 

@@ -1,11 +1,11 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 42797C86-CC96-3227-A692-AC0491C40B04', 'x86_64: 438EDB9F-05EA-346D-BC35-639C1E9BEF6B' ]
+uuids:           [ 'i386: 282AEFB4-124A-3AA2-B867-9C1E721DB34B', 'x86_64: E960D050-2CDD-37EF-9225-064417DA34A8' ]
 platform:        macosx
 flags:           [ flat_namespace ]
 install-name:    /usr/lib/libapr-1.0.dylib
 current-version: 5.8
-compatibility-version: 5.0
+compatibility-version: 5
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]

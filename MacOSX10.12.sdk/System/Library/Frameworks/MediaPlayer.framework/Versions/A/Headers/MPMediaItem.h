@@ -155,6 +155,10 @@ MP_EXTERN NSString * const MPMediaItemPropertyBookmarkTime NS_AVAILABLE(10_12_2,
 MP_EXTERN NSString * const MPMediaItemPropertyDateAdded NS_AVAILABLE(10_12_2, 10_0);
 @property (nonatomic, readonly) NSDate *dateAdded NS_AVAILABLE_IOS(10_0);
 
+// Matches the id used by MPMusicPlayerController to enqueue store tracks  
+MP_EXTERN NSString * const MPMediaItemPropertyPlaybackStoreID NS_AVAILABLE_IOS(10_3);
+@property (nonatomic, readonly) NSString *playbackStoreID NS_AVAILABLE_IOS(10_3);
+
 @end
 
 //-----------------------------------------------------

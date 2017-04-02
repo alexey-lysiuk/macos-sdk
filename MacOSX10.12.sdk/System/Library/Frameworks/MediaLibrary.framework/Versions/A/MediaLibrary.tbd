@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5171B499-2E94-3483-B6D9-29AFF9942EDE' ]
+uuids:           [ 'x86_64: DAAE2CED-13CD-353B-BADA-24178E9F38E7' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/MediaLibrary.framework/Versions/A/MediaLibrary
-current-version: 733.0
+current-version: 733
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

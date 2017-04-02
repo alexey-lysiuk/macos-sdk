@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: A42D09A2-7AF5-32EF-A5D1-BBC115DA746A', 'x86_64: AD8147FE-2A1F-3674-A476-5A17AAB91C1B' ]
+uuids:           [ 'i386: 5016FB55-25EE-3726-A3D9-F00EC2D82CE8', 'x86_64: 6FBD31D2-0424-367E-9A82-EF4871361A33' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Automator.framework/Versions/A/Automator
-current-version: 0.0
+current-version: 0
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

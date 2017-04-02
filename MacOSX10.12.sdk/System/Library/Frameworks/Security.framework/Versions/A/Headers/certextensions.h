@@ -1,15 +1,15 @@
 /*
- * Copyright (c) 2000-2004,2011,2014 Apple Inc. All Rights Reserved.
- * 
+ * Copyright (c) 2000-2009,2011,2012,2014,2016 Apple Inc. All Rights Reserved.
+ *
  * @APPLE_LICENSE_HEADER_START@
- * 
+ *
  * This file contains Original Code and/or Modifications of Original Code
  * as defined in and that are subject to the Apple Public Source License
  * Version 2.0 (the 'License'). You may not use this file except in
  * compliance with the License. Please obtain a copy of the License at
  * http://www.opensource.apple.com/apsl/ and read it before using this
  * file.
- * 
+ *
  * The Original Code and all software distributed under the License are
  * distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
  * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
@@ -17,7 +17,7 @@
  * FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.
  * Please see the License for the specific language governing rights and
  * limitations under the License.
- * 
+ *
  * @APPLE_LICENSE_HEADER_END@
  *
  * CertExtensions.h -- X.509 Cert Extensions as C structs
@@ -26,38 +26,48 @@
 #ifndef	_CERT_EXTENSIONS_H_
 #define _CERT_EXTENSIONS_H_
 
-#include <Security/cssmtype.h>
+#include <Security/SecBase.h>
 
+#if SEC_OS_OSX
+
+#include <Security/cssmtype.h>
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 
+#else /* SEC_OS_IPHONE */
+
+#include <stdbool.h>
+#include <libDER/libDER.h>
+
+#endif /* SEC_OS_IPHONE */
+
 /***
- *** Structs for declaring extension-specific data. 
+ *** Structs for declaring extension-specific data.
  ***/
 
 /*
- * GeneralName, used in AuthorityKeyID, SubjectAltName, and 
- * IssuerAltName. 
+ * GeneralName, used in AuthorityKeyID, SubjectAltName, and
+ * IssuerAltName.
  *
  * For now, we just provide explicit support for the types which are
  * represented as IA5Strings, OIDs, and octet strings. Constructed types
  * such as EDIPartyName and x400Address are not explicitly handled
  * right now and must be encoded and decoded by the caller. (See exception
- * for Name and OtherName, below). In those cases the CE_GeneralName.name.Data field 
- * represents the BER contents octets; CE_GeneralName.name.Length is the 
- * length of the contents; the tag of the field is not needed - the BER 
- * encoding uses context-specific implicit tagging. The berEncoded field 
- * is set to CSSM_TRUE in these case. Simple types have berEncoded = CSSM_FALSE. 
+ * for Name and OtherName, below). In those cases the SecECGeneralName.name.Data / CE_GeneralName.name.Data field
+ * represents the BER contents octets; SecCEGeneralName.name.Length / CE_GeneralName.name.Length is the
+ * length of the contents; the tag of the field is not needed - the BER
+ * encoding uses context-specific implicit tagging. The berEncoded field
+ * is set to true / CSSM_TRUE in these case. Simple types have berEncoded = false / CSSM_FALSE.
  *
  * In the case of a GeneralName in the form of a Name, we parse the Name
  * into a CSSM_X509_NAME and place a pointer to the CSSM_X509_NAME in the
- * CE_GeneralName.name.Data field. CE_GeneralName.name.Length is set to 
- * sizeof(CSSM_X509_NAME). In this case berEncoded is false. 
+ * CE_GeneralName.name.Data field. SecCEGeneralName.name.Length / CE_GeneralName.name.Length is set to
+ * sizeof(CSSM_X509_NAME). In this case berEncoded is false.
  *
  * In the case of a GeneralName in the form of a OtherName, we parse the fields
- * into a CE_OtherName and place a pointer to the CE_OtherName in the
- * CE_GeneralName.name.Data field. CE_GeneralName.name.Length is set to 
- * sizeof(CE_OtherName). In this case berEncoded is false. 
+ * into a CE_OtherName and place a pointer to the SecCEOtherName / CE_OtherName in the
+ * SecCEGeneralName.name.Data / CE_GeneralName.name.Data field. SecCEGeneralName.name.Length / CE_GeneralName.name.Length is set to
+ * sizeof(SecCEOtherName) / sizeof(CE_OtherName). In this case berEncoded is false.
  *
  *      GeneralNames ::= SEQUENCE SIZE (1..MAX) OF GeneralName
  *
@@ -80,6 +90,7 @@
  *           nameAssigner            [0]     DirectoryString OPTIONAL,
  *           partyName               [1]     DirectoryString }
  */
+#if SEC_OS_OSX
 typedef enum __CE_GeneralNameType {
 	GNT_OtherName = 0,
 	GNT_RFC822Name,
@@ -92,6 +103,24 @@ typedef enum __CE_GeneralNameType {
 	GNT_RegisteredID
 } CE_GeneralNameType;
 
+#elif SEC_OS_IPHONE
+
+typedef enum {
+	GNT_OtherName = 0,
+	GNT_RFC822Name,
+	GNT_DNSName,
+	GNT_X400Address,
+	GNT_DirectoryName,
+	GNT_EdiPartyName,
+	GNT_URI,
+	GNT_IPAddress,
+	GNT_RegisteredID
+} SecCEGeneralNameType;
+
+#endif /* SEC_OS_IPHONE */
+
+#if SEC_OS_OSX
+
 typedef struct __CE_OtherName {
 	CSSM_OID				typeId;
 	CSSM_DATA				value;		// unparsed, BER-encoded
@@ -100,13 +129,33 @@ typedef struct __CE_OtherName {
 typedef struct __CE_GeneralName {
 	CE_GeneralNameType		nameType;	// GNT_RFC822Name, etc.
 	CSSM_BOOL				berEncoded;
-	CSSM_DATA				name; 
+	CSSM_DATA				name;
 } CE_GeneralName DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 
 typedef struct __CE_GeneralNames {
 	uint32					numNames;
-	CE_GeneralName			*generalName;		
-} CE_GeneralNames DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;	
+	CE_GeneralName			*generalName;
+} CE_GeneralNames DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+
+#elif SEC_OS_IPHONE
+
+typedef struct {
+	DERItem                 typeId;
+	DERItem                 value;		// unparsed, BER-encoded
+} SecCEOtherName;
+
+typedef struct {
+	SecCEGeneralNameType		nameType;	// GNT_RFC822Name, etc.
+	bool                    berEncoded;
+	DERItem                 name;
+} SecCEGeneralName;
+
+typedef struct {
+	uint32_t					numNames;
+	SecCEGeneralName			*generalName;
+} SecCEGeneralNames;
+
+#endif /* SEC_OS_IPHONE */
 
 /*
  * id-ce-authorityKeyIdentifier OBJECT IDENTIFIER ::=  { id-ce 35 }
@@ -120,6 +169,7 @@ typedef struct __CE_GeneralNames {
  *
  * CSSM OID = CSSMOID_AuthorityKeyIdentifier
  */
+#if SEC_OS_OSX
 typedef struct __CE_AuthorityKeyID {
 	CSSM_BOOL			keyIdentifierPresent;
 	CSSM_DATA			keyIdentifier;
@@ -128,6 +178,16 @@ typedef struct __CE_AuthorityKeyID {
 	CSSM_BOOL			serialNumberPresent;
 	CSSM_DATA			serialNumber;
 } CE_AuthorityKeyID DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+#elif SEC_OS_IPHONE
+typedef struct {
+	bool                keyIdentifierPresent;
+	DERItem             keyIdentifier;
+	bool                generalNamesPresent;
+	SecCEGeneralNames		*generalNames;
+	bool                serialNumberPresent;
+	DERItem             serialNumber;
+} SecCEAuthorityKeyID;
+#endif /* SEC_OS_IPHONE */
 
 /*
  * id-ce-subjectKeyIdentifier OBJECT IDENTIFIER ::=  { id-ce 14 }
@@ -135,7 +195,11 @@ typedef struct __CE_AuthorityKeyID {
  *
  * CSSM OID = CSSMOID_SubjectKeyIdentifier
  */
+#if SEC_OS_OSX
 typedef CSSM_DATA CE_SubjectKeyID DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+#elif SEC_OS_IPHONE
+typedef DERItem SecCESubjectKeyID;
+#endif /* SEC_OS_IPHONE */
 
 /*
  * id-ce-keyUsage OBJECT IDENTIFIER ::=  { id-ce 15 }
@@ -154,17 +218,33 @@ typedef CSSM_DATA CE_SubjectKeyID DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
  * CSSM OID = CSSMOID_KeyUsage
  *
  */
+#if SEC_OS_OSX
 typedef uint16 CE_KeyUsage DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+#elif SEC_OS_IPHONE
+typedef uint16_t SecCEKeyUsage;
+#endif /* SEC_OS_IPHONE */
 
+#if SEC_OS_OSX
 #define CE_KU_DigitalSignature	0x8000
 #define CE_KU_NonRepudiation	0x4000
 #define CE_KU_KeyEncipherment	0x2000
 #define CE_KU_DataEncipherment	0x1000
 #define CE_KU_KeyAgreement		0x0800
-#define CE_KU_KeyCertSign	 	0x0400
+#define CE_KU_KeyCertSign		0x0400
 #define CE_KU_CRLSign			0x0200
-#define CE_KU_EncipherOnly	 	0x0100
-#define CE_KU_DecipherOnly	 	0x0080
+#define CE_KU_EncipherOnly		0x0100
+#define CE_KU_DecipherOnly		0x0080
+#else /* SEC_OS_IPHONE */
+#define SecCEKU_DigitalSignature	0x8000
+#define SecCEKU_NonRepudiation	0x4000
+#define SecCEKU_KeyEncipherment	0x2000
+#define SecCEKU_DataEncipherment	0x1000
+#define SecCEKU_KeyAgreement		0x0800
+#define SecCEKU_KeyCertSign		0x0400
+#define SecCEKU_CRLSign			0x0200
+#define SecCEKU_EncipherOnly		0x0100
+#define SecCEKU_DecipherOnly	 0x0080
+#endif /* SEC_OS_IPHONE */
 
 /*
  *  id-ce-cRLReason OBJECT IDENTIFIER ::= { id-ce 21 }
@@ -184,8 +264,13 @@ typedef uint16 CE_KeyUsage DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
  * CSSM OID = CSSMOID_CrlReason
  *
  */
+#if SEC_OS_OSX
 typedef uint32 CE_CrlReason DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+#elif SEC_OS_IPHONE
+typedef uint32_t SecCECrlReason;
+#endif /* SEC_OS_IPHONE */
 
+#if SEC_OS_OSX
 #define CE_CR_Unspecified			0
 #define CE_CR_KeyCompromise			1
 #define CE_CR_CACompromise			2
@@ -193,7 +278,17 @@ typedef uint32 CE_CrlReason DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 #define CE_CR_Superseded			4
 #define CE_CR_CessationOfOperation	5
 #define CE_CR_CertificateHold		6
-#define CE_CR_RemoveFromCRL	 		8
+#define CE_CR_RemoveFromCRL			8
+#elif SEC_OS_IPHONE
+#define SecCECR_Unspecified			0
+#define SecCECR_KeyCompromise			1
+#define SecCECR_CACompromise			2
+#define SecCECR_AffiliationChanged	3
+#define SecCECR_Superseded			4
+#define SecCECR_CessationOfOperation	5
+#define SecCECR_CertificateHold		6
+#define SecCECR_RemoveFromCRL			8
+#endif /* SEC_OS_IPHONE */
 
 /*
  * id-ce-subjectAltName OBJECT IDENTIFIER ::=  { id-ce 17 }
@@ -214,10 +309,19 @@ typedef uint32 CE_CrlReason DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
  *
  * CSSM OID = CSSMOID_ExtendedKeyUsage
  */
+#if SEC_OS_OSX
 typedef struct __CE_ExtendedKeyUsage {
 	uint32			numPurposes;
 	CSSM_OID_PTR	purposes;		// in Intel pre-encoded format
 } CE_ExtendedKeyUsage;
+
+#elif SEC_OS_IPHONE
+
+typedef struct {
+	uint32_t		numPurposes;
+	DERItem         *purposes;		// in Intel pre-encoded format
+} SecCEExtendedKeyUsage;
+#endif /* SEC_OS_IPHONE */
 
 /*
  * id-ce-basicConstraints OBJECT IDENTIFIER ::=  { id-ce 19 }
@@ -228,11 +332,32 @@ typedef struct __CE_ExtendedKeyUsage {
  *
  * CSSM OID = CSSMOID_BasicConstraints
  */
+#if SEC_OS_OSX
 typedef struct __CE_BasicConstraints {
 	CSSM_BOOL			cA;
 	CSSM_BOOL			pathLenConstraintPresent;
 	uint32				pathLenConstraint;
-} CE_BasicConstraints DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;	
+} CE_BasicConstraints DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+
+#elif SEC_OS_IPHONE
+
+typedef struct {
+	bool                present;
+	bool                critical;
+	bool                isCA;
+	bool                pathLenConstraintPresent;
+	uint32_t			pathLenConstraint;
+} SecCEBasicConstraints;
+
+typedef struct {
+	bool                present;
+	bool                critical;
+	bool                requireExplicitPolicyPresent;
+	uint32_t			requireExplicitPolicy;
+	bool                inhibitPolicyMappingPresent;
+	uint32_t			inhibitPolicyMapping;
+} SecCEPolicyConstraints;
+#endif /* SEC_OS_IPHONE */
 
 /*
  * id-ce-certificatePolicies OBJECT IDENTIFIER ::=  { id-ce 32 }
@@ -248,7 +373,7 @@ typedef struct __CE_BasicConstraints {
  *
  *   PolicyQualifierInfo ::= SEQUENCE {
  *        policyQualifierId  PolicyQualifierId,
- *        qualifier          ANY DEFINED BY policyQualifierId } 
+ *        qualifier          ANY DEFINED BY policyQualifierId }
  *
  *   -- policyQualifierIds for Internet policy qualifiers
  *
@@ -282,13 +407,63 @@ typedef struct __CE_BasicConstraints {
  *
  * We only support down to the level of Qualifier, and then only the CPSuri
  * choice. UserNotice is transmitted to and from this library as a raw
- * CSSM_DATA containing the BER-encoded UserNotice sequence. 
+ * CSSM_DATA containing the BER-encoded UserNotice sequence.
  */
+#if SEC_OS_OSX
 
 typedef struct __CE_PolicyQualifierInfo {
 	CSSM_OID	policyQualifierId;			// CSSMOID_QT_CPS, CSSMOID_QT_UNOTICE
 	CSSM_DATA	qualifier;					// CSSMOID_QT_CPS: IA5String contents
+
+#elif SEC_OS_IPHONE
+#if 0
+typedef struct {
+	DERItem     policyQualifierId;			// CSSMOID_QT_CPS, CSSMOID_QT_UNOTICE
+	DERItem     qualifier;					// CSSMOID_QT_CPS: IA5String contents
+} SecCEPolicyQualifierInfo;
+#endif
+
+typedef struct {
+    DERItem policyIdentifier;
+    DERItem policyQualifiers;
+} SecCEPolicyInformation;
+
+typedef struct {
+	bool                    present;
+	bool                    critical;
+	size_t                  numPolicies;			// size of *policies;
+	SecCEPolicyInformation  *policies;
+} SecCECertificatePolicies;
+
+typedef struct {
+    DERItem issuerDomainPolicy;
+    DERItem subjectDomainPolicy;
+} SecCEPolicyMapping;
+
+/*
+   PolicyMappings ::= SEQUENCE SIZE (1..MAX) OF SEQUENCE {
+        issuerDomainPolicy      CertPolicyId,
+        subjectDomainPolicy     CertPolicyId }
+*/
+typedef struct {
+	bool                present;
+	bool                critical;
+	size_t            numMappings;			// size of *mappings;
+	SecCEPolicyMapping  *mappings;
+} SecCEPolicyMappings;
+
+/*
+     InhibitAnyPolicy ::= SkipCerts
+     SkipCerts ::= INTEGER (0..MAX)
+*/
+typedef struct {
+    bool             present;
+    bool             critical;
+    uint32_t         skipCerts;
+} SecCEInhibitAnyPolicy;
+#endif /* SEC_OS_IPHONE */
 											// CSSMOID_QT_UNOTICE : Sequence contents
+#if SEC_OS_OSX
 } CE_PolicyQualifierInfo DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 
 typedef struct __CE_PolicyInformation {
@@ -346,7 +521,7 @@ typedef uint16 CE_NetscapeCertType DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER
  *
  * CSSM OID = CSSMOID_CrlDistributionPoints
  */
- 
+
 /*
  * Note that this looks similar to CE_CrlReason, but that's an enum and this
  * is an OR-able bit string.
@@ -376,7 +551,7 @@ typedef struct __CE_DistributionPointName {
 
 /*
  * The top-level CRLDistributionPoint.
- * All fields are optional; NULL pointers indicate absence. 
+ * All fields are optional; NULL pointers indicate absence.
  */
 typedef struct __CE_CRLDistributionPoint {
 	CE_DistributionPointName			*distPointName;
@@ -390,7 +565,7 @@ typedef struct __CE_CRLDistPointsSyntax {
 	CE_CRLDistributionPoint				*distPoints;
 } CE_CRLDistPointsSyntax DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 
-/* 
+/*
  * Authority Information Access and Subject Information Access.
  *
  * CSSM OID = CSSMOID_AuthorityInfoAccess
@@ -398,7 +573,7 @@ typedef struct __CE_CRLDistPointsSyntax {
  *
  * SubjAuthInfoAccessSyntax  ::=
  *		SEQUENCE SIZE (1..MAX) OF AccessDescription
- * 
+ *
  * AccessDescription  ::=  SEQUENCE {
  *		accessMethod          OBJECT IDENTIFIER,
  *		accessLocation        GeneralName  }
@@ -417,29 +592,29 @@ typedef struct __CE_AuthorityInfoAccess {
  * Qualified Certificate Statement support, per RFC 3739.
  *
  * First, NameRegistrationAuthorities, a component of
- * SemanticsInformation; it's the same as a GeneralNames - 
- * a sequence of GeneralName. 
+ * SemanticsInformation; it's the same as a GeneralNames -
+ * a sequence of GeneralName.
  */
 typedef CE_GeneralNames CE_NameRegistrationAuthorities DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 
 /*
  * SemanticsInformation, identified as the qcType field
  * of a CE_QC_Statement for statementId value id-qcs-pkixQCSyntax-v2.
- * Both fields optional; at least one must be present. 
+ * Both fields optional; at least one must be present.
  */
 typedef struct __CE_SemanticsInformation {
-	CSSM_OID							*semanticsIdentifier;	
+	CSSM_OID							*semanticsIdentifier;
 	CE_NameRegistrationAuthorities		*nameRegistrationAuthorities;
 } CE_SemanticsInformation DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 
-/* 
- * One Qualified Certificate Statement. 
- * The statementId OID is required; zero or one of {semanticsInfo, 
- * otherInfo} can be valid, depending on the value of statementId. 
- * For statementId id-qcs-pkixQCSyntax-v2 (CSSMOID_OID_QCS_SYNTAX_V2), 
+/*
+ * One Qualified Certificate Statement.
+ * The statementId OID is required; zero or one of {semanticsInfo,
+ * otherInfo} can be valid, depending on the value of statementId.
+ * For statementId id-qcs-pkixQCSyntax-v2 (CSSMOID_OID_QCS_SYNTAX_V2),
  * the semanticsInfo field may be present; otherwise, DER-encoded
  * information may be present in otherInfo. Both semanticsInfo and
- * otherInfo are optional. 
+ * otherInfo are optional.
  */
 typedef struct __CE_QC_Statement {
 	CSSM_OID							statementId;
@@ -495,7 +670,7 @@ typedef struct __CE_IssuingDistributionPoint {
 	CE_CrlDistReasonFlags		onlySomeReasons;
 	CSSM_BOOL					indirectCrlPresent;
 	CSSM_BOOL					indirectCrl;
-} CE_IssuingDistributionPoint DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER; 
+} CE_IssuingDistributionPoint DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 
 /*
  * NameConstraints
@@ -640,6 +815,10 @@ typedef struct __CE_DataAndType {
 	CSSM_BOOL				critical;
 } CE_DataAndType DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 
+#endif /* SEC_OS_OSX */
+
+#if SEC_OS_OSX
 #pragma clang diagnostic pop
+#endif
 
 #endif	/* _CERT_EXTENSIONS_H_ */

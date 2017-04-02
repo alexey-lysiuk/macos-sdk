@@ -567,6 +567,7 @@ AV_INIT_UNAVAILABLE
 @abstract	Indicates the media duration the caller prefers the player to buffer from the network ahead of the playhead to guard against playback disruption. 
 @discussion	The value is in seconds. If it is set to 0, the player will choose an appropriate level of buffering for most use cases.
 			Note that setting this property to a low value will increase the chance that playback will stall and re-buffer, while setting it to a high value will increase demand on system resources.
+			Note that the system may buffer less than the value of this property in order to manage resource consumption.
 */
 @property (nonatomic) NSTimeInterval preferredForwardBufferDuration NS_AVAILABLE(10_12, 10_0);
 

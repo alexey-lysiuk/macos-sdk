@@ -1,11 +1,13 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: AD392D1E-8C07-3E86-B43E-A776A28343CE', 'x86_64: 2D5B4F43-4968-3706-80F6-8D231CA0147B' ]
+uuids:           [ 'i386: E9282221-D13E-3B56-B026-AC120265D5A2', 'x86_64: C788A7C6-1194-303D-9AC4-39873E01C34D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/GameCenterFoundation.framework/Versions/A/GameCenterFoundation
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
+    symbols:         [ _GKPrimaryCredentialDidChangeNotification ]
+    objc-classes:    [ _GKAuthenticationMachine, _GKPlayerCredentialController ]
     objc-ivars:      [ _GKAutomatchPlayerInternal._automatchPosition, _GKContentPropertyList._achievementsByIdentifier, 
                        _GKContentPropertyList._bundleID, _GKContentPropertyList._leaderboardSetsByIdentifier, 
                        _GKContentPropertyList._leaderboardsByIdentifier, _GKContentPropertyList._root, 
@@ -17,6 +19,7 @@ exports:
                        _GKLeaderboardScoreRequest._gameBundleID, _GKLeaderboardScoreRequest._groupIdentifier, 
                        _GKLeaderboardScoreRequest._identifier, _GKLeaderboardScoreRequest._playerInternal, 
                        _GKLeaderboardScoreRequest._prefetch, _GKLeaderboardScoreRequest._timeScope, 
+                       _GKLocalPlayerAuthenticator._alertMessage, _GKLocalPlayerAuthenticator._alertTitle, 
                        _GKLocalPlayerAuthenticator._authenticated, _GKLocalPlayerAuthenticator._authenticating, 
                        _GKLocalPlayerAuthenticator._forceAuthentication, _GKLocalPlayerAuthenticator._hostWindow, 
                        _GKLocalPlayerAuthenticator._inputLocalPlayer, _GKLocalPlayerAuthenticator._lastAuthDate, 

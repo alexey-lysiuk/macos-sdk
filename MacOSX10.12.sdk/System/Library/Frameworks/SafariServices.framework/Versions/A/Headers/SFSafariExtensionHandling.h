@@ -22,6 +22,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// This is called when a content script from an extension dispatches a message to the app extension.
 - (void)messageReceivedWithName:(NSString *)messageName fromPage:(SFSafariPage *)page userInfo:(nullable NSDictionary<NSString *, id> *)userInfo;
 
+/// This is called when the extension's containing app dispatches a message to the app extension.
+- (void)messageReceivedFromContainingAppWithName:(NSString *)messageName userInfo:(nullable NSDictionary<NSString *, id> *)userInfo;
+
 /// This is called when the extension's toolbar item is clicked.
 - (void)toolbarItemClickedInWindow:(SFSafariWindow *)window;
 
@@ -30,6 +33,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// This is called when one of the extension's context menu items is selected.
 - (void)contextMenuItemSelectedWithCommand:(NSString *)command inPage:(SFSafariPage *)page userInfo:(nullable NSDictionary<NSString *, id> *)userInfo;
+
+/// This is called before context menu is shown, and provides a way to validate individual context menu items.
+- (void)validateContextMenuItemWithCommand:(NSString *)command inPage:(SFSafariPage *)page userInfo:(nullable NSDictionary<NSString *, id> *)userInfo validationHandler:(void (^)(BOOL shouldHide, NSString * _Nullable text))validationHandler;
 
 /// This is called when the extension's popover is about to be opened.
 - (void)popoverWillShowInWindow:(SFSafariWindow *)window;

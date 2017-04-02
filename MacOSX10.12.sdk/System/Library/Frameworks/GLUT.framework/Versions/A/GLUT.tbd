@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 6DE419B8-E8DC-3C92-B54B-C615C0F141EE', 'x86_64: CE108D58-742D-300B-821A-B49CA4E35D23' ]
+uuids:           [ 'i386: 2E8C1CD1-9F25-3DA6-AA89-A93838EBFAF3', 'x86_64: A34901BE-F2FA-3AA9-BAA1-55F64B170574' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/GLUT.framework/Versions/A/GLUT
 objc-constraint: none

@@ -195,7 +195,7 @@ CF_EXPORT Boolean CFCharacterSetHasMemberInPlane(CFCharacterSetRef theSet, CFInd
 /*!
 	@function CFCharacterSetCreateMutable
 	Creates a new empty mutable character set.
-	@param allocator The CFAllocator which should be used to allocate
+	@param alloc The CFAllocator which should be used to allocate
 		memory for the array and its storage for values. This
 		parameter may be NULL in which case the current default
 		CFAllocator is used. If this reference is not a valid
@@ -208,7 +208,7 @@ CFMutableCharacterSetRef CFCharacterSetCreateMutable(CFAllocatorRef alloc);
 /*!
 	@function CFCharacterSetCreateCopy
 	Creates a new character set with the values from the given character set.  This function tries to compact the backing store where applicable.
-	@param allocator The CFAllocator which should be used to allocate
+	@param alloc The CFAllocator which should be used to allocate
 		memory for the array and its storage for values. This
 		parameter may be NULL in which case the current default
 		CFAllocator is used. If this reference is not a valid
@@ -224,7 +224,7 @@ CFCharacterSetRef CFCharacterSetCreateCopy(CFAllocatorRef alloc, CFCharacterSetR
 /*!
 	@function CFCharacterSetCreateMutableCopy
 	Creates a new mutable character set with the values from the given character set.
-	@param allocator The CFAllocator which should be used to allocate
+	@param alloc The CFAllocator which should be used to allocate
 		memory for the array and its storage for values. This
 		parameter may be NULL in which case the current default
 		CFAllocator is used. If this reference is not a valid
@@ -265,7 +265,7 @@ CF_EXPORT Boolean CFCharacterSetIsLongCharacterMember(CFCharacterSetRef theSet, 
 /*!
 	@function CFCharacterSetCreateBitmapRepresentation
 	Creates a new immutable data with the bitmap representation from the given character set.
-	@param allocator The CFAllocator which should be used to allocate
+	@param alloc The CFAllocator which should be used to allocate
 		memory for the array and its storage for values. This
 		parameter may be NULL in which case the current default
 		CFAllocator is used. If this reference is not a valid

@@ -1,7 +1,7 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64, x86_64h ]
-uuids:           [ 'i386: 0AAB0AA6-A8A6-3C21-893D-9341F563DD52', 'x86_64: E2A44AAD-F6E0-3D74-80AE-BF2542AA6954', 
-                   'x86_64h: 58C01E72-10A0-313F-8139-ED6E9D087ABB' ]
+uuids:           [ 'i386: 8F3CF44E-ECC7-3790-A78C-C96AF5D7021C', 'x86_64: CA292CD5-38A5-33B2-B84C-185E46ABDD85', 
+                   'x86_64h: D6530D83-840B-360D-B444-C06FFF64DEEA' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libJPEG.dylib
 objc-constraint: none

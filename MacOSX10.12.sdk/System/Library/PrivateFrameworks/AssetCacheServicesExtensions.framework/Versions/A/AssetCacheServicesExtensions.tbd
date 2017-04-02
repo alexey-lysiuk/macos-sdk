@@ -1,0 +1,19 @@
+--- !tapi-tbd-v2
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 986AB84D-1540-3C1C-82CD-8F00A5F75CE5' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/AssetCacheServicesExtensions.framework/Versions/A/AssetCacheServicesExtensions
+current-version: 48.3
+objc-constraint: none
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _AssetCacheServicesExtensionsVersionNumber, _AssetCacheServicesExtensionsVersionString, 
+                       _kACASConnectionHandlerErrorDomain, _kACSAErrorDomain, _kACSEAllServersKey, 
+                       _kACSECurrentUserKey, _kACSEMightHaveKey, _kACSEPersonalCachingAndImportKey, 
+                       _kACSEPersonalCachingKey, _kACSEPublicIPAddressKey, _kACSEPublicIPAddressRangesKey, 
+                       _kACSERefreshedServersKey, _kACSESavedServersKey, _kACSESharedCachingKey, 
+                       _kACSESystemKey, _kACTSConnectionHandlerErrorDomain, _kACTSErrorDomain, 
+                       _kACTSPairingManagerErrorDomain ]
+    objc-classes:    [ _AssetCacheServicesActivator, _AssetCacheServicesReporter, 
+                       _AssetCacheServicesTetherator ]
+...

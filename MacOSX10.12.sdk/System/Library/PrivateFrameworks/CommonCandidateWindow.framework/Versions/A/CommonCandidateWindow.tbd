@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: EC9FA480-41F8-3022-9C74-A3B9E974DE86', 'x86_64: 6213BE22-CF3C-35F6-B529-7EF23274F55C' ]
+uuids:           [ 'i386: 95B112D8-C75C-31C2-94AD-5F998F0B7CDD', 'x86_64: 087C132A-B668-359B-A68D-210DC8D25139' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CommonCandidateWindow.framework/Versions/A/CommonCandidateWindow
 objc-constraint: none

@@ -144,4 +144,9 @@ MP_EXTERN NSString *const MPNowPlayingInfoPropertyPlaybackProgress NS_AVAILABLE(
 // This can be used to determine what kind of user interface the system displays.
 MP_EXTERN NSString *const MPNowPlayingInfoPropertyMediaType NS_AVAILABLE(10_12_2, 10_0); // NSNumber (MPNowPlayingInfoMediaType)
 
+// A URL pointing to the now playing item's underlying audio/video asset. This
+// property is used by system UI when video thumbnails or audio waveform
+// visualizations are applicable.
+MP_EXTERN NSString *const MPNowPlayingInfoPropertyAssetURL NS_AVAILABLE(10_12_3, 10_3); // NSURL
+
 NS_ASSUME_NONNULL_END

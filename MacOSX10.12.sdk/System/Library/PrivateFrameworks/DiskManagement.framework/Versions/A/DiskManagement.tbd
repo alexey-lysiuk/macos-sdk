@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 2B722E90-E30D-3FC8-B791-28BCC1DD5745', 'x86_64: DC6A8650-C6B6-3FD6-9BF9-9A027EB6D902' ]
+uuids:           [ 'i386: EB696905-BC57-3C48-BC35-153FB1DCC6B4', 'x86_64: F4AA72B5-2600-38CB-A7F9-4C155DC16C6D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DiskManagement.framework/Versions/A/DiskManagement
 objc-constraint: none

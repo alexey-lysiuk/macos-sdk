@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: AD373184-EF72-3DDB-A980-52AD44A22383', 'x86_64: 14003B00-D2DA-3732-A1AC-A71763EC3556' ]
+uuids:           [ 'i386: 61A8FF1F-69BD-3D3C-AD7F-EA95C809DEDE', 'x86_64: B8EFDDD3-BA26-39B8-9EA0-3649184BF527' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhoneNumbers.framework/Versions/A/PhoneNumbers
-current-version: 47.0
+current-version: 47
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]

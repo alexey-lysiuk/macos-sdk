@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6CA4E7C5-91AA-3A2E-8D9A-F8D309CFB265' ]
+uuids:           [ 'x86_64: 44311715-528A-3E20-8739-77A30F79884B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ScreenSharing.framework/Versions/A/ScreenSharing
 objc-constraint: none

@@ -155,6 +155,9 @@ NS_CLASS_AVAILABLE_MAC(10_4)
 
 // -------- drawing
 
+// This method is deprecated in favor of the of the context aware -[PDFAnnotation drawWithBox:inContext:]. If you subclass
+// PDFAnnotation, rendering code will first call -[PDFAnnotation drawWithBox:inContext:]. If your subclass does not override
+// the context-aware function, this original -[PDFAnnotation drawWithBox:] method will be called.
 // Draw method.  Draws in page-space relative to origin of "box" passed in.
 - (void) drawWithBox: (PDFDisplayBox) box PDFKIT_DEPRECATED(10_4, 10_12);
 

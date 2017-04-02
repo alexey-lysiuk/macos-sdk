@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: DF736B15-13A9-3A88-ABA4-29EB049FEF48', 'x86_64: F105D2D2-8A12-3361-9C9D-E405668CAF75' ]
+uuids:           [ 'i386: 2C8E9AAA-838E-30D9-B7A3-E82FA7E3CD76', 'x86_64: 6313EAEA-05ED-3A50-9EAC-92863BCE6859' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AppleSRP.framework/Versions/A/AppleSRP
 objc-constraint: none

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 58A0CEF0-8BF3-3655-8984-36764A1AF9F3' ]
+uuids:           [ 'x86_64: 29498D9F-BAAE-3C9C-AB15-D3F1B1BA3462' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CalendarFoundation.framework/Versions/A/CalendarFoundation
-current-version: 504.0.3
+current-version: 504.0.6
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -54,13 +54,14 @@ exports:
                        _CalDoNotCallThisInitializer, _CalFlagForProfiling, _CalFoundationNS_Log, 
                        _CalFoundationNS_Log_Accounts, _CalFoundationNS_Log_CalEventTimer, 
                        _CalFoundationNS_Log_Contacts, _CalFoundationNS_Log_Docktile, 
-                       _CalFoundationNS_Log_Locations, _CalFoundationNS_Log_Memory, 
-                       _CalFoundationNS_Log_MessageTrace, _CalFoundationNS_Log_Suggestions, 
-                       _CalFoundationNS_Notification_LogConfigUpdated, _CalFoundationNS_Preference_LogAutoFlush, 
-                       _CalFoundationNS_Preference_LogEmitUserNotifications, _CalFoundationNS_Preference_LogFilePath, 
-                       _CalFoundationNS_Preference_LogSimpleConfiguration, _CalGenerateQualifiedIdentifierWithClassAndSubdomain, 
-                       _CalGenerateRandomDispatchQueueName, _CalGenerateUUID, _CalGetFloatingTimeZone, 
-                       _CalGregorianDateAddDays, _CalGregorianDateAddUnits, _CalGregorianDateCopyDateTime, 
+                       _CalFoundationNS_Log_Junk, _CalFoundationNS_Log_Locations, 
+                       _CalFoundationNS_Log_Memory, _CalFoundationNS_Log_MessageTrace, 
+                       _CalFoundationNS_Log_Suggestions, _CalFoundationNS_Notification_LogConfigUpdated, 
+                       _CalFoundationNS_Preference_LogAutoFlush, _CalFoundationNS_Preference_LogEmitUserNotifications, 
+                       _CalFoundationNS_Preference_LogFilePath, _CalFoundationNS_Preference_LogSimpleConfiguration, 
+                       _CalGenerateQualifiedIdentifierWithClassAndSubdomain, _CalGenerateRandomDispatchQueueName, 
+                       _CalGenerateUUID, _CalGetFloatingTimeZone, _CalGregorianDateAddDays, 
+                       _CalGregorianDateAddUnits, _CalGregorianDateCopyDateTime, 
                        _CalGregorianDateEqualToGregorianDate, _CalGregorianDateGetAbsoluteTime, 
                        _CalGregorianDateGetDayOfWeek, _CalGregorianDateGetDaysInMonth, 
                        _CalGregorianDateGetExtremities, _CalGregorianDateGetGregorianDateForDay, 

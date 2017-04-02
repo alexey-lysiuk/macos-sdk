@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FF32F8F6-3A9A-379C-939D-FCBBBAC8327E' ]
+uuids:           [ 'x86_64: BA48EC49-BAEF-3879-B65D-AFC99FA1ACC0' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/IMServicePlugIn.framework/Versions/A/Frameworks/IMServicePlugInSupport.framework/Versions/A/IMServicePlugInSupport
-current-version: 1000.0
+current-version: 1000
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

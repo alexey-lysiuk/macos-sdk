@@ -1,41 +1,37 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 25FC09C8-79E5-3A4A-8592-8410862F4C34', 'x86_64: 3A9D9FD9-8997-3BD1-8046-76D0BF709806' ]
+uuids:           [ 'i386: D8D6306E-5F72-3C43-BDE2-B8C031E1CFEE', 'x86_64: 3D61E533-4156-3B21-B7ED-CB823E680DFC' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/TextureIO.framework/Versions/A/TextureIO
-current-version: 1.41
+current-version: 2.8
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
-    objc-ivars:      [ _TXRArrayElement._faces, _TXRImage._buffer, _TXRImage._bytesPerImage, 
-                       _TXRImage._bytesPerRow, _TXRImage._offset, _TXRMipmapLevel._elements, 
-                       _TXRParserBase._bitsPerPixel, _TXRParserBase._blockHeight, 
-                       _TXRParserBase._blockWidth, _TXRParserBase._bytesPerRow, _TXRParserBase._depth, 
-                       _TXRParserBase._height, _TXRParserBase._imageData, _TXRParserBase._imageHasAlpha, 
-                       _TXRParserBase._imageOrientation, _TXRParserBase._numArrayElements, 
-                       _TXRParserBase._numFaces, _TXRParserBase._numMipmapLevels, 
-                       _TXRParserBase._numPixelComponents, _TXRParserBase._pixelFormat, 
-                       _TXRParserBase._pixelFormatIsCompressed, _TXRParserBase._sampleCount, 
-                       _TXRParserBase._width, _TXRTexture._alphaInfo, _TXRTexture._bufferAllocator, 
+    symbols:         [ _fastConvert ]
+    objc-ivars:      [ _TXRArrayElement._faces, _TXRAssetCatalogConfig._baseFileAttributes, 
+                       _TXRAssetCatalogConfig._displayColorSpace, _TXRAssetCatalogConfig._fileAttributesList, 
+                       _TXRAssetCatalogConfig._graphicsFeatureSet, _TXRAssetCatalogConfig._idiom, 
+                       _TXRAssetCatalogConfig._memory, _TXRAssetCatalogConfig._mipmapOption, 
+                       _TXRAssetCatalogConfig._pixelFormat, _TXRAssetCatalogConfig._scaleFactor, 
+                       _TXRAssetCatalogConfig._texture, _TXRAssetCatalogFileAttributes._colorSpace, 
+                       _TXRAssetCatalogFileAttributes._fileFormat, _TXRAssetCatalogFileAttributes._origin, 
+                       _TXRAssetCatalogMipFileAttributes._face, _TXRAssetCatalogMipFileAttributes._level, 
+                       _TXRAssetCatalogSet._configs, _TXRAssetCatalogSet._interpretation, 
+                       _TXRAssetCatalogSet._name, _TXRAssetCatalogSet._origin, _TXRImage._buffer, 
+                       _TXRImage._bytesPerImage, _TXRImage._bytesPerRow, _TXRImage._offset, 
+                       _TXRMipmapLevel._elements, _TXRTexture._alphaInfo, _TXRTexture._bufferAllocator, 
                        _TXRTexture._cubemap, _TXRTexture._dimensions, _TXRTexture._mipmapLevels, 
-                       _TXRTexture._pixelFormat, _TXRXCFileAttributes._colorSpace, 
-                       _TXRXCFileAttributes._fileFormat, _TXRXCFileAttributes._origin, 
-                       _TXRXCMipFileAttributes._face, _TXRXCMipFileAttributes._level, 
-                       _TXRXCSetAttributes._interpretation, _TXRXCSetAttributes._origin, 
-                       _TXRXCTextureConfig._baseFileAttributes, _TXRXCTextureConfig._displayColorSpace, 
-                       _TXRXCTextureConfig._fileAttributesList, _TXRXCTextureConfig._graphicsFeatureSet, 
-                       _TXRXCTextureConfig._idiom, _TXRXCTextureConfig._memory, _TXRXCTextureConfig._mipmapOption, 
-                       _TXRXCTextureConfig._pixelFormat, _TXRXCTextureConfig._scaleFactor ]
+                       _TXRTexture._pixelFormat ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ _TXRErrorDomain, _TXRErrorKey, _TextureIOVersionNumber, _TextureIOVersionString, 
                        __newTXRErrorWithCode, __newTXRErrorWithCodeAndErrorString, 
-                       __newTXRErrorWithCodeAndUserInfo, _fastConvert, _slowConvert ]
-    objc-classes:    [ _TXRArrayElement, _TXRDataConverter, _TXRDataScaler, _TXRDefaultBuffer, 
+                       __newTXRErrorWithCodeAndUserInfo, _slowConvert ]
+    objc-classes:    [ _TXRArrayElement, _TXRAssetCatalogConfig, _TXRAssetCatalogFileAttributes, 
+                       _TXRAssetCatalogMipFileAttributes, _TXRAssetCatalogParser, 
+                       _TXRAssetCatalogSet, _TXRDataConverter, _TXRDataScaler, _TXRDefaultBuffer, 
                        _TXRDefaultBufferAllocator, _TXRDefaultBufferMap, _TXRDeferredElementInfo, 
                        _TXRDeferredImageInfo, _TXRDeferredMipmapInfo, _TXRDeferredTextureInfo, 
                        _TXRFileDataSourceProvider, _TXRImage, _TXRImageIndependent, 
-                       _TXRImageInfo, _TXRMipmapLevel, _TXROptions, _TXRParserBase, 
-                       _TXRParserImageIO, _TXRParserKTX, _TXRPixelFormatInfo, _TXRTexture, 
-                       _TXRTextureInfo, _TXRXCAssetParser, _TXRXCFileAttributes, 
-                       _TXRXCMipFileAttributes, _TXRXCSetAttributes, _TXRXCTextureConfig ]
+                       _TXRImageInfo, _TXRMipmapLevel, _TXROptions, _TXRParserImageIO, 
+                       _TXRParserKTX, _TXRPixelFormatInfo, _TXRTexture, _TXRTextureInfo ]
 ...

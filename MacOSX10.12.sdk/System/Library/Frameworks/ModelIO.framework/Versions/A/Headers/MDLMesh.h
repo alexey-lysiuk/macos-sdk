@@ -30,6 +30,7 @@ MDL_EXPORT
 @property (nonatomic) void *dataStart;
 @property (nonatomic) NSUInteger stride;
 @property (nonatomic) MDLVertexFormat format;
+@property (nonatomic) NSUInteger bufferSize;
 
 @end
 
@@ -434,7 +435,7 @@ MDL_EXPORT
 */
 - (instancetype)initCapsuleWithExtent:(vector_float3)extent
                      cylinderSegments:(vector_uint2)segments
-                   hemisphereSegments:(uint32_t)hemisphereSegments
+                   hemisphereSegments:(int)hemisphereSegments
                         inwardNormals:(BOOL)inwardNormals
                          geometryType:(MDLGeometryType)geometryType
                             allocator:(nullable id<MDLMeshBufferAllocator>)allocator;
@@ -518,7 +519,6 @@ MDL_EXPORT
                              submeshIndex:(int)submeshIndex
                         subdivisionLevels:(unsigned int)subdivisionLevels
                                 allocator:(nullable id<MDLMeshBufferAllocator>)allocator;
-
 
 + (instancetype)newBoxWithDimensions:(vector_float3)dimensions
                             segments:(vector_uint3)segments

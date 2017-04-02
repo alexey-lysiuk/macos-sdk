@@ -96,7 +96,7 @@ CM_ASSUME_NONNULL_BEGIN
 		The EncoderID CFString may be obtained from the kVTVideoEncoderList_EncoderID entry in
 		the array returned by VTCopyVideoEncoderList.
 */
-VT_EXPORT const CFStringRef kVTVideoEncoderSpecification_EncoderID __OSX_AVAILABLE_STARTING(__MAC_10_8, __IPHONE_8_0); // CFString
+VT_EXPORT const CFStringRef kVTVideoEncoderSpecification_EncoderID API_AVAILABLE(macosx(10.8), ios(8.0), tvos(10.2)); // CFString
 	
 CM_ASSUME_NONNULL_END
 
@@ -148,7 +148,7 @@ VTCompressionSessionCreate(
 	CM_NULLABLE CFAllocatorRef							compressedDataAllocator,
 	CM_NULLABLE VTCompressionOutputCallback				outputCallback,
 	void * CM_NULLABLE									outputCallbackRefCon,
-	CM_RETURNS_RETAINED_PARAMETER CM_NULLABLE VTCompressionSessionRef * CM_NONNULL compressionSessionOut) __OSX_AVAILABLE_STARTING(__MAC_10_8, __IPHONE_8_0);
+	CM_RETURNS_RETAINED_PARAMETER CM_NULLABLE VTCompressionSessionRef * CM_NONNULL compressionSessionOut) API_AVAILABLE(macosx(10.8), ios(8.0), tvos(10.2));
 
 CF_IMPLICIT_BRIDGING_ENABLED
 	
@@ -163,14 +163,14 @@ CF_IMPLICIT_BRIDGING_ENABLED
     	Calling VTCompressionSessionInvalidate ensures a deterministic, orderly teardown.
 */
 VT_EXPORT void 
-VTCompressionSessionInvalidate( CM_NONNULL VTCompressionSessionRef session ) __OSX_AVAILABLE_STARTING(__MAC_10_8, __IPHONE_8_0);
+VTCompressionSessionInvalidate( CM_NONNULL VTCompressionSessionRef session ) API_AVAILABLE(macosx(10.8), ios(8.0), tvos(10.2));
 
 /*!
 	@function VTCompressionSessionGetTypeID
 	@abstract Returns the CFTypeID for compression sessions.  
 */
 VT_EXPORT CFTypeID 
-VTCompressionSessionGetTypeID(void) __OSX_AVAILABLE_STARTING(__MAC_10_8, __IPHONE_8_0);
+VTCompressionSessionGetTypeID(void) API_AVAILABLE(macosx(10.8), ios(8.0), tvos(10.2));
 
 /*!
 	@function	VTCompressionSessionGetPixelBufferPool
@@ -192,7 +192,7 @@ VTCompressionSessionGetTypeID(void) __OSX_AVAILABLE_STARTING(__MAC_10_8, __IPHON
 */
 VT_EXPORT CM_NULLABLE CVPixelBufferPoolRef
 VTCompressionSessionGetPixelBufferPool(
-	CM_NONNULL VTCompressionSessionRef		session ) __OSX_AVAILABLE_STARTING(__MAC_10_8, __IPHONE_8_0);
+	CM_NONNULL VTCompressionSessionRef		session ) API_AVAILABLE(macosx(10.8), ios(8.0), tvos(10.2));
 
 /*!
 	@function	VTCompressionSessionPrepareToEncodeFrames
@@ -208,7 +208,7 @@ VTCompressionSessionGetPixelBufferPool(
 		The compression session.
 */
 VT_EXPORT OSStatus
-VTCompressionSessionPrepareToEncodeFrames( CM_NONNULL VTCompressionSessionRef session ) __OSX_AVAILABLE_STARTING(__MAC_10_9, __IPHONE_8_0);
+VTCompressionSessionPrepareToEncodeFrames( CM_NONNULL VTCompressionSessionRef session ) API_AVAILABLE(macosx(10.9), ios(8.0), tvos(10.2));
 	
 /*!
 	@function	VTCompressionSessionEncodeFrame
@@ -250,7 +250,7 @@ VTCompressionSessionEncodeFrame(
 	CMTime								duration, // may be kCMTimeInvalid
 	CM_NULLABLE CFDictionaryRef			frameProperties,
 	void * CM_NULLABLE					sourceFrameRefCon,
-	VTEncodeInfoFlags * CM_NULLABLE		infoFlagsOut ) __OSX_AVAILABLE_STARTING(__MAC_10_8, __IPHONE_8_0);
+	VTEncodeInfoFlags * CM_NULLABLE		infoFlagsOut ) API_AVAILABLE(macosx(10.8), ios(8.0), tvos(10.2));
 	
 #if __BLOCKS__
 /*!
@@ -317,7 +317,7 @@ VTCompressionSessionEncodeFrameWithOutputHandler(
 		CMTime									duration, // may be kCMTimeInvalid
 		CM_NULLABLE CFDictionaryRef				frameProperties, // may be NULL
 		VTEncodeInfoFlags * CM_NULLABLE			infoFlagsOut,
-		CM_NONNULL VTCompressionOutputHandler	outputHandler ) __OSX_AVAILABLE_STARTING(__MAC_10_11, __IPHONE_9_0);
+		CM_NONNULL VTCompressionOutputHandler	outputHandler ) API_AVAILABLE(macosx(10.11), ios(9.0), tvos(10.2));
 #endif // __BLOCKS__
 
 /*!
@@ -332,7 +332,7 @@ VTCompressionSessionEncodeFrameWithOutputHandler(
 VT_EXPORT OSStatus
 VTCompressionSessionCompleteFrames(
 	CM_NONNULL VTCompressionSessionRef	session,
-	CMTime								completeUntilPresentationTimeStamp) __OSX_AVAILABLE_STARTING(__MAC_10_8, __IPHONE_8_0); // complete all frames if non-numeric
+	CMTime								completeUntilPresentationTimeStamp) API_AVAILABLE(macosx(10.8), ios(8.0), tvos(10.2)); // complete all frames if non-numeric
 	
 #pragma mark Multi-pass
 	
@@ -358,7 +358,7 @@ VT_EXPORT OSStatus
 VTCompressionSessionBeginPass(
 	CM_NONNULL VTCompressionSessionRef	session,
 	VTCompressionSessionOptionFlags		beginPassFlags,
-	uint32_t * CM_NULLABLE				reserved) __OSX_AVAILABLE_STARTING(__MAC_10_10,__IPHONE_8_0);
+	uint32_t * CM_NULLABLE				reserved) API_AVAILABLE(macosx(10.10), ios(8.0), tvos(10.2));
 	
 /*!
 	@function	VTCompressionSessionEndPass
@@ -375,7 +375,7 @@ VT_EXPORT OSStatus
 VTCompressionSessionEndPass(
 	CM_NONNULL VTCompressionSessionRef	session,
 	Boolean * CM_NULLABLE				furtherPassesRequestedOut,
-	uint32_t * CM_NULLABLE				reserved) __OSX_AVAILABLE_STARTING(__MAC_10_10,__IPHONE_8_0);
+	uint32_t * CM_NULLABLE				reserved) API_AVAILABLE(macosx(10.10), ios(8.0), tvos(10.2));
 	
 /*!
 	 @function	VTCompressionSessionGetTimeRangesForNextPass
@@ -395,7 +395,7 @@ VT_EXPORT OSStatus
 VTCompressionSessionGetTimeRangesForNextPass(
 	CM_NONNULL VTCompressionSessionRef				session,
 	CMItemCount * CM_NONNULL						timeRangeCountOut,
-	const CMTimeRange * CM_NULLABLE * CM_NONNULL	timeRangeArrayOut ) __OSX_AVAILABLE_STARTING(__MAC_10_10,__IPHONE_8_0); /* returned pointer will be valid until next call to VTCompressionSessionEndPass */
+	const CMTimeRange * CM_NULLABLE * CM_NONNULL	timeRangeArrayOut ) API_AVAILABLE(macosx(10.10), ios(8.0), tvos(10.2)); /* returned pointer will be valid until next call to VTCompressionSessionEndPass */
 
 // See VTSession.h for property access APIs on VTCompressionSessions.
 // See VTCompressionProperties.h for standard property keys and values for compression sessions.

@@ -6,17 +6,17 @@
 .Nd smartcard/keychain support library
 .Sh DESCRIPTION
 The ssh-keychain.dylib library is used as a PKCS11 module replacement for the family of ssh tools. It provides
-certificates on smartcards and/or in user keychains to the tools.
+certificates on SmartCards and/or in user keychains to the tools.
 .Sh OVERVIEW
-By default, all valid certificates from all smartcards currently inserted into attached readers are provided. Manual
+By default, all valid certificates from all SmartCards currently inserted into attached readers are provided. Manual
 configuration of
 .Nm
-is required if certificates in user keychains are desired, or if there is a need to limit which smartcard
+is required if certificates in user keychains are desired, or if there is a need to limit which SmartCard
 certificates are provided.
 The public key hash is used to select which certificates should be provided.
 This hash is usually in hexadecimal string form, without the leading
 .Em 0x .
-To determine the hash for certificate on a smartcard, the
+To determine the hash for certificate on a SmartCard, the
 .Em sc_auth hash
 or
 .Em sc_auth identities

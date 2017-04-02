@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: AFC00CA2-4DC8-33DB-9164-753BBD729D61', 'x86_64: 01688D63-70DF-3ADD-9DB5-33D81DC4D797' ]
+uuids:           [ 'i386: 5B988E3F-A3CE-3582-8CC7-63A2B72755DB', 'x86_64: 1E13E37B-4DAB-331B-8957-8C896387B04E' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Message.framework/Versions/B/Message
-current-version: 1604.0
+current-version: 1604
 objc-constraint: none
 exports:         
   - archs:           [ i386 ]

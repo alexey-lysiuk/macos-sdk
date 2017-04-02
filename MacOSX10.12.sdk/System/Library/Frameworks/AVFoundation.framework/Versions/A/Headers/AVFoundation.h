@@ -27,6 +27,7 @@
 #import <AVFoundation/AVAssetReader.h>
 #import <AVFoundation/AVAssetReaderOutput.h>
 #import <AVFoundation/AVAssetResourceLoader.h>
+#import <AVFoundation/AVContentKeySession.h>
 #import <AVFoundation/AVAssetTrack.h>
 #import <AVFoundation/AVAssetTrackGroup.h>
 #import <AVFoundation/AVAssetTrackSegment.h>

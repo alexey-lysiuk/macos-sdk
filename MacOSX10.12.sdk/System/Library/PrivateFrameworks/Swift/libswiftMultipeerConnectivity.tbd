@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 192D5879-D1AB-3C03-BD86-4D090547BCEF' ]
+uuids:           [ 'x86_64: 6FCA4FB1-DD79-3356-A473-78B109ECC812' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Swift/libswiftMultipeerConnectivity.dylib
 current-version: 800.8.18

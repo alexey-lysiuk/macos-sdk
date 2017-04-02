@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 8FBAE68A-74BE-38CA-9A03-A5113F4A672B', 'x86_64: 35D4A7EC-954A-36F2-A49D-B519ACE88936' ]
+uuids:           [ 'i386: A8C76D00-1B19-36E9-B3D9-6A1B7F278276', 'x86_64: A78EBD19-5214-3A06-A643-D6FCA83E4E6E' ]
 platform:        macosx
 install-name:    /usr/lib/libdz.dylib
-current-version: 32.20.1
+current-version: 32.50.4
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]

@@ -14,6 +14,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 API_AVAILABLE(macosx(10.12), ios(10.0))
+API_UNAVAILABLE(watchos)
 @interface INStartVideoCallIntent : INIntent
 
 - (instancetype)initWithContacts:(nullable NSArray<INPerson *> *)contacts NS_DESIGNATED_INITIALIZER;
@@ -32,6 +33,7 @@ API_AVAILABLE(macosx(10.12), ios(10.0))
  */
 
 API_AVAILABLE(macosx(10.12), ios(10.0))
+API_UNAVAILABLE(watchos)
 @protocol INStartVideoCallIntentHandling <NSObject>
 
 @required

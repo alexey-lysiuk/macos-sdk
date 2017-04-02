@@ -1,8 +1,8 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 4AC7E312-37CE-30FF-B085-5E2BA68C4189', 'x86_64: 36055B60-36D9-3115-BE33-C9D484C09D85' ]
+uuids:           [ 'i386: 48C47FFC-08F0-3BE8-87F5-70FD88368A75', 'x86_64: 132BF236-604F-33A8-8BE0-1801CCA9EEFE' ]
 platform:        macosx
-install-name:    '/Library/Caches/com.apple.xbs/Binaries/GPUDriversNvidia/GPUDriversNvidia-10.14.20~30/Root/System/Library/Frameworks/OpenCL.framework/Versions/A/Libraries/NVPTX.dylib'
+install-name:    '/Library/Caches/com.apple.xbs/Binaries/GPUDriversNvidia/GPUDriversNvidia-10.16.34~20/Root/System/Library/Frameworks/OpenCL.framework/Versions/A/Libraries/NVPTX.dylib'
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]

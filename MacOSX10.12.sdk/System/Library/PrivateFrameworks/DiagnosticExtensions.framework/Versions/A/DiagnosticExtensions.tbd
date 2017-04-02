@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3A9DB644-186E-3840-BD06-BF2EB82F01D6' ]
+uuids:           [ 'x86_64: 87B453B0-8241-31EE-98B6-750AB1F132A3' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DiagnosticExtensions.framework/Versions/A/DiagnosticExtensions
 objc-constraint: none

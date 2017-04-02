@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: A7D67255-2E4D-3E16-B190-E6AAA46C54FE', 'x86_64: CCE689AA-85F3-3587-AE12-1231E8ED127E' ]
+uuids:           [ 'i386: 83DE6F93-5401-3965-BDE8-681D6E4BFDB8', 'x86_64: 5712EC1F-FD2B-3F88-9549-DE167A5FEDE4' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DesktopServicesPriv.framework/Versions/A/DesktopServicesPriv
-current-version: 852.3.2
+current-version: 852.5.2
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]

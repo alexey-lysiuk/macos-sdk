@@ -1,6 +1,6 @@
 .\" see 'man mdoc' for syntax examples
 .\" this should go in /usr/share/man/man1/
-.Dd June 23, 2016
+.Dd November 11, 2016
 .Dt profiles 1
 .Os macOS
 .Sh NAME
@@ -23,7 +23,7 @@
 .Op Fl o Ar output_file_path
 .Op Fl Y Ar shortname
 .Oc
-.Op Fl PHDdCchfvxVzYe
+.Op Fl PHDdCchfvxVzYeN
 .Pp
 .Sh DESCRIPTION          \" Section Header - required - don't modify
 .Nm
@@ -84,6 +84,8 @@ Specify the shortname of a local user that will be enrolled with MDM if the conf
 Attempt to renew the certificates in an installed profile.
 .It Fl e
 Print the Device Enrollment configuration, if any, for the computer. Can be combined with the -o option to write output to a plist.
+.It Fl N
+Immediately recheck for the Device Enrollment configuration, and enable the Device Enrollment configuration notifications if the computer is not currently enrolled.
 .El
 .Pp
 .Sh EXAMPLES

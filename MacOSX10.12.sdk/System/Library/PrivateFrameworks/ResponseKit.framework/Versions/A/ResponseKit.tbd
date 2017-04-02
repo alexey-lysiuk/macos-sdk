@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 929B6DD8-540C-3B9B-8579-DA96A1A2E4B6' ]
+uuids:           [ 'x86_64: AA0B8C34-4B50-3758-B3A8-508E5DFF83EA' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ResponseKit.framework/Versions/A/ResponseKit
-current-version: 77.0
+current-version: 77
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

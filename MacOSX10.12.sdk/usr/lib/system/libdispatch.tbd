@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 7E622FE8-0D74-3798-AE91-6AA85BAE2A8C', 'x86_64: EA0CC14E-D559-3802-B4B2-0E8C7579AAC4' ]
+uuids:           [ 'i386: 6807558F-CFDA-3C83-825C-097241D13985', 'x86_64: D122E712-9593-31CA-BAC4-4A54410BF4A0' ]
 platform:        macosx
 install-name:    /usr/lib/system/libdispatch.dylib
-current-version: 703.30.5
+current-version: 703.50.37
 objc-constraint: none
 parent-umbrella: System
 exports:         
@@ -97,13 +97,14 @@ exports:
                        _dispatch_sync_f, _dispatch_time, _dispatch_timer_aggregate_create, 
                        _dispatch_timer_aggregate_get_delay, _dispatch_tsd_indexes, 
                        _dispatch_walltime, _dispatch_write, _dispatch_write_f, _libdispatch_init, 
-                       _os_release, _os_retain, _voucher_activity_create, _voucher_activity_create_with_location, 
-                       _voucher_activity_flush, _voucher_activity_get_metadata_buffer, 
-                       _voucher_activity_initialize_4libtrace, _voucher_activity_trace, 
-                       _voucher_activity_trace_with_private_strings, _voucher_adopt, 
-                       _voucher_copy, _voucher_copy_without_importance, _voucher_create_with_mach_msg, 
-                       _voucher_decrement_importance_count4CF, _voucher_get_activity_id, 
-                       _voucher_get_activity_id_and_creator, _voucher_replace_default_voucher ]
+                       _os_release, _os_retain, _voucher_activity_create_with_data, 
+                       _voucher_activity_create_with_location, _voucher_activity_flush, 
+                       _voucher_activity_get_metadata_buffer, _voucher_activity_initialize_4libtrace, 
+                       _voucher_activity_trace, _voucher_activity_trace_v, _voucher_activity_trace_with_private_strings, 
+                       _voucher_adopt, _voucher_copy, _voucher_copy_without_importance, 
+                       _voucher_create_with_mach_msg, _voucher_decrement_importance_count4CF, 
+                       _voucher_get_activity_id, _voucher_get_activity_id_and_creator, 
+                       _voucher_replace_default_voucher ]
     objc-classes:    [ _OS_dispatch_data, _OS_dispatch_disk, _OS_dispatch_group, 
                        _OS_dispatch_io, _OS_dispatch_mach, _OS_dispatch_mach_msg, 
                        _OS_dispatch_object, _OS_dispatch_operation, _OS_dispatch_queue, 

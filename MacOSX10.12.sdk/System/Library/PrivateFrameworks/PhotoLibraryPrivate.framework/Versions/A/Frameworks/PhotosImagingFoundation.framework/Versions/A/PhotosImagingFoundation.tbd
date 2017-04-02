@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1DCF0628-4BF9-3546-B441-B5D324F98692' ]
+uuids:           [ 'x86_64: FFAFEA39-DAEB-3FD3-9096-1C8457EDD854' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoLibraryPrivate.framework/Versions/A/Frameworks/PhotosImagingFoundation.framework/Versions/A/PhotosImagingFoundation
-current-version: 3130.0.240
+current-version: 3150.4.120
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -85,7 +85,8 @@ exports:
                        _IPAPhotoAdjustment_WhiteBalance_Key_Tint, _IPAPhotoAdjustment_WhiteBalance_Version_Current, 
                        _IPAPhotoAdjustmentsMetadataMasterSizeHeightKey, _IPAPhotoAdjustmentsMetadataMasterSizeWidthKey, 
                        _IPAPhotoAdjustmentsMetadataOrientationKey, _IPAPhotoAdjustmentsMetadataOrientationKey_Legacy, 
-                       _IPAPhotoAdjustmentsMetadataPipelineVersionKey, _IPAPhotosImagingErrorDomain, 
+                       _IPAPhotoAdjustmentsMetadataPipelineVersionKey, _IPAPhotosCodecKey, 
+                       _IPAPhotosFileTypeKey, _IPAPhotosImagingErrorDomain, _IPAPhotosImagingUnusableInputErrorDomain, 
                        _IPAPhotosNonLocalizedErrorMessage, _IPAScaleImageSizePolicy_ScaleKey, 
                        _IPAScaledTimeFromNaturalTime, _IPAShortestEdgeImageSizePolicy_shortestEdgeKey, 
                        _IPASlomoVideoAdjustmentFormat, _IPASlomoVideoAdjustmentFormatVersionCurrent, 

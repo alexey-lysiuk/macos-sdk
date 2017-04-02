@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 43BEAC2A-0994-340E-B3F9-E973A7BD7229' ]
+uuids:           [ 'x86_64: CB2AF91D-E065-30F6-A1E2-E505FDCC7BDE' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/BioKitAggD.framework/Versions/A/BioKitAggD
 objc-constraint: none

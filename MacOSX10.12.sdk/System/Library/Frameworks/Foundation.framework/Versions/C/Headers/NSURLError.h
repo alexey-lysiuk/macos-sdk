@@ -104,6 +104,7 @@ NS_ENUM(NSInteger)
     NSURLErrorFileIsDirectory = 		-1101,
     NSURLErrorNoPermissionsToReadFile = 	-1102,
     NSURLErrorDataLengthExceedsMaximum NS_ENUM_AVAILABLE(10_5, 2_0) =	-1103,
+    NSURLErrorFileOutsideSafeArea API_AVAILABLE(macosx(10.12.4), ios(10.3), watchos(3.2), tvos(10.2)) = -1104,
     
     // SSL errors
     NSURLErrorSecureConnectionFailed = 		-1200,

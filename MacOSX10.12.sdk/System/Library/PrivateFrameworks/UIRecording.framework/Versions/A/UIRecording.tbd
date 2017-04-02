@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: EB1E5569-2F84-3C3E-A52B-D4798A6F357D', 'x86_64: 3C007812-E8CD-36B1-BA89-A305D808066A' ]
+uuids:           [ 'i386: 7F6030A3-DDDA-3F7C-B486-CA9B864A2955', 'x86_64: 6F27BDF7-214B-3892-A5D7-FCDE66655E64' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/UIRecording.framework/Versions/A/UIRecording
-current-version: 28.0
+current-version: 28
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

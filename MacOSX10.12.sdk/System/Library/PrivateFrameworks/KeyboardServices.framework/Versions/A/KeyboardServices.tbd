@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 101AFCC4-BAAF-3157-B185-6F9F0BCADDDA' ]
+uuids:           [ 'x86_64: 1A777EE0-B15F-3C02-9468-2919B17201A5' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/KeyboardServices.framework/KeyboardServices
 objc-constraint: none
@@ -9,24 +9,25 @@ exports:
     symbols:         [ _KSCKErrorDomain, _KSCloudKitAccountDidChange, _KSDeviceProtectionClassDidChange, 
                        _KSTextReplacementDidChangeNotification, _KeyboardServicesVersionNumber, 
                        _KeyboardServicesVersionString, _TIBuddySetupFinishedNotification_Private, 
-                       __KSDevicesMigrationStateDidChange, __KSTIBuddySetupDidFinishNotification_Private, 
-                       __KSTRCKStoreDidReceiveChangesNotification, __KSTRLegacyStoreDidImportChangesNotification, 
-                       __KSTRLegacyStoreDidImportUbiquitousChanges, __KSTRShouldCleanupResources, 
-                       __KSTextReplacementDeleteDidFailEntriesKey, __KSTextReplacementDeleteDidFailErrorsKey, 
-                       __KSTextReplacementEntryDidFailErrorKey, __KSTextReplacementErrorDomain, 
-                       __KSTextReplacementServerInterface, __KSTextReplacementUpdateDidFailEntriesKey, 
-                       __KSTextReplacementUpdateDidFailErrorsKey, _dataModelName, 
-                       _kKSApplePreferencesDomain, _kKeyboardServicesCloudKitContainerID, 
+                       __KSDevicesMigrationStateDidChange, __KSReachabilityDidChange, 
+                       __KSTIBuddySetupDidFinishNotification_Private, __KSTRCKStoreDidReceiveChangesNotification, 
+                       __KSTRLegacyStoreDidImportChangesNotification, __KSTRLegacyStoreDidImportUbiquitousChanges, 
+                       __KSTRShouldCleanupResources, __KSTextReplacementDeleteDidFailEntriesKey, 
+                       __KSTextReplacementDeleteDidFailErrorsKey, __KSTextReplacementEntryDidFailErrorKey, 
+                       __KSTextReplacementErrorDomain, __KSTextReplacementServerInterface, 
+                       __KSTextReplacementUpdateDidFailEntriesKey, __KSTextReplacementUpdateDidFailErrorsKey, 
+                       _dataModelName, _kKSApplePreferencesDomain, _kKeyboardServicesCloudKitContainerID, 
                        _kMaxOperationRetryCount, _kRetryWaitInSeconds, _kTextReplacementEntitlement, 
                        _kiOSMajorVersForCloudKitSync, _kiOSMinorVersForCloudKitSync, 
                        _kosxMajorVersForCloudKitSync, _kosxMinorSubversionForCloudKitSync, 
                        _kosxMinorVersForCloudKitSync ]
     objc-classes:    [ _ArraySlice, _ArraySlicer, __KSAggdLogger, __KSCKSyncStateManagedObject, 
                        __KSCloudKitManager, __KSDeviceInfo, __KSDeviceStateMonitor, 
-                       __KSSystemTask, __KSTIUserDictionaryEntryValue, __KSTIUserDictionaryTransaction, 
-                       __KSTRClient, __KSTaskScheduler, __KSTextReplacementCKStore, 
-                       __KSTextReplacementClientStore, __KSTextReplacementCoreDataStore, 
-                       __KSTextReplacementEntry, __KSTextReplacementHelper, __KSTextReplacementLegacyStore, 
+                       __KSReachabilityMonitor, __KSSystemTask, __KSTIUserDictionaryEntryValue, 
+                       __KSTIUserDictionaryTransaction, __KSTRClient, __KSTaskScheduler, 
+                       __KSTextReplacementCKStore, __KSTextReplacementClientStore, 
+                       __KSTextReplacementCoreDataStore, __KSTextReplacementEntry, 
+                       __KSTextReplacementHelper, __KSTextReplacementLegacyStore, 
                        __KSTextReplacementManagedObject, __KSTextReplacementManager, 
                        __KSTextReplacementServer, __KSTextReplacementServerConnection, 
                        __KSUtilities, __KSiCloudDeviceListMonitor ]

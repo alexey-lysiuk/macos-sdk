@@ -21,6 +21,7 @@ typedef NS_ENUM(NSInteger, MPErrorCode) {
     MPErrorNotFound,                                // the id could not be found in the current storefront
     MPErrorNotSupported,                            // the request is not supported (ex: trying to add items to a smart playlist)
     MPErrorCancelled NS_ENUM_AVAILABLE_IOS(10_1),   // the request was cancelled before it could complete
+    MPErrorRequestTimedOut NS_ENUM_AVAILABLE_IOS(10_3),
 } NS_ENUM_AVAILABLE_IOS(9_3);
 
 NS_ASSUME_NONNULL_END

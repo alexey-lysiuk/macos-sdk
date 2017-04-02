@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 46D782F2-DAEB-3A8F-8B0C-F2819075BA95', 'x86_64: 99E61679-A3CD-30D9-ACCE-3047B99083B3' ]
+uuids:           [ 'i386: 1589DD80-78FD-31D7-AA92-59669FB2FFAD', 'x86_64: 84A434CC-9456-3C66-8955-5D3762EDC454' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/VCXMPP.framework/Versions/A/Frameworks/Apollo.framework/Versions/A/Apollo
 objc-constraint: none

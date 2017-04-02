@@ -144,7 +144,7 @@ typedef struct AudioFormatInfo AudioFormatInfo;
 struct ExtendedAudioFormatInfo
 {
 	AudioStreamBasicDescription		mASBD;
-	const void*						mMagicCookie;
+	const void* __nullable			mMagicCookie;
 	UInt32							mMagicCookieSize;
 	AudioClassDescription			mClassDescription;
 };

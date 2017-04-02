@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 08B59780-B037-34EF-A5AB-7DDDF380113A', 'x86_64: A43EC5E3-FCBC-3619-B2C1-C832B04421CA' ]
+uuids:           [ 'i386: AB5F748B-4314-38E7-94D7-7A3417206577', 'x86_64: 6F293402-DAC9-33C6-90A9-1FDFD69D3E36' ]
 platform:        macosx
 install-name:    /usr/lib/system/libunc.dylib
-current-version: 29.0
+current-version: 29
 objc-constraint: none
 parent-umbrella: System
 exports:         

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 61F92685-5FF6-357C-9E62-550775797024' ]
+uuids:           [ 'x86_64: 5956FCB6-619B-3AD3-9150-3BA0FBE45FC8' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/WebInspector.framework/Versions/A/WebInspector
-current-version: 602.3.12
+current-version: 603.1.30
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -19,17 +19,17 @@ exports:
                        _RWIProtocolCSSSourceRange, _RWIProtocolCSSStyle, _RWIProtocolCSSStyleAttribute, 
                        _RWIProtocolCSSStyleId, _RWIProtocolCSSStyleSheetBody, _RWIProtocolCSSStyleSheetHeader, 
                        _RWIProtocolConfiguration, _RWIProtocolConsoleCallFrame, _RWIProtocolConsoleDomainEventDispatcher, 
-                       _RWIProtocolConsoleMessage, _RWIProtocolDOMAccessibilityProperties, 
-                       _RWIProtocolDOMDomainEventDispatcher, _RWIProtocolDOMEventListener, 
-                       _RWIProtocolDOMHighlightConfig, _RWIProtocolDOMNode, _RWIProtocolDOMRGBAColor, 
-                       _RWIProtocolDOMStorageDomainEventDispatcher, _RWIProtocolDOMStorageStorageId, 
-                       _RWIProtocolDebuggerAssertPauseReason, _RWIProtocolDebuggerBreakpointAction, 
-                       _RWIProtocolDebuggerBreakpointOptions, _RWIProtocolDebuggerBreakpointPauseReason, 
-                       _RWIProtocolDebuggerCSPViolationPauseReason, _RWIProtocolDebuggerCallFrame, 
-                       _RWIProtocolDebuggerFunctionDetails, _RWIProtocolDebuggerLocation, 
-                       _RWIProtocolDebuggerProbeSample, _RWIProtocolDebuggerScope, 
-                       _RWIProtocolGenericTypesSearchMatch, _RWIProtocolInspector, 
-                       _RWIProtocolJSONObject, _RWIProtocolNetworkCachedResource, 
+                       _RWIProtocolConsoleMessage, _RWIProtocolConsoleStackTrace, 
+                       _RWIProtocolDOMAccessibilityProperties, _RWIProtocolDOMDomainEventDispatcher, 
+                       _RWIProtocolDOMEventListener, _RWIProtocolDOMHighlightConfig, 
+                       _RWIProtocolDOMNode, _RWIProtocolDOMRGBAColor, _RWIProtocolDOMStorageDomainEventDispatcher, 
+                       _RWIProtocolDOMStorageStorageId, _RWIProtocolDebuggerAssertPauseReason, 
+                       _RWIProtocolDebuggerBreakpointAction, _RWIProtocolDebuggerBreakpointOptions, 
+                       _RWIProtocolDebuggerBreakpointPauseReason, _RWIProtocolDebuggerCSPViolationPauseReason, 
+                       _RWIProtocolDebuggerCallFrame, _RWIProtocolDebuggerFunctionDetails, 
+                       _RWIProtocolDebuggerLocation, _RWIProtocolDebuggerProbeSample, 
+                       _RWIProtocolDebuggerScope, _RWIProtocolGenericTypesSearchMatch, 
+                       _RWIProtocolInspector, _RWIProtocolJSONObject, _RWIProtocolNetworkCachedResource, 
                        _RWIProtocolNetworkDomainEventDispatcher, _RWIProtocolNetworkHeaders, 
                        _RWIProtocolNetworkInitiator, _RWIProtocolNetworkRequest, 
                        _RWIProtocolNetworkResourceTiming, _RWIProtocolNetworkResponse, 
@@ -45,7 +45,7 @@ exports:
                        _RWIProtocolRuntimePropertyPreview, _RWIProtocolRuntimeRemoteObject, 
                        _RWIProtocolRuntimeStructureDescription, _RWIProtocolRuntimeTypeDescription, 
                        _RWIProtocolRuntimeTypeLocation, _RWIProtocolRuntimeTypeSet, 
-                       _RWITarget ]
+                       _RWIRelay, _RWIRelayDelegateMac, _RWITarget ]
     objc-ivars:      [ _RWIApplication._active, _RWIApplication._bundleIdentifier, 
                        _RWIApplication._debuggables, _RWIApplication._delegate, _RWIApplication._drivables, 
                        _RWIApplication._hostApplicationIdentifier, _RWIApplication._identifier, 
@@ -63,8 +63,7 @@ exports:
                        _RWIDriver._identifier, _RWIDriver._name, _RWIDriver._registered, 
                        _RWIDriver._target, _RWIInspector._autoPause, _RWIInspector._debuggable, 
                        _RWIInspector._delegate, _RWIInspector._globalContextRef, 
-                       _RWIInspector._inspectorFrontendHost, _RWIInspector._manager, 
-                       _RWIInspector._uuid, _RWIInspector._windowController, _RWIMachine._currentMachine, 
+                       _RWIInspector._manager, _RWIInspector._uuid, _RWIMachine._currentMachine, 
                        _RWIManager._baseManager, _RWIManager._channels, _RWIManager._delegate, 
                        _RWIManager._inspectors, _RWIManager._notificationRef, _RWIManager._notifyEnabledToken, 
                        _RWITarget._applications, _RWITarget._automaticInspectionHandler, 

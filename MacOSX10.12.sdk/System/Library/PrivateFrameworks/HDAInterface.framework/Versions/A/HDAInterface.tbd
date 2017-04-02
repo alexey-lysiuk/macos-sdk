@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 4A7110AB-F5B1-3847-9B6C-FDF5B5F650DF', 'x86_64: 5C89456C-25D1-331C-B3DA-83BB30DAA7D5' ]
+uuids:           [ 'i386: A45E2FDE-3822-3ACC-841D-7D2F36F672F0', 'x86_64: 50D784F6-2B53-3B2A-A4FF-392038F9CA05' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/HDAInterface.framework/Versions/A/HDAInterface
 objc-constraint: none

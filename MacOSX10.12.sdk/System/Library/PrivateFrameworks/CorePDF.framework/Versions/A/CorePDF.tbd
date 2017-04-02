@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 84592892-5439-3D0C-AA3C-8081C17151C6', 'x86_64: 254118BE-2E30-3772-B425-6328D1487162' ]
+uuids:           [ 'i386: 49EF1E20-97DC-3EAC-ABAB-112343EC7563', 'x86_64: 7F50E4A6-940C-33F5-BE4E-7E01AFE98A8F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CorePDF.framework/Versions/A/CorePDF
 objc-constraint: none

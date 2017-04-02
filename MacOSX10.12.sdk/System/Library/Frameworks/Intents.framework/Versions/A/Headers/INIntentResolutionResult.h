@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-API_AVAILABLE(macosx(10.12), ios(10.0))
+API_AVAILABLE(macosx(10.12), ios(10.0), watchos(3.2))
 @interface INIntentResolutionResult<ObjectType> : NSObject
 
 - (instancetype)init NS_UNAVAILABLE;
@@ -17,7 +17,7 @@ API_AVAILABLE(macosx(10.12), ios(10.0))
 // This result is to tell Siri that the user must provide a non-nil value for this parameter in order to continue
 + (instancetype)needsValue NS_SWIFT_NAME(needsValue());
 
-// This result is to tell Siri to continue whether or the user has provided a value for this parameter
+// This result is to tell Siri to continue regardless of whether the user has provided a value for this parameter or not
 + (instancetype)notRequired NS_SWIFT_NAME(notRequired());
 
 // This result is for informing Siri that this value is unsupported

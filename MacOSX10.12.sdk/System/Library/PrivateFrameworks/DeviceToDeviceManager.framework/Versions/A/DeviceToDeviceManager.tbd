@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 3238B55C-5523-32EB-88D1-4B07A0262E4F', 'x86_64: 160F5186-49B0-30E3-AE61-DD8B764AA6F1' ]
+uuids:           [ 'i386: E007094C-BA56-3C13-8E18-ED243DE66D41', 'x86_64: 4F7B3445-D7C7-314E-82F1-E8A98FA3B867' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DeviceToDeviceManager.framework/Versions/A/DeviceToDeviceManager
-current-version: 32.0
+current-version: 32
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]

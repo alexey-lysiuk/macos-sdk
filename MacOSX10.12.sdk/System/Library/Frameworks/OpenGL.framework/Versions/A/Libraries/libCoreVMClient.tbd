@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: BA3EB25E-E606-3882-A5A4-7CBBA39E60B9', 'x86_64: 8C8E9295-1918-3763-A0B7-6397EB181EF4' ]
+uuids:           [ 'i386: E68545CB-CD28-3346-AA7F-238EB792159A', 'x86_64: 9660B91D-0C39-385A-96CB-268345035995' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libCoreVMClient.dylib
 objc-constraint: none

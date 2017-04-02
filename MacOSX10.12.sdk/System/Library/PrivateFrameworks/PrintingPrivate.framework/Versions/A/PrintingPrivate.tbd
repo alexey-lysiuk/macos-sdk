@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: B7A56299-D408-3E24-9B94-49987FBF4181', 'x86_64: D36E0CAB-3134-3128-A167-B2DCCE4E7EB3' ]
+uuids:           [ 'i386: 2C727719-2ACF-397C-893D-002648A0FDA7', 'x86_64: 5950A7FC-57C8-383C-A16F-ED57D2039D5B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PrintingPrivate.framework/Versions/A/PrintingPrivate
-current-version: 171.0
+current-version: 171.1
 objc-constraint: none
 exports:         
   - archs:           [ i386 ]

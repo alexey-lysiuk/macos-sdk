@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FC6970C0-59F9-36C6-88E8-ECC579782492' ]
+uuids:           [ 'x86_64: 3BB528B0-DB0F-3753-A31F-EDBF2792807E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Swift/libswiftsimd.dylib
 current-version: 800.8.18

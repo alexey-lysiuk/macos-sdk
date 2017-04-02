@@ -100,6 +100,8 @@ MDL_EXPORT
 - (vector_float3)rotationAtTime:(NSTimeInterval)time;
 - (vector_float3)shearAtTime:(NSTimeInterval)time;
 - (vector_float3)scaleAtTime:(NSTimeInterval)time;
+
+- (void)setMatrix:(matrix_float4x4)matrix forTime:(NSTimeInterval)time;
 - (void)setTranslation:(vector_float3)translation forTime:(NSTimeInterval)time;
 - (void)setRotation:(vector_float3)rotation forTime:(NSTimeInterval)time;
 - (void)setShear:(vector_float3)shear forTime:(NSTimeInterval)time;

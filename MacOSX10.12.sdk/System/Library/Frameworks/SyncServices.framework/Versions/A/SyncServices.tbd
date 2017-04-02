@@ -1,10 +1,10 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 4ABBBFAF-C963-3496-AF55-624AC81B9B29', 'x86_64: C641C441-6715-3843-8193-FBE2593E4EAA' ]
+uuids:           [ 'i386: 0AADD837-933A-3888-8E6B-7F05D476FF98', 'x86_64: 5C6C81DA-EDBD-34A3-98A9-E9BFD5885A50' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/SyncServices.framework/Versions/A/SyncServices
-current-version: 726.0
-compatibility-version: 48.0
+current-version: 726
+compatibility-version: 48
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

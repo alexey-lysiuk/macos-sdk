@@ -1,5 +1,5 @@
 .\" Copyright (c) 2004-2016 Apple Inc. All rights reserved.
-.Dd June 14, 2016
+.Dd August 24, 2016
 .Dt "vmmap" 1
 .Os
 .Sh NAME
@@ -9,10 +9,6 @@
 .Nm vmmap
 .Op Fl w
 .Op Fl v
-.Op Fl resident
-.Op Fl dirty
-.Op Fl swapped
-.Op Fl purge
 .Op Fl pages
 .Op Fl interleaved
 .Op Fl submap
@@ -41,25 +37,13 @@ address (if any) and the regions around it.
 .Sh OPTIONS
 .Bl -tag -width "-allSplitLibs"
 .It Fl w, Fl wide
-Print wide output.
+Print wide output, to show full paths of mapped files.
 .It Fl v, Fl verbose
 Equivalent to
 .Fl w
-.Fl resident
-.Fl dirty
-.Fl swapped
-.Fl purge
 .Fl submap
 .Fl allSplitLibs
 .Fl noCoalesce
-.It Fl resident
-Print the amount of memory region that is resident.
-.It Fl dirty
-Print the amount of memory region that is dirty.
-.It Fl swapped
-Print the amount of memory region that is swapped (paged out or compressed).
-.It Fl purge
-Print the amount of memory region that is purgeable.
 .It Fl pages
 Print region sizes in page counts rather than kilobytes.
 .It Fl interleaved
@@ -165,6 +149,13 @@ a machine-wide submap are changed -- for example, the debugger makes a section
 of memory for a dylib writable so it can insert debugging traps -- then
 the submap becomes local, and the kernel will allocate memory to store the
 extra copy.
+.Pp
+% FRAG, fragmentation, in the MALLOC ZONE summary is computed by the following method:
+.Pp
+    % FRAG = 100 - (100 * Allocated / (Dirty + Swapped))
+.Pp
+Dirty and swapped are memory which has been written to by the process.  Allocated is the number
+of bytes currently allocated from malloc.
 .Sh SEE ALSO
 .Xr heap 1 ,
 .Xr leaks 1 ,

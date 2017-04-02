@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FE5773E7-2B91-3BB0-AC2D-975AFF778814' ]
+uuids:           [ 'x86_64: 1DDC84A3-4FFA-3986-BFC1-A1722C520983' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/WeatherFoundation.framework/Versions/A/WeatherFoundation
 objc-constraint: none
@@ -26,11 +26,11 @@ exports:
                        _WFConvertTemperature, _WFDefaultAllowedAlmanacStaleness, 
                        _WFDefaultAllowedCurrentForecastStaleness, _WFDefaultAllowedDailyForecastStaleness, 
                        _WFDefaultAllowedHistoricalStaleness, _WFDefaultAllowedHourlyForecastStaleness, 
-                       _WFFavoriteLocationsKey, _WFForecastRequestAttachRawAPIOptionsKey, 
-                       _WFForecastRequestComponentsKey, _WFForecastRequestDateKey, 
-                       _WFForecastRequestLocationKey, _WFForecastRequestTypeKey, 
-                       _WFForecastTypeForDateComponents, _WFLocationArchiveVersionKey, 
-                       _WFLocationCodingCityKey, _WFLocationCodingCountryAbbreviationKey, 
+                       _WFExecutingReverseGeoNotification, _WFFavoriteLocationsKey, 
+                       _WFForecastRequestAttachRawAPIOptionsKey, _WFForecastRequestComponentsKey, 
+                       _WFForecastRequestDateKey, _WFForecastRequestLocationKey, 
+                       _WFForecastRequestTypeKey, _WFForecastTypeForDateComponents, 
+                       _WFLocationArchiveVersionKey, _WFLocationCodingCityKey, _WFLocationCodingCountryAbbreviationKey, 
                        _WFLocationCodingCountryKey, _WFLocationCodingCountyKey, _WFLocationCodingCreationDateKey, 
                        _WFLocationCodingGeoLocationKey, _WFLocationCodingLocationIDKey, 
                        _WFLocationCodingStateAbbreviationKey, _WFLocationCodingStateKey, 
@@ -75,8 +75,9 @@ exports:
                        _WFGeocodeRequest, _WFGeocodeResponse, _WFHourlyForecastRequest, 
                        _WFJSONStructureLeafNode, _WFLocation, _WFLocationQueryGeocode, 
                        _WFLocationQueryGeocodeCache, _WFParsedForecastData, _WFQueryDispatcher, 
-                       _WFResourceManager, _WFResponse, _WFServiceConnection, _WFTask, 
-                       _WFTaskIdentifier, _WFTemperature, _WFTemperatureFormatter, 
+                       _WFReachabilityConfigurationRequest, _WFReachabilityConfigurationResponse, 
+                       _WFResourceManager, _WFResponse, _WFServiceConnection, _WFServiceReachabilityObserver, 
+                       _WFTask, _WFTaskIdentifier, _WFTemperature, _WFTemperatureFormatter, 
                        _WFTemperatureUnitChangeRequest, _WFTemperatureUnitObserver, 
                        _WFTemperatureUnitProvider, _WFTemperatureUnitRequest, _WFTemperatureUnitResponse, 
                        _WFTypes, _WFURLComponents, _WFUserDefaultsPersistence, _WFWeatherChannelParser, 

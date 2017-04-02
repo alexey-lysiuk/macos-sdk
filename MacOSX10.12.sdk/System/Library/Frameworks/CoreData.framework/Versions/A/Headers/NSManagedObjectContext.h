@@ -103,7 +103,8 @@ API_AVAILABLE(macosx(10.4),ios(3.0))
       unsigned int _deleteInaccessible:1;
       unsigned int _priority:2;
       unsigned int _autoMerge:1;
-      unsigned int _reservedFlags:6;
+      unsigned int _pushSecureDelete:1;
+      unsigned int _reservedFlags:5;
   } _flags;
   NSMutableSet *_unprocessedChanges;
   NSMutableSet *_unprocessedDeletes;

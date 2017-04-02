@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 87E41EB6-8955-3064-9666-2359D34945C5' ]
+uuids:           [ 'x86_64: E4138A2F-F3CC-39CC-80E4-1A2571382553' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MobileAccessoryUpdater.framework/Versions/A/MobileAccessoryUpdater
 objc-constraint: none

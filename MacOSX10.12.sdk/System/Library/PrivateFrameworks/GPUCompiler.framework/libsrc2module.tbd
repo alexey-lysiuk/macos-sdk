@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: BB25ACC1-7CE5-322C-93C8-D91528D715F4', 'x86_64: BAD88879-87B4-373D-85D0-C99F1150CB4A' ]
+uuids:           [ 'i386: 56C6452D-35EC-33B9-B17A-D89279AF050E', 'x86_64: A889101B-152C-3952-8879-0DB67561B613' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/GPUCompiler.framework/libsrc2module.dylib
-current-version: 0.0
+current-version: 0
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]

@@ -73,9 +73,11 @@
 #include <kern/kern_types.h>
 #include <kern/thread.h>
 #include <sys/cdefs.h>
+#include <kern/block_hint.h>
 
 
 __BEGIN_DECLS
+
 
 
 /* Context switch */

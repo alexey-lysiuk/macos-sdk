@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: BC9B1537-86E2-3C18-B8E5-1E405BD17386', 'x86_64: 074C3B05-D1EC-377A-88E1-4FF56B20DFAA' ]
+uuids:           [ 'i386: 004DD29D-A869-37B5-B514-A6C9DEB68B08', 'x86_64: A3B52628-7B40-3D12-802C-7C51ECC6D0C8' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CaptiveNetwork.framework/Versions/A/CaptiveNetwork
 objc-constraint: none

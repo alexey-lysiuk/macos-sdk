@@ -51,24 +51,24 @@ typedef CM_BRIDGED_TYPE(id) CFTypeRef  VTSessionRef;
 VT_EXPORT OSStatus 
 VTSessionCopySupportedPropertyDictionary(
   CM_NONNULL VTSessionRef					session,
-  CM_RETURNS_RETAINED_PARAMETER CM_NULLABLE CFDictionaryRef * CM_NONNULL supportedPropertyDictionaryOut ) __OSX_AVAILABLE_STARTING(__MAC_10_8,__IPHONE_8_0);
+  CM_RETURNS_RETAINED_PARAMETER CM_NULLABLE CFDictionaryRef * CM_NONNULL supportedPropertyDictionaryOut ) API_AVAILABLE(macosx(10.8), ios(8.0), tvos(10.2));
 
 CF_IMPLICIT_BRIDGING_ENABLED
 
 CM_ASSUME_NONNULL_BEGIN
 	
-VT_EXPORT const CFStringRef kVTPropertyTypeKey __OSX_AVAILABLE_STARTING(__MAC_10_8,__IPHONE_8_0); // value is CFStringRef, one of the following:
-	VT_EXPORT const CFStringRef kVTPropertyType_Enumeration __OSX_AVAILABLE_STARTING(__MAC_10_8,__IPHONE_8_0); // value is one of a list of CFStrings
-	VT_EXPORT const CFStringRef kVTPropertyType_Boolean __OSX_AVAILABLE_STARTING(__MAC_10_8,__IPHONE_8_0); // value is a CFBoolean
-	VT_EXPORT const CFStringRef kVTPropertyType_Number __OSX_AVAILABLE_STARTING(__MAC_10_8,__IPHONE_8_0); // value is a CFNumber
-VT_EXPORT const CFStringRef kVTPropertyReadWriteStatusKey __OSX_AVAILABLE_STARTING(__MAC_10_8,__IPHONE_8_0);
-	VT_EXPORT const CFStringRef kVTPropertyReadWriteStatus_ReadOnly __OSX_AVAILABLE_STARTING(__MAC_10_8,__IPHONE_8_0);
-	VT_EXPORT const CFStringRef kVTPropertyReadWriteStatus_ReadWrite __OSX_AVAILABLE_STARTING(__MAC_10_8,__IPHONE_8_0);
-VT_EXPORT const CFStringRef kVTPropertyShouldBeSerializedKey __OSX_AVAILABLE_STARTING(__MAC_10_8,__IPHONE_8_0); // CFBoolean, false by default
-VT_EXPORT const CFStringRef kVTPropertySupportedValueMinimumKey __OSX_AVAILABLE_STARTING(__MAC_10_8,__IPHONE_8_0); // CFNumber
-VT_EXPORT const CFStringRef kVTPropertySupportedValueMaximumKey __OSX_AVAILABLE_STARTING(__MAC_10_8,__IPHONE_8_0); // CFNumber
-VT_EXPORT const CFStringRef kVTPropertySupportedValueListKey __OSX_AVAILABLE_STARTING(__MAC_10_8,__IPHONE_8_0); // CFArray of appropriate values
-VT_EXPORT const CFStringRef kVTPropertyDocumentationKey __OSX_AVAILABLE_STARTING(__MAC_10_8,__IPHONE_8_0); // a CFString for developer eyes only
+VT_EXPORT const CFStringRef kVTPropertyTypeKey API_AVAILABLE(macosx(10.8), ios(8.0), tvos(10.2)); // value is CFStringRef, one of the following:
+	VT_EXPORT const CFStringRef kVTPropertyType_Enumeration API_AVAILABLE(macosx(10.8), ios(8.0), tvos(10.2)); // value is one of a list of CFStrings
+	VT_EXPORT const CFStringRef kVTPropertyType_Boolean API_AVAILABLE(macosx(10.8), ios(8.0), tvos(10.2)); // value is a CFBoolean
+	VT_EXPORT const CFStringRef kVTPropertyType_Number API_AVAILABLE(macosx(10.8), ios(8.0), tvos(10.2)); // value is a CFNumber
+VT_EXPORT const CFStringRef kVTPropertyReadWriteStatusKey API_AVAILABLE(macosx(10.8), ios(8.0), tvos(10.2));
+	VT_EXPORT const CFStringRef kVTPropertyReadWriteStatus_ReadOnly API_AVAILABLE(macosx(10.8), ios(8.0), tvos(10.2));
+	VT_EXPORT const CFStringRef kVTPropertyReadWriteStatus_ReadWrite API_AVAILABLE(macosx(10.8), ios(8.0), tvos(10.2));
+VT_EXPORT const CFStringRef kVTPropertyShouldBeSerializedKey API_AVAILABLE(macosx(10.8), ios(8.0), tvos(10.2)); // CFBoolean, false by default
+VT_EXPORT const CFStringRef kVTPropertySupportedValueMinimumKey API_AVAILABLE(macosx(10.8), ios(8.0), tvos(10.2)); // CFNumber
+VT_EXPORT const CFStringRef kVTPropertySupportedValueMaximumKey API_AVAILABLE(macosx(10.8), ios(8.0), tvos(10.2)); // CFNumber
+VT_EXPORT const CFStringRef kVTPropertySupportedValueListKey API_AVAILABLE(macosx(10.8), ios(8.0), tvos(10.2)); // CFArray of appropriate values
+VT_EXPORT const CFStringRef kVTPropertyDocumentationKey API_AVAILABLE(macosx(10.8), ios(8.0), tvos(10.2)); // a CFString for developer eyes only
 
 	
 CM_ASSUME_NONNULL_END
@@ -83,7 +83,7 @@ VT_EXPORT OSStatus
 VTSessionSetProperty(
   CM_NONNULL VTSessionRef       session,
   CM_NONNULL CFStringRef        propertyKey,
-  CM_NONNULL CFTypeRef          propertyValue ) __OSX_AVAILABLE_STARTING(__MAC_10_8,__IPHONE_8_0);
+  CM_NONNULL CFTypeRef          propertyValue ) API_AVAILABLE(macosx(10.8), ios(8.0), tvos(10.2));
 	
 CF_IMPLICIT_BRIDGING_DISABLED
 
@@ -114,7 +114,7 @@ VTSessionCopyProperty(
   CM_NONNULL VTSessionRef		session,
   CM_NONNULL CFStringRef		propertyKey,
   CM_NULLABLE CFAllocatorRef	allocator,
-  void * CM_NULLABLE			propertyValueOut ) __OSX_AVAILABLE_STARTING(__MAC_10_8,__IPHONE_8_0);
+  void * CM_NULLABLE			propertyValueOut ) API_AVAILABLE(macosx(10.8), ios(8.0), tvos(10.2));
 
 CF_IMPLICIT_BRIDGING_ENABLED
 /*!
@@ -126,7 +126,7 @@ CF_IMPLICIT_BRIDGING_ENABLED
 VT_EXPORT OSStatus 
 VTSessionSetProperties(
   CM_NONNULL VTSessionRef		session,
-  CM_NONNULL CFDictionaryRef	propertyDictionary ) __OSX_AVAILABLE_STARTING(__MAC_10_8,__IPHONE_8_0);
+  CM_NONNULL CFDictionaryRef	propertyDictionary ) API_AVAILABLE(macosx(10.8), ios(8.0), tvos(10.2));
 	
 CF_IMPLICIT_BRIDGING_DISABLED
 
@@ -141,7 +141,7 @@ VT_EXPORT OSStatus
 VTSessionCopySerializableProperties(
   CM_NONNULL VTSessionRef					session,
   CM_NULLABLE CFAllocatorRef				allocator,
-  CM_RETURNS_RETAINED_PARAMETER CM_NULLABLE CFDictionaryRef * CM_NONNULL	dictionaryOut ) __OSX_AVAILABLE_STARTING(__MAC_10_8,__IPHONE_8_0);
+  CM_RETURNS_RETAINED_PARAMETER CM_NULLABLE CFDictionaryRef * CM_NONNULL	dictionaryOut ) API_AVAILABLE(macosx(10.8), ios(8.0), tvos(10.2));
 
 
 #pragma pack(pop)

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0AD6B8F4-47FF-3B6B-99FB-4AE76D361D2D' ]
+uuids:           [ 'x86_64: BDE8260E-A583-37C8-B62F-F304FB11BB44' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PodcastProducerKit.framework/Versions/A/PodcastProducerKit
 objc-constraint: none

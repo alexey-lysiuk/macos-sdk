@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2008-2009,2011 Apple Inc. All Rights Reserved.
+ * Copyright (c) 2008,2012-2016 Apple Inc. All Rights Reserved.
  * 
  * @APPLE_LICENSE_HEADER_START@
  * 
@@ -24,13 +24,20 @@
 #ifndef _SECURITY_SECTASK_H_
 #define _SECURITY_SECTASK_H_
 
+#include <Security/SecBase.h>
+
 #include <CoreFoundation/CoreFoundation.h>
 #include <mach/message.h>
-#include <Security/SecCode.h>
 
-#if defined(__cplusplus)
-extern "C" {
+#if SEC_OS_IPHONE_INCLUDES
+#include <sys/cdefs.h>
 #endif
+
+#if SEC_OS_OSX
+#include <Security/SecCode.h>
+#endif /* SEC_OS_OSX */
+
+__BEGIN_DECLS
 
 CF_ASSUME_NONNULL_BEGIN
 CF_IMPLICIT_BRIDGING_ENABLED
@@ -64,6 +71,7 @@ SecTaskRef SecTaskCreateWithAuditToken(CFAllocatorRef __nullable allocator, audi
     @abstract Create a SecTask object for the current task.
     @result The newly created SecTask object or NULL on error.  The caller must
     CFRelease the returned object.
+#ifndef LEFT
 */
 __nullable
 SecTaskRef SecTaskCreateFromSelf(CFAllocatorRef __nullable allocator);
@@ -103,26 +111,31 @@ CFTypeRef SecTaskCopyValueForEntitlement(SecTaskRef task, CFStringRef entitlemen
 __nullable
 CFDictionaryRef SecTaskCopyValuesForEntitlements(SecTaskRef task, CFArrayRef entitlements, CFErrorRef *error);
 
-
-   
 /*!
     @function SecTaskCopySigningIdentifier
     @abstract Return the value of the codesigning identifier.
     @param task A previously created SecTask object
     @param error On a NULL return, this will contain a CFError describing
     the problem.  This argument may be NULL if the caller is not interested in
-    detailed errors. The caller must CFRelease the returned value.
- */
-
+    detailed errors. The caller must CFRelease the returned value
+*/
 __nullable
-CFStringRef
-SecTaskCopySigningIdentifier(SecTaskRef task, CFErrorRef *error);
+CFStringRef SecTaskCopySigningIdentifier(SecTaskRef task, CFErrorRef *error);
+
+#if SEC_OS_IPHONE
+/*!
+    @function SecTaskGetCodeSignStatus
+    @abstract Return the code sign status flags
+    @param task A previously created SecTask object
+*/
+
+uint32_t SecTaskGetCodeSignStatus(SecTaskRef task);
+#endif /* SEC_OS_IPHONE */
+
 
 CF_IMPLICIT_BRIDGING_DISABLED
 CF_ASSUME_NONNULL_END
 
-#if defined(__cplusplus)
-}
-#endif
+__END_DECLS
 
 #endif /* !_SECURITY_SECTASK_H_ */

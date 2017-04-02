@@ -17,13 +17,13 @@ typedef NS_ENUM(NSInteger, INIntentHandlingStatus) {
     INIntentHandlingStatusSuccess,
     INIntentHandlingStatusFailure,
     INIntentHandlingStatusDeferredToApplication,
-} API_AVAILABLE(macosx(10.12), ios(10.0));
+} API_AVAILABLE(macosx(10.12), ios(10.0), watchos(3.2));
 
 typedef NS_ENUM(NSInteger, INInteractionDirection) {
     INInteractionDirectionUnspecified = 0,
     INInteractionDirectionOutgoing,
     INInteractionDirectionIncoming,
-} API_AVAILABLE(macosx(10.12), ios(10.0));
+} API_AVAILABLE(macosx(10.12), ios(10.0), watchos(3.2));
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -33,7 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
  The system may also launch the app with an NSUserActivity containing an INInteraction such that the app can perform the action if it chooses.
 */
 
-API_AVAILABLE(macosx(10.12), ios(10.0))
+API_AVAILABLE(macosx(10.12), ios(10.0), watchos(3.2))
 @interface INInteraction : NSObject <NSSecureCoding, NSCopying>
 
 - (instancetype)init NS_UNAVAILABLE;

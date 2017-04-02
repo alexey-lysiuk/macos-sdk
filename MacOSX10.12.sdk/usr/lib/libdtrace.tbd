@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 64907EF4-6328-3E81-B00E-B6BA03A23925', 'x86_64: 08098580-C90A-3C1C-BC6D-F25E54F648B2' ]
+uuids:           [ 'i386: F3946A92-D74E-353A-8941-E0C63A4EF90F', 'x86_64: 1100046C-F018-33DD-9C5B-FCD85B237DB0' ]
 platform:        macosx
 install-name:    /usr/lib/libdtrace.dylib
-current-version: 130.0
+current-version: 130
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]

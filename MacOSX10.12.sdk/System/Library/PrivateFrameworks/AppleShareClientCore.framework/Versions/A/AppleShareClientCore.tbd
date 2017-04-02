@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: F8FAAC3A-4C27-3DA0-B28F-7B90F2B47A33', 'x86_64: 422EDCDC-0DF8-37B4-84D7-FA18806CA0BC' ]
+uuids:           [ 'i386: D68E23BB-454C-3880-AF03-0DD33B22B87A', 'x86_64: 9820DA3E-905F-3687-9B20-2BD933584229' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AppleShareClientCore.framework/Versions/A/AppleShareClientCore
 objc-constraint: none

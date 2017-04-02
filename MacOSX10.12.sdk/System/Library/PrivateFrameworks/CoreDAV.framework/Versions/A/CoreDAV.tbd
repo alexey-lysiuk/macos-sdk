@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 8FFF7D4A-0F63-3FC6-8FC7-F2B3AF33AD79', 'x86_64: 02CD6212-0A89-3BB5-888C-07B5E1F0A90A' ]
+uuids:           [ 'i386: 8B6A59A7-85D7-31CF-8755-DCC6A714BC58', 'x86_64: 9C927A7D-8EFF-332F-B0D0-AC530AFC7C53' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreDAV.framework/Versions/A/CoreDAV
 objc-constraint: none
@@ -73,6 +73,7 @@ exports:
                        _CoreDAVContainerSyncTaskGroup._unsubmittedTasks, _CoreDAVContainerSyncTaskGroup._urlToETag, 
                        _CoreDAVContainerSyncTaskGroup._useMultiGet, _CoreDAVContainerSyncTaskGroup._useSyncCollection, 
                        _CoreDAVCopyOrMoveTask._destinationURL, _CoreDAVCopyOrMoveTask._overwrite, 
+                       _CoreDAVCopyOrMoveTask._priorOrderedURL, _CoreDAVCopyOrMoveTask._shouldSendOrder, 
                        _CoreDAVCurrentUserPrincipalItem._href, _CoreDAVCurrentUserPrincipalItem._unauthenticated, 
                        _CoreDAVCurrentUserPrivilegeSetItem._privileges, _CoreDAVDeleteTask._previousETag, 
                        _CoreDAVDenyItem._privileges, _CoreDAVDiscoveryAccountInfo._accountID, 

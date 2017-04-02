@@ -4,7 +4,7 @@ platform:        unknown
 flags:           [ flat_namespace, not_app_extension_safe ]
 install-name:    /usr/lib/libnetsnmp.5.dylib
 current-version: 8.1
-compatibility-version: 8.0
+compatibility-version: 8
 objc-constraint: none
 undefineds:      
   - archs:           [ i386 ]

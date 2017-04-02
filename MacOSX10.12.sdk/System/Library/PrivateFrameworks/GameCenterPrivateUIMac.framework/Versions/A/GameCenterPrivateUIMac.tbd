@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 56D73C47-A7DE-3652-91E4-FB3E1EC3BD88' ]
+uuids:           [ 'x86_64: 4A2F992A-A823-3876-8527-8D45BB0A560E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/GameCenterPrivateUIMac.framework/Versions/A/GameCenterPrivateUIMac
 objc-constraint: none
@@ -101,13 +101,14 @@ exports:
                        _GKSegmentWithAddButtonSectionHeaderView, _GKSegmentedBoxCollectionReusableView, 
                        _GKSegmentedSectionDataSource, _GKSegmentedSectionHeaderView, 
                        _GKSegmentedSelectorView, _GKShareItem, _GKSharePicker, _GKShowMoreView, 
-                       _GKShowcaseCellView, _GKSimpleSlideAnimator, _GKSpeechBalloonBackgroundView, 
-                       _GKSpeechTextField, _GKSplitViewController, _GKSplittingDataSource, 
-                       _GKStaticRenderContentView, _GKStatusCell, _GKSupplementaryViewFactory, 
-                       _GKSupplementaryViewMetrics, _GKTextBubbleContentView, _GKTextBubbleControl, 
-                       _GKTextField, _GKTextStyle, _GKTextStyleFocus, _GKTextStyleMac, 
-                       _GKTextStylePad, _GKTextStylePhone, _GKTextStylePhoneInBubbleDetail, 
-                       _GKTopClipView, _GKTurnBasedMatchDetailView, _GKTurnBasedMatchDetailViewController, 
+                       _GKShowcaseCellView, _GKSignInViewControllerMac, _GKSimpleSlideAnimator, 
+                       _GKSpeechBalloonBackgroundView, _GKSpeechTextField, _GKSplitViewController, 
+                       _GKSplittingDataSource, _GKStaticRenderContentView, _GKStatusCell, 
+                       _GKSupplementaryViewFactory, _GKSupplementaryViewMetrics, 
+                       _GKTextBubbleContentView, _GKTextBubbleControl, _GKTextField, 
+                       _GKTextStyle, _GKTextStyleFocus, _GKTextStyleMac, _GKTextStylePad, 
+                       _GKTextStylePhone, _GKTextStylePhoneInBubbleDetail, _GKTopClipView, 
+                       _GKTurnBasedMatchDetailView, _GKTurnBasedMatchDetailViewController, 
                        _GKTurnBasedMatchesDataSource, _GKTurnBasedMatchesFooterView, 
                        _GKTurnBasedParticipantsDataSource, _GKTurnGameCell, _GKTurnParticipantCell, 
                        _GKTurnsDataSource, _GKValueWithCaptionBubbleControl, _GKViewController, 

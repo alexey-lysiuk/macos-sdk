@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F819CB18-4A60-3594-AC24-5DDFB4172F4F' ]
+uuids:           [ 'x86_64: BEA56AAA-D60F-3492-8270-553CFC4091F6' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MobileAsset.framework/Versions/A/MobileAsset
 objc-constraint: none
@@ -31,7 +31,8 @@ exports:
                        _ASNonUserInitiatedDownloadsAllowed, _ASOperationCompleted, 
                        _ASOperationDownloadPaused, _ASOperationDownloadQueued, _ASOperationDownloadingAsset, 
                        _ASOperationStalled, _ASOperationUnarchivingAsset, _ASOperationVerifyingAsset, 
-                       _ASOperationWaitingToDownload, _ASProductVersion, _ASServerURLForAssetType, 
+                       _ASOperationWaitingToDownload, _ASProductVersion, _ASQueryAssets, 
+                       _ASQueryMetadata, _ASQueryMetadataReleaseDate, _ASServerURLForAssetType, 
                        _ASSetAssetServerURL, _ASSetAssetServerURLForAssetType, _ASSetDefaultAssetServerURLForAssetType, 
                        _ASSetLogLevel, _ASStateOperation, _ASStateOperationEstimatedTimeRemaining, 
                        _ASStateOperationProgress, _ASStatePausedOperation, _ASStateStallError, 

@@ -4,7 +4,7 @@ uuids:           [ 'i386: F1C46DE7-44C7-34CD-A9CF-56B204A31965', 'x86_64: 44BD02
 platform:        macosx
 install-name:    /usr/lib/liblzma.5.dylib
 current-version: 6.3
-compatibility-version: 6.0
+compatibility-version: 6
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]

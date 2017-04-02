@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 3C2E1939-49F0-3AB7-82B3-DBF789A6874A', 'x86_64: BD5AC3F0-9619-3D1C-B96D-6BFCAD1C0245' ]
+uuids:           [ 'i386: 99518683-1BF6-39C9-BC09-68EFBEA024EA', 'x86_64: EEB8CC44-9AFF-3005-A25D-18FE46574FD5' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/HelpData.framework/Versions/A/HelpData
 objc-constraint: none
@@ -37,8 +37,8 @@ exports:
                        _HPDResultRelevanceKey, _HPDResultTitleKey, _HPDResultURLKey, 
                        _HPDResultUsesExternalViewerKey, _HPDResultsLimit, _HPDSeasideResult, 
                        _HPD_ERROR_DOMAIN, _KB_RESULTS, _SEARCH_RESULTS_DIRECTORY, 
-                       _clientPortNameForThisTask, _helpDirSort, _kHelpBundleIdentifier, 
-                       _kXcodeBundleIdentifier ]
+                       _clientPortNameForThisTask, _helpDirSort, _kContentsResources, 
+                       _kHelpBundleIdentifier, _kXcodeBundleIdentifier ]
     objc-classes:    [ _HPDCacheManager, _HPDClient, _HPDHelpBook, _HPDQuery, _HPDResult, 
                        _HPDSearchManager, _HPDSearchResult ]
 ...

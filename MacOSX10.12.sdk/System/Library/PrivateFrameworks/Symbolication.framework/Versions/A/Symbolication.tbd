@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 6E5D317E-027D-3954-9C2D-9CEF6EEDF528', 'x86_64: 27A57DC2-FEB7-3D23-AEB5-E3E76C5AAE79' ]
+uuids:           [ 'i386: A60B2851-77CC-3C33-B636-6E26668CF049', 'x86_64: 90D17992-D584-305E-AC93-B5ECDB58FF76' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Symbolication.framework/Versions/A/Symbolication
-current-version: 61080.2
+current-version: 62048.1
 objc-constraint: none
 exports:         
   - archs:           [ i386 ]
@@ -58,10 +58,12 @@ exports:
                        _LZ4_slideInputBuffer, _LZ4_uncompress, _LZ4_uncompress_unknownOutputSize, 
                        _VMUEnumerateVMAnnotatedMallocObjectsWithBlock, _VMUGetFlagsForAllVMRegionStatistics, 
                        _VMUGraphNodeType_IsRoot, _VMUGraphNodeType_IsVMRegion, _VMUIntersectionRange, 
-                       _VMUMarkObject, _VMUMemorySizeString, _VMUPurgeableDisplayCharacter, 
-                       _VMURangeContainsRange, _VMURangeIntersectsOrAbutsRange, _VMURangeIntersectsRange, 
-                       _VMURegionTypeDescriptionForTagShareProtAndPager, _VMUScanTypeKeywordDescription, 
-                       _VMUScanTypeScanDescription, _VMUUnionRange, _VMUUniquifyString, 
+                       _VMUIsOwningReference, _VMUMarkObject, _VMUMemorySizeString, 
+                       _VMUPurgeableDisplayCharacter, _VMURangeContainsRange, _VMURangeIntersectsOrAbutsRange, 
+                       _VMURangeIntersectsRange, _VMURegionTypeDescriptionForTagShareProtAndPager, 
+                       _VMUScanTypeKeywordDescription, _VMUScanTypeScanDescription, 
+                       _VMUScanningMaskForAllReferences, _VMUScanningMaskForOwningReferences, 
+                       _VMUSortIndexForLibraryPath, _VMUUnionRange, _VMUUniquifyString, 
                        _VMUVMRegionShareModeName, _VMUWithRootNodeMarkingMap, _VMUmallocMetadataLabel, 
                        _VMUmappedFileLabel, _VMUunusedSharedLibLabelPrefix, __VMUEnumerateMarkedObjects, 
                        _debug_verify_offsets, _fc_lzfseDecode, _lz4_decode, _lzfse_decode, 

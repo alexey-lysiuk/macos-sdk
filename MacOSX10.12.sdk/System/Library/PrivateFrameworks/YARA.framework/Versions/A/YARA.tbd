@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 6B10C4C0-F653-3EC9-8877-A057616B4EDA', 'x86_64: 26AA60C9-BFFA-317D-8AEC-F642EA7AA1FE' ]
+uuids:           [ 'i386: DE4D1831-3DEE-3272-80AE-807AC8D9C9BF', 'x86_64: 54A21C78-1059-3F0E-9C30-D2A181B9BE20' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/YARA.framework/Versions/A/YARA
 objc-constraint: none

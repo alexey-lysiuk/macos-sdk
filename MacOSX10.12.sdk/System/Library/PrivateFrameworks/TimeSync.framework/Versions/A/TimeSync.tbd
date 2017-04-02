@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 075BEC6C-B73D-3E1F-B74F-4CA411EC976C', 'x86_64: 962394AB-8359-31B4-8671-AAF2C535A8E8' ]
+uuids:           [ 'i386: 32591638-7A85-3DC6-BEFB-20E25B5AAF99', 'x86_64: 04D3C799-4D51-342E-8F0F-7C91353B8936' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/TimeSync.framework/Versions/A/TimeSync
 objc-constraint: none

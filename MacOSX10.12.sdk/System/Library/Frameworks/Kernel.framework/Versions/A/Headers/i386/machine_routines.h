@@ -62,5 +62,4 @@ void bzero_phys(
 vm_offset_t ml_stack_remaining(void);
 
 __END_DECLS
-
 #endif /* _I386_MACHINE_ROUTINES_H_ */

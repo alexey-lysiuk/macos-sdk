@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 6E46292A-A38C-32D0-8234-0AC56031D58D', 'x86_64: CDC48924-1E25-300B-8C4A-4C896F2A79DE' ]
+uuids:           [ 'i386: E8E89EC4-1DF5-35C6-9D62-84A1A5138E69', 'x86_64: 739D41E7-387B-3F98-876B-7961DF9924C0' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PackageKit.framework/Frameworks/PackageUIKit.framework/Versions/A/PackageUIKit
-current-version: 434.0
+current-version: 434
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

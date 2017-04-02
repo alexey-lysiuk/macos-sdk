@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FD8B1E05-B93E-3EBE-9C0B-39AF155C81C1' ]
+uuids:           [ 'x86_64: 1475EC32-415A-326A-A34D-CE6F91A5C848' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreDuet.framework/Versions/A/CoreDuet
 objc-constraint: none
@@ -47,7 +47,8 @@ exports:
                        _kCDConstantSleepLongMaxCount, _kCDConstantSleepLongMinCount, 
                        _kCDConstantSleepLongOverShortRatio, _kCDConstantSleepRequestedDays, 
                        _kCDConstantSleepShortLambda, _kCDConstantSleepShortMaxCount, 
-                       _kCDConstantSleepShortMinCount, _kCDESPCanBeSharedKey, _kCDESPCanBeSpeculativeKey, 
+                       _kCDConstantSleepShortMinCount, _kCDDCommunicatorVersionOne, 
+                       _kCDDCommunicatorVersionTwo, _kCDESPCanBeSharedKey, _kCDESPCanBeSpeculativeKey, 
                        _kCDESPCanPersistOnStorageKey, _kCDESPCanSendToServerKey, 
                        _kCDESPDataProtectionClassKey, _kCDESPDataSharingPolicy, _kCDESPDeResolutionPolicyKey, 
                        _kCDESPEphemeralityInSecondsKey, _kCDESPEventDescriptionKey, 
@@ -70,8 +71,8 @@ exports:
                        _kMemPressureWarnPollDelay, _kPSStoreChangedMechanismsKey, 
                        _kQueryTimeout, _kRestartCheckNotification, _kSafariIdentifier, 
                        _kSocialInteractionAdvisorLambda, _kSocialInteractionAdvisorW0, 
-                       _kSpotlightIdentifier, _mechanismToString, _printForecast, 
-                       _reasonToString, _setClassesForCDContextStoreXPCInterface, 
+                       _kSpotlightIdentifier, _keySupportedMaxVersionNumber, _keySupportedMinVersionNumber, 
+                       _mechanismToString, _printForecast, _reasonToString, _setClassesForCDContextStoreXPCInterface, 
                        _setClassesForCDInteractionXPCInterface, _sleepPredictionWithParams, 
                        _sleepPredictionWithParams1, _sleepPredictionWithParams2, 
                        _validatePastDetection ]
@@ -80,8 +81,8 @@ exports:
                        _CDTrendLogic, _MD5Util, __CDActivity, __CDActivityScheduler, 
                        __CDAdvisedInteraction, __CDAppActionRecorder, __CDAutoSuCache, 
                        __CDAutoSuConfig, __CDBatterySaver, __CDCachedPeopleSuggestion, 
-                       __CDComplications, __CDContact, __CDContactRecord, __CDContactStatistics, 
-                       __CDDailyProgressForecast, __CDDailyProgressForecastQuery, 
+                       __CDCommunicatorHelper, __CDComplications, __CDContact, __CDContactRecord, 
+                       __CDContactStatistics, __CDDailyProgressForecast, __CDDailyProgressForecastQuery, 
                        __CDDateRange, __CDDeviceInfo, __CDDiagnosticDataReporter, 
                        __CDErrorUtilities, __CDEventStream, __CDEventStreamProperties, 
                        __CDEventStreams, __CDGenericInteractionRanker, __CDInBedDetection, 
@@ -119,11 +120,12 @@ exports:
                        __DKEventQuery, __DKEventStream, __DKEventStreamCache, __DKEventUtils, 
                        __DKGlanceLaunchMetadata, __DKHomeKitAccessoryControlIdentifier, 
                        __DKHomeKitHomeAppViewIdentifier, __DKHomeKitSceneIdentifier, 
-                       __DKIdentifier, __DKIdentifierMO, __DKIdentifierType, __DKKnowledgeStorage, 
-                       __DKKnowledgeStore, __DKLocationHistoryCache, __DKLocationIdentifier, 
-                       __DKLocationMetadataKey, __DKMetadataHomeAppView, __DKMetadataHomeKitAccessoryControl, 
-                       __DKMetadataHomeKitScene, __DKMicroLocationMetadataKey, __DKMotionCategory, 
-                       __DKMotionMetadataKey, __DKNextCalendarEventCategory, __DKNowPlayingMetadataKey, 
+                       __DKIdentifier, __DKIdentifierMO, __DKIdentifierType, __DKIntentMetadataKey, 
+                       __DKKnowledgeStorage, __DKKnowledgeStore, __DKLocationHistoryCache, 
+                       __DKLocationIdentifier, __DKLocationMetadataKey, __DKMetadataHomeAppView, 
+                       __DKMetadataHomeKitAccessoryControl, __DKMetadataHomeKitScene, 
+                       __DKMicroLocationMetadataKey, __DKMotionCategory, __DKMotionMetadataKey, 
+                       __DKNextCalendarEventCategory, __DKNowPlayingMetadataKey, 
                        __DKObject, __DKObjectCache, __DKObjectFromMOCache, __DKObjectMO, 
                        __DKObjectMOConverter, __DKObjectType, __DKOrientationMetadataKey, 
                        __DKPeriodMetadataKey, __DKPeriodOfDayCategory, __DKPredictionQuery, 
@@ -131,9 +133,9 @@ exports:
                        __DKQuantity, __DKQuantityMO, __DKQuantityType, __DKQuery, 
                        __DKRateLimitPolicyEnforcer, __DKRelation, __DKRelationMO, 
                        __DKResourceIdentifier, __DKRoutineLocationCategory, __DKSearchFeedbackMetadataKey, 
-                       __DKSourceMO, __DKStarkMetadataKey, __DKSunriseSunsetMetadataKey, 
-                       __DKSystemEventStreams, __DKTitleIdentifier, __DKTristateCategory, 
-                       __DKUIOrientationCategory ]
+                       __DKSource, __DKSourceMO, __DKSourceMOConverter, __DKStarkMetadataKey, 
+                       __DKSunriseSunsetMetadataKey, __DKSystemEventStreams, __DKTitleIdentifier, 
+                       __DKTristateCategory, __DKUIOrientationCategory ]
     objc-ivars:      [ __CDPSimpleModelParameterManagerTuningValue._lambda, __CDPSimpleModelParameterManagerTuningValue._score, 
                        __CDPSimpleModelParameterManagerTuningValue._threshold, __CDPSimpleModelParameterManagerTuningValue._w0 ]
 ...

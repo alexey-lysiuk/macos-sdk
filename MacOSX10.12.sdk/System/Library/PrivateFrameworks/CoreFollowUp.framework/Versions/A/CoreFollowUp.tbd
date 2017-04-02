@@ -1,15 +1,18 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 36D1CD4B-C2E2-3868-8036-EA17B07F672E' ]
+uuids:           [ 'x86_64: D563B2DF-B441-39AE-92F5-BA0E121E6EDA' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreFollowUp.framework/Versions/A/CoreFollowUp
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CoreFollowUpVersionNumber, _CoreFollowUpVersionString, _FLDaemonExportedInterface, 
-                       _FLHSA2ActionChangePassword, _FLLoc, _FLLog ]
-    objc-classes:    [ _FLConstants, _FLDaemon, _FLFollowUpAction, _FLFollowUpController, 
-                       _FLFollowUpItem, _FLFollowUpNotification, _FLHSA2LoginNotification, 
-                       _FLHSA2PasswordResetNotification, _FLLogController, _FLUIHelperController, 
+                       _FLErrorDomain, _FLFollowUpActionLaunchArgumentsKey, _FLGroupIdentifierAccount, 
+                       _FLGroupIdentifierDevice, _FLGroupIdentifierUnknown, _FLHSA2ActionChangePassword, 
+                       _FLLoc, __FLLogSystem ]
+    objc-classes:    [ _FLConstants, _FLDaemon, _FLEnvironment, _FLError, _FLFollowUpAction, 
+                       _FLFollowUpController, _FLFollowUpItem, _FLFollowUpNotification, 
+                       _FLHSA2LoginNotification, _FLHSA2PasswordResetNotification, 
+                       _FLTelemetryFactory, _FLTelemetryProcessor, _FLUIHelperController, 
                        _FLUtilities ]
 ...

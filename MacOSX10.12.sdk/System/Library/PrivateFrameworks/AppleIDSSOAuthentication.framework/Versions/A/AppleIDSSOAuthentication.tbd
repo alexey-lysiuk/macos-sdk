@@ -1,13 +1,13 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 855FD96D-FBBB-39D9-9189-B98FEA0DD6C6' ]
+uuids:           [ 'x86_64: 751B755F-D805-3F5C-8C35-DD32291221F7' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AppleIDSSOAuthentication.framework/Versions/A/AppleIDSSOAuthentication
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
-    symbols:         [ _AppleIDAuthenticationAppleIDSettingsTokenIdentifier, _AppleIDAuthenticationServicesKey, 
-                       _AppleIDAuthenticationiCloudSettingsTokenIdentifier, _kAlternateDSIDKey, 
-                       _kDSIDKey, _kDeviceProvisioningMIDKey, _kDeviceProvisioningOTPKey, 
+    symbols:         [ _AIDAAccountPropertyAltDSID, _AIDAAccountPropertyDSID, _AppleIDAuthenticationAppleIDSettingsTokenIdentifier, 
+                       _AppleIDAuthenticationServicesKey, _AppleIDAuthenticationiCloudSettingsTokenIdentifier, 
+                       __AIDALogSystem, _kDeviceProvisioningMIDKey, _kDeviceProvisioningOTPKey, 
                        _kLegacyAlternateDSIDKey, _kiCloudPersonIDKey, _kiCloudPrimaryAccountKey ]
 ...

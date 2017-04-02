@@ -3,8 +3,8 @@ archs:           [ i386, x86_64 ]
 uuids:           [ 'i386: 1A8BDCCE-5CE2-342F-9E02-9C3622520100', 'x86_64: 92F7E2DC-9B2C-36F2-9188-9082CD071458' ]
 platform:        macosx
 install-name:    /usr/lib/libcharset.1.dylib
-current-version: 2.0
-compatibility-version: 2.0
+current-version: 2
+compatibility-version: 2
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]

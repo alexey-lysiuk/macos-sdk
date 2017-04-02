@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 97DCD89D-B1E5-3777-BD4F-D4B5946243ED' ]
+uuids:           [ 'x86_64: B5763A6F-FB93-3ED2-B366-7108E26B14E8' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AirPlaySender.framework/Versions/A/AirPlaySender
 objc-constraint: none
@@ -21,16 +21,16 @@ exports:
                        _APEndpointManagerCreate, _APEndpointPrimaryMusicSessionCreate, 
                        _APEndpointSecondaryMusicSessionCreate, _APEndpointSharedContextCopyClock, 
                        _APEndpointSharedContextCopyCryptor, _APEndpointSharedContextCopyKeyHolder, 
-                       _APEndpointSharedContextCopyMessageRing, _APEndpointSharedContextCopyNTPClock, 
-                       _APEndpointSharedContextCreate, _APEndpointSharedContextDeregisterStream, 
-                       _APEndpointSharedContextEnsureAudioTimerCreated, _APEndpointSharedContextEnsureAudioTimerResumed, 
-                       _APEndpointSharedContextFlush, _APEndpointSharedContextGetCurrentRTPTime, 
-                       _APEndpointSharedContextGetTypeID, _APEndpointSharedContextIsTimelineEstablishedForStream, 
-                       _APEndpointSharedContextRegisterStream, _APEndpointSharedContextSetAudioParameters, 
-                       _APEndpointSharedContextSetAudioSource, _APEndpointSharedContextSetClock, 
-                       _APEndpointSharedContextSetKeyHolder, _APEndpointStreamScreenCreate, 
-                       _APEndpointStreamScreenRestartBitstream, _APEndpointUpdateWithTransportDevice, 
-                       _APMessageRingGetTypeID, _APMetadataSourceSetMetadata, _APMusicSecondaryRendererSenderCreate, 
+                       _APEndpointSharedContextCopyMessageRing, _APEndpointSharedContextCreate, 
+                       _APEndpointSharedContextDeregisterStream, _APEndpointSharedContextEnsureAudioTimerCreated, 
+                       _APEndpointSharedContextEnsureAudioTimerResumed, _APEndpointSharedContextFlush, 
+                       _APEndpointSharedContextGetCurrentRTPTime, _APEndpointSharedContextGetTypeID, 
+                       _APEndpointSharedContextIsTimelineEstablishedForStream, _APEndpointSharedContextRegisterStream, 
+                       _APEndpointSharedContextSetAudioParameters, _APEndpointSharedContextSetAudioSource, 
+                       _APEndpointSharedContextSetClock, _APEndpointSharedContextSetKeyHolder, 
+                       _APEndpointStreamScreenCreate, _APEndpointStreamScreenRestartBitstream, 
+                       _APEndpointUpdateWithTransportDevice, _APMessageRingGetTypeID, 
+                       _APMetadataSourceSetMetadata, _APMusicSecondaryRendererSenderCreate, 
                        _APMusicSecondaryRendererSenderFinishConnectToServer, _APPairingClientGetCMBaseObject, 
                        _APPairingClientHomeKitCreate, _APPairingClientHomeKitSetUseXPC, 
                        _APPairingClientLegacyCreate, _APPlaylistControllerEndpointGroupCreate, 
@@ -103,8 +103,8 @@ exports:
                        _kAPEndpointDescriptionProperty_OEMIconLabel, _kAPEndpointDescriptionProperty_OEMIcons, 
                        _kAPEndpointDescriptionProperty_OneTimePairingRequired, _kAPEndpointDescriptionProperty_PINRequired, 
                        _kAPEndpointDescriptionProperty_PairingPeerHomeKitIdentifier, 
-                       _kAPEndpointDescriptionProperty_PairingPeerPublicKey, _kAPEndpointDescriptionProperty_PasswordRequired, 
-                       _kAPEndpointDescriptionProperty_RequiresCarPlayModeChangeWorkaround, 
+                       _kAPEndpointDescriptionProperty_PairingPeerPublicKey, _kAPEndpointDescriptionProperty_PairingPeerSystemIdentifier, 
+                       _kAPEndpointDescriptionProperty_PasswordRequired, _kAPEndpointDescriptionProperty_RequiresCarPlayModeChangeWorkaround, 
                        _kAPEndpointDescriptionProperty_ScreenLatency, _kAPEndpointDescriptionProperty_SourceVersion, 
                        _kAPEndpointDescriptionProperty_StatusFlags, _kAPEndpointDescriptionProperty_SupportedFormatsForAltAudio, 
                        _kAPEndpointDescriptionProperty_SupportedFormatsForGeneralAudio, 
@@ -120,7 +120,8 @@ exports:
                        _kAPEndpointDescriptionProperty_SupportsInitialVolume, _kAPEndpointDescriptionProperty_SupportsKeepAlive, 
                        _kAPEndpointDescriptionProperty_SupportsLegacyPairing, _kAPEndpointDescriptionProperty_SupportsRFC2617DigestAuth, 
                        _kAPEndpointDescriptionProperty_SupportsScreenIdle, _kAPEndpointDescriptionProperty_SupportsScreenMultiCodec, 
-                       _kAPEndpointDescriptionProperty_SupportsStatsAsBody, _kAPEndpointDescriptionProperty_SupportsUnifiedMediaControl, 
+                       _kAPEndpointDescriptionProperty_SupportsStatsAsBody, _kAPEndpointDescriptionProperty_SupportsSystemPairing, 
+                       _kAPEndpointDescriptionProperty_SupportsUnifiedMediaControl, 
                        _kAPEndpointDescriptionProperty_SupportsVocoderInfo, _kAPEndpointDescriptionProperty_SupportsVolume, 
                        _kAPEndpointDescriptionProperty_VehicleInformation, _kAPEndpointDescriptionProperty_VodkaVersion, 
                        _kAPEndpointDisplayDescriptionProperty_EDID, _kAPEndpointDisplayDescriptionProperty_IsOverscanned, 

@@ -15,6 +15,7 @@
 .Op Fl trace Ar address
 .Op Fl outputGraph Ar path
 .Op Fl fullContent
+.Op Fl atExit
 .Sh DESCRIPTION
 .Nm leaks
 identifies leaked memory -- memory that the application has allocated, but has been lost and cannot be freed.
@@ -107,6 +108,11 @@ a filename with the ".memgraph" suffix will be generated.
 .It Fl fullContent
 When generating a memory graph file, include descriptions of the content of various objects,
 as would be shown by "heap <pid> -addresses all", and as needed by "stringdups <pid>".
+.It Fl atExit
+Launches the specified process and runs
+.Nm leaks
+when the process exits.  The process to launch must be the end of the command, and proceeded by '--':
+leaks -atExit -- /MyPath/MyProgram -MyArg
 .El
 .Pp
 .Sh ENVIRONMENT

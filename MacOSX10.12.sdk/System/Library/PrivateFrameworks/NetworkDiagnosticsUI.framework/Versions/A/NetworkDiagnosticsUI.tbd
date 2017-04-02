@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 548A98EC-D9DC-3897-8C2D-3A8606E3B77E' ]
+uuids:           [ 'x86_64: 4F52B983-6568-3E93-B494-C3F2271CC3B9' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/NetworkDiagnosticsUI.framework/Versions/A/NetworkDiagnosticsUI
-current-version: 119.0
+current-version: 119
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

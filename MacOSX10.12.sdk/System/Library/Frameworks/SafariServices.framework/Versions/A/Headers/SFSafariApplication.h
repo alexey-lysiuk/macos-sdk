@@ -33,6 +33,9 @@ SF_CLASS_AVAILABLE_MAC_SAFARI(10_0)
 /// Opens Safari Extensions preferences and selects extension with the identifier.
 + (void)showPreferencesForExtensionWithIdentifier:(NSString *)identifier completionHandler:(void (^ _Nullable)(NSError * _Nullable error))completionHandler NS_EXTENSION_UNAVAILABLE("Not available to extensions");
 
+// Dispatches a message to the Safari Extension with the given identifier.
++ (void)dispatchMessageWithName:(NSString *)messageName toExtensionWithIdentifier:(NSString *)identifier userInfo:(nullable NSDictionary<NSString *, id> *)userInfo completionHandler:(void (^ _Nullable)(NSError * _Nullable error))completionHandler NS_EXTENSION_UNAVAILABLE("Not available to extensions");
+
 @end
 
 NS_ASSUME_NONNULL_END

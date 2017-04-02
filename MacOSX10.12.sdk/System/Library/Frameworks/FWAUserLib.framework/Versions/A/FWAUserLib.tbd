@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 810F9FB2-207B-36A7-98F6-AD6D898F086F', 'x86_64: 2C20C2D3-CF1B-31FB-BE74-8927DBFFE53B' ]
+uuids:           [ 'i386: 57437699-215E-32E5-8C96-E04B1B94F636', 'x86_64: 4F1082FD-746D-3AA4-BBFA-78DEB4547B84' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/FWAUserLib.framework/Versions/A/FWAUserLib
 objc-constraint: none

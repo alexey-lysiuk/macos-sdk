@@ -63,6 +63,13 @@ WK_EXTERN API_AVAILABLE(macosx(10.10), ios(8.0))
  @discussion The default value is NO.
  */
 @property (nonatomic) BOOL plugInsEnabled;
+
+/*!
+ @property tabFocusesLinks
+ @abstract If tabFocusesLinks is YES, the tab key will focus links and form controls.
+ The option key temporarily reverses this preference.
+ */
+@property (nonatomic) BOOL tabFocusesLinks API_AVAILABLE(macosx(10.12.3));
 #endif
 
 @end

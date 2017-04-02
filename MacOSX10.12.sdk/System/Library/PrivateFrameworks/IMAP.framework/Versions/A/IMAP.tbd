@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 934BAC59-AC53-3568-BBCC-BDFB90868819' ]
+uuids:           [ 'x86_64: 1CA62A22-FFD1-36BD-B8FC-E8F68ED5AAB0' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IMAP.framework/Versions/A/IMAP
-current-version: 3259.0
+current-version: 3272
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

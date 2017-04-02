@@ -234,6 +234,8 @@ enum {
 	STACKSHOT_ENABLE_UUID_FAULTING             = 0x200000,
 	STACKSHOT_FROM_PANIC                       = 0x400000,
 	STACKSHOT_NO_IO_STATS                      = 0x800000,
+	/* Report owners of and pointers to kernel objects that threads are blocked on */
+	STACKSHOT_THREAD_WAITINFO                  = 0x1000000,
 };
 
 #define STACKSHOT_THREAD_SNAPSHOT_MAGIC 	0xfeedface

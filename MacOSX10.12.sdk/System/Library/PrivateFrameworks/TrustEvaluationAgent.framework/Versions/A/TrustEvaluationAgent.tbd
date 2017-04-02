@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: AE3211FC-262D-3EB0-91FA-3101651C6533', 'x86_64: 07C1F711-A1E0-3BAC-8F4D-977516D50925' ]
+uuids:           [ 'i386: A0A65AB2-99F5-39AB-A4A9-9F5FE1F3C12A', 'x86_64: EBE65DD5-1732-3747-8C6C-7BECEBF089A4' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/TrustEvaluationAgent.framework/Versions/A/TrustEvaluationAgent
-current-version: 28.0
+current-version: 28.50.1
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]

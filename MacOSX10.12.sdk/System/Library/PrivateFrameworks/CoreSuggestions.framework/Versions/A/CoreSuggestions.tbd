@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 609E12F5-CEC4-3651-9444-09CBF50C3897' ]
+uuids:           [ 'x86_64: 13D2A34F-685A-3C03-A910-52381AFE39B9' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreSuggestions.framework/Versions/A/CoreSuggestions
 objc-constraint: none
@@ -58,19 +58,20 @@ exports:
                        _freeDisjointSet, _freeGraph, _initGraph, _kSGAllowAgeBasedPruning, 
                        _kSGAllowGeocode, _kSGAlwaysShowCancelledEvents, _kSGDetectContacts, 
                        _kSGDetectNLEvents, _kSGDetectStructuredEvents, _kSGEmailSearchableItemSourceKey, 
-                       _kSGLoggingLevel, _kSGMessagesToProcessImmediately, _kSGOnlyShowSignificantNLEvents, 
-                       _kSGOnlyShowSignificantPseudoContacts, _kSGShowContactsFoundInMail, 
-                       _kSGShowEventsFoundInMail, _kSGShowPastEvents, _kSGShowSuggestionsCalendar, 
-                       _kSGSuggestionsBundleIdentifier, _kSGSuggestionsNotificationsChangedBySuggestions, 
-                       _kSGSuggestionsNotificationsChangedByUser, _kSGSuggestionsPrepareForQuery, 
-                       _kSGSuggestionsProactiveSettingsChanged, _kSGSuggestionsSettingsChanged, 
-                       _kSGSuggestionsSettingsSuiteIdentifier, _kSGSuppressSyncHistoryToCloud, 
-                       _kSGTimeToLeaveAlertsEnabled, _kSGTimeToLeaveLocationEnabled, 
-                       _kSuggestionsDaemonStringsFileExtension, _kSuggestionsDaemonStringsFileName, 
-                       _mincut, _newVertex, _printDot, _sameConnectedComponent, _sgArrayFilter, 
-                       _sgArrayMap, _sgArrayMapAndFilter, _sgArrayParMap, _sgFastEnumerationFilter, 
-                       _sgFastEnumerationMap, _sgFastEnumerationMapAndFilter, _sgLogHandle, 
-                       _sgShuffledArrayFrom, _updateConnectedComponents, _visitConnectedComponents ]
+                       _kSGHashedSessionsLogging, _kSGLoggingLevel, _kSGMessagesToProcessImmediately, 
+                       _kSGOnlyShowSignificantNLEvents, _kSGOnlyShowSignificantPseudoContacts, 
+                       _kSGShowContactsFoundInMail, _kSGShowEventsFoundInMail, _kSGShowPastEvents, 
+                       _kSGShowSuggestionsCalendar, _kSGSuggestionsBundleIdentifier, 
+                       _kSGSuggestionsNotificationsChangedBySuggestions, _kSGSuggestionsNotificationsChangedByUser, 
+                       _kSGSuggestionsPrepareForQuery, _kSGSuggestionsProactiveSettingsChanged, 
+                       _kSGSuggestionsSettingsChanged, _kSGSuggestionsSettingsSuiteIdentifier, 
+                       _kSGSuppressSyncHistoryToCloud, _kSGTimeToLeaveAlertsEnabled, 
+                       _kSGTimeToLeaveLocationEnabled, _kSuggestionsDaemonStringsFileExtension, 
+                       _kSuggestionsDaemonStringsFileName, _mincut, _newVertex, _printDot, 
+                       _sameConnectedComponent, _sgArrayFilter, _sgArrayMap, _sgArrayMapAndFilter, 
+                       _sgArrayParMap, _sgFastEnumerationFilter, _sgFastEnumerationMap, 
+                       _sgFastEnumerationMapAndFilter, _sgLogHandle, _sgShuffledArrayFrom, 
+                       _updateConnectedComponents, _visitConnectedComponents ]
     objc-classes:    [ _SGCircularBufferArray, _SGContact, _SGContactMatch, _SGContactMatchArrayOption, 
                        _SGDSuggestManagerInterface, _SGDaemonConnection, _SGDetection, 
                        _SGDeviceState, _SGEKEventConversions, _SGEKUrlParts, _SGEmailAddress, 

@@ -1643,6 +1643,10 @@ module os [system] [extern_c] {
 	module object {
 		export os_object
 	}
+	module trace_base {
+		header "os/trace_base.h"
+		export *
+	}
 	explicit module activity {
 		header "os/activity.h"
 		export *

@@ -37,7 +37,7 @@ CF_IMPLICIT_BRIDGING_ENABLED
 */
 typedef struct CM_BRIDGED_TYPE(id) OpaqueVTMultiPassStorage*  VTMultiPassStorageRef; // a CF type, call CFRetain and CFRelease
 
-VT_EXPORT CFTypeID VTMultiPassStorageGetTypeID(void) __OSX_AVAILABLE_STARTING(__MAC_10_10,__IPHONE_8_0);
+VT_EXPORT CFTypeID VTMultiPassStorageGetTypeID(void) API_AVAILABLE(macosx(10.10), ios(8.0), tvos(10.2));
 	
 CF_IMPLICIT_BRIDGING_DISABLED
 
@@ -63,7 +63,7 @@ VTMultiPassStorageCreate(
 	CM_NULLABLE CFURLRef							fileURL,
 	CMTimeRange										timeRange,				   /* can be kCMTimeRangeInvalid */
 	CM_NULLABLE CFDictionaryRef						options,
-	CM_RETURNS_RETAINED_PARAMETER CM_NULLABLE VTMultiPassStorageRef * CM_NONNULL multiPassStorageOut) __OSX_AVAILABLE_STARTING(__MAC_10_10,__IPHONE_8_0);
+	CM_RETURNS_RETAINED_PARAMETER CM_NULLABLE VTMultiPassStorageRef * CM_NONNULL multiPassStorageOut) API_AVAILABLE(macosx(10.10), ios(8.0), tvos(10.2));
 	
 CF_IMPLICIT_BRIDGING_ENABLED
 	
@@ -83,7 +83,7 @@ CM_ASSUME_NONNULL_END
 */
 VT_EXPORT OSStatus 
 VTMultiPassStorageClose(
-	CM_NONNULL VTMultiPassStorageRef	multiPassStorage ) __OSX_AVAILABLE_STARTING(__MAC_10_10,__IPHONE_8_0);
+	CM_NONNULL VTMultiPassStorageRef	multiPassStorage ) API_AVAILABLE(macosx(10.10), ios(8.0), tvos(10.2));
 	
 CF_IMPLICIT_BRIDGING_DISABLED
 

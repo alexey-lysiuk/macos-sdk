@@ -1,25 +1,26 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: F7C53217-DE52-3C0E-976A-FE212B4CC30C', 'x86_64: A2F38EC1-C37C-3B93-B0E4-36B07C177F8C' ]
+uuids:           [ 'i386: 9E1BA433-73C1-3388-B2C7-87E5216A9044', 'x86_64: 17D5D855-F6C3-3B04-B680-E9BF02EF8AED' ]
 platform:        macosx
 install-name:    /usr/lib/system/libmacho.dylib
-current-version: 894.0
+current-version: 898
 objc-constraint: none
 parent-umbrella: System
 exports:         
   - archs:           [ i386, x86_64 ]
     symbols:         [ _NXCombineCpuSubtypes, _NXFindBestFatArch, _NXFindBestFatArch_64, 
-                       _NXGetAllArchInfos, _NXGetArchInfoFromCpuType, _NXGetArchInfoFromName, 
-                       _NXGetLocalArchInfo, _get_edata, _get_end, _get_etext, _getsectbyname, 
-                       _getsectbynamefromheader, _getsectbynamefromheader_64, _getsectbynamefromheaderwithswap, 
-                       _getsectbynamefromheaderwithswap_64, _getsectdata, _getsectdatafromFramework, 
-                       _getsectdatafromheader, _getsectdatafromheader_64, _getsectiondata, 
-                       _getsegbyname, _getsegmentdata, _internal_NXFindBestFatArch, 
-                       _slot_name, _swap_dyld_info_command, _swap_dylib_command, 
-                       _swap_dylib_module, _swap_dylib_module_64, _swap_dylib_reference, 
-                       _swap_dylib_table_of_contents, _swap_dylinker_command, _swap_dysymtab_command, 
-                       _swap_encryption_command, _swap_encryption_command_64, _swap_entry_point_command, 
-                       _swap_fat_arch, _swap_fat_arch_64, _swap_fat_header, _swap_fvmfile_command, 
+                       _NXFreeArchInfo, _NXGetAllArchInfos, _NXGetArchInfoFromCpuType, 
+                       _NXGetArchInfoFromName, _NXGetLocalArchInfo, _get_edata, _get_end, 
+                       _get_etext, _getsectbyname, _getsectbynamefromheader, _getsectbynamefromheader_64, 
+                       _getsectbynamefromheaderwithswap, _getsectbynamefromheaderwithswap_64, 
+                       _getsectdata, _getsectdatafromFramework, _getsectdatafromheader, 
+                       _getsectdatafromheader_64, _getsectiondata, _getsegbyname, 
+                       _getsegmentdata, _internal_NXFindBestFatArch, _slot_name, 
+                       _swap_dyld_info_command, _swap_dylib_command, _swap_dylib_module, 
+                       _swap_dylib_module_64, _swap_dylib_reference, _swap_dylib_table_of_contents, 
+                       _swap_dylinker_command, _swap_dysymtab_command, _swap_encryption_command, 
+                       _swap_encryption_command_64, _swap_entry_point_command, _swap_fat_arch, 
+                       _swap_fat_arch_64, _swap_fat_header, _swap_fvmfile_command, 
                        _swap_fvmlib_command, _swap_hppa_fp_thread_state, _swap_hppa_frame_thread_state, 
                        _swap_hppa_integer_thread_state, _swap_i386_exception_state, 
                        _swap_i386_float_state, _swap_i386_thread_state, _swap_i860_thread_state_regs, 

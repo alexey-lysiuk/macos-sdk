@@ -1,10 +1,10 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: CC7F29F2-6219-393D-A8EC-5624C22B02A4', 'x86_64: 9910CD52-0A64-3992-B540-D7D38C626209' ]
+uuids:           [ 'i386: 990EE258-CAFD-3833-897B-307C94739F97', 'x86_64: C58F3777-CB6A-3384-BB55-5AE08BCA22E8' ]
 platform:        macosx
 install-name:    /usr/lib/libexslt.0.dylib
 current-version: 9.15
-compatibility-version: 9.0
+compatibility-version: 9
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]

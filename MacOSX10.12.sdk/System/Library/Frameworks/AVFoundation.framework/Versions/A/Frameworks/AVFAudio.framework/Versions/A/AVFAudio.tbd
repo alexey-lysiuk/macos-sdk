@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: F411961D-D87D-35D8-B43D-DBA096EB0600', 'x86_64: E3CDC215-9272-3F94-8093-865CA181F728' ]
+uuids:           [ 'i386: B036C6FC-A3D0-30D3-9620-30D16A149C9F', 'x86_64: 7997D588-B542-3EBB-B822-D719C1114BB4' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/AVFoundation.framework/Versions/A/Frameworks/AVFAudio.framework/Versions/A/AVFAudio
 objc-constraint: none

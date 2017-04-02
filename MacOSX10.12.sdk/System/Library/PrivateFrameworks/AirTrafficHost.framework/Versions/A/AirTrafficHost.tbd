@@ -4,7 +4,7 @@ uuids:           [ 'i386: B52E705F-A324-39FA-9EDA-CCE54F1688EA', 'x86_64: 09074D
 platform:        macosx
 flags:           [ not_app_extension_safe ]
 install-name:    /System/Library/PrivateFrameworks/AirTrafficHost.framework/Versions/A/AirTrafficHost
-current-version: 116.0
+current-version: 116
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

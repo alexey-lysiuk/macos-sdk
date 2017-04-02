@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 17493B35-D6B7-3E95-ACF7-081050ED45A8', 'x86_64: C7C64E65-34AB-37DB-85D5-9C030271AFEE' ]
+uuids:           [ 'i386: 79B305B7-DC1A-3398-84C6-171A3BC45B24', 'x86_64: FFDF9396-1D4C-3CED-8DFE-BFDE30273024' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MessageProtection.framework/Versions/A/MessageProtection
-current-version: 81.0
+current-version: 81.50.2
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]

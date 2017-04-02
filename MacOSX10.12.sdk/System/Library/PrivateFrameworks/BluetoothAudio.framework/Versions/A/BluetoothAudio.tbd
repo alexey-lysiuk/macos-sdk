@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2F9DF630-96D3-3039-8A44-5B3B18635C67' ]
+uuids:           [ 'x86_64: CE3C5502-A2CA-37B9-BB2F-BAB9B2C02871' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/BluetoothAudio.framework/Versions/A/BluetoothAudio
 objc-constraint: none

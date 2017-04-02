@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: ABDF6AAB-4E73-3857-A153-EBBE8F5DE890', 'x86_64: 107C2945-A1C6-3DF2-9914-C41909C99EE1' ]
+uuids:           [ 'i386: 8C60EF72-7C0D-3950-BE63-667EB0785311', 'x86_64: 22646E19-A726-3A1A-A87F-229F725E87F8' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/AudioVideoBridging.framework/Versions/A/AudioVideoBridging
 objc-constraint: none

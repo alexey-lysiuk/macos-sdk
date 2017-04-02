@@ -1,10 +1,10 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 7AA10747-CAA6-36C3-93A9-EF9BF05A614B', 'x86_64: FAA5CE82-0A87-34C5-A606-81A179009930' ]
+uuids:           [ 'i386: B0EA6EDF-802E-3DB1-8FDC-9C0DF0A5FED5', 'x86_64: BFB3FF63-6AB4-3F52-8525-87E88A5000F4' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Bom.framework/Versions/A/Bom
-current-version: 193.0
-compatibility-version: 2.0
+current-version: 193
+compatibility-version: 2
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]

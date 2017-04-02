@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: A85CB947-05AB-3A0F-99AC-73EF11F8ADDA', 'x86_64: 589EAC13-8A6D-3B1A-A676-AE6D77FA307B' ]
+uuids:           [ 'i386: F6EAC2C9-02DA-374F-AFCF-6A79880D683A', 'x86_64: D20A03FC-CBAF-3B6A-974C-4658459E032A' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/OpenCL.framework/Versions/A/Libraries/libCLVMCPUPlugin.dylib
 current-version: 2.8.5

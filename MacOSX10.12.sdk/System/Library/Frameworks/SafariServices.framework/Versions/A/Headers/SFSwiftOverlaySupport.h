@@ -10,11 +10,19 @@
 
 #pragma once
 
+#import <Foundation/Foundation.h>
+
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+typedef NS_ENUM(NSInteger, SFSafariServicesVersion) {
+    SFSafariServicesVersion10_0,
+    SFSafariServicesVersion10_1
+};
+
 extern void* _SFSafariServicesAvailable __attribute__((visibility("default"))) __attribute__((weak_import)) __attribute__((availability(swift, unavailable)));
+extern SFSafariServicesVersion _SFSafariServicesVersion __attribute__((visibility("default"))) __attribute__((weak_import)) __attribute__((availability(swift, unavailable)));
 
 #ifdef __cplusplus
 }

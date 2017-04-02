@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CD0C9A3F-C75C-3C84-BCF8-00BFE83ABD39' ]
+uuids:           [ 'x86_64: 92440790-97E2-35B0-B67D-96983B20857A' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/StreamingZip.framework/Versions/A/StreamingZip
 objc-constraint: none

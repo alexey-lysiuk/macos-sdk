@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 5E7A94D7-522B-3049-A08C-A3BD0B61282D', 'x86_64: 3ECD0823-D119-3284-9D2A-0174411C4126' ]
+uuids:           [ 'i386: 5F0493CD-97A5-3F23-8686-CF31A8CEA72F', 'x86_64: 87D020DD-936B-3B6A-A134-D74A5B20D44C' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/EmbeddedOSSupportHost.framework/Versions/A/EmbeddedOSSupportHost
 objc-constraint: none

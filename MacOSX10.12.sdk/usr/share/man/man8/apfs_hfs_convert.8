@@ -28,6 +28,7 @@ file system
 .Nm
 .Op Fl e
 .Op Fl v
+.Op Fl i
 .Op Fl S Ar path
 .Op Fl n
 .Op Fl f
@@ -63,6 +64,8 @@ The options are as follows:
 Estimate the APFS metadata size after conversion.
 .It Fl v | Fl -verbose
 Increase verbosity of the output.
+.It Fl i | Fl -allow-case-insensitive
+Convert case-insensitive HFS volumes to case-insensitive APFS volumes. Without this flag, all converted volumes will be case-sensitive.
 .It Fl S Ar path | Fl -stats Ar path
 Print statistics about the conversion to the supplied
 .Ar path .

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: B0056AFB-4141-36BA-8E87-661C081D08B7', 'x86_64: 42FCC6A5-7460-36DE-8958-E0601AFCB45E' ]
+uuids:           [ 'i386: 78559226-E9E6-392F-8732-48F1E282A5D6', 'x86_64: E09CCE86-5DCB-395A-A6F2-BC91C355A442' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/LibraryRepair.framework/Versions/A/LibraryRepair
 objc-constraint: none

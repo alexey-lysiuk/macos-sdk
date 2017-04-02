@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E9D296BC-6DAC-3AB2-81A0-8DD6D1F8673B' ]
+uuids:           [ 'x86_64: 7350A7B1-75AF-379A-8AC5-9F2526B89D00' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Accounts.framework/Versions/A/Accounts
-current-version: 0.0
+current-version: 0
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -13,9 +13,11 @@ exports:
                        _ACAccountPropertyDisableDynamicConfiguration, _ACAccountPropertyEWSExternalURL, 
                        _ACAccountPropertyEWSInternalURL, _ACAccountPropertyEWSRootFolderID, 
                        _ACAccountPropertyEmailAliases, _ACAccountPropertyEmailAliasesEditingURLString, 
-                       _ACAccountPropertyFullName, _ACAccountPropertyHostname, _ACAccountPropertyIMAPHostname, 
-                       _ACAccountPropertyIMAPPortNumber, _ACAccountPropertyIMAPRequiresSSL, 
-                       _ACAccountPropertyIdentityEmailAddress, _ACAccountPropertyPortNumber, 
+                       _ACAccountPropertyFirstName, _ACAccountPropertyFullName, _ACAccountPropertyHostname, 
+                       _ACAccountPropertyIMAPHostname, _ACAccountPropertyIMAPPortNumber, 
+                       _ACAccountPropertyIMAPRequiresSSL, _ACAccountPropertyIdentityEmailAddress, 
+                       _ACAccountPropertyLastName, _ACAccountPropertyMiddleName, 
+                       _ACAccountPropertyNickname, _ACAccountPropertyPortNumber, 
                        _ACAccountPropertyPreventRecentsSyncing, _ACAccountPropertySMTPHostname, 
                        _ACAccountPropertySMTPPortNumber, _ACAccountPropertySMTPRequiresSSL, 
                        _ACAccountPropertySSLEnabled, _ACAccountPropertySSLIsDirect, 

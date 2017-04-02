@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 00516698-9E38-33D2-89D2-43E6085C12F4' ]
+uuids:           [ 'x86_64: 2C650463-4250-3EFE-BBC3-20F299E1D8D4' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MailService.framework/Versions/A/MailService
-current-version: 3259.0
+current-version: 3272
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

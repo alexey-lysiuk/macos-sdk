@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B454D44F-2454-30A9-9863-716D3A432847' ]
+uuids:           [ 'x86_64: 1AED03AC-2DE3-3F2A-86C4-0F5687A12FE2' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/UniversalAccess.framework/Versions/A/Frameworks/UniversalAccessCore.framework/Versions/A/UniversalAccessCore
-current-version: 236.0
+current-version: 236
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

@@ -161,6 +161,10 @@ NS_CLASS_AVAILABLE(10_10, 8_0)
 		middle of playing. The node's sample time (and therefore the times to which new events are 
 		to be scheduled) is reset to 0, and will not proceed until the node is started again (via
 		play or playAtTime).
+ 
+		Note that pausing or stopping all the players connected to an engine does not pause or stop
+		the engine or the underlying hardware. The engine must be explicitly paused or stopped for
+		the hardware to stop.
 */
 - (void)stop;
 
@@ -208,6 +212,10 @@ if (!nsErr) {
 	@abstract Pause playback.
 	@discussion
 		The player's sample time does not advance while the node is paused.
+ 
+		Note that pausing or stopping all the players connected to an engine does not pause or stop
+		the engine or the underlying hardware. The engine must be explicitly paused or stopped for
+		the hardware to stop.
 */
 - (void)pause;
 

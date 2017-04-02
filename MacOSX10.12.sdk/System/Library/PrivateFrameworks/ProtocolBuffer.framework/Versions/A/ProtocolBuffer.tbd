@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 48A2A59F-41A4-3A5D-9347-F824F2AB8732', 'x86_64: D8B7694B-B598-3728-8583-9C4CC0F05B64' ]
+uuids:           [ 'i386: A539075B-4C7D-3CEA-A017-0695A929920B', 'x86_64: 478687E1-1EAA-363B-81F2-5C56303915E8' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ProtocolBuffer.framework/Versions/A/ProtocolBuffer
-current-version: 249.0
+current-version: 249.1
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

@@ -1,10 +1,10 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: CC4EDB5C-3A93-398D-A69B-398013357450', 'x86_64: 617B8B7A-A0AB-37D6-AFCA-F90F7F14E455' ]
+uuids:           [ 'i386: 07256ED1-AF86-3542-935E-41A2A3065B70', 'x86_64: F48F1B7B-BEB4-32EE-8C5D-0370096F3864' ]
 platform:        macosx
 install-name:    /usr/lib/libexpat.1.dylib
-current-version: 8.0
-compatibility-version: 7.0
+current-version: 8
+compatibility-version: 7
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]

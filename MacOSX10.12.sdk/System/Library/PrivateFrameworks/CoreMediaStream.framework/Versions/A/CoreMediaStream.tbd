@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 611C4914-2381-39AA-871E-AD5749F3C989' ]
+uuids:           [ 'x86_64: 648180BF-B9A7-3985-9511-6E31C4A64B6E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreMediaStream.framework/Versions/A/CoreMediaStream
-current-version: 509.0
+current-version: 509.5
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -85,7 +85,9 @@ exports:
                        _kMSASModelDeleteCommentWithGUIDFn, _kMSASModelDidUpdateServerCommunicationBackoffDateNotification, 
                        _kMSASModelErrorDomain, _kMSASModelForgetEverythingFn, _kMSASModelInvitationGUIDsFn, 
                        _kMSASModelInvitationWithGUIDFn, _kMSASModelIsAssetCollectionMarkedAsViewedFn, 
-                       _kMSASModelIsBusyFn, _kMSASModelMarkAlbumGUIDAsViewedFn, _kMSASModelMarkCommentsForAssetCollectionWithGUIDAsViewedFn, 
+                       _kMSASModelIsBusyFn, _kMSASModelMarkAlbumGUIDAsViewedFn, _kMSASModelMarkAsSpamAlbumWithGUIDFn, 
+                       _kMSASModelMarkAsSpamInvitationWithGUIDFn, _kMSASModelMarkAsSpamInvitationWithTokenFn, 
+                       _kMSASModelMarkCommentsForAssetCollectionWithGUIDAsViewedFn, 
                        _kMSASModelModifyAlbumMetadataFn, _kMSASModelRefreshAccessControlListOfAlbumWithGUIDFn, 
                        _kMSASModelRefreshCommentsForAssetCollectionWithGUIDFn, _kMSASModelRefreshContentOfAlbumWithGUIDFn, 
                        _kMSASModelRefreshFn, _kMSASModelRejectInvitationWithGUIDFn, 

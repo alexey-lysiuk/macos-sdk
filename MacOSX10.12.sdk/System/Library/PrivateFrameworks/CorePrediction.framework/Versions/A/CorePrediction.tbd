@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5A2524B9-C40F-3A8A-9377-8DD6362C46DB' ]
+uuids:           [ 'x86_64: D23CE7BD-BA32-3D68-A520-684A2AE5F56D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CorePrediction.framework/Versions/A/CorePrediction
 objc-constraint: none

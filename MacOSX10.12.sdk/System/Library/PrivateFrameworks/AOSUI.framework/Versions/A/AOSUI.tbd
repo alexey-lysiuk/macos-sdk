@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1A571200-83DA-32E7-B0CD-E19D8A52511A' ]
+uuids:           [ 'x86_64: E272249C-C3FF-37BF-B11B-41B6600DF1F7' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AOSUI.framework/Versions/A/AOSUI
-current-version: 415.0
+current-version: 415
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -185,9 +185,9 @@ exports:
                        _kNoDeviceAccess, _kOONVettingErrorAlertBody, _kOONVettingErrorAlertTitle, 
                        _kParentalControlsLocation, _kPassphraseForgotCode, _kPhotoDimensionMedium, 
                        _kPinForgotSecurityCode, _kRequiredBuildVersion, _kSpinnerIsVisibleKey, 
-                       _kSpinnerKey, _kSpinnerLabelKey, _kStingrayDisableAuthRightName, 
-                       _kSystemPrefBundleID, _kTCCAccessChangedNotification, _kTabviewItemGeneral, 
-                       _kUserIsSignedIntoMacWithThisAccount, _kWebViewExitSettingDidCreateFamilyKey, 
+                       _kSpinnerKey, _kSpinnerLabelKey, _kSystemPrefBundleID, _kTCCAccessChangedNotification, 
+                       _kTabviewItemGeneral, _kUserIsSignedIntoMacWithThisAccount, 
+                       _kValidatePasswordAuthRightName, _kWebViewExitSettingDidCreateFamilyKey, 
                        _kWebViewExitSettingDidJoinFamilyKey, _kWebViewExitSettingDidUpdateFamilyKey, 
                        _kWebViewExitSettingGoToLocation, _kWebViewExitSettingGoToSection, 
                        _kWebViewGoToView, _kWebViewRefresh, _kWebViewToLocation, 
@@ -231,16 +231,18 @@ exports:
                        _TheDialogController, _iCDPEnrollDevice, _iCloudAccountAuthenticationResponse, 
                        _iCloudAccountDetailsControllerNew, _iCloudAccountDetailsTabView, 
                        _iCloudAccountDetailsWebTabView, _iCloudAccountResponse, _iCloudAccountsDetailsGeneral, 
-                       _iCloudAddFamilyInvitee, _iCloudAddFamilyMember, _iCloudFMIPAuthenticateRequest, 
-                       _iCloudFMIPAuthenticateResponse, _iCloudLinkButton, _iCloudNameFormatter, 
-                       _iCloudPrefPaneCDPEnrollViewController, _iCloudPrefPaneCDPOption, 
+                       _iCloudAddFamilyInvitee, _iCloudAddFamilyMember, _iCloudCDPStateUIProvider, 
+                       _iCloudFMIPAuthenticateRequest, _iCloudFMIPAuthenticateResponse, 
+                       _iCloudFollowUpSuggestion, _iCloudHandleFLUI, _iCloudLinkButton, 
+                       _iCloudNameFormatter, _iCloudPrefPaneCDPEnrollViewController, 
+                       _iCloudPrefPaneCDPOption, _iCloudPrefPaneCDPRecoveryKeySheetController, 
                        _iCloudPrefPaneTrustedDeviceViewItem, _iCloudRequester, _iCloudServiceGroupRow, 
                        _iCloudServiceGroupRowLoader, _iCloudSetupTopLevel, _iCloudSetupTopLevelViews, 
                        _iCloudTouchBarController, _iCloudUtilities ]
     objc-ivars:      [ _CastlePlugin._accountDetailsController, _CastlePlugin._accountDetailsControllerNew, 
                        _CastlePlugin._accountList, _CastlePlugin._appleID, _CastlePlugin._authenticationResults, 
                        _CastlePlugin._btmmPasswordSheet, _CastlePlugin._delegate, 
-                       _CastlePlugin._mainWindow, _CastlePlugin._provisionalAccount, 
+                       _CastlePlugin._mainWindow, _CastlePlugin._notifyToken, _CastlePlugin._provisionalAccount, 
                        _CastlePlugin._pw, _CastlePlugin._reAuthTitleFormat, _CastlePlugin._requesterQueue, 
                        _CastlePlugin._signInSucess, _CastlePlugin._signInTokenSemaphore, 
                        _CastlePlugin._signinErrorToReturn, _CastlePlugin._signoutSpinnerStartTimer, 
@@ -262,7 +264,7 @@ exports:
                        _IACastleServicesView._appleIDField, _IACastleServicesView._buttonAlternate, 
                        _IACastleServicesView._buttonDefault, _IACastleServicesView._buttonDefaultWithAlternate, 
                        _IACastleServicesView._checkEmailText, _IACastleServicesView._detailsButton, 
-                       _IACastleServicesView._enabled, _IACastleServicesView._groupRowProperties, 
+                       _IACastleServicesView._enabled, _IACastleServicesView._groupRowArray, 
                        _IACastleServicesView._lockedText, _IACastleServicesView._lockedTitle, 
                        _IACastleServicesView._mmAccount, _IACastleServicesView._nameField, 
                        _IACastleServicesView._notVerifiedText, _IACastleServicesView._plugin, 
@@ -271,13 +273,11 @@ exports:
                        _IACastleServicesView._secondaryAccountTitle, _IACastleServicesView._servicesTable, 
                        _IACastleServicesView._storageBar, _IACastleServicesView._storageButton, 
                        _IACastleServicesView._storageFormat, _IACastleServicesView._storageLabel, 
-                       _IACastleServicesView._unverfiedAccountDescription, _IACastleServicesView._unverfiedAccountResendEmailButton, 
-                       _IACastleServicesView._unverfiedAccountTitle, _IACastleServicesView._webKitViewController, 
-                       _IACastleServicesViewLoader._servicesView, _MMAOSKeychainWrapper._accountName, 
-                       _MMAOSKeychainWrapper._lock, _MMAOSKeychainWrapper._serviceName, 
-                       _MMAOSKeychainWrapper._userCanceledKeychainUnlock, _MMAccountMgr._accounts, 
-                       _MMAccountMgr._termsOfServiceController, _MMAlert._completionHandler, 
-                       _MMAlert._helpHandler, _MMInfoCapacityPopoverViewController.mediaSizeLabel, 
+                       _IACastleServicesView._webKitViewController, _IACastleServicesViewLoader._servicesView, 
+                       _MMAOSKeychainWrapper._accountName, _MMAOSKeychainWrapper._lock, 
+                       _MMAOSKeychainWrapper._serviceName, _MMAOSKeychainWrapper._userCanceledKeychainUnlock, 
+                       _MMAccountMgr._accounts, _MMAccountMgr._termsOfServiceController, 
+                       _MMAlert._completionHandler, _MMAlert._helpHandler, _MMInfoCapacityPopoverViewController.mediaSizeLabel, 
                        _MMInfoCapacityPopoverViewController.mediaTypeLabel, _MMLengthFormatter._maxLength, 
                        _MMMobileDocumentsService._confirmModalDialog, _MMMobileDocumentsService._confirmProgress, 
                        _MMMobileDocumentsService._documentsAndDataTab, _MMMobileDocumentsService._isMigrationInProgress, 
@@ -375,8 +375,10 @@ exports:
                        _iCloudRequester._canceled, _iCloudRequester._data, _iCloudRequester._handler, 
                        _iCloudRequester._httpResponse, _iCloudRequester._isExecuting, 
                        _iCloudRequester._isFinished, _iCloudRequester._request, _iCloudRequester._urlConnection, 
-                       _iCloudServiceGroupRow._groupRowProperties, _iCloudServiceGroupRow._isRowEnabled, 
-                       _iCloudServiceGroupRow._nameFieldAlt, _iCloudServiceGroupRow._optionsButton, 
+                       _iCloudServiceGroupRow._groupRowProperties, _iCloudServiceGroupRow._handler, 
+                       _iCloudServiceGroupRow._isRowEnabled, _iCloudServiceGroupRow._nameFieldAlt, 
+                       _iCloudServiceGroupRow._optionsButton, _iCloudServiceGroupRow._parentWindow, 
+                       _iCloudServiceGroupRow._sheet, _iCloudServiceGroupRow._spinner, 
                        _iCloudServiceGroupRow._statusField, _iCloudServiceGroupRowLoader._serviceRow, 
                        _iCloudSetupTopLevel._account, _iCloudSetupTopLevel._currentState, 
                        _iCloudSetupTopLevel._plugin, _iCloudSetupTopLevel._spinner, 

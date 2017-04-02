@@ -1,18 +1,17 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0D3116D0-738E-3AE6-B605-9CF1830CF236' ]
+uuids:           [ 'x86_64: BA9002FF-00C1-32C8-BC06-634C81C3DB02' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/MetalKit.framework/Versions/A/MetalKit
-current-version: 71.0
+current-version: 76.1
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
-    symbols:         [ _CUIGamutForNSDisplayGamut, _MTKMetalVertexDescriptorFromModelIO, 
-                       _MTKMetalVertexDescriptorFromModelIOWithError, _MTKMetalVertexFormatFromModelIO, 
-                       _MTKModelErrorDomain, _MTKModelErrorKey, _MTKModelIOVertexDescriptorFromMetal, 
-                       _MTKModelIOVertexDescriptorFromMetalWithError, _MTKModelIOVertexFormatFromMetal, 
-                       _MTKTextureLoaderCubeLayoutVertical, _MTKTextureLoaderErrorDomain, 
-                       _MTKTextureLoaderErrorKey, _MTKTextureLoaderOptionAllocateMipmaps, 
+    symbols:         [ _MTKMetalVertexDescriptorFromModelIO, _MTKMetalVertexDescriptorFromModelIOWithError, 
+                       _MTKMetalVertexFormatFromModelIO, _MTKModelErrorDomain, _MTKModelErrorKey, 
+                       _MTKModelIOVertexDescriptorFromMetal, _MTKModelIOVertexDescriptorFromMetalWithError, 
+                       _MTKModelIOVertexFormatFromMetal, _MTKTextureLoaderCubeLayoutVertical, 
+                       _MTKTextureLoaderErrorDomain, _MTKTextureLoaderErrorKey, _MTKTextureLoaderOptionAllocateMipmaps, 
                        _MTKTextureLoaderOptionCubeFromVerticalTexture, _MTKTextureLoaderOptionCubeLayout, 
                        _MTKTextureLoaderOptionGenerateMipmaps, _MTKTextureLoaderOptionOrigin, 
                        _MTKTextureLoaderOptionSRGB, _MTKTextureLoaderOptionTextureCPUCacheMode, 

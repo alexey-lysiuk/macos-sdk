@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: B3154692-066F-34D8-8ABB-3D40BD370499', 'x86_64: 78FF4D39-6484-3405-ACAE-ED64C20ACECA' ]
+uuids:           [ 'i386: 58735240-889D-3FFF-913F-0614F0CD48F0', 'x86_64: B4DED095-DB97-3F4B-BA4E-175449AD9312' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DCERPC.framework/Versions/A/DCERPC
-current-version: 63.0
+current-version: 63
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]

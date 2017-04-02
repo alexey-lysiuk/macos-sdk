@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: F4775810-525E-37D2-A541-77B1F583931F', 'x86_64: A038154C-A9C1-3B2E-B4B2-D6CECF902808' ]
+uuids:           [ 'i386: D5EB59C5-4ED5-31D7-AEB2-4C43F790BB21', 'x86_64: 408123CF-BEC6-3CA2-9129-398FB4228248' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MonitorPanel.framework/Versions/A/MonitorPanel
 objc-constraint: none

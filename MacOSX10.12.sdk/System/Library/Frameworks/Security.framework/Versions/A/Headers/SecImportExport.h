@@ -1,15 +1,15 @@
 /*
- * Copyright (c) 2000-2011,2013-2014 Apple Inc. All Rights Reserved.
+ * Copyright (c) 2000-2011,2012-2014,2016 Apple Inc. All Rights Reserved.
  *
  * @APPLE_LICENSE_HEADER_START@
- * 
+ *
  * This file contains Original Code and/or Modifications of Original Code
  * as defined in and that are subject to the Apple Public Source License
  * Version 2.0 (the 'License'). You may not use this file except in
  * compliance with the License. Please obtain a copy of the License at
  * http://www.opensource.apple.com/apsl/ and read it before using this
  * file.
- * 
+ *
  * The Original Code and all software distributed under the License are
  * distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
  * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
@@ -17,84 +17,91 @@
  * FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.
  * Please see the License for the specific language governing rights and
  * limitations under the License.
- * 
+ *
  * @APPLE_LICENSE_HEADER_END@
  */
 
 /*!
-	@header SecImportExport
-	contains import/export functionality for keys and certificates.
+     @header SecImportExport
+     contains import/export functionality for keys and certificates.
 */
-#ifndef	_SECURITY_SEC_IMPORT_EXPORT_H_
-#define _SECURITY_SEC_IMPORT_EXPORT_H_
+#ifndef _SECURITY_SECIMPORTEXPORT_H_
+#define _SECURITY_SECIMPORTEXPORT_H_
 
+#include <Security/SecBase.h>
+#include <CoreFoundation/CoreFoundation.h>
+#include <CoreFoundation/CFBase.h>
+#include <CoreFoundation/CFArray.h>
+#include <CoreFoundation/CFData.h>
+#include <CoreFoundation/CFDictionary.h>
+
+#if SEC_OS_OSX
 #include <Security/cssmtype.h>
 #include <Security/SecAccess.h>
 #include <Security/SecKeychain.h>
-#include <CoreFoundation/CoreFoundation.h>
 #include <stdint.h>
+#endif /* SEC_OS_OSX */
 
-#ifdef	__cplusplus
-extern "C" {
-#endif
+__BEGIN_DECLS
 
 CF_ASSUME_NONNULL_BEGIN
 CF_IMPLICIT_BRIDGING_ENABLED
 
+#if SEC_OS_OSX
 /*
  * Supported import/export Formats
  */
 typedef CF_ENUM(uint32_t, SecExternalFormat)
 {
-	/*
-	 * When importing: unknown format
-	 * When exporting: default format for item
-	 */
-	kSecFormatUnknown = 0,
+     /*
+      * When importing: unknown format
+      * When exporting: default format for item
+      */
+     kSecFormatUnknown = 0,
 
-	/*
-	 * Public and Private Key formats.
-	 * Default for export is kSecFormatOpenSSL.
-	 */
-	kSecFormatOpenSSL,				/* a.k.a. X509 for public keys */
-	kSecFormatSSH,					/* OpenSSH v.1 */
-	kSecFormatBSAFE,
+     /*
+      * Public and Private Key formats.
+      * Default for export is kSecFormatOpenSSL.
+      */
+     kSecFormatOpenSSL,                 /* a.k.a. X509 for public keys */
+     kSecFormatSSH,                     /* OpenSSH v.1 */
+     kSecFormatBSAFE,
 
-	/* Symmetric Key Formats */
-	kSecFormatRawKey,				/* raw unformatted key bits; default */
+     /* Symmetric Key Formats */
+     kSecFormatRawKey,                  /* raw unformatted key bits; default */
 
-	/* Formats for wrapped symmetric and private keys */
-	kSecFormatWrappedPKCS8,
-	kSecFormatWrappedOpenSSL,		/* traditional openssl */
-	kSecFormatWrappedSSH,			/* OpenSSH v.1 */
-	kSecFormatWrappedLSH,
+     /* Formats for wrapped symmetric and private keys */
+     kSecFormatWrappedPKCS8,
+     kSecFormatWrappedOpenSSL,          /* traditional openssl */
+     kSecFormatWrappedSSH,              /* OpenSSH v.1 */
+     kSecFormatWrappedLSH,
 
-	/* Formats for certificates */
-	kSecFormatX509Cert,				/* DER encoded; default */
+     /* Formats for certificates */
+     kSecFormatX509Cert,                /* DER encoded; default */
 
-	/* Aggregate Types */
-	kSecFormatPEMSequence,			/* sequence of certs and/or keys, implies PEM
-									 *    armour. Default format for multiple items */
-	kSecFormatPKCS7,				/* sequence of certs */
-	kSecFormatPKCS12,				/* set of certs and private keys */
-	kSecFormatNetscapeCertSequence,	/* sequence of certs, form netscape-cert-sequence */
+     /* Aggregate Types */
+     kSecFormatPEMSequence,             /* sequence of certs and/or keys, implies PEM
+                                         *    armour. Default format for multiple items */
+     kSecFormatPKCS7,                   /* sequence of certs */
+     kSecFormatPKCS12,                  /* set of certs and private keys */
+     kSecFormatNetscapeCertSequence,    /* sequence of certs, form netscape-cert-sequence */
 
-	/* Added in Mac OS X 10.5 */
-	kSecFormatSSHv2					/* OpenSSH v.2. Note that OpenSSH v2 private keys
-									 * are in format kSecFormatOpenSSL or
-									 * kSecFormatWrappedOpenSSL. */
+     /* Added in Mac OS X 10.5 */
+     kSecFormatSSHv2                    /* OpenSSH v.2. Note that OpenSSH v2 private keys
+                                         * are in format kSecFormatOpenSSL or
+                                         * kSecFormatWrappedOpenSSL. */
 };
 
 /*
  * Indication of basic item type when importing.
  */
 typedef CF_ENUM(uint32_t, SecExternalItemType) {
-	kSecItemTypeUnknown,			/* caller doesn't know what this is */
-	kSecItemTypePrivateKey,
-	kSecItemTypePublicKey,
-	kSecItemTypeSessionKey,
-	kSecItemTypeCertificate,
-	kSecItemTypeAggregate			/* PKCS7, PKCS12, kSecFormatPEMSequence, etc. */
+     kSecItemTypeUnknown,               /* caller doesn't know what this is */
+     kSecItemTypePrivateKey,
+     kSecItemTypePublicKey,
+     kSecItemTypeSessionKey,
+     kSecItemTypeCertificate,
+     kSecItemTypeAggregate               /* PKCS7, PKCS12, kSecFormatPEMSequence, etc. */
 };
 
 /*
@@ -102,7 +109,7 @@ typedef CF_ENUM(uint32_t, SecExternalItemType) {
  */
 typedef CF_OPTIONS(uint32_t, SecItemImportExportFlags)
 {
-	kSecItemPemArmour			= 0x00000001,   /* exported blob is PEM formatted */
+     kSecItemPemArmour               = 0x00000001,   /* exported blob is PEM formatted */
 };
 
 /*
@@ -110,84 +117,83 @@ typedef CF_OPTIONS(uint32_t, SecItemImportExportFlags)
  */
 typedef CF_OPTIONS(uint32_t, SecKeyImportExportFlags)
 {
-	/*
-	 * When true, prevents the importing of more than one private key
-	 * in a given SecKeychainItemImport().
-	 */
-	kSecKeyImportOnlyOne		= 0x00000001,
+     /*
+      * When true, prevents the importing of more than one private key
+      * in a given SecKeychainItemImport().
+      */
+     kSecKeyImportOnlyOne          = 0x00000001,
 
-	/*
-	 * When true, passphrase for import/export is obtained by user prompt
-	 * instead of by caller-supplied data (SecKeyImportExportParameters.passphrase).
-	 * This is the preferred method for obtaining a user-supplied passphrase
-	 * as it avoids having the cleartext passphrase appear in the app's
-	 * address space at any time.
-	 */
-	kSecKeySecurePassphrase		= 0x00000002,
+     /*
+      * When true, passphrase for import/export is obtained by user prompt
+      * instead of by caller-supplied data (SecKeyImportExportParameters.passphrase).
+      * This is the preferred method for obtaining a user-supplied passphrase
+      * as it avoids having the cleartext passphrase appear in the app's
+      * address space at any time.
+      */
+     kSecKeySecurePassphrase          = 0x00000002,
 
-	/*
-	 * When true, imported private keys will have no Access Control List
-	 * (ACL) attached to them. In the absence of both this bit and the accessRef
-	 * field in SecKeyImportExportParameters (see below), imported private
-	 * keys are given a default ACL.
-	 */
-	kSecKeyNoAccessControl		= 0x00000004
+     /*
+      * When true, imported private keys will have no Access Control List
+      * (ACL) attached to them. In the absence of both this bit and the accessRef
+      * field in SecKeyImportExportParameters (see below), imported private
+      * keys are given a default ACL.
+      */
+     kSecKeyNoAccessControl          = 0x00000004
 };
 
 /*
  * Version of a SecKeyImportExportParameters.
  */
-#define SEC_KEY_IMPORT_EXPORT_PARAMS_VERSION		0
+#define SEC_KEY_IMPORT_EXPORT_PARAMS_VERSION          0
 
 /*
  * Parameters specific to SecKeyRefs.
  */
 typedef struct
 {
-	/* for import and export */
-	uint32_t				version;		/* SEC_KEY_IMPORT_EXPORT_PARAMS_VERSION */
-	SecKeyImportExportFlags flags;			/* SecKeyImportExportFlags bits */
-	CFTypeRef				passphrase;		/* kSecFormatPKCS12, kSecFormatWrapped*
-											 *    formats only. Legal types are
-											 *    CFStringRef and CFDataRef. */
-	CFStringRef				alertTitle;		/* title of secure passphrase alert panel */
-	CFStringRef				alertPrompt;	/* prompt in secure passphrase alert panel */
+     /* for import and export */
+     uint32_t                    version;        /* SEC_KEY_IMPORT_EXPORT_PARAMS_VERSION */
+     SecKeyImportExportFlags flags;              /* SecKeyImportExportFlags bits */
+     CFTypeRef                    passphrase;    /* kSecFormatPKCS12, kSecFormatWrapped*
+                                                  *    formats only. Legal types are
+                                                  *    CFStringRef and CFDataRef. */
+     CFStringRef                    alertTitle;  /* title of secure passphrase alert panel */
+     CFStringRef                    alertPrompt; /* prompt in secure passphrase alert panel */
 
-	/* for import only */
-	SecAccessRef __nullable accessRef;		/* specifies the initial ACL of imported
-											 *    key(s) */
-	CSSM_KEYUSE				keyUsage;		/* CSSM_KEYUSE_DECRYPT, CSSM_KEYUSE_SIGN,
-											 *    etc. */
-	CSSM_KEYATTR_FLAGS		keyAttributes;	/* CSSM_KEYATTR_PERMANENT, etc. */
+     /* for import only */
+     SecAccessRef __nullable accessRef;          /* specifies the initial ACL of imported
+                                                  *    key(s) */
+     CSSM_KEYUSE                    keyUsage;    /* CSSM_KEYUSE_DECRYPT, CSSM_KEYUSE_SIGN,
+                                                  *    etc. */
+     CSSM_KEYATTR_FLAGS          keyAttributes;  /* CSSM_KEYATTR_PERMANENT, etc. */
 } SecKeyImportExportParameters;
 
 
 typedef struct
 {
-	/* for import and export */
-	uint32_t				version;		/* SEC_KEY_IMPORT_EXPORT_PARAMS_VERSION */
-	SecKeyImportExportFlags flags;			/* SecKeyImportExportFlags bits */
-	CFTypeRef				passphrase;		/* kSecFormatPKCS12, kSecFormatWrapped*
-											 *    formats only. Legal types are
-											 *    CFStringRef and CFDataRef. */
-	CFStringRef				alertTitle;		/* title of secure passphrase alert panel */
-	CFStringRef				alertPrompt;	/* prompt in secure passphrase alert panel */
+     /* for import and export */
+     uint32_t                    version;        /* SEC_KEY_IMPORT_EXPORT_PARAMS_VERSION */
+     SecKeyImportExportFlags flags;              /* SecKeyImportExportFlags bits */
+     CFTypeRef                    passphrase;    /* kSecFormatPKCS12, kSecFormatWrapped*
+                                                  *    formats only. Legal types are
+                                                  *    CFStringRef and CFDataRef. */
+     CFStringRef                    alertTitle;  /* title of secure passphrase alert panel */
+     CFStringRef                    alertPrompt; /* prompt in secure passphrase alert panel */
 
-	/* for import only */
-	SecAccessRef __nullable	accessRef;		/* specifies the initial ACL of imported
-											 *    key(s) */
-	CFArrayRef __nullable   keyUsage;		/* An Array containing usage attributes from SecItem.h, e.g.
-											   kSecAttrCanEncrypt;, kSecAttrCanDecrypt, kSecAttrCanDerive, etc.
-											 */
-
-	CFArrayRef __nullable   keyAttributes;	/* An array containing zero or more key attributes
-											   for an imported key. Possible values (from SecItem.h):
-											   kSecAttrIsPermanent, kSecAttrIsSensitive, kSecAttrIsExtractable
-											   Pass NULL in this field to use default attributes:
-											   - kSecAttrIsPermanent if a keychain is specified
-											   - kSecAttrIsSensitive for private keys
-											   - kSecAttrIsExtractable by default
-											 */
+     /* for import only */
+     SecAccessRef __nullable     accessRef;      /* specifies the initial ACL of imported
+                                                  *    key(s) */
+     CFArrayRef __nullable   keyUsage;           /* An Array containing usage attributes from SecItem.h, e.g.
+                                                  *     kSecAttrCanEncrypt;, kSecAttrCanDecrypt, kSecAttrCanDerive, etc.
+                                                  */
+     CFArrayRef __nullable   keyAttributes;      /* An array containing zero or more key attributes
+                                                  *    for an imported key. Possible values (from SecItem.h):
+                                                  *    kSecAttrIsPermanent, kSecAttrIsSensitive, kSecAttrIsExtractable
+                                                  *    Pass NULL in this field to use default attributes:
+                                                  *    - kSecAttrIsPermanent if a keychain is specified
+                                                  *    - kSecAttrIsSensitive for private keys
+                                                  *    - kSecAttrIsExtractable by default
+                                                  */
 } SecItemImportExportKeyParameters;
 
 /*
@@ -243,12 +249,12 @@ typedef struct
  * @discussion This API has been deprecated. Please us the SecItemExport API instead.
  */
 OSStatus SecKeychainItemExport(
-	CFTypeRef							keychainItemOrArray,
-	SecExternalFormat					outputFormat,
-	SecItemImportExportFlags			flags,                  /* kSecItemPemArmor, etc. */
-	const SecKeyImportExportParameters * __nullable keyParams,	/* optional */
-	CFDataRef * __nonnull CF_RETURNS_RETAINED exportedData)		/* external representation returned here */
-		DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+     CFTypeRef                              keychainItemOrArray,
+     SecExternalFormat                      outputFormat,
+     SecItemImportExportFlags               flags,                  /* kSecItemPemArmor, etc. */
+     const SecKeyImportExportParameters * __nullable keyParams,     /* optional */
+     CFDataRef * __nonnull CF_RETURNS_RETAINED exportedData)        /* external representation returned here */
+          DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 
 /*
  * SecItemExport()
@@ -303,12 +309,12 @@ OSStatus SecKeychainItemExport(
  *
  */
 OSStatus SecItemExport(
-	CFTypeRef							secItemOrArray,
-	SecExternalFormat					outputFormat,
-	SecItemImportExportFlags			flags,                      /* kSecItemPemArmor, etc. */
-	const SecItemImportExportKeyParameters * __nullable keyParams,	/* optional */
-	CFDataRef * __nonnull CF_RETURNS_RETAINED exportedData)         /* external representation returned here */
-		__OSX_AVAILABLE_STARTING(__MAC_10_7, __IPHONE_NA);
+     CFTypeRef                              secItemOrArray,
+     SecExternalFormat                      outputFormat,
+     SecItemImportExportFlags               flags,                   /* kSecItemPemArmor, etc. */
+     const SecItemImportExportKeyParameters * __nullable keyParams,  /* optional */
+     CFDataRef * __nonnull CF_RETURNS_RETAINED exportedData)         /* external representation returned here */
+          __OSX_AVAILABLE_STARTING(__MAC_10_7, __IPHONE_NA);
 /*
  * SecKeychainItemImport()
  *
@@ -458,15 +464,15 @@ OSStatus SecItemExport(
  * @discussion  This API has been deprecated.  Please use the SecItemImport API instead.
  */
 OSStatus SecKeychainItemImport(
-	CFDataRef							importedData,
-	CFStringRef	__nullable				fileNameOrExtension,	/* optional */
-	SecExternalFormat * __nullable      inputFormat,			/* optional, IN/OUT */
-	SecExternalItemType	* __nullable    itemType,				/* optional, IN/OUT */
-	SecItemImportExportFlags			flags,
-	const SecKeyImportExportParameters * __nullable keyParams,	/* optional */
-	SecKeychainRef __nullable			importKeychain,			/* optional */
-	CFArrayRef * __nullable CF_RETURNS_RETAINED outItems)       /* optional */
-		DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
+     CFDataRef                                   importedData,
+     CFStringRef     __nullable                    fileNameOrExtension, /* optional */
+     SecExternalFormat * __nullable      inputFormat,                   /* optional, IN/OUT */
+     SecExternalItemType     * __nullable    itemType,                  /* optional, IN/OUT */
+     SecItemImportExportFlags               flags,
+     const SecKeyImportExportParameters * __nullable keyParams,         /* optional */
+     SecKeychainRef __nullable               importKeychain,            /* optional */
+     CFArrayRef * __nullable CF_RETURNS_RETAINED outItems)              /* optional */
+          DEPRECATED_IN_MAC_OS_X_VERSION_10_7_AND_LATER;
 
 /*
  * SecItemImport()
@@ -625,59 +631,81 @@ OSStatus SecKeychainItemImport(
  * The SecItemImportExportFlags argument is currently unused; caller should pass
  * in 0.
  */
-
 OSStatus SecItemImport(
-	CFDataRef							importedData,
-	CFStringRef __nullable				fileNameOrExtension,	/* optional */
-	SecExternalFormat * __nullable      inputFormat,			/* optional, IN/OUT */
-	SecExternalItemType	* __nullable    itemType,				/* optional, IN/OUT */
-	SecItemImportExportFlags			flags,
-	const SecItemImportExportKeyParameters * __nullable keyParams,	/* optional */
-	SecKeychainRef __nullable			importKeychain,			/* optional */
-	CFArrayRef * __nullable CF_RETURNS_RETAINED outItems)		/* optional */
-		__OSX_AVAILABLE_STARTING(__MAC_10_7, __IPHONE_NA);
+     CFDataRef                                   importedData,
+     CFStringRef __nullable                    fileNameOrExtension, /* optional */
+     SecExternalFormat * __nullable      inputFormat,               /* optional, IN/OUT */
+     SecExternalItemType     * __nullable    itemType,              /* optional, IN/OUT */
+     SecItemImportExportFlags               flags,
+     const SecItemImportExportKeyParameters * __nullable keyParams, /* optional */
+     SecKeychainRef __nullable               importKeychain,        /* optional */
+     CFArrayRef * __nullable CF_RETURNS_RETAINED outItems)          /* optional */
+          __OSX_AVAILABLE_STARTING(__MAC_10_7, __IPHONE_NA);
+#endif /* SEC_OS_OSX */
+
 /*!
     @enum Import/Export options
     @discussion Predefined key constants used when passing dictionary-based arguments to import/export functions.
     @constant kSecImportExportPassphrase Specifies a passphrase represented by a CFStringRef to be used when exporting to (or importing from) PKCS#12 format.
-	@constant kSecImportExportKeychain Specifies a keychain represented by a SecKeychainRef to be used as the target when importing from PKCS#12 format.
-	@constant kSecImportExportAccess Specifies an access represented by a SecAccessRef for the initial access (ACL) of a key imported from PKCS#12 format.
+     @constant kSecImportExportKeychain On OSX, specifies a keychain represented by a SecKeychainRef to be used as the target when importing from PKCS#12 format.
+     @constant kSecImportExportAccess On OSX, specifies an access represented by a SecAccessRef for the initial access (ACL) of a key imported from PKCS#12 format.
 */
-extern const CFStringRef kSecImportExportPassphrase;
-extern const CFStringRef kSecImportExportKeychain;
-extern const CFStringRef kSecImportExportAccess;
+extern const CFStringRef kSecImportExportPassphrase
+    __OSX_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_2_0);
+extern const CFStringRef kSecImportExportKeychain
+    __OSX_AVAILABLE_STARTING(__MAC_10_7, __IPHONE_NA);
+extern const CFStringRef kSecImportExportAccess
+    __OSX_AVAILABLE_STARTING(__MAC_10_7, __IPHONE_NA);
 
 /*!
     @enum Import/Export item description
-    @discussion Predefined key constants used by functions which return a CFArray with a CFDictionary per item.
-    @constant kSecImportItemLabel A CFStringRef representing the item label. This implementation specific identifier cannot be expected to have any format.
-    @constant kSecImportItemKeyID A CFDataRef representing the key id. Typically this is the SHA-1 digest of the public key.
-    @constant kSecImportItemIdentity A SecIdentityRef representing the identity.
-    @constant kSecImportItemTrust A SecTrustRef set up with all relevant certificates. Not guaranteed to succesfully evaluate.
-    @constant kSecImportItemCertChain A CFArrayRef holding all relevant certificates for this item's identity.
+    @discussion Predefined key constants used to pass back a CFArray with a
+        CFDictionary per item.
+
+    @constant kSecImportItemLabel a CFStringRef representing the item label.
+        This implementation specific identifier cannot be expected to have
+        any format.
+    @constant kSecImportItemKeyID a CFDataRef representing the key id.  Often
+        the SHA-1 digest of the public key.
+    @constant kSecImportItemIdentity a SecIdentityRef representing the identity.
+    @constant kSecImportItemTrust a SecTrustRef set up with all relevant
+        certificates.  Not guaranteed to succesfully evaluate.
+    @constant kSecImportItemCertChain a CFArrayRef holding all relevant
+        certificates for this item's identity
 */
-extern const CFStringRef kSecImportItemLabel;
-extern const CFStringRef kSecImportItemKeyID;
-extern const CFStringRef kSecImportItemTrust;
-extern const CFStringRef kSecImportItemCertChain;
-extern const CFStringRef kSecImportItemIdentity;
+extern const CFStringRef kSecImportItemLabel
+    __OSX_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_2_0);
+extern const CFStringRef kSecImportItemKeyID
+    __OSX_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_2_0);
+extern const CFStringRef kSecImportItemTrust
+    __OSX_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_2_0);
+extern const CFStringRef kSecImportItemCertChain
+    __OSX_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_2_0);
+extern const CFStringRef kSecImportItemIdentity
+    __OSX_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_2_0);
 
 /*!
-	@function SecPKCS12Import
-	@abstract Imports the contents of a PKCS12 formatted blob.
-    @param pkcs12_data The PKCS12 data to be imported.
-    @param options A dictionary containing import options. A kSecImportExportPassphrase entry is required at minimum. Only password-based PKCS12 blobs are currently supported.
-    @param items On return, an array containing a dictionary for every item extracted. Use kSecImportItem constants to access specific elements of these dictionaries. Your code must CFRelease the array when it is no longer needed.
-	@result errSecSuccess in case of success. errSecDecode means either the blob can't be read or it is malformed.
-		errSecAuthFailed means an incorrect password was supplied, or data in the container is damaged.
+     @function SecPKCS12Import
+     @abstract Imports the contents of a PKCS12 formatted blob.
+     @param pkcs12_data The PKCS#12 formatted data to be imported.
+     @param options A dictionary containing import options. A
+       kSecImportExportPassphrase entry is required at minimum. Only password-based
+       PKCS12 blobs are currently supported.
+     @param items On return, an array containing a dictionary for every item
+       extracted. Use kSecImportItem constants to access specific elements of
+       these dictionaries. Your code must CFRelease the array when it is no longer
+       needed.
+     @result errSecSuccess in case of success. errSecDecode means either the
+       blob can't be read or it is malformed. errSecAuthFailed means an
+       incorrect password was supplied, or data in the container is damaged.
 */
-OSStatus SecPKCS12Import(CFDataRef pkcs12_data, CFDictionaryRef options, CFArrayRef * __nonnull CF_RETURNS_RETAINED items);
+OSStatus SecPKCS12Import(CFDataRef pkcs12_data, CFDictionaryRef options, CFArrayRef * __nonnull CF_RETURNS_RETAINED items)
+     __OSX_AVAILABLE_STARTING(__MAC_10_6, __IPHONE_2_0);
+
 
 CF_IMPLICIT_BRIDGING_DISABLED
 CF_ASSUME_NONNULL_END
 
-#ifdef	__cplusplus
-}
-#endif
+__END_DECLS
 
-#endif	/* _SECURITY_SEC_IMPORT_EXPORT_H_ */
+#endif /* !_SECURITY_SECIMPORTEXPORT_H_ */

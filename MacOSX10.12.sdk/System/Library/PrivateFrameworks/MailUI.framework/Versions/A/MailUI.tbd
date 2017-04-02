@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 316DAEDF-2C3C-3600-BE77-7B901150C93F' ]
+uuids:           [ 'x86_64: DB6F157B-A74B-36B6-B9DD-9A5C7D4C8F78' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MailUI.framework/Versions/A/MailUI
-current-version: 3259.0
+current-version: 3272
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

@@ -1,6 +1,6 @@
 /* CoreAnimation - CAEmitterBehavior.h
 
-   Copyright (c) 2013-2016, Apple Inc.
+   Copyright (c) 2013-2017, Apple Inc.
    All rights reserved. */
 
 #import <QuartzCore/CALayer.h>

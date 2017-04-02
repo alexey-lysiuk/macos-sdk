@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 8ABE4D3D-BDC0-329B-BCBD-842A417B7106', 'x86_64: 65D8C30A-675E-3BB1-AE98-DD305A516D21' ]
+uuids:           [ 'i386: F3699098-D7CC-3F3C-844A-4DD7D661E252', 'x86_64: FCA2BE96-4FD8-31C1-9AB2-14028FFBBDD3' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreWLANKit.framework/Versions/A/CoreWLANKit
 objc-constraint: none

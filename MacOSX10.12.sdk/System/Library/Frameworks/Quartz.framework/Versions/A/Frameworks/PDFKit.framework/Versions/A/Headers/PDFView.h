@@ -209,13 +209,17 @@ NS_CLASS_AVAILABLE_MAC(10_4)
 
 // -------- rendering
 
-// This method is deprecated, and will no longer be called on macOS 10.12+. Use the context-aware alternatives below.
+// This method is deprecated in favor of the of the context aware -[PDFView drawPage:toContext:]. If you subclass
+// PDFView, rendering code will first call -[PDFView drawPage:toContext:]. If your subclass does not override the
+// context-aware function, this original -[PDFView drawPage:] method will be called.
 // For subclasses. This method is called for each visible page requiring rendering.  By subclassing you can draw on top
 // of the PDF page or draw the page entirely yourself. Default implementation erases page to white and calls:
 // [page drawWithBox: [self displayBox]], then draws the selection if any.
 - (void) drawPage: (PDFPage *) page PDFKIT_DEPRECATED(10_4, 10_12);
 
-// This method is deprecated, and will no longer be called on macOS 10.12+. Use the context-aware alternatives below.
+// This method is deprecated in favor of the of the context aware -[PDFView drawPagePost:toContext:]. If you subclass
+// PDFView, rendering code will first call -[PDFView drawPagePost:toContext:]. If your subclass does not override the
+// context-aware function, this original -[PDFView drawPagePost:] method will be called.
 // Also a handy method for sub-classing.  Called for post-page rendering. In this method however no scaling/rotating is
 // applied to the current context to map to page-space.  The context is in "view-space" coordinates.  The default 
 // implementation of this method draws the text highlighting (if any) for page.

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 11D72CE4-F7B3-38EF-ACD5-7CC0C170C8F8', 'x86_64: 34C1EE2B-C80D-3379-BF2E-585BF36D50E8' ]
+uuids:           [ 'i386: E78C15A2-69AF-396B-B0B6-677604160A9C', 'x86_64: 12659E94-28DA-3D64-A065-42E7636C2E6B' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/JavaVM.framework/Versions/A/Frameworks/JavaRuntimeSupport.framework/Versions/A/JavaRuntimeSupport
 objc-constraint: none

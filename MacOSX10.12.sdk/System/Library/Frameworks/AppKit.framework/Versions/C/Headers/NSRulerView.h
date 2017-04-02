@@ -19,8 +19,7 @@ typedef NS_ENUM(NSUInteger, NSRulerOrientation) {
 };
 
 @interface NSRulerView : NSView {
-  /*All instance variables are private*/
-  @private
+@private
     NSScrollView *_scrollView;
     NSRulerOrientation _orientation;
 
@@ -61,7 +60,7 @@ typedef NS_ENUM(NSUInteger, NSRulerOrientation) {
 
 /**************************** Basic setup ****************************/
 
-@property (nullable, assign) NSScrollView *scrollView;
+@property (nullable, weak) NSScrollView *scrollView;
     // A ruler uses its scrollView to finds it's document view to see whether it should be flipped.  The set method is generally called only by the scroll view itself.  You should not have to set this.
 
 @property NSRulerOrientation orientation;
@@ -95,7 +94,7 @@ typedef NS_ENUM(NSUInteger, NSRulerOrientation) {
 
 /**************************** Client view setup ****************************/
 
-@property (nullable, assign) NSView *clientView;
+@property (nullable, weak) NSView *clientView;
 
 - (void)addMarker:(NSRulerMarker *)marker;
 - (void)removeMarker:(NSRulerMarker *)marker;

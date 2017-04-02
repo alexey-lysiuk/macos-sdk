@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 321FBBF9-2002-3B49-9404-7F1B2B4B6019', 'x86_64: B4AADAF1-5E4F-3654-8377-045BF992C63C' ]
+uuids:           [ 'i386: DCBA971A-571E-3D0C-983E-1961826B0C92', 'x86_64: D89B0B37-932D-3EF6-BF70-F6C822F4163B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/KerberosHelper.framework/Versions/A/KerberosHelper
 objc-constraint: none

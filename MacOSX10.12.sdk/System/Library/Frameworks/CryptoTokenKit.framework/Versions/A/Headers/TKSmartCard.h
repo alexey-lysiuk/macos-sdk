@@ -12,11 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 @class TKSmartCardSlot;
 @class TKSmartCardUserInteraction;
 
-/// Represents pool of smart card reader slots.
+/// Represents pool of SmartCard reader slots.
 NS_CLASS_AVAILABLE(10_10, 9_0)
 @interface TKSmartCardSlotManager : NSObject
 
-/// Global pool of smart card reader slots.
+/// Global pool of SmartCard reader slots.
 /// Note that defaultManager instance is accessible only if the calling application has 'com.apple.security.smartcard' entitlement set to Boolean:YES.  If the calling application does not have this entitlement, defaultManager is always set to nil.
 @property (class, nullable, readonly) TKSmartCardSlotManager *defaultManager;
 
@@ -147,7 +147,7 @@ NS_CLASS_AVAILABLE(10_11, 9_0)
 
 @end
 
-/// Delegate for user interactions involving the smart card reader.
+/// Delegate for user interactions involving the SmartCard reader.
 NS_CLASS_AVAILABLE(10_11, 9_0)
 @protocol TKSmartCardUserInteractionDelegate
 @optional
@@ -175,7 +175,7 @@ NS_CLASS_AVAILABLE(10_11, 9_0)
 
 @end
 
-/// Represents handle to a user interaction involving the smart card reader.
+/// Represents handle to a user interaction involving the SmartCard reader.
 /// @discussion It is a proxy object obtained as a result of invoking the userInteractionFor*** family of methods in TKSmartCardSlot and TKSmartCard.
 NS_CLASS_AVAILABLE(10_11, 9_0)
 @interface TKSmartCardUserInteraction : NSObject
@@ -200,7 +200,7 @@ NS_CLASS_AVAILABLE(10_11, 9_0)
 
 @end
 
-/// User interaction for the secure PIN operations on the smart card reader.
+/// User interaction for the secure PIN operations on the SmartCard reader.
 /// @note Result is available after the interaction has been successfully completed.
 NS_CLASS_AVAILABLE(10_11, 9_0)
 @interface TKSmartCardUserInteractionForPINOperation : TKSmartCardUserInteraction
@@ -226,14 +226,14 @@ NS_CLASS_AVAILABLE(10_11, 9_0)
 
 @end
 
-/// User interaction for the secure PIN verification on the smart card reader.
+/// User interaction for the secure PIN verification on the SmartCard reader.
 /// @note Result is available after the interaction has been successfully completed.
 NS_CLASS_AVAILABLE(10_11, 9_0)
 @interface TKSmartCardUserInteractionForSecurePINVerification : TKSmartCardUserInteractionForPINOperation
 
 @end
 
-/// User interaction for the secure PIN change on the smart card reader.
+/// User interaction for the secure PIN change on the SmartCard reader.
 /// @note Result is available after the interaction has been successfully completed.
 NS_CLASS_AVAILABLE(10_11, 9_0)
 @interface TKSmartCardUserInteractionForSecurePINChange : TKSmartCardUserInteractionForPINOperation
@@ -244,17 +244,17 @@ NS_CLASS_AVAILABLE(10_11, 9_0)
 
 @end
 
-/// Represents single slot which can contain smartcard.
+/// Represents single slot which can contain SmartCard.
 NS_CLASS_AVAILABLE(10_10, 9_0)
 @interface TKSmartCardSlot : NSObject
 
 /// Current state of the slot.  Use KVO to be notified about state changes.
 @property (readonly) TKSmartCardSlotState state;
 
-/// ATR of the inserted smartcard, or nil if no or mute smartcard is inserted.
+/// ATR of the inserted SmartCard, or nil if no or mute SmartCard is inserted.
 @property (readonly, nullable) TKSmartCardATR *ATR;
 
-/// Name of the smart card reader slot.
+/// Name of the SmartCard reader slot.
 @property (nonatomic, readonly) NSString *name;
 
 /// Maximal length of input APDU that the slot is able to transfer to the card.
@@ -264,13 +264,13 @@ NS_CLASS_AVAILABLE(10_10, 9_0)
 @property (nonatomic, readonly) NSInteger maxOutputLength;
 
 /// Creates new object representing currently inserted and valid card.
-/// @discussion It is possible to instantiate multiple objects for single card, exclusivity is handled by sessions on the level of created smart card objects.
-/// @return Newly created smart card object, or nil if slot does not contain valid card.
+/// @discussion It is possible to instantiate multiple objects for single card, exclusivity is handled by sessions on the level of created SmartCard objects.
+/// @return Newly created SmartCard object, or nil if slot does not contain valid card.
 - (nullable TKSmartCard *)makeSmartCard;
 
 @end
 
-/// Represents smart card inserted in the slot. Once the card is physically removed from the slot, the session object is invalid and will always fail the operation invoked on it.  In order to communicate with the card, an exclusive session must be established.
+/// Represents SmartCard inserted in the slot. Once the card is physically removed from the slot, the session object is invalid and will always fail the operation invoked on it.  In order to communicate with the card, an exclusive session must be established.
 NS_CLASS_AVAILABLE(10_10, 9_0)
 @interface TKSmartCard : NSObject
 
@@ -283,10 +283,10 @@ NS_CLASS_AVAILABLE(10_10, 9_0)
 /// Bitmask containing allowed protocols to be used when communicating with the card.  This property is consulted only during connection to the card, changes are not propagated to already connected session.  By default, any protocol can be used.
 @property TKSmartCardProtocol allowedProtocols;
 
-/// Protocol used for communication with the smartcard.  If no card session is established, TKSmartCardProtocolNone is set.
+/// Protocol used for communication with the SmartCard.  If no card session is established, TKSmartCardProtocolNone is set.
 @property (readonly) TKSmartCardProtocol currentProtocol;
 
-/// Flag indicating whether card session should be considered as sensitive.  Sensitive session always gets card after reset before communicating with it and never leaves card without reset to be used by another smart card object.  This might be important in case that card session contain some important state which should not leak to another smart card object (possibly running in another, foreign application).  Default is NO.
+/// Flag indicating whether card session should be considered as sensitive.  Sensitive session always gets card after reset before communicating with it and never leaves card without reset to be used by another SmartCard object.  This might be important in case that card session contain some important state which should not leak to another SmartCard object (possibly running in another, foreign application).  Default is NO.
 @property BOOL sensitive;
 
 /// User-specified context kept as long as the card is powered.  Once the card is removed or another TKSmartCard object opens session, this property is automatically set to nil.
@@ -307,24 +307,24 @@ NS_CLASS_AVAILABLE(10_10, 9_0)
 /// Terminates the transaction. If no transaction is pending any more, the connection will be closed if there is another session in the system waiting for the transaction.
 - (void)endSession;
 
-/// Creates a new user interaction object for secure PIN verification using the smart card reader facilities (typically a HW keypad).
+/// Creates a new user interaction object for secure PIN verification using the SmartCard reader facilities (typically a HW keypad).
 /// @note This interaction is only allowed within a session.
 /// @param PINFormat PIN format descriptor.
-/// @param APDU Predefined APDU in which the smart card reader fills in the PIN.
+/// @param APDU Predefined APDU in which the SmartCard reader fills in the PIN.
 /// @param PINByteOffset Offset in bytes within APDU data field to mark a location of a PIN block for filling in the entered PIN (currently unused, must be 0).
-/// @return A new user interaction object, or nil if this feature is not supported by the smart card reader. After the interaction has been successfully completed the operation result is available in the result properites.
+/// @return A new user interaction object, or nil if this feature is not supported by the SmartCard reader. After the interaction has been successfully completed the operation result is available in the result properites.
 - (nullable TKSmartCardUserInteractionForSecurePINVerification *)userInteractionForSecurePINVerificationWithPINFormat:(TKSmartCardPINFormat *)PINFormat
                                                                                                                   APDU:(NSData *)APDU
                                                                                                          PINByteOffset:(NSInteger)PINByteOffset
                                                                                                                 NS_AVAILABLE(10_11, 9_0);
 
-/// Creates a new user interaction object for secure PIN change using the smart card reader facilities (typically a HW keypad).
+/// Creates a new user interaction object for secure PIN change using the SmartCard reader facilities (typically a HW keypad).
 /// @note This interaction is only allowed within a session.
 /// @param PINFormat PIN format descriptor.
-/// @param APDU Predefined APDU in which the smart card reader fills in the PIN(s).
+/// @param APDU Predefined APDU in which the SmartCard reader fills in the PIN(s).
 /// @param currentPINByteOffset Offset in bytes within APDU data field to mark a location of a PIN block for filling in the current PIN.
 /// @param newPINByteOffset Offset in bytes within APDU data field to mark a location of a PIN block for filling in the new PIN.
-/// @return A new user interaction object, or nil if this feature is not supported by the smart card reader. After the interaction has been successfully completed the operation result is available in the result properites.
+/// @return A new user interaction object, or nil if this feature is not supported by the SmartCard reader. After the interaction has been successfully completed the operation result is available in the result properites.
 - (nullable TKSmartCardUserInteractionForSecurePINChange *)userInteractionForSecurePINChangeWithPINFormat:(TKSmartCardPINFormat *)PINFormat
                                                                                                      APDU:(NSData *)APDU
                                                                                      currentPINByteOffset:(NSInteger)currentPINByteOffset

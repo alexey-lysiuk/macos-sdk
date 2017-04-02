@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386 ]
-uuids:           [ 'i386: 13E5F701-204C-3DEF-8BE6-CEB612116181' ]
+uuids:           [ 'i386: 0C2FBA44-C5C4-3AEC-B863-465F9023C147' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/NavigationServices.framework/Versions/A/NavigationServices
-current-version: 225.0
+current-version: 225
 objc-constraint: none
 parent-umbrella: Carbon
 exports:         

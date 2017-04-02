@@ -1,10 +1,10 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: BC95EADC-B63F-3647-823C-0B0EF8DA0709', 'x86_64: 91F66BFD-F927-301F-B8F3-578A5CEA78F4' ]
+uuids:           [ 'i386: 8D989D80-AE27-3395-ABDE-6C088F7ED35E', 'x86_64: A980E08C-A511-3D19-9881-1D79B7CFF2BA' ]
 platform:        macosx
 install-name:    '/usr/lib/libstdc++.6.dylib'
 current-version: 104.1
-compatibility-version: 7.0
+compatibility-version: 7
 objc-constraint: none
 exports:         
   - archs:           [ i386 ]

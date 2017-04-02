@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 809D982C-1A42-3B2A-B47A-786534BC4A2F' ]
+uuids:           [ 'x86_64: 86A9652F-5F3E-3283-B20E-02F7BDA2F904' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DataSourceManagement.framework/Versions/A/DataSourceManagement
-current-version: 145.0
+current-version: 148.3
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 94665C1C-9486-361E-8719-0D0F2810D140', 'x86_64: EB020B0C-7DF0-3EEF-8E3C-15DA3C01D687' ]
+uuids:           [ 'i386: F60798F9-4BB7-338E-BBDE-8B135D929194', 'x86_64: D5381DA9-529C-3588-BE16-A2245DE93423' ]
 platform:        macosx
 install-name:    /usr/lib/system/libsystem_networkextension.dylib
 objc-constraint: none
@@ -10,13 +10,14 @@ exports:
     symbols:         [ _NEHelperCacheAddRedirectedAddress, _NEHelperCacheClearRedirectedAddresses, 
                        _NEHelperCacheCopyAppUUIDMapping, _NEHelperCacheCopySigningIdentifierMapping, 
                        _NEHelperCacheSetDomainDictionaries, _NEHelperCacheSetRoutes, 
-                       _NEHelperCopyAggregatePathRules, _NEHelperCopyResponse, _NEHelperGetIKESocket, 
-                       _NEHelperGetKernelControlSocket, _NEHelperGetPFKeySocket, 
-                       _NEHelperInterfaceRemoveAddress, _NEHelperInterfaceSetAddress, 
-                       _NEHelperInterfaceSetMTU, _NEHelperInterfaceSetOption, _NEHelperSendRequest, 
-                       _NEHelperSettingsSetArray, _NEHelperSettingsSetBool, _NEHelperSettingsSetNumber, 
-                       ___nelog_debug_c, ___nelog_err_c, ___nelog_info_c, ___nelog_notice_c, 
-                       _ne_options_set_debug_logging, _ne_session_address_matches_subnets, 
+                       _NEHelperCopyAggregatePathRules, _NEHelperCopyPerAppDomains, 
+                       _NEHelperCopyResponse, _NEHelperGetIKESocket, _NEHelperGetKernelControlSocket, 
+                       _NEHelperGetPFKeySocket, _NEHelperInterfaceRemoveAddress, 
+                       _NEHelperInterfaceSetAddress, _NEHelperInterfaceSetMTU, _NEHelperInterfaceSetOption, 
+                       _NEHelperSendRequest, _NEHelperSettingsSetArray, _NEHelperSettingsSetBool, 
+                       _NEHelperSettingsSetNumber, ___nelog_debug_c, ___nelog_err_c, 
+                       ___nelog_info_c, ___nelog_notice_c, _ne_options_set_debug_logging, 
+                       _ne_session_address_matches_subnets, _ne_session_agent_get_advisory, 
                        _ne_session_agent_get_advisory_interface_index, _ne_session_always_on_vpn_configs_present, 
                        _ne_session_app_vpn_configs_present, _ne_session_cancel, _ne_session_copy_app_data_from_flow_divert_socket, 
                        _ne_session_copy_app_data_from_flow_divert_token, _ne_session_copy_policy_match, 

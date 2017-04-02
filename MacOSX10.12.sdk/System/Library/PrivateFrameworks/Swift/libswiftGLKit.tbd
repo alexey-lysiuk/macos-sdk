@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D5764EE6-C9DE-388D-94ED-7EC4699EAAE5' ]
+uuids:           [ 'x86_64: 0E7EDD50-BB01-3E9A-9A11-E3A95924EEB2' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Swift/libswiftGLKit.dylib
 current-version: 800.8.18

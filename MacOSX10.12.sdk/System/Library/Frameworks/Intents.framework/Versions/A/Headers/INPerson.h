@@ -14,7 +14,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-API_AVAILABLE(macosx(10.12), ios(10.0))
+API_AVAILABLE(macosx(10.12), ios(10.0), watchos(3.2))
 @interface INPerson : NSObject <NSCopying, NSSecureCoding>
 
 - (instancetype)init NS_UNAVAILABLE;

@@ -1,0 +1,14 @@
+--- !tapi-tbd-v2
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 2F9CAFBF-9237-3AD8-AAC5-29ABC91F2B26' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/DistributedEvaluation.framework/Versions/A/DistributedEvaluation
+current-version: 0
+objc-constraint: none
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _DESAggregatorLogEvaluation, _DESAggregatorLogRecording, _DESDiagnosticsSubmissionAllowed, 
+                       _DESGetDeviceType, _DESIsInternalInstall, _DESServiceGetXPCInterface, 
+                       _kDESDistributedEvaluationErrorDomain ]
+    objc-classes:    [ _DESJSONPredicate, _DESRecordStore ]
+...

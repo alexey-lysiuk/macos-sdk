@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 75203387-8F81-30FF-B477-5334772191EF' ]
+uuids:           [ 'x86_64: 31432BE7-5A53-3540-95F5-A3296F5AEE00' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CalendarPersistence.framework/Versions/A/CalendarPersistence
-current-version: 429.6
+current-version: 429.11
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -174,7 +174,8 @@ exports:
                        _CalPrincipalDelegateKey, _CalPrincipalExpandPropertyReportSupportKey, 
                        _CalPrincipalFullNameKey, _CalPrincipalInboxAvailabilitySupportKey, 
                        _CalPrincipalIsInSeparateWindowKey, _CalPrincipalIsManuallyConfiguredKey, 
-                       _CalPrincipalKeepOfflineKey, _CalPrincipalKerberosKey, _CalPrincipalLikenessPropagationSupportKey, 
+                       _CalPrincipalJunkReportingSupportKey, _CalPrincipalKeepOfflineKey, 
+                       _CalPrincipalKerberosKey, _CalPrincipalLikenessPropagationSupportKey, 
                        _CalPrincipalLoginKey, _CalPrincipalMainPrincipalKey, _CalPrincipalManagedAttachmentSupportedKey, 
                        _CalPrincipalOverrideBaseURLKey, _CalPrincipalPrivateCommentsSupportKey, 
                        _CalPrincipalPushDisabledKey, _CalPrincipalRefreshDateKey, 
@@ -389,13 +390,13 @@ exports:
                        _CalDAVDownloadDropBoxFileQueueableOperation, _CalDAVETagCache, 
                        _CalDAVEntityQueueableOperation, _CalDAVExpandGroupOperation, 
                        _CalDAVExpandGroupQueueableOperation, _CalDAVFreeBusyCache, 
-                       _CalDAVFreeBusyResponseReader, _CalDAVKerberosHelper, _CalDAVKerberosPrincipals, 
-                       _CalDAVLookupFreeBusyOperation, _CalDAVMigrateToServerQueueableOperation, 
-                       _CalDAVMoveEntityQueueableOperation, _CalDAVNotificationContainerSyncTaskGroupWrapper, 
-                       _CalDAVNotificationHandler, _CalDAVOccurrenceChange, _CalDAVOfficeHour, 
-                       _CalDAVOperationQueue, _CalDAVPersistentQueueableOperation, 
-                       _CalDAVPrincipalPropertySearchOperation, _CalDAVPrincipalResult, 
-                       _CalDAVQueueableOperation, _CalDAVQueueableOperationRunLoopPumper, 
+                       _CalDAVFreeBusyResponseReader, _CalDAVJunkReportQueueableOperation, 
+                       _CalDAVKerberosHelper, _CalDAVKerberosPrincipals, _CalDAVLookupFreeBusyOperation, 
+                       _CalDAVMigrateToServerQueueableOperation, _CalDAVMoveEntityQueueableOperation, 
+                       _CalDAVNotificationContainerSyncTaskGroupWrapper, _CalDAVNotificationHandler, 
+                       _CalDAVOccurrenceChange, _CalDAVOfficeHour, _CalDAVOperationQueue, 
+                       _CalDAVPersistentQueueableOperation, _CalDAVPrincipalPropertySearchOperation, 
+                       _CalDAVPrincipalResult, _CalDAVQueueableOperation, _CalDAVQueueableOperationRunLoopPumper, 
                        _CalDAVRefreshDelegateListQueueableOperation, _CalDAVRemoveCalendarQueueableOperation, 
                        _CalDAVRemovePropertyQueueableOperation, _CalDAVResource, 
                        _CalDAVRetrieveSharedCalendarShareesTaskGroupTaskGroupWrapper, 
@@ -453,9 +454,9 @@ exports:
                        _CalManagedNode, _CalManagedObject, _CalManagedObjectContext, 
                        _CalManagedObjectModel, _CalManagedPersistentOperation, _CalManagedPrincipal, 
                        _CalManagedPublication, _CalManagedPublicationError, _CalManagedRecurrenceException, 
-                       _CalManagedRecurrenceSet, _CalManagedRemoteCalendar, _CalManagedScheduleChangeRequest, 
-                       _CalManagedSearchProperty, _CalManagedSetDropBoxAclChangeRequest, 
-                       _CalManagedSharedCalendarInvitationResponseChangeRequest, 
+                       _CalManagedRecurrenceSet, _CalManagedRemoteCalendar, _CalManagedReportJunkInvitationChangeRequest, 
+                       _CalManagedScheduleChangeRequest, _CalManagedSearchProperty, 
+                       _CalManagedSetDropBoxAclChangeRequest, _CalManagedSharedCalendarInvitationResponseChangeRequest, 
                        _CalManagedSharee, _CalManagedShareeChangeRequest, _CalManagedSource, 
                        _CalManagedStore, _CalManagedSubscriptionCalendar, _CalManagedSubscriptionCalendarChangeRequest, 
                        _CalManagedSubscriptionError, _CalManagedSubscriptionGroup, 

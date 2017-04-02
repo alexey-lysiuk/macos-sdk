@@ -162,6 +162,17 @@ SK_EXPORT @interface SKNode : NSResponder <NSCopying, NSCoding>
  */
 @property (nonatomic, copy, nullable) NSArray<SKConstraint*> *constraints;
 
+
+/**
+ Optional dictionary of SKAttributeValues
+ Attributes can be used with custom SKShaders.
+ DEPRECATED: Attributes are only available for node classes supporting SKShader (see SKSpriteNode etc.).
+ */
+@property (nonatomic, nonnull, copy) NSDictionary<NSString *, SKAttributeValue *> *attributeValues NS_DEPRECATED(10_12, 10_12, 10_0, 10_0);
+
+- (nullable SKAttributeValue*)valueForAttributeNamed:(nonnull NSString *)key NS_DEPRECATED(10_12, 10_12, 10_0, 10_0);
+- (void)setValue:(SKAttributeValue*)value forAttributeNamed:(nonnull NSString *)key NS_SWIFT_NAME(setValue(_:forAttribute:)) NS_DEPRECATED(10_12, 10_12, 10_0, 10_0);
+
 /**
  Sets both the x & y scale
  

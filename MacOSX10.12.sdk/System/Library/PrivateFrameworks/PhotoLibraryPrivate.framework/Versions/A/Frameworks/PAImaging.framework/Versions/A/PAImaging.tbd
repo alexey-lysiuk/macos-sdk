@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FD51BBC0-AA66-3070-931A-FBA326D656BE' ]
+uuids:           [ 'x86_64: 9F7824D1-4C17-3CA2-A3C9-28DF1A543EA4' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoLibraryPrivate.framework/Versions/A/Frameworks/PAImaging.framework/Versions/A/PAImaging
-current-version: 3130.0.240
+current-version: 3150.4.120
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -13,9 +13,8 @@ exports:
                        _PAImageItemViewDidChangeDisplayNotification, _PAImageItemViewOldBackingScaleFactorUserInfoKey, 
                        _PAImagingVersionNumber, _PAImagingVersionString, _PAImplicitAnimationEnabled, 
                        _PALayerTraceBuffer, _PAMaskSupplier_getScaledPixels, _gAutoCalcTrace, 
-                       _gDebugFileNumber, _gPARenderPipelineProcessedImageQueue, 
-                       _g_extensions, _g_sharedPAGLUtilities, _g_sharedShaderSupport, 
-                       _g_supportsARBFragmentProgram, _kFaceTileCompressionQuality, 
+                       _gDebugFileNumber, _g_extensions, _g_sharedPAGLUtilities, 
+                       _g_sharedShaderSupport, _g_supportsARBFragmentProgram, _kFaceTileCompressionQuality, 
                        _kFullSizePreviewCompressionQuality, _kIPADebugAnimationAssertLayerDrawCount, 
                        _kIPADebugAnimationDumpLayerTree, _kIPADebugAnimationHideBackgroundLayer, 
                        _kIPADebugAnimationHideDestinationLayer, _kIPADebugAnimationHideSourceLayer, 
@@ -177,11 +176,12 @@ exports:
                        _RD_DGiPhotoRedEyeOperation_Modernizer, _RD_Photos_AdjustmentMigrator, 
                        _RD_PreAperture3_AdjustmentModernizer, _RD_PreAperture3_DGUpgradeableOperation_Modernizer, 
                        _RKDeferredMaskCIProvider, _RKImaging, _V10Phase1State, _V10RepairResult, 
-                       __PAAutoAccessTiledImage, __PABrushMaskAdjustmentFilter, __PACachedEditSession, 
-                       __PAHistogramKey, __PAHotColdAdjustmentFilter, __PAImageUpdate, 
-                       __PAImageUpdateQueue, __PAJobPriorityQueue, __PALowPriorityCPUDevice, 
-                       __PALowPriorityOpenGLDevice, __PAMaskCacheItem, __PAMutableDuplicateEditSession, 
-                       __PATextureTiledImageTile, __PAVersionRenderSession ]
+                       __IPAStreamingVideoPlaybackSettings, __PAAutoAccessTiledImage, 
+                       __PABrushMaskAdjustmentFilter, __PACachedEditSession, __PAHistogramKey, 
+                       __PAHotColdAdjustmentFilter, __PAImageUpdate, __PAImageUpdateQueue, 
+                       __PAJobPriorityQueue, __PALowPriorityCPUDevice, __PALowPriorityOpenGLDevice, 
+                       __PAMaskCacheItem, __PAMutableDuplicateEditSession, __PATextureTiledImageTile, 
+                       __PAVersionRenderSession ]
     objc-ivars:      [ _PAAssetClientSampler._ROI, _PAAssetClientSampler._assetClient, 
                        _PAAssetClientSampler._scale, _PAAutoCalculatorImageRequestBase._imageType, 
                        _PAAutoCalculatorImageRequestBase._version, _PABarrier._count, 

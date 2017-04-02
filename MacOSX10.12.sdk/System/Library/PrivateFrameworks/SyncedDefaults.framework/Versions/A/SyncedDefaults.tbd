@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 4752B150-2848-3244-BB87-F30A6C51B904', 'x86_64: 342B8E83-B4E5-3EB1-80DD-DB9345E7542F' ]
+uuids:           [ 'i386: 5A993378-A7C1-3FBC-922F-27E586E89EE4', 'x86_64: 11A7912C-E1C2-3DED-9434-AC7A13F96925' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SyncedDefaults.framework/Versions/A/SyncedDefaults
 objc-constraint: none
@@ -9,7 +9,7 @@ exports:
     objc-classes:    [ _SYDClient, _SYDJournal ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ _LoggingSubsystem, _SYDGetDefaultLog, _SYDGetSchedulerLog, 
-                       _SYDRemotePreferencesSourceConfigurationDidChangeNotification, 
+                       _SYDGetTraceLog, _SYDRemotePreferencesSourceConfigurationDidChangeNotification, 
                        _SYDRemotePreferencesSourceDidChangeNotification ]
     objc-classes:    [ _SYDRemotePreferencesSource ]
 ...

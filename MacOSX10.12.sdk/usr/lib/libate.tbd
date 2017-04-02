@@ -1,7 +1,7 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64, x86_64h ]
-uuids:           [ 'i386: 86322086-1A56-3DA1-91C3-6C0635C5D156', 'x86_64: DD046A96-07D9-3066-8BD6-D0E27FE9E1D3', 
-                   'x86_64h: 8A963F37-CB4F-37FB-BFA5-273917C42437' ]
+uuids:           [ 'i386: A27B078E-9361-31FF-8471-F229596AEB30', 'x86_64: DB9881C3-E24A-3984-91E0-77F6F13F795C', 
+                   'x86_64h: D0767875-D02E-3377-84D8-5F174C27BEA9' ]
 platform:        macosx
 install-name:    /usr/lib/libate.dylib
 current-version: 1.12.13

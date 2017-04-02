@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6167A2A1-B9DD-3D87-85D9-E0EE25539452' ]
+uuids:           [ 'x86_64: CC034A4C-2CE8-34EE-A9D8-D1C7F02A4D28' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoLibraryPrivate.framework/Versions/A/Frameworks/Mondrian.framework/Versions/A/Mondrian
-current-version: 3130.0.240
+current-version: 3150.4.120
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -42,7 +42,6 @@ exports:
                        _MORectWithAspectRatioCenteredInsideRect, _MOUIProgressBarCommonInit, 
                        _MOUTTypeExtensionForUTI, _MOUTTypePreferredIdentifier, _NSStringFromMOGridLocation, 
                        _NSStringFromMOGridRect, _NSStringFromMOGridSize, _SFMainScreenSizeWithScaleFactor, 
-                       _UXCollectionViewElementKindCell, _UXCollectionViewElementKindDecorationView, 
                        _defaultCGImageSourceOptions, _gASLLogLevel, _gMOTracingEnabled, 
                        _gMOTracingFullEnabled, _gMonitoringLoggingCategory, _kMOLayoutInfiniteDimension, 
                        _kMOLiveUpdateControllerDidExecuteUserActionsNotificationName, 

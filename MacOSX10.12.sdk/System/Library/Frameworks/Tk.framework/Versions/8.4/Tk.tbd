@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386 ]
-uuids:           [ 'i386: 54C8D800-26C7-384E-976E-C417CA33F6D4' ]
+uuids:           [ 'i386: 52E87E45-944F-31A5-8245-CB0DBDA472D6' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Tk.framework/Versions/8.4/Tk
 current-version: 8.4.19
@@ -261,9 +261,10 @@ exports:
                        _XSetWindowBorderPixmap, _XSetWindowBorderWidth, _XSetWindowColormap, 
                        _XStringListToTextProperty, _XStringToKeysym, _XSync, _XUngrabKeyboard, 
                        _XUngrabPointer, _XUnmapWindow, _XWarpPointer, __XInitImageFuncPtrs, 
-                       _tkAppleMenu, _tkArcType, _tkBTreeDebug, _tkBezierSmoothMethod, 
-                       _tkBitmapImageType, _tkBitmapObjType, _tkBitmapType, _tkBorderObjType, 
-                       _tkColorObjType, _tkCurrentAppleMenu, _tkCursorObjType, _tkDefButtonBorderWidth, 
+                       _mt_log_BSDServices_ScriptingLanguageUse, _pswhitelist, _tkAppleMenu, 
+                       _tkArcType, _tkBTreeDebug, _tkBezierSmoothMethod, _tkBitmapImageType, 
+                       _tkBitmapObjType, _tkBitmapType, _tkBorderObjType, _tkColorObjType, 
+                       _tkCurrentAppleMenu, _tkCursorObjType, _tkDefButtonBorderWidth, 
                        _tkEditMenu, _tkFileMenu, _tkFontObjType, _tkImageType, _tkImgFmtGIF, 
                        _tkImgFmtPPM, _tkIntPlatStubs, _tkIntPlatStubsPtr, _tkIntStubs, 
                        _tkIntStubsPtr, _tkIntXlibStubs, _tkIntXlibStubsPtr, _tkLineType, 

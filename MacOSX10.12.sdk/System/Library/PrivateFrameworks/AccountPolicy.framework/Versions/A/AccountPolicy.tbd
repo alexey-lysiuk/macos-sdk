@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4E6D420C-6E9F-315D-8F7E-464B39F7F26E' ]
+uuids:           [ 'x86_64: 8987906A-D587-3AA3-9B3D-8EDF32848918' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AccountPolicy.framework/Versions/A/AccountPolicy
 objc-constraint: none

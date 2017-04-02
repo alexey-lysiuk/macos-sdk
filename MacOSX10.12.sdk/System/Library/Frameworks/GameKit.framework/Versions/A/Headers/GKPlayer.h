@@ -2,7 +2,7 @@
 //  GKPlayer.h
 //  Game Center
 //
-//  Copyright 2010-2016 Apple Inc. All rights reserved.
+//  Copyright 2010-2017 Apple Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

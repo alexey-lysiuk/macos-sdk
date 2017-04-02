@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A2E14A5F-DBBE-3172-96E0-1E346C6C4471' ]
+uuids:           [ 'x86_64: 17437498-CB1A-303C-BDF2-E92E47ADEB19' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SystemUIPlugin.framework/Versions/A/SystemUIPlugin
-current-version: 2.0
+current-version: 2
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 287130E0-4767-3B34-8CC9-2010A98A65F0' ]
+uuids:           [ 'x86_64: 0E39ACB5-8BA5-3010-BA93-45974E2AB89F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Versions/A/Frameworks/PhotosGraph.framework/Versions/A/Frameworks/MediaMiningKit.framework/Versions/A/MediaMiningKit
 objc-constraint: none
@@ -159,7 +159,9 @@ exports:
                        _CLS_AGGREGATE_KEY_GraphWeekendsCount, _CLS_AGGREGATE_KEY_LibraryAssetsCount, 
                        _CLS_AGGREGATE_KEY_LibraryAssetsFaceCount, _CLS_AGGREGATE_KEY_LibraryAssetsFavoritesCount, 
                        _CLS_AGGREGATE_KEY_LibraryAssetsLocationCount, _CLS_AGGREGATE_KEY_LibraryAssetsSceneCount, 
-                       _CLS_AGGREGATE_KEY_LibraryJunkPhotosCount, _CLS_AGGREGATE_KEY_LibraryScreenShotsCount, 
+                       _CLS_AGGREGATE_KEY_LibraryJunkPhotosCount, _CLS_AGGREGATE_KEY_LibraryNumberOfBetterAssets, 
+                       _CLS_AGGREGATE_KEY_LibraryNumberOfDefaultAssets, _CLS_AGGREGATE_KEY_LibraryNumberOfImprovedAssets, 
+                       _CLS_AGGREGATE_KEY_LibraryNumberOfUtilityAssets, _CLS_AGGREGATE_KEY_LibraryScreenShotsCount, 
                        _CLS_AGGREGATE_KEY_LibraryVideosCount, _CLS_AGGREGATE_KEY_LivePhotosCount, 
                        _CLS_AGGREGATE_KEY_MemoriesFeed_AreaOfInterestMemoriesCount, 
                        _CLS_AGGREGATE_KEY_MemoriesFeed_BestOfPastMemoriesCount, _CLS_AGGREGATE_KEY_MemoriesFeed_BreakOutOfRoutineMemoriesCount, 
@@ -173,9 +175,10 @@ exports:
                        _CLS_AGGREGATE_KEY_MemoriesFeed_NewContextualMemoriesCount, 
                        _CLS_AGGREGATE_KEY_MemoriesFeed_NewFavoritedMemoriesCount, 
                        _CLS_AGGREGATE_KEY_MemoriesFeed_NewMemoriesCount, _CLS_AGGREGATE_KEY_MemoriesFeed_NewPendingMemoriesCount, 
+                       _CLS_AGGREGATE_KEY_MemoriesFeed_NumberOfDaysSinceLastMemoryWasCreated, 
                        _CLS_AGGREGATE_KEY_MemoriesFeed_PersonBirthdayMemoriesCount, 
                        _CLS_AGGREGATE_KEY_MemoriesFeed_PersonMemoriesCount, _CLS_AGGREGATE_KEY_MemoriesFeed_PullRefreshCount, 
-                       _CLS_AGGREGATE_KEY_MemoriesFeed_RecentEventCalendarMemoriesCount, 
+                       _CLS_AGGREGATE_KEY_MemoriesFeed_RandomMemoriesCount, _CLS_AGGREGATE_KEY_MemoriesFeed_RecentEventCalendarMemoriesCount, 
                        _CLS_AGGREGATE_KEY_MemoriesFeed_RecentEventCrowdMemoriesCount, 
                        _CLS_AGGREGATE_KEY_MemoriesFeed_RecentEventHolidayMemoriesCount, 
                        _CLS_AGGREGATE_KEY_MemoriesFeed_RecentEventMemoriesCount, 
@@ -190,8 +193,8 @@ exports:
                        _CLS_AGGREGATE_KEY_MemoriesFeed_SometimeMemoriesCount, _CLS_AGGREGATE_KEY_MemoriesFeed_SpecialMemoriesCount, 
                        _CLS_AGGREGATE_KEY_MemoriesFeed_TabVisitedCount, _CLS_AGGREGATE_KEY_MemoriesFeed_TimeSpentInSecondCount, 
                        _CLS_AGGREGATE_KEY_MemoriesFeed_TotalFavoritedMemoriesCount, 
-                       _CLS_AGGREGATE_KEY_MemoriesFeed_TotalMemoriesCount, _CLS_AGGREGATE_KEY_MemoriesFeed_TripMemoriesCount, 
-                       _CLS_AGGREGATE_KEY_MemoriesFeed_UpcomingEventCalendarMemoriesCount, 
+                       _CLS_AGGREGATE_KEY_MemoriesFeed_TotalMemoriesCount, _CLS_AGGREGATE_KEY_MemoriesFeed_TriggeredMemoriesCount, 
+                       _CLS_AGGREGATE_KEY_MemoriesFeed_TripMemoriesCount, _CLS_AGGREGATE_KEY_MemoriesFeed_UpcomingEventCalendarMemoriesCount, 
                        _CLS_AGGREGATE_KEY_MemoriesFeed_UpcomingEventHolidayMemoriesCount, 
                        _CLS_AGGREGATE_KEY_MemoriesFeed_UpcomingEventPeopleMemoriesCount, 
                        _CLS_AGGREGATE_KEY_MemoriesFeed_ViewedMemoriesCount, _CLS_AGGREGATE_KEY_MemoriesFeed_WeekInHistoryMemoriesCount, 

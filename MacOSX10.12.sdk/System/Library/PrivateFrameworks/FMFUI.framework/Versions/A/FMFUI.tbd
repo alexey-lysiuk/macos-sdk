@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 316E6614-BFB3-39DD-BAFD-9C24FDEE80BF' ]
+uuids:           [ 'x86_64: F9AB0648-F84F-30FD-9556-9E041D626866' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/FMFUI.framework/Versions/A/FMFUI
 objc-constraint: none

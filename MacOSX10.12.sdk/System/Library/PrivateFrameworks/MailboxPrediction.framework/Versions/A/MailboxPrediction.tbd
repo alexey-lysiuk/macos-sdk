@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CA19A2C0-FC05-3423-A6CA-673743350857' ]
+uuids:           [ 'x86_64: 098F679A-F1AF-31FB-96D6-96373975E72C' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MailboxPrediction.framework/Versions/A/MailboxPrediction
 objc-constraint: none

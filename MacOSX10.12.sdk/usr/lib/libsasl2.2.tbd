@@ -1,10 +1,10 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: BFEF115C-D79A-36B9-93D1-EF8F40CDB882', 'x86_64: 5A177BA8-362D-32DA-8D14-69AB191648B3' ]
+uuids:           [ 'i386: BE2B3C33-839F-3F67-8045-CC9CFA718D87', 'x86_64: 9FE52111-B265-3A1A-A5B1-C7A3F8095ED2' ]
 platform:        macosx
 install-name:    /usr/lib/libsasl2.2.dylib
 current-version: 3.15
-compatibility-version: 3.0
+compatibility-version: 3
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]

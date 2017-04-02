@@ -31,28 +31,28 @@
 .Os "Mac OS X"
 .Sh NAME
 .Nm SmartCardServices-legacy
-.Nd overview of legacy smart card support
+.Nd overview of legacy SmartCard support
 .Sh DESCRIPTION
 .Nm
-is a set of components which add native support for smart cards to OS X based on Tokend modules. Since OS X 10.12, there is  smartcard support which is described in 
+is a set of components which add native support for SmartCards to OS X based on Tokend modules. Since OS X 10.12, there is  SmartCard support which is described in 
 .Xr SmartCardServices 7
 .Pp
-Supported smart cards appear as separate keychains.  A Tokend module for each smart card
+Supported SmartCards appear as separate keychains.  A Tokend module for each SmartCard
 you wish to use must be installed in
 .Pa /Library/Security/tokend
 .Sh USB SMART CARD READER DRIVERS
-OS X has built-in support for USB CCID class-compliant smart card readers.
+OS X has built-in support for USB CCID class-compliant SmartCard readers.
 For other readers, install the reader driver in
 .Pa /usr/local/libexec/SmartCardServices/drivers .
 Each driver is a bundle.  The bundle contains an XML file Info.plist which contains
 the device's USB vendor ID and product ID.  For detailed description of the plist format
 and how to write a reader driver, see http://pcsclite.alioth.debian.org/api/group__IFDHandler.html
 .Sh SMART CARD APDU LOGGING
-It is possible to turn on logging for smart cards by setting the global preference:
+It is possible to turn on logging for SmartCards by setting the global preference:
 .Pp
 .Li "sudo defaults write /Library/Preferences/com.apple.security.smartcard Logging -bool yes"
 .Pp
-After a smart card reader is connected (or after reboot) all operations including contents
+After a SmartCard reader is connected (or after reboot) all operations including contents
 of sent and received APDU messages are then logged into the system log.  Logging uses the facility
 com.apple.security.smartcard.log
 so it is possible to set up filtering of these logs into custom targets (see

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: BF04366C-A7BD-3F20-A683-B9D6A0AB6FED', 'x86_64: 258B6CFE-FD64-31C5-9973-2FD80597ECDA' ]
+uuids:           [ 'i386: BC3DEAAA-3D25-36FA-8D34-F9F73AD8D738', 'x86_64: A509BF55-7829-3633-A500-EF0B4E21F46B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DFRFoundation.framework/Versions/A/DFRFoundation
-current-version: 104.14
+current-version: 104.25
 objc-constraint: none
 exports:         
   - archs:           [ i386 ]
@@ -25,14 +25,14 @@ exports:
                        _DFRElementSetPreferredSize, _DFRElementSetPreferredSizeWithAttrs, 
                        _DFREnableSystemAppModal, _DFREnableTestMode, _DFRFoundationCreateCGEventWithHIDEvent, 
                        _DFRFoundationCreateHIDEventWithMouseActivity, _DFRFoundationPostEventWithMouseActivity, 
-                       _DFRFoundationPostHIDKeyboardUsage, _DFRFoundationUserDeviceHandshake, 
-                       _DFRFoundationVersionNumber, _DFRFoundationVersionString, 
-                       _DFRGetScreenRectForPlacement, _DFRGetScreenSize, _DFRGetStatus, 
-                       _DFRLoadSystemExtras, _DFRPresentationModeGetApp, _DFRPresentationModeGetAppOverrides, 
-                       _DFRPresentationModeGetDefault, _DFRPresentationModeGetFNBehavior, 
-                       _DFRPresentationModeSetApp, _DFRPresentationModeSetAppOverrides, 
-                       _DFRPresentationModeSetDefault, _DFRPresentationModeSetFNBehavior, 
-                       _DFRProtocolActive, _DFRProtocolAnimationBezelBrightness, 
+                       _DFRFoundationPostHIDKeyboardUsage, _DFRFoundationPostHIDUsage, 
+                       _DFRFoundationUserDeviceHandshake, _DFRFoundationVersionNumber, 
+                       _DFRFoundationVersionString, _DFRGetScreenRectForPlacement, 
+                       _DFRGetScreenSize, _DFRGetStatus, _DFRLoadSystemExtras, _DFRPresentationModeGetApp, 
+                       _DFRPresentationModeGetAppOverrides, _DFRPresentationModeGetDefault, 
+                       _DFRPresentationModeGetFNBehavior, _DFRPresentationModeSetApp, 
+                       _DFRPresentationModeSetAppOverrides, _DFRPresentationModeSetDefault, 
+                       _DFRPresentationModeSetFNBehavior, _DFRProtocolActive, _DFRProtocolAnimationBezelBrightness, 
                        _DFRProtocolAnimationColorTemperature, _DFRProtocolAnimationDuration, 
                        _DFRProtocolAnimationFence, _DFRProtocolAnimationGlyphBrightness, 
                        _DFRProtocolAnimationTimingFunction, _DFRProtocolButtonAltImage, 
@@ -58,9 +58,9 @@ exports:
                        _DFRSystemEventKeyTimestamp, _DFRSystemEventKeyTouchIndex, 
                        _DFRSystemEventKeyTouchPoint, _DFRSystemEventKeyType, _DFRSystemExtraMain, 
                        _DFRSystemModalShowsCloseBoxWhenFrontMost, _DFRUpdateAccessibilityCursor, 
-                       _DFRUserDeviceProtocolHIDReportFn, _DFRUserDeviceProtocolHIDReportUsage, 
-                       _DFRUserDeviceProtocolKey, _DFRUserDeviceProtocolService, 
-                       __DFRConnectionReconnect, __DFRFoundationPostEventWithMouseActivity, 
+                       _DFRUserDeviceProtocolHIDReportDuration, _DFRUserDeviceProtocolHIDReportUsage, 
+                       _DFRUserDeviceProtocolHIDReportUsagePage, _DFRUserDeviceProtocolKey, 
+                       _DFRUserDeviceProtocolService, __DFRConnectionReconnect, __DFRFoundationPostEventWithMouseActivity, 
                        __DFRFoundationRegisterUIServer, __DFRFoundationUserDeviceDebugEndpoint, 
                        __DFRGetTouchBarAgentPID, __DFRPresentationModeDefaultFNMode, 
                        __DFRPresentationModeFNBehaviors, __DFRPresentationModeFromKey, 

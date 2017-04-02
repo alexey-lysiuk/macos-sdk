@@ -100,7 +100,7 @@ extern
 #endif	/* mig_external */
 kern_return_t task_threads
 (
-	task_t target_task,
+	task_inspect_t target_task,
 	thread_act_array_t *act_list,
 	mach_msg_type_number_t *act_listCnt
 );
@@ -201,7 +201,7 @@ __WATCHOS_PROHIBITED
 __TVOS_PROHIBITED
 kern_return_t task_get_special_port
 (
-	task_t task,
+	task_inspect_t task,
 	int which_port,
 	mach_port_t *special_port
 );
@@ -279,7 +279,7 @@ __WATCHOS_PROHIBITED
 __TVOS_PROHIBITED
 kern_return_t task_get_exception_ports
 (
-	task_t task,
+	task_inspect_t task,
 	exception_mask_t exception_mask,
 	exception_mask_array_t masks,
 	mach_msg_type_number_t *masksCnt,
@@ -739,7 +739,7 @@ extern
 #endif	/* mig_external */
 kern_return_t task_get_dyld_image_infos
 (
-	task_t task,
+	task_inspect_t task,
 	dyld_kernel_image_info_array_t *dyld_images,
 	mach_msg_type_number_t *dyld_imagesCnt
 );

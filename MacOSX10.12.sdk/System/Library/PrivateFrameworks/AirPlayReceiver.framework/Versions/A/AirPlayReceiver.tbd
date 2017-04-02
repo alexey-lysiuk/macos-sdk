@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FB13D618-C73C-3FA2-9F16-2B4772DCB2C5' ]
+uuids:           [ 'x86_64: 8888FC50-F5AE-3AAF-B7B0-AB4E2A06AF3B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AirPlayReceiver.framework/Versions/A/AirPlayReceiver
 objc-constraint: none
@@ -76,14 +76,14 @@ exports:
                        _kAPAdvertiserInfoProperty_GroupRole, _kAPAdvertiserInfoProperty_MetadataTypes, 
                        _kAPAdvertiserInfoProperty_PINRequired, _kAPAdvertiserInfoProperty_PasswordRequired, 
                        _kAPAdvertiserInfoProperty_ProtocolVersion, _kAPAdvertiserInfoProperty_PublicHomeKitPairingIdentity, 
-                       _kAPAdvertiserInfoProperty_PublicKey, _kAPAdvertiserInfoProperty_RFC2617DigestAuthSupported, 
-                       _kAPAdvertiserInfoProperty_SystemFlags, _kAPAdvertiserInfoProperty_TransportTypes, 
-                       _kAPAdvertiserProperty_AdvertiserInfo, _kAPAdvertiserProperty_AlwaysAdvertiseInfraAssistedP2P, 
-                       _kAPAdvertiserProperty_EnforceSolo, _kAPAdvertiserProperty_InterfaceIndex, 
-                       _kAPAdvertiserProperty_ListeningPort, _kAPMusicPrimarySpeakerSessionNotification_SessionEnded, 
-                       _kAPMusicPrimarySpeakerSessionPropery_GroupID, _kAPMusicPrimarySpeakerStateKey_EngineState, 
-                       _kAPMusicPrimarySpeakerStateKey_EngineType, _kAPMusicPrimarySpeakerStateKey_SecondarySuccessionList, 
-                       _kAPMusicSecondarySpeakerSessionNotification_PrimaryConnectionContextChanged, 
+                       _kAPAdvertiserInfoProperty_PublicKey, _kAPAdvertiserInfoProperty_PublicSystemPairingIdentity, 
+                       _kAPAdvertiserInfoProperty_RFC2617DigestAuthSupported, _kAPAdvertiserInfoProperty_SystemFlags, 
+                       _kAPAdvertiserInfoProperty_TransportTypes, _kAPAdvertiserProperty_AdvertiserInfo, 
+                       _kAPAdvertiserProperty_AlwaysAdvertiseInfraAssistedP2P, _kAPAdvertiserProperty_EnforceSolo, 
+                       _kAPAdvertiserProperty_InterfaceIndex, _kAPAdvertiserProperty_ListeningPort, 
+                       _kAPMusicPrimarySpeakerSessionNotification_SessionEnded, _kAPMusicPrimarySpeakerSessionPropery_GroupID, 
+                       _kAPMusicPrimarySpeakerStateKey_EngineState, _kAPMusicPrimarySpeakerStateKey_EngineType, 
+                       _kAPMusicPrimarySpeakerStateKey_SecondarySuccessionList, _kAPMusicSecondarySpeakerSessionNotification_PrimaryConnectionContextChanged, 
                        _kAPMusicSecondarySpeakerSessionNotification_PrimaryMigrationRequested, 
                        _kAPMusicSecondarySpeakerSessionNotification_SessionEnded, 
                        _kAPMusicSecondarySpeakerSessionProperty_GroupID, _kAPMusicSecondarySpeakerSessionProperty_PrimaryConnectionContext, 

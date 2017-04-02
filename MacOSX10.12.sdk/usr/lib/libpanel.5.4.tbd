@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 65F188EC-65AE-3CED-AD20-EBE1B4CA1416', 'x86_64: 2C513667-8E22-3E51-8FC8-EE3BF5218E53' ]
+uuids:           [ 'i386: 53530655-1032-31F1-BEBB-24F3C01F21DC', 'x86_64: 60A7AAE6-2A80-3FDC-B910-A49259C3C322' ]
 platform:        macosx
 install-name:    /usr/lib/libpanel.5.4.dylib
 current-version: 5.4

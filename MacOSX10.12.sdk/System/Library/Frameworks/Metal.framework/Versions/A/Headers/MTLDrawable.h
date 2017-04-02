@@ -9,6 +9,7 @@
 #import <Metal/MTLDefines.h>
 
 NS_ASSUME_NONNULL_BEGIN
+@protocol MTLDrawable;
 
 
 /*!

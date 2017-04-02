@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 83E91936-305D-32A4-A256-5582B96B1852' ]
+uuids:           [ 'x86_64: FC2165F9-FC93-39C0-8323-C2F43A5E00A3' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ChunkingLibrary.framework/Versions/A/ChunkingLibrary
-current-version: 172.0
+current-version: 173
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -41,5 +41,5 @@ exports:
                        _CKUnregisterTemporaryNChunk, _CKUnregisterTemporaryTChunk, 
                        _CKUpdateRegisteredFile, _CKValidateSignature, _kCKChunkListCacheXattrName, 
                        _kCKCustomFixedChunkFileTypeHint, _kCKFileSignatureCacheMinFileSize, 
-                       _kCKFileSignatureCacheXattrName ]
+                       _kCKFileSignatureCacheXattrName, _kCKItemChunkLength ]
 ...

@@ -1,36 +1,34 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C772852B-BACD-3218-A1F6-809B04F86713' ]
+uuids:           [ 'x86_64: 88BF7F77-1577-3C8F-B69C-DE56FB8CA7A2' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PassKitUI.framework/Versions/A/PassKitUI
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
-    symbols:         [ _PKAddressFormatCityKey, _PKAddressFormatCountryKey, _PKAddressFormatDistrictKey, 
-                       _PKAddressFormatPostalCodeKey, _PKAddressFormatStateKey, _PKAddressFormatStreetKey, 
-                       _PKAddressFormatsFormatKey, _PKDeviceHasClamshell, _PKDropPrivacySheet, 
-                       _PKEaseInOutFunction, _PKEaseInOutOverFunction, _PKFlyUpEastFunction, 
-                       _PKHardEaseOutFunction, _PKPaymentCardIneligibleReasonForEligibilityStatus, 
-                       _PKPaymentCardIneligibleReasonForRequirementsStatus, _PKSoftEaseOutFunction, 
-                       _PKStringByAppendingColon, _PKUIOpenWalletPref, _PassKitUIVersionNumber, 
-                       _PassKitUIVersionString, __CreateBitmapContext, __PKPaymentAuthorizationPreferenceViewWidth, 
-                       __PKPaymentPassThumbnailHeight, __PKPaymentPassThumbnailWidth, 
-                       __PKPreferenceViewCardAndTextMargin, __PKPreferenceViewHorizontalMargin, 
-                       __PKPreferenceViewPrimaryFirstBaselineMargin1, __PKPreferenceViewPrimaryFirstBaselineMargin2, 
-                       __PKPreferenceViewPrimaryLastBaselineMargin1, __PKPreferenceViewPrimaryLastBaselineMargin2, 
-                       __PKPreferenceViewPrimaryLastBaselineMargin3, __PKPreferenceViewPrimaryLastBaselineMargin4, 
-                       __PKPreferenceViewSecondaryFirstBaselineMargin1, __PKPreferenceViewSecondaryFirstBaselineMargin2, 
-                       __PKPreferenceViewSecondaryLastBaselineMargin1, __PKPreferenceViewSecondaryLastBaselineMargin2, 
-                       _b64_decode, _b64_decode2, _b64_encode, _b64_encode2, _b64_getErrorString, 
+    symbols:         [ _PKDeviceHasClamshell, _PKDropPrivacySheet, _PKEaseInOutFunction, 
+                       _PKEaseInOutOverFunction, _PKFlyUpEastFunction, _PKHardEaseOutFunction, 
+                       _PKPaymentCardIneligibleReasonForEligibilityStatus, _PKPaymentCardIneligibleReasonForRequirementsStatus, 
+                       _PKSoftEaseOutFunction, _PKStringByAppendingColon, _PKUIOpenWalletPref, 
+                       _PassKitUIVersionNumber, _PassKitUIVersionString, __CreateBitmapContext, 
+                       __PKPaymentAuthorizationPreferenceViewWidth, __PKPaymentPassThumbnailHeight, 
+                       __PKPaymentPassThumbnailWidth, __PKPreferenceViewCardAndTextMargin, 
+                       __PKPreferenceViewHorizontalMargin, __PKPreferenceViewPrimaryFirstBaselineMargin1, 
+                       __PKPreferenceViewPrimaryFirstBaselineMargin2, __PKPreferenceViewPrimaryLastBaselineMargin1, 
+                       __PKPreferenceViewPrimaryLastBaselineMargin2, __PKPreferenceViewPrimaryLastBaselineMargin3, 
+                       __PKPreferenceViewPrimaryLastBaselineMargin4, __PKPreferenceViewSecondaryFirstBaselineMargin1, 
+                       __PKPreferenceViewSecondaryFirstBaselineMargin2, __PKPreferenceViewSecondaryLastBaselineMargin1, 
+                       __PKPreferenceViewSecondaryLastBaselineMargin2, _b64_decode, 
+                       _b64_decode2, _b64_encode, _b64_encode2, _b64_getErrorString, 
                        _b64_getErrorStringLength, _isCurrentQueueMain, _kPaymentSheetErrorDisplaySeconds, 
                        _markMainQueue, _objectFromDictionary ]
-    objc-classes:    [ _OnlyIntegerValueFormatter, _PKAddressFormats, _PKBackFieldTableCellView, 
-                       _PKBackTableView, _PKBackgroundView, _PKButton, _PKButtonCell, 
-                       _PKCardInfoViewController, _PKCardsTableViewController, _PKChildWindow, 
-                       _PKChildWindowContentView, _PKContactAndShippingViewController, 
-                       _PKContactButton, _PKContactEditorViewController, _PKContactLabelMenuController, 
-                       _PKDatePicker, _PKFlippedClipView, _PKFooterBackgroundView, 
-                       _PKImageView, _PKLiftOffController, _PKPassBackView, _PKPassDocumentView, 
+    objc-classes:    [ _OnlyIntegerValueFormatter, _PKBackFieldTableCellView, _PKBackTableView, 
+                       _PKBackgroundView, _PKButton, _PKButtonCell, _PKCardInfoViewController, 
+                       _PKCardsTableViewController, _PKChildWindow, _PKChildWindowContentView, 
+                       _PKContactAndShippingViewController, _PKContactButton, _PKContactEditorViewController, 
+                       _PKContactLabelMenuController, _PKDatePicker, _PKFlippedClipView, 
+                       _PKFooterBackgroundView, _PKImageView, _PKLiftOffController, 
+                       _PKNonSmoothedTextField, _PKPassBackView, _PKPassDocumentView, 
                        _PKPassFieldView, _PKPassFrontView, _PKPassInfoTextField, 
                        _PKPassPageDotView, _PKPassPocketView, _PKPassPopover, _PKPassScrollView, 
                        _PKPassScroller, _PKPassService, _PKPassSheet, _PKPassTextField, 

@@ -1,10 +1,10 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: D18E14A6-5064-3CF6-9022-30B03E46E04B', 'x86_64: 42A562A2-284D-3252-9341-855E52E45A02' ]
+uuids:           [ 'i386: F91A2B0C-7410-3268-98AE-BCE0E4C24799', 'x86_64: 82D3F6C6-C548-3B1C-BD2E-B9F25DC070BA' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CloudDocs.framework/Versions/A/CloudDocs
-current-version: 485.12
-compatibility-version: 0.0
+current-version: 486.28
+compatibility-version: 0
 objc-constraint: none
 exports:         
   - archs:           [ i386 ]
@@ -196,10 +196,11 @@ exports:
                        __BRPromiseURLCombine, __BRSetResourcePropertyForKey, __LogSectionAdopt, 
                        __brc_LogMsg, __brc_LogMsgv, __brc_assert_failure, __brc_create_simulate_crash_message, 
                        __brc_log_is_internal_install, __brc_log_level, __brc_log_section_begin, 
-                       __brc_log_section_end, __brc_log_sections_clear, _br_pacer_cancel, 
-                       _br_pacer_create, _br_pacer_pretend_event_handler_fired, _br_pacer_resume, 
-                       _br_pacer_set_event_handler, _br_pacer_signal, _br_pacer_signal_at_most_after_min_interval, 
-                       _br_pacer_suspend, _br_pacer_test_cancel, _brc_append_system_info_to_message, 
+                       __brc_log_section_end, __brc_log_sections_clear, __reportSimulatedCrashWithFormatSignature, 
+                       _br_pacer_cancel, _br_pacer_create, _br_pacer_pretend_event_handler_fired, 
+                       _br_pacer_resume, _br_pacer_set_event_handler, _br_pacer_signal, 
+                       _br_pacer_signal_at_most_after_min_interval, _br_pacer_suspend, 
+                       _br_pacer_test_cancel, _brc_append_system_info_to_message, 
                        _brc_backtrace, _brc_backtrace_detailed_snprint, _brc_backtrace_exception_snprint, 
                        _brc_backtrace_snprint, _brc_current_date_nsec, _brc_default_log, 
                        _brc_dispatch_signal_data_fairly, _brc_interval_from_nsec, 

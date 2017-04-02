@@ -74,6 +74,9 @@ MDL_EXPORT
 
 - (void)addObject:(MDLObject*)object;
 - (void)removeObject:(MDLObject*)object;
+- (MDLObject *)objectAtIndexedSubscript:(NSUInteger)index;
+
+@property (readonly) NSUInteger count;
 
 // returns an array of this object's contained objects, aka children
 @property (nonatomic, readonly, retain) NSArray<MDLObject*> *objects;

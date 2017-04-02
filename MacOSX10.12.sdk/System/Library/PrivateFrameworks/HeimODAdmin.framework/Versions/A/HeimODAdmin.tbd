@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: CBA799CF-40AF-3BDC-A3B4-DDC5249188B8', 'x86_64: 7D56189B-729D-3F32-9266-5BA32E081733' ]
+uuids:           [ 'i386: 887F94E3-308A-33DE-AE1B-E3EEB99E3F86', 'x86_64: E1395F0C-2F72-37EB-AF91-AD1182989047' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/HeimODAdmin.framework/Versions/A/HeimODAdmin
 objc-constraint: none

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E41C33BD-8C3F-32B2-A485-A2BFEE148E04' ]
+uuids:           [ 'x86_64: 775E1168-9A28-34EC-AACD-B73803B9DDD4' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PlugInKit.framework/Versions/A/PlugInKit
 objc-constraint: none
@@ -12,18 +12,19 @@ exports:
                        _PKCleanTimeoutInfoKey, _PKContainingAppAttribute, _PKContainingPathFormKey, 
                        _PKDAccessRequest, _PKDAddRequest, _PKDAnnotateRequest, _PKDAnnotationsKey, 
                        _PKDBulkAnnotateRequest, _PKDBulkRequest, _PKDConflictsKey, 
-                       _PKDDataKey, _PKDErrorCodeKey, _PKDErrorKey, _PKDExtensionsKey, 
-                       _PKDFlagsKey, _PKDIdentifierKey, _PKDLockdownRequest, _PKDMatchRequest, 
-                       _PKDMatchesKey, _PKDPathsKey, _PKDReadyRequest, _PKDReceiptRequest, 
-                       _PKDRemoveRequest, _PKDRequestKey, _PKDRulesKey, _PKDUUIDKey, 
-                       _PKDVersionKey, _PKDataAnnotationsKey, _PKDataProtocol, _PKDedicatedInfoKey, 
-                       _PKDelegateInfoKey, _PKEmbeddedCodeInfoKey, _PKEmbeddedProtocolInfoKey, 
-                       _PKEntitlementsFormKey, _PKErrorKeyBusyPlugIns, _PKExclusionsPreferenceKey, 
-                       _PKExtensionsFormKey, _PKHashFormKey, _PKHostEntitlementInfoKey, 
-                       _PKHubProtocolVersionFormKey, _PKHubProtocolVersionInfoKey, 
-                       _PKIdentifierAttribute, _PKIdentifierAttribute_L, _PKIdentifierFormKey, 
-                       _PKInfoFormKey, _PKLastModifiedFormKey, _PKLocalizedContainingNameFormKey, 
-                       _PKLocalizedNameFormKey, _PKLocalizedShortNameFormKey, _PKManagerContainingIdentifierKey, 
+                       _PKDDataKey, _PKDEnvironmentKey, _PKDErrorCodeKey, _PKDErrorKey, 
+                       _PKDExtensionsKey, _PKDFlagsKey, _PKDIdentifierKey, _PKDLockdownRequest, 
+                       _PKDMatchRequest, _PKDMatchesKey, _PKDPathsKey, _PKDReadyRequest, 
+                       _PKDReceiptRequest, _PKDRemoveRequest, _PKDRequestKey, _PKDRulesKey, 
+                       _PKDUUIDKey, _PKDVersionKey, _PKDataAnnotationsKey, _PKDataProtocol, 
+                       _PKDedicatedInfoKey, _PKDelegateInfoKey, _PKEmbeddedCodeInfoKey, 
+                       _PKEmbeddedProtocolInfoKey, _PKEntitlementsFormKey, _PKEnvironmentProvisionEntitlement, 
+                       _PKErrorKeyBusyPlugIns, _PKExclusionsPreferenceKey, _PKExtensionsFormKey, 
+                       _PKHashFormKey, _PKHostEntitlementInfoKey, _PKHubProtocolVersionFormKey, 
+                       _PKHubProtocolVersionInfoKey, _PKIdentifierAttribute, _PKIdentifierAttribute_L, 
+                       _PKIdentifierFormKey, _PKInfoFormKey, _PKLastModifiedFormKey, 
+                       _PKLocalizedContainingNameFormKey, _PKLocalizedNameFormKey, 
+                       _PKLocalizedShortNameFormKey, _PKManagerContainingIdentifierKey, 
                        _PKManagerContainingPathKey, _PKManagerEntitlement, _PKManagerHostBundleIdentifierKey, 
                        _PKManagerHostPathKey, _PKManagerHostPidKey, _PKManagerPlugInBundleIdentifierKey, 
                        _PKManagerPlugInPathKey, _PKManagerPlugInVersionKey, _PKMultipleInfoKey, 

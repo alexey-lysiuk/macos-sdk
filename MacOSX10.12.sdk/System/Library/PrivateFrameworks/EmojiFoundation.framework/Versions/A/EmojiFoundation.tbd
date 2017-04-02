@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D7FF1828-48A4-3EBE-8D95-09CF4CCCEB17' ]
+uuids:           [ 'x86_64: 2E8BF8C1-830F-3735-AB69-BAEC195405BC' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/EmojiFoundation.framework/Versions/A/EmojiFoundation
 objc-constraint: none

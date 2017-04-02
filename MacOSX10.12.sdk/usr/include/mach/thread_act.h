@@ -239,7 +239,7 @@ extern
 #endif	/* mig_external */
 kern_return_t thread_info
 (
-	thread_act_t target_act,
+	thread_inspect_t target_act,
 	thread_flavor_t flavor,
 	thread_info_t thread_info_out,
 	mach_msg_type_number_t *thread_info_outCnt
@@ -272,7 +272,7 @@ __WATCHOS_PROHIBITED
 __TVOS_PROHIBITED
 kern_return_t thread_get_exception_ports
 (
-	thread_act_t thread,
+	thread_inspect_t thread,
 	exception_mask_t exception_mask,
 	exception_mask_array_t masks,
 	mach_msg_type_number_t *masksCnt,
@@ -340,7 +340,7 @@ extern
 #endif	/* mig_external */
 kern_return_t thread_policy_get
 (
-	thread_act_t thread,
+	thread_inspect_t thread,
 	thread_policy_flavor_t flavor,
 	thread_policy_t policy_info,
 	mach_msg_type_number_t *policy_infoCnt,

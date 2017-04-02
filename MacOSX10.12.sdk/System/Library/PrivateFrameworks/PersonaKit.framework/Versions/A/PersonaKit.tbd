@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1D002495-BD47-3634-91E1-B5CCDFA92CFB' ]
+uuids:           [ 'x86_64: E04707DB-FA97-3429-87D2-7DD6BE9518BE' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PersonaKit.framework/Versions/A/PersonaKit
 objc-constraint: none

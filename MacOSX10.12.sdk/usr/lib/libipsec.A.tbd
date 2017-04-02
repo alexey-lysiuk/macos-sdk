@@ -3,7 +3,7 @@ archs:           [ i386, x86_64 ]
 uuids:           [ 'i386: 6CE35E45-A361-390B-B442-4AD465EBEACC', 'x86_64: 3BAF77B1-1EF2-3249-B1ED-756C326D45CE' ]
 platform:        macosx
 install-name:    /usr/lib/libipsec.A.dylib
-current-version: 300.0
+current-version: 300
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: C5316545-2987-3C0B-9986-1E112287AD60', 'x86_64: C41785D6-DDE8-37C6-A6C4-2D43E536D071' ]
+uuids:           [ 'i386: AA5C3B25-1694-37E5-8226-7B4EABD455DB', 'x86_64: 97A19F5C-9BB8-3ED3-ACD2-F5C3E56EA88F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/FindMyMac.framework/Versions/A/FindMyMac
 objc-constraint: none

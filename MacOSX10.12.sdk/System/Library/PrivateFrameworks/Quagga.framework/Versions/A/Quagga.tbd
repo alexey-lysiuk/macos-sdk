@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 24E5ECB5-CD5C-3F68-9C8F-4A72F7622B29' ]
+uuids:           [ 'x86_64: DC2856C0-EB4A-3E01-A841-C25D91DED400' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Quagga.framework/Versions/A/Quagga
 objc-constraint: none

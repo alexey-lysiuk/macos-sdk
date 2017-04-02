@@ -126,7 +126,7 @@ VTDecompressionSessionCreate(
 	CM_NULLABLE CFDictionaryRef								videoDecoderSpecification,
 	CM_NULLABLE CFDictionaryRef                             destinationImageBufferAttributes,
 	const VTDecompressionOutputCallbackRecord * CM_NULLABLE outputCallback,
-	CM_RETURNS_RETAINED_PARAMETER CM_NULLABLE VTDecompressionSessionRef * CM_NONNULL decompressionSessionOut) __OSX_AVAILABLE_STARTING(__MAC_10_8,__IPHONE_8_0);
+	CM_RETURNS_RETAINED_PARAMETER CM_NULLABLE VTDecompressionSessionRef * CM_NONNULL decompressionSessionOut) API_AVAILABLE(macosx(10.8), ios(8.0), tvos(10.2));
 
 CF_IMPLICIT_BRIDGING_ENABLED
 	
@@ -141,14 +141,14 @@ CF_IMPLICIT_BRIDGING_ENABLED
     	Calling VTDecompressionSessionInvalidate ensures a deterministic, orderly teardown.
 */
 VT_EXPORT void 
-VTDecompressionSessionInvalidate( CM_NONNULL VTDecompressionSessionRef session ) __OSX_AVAILABLE_STARTING(__MAC_10_8,__IPHONE_8_0);
+VTDecompressionSessionInvalidate( CM_NONNULL VTDecompressionSessionRef session ) API_AVAILABLE(macosx(10.8), ios(8.0), tvos(10.2));
 
 /*!
 	@function VTDecompressionSessionGetTypeID
 	@abstract Returns the CFTypeID for decompression sessions.  
 */
 VT_EXPORT CFTypeID 
-VTDecompressionSessionGetTypeID(void) __OSX_AVAILABLE_STARTING(__MAC_10_8,__IPHONE_8_0);
+VTDecompressionSessionGetTypeID(void) API_AVAILABLE(macosx(10.8), ios(8.0), tvos(10.2));
 
 /*!
 	@function	VTDecompressionSessionDecodeFrame
@@ -183,7 +183,7 @@ VTDecompressionSessionDecodeFrame(
 	CM_NONNULL CMSampleBufferRef			sampleBuffer,
 	VTDecodeFrameFlags						decodeFlags, // bit 0 is enableAsynchronousDecompression
 	void * CM_NULLABLE						sourceFrameRefCon,
-	VTDecodeInfoFlags * CM_NULLABLE 		infoFlagsOut) __OSX_AVAILABLE_STARTING(__MAC_10_8,__IPHONE_8_0);
+	VTDecodeInfoFlags * CM_NULLABLE 		infoFlagsOut) API_AVAILABLE(macosx(10.8), ios(8.0), tvos(10.2));
 	
 #if __BLOCKS__
 /*!
@@ -249,7 +249,7 @@ VTDecompressionSessionDecodeFrameWithOutputHandler(
 	CM_NONNULL CMSampleBufferRef			sampleBuffer,
 	VTDecodeFrameFlags						decodeFlags, // bit 0 is enableAsynchronousDecompression
 	VTDecodeInfoFlags * CM_NULLABLE			infoFlagsOut,
-	CM_NONNULL VTDecompressionOutputHandler	outputHandler ) __OSX_AVAILABLE_STARTING(__MAC_10_11,__IPHONE_9_0);
+	CM_NONNULL VTDecompressionOutputHandler	outputHandler ) API_AVAILABLE(macosx(10.11), ios(9.0), tvos(10.2));
 #endif // __BLOCKS__
 
 /*!
@@ -264,7 +264,7 @@ VTDecompressionSessionDecodeFrameWithOutputHandler(
 */
 VT_EXPORT OSStatus
 VTDecompressionSessionFinishDelayedFrames(
-	CM_NONNULL VTDecompressionSessionRef		session) __OSX_AVAILABLE_STARTING(__MAC_10_8,__IPHONE_8_0);
+	CM_NONNULL VTDecompressionSessionRef		session) API_AVAILABLE(macosx(10.8), ios(8.0), tvos(10.2));
 
 /*!
 	@function VTDecompressionSessionCanAcceptFormatDescription
@@ -277,7 +277,7 @@ VTDecompressionSessionFinishDelayedFrames(
 VT_EXPORT Boolean 
 VTDecompressionSessionCanAcceptFormatDescription( 
 	CM_NONNULL VTDecompressionSessionRef		session,
-	CM_NONNULL CMFormatDescriptionRef			newFormatDesc ) __OSX_AVAILABLE_STARTING(__MAC_10_8,__IPHONE_8_0);
+	CM_NONNULL CMFormatDescriptionRef			newFormatDesc ) API_AVAILABLE(macosx(10.8), ios(8.0), tvos(10.2));
 
 /*!
 	@function VTDecompressionSessionWaitForAsynchronousFrames
@@ -288,7 +288,7 @@ VTDecompressionSessionCanAcceptFormatDescription(
 */
 VT_EXPORT OSStatus
 VTDecompressionSessionWaitForAsynchronousFrames(
-	CM_NONNULL VTDecompressionSessionRef       session) __OSX_AVAILABLE_STARTING(__MAC_10_8,__IPHONE_8_0);
+	CM_NONNULL VTDecompressionSessionRef       session) API_AVAILABLE(macosx(10.8), ios(8.0), tvos(10.2));
 
 CF_IMPLICIT_BRIDGING_DISABLED
 	
@@ -306,7 +306,7 @@ CF_IMPLICIT_BRIDGING_DISABLED
 VT_EXPORT OSStatus
 VTDecompressionSessionCopyBlackPixelBuffer(
    CM_NONNULL VTDecompressionSessionRef			session,
-   CM_RETURNS_RETAINED_PARAMETER CM_NULLABLE CVPixelBufferRef * CM_NONNULL pixelBufferOut ) __OSX_AVAILABLE_STARTING(__MAC_10_8,__IPHONE_8_0);
+   CM_RETURNS_RETAINED_PARAMETER CM_NULLABLE CVPixelBufferRef * CM_NONNULL pixelBufferOut ) API_AVAILABLE(macosx(10.8), ios(8.0), tvos(10.2));
 	
 // See VTSession.h for property access APIs on VTDecompressionSessions.
 // See VTDecompressionProperties.h for standard property keys and values for decompression sessions.

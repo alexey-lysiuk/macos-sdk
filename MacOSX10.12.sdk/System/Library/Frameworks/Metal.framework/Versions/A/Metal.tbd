@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 337AEC1E-952E-3E00-AE34-4C48AC77CBF9', 'x86_64: 7DFE0437-25A8-3E87-8318-91573C895742' ]
+uuids:           [ 'i386: 3E548230-2988-315E-8DA8-0D9F20BB86E9', 'x86_64: 5D8B1DD7-84A4-359F-ACC8-8BCFBD8B0699' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Metal.framework/Versions/A/Metal
 objc-constraint: none
@@ -122,9 +122,9 @@ exports:
                        _MTLPipelinePerformanceKeyFragmentShader, _MTLPipelinePerformanceKeyInstructionCount, 
                        _MTLPipelinePerformanceKeyTemporaryRegisterCount, _MTLPipelinePerformanceKeyVertexShader, 
                        _MTLPixelFormatCompatibilityString, _MTLPixelFormatGetInfo, 
-                       _MTLPixelFormatGetInfoForDevice, _MTLPixelFormatGetName, _MTLRangeAllocatorAllocate, 
-                       _MTLRangeAllocatorAllocateRange, _MTLRangeAllocatorDeallocate, 
-                       _MTLRangeAllocatorDestroy, _MTLRangeAllocatorGetFragmentCapacity, 
+                       _MTLPixelFormatGetInfoForDevice, _MTLPixelFormatGetName, _MTLPurgeableStateString, 
+                       _MTLRangeAllocatorAllocate, _MTLRangeAllocatorAllocateRange, 
+                       _MTLRangeAllocatorDeallocate, _MTLRangeAllocatorDestroy, _MTLRangeAllocatorGetFragmentCapacity, 
                        _MTLRangeAllocatorGetFragmentCount, _MTLRangeAllocatorGetFreeCount, 
                        _MTLRangeAllocatorGetMaxFreeSize, _MTLRangeAllocatorInit, 
                        _MTLRangeAllocatorSetFragmentCapacityIncrement, _MTLReleaseAssertionFailure, 

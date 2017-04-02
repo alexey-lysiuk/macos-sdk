@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 8F10496D-AAE6-37BB-8013-218E63E8701C', 'x86_64: 4AD33564-208F-3960-AD78-E2D3CC08874C' ]
+uuids:           [ 'i386: DD6E3763-26F2-3C55-A3CC-707F44800042', 'x86_64: 1489FB29-5DDB-3B57-A0AF-5445784DF440' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AirPlaySupport.framework/Versions/A/AirPlaySupport
 objc-constraint: none

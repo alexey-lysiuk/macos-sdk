@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B088BAF6-7C42-3460-8790-62C3FE8DA5A7' ]
+uuids:           [ 'x86_64: DD314D4D-AD3D-327B-A7E4-8853867B7002' ]
 platform:        macosx
 install-name:    /usr/lib/PN548_OSX.dylib
 objc-constraint: none
@@ -198,8 +198,7 @@ exports:
                        _phLibNfc_HciGetMax_C_APDU, _phLibNfc_HciGetMax_C_APDUProc, 
                        _phLibNfc_HciOpenAPDUPipe, _phLibNfc_HciOpenAPDUPipeProc, 
                        _phLibNfc_HciOpenAdmPipe, _phLibNfc_HciOpenAdmPipeProc, _phLibNfc_HciSetWhiteList, 
-                       _phLibNfc_HciSetWhiteListProc, _phLibNfc_IceFallResetAPDUPipeState, 
-                       _phLibNfc_IceFallSetHostIdWorkAround, _phLibNfc_Idle2InitTransition, 
+                       _phLibNfc_HciSetWhiteListProc, _phLibNfc_Idle2InitTransition, 
                        _phLibNfc_Idle2Recovery, _phLibNfc_Init2Discovery, _phLibNfc_Init2Idle, 
                        _phLibNfc_Init2Reset, _phLibNfc_InitCompleteWdTimer, _phLibNfc_InitCompleteWdTimerCb, 
                        _phLibNfc_InitStateMachine, _phLibNfc_InternConnect, _phLibNfc_InternConnect_Cb, 
@@ -250,8 +249,7 @@ exports:
                        _phLibNfc_PrepareCnkt_TxvPkt_Jewel, _phLibNfc_PrepareCnkt_TxvPkt_MifareUL, 
                        _phLibNfc_PrepareSnepPacket, _phLibNfc_Prepare_14443_3B, _phLibNfc_Prepare_Iso15693, 
                        _phLibNfc_PrintHciCritInfo, _phLibNfc_PrintLibNfcCritInfo, 
-                       _phLibNfc_PrintgDebugInfo, _phLibNfc_ProcDeact2IdleResp, _phLibNfc_ProcIceFallResetAPDUPipeState, 
-                       _phLibNfc_ProcIceFallSetHostIdWorkAround, _phLibNfc_ProcessDeactResp, 
+                       _phLibNfc_PrintgDebugInfo, _phLibNfc_ProcDeact2IdleResp, _phLibNfc_ProcessDeactResp, 
                        _phLibNfc_ProcessDeactToDiscResp, _phLibNfc_ProcessDevInfo, 
                        _phLibNfc_ProcessDiscReq, _phLibNfc_ProcessEpcGenResponse, 
                        _phLibNfc_ProcessEvtAtr, _phLibNfc_ProcessNfceeDiscRsp, _phLibNfc_ProcessNfceeStopDisc, 
@@ -375,10 +373,10 @@ exports:
                        _phNciNfc_PrintTechNfcFLstnSpcfcParams, _phNciNfc_PrintTechNfcFSpcfcParamsDescription, 
                        _phNciNfc_PrintfNfceeDiscNtfDescription, _phNciNfc_ProcessActvNtf, 
                        _phNciNfc_ProcessAmsInitMisMatchErrNtf, _phNciNfc_ProcessDeActvNtf, 
-                       _phNciNfc_ProcessDeActvState, _phNciNfc_ProcessDiscNtf, _phNciNfc_ProcessGenericErrNtf, 
+                       _phNciNfc_ProcessDeActvState, _phNciNfc_ProcessDiscNtf, _phNciNfc_ProcessExpModeStartedNtf, 
+                       _phNciNfc_ProcessExpModeTxNtf, _phNciNfc_ProcessGenericErrNtf, 
                        _phNciNfc_ProcessGenericErrNtfMFC, _phNciNfc_ProcessIceFallPowerOffNtf, 
-                       _phNciNfc_ProcessIntfErrNtf, _phNciNfc_ProcessSuicaModeStartedNtf, 
-                       _phNciNfc_ProcessSuicaTxNtf, _phNciNfc_ProcessSysEoOpNtf, 
+                       _phNciNfc_ProcessIntfErrNtf, _phNciNfc_ProcessSysEoOpNtf, 
                        _phNciNfc_ProcessSysL1DbgMsgNtf, _phNciNfc_ProcessSysL2DbgMsgNtf, 
                        _phNciNfc_ProcessSysL3DbgMsgNtf, _phNciNfc_ProcessTagDetectorNtf, 
                        _phNciNfc_PropConfigHsuBr, _phNciNfc_RdrAInit, _phNciNfc_RdrBInit, 

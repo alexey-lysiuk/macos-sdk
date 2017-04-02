@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)placemarkWithLocation:(CLLocation *)location
                                  name:(nullable NSString *)name
-                        postalAddress:(nullable CNPostalAddress *)postalAddress API_AVAILABLE(ios(10.0));
+                        postalAddress:(nullable CNPostalAddress *)postalAddress API_AVAILABLE(ios(10.0), watchos(3.2));
 
 @end
 

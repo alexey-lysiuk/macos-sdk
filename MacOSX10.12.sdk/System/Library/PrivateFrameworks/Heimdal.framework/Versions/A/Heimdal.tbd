@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: ABA21943-FEB4-36E9-AE15-AC8DEF138277', 'x86_64: 00F00E7E-7EF4-3254-86D3-ADA4F67938CF' ]
+uuids:           [ 'i386: 5DCE2A77-3E72-3E92-B6C9-09460E65A5DA', 'x86_64: 8F9C9041-66D5-36C9-8A4C-1658035C311D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Heimdal.framework/Versions/A/Heimdal
 objc-constraint: none
@@ -264,12 +264,13 @@ exports:
                        _krb5_encrypt, _krb5_encrypt_EncryptedData, _krb5_encrypt_iov_ivec, 
                        _krb5_encrypt_ivec, _krb5_enctype_disable, _krb5_enctype_enable, 
                        _krb5_enctype_keybits, _krb5_enctype_keysize, _krb5_enctype_to_string, 
-                       _krb5_enctype_valid, _krb5_enomem, _krb5_err, _krb5_error_from_rd_error, 
-                       _krb5_errx, _krb5_expand_hostname, _krb5_expand_hostname_realms, 
-                       _krb5_fcc_ops, _krb5_find_padata, _krb5_format_time, _krb5_free_address, 
-                       _krb5_free_addresses, _krb5_free_ap_rep_enc_part, _krb5_free_authenticator, 
-                       _krb5_free_config_files, _krb5_free_context, _krb5_free_cred_contents, 
-                       _krb5_free_creds, _krb5_free_data, _krb5_free_error, _krb5_free_error_contents, 
+                       _krb5_enctype_valid, _krb5_enctype_warning, _krb5_enomem, 
+                       _krb5_err, _krb5_error_from_rd_error, _krb5_errx, _krb5_expand_hostname, 
+                       _krb5_expand_hostname_realms, _krb5_fcc_ops, _krb5_find_padata, 
+                       _krb5_format_time, _krb5_free_address, _krb5_free_addresses, 
+                       _krb5_free_ap_rep_enc_part, _krb5_free_authenticator, _krb5_free_config_files, 
+                       _krb5_free_context, _krb5_free_cred_contents, _krb5_free_creds, 
+                       _krb5_free_data, _krb5_free_error, _krb5_free_error_contents, 
                        _krb5_free_error_message, _krb5_free_host_realm, _krb5_free_kdc_rep, 
                        _krb5_free_keyblock, _krb5_free_keyblock_contents, _krb5_free_principal, 
                        _krb5_free_salt, _krb5_free_ticket, _krb5_fwd_tgt_creds, _krb5_generate_random_block, 

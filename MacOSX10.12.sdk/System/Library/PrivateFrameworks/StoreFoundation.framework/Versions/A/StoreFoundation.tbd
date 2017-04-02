@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E69B2CA5-B8B7-3C45-A417-0B7EACAF35A8' ]
+uuids:           [ 'x86_64: FB02BCFA-BBE3-39A8-9EA5-718D3F3E7CAE' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/StoreFoundation.framework/Versions/A/StoreFoundation
-current-version: 379.0
+current-version: 379
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

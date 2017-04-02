@@ -1,0 +1,148 @@
+.\"Modified from man(1) of FreeBSD, the NetBSD mdoc.template, and mdoc.samples.
+.\"See Also:
+.\"man mdoc.samples for a complete listing of options
+.\"man mdoc for the short list of editing options
+.\"/usr/share/misc/mdoc.template
+.Dd 2/7/17               \" DATE 
+.Dt tethered-caching 8      \" Program name and manual section number 
+.Os "macOS"
+.Sh NAME                 \" Section Header - required - don't modify 
+.Nm tethered-caching
+.\" The following lines are read in generating the apropos(man -k) database. Use only key
+.\" words here as the database is built based on the words here and in the .ND line. 
+.\" .Nm Other_name_for_same_program(),
+.\" .Nm Yet another name for the same program.
+.\" Use .Nm macro to designate other names for the documented program.
+.Nd control tethered caching
+.Sh SYNOPSIS             \" Section Header - required - don't modify
+.Nm
+.Op -b
+.Op -n 192.168.(1-254).0
+.Nm
+.Ar -k
+.Nm
+.Ar -l
+.Nm
+.Ar -s
+.Op -v
+.Sh DESCRIPTION          \" Section Header - required - don't modify
+In its first form,
+.Nm
+creates a tethered network,
+starts a caching service,
+and prepares all tethered iOS devices to use that network and caching service.
+The caching service in macOS Server is configured and started if macOS Server is installed on this computer;
+otherwise the tethered-caching service is configured and started.
+.Nm
+then monitors the status of tethered caching until it is interrupted (via Control+c or SIGTERM),
+at which point it turns tethered caching off.
+.Nm
+prevents the computer from idle-sleeping until it exits.
+.Pp
+The
+.Fl b
+option disables the monitoring and idle-sleep prevention.
+Tethered caching will run until turned off by running:
+.Nm
+.Ar -k .
+.Pp
+The
+.Fl n
+option specifies which subnet to use, instead of choosing an unused one
+automatically.
+.Pp
+In its second form (-k),
+.Nm
+disables the tethered network and caching.
+.Pp
+In its third form (-l),
+.Nm
+displays its software license agreement.
+.Pp
+In its fourth form (-s),
+.Nm
+reports the status of tethering and caching.  The
+.Fl v
+option reports detailed status about the caching service.
+.Sh REQUIREMENTS
+The
+.Nm
+command requires administrator privileges.
+All iOS devices must have iOS 10.3 or later installed.
+The Mac must have macOS 10.12.4 or later installed.
+The Mac must be connected to the Internet via wired Ethernet.
+A portable Mac should be plugged in to a power source, because
+.Nm
+prevents it from going to sleep.
+.Sh EXAMPLES
+Start the tethered-caching service:
+.Dl sudo tethered-caching
+.Pp
+Start the tethered-caching service and assign a specific network range to the iOS devices:
+.Dl sudo tethered-caching -n 192.168.5.0
+.Pp
+View tethered-caching service configuration data and downloads:
+.Dl sudo tethered-caching -s
+.Pp
+To stop the tethered-caching service, do one of the following:
+.Dl sudo tethered-caching -k
+.Dl Press Control+c
+.Dl Quit Terminal
+.Sh USAGE
+.Bl -enum -compact
+.It
+Connect the Mac to one of the following via USB:
+.Bl -dash -compact
+.It
+a cart capable of connecting and storing iOS devices
+.It
+a USB hub capable of connecting several iOS devices
+.El
+.It
+If using a cart or USB hub, connect all iOS devices.
+.It
+Start the tethered-caching service.
+.El
+The tethered-caching service is now active.
+If you are using a mobile device management (MDM) solution with your iOS devices, you can now use that solution to push content to the devices.
+Depending on your Internet connection, caching updates and apps may take some time.
+.Sh "SEE ALSO"
+.Ns Xr AssetCache 8 ,
+.Ns Xr AssetCacheActivatorUtil 8 ,
+.Ns Xr AssetCacheLocatorUtil 8 ,
+.Ns Xr AssetCacheTetheratorUtil 8
+.Sh HISTORY
+.Ss "tethered-caching service"
+macOS 10.12.4 contains a new service that enables a Mac to cache
+.Bl -dash -compact
+.It
+iOS updates
+.It
+iOS apps
+.It
+Books
+.It
+iCloud content
+.El
+To learn more about what types of iOS content the caching service supports, see the Apple Support article
+https://support.apple.com/HT204675 .
+.Pp
+Once the tethered-caching service is enabled,
+iOS devices connected to the Mac via USB can have content installed via mobile device management (MDM)
+without each device needing to connect to Apple's servers.
+The content is downloaded once to the Mac and cached before it is delivered over USB to each of the connected iOS devices for installation.
+This saves time, local Wi-Fi, and bandwidth when using a cart or USB hub and updating several devices at once,
+compared to each device updating individually over Wi-Fi.
+It is particularly useful for installing many large apps while preparing devices for the beginning of a new semester or school year.
+.Ss "macOS Server caching service"
+macOS Server also has a caching service which can be configured for more granular control.
+However, both services cannot be active at the same time.
+When you download the Server app in the /Applications folder for the caching service, the tethered caching service will automatically stop.
+In order to start using the caching service, you must also configure the Server app with administrator privileges before turning it on.
+If you would like to use the tethered caching service once again, you must first move the Server app to the Trash.
+.Pp
+The tethered-caching service in macOS 10.12.4 and the caching service in macOS Server use different binaries and different configuration files.
+.Pp
+To learn more about the caching service in macOS Server, see https://help.apple.com/serverapp/mac/ and select
+.Em "Speed Up App Store and iCloud downloads"
+from the topic list.

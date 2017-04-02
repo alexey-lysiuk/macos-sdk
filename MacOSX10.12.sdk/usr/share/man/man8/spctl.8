@@ -98,6 +98,10 @@ This is useful when used in scripts, or to access newly invented assessment aspe
 does not yet know about.
 .It Fl -requirement
 In rule update operations, indicates that the argument(s) are code requirement source.
+.It Fl -reset-default
+Unconditionally reset the system policy database to its default value. This discards all changes
+made by administrators. It also heals any corruption to the database. It does not implicitly either
+enable or disable the facility. This must be done as the super user. Reboot after use.
 .It Fl -rule
 In rule update operations, indicates that the argument(s) are the index numbers of existing rules.
 .It Fl t, -type

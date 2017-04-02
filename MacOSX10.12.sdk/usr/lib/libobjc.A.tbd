@@ -1,10 +1,10 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64, x86_64h ]
-uuids:           [ 'i386: 36E48972-15DA-37A0-939B-159296C7CD58', 'x86_64: 47104A1B-13E8-369F-BC36-27FF465809FD', 
-                   'x86_64h: F9AFE665-A3A2-3285-9495-19803A565861' ]
+uuids:           [ 'i386: A32B2573-CC08-3053-A005-4AFC9FC0E4CE', 'x86_64: 54CD8D1A-5C98-3559-B13A-932B3D3DD338', 
+                   'x86_64h: DC77AA6E-A4E4-326D-8D7F-82D63AA88F99' ]
 platform:        macosx
 install-name:    /usr/lib/libobjc.A.dylib
-current-version: 228.0
+current-version: 228
 objc-constraint: none
 exports:         
   - archs:           [ i386 ]
@@ -76,6 +76,7 @@ exports:
                        _NXResetMapTable, _NXStrHash, _NXStrIsEqual, _NXStrPrototype, 
                        _NXStrStructKeyPrototype, _NXStrValueMapPrototype, __class_getIvarMemoryManagement, 
                        __class_isFutureClass, __class_setIvarLayoutAccessor, __objcInit, 
+                       __objc_atfork_child, __objc_atfork_parent, __objc_atfork_prepare, 
                        __objc_autoreleasePoolPop, __objc_autoreleasePoolPrint, __objc_autoreleasePoolPush, 
                        __objc_deallocOnMainThreadHelper, __objc_empty_cache, __objc_flush_caches, 
                        __objc_getFreedObjectClass, __objc_init, __objc_msgForward, 

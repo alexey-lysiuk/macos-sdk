@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 9BD4D87F-33FF-39B6-8516-3DD646ABBEE0', 'x86_64: E9436627-0AF8-31BF-94E6-D4607A408F91' ]
+uuids:           [ 'i386: D7BCA5C4-52F7-314E-8A4F-7E52EC90914C', 'x86_64: 9BAEDB00-4868-3DF9-A494-C039FB188451' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/FTServices.framework/Versions/A/FTServices
-current-version: 800.0
+current-version: 800
 objc-constraint: none
 exports:         
   - archs:           [ i386 ]

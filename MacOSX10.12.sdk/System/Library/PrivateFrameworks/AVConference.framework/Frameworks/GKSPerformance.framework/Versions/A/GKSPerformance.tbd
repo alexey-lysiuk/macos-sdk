@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 7C82C579-93D8-3AEA-9FDC-1418EAB39475', 'x86_64: 5972D841-ABED-31B7-A7E5-28AFB2BC967C' ]
+uuids:           [ 'i386: 364B331D-ED19-3A3B-9356-4D9D2F4D9D96', 'x86_64: 8783571B-A604-3050-9441-3662224FF752' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AVConference.framework/Frameworks/GKSPerformance.framework/Versions/A/GKSPerformance
 objc-constraint: none
@@ -14,15 +14,16 @@ exports:
                        _AWDAdaptor._videoQualityTimers, _AWDStats.ActualRxBitrateHistogram, 
                        _AWDStats.OWRDHistogram, _AWDStats.PLICounter, _AWDStats.PLRHistogram, 
                        _AWDStats.RTCPSendInterval, _AWDStats.RTTHistogram, _AWDStats.RecommendedRxBitrateHistogram, 
-                       _AWDStats.aggregatedReport, _AWDStats.audioFlush, _AWDStats.audioPauseTime, 
-                       _AWDStats.audioTiers, _AWDStats.avgFrameRateSampleCount, _AWDStats.avgFrameRateSum, 
-                       _AWDStats.avgInterarrivalTime, _AWDStats.avgInterarrivalTimeCount, 
-                       _AWDStats.avgJitterBufferSize, _AWDStats.avgJitterBufferSizeCount, 
-                       _AWDStats.avgLossRate, _AWDStats.avgLossRateCount, _AWDStats.avgRate, 
-                       _AWDStats.avgRateCount, _AWDStats.basebandCount, _AWDStats.bytesSaved, 
-                       _AWDStats.callAvgRxRate, _AWDStats.callAvgRxRateCount, _AWDStats.callAvgTxRate, 
-                       _AWDStats.callAvgTxRateCount, _AWDStats.callDuration, _AWDStats.callID, 
-                       _AWDStats.callNonce, _AWDStats.connectionType, _AWDStats.currentCellTechDuration, 
+                       _AWDStats.aggregatedReport, _AWDStats.aggregatedStats, _AWDStats.audioFlush, 
+                       _AWDStats.audioPauseTime, _AWDStats.audioTiers, _AWDStats.avgFrameRateSampleCount, 
+                       _AWDStats.avgFrameRateSum, _AWDStats.avgInterarrivalTime, 
+                       _AWDStats.avgInterarrivalTimeCount, _AWDStats.avgJitterBufferSize, 
+                       _AWDStats.avgJitterBufferSizeCount, _AWDStats.avgLossRate, 
+                       _AWDStats.avgLossRateCount, _AWDStats.avgRate, _AWDStats.avgRateCount, 
+                       _AWDStats.basebandCount, _AWDStats.bytesSaved, _AWDStats.callAvgRxRate, 
+                       _AWDStats.callAvgRxRateCount, _AWDStats.callAvgTxRate, _AWDStats.callAvgTxRateCount, 
+                       _AWDStats.callDuration, _AWDStats.callID, _AWDStats.callNonce, 
+                       _AWDStats.connectionType, _AWDStats.currentCellTechDuration, 
                        _AWDStats.currentDuplicationStateOn, _AWDStats.currentInterface, 
                        _AWDStats.currentInterfaceOUI, _AWDStats.currentPrimaryInterfaceIsCell, 
                        _AWDStats.deviceRole, _AWDStats.downlinkEstimateAvg, _AWDStats.downlinkEstimateAvgCount, 

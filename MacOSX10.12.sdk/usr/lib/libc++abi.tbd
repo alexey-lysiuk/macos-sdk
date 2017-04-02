@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 14434F90-C6BA-38DC-8193-EED9BC3A3292', 'x86_64: 1CEF8ABB-7E6D-3C2F-8E0A-E7884478DD23' ]
+uuids:           [ 'i386: 0E02B3E2-234D-3814-8585-31AA601BB02D', 'x86_64: 30199352-88BF-30BD-8CFF-2A4FBE247523' ]
 platform:        macosx
 install-name:    '/usr/lib/libc++abi.dylib'
-current-version: 307.2
+current-version: 307.3
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]

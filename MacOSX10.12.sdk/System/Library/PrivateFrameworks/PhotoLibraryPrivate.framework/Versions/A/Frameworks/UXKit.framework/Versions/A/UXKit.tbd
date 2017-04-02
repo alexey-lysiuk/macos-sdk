@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 81CABFD8-B8F6-387C-B694-27385ECA0C7F' ]
+uuids:           [ 'x86_64: D398B772-C530-3FCC-8CCA-A5EFB542A956' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoLibraryPrivate.framework/Versions/A/Frameworks/UXKit.framework/Versions/A/UXKit
-current-version: 3130.0.240
+current-version: 3150.4.120
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

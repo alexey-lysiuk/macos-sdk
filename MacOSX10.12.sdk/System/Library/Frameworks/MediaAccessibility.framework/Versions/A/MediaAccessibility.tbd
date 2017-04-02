@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 9750981D-EC76-3A2A-B8F6-F3B67D887BCB', 'x86_64: 1025DB59-18DE-39EA-9C04-35CE8D6103E5' ]
+uuids:           [ 'i386: 2C902DF8-E57A-37E3-891B-736B16AE074C', 'x86_64: 0BD82735-6644-37CE-B13D-8E7CC59A1752' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/MediaAccessibility.framework/Versions/A/MediaAccessibility
-current-version: 62.0
+current-version: 62
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]

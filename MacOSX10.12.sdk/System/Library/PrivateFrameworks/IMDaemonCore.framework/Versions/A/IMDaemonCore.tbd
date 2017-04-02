@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3BBB060A-E77D-3809-AD09-F8CE09500435' ]
+uuids:           [ 'x86_64: 0B980E9C-F97C-39B5-9F8E-91F2D1E74121' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IMDaemonCore.framework/Versions/A/IMDaemonCore
-current-version: 800.0
+current-version: 800
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -27,8 +27,8 @@ exports:
                        _IMDInvocationForwarder, _IMDLegactDTController, _IMDLocationSharingController, 
                        _IMDMessageStore, _IMDPlugInServiceSession, _IMDQuickSwitchController, 
                        _IMDReplayController, _IMDReplayStorageController, _IMDReplayStorageIterationContext, 
-                       _IMDService, _IMDServiceController, _IMDServiceSession, _IMDSpotlightIndexDelegate, 
-                       _IMDStickerRegistry, _IMTunesController ]
+                       _IMDService, _IMDServiceController, _IMDServiceSession, _IMDSpamController, 
+                       _IMDSpotlightIndexDelegate, _IMDStickerRegistry, _IMTunesController ]
     objc-ivars:      [ _IMDChatStore._lastModificationStamp, _IMDLocationSharingController._session, 
                        _IMDMessageStore._cachedLastFailedMessageID, _IMDMessageStore._cachedUnreadMessageCount, 
                        _IMDMessageStore._modificationStamp, _IMDMessageStore._pendingDBUpdatePost, 

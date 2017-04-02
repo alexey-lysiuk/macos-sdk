@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 308D5CA0-5901-3432-AEB6-91E06A9B8B68' ]
+uuids:           [ 'x86_64: 0BF80D55-4E82-3E64-8465-5F22E4BC68E2' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/VectorKit.framework/Versions/A/VectorKit
-current-version: 1230.22.8
+current-version: 1230.24.9
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

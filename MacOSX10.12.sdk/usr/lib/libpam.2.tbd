@@ -3,8 +3,8 @@ archs:           [ i386, x86_64 ]
 uuids:           [ 'i386: CF96FBCD-8AD7-3022-BEF4-938DBFA38507', 'x86_64: 71EB0D88-DE84-3C8D-A2C5-58AA282BC5BC' ]
 platform:        macosx
 install-name:    /usr/lib/libpam.2.dylib
-current-version: 3.0
-compatibility-version: 3.0
+current-version: 3
+compatibility-version: 3
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]

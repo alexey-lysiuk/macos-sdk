@@ -1,10 +1,10 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 7739EA9E-3C10-3BFB-B518-6EC62B82F4BC', 'x86_64: 278D1962-FFC8-399C-92FF-1D50383D291F' ]
+uuids:           [ 'i386: 5288B93F-15FA-32F4-86FB-1A1D6450E9B1', 'x86_64: 19E37E68-E945-3534-8658-87AA411D0AD4' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/vCard.framework/Versions/A/vCard
-current-version: 0.0
-compatibility-version: 0.0
+current-version: 0
+compatibility-version: 0
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -93,7 +93,9 @@ exports:
                        _CNVCardActivityAlertKey, _CNVCardActivityAlertSoundKey, _CNVCardActivityAlertTextKey, 
                        _CNVCardActivityAlertTypeKey, _CNVCardActivityAlertVibrationKey, 
                        _CNVCardAddressCityKey, _CNVCardAddressCountryCodeKey, _CNVCardAddressCountryKey, 
+                       _CNVCardAddressExtendedStreetKey, _CNVCardAddressPostOfficeBoxKey, 
                        _CNVCardAddressPostalCodeKey, _CNVCardAddressStateKey, _CNVCardAddressStreetKey, 
+                       _CNVCardAddressSubAdministrativeAreaKey, _CNVCardAddressSubLocalityKey, 
                        _CNVCardAlternateBirthdayComponentsKey, _CNVCardBirthdayComponentsKey, 
                        _CNVCardCalendarURIsKey, _CNVCardCardDAVUIDKey, _CNVCardDepartmentNameKey, 
                        _CNVCardEmailKey, _CNVCardFirstNameKey, _CNVCardFormattedNameKey, 

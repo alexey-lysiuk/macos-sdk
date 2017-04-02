@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2103A1AB-C1BE-3DB4-B8C1-FC83CEBB97F9' ]
+uuids:           [ 'x86_64: 77005844-DFC5-396E-8F6D-99111DCD48FA' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IMAVCore.framework/Versions/A/IMAVCore
-current-version: 800.0
+current-version: 800
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

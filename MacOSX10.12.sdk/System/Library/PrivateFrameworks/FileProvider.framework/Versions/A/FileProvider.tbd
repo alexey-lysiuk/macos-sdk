@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 8230FEF5-1341-3C9B-8807-E53F9F5A6ACA', 'x86_64: 7DFD5EE7-3A9E-3864-8509-91A19AADE462' ]
+uuids:           [ 'i386: C90A7EB8-910E-3AC0-9435-9DC67C3F3146', 'x86_64: 6F4E9CAA-E5A9-329D-B64E-A35BE61430A1' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/FileProvider.framework/Versions/A/FileProvider
 objc-constraint: none

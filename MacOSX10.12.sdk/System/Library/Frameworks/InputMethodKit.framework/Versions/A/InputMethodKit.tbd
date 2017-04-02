@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: B84BE540-B184-35B2-ACC5-569F6326397C', 'x86_64: EB96FED1-22BD-300C-A1AF-FAAA54047A6B' ]
+uuids:           [ 'i386: E5779879-741D-31AA-89A7-86AF18CC829B', 'x86_64: CFFA9906-6873-3B22-AF13-5780D2E857EB' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/InputMethodKit.framework/Versions/A/InputMethodKit
 objc-constraint: none

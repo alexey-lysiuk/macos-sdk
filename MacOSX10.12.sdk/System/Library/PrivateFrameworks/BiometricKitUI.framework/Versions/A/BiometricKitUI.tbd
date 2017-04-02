@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1A61DACF-57F1-34ED-90EE-C38E7D42A570' ]
+uuids:           [ 'x86_64: 2797FA01-83C2-3EB1-9E05-A1CBB0C6FF50' ]
 platform:        macosx
 install-name:    '@rpath/BiometricKitUI.framework/Versions/A/BiometricKitUI'
 objc-constraint: none

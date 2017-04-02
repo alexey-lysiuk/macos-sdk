@@ -1,6 +1,6 @@
 /* CoreAnimation - CATiledLayer.h
 
-   Copyright (c) 2006-2016, Apple Inc.
+   Copyright (c) 2006-2017, Apple Inc.
    All rights reserved. */
 
 /* This is a subclass of CALayer providing a way to asynchronously

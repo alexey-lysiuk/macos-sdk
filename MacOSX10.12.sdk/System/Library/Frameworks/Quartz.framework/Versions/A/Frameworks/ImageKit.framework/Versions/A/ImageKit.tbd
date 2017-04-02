@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 243BC79F-4A65-35B6-A204-2540C91F9BB5', 'x86_64: 5D77D4A4-F844-376B-93AA-F9CB55C719AE' ]
+uuids:           [ 'i386: 6E2C722E-6F25-33B8-964A-FB87B43185FA', 'x86_64: 412DD8C9-16DE-3715-9E60-76E30A9DB009' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Quartz.framework/Versions/A/Frameworks/ImageKit.framework/Versions/A/ImageKit
 objc-constraint: none
@@ -679,10 +679,11 @@ exports:
                        _IKScan._evenPageOrientation, _IKScan._fileFormat, _IKScan._finalDestURL, 
                        _IKScan._flatbedOrientation, _IKScan._functionalUnit, _IKScan._imageCorrectionHandler, 
                        _IKScan._inchPosition, _IKScan._lastDocumentLocation, _IKScan._lastDocumentName, 
-                       _IKScan._measurementUnit, _IKScan._metaData, _IKScan._numberOfSelections, 
-                       _IKScan._oddPageOrientation, _IKScan._overviewResolution, 
-                       _IKScan._overviewScanInProgress, _IKScan._pixelDataType, _IKScan._postProcessingApp, 
-                       _IKScan._resolution, _IKScan._reviewSimpleScanResults, _IKScan._rotationAngle, 
+                       _IKScan._measurementUnit, _IKScan._metaData, _IKScan._needsSpecialOrientationHandling, 
+                       _IKScan._numberOfSelections, _IKScan._oddPageOrientation, 
+                       _IKScan._overviewResolution, _IKScan._overviewScanInProgress, 
+                       _IKScan._pixelDataType, _IKScan._postProcessingApp, _IKScan._resolution, 
+                       _IKScan._reviewSimpleScanResults, _IKScan._rotationAngle, 
                        _IKScan._scaleFactor, _IKScan._scanComplete, _IKScan._scanFailed, 
                        _IKScan._scanInProgress, _IKScan._scanInfo, _IKScan._scanIsICARawScan, 
                        _IKScan._scanPercentDone, _IKScan._scanRect, _IKScan._scanRectNonClipped, 

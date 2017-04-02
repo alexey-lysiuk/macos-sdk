@@ -1,0 +1,24 @@
+--- !tapi-tbd-v2
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 39E879AB-28DA-33CC-BE52-FB7BA627A7BC' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/ProactiveML.framework/Versions/A/ProactiveML
+objc-constraint: none
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _AWDProactiveModelFittingModelInfoReadFrom, _AWDProactiveModelFittingSessionReadFrom, 
+                       _AWDProactiveModelFittingSparseFloatVectorReadFrom, _ProactiveMLVersionNumber, 
+                       _ProactiveMLVersionString ]
+    objc-classes:    [ _AWDProactiveModelFittingModelInfo, _AWDProactiveModelFittingSession, 
+                       _AWDProactiveModelFittingSparseFloatVector, _PMLAWDSessionTracker, 
+                       _PMLAWDSessionTrackerMock, _PMLGradientSolver, _PMLHashingVectorizer, 
+                       _PMLLinearRegressionModel, _PMLLogisticRegressionModel, _PMLModelCovariates, 
+                       _PMLModelDescriptor, _PMLModelLearningRates, _PMLModelMatrix, 
+                       _PMLModelRegressor, _PMLModelWeights ]
+    objc-ivars:      [ _AWDProactiveModelFittingModelInfo._locale, _AWDProactiveModelFittingModelInfo._name, 
+                       _AWDProactiveModelFittingModelInfo._version, _AWDProactiveModelFittingSession._has, 
+                       _AWDProactiveModelFittingSession._label, _AWDProactiveModelFittingSession._modelInfo, 
+                       _AWDProactiveModelFittingSession._sparseFloatFeatures, _AWDProactiveModelFittingSession._timestamp, 
+                       _AWDProactiveModelFittingSparseFloatVector._has, _AWDProactiveModelFittingSparseFloatVector._indices, 
+                       _AWDProactiveModelFittingSparseFloatVector._length, _AWDProactiveModelFittingSparseFloatVector._values ]
+...

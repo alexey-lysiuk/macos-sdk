@@ -1,0 +1,23 @@
+--- !tapi-tbd-v2
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 0C6F84CD-5B59-361D-9609-28506DC175D1' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/AppSupportUI.framework/Versions/A/AppSupportUI
+objc-constraint: none
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _NUIContainerViewDefaultDimension, _NUIContainerViewDefaultInsets, 
+                       _NUIContainerViewDefaultSize, __ZN19_NUIGridArrangement12measureCellsEa6CGSize, 
+                       __ZN19_NUIGridArrangement13positionCellsE6CGRectU13block_pointerFvPU34objcproto23_NUIGridArrangementItem11objc_objectS0_E, 
+                       __ZN19_NUIGridArrangement14enumerateCellsEU13block_pointerFvRK23_NUIGridArrangementCellE, 
+                       __ZN19_NUIGridArrangement19positionSubsetCellsE8_NSRangeS0_6CGRectU13block_pointerFvPU34objcproto23_NUIGridArrangementItem11objc_objectS1_E, 
+                       __ZN19_NUIGridArrangement19resetForMeasurementEa, __ZN19_NUIGridArrangementC1Ev, 
+                       __ZN19_NUIGridArrangementC2Ev, __ZN23_NUIGridArrangementCellC1EPU34objcproto23_NUIGridArrangementItem11objc_object8_NSRangeS2_21NUIContainerAlignmentS3_, 
+                       __ZN23_NUIGridArrangementCellC2EPU34objcproto23_NUIGridArrangementItem11objc_object8_NSRangeS2_21NUIContainerAlignmentS3_, 
+                       __ZN28_NUIGridArrangementDimensionC1Emd, __ZN28_NUIGridArrangementDimensionC2Emd ]
+    objc-classes:    [ _NUIContainerBoxView, _NUIContainerGridView, _NUIContainerStackView, 
+                       _NUIContainerView, __NUIViewContainerViewInfo ]
+    objc-ivars:      [ __NUIViewContainerViewInfo._allowFastBaselines, __NUIViewContainerViewInfo._baselineRelativeInsets, 
+                       __NUIViewContainerViewInfo._customAlignmentInsets, __NUIViewContainerViewInfo._customBottomBaseline, 
+                       __NUIViewContainerViewInfo._customTopBaseline ]
+...

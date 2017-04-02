@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 6C76ACE7-2BA5-38ED-9DEE-2FEE096654BD', 'x86_64: 9BEE3F3B-55FE-3C35-9DAC-C7F287920DD8' ]
+uuids:           [ 'i386: F036220C-685E-3D38-8209-388F61EADB0D', 'x86_64: A3C3E3B8-AAD8-3E48-BD83-A6D35F132579' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MediaUI.framework/Versions/A/MediaUI
 objc-constraint: none

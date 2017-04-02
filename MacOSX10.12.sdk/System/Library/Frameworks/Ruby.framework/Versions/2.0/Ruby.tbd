@@ -1,10 +1,10 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 4DB75A6D-EFA5-3030-A74F-F23C9E9BEBF1', 'x86_64: C11B8FA9-9A94-3CFC-AE75-1BBB34BAAB20' ]
+uuids:           [ 'i386: 5ADA33F5-590B-3CDD-A7BC-192270BDA0DE', 'x86_64: E2809591-4FD5-3F84-BB42-79C789E5F412' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Ruby.framework/Versions/2.0/usr/lib/libruby.2.0.0.dylib
-current-version: 2.0
-compatibility-version: 2.0
+current-version: 2
+compatibility-version: 2
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

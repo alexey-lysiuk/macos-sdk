@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 93FAF15E-A4D8-3B40-8B8E-215967B02EDA', 'x86_64: E889DBA6-B380-3593-9262-3B0B1FF61A7D' ]
+uuids:           [ 'i386: D9383225-EFBE-373B-AAD4-D2854D33EE18', 'x86_64: 96CD02E4-A3FB-34B9-8E39-862517C450C1' ]
 platform:        macosx
 install-name:    /usr/lib/libalias.A.dylib
 objc-constraint: none

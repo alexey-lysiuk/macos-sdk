@@ -3,26 +3,41 @@
 .\"man mdoc.samples for a complete listing of options
 .\"man mdoc for the short list of editing options
 .\"/usr/share/misc/mdoc.template
-.Dd 1/22/16               \" DATE
+.Dd 10/2/16               \" DATE
 .Dt safaridriver 1        \" Program name and manual section number
 .Os Darwin
 .Sh NAME                  \" Section Header - required - don't modify
 .Nm safaridriver
 .\" The following lines are read in generating the apropos(man -k) database. Use only key
 .\" words here as the database is built based on the words here and in the .ND line.
-.Nd Safari WebDriver REST API service launcher
+.Nd Safari WebDriver REST API service
 .Sh SYNOPSIS             \" Section Header - required - don't modify
 .Nm
 .Fl p Ar port      \" [-p port]
 .Sh DESCRIPTION          \" Section Header - required - don't modify
 The
 .Nm
-utility is used to launch an HTTP server daemon that implements the Selenium
-WebDriver REST API. When launched, the
-.Xr webdriverd 8
-daemon allows for automated testing of
-web content using the version of Safari that is installed with Mac OS X.
+utility is used to launch an HTTP server that implements the Selenium
+WebDriver REST API. When launched,
+.Nm
+allows for automated testing of
+web content using the version of Safari that is installed with macOS.
+.Pp
+.Nm
+supports several capabilities that can customize an automation session's behavior
+for a particular testing purpose. Capabilities are provided as arguments when requesting
+a new session.
+The capabilities supported by
+.Nm
+are listed in the
+.Sx OPTIONS
+section below. Unless noted below, the values of requested capability keys are not read
+and are assumed to be true if present, and false otherwise.
+.Pp
+To use capabilities in your tests, please refer to the relevant 3rd-party documentation to learn
+how to request extra capabilities with the WebDriver client library that you are using.
 .Sh OPTIONS
+.Ss Command line options
 .Bl -tag -width -indent
 .It Fl p , Fl - Ns Ar port Aq Ar port
 Specifies the port on which the HTTP server should listen for incoming
@@ -30,11 +45,26 @@ connections. If the port is already in use or otherwise unavailable,
 .Nm
 will exit immediately with a non-zero return code.
 .El                      \" Ends the list
+.Ss Available capabilities
+.Bl -tag -width -indent
+.It Ar automaticInspection
+This capability instructs Safari to preload the Web Inspector and JavaScript debugger in
+the background prior to returning a newly-created window. To pause the test's execution in
+JavaScript and bring up Web Inspector's Debugger tab, you can simply evaluate a
+.Ic debugger;
+statement in the test page.
+.It Ar automaticProfiling
+This capability instructs Safari to preload the Web Inspector and start a Timeline recording
+in the background prior to returning a newly-created window. To view the recording, open
+the Web Inspector through Safari's
+.Em Develop
+menu.
+.El
 .Sh NOTES
 For security reasons, the HTTP server accepts connections from localhost only. The
-HTTP server can be used simultaneously by multiple test clients. Only one
+HTTP server can accept connections from multiple test clients. Only one
 HTTP server may run at a time; when all launchers have exited, the
-server will shut down automatically.
+server will shut down automatically. Currently, only one Safari may be automated at a time.
 .Pp
 .Nm
 is typically executed manually at the command line or automatically by a
@@ -43,12 +73,10 @@ for most popular programming languages. More information is available on the
 Selenium project website:
 .Pp
 .D1 Em https://www.seleniumhq.org/
+.Pp
 .Sh STANDARDS
 .Nm
-and the associated
-.Xr webdriverd 8
-daemon implement the Selenium WebDriver JSON Wire Protocol.
-.Sh SEE ALSO
-.\" List links in ascending order by section, alphabetically within a section.
-.\" Please do not reference files that do not exist without filing a bug report
-.Xr webdriverd 8
+implements the Selenium WebDriver JSON Wire Protocol as described by the
+Selenium WebDriver test suites and the protocol summary published here:
+.Pp
+.D1 Em https://github.com/SeleniumHQ/selenium/wiki/JsonWireProtocol

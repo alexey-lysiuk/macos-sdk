@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: DBEDC70C-3804-35FC-82A0-03B27AE23EA6', 'x86_64: 0A71D8CC-6C3F-3E75-A107-178EDA0DBD72' ]
+uuids:           [ 'i386: CA0AC98C-C8A1-317A-B4BC-46A359578F39', 'x86_64: 3B7B5765-786C-3C9C-83F2-E80EB922638A' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/JavaApplicationLauncher.framework/Versions/A/JavaApplicationLauncher
 objc-constraint: none

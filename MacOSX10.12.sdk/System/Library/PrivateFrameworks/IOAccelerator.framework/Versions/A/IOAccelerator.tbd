@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: FFC24E66-42DF-3AB0-BAF4-76FA6F7E67AA', 'x86_64: CA2BC09C-5067-3178-8939-8B497BE2243A' ]
+uuids:           [ 'i386: 9E94B92F-674A-3E6C-95EF-8A0510463169', 'x86_64: ECBE977E-490B-3528-BD17-4951B69BF8B1' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IOAccelerator.framework/Versions/A/IOAccelerator
 objc-constraint: none
@@ -91,6 +91,6 @@ exports:
                        _IOAccelVideoContextRelease, _IOAccelVideoContextRequestDataBuffer, 
                        _IOAccelVideoContextSetDataBufferClassUsedBytes, _IOAccelVideoContextSetExecutableName, 
                        _IOAccelVideoContextSubmitDataBuffers, _IOAccelVideoContextTestResourceSysMem, 
-                       ___firstDeviceRef, ___globalCommPage, ___ktrace_enabled, __ioAccelDisplayPipeTransactionSetPipeColorMatrixWithArgs, 
-                       _ioAccelContextBlockFenceCallback, _kIOAccelContextCount ]
+                       ___firstDeviceRef, ___globalCommPage, ___ktrace_enabled, _ioAccelContextBlockFenceCallback, 
+                       _kIOAccelContextCount ]
 ...

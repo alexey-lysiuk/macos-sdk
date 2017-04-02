@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9F01CBDB-1051-33AA-8302-E6FB55126D66' ]
+uuids:           [ 'x86_64: E9CE662D-5089-35E2-9E5D-205817DF4136' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Swift/libswiftSwiftOnoneSupport.dylib
 current-version: 800.8.18

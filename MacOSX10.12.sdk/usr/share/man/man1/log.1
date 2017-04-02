@@ -16,6 +16,7 @@
 .Op Fl -output Ar path
 .Op Fl -start Ar date/time
 .Op Fl -size Ar num Op k|m
+.Op Fl -last Ar num Op m|h|d
 .Pp
 .Nm
 .Cm config
@@ -28,10 +29,10 @@
 .Cm erase
 .Op Fl -all
 .Op Fl -ttl
-.Op Fl -faulterror
 .Pp
 .Nm
-.Cm show Op Ar archive | file
+.Cm show
+.Op Fl -archive Ar archive | Fl -file Ar file
 .Op Fl -predicate Ar filter
 .Op Fl -source
 .Op Fl -style Ar json | syslog
@@ -40,6 +41,7 @@
 .Op Fl -info
 .Op Fl -debug
 .Op Fl -last Ar time Op m|h|d
+.Op Fl -timezone Ar local | timezone
 .Pp
 .Nm
 .Cm stream
@@ -75,12 +77,17 @@ If the path is a directory, a file named system_logs.logarchive will be created 
 If the path contains the extension .logarchive, a new logarchive will be created with that name at the specified path.
 .It Fl -start Ar date/time
 Limits the content capture to the date and time forward to now.
-Date and time are specified as "YYYY-MM-DD HH:MM:SS".
-The date can be specified with or without a time. e.g., "2016-04-12" or "2016-04-12 13:30:00".
+The following date/time formats are accepted:
+"YYYY-MM-DD",
+"YYYY-MM-DD HH:MM:SS",
+"YYYY-MM-DD HH:MM:SSZZZZZ"
+.It Fl -last Ar num Op m|h|d
+Limits the captured events to the period starting at the given interval ago from the current time. Time is assumed
+in seconds unless specified. Example: "--last 2m" or "--last 3h"
 .It Fl -size Ar num Op k|m
 The amount of data to be captured in kilobytes or megabytes.
 This is an approximation, as the actual size may be more than requested.
-Example:  "--size 100k" or "--size 20m"
+Example: "--size 100k" or "--size 20m"
 .El
 .It Cm config
 Configure, reset or read settings for the logging system.
@@ -117,15 +124,21 @@ If no arguments are specified, the main log datastore and inflight log data will
 Deletes main log datastore, and inflight log data as well as time-to-live data (TTL), and the fault and error content.
 .It Fl -ttl
 Deletes time-to-live log content.
-.It Fl -faulterror
-Deletes fault and error specific log content.
 .El
 .Pp
-.It Cm show Op archive | file
+.It Cm show
 Shows contents of the system log datastore, archive or a specific tracev3 file.
 If a file or archive is not specified, the system datastore will be shown.
+If it is from a future system version that log cannot understand,
+it exists with EX_DATAERR (65) and an error message.
 The output contains only default level messages unless --info and/or --debug are specified.
 .Bl -tag -width "--archive path "
+.It Fl -archive Ar archive
+Display events stored in the given archive. The archive must be a valid log archive bundle with the suffix
+\fB.logarchive\fR.
+.It Fl -file Ar file
+Display events stored in the given \fB.tracev3\fR file. In order to be decoded, the file must be contained
+within a valid \fB.logarchive\fR bundle, or part of the system logs directory.
 .It Fl -predicate Ar filter
 Filters messages based on the provided predicate, based on NSPredicate.
 A compound predicate or multiple predicates can be provided.
@@ -136,21 +149,29 @@ Include symbol names and source line numbers for messages, if available.
 Output the content as a different style.
 .It Fl -start Ar date/time
 Shows content starting from the provided date.
-Date and time are specified as "YYYY-MM-DD HH:MM:SS".
-The date can be specified with or without a time. e.g., "2016-04-12" or "2016-04-12 13:30:00".
+The following date/time formats are accepted:
+"YYYY-MM-DD",
+"YYYY-MM-DD HH:MM:SS",
+"YYYY-MM-DD HH:MM:SSZZZZZ"
 .It Fl -end Ar date/time
 Shows content up to the provided date.
-Date and time are specified as "YYYY-MM-DD HH:MM:SS".
-The date can be specified with or without a time. e.g., "2016-04-12" or "2016-04-12 13:30:00".
+The following date/time formats are accepted:
+"YYYY-MM-DD",
+"YYYY-MM-DD HH:MM:SS",
+"YYYY-MM-DD HH:MM:SSZZZZZ"
+.It Fl -last Ar time Op m|h|d
+Shows events that occurred within the given time relative to the end of the log archive.
+Time may be specified as minutes, hours or days. Time is assumed in seconds unless specified.
+Example: "--last 2m" or "--last 3h"
+.It Fl -timezone Ar local | timezone
+Displays content in the local timezone, or a specified timezone (see
+.Xr tzset 3) .
+If not specified, the output is displayed in the timezone at the time the entry
+was written to source archive or file.
 .It Fl -info
 Shows info level messages in the output.
 .It Fl -debug
 Shows debug level messages in the output.
-.It Fl -last Ar time Op m|h|d
-Shows content that that has happened since time specified.
-Time may be specified as minutes, hours or days.  
-If not specified, seconds is assumed.
-For example, "--last 30", "--last 3m", "--last 8h", "--last 2d"
 .El
 .It Cm stream
 Stream activities, log data or trace messages for the system or from a given process.

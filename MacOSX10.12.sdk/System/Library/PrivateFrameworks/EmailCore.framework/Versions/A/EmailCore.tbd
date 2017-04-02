@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6FB6EDD0-6C52-3983-AE68-B22AAB1BBE4B' ]
+uuids:           [ 'x86_64: 5F6FF467-4945-30B7-9337-7220DA04B26B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/EmailCore.framework/Versions/A/EmailCore
-current-version: 3023.0
+current-version: 3032
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

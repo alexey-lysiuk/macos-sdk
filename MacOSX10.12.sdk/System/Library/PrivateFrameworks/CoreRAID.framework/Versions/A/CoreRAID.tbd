@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CDACA47F-B11E-35BF-86D8-632CEF88BA81' ]
+uuids:           [ 'x86_64: DB278C98-3D7E-3B19-A84E-1E9870A4A4A6' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreRAID.framework/Versions/A/CoreRAID
-current-version: 306.0
+current-version: 306
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

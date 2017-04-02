@@ -53,7 +53,7 @@ TK_LIB_FLAG='-framework Tk'
 
 # String to pass to linker to pick up the Tk library from its
 # build directory.
-TK_BUILD_LIB_SPEC='-F/Library/Caches/com.apple.xbs/Binaries/tcl/tcl-112~562/TempContent/Objects/OBJROOT1/tk84/Deployment -framework Tk'
+TK_BUILD_LIB_SPEC='-F/Library/Caches/com.apple.xbs/Binaries/tcl/tcl-112.50.2~1/TempContent/Objects/OBJROOT1/tk84/Deployment -framework Tk'
 
 # String to pass to linker to pick up the Tk library from its
 # installed directory.
@@ -69,7 +69,7 @@ TK_INCLUDE_SPEC='-I/System/Library/Frameworks/Tk.framework/Versions/8.4/Headers'
 # different place than the directory containing the source files, this
 # points to the location of the sources, not the location where Tk was
 # compiled.
-TK_SRC_DIR='/Library/Caches/com.apple.xbs/Sources/tcl/tcl-112/tk84/tk'
+TK_SRC_DIR='/Library/Caches/com.apple.xbs/Sources/tcl/tcl-112.50.2/tk84/tk'
 
 # Needed if you want to make a 'fat' shared library library
 # containing tk objects or link a different wish.
@@ -84,14 +84,14 @@ TK_STUB_LIB_FLAG='-ltkstub8.4'
 
 # String to pass to linker to pick up the Tk stub library from its
 # build directory.
-TK_BUILD_STUB_LIB_SPEC='-L/Library/Caches/com.apple.xbs/Binaries/tcl/tcl-112~562/TempContent/Objects/OBJROOT1/tk84/Deployment -ltkstub8.4'
+TK_BUILD_STUB_LIB_SPEC='-L/Library/Caches/com.apple.xbs/Binaries/tcl/tcl-112.50.2~1/TempContent/Objects/OBJROOT1/tk84/Deployment -ltkstub8.4'
 
 # String to pass to linker to pick up the Tk stub library from its
 # installed directory.
 TK_STUB_LIB_SPEC='-L/System/Library/Frameworks/Tk.framework/Versions/8.4 -ltkstub8.4'
 
 # Path to the Tk stub library in the build directory.
-TK_BUILD_STUB_LIB_PATH='/Library/Caches/com.apple.xbs/Binaries/tcl/tcl-112~562/TempContent/Objects/OBJROOT1/tk84/Deployment/libtkstub8.4.a'
+TK_BUILD_STUB_LIB_PATH='/Library/Caches/com.apple.xbs/Binaries/tcl/tcl-112.50.2~1/TempContent/Objects/OBJROOT1/tk84/Deployment/libtkstub8.4.a'
 
 # Path to the Tk stub library in the install directory.
 TK_STUB_LIB_PATH='/System/Library/Frameworks/Tk.framework/Versions/8.4/libtkstub8.4.a'

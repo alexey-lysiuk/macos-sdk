@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 0B5B6EDB-E892-3AFC-A96E-49F823CE8269', 'x86_64: C15C8D1A-6117-3FEE-8F1E-7B31219A3416' ]
+uuids:           [ 'i386: 19BB95DD-1147-3A51-8943-0A4682744891', 'x86_64: 2B3452C9-3EB0-346B-A423-28DC9F11CA25' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Calculate.framework/Versions/A/Calculate
 objc-constraint: none
@@ -14,7 +14,8 @@ exports:
                        _Converter._outputUnit, _Converter._outputValue, _CurrencyCache._currencyData, 
                        _CurrencyCache._currentCurrency, _CurrencyCache._currentRate, 
                        _CurrencyCache._currentString, _CurrencyCache._lastRefreshDate, 
-                       _CurrencyCache._mutableCurrencyCache, _CurrencyCache._uuid ]
+                       _CurrencyCache._mutableCurrencyCache, _CurrencyCache._persistenceQueue, 
+                       _CurrencyCache._uuid ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ _CalculateExpression, _CalculateExpressionError, _CalculateInternationalExpression, 
                        _CalculatePerformExpression, ___bid128_abs, ___bid128_acos, 

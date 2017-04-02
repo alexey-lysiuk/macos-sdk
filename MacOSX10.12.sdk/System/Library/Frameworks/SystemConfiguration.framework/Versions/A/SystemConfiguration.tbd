@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 4B448197-3D6E-38DA-A039-8D672D15D0BA', 'x86_64: D9A57D90-E54F-3E1A-AA2F-F5A694BCE4BB' ]
+uuids:           [ 'i386: 061E2154-F876-3839-898A-10726E66B30E', 'x86_64: 6F6EC3F7-CE82-37AB-879A-AFD731360DB3' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration
-current-version: 888.30.2
+current-version: 888.51.1
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]
@@ -84,16 +84,16 @@ exports:
                        _SCNetworkProtocolGetEnabled, _SCNetworkProtocolGetProtocolType, 
                        _SCNetworkProtocolGetTypeID, _SCNetworkProtocolSetConfiguration, 
                        _SCNetworkProtocolSetEnabled, _SCNetworkProxiesCopyMatching, 
-                       _SCNetworkProxiesCopyMatchingWithOptions, _SCNetworkReachabilityCopyResolvedAddress, 
-                       _SCNetworkReachabilityCreateWithAddress, _SCNetworkReachabilityCreateWithAddressPair, 
-                       _SCNetworkReachabilityCreateWithName, _SCNetworkReachabilityCreateWithOptions, 
-                       _SCNetworkReachabilityGetFlags, _SCNetworkReachabilityGetInterfaceIndex, 
-                       _SCNetworkReachabilityGetTypeID, _SCNetworkReachabilityScheduleWithRunLoop, 
-                       _SCNetworkReachabilitySetCallback, _SCNetworkReachabilitySetDispatchQueue, 
-                       _SCNetworkReachabilityUnscheduleFromRunLoop, _SCNetworkServiceAddProtocolType, 
-                       _SCNetworkServiceCopy, _SCNetworkServiceCopyAll, _SCNetworkServiceCopyExternalID, 
-                       _SCNetworkServiceCopyProtocol, _SCNetworkServiceCopyProtocols, 
-                       _SCNetworkServiceCreate, _SCNetworkServiceEstablishDefaultConfiguration, 
+                       _SCNetworkProxiesCopyMatchingWithOptions, _SCNetworkProxiesCreateProxyAgentData, 
+                       _SCNetworkReachabilityCopyResolvedAddress, _SCNetworkReachabilityCreateWithAddress, 
+                       _SCNetworkReachabilityCreateWithAddressPair, _SCNetworkReachabilityCreateWithName, 
+                       _SCNetworkReachabilityCreateWithOptions, _SCNetworkReachabilityGetFlags, 
+                       _SCNetworkReachabilityGetInterfaceIndex, _SCNetworkReachabilityGetTypeID, 
+                       _SCNetworkReachabilityScheduleWithRunLoop, _SCNetworkReachabilitySetCallback, 
+                       _SCNetworkReachabilitySetDispatchQueue, _SCNetworkReachabilityUnscheduleFromRunLoop, 
+                       _SCNetworkServiceAddProtocolType, _SCNetworkServiceCopy, _SCNetworkServiceCopyAll, 
+                       _SCNetworkServiceCopyExternalID, _SCNetworkServiceCopyProtocol, 
+                       _SCNetworkServiceCopyProtocols, _SCNetworkServiceCreate, _SCNetworkServiceEstablishDefaultConfiguration, 
                        _SCNetworkServiceGetEnabled, _SCNetworkServiceGetInterface, 
                        _SCNetworkServiceGetName, _SCNetworkServiceGetPrimaryRank, 
                        _SCNetworkServiceGetServiceID, _SCNetworkServiceGetTypeID, 
@@ -295,16 +295,16 @@ exports:
                        _kSCPropNetIPv4RouteSubnetMask, _kSCPropNetIPv4Router, _kSCPropNetIPv4SubnetMasks, 
                        _kSCPropNetIPv6AdditionalRoutes, _kSCPropNetIPv6Addresses, 
                        _kSCPropNetIPv6ConfigMethod, _kSCPropNetIPv6DestAddresses, 
-                       _kSCPropNetIPv6ExcludedRoutes, _kSCPropNetIPv6Flags, _kSCPropNetIPv6IncludedRoutes, 
-                       _kSCPropNetIPv6PrefixLength, _kSCPropNetIPv6RouteDestinationAddress, 
-                       _kSCPropNetIPv6RouteGatewayAddress, _kSCPropNetIPv6RouteInterfaceName, 
-                       _kSCPropNetIPv6RoutePrefixLength, _kSCPropNetIPv6Router, _kSCPropNetIgnoreLinkStatus, 
-                       _kSCPropNetInterfaceDeviceName, _kSCPropNetInterfaceHardware, 
-                       _kSCPropNetInterfaceSubType, _kSCPropNetInterfaceSupportsModemOnHold, 
-                       _kSCPropNetInterfaceType, _kSCPropNetInterfaces, _kSCPropNetL2TPIPSecSharedSecret, 
-                       _kSCPropNetL2TPIPSecSharedSecretEncryption, _kSCPropNetL2TPTransport, 
-                       _kSCPropNetLinkActive, _kSCPropNetLinkDetaching, _kSCPropNetLinkExpensive, 
-                       _kSCPropNetLinkIssuesInfo, _kSCPropNetLinkIssuesModuleID, 
+                       _kSCPropNetIPv6EnableCGA, _kSCPropNetIPv6ExcludedRoutes, _kSCPropNetIPv6Flags, 
+                       _kSCPropNetIPv6IncludedRoutes, _kSCPropNetIPv6PrefixLength, 
+                       _kSCPropNetIPv6RouteDestinationAddress, _kSCPropNetIPv6RouteGatewayAddress, 
+                       _kSCPropNetIPv6RouteInterfaceName, _kSCPropNetIPv6RoutePrefixLength, 
+                       _kSCPropNetIPv6Router, _kSCPropNetIgnoreLinkStatus, _kSCPropNetInterfaceDeviceName, 
+                       _kSCPropNetInterfaceHardware, _kSCPropNetInterfaceSubType, 
+                       _kSCPropNetInterfaceSupportsModemOnHold, _kSCPropNetInterfaceType, 
+                       _kSCPropNetInterfaces, _kSCPropNetL2TPIPSecSharedSecret, _kSCPropNetL2TPIPSecSharedSecretEncryption, 
+                       _kSCPropNetL2TPTransport, _kSCPropNetLinkActive, _kSCPropNetLinkDetaching, 
+                       _kSCPropNetLinkExpensive, _kSCPropNetLinkIssuesInfo, _kSCPropNetLinkIssuesModuleID, 
                        _kSCPropNetLinkIssuesTimeStamp, _kSCPropNetLinkQuality, _kSCPropNetLocalHostName, 
                        _kSCPropNetModemAccessPointName, _kSCPropNetModemConnectSpeed, 
                        _kSCPropNetModemConnectionPersonality, _kSCPropNetModemConnectionScript, 

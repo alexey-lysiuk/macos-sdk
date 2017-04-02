@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386 ]
-uuids:           [ 'i386: 93C55AA5-DB6D-33F9-9636-9CA103B3820E' ]
+uuids:           [ 'i386: F028FC6A-734F-36CA-A9E0-645AB3FC35BB' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/DrawSprocket.framework/Versions/A/DrawSprocket
 objc-constraint: none

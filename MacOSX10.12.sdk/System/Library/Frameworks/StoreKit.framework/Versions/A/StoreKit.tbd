@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 4C90C7A7-6326-3CB7-AB52-BE997F55082A', 'x86_64: 40DFC2B9-91F0-37F2-86D5-BAD726974FA0' ]
+uuids:           [ 'i386: 6F82CA75-9319-3900-9436-E91CCD685098', 'x86_64: F5743CF7-687E-3531-809D-FF9EF80AD664' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/StoreKit.framework/Versions/A/StoreKit
-current-version: 379.0
+current-version: 379
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

@@ -1,5 +1,5 @@
 .\" Copyright (c) 2000-2016  Apple Inc. All rights reserved.
-.Dd June 14, 2016
+.Dd Oct. 17, 2016
 .Dt "heap" 1
 .Os
 .Sh NAME
@@ -7,6 +7,7 @@
 .Nd List all the malloc-allocated buffers in the process's heap
 .Sh SYNOPSIS
 .Nm heap
+.Op Fl s | Fl sortBySize
 .Op Fl guessNonObjects
 .Op Fl sumObjectFields
 .Op Fl showSizes
@@ -31,6 +32,8 @@ or the Xcode Memory Graph Debugger.
 .Pp
 The following options are available:
 .Bl -tag -width indent
+.It Fl s | Fl sortBySize
+Sort output by total size of class instances, rather than by count.
 .It Fl guessNonObjects
 Look through the memory contents of each Objective-C object to find pointers to malloc'ed
 blocks (non-objects), such as the variable array hanging from an NSArray.  These referenced

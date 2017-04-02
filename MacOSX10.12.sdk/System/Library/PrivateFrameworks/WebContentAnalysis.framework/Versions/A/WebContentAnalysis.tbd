@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: F53863EC-3B3B-3B6E-B1A8-20C87917EA42', 'x86_64: D7C3874B-30ED-3E05-A0E2-656985755650' ]
+uuids:           [ 'i386: F9BC5121-E38F-3B2A-9158-EADF96E8E308', 'x86_64: F6F0AE5F-BD46-3486-AE51-EC2BDB5C11AC' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/WebContentAnalysis.framework/Versions/A/WebContentAnalysis
 objc-constraint: none

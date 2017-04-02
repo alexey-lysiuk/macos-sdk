@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8A7EEA75-8334-3FB5-A83B-F0ECB87952B2' ]
+uuids:           [ 'x86_64: 1722A7F5-B1CC-3C37-8D3C-7F1F7EA79E7F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MobileKeyBag.framework/Versions/A/MobileKeyBag
 objc-constraint: none
@@ -10,7 +10,7 @@ exports:
                        _MKBDeviceUnlockedSinceBoot, _MKBGetDeviceConfigurations, 
                        _MKBGetDeviceLockState, _MKBGetDeviceLockStateInfo, _MKBKeyBagCreateWithData, 
                        _MKBKeyBagGetAKSHandle, _MKBKeyBagUnload, _MKBKeyBagUnlock, 
-                       _MKBLockDevice, _MKBLockDeviceNow, _MKBSetDeviceConfigurations, 
+                       _MKBLockDevice, _MKBLockDeviceNow, _MKBSeshatDebug, _MKBSetDeviceConfigurations, 
                        _MKBSetLogFunction, _MKBUnlockDevice, _kMKBConfigBackOffDelay, 
                        _kMKBConfigGracePeriod, _kMKBConfigMaxUnlockAttempts, _kMKBInfoBackOff, 
                        _kMKBInfoBagState, _kMKBInfoFailedAttempts, _kMKBInfoLockState, 

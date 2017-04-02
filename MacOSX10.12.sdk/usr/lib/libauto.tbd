@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 0DB50ACB-BFB1-3A23-BD39-4C3AFD597D29', 'x86_64: 5BBF6A00-CC76-389D-84E7-CA88EDADE683' ]
+uuids:           [ 'i386: C5D7553D-3FA3-3684-BB0A-52017BF911DC', 'x86_64: 34388D0B-C539-3C1B-9408-2BC152162E43' ]
 platform:        macosx
 install-name:    /usr/lib/libauto.dylib
 objc-constraint: none

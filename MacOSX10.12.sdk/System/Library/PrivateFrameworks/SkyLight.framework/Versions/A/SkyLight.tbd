@@ -1,11 +1,11 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64, x86_64h ]
-uuids:           [ 'i386: 6D8AE59D-6410-3551-A6FC-AA1B78DFDF4C', 'x86_64: FD95E8F2-7633-355A-8542-914BEAF7CAEE', 
-                   'x86_64h: 9F5D6C9A-CAF1-3057-9C8C-E62B10B0A136' ]
+uuids:           [ 'i386: A9B83B63-9AC0-33C9-945B-4D1449454B4C', 'x86_64: 90479C67-4D85-3B7A-867C-7D49DC2E37E1', 
+                   'x86_64h: BA7B7ACC-1B91-3E87-92EC-1C2969EF7088' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SkyLight.framework/Versions/A/SkyLight
-current-version: 600.0
-compatibility-version: 64.0
+current-version: 600
+compatibility-version: 64
 objc-constraint: none
 exports:         
   - archs:           [ i386 ]
@@ -29,11 +29,11 @@ exports:
                        _SLSInstallRemoteContextNotificationHandler, _SLSIsAmbientDisplayEnabled, 
                        _SLSMachineSupportsLowPowerVideo, _SLSMainDisplayBoundsIgnoringCapture, 
                        _SLSManagedDisplaySetIsAnimating, _SLSMoveWorkspaceWindowListWithOptions, 
-                       _SLSPackagesRemoveWindowDragTransform, _SLSPackagesSetWindowDragTransform, 
-                       _SLSPersistenceAnnounceAllAppsReady, _SLSPersistenceSaveSpaceConfiguration, 
-                       _SLSPersistenceWillLaunchASNsWithCompletionHandler, _SLSPostBroadcastNotification, 
-                       _SLSPostNotificationToConnection, _SLSProcessAssignToAllSpaces, 
-                       _SLSProcessAssignToSpace, _SLSRemoveRemoteContextNotificationHandler, 
+                       _SLSPackagesInitializeSessionPreferences, _SLSPackagesRemoveWindowDragTransform, 
+                       _SLSPackagesSetWindowDragTransform, _SLSPersistenceAnnounceAllAppsReady, 
+                       _SLSPersistenceSaveSpaceConfiguration, _SLSPersistenceWillLaunchASNsWithCompletionHandler, 
+                       _SLSPostBroadcastNotification, _SLSPostNotificationToConnection, 
+                       _SLSProcessAssignToAllSpaces, _SLSProcessAssignToSpace, _SLSRemoveRemoteContextNotificationHandler, 
                        _SLSResetMenuBarSystemOverrideAlphas, _SLSSaveConfiguration, 
                        _SLSSavePerUserConfigurationData, _SLSSetAccessibilityAdjustments, 
                        _SLSSetAppearanceThemeLegacy, _SLSSetDebugOptionsWithDataObtainingPort, 

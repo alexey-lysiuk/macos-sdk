@@ -294,6 +294,7 @@ typedef __uint32_t sae_connid_t;
 /* connectx() flag parameters */
 #define	CONNECT_RESUME_ON_READ_WRITE	0x1 /* resume connect() on read/write */
 #define	CONNECT_DATA_IDEMPOTENT		0x2 /* data is idempotent */
+#define	CONNECT_DATA_AUTHENTICATED	0x4 /* data includes security that replaces the TFO-cookie */
 
 /* sockaddr endpoints */
 typedef struct sa_endpoints {
@@ -440,7 +441,6 @@ struct sockaddr_storage {
 	__int64_t	__ss_align;	/* force structure storage alignment */
 	char			__ss_pad2[_SS_PAD2SIZE];
 };
-
 
 /*
  * Protocol families, same as address families for now.

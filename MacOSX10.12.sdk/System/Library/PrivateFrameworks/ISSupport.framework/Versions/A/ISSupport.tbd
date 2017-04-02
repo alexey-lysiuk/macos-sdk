@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: B33E6C8C-0982-32C2-8348-74E772C9CADA', 'x86_64: 9160FEAC-572C-3E88-86F0-687B4DF47CE7' ]
+uuids:           [ 'i386: AB975FC1-3657-34E6-97A9-2E7F84FC2775', 'x86_64: E68ACED2-3309-31B8-B5FE-1FD305E90E9A' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ISSupport.framework/Versions/A/ISSupport
-current-version: 58.0
+current-version: 58
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

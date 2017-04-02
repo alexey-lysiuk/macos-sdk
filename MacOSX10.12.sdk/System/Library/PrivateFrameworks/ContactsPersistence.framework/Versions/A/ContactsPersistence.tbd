@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 891D348F-FEE2-3706-983F-8C8500FA31E5', 'x86_64: 12AB8AA1-7F0C-3BE3-B6C6-2A4822948E58' ]
+uuids:           [ 'i386: 75109CE9-7381-395F-A4DD-1A1B05FC9B01', 'x86_64: 7EC0366F-30A6-3538-8BC9-8CABD55C178D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ContactsPersistence.framework/Versions/A/ContactsPersistence
 objc-constraint: none

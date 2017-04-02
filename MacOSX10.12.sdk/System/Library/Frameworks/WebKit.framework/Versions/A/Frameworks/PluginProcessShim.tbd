@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: F88443BE-611C-33FC-8E9E-D28EBB0EF6F2', 'x86_64: 8A86A55C-1AA8-319A-B426-ACE7467262E8' ]
+uuids:           [ 'i386: BE30C23B-3ABF-3D38-864A-F902B17EE3AD', 'x86_64: DA1428CF-8A7A-323B-BC12-130E66999457' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/WebKit.framework/Versions/A/Frameworks/PluginProcessShim.dylib
-current-version: 602.3.12
+current-version: 603.1.30
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]

@@ -864,9 +864,9 @@ CF_ENUM(AudioUnitPropertyID)
 						The destination audio unit's input element to be used in the connection						
 */
 typedef struct AudioUnitConnection {
-	AudioUnit	sourceAudioUnit;
-	UInt32		sourceOutputNumber;
-	UInt32		destInputNumber;
+	AudioUnit __nullable	sourceAudioUnit;
+	UInt32					sourceOutputNumber;
+	UInt32					destInputNumber;
 } AudioUnitConnection;
 
 /*!

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 62FE63B8-8893-31D6-ADAD-1EFBC800F9B7' ]
+uuids:           [ 'x86_64: E17ED2D4-BB59-3156-99B0-D53631AD256E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AppleIDAuthSupport.framework/Versions/A/AppleIDAuthSupport
-current-version: 69.20.1
+current-version: 69.50.1
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

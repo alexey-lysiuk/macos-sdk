@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: C91C05A9-3F2A-359F-8D1F-65069499A1CE', 'x86_64: 8C719AFE-2CBD-3313-9F85-10C4FCF07067' ]
+uuids:           [ 'i386: 4291C005-A0A1-3D79-9F72-1D8E01CA3DBE', 'x86_64: CC461850-65BE-38BF-A3D4-3A145B606EA5' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PSNormalizer.framework/Versions/A/Libraries/libAGM.dylib
 objc-constraint: none

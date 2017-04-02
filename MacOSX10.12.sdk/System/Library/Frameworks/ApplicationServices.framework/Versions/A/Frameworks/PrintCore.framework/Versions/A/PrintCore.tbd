@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 3E1C2274-5845-30D7-A32E-19EB414C9347', 'x86_64: B7CC15C1-AF50-37F3-8AF6-65F8CDC323F0' ]
+uuids:           [ 'i386: 8870E9A1-E705-3DA5-AA14-6184A38AD39A', 'x86_64: 5027FD58-F0EE-33E4-8577-934CA06CD2AF' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/PrintCore.framework/Versions/A/PrintCore
-current-version: 491.0
+current-version: 491
 objc-constraint: none
 parent-umbrella: ApplicationServices
 exports:         

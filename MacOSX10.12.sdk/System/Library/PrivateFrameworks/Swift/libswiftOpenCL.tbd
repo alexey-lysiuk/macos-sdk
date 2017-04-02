@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B6E69E1C-6539-3298-A208-A28025B0F6BB' ]
+uuids:           [ 'x86_64: BAA5AD9B-6DDD-3261-93D2-081869DEEC61' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Swift/libswiftOpenCL.dylib
 current-version: 800.8.18

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: D252C335-8087-36F1-B30E-DADF096E37F4', 'x86_64: FB71CAD6-C224-3139-8C57-A8BE2B1B2D6A' ]
+uuids:           [ 'i386: CB44F5F9-7190-3890-B196-4031CA71A14D', 'x86_64: 47702E88-6008-3608-8E12-85B56EAEC9EC' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SpotlightIndex.framework/Versions/A/SpotlightIndex
-current-version: 1075.28
+current-version: 1075.40
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]

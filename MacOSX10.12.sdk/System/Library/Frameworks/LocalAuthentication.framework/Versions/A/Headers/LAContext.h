@@ -27,7 +27,7 @@ typedef NS_ENUM(NSInteger, LAPolicy)
     ///
     ///             Biometric authentication will get locked after 5 unsuccessful attempts. After that,
     ///             users have to unlock it by entering passcode.
-    LAPolicyDeviceOwnerAuthenticationWithBiometrics NS_ENUM_AVAILABLE(10_12, 8_0) __WATCHOS_AVAILABLE(3.0) __TVOS_AVAILABLE(10.0) = kLAPolicyDeviceOwnerAuthenticationWithBiometrics,
+    LAPolicyDeviceOwnerAuthenticationWithBiometrics NS_ENUM_AVAILABLE(10_12_2, 8_0) __WATCHOS_AVAILABLE(3.0) __TVOS_AVAILABLE(10.0) = kLAPolicyDeviceOwnerAuthenticationWithBiometrics,
 
     /// Device owner was authenticated by Touch ID or device passcode.
     ///
@@ -106,8 +106,12 @@ NS_CLASS_AVAILABLE(10_10, 8_0) __WATCHOS_AVAILABLE(3.0) __TVOS_AVAILABLE(10.0)
 ///
 /// @param localizedReason Application reason for authentication. This string must be provided in correct
 ///                        localization and should be short and clear. It will be eventually displayed in
-///                        the authentication dialog. A name of the calling application will be already
-///                        displayed in title, so it should not be duplicated here.
+///                        the authentication dialog as a part of the following string:
+///                        "<appname>" is trying to <localized reason>.
+///
+///                        For example, if the app name is "TestApp" and localizedReason is passed "access
+///                        the hidden records", then the authentication prompt will read:
+///                        "TestApp" is trying to access the hidden records.
 ///
 /// @warning localizedReason parameter is mandatory and the call will throw NSInvalidArgumentException if
 ///          nil or empty string is specified.
@@ -217,8 +221,12 @@ typedef NS_ENUM(NSInteger, LAAccessControlOperation)
 ///
 /// @param localizedReason Application reason for authentication. This string must be provided in correct
 ///                        localization and should be short and clear. It will be eventually displayed in
-///                        the authentication dialog. A name of the calling application will be already
-///                        displayed in title, so it should not be duplicated here.
+///                        the authentication dialog as a part of the following string:
+///                        "<appname>" is trying to <localized reason>.
+///
+///                        For example, if the app name is "TestApp" and localizedReason is passed "access
+///                        the hidden records", then the authentication prompt will read:
+///                        "TestApp" is trying to access the hidden records.
 ///
 /// @param reply Reply block that is executed when access control evaluation finishes.
 ///              success Reply parameter that is YES if the access control has been evaluated successfully or

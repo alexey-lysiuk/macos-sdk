@@ -143,6 +143,42 @@ MDL_EXPORT
 + (BOOL)canExportFileExtension:(NSString *)extension;
 
 /*!
+ @property components
+ @abstract Allows applications to introspect the components on the asset.
+ */
+@property (nonatomic, readonly, copy) NSArray<id<MDLComponent>> *components;
+
+/*!
+ @method setComponent:forProtocol:
+ @abstract Extensible component support that allows user of ModelIO to customize
+ MDLAssets to fit their format and workflow.
+ */
+- (void)setComponent:(id<MDLComponent>)component forProtocol:(Protocol *)protocol;
+
+/*!
+ @method componentConformingToProtocol:
+ @abstract Extensible component support that allows user of ModelIO to customize
+ MDLAssets to fit their format and workflow.
+ */
+- (nullable id<MDLComponent>)componentConformingToProtocol:(Protocol *)protocol;
+
+/*!
+ @method objectForKeyedSubscript:
+ @abstract Allows shorthand [key] syntax for componentConformingToProtocol:.
+ @param key The protocol that the component conforms to.
+ @see componentConformingToProtocol:
+ */
+- (nullable id<MDLComponent>)objectForKeyedSubscript:(Protocol *)key;
+
+/*!
+ @method setObject:forKeyedSubscript:
+ @abstract Allows shorthand [key] syntax for setComponent:forProtocol:.
+ @param key The protocol that the component conforms to.
+ @see setComponent:forProtocol:
+ */
+- (void)setObject:(nullable id<MDLComponent>)obj forKeyedSubscript:(Protocol *)key;
+
+/*!
  @method childObjectsOfClass:
  @abstract Inspects an asset's hierarchy for objects of the specified class type
  @return returns an NSArray of all objects in the asset matching the requested class

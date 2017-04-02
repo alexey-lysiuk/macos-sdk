@@ -1,0 +1,15 @@
+--- !tapi-tbd-v2
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 87B38D4D-45C9-37CB-972F-C264CB86478D' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/Rapport.framework/Versions/A/Rapport
+current-version: 0
+compatibility-version: 0
+objc-constraint: none
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _RPServiceTypeNearbyAction, _RPServiceTypeNearbyInfo, _RPServiceTypeProximityPairing, 
+                       _RPServiceTypeWACAirPlay, _RPServiceTypeWACGeneric ]
+    objc-classes:    [ _RPClient, _RPDevice, _RPDeviceDiscovery, _RPRangingMeasurement, 
+                       _RPRangingSession, _RPService, _RPServiceSession, _RPSession ]
+...

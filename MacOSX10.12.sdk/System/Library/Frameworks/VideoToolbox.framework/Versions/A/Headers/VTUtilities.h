@@ -43,7 +43,7 @@ VT_EXPORT OSStatus
 VTCreateCGImageFromCVPixelBuffer(
 	CM_NONNULL CVPixelBufferRef			pixelBuffer,
 	CM_NULLABLE CFDictionaryRef			options,
-	CM_RETURNS_RETAINED_PARAMETER CM_NULLABLE CGImageRef * CM_NONNULL imageOut ) __OSX_AVAILABLE_STARTING(__MAC_10_11, __IPHONE_9_0);
+	CM_RETURNS_RETAINED_PARAMETER CM_NULLABLE CGImageRef * CM_NONNULL imageOut ) API_AVAILABLE(macosx(10.11), ios(9.0), tvos(10.2));
 
 
 #pragma pack(pop)

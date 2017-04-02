@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8EDDB7E2-BD6D-3DDB-97EF-45F109CDDA2A' ]
+uuids:           [ 'x86_64: 86991EFB-453E-3158-8C25-E10BEEC6BB1F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MediaServices.framework/Versions/A/MediaServices
 objc-constraint: none
@@ -12,7 +12,8 @@ exports:
                        _MSVCopyLocalizedModelName, _MSVCopySystemBuildVersion, _MSVCreateTemporaryFileHandle, 
                        _MSVCryptoDigestForContentsOfFile, _MSVCryptoDigestForContentsOfInputStream, 
                        _MSVCryptoDigestForData, _MSVCryptoDigestForString, _MSVCryptoUtilitiesHexStringFromDigest, 
-                       _MSVDataEqualsData, _MSVDeviceOSIsInternalInstall, _MSVDevicePPTTestsAreInProgress, 
+                       _MSVDataEqualsData, _MSVDeviceIsAppleTV, _MSVDeviceIsiPad, 
+                       _MSVDeviceOSIsInternalInstall, _MSVDevicePPTTestsAreInProgress, 
                        _MSVFrameworkExists, _MSVGzipCompressData, _MSVGzipCompressFile, 
                        _MSVGzipDecompressData, _MSVGzipDecompressFile, _MSVImageUtilitiesAddImageToDestination, 
                        _MSVImageUtilitiesAddJPEGToDestination, _MSVImageUtilitiesAddSourceImageToDestination, 
@@ -22,7 +23,9 @@ exports:
                        _MSVImageUtilitiesCreateImageSource, _MSVImageUtilitiesImageFormatSupportsTransparency, 
                        _MSVImageUtilitiesResizeSourceImageToDestination, _MSVImageUtilitiesResizeSourceImageToJPEGDestination, 
                        _MSVKeychainCopyKeychainValue, _MSVKeychainSetKeychainValue, 
-                       _MSVLaunchApplication, _MSVLocalizedString, _MSVLoggingConfigurationDidChangeNotifyName, 
+                       _MSVLaunchApplication, _MSVLocalizedString, _MSVLogCategoryCryptoUtil, 
+                       _MSVLogCategoryStreamBufferedPipe, _MSVLogCategoryStreamReader, 
+                       _MSVLogCategoryStreamWriter, _MSVLoggingConfigurationDidChangeNotifyName, 
                        _MSVLoggingRegisterConfiguration, _MSVLoggingShouldLog, _MSVMediaLoggingDirectory, 
                        _MSVMediaServicesBundle, _MSVMobileHomeDirectory, _MSVProcessIDForApplication, 
                        _MSVProcessIsRunning, _MSVProcessNameForPID, _MSVSetEqualsSet, 
@@ -38,5 +41,5 @@ exports:
                        _MSVPropertyListEncoder, _MSVStreamReader, _MSVStreamWriter, 
                        _MSVSystemDialog, _MSVSystemDialogOptions, _MSVSystemDialogResponse, 
                        _MSVSystemDialogTextField, _MSVThreadSafeMultiCallback, _MSVWatchdog, 
-                       _MSVXPCTransaction ]
+                       _MSVXPCTransaction, _MSVZipArchive ]
 ...

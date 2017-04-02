@@ -46,4 +46,4 @@ typedef NS_ENUM(NSInteger, LAError)
 
 /// LocalAuthentication error domain.
 extern NSString *const __nonnull LAErrorDomain
-NS_AVAILABLE(10_10, 8_3) __WATCHOS_AVAILABLE(3.0) __TVOS_AVAILABLE(10.0);
+NS_AVAILABLE(10_10_3, 8_3) __WATCHOS_AVAILABLE(3.0) __TVOS_AVAILABLE(10.0);

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 188B3F1C-5FA1-3C3E-9728-BCF82AA1776D', 'x86_64: FEB98F96-A9BB-3E6C-85B4-B466825B8C92' ]
+uuids:           [ 'i386: AAC9A1A5-AB94-3AF4-BEA2-E116830C23E5', 'x86_64: E7EDBA2B-8B97-3EC8-BDB1-232287E07581' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/LanguageModeling.framework/Versions/A/LanguageModeling
-current-version: 123.2.4
+current-version: 123.2.5
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]

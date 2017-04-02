@@ -126,6 +126,9 @@ extern void		task_deallocate(
 extern void		task_name_deallocate(
 					task_name_t		task_name);
 
+extern void		task_inspect_deallocate(
+					task_inspect_t		task_inspect);
+
 extern void		task_suspension_token_deallocate(
 					task_suspension_token_t	token);
 __END_DECLS

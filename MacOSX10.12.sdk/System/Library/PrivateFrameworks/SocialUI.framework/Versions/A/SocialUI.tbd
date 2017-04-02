@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8D172D5F-75CD-36B5-AF03-120B90389EE6' ]
+uuids:           [ 'x86_64: 7A02462C-F242-34EB-AB04-59118E8DBF5E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SocialUI.framework/Versions/A/SocialUI
-current-version: 5500.0
+current-version: 5500
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -142,9 +142,8 @@ exports:
                        _SOFilePasteboardItemWrapper, _SOFileTransferAttachmentCell, 
                        _SOFileTransferRenderer, _SOFileTransferResourceLoader, _SOFlexibleScrollView, 
                        _SOGradientView, _SOHandleMenuController, _SOInputLine, _SOInputLineAutoSender, 
-                       _SOInputLineViewController, _SOMapView, _SOMapViewController, 
-                       _SONewChatDisplayController, _SOParticipantTableCellView, 
-                       _SOPersonMenuItemView, _SOPhotoAttachmentsViewController, 
+                       _SOInputLineViewController, _SOMapViewController, _SONewChatDisplayController, 
+                       _SOParticipantTableCellView, _SOPersonMenuItemView, _SOPhotoAttachmentsViewController, 
                        _SOPlaceholderPopoverViewController, _SOPreviewingWaveformContainerView, 
                        _SOPreviewingWaveformView, _SOProgressBarViewController, _SORecipientBarView, 
                        _SORecipientBarViewController, _SORecordingWaveformContainerView, 

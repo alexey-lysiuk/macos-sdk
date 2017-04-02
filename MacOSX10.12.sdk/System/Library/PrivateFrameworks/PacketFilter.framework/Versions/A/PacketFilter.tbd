@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 1B708EEB-033F-3327-A271-B8B2BF0AEA8E', 'x86_64: 7C8F69D0-F070-3E06-9D34-5EAEAE7740C2' ]
+uuids:           [ 'i386: 23EBE42F-9A86-37DC-9482-2DE94EAB418B', 'x86_64: 5599F92A-F5D6-331C-B7C9-599D1350A0FD' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PacketFilter.framework/Versions/A/PacketFilter
 objc-constraint: none

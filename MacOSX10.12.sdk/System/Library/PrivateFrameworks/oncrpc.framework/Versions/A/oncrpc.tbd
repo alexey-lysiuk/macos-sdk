@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: FCB560A6-920D-33CA-B4B7-C4FBE777C59C', 'x86_64: 73856280-7C96-3493-8CA5-51C1DAC49060' ]
+uuids:           [ 'i386: F5B8784F-BA30-3D90-B56F-3726EC6BB258', 'x86_64: EAAE12F7-EB2C-3E27-A00A-DDA07E48A1ED' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/oncrpc.framework/Versions/A/oncrpc
-current-version: 36.0
+current-version: 36
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]

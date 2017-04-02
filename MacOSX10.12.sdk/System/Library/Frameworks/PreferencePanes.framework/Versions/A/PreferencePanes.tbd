@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 4F2E71AF-032D-3A84-9DB6-9856843EFD0B', 'x86_64: 022A1365-64A3-3795-9BAA-B942733AF417' ]
+uuids:           [ 'i386: 7A57FD8F-1285-3A8A-AE29-3C5347A47159', 'x86_64: 697E0865-969F-3EEB-9A77-BF104D846B58' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/PreferencePanes.framework/Versions/A/PreferencePanes
 objc-constraint: none
@@ -57,7 +57,7 @@ exports:
                        _NSPreferencePrefPaneIsAvailableNotification, _NSPreferencePrefPaneUnavailableNotification, 
                        _PreferencePaneMain, _SetSymbolicHotKeyButtonValue, _SetSymbolicHotKeyEnabled, 
                        _SetSymbolicHotKeyValue, _SetSymbolicHotModifierValue, __sortSearchResults, 
-                       _copySymbolicHotKeyPreferences, _getHotKeyEntry ]
+                       _copySymbolicHotKeyPreferences, _getHotKeyEntry, _setAttentionCountForPreferencePane ]
     objc-classes:    [ _AddRemoveView, _NSAdminMultiAuthenticator, _NSAdminPreference, 
                        _NSCFPrefManager, _NSPrefAnimatedView, _NSPrefCrossFadeView, 
                        _NSPrefCrossFadeWindow, _NSPrefCrossFadeWindowMoveHelper, 

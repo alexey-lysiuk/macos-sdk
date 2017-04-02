@@ -29,7 +29,7 @@ API_AVAILABLE(macosx(10.11),ios(9.0))
     @private
     NSBatchDeleteRequestResultType _resultType;
     NSFetchRequest *_deleteTarget;
-    void *_reserved;
+    intptr_t _flags;
 #endif
 }
 

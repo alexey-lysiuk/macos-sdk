@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CD0C4F68-C45E-3179-BB43-72D3C9B72BD5' ]
+uuids:           [ 'x86_64: 5A8E263D-878D-37AA-85C4-EFB190B8DA75' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/BookKit.framework/Versions/A/BookKit
-current-version: 80.0
+current-version: 80
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

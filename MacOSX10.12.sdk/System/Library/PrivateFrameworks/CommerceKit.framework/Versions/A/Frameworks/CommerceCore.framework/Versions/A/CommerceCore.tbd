@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 2C3C5772-628B-37D0-9646-A5E53713CBDA', 'x86_64: 5A902EF6-F43A-3E6A-8384-990C1E490852' ]
+uuids:           [ 'i386: 5037FC59-1AEF-385A-90C8-36FC58DF1916', 'x86_64: C16B2635-12C8-3B5A-83CB-85D40BF4A4B8' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CommerceKit.framework/Versions/A/Frameworks/CommerceCore.framework/Versions/A/CommerceCore
-current-version: 379.0
+current-version: 379
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

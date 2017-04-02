@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AC498F35-4CBC-3BFA-818C-6F8FFA25C2B4' ]
+uuids:           [ 'x86_64: 4B06509A-9AF7-36C3-8E68-89A7E997908E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MFiAuthentication.framework/Versions/A/MFiAuthentication
 objc-constraint: none
@@ -28,7 +28,12 @@ exports:
                        _kXPCAudioShouldPauseStr, _kXPCAudioStartPlaybackForTransportStr, 
                        _kXPCAudioStartRecordingForTransportStr, _kXPCAudioStopPlaybackForTransportStr, 
                        _kXPCAudioStopRecordingForTransportStr, _kXPCAudioVolumeStr, 
-                       _kXPCAuthServiceName, _kXPCAuthenticationCertCaps, _kXPCBoolHasE75To30PinAdapter, 
+                       _kXPCAuthServiceName, _kXPCAuthenticationCertCaps, _kXPCBTAccessoryAttachAccFwVersion, 
+                       _kXPCBTAccessoryAttachAccHwVersion, _kXPCBTAccessoryAttachAccMfr, 
+                       _kXPCBTAccessoryAttachAccModel, _kXPCBTAccessoryAttachAccName, 
+                       _kXPCBTAccessoryAttachAccSerial, _kXPCBTAccessoryAttachDeviceId, 
+                       _kXPCBTAccessoryAttachMacAddress, _kXPCBTAccessoryAttachNotification, 
+                       _kXPCBTAccessoryAttachState, _kXPCBoolHasE75To30PinAdapter, 
                        _kXPCBoolPortIsLockedOut, _kXPCCameraCapabilitiesStr, _kXPCCameraIdStr, 
                        _kXPCCameraIdsStr, _kXPCCameraLivePreviewFormatIndexStr, _kXPCCameraPropertiesStr, 
                        _kXPCCameraSendCaptureStillImage, _kXPCCameraSendSetCameraProperties, 

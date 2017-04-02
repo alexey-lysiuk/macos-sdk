@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 5C7521A1-6C0B-394B-A641-2750432D9DC9', 'x86_64: A202005E-CF88-3F7B-B955-B25FD89EC790' ]
+uuids:           [ 'i386: B04F21A2-D26E-3498-8D06-7AE0E2684D89', 'x86_64: 9DD142A2-82A5-3202-B36C-20E19B4C5D56' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Suggestions.framework/Versions/A/Suggestions
-current-version: 197.0
+current-version: 197
 objc-constraint: none
 exports:         
   - archs:           [ i386 ]

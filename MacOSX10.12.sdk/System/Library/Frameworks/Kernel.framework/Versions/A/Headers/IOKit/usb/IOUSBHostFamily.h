@@ -437,6 +437,7 @@ enum
 #define kUSBHostPortPropertyDisconnectInterval                  "kUSBDisconnectInterval"
 #define kUSBHostPortPropertyUsbCPortNumber                      "UsbCPortNumber"
 #define kUSBHostPortPropertyCompanionPortNumber                 "UsbCompanionPortNumber"                // OSData  key to set/get the port number of the companion port
+#define kUSBHostPortPropertyPowerSource                         "UsbPowerSource"
 
 #define kUSBHostHubPropertyPowerSupply                          "kUSBHubPowerSupply"                    // OSNumber mA available for downstream ports, 0 for bus-powered
 #define kUSBHostHubPropertyIdlePolicy                           "kUSBHubIdlePolicy"                     // OSNumber ms to be used as device idle policy
@@ -487,6 +488,20 @@ typedef enum
     kUSBHostConnectorTypeProprietary    = 0xFF
 } tUSBHostConnectorType;
 
+/*!
+ * @enum tUSBHostPowerSourceType
+ * @brief Power sources used internally by IOUSBHostFamily
+ * @constant kUSBHostPowerSourceTypeStaticPool The power source is a statically allocated pool for software to manage.
+ * @constant kUSBHostPowerSourceTypeSMC        The power source is managed by the SMC.
+ * @constant kUSBHostPowerSourceTypeHardware   The power source is guaranteed by the hardware and can always allocate the port current limit.
+ */
+typedef enum
+{
+    kUSBHostPowerSourceTypeStaticPool   = 0,
+    kUSBHostPowerSourceTypeSMC,
+    kUSBHostPowerSourceTypeHardware
+}tUSBHostPowerSourceType;
+
 #if !TARGET_OS_EMBEDDED
 
 #ifndef kACPIDevicePathKey
@@ -515,6 +530,8 @@ typedef enum
 #define kReconfiguredCount                              "RCFG"
 #define kUSBPlatformProperties                          "USBX"
 #define kUSBTypeCCableDetectACPIMethod                  "MODU"
+#define kUSBTypeCCableDetectACPIMethodSupported         "RTPC"
+#define kGPEOCACPIString                                "GPOC"
 
 // connection types returned by MODU method
 typedef enum

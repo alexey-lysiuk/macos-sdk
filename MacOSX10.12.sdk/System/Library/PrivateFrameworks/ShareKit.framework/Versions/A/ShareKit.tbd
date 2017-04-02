@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 035F1398-64BB-33C9-A18C-C15D60AB2D29' ]
+uuids:           [ 'x86_64: C92D2122-229C-3FF6-B894-C4E8729AAB3A' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ShareKit.framework/Versions/A/ShareKit
-current-version: 500.0
+current-version: 500
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

@@ -182,6 +182,10 @@
    #define AVAILABLE_MAC_OS_X_VERSION_TBD_AND_LATER WEAK_IMPORT_ATTRIBUTE
 #endif
 
+#ifndef API_AVAILABLE
+	#define API_AVAILABLE(...)
+#endif
+
 #ifndef NS_AVAILABLE
     #define NS_AVAILABLE(a, b)
 #endif

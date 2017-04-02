@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 62A612F1-581A-3EE4-9351-AA2D16CB0FFF' ]
+uuids:           [ 'x86_64: 3D522CD5-6CE7-3A32-B46B-A7F29AFA1CB4' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/XARTRecovery.framework/Versions/A/XARTRecovery
 objc-constraint: none

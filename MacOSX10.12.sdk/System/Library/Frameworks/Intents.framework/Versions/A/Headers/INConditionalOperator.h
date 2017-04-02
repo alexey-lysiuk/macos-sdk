@@ -14,6 +14,6 @@ typedef NS_ENUM(NSInteger, INConditionalOperator) {
     INConditionalOperatorAll = 0,
     INConditionalOperatorAny,
     INConditionalOperatorNone,
-} API_AVAILABLE(macosx(10.12), ios(10.0));
+} API_AVAILABLE(macosx(10.12), ios(10.0), watchos(3.2));
 
 #endif // INConditionalOperator_h

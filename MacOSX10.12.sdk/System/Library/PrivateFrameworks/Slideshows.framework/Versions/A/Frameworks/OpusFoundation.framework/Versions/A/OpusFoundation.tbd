@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FFD780D9-4298-3FB6-9CF4-B7EBE602737A' ]
+uuids:           [ 'x86_64: DF662150-B4B4-3304-9BB0-078850EB244D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Slideshows.framework/Versions/A/Frameworks/OpusFoundation.framework/Versions/A/OpusFoundation
 objc-constraint: none

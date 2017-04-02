@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E25F926F-9DC1-3EF6-890E-8C12B29355B7' ]
+uuids:           [ 'x86_64: 22E4CC3A-C07F-3978-A98C-D54F2423615F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotosUICore.framework/Versions/A/PhotosUICore
-current-version: 3130.0.230
+current-version: 3150.2.190
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -12,14 +12,14 @@ exports:
                        _PXAffineTransformConvertFromCoordinateSpaceToCoordinateSpace, 
                        _PXAffineTransformDecomposeTranslationScaleRotation, _PXAffineTransformMakeFromRects, 
                        _PXAffineTransformMakeWithTranslationScaleRotation, _PXAffineTransformMakeWithTranslationScaleRotationTransform, 
-                       _PXAffineTransformOffsetFixpoint, _PXAssetContentTileKind, 
-                       _PXAssetsSceneDataSourceObserverContext, _PXAssetsSceneSelectionManagerObserverContext, 
-                       _PXAssetsSceneSpeedometerObserverContext, _PXBarItemIdentifierAction, 
-                       _PXBarItemIdentifierAdd, _PXBarItemIdentifierAddTo, _PXBarItemIdentifierAssetMode, 
-                       _PXBarItemIdentifierCancel, _PXBarItemIdentifierDone, _PXBarItemIdentifierEdit, 
-                       _PXBarItemIdentifierFaceMode, _PXBarItemIdentifierFavorite, 
-                       _PXBarItemIdentifierPlaceholder, _PXBarItemIdentifierSelect, 
-                       _PXBarItemIdentifierTrash, _PXCapitalizationStyleAttributeName, 
+                       _PXAffineTransformOffsetFixpoint, _PXAssetBadgeInfoNull, _PXAssetBadgeInfoRequiresCountForBadges, 
+                       _PXAssetContentTileKind, _PXAssetsSceneDataSourceObserverContext, 
+                       _PXAssetsSceneSelectionManagerObserverContext, _PXAssetsSceneSpeedometerObserverContext, 
+                       _PXBarItemIdentifierAction, _PXBarItemIdentifierAdd, _PXBarItemIdentifierAddTo, 
+                       _PXBarItemIdentifierAssetMode, _PXBarItemIdentifierCancel, 
+                       _PXBarItemIdentifierDone, _PXBarItemIdentifierEdit, _PXBarItemIdentifierFaceMode, 
+                       _PXBarItemIdentifierFavorite, _PXBarItemIdentifierPlaceholder, 
+                       _PXBarItemIdentifierSelect, _PXBarItemIdentifierTrash, _PXCapitalizationStyleAttributeName, 
                        _PXDataSourceIdentifierMakeUnique, _PXDataSourceIdentifierNull, 
                        _PXDiffArrays, _PXDisplayVelocityDescription, _PXDisplayVelocityZero, 
                        _PXEdgeInsetsForEdges, _PXEdgeInsetsNull, _PXEdgeInsetsTouch, 
@@ -32,7 +32,8 @@ exports:
                        _PXLocalizedString, _PXLocalizedStringForAction, _PXLocalizedStringFromTable, 
                        _PXMediaProviderErrorDomain, _PXMediaProviderResultIsFullSizeFormat, 
                        _PXMediaProviderResultIsPlaceholder, _PXMediaProviderStillDisplayTimeKey, 
-                       _PXMemoriesHasConfirmedOnboardingDefaultsKey, _PXMemoriesLastSuccessfulTodayWidgetRefreshDateDefaultsKey, 
+                       _PXMediaTypeInfoManagerDefaultTimeout, _PXMemoriesHasConfirmedOnboardingDefaultsKey, 
+                       _PXMemoriesLastSuccessfulTodayWidgetRefreshDateDefaultsKey, 
                        _PXMemoryTileElementForViewSpecContext, _PXMemoryTileKindForViewSpecContext, 
                        _PXObservableChangeDepthLimit, _PXOverlayBadgeTileKind, _PXPeopleProgressDidChangeNotification, 
                        _PXPeopleScreenUnlockedKey, _PXPhotoLibraryChangePausingDefaultTransitionTimeout, 
@@ -105,7 +106,7 @@ exports:
                        _PXAssetReference, _PXAssetsDataSource, _PXAssetsDataSourceChangeTransitionCoordinator, 
                        _PXAssetsDataSourceManager, _PXAssetsScene, _PXAssetsSceneSettings, 
                        _PXAssetsTileTransitionCoordinator, _PXAssetsTilingLayout, 
-                       _PXBarSpec, _PXBasicNSViewTileAnimator, _PXBasicTileAnimationOptions, 
+                       _PXAutoScroller, _PXBarSpec, _PXBasicNSViewTileAnimator, _PXBasicTileAnimationOptions, 
                        _PXBasicTileAnimator, _PXBasicTileUserData, _PXButtonSpec, 
                        _PXCALayerPromise, _PXCTFrame, _PXCTFramesetter, _PXCTLine, 
                        _PXCUTextField, _PXChangeDirectionNumberFilter, _PXCollectionTileLayoutTemplate, 
@@ -130,12 +131,13 @@ exports:
                        _PXLayoutSection, _PXLayoutSnapshot, _PXLayoutTemplate, _PXLegacySectionedDataSourceChangeDetails, 
                        _PXLoadingStatusManager, _PXLocationStream, _PXMagazineFrame, 
                        _PXMagazineGrid, _PXMagazineLayoutCoordinator, _PXMagazineLayoutTileMaker, 
-                       _PXMagazineRectArray, _PXMediaProvider, _PXMemoriesFeedAlbumsDataSourceManager, 
-                       _PXMemoriesFeedDataSource, _PXMemoriesFeedDataSourceManager, 
-                       _PXMemoriesFeedDataSourceManagerBase, _PXMemoriesFeedEntryLayoutGenerator, 
-                       _PXMemoriesFeedLayoutGenerator, _PXMemoriesFeedLayoutMetrics, 
-                       _PXMemoriesFeedMomentsDataSourceManager, _PXMemoriesFeedNSViewController, 
-                       _PXMemoriesFeedScrollFilter, _PXMemoriesFeedSettings, _PXMemoriesFeedTileIdentifierConverter, 
+                       _PXMagazineRectArray, _PXMediaProvider, _PXMediaTypeInfoManager, 
+                       _PXMemoriesFeedAlbumsDataSourceManager, _PXMemoriesFeedDataSource, 
+                       _PXMemoriesFeedDataSourceManager, _PXMemoriesFeedDataSourceManagerBase, 
+                       _PXMemoriesFeedEntryLayoutGenerator, _PXMemoriesFeedLayoutGenerator, 
+                       _PXMemoriesFeedLayoutMetrics, _PXMemoriesFeedMomentsDataSourceManager, 
+                       _PXMemoriesFeedNSViewController, _PXMemoriesFeedScrollFilter, 
+                       _PXMemoriesFeedSettings, _PXMemoriesFeedTileIdentifierConverter, 
                        _PXMemoriesFeedTilingLayout, _PXMemoriesFeedTransitionAnimationCoordinator, 
                        _PXMemoriesFeedViewControllerHelper, _PXMemoriesFeedWidgetDataSourceManager, 
                        _PXMemoriesFeedWidgetLayoutGenerator, _PXMemoriesFeedWidgetLayoutMetrics, 
@@ -148,7 +150,7 @@ exports:
                        _PXNSRoundedCornerOverlayView, _PXNSScrollView, _PXNSScrollViewController, 
                        _PXNSShapeView, _PXNSTraitCollection, _PXNodeRunner, _PXNonuniformTransform, 
                        _PXNumberFilter, _PXObservable, _PXOperationStatus, _PXOverlayBadgeTileUserData, 
-                       _PXPath, _PXPeopleCommon, _PXPeopleConfirmationSummaryViewController, 
+                       _PXPPTLoadingLatencyMeter, _PXPath, _PXPeopleCommon, _PXPeopleConfirmationSummaryViewController, 
                        _PXPeopleConfirmationViewController, _PXPeopleFaceTileImageManager, 
                        _PXPeopleFullscreenConfirmationViewController, _PXPeopleProgressFooterView, 
                        _PXPeopleProgressManager, _PXPeopleScalableAvatarView, _PXPeopleSuggestionManager, 

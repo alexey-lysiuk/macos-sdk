@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 0C7528C2-8FDF-3DD3-9F6F-98F43B540C94', 'x86_64: F4608F00-730E-3D87-A207-9C4A4CA8F6D6' ]
+uuids:           [ 'i386: 59A9BD47-09EA-3084-8ACA-2EA7A3A9A79F', 'x86_64: E4A85481-FE6A-375D-8A6D-D46D42294EEB' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Restore.framework/Versions/A/Restore
-current-version: 401.0
+current-version: 410
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

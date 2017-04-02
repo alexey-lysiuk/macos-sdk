@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386 ]
-uuids:           [ 'i386: 774BC629-ADE7-314B-A3D0-E32228742290' ]
+uuids:           [ 'i386: 391377D8-BBB3-35E1-951C-6425FA2C6E87' ]
 platform:        macosx
 install-name:    /System/Library/Printers/Libraries/libConverter.dylib
-current-version: 184.0
+current-version: 184
 objc-constraint: none
 exports:         
   - archs:           [ i386 ]

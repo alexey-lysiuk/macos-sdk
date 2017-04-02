@@ -33,7 +33,7 @@
 #include <sys/cdefs.h>
 
 __BEGIN_DECLS
-
+__OSX_AVAILABLE(10.12) __IOS_AVAILABLE(10.0) __TVOS_AVAILABLE(10.0) __WATCHOS_AVAILABLE(3.0)
 int getentropy(void* buffer, size_t size);
 __END_DECLS
 

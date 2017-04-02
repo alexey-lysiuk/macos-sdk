@@ -273,6 +273,7 @@ struct tcp_connection_info {
         u_int64_t	tcpi_rxpackets __attribute__((aligned(8)));
         u_int64_t	tcpi_rxbytes __attribute__((aligned(8)));
         u_int64_t	tcpi_rxoutoforderbytes __attribute__((aligned(8)));
+        u_int64_t	tcpi_txretransmitpackets __attribute__((aligned(8)));
 };
 #endif /* (_POSIX_C_SOURCE && !_DARWIN_C_SOURCE) */
 

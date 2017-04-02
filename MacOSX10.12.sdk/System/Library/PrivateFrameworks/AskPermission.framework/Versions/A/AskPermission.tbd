@@ -1,27 +1,27 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 36CF3BAF-14E5-3771-99C6-AD33B33F2896' ]
+uuids:           [ 'x86_64: 01263719-8A4F-3B46-8D1D-B929A898BBD8' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AskPermission.framework/Versions/A/AskPermission
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _KPRRequestInfoStoreSalableParent, _PRCurrentRegionIsUS, _PRFrameworkBundle, 
-                       _PRLocalizedString, _PRLog, _kPRRequestInfoStoreAdamID, _kPRRequestInfoStoreApprovalStatus, 
-                       _kPRRequestInfoStoreApprovalWindowHeight, _kPRRequestInfoStoreApprovalWindowWidth, 
-                       _kPRRequestInfoStoreApproveButtonTitle, _kPRRequestInfoStoreApprovedMessageString, 
-                       _kPRRequestInfoStoreApproverDSID, _kPRRequestInfoStoreBuyParams, 
-                       _kPRRequestInfoStoreDeclineButtonTitle, _kPRRequestInfoStoreDeclinedMessageString, 
-                       _kPRRequestInfoStoreItemPrice, _kPRRequestInfoStoreParentSalableLocalizedName, 
-                       _kPRRequestInfoStorePreviewURL, _kPRRequestInfoStorePriceString, 
-                       _kPRRequestInfoStorePricingParameters, _kPRRequestInfoStoreProductTypeCode, 
-                       _kPRRequestInfoStoreRequestID, _kPRRequestInfoStoreRequestMessageString, 
-                       _kPRRequestInfoStoreRequestNotificationString, _kPRRequestInfoStoreRequesterDSID, 
-                       _kPRRequestInfoStoreSalableAdamID, _kPRRequestInfoStoreSalableAppVersionID, 
-                       _kPRRequestInfoStoreSalableLocalizedDefinitiveProductType, 
+                       _PRLocalizedString, __PRLogSystem, _kPRRequestInfoStoreAdamID, 
+                       _kPRRequestInfoStoreApprovalStatus, _kPRRequestInfoStoreApprovalWindowHeight, 
+                       _kPRRequestInfoStoreApprovalWindowWidth, _kPRRequestInfoStoreApproveButtonTitle, 
+                       _kPRRequestInfoStoreApprovedMessageString, _kPRRequestInfoStoreApproverDSID, 
+                       _kPRRequestInfoStoreBuyParams, _kPRRequestInfoStoreDeclineButtonTitle, 
+                       _kPRRequestInfoStoreDeclinedMessageString, _kPRRequestInfoStoreItemPrice, 
+                       _kPRRequestInfoStoreParentSalableLocalizedName, _kPRRequestInfoStorePreviewURL, 
+                       _kPRRequestInfoStorePriceString, _kPRRequestInfoStorePricingParameters, 
+                       _kPRRequestInfoStoreProductTypeCode, _kPRRequestInfoStoreRequestID, 
+                       _kPRRequestInfoStoreRequestMessageString, _kPRRequestInfoStoreRequestNotificationString, 
+                       _kPRRequestInfoStoreRequesterDSID, _kPRRequestInfoStoreSalableAdamID, 
+                       _kPRRequestInfoStoreSalableAppVersionID, _kPRRequestInfoStoreSalableLocalizedDefinitiveProductType, 
                        _kPRRequestInfoStoreSalableLocalizedProductType, _kPRRequestInfoStoreSalableProductName, 
                        _kPRRequestInfoStoreSalableProductType, _kPRRequestInfoStoreSalableProductTypeID, 
                        _kPRRequestInfoStoreSalableURL, _kPRRequestInfoStoreSalables, 
                        _kPRRequestInfoStoreSandboxRequest, _kPRRequestQueueiTunesStoreIdentifier ]
-    objc-classes:    [ _PRLogging, _PRRequest, _PRRequestQueue, _PRUIHelper ]
+    objc-classes:    [ _PRRequest, _PRRequestQueue, _PRUIHelper ]
 ...

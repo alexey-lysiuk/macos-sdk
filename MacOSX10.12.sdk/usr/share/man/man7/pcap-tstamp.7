@@ -19,7 +19,7 @@
 .\" WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF
 .\" MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 .\"
-.TH PCAP-TSTAMP 7 "22 August 2010"
+.TH PCAP-TSTAMP 7 "8 March 2015"
 .SH NAME
 pcap-tstamp \- packet time stamps in libpcap
 .SH DESCRIPTION
@@ -104,12 +104,12 @@ precision of this time stamp is unspecified; it might or might not be
 synchronized with the host operating system's clock.
 .TP 5
 .BR PCAP_TSTAMP_HOST_LOWPREC " - " host_lowprec
-Time stamp provided by the host on which the capture is being done. 
+Time stamp provided by the host on which the capture is being done.
 This is a low-precision time stamp, synchronized with the host operating
 system's clock.
 .TP 5
 .BR PCAP_TSTAMP_HOST_HIPREC " - " host_hiprec
-Time stamp provided by the host on which the capture is being done. 
+Time stamp provided by the host on which the capture is being done.
 This is a high-precision time stamp; it might or might not be
 synchronized with the host operating system's clock.  It might be more
 expensive to fetch than

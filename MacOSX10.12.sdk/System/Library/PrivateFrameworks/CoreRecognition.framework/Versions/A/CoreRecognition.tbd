@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 20898E6B-E998-39F6-87D9-965E68A80C0A' ]
+uuids:           [ 'x86_64: 0997DE09-E3CC-3E2F-ABF2-3B18E64058C4' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreRecognition.framework/Versions/A/CoreRecognition
-current-version: 97.0
+current-version: 97.2
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

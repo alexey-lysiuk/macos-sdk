@@ -23,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class AVAudioSessionChannelDescription;
 @protocol AVAudioPlayerDelegate;
 
-NS_CLASS_AVAILABLE(10_7, 2_2) __WATCHOS_PROHIBITED
+NS_CLASS_AVAILABLE(10_7, 2_2) __WATCHOS_AVAILABLE(3_0)
 @interface AVAudioPlayer : NSObject {
 @private
 	id _impl;
@@ -111,7 +111,7 @@ Any negative number will loop indefinitely until stopped.
 @end
 
 /* A protocol for delegates of AVAudioPlayer */
-__WATCHOS_PROHIBITED
+__WATCHOS_AVAILABLE(3_0)
 @protocol AVAudioPlayerDelegate <NSObject>
 @optional 
 /* audioPlayerDidFinishPlaying:successfully: is called when a sound has finished playing. This method is NOT called if the player is stopped due to an interruption. */

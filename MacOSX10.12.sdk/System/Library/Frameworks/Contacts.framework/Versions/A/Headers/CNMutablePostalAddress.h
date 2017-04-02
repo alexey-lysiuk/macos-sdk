@@ -22,7 +22,9 @@ NS_CLASS_AVAILABLE(10_11, 9_0)
 
 /*! multi-street address is delimited with carriage returns “\n” */
 @property (copy, NS_NONATOMIC_IOSONLY) NSString *street;
+@property (copy, NS_NONATOMIC_IOSONLY) NSString *subLocality;
 @property (copy, NS_NONATOMIC_IOSONLY) NSString *city;
+@property (copy, NS_NONATOMIC_IOSONLY) NSString *subAdministrativeArea;
 @property (copy, NS_NONATOMIC_IOSONLY) NSString *state;
 @property (copy, NS_NONATOMIC_IOSONLY) NSString *postalCode;
 @property (copy, NS_NONATOMIC_IOSONLY) NSString *country;

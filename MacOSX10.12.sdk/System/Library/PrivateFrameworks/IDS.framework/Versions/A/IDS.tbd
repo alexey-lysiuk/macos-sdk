@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: DF9D52A1-3B95-31D9-9EA4-21CFF795BCCF', 'x86_64: ACB515FC-B92F-3D08-AC42-444784B8E6DE' ]
+uuids:           [ 'i386: B87C0440-F918-385C-858C-13475B1178CA', 'x86_64: 9FF3119A-D7A1-31AC-9D1B-055B06C386D8' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IDS.framework/Versions/A/IDS
-current-version: 800.0
+current-version: 800
 objc-constraint: none
 exports:         
   - archs:           [ i386 ]
@@ -11,7 +11,8 @@ exports:
                        _IDSDaemonRequestContext, _IDSDaemonRequestTimer, _IDSDaemonResponseHandler, 
                        _IDSHomeKitManager, _IDSInternalQueueController, _IDSLocalPairingDaemonResponseListener, 
                        _IDSQuickSwitchAcknowledgementTracker, _IDSRegistrationControlDaemonResponseListener, 
-                       _IDSServiceContainer, _IDSServiceMonitor, __IDSAccount, __IDSAccountController, 
+                       _IDSReportiMessageSpamDaemonResponseListener, _IDSServiceContainer, 
+                       _IDSServiceMonitor, __IDSAccount, __IDSAccountController, 
                        __IDSBatchIDQueryController, __IDSCompletionHandler, __IDSConnection, 
                        __IDSContinuity, __IDSDataChannelLinkContext, __IDSDatagramChannel, 
                        __IDSDevice, __IDSDeviceConnection, __IDSDeviceConnectionActiveMap, 
@@ -25,8 +26,8 @@ exports:
   - archs:           [ i386, x86_64 ]
     re-exports:      [ /System/Library/PrivateFrameworks/IDSFoundation.framework/Versions/A/IDSFoundation ]
     symbols:         [ _ACAccountForIDSAccount, _IDSAddPairedDevice, _IDSAppleCareSetDaemonDisconnectedBlock, 
-                       _IDSAppleCareSignIDSIn, _IDSAppleCareSignIDSOut, _IDSConfigureDemoMode, 
-                       _IDSConnectPairedDevice, _IDSCopyAddressDestinationForDestination, 
+                       _IDSAppleCareSignIDSIn, _IDSAppleCareSignIDSOut, _IDSCheckiMessageUnknownSender, 
+                       _IDSConfigureDemoMode, _IDSConnectPairedDevice, _IDSCopyAddressDestinationForDestination, 
                        _IDSCopyForDevice, _IDSCopyIDForAccessory, _IDSCopyIDForAccount, 
                        _IDSCopyIDForAnonymousCloudIdentifier, _IDSCopyIDForDevice, 
                        _IDSCopyIDForEmailAddress, _IDSCopyIDForPhoneNumber, _IDSCopyIDForPhoneNumberWithOptions, 

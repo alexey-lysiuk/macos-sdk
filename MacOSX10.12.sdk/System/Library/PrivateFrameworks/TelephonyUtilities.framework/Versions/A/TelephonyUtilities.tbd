@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8A093ECC-2330-3FAD-8CDD-90F956E73635' ]
+uuids:           [ 'x86_64: A455F2EB-85C3-3601-A899-2F7544E5DCC6' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/TelephonyUtilities.framework/Versions/A/TelephonyUtilities
 objc-constraint: none
@@ -20,6 +20,7 @@ exports:
                        _TUCallCapabilitiesEmergencyCallbackModeChangedNotification, 
                        _TUCallCapabilitiesFaceTimeAvailabilityChangedNotification, 
                        _TUCallCapabilitiesOutgoingRelayCallerIDChangedNotification, 
+                       _TUCallCapabilitiesRelayCallingAvailabilityChangedNotification, 
                        _TUCallCapabilitiesRelayCallingChangedNotification, _TUCallCapabilitiesRelayCallingFeaturesChangedNotification, 
                        _TUCallCapabilitiesSupportsFaceTimeAudioCallsChangedNotification, 
                        _TUCallCapabilitiesSupportsFaceTimeVideoCallsChangedNotification, 

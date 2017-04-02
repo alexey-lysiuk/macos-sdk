@@ -80,7 +80,7 @@
 #define	M_WAITOK	0x0000
 #define	M_NOWAIT	0x0001
 #define M_ZERO          0x0004          /* bzero the allocation */
-
+#define M_NULL		0x0008		/* return NULL if space is unavailable*/
 
 
 #define	M_RTABLE	5	/* routing tables */

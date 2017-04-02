@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: A7B5F39D-3D73-31A7-9DD1-B199F9138C1A', 'x86_64: B03FAEBE-7AFA-35C6-AEAA-A3238DBD3C2C' ]
+uuids:           [ 'i386: 1E47FA74-D82D-3CFB-9052-250E00929736', 'x86_64: EC2444D5-A7F9-38A8-8EE6-3156B7E32EF3' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DirectoryEditor.framework/Versions/A/DirectoryEditor
 objc-constraint: none

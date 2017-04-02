@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: A12A3048-7772-3D3B-A10C-1EAF6D9CFEA4', 'x86_64: 1A91596D-0A8D-3B7A-ACF5-783A78E9723E' ]
+uuids:           [ 'i386: 4F8DBC74-422B-3DD1-948B-901214DFC8E8', 'x86_64: 173EE873-1700-3FCA-9782-C060FBB5BCAD' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/QuickLookThumbnailing.framework/Versions/A/QuickLookThumbnailing
 objc-constraint: none

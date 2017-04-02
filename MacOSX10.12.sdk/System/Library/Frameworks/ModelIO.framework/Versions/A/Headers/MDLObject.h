@@ -12,7 +12,6 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @protocol MDLTransformComponent;
-
 /*!
  @class MDLObject
  @abstract Base class for object in a ModelIO asset hierarchy
@@ -22,6 +21,12 @@ NS_ASSUME_NONNULL_BEGIN
 NS_CLASS_AVAILABLE(10_11, 9_0)
 MDL_EXPORT
 @interface MDLObject : NSObject<MDLNamed>
+
+/*!
+ @property components
+ @abstract Allows applications to introspect the components on the objects.
+ */
+@property (nonatomic, readonly, copy) NSArray<id<MDLComponent>> *components;
 
 /*!
  @method setComponent:forProtocol:
@@ -36,6 +41,22 @@ MDL_EXPORT
            MDLObjects to fit their format and workflow.
  */
 - (nullable id<MDLComponent>)componentConformingToProtocol:(Protocol *)protocol;
+
+/*!
+ @method objectForKeyedSubscript:
+ @abstract Allows shorthand [key] syntax for componentConformingToProtocol:.
+ @param key The protocol that the component conforms to.
+ @see componentConformingToProtocol:
+ */
+- (nullable id<MDLComponent>)objectForKeyedSubscript:(Protocol *)key;
+
+/*!
+ @method setObject:forKeyedSubscript:
+ @abstract Allows shorthand [key] syntax for setComponent:forProtocol:.
+ @param key The protocol that the component conforms to.
+ @see setComponent:forProtocol:
+ */
+- (void)setObject:(nullable id<MDLComponent>)obj forKeyedSubscript:(Protocol *)key;
 
 /*!
  @property parent

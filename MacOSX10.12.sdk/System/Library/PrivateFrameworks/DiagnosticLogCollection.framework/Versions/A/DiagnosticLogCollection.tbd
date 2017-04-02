@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 1CC10AA0-B39E-3028-8D1F-69435F80DCCE', 'x86_64: 969A55D2-366E-3615-81D3-DEBD091471C8' ]
+uuids:           [ 'i386: 939CA05B-A37D-315C-A600-B731AAE5912A', 'x86_64: 8FAE46F9-77CF-3652-82F0-872977C5F45C' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DiagnosticLogCollection.framework/Versions/A/DiagnosticLogCollection
-current-version: 800.0
+current-version: 800
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]

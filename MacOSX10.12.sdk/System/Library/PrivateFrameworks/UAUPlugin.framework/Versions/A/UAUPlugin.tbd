@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5EF9E0B3-4EE4-362C-83B8-D3FF90417D15' ]
+uuids:           [ 'x86_64: BC5DB4BF-A45F-31B2-B437-74C1200A7D2B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/UAUPlugin.framework/Versions/A/UAUPlugin
 objc-constraint: none

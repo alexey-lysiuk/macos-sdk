@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386 ]
-uuids:           [ 'i386: 8BFEBF78-6BF1-3CBF-AAA6-7A35695DA12A' ]
+uuids:           [ 'i386: 71044FA9-7E31-3EB0-81AA-D561DFC24AC4' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DVD.framework/Versions/A/DVD
 objc-constraint: none

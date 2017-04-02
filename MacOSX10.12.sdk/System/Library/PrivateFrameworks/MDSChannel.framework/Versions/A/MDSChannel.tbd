@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 8AEDDD8B-7C1C-3BFC-AB0D-13918D02C2F6', 'x86_64: AB1960E2-A1CB-32C3-ADD3-7C093095504B' ]
+uuids:           [ 'i386: 8D68716C-C414-3410-A002-C06C2CB2A389', 'x86_64: 125F0BCB-4BB6-3B04-AFDF-452C091C5CD0' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MDSChannel.framework/Versions/A/MDSChannel
 objc-constraint: none

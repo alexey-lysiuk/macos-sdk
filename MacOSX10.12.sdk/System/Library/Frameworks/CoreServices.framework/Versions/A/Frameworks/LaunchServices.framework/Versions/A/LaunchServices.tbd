@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 1E509346-4C7E-3598-AC8E-4D7C5C1365BA', 'x86_64: E350E4F6-822A-3F04-B59B-468A39AF5C64' ]
+uuids:           [ 'i386: 0AD53EBC-91A6-3364-9007-F030891B6CDD', 'x86_64: 3D1BB388-0847-38E7-B679-02FB4FD0E257' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices
-current-version: 775.9.7
+current-version: 775.19
 objc-constraint: none
 parent-umbrella: CoreServices
 exports:         
@@ -345,6 +345,6 @@ exports:
                        _kUTTypeWebArchive, _kUTTypeWindowsExecutable, _kUTTypeX509Certificate, 
                        _kUTTypeXML, _kUTTypeXMLPropertyList, _kUTTypeXPCService, 
                        _kUTTypeZipArchive ]
-    objc-classes:    [ __LSDefaults, __LSQuery, __LSQueryContext, __LSQueryResult, 
-                       __LSStringLocalizer, __UTType, __UTTypeQuery ]
+    objc-classes:    [ _LSBundleInfoCachedValues, __LSDefaults, __LSQuery, __LSQueryContext, 
+                       __LSQueryResult, __LSStringLocalizer, __UTType, __UTTypeQuery ]
 ...

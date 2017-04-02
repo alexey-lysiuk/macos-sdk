@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 07035030-DAF8-3271-8ADA-BD66815D35F4', 'x86_64: EF046855-CB9C-32D8-B2F1-C85B526E386F' ]
+uuids:           [ 'i386: D21ADFC1-4A7C-3F42-B917-C087FDFA5ACB', 'x86_64: D429FCC9-42A4-38B3-8784-44024BC859EF' ]
 platform:        macosx
 install-name:    /usr/lib/libmecabra.dylib
 objc-constraint: none
@@ -33,9 +33,9 @@ exports:
                        _MecabraCandidateGetWordReadingLengthAtIndex, _MecabraCandidateIsAutocorrectionCandidate, 
                        _MecabraCandidateIsEmojiCandidate, _MecabraCandidateIsExtensionCandidate, 
                        _MecabraCandidateIsFuzzyMatchCandidate, _MecabraCandidateIsLearningDictionaryCandidate, 
-                       _MecabraCandidateIsPersonName, _MecabraCandidateIsPredictionCandidate, 
-                       _MecabraCandidateIsUserWordCandidate, _MecabraCandidateRelease, 
-                       _MecabraCandidateRetain, _MecabraCandidateSetDisplayString, 
+                       _MecabraCandidateIsOTAWordlistCandidate, _MecabraCandidateIsPersonName, 
+                       _MecabraCandidateIsPredictionCandidate, _MecabraCandidateIsUserWordCandidate, 
+                       _MecabraCandidateRelease, _MecabraCandidateRetain, _MecabraCandidateSetDisplayString, 
                        _MecabraCandidateWordAtIndexIsFromSystemDictionary, _MecabraCangjieCodeIsValid, 
                        _MecabraClearLearningDictionaries, _MecabraContextAddCandidate, 
                        _MecabraContextAddInlineCandidate, _MecabraContextCreateMutable, 

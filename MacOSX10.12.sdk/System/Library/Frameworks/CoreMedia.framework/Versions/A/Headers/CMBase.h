@@ -110,6 +110,10 @@
 
 #include <CoreFoundation/CFBase.h>		// OSStatus, Boolean, Float32, Float64
 
+#ifndef API_AVAILABLE
+#define API_AVAILABLE(...)
+#endif
+
 #ifdef __cplusplus
 extern "C" {
 #endif

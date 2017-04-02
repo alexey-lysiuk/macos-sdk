@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 1959069E-99AA-353F-A7BA-5BBA53800835', 'x86_64: A16CEDF1-76CA-3851-B407-68716FD7ADFE' ]
+uuids:           [ 'i386: AF1BD342-6AC4-3C26-A9EA-199E7DBB0821', 'x86_64: 858176E2-E961-3412-A19C-6C87F8A10C1F' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/OpenCL.framework/Versions/A/Libraries/unorm8_i.dylib
 objc-constraint: none

@@ -1,10 +1,10 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 72BEA885-E6FF-37B8-B5B5-081B8DD7BB34', 'x86_64: 8C2F5016-7674-3204-9331-BA0883EA7302' ]
+uuids:           [ 'i386: 9A1E0ECB-14D0-36F0-A2AB-DFFB7220D053', 'x86_64: DFD4571E-DF5D-3415-8C04-F352925687C5' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/AppKit.framework/Versions/C/AppKit
-current-version: 1504.75
-compatibility-version: 45.0
+current-version: 1504.82.104
+compatibility-version: 45
 objc-constraint: none
 exports:         
   - archs:           [ i386 ]
@@ -416,23 +416,24 @@ exports:
                        _NSWindowAnchorInfo, _NSWindowBackdrop, _NSWindowBatchOrdering, 
                        _NSWindowControllerMoreIVars, _NSWindowLayout, _NSWindowScaleAnimation, 
                        _NSWindowStackController, _NSWindowTabbingMenuItem, _NSWorkspaceApplicationKVOHelper, 
-                       _NSWrapperCellView, __NS1DVelocityFilterIvars, __NSAcceleratorButtonHelper, 
-                       __NSAccessoryAnimationData, __NSActionRecord, __NSActionRecordStore, 
-                       __NSActionRecordTableCellView, __NSAlertContentView, __NSAlignmentFeedbackFilterImpl, 
-                       __NSAlignmentFeedbackFilterPreparedContext, __NSAnimationBlockDelegate, 
-                       __NSAppCentricAccessoryViewSeparatorBox, __NSAppKitARCSafeWeakReference, 
-                       __NSAutomaticFocusRingState, __NSAxisAlignedVolumeColorGamut, 
-                       __NSBackingLayer, __NSBackingLayerContents, __NSBarTextFinder, 
-                       __NSBlockActionTarget, __NSBlockDeallocationHook, __NSBlockSliderAccessoryBehavior, 
-                       __NSButtonAnimationView, __NSButtonCellAux, __NSCGLSurface, 
-                       __NSCGLSurfaceNonAtomicLayerContents, __NSCGSMutableWindowCornerMask, 
-                       __NSCGSSpace, __NSCGSTransaction, __NSCGSWindow, __NSCGSWindowBackdrop, 
-                       __NSCGSWindowBackingStore, __NSCGSWindowBuffer, __NSCGSWindowCornerMask, 
-                       __NSCGSWindowLayerSurface, __NSCGSWindowLocallyRenderedLayerSurface, 
-                       __NSCGSWindowOpenGLSurface, __NSCGSWindowOrdering, __NSCandidateBarCorrectionPanel, 
-                       __NSCandidateBarFunctionRowButton, __NSCandidateBarFunctionRowSegment, 
-                       __NSCanvasBackgroundView, __NSCarbonWindowFullScreenTransition, 
-                       __NSCartoucheMaskLayer, __NSCellTrackingData, __NSClickGestureRecognizerAuxiliary, 
+                       _NSWrapperCellView, _NSXPCSpellServerClient, _NSXPCSpellServerClientContext, 
+                       __NS1DVelocityFilterIvars, __NSAcceleratorButtonHelper, __NSAccessoryAnimationData, 
+                       __NSActionRecord, __NSActionRecordStore, __NSActionRecordTableCellView, 
+                       __NSAlertContentView, __NSAlignmentFeedbackFilterImpl, __NSAlignmentFeedbackFilterPreparedContext, 
+                       __NSAnimationBlockDelegate, __NSAppCentricAccessoryViewSeparatorBox, 
+                       __NSAppKitARCSafeWeakReference, __NSAutomaticFocusRingState, 
+                       __NSAxisAlignedVolumeColorGamut, __NSBackingLayer, __NSBackingLayerContents, 
+                       __NSBarTextFinder, __NSBlockActionTarget, __NSBlockDeallocationHook, 
+                       __NSBlockSliderAccessoryBehavior, __NSButtonAnimationView, 
+                       __NSButtonCellAux, __NSCGLSurface, __NSCGLSurfaceNonAtomicLayerContents, 
+                       __NSCGSMutableWindowCornerMask, __NSCGSSpace, __NSCGSTransaction, 
+                       __NSCGSWindow, __NSCGSWindowBackdrop, __NSCGSWindowBackingStore, 
+                       __NSCGSWindowBuffer, __NSCGSWindowCornerMask, __NSCGSWindowLayerSurface, 
+                       __NSCGSWindowLocallyRenderedLayerSurface, __NSCGSWindowOpenGLSurface, 
+                       __NSCGSWindowOrdering, __NSCandidateBarCorrectionPanel, __NSCandidateBarFunctionRowButton, 
+                       __NSCandidateBarFunctionRowSegment, __NSCanvasBackgroundView, 
+                       __NSCarbonWindowFullScreenTransition, __NSCartoucheMaskLayer, 
+                       __NSCellTrackingData, __NSClickGestureRecognizerAuxiliary, 
                        __NSClickGestureRecognizerTouchAuxiliary, __NSClipViewBackingLayer, 
                        __NSClipViewOverhangView, __NSCloudSharingOverQuotaRecoveryAttempter, 
                        __NSCloudSharingPostShareViewController, __NSCloudSharingService, 
@@ -2105,14 +2106,14 @@ exports:
                        _NSGetInformationalAlertPanel, _NSGetIntegerDefault, _NSGetWindowServerMemory, 
                        _NSGlowEffectKey, _NSGraphicsContextDestinationAttributeName, 
                        _NSGraphicsContextPDFFormat, _NSGraphicsContextPSFormat, _NSGraphicsContextRepresentationFormatAttributeName, 
-                       _NSGraphicsRunLoopMode, _NSGridViewSizeForContent, _NSHTMLPboardType, 
-                       _NSHandlesContentAsCompoundValueBindingOption, _NSHeaderTitleBinding, 
-                       _NSHelpManagerSystemBook, _NSHelpRTFDKey, _NSHelpRTFKey, _NSHelpVersionKey, 
-                       _NSHelpVersionValue, _NSHiddenBinding, _NSHighlightRect, _NSHilitedNotification, 
-                       _NSIconSize, _NSIdleNotification, _NSIllegalSelectorException, 
-                       _NSImageBinding, _NSImageCacheException, _NSImageColorSyncProfileData, 
-                       _NSImageCompressionFactor, _NSImageCompressionMethod, _NSImageCurrentFrame, 
-                       _NSImageCurrentFrameDuration, _NSImageDitherTransparency, 
+                       _NSGraphicsRunLoopMode, _NSGridViewSizeForContent, _NSGridViewSizeFromExternalConstraints, 
+                       _NSHTMLPboardType, _NSHandlesContentAsCompoundValueBindingOption, 
+                       _NSHeaderTitleBinding, _NSHelpManagerSystemBook, _NSHelpRTFDKey, 
+                       _NSHelpRTFKey, _NSHelpVersionKey, _NSHelpVersionValue, _NSHiddenBinding, 
+                       _NSHighlightRect, _NSHilitedNotification, _NSIconSize, _NSIdleNotification, 
+                       _NSIllegalSelectorException, _NSImageBinding, _NSImageCacheException, 
+                       _NSImageColorSyncProfileData, _NSImageCompressionFactor, _NSImageCompressionMethod, 
+                       _NSImageCurrentFrame, _NSImageCurrentFrameDuration, _NSImageDitherTransparency, 
                        _NSImageEXIFData, _NSImageFallbackBackgroundColor, _NSImageFrameCount, 
                        _NSImageGamma, _NSImageHintCTM, _NSImageHintInterpolation, 
                        _NSImageHintUserInterfaceLayoutDirection, _NSImageInterlaced, 
@@ -2162,6 +2163,7 @@ exports:
                        _NSImageNameTouchBarAirPlayTemplate, _NSImageNameTouchBarAlarmTemplate, 
                        _NSImageNameTouchBarAllMyFilesTemplate, _NSImageNameTouchBarApplicationsFolderTemplate, 
                        _NSImageNameTouchBarAudioInputMuteTemplate, _NSImageNameTouchBarAudioInputTemplate, 
+                       _NSImageNameTouchBarAudioOutputMuteOffTemplate, _NSImageNameTouchBarAudioOutputMuteOnTemplate, 
                        _NSImageNameTouchBarAudioOutputMuteTemplate, _NSImageNameTouchBarAudioOutputVolumeHighTemplate, 
                        _NSImageNameTouchBarAudioOutputVolumeLowTemplate, _NSImageNameTouchBarAudioOutputVolumeMedTemplate, 
                        _NSImageNameTouchBarAudioOutputVolumeMediumTemplate, _NSImageNameTouchBarAudioOutputVolumeOffTemplate, 

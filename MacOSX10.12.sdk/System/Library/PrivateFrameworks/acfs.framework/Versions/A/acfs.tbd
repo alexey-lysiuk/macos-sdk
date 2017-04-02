@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6EF0D333-B8D5-30DD-9EF6-31C11F352C47' ]
+uuids:           [ 'x86_64: E3158742-FFC8-33ED-9D66-FFC43B7457CD' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/acfs.framework/Versions/A/acfs
 objc-constraint: none

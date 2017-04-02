@@ -69,7 +69,7 @@
  * and various other messes.
  */
 #if CONFIG_EMBEDDED
-#define	MAC_MAX_SLOTS	2
+#define	MAC_MAX_SLOTS	3
 #else
 #define	MAC_MAX_SLOTS	7
 #endif

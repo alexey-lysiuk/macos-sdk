@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 77D8B141-A478-3B4C-AFF2-93F497BA073B', 'x86_64: 4184959F-DB37-3A3F-A642-CE261E20B62B' ]
+uuids:           [ 'i386: BB6FD97A-74DF-32F2-91D4-C15DBA542930', 'x86_64: AE2789BF-1410-3D9D-9DA7-56B3E8F1BB06' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Collaboration.framework/Versions/A/Collaboration
-current-version: 78.0
+current-version: 78
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

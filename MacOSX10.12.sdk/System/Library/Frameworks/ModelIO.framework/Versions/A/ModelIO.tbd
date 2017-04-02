@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4035386A-B4BF-3815-AB2E-536B343D438C' ]
+uuids:           [ 'x86_64: A6202733-E23F-3B5A-9C15-2EFBC4C2F3D5' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/ModelIO.framework/Versions/A/ModelIO
 objc-constraint: none
@@ -147,17 +147,19 @@ exports:
                        _kUTType3dObject, _kUTTypeAlembic, _kUTTypePolygon, _kUTTypeStereolithography, 
                        _kUTTypeUniversalSceneDescription, _sampleTextureAtRay, _sampleTextureDataAtRay, 
                        _sampleTextureDataAtRayMipMapped ]
-    objc-classes:    [ _MDLAreaLight, _MDLAsset, _MDLCamera, _MDLCheckerboardTexture, 
-                       _MDLColorSwatchTexture, _MDLInteractiveCameraController, _MDLLight, 
-                       _MDLLightProbe, _MDLMaterial, _MDLMaterialProperty, _MDLMaterialPropertyConnection, 
+    objc-classes:    [ _MDLAreaLight, _MDLAsset, _MDLBlendShapeChannel, _MDLBlendShapeDeformer, 
+                       _MDLCamera, _MDLCheckerboardTexture, _MDLColorSwatchTexture, 
+                       _MDLInteractiveCameraController, _MDLLight, _MDLLightProbe, 
+                       _MDLMaterial, _MDLMaterialProperty, _MDLMaterialPropertyConnection, 
                        _MDLMaterialPropertyGraph, _MDLMaterialPropertyNode, _MDLMesh, 
                        _MDLMeshBufferAllocatorDefault, _MDLMeshBufferData, _MDLMeshBufferDataAllocator, 
                        _MDLMeshBufferMap, _MDLNoiseTexture, _MDLNormalMapTexture, 
                        _MDLObject, _MDLObjectContainer, _MDLPhotometricLight, _MDLPhysicallyPlausibleLight, 
-                       _MDLPhysicallyPlausibleScatteringFunction, _MDLScatteringFunction, 
-                       _MDLScene, _MDLSkyCubeTexture, _MDLStereoscopicCamera, _MDLSubmesh, 
-                       _MDLSubmeshTopology, _MDLTexture, _MDLTextureFilter, _MDLTextureSampler, 
-                       _MDLTransform, _MDLURLTexture, _MDLVertexAttribute, _MDLVertexAttributeData, 
+                       _MDLPhysicallyPlausibleScatteringFunction, _MDLPrimitive, 
+                       _MDLScatteringFunction, _MDLScene, _MDLSkinDeformer, _MDLSkyCubeTexture, 
+                       _MDLStereoscopicCamera, _MDLSubmesh, _MDLSubmeshTopology, 
+                       _MDLTexture, _MDLTextureFilter, _MDLTextureSampler, _MDLTransform, 
+                       _MDLURLTexture, _MDLVertexAttribute, _MDLVertexAttributeData, 
                        _MDLVertexBufferLayout, _MDLVertexDescriptor, _MDLVolumeGrid, 
                        _MDLVoxelArray ]
     objc-ivars:      [ _MDLTransform._transform ]

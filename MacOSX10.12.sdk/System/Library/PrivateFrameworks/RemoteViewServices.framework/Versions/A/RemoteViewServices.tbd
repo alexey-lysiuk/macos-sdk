@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: F7F0D527-95D5-343A-B742-0A481FF8E433', 'x86_64: 4765DC2E-CF05-38CF-9564-1FBACB7E167C' ]
+uuids:           [ 'i386: ED897A3C-10F2-3A44-9984-E2F7DBD25D98', 'x86_64: 6B967FDA-6591-302C-BA0A-76C4856E584E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/RemoteViewServices.framework/Versions/A/RemoteViewServices
 objc-constraint: none

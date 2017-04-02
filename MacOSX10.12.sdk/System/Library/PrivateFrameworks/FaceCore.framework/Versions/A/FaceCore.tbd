@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: FD8240FE-CA8D-3962-B7F2-4C0DBB8C20FA', 'x86_64: DEB42099-6927-332C-8D3E-D45096318D25' ]
+uuids:           [ 'i386: 798121FB-1A1D-3629-A0D4-D4938D4AA2AF', 'x86_64: 9391D5A3-738C-3136-9D07-518CB43DBADA' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/FaceCore.framework/Versions/A/FaceCore
 current-version: 3.3.2

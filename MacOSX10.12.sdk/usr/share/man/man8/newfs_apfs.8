@@ -27,28 +27,35 @@ volume
 .Sh SYNOPSIS
 .Nm
 .Op Fl o Ar options
+.Op Fl i
 .Op Fl b Ar block-size
 .Op Fl s Ar volume-size | Fl q Ar volume-quota Fl r Ar volume-reserve
 .Op Fl v Ar volume-name
 .Op Fl E | Fl P
+.Op Fl R Ar role
 .Ar special
 .Nm
 .Fl C
 .Op Fl o Ar options
+.Op Fl i
 .Op Fl b Ar block-size
 .Ar special
 .Nm
 .Fl A
 .Op Fl o Ar options
+.Op Fl i
 .Op Fl s Ar volume-size | Fl q Ar volume-quota Fl r Ar volume-reserve
 .Op Fl v Ar volume-name
 .Op Fl E | Fl P
+.Op Fl R Ar role
 .Ar special
 .Nm
 .Op Fl o Ar options
+.Op Fl i
 .Op Fl s Ar volume-size | Fl q Ar volume-quota Fl r Ar volume-reserve
 .Op Fl v Ar volume-name
 .Op Fl E | Fl P
+.Op Fl R Ar role
 .Ar special
 .Sh DESCRIPTION
 The
@@ -85,6 +92,8 @@ All volumes within this container will use this block size.
 The default is 4096 bytes.
 .It Fl o Ar options
 Additional (undocumented) formatting options.
+.It Fl i
+Creates a case-insensitive APFS volume. By default a case-sensitive volume is created
 .It Fl q Ar volume-quota
 Places a quota, or upper limit, on the size of the volume.  If specified then no more than this much space will be used for its content,
 even if there is additional free space in the container; however it is not guaranteed that the entire quota will always be available.
@@ -125,11 +134,29 @@ all its data and metadata will be encrypted with a single key
 Enable per-file encryption
 .Pq Qq content protection
 on the volume.  The volume metadata is also encrypted.
+.It Fl R Ar role
+Set the OS
+.Qq role
+of the volume within the container.  The
+.Ar role
+may be certain valid combinations of the following characters:
+.Bl -tag -width "  " -offset "  " -compact
+.It Sy b
+PreBoot - will contain information used to help boot System volumes
+.It Sy u
+User - will contain home directory and other user data
+.It Sy s
+System - will contain a bootable system
+.It Sy r
+Recovery - will contain the RecoveryOS
+.It Sy v
+VM - will contain swapfiles and hibernate image
+.El
 .El
 .Sh DIAGNOSTICS
 .Ex -std
 .Sh EXAMPLES
-The following formats a new container and volume named
+The following formats a new container and a volume named
 .Qq Macintosh
 on the
 .Pa /dev/disk1s2

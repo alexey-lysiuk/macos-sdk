@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: CA911AF0-2B84-3CFE-B3D6-8F35DD215FF4', 'x86_64: 1B0B2122-C230-3E3F-8A81-EBD58818586B' ]
+uuids:           [ 'i386: C20B97A8-DB1C-3F08-AC42-E039CB74CC7F', 'x86_64: F8E957B2-D3F0-3B73-B38C-AE8868F00939' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SecCodeWrapper.framework/Versions/A/SecCodeWrapper
 objc-constraint: none

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 8DC341B0-E803-34C2-934F-C757559C9551', 'x86_64: E9C814C5-417F-3658-9A2F-4BC36D6A63D8' ]
+uuids:           [ 'i386: 7BC66130-946D-3957-9D55-EB6E5D42BD2C', 'x86_64: FAF0BBE3-F590-3DEA-B0D3-F992A8EE0F52' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Seeding
 objc-constraint: none

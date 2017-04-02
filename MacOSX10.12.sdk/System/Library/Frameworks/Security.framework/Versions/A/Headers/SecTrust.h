@@ -387,9 +387,9 @@ OSStatus SecTrustGetTrustResult(SecTrustRef trust,
     been evaluated.
     @param trust A reference to the trust object which has been evaluated.
     @result The certificate's public key, or NULL if it the public key could
-    not be extracted (this can happen with DSA certificate chains if the
-    parameters in the chain cannot be found).  The caller is responsible
-    for calling CFRelease on the returned key when it is no longer needed.
+    not be extracted (this can happen if the public key algorithm is not
+    supported).  The caller is responsible for calling CFRelease on the
+    returned key when it is no longer needed.
  */
 __nullable
 SecKeyRef SecTrustCopyPublicKey(SecTrustRef trust)
@@ -555,8 +555,7 @@ typedef SecTrustResultType SecTrustUserSetting
     @constant kSecTrustOptionImplicitAnchors Properly self-signed certs are
     treated as anchors implicitly.
  */
-typedef CF_OPTIONS(uint32_t, SecTrustOptionFlags)
-{
+typedef CF_OPTIONS(uint32_t, SecTrustOptionFlags) {
     kSecTrustOptionAllowExpired       = 0x00000001,
     kSecTrustOptionLeafIsCA           = 0x00000002,
     kSecTrustOptionFetchIssuerFromNet = 0x00000004,

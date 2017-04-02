@@ -1,11 +1,11 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64, x86_64h ]
-uuids:           [ 'i386: 4FD791E0-E536-35D9-959D-B0FBF7E05BD6', 'x86_64: 0F1FAA52-1C06-327E-A170-382B48B1846D', 
-                   'x86_64h: A40AA224-7A50-3989-95D0-5A228A0E2FAF' ]
+uuids:           [ 'i386: 662060DC-1E17-3F12-BCC6-2FBBAC65070D', 'x86_64: EE1BFAF3-CFB8-32A5-ADEB-88E60D85BEDA', 
+                   'x86_64h: F2D9372F-2E23-3B41-90F9-C80944085EB0' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
-current-version: 1348.28
-compatibility-version: 150.0
+current-version: 1349.64
+compatibility-version: 150
 objc-constraint: none
 exports:         
   - archs:           [ i386 ]
@@ -897,7 +897,8 @@ exports:
                        __kCFBundleTypeIconFileKey, __kCFBundleTypeMIMETypesKey, __kCFBundleTypeNameKey, 
                        __kCFBundleTypeOSTypesKey, __kCFBundleTypeRoleKey, __kCFBundleURLIconFileKey, 
                        __kCFBundleURLNameKey, __kCFBundleURLSchemesKey, __kCFBundleURLTypesKey, 
-                       __kCFPasteboardRemote, __kCFStreamPropertyHTTPTrailer, __kCFStreamPropertySocketSecurityAuthenticatesServerCertificate, 
+                       __kCFPasteboardRemote, __kCFStreamPropertyFileNativeHandle, 
+                       __kCFStreamPropertyHTTPTrailer, __kCFStreamPropertySocketSecurityAuthenticatesServerCertificate, 
                        __kCFSystemVersionBuildStringKey, __kCFSystemVersionBuildVersionKey, 
                        __kCFSystemVersionProductCopyrightKey, __kCFSystemVersionProductNameKey, 
                        __kCFSystemVersionProductUserVisibleVersionKey, __kCFSystemVersionProductVersionExtraKey, 

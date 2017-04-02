@@ -11,7 +11,7 @@
 .\" The following lines are read in generating the apropos(man -k) database. Use only key
 .\" words here as the database is built based on the words here and in the .ND line. 
 .\" Use .Nm macro to designate other names for the documented program.
-.Nd smart card authorization setup script
+.Nd SmartCard authorization setup script
 .Sh SYNOPSIS             \" Section Header - required - don't modify
 .Nm
 .Ar pair " "
@@ -58,7 +58,7 @@
 .Sh DESCRIPTION          \" Section Header - required - don't modify
 .Nm
 configures a local user account to permit authentication using a supported 
-smart card.  Authentication is via asymmetric key (also known as 
+SmartCard.  Authentication is via asymmetric key (also known as 
 public-key) encryption.  
 .Nm
 works with signing keys, but not encryption keys.
@@ -67,13 +67,13 @@ works with signing keys, but not encryption keys.
 can perform the following actions:
 .Bl -tag -width -indent  \" Begins a tagged list
 .It Ar pair
-Associate a user with a public key. Because user's keychain will be modified to be unlockable by a key, smart card with that key must be present in the reader. The key to use has to be specified by its hash.
+Associate a user with a public key. Because user's keychain will be modified to be unlockable by a key, SmartCard with that key must be present in the reader. The key to use has to be specified by its hash.
 .It Ar unpair
 Remove association with a user and keychain. If no specific hash is provided, all associations with a user are removed.
 .It Ar pairing_ui
 Enable or disable pairing dialog when card with unpaired identities is inserted
 .It Ar identities
-List all identities on all smart cards and display appropriate associations with users (for associated keys) or key names (for unassociated keys).
+List all identities on all SmartCards and display appropriate associations with users (for associated keys) or key names (for unassociated keys).
 .It Ar list
 List all public keys associated with a user.
 .El                      \" Ends the list

@@ -10,6 +10,7 @@
 #import <AVFoundation/AVBase.h>
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVAsynchronousKeyValueLoading.h>
+#import <AVFoundation/AVContentKeySession.h>
 
 #import <CoreGraphics/CGAffineTransform.h>
 
@@ -356,7 +357,7 @@ typedef NS_OPTIONS(NSUInteger, AVAssetReferenceRestrictions) {
   @abstract		Indicates the total duration of fragments that either exist now or may be appended in the future in order to extend the duration of the asset.
   @discussion	For QuickTime movie files and MPEG-4 files, the value of this property is obtained from the 'mehd' box of the 'mvex' box, if present. If no total fragment duration hint is available, the value of this property is kCMTimeInvalid.
 */
-@property (nonatomic, readonly) CMTime overallDurationHint NS_AVAILABLE(10_12_3, 10_3);
+@property (nonatomic, readonly) CMTime overallDurationHint NS_AVAILABLE(10_12_2, 10_2);
 
 @end
 
@@ -741,6 +742,16 @@ NS_CLASS_AVAILABLE_MAC(10_11)
 					The fragmented asset to remove from the minder.
 */
 - (void)removeFragmentedAsset:(AVAsset<AVFragmentMinding> *)asset;
+
+@end
+
+@interface AVURLAsset (AVURLAssetContentKeyEligibility) <AVContentKeyRecipient>
+
+/*!
+	@property 		mayRequireContentKeysForMediaDataProcessing
+	@abstract		Allows AVURLAsset to be added as a content key recipient to an AVContentKeySession.
+*/
+@property (nonatomic, readonly) BOOL mayRequireContentKeysForMediaDataProcessing API_AVAILABLE(macosx(10.12.4), ios(10.3), tvos(10.2));
 
 @end
 

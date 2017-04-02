@@ -1,10 +1,10 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: B8150C79-8190-3C67-88C7-5D89ECDCFC39', 'x86_64: 8232FA8A-F16A-3DC0-AE68-B61EFCD5F4A4' ]
+uuids:           [ 'i386: 432336BE-6E32-3059-94A3-32624E25EA3B', 'x86_64: E22A4243-D148-3C74-BA15-2D906A3D1F9E' ]
 platform:        macosx
 install-name:    /usr/lib/libFosl_dynamic.dylib
-current-version: 0.0
-compatibility-version: 0.0
+current-version: 0
+compatibility-version: 0
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]
