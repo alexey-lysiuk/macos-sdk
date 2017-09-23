@@ -1,0 +1,21 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: 327B27CF-1BA3-3CB5-98A1-D329A9A8A3F8', 'x86_64: 5B555BC7-8C52-37E8-92D1-829C06257D8B' ]
+platform:        macosx
+install-name:    /usr/lib/libcupscgi.1.dylib
+objc-constraint: none
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _cgiCheckVariables, _cgiClearVariables, _cgiCompileSearch, 
+                       _cgiCopyTemplateFile, _cgiCopyTemplateLang, _cgiDoSearch, 
+                       _cgiEndHTML, _cgiEndMultipart, _cgiFormEncode, _cgiFreeSearch, 
+                       _cgiGetArray, _cgiGetAttributes, _cgiGetCookie, _cgiGetFile, 
+                       _cgiGetIPPObjects, _cgiGetSize, _cgiGetTemplateDir, _cgiGetVariable, 
+                       _cgiInitialize, _cgiIsPOST, _cgiMoveJobs, _cgiPrintCommand, 
+                       _cgiPrintTestPage, _cgiRewriteURL, _cgiSetArray, _cgiSetCookie, 
+                       _cgiSetIPPObjectVars, _cgiSetIPPVars, _cgiSetServerVersion, 
+                       _cgiSetSize, _cgiSetVariable, _cgiShowIPPError, _cgiShowJobs, 
+                       _cgiStartHTML, _cgiStartMultipart, _cgiSupportsMultipart, 
+                       _cgiText, _helpDeleteIndex, _helpFindNode, _helpLoadIndex, 
+                       _helpSaveIndex, _helpSearchIndex ]
+...

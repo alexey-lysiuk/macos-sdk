@@ -1,0 +1,10 @@
+--- !tapi-tbd-v2
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 0EA71B0F-1B0D-3072-8945-1FD9041A80BD' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/InternationalSupport.framework/Versions/A/InternationalSupport
+objc-constraint: none
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _InternationalSupportVersionNumber, _InternationalSupportVersionString ]
+...

@@ -1,0 +1,16 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: BEF76B44-53EA-3970-AB50-2296DC7F097F', 'x86_64: 912FA211-DD8C-3C92-8424-21B89F8B10FD' ]
+platform:        macosx
+install-name:    /usr/lib/system/libremovefile.dylib
+current-version: 45
+objc-constraint: none
+parent-umbrella: System
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ ___removefileVersionNumber, ___removefileVersionString, ___removefile_init_random, 
+                       ___removefile_process_file, ___removefile_random_char, ___removefile_randomize_buffer, 
+                       ___removefile_rename_unlink, ___removefile_sunlink, ___removefile_tree_walker, 
+                       _removefile, _removefile_cancel, _removefile_state_alloc, 
+                       _removefile_state_free, _removefile_state_get, _removefile_state_set ]
+...

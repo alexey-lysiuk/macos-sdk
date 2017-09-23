@@ -1,0 +1,10 @@
+--- !tapi-tbd-v2
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 87169F42-C6A6-3731-BAE5-B53FF70DAA94' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/UAUPlugin.framework/Versions/A/UAUPlugin
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _UAUPluginVersionNumber, _UAUPluginVersionString ]
+    objc-classes:    [ _UAULogging, _UAUSession, _UpdaterSessionParameters ]
+...

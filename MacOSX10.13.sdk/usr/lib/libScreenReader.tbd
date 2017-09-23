@@ -1,0 +1,19 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: A2A66CC0-780C-3751-AC41-075118B8EF14', 'x86_64: 107BB2E9-A973-322E-8BDA-5E4DA4061A77' ]
+platform:        macosx
+install-name:    /usr/lib/libScreenReader.dylib
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ __ScreenReaderCopyAudioIntroPath, __ScreenReaderCopyElement, 
+                       __ScreenReaderCopyFocusedElement, __ScreenReaderCopyInfo, 
+                       __ScreenReaderCopyKeyboardFocusedElement, __ScreenReaderGetEFIAudioFileData, 
+                       __ScreenReaderIsDisabledByManagedPreferences, __ScreenReaderIsRunning, 
+                       __ScreenReaderSendCommand, __ScreenReaderStart, __ScreenReaderStartWithTarget, 
+                       __ScreenReaderStop, __ScreenReaderSupportsCurrentLocale, __ScreenReaderToggleEnabled, 
+                       __kScreenReaderCopyInfoErrorDomain, __kScreenReaderEFIAudioCharacterTypedKey, 
+                       __kScreenReaderEFIAudioPasswordKey, __kScreenReaderEFIAudioUsernameKey, 
+                       __kScreenReaderEFIAudioUsernameOrPasswordIncorrectKey, __kScreenReaderEFIAudioVoiceOverOffKey, 
+                       __kScreenReaderEFIAudioVoiceOverOnKey, __kUniversalAccessImagePath, 
+                       __kVoiceOverTrainingBundlePath ]
+...

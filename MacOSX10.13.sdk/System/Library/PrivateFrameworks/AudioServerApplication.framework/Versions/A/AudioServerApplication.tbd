@@ -1,0 +1,12 @@
+--- !tapi-tbd-v2
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 6571DB08-A33B-32D6-9DBA-8E739DA0C8C3' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/AudioServerApplication.framework/Versions/A/AudioServerApplication
+exports:         
+  - archs:           [ x86_64 ]
+    objc-classes:    [ _ASAAudioDevice, _ASAAudioFormat, _ASABooleanControl, _ASABox, 
+                       _ASAClockDevice, _ASAControl, _ASACoreAudio, _ASALevelControl, 
+                       _ASAObject, _ASAPlaythrough, _ASAPlugin, _ASASelectorControl, 
+                       _ASAStream ]
+...

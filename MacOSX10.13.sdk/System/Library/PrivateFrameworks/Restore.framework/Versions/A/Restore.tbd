@@ -1,0 +1,17 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: A7C11C2C-C5C7-3741-83B4-D50FD1FF70B7', 'x86_64: AF665F65-91F2-39CF-8D67-25DA726D57ED' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/Restore.framework/Versions/A/Restore
+current-version: 433
+exports:         
+  - archs:           [ x86_64 ]
+    objc-ivars:      [ _RestoreHelper._asrTask, _RestoreHelper._authRef, _RestoreHelper._completionFn, 
+                       _RestoreHelper._context, _RestoreHelper._operation, _RestoreHelper._server, 
+                       _RestoreHelper._serverID, _RestoreHelper._startTimer, _RestoreHelper._statusFn, 
+                       _RestoreHelper._tool, _RestoreHelper._toolConnection, _RestoreHelper._toolDone, 
+                       _RestoreHelper._toolPath ]
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _RestoreOperation ]
+    objc-classes:    [ _RestoreHelper ]
+...

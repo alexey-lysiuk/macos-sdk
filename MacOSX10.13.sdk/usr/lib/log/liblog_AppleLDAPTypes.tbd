@@ -1,0 +1,8 @@
+--- !tapi-tbd-v2
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: FDAF662C-C419-37F4-9C0A-3A59400CAFE8' ]
+platform:        macosx
+install-name:    /usr/lib/log/liblog_AppleLDAPTypes.dylib
+current-version: 46
+objc-constraint: none
+...

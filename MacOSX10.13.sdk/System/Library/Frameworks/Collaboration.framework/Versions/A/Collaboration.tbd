@@ -1,0 +1,26 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: 2217DD8C-7D3D-33D3-AE50-E3E6B2B0FD21', 'x86_64: 56BF890A-E55E-3AA9-8A75-9C55DFA41955' ]
+platform:        macosx
+install-name:    /System/Library/Frameworks/Collaboration.framework/Versions/A/Collaboration
+current-version: 80
+exports:         
+  - archs:           [ x86_64 ]
+    objc-ivars:      [ _CBIdentity._reserved, _CBIdentityQuery._csQuery, _CBIdentityQuery._delegate, 
+                       _CBIdentityQuery._identities, _CBIdentityQuery._showsHiddenIdentities, 
+                       _IdentityDataSource._disabledIdentities, _IdentityDataSource._groupImage, 
+                       _IdentityDataSource._identities, _IdentityDataSource._userImage, 
+                       _IdentityDataSource._vCardImage, _ListObject._displayName, 
+                       _ListObject._icon, _ListObject._identity, _ListObject._person, 
+                       _ListObject._realName, _SidebarDataSource._addressBookGroups, 
+                       _SidebarDataSource._showsAddressBook, _SidebarDataSource._showsAddressBookGroups, 
+                       _SidebarDataSource._showsNetworkGroups, _SidebarDataSource._showsNetworkUsers, 
+                       _SidebarDataSource._sidebarItems, _SidebarDataSource._usersGroupsState ]
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _SidebarContacts, _SidebarNetworkGroups, _SidebarNetworkUsers, 
+                       _SidebarUsersGroups, _SortABGroupsByName, _SortABPeopleByFirstName, 
+                       _SortIdentitiesByFirstName ]
+    objc-classes:    [ _CBGroupIdentity, _CBIdentity, _CBIdentityAuthority, _CBIdentityPicker, 
+                       _CBIdentityQuery, _CBUserIdentity, _IdentityDataSource, _IdentityPickerInternal, 
+                       _ListObject, _SidebarDataSource ]
+...

@@ -1,0 +1,12 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64, x86_64h ]
+uuids:           [ 'i386: 92B03F58-1974-35E7-BC7F-28B6B285A860', 'x86_64: C654301A-B183-3BCE-ACCF-6344CDACC2B7', 
+                   'x86_64h: 27E09D39-51B5-3297-BE33-0DB1736B833A' ]
+platform:        macosx
+install-name:    /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vImage.framework/Versions/A/Libraries/libCGInterfaces.dylib
+current-version: 417
+objc-constraint: none
+exports:         
+  - archs:           [ i386, x86_64, x86_64h ]
+    symbols:         [ _Init_CGInterfaces ]
+...

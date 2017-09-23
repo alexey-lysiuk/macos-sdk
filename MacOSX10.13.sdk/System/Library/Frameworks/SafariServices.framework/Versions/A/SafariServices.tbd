@@ -1,0 +1,28 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: 67FDA581-7945-3125-BBA0-0A0F3C00E155', 'x86_64: 2CCE692D-BB88-30BF-B819-13E7D34F178B' ]
+platform:        macosx
+install-name:    /System/Library/Frameworks/SafariServices.framework/Versions/A/SafariServices
+current-version: 604.1.38
+compatibility-version: 535
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _SFErrorDomain, __SFContentBlockerExtensionPointIdentifier, 
+                       __SFExtensionEnabledKey, __SFKeychainLabel, __SFKeychainService, 
+                       __SFMacAppStoreOrDeveloperIDDistributionCodeSigningRequirement, 
+                       __SFSafariContentBlockerDidChangeDistributedNotification, 
+                       __SFSafariExtensionPointIdentifier ]
+    objc-classes:    [ _SFContentBlockerManager, _SFContentBlockerState, _SFSafariApplication, 
+                       _SFSafariExtensionHandler, _SFSafariExtensionManager, _SFSafariExtensionRemoteViewController, 
+                       _SFSafariExtensionServiceViewController, _SFSafariExtensionState, 
+                       _SFSafariExtensionViewController, _SFSafariPage, _SFSafariPageProperties, 
+                       _SFSafariTab, _SFSafariToolbarItem, _SFSafariWindow, __SFAppExtensionsStateManager, 
+                       __SFCodeSigningUtilities, __SFExtensionUtilities, __SFExtensionsStateSecureStorage, 
+                       __SFKeyBagLockStatusManager, __SFSandboxUtilities, __SSHistoryAccessSession, 
+                       __SSURLCompletionSession ]
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _SSGetApplicationNameForUserAgent, _SSGetFullySimplifiedStringForURL, 
+                       _SSGetSafariDateOfLastActiveUse, _SSGetSyncedDataClasses, 
+                       _SSHasDefaultBookmarks, _SSRemoveSyncedKeychainData, _SSSyncedTabsServiceEnableStateChanged, 
+                       __SFSafariServicesAvailable, __SFSafariServicesVersion ]
+...

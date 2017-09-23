@@ -1,0 +1,12 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: 2ACDF422-218A-3E54-8598-F2E7F9AB0594', 'x86_64: EFB76793-A522-3E35-B845-3F999F6DD7B3' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Seeding
+objc-constraint: none
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _SeedingVersionNumber, _SeedingVersionString, _kSeedEnrollmentCookiePath ]
+    objc-classes:    [ _SDBuildInfo, _SDCatalogUtilities, _SDLegalDoc, _SDSeedProgramManager, 
+                       _SDSeedProgramMigrator ]
+...

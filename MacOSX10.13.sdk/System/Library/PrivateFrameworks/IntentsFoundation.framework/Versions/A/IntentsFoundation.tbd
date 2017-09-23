@@ -1,0 +1,11 @@
+--- !tapi-tbd-v2
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 8C90D95D-7037-31E3-B232-7E6A4B3C7C0D' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/IntentsFoundation.framework/Versions/A/IntentsFoundation
+objc-constraint: none
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _IntentsFoundationVersionNumber, _IntentsFoundationVersionString ]
+    objc-classes:    [ _INFObject ]
+...

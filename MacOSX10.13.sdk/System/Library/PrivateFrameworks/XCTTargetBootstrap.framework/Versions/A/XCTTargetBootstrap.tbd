@@ -1,0 +1,12 @@
+--- !tapi-tbd-v2
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 38560B7E-5FA7-3D4B-8E98-F42A5CEE5019' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/XCTTargetBootstrap.framework/Versions/A/XCTTargetBootstrap
+objc-constraint: none
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _XCTSetSharedDaemonConnectionProvider, _XCTSharedDaemonConnectionProvider, 
+                       _XCTTargetBootstrap ]
+    objc-classes:    [ _XCTDaemonConnectionProvider, _XCTTargetSession ]
+...

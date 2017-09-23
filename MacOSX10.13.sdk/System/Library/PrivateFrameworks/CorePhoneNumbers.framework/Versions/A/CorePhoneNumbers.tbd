@@ -1,0 +1,39 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: 6CA42788-C14A-3455-A46D-4725F0B6223A', 'x86_64: 88C31D1D-6611-345F-BF8B-635EC10DB2E5' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/CorePhoneNumbers.framework/Versions/A/CorePhoneNumbers
+objc-constraint: none
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _CFPhoneNumberBundleCopyRulesetFileSystemPath, _CFPhoneNumberBundleCopyRulesetURL, 
+                       _CFPhoneNumberBundleGetBundle, _CFPhoneNumberCopyCountryCode, 
+                       _CFPhoneNumberCopyFormattedInternationalRepresentation, _CFPhoneNumberCopyFormattedRepresentation, 
+                       _CFPhoneNumberCopyISOCountryCode, _CFPhoneNumberCopyNumberForInternationalAssist, 
+                       _CFPhoneNumberCopyNumberForLocalAssist, _CFPhoneNumberCopyUnformattedInternationalRepresentation, 
+                       _CFPhoneNumberCopyUnformattedRepresentation, _CFPhoneNumberCreate, 
+                       _CFPhoneNumberCreateCopy, _CFPhoneNumberCreateString, _CFPhoneNumberGetITUCountryCodeForISOCountryCode, 
+                       _CFPhoneNumberGetTypeID, _CFPhoneNumberStringCreateLowercaseCopy, 
+                       _CFPhoneNumberStringIsEncodingASCII, _CFPhoneNumberStringTransformCreateCopy, 
+                       _INIT_DECOMPOSED_PHONE_NUMBER, _PNCopyBestGuessCountryCodeForNumber, 
+                       _PNCopyBestGuessNormalizedNumberForCountry, _PNCopyCompressedFormattedStringWithCountry, 
+                       _PNCopyFormattedStringWithCountry, _PNCreateFormattedStringWithCountry, 
+                       _PNDecomposeForCountry, _PNIsValidPhoneNumberForCountry, _PNPhoneNumbersEqual, 
+                       _PNSetFormatFileHeader, _UIPhoneFormatFileFirstPrefixSectionHeader, 
+                       _UIPhoneFormatFileGetCountryHeader, _UIPhoneFormatFileGetCountryLength, 
+                       _UIPhoneFormatFileNextPrefixSectionHeader, _UIPhoneFormatGetFirstFormatString, 
+                       _UIPhoneFormatGetInternationalAccessCode, _UIPhoneFormatGetNationalAccessCode, 
+                       __PNCopyAreaCodeForCountry, __PNCopyBestGuessNumberForCountry, 
+                       __PNCopyCountryCodeForInternationalCode, __PNCopyFormattedNumberForDigitsWithCountry, 
+                       __PNCopyFormattedNumberForDigitsWithCountryByRemovingAtIndex, 
+                       __PNCopyFormattedNumberSuggestionForDigitsWithCountry, __PNCopyFullyQualifiedNumberForCountry, 
+                       __PNCopyFullyQualifiedNumberForCountryInternal, __PNCopyIndexStringsForAddressBookSearch, 
+                       __PNCopyInternationalCodeForCountry, __PNCopyLastFourDigitsOfLocalNumber, 
+                       __PNCopyNormalized, __PNCopyPrefixForCountry, __PNCopySampleNumberForCountry, 
+                       __PNCopyStrippedNumberWithoutPauses, __PNCreateLocalizedStringWithString, 
+                       __PNCreateStringByAddingPauses, __PNCreateStringByStrippingFormattingAndNotVisiblyAllowable, 
+                       __PNFindFormatRuleForDigitsWithCountry, __PNSetSampleNumberForCountry, 
+                       _cpn_default_log, _decomposedPhoneNumbersEqual, _kCFPhoneNumberBundleIdentifier, 
+                       _kCFPhoneNumberBundleRulesetResourceName, _kCFPhoneNumberBundleRulesetResourceType, 
+                       _kCFPhoneNumberStringTransformNormalize ]
+...

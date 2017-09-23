@@ -1,0 +1,13 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: CFC2E51F-34B6-3DC8-BA3A-DC745A31F999', 'x86_64: 990EF894-25C9-3B70-A2CF-81FCA89672E9' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/ByteRangeLocking.framework/Versions/A/ByteRangeLocking
+objc-constraint: none
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _BRLMByteRangeLock, _BRLMByteRangeUnlock, _BRLMCanRead, _BRLMCanWrite, 
+                       _BRLMCarbonOpen, _BRLMClose, _BRLMCloseRef, _BRLMEndorseAccess, 
+                       _BRLMExchange, _BRLMGetDescriptor, _BRLMGetForkRefNum, _BRLMInit, 
+                       _BRLMPosixOpen, _NLMDebug ]
+...

@@ -1,0 +1,15 @@
+--- !tapi-tbd-v2
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 181E2983-6E96-34FD-A816-2133633DFA52' ]
+platform:        macosx
+install-name:    '@rpath/SetupAssistantSupport.framework/Versions/A/SetupAssistantSupport'
+objc-constraint: none
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _SASProximityActionTypeKey, _SASProximityPayloadTypeKey, _SASProximityVersionKey, 
+                       _SASProximityVersionValue ]
+    objc-classes:    [ _SASLogging, _SASProximityAction, _SASProximityAnisetteDataProvider, 
+                       _SASProximityAnisetteRequestAction, _SASProximityCompanionAuthRequestAction, 
+                       _SASProximityFinishedAction, _SASProximityInformation, _SASProximityInformationAction, 
+                       _SASProximitySession ]
+...

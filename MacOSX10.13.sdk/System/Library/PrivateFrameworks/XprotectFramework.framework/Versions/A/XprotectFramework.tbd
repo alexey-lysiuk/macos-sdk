@@ -1,0 +1,18 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: 1298752A-BDDE-33F1-BBFA-14117C6827DE', 'x86_64: F408BE1B-002F-33CD-BEB0-28BF06244375' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/XprotectFramework.framework/Versions/A/XprotectFramework
+exports:         
+  - archs:           [ x86_64 ]
+    objc-ivars:      [ _XProtectAnalysis._feedback, _XProtectAnalysis._feedbackQueue, 
+                       _XProtectAnalysis._fileURL, _XProtectAnalysis._lsProperties, 
+                       _XProtectAnalysis._results, _XProtectAnalysis._xpc ]
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _XProtectAnalysisError, _XProtectCaspianContext, _XProtectDetectionType, 
+                       _XProtectMalwareType, _XProtectShouldTranslocateDMG, _XProtectSignatureName, 
+                       __analysisClientInterface, __analysisServiceInterface, _fileHasDownloadQuarantine, 
+                       _fileIsUnixExecutable, _hasLibraryValidation, _itemConformsToUTI, 
+                       _xprotectGetLog ]
+    objc-classes:    [ _XProtectAnalysis ]
+...

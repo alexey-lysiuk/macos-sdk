@@ -1,0 +1,12 @@
+--- !tapi-tbd-v2
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 3D9AFC72-44B3-374A-A176-05CD592DA240' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/Swift/libswiftContacts.dylib
+current-version: 900.8.49
+swift-version:   5
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ __T0SC7CNErrorV8ContactsE15affectedRecordsSayyXlGSgfg, __T0SC7CNErrorV8ContactsE25affectedRecordIdentifiersSaySSGSgfg, 
+                       __T0SC7CNErrorV8ContactsE8keyPathsSaySSGSgfg, '__swift_FORCE_LOAD_$_swiftContacts' ]
+...

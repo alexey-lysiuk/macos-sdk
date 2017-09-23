@@ -1,0 +1,15 @@
+--- !tapi-tbd-v2
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 0F129CCD-F1ED-3D72-A455-E3C074F7374F' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/SymptomDiagnosticManagement.framework/Versions/A/SymptomDiagnosticManagement
+current-version: 820.1.4
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _archiverLogHandle, _basicLogHandle, _cachedeleteLoghandle, 
+                       _diagextLogHandle, _kStoredPayloadKeyAttachmentPaths, _kStoredPayloadKeyCreationTime, 
+                       _kStoredPayloadKeyDiagExtensionIdentifier, _loadedDEExtension, 
+                       _unloadDEExtension, _xpcLogHandle ]
+    objc-classes:    [ _DiagnosticExtensionCacheDelete, _DiagnosticExtensionCaller, 
+                       _DiagnosticExtensionController, _FileArchiver ]
+...

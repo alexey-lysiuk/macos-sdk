@@ -1,0 +1,30 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: B2288C3D-E67F-3AAE-A652-E920CD19F267', 'x86_64: 80C97AD7-D5C2-311A-B268-4AA60CAD6CED' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/FaceCore.framework/Versions/A/FaceCore
+current-version: 3.3.2
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _FCRDetectionParamDetectionRegion, _FCRDetectionParamEnhancedEyesAndMouthLocalization, 
+                       _FCRDetectionParamInitialAngle, _FCRExtractionParamEnhancedEyesAndMouthLocalization, 
+                       _FCRExtractionParamExtractBlink, _FCRExtractionParamExtractFaceprint, 
+                       _FCRExtractionParamExtractLandmarkPoints, _FCRExtractionParamExtractSmile, 
+                       _FCRExtractionParamInitialAngle, _FCRFaceBlurScore, _FCRFaceBlurred, 
+                       _FCRFaceDetectionParameters, _FCRFaceDetectorErrorDomain, 
+                       _FCRFaceExpressionLeftEyeClosed, _FCRFaceExpressionLeftEyeClosedScore, 
+                       _FCRFaceExpressionRightEyeClosed, _FCRFaceExpressionRightEyeClosedScore, 
+                       _FCRFaceExpressionSmile, _FCRFaceExpressionSmileScore, _FCRFaceLandmarkContour, 
+                       _FCRFaceLandmarkEyeLeft, _FCRFaceLandmarkEyeRight, _FCRFaceLandmarkEyebrowLeft, 
+                       _FCRFaceLandmarkEyebrowRight, _FCRFaceLandmarkLipLower, _FCRFaceLandmarkLipUpper, 
+                       _FCRFaceLandmarkMouth, _FCRFaceLandmarkNose, _FCRFaceLandmarkNoseCenter, 
+                       _FCRFaceLandmarkNoseTip, _FCRFastFaceDetectionParameters, 
+                       _FCRKeypointTrackingParameters, _FCRPreciseDetectionParameters, 
+                       _FCRSetupParamDetectProfiles, _FCRSetupParamDetectorType, 
+                       _FCRSetupParamDetectorTypeFaceDetection, _FCRSetupParamDetectorTypeFastFaceDetection, 
+                       _FCRSetupParamDetectorTypePreciseFaceDetection, _FCRSetupParamMinFaceSize, 
+                       _FCRSetupParamNumberOfAngles, _FCRSetupParamTrackingType, 
+                       _FCRSetupParamTrackingTypeKeypoints, _FCRSetupParamTrackingTypeNone, 
+                       _FCRSetupParamTrackingTypeStandard, _FCRStandardTrackingParameters ]
+    objc-classes:    [ _FCRFace, _FCRFaceDetector, _FCRImage, _FCRLandmark ]
+...

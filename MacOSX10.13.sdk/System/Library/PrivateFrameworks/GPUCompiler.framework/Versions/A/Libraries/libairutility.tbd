@@ -1,0 +1,16 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: 827F3098-E78B-3EF9-9BD7-5CA384A705DC', 'x86_64: B7F9A971-348B-3359-975B-179C8244B953' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/GPUCompiler.framework/Versions/A/Libraries/libairutility.dylib
+current-version: 0
+objc-constraint: none
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _MTLAddAIRFunctionArgOptPass, _MTLAddAIRMetadataPrunerPass, 
+                       _MTLAddAIRVerifierPass, _MTLAddGlobalCtorOptPass, _MTLAddPipelineLevelPasses, 
+                       _MTLAddUberFunctionConstantsRequiredPass, _MTLGetArgumentFunctionConstants, 
+                       _MTLInitializeAIRUtilityPasses, _MTLLinkUberFunctionConstants, 
+                       _MTLRemoveUnusedFunctionConstantsFromUsedList, _MTLUpgradeAIRModule, 
+                       _MTLVerifyAIRModule ]
+...

@@ -1,0 +1,12 @@
+--- !tapi-tbd-v2
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 39F586B8-02F6-3264-A8FE-0F5443E870D8' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/SystemUIPlugin.framework/Versions/A/SystemUIPlugin
+current-version: 2
+exports:         
+  - archs:           [ x86_64 ]
+    objc-classes:    [ _NSMenuExtra, _NSMenuExtraAccessibilityElement, _NSMenuExtraView ]
+    objc-ivars:      [ _NSMenuExtraView._alternateImage, _NSMenuExtraView._image, 
+                       _NSMenuExtraView._menu, _NSMenuExtraView._menuExtra ]
+...

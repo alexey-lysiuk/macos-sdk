@@ -1,0 +1,19 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: 1E913488-5D7B-388E-904D-64EF8C99E704', 'x86_64: 18D02016-119A-33E8-AEB0-E9466BA4AD56' ]
+platform:        macosx
+install-name:    /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Help.framework/Versions/A/Help
+current-version: 64
+objc-constraint: none
+parent-umbrella: Carbon
+exports:         
+  - archs:           [ i386, x86_64 ]
+    allowable-clients: [ PrintingUI ]
+    symbols:         [ _AHGotoApplicationHelp, _AHGotoMainTOC, _AHGotoPage, _AHLookupAnchor, 
+                       _AHRegisterHelpBook, _AHRegisterHelpBookWithURL, _AHSearch, 
+                       _AppendEncodingHint, _CFStringToCString, _CopyBookDetails, 
+                       _CreateBookDetailsFromAppBundle, _CreateBookDetailsFromAppBundleAtIndex, 
+                       _CreateBookDetailsWithBookNameAndID, _EscapeMacCharacters, 
+                       _MacPathToURLPath, _kANCHOR, _kBOOKID, _kDEFAULT_BUNDLE_ID, 
+                       _kFILE, _kOPENBOOK, _kSEARCH, _kSEARCHALL, _kSTRING ]
+...

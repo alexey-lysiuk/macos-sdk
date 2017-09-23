@@ -1,0 +1,10 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: 1C4AD77C-926A-3BD9-B8A2-81BC766497C9', 'x86_64: 31A6AC03-8F51-367E-9E00-FF0F1AD10F6F' ]
+platform:        macosx
+install-name:    /usr/lib/closure/libclosured.dylib
+objc-constraint: none
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ __ZN5dyld325closured_CreateImageGroupERKNS_13ClosureBufferE ]
+...

@@ -1,0 +1,26 @@
+--- !tapi-tbd-v2
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: BCF977A6-BA20-3C5F-891E-2B86B619D636' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/AskPermission.framework/Versions/A/AskPermission
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _KPRRequestInfoStoreSalableParent, _PRCurrentRegionIsUS, _PRFrameworkBundle, 
+                       _PRLocalizedString, __PRLogSystem, _kPRRequestInfoStoreAdamID, 
+                       _kPRRequestInfoStoreApprovalStatus, _kPRRequestInfoStoreApprovalWindowHeight, 
+                       _kPRRequestInfoStoreApprovalWindowWidth, _kPRRequestInfoStoreApproveButtonTitle, 
+                       _kPRRequestInfoStoreApprovedMessageString, _kPRRequestInfoStoreApproverDSID, 
+                       _kPRRequestInfoStoreBuyParams, _kPRRequestInfoStoreDeclineButtonTitle, 
+                       _kPRRequestInfoStoreDeclinedMessageString, _kPRRequestInfoStoreItemPrice, 
+                       _kPRRequestInfoStoreParentSalableLocalizedName, _kPRRequestInfoStorePreviewURL, 
+                       _kPRRequestInfoStorePriceString, _kPRRequestInfoStorePricingParameters, 
+                       _kPRRequestInfoStoreProductTypeCode, _kPRRequestInfoStoreRequestID, 
+                       _kPRRequestInfoStoreRequestMessageString, _kPRRequestInfoStoreRequestNotificationString, 
+                       _kPRRequestInfoStoreRequesterDSID, _kPRRequestInfoStoreSalableAdamID, 
+                       _kPRRequestInfoStoreSalableAppVersionID, _kPRRequestInfoStoreSalableLocalizedDefinitiveProductType, 
+                       _kPRRequestInfoStoreSalableLocalizedProductType, _kPRRequestInfoStoreSalableProductName, 
+                       _kPRRequestInfoStoreSalableProductType, _kPRRequestInfoStoreSalableProductTypeID, 
+                       _kPRRequestInfoStoreSalableURL, _kPRRequestInfoStoreSalables, 
+                       _kPRRequestInfoStoreSandboxRequest, _kPRRequestQueueiTunesStoreIdentifier ]
+    objc-classes:    [ _PRRequest, _PRRequestQueue, _PRUIHelper ]
+...

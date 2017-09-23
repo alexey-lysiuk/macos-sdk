@@ -1,0 +1,45 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: 0AD70F61-9314-3033-8AC8-DA7666347191', 'x86_64: 12114BD2-1F36-3DFE-B5DD-19A72F2D3AA2' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/TimeSync.framework/Versions/A/TimeSync
+objc-constraint: none
+exports:         
+  - archs:           [ x86_64 ]
+    objc-classes:    [ _TSIntervalFilter, _TSIntervalTimeLineFilter, _TSTimeLineFilter ]
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _TSErrorDomain, _TSInvalidTime, _TSMessageIntervalDisable, 
+                       _TSMessageIntervalIgnore, _TSMessageIntervalReset, _TSNullClockIdentifier, 
+                       _TSNullgPTPClockIdentity, _TimeSyncAddgPTPServices, _TimeSyncAddgPTPServicesSync, 
+                       _TimeSyncClockAddAWDLPort, _TimeSyncClockAddTimestamps, _TimeSyncClockAddUDPv4EndToEndPort, 
+                       _TimeSyncClockAddUDPv6EndToEndPort, _TimeSyncClockCreateAudioClockDeviceUID, 
+                       _TimeSyncClockCreateUserFilteredClock, _TimeSyncClockCreateWithClockIdentifer, 
+                       _TimeSyncClockDispose, _TimeSyncClockGetClockIdentifer, _TimeSyncClockGetClockRate, 
+                       _TimeSyncClockGetClockRateAnchorsAndGrandmasterIdentity, _TimeSyncClockGetClockRateAndAnchors, 
+                       _TimeSyncClockGetClockTimeAndGrandmasterIdentityForHostTime, 
+                       _TimeSyncClockGetClockTimeForHostTime, _TimeSyncClockGetHostTimeAndGrandmasterIdentityForClockTime, 
+                       _TimeSyncClockGetHostTimeForClockTime, _TimeSyncClockGetLockState, 
+                       _TimeSyncClockGetgPTPGrandmasterIdentity, _TimeSyncClockRemoveAWDLPort, 
+                       _TimeSyncClockRemoveUDPv4EndToEndPort, _TimeSyncClockRemoveUDPv6EndToEndPort, 
+                       _TimeSyncClockResetClock, _TimeSyncClockResetFilter, _TimeSyncClockSetAllPortRemoteSyncMessageIntervals, 
+                       _TimeSyncClockSetLockStateChangeCallback, _TimeSyncClockSetMasterChangeCallback, 
+                       _TimeSyncClockSetgPTPGrandmasterChangeCallback, _TimeSyncRemovegPTPServices, 
+                       _TimeSyncSystemDomainClockIdentifier, __TSKernelClockConvertFromDomainToMachAbsoluteTime, 
+                       __TSKernelClockConvertFromMachAbsoluteToDomainTime ]
+    objc-classes:    [ _TSADEVValue, _TSAllanDeviationAnalysis, _TSAudioTimeErrorCalculator, 
+                       _TSAudioTimeErrorCorrelator, _TSAudioTimeErrorCorrelatorPostUpsampler, 
+                       _TSAudioTimeErrorCorrelatorQuick, _TSAudioTimeErrorCorrelatorResampler, 
+                       _TSAudioTimeErrorValue, _TSBonjourAddress, _TSBonjourAdvertise, 
+                       _TSBonjourBrowser, _TSBonjourNode, _TSClock, _TSClockManager, 
+                       _TSFrequencyAnalysis, _TSInterface, _TSKernelClock, _TSMADEVValue, 
+                       _TSMTIEMask, _TSMTIEMaskElement, _TSMTIEMaskError, _TSMTIEValue, 
+                       _TSMachAbsoluteNanoseconds, _TSMaximumTimeIntervalErrorAnalysis, 
+                       _TSModifiedAllanDeviationAnalysis, _TSRMSTIEValue, _TSRootMeanSquaredTimeIntervalErrorAnalysis, 
+                       _TSTDEVValue, _TSTimeDeviationAnalysis, _TSTimeErrorAnalysis, 
+                       _TSTimeErrorSequence, _TSTimeErrorValue, _TSUserFilteredClock, 
+                       _TSgPTPClock, _TSgPTPEthernetPort, _TSgPTPFDEtEPort, _TSgPTPFDPtPPort, 
+                       _TSgPTPMachPort, _TSgPTPManager, _TSgPTPNetworkPort, _TSgPTPPort, 
+                       _TSgPTPPortStatistics, _TSgPTPTime, _TSgPTPUnicastLinkLayerEtEPort, 
+                       _TSgPTPUnicastLinkLayerPtPPort, _TSgPTPUnicastUDPv4EtEPort, 
+                       _TSgPTPUnicastUDPv4PtPPort, _TSgPTPUnicastUDPv6EtEPort, _TSgPTPUnicastUDPv6PtPPort ]
+...

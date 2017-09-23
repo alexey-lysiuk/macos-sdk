@@ -1,0 +1,11 @@
+--- !tapi-tbd-v2
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 4930C675-4193-3112-BE1E-D1A692CAA1F5' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/FamilyNotification.framework/Versions/A/FamilyNotification
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _FAFamilyNotificationVersionNumber, _FAFamilyNotificationVersionString, 
+                       __FALogSystem ]
+    objc-classes:    [ _FAFamilyNotification, _FAFamilyNotifier ]
+...

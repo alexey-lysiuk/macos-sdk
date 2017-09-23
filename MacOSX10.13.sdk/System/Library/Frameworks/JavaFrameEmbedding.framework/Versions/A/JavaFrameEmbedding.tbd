@@ -1,0 +1,10 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: 3614476A-44C5-3F80-B580-B53C48696478', 'x86_64: 49C76981-8653-31F1-A160-BB649A158225' ]
+platform:        macosx
+install-name:    /System/Library/Frameworks/JavaFrameEmbedding.framework/Versions/A/JavaFrameEmbedding
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _JavaFrameViewDidCreateJavaFrame ]
+    objc-classes:    [ _JavaFrameView ]
+...

@@ -1,0 +1,33 @@
+--- !tapi-tbd-v2
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 5D85917E-4EE3-323A-B973-DF79F2A259C3' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/HDRProcessing.framework/Versions/A/HDRProcessing
+objc-constraint: none
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _HDRProcessFrame, _HDRProcessorCreate, _HDRProcessorGetTypeID, 
+                       _kHDRProcessingAmbientLightInNitsKey, _kHDRProcessingColorPrimariesKey, 
+                       _kHDRProcessingCurrentMaxPanelNitsKey, _kHDRProcessingDestinationDisplayTypeDolbyVisionTV, 
+                       _kHDRProcessingDestinationDisplayTypeHDR10TV, _kHDRProcessingDestinationDisplayTypeInternalPanel, 
+                       _kHDRProcessingDestinationDisplayTypeInternalPanelLCD, _kHDRProcessingDestinationDisplayTypeInternalPanelMac, 
+                       _kHDRProcessingDestinationDisplayTypeKey, _kHDRProcessingDestinationDisplayTypeSDRTV, 
+                       _kHDRProcessingDisplayAverageBrightnessInNitsKey, _kHDRProcessingDisplayColorFormatKey, 
+                       _kHDRProcessingDisplayColorFormat_IPT422_12BITS, _kHDRProcessingDisplayColorFormat_YUV422_12BITS_DOLBYVISION, 
+                       _kHDRProcessingDisplayColorFormat_YUV422_12BITS_DP, _kHDRProcessingDisplayColorFormat_YUV422_12BITS_HDMI, 
+                       _kHDRProcessingDisplayColorFormat_YUV422_12BITS_NATIVE, _kHDRProcessingDisplayDiagonalSizeInInchesKey, 
+                       _kHDRProcessingDisplayKey, _kHDRProcessingDisplayMaximumBrightnessInNitsKey, 
+                       _kHDRProcessingDisplayMinimumBrightnessInNitsKey, _kHDRProcessingDolbyVisionBackwardDMDictinary, 
+                       _kHDRProcessingDolbyVisionBackwardDMMaximumValueKey, _kHDRProcessingDolbyVisionBackwardDMParameterDataKey, 
+                       _kHDRProcessingDolbyVisionHDMIDataKey, _kHDRProcessingDolbyVisionRPUDataKey, 
+                       _kHDRProcessingEDRFactorKey, _kHDRProcessingForwardDMDictinaryKey, 
+                       _kHDRProcessingHDR10BackwardDMParameterDataKey, _kHDRProcessingHDR10HDMIDataKey, 
+                       _kHDRProcessingMaximumExtendedDynamicRangeColorComponentValueKey, 
+                       _kHDRProcessingMaximumNominalBrightnessValueKey, _kHDRProcessingSDRMaxBrightnessInNits, 
+                       _kHDRProcessingSourceContentBitDepthKey, _kHDRProcessingSourceContentKey, 
+                       _kHDRProcessingSourceContentTypeDolbyVision, _kHDRProcessingSourceContentTypeHDR10, 
+                       _kHDRProcessingSourceContentTypeKey, _kHDRProcessingSourceContentTypeSDR, 
+                       _kHDRProcessingUILayerScaleFactor ]
+    objc-classes:    [ _HDRBackwardDisplayManagement, _HDRBackwardDisplayManagementLetterBox, 
+                       _HDRProcessorMetal ]
+...

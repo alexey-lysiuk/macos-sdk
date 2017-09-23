@@ -1,0 +1,22 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: C0A4A6FA-20FE-34B9-81F6-A7EBA75228DB', 'x86_64: 5C51CDA1-05F5-3215-A0A8-2883A1A659B8' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/Montreal.framework/Versions/A/Montreal
+current-version: 42
+objc-constraint: none
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _MRLModelCreate, _MRLModelGetIOMappings, _MRLModelGetInputSize, 
+                       _MRLModelGetOutputSize, _MRLModelGetWeights, _MRLModelLock, 
+                       _MRLModelRecognize, _MRLModelRecognizeIncremental, _MRLModelRecognizeIncrementalClassPlusSuffixIds, 
+                       _MRLModelRecognizeIncrementalOneClassOnly, _MRLModelRecognizeIncrementalTopN, 
+                       _MRLModelRecognizeTopN, _MRLModelRecognizeVectors, _MRLModelRecognizeVectorsIncremental, 
+                       _MRLModelRecognizeVectorsIncrementalTopN, _MRLModelRecognizeVectorsTopN, 
+                       _MRLModelRelease, _MRLModelReset, _MRLModelSetMaxSequenceLength, 
+                       _MRLModelStateCreate, _MRLModelStateIsEmpty, _MRLModelStatePieceData, 
+                       _MRLModelStatePieceSize, _MRLModelStateRelease, _MRLModelStateReset, 
+                       _MRLModelStateRestore, _MRLModelStateSave, _MRLModelStateSize, 
+                       _MRLModelUnlock, _kMRLModelFileLocationKey, _kMRLModelParameterSizeKey, 
+                       _kMRLModelParametersKey ]
+...

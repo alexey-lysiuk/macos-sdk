@@ -1,0 +1,27 @@
+--- !tapi-tbd-v2
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 2650D0F7-A2D3-3471-B65A-F21C2DF38880' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/TTYUtilities.framework/Versions/A/TTYUtilities
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _AXHAMessageKeyIdentifier, _AXHAMessageKeyPayload, _AXHANULL, 
+                       _AXHATrustChainReady, _AXHearingAidAudioRoutesChangedNotification, 
+                       _AXHearingAidControlCenterBundleID, _AXHearingAidControlCenterPath, 
+                       _AXHearingAidServerName, _AXHearingAidServerReadyNotification, 
+                       _AXLEHIAuthServiceUUIDString, _AXLEHIAuthVersionCharacteristicUUIDString, 
+                       _AXLEHIDISFirmwareVersionCharacteristicUUIDString, _AXLEHIDISHardwareVersionCharacteristicUUIDString, 
+                       _AXLEHIDISManufacturerCharacteristicUUIDString, _AXLEHIDISModelNumberCharacteristicUUIDString, 
+                       _AXLEHIDISServiceUUIDString, _AXLEHIServiceUUIDString, _AXTTYMessageKeyCallID, 
+                       _AXTTYMessageKeyContactID, _AXTTYMessageKeyContactPathSearchAction, 
+                       _AXTTYMessageKeyContactSearchAction, _AXTTYMessageKeyConversation, 
+                       _AXTTYMessageKeyConversationUpdates, _AXTTYMessageKeyDeleteAction, 
+                       _AXTTYMessageKeyReadAction, _AXTTYMessageKeyResult, _AXTTYMessageKeySettingsKey, 
+                       _AXTTYMessageKeyUUID, _AXTTYMessageKeyValue, _AXTTYMessageKeyWriteAction, 
+                       _AXTTYPreferredTransportMethodChangedNotification, _HAPerformBlockAsynchronouslyOnMainThread, 
+                       _HAPerformBlockOnMainThread, _HAPerformBlockOnMainThreadAfterDelay, 
+                       _HAPerformBlockSynchronouslyOnMainThread, _TTYUtilitiesVersionNumber, 
+                       _TTYUtilitiesVersionString ]
+    objc-classes:    [ _AXHAUtilities, _AXHeardServer, _AXTTYSettingsListenerHelper, 
+                       _TTYServer, _TTYSettings, _TTYTelephonyUtilities ]
+...

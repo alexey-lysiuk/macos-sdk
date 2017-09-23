@@ -1,0 +1,17 @@
+--- !tapi-tbd-v2
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: B3C8ACDD-934F-305F-92EC-8FEC01EBE4CB' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/ContactsAgent.framework/Versions/A/ContactsAgent
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _ABPredicateReferencedGroupUniqueIDs, _ContactsAgentVersionNumber, 
+                       _ContactsAgentVersionString, _main ]
+    objc-classes:    [ _ABCDAlternateBirthdayPredicates, _ABCDPredicateGenerator, 
+                       _ABXPCActions, _CNAgent, _CNAgentAddressBookProxy, _CNAgentCoreDataMapper, 
+                       _CNAgentGeneralProxy, _CNAgentMeCardListener ]
+    objc-ivars:      [ _CNAgentCoreDataMapper.__ABEntitiesConverterKeys, _CNAgentCoreDataMapper.__ABEntitiesEntityWithValueSelector, 
+                       _CNAgentCoreDataMapper.__ABEntitiesForKeys, _CNAgentCoreDataMapper.__ABEntitiesMainKeys, 
+                       _CNAgentCoreDataMapper.__ABEntitiesValueWithEntitySelector, 
+                       _CNAgentCoreDataMapper.__ABKeysForProperties, _CNAgentCoreDataMapper.__ABPropertiesForKeys ]
+...

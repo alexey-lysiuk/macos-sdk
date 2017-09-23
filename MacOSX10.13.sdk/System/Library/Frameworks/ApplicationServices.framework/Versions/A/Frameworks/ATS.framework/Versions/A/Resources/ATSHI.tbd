@@ -1,0 +1,10 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: A8BA760D-02EE-3EB5-B39C-1C67A2699275', 'x86_64: 0273CB1F-1EA3-3E2C-88CE-69D21A4CA116' ]
+platform:        macosx
+install-name:    /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Resources/ATSHI.dylib
+objc-constraint: none
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _ATSCopyAutoActivationConfirmDialogResult, _ATSIsApplicationReadyForAutoFontActivation ]
+...

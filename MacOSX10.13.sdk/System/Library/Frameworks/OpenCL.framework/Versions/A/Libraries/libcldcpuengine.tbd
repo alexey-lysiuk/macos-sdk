@@ -1,0 +1,20 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: E3B50B98-E1E4-396C-BB05-935AACC6FD80', 'x86_64: DD781325-D94E-3AD7-8D6C-817FB3068917' ]
+platform:        macosx
+install-name:    /System/Library/Frameworks/OpenCL.framework/Versions/A/Libraries/libcldcpuengine.dylib
+current-version: 2.8.7
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ ___printf_cl, _barrier, _glrCompBuildProgram, _glrCompCloseDevice, 
+                       _glrCompCompileProgram, _glrCompCopyStream, _glrCompCreateContext, 
+                       _glrCompCreateKernel, _glrCompCreateProgram, _glrCompCreateStream, 
+                       _glrCompDeleteContext, _glrCompDeleteEvent, _glrCompDeleteKernel, 
+                       _glrCompDeleteProgram, _glrCompDeleteStream, _glrCompEnqueueMarker, 
+                       _glrCompExecuteCallback, _glrCompExecuteKernel, _glrCompExecuteNativeKernel, 
+                       _glrCompFillStream, _glrCompFinish, _glrCompFlush, _glrCompGetDeviceConfig, 
+                       _glrCompGetEventStatus, _glrCompGetImageFormats, _glrCompGetKernelArgInfo, 
+                       _glrCompGetKernelInfo, _glrCompGetKernelNames, _glrCompLinkProgram, 
+                       _glrCompLoadBinary, _glrCompOpenDevice, _glrCompReadStream, 
+                       _glrCompSetContextProperties, _glrCompWaitForEvent, _glrCompWriteStream ]
+...

@@ -1,0 +1,16 @@
+--- !tapi-tbd-v2
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: DF4B8A23-B033-3F7A-BC54-012334352D05' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/PIP.framework/Versions/A/PIP
+current-version: 83
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _PIPProtocolAnimated, _PIPProtocolAnimationFence, _PIPProtocolAspectRatio, 
+                       _PIPProtocolBounds, _PIPProtocolCanResize, _PIPProtocolContextID, 
+                       _PIPProtocolElementAccessibilityToken, _PIPProtocolKey, _PIPProtocolLocation, 
+                       _PIPProtocolMaxSize, _PIPProtocolMinSize, _PIPProtocolPlaying, 
+                       _PIPProtocolService, _PIPProtocolTime, _PIPVersionNumber, 
+                       _PIPVersionString ]
+    objc-classes:    [ _PIPPanel, _PIPViewController ]
+...

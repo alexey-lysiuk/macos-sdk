@@ -1,0 +1,15 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: A812B913-43BF-3A7D-9D71-4156FE82401B', 'x86_64: 9CF4E458-1879-30CF-8555-E2B28FBD8959' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/ServerInformation.framework/Versions/A/ServerInformation
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _SICopyLocalizedServerProductName, _SICopyMinimumServerVersion, 
+                       _SICopyServerBuildVersion, _SICopyServerVersion, _SIGetServerInstallPathPrefix, 
+                       _SIGetServerPerformanceModeEnabled, _SIIsOSXServerVolume, 
+                       _SIIsOSXServerVolumeConfigured, _SIIsServerHardware, _SIIsXsanCapable, 
+                       _SISetServerPerformanceModeEnabled, __SIIsOSXVolumeVersionEqualToOrGreater, 
+                       _kSIServerPerformanceModeDidChangeNotication ]
+    objc-classes:    [ _ServerInformationComputerModelInfo ]
+...

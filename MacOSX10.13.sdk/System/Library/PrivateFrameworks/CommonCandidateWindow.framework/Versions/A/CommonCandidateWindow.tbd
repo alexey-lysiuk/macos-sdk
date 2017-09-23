@@ -1,0 +1,19 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: 37D3D1F6-A0B4-3BF5-84FE-DE14B41F3B0F', 'x86_64: 66696415-5366-3D09-B166-FFCD7EEAEF53' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/CommonCandidateWindow.framework/Versions/A/CommonCandidateWindow
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _CCWAttachChild, _CCWClearSelection, _CCWCreate, _CCWDetachChild, 
+                       _CCWGetCandidateAtLineNumber, _CCWGetCandidateAtSelection, 
+                       _CCWGetChild, _CCWGetContents, _CCWGetLineNumberOfCandidate, 
+                       _CCWGetListType, _CCWGetProperties, _CCWGetRefcon, _CCWGetRetainCount, 
+                       _CCWIsShown, _CCWRelease, _CCWRemoveContents, _CCWRetain, 
+                       _CCWSetContents, _CCWSetProperties, _CCWSetRefcon, _CCWSetSelectionAtCell, 
+                       _CCWSetSelectionOnCandidate, _CCWShowHide, _CCWWindowAttachTo, 
+                       _CCWWindowDetachFrom, _CCWWindowGetDimension, _CCWWindowGetDimensionInNSRect, 
+                       _CCWWindowMoveTo, _CCWWindowMoveToNSPoint, _CCWWindowSetAlpha, 
+                       _CCWWindowSetWindowLevel, _CCWWindowTakeSnapshotForTransition, 
+                       _CCWWindowTransition, __CCWGetCandidateAtSelectionWithPageInfo ]
+...

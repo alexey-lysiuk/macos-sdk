@@ -1,0 +1,11 @@
+--- !tapi-tbd-v2
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 5D3DE253-D11E-3422-8877-D57C48D56A97' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/ProactiveSupportStubs.framework/Versions/A/ProactiveSupportStubs
+objc-constraint: none
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _ProactiveSupportStubsVersionNumber, _ProactiveSupportStubsVersionString ]
+    objc-classes:    [ __PASDeviceStateStub ]
+...

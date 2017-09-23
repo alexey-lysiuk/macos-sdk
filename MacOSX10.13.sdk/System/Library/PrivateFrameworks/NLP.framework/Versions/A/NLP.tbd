@@ -1,0 +1,31 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: F839E0B7-7385-38FD-9C4D-A8BD4C695F23', 'x86_64: 179A396D-1424-3E2A-ADBC-0A824B7B4C6D' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/NLP.framework/Versions/A/NLP
+current-version: 122
+objc-constraint: none
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _NLEmojiPredictorCreate, _NLEmojiPredictorCreateCandidatesForString, 
+                       _NLMorphologicalAnalyzerCreate, _NLMorphologicalAnalyzerEnumerateLemmasForToken, 
+                       _NLMorphologicalAnalyzerEnumerateVariantsForToken, _NLSearchParseCandidateCopyAttributedInput, 
+                       _NLSearchParseCandidateCopyDescription, _NLSearchParseCandidateCopyRankCategories, 
+                       _NLSearchParseCandidateCopyRankTerms, _NLSearchParseCandidateCopyRankingTerms, 
+                       _NLSearchParseGetConfidence, _NLSearchParseLanguageIsSupported, 
+                       _NLSearchParserAppendString, _NLSearchParserCopyParse, _NLSearchParserCopyParseWithOptions, 
+                       _NLSearchParserCreate, _NLSearchParserGetTokenCount, _NLSearchParserSetContext, 
+                       _NLSearchParserSetDate, _NLSearchParserSetLocale, _NLSearchParserSetString, 
+                       _NLTransliterationCandidateCopyInputString, _NLTransliterationCandidateCopyOutputString, 
+                       _NLTransliterationCandidateCreate, _NLTransliterationCandidateIsExtensionCandidate, 
+                       _NLTransliterationCandidateIsInVocabulary, _NLTransliterationCandidateScore, 
+                       _NLTransliteratorAcceptCandidate, _NLTransliteratorCopyCandidates, 
+                       _NLTransliteratorCreate, _NLTransliteratorFlushDynamicLanguageModel, 
+                       _NLTransliteratorResetDynamicLanguageModel, _kNLEmojiPredictionLocaleKey, 
+                       _kNLEmojiPredictionResourceDirectoryKey, _kNLMorphologicalAnalyzerLocaleKey, 
+                       _kNLSearchParseAttributedInputDateKey, _kNLSearchParseAttributedInputRecipientKey, 
+                       _kNLSearchParseAttributedInputSenderKey, _kNLSearchParseAttributedInputTitleKey, 
+                       _kNLSearchParseAttributedInputTopicKey, _kNLSearchParserContextIdentifierKey, 
+                       _kNLSearchParserCustomResourceDirectoryKey, _kNLSearchParserLocaleKey, 
+                       _kNLTransliteratorTargetLocaleKey ]
+...

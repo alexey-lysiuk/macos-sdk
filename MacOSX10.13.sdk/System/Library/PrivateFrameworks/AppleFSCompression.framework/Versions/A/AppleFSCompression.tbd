@@ -1,0 +1,24 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: 38FA63FB-6E9E-3382-80E2-111F42CB1EE3', 'x86_64: B24CC74D-7B69-3313-9DC1-8E8B3E9EEBA2' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/AppleFSCompression.framework/Versions/A/AppleFSCompression
+current-version: 96.1.1
+objc-constraint: none
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _AFSCLockFileFd, _AFSCLockFilePath, _AFSCUnlockFile, _CloseStreamCompressor, 
+                       _CompressFile, _CreateCompressionQueue, _CreateStreamCompressor, 
+                       _CreateStreamCompressorQueue, _CreateStreamCompressorQueueWithOptions, 
+                       _DrainStreamCompressorQueue, _FinishCompressionAndCleanUp, 
+                       _FinishStreamCompressorQueue, _VolumeSupportsCompression, 
+                       _WriteToStreamCompressor, _catFile, _decompressFile, _kAFSCAllowLargeResourceForks, 
+                       _kAFSCCompressionLevel, _kAFSCCompressionRulesKey, _kAFSCCompressionSystemRulesKey, 
+                       _kAFSCCompressionTypes, _kAFSCDispatchQueuePriority, _kAFSCFlagsKey, 
+                       _kAFSCIgnoreXattrErrors, _kAFSCInverseFlags, _kAFSCPathBeginsWithStringKey, 
+                       _kAFSCPathContainsStringKey, _kAFSCPathEndsWithStringKey, 
+                       _kAFSCPathExactlyEqualsStringKey, _kAFSCRuleTypeExclude, _kAFSCRuleTypeInclude, 
+                       _kAFSCRuleTypeKey, _kAFSCSkipMachOFileTypes, _kAFSCSkipMachOOverridePaths, 
+                       _kAFSCSynchronous, _kAFSCThrottledIO, _queryCompressionInfo, 
+                       _type5_handler_function ]
+...

@@ -1,0 +1,14 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: 086FAE1B-87E2-324A-AE76-E6EC0B5F1517', 'x86_64: 5E2C4AA7-066D-3FDB-B0E1-4CDAF287392C' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/login.framework/Versions/A/Frameworks/loginsupport.framework/Versions/A/loginsupport
+objc-constraint: none
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _DBLoggerMaxFlag, _DBLoggerStartFlag, _DBLoggingGetMaskForController, 
+                       _DBLoggingLogWithFormat, _DBLoggingSetLogFileForController, 
+                       _DBLoggingSetMaskForController, _DBLoggingSetSignalEnabled, 
+                       _DBLoggingStartWithController, _DBLoggingStop, _DBLoggingStopController, 
+                       _gDBLoggingMasks, _kUnknownFacility, _kUnknownProcess ]
+...

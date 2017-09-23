@@ -1,0 +1,29 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: 4AB8D35C-AF13-372F-BACF-6976F430D316', 'x86_64: 774962C0-9A33-3283-95C0-374424746CF7' ]
+platform:        macosx
+install-name:    /usr/lib/libParallelCompression.dylib
+objc-constraint: none
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _BXDiff5, _BXPatch5, _BXPatch5InPlace, _BXPatchFile, _CachePatch, 
+                       _DirectoryDiff, _DirectoryPatch, _ISparseArchiveStreamCreate, 
+                       _ISparseArchiveStreamDestroy, _ISparseArchiveStreamRead, _PCompressFilter, 
+                       _PackagePatch, _ParallelArchiveExtract, _ParallelArchiveGenerateBOM, 
+                       _ParallelArchiveGenerateMSUBOM, _ParallelArchiveGetPayloadSize, 
+                       _ParallelArchiveOLDWriterAddEntry, _ParallelArchiveOLDWriterCreate, 
+                       _ParallelArchiveOLDWriterDestroy, _ParallelArchiveRead, _ParallelArchiveReadMetadata, 
+                       _ParallelArchiveSearch, _ParallelArchiveSort, _ParallelArchiveVerifyDir, 
+                       _ParallelArchiveWriteDirContents, _ParallelArchiveWriteEntryData, 
+                       _ParallelArchiveWriteEntryHeader, _ParallelArchiveWriterCreate, 
+                       _ParallelArchiveWriterDestroy, _ParallelCompressionDecode, 
+                       _ParallelCompressionEncode, _ParallelCompressionEnterThreadErrorContext, 
+                       _ParallelCompressionFileClose, _ParallelCompressionFileOpen, 
+                       _ParallelCompressionFileRead, _ParallelCompressionFileSeek, 
+                       _ParallelCompressionFileWrite, _ParallelCompressionIStreamAbort, 
+                       _ParallelCompressionIStreamCreate, _ParallelCompressionIStreamDestroy, 
+                       _ParallelCompressionIStreamRead, _ParallelCompressionLeaveThreadErrorContext, 
+                       _ParallelCompressionOStreamAbort, _ParallelCompressionOStreamCreate, 
+                       _ParallelCompressionOStreamDestroy, _ParallelCompressionOStreamWrite, 
+                       _ParallelCompressionUpdateThreadErrorContext ]
+...

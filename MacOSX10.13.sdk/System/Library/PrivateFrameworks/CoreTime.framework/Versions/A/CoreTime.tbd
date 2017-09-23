@@ -1,0 +1,22 @@
+--- !tapi-tbd-v2
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 0ED5BCB3-8C5F-3E4F-A56D-5BA188778D5B' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/CoreTime.framework/Versions/A/CoreTime
+current-version: 220
+objc-constraint: none
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _TMAirplaneModeChanged, _TMBBTimeActiveNotification, _TMConfirmTimeZone, 
+                       _TMGetKernelMonotonicClock, _TMGetReferenceTime, _TMIsAutomaticTimeEnabled, 
+                       _TMIsAutomaticTimeZoneEnabled, _TMIsBBTimeActive, _TMIsLocationTimeZoneActive, 
+                       _TMIsTimeZoneConfirmed, _TMLocationTimeZoneActiveNotification, 
+                       _TMProvideBBTime, _TMProvideNetworkTimeZone, _TMSetAutomaticTimeEnabled, 
+                       _TMSetAutomaticTimeZoneEnabled, _TMSetManualTime, _TMSetReferenceUnreliable, 
+                       _TMSetSourceAvailable, _TMSetSourceTime, _TMSetSourceTimeZone, 
+                       _TMSetSourceUnavailable, _TMSetupTime, _TMSetupTimeZone, _TMSourceAirPlay, 
+                       _TMSourceCdma, _TMSourceGps, _TMSourceHarvestServer, _TMSourceLocation, 
+                       _TMSourceLocationServer, _TMSourceMobileLockdown, _TMSourceNitz, 
+                       _TMSourceNtp, _TMSourceNtpLowConfidence, _TMSourceNtpPacket, 
+                       _TMSourceiTunesServer, _TMTimeZoneConfirmedNotification ]
+...

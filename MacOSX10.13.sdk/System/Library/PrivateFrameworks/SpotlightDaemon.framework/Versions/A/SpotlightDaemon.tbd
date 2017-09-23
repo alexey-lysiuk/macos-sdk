@@ -1,0 +1,32 @@
+--- !tapi-tbd-v2
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: B155BBE2-6A59-3FAC-BB75-33C0490ABEC2' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/SpotlightDaemon.framework/Versions/A/SpotlightDaemon
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _BulkDeleteAttributes, _CSFieldNameMap, _CSFieldNameMapSize, 
+                       _CSIndexAgentMachServiceName, _SDEventMonitorErrorDomain, 
+                       _SDTraceAdd, _SDTraceDescription, _SDTransactionCreate, _SDTransactionDone, 
+                       _SISynchedOpWithBlock, _SISynchedOpWithBlockPropagatingPriority, 
+                       _SpotlightDaemonVersionNumber, _SpotlightDaemonVersionString, 
+                       _blockRoutine, _delayedOpBlockCompleteCallback, _kSecEntitlementCSDisableQuota, 
+                       _startAgents, _startAllAgents, _startIndexAgent, _syncFinished, 
+                       _unpauseCallback ]
+    objc-classes:    [ _CSIndexAgent, _CSIndexClientConnection, _CSIndexClientConnectionKey, 
+                       _CSRecieverState, _CSSearchAgent, _CSSearchClientConnection, 
+                       _CSSearchClientConnectionKey, _MDAgent, _MDSearchableIndexService, 
+                       _SDEventMonitor, _SDMigrationMonitor, _SDTrace, _SDTraceItem, 
+                       _SPConcreteCoreSpotlightIndexer, _SPCoreSpotlightExtensionsTask, 
+                       _SPCoreSpotlightIndexer, _SPCoreSpotlightIndexerTask, _SPCoreSpotlightTask, 
+                       _SPQueryJob, _SPQueryResultsQueue, _SpotlightReceiverConnection, 
+                       _SpotlightSender, __SPBucketSet ]
+    objc-ivars:      [ _SDTrace._items, _SPConcreteCoreSpotlightIndexer._cancelPtr, 
+                       _SPConcreteCoreSpotlightIndexer._checkedInClients, _SPConcreteCoreSpotlightIndexer._createCount, 
+                       _SPConcreteCoreSpotlightIndexer._knownClients, _SPConcreteCoreSpotlightIndexer._lastPreheat, 
+                       _SPConcreteCoreSpotlightIndexer._lastTTLPass, _SPConcreteCoreSpotlightIndexer._maintenanceOperations, 
+                       _SPConcreteCoreSpotlightIndexer._reindexAllDelegateBundleIDs, 
+                       _SPConcreteCoreSpotlightIndexer._scheduledStringsCleanup, 
+                       _SPConcreteCoreSpotlightIndexer._softSuspended, _SPConcreteCoreSpotlightIndexer._suspended, 
+                       __SPBucketSet._members ]
+...

@@ -1,0 +1,18 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: 32CE9BB7-E047-3568-981E-4EA94D3DCBB5', 'x86_64: F2493BB5-B1C6-3C4D-9F1F-1B402E0F1DB7' ]
+platform:        macosx
+install-name:    /usr/lib/system/libsystem_blocks.dylib
+current-version: 67
+objc-constraint: none
+parent-umbrella: System
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _Block_size, __Block_copy, __Block_extended_layout, __Block_has_signature, 
+                       __Block_isDeallocating, __Block_layout, __Block_object_assign, 
+                       __Block_object_dispose, __Block_release, __Block_signature, 
+                       __Block_tryRetain, __Block_use_RR2, __Block_use_stret, __NSConcreteAutoBlock, 
+                       __NSConcreteFinalizingBlock, __NSConcreteGlobalBlock, __NSConcreteMallocBlock, 
+                       __NSConcreteStackBlock, __NSConcreteWeakBlockVariable, _system_blocksVersionNumber, 
+                       _system_blocksVersionString ]
+...

@@ -1,0 +1,15 @@
+--- !tapi-tbd-v2
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 98F0AEA0-1C2F-3D84-AD15-5B760F705512' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/ServerCompatibility.framework/Versions/A/ServerCompatibility
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _SVCDSStdNotifyContactSearchPolicyChanged, _SVCDSStdNotifyDirectoryNodeAdded, 
+                       _SVCDSStdNotifyDirectoryNodeDeleted, _SVCDSStdNotifySearchPolicyChanged, 
+                       _ServerCompatibilityVersionNumber, _ServerCompatibilityVersionString, 
+                       _kSVCAnyAddress, _kSVCDropAction, _kSVCPassAction ]
+    objc-classes:    [ _SVCCertificate, _SVCDNSUtility, _SVCNetworkInterface, _SVCObject, 
+                       _SVCPacketFilterUser, _SVCProperty, _SVCSystemAdministration, 
+                       _SVCSystemInfo ]
+...

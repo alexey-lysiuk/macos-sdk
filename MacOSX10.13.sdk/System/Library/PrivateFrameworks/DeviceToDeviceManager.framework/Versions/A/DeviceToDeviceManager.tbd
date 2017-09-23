@@ -1,0 +1,18 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: BF623E4C-F140-3543-B52C-1BC24A799051', 'x86_64: E28C038E-E66D-397D-9AD9-20298BFDFAC9' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/DeviceToDeviceManager.framework/Versions/A/DeviceToDeviceManager
+current-version: 32
+objc-constraint: none
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _D2DInitialize, _D2DRelease, _D2DRetain, _D2DStartAdvertisingPair, 
+                       _D2DStartAdvertisingPairOnTransport, _D2DStartBrowsingForKey, 
+                       _D2DStartBrowsingForKeyOnTransport, _D2DStartResolvingPair, 
+                       _D2DStartResolvingPairOnTransport, _D2DStopAdvertisingPair, 
+                       _D2DStopAdvertisingPairOnTransport, _D2DStopBrowsingForKey, 
+                       _D2DStopBrowsingForKeyOnTransport, _D2DStopResolvingPair, 
+                       _D2DStopResolvingPairOnTransport, _D2DTerminate, _DeviceToDeviceManagerVersionNumber, 
+                       _DeviceToDeviceManagerVersionString ]
+...

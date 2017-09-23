@@ -1,0 +1,18 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: 23C98B02-232E-3648-BBA3-DCA917ECA5D8', 'x86_64: 0F3DFBA7-8A9D-3D6C-BD42-472821EF39CF' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/PubSub.framework/Versions/A/PubSub
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ '$ld$install_name$os10.11$/System/Library/Frameworks/PubSub.framework/Versions/A/PubSub', 
+                       '$ld$install_name$os10.12$/System/Library/Frameworks/PubSub.framework/Versions/A/PubSub', 
+                       _PSAgentFrameworkMain, _PSEnclosureDownloadStateDidChangeNotification, 
+                       _PSErrorDomain, _PSException, _PSFeedAddedEntriesKey, _PSFeedDidChangeEntryFlagsKey, 
+                       _PSFeedEntriesChangedNotification, _PSFeedRefreshingNotification, 
+                       _PSFeedRemovedEntriesKey, _PSFeedUnreadCountChangedNotification, 
+                       _PSFeedUpdatedEntriesKey ]
+    objc-classes:    [ _PSAggregate, _PSAuthor, _PSClient, _PSContent, _PSEnclosure, 
+                       _PSEntry, _PSFeed, _PSFeedSettings, _PSFeedURLUtils, _PSLink, 
+                       _PSSCGIProtocol, _PSUtils ]
+...

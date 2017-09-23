@@ -1,0 +1,22 @@
+--- !tapi-tbd-v2
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: B6CC1224-1ADD-3719-9F99-8273A3E3A0A3', 'x86_64: F87390AB-5A3B-3737-A262-6C7E47AABAE6' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/AppleGVA.framework/Versions/A/AppleGVA
+current-version: 10.0.20
+exports:         
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _AVFCODEC_CreateMediaAcceleratorInterface, _AVFJPG_CreateMediaAcceleratorInterface, 
+                       _AVFJPG_GetJPEGDecodeAvailability, _AVFPixelProcess_Create, 
+                       _AVFPixelProcess_PrepareToTransferImages, _AVFPixelProcess_SetDestChromaLocation, 
+                       _AVFPixelProcess_SetDestParametricCurves, _AVFPixelProcess_SetDestYCbCrMatrix, 
+                       _AVFPixelProcess_SetMainMatrix, _AVFPixelProcess_SetPriority, 
+                       _AVFPixelProcess_SetScaling, _AVFPixelProcess_SetSourceChromaLocation, 
+                       _AVFPixelProcess_SetSourceParametricCurves, _AVFPixelProcess_SetSourceYCbCrMatrix, 
+                       _AVFPixelProcess_TransferImageAsync, _AVFPixelProcess_TransferImageSync, 
+                       _AVFPixelProcess_WaitForAsyncTransfers, _AVFQTXENC_CreateMediaAcceleratorInterface, 
+                       _AVFQTXENC_GetEncodeAvailability, _AVFQTXENC_IsAvailable, 
+                       _AVFQTXENC_IsHWScalerAvailable, _AVFQTX_CreateMediaAcceleratorInterface, 
+                       _AVFQTX_GetFreeDRMInstanceCount, _AVFQTX_GetMaxParsedStructureVersion, 
+                       _AVFQTX_IsHWDRMPreferred, _AVF_CreateMediaAcceleratorInterface ]
+...
