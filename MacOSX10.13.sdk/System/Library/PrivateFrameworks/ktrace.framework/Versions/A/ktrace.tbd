@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9312B3C0-75A4-3B3E-8C75-7B60F67BB07C' ]
+uuids:           [ 'x86_64: C2B78DD4-D18D-3A90-B073-AC39F400891A' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ktrace.framework/Versions/A/ktrace
-current-version: 218.1.1
+current-version: 218.20.3
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -57,7 +57,8 @@ exports:
                        _ktrace_file_append_start, _ktrace_file_append_start_subchunk, 
                        _ktrace_file_append_subchunk, _ktrace_file_close, _ktrace_file_compress, 
                        _ktrace_file_create, _ktrace_file_create_fd, _ktrace_file_create_iterator, 
-                       _ktrace_file_create_memory, _ktrace_file_get_memory, _ktrace_file_header_append_chunk, 
+                       _ktrace_file_create_memory, _ktrace_file_earliest_timestamp, 
+                       _ktrace_file_get_memory, _ktrace_file_header_append_chunk, 
                        _ktrace_file_header_append_live_cpu_map, _ktrace_file_header_iterate, 
                        _ktrace_file_is_64_bit, _ktrace_file_iterate, _ktrace_file_ktrace_event_count, 
                        _ktrace_file_latest_timestamp, _ktrace_file_open, _ktrace_file_open_fd, 

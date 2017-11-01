@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9517DE11-BA8E-3F84-87A3-238F1D9380B4' ]
+uuids:           [ 'x86_64: 24093684-7F83-36A9-A03A-F8C545B55F8A' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Versions/A/Frameworks/PhotosGraph.framework/Versions/A/Frameworks/MediaMiningKit.framework/Versions/A/MediaMiningKit
 objc-constraint: none

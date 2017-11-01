@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: E4357BAB-8615-3253-BBAD-F757D17E75F6', 'x86_64: FCE4AC24-34B4-308B-B77F-7DB2B53A98CF' ]
+uuids:           [ 'i386: A9F6D32B-7DFD-349D-894F-4C9887302652', 'x86_64: 81A86D10-07E1-3086-B9E4-9BD0B60AB881' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PersistentConnection.framework/Versions/A/PersistentConnection
 exports:         

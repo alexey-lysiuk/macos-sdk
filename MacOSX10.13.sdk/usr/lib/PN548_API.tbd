@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 929A593D-A8D3-3B75-8871-2E39BDE05DF6' ]
+uuids:           [ 'x86_64: 59830644-F45E-3440-9D7D-46E582354038' ]
 platform:        macosx
 install-name:    /usr/lib/PN548_API.dylib
 objc-constraint: none

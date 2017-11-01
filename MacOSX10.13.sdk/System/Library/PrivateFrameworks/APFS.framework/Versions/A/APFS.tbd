@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 13D6C56C-CED4-3213-B5CA-6D655248C4A5', 'x86_64: 95C42A1E-6A95-38A8-BD33-DFC5A2353D24' ]
+uuids:           [ 'i386: CF6C1DB9-651A-3E19-8C48-1B1DFC9265DD', 'x86_64: 685B7606-E92F-394C-B4F7-4B49D8EF23EC' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/APFS.framework/Versions/A/APFS
 objc-constraint: none
@@ -11,7 +11,8 @@ exports:
                        _APFSContainerWipeVolumeKeys, _APFSExtendedSpaceInfo, _APFSMakeCompatibleName, 
                        _APFSUniquifyName, _APFSVolumeAddHints, _APFSVolumeAddUnlockRecords, 
                        _APFSVolumeCreate, _APFSVolumeDelete, _APFSVolumeDisableEncryption, 
-                       _APFSVolumeEnableEncryption, _APFSVolumeEnableUserProtection, 
+                       _APFSVolumeDisableFileVault, _APFSVolumeEnableEncryption, 
+                       _APFSVolumeEnableFilevault, _APFSVolumeEnableUserProtection, 
                        _APFSVolumeEscrowVEK, _APFSVolumeGeneratePersonalRecoveryKey, 
                        _APFSVolumeGetDefrag, _APFSVolumeGetHint, _APFSVolumeGetSpaceInfo, 
                        _APFSVolumeGetUnlockRecord, _APFSVolumeGetVEKState, _APFSVolumeInfoForUnmountedDisk, 

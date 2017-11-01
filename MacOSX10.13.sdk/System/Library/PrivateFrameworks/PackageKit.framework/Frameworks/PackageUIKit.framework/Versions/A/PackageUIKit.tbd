@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 37EF7DFE-8F4D-316A-8AD9-19DDB43E5641' ]
+uuids:           [ 'x86_64: 7E51B9E8-735E-320A-A7A7-8810B96190A9' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PackageKit.framework/Frameworks/PackageUIKit.framework/Versions/A/PackageUIKit
 current-version: 434

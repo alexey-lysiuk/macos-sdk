@@ -370,6 +370,7 @@ enum
 #define kUSBHostPropertySleepPortCurrentLimit                   "kUSBSleepPortCurrentLimit"
 #define kUSBHostPropertyFailedRemoteWake                        "kUSBFailedRemoteWake"
 #define kUSBHostPropertyBusCurrentPoolID                        "UsbBusCurrentPoolID"
+#define kUSBHostPropertySmcBusCurrentPoolID                     "UsbSmcBusCurrentPoolID"
 #define kUSBHostPropertyUserClientEntitlementRequired           "UsbUserClientEntitlementRequired"
 
 // Legacy power properties
@@ -400,6 +401,7 @@ enum
 #define kUSBHostDevicePropertyCurrentConfiguration              "kUSBCurrentConfiguration"
 #define kUSBHostDevicePropertyRemoteWakeOverride                "kUSBRemoteWakeOverride"
 #define kUSBHostDevicePropertyConfigurationDescriptorOverride   "kUSBConfigurationDescriptorOverride"
+#define kUSBHostDevicePropertyDeviceDescriptorOverride          "kUSBDeviceDescriptorOverride"
 #define kUSBHostDevicePropertyConfigurationCurrentOverride      "kUSBConfigurationCurrentOverride"
 #define kUSBHostDevicePropertyResetDurationOverride             "kUSBResetDurationOverride"
 #define kUSBHostDevicePropertyDesiredChargingCurrent            "kUSBDesiredChargingCurrent"
@@ -470,6 +472,7 @@ enum
 #define kUSBHostPortPropertyExternalDevicePowerController       "kUSBHostPortExternalDevicePowerController"
 
 #define kUSBHostPortPropertyCardReader                          "kUSBHostPortPropertyCardReader"
+#define kUSBHostPortPropertyCardReaderValidateDescriptors       "kUSBHostPortPropertyCardReaderValidateDescriptors"
 
 #define kUSBHostPortPropertyOffset                              "kUSBHostPortPropertyOffset"
 

@@ -1,21 +1,27 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 27E219C8-18DD-366B-90D6-D28F49F037E6', 'x86_64: 57DC140C-1F60-3351-BA67-6A0C07B4CF58' ]
+uuids:           [ 'i386: C882E9C5-730F-3D1A-971D-84842CAA6733', 'x86_64: 938C9D1A-19E0-300D-B8E1-41365A3C87D5' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/FileProvider.framework/Versions/A/FileProvider
 exports:         
   - archs:           [ x86_64 ]
-    symbols:         [ '$ld$hide$os10.0$_OBJC_CLASS_$_NSFileProviderExtension', '$ld$hide$os10.1$_OBJC_CLASS_$_NSFileProviderExtension', 
-                       '$ld$hide$os10.2$_OBJC_CLASS_$_NSFileProviderExtension', '$ld$hide$os10.3$_OBJC_CLASS_$_NSFileProviderExtension', 
-                       '$ld$hide$os8.0$_OBJC_CLASS_$_NSFileProviderExtension', '$ld$hide$os8.1$_OBJC_CLASS_$_NSFileProviderExtension', 
-                       '$ld$hide$os8.2$_OBJC_CLASS_$_NSFileProviderExtension', '$ld$hide$os8.3$_OBJC_CLASS_$_NSFileProviderExtension', 
-                       '$ld$hide$os8.4$_OBJC_CLASS_$_NSFileProviderExtension', '$ld$hide$os9.0$_OBJC_CLASS_$_NSFileProviderExtension', 
-                       '$ld$hide$os9.1$_OBJC_CLASS_$_NSFileProviderExtension', '$ld$hide$os9.2$_OBJC_CLASS_$_NSFileProviderExtension', 
-                       '$ld$hide$os9.3$_OBJC_CLASS_$_NSFileProviderExtension', _FPAccessRead, 
-                       _FPAccessReadMetadata, _FPAccessWrite, _FPActionCopy, _FPActionDelete, 
-                       _FPActionDownload, _FPActionDuplicate, _FPActionEvict, _FPActionFavorite, 
-                       _FPActionImportHere, _FPActionRename, _FPActionReparent, _FPActionTag, 
-                       _FPActionTrash, _FPActionUntrash, _FPBookmarkableStringFromIdentifiers, 
+    symbols:         [ '$ld$hide$os10.0$_OBJC_CLASS_$_NSFileProviderExtension', '$ld$hide$os10.0$_OBJC_METACLASS_$_NSFileProviderExtension', 
+                       '$ld$hide$os10.1$_OBJC_CLASS_$_NSFileProviderExtension', '$ld$hide$os10.1$_OBJC_METACLASS_$_NSFileProviderExtension', 
+                       '$ld$hide$os10.2$_OBJC_CLASS_$_NSFileProviderExtension', '$ld$hide$os10.2$_OBJC_METACLASS_$_NSFileProviderExtension', 
+                       '$ld$hide$os10.3$_OBJC_CLASS_$_NSFileProviderExtension', '$ld$hide$os10.3$_OBJC_METACLASS_$_NSFileProviderExtension', 
+                       '$ld$hide$os8.0$_OBJC_CLASS_$_NSFileProviderExtension', '$ld$hide$os8.0$_OBJC_METACLASS_$_NSFileProviderExtension', 
+                       '$ld$hide$os8.1$_OBJC_CLASS_$_NSFileProviderExtension', '$ld$hide$os8.1$_OBJC_METACLASS_$_NSFileProviderExtension', 
+                       '$ld$hide$os8.2$_OBJC_CLASS_$_NSFileProviderExtension', '$ld$hide$os8.2$_OBJC_METACLASS_$_NSFileProviderExtension', 
+                       '$ld$hide$os8.3$_OBJC_CLASS_$_NSFileProviderExtension', '$ld$hide$os8.3$_OBJC_METACLASS_$_NSFileProviderExtension', 
+                       '$ld$hide$os8.4$_OBJC_CLASS_$_NSFileProviderExtension', '$ld$hide$os8.4$_OBJC_METACLASS_$_NSFileProviderExtension', 
+                       '$ld$hide$os9.0$_OBJC_CLASS_$_NSFileProviderExtension', '$ld$hide$os9.0$_OBJC_METACLASS_$_NSFileProviderExtension', 
+                       '$ld$hide$os9.1$_OBJC_CLASS_$_NSFileProviderExtension', '$ld$hide$os9.1$_OBJC_METACLASS_$_NSFileProviderExtension', 
+                       '$ld$hide$os9.2$_OBJC_CLASS_$_NSFileProviderExtension', '$ld$hide$os9.2$_OBJC_METACLASS_$_NSFileProviderExtension', 
+                       '$ld$hide$os9.3$_OBJC_CLASS_$_NSFileProviderExtension', '$ld$hide$os9.3$_OBJC_METACLASS_$_NSFileProviderExtension', 
+                       _FPAccessRead, _FPAccessReadMetadata, _FPAccessWrite, _FPActionCopy, 
+                       _FPActionDelete, _FPActionDownload, _FPActionDuplicate, _FPActionEvict, 
+                       _FPActionFavorite, _FPActionImportHere, _FPActionRename, _FPActionReparent, 
+                       _FPActionTag, _FPActionTrash, _FPActionUntrash, _FPBookmarkableStringFromIdentifiers, 
                        _FPClientLacksEntitlement, _FPDXPCInterface, _FPErrorVariantCopy, 
                        _FPErrorVariantMove, _FPErrorVariantOpen, _FPErrorVariantRemove, 
                        _FPErrorVariantRename, _FPFileProviderFetchProxyFactoryEndpointForMessageInterface, 

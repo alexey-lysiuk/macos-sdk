@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 0FC2DF17-1806-39F8-ABCD-A74EFF243524', 'x86_64: 5C6E88AC-7182-344B-85B9-CC24931ECCBB' ]
+uuids:           [ 'i386: F9C0EBEA-3E03-3FA2-A941-F7CE50BEB78D', 'x86_64: B05956DA-4DC4-370F-A72E-00599875B38B' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/WebKit.framework/Versions/A/Frameworks/WebCore.framework/Versions/A/WebCore
-current-version: 604.1.38
+current-version: 604.3.5
 parent-umbrella: WebKit
 exports:         
   - archs:           [ i386 ]
@@ -27,6 +27,11 @@ exports:
                        __ZNK7WebCore10FloatPointcv8_NSPointEv, __ZNK7WebCore15PlatformCALayer15drawTextAtPointEP9CGContextff6CGSizefPKcmfNS_5ColorE, 
                        __ZNK7WebCore7IntRectcv7_NSRectEv, __ZNK7WebCore7IntSizecv7_NSSizeEv, 
                        __ZNK7WebCore8IntPointcv8_NSPointEv, __ZNK7WebCore9FloatRectcv7_NSRectEv, 
+                       __ZThn12_N7WebCore14DocumentLoader12dataReceivedERNS_14CachedResourceEPKci, 
+                       __ZThn12_N7WebCore14DocumentLoader14notifyFinishedERNS_14CachedResourceE, 
+                       __ZThn12_N7WebCore14DocumentLoader16redirectReceivedERNS_14CachedResourceERNS_15ResourceRequestERKNS_16ResourceResponseE, 
+                       __ZThn12_N7WebCore14DocumentLoader16responseReceivedERNS_14CachedResourceERKNS_16ResourceResponseE, 
+                       __ZThn12_N7WebCore14DocumentLoaderD0Ev, __ZThn12_N7WebCore14DocumentLoaderD1Ev, 
                        __ZThn40_N7WebCore10ScrollView15setScrollOffsetERKNS_8IntPointE, 
                        __ZThn40_N7WebCore9FrameView17willEndLiveResizeEv, __ZThn40_N7WebCore9FrameView19willStartLiveResizeEv, 
                        __ZThn40_N7WebCore9FrameView27availableContentSizeChangedENS_14ScrollableArea25AvailableSizeChangeReasonE, 
@@ -162,6 +167,11 @@ exports:
                        __ZThn16_N7WebCore19MediaResourceLoaderD0Ev, __ZThn16_N7WebCore19MediaResourceLoaderD1Ev, 
                        __ZThn16_N7WebCore29WebAudioSourceProviderAVFObjC21audioSamplesAvailableERNS_23MediaStreamTrackPrivateERKN3WTF9MediaTimeERKNS_17PlatformAudioDataERKNS_22AudioStreamDescriptionEm, 
                        __ZThn16_N7WebCore29WebAudioSourceProviderAVFObjCD0Ev, __ZThn16_N7WebCore29WebAudioSourceProviderAVFObjCD1Ev, 
+                       __ZThn24_N7WebCore14DocumentLoader12dataReceivedERNS_14CachedResourceEPKci, 
+                       __ZThn24_N7WebCore14DocumentLoader14notifyFinishedERNS_14CachedResourceE, 
+                       __ZThn24_N7WebCore14DocumentLoader16redirectReceivedERNS_14CachedResourceERNS_15ResourceRequestERKNS_16ResourceResponseE, 
+                       __ZThn24_N7WebCore14DocumentLoader16responseReceivedERNS_14CachedResourceERKNS_16ResourceResponseE, 
+                       __ZThn24_N7WebCore14DocumentLoaderD0Ev, __ZThn24_N7WebCore14DocumentLoaderD1Ev, 
                        __ZThn64_N7WebCore10ScrollView15setScrollOffsetERKNS_8IntPointE, 
                        __ZThn64_N7WebCore9FrameView17willEndLiveResizeEv, __ZThn64_N7WebCore9FrameView19willStartLiveResizeEv, 
                        __ZThn64_N7WebCore9FrameView27availableContentSizeChangedENS_14ScrollableArea25AvailableSizeChangeReasonE, 

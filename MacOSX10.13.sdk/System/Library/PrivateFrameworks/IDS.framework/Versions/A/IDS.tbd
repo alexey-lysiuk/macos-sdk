@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: E530D0A3-CDC2-301B-A200-C9BBA825D3CB', 'x86_64: C8E10EB7-D298-36C2-A67E-C362DCFC00E8' ]
+uuids:           [ 'i386: 5DFBC5F0-1DAC-3CDF-8E2A-B34372014269', 'x86_64: 8152CEA4-AF02-37B2-AC18-3C25CD3B98D8' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IDS.framework/Versions/A/IDS
 current-version: 800
@@ -83,18 +83,19 @@ exports:
                        _IDSRefreshUserAccessTokensWithCompletionBlock, _IDSRegistrationControlDisableRegistrationType, 
                        _IDSRegistrationControlEnableRegistrationType, _IDSRegistrationControlGetStateForRegistrationType, 
                        _IDSRepairAccounts, _IDSReportiMessageSpam, _IDSReportiMessageUnknownSender, 
-                       _IDSSecurityKeyRollingRollKeys, _IDSSendMessageOptionAccessTokenKey, 
-                       _IDSSendMessageOptionActivityContinuationKey, _IDSSendMessageOptionAllowCloudDeliveryKey, 
-                       _IDSSendMessageOptionAlternateCallbackIdentifierKey, _IDSSendMessageOptionAlwaysSkipSelfKey, 
-                       _IDSSendMessageOptionBypassDuetKey, _IDSSendMessageOptionCommandKey, 
-                       _IDSSendMessageOptionCompressPayloadKey, _IDSSendMessageOptionDataToEncryptKey, 
-                       _IDSSendMessageOptionDeliveryStatusContextKey, _IDSSendMessageOptionDisableAliasValidationKey, 
-                       _IDSSendMessageOptionDuetIdentifiersOverrideKey, _IDSSendMessageOptionDuetKey, 
-                       _IDSSendMessageOptionEncryptPayloadKey, _IDSSendMessageOptionEnforceRemoteTimeoutsKey, 
-                       _IDSSendMessageOptionExpectsPeerResponseKey, _IDSSendMessageOptionFakeMessage, 
-                       _IDSSendMessageOptionFireAndForgetKey, _IDSSendMessageOptionForceEncryptionOffKey, 
-                       _IDSSendMessageOptionForceLocalDeliveryKey, _IDSSendMessageOptionFromIDKey, 
-                       _IDSSendMessageOptionHomeKitMessageKey, _IDSSendMessageOptionInterestingRegistrationPropertiesKey, 
+                       _IDSSecurityKeyRollingRegenerateRegisteredIdentity, _IDSSecurityKeyRollingRollKeys, 
+                       _IDSSendMessageOptionAccessTokenKey, _IDSSendMessageOptionActivityContinuationKey, 
+                       _IDSSendMessageOptionAllowCloudDeliveryKey, _IDSSendMessageOptionAlternateCallbackIdentifierKey, 
+                       _IDSSendMessageOptionAlwaysSkipSelfKey, _IDSSendMessageOptionBypassDuetKey, 
+                       _IDSSendMessageOptionCommandKey, _IDSSendMessageOptionCompressPayloadKey, 
+                       _IDSSendMessageOptionDataToEncryptKey, _IDSSendMessageOptionDeliveryStatusContextKey, 
+                       _IDSSendMessageOptionDisableAliasValidationKey, _IDSSendMessageOptionDuetIdentifiersOverrideKey, 
+                       _IDSSendMessageOptionDuetKey, _IDSSendMessageOptionEncryptPayloadKey, 
+                       _IDSSendMessageOptionEnforceRemoteTimeoutsKey, _IDSSendMessageOptionExpectsPeerResponseKey, 
+                       _IDSSendMessageOptionFakeMessage, _IDSSendMessageOptionFireAndForgetKey, 
+                       _IDSSendMessageOptionForceEncryptionOffKey, _IDSSendMessageOptionForceLocalDeliveryKey, 
+                       _IDSSendMessageOptionFromIDKey, _IDSSendMessageOptionHomeKitMessageKey, 
+                       _IDSSendMessageOptionInterestingRegistrationPropertiesKey, 
                        _IDSSendMessageOptionLocalDeliveryKey, _IDSSendMessageOptionMapTileKey, 
                        _IDSSendMessageOptionMetricReportIdentifierKey, _IDSSendMessageOptionNSURLSessionKey, 
                        _IDSSendMessageOptionNonCloudWakingKey, _IDSSendMessageOptionNonWakingKey, 

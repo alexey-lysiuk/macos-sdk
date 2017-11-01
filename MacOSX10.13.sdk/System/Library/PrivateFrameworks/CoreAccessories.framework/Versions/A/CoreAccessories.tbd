@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 64B04BCC-BF85-37B0-A4E9-DA8BBBBCE6BA' ]
+uuids:           [ 'x86_64: 64C24F38-32B2-3984-AB99-269DED8D10CE' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreAccessories.framework/Versions/A/CoreAccessories
 exports:         
@@ -120,11 +120,11 @@ exports:
                        _kCFACCExternalAccessoryProtocolEndpointUUIDKey, _kCFACCExternalAccessoryProtocolIndexKey, 
                        _kCFACCExternalAccessoryProtocolTypeKey, _kCFACCExternalAccessoryProtocolsKey, 
                        _kCFACCExternalAccessorySerialNumberKey, _kCFACCExternalAccessorySessionDataKey, 
-                       _kCFACCExternalAccessorySessionIDKey, _kCFACCIdentifiers_CoreAccessories, 
-                       _kCFACCIdentifiers_CoreAccessoriesBundleID, _kCFACCInfo_FirmwareVersionActive, 
-                       _kCFACCInfo_FirmwareVersionPending, _kCFACCInfo_HardwareVersion, 
-                       _kCFACCInfo_Manufacturer, _kCFACCInfo_Model, _kCFACCInfo_Name, 
-                       _kCFACCInfo_SerialNumber, _kCFACCProperties_Connection_DigitalID, 
+                       _kCFACCExternalAccessorySessionIDKey, _kCFACCExternalAccessorySessionUUIDKey, 
+                       _kCFACCIdentifiers_CoreAccessories, _kCFACCIdentifiers_CoreAccessoriesBundleID, 
+                       _kCFACCInfo_FirmwareVersionActive, _kCFACCInfo_FirmwareVersionPending, 
+                       _kCFACCInfo_HardwareVersion, _kCFACCInfo_Manufacturer, _kCFACCInfo_Model, 
+                       _kCFACCInfo_Name, _kCFACCInfo_SerialNumber, _kCFACCProperties_Connection_DigitalID, 
                        _kCFACCProperties_Connection_HideFromUI, _kCFACCProperties_Connection_PrimaryPortNumber, 
                        _kCFACCProperties_Endpoint_Bluetooth_HIDFunction, _kCFACCProperties_Endpoint_DockType, 
                        _kCFACCProperties_Endpoint_PortNumber, _kCFACCProperties_Endpoint_ResistorID, 

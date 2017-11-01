@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 32E08129-AC43-315C-8A14-3CD7BE507850' ]
+uuids:           [ 'x86_64: A9C560B2-2830-3CC3-8069-128F8D7B8B85' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MetalTools.framework/Versions/A/MetalTools
 current-version: 0

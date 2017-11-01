@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9436C4D1-AF53-3CDC-9AC4-ED4DBA8A58CD' ]
+uuids:           [ 'x86_64: EE5B2DE5-AEFB-386E-9A8C-392954F0904D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Swift/libswiftSceneKit.dylib
 current-version: 900.8.49

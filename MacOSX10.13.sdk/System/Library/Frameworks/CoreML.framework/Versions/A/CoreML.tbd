@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CB1A10A0-2713-32DC-94DF-1C6F4373517A' ]
+uuids:           [ 'x86_64: A8D5C870-8F17-3087-A92F-83A5DA302102' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreML.framework/Versions/A/CoreML
 objc-constraint: none

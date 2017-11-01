@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 23C03B33-F0B7-394C-A9F5-A19BC7E87978' ]
+uuids:           [ 'x86_64: B8D4FBE4-1D0D-36D6-B2D7-AD5BCE155D3A' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/NotificationCenter.framework/Versions/A/NotificationCenter
 exports:         

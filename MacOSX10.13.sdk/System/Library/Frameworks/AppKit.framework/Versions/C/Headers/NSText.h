@@ -60,7 +60,7 @@ typedef NS_ENUM(NSInteger, NSTextMovement) {
     NSTextMovementDown          = 0x16,
     NSTextMovementCancel        = 0x17,
     NSTextMovementOther         = 0
-} NS_ENUM_AVAILABLE_MAC(10_13);
+};
 
 @interface NSText : NSView <NSChangeSpelling, NSIgnoreMisspelledWords> {
     /*All instance variables are private*/

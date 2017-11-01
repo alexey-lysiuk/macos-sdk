@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9AE900E8-F021-32A8-AE25-868F7167DF01' ]
+uuids:           [ 'x86_64: 3DEAD278-9153-36F0-ABF7-0A2928A02470' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotosPlayer.framework/Versions/A/PhotosPlayer
 objc-constraint: none

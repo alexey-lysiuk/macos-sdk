@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3D9AFC72-44B3-374A-A176-05CD592DA240' ]
+uuids:           [ 'x86_64: 136DE9E4-71B2-359E-8CC4-25C49E6260A4' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Swift/libswiftContacts.dylib
 current-version: 900.8.49

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EB5E45DB-2325-3FB2-A1F8-A9464673FCAC' ]
+uuids:           [ 'x86_64: A3317ABA-8667-3164-B080-3B11EA224621' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PassKitUIFoundation.framework/Versions/A/PassKitUIFoundation
 exports:         

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: D162F5FC-E903-36EF-B10C-9CA674F543A1', 'x86_64: 8DAE0B7F-186E-333F-8B8E-941DB03BF2FC' ]
+uuids:           [ 'i386: 83A51986-2958-3046-BC26-333389D9C52D', 'x86_64: C4AA981A-A1DC-3F65-84DF-228F4007AE6B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreUI.framework/Versions/A/CoreUI
 current-version: 489

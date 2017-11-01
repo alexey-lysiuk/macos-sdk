@@ -90,7 +90,7 @@
 #ifdef __IPHONE_OS_VERSION_MIN_REQUIRED
     /* make sure a default max version is set */
     #ifndef __IPHONE_OS_VERSION_MAX_ALLOWED
-        #define __IPHONE_OS_VERSION_MAX_ALLOWED     __IPHONE_11_0
+        #define __IPHONE_OS_VERSION_MAX_ALLOWED     __IPHONE_11_1
     #endif
     /* make sure a valid min is set */
     #if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_2_0
@@ -282,6 +282,12 @@
             #else
                     #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_0_MSG(_msg)    __attribute__((availability(ios,introduced=2.0,deprecated=11.0)))
             #endif
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1    __attribute__((availability(ios,introduced=2.0,deprecated=11.1)))
+            #if __has_feature(attribute_availability_with_message)
+                    #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=2.0,deprecated=11.1,message=_msg)))
+            #else
+                    #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=2.0,deprecated=11.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_NA               __attribute__((availability(ios,introduced=2.0)))
             #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_NA_MSG(_msg)     __attribute__((availability(ios,introduced=2.0)))
             #define __AVAILABILITY_INTERNAL__IPHONE_2_1                    __attribute__((availability(ios,introduced=2.1)))
@@ -459,6 +465,12 @@
             #else
                     #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_0_MSG(_msg)    __attribute__((availability(ios,introduced=2.1,deprecated=11.0)))
             #endif
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1    __attribute__((availability(ios,introduced=2.1,deprecated=11.1)))
+            #if __has_feature(attribute_availability_with_message)
+                    #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=2.1,deprecated=11.1,message=_msg)))
+            #else
+                    #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=2.1,deprecated=11.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_NA               __attribute__((availability(ios,introduced=2.1)))
             #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_NA_MSG(_msg)     __attribute__((availability(ios,introduced=2.1)))
             #define __AVAILABILITY_INTERNAL__IPHONE_2_2                    __attribute__((availability(ios,introduced=2.2)))
@@ -630,6 +642,12 @@
             #else
                     #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_0_MSG(_msg)    __attribute__((availability(ios,introduced=2.2,deprecated=11.0)))
             #endif
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1    __attribute__((availability(ios,introduced=2.2,deprecated=11.1)))
+            #if __has_feature(attribute_availability_with_message)
+                    #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=2.2,deprecated=11.1,message=_msg)))
+            #else
+                    #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=2.2,deprecated=11.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_NA               __attribute__((availability(ios,introduced=2.2)))
             #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_NA_MSG(_msg)     __attribute__((availability(ios,introduced=2.2)))
             #define __AVAILABILITY_INTERNAL__IPHONE_3_0                    __attribute__((availability(ios,introduced=3.0)))
@@ -795,6 +813,12 @@
             #else
                     #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_0_MSG(_msg)    __attribute__((availability(ios,introduced=3.0,deprecated=11.0)))
             #endif
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1    __attribute__((availability(ios,introduced=3.0,deprecated=11.1)))
+            #if __has_feature(attribute_availability_with_message)
+                    #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=3.0,deprecated=11.1,message=_msg)))
+            #else
+                    #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=3.0,deprecated=11.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_NA               __attribute__((availability(ios,introduced=3.0)))
             #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_NA_MSG(_msg)     __attribute__((availability(ios,introduced=3.0)))
             #define __AVAILABILITY_INTERNAL__IPHONE_3_1                    __attribute__((availability(ios,introduced=3.1)))
@@ -954,6 +978,12 @@
             #else
                     #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_0_MSG(_msg)    __attribute__((availability(ios,introduced=3.1,deprecated=11.0)))
             #endif
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1    __attribute__((availability(ios,introduced=3.1,deprecated=11.1)))
+            #if __has_feature(attribute_availability_with_message)
+                    #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=3.1,deprecated=11.1,message=_msg)))
+            #else
+                    #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=3.1,deprecated=11.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_NA               __attribute__((availability(ios,introduced=3.1)))
             #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_NA_MSG(_msg)     __attribute__((availability(ios,introduced=3.1)))
             #define __AVAILABILITY_INTERNAL__IPHONE_3_2                    __attribute__((availability(ios,introduced=3.2)))
@@ -1107,6 +1137,12 @@
             #else
                     #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_0_MSG(_msg)    __attribute__((availability(ios,introduced=3.2,deprecated=11.0)))
             #endif
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1    __attribute__((availability(ios,introduced=3.2,deprecated=11.1)))
+            #if __has_feature(attribute_availability_with_message)
+                    #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=3.2,deprecated=11.1,message=_msg)))
+            #else
+                    #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=3.2,deprecated=11.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_NA               __attribute__((availability(ios,introduced=3.2)))
             #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_NA_MSG(_msg)     __attribute__((availability(ios,introduced=3.2)))
             #define __AVAILABILITY_INTERNAL__IPHONE_4_0                    __attribute__((availability(ios,introduced=4.0)))
@@ -1254,6 +1290,12 @@
             #else
                     #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_0_MSG(_msg)    __attribute__((availability(ios,introduced=4.0,deprecated=11.0)))
             #endif
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1    __attribute__((availability(ios,introduced=4.0,deprecated=11.1)))
+            #if __has_feature(attribute_availability_with_message)
+                    #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=4.0,deprecated=11.1,message=_msg)))
+            #else
+                    #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=4.0,deprecated=11.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_NA               __attribute__((availability(ios,introduced=4.0)))
             #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_NA_MSG(_msg)     __attribute__((availability(ios,introduced=4.0)))
             #define __AVAILABILITY_INTERNAL__IPHONE_4_1                    __attribute__((availability(ios,introduced=4.1)))
@@ -1395,6 +1437,12 @@
             #else
                     #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_0_MSG(_msg)    __attribute__((availability(ios,introduced=4.1,deprecated=11.0)))
             #endif
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1    __attribute__((availability(ios,introduced=4.1,deprecated=11.1)))
+            #if __has_feature(attribute_availability_with_message)
+                    #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=4.1,deprecated=11.1,message=_msg)))
+            #else
+                    #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=4.1,deprecated=11.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_NA               __attribute__((availability(ios,introduced=4.1)))
             #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_NA_MSG(_msg)     __attribute__((availability(ios,introduced=4.1)))
             #define __AVAILABILITY_INTERNAL__IPHONE_4_2                    __attribute__((availability(ios,introduced=4.2)))
@@ -1530,6 +1578,12 @@
             #else
                     #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_0_MSG(_msg)    __attribute__((availability(ios,introduced=4.2,deprecated=11.0)))
             #endif
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1    __attribute__((availability(ios,introduced=4.2,deprecated=11.1)))
+            #if __has_feature(attribute_availability_with_message)
+                    #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=4.2,deprecated=11.1,message=_msg)))
+            #else
+                    #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=4.2,deprecated=11.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_NA               __attribute__((availability(ios,introduced=4.2)))
             #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_NA_MSG(_msg)     __attribute__((availability(ios,introduced=4.2)))
             #define __AVAILABILITY_INTERNAL__IPHONE_4_3                    __attribute__((availability(ios,introduced=4.3)))
@@ -1659,6 +1713,12 @@
             #else
                     #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_0_MSG(_msg)    __attribute__((availability(ios,introduced=4.3,deprecated=11.0)))
             #endif
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1    __attribute__((availability(ios,introduced=4.3,deprecated=11.1)))
+            #if __has_feature(attribute_availability_with_message)
+                    #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=4.3,deprecated=11.1,message=_msg)))
+            #else
+                    #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=4.3,deprecated=11.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_NA               __attribute__((availability(ios,introduced=4.3)))
             #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_NA_MSG(_msg)     __attribute__((availability(ios,introduced=4.3)))
             #define __AVAILABILITY_INTERNAL__IPHONE_5_0                    __attribute__((availability(ios,introduced=5.0)))
@@ -1782,6 +1842,12 @@
             #else
                     #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_0_MSG(_msg)    __attribute__((availability(ios,introduced=5.0,deprecated=11.0)))
             #endif
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1    __attribute__((availability(ios,introduced=5.0,deprecated=11.1)))
+            #if __has_feature(attribute_availability_with_message)
+                    #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=5.0,deprecated=11.1,message=_msg)))
+            #else
+                    #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=5.0,deprecated=11.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_NA               __attribute__((availability(ios,introduced=5.0)))
             #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_NA_MSG(_msg)     __attribute__((availability(ios,introduced=5.0)))
             #define __AVAILABILITY_INTERNAL__IPHONE_5_1                    __attribute__((availability(ios,introduced=5.1)))
@@ -1899,6 +1965,12 @@
             #else
                     #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_0_MSG(_msg)    __attribute__((availability(ios,introduced=5.1,deprecated=11.0)))
             #endif
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1    __attribute__((availability(ios,introduced=5.1,deprecated=11.1)))
+            #if __has_feature(attribute_availability_with_message)
+                    #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=5.1,deprecated=11.1,message=_msg)))
+            #else
+                    #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=5.1,deprecated=11.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_NA               __attribute__((availability(ios,introduced=5.1)))
             #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_NA_MSG(_msg)     __attribute__((availability(ios,introduced=5.1)))
             #define __AVAILABILITY_INTERNAL__IPHONE_6_0                    __attribute__((availability(ios,introduced=6.0)))
@@ -2010,6 +2082,12 @@
             #else
                     #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_0_MSG(_msg)    __attribute__((availability(ios,introduced=6.0,deprecated=11.0)))
             #endif
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1    __attribute__((availability(ios,introduced=6.0,deprecated=11.1)))
+            #if __has_feature(attribute_availability_with_message)
+                    #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=6.0,deprecated=11.1,message=_msg)))
+            #else
+                    #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=6.0,deprecated=11.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_NA               __attribute__((availability(ios,introduced=6.0)))
             #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_NA_MSG(_msg)     __attribute__((availability(ios,introduced=6.0)))
             #define __AVAILABILITY_INTERNAL__IPHONE_6_1                    __attribute__((availability(ios,introduced=6.1)))
@@ -2115,6 +2193,12 @@
             #else
                     #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_0_MSG(_msg)    __attribute__((availability(ios,introduced=6.1,deprecated=11.0)))
             #endif
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1    __attribute__((availability(ios,introduced=6.1,deprecated=11.1)))
+            #if __has_feature(attribute_availability_with_message)
+                    #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=6.1,deprecated=11.1,message=_msg)))
+            #else
+                    #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=6.1,deprecated=11.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_NA               __attribute__((availability(ios,introduced=6.1)))
             #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_NA_MSG(_msg)     __attribute__((availability(ios,introduced=6.1)))
             #define __AVAILABILITY_INTERNAL__IPHONE_7_0                    __attribute__((availability(ios,introduced=7.0)))
@@ -2214,6 +2298,12 @@
             #else
                     #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_0_MSG(_msg)    __attribute__((availability(ios,introduced=7.0,deprecated=11.0)))
             #endif
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1    __attribute__((availability(ios,introduced=7.0,deprecated=11.1)))
+            #if __has_feature(attribute_availability_with_message)
+                    #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=7.0,deprecated=11.1,message=_msg)))
+            #else
+                    #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=7.0,deprecated=11.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_NA               __attribute__((availability(ios,introduced=7.0)))
             #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_NA_MSG(_msg)     __attribute__((availability(ios,introduced=7.0)))
             #define __AVAILABILITY_INTERNAL__IPHONE_7_1                    __attribute__((availability(ios,introduced=7.1)))
@@ -2307,6 +2397,12 @@
             #else
                     #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_0_MSG(_msg)    __attribute__((availability(ios,introduced=7.1,deprecated=11.0)))
             #endif
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1    __attribute__((availability(ios,introduced=7.1,deprecated=11.1)))
+            #if __has_feature(attribute_availability_with_message)
+                    #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=7.1,deprecated=11.1,message=_msg)))
+            #else
+                    #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=7.1,deprecated=11.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_NA               __attribute__((availability(ios,introduced=7.1)))
             #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_NA_MSG(_msg)     __attribute__((availability(ios,introduced=7.1)))
             #define __AVAILABILITY_INTERNAL__IPHONE_8_0                    __attribute__((availability(ios,introduced=8.0)))
@@ -2394,6 +2490,12 @@
             #else
                     #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_0_MSG(_msg)    __attribute__((availability(ios,introduced=8.0,deprecated=11.0)))
             #endif
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1    __attribute__((availability(ios,introduced=8.0,deprecated=11.1)))
+            #if __has_feature(attribute_availability_with_message)
+                    #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=8.0,deprecated=11.1,message=_msg)))
+            #else
+                    #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=8.0,deprecated=11.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_NA               __attribute__((availability(ios,introduced=8.0)))
             #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_NA_MSG(_msg)     __attribute__((availability(ios,introduced=8.0)))
             #define __AVAILABILITY_INTERNAL__IPHONE_8_1                    __attribute__((availability(ios,introduced=8.1)))
@@ -2475,6 +2577,12 @@
             #else
                     #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_0_MSG(_msg)    __attribute__((availability(ios,introduced=8.1,deprecated=11.0)))
             #endif
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1    __attribute__((availability(ios,introduced=8.1,deprecated=11.1)))
+            #if __has_feature(attribute_availability_with_message)
+                    #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=8.1,deprecated=11.1,message=_msg)))
+            #else
+                    #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=8.1,deprecated=11.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_NA               __attribute__((availability(ios,introduced=8.1)))
             #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_NA_MSG(_msg)     __attribute__((availability(ios,introduced=8.1)))
             #define __AVAILABILITY_INTERNAL__IPHONE_8_2                    __attribute__((availability(ios,introduced=8.2)))
@@ -2550,6 +2658,12 @@
             #else
                     #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_0_MSG(_msg)    __attribute__((availability(ios,introduced=8.2,deprecated=11.0)))
             #endif
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1    __attribute__((availability(ios,introduced=8.2,deprecated=11.1)))
+            #if __has_feature(attribute_availability_with_message)
+                    #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=8.2,deprecated=11.1,message=_msg)))
+            #else
+                    #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=8.2,deprecated=11.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_NA               __attribute__((availability(ios,introduced=8.2)))
             #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_NA_MSG(_msg)     __attribute__((availability(ios,introduced=8.2)))
             #define __AVAILABILITY_INTERNAL__IPHONE_8_3                    __attribute__((availability(ios,introduced=8.3)))
@@ -2619,6 +2733,12 @@
             #else
                     #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_0_MSG(_msg)    __attribute__((availability(ios,introduced=8.3,deprecated=11.0)))
             #endif
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1    __attribute__((availability(ios,introduced=8.3,deprecated=11.1)))
+            #if __has_feature(attribute_availability_with_message)
+                    #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=8.3,deprecated=11.1,message=_msg)))
+            #else
+                    #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=8.3,deprecated=11.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_NA               __attribute__((availability(ios,introduced=8.3)))
             #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_NA_MSG(_msg)     __attribute__((availability(ios,introduced=8.3)))
             #define __AVAILABILITY_INTERNAL__IPHONE_8_4                    __attribute__((availability(ios,introduced=8.4)))
@@ -2682,6 +2802,12 @@
             #else
                     #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_0_MSG(_msg)    __attribute__((availability(ios,introduced=8.4,deprecated=11.0)))
             #endif
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1    __attribute__((availability(ios,introduced=8.4,deprecated=11.1)))
+            #if __has_feature(attribute_availability_with_message)
+                    #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=8.4,deprecated=11.1,message=_msg)))
+            #else
+                    #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=8.4,deprecated=11.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_NA               __attribute__((availability(ios,introduced=8.4)))
             #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_NA_MSG(_msg)     __attribute__((availability(ios,introduced=8.4)))
             #define __AVAILABILITY_INTERNAL__IPHONE_9_0                    __attribute__((availability(ios,introduced=9.0)))
@@ -2739,6 +2865,12 @@
             #else
                     #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_0_MSG(_msg)    __attribute__((availability(ios,introduced=9.0,deprecated=11.0)))
             #endif
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1    __attribute__((availability(ios,introduced=9.0,deprecated=11.1)))
+            #if __has_feature(attribute_availability_with_message)
+                    #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=9.0,deprecated=11.1,message=_msg)))
+            #else
+                    #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=9.0,deprecated=11.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_NA               __attribute__((availability(ios,introduced=9.0)))
             #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_NA_MSG(_msg)     __attribute__((availability(ios,introduced=9.0)))
             #define __AVAILABILITY_INTERNAL__IPHONE_9_1                    __attribute__((availability(ios,introduced=9.1)))
@@ -2790,6 +2922,12 @@
             #else
                     #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_0_MSG(_msg)    __attribute__((availability(ios,introduced=9.1,deprecated=11.0)))
             #endif
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1    __attribute__((availability(ios,introduced=9.1,deprecated=11.1)))
+            #if __has_feature(attribute_availability_with_message)
+                    #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=9.1,deprecated=11.1,message=_msg)))
+            #else
+                    #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=9.1,deprecated=11.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_NA               __attribute__((availability(ios,introduced=9.1)))
             #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_NA_MSG(_msg)     __attribute__((availability(ios,introduced=9.1)))
             #define __AVAILABILITY_INTERNAL__IPHONE_9_2                    __attribute__((availability(ios,introduced=9.2)))
@@ -2835,6 +2973,12 @@
             #else
                     #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_0_MSG(_msg)    __attribute__((availability(ios,introduced=9.2,deprecated=11.0)))
             #endif
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1    __attribute__((availability(ios,introduced=9.2,deprecated=11.1)))
+            #if __has_feature(attribute_availability_with_message)
+                    #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=9.2,deprecated=11.1,message=_msg)))
+            #else
+                    #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=9.2,deprecated=11.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_NA               __attribute__((availability(ios,introduced=9.2)))
             #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_NA_MSG(_msg)     __attribute__((availability(ios,introduced=9.2)))
             #define __AVAILABILITY_INTERNAL__IPHONE_9_3                    __attribute__((availability(ios,introduced=9.3)))
@@ -2874,6 +3018,12 @@
             #else
                     #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_0_MSG(_msg)    __attribute__((availability(ios,introduced=9.3,deprecated=11.0)))
             #endif
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1    __attribute__((availability(ios,introduced=9.3,deprecated=11.1)))
+            #if __has_feature(attribute_availability_with_message)
+                    #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=9.3,deprecated=11.1,message=_msg)))
+            #else
+                    #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=9.3,deprecated=11.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_NA               __attribute__((availability(ios,introduced=9.3)))
             #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_NA_MSG(_msg)     __attribute__((availability(ios,introduced=9.3)))
             #define __AVAILABILITY_INTERNAL__IPHONE_10_0                    __attribute__((availability(ios,introduced=10.0)))
@@ -2907,6 +3057,12 @@
             #else
                     #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_0_MSG(_msg)    __attribute__((availability(ios,introduced=10.0,deprecated=11.0)))
             #endif
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1    __attribute__((availability(ios,introduced=10.0,deprecated=11.1)))
+            #if __has_feature(attribute_availability_with_message)
+                    #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=10.0,deprecated=11.1,message=_msg)))
+            #else
+                    #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=10.0,deprecated=11.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_NA               __attribute__((availability(ios,introduced=10.0)))
             #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_NA_MSG(_msg)     __attribute__((availability(ios,introduced=10.0)))
             #define __AVAILABILITY_INTERNAL__IPHONE_10_1                    __attribute__((availability(ios,introduced=10.1)))
@@ -2934,6 +3090,12 @@
             #else
                     #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_0_MSG(_msg)    __attribute__((availability(ios,introduced=10.1,deprecated=11.0)))
             #endif
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1    __attribute__((availability(ios,introduced=10.1,deprecated=11.1)))
+            #if __has_feature(attribute_availability_with_message)
+                    #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=10.1,deprecated=11.1,message=_msg)))
+            #else
+                    #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=10.1,deprecated=11.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_NA               __attribute__((availability(ios,introduced=10.1)))
             #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_NA_MSG(_msg)     __attribute__((availability(ios,introduced=10.1)))
             #define __AVAILABILITY_INTERNAL__IPHONE_10_2                    __attribute__((availability(ios,introduced=10.2)))
@@ -2955,6 +3117,12 @@
             #else
                     #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_0_MSG(_msg)    __attribute__((availability(ios,introduced=10.2,deprecated=11.0)))
             #endif
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1    __attribute__((availability(ios,introduced=10.2,deprecated=11.1)))
+            #if __has_feature(attribute_availability_with_message)
+                    #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=10.2,deprecated=11.1,message=_msg)))
+            #else
+                    #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=10.2,deprecated=11.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_NA               __attribute__((availability(ios,introduced=10.2)))
             #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_NA_MSG(_msg)     __attribute__((availability(ios,introduced=10.2)))
             #define __AVAILABILITY_INTERNAL__IPHONE_10_3                    __attribute__((availability(ios,introduced=10.3)))
@@ -2970,6 +3138,12 @@
             #else
                     #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_0_MSG(_msg)    __attribute__((availability(ios,introduced=10.3,deprecated=11.0)))
             #endif
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1    __attribute__((availability(ios,introduced=10.3,deprecated=11.1)))
+            #if __has_feature(attribute_availability_with_message)
+                    #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=10.3,deprecated=11.1,message=_msg)))
+            #else
+                    #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=10.3,deprecated=11.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_NA               __attribute__((availability(ios,introduced=10.3)))
             #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_NA_MSG(_msg)     __attribute__((availability(ios,introduced=10.3)))
             #define __AVAILABILITY_INTERNAL__IPHONE_11_0                    __attribute__((availability(ios,introduced=11.0)))
@@ -2979,8 +3153,23 @@
             #else
                     #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_0_MSG(_msg)    __attribute__((availability(ios,introduced=11.0,deprecated=11.0)))
             #endif
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1    __attribute__((availability(ios,introduced=11.0,deprecated=11.1)))
+            #if __has_feature(attribute_availability_with_message)
+                    #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=11.0,deprecated=11.1,message=_msg)))
+            #else
+                    #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=11.0,deprecated=11.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_NA               __attribute__((availability(ios,introduced=11.0)))
             #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_NA_MSG(_msg)     __attribute__((availability(ios,introduced=11.0)))
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1                    __attribute__((availability(ios,introduced=11.1)))
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1    __attribute__((availability(ios,introduced=11.1,deprecated=11.1)))
+            #if __has_feature(attribute_availability_with_message)
+                    #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=11.1,deprecated=11.1,message=_msg)))
+            #else
+                    #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1_MSG(_msg)    __attribute__((availability(ios,introduced=11.1,deprecated=11.1)))
+            #endif
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_NA               __attribute__((availability(ios,introduced=11.1)))
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_NA_MSG(_msg)     __attribute__((availability(ios,introduced=11.1)))
             #define __AVAILABILITY_INTERNAL__IPHONE_NA                               __attribute__((availability(ios,unavailable)))
             #define __AVAILABILITY_INTERNAL__IPHONE_NA_DEP__IPHONE_NA                __attribute__((availability(ios,unavailable)))
             #define __AVAILABILITY_INTERNAL__IPHONE_NA_DEP__IPHONE_NA_MSG(_msg)      __attribute__((availability(ios,unavailable)))
@@ -22691,6 +22880,1970 @@
             #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_0              __AVAILABILITY_INTERNAL_DEPRECATED
             #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_0_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
         #endif
+        /* set up old style internal macros (up to 11.1) */
+        #if __IPHONE_OS_VERSION_MAX_ALLOWED < __IPHONE_11_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1                      __AVAILABILITY_INTERNAL_UNAVAILABLE
+        #elif __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_11_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1                      __AVAILABILITY_INTERNAL_WEAK_IMPORT
+        #else
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1                      __AVAILABILITY_INTERNAL_REGULAR
+        #endif
+        #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_NA           __AVAILABILITY_INTERNAL__IPHONE_11_1
+        #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_NA_MSG(_msg) __AVAILABILITY_INTERNAL__IPHONE_11_1
+        #if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_1
+        #elif __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_2_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_2_2
+        #elif __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_0
+        #elif __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_1
+        #elif __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_3_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_3_2
+        #elif __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_0
+        #elif __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_1
+        #elif __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_4_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_2
+        #elif __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_4_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_4_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_4_3
+        #elif __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_5_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_5_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_5_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_5_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_5_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_5_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_5_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_5_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_5_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_5_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_5_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_5_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_5_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_5_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_5_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_5_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_5_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_5_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_5_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_5_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_5_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_5_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_5_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_5_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_5_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_5_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_5_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_5_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_5_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_5_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_5_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_5_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_5_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_5_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_5_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_5_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_5_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_5_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_5_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_5_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_5_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_5_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_5_0
+        #elif __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_5_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_5_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_5_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_5_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_5_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_5_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_5_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_5_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_5_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_5_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_5_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_5_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_5_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_5_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_5_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_5_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_5_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_5_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_5_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_5_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_5_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_5_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_5_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_5_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_5_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_5_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_5_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_5_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_5_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_5_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_5_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_5_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_5_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_5_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_5_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_5_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_5_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_5_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_5_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_5_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_5_1
+        #elif __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_6_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_6_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_6_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_6_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_6_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_6_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_6_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_6_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_6_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_6_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_6_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_6_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_6_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_6_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_6_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_6_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_6_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_6_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_6_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_6_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_6_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_6_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_6_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_6_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_6_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_6_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_6_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_6_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_6_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_6_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_6_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_6_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_6_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_6_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_6_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_6_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_6_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_6_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_6_0
+        #elif __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_6_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_6_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_6_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_6_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_6_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_6_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_6_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_6_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_6_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_6_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_6_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_6_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_6_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_6_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_6_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_6_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_6_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_6_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_6_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_6_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_6_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_6_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_6_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_6_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_6_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_6_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_6_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_6_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_6_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_6_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_6_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_6_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_6_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_6_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_6_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_6_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_6_1
+        #elif __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_7_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_7_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_7_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_7_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_7_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_7_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_7_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_7_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_7_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_7_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_7_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_7_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_7_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_7_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_7_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_7_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_7_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_7_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_7_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_7_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_7_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_7_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_7_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_7_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_7_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_7_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_7_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_7_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_7_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_7_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_7_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_7_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_7_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_7_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_7_0
+        #elif __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_7_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_7_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_7_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_7_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_7_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_7_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_7_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_7_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_7_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_7_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_7_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_7_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_7_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_7_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_7_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_7_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_7_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_7_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_7_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_7_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_7_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_7_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_7_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_7_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_7_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_7_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_7_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_7_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_7_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_7_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_7_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_7_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_7_1
+        #elif __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_8_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_0
+        #elif __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_8_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_1
+        #elif __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_8_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_2
+        #elif __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_8_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_3
+        #elif __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_8_4
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_4
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_4
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_4
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_4
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_4
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_4
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_4
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_4
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_4
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_4
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_4
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_4
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_4
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_4
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_4
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_4
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_4
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_4
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_4
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_4
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_8_4
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_8_4
+        #elif __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_9_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_9_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_9_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_9_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_9_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_9_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_9_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_9_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_9_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_9_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_9_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_9_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_9_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_9_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_9_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_9_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_9_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_9_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_9_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_9_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_9_0
+        #elif __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_9_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_9_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_9_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_9_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_9_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_9_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_9_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_9_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_9_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_9_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_9_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_9_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_9_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_9_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_9_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_9_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_9_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_9_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_9_1
+        #elif __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_9_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_9_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_9_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_9_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_9_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_9_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_9_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_9_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_9_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_9_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_9_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_9_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_9_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_9_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_9_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_9_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_9_2
+        #elif __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_9_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_9_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_9_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_9_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_9_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_9_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_9_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_9_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_9_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_9_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_9_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_9_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_9_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_9_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_9_3
+        #elif __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_10_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_10_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_10_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_10_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_10_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_10_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_10_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_10_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_10_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_10_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_10_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_10_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_10_0
+        #elif __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_10_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_10_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_10_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_10_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_10_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_10_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_10_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_10_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_10_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_10_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_10_1
+        #elif __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_10_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_10_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_10_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_10_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_10_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_10_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_10_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_10_2
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_10_2
+        #elif __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_10_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_10_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_10_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_10_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_10_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_10_3
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_10_3
+        #elif __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_11_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_11_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_11_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_11_0
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_11_0
+        #elif __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_11_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_REGULAR
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL__IPHONE_11_1
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL__IPHONE_11_1
+        #else
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__IPHONE_2_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__IPHONE_3_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__IPHONE_4_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__IPHONE_5_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__IPHONE_6_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__IPHONE_7_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__IPHONE_8_4_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__IPHONE_9_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_2_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__IPHONE_10_3_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_0_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__IPHONE_11_1_DEP__IPHONE_11_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+        #endif
         /* set up internal macros (n/a) */
         #define __AVAILABILITY_INTERNAL__IPHONE_NA                               __AVAILABILITY_INTERNAL_UNAVAILABLE
         #define __AVAILABILITY_INTERNAL__IPHONE_NA_DEP__IPHONE_NA                __AVAILABILITY_INTERNAL_UNAVAILABLE
@@ -22702,7 +24855,7 @@
     #define __MAC_OS_X_VERSION_MIN_REQUIRED __ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__
     /* make sure a default max version is set */
     #ifndef __MAC_OS_X_VERSION_MAX_ALLOWED
-        #define __MAC_OS_X_VERSION_MAX_ALLOWED __MAC_10_13
+        #define __MAC_OS_X_VERSION_MAX_ALLOWED __MAC_10_13_1
     #endif
 
     #if defined(__has_attribute) && defined(__has_feature)
@@ -22841,6 +24994,12 @@
             #else
                 #define __AVAILABILITY_INTERNAL__MAC_10_0_DEP__MAC_10_13_MSG(_msg)    __attribute__((availability(macosx,introduced=10.0,deprecated=10.13)))
             #endif
+            #define __AVAILABILITY_INTERNAL__MAC_10_0_DEP__MAC_10_13_1    __attribute__((availability(macosx,introduced=10.0,deprecated=10.13.1)))
+            #if __has_feature(attribute_availability_with_message)
+                #define __AVAILABILITY_INTERNAL__MAC_10_0_DEP__MAC_10_13_1_MSG(_msg)    __attribute__((availability(macosx,introduced=10.0,deprecated=10.13.1,message=_msg)))
+            #else
+                #define __AVAILABILITY_INTERNAL__MAC_10_0_DEP__MAC_10_13_1_MSG(_msg)    __attribute__((availability(macosx,introduced=10.0,deprecated=10.13.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__MAC_10_0_DEP__MAC_NA_MSG(_msg)      __attribute__((availability(macosx,introduced=10.0)))
             #define __AVAILABILITY_INTERNAL__MAC_10_0_DEP__MAC_NA                __attribute__((availability(macosx,introduced=10.0)))
             #define __AVAILABILITY_INTERNAL__MAC_10_1                  __attribute__((availability(macosx,introduced=10.1)))
@@ -22970,6 +25129,12 @@
             #else
                 #define __AVAILABILITY_INTERNAL__MAC_10_1_DEP__MAC_10_13_MSG(_msg)    __attribute__((availability(macosx,introduced=10.1,deprecated=10.13)))
             #endif
+            #define __AVAILABILITY_INTERNAL__MAC_10_1_DEP__MAC_10_13_1    __attribute__((availability(macosx,introduced=10.1,deprecated=10.13.1)))
+            #if __has_feature(attribute_availability_with_message)
+                #define __AVAILABILITY_INTERNAL__MAC_10_1_DEP__MAC_10_13_1_MSG(_msg)    __attribute__((availability(macosx,introduced=10.1,deprecated=10.13.1,message=_msg)))
+            #else
+                #define __AVAILABILITY_INTERNAL__MAC_10_1_DEP__MAC_10_13_1_MSG(_msg)    __attribute__((availability(macosx,introduced=10.1,deprecated=10.13.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__MAC_10_1_DEP__MAC_NA_MSG(_msg)      __attribute__((availability(macosx,introduced=10.1)))
             #define __AVAILABILITY_INTERNAL__MAC_10_1_DEP__MAC_NA                __attribute__((availability(macosx,introduced=10.1)))
             #define __AVAILABILITY_INTERNAL__MAC_10_2                  __attribute__((availability(macosx,introduced=10.2)))
@@ -23093,6 +25258,12 @@
             #else
                 #define __AVAILABILITY_INTERNAL__MAC_10_2_DEP__MAC_10_13_MSG(_msg)    __attribute__((availability(macosx,introduced=10.2,deprecated=10.13)))
             #endif
+            #define __AVAILABILITY_INTERNAL__MAC_10_2_DEP__MAC_10_13_1    __attribute__((availability(macosx,introduced=10.2,deprecated=10.13.1)))
+            #if __has_feature(attribute_availability_with_message)
+                #define __AVAILABILITY_INTERNAL__MAC_10_2_DEP__MAC_10_13_1_MSG(_msg)    __attribute__((availability(macosx,introduced=10.2,deprecated=10.13.1,message=_msg)))
+            #else
+                #define __AVAILABILITY_INTERNAL__MAC_10_2_DEP__MAC_10_13_1_MSG(_msg)    __attribute__((availability(macosx,introduced=10.2,deprecated=10.13.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__MAC_10_2_DEP__MAC_NA_MSG(_msg)      __attribute__((availability(macosx,introduced=10.2)))
             #define __AVAILABILITY_INTERNAL__MAC_10_2_DEP__MAC_NA                __attribute__((availability(macosx,introduced=10.2)))
             #define __AVAILABILITY_INTERNAL__MAC_10_3                  __attribute__((availability(macosx,introduced=10.3)))
@@ -23210,6 +25381,12 @@
             #else
                 #define __AVAILABILITY_INTERNAL__MAC_10_3_DEP__MAC_10_13_MSG(_msg)    __attribute__((availability(macosx,introduced=10.3,deprecated=10.13)))
             #endif
+            #define __AVAILABILITY_INTERNAL__MAC_10_3_DEP__MAC_10_13_1    __attribute__((availability(macosx,introduced=10.3,deprecated=10.13.1)))
+            #if __has_feature(attribute_availability_with_message)
+                #define __AVAILABILITY_INTERNAL__MAC_10_3_DEP__MAC_10_13_1_MSG(_msg)    __attribute__((availability(macosx,introduced=10.3,deprecated=10.13.1,message=_msg)))
+            #else
+                #define __AVAILABILITY_INTERNAL__MAC_10_3_DEP__MAC_10_13_1_MSG(_msg)    __attribute__((availability(macosx,introduced=10.3,deprecated=10.13.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__MAC_10_3_DEP__MAC_NA_MSG(_msg)      __attribute__((availability(macosx,introduced=10.3)))
             #define __AVAILABILITY_INTERNAL__MAC_10_3_DEP__MAC_NA                __attribute__((availability(macosx,introduced=10.3)))
             #define __AVAILABILITY_INTERNAL__MAC_10_4                  __attribute__((availability(macosx,introduced=10.4)))
@@ -23321,6 +25498,12 @@
             #else
                 #define __AVAILABILITY_INTERNAL__MAC_10_4_DEP__MAC_10_13_MSG(_msg)    __attribute__((availability(macosx,introduced=10.4,deprecated=10.13)))
             #endif
+            #define __AVAILABILITY_INTERNAL__MAC_10_4_DEP__MAC_10_13_1    __attribute__((availability(macosx,introduced=10.4,deprecated=10.13.1)))
+            #if __has_feature(attribute_availability_with_message)
+                #define __AVAILABILITY_INTERNAL__MAC_10_4_DEP__MAC_10_13_1_MSG(_msg)    __attribute__((availability(macosx,introduced=10.4,deprecated=10.13.1,message=_msg)))
+            #else
+                #define __AVAILABILITY_INTERNAL__MAC_10_4_DEP__MAC_10_13_1_MSG(_msg)    __attribute__((availability(macosx,introduced=10.4,deprecated=10.13.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__MAC_10_4_DEP__MAC_NA_MSG(_msg)      __attribute__((availability(macosx,introduced=10.4)))
             #define __AVAILABILITY_INTERNAL__MAC_10_4_DEP__MAC_NA                __attribute__((availability(macosx,introduced=10.4)))
             #define __AVAILABILITY_INTERNAL__MAC_10_5                  __attribute__((availability(macosx,introduced=10.5)))
@@ -23426,6 +25609,12 @@
             #else
                 #define __AVAILABILITY_INTERNAL__MAC_10_5_DEP__MAC_10_13_MSG(_msg)    __attribute__((availability(macosx,introduced=10.5,deprecated=10.13)))
             #endif
+            #define __AVAILABILITY_INTERNAL__MAC_10_5_DEP__MAC_10_13_1    __attribute__((availability(macosx,introduced=10.5,deprecated=10.13.1)))
+            #if __has_feature(attribute_availability_with_message)
+                #define __AVAILABILITY_INTERNAL__MAC_10_5_DEP__MAC_10_13_1_MSG(_msg)    __attribute__((availability(macosx,introduced=10.5,deprecated=10.13.1,message=_msg)))
+            #else
+                #define __AVAILABILITY_INTERNAL__MAC_10_5_DEP__MAC_10_13_1_MSG(_msg)    __attribute__((availability(macosx,introduced=10.5,deprecated=10.13.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__MAC_10_5_DEP__MAC_NA_MSG(_msg)      __attribute__((availability(macosx,introduced=10.5)))
             #define __AVAILABILITY_INTERNAL__MAC_10_5_DEP__MAC_NA                __attribute__((availability(macosx,introduced=10.5)))
             #define __AVAILABILITY_INTERNAL__MAC_10_6                  __attribute__((availability(macosx,introduced=10.6)))
@@ -23525,6 +25714,12 @@
             #else
                 #define __AVAILABILITY_INTERNAL__MAC_10_6_DEP__MAC_10_13_MSG(_msg)    __attribute__((availability(macosx,introduced=10.6,deprecated=10.13)))
             #endif
+            #define __AVAILABILITY_INTERNAL__MAC_10_6_DEP__MAC_10_13_1    __attribute__((availability(macosx,introduced=10.6,deprecated=10.13.1)))
+            #if __has_feature(attribute_availability_with_message)
+                #define __AVAILABILITY_INTERNAL__MAC_10_6_DEP__MAC_10_13_1_MSG(_msg)    __attribute__((availability(macosx,introduced=10.6,deprecated=10.13.1,message=_msg)))
+            #else
+                #define __AVAILABILITY_INTERNAL__MAC_10_6_DEP__MAC_10_13_1_MSG(_msg)    __attribute__((availability(macosx,introduced=10.6,deprecated=10.13.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__MAC_10_6_DEP__MAC_NA_MSG(_msg)      __attribute__((availability(macosx,introduced=10.6)))
             #define __AVAILABILITY_INTERNAL__MAC_10_6_DEP__MAC_NA                __attribute__((availability(macosx,introduced=10.6)))
             #define __AVAILABILITY_INTERNAL__MAC_10_7                  __attribute__((availability(macosx,introduced=10.7)))
@@ -23618,6 +25813,12 @@
             #else
                 #define __AVAILABILITY_INTERNAL__MAC_10_7_DEP__MAC_10_13_MSG(_msg)    __attribute__((availability(macosx,introduced=10.7,deprecated=10.13)))
             #endif
+            #define __AVAILABILITY_INTERNAL__MAC_10_7_DEP__MAC_10_13_1    __attribute__((availability(macosx,introduced=10.7,deprecated=10.13.1)))
+            #if __has_feature(attribute_availability_with_message)
+                #define __AVAILABILITY_INTERNAL__MAC_10_7_DEP__MAC_10_13_1_MSG(_msg)    __attribute__((availability(macosx,introduced=10.7,deprecated=10.13.1,message=_msg)))
+            #else
+                #define __AVAILABILITY_INTERNAL__MAC_10_7_DEP__MAC_10_13_1_MSG(_msg)    __attribute__((availability(macosx,introduced=10.7,deprecated=10.13.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__MAC_10_7_DEP__MAC_NA_MSG(_msg)      __attribute__((availability(macosx,introduced=10.7)))
             #define __AVAILABILITY_INTERNAL__MAC_10_7_DEP__MAC_NA                __attribute__((availability(macosx,introduced=10.7)))
             #define __AVAILABILITY_INTERNAL__MAC_10_8                  __attribute__((availability(macosx,introduced=10.8)))
@@ -23705,6 +25906,12 @@
             #else
                 #define __AVAILABILITY_INTERNAL__MAC_10_8_DEP__MAC_10_13_MSG(_msg)    __attribute__((availability(macosx,introduced=10.8,deprecated=10.13)))
             #endif
+            #define __AVAILABILITY_INTERNAL__MAC_10_8_DEP__MAC_10_13_1    __attribute__((availability(macosx,introduced=10.8,deprecated=10.13.1)))
+            #if __has_feature(attribute_availability_with_message)
+                #define __AVAILABILITY_INTERNAL__MAC_10_8_DEP__MAC_10_13_1_MSG(_msg)    __attribute__((availability(macosx,introduced=10.8,deprecated=10.13.1,message=_msg)))
+            #else
+                #define __AVAILABILITY_INTERNAL__MAC_10_8_DEP__MAC_10_13_1_MSG(_msg)    __attribute__((availability(macosx,introduced=10.8,deprecated=10.13.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__MAC_10_8_DEP__MAC_NA_MSG(_msg)      __attribute__((availability(macosx,introduced=10.8)))
             #define __AVAILABILITY_INTERNAL__MAC_10_8_DEP__MAC_NA                __attribute__((availability(macosx,introduced=10.8)))
             #define __AVAILABILITY_INTERNAL__MAC_10_9                  __attribute__((availability(macosx,introduced=10.9)))
@@ -23786,6 +25993,12 @@
             #else
                 #define __AVAILABILITY_INTERNAL__MAC_10_9_DEP__MAC_10_13_MSG(_msg)    __attribute__((availability(macosx,introduced=10.9,deprecated=10.13)))
             #endif
+            #define __AVAILABILITY_INTERNAL__MAC_10_9_DEP__MAC_10_13_1    __attribute__((availability(macosx,introduced=10.9,deprecated=10.13.1)))
+            #if __has_feature(attribute_availability_with_message)
+                #define __AVAILABILITY_INTERNAL__MAC_10_9_DEP__MAC_10_13_1_MSG(_msg)    __attribute__((availability(macosx,introduced=10.9,deprecated=10.13.1,message=_msg)))
+            #else
+                #define __AVAILABILITY_INTERNAL__MAC_10_9_DEP__MAC_10_13_1_MSG(_msg)    __attribute__((availability(macosx,introduced=10.9,deprecated=10.13.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__MAC_10_9_DEP__MAC_NA_MSG(_msg)      __attribute__((availability(macosx,introduced=10.9)))
             #define __AVAILABILITY_INTERNAL__MAC_10_9_DEP__MAC_NA                __attribute__((availability(macosx,introduced=10.9)))
             #define __AVAILABILITY_INTERNAL__MAC_10_10                  __attribute__((availability(macosx,introduced=10.10)))
@@ -23861,6 +26074,12 @@
             #else
                 #define __AVAILABILITY_INTERNAL__MAC_10_10_DEP__MAC_10_13_MSG(_msg)    __attribute__((availability(macosx,introduced=10.10,deprecated=10.13)))
             #endif
+            #define __AVAILABILITY_INTERNAL__MAC_10_10_DEP__MAC_10_13_1    __attribute__((availability(macosx,introduced=10.10,deprecated=10.13.1)))
+            #if __has_feature(attribute_availability_with_message)
+                #define __AVAILABILITY_INTERNAL__MAC_10_10_DEP__MAC_10_13_1_MSG(_msg)    __attribute__((availability(macosx,introduced=10.10,deprecated=10.13.1,message=_msg)))
+            #else
+                #define __AVAILABILITY_INTERNAL__MAC_10_10_DEP__MAC_10_13_1_MSG(_msg)    __attribute__((availability(macosx,introduced=10.10,deprecated=10.13.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__MAC_10_10_DEP__MAC_NA_MSG(_msg)      __attribute__((availability(macosx,introduced=10.10)))
             #define __AVAILABILITY_INTERNAL__MAC_10_10_DEP__MAC_NA                __attribute__((availability(macosx,introduced=10.10)))
             #define __AVAILABILITY_INTERNAL__MAC_10_10_2                  __attribute__((availability(macosx,introduced=10.10.2)))
@@ -23930,6 +26149,12 @@
             #else
                 #define __AVAILABILITY_INTERNAL__MAC_10_10_2_DEP__MAC_10_13_MSG(_msg)    __attribute__((availability(macosx,introduced=10.10.2,deprecated=10.13)))
             #endif
+            #define __AVAILABILITY_INTERNAL__MAC_10_10_2_DEP__MAC_10_13_1    __attribute__((availability(macosx,introduced=10.10.2,deprecated=10.13.1)))
+            #if __has_feature(attribute_availability_with_message)
+                #define __AVAILABILITY_INTERNAL__MAC_10_10_2_DEP__MAC_10_13_1_MSG(_msg)    __attribute__((availability(macosx,introduced=10.10.2,deprecated=10.13.1,message=_msg)))
+            #else
+                #define __AVAILABILITY_INTERNAL__MAC_10_10_2_DEP__MAC_10_13_1_MSG(_msg)    __attribute__((availability(macosx,introduced=10.10.2,deprecated=10.13.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__MAC_10_10_2_DEP__MAC_NA_MSG(_msg)      __attribute__((availability(macosx,introduced=10.10.2)))
             #define __AVAILABILITY_INTERNAL__MAC_10_10_2_DEP__MAC_NA                __attribute__((availability(macosx,introduced=10.10.2)))
             #define __AVAILABILITY_INTERNAL__MAC_10_10_3                  __attribute__((availability(macosx,introduced=10.10.3)))
@@ -23993,6 +26218,12 @@
             #else
                 #define __AVAILABILITY_INTERNAL__MAC_10_10_3_DEP__MAC_10_13_MSG(_msg)    __attribute__((availability(macosx,introduced=10.10.3,deprecated=10.13)))
             #endif
+            #define __AVAILABILITY_INTERNAL__MAC_10_10_3_DEP__MAC_10_13_1    __attribute__((availability(macosx,introduced=10.10.3,deprecated=10.13.1)))
+            #if __has_feature(attribute_availability_with_message)
+                #define __AVAILABILITY_INTERNAL__MAC_10_10_3_DEP__MAC_10_13_1_MSG(_msg)    __attribute__((availability(macosx,introduced=10.10.3,deprecated=10.13.1,message=_msg)))
+            #else
+                #define __AVAILABILITY_INTERNAL__MAC_10_10_3_DEP__MAC_10_13_1_MSG(_msg)    __attribute__((availability(macosx,introduced=10.10.3,deprecated=10.13.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__MAC_10_10_3_DEP__MAC_NA_MSG(_msg)      __attribute__((availability(macosx,introduced=10.10.3)))
             #define __AVAILABILITY_INTERNAL__MAC_10_10_3_DEP__MAC_NA                __attribute__((availability(macosx,introduced=10.10.3)))
             #define __AVAILABILITY_INTERNAL__MAC_10_11                  __attribute__((availability(macosx,introduced=10.11)))
@@ -24050,6 +26281,12 @@
             #else
                 #define __AVAILABILITY_INTERNAL__MAC_10_11_DEP__MAC_10_13_MSG(_msg)    __attribute__((availability(macosx,introduced=10.11,deprecated=10.13)))
             #endif
+            #define __AVAILABILITY_INTERNAL__MAC_10_11_DEP__MAC_10_13_1    __attribute__((availability(macosx,introduced=10.11,deprecated=10.13.1)))
+            #if __has_feature(attribute_availability_with_message)
+                #define __AVAILABILITY_INTERNAL__MAC_10_11_DEP__MAC_10_13_1_MSG(_msg)    __attribute__((availability(macosx,introduced=10.11,deprecated=10.13.1,message=_msg)))
+            #else
+                #define __AVAILABILITY_INTERNAL__MAC_10_11_DEP__MAC_10_13_1_MSG(_msg)    __attribute__((availability(macosx,introduced=10.11,deprecated=10.13.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__MAC_10_11_DEP__MAC_NA_MSG(_msg)      __attribute__((availability(macosx,introduced=10.11)))
             #define __AVAILABILITY_INTERNAL__MAC_10_11_DEP__MAC_NA                __attribute__((availability(macosx,introduced=10.11)))
             #define __AVAILABILITY_INTERNAL__MAC_10_11_2                  __attribute__((availability(macosx,introduced=10.11.2)))
@@ -24101,6 +26338,12 @@
             #else
                 #define __AVAILABILITY_INTERNAL__MAC_10_11_2_DEP__MAC_10_13_MSG(_msg)    __attribute__((availability(macosx,introduced=10.11.2,deprecated=10.13)))
             #endif
+            #define __AVAILABILITY_INTERNAL__MAC_10_11_2_DEP__MAC_10_13_1    __attribute__((availability(macosx,introduced=10.11.2,deprecated=10.13.1)))
+            #if __has_feature(attribute_availability_with_message)
+                #define __AVAILABILITY_INTERNAL__MAC_10_11_2_DEP__MAC_10_13_1_MSG(_msg)    __attribute__((availability(macosx,introduced=10.11.2,deprecated=10.13.1,message=_msg)))
+            #else
+                #define __AVAILABILITY_INTERNAL__MAC_10_11_2_DEP__MAC_10_13_1_MSG(_msg)    __attribute__((availability(macosx,introduced=10.11.2,deprecated=10.13.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__MAC_10_11_2_DEP__MAC_NA_MSG(_msg)      __attribute__((availability(macosx,introduced=10.11.2)))
             #define __AVAILABILITY_INTERNAL__MAC_10_11_2_DEP__MAC_NA                __attribute__((availability(macosx,introduced=10.11.2)))
             #define __AVAILABILITY_INTERNAL__MAC_10_11_3                  __attribute__((availability(macosx,introduced=10.11.3)))
@@ -24146,6 +26389,12 @@
             #else
                 #define __AVAILABILITY_INTERNAL__MAC_10_11_3_DEP__MAC_10_13_MSG(_msg)    __attribute__((availability(macosx,introduced=10.11.3,deprecated=10.13)))
             #endif
+            #define __AVAILABILITY_INTERNAL__MAC_10_11_3_DEP__MAC_10_13_1    __attribute__((availability(macosx,introduced=10.11.3,deprecated=10.13.1)))
+            #if __has_feature(attribute_availability_with_message)
+                #define __AVAILABILITY_INTERNAL__MAC_10_11_3_DEP__MAC_10_13_1_MSG(_msg)    __attribute__((availability(macosx,introduced=10.11.3,deprecated=10.13.1,message=_msg)))
+            #else
+                #define __AVAILABILITY_INTERNAL__MAC_10_11_3_DEP__MAC_10_13_1_MSG(_msg)    __attribute__((availability(macosx,introduced=10.11.3,deprecated=10.13.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__MAC_10_11_3_DEP__MAC_NA_MSG(_msg)      __attribute__((availability(macosx,introduced=10.11.3)))
             #define __AVAILABILITY_INTERNAL__MAC_10_11_3_DEP__MAC_NA                __attribute__((availability(macosx,introduced=10.11.3)))
             #define __AVAILABILITY_INTERNAL__MAC_10_11_4                  __attribute__((availability(macosx,introduced=10.11.4)))
@@ -24185,6 +26434,12 @@
             #else
                 #define __AVAILABILITY_INTERNAL__MAC_10_11_4_DEP__MAC_10_13_MSG(_msg)    __attribute__((availability(macosx,introduced=10.11.4,deprecated=10.13)))
             #endif
+            #define __AVAILABILITY_INTERNAL__MAC_10_11_4_DEP__MAC_10_13_1    __attribute__((availability(macosx,introduced=10.11.4,deprecated=10.13.1)))
+            #if __has_feature(attribute_availability_with_message)
+                #define __AVAILABILITY_INTERNAL__MAC_10_11_4_DEP__MAC_10_13_1_MSG(_msg)    __attribute__((availability(macosx,introduced=10.11.4,deprecated=10.13.1,message=_msg)))
+            #else
+                #define __AVAILABILITY_INTERNAL__MAC_10_11_4_DEP__MAC_10_13_1_MSG(_msg)    __attribute__((availability(macosx,introduced=10.11.4,deprecated=10.13.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__MAC_10_11_4_DEP__MAC_NA_MSG(_msg)      __attribute__((availability(macosx,introduced=10.11.4)))
             #define __AVAILABILITY_INTERNAL__MAC_10_11_4_DEP__MAC_NA                __attribute__((availability(macosx,introduced=10.11.4)))
             #define __AVAILABILITY_INTERNAL__MAC_10_12                  __attribute__((availability(macosx,introduced=10.12)))
@@ -24218,6 +26473,12 @@
             #else
                 #define __AVAILABILITY_INTERNAL__MAC_10_12_DEP__MAC_10_13_MSG(_msg)    __attribute__((availability(macosx,introduced=10.12,deprecated=10.13)))
             #endif
+            #define __AVAILABILITY_INTERNAL__MAC_10_12_DEP__MAC_10_13_1    __attribute__((availability(macosx,introduced=10.12,deprecated=10.13.1)))
+            #if __has_feature(attribute_availability_with_message)
+                #define __AVAILABILITY_INTERNAL__MAC_10_12_DEP__MAC_10_13_1_MSG(_msg)    __attribute__((availability(macosx,introduced=10.12,deprecated=10.13.1,message=_msg)))
+            #else
+                #define __AVAILABILITY_INTERNAL__MAC_10_12_DEP__MAC_10_13_1_MSG(_msg)    __attribute__((availability(macosx,introduced=10.12,deprecated=10.13.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__MAC_10_12_DEP__MAC_NA_MSG(_msg)      __attribute__((availability(macosx,introduced=10.12)))
             #define __AVAILABILITY_INTERNAL__MAC_10_12_DEP__MAC_NA                __attribute__((availability(macosx,introduced=10.12)))
             #define __AVAILABILITY_INTERNAL__MAC_10_12_1                  __attribute__((availability(macosx,introduced=10.12.1)))
@@ -24245,6 +26506,12 @@
             #else
                 #define __AVAILABILITY_INTERNAL__MAC_10_12_1_DEP__MAC_10_13_MSG(_msg)    __attribute__((availability(macosx,introduced=10.12.1,deprecated=10.13)))
             #endif
+            #define __AVAILABILITY_INTERNAL__MAC_10_12_1_DEP__MAC_10_13_1    __attribute__((availability(macosx,introduced=10.12.1,deprecated=10.13.1)))
+            #if __has_feature(attribute_availability_with_message)
+                #define __AVAILABILITY_INTERNAL__MAC_10_12_1_DEP__MAC_10_13_1_MSG(_msg)    __attribute__((availability(macosx,introduced=10.12.1,deprecated=10.13.1,message=_msg)))
+            #else
+                #define __AVAILABILITY_INTERNAL__MAC_10_12_1_DEP__MAC_10_13_1_MSG(_msg)    __attribute__((availability(macosx,introduced=10.12.1,deprecated=10.13.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__MAC_10_12_1_DEP__MAC_NA_MSG(_msg)      __attribute__((availability(macosx,introduced=10.12.1)))
             #define __AVAILABILITY_INTERNAL__MAC_10_12_1_DEP__MAC_NA                __attribute__((availability(macosx,introduced=10.12.1)))
             #define __AVAILABILITY_INTERNAL__MAC_10_12_2                  __attribute__((availability(macosx,introduced=10.12.2)))
@@ -24266,6 +26533,12 @@
             #else
                 #define __AVAILABILITY_INTERNAL__MAC_10_12_2_DEP__MAC_10_13_MSG(_msg)    __attribute__((availability(macosx,introduced=10.12.2,deprecated=10.13)))
             #endif
+            #define __AVAILABILITY_INTERNAL__MAC_10_12_2_DEP__MAC_10_13_1    __attribute__((availability(macosx,introduced=10.12.2,deprecated=10.13.1)))
+            #if __has_feature(attribute_availability_with_message)
+                #define __AVAILABILITY_INTERNAL__MAC_10_12_2_DEP__MAC_10_13_1_MSG(_msg)    __attribute__((availability(macosx,introduced=10.12.2,deprecated=10.13.1,message=_msg)))
+            #else
+                #define __AVAILABILITY_INTERNAL__MAC_10_12_2_DEP__MAC_10_13_1_MSG(_msg)    __attribute__((availability(macosx,introduced=10.12.2,deprecated=10.13.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__MAC_10_12_2_DEP__MAC_NA_MSG(_msg)      __attribute__((availability(macosx,introduced=10.12.2)))
             #define __AVAILABILITY_INTERNAL__MAC_10_12_2_DEP__MAC_NA                __attribute__((availability(macosx,introduced=10.12.2)))
             #define __AVAILABILITY_INTERNAL__MAC_10_12_4                  __attribute__((availability(macosx,introduced=10.12.4)))
@@ -24281,6 +26554,12 @@
             #else
                 #define __AVAILABILITY_INTERNAL__MAC_10_12_4_DEP__MAC_10_13_MSG(_msg)    __attribute__((availability(macosx,introduced=10.12.4,deprecated=10.13)))
             #endif
+            #define __AVAILABILITY_INTERNAL__MAC_10_12_4_DEP__MAC_10_13_1    __attribute__((availability(macosx,introduced=10.12.4,deprecated=10.13.1)))
+            #if __has_feature(attribute_availability_with_message)
+                #define __AVAILABILITY_INTERNAL__MAC_10_12_4_DEP__MAC_10_13_1_MSG(_msg)    __attribute__((availability(macosx,introduced=10.12.4,deprecated=10.13.1,message=_msg)))
+            #else
+                #define __AVAILABILITY_INTERNAL__MAC_10_12_4_DEP__MAC_10_13_1_MSG(_msg)    __attribute__((availability(macosx,introduced=10.12.4,deprecated=10.13.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__MAC_10_12_4_DEP__MAC_NA_MSG(_msg)      __attribute__((availability(macosx,introduced=10.12.4)))
             #define __AVAILABILITY_INTERNAL__MAC_10_12_4_DEP__MAC_NA                __attribute__((availability(macosx,introduced=10.12.4)))
             #define __AVAILABILITY_INTERNAL__MAC_10_13                  __attribute__((availability(macosx,introduced=10.13)))
@@ -24290,8 +26569,23 @@
             #else
                 #define __AVAILABILITY_INTERNAL__MAC_10_13_DEP__MAC_10_13_MSG(_msg)    __attribute__((availability(macosx,introduced=10.13,deprecated=10.13)))
             #endif
+            #define __AVAILABILITY_INTERNAL__MAC_10_13_DEP__MAC_10_13_1    __attribute__((availability(macosx,introduced=10.13,deprecated=10.13.1)))
+            #if __has_feature(attribute_availability_with_message)
+                #define __AVAILABILITY_INTERNAL__MAC_10_13_DEP__MAC_10_13_1_MSG(_msg)    __attribute__((availability(macosx,introduced=10.13,deprecated=10.13.1,message=_msg)))
+            #else
+                #define __AVAILABILITY_INTERNAL__MAC_10_13_DEP__MAC_10_13_1_MSG(_msg)    __attribute__((availability(macosx,introduced=10.13,deprecated=10.13.1)))
+            #endif
             #define __AVAILABILITY_INTERNAL__MAC_10_13_DEP__MAC_NA_MSG(_msg)      __attribute__((availability(macosx,introduced=10.13)))
             #define __AVAILABILITY_INTERNAL__MAC_10_13_DEP__MAC_NA                __attribute__((availability(macosx,introduced=10.13)))
+            #define __AVAILABILITY_INTERNAL__MAC_10_13_1                  __attribute__((availability(macosx,introduced=10.13.1)))
+            #define __AVAILABILITY_INTERNAL__MAC_10_13_1_DEP__MAC_10_13_1    __attribute__((availability(macosx,introduced=10.13.1,deprecated=10.13.1)))
+            #if __has_feature(attribute_availability_with_message)
+                #define __AVAILABILITY_INTERNAL__MAC_10_13_1_DEP__MAC_10_13_1_MSG(_msg)    __attribute__((availability(macosx,introduced=10.13.1,deprecated=10.13.1,message=_msg)))
+            #else
+                #define __AVAILABILITY_INTERNAL__MAC_10_13_1_DEP__MAC_10_13_1_MSG(_msg)    __attribute__((availability(macosx,introduced=10.13.1,deprecated=10.13.1)))
+            #endif
+            #define __AVAILABILITY_INTERNAL__MAC_10_13_1_DEP__MAC_NA_MSG(_msg)      __attribute__((availability(macosx,introduced=10.13.1)))
+            #define __AVAILABILITY_INTERNAL__MAC_10_13_1_DEP__MAC_NA                __attribute__((availability(macosx,introduced=10.13.1)))
             #define __AVAILABILITY_INTERNAL__MAC_NA                        __attribute__((availability(macosx,unavailable)))
             #define __AVAILABILITY_INTERNAL__MAC_NA_DEP__MAC_NA            __attribute__((availability(macosx,unavailable)))
             #define __AVAILABILITY_INTERNAL__MAC_NA_DEP__MAC_NA_MSG(_msg)  __attribute__((availability(macosx,unavailable)))
@@ -24300,6 +26594,13 @@
 
     #ifndef __AVAILABILITY_INTERNAL__MAC_10_0
         /* use old style attributes */
+        #if __MAC_OS_X_VERSION_MAX_ALLOWED < __MAC_10_13_1
+            #define __AVAILABILITY_INTERNAL__MAC_10_13_1        __AVAILABILITY_INTERNAL_UNAVAILABLE
+        #elif __MAC_OS_X_VERSION_MIN_REQUIRED < __MAC_10_13_1
+            #define __AVAILABILITY_INTERNAL__MAC_10_13_1        __AVAILABILITY_INTERNAL_WEAK_IMPORT
+        #else
+            #define __AVAILABILITY_INTERNAL__MAC_10_13_1        __AVAILABILITY_INTERNAL_REGULAR
+        #endif
         #if __MAC_OS_X_VERSION_MAX_ALLOWED < __MAC_10_13
             #define __AVAILABILITY_INTERNAL__MAC_10_13        __AVAILABILITY_INTERNAL_UNAVAILABLE
         #elif __MAC_OS_X_VERSION_MIN_REQUIRED < __MAC_10_13
@@ -25526,6 +27827,101 @@
             #define __AVAILABILITY_INTERNAL__MAC_10_13_DEP__MAC_10_13              __AVAILABILITY_INTERNAL__MAC_10_13
             #define __AVAILABILITY_INTERNAL__MAC_10_13_DEP__MAC_10_13_MSG(_msg)    __AVAILABILITY_INTERNAL__MAC_10_13
         #endif
+        #if __MAC_OS_X_VERSION_MIN_REQUIRED >= __MAC_10_13_1
+            #define __AVAILABILITY_INTERNAL__MAC_10_0_DEP__MAC_10_13_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__MAC_10_0_DEP__MAC_10_13_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__MAC_10_1_DEP__MAC_10_13_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__MAC_10_1_DEP__MAC_10_13_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__MAC_10_2_DEP__MAC_10_13_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__MAC_10_2_DEP__MAC_10_13_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__MAC_10_3_DEP__MAC_10_13_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__MAC_10_3_DEP__MAC_10_13_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__MAC_10_4_DEP__MAC_10_13_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__MAC_10_4_DEP__MAC_10_13_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__MAC_10_5_DEP__MAC_10_13_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__MAC_10_5_DEP__MAC_10_13_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__MAC_10_6_DEP__MAC_10_13_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__MAC_10_6_DEP__MAC_10_13_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__MAC_10_7_DEP__MAC_10_13_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__MAC_10_7_DEP__MAC_10_13_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__MAC_10_8_DEP__MAC_10_13_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__MAC_10_8_DEP__MAC_10_13_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__MAC_10_9_DEP__MAC_10_13_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__MAC_10_9_DEP__MAC_10_13_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__MAC_10_10_DEP__MAC_10_13_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__MAC_10_10_DEP__MAC_10_13_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__MAC_10_10_2_DEP__MAC_10_13_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__MAC_10_10_2_DEP__MAC_10_13_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__MAC_10_10_3_DEP__MAC_10_13_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__MAC_10_10_3_DEP__MAC_10_13_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__MAC_10_11_DEP__MAC_10_13_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__MAC_10_11_DEP__MAC_10_13_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__MAC_10_11_2_DEP__MAC_10_13_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__MAC_10_11_2_DEP__MAC_10_13_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__MAC_10_11_3_DEP__MAC_10_13_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__MAC_10_11_3_DEP__MAC_10_13_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__MAC_10_11_4_DEP__MAC_10_13_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__MAC_10_11_4_DEP__MAC_10_13_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__MAC_10_12_DEP__MAC_10_13_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__MAC_10_12_DEP__MAC_10_13_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__MAC_10_12_1_DEP__MAC_10_13_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__MAC_10_12_1_DEP__MAC_10_13_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__MAC_10_12_2_DEP__MAC_10_13_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__MAC_10_12_2_DEP__MAC_10_13_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__MAC_10_12_4_DEP__MAC_10_13_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__MAC_10_12_4_DEP__MAC_10_13_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__MAC_10_13_DEP__MAC_10_13_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__MAC_10_13_DEP__MAC_10_13_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+            #define __AVAILABILITY_INTERNAL__MAC_10_13_1_DEP__MAC_10_13_1              __AVAILABILITY_INTERNAL_DEPRECATED
+            #define __AVAILABILITY_INTERNAL__MAC_10_13_1_DEP__MAC_10_13_1_MSG(_msg)    __AVAILABILITY_INTERNAL_DEPRECATED_MSG(_msg)
+        #else
+            #define __AVAILABILITY_INTERNAL__MAC_10_0_DEP__MAC_10_13_1              __AVAILABILITY_INTERNAL__MAC_10_0
+            #define __AVAILABILITY_INTERNAL__MAC_10_0_DEP__MAC_10_13_1_MSG(_msg)    __AVAILABILITY_INTERNAL__MAC_10_0
+            #define __AVAILABILITY_INTERNAL__MAC_10_1_DEP__MAC_10_13_1              __AVAILABILITY_INTERNAL__MAC_10_1
+            #define __AVAILABILITY_INTERNAL__MAC_10_1_DEP__MAC_10_13_1_MSG(_msg)    __AVAILABILITY_INTERNAL__MAC_10_1
+            #define __AVAILABILITY_INTERNAL__MAC_10_2_DEP__MAC_10_13_1              __AVAILABILITY_INTERNAL__MAC_10_2
+            #define __AVAILABILITY_INTERNAL__MAC_10_2_DEP__MAC_10_13_1_MSG(_msg)    __AVAILABILITY_INTERNAL__MAC_10_2
+            #define __AVAILABILITY_INTERNAL__MAC_10_3_DEP__MAC_10_13_1              __AVAILABILITY_INTERNAL__MAC_10_3
+            #define __AVAILABILITY_INTERNAL__MAC_10_3_DEP__MAC_10_13_1_MSG(_msg)    __AVAILABILITY_INTERNAL__MAC_10_3
+            #define __AVAILABILITY_INTERNAL__MAC_10_4_DEP__MAC_10_13_1              __AVAILABILITY_INTERNAL__MAC_10_4
+            #define __AVAILABILITY_INTERNAL__MAC_10_4_DEP__MAC_10_13_1_MSG(_msg)    __AVAILABILITY_INTERNAL__MAC_10_4
+            #define __AVAILABILITY_INTERNAL__MAC_10_5_DEP__MAC_10_13_1              __AVAILABILITY_INTERNAL__MAC_10_5
+            #define __AVAILABILITY_INTERNAL__MAC_10_5_DEP__MAC_10_13_1_MSG(_msg)    __AVAILABILITY_INTERNAL__MAC_10_5
+            #define __AVAILABILITY_INTERNAL__MAC_10_6_DEP__MAC_10_13_1              __AVAILABILITY_INTERNAL__MAC_10_6
+            #define __AVAILABILITY_INTERNAL__MAC_10_6_DEP__MAC_10_13_1_MSG(_msg)    __AVAILABILITY_INTERNAL__MAC_10_6
+            #define __AVAILABILITY_INTERNAL__MAC_10_7_DEP__MAC_10_13_1              __AVAILABILITY_INTERNAL__MAC_10_7
+            #define __AVAILABILITY_INTERNAL__MAC_10_7_DEP__MAC_10_13_1_MSG(_msg)    __AVAILABILITY_INTERNAL__MAC_10_7
+            #define __AVAILABILITY_INTERNAL__MAC_10_8_DEP__MAC_10_13_1              __AVAILABILITY_INTERNAL__MAC_10_8
+            #define __AVAILABILITY_INTERNAL__MAC_10_8_DEP__MAC_10_13_1_MSG(_msg)    __AVAILABILITY_INTERNAL__MAC_10_8
+            #define __AVAILABILITY_INTERNAL__MAC_10_9_DEP__MAC_10_13_1              __AVAILABILITY_INTERNAL__MAC_10_9
+            #define __AVAILABILITY_INTERNAL__MAC_10_9_DEP__MAC_10_13_1_MSG(_msg)    __AVAILABILITY_INTERNAL__MAC_10_9
+            #define __AVAILABILITY_INTERNAL__MAC_10_10_DEP__MAC_10_13_1              __AVAILABILITY_INTERNAL__MAC_10_10
+            #define __AVAILABILITY_INTERNAL__MAC_10_10_DEP__MAC_10_13_1_MSG(_msg)    __AVAILABILITY_INTERNAL__MAC_10_10
+            #define __AVAILABILITY_INTERNAL__MAC_10_10_2_DEP__MAC_10_13_1              __AVAILABILITY_INTERNAL__MAC_10_10_2
+            #define __AVAILABILITY_INTERNAL__MAC_10_10_2_DEP__MAC_10_13_1_MSG(_msg)    __AVAILABILITY_INTERNAL__MAC_10_10_2
+            #define __AVAILABILITY_INTERNAL__MAC_10_10_3_DEP__MAC_10_13_1              __AVAILABILITY_INTERNAL__MAC_10_10_3
+            #define __AVAILABILITY_INTERNAL__MAC_10_10_3_DEP__MAC_10_13_1_MSG(_msg)    __AVAILABILITY_INTERNAL__MAC_10_10_3
+            #define __AVAILABILITY_INTERNAL__MAC_10_11_DEP__MAC_10_13_1              __AVAILABILITY_INTERNAL__MAC_10_11
+            #define __AVAILABILITY_INTERNAL__MAC_10_11_DEP__MAC_10_13_1_MSG(_msg)    __AVAILABILITY_INTERNAL__MAC_10_11
+            #define __AVAILABILITY_INTERNAL__MAC_10_11_2_DEP__MAC_10_13_1              __AVAILABILITY_INTERNAL__MAC_10_11_2
+            #define __AVAILABILITY_INTERNAL__MAC_10_11_2_DEP__MAC_10_13_1_MSG(_msg)    __AVAILABILITY_INTERNAL__MAC_10_11_2
+            #define __AVAILABILITY_INTERNAL__MAC_10_11_3_DEP__MAC_10_13_1              __AVAILABILITY_INTERNAL__MAC_10_11_3
+            #define __AVAILABILITY_INTERNAL__MAC_10_11_3_DEP__MAC_10_13_1_MSG(_msg)    __AVAILABILITY_INTERNAL__MAC_10_11_3
+            #define __AVAILABILITY_INTERNAL__MAC_10_11_4_DEP__MAC_10_13_1              __AVAILABILITY_INTERNAL__MAC_10_11_4
+            #define __AVAILABILITY_INTERNAL__MAC_10_11_4_DEP__MAC_10_13_1_MSG(_msg)    __AVAILABILITY_INTERNAL__MAC_10_11_4
+            #define __AVAILABILITY_INTERNAL__MAC_10_12_DEP__MAC_10_13_1              __AVAILABILITY_INTERNAL__MAC_10_12
+            #define __AVAILABILITY_INTERNAL__MAC_10_12_DEP__MAC_10_13_1_MSG(_msg)    __AVAILABILITY_INTERNAL__MAC_10_12
+            #define __AVAILABILITY_INTERNAL__MAC_10_12_1_DEP__MAC_10_13_1              __AVAILABILITY_INTERNAL__MAC_10_12_1
+            #define __AVAILABILITY_INTERNAL__MAC_10_12_1_DEP__MAC_10_13_1_MSG(_msg)    __AVAILABILITY_INTERNAL__MAC_10_12_1
+            #define __AVAILABILITY_INTERNAL__MAC_10_12_2_DEP__MAC_10_13_1              __AVAILABILITY_INTERNAL__MAC_10_12_2
+            #define __AVAILABILITY_INTERNAL__MAC_10_12_2_DEP__MAC_10_13_1_MSG(_msg)    __AVAILABILITY_INTERNAL__MAC_10_12_2
+            #define __AVAILABILITY_INTERNAL__MAC_10_12_4_DEP__MAC_10_13_1              __AVAILABILITY_INTERNAL__MAC_10_12_4
+            #define __AVAILABILITY_INTERNAL__MAC_10_12_4_DEP__MAC_10_13_1_MSG(_msg)    __AVAILABILITY_INTERNAL__MAC_10_12_4
+            #define __AVAILABILITY_INTERNAL__MAC_10_13_DEP__MAC_10_13_1              __AVAILABILITY_INTERNAL__MAC_10_13
+            #define __AVAILABILITY_INTERNAL__MAC_10_13_DEP__MAC_10_13_1_MSG(_msg)    __AVAILABILITY_INTERNAL__MAC_10_13
+            #define __AVAILABILITY_INTERNAL__MAC_10_13_1_DEP__MAC_10_13_1              __AVAILABILITY_INTERNAL__MAC_10_13_1
+            #define __AVAILABILITY_INTERNAL__MAC_10_13_1_DEP__MAC_10_13_1_MSG(_msg)    __AVAILABILITY_INTERNAL__MAC_10_13_1
+        #endif
         #define __AVAILABILITY_INTERNAL__MAC_10_0_DEP__MAC_NA             __AVAILABILITY_INTERNAL__MAC_10_0
         #define __AVAILABILITY_INTERNAL__MAC_10_0_DEP__MAC_NA_MSG(_msg)   __AVAILABILITY_INTERNAL__MAC_10_0
         #define __AVAILABILITY_INTERNAL__MAC_10_1_DEP__MAC_NA             __AVAILABILITY_INTERNAL__MAC_10_1
@@ -25570,6 +27966,8 @@
         #define __AVAILABILITY_INTERNAL__MAC_10_12_4_DEP__MAC_NA_MSG(_msg)   __AVAILABILITY_INTERNAL__MAC_10_12_4
         #define __AVAILABILITY_INTERNAL__MAC_10_13_DEP__MAC_NA             __AVAILABILITY_INTERNAL__MAC_10_13
         #define __AVAILABILITY_INTERNAL__MAC_10_13_DEP__MAC_NA_MSG(_msg)   __AVAILABILITY_INTERNAL__MAC_10_13
+        #define __AVAILABILITY_INTERNAL__MAC_10_13_1_DEP__MAC_NA             __AVAILABILITY_INTERNAL__MAC_10_13_1
+        #define __AVAILABILITY_INTERNAL__MAC_10_13_1_DEP__MAC_NA_MSG(_msg)   __AVAILABILITY_INTERNAL__MAC_10_13_1
         #define __AVAILABILITY_INTERNAL__MAC_NA_DEP__MAC_NA               __AVAILABILITY_INTERNAL_UNAVAILABLE
         #define __AVAILABILITY_INTERNAL__MAC_NA_DEP__MAC_NA_MSG(_msg)     __AVAILABILITY_INTERNAL_UNAVAILABLE
     #endif

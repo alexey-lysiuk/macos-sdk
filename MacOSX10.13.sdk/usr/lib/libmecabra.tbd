@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 07D38CF9-A4A2-35D1-A996-E7F29BD561E1', 'x86_64: C1A7BAE5-2E7A-396D-A3A2-00484CAA9B40' ]
+uuids:           [ 'i386: 20609345-E7D2-33C4-B630-C01F32FCDE34', 'x86_64: 1F81DB66-4EEE-3B14-BA15-4930546C94D4' ]
 platform:        macosx
 install-name:    /usr/lib/libmecabra.dylib
-current-version: 779
+current-version: 779.5.3
 exports:         
   - archs:           [ i386, x86_64 ]
     symbols:         [ _BurstTrieCompile, _EmojiDictionaryCompile, _IndexedSearchDictionaryBuild, 

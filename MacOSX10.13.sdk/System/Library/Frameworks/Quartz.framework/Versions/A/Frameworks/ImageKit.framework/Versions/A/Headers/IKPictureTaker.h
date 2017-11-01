@@ -23,7 +23,7 @@
 @interface IKPictureTaker : NSPanel
 {
 @private
-    void *__strong _ikReserved;
+    void * _ikReserved;
 }
 
 /*!

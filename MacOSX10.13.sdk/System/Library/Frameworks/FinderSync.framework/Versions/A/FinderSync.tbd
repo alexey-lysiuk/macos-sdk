@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E4E962E6-6370-37EA-8FE2-F84C0A19001C' ]
+uuids:           [ 'x86_64: BFBA7A06-F309-3617-9D92-34F5CA5D345D' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/FinderSync.framework/Versions/A/FinderSync
-current-version: 1054.0.2
+current-version: 1054.1.1
 exports:         
   - archs:           [ x86_64 ]
     objc-classes:    [ _FIFinderSync, _FIFinderSyncController ]

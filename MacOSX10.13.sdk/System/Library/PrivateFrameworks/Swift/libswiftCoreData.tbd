@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1F0A4A89-AE22-330D-BAF3-F46642B71A42' ]
+uuids:           [ 'x86_64: D871BEC9-4B86-340A-8280-01116871DBA6' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Swift/libswiftCoreData.dylib
 current-version: 900.8.49

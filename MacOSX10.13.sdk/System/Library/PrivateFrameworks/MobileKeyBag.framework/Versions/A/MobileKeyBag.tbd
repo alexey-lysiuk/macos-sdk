@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7405128E-E7B0-3EFB-BA65-EA50564E3BCD' ]
+uuids:           [ 'x86_64: 7F46C861-1CF9-3134-8493-276AE6EC6CC9' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MobileKeyBag.framework/Versions/A/MobileKeyBag
 objc-constraint: none

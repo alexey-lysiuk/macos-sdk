@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1003C8B8-64EE-3DBE-B7AA-436F39C7F62B' ]
+uuids:           [ 'x86_64: B62AC87B-5DAD-3A4A-828D-142FF23E5A4E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ContactsUICore.framework/Versions/A/ContactsUICore
 objc-constraint: none

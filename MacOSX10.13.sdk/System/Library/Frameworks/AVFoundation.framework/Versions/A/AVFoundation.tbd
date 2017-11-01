@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 8D7020E4-09A5-3E52-AA0E-D6607F336791', 'x86_64: 9080A91E-6634-3BC7-BFA3-ED58736B0B25' ]
+uuids:           [ 'i386: 209C93DA-2E8E-35B9-849D-9DD647D0D041', 'x86_64: 21D9D9E2-829C-3CC7-B262-DB73A091C750' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/AVFoundation.framework/Versions/A/AVFoundation
 current-version: 2
@@ -369,6 +369,7 @@ exports:
                        _AVDepthDataInternal.accuracy, _AVDepthDataInternal.calibrationData, 
                        _AVDepthDataInternal.depthBlurEffectRenderingParameters, _AVDepthDataInternal.depthBlurEffectSimulatedAperture, 
                        _AVDepthDataInternal.filtered, _AVDepthDataInternal.pixelBuffer, 
+                       _AVDepthDataInternal.portraitScore, _AVDepthDataInternal.portraitScoreIsHigh, 
                        _AVDepthDataInternal.quality, _AVDepthDataInternal.version, 
                        _AVFigAssetInspector._checkIsStreamingOnce, _AVFigAssetInspector._figAsset, 
                        _AVFigAssetInspector._formatReader, _AVFigAssetInspector._formatReaderOnce, 

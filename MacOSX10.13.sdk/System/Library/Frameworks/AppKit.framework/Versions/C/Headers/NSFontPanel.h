@@ -24,7 +24,7 @@ typedef NS_OPTIONS(NSUInteger, NSFontPanelModeMask) {
     NSFontPanelModeMaskAllEffects = 0XFFF00,
     NSFontPanelModesMaskStandardModes = 0xFFFF,
     NSFontPanelModesMaskAllModes = 0xFFFFFFFF
-} NS_ENUM_AVAILABLE_MAC(10_13);
+};
 
 @interface NSObject (NSFontPanelValidationAdditions)
 - (NSFontPanelModeMask)validModesForFontPanel:(NSFontPanel *)fontPanel;

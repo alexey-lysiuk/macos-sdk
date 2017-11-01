@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 51B4D3BB-3A50-3AE6-BD0B-3E661360674C' ]
+uuids:           [ 'x86_64: B69430D2-67F2-3112-876C-C9F4DB6F2A8C' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Swift/libswiftCloudKit.dylib
 current-version: 900.8.49

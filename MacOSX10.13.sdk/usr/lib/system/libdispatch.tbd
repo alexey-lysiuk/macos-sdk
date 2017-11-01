@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 6C6E14A6-E999-3E7B-AD06-A258FC5B2ED1', 'x86_64: 0DD78497-6A2A-350A-99EF-15BF41EA07DD' ]
+uuids:           [ 'i386: DFB990DC-4EEB-3D4D-8C8E-400EB5AAC562', 'x86_64: 389EBBCD-3AA2-3340-AA48-4FBF621401BD' ]
 platform:        macosx
 install-name:    /usr/lib/system/libdispatch.dylib
-current-version: 913.1.6
+current-version: 913.20.5
 parent-umbrella: System
 exports:         
   - archs:           [ i386 ]

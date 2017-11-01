@@ -155,4 +155,11 @@ MP_EXTERN NSString * const MPNowPlayingInfoPropertyMediaType MP_API(ios(10.0), m
 // visualizations are applicable.
 MP_EXTERN NSString * const MPNowPlayingInfoPropertyAssetURL MP_API(ios(10.3), macos(10.12.3)); // NSURL
 
+// Represents the real-time date associated with the current elapsed playback time.
+// The value of an AVPlayerItem’s currentDate property can be used to populate this property (see AVFoundation framework.)
+// Note the current playback date will be automatically extrapolated from the previously
+// provided current playback date, so updating this property frequently is not required (nor recommended.)
+// For example, a sports broadcast can map an elapsed playback time (i.e 12 minutes and 30 seconds) to a real-time date (i.e "10:30:00 9/14/2017")
+MP_EXTERN NSString * const MPNowPlayingInfoPropertyCurrentPlaybackDate MP_API(ios(11.1), macos(10.13.1)); // NSDate
+
 NS_ASSUME_NONNULL_END

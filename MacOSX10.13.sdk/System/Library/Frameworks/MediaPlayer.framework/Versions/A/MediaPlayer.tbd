@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 87D9385E-36F1-3D04-8B71-F9D35284681E' ]
+uuids:           [ 'x86_64: 0197A631-D8A4-306E-8003-3D20E7D11A19' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/MediaPlayer.framework/Versions/A/MediaPlayer
 objc-constraint: none
@@ -63,15 +63,16 @@ exports:
                        _MPNowPlayingContentItemUserInfoKeyShouldShowComposer, _MPNowPlayingInfoCollectionIdentifier, 
                        _MPNowPlayingInfoPropertyAssetURL, _MPNowPlayingInfoPropertyAvailableLanguageOptions, 
                        _MPNowPlayingInfoPropertyChapterCount, _MPNowPlayingInfoPropertyChapterNumber, 
-                       _MPNowPlayingInfoPropertyCurrentLanguageOptions, _MPNowPlayingInfoPropertyDefaultPlaybackRate, 
-                       _MPNowPlayingInfoPropertyElapsedPlaybackTime, _MPNowPlayingInfoPropertyExternalContentIdentifier, 
-                       _MPNowPlayingInfoPropertyExternalUserProfileIdentifier, _MPNowPlayingInfoPropertyIsLiveStream, 
-                       _MPNowPlayingInfoPropertyMediaType, _MPNowPlayingInfoPropertyPlaybackProgress, 
-                       _MPNowPlayingInfoPropertyPlaybackQueueCount, _MPNowPlayingInfoPropertyPlaybackQueueIndex, 
-                       _MPNowPlayingInfoPropertyPlaybackRate, _MPNowPlayingInfoPropertyServiceIdentifier, 
-                       _MPPlayableContentAppSupportsPlayableContentKey, _MPRequestErrorDomain, 
-                       _MPRequestUnderlyingErrorsUserInfoKey, _MPResponseDidInvalidateNotification, 
-                       _MPSkipLimitEqualToSkipLimit, _NSStringFromMPAVItemType, __MPAVRouteConnectionDidInvalidateNotification, 
+                       _MPNowPlayingInfoPropertyCurrentLanguageOptions, _MPNowPlayingInfoPropertyCurrentPlaybackDate, 
+                       _MPNowPlayingInfoPropertyDefaultPlaybackRate, _MPNowPlayingInfoPropertyElapsedPlaybackTime, 
+                       _MPNowPlayingInfoPropertyExternalContentIdentifier, _MPNowPlayingInfoPropertyExternalUserProfileIdentifier, 
+                       _MPNowPlayingInfoPropertyIsLiveStream, _MPNowPlayingInfoPropertyMediaType, 
+                       _MPNowPlayingInfoPropertyPlaybackProgress, _MPNowPlayingInfoPropertyPlaybackQueueCount, 
+                       _MPNowPlayingInfoPropertyPlaybackQueueIndex, _MPNowPlayingInfoPropertyPlaybackRate, 
+                       _MPNowPlayingInfoPropertyServiceIdentifier, _MPPlayableContentAppSupportsPlayableContentKey, 
+                       _MPRequestErrorDomain, _MPRequestUnderlyingErrorsUserInfoKey, 
+                       _MPResponseDidInvalidateNotification, _MPSkipLimitEqualToSkipLimit, 
+                       _NSStringFromMPAVItemType, __MPAVRouteConnectionDidInvalidateNotification, 
                        __MPContentItemDidChangeNotification, __MPContentItemDidChangeUserInfoKeyDeltaItem, 
                        __MPContentItemDidChangeUserInfoKeyDeltaRequest, __MPNowPlayingCollectionInfoCollectionTypeAlbum, 
                        __MPNowPlayingCollectionInfoCollectionTypePlaylist, __MPNowPlayingCollectionInfoCollectionTypeRadio, 

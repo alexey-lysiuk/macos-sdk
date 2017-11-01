@@ -49,8 +49,8 @@
 #define HostToUSB64 OSSwapHostToLittleInt64
 
 #define StandardUSBBit(bit)                     ((uint32_t)(1) << bit)
-#define StandardUSBBitRange(start, end)         (~(((uint32_t)(1) << start) - 1) & ((uint32_t)(1 << end) | ((uint32_t)(1 << end) - 1)))
-#define StandardUSBBitRange64(start, end)       (~(((uint64_t)(1) << start) - 1) & ((uint64_t)(1 << end) | ((uint64_t)(1 << end) - 1)))
+#define StandardUSBBitRange(start, end)         (~(((uint32_t)(1) << start) - 1) & (((uint32_t)(1) << end) | (((uint32_t)(1) << end) - 1)))
+#define StandardUSBBitRange64(start, end)       (~(((uint64_t)(1) << start) - 1) & (((uint64_t)(1) << end) | (((uint64_t)(1) << end) - 1)))
 #define StandardUSBBitRangePhase(start, end)    (start)
 
 #define kUSB30Bitrate5Gbps  ( 5 * 1000 * 1000 * 1000ULL)

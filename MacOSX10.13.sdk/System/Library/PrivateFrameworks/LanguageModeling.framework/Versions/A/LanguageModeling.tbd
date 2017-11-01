@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 72552B38-94F9-3579-BCA6-FA67599D7FC5', 'x86_64: FADD52FC-9B63-3976-9AB1-40230918F84F' ]
+uuids:           [ 'i386: 9A92175A-2DBA-3624-B09D-07CCBC1D1725', 'x86_64: CC4069FF-BF5C-30F5-98F5-D6F746C5AA04' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/LanguageModeling.framework/Versions/A/LanguageModeling
-current-version: 159
+current-version: 159.2.1
 exports:         
   - archs:           [ i386, x86_64 ]
     symbols:         [ _LMEnumerateAssetDataItems, _LMLanguageContextCreate, _LMLanguageContextSetFeatures, 

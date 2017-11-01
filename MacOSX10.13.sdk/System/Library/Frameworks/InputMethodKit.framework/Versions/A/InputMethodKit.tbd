@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 5D321D75-63C8-32DC-986B-E8BCACAC3907', 'x86_64: EEC1BAD1-4FD5-34B6-9683-12156F712DC5' ]
+uuids:           [ 'i386: 4AC68445-250C-3603-83A5-85DFD9EFFCE9', 'x86_64: 91C8F902-57BF-31BF-89C2-BE732E265A97' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/InputMethodKit.framework/Versions/A/InputMethodKit
 exports:         

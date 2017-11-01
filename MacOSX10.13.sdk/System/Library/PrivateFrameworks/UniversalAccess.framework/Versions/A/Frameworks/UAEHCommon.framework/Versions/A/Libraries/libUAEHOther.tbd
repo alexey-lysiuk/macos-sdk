@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1F97D792-E3C6-3DFE-8FE7-39FF88AA03DC' ]
+uuids:           [ 'x86_64: F71104DF-0487-3052-A38B-FE0A15F44F1D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/UniversalAccess.framework/Versions/A/Frameworks/UAEHCommon.framework/Versions/A/Libraries/libUAEHOther.dylib
 exports:         

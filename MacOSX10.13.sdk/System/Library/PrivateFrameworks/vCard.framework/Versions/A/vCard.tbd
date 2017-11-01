@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 5AAAFD0F-5A0C-3EA5-B579-0809555E39E1', 'x86_64: 38202649-B1F2-3F6D-B2AC-5EC76C9FAB52' ]
+uuids:           [ 'i386: 0F158779-3B38-3E8D-A62E-7C5C1652C06C', 'x86_64: 9AC39042-9E1C-3D8F-8397-68FEC47407A2' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/vCard.framework/Versions/A/vCard
 current-version: 0

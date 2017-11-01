@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8B2FA63B-4524-3670-AF18-3658D4F5CD61' ]
+uuids:           [ 'x86_64: 91EA35C2-995F-3396-B10F-AB184854087D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/NeutrinoKit.framework/Versions/A/NeutrinoKit
-current-version: 3201.7.140
+current-version: 3231.7.180
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

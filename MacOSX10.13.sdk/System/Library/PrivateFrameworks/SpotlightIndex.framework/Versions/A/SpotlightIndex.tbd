@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 5603C502-7277-30F7-9C27-5DF78FA6D8EE', 'x86_64: 7F436FF6-135E-322E-9834-44CF7ED1699A' ]
+uuids:           [ 'i386: C0222E7F-F4D2-3F83-B9D7-5402DC527C32', 'x86_64: D6DE1A54-28AF-324D-9E65-D1FDF1D2AE1E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SpotlightIndex.framework/Versions/A/SpotlightIndex
-current-version: 1191
+current-version: 1191.1
 exports:         
   - archs:           [ i386, x86_64 ]
     symbols:         [ _RLEOIDArrayAddOid, _RLEOIDArrayAddOid_locked, _RLEOIDArrayAddOids, 

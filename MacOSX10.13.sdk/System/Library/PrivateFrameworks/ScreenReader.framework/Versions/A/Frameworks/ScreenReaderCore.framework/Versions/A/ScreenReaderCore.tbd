@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8D4DD008-9C03-38DD-BED8-DC04BF45FD98' ]
+uuids:           [ 'x86_64: 9DDC296F-697C-3206-91D9-DD851A6ACDC5' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ScreenReader.framework/Versions/A/Frameworks/ScreenReaderCore.framework/Versions/A/ScreenReaderCore
 current-version: 390

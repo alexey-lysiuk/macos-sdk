@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: D4FEC64B-7282-3655-93EC-850BB5B5885A', 'x86_64: BD5A9A0B-4260-3F4C-A030-5F8F9D51B481' ]
+uuids:           [ 'i386: CC1A12D1-38B1-32DD-B26E-C5528E478D6E', 'x86_64: 49F53BF8-809B-3A73-9FCA-4E684DA76625' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/VideoToolbox.framework/Versions/A/VideoToolbox
 exports:         

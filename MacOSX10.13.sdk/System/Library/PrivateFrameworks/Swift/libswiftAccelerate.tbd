@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 31BF3DB4-849D-3DF8-9F3A-339A088E60C2' ]
+uuids:           [ 'x86_64: 31B0CED6-7254-33AF-BDEE-EAA0C4661769' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Swift/libswiftAccelerate.dylib
 current-version: 900.8.49

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 987D64F4-46AD-3A4A-80C5-8684DFF50AD7' ]
+uuids:           [ 'x86_64: 649DDB70-26A9-3F22-A7E5-E8AA4809D5D9' ]
 platform:        macosx
 install-name:    /usr/lib/libsysdiagnose.dylib
 exports:         

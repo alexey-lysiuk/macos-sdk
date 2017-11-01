@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 129B4C99-7120-3A4F-8339-8E2BB678445F' ]
+uuids:           [ 'x86_64: 7E647955-3183-3784-AEF3-BB7A5A9BA3C7' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreHandwriting.framework/Versions/A/CoreHandwriting
 current-version: 0

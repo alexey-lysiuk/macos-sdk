@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 62502023-6EA5-3D51-BA76-7A75772B5EA2' ]
+uuids:           [ 'x86_64: F6753847-DC97-36E6-AD37-A16DC85963AC' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/LinkPresentation.framework/Versions/A/LinkPresentation
-current-version: 59.1
+current-version: 59.2
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: EDB63752-2470-3372-9410-7E1CD96AEDF9', 'x86_64: 33C0449B-72CC-3B47-93F2-4C5F5B54CEE1' ]
+uuids:           [ 'i386: 2C5D38F0-C90C-3570-8073-77DA1D63E677', 'x86_64: F7EA719D-1D35-3C8C-889D-D0006D80A052' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/GeoServices.framework/Versions/A/GeoServices
-current-version: 1350.20.7
+current-version: 1357.21.9
 exports:         
   - archs:           [ i386 ]
     objc-classes:    [ _GEOAbstractMapServiceTicket, _GEOAbstractRequestResponseTicket, 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 22685244-B08A-3BA4-83EB-7097E0AAA52B', 'x86_64: D7CFDB66-4913-33AE-98BB-83F2F3EE26DB' ]
+uuids:           [ 'i386: 408C8634-0917-30D1-9A93-8C0F49F701EA', 'x86_64: 556DE20F-0F03-31C9-B5EC-CDE82D8879BA' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore
 current-version: 1.11

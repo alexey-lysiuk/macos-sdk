@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 09FB956E-862A-33FE-99A6-DF6A34D147A9', 'x86_64: EA49E4D5-1CB1-30D6-80A0-5EB93948FA35' ]
+uuids:           [ 'i386: 42E7EDD5-BC99-372E-9C6D-E369EF946653', 'x86_64: 8248D7EF-897B-3FBC-BB0A-88869048C433' ]
 platform:        macosx
 install-name:    /usr/lib/log/liblog_audio.dylib
 exports:         

@@ -1,10 +1,10 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4BD54A3F-3B43-3083-9412-7BC0A5AA6EAD' ]
+uuids:           [ 'x86_64: 5788EE86-625D-3966-B5DC-5E98104C90EF' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CSCSupport.framework/Versions/A/CSCSupport
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
-    symbols:         [ _CSCGetDeviceDataEncoding ]
+    symbols:         [ _CSCGetDeviceDataEncoding, _CSCGetValueForPropertyEncoding ]
 ...

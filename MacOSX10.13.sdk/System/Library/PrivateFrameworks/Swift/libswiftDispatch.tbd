@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C1816A8D-1F42-3836-91B2-D8EA73982D6F' ]
+uuids:           [ 'x86_64: 5306FAB2-B837-3730-8828-047C805152B0' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Swift/libswiftDispatch.dylib
 current-version: 900.8.49

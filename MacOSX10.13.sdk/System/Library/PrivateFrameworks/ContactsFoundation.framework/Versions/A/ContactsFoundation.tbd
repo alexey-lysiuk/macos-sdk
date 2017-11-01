@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: BFF626C6-E458-3FCD-A56E-A7F1A44D7804', 'x86_64: 9B05C7D3-BB29-356C-935F-8D2C435B4F36' ]
+uuids:           [ 'i386: C5901D4C-624B-3ED8-9C30-D57BEA7D6C86', 'x86_64: F29FB6E5-B5DC-387C-8A5C-24C89B7C81D9' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ContactsFoundation.framework/Versions/A/ContactsFoundation
 objc-constraint: none

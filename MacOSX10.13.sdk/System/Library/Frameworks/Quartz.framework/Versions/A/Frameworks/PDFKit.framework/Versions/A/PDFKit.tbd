@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 37F00B5B-614A-37AA-99B6-9E0A43AFDEA2', 'x86_64: 5D7EECAD-7F88-302F-97CE-E1425800A090' ]
+uuids:           [ 'i386: 885288CE-B1E1-348A-BEA0-303E0F0AAC0B', 'x86_64: 07D70852-EFA9-3110-A0F9-62AA6363A0BE' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Quartz.framework/Versions/A/Frameworks/PDFKit.framework/Versions/A/PDFKit
 objc-constraint: none

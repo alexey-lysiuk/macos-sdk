@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6FE1478A-F009-3CF6-A4B3-FC95BE850D64' ]
+uuids:           [ 'x86_64: AF239F61-35DF-36F8-AB2E-3E9342FCCE09' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/KeychainCircle.framework/Versions/A/KeychainCircle
 objc-constraint: none

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9678CD51-C12B-3EE2-BBDD-32205D2CBC64' ]
+uuids:           [ 'x86_64: 778F3CE8-46E3-3518-85BA-228180A6B67B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AuthKit.framework/Versions/A/AuthKit
 objc-constraint: none
@@ -27,9 +27,9 @@ exports:
                        _AKAuthenticationNewAppleIDSetupInfoKey, _AKAuthenticationPasswordKey, 
                        _AKAuthenticationPasswordResetTokenKey, _AKAuthenticationRawPasswordKey, 
                        _AKAuthenticationRememberPasswordKey, _AKAuthenticationSecurityLevelKey, 
-                       _AKAuthenticationShortLivedTokenKey, _AKAuthenticationUsernameKey, 
-                       _AKCircleClientErrorCode, _AKCircleStepKey, _AKContinuationDataHeaderKey, 
-                       _AKDSIDHeaderKey, _AKEmailVerificationCompletedNotificationKey, 
+                       _AKAuthenticationSecurityUpgradeContextHeaderFieldKey, _AKAuthenticationShortLivedTokenKey, 
+                       _AKAuthenticationUsernameKey, _AKCircleClientErrorCode, _AKCircleStepKey, 
+                       _AKContinuationDataHeaderKey, _AKDSIDHeaderKey, _AKEmailVerificationCompletedNotificationKey, 
                        _AKErrorMessageKey, _AKErrorStatusCodeKey, _AKExperimentalModeHeaderKey, 
                        _AKFollowUpActionClear, _AKFollowUpAltDSIDKey, _AKFollowUpPayloadIdentifierKey, 
                        _AKFollowUpPushPayloadKey, _AKFollowUpSafariURLKey, _AKFollowUpTeardownSource, 
@@ -45,15 +45,17 @@ exports:
                        _AKRecoveryMKValidationTokenHeader, _AKRecoveryPasswordEquivTokenHeader, 
                        _AKRecoveryURLResponseKey, _AKRecoveryUsernameRequestParameter, 
                        _AKRequestAuthTypeHeaderKey, _AKRequestBodyFollowupKey, _AKRequestBodyKey, 
-                       _AKRequestHeadersKey, _AKSecurityLevel, _AKServiceNameAppStore, 
-                       _AKServiceNameFaceTime, _AKServiceNameGameCenter, _AKServiceNameiCloud, 
-                       _AKServiceNameiMessage, _AKServiceNameiTunesStore, _AKSignInStringFromServiceType, 
-                       _AKStringFromServiceType, _AKTransactionId, _AKTrueValue, 
-                       _AKUserInfoChangedAltDSIDKey, _AKUserInfoChangedNotification, 
-                       _AKUserInfoChangedSecurityLevelKey, _AKUserNotificationResponseAction, 
-                       __AKAppleIDLoginCodeKey, __AKAppleIDLoginCodeWasEnteredNotification, 
-                       __AKICSCIdentityTokenHeader, __AKICSCPasswordEquivTokenHeaderKey, 
-                       __AKICSCURLResponseKey, __AKLogSystem, __AKTrafficLogSubsystem ]
+                       _AKRequestHeadersKey, _AKSecurityLevel, _AKSecurityUpgradeContextApplePay, 
+                       _AKSecurityUpgradeContextGeneric, _AKSecurityUpgradeContextMessages, 
+                       _AKServiceNameAppStore, _AKServiceNameFaceTime, _AKServiceNameGameCenter, 
+                       _AKServiceNameiCloud, _AKServiceNameiMessage, _AKServiceNameiTunesStore, 
+                       _AKSignInStringFromServiceType, _AKStringFromServiceType, 
+                       _AKTransactionId, _AKTrueValue, _AKUserInfoChangedAltDSIDKey, 
+                       _AKUserInfoChangedNotification, _AKUserInfoChangedSecurityLevelKey, 
+                       _AKUserNotificationResponseAction, __AKAppleIDLoginCodeKey, 
+                       __AKAppleIDLoginCodeWasEnteredNotification, __AKICSCIdentityTokenHeader, 
+                       __AKICSCPasswordEquivTokenHeaderKey, __AKICSCURLResponseKey, 
+                       __AKLogSystem, __AKTrafficLogSubsystem ]
     objc-classes:    [ _AKAccountManager, _AKAccountRecoveryContext, _AKAnisetteData, 
                        _AKAnisetteProvisioningController, _AKAnisetteProvisioningDaemonInterface, 
                        _AKAppleIDAuthenticationClientInterface, _AKAppleIDAuthenticationContext, 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 45E51A3D-8FEB-3A44-8529-A7D0CCA53519', 'x86_64: BEEC7923-55AB-3F27-8BB2-FE4B88A9EB75' ]
+uuids:           [ 'i386: 9C0D2A34-09AF-3B37-8BDE-2CAECD506509', 'x86_64: E6BD6E86-03F8-3300-BD52-FF66D9A7EEBD' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AVConference.framework/Frameworks/ViceroyTrace.framework/Versions/A/ViceroyTrace
 exports:         

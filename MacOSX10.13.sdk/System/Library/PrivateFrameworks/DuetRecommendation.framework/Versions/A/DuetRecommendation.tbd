@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CAF3EFE3-999A-364F-AB0C-87EB97FA5687' ]
+uuids:           [ 'x86_64: 62CA2B9F-BA54-3C2C-9DEF-53F64BDE15E7' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DuetRecommendation.framework/DuetRecommendation
 exports:         

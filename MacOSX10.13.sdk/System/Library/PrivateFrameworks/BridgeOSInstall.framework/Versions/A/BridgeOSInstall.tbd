@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1274F03F-8DA1-317B-A263-773F5BBFA992' ]
+uuids:           [ 'x86_64: AA8E3A96-B3C2-329C-80AA-CE28B01BC643' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/BridgeOSInstall.framework/Versions/A/BridgeOSInstall
 objc-constraint: none

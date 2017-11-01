@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C657BB5D-9FDB-3167-96BD-0E0FAC6C4CB7' ]
+uuids:           [ 'x86_64: 729CC35B-59D8-303F-9AA4-860D9854C84D' ]
 platform:        macosx
 install-name:    /usr/lib/libcoreroutine.dylib
 exports:         
@@ -233,8 +233,8 @@ exports:
                        _RTDataProviderNowPlaying, _RTDataProviderStark, _RTDefaultsManager, 
                        _RTDefaultsManagerNotificationDefaultsChanged, _RTDevice, 
                        _RTDeviceLocationPredictor, _RTDeviceLocationPredictorNextPredictedLocationsOfInterestNotification, 
-                       _RTDeviceMO, _RTDiagnostics, _RTDirectionsRequester, _RTDuetHelper, 
-                       _RTEntropyFilter, _RTEventAgentManager, _RTEventAppLaunch, 
+                       _RTDeviceMO, _RTDiagnostics, _RTDirectionsRequester, _RTDistanceCalculator, 
+                       _RTDuetHelper, _RTEntropyFilter, _RTEventAgentManager, _RTEventAppLaunch, 
                        _RTEventAudio, _RTEventBluetooth, _RTEventDateBasedDecayHistogram, 
                        _RTEventDecayHistogram, _RTEventDevice, _RTEventDeviceFirstWakeup, 
                        _RTEventHistogramBase, _RTEventLocationIdentifier, _RTEventLocationIdentifierMO, 
@@ -270,12 +270,12 @@ exports:
                        _RTLocationManagerNotificationPredictedApplications, _RTLocationShifter, 
                        _RTLocationStore, _RTLocationStoreMetrics, _RTLocationTagger, 
                        _RTManagedConfiguration, _RTManagedConfiguration_OSX, _RTMapAccess, 
-                       _RTMapItem, _RTMapItemProviderBluePOI, _RTMapItemProviderEventKit, 
-                       _RTMapItemProviderLearnedPlace, _RTMapItemProviderMapsSupport, 
-                       _RTMapItemProviderPortrait, _RTMapItemProviderProactiveExperts, 
-                       _RTMapItemProviderReverseGeocode, _RTMapServiceManager, _RTMapsSupportManager, 
-                       _RTMediaRemote, _RTMediaRemoteNotificationNowPlayingInfoChanged, 
-                       _RTMediaRemoteNotificationPrimingBundleIdentifiersChanged, 
+                       _RTMapItem, _RTMapItemProviderBase, _RTMapItemProviderBluePOI, 
+                       _RTMapItemProviderEventKit, _RTMapItemProviderLearnedPlace, 
+                       _RTMapItemProviderMapsSupport, _RTMapItemProviderPortrait, 
+                       _RTMapItemProviderProactiveExperts, _RTMapItemProviderReverseGeocode, 
+                       _RTMapServiceManager, _RTMapsSupportManager, _RTMediaRemote, 
+                       _RTMediaRemoteNotificationNowPlayingInfoChanged, _RTMediaRemoteNotificationPrimingBundleIdentifiersChanged, 
                        _RTMemoryTransaction, _RTMetricManager, _RTMicroLocationCache, 
                        _RTMicroLocationRequester, _RTMigrationHelperOneStateAndEntryExitPair, 
                        _RTMotionActivity, _RTMotionActivityHistogram, _RTMotionActivityHistogramBin, 

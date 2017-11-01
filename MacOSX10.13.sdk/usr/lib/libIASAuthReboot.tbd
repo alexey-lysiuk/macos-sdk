@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 21943D0B-9FD6-3F9F-A027-D7B3BE9FB817' ]
+uuids:           [ 'x86_64: 7FA90449-495E-3BC9-8E91-9BBEA7D4BFEB' ]
 platform:        macosx
 install-name:    /usr/lib/libIASAuthReboot.dylib
 current-version: 1000

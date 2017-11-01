@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 28CC4C32-DAFF-3C05-A288-97EA513DC10D', 'x86_64: F3338E88-885C-3203-9D5A-5CA51CEBE567' ]
+uuids:           [ 'i386: 340CEA62-B733-36B9-90C2-E3AB71C9F8F1', 'x86_64: ED5D440E-6BE6-3AF3-817B-4D0BA2E53EDE' ]
 platform:        macosx
 install-name:    /usr/lib/libusrtcp.dylib
 exports:         

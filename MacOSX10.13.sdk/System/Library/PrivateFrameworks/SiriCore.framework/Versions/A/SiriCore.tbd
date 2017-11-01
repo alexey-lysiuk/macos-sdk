@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2876C36D-DBAC-369A-B385-660C0AD3DC02' ]
+uuids:           [ 'x86_64: 5C864350-10B9-3612-93A6-45CCBA39810E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SiriCore.framework/Versions/A/SiriCore
 current-version: 0

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8DC8C440-FE43-3EE1-BC72-88E9A28CA681' ]
+uuids:           [ 'x86_64: 132F9FC5-4761-3E3D-B20A-399E1414D1C1' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/TimeMachine.framework/Versions/A/TimeMachine
 exports:         

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 75467C40-0FE7-35CB-8511-4AF8AF810A5E', 'x86_64: 3315DEBA-A939-352B-B540-2AEF20F64A19' ]
+uuids:           [ 'i386: FD3E6CB2-4771-344B-B8E6-9615515E525D', 'x86_64: ED7F62C8-4E61-34E0-9F1B-59DE4B8BD334' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Security.framework/Versions/A/Security
-current-version: 58286.1.32
+current-version: 58286.20.16
 exports:         
   - archs:           [ x86_64 ]
     objc-classes:    [ _SFAnalyticsLogger, _SecuritydXPCClient ]

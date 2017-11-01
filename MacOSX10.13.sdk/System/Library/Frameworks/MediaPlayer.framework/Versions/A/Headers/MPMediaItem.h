@@ -99,7 +99,7 @@ MP_EXTERN NSString * const MPMediaItemPropertyDiscNumber;
 MP_EXTERN NSString * const MPMediaItemPropertyDiscCount;
 @property (nonatomic, readonly) NSUInteger discCount MP_API(ios(8.0));
 
-MP_EXTERN NSString * const MPMediaItemPropertyArtwork;
+MP_EXTERN NSString * const MPMediaItemPropertyArtwork MP_API(ios(3.0), macos(10.13.2));
 @property (nonatomic, readonly, nullable) MPMediaItemArtwork *artwork MP_API(ios(7.0));
 
 MP_EXTERN NSString * const MPMediaItemPropertyIsExplicit MP_API(ios(7.0), macos(10.12.2));

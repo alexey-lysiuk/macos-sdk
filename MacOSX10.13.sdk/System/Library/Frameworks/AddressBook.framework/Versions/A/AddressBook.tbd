@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 11A53C5C-15BE-362A-8A3E-245230D8F5C9', 'x86_64: 7607CB01-DB67-3604-8F38-0BA0623A44A7' ]
+uuids:           [ 'i386: 3DAF6CC2-2942-3D47-8392-33D40227D910', 'x86_64: 187F2B73-57BD-3230-8A49-4174C5991421' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/AddressBook.framework/Versions/A/AddressBook
-current-version: 1805
+current-version: 1806
 exports:         
   - archs:           [ x86_64 ]
     objc-classes:    [ _ABActionAddressCopyMapURL, _ABActionAddressShowMap, _ABActionManager, 

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6E61E5DF-9899-3183-8DD6-8477091DDC21' ]
+uuids:           [ 'x86_64: BBDD704B-F0BA-317D-BD2B-509039F0DF3B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CVML.framework/Versions/A/CVML
-current-version: 1.64
+current-version: 1.65
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CVMLAllocate, _CVMLCleanupLevel_Complete, _CVMLCleanupLevel_Partial, 

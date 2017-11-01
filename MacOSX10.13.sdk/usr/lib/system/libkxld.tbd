@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 6C86E320-D9FE-3DE1-8EAE-88D0115FCD84', 'x86_64: AE8CE609-ECB8-3D2E-8823-C103A56064DF' ]
+uuids:           [ 'i386: 4D87B996-9073-30D1-BA68-4BF8A6657486', 'x86_64: E82BC0F8-C51D-3BB2-A0EB-B7899CD6606C' ]
 platform:        macosx
 install-name:    /usr/lib/system/libkxld.dylib
 objc-constraint: none

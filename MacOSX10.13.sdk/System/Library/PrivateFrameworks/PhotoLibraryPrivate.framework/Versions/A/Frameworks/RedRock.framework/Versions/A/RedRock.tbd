@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2C0BB1F5-A982-3DF9-9614-09424FFA6278' ]
+uuids:           [ 'x86_64: 5E5215F9-3DE3-3D21-A5A6-1A047B98FB29' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoLibraryPrivate.framework/Versions/A/Frameworks/RedRock.framework/Versions/A/RedRock
-current-version: 3201.11.120
+current-version: 3231.11.210
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _BackgroundServiceNameForType, _ImportAssetThumbnailSizeChangeNotification, 

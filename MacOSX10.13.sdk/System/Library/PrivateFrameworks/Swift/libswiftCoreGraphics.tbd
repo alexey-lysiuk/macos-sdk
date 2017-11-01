@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2F90833E-6272-3880-85AA-37AEF145F542' ]
+uuids:           [ 'x86_64: DCB2BFD0-CA0F-31A8-B4A9-447DFEA9FD32' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Swift/libswiftCoreGraphics.dylib
 current-version: 900.8.49

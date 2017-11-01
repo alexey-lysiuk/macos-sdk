@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AA86A5B7-97EA-3882-B65B-BA7E63BCF840' ]
+uuids:           [ 'x86_64: EB2D6397-7A04-31A0-B151-2C9A827D60A8' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IMSharedUtilities.framework/Versions/A/IMSharedUtilities
 exports:         
@@ -122,10 +122,10 @@ exports:
                        _IMMetricsCollectorEventiMessageReceived, _IMMetricsCollectorEventiMessageSent, 
                        _IMMetricsCollectorShouldAutoBugCaptureKey, _IMMetricsCollectorTimeoutDurationKey, 
                        _IMMetricsCollectorTimeoutEventKey, _IMMetricsCollectorTimeoutTimerKey, 
-                       _IMParserResultsForLogging, _IMRequirementFailedExceptionInfoFileName, 
-                       _IMRequirementFailedExceptionInfoFilePath, _IMRequirementFailedExceptionInfoFunction, 
-                       _IMRequirementFailedExceptionInfoLineNumber, _IMRequirementFailedExceptionName, 
-                       _IMRoundFileSize, _IMSendAdditionalMMCSErrorInfoToMadrid, 
+                       _IMParserResultsForLogging, _IMProcessPeerPaymentMessageWithPayloadData, 
+                       _IMRequirementFailedExceptionInfoFileName, _IMRequirementFailedExceptionInfoFilePath, 
+                       _IMRequirementFailedExceptionInfoFunction, _IMRequirementFailedExceptionInfoLineNumber, 
+                       _IMRequirementFailedExceptionName, _IMRoundFileSize, _IMSendAdditionalMMCSErrorInfoToMadrid, 
                        _IMServiceNameForCanonicalIDSAddresses, _IMServicePropertyDiscontinued, 
                        _IMSetAlwaysUseSingletonProxies, _IMSettingsKeepMessagesChangedNotification, 
                        _IMSettingsKeepMessagesDomain, _IMSettingsKeepMessagesKey, 

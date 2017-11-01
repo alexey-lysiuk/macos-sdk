@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 605E35FB-5ED9-306F-B502-6A12CC2224B5', 'x86_64: 3FEE2851-A5D4-3D15-9ECA-6D56F9AA59A3' ]
+uuids:           [ 'i386: F9BEA019-A175-36F0-82EE-15F0B897B447', 'x86_64: BFBE817E-686F-3ED6-8E71-38D2A7EDF7DF' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IOAccelMemoryInfo.framework/Versions/A/IOAccelMemoryInfo
 exports:         

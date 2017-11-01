@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5976B551-C6C4-3238-9498-C270955027BA' ]
+uuids:           [ 'x86_64: 02AA3C7B-39C4-3895-9FA3-BC7A246E651E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/TextInput.framework/Versions/A/TextInput
 objc-constraint: none

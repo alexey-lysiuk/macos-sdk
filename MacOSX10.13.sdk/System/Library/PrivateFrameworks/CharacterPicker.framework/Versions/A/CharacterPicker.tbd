@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 68AF0D45-1B76-371E-A8C4-8D2488138FD0' ]
+uuids:           [ 'x86_64: D69ADB81-50A3-37EA-8CE1-FD3D671CD550' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CharacterPicker.framework/Versions/A/CharacterPicker
 exports:         

@@ -1,13 +1,11 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 17AA4C5E-41E7-3622-97CD-EFFAA4DE0BCD' ]
+uuids:           [ 'x86_64: 23E51C86-B3EA-39D2-9413-327207CE7F2F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Versions/A/Frameworks/PhotoVision.framework/Versions/A/PhotoVision
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
-    allowable-clients: [ AXMediaUtilities, AXMediaUtilitiesService, MediaMiningKit, 
-                         PhotoAnalysis, PhotosGraph, VideoProcessing ]
     symbols:         [ _PVAnalysisResultDesiredImageMinimumLongDimensionKey, _PVAnalysisResultFacesKey, 
                        _PVAnalysisResultPersistedKey, _PVAnalysisResultWarningImageTooSmallKey, 
                        _PVCVMLClustersMinusLibraryClusters, _PVCVMLIntegrationObject, 

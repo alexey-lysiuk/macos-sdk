@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 8165D2A6-0A1B-3DE7-81B6-F9DCCE480BA6', 'x86_64: 8A8D96F6-1FBE-320F-A60B-37F63FE20D89' ]
+uuids:           [ 'i386: 8222DEFE-6414-3483-BEDB-122471D4D5B7', 'x86_64: B47CD5A5-47E8-3B07-A37D-A82E389405C4' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreText.framework/Versions/A/CoreText
 exports:         

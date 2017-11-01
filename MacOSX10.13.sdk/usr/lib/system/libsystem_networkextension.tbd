@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 92CBAB05-8D30-3405-92B2-9D92966B2D33', 'x86_64: E842569D-00BA-3DE7-AD5A-9EF33422CF3E' ]
+uuids:           [ 'i386: 511B0A98-527D-33AF-904E-F228F3281FE5', 'x86_64: 27F139B6-3250-345D-8495-7C22A00BC488' ]
 platform:        macosx
 install-name:    /usr/lib/system/libsystem_networkextension.dylib
 objc-constraint: none

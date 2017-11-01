@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E8BA0BCD-CFA0-327E-963E-A1D7157C6C56' ]
+uuids:           [ 'x86_64: AB55A219-E98E-3236-9D0D-A5947A172332' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IDSHashPersistence.framework/Versions/A/IDSHashPersistence
 current-version: 800

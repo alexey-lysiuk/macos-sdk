@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 16157A95-ABA4-3DA4-8417-C302DAD93414' ]
+uuids:           [ 'x86_64: 3559D5D8-9100-36A8-AD1C-80146CD783AB' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/BridgeOSSoftwareUpdate.framework/Versions/A/BridgeOSSoftwareUpdate
 objc-constraint: none

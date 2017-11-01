@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 6D197299-898E-3BAD-ABB6-444800945B50', 'x86_64: 7949E071-A3C0-30BB-B21D-79992CBE82DA' ]
+uuids:           [ 'i386: 883338EB-2AB0-3718-A120-78E3C02B7AB8', 'x86_64: 92A69430-A484-37F7-B9D1-D065137D34EF' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreImage.framework/Versions/A/CoreImage
 current-version: 5
@@ -156,7 +156,8 @@ exports:
                        '$ld$install_name$os10.9$/System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore', 
                        _AVCameraCalibrationDataClass, _AVCameraCalibrationDataIntrinsicMatrix, 
                        _AVCameraCalibrationDataIntrinsicMatrixReferenceDimensions, 
-                       _AVDepthDataClass, _AVFDepthCameraCalibrationData, _AVFDepthDataByConvertingToDepthDataType, 
+                       _AVDepthDataClass, _AVDepthDataGetAccuracy, _AVDepthDataGetPortraitScore, 
+                       _AVFDepthCameraCalibrationData, _AVFDepthDataByConvertingToDepthDataType, 
                        _AVFDepthDataByReplacingDepthDataMapWithPixelBuffer, _AVFDepthDataDictionaryRepresentation, 
                        _AVFDepthDataFromDictionary, _AVFDepthDataMap, _AVFDepthDataType, 
                        _CIDetectorAccuracy, _CIDetectorAccuracyHigh, _CIDetectorAccuracyLow, 

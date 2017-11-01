@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 5061AB08-66F6-3852-8109-CF3B1620AB16', 'x86_64: F197BE43-BBE1-39A2-BB42-6C790CD16608' ]
+uuids:           [ 'i386: 2DFA45D9-4769-3391-BF2A-5BF9E50423CF', 'x86_64: 9ACDB02A-61F2-3984-AC57-4B37CF91DF21' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CVML.framework/liblowLevelDetectors.dylib
-current-version: 1.64
+current-version: 1.65
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]

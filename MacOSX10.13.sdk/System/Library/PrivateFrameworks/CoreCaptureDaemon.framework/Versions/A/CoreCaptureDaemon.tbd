@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 17B73360-83EF-38FB-8E4A-1BD568B57DE7' ]
+uuids:           [ 'x86_64: EFEBE904-FF5E-3F16-998B-518F26BBA029' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreCaptureDaemon.framework/Versions/A/CoreCaptureDaemon
 exports:         

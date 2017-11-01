@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CCE3A0FC-63F9-3D2F-A0AC-18230C9C77BB' ]
+uuids:           [ 'x86_64: C63264F2-00C6-3842-A2EC-E78F8CFF1FDA' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/ContactsUI.framework/Versions/A/ContactsUI
-current-version: 1805
+current-version: 1806
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _ABCNContactSortByFirstName, _ABCNContactSortByLastName, _ABCNContactSortingSubstringAttributeName, 

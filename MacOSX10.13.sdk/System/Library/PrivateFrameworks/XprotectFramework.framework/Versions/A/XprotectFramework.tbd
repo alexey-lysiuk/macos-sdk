@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 1298752A-BDDE-33F1-BBFA-14117C6827DE', 'x86_64: F408BE1B-002F-33CD-BEB0-28BF06244375' ]
+uuids:           [ 'i386: 237F9AD6-3970-3379-8FF4-469FD73E17F3', 'x86_64: F2BF4179-AA98-32CF-B79C-A268F44B5946' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/XprotectFramework.framework/Versions/A/XprotectFramework
 exports:         

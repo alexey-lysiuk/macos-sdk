@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 89895B3A-FA16-35EC-9A2C-22AF1A311A1D', 'x86_64: 754413E6-FFD1-3CE4-9932-2977AD675319' ]
+uuids:           [ 'i386: 6D17216D-7ED4-3C08-ACC4-5683FB8EA54C', 'x86_64: 2014E0F5-F0A3-31C6-890A-FF7A714D2F90' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AppleVA.framework/Versions/A/AppleVA
 objc-constraint: none

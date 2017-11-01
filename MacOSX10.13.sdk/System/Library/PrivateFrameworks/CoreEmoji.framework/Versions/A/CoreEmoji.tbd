@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 1183DFFF-DC0E-33CF-A261-0E0308CE5FDC', 'x86_64: 3945FA6E-D060-3F9F-B392-4228E6630F67' ]
+uuids:           [ 'i386: 26F0F9DB-28D7-306A-B931-D36C791709B4', 'x86_64: 7FB592BF-FAA2-3290-8B04-28BCEA49F519' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreEmoji.framework/Versions/A/CoreEmoji
-current-version: 69
+current-version: 69.2.4
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]

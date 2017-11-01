@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: D6D6AAF5-F11B-3754-B4D0-78E55506A3F1', 'x86_64: 7D0CB3B0-2FD5-3020-94E6-F5A5F7BCC92A' ]
+uuids:           [ 'i386: 02059D02-C25B-3419-BD10-42467CAF6F20', 'x86_64: C28C3C00-214E-3735-8311-4843C5B5A2C5' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AVConference.framework/Frameworks/GKSPerformance.framework/Versions/A/GKSPerformance
 exports:         

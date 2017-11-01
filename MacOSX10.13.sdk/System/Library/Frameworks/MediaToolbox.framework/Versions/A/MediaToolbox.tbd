@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: D9CFE9AF-DFC9-3175-BBE4-5A9CA618176F', 'x86_64: 1D00A19E-D592-3CC0-A6CC-16E540950070' ]
+uuids:           [ 'i386: 86527A48-26F9-39D5-B167-4009EB86394A', 'x86_64: A6CC9CEB-AB05-382C-A75A-9E7566848C05' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/MediaToolbox.framework/Versions/A/MediaToolbox
 exports:         

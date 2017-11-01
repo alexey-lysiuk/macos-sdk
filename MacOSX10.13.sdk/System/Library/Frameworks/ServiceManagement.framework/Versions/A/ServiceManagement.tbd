@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: C830416D-0D84-303D-A2BD-1A186B193DF9', 'x86_64: 3763B3EF-0573-36A6-9647-8EBB139B9CAC' ]
+uuids:           [ 'i386: FAD460A5-A64B-30B1-B8C7-B12CA5788248', 'x86_64: 480072A0-FCE2-3A90-86D9-BAA21EC33F3F' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/ServiceManagement.framework/Versions/A/ServiceManagement
-current-version: 1205.1.10
+current-version: 1205.20.31
 exports:         
   - archs:           [ i386, x86_64 ]
     symbols:         [ _SMCopyAllJobDictionaries, _SMCopyEnabledLoginItems_4BTM, 

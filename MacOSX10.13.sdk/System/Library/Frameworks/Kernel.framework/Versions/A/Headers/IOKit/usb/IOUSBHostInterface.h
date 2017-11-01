@@ -35,7 +35,7 @@
  
  A driver that has successfully matched on an IOUSBHostInterface is able to take ownership of the interface by calling the <code>open</code> method defined by IOService on the IOUSBHostInterface.  Once <code>open</code> has completed successfully, the driver has an open session, and may use the deviceRequest interface to send control requests, the selectAlternateSetting interface to change the endpoints and behavior of the interface.
  
- When the driver is finished with control of the IOUSBHostInterface, it must call <code>close</code> to end its session.  Calling <code>close</code> will synchronously abort that session's outstanding IO on the control endpoint.  If the interface is terminating for any reason, such as the device being unplugged, termination of the IOUSBHostInterface will be blocked until the driver calls <code>close</code>.  The willTerminate call into the driver is the recommended location to call <code>close</code>.
+ When the driver is finished with control of the IOUSBHostInterface, it must call <code>close</code> to end its session.  Calling <code>close</code> will synchronously abort any IO associated with that session, including requests on the control endpoint.  If the interface is terminating for any reason, such as the device being unplugged, the driver must call <code>close</code> on the IOUSBHostInterface, or termination will be blocked and the port will not register newly attached devices for matching.  The willTerminate call into the driver is the recommended location to call <code>close</code>.
  
  <h3>deviceRequest Interface</h3>
  

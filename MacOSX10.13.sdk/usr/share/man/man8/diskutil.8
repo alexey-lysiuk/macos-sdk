@@ -16,7 +16,7 @@
 .\" Please see the License for the specific language governing rights and
 .\" limitations under the License.
 .\"
-.Dd 20 June 2017
+.Dd 5 October 2017
 .Os "macOS"
 .Dt DISKUTIL 8
 .Pp
@@ -1126,7 +1126,7 @@ Ownership of the affected disks is required.
 .\"             -- APFS > unlockVolume --
 .It Sy unlockVolume | unlock
 .Ar volumeDevice
-.Op Nm -user Nm disk | Ar cryptoUserUUID
+.Op Nm -user Nm disk | Nm -user Ar cryptoUserUUID | Nm -recoverykeychain Ar file
 .Op Nm -passphrase Ar passphrase
 |
 .Op Nm -stdinpassphrase
@@ -1139,15 +1139,28 @@ If you do not supply
 the
 .Sy -user
 option, then all cryptographic users on that APFS Volume are searched for a match; if you supply
+.Sy -user
 .Sy disk
-then the Disk UUID (which equals the APFS Volume UUID) is assumed; if you supply
-a UUID then that specific user is assumed.
+then the Disk UUID (which equals the APFS Volume UUID) user is assumed; if you supply
+.Sy -user
+with a UUID then that specific user is assumed; if you instead supply
+.Sy -recoverykeychain
+then the Institutional Recovery user (see below) is assumed.
 .Pp
 You will be prompted interactively for a passphrase
 unless you specify a passphrase parameter with
 .Sy -passphrase
 or pipe your passphrase into stdin and use
 .Sy -stdinpassphrase.
+.Pp
+As an alternative to a passphrase, you can specify
+.Sy -recoverykeychain
+with a full path to a keychain file if an Institutional Recovery Key has been previously
+set up on the APFS Volume. The keychain must be unlocked; see
+.Ns Xr security 1
+and
+.Ns Xr fdesetup 8
+for more information.
 .Pp
 You can skip the explicit mounting step or specify a "custom" mountpoint with the
 .Sy -nomount

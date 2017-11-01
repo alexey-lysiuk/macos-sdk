@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 79FCC013-32A1-3D44-A324-65252F4323E8' ]
+uuids:           [ 'x86_64: ACA82684-AE29-37BE-9E8D-3F5E8A8BB748' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotosUICore.framework/Versions/A/PhotosUICore
-current-version: 3201.9.190
+current-version: 3231.9.210
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -141,15 +141,15 @@ exports:
                        _PXMemoriesFeedViewControllerHelper, _PXMemoriesFontsSpec, 
                        _PXMemoriesRelatedDiagnosticsHelper, _PXMemoriesRelatedSettings, 
                        _PXMemoriesSpec, _PXMemoriesSpecManager, _PXMemoriesTitleHelper, 
-                       _PXMemoryEntryInfo, _PXMemoryInfo, _PXMutableIndexPathSet, 
-                       _PXNSAssetsStackView, _PXNSLabel, _PXNSScrollViewController, 
-                       _PXNSSnappingController, _PXNodeRunner, _PXNumberFilter, _PXObservable, 
-                       _PXOverlayBadgeTileUserData, _PXPPTLoadingLatencyMeter, _PXPath, 
-                       _PXPeopleBootstrapCollectionViewCell, _PXPeopleBootstrapCommon, 
-                       _PXPeopleBootstrapConfirmationViewController, _PXPeopleBootstrapContext, 
-                       _PXPeopleBootstrapFinalViewController, _PXPeopleBootstrapFlowController, 
-                       _PXPeopleBootstrapHeaderView, _PXPeopleCandidateWidgetUtilities, 
-                       _PXPeopleCommon, _PXPeopleConfirmationSummaryViewController, 
+                       _PXMemoryEntryInfo, _PXMemoryInfo, _PXMiniHTMLParser, _PXMiniXMLParser, 
+                       _PXMutableIndexPathSet, _PXNSAssetsStackView, _PXNSLabel, 
+                       _PXNSScrollViewController, _PXNSSnappingController, _PXNodeRunner, 
+                       _PXNumberFilter, _PXObservable, _PXOverlayBadgeTileUserData, 
+                       _PXPPTLoadingLatencyMeter, _PXPath, _PXPeopleBootstrapCollectionViewCell, 
+                       _PXPeopleBootstrapCommon, _PXPeopleBootstrapConfirmationViewController, 
+                       _PXPeopleBootstrapContext, _PXPeopleBootstrapFinalViewController, 
+                       _PXPeopleBootstrapFlowController, _PXPeopleBootstrapHeaderView, 
+                       _PXPeopleCandidateWidgetUtilities, _PXPeopleCommon, _PXPeopleConfirmationSummaryViewController, 
                        _PXPeopleConfirmationViewController, _PXPeopleDataSourceSection, 
                        _PXPeopleDetailStatusOverlayView, _PXPeopleFaceTileImageManager, 
                        _PXPeopleFullscreenConfirmationViewController, _PXPeopleMeViewController, 

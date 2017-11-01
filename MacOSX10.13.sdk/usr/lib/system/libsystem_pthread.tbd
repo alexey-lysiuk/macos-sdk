@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 7228A41C-AC5D-3612-B22E-374CB5433D1C', 'x86_64: 6D0B0110-2B44-3D3C-B672-BD08FE46378A' ]
+uuids:           [ 'i386: E3098D4B-9568-3A90-A708-7722BCBC3CBC', 'x86_64: 8AF70211-A670-3CC7-AE24-EFE9F1C2B1E5' ]
 platform:        macosx
 install-name:    /usr/lib/system/libsystem_pthread.dylib
-current-version: 301.1.6
+current-version: 301.20.1
 objc-constraint: none
 parent-umbrella: System
 exports:         

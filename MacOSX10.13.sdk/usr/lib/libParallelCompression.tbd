@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 4AB8D35C-AF13-372F-BACF-6976F430D316', 'x86_64: 774962C0-9A33-3283-95C0-374424746CF7' ]
+uuids:           [ 'i386: C8AD192F-DCFA-3A6A-BEC0-03D34FBEB442', 'x86_64: F91E903E-A4F4-34A4-B5B6-736372533C86' ]
 platform:        macosx
 install-name:    /usr/lib/libParallelCompression.dylib
 objc-constraint: none
@@ -20,10 +20,11 @@ exports:
                        _ParallelCompressionEncode, _ParallelCompressionEnterThreadErrorContext, 
                        _ParallelCompressionFileClose, _ParallelCompressionFileOpen, 
                        _ParallelCompressionFileRead, _ParallelCompressionFileSeek, 
-                       _ParallelCompressionFileWrite, _ParallelCompressionIStreamAbort, 
-                       _ParallelCompressionIStreamCreate, _ParallelCompressionIStreamDestroy, 
-                       _ParallelCompressionIStreamRead, _ParallelCompressionLeaveThreadErrorContext, 
-                       _ParallelCompressionOStreamAbort, _ParallelCompressionOStreamCreate, 
-                       _ParallelCompressionOStreamDestroy, _ParallelCompressionOStreamWrite, 
-                       _ParallelCompressionUpdateThreadErrorContext ]
+                       _ParallelCompressionFileWrite, _ParallelCompressionGetCompressedSize, 
+                       _ParallelCompressionIStreamAbort, _ParallelCompressionIStreamCreate, 
+                       _ParallelCompressionIStreamDestroy, _ParallelCompressionIStreamRead, 
+                       _ParallelCompressionLeaveThreadErrorContext, _ParallelCompressionOStreamAbort, 
+                       _ParallelCompressionOStreamCreate, _ParallelCompressionOStreamDestroy, 
+                       _ParallelCompressionOStreamWrite, _ParallelCompressionUpdateError, 
+                       _ParallelCompressionUpdateWarning ]
 ...

@@ -1171,9 +1171,11 @@ typedef struct SCSICmd_INQUIRY_PageC0_Data
 	UInt32							fMaxReadSize;
 	UInt32							fMaxWriteSize;
 	UInt32							fNativeBlockSize;
-    UInt8                           Reserved3[4];
+    UInt32                          fPreferredIOSize;
 	UInt64							fFeatures;
 	UInt64							fWorkArounds;
+    UInt16                          fEncryptionType;
+    UInt8                           fReserved3[2];
 
 } SCSICmd_INQUIRY_PageC0_Data;
 

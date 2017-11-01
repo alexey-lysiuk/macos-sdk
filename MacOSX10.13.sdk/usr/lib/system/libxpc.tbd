@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: D1C23A14-2F23-3858-9346-A35B47DFD92F', 'x86_64: E7C5DB12-6D0E-3D1E-A743-F750DF112F5F' ]
+uuids:           [ 'i386: E58FC860-9E36-389E-B6FD-1B7AF09FBA9F', 'x86_64: 58676E88-35FD-3CF3-99BB-2A82E09F8058' ]
 platform:        macosx
 install-name:    /usr/lib/system/libxpc.dylib
-current-version: 1205.1.10
+current-version: 1205.20.31
 parent-umbrella: System
 exports:         
   - archs:           [ i386 ]
@@ -58,10 +58,10 @@ exports:
                        __vprocmgr_log_forward, __vprocmgr_move_subset_to_user, __vprocmgr_switch_to_session, 
                        __xpc_bool_create_distinct, __xpc_bool_false, __xpc_bool_set_value, 
                        __xpc_bool_true, __xpc_connection_set_event_handler_f, __xpc_data_set_value, 
-                       __xpc_dictionary_create_reply_with_port, __xpc_dictionary_get_msg_id, 
-                       __xpc_dictionary_get_pointer_by_handle, __xpc_dictionary_get_reply_port, 
-                       __xpc_dictionary_set_msg_id, __xpc_dictionary_set_pointer_by_handle, 
-                       __xpc_dictionary_set_remote_connection, __xpc_double_set_value, 
+                       __xpc_dictionary_create_reply_with_port, __xpc_dictionary_get_pointer_by_handle, 
+                       __xpc_dictionary_get_reply_msg_id, __xpc_dictionary_get_reply_port, 
+                       __xpc_dictionary_set_pointer_by_handle, __xpc_dictionary_set_remote_connection, 
+                       __xpc_dictionary_set_reply_msg_id, __xpc_double_set_value, 
                        __xpc_error_connection_interrupted, __xpc_error_connection_invalid, 
                        __xpc_error_key_description, __xpc_error_termination_imminent, 
                        __xpc_event_key_name, __xpc_event_key_stream_name, __xpc_int64_set_value, 
@@ -182,14 +182,15 @@ exports:
                        _xpc_dictionary_get_double, _xpc_dictionary_get_int64, _xpc_dictionary_get_pointer, 
                        _xpc_dictionary_get_remote_connection, _xpc_dictionary_get_string, 
                        _xpc_dictionary_get_uint64, _xpc_dictionary_get_uuid, _xpc_dictionary_get_value, 
-                       _xpc_dictionary_set_bool, _xpc_dictionary_set_connection, 
+                       _xpc_dictionary_send_reply, _xpc_dictionary_set_bool, _xpc_dictionary_set_connection, 
                        _xpc_dictionary_set_data, _xpc_dictionary_set_date, _xpc_dictionary_set_double, 
                        _xpc_dictionary_set_fd, _xpc_dictionary_set_int64, _xpc_dictionary_set_mach_recv, 
                        _xpc_dictionary_set_mach_send, _xpc_dictionary_set_pointer, 
                        _xpc_dictionary_set_string, _xpc_dictionary_set_uint64, _xpc_dictionary_set_uuid, 
                        _xpc_dictionary_set_value, _xpc_dictionary_taint, _xpc_double_create, 
                        _xpc_double_get_value, _xpc_endpoint_create, _xpc_equal, _xpc_event_stream_check_in, 
-                       _xpc_fd_create, _xpc_fd_dup, _xpc_file_transfer_cancel, _xpc_file_transfer_copy_io, 
+                       _xpc_event_stream_check_in2, _xpc_extension_type_init, _xpc_fd_create, 
+                       _xpc_fd_dup, _xpc_file_transfer_cancel, _xpc_file_transfer_copy_io, 
                        _xpc_file_transfer_create_with_fd, _xpc_file_transfer_create_with_path, 
                        _xpc_file_transfer_get_send_finished_callback, _xpc_file_transfer_get_set_properties, 
                        _xpc_file_transfer_get_set_transfer_id, _xpc_file_transfer_get_set_write_finished_callback, 
@@ -201,17 +202,17 @@ exports:
                        _xpc_get_type, _xpc_handle_service, _xpc_handle_subservice, 
                        _xpc_hash, _xpc_impersonate_user, _xpc_init_services, _xpc_inspect_copy_description, 
                        _xpc_inspect_copy_description_local, _xpc_inspect_copy_short_description, 
-                       _xpc_inspect_copy_short_description_local, _xpc_int64_create, 
-                       _xpc_int64_get_value, _xpc_look_up_endpoint, _xpc_mach_recv_create, 
-                       _xpc_mach_recv_extract_right, _xpc_mach_send_copy_right, _xpc_mach_send_create, 
-                       _xpc_mach_send_get_right, _xpc_main, _xpc_make_serialization, 
-                       _xpc_make_serialization_with_ool, _xpc_null_create, _xpc_pipe_create, 
-                       _xpc_pipe_create_from_port, _xpc_pipe_invalidate, _xpc_pipe_receive, 
-                       _xpc_pipe_routine, _xpc_pipe_routine_async, _xpc_pipe_routine_forward, 
-                       _xpc_pipe_routine_reply, _xpc_pipe_simpleroutine, _xpc_pipe_try_receive, 
-                       _xpc_pointer_create, _xpc_pointer_get_value, _xpc_release, 
-                       _xpc_retain, _xpc_serializer_create_wire_object, _xpc_service_create, 
-                       _xpc_service_get_rendezvous_token, _xpc_service_instance_dup2, 
+                       _xpc_inspect_copy_short_description_local, _xpc_install_remote_hooks, 
+                       _xpc_int64_create, _xpc_int64_get_value, _xpc_look_up_endpoint, 
+                       _xpc_mach_recv_create, _xpc_mach_recv_extract_right, _xpc_mach_send_copy_right, 
+                       _xpc_mach_send_create, _xpc_mach_send_get_right, _xpc_main, 
+                       _xpc_make_serialization, _xpc_make_serialization_with_ool, 
+                       _xpc_null_create, _xpc_pipe_create, _xpc_pipe_create_from_port, 
+                       _xpc_pipe_invalidate, _xpc_pipe_receive, _xpc_pipe_routine, 
+                       _xpc_pipe_routine_async, _xpc_pipe_routine_forward, _xpc_pipe_routine_reply, 
+                       _xpc_pipe_simpleroutine, _xpc_pipe_try_receive, _xpc_pointer_create, 
+                       _xpc_pointer_get_value, _xpc_release, _xpc_retain, _xpc_serializer_create_wire_object, 
+                       _xpc_service_create, _xpc_service_get_rendezvous_token, _xpc_service_instance_dup2, 
                        _xpc_service_instance_get_context, _xpc_service_instance_get_host_pid, 
                        _xpc_service_instance_get_pid, _xpc_service_instance_get_type, 
                        _xpc_service_instance_is_configurable, _xpc_service_instance_run, 

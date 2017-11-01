@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2B54EE28-B76F-36C9-A942-2A6007371F3C' ]
+uuids:           [ 'x86_64: D49DD9D0-D46E-3C3E-AD64-D9B795B37776' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MediaRemote.framework/Versions/A/MediaRemote
 exports:         
@@ -22,11 +22,12 @@ exports:
                        _MRAVOutputContextRemoveAllDevices, _MRAVOutputContextRemoveOutputDevice, 
                        _MRAVOutputContextRemoveOutputDevices, _MRAVOutputContextSetOutputDevice, 
                        _MRAVOutputContextTypeCopyDescription, _MRAVOutputDeviceCanAccessRemoteAssets, 
-                       _MRAVOutputDeviceGetAVOutputDevice, _MRAVOutputDeviceGetBatteryLevel, 
-                       _MRAVOutputDeviceGetGroupIdentifier, _MRAVOutputDeviceGetMACAddress, 
-                       _MRAVOutputDeviceGetModelID, _MRAVOutputDeviceGetModelSpecificInformation, 
-                       _MRAVOutputDeviceGetName, _MRAVOutputDeviceGetRecentAVOutputDeviceUIDs, 
-                       _MRAVOutputDeviceGetSubtype, _MRAVOutputDeviceGetType, _MRAVOutputDeviceGetUniqueIdentifier, 
+                       _MRAVOutputDeviceCopyModelSpecificInformation, _MRAVOutputDeviceGetAVOutputDevice, 
+                       _MRAVOutputDeviceGetBatteryLevel, _MRAVOutputDeviceGetGroupIdentifier, 
+                       _MRAVOutputDeviceGetMACAddress, _MRAVOutputDeviceGetModelID, 
+                       _MRAVOutputDeviceGetModelSpecificInformation, _MRAVOutputDeviceGetName, 
+                       _MRAVOutputDeviceGetRecentAVOutputDeviceUIDs, _MRAVOutputDeviceGetSubtype, 
+                       _MRAVOutputDeviceGetType, _MRAVOutputDeviceGetUniqueIdentifier, 
                        _MRAVOutputDeviceHasBatteryLevel, _MRAVOutputDeviceIsGroupLeader, 
                        _MRAVOutputDeviceIsGroupable, _MRAVOutputDeviceIsLocalDevice, 
                        _MRAVOutputDeviceIsRemoteControllable, _MRAVOutputDeviceRequiresAuthorization, 
@@ -35,7 +36,8 @@ exports:
                        _MRAVOutputDeviceSupportsExternalScreen, _MRAVOutputDeviceTypeCopyDescription, 
                        _MRAVReconnaissanceSessionBeginSearch, _MRAVReconnaissanceSessionCancelSearch, 
                        _MRAVReconnaissanceSessionCreate, _MRAVReconnaissanceSessionCreateWithEndpointFeatures, 
-                       _MRAVReconnaissanceSessionGetMatchingOutputDeviceUIDs, _MRAVRouteQueryCreate, 
+                       _MRAVReconnaissanceSessionGetMatchingOutputDeviceUIDs, _MRAVReconnaissanceSessionSetUseWeakMatching, 
+                       _MRAVReconnaissanceSessionUseWeakMatching, _MRAVRouteQueryCreate, 
                        _MRAVRouteQueryCreateExternalRepresentation, _MRAVRouteQueryCreateFromExternalRepresentation, 
                        _MRAVRouteQueryGetRouteUID, _MRAVRouteQuerySetRouteUID, _MRAVRoutingDiscoverySessionAddEndpointsChangedCallback, 
                        _MRAVRoutingDiscoverySessionAddOutputDevicesChangedCallback, 

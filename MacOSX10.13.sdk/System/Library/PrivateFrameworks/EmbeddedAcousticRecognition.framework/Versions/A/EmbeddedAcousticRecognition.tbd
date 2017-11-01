@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F10A6D39-6D2B-3FA2-BDE3-E6329FDA370F' ]
+uuids:           [ 'x86_64: 298C92D1-AFC0-3801-A950-77AA1B8236B2' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/EmbeddedAcousticRecognition.framework/Versions/A/EmbeddedAcousticRecognition
 exports:         

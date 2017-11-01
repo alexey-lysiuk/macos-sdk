@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: A9164BB1-E070-3D48-96A4-E77BB351B18A', 'x86_64: 6134BC02-EC6F-342F-8FCE-673798505400' ]
+uuids:           [ 'i386: 2F3166CF-D98E-3BAD-98E0-9D103F997859', 'x86_64: 9998359C-3A37-3ED0-8CFC-C095C99F2102' ]
 platform:        macosx
 install-name:    /usr/lib/libnetwork.dylib
 exports:         

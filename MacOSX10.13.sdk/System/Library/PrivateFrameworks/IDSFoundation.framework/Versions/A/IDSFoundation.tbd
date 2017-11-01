@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 073F3B7D-2261-3F13-B471-F66BE5C9A71C', 'x86_64: 833CA186-0312-33A0-93A3-A7C0839EFBC0' ]
+uuids:           [ 'i386: AED94695-9D4F-3543-AEC6-A8339B53B666', 'x86_64: FDF0CB26-DD70-373F-9FC3-29A947A4F0E4' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IDSFoundation.framework/Versions/A/IDSFoundation
 current-version: 800
@@ -274,9 +274,9 @@ exports:
                        _IDSIsAlloyRegistrationServiceType, _IDSIsBulkedPayloadKey, 
                        _IDSIsCallingRegistrationServiceType, _IDSIsFaceTimeOriMessageRegistration, 
                        _IDSIsFaceTimeRegistrationServiceType, _IDSIsMultiplex1RegistrationServiceType, 
-                       _IDSIsScreenSharingRegistrationServiceType, _IDSIsValidAccountType, 
-                       _IDSIsiMessageRegistrationServiceType, _IDSKeychainAccessGroup, 
-                       _IDSKeychainAccountNameV0, _IDSKeychainBlobCurrentVersion, 
+                       _IDSIsRunningOnN2xAWatch, _IDSIsScreenSharingRegistrationServiceType, 
+                       _IDSIsValidAccountType, _IDSIsiMessageRegistrationServiceType, 
+                       _IDSKeychainAccessGroup, _IDSKeychainAccountNameV0, _IDSKeychainBlobCurrentVersion, 
                        _IDSKeychainServiceName, _IDSKeychainServiceNameV0, _IDSLinkPacketBufferCleanup, 
                        _IDSLinkPacketBufferClone, _IDSLinkPacketBufferCreateWithStart, 
                        _IDSLinkPacketBufferRelease, _IDSLocalPairingErrorDomain, 

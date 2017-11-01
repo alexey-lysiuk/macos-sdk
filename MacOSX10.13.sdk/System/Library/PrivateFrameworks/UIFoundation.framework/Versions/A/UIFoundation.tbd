@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 2B11011C-CECA-309F-8D02-6DA6B38AA6FD', 'x86_64: A393DE4F-0885-3C7C-9933-F3AF8D58B93F' ]
+uuids:           [ 'i386: 18AC407A-6547-3C79-84AE-611223520834', 'x86_64: 36B09831-2916-3CE3-BD68-2D304BA7CDEF' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/UIFoundation.framework/Versions/A/UIFoundation
-current-version: 543
+current-version: 545
 exports:         
   - archs:           [ i386 ]
     objc-classes:    [ _NSATSGlyphGenerator, _NSStringDrawingContextImpl, _NSTextContainerAuxiliary, 

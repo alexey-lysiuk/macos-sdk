@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 29851256-D036-3CF9-9558-D7694D04704F' ]
+uuids:           [ 'x86_64: 54B5BCAB-74EE-3F92-A4F5-A1B33AD9E260' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SymptomDiagnosticReporter.framework/Versions/A/SymptomDiagnosticReporter
-current-version: 820.1.4
+current-version: 820.20.3
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _kDebuggabilityPath, _kDiagnosticCaseSummaryKeyAttachments, 

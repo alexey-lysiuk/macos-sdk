@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 93044936-463B-3E35-9CDF-4B1B83896042', 'x86_64: 10955EBB-1AC8-3085-9A2D-F3088CA2DF71' ]
+uuids:           [ 'i386: EDD76D4B-D4A7-3FFB-AFD4-566DDE4D928A', 'x86_64: 878582CE-0647-31DD-92C3-AFCD5C3A714D' ]
 platform:        macosx
 install-name:    /usr/lib/system/libsystem_trace.dylib
-current-version: 829.1.2
+current-version: 829.20.1
 parent-umbrella: System
 exports:         
   - archs:           [ i386 ]
