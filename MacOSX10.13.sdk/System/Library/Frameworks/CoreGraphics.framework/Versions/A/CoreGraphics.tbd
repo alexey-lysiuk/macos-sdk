@@ -1,10 +1,10 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64, x86_64h ]
-uuids:           [ 'i386: 875F3355-CF6B-346E-8D99-E2EE0E1A8B83', 'x86_64: DD761FE9-1168-3AAF-9B92-6B7B4E9976C6', 
-                   'x86_64h: AF7EE79B-5FA8-3C8C-B537-B3F35D0904AA' ]
+uuids:           [ 'i386: 20752785-E9DA-3CC6-ACDD-5A82AD344209', 'x86_64: C3E052A6-B0EF-3017-A1EB-4C86CE986B8C', 
+                   'x86_64h: F37BFBD2-CC21-3521-B034-9D4D36197487' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics
-current-version: 1125.3.4
+current-version: 1129.5
 compatibility-version: 64
 objc-constraint: none
 exports:         

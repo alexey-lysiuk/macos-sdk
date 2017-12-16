@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 65E26271-D541-3E84-864C-AA8ABED52291' ]
+uuids:           [ 'x86_64: A1D37655-3064-3529-84C2-DBD931793651' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Install.framework/Versions/A/Install
 current-version: 1000
@@ -164,10 +164,10 @@ exports:
                        _kPreFlightString, _kPreInstallOldString, _kPreInstallString, 
                        _kPreUpgradeOldString, _kPreUpgradeString, _kReceiptPathString, 
                        _kScriptNameString, _kTmpDirString, _kVolumeCheckString, _moduleCount, 
-                       _moduleNameForIndex, _pkgReceiptPath, _privateMemorySize, 
-                       _process_line, _rcCDROMChecked, _saveOSInstallLogWithMountPoint, 
-                       _setup_instlog_shmem, _start_log_listen_thread, _teardown_instlog_shmem, 
-                       _totalNodeCount ]
+                       _moduleNameForIndex, _parseBridgeBuildGroup, _parseBridgeVersion, 
+                       _pkgReceiptPath, _privateMemorySize, _process_line, _rcCDROMChecked, 
+                       _saveOSInstallLogWithMountPoint, _setup_instlog_shmem, _start_log_listen_thread, 
+                       _teardown_instlog_shmem, _totalNodeCount ]
     objc-classes:    [ _FFPackage, _IFActionFactory, _IFActionsDock, _IFActionsWorkspace, 
                        _IFAddDockItemInstallAction, _IFAddLoginItemInstallAction, 
                        _IFAppRegister, _IFAppRegisterElement, _IFApplyPatchesElement, 

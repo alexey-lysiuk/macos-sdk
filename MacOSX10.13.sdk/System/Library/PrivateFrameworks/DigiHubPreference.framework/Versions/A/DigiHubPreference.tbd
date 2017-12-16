@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 3A0977EE-8BCD-30C6-BB69-9786386B2715', 'x86_64: 08AF7719-2B4F-3594-88E6-D17FBC3D4F50' ]
+uuids:           [ 'i386: 65E78EF6-0E62-38F4-BADE-A2AEA4FE7C5B', 'x86_64: ABDEBE31-CBF3-3949-A748-F7B89CE80F5F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DigiHubPreference.framework/Versions/A/DigiHubPreference
 exports:         

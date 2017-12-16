@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6586B0AC-9505-3C5F-B6FA-79D2AC0C9A26' ]
+uuids:           [ 'x86_64: A42B66EA-4E96-36DF-AF09-3AC6D6F7053E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreDuet.framework/Versions/A/CoreDuet
 exports:         
@@ -17,10 +17,9 @@ exports:
                        __DKDaemonInterface, __DKDataProtectionClassA, __DKDataProtectionClassC, 
                        __DKDataProtectionClassD, __DKDayOfWeekCategoryValue, __DKErrorDomain, 
                        __DKEventQueryPerformanceTesting, __DKKnowledgeStorageDidDeleteEventsNotification, 
-                       __DKKnowledgeStorageDidHaveInsertsAndDeletesNotification, 
                        __DKKnowledgeStorageDidInsertEventsNotification, __DKKnowledgeStorageDidInsertLocalEventsNotification, 
-                       __DKKnowledgeStorageInsertsAndDeletesCountKey, __DKMachServiceName, 
-                       __DKMotionCategoryValue, __DKNextCalendarEventCategoryValue, 
+                       __DKKnowledgeStorageLoggingDistributedNotificationThrottleInSeconds, 
+                       __DKMachServiceName, __DKMotionCategoryValue, __DKNextCalendarEventCategoryValue, 
                        __DKPRChangeSetReadFrom, __DKPRCompressedChangeSetReadFrom, 
                        __DKPREventReadFrom, __DKPRMetadataEntryReadFrom, __DKPRSourceReadFrom, 
                        __DKPRStreamReadFrom, __DKPRValueReadFrom, __DKPRValueTypeReadFrom, 
@@ -31,6 +30,7 @@ exports:
                        __DKSyncCoordinatorDidCreateDeletionChangeSetNotification, 
                        __DKSyncCoordinatorDidDeleteRemoteEventsNotification, __DKSyncCoordinatorDidInsertLocalAdditionEventsNotification, 
                        __DKSyncCoordinatorDidInsertLocalDeletionEventsNotification, 
+                       __DKSyncCoordinatorLoggingDistributedNotificationThrottleInSeconds, 
                        __DKSyncPolicyDidChangeNotification, __DKTristateCategoryValue, 
                        __DKUIOrientationCategoryValue, __DKUserLocalMachServiceName, 
                        __isTimeRestrictionOverwritten, _batchSize, _bucket_name_for_timing, 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 69BE4F91-2A99-3226-9E3E-5D878C24F87C' ]
+uuids:           [ 'x86_64: 104FE1FD-10F6-3ECA-AD74-B9C8B67B28F6' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/NearField.framework/Versions/A/NearField
 exports:         

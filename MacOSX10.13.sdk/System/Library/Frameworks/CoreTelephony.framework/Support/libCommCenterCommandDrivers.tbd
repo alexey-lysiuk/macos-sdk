@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2A751968-B4EE-31F4-8C99-B61E506113AF' ]
+uuids:           [ 'x86_64: E6A24C21-AA4C-31ED-9640-952CE50F602B' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreTelephony.framework/Support/libCommCenterCommandDrivers.dylib
 objc-constraint: none
@@ -100,9 +100,9 @@ exports:
                        __ZN16P2PCommandDriverC2ERKNSt3__110shared_ptrIK8RegistryEEPKcS8_N8dispatch5queueE, 
                        __ZN16P2PCommandDriverD0Ev, __ZN16P2PCommandDriverD1Ev, __ZN16P2PCommandDriverD2Ev, 
                        __ZN16SendShortMessageD0Ev, __ZN16SendShortMessageD1Ev, __ZN16SendShortMessageD2Ev, 
-                       __ZN17CallCommandDriver10startOTASPEv, __ZN17CallCommandDriver14endTheConfCallEv, 
-                       __ZN17CallCommandDriver17setCallCapabilityEPKcbb, __ZN17CallCommandDriver20shouldMTCallContinueEb, 
-                       __ZN17CallCommandDriver21computeClirValue_syncERK8CallInfo, 
+                       __ZN17CallCommandDriver10startOTASPEv, __ZN17CallCommandDriver13prepareToDialE8CallInfo, 
+                       __ZN17CallCommandDriver14endTheConfCallEv, __ZN17CallCommandDriver17setCallCapabilityEPKcbb, 
+                       __ZN17CallCommandDriver20shouldMTCallContinueEb, __ZN17CallCommandDriver21computeClirValue_syncERK8CallInfo, 
                        __ZN17CallCommandDriver22setAmbiguousMultiPartyEb, __ZN17CallCommandDriver8shutdownEN8dispatch13group_sessionE, 
                        __ZN17CallCommandDriver9bootstrapEN8dispatch13group_sessionE, 
                        __ZN17CallCommandDriverC2ERKNSt3__110shared_ptrIK8RegistryEEN8dispatch5queueEPKcSA_, 

@@ -545,7 +545,7 @@ NS_AVAILABLE(10_11, 8_0)
  @method minimumLinearTextureAlignmentForPixelFormat:
  @abstract Returns the minimum alignment required for offset and rowBytes when creating a linear texture. An error is thrown for queries with invalid pixel formats (depth, stencil, or compressed formats).
  */
-- (NSUInteger)minimumLinearTextureAlignmentForPixelFormat:(MTLPixelFormat)format NS_AVAILABLE(10_13, 10_0);
+- (NSUInteger)minimumLinearTextureAlignmentForPixelFormat:(MTLPixelFormat)format NS_AVAILABLE(10_13, 11_0);
 
 /*!
  @property maxThreadgroupMemoryLength

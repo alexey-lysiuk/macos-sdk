@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 0431F5BE-D062-38E2-AFBD-FC5F33E4C777', 'x86_64: AFE633ED-B0FC-3C8F-929B-4A61AEA753FA' ]
+uuids:           [ 'i386: 5434C7AB-A80A-3DD3-B0F1-4EFEA912B16B', 'x86_64: 1741FD6D-3DF2-3D2D-9B56-92A6AA0D1146' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreWiFi.framework/Versions/A/CoreWiFi
 exports:         

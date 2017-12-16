@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 66B65DC4-BF8F-38FF-AEC5-75BAD1A3CD68' ]
+uuids:           [ 'x86_64: E41CE5C8-127A-36FC-AC01-D7D7CC29665A' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ProofReader.framework/Versions/A/ProofReader
-current-version: 430
+current-version: 430.1
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _AltAndWrite, _AltOneToMultiChrCnv, _Alt_Str, _AsciiStrCmp, 

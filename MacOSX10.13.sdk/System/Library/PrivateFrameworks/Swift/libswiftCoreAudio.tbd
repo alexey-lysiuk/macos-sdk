@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 78E9D7BA-1F20-370F-9438-3749AEA80BAE' ]
+uuids:           [ 'x86_64: 13B9CD58-0B5E-3DF0-95D0-965D24281D89' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Swift/libswiftCoreAudio.dylib
 current-version: 900.8.49

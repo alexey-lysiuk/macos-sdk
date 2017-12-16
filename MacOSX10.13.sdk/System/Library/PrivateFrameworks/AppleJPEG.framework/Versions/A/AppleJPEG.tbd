@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: A79335BD-B17F-3340-B5AD-2230B83878C0', 'x86_64: DCAB2588-8879-3A64-87EA-EAA770BA1ADB' ]
+uuids:           [ 'i386: E87393BB-6140-389C-BF53-36B3985A56D3', 'x86_64: 8BBD5180-5BF9-33DB-8B91-974B1D0AECFB' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AppleJPEG.framework/Versions/A/AppleJPEG
 objc-constraint: none

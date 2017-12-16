@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E1980B84-D370-339F-B10E-CC4B86503213' ]
+uuids:           [ 'x86_64: 2E8BA756-D6F4-3F8A-B94A-15FE882ABCF4' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/KeyboardServices.framework/KeyboardServices
 objc-constraint: none

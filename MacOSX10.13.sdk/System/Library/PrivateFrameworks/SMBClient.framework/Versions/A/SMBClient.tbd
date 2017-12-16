@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 9F80C8DD-6BD9-3C2B-A282-5846731D5811', 'x86_64: 05BCCD1A-9487-31CD-A75A-29344CB0F808' ]
+uuids:           [ 'i386: 02815BD4-89DC-3915-B6A2-5E5330BBFAA3', 'x86_64: B5BC35B5-38D4-3332-8291-BEE29379A2B0' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SMBClient.framework/Versions/A/SMBClient
 objc-constraint: none

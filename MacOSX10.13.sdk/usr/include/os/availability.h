@@ -38,7 +38,8 @@
  * -mbridgeos-version-min
  */
 
-#if defined(__has_feature) && defined(__has_attribute) && __has_attribute(availability)
+#if defined(__has_feature) && defined(__has_attribute)
+ #if __has_attribute(availability)
 
     /*
      * API Introductions
@@ -87,16 +88,27 @@
      */
 
     #define API_UNAVAILABLE(...) __API_UNAVAILABLE_GET_MACRO(__VA_ARGS__,__API_UNAVAILABLE4,__API_UNAVAILABLE3,__API_UNAVAILABLE2,__API_UNAVAILABLE1)(__VA_ARGS__)
-#else
+ #else
 
     /* 
-     * Evaluate to nothing for compilers that don't support clang language extensions.
+     * Evaluate to nothing for compilers that don't support availability.
      */
    
      #define API_AVAILABLE(...)
      #define API_DEPRECATED(...)
      #define API_DEPRECATED_WITH_REPLACEMENT(...)
      #define API_UNAVAILABLE(...)
-#endif /* #if defined(__has_feature) && defined(__has_attribute) && __has_attribute(availability) */
+ #endif /* __has_attribute(availability) */
+#else
+
+    /* 
+     * Evaluate to nothing for compilers that don't support clang language extensions.
+     */
+    
+    #define __API_AVAILABLE(...)
+    #define __API_DEPRECATED(...)
+    #define __API_DEPRECATED_WITH_REPLACEMENT(...)
+    #define __API_UNAVAILABLE(...)
+#endif /* #if defined(__has_feature) && defined(__has_attribute) */
 
 #endif /* __OS_AVAILABILITY__ */

@@ -669,6 +669,45 @@ typedef NS_ENUM(NSInteger, AVPlayerActionAtItemEnd)
 
 @end
 
+/*!
+ @typedef AVPlayerHDRMode
+ @abstract  A bitfield type that specifies an HDR mode.
+ 
+ @constant	AVPlayerHDRModeHLG
+ @abstract	Indicates that HLG (Hybrid Log-Gamma) HDR mode is available.
+ @constant	AVPlayerHDRModeHDR10
+ @abstract	Indicates that HDR10 HDR mode is available.
+ @constant	AVPlayerHDRModeDolbyVision
+ @abstract	Indicates that Dolby Vision HDR mode is available.
+ */
+typedef NS_OPTIONS(NSInteger, AVPlayerHDRMode) {
+	AVPlayerHDRModeHLG				= 0x1,
+	AVPlayerHDRModeHDR10				= 0x2,
+	AVPlayerHDRModeDolbyVision		= 0x4,
+} API_AVAILABLE(ios(11.2), tvos(11.2)) API_UNAVAILABLE(macos, watchos);
+
+@interface AVPlayer (AVPlayerPlaybackCapabilities)
+
+/*!
+	 @property		availableHDRModes
+	 @abstract		An array of AVPlayerHDRMode values that indicates the HDR modes the device can play to an appropriate display.   A value of 0 indicates that no HDR modes are supported.
+ 
+	 @discussion
+		 This property indicates all of the HDR modes that the device can play.  Each value indicates that an appropriate HDR display is available for the specified HDR mode.  Additionally, the device must be capable of playing the specified HDR type.  This property does not indicate whether video contains HDR content, whether HDR video is currently playing, or whether video is playing on an HDR display.
+*/
+@property (class, nonatomic, readonly) AVPlayerHDRMode availableHDRModes API_AVAILABLE(ios(11.2), tvos(11.2)) API_UNAVAILABLE(macos, watchos);
+
+/*!
+	 @constant		AVPlayerAvailableHDRModesDidChangeNotification
+	 @abstract		A notification that fires whenever availableHDRModes changes.
+ 
+	 @discussion
+		 This notification fires when a value is added or removed from the list of availableHDRModes.  This can be caused by display connection/disconnection or resource changes.
+*/
+API_AVAILABLE(ios(11.2), tvos(11.2)) API_UNAVAILABLE(macos, watchos)
+AVF_EXPORT NSNotificationName const AVPlayerAvailableHDRModesDidChangeNotification;
+
+@end
 
 @interface AVPlayer (AVPlayerDeprecated)
 

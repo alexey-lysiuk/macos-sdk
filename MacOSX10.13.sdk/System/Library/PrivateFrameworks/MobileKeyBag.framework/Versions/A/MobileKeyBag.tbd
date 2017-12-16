@@ -1,13 +1,13 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7F46C861-1CF9-3134-8493-276AE6EC6CC9' ]
+uuids:           [ 'x86_64: 170AD2F3-9D3E-3FF6-BA02-60C48C1E6724' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MobileKeyBag.framework/Versions/A/MobileKeyBag
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _MKBDeviceGetGracePeriod, _MKBDeviceLockAssertion, _MKBDeviceSetGracePeriod, 
-                       _MKBDeviceUnlockedSinceBoot, _MKBGetDeviceConfigurations, 
+                       _MKBDeviceUnlockedSinceBoot, _MKBFilevaultStashKek, _MKBGetDeviceConfigurations, 
                        _MKBGetDeviceLockState, _MKBGetDeviceLockStateIndirect, _MKBGetDeviceLockStateInfo, 
                        _MKBKeyBagChangeSystemSecret, _MKBKeyBagCopySytemSecretBlob, 
                        _MKBKeyBagCreateWithData, _MKBKeyBagGetAKSHandle, _MKBKeyBagKeyStashCommit, 

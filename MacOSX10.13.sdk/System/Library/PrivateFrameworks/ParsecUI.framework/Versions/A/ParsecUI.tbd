@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A2564F32-42BF-399D-9A88-8D99954896CB' ]
+uuids:           [ 'x86_64: 4F8281F2-E73D-303B-82C2-A56BF2E3EF81' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ParsecUI.framework/Versions/A/ParsecUI
-current-version: 1191.1
+current-version: 1191.2.6
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CeilToPixel, _ClientInfo, _CreateCredential, _DefaultStocksCountryCode, 

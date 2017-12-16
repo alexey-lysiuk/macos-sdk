@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: FF6D71DC-232F-3724-B950-8428AB9E16F9', 'x86_64: 521DE891-FBF2-38CA-B080-F21666D688BF' ]
+uuids:           [ 'i386: DCC3D3DD-2357-358D-8A71-3DD510D881B2', 'x86_64: 76616C87-DAFB-3B53-A8DD-BCDC12F4DEB6' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/ScreenSaver.framework/Versions/A/ScreenSaver
 exports:         
@@ -13,8 +13,7 @@ exports:
                        _ScreenSaverEngine._atLoginWindow, _ScreenSaverEngine._background, 
                        _ScreenSaverEngine._blackSaver, _ScreenSaverEngine._commandLineModuleName, 
                        _ScreenSaverEngine._cornerList, _ScreenSaverEngine._cornerListCnt, 
-                       _ScreenSaverEngine._debug, _ScreenSaverEngine._debugLogging, 
-                       _ScreenSaverEngine._delegate, _ScreenSaverEngine._endingMousePoint, 
+                       _ScreenSaverEngine._debug, _ScreenSaverEngine._delegate, _ScreenSaverEngine._endingMousePoint, 
                        _ScreenSaverEngine._fadeToken, _ScreenSaverEngine._faded, 
                        _ScreenSaverEngine._isRunning, _ScreenSaverEngine._keyEventTerminated, 
                        _ScreenSaverEngine._mainOnly, _ScreenSaverEngine._module, 
@@ -47,26 +46,25 @@ exports:
                        _ScreenSaverPhotoChooser._iLifeLockedAndLoaded, _ScreenSaverPhotoChooser._iPhotoMediaManager, 
                        _ScreenSaverPhotoChooser._latestApertureProjects, _ScreenSaverPhotoChooser._latestPhotosEvents, 
                        _ScreenSaverPhotoChooser._latestPhotosProjects, _ScreenSaverPhotoChooser._latestiPhotoEvents, 
-                       _ScreenSaverPhotoChooser._mediaBrowserView, _ScreenSaverPhotoChooser._mediaChooserWindow, 
-                       _ScreenSaverPhotoChooser._photoStreamDetected, _ScreenSaverPhotoChooser._photosMediaManager, 
-                       _ScreenSaverPhotoChooser._selectedMediaGroupID, _ScreenSaverPhotoChooser._sourceMenuLoadedBlock, 
-                       _ScreenSaverPicturesFolderModule._url, _ScreenSaverPicturesFolderModule._uuid, 
-                       _ScreenSaverWindow._trectTags ]
+                       _ScreenSaverPhotoChooser._mediaBrowserView, _ScreenSaverPhotoChooser._mediaBrowserViewTLOArray, 
+                       _ScreenSaverPhotoChooser._mediaChooserWindow, _ScreenSaverPhotoChooser._photoStreamDetected, 
+                       _ScreenSaverPhotoChooser._photosMediaManager, _ScreenSaverPhotoChooser._selectedMediaGroupID, 
+                       _ScreenSaverPhotoChooser._sourceMenuLoadedBlock, _ScreenSaverPicturesFolderModule._url, 
+                       _ScreenSaverPicturesFolderModule._uuid, _ScreenSaverWindow._trectTags ]
   - archs:           [ i386, x86_64 ]
-    symbols:         [ _LogCategory_Default, _LogCategory_Display, _LogCategory_Engine, 
-                       _LogCategory_Modules, _PictureModuleSort, _SSCenterRectInRect, 
-                       _SSDBackground, _SSDBlackSaver, _SSDDebugLogging, _SSDEngineDimTime, 
-                       _SSDEngineLWModulePath, _SSDEngineModuleDict, _SSDEngineModuleName, 
-                       _SSDEngineModulePath, _SSDHotCorners, _SSDLastNonRandomModuleDict, 
-                       _SSDLastNonRandomModuleName, _SSDMainScreenOnly, _SSDPreviousModuleDict, 
-                       _SSDPreviousModuleName, _SSDShowClock, _SSDUserSelectedPictureFolders, 
-                       _SSGetScaleFactor, _SSInitRandom, _SSInitRandomWithSeed, _SSIsAppleSignedModule, 
-                       _SSLogDispatch, _SSModuleIsCompatibleArch, _SSPreflightModuleLoadForPath, 
+    symbols:         [ _OSLogForCategory, _PictureModuleSort, _SSCenterRectInRect, 
+                       _SSDBackground, _SSDBlackSaver, _SSDEngineDimTime, _SSDEngineLWModulePath, 
+                       _SSDEngineModuleDict, _SSDEngineModuleName, _SSDEngineModulePath, 
+                       _SSDHotCorners, _SSDLastNonRandomModuleDict, _SSDLastNonRandomModuleName, 
+                       _SSDMainScreenOnly, _SSDPreviousModuleDict, _SSDPreviousModuleName, 
+                       _SSDShowClock, _SSDUserSelectedPictureFolders, _SSGetScaleFactor, 
+                       _SSInitRandom, _SSInitRandomWithSeed, _SSIsAppleSignedModule, 
+                       _SSModuleIsCompatibleArch, _SSPreflightModuleLoadForPath, 
                        _SSRandomFloat, _SSRandomFloatBetween, _SSRandomInt, _SSRandomPointForSizeWithinBounds, 
                        _SSRunningAsNormalUser, _SSScreenIsMirrored, _SSScreenSaverWindowLevel, 
                        _SSSetCrashReporterSignature, _SSShouldUseAlernateDefault, 
-                       _SSStringForSSType, _SSSystemScreenSaversPath, _SSTypeForString, 
-                       _gCurrentMessage, _gMessageList, _gScreenSaverEngine ]
+                       _SSSystemScreenSaversPath, _gCurrentMessage, _gMessageList, 
+                       _gScreenSaverEngine ]
     objc-classes:    [ _ScreenSaverClockView, _ScreenSaverClockWindow, _ScreenSaverController, 
                        _ScreenSaverDefaults, _ScreenSaverDefaultsManager, _ScreenSaverEngine, 
                        _ScreenSaverImagesModule, _ScreenSaverMessage, _ScreenSaverMessageTracerLogger, 

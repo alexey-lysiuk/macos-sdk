@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C1AD0DB0-B127-3AEB-B6A4-2004E5CAFBD0' ]
+uuids:           [ 'x86_64: 117C891A-3115-35CA-B666-F0A83C604489' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MailCore.framework/Versions/A/MailCore
-current-version: 3445.4.7
+current-version: 3445.5.18
 exports:         
   - archs:           [ x86_64 ]
     allowable-clients: [ CoreSuggestionsTests, DebugBundle, EmailAuthenticationPlugin, 
@@ -81,10 +81,11 @@ exports:
                        _MCLogDiagnostics, _MCLogSubsystem, _MCMailBundleIdentifier, 
                        _MCMailDataclassPropertyIMAPAuthenticationScheme, _MCMailDataclassPropertyLegacyUID, 
                        _MCMailDataclassPropertySMTPAuthenticationScheme, _MCMailErrorDomain, 
-                       _MCMailboxDidEndSyncNotification, _MCMailboxDidStartSyncNotification, 
-                       _MCMailboxDoubleSuffixTracerIdentifier, _MCMessageDataSourceMessagesCompactedNotification, 
-                       _MCMessageDataSourceMessagesDeletedNotification, _MCMessageDataSourceMessagesReadNotification, 
-                       _MCMessageScheme, _MCMessageURLPrefix, _MCMigrationAttachmentCountIdentifier, 
+                       _MCMailErrorInvalidSigningIdentityTrustKey, _MCMailboxDidEndSyncNotification, 
+                       _MCMailboxDidStartSyncNotification, _MCMailboxDoubleSuffixTracerIdentifier, 
+                       _MCMessageDataSourceMessagesCompactedNotification, _MCMessageDataSourceMessagesDeletedNotification, 
+                       _MCMessageDataSourceMessagesReadNotification, _MCMessageScheme, 
+                       _MCMessageURLPrefix, _MCMigrationAttachmentCountIdentifier, 
                        _MCMigrationEmlxCountIdentifier, _MCMigrationLostEmlxCountIdentifier, 
                        _MCMigrationMessageCountIdentifier, _MCMimeCompleteTypeAttachment, 
                        _MCMimeCompleteTypeCompositeImage, _MCMimeDispositionAttachment, 

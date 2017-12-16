@@ -34,10 +34,12 @@
 .Op Ar path-to-file
 .\"
 .It Nm Cm symbolicate
+.Op Fl d
 .Ar path-to-file
 .\"
 .It Nm Cm stat
 .Op Fl v
+.Op Fl s
 .Ar path-to-file
 .\"
 .El
@@ -109,15 +111,20 @@ Limit the data in tailspin file to that of the last
 Save tailspin file without symbolicating.
 .El
 .\" SYMBOLICATE
-.It Cm symbolicate Ar path-to-file
+.It Cm symbolicate Oo Fl d Oc path-to-file
 Symbolicate the tailspin report at
 .Ar path-to-file .
+If not used with -d, needs to be run on the same device and
+build on which the tailspin file was saved .
 .\" STAT
-.It Cm stat Oo Fl v Oc Ar path-to-file
+.It Cm stat Oo Fl v Oc Oo Fl s Oc Ar path-to-file
 Print aggregate information about the data in the tailspin file.
 .Bl -tag -width Ds
 .It Fl v
 Print layout information of tailspin file.
+.It Fl s
+Sort ktrace statistics by frequency of trace class/subclass. Default sorting is
+by class/subclass code.
 .El
 .El
 .Sh FILTER DESCRIPTIONS

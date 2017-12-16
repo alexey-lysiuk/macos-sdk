@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E91B0353-A6D2-3819-BAD0-F8C7C0DBE67E' ]
+uuids:           [ 'x86_64: 2752CED1-9173-3188-8408-F235D8533D0F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Symptoms.framework/Frameworks/SymptomPresentationLite.framework/Versions/A/SymptomPresentationLite
-current-version: 820.20.3
+current-version: 820.30.7
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _kPerformanceFlowAvgUsecsEstabTime, _kPerformanceFlowConnAttempts, 

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 2AF1ACB9-424B-38FD-B15C-06AB6D2BAF4F', 'x86_64: 39EA833C-2FAD-33B9-BB99-7BDCBCE4B08A' ]
+uuids:           [ 'i386: 16D13C1E-B4A1-3AF0-A7A3-B3AC344D25F6', 'x86_64: ADBE7A1B-0402-369C-A6F3-494E8CACD619' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox
-current-version: 909.1
+current-version: 910.4
 parent-umbrella: Carbon
 exports:         
   - archs:           [ i386 ]

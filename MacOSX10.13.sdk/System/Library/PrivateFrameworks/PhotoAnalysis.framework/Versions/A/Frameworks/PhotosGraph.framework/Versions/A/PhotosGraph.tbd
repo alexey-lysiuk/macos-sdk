@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5FB54A3D-B9A6-3137-A79F-4A563CD9BB4F' ]
+uuids:           [ 'x86_64: 4FAC8104-9A48-3E8E-8267-2D359F95BBB8' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Versions/A/Frameworks/PhotosGraph.framework/Versions/A/PhotosGraph
 objc-constraint: none

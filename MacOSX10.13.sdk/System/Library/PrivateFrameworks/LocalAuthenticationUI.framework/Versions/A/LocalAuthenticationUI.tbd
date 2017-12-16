@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 10D24172-9265-3920-BF6E-6B96C35E25BC' ]
+uuids:           [ 'x86_64: 27884EE6-BFC1-378F-9B71-20BF8644398D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/LocalAuthenticationUI.framework/Versions/A/LocalAuthenticationUI
-current-version: 425.20.36
+current-version: 425.30.30
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _LocalAuthenticationSheetTouchBarItemIdentifier, _LocalAuthenticationUIVersionNumber, 

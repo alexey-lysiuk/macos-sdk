@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4F2E75AA-86E7-31DA-859A-189EC6123932' ]
+uuids:           [ 'x86_64: D77899A9-B688-34F6-A520-1DDA39ABC4BC' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CalendarUI.framework/Versions/A/CalendarUI
-current-version: 462
+current-version: 462.2.3
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CALGroupPboardType, _CALLocationPboardType, _CALResourcePboardType, 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: E665897F-52FC-33BC-A1CB-9150E9B6A0B7', 'x86_64: 9E54D9D2-FCBE-39EF-BAD5-4C2C41DA0D36' ]
+uuids:           [ 'i386: 4B76752A-36A0-3175-87C7-CB42E33CCB5A', 'x86_64: C807D3F0-FE20-3FC0-8D61-306477ABEBC4' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/TCC.framework/Versions/A/TCC
 objc-constraint: none

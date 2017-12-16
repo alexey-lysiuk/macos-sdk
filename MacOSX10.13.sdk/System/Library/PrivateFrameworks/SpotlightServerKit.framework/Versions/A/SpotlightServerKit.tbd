@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 5B01E5DB-2623-36EB-8061-6D8F112CD387', 'x86_64: B1C79762-00CE-399F-BB6F-68F199145ADD' ]
+uuids:           [ 'i386: E8E58000-466B-3F67-9E4A-A04EA546A6AA', 'x86_64: A693279E-D793-332E-A699-E4E547A2710D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SpotlightServerKit.framework/Versions/A/SpotlightServerKit
-current-version: 1191.1
+current-version: 1191.2.6
 exports:         
   - archs:           [ x86_64 ]
     objc-ivars:      [ _MDSInternalToken._tokenID, _MDSMachPortNotificationRecord._aSelector, 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B69950F8-A5F0-389B-93C8-47DC5EF9169A' ]
+uuids:           [ 'x86_64: 7047A7A5-ED12-3442-A07D-85D03DB1A817' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AutoLoop.framework/Versions/A/AutoLoop
 objc-constraint: none

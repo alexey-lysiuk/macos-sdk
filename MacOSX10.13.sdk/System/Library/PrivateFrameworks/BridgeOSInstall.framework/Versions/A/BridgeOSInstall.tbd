@@ -1,25 +1,29 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AA8E3A96-B3C2-329C-80AA-CE28B01BC643' ]
+uuids:           [ 'x86_64: D5ADD3D3-6029-380F-A5C5-37E9A7609AD6' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/BridgeOSInstall.framework/Versions/A/BridgeOSInstall
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
-    symbols:         [ _BOSErrorDomain, _BOSLogObject, _BOSRequestClientContextKeyBrainBundleIdentifier, 
-                       _BOSRequestClientContextKeyBrainBundleVersion, _BOSRequestClientContextKeyUpdateBundleIdentifier, 
-                       _BOSRequestClientContextKeyUpdateBundleVersion, _BOSRequestControlOperationRequestContextClientKey, 
+    symbols:         [ _BOSErrorDomain, _BOSErrorIsNetworkingRelated, _BOSLogObject, 
+                       _BOSRequestClientContextKeyBrainBundleIdentifier, _BOSRequestClientContextKeyBrainBundleVersion, 
+                       _BOSRequestClientContextKeyUpdateBundleIdentifier, _BOSRequestClientContextKeyUpdateBundleVersion, 
+                       _BOSRequestControlOperationRequestContextClientKey, _BOSShouldLogToInstallLog, 
+                       _BOSShouldLogToStderr, _BridgeOSInstallClientBootRecoveryAssistant, 
                        _BridgeOSInstallClientCLI, _BridgeOSInstallClientInstallAssistant, 
                        _BridgeOSInstallClientSoftwareUpdate, _BridgeOSInstallClientUnitTest, 
                        _BridgeOSInstallOptionCleanInstall, _BridgeOSInstallOptionEnableSSO, 
                        _BridgeOSInstallOptionLoopbackEnabled, _BridgeOSInstallOptionShowUI, 
                        _BridgeOSInstallOptionTestModeEnabled, _BridgeOSInstallStatusKeyEstimatedTimeRemaining, 
-                       _BridgeOSInstallStatusKeyPercentComplete, _logToStderr, _standardErrorDateFormatter ]
-    objc-classes:    [ _BOSBrainBundle, _BOSCleanupOperation, _BOSConfigureRequestOperation, 
-                       _BOSError, _BOSOperation, _BOSOperationController, _BOSPackageAnalyzer, 
-                       _BOSPreferences, _BOSQueryCurrentStateOperation, _BOSRequest, 
-                       _BOSRequestControlOperation, _BOSSUCApplyOperation, _BOSSUCCancelOperation, 
-                       _BOSSUCOperation, _BOSSUCPreflightOperation, _BOSSUCPrepareOperation, 
-                       _BOSSUCPurgeOperation, _BOSSUCTransferBrainOperation, _BOSSUCTransferBundleOperation, 
-                       _BOSUpdateBundle, _BOSUtilities, _BridgeOSInstallController ]
+                       _BridgeOSInstallStatusKeyPercentComplete, _standardErrorDateFormatter ]
+    objc-classes:    [ _BOSBrainBundle, _BOSConfigureRequestOperation, _BOSDevice, 
+                       _BOSError, _BOSNVRAM, _BOSOperation, _BOSOperationController, 
+                       _BOSPackageAnalyzer, _BOSPredicateUpdateProductManager, _BOSPreferences, 
+                       _BOSQueryCurrentStateOperation, _BOSRequest, _BOSRequestControlOperation, 
+                       _BOSSUCApplyOperation, _BOSSUCCancelOperation, _BOSSUCOperation, 
+                       _BOSSUCPreflightOperation, _BOSSUCPrepareOperation, _BOSSUCPurgeOperation, 
+                       _BOSSUCTransferBrainOperation, _BOSSUCTransferBundleOperation, 
+                       _BOSTelemetry, _BOSUpdateBundle, _BOSUtilities, _BridgeOSInstallController, 
+                       _BridgeOSInstallDownloader ]
 ...

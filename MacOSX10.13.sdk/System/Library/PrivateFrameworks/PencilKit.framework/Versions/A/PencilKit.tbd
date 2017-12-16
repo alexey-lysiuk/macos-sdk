@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6570F113-8063-3690-BBD0-E08D57DE2840' ]
+uuids:           [ 'x86_64: 185BD8CF-FBE1-3751-AF60-9FD70FD0589C' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PencilKit.framework/Versions/A/PencilKit
 objc-constraint: none

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1E291D70-8A4C-30C8-802F-5A241E36C54C' ]
+uuids:           [ 'x86_64: EEFA0648-4DDD-3A0C-92B4-AD1787902373' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Swift/libswiftQuartzCore.dylib
 current-version: 900.8.49

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: FF27DFD5-EEF0-3045-87D0-28F746007FB2', 'x86_64: 7974762C-DEF7-3056-9856-9821C27846DB' ]
+uuids:           [ 'i386: 0D8A61F8-2D7D-31F1-93AB-0597D80CCA85', 'x86_64: 8A53EFE1-AFCA-3676-BEE1-FA5ED9F0E222' ]
 platform:        macosx
 install-name:    /usr/lib/system/libcorecrypto.dylib
-current-version: 562
+current-version: 562.30.10
 objc-constraint: none
 parent-umbrella: System
 exports:         

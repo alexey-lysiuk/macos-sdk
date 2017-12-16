@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 0361C388-83FE-34D7-8F04-F59CFB6FA146', 'x86_64: 9DBE71C0-BF62-3E8E-9465-C0B45669B047' ]
+uuids:           [ 'i386: 2210A987-9208-3E20-8425-90180C57DE8C', 'x86_64: 792593BC-21C7-3E0C-929E-067CD725FCBD' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DataDetectorsCore.framework/Versions/A/DataDetectorsCore
-current-version: 590
+current-version: 590.3
 exports:         
   - archs:           [ i386 ]
     objc-classes:    [ _DDAbstractType, _DDBinderInfo, _DDCompilerState, _DDDictionaryError, 
@@ -117,10 +117,11 @@ exports:
                        _DDSourceClear, _DDSourceGetClientSignature, _DDSourcePushFile, 
                        _DDSourcePushSharedContent, _DDSourcePushSharedData, _DDSourcePushSharedDataWithSignature, 
                        _DDSourceSetStoragePath, _DDStampContextDestroy, _DDStampContextFillInWithTypeString, 
-                       _DDSuffixCreateForString, _DDURLWithPotentiallyInvalidURLString, 
-                       _DDWriteFileAtPath, _DataDetectorsProximitySort, __DDDumpTrie, 
-                       __DDDumpTrieCells, __ZN17dd_icu_3_6__5_0_2eqERKNS_11StringPieceES2_, 
-                       _decalogEnable, _kDDHomeFAXLabel, _kDDHomeLabel, _kDDInstantMessageServiceAIM, 
+                       _DDSuffixCreateForString, _DDTrieLookupNormalizedStringCopy, 
+                       _DDURLWithPotentiallyInvalidURLString, _DDWriteFileAtPath, 
+                       _DataDetectorsProximitySort, __DDDumpTrie, __DDDumpTrieCells, 
+                       __ZN17dd_icu_3_6__5_0_2eqERKNS_11StringPieceES2_, _decalogEnable, 
+                       _kDDHomeFAXLabel, _kDDHomeLabel, _kDDInstantMessageServiceAIM, 
                        _kDDInstantMessageServiceFacebook, _kDDInstantMessageServiceGaduGadu, 
                        _kDDInstantMessageServiceGoogleTalk, _kDDInstantMessageServiceICQ, 
                        _kDDInstantMessageServiceJabber, _kDDInstantMessageServiceMSN, 

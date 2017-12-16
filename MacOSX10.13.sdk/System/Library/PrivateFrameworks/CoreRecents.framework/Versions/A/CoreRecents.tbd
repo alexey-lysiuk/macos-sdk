@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2AD05679-7B49-3A9D-AD36-E5E947D8B0BD' ]
+uuids:           [ 'x86_64: 8FCEC07D-FF61-3049-BEBE-D18AA9449802' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreRecents.framework/Versions/A/CoreRecents
 exports:         

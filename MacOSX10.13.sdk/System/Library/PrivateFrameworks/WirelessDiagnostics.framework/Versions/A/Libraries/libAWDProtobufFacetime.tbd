@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 93FEE104-F3E3-3A28-839E-F61DFA302E44' ]
+uuids:           [ 'x86_64: 5330F8BF-683D-386B-A2FE-408D63324AB4' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/WirelessDiagnostics.framework/Versions/A/Libraries/libAWDProtobufFacetime.dylib
 objc-constraint: none
@@ -326,9 +326,12 @@ exports:
                        __ZN3awd7metrics28FaceTimeCallAggregatedReport20kSegmentsFieldNumberE, 
                        __ZN3awd7metrics28FaceTimeCallAggregatedReport21CheckTypeAndMergeFromERKN6google8protobuf11MessageLiteE, 
                        __ZN3awd7metrics28FaceTimeCallAggregatedReport21InitAsDefaultInstanceEv, 
+                       __ZN3awd7metrics28FaceTimeCallAggregatedReport21kMediaTypeFieldNumberE, 
                        __ZN3awd7metrics28FaceTimeCallAggregatedReport21kTimestampFieldNumberE, 
                        __ZN3awd7metrics28FaceTimeCallAggregatedReport25kTransportTypeFieldNumberE, 
                        __ZN3awd7metrics28FaceTimeCallAggregatedReport27MergePartialFromCodedStreamEPN6google8protobuf2io16CodedInputStreamE, 
+                       __ZN3awd7metrics28FaceTimeCallAggregatedReport29kGeneratedFileSizeFieldNumberE, 
+                       __ZN3awd7metrics28FaceTimeCallAggregatedReport30kFileGenerateResultFieldNumberE, 
                        __ZN3awd7metrics28FaceTimeCallAggregatedReport30kSwitchIntoDupCountFieldNumberE, 
                        __ZN3awd7metrics28FaceTimeCallAggregatedReport33kAdaptiveLearningStateFieldNumberE, 
                        __ZN3awd7metrics28FaceTimeCallAggregatedReport4SwapEPS1_, 

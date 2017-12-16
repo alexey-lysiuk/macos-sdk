@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 5B9FAEF5-EB02-3B2A-AC6E-1E80AA59A7F1', 'x86_64: 5C953AF5-746A-3049-A2BC-901D6C7B583F' ]
+uuids:           [ 'i386: 9AD547F6-ED5A-3AC8-BF4C-811C69801CDF', 'x86_64: D4C967BA-92C6-3BAB-AFB5-59F98B35F921' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SignpostNotification.framework/Versions/A/SignpostNotification
 exports:         

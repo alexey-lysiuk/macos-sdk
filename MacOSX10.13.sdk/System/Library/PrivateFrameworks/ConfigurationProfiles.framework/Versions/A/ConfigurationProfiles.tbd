@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CD3DD7E2-706B-38A9-8D82-EF43DD9C1A77' ]
+uuids:           [ 'x86_64: B096D8C0-F291-3278-B06B-9AE3BAFEDBB1' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ConfigurationProfiles.framework/Versions/A/ConfigurationProfiles
 exports:         
@@ -14,8 +14,8 @@ exports:
                        _CPGetActivationRecordTrigger, _CPGetCachedActivationRecord, 
                        _CPGetInstalledConfigurationInfo, _CPHasActivationRecord, 
                        _CPInstallActivationProfile, _CPInstallActivationProfileFromSetupAssistant, 
-                       _CPInstalledProfilesDidChangeNotification, _CPInstalledProfilesNeedsLogout, 
-                       _CPInstalledProvisioningProfilesApplicationIdentifierKey, 
+                       _CPInstallActivationProfilePriv, _CPInstalledProfilesDidChangeNotification, 
+                       _CPInstalledProfilesNeedsLogout, _CPInstalledProvisioningProfilesApplicationIdentifierKey, 
                        _CPInstalledProvisioningProfilesDataKey, _CPInstalledProvisioningProfilesDictionaryApplicationIdentifierKey, 
                        _CPInstalledProvisioningProfilesDictionaryApplicationIdentifierPrefixKey, 
                        _CPInstalledProvisioningProfilesDictionaryCertDataKey, _CPInstalledProvisioningProfilesDictionaryCertsInfoKey, 
@@ -38,17 +38,25 @@ exports:
                        _CPProfilePreferencesChangedNotification, _CPProfileScreenLockChangedNotification, 
                        _CPSetActivationProfileState, _CPSetPrimaryAccountGUID, _CPSetSetupAssistantUserInfo, 
                        _CPValidateProvisioningDictionaries, _CP_ADCertificatePayloadUsesRPC, 
-                       _CP_AreMajorOSUpdatesManaged, _CP_CaspianProfilesAreInstalled, 
+                       _CP_AreMajorOSUpdatesManaged, _CP_CacheCloudConfigRecord, 
+                       _CP_CaspianProfilesAreInstalled, _CP_CloudConfigHasActivationRecordHintFlagFileLocation, 
+                       _CP_CloudConfigNoActivationRecordHintFlagFileLocation, _CP_CloudConfigRecordFoundCacheFileLocation, 
+                       _CP_CloudConfigRecordInstalledHintFlagFileLocation, _CP_CloudConfigRecordNotFoundHintFlagFileLocation, 
+                       _CP_CloudConfigRecordObtainedHintFlagFileLocation, _CP_CloudConfigSetupConfigurationFileLocation, 
+                       _CP_CloudConfigUSetupUserFileLocation, _CP_CloudConfigUserSkippedEnrollmentFlagFileLocation, 
                        _CP_DeviceIsEnrolledViaDEP, _CP_ExpandPayloadVariables, _CP_ExpandPayloadVariablesDidChange, 
                        _CP_FDEGetPRKEscrowRedirectionInfo, _CP_FDEPRKEscrowRedirectionInfoForEFI, 
                        _CP_FDESavePRKForEscrow, _CP_GetCertificateSignerSummary, 
                        _CP_GetPathForPID, _CP_GetXPCSuccess, _CP_ImportCertificatesForPayload, 
-                       _CP_ManagedClientLoginAgentCheckin, _CP_RemoveProfilesWithXsanPayloads, 
-                       _CP_SetXPCSuccess, _CP_TransferXPCSuccess, _CP_UnlockUserAccount, 
-                       _CloudConfig_SetUserMustEnroll, _CloudConfig_ShouldEnroll, 
-                       _DisableMCXDebug, _GetODProfiles, _GetUserDataForODProfile, 
-                       _HasODProfiles, _IsBZip2Compressed, _LoadMCXToolsInterface, 
-                       _ODDataToProfileInfo, _ProvisioningProfilesAreInstalled ]
+                       _CP_ManagedClientLoginAgentCheckin, _CP_PasscodePoliciesAreInstalledHintFlagFileLocation, 
+                       _CP_ProfileInstalledFromUserApprovedManagementService, _CP_ProfilesAreInstalledHintFlagFileLocation, 
+                       _CP_ReadSecureSettingsForDevice, _CP_ReadSecureSettingsForUser, 
+                       _CP_RemoveProfilesWithXsanPayloads, _CP_SetCloudConfigInstalledHintInfo, 
+                       _CP_SetCloudConfigSetupUserInfo, _CP_SetXPCSuccess, _CP_StartupProfileChangeNeedsRestartHintFlagFileLocation, 
+                       _CP_TransferXPCSuccess, _CP_UnlockUserAccount, _CloudConfig_SetUserMustEnroll, 
+                       _CloudConfig_ShouldEnroll, _DisableMCXDebug, _GetODProfiles, 
+                       _GetUserDataForODProfile, _HasODProfiles, _IsBZip2Compressed, 
+                       _LoadMCXToolsInterface, _ODDataToProfileInfo, _ProvisioningProfilesAreInstalled ]
     objc-classes:    [ _CPIdentificationPayloads, _CPMCXTools, _CPProfile, _CPProfileAdditionalWarningsHelper, 
                        _CPProfileDomainService, _CPProfileDomainServiceConnectionHandler, 
                        _CPProfileManager, _CPProfileMissingFieldHelper, _CPProvisioningManager, 

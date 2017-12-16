@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 05D30876-DF1F-31C2-9943-BC48E92E50B2' ]
+uuids:           [ 'x86_64: B2269A96-E8C8-3F20-A516-23FE63F19052' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ScreenReader.framework/Versions/A/Frameworks/ScreenReaderOutput.framework/Versions/A/ScreenReaderOutput
 current-version: 390
@@ -141,6 +141,7 @@ exports:
                        _SCROBrailleTranslationManager._auxTableSupportsEightDotBraille, 
                        _SCROBrailleTranslationManager._auxTranslator, _SCROBrailleTranslationManager._auxTranslatorBundle, 
                        _SCROBrailleTranslationManager._contentLock, _SCROBrailleTranslationManager._nemethTranslator, 
+                       _SCROBrailleTranslationManager._primaryTranslationTableIdentifier, 
                        _SCROBrailleTranslationManager._tableSupportsContractedBraille, 
                        _SCROBrailleTranslationManager._tableSupportsEightDotBraille, 
                        _SCROBrailleTranslationManager._translator, _SCROBrailleTranslationManager._translatorBundle, 

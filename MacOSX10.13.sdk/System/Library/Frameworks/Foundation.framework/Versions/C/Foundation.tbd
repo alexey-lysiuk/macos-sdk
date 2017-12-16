@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 00C5260F-DD85-340F-BBF0-2913EFC92036', 'x86_64: 70D20A4F-74BC-34D6-8451-DF943C5AA42F' ]
+uuids:           [ 'i386: 98594CDE-FB9D-38B5-8831-7D63468F0EB8', 'x86_64: 0AB27978-35BA-34EF-B65C-1436B02D022B' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation
-current-version: 1443.14
+current-version: 1450.15
 compatibility-version: 300
 exports:         
   - archs:           [ i386 ]

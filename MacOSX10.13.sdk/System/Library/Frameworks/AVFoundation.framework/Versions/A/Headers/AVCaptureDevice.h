@@ -51,6 +51,7 @@ AVF_EXPORT NSString *const AVCaptureDeviceSubjectAreaDidChangeNotification NS_AV
 
 @class AVCaptureDeviceFormat;
 @class AVCaptureDeviceInputSource;
+@class AVCaptureSystemPressureState;
 @class AVCaptureDeviceInternal;
 
 /*!
@@ -459,11 +460,12 @@ AVF_EXPORT AVCaptureDeviceType const AVCaptureDeviceTypeBuiltInTelephotoCamera N
 
 /*!
  @constant AVCaptureDeviceTypeBuiltInDualCamera
-    A device that consists of two fixed focal length cameras, one wide and one telephoto. Note that devices of this type may only be discovered using an AVCaptureDeviceDiscoverySession.
+    A device that consists of two fixed focal length cameras, one wide and one telephoto. Note that devices of this type may only be discovered using an AVCaptureDeviceDiscoverySession or -[AVCaptureDevice defaultDeviceWithDeviceType:mediaType:position:].
  
-    A device of this device type supports the following new features:
+    A device of this device type supports the following features:
     - Auto switching from one camera to the other when zoom factor, light level, and focus position allow this.
     - Higher quality zoom for still captures by fusing images from both cameras.
+    - Depth data delivery by measuring the disparity of matched features between the wide and telephoto cameras.
  
     A device of this device type does not support the following features:
     - AVCaptureExposureModeCustom and manual exposure bracketing.
@@ -473,6 +475,12 @@ AVF_EXPORT AVCaptureDeviceType const AVCaptureDeviceTypeBuiltInTelephotoCamera N
     Even when locked, exposure duration, ISO, aperture, white balance gains, or lens position may change when the device switches from one camera to the other. The overall exposure, white balance, and focus position however should be consistent.
  */
 AVF_EXPORT AVCaptureDeviceType const AVCaptureDeviceTypeBuiltInDualCamera NS_AVAILABLE_IOS(10_2) __TVOS_PROHIBITED;
+
+/*!
+ @constant AVCaptureDeviceTypeBuiltInTrueDepthCamera
+    A device that consists of two cameras, one YUV and one Infrared. The infrared camera provides high quality depth information that is synchronized and perspective corrected to frames produced by the YUV camera. While the resolution of the depth data and YUV frames may differ, their field of view and aspect ratio always match. Note that devices of this type may only be discovered using an AVCaptureDeviceDiscoverySession or -[AVCaptureDevice defaultDeviceWithDeviceType:mediaType:position:].
+ */
+AVF_EXPORT AVCaptureDeviceType const AVCaptureDeviceTypeBuiltInTrueDepthCamera NS_AVAILABLE_IOS(11_1) __TVOS_PROHIBITED;
 
 /*!
  @constant AVCaptureDeviceTypeBuiltInDuoCamera
@@ -511,6 +519,21 @@ AVF_EXPORT AVCaptureDeviceType const AVCaptureDeviceTypeBuiltInDuoCamera NS_DEPR
     This method returns the default device of the given combination of device type, media type, and position currently available on the system.
  */
 + (nullable AVCaptureDevice *)defaultDeviceWithDeviceType:(AVCaptureDeviceType)deviceType mediaType:(nullable AVMediaType)mediaType position:(AVCaptureDevicePosition)position NS_AVAILABLE_IOS(10_0) __TVOS_PROHIBITED;
+
+@end
+
+
+@interface AVCaptureDevice (AVCaptureDeviceSystemPressure)
+
+/*!
+ @property systemPressureState
+ @abstract
+    A key-value observable property indicating the capture device's current system pressure state.
+ 
+ @discussion
+    This property indicates whether the capture device is currently subject to an elevated system pressure condition. When system pressure reaches AVCaptureSystemPressureLevelShutdown, the capture device cannot continue to provide input, so the AVCaptureSession becomes interrupted until the pressured state abates. System pressure can be effectively mitigated by lowering the device's activeVideoMinFrameDuration in response to changes in the systemPressureState. Clients are encouraged to implement frame rate throttling to bring system pressure down if their capture use case can tolerate a reduced frame rate.
+ */
+@property(nonatomic, readonly) AVCaptureSystemPressureState *systemPressureState API_AVAILABLE(ios(11.1)) API_UNAVAILABLE(macos, watchos, tvos);
 
 @end
 

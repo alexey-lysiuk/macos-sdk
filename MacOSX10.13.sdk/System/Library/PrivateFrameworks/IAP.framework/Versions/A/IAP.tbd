@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 300877D2-7795-356F-A98A-BBC2798EBD50' ]
+uuids:           [ 'x86_64: FE92C7BF-48C3-36F7-A2D5-19A735C22A73' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IAP.framework/Versions/A/IAP
 exports:         

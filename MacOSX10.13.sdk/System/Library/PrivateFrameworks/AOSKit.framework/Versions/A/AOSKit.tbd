@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: C74A821E-B73B-38B5-A498-B2B7BAB007AB', 'x86_64: 7422D34F-8F23-33E8-96B0-058EF672DBFE' ]
+uuids:           [ 'i386: 01B841BA-EF22-3313-A02B-E1AF748E3DD0', 'x86_64: BFC6E041-CA51-3236-B926-431463057111' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AOSKit.framework/Versions/A/AOSKit
-current-version: 261
+current-version: 264
 exports:         
   - archs:           [ x86_64 ]
     objc-ivars:      [ _AOSAccountCache._accountDicts, _AOSAccountCache._appleAccountLookups, 
@@ -16,17 +16,18 @@ exports:
                        _AOSPushManager._apsConnection, _AOSPushManager._apsEnvironment, 
                        _AOSPushManager._enableLaunching, _AOSPushManager._msgDelegate, 
                        _AOSPushManager._tokenFetchAttempted, _AOSPushManager._tokenString, 
-                       _AOSPushManager._topics, _AOSRequest._cfConnection, _AOSRequest._cfResponse, 
-                       _AOSRequest._clientID, _AOSRequest._connection, _AOSRequest._credentials, 
-                       _AOSRequest._error, _AOSRequest._messageBody, _AOSRequest._method, 
-                       _AOSRequest._originalUrl, _AOSRequest._requestCompleted, _AOSRequest._requestHeaders, 
-                       _AOSRequest._requestInfo, _AOSRequest._requestStarted, _AOSRequest._response, 
-                       _AOSRequest._responseData, _AOSRequest._responseHeaders, _AOSRequest._responseMsg, 
-                       _AOSRequest._url, _AOSThreadManager._proxyLock, _AOSTransaction.callbackBlock, 
-                       _AOSTransaction.callbackFunction, _AOSTransaction.callbackQueue, 
-                       _AOSTransaction.context, _AOSTransaction.contextRelease, _AOSTransaction.contextRetain, 
-                       _AOSTransaction.didFinish, _AOSTransaction.didSucceed, _AOSTransaction.error, 
-                       _AOSTransaction.result, _AOSTransaction.waitLock, _DataclassConfigManager._actionCount, 
+                       _AOSPushManager._topics, _AOSRequest._akRetryCount, _AOSRequest._cfConnection, 
+                       _AOSRequest._cfResponse, _AOSRequest._clientID, _AOSRequest._connection, 
+                       _AOSRequest._credentials, _AOSRequest._error, _AOSRequest._messageBody, 
+                       _AOSRequest._method, _AOSRequest._originalUrl, _AOSRequest._requestCompleted, 
+                       _AOSRequest._requestHeaders, _AOSRequest._requestInfo, _AOSRequest._requestStarted, 
+                       _AOSRequest._response, _AOSRequest._responseData, _AOSRequest._responseHeaders, 
+                       _AOSRequest._responseMsg, _AOSRequest._url, _AOSThreadManager._proxyLock, 
+                       _AOSTransaction.callbackBlock, _AOSTransaction.callbackFunction, 
+                       _AOSTransaction.callbackQueue, _AOSTransaction.context, _AOSTransaction.contextRelease, 
+                       _AOSTransaction.contextRetain, _AOSTransaction.didFinish, 
+                       _AOSTransaction.didSucceed, _AOSTransaction.error, _AOSTransaction.result, 
+                       _AOSTransaction.waitLock, _DataclassConfigManager._actionCount, 
                        _DataclassConfigManager._info ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ _AOSAccountCacheNewAuthToken, _AOSAccountCopyAuthInfo, _AOSAccountCopyInfo, 
@@ -51,15 +52,16 @@ exports:
                        _AOSLaunchStorageUsageThread, _AOSLaunchSystemCheckThread, 
                        _AOSRemoveAccountInfo, _AOSShimAccountCopyProperty, _AOSShimAccountRefresh, 
                        _AOSShimAppleIDForDSID, _AOSShimCopyAccountIDs, _AOSShimCopyLoggedInAccount, 
-                       _AOSShimCopyPropertiesForService, _AOSShimServiceIsEnabled, 
-                       _AOSShimServiceSetEnabled, _AOSStoreAccountInfo, _AOSStoreProxyCredentials, 
-                       _AOSTransactionCancel, _AOSTransactionCreate, _AOSTransactionGetCallbackBlock, 
-                       _AOSTransactionGetCallbackFunction, _AOSTransactionGetCallbackQueue, 
-                       _AOSTransactionGetContext, _AOSTransactionGetError, _AOSTransactionGetResult, 
-                       _AOSTransactionIsAsync, _AOSTransactionIsFinished, _AOSTransactionSetError, 
-                       _AOSTransactionSetIsFinished, _AOSTransactionSetResult, _AOSTransactionSetSuccessful, 
-                       _AOSTransactionSuccessful, _AOSTransactionUpdate, _AOSTransactionWaitUntilFinished, 
-                       _CreateCFErrorFromRequest, __AOSAccountAuthenticate, __AOSAccountCopyBTMMConfigInfo, 
+                       _AOSShimCopyPropertiesForService, _AOSShimHandlePushNotification, 
+                       _AOSShimServiceIsEnabled, _AOSShimServiceSetEnabled, _AOSStoreAccountInfo, 
+                       _AOSStoreProxyCredentials, _AOSTransactionCancel, _AOSTransactionCreate, 
+                       _AOSTransactionGetCallbackBlock, _AOSTransactionGetCallbackFunction, 
+                       _AOSTransactionGetCallbackQueue, _AOSTransactionGetContext, 
+                       _AOSTransactionGetError, _AOSTransactionGetResult, _AOSTransactionIsAsync, 
+                       _AOSTransactionIsFinished, _AOSTransactionSetError, _AOSTransactionSetIsFinished, 
+                       _AOSTransactionSetResult, _AOSTransactionSetSuccessful, _AOSTransactionSuccessful, 
+                       _AOSTransactionUpdate, _AOSTransactionWaitUntilFinished, _CreateCFErrorFromRequest, 
+                       __AOSAccountAuthenticate, __AOSAccountCopyBTMMConfigInfo, 
                        __AOSAccountCopyMemberName, __AOSAccountCopyStoredValue, __AOSAccountCreateFromMobileMePrefs, 
                        __AOSAccountCreateWithMemberName, __AOSAccountDeregisterDevice, 
                        __AOSAccountDisableBTMM, __AOSAccountDisableBTMMForUser, __AOSAccountEnableBTMM, 
@@ -97,7 +99,7 @@ exports:
                        __AOSRemoveAppleID, __AOSRemoveFMMAccount, __AOSRetrieveFMMAccount, 
                        __AOSSerializeAccountInfo, __ShowPasswordChangedAlert, __didFailCallback, 
                        __didFinishLoadingCallback, __didReceiveAuthChallengeCallback, 
-                       __didReceiveDataCallback, __didReceiveResponseCallback, __isCertificateTrustedUnderPinningPolicy, 
+                       __didReceiveDataCallback, __didReceiveResponseCallback, __isCertificateTrusted, 
                        __isSetupServiceHost, __willCacheResponseCallback, __willSendRequestForAuthChallengeCallback, 
                        _kAOSAcceptLanguageHeaderName, _kAOSAcceptTOSHeaderName, _kAOSAccountChangedNotification, 
                        _kAOSAccountFamilyStatusMessageKey, _kAOSAccountHasAcceptedTermsKey, 

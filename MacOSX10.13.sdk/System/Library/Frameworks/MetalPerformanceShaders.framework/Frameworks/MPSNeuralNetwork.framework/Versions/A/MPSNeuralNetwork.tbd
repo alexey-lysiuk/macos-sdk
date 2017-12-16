@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A4E950B8-380B-3561-8EA4-5C07C3F43816' ]
+uuids:           [ 'x86_64: D0D8F13F-ACD4-3B61-BE54-121CCB05ECF4' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSNeuralNetwork.framework/Versions/A/MPSNeuralNetwork
-current-version: 88.2
+current-version: 90.3
 parent-umbrella: MetalPerformanceShaders
 exports:         
   - archs:           [ x86_64 ]
@@ -19,8 +19,10 @@ exports:
                        _MPSCNNLocalContrastNormalizationNode, _MPSCNNLogSoftMax, 
                        _MPSCNNLogSoftMaxNode, _MPSCNNNeuron, _MPSCNNNeuronAbsolute, 
                        _MPSCNNNeuronAbsoluteNode, _MPSCNNNeuronELU, _MPSCNNNeuronELUNode, 
-                       _MPSCNNNeuronHardSigmoid, _MPSCNNNeuronHardSigmoidNode, _MPSCNNNeuronLinear, 
-                       _MPSCNNNeuronLinearNode, _MPSCNNNeuronPReLU, _MPSCNNNeuronPReLUNode, 
+                       _MPSCNNNeuronExponential, _MPSCNNNeuronExponentialNode, _MPSCNNNeuronHardSigmoid, 
+                       _MPSCNNNeuronHardSigmoidNode, _MPSCNNNeuronLinear, _MPSCNNNeuronLinearNode, 
+                       _MPSCNNNeuronLogarithm, _MPSCNNNeuronLogarithmNode, _MPSCNNNeuronPReLU, 
+                       _MPSCNNNeuronPReLUNode, _MPSCNNNeuronPower, _MPSCNNNeuronPowerNode, 
                        _MPSCNNNeuronReLU, _MPSCNNNeuronReLUN, _MPSCNNNeuronReLUNNode, 
                        _MPSCNNNeuronReLUNode, _MPSCNNNeuronSigmoid, _MPSCNNNeuronSigmoidNode, 
                        _MPSCNNNeuronSoftPlus, _MPSCNNNeuronSoftPlusNode, _MPSCNNNeuronSoftSign, 
@@ -33,7 +35,8 @@ exports:
                        _MPSCNNUnpoolingState, _MPSCNNUpsampling, _MPSCNNUpsamplingBilinear, 
                        _MPSCNNUpsamplingBilinearNode, _MPSCNNUpsamplingNearest, _MPSCNNUpsamplingNearestNode, 
                        _MPSExternalCNNBinary, _MPSExternalCNNUnary, _MPSGRUDescriptor, 
-                       _MPSLSTMDescriptor, _MPSNNAdditionNode, _MPSNNBilinearScaleNode, 
+                       _MPSLSTMDescriptor, _MPSMatrixFullyConnected, _MPSMatrixNeuron, 
+                       _MPSMatrixSum, _MPSNNAdditionNode, _MPSNNBilinearScaleNode, 
                        _MPSNNConcatenation, _MPSNNConcatenationNode, _MPSNNDefaultPadding, 
                        _MPSNNDivisionNode, _MPSNNGraph, _MPSNNImageNode, _MPSNNLanczosScaleNode, 
                        _MPSNNMultiplicationNode, _MPSNNSubtractionNode, _MPSRNNDescriptor, 

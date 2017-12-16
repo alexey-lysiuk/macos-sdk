@@ -1,18 +1,18 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: CF6C1DB9-651A-3E19-8C48-1B1DFC9265DD', 'x86_64: 685B7606-E92F-394C-B4F7-4B49D8EF23EC' ]
+uuids:           [ 'i386: DC1D47F4-3D45-35F4-9D86-14B5946CEFA1', 'x86_64: 834EAD5F-0C4E-3C33-A654-8E1670CEC457' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/APFS.framework/Versions/A/APFS
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]
-    symbols:         [ _APFSContainerEFIEmbed, _APFSContainerGetDefrag, _APFSContainerGetFreespaceInfo, 
-                       _APFSContainerGetSpaceInfo, _APFSContainerResize, _APFSContainerSetDefrag, 
-                       _APFSContainerWipeVolumeKeys, _APFSExtendedSpaceInfo, _APFSMakeCompatibleName, 
-                       _APFSUniquifyName, _APFSVolumeAddHints, _APFSVolumeAddUnlockRecords, 
-                       _APFSVolumeCreate, _APFSVolumeDelete, _APFSVolumeDisableEncryption, 
-                       _APFSVolumeDisableFileVault, _APFSVolumeEnableEncryption, 
-                       _APFSVolumeEnableFilevault, _APFSVolumeEnableUserProtection, 
+    symbols:         [ _APFSContainerDefrag, _APFSContainerEFIEmbed, _APFSContainerGetDefrag, 
+                       _APFSContainerGetFreespaceInfo, _APFSContainerGetSpaceInfo, 
+                       _APFSContainerResize, _APFSContainerSetDefrag, _APFSContainerWipeVolumeKeys, 
+                       _APFSExtendedSpaceInfo, _APFSMakeCompatibleName, _APFSUniquifyName, 
+                       _APFSVolumeAddHints, _APFSVolumeAddUnlockRecords, _APFSVolumeCreate, 
+                       _APFSVolumeDelete, _APFSVolumeDisableEncryption, _APFSVolumeDisableFileVault, 
+                       _APFSVolumeEnableEncryption, _APFSVolumeEnableFilevault, _APFSVolumeEnableUserProtection, 
                        _APFSVolumeEscrowVEK, _APFSVolumeGeneratePersonalRecoveryKey, 
                        _APFSVolumeGetDefrag, _APFSVolumeGetHint, _APFSVolumeGetSpaceInfo, 
                        _APFSVolumeGetUnlockRecord, _APFSVolumeGetVEKState, _APFSVolumeInfoForUnmountedDisk, 
@@ -21,12 +21,13 @@ exports:
                        _APFSVolumeRemoveHint, _APFSVolumeRemoveUnlockRecord, _APFSVolumeResetUnlockRecord, 
                        _APFSVolumeResumeCrypto, _APFSVolumeRole, _APFSVolumeRoleFind, 
                        _APFSVolumeSetDefrag, _APFSVolumeSetHint, _APFSVolumeSetUnlockRecord, 
-                       _APFSVolumeUnlockAnyUnlockRecord, _APFSVolumeUnlockUnlockRecord, 
-                       _APFSVolumeUpdateUnlockRecord, _APFSVolumeVerifyUnlockRecord, 
-                       _kAPFSContainerBlocksizeKey, _kAPFSContainerExtentAddressKey, 
-                       _kAPFSContainerExtentLengthKey, _kAPFSContainerExtentsListKey, 
-                       _kAPFSContainerFSTypeKey, _kAPFSContainerSizeKey, _kAPFSContainerTidemarkKey, 
-                       _kAPFSVolumeCaseSensitiveKey, _kAPFSVolumeEffaceableKey, _kAPFSVolumeEncryptedKey, 
-                       _kAPFSVolumeFSIndexKey, _kAPFSVolumeNameKey, _kAPFSVolumeQuotaSizeKey, 
-                       _kAPFSVolumeReserveSizeKey, _kAPFSVolumeRoleKey ]
+                       _APFSVolumeUnlockAnyUnlockRecord, _APFSVolumeUnlockGetUnlockRecordState, 
+                       _APFSVolumeUnlockUnlockRecord, _APFSVolumeUpdateUnlockRecord, 
+                       _APFSVolumeVerifyUnlockRecord, _kAPFSContainerBlocksizeKey, 
+                       _kAPFSContainerExtentAddressKey, _kAPFSContainerExtentLengthKey, 
+                       _kAPFSContainerExtentsListKey, _kAPFSContainerFSTypeKey, _kAPFSContainerSizeKey, 
+                       _kAPFSContainerTidemarkKey, _kAPFSVolumeCaseSensitiveKey, 
+                       _kAPFSVolumeEffaceableKey, _kAPFSVolumeEncryptedKey, _kAPFSVolumeFSIndexKey, 
+                       _kAPFSVolumeNameKey, _kAPFSVolumeQuotaSizeKey, _kAPFSVolumeReserveSizeKey, 
+                       _kAPFSVolumeRoleKey ]
 ...

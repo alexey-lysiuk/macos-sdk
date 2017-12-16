@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 4BC9959F-7756-3067-AA7D-BFA271D7F3FF', 'x86_64: CC5FC996-B65F-3ABE-878D-885BFEAB699A' ]
+uuids:           [ 'i386: 3107C139-B359-376E-8330-B21612F87B36', 'x86_64: FE6893F6-A4A6-3C28-9364-5536D97F9A56' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/FinderKit.framework/Versions/A/FinderKit
-current-version: 1054.1.1
+current-version: 1054.2.4
 exports:         
   - archs:           [ x86_64 ]
     objc-classes:    [ _FIIconHeaderView, _FIIconView, __FIBrowseBySizeView ]

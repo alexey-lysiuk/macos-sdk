@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: C86D2784-B3E1-3697-945B-EFBB32171EF9', 'x86_64: B79A8533-1CCF-34E5-9E31-5A7A5551A18D' ]
+uuids:           [ 'i386: 362025C2-7400-3B7B-A420-DF4FA23460BC', 'x86_64: C314D3B9-9118-387D-8585-42B988F5ADF4' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/AudioVideoBridging.framework/Versions/A/AudioVideoBridging
 exports:         
@@ -14,9 +14,7 @@ exports:
                        _AVB17221AECPPendingResponse.responseReceived, _AVB17221AECPPendingResponse.retried, 
                        _AVB1722MAAP.callbackQueue, _AVB1722MAAP.connection, _AVB1722MAAP.userClientAccessCount, 
                        _AVB1722MAAP.userClientSyncQueue, _AVBIIDCIOSurfaceStream.connection, 
-                       _AVBInputStream.qHeadersAddress, _AVBInputStream.qHeadersSize, 
-                       _AVBMRP.callbackQueue, _AVBMRP.connection, _AVBOutputStream.erasePayloadAddress, 
-                       _AVBOutputStream.erasePayloadSize ]
+                       _AVBMRP.callbackQueue, _AVBMRP.connection ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ _AVB17221AEMAspectRatioHeightKey, _AVB17221AEMAspectRatioWidthKey, 
                        _AVB17221AEMBodePlotFrequencyKey, _AVB17221AEMBodePlotMagnitudeKey, 

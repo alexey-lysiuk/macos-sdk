@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AF7CADE3-BD3B-3DAA-9E40-4D8AE9D14911' ]
+uuids:           [ 'x86_64: 975EABBE-A4F7-30A1-B926-4F9B0AA8848E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoLibraryPrivate.framework/Versions/A/Frameworks/Geode.framework/Versions/A/Geode
-current-version: 3231.11.210
+current-version: 3251.12.180
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CGPointOffset, _CGPointScale, _CGRectFlipInRect, _CGRectGrowInRect, 

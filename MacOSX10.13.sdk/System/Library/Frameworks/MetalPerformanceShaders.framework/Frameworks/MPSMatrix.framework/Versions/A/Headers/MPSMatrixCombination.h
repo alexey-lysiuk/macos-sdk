@@ -17,7 +17,7 @@
 /*!
  *  @struct     MPSMatrixCopyOffsets
  *  @memberof   MPSMatrixCopy
- *  @abstract   A description of each copy operations
+ *  @abstract   A description of each copy operation
  */
 
 typedef struct
@@ -84,7 +84,7 @@ MPS_AVAILABLE_STARTING(macos(10.13), ios(11.0), tvos(11.0) );
  *                                      must match the number of source matrices.
  *  @param          offsets         A MPSVector of type MPSDataTypeUInt32 containing the list of
  *                                  offsets, stored as a packed array of MPSMatrixCopyOffsets.
- *  @param          byteOffset      A byte offset into the offsets vector where the data starts.
+ *  @param          byteOffset      A byte offset into the offsets vector where the data starts in 'offsets'.
  *                                  This value must be a multiple of 16.
  *  @result         A valid MPSMatrixCopyDescriptor to represent the list of copy operations
  */
@@ -134,10 +134,53 @@ MPS_AVAILABLE_STARTING(macos(10.13), ios(11.0), tvos(11.0) );
 /*! @abstract   If YES, the destinations are in row major storage order */
 @property (nonatomic, readonly) BOOL destinationsAreTransposed;
 
-/*! @abstract   Encode the copy operations to the command buffer */
--(void) encodeToCommandBuffer: (nonnull id <MTLCommandBuffer>) cmdBuf
+/*! @abstract   Encode the copy operations to the command buffer
+ *
+ *  @param      commandBuffer       A valid MTLCommandBuffer to receive the encoded kernel.
+ *
+ *  @param      copyDescriptor      The descriptor that defines the copy operator
+ *
+ */
+-(void) encodeToCommandBuffer: (nonnull id <MTLCommandBuffer>) commandBuffer
                copyDescriptor: (MPSMatrixCopyDescriptor*__nonnull) copyDescriptor
 MPS_SWIFT_NAME( encode(commandBuffer:copyDescriptor:));
+
+
+/*! @abstract   Encode the copy operations to the command buffer.
+ *              This of the encode version support permuting the outputs with custom vectors of indices.
+ *              The permutations are defined on the destination indices and are the same for each copy
+ *              operation.
+ *
+ *  @param      commandBuffer           A valid MTLCommandBuffer to receive the encoded kernel.
+ *
+ *  @param      copyDescriptor          The descriptor that defines the copy operator
+ *
+ *  @param      rowPermuteIndices       If not nil then the output row index is
+ *                                      'rowPermuteIndices[i] + rowOffset' instead of 'i + rowOffset',
+ *                                      where 'i' is the local row index of the copy operation.
+ *                                      Note: if destinationsAreTransposed is set to YES then the destination
+ *                                      transpose is performed before permutations.
+ *
+ *  @param      rowPermuteOffset        Offset in numbers to apply to the 'rowPermuteIndices' vector.
+ *
+ *  @param      columnPermuteIndices    If not nil then the output column index is
+ *                                      'columnPermuteIndices[i] + columnOffset' instead of 'i + columnOffset',
+ *                                      where 'i' is the local column index of the copy operation.
+ *                                      Note: if destinationsAreTransposed is set to YES then the destination
+ *                                      transpose is performed before permutations.
+ *
+ *  @param      columnPermuteOffset     Offset in numbers to apply to the 'columnPermuteIndices' vector.
+ *
+ */
+-(void) encodeToCommandBuffer: (nonnull id <MTLCommandBuffer>) commandBuffer
+               copyDescriptor: (MPSMatrixCopyDescriptor*__nonnull) copyDescriptor
+            rowPermuteIndices: (MPSVector * __nullable) rowPermuteIndices
+             rowPermuteOffset: (NSUInteger) rowPermuteOffset
+         columnPermuteIndices: (MPSVector * __nullable) columnPermuteIndices
+          columnPermuteOffset: (NSUInteger) columnPermuteOffset
+MPS_SWIFT_NAME( encode(commandBuffer:copyDescriptor:rowPermuteIndices:rowPermuteOffset:columnPermuteIndices:columnPermuteOffset:));
+
+
 
 /*! @abstract NSSecureCoding compatability
  *  @discussion See @ref MPSKernel#initWithCoder.

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6E16570E-682B-3C45-B4E5-D7C562D21662' ]
+uuids:           [ 'x86_64: E46A13C9-1789-3E71-A6E5-4585E33D45B8' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/StorageKit.framework/Versions/A/StorageKit
 current-version: 53

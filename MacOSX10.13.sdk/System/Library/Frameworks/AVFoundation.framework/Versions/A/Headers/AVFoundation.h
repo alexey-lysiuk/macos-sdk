@@ -48,6 +48,7 @@
 #import <AVFoundation/AVCaptureInput.h>
 #import <AVFoundation/AVCaptureOutput.h>
 #import <AVFoundation/AVCaptureSession.h>
+#import <AVFoundation/AVCaptureSystemPressure.h>
 #import <AVFoundation/AVCaptureVideoPreviewLayer.h>
 #endif
 
@@ -85,9 +86,7 @@
 #import <AVFoundation/AVPlayerLooper.h>
 #import <AVFoundation/AVPlayerMediaSelectionCriteria.h>
 #import <AVFoundation/AVQueuedSampleBufferRendering.h>
-#if (TARGET_OS_EMBEDDED || TARGET_OS_IPHONE)
 #import <AVFoundation/AVRouteDetector.h>
-#endif
 #import <AVFoundation/AVSampleBufferAudioRenderer.h>
 #import <AVFoundation/AVSampleBufferDisplayLayer.h>
 #import <AVFoundation/AVSampleBufferRenderSynchronizer.h>
@@ -103,4 +102,7 @@
 #import <AVFoundation/AVVideoCompositing.h>
 #import <AVFoundation/AVVideoComposition.h>
 #import <AVFoundation/AVVideoSettings.h>
+#endif
+#if TARGET_OS_TV
+#import <AVFoundation/AVDisplayCriteria.h>
 #endif

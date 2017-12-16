@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 618B2CF1-3D8C-346B-8864-1726F67A6D90', 'x86_64: 00813D5F-9AE8-36C1-81DB-4BFEE28269F6' ]
+uuids:           [ 'i386: 0590EDDD-C595-32EC-B54C-31DB429F324B', 'x86_64: 0B2AD45A-FF7F-3807-92A3-9ECA792596BD' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AccessibilityBundles.framework/Versions/A/AccessibilityBundles
 current-version: 12

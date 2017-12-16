@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 92CD8ACC-CE1F-35DE-AE87-6E47DDEF8DDD' ]
+uuids:           [ 'x86_64: 4D932311-1948-39D9-9CBB-0C867FCDF1BF' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CloudKitDaemon.framework/Versions/A/CloudKitDaemon
-current-version: 720
+current-version: 735
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -126,6 +126,7 @@ exports:
                        _CKDPRequestOperationHeader._deviceHardwareID, _CKDPRequestOperationHeader._deviceHardwareVersion, 
                        _CKDPRequestOperationHeader._deviceIdentifier, _CKDPRequestOperationHeader._deviceLibraryName, 
                        _CKDPRequestOperationHeader._deviceLibraryVersion, _CKDPRequestOperationHeader._deviceProtocolVersion, 
+                       _CKDPRequestOperationHeader._deviceSoftwareIsAppleInternal, 
                        _CKDPRequestOperationHeader._deviceSoftwareVersion, _CKDPRequestOperationHeader._globalConfigVersion, 
                        _CKDPRequestOperationHeader._has, _CKDPRequestOperationHeader._isolationLevel, 
                        _CKDPRequestOperationHeader._locale, _CKDPRequestOperationHeader._mmcsProtocolVersion, 

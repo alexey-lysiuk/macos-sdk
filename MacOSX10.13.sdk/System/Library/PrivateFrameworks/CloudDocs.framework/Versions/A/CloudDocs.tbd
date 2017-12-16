@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: B4C39392-0BB5-3251-AF5C-043405CE369D', 'x86_64: 7E2A74CA-EA11-316D-8FD1-2FD8D31E91AF' ]
+uuids:           [ 'i386: 298D9E68-26D4-3229-8C84-D3E488437BBC', 'x86_64: 0DA97289-F23B-37AC-85BB-BC6DEE760918' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CloudDocs.framework/Versions/A/CloudDocs
-current-version: 559
+current-version: 572.2
 compatibility-version: 0
 exports:         
   - archs:           [ i386 ]
@@ -62,13 +62,13 @@ exports:
                        _BRSharingCopyShortTokenOperation._fileURL, _BRSharingCopyShortTokenOperation._shortTokenCompletionBlock, 
                        _BRSharingModifyRecordAccessOperation._accessAllowedCompletionBlock, 
                        _BRSharingModifyRecordAccessOperation._allowAccess, _BRSharingModifyRecordAccessOperation._allowAccessCompletionBlock, 
-                       _BRSharingModifyRecordAccessOperation._fileURL, _BRTransfersStatusManager._coordinators, 
-                       _BRTransfersStatusManager._globalDownloadProgress, _BRTransfersStatusManager._globalProgressSubscriber, 
-                       _BRTransfersStatusManager._globalUploadProgress, _BRTransfersStatusManager._queue, 
+                       _BRSharingModifyRecordAccessOperation._fileURL, _BRTransfersStatusManager._globalDownloadProgress, 
+                       _BRTransfersStatusManager._globalProgressSubscriber, _BRTransfersStatusManager._globalUploadProgress, 
+                       _BRTransfersStatusManager._operationQueue, _BRTransfersStatusManager._queue, 
                        _BRTransfersStatusManager._shouldHideGlobalDownloadProgressCount, 
-                       _BRTransfersStatusManager._transfers, _BRXPCSyncProxy._error, 
-                       _BRXPCSyncProxy._result, _BRXPCSyncProxy._target, _BRiWorkWebShareMigrateOperation._operationQueue, 
-                       _BRiWorkWebShareMigrateOperation._shareMigrationCompletionBlock, 
+                       _BRTransfersStatusManager._timerToDisplayGlobalProgress, _BRTransfersStatusManager._transfers, 
+                       _BRXPCSyncProxy._error, _BRXPCSyncProxy._result, _BRXPCSyncProxy._target, 
+                       _BRiWorkWebShareMigrateOperation._operationQueue, _BRiWorkWebShareMigrateOperation._shareMigrationCompletionBlock, 
                        _BRiWorkWebShareMigrateOperation._url ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ _BRAccountDidCompleteFirstSyncDownKey, _BRAccountIsDatabaseFromTheFutureKey, 
@@ -117,9 +117,9 @@ exports:
                        _BREntitlementSPIAccess, _BREntitlementSharingPrivateInterface, 
                        _BREntitlementSharingProxy, _BREntitlementStorageManagement, 
                        _BRErrorAffectedContainersKey, _BREvictItemAtURL, _BREvictItemAtURLWithOptions, 
-                       _BRForceSyncOnAllContainers, _BRGetApplicationDocumentUsageInformation, 
-                       _BRGetAttributeValueForItem, _BRGetAttributeValuesForItem, 
-                       _BRGetCloudEnabledStatus, _BRGetCloudEnabledStatusForAuditToken, 
+                       _BRFileCoordinatorReadingOptionsPrettyPrint, _BRForceSyncOnAllContainers, 
+                       _BRGetApplicationDocumentUsageInformation, _BRGetAttributeValueForItem, 
+                       _BRGetAttributeValuesForItem, _BRGetCloudEnabledStatus, _BRGetCloudEnabledStatusForAuditToken, 
                        _BRGetCloudEnabledStatusForPID, _BRGetFileNameFromServerInfoBlob, 
                        _BRGetLastSyncDateWithError, _BRGetLocalizedLastSyncWithError, 
                        _BRGetMigrationStatusForDSID, _BRGetMigrationStatusForPrimaryiCloudAccount, 
@@ -228,9 +228,9 @@ exports:
     objc-classes:    [ _BRAccount, _BRContainer, _BRContainersMonitor, _BRDaemonConnection, 
                        _BRDocObjectID, _BRDownloadAllFilesForLogOutOperation, _BRDownloadAndUploadAllFilesForLogOutOperation, 
                        _BREvictItemOperation, _BRFetchQuotaOperation, _BRFileObjectID, 
-                       _BRInodeObjectID, _BRListNonLocalVersionsOperation, _BRMangledID, 
-                       _BRNonLocalVersion, _BRNotificationQueue, _BROperation, _BRProgressUpdate, 
-                       _BRQueryItem, _BRReachabilityMonitor, _BRRemoteUserDefaults, 
+                       _BRFileProvidingOperation, _BRInodeObjectID, _BRListNonLocalVersionsOperation, 
+                       _BRMangledID, _BRNonLocalVersion, _BRNotificationQueue, _BROperation, 
+                       _BRProgressUpdate, _BRQueryItem, _BRReachabilityMonitor, _BRRemoteUserDefaults, 
                        _BRServerInfoRecordInfo, _BRShareCleanSubitems, _BRShareCopyAccessTokenOperation, 
                        _BRShareCopyOperation, _BRShareCopyShareURLOperation, _BRShareCopyiWorkShareURLOperation, 
                        _BRShareDestroyOperation, _BRShareLookupParticipantsOperation, 

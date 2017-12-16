@@ -274,6 +274,10 @@ struct embedded_panic_header {
 	uint32_t eph_stackshot_len;        /* length of the panic stackshot (0 if not valid ) */
 	uint32_t eph_other_log_offset;     /* Offset of the other log (any logging subsequent to the stackshot) from the beginning of the header */
 	uint32_t eph_other_log_len;        /* length of the other log */
+	uint64_t eph_x86_power_state:8,
+		 eph_x86_efi_boot_state:8,
+		 eph_x86_system_state:8,
+		 eph_x86_unused_bits:40;
 } __attribute__((packed));
 
 #define EMBEDDED_PANIC_HEADER_FLAG_COREDUMP_COMPLETE             0x01
@@ -287,7 +291,7 @@ struct embedded_panic_header {
 #define EMBEDDED_PANIC_HEADER_FLAG_COPROC_INITIATED_PANIC        0x100
 #define EMBEDDED_PANIC_HEADER_FLAG_COREDUMP_FAILED               0x200
 
-#define EMBEDDED_PANIC_HEADER_CURRENT_VERSION 1
+#define EMBEDDED_PANIC_HEADER_CURRENT_VERSION 2
 #define EMBEDDED_PANIC_MAGIC 0x46554E4B /* FUNK */
 
 struct macos_panic_header {

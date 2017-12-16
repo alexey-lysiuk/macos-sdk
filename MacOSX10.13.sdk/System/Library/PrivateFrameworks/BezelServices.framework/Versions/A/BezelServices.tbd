@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 7E506307-8D9A-3176-816A-CD72CDA68F15', 'x86_64: 8754A6CC-61A1-308D-BBB3-612A0CA15B57' ]
+uuids:           [ 'i386: 31AED8FB-25E7-339F-8E72-9A29616B9476', 'x86_64: 9D0F8AFD-800C-3336-AC48-05C3C61D89B2' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/BezelServices.framework/Versions/A/BezelServices
-current-version: 291
+current-version: 297
 exports:         
   - archs:           [ i386, x86_64 ]
     re-exports:      [ /usr/lib/libobjc.A.dylib ]
@@ -19,21 +19,22 @@ exports:
                        _BSAmbientGetProperty, _BSAmbientKeyboardBrightnessAdjust, 
                        _BSAmbientManualAdjustBegin, _BSAmbientManualAdjustEnd, _BSAmbientManualSetValue, 
                        _BSGetPreference, _BSGetPreferenceBool, _BSGetPreferenceFloat, 
-                       _BSGetPreferenceInt, _BSHandleRemoteControlEvent, _BSInitPreference, 
-                       _BSKernelPreferenceChanged, _BSKernelPreferenceCreate, _BSKernelPreferenceGetPreferenceForKey, 
+                       _BSGetPreferenceInt, _BSHandleRemoteControlEvent, _BSKernelPreferenceChanged, 
+                       _BSKernelPreferenceCreate, _BSKernelPreferenceGetPreferenceForKey, 
                        _BSKernelPreferenceGetPreferences, _BSKernelPreferenceSetPreferenceForKey, 
                        _BSKernelPreferenceSetPreferences, _BSLogCleanup, _BSLogInitialize, 
                        _BSRemoteControlFeatureAvailable, _BSRemoteControlPropertyAvailable, 
                        _BSSetPreference, _BSSetPreferenceBool, _BSSetPreferenceFloat, 
-                       _BSSetPreferenceInt, _LoadBezelServicesConnection, _LoadHIDSystemConnection, 
-                       _addDictionaryKey, _bs_ambientFeatureAvailable, _bs_boolForPrefKey, 
-                       _bs_floatForPrefKey, _bs_handleRemoteEventWithPage, _bs_intForPrefKey, 
-                       _bs_isKeyboardSaturated, _bs_kernelPreferenceChanged, _bs_kernelPreferenceCreate, 
-                       _bs_kernelPreferenceGetPreferenceForKey, _bs_kernelPreferenceGetPreferences, 
-                       _bs_kernelPreferenceSetPreferences, _bs_preference, _bs_remoteControlFeatureAvailable, 
-                       _bs_remoteControlPropertyAvailable, _bs_setBoolForPrefKey, 
-                       _bs_setDisplayHold, _bs_setDisplayValue, _bs_setFloatForPrefKey, 
-                       _bs_setIntForPrefKey, _bs_setKeyboardHold, _bs_setKeyboardValue, 
-                       _bs_setPreferences, _copyPreferenceForKey, _gBS_port, _gCookie, 
-                       _gLogHandle, _gProcessData, _getALSVersion, _isKeyValid, _setPreferenceForKey ]
+                       _BSSetPreferenceInt, _BezelServicesLoggingInitialize, _LoadBezelServicesConnection, 
+                       _LoadHIDSystemConnection, _addDictionaryKey, _bs_ambientFeatureAvailable, 
+                       _bs_boolForPrefKey, _bs_floatForPrefKey, _bs_handleRemoteEventWithPage, 
+                       _bs_intForPrefKey, _bs_isKeyboardSaturated, _bs_kernelPreferenceChanged, 
+                       _bs_kernelPreferenceCreate, _bs_kernelPreferenceGetPreferenceForKey, 
+                       _bs_kernelPreferenceGetPreferences, _bs_kernelPreferenceSetPreferences, 
+                       _bs_preference, _bs_remoteControlFeatureAvailable, _bs_remoteControlPropertyAvailable, 
+                       _bs_setBoolForPrefKey, _bs_setDisplayHold, _bs_setDisplayValue, 
+                       _bs_setFloatForPrefKey, _bs_setIntForPrefKey, _bs_setKeyboardHold, 
+                       _bs_setKeyboardValue, _bs_setPreferences, _copyPreferenceForKey, 
+                       _gBS_port, _gCookie, _gLogHandle, _gProcessData, _getALSVersion, 
+                       _isKeyValid, _setPreferenceForKey ]
 ...

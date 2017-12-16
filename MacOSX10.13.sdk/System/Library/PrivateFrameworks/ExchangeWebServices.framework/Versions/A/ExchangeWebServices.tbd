@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5B2D88CF-01E7-3EA8-88F2-18CBD62F1E8D' ]
+uuids:           [ 'x86_64: 02290D8C-95D9-3E07-8F00-A6CAB345CC38' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ExchangeWebServices.framework/Versions/A/ExchangeWebServices
 current-version: 281

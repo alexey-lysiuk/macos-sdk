@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 62C8A0C2-F00F-3E86-8643-6F892152C59F', 'x86_64: D27AFDFB-2032-36C7-B73E-62A5BA8592C6' ]
+uuids:           [ 'i386: 823CA725-1EC2-3BD6-A0D7-02EE0A453092', 'x86_64: 15F1309E-2D9D-3D5C-B86B-96AF40BA1FAF' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreDAV.framework/Versions/A/CoreDAV
 exports:         

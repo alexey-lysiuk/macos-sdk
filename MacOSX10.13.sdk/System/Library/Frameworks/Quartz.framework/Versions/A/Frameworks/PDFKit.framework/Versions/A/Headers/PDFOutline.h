@@ -47,7 +47,7 @@ PDFKIT_CLASS_AVAILABLE(10_4, 11_0)
 @property (nonatomic, readonly) NSUInteger index PDFKIT_AVAILABLE(10_5, 11_0);
 
 // PDFOutline child at index. Will throw exception if index is out of range.
-- (PDFOutline *)childAtIndex:(NSUInteger)index;
+- (nullable PDFOutline *)childAtIndex:(NSUInteger)index;
 
 // To build up a PDFOutline hierarchy, you call this method to add children outline items. For the simplest of outlines 
 // you would, at the very least, have to add items to the outline root item.

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: A498EDD4-ADF7-328B-9DD0-30E9766CD63C', 'x86_64: 07DA72EC-8E70-34D0-AFA5-947C5A35490D' ]
+uuids:           [ 'i386: 2A8BA46F-411E-375E-9A85-83AB2450D422', 'x86_64: AD8E8201-7921-3CD8-9BB3-A4E4E58FF062' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/IOBluetoothUI.framework/Versions/A/IOBluetoothUI
 exports:         
@@ -10,7 +10,8 @@ exports:
                        _AppleOptions.doubleTapButton, _AppleOptions.microphoneButton, 
                        _AudioOptions2.ancImageButton, _AudioOptions2.appleDeviceSetting, 
                        _AudioOptions2.appleOptionsViewPlaceholder, _AudioOptions2.appleOptionsWindow, 
-                       _AudioOptions2.normalImageButton, _EnhancedAppleOptions.appleDeviceSetting, 
+                       _AudioOptions2.buttonsLocked, _AudioOptions2.normalImageButton, 
+                       _AudioOptions2.unlockTimer, _EnhancedAppleOptions.appleDeviceSetting, 
                        _EnhancedAppleOptions.appleOptionsViewPlaceholder, _EnhancedAppleOptions.appleOptionsWindow, 
                        _EnhancedAppleOptions.checkBoxEnableInEarDetection, _EnhancedAppleOptions.leftDoubleTapButton, 
                        _EnhancedAppleOptions.microphoneButton, _EnhancedAppleOptions.rightDoubleTapButton, 
@@ -124,8 +125,8 @@ exports:
                        _IOBluetoothServiceBrowserControllerDiscoverAsSheet, _IOBluetoothServiceBrowserControllerDiscoverWithDeviceAttributes, 
                        _IOBluetoothServiceBrowserControllerSetOptions, _IOBluetoothValidateHardware, 
                        _IOBluetoothValidateHardwareWithDescription, _ISCopyDeviceIconPath, 
-                       _ISShouldProposeToAddDeviceToISync, _ImageForModelString, 
-                       _ObjectTableDataSource_ColumnSorter, __IOBluetoothUI_AlignCGPointToUserSpace, 
+                       _ISShouldProposeToAddDeviceToISync, _ImageForTypeStr, _ObjectTableDataSource_ColumnSorter, 
+                       _TypeForModelStr, __IOBluetoothUI_AlignCGPointToUserSpace, 
                        __IOBluetoothUI_AlignCGRectToUserSpace, __IOBluetoothUI_AlignPointToUserSpace, 
                        __IOBluetoothUI_AlignRectToUserSpace, _gAppleObjectPushServiceClassUUID, 
                        _isDebugLogEnabled, _registerValueTransformers, _sOBEXObjectPushSupportFormatsListNameMapping ]

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BBECE599-A47A-343B-B8ED-4E58316C1C39' ]
+uuids:           [ 'x86_64: BA750A9B-E3A3-3760-8B3F-FE0CD9D7490A' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/VectorKit.framework/Versions/A/VectorKit
-current-version: 1353.21.9
+current-version: 1355.22.9
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _GEOMapRectEnclosingCameraProperties, _GEOPDCameraPathFrameFromVKCameraFrame, 
@@ -1359,11 +1359,13 @@ exports:
                        __ZN3ggl18GlyphWithOuterHalo20DefaultPipelineSetup19channelConstantDataEv, 
                        __ZN3ggl18GlyphWithOuterHalo20DefaultPipelineSetup19setViewConstantDataENSt3__110shared_ptrINS_17ConstantDataTypedINS_5Glyph4ViewEEEEE, 
                        __ZN3ggl18GlyphWithOuterHalo20DefaultPipelineSetup22setChannelConstantDataENSt3__110shared_ptrINS_17ConstantDataTypedINS_5Glyph7ChannelEEEEE, 
+                       __ZN3ggl18GlyphWithOuterHalo20DefaultPipelineSetup23informationConstantDataEv, 
+                       __ZN3ggl18GlyphWithOuterHalo20DefaultPipelineSetup26setInformationConstantDataENSt3__110shared_ptrINS_17ConstantDataTypedINS_5Glyph11InformationEEEEE, 
                        __ZN3ggl18GlyphWithOuterHalo20DefaultPipelineSetup8setStateERKNSt3__110shared_ptrINS0_20DefaultPipelineStateEEE, 
                        __ZN3ggl18GlyphWithOuterHalo20DefaultPipelineSetupC1ERKNSt3__110shared_ptrINS0_20DefaultPipelineStateEEE, 
-                       __ZN3ggl18GlyphWithOuterHalo20DefaultPipelineSetupC1ERKNSt3__110shared_ptrINS0_20DefaultPipelineStateEEERKNS3_INS_17ConstantDataTypedINS_5Glyph4ViewEEEEERKNS3_INS8_INS9_7ChannelEEEEEPNS_9Texture2DE, 
+                       __ZN3ggl18GlyphWithOuterHalo20DefaultPipelineSetupC1ERKNSt3__110shared_ptrINS0_20DefaultPipelineStateEEERKNS3_INS_17ConstantDataTypedINS_5Glyph4ViewEEEEERKNS3_INS8_INS9_7ChannelEEEEERKNS3_INS8_INS9_11InformationEEEEEPNS_9Texture2DE, 
                        __ZN3ggl18GlyphWithOuterHalo20DefaultPipelineSetupC1Ev, __ZN3ggl18GlyphWithOuterHalo20DefaultPipelineSetupC2ERKNSt3__110shared_ptrINS0_20DefaultPipelineStateEEE, 
-                       __ZN3ggl18GlyphWithOuterHalo20DefaultPipelineSetupC2ERKNSt3__110shared_ptrINS0_20DefaultPipelineStateEEERKNS3_INS_17ConstantDataTypedINS_5Glyph4ViewEEEEERKNS3_INS8_INS9_7ChannelEEEEEPNS_9Texture2DE, 
+                       __ZN3ggl18GlyphWithOuterHalo20DefaultPipelineSetupC2ERKNSt3__110shared_ptrINS0_20DefaultPipelineStateEEERKNS3_INS_17ConstantDataTypedINS_5Glyph4ViewEEEEERKNS3_INS8_INS9_7ChannelEEEEERKNS3_INS8_INS9_11InformationEEEEEPNS_9Texture2DE, 
                        __ZN3ggl18GlyphWithOuterHalo20DefaultPipelineSetupC2Ev, __ZN3ggl18GlyphWithOuterHalo20DefaultPipelineState15typedReflectionEv, 
                        __ZN3ggl18GlyphWithOuterHalo20DefaultPipelineStateC1ERKNS_20ColorBufferOperationENS_18RenderTargetFormatE, 
                        __ZN3ggl18GlyphWithOuterHalo20DefaultPipelineStateC1ERKNSt3__110shared_ptrINS_24GlyphWithOuterHaloShaderEEERKNS_20ColorBufferOperationENS_18RenderTargetFormatE, 
@@ -1455,11 +1457,13 @@ exports:
                        __ZN3ggl19GlyphWithNormalHalo20DefaultPipelineSetup19channelConstantDataEv, 
                        __ZN3ggl19GlyphWithNormalHalo20DefaultPipelineSetup19setViewConstantDataENSt3__110shared_ptrINS_17ConstantDataTypedINS_5Glyph4ViewEEEEE, 
                        __ZN3ggl19GlyphWithNormalHalo20DefaultPipelineSetup22setChannelConstantDataENSt3__110shared_ptrINS_17ConstantDataTypedINS_5Glyph7ChannelEEEEE, 
+                       __ZN3ggl19GlyphWithNormalHalo20DefaultPipelineSetup23informationConstantDataEv, 
+                       __ZN3ggl19GlyphWithNormalHalo20DefaultPipelineSetup26setInformationConstantDataENSt3__110shared_ptrINS_17ConstantDataTypedINS_5Glyph11InformationEEEEE, 
                        __ZN3ggl19GlyphWithNormalHalo20DefaultPipelineSetup8setStateERKNSt3__110shared_ptrINS0_20DefaultPipelineStateEEE, 
                        __ZN3ggl19GlyphWithNormalHalo20DefaultPipelineSetupC1ERKNSt3__110shared_ptrINS0_20DefaultPipelineStateEEE, 
-                       __ZN3ggl19GlyphWithNormalHalo20DefaultPipelineSetupC1ERKNSt3__110shared_ptrINS0_20DefaultPipelineStateEEERKNS3_INS_17ConstantDataTypedINS_5Glyph4ViewEEEEERKNS3_INS8_INS9_7ChannelEEEEEPNS_9Texture2DE, 
+                       __ZN3ggl19GlyphWithNormalHalo20DefaultPipelineSetupC1ERKNSt3__110shared_ptrINS0_20DefaultPipelineStateEEERKNS3_INS_17ConstantDataTypedINS_5Glyph4ViewEEEEERKNS3_INS8_INS9_7ChannelEEEEERKNS3_INS8_INS9_11InformationEEEEEPNS_9Texture2DE, 
                        __ZN3ggl19GlyphWithNormalHalo20DefaultPipelineSetupC1Ev, __ZN3ggl19GlyphWithNormalHalo20DefaultPipelineSetupC2ERKNSt3__110shared_ptrINS0_20DefaultPipelineStateEEE, 
-                       __ZN3ggl19GlyphWithNormalHalo20DefaultPipelineSetupC2ERKNSt3__110shared_ptrINS0_20DefaultPipelineStateEEERKNS3_INS_17ConstantDataTypedINS_5Glyph4ViewEEEEERKNS3_INS8_INS9_7ChannelEEEEEPNS_9Texture2DE, 
+                       __ZN3ggl19GlyphWithNormalHalo20DefaultPipelineSetupC2ERKNSt3__110shared_ptrINS0_20DefaultPipelineStateEEERKNS3_INS_17ConstantDataTypedINS_5Glyph4ViewEEEEERKNS3_INS8_INS9_7ChannelEEEEERKNS3_INS8_INS9_11InformationEEEEEPNS_9Texture2DE, 
                        __ZN3ggl19GlyphWithNormalHalo20DefaultPipelineSetupC2Ev, __ZN3ggl19GlyphWithNormalHalo20DefaultPipelineState15typedReflectionEv, 
                        __ZN3ggl19GlyphWithNormalHalo20DefaultPipelineStateC1ERKNS_20ColorBufferOperationENS_18RenderTargetFormatE, 
                        __ZN3ggl19GlyphWithNormalHalo20DefaultPipelineStateC1ERKNSt3__110shared_ptrINS_25GlyphWithNormalHaloShaderEEERKNS_20ColorBufferOperationENS_18RenderTargetFormatE, 
@@ -2543,8 +2547,9 @@ exports:
                        __ZN3ggl5Glyph10DefaultVbo10reflectionEv, __ZN3ggl5Glyph11DefaultMeshC1EPKc, 
                        __ZN3ggl5Glyph11DefaultMeshC1EPKcNSt3__110shared_ptrINS_15VertexDataTypedINS0_10DefaultVboEEEEENS5_INS_9IndexDataEEE, 
                        __ZN3ggl5Glyph11DefaultMeshC2EPKc, __ZN3ggl5Glyph11DefaultMeshC2EPKcNSt3__110shared_ptrINS_15VertexDataTypedINS0_10DefaultVboEEEEENS5_INS_9IndexDataEEE, 
-                       __ZN3ggl5Glyph4View10reflectionEv, __ZN3ggl5Glyph7Channel10reflectionEv, 
-                       __ZN3ggl5Stars10StarVertex10reflectionEv, __ZN3ggl5Stars18StarsPipelineSetup12setStarsMeshEPKNS0_9StarsMeshE, 
+                       __ZN3ggl5Glyph11Information10reflectionEv, __ZN3ggl5Glyph4View10reflectionEv, 
+                       __ZN3ggl5Glyph7Channel10reflectionEv, __ZN3ggl5Stars10StarVertex10reflectionEv, 
+                       __ZN3ggl5Stars18StarsPipelineSetup12setStarsMeshEPKNS0_9StarsMeshE, 
                        __ZN3ggl5Stars18StarsPipelineSetup15typedReflectionEv, __ZN3ggl5Stars18StarsPipelineSetup16viewConstantDataEv, 
                        __ZN3ggl5Stars18StarsPipelineSetup19setViewConstantDataENSt3__110shared_ptrINS_17ConstantDataTypedINS0_4ViewEEEEE, 
                        __ZN3ggl5Stars18StarsPipelineSetup8setStateERKNSt3__110shared_ptrINS0_18StarsPipelineStateEEE, 
@@ -3201,6 +3206,8 @@ exports:
                        __ZNK3ggl18GlyphWithOuterHalo20DefaultPipelineSetup19channelConstantDataEv, 
                        __ZNK3ggl18GlyphWithOuterHalo20DefaultPipelineSetup19viewConstantDataPtrEv, 
                        __ZNK3ggl18GlyphWithOuterHalo20DefaultPipelineSetup22channelConstantDataPtrEv, 
+                       __ZNK3ggl18GlyphWithOuterHalo20DefaultPipelineSetup23informationConstantDataEv, 
+                       __ZNK3ggl18GlyphWithOuterHalo20DefaultPipelineSetup26informationConstantDataPtrEv, 
                        __ZNK3ggl18StyleTextureRibbon17BasePipelineSetup16viewConstantDataEv, 
                        __ZNK3ggl18StyleTextureRibbon17BasePipelineSetup17styleConstantDataEv, 
                        __ZNK3ggl18StyleTextureRibbon17BasePipelineSetup19viewConstantDataPtrEv, 
@@ -3223,6 +3230,8 @@ exports:
                        __ZNK3ggl19GlyphWithNormalHalo20DefaultPipelineSetup19channelConstantDataEv, 
                        __ZNK3ggl19GlyphWithNormalHalo20DefaultPipelineSetup19viewConstantDataPtrEv, 
                        __ZNK3ggl19GlyphWithNormalHalo20DefaultPipelineSetup22channelConstantDataPtrEv, 
+                       __ZNK3ggl19GlyphWithNormalHalo20DefaultPipelineSetup23informationConstantDataEv, 
+                       __ZNK3ggl19GlyphWithNormalHalo20DefaultPipelineSetup26informationConstantDataPtrEv, 
                        __ZNK3ggl19RouteLineAlphaReset17BasePipelineSetup16viewConstantDataEv, 
                        __ZNK3ggl19RouteLineAlphaReset17BasePipelineSetup17styleConstantDataEv, 
                        __ZNK3ggl19RouteLineAlphaReset17BasePipelineSetup18paramsConstantDataEv, 

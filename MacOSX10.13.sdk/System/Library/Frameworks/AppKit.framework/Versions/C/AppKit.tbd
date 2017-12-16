@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: EF98A262-8FE0-3149-AD52-02C906BF9D30', 'x86_64: AC5C259A-615C-3929-8586-0BC920696AFA' ]
+uuids:           [ 'i386: 9395E8CD-2313-3360-9380-DCE7B9023AF1', 'x86_64: 4CD1B8C7-AF16-3F6F-B369-E36913BA7351' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/AppKit.framework/Versions/C/AppKit
-current-version: 1561.10.101
+current-version: 1561.20.106
 compatibility-version: 45
 exports:         
   - archs:           [ i386 ]
@@ -700,8 +700,8 @@ exports:
                        _NSColorListAuxiliary._bundleForColorListDirectory, _NSColorListAuxiliary._cmPageInfoPtr, 
                        _NSColorListAuxiliary._lastEditableCheck, _NSColorListAuxiliary._localizedCopyRightString, 
                        _NSColorPanel._accessoryContainerView, _NSColorPanel._accessoryContainerViewHeight, 
-                       _NSColorPanel._accessoryView, _NSColorPanel._action, _NSColorPanel._allowColorSetting, 
-                       _NSColorPanel._bottomConstraint, _NSColorPanel._colorSwatch, 
+                       _NSColorPanel._accessoryView, _NSColorPanel._action, _NSColorPanel._bottomConstraint, 
+                       _NSColorPanel._colorSettingSuppressionCount, _NSColorPanel._colorSwatch, 
                        _NSColorPanel._colorWell, _NSColorPanel._continuous, _NSColorPanel._currViewObject, 
                        _NSColorPanel._customPickerList, _NSColorPanel._customViewsList, 
                        _NSColorPanel._handlingOpacityMoveAction, _NSColorPanel._hasModalAppearance, 
@@ -712,7 +712,7 @@ exports:
                        _NSColorPanel._opacityTextController, _NSColorPanel._opacityView, 
                        _NSColorPanel._opacityViewHeight, _NSColorPanel._pickerView, 
                        _NSColorPanel._pickersWithLoadedViews, _NSColorPanel._reserved1, 
-                       _NSColorPanel._reserved2, _NSColorPanel._reserved3, _NSColorPanel._reserved4, 
+                       _NSColorPanel._reserved3, _NSColorPanel._reserved4, _NSColorPanel._reserved5, 
                        _NSColorPanel._resizeDimple, _NSColorPanel._stillInitializing, 
                        _NSColorPanel._target, _NSColorPanelColorWell._actsLikeButton, 
                        _NSColorPanelColorWell._controlSize, _NSColorPanelColorWell._disabledAsColorDestination, 
@@ -1129,6 +1129,7 @@ exports:
                        _NSSavePanel._savePane, _NSSavePanel._savePaneTopPartsContainer, 
                        _NSSavePanel._spAuxiliaryStorage, _NSSavePanel._spFlags, _NSSavePanel._validatedPosixName, 
                        _NSSavePanelAuxiliary._accessoryBottomSeparator, _NSSavePanelAuxiliary._accessoryViewForcedHeightConstraint, 
+                       _NSSavePanelAuxiliary._accessoryViewForcedWidthConstraint, 
                        _NSSavePanelAuxiliary._accessoryViewLegacySize, _NSSavePanelAuxiliary._accessoryViewWantsCentering, 
                        _NSSavePanelAuxiliary._alertLeadingAlignmentConstraint, _NSSavePanelAuxiliary._alertLeadingTextAlignmentConstraint, 
                        _NSSavePanelAuxiliary._alertStyleContentView, _NSSavePanelAuxiliary._alertStyleMinWidth, 
@@ -2597,6 +2598,7 @@ exports:
                        _ResetNSConstraintBasedLayoutDetectAmbiguousViews, _ResetNSConstraintBasedLayoutEngageNonLazily, 
                        _ResetNSImageCompositeFromRectIsInRepCoords, _ResetNSOutlineViewValidateChanges, 
                        _ResetNSPasteboardRequiresSecureCoding, _ResetNSPopoverWeakDelegate, 
+                       _ResetNSSavePanelForceMicrosoftAccessoryViewCentering, _ResetNSSavePanelWorkAroundBadAccessoryViewFittingSizes, 
                        _ResetNSScreenIsMutable, _ResetNSScreenLoggingEnabled, _ResetNSSpeechRecognizerDelegateIsWeak, 
                        _ResetNSSpeechSynthesizerDelegateIsWeak, _ResetNSSplitViewWeakDelegate, 
                        _ResetNSStackViewWeakDelegate, _ResetNSViewControllerSupports10_10Features, 
@@ -2608,6 +2610,7 @@ exports:
                        _SetNSConstraintBasedLayoutDetectAmbiguousViews, _SetNSConstraintBasedLayoutEngageNonLazily, 
                        _SetNSImageCompositeFromRectIsInRepCoords, _SetNSOutlineViewValidateChanges, 
                        _SetNSPasteboardRequiresSecureCoding, _SetNSPopoverWeakDelegate, 
+                       _SetNSSavePanelForceMicrosoftAccessoryViewCentering, _SetNSSavePanelWorkAroundBadAccessoryViewFittingSizes, 
                        _SetNSScreenIsMutable, _SetNSScreenLoggingEnabled, _SetNSSpeechRecognizerDelegateIsWeak, 
                        _SetNSSpeechSynthesizerDelegateIsWeak, _SetNSSplitViewWeakDelegate, 
                        _SetNSStackViewWeakDelegate, _SetNSViewControllerSupports10_10Features, 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 099391D6-18B0-32D6-BA0B-E1D78B97734D' ]
+uuids:           [ 'x86_64: E35C902D-17B9-3D0E-AE7C-F640BFDF17B3' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/FMCoreLite.framework/Versions/A/FMCoreLite
 objc-constraint: none

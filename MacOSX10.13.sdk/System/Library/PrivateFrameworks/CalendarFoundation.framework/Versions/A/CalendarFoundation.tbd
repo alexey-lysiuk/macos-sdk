@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 76D663AD-5CE7-32DA-9774-78FE9584B5E5' ]
+uuids:           [ 'x86_64: 10489460-9476-3E7C-A3CE-8B85E37733DA' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CalendarFoundation.framework/Versions/A/CalendarFoundation
-current-version: 552
+current-version: 552.2.3
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CALAbbrevDateFormat, _CALAbbrevDateWithoutYearFormat, _CALAbbrevDayOfWeekFormat, 

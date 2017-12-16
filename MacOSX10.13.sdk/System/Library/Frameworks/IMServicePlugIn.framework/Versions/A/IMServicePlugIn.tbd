@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 114BF12E-D59C-3B7B-A97C-61AB1F14735C' ]
+uuids:           [ 'x86_64: 3C554475-1A3E-32A0-A517-28D6FEBEB1A3' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/IMServicePlugIn.framework/Versions/A/IMServicePlugIn
 current-version: 1000

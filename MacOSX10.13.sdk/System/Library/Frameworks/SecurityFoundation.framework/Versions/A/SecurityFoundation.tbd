@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: A6144075-211B-389A-AB38-44C41A44A823', 'x86_64: 4048FFF8-A5BE-37FE-AAA8-4E00E4C733BE' ]
+uuids:           [ 'i386: 54362CD6-89D0-3328-9915-EC2F74748529', 'x86_64: A1201529-3718-31C4-9D9E-BBD2A04B6751' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/SecurityFoundation.framework/Versions/A/SecurityFoundation
-current-version: 55185.1.1
+current-version: 55185.30.4
 exports:         
   - archs:           [ i386, x86_64 ]
     re-exports:      [ /System/Library/Frameworks/Security.framework/Versions/A/Security ]

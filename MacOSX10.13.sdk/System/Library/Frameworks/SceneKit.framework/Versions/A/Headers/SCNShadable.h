@@ -160,8 +160,8 @@ typedef void (^SCNBindingBlock)(unsigned int programID, unsigned int location, S
  vec3          | float3                 | SCNVector3
  vec4          | float4                 | SCNVector4
  mat4, mat44   | float4x4               | SCNMatrix4
- sampler2D     |                        | SCNMaterialProperty
- samplerCube   |                        | SCNMaterialProperty (with a cube map)
+ sampler2D     | texture2d              | SCNMaterialProperty
+ samplerCube   | texturecube            | SCNMaterialProperty (with a cube map)
  
  The following prefixes are reserved by SceneKit and should not be used in custom names:
  u_
@@ -445,11 +445,10 @@ FOUNDATION_EXTERN SCNShaderModifierEntryPoint const SCNShaderModifierEntryPointG
  |    float2 roughnessTexcoord;        // Roughness texture coordinates
  |    float4 selfIllumination;         // Self Illumination property of the fragment. Available since macOS 10.13, iOS 11, tvOS 11 and watchOS 4. Available as `emission` in previous versions.
  |    float2 selfIlluminationTexcoord; // Self Illumination texture coordinates. Available since macOS 10.13, iOS 11, tvOS 11 and watchOS 4. Available as `emissionTexcoord` in previous versions.
- |    float4 ambientOcclusion;         // Ambient Occlusion property of the fragment. Available macOS 10.13, iOS 11, tvOS 11 and watchOS 4. Available in `mutliply` in previous versions.
- |    float2 ambientOcclusionTexcoord; // Ambient Occlusion texture coordinates. Available since macOS 10.13, iOS 11, tvOS 11 and watchOS 4. Available in `mutliplyTexcoord` in previous versions.
+ |    float  ambientOcclusion;         // Ambient Occlusion property of the fragment. Available macOS 10.13, iOS 11, tvOS 11 and watchOS 4. Available as `multiply` in previous versions.
+ |    float2 ambientOcclusionTexcoord; // Ambient Occlusion texture coordinates. Available since macOS 10.13, iOS 11, tvOS 11 and watchOS 4. Available as `multiplyTexcoord` in previous versions.
  |    float  shininess;                // Shininess property of the fragment
  |    float  fresnel;                  // Fresnel property of the fragment
- |    float  ambientOcclusion;         // Ambient occlusion term of the fragment
  | } _surface;
  |
  | Access: ReadWrite

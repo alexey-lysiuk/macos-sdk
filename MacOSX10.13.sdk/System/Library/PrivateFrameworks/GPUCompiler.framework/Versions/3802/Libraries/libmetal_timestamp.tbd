@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 2E6DBE4C-FED8-39D3-9F75-AC6966D5F037', 'x86_64: 73D8B306-6321-30DB-8522-819344E19AF8' ]
+uuids:           [ 'i386: 0440B59B-63C1-3AE9-8FEE-793B6B2639AE', 'x86_64: D2CD48A8-5989-32AC-B64B-76E29D4E2449' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/GPUCompiler.framework/Versions/3802/Libraries/libmetal_timestamp.dylib
-current-version: 802.1
+current-version: 802.3
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]

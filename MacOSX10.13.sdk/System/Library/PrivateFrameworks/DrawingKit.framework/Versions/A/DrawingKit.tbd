@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 68DCDEC3-789C-3FDD-B78A-C0413E5EFC62' ]
+uuids:           [ 'x86_64: 379870FA-BCDA-3F08-9365-EE733455B836' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DrawingKit.framework/Versions/A/DrawingKit
 objc-constraint: none

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B42D6706-A2D4-38B9-B8B1-4E0E020A6448' ]
+uuids:           [ 'x86_64: 213D7B6C-415E-31F8-9AC1-7C78200A55DD' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SymptomDiagnosticManagement.framework/Versions/A/SymptomDiagnosticManagement
-current-version: 820.20.3
+current-version: 820.30.7
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _archiverLogHandle, _basicLogHandle, _cachedeleteLoghandle, 

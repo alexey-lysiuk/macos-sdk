@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 883338EB-2AB0-3718-A120-78E3C02B7AB8', 'x86_64: 92A69430-A484-37F7-B9D1-D065137D34EF' ]
+uuids:           [ 'i386: D91C42B6-CBEE-39AE-A4EA-22D3DE1C96B7', 'x86_64: B5661FF7-7558-308E-A3B7-C280F7A1DA78' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreImage.framework/Versions/A/CoreImage
 current-version: 5
@@ -109,7 +109,7 @@ exports:
                        _CIWhitePointAdjust, _CIWrapMirror, _CIXRay, _CIZoomBlur, 
                        _CUIInnerBevelEmbossFilter, _CUIInnerGlowOrShadowFilter, _CUIOuterBevelEmbossFilter, 
                        _CUIOuterGlowOrShadowFilter, _CUIScaleClampFilter, _CUIShapeEffectBlur1, 
-                       __CICompositeFilter, __CIScreenFilter ]
+                       _Function, __CICompositeFilter, __CIScreenFilter ]
   - archs:           [ x86_64 ]
     symbols:         [ _CIDetectorDetectDiacritics, _CIDetectorExtraCharacters, _CIDetectorLanguage, 
                        _CIDetectorLanguageASCII, _CIDetectorLanguageDanish, _CIDetectorLanguageDutch, 

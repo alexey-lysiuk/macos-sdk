@@ -75,9 +75,12 @@ NSExtensionPrincipalClass
 :	The name of the principal class.
 
 AudioComponentBundle
-:	Optional. If specified, the identifier of a bundle in the .appex
-	or its enclosing app container in which the factory function and/or
-	principal class are implemented.
+:	Optional. A version 3 audio unit can be loaded into a separate extension process and
+	this is the default behavior. To be able to load in-process on macOS (see 
+	kAudioComponentInstantiation_LoadInProcess) the audio unit has to be packaged 
+	separately. The AudioComponentBundle entry supports loading in-process by designating 
+	the identifier of a bundle in the .appex or its enclosing app container in which the 
+	factory function and/or principal class are implemented. 
 
 AudioComponents
 :	Registration info for each audio component type/subtype/manufacturer

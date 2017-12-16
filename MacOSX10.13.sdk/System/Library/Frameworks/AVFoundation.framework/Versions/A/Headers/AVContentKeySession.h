@@ -431,7 +431,16 @@ API_AVAILABLE(macos(10.12.4), ios(10.3), tvos(10.2)) API_UNAVAILABLE(watchos)
  @abstract      Informs the receiver to process a persistable content key request.
  @discussion    When you receive an AVContentKeyRequest via -contentKeySession:didProvideContentKeyRequest: and you want the resulting key response to produce a key that can persist across multiple playback sessions, you must invoke -respondByRequestingPersistableContentKeyRequest on that AVContentKeyRequest in order to signal that you want to process an AVPersistableContentKeyRequest instead. If the underlying protocol supports persistable content keys, in response your delegate will receive an AVPersistableContentKeyRequest via -contentKeySession:didProvidePersistableContentKeyRequest:. NSInternalInconsistencyException will be raised, if you are attempting to create and use a persistable key but your AVContentKeySession delegate does not respond to contentKeySession:didProvidePersistableContentKeyRequest:.
  */
-- (void)respondByRequestingPersistableContentKeyRequest API_AVAILABLE(ios(10.3)) API_UNAVAILABLE(macos, tvos, watchos);
+- (void)respondByRequestingPersistableContentKeyRequest API_DEPRECATED("Use respondByRequestingPersistableContentKeyRequestAndReturnError: instead.", ios(10.3, 11.2)) API_UNAVAILABLE(macos, tvos, watchos);
+/*
+ @method		respondByRequestingPersistableContentKeyRequestAndReturnError:
+ @abstract		Informs the receiver to process a persistable content key request.
+ @param			outError
+				The error returned if a persistable content key request cannot be requested.
+ @result		YES if sucessful. If NO, this request should be responded to via processContentKeyResponse: or processContentKeyResponseError:.
+ @discussion	When you receive an AVContentKeyRequest via -contentKeySession:didProvideContentKeyRequest: and you want the resulting key response to produce a key that can persist across multiple playback sessions, you must invoke -respondByRequestingPersistableContentKeyRequest on that AVContentKeyRequest in order to signal that you want to process an AVPersistableContentKeyRequest instead. If the underlying protocol supports persistable content keys, in response your delegate will receive an AVPersistableContentKeyRequest via -contentKeySession:didProvidePersistableContentKeyRequest:. NSInternalInconsistencyException will be raised, if you are attempting to create and use a persistable key but your AVContentKeySession delegate does not respond to contentKeySession:didProvidePersistableContentKeyRequest:.
+*/
+- (BOOL)respondByRequestingPersistableContentKeyRequestAndReturnError:(NSError **)outError API_AVAILABLE(ios(11.2)) API_UNAVAILABLE(macos, tvos, watchos);
 
 @end
 

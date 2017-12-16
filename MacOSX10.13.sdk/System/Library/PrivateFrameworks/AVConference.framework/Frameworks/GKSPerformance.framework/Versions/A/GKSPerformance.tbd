@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 02059D02-C25B-3419-BD10-42467CAF6F20', 'x86_64: C28C3C00-214E-3735-8311-4843C5B5A2C5' ]
+uuids:           [ 'i386: A12CBA66-AAF0-313F-9781-247DFF059ABF', 'x86_64: AAF65878-1E21-3BB4-A3A8-C43A50F2B207' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AVConference.framework/Frameworks/GKSPerformance.framework/Versions/A/GKSPerformance
 exports:         
@@ -33,19 +33,21 @@ exports:
                        _AWDStats.initialPrimaryInterfaceFound, _AWDStats.interfaceName, 
                        _AWDStats.isRoaming, _AWDStats.isSender, _AWDStats.keyframeCounter, 
                        _AWDStats.lastVRAWidth, _AWDStats.localVideoDegradeTime, _AWDStats.maxFrameRate, 
-                       _AWDStats.minFrameRate, _AWDStats.mode, _AWDStats.operatingMode, 
-                       _AWDStats.pipDuration, _AWDStats.pipRunningSince, _AWDStats.previousCellTechDuration, 
-                       _AWDStats.previousInterface, _AWDStats.relayType, _AWDStats.remoteInterfaceName, 
-                       _AWDStats.remoteVideoDegradeTime, _AWDStats.rxExcessICEBytes, 
-                       _AWDStats.rxExcessRTPBytes, _AWDStats.rxFrameRateAvg, _AWDStats.rxFrameRateAvgCount, 
-                       _AWDStats.rxFrameRateMax, _AWDStats.rxFrameRateMin, _AWDStats.rxHeight, 
-                       _AWDStats.rxWidth, _AWDStats.silenceCompressionRatio, _AWDStats.startTime, 
-                       _AWDStats.submitQueue, _AWDStats.targetFramerate, _AWDStats.targetJitterBufferSize, 
-                       _AWDStats.targetJitterBufferSizeCount, _AWDStats.terminationReason, 
-                       _AWDStats.timeSinceLastCellTech, _AWDStats.timeSinceLastVRA, 
-                       _AWDStats.timingDict, _AWDStats.transportType, _AWDStats.txExcessICEBytes, 
-                       _AWDStats.txExcessRTPBytes, _AWDStats.txFrameRateAvg, _AWDStats.txFrameRateAvgCount, 
-                       _AWDStats.txFrameRateMax, _AWDStats.txFrameRateMin, _AWDStats.txHeight, 
-                       _AWDStats.txWidth, _AWDStats.uplinkEstimateAvg, _AWDStats.uplinkEstimateAvgCount, 
-                       _AWDStats.videoFlush, _AWDStats.videoPauseTime, _AWDStats.videoStallDuration ]
+                       _AWDStats.minFrameRate, _AWDStats.mode, _AWDStats.momentsFileSizeHistogram, 
+                       _AWDStats.momentsMediaTypeHistogram, _AWDStats.momentsResultsHistogram, 
+                       _AWDStats.operatingMode, _AWDStats.pipDuration, _AWDStats.pipRunningSince, 
+                       _AWDStats.previousCellTechDuration, _AWDStats.previousInterface, 
+                       _AWDStats.relayType, _AWDStats.remoteInterfaceName, _AWDStats.remoteVideoDegradeTime, 
+                       _AWDStats.rxExcessICEBytes, _AWDStats.rxExcessRTPBytes, _AWDStats.rxFrameRateAvg, 
+                       _AWDStats.rxFrameRateAvgCount, _AWDStats.rxFrameRateMax, _AWDStats.rxFrameRateMin, 
+                       _AWDStats.rxHeight, _AWDStats.rxWidth, _AWDStats.silenceCompressionRatio, 
+                       _AWDStats.startTime, _AWDStats.submitQueue, _AWDStats.targetFramerate, 
+                       _AWDStats.targetJitterBufferSize, _AWDStats.targetJitterBufferSizeCount, 
+                       _AWDStats.terminationReason, _AWDStats.timeSinceLastCellTech, 
+                       _AWDStats.timeSinceLastVRA, _AWDStats.timingDict, _AWDStats.transportType, 
+                       _AWDStats.txExcessICEBytes, _AWDStats.txExcessRTPBytes, _AWDStats.txFrameRateAvg, 
+                       _AWDStats.txFrameRateAvgCount, _AWDStats.txFrameRateMax, _AWDStats.txFrameRateMin, 
+                       _AWDStats.txHeight, _AWDStats.txWidth, _AWDStats.uplinkEstimateAvg, 
+                       _AWDStats.uplinkEstimateAvgCount, _AWDStats.videoFlush, _AWDStats.videoPauseTime, 
+                       _AWDStats.videoStallDuration ]
 ...

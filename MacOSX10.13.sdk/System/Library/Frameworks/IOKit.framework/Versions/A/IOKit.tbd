@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 7A42FF9B-98F3-3AD2-9629-9BE397FD5955', 'x86_64: 3316799C-14BC-366E-8A58-67485E5CD69E' ]
+uuids:           [ 'i386: 22A82C10-B391-3359-B23A-053108AE9EB1', 'x86_64: 7556086A-EFAF-3262-9822-6F666CFC6655' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/IOKit.framework/Versions/A/IOKit
 current-version: 275

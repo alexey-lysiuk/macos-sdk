@@ -1,4 +1,4 @@
-.Dd July 28, 2017
+.Dd September 27, 2017
 .Dt fdesetup 8 
 .Os macOS
 .Sh NAME
@@ -12,7 +12,7 @@
 .Nm
 is used to enable or disable FileVault, to list, add, or remove enabled FileVault users, and to obtain status about the current state of FileVault. Most commands require root access and need to be authenticated with either a FileVault password, a personal recovery key (if enabled), and in some cases the private key from the installed institutional recovery key.  Some status related commands can be run from a non-root session.
 .Pp
-Certain commands allow you to authenticate and unlock by providing the
+Certain commands on CoreStorage volumes allow you to authenticate and unlock by providing the
 .Sy -key 
 option followed by the path to a keychain file containing the private key of the installed institutional recovery key.  Do not include the certificate in this keychain.
 .Pp
@@ -34,9 +34,9 @@ Because the user password may not be immediately available, read the DEFERRED EN
 .Pp
 The
 .Sy status
-command will indicate if FileVault is On or Off.  If a FileVault master keychain is installed into the /Library/Keychains folder it will also report this back.  Note that this, by itself, does not indicate whether or not FileVault has been set up with an institutional recovery key.  Use the
-.Sy hasinstitutionalrecoverykey
-command to see if the institutional recovery key is active.
+command will indicate if FileVault is On or Off.  If a FileVault master keychain is installed into the /Library/Keychains folder it will also report this back.  Note that this, by itself, does not indicate whether or not FileVault has been set up with an institutional recovery key.  The
+.Sy -extended
+option will display extended status information, including the time remaining for encrypting or decrypting.  The calculation of this remaining time may take a few minutes and is only an approximate value.
 .Pp
 The
 .Sy list
@@ -44,7 +44,7 @@ command will display the short names and UUIDs of enabled FileVault users. You c
 .Sy -extended
 option to display a full list of existing user types along with some additional information.  This information will include if the recovery key was escrowed, though note that it will show "Yes" even if the information has not yet been successfully sent to the server.  You can also use the
 .Sy -offline
-option to get a list of currently locked and offline FileVault volumes.  You can use this information as part of the
+option to get a list of currently locked and offline CoreStorage FileVault volumes.  You can use this information as part of the
 .Sy haspersonalrecoverykey
 or
 .Sy hasinstitutionalrecoverykey
@@ -192,12 +192,13 @@ Adds additional FileVault users.   A FileVault user password or recovery key mus
 .Sy -user Ar username
 .Op Fl verbose
 .br
-Removes enabled user from FileVault.
+Removes enabled user from FileVault.   It will not remove the user if it's the last OS user on the volume.
 .Pp
 .\"             -- changerecovery --
 .It Sy changerecovery
 .Sy -personal \*(Ba
 .Sy -institutional
+.Sy -user
 .Oo
 .Op Fl keychain
 \*(Ba
@@ -212,6 +213,7 @@ Adds or updates the current recovery key.   Either personal and/or institutional
 .\"             -- removerecovery --
 .It Sy removerecovery
 .Sy -personal
+.Sy -user
 \*(Ba
 .Sy -institutional
 .Oo
@@ -318,7 +320,7 @@ Use the institutional recovery key stored in /Library/Keychains/FileVaultMaster.
 Use the certificate data located at the path. Any existing /Library/Keychains/FileVaultMaster.keychain file will be moved away with the location logged in the system log.  Do not set this option if your certificate data is located in the input plist information.   The common name of the certificate must be "FileVault Recovery Key"
 .Pp
 .It Fl key Ar path_to_keychain_file
-Use the keychain file located at the path containing the private key for the currently installed institiutional recovery key to unlock and authenticate FileVault.
+Use the keychain file located at the path containing the private key for the currently installed institutional recovery key to unlock and authenticate FileVault.
 .Pp
 .It Fl norecoverykey
 Do not return a personal recovery key.

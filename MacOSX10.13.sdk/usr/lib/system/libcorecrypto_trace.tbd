@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 05F6DB4A-6F89-38FE-8822-4CCE0686BF85', 'x86_64: EA853B55-9D72-3D72-81C8-D19AF2EC44EB' ]
+uuids:           [ 'i386: 22BDD596-9FF9-3092-86AD-1F3CF0CA9FB7', 'x86_64: 49E63C4B-E354-39D0-A733-917DE1E98771' ]
 platform:        macosx
 install-name:    /usr/lib/system/libcorecrypto_trace.dylib
-current-version: 562
+current-version: 562.30.10
 objc-constraint: none
 parent-umbrella: System
 exports:         

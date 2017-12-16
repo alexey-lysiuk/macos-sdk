@@ -1,8 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 55564AA9-185B-34DE-B619-594C4476D705' ]
+uuids:           [ 'x86_64: B3A4C8A1-3437-304D-AE68-84DFA3D38C40' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ProactiveML.framework/Versions/A/ProactiveML
+current-version: 123.3
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

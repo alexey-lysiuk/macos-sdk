@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 81A8B8F1-0D53-3D29-9128-38E20FDD2A0D' ]
+uuids:           [ 'x86_64: E91E94FF-201C-3C60-BC70-4262A119EBA1' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/FlightUtilities.framework/Versions/A/FlightUtilities
-current-version: 114
+current-version: 115.4
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _FUFactoryProvider_Default, _FUFactoryProvider_FlightStats, 

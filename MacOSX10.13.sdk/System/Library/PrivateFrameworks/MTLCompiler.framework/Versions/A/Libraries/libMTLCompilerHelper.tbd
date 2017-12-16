@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: A4F564F4-C736-377A-8E55-02EA98C92AEE', 'x86_64: 5CD4A015-486B-3745-88A7-1F9AF9620EA3' ]
+uuids:           [ 'i386: 6DC0437E-66FB-316D-9361-334D377DF969', 'x86_64: 9C2B7AF5-A858-3FF3-A158-238D2E6C95A8' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MTLCompiler.framework/Versions/A/Libraries/libMTLCompilerHelper.dylib
 exports:         

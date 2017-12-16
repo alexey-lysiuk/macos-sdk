@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: DE98E742-EC2E-3345-9F45-2BF06E0C15E6', 'x86_64: E00E237A-CB67-3ABC-BAE2-41CE7AA5C4B8' ]
+uuids:           [ 'i386: DC51DB71-E241-3715-8EEF-BA1166B551DD', 'x86_64: 8E068AF7-FB72-38E2-948E-6C13F359C69D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DesktopServicesPriv.framework/Versions/A/DesktopServicesPriv
-current-version: 895.1.1
+current-version: 895.2.5
 exports:         
   - archs:           [ i386, x86_64 ]
     symbols:         [ _CloseCatalog, _CopyNodeRef, _CopyPropertyList, _CreateClientNodeRef, 

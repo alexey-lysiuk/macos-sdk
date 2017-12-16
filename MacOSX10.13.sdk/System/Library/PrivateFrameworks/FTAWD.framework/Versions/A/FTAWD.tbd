@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: E07FD2BB-E829-304C-A8F8-C8A2BAD97DBC', 'x86_64: ECFA05EF-D8F3-3BB2-98A2-3169FAD1836F' ]
+uuids:           [ 'i386: D661DBAD-3B0E-3D6A-BB02-334096D58C7D', 'x86_64: 7D33A952-8948-3BB1-961D-643774AB3455' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/FTAWD.framework/Versions/A/FTAWD
 current-version: 800

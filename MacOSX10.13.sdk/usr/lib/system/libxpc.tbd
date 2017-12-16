@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: E58FC860-9E36-389E-B6FD-1B7AF09FBA9F', 'x86_64: 58676E88-35FD-3CF3-99BB-2A82E09F8058' ]
+uuids:           [ 'i386: CD44097B-4B65-3F75-AB7F-52228229FFB5', 'x86_64: F7E5F1BC-614B-39CB-B6CE-92A9C7B7EC0B' ]
 platform:        macosx
 install-name:    /usr/lib/system/libxpc.dylib
-current-version: 1205.20.31
+current-version: 1205.30.29
 parent-umbrella: System
 exports:         
   - archs:           [ i386 ]
@@ -188,18 +188,16 @@ exports:
                        _xpc_dictionary_set_mach_send, _xpc_dictionary_set_pointer, 
                        _xpc_dictionary_set_string, _xpc_dictionary_set_uint64, _xpc_dictionary_set_uuid, 
                        _xpc_dictionary_set_value, _xpc_dictionary_taint, _xpc_double_create, 
-                       _xpc_double_get_value, _xpc_endpoint_create, _xpc_equal, _xpc_event_stream_check_in, 
-                       _xpc_event_stream_check_in2, _xpc_extension_type_init, _xpc_fd_create, 
-                       _xpc_fd_dup, _xpc_file_transfer_cancel, _xpc_file_transfer_copy_io, 
-                       _xpc_file_transfer_create_with_fd, _xpc_file_transfer_create_with_path, 
-                       _xpc_file_transfer_get_send_finished_callback, _xpc_file_transfer_get_set_properties, 
-                       _xpc_file_transfer_get_set_transfer_id, _xpc_file_transfer_get_set_write_finished_callback, 
-                       _xpc_file_transfer_get_size, _xpc_file_transfer_get_transport_start_writing_callback, 
-                       _xpc_file_transfer_set_io, _xpc_file_transfer_set_send_finished_callback, 
-                       _xpc_file_transfer_set_transport_start_writing_callback, _xpc_file_transfer_write_to_fd, 
-                       _xpc_file_transfer_write_to_path, _xpc_generate_audit_token, 
-                       _xpc_get_attachment_endpoint, _xpc_get_class4NSXPC, _xpc_get_event_name, 
-                       _xpc_get_type, _xpc_handle_service, _xpc_handle_subservice, 
+                       _xpc_double_get_value, _xpc_endpoint_create, _xpc_endpoint_create_mach_port_4sim, 
+                       _xpc_equal, _xpc_event_stream_check_in, _xpc_event_stream_check_in2, 
+                       _xpc_extension_type_init, _xpc_fd_create, _xpc_fd_dup, _xpc_file_transfer_cancel, 
+                       _xpc_file_transfer_copy_io, _xpc_file_transfer_create_with_fd, 
+                       _xpc_file_transfer_create_with_path, _xpc_file_transfer_get_size, 
+                       _xpc_file_transfer_get_transfer_id, _xpc_file_transfer_send_finished, 
+                       _xpc_file_transfer_set_transport_start_writing_callback, _xpc_file_transfer_write_finished, 
+                       _xpc_file_transfer_write_to_fd, _xpc_file_transfer_write_to_path, 
+                       _xpc_generate_audit_token, _xpc_get_attachment_endpoint, _xpc_get_class4NSXPC, 
+                       _xpc_get_event_name, _xpc_get_type, _xpc_handle_service, _xpc_handle_subservice, 
                        _xpc_hash, _xpc_impersonate_user, _xpc_init_services, _xpc_inspect_copy_description, 
                        _xpc_inspect_copy_description_local, _xpc_inspect_copy_short_description, 
                        _xpc_inspect_copy_short_description_local, _xpc_install_remote_hooks, 

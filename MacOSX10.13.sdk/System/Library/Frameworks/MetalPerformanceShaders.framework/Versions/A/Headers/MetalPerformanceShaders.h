@@ -592,7 +592,7 @@ BOOL    MPSSupportsMTLDevice( __nullable id <MTLDevice> device )  MPS_AVAILABLE_
  *      MPSCNNNeuronSoftPlus            <MPSNeuralNetwork/MPSCNNConvolution.h>       A parametric SoftPlus neuron activation function a*log(1+e**(b*x))
  *      MPSCNNNeuronSoftSign            <MPSNeuralNetwork/MPSCNNConvolution.h>       A SoftSign neuron activation function x/(1+|x|)
  *      MPSCNNNeuronELU                 <MPSNeuralNetwork/MPSCNNConvolution.h>       A parametric ELU neuron activation function x<0 ? (a*(e**x-1)) : x
- *      MPSCNNNeuronReLUN               <MPSNeuralNetwork/MPSCNNConvolution.h>       A rectified linear N neuron activation function min((x >= 0 ? x : a * x), b)
+ *      MPSCNNNeuronReLUN               <MPSNeuralNetwork/MPSCNNConvolution.h>       A rectified linear N neuron activation function min((x>=0?x:a*x), b)
  *      MPSCNNNeuronPReLU               <MPSNeuralNetwork/MPSCNNConvolution.h>       ReLU, except a different a value is provided for each feature channel
  *      MPSCNNConvolution               <MPSNeuralNetwork/MPSCNNConvolution.h>       A 4D convolution tensor
  *      MPSCNNConvolutionTranspose      <MPSNeuralNetwork/MPSCNNConvolution.h>       A 4D convolution transpose tensor

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2D953B7D-51D2-3AD6-A577-514971069655' ]
+uuids:           [ 'x86_64: 811A72DA-5AA9-3FD5-9609-32EB1D667C6F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoLibraryPrivate.framework/Versions/A/Frameworks/ShareServicesCore.framework/Versions/A/ShareServicesCore
-current-version: 3231.11.210
+current-version: 3251.12.180
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _IPXAssetCountsByType, _IPXLocalizationKeyForAssets, _IPXReachabilityTestHost, 

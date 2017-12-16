@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 6D77527D-4656-3EAF-8A3E-1EE2C2E7FFDA', 'x86_64: 7D7F7329-77C7-302B-BAAF-6CDCBE63ADE5' ]
+uuids:           [ 'i386: 43DEDC00-D5A9-3629-9118-9CED0FEDD808', 'x86_64: 93DC8AE3-B3F7-326E-93DB-C85A2BFD3C3F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Engram.framework/Versions/A/Engram
 exports:         

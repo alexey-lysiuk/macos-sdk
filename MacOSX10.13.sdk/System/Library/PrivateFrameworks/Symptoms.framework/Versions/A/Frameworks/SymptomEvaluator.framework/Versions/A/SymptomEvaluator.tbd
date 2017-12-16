@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C7295D3F-DD05-3BD5-9621-C395009A308C' ]
+uuids:           [ 'x86_64: 6F3DC660-D115-3F7F-A6BE-97A198845302' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Symptoms.framework/Frameworks/SymptomEvaluator.framework/Versions/A/SymptomEvaluator
-current-version: 820.20.3
+current-version: 820.30.7
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _AWDSymptomsAdvisoryAlternateNetworkTypeReadFrom, _AWDSymptomsAdvisoryAppCanUseAlternateNetworkReadFrom, 
@@ -925,6 +925,7 @@ exports:
                        _AWDSymptomsNetworkTCPFlowThroughputEvent._timeToNetworkEventsMsecs, 
                        _AWDSymptomsNetworkTCPFlowThroughputEvent._txBytes, _AWDSymptomsNetworkTCPFlowThroughputEvent._txRetransmittedBytes, 
                        _AWDSymptomsNetworkTCPFlowThroughputEvent._ulThroughputBytesPerSec, 
+                       _AWDSymptomsNetworkUsageAttributionMetric._flowsImpactedCount, 
                        _AWDSymptomsNetworkUsageAttributionMetric._has, _AWDSymptomsNetworkUsageAttributionMetric._networkType, 
                        _AWDSymptomsNetworkUsageAttributionMetric._timestamp, _AWDSymptomsNetworkUsageAttributionMetric._usageAttributedTo, 
                        _AWDSymptomsNetworkUsageAttributionMetric._usageBytes, _AWDSymptomsNoBackhaulPopUpMetric._action, 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: ADBFBB5F-4F9D-3480-AB30-78B381BA4D61' ]
+uuids:           [ 'x86_64: 7F1A0E0D-8E0D-3B20-AD71-5EAC4656ED21' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AOSUI.framework/Versions/A/AOSUI
 current-version: 415
@@ -265,19 +265,20 @@ exports:
                        _IACastleServicesView._buttonDefault, _IACastleServicesView._buttonDefaultWithAlternate, 
                        _IACastleServicesView._checkEmailText, _IACastleServicesView._detailsButton, 
                        _IACastleServicesView._enabled, _IACastleServicesView._groupRowArray, 
-                       _IACastleServicesView._lockedText, _IACastleServicesView._lockedTitle, 
-                       _IACastleServicesView._mmAccount, _IACastleServicesView._nameField, 
-                       _IACastleServicesView._notVerifiedText, _IACastleServicesView._plugin, 
-                       _IACastleServicesView._reauthText, _IACastleServicesView._reauthTitle, 
-                       _IACastleServicesView._rowViews, _IACastleServicesView._secondaryAccountDescription, 
-                       _IACastleServicesView._secondaryAccountTitle, _IACastleServicesView._servicesTable, 
-                       _IACastleServicesView._storageBar, _IACastleServicesView._storageButton, 
-                       _IACastleServicesView._storageFormat, _IACastleServicesView._storageLabel, 
-                       _IACastleServicesView._webKitViewController, _IACastleServicesViewLoader._servicesView, 
-                       _MMAOSKeychainWrapper._accountName, _MMAOSKeychainWrapper._lock, 
-                       _MMAOSKeychainWrapper._serviceName, _MMAOSKeychainWrapper._userCanceledKeychainUnlock, 
-                       _MMAccountMgr._accounts, _MMAccountMgr._termsOfServiceController, 
-                       _MMAlert._completionHandler, _MMAlert._helpHandler, _MMInfoCapacityPopoverViewController.mediaSizeLabel, 
+                       _IACastleServicesView._iCloudLabel, _IACastleServicesView._lockedText, 
+                       _IACastleServicesView._lockedTitle, _IACastleServicesView._mmAccount, 
+                       _IACastleServicesView._nameField, _IACastleServicesView._notVerifiedText, 
+                       _IACastleServicesView._plugin, _IACastleServicesView._reauthText, 
+                       _IACastleServicesView._reauthTitle, _IACastleServicesView._rowViews, 
+                       _IACastleServicesView._secondaryAccountDescription, _IACastleServicesView._secondaryAccountTitle, 
+                       _IACastleServicesView._servicesTable, _IACastleServicesView._storageBar, 
+                       _IACastleServicesView._storageButton, _IACastleServicesView._storageFormat, 
+                       _IACastleServicesView._storageLabel, _IACastleServicesView._webKitViewController, 
+                       _IACastleServicesViewLoader._servicesView, _MMAOSKeychainWrapper._accountName, 
+                       _MMAOSKeychainWrapper._lock, _MMAOSKeychainWrapper._serviceName, 
+                       _MMAOSKeychainWrapper._userCanceledKeychainUnlock, _MMAccountMgr._accounts, 
+                       _MMAccountMgr._termsOfServiceController, _MMAlert._completionHandler, 
+                       _MMAlert._helpHandler, _MMInfoCapacityPopoverViewController.mediaSizeLabel, 
                        _MMInfoCapacityPopoverViewController.mediaTypeLabel, _MMLengthFormatter._maxLength, 
                        _MMMobileDocumentsService._confirmModalDialog, _MMMobileDocumentsService._confirmProgress, 
                        _MMMobileDocumentsService._documentsAndDataTab, _MMMobileDocumentsService._isMigrationInProgress, 

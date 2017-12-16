@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 03DC4BAA-E4B1-35A9-8CF3-4866D5166D08' ]
+uuids:           [ 'x86_64: F358E7AF-449E-35F0-8575-48FDF7621811' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/OSAnalytics.framework/Versions/A/OSAnalytics
 objc-constraint: none

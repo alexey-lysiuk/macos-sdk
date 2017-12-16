@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 1F395E58-AB6F-3D7F-980A-D02601363D2D', 'x86_64: 23542804-9605-3458-9468-22B0DE738E21' ]
+uuids:           [ 'i386: EBD4DB8D-03D3-3136-B431-969A2E5E1B91', 'x86_64: B95F06EA-9D5D-311D-9912-978AE42ECFCE' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IOPresentment.framework/Versions/A/IOPresentment
-current-version: 33.6
+current-version: 33.7
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]

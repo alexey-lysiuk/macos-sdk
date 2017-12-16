@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1234E748-E67C-3EBC-A910-E60E0C06C5D9' ]
+uuids:           [ 'x86_64: 2DEBEA12-F448-3964-9124-8DC2C17B9905' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Intents.framework/Versions/A/Intents
 objc-constraint: none
@@ -76,11 +76,11 @@ exports:
                        _INHomeKitDomainGetIntentDescriptionWithType, _INHomeKitDomainGetIntentResponseDescriptionWithDataClass, 
                        _INHomeKitDomainGetIntentResponseDescriptionWithFacadeClass, 
                        _INHomeKitDomainGetIntentResponseDescriptionWithName, _INHomeKitDomainGetIntentResponseDescriptionWithType, 
-                       _INIntentCreate, _INIntentErrorDomain, _INIntentResponseCreate, 
-                       _INIntentResponseIsAutoSendFailure, _INIntentSchemaGetIntentDescriptionWithDataClass, 
-                       _INIntentSchemaGetIntentDescriptionWithFacadeClass, _INIntentSchemaGetIntentDescriptionWithName, 
-                       _INIntentSchemaGetIntentDescriptionWithType, _INIntentSchemaGetIntentNames, 
-                       _INIntentSchemaGetIntentResponseDescriptionWithDataClass, 
+                       _INIntentCreate, _INIntentErrorDomain, _INIntentResolutionResultErrorDomain, 
+                       _INIntentResponseCreate, _INIntentResponseIsAutoSendFailure, 
+                       _INIntentSchemaGetIntentDescriptionWithDataClass, _INIntentSchemaGetIntentDescriptionWithFacadeClass, 
+                       _INIntentSchemaGetIntentDescriptionWithName, _INIntentSchemaGetIntentDescriptionWithType, 
+                       _INIntentSchemaGetIntentNames, _INIntentSchemaGetIntentResponseDescriptionWithDataClass, 
                        _INIntentSchemaGetIntentResponseDescriptionWithFacadeClass, 
                        _INIntentSchemaGetIntentResponseDescriptionWithName, _INIntentSchemaGetIntentResponseDescriptionWithType, 
                        _INIntentSchemaGetIntentResponseNames, _INIntentSchemaGetIntentResponseTypes, 
@@ -215,6 +215,7 @@ exports:
                        _INSyncSlotPaymentsOrganizationName, _INSyncSlotPersonName, 
                        _INSyncSlotPhotoAlbumName, _INSyncSlotPhotoTagName, _INThisProcessHasAssistantdEntitlement, 
                        _INThisProcessHasEntitlement, _INThisProcessHasSiriDeveloperEntitlement, 
+                       _INThisProcessIsAssistantd, _INThisProcessIsSystemProcess, 
                        _INTriggerMethodGetBackingType, _INTriggerMethodGetFacadeType, 
                        _INTriggerMethodGetName, _INTriggerMethodHasBackingType, _INUncompressFileIntentResponseCodeGetName, 
                        _INUserActivityDeserializeFromBackingStore, _INUserActivityDeserializeFromData, 
@@ -354,14 +355,14 @@ exports:
                        __INPBValueMetadataReadFrom, __INPBVisual_codeOptions, __INSiriDeveloperEntitlement, 
                        __INStringFromVocabularyStringType, __INSyncSlotFromVocabularyStringType, 
                        __INVocabularyStringTypeFromSlotName, _kINVocabularyUpdateServiceName ]
-    objc-classes:    [ _INApplicationContext, _INCache, _INCacheableObjectManager, 
-                       _INCallCapabilityOptionsResolutionResult, _INCallDestinationTypeResolutionResult, 
-                       _INCallRecord, _INCallRecordTypeOptionsResolutionResult, _INCallRecordTypeResolutionResult, 
-                       _INCompressFileIntent, _INCompressFileIntentResponse, _INCopyFileIntent, 
-                       _INCopyFileIntentResponse, _INCreateFileIntent, _INCreateFileIntentResponse, 
-                       _INDateComponentsRange, _INDateComponentsRangeResolutionResult, 
-                       _INDeleteFilePermanentlyIntent, _INDeleteFilePermanentlyIntentResponse, 
-                       _INExtension, _INExtensionContext, _INExtensionContextHost, 
+    objc-classes:    [ _INApplicationContext, _INCache, _INCallCapabilityOptionsResolutionResult, 
+                       _INCallDestinationTypeResolutionResult, _INCallRecord, _INCallRecordTypeOptionsResolutionResult, 
+                       _INCallRecordTypeResolutionResult, _INCompressFileIntent, 
+                       _INCompressFileIntentResponse, _INCopyFileIntent, _INCopyFileIntentResponse, 
+                       _INCreateFileIntent, _INCreateFileIntentResponse, _INDateComponentsRange, 
+                       _INDateComponentsRangeResolutionResult, _INDeleteFilePermanentlyIntent, 
+                       _INDeleteFilePermanentlyIntentResponse, _INExtension, _INExtensionContext, 
+                       _INExtensionContextHost, _INExtensionContextSlotResolutionResult, 
                        _INFileEntityTypeOptionsResolutionResult, _INFileProperty, 
                        _INGetFileInformationIntent, _INGetFileInformationIntentResponse, 
                        _INImage, _INImageServiceConnection, _INIntent, _INIntentDescription, 

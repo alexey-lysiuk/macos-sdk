@@ -1,8 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 298C92D1-AFC0-3801-A950-77AA1B8236B2' ]
+uuids:           [ 'x86_64: D28C0F54-01F0-3C68-9E10-554D2148619F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/EmbeddedAcousticRecognition.framework/Versions/A/EmbeddedAcousticRecognition
+objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _EARCCCommandTaggingResultGetCommandTaggings, _EARCCommandTaggerCreate, 
@@ -23,20 +24,15 @@ exports:
                        _EARCUserProfileCreate, _EARCUserProfileReadDataProfile, _EARCUserProfileRemoveAllWords, 
                        _EARCWordPartCreate, _EARCWordPartGetFrequency, _EARCWordPartGetOrthography, 
                        _EARCWordPartGetPronunciations, _EARCWordPartGetTagName, _EARErrorDomain, 
-                       _EARRecognitionStatisticAcousticProfileGenerationTime, _EARRecognitionStatisticAcousticProfileLoadingTime, 
-                       _EARRecognitionStatisticAverageActiveTokensPerFrame, _EARRecognitionStatisticFirstPassCpuTime, 
-                       _EARRecognitionStatisticLmeLoadingTime, _EARRecognitionStatisticProcessEmittingCpuTime, 
-                       _EARRecognitionStatisticProcessEmittingWallTime, _EARRecognitionStatisticProcessNonemittingCpuTime, 
-                       _EARRecognitionStatisticProcessNonemittingWallTime, _EARRecognitionStatisticPruneActiveTokensCpuTime, 
-                       _EARRecognitionStatisticPruneActiveTokensWallTime, _EARRecognitionStatisticRecogCpuTime, 
-                       _EARRecognitionStatisticSecondPassCpuTime ]
+                       _EARRecognitionStatisticAverageActiveTokensPerFrame, _EARRecognitionStatisticRecogCpuTime ]
     objc-classes:    [ _EARCaesuraSilencePosteriorGenerator, _EARClientSilenceFeatures, 
                        _EARKeywordFinder, _EARKeywordFinderResult, _EARPSRAudioProcessor, 
                        _EARTokenPronounciations, __EARCombinedResult, __EARCommandTagger, 
                        __EARCommandTagging, __EARCommandTaggingResult, __EARDefaultServerEndpointFeatures, 
                        __EAREndpointFeatures, __EAREndpointer, __EARFormatter, __EARLanguageModel, 
-                       __EARResultCombiner, __EARSpeechModelInfo, __EARSpeechRecognitionAudioBuffer, 
-                       __EARSpeechRecognitionResult, __EARSpeechRecognitionToken, 
-                       __EARSpeechRecognizer, __EARSystemResult, __EARUserProfile, 
-                       __EARWordPart ]
+                       __EARResultCombiner, __EARSpeechModelInfo, __EARSpeechRecognition, 
+                       __EARSpeechRecognitionAudioBuffer, __EARSpeechRecognitionResult, 
+                       __EARSpeechRecognitionResultPackage, __EARSpeechRecognitionToken, 
+                       __EARSpeechRecognizer, __EARSystemResult, __EARTransformUtil, 
+                       __EARUserProfile, __EARWordPart ]
 ...

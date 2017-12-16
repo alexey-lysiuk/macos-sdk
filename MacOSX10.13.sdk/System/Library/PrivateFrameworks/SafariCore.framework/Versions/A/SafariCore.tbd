@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 50D3B568-EB86-3E55-AD5A-7544EE664440' ]
+uuids:           [ 'x86_64: 7F54D072-4069-33C0-8ADD-AFACF1F82B26' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SafariCore.framework/Versions/A/SafariCore
-current-version: 604.3.5
+current-version: 604.4.7
 compatibility-version: 0
 exports:         
   - archs:           [ x86_64 ]
@@ -23,6 +23,7 @@ exports:
                        _WBSAnalyticsSafariPageLoadStartedEventReadFrom, _WBSAnalyticsSafariReaderActiveOptInOutEventReadFrom, 
                        _WBSAnalyticsSafariReaderChangedOptInOutEventReadFrom, _WBSAnalyticsSafariSafeBrowsingUserActionAfterSeeingWarningEventReadFrom, 
                        _WBSAnalyticsSafariSafeBrowsingWarningShownEventReadFrom, 
+                       _WBSAnalyticsSafariSelectedFavoritesGridItemEventReadFrom, 
                        _WBSAnalyticsSafariSetAutoFillQuickTypeSuggestionEventReadFrom, 
                        _WBSAnalyticsSafariTappedAutoFillQuickTypeSuggestionEventReadFrom, 
                        _WBSAnalyticsSafariTappedOnToolbarButtonEventReadFrom, _WBSAnalyticsSafariTwoFingerTappedOnLinkEventReadFrom, 
@@ -68,8 +69,8 @@ exports:
                        _WBSAnalyticsSafariEnterTwoUpEvent, _WBSAnalyticsSafariPageLoadCompleteEvent, 
                        _WBSAnalyticsSafariPageLoadStartedEvent, _WBSAnalyticsSafariReaderActiveOptInOutEvent, 
                        _WBSAnalyticsSafariReaderChangedOptInOutEvent, _WBSAnalyticsSafariSafeBrowsingUserActionAfterSeeingWarningEvent, 
-                       _WBSAnalyticsSafariSafeBrowsingWarningShownEvent, _WBSAnalyticsSafariSetAutoFillQuickTypeSuggestionEvent, 
-                       _WBSAnalyticsSafariTappedAutoFillQuickTypeSuggestionEvent, 
+                       _WBSAnalyticsSafariSafeBrowsingWarningShownEvent, _WBSAnalyticsSafariSelectedFavoritesGridItemEvent, 
+                       _WBSAnalyticsSafariSetAutoFillQuickTypeSuggestionEvent, _WBSAnalyticsSafariTappedAutoFillQuickTypeSuggestionEvent, 
                        _WBSAnalyticsSafariTappedOnToolbarButtonEvent, _WBSAnalyticsSafariTwoFingerTappedOnLinkEvent, 
                        _WBSAnalyticsSafariUnableToSilentlyMigrateToCKBookmarksEvent, 
                        _WBSAnalyticsSafariUsingPrivateBrowsingEvent, _WBSAnalyticsSafariVersioningEvent, 
@@ -136,7 +137,12 @@ exports:
                        _WBSAnalyticsSafariSafeBrowsingUserActionAfterSeeingWarningEvent._timestamp, 
                        _WBSAnalyticsSafariSafeBrowsingWarningShownEvent._has, _WBSAnalyticsSafariSafeBrowsingWarningShownEvent._provider, 
                        _WBSAnalyticsSafariSafeBrowsingWarningShownEvent._timestamp, 
-                       _WBSAnalyticsSafariSetAutoFillQuickTypeSuggestionEvent._category, 
+                       _WBSAnalyticsSafariSelectedFavoritesGridItemEvent._displayContext, 
+                       _WBSAnalyticsSafariSelectedFavoritesGridItemEvent._has, _WBSAnalyticsSafariSelectedFavoritesGridItemEvent._itemsPerRow, 
+                       _WBSAnalyticsSafariSelectedFavoritesGridItemEvent._row, _WBSAnalyticsSafariSelectedFavoritesGridItemEvent._section, 
+                       _WBSAnalyticsSafariSelectedFavoritesGridItemEvent._sectionIndex, 
+                       _WBSAnalyticsSafariSelectedFavoritesGridItemEvent._timestamp, 
+                       _WBSAnalyticsSafariSelectedFavoritesGridItemEvent._type, _WBSAnalyticsSafariSetAutoFillQuickTypeSuggestionEvent._category, 
                        _WBSAnalyticsSafariSetAutoFillQuickTypeSuggestionEvent._formProperty, 
                        _WBSAnalyticsSafariSetAutoFillQuickTypeSuggestionEvent._has, 
                        _WBSAnalyticsSafariSetAutoFillQuickTypeSuggestionEvent._timestamp, 

@@ -242,8 +242,8 @@ PDFKIT_CLASS_AVAILABLE(10_4, 11_0)
 @property (nonatomic, readonly, nullable) NSString *toolTip PDFKIT_DEPRECATED(10_5, 10_12, NA, NA);
 
 // Optional action performed when a user releases the mouse within an annotation. PDF readers ignore actions except
-// for those associated with Link or button Widget annotations. This has been replaced by -[PDFView action] and
-// -[PDFView setAction:] methods, which do the same behavior for both mouse-up driven actions and tap-gestures.
+// for those associated with Link or button Widget annotations. This has been replaced by -[PDFAnnotation action] and
+// -[PDFAnnotation setAction:] methods, which do the same behavior for both mouse-up driven actions and tap-gestures.
 @property (nonatomic, strong, nullable) PDFAction *mouseUpAction PDFKIT_DEPRECATED(10_5, 10_13, NA, NA);
 
 // All appearance streams for the target annotation are removed. Without an appearance stream, annotations are drawn

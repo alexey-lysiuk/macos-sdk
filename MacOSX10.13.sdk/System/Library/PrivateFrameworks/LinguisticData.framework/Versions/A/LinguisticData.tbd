@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 58F654BB-2845-3659-82BE-4D2F43723191', 'x86_64: 0C53E8E4-5BB6-377E-BD74-DDC3B548D699' ]
+uuids:           [ 'i386: C47B3EB0-0463-3613-8A09-344F1639EE92', 'x86_64: 228AF7CA-649A-3E24-BBC7-8A24B39B3FC4' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/LinguisticData.framework/Versions/A/LinguisticData
-current-version: 238.2.2
+current-version: 238.3
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]

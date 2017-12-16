@@ -55,17 +55,19 @@ MP_API(ios(5.0), tvos(5.0), macos(10.12.2))
 /// Returns the default now playing info center.
 /// The default center holds now playing info about the current application.
 + (MPNowPlayingInfoCenter *)defaultCenter;
++ (instancetype)new NS_UNAVAILABLE;
+- (instancetype)init NS_UNAVAILABLE;
 
 /// The current now playing info for the center.
 /// Setting the info to nil will clear it.
-@property (copy, nullable) NSDictionary<NSString *, id> *nowPlayingInfo;
+@property (nonatomic, copy, nullable) NSDictionary<NSString *, id> *nowPlayingInfo;
 
 /// The current playback state of the app.
 /// This only applies on macOS, where playback state cannot be determined by
 /// the application's audio session. This property must be set every time
 /// the app begins or halts playback, otherwise remote control functionality may
 /// not work as expected.
-@property (assign) MPNowPlayingPlaybackState playbackState MP_API(macos(10.12.2));
+@property (nonatomic) MPNowPlayingPlaybackState playbackState MP_API(macos(10.12.2));
 
 @end
 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F140B6A8-49F1-3E9C-8C60-4635AB5E1F44' ]
+uuids:           [ 'x86_64: 0D6642EF-EDC6-31A6-AFDC-E44951878F81' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/ModelIO.framework/Versions/A/ModelIO
 exports:         

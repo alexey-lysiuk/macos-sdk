@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: CC1A12D1-38B1-32DD-B26E-C5528E478D6E', 'x86_64: 49F53BF8-809B-3A73-9FCA-4E684DA76625' ]
+uuids:           [ 'i386: F85F21A8-2F27-3903-BA62-DA7689F13C43', 'x86_64: CC88FFB3-5DBE-33C0-AF8D-2C915D915A24' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/VideoToolbox.framework/Versions/A/VideoToolbox
 exports:         
@@ -59,18 +59,18 @@ exports:
                        _VTMetalTransferSessionConfigureForSourceAndDest, _VTMetalTransferSessionCopyProperty, 
                        _VTMetalTransferSessionCopySerializableProperties, _VTMetalTransferSessionCopySupportedPropertyDictionary, 
                        _VTMetalTransferSessionCreate, _VTMetalTransferSessionCreatePixelBufferDescription, 
-                       _VTMetalTransferSessionGetTypeID, _VTMetalTransferSessionSetProperties, 
-                       _VTMetalTransferSessionSetProperty, _VTMetalTransferSessionTransferImageSync, 
-                       _VTMultiPassStorageClose, _VTMultiPassStorageCopyDataAtTimeStamp, 
-                       _VTMultiPassStorageCopyIdentifier, _VTMultiPassStorageCreate, 
-                       _VTMultiPassStorageGetTimeStamp, _VTMultiPassStorageGetTimeStampAndDuration, 
-                       _VTMultiPassStorageGetTypeID, _VTMultiPassStorageInvalidate, 
-                       _VTMultiPassStorageSetDataAtTimeStamp, _VTMultiPassStorageSetIdentifier, 
-                       _VTMultiPassStorageWriteMerged, _VTMultiPassStorageWriteSegment, 
-                       _VTPixelBufferAttributesMediatorAddLayer, _VTPixelBufferAttributesMediatorCopyProperty, 
-                       _VTPixelBufferAttributesMediatorCreate, _VTPixelBufferAttributesMediatorGetTypeID, 
-                       _VTPixelBufferAttributesMediatorNotificationBarrier, _VTPixelBufferAttributesMediatorRemoveLayer, 
-                       _VTPixelBufferAttributesMediatorRemoveRequestedPixelBufferAttributesForKey, 
+                       _VTMetalTransferSessionGetRequiredAlignment, _VTMetalTransferSessionGetTypeID, 
+                       _VTMetalTransferSessionSetProperties, _VTMetalTransferSessionSetProperty, 
+                       _VTMetalTransferSessionTransferImageSync, _VTMultiPassStorageClose, 
+                       _VTMultiPassStorageCopyDataAtTimeStamp, _VTMultiPassStorageCopyIdentifier, 
+                       _VTMultiPassStorageCreate, _VTMultiPassStorageGetTimeStamp, 
+                       _VTMultiPassStorageGetTimeStampAndDuration, _VTMultiPassStorageGetTypeID, 
+                       _VTMultiPassStorageInvalidate, _VTMultiPassStorageSetDataAtTimeStamp, 
+                       _VTMultiPassStorageSetIdentifier, _VTMultiPassStorageWriteMerged, 
+                       _VTMultiPassStorageWriteSegment, _VTPixelBufferAttributesMediatorAddLayer, 
+                       _VTPixelBufferAttributesMediatorCopyProperty, _VTPixelBufferAttributesMediatorCreate, 
+                       _VTPixelBufferAttributesMediatorGetTypeID, _VTPixelBufferAttributesMediatorNotificationBarrier, 
+                       _VTPixelBufferAttributesMediatorRemoveLayer, _VTPixelBufferAttributesMediatorRemoveRequestedPixelBufferAttributesForKey, 
                        _VTPixelBufferAttributesMediatorSetProperty, _VTPixelBufferAttributesMediatorSetRequestedPixelBufferAttributesForKey, 
                        _VTPixelBufferConformerCopyBlackPixelBuffer, _VTPixelBufferConformerCopyConformedPixelBuffer, 
                        _VTPixelBufferConformerCreateWithAttributes, _VTPixelBufferConformerGetAttributes, 

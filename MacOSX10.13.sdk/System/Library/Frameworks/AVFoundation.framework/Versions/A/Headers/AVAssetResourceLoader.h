@@ -271,6 +271,13 @@ AV_INIT_UNAVAILABLE
 */
 @property (nonatomic, copy, nullable) NSString *contentType;
 
+/*!
+ @property		allowedContentTypes
+ @abstract		An array showing the types of data which will be accepted as a valid response for the requested resource.
+ @discussion	If allowedContentTypes is nonnil and the contentType property is not in allowedContentTypes, an exception will be raised.
+*/
+@property (nonatomic, readonly, nullable) NSArray <NSString *> *allowedContentTypes API_AVAILABLE(ios(11.2), tvos(11.2), macos(10.13.2), watchos(4.2));
+
 /*! 
  @property 		contentLength
  @abstract		Indicates the length of the requested resource, in bytes.

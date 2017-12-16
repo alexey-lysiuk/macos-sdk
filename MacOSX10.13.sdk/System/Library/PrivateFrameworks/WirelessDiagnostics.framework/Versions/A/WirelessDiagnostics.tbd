@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F47CB2F9-3B37-3463-80B4-2A372E5F1766' ]
+uuids:           [ 'x86_64: 60D12A36-C579-348F-B84C-E25F20C422E0' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/WirelessDiagnostics.framework/Versions/A/WirelessDiagnostics
 current-version: 757

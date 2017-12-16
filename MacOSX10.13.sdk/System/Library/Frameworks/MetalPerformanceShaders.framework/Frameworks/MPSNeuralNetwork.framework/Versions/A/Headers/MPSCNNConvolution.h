@@ -350,6 +350,7 @@ MPS_CLASS_AVAILABLE_STARTING(macos(10.13), ios(11.0), tvos(11.0))
 
 @end    /* MPSCNNNeuronReLUN */
   
+  
 #pragma mark -
 #pragma mark MPSCNNConvolutionDescriptor
 
@@ -898,6 +899,10 @@ MPS_CLASS_AVAILABLE_STARTING( macos(10.13), ios(10.0), tvos(10.0))
 /*! @abstract   Parameter "b" for the neuron.  Default: 1.0f
  *  @discussion Please see class description for interpretation of b. */
 @property   (readonly, nonatomic) float                neuronParameterB;
+
+/*! @abstract   Parameter "c" for the neuron.  Default: 1.0f
+ *  @discussion Please see class description for interpretation of c. */
+@property   (readonly, nonatomic) float                neuronParameterC;
 
 /*! @abstract   Channel multiplier.
  *  @discussion For convolution created with MPSCNNDepthWiseConvolutionDescriptor, it is the number of

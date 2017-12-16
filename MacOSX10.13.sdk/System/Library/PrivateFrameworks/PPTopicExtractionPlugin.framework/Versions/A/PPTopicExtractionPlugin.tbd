@@ -1,12 +1,12 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C4A7DB75-C2CE-39CE-8FFC-C9A493DE6320' ]
+uuids:           [ 'x86_64: 4C91D29E-34A6-3095-9619-0C450CAC6E4E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PPTopicExtractionPlugin.framework/Versions/A/PPTopicExtractionPlugin
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _NewsBundleIdentifier, _PPTopicExtractionPluginVersionNumber, 
                        _PPTopicExtractionPluginVersionString, _PortraitAnalyticsDefaultSamplingRate, 
-                       _SafariBundleIdentifier, _SafariReaderTextSourceString ]
+                       _SafariBundleIdentifier, _SafariReaderTextSourceString, _minMemmoryForCK ]
     objc-classes:    [ _PPTopicExtractionPlugin ]
 ...

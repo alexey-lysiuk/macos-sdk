@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 6BFB661D-E080-3D4C-A261-D6FEC6E92A19', 'x86_64: 69DBC023-C6D0-37A2-9575-CBD16A5D41A1' ]
+uuids:           [ 'i386: 80581EF3-ABFF-3577-96C4-807E9715C175', 'x86_64: 64C16576-4F1C-31D4-9A3B-540E8357EBDC' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/GPUCompiler.framework/Versions/3802/Libraries/libGPUCompilerImpl.dylib
-current-version: 802.1
+current-version: 802.3
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]
@@ -240,7 +240,8 @@ exports:
                        __ZNK5clang7metalfe15AIRVerifierImpl43emitInvalidRenderTargetAttachmentIndexErrorEPKNS0_14AIRenderTargetEPKN4llvm8FunctionE, 
                        __ZNK5clang7metalfe15AIRVerifierImpl45emitDuplicatedFragmentInputAttributeNameErrorEPKNS0_15AIFragmentInputEPKN4llvm8FunctionE, 
                        __ZNK5clang7metalfe15AIRVerifierImpl46emitDuplicatedRenderTargetAttachmentIndexErrorEPKNS0_14AIRenderTargetEPKN4llvm8FunctionE, 
-                       __ZNK5clang7metalfe18AIRFunctionInfo1d612isOverloadedEj, __ZNK5clang7metalfe18AIRFunctionInfo1d613getAttributesERN4llvm11LLVMContextEj, 
+                       __ZNK5clang7metalfe15ResourceTracker3maxEv, __ZNK5clang7metalfe18AIRFunctionInfo1d612isOverloadedEj, 
+                       __ZNK5clang7metalfe18AIRFunctionInfo1d613getAttributesERN4llvm11LLVMContextEj, 
                        __ZNK5clang7metalfe18AIRFunctionInfo1d626getFunctionIDForGCCBuiltinEPKc, 
                        __ZNK5clang7metalfe18AIRFunctionInfo1d628getFunctionIDForGenericAIRIDENS0_12airIntrinsicE, 
                        __ZNK5clang7metalfe18AIRFunctionInfo1d628getGenericAIRIDForFunctionIDEj, 

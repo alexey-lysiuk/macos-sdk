@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 7E95593B-AC9E-332A-B706-C60627979740', 'x86_64: BDC29B76-8255-37B8-92FC-4B28427DFF2D' ]
+uuids:           [ 'i386: 4298C491-8C0C-3B54-92A3-DDF7CA5832B8', 'x86_64: B8D18490-9A00-3E86-BBF2-FA2DDA7CDB72' ]
 platform:        macosx
 install-name:    /usr/lib/system/introspection/libdispatch.dylib
-current-version: 913.20.5
+current-version: 913.30.4
 parent-umbrella: System
 exports:         
   - archs:           [ i386 ]
@@ -38,9 +38,10 @@ exports:
                        __dispatch_source_type_read, __dispatch_source_type_signal, 
                        __dispatch_source_type_sock, __dispatch_source_type_timer, 
                        __dispatch_source_type_vfs, __dispatch_source_type_vm, __dispatch_source_type_vnode, 
-                       __dispatch_source_type_write, __dispatch_trysync_f, __firehose_spi_version, 
-                       __os_object_alloc, __os_object_alloc_realized, __os_object_dealloc, 
-                       __os_object_release, __os_object_release_internal, __os_object_release_internal_n, 
+                       __dispatch_source_type_write, __dispatch_source_will_reenable_kevent_4NW, 
+                       __dispatch_trysync_f, __firehose_spi_version, __os_object_alloc, 
+                       __os_object_alloc_realized, __os_object_dealloc, __os_object_release, 
+                       __os_object_release_internal, __os_object_release_internal_n, 
                        __os_object_retain, __os_object_retain_internal, __os_object_retain_internal_n, 
                        __os_object_retain_with_resurrect, _dispatch_activate, _dispatch_after, 
                        _dispatch_after_f, _dispatch_apply, _dispatch_apply_f, _dispatch_assert_queue, 

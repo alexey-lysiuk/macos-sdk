@@ -13,6 +13,7 @@
 #import <MPSNeuralNetwork/MPSCNNSoftMax.h>
 #import <MPSNeuralNetwork/MPSCNNUpsampling.h>
 #import <MPSNeuralNetwork/MPSRNNLayer.h>
+#import <MPSNeuralNetwork/MPSMatrixLayer.h>
 
 #import <MPSNeuralNetwork/MPSNNGraph.h>
 

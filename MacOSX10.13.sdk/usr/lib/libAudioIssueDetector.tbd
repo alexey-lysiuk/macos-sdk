@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 7CE90EA0-3693-3017-BAD2-A6966A4B45D1', 'x86_64: AB80CD57-551E-3EC5-A46E-08CF7A574F49' ]
+uuids:           [ 'i386: C626A065-4C72-3286-A543-0E9B9ED37742', 'x86_64: 6888D693-7FFD-31BD-A33F-DC6F43421B9E' ]
 platform:        macosx
 install-name:    /usr/lib/libAudioIssueDetector.dylib
 exports:         

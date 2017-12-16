@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: AA55BFD7-A5AD-35AC-B64B-93A798EBED1D', 'x86_64: E959C37C-099B-3DD8-AB3B-67F0625939F7' ]
+uuids:           [ 'i386: DACC5623-8E37-3134-9562-4E8601127F67', 'x86_64: A5E013D9-7305-3026-879E-4D1F038A430D' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/ColorSync.framework/Versions/A/ColorSync
 current-version: 4.7

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0F890880-F7B3-3FA7-B49D-43859C1B9B37' ]
+uuids:           [ 'x86_64: 513B0D3A-A99E-300A-AB2B-2761835094B4' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MMCSServices.framework/Versions/A/MMCSServices
 current-version: 800

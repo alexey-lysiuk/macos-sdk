@@ -64,8 +64,8 @@ static __inline__ NSPoint SSRandomPointForSizeWithinRect(NSSize size, NSRect rec
 static __inline__ NSRect SSCenteredRectInRect(NSRect innerRect, NSRect outerRect)
 {
 #if CGFLOAT_IS_DOUBLE
-    innerRect.origin.x = outerRect.origin.x + floorf((outerRect.size.width - innerRect.size.width) / 2);
-    innerRect.origin.y = outerRect.origin.y + floorf((outerRect.size.height - innerRect.size.height) / 2);
+    innerRect.origin.x = outerRect.origin.x + floor((outerRect.size.width - innerRect.size.width) / 2);
+    innerRect.origin.y = outerRect.origin.y + floor((outerRect.size.height - innerRect.size.height) / 2);
 #else
     innerRect.origin.x = outerRect.origin.x + floorf((outerRect.size.width - innerRect.size.width) / 2);
     innerRect.origin.y = outerRect.origin.y + floorf((outerRect.size.height - innerRect.size.height) / 2);

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 13E84219-DA7C-3774-BB84-56CB93C8C8BB', 'x86_64: 7E4BD264-5617-339B-AC73-E8D07EF2C51D' ]
+uuids:           [ 'i386: F3A05833-AD1C-3E3A-8100-847297C882FC', 'x86_64: 2C7C67D7-562B-3FFA-973D-BACF4C10E1EC' ]
 platform:        macosx
 install-name:    /usr/lib/system/libcopyfile.dylib
 objc-constraint: none

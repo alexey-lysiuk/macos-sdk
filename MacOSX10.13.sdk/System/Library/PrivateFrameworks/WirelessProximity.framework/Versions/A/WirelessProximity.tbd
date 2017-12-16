@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6DF6DA0A-BA3F-3F92-98D7-BD2C621BDF67' ]
+uuids:           [ 'x86_64: 2E82194C-91FA-3ADE-AB4C-24F532A5D281' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/WirelessProximity.framework/Versions/A/WirelessProximity
 exports:         
@@ -36,7 +36,8 @@ exports:
                        _WPDAWDLogLeScanStopResult, _WPDAWDLogLeSendDataRequest, _WPDAWDLogLeSendDataResult, 
                        _WPDAWDLogLeStartTrackingPeerResult, _WPDAWDLogLeStopTrackingPeerResult, 
                        _WPDAWDLogWiClientsRegistered, _WPDAWDLogWiProxZones, _WPDAWDWarmupLogging, 
-                       _WPErrorDomain, _WPHeySiriAdvertisingData, _WPHomeKitScanBlobData, 
+                       _WPErrorDomain, _WPHeySiriAdvertisingData, _WPHeySiriKeyDeviceAddress, 
+                       _WPHeySiriKeyDeviceUUID, _WPHeySiriKeyManufacturerData, _WPHomeKitScanBlobData, 
                        _WPHomeKitScanDutyCycle, _WPHomeKitScanMaskData, _WPHomeKitTypes, 
                        _WPLogInitOnce, _WPLoggingInit, _WPMagicSwitchAdvertiseTypeInterval, 
                        _WPMagicSwitchAdvertisingData, _WPMagicSwitchScanBlobData, 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 3CEE4D97-2EAB-3400-A31D-92D2E3D8088C', 'x86_64: 7F54A7A8-3667-3071-9DE6-2D915C63F70C' ]
+uuids:           [ 'i386: 71FD5EA2-8D0B-3E21-94E4-6D5BD45005E7', 'x86_64: 47B6301F-D908-3811-BB9E-DA16D9B29A34' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/BackgroundTaskManagement.framework/Versions/A/BackgroundTaskManagement
 current-version: 57.1

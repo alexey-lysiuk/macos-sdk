@@ -502,6 +502,11 @@ MPS_CLASS_AVAILABLE_STARTING( macos(10.13), ios(11.0), tvos(11.0))
  */
 @property(readwrite, nonatomic) float                   cellToOutputNeuronParamB;
 
+/*! @property   cellToOutputNeuronParamC
+ *  @abstract   Neuron parameter C for 'gh'. Defaults to 1.0f.
+ */
+@property(readwrite, nonatomic) float                   cellToOutputNeuronParamC;
+
 
 
 /*!

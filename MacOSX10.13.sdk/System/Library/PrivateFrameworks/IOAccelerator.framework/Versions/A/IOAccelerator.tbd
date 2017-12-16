@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: F0414C78-0D0D-362C-A2AA-2ABA6F265BA5', 'x86_64: DD7ACD4F-F908-3ED8-A144-4091AA3C85BE' ]
+uuids:           [ 'i386: 4EFED596-8863-35F6-8EA3-CB11C5D9D157', 'x86_64: A47129CC-F386-3C31-AD66-C19A70615A50' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IOAccelerator.framework/Versions/A/IOAccelerator
 objc-constraint: none

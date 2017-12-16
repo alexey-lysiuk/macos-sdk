@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 4660DABD-1837-362C-9965-27606DDB3329', 'x86_64: A1BA3B04-8E53-3479-AA0C-B4404BF53982' ]
+uuids:           [ 'i386: 2D303F4E-0F74-333F-B5DF-85B5BCD179E4', 'x86_64: 932274E4-DCD5-30D5-9AC7-58CEF4571EB3' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ApplePushService.framework/Versions/A/ApplePushService
 exports:         
@@ -64,7 +64,8 @@ exports:
                        _APSXPCCreateConnectionForServiceWithQueue, _APSXPCCreateServerConnection, 
                        _APSXPCMessageTypeKey, _ConnectionDeliver_server, _ConnectionDeliver_server_routine, 
                        __APSConnectionDeliver_subsystem, __APSJWStringToCharPtr, 
-                       __APSPingClient, _aps_connection_event_handler, _sConnectPortToEnvironmentNameMapping ]
+                       __APSPingClient, _aps_connection_event_handler, _isAudioAccessory, 
+                       _sConnectPortToEnvironmentNameMapping ]
     objc-classes:    [ _APSAccessCheck, _APSCertificateStorage, _APSConnection, _APSIncomingMessage, 
                        _APSLog, _APSMessage, _APSMultiUserFS, _APSMultiUserMode, 
                        _APSOutgoingMessage, _APSPerAppTokenMap, _APSPerAppTokenMapEntry, 

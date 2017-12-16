@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AFC89EAB-2C42-3C58-9E5D-A492B249784F' ]
+uuids:           [ 'x86_64: 9344E035-93AA-3197-8033-93348005AFF5' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/WirelessDiagnostics.framework/Versions/A/Libraries/libprotobuf-lite.dylib
 objc-constraint: none

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: A9F6D32B-7DFD-349D-894F-4C9887302652', 'x86_64: 81A86D10-07E1-3086-B9E4-9BD0B60AB881' ]
+uuids:           [ 'i386: F0490CC7-6442-3E75-9C31-13A1AAEDFD47', 'x86_64: DDFDC8D2-8C12-382D-9D26-2BC9A5DC50F1' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PersistentConnection.framework/Versions/A/PersistentConnection
 exports:         
@@ -27,9 +27,9 @@ exports:
                        _PCConnectionManager._lastResumeTime, _PCConnectionManager._lastScheduledGrowthAlgorithm, 
                        _PCConnectionManager._lastScheduledIntervalTime, _PCConnectionManager._lastStartTime, 
                        _PCConnectionManager._lastStopTime, _PCConnectionManager._logObject, 
-                       _PCConnectionManager._minimumIntervalFallbackEnabled, _PCConnectionManager._onTimeKeepAliveTime, 
-                       _PCConnectionManager._onlyAllowedStyle, _PCConnectionManager._onlyAllowedStyleSet, 
-                       _PCConnectionManager._operatorMinimumIntervalFallbackAllowed, 
+                       _PCConnectionManager._minimumIntervalFallbackEnabled, _PCConnectionManager._nonCellularEarlyFireConstantInterval, 
+                       _PCConnectionManager._onTimeKeepAliveTime, _PCConnectionManager._onlyAllowedStyle, 
+                       _PCConnectionManager._onlyAllowedStyleSet, _PCConnectionManager._operatorMinimumIntervalFallbackAllowed, 
                        _PCConnectionManager._pollingIntervalOverride, _PCConnectionManager._pollingIntervalOverrideSet, 
                        _PCConnectionManager._powerAssertionID, _PCConnectionManager._powerOptimizationsForExpensiveNetworkingDisabled, 
                        _PCConnectionManager._prefsChangedToken, _PCConnectionManager._prefsStyle, 
@@ -53,10 +53,10 @@ exports:
                        _PCPersistentInterfaceManager._lastActivationTime, _PCPersistentInterfaceManager._lock, 
                        _PCPersistentInterfaceManager._shouldOverrideOnCallBehavior, 
                        _PCPersistentInterfaceManager._wakeOnWiFiDelegates, _PCPersistentInterfaceManager._wakeOnWiFiDisableTimer, 
-                       _PCPersistentTimer._disableSystemWaking, _PCPersistentTimer._fireTime, 
-                       _PCPersistentTimer._guidancePriority, _PCPersistentTimer._logObject, 
-                       _PCPersistentTimer._minimumEarlyFireProportion, _PCPersistentTimer._queue, 
-                       _PCPersistentTimer._selector, _PCPersistentTimer._serviceIdentifier, 
+                       _PCPersistentTimer._disableSystemWaking, _PCPersistentTimer._earlyFireConstantInterval, 
+                       _PCPersistentTimer._fireTime, _PCPersistentTimer._guidancePriority, 
+                       _PCPersistentTimer._logObject, _PCPersistentTimer._minimumEarlyFireProportion, 
+                       _PCPersistentTimer._queue, _PCPersistentTimer._selector, _PCPersistentTimer._serviceIdentifier, 
                        _PCPersistentTimer._simpleTimer, _PCPersistentTimer._startTime, 
                        _PCPersistentTimer._target, _PCPersistentTimer._triggerOnGMTChange, 
                        _PCPersistentTimer._userInfo, _PCPersistentTimer._userVisible, 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 74FC39AD-87FA-37B7-83C4-953A755715AA' ]
+uuids:           [ 'x86_64: E5E2C99E-0210-3C21-BA8F-4D16C9A08AFA' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IntentsCore.framework/Versions/A/IntentsCore
 objc-constraint: none

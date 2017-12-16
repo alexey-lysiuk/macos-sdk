@@ -1,13 +1,13 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 788A9BBC-BB23-3AF8-AA09-FD9DCD16068B' ]
+uuids:           [ 'x86_64: CDE9D5A8-3A82-3929-A885-BF9E75CA97AE' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/LocalAuthentication.framework/Support/DaemonUtils.framework/Versions/A/DaemonUtils
-current-version: 425.20.36
+current-version: 425.30.30
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _DaemonUtilsVersionNumber, _DaemonUtilsVersionString, __libBiometricKit ]
     objc-classes:    [ _AirDb, _BiometryHelper, _DaemonUtils, _InstalledAppsCache, 
-                       _LADFROwnerToken, _LASIORemoteCall, _LASecureIO, _LASecureIOCommunication, 
-                       _LASecureIOHelper ]
+                       _LADFROwnerToken, _LANVRAM, _LASIORemoteCall, _LASecureIO, 
+                       _LASecureIOCommunication, _LASecureIOHelper ]
 ...

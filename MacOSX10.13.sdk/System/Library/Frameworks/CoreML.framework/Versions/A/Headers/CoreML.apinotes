@@ -35,3 +35,17 @@ Protocols:
     - Selector: 'featureValueForName:'
       SwiftName: featureValue(for:)
       MethodKind: Instance
+  - Name: MLCustomLayer
+    Methods:
+    - Selector: 'initWithParameterDictionary:error:'
+      SwiftName: init(parameters:)
+      MethodKind: Instance
+    - Selector: 'outputShapesForInputShapes:error:'
+      SwiftName: outputShapes(forInputShapes:)
+      MethodKind: Instance
+    - Selector: 'evaluateOnCPUWithInputs:outputs:error:'
+      SwiftName: evaluate(inputs:outputs:)
+      MethodKind: Instance
+    - Selector: 'encodeToCommandBuffer:inputs:outputs:error:'
+      SwiftName: encode(commandBuffer:inputs:outputs:)
+      MethodKind: Instance

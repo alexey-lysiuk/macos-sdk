@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: F2E850A9-FF0A-3252-81A2-D14299D8D694', 'x86_64: D8931082-A926-36BB-BCB0-189A0BB42BC0' ]
+uuids:           [ 'i386: 71E8BCE8-33B4-3F07-AD0E-847393177410', 'x86_64: 5B6E5A73-C2B2-3188-ADE9-C29CE29BB225' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/EFILogin.framework/Versions/A/EFILogin
 exports:         

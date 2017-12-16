@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 69FAC707-9FE8-36B0-A9AF-D39CD13CFADA' ]
+uuids:           [ 'x86_64: 02911CE4-518B-3E65-8DB2-FA68DC653293' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/UniversalAccess.framework/Versions/A/Frameworks/Zoom.framework/Versions/A/Zoom
 current-version: 68
@@ -46,22 +46,22 @@ exports:
                        _ZMWButtonView._text, _ZMWButtonView._textHeight, _ZMWButtonView._textLayer, 
                        _ZMWButtonView._textWidth, _ZMWButtonView._vertPadding, _ZMWCursorView._currentSeed, 
                        _ZMWCursorView._cursorType, _ZMWCursorView._cursorZoomFactor, 
-                       _ZMWEventManager._arePoroKeysDown, _ZMWEventManager._areScrollWheelModifiersDown, 
-                       _ZMWEventManager._canHideCursor, _ZMWEventManager._cgsConnection, 
-                       _ZMWEventManager._eventHandlerInstalled, _ZMWEventManager._eventSource, 
-                       _ZMWEventManager._eventTap, _ZMWEventManager._eventTapLastReconnect, 
-                       _ZMWEventManager._eventTapListenOnly, _ZMWEventManager._eventTapListenOnlyLastReconnect, 
-                       _ZMWEventManager._eventTapListenOnlyProxy, _ZMWEventManager._eventTapListenOnlyReconnectCount, 
-                       _ZMWEventManager._eventTapProxy, _ZMWEventManager._eventTapReconnectCount, 
-                       _ZMWEventManager._lastPotentialFocusTrigger, _ZMWEventManager._lastSeenFlags, 
-                       _ZMWEventManager._lastUAFocusInformation, _ZMWEventManager._lastUAFocusTime, 
-                       _ZMWEventManager._onlyControlIsDownTime, _ZMWEventManager._registeredHotKeys, 
-                       _ZMWEventManager._registeredUAHotKeys, _ZMWEventManager._shouldHideCursor, 
-                       _ZMWMainWindow._isInPreviewMode, _ZMWMainWindow._isInResizeMode, 
-                       _ZMWMainWindow._mouseDownLayer, _ZMWMainWindow._previewLayer, 
-                       _ZMWMainWindow._shadowWindow, _ZMWMainWindow._splitBorderView, 
-                       _ZMWMainWindow._unzoomedView, _ZMWMainWindow._wasVisibleBeforeResize, 
-                       _ZMWMainWindow._zoomView, _ZMWResizeView._doneButton, _ZMWResizeView._highlightBorder, 
+                       _ZMWEventManager._arePoroKeysDown, _ZMWEventManager._canHideCursor, 
+                       _ZMWEventManager._cgsConnection, _ZMWEventManager._eventHandlerInstalled, 
+                       _ZMWEventManager._eventSource, _ZMWEventManager._eventTap, 
+                       _ZMWEventManager._eventTapLastReconnect, _ZMWEventManager._eventTapListenOnly, 
+                       _ZMWEventManager._eventTapListenOnlyLastReconnect, _ZMWEventManager._eventTapListenOnlyProxy, 
+                       _ZMWEventManager._eventTapListenOnlyReconnectCount, _ZMWEventManager._eventTapProxy, 
+                       _ZMWEventManager._eventTapReconnectCount, _ZMWEventManager._lastPotentialFocusTrigger, 
+                       _ZMWEventManager._lastSeenFlags, _ZMWEventManager._lastUAFocusInformation, 
+                       _ZMWEventManager._lastUAFocusTime, _ZMWEventManager._onlyControlIsDownTime, 
+                       _ZMWEventManager._registeredHotKeys, _ZMWEventManager._registeredUAHotKeys, 
+                       _ZMWEventManager._shouldHideCursor, _ZMWMainWindow._isInPreviewMode, 
+                       _ZMWMainWindow._isInResizeMode, _ZMWMainWindow._mouseDownLayer, 
+                       _ZMWMainWindow._previewLayer, _ZMWMainWindow._shadowWindow, 
+                       _ZMWMainWindow._splitBorderView, _ZMWMainWindow._unzoomedView, 
+                       _ZMWMainWindow._wasVisibleBeforeResize, _ZMWMainWindow._zoomView, 
+                       _ZMWResizeView._doneButton, _ZMWResizeView._highlightBorder, 
                        _ZMWResizeView._resizeHandles, _ZMWShadowWindow._shadowLayers, 
                        _ZMWSplitScreenBorderView._borderRect, _ZMWView._anchorPoint, 
                        _ZMWView._cgsID, _ZMWView._lock, _ZMWView._rootLayer, _ZMWWindow._animationView, 

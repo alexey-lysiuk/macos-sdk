@@ -12,18 +12,20 @@
 .It Nm Cm info
 .\"
 .It Nm Cm trace
-.Op Fl Nnstu
+.Op Fl NnrSstu
 .Op Fl R Ar path | Fl E
 .Op Fl c Ar codes-path Op Ar ...
 .Op Fl T Ar timeout
 .Op Fl f Ar filter-desc
-.Op Fl x Ar pid-or-name Oo Ar ... Oc | Fl p Ar pid-or-name Oo Ar ... Oc
+.Op Fl b Ar buffer-size-mb
+.Op Fl x Ar pid-or-process-name Oo Ar ... Oc | Fl p Ar pid-or-process-name Oo Ar ... Oc
 .\"
 .It Nm Cm dump
 .Op Fl E
 .Op Fl f Ar filter-desc
 .Op Fl l Ar compression-level
 .Op Fl T Ar timeout
+.Op Fl p Ar pid-or-process-name
 .Op Ar path
 .\"
 .It Nm Cm init
@@ -33,7 +35,7 @@
 .It Nm Cm setopt
 .Op Fl f Ar filter-desc
 .Op Fl w
-.Op Fl x Ar pid-or-name Oo Ar ... Oc | Fl p Ar pid-or-name Oo Ar ... Oc
+.Op Fl x Ar pid-or-process-name Oo Ar ... Oc | Fl p Ar pid-or-process-name Oo Ar ... Oc
 .\"
 .It Nm Cm enable
 .\"
@@ -41,13 +43,28 @@
 .\"
 .It Nm Cm remove
 .\"
-.It Nm Cm emit Ar debugid Op arg1 Op arg2 Op arg3 Op arg4
+.It Nm Cm reset
 .\"
-.It Nm Cm symbolicate Ar path
+.It Nm Cm emit
+.Ar debugid
+.Op arg1 Op arg2 Op arg3 Op arg4
 .\"
-.It Nm Cm compress Oo Fl l No fast|balanced|small Oc Ar path
+.It Nm Cm symbolicate
+.Ar path
 .\"
-.It Nm Cm artrace Oo Fl n Oc Oo Fl t Ar timeout Oc Oo Fl i Ar interval Oc Oo Fl o Ar filename Oc Oo Fl b Ar buffer-size-mb Oc Oo Fl f Ar filter-desc Oc
+.It Nm Cm compress
+.Op Fl l fast|balanced|small
+.Ar path
+.\"
+.It Nm Cm artrace
+.Op Fl nr
+.Op Fl t Ar timeout
+.Op Fl i Ar interval
+.Op Fl o Ar filename
+.Op Fl b Ar buffer-size-mb
+.Op Fl f Ar filter-desc
+.Op Fl F Ar filter-desc
+.Op Fl p Ar pid-or-process-name
 .\"
 .El
 .Sh DESCRIPTION
@@ -66,7 +83,7 @@ be used in multiple subcommands.
 Print information about the current configuration of kernel trace.
 .Pp
 .\" TRACE
-.It Cm trace Oo Fl Nnstu Oc Oo Fl R Ar path | Fl E Oc Oo Fl T Ar timeout Oc Oo Fl c Ar codes-path Op Ar ... Oc Oo Fl f Ar filter-desc Oc Oo Fl x Ar pid-or-name Oo Ar ... Oc | Fl p Ar pid-or-name Oo Ar ... Oc Oc
+.It Cm trace Oo Fl NnrSstu Oc Oo Fl R Ar path | Fl E Oc Oo Fl T Ar timeout Oc Oo Fl c Ar codes-path Op Ar ... Oc Oo Fl b Ar buffer-size-mb Oc Oo Fl f Ar filter-desc Oc Oo Fl x Ar pid-or-process-name Oo Ar ... Oc | Fl p Ar pid-or-process-name Oo Ar ... Oc Oc
 .Pp
 Print events to
 .Xr stdout 4
@@ -98,6 +115,13 @@ and
 Don't display names of events.
 .It Fl n
 Display thread names.
+.It Fl r
+Just configure and start trace running in windowed or ring buffer mode -- do
+not print the events.
+.Nm Cm trace Fl E
+can later be used to read the in-memory events.
+.It Fl S
+Print arguments as strings for tracepoints known to include strings
 .It Fl s
 Attempt to symbolicate addresses found in arguments to symbols.
 .It Fl t
@@ -109,6 +133,8 @@ Attempt to symbolicate addressess to uuid-offset tuples.
 Use a custom codes file to provide event ID to name mappings.  See
 .Xr trace 1
 for more details on the format of codes files.
+.It Fl b Ar buffer-size-mb
+Set a custom buffer size in megabytes.
 .It Fl f Ar filter-desc
 Apply a filter description to the trace session, controlling which events are
 traced.  See
@@ -124,7 +150,7 @@ or
 .Li ms
 are supported, but seconds are the default if just a number is supplied.
 .Pp
-.It Fl x Ar pid-or-name Oo Ar ... Oc | Fl p Ar pid-or-name Oo Ar ... Oc
+.It Fl x Ar pid-or-process-name Oo Ar ... Oc | Fl p Ar pid-or-process-name Oo Ar ... Oc
 Restrict the processes that can trace events.  Either exclude
 .Pq Fl x
 or only trace events
@@ -136,7 +162,7 @@ regardless of the this option, to allow tools to maintain thread scheduling
 state machines.
 .El
 .\" DUMP
-.It Cm dump Oo Fl E Oc Oo Fl f Ar filter-desc Oc Oo Fl l Ar compression-level Oc Oo Fl T Ar timeout Oc Oo Ar path Oc
+.It Cm dump Oo Fl E Oc Oo Fl f Ar filter-desc Oc Oo Fl l Ar compression-level Oc Oo Fl T Ar timeout Oc Oo Ar path Oc Oo Fl p Ar pid-or-process-name Oc
 .Pp
 Write trace to a file at
 .Ar path
@@ -160,6 +186,11 @@ Use an existing configuration, instead of creating a new configuration.
 .It Fl f Ar filter-desc
 Apply a filter description to events written to the file, controlling which
 events are traced.  See
+.It Fl p Ar pid-or-process-name
+Only record events that occur for the process identified by
+.Ar pid
+or
+.Ar process-name .
 .Sx FILTER DESCRIPTIONS
 for details on the syntax of a filter.  If no filter description is provided,
 all events will be traced.
@@ -192,7 +223,7 @@ subcommands initially or after using the
 subcommand.
 .Pp
 .\" SETOPT
-.It Cm setopt Oo Fl f Ar filter-desc Oc Oo Fl w Oc Oo Fl x Ar pid-or-name Oo Ar ... Oc | Fl p Ar pid-or-name Oo Ar ... Oc Oc
+.It Cm setopt Oo Fl f Ar filter-desc Oc Oo Fl w Oc Oo Fl x Ar pid-or-process-name Oo Ar ... Oc | Fl p Ar pid-or-process-name Oo Ar ... Oc Oc
 .Pp
 Set options on the existing trace configuration.  The trace configuration must
 already be initialized.
@@ -211,7 +242,7 @@ mode, where the trace buffer acts as a ring buffer, removing old events to make
 room for new ones.  By default, tracing ends when the buffer runs out of space
 for new events.
 .Pp
-.It Fl x Ar pid-or-name Oo Ar ... Oc | Fl p Ar pid-or-name Oo Ar ... Oc
+.It Fl x Ar pid-or-process-name Oo Ar ... Oc | Fl p Ar pid-or-process-name Oo Ar ... Oc
 Restrict the processes that can trace events.  Either exclude
 .Pq Fl x
 or only trace events
@@ -232,9 +263,14 @@ Start tracing events.
 Stop tracing events.  Tracing can be started again after it has been disabled,
 using the same configuration.
 .Pp
+.\" REMOVE
 .It Cm remove
 Remove the current trace configuration and free the memory associated with
 tracing.
+.Pp
+.\" RESET
+.It Cm reset
+Reset tracing and associated subsystems, including kperf, to their default state.
 .Pp
 .\" EMIT
 .It Cm emit Ar debugid Op arg1 Op arg2 Op arg3 Op arg4
@@ -254,12 +290,24 @@ using the small compression level, unless otherwise specified with the
 .Fl l
 option.
 .\" ARTRACE
-.It Nm Cm artrace Oo Fl n Oc Oo Fl t Ar timeout Oc Oo Fl i Ar interval Oc Oo Fl o Ar filename Oc Oo Fl b Ar buffer-size-mb Oc Oo Fl f Ar filter-desc Oc
-Profile the system and write output to an automatically named file, unless
-otherwise specified with the
-.Fl o
-option.  If the
-.Fl t
+.It Nm Cm artrace Oo Fl nr Oc Oo Fl t Ar timeout Oc Oo Fl i Ar interval Oc Oo Fl o Ar filename Oc Oo Fl b Ar buffer-size-mb Oc Oo Fl f Ar filter-desc Oc Oo Fl F Ar filter-desc Oc Oo Fl p Ar pid-or-process-name Oc
+Profile the system, writing trace events to an automatically named file.  By
+default, this measures scheduler, VM, and system call usage, and samples
+threads on-core periodically.
+.Pp
+.Bl -tag -width Ds
+.It Fl o Ar path
+Specify the name of the file to be created.
+.It Fl f Ar filter-desc
+Trace the classes and subclasses specified by the filter description.  See
+.Sx FILTER DESCRIPTIONS
+for details on the syntax of a filter.
+.It Fl F Ar filter-desc
+Exclude events from the default set.  Use this options with care, since analysis tools may rely on certain
+events being present.
+.It Fl t Ar timeout
+Stop tracing and exit after
+.Ar timeout
 option is provided, stop tracing and exit after
 .Ar timeout
 has elapsed.  The timeout value may have
@@ -267,12 +315,23 @@ has elapsed.  The timeout value may have
 .Li ms ,
 or
 .Li s
-appended to indicate the time units.  The
-.Fl i
-option controls the interval that the profiling timer fires.
-Set
-.Fl n
-to disable the profiling timer entirely.
+appended to indicate the time units.
+.It Fl i Ar interval
+Set the interval that the profiling timer fires
+.Po supports the same time suffixes as
+.Fl t
+.Pc .
+.It Fl n
+Disable the profiling timer entirely.
+.It Fl b Ar buffer-size-mb
+Set the trace buffer size.
+.It Fl r
+Configure tracing and leave it running in ring buffer mode.
+.It Fl p Ar pid-or-process-name
+Only record events that occur for the process identified by
+.Ar pid
+or
+.Ar process-name .
 .El
 .Sh FILTER DESCRIPTIONS
 A filter description is a comma-separated list of class and subclass specifiers
@@ -293,7 +352,16 @@ filter description enables events from all classes.
 .Sh CAVEATS
 Once trace has been initialized with the
 .Cm init
-subcommand, it remains in use until the space is reclaimed with the
+subcommand
+.Po or the
+.Cm trace
+and
+.Cm artrace
+subcommands with the
+.Fl r
+flag
+.Pc ,
+it remains in use until the space is reclaimed with the
 .Cm remove
 subcommand.  This prevents background diagnostic tools from making use of trace.
 .Sh DIAGNOSTICS

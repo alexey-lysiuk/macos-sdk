@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: B8BBEF67-8A6A-3F6D-A859-4E893CF3262F', 'x86_64: 9FB00A91-C46B-3CF1-973A-FDDABCEA088D' ]
+uuids:           [ 'i386: 3F593C33-E45D-3D77-B82C-F811428C4901', 'x86_64: C84A6CA5-8C50-3288-8572-CC3DABF5BBCE' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IconServices.framework/Versions/A/IconServices
-current-version: 97.3
+current-version: 97.4
 exports:         
   - archs:           [ i386 ]
     symbols:         [ __ISAddPictToIconFamily, __ISGetIconSizesFromIconRef, __ISIconFamilyToIconSuite, 

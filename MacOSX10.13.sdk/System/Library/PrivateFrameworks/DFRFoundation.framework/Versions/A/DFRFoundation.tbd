@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 53CE2E61-9ECE-339E-94E7-3E428A9142B4', 'x86_64: C7DE4082-6AC1-3971-AAC7-979E33C9D0F1' ]
+uuids:           [ 'i386: 8EF25CE9-3ED3-3E20-A4A2-20743EA32265', 'x86_64: 09E9A14C-E7A8-3386-8323-270FA28BFB81' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DFRFoundation.framework/Versions/A/DFRFoundation
-current-version: 189.1
+current-version: 191.1
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -36,13 +36,8 @@ exports:
                        _DFRPresentationModeGetDefault, _DFRPresentationModeGetFNBehavior, 
                        _DFRPresentationModeSetApp, _DFRPresentationModeSetAppOverrides, 
                        _DFRPresentationModeSetDefault, _DFRPresentationModeSetFNBehavior, 
-                       _DFRProtocolActive, _DFRProtocolAnimationDuration, _DFRProtocolAnimationFence, 
                        _DFRProtocolButtonAltImage, _DFRProtocolButtonBezelTint, _DFRProtocolButtonEnabled, 
                        _DFRProtocolButtonImage, _DFRProtocolButtonOn, _DFRProtocolButtonTint, 
-                       _DFRProtocolContextID, _DFRProtocolCustomizationData, _DFRProtocolElementAccessibilityToken, 
-                       _DFRProtocolElementBounds, _DFRProtocolIdentifier, _DFRProtocolKey, 
-                       _DFRProtocolPlacement, _DFRProtocolPresentationMode, _DFRProtocolService, 
-                       _DFRProtocolStatus, _DFRProtocolSystemModal, _DFRProtocolTestModeData, 
                        _DFRRegisterStatusChangeCallback, _DFRSetAttributes, _DFRSetCustomization, 
                        _DFRSetDiagnosticFlags, _DFRSetDimmingStep, _DFRSetEventCapture, 
                        _DFRSetIgnoreKeyFocusTheft, _DFRSetStatus, _DFRSystemButtonCreate, 

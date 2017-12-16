@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 924E4AD3-C1AE-3527-8BA6-0E6D0441C709' ]
+uuids:           [ 'x86_64: E43E0E6A-1D0C-3B1D-835A-A809F66C84AF' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CloudKit.framework/Versions/A/CloudKit
-current-version: 720
+current-version: 735
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -51,6 +51,7 @@ exports:
                        _CKPIDIsStillAlive, _CKPagesShareURLSlug, _CKPartialErrorsByItemIDKey, 
                        _CKProductName, _CKProductType, _CKProductVersion, _CKPushEnvironmentServerPreferred, 
                        _CKQoSClassFromNSQualityOfService, _CKQoSIsBackground, _CKQueryOperationMaximumResults, 
+                       _CKRawhideContainerIdentifierPrefix, _CKRawhideKeyRollingContainerIdentifier, 
                        _CKRecordAccessGrantedKey, _CKRecordAccessKey, _CKRecordChangedErrorAncestorRecordKey, 
                        _CKRecordChangedErrorClientRecordKey, _CKRecordChangedErrorServerRecordKey, 
                        _CKRecordCreationDateKey, _CKRecordCreatorUserRecordIDKey, 
@@ -74,12 +75,12 @@ exports:
                        _CKStringWithObject, _CKStringWithSet, _CKStringsAreBothNilOrEqual, 
                        _CKTTYCallHistoryContainerIdentifier, _CKTabIndentAtDepth, 
                        _CKTemporaryDirectory, _CKTernaryFromBOOL, _CKTopLevelUnderlyingErrorCodes, 
-                       _CKTriggerAutoBugCaptureWithFormatSignature, _CKValidateKeyName, 
-                       _CKValidateRecordArrayValue, _CKValueIsAcceptableClass, _CKValueIsAcceptablePredicateClass, 
-                       _CKVettingURLSlug, _CKWalletContainerIdentifierPrefix, _CKWarnForIncorrectServiceIdentity, 
-                       _CKWarnForInvalidApplicationIdentifier, _CKWeakLinkClass, 
-                       _CKWeakLinkSymbol, _CKWebSharingBaseTokenKey, _CKWebSharingIsReadOnly, 
-                       _CKWebSharingIsShared, _CKWebSharingOperationShareActionKey, 
+                       _CKTriggerAutoBugCaptureWithFormatSignature, _CKTriggerClientSideAutoBugCaptureWithFormatSignature, 
+                       _CKValidateKeyName, _CKValidateRecordArrayValue, _CKValueIsAcceptableClass, 
+                       _CKValueIsAcceptablePredicateClass, _CKVettingURLSlug, _CKWalletContainerIdentifierPrefix, 
+                       _CKWarnForIncorrectServiceIdentity, _CKWarnForInvalidApplicationIdentifier, 
+                       _CKWeakLinkClass, _CKWeakLinkSymbol, _CKWebSharingBaseTokenKey, 
+                       _CKWebSharingIsReadOnly, _CKWebSharingIsShared, _CKWebSharingOperationShareActionKey, 
                        _CKWebSharingOperationShareBaseTokenKey, _CKWebSharingOperationSharingKeyKey, 
                        _CKWebSharingOperationWasSharedKey, _CKWebSharingOperationWasUnsharedKey, 
                        _CKWebSharingProtectionDataKey, _CKXPCSuitableError, _CKiADContainerIdentifier, 

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 7872E2C3-1958-374D-B228-8282CC907508', 'x86_64: BBF2D04F-C31A-3E9D-9235-DD5E76E360F8' ]
+uuids:           [ 'i386: 58BD363A-8198-334B-ABF2-7F7B07E3E69F', 'x86_64: B305DA7D-7866-3194-B498-F9995D232486' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/SecurityInterface.framework/Versions/A/SecurityInterface
-current-version: 55109.1.1
+current-version: 55109.30.2
 exports:         
   - archs:           [ x86_64 ]
     objc-ivars:      [ _AuthorizationSpecialEngineRef.mAuthPluginView, _AuthorizationSpecialEngineRef.mEngineRef ]

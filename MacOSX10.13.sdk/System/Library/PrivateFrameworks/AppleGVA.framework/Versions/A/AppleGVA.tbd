@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 9FABE616-BB91-35D2-8DAA-56B52A9C069F', 'x86_64: 12FCFC94-53DC-3278-8347-35448FC8FA3F' ]
+uuids:           [ 'i386: 8D2B1D95-AAAD-3E4C-8FBF-428097831AAA', 'x86_64: EB9E64AF-AFF6-3747-8F0E-E77377328143' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AppleGVA.framework/Versions/A/AppleGVA
 current-version: 10.0.20

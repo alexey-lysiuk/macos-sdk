@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: A582A7F2-EB2D-354D-AD9E-73322458C76F', 'x86_64: 89B1F001-E7A2-347F-BCE1-2B7957A1D3D2' ]
+uuids:           [ 'i386: 5618F0A2-EE92-3E6B-88B7-02074A507CC6', 'x86_64: 612C677D-BB71-35D2-BBF3-EA9EC51ADF12' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DataDetectors.framework/Versions/A/DataDetectors
-current-version: 375
+current-version: 376
 exports:         
   - archs:           [ i386 ]
     objc-classes:    [ _DDBasicHighlightsView, _DDBubbleAction, _DDButtonBar, _DDDataDetectorsViewHost, 

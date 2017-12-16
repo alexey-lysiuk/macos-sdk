@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 3EC95221-1BEE-3E3D-AE2B-25F45029D23A', 'x86_64: 4D1E16BD-E3A7-333E-8816-0BD86E51C189' ]
+uuids:           [ 'i386: 3B526728-6EE4-35DA-A3A3-625B09E1FA62', 'x86_64: 65A03D4F-1DD8-35CE-B228-BD470CD35689' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AppContainer.framework/Versions/A/AppContainer
 exports:         

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F98991B3-09CF-32B0-8F0B-F2522BE295E6' ]
+uuids:           [ 'x86_64: CC73A751-2AF2-36D3-A891-7C0A3C955F1E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SiriClientFlow.framework/Versions/A/SiriClientFlow
 objc-constraint: none
@@ -86,11 +86,7 @@ exports:
                        _CFCNAutoCompleteSearchTypesAutoCompleteSearchTypeFaceTimeValue, 
                        _CFCNAutoCompleteSearchTypesAutoCompleteSearchTypeInstantMessageValue, 
                        _CFCNGroupAcronym, _CFCNGroupIdentifier, _CFCNInvalidAutoCompleteSearchTypeErrorCode, 
-                       _CFCNUnsupportedRequestErrorCode, _CFDDDataDetectorResultClassIdentifier, 
-                       _CFDDDataDetectorResultDataDetectorTypePListKey, _CFDDDataDetectorResultLengthPListKey, 
-                       _CFDDDataDetectorResultLocationPListKey, _CFDDDataDetectorResultValuePListKey, 
-                       _CFDDGroupAcronym, _CFDDGroupIdentifier, _CFMFailedMessageProcessingErrorCode, 
-                       _CFMGGetMobileGestaltBoolRequestBoolKeyDeviceSupportsAOPValue, 
+                       _CFCNUnsupportedRequestErrorCode, _CFMGGetMobileGestaltBoolRequestBoolKeyDeviceSupportsAOPValue, 
                        _CFMGGetMobileGestaltBoolRequestClassIdentifier, _CFMGGetMobileGestaltBoolRequestKeyPListKey, 
                        _CFMGGetMobileGestaltBoolResponseClassIdentifier, _CFMGGetMobileGestaltBoolResponseValuePListKey, 
                        _CFMGGetMobileGestaltStringRequestClassIdentifier, _CFMGGetMobileGestaltStringRequestKeyPListKey, 
@@ -100,19 +96,15 @@ exports:
                        _CFMGNotSupportedErrorCode, _CFMGQueryFailedErrorCode, _CFMGroupAcronym, 
                        _CFMGroupIdentifier, _CFMMessagesQueryClassIdentifier, _CFMMessagesQueryGuidPListKey, 
                        _CFMMessagesQueryResponseClassIdentifier, _CFMMessagesQueryResponseMessagesPListKey, 
-                       _CFMNoMessagesFoundErrorCode, _CFMNotSupportedErrorCode, _CFMProcessMessagesClassIdentifier, 
-                       _CFMProcessMessagesMessagesIdentifiersPListKey, _CFMProcessedMessageResultClassIdentifier, 
-                       _CFMProcessedMessageResultDataDetectorResultPListKey, _CFMProcessedMessageResultSmsPListKey, 
-                       _CFMProcessedMessagesResultsClassIdentifier, _CFMProcessedMessagesResultsResultsPListKey, 
-                       _CFSFAddToSafariReadingListClassIdentifier, _CFSFAddToSafariReadingListUrlsPListKey, 
-                       _CFSFGroupAcronym, _CFSFGroupIdentifier, _CFSGGroupAcronym, 
-                       _CFSGGroupIdentifier, _CFSGSuggestContactMatchesWithTextSearchClassIdentifier, 
-                       _CFSGSuggestContactMatchesWithTextSearchLimitPListKey, _CFSGSuggestContactMatchesWithTextSearchQueryPListKey, 
-                       _CFSGSuggestedContactAcePersonPListKey, _CFSGSuggestedContactBundleIdPListKey, 
-                       _CFSGSuggestedContactClassIdentifier, _CFSGSuggestedContactIsSignificantPListKey, 
-                       _CFSGSuggestedContactOriginDatePListKey, _CFSGSuggestedContactSuggestedOriginTypePListKey, 
-                       _CFSGSuggestedContactsClassIdentifier, _CFSGSuggestedContactsSuggestContactMatchesPListKey, 
-                       _CFSGSuggestedContactsSuggestedContactsWithOriginPListKey, 
+                       _CFMNoMessagesFoundErrorCode, _CFMNotSupportedErrorCode, _CFSFAddToSafariReadingListClassIdentifier, 
+                       _CFSFAddToSafariReadingListUrlsPListKey, _CFSFGroupAcronym, 
+                       _CFSFGroupIdentifier, _CFSGGroupAcronym, _CFSGGroupIdentifier, 
+                       _CFSGSuggestContactMatchesWithTextSearchClassIdentifier, _CFSGSuggestContactMatchesWithTextSearchLimitPListKey, 
+                       _CFSGSuggestContactMatchesWithTextSearchQueryPListKey, _CFSGSuggestedContactAcePersonPListKey, 
+                       _CFSGSuggestedContactBundleIdPListKey, _CFSGSuggestedContactClassIdentifier, 
+                       _CFSGSuggestedContactIsSignificantPListKey, _CFSGSuggestedContactOriginDatePListKey, 
+                       _CFSGSuggestedContactSuggestedOriginTypePListKey, _CFSGSuggestedContactsClassIdentifier, 
+                       _CFSGSuggestedContactsSuggestContactMatchesPListKey, _CFSGSuggestedContactsSuggestedContactsWithOriginPListKey, 
                        _CFSGSuggestedOriginTypeOriginTypeCalendarValue, _CFSGSuggestedOriginTypeOriginTypeContactValue, 
                        _CFSGSuggestedOriginTypeOriginTypeEmailValue, _CFSGSuggestedOriginTypeOriginTypeInteractionValue, 
                        _CFSGSuggestedOriginTypeOriginTypeSchemaOrgValue, _CFSGSuggestedOriginTypeOriginTypeTextMessageValue, 
@@ -129,11 +121,10 @@ exports:
                        _CFCBSetNightShiftMode, _CFCLReverseGeoCode, _CFCLReverseGeoCodeCompleted, 
                        _CFCNAutoCompleteFetchContext, _CFCNAutoCompleteFetchRequest, 
                        _CFCNAutoCompleteFetchResponse, _CFCNAutoCompleteResult, _CFClient, 
-                       _CFDDDataDetectorResult, _CFMGGetMobileGestaltBoolRequest, 
-                       _CFMGGetMobileGestaltBoolResponse, _CFMGGetMobileGestaltStringRequest, 
-                       _CFMGGetMobileGestaltStringResponse, _CFMMessagesQuery, _CFMMessagesQueryResponse, 
-                       _CFMProcessMessages, _CFMProcessedMessageResult, _CFMProcessedMessagesResults, 
-                       _CFPBJSONUtils, _CFSFAddToSafariReadingList, _CFSGSuggestContactMatchesWithTextSearch, 
+                       _CFMGGetMobileGestaltBoolRequest, _CFMGGetMobileGestaltBoolResponse, 
+                       _CFMGGetMobileGestaltStringRequest, _CFMGGetMobileGestaltStringResponse, 
+                       _CFMMessagesQuery, _CFMMessagesQueryResponse, _CFPBJSONUtils, 
+                       _CFSFAddToSafariReadingList, _CFSGSuggestContactMatchesWithTextSearch, 
                        _CFSGSuggestedContact, _CFSGSuggestedContacts, _CFVSGetVoiceAssetsRequest, 
                        _CFVSGetVoiceAssetsResponse ]
 ...

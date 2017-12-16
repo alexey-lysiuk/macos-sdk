@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F79DA6F0-8B2F-316E-9F4A-5E59EE401193' ]
+uuids:           [ 'x86_64: 213ACC23-E869-3C3F-B819-16EFAF8FA43A' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoLibraryPrivate.framework/Versions/A/Frameworks/PMR.framework/Versions/A/PMR
-current-version: 3231.11.210
+current-version: 3251.12.180
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _PMRDurationUnits, _PMRFPSUnits, _PMRTimestampUnits, _kPMRStdDevDefaultTolerance, 

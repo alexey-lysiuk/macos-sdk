@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: DFAC44F4-E5B9-3E6E-8AD8-B773F16DBF69', 'x86_64: 9285EF18-980C-3CF0-856E-C5D3A5276F7D' ]
+uuids:           [ 'i386: A4EA3F7B-019C-3395-8FAE-4D718AB17F61', 'x86_64: 518FBC2C-0AF3-39DF-B454-526311796A49' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CommonUtilities.framework/Versions/A/CommonUtilities
 current-version: 800
@@ -34,9 +34,10 @@ exports:
                        _CUTXPCCreateConnectionForService, _CUTXPCCreateConnectionForServiceWithQueue, 
                        _CUTXPCCreateServerConnection, _cut_arc_os_release, _cut_log_group_generation, 
                        _cut_non_arc_os_release ]
-    objc-classes:    [ _CUTCheckpoint, _CUTCheckpointInstant, _CUTCheckpointRange, 
-                       _CUTCheckpointTrace, _CUTDeferredTaskQueue, _CUTFileCopier, 
-                       _CUTImplicitPromise, _CUTNetworkInterfaceListener, _CUTPowerAssertion, 
-                       _CUTPowerMonitor, _CUTPromise, _CUTPromiseSeal, _CUTReachability, 
-                       _CUTResult, _CUTTelephonyManager, _CUTWeakReference, _CUTWiFiManager ]
+    objc-classes:    [ _CUTAsyncReducer, _CUTAsyncReducerState, _CUTCheckpoint, _CUTCheckpointInstant, 
+                       _CUTCheckpointRange, _CUTCheckpointTrace, _CUTDeferredTaskQueue, 
+                       _CUTFileCopier, _CUTImplicitPromise, _CUTNetworkInterfaceListener, 
+                       _CUTPowerAssertion, _CUTPowerMonitor, _CUTPromise, _CUTPromiseSeal, 
+                       _CUTReachability, _CUTResult, _CUTTelephonyManager, _CUTWeakReference, 
+                       _CUTWiFiManager ]
 ...

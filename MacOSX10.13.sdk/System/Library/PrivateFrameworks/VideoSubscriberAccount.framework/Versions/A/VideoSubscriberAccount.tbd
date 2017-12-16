@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E6F63E3B-2306-31E8-B68A-1E12665C9314' ]
+uuids:           [ 'x86_64: 170BE11E-8518-3D7B-AEC4-B0AE2296FEF7' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/VideoSubscriberAccount.framework/Versions/A/VideoSubscriberAccount
-current-version: 215.4
+current-version: 238
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

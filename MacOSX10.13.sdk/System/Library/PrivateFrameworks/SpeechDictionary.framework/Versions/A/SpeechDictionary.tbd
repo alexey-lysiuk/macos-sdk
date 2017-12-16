@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 93FE22E9-0CC0-3174-A25F-198FE5422853' ]
+uuids:           [ 'x86_64: 4D224E81-C952-3178-BC87-7B0C0B81C6FD' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SpeechDictionary.framework/Versions/A/SpeechDictionary
 objc-constraint: none

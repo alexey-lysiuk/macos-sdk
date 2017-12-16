@@ -54,6 +54,10 @@ NS_ASSUME_NONNULL_BEGIN
 @class AVMediaSelection;
 @class AVCompositionTrack;
 
+#if TARGET_OS_TV
+@class AVDisplayCriteria;
+#endif // TARGET_OS_TV
+
 @class AVAssetInternal;
 
 NS_CLASS_AVAILABLE(10_7, 4_0)
@@ -92,6 +96,14 @@ NS_CLASS_AVAILABLE(10_7, 4_0)
 /*	The following property is deprecated. Instead, use the naturalSize and preferredTransform, as appropriate, of the receiver's video tracks. See -tracksWithMediaType: below.
 */
 @property (nonatomic, readonly) CGSize naturalSize NS_DEPRECATED(10_7, 10_8, 4_0, 5_0);
+
+#if TARGET_OS_TV
+/*!
+ @property	preferredDisplayCriteria
+ @abstract	Guides to a display mode that is optimal for playing this particular asset.
+ */
+@property (nonatomic, readonly) AVDisplayCriteria *preferredDisplayCriteria API_AVAILABLE(tvos(11.2)) API_UNAVAILABLE(ios, macos, watchos);
+#endif // TARGET_OS_TV
 
 @end
 

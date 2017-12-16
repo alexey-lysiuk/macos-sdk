@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1CED57FE-D0D9-3648-8DC1-2ACDE57696F7' ]
+uuids:           [ 'x86_64: DC021CD9-381F-356E-BA41-0052EBC7F79F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoLibraryPrivate.framework/Versions/A/Frameworks/PAImagingCore.framework/Versions/A/PAImagingCore
-current-version: 3231.11.210
+current-version: 3251.12.180
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CompareLab, _DGSpotPatchInitialAngleValue, _DGSpotPatchInitialDetailValue, 

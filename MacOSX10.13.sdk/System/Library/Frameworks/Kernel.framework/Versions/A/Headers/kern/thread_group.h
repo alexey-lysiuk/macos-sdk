@@ -90,6 +90,8 @@ typedef         void (*thread_group_iterate_fn_t)(void*, int, thread_group_t);
 kern_return_t	thread_group_iterate_stackshot(thread_group_iterate_fn_t callout, void *arg);
 
 
+uint64_t kdp_thread_group_get_flags(thread_group_t tg);
+
 #endif /* CONFIG_THREAD_GROUPS */
 
 #endif // _KERN_THREAD_GROUP_H_

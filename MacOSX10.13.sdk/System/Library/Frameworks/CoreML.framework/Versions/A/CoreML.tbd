@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A8D5C870-8F17-3087-A92F-83A5DA302102' ]
+uuids:           [ 'x86_64: 7F3BDE3E-6A2F-3119-9832-8CC60BE60876' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreML.framework/Versions/A/CoreML
 objc-constraint: none
@@ -16,9 +16,9 @@ exports:
                        _svm_save_model, _svm_set_print_string_function, _svm_train ]
     objc-classes:    [ _CoreMLVersion, _MLArrayFeatureExtractor, _MLCategoricalMapping, 
                        _MLClassifier, _MLClassifierLabelWithProbability, _MLClassifierResult, 
-                       _MLCompiler, _MLCompilerOptions, _MLCompilerResult, _MLDictVectorizer, 
-                       _MLDictionaryConstraint, _MLDictionaryFeatureProvider, _MLFeatureArray, 
-                       _MLFeatureDescription, _MLFeatureFrame, _MLFeatureFrameUtils, 
+                       _MLCompiler, _MLCompilerOptions, _MLCompilerResult, _MLDefaultCustomLayerFactory, 
+                       _MLDictVectorizer, _MLDictionaryConstraint, _MLDictionaryFeatureProvider, 
+                       _MLFeatureArray, _MLFeatureDescription, _MLFeatureFrame, _MLFeatureFrameUtils, 
                        _MLFeatureTypeUtils, _MLFeatureValue, _MLFeatureVectorizer, 
                        _MLGKDecisionTree, _MLGLMClassification, _MLGLMRegression, 
                        _MLIdentity, _MLImageConstraint, _MLImputer, _MLInMemoryFeatureArray, 

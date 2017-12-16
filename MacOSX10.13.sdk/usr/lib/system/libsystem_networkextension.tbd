@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 511B0A98-527D-33AF-904E-F228F3281FE5', 'x86_64: 27F139B6-3250-345D-8495-7C22A00BC488' ]
+uuids:           [ 'i386: E88F13BB-D751-3FF9-A136-2C1158129BAA', 'x86_64: C5ED4BAB-2480-369D-8AB6-DFB37C15A1EE' ]
 platform:        macosx
 install-name:    /usr/lib/system/libsystem_networkextension.dylib
 objc-constraint: none
@@ -12,7 +12,8 @@ exports:
                        _NEHelperCacheSetDomainDictionaries, _NEHelperCacheSetRoutes, 
                        _NEHelperCopyAggregatePathRules, _NEHelperCopyAppInfo, _NEHelperCopyPerAppDomains, 
                        _NEHelperCopyResponse, _NEHelperGetIKESocket, _NEHelperGetKernelControlSocket, 
-                       _NEHelperGetNECPSessionFD, _NEHelperGetPFKeySocket, _NEHelperInterfaceRemoveAddress, 
+                       _NEHelperGetKernelControlSocketExtended, _NEHelperGetNECPSessionFD, 
+                       _NEHelperGetPFKeySocket, _NEHelperInterfaceRemoveAddress, 
                        _NEHelperInterfaceSetAddress, _NEHelperInterfaceSetMTU, _NEHelperInterfaceSetOption, 
                        _NEHelperSendRequest, _NEHelperSettingsSetArray, _NEHelperSettingsSetBool, 
                        _NEHelperSettingsSetNumber, ___nelog_debug_c, ___nelog_err_c, 

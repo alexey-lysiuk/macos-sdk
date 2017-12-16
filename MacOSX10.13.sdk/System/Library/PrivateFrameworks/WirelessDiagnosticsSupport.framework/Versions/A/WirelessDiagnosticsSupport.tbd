@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2340CB16-2460-3B84-A9A6-6D507AFAFCF7' ]
+uuids:           [ 'x86_64: 838EAD33-D834-39C5-8836-56AE7E3CC88B' ]
 platform:        macosx
 install-name:    '@rpath/WirelessDiagnosticsSupport.framework/Versions/A/WirelessDiagnosticsSupport'
 exports:         

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1D38606A-BB33-3BEB-8FBF-8348E6B0A3C4' ]
+uuids:           [ 'x86_64: 4331D416-2BF3-32D6-8CE6-9BC8A12FC0DE' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SpotlightServices.framework/Versions/A/SpotlightServices
-current-version: 1191.1
+current-version: 1191.2.6
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _GetActivityName, _PRSLogCategoryDefault, _PRSLogInit, _PRSPolicyFieldsPrefixMatch, 

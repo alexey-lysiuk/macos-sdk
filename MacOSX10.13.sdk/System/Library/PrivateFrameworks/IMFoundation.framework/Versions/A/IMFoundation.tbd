@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 8F5EA996-5453-370F-A2F1-8E9604E20449', 'x86_64: C88DA3D6-9B75-3480-9652-172B7C0F3346' ]
+uuids:           [ 'i386: A4BFE871-06E2-3775-A099-844704587D9C', 'x86_64: 32799DD1-91A2-3093-8D8C-4F4988560FC2' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IMFoundation.framework/Versions/A/IMFoundation
 current-version: 800
@@ -20,15 +20,16 @@ exports:
                        _IMManualUpdater._needsUpdate, _IMManualUpdater._target, _IMMessageContext._boost, 
                        _IMMessageContext._context, _IMMessageContext._localObject, 
                        _IMMessageContext._voucher, _IMMessageContext._xpcMessage, 
-                       _IMMultiDict._count, _IMMultiDict._dictionary, _IMMultiQueue._queueMap, 
-                       _IMNetworkAvailability._completionBlock, _IMNetworkAvailability._context, 
-                       _IMNetworkAvailability._flags, _IMNetworkAvailability._guid, 
-                       _IMNetworkAvailability._options, _IMNetworkAvailability._startTime, 
-                       _IMNetworkAvailability._timeout, _IMNetworkAvailability._timer, 
-                       _IMNetworkAvailability._wifiTimeout, _IMPowerAssertion._assertion, 
-                       _IMPowerAssertion._identifier, _IMRemoteObject._internal, 
-                       _IMRemoteObjectBroadcaster._queue, _IMScheduledUpdater._holdingUpdatesKeys, 
-                       _IMUserNotification._reserved, _IMWeakReference._object, _IMWeakReference._objectAddress ]
+                       _IMMultiDict._count, _IMMultiDict._dictionary, _IMMultiQueue._queue, 
+                       _IMMultiQueue._queueMap, _IMNetworkAvailability._completionBlock, 
+                       _IMNetworkAvailability._context, _IMNetworkAvailability._flags, 
+                       _IMNetworkAvailability._guid, _IMNetworkAvailability._options, 
+                       _IMNetworkAvailability._startTime, _IMNetworkAvailability._timeout, 
+                       _IMNetworkAvailability._timer, _IMNetworkAvailability._wifiTimeout, 
+                       _IMPowerAssertion._assertion, _IMPowerAssertion._identifier, 
+                       _IMRemoteObject._internal, _IMRemoteObjectBroadcaster._queue, 
+                       _IMScheduledUpdater._holdingUpdatesKeys, _IMUserNotification._reserved, 
+                       _IMWeakReference._object, _IMWeakReference._objectAddress ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ _CopyDefaultKeychain, _CopyKeychainSearchList, _ExtractURLQueries, 
                        _FZAVErrorDomain, _FZRelayParameter_ConnectionID, _FZRelayParameter_PeerBlob, 

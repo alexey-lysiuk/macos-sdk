@@ -148,7 +148,7 @@ PDFKIT_CLASS_AVAILABLE(10_4, 11_0)
 // NOTE: External page links are not preserved.
 // NOTE: Versions of PDFKit before SnowLeopard did not return autorelease data for -[dataRepresentation]. You had to 
 // release the data yourself. Beginning with apps compiled on SnowLeopard the data returned is autoreleased.
-@property (nonatomic, readonly) NSData *dataRepresentation;
+@property (nonatomic, readonly, nullable) NSData *dataRepresentation;
 
 @end
 

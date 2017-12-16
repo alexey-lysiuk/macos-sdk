@@ -23,7 +23,7 @@
 	<key>DisplayName</key>
 	<string>macOS 10.13</string>
 	<key>MaximumDeploymentTarget</key>
-	<string>10.13</string>
+	<string>10.13.99</string>
 	<key>MinimalDisplayName</key>
 	<string>10.13</string>
 	<key>MinimumSupportedToolsVersion</key>
@@ -34,7 +34,7 @@
 	</array>
 	<key>Version</key>
 	<string>10.13</string>
-	<key>isBaseSDK</key>
+	<key>IsBaseSDK</key>
 	<string>YES</string>
 </dict>
 </plist>

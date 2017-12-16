@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AAD765A7-F069-396E-AA90-4CDF690D73C6' ]
+uuids:           [ 'x86_64: 09D0ACD4-2693-34E9-9905-77DB26A196F7' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/SceneKit.framework/Versions/A/SceneKit
-current-version: 430.1
+current-version: 432.3
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _C3DAnimationManagerContainsSceneTimeBasedAnimation, _C3DAnimationManagerIsEmpty, 

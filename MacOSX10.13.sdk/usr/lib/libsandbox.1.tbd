@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: DCB91EAB-E962-33A9-8D04-193F4437AB3D', 'x86_64: 35AF2308-6A01-37D2-A72D-CC2C77B10498' ]
+uuids:           [ 'i386: F3090EE2-3638-3A38-A341-E16526D3F8C6', 'x86_64: 3A8CB21E-1348-3969-9B55-8B1E02809629' ]
 platform:        macosx
 install-name:    /usr/lib/libsandbox.1.dylib
 objc-constraint: none

@@ -139,6 +139,7 @@
 #define __MAC_10_12_4       101204
 #define __MAC_10_13         101300
 #define __MAC_10_13_1       101301
+#define __MAC_10_13_2       101302
 /* __MAC_NA is not defined to a value but is uses as a token by macros to indicate that the API is unavailable */
 
 #define __IPHONE_2_0      20000
@@ -172,6 +173,7 @@
 #define __IPHONE_10_3    100300
 #define __IPHONE_11_0    110000
 #define __IPHONE_11_1    110100
+#define __IPHONE_11_2    110200
 /* __IPHONE_NA is not defined to a value but is uses as a token by macros to indicate that the API is unavailable */
 
 #define __TVOS_9_0        90000
@@ -183,6 +185,7 @@
 #define __TVOS_10_2      100200
 #define __TVOS_11_0      110000
 #define __TVOS_11_1      110100
+#define __TVOS_11_2      110200
 
 #define __WATCHOS_1_0     10000
 #define __WATCHOS_2_0     20000
@@ -194,6 +197,7 @@
 #define __WATCHOS_3_2     30200
 #define __WATCHOS_4_0     40000
 #define __WATCHOS_4_1     40100
+#define __WATCHOS_4_2     40200
 
 #include <AvailabilityInternal.h>
 
@@ -388,7 +392,8 @@
  * -mbridgeos-version-min
  */
 
-#if defined(__has_feature) && defined(__has_attribute) && __has_attribute(availability)
+#if defined(__has_feature) && defined(__has_attribute)
+ #if __has_attribute(availability)
 
     /*
      * API Introductions
@@ -434,7 +439,18 @@
      *    __API_UNAVAILABLE(watchos, tvos)
      */
     #define __API_UNAVAILABLE(...) __API_UNAVAILABLE_GET_MACRO(__VA_ARGS__,__API_UNAVAILABLE4,__API_UNAVAILABLE3,__API_UNAVAILABLE2,__API_UNAVAILABLE1)(__VA_ARGS__)
-#else 
+ #else 
+
+    /* 
+     * Evaluate to nothing for compilers that don't support availability.
+     */
+    
+    #define __API_AVAILABLE(...)
+    #define __API_DEPRECATED(...)
+    #define __API_DEPRECATED_WITH_REPLACEMENT(...)
+    #define __API_UNAVAILABLE(...)
+ #endif /* __has_attribute(availability) */
+#else
 
     /* 
      * Evaluate to nothing for compilers that don't support clang language extensions.
@@ -444,6 +460,7 @@
     #define __API_DEPRECATED(...)
     #define __API_DEPRECATED_WITH_REPLACEMENT(...)
     #define __API_UNAVAILABLE(...)
-#endif /*  #if defined(__has_feature) && defined(__has_attribute) && __has_attribute(availability)  */
+#endif /*  #if defined(__has_feature) && defined(__has_attribute) */
 
 #endif /* __AVAILABILITY__ */
+

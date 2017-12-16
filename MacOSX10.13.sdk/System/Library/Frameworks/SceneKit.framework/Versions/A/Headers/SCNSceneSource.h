@@ -76,7 +76,7 @@ FOUNDATION_EXTERN SCNSceneSourceLoadingOption const SCNSceneSourceFlattenSceneKe
  SceneKit will forbid network accesses, prevent the loading of resources from arbitrary directories, and will not execute
  any code present in the loaded files.
  */
-FOUNDATION_EXTERN SCNSceneSourceLoadingOption const SCNSceneSourceUseSafeModeKey;
+FOUNDATION_EXTERN SCNSceneSourceLoadingOption const SCNSceneSourceUseSafeModeKey API_DEPRECATED("No longer supported", macos(10.8, 10.13), ios(8.0, 11.0), tvos(9.0, 11.0), watchos(3.0, 4.0));
 
 /*!
  @constant SCNSceneSourceAssetDirectoryURLsKey

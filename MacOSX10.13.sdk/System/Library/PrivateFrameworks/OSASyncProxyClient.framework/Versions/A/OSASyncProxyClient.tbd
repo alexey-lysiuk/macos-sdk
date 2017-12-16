@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C1BCC274-424E-3DA6-8E9D-C387DDCE0A3E' ]
+uuids:           [ 'x86_64: ABDD65F1-E8C8-36A8-B29C-A89FFD49B582' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/OSASyncProxyClient.framework/Versions/A/OSASyncProxyClient
 objc-constraint: none

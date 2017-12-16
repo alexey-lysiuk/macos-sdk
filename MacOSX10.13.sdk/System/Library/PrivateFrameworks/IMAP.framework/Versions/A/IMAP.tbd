@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1C10B4A6-5DAF-35B8-8DEC-5017DDF00971' ]
+uuids:           [ 'x86_64: B23739B3-4F6A-36E1-99CF-F6EFF2299D67' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IMAP.framework/Versions/A/IMAP
-current-version: 3445.4.7
+current-version: 3445.5.18
 exports:         
   - archs:           [ x86_64 ]
     allowable-clients: [ Mail, com.apple.MailServiceAgent, migrationhelper ]

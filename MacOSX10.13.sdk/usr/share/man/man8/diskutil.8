@@ -16,7 +16,7 @@
 .\" Please see the License for the specific language governing rights and
 .\" limitations under the License.
 .\"
-.Dd 5 October 2017
+.Dd 26 October 2017
 .Os "macOS"
 .Dt DISKUTIL 8
 .Pp
@@ -953,8 +953,10 @@ You can optionally specify a new
 or else "Untitled" will be chosen.
 If there were multiple Physical Stores, a space and a number suffix is added for each.
 .Pp
-Specifying an APFS Physical Store activates an alternate last-resort mode which tries to reclaim your disk(s)
-even though they may be unusable due to being damaged yet un-deletable due to being busy.
+If your APFS Container is damaged, a Container Reference for it might not exist. In this case, you can
+specify an APFS Physical Store instead; this activates an alternate last-resort mode which tries to reclaim
+your disk(s). You should normally avoid this mode. Note that in this mode you may have to manually delete
+any other "peer" Physical Stores which made up the Container.
 .Pp
 Ownership of the affected disks is required.
 .\"
@@ -1132,6 +1134,7 @@ Ownership of the affected disks is required.
 .Op Nm -stdinpassphrase
 .Op Nm -nomount | -mountpoint Ar mountpoint
 .Op Nm -verify
+.Op Nm -plist
 .br
 Unlock and mount an encrypted and locked APFS Volume or verify a passphrase.
 .Pp
@@ -1171,6 +1174,11 @@ options. If you specify your own mountpoint path, it must exist and you must hav
 Specifying
 .Sy -verify
 will test passphrase correctness without affecting the locked or unlocked state.
+.Pp
+If
+.Sy -plist
+is specified, then a property list will be emitted instead of the normal user-readable output;
+additional details are available here.
 .Pp
 To re-lock the volume, unmount it, e.g. with
 .Sy diskutil
@@ -1261,9 +1269,17 @@ Ownership of the affected disks is required.
 .\"             -- APFS > decryptVolume --
 .It Sy decryptVolume
 .Ar volumeDevice
+.Op Nm -user disk | Ar existingCryptoUserUUID
+.Op Nm -passphrase Ar existingPassphrase | Nm -stdinpassphrase
 .br
 Start "background" decryption of a currently-encrypted APFS Volume.
-No crypto credentials are required, but the APFS Volume must be unlocked.
+.Pp
+The APFS Volume must be unlocked before beginning this operation.
+.Pp
+In most cases, you will have to specify some (any)
+existing cryptographic user and passphrase on the APFS Volume.
+If you do not supply a user, the "Disk User" is assumed.
+If you do not supply a passphrase yet one is required, you will be prompted interactively.
 .Pp
 Ownership of the affected disks is required.
 .\"

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: C8E71045-A26A-340C-A252-DEA6B7621394', 'x86_64: C158CADB-0722-37D8-84CE-B6B4E80B9768' ]
+uuids:           [ 'i386: 30F249EE-27E6-3C0F-AD33-792A2E77D75B', 'x86_64: C266564D-21B5-3FD9-92D5-03974F3186C4' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Metal.framework/Versions/A/Metal
 exports:         

@@ -45,7 +45,7 @@ NS_CLASS_AVAILABLE(10_10, NA)
 /*!
 	@abstract	This method is called when an AVBInterface object is created for a NIC, either when the central manager is first started up or when the NIC is added later.
 	@param		interface	An instance of an AVBInterface subclass (as appropriate for the NIC) which has been added for the discovered NIC.
-	@discussion	The AVBCentralManager maintains it's own internal reference to the interface object until <code>didRevomeInterface:<code> is called with the same interface object,
+	@discussion	The AVBCentralManager maintains it's own internal reference to the interface object until <code>didRemoveInterface:<code> is called with the same interface object,
 				subclasses do not need to maintain another reference to this. A subclass does not need to call the AVBCentralManager implementation. 
 				Note this method is not called on the main thread and is not safe for performing UI actions.
  */

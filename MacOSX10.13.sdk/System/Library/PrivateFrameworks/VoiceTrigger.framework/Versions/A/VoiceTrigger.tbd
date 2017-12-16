@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 66DC302A-A581-3FA5-846F-82450FADDFDC' ]
+uuids:           [ 'x86_64: 9BE7D95F-7298-3CC7-834F-53127B4169F4' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/VoiceTrigger.framework/Versions/A/VoiceTrigger
 objc-constraint: none

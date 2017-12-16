@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 26E2B2E6-680B-3CE6-84E9-F9524CC7F6D5' ]
+uuids:           [ 'x86_64: C9860BF4-F86C-3C8B-97C0-FD464801DEB1' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreRoutine.framework/Versions/A/CoreRoutine
-current-version: 547.0.2
+current-version: 557.0.1
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -26,5 +26,5 @@ exports:
                        _RTSourceCoreRoutineVehicleEvent, _RTSourceEventKit, _RTSourceLocationVisit, 
                        _RTSourceMapsSupport, _RTSourceMapsSupportFavoritePlace, _RTSourceMapsSupportHistoryEntry, 
                        _RTSourceMapsSupportHistoryEntryPlaceDisplay, _RTSourceMapsSupportHistoryEntryRoute, 
-                       _RTVehicleEvent, _RTVisit ]
+                       _RTVehicleEvent, _RTVisit, _RTWiFiAccessPoint ]
 ...

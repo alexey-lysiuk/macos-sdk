@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3591438E-65BC-3D12-8EC8-DA3F9A457D25' ]
+uuids:           [ 'x86_64: 0142DF4A-2771-3657-8911-F9731D5F194A' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MMCS.framework/Versions/A/MMCS
-current-version: 428
+current-version: 432
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _C3BaseRelease, _C3BaseRetain, _CKChunkSchemeAndEncryptionKeySize, 
@@ -14,12 +14,12 @@ exports:
                        _MMCSEngineGetRequestMetrics, _MMCSEngineIsActive, _MMCSEngineSetMetricsEnabled, 
                        _MMCSFlattenError, _MMCSGetCacheBlobFd, _MMCSGetItemStateIsDeterminant, 
                        _MMCSGetItems, _MMCSGetItemsWithSection, _MMCSGetMaxChunkCountForSection, 
-                       _MMCSGetRegisteredItems, _MMCSICloudRequestHeadersCopy, _MMCSItemReaderWriterCreate, 
-                       _MMCSItemReaderWriterCreateWithData, _MMCSItemReaderWriterCreateWithFileDescriptor, 
-                       _MMCSItemReaderWriterCreateWithMutableData, _MMCSItemReaderWriterCreateWithPlainFileDescriptor, 
-                       _MMCSItemReaderWriterRead, _MMCSItemReaderWriterSeek, _MMCSItemReaderWriterWrite, 
-                       _MMCSMetricsRequestCopyDescription, _MMCSMetricsRequestRelease, 
-                       _MMCSMetricsRequestRetain, _MMCSOperationMetricCombineMetrics, 
+                       _MMCSGetRegisteredItems, _MMCSICloudRequestHeadersCopy, _MMCSIsEngineInitialized, 
+                       _MMCSItemReaderWriterCreate, _MMCSItemReaderWriterCreateWithData, 
+                       _MMCSItemReaderWriterCreateWithFileDescriptor, _MMCSItemReaderWriterCreateWithMutableData, 
+                       _MMCSItemReaderWriterCreateWithPlainFileDescriptor, _MMCSItemReaderWriterRead, 
+                       _MMCSItemReaderWriterSeek, _MMCSItemReaderWriterWrite, _MMCSMetricsRequestCopyDescription, 
+                       _MMCSMetricsRequestRelease, _MMCSMetricsRequestRetain, _MMCSOperationMetricCombineMetrics, 
                        _MMCSPackageSectionSignatureGeneratorCreate, _MMCSPackageSectionSignatureGeneratorFinish, 
                        _MMCSPackageSectionSignatureGeneratorUpdate, _MMCSPutItemStateIsDeterminant, 
                        _MMCSPutItems, _MMCSPutSection, _MMCSReferenceObjectCreateWithType, 
@@ -143,6 +143,7 @@ exports:
                        _registerItemSignatureEqualitySetCallbacks, _ub_log_facility, 
                        _ub_log_levels, _ub_log_set_all_facility_level, _ub_log_set_facility_level, 
                        _ub_log_set_print_state ]
-    objc-classes:    [ _C2RequestManager, _C2RequestOptions, _C2Session, _C2SessionPool, 
-                       _C2SessionTask, _MMCSBoundedQueue ]
+    objc-classes:    [ _C2MPClientInfo, _C2MPError, _C2MPMetric, _C2MPNetworkStatistic, 
+                       _C2ReportMetrics, _C2RequestManager, _C2RequestOptions, _C2Session, 
+                       _C2SessionPool, _C2SessionTask, _MMCSBoundedQueue ]
 ...

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D55C0E55-9AE5-3B3A-9296-C1E80FDE397A' ]
+uuids:           [ 'x86_64: 524382A4-FE65-3223-AD2F-BAEE43A92FFA' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreCDPUI.framework/Versions/A/CoreCDPUI
 exports:         

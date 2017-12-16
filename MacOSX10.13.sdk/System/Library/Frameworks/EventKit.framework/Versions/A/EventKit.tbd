@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 045A1F3D-1BAD-3185-9A23-4B60051A3DB9' ]
+uuids:           [ 'x86_64: 9E06A51E-BCE4-3F21-AB9B-1C11C415FB31' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/EventKit.framework/Versions/A/EventKit
-current-version: 751
+current-version: 751.2.3
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _BirthdaySourceType, _CalDAVSourceType, _EKActionConfirmSuggestedEvent, 
@@ -145,9 +145,11 @@ exports:
                        __validMoveEventRequirementsCombination, _barrierAsyncIfQueueNotNil, 
                        _barrierSyncBool, _barrierSyncIfQueueNotNil, _defaultValueForKey, 
                        _dispatch_async_main_if_necessary, _dispatch_queue_create_recursive_concurrent, 
-                       _dispatch_sync_recursive, _ekSubSystem, _kDomain, _kNumberOfSharedLocks, 
-                       _resetStaticObjectCreationVariables, _stringFromEKEntityType, 
-                       _stringFromEKSharingStatus, _syncBoolIfQueueNotNil, _syncIfQueueNotNil ]
+                       _dispatch_sync_recursive, _ekSubSystem, _kDomain, _kEKCalendarItemNotesPropertyName, 
+                       _kEKCalendarItemStructuredLocationPropertyName, _kEKCalendarItemURLPropertyName, 
+                       _kNumberOfSharedLocks, _resetStaticObjectCreationVariables, 
+                       _stringFromEKEntityType, _stringFromEKSharingStatus, _syncBoolIfQueueNotNil, 
+                       _syncIfQueueNotNil ]
     objc-classes:    [ _EKActionsAccounting, _EKAlarm, _EKArchiver, _EKAssistantEventPredicate, 
                        _EKAttachment, _EKAttendee, _EKAvailabilityCache, _EKAvailabilityCachedSpan, 
                        _EKAvailabilityCachedSpanRange, _EKAvailabilitySpan, _EKAvailabilityUtilities, 

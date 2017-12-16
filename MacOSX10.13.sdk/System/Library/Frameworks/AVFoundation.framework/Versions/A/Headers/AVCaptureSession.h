@@ -81,12 +81,15 @@ AVF_EXPORT NSString *const AVCaptureSessionWasInterruptedNotification NS_AVAILAB
     An interruption caused by the video device temporarily being made unavailable, for instance, when stolen away by another AVCaptureSession.
  @constant AVCaptureSessionInterruptionReasonVideoDeviceNotAvailableWithMultipleForegroundApps
     An interruption caused when the app is running in a multi-app layout, causing resource contention and degraded recording quality of service. Given your present AVCaptureSession configuration, the session may only be run if your app occupies the full screen.
+ @constant AVCaptureSessionInterruptionReasonVideoDeviceNotAvailableDueToSystemPressure
+    An interruption caused by the video device temporarily being made unavailable due to system pressure, such as thermal duress. See AVCaptureDevice's AVCaptureSystemPressure category for more information.
  */
 typedef NS_ENUM(NSInteger, AVCaptureSessionInterruptionReason) {
     AVCaptureSessionInterruptionReasonVideoDeviceNotAvailableInBackground               = 1,
     AVCaptureSessionInterruptionReasonAudioDeviceInUseByAnotherClient                   = 2,
     AVCaptureSessionInterruptionReasonVideoDeviceInUseByAnotherClient                   = 3,
     AVCaptureSessionInterruptionReasonVideoDeviceNotAvailableWithMultipleForegroundApps = 4,
+    AVCaptureSessionInterruptionReasonVideoDeviceNotAvailableDueToSystemPressure NS_AVAILABLE_IOS(11_1) = 5,
 } NS_AVAILABLE_IOS(9_0) __TVOS_PROHIBITED;
 
 
@@ -99,6 +102,16 @@ typedef NS_ENUM(NSInteger, AVCaptureSessionInterruptionReason) {
     AVCaptureSessionInterruptionReasonKey may be found in the userInfo dictionary provided with an AVCaptureSessionWasInterruptedNotification. The NSNumber associated with the notification tells you why the interruption occurred.
  */
 AVF_EXPORT NSString *const AVCaptureSessionInterruptionReasonKey NS_AVAILABLE_IOS(9_0) __TVOS_PROHIBITED;
+
+/*!
+ @constant AVCaptureSessionInterruptionSystemPressureStateKey
+ @abstract
+    The key used to provide an AVCaptureSystemPressureState indicating the system pressure level and contributing factors that caused the interruption.
+ 
+ @discussion
+    This key is only present when the AVCaptureSessionInterruptionReasonKey equals AVCaptureSessionInterruptionReasonVideoDeviceNotAvailableDueToSystemPressure.
+ */
+AVF_EXPORT NSString *const AVCaptureSessionInterruptionSystemPressureStateKey NS_AVAILABLE_IOS(11_1) __TVOS_PROHIBITED;
 
 /*!
  @constant AVCaptureSessionInterruptionEndedNotification

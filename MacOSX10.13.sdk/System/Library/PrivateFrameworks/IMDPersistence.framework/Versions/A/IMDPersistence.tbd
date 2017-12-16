@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6C92025B-F5CA-3027-A463-C68A3A3E5135' ]
+uuids:           [ 'x86_64: AD4CE5A1-3FCD-3697-ADEC-24F88C4779A9' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IMDPersistence.framework/Versions/A/IMDPersistence
 current-version: 800

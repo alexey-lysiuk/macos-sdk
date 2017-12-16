@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B060F4E4-BB99-33A8-B025-00BFBA68CD8A' ]
+uuids:           [ 'x86_64: C00B1A23-17C9-3EDB-AC9E-4A5A5B3CFB1A' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/UniversalAccess.framework/Versions/A/Libraries/libUAPreferences.dylib
 exports:         
@@ -68,8 +68,9 @@ exports:
                        _UAVirtualKeyboardMouseOptionKey, _UAVirtualKeyboardPlaySoundsKey, 
                        _UAVoiceOverEnabled, _UAWhiteOnBlackKey, _UAZoomDesiredScaleKey, 
                        _UAZoomFlashScreenOnNotificationEnabledKey, _UAZoomFocusFollowsKeyboardKey, 
-                       _UAZoomFullscreenTemporaryZoomEnabledKey, _UAZoomModeKey, 
-                       _UAZoomPanningModeKey, _UAZoomScaleKey, _UAZoomShowPreviewKey, 
-                       _UAZoomShowPreviewSolidKey, _UAZoomSmoothImagesKey, _UAZoomTemporaryDetachEnabledKey, 
+                       _UAZoomFullscreenTemporaryZoomEnabledKey, _UAZoomMaximumKey, 
+                       _UAZoomMinimumKey, _UAZoomModeKey, _UAZoomPanningModeKey, 
+                       _UAZoomScaleKey, _UAZoomShowPreviewKey, _UAZoomShowPreviewSolidKey, 
+                       _UAZoomSmoothImagesKey, _UAZoomTemporaryDetachEnabledKey, 
                        __UAPreferencesCopyDebugDirectoryPath, _kUALogLevel ]
 ...

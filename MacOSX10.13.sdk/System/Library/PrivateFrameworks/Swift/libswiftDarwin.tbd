@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0D5739D3-0AA2-3912-941C-EB049FD8A7E9' ]
+uuids:           [ 'x86_64: DDBE1373-898F-32D2-8CCE-95810EE8F365' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Swift/libswiftDarwin.dylib
 current-version: 900.8.49

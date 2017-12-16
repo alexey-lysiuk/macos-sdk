@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FEA74F7B-4CD0-325E-84A5-7109C47C5915' ]
+uuids:           [ 'x86_64: EC71DBF2-7BD0-382B-A4FD-4D8460E10146' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AssistiveControlSupport.framework/Versions/A/AssistiveControlSupport
 current-version: 87
@@ -67,15 +67,15 @@ exports:
                        _kACSHPanelButtonKeyFunctionSystemActionDisplayText, _kACSHPanelButtonKeyKeyDisplayText, 
                        _kACSHPanelButtonKeyKeyIsDeadKey, _kACSHPanelButtonKeySecondaryKeyDisplayText, 
                        _kACSHPanelButtonKeyShouldExecuteSystemFunction, _kACSHPanelButtonKeyTextDisplayPosition, 
-                       _kACSHPanelElementKeyDisplayTheme, _kACSHPanelElementKeyPanelElements, 
-                       _kACSHPanelElementKeyRect, _kACSHPanelElementSpokenDescription, 
-                       _kACSHPanelElementViewObservationDisabledNotification, _kACSHPanelElementViewObservationEnabledNotification, 
-                       _kACSHPanelZoomScaleIncrementValue, _kACSHPressKeyDelay, _kACSHProgressCursorWidth, 
-                       _kACSHTooltipQueryNotification, _kACSHUIDefaultUITransitionDuration, 
-                       _kKeyboardLayoutDefinitionName, _kMinimizedPanelButtonMaximumWidth, 
-                       _kMinimizedPanelButtonMinimumWidth, _kMinimizedPanelButtonPadding, 
-                       _kMinimizedPanelHeight, _kMinimizedPanelPadding, _removeEventTapEventHandler, 
-                       _setEventTapEventHandler, _teardownEventTap ]
+                       _kACSHPanelElementAccessibilityIdentifier, _kACSHPanelElementKeyDisplayTheme, 
+                       _kACSHPanelElementKeyPanelElements, _kACSHPanelElementKeyRect, 
+                       _kACSHPanelElementSpokenDescription, _kACSHPanelElementViewObservationDisabledNotification, 
+                       _kACSHPanelElementViewObservationEnabledNotification, _kACSHPanelZoomScaleIncrementValue, 
+                       _kACSHPressKeyDelay, _kACSHProgressCursorWidth, _kACSHTooltipQueryNotification, 
+                       _kACSHUIDefaultUITransitionDuration, _kKeyboardLayoutDefinitionName, 
+                       _kMinimizedPanelButtonMaximumWidth, _kMinimizedPanelButtonMinimumWidth, 
+                       _kMinimizedPanelButtonPadding, _kMinimizedPanelHeight, _kMinimizedPanelPadding, 
+                       _removeEventTapEventHandler, _setEventTapEventHandler, _teardownEventTap ]
     objc-classes:    [ _ACSHAction, _ACSHActionAdjust, _ACSHActionAppleScript, _ACSHActionBack, 
                        _ACSHActionChangePreference, _ACSHActionCustomize, _ACSHActionDwell, 
                        _ACSHActionInsertText, _ACSHActionMouse, _ACSHActionMovePanel, 

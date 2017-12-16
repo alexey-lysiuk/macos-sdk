@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3559D5D8-9100-36A8-AD1C-80146CD783AB' ]
+uuids:           [ 'x86_64: E673DF2C-5035-31E4-86EF-B6E29E4D8D04' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/BridgeOSSoftwareUpdate.framework/Versions/A/BridgeOSSoftwareUpdate
 objc-constraint: none
@@ -11,6 +11,8 @@ exports:
                        _BridgeOSSoftwareUpdateErrorKeyMSUErrorDescription, _BridgeOSSoftwareUpdateErrorKeyNetworkRequired, 
                        _BridgeOSSoftwareUpdateKeyCurrentOSBuildVersion, _BridgeOSSoftwareUpdateKeyOperation, 
                        _BridgeOSSoftwareUpdateKeyOperationError, _BridgeOSSoftwareUpdateKeyOperationResult, 
+                       _BridgeOSSoftwareUpdateKeyPreviousRestoreDate, _BridgeOSSoftwareUpdateKeyPreviousUpdateDate, 
+                       _BridgeOSSoftwareUpdateKeyPreviousUpdateError, _BridgeOSSoftwareUpdateKeyPreviousUpdateState, 
                        _BridgeOSSoftwareUpdateKeyState, _BridgeOSSoftwareUpdateKeyTargetOSBuildVersion, 
                        _BridgeOSSoftwareUpdateKeyUpdateBrainBuildVersion, _BridgeOSSoftwareUpdateKeyUpdateBrainSourceVersion, 
                        _BridgeOSSoftwareUpdateOptionKeyClientContext, _BridgeOSSoftwareUpdateOptionKeyEnableSSO, 

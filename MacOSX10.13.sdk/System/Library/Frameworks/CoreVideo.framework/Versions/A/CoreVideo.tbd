@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: D6EF38C6-9ECF-3DDC-BAE5-BA8FFA63A2CB', 'x86_64: 9C66B618-8582-3731-A0F1-36FDD730FB07' ]
+uuids:           [ 'i386: 0D75C395-3C86-3539-9206-C7A330BE3551', 'x86_64: A8FC5325-D092-3A28-A1CF-5C94B8101F71' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo
 current-version: 1.5

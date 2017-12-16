@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: C981EE72-993D-3E0A-AB53-47ABB7C57EE8', 'x86_64: 09481487-37C2-359E-9E9A-7393B7C8643B' ]
+uuids:           [ 'i386: 3E1B0CED-0AC3-3252-AEDD-5D8F91E3AAA7', 'x86_64: D0C73200-90A7-3FD1-A6EC-97055AA367E2' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE
-current-version: 733
+current-version: 735.1
 objc-constraint: none
 parent-umbrella: CoreServices
 exports:         
@@ -60,9 +60,9 @@ exports:
                        __AEDescRecordIndexedItem, __AEDescToInternalImpl, __AEDoesAppleEventContainAnyTypesWhichRequireAnnotation, 
                        __AEEventDescGetInformation, __AEEventRequiresSecurityHandlerChecks, 
                        __AEEventSecurityHandlerDoChecks, __AEGenerateAnnotations, 
-                       __AEGetSKServiceDescription, __AEInstallEventSecurityHandler, 
-                       __AEInstallEventSecurityHandlerBlock, __AEIsAppleEventTargetInSandbox, 
-                       __AERegisterCurrentApplicationInfomationWithAppleEventsD, 
+                       __AEGetSKServiceDescription, __AEInstallEventHandlerBlock, 
+                       __AEInstallEventSecurityHandler, __AEInstallEventSecurityHandlerBlock, 
+                       __AEIsAppleEventTargetInSandbox, __AERegisterCurrentApplicationInfomationWithAppleEventsD, 
                        __AERemoveEventSecurityHandler, __AEUnflattenDescFromBytes, 
                        __AppleEventsCheckInApp, __AppleEventsCheckInAppWithBlock, 
                        __AppleEventsCopyApplicationEntitlements, __AppleEventsCopyApplicationEntitlementsWithBlock, 

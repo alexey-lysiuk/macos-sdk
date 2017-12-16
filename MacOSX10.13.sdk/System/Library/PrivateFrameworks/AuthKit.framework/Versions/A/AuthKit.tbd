@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 778F3CE8-46E3-3518-85BA-228180A6B67B' ]
+uuids:           [ 'x86_64: A5675E95-FC6E-38BF-8345-9AF987884CEC' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AuthKit.framework/Versions/A/AuthKit
 objc-constraint: none
@@ -57,12 +57,12 @@ exports:
                        __AKICSCPasswordEquivTokenHeaderKey, __AKICSCURLResponseKey, 
                        __AKLogSystem, __AKTrafficLogSubsystem ]
     objc-classes:    [ _AKAccountManager, _AKAccountRecoveryContext, _AKAnisetteData, 
-                       _AKAnisetteProvisioningController, _AKAnisetteProvisioningDaemonInterface, 
-                       _AKAppleIDAuthenticationClientInterface, _AKAppleIDAuthenticationContext, 
-                       _AKAppleIDAuthenticationController, _AKAppleIDAuthenticationDaemonInterface, 
-                       _AKAppleIDServerResourceLoadDelegate, _AKAppleIDSession, _AKCDPFactory, 
-                       _AKCertificatePinning, _AKCircleRequestContext, _AKCircleRequestPayload, 
-                       _AKConfiguration, _AKDevice, _AKDeviceListRequestContext, 
+                       _AKAnisetteProvisioningClientInterface, _AKAnisetteProvisioningController, 
+                       _AKAnisetteProvisioningDaemonInterface, _AKAppleIDAuthenticationClientInterface, 
+                       _AKAppleIDAuthenticationContext, _AKAppleIDAuthenticationController, 
+                       _AKAppleIDAuthenticationDaemonInterface, _AKAppleIDServerResourceLoadDelegate, 
+                       _AKAppleIDSession, _AKCDPFactory, _AKCertificatePinning, _AKCircleRequestContext, 
+                       _AKCircleRequestPayload, _AKConfiguration, _AKDevice, _AKDeviceListRequestContext, 
                        _AKFollowUpFactoryImpl, _AKFollowUpProviderImpl, _AKFollowUpTearDownContext, 
                        _AKMasterToken, _AKNativeAccountRecoveryController, _AKRemoteDevice, 
                        _AKToken, _AKURLBag, _AKURLSession, _AKUsernameFormatter ]

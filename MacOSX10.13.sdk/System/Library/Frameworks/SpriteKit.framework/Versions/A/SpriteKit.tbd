@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FBFB1962-C779-322B-B768-075E90D37D27' ]
+uuids:           [ 'x86_64: 348BD6F1-191E-3934-B68C-31663CED7247' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/SpriteKit.framework/Versions/A/SpriteKit
 current-version: 2

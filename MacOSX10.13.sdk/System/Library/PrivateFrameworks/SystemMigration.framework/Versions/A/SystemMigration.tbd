@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 52DD6C8D-D5EA-366E-AC85-170300294F89' ]
+uuids:           [ 'x86_64: 960B3B8E-E2DA-3EA9-9514-76B0DF95232D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SystemMigration.framework/Versions/A/SystemMigration
 current-version: 866
@@ -71,7 +71,8 @@ exports:
                        _SMMigrateEngine, _SMMigrateFiles, _SMMigrateGroups, _SMMigrateGuestAccountStep, 
                        _SMMigrateSystemInfo, _SMMigrateUserAccountsStep, _SMMigrateUserDataStep, 
                        _SMMigrateUserToolBox, _SMMigrationActivity, _SMMigrationCustomizeEditCellView, 
-                       _SMMigrationCustomizeEditViewController, _SMMigrationCustomizeQuickItemTableDelegate, 
+                       _SMMigrationCustomizeEditViewController, _SMMigrationCustomizePasswordCollectTableDelegate, 
+                       _SMMigrationCustomizePasswordCollectWindowController, _SMMigrationCustomizeQuickItemTableDelegate, 
                        _SMMigrationCustomizeViewController, _SMMigrationEngineElement, 
                        _SMMigrationEngineStep, _SMMigrationFrom_Client, _SMMigrationIncompatibleApplicationsList, 
                        _SMMigrationProgressViewController, _SMMigrationRebuildXPCCacheElement, 
@@ -124,14 +125,13 @@ exports:
                        _SMMacUser_Daemon._homeDirSearchComplete, _SMMacUser_Daemon._homeDirToBeCopiedByMigration, 
                        _SMMacUser_Daemon._needsAttention, _SMMacUser_Daemon._picturePath, 
                        _SMMacUser_Daemon._userExcludedPathList, _SMMigrationIncompatibleApplicationsList.iaList, 
-                       _SMMigrationIncompatibleApplicationsList.systemRootPath, _SMODDBAccess._node, 
-                       _SMODDBAccess._path, _SMODDBAccess._session, _SMODDBAccess.accessCount, 
-                       _SMPathsDirectoryClassifier.activeUserFilesCount, _SMPathsDirectoryClassifier.activeUserFilesSize, 
-                       _SMPathsDirectoryClassifier.applicationsFilesCount, _SMPathsDirectoryClassifier.applicationsFilesSize, 
-                       _SMPathsDirectoryClassifier.incompatibleAppsCount, _SMPathsDirectoryClassifier.incompatibleAppsSize, 
-                       _SMPathsDirectoryClassifier.legacyServerFilesCount, _SMPathsDirectoryClassifier.legacyServerFilesSize, 
-                       _SMPathsDirectoryClassifier.libraryFilesCount, _SMPathsDirectoryClassifier.libraryFilesSize, 
-                       _SMPathsDirectoryClassifier.libraryPreferencesDirectoryServiceFilesCount, 
+                       _SMMigrationIncompatibleApplicationsList.systemRootPath, _SMODDBAccess._path, 
+                       _SMODDBAccess._session, _SMODDBAccess.accessCount, _SMPathsDirectoryClassifier.activeUserFilesCount, 
+                       _SMPathsDirectoryClassifier.activeUserFilesSize, _SMPathsDirectoryClassifier.applicationsFilesCount, 
+                       _SMPathsDirectoryClassifier.applicationsFilesSize, _SMPathsDirectoryClassifier.incompatibleAppsCount, 
+                       _SMPathsDirectoryClassifier.incompatibleAppsSize, _SMPathsDirectoryClassifier.legacyServerFilesCount, 
+                       _SMPathsDirectoryClassifier.legacyServerFilesSize, _SMPathsDirectoryClassifier.libraryFilesCount, 
+                       _SMPathsDirectoryClassifier.libraryFilesSize, _SMPathsDirectoryClassifier.libraryPreferencesDirectoryServiceFilesCount, 
                        _SMPathsDirectoryClassifier.libraryPreferencesDirectoryServiceFilesSize, 
                        _SMPathsDirectoryClassifier.libraryPreferencesFilesCount, 
                        _SMPathsDirectoryClassifier.libraryPreferencesFilesSize, _SMPathsDirectoryClassifier.printerFilesCount, 

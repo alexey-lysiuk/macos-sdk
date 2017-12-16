@@ -304,5 +304,4 @@ MPS_CLASS_AVAILABLE_STARTING( macos(10.13), ios(11.0), tvos(11.0))
                     MPS_SWIFT_NAME(encode(commandBuffer:inputMatrix:inputVector:resultVector:));
 
 @end // MPSMatrixVectorMultiplication
-
 #endif /* MPSMatrixMultiplication_h */

@@ -15,6 +15,7 @@ typedef enum MLModelError : NSInteger {
     MLModelErrorGeneric = 0,
     MLModelErrorFeatureType = 1,
     MLModelErrorIO = 3,
+    MLModelErrorCustomLayer API_AVAILABLE(macos(10.13.2), ios(11.2), watchos(4.2), tvos(11.2)) = 4,
 } MLModelError API_AVAILABLE(macos(10.13), ios(11.0), watchos(4.0), tvos(11.0));
 
 NS_ASSUME_NONNULL_END

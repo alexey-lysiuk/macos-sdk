@@ -8,7 +8,29 @@
 #import <Foundation/Foundation.h>
 #import <StoreKit/StoreKitDefines.h>
 
+@class SKProductDiscount;
+
+typedef NS_ENUM(NSUInteger, SKProductPeriodUnit) {
+    SKProductPeriodUnitDay,
+    SKProductPeriodUnitWeek,
+    SKProductPeriodUnitMonth,
+    SKProductPeriodUnitYear
+} NS_SWIFT_NAME(SKProduct.PeriodUnit);
+
 NS_ASSUME_NONNULL_BEGIN
+
+SK_EXTERN_CLASS_AVAILABLE(10_13_2)
+@interface SKProductSubscriptionPeriod : NSObject
+{
+@private
+    id _internal;
+}
+
+@property(nonatomic, readonly) NSUInteger numberOfUnits;
+
+@property(nonatomic, readonly) SKProductPeriodUnit unit;
+
+@end
 
 SK_EXTERN_CLASS_AVAILABLE(10_7)
 @interface SKProduct : NSObject
@@ -35,6 +57,10 @@ SK_EXTERN_CLASS_AVAILABLE(10_7)
 
 // An array of filesizes of the assets associated with the product
 @property(nonatomic, readonly) NSArray<NSNumber *> *contentLengths NS_AVAILABLE_MAC(10_8);
+
+@property(nonatomic, readonly, nullable) SKProductSubscriptionPeriod *subscriptionPeriod NS_AVAILABLE_MAC(10_13_2);
+
+@property(nonatomic, readonly, nullable) SKProductDiscount *introductoryPrice NS_AVAILABLE_MAC(10_13_2);
 
 @end
 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 996D8A2A-36C5-331B-90C7-39640C7F1D08', 'x86_64: 4439B818-4C84-30E9-91B5-B7766FA74650' ]
+uuids:           [ 'i386: 0283BDB3-16A2-371E-A25C-A26F076C24A5', 'x86_64: DC3586C2-AA56-3419-88D3-FC0DBF08E3C0' ]
 platform:        macosx
 install-name:    /usr/lib/system/libsystem_symptoms.dylib
 objc-constraint: none

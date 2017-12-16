@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 34EB5D3A-2A9A-3967-AB3D-DD3154F5784D', 'x86_64: A5A679A7-D72A-3ABD-8298-F56D06826F98' ]
+uuids:           [ 'i386: 64259ADE-131C-3AA8-A127-5732D464ED46', 'x86_64: FEB7D65A-ED61-325F-8E32-A1893C9067B1' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/ICADevices.framework/Versions/A/ICADevices
 exports:         

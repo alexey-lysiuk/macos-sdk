@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 1234DC71-DED1-3B8A-96A2-80BF0566FD25', 'x86_64: FCC6CD95-004E-36A0-8745-F7ADFA254D11' ]
+uuids:           [ 'i386: 66268EA5-54AF-3CBE-A6FD-72DBFB8425AB', 'x86_64: 4B3BC64F-5F71-3E7C-8DB6-E65618EF7244' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/WebKit.framework/Versions/A/Frameworks/WebKitLegacy.framework/Versions/A/WebKitLegacy
-current-version: 604.3.5
+current-version: 604.4.7
 exports:         
   - archs:           [ i386 ]
     symbols:         [ _HIWebViewCreate, _HIWebViewGetWebView, _WebConvertNSImageToCGImageRef, 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 859DBCDA-070D-30D1-A6BD-13C5F391B57F', 'x86_64: 690F0D29-8202-3F35-BE45-BB62DEB3CCF1' ]
+uuids:           [ 'i386: C0CF7104-C491-3C85-96FC-8D6CC367E2BB', 'x86_64: 3CC543D3-DE7C-3717-8C8D-EA39094DCA0F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ICALogging.framework/Versions/A/ICALogging
 exports:         

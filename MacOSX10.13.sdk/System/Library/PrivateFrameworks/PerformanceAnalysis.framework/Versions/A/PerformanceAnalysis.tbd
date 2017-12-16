@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 52CA4DBF-4C1D-3D30-8FD4-EF595C1B6C71', 'x86_64: 520FEF4A-4C60-31FA-8BA0-528294BC41ED' ]
+uuids:           [ 'i386: FFE20C99-7FE3-3722-AD6C-C6ECF2C2D103', 'x86_64: 2BE359F2-DCE6-3E33-BA99-964507A3F540' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PerformanceAnalysis.framework/Versions/A/PerformanceAnalysis
-current-version: 183
+current-version: 183.1
 exports:         
   - archs:           [ x86_64 ]
     objc-classes:    [ _PAPLDistributedNotificationHandler, _PAPerfLoggingOperationCompletionNotification, 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: C5901D4C-624B-3ED8-9C30-D57BEA7D6C86', 'x86_64: F29FB6E5-B5DC-387C-8A5C-24C89B7C81D9' ]
+uuids:           [ 'i386: 8D2CD3AC-3185-3D7D-99B4-E0C6900F57D7', 'x86_64: 9B39DF3E-5B7F-3467-AC17-23258F76A376' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ContactsFoundation.framework/Versions/A/ContactsFoundation
 objc-constraint: none
@@ -101,8 +101,8 @@ exports:
                        _CNSwizzleNilResultsDefaultsKey, _CNThrowOnProtocolViolationsDefaultsKey, 
                        _CNTimestampedTimestampKey, _CNTimestampedValue, _CNTimestampedValueKey, 
                        _CNUnimplementedMethodException, _CNUserInfoWithMyProcessInfo, 
-                       _CNUserUIDKey, _CNVirtualSchedulerClockUnitsPerSecond, __CNLog, 
-                       __CNToStringFromTypeAndValue, _cn_fprintf, _cn_objectResultWithObjectLock, 
+                       _CNUserUIDKey, _CNVirtualSchedulerClockUnitsPerSecond, _CopyViaSecureCoding, 
+                       __CNLog, __CNToStringFromTypeAndValue, _cn_fprintf, _cn_objectResultWithObjectLock, 
                        _cn_objectResultWithPropertyLock, _cn_printf, _cn_runWithObjectLock, 
                        _cn_runWithPropertyLock, _cn_sprintf, _cn_vfprintf, _cn_vprintf ]
     objc-classes:    [ _CNAbsoluteTimestamped, _CNArchiver, _CNBehaviorSubject, _CNCache, 

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A160EA22-99C8-3031-8389-66BD8165967C' ]
+uuids:           [ 'x86_64: 809D287B-E3E4-38CD-AC07-37C0AB9E8655' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Photos.framework/Versions/A/Photos
-current-version: 3231.11.210
+current-version: 3251.12.180
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _PHAssetAnalysisAssetCountsKey, _PHAssetAnalysisClustererEligibleFaceCountKey, 

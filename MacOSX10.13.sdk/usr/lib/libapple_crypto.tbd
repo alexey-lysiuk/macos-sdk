@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 71AE014E-4C98-3868-9EE8-2A3F23536B41' ]
+uuids:           [ 'x86_64: E0162198-C97F-3286-9FF7-254D23F6FD04' ]
 platform:        macosx
 install-name:    /usr/lib/libapple_crypto.dylib
 current-version: 0

@@ -373,7 +373,8 @@ FOUNDATION_EXTERN SCNGeometrySourceSemantic const SCNGeometrySourceSemanticBoneI
 
 /*!
  @property primitiveRange
- @abstract <#primitiveRange description#>
+ @abstract The sub range of the primitive to render. defaults to [NSNotFound, 0]
+ @discussion When the location of the range is set to NSNotFound, the entire geometry element is rendered.
  */
 @property(nonatomic) NSRange primitiveRange API_AVAILABLE(macos(10.13), ios(11.0), tvos(11.0), watchos(4.0));
 

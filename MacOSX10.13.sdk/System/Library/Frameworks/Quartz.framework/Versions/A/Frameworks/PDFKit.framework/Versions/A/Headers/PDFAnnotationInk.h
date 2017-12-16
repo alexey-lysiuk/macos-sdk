@@ -10,13 +10,10 @@
 #import <PDFKit/PDFKitPlatform.h>
 #import <PDFKit/PDFAnnotation.h>
 
-@class PDFAnnotationInkPrivateVars;
-
 PDFKIT_CLASS_DEPRECATED(10_4, 10_12, NA, NA)
 @interface PDFAnnotationInk : PDFAnnotation <NSCopying, NSCoding>
 {
 @private
-    PDFAnnotationInkPrivateVars	*_private2;
 }
 
 // Array of NSBezierPaths that comprise the annotation.

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 7384B131-3CCF-3F40-8BE4-090B05C3D38A', 'x86_64: 41713411-2729-39F9-951A-DE39A00495F0' ]
+uuids:           [ 'i386: CD97E31D-0354-36AB-9997-C4FAF3221D30', 'x86_64: 4AA6DCF5-BAF8-36FA-A8B0-EDF518EFEF14' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/SharedFileList.framework/Versions/A/SharedFileList
-current-version: 71.2
+current-version: 71.4
 parent-umbrella: CoreServices
 exports:         
   - archs:           [ i386, x86_64 ]

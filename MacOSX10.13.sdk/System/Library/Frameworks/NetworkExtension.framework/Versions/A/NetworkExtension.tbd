@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E5BA41CF-BE63-37C7-BC29-EFAC2FF3675D' ]
+uuids:           [ 'x86_64: 4BE490B7-D1AF-3A42-A6FF-B43AA7468F9A' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/NetworkExtension.framework/Versions/A/NetworkExtension
 exports:         
@@ -134,10 +134,10 @@ exports:
                        _NEVirtualInterfaceCopyRouteCacheFromRoutes, _NEVirtualInterfaceCopyRoutes, 
                        _NEVirtualInterfaceCopyStatistics, _NEVirtualInterfaceCopyVPNServerAddress, 
                        _NEVirtualInterfaceCreate, _NEVirtualInterfaceCreateChannel, 
-                       _NEVirtualInterfaceCreateFromSocket, _NEVirtualInterfaceDisableChannel, 
-                       _NEVirtualInterfaceDupSocket, _NEVirtualInterfaceEnableChannelAndGetNexusInstance, 
-                       _NEVirtualInterfaceEnableFlowswitch, _NEVirtualInterfaceEnableProcessUUID, 
-                       _NEVirtualInterfaceGetDNSSupplementalMatchDomainsNoSearch, 
+                       _NEVirtualInterfaceCreateFromSocket, _NEVirtualInterfaceCreateNexus, 
+                       _NEVirtualInterfaceDisableChannel, _NEVirtualInterfaceDupSocket, 
+                       _NEVirtualInterfaceEnableChannelAndGetNexusInstance, _NEVirtualInterfaceEnableFlowswitch, 
+                       _NEVirtualInterfaceEnableProcessUUID, _NEVirtualInterfaceGetDNSSupplementalMatchDomainsNoSearch, 
                        _NEVirtualInterfaceGetMaxPendingPackets, _NEVirtualInterfaceGetReadAutomatically, 
                        _NEVirtualInterfaceGetType, _NEVirtualInterfaceInvalidate, 
                        _NEVirtualInterfaceIsPrimary, _NEVirtualInterfaceReadyToRead, 

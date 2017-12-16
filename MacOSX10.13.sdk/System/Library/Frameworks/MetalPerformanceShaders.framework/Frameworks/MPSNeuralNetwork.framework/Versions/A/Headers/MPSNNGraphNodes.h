@@ -436,6 +436,9 @@ MPS_CLASS_AVAILABLE_STARTING( macos(10.13), ios(11.0), tvos(11.0))
 /*! @abstract filter parameter b */
 @property (nonatomic, readonly)  float b;
 
+/*! @abstract filter parameter c */
+@property (nonatomic, readonly)  float c;
+
 -(nonnull instancetype) init NS_UNAVAILABLE;
 
 @end

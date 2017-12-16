@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: ABA83552-FA26-31D3-9C32-5C7D24157ADF', 'x86_64: 69BF94F5-9301-3755-98A1-A981DB03C395' ]
+uuids:           [ 'i386: 01BDF9A5-8C83-3611-A999-F43F9121A173', 'x86_64: 6C5D778D-4AB7-39A4-989B-2E8D2D57B3A0' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MultitouchSupport.framework/Versions/A/MultitouchSupport
-current-version: 1004.1
+current-version: 1204.13
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]
@@ -187,11 +187,10 @@ exports:
                        _mt_ActuatorGetInt32Property, _mt_ActuatorGetInt64Property, 
                        _mt_ActuatorGetReportViaDriver, _mt_ActuatorGetStringProperty, 
                        _mt_ActuatorSetReportViaDriver, _mt_ActuatorSetWaveformViaDriver, 
-                       _mt_CachePowerControlSupported, _mt_CachePropertiesForDevice, 
-                       _mt_CalculateMTBinaryContactVelocity, _mt_CalculateMTPreciseContactVelocity, 
-                       _mt_CheckForTimestampErrors, _mt_CleanupOldPaths, _mt_CreateSavedNameForDevice, 
-                       _mt_DequeueMultitouchDataMachPortCallBack, _mt_DeviceCFPropertyExists, 
-                       _mt_DeviceCopyArrayProperty, _mt_DeviceCopyDictionaryProperty, 
+                       _mt_CachePropertiesForDevice, _mt_CalculateMTBinaryContactVelocity, 
+                       _mt_CalculateMTPreciseContactVelocity, _mt_CheckForTimestampErrors, 
+                       _mt_CleanupOldPaths, _mt_CreateSavedNameForDevice, _mt_DequeueMultitouchDataMachPortCallBack, 
+                       _mt_DeviceCFPropertyExists, _mt_DeviceCopyArrayProperty, _mt_DeviceCopyDictionaryProperty, 
                        _mt_DeviceCreateFromDeviceID, _mt_DeviceDispatchKeyboardEvent, 
                        _mt_DeviceDispatchMomentumScrollWheelEvent, _mt_DeviceDispatchRelativeMouseEvent, 
                        _mt_DeviceDispatchScrollWheelEvent, _mt_DeviceGetBoolProperty, 

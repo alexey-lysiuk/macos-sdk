@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9D65D7A4-99D5-3270-B99D-1B8C14B051C7' ]
+uuids:           [ 'x86_64: F9C24917-227F-382C-A3E7-4F9FEE1EB470' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SetupAssistantFramework.framework/Versions/A/SetupAssistantFramework
 exports:         

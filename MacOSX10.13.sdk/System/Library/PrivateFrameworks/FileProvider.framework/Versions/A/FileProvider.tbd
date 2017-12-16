@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: C882E9C5-730F-3D1A-971D-84842CAA6733', 'x86_64: 938C9D1A-19E0-300D-B8E1-41365A3C87D5' ]
+uuids:           [ 'i386: 1CF7CDB6-2A86-32F1-9209-152C1AC425FA', 'x86_64: 3E0D74F8-D088-3586-B970-C6F319F530E3' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/FileProvider.framework/Versions/A/FileProvider
 exports:         
@@ -9,6 +9,9 @@ exports:
                        '$ld$hide$os10.1$_OBJC_CLASS_$_NSFileProviderExtension', '$ld$hide$os10.1$_OBJC_METACLASS_$_NSFileProviderExtension', 
                        '$ld$hide$os10.2$_OBJC_CLASS_$_NSFileProviderExtension', '$ld$hide$os10.2$_OBJC_METACLASS_$_NSFileProviderExtension', 
                        '$ld$hide$os10.3$_OBJC_CLASS_$_NSFileProviderExtension', '$ld$hide$os10.3$_OBJC_METACLASS_$_NSFileProviderExtension', 
+                       '$ld$hide$os6.1$_OBJC_CLASS_$_NSFileProviderExtension', '$ld$hide$os6.1$_OBJC_METACLASS_$_NSFileProviderExtension', 
+                       '$ld$hide$os7.0$_OBJC_CLASS_$_NSFileProviderExtension', '$ld$hide$os7.0$_OBJC_METACLASS_$_NSFileProviderExtension', 
+                       '$ld$hide$os7.1$_OBJC_CLASS_$_NSFileProviderExtension', '$ld$hide$os7.1$_OBJC_METACLASS_$_NSFileProviderExtension', 
                        '$ld$hide$os8.0$_OBJC_CLASS_$_NSFileProviderExtension', '$ld$hide$os8.0$_OBJC_METACLASS_$_NSFileProviderExtension', 
                        '$ld$hide$os8.1$_OBJC_CLASS_$_NSFileProviderExtension', '$ld$hide$os8.1$_OBJC_METACLASS_$_NSFileProviderExtension', 
                        '$ld$hide$os8.2$_OBJC_CLASS_$_NSFileProviderExtension', '$ld$hide$os8.2$_OBJC_METACLASS_$_NSFileProviderExtension', 

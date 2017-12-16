@@ -10,4 +10,6 @@
 #import <MPSMatrix/MPSMatrixSolve.h>
 #import <MPSMatrix/MPSMatrixDecomposition.h>
 #import <MPSMatrix/MPSMatrixCombination.h>
+#import <MPSMatrix/MPSMatrixSoftMax.h>
+#import <MPSMatrix/MPSMatrixFindTopK.h>
 

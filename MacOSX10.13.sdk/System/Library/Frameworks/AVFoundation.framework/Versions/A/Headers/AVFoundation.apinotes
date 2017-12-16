@@ -181,6 +181,8 @@ Classes:
     MethodKind: Class
     Availability: nonswift
     AvailabilityMsg: 'use object initializers instead'
+- Name: AVCaptureSystemPressureState
+  SwiftName: AVCaptureDevice.SystemPressureState
 - Name: AVCaptureVideoDataOutput
   Methods:
   - Selector: 'availableVideoCodecTypesForAssetWriterWithOutputFileType:'
@@ -528,6 +530,10 @@ Enumerators:
   SwiftName: addMovieHeaderToDestination
 - Name: AVMusicSequenceLoadSMF_ChannelsToTracks
   SwiftName: smfChannelsToTracks
+- Name: AVPlayerHDRModeHDR10
+  SwiftName: hdr10
+- Name: AVPlayerHDRModeHLG
+  SwiftName: hlg
 Tags:
 - Name: AVCaptureAutoFocusRangeRestriction
   SwiftName: AVCaptureDevice.AutoFocusRangeRestriction
@@ -549,6 +555,8 @@ Tags:
   SwiftName: AVCaptureOutput.DataDroppedReason
 - Name: AVCaptureSessionInterruptionReason
   SwiftName: AVCaptureSession.InterruptionReason
+- Name: AVCaptureSystemPressureFactors
+  SwiftName: AVCaptureSystemPressureState.Factors
 - Name: AVCaptureTorchMode
   SwiftName: AVCaptureDevice.TorchMode
 - Name: AVCaptureWhiteBalanceMode
@@ -559,6 +567,8 @@ Tags:
   SwiftName: AVDepthData.Quality
 - Name: AVError
   NSErrorDomain: AVFoundationErrorDomain
+- Name: AVPlayerHDRMode
+  SwiftName: AVPlayer.HDRMode
 Typedefs:
 - Name: AVCaptureDeviceTransportControlsSpeed
   SwiftName: AVCaptureDevice.TransportControlsSpeed
@@ -566,6 +576,8 @@ Typedefs:
   SwiftName: AVCaptureDevice.DeviceType
 - Name: AVCaptureSessionPreset
   SwiftName: AVCaptureSession.Preset
+- Name: AVCaptureSystemPressureLevel
+  SwiftName: AVCaptureSystemPressureState.Level
 - Name: AVCaptureWhiteBalanceChromaticityValues
   SwiftName: AVCaptureDevice.WhiteBalanceChromaticityValues
 - Name: AVCaptureWhiteBalanceGains

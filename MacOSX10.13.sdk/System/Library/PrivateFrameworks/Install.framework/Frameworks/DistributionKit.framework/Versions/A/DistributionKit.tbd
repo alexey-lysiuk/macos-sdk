@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 30CE068D-81C4-3E59-92A0-C32B6E2154AD' ]
+uuids:           [ 'x86_64: 8DE46D3A-34C9-31D5-8667-8B521EB67A93' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Install.framework/Frameworks/DistributionKit.framework/Versions/A/DistributionKit
 current-version: 1000
@@ -10,7 +10,8 @@ exports:
                        _IFJS_MySearchResultsMakeGetProperty, _IFJS_SystemBootROMFeatureFlagsMakeGetProperty, 
                        _IFJS_SystemBootROMSupportsAPFSMakeGetProperty, _PKDistributionControllerErrorDomain, 
                        _PKDistributionControllerPeripheralErrorDomain, _PKDistributionEvaluatorActiveNotification, 
-                       _PKDistributionEvaluatorQuiescentNotification ]
+                       _PKDistributionEvaluatorQuiescentNotification, _parseBridgeBuildGroup, 
+                       _parseBridgeVersion ]
     objc-classes:    [ _IFJS_Context, _PKBasicHardwareRequirements, _PKDistributionChoiceItem, 
                        _PKDistributionChoiceTitleButtonCell, _PKDistributionController, 
                        _PKDistributionControllerCommonCheckRecoveryAttempter, _PKDistributionEvaluator, 

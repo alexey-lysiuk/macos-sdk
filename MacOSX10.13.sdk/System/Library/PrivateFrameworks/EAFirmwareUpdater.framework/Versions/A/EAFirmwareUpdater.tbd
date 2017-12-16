@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 05CFF047-238F-371A-9AC3-AFAD388651F8' ]
+uuids:           [ 'x86_64: 88CD600B-B7E0-3962-BDA1-12678F6872C4' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/EAFirmwareUpdater.framework/Versions/A/EAFirmwareUpdater
 objc-constraint: none
@@ -17,8 +17,8 @@ exports:
                        _EAFirmwareUpdater._outputData, _EAFirmwareUpdater._productIDCode, 
                        _EAFirmwareUpdater._progressHandler, _EAFirmwareUpdater._protocolString, 
                        _EAFirmwareUpdater._reconnectTimer, _EAFirmwareUpdater._session, 
-                       _FirmwareBundle._bundleDescription, _iAUPServer._delegate, 
-                       _iAUPServer._escapeInProgress, _iAUPServer._firmwareImageBaseTransferAddress, 
+                       _EAFirmwareUpdater._skipDFUMode, _FirmwareBundle._bundleDescription, 
+                       _iAUPServer._delegate, _iAUPServer._escapeInProgress, _iAUPServer._firmwareImageBaseTransferAddress, 
                        _iAUPServer._parserState, _iAUPServer._telegramChecksum, _iAUPServer._telegramDataIn, 
                        _iAUPServer._telegramLength, _iAUPServer.objectBlockTransferSizes ]
 ...

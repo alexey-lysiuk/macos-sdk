@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 217C94FC-AB37-31DD-AA85-7D4002CE3862' ]
+uuids:           [ 'x86_64: FD5630E8-F716-34AE-9F9C-A2D2BA034A8F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreBrightness.framework/Versions/A/CoreBrightness
 objc-constraint: none

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FF13AE2A-4EF0-3A3F-8688-BFDAB45C8553' ]
+uuids:           [ 'x86_64: 8DD2E437-574F-3DA0-8D0C-993975381438' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CalendarPersistence.framework/Versions/A/CalendarPersistence
-current-version: 470
+current-version: 470.2.2
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CALAbbrevDateFormat, _CALAbbrevDateWithoutYearFormat, _CALAbbrevDayOfWeekFormat, 
@@ -602,18 +602,10 @@ exports:
                        _CalDAVAddSubscriptionCalendarQueueableOperation._propertiesToSet, 
                        _CalDAVAddressToPrincipalOperation._accountInfoProvider, _CalDAVAddressToPrincipalOperation._addresses, 
                        _CalDAVAddressToPrincipalOperation._opQueue, _CalDAVAddressToPrincipalOperation._principals, 
-                       _CalDAVAddressToPrincipalOperation._taskManager, _CalDAVBasicAccountInfoProvider._accountID, 
-                       _CalDAVBasicAccountInfoProvider._host, _CalDAVBasicAccountInfoProvider._identityPersist, 
-                       _CalDAVBasicAccountInfoProvider._objectID, _CalDAVBasicAccountInfoProvider._password, 
-                       _CalDAVBasicAccountInfoProvider._port, _CalDAVBasicAccountInfoProvider._principalPath, 
-                       _CalDAVBasicAccountInfoProvider._principalURL, _CalDAVBasicAccountInfoProvider._scheme, 
-                       _CalDAVBasicAccountInfoProvider._serverComplianceClasses, 
-                       _CalDAVBasicAccountInfoProvider._serverRoot, _CalDAVBasicAccountInfoProvider._shouldFailAllTasks, 
-                       _CalDAVBasicAccountInfoProvider._user, _CalDAVBasicAccountInfoProvider.acAccount, 
-                       _CalDAVCalendarQueueableOperation._sourceUID, _CalDAVCalendarSource._capabilities, 
-                       _CalDAVCalendarSource._objectID, _CalDAVCalendarSource._path, 
-                       _CalDAVCalendarSource._session, _CalDAVCalendarSource._uid, 
-                       _CalDAVCalendarSplitDualTypeCalendarQueueableOperation._context, 
+                       _CalDAVAddressToPrincipalOperation._taskManager, _CalDAVCalendarQueueableOperation._sourceUID, 
+                       _CalDAVCalendarSource._capabilities, _CalDAVCalendarSource._objectID, 
+                       _CalDAVCalendarSource._path, _CalDAVCalendarSource._session, 
+                       _CalDAVCalendarSource._uid, _CalDAVCalendarSplitDualTypeCalendarQueueableOperation._context, 
                        _CalDAVCalendarSplitDualTypeCalendarQueueableOperation._destinationCalendar, 
                        _CalDAVCalendarSplitDualTypeCalendarQueueableOperation._destinationCalendarURI, 
                        _CalDAVCalendarSplitDualTypeCalendarQueueableOperation._queryAndMoveIteration, 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0C7917AF-80DC-3C1A-8789-A6687356F149' ]
+uuids:           [ 'x86_64: 75EC6B75-0B94-355E-96A0-5FD948256DB3' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MapsSupport.framework/Versions/A/MapsSupport
 exports:         

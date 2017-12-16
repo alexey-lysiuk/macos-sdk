@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6148D37E-32C9-30DA-AB6A-82CB153523AB' ]
+uuids:           [ 'x86_64: 67294D27-00F1-38BF-B52D-332223319E66' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/FoundInAppsPlugins.framework/Versions/A/FoundInAppsPlugins
 exports:         

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 24D21AA9-6CA4-3D5F-A553-18581AA69908' ]
+uuids:           [ 'x86_64: 7EADF584-BC30-3072-8D15-BD0A7BCEFEE6' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoLibraryPrivate.framework/Versions/A/Frameworks/PhotoPrintProduct.framework/Versions/A/PhotoPrintProduct
-current-version: 667
+current-version: 669
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CGAffineTransformConcatPhotoOrientation, _CGContextDrawSelectionInRect, 

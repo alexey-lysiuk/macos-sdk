@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: F9C0EBEA-3E03-3FA2-A941-F7CE50BEB78D', 'x86_64: B05956DA-4DC4-370F-A72E-00599875B38B' ]
+uuids:           [ 'i386: FE3E50BA-2949-3A82-B257-6B25468A8A38', 'x86_64: FD0252AD-1BF9-30EE-BF2E-4409722582EB' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/WebKit.framework/Versions/A/Frameworks/WebCore.framework/Versions/A/WebCore
-current-version: 604.3.5
+current-version: 604.4.7
 parent-umbrella: WebKit
 exports:         
   - archs:           [ i386 ]
@@ -120,8 +120,6 @@ exports:
                        __ZN7WebCore15PlatformCALayer11flipContextEP9CGContextd, __ZN7WebCore16HTMLMediaElement15clearMediaCacheERKN3WTF6StringENSt3__16chrono10time_pointINS6_12system_clockENS6_8durationIxNS5_5ratioILl1ELl1000000EEEEEEE, 
                        __ZN7WebCore17LibWebRTCProvider20createPeerConnectionERN6webrtc22PeerConnectionObserverEONS1_23PeerConnectionInterface16RTCConfigurationE, 
                        __ZN7WebCore17LibWebRTCProvider20createPeerConnectionERN6webrtc22PeerConnectionObserverERN3rtc14NetworkManagerERNS4_19PacketSocketFactoryEONS1_23PeerConnectionInterface16RTCConfigurationE, 
-                       __ZN7WebCore17LibWebRTCProvider23setDecoderFactoryGetterEON3WTF8FunctionIFNSt3__110unique_ptrIN7cricket25WebRtcVideoDecoderFactoryENS3_14default_deleteIS6_EEEEvEEE, 
-                       __ZN7WebCore17LibWebRTCProvider23setEncoderFactoryGetterEON3WTF8FunctionIFNSt3__110unique_ptrIN7cricket25WebRtcVideoEncoderFactoryENS3_14default_deleteIS6_EEEEvEEE, 
                        __ZN7WebCore17LibWebRTCProvider24setPeerConnectionFactoryEON3rtc13scoped_refptrIN6webrtc30PeerConnectionFactoryInterfaceEEE, 
                        __ZN7WebCore17LibWebRTCProvider25callOnWebRTCNetworkThreadEON3WTF8FunctionIFvvEEE, 
                        __ZN7WebCore17LibWebRTCProvider27callOnWebRTCSignalingThreadEON3WTF8FunctionIFvvEEE, 
@@ -985,12 +983,14 @@ exports:
                        __ZN7WebCore15DOMWrapperWorld13clearWrappersEv, __ZN7WebCore15DOMWrapperWorldD1Ev, 
                        __ZN7WebCore15DOMWrapperWorldD2Ev, __ZN7WebCore15DatabaseManager10initializeERKN3WTF6StringE, 
                        __ZN7WebCore15DatabaseManager14setIsAvailableEb, __ZN7WebCore15DatabaseManager16hasOpenDatabasesERNS_22ScriptExecutionContextE, 
+                       __ZN7WebCore15DatabaseManager19fullPathForDatabaseERNS_14SecurityOriginERKN3WTF6StringEb, 
                        __ZN7WebCore15DatabaseManager23detailsForNameAndOriginERKN3WTF6StringERNS_14SecurityOriginE, 
                        __ZN7WebCore15DatabaseManager9setClientEPNS_21DatabaseManagerClientE, 
                        __ZN7WebCore15DatabaseManager9singletonEv, __ZN7WebCore15DatabaseTracker12deleteOriginERKNS_18SecurityOriginDataE, 
                        __ZN7WebCore15DatabaseTracker13databaseNamesERKNS_18SecurityOriginDataE, 
                        __ZN7WebCore15DatabaseTracker14deleteDatabaseERKNS_18SecurityOriginDataERKN3WTF6StringE, 
                        __ZN7WebCore15DatabaseTracker17closeAllDatabasesENS_20CurrentQueryBehaviorE, 
+                       __ZN7WebCore15DatabaseTracker19fullPathForDatabaseERKNS_18SecurityOriginDataERKN3WTF6StringEb, 
                        __ZN7WebCore15DatabaseTracker23trackerWithDatabasePathERKN3WTF6StringE, 
                        __ZN7WebCore15DatabaseTracker29deleteAllDatabasesImmediatelyEv, 
                        __ZN7WebCore15DatabaseTracker5quotaERKNS_18SecurityOriginDataE, 
@@ -1494,7 +1494,8 @@ exports:
                        __ZN7WebCore17JSHTMLLinkElementC2EPN3JSC9StructureERNS_17JSDOMGlobalObjectEON3WTF3RefINS_15HTMLLinkElementEEE, 
                        __ZN7WebCore17JSXPathExpression9toWrappedERN3JSC2VMENS1_7JSValueE, 
                        __ZN7WebCore17KeyframeValueList6insertENSt3__110unique_ptrIKNS_14AnimationValueENS1_14default_deleteIS4_EEEE, 
-                       __ZN7WebCore17LibWebRTCProvider15webRTCAvailableEv, __ZN7WebCore17LinkIconCollector12iconsOfTypesEN3WTF9OptionSetINS_12LinkIconTypeEEE, 
+                       __ZN7WebCore17LibWebRTCProvider15webRTCAvailableEv, __ZN7WebCore17LibWebRTCProvider9setActiveEb, 
+                       __ZN7WebCore17LinkIconCollector12iconsOfTypesEN3WTF9OptionSetINS_12LinkIconTypeEEE, 
                        __ZN7WebCore17LogMemoryPressureE, __ZN7WebCore17LogTextAutosizingE, 
                        __ZN7WebCore17MouseRelatedEvent7offsetXEv, __ZN7WebCore17MouseRelatedEvent7offsetYEv, 
                        __ZN7WebCore17PageConfigurationC1EON3WTF9UniqueRefINS_12EditorClientEEEONS1_3RefINS_14SocketProviderEEEONS2_INS_17LibWebRTCProviderEEE, 
@@ -1574,10 +1575,10 @@ exports:
                        __ZN7WebCore18JSHTMLMediaElementC1EPN3JSC9StructureERNS_17JSDOMGlobalObjectEON3WTF3RefINS_16HTMLMediaElementEEE, 
                        __ZN7WebCore18JSHTMLMediaElementC2EPN3JSC9StructureERNS_17JSDOMGlobalObjectEON3WTF3RefINS_16HTMLMediaElementEEE, 
                        __ZN7WebCore18JSMediaStreamTrack9toWrappedERN3JSC2VMENS1_7JSValueE, 
-                       __ZN7WebCore18LogRemoteInspectorE, __ZN7WebCore18LogResourceLoadingE, 
-                       __ZN7WebCore18ParsedContentRangeC1ERKN3WTF6StringE, __ZN7WebCore18ParsedContentRangeC1Exxx, 
-                       __ZN7WebCore18ParsedContentRangeC2ERKN3WTF6StringE, __ZN7WebCore18ParsedContentRangeC2Exxx, 
-                       __ZN7WebCore18PaymentCoordinator16validateMerchantERKNS_3URLE, 
+                       __ZN7WebCore18LogDatabaseTrackerE, __ZN7WebCore18LogRemoteInspectorE, 
+                       __ZN7WebCore18LogResourceLoadingE, __ZN7WebCore18ParsedContentRangeC1ERKN3WTF6StringE, 
+                       __ZN7WebCore18ParsedContentRangeC1Exxx, __ZN7WebCore18ParsedContentRangeC2ERKN3WTF6StringE, 
+                       __ZN7WebCore18ParsedContentRangeC2Exxx, __ZN7WebCore18PaymentCoordinator16validateMerchantERKNS_3URLE, 
                        __ZN7WebCore18PaymentCoordinator19didAuthorizePaymentERKNS_7PaymentE, 
                        __ZN7WebCore18PaymentCoordinator22didSelectPaymentMethodERKNS_13PaymentMethodE, 
                        __ZN7WebCore18PaymentCoordinator23didCancelPaymentSessionEv, 
@@ -1797,9 +1798,9 @@ exports:
                        __ZN7WebCore20ResourceHandleClient42canAuthenticateAgainstProtectionSpaceAsyncEPNS_14ResourceHandleERKNS_15ProtectionSpaceE, 
                        __ZN7WebCore20ResourceHandleClientC1Ev, __ZN7WebCore20ResourceHandleClientC2Ev, 
                        __ZN7WebCore20ResourceHandleClientD0Ev, __ZN7WebCore20ResourceHandleClientD1Ev, 
-                       __ZN7WebCore20ResourceHandleClientD2Ev, __ZN7WebCore20ResourceLoadObserver19statisticsForOriginERKN3WTF6StringE, 
+                       __ZN7WebCore20ResourceHandleClientD2Ev, __ZN7WebCore20ResourceLoadObserver10clearStateEv, 
+                       __ZN7WebCore20ResourceLoadObserver14notifyObserverEv, __ZN7WebCore20ResourceLoadObserver19statisticsForOriginERKN3WTF6StringE, 
                        __ZN7WebCore20ResourceLoadObserver23setNotificationCallbackEON3WTF8FunctionIFvONS1_6VectorINS_22ResourceLoadStatisticsELm0ENS1_15CrashOnOverflowELm16EEEEEE, 
-                       __ZN7WebCore20ResourceLoadObserver38setShouldThrottleObserverNotificationsEb, 
                        __ZN7WebCore20ResourceLoadObserver6sharedEv, __ZN7WebCore20ResourceResponseBase11setMimeTypeERKN3WTF6StringE, 
                        __ZN7WebCore20ResourceResponseBase14setHTTPVersionERKN3WTF6StringE, 
                        __ZN7WebCore20ResourceResponseBase17setHTTPStatusCodeEi, __ZN7WebCore20ResourceResponseBase17setHTTPStatusTextERKN3WTF6StringE, 
@@ -1881,6 +1882,7 @@ exports:
                        __ZN7WebCore21DiagnosticLoggingKeys19invalidSessionIDKeyEv, 
                        __ZN7WebCore21DiagnosticLoggingKeys19retrievalRequestKeyEv, 
                        __ZN7WebCore21DiagnosticLoggingKeys20needsRevalidationKeyEv, 
+                       __ZN7WebCore21DiagnosticLoggingKeys21domainCausingCrashKeyEv, 
                        __ZN7WebCore21DiagnosticLoggingKeys21simulatedPageCrashKeyEv, 
                        __ZN7WebCore21DiagnosticLoggingKeys22backNavigationDeltaKeyEv, 
                        __ZN7WebCore21DiagnosticLoggingKeys22cacheControlNoStoreKeyEv, 
@@ -2554,6 +2556,7 @@ exports:
                        __ZN7WebCore35positionOfNextBoundaryOfGranularityERKNS_15VisiblePositionENS_15TextGranularityENS_18SelectionDirectionE, 
                        __ZN7WebCore36largestRectWithAspectRatioInsideRectEfRKNS_9FloatRectE, 
                        __ZN7WebCore36registerMemoryReleaseNotifyCallbacksEv, __ZN7WebCore36standardUserAgentWithApplicationNameERKN3WTF6StringES3_, 
+                       __ZN7WebCore36visiblePositionForPositionWithOffsetERKNS_15VisiblePositionEi, 
                        __ZN7WebCore37BasicComponentTransferFilterOperation5blendEPKNS_15FilterOperationEdb, 
                        __ZN7WebCore37WidgetHierarchyUpdatesSuspensionScope11moveWidgetsEv, 
                        __ZN7WebCore37WidgetHierarchyUpdatesSuspensionScope35s_widgetHierarchyUpdateSuspendCountE, 
@@ -3918,8 +3921,8 @@ exports:
                        __ZNK7WebCore16HTMLTitleElement4textEv, __ZNK7WebCore16HTMLVideoElement10videoWidthEv, 
                        __ZNK7WebCore16HTMLVideoElement11videoHeightEv, __ZNK7WebCore16HTMLVideoElement30webkitSupportsPresentationModeENS0_21VideoPresentationModeE, 
                        __ZNK7WebCore16IconDatabaseBase12databasePathEv, __ZNK7WebCore16JSXMLHttpRequest12responseTextERN3JSC9ExecStateE, 
-                       __ZNK7WebCore16MediaStreamTrack11getSettingsEv, __ZNK7WebCore16MediaStreamTrack2idEv, 
-                       __ZNK7WebCore16ResourceResponse13nsURLResponseEv, __ZNK7WebCore16UserMediaRequest22topLevelDocumentOriginEv, 
+                       __ZNK7WebCore16MediaStreamTrack2idEv, __ZNK7WebCore16ResourceResponse13nsURLResponseEv, 
+                       __ZNK7WebCore16UserMediaRequest22topLevelDocumentOriginEv, 
                        __ZNK7WebCore16UserMediaRequest23userMediaDocumentOriginEv, 
                        __ZNK7WebCore16UserMediaRequest8documentEv, __ZNK7WebCore16VisibleSelection10firstRangeEv, 
                        __ZNK7WebCore16VisibleSelection17isContentEditableEv, __ZNK7WebCore16VisibleSelection17isInPasswordFieldEv, 

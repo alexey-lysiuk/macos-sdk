@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DCD0C224-A488-372E-AE74-D4068B0218C6' ]
+uuids:           [ 'x86_64: 7F4CCA1D-6B5E-3736-BAD2-E00CFFA41AEB' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreLocationProtobuf.framework/Versions/A/CoreLocationProtobuf
 objc-constraint: none

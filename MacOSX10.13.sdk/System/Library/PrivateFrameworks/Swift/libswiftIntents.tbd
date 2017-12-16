@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 55E2C396-AFF6-3C07-82F6-5651A3854C6F' ]
+uuids:           [ 'x86_64: B55DF207-8B6E-38D6-A42C-6C83C942D64E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Swift/libswiftIntents.dylib
 current-version: 900.8.49

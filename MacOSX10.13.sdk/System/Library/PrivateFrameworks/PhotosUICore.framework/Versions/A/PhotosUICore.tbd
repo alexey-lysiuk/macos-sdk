@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: ACA82684-AE29-37BE-9E8D-3F5E8A8BB748' ]
+uuids:           [ 'x86_64: ECC8D4C9-D718-3F5C-8A77-8AA139AE7F18' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotosUICore.framework/Versions/A/PhotosUICore
-current-version: 3231.9.210
+current-version: 3251.10.200
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

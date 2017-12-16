@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 889C0273-8806-3183-98C0-7D646C8E2005', 'x86_64: C44A1B15-F43C-3329-B281-A1F6B8487475' ]
+uuids:           [ 'i386: 7EF7FE7D-B792-32A5-8AAC-955BB6F10302', 'x86_64: 0E78BBE7-9016-3A12-88EB-425EFE69E643' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreLocation.framework/Versions/A/CoreLocation
-current-version: 2236.0.11
+current-version: 2237.0.22
 exports:         
   - archs:           [ i386, x86_64 ]
     symbols:         [ _CLAppResetChangedNotification, _CLAppStatusChangedNotification, 

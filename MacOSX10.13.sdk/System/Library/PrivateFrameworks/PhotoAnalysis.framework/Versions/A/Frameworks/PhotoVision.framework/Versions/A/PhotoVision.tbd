@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 23E51C86-B3EA-39D2-9413-327207CE7F2F' ]
+uuids:           [ 'x86_64: 637E46A1-B96A-32D6-937C-2D393E046737' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Versions/A/Frameworks/PhotoVision.framework/Versions/A/PhotoVision
 objc-constraint: none

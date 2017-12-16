@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 67999C05-391E-3802-AD5A-24CD287DF5CC' ]
+uuids:           [ 'x86_64: B481EAA8-B269-3119-B66C-F2CF9069976F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SiriFoundation.framework/Versions/A/SiriFoundation
 exports:         
@@ -8,7 +8,8 @@ exports:
     symbols:         [ _SRFPinningCommandDictionaryKey, _SRFPinningConversationInfoKey, 
                        _SRFPinningExpectedSnippetKindKey, _SRFPinningIsFirstRunKey, 
                        _SRFPinningPendingDataStoreKey, _SRFPinningPinnedSnippetsKey, 
-                       _SRFPinningShouldShowAllKey, _SiriKeyboardShortcutDidChangeNotificationName, 
+                       _SRFPinningShouldShowAllKey, _SRFScreenDidLockNotification, 
+                       _SRFScreenDidUnlockNotification, _SiriKeyboardShortcutDidChangeNotificationName, 
                        _SiriPreferredMicrophoneIdentifierDidChangeNotificationName, 
                        _SiriStatusMenuVisibilityDidChangeNotificationName, _SiriUIAccessibilityPressNotification, 
                        _SiriUIAppleMikeyActivateNotification, _SiriUIBluetoothATBVRAActivateNotification, 
@@ -27,5 +28,5 @@ exports:
                        _SiriUITouchBarPressBeganNotification, _SiriUITouchBarPressEndedNotification, 
                        _SiriUIVoiceTriggerActivateNotification ]
     objc-classes:    [ _SRFLauncher, _SRFLoggingDefaults, _SRFPreferences, _SRFStateNotifier, 
-                       _SRFUserDefaultsController ]
+                       _SRFUserDefaultsController, _SRFUtilities ]
 ...

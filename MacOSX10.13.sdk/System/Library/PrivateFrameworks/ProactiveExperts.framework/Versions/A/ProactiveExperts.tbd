@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6151078F-A2A2-3D13-A947-869F30175830' ]
+uuids:           [ 'x86_64: 8F00CC94-817F-303F-A0AE-9732E15B5F24' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ProactiveExperts.framework/Versions/A/ProactiveExperts
 current-version: 0

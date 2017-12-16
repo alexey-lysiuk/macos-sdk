@@ -26,3 +26,5 @@
 #import <CoreML/MLModel+MLModelCompilation.h>
 
 #import <CoreML/MLModelError.h>
+
+#import <CoreML/MLCustomLayer.h>

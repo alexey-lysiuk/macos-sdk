@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CE686155-596E-37EE-9418-EE83D01EB7CA' ]
+uuids:           [ 'x86_64: 55015B9B-BD9B-307A-A9A7-0525CC7E24B1' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IdentityLookup.framework/Versions/A/IdentityLookup
 objc-constraint: none

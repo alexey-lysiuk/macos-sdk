@@ -134,6 +134,7 @@ int	IOLockSleepDeadline( IOLock * lock, void *event,
 
 void	IOLockWakeup(IOLock * lock, void *event, bool oneThread) __DARWIN14_ALIAS(IOLockWakeup);
 
+
 #ifdef __APPLE_API_OBSOLETE
 
 /* The following API is deprecated */
@@ -364,6 +365,7 @@ boolean_t IOSimpleLockTryLock( IOSimpleLock * lock );
 #else
 void IOSimpleLockUnlock( IOSimpleLock * lock );
 #endif	/* !IOLOCKS_INLINE */
+
 
 #if __LP64__
 typedef boolean_t IOInterruptState;

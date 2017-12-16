@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B0AAA8E7-D5E1-3DFC-83A2-1E4F32F2B6DA' ]
+uuids:           [ 'x86_64: FC3D227F-12EC-3FBF-A6B2-A0BA2F42A8DC' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ContactsDonation.framework/Versions/A/ContactsDonation
 objc-constraint: none

@@ -63,7 +63,7 @@ API_AVAILABLE(macos(10.13), ios(11.0), tvos(11.0)) __WATCHOS_PROHIBITED
  
 		If multiple AVSampleBufferAudioRenderers with different values for audioOutputDeviceUniqueID are attached to the same AVSampleBufferRenderSynchronizer, audio may not stay in sync during playback.  To avoid this, ensure that all synchronized AVSampleBufferAudioRenderers are using the same audio output device.
 */
-@property (nonatomic, copy, nullable) NSString *audioOutputDeviceUniqueID API_AVAILABLE(macos(10.13));
+@property (nonatomic, copy, nullable) NSString *audioOutputDeviceUniqueID API_AVAILABLE(macos(10.13)) API_UNAVAILABLE(ios, tvos, watchos);
 
 /*!
 	@property		audioTimePitchAlgorithm

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 83BB5E52-4F0B-3E1F-B105-45191C05F7C9' ]
+uuids:           [ 'x86_64: 5EE0D800-96D5-31F3-80CA-C160FAEA42F4' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreSpotlight.framework/Versions/A/CoreSpotlight
 exports:         
@@ -164,9 +164,12 @@ exports:
                        _MDRelatedUniqueIdentifier, _MDSearchQueryErrorDomain, _MDSearchQueryOptionFetchAttributes, 
                        _MDSearchQueryOptionGrouped, _MDSearchQueryOptionMaxCount, 
                        _MDSearchQueryOptionRankingQueries, __CSDecodeObject, __MDIndexExtensionsLoadedNotification, 
-                       __MDPlainTextFromHTMLData, _defaultIdleTime, _defaultIdleTimeLeeway, 
-                       _defaultMaximumBatchSize, _hasInternalCSEntitlement, _isAppleInternalInstall, 
-                       _isH4Device, _kCSDataProtectionClassEntitlement, _kCSDeveloperDataProtectionClassEntitlement, 
+                       __MDPlainTextFromHTMLData, _csindex_xpc_dictionary_decode_status_with_error, 
+                       _csindex_xpc_dictionary_encode_status_with_error, _csquery_xpc_dictionary_decode_status_with_error, 
+                       _csquery_xpc_dictionary_encode_status, _csquery_xpc_dictionary_encode_status_with_error, 
+                       _defaultIdleTime, _defaultIdleTimeLeeway, _defaultMaximumBatchSize, 
+                       _hasInternalCSEntitlement, _isAppleInternalInstall, _isH4Device, 
+                       _kCSDataProtectionClassEntitlement, _kCSDeveloperDataProtectionClassEntitlement, 
                        _kSecEntitlementCSInternal, _kSecEntitlementCSSearchInternal, 
                        _kSecEntitlementCoreSpotlightApplicationIdentifier, _logForCSLogCategoryDefault, 
                        _logForCSLogCategoryIndex, _logForCSLogCategoryQuery, _logForCSLogCategoryUA, 

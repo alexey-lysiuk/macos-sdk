@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C9414763-A840-31EC-AF78-44BC557E7CB6' ]
+uuids:           [ 'x86_64: 15A14EC7-05E3-3D5E-A973-D992546E4FC8' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Swift/libswiftCryptoTokenKit.dylib
 current-version: 900.8.49

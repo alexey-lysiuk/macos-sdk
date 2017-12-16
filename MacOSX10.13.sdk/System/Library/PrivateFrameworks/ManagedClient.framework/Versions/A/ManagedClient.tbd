@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B75F8FBA-B157-34CF-89EF-36DE5E0F3C53' ]
+uuids:           [ 'x86_64: 38223246-8216-3302-90A8-92DAB66C1ED7' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ManagedClient.framework/Versions/A/ManagedClient
 exports:         

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C38B586F-E862-31AF-8ACB-ADC0F5E01B6D' ]
+uuids:           [ 'x86_64: 1FD53EC6-A9E9-3AEC-86A7-C52729D1A135' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/RemoteXPC.framework/Versions/A/RemoteXPC
-current-version: 1205.20.31
+current-version: 1205.30.29
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -12,9 +12,9 @@ exports:
                        _xpc_remote_channel_create, _xpc_remote_channel_disconnect, 
                        _xpc_remote_channel_send, _xpc_remote_connection_activate, 
                        _xpc_remote_connection_attach_stream, _xpc_remote_connection_cancel, 
-                       _xpc_remote_connection_copy_remote_address_string, _xpc_remote_connection_create_connected_ipv6_pair, 
-                       _xpc_remote_connection_create_connected_pair, _xpc_remote_connection_create_remote_service_listener, 
-                       _xpc_remote_connection_create_with_connected_fd, _xpc_remote_connection_create_with_multiverse_device, 
+                       _xpc_remote_connection_copy_remote_address_string, _xpc_remote_connection_create_asymmetric_connected_ipv6_pair, 
+                       _xpc_remote_connection_create_connected_ipv6_pair, _xpc_remote_connection_create_connected_pair, 
+                       _xpc_remote_connection_create_remote_service_listener, _xpc_remote_connection_create_with_connected_fd, 
                        _xpc_remote_connection_create_with_remote_service, _xpc_remote_connection_get_failsafe_version_flags, 
                        _xpc_remote_connection_get_remote_service_version, _xpc_remote_connection_get_version_flags, 
                        _xpc_remote_connection_open_stream, _xpc_remote_connection_send_barrier, 

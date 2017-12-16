@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D6E4A0E4-7D92-3F6C-94E6-FDA7AC911802' ]
+uuids:           [ 'x86_64: 7CB58C30-AE2C-3BF1-AF99-8904BF98C486' ]
 platform:        macosx
 install-name:    /usr/lib/libquit.dylib
 objc-constraint: none

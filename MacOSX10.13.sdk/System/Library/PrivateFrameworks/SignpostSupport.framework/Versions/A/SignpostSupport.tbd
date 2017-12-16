@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6ED85DDE-F562-3DCB-8E95-3F5ACAEA403F' ]
+uuids:           [ 'x86_64: 3E5C736C-D5B9-3EE4-A31A-CA4F058BB8A5' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SignpostSupport.framework/Versions/A/SignpostSupport
 exports:         

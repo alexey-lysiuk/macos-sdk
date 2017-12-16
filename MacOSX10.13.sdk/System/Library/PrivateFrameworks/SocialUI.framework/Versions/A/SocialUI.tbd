@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F1AA6C50-3193-3B12-AB1A-A538822D84E8' ]
+uuids:           [ 'x86_64: 47594A38-3B20-3E29-A054-C0F38ED61602' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SocialUI.framework/Versions/A/SocialUI
 current-version: 5500

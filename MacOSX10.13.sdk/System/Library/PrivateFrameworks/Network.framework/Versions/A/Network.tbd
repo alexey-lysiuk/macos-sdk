@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C2690679-3E48-3A8C-AC87-94A38334D84A' ]
+uuids:           [ 'x86_64: 3C391F45-3801-3C27-8D89-FDE554156CDD' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Network.framework/Versions/A/Network
 exports:         

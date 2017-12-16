@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9C7A4758-E979-3962-A5A2-7A0A378C8D74' ]
+uuids:           [ 'x86_64: AE33513C-2647-3D09-AC77-556E161F35C3' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/OSInstaller.framework/Versions/A/OSInstaller
 current-version: 660
@@ -9,17 +9,20 @@ exports:
     symbols:         [ _OSIMTDomainKey, _OSIMTFieldsKey, _OSISProductManagerIAMethod, 
                        _OSISProductManagerInternalUserEmail, _OSISProductManagerSIUShouldDisableSIP, 
                        _OSISProductManagerSIUShouldDisableSKEL, _OSISProductManagerSIUTeamIDsToAdd, 
-                       _OSProductManagerAutomationFile, _OSProductManagerCompatUpdateIdentifier, 
-                       _OSProductManagerDoConvert, _OSProductManagerIAEndDate, _OSProductManagerIAEndProgressPercentage, 
+                       _OSProductManagerAutomationFile, _OSProductManagerBridgeOSBrainUpdateIdentifier, 
+                       _OSProductManagerBridgeOSUpdateCustomerIdentifier, _OSProductManagerBridgeOSUpdateDevelopmentIdentifier, 
+                       _OSProductManagerCompatUpdateIdentifier, _OSProductManagerDoConvert, 
+                       _OSProductManagerIAEndDate, _OSProductManagerIAEndProgressPercentage, 
                        _OSProductManagerIAEndTimeEstimate, _OSProductManagerIALogFile, 
                        _OSProductManagerInstallerType, _OSProductManagerMutableProductName, 
                        _OSProductManagerNetworkName, _OSProductManagerODSDiscName, 
                        _OSProductManagerODSDiscURL, _OSProductManagerODSShareName, 
                        _OSProductManagerProductCookieFileName, _OSProductManagerProductCookieURLKey, 
-                       _OSProductManagerProductNVRAMVariable, _OSProductManagerShouldFailOnStale, 
-                       _PowerPropertiesChanged, _atomicSUStatusCookiePath, _installLogAsString, 
-                       _kDefaultChoiceChangesPath, _kPreviousSystemPath, _kRecoveredItemsPath, 
-                       _kValidTargetsDidUpdateNotificationName, _nullNotifyCallback ]
+                       _OSProductManagerProductNVRAMVariable, _OSProductManagerShouldNotFailOnStale, 
+                       _PowerPropertiesChanged, _appleUpgradePath, _atomicSUStatusCookiePath, 
+                       _installLogAsString, _kDefaultChoiceChangesPath, _kPreviousSystemPath, 
+                       _kRecoveredItemsPath, _kValidTargetsDidUpdateNotificationName, 
+                       _nullNotifyCallback, _stagedAppleUpgradePath ]
     objc-classes:    [ _APFSMachineSupport, _OSIAIPostInstall, _OSIAttachLoggingElement, 
                        _OSICleanUpElement, _OSICleanupFailedInstallElement, _OSICollectionInstallElement, 
                        _OSIConfigureEnterpriseSettingsElement, _OSIConvertToAPFSElement, 

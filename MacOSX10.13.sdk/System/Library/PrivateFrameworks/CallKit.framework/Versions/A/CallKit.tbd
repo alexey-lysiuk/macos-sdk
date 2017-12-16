@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 27F824BC-5B89-3CB7-85FD-0A00EC8A7C07' ]
+uuids:           [ 'x86_64: 67BDD38B-DA9E-3F68-80B2-229581E67541' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CallKit.framework/Versions/A/CallKit
 objc-constraint: none

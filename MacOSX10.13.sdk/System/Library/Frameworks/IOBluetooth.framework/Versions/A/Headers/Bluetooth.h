@@ -1110,6 +1110,8 @@ enum
         kBluetoothHCICommandLEReadPhy                                       = 0x0030,
         kBluetoothHCICommandLESetDefaultPhy                                 = 0x0031,
         kBluetoothHCICommandLESetPhy                                        = 0x0032,
+		kBluetoothHCICommandLEEnhancedReceiverTest							= 0x0033,
+		kBluetoothHCICommandLEEnhancedTransmitterTest						= 0x0034,
 
 	// Command Group: Logo Testing (no commands yet)
 	

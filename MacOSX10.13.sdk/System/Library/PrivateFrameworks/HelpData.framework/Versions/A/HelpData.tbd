@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 84FFFE94-3BEE-3891-9C47-4B22CC791BBA', 'x86_64: 81CDA3EF-246A-3AE5-8705-6F3057FC06F7' ]
+uuids:           [ 'i386: 8FFBF281-4DDA-330B-898E-3E8C4D70E8F6', 'x86_64: 4508839C-39FC-31FD-9AB8-A7ADA9284F5C' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/HelpData.framework/Versions/A/HelpData
-current-version: 154
+current-version: 158
 exports:         
   - archs:           [ x86_64 ]
     objc-ivars:      [ _DDMAssetURLProtocolCoordinator._urlLoadingQueue, _DDMAssetURLProtocolDelegate._protocol, 
@@ -90,16 +90,16 @@ exports:
                        _HVOfflineHelpTopicNotConnected, _HVOfflineHelpTopicNotFound, 
                        _HVOfflineHelpbookID, _HVPlatformName, _HVSystemVersionPlistPath, 
                        _HVTopicTemplateFileName, _HVURLAnchorCommand, _HVURLBookIDKey, 
-                       _HVURLOpenbookCommand, _HVURLSchemeHTTP, _HVURLSchemeHTTPS, 
-                       _HVURLSchemeHelp, _HVURLSchemeHelpWithColon, _HVUnknownString, 
-                       _clientPortNameForThisTask, _getVersionFromAppBundle, _getVersionedBookIDFromAppBundle, 
-                       _helpDirSort, _isVersionedBookID, _kHPDAuthenticationClientErrorDomain, 
-                       _kHPDAuthenticationNetworkStateDidChangeNotification, _kHPDAuthenticationUserSignInNotification, 
-                       _kHPDAuthenticationUserSignOutNotification, _kHPDPreferredLanguagesKey, 
-                       _kHPDQueryCancelledKey, _kHPDQueryIDKey, _kHPDQueryLimitKey, 
-                       _kHPDQueryOptionsKey, _kHPDQueryProcessIDKey, _kHPDQueryResultTypesKey, 
-                       _kHPDQueryScopeKey, _kHPDQueryStringKey, _kHPDUserInfoKey, 
-                       _versionedBookID ]
+                       _HVURLBookmarkCommand, _HVURLOpenbookCommand, _HVURLSchemeHTTP, 
+                       _HVURLSchemeHTTPS, _HVURLSchemeHelp, _HVURLSchemeHelpWithColon, 
+                       _HVUnknownString, _clientPortNameForThisTask, _getVersionFromAppBundle, 
+                       _getVersionedBookIDFromAppBundle, _helpDirSort, _isVersionedBookID, 
+                       _kHPDAuthenticationClientErrorDomain, _kHPDAuthenticationNetworkStateDidChangeNotification, 
+                       _kHPDAuthenticationUserSignInNotification, _kHPDAuthenticationUserSignOutNotification, 
+                       _kHPDPreferredLanguagesKey, _kHPDQueryCancelledKey, _kHPDQueryIDKey, 
+                       _kHPDQueryLimitKey, _kHPDQueryOptionsKey, _kHPDQueryProcessIDKey, 
+                       _kHPDQueryResultTypesKey, _kHPDQueryScopeKey, _kHPDQueryStringKey, 
+                       _kHPDUserInfoKey, _versionedBookID ]
     objc-classes:    [ _DDMAssetURLProtocol, _DDMAssetURLProtocolCoordinator, _DDMAssetURLProtocolDelegate, 
                        _DDMAssetURLProtocolOperation, _DDMAssetURLSessionManager, 
                        _DDMBook, _DDMConfig, _DDMContext, _DDMInfo, _DDMMeta, _DDMMisc, 

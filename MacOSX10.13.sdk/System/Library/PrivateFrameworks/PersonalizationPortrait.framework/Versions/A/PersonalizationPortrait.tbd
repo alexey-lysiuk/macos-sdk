@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 22851C61-45E6-3B7F-8B52-92F0DD984D37' ]
+uuids:           [ 'x86_64: B7B4E5DE-8F3C-3B06-8715-643F3BAD763F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PersonalizationPortrait.framework/Versions/A/PersonalizationPortrait
 exports:         
@@ -14,7 +14,10 @@ exports:
                        _PPMNamedEntityDonationSourceNSUA, _PPMNamedEntityDonationSourceNews, 
                        _PPMNamedEntityDonationSourcePhotos, _PPMNamedEntityDonationSourceSafari, 
                        _PPMNamedEntityDonationSourceSiri, _PPMPortraitComponentNamedEntities, 
-                       _PPMPortraitComponentTopics, _PPMTopicDonationErrorReasonContext, 
+                       _PPMPortraitComponentTopics, _PPMPortraitDomainMappedTopics, 
+                       _PPMPortraitDomainNamedEntities, _PPMPortraitDomainTopics, 
+                       _PPMPortraitFeedbackTypeNegative, _PPMPortraitFeedbackTypeNeutral, 
+                       _PPMPortraitFeedbackTypePositive, _PPMTopicDonationErrorReasonContext, 
                        _PPMTopicDonationErrorReasonDelete, _PPMTopicDonationErrorReasonDeleteBlacklist, 
                        _PPMTopicDonationErrorReasonDonation, _PPMTopicDonationErrorReasonHTML, 
                        _PPMTopicDonationErrorReasonZeroSafariHTML, _PPMTopicDonationErrorReasonZeroSafariReader, 
@@ -26,9 +29,10 @@ exports:
                        _kPPLongTermDecayRate, _kPPMediumTermDecayRate, _kPPShortTermDecayRate, 
                        _kPPWeekInterval ]
     objc-classes:    [ _PPAllocSupport, _PPAsset, _PPDeletionTracker, _PPLocationNamedEntities, 
-                       _PPMNamedEntitiesPerDonation, _PPMObjectsDeleted, _PPMTopicDonation, 
-                       _PPMTopicDonationError, _PPMTopicItemDonation, _PPMTopicUniqueItems, 
-                       _PPMTopicsScored, _PPMTopicsScoredForMapping, _PPMUniqueNamedEntitiesFound, 
+                       _PPMFeedbackPortraitEngaged, _PPMFeedbackPortraitUsed, _PPMNamedEntitiesPerDonation, 
+                       _PPMObjectsDeleted, _PPMTopicDonation, _PPMTopicDonationError, 
+                       _PPMTopicItemDonation, _PPMTopicUniqueItems, _PPMTopicsScored, 
+                       _PPMTopicsScoredForMapping, _PPMUniqueNamedEntitiesFound, 
                        _PPMutableNamedEntityRecord, _PPMutableTopicRecord, _PPNamedEntity, 
                        _PPNamedEntityRecord, _PPPortrait, _PPPortraitConfiguration, 
                        _PPPortraitDeletionTrackingXPCListenerDelegate, _PPPortraitKVOObserver, 

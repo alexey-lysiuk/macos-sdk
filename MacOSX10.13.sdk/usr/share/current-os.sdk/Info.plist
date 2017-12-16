@@ -1,0 +1,14 @@
+{
+    CFBundleIdentifier = "com.apple.dt.sdk.OSX10_13";
+    CFBundleName = "OSX 10.13 SDK";
+    CFBundleShortVersionString = "1.0";
+    Name = "OS X Boot System";
+    CanonicalName = "";
+    DisplayName = "Current OS X (10.13)";
+    MinimalDisplayName = "Current OS X";
+    PropertyConditionName = "macosx10.13";
+    Version = "10.13";
+    CustomProperties = {
+        "KERNEL_EXTENSION_HEADER_SEARCH_PATHS" = "$(KERNEL_FRAMEWORK)/PrivateHeaders $(KERNEL_FRAMEWORK_HEADERS)";
+    };
+}

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C7191154-BF0B-3CAD-9381-756019BA17F8' ]
+uuids:           [ 'x86_64: 34AF678F-6F75-325E-86E3-55F23889BB27' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreDuetDebugLogging.framework/Versions/A/CoreDuetDebugLogging
 exports:         

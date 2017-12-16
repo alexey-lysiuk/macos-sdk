@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 755BCC40-5003-3A49-BF2E-476129DD6989' ]
+uuids:           [ 'x86_64: 6CB03EF6-BD32-3ED1-954E-E933B92CDD17' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Mail.framework/Versions/A/Mail
-current-version: 3445.4.7
+current-version: 3445.5.18
 exports:         
   - archs:           [ x86_64 ]
     allowable-clients: [ CoreSuggestionsTests, DebugBundle, EmailAuthenticationPlugin, 
@@ -174,8 +174,8 @@ exports:
                        _MFMailboxDisplayCountDidChangeNotification, _MFMailboxKeyIsPublicOrShared, 
                        _MFMailboxKeyPathComponent, _MFMailboxKeyUnreadCount, _MFMailboxKeyUnreadMessages, 
                        _MFMailboxKeyUnseenCount, _MFMailboxNameWithoutPII, _MFMailboxPublicStatusDidChangeNotification, 
-                       _MFMailboxTypeKey, _MFMailboxUserInfoDidChangeNotification, 
-                       _MFMailboxUserInfoKey, _MFMailboxUserInfoKeyEWSFolderId, _MFMailboxUserInfoKeyName, 
+                       _MFMailboxUserInfoDidChangeNotification, _MFMailboxUserInfoKey, 
+                       _MFMailboxUserInfoKeyEWSFolderId, _MFMailboxUserInfoKeyName, 
                        _MFMailboxUserInfoKeyUUID, _MFMailboxWasRenamedNotification, 
                        _MFMailboxWillBecomeInvalidNotification, _MFMarkStringWithJunkMailLevel, 
                        _MFMessageChangeKeyColor, _MFMessageChangeKeyFlags, _MFMessageChangeKeyFlagsMask, 

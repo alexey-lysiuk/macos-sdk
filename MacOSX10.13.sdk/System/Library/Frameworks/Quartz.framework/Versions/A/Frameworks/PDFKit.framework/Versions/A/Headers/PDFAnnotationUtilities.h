@@ -126,6 +126,10 @@ PDFKIT_EXTERN PDFAnnotationHighlightingMode PDFAnnotationHighlightingModePush PD
 // Used by annotations type(s): /FreeText, /Widget (field type(s): /Btn, /Ch, and /Tx).
 @property (nonatomic, copy, nullable) PDFKitPlatformColor *fontColor;
 
+// Interior color of the annotation.
+// Used by annotations type(s): /Circle, /Line, /Square.
+@property (nonatomic, copy, nullable) PDFKitPlatformColor *interiorColor;
+
 // Alignment of text within annotation bounds.  Supported: NSLeftTextAlignment, NSRightTextAlignment and
 // NSCenterTextAlignment.
 // Used by annotations type(s): /FreeText, /Widget (field type(s): /Tx).
@@ -269,6 +273,11 @@ PDFKIT_EXTERN PDFAnnotationHighlightingMode PDFAnnotationHighlightingModePush PD
 // Background color characteristics.
 // Used by annotations type(s): /Widget (field type(s): /Btn, /Ch, /Tx).
 @property (nonatomic, copy, nullable) PDFKitPlatformColor *backgroundColor;
+
+// Name of stamp annotation. Standard stamps include names like, "Approved", "Draft", "TopSecret", etc.
+// The name must be representable as ASCII. Very little is rendered if the annotation has no appearance stream.
+// Used by annotations type(s): /Stamp
+@property (nonatomic, copy, nullable) NSString *stampName;
 
 @end
 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 780944A3-46BF-3B16-A9F0-52DE104AC143' ]
+uuids:           [ 'x86_64: 867C0A0E-2150-3901-9486-94BB90BAD2A9' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MFiAuthentication.framework/Versions/A/MFiAuthentication
 exports:         

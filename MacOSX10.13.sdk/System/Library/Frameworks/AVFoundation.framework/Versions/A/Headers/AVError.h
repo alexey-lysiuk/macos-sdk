@@ -107,4 +107,5 @@ typedef NS_ENUM(NSInteger, AVError) {
 	AVErrorContentNotUpdated NS_AVAILABLE(10_13, 11_0)	= -11866,
 	AVErrorNoLongerPlayable	 NS_AVAILABLE(10_13, 11_0)	= -11867,
 	AVErrorNoCompatibleAlternatesForExternalDisplay API_AVAILABLE(macos(10.13), ios(11.0), tvos(11.0)) __WATCHOS_PROHIBITED = -11868,
+	AVErrorNoSourceTrack API_AVAILABLE(macos(10.13.2), ios(11.2), tvos(11.2)) __WATCHOS_PROHIBITED = -11869,
 };

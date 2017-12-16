@@ -51,7 +51,7 @@ typedef NS_OPTIONS(NSUInteger, NSColorPanelOptions) {
     id			_opacitySlider;
     id			_opacityText;
     id			_opacityView;
-    id            _modalButtons;
+    id                  _modalButtons;
     id			_pickerView;
     id			_customViewsList;
     id			_customPickerList;
@@ -65,14 +65,14 @@ typedef NS_OPTIONS(NSUInteger, NSColorPanelOptions) {
     id                  _accessoryContainerViewHeight;
     id                  _opacityViewHeight;
     id                  _reserved1;
-    id                  _reserved2;
+    NSUInteger          _colorSettingSuppressionCount;
     id			_resizeDimple;
     BOOL                _reserved3;
     BOOL		_reserved4;
     BOOL		_handlingOpacityMoveAction;
     BOOL		_ignoreConstraints;
     BOOL		_continuous;
-    BOOL		_allowColorSetting;
+    BOOL	        _reserved5;
     BOOL		_stillInitializing;
     BOOL                _hasModalAppearance;
     id			_opacityTextController;

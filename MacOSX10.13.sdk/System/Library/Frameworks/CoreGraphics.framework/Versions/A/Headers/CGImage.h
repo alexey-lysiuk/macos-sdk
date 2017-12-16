@@ -36,7 +36,7 @@ typedef CF_ENUM(uint32_t, CGImageByteOrderInfo) {
     kCGImageByteOrder32Little = (2 << 12),
     kCGImageByteOrder16Big    = (3 << 12),
     kCGImageByteOrder32Big    = (4 << 12)
-} CG_AVAILABLE_STARTING(__MAC_10_12, __IPHONE_10_0);
+} CG_AVAILABLE_STARTING(__MAC_10_0, __IPHONE_2_0);
 
 typedef CF_OPTIONS(uint32_t, CGBitmapInfo) {
     kCGBitmapAlphaInfoMask = 0x1F,

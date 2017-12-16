@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0ED5BCB3-8C5F-3E4F-A56D-5BA188778D5B' ]
+uuids:           [ 'x86_64: DE732067-D0B8-309D-96C3-81E7EF3E58E5' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreTime.framework/Versions/A/CoreTime
-current-version: 220
+current-version: 224
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -18,5 +18,5 @@ exports:
                        _TMSourceCdma, _TMSourceGps, _TMSourceHarvestServer, _TMSourceLocation, 
                        _TMSourceLocationServer, _TMSourceMobileLockdown, _TMSourceNitz, 
                        _TMSourceNtp, _TMSourceNtpLowConfidence, _TMSourceNtpPacket, 
-                       _TMSourceiTunesServer, _TMTimeZoneConfirmedNotification ]
+                       _TMSourceProxBuddy, _TMSourceiTunesServer, _TMTimeZoneConfirmedNotification ]
 ...

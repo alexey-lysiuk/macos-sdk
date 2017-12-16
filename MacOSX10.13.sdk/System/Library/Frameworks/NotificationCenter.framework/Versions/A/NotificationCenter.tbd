@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B8D4FBE4-1D0D-36D6-B2D7-AD5BCE155D3A' ]
+uuids:           [ 'x86_64: EA67E1F8-9506-3336-8F84-FD3512F321B7' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/NotificationCenter.framework/Versions/A/NotificationCenter
 exports:         
@@ -16,8 +16,6 @@ exports:
                        _NCPostDistributedNotification, _NCPostNotification, _NCRLogDebugCheckEnabled, 
                        _NCRandomInteger, _NCRemoveCocoaBindingsForObject, _NCRemoveDistributedNotificationObserver, 
                        _NCRemoveNotificationHandler, _NCRemoveNotificationObserver, 
-                       _NCSafeDecodeNotificationFromDictionary, _NCSafeDecodeNotificationsArray, 
-                       _NCSafeEncodeNotificationToDictionary, _NCSafeEncodeNotificationsArray, 
                        _NCScaleFactorForDisplay, _NCSetCocoaBinding, _NCSetDistributedNotificationSelector, 
                        _NCSetDistributedNotificationSelectorWithBehavior, _NCSetNotificationHandler, 
                        _NCSetNotificationSelector, _NCViewLayoutAlignBottomWithPriority, 
@@ -31,13 +29,14 @@ exports:
                        _NCViewLayoutSubviewWithInsetsAndSize, _NCViewLayoutTrailingWithPriority, 
                        _NCViewLayoutWidthWithPriority, _NCWidgetHostLeftMargin, _NCWidgetHostMaxHeight, 
                        _NCWidgetHostVerticalMargin, _NCWidgetHostWidth, _NotificationCenterVersionNumber, 
-                       _NotificationCenterVersionString, __NCSetDefaultSharedAnimationParameters, 
-                       __NCWeatherDebugStringForConditions, __NCWeatherImageForConditions, 
-                       __NCWeatherImageSunrise, __NCWeatherImageSunset, __OSLogRemoteViewLogging, 
-                       _cgImageFromMainBundle, _gNCRLogDebugEnabled, _kNCRemotePlugInExtensionInvalidatedNotification, 
-                       _kNCRemotePlugInManagerNotificationExtension, _kNCRemotePlugInManagerWidgetExtension, 
-                       _kNotificationServiceBackgroundStyleKey, _kNotificationServiceExpandedActionTitleKey, 
-                       _kNotificationServiceFullCustomizationKey, _kNotificationServicePinnedKey ]
+                       _NotificationCenterVersionString, _OSLogRemotePluginSystem, 
+                       __NCSetDefaultSharedAnimationParameters, __NCWeatherDebugStringForConditions, 
+                       __NCWeatherImageForConditions, __NCWeatherImageSunrise, __NCWeatherImageSunset, 
+                       __OSLogRemoteViewLogging, _cgImageFromMainBundle, _gNCRLogDebugEnabled, 
+                       _kNCRemotePlugInExtensionInvalidatedNotification, _kNCRemotePlugInManagerNotificationExtension, 
+                       _kNCRemotePlugInManagerWidgetExtension, _kNotificationServiceBackgroundStyleKey, 
+                       _kNotificationServiceExpandedActionTitleKey, _kNotificationServiceFullCustomizationKey, 
+                       _kNotificationServicePinnedKey ]
     objc-classes:    [ _NCJSONTransformer, _NCLineView, _NCLinearDodgeImageView, 
                        _NCListItemViewController, _NCListViewDeleteButton, _NCMaterialLayer, 
                        _NCNotificationExtensionContext, _NCNotificationExtensionHostContext, 

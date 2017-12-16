@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F09230BE-5E50-3C71-A0B6-38ACEE5489F2' ]
+uuids:           [ 'x86_64: A1C7397B-C0A7-3988-A763-A3870F30881F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AnnotationKit.framework/Versions/A/AnnotationKit
 objc-constraint: none

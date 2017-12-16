@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 8D1911B4-1158-31C3-ACA5-B01C4CD0770B', 'x86_64: CCE59B1A-2A83-3BC3-81B1-40A3098E6E61' ]
+uuids:           [ 'i386: E5F6D06B-FA33-3AB2-A3CE-B9696CA57C43', 'x86_64: B29BE76B-A58C-3827-B7AD-1F7F02ED64E0' ]
 platform:        macosx
 install-name:    /usr/lib/log/liblog_cu.dylib
 exports:         

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 2A215F01-C54B-3386-A731-2C92B26B50E6', 'x86_64: 600A9BD5-3DD2-3F7C-B40E-8485026FE936' ]
+uuids:           [ 'i386: 560C8A98-E261-39C9-9862-3340EC6ABC9C', 'x86_64: ACC132E5-97F1-3B36-AD7B-4E6CC077E691' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Heimdal.framework/Versions/A/Heimdal
 exports:         

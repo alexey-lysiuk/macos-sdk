@@ -32,7 +32,7 @@ PDFKIT_CLASS_DEPRECATED(10_4, 10_12, NA, NA)
 
 - (PDFKitPlatformColor *) backgroundColor;
 - (void) setBackgroundColor: (PDFKitPlatformColor *) color;
-- (int) rotation;
+- (NSInteger) rotation;
 - (void) setRotation: (int) rotation;
 
 // Font characteristics associated with the text field.

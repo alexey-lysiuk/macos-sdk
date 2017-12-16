@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8F1FBF7B-0A6D-3926-B8EF-BB2E3D7DC931' ]
+uuids:           [ 'x86_64: DBFE1C16-1D3B-3B39-8329-965E9374404F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ScreenReader.framework/Versions/A/Frameworks/ScreenReaderBrailleDriver.framework/Versions/A/ScreenReaderBrailleDriver
 current-version: 390

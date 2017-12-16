@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 59830644-F45E-3440-9D7D-46E582354038' ]
+uuids:           [ 'x86_64: A4B1C977-1CBF-3CF8-BF5F-29C6558F5E50' ]
 platform:        macosx
 install-name:    /usr/lib/PN548_API.dylib
 objc-constraint: none
@@ -9,7 +9,7 @@ exports:
     symbols:         [ _GetPresenceOfAttackLog, _NFCallbackMutexCreate, _NFCallbackMutexRelease, 
                        _NFCallbackMutexRetain, _NFCallbackMutexSetTimeout, _NFCallbackMutexSignal, 
                        _NFCallbackMutexWait, _NFDriverClose, _NFDriverCreateErrorCode, 
-                       _NFDriverDumpUART, _NFDriverGPIOSetPMUStandbyPowerEnabled, 
+                       _NFDriverDumpUART, _NFDriverEnableGreenCarThreshold, _NFDriverGPIOSetPMUStandbyPowerEnabled, 
                        _NFDriverGetBoosterInfo, _NFDriverGetControllerInfo, _NFDriverGetOSUpdateLog, 
                        _NFDriverGetSecureElementInfo, _NFDriverGetStackBreadcrumb, 
                        _NFDriverGetUnlockRequestInfoIcf, _NFDriverIsSecureElementEnumerated, 
@@ -49,28 +49,28 @@ exports:
                        __NFDriverSetExpressModeNumWaitFrames, __NFDriverSetExpressModeRfOffWaitTime, 
                        __NFDriverSetFieldCoalescingInterval, __NFDriverSetFieldDetectRFOffTime, 
                        __NFDriverSetRFSettings, __NFDriverSetStandbyMode, _gPN548_API_logv, 
-                       _nfc_err, _phLibNfc_RfSettings, _phLibNfc_RfSettings_Bermuda3_7_PN67V_03_01_42, 
-                       _phLibNfc_RfSettings_Bermuda3_7_PN67V_03_01_42_NbParams, _phLibNfc_RfSettings_Bermuda_PN66V_01_01_10, 
+                       _nfc_err, _phLibNfc_RfSettings, _phLibNfc_RfSettings_Bermuda3_7_PN67V_03_01_43, 
+                       _phLibNfc_RfSettings_Bermuda3_7_PN67V_03_01_43_NbParams, _phLibNfc_RfSettings_Bermuda_PN66V_01_01_10, 
                        _phLibNfc_RfSettings_Bermuda_PN66V_01_01_10_NbParams, _phLibNfc_RfSettings_Bermuda_PN66V_02_01_42, 
                        _phLibNfc_RfSettings_Bermuda_PN66V_02_01_42_NbParams, _phLibNfc_RfSettings_Bermuda_PN67V_02_01_89, 
-                       _phLibNfc_RfSettings_Bermuda_PN67V_02_01_89_NbParams, _phLibNfc_RfSettings_Bermuda_PN67V_03_01_42, 
-                       _phLibNfc_RfSettings_Bermuda_PN67V_03_01_42_NbParams, _phLibNfc_RfSettings_Bermuda_PN80V_01_01_08, 
-                       _phLibNfc_RfSettings_Bermuda_PN80V_01_01_08_NbParams, _phLibNfc_RfSettings_Bermuda_PN80V_02_01_0F, 
-                       _phLibNfc_RfSettings_Bermuda_PN80V_02_01_0F_NbParams, _phLibNfc_RfSettings_Chameleon_PN66V_01_01_10, 
+                       _phLibNfc_RfSettings_Bermuda_PN67V_02_01_89_NbParams, _phLibNfc_RfSettings_Bermuda_PN67V_03_01_43, 
+                       _phLibNfc_RfSettings_Bermuda_PN67V_03_01_43_NbParams, _phLibNfc_RfSettings_Bermuda_PN80V_01_01_08, 
+                       _phLibNfc_RfSettings_Bermuda_PN80V_01_01_08_NbParams, _phLibNfc_RfSettings_Bermuda_PN80V_02_01_10, 
+                       _phLibNfc_RfSettings_Bermuda_PN80V_02_01_10_NbParams, _phLibNfc_RfSettings_Chameleon_PN66V_01_01_10, 
                        _phLibNfc_RfSettings_Chameleon_PN66V_01_01_10_NbParams, _phLibNfc_RfSettings_Chameleon_PN66V_02_01_42, 
                        _phLibNfc_RfSettings_Chameleon_PN66V_02_01_42_NbParams, _phLibNfc_RfSettings_Chameleon_PN67V_02_01_89, 
-                       _phLibNfc_RfSettings_Chameleon_PN67V_02_01_89_NbParams, _phLibNfc_RfSettings_RTM3_1_PN67V_03_01_42, 
-                       _phLibNfc_RfSettings_RTM3_1_PN67V_03_01_42_NbParams, _phLibNfc_RfSettings_RTM4_0B_PN80V_02_01_0F, 
-                       _phLibNfc_RfSettings_RTM4_0B_PN80V_02_01_0F_NbParams, _phLibNfc_RfSettings_RTM4_1_PN80V_02_01_0F, 
-                       _phLibNfc_RfSettings_RTM4_1_PN80V_02_01_0F_NbParams, _phLibNfc_RfSettings_RTM_PN66V_01_01_10, 
+                       _phLibNfc_RfSettings_Chameleon_PN67V_02_01_89_NbParams, _phLibNfc_RfSettings_RTM3_1_PN67V_03_01_43, 
+                       _phLibNfc_RfSettings_RTM3_1_PN67V_03_01_43_NbParams, _phLibNfc_RfSettings_RTM4_0B_PN80V_02_01_10, 
+                       _phLibNfc_RfSettings_RTM4_0B_PN80V_02_01_10_NbParams, _phLibNfc_RfSettings_RTM4_1_PN80V_02_01_10, 
+                       _phLibNfc_RfSettings_RTM4_1_PN80V_02_01_10_NbParams, _phLibNfc_RfSettings_RTM_PN66V_01_01_10, 
                        _phLibNfc_RfSettings_RTM_PN66V_01_01_10_NbParams, _phLibNfc_RfSettings_RTM_PN66V_02_01_42, 
                        _phLibNfc_RfSettings_RTM_PN66V_02_01_42_NbParams, _phLibNfc_RfSettings_RTM_PN67V_02_01_89, 
-                       _phLibNfc_RfSettings_RTM_PN67V_02_01_89_NbParams, _phLibNfc_RfSettings_RTM_PN67V_03_01_42, 
-                       _phLibNfc_RfSettings_RTM_PN67V_03_01_42_NbParams, _phLibNfc_RfSettings_RTM_PN80V_01_01_08, 
-                       _phLibNfc_RfSettings_RTM_PN80V_01_01_08_NbParams, _phLibNfc_RfSettings_RTM_PN80V_02_01_0F, 
-                       _phLibNfc_RfSettings_RTM_PN80V_02_01_0F_NbParams, _phLibNfc_RfSettings_signed, 
-                       _phLibNfc_RfSettings_signed_Bermuda_PN80V_02_01_0F, _phLibNfc_RfSettings_signed_Bermuda_PN80V_02_01_0F_NbParams, 
-                       _phLibNfc_RfSettings_signed_RTM4_0B_PN80V_02_01_0F, _phLibNfc_RfSettings_signed_RTM4_0B_PN80V_02_01_0F_NbParams, 
-                       _phLibNfc_RfSettings_signed_RTM4_1_PN80V_02_01_0F, _phLibNfc_RfSettings_signed_RTM4_1_PN80V_02_01_0F_NbParams, 
-                       _phLibNfc_RfSettings_signed_RTM_PN80V_02_01_0F, _phLibNfc_RfSettings_signed_RTM_PN80V_02_01_0F_NbParams ]
+                       _phLibNfc_RfSettings_RTM_PN67V_02_01_89_NbParams, _phLibNfc_RfSettings_RTM_PN67V_03_01_43, 
+                       _phLibNfc_RfSettings_RTM_PN67V_03_01_43_NbParams, _phLibNfc_RfSettings_RTM_PN80V_01_01_08, 
+                       _phLibNfc_RfSettings_RTM_PN80V_01_01_08_NbParams, _phLibNfc_RfSettings_RTM_PN80V_02_01_10, 
+                       _phLibNfc_RfSettings_RTM_PN80V_02_01_10_NbParams, _phLibNfc_RfSettings_signed, 
+                       _phLibNfc_RfSettings_signed_Bermuda_PN80V_02_01_10, _phLibNfc_RfSettings_signed_Bermuda_PN80V_02_01_10_NbParams, 
+                       _phLibNfc_RfSettings_signed_RTM4_0B_PN80V_02_01_10, _phLibNfc_RfSettings_signed_RTM4_0B_PN80V_02_01_10_NbParams, 
+                       _phLibNfc_RfSettings_signed_RTM4_1_PN80V_02_01_10, _phLibNfc_RfSettings_signed_RTM4_1_PN80V_02_01_10_NbParams, 
+                       _phLibNfc_RfSettings_signed_RTM_PN80V_02_01_10, _phLibNfc_RfSettings_signed_RTM_PN80V_02_01_10_NbParams ]
 ...

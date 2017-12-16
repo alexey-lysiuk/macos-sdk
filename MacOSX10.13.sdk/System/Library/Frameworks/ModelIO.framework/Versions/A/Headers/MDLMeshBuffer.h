@@ -40,7 +40,7 @@ MDL_EXPORT
            and arrange for unmapping on deallocation.
  */
 -(instancetype) initWithBytes:(void*)bytes
-                  deallocator:(nullable void (^)())deallocator;
+                  deallocator:(nullable void (^)(void))deallocator;
 
 /*!
  @property bytes

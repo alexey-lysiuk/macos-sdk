@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FB60D5DB-D691-3A13-A605-4F1A362065AC' ]
+uuids:           [ 'x86_64: FFE7F7DC-4B8B-3024-AB70-9BD53D0EF194' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Contacts.framework/Versions/A/Contacts
 current-version: 0

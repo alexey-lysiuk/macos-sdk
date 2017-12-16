@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 9E755193-49F2-38B4-AD57-9B86D37BBC75', 'x86_64: FD645969-D2E8-3440-B4DA-F297C73E9B75' ]
+uuids:           [ 'i386: FE3CD191-E44D-3F74-A96E-2E1D2A3C0490', 'x86_64: 001F2050-C1B6-302F-B250-315BE5D6B6B8' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/StoreKit.framework/Versions/A/StoreKit
 current-version: 379
@@ -22,7 +22,9 @@ exports:
     objc-classes:    [ _SKDownload, _SKDownloadInternal, _SKMutablePayment, _SKPayment, 
                        _SKPaymentInternal, _SKPaymentQueue, _SKPaymentQueueInternal, 
                        _SKPaymentTransaction, _SKPaymentTransactionInternal, _SKProduct, 
-                       _SKProductInternal, _SKProductsRequest, _SKProductsRequestInternal, 
-                       _SKProductsResponse, _SKProductsResponseInternal, _SKReceiptRefreshRequest, 
-                       _SKRequest, _SKRequestInternal, _SKServiceProxy ]
+                       _SKProductDiscount, _SKProductDiscountInternal, _SKProductInternal, 
+                       _SKProductSubscriptionPeriod, _SKProductSubscriptionPeriodInternal, 
+                       _SKProductsRequest, _SKProductsRequestInternal, _SKProductsResponse, 
+                       _SKProductsResponseInternal, _SKReceiptRefreshRequest, _SKRequest, 
+                       _SKRequestInternal, _SKServiceProxy ]
 ...

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3AC6DD96-363F-3A95-A2C2-4966CD47E3E8' ]
+uuids:           [ 'x86_64: C61931BB-7D27-3E32-AA8E-3A15AB8F1648' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/InstallerPlugins.framework/Versions/A/InstallerPlugins
 current-version: 815

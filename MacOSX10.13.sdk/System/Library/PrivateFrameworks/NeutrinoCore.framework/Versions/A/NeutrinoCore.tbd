@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 70643968-BE16-3CF1-8650-3C6CB060B1A2' ]
+uuids:           [ 'x86_64: 982EB8AA-7245-32CC-A803-7B6B959D654A' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/NeutrinoCore.framework/Versions/A/NeutrinoCore
-current-version: 3231.7.180
+current-version: 3251.8.110
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -11,16 +11,17 @@ exports:
                        _CGAffineTransformForMappingFromRectToRect, _CGAffineTransformHasRotation, 
                        _CGAffineTransformIsValid, _CGAffineTransformMove, _CGAffineTransformRelative, 
                        _CGAffineTransformRoot, _CGAffineTransformSubstract, _GLMat4FromCGAffineTransform, 
-                       _GLMat4Identity, _NSStringFromAffineTranform, _NSStringFromNUPixelPoint, 
+                       _GLMat4Identity, _NSStringFromAffineTransform, _NSStringFromNUPixelPoint, 
                        _NSStringFromNUPixelRect, _NSStringFromNUPixelSize, _NUAbsolutePointInRect, 
                        _NUAbsoluteTime, _NUAffineTransformDelta, _NUAffineTransformIdentity, 
                        _NUAffineTransformOrientation, _NUAffineTransformStandardize, 
-                       _NUAnchorPointFromRectToRect, _NUAspectRatioCompare, _NUAspectRatioConstrain, 
-                       _NUAspectRatioIsEqual, _NUAspectRatioIsUndefined, _NUAspectRatioValue, 
-                       _NUAspectRatioWithOrientation, _NUAttributeDefault, _NUAttributeIdentity, 
-                       _NUAttributeRequired, _NUAttributeType, _NUCGAffineTransformByMappingFromRectToRect, 
-                       _NUCGAffineTransformFlipYInRect, _NUCGPointConvertFromRectToRect, 
-                       _NUCGRectConvertFromRectToRect, _NUConvertCICropRectToDGCropRect, 
+                       _NUAlignRectToPixelGrid, _NUAnchorPointFromRectToRect, _NUAspectRatioCompare, 
+                       _NUAspectRatioConstrain, _NUAspectRatioIsEqual, _NUAspectRatioIsUndefined, 
+                       _NUAspectRatioValue, _NUAspectRatioWithOrientation, _NUAttributeDefault, 
+                       _NUAttributeIdentity, _NUAttributeRequired, _NUAttributeType, 
+                       _NUCGAffineTransformByMappingFromRectToRect, _NUCGAffineTransformFlipYInRect, 
+                       _NUCGPointConvertFromRectToRect, _NUCGRectConvertFromRectToRect, 
+                       _NUCVImageBufferSetCleanRect, _NUConvertCICropRectToDGCropRect, 
                        _NUConvertCropRectWithAspectRatio, _NUConvertCropRectWithAspectRatioAndArea, 
                        _NUConvertCropRectWithStraightenAffineTransform, _NUConvertDGCropRectToCICropRect, 
                        _NUConvertImageRect, _NUDecomposeAffineTransform, _NUDeepArrayHash, 
@@ -47,11 +48,11 @@ exports:
                        _NUPixelRectFlipYOrigin, _NUPixelRectFromCGRect, _NUPixelRectInset, 
                        _NUPixelRectIntersection, _NUPixelRectIntersectsRect, _NUPixelRectIsEmpty, 
                        _NUPixelRectIsNull, _NUPixelRectNull, _NUPixelRectOffset, 
-                       _NUPixelRectResizeToFitInRect, _NUPixelRectRoundDown, _NUPixelRectRoundUp, 
-                       _NUPixelRectScale, _NUPixelRectScaleRational, _NUPixelRectSetOrigin, 
-                       _NUPixelRectToCGRect, _NUPixelRectUnion, _NUPixelRectVectexOpposite, 
-                       _NUPixelRectVertex, _NUPixelRectZero, _NUPixelSizeEqualToSize, 
-                       _NUPixelSizeFromCGSize, _NUPixelSizeIsEmpty, _NUPixelSizeLargestDimension, 
+                       _NUPixelRectResizeToFitInRect, _NUPixelRectScale, _NUPixelRectScaleRational, 
+                       _NUPixelRectSetOrigin, _NUPixelRectToCGRect, _NUPixelRectUnion, 
+                       _NUPixelRectVectexOpposite, _NUPixelRectVertex, _NUPixelRectZero, 
+                       _NUPixelSizeAlignToGrid, _NUPixelSizeEqualToSize, _NUPixelSizeFromCGSize, 
+                       _NUPixelSizeGreaterThanSize, _NUPixelSizeIsEmpty, _NUPixelSizeLargestDimension, 
                        _NUPixelSizeToCGSize, _NUPixelSizeZero, _NUPriorityLevelName, 
                        _NURecomposeAffineTransform, _NURectFlipYOrigin, _NURelatedObjectKey, 
                        _NURelativePointInRect, _NURescaleRectRelative, _NURescaleRectRelativeXY, 

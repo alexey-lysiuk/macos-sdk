@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2C153C5F-788A-3AEE-8C7C-192F4C57E2C4' ]
+uuids:           [ 'x86_64: F152FC2F-F31B-34F6-A839-0CD8266BF7E3' ]
 platform:        macosx
 install-name:    /usr/lib/log/liblog_signpost.telemetry.dylib
 exports:         

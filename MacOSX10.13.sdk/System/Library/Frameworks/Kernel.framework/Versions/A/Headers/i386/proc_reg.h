@@ -304,9 +304,9 @@ static inline uintptr_t get_cr3_base(void)
 	return(cr3 & ~(0xFFFULL));
 }
 
-static inline void set_cr3_composed(uintptr_t base, uint16_t pcid, uint32_t preserve)
+static inline void set_cr3_composed(uintptr_t base, uint16_t pcid, uint64_t preserve)
 {
-	__asm__ volatile("mov %0, %%cr3" : : "r" (base | pcid | ( ( (uint64_t)preserve) << 63) ) );
+	__asm__ volatile("mov %0, %%cr3" : : "r" (base | pcid | ( (preserve) << 63) ) );
 }
 
 static inline uintptr_t get_cr4(void)

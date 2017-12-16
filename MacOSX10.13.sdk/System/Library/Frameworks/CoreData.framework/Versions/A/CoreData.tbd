@@ -1,10 +1,10 @@
 --- !tapi-tbd-v2
 archs:           [ i386, x86_64, x86_64h ]
-uuids:           [ 'i386: 2AC013DC-8148-34C9-89B1-41353CAECD7F', 'x86_64: 780C5A23-12F1-365B-8C55-E6CF90570C06', 
-                   'x86_64h: 9B5E7B0B-1957-3D56-99CA-6422123D300C' ]
+uuids:           [ 'i386: E17C36CB-6DED-36F4-930C-AD056F0F5953', 'x86_64: E4371D30-A45A-3F31-A599-F99E8B37B68A', 
+                   'x86_64h: 4407C44B-34CC-3D23-AEDF-AD866D414EBF' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreData.framework/Versions/A/CoreData
-current-version: 847.1
+current-version: 849.2
 exports:         
   - archs:           [ x86_64, x86_64h ]
     objc-classes:    [ _NSCoreDataCoreSpotlightDelegate ]

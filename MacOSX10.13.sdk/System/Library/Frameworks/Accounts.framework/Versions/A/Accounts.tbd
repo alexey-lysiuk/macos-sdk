@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A3D5892A-5688-3641-83C5-FF948629A392' ]
+uuids:           [ 'x86_64: 02AC0AF3-D620-340E-BE52-CD31119F9CD8' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Accounts.framework/Versions/A/Accounts
 objc-constraint: none
@@ -77,12 +77,13 @@ exports:
                        _ACOAuthTokenKey, _ACOAuthTokenNoSyncKey, _ACOAuthTokenNoSyncSeparator, 
                        _ACOAuthTokenSecretKey, _ACOldPasswordKey, _ACOutputLevelKey, 
                        _ACPasswordKey, _ACPasswordResetTokenBackupKey, _ACPasswordResetTokenKey, 
-                       _ACPropertyKeyEnabledDataclasses, _ACPropertyKeyProvisionedDataclasses, 
-                       _ACPurposeKey, _ACRawPasswordKey, _ACRemoteDeviceCommandAddAccount, 
-                       _ACRemoteDeviceCommandDeleteAccount, _ACRemoteDeviceCommandDeleteAllAccounts, 
-                       _ACRemoteDeviceCommandFetchAccounts, _ACRemoteDeviceCommandInvalidateFetchedAccountsCache, 
-                       _ACRemoteDeviceCommandShowCredentialPrompt, _ACRemoteDeviceCommandUpdateAccount, 
-                       _ACRemoteDeviceCommandUpdateAccountCredential, _ACShouldSuppressPromptsKey, 
+                       _ACPropertyKeyAuthenticated, _ACPropertyKeyCredential, _ACPropertyKeyEnabledDataclasses, 
+                       _ACPropertyKeyProvisionedDataclasses, _ACPurposeKey, _ACRawPasswordKey, 
+                       _ACRemoteDeviceCommandAddAccount, _ACRemoteDeviceCommandDeleteAccount, 
+                       _ACRemoteDeviceCommandDeleteAllAccounts, _ACRemoteDeviceCommandFetchAccounts, 
+                       _ACRemoteDeviceCommandInvalidateFetchedAccountsCache, _ACRemoteDeviceCommandShowCredentialPrompt, 
+                       _ACRemoteDeviceCommandUpdateAccount, _ACRemoteDeviceCommandUpdateAccountCredential, 
+                       _ACRemoteDeviceOptionAskForReply, _ACShouldSuppressPromptsKey, 
                        _ACTencentWeiboAppIdKey, _ACTencentWeiboAppIdKeyDeprecated, 
                        _ACTencentWeiboClientConsumerKey, _ACTokenExpiryDateKey, _ACTokenKey, 
                        _ACYahooXYMPKICookieCrumbKey, _ACYahooXYMPKICookieTKey, _ACYahooXYMPKICookieYKey, 
@@ -153,7 +154,7 @@ exports:
                        _kAccountDataclassKeychainSync, _kAccountDataclassMail, _kAccountDataclassMediaStream, 
                        _kAccountDataclassMessages, _kAccountDataclassNetworkVPN, 
                        _kAccountDataclassNews, _kAccountDataclassNotes, _kAccountDataclassNotifications, 
-                       _kAccountDataclassReminders, _kAccountDataclassServerDocuments, 
+                       _kAccountDataclassPhotos, _kAccountDataclassReminders, _kAccountDataclassServerDocuments, 
                        _kAccountDataclassShareLocation, _kAccountDataclassShareMenu, 
                        _kAccountDataclassSharedStreams, _kAccountDataclassShoebox, 
                        _kAccountDataclassSiri, _kAccountDataclassSmartDefaults, _kAccountDataclassUbiquity, 

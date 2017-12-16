@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B30DEE5C-C73B-32C6-92A5-BBF88C3CA8AF' ]
+uuids:           [ 'x86_64: 9A3C7391-479B-33FD-95A8-E59E2FBB0A21' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/MultipeerConnectivity.framework/Versions/A/MultipeerConnectivity
-current-version: 146.1
+current-version: 150
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _MCErrorDomain, _kMCSessionMaximumNumberOfPeers, _kMCSessionMinimumNumberOfPeers ]

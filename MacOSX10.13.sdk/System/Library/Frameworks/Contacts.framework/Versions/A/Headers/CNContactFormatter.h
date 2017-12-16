@@ -39,7 +39,7 @@ typedef NS_ENUM(NSInteger, CNContactDisplayNameOrder)
  * @discussion This formatter handles international ordering and delimiting of the contact name components. This includes applying the user defaults when appropriate.
  */
 NS_CLASS_AVAILABLE(10_11, 9_0)
-@interface CNContactFormatter : NSFormatter
+@interface CNContactFormatter : NSFormatter <NSSecureCoding>
 
 /*!
  * @abstract The contact key descriptor required for the formatter.

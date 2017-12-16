@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A5F85924-CC1C-30D1-B6C5-0237C06E7DC2' ]
+uuids:           [ 'x86_64: 65938971-79E5-3576-9A64-513059DF1D9F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/UserActivity.framework/Versions/A/UserActivity
 current-version: 98.2

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D743A11F-E756-3D85-9CC6-644A9331886E' ]
+uuids:           [ 'x86_64: 5B5522F2-76ED-35BB-B0B9-7C3D984C6862' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoLibraryPrivate.framework/Versions/A/Frameworks/Moments.framework/Versions/A/Moments
-current-version: 3231.11.210
+current-version: 3251.12.180
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _MTAllAssetsKey, _MTAllMomentListsKey, _MTAllMomentsKey, _MTMomentApproximateLocationDataKey, 

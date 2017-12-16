@@ -1,9 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 52C35A67-1392-31A1-8205-7ACA7F32F87E' ]
+uuids:           [ 'x86_64: 4B0BF2B0-69C6-3804-81C4-459DBEBBB199' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MailService.framework/Versions/A/MailService
-current-version: 3445.4.7
+current-version: 3445.5.18
 exports:         
   - archs:           [ x86_64 ]
     allowable-clients: [ CalendarAgent, Mail, MailShareExtension, TimeMachine, backupd, 

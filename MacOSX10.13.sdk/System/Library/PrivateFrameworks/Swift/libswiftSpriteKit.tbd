@@ -1,6 +1,6 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 006647D5-518E-3969-A4BE-04F4BD639F7F' ]
+uuids:           [ 'x86_64: 3E93A0A5-E82A-3AB3-82AC-D939D1AAB1B1' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Swift/libswiftSpriteKit.dylib
 current-version: 900.8.49

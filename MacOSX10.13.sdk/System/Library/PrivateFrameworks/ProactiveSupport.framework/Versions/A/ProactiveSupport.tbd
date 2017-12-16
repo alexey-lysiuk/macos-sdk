@@ -1,8 +1,9 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D07424E9-833D-3F7A-A411-F0137935F184' ]
+uuids:           [ 'x86_64: BAE9A2BB-74DB-3592-B225-C860EF403F20' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ProactiveSupport.framework/Versions/A/ProactiveSupport
+current-version: 123.3
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

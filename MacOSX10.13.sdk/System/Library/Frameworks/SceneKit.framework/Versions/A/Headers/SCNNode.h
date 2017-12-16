@@ -38,8 +38,7 @@ FOUNDATION_EXTERN NSString * const SCNModelViewProjectionTransform;
 
 /*! @enum SCNMovabilityHint
  @abstract The available modes of movability.
- @discussion Movable nodes are not captured when computing light probes. Fixed nodes are not lit by probes.
- Also Movable nodes are not blurred by the motion blur.
+ @discussion Movable nodes are not captured when computing light probes.
  */
 typedef NS_ENUM(NSInteger, SCNMovabilityHint) {
     SCNMovabilityHintFixed,
@@ -245,7 +244,7 @@ typedef NS_ENUM(NSInteger, SCNNodeFocusBehavior) {
 
 /*!
  @property movabilityHint
- @abstract Give hints oregarding the movability of the receiver. See enum above for details. Defaults to SCNMovabilityHintFixed.
+ @abstract Communicates to SceneKit’s rendering system about how you want to move content in your scene; it does not affect your ability to change the node’s position or add animations or physics to the node. Defaults to SCNMovabilityHintFixed.
  */
 @property(nonatomic) SCNMovabilityHint movabilityHint API_AVAILABLE(macos(10.12), ios(10.0), tvos(10.0));
 

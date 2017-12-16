@@ -1,17 +1,20 @@
 --- !tapi-tbd-v2
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0D5F11B0-476D-34EB-8CD0-491BEDA5E4F2' ]
+uuids:           [ 'x86_64: A5B6F6FC-A19A-32C0-A999-98B6688760C7' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSMatrix.framework/Versions/A/MPSMatrix
-current-version: 88.2
+current-version: 90.3
 parent-umbrella: MetalPerformanceShaders
 exports:         
   - archs:           [ x86_64 ]
     allowable-clients: [ MetalPerformanceShaders ]
+    symbols:         [ __Z21MPSDecrementReadCountP18MPSTemporaryMatrix, __Z21MPSDecrementReadCountP18MPSTemporaryVector ]
     objc-classes:    [ _MPSMatrix, _MPSMatrixBinaryKernel, _MPSMatrixCopy, _MPSMatrixCopyDescriptor, 
                        _MPSMatrixDecompositionCholesky, _MPSMatrixDecompositionLU, 
-                       _MPSMatrixDescriptor, _MPSMatrixMultiplication, _MPSMatrixSolveCholesky, 
+                       _MPSMatrixDescriptor, _MPSMatrixFindTopK, _MPSMatrixLogSoftMax, 
+                       _MPSMatrixMultiplication, _MPSMatrixSoftMax, _MPSMatrixSolveCholesky, 
                        _MPSMatrixSolveLU, _MPSMatrixSolveTriangular, _MPSMatrixUnaryKernel, 
-                       _MPSMatrixVectorMultiplication, _MPSTemporaryMatrix, _MPSVector, 
-                       _MPSVectorDescriptor ]
+                       _MPSMatrixVectorMultiplication, _MPSTemporaryMatrix, _MPSTemporaryVector, 
+                       _MPSVector, _MPSVectorDescriptor ]
+    objc-ivars:      [ _MPSMatrix._buffer, _MPSVector._buffer ]
 ...
