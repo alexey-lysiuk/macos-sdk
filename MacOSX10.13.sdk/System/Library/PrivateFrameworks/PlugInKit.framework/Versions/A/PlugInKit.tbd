@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D627D78B-BEDA-3E53-B5F8-B3805F1C4D2A' ]
+uuids:           [ 'x86_64: 2DCA499B-D7D0-383E-B686-998456FDDF8D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PlugInKit.framework/Versions/A/PlugInKit
 exports:         
@@ -45,8 +45,8 @@ exports:
                        _pkError, _pkErrorf, _pkFindProtocol, _pkFindProtocols, _pkIssueSandboxExtensionForMachService, 
                        _pkIssueSandboxExtensionForURL, _xpc_dictionary_get_array, 
                        _xpc_dictionary_get_dictionary ]
-    objc-classes:    [ _PKBundle, _PKDaemonClient, _PKDiscoveryDriver, _PKDiscoveryLSWatcher, 
-                       _PKHost, _PKHostDefaults, _PKHostPlugIn, _PKManager, _PKPlugInCore, 
-                       _PKSandboxExtension, _PKService, _PKServiceDefaults, _PKServicePersonality, 
-                       _PKXPCObject ]
+    objc-classes:    [ PKBundle, PKDaemonClient, PKDiscoveryDriver, PKDiscoveryLSWatcher, 
+                       PKHost, PKHostDefaults, PKHostPlugIn, PKManager, PKPlugInCore, 
+                       PKSandboxExtension, PKService, PKServiceDefaults, PKServicePersonality, 
+                       PKXPCObject ]
 ...

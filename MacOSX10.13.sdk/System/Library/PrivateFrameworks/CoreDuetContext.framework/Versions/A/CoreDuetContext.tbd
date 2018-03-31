@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FA27BD07-8FB3-37A6-8C45-D1F41AA57E80' ]
+uuids:           [ 'x86_64: E658FB25-1803-3FDC-A22A-E514D2FE4116' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreDuetContext.framework/Versions/A/CoreDuetContext
 exports:         
@@ -8,11 +8,11 @@ exports:
     symbols:         [ _CoreDuetContextVersionNumber, _CoreDuetContextVersionString, 
                        __CDContextDataMetadataKey, __CDContextServiceName, __CDContextTransitionDateMetadataKey, 
                        __CDContextualChangeRegistrationEntityName, __CDContextualKeyPathEntityName ]
-    objc-classes:    [ __CDClientContext, __CDContextMonitorManager, __CDContextPredictionQueries, 
-                       __CDContextQueries, __CDContextValue, __CDContextualChangeRegistration, 
-                       __CDContextualChangeRegistrationMO, __CDContextualKeyPath, 
-                       __CDContextualKeyPathAndValue, __CDContextualKeyPathMO, __CDContextualPredicate, 
-                       __CDCoreDataContextPersisting, __CDDevice, __CDInMemoryContext, 
-                       __CDInMemoryUserContext, __CDNetworkContext, __CDSharedMemoryContextPersisting, 
-                       __CDUserContextQueries, __CDUserContextServerClient, __CDUserContextService ]
+    objc-classes:    [ _CDClientContext, _CDContextMonitorManager, _CDContextPredictionQueries, 
+                       _CDContextQueries, _CDContextValue, _CDContextualChangeRegistration, 
+                       _CDContextualChangeRegistrationMO, _CDContextualKeyPath, _CDContextualKeyPathAndValue, 
+                       _CDContextualKeyPathMO, _CDContextualPredicate, _CDCoreDataContextPersisting, 
+                       _CDDevice, _CDInMemoryContext, _CDInMemoryUserContext, _CDNetworkContext, 
+                       _CDSharedMemoryContextPersisting, _CDUserContextQueries, _CDUserContextServerClient, 
+                       _CDUserContextService ]
 ...

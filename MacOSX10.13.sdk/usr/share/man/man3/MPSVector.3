@@ -1,4 +1,4 @@
-.TH "MPSVector" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "MPSVector" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -10,6 +10,8 @@ MPSVector
 \fC#import <MPSMatrixTypes\&.h>\fP
 .PP
 Inherits NSObject\&.
+.PP
+Inherited by \fBMPSTemporaryVector\fP\&.
 .SS "Instance Methods"
 
 .in +1c
@@ -17,7 +19,16 @@ Inherits NSObject\&.
 .RI "(nonnull instancetype) \- \fBinitWithBuffer:descriptor:\fP"
 .br
 .ti -1c
+.RI "(nonnull instancetype) \- \fBinitWithDevice:descriptor:\fP"
+.br
+.ti -1c
 .RI "(nonnull instancetype) \- \fBinit\fP"
+.br
+.ti -1c
+.RI "(void) \- \fBsynchronizeOnCommandBuffer:\fP"
+.br
+.ti -1c
+.RI "(NSUInteger) \- \fBresourceSize\fP"
 .br
 .in -1c
 .SS "Properties"
@@ -46,7 +57,7 @@ Inherits NSObject\&.
 .PP 
 This depends on Metal\&.framework
 .PP
-A \fBMPSVector\fP object describes a 1-dimensional array of data and provides storage for its values\&. Some MPSMatrixKernel objects operate on \fBMPSVector\fP objects for convenience\&. 
+\fBA\fP \fBMPSVector\fP object describes a 1-dimensional array of data and provides storage for its values\&. Some MPSMatrixKernel objects operate on \fBMPSVector\fP objects for convenience\&. 
 .SH "Method Documentation"
 .PP 
 .SS "\- (nonnull instancetype) init "
@@ -63,7 +74,7 @@ Initialize a \fBMPSVector\fP object with a MTLBuffer\&.
 .PP
 \fBReturns:\fP
 .RS 4
-A valid \fBMPSVector\fP object or nil, if failure\&.
+\fBA\fP valid \fBMPSVector\fP object or nil, if failure\&.
 .RE
 .PP
 This function returns a \fBMPSVector\fP object which uses the supplied MTLBuffer\&. The length, number of vectors, and stride between vectors are specified by the \fBMPSVectorDescriptor\fP object\&.
@@ -76,6 +87,39 @@ The provided MTLBuffer must have enough storage to hold
 .fi
 .PP
  
+.PP
+Reimplemented in \fBMPSTemporaryVector\fP\&.
+.SS "\- (nonnull instancetype) initWithDevice: (nonnull id< MTLDevice >) device(\fBMPSVectorDescriptor\fP *__nonnull) descriptor"
+Initialize a lazily backed \fBMPSVector\fP object with a descriptor 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdevice\fP The device with which it will be used 
+.br
+\fIdescriptor\fP The shape and style of the matrix 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBA\fP valid \fBMPSVector\fP object or nil  The vector object will be created, but the storage to hold the vector data will only be allocated when it is needed, typically when the data property is invoked\&. In conjunction with -resourceSize, this will allow you to estimate storage needs without actually creating the backing store for the vector\&. 
+.RE
+.PP
+
+.SS "\- (NSUInteger) resourceSize "
+Get the number of bytes used to allocate underyling MTLResources  This is the size of the backing store of underlying MTLResources\&. It does not include all storage used by the object, for example the storage used to hold the \fBMPSVector\fP instantiation and MTLBuffer is not included\&. It only measures the size of the allocation used to hold the vector data in the buffer\&. This value is subject to change between different devices and operating systems\&.
+.PP
+Except when -initWithBuffer:descriptor: is used, most MPSVectors are allocated without a backing store\&. The backing store is allocated lazily when it is needed, typically when the \&.texture property is called\&. Consequently, in most cases, it should be inexpensive to make a \fBMPSMatrix\fP to see how much memory it will need, and release it if it is too large\&.
+.PP
+This method may fail in certain circumstances, such as when the \fBMPSMatrix\fP is created with -initWithBuffer:descriptor:\&. In such cases, 0 will be returned\&. 
+.SS "\- (void) synchronizeOnCommandBuffer: (__nonnull id< MTLCommandBuffer >) commandBuffer"
+Flush the underlying MTLBuffer from the device's caches, and invalidate any CPU caches if needed\&.  This will call [id <MTLBlitEncoder> synchronizeResource: ] on the vector's MTLBuffer, if any\&. This is necessary for all MTLStorageModeManaged resources\&. For other resources, including temporary resources (these are all MTLStorageModePrivate), and buffers that have not yet been allocated, nothing is done\&. It is more efficient to use this method than to attempt to do this yourself with the data property\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcommandBuffer\fP The commandbuffer on which to synchronize 
+.RE
+.PP
+
 .SH "Property Documentation"
 .PP 
 .SS "\- data\fC [read]\fP, \fC [nonatomic]\fP, \fC [assign]\fP"

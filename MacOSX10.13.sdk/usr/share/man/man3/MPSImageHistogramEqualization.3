@@ -1,4 +1,4 @@
-.TH "MPSImageHistogramEqualization" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "MPSImageHistogramEqualization" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -51,13 +51,13 @@ Encode the transform function to a command buffer using a MTLComputeCommandEncod
 .PP
 \fBParameters:\fP
 .RS 4
-\fIcommandBuffer\fP A valid MTLCommandBuffer\&. 
+\fIcommandBuffer\fP \fBA\fP valid MTLCommandBuffer\&. 
 .br
-\fIsource\fP A valid MTLTexture containing the source image for the filter\&. 
+\fIsource\fP \fBA\fP valid MTLTexture containing the source image for the filter\&. 
 .br
-\fIhistogram\fP A valid MTLBuffer containing the histogram results for an image\&. This filter will use these histogram results to generate the cumulative histogram for equalizing the image\&. The histogram results / channel are stored together\&. The number of channels for which histogram results are stored is determined by the number of channels in the image\&. If histogramInfo\&.histogramForAlpha is false and the source image is RGBA then only histogram results for RGB channels are stored\&. 
+\fIhistogram\fP \fBA\fP valid MTLBuffer containing the histogram results for an image\&. This filter will use these histogram results to generate the cumulative histogram for equalizing the image\&. The histogram results / channel are stored together\&. The number of channels for which histogram results are stored is determined by the number of channels in the image\&. If histogramInfo\&.histogramForAlpha is false and the source image is RGBA then only histogram results for RGB channels are stored\&. 
 .br
-\fIhistogramOffset\fP A byte offset into the histogram MTLBuffer where the histogram starts\&. Must conform to alignment requirements for [MTLComputeCommandEncoder setBuffer:offset:atIndex:] offset parameter\&. 
+\fIhistogramOffset\fP \fBA\fP byte offset into the histogram MTLBuffer where the histogram starts\&. Must conform to alignment requirements for [MTLComputeCommandEncoder setBuffer:offset:atIndex:] offset parameter\&. 
 .RE
 .PP
 
@@ -73,7 +73,7 @@ Encode the transform function to a command buffer using a MTLComputeCommandEncod
 .PP
 \fBReturns:\fP
 .RS 4
-A new \fBMPSKernel\fP object, or nil if failure\&. 
+\fBA\fP new \fBMPSKernel\fP object, or nil if failure\&. 
 .RE
 .PP
 
@@ -91,7 +91,7 @@ Specifies information about the histogram for the channels of an image\&.
 .PP
 \fBReturns:\fP
 .RS 4
-A valid \fBMPSImageHistogramEqualization\fP object or nil, if failure\&. 
+\fBA\fP valid \fBMPSImageHistogramEqualization\fP object or nil, if failure\&. 
 .RE
 .PP
 

@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 31A98D56-8FD6-3A77-8EC4-CE2DDA4040BF' ]
+uuids:           [ 'x86_64: 7EB447BB-3DE9-3CDE-8EFA-F3CDA1C32F36' ]
 platform:        macosx
 install-name:    /usr/lib/libdns_services.dylib
 objc-constraint: none

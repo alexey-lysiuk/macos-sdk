@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8F00CC94-817F-303F-A0AE-9732E15B5F24' ]
+uuids:           [ 'x86_64: 16954972-C9B2-3DE1-BC9A-7EFB2BCE647C' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ProactiveExperts.framework/Versions/A/ProactiveExperts
 current-version: 0
@@ -37,16 +37,15 @@ exports:
                        _runBlockWhenDeviceIsClassCUnlocked, _setContactStoreFactoryForTesting, 
                        _setSuggestionsContactServiceFactoryForTesting, _sharedCNContactStore, 
                        _sharedSuggestionsContactService, _streetNamesForContact ]
-    objc-classes:    [ _PEXBroker, _PEXConnectionsAddressFormatter, _PEXConnectionsCalendarSource, 
-                       _PEXConnectionsDuetSource, _PEXConnectionsExpertServant, _PEXConnectionsLocation, 
-                       _PEXConnectionsLocationManager, _PEXConnectionsMetricsTracker, 
-                       _PEXConnectionsParameters, _PEXConnectionsPasteboardSource, 
-                       _PEXConnectionsSource, _PEXConnectionsUtils, _PEXContact, 
-                       _PEXContactNameItem, _PEXContactsExpertServant, _PEXCriteria, 
-                       _PEXDataDetectors, _PEXEventsExpertServant, _PEXExplanationQueue, 
-                       _PEXFormatter, _PEXItem, _PEXMetricsLogging, _PEXNameDelegate, 
-                       _PEXNameItem, _PEXNameLoadingContext, _PEXNamedEntityItem, 
-                       _PEXNavigationExpertServant, _PEXPasteboardLocationItem, _PEXPortraitServant, 
-                       _PEXQuickTypeBroker, _PEXQuickTypeItem, _PEXServant, _PEXSettings, 
-                       _PEXSiriBroker, _PEXSiriNamedEntityBroker ]
+    objc-classes:    [ PEXBroker, PEXConnectionsAddressFormatter, PEXConnectionsCalendarSource, 
+                       PEXConnectionsDuetSource, PEXConnectionsExpertServant, PEXConnectionsLocation, 
+                       PEXConnectionsLocationManager, PEXConnectionsMetricsTracker, 
+                       PEXConnectionsParameters, PEXConnectionsPasteboardSource, 
+                       PEXConnectionsSource, PEXConnectionsUtils, PEXContact, PEXContactNameItem, 
+                       PEXContactsExpertServant, PEXCriteria, PEXDataDetectors, PEXEventsExpertServant, 
+                       PEXExplanationQueue, PEXFormatter, PEXItem, PEXMetricsLogging, 
+                       PEXNameDelegate, PEXNameItem, PEXNameLoadingContext, PEXNamedEntityItem, 
+                       PEXNavigationExpertServant, PEXPasteboardLocationItem, PEXPortraitServant, 
+                       PEXQuickTypeBroker, PEXQuickTypeItem, PEXServant, PEXSettings, 
+                       PEXSiriBroker, PEXSiriNamedEntityBroker ]
 ...

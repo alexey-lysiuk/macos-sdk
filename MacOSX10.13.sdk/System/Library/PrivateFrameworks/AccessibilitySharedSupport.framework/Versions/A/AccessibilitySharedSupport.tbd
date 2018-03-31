@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4DDEF8FB-C7B3-3382-9616-56EF00620CB0' ]
+uuids:           [ 'x86_64: 045E15A9-7C1A-3A2F-809B-2C3D5BBA87B5' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AccessibilitySharedSupport.framework/Versions/A/AccessibilitySharedSupport
 objc-constraint: none
@@ -24,7 +24,7 @@ exports:
                        _AXSSSwitchControlScanningStyleSingleSwitchStep, _AXSSSwitchControlTapBehaviorAlways, 
                        _AXSSSwitchControlTapBehaviorAuto, _AXSSSwitchControlTapBehaviorDefault, 
                        _AXSSSwitchControlTimeIntervalNotApplicable ]
-    objc-classes:    [ _AXSSInterDeviceCommunicator, _AXSSInterDeviceSearchResult, 
-                       _AXSSInterDeviceSwitchEvent, _AXSSPronunciationDatabase, _AXSSPronunciationSubstitution, 
-                       _AXSSSwitchControlSettings ]
+    objc-classes:    [ AXSSInterDeviceCommunicator, AXSSInterDeviceSearchResult, 
+                       AXSSInterDeviceSwitchEvent, AXSSPronunciationDatabase, AXSSPronunciationSubstitution, 
+                       AXSSSwitchControlSettings ]
 ...

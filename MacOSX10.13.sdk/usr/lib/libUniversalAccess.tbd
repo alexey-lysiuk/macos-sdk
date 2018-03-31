@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A8222F3E-0391-385E-BBD9-3186ED63EDCC' ]
+uuids:           [ 'x86_64: 0C5180A1-5354-3DB6-BB93-B974C60168FB' ]
 platform:        macosx
 install-name:    /usr/lib/libUniversalAccess.dylib
 exports:         
@@ -20,5 +20,5 @@ exports:
                        __UniversalAccessDStop, __UniversalAccessDStopAsynchronously, 
                        __UniversalAccessDwellControlIsRunning, __UniversalAccessDwellControlStart, 
                        __UniversalAccessDwellControlStop, __UniversalAccessRestoreSystemState ]
-    objc-classes:    [ _UAIOHIDUtilities ]
+    objc-classes:    [ UAIOHIDUtilities ]
 ...

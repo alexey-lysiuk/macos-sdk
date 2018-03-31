@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D9C639FF-EE8A-3542-B94F-40A96106CD05' ]
+uuids:           [ 'x86_64: 86BC937A-AD0B-388A-99DA-864912142755' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DistributedEvaluation.framework/Versions/A/DistributedEvaluation
 objc-constraint: none
@@ -10,6 +10,6 @@ exports:
                        _DESDiagnosticsSubmissionAllowed, _DESGetDeviceClass, _DESGetDeviceID, 
                        _DESGetDeviceType, _DESGetOSVersion, _DESIsInternalInstall, 
                        _DESPathHasFileVault, _DESServiceAvailable, _DESServiceGetXPCInterface, 
-                       _kDESDistributedEvaluationErrorDomain ]
-    objc-classes:    [ _DESEvaluationSession, _DESJSONPredicate, _DESRecordStore ]
+                       _DESSubmissionLogFileURLs, _kDESDistributedEvaluationErrorDomain ]
+    objc-classes:    [ DESEvaluationSession, DESJSONPredicate, DESRecordStore ]
 ...

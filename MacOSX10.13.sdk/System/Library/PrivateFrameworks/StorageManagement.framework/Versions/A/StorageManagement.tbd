@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 89644E73-8914-35FC-9DAA-B1DD067922C0' ]
+uuids:           [ 'x86_64: 2F6D7175-9A2A-3E81-8B97-5D42A5D6C4A3' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/StorageManagement.framework/Versions/A/StorageManagement
 exports:         
@@ -30,14 +30,14 @@ exports:
                        _kSummaryFooterKey, _kSummaryKind, _kSummaryMessageKey, _kSummaryTitleKey, 
                        _kTagKey, _kTipKind, _kTipPerformActionKey, _kURLKey, _kVersionKey, 
                        _kViewedKey ]
-    objc-classes:    [ _STMBlockOperation, _STMCallbackManager, _STMDeleteResourcesOperation, 
-                       _STMDirectoryObserver, _STMExtension, _STMExtensionNotifier, 
-                       _STMExtensionOperation, _STMFetchDeleteResourcesConfirmationOperation, 
-                       _STMFetchExtensionInfoOperation, _STMFetchPerformRecommendationConfirmationOperation, 
-                       _STMFetchPerformSummaryActionConfirmationOperation, _STMFetchRecommendationsOperation, 
-                       _STMFetchResourcesOperation, _STMFreeSpaceRequest, _STMHandshakeOperation, 
-                       _STMHostExtensionContext, _STMOpaqueExtension, _STMOperation, 
-                       _STMOperationQueue, _STMPerformHeaderActionOperation, _STMPerformRecommendationOperation, 
-                       _STMPerformSummaryActionOperation, _STMRemoteExtensionContext, 
-                       _STMShowResourceOperation ]
+    objc-classes:    [ STMBlockOperation, STMCallbackManager, STMDeleteResourcesOperation, 
+                       STMDirectoryObserver, STMExtension, STMExtensionNotifier, 
+                       STMExtensionOperation, STMFetchDeleteResourcesConfirmationOperation, 
+                       STMFetchExtensionInfoOperation, STMFetchPerformRecommendationConfirmationOperation, 
+                       STMFetchPerformSummaryActionConfirmationOperation, STMFetchRecommendationsOperation, 
+                       STMFetchResourcesOperation, STMFreeSpaceRequest, STMHandshakeOperation, 
+                       STMHostExtensionContext, STMOpaqueExtension, STMOperation, 
+                       STMOperationQueue, STMPerformHeaderActionOperation, STMPerformRecommendationOperation, 
+                       STMPerformSummaryActionOperation, STMRemoteExtensionContext, 
+                       STMShowResourceOperation ]
 ...

@@ -1,21 +1,21 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7302E360-23CA-3A80-A8BE-0476214E932D' ]
+uuids:           [ 'x86_64: FF65B5FE-AC52-3542-A6D3-1797935EC693' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/PhotosUI.framework/Versions/A/PhotosUI
-current-version: 3251.12.180
+current-version: 3271.13.150
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _PHProjectTypeUndefined, _PUEditingFullsizeImageDataTypeIdentifer, 
                        _PUEditingInitialPayloadTypeIdentifier, _PUErrorDomain, _PUProjectExtensionPointIdentifier, 
                        _PhotosUIVersionNumber, _PhotosUIVersionString, _ph_dispatch_on_main_queue ]
-    objc-classes:    [ _PHEditingExtensionContext, _PHEditingHostViewPreferredSizes, 
-                       _PHEditingRemoteViewController, _PHEditingServiceViewController, 
-                       _PHExtensionRemoteViewController, _PHLivePhotoBadge, _PHLivePhotoView, 
-                       _PHProjectAssetElement, _PHProjectElement, _PHProjectExtensionContext, 
-                       _PHProjectExtensionRemoteViewController, _PHProjectExtensionServiceViewController, 
-                       _PHProjectInfo, _PHProjectJournalEntryElement, _PHProjectRegionOfInterest, 
-                       _PHProjectSection, _PHProjectSectionContent, _PHProjectTextElement, 
-                       _PHProjectTypeDescription, _PUEditingExtensionHostContext, 
-                       _PUEditingInitialPayload, _PUExtensionHostContext, _PUProjectExtensionHostContext ]
+    objc-classes:    [ PHEditingExtensionContext, PHEditingHostViewPreferredSizes, 
+                       PHEditingRemoteViewController, PHEditingServiceViewController, 
+                       PHExtensionRemoteViewController, PHLivePhotoBadge, PHLivePhotoView, 
+                       PHProjectAssetElement, PHProjectElement, PHProjectExtensionContext, 
+                       PHProjectExtensionRemoteViewController, PHProjectExtensionServiceViewController, 
+                       PHProjectInfo, PHProjectJournalEntryElement, PHProjectRegionOfInterest, 
+                       PHProjectSection, PHProjectSectionContent, PHProjectTextElement, 
+                       PHProjectTypeDescription, PUEditingExtensionHostContext, PUEditingInitialPayload, 
+                       PUExtensionHostContext, PUProjectExtensionHostContext ]
 ...

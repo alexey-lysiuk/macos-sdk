@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 28B7F5C8-F465-3621-B18F-08229AE6A544' ]
+uuids:           [ 'x86_64: E1BCD96E-639A-3742-BFD2-08145029C3BC' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SiriUI.framework/Versions/A/SiriUI
 exports:         
@@ -21,21 +21,21 @@ exports:
                        _kSiriUICardCategoryMicroblogFacebook, _kSiriUICardCategoryMicroblogTwitter, 
                        _kSiriUICardCategoryMicroblogWeibo, _kSiriUICardCategoryStocks, 
                        _kSiriUICardCategoryWeather, _kSiriUICardCategoryWebSearch ]
-    objc-classes:    [ _AFUISiriSession, _AFUISiriViewController, _SiriUIAceObjectCollectionViewItem, 
-                       _SiriUIAceObjectViewController, _SiriUIAcousticIDSpinner, 
-                       _SiriUIAnimationUtilities, _SiriUIAppInfoRepository, _SiriUIAttributedButtonFooterView, 
-                       _SiriUIAttributionImage, _SiriUIAutoDismissalController, _SiriUIBuddyController, 
-                       _SiriUIButton, _SiriUICard, _SiriUICardAttributeManager, _SiriUIClearBackgroundCell, 
-                       _SiriUIClumpView, _SiriUICollectionMenuView, _SiriUICollectionViewItem, 
-                       _SiriUIConfiguration, _SiriUIContentButton, _SiriUIContentCollectionViewCell, 
-                       _SiriUIContentCollectionViewItem, _SiriUIContentLabel, _SiriUIDisambiguationItem, 
-                       _SiriUIFontScalingUtilities, _SiriUIFooterButton, _SiriUIGuideCacheManager, 
-                       _SiriUIHypertextButton, _SiriUIInterstitials, _SiriUIKeyline, 
-                       _SiriUIObjectPickerButtonView, _SiriUIObjectPickerViewController, 
-                       _SiriUIPreferences, _SiriUIRequestOptions, _SiriUIReusableFooterView, 
-                       _SiriUIReusableHeaderView, _SiriUIScrollView, _SiriUISiriLanguage, 
-                       _SiriUISnippetControllerCell, _SiriUISnippetManager, _SiriUISnippetViewController, 
-                       _SiriUISpeechSynthesisVoiceManager, _SiriUITextView, _SiriUIThumbnailView, 
-                       _SiriUITintedImageView, _SiriUITitledSectionHeaderView, _SiriUITwoButtonFooterView, 
-                       _SiriUIURLSession, _VTUIStringsHelper, _VTUIStyle, _VTUITrainingViewController ]
+    objc-classes:    [ AFUISiriSession, AFUISiriViewController, SiriUIAceObjectCollectionViewItem, 
+                       SiriUIAceObjectViewController, SiriUIAcousticIDSpinner, SiriUIAnimationUtilities, 
+                       SiriUIAppInfoRepository, SiriUIAttributedButtonFooterView, 
+                       SiriUIAttributionImage, SiriUIAutoDismissalController, SiriUIBuddyController, 
+                       SiriUIButton, SiriUICard, SiriUICardAttributeManager, SiriUIClearBackgroundCell, 
+                       SiriUIClumpView, SiriUICollectionMenuView, SiriUICollectionViewItem, 
+                       SiriUIConfiguration, SiriUIContentButton, SiriUIContentCollectionViewCell, 
+                       SiriUIContentCollectionViewItem, SiriUIContentLabel, SiriUIDisambiguationItem, 
+                       SiriUIFontScalingUtilities, SiriUIFooterButton, SiriUIGuideCacheManager, 
+                       SiriUIHypertextButton, SiriUIKeyline, SiriUIMediaPauser, SiriUIObjectPickerButtonView, 
+                       SiriUIObjectPickerViewController, SiriUIPreferences, SiriUIRequestOptions, 
+                       SiriUIReusableFooterView, SiriUIReusableHeaderView, SiriUIScrollView, 
+                       SiriUISiriLanguage, SiriUISnippetControllerCell, SiriUISnippetManager, 
+                       SiriUISnippetViewController, SiriUISpeechSynthesisVoiceManager, 
+                       SiriUITextView, SiriUIThumbnailView, SiriUITintedImageView, 
+                       SiriUITitledSectionHeaderView, SiriUITwoButtonFooterView, 
+                       SiriUIURLSession ]
 ...

@@ -1648,6 +1648,9 @@
 /* */
 #define HAVE_SQLITE3 1
 
+/* have sqlite3_errstr function */
+#define HAVE_SQLITE3_ERRSTR 1
+
 /* have commercial sqlite3 with crypto support */
 /* #undef HAVE_SQLITE3_KEY */
 
@@ -2205,7 +2208,7 @@
 /* #undef PHPDBG_DEBUG */
 
 /* PHP build date */
-#define PHP_BUILD_DATE "2017-07-15"
+#define PHP_BUILD_DATE ""
 
 /* Define if your system has fork/vfork/CreateProcess */
 #define PHP_CAN_SUPPORT_PROC_OPEN 1
@@ -2280,7 +2283,7 @@
 #define PHP_SIGCHILD 0
 
 /* uname -a output */
-#define PHP_UNAME "Darwin osx347.sd.apple.com 17.0 Darwin Kernel Version 16.1.0: Wed May 17 11:07:20 PDT 2017; root:xnu-3789.21.4.1.5~1/DEVELOPMENT_X86_64 x86_64"
+#define PHP_UNAME "Darwin osx339.sd.apple.com 17.0 Darwin Kernel Version 16.1.0: Wed Jun 14 23:26:09 PDT 2017; root:xnu-3789.21.4.1.6~1/DEVELOPMENT_X86_64 x86_64"
 
 /* Whether PHP has to use its own crypt_r for blowfish, des and ext des */
 #define PHP_USE_PHP_CRYPT_R 1

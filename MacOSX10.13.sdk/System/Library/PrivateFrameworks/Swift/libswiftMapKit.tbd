@@ -1,10 +1,10 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7C66CFE4-AC9B-3200-9AD2-05A74CB2263B' ]
+uuids:           [ 'x86_64: 692DCCD3-C1CB-3E0C-9B61-5786378D9F23' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Swift/libswiftMapKit.dylib
 current-version: 900.8.49
-swift-version:   5
+swift-abi-version: 5
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ __T0SC16MKCoordinateSpanV6MapKitE19_bridgeToObjectiveCSo7NSValueCyF, 

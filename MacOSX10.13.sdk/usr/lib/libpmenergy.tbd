@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 26AB1780-BBAC-385E-9DE8-F12593B18EE8' ]
+uuids:           [ 'x86_64: 6A2A0033-DD52-3A96-AB87-8A9F11BBC737' ]
 platform:        macosx
 install-name:    /usr/lib/libpmenergy.dylib
 objc-constraint: none

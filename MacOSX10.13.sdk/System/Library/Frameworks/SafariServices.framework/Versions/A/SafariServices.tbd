@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 62C79C72-3970-338B-879F-FD585BDD4E88', 'x86_64: 4DA6B5BD-0F79-3E34-9206-58A0FF3C01D2' ]
+uuids:           [ 'i386: 1BC73114-57F0-3086-9D6B-6097C3C75842', 'x86_64: 991D3698-529D-3B0D-B9BD-63F27B171F90' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/SafariServices.framework/Versions/A/SafariServices
-current-version: 604.4.7
+current-version: 605.1.33
 compatibility-version: 535
 exports:         
   - archs:           [ x86_64 ]
@@ -12,14 +12,15 @@ exports:
                        __SFMacAppStoreOrDeveloperIDDistributionCodeSigningRequirement, 
                        __SFSafariContentBlockerDidChangeDistributedNotification, 
                        __SFSafariExtensionPointIdentifier ]
-    objc-classes:    [ _SFContentBlockerManager, _SFContentBlockerState, _SFSafariApplication, 
-                       _SFSafariExtensionHandler, _SFSafariExtensionManager, _SFSafariExtensionRemoteViewController, 
-                       _SFSafariExtensionServiceViewController, _SFSafariExtensionState, 
-                       _SFSafariExtensionViewController, _SFSafariPage, _SFSafariPageProperties, 
-                       _SFSafariTab, _SFSafariToolbarItem, _SFSafariWindow, __SFAppExtensionsStateManager, 
-                       __SFCodeSigningUtilities, __SFExtensionUtilities, __SFExtensionsStateSecureStorage, 
-                       __SFKeyBagLockStatusManager, __SFSandboxUtilities, __SSHistoryAccessSession, 
-                       __SSURLCompletionSession ]
+    objc-classes:    [ SFContentBlockerManager, SFContentBlockerState, SFSafariApplication, 
+                       SFSafariExtensionHandler, SFSafariExtensionManager, SFSafariExtensionRemoteViewController, 
+                       SFSafariExtensionServiceViewController, SFSafariExtensionState, 
+                       SFSafariExtensionViewController, SFSafariPage, SFSafariPageProperties, 
+                       SFSafariTab, SFSafariToolbarItem, SFSafariWindow, _SFAppExtensionsStateManager, 
+                       _SFBookmark, _SFBookmarkCollection, _SFBookmarkFolder, _SFBookmarkLeaf, 
+                       _SFCodeSigningUtilities, _SFExtensionUtilities, _SFExtensionsStateSecureStorage, 
+                       _SFKeyBagLockStatusManager, _SFSandboxUtilities, _SSHistoryAccessSession, 
+                       _SSURLCompletionSession ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ _SSGetApplicationNameForUserAgent, _SSGetFullySimplifiedStringForURL, 
                        _SSGetSafariDateOfLastActiveUse, _SSGetSyncedDataClasses, 

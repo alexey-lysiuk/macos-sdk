@@ -1,16 +1,16 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 8EF25CE9-3ED3-3E20-A4A2-20743EA32265', 'x86_64: 09E9A14C-E7A8-3386-8323-270FA28BFB81' ]
+uuids:           [ 'i386: D6B46C05-938E-39BF-B085-20D25FDEEDF7', 'x86_64: 3B8ED6F7-5DFF-34C3-BA90-DDB85679684C' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DFRFoundation.framework/Versions/A/DFRFoundation
-current-version: 191.1
+current-version: 191.7
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _DFRAccessibilityRemoteUIElementsChangedNotification, _DFRDisplayStreamCreate, 
                        __DFRControlStripInitialize, __DFRControlStripPlacementIsVisible, 
                        __DFRGetPresentationMode ]
-    objc-classes:    [ _DFRAccessibilityRemoteUIElement ]
+    objc-classes:    [ DFRAccessibilityRemoteUIElement ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ _DFRControlStripPlayPauseButtonIdentifier, _DFRControlStripRegisterEndpoint, 
                        _DFRCopyAttributes, _DFRCopyCustomization, _DFRCreateCAContext, 

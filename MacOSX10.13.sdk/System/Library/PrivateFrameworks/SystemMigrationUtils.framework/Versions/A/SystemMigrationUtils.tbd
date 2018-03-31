@@ -1,13 +1,13 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DC528CB6-3D2F-3CC3-95A4-FEC6664FA4A9' ]
+uuids:           [ 'x86_64: DACB749E-A6E3-3EF6-BAFD-598BD5C4A389' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SystemMigrationUtils.framework/Versions/A/SystemMigrationUtils
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _SystemMigrationUtilsVersionNumber, _SystemMigrationUtilsVersionString, 
                        _logBatteryState ]
-    objc-classes:    [ _SMConnectionFamilyIcons, _SMLogging, _SMPathSizer, _SMSystemConfiguration, 
-                       _SMSystem_FileManager_DiskBased, _SMTask, _SMToolBox, _SMUMessageTracing, 
-                       _SMUtilities ]
+    objc-classes:    [ SMConnectionFamilyIcons, SMLogging, SMPathSizer, SMSystemConfiguration, 
+                       SMSystem_FileManager_DiskBased, SMTask, SMToolBox, SMUMessageTracing, 
+                       SMUtilities ]
 ...

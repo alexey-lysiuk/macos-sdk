@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 7409C1E5-F3BA-3AB3-ADC1-9DCD356C6C13', 'x86_64: ABA848E1-6978-3B42-A3A7-608B2C36FA93' ]
+uuids:           [ 'i386: 95F98870-7DB1-3273-9E61-DEC04059BF18', 'x86_64: 0E51CCBA-91F2-34E1-BF2A-FEEFD3D321E4' ]
 platform:        macosx
 install-name:    /usr/lib/system/libsystem_pthread.dylib
-current-version: 301.30.1
+current-version: 301.50.1
 objc-constraint: none
 parent-umbrella: System
 exports:         
@@ -70,9 +70,9 @@ exports:
                        _pthread_main_thread_np, _pthread_mutex_destroy, _pthread_mutex_getprioceiling, 
                        _pthread_mutex_init, _pthread_mutex_lock, _pthread_mutex_setprioceiling, 
                        _pthread_mutex_trylock, _pthread_mutex_unlock, _pthread_mutexattr_destroy, 
-                       _pthread_mutexattr_getprioceiling, _pthread_mutexattr_getprotocol, 
-                       _pthread_mutexattr_getpshared, _pthread_mutexattr_gettype, 
-                       _pthread_mutexattr_init, _pthread_mutexattr_setpolicy_np, 
+                       _pthread_mutexattr_getpolicy_np, _pthread_mutexattr_getprioceiling, 
+                       _pthread_mutexattr_getprotocol, _pthread_mutexattr_getpshared, 
+                       _pthread_mutexattr_gettype, _pthread_mutexattr_init, _pthread_mutexattr_setpolicy_np, 
                        _pthread_mutexattr_setprioceiling, _pthread_mutexattr_setprotocol, 
                        _pthread_mutexattr_setpshared, _pthread_mutexattr_settype, 
                        _pthread_once, _pthread_override_qos_class_end_np, _pthread_override_qos_class_start_np, 

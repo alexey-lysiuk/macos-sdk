@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 835B41FC-761B-378F-B74A-7A3DD65320BF' ]
+uuids:           [ 'x86_64: FC1C39A7-87B0-35B2-B354-BDF2B5590BEB' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IASUtilities.framework/Versions/A/IASUtilities
 current-version: 119
@@ -29,32 +29,31 @@ exports:
                        _process_line, _regExCompare, _saveOSInstallLogWithMountPoint, 
                        _setup_instlog_shmem, _ssleepDisabled, _start_log_listen_thread, 
                        _teardown_instlog_shmem ]
-    objc-classes:    [ _IASAuthenticationAgentController, _IASAuthenticationManager, 
-                       _IASBZIP2InputStream, _IASBZIP2OutputStream, _IASBootTimeInstallManager, 
-                       _IASBootTimeInstallableItem, _IASBottomMagicPocketView, _IASCommonViewBasedTableDelegate, 
-                       _IASCountryCodePopUpView, _IASCountryCodesArray, _IASDeviceIconManager, 
-                       _IASDeviceStringManager, _IASFakeLinkButton, _IASFilesystemUtils, 
-                       _IASFirstResponderDisablingTextView, _IASInputStream, _IASKeyableWindow, 
-                       _IASLZMAInputStream, _IASLZMAOutputStream, _IASLeftMagicPocketView, 
-                       _IASLocalSecretPrompt, _IASLogDataSource, _IASLogWindowController, 
-                       _IASMagicPocketClipView, _IASMagicPocketScrollView, _IASMagicPocketView, 
-                       _IASMessageTracing, _IASNightInstallSupport, _IASOutputStream, 
-                       _IASPickerViewController, _IASRightMagicPocketView, _IASServerSupport, 
-                       _IASSizeLimitedInputStream, _IASStandaloneTextView, _IASStreamError, 
-                       _IASSystemInformation, _IASSystemSize, _IASThreadSafeEvent, 
-                       _IASTimeRemainingFormatter, _IASTopMagicPocketView, _IASZLIBInputStream, 
-                       _IASZLIBOutputStream, _UAULaunch, __IASBootTimeInstallProgressObserver ]
-    objc-ivars:      [ _IASLogDataSource._buf, _IASLogDataSource._currentLogFilter, 
-                       _IASLogDataSource._last_seen_offset, _IASLogDataSource._lineIndex, 
-                       _IASLogDataSource._lineNumbers, _IASLogDataSource._lnCol, 
-                       _IASLogDataSource._logView, _IASLogDataSource._longestStrlen, 
-                       _IASLogDataSource._msgCol, _IASLogDataSource._rootChildren, 
-                       _IASLogDataSource._searchString, _IASLogDataSource._widestStringPx, 
-                       _IASLogWindowController._closeWatcherObj, _IASLogWindowController._closeWatcherSel, 
-                       _IASLogWindowController._filterField, _IASLogWindowController._logDataSource, 
-                       _IASLogWindowController._logDetailLevelPopUpButton, _IASLogWindowController._resourcesBundle, 
-                       _IASLogWindowController._toolbarIDList, _IASLogWindowController._toolbarItems, 
-                       _IASLogWindowController.sendLogCommentTxt, _IASLogWindowController.sendLogContactTxt, 
-                       _IASLogWindowController.sendLogSheet, _IASLogWindowController.uiLogView, 
-                       _IASLogWindowController.window ]
+    objc-classes:    [ IASAuthenticationAgentController, IASAuthenticationManager, 
+                       IASBZIP2InputStream, IASBZIP2OutputStream, IASBootTimeInstallManager, 
+                       IASBootTimeInstallableItem, IASBottomMagicPocketView, IASCommonViewBasedTableDelegate, 
+                       IASCountryCodePopUpView, IASCountryCodesArray, IASDeviceIconManager, 
+                       IASDeviceStringManager, IASFakeLinkButton, IASFilesystemUtils, 
+                       IASFirstResponderDisablingTextView, IASInputStream, IASKeyableWindow, 
+                       IASLZMAInputStream, IASLZMAOutputStream, IASLeftMagicPocketView, 
+                       IASLocalSecretPrompt, IASLogDataSource, IASLogWindowController, 
+                       IASMagicPocketClipView, IASMagicPocketScrollView, IASMagicPocketView, 
+                       IASMessageTracing, IASNightInstallSupport, IASOutputStream, 
+                       IASPickerViewController, IASRightMagicPocketView, IASServerSupport, 
+                       IASSizeLimitedInputStream, IASStandaloneTextView, IASStreamError, 
+                       IASSystemInformation, IASSystemSize, IASThreadSafeEvent, IASTimeRemainingFormatter, 
+                       IASTopMagicPocketView, IASZLIBInputStream, IASZLIBOutputStream, 
+                       UAULaunch, _IASBootTimeInstallProgressObserver ]
+    objc-ivars:      [ IASLogDataSource._buf, IASLogDataSource._currentLogFilter, 
+                       IASLogDataSource._last_seen_offset, IASLogDataSource._lineIndex, 
+                       IASLogDataSource._lineNumbers, IASLogDataSource._lnCol, IASLogDataSource._logView, 
+                       IASLogDataSource._longestStrlen, IASLogDataSource._msgCol, 
+                       IASLogDataSource._rootChildren, IASLogDataSource._searchString, 
+                       IASLogDataSource._widestStringPx, IASLogWindowController._closeWatcherObj, 
+                       IASLogWindowController._closeWatcherSel, IASLogWindowController._filterField, 
+                       IASLogWindowController._logDataSource, IASLogWindowController._logDetailLevelPopUpButton, 
+                       IASLogWindowController._resourcesBundle, IASLogWindowController._toolbarIDList, 
+                       IASLogWindowController._toolbarItems, IASLogWindowController.sendLogCommentTxt, 
+                       IASLogWindowController.sendLogContactTxt, IASLogWindowController.sendLogSheet, 
+                       IASLogWindowController.uiLogView, IASLogWindowController.window ]
 ...

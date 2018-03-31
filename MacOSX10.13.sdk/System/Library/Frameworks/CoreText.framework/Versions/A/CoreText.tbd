@@ -1,14 +1,14 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 6389222B-6B26-3F46-93C2-ABE07168227F', 'x86_64: DA0BC559-277A-32BA-91EA-FD2F02EA186F' ]
+uuids:           [ 'i386: CF0AF654-0DDD-3FA3-BE0E-FBB90D45BE83', 'x86_64: B8454115-2A4B-3585-A7A1-B47A638F2EEB' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreText.framework/Versions/A/CoreText
 exports:         
   - archs:           [ x86_64 ]
-    objc-ivars:      [ _CTGlyphStorageInterface._absorbedCounts, _CTGlyphStorageInterface._advances, 
-                       _CTGlyphStorageInterface._glyphCount, _CTGlyphStorageInterface._glyphs, 
-                       _CTGlyphStorageInterface._origins, _CTGlyphStorageInterface._props, 
-                       _CTGlyphStorageInterface._stringIndexes ]
+    objc-ivars:      [ CTGlyphStorageInterface._absorbedCounts, CTGlyphStorageInterface._advances, 
+                       CTGlyphStorageInterface._glyphCount, CTGlyphStorageInterface._glyphs, 
+                       CTGlyphStorageInterface._origins, CTGlyphStorageInterface._props, 
+                       CTGlyphStorageInterface._stringIndexes ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ '$ld$install_name$os10.5$/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices', 
                        '$ld$install_name$os10.6$/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices', 
@@ -331,5 +331,5 @@ exports:
                        _kFOComponentsKey, _kFOFontMetricsKey, _kFOFontNameKey, _kFOFontNamesArrayKey, 
                        _kFOFontVersionKey, _kFOLanguageKey, _kFOMatrixKey, _kFOStringKey, 
                        _kFOTypeKey, _kFOUnicodeCharSetKey, _kFOcmapOverrideKey ]
-    objc-classes:    [ _CTGlyphStorageInterface, _NSFontCollection, _NSMutableFontCollection ]
+    objc-classes:    [ CTGlyphStorageInterface, NSFontCollection, NSMutableFontCollection ]
 ...

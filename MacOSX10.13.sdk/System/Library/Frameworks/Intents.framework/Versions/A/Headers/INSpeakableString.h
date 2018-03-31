@@ -12,7 +12,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 API_AVAILABLE(macosx(10.12), ios(10.0), watchos(3.2))
-@interface INSpeakableString : NSObject <INSpeakable>
+@interface INSpeakableString : NSObject <INSpeakable, NSSecureCoding>
 
 - (instancetype)init NS_UNAVAILABLE;
 

@@ -27,14 +27,17 @@
  *
  */
 
-#ifndef	_LIB_DER_OIDS_H_
-#define _LIB_DER_OIDS_H_
+#ifndef	_SECURITY_OIDS_H_
+#define _SECURITY_OIDS_H_
 
 #include <stdint.h>
 #include <string.h>
 
 __BEGIN_DECLS
 
+/* This is a subset of libDER's oids.h. If the types header has
+ * already been included, we should skip these typedef declarations. */
+#ifndef _LIB_DER_H_
 /*
  * Basic data types
  */
@@ -48,6 +51,7 @@ typedef struct {
     DERByte		*data;
     DERSize		length;
 } DERItem;
+#endif    /* _LIB_DER_H_ */
 
 /* Algorithm oids. */
 extern const DERItem
@@ -149,4 +153,4 @@ extern const DERItem
 
 __END_DECLS
 
-#endif	/* _LIB_DER_OIDS_H_ */
+#endif	/* _SECURITY_OIDS_H_ */

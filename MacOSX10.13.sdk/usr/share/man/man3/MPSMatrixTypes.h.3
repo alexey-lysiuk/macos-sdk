@@ -1,4 +1,4 @@
-.TH "MPSMatrixTypes.h" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "MPSMatrixTypes.h" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -6,6 +6,8 @@ MPSMatrixTypes.h
 .SH SYNOPSIS
 .br
 .PP
+\fC#include <stdint\&.h>\fP
+.br
 \fC#import <MPSCore/MPSKernel\&.h>\fP
 .br
 \fC#import <MPSCore/MPSCoreTypes\&.h>\fP
@@ -14,6 +16,9 @@ MPSMatrixTypes.h
 .SS "Classes"
 
 .in +1c
+.ti -1c
+.RI "struct \fBMPSMatrixOffset\fP"
+.br
 .ti -1c
 .RI "class \fBMPSMatrixDescriptor\fP"
 .br
@@ -28,6 +33,9 @@ MPSMatrixTypes.h
 .br
 .ti -1c
 .RI "class \fBMPSTemporaryMatrix\fP"
+.br
+.ti -1c
+.RI "class \fBMPSTemporaryVector\fP"
 .br
 .ti -1c
 .RI "class \fBMPSMatrixUnaryKernel\fP"

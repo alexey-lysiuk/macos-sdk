@@ -94,6 +94,20 @@
 # endif /* defined(__LP64__) */
 #endif /* !defined(CG_EXTERN_64) */
 
+/* Definition of `CG_SKYLIGHT_EXTERN_64` */
+
+#if !defined(CG_SKYLIGHT_EXTERN_64)
+# if defined(__LP64__)
+#  define CG_SKYLIGHT_EXTERN_64 CG_EXTERN
+# else /* !defined(__LP64__) */
+#  if defined(CG_BUILDING_CG)
+#    define CG_SKYLIGHT_EXTERN_64 CG_EXTERN
+#  else /* !defined(CG_BUILDING_CG) */
+#    define CG_SKYLIGHT_EXTERN_64 CG_LOCAL
+#  endif /* !defined(CG_BUILDING_CG) */
+# endif /* defined(__LP64__) */
+#endif /* !defined(CG_EXTERN_64) */
+
 /* Definition of `CG_EXTERN_32` */
 
 #if !defined(CG_EXTERN_32)

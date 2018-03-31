@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0465C6B9-B537-36B2-BC03-94DD28D914F7' ]
+uuids:           [ 'x86_64: 55D9912C-365F-3285-9669-1B4580F512DF' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/WiFiCloudSyncEngine.framework/Versions/A/WiFiCloudSyncEngine
 exports:         
@@ -14,8 +14,8 @@ exports:
                        _WiFiCloudSyncEngineRemoveNetworkFromKnownNetworksList, _WiFiCloudSyncEngineScheduleWithRunLoop, 
                        _WiFiCloudSyncEngineStartEngine, _WiFiCloudSyncEngineStopEngine, 
                        _WiFiCloudSyncEngineUnScheduleWithRunLoop, _kKeychainChangedNotificationName ]
-    objc-classes:    [ _WiFiCloudSyncEngineCore, _WiFiCloudSyncEngineLogger ]
-    objc-ivars:      [ _WiFiCloudSyncEngineCore.callback, _WiFiCloudSyncEngineCore.clientThread, 
-                       _WiFiCloudSyncEngineCore.context, _WiFiCloudSyncEngineCore.iCloudSyncingEnabled, 
-                       _WiFiCloudSyncEngineCore.keyValueStore ]
+    objc-classes:    [ WiFiCloudSyncEngineCore, WiFiCloudSyncEngineLogger ]
+    objc-ivars:      [ WiFiCloudSyncEngineCore.callback, WiFiCloudSyncEngineCore.clientThread, 
+                       WiFiCloudSyncEngineCore.context, WiFiCloudSyncEngineCore.iCloudSyncingEnabled, 
+                       WiFiCloudSyncEngineCore.keyValueStore ]
 ...

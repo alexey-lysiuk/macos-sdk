@@ -4461,15 +4461,10 @@ __OSX_AVAILABLE(10.13) __IOS_AVAILABLE(11) __WATCHOS_AVAILABLE(4) __TVOS_AVAILAB
 # pragma clang assume_nonnull end
 #endif
 
-#if   __MAC_OS_X_VERSION_MIN_REQUIRED  >= __MAC_10_13   || \
-      __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_11_0 || \
-      __WATCH_OS_VERSION_MIN_REQUIRED  >= __WATCHOS_4_0 || \
-      __TV_OS_VERSION_MIN_REQUIRED     >= __TVOS_11_0
-# if defined SPARSE_INCLUDED_VIA_ACCELERATE /* Included via Accelerate */
-#  include <vecLib/Sparse/SolveImplementation.h>
-# else /* Standalone environments */
-#  include "SolveImplementation.h"
-# endif
+#if defined SPARSE_INCLUDED_VIA_ACCELERATE /* Included via Accelerate */
+# include <vecLib/Sparse/SolveImplementation.h>
+#else /* Standalone environments */
+# include "SolveImplementation.h"
 #endif
 
 #endif /* __has_attribute(overloadable) */

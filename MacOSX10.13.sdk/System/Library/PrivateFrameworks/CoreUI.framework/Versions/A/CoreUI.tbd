@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 4B915963-6D32-3D89-B585-94094ACCF2E8', 'x86_64: FE0B32BC-958D-3445-866E-A3905626396D' ]
+uuids:           [ 'i386: 6807E363-C01E-3359-96DC-158ED074C278', 'x86_64: 19624CAA-74DE-3DD3-9585-E64BE866EBFF' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreUI.framework/Versions/A/CoreUI
-current-version: 492.2
+current-version: 494.1
 exports:         
   - archs:           [ i386, x86_64 ]
     symbols:         [ _CSIEqualMetrics, _CSIIllegalMetrics, _CUIBlendModeDescriptionFromCGBlendMode, 
@@ -454,26 +454,25 @@ exports:
                        _kCUIWindowTypeOnlyTexturedBackground, _kCUIWindowTypeSheet, 
                        _kCUIWindowTypeTextured, _kCUIWindowTypeTexturedUtility, _kCUIWindowTypeTitlelessUtility, 
                        _kCUIWindowTypeUtility ]
-    objc-classes:    [ _CSIBitmapWrapper, _CSIGenerator, _CUIBackgroundStyleEffectConfiguration, 
-                       _CUICatalog, _CUIColor, _CUIImage, _CUILayoutInformation, 
-                       _CUIMutableCatalog, _CUIMutableCommonAssetStorage, _CUIMutablePSDImageRef, 
-                       _CUINamedColor, _CUINamedData, _CUINamedExternalLink, _CUINamedImage, 
-                       _CUINamedImageAtlas, _CUINamedImageDescription, _CUINamedLayerImage, 
-                       _CUINamedLayerStack, _CUINamedMultisizeImage, _CUINamedMultisizeImageSet, 
-                       _CUINamedRenditionInfo, _CUINamedTexture, _CUINamedVectorImage, 
-                       _CUIPSDGradient, _CUIPSDGradientColorStop, _CUIPSDGradientEvaluator, 
-                       _CUIPSDGradientLayer, _CUIPSDGradientOpacityStop, _CUIPSDImageLayer, 
-                       _CUIPSDImageRef, _CUIPSDLayerBaseRef, _CUIPSDLayerEffectBevelEmboss, 
-                       _CUIPSDLayerEffectColorOverlay, _CUIPSDLayerEffectDropShadow, 
-                       _CUIPSDLayerEffectGradientOverlay, _CUIPSDLayerEffectInnerGlow, 
-                       _CUIPSDLayerEffectInnerShadow, _CUIPSDLayerEffectOuterGlow, 
-                       _CUIPSDLayerEffects, _CUIPSDLayerGroupEnd, _CUIPSDLayerGroupRef, 
-                       _CUIPSDLayerGroupStart, _CUIPSDLayerMaskRef, _CUIPSDLayerRef, 
-                       _CUIPSDLayoutMetricsChannel, _CUIRenditionKey, _CUIRenditionLayerReference, 
-                       _CUIRuntimeStatistics, _CUIShapeEffectPreset, _CUIShapeEffectStack, 
-                       _CUIStructuredThemeStore, _CUIStyleEffectConfiguration, _CUISystemStore, 
-                       _CUITextEffectStack, _CUIThemeFacet, _CUIThemeGradient, _CUIThemeRendition, 
-                       _CUIThemeSchema, _CUIThemeSchemaEffectRendition, _CUIThemeSchemaLayer, 
-                       _CUIThemeSchemaPSDLayer, _CUIThemeSchemaPSDLayerGroup, _CUIThemeSchemaPSDRenditionLayer, 
-                       _CUIThemeSchemaRendition, _CUIThemeSchemaRenditionGroup, _CoreUI ]
+    objc-classes:    [ CSIBitmapWrapper, CSIGenerator, CUIBackgroundStyleEffectConfiguration, 
+                       CUICatalog, CUIColor, CUIImage, CUILayoutInformation, CUIMutableCatalog, 
+                       CUIMutableCommonAssetStorage, CUIMutablePSDImageRef, CUINamedColor, 
+                       CUINamedData, CUINamedExternalLink, CUINamedImage, CUINamedImageAtlas, 
+                       CUINamedImageDescription, CUINamedLayerImage, CUINamedLayerStack, 
+                       CUINamedMultisizeImage, CUINamedMultisizeImageSet, CUINamedRenditionInfo, 
+                       CUINamedTexture, CUINamedVectorImage, CUIPSDGradient, CUIPSDGradientColorStop, 
+                       CUIPSDGradientEvaluator, CUIPSDGradientLayer, CUIPSDGradientOpacityStop, 
+                       CUIPSDImageLayer, CUIPSDImageRef, CUIPSDLayerBaseRef, CUIPSDLayerEffectBevelEmboss, 
+                       CUIPSDLayerEffectColorOverlay, CUIPSDLayerEffectDropShadow, 
+                       CUIPSDLayerEffectGradientOverlay, CUIPSDLayerEffectInnerGlow, 
+                       CUIPSDLayerEffectInnerShadow, CUIPSDLayerEffectOuterGlow, 
+                       CUIPSDLayerEffects, CUIPSDLayerGroupEnd, CUIPSDLayerGroupRef, 
+                       CUIPSDLayerGroupStart, CUIPSDLayerMaskRef, CUIPSDLayerRef, 
+                       CUIPSDLayoutMetricsChannel, CUIRenditionKey, CUIRenditionLayerReference, 
+                       CUIRuntimeStatistics, CUIShapeEffectPreset, CUIShapeEffectStack, 
+                       CUIStructuredThemeStore, CUIStyleEffectConfiguration, CUISystemStore, 
+                       CUITextEffectStack, CUIThemeFacet, CUIThemeGradient, CUIThemeRendition, 
+                       CUIThemeSchema, CUIThemeSchemaEffectRendition, CUIThemeSchemaLayer, 
+                       CUIThemeSchemaPSDLayer, CUIThemeSchemaPSDLayerGroup, CUIThemeSchemaPSDRenditionLayer, 
+                       CUIThemeSchemaRendition, CUIThemeSchemaRenditionGroup, CoreUI ]
 ...

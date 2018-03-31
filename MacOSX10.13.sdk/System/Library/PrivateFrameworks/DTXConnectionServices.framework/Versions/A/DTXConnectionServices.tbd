@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7D951A32-4EE4-357B-958E-55440208D7DF' ]
+uuids:           [ 'x86_64: F31F136E-F096-3591-BD29-C37E77D4FA9D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DTXConnectionServices.framework/Versions/A/DTXConnectionServices
-current-version: 63107
+current-version: 64064
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -16,8 +16,8 @@ exports:
                        _DTXPrimitiveDictionaryCreate, _DTXPrimitiveDictionaryDestroy, 
                        _DTXPrimitiveDictionaryGetSerialized, _DTXPrimitiveDictionaryReferencingSerialized, 
                        _kDTXAckBarrierMessage, _kDTXBarrierMessage, _kDTXInterruptionMessage ]
-    objc-classes:    [ _DTXBlockCompressorFactory, _DTXChannel, _DTXConnection, _DTXFileDescriptorTransport, 
-                       _DTXFoundationURLTransport, _DTXMachTransport, _DTXMessage, 
-                       _DTXProxyChannel, _DTXRemoteInvocationReceipt, _DTXService, 
-                       _DTXSharedMemoryTransport, _DTXSocketTransport, _DTXTransport ]
+    objc-classes:    [ DTXBlockCompressorFactory, DTXChannel, DTXConnection, DTXFileDescriptorTransport, 
+                       DTXFoundationURLTransport, DTXMachTransport, DTXMessage, DTXProxyChannel, 
+                       DTXRemoteInvocationReceipt, DTXService, DTXSharedMemoryTransport, 
+                       DTXSocketTransport, DTXTransport ]
 ...

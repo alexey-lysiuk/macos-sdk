@@ -1,11 +1,11 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1DA88914-EEF0-3C15-8C92-2792FB9EA5E3' ]
+uuids:           [ 'x86_64: 1BB77529-2B99-3F3D-B35F-28588A5095F6' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IMTranscoding.framework/Versions/A/IMTranscoding
 current-version: 800
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _IMTranscodeContextResponseDuration, _IMTranscodeErrorDomain ]
-    objc-classes:    [ _IMTranscodeController ]
+    objc-classes:    [ IMTranscodeController ]
 ...

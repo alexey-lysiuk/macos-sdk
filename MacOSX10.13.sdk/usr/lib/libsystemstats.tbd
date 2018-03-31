@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9FE5E908-88F1-3593-ADCD-4BC78100DA68' ]
+uuids:           [ 'x86_64: 5BDD58E2-3ECD-3AEA-A69C-388056831858' ]
 platform:        macosx
 install-name:    /usr/lib/libsystemstats.dylib
-current-version: 403.31.1
+current-version: 403.50.9
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _SystemStatsLogCoreDuetEventsAggregate, _SystemStatsReportDiscretionaryBudgetForDuet, 
@@ -46,8 +46,8 @@ exports:
                        _systemstats_is_device_apple_thunderbolt_display, _systemstats_is_internal, 
                        _systemstats_is_seed_build, _systemstats_log_video_event, 
                        _systemstats_mach_absolute_time, _systemstats_mach_continuous_time, 
-                       _systemstats_machine_supports_cstate_info, _systemstats_queue_delete, 
-                       _systemstats_queue_flush, _systemstats_queue_or_flush_record, 
+                       _systemstats_machine_supports_cstate_info, _systemstats_microstackshot_checkpoint_async, 
+                       _systemstats_queue_delete, _systemstats_queue_flush, _systemstats_queue_or_flush_record, 
                        _systemstats_record_queue_create, _systemstats_resolve_canonical_launchd_name_from_coalition, 
                        _systemstats_resolve_cf_bundle_id_from_coalition, _systemstats_stream_delete, 
                        _systemstats_stream_flush, _systemstats_stream_get_attr, _systemstats_stream_write_power_state_change, 

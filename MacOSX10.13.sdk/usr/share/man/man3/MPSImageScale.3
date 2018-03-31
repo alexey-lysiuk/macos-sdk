@@ -1,4 +1,4 @@
-.TH "MPSImageScale" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "MPSImageScale" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -39,9 +39,9 @@ Inherited by \fBMPSImageBilinearScale\fP, and \fBMPSImageLanczosScale\fP\&.
 Copyright (c) 2015 Apple Inc\&. All rights reserved\&.  Resampling filters for MetalPerformanceShaders
 .RE
 .PP
-Resize an image and / or change its aspect ratio  The \fBMPSImageScale\fP filter can be used to resample an existing image using a different sampling frequency in each dimension\&. This can be used to enlarge or reduce the size of an image, or change the aspect ratio of an image\&.
-.PP
-The resample methods supported are: Bilinear Bicubcic Lanczos 
+Resize an image and / or change its aspect ratio  The \fBMPSImageScale\fP filter can be used to resample an existing image using a different sampling frequency in each dimension\&. This can be used to enlarge or reduce the size of an image, or change the aspect ratio of an image\&. 
+.br
+ The resample methods supported are: Bilinear Bicubcic Lanczos 
 .SH "Method Documentation"
 .PP 
 .SS "\- (nullable instancetype) \fBinitWithCoder:\fP (NSCoder *__nonnull) aDecoder(nonnull id< MTLDevice >) device"
@@ -56,7 +56,7 @@ The resample methods supported are: Bilinear Bicubcic Lanczos
 .PP
 \fBReturns:\fP
 .RS 4
-A new \fBMPSKernel\fP object, or nil if failure\&. 
+\fBA\fP new \fBMPSKernel\fP object, or nil if failure\&. 
 .RE
 .PP
 

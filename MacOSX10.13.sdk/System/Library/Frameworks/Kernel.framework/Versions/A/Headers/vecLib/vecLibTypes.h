@@ -3,9 +3,9 @@
  
      Contains:   Master include for vecLib framework
  
-     Version:    vecLib-622.20
+     Version:    vecLib-622.50
  
-     Copyright:  Copyright (c) 2000-2017 by Apple Inc. All rights reserved.
+     Copyright:  Copyright (c) 2000-2018 by Apple Inc. All rights reserved.
  
      Bugs:       For bug reports, consult the following page on
                  the World Wide Web:

@@ -1,15 +1,15 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FAD42830-565B-325A-830A-6A8BE268ADE2' ]
+uuids:           [ 'x86_64: 9201275B-59EE-3270-952E-811E48838CF8' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PassKitUIFoundation.framework/Versions/A/PassKitUIFoundation
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _PKAuthenticatorStateSupportsBiometricEvaluation, _PKMatrixForRotationAroundXAxis, 
                        _PKMatrixForRotationAroundYAxis, _PKMatrixIdentity ]
-    objc-classes:    [ _PK3DCardView, _PKAuthenticator, _PKAuthenticatorEvaluationContext, 
-                       _PKAuthenticatorEvaluationRequest, _PKAuthenticatorSharedRootContext, 
-                       _PKCheckGlyphLayer, _PKFingerprintGlyphView, _PKGlyphView, 
-                       _PKPaymentRemoteInstrumentThumbnailView, _PKPeerPayment3DTextView, 
-                       _PKPhoneGlyphLayer, _PKUISpringAnimationFactory ]
+    objc-classes:    [ PK3DCardView, PKAuthenticator, PKAuthenticatorEvaluationContext, 
+                       PKAuthenticatorEvaluationRequest, PKAuthenticatorEvaluationResponse, 
+                       PKAuthenticatorSharedRootContext, PKCheckGlyphLayer, PKFingerprintGlyphView, 
+                       PKGlyphView, PKPaymentRemoteInstrumentThumbnailView, PKPeerPayment3DTextView, 
+                       PKPhoneGlyphLayer, PKUISpringAnimationFactory ]
 ...

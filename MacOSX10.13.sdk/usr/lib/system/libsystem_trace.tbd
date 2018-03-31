@@ -1,13 +1,13 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 79446DE0-89F6-3979-B14C-7B463AD70351', 'x86_64: 69EBF017-D40F-30D7-9B0B-BFC862D761A5' ]
+uuids:           [ 'i386: 3786EA81-F02C-3115-A8B6-3AC9088EA04C', 'x86_64: 6568D68B-1D4C-38EE-90A9-54821D6403C0' ]
 platform:        macosx
 install-name:    /usr/lib/system/libsystem_trace.dylib
-current-version: 829.30.14
+current-version: 829.50.17
 parent-umbrella: System
 exports:         
   - archs:           [ i386 ]
-    objc-classes:    [ _OSLogCoder, _OS_os_activity, _OS_os_eventlog ]
+    objc-classes:    [ OSLogCoder, OS_os_activity, OS_os_eventlog ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ __libtrace_fork_child, __libtrace_init, __os_activity_create, 
                        __os_activity_current, __os_activity_initiate, __os_activity_initiate_f, 
@@ -47,5 +47,5 @@ exports:
                        _os_trace_get_mode, _os_trace_get_task_mode, _os_trace_get_type, 
                        _os_trace_info_enabled, _os_trace_message_list_free, _os_trace_set_mode, 
                        _os_trace_set_mode_mask, _os_trace_set_task_mode ]
-    objc-classes:    [ _OS_os_log ]
+    objc-classes:    [ OS_os_log ]
 ...

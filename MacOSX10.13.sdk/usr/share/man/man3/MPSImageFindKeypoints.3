@@ -1,4 +1,4 @@
-.TH "MPSImageFindKeypoints" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "MPSImageFindKeypoints" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -36,7 +36,9 @@ Inherits \fBMPSKernel\fP\&.
 .SS "Additional Inherited Members"
 .SH "Detailed Description"
 .PP 
-The \fBMPSImageFindKeypoints\fP kernel is used to find a list of keypoints whose values are >= minimumPixelThresholdValue in \fBMPSImageKeypointRangeInfo\fP\&. The keypoints are generated for a specified region in the image\&. The pixel format of the source image must be MTLPixelFormatR8Unorm\&. 
+The \fBMPSImageFindKeypoints\fP kernel is used to find a list of keypoints whose values are >= minimumPixelThresholdValue in \fBMPSImageKeypointRangeInfo\fP\&. The keypoints are generated for a specified region in the image\&. 
+.br
+ The pixel format of the source image must be MTLPixelFormatR8Unorm\&. 
 .SH "Method Documentation"
 .PP 
 .SS "\- (void) encodeToCommandBuffer: (nonnull id< MTLCommandBuffer >) commandBuffer(nonnull id< MTLTexture >) source(const MTLRegion *__nonnull) regions(NSUInteger) numberOfRegions(nonnull id< MTLBuffer >) keypointCountBuffer(NSUInteger) keypointCountBufferOffset(nonnull id< MTLBuffer >) keypointDataBuffer(NSUInteger) keypointDataBufferOffset"
@@ -44,9 +46,9 @@ Encode the filter to a command buffer using a MTLComputeCommandEncoder\&.  The f
 .PP
 \fBParameters:\fP
 .RS 4
-\fIcommandBuffer\fP A valid MTLCommandBuffer\&. 
+\fIcommandBuffer\fP \fBA\fP valid MTLCommandBuffer\&. 
 .br
-\fIsource\fP A valid MTLTexture containing the source image for the filter\&. 
+\fIsource\fP \fBA\fP valid MTLTexture containing the source image for the filter\&. 
 .br
 \fIregions\fP An array of rectangles that describe regions in the image\&. The list of keypoints is generated for each individual rectangle specifed\&. 
 .br
@@ -54,7 +56,7 @@ Encode the filter to a command buffer using a MTLComputeCommandEncoder\&.  The f
 .br
 \fIkeypointCountBufferOffset\fP Byte offset into keypointCountBufferOffset buffer at which to write the keypoint results\&. Must be a multiple of 32 bytes\&. 
 .br
-\fIkeypointDataBuffer\fP A valid MTLBuffer to receive the keypoint data results for each rectangle\&. The keypoint data for keypoints in each rectangle are stored consecutively\&. The keypoint data for each rectangle starts at the following offset: MPSImageKeypointRangeInfo\&.maximumKeyPoints * rectangle index 
+\fIkeypointDataBuffer\fP \fBA\fP valid MTLBuffer to receive the keypoint data results for each rectangle\&. The keypoint data for keypoints in each rectangle are stored consecutively\&. The keypoint data for each rectangle starts at the following offset: MPSImageKeypointRangeInfo\&.maximumKeyPoints * rectangle index 
 .br
 \fIkeypointDataBufferOffset\fP Byte offset into keypointData buffer at which to write the keypoint results\&. Must be a multiple of 32 bytes\&. 
 .RE
@@ -72,7 +74,7 @@ Encode the filter to a command buffer using a MTLComputeCommandEncoder\&.  The f
 .PP
 \fBReturns:\fP
 .RS 4
-A new \fBMPSKernel\fP object, or nil if failure\&. 
+\fBA\fP new \fBMPSKernel\fP object, or nil if failure\&. 
 .RE
 .PP
 
@@ -106,7 +108,7 @@ Specifies information to find keypoints in an image\&.
 .PP
 \fBReturns:\fP
 .RS 4
-A valid \fBMPSImageFindKeypoints\fP object or nil, if failure\&. 
+\fBA\fP valid \fBMPSImageFindKeypoints\fP object or nil, if failure\&. 
 .RE
 .PP
 

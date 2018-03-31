@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A5B5A007-8BC2-3219-B35D-F1D4CD464530' ]
+uuids:           [ 'x86_64: 4D04BE4A-31F5-3814-A648-DD057122A31E' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Resources/libFontWorkerAccess.dylib
 exports:         

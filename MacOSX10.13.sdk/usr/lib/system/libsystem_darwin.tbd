@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 83B1D06A-9FA5-3F0B-A223-0659F4248E51', 'x86_64: 2F750CB1-BC26-3FA3-AE59-553EE30D451B' ]
+uuids:           [ 'i386: 326B9F59-5784-3C79-8A44-7C40D662C695', 'x86_64: 09C21A4A-9EE0-388B-A9D9-DFF8F6758791' ]
 platform:        macosx
 install-name:    /usr/lib/system/libsystem_darwin.dylib
 objc-constraint: none

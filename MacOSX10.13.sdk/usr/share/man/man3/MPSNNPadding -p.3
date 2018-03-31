@@ -1,4 +1,4 @@
-.TH "<MPSNNPadding >" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "<MPSNNPadding >" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -22,11 +22,14 @@ Inherits <NSObject>, and <NSSecureCoding>\&.
 .ti -1c
 .RI "(\fBMPSImageDescriptor\fP *__nonnull) \- \fBdestinationImageDescriptorForSourceImages:sourceStates:forKernel:suggestedDescriptor:\fP"
 .br
+.ti -1c
+.RI "(instancetype __nullable) \- \fBinverse\fP"
+.br
 .in -1c
 .SH "Method Documentation"
 .PP 
 .SS "\- (\fBMPSImageDescriptor\fP * __nonnull \fBMPSNNPadding\fP) destinationImageDescriptorForSourceImages: (NSArray< \fBMPSImage\fP * > *__nonnull) sourceImages(NSArray< \fBMPSState\fP * > *__nullable) sourceStates(\fBMPSKernel\fP *__nonnull) kernel(\fBMPSImageDescriptor\fP *__nonnull) inDescriptor\fC [optional]\fP"
-Determine padding and sizing of result images  A MPSNNPaddingMethod must both return a valid \fBMPSImageDescriptor\fP and set the MPSKernel\&.offset to the correct value\&. This is a required feature if the MPSNNPaddingMethodCustom bit is set in the paddingMethod\&.
+Determine padding and sizing of result images  \fBA\fP MPSNNPaddingMethod must both return a valid \fBMPSImageDescriptor\fP and set the MPSKernel\&.offset to the correct value\&. This is a required feature if the MPSNNPaddingMethodCustom bit is set in the paddingMethod\&.
 .PP
 Some code that may prove helpful:
 .PP
@@ -46,7 +49,7 @@ static int DestSize( int sourceSize, int stride, int filterWindowSize, Style sty
     return (sourceSize + stride - 1) / stride;          // sourceSize / stride, round up
 }
 
-// Typical destination size in one dimension for reverse filters (e\&.g\&. unpooling, convolution transpose)
+// Typical destination size in one dimension for reverse filters (e\&.g\&. convolution transpose)
 static int DestSizeReverse( int sourceSize, int stride, int filterWindowSize, Style style ){
     return (sourceSize-1) * stride +        // center tap for the last N-1 results\&. Take stride into account
             1 +                             // center tap for the first result
@@ -98,8 +101,10 @@ The \fBMPSImageDescriptor\fP to use to make a \fBMPSImage\fP to capture the resu
 .RE
 .PP
 
+.SS "\- (instancetype __nullable \fBMPSNNPadding\fP) inverse \fC [optional]\fP"
+Make a 'inverted' padding policy suitable for a training gradient pass\&. 
 .SS "\- (NSString*__nonnull \fBMPSNNPadding\fP) label \fC [optional]\fP"
-A human readable string that describes the padding policy\&. Useful for verbose debugging support\&. 
+\fBA\fP human readable string that describes the padding policy\&. Useful for verbose debugging support\&. 
 .SS "\- (\fBMPSNNPaddingMethod\fP \fBMPSNNPadding\fP) paddingMethod \fC [required]\fP"
 Get the preferred padding method for the node 
 

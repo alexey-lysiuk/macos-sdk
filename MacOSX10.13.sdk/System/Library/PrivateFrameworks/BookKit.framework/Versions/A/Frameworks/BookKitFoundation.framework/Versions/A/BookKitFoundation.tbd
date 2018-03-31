@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E776C732-2DC7-3392-939C-192CEA915A75' ]
+uuids:           [ 'x86_64: 7413D382-0AAA-3593-99D2-643053A95EEF' ]
 platform:        macosx
 install-name:    '@rpath/BookKitFoundation.framework/Versions/A/BookKitFoundation'
 exports:         
@@ -18,9 +18,9 @@ exports:
                        _BKBookKitLog, _BKCFTypeCast, _BKClassAndProtocolCast, _BKDynamicCast, 
                        _BKProtocolCast, _BookKitFoundationVersionNumber, _BookKitFoundationVersionString, 
                        _copierCopyFileFinished ]
-    objc-classes:    [ _BKAssetMetadata, _BKAssetMetadataFileManager, _BKAssetMetadataIOTask, 
-                       _BKAssetMetadataInspector, _BKBOMAssetMetadataIOTask, _BKBookKitFoundationUtilities, 
-                       _BKCopyAssetMetadataIOTask, _BKInstallAssetMetadataIOTask, 
-                       _BKMutableAssetMetadata, _BKSinfRightsParser, __BKAggregatedAssetData, 
-                       __BKAggregatedAssetMetadata, __BKxPubMetadataInspector ]
+    objc-classes:    [ BKAssetMetadata, BKAssetMetadataFileManager, BKAssetMetadataIOTask, 
+                       BKAssetMetadataInspector, BKBOMAssetMetadataIOTask, BKBookKitFoundationUtilities, 
+                       BKCopyAssetMetadataIOTask, BKInstallAssetMetadataIOTask, BKMutableAssetMetadata, 
+                       BKSinfRightsParser, _BKAggregatedAssetData, _BKAggregatedAssetMetadata, 
+                       _BKxPubMetadataInspector ]
 ...

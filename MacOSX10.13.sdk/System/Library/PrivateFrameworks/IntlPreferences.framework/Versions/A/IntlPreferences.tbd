@@ -1,17 +1,17 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: A3DB41BE-6754-3A0D-8AE0-4177CFEF5413', 'x86_64: 0FF7209B-0E4D-3411-B325-03938B7C0938' ]
+uuids:           [ 'i386: 82933604-8C00-3390-B915-77973F3BF722', 'x86_64: 436BBE9B-595B-37EB-8B54-B332B6AE3E57' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IntlPreferences.framework/Versions/A/IntlPreferences
-current-version: 227
+current-version: 227.5.2
 exports:         
   - archs:           [ x86_64 ]
-    objc-ivars:      [ _ISMigrator._currentVersion, _ISMigrator._platform, _ISMigrator._preferencesAfterMigration, 
-                       _ISMigrator._preferencesBeforeMigration, _ISMigrator._previousVersion, 
-                       _IntlUtility.mBidiLanguagesArray, _IntlUtility.mBidiTestedLanguagesArray, 
-                       _IntlUtility.mDisplayLanguageCachePtr, _IntlUtility.mDisplayLanguageCacheUsed, 
-                       _MemoryStream.mLength, _MemoryStream.mMarker, _MemoryStream.mOwnsPtr, 
-                       _MemoryStream.mPtr ]
+    objc-ivars:      [ ISMigrator._currentVersion, ISMigrator._platform, ISMigrator._preferencesAfterMigration, 
+                       ISMigrator._preferencesBeforeMigration, ISMigrator._previousVersion, 
+                       IntlUtility.mBidiLanguagesArray, IntlUtility.mBidiTestedLanguagesArray, 
+                       IntlUtility.mDisplayLanguageCachePtr, IntlUtility.mDisplayLanguageCacheUsed, 
+                       MemoryStream.mLength, MemoryStream.mMarker, MemoryStream.mOwnsPtr, 
+                       MemoryStream.mPtr ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ _GetNSFriendlySeparator, _IPNameOrderFamilyNameFirstKey, _IPNameOrderGivenNameFirstKey, 
                        _IPNameOrderKey, _IPNameOrderUnsetKey, _IPPreferNicknamesDisabled, 
@@ -26,8 +26,8 @@ exports:
                        _NSPersonNameDefaultNamePreferencesDomain, _NSPersonNameDefaultShortNameEnabledKey, 
                        _NSPersonNameDefaultShortNameFormatKey, _NSPersonNameDefaultShouldPreferNicknamesKey, 
                        _NSPersonNamePreferencesDidChangeNotification, _Weak_CreateInputModeArrayForInputMethodInUIOrderWithOptions ]
-    objc-classes:    [ _IPFoundationNamePreferenceInfoProvider, _IPOSXABNamePreferenceInfoProvider, 
-                       _IPiOSABNamePreferenceInfoProvider, _ISMigrator, _IntlKbdUtility, 
-                       _IntlUtility, _MemoryStream, _NSPersonNameComponentsFormatterPreferences, 
-                       _NoHighlightTextFieldCell ]
+    objc-classes:    [ IPFoundationNamePreferenceInfoProvider, IPOSXABNamePreferenceInfoProvider, 
+                       IPiOSABNamePreferenceInfoProvider, ISMigrator, IntlKbdUtility, 
+                       IntlUtility, MemoryStream, NSPersonNameComponentsFormatterPreferences, 
+                       NoHighlightTextFieldCell ]
 ...

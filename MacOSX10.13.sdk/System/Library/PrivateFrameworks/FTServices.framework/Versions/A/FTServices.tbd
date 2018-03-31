@@ -1,27 +1,27 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 8A5B8716-A300-35E4-93C7-1F9E82854E90', 'x86_64: 621D01EA-3984-3B85-93E8-E808E80D9D3C' ]
+uuids:           [ 'i386: 66F63CF0-EA4E-3F8B-818C-F840C5461ACE', 'x86_64: 0BD6208F-5CDA-3DC0-9AAC-6AB2F8290FD1' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/FTServices.framework/Versions/A/FTServices
 current-version: 800
 exports:         
   - archs:           [ i386 ]
-    objc-classes:    [ _FTAuthKitManager, _FTEmbeddedReachability, _FTGetRegionMetadataMessage, 
-                       _FTMessageDeliveryRemoteURLConnectionFactory ]
+    objc-classes:    [ FTAuthKitManager, FTEmbeddedReachability, FTGetRegionMetadataMessage, 
+                       FTMessageDeliveryRemoteURLConnectionFactory ]
   - archs:           [ x86_64 ]
-    objc-ivars:      [ _FTMessageDelivery._retries, _FTMessageDelivery_DualMode._apsDelivery, 
-                       _FTMessageDelivery_DualMode._dualModeQueue, _FTMessageDelivery_DualMode._httpDelivery, 
-                       _FTMessageDelivery_DualMode._userAgentString, _FTNetworkSupport._criticalReliabilityEnabledState, 
-                       _FTNetworkSupport._enableCriticalReliability, _FTPasswordManager._accountStore, 
-                       _FTPasswordManager._runningQueries, _FTPasswordManager._userNotificationCenter, 
-                       _FTiMessageStatus._blockPost, _FTiMessageStatus._iMessageAllowedToken, 
-                       _FTiMessageStatus._supportsiMessage, _IDSWebTunnelRequestMessage._disableIDSTranslation, 
-                       _IDSWebTunnelRequestMessage._maximumResponseSize, _IDSWebTunnelRequestMessage._messageHeaders, 
-                       _IDSWebTunnelRequestMessage._messageRequestBodyData, _IDSWebTunnelRequestMessage._messageRequestBodyDictionary, 
-                       _IDSWebTunnelRequestMessage._messageRequestUUID, _IDSWebTunnelRequestMessage._messageURL, 
-                       _IDSWebTunnelRequestMessage._responseBodyData, _IDSWebTunnelRequestMessage._responseBodyDictionary, 
-                       _IDSWebTunnelRequestMessage._responseCode, _IDSWebTunnelRequestMessage._responseHeaders, 
-                       _IDSWebTunnelRequestMessage._responseStatus, _IDSWebTunnelRequestMessage._userAgentOverride ]
+    objc-ivars:      [ FTMessageDelivery._retries, FTMessageDelivery_DualMode._apsDelivery, 
+                       FTMessageDelivery_DualMode._dualModeQueue, FTMessageDelivery_DualMode._httpDelivery, 
+                       FTMessageDelivery_DualMode._userAgentString, FTNetworkSupport._criticalReliabilityEnabledState, 
+                       FTNetworkSupport._enableCriticalReliability, FTPasswordManager._accountStore, 
+                       FTPasswordManager._runningQueries, FTPasswordManager._userNotificationCenter, 
+                       FTiMessageStatus._blockPost, FTiMessageStatus._iMessageAllowedToken, 
+                       FTiMessageStatus._supportsiMessage, IDSWebTunnelRequestMessage._disableIDSTranslation, 
+                       IDSWebTunnelRequestMessage._maximumResponseSize, IDSWebTunnelRequestMessage._messageHeaders, 
+                       IDSWebTunnelRequestMessage._messageRequestBodyData, IDSWebTunnelRequestMessage._messageRequestBodyDictionary, 
+                       IDSWebTunnelRequestMessage._messageRequestUUID, IDSWebTunnelRequestMessage._messageURL, 
+                       IDSWebTunnelRequestMessage._responseBodyData, IDSWebTunnelRequestMessage._responseBodyDictionary, 
+                       IDSWebTunnelRequestMessage._responseCode, IDSWebTunnelRequestMessage._responseHeaders, 
+                       IDSWebTunnelRequestMessage._responseStatus, IDSWebTunnelRequestMessage._userAgentOverride ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ _FTCTRegistrationStatusCanRegisterKey, _FTCTRegistrationStatusChangedNotification, 
                        _FTCTRegistrationStatusIMSIKey, _FTCTRegistrationStatusPLMNKey, 
@@ -38,9 +38,9 @@ exports:
                        __FTAreIDsEquivalent, __FTIDSFlagsNumber, __FTProfileVersionNumber, 
                        __FZErrorTypeFromNSError, __FZErrorTypeFromResponseCodeAndError, 
                        __GenerateDigestForSigning, __GenerateNonceAndSignature ]
-    objc-classes:    [ _FTDeviceSupport, _FTEntitlementSupport, _FTIDSMessage, _FTMessageDelivery, 
-                       _FTMessageDelivery_APS, _FTMessageDelivery_DualMode, _FTMessageDelivery_HTTP, 
-                       _FTMessageQueue, _FTNetworkSupport, _FTPasswordManager, _FTRegion, 
-                       _FTRegionSupport, _FTServerBag, _FTURLRequestMessage, _FTUserConfiguration, 
-                       _FTiMessageStatus, _IDSWebTunnelRequestMessage ]
+    objc-classes:    [ FTDeviceSupport, FTEntitlementSupport, FTIDSMessage, FTMessageDelivery, 
+                       FTMessageDelivery_APS, FTMessageDelivery_DualMode, FTMessageDelivery_HTTP, 
+                       FTMessageQueue, FTNetworkSupport, FTPasswordManager, FTRegion, 
+                       FTRegionSupport, FTServerBag, FTURLRequestMessage, FTUserConfiguration, 
+                       FTiMessageStatus, IDSWebTunnelRequestMessage ]
 ...

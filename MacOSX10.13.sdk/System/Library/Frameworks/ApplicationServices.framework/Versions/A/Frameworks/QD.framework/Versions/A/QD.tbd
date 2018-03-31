@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 372AFF26-17D1-3C6F-9E47-17C955C2045B', 'x86_64: 38D8106A-4FFA-3FE9-9999-714CADD7EE9C' ]
+uuids:           [ 'i386: 113D0ECA-A6B2-39A7-AE1E-CAE7B40A3CAF', 'x86_64: 38B20AFF-9D54-3B52-A6DC-C0D71380AA5F' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/QD.framework/Versions/A/QD
 current-version: 302

@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 99F2CAE7-8804-3C42-B858-1042CD2FF051' ]
+uuids:           [ 'x86_64: 83AD5238-5E80-3DBD-A170-9EC2A1610FD0' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DigitalTouchShared.framework/Versions/A/DigitalTouchShared
 exports:         
@@ -41,23 +41,22 @@ exports:
                        _kETDomain, _kETEarlyLoadEnabled, _kETLastInteractiveZoomLevelKey, 
                        _kETLoggingEnabledDefaultsKey, _kETSceneLoggingEnabledDefaultsKey, 
                        _releasePixels ]
-    objc-classes:    [ _ETAngerMessage, _ETBoxcarFilterPointFIFO, _ETGLSketchRenderer, 
-                       _ETGLSketchView, _ETHeartbeatMessage, _ETKissMessage, _ETMessage, 
-                       _ETMessageHeaderReader, _ETPAnger, _ETPDoodle, _ETPHeader, 
-                       _ETPHeartbeat, _ETPKiss, _ETPReadReceipt, _ETPTap, _ETPVideo, 
-                       _ETPointFIFO, _ETQuadCurvePointFIFO, _ETQuickTapMessage, _ETReadReceiptMessage, 
-                       _ETSketchMessage, _ETTapMessage, _ETUtility, _ETVideoMessage, 
-                       _KissNode ]
-    objc-ivars:      [ _ETPAnger._duration, _ETPAnger._has, _ETPAnger._normalizedCenterX, 
-                       _ETPAnger._normalizedCenterY, _ETPDoodle._colorData, _ETPDoodle._doodleCount, 
-                       _ETPDoodle._doodleData, _ETPDoodle._has, _ETPDoodle._pointTimeDeltaData, 
-                       _ETPHeader._baseColor, _ETPHeader._has, _ETPHeader._identifier, 
-                       _ETPHeader._messageData, _ETPHeader._messageType, _ETPHeader._sendDate, 
-                       _ETPHeader._startDelay, _ETPHeader._supportsPlaybackTimeOffsets, 
-                       _ETPHeartbeat._beatsPerMinute, _ETPHeartbeat._duration, _ETPHeartbeat._has, 
-                       _ETPHeartbeat._heartbreakTime, _ETPHeartbeat._normalizedCenterX, 
-                       _ETPHeartbeat._normalizedCenterY, _ETPHeartbeat._rotation, 
-                       _ETPKiss._angles, _ETPKiss._delays, _ETPKiss._points, _ETPTap._colors, 
-                       _ETPTap._points, _ETPTap._timeDeltas, _ETPVideo._has, _ETPVideo._introMessageData, 
-                       _ETPVideo._mediaType, _ETPVideo._playingMessagesData ]
+    objc-classes:    [ ETAngerMessage, ETBoxcarFilterPointFIFO, ETGLSketchRenderer, 
+                       ETGLSketchView, ETHeartbeatMessage, ETKissMessage, ETMessage, 
+                       ETMessageHeaderReader, ETPAnger, ETPDoodle, ETPHeader, ETPHeartbeat, 
+                       ETPKiss, ETPReadReceipt, ETPTap, ETPVideo, ETPointFIFO, ETQuadCurvePointFIFO, 
+                       ETQuickTapMessage, ETReadReceiptMessage, ETSketchMessage, 
+                       ETTapMessage, ETUtility, ETVideoMessage, KissNode ]
+    objc-ivars:      [ ETPAnger._duration, ETPAnger._has, ETPAnger._normalizedCenterX, 
+                       ETPAnger._normalizedCenterY, ETPDoodle._colorData, ETPDoodle._doodleCount, 
+                       ETPDoodle._doodleData, ETPDoodle._has, ETPDoodle._pointTimeDeltaData, 
+                       ETPHeader._baseColor, ETPHeader._has, ETPHeader._identifier, 
+                       ETPHeader._messageData, ETPHeader._messageType, ETPHeader._sendDate, 
+                       ETPHeader._startDelay, ETPHeader._supportsPlaybackTimeOffsets, 
+                       ETPHeartbeat._beatsPerMinute, ETPHeartbeat._duration, ETPHeartbeat._has, 
+                       ETPHeartbeat._heartbreakTime, ETPHeartbeat._normalizedCenterX, 
+                       ETPHeartbeat._normalizedCenterY, ETPHeartbeat._rotation, ETPKiss._angles, 
+                       ETPKiss._delays, ETPKiss._points, ETPTap._colors, ETPTap._points, 
+                       ETPTap._timeDeltas, ETPVideo._has, ETPVideo._introMessageData, 
+                       ETPVideo._mediaType, ETPVideo._playingMessagesData ]
 ...

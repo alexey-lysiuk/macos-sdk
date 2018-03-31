@@ -1,20 +1,19 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
 uuids:           [ 'i386: 0AF5BA38-2FE8-3A65-9B1C-069D10F4C6DF', 'x86_64: 3926686E-AFC7-381C-BA85-FB2A77A833BA' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Calculate.framework/Versions/A/Calculate
 exports:         
   - archs:           [ x86_64 ]
-    objc-ivars:      [ _Converter._additionalResults, _Converter._conversionType, 
-                       _Converter._currencyUpdateTimeOut, _Converter._inputString, 
-                       _Converter._inputUnit, _Converter._inputValue, _Converter._isCurrency, 
-                       _Converter._localizedInputValueAndUnit, _Converter._localizedOutputUnit, 
-                       _Converter._localizedOutputValue, _Converter._localizedOutputValueAndUnit, 
-                       _Converter._outputUnit, _Converter._outputValue, _CurrencyCache._currencyData, 
-                       _CurrencyCache._currentCurrency, _CurrencyCache._currentRate, 
-                       _CurrencyCache._currentString, _CurrencyCache._lastRefreshDate, 
-                       _CurrencyCache._mutableCurrencyCache, _CurrencyCache._serializer, 
-                       _CurrencyCache._uuid ]
+    objc-ivars:      [ Converter._additionalResults, Converter._conversionType, Converter._currencyUpdateTimeOut, 
+                       Converter._inputString, Converter._inputUnit, Converter._inputValue, 
+                       Converter._isCurrency, Converter._localizedInputValueAndUnit, 
+                       Converter._localizedOutputUnit, Converter._localizedOutputValue, 
+                       Converter._localizedOutputValueAndUnit, Converter._outputUnit, 
+                       Converter._outputValue, CurrencyCache._currencyData, CurrencyCache._currentCurrency, 
+                       CurrencyCache._currentRate, CurrencyCache._currentString, 
+                       CurrencyCache._lastRefreshDate, CurrencyCache._mutableCurrencyCache, 
+                       CurrencyCache._serializer, CurrencyCache._uuid ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ _CalculateExpression, _CalculateExpressionError, _CalculateInternationalExpression, 
                        _CalculatePerformExpression, ___bid128_abs, ___bid128_acos, 
@@ -109,5 +108,5 @@ exports:
                        _bid_f128_sincosd, _bid_f128_sind, _bid_f128_sinh, _bid_f128_sinhcosh, 
                        _bid_f128_sqrt, _bid_f128_sub, _bid_f128_tan, _bid_f128_tand, 
                        _bid_f128_tanh, _bid_f128_tgamma, _bid_f128_trunc, _signgam ]
-    objc-classes:    [ _Converter, _CurrencyCache ]
+    objc-classes:    [ Converter, CurrencyCache ]
 ...

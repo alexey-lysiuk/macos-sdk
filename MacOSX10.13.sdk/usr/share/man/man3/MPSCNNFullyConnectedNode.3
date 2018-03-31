@@ -1,4 +1,4 @@
-.TH "MPSCNNFullyConnectedNode" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "MPSCNNFullyConnectedNode" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -27,7 +27,7 @@ Inherits \fBMPSCNNConvolutionNode\fP\&.
 .SS "Additional Inherited Members"
 .SH "Detailed Description"
 .PP 
-A \fBMPSNNFilterNode\fP representing a \fBMPSCNNFullyConnected\fP kernel 
+\fBA\fP \fBMPSNNFilterNode\fP representing a \fBMPSCNNFullyConnected\fP kernel 
 .SH "Method Documentation"
 .PP 
 .SS "\- (nonnull instancetype) initWithSource: (\fBMPSNNImageNode\fP *__nonnull) sourceNode(nonnull id< \fBMPSCNNConvolutionDataSource\fP >) weights"
@@ -37,12 +37,12 @@ Init a node representing a \fBMPSCNNFullyConnected\fP kernel
 .RS 4
 \fIsourceNode\fP The \fBMPSNNImageNode\fP representing the source \fBMPSImage\fP for the filter 
 .br
-\fIweights\fP A pointer to a valid object conforming to the \fBMPSCNNConvolutionDataSource\fP protocol\&. This object is provided by you to encapsulate storage for convolution weights and biases\&. 
+\fIweights\fP \fBA\fP pointer to a valid object conforming to the \fBMPSCNNConvolutionDataSource\fP protocol\&. This object is provided by you to encapsulate storage for convolution weights and biases\&. 
 .RE
 .PP
 \fBReturns:\fP
 .RS 4
-A new MPSNNFilter node for a \fBMPSCNNFullyConnected\fP kernel\&. 
+\fBA\fP new MPSNNFilter node for a \fBMPSCNNFullyConnected\fP kernel\&. 
 .RE
 .PP
 
@@ -55,12 +55,12 @@ Init an autoreleased not representing a \fBMPSCNNFullyConnected\fP kernel
 .RS 4
 \fIsourceNode\fP The \fBMPSNNImageNode\fP representing the source \fBMPSImage\fP for the filter 
 .br
-\fIweights\fP A pointer to a valid object conforming to the \fBMPSCNNConvolutionDataSource\fP protocol\&. This object is provided by you to encapsulate storage for convolution weights and biases\&. 
+\fIweights\fP \fBA\fP pointer to a valid object conforming to the \fBMPSCNNConvolutionDataSource\fP protocol\&. This object is provided by you to encapsulate storage for convolution weights and biases\&. 
 .RE
 .PP
 \fBReturns:\fP
 .RS 4
-A new MPSNNFilter node for a \fBMPSCNNConvolution\fP kernel\&. 
+\fBA\fP new MPSNNFilter node for a \fBMPSCNNConvolution\fP kernel\&. 
 .RE
 .PP
 

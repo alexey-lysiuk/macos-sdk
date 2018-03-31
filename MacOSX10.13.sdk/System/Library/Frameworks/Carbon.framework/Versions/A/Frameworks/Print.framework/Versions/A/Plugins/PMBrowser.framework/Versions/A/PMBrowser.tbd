@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F1CB5255-3D6D-3DE6-875F-011CD01EC3A0' ]
+uuids:           [ 'x86_64: 57FE2D84-143F-3EB2-BEC5-5DBBB0D2018A' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Print.framework/Versions/A/Plugins/PMBrowser.framework/Versions/A/PMBrowser
 current-version: 0
@@ -35,18 +35,18 @@ exports:
                        _examineFile, _getKnownDevices, _getPrinters, _open_pipe, 
                        _serverSupportsKerberos, _start_process, _str_for_ioreturn, 
                        _supportsCurrentArcitecture, _supportsIntelArcitecture, _supportsPowerPCArcitecture ]
-    objc-classes:    [ _DNSSDBrowser, _DNSSDConfigure, _DNSSDPrinter, _DNSServiceObject, 
-                       _FilteringArrayController, _IPPrinter, _PMBrowserNoUIPlugin, 
-                       _PMBrowserPlugin, _PMBrowserPrinter, _PMPPDPopUpButton, _PMPluginsManager, 
-                       _PPDManager, _PPDPickerWindowController, _PrinterConfigure, 
-                       _PrinterInspector, _QueueCreationFieldFormatter, _ScannerPrinter ]
-    objc-ivars:      [ _FilteringArrayController._searchString, _PMBrowserPlugin._printersInspector, 
-                       _PMBrowserPlugin._printersView, _PPDPickerWindowController._driversTable, 
-                       _PPDPickerWindowController._otherButton, _PPDPickerWindowController._ppdPickerTopLevelNibObjects, 
-                       _PPDPickerWindowController._ppdsController, _PrinterInspector._driversPopup, 
-                       _PrinterInspector._driversScroller, _PrinterInspector._driversTable, 
-                       _PrinterInspector._ppdsController, _PrinterInspector._printerInspector, 
-                       _PrinterInspector._printerLocation, _PrinterInspector._printerName, 
-                       _PrinterInspector._printerText, _PrinterInspector._progressIndicator, 
-                       _PrinterInspector._topView ]
+    objc-classes:    [ DNSSDBrowser, DNSSDConfigure, DNSSDPrinter, DNSServiceObject, 
+                       FilteringArrayController, IPPrinter, PMBrowserNoUIPlugin, 
+                       PMBrowserPlugin, PMBrowserPrinter, PMPPDPopUpButton, PMPluginsManager, 
+                       PPDManager, PPDPickerWindowController, PrinterConfigure, PrinterInspector, 
+                       QueueCreationFieldFormatter, ScannerPrinter ]
+    objc-ivars:      [ FilteringArrayController._searchString, PMBrowserPlugin._printersInspector, 
+                       PMBrowserPlugin._printersView, PPDPickerWindowController._driversTable, 
+                       PPDPickerWindowController._otherButton, PPDPickerWindowController._ppdPickerTopLevelNibObjects, 
+                       PPDPickerWindowController._ppdsController, PrinterInspector._driversPopup, 
+                       PrinterInspector._driversScroller, PrinterInspector._driversTable, 
+                       PrinterInspector._ppdsController, PrinterInspector._printerInspector, 
+                       PrinterInspector._printerLocation, PrinterInspector._printerName, 
+                       PrinterInspector._printerText, PrinterInspector._progressIndicator, 
+                       PrinterInspector._topView ]
 ...

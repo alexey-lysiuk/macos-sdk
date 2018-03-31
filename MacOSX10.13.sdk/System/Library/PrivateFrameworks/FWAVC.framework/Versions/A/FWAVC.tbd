@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: BE96B0F6-F868-3054-A122-2D5E8D97D6ED', 'x86_64: 510FBAA9-95FE-368F-979A-3AA96FC07503' ]
+uuids:           [ 'i386: A2D1A5B2-5303-3A64-B413-622E9EE69269', 'x86_64: 967DC472-1E18-3318-992E-471FD22CF8D1' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/FWAVC.framework/Versions/A/FWAVC
 current-version: 46

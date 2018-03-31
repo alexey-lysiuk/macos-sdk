@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 20358A6F-D9AD-350F-B3D5-9D0988BAB017', 'x86_64: 0A87A91C-A2CF-3BB1-9038-7F610111BC30' ]
+uuids:           [ 'i386: DFFFED5D-D7EE-356C-A114-E81A51FA04CC', 'x86_64: 35A43584-2AF8-3202-A139-27D916E444BE' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreDaemon.framework/Versions/B/CoreDaemon
 current-version: 3

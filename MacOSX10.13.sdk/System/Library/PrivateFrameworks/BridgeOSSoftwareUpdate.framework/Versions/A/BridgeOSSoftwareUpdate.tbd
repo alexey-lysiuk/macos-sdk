@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E673DF2C-5035-31E4-86EF-B6E29E4D8D04' ]
+uuids:           [ 'x86_64: BC6F3E3F-0F93-3560-B93A-43AD091F3ED5' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/BridgeOSSoftwareUpdate.framework/Versions/A/BridgeOSSoftwareUpdate
 objc-constraint: none
@@ -15,11 +15,13 @@ exports:
                        _BridgeOSSoftwareUpdateKeyPreviousUpdateError, _BridgeOSSoftwareUpdateKeyPreviousUpdateState, 
                        _BridgeOSSoftwareUpdateKeyState, _BridgeOSSoftwareUpdateKeyTargetOSBuildVersion, 
                        _BridgeOSSoftwareUpdateKeyUpdateBrainBuildVersion, _BridgeOSSoftwareUpdateKeyUpdateBrainSourceVersion, 
-                       _BridgeOSSoftwareUpdateOptionKeyClientContext, _BridgeOSSoftwareUpdateOptionKeyEnableSSO, 
+                       _BridgeOSSoftwareUpdateKeyUpdateUUIDString, _BridgeOSSoftwareUpdateOptionKeyClientContext, 
+                       _BridgeOSSoftwareUpdateOptionKeyEnableSSO, _BridgeOSSoftwareUpdateOptionKeyEventRecordingServiceURL, 
                        _BridgeOSSoftwareUpdateOptionKeyLoopbackEnabled, _BridgeOSSoftwareUpdateOptionKeyLoopbackError, 
-                       _BridgeOSSoftwareUpdateOptionKeyLoopbackResults, _BridgeOSSoftwareUpdateOptionsKeyResetTestMode, 
+                       _BridgeOSSoftwareUpdateOptionKeyLoopbackResults, _BridgeOSSoftwareUpdateOptionKeyMaxLogSizeKB, 
+                       _BridgeOSSoftwareUpdateOptionKeyUpdateUUIDString, _BridgeOSSoftwareUpdateOptionsKeyResetTestMode, 
                        _BridgeOSSoftwareUpdateOptionsKeyTestModeEnabled, _BridgeOSSoftwareUpdateOptionsKeyTestModeNumProgressReports, 
                        _BridgeOSSoftwareUpdateOptionsKeyTestModeOperationDuration, 
                        _BridgeOSSoftwareUpdateOptionsKeyTestModeOperationError, _bridgeOSUpdateError ]
-    objc-classes:    [ _BridgeOSSoftwareUpdateController ]
+    objc-classes:    [ BridgeOSSoftwareUpdateController ]
 ...

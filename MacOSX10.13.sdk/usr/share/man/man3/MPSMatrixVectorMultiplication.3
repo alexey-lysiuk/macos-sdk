@@ -1,4 +1,4 @@
-.TH "MPSMatrixVectorMultiplication" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "MPSMatrixVectorMultiplication" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -31,9 +31,9 @@ Inherits \fBMPSMatrixBinaryKernel\fP\&.
 .PP 
 This depends on Metal\&.framework\&.
 .PP
-A matrix-vector multiplication kernel\&.
+\fBA\fP matrix-vector multiplication kernel\&.
 .PP
-A \fBMPSMatrixVectorMultiplication\fP object computes: 
+\fBA\fP \fBMPSMatrixVectorMultiplication\fP object computes: 
 .PP
 .nf
             y = alpha * op(A) * x + beta * y
@@ -51,18 +51,18 @@ A \fBMPSMatrixVectorMultiplication\fP object computes:
  
 .SH "Method Documentation"
 .PP 
-.SS "\- (void) encodeToCommandBuffer: (nonnull id< MTLCommandBuffer >) commandBuffer(\fBMPSMatrix\fP const *__nonnull) inputMatrix(\fBMPSVector\fP const *__nonnull) inputVector(\fBMPSVector\fP *__nonnull) resultVector"
+.SS "\- (void) encodeToCommandBuffer: (nonnull id< MTLCommandBuffer >) commandBuffer(\fBMPSMatrix\fP *__nonnull) inputMatrix(\fBMPSVector\fP *__nonnull) inputVector(\fBMPSVector\fP *__nonnull) resultVector"
 Encode a \fBMPSMatrixVectorMultiplication\fP object to a command buffer\&.
 .PP
 \fBParameters:\fP
 .RS 4
-\fIcommandBuffer\fP A valid MTLCommandBuffer to receive the encoded kernel\&.
+\fIcommandBuffer\fP \fBA\fP valid MTLCommandBuffer to receive the encoded kernel\&.
 .br
-\fIinputMatrix\fP A valid \fBMPSMatrix\fP object which specifies the input matrix A\&.
+\fIinputMatrix\fP \fBA\fP valid \fBMPSMatrix\fP object which specifies the input matrix \fBA\fP\&.
 .br
-\fIinputVector\fP A valid \fBMPSVector\fP object which specifies the input vector x\&.
+\fIinputVector\fP \fBA\fP valid \fBMPSVector\fP object which specifies the input vector x\&.
 .br
-\fIresultVector\fP A valid \fBMPSVector\fP object which specifies the addend vector which will also be overwritten by the result\&.
+\fIresultVector\fP \fBA\fP valid \fBMPSVector\fP object which specifies the addend vector which will also be overwritten by the result\&.
 .RE
 .PP
 The left input matrix must be large enough to hold an array of size (rows x columns) elements beginning at primarySourceMatrixOrigin\&.
@@ -81,14 +81,14 @@ Convenience initialization for a matrix-vector multiplication with no transposit
 .RS 4
 \fIdevice\fP The device on which the kernel will execute\&.
 .br
-\fIrows\fP The number of rows in the input matrix A, and the number of elements in the vector y\&.
+\fIrows\fP The number of rows in the input matrix \fBA\fP, and the number of elements in the vector y\&.
 .br
-\fIcolumns\fP The number of columns in the input matrix A, and the number of elements in the input vector x\&.
+\fIcolumns\fP The number of columns in the input matrix \fBA\fP, and the number of elements in the input vector x\&.
 .RE
 .PP
 \fBReturns:\fP
 .RS 4
-A valid \fBMPSMatrixVectorMultiplication\fP object or nil, if failure\&. 
+\fBA\fP valid \fBMPSMatrixVectorMultiplication\fP object or nil, if failure\&. 
 .RE
 .PP
 
@@ -99,7 +99,7 @@ Initialize an \fBMPSMatrixVectorMultiplication\fP object on a device for a given
 .RS 4
 \fIdevice\fP The device on which the kernel will execute\&.
 .br
-\fItranspose\fP A boolean value which indicates if the input matrix should be used in transposed form\&. if 'YES' then op(A) == A**T, otherwise op(A) == A\&.
+\fItranspose\fP \fBA\fP boolean value which indicates if the input matrix should be used in transposed form\&. if 'YES' then op(A) == A**T, otherwise op(A) == \fBA\fP\&.
 .br
 \fIrows\fP The number of rows in the input matrix op(A), and the number of elements in the vector y\&.
 .br
@@ -112,7 +112,7 @@ Initialize an \fBMPSMatrixVectorMultiplication\fP object on a device for a given
 .PP
 \fBReturns:\fP
 .RS 4
-A valid \fBMPSMatrixVectorMultiplication\fP object or nil, if failure\&. 
+\fBA\fP valid \fBMPSMatrixVectorMultiplication\fP object or nil, if failure\&. 
 .RE
 .PP
 

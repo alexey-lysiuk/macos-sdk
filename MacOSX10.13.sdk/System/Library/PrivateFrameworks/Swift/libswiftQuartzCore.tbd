@@ -1,10 +1,10 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EEFA0648-4DDD-3A0C-92B4-AD1787902373' ]
+uuids:           [ 'x86_64: BE895AB7-8638-3D9B-98BC-1D707312ED78' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Swift/libswiftQuartzCore.dylib
 current-version: 900.8.49
-swift-version:   5
+swift-abi-version: 5
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ __T0SC13CATransform3DV10QuartzCoreE19_bridgeToObjectiveCSo7NSValueCyF, 

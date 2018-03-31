@@ -1,4 +1,4 @@
-.TH "MPSCNNNeuronNode" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "MPSCNNNeuronNode" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -11,7 +11,7 @@ MPSCNNNeuronNode
 .PP
 Inherits \fBMPSNNFilterNode\fP\&.
 .PP
-Inherited by \fBMPSCNNNeuronAbsoluteNode\fP, \fBMPSCNNNeuronELUNode\fP, \fBMPSCNNNeuronHardSigmoidNode\fP, \fBMPSCNNNeuronLinearNode\fP, \fBMPSCNNNeuronPReLUNode\fP, \fBMPSCNNNeuronReLUNNode\fP, \fBMPSCNNNeuronReLUNode\fP, \fBMPSCNNNeuronSigmoidNode\fP, \fBMPSCNNNeuronSoftPlusNode\fP, \fBMPSCNNNeuronSoftSignNode\fP, and \fBMPSCNNNeuronTanHNode\fP\&.
+Inherited by \fBMPSCNNNeuronAbsoluteNode\fP, \fBMPSCNNNeuronELUNode\fP, \fBMPSCNNNeuronExponentialNode\fP, \fBMPSCNNNeuronHardSigmoidNode\fP, \fBMPSCNNNeuronLinearNode\fP, \fBMPSCNNNeuronLogarithmNode\fP, \fBMPSCNNNeuronPowerNode\fP, \fBMPSCNNNeuronPReLUNode\fP, \fBMPSCNNNeuronReLUNNode\fP, \fBMPSCNNNeuronReLUNode\fP, \fBMPSCNNNeuronSigmoidNode\fP, \fBMPSCNNNeuronSoftPlusNode\fP, \fBMPSCNNNeuronSoftSignNode\fP, and \fBMPSCNNNeuronTanHNode\fP\&.
 .SS "Instance Methods"
 
 .in +1c
@@ -28,6 +28,9 @@ Inherited by \fBMPSCNNNeuronAbsoluteNode\fP, \fBMPSCNNNeuronELUNode\fP, \fBMPSCN
 .ti -1c
 .RI "float \fBb\fP"
 .br
+.ti -1c
+.RI "float \fBc\fP"
+.br
 .in -1c
 .SH "Method Documentation"
 .PP 
@@ -41,6 +44,8 @@ Reimplemented from \fBMPSNNFilterNode\fP\&.
 filter parameter a 
 .SS "\- (float) b\fC [read]\fP, \fC [nonatomic]\fP, \fC [assign]\fP"
 filter parameter b 
+.SS "\- (float) c\fC [read]\fP, \fC [nonatomic]\fP, \fC [assign]\fP"
+filter parameter c 
 
 .SH "Author"
 .PP 

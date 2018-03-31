@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: BB67BFE9-828D-3F58-9BC1-9DBAE90AC63D', 'x86_64: 4B2F08F4-E7C7-3996-947A-1BC90EEF29CB' ]
+uuids:           [ 'i386: 2F46BB6F-829C-38AB-B2D3-D94463122E93', 'x86_64: C74764E9-1571-305F-9B0B-C8D84E708FE7' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/PCSC.framework/Versions/A/PCSC
 objc-constraint: none

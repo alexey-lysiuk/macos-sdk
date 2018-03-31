@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 84E024A0-5F95-3A30-A60B-102343AE46B7' ]
+uuids:           [ 'x86_64: C021A0EB-82E7-3A1E-A772-96B0E7E038D9' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ChunkingLibrary.framework/Versions/A/ChunkingLibrary
-current-version: 188
+current-version: 189
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

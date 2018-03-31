@@ -28,7 +28,7 @@ SF_CLASS_AVAILABLE_MAC_SAFARI(10_0)
 - (void)getPagesWithCompletionHandler:(void (^)(NSArray <SFSafariPage *> * _Nullable pages))completionHandler;
 
 /// Activates this tab in the window it belongs to.
-- (void)activateWithCompletionHandler:(void (^ _Nullable)())completionHandler;
+- (void)activateWithCompletionHandler:(void (^ _Nullable)(void))completionHandler;
 
 @end
 

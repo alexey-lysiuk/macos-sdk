@@ -1,4 +1,4 @@
-.TH "MPSImageStatisticsMean" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "MPSImageStatisticsMean" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -45,7 +45,7 @@ The \fBMPSImageStatisticsMean\fP computes the mean for a given region of an imag
 .PP
 \fBReturns:\fP
 .RS 4
-A new \fBMPSKernel\fP object, or nil if failure\&. 
+\fBA\fP new \fBMPSKernel\fP object, or nil if failure\&. 
 .RE
 .PP
 
@@ -61,7 +61,7 @@ Specifies information to apply the statistics mean operation on an image\&.
 .PP
 \fBReturns:\fP
 .RS 4
-A valid \fBMPSImageStatisticsMean\fP object or nil, if failure\&. 
+\fBA\fP valid \fBMPSImageStatisticsMean\fP object or nil, if failure\&. 
 .RE
 .PP
 
@@ -70,7 +70,7 @@ Reimplemented from \fBMPSUnaryImageKernel\fP\&.
 .SH "Property Documentation"
 .PP 
 .SS "\- clipRectSource\fC [read]\fP, \fC [write]\fP, \fC [nonatomic]\fP, \fC [assign]\fP"
-The source rectangle to use when reading data\&.  A MTLRegion that indicates which part of the source to read\&. If the clipRectSource does not lie completely within the source image, the intersection of the image bounds and clipRectSource will be used\&. The clipRectSource replaces the \fBMPSUnaryImageKernel\fP offset parameter for this filter\&. The latter is ignored\&. Default: MPSRectNoClip, use the entire source texture\&.
+The source rectangle to use when reading data\&.  \fBA\fP MTLRegion that indicates which part of the source to read\&. If the clipRectSource does not lie completely within the source image, the intersection of the image bounds and clipRectSource will be used\&. The clipRectSource replaces the \fBMPSUnaryImageKernel\fP offset parameter for this filter\&. The latter is ignored\&. Default: MPSRectNoClip, use the entire source texture\&.
 .PP
 The clipRect specified in \fBMPSUnaryImageKernel\fP is used to control the origin in the destination texture where the mean value is written\&. 
 

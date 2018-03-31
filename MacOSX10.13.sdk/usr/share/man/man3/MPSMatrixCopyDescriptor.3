@@ -1,4 +1,4 @@
-.TH "MPSMatrixCopyDescriptor" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "MPSMatrixCopyDescriptor" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -51,7 +51,7 @@ initialize a \fBMPSMatrixCopyDescriptor\fP with default values\&.  Use -setCopyO
 .PP
 \fBReturns:\fP
 .RS 4
-A \fBMPSMatrixCopyDescriptor\fP\&. It still needs to be initialized with -setCopyOperationAtIndex:sourceMatrix:destinationMatrix:copyOffsets 
+\fBA\fP \fBMPSMatrixCopyDescriptor\fP\&. It still needs to be initialized with -setCopyOperationAtIndex:sourceMatrix:destinationMatrix:copyOffsets 
 .RE
 .PP
 
@@ -60,18 +60,18 @@ Initialize a \fBMPSMatrixCopyDescriptor\fP using offsets generated on the GPU  U
 .PP
 \fBParameters:\fP
 .RS 4
-\fIsourceMatrices\fP A list of matrices from which the matrix data is read 
+\fIsourceMatrices\fP \fBA\fP list of matrices from which the matrix data is read 
 .br
-\fIdestinationMatrices\fP A list of matrices to which to write the data\&. The count must match the number of source matrices\&. 
+\fIdestinationMatrices\fP \fBA\fP list of matrices to which to write the data\&. The count must match the number of source matrices\&. 
 .br
-\fIoffsets\fP A \fBMPSVector\fP of type MPSDataTypeUInt32 containing the list of offsets, stored as a packed array of \fBMPSMatrixCopyOffsets\fP\&. 
+\fIoffsets\fP \fBA\fP \fBMPSVector\fP of type MPSDataTypeUInt32 containing the list of offsets, stored as a packed array of \fBMPSMatrixCopyOffsets\fP\&. 
 .br
-\fIbyteOffset\fP A byte offset into the offsets vector where the data starts\&. This value must be a multiple of 16\&. 
+\fIbyteOffset\fP \fBA\fP byte offset into the offsets vector where the data starts in 'offsets'\&. This value must be a multiple of 16\&. 
 .RE
 .PP
 \fBReturns:\fP
 .RS 4
-A valid \fBMPSMatrixCopyDescriptor\fP to represent the list of copy operations 
+\fBA\fP valid \fBMPSMatrixCopyDescriptor\fP to represent the list of copy operations 
 .RE
 .PP
 

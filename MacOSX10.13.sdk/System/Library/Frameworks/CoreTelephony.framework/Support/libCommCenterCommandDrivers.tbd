@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E6A24C21-AA4C-31ED-9640-952CE50F602B' ]
+uuids:           [ 'x86_64: 8ED9AD54-8F15-3B78-BFC9-E09B0B942E45' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreTelephony.framework/Support/libCommCenterCommandDrivers.dylib
 objc-constraint: none
@@ -28,6 +28,7 @@ exports:
                        __Z16write_rest_valueRK8UmtsCell, __Z16write_rest_valueRK9MCCAndMNC, 
                        __Z18decodeOperatorNamePKN3ctu10LoggerBaseINSt3__110shared_ptrINS_9LogServerEEEEERKNS1_6vectorIhNS1_9allocatorIhEEEE16DataCodingScheme, 
                        __Z19enforceStringIsUtf8PKN3ctu10LoggerBaseINSt3__110shared_ptrINS_9LogServerEEEEERNS1_12basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE, 
+                       __Z21convertLteMaskToBandsy, __Z23convertLteBandToInteger7LTEBand, 
                        __Z3end8FileType, __Z5begin8FileType, __Z8asString10Technology, 
                        __Z8asString14DormancyStatus, __Z8asString14FileFormatType, 
                        __Z8asString14FilePushReason, __Z8asString18FileTransferResult, 
@@ -157,6 +158,7 @@ exports:
                        __ZN21CommandDriversFactory31createWiFiSettingsCommandDriverEN8dispatch5queueE, 
                        __ZN21CommandDriversFactory33createSignalStrengthCommandDriverEN8dispatch5queueE, 
                        __ZN21CommandDriversFactory35createBasebandSettingsCommandDriverEN8dispatch5queueE, 
+                       __ZN21CommandDriversFactory36createPreferredNetworksCommandDriverEN8dispatch5queueE, 
                        __ZN21CommandDriversFactory38createNetworkRegistrationCommandDriverE15NetworkInstance, 
                        __ZN21CommandDriversFactory4initERKNSt3__110shared_ptrI8RegistryEE, 
                        __ZN21CommandDriversFactory6createERKNSt3__110shared_ptrI8RegistryEE, 
@@ -344,7 +346,7 @@ exports:
                        __ZNK8cellplan23RemoteSimSelectionModel6getCsnEv, __ZNK8cellplan23RemoteSimSelectionModel8getIccidEv, 
                        __ZNK8cellplan23RemoteSimSelectionModel9getStatusEv, __ZNK8cellplan23RemoteSimSelectionModelcvbEv, 
                        __ZNK8cellplan23RemoteSimSelectionModeleqERKS0_, __ZNK8cellplan23RemoteSimSelectionModelneERKS0_, 
-                       __ZNK8cellplan25RemoteSimSubscriptionInfo15isSimReadyToUseEv, 
+                       __ZNK8cellplan25RemotePlanPhoneDeviceInfoeqERKS0_, __ZNK8cellplan25RemoteSimSubscriptionInfo15isSimReadyToUseEv, 
                        __ZNK8cellplan26RemotePlanSubscriptionInfoeqERKS0_, __ZNK8cellplan38RemotePlanSubscriptionPairedDeviceInfoeqERKS0_, 
                        __ZTI10SelectItem, __ZTI10SetupEvent, __ZTI11DisplayText, 
                        __ZTI11OpenChannel, __ZTI11ReceiveData, __ZTI12CloseChannel, 

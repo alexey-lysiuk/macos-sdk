@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EB09A976-9626-3B76-A3E0-C0F23B2635DF' ]
+uuids:           [ 'x86_64: 73E677FA-97B8-36AF-8DF2-445975BE110F' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/ExternalAccessory.framework/ExternalAccessory
 objc-constraint: none
@@ -70,5 +70,5 @@ exports:
                        _kCFAccessoryPortPropertySupportedSampleRatesInHz, _kCFAccessoryPortPropertyVolumeControlIsSupported, 
                        _kCFAccessoryPortPropertyVolumeScalar, _kCFAccessoryPortUSBIn, 
                        _kCFAccessoryPortUSBOut ]
-    objc-classes:    [ _EAAccessory, _EAAccessoryManager, _EASession ]
+    objc-classes:    [ EAAccessory, EAAccessoryManager, EASession ]
 ...

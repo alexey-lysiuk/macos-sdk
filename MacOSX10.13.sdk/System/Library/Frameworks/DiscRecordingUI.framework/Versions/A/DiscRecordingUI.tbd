@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: B6B11024-4E23-3158-8378-6009F0056B4F', 'x86_64: 9D271340-4DFC-3294-8BFC-6C6FD5086E44' ]
+uuids:           [ 'i386: C3E147C4-26AE-377B-AB1B-30B2583BDFF3', 'x86_64: ECD9EBB9-F2C9-3314-9BB2-80E6A895BB7D' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/DiscRecordingUI.framework/Versions/A/DiscRecordingUI
 exports:         
@@ -14,8 +14,8 @@ exports:
                        _DREraseSessionGetErase, _DREraseSessionGetTypeID, _DREraseSessionSetErase, 
                        _DREraseSessionSetupDialog, _DRMediaEraseControllerDidFailToEjectNotification, 
                        _DRSetupPanelPropertiesDidChangeNotification ]
-    objc-classes:    [ _DRBurnProgressPanel, _DRBurnSetupPanel, _DRDeviceArrayController, 
-                       _DRDeviceChooser, _DRDeviceChooserCell, _DRDeviceObjectController, 
-                       _DREraseProgressPanel, _DREraseSetupPanel, _DRMediaEraseController, 
-                       _DROpticalDiscEraseView, _DRSetupPanel ]
+    objc-classes:    [ DRBurnProgressPanel, DRBurnSetupPanel, DRDeviceArrayController, 
+                       DRDeviceChooser, DRDeviceChooserCell, DRDeviceObjectController, 
+                       DREraseProgressPanel, DREraseSetupPanel, DRMediaEraseController, 
+                       DROpticalDiscEraseView, DRSetupPanel ]
 ...

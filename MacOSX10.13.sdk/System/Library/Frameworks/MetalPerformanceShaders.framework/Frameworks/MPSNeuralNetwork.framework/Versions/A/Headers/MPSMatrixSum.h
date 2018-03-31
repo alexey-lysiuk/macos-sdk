@@ -124,11 +124,11 @@ NS_DESIGNATED_INITIALIZER;
  *  @param          startIndex          The starting index into the scale and offset vectors.
  */
 -(void) encodeToCommandBuffer: (nonnull id <MTLCommandBuffer>) buffer
-               sourceMatrices: (NSArray<MPSMatrix const*>*__nonnull) sourceMatrices
+               sourceMatrices: (NSArray<MPSMatrix *>*__nonnull) sourceMatrices
                  resultMatrix: (MPSMatrix * __nonnull) resultMatrix
-                  scaleVector: (MPSVector const* __nullable) scaleVector
-                 offsetVector: (MPSVector const* __nullable) offsetVector
-                   biasVector: (MPSVector const* __nullable) biasVector
+                  scaleVector: (MPSVector * __nullable) scaleVector
+                 offsetVector: (MPSVector * __nullable) offsetVector
+                   biasVector: (MPSVector * __nullable) biasVector
                    startIndex: (NSUInteger) startIndex;
 
 /*! @abstract NSSecureCoding compatability

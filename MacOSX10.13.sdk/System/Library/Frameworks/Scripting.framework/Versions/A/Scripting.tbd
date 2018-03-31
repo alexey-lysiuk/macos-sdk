@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386 ]
-uuids:           [ 'i386: CEF4B6A1-D486-3451-8460-BC4D26E9DF14' ]
+uuids:           [ 'i386: 91F599E3-818D-3C96-87DB-B9E284B7C30E' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Scripting.framework/Versions/A/Scripting
 current-version: 37

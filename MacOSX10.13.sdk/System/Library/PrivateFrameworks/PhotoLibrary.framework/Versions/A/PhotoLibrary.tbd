@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6CBDAA29-EBF2-300A-BA4B-4C37DB16AC1D' ]
+uuids:           [ 'x86_64: B61CFEB1-7048-31DD-81E7-BF980E223A75' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoLibrary.framework/Versions/A/PhotoLibrary
-current-version: 3251.12.180
+current-version: 3271.13.150
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _PHLAdjustmentsKey, _PHLAlternateMasterAssetKey, _PHLImportedByTypeKey, 
@@ -16,6 +16,6 @@ exports:
                        _PHLRenderedAssetKey, _PHLThumbnailAssetKey, _PHLUuidKey, 
                        _PHLVideoComplementAssetKey, _PhotoLibraryVersionNumber, _PhotoLibraryVersionString, 
                        _kPHLErrorDomain_Ingest, _kPHLLogDomain_Ingest ]
-    objc-classes:    [ _PHLIngestAdjustment, _PHLIngestAsset, _PHLIngestController, 
-                       _PHLIngestRequest, _PHLMutableIngestRequest ]
+    objc-classes:    [ PHLIngestAdjustment, PHLIngestAsset, PHLIngestController, 
+                       PHLIngestRequest, PHLMutableIngestRequest ]
 ...

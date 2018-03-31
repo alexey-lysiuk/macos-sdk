@@ -1,4 +1,4 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
 uuids:           [ 'i386: CE2A78CC-670F-3E07-9539-822DCD2F6084', 'x86_64: A05C7900-F8C7-3E75-8D3F-909B40C19717' ]
 platform:        macosx

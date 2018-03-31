@@ -1,30 +1,30 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: FE3CD191-E44D-3F74-A96E-2E1D2A3C0490', 'x86_64: 001F2050-C1B6-302F-B250-315BE5D6B6B8' ]
+uuids:           [ 'i386: 10A09DD9-5B28-3EB7-996A-1B093B133B52', 'x86_64: BB22A944-DC6A-3AF4-B59B-87ACC96164D7' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/StoreKit.framework/Versions/A/StoreKit
 current-version: 379
 exports:         
   - archs:           [ x86_64 ]
-    objc-ivars:      [ _SKPayment._internal, _SKPaymentTransactionInternal._UUID, 
-                       _SKPaymentTransactionInternal._assets, _SKPaymentTransactionInternal._downloads, 
-                       _SKPaymentTransactionInternal._error, _SKPaymentTransactionInternal._originalTransaction, 
-                       _SKPaymentTransactionInternal._payment, _SKPaymentTransactionInternal._transactionDate, 
-                       _SKPaymentTransactionInternal._transactionIdentifier, _SKPaymentTransactionInternal._transactionReceipt, 
-                       _SKPaymentTransactionInternal._transactionState, _SKReceiptRefreshRequest._properties, 
-                       _SKServiceProxy._serviceConnection, _SKServiceProxy._serviceConnectionLock ]
+    objc-ivars:      [ SKPayment._internal, SKPaymentTransactionInternal._UUID, SKPaymentTransactionInternal._assets, 
+                       SKPaymentTransactionInternal._downloads, SKPaymentTransactionInternal._error, 
+                       SKPaymentTransactionInternal._originalTransaction, SKPaymentTransactionInternal._payment, 
+                       SKPaymentTransactionInternal._transactionDate, SKPaymentTransactionInternal._transactionIdentifier, 
+                       SKPaymentTransactionInternal._transactionReceipt, SKPaymentTransactionInternal._transactionState, 
+                       SKReceiptRefreshRequest._properties, SKServiceProxy._serviceConnection, 
+                       SKServiceProxy._serviceConnectionLock ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ _SKErrorDomain, _SKReceiptPropertyIsExpired, _SKReceiptPropertyIsRevoked, 
                        _SKReceiptPropertyIsVolumePurchase, _SSError, _SSErrorDomain, 
                        _SSErrorWithUnderlyingError, _SSGetItemIdentifierFromValue, 
                        _SSGetUnsignedLongLongFromValue, _SSSoftwareUpdatesIdentifierAppStore, 
                        _kFirenzeUserDefaultsIdentifier ]
-    objc-classes:    [ _SKDownload, _SKDownloadInternal, _SKMutablePayment, _SKPayment, 
-                       _SKPaymentInternal, _SKPaymentQueue, _SKPaymentQueueInternal, 
-                       _SKPaymentTransaction, _SKPaymentTransactionInternal, _SKProduct, 
-                       _SKProductDiscount, _SKProductDiscountInternal, _SKProductInternal, 
-                       _SKProductSubscriptionPeriod, _SKProductSubscriptionPeriodInternal, 
-                       _SKProductsRequest, _SKProductsRequestInternal, _SKProductsResponse, 
-                       _SKProductsResponseInternal, _SKReceiptRefreshRequest, _SKRequest, 
-                       _SKRequestInternal, _SKServiceProxy ]
+    objc-classes:    [ SKDownload, SKDownloadInternal, SKMutablePayment, SKPayment, 
+                       SKPaymentInternal, SKPaymentQueue, SKPaymentQueueInternal, 
+                       SKPaymentTransaction, SKPaymentTransactionInternal, SKProduct, 
+                       SKProductDiscount, SKProductDiscountInternal, SKProductInternal, 
+                       SKProductSubscriptionPeriod, SKProductSubscriptionPeriodInternal, 
+                       SKProductsRequest, SKProductsRequestInternal, SKProductsResponse, 
+                       SKProductsResponseInternal, SKReceiptRefreshRequest, SKRequest, 
+                       SKRequestInternal, SKServiceProxy ]
 ...

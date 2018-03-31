@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E1B7D26E-5A27-3844-868C-3609621124FF' ]
+uuids:           [ 'x86_64: F8720CCF-6E8F-33E1-9328-A2875971B97B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/FamilyControls.framework/Versions/A/FamilyControls
 exports:         
@@ -57,19 +57,19 @@ exports:
                        _kFCTimeLimitsIdentifierV2, _kWFDebugMessageKey, _kWFDebugPageKey, 
                        _kWFFilterDescriptionKey, _kWFFilterRestrictedScoreKey, _kWFFilterWantsToBlockKey, 
                        _kWFPageTitleKey, _kWFURLKey, _kWFUsernameKey ]
-    objc-classes:    [ _FCAllowanceTimeControl, _FCApp, _FCCurfewTimeControl, _FCFetchRequest, 
-                       _FCMCXHelper, _FCSafariBookmark, _FCSafariBookmarkFolder, 
-                       _FCTime, _FCTimeControl, _FCTimeControls, _FCTimeRange, _FCTimer, 
-                       _FCUserEventsManager, _FCUtilities, _FCWidget ]
-    objc-ivars:      [ _FCAllowanceTimeControl._secondsPerDay, _FCApp._dictionary, 
-                       _FCCurfewTimeControl._end, _FCCurfewTimeControl._start, _FCFetchRequest._entity, 
-                       _FCFetchRequest._predicate, _FCFetchRequest._sortDesc1, _FCFetchRequest._sortDesc2, 
-                       _FCSafariBookmark._dictionary, _FCSafariBookmarkFolder._children, 
-                       _FCTime._hour, _FCTime._minute, _FCTime._second, _FCTimeControl._enabled, 
-                       _FCTimeControl._rangeType, _FCTimeControls._weekdayAllowance, 
-                       _FCTimeControls._weekdayCurfew, _FCTimeControls._weekendAllowance, 
-                       _FCTimeControls._weekendCurfew, _FCTimeRange._endTime, _FCTimeRange._startTime, 
-                       _FCTimer._interval, _FCTimer._kind, _FCTimer._timer, _FCTimer._userInfo, 
-                       _FCUserEventsManager._authData, _FCUserEventsManager._registeredWithServer, 
-                       _FCUserEventsManager._userName, _FCWidget._dictionary ]
+    objc-classes:    [ FCAllowanceTimeControl, FCApp, FCCurfewTimeControl, FCFetchRequest, 
+                       FCMCXHelper, FCSafariBookmark, FCSafariBookmarkFolder, FCTime, 
+                       FCTimeControl, FCTimeControls, FCTimeRange, FCTimer, FCUserEventsManager, 
+                       FCUtilities, FCWidget ]
+    objc-ivars:      [ FCAllowanceTimeControl._secondsPerDay, FCApp._dictionary, 
+                       FCCurfewTimeControl._end, FCCurfewTimeControl._start, FCFetchRequest._entity, 
+                       FCFetchRequest._predicate, FCFetchRequest._sortDesc1, FCFetchRequest._sortDesc2, 
+                       FCSafariBookmark._dictionary, FCSafariBookmarkFolder._children, 
+                       FCTime._hour, FCTime._minute, FCTime._second, FCTimeControl._enabled, 
+                       FCTimeControl._rangeType, FCTimeControls._weekdayAllowance, 
+                       FCTimeControls._weekdayCurfew, FCTimeControls._weekendAllowance, 
+                       FCTimeControls._weekendCurfew, FCTimeRange._endTime, FCTimeRange._startTime, 
+                       FCTimer._interval, FCTimer._kind, FCTimer._timer, FCTimer._userInfo, 
+                       FCUserEventsManager._authData, FCUserEventsManager._registeredWithServer, 
+                       FCUserEventsManager._userName, FCWidget._dictionary ]
 ...

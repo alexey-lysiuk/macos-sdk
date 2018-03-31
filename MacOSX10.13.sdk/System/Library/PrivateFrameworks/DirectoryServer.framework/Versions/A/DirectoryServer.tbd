@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 70FAE9B5-39AE-3CDD-B0C2-C653D1E2A60E' ]
+uuids:           [ 'x86_64: C3A84460-DAAC-3D69-BF4C-0C2AC2A0AAA8' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DirectoryServer.framework/Versions/A/DirectoryServer
 exports:         
@@ -10,6 +10,6 @@ exports:
                        _kKeyLocaleInterfaces, _kKeyNumLocalesUsedIn, _kLdapiNodeName, 
                        _kLdapiURI, _kLocaleConfigRecName, _kLocaleGroupPrefix, _kODAttributeTypeDNSDomain, 
                        _kODAttributeTypeLocaleSubnets ]
-    objc-classes:    [ _DSLocale, _DSLog ]
-    objc-ivars:      [ _DSLog.asl, _DSLog.logfd ]
+    objc-classes:    [ DSLocale, DSLog ]
+    objc-ivars:      [ DSLog.asl, DSLog.logfd ]
 ...

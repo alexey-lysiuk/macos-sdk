@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0EBA964F-ADBB-3482-ABE4-635F6280E5B9' ]
+uuids:           [ 'x86_64: 01B6F5E6-12AD-30E7-A471-75264B80E622' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoLibrary.framework/Versions/A/Frameworks/PhotosFormats.framework/Versions/A/PhotosFormats
-current-version: 3251.12.180
+current-version: 3271.13.150
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CAMUserPreferenceCaptureEncodingBehavior, _CAMUserPreferenceSlomoConfiguration, 
@@ -33,13 +33,13 @@ exports:
                        _PhotosFormatsVersionString, ___PFVideoAVCFObjectBuilderClassInitialize, 
                        _b, _kUTTypeLivePhotoBundle, _kUTTypeLivePhotoBundleExtension, 
                        _kUTTypeLivePhotoBundlePrivate, _m ]
-    objc-classes:    [ _PFAssetAdjustmentFingerprintData, _PFAssetAdjustments, _PFCVML, 
-                       _PFImageMetadata, _PFMediaCapabilities, _PFMediaCapabilitiesQuery, 
-                       _PFPhotosFaceUtilities, _PFProportionalIntegralController, 
-                       _PFSinglePassVideoExportItem, _PFSinglePassVideoExportItemStatistics, 
-                       _PFSlowMotionConfiguration, _PFSlowMotionRampConfiguration, 
-                       _PFSlowMotionTimeRangeMapper, _PFSlowMotionTimeRangeMapperScaledRegion, 
-                       _PFSlowMotionUtilities, _PFVideoAVObjectBuilder, _PFVideoAdjustments, 
-                       _PFVideoComplement, _PFVideoExport, _PFVideoExportRangeCoordinator, 
-                       _PFVideoExportRangeWaitingCaller, _PFVideoMetadata ]
+    objc-classes:    [ PFAssetAdjustmentFingerprintData, PFAssetAdjustments, PFCVML, 
+                       PFImageMetadata, PFMediaCapabilities, PFMediaCapabilitiesQuery, 
+                       PFPhotosFaceUtilities, PFProportionalIntegralController, PFSinglePassVideoExportItem, 
+                       PFSinglePassVideoExportItemStatistics, PFSlowMotionConfiguration, 
+                       PFSlowMotionRampConfiguration, PFSlowMotionTimeRangeMapper, 
+                       PFSlowMotionTimeRangeMapperScaledRegion, PFSlowMotionUtilities, 
+                       PFVideoAVObjectBuilder, PFVideoAdjustments, PFVideoComplement, 
+                       PFVideoExport, PFVideoExportRangeCoordinator, PFVideoExportRangeWaitingCaller, 
+                       PFVideoMetadata ]
 ...

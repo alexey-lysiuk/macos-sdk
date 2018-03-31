@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 616CCF68-0A95-3951-A26E-0D0735FADA24' ]
+uuids:           [ 'x86_64: 7F60B3D8-3E7B-3741-8CE2-CED5CE20C428' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoLibraryPrivate.framework/Versions/A/Frameworks/PhotosImagingFoundation.framework/Versions/A/PhotosImagingFoundation
-current-version: 3251.12.180
+current-version: 3271.13.150
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CGAffineTransformDeterminant, _CGAffineTransformDot, _CGAffineTransformFixedPoint, 
@@ -132,31 +132,30 @@ exports:
                        _PAStraightenAffineTransformWithRadians, _PhotosImagingFoundationVersionNumber, 
                        _PhotosImagingFoundationVersionString, _RKThumbnailSize, _TIFFOrientationFromIPAOrientation, 
                        _kIPAImageGeometryInputSpace, _kIPAImageGeometryOutputSpace ]
-    objc-classes:    [ _IPAAdjustment, _IPAAdjustmentEnvelope, _IPAAdjustmentSerialization, 
-                       _IPAAdjustmentStack, _IPAAdjustmentStackSerializer, _IPAAdjustmentVersion, 
-                       _IPAAdjustmentVersionInfo, _IPAAggregateLargestImageSizePolicy, 
-                       _IPAAutoRegistry, _IPAAutoRegistryEntry, _IPAAutoSettings, 
-                       _IPABestFitEvenTotalPixelCountImageSizePolicy, _IPABestFitEvenWidthTotalPixelCountImageSizePolicy, 
-                       _IPABestFitImageHeightPolicy, _IPABestFitImageSizePolicy, 
-                       _IPABestFitImageWidthPolicy, _IPABestFitShortSideWithLongSideLimit, 
-                       _IPABestFitTotalPixelCountImageSizePolicy, _IPAColorProfile, 
-                       _IPAColorProfileIndex, _IPAColorSyncUtil, _IPAColorTransform, 
-                       _IPACropOperator, _IPAEditDescription, _IPAEditOperation, 
-                       _IPAGeometryOperator, _IPAGeometryOperatorSequence, _IPAIdentityOperator, 
-                       _IPAImageGeometry, _IPAImageSizePolicy, _IPAImageTransform, 
-                       _IPALocalPreviewSizeRegistry, _IPAManualAutoSettings, _IPAMutableRectArray, 
-                       _IPAMutableRegion, _IPAOrientationOperator, _IPAOriginalSizePolicy, 
-                       _IPAPendingAutoSettings, _IPAPerspectiveOperator, _IPAPhotoAdjustment, 
-                       _IPAPhotoAdjustmentPipeline, _IPAPhotoAdjustmentStack, _IPAPhotoAdjustmentStackSerializer, 
-                       _IPAPhotoAdjustmentStackSerializer_v10, _IPAPosterFrameOperation, 
-                       _IPAPreviewSizePolicy, _IPAPreviewSizeRegistry, _IPARectArray, 
-                       _IPARegion, _IPARemoveAutoSettings, _IPAScaleImageSizePolicy, 
-                       _IPAScaleOperator, _IPAShortestEdgeImageSizePolicy, _IPASloMoOperation, 
-                       _IPAStraightenOperator, _IPATrimOperation, _IPAUTIUtilities, 
-                       _IPAVideoAdjustment, _IPAVideoAdjustmentStack, _IPAVideoAdjustmentStackSerializer, 
-                       _IPAVideoAdjustmentStackSerializer_SLM_v10, _IPAVideoAdjustmentStackSerializer_SLM_v11, 
-                       _IPAVideoAdjustmentStackSerializer_v10, _IPAVideoOperation, 
-                       _IPAVideoPlaybackSettings ]
-    objc-ivars:      [ _IPABestFitTotalPixelCountImageSizePolicy._totalPixelCount, 
-                       _IPARectArray._imp, _IPARegion._imp ]
+    objc-classes:    [ IPAAdjustment, IPAAdjustmentEnvelope, IPAAdjustmentSerialization, 
+                       IPAAdjustmentStack, IPAAdjustmentStackSerializer, IPAAdjustmentVersion, 
+                       IPAAdjustmentVersionInfo, IPAAggregateLargestImageSizePolicy, 
+                       IPAAutoRegistry, IPAAutoRegistryEntry, IPAAutoSettings, IPABestFitEvenTotalPixelCountImageSizePolicy, 
+                       IPABestFitEvenWidthTotalPixelCountImageSizePolicy, IPABestFitImageHeightPolicy, 
+                       IPABestFitImageSizePolicy, IPABestFitImageWidthPolicy, IPABestFitShortSideWithLongSideLimit, 
+                       IPABestFitTotalPixelCountImageSizePolicy, IPAColorProfile, 
+                       IPAColorProfileIndex, IPAColorSyncUtil, IPAColorTransform, 
+                       IPACropOperator, IPAEditDescription, IPAEditOperation, IPAGeometryOperator, 
+                       IPAGeometryOperatorSequence, IPAIdentityOperator, IPAImageGeometry, 
+                       IPAImageSizePolicy, IPAImageTransform, IPALocalPreviewSizeRegistry, 
+                       IPAManualAutoSettings, IPAMutableRectArray, IPAMutableRegion, 
+                       IPAOrientationOperator, IPAOriginalSizePolicy, IPAPendingAutoSettings, 
+                       IPAPerspectiveOperator, IPAPhotoAdjustment, IPAPhotoAdjustmentPipeline, 
+                       IPAPhotoAdjustmentStack, IPAPhotoAdjustmentStackSerializer, 
+                       IPAPhotoAdjustmentStackSerializer_v10, IPAPosterFrameOperation, 
+                       IPAPreviewSizePolicy, IPAPreviewSizeRegistry, IPARectArray, 
+                       IPARegion, IPARemoveAutoSettings, IPAScaleImageSizePolicy, 
+                       IPAScaleOperator, IPAShortestEdgeImageSizePolicy, IPASloMoOperation, 
+                       IPAStraightenOperator, IPATrimOperation, IPAUTIUtilities, 
+                       IPAVideoAdjustment, IPAVideoAdjustmentStack, IPAVideoAdjustmentStackSerializer, 
+                       IPAVideoAdjustmentStackSerializer_SLM_v10, IPAVideoAdjustmentStackSerializer_SLM_v11, 
+                       IPAVideoAdjustmentStackSerializer_v10, IPAVideoOperation, 
+                       IPAVideoPlaybackSettings ]
+    objc-ivars:      [ IPABestFitTotalPixelCountImageSizePolicy._totalPixelCount, 
+                       IPARectArray._imp, IPARegion._imp ]
 ...

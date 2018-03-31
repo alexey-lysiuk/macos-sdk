@@ -1,4 +1,4 @@
-.TH "MPSCNNConvolutionTranspose" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "MPSCNNConvolutionTranspose" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -23,7 +23,16 @@ Inherits \fBMPSCNNKernel\fP\&.
 .RI "(nullable instancetype) \- \fBinitWithCoder:device:\fP"
 .br
 .ti -1c
-.RI "(\fBMPSImage\fP *__nonnull) \- \fBencodeToCommandBuffer:sourceImage:convolutionState:\fP"
+.RI "(\fBMPSImage\fP *__nonnull) \- \fBencodeToCommandBuffer:sourceImage:convolutionGradientState:\fP"
+.br
+.ti -1c
+.RI "(\fBMPSImageBatch\fP *__nonnull) \- \fBencodeBatchToCommandBuffer:sourceImages:convolutionGradientStates:\fP"
+.br
+.ti -1c
+.RI "(void) \- \fBencodeToCommandBuffer:sourceImage:convolutionGradientState:destinationImage:\fP"
+.br
+.ti -1c
+.RI "(void) \- \fBencodeBatchToCommandBuffer:sourceImages:convolutionGradientStates:destinationImages:\fP"
 .br
 .in -1c
 .SS "Properties"
@@ -43,6 +52,9 @@ Inherits \fBMPSCNNKernel\fP\&.
 .br
 .ti -1c
 .RI "NSUInteger \fBgroups\fP"
+.br
+.ti -1c
+.RI "\fBMPSNNConvolutionAccumulatorPrecisionOption\fP \fBaccumulatorPrecisionOption\fP"
 .br
 .in -1c
 .SS "Additional Inherited Members"
@@ -143,7 +155,11 @@ Intermediate Image:
  
 .SH "Method Documentation"
 .PP 
-.SS "\- (\fBMPSImage\fP * __nonnull) encodeToCommandBuffer: (nonnull id< MTLCommandBuffer >) commandBuffer(\fBMPSImage\fP *__nonnull) sourceImage(\fBMPSCNNConvolutionState\fP *__nullable) convolutionState"
+.SS "\- (\fBMPSImageBatch\fP * __nonnull) encodeBatchToCommandBuffer: (nonnull id< MTLCommandBuffer >) commandBuffer(\fBMPSImageBatch\fP *__nonnull) sourceImage(\fBMPSCNNConvolutionGradientStateBatch\fP *__nullable) convolutionGradientState"
+
+.SS "\- (void) encodeBatchToCommandBuffer: (nonnull id< MTLCommandBuffer >) commandBuffer(\fBMPSImageBatch\fP *__nonnull) sourceImage(\fBMPSCNNConvolutionGradientStateBatch\fP *__nullable) convolutionGradientState(\fBMPSImageBatch\fP *__nonnull) destinationImage"
+
+.SS "\- (\fBMPSImage\fP * __nonnull) encodeToCommandBuffer: (nonnull id< MTLCommandBuffer >) commandBuffer(\fBMPSImage\fP *__nonnull) sourceImage(\fBMPSCNNConvolutionGradientState\fP *__nullable) convolutionGradientState"
 Encode a \fBMPSCNNKernel\fP into a command Buffer\&. Create a texture to hold the result and return it\&.  In the first iteration on this method, encodeToCommandBuffer:sourceImage:destinationImage: some work was left for the developer to do in the form of correctly setting the offset property and sizing the result buffer\&. With the introduction of the padding policy (see padding property) the filter can do this work itself\&. If you would like to have some input into what sort of \fBMPSImage\fP (e\&.g\&. temporary vs\&. regular) or what size it is or where it is allocated, you may set the destinationImageAllocator to allocate the image yourself\&.
 .PP
 This method uses the \fBMPSNNPadding\fP padding property to figure out how to size the result image and to set the offset property\&. See discussion in \fBMPSNeuralNetworkTypes\&.h\fP\&.
@@ -154,16 +170,18 @@ Note: the regular encodeToCommandBuffer:sourceImage: method may be used when no 
 .RS 4
 \fIcommandBuffer\fP The command buffer 
 .br
-\fIsourceImage\fP A \fBMPSImage\fP to use as the source images for the filter\&. 
+\fIsourceImage\fP \fBA\fP \fBMPSImage\fP to use as the source images for the filter\&. 
 .br
-\fIconvolutionState\fP A valid \fBMPSCNNConvolutionState\fP from the MPSCNNConvoluton counterpart to this \fBMPSCNNConvolutionTranspose\fP\&. If there is no forward convolution counterpart, pass NULL here\&. This state affects the sizing the result\&. 
+\fIconvolutionGradientState\fP \fBA\fP valid \fBMPSCNNConvolutionGradientState\fP from the MPSCNNConvoluton counterpart to this \fBMPSCNNConvolutionTranspose\fP\&. If there is no forward convolution counterpart, pass NULL here\&. This state affects the sizing the result\&. 
 .RE
 .PP
 \fBReturns:\fP
 .RS 4
-A \fBMPSImage\fP or \fBMPSTemporaryImage\fP allocated per the destinationImageAllocator containing the output of the graph\&. The offset property will be adjusted to reflect the offset used during the encode\&. The returned image will be automatically released when the command buffer completes\&. If you want to keep it around for longer, retain the image\&. (ARC will do this for you if you use it later\&.) 
+\fBA\fP \fBMPSImage\fP or \fBMPSTemporaryImage\fP allocated per the destinationImageAllocator containing the output of the graph\&. The offset property will be adjusted to reflect the offset used during the encode\&. The returned image will be automatically released when the command buffer completes\&. If you want to keep it around for longer, retain the image\&. (ARC will do this for you if you use it later\&.) 
 .RE
 .PP
+
+.SS "\- (void) encodeToCommandBuffer: (nonnull id< MTLCommandBuffer >) commandBuffer(\fBMPSImage\fP *__nonnull) sourceImage(\fBMPSCNNConvolutionGradientState\fP *__nullable) convolutionGradientState(\fBMPSImage\fP *__nonnull) destinationImage"
 
 .SS "\- (nullable instancetype) \fBinitWithCoder:\fP (NSCoder *__nonnull) aDecoder(nonnull id< MTLDevice >) device"
 <NSSecureCoding> support 
@@ -179,30 +197,32 @@ Standard init with default properties per filter type
 .PP
 \fBReturns:\fP
 .RS 4
-A pointer to the newly initialized object\&. This will fail, returning nil if the device is not supported\&. Devices must be MTLFeatureSet_iOS_GPUFamily2_v1 or later\&. 
+\fBA\fP pointer to the newly initialized object\&. This will fail, returning nil if the device is not supported\&. Devices must be MTLFeatureSet_iOS_GPUFamily2_v1 or later\&. 
 .RE
 .PP
 
 .PP
 Reimplemented from \fBMPSCNNKernel\fP\&.
 .SS "\- (nonnull instancetype) \fBinitWithDevice:\fP (nonnull id< MTLDevice >) device(nonnull id< \fBMPSCNNConvolutionDataSource\fP >) weights"
-Initializes a convolution kernel 
+Initializes a convolution transpose kernel 
 .PP
 \fBParameters:\fP
 .RS 4
 \fIdevice\fP The MTLDevice on which this \fBMPSCNNConvolutionTranspose\fP filter will be used 
 .br
-\fIweights\fP A pointer to a object that conforms to the \fBMPSCNNConvolutionDataSource\fP protocol\&. The \fBMPSCNNConvolutionDataSource\fP protocol declares the methods that an instance of \fBMPSCNNConvolutionTranspose\fP uses to obtain the weights and bias terms for the CNN convolutionTranspose filter\&. Currently we support only Float32 weights\&.
+\fIweights\fP \fBA\fP pointer to a object that conforms to the \fBMPSCNNConvolutionDataSource\fP protocol\&. The \fBMPSCNNConvolutionDataSource\fP protocol declares the methods that an instance of \fBMPSCNNConvolutionTranspose\fP uses to obtain the weights and bias terms for the CNN convolutionTranspose filter\&. Currently we support only Float32 weights\&.
 .RE
 .PP
 \fBReturns:\fP
 .RS 4
-A valid \fBMPSCNNConvolution\fP object or nil, if failure\&. 
+\fBA\fP valid \fBMPSCNNConvolutionTranspose\fP object\&. 
 .RE
 .PP
 
 .SH "Property Documentation"
 .PP 
+.SS "\- (\fBMPSNNConvolutionAccumulatorPrecisionOption\fP) accumulatorPrecisionOption\fC [read]\fP, \fC [write]\fP, \fC [nonatomic]\fP, \fC [assign]\fP"
+Precision of accumulator used in convolution\&.  See \fBMPSNeuralNetworkTypes\&.h\fP for discussion\&. Default is MPSNNConvolutionAccumulatorPrecisionOptionHalf\&. 
 .SS "\- groups\fC [read]\fP, \fC [nonatomic]\fP, \fC [assign]\fP"
 Number of groups input and output channels are divided into\&. 
 .SS "\- inputFeatureChannels\fC [read]\fP, \fC [nonatomic]\fP, \fC [assign]\fP"

@@ -1,10 +1,10 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7BFA70BE-94FD-3FFF-8B9B-87019A49AE09' ]
+uuids:           [ 'x86_64: ED0D1CB2-4116-3AA2-8594-91A118FD5D4F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Swift/libswiftObjectiveC.dylib
 current-version: 900.8.49
-swift-version:   5
+swift-abi-version: 5
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ __T010ObjectiveC15autoreleasepoolxxyKc8invoking_tKlF, __T010ObjectiveC22_convertBoolToObjCBoolAA0eF0VSbF, 

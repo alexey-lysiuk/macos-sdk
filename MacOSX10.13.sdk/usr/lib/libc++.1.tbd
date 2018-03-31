@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: AD612EEF-6CE3-315D-82C2-58248BE13431', 'x86_64: FCF5E1F6-2B04-3545-8004-F3AB32FED172' ]
+uuids:           [ 'i386: BA03445F-C2AD-3C30-A25D-3654091142AB', 'x86_64: 7D3DACCC-3804-393C-ABC1-1A580FD00CB6' ]
 platform:        macosx
 install-name:    '/usr/lib/libc++.1.dylib'
 current-version: 400.9

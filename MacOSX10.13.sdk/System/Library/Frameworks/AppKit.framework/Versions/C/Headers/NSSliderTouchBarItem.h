@@ -5,6 +5,7 @@
  All rights reserved.
  */
 
+#import <AppKit/NSUserInterfaceCompression.h>
 #import <AppKit/NSTouchBarItem.h>
 
 NS_ASSUME_NONNULL_BEGIN
@@ -30,6 +31,8 @@ NS_CLASS_AVAILABLE_MAC(10_12_2)
     void *_sliderTouchBarItemReserved[4] __unused;
 #endif /* !__OBJC2__ */
 }
+
+@property (readonly, nonnull) NSView<NSUserInterfaceCompression> *view;
 
 /// The slider displayed by the bar item. It is automatically created, but can be set to a custom subclass. doubleValue, minValue, maxValue, etc can all be read and set through the slider.
 @property (strong) NSSlider *slider;

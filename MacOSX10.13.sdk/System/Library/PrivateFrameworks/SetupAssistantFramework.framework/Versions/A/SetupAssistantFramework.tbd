@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F9C24917-227F-382C-A3E7-4F9FEE1EB470' ]
+uuids:           [ 'x86_64: C8EF81A9-450F-3E66-8E8F-CFCBDBF83FBF' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SetupAssistantFramework.framework/Versions/A/SetupAssistantFramework
 exports:         
@@ -18,5 +18,5 @@ exports:
                        _kSetupAssistantWindowScreenNumberKey, _kSetupAssistantWindowXPositionKey, 
                        _kSetupAssistantWindowYPositionKey, _kSetupCompletedNotificationName, 
                        _processIsRunning, _processIsRunningForUser ]
-    objc-classes:    [ _LogSnitch, _MBLogManager, _MBSAConnection, _SALauncher, _SAUserSetupState ]
+    objc-classes:    [ LogSnitch, MBLogManager, MBSAConnection, SALauncher, SAUserSetupState ]
 ...

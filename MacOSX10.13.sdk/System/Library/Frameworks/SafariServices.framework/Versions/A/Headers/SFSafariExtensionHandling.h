@@ -46,6 +46,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// Returns the extension popover's view controller.
 - (SFSafariExtensionViewController *)popoverViewController;
 
+/// This is called when Safari is about to load a page that the extension has stated it wants to add additional headers for.
+- (void)additionalRequestHeadersForURL:(NSURL *)url completionHandler:(void (^)(NSDictionary<NSString *, NSString *> * _Nullable))completionHandler SF_AVAILABLE_MAC_SAFARI(11_1);
+
 @end
 
 NS_ASSUME_NONNULL_END

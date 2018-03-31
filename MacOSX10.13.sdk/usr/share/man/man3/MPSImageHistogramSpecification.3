@@ -1,4 +1,4 @@
-.TH "MPSImageHistogramSpecification" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "MPSImageHistogramSpecification" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -41,17 +41,17 @@ Encode the transform function to a command buffer using a MTLComputeCommandEncod
 .PP
 \fBParameters:\fP
 .RS 4
-\fIcommandBuffer\fP A valid MTLCommandBuffer\&. 
+\fIcommandBuffer\fP \fBA\fP valid MTLCommandBuffer\&. 
 .br
-\fIsource\fP A valid MTLTexture containing the source image for the filter\&. 
+\fIsource\fP \fBA\fP valid MTLTexture containing the source image for the filter\&. 
 .br
-\fIsourceHistogram\fP A valid MTLBuffer containing the histogram results for the source image\&. This filter will use these histogram results to generate the cumulative histogram for equalizing the image\&. The histogram results / channel are stored together\&. The number of channels for which histogram results are stored is determined by the number of channels in the image\&. If histogramInfo\&.histogramForAlpha is false and the source image is RGBA then only histogram results for RGB channels are stored\&. 
+\fIsourceHistogram\fP \fBA\fP valid MTLBuffer containing the histogram results for the source image\&. This filter will use these histogram results to generate the cumulative histogram for equalizing the image\&. The histogram results / channel are stored together\&. The number of channels for which histogram results are stored is determined by the number of channels in the image\&. If histogramInfo\&.histogramForAlpha is false and the source image is RGBA then only histogram results for RGB channels are stored\&. 
 .br
-\fIsourceHistogramOffset\fP A byte offset into the sourceHistogram MTLBuffer where the histogram starts\&. Must conform to alignment requirements for [MTLComputeCommandEncoder setBuffer:offset:atIndex:] offset parameter\&. 
+\fIsourceHistogramOffset\fP \fBA\fP byte offset into the sourceHistogram MTLBuffer where the histogram starts\&. Must conform to alignment requirements for [MTLComputeCommandEncoder setBuffer:offset:atIndex:] offset parameter\&. 
 .br
-\fIdesiredHistogram\fP A valid MTLBuffer containing the desired histogram results for the source image\&. The histogram results / channel are stored together\&. The number of channels for which histogram results are stored is determined by the number of channels in the image\&. If histogramInfo\&.histogramForAlpha is false and the source image is RGBA then only histogram results for RGB channels are stored\&. 
+\fIdesiredHistogram\fP \fBA\fP valid MTLBuffer containing the desired histogram results for the source image\&. The histogram results / channel are stored together\&. The number of channels for which histogram results are stored is determined by the number of channels in the image\&. If histogramInfo\&.histogramForAlpha is false and the source image is RGBA then only histogram results for RGB channels are stored\&. 
 .br
-\fIdesiredHistogramOffset\fP A byte offset into the desiredHistogram MTLBuffer where the histogram starts\&. Must conform to alignment requirements for [MTLComputeCommandEncoder setBuffer:offset:atIndex:] offset parameter\&. 
+\fIdesiredHistogramOffset\fP \fBA\fP byte offset into the desiredHistogram MTLBuffer where the histogram starts\&. Must conform to alignment requirements for [MTLComputeCommandEncoder setBuffer:offset:atIndex:] offset parameter\&. 
 .RE
 .PP
 
@@ -67,7 +67,7 @@ Encode the transform function to a command buffer using a MTLComputeCommandEncod
 .PP
 \fBReturns:\fP
 .RS 4
-A new \fBMPSKernel\fP object, or nil if failure\&. 
+\fBA\fP new \fBMPSKernel\fP object, or nil if failure\&. 
 .RE
 .PP
 
@@ -95,7 +95,7 @@ You can reuse the same specification transform on other images to perform the sa
 .PP
 \fBReturns:\fP
 .RS 4
-A valid \fBMPSImageHistogramSpecification\fP object or nil, if failure\&. 
+\fBA\fP valid \fBMPSImageHistogramSpecification\fP object or nil, if failure\&. 
 .RE
 .PP
 

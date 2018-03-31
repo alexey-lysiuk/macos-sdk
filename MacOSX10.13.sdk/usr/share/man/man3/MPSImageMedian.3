@@ -1,4 +1,4 @@
-.TH "MPSImageMedian" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "MPSImageMedian" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -50,7 +50,7 @@ Inherits \fBMPSUnaryImageKernel\fP\&.
 Copyright (c) 2015 Apple Inc\&. All rights reserved\&.  MetalPerformanceShaders median filters
 .RE
 .PP
-The \fBMPSImageMedian\fP applies a median filter to an image\&. A median filter finds the median color value for each channel within a kernelDiameter x kernelDiameter window surrounding the pixel of interest\&. It is a common means of noise reduction and also as a smoothing filter with edge preserving qualities\&.
+The \fBMPSImageMedian\fP applies a median filter to an image\&. \fBA\fP median filter finds the median color value for each channel within a kernelDiameter x kernelDiameter window surrounding the pixel of interest\&. It is a common means of noise reduction and also as a smoothing filter with edge preserving qualities\&.
 .PP
 NOTE: The \fBMPSImageMedian\fP filter currently only supports images with <= 8 bits/channel\&. 
 .SH "Method Documentation"
@@ -67,7 +67,7 @@ NOTE: The \fBMPSImageMedian\fP filter currently only supports images with <= 8 b
 .PP
 \fBReturns:\fP
 .RS 4
-A new \fBMPSKernel\fP object, or nil if failure\&. 
+\fBA\fP new \fBMPSKernel\fP object, or nil if failure\&. 
 .RE
 .PP
 
@@ -101,7 +101,7 @@ Initialize a filter for a particular kernel size and device
 .PP
 \fBReturns:\fP
 .RS 4
-A valid object or nil, if failure\&. 
+\fBA\fP valid object or nil, if failure\&. 
 .RE
 .PP
 

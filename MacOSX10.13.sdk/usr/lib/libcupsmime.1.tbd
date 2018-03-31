@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: CB5B2053-51D5-3BB9-A9B6-C71BFE4D6B7E', 'x86_64: 07827DD9-F078-3CBB-BCBC-91A677FEE786' ]
+uuids:           [ 'i386: 02AA49B7-260E-3548-8B0B-113C5411FB91', 'x86_64: AEEE24C5-1324-3611-89B8-5CEE7BEF093E' ]
 platform:        macosx
 install-name:    /usr/lib/libcupsmime.1.dylib
 objc-constraint: none

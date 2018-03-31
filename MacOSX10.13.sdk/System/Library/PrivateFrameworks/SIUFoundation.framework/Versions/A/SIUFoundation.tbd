@@ -1,40 +1,40 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 57D70453-098D-3C18-ACE1-DAE284148F26' ]
+uuids:           [ 'x86_64: 160AF218-BB27-3543-989A-6B215B21865E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SIUFoundation.framework/Versions/A/SIUFoundation
 exports:         
   - archs:           [ x86_64 ]
-    objc-classes:    [ _AutoPartitionItem, _BSDPSourcesItem, _ChoiceChangesItem, 
-                       _ComputerNamingItem, _ConfigProfilesItem, _CreateImageOperation, 
-                       _CreateInstallMedia, _ImagingLogger, _NBImageInfo, _NetBootVolume, 
-                       _NetInstallMedia, _NetRestoreMedia, _ODBindingSIU, _OSInstallContainer, 
-                       _PackageInfo, _PackagesItem, _ProcessOSXInstallerOperation, 
-                       _ProcessSourceOperation, _ProcessVolumeOperation, _SIUAgentInterface, 
-                       _SIUClientInterface, _SIUCrypto, _SIUImagingDelegate, _SIUInstallable, 
-                       _SIUSharingNamesModel, _SIUSourceObject, _SIUSourcesManager, 
-                       _SIUUserDefaults, _SIUXPCHelper, _ScriptsItem, _ServerBindingsItem ]
-    objc-ivars:      [ _CreateImageOperation._buildDict, _CreateImageOperation._canInteractWithUser, 
-                       _CreateImageOperation._completionStatus, _CreateImageOperation._creationDuration, 
-                       _CreateImageOperation._errorCode, _CreateImageOperation._failureKey, 
-                       _CreateImageOperation._imagingSource, _CreateImageOperation._outputPath, 
-                       _CreateImageOperation._privilegedOpDict, _CreateImageOperation._proxy, 
-                       _CreateImageOperation._tempFilePath, _CreateImageOperation._xpcHelper, 
-                       _ImagingLogger._client, _ImagingLogger._fileName, _ImagingLogger._logFD, 
-                       _ImagingLogger._runFD, _NBImageInfo._imageInfo, _NetRestoreMedia._creationVariables, 
-                       _NetRestoreMedia._installPreferences, _OSInstallContainer._deferredInstall, 
-                       _OSInstallContainer._osInstallFootprintInKb, _PackageInfo._packagePath, 
-                       _ProcessOSXInstallerOperation._attributes, _ProcessOSXInstallerOperation._foundParent, 
-                       _ProcessOSXInstallerOperation._inSystemImageSection, _ProcessOSXInstallerOperation._otherInstallSize, 
-                       _ProcessOSXInstallerOperation._systemImageSectionInstallSize, 
-                       _ProcessSourceOperation._itemObject, _ProcessSourceOperation._sourcePath, 
-                       _SIUImagingDelegate._creationOperation, _SIUImagingDelegate._operationQueue, 
-                       _SIUImagingDelegate._outputPath, _SIUImagingDelegate._runTime, 
-                       _SIUInstallable._diskSizeInKb, _SIUInstallable._installedSizeInKb, 
-                       _SIUInstallable._objectData, _SIUSharingNamesModel._baseComputerName, 
-                       _SIUSharingNamesModel._importFileURL, _SIUSourceObject._basePath, 
-                       _SIUSourceObject._contentRecord, _SIUSourceObject._mountRecord, 
-                       _SIUSourceObject._sourceAttributes, _SIUSourceObject._supportedModels, 
-                       _SIUXPCHelper._allowInteraction, _SIUXPCHelper._authorizationRef, 
-                       _SIUXPCHelper._connection, _SIUXPCHelper._creationTime ]
+    objc-classes:    [ AutoPartitionItem, BSDPSourcesItem, ChoiceChangesItem, ComputerNamingItem, 
+                       ConfigProfilesItem, CreateImageOperation, CreateInstallMedia, 
+                       ImagingLogger, NBImageInfo, NetBootVolume, NetInstallMedia, 
+                       NetRestoreMedia, ODBindingSIU, OSInstallContainer, PackageInfo, 
+                       PackagesItem, ProcessOSXInstallerOperation, ProcessSourceOperation, 
+                       ProcessVolumeOperation, SIUAgentInterface, SIUClientInterface, 
+                       SIUCrypto, SIUImagingDelegate, SIUInstallable, SIUSharingNamesModel, 
+                       SIUSourceObject, SIUSourcesManager, SIUUserDefaults, SIUXPCHelper, 
+                       ScriptsItem, ServerBindingsItem ]
+    objc-ivars:      [ CreateImageOperation._buildDict, CreateImageOperation._canInteractWithUser, 
+                       CreateImageOperation._completionStatus, CreateImageOperation._creationDuration, 
+                       CreateImageOperation._errorCode, CreateImageOperation._failureKey, 
+                       CreateImageOperation._imagingSource, CreateImageOperation._outputPath, 
+                       CreateImageOperation._privilegedOpDict, CreateImageOperation._proxy, 
+                       CreateImageOperation._tempFilePath, CreateImageOperation._xpcHelper, 
+                       ImagingLogger._client, ImagingLogger._fileName, ImagingLogger._logFD, 
+                       ImagingLogger._runFD, NBImageInfo._imageInfo, NetRestoreMedia._creationVariables, 
+                       NetRestoreMedia._installPreferences, OSInstallContainer._deferredInstall, 
+                       OSInstallContainer._osInstallFootprintInKb, PackageInfo._packagePath, 
+                       ProcessOSXInstallerOperation._attributes, ProcessOSXInstallerOperation._foundParent, 
+                       ProcessOSXInstallerOperation._inSystemImageSection, ProcessOSXInstallerOperation._otherInstallSize, 
+                       ProcessOSXInstallerOperation._systemImageSectionInstallSize, 
+                       ProcessSourceOperation._itemObject, ProcessSourceOperation._sourcePath, 
+                       SIUImagingDelegate._creationOperation, SIUImagingDelegate._operationQueue, 
+                       SIUImagingDelegate._outputPath, SIUImagingDelegate._runTime, 
+                       SIUInstallable._diskSizeInKb, SIUInstallable._installedSizeInKb, 
+                       SIUInstallable._objectData, SIUSharingNamesModel._baseComputerName, 
+                       SIUSharingNamesModel._importFileURL, SIUSourceObject._basePath, 
+                       SIUSourceObject._contentRecord, SIUSourceObject._mountRecord, 
+                       SIUSourceObject._sourceAttributes, SIUSourceObject._supportedModels, 
+                       SIUXPCHelper._allowInteraction, SIUXPCHelper._authorizationRef, 
+                       SIUXPCHelper._connection, SIUXPCHelper._creationTime ]
 ...

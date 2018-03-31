@@ -1,14 +1,14 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 5658CF45-3305-3112-9394-510CF049EF6C', 'x86_64: E7DFCDAF-97A8-314F-BBED-76B9C5041E38' ]
+uuids:           [ 'i386: 0777717A-A5EF-363E-9D47-3DAB036438BA', 'x86_64: ECE63BA3-4344-3522-904B-71F89677AC7D' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/AVFoundation.framework/Versions/A/Frameworks/AVFAudio.framework/Versions/A/AVFAudio
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
-    objc-ivars:      [ _AVAudioBuffer._impl, _AVAudioEndpointDetector._impl, _AVAudioNode._impl, 
-                       _AVAudioSequencer._impl, _AVAudioUnitComponent._impl, _AVAudioUnitComponentManager._impl, 
-                       _AVMIDIPlayer._impl, _AVMusicTrack._impl ]
+    objc-ivars:      [ AVAudioBuffer._impl, AVAudioEndpointDetector._impl, AVAudioNode._impl, 
+                       AVAudioSequencer._impl, AVAudioUnitComponent._impl, AVAudioUnitComponentManager._impl, 
+                       AVMIDIPlayer._impl, AVMusicTrack._impl ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ _AVAudioBitRateStrategy_Constant, _AVAudioBitRateStrategy_LongTermAverage, 
                        _AVAudioBitRateStrategy_Variable, _AVAudioBitRateStrategy_VariableConstrained, 
@@ -29,18 +29,18 @@ exports:
                        _AVVoiceControllerMetricAudioSessionSetActiveTime, _AVVoiceControllerMetricAudioSessionSetInactiveTime, 
                        _AVVoiceControllerMetricDataBeginHostTime, _AVVoiceControllerMetricDataDurationMilliSeconds, 
                        _AVVoiceControllerMetricDataEndHostTime, _AVVoiceControllerNoRecordRoute ]
-    objc-classes:    [ _AVAudioBuffer, _AVAudioChannelLayout, _AVAudioCompressedBuffer, 
-                       _AVAudioConnectionPoint, _AVAudioConverter, _AVAudioEndpointDetector, 
-                       _AVAudioEngine, _AVAudioEnvironmentDistanceAttenuationParameters, 
-                       _AVAudioEnvironmentNode, _AVAudioEnvironmentReverbParameters, 
-                       _AVAudioFile, _AVAudioFormat, _AVAudioIONode, _AVAudioInputNode, 
-                       _AVAudioMixerNode, _AVAudioMixingDestination, _AVAudioNode, 
-                       _AVAudioOutputNode, _AVAudioPCMBuffer, _AVAudioPlayer, _AVAudioPlayerNode, 
-                       _AVAudioRecorder, _AVAudioSequencer, _AVAudioSession, _AVAudioTime, 
-                       _AVAudioUnit, _AVAudioUnitComponent, _AVAudioUnitComponentManager, 
-                       _AVAudioUnitDelay, _AVAudioUnitDistortion, _AVAudioUnitEQ, 
-                       _AVAudioUnitEQFilterParameters, _AVAudioUnitEffect, _AVAudioUnitGenerator, 
-                       _AVAudioUnitMIDIInstrument, _AVAudioUnitReverb, _AVAudioUnitSampler, 
-                       _AVAudioUnitTimeEffect, _AVAudioUnitTimePitch, _AVAudioUnitVarispeed, 
-                       _AVMIDIPlayer, _AVMusicTrack, _AVVCAudioBuffer, _AVVoiceController ]
+    objc-classes:    [ AVAudioBuffer, AVAudioChannelLayout, AVAudioCompressedBuffer, 
+                       AVAudioConnectionPoint, AVAudioConverter, AVAudioEndpointDetector, 
+                       AVAudioEngine, AVAudioEnvironmentDistanceAttenuationParameters, 
+                       AVAudioEnvironmentNode, AVAudioEnvironmentReverbParameters, 
+                       AVAudioFile, AVAudioFormat, AVAudioIONode, AVAudioInputNode, 
+                       AVAudioMixerNode, AVAudioMixingDestination, AVAudioNode, AVAudioOutputNode, 
+                       AVAudioPCMBuffer, AVAudioPlayer, AVAudioPlayerNode, AVAudioRecorder, 
+                       AVAudioSequencer, AVAudioSession, AVAudioTime, AVAudioUnit, 
+                       AVAudioUnitComponent, AVAudioUnitComponentManager, AVAudioUnitDSPGraph, 
+                       AVAudioUnitDelay, AVAudioUnitDistortion, AVAudioUnitEQ, AVAudioUnitEQFilterParameters, 
+                       AVAudioUnitEffect, AVAudioUnitGenerator, AVAudioUnitMIDIInstrument, 
+                       AVAudioUnitReverb, AVAudioUnitSampler, AVAudioUnitTimeEffect, 
+                       AVAudioUnitTimePitch, AVAudioUnitVarispeed, AVMIDIPlayer, 
+                       AVMusicTrack, AVVCAudioBuffer, AVVoiceController ]
 ...

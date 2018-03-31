@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 37D3D1F6-A0B4-3BF5-84FE-DE14B41F3B0F', 'x86_64: 66696415-5366-3D09-B166-FFCD7EEAEF53' ]
+uuids:           [ 'i386: 547B762A-6C80-315C-AFAB-8D039FEAE3D0', 'x86_64: 2FD46077-0689-3320-B436-EB862ABE06A5' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CommonCandidateWindow.framework/Versions/A/CommonCandidateWindow
 exports:         

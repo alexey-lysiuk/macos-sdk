@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0142DF4A-2771-3657-8911-F9731D5F194A' ]
+uuids:           [ 'x86_64: 16924C50-2679-3835-AA17-5B4DED1A3804' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MMCS.framework/Versions/A/MMCS
-current-version: 432
+current-version: 434
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _C3BaseRelease, _C3BaseRetain, _CKChunkSchemeAndEncryptionKeySize, 
@@ -143,7 +143,7 @@ exports:
                        _registerItemSignatureEqualitySetCallbacks, _ub_log_facility, 
                        _ub_log_levels, _ub_log_set_all_facility_level, _ub_log_set_facility_level, 
                        _ub_log_set_print_state ]
-    objc-classes:    [ _C2MPClientInfo, _C2MPError, _C2MPMetric, _C2MPNetworkStatistic, 
-                       _C2ReportMetrics, _C2RequestManager, _C2RequestOptions, _C2Session, 
-                       _C2SessionPool, _C2SessionTask, _MMCSBoundedQueue ]
+    objc-classes:    [ C2MPClientInfo, C2MPError, C2MPMetric, C2MPNetworkStatistic, 
+                       C2ReportMetrics, C2RequestManager, C2RequestOptions, C2Session, 
+                       C2SessionPool, C2SessionTask, MMCSBoundedQueue ]
 ...

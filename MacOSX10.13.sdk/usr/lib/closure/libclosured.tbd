@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: E0E52FC3-51A9-385F-953D-23A7CA8D5666', 'x86_64: 48051216-5647-3643-B979-B77D0FD20011' ]
+uuids:           [ 'i386: F357ECA7-469A-3611-8D9C-3267FB90071A', 'x86_64: DC3DA678-9C40-339C-A9C6-32AB74FCC682' ]
 platform:        macosx
 install-name:    /usr/lib/closure/libclosured.dylib
 objc-constraint: none

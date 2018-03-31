@@ -1,4 +1,4 @@
-.TH "MPSTemporaryMatrix" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "MPSTemporaryMatrix" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -49,7 +49,7 @@ It is never necessary to call this method\&. It is purely a performance and memo
 .RS 4
 \fIcommandBuffer\fP The command buffer on which the \fBMPSTemporaryMatrix\fP will be used 
 .br
-\fIdescriptorList\fP A NSArray of \fBMPSMatrixDescriptor\fP, indicating matrices that will be created 
+\fIdescriptorList\fP \fBA\fP NSArray of \fBMPSMatrixDescriptor\fP, indicating matrices that will be created 
 .RE
 .PP
 
@@ -60,12 +60,12 @@ Initialize a \fBMPSTemporaryMatrix\fP for use on a MTLCommandBuffer
 .RS 4
 \fIcommandBuffer\fP The MTLCommandBuffer on which the \fBMPSTemporaryMatrix\fP will be exclusively used 
 .br
-\fImatrixDescriptor\fP A valid \fBMPSMatrixDescriptor\fP describing the \fBMPSMatrix\fP format to create 
+\fImatrixDescriptor\fP \fBA\fP valid \fBMPSMatrixDescriptor\fP describing the \fBMPSMatrix\fP format to create 
 .RE
 .PP
 \fBReturns:\fP
 .RS 4
-A valid \fBMPSTemporaryMatrix\fP\&. The object is not managed by a NSAutoreleasePool\&. The object will be released when the command buffer is committed\&. The underlying buffer will become invalid before this time due to the action of the readCount property\&. Please read and understand the use of the readCount property before using this object\&. 
+\fBA\fP valid \fBMPSTemporaryMatrix\fP\&. The object is not managed by a NSAutoreleasePool\&. The object will be released when the command buffer is committed\&. The underlying buffer will become invalid before this time due to the action of the readCount property\&. Please read and understand the use of the readCount property before using this object\&. 
 .RE
 .PP
 

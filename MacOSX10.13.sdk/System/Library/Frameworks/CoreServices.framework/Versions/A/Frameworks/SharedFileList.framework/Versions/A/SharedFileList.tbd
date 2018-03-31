@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: CD97E31D-0354-36AB-9997-C4FAF3221D30', 'x86_64: 4AA6DCF5-BAF8-36FA-A8B0-EDF518EFEF14' ]
+uuids:           [ 'i386: A3C175C5-17D5-334F-B722-DAE4B6ABFA99', 'x86_64: 7DB79D78-9925-33F8-96BA-35AB7AEB326A' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/SharedFileList.framework/Versions/A/SharedFileList
-current-version: 71.4
+current-version: 71.21
 parent-umbrella: CoreServices
 exports:         
   - archs:           [ i386, x86_64 ]
@@ -79,6 +79,5 @@ exports:
                        _kLSSharedFileListVolumesShowHardDrives, _kLSSharedFileListVolumesShowHardDrivesExceptions, 
                        _kLSSharedFileListVolumesShowRemovableVolumes, _kLSSharedFileListVolumesShowRemovableVolumesExceptions, 
                        _kLSSharedFileListVolumesShowRepairing, _kSFLDefaultsDomain ]
-    objc-classes:    [ _SFLBookmark, _SFLDefaults, _SFLItem, _SFLManager, __SFLItem, 
-                       __SFLList ]
+    objc-classes:    [ SFLBookmark, SFLDefaults, SFLItem, SFLManager, _SFLItem, _SFLList ]
 ...

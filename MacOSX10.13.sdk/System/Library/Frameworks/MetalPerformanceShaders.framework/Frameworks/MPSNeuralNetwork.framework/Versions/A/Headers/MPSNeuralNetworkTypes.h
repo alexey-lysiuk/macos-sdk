@@ -83,7 +83,92 @@ typedef NS_ENUM(NSUInteger, MPSCNNBinaryConvolutionType)
     MPSCNNBinaryConvolutionType
 #endif
 ;
+    
+/*! @enum        MPSNNConvolutionAccumulatorPrecisionOption
+ *  @memberof    MPSCNNConvolution
+ *  @abstract    Options set on MPSCNNConvolution objects to control precision of accumulator used.
+ *  @discussion  Convolution operation involves sequence of multiply-accumulate operation i.e.
+ *                         accumulator = imageData * weight + accumulator
+ *               Default MPSDataType for both imageData and weight is MPSDataTypeFloat16 i.e. half precision float.
+ *               Multiply-accumulate result (imageData * weight + accumulator) needs to be rounded to precision of accumulator.
+ *               MPS allows either half float or full float accumulator type using appropriate flags.
+ *               The choice of accmulator precision should be based on how much precision loss application can sustain
+ *               without significanly affecting accuracy of network.
+ *               Default accumulator precision is half (MPSNNConvolutionAccumulatorPrecisionOptionHalf).
+ *               If accumulation of computational rounding error in the result is excessive,
+ *               user can specify MPSNNConvolutionAccumulatorPrecisionOptionFloat for full float accumulator.
+ *               Note that on some devices, which doesnt provide IEEE compliant half arithmetic (A10 and older), half precision
+ *               accumulator can cause excessive loss of precision causing severe loss in accuracy. MPS automatically
+ *               ignores this option on those hardware and uses full float accumulator. On hardware that do support IEEE
+ *               compliant half arithmetic and half accumulator do meet applications accuracy requirements, it can provide
+ *               significant performance benefits.
+ */
+    
+#if defined(DOXYGEN)
+typedef enum MPSNNConvolutionAccumulatorPrecisionOption
+#else
+typedef NS_OPTIONS(NSUInteger, MPSNNConvolutionAccumulatorPrecisionOption)
+#endif
+{
+    /*! Set accumulator type to half precision float. */
+    MPSNNConvolutionAccumulatorPrecisionOptionHalf        MPS_ENUM_AVAILABLE_STARTING( macos(10.13.4), ios(11.3), tvos(11.3)) MPS_SWIFT_NAME(none) = 0U,
+        
+    /*! Set accumulator type to single precision float. */
+    MPSNNConvolutionAccumulatorPrecisionOptionFloat        MPS_ENUM_AVAILABLE_STARTING( macos(10.13.4), ios(11.3), tvos(11.3))  = 1U << 1,
+        
+};
 
+/*! @enum       MPSNNTrainingStyle
+ *  @abstract   Options that control how the MPSNNGraph nodes are trained
+ *  @discussion Nodes tha are trainable conform to the MPSNNTrainableNode protocol.
+ *              This adds a MPSNNTrainingStyle property to the node that may be used
+ *              to influence when and where the neural network training paramers such as
+ *              convolution weights are updated. */
+#if defined(DOXYGEN)
+typedef enum MPSNNTrainingStyle
+#else
+typedef NS_OPTIONS(NSUInteger, MPSNNTrainingStyle)
+#endif
+{
+    /*! Do not train this node, for example in transfer learning */
+    MPSNNTrainingStyleUpdateDeviceNone  MPS_ENUM_AVAILABLE_STARTING(macos(10.13.4), ios(11.3), tvos(11.3))  MPS_SWIFT_NAME(UpdateDeviceNone) = 0,
+
+    /*! The weight update pass will be called in a command buffer completion callback, with a nil command buffer */
+    MPSNNTrainingStyleUpdateDeviceCPU   MPS_ENUM_AVAILABLE_STARTING(macos(10.13.4), ios(11.3), tvos(11.3)) = 1,
+
+    /*! The weight update pass will be called immediately after the gradient pass is encoded, with a nonnull command buffer */
+    MPSNNTrainingStyleUpdateDeviceGPU   MPS_ENUM_AVAILABLE_STARTING(macos(10.13.4), ios(11.3), tvos(11.3)) = 2,
+}
+#if defined(DOXYGEN)
+MPSNNTrainingStyle
+#endif
+;
+
+#if defined(DOXYGEN)
+    typedef enum MPSCNNBatchNormalizationFlags
+#else
+    typedef NS_OPTIONS(NSUInteger, MPSCNNBatchNormalizationFlags)
+#endif
+    {
+        /*! Default Settings */
+        MPSCNNBatchNormalizationFlagsDefault  MPS_ENUM_AVAILABLE_STARTING(macos(10.13.4), ios(11.3), tvos(11.3))  MPS_SWIFT_NAME(Default) = 0,
+        
+        /*! Statistics are calculated if another node consumes the gradient node (training). The data source is used otherwise. */
+        MPSCNNBatchNormalizationFlagsCalculateStatisticsAutomatic   MPS_ENUM_AVAILABLE_STARTING(macos(10.13.4), ios(11.3), tvos(11.3)) MPS_SWIFT_NAME(CalculateStatisticsAutomatic) = MPSCNNBatchNormalizationFlagsDefault,
+
+        /*! Statistics are calculated always */
+        MPSCNNBatchNormalizationFlagsCalculateStatisticsAlways      MPS_ENUM_AVAILABLE_STARTING(macos(10.13.4), ios(11.3), tvos(11.3)) = 1,
+
+        /*! Statistics are never calculated. Predefined values from the data source are used instead */
+        MPSCNNBatchNormalizationFlagsCalculateStatisticsNever       MPS_ENUM_AVAILABLE_STARTING(macos(10.13.4), ios(11.3), tvos(11.3)) = 2,
+
+        /*! Bits used for  MPSCNNBatchNormalizationFlagsCalculateStatistics*/
+        MPSCNNBatchNormalizationFlagsCalculateStatisticsMask        MPS_ENUM_AVAILABLE_STARTING(macos(10.13.4), ios(11.3), tvos(11.3)) = 3,
+    }
+#if defined(DOXYGEN)
+    MPSCNNBatchNormalizationFlags
+#endif
+    ;
 
     
 /*! @enum       MPSNNPaddingMethod
@@ -143,7 +228,7 @@ typedef NS_ENUM(NSUInteger, MPSCNNBinaryConvolutionType)
  *              in the MPSNNPaddingMethod. There is no provision for a MPSNNPaddingMethodSize without a remainder
  *              policy or vice versa. It is in practice used as a bit field.
  *
- *              Most MPSNN filters are considered forward filters. Some (e.g. convolution transpose and unpooling)
+ *              Most MPSNN filters are considered forward filters. Some (e.g. convolution transpose)
  *              are considered reverse filters. For the reverse filters, the image stride is measured in destination
  *              values rather than source values and has the effect of enlarging the image rather than reducing it.
  *              When a reverse filter is used to "undo" the effects of a forward filter, the MPSNNPaddingMethodSize should
@@ -290,7 +375,7 @@ typedef NS_ENUM(NSUInteger, MPSCNNBinaryConvolutionType)
      *                      return (sourceSize + stride - 1) / stride;          // sourceSize / stride, round up
      *                  }
      *
-     *                  // Typical destination size in one dimension for reverse filters (e.g. unpooling, convolution transpose)
+     *                  // Typical destination size in one dimension for reverse filters (e.g. convolution transpose)
      *                  static int DestSizeReverse( int sourceSize, int stride, int filterWindowSize, Style style ){
      *                      return (sourceSize-1) * stride +        // center tap for the last N-1 results. Take stride into account
      *                              1 +                             // center tap for the first result
@@ -339,6 +424,10 @@ typedef NS_ENUM(NSUInteger, MPSCNNBinaryConvolutionType)
                                                                    sourceStates: (NSArray <MPSState *> * __nullable) sourceStates
                                                                       forKernel: (MPSKernel * __nonnull) kernel
                                                             suggestedDescriptor: (MPSImageDescriptor * __nonnull) inDescriptor;
+
+    /*! @abstract   Make a "inverted" padding policy suitable for a training gradient pass.  */
+    -(instancetype __nullable) inverse MPS_AVAILABLE_STARTING( macos(10.13.4), ios(11.3), tvos(11.3));
+
 @end
 
 /*! @abstract   This class provides some pre-rolled padding policies for common tasks
@@ -364,7 +453,7 @@ MPS_CLASS_AVAILABLE_STARTING( macos(10.13), ios(11.0), tvos(11.0))
  *
  *                  This padding method attempts to reproduce TensorFlow padding for average pooling.
  *                  In addition to setting MPSNNPaddingMethodSizeSame | MPSNNPaddingMethodAlignCentered |
- *                  MPSNNPaddingMethodAddRemainderToTopLeft, it also configures the filter to run with
+ *                  MPSNNPaddingMethodAddRemainderToBottomRight, it also configures the filter to run with
  *                  MPSImageEdgeModeClamp, which (as a special case for average pooling only), normalizes the
  *                  sum of contributing samples to the area of valid contributing pixels only.
  *
@@ -384,7 +473,10 @@ MPS_CLASS_AVAILABLE_STARTING( macos(10.13), ios(11.0), tvos(11.0))
  *                       }
  *                  @endcode
  */
-+ (instancetype __nonnull) paddingForTensorflowAveragePooling;
++ (instancetype __nonnull) paddingForTensorflowAveragePooling MPS_AVAILABLE_STARTING( macos(10.13.4), ios(11.3), tvos(11.3));  // same size centering mode
+
+/*! @abstract Typical pooling padding policy for valid only mode */
++ (instancetype __nonnull) paddingForTensorflowAveragePoolingValidOnly  MPS_AVAILABLE_STARTING( macos(10.13.4), ios(11.3), tvos(11.3));
 
 /*! @abstract  Human readable description of what the padding policy does */
 -(NSString * __nonnull) label;
@@ -393,7 +485,7 @@ MPS_CLASS_AVAILABLE_STARTING( macos(10.13), ios(11.0), tvos(11.0))
    
 /*! @abstract   MPSStates conforming to this protocol contain information about a image size elsewhere in the graph
  *  @discussion In some graphs a sequence of operations are done, then they are undone ins a series of 'reverse' 
- *              operations. Examples might be pooling vs unpooling / upsampling,  or convolution vs. convolution transpose.
+ *              operations. Examples might be pooling vs pooling gradient / upsampling,  or convolution vs. convolution transpose.
  *              In such cases, the 'reverse' pass generally is converting from a smaller image to a larger image,
  *              and there is insufficient information to do this correctly. Several answers exist and we don't know
  *              which is correct.

@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: FCA26BA2-664E-3B2D-B547-999F0F4CF345', 'x86_64: F179766A-0448-37A6-9AD0-99E2FF2C0AD9' ]
+uuids:           [ 'i386: DFB1DF68-1962-3033-8349-D87415307317', 'x86_64: 334D4742-BDDD-3C2D-BBEB-85B32643BFA0' ]
 platform:        macosx
 install-name:    /usr/lib/libmecab.1.0.0.dylib
 current-version: 779.7.5

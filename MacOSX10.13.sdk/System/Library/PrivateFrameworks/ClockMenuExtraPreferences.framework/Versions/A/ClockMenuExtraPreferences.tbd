@@ -1,16 +1,16 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: EA73C0F9-D3DE-3E07-9AEB-15ED024D0D1A', 'x86_64: D3A42530-58D1-3BD3-8E2B-B41EB88AF9D7' ]
+uuids:           [ 'i386: 7BC68C45-A771-31AA-90A5-506A19F55466', 'x86_64: 4A5754DC-1E76-33D4-BC1A-40BB6713D992' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ClockMenuExtraPreferences.framework/Versions/A/ClockMenuExtraPreferences
 exports:         
   - archs:           [ x86_64 ]
-    objc-ivars:      [ _CLKClockExtraPreferences.is24HourForced, _CLKClockExtraPreferences.locale, 
-                       _CLKClockExtraPreferences.userWantsToShowAMPM, _CLKDistribuitedPreferences.atomicChangePreferencesCount, 
-                       _CLKDistribuitedPreferences.disablePersistentDomainDidChangeNotification, 
-                       _CLKDistribuitedPreferences.isPersistentDomainNameNew, _CLKDistribuitedPreferences.persistentDomainName, 
-                       _CLKLegacyPreferences.preferencesDictionary, _CLKPreferences.dateFormat, 
-                       _CLKPreferences.flashDateSeparators, _CLKPreferences.isAnalog ]
+    objc-ivars:      [ CLKClockExtraPreferences.is24HourForced, CLKClockExtraPreferences.locale, 
+                       CLKClockExtraPreferences.userWantsToShowAMPM, CLKDistribuitedPreferences.atomicChangePreferencesCount, 
+                       CLKDistribuitedPreferences.disablePersistentDomainDidChangeNotification, 
+                       CLKDistribuitedPreferences.isPersistentDomainNameNew, CLKDistribuitedPreferences.persistentDomainName, 
+                       CLKLegacyPreferences.preferencesDictionary, CLKPreferences.dateFormat, 
+                       CLKPreferences.flashDateSeparators, CLKPreferences.isAnalog ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ _CLKAppendAMPMLegacyKey, _CLKAppleDatePreferencesChangedNotification, 
                        _CLKDisplaySecondsLegacyKey, _CLKErrorLog, _CLKFlashSeparatorsLegacyKey, 
@@ -19,6 +19,6 @@ exports:
                        __CLKDateFormatKey, __CLKFlashDateSeparatorsKey, __CLKIsAnalogKey, 
                        __CLKLog, __CLKMenuExtraAddedNotification, __CLKMenuExtraRemovedNotification, 
                        __CLKNotificationSenderNameKey ]
-    objc-classes:    [ _CLKClockExtraPreferences, _CLKDistribuitedPreferences, _CLKLegacyPreferences, 
-                       _CLKPreferences ]
+    objc-classes:    [ CLKClockExtraPreferences, CLKDistribuitedPreferences, CLKLegacyPreferences, 
+                       CLKPreferences ]
 ...

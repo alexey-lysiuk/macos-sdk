@@ -49,17 +49,18 @@ Automatically tear down the tether after a specified amount of time.
 The first and last IPv4 addresses, in dot notation, to use for the tethered network.
 The gateway -- the tethering Mac -- will have the first address.
 .It --server path
-The path to a plist specifying the tethered caching server.
+The path to a plist specifying the tethered content cache.
 The plist must be a dictionary with the following keys and values:
 .Bl -tag
 .It capabilities dictionary
-A set of capabilities that the caching server supports.
+A set of capabilities that the content cache supports.
 .It guid string
-The caching server's ServerGUID.
+The content cache's ServerGUID.
 .It port number
-The port number on which the caching server accepts requests.
+The port number on which the content cache accepts requests.
 .El
 .El
 .Sh "SEE ALSO"
+System Preferences > Sharing > Content Caching,
 .Ns Xr AssetCacheLocatorUtil 8 ,
 .Ns Xr AssetCacheManagerUtil 8

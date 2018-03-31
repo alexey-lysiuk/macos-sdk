@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6A8B703D-F226-3988-967C-59D4E6A1B176' ]
+uuids:           [ 'x86_64: 4EA3177A-ADFF-3DCB-97A5-679C8C11B014' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Jet.framework/Versions/A/Jet
 exports:         
@@ -213,7 +213,7 @@ exports:
                        __ZTV15jet_buffer_pool, __ZTV15jet_framebuffer, __ZTV15jet_render_mode, 
                        __ZTV16jet_stencil_mode, __ZTV17jet_context_Metal, __ZTV18jet_context_OpenGL, 
                        __ZTV22jet_depth_stencil_mode, __ZTV9jet_fence ]
-    objc-classes:    [ _JetView ]
+    objc-classes:    [ JetView ]
     weak-def-symbols: [ __ZTI12jet_function, __ZTI13jet_render_op, __ZTI15jet_fence_Metal, 
                         __ZTI16jet_buffer_Metal, __ZTI16jet_fence_OpenGL, __ZTI17jet_buffer_OpenGL, 
                         __ZTI17jet_program_Metal, __ZTI17jet_sampler_Metal, __ZTI17jet_texture_Metal, 

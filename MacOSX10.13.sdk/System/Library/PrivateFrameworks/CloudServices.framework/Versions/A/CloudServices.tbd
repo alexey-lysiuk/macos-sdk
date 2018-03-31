@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6118136E-37BF-3DFE-9339-9DFE2031B4E9' ]
+uuids:           [ 'x86_64: 7A55CF98-D8E8-3450-BA7C-14CDC26940C5' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CloudServices.framework/Versions/A/CloudServices
 objc-constraint: none
@@ -45,8 +45,9 @@ exports:
                        _kSecureBackupEMCSOldManagedCredentialKey, _kSecureBackupErrorDomain, 
                        _kSecureBackupEscrowDateKey, _kSecureBackupEscrowDigestKey, 
                        _kSecureBackupEscrowTimestampKey, _kSecureBackupEscrowTrustStatusKey, 
-                       _kSecureBackupFMiPDataKey, _kSecureBackupFMiPRecoveryKey, 
-                       _kSecureBackupFMiPUUIDKey, _kSecureBackupIDMSDataKey, _kSecureBackupIDMSRecoveryKey, 
+                       _kSecureBackupEscrowedSPKIKey, _kSecureBackupFMiPDataKey, 
+                       _kSecureBackupFMiPRecoveryKey, _kSecureBackupFMiPUUIDKey, 
+                       _kSecureBackupIDMSDataKey, _kSecureBackupIDMSRecoveryKey, 
                        _kSecureBackupIsEnabledKey, _kSecureBackupLastBackupDateKey, 
                        _kSecureBackupLastBackupTimestampKey, _kSecureBackupMetadataKey, 
                        _kSecureBackupNewPassphraseKey, _kSecureBackupNotificationKey, 
@@ -69,5 +70,5 @@ exports:
                        _kSecureBackupVerificationTokenKey, _kSecureBackupiCDPRecordsKey, 
                        _kSecureBackupiCloudDataProtectionDeleteAllRecordsKey, _kSecureBackupiCloudDataProtectionEnabledKey, 
                        _kSecureBackupiCloudIdentityDataKey, _kSecureBackupiCloudIdentityPublicDataKey ]
-    objc-classes:    [ _SecureBackup ]
+    objc-classes:    [ SecureBackup ]
 ...

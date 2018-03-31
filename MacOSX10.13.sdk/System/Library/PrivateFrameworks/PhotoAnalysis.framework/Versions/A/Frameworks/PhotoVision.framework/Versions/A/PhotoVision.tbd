@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 637E46A1-B96A-32D6-937C-2D393E046737' ]
+uuids:           [ 'x86_64: 84C01D27-77AF-3F4D-9FBA-787241E77B15' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Versions/A/Frameworks/PhotoVision.framework/Versions/A/PhotoVision
 objc-constraint: none
@@ -39,11 +39,11 @@ exports:
                        _PV_AGGREGATE_KEY_PersonPromoter_NumberOfGraphMergeCandidatesAddedBySocialGroupTimeWarpingStep, 
                        _PV_AGGREGATE_KEY_PersonPromoter_NumberOfGraphMergeCandidatesAddedByTimeStep, 
                        _PV_AGGREGATE_KEY_PersonPromoter_NumberPersonsPromoterToGraphVerified ]
-    objc-classes:    [ _PVAggregate, _PVCVMLHelper, _PVCanceler, _PVClusterer, _PVContext, 
-                       _PVDataAccessor, _PVFace, _PVFaceCrop, _PVFaceCropAnalyzer, 
-                       _PVFaceCropGenerator, _PVFaceCropSourceDescriptor, _PVFaceCropUtils, 
-                       _PVFaceGroup, _PVFaceprint, _PVGeometryUtils, _PVImage, _PVImageLoader, 
-                       _PVNotification, _PVObject, _PVPerson, _PVPersonCluster, _PVPersonClusterManager, 
-                       _PVPersonPromoter, _PVSceneTaxonomy, _PVSceneTaxonomyNode, 
-                       _PVUserDefaults, _PhotoVision ]
+    objc-classes:    [ PVAggregate, PVCVMLHelper, PVCanceler, PVClusterer, PVContext, 
+                       PVDataAccessor, PVFace, PVFaceCrop, PVFaceCropAnalyzer, PVFaceCropGenerator, 
+                       PVFaceCropSourceDescriptor, PVFaceCropUtils, PVFaceGroup, 
+                       PVFaceprint, PVGeometryUtils, PVImage, PVImageLoader, PVNotification, 
+                       PVObject, PVPerson, PVPersonCluster, PVPersonClusterManager, 
+                       PVPersonPromoter, PVSceneTaxonomy, PVSceneTaxonomyNode, PVUserDefaults, 
+                       PhotoVision ]
 ...

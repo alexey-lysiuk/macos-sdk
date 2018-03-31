@@ -1,4 +1,4 @@
-.TH "MPSNNGraphNodes.h" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "MPSNNGraphNodes.h" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -22,16 +22,31 @@ MPSNNGraphNodes.h
 .RI "protocol \fB<MPSHandle >\fP"
 .br
 .ti -1c
+.RI "protocol \fB<MPSNNTrainableNode >\fP"
+.br
+.ti -1c
 .RI "class \fBMPSNNImageNode\fP"
 .br
 .ti -1c
 .RI "class \fBMPSNNStateNode\fP"
 .br
 .ti -1c
-.RI "class \fBMPSCNNConvolutionStateNode\fP"
+.RI "class \fBMPSNNGradientStateNode\fP"
+.br
+.ti -1c
+.RI "class \fBMPSCNNConvolutionGradientStateNode\fP"
+.br
+.ti -1c
+.RI "class \fBMPSNNBinaryGradientStateNode\fP"
+.br
+.ti -1c
+.RI "class \fBMPSNNArithmeticGradientStateNode\fP"
 .br
 .ti -1c
 .RI "class \fBMPSNNFilterNode\fP"
+.br
+.ti -1c
+.RI "class \fBMPSNNGradientFilterNode\fP"
 .br
 .ti -1c
 .RI "class \fBMPSCNNConvolutionNode\fP"
@@ -47,6 +62,9 @@ MPSNNGraphNodes.h
 .br
 .ti -1c
 .RI "class \fBMPSCNNConvolutionTransposeNode\fP"
+.br
+.ti -1c
+.RI "class \fBMPSCNNConvolutionGradientNode\fP"
 .br
 .ti -1c
 .RI "class \fBMPSCNNNeuronNode\fP"
@@ -85,6 +103,18 @@ MPSNNGraphNodes.h
 .RI "class \fBMPSCNNNeuronPReLUNode\fP"
 .br
 .ti -1c
+.RI "class \fBMPSCNNNeuronPowerNode\fP"
+.br
+.ti -1c
+.RI "class \fBMPSCNNNeuronExponentialNode\fP"
+.br
+.ti -1c
+.RI "class \fBMPSCNNNeuronLogarithmNode\fP"
+.br
+.ti -1c
+.RI "class \fBMPSCNNNeuronGradientNode\fP"
+.br
+.ti -1c
 .RI "class \fBMPSCNNPoolingNode\fP"
 .br
 .ti -1c
@@ -100,16 +130,52 @@ MPSNNGraphNodes.h
 .RI "class \fBMPSCNNDilatedPoolingMaxNode\fP"
 .br
 .ti -1c
+.RI "class \fBMPSCNNPoolingGradientNode\fP"
+.br
+.ti -1c
+.RI "class \fBMPSCNNPoolingMaxGradientNode\fP"
+.br
+.ti -1c
+.RI "class \fBMPSCNNPoolingAverageGradientNode\fP"
+.br
+.ti -1c
+.RI "class \fBMPSCNNPoolingL2NormGradientNode\fP"
+.br
+.ti -1c
+.RI "class \fBMPSCNNDilatedPoolingMaxGradientNode\fP"
+.br
+.ti -1c
 .RI "class \fBMPSCNNNormalizationNode\fP"
 .br
 .ti -1c
 .RI "class \fBMPSCNNSpatialNormalizationNode\fP"
 .br
 .ti -1c
+.RI "class \fBMPSCNNSpatialNormalizationGradientNode\fP"
+.br
+.ti -1c
 .RI "class \fBMPSCNNLocalContrastNormalizationNode\fP"
 .br
 .ti -1c
+.RI "class \fBMPSCNNLocalContrastNormalizationGradientNode\fP"
+.br
+.ti -1c
 .RI "class \fBMPSCNNCrossChannelNormalizationNode\fP"
+.br
+.ti -1c
+.RI "class \fBMPSCNNCrossChannelNormalizationGradientNode\fP"
+.br
+.ti -1c
+.RI "class \fBMPSCNNInstanceNormalizationNode\fP"
+.br
+.ti -1c
+.RI "class \fBMPSCNNInstanceNormalizationGradientNode\fP"
+.br
+.ti -1c
+.RI "class \fBMPSCNNBatchNormalizationNode\fP"
+.br
+.ti -1c
+.RI "class \fBMPSCNNBatchNormalizationGradientNode\fP"
 .br
 .ti -1c
 .RI "protocol \fB<MPSImageTransformProvider >\fP"
@@ -139,19 +205,58 @@ MPSNNGraphNodes.h
 .RI "class \fBMPSNNDivisionNode\fP"
 .br
 .ti -1c
+.RI "class \fBMPSNNArithmeticGradientNode\fP"
+.br
+.ti -1c
+.RI "class \fBMPSNNAdditionGradientNode\fP"
+.br
+.ti -1c
+.RI "class \fBMPSNNSubtractionGradientNode\fP"
+.br
+.ti -1c
+.RI "class \fBMPSNNMultiplicationGradientNode\fP"
+.br
+.ti -1c
+.RI "class \fBMPSCNNDropoutNode\fP"
+.br
+.ti -1c
+.RI "class \fBMPSCNNDropoutGradientNode\fP"
+.br
+.ti -1c
+.RI "class \fBMPSNNLabelsNode\fP"
+.br
+.ti -1c
+.RI "class \fBMPSCNNLossNode\fP"
+.br
+.ti -1c
 .RI "class \fBMPSNNConcatenationNode\fP"
+.br
+.ti -1c
+.RI "class \fBMPSNNConcatenationGradientNode\fP"
 .br
 .ti -1c
 .RI "class \fBMPSCNNSoftMaxNode\fP"
 .br
 .ti -1c
+.RI "class \fBMPSCNNSoftMaxGradientNode\fP"
+.br
+.ti -1c
 .RI "class \fBMPSCNNLogSoftMaxNode\fP"
+.br
+.ti -1c
+.RI "class \fBMPSCNNLogSoftMaxGradientNode\fP"
 .br
 .ti -1c
 .RI "class \fBMPSCNNUpsamplingNearestNode\fP"
 .br
 .ti -1c
 .RI "class \fBMPSCNNUpsamplingBilinearNode\fP"
+.br
+.ti -1c
+.RI "class \fBMPSCNNUpsamplingNearestGradientNode\fP"
+.br
+.ti -1c
+.RI "class \fBMPSCNNUpsamplingBilinearGradientNode\fP"
 .br
 .in -1c
 .SH "Author"

@@ -1,16 +1,16 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 84481B11-836D-3E57-8AEB-0C784637993A' ]
+uuids:           [ 'x86_64: ECC0CC3F-B1BD-3DF5-95F4-1FB8140C3501' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/BatteryUIKit.framework/Versions/A/BatteryUIKit
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _BatteryUIKitVersionNumber, _BatteryUIKitVersionString, _NSStringFromPowerSource ]
-    objc-classes:    [ _BUIBatteryObserver, _BUIImage, _BUIPowerSource, _BUIViewController ]
-    objc-ivars:      [ _BUIPowerSource._baselineCapacity, _BUIPowerSource._isPluggedIn, 
-                       _BUIPowerSource._isPluggedInDetermined, _BUIPowerSource._isUPS, 
-                       _BUIPowerSource._isUPSDetermined, _BUIPowerSource._percentRemaining, 
-                       _BUIPowerSource._percentRemainingDetermined, _BUIPowerSource._psDescriptionDictionary, 
-                       _BUIPowerSource._timeLeft, _BUIPowerSource._timeLeftString, 
-                       _BUIPowerSource._timeLeftStringDetermined ]
+    objc-classes:    [ BUIBatteryObserver, BUIImage, BUIPowerSource, BUIViewController ]
+    objc-ivars:      [ BUIPowerSource._baselineCapacity, BUIPowerSource._isPluggedIn, 
+                       BUIPowerSource._isPluggedInDetermined, BUIPowerSource._isUPS, 
+                       BUIPowerSource._isUPSDetermined, BUIPowerSource._percentRemaining, 
+                       BUIPowerSource._percentRemainingDetermined, BUIPowerSource._psDescriptionDictionary, 
+                       BUIPowerSource._timeLeft, BUIPowerSource._timeLeftString, 
+                       BUIPowerSource._timeLeftStringDetermined ]
 ...

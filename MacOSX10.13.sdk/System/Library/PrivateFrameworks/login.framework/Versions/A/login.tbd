@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: A77D7047-2994-3696-8E3D-9922F2659A26', 'x86_64: 140118A7-8FB9-35C5-92FA-BD79C9C32309' ]
+uuids:           [ 'i386: CDB5BDAD-934C-390D-A1B6-0EBA73043BCE', 'x86_64: 79189BF9-70D4-3839-9E2F-B3990B673A3E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/login.framework/Versions/A/login
 exports:         
@@ -10,14 +10,14 @@ exports:
                        _LFSMCreateDefaultSessionOptions, _LFSMCreateSessionTemporaryBridge, 
                        _LFSMCreateSessionWithOptionsByStartingServer, _LFSMIsThisSessionOnConsole, 
                        _LFSMSignalSessionReady, _LFSMSwitchToSessionWithOptions ]
-    objc-classes:    [ _LFSMSession ]
-    objc-ivars:      [ _LFListenerDelegate._listener, _LFLogindListener._privilegedInterface, 
-                       _LFSessionAgentMessageHandler._faceTimeCallCallbackBlockQueue, 
-                       _LFSessionAgentMessageHandler._faceTimeCallCancelCallbackBlock, 
-                       _LFSessionAgentMessageHandler._faceTimeCallMuteCallbackBlock, 
-                       _LFSessionAgentMessageHandler._logoutBlockQueue, _LFSessionAgentMessageHandler._logoutFailureBlock, 
-                       _LFSessionAgentMessageHandler._logoutSuccessBlock, _LFSessionAgentMessageHandler._miniBuddyCompletionBlock, 
-                       _LFSessionAgentMessageHandler._miniBuddyCompletionBlockQueue ]
+    objc-classes:    [ LFSMSession ]
+    objc-ivars:      [ LFListenerDelegate._listener, LFLogindListener._privilegedInterface, 
+                       LFSessionAgentMessageHandler._faceTimeCallCallbackBlockQueue, 
+                       LFSessionAgentMessageHandler._faceTimeCallCancelCallbackBlock, 
+                       LFSessionAgentMessageHandler._faceTimeCallMuteCallbackBlock, 
+                       LFSessionAgentMessageHandler._logoutBlockQueue, LFSessionAgentMessageHandler._logoutFailureBlock, 
+                       LFSessionAgentMessageHandler._logoutSuccessBlock, LFSessionAgentMessageHandler._miniBuddyCompletionBlock, 
+                       LFSessionAgentMessageHandler._miniBuddyCompletionBlockQueue ]
   - archs:           [ i386, x86_64 ]
     re-exports:      [ /System/Library/PrivateFrameworks/login.framework/Versions/A/Frameworks/loginsupport.framework/Versions/A/loginsupport ]
     symbols:         [ _CreateSessionOwnerConnection, _JoinAuditSessionIfNeeded, 
@@ -83,10 +83,9 @@ exports:
                        _kLFDBFlag_SA_Startup, _kLFDBFlag_SLI_General, _kLFDBFlag_SLO_General, 
                        _kLFDBFlag_SM_AuditSession, _kLFDBFlag_SM_CGSession, _kLFDBFlag_SM_General, 
                        _login_signpost_handle ]
-    objc-classes:    [ _LFConnection, _LFListener, _LFListenerDelegate, _LFLogindConnection, 
-                       _LFLogindListener, _LFMachPortWrapper, _LFSessionAgentConnection, 
-                       _LFSessionAgentListener, _LFSessionAgentListenerDelegate, 
-                       _LFSessionAgentMessageHandler, _LFSessionLogoutConnection, 
-                       _LFSessionLogoutDelegate, _LFSessionLogoutListener, _LFSessionOwnerConnection, 
-                       _LFSessionOwnerListener, _LFlogindListenerDelegate ]
+    objc-classes:    [ LFConnection, LFListener, LFListenerDelegate, LFLogindConnection, 
+                       LFLogindListener, LFMachPortWrapper, LFSessionAgentConnection, 
+                       LFSessionAgentListener, LFSessionAgentListenerDelegate, LFSessionAgentMessageHandler, 
+                       LFSessionLogoutConnection, LFSessionLogoutDelegate, LFSessionLogoutListener, 
+                       LFSessionOwnerConnection, LFSessionOwnerListener, LFlogindListenerDelegate ]
 ...

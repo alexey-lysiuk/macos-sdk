@@ -13,12 +13,15 @@
 #import <MPSImage/MPSImageConversion.h>
 #import <MPSImage/MPSImageConvolution.h>
 #import <MPSImage/MPSImageCopy.h>
+#import <MPSImage/MPSImageDistanceTransform.h>
+#import <MPSImage/MPSImageGuidedFilter.h>
 #import <MPSImage/MPSImageKeypoint.h>
 #import <MPSImage/MPSImageHistogram.h>
 #import <MPSImage/MPSImageIntegral.h>
 #import <MPSImage/MPSImageMath.h>
 #import <MPSImage/MPSImageMedian.h>
 #import <MPSImage/MPSImageMorphology.h>
+#import <MPSImage/MPSImageReduce.h>
 #import <MPSImage/MPSImageResampling.h>
 #import <MPSImage/MPSImageStatistics.h>
 #import <MPSImage/MPSImageThreshold.h>

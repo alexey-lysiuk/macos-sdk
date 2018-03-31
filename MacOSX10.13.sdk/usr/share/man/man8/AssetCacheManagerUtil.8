@@ -13,7 +13,7 @@
 .\" .Nm Other_name_for_same_program(),
 .\" .Nm Yet another name for the same program.
 .\" Use .Nm macro to designate other names for the documented program.
-.Nd control the macOS content cache
+.Nd control the macOS Content Cache
 .Sh SYNOPSIS             \" Section Header - required - don't modify
 .Nm
 .Op -a|--all
@@ -22,7 +22,7 @@
 .Ar command
 .Sh DESCRIPTION          \" Section Header - required - don't modify
 .Nm
-controls the macOS content cache.
+controls the macOS Content Cache.
 .Nm
 must be run by root except as noted below.
 The options are:
@@ -42,13 +42,16 @@ The commands are:
 .Bl -tag
 .It activate
 Activates the content cache.
-The caching server built-in to macOS is deactivated by default.
+Content caching is deactivated by default.
+After you activate content caching, restart devices on your network to take advantage of content caching immediately.
+Devices on your network will discover this content cache over time.
+Devices that are restarted will use this content cache immediately.
 .It deactivate
 Deactivates the content cache.
 .It isActivated
 Reports the content cache's activation status.
 Does not require root.
-.It canActicate
+.It canActivate
 Reports whether the content cache is eligible for activation.
 Does not require root.
 .It flushCache
@@ -84,6 +87,7 @@ is not modified, otherwise it is emptied.
 This command only starts the absorption, which proceeds and finishes in the background.
 .El
 .Sh "SEE ALSO"
+System Preferences > Sharing > Content Caching,
 .Ns Xr AssetCache 8 ,
 .Ns Xr AssetCacheLocatorUtil 8 ,
 .Ns Xr AssetCacheTetheratorUtil 8

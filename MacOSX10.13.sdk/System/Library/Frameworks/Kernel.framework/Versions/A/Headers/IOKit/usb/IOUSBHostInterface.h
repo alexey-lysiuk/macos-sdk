@@ -449,9 +449,13 @@ protected:
     OSMetaClassDeclareReservedUsed(IOUSBHostInterface, 71);
     virtual IOReturn destroyPipesGated();
 
+    OSMetaClassDeclareReservedUsed(IOUSBHostInterface, 72);
+    virtual IOReturn configureReportGated(IOReportChannelList* channels, IOReportConfigureAction action, void* result, void* destination);
+
+    OSMetaClassDeclareReservedUsed(IOUSBHostInterface, 73);
+    virtual IOReturn updateReportGated(IOReportChannelList* channels, IOReportUpdateAction action, void* result, void* destination);
+
     // Protected pad slots for alternate setting and pipe management
-    OSMetaClassDeclareReservedUnused(IOUSBHostInterface, 72);
-    OSMetaClassDeclareReservedUnused(IOUSBHostInterface, 73);
     OSMetaClassDeclareReservedUnused(IOUSBHostInterface, 74);
     OSMetaClassDeclareReservedUnused(IOUSBHostInterface, 75);
     OSMetaClassDeclareReservedUnused(IOUSBHostInterface, 76);

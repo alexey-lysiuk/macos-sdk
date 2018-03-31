@@ -1,17 +1,17 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: B1193004-C019-3E48-BC9B-F72D5BE04DF2', 'x86_64: 1BD27577-3F2F-319C-AD10-5D724BD2C070' ]
+uuids:           [ 'i386: 3AD7F714-69A9-3C01-9468-0DA08D361997', 'x86_64: 253F62D4-2BCF-32E8-A413-33780F7A1E6E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MediaUI.framework/Versions/A/MediaUI
 exports:         
   - archs:           [ x86_64 ]
-    objc-ivars:      [ _MediaUIInlinePlaybackControlsViewController._playPauseButton, 
-                       _MediaUIInlinePlaybackControlsViewController._scrubber, _MediaUIInlinePlaybackControlsViewController.elapsedTimeField, 
-                       _MediaUIInlinePlaybackControlsViewController.remainingTimeField, 
-                       _MediaUIKeyValueGroupingPerThreadData.changedKeys, _MediaUIKeyValueGroupingPerThreadData.changingKeys, 
-                       _MediaUIKeyValueGroupingPerThreadData.depth, _MediaUIKeyValueObserverChanges.changes, 
-                       _MediaUIKeyValueObserverChanges.objectsThatHadValuesChange, 
-                       _MediaUIKeyValueObserverChanges.pendingChanges ]
+    objc-ivars:      [ MediaUIInlinePlaybackControlsViewController._playPauseButton, 
+                       MediaUIInlinePlaybackControlsViewController._scrubber, MediaUIInlinePlaybackControlsViewController.elapsedTimeField, 
+                       MediaUIInlinePlaybackControlsViewController.remainingTimeField, 
+                       MediaUIKeyValueGroupingPerThreadData.changedKeys, MediaUIKeyValueGroupingPerThreadData.changingKeys, 
+                       MediaUIKeyValueGroupingPerThreadData.depth, MediaUIKeyValueObserverChanges.changes, 
+                       MediaUIKeyValueObserverChanges.objectsThatHadValuesChange, 
+                       MediaUIKeyValueObserverChanges.pendingChanges ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ _MediaUIBeginFocusRing, _MediaUIBeginFocusRingWithRect, _MediaUIBeginGroupingValueChanges, 
                        _MediaUIBeginShadow, _MediaUIBeginShadowWithRect, _MediaUIBundle, 
@@ -37,20 +37,19 @@ exports:
                        _MediaUITrimViewRectForPart, _MediaUITrimViewSetValueForPartWithValidation, 
                        _MediaUITrimViewValueForPart, _MediaUIUpdateBinding, _MediaUIUpdateBindings, 
                        _MediaUIWillChangeValueForKey ]
-    objc-classes:    [ _MGActivityIndicatorView, _MediaUIButton, _MediaUIConcreteKeyBindingSignature, 
-                       _MediaUIConcreteMutableValueTiming, _MediaUIConcreteValueTiming, 
-                       _MediaUIControl, _MediaUICouchHUD, _MediaUIHUDBackgroundView, 
-                       _MediaUIImageRep, _MediaUIImageView, _MediaUIInlinePlaybackControlsViewController, 
-                       _MediaUIInputBindingManager, _MediaUIKeyBindingSignature, 
-                       _MediaUIKeyValueGroupingPerThreadData, _MediaUIKeyValueObservance, 
-                       _MediaUIKeyValueObserver, _MediaUIKeyValueObserverChanges, 
-                       _MediaUILabelView, _MediaUIMutableValueTiming, _MediaUIPlaybackChapter, 
-                       _MediaUIPlaybackController, _MediaUIPlaybackControllerCore, 
-                       _MediaUIPlaybackModel, _MediaUIPlaybackView, _MediaUIPopUpButton, 
-                       _MediaUIPropertyStorage, _MediaUIPullDownButton, _MediaUIScrubber, 
-                       _MediaUISlider, _MediaUITimeFormatter, _MediaUIToggleButton, 
-                       _MediaUITrimBackgroundView, _MediaUITrimClipView, _MediaUITrimDimmerView, 
-                       _MediaUITrimIndicatorAccessibilityElement, _MediaUITrimIndicatorView, 
-                       _MediaUITrimSelectionView, _MediaUITrimTracksView, _MediaUITrimView, 
-                       _MediaUIUtilityView, _MediaUIValueTiming, __MediaUIBundleIdentifier ]
+    objc-classes:    [ MGActivityIndicatorView, MediaUIButton, MediaUIConcreteKeyBindingSignature, 
+                       MediaUIConcreteMutableValueTiming, MediaUIConcreteValueTiming, 
+                       MediaUIControl, MediaUICouchHUD, MediaUIHUDBackgroundView, 
+                       MediaUIImageRep, MediaUIImageView, MediaUIInlinePlaybackControlsViewController, 
+                       MediaUIInputBindingManager, MediaUIKeyBindingSignature, MediaUIKeyValueGroupingPerThreadData, 
+                       MediaUIKeyValueObservance, MediaUIKeyValueObserver, MediaUIKeyValueObserverChanges, 
+                       MediaUILabelView, MediaUIMutableValueTiming, MediaUIPlaybackChapter, 
+                       MediaUIPlaybackController, MediaUIPlaybackControllerCore, 
+                       MediaUIPlaybackModel, MediaUIPlaybackView, MediaUIPopUpButton, 
+                       MediaUIPropertyStorage, MediaUIPullDownButton, MediaUIScrubber, 
+                       MediaUISlider, MediaUITimeFormatter, MediaUIToggleButton, 
+                       MediaUITrimBackgroundView, MediaUITrimClipView, MediaUITrimDimmerView, 
+                       MediaUITrimIndicatorAccessibilityElement, MediaUITrimIndicatorView, 
+                       MediaUITrimSelectionView, MediaUITrimTracksView, MediaUITrimView, 
+                       MediaUIUtilityView, MediaUIValueTiming, _MediaUIBundleIdentifier ]
 ...

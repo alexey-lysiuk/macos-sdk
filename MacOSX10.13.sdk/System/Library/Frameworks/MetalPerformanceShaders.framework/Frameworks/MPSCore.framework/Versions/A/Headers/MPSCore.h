@@ -15,5 +15,6 @@
 #import <MPSCore/MPSImage.h>
 #import <MPSCore/MPSKernel.h>
 #import <MPSCore/MPSState.h>
+#import <MPSCore/MPSKeyedUnarchiver.h>
 
 #endif /* MPSCore_h */

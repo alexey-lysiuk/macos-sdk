@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 5340E055-BD3D-35AD-9797-F22E1ECEDAC6', 'x86_64: D8AECAE3-9FD2-32E3-B659-026F33650BB2' ]
+uuids:           [ 'i386: 68D3D209-BCB1-3750-8632-C12DE8F250B1', 'x86_64: 5206C8B0-22DA-36C9-998E-846EDB626D5B' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Ink.framework/Versions/A/Ink
 current-version: 220
@@ -115,8 +115,8 @@ exports:
                        _kUserDictionaryName, _machtime, _mtemp_eb, _pStrcat, _pStrcpy, 
                        _slimewonderbug, _xDirFreeDir, _xDirOpenFile, _xDirOpenOrPromptForDirectory, 
                        _xpsvx ]
-    objc-classes:    [ _InkContext, _InkRecognizerBase, _InkRecognizerCharInfo, _InkRecognizerGesture, 
-                       _InkRecognizerMessageBase, _InkRecognizerPhrase, _InkRecognizerPhraseWord, 
-                       _InkRecognizerPoint, _InkRecognizerStroke, _InkRecognizerText, 
-                       _InkRecognizerWordGroup ]
+    objc-classes:    [ InkContext, InkRecognizerBase, InkRecognizerCharInfo, InkRecognizerGesture, 
+                       InkRecognizerMessageBase, InkRecognizerPhrase, InkRecognizerPhraseWord, 
+                       InkRecognizerPoint, InkRecognizerStroke, InkRecognizerText, 
+                       InkRecognizerWordGroup ]
 ...

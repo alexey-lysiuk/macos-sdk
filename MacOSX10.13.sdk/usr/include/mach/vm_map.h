@@ -49,7 +49,7 @@ typedef function_table_entry   *function_table_t;
 #endif /* AUTOTEST */
 
 #ifndef	vm_map_MSG_COUNT
-#define	vm_map_MSG_COUNT	31
+#define	vm_map_MSG_COUNT	32
 #endif	/* vm_map_MSG_COUNT */
 
 #include <mach/std_types.h>
@@ -482,6 +482,17 @@ kern_return_t vm_purgable_control
 	int *state
 );
 
+/* Routine vm_map_exec_lockdown */
+#ifdef	mig_external
+mig_external
+#else
+extern
+#endif	/* mig_external */
+kern_return_t vm_map_exec_lockdown
+(
+	vm_map_t target_task
+);
+
 __END_DECLS
 
 /********************** Caution **************************/
@@ -903,6 +914,16 @@ __END_DECLS
 #ifdef  __MigPackStructs
 #pragma pack()
 #endif
+
+#ifdef  __MigPackStructs
+#pragma pack(4)
+#endif
+	typedef struct {
+		mach_msg_header_t Head;
+	} __Request__vm_map_exec_lockdown_t __attribute__((unused));
+#ifdef  __MigPackStructs
+#pragma pack()
+#endif
 #endif /* !__Request__vm_map_subsystem__defined */
 
 /* union of all requests */
@@ -937,6 +958,7 @@ union __RequestUnion__vm_map_subsystem {
 	__Request__mach_make_memory_entry_64_t Request_mach_make_memory_entry_64;
 	__Request__vm_map_64_t Request_vm_map_64;
 	__Request__vm_purgable_control_t Request_vm_purgable_control;
+	__Request__vm_map_exec_lockdown_t Request_vm_map_exec_lockdown;
 };
 #endif /* !__RequestUnion__vm_map_subsystem__defined */
 /* typedefs for all replies */
@@ -1329,6 +1351,18 @@ union __RequestUnion__vm_map_subsystem {
 #ifdef  __MigPackStructs
 #pragma pack()
 #endif
+
+#ifdef  __MigPackStructs
+#pragma pack(4)
+#endif
+	typedef struct {
+		mach_msg_header_t Head;
+		NDR_record_t NDR;
+		kern_return_t RetCode;
+	} __Reply__vm_map_exec_lockdown_t __attribute__((unused));
+#ifdef  __MigPackStructs
+#pragma pack()
+#endif
 #endif /* !__Reply__vm_map_subsystem__defined */
 
 /* union of all replies */
@@ -1363,6 +1397,7 @@ union __ReplyUnion__vm_map_subsystem {
 	__Reply__mach_make_memory_entry_64_t Reply_mach_make_memory_entry_64;
 	__Reply__vm_map_64_t Reply_vm_map_64;
 	__Reply__vm_purgable_control_t Reply_vm_purgable_control;
+	__Reply__vm_map_exec_lockdown_t Reply_vm_map_exec_lockdown;
 };
 #endif /* !__RequestUnion__vm_map_subsystem__defined */
 
@@ -1394,7 +1429,8 @@ union __ReplyUnion__vm_map_subsystem {
     { "vm_region_64", 3824 },\
     { "mach_make_memory_entry_64", 3825 },\
     { "vm_map_64", 3826 },\
-    { "vm_purgable_control", 3830 }
+    { "vm_purgable_control", 3830 },\
+    { "vm_map_exec_lockdown", 3831 }
 #endif
 
 #ifdef __AfterMigUserHeader

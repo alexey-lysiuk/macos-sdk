@@ -1,15 +1,15 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 4298C491-8C0C-3B54-92A3-DDF7CA5832B8', 'x86_64: B8D18490-9A00-3E86-BBF2-FA2DDA7CDB72' ]
+uuids:           [ 'i386: 24A1105D-DBF6-35A5-BE17-797B758B982B', 'x86_64: 7260E86E-AF7F-34D1-9700-BBAA419F7921' ]
 platform:        macosx
 install-name:    /usr/lib/system/introspection/libdispatch.dylib
-current-version: 913.30.4
+current-version: 913.50.12
 parent-umbrella: System
 exports:         
   - archs:           [ i386 ]
-    objc-classes:    [ _OS_dispatch_queue_concurrent, _OS_dispatch_queue_main, _OS_dispatch_queue_mgr, 
-                       _OS_dispatch_queue_network_event, _OS_dispatch_queue_root, 
-                       _OS_dispatch_queue_runloop, _OS_dispatch_queue_serial, _OS_dispatch_queue_specific_queue ]
+    objc-classes:    [ OS_dispatch_queue_concurrent, OS_dispatch_queue_main, OS_dispatch_queue_mgr, 
+                       OS_dispatch_queue_network_event, OS_dispatch_queue_root, OS_dispatch_queue_runloop, 
+                       OS_dispatch_queue_serial, OS_dispatch_queue_specific_queue ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ '$ld$hide$os10.12$_dispatch_assert_queue', '$ld$hide$os10.12$_dispatch_assert_queue_not', 
                        '$ld$hide$os10.12$_dispatch_queue_create_with_target', __dispatch_begin_NSAutoReleasePool, 
@@ -115,9 +115,8 @@ exports:
                        _voucher_create_with_mach_msg, _voucher_decrement_importance_count4CF, 
                        _voucher_get_activity_id, _voucher_get_activity_id_and_creator, 
                        _voucher_replace_default_voucher ]
-    objc-classes:    [ _OS_dispatch_data, _OS_dispatch_disk, _OS_dispatch_group, 
-                       _OS_dispatch_io, _OS_dispatch_mach, _OS_dispatch_mach_msg, 
-                       _OS_dispatch_object, _OS_dispatch_operation, _OS_dispatch_queue, 
-                       _OS_dispatch_queue_attr, _OS_dispatch_semaphore, _OS_dispatch_source, 
-                       _OS_object, _OS_voucher ]
+    objc-classes:    [ OS_dispatch_data, OS_dispatch_disk, OS_dispatch_group, OS_dispatch_io, 
+                       OS_dispatch_mach, OS_dispatch_mach_msg, OS_dispatch_object, 
+                       OS_dispatch_operation, OS_dispatch_queue, OS_dispatch_queue_attr, 
+                       OS_dispatch_semaphore, OS_dispatch_source, OS_object, OS_voucher ]
 ...

@@ -1,0 +1,10 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: F797B3EF-9A38-3810-BB19-14E9169FAE2B' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/BridgeOSInstallReporting.framework/Versions/A/BridgeOSInstallReporting
+objc-constraint: none
+exports:         
+  - archs:           [ x86_64 ]
+    objc-classes:    [ BOSReporterServiceController ]
+...

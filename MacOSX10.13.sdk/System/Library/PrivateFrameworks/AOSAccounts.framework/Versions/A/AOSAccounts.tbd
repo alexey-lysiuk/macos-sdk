@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 00F3AE54-0952-303A-AF6B-3E92E3247849' ]
+uuids:           [ 'x86_64: 4720412A-5DE6-36FF-A3E9-C6B31ABE94E7' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AOSAccounts.framework/Versions/A/AOSAccounts
 current-version: 1.9.95
@@ -34,10 +34,11 @@ exports:
                        _MMCopyFamilyEligibility, _MMCopyLoggedInAccount, _MMCopyLoggedInAccountFromAccounts, 
                        _MMCopyMailActivationInfo, _MMCopyMailAliasForAccount, _MMCopyMeCardImageFromiCloud, 
                        _MMCopySignUpInfo, _MMCopySignUpInfoForMB, _MMDeleteUserAccount, 
-                       _MMDisableKeychainBackup, _MMEnableKeychainBackup, _MMGetMCXKeyForDataclass, 
-                       _MMInvokeDelegatesWithDictionary, _MMIsSignupAllowed, _MMMBPostAquaSessionSetup, 
-                       _MMRecoverKeychainBackup, _MMRegisterCredentials, _MMRegisterWithICloud, 
-                       _MMRelayCookie, _MMRemoveAccountFromDefaults, _MMResendVerificationEmail, 
+                       _MMDisableKeychainBackup, _MMEnableKeychainBackup, _MMGetDeviceUDID, 
+                       _MMGetMCXKeyForDataclass, _MMInvokeDelegatesWithDictionary, 
+                       _MMIsSignupAllowed, _MMMBPostAquaSessionSetup, _MMRecoverKeychainBackup, 
+                       _MMRegisterCredentials, _MMRegisterWithICloud, _MMRelayCookie, 
+                       _MMRemoveAccountFromDefaults, _MMResendVerificationEmail, 
                        _MMRetrieveQuotaStorageURL, _MMRetrieveRampState, _MMSendSMSChallenge, 
                        _MMServiceCopyProperties, _MMServiceCopyProperty, _MMServiceIsAvailable, 
                        _MMServiceIsEnabled, _MMServiceIsEnabledForDisplay, _MMServiceIsInactiveOrEnabled, 
@@ -50,8 +51,8 @@ exports:
                        __AOSAccountsLog, __AOSAccountsReadIsFamilyAllowed, __AOSAccountsReadQuotaNotifyTime, 
                        __AOSAccountsReadShouldShowBeforeWebClientIsReady, __AOSAccountsReadUseDemodLookMeUpByEmail, 
                        __AOSLogging, __AccountIsPrimary, __CopyAccountPrefs, __MMServiceSetEnabled, 
-                       __RemoveAccountInfo, __handlePostSignedOutActions, __handlePreSignedOutActions, 
-                       _canLogAtLevel, _copyAccountInfoFromACAccount, _createAEDescWithAEActionAndAccountID, 
+                       __RemoveAccountInfo, __handlePreSignedOutActions, _canLogAtLevel, 
+                       _copyAccountInfoFromACAccount, _createAEDescWithAEActionAndAccountID, 
                        _iCloudHandlePushNotification, _kAAAccountConfigChangedNotification, 
                        _kMMAOSAccountsErrorDomain, _kMMAOSKeychainBackupAccountIsHighSecurity, 
                        _kMMAOSKeychainBackupDictionary, _kMMAOSKeychainBackupErrorDomain, 
@@ -171,10 +172,10 @@ exports:
                        _kVettingEmailNotification, _kiCloudAccountRenewCredentialsComplete, 
                        _kiCloudAccountRenewCredentialsDSID, _kiCloudAccountTermsContext, 
                        _renewCredentialsOnACAccount ]
-    objc-classes:    [ _AAFollowUpController, _MMDelegatePluginManager, _MMiCloudAccountsMigrator, 
-                       _iCloudAccountMgr, _iCloudUserNotification, _iCloudUserNotifier ]
-    objc-ivars:      [ _MMDelegatePluginManager._done, _MMDelegatePluginManager._mbSetupPlugins, 
-                       _MMDelegatePluginManager._succeeded ]
+    objc-classes:    [ AAFollowUpController, MMDelegatePluginManager, MMiCloudAccountsMigrator, 
+                       iCloudAccountMgr, iCloudUserNotification, iCloudUserNotifier ]
+    objc-ivars:      [ MMDelegatePluginManager._done, MMDelegatePluginManager._mbSetupPlugins, 
+                       MMDelegatePluginManager._succeeded ]
     weak-def-symbols: [ __ZTINSt3__115basic_stringbufIwNS_11char_traitsIwEENS_9allocatorIwEEEE, 
                         __ZTINSt3__119basic_ostringstreamIwNS_11char_traitsIwEENS_9allocatorIwEEEE, 
                         __ZTSNSt3__115basic_stringbufIwNS_11char_traitsIwEENS_9allocatorIwEEEE, 

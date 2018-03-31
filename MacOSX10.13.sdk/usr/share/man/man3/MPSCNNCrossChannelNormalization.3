@@ -1,4 +1,4 @@
-.TH "MPSCNNCrossChannelNormalization" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "MPSCNNCrossChannelNormalization" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -59,7 +59,7 @@ k is the feature channel index (running from 0 to D-1) and D is the number of fe
 .PP
 \fBReturns:\fP
 .RS 4
-A new \fBMPSKernel\fP object, or nil if failure\&. 
+\fBA\fP new \fBMPSKernel\fP object, or nil if failure\&. 
 .RE
 .PP
 
@@ -75,7 +75,7 @@ Standard init with default properties per filter type
 .PP
 \fBReturns:\fP
 .RS 4
-A pointer to the newly initialized object\&. This will fail, returning nil if the device is not supported\&. Devices must be MTLFeatureSet_iOS_GPUFamily2_v1 or later\&. 
+\fBA\fP pointer to the newly initialized object\&. This will fail, returning nil if the device is not supported\&. Devices must be MTLFeatureSet_iOS_GPUFamily2_v1 or later\&. 
 .RE
 .PP
 
@@ -93,7 +93,7 @@ Initialize a local response normalization filter in a channel
 .PP
 \fBReturns:\fP
 .RS 4
-A valid \fBMPSCNNCrossChannelNormalization\fP object or nil, if failure\&. 
+\fBA\fP valid \fBMPSCNNCrossChannelNormalization\fP object or nil, if failure\&. 
 .RE
 .PP
 

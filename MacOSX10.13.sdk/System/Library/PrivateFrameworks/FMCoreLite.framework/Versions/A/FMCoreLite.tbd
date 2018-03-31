@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E35C902D-17B9-3D0E-AE7C-F640BFDF17B3' ]
+uuids:           [ 'x86_64: E1A34045-03B8-301B-910E-185061BBBC99' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/FMCoreLite.framework/Versions/A/FMCoreLite
 objc-constraint: none
@@ -10,9 +10,8 @@ exports:
                        __FMBlockDescriptor, __FMDictionaryOfMetrics, __FMFutureDidPerformCallback, 
                        __FMFutureWillPerformCallback, __FMPopScopedDescriptor, __FMPushScopedDescriptor, 
                        __FMScopedDescriptor, _kFMDataArchiverErrorDomain, _kFMSynchronizerTimeoutNever ]
-    objc-classes:    [ _FMAlert, _FMCancelationToken, _FMConcurrentMutableArray, 
-                       _FMConcurrentMutableDictionary, _FMDataArchiver, _FMFuture, 
-                       _FMInternalFileContainer, _FMPair, _FMPreferencesUtil, _FMPromise, 
-                       _FMQueue, _FMReadWriteLock, _FMScheduler, _FMSharedFileContainer, 
-                       _FMSynchronizer, _FMValueThrottler, __FMLazyFuture ]
+    objc-classes:    [ FMAlert, FMCancelationToken, FMConcurrentMutableArray, FMConcurrentMutableDictionary, 
+                       FMDataArchiver, FMFuture, FMInternalFileContainer, FMPair, 
+                       FMPreferencesUtil, FMPromise, FMQueue, FMReadWriteLock, FMScheduler, 
+                       FMSharedFileContainer, FMSynchronizer, FMValueThrottler, _FMLazyFuture ]
 ...

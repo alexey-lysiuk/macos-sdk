@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4B4724D0-1A57-3238-9AFF-CAB0426534D8' ]
+uuids:           [ 'x86_64: BD17B325-9450-3CBB-AC18-1CC2AF163282' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/WeatherKit.framework/Versions/A/WeatherKit
-current-version: 153.2.2
+current-version: 153.4.1
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _WMLocationCodingCity, _WMLocationCodingCountry, _WMLocationCodingCountryAbbreviation, 
@@ -22,5 +22,5 @@ exports:
                        _WMWeatherDataCodingTemperatureLowCelsius, _WMWeatherDataCodingTemperatureLowColor, 
                        _WMWeatherDataCodingWeatherDataType, _WMWeatherDataCodingsunriseDate, 
                        _WMWeatherDataCodingsunsetDate ]
-    objc-classes:    [ _WMLocation, _WMObject, _WMTypes, _WMWeatherData, _WMWeatherStore ]
+    objc-classes:    [ WMLocation, WMObject, WMTypes, WMWeatherData, WMWeatherStore ]
 ...

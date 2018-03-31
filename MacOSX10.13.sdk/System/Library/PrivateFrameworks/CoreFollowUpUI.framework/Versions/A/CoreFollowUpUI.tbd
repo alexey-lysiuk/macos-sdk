@@ -1,14 +1,11 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D6CCBF42-2379-35B9-B9A0-EE247F50F71D' ]
+uuids:           [ 'x86_64: 4708C7B9-914F-35CC-8493-AD5B9169C091' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreFollowUpUI.framework/Versions/A/CoreFollowUpUI
 exports:         
   - archs:           [ x86_64 ]
-    symbols:         [ _CoreFollowUpUIVersionNumber, _CoreFollowUpUIVersionString, 
-                       _FLItemRefreshResultFailure, _FLItemRefreshResultRemoved, 
-                       _FLItemRefreshResultSuccess ]
-    objc-classes:    [ _FLExtensionContext, _FLExtensionViewController, _FLFollowUpActionHandler, 
-                       _FLGroupViewModelImpl, _FLHostViewController, _FLHostViewService, 
-                       _FLTopLevelViewModel, _FLViewExtensionLoader ]
+    symbols:         [ _CoreFollowUpUIVersionNumber, _CoreFollowUpUIVersionString ]
+    objc-classes:    [ FLExtensionContext, FLExtensionViewController, FLFollowUpActionHandler, 
+                       FLHostViewController, FLHostViewService, FLViewExtensionLoader ]
 ...

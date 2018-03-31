@@ -1,4 +1,4 @@
-.TH "MPSMatrixSolveLU" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "MPSMatrixSolveLU" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -25,9 +25,9 @@ Inherits \fBMPSMatrixBinaryKernel\fP\&.
 .PP 
 This depends on Metal\&.framework\&.
 .PP
-A kernel for computing the solution of a linear system of equations using the LU factorization resulting from a \fBMPSMatrixDecompositionLU\fP kernel\&.
+\fBA\fP kernel for computing the solution of a linear system of equations using the LU factorization resulting from a \fBMPSMatrixDecompositionLU\fP kernel\&.
 .PP
-A \fBMPSMatrixSolveLU\fP finds the solution matrix to the system: 
+\fBA\fP \fBMPSMatrixSolveLU\fP finds the solution matrix to the system: 
 .PP
 .nf
             op(A) * X = B
@@ -39,23 +39,23 @@ A \fBMPSMatrixSolveLU\fP finds the solution matrix to the system:
  
 .SH "Method Documentation"
 .PP 
-.SS "\- (void) encodeToCommandBuffer: (nonnull id< MTLCommandBuffer >) commandBuffer(\fBMPSMatrix\fP const *__nonnull) sourceMatrix(\fBMPSMatrix\fP const *__nonnull) rightHandSideMatrix(\fBMPSMatrix\fP const *__nonnull) pivotIndices(\fBMPSMatrix\fP *__nonnull) solutionMatrix"
+.SS "\- (void) encodeToCommandBuffer: (nonnull id< MTLCommandBuffer >) commandBuffer(\fBMPSMatrix\fP *__nonnull) sourceMatrix(\fBMPSMatrix\fP *__nonnull) rightHandSideMatrix(\fBMPSMatrix\fP *__nonnull) pivotIndices(\fBMPSMatrix\fP *__nonnull) solutionMatrix"
 Encode a \fBMPSMatrixSolveLU\fP kernel into a command Buffer\&.
 .PP
 \fBParameters:\fP
 .RS 4
-\fIcommandBuffer\fP A valid MTLCommandBuffer to receive the encoded filter
+\fIcommandBuffer\fP \fBA\fP valid MTLCommandBuffer to receive the encoded filter
 .br
-\fIsourceMatrix\fP A valid \fBMPSMatrix\fP containing the source matrix in factored form as returned by a previous successful execution of a \fBMPSMatrixDecompositionLU\fP kernel\&.
+\fIsourceMatrix\fP \fBA\fP valid \fBMPSMatrix\fP containing the source matrix in factored form as returned by a previous successful execution of a \fBMPSMatrixDecompositionLU\fP kernel\&.
 .br
-\fIrightHandSideMatrix\fP A valid \fBMPSMatrix\fP containing the right hand side values\&.
+\fIrightHandSideMatrix\fP \fBA\fP valid \fBMPSMatrix\fP containing the right hand side values\&.
 .br
-\fIpivotIndices\fP A valid \fBMPSMatrix\fP which contains the pivot indices as returned by a previous successful execution of a \fBMPSMatrixDecompositionLU\fP kernel\&.
+\fIpivotIndices\fP \fBA\fP valid \fBMPSMatrix\fP which contains the pivot indices as returned by a previous successful execution of a \fBMPSMatrixDecompositionLU\fP kernel\&.
 .br
-\fIsolutionMatrix\fP A valid \fBMPSMatrix\fP to contain the result\&.
+\fIsolutionMatrix\fP \fBA\fP valid \fBMPSMatrix\fP to contain the result\&.
 .RE
 .PP
-This function encodes the \fBMPSMatrixSolveLU\fP object to a valid command buffer\&. sourceMatrix should contain the lower and upper triangular factors of A as results from a previous execution of \fBMPSMatrixDecompositionLU\fP\&.
+This function encodes the \fBMPSMatrixSolveLU\fP object to a valid command buffer\&. sourceMatrix should contain the lower and upper triangular factors of \fBA\fP as results from a previous execution of \fBMPSMatrixDecompositionLU\fP\&.
 .PP
 pivotIndices is an array of pivots resulting from a previous execution of \fBMPSMatrixDecompositionLU\fP\&.
 .PP
@@ -69,7 +69,7 @@ Initialize an \fBMPSMatrixSolveLU\fP object on a device
 .RS 4
 \fIdevice\fP The device on which the kernel will execute\&.
 .br
-\fItranspose\fP A boolean value which indicates if the source matrix should be used in transposed form\&.
+\fItranspose\fP \fBA\fP boolean value which indicates if the source matrix should be used in transposed form\&.
 .br
 \fIorder\fP The order of the source matrix and the number of rows in the solution and right hand side matrices\&.
 .br
@@ -78,7 +78,7 @@ Initialize an \fBMPSMatrixSolveLU\fP object on a device
 .PP
 \fBReturns:\fP
 .RS 4
-A valid \fBMPSMatrixSolveLU\fP object or nil, if failure\&. 
+\fBA\fP valid \fBMPSMatrixSolveLU\fP object or nil, if failure\&. 
 .RE
 .PP
 

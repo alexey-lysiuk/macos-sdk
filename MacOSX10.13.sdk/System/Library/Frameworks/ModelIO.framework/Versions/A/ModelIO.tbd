@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0D6642EF-EDC6-31A6-AFDC-E44951878F81' ]
+uuids:           [ 'x86_64: 33EEE938-5ADB-3E04-B8B7-6B805996FA75' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/ModelIO.framework/Versions/A/ModelIO
 exports:         
@@ -146,30 +146,29 @@ exports:
                        _kUTType3dObject, _kUTTypeAlembic, _kUTTypePolygon, _kUTTypeStereolithography, 
                        _kUTTypeUniversalSceneDescription, _sampleTextureAtRay, _sampleTextureDataAtRay, 
                        _sampleTextureDataAtRayMipMapped ]
-    objc-classes:    [ _MDLAnimatedMatrix4x4, _MDLAnimatedQuaternionArray, _MDLAnimatedScalar, 
-                       _MDLAnimatedScalarArray, _MDLAnimatedValue, _MDLAnimatedVector2, 
-                       _MDLAnimatedVector3, _MDLAnimatedVector3Array, _MDLAnimatedVector4, 
-                       _MDLAnimationBindComponent, _MDLAreaLight, _MDLAsset, _MDLBundleAssetResolver, 
-                       _MDLCamera, _MDLCheckerboardTexture, _MDLColorSwatchTexture, 
-                       _MDLInteractiveCameraController, _MDLLight, _MDLLightProbe, 
-                       _MDLMaterial, _MDLMaterialProperty, _MDLMaterialPropertyConnection, 
-                       _MDLMaterialPropertyGraph, _MDLMaterialPropertyNode, _MDLMatrix4x4Array, 
-                       _MDLMesh, _MDLMeshBufferAllocatorDefault, _MDLMeshBufferData, 
-                       _MDLMeshBufferDataAllocator, _MDLMeshBufferMap, _MDLMeshBufferZoneDefault, 
-                       _MDLMorphDeformer, _MDLNoiseTexture, _MDLNormalMapTexture, 
-                       _MDLObject, _MDLObjectContainer, _MDLPackedJointAnimation, 
-                       _MDLPathAssetResolver, _MDLPhotometricLight, _MDLPhysicallyPlausibleLight, 
-                       _MDLPhysicallyPlausibleScatteringFunction, _MDLRelativeAssetResolver, 
-                       _MDLScatteringFunction, _MDLScene, _MDLSkeleton, _MDLSkinDeformer, 
-                       _MDLSkyCubeTexture, _MDLStereoscopicCamera, _MDLSubmesh, _MDLSubmeshTopology, 
-                       _MDLTexture, _MDLTextureFilter, _MDLTextureSampler, _MDLTransform, 
-                       _MDLTransformMatrixOp, _MDLTransformRotateOp, _MDLTransformRotateXOp, 
-                       _MDLTransformRotateYOp, _MDLTransformRotateZOp, _MDLTransformScaleOp, 
-                       _MDLTransformStack, _MDLTransformTranslateOp, _MDLURLTexture, 
-                       _MDLVertexAttribute, _MDLVertexAttributeData, _MDLVertexBufferLayout, 
-                       _MDLVertexDescriptor, _MDLVolumeGrid, _MDLVoxelArray ]
-    objc-ivars:      [ _MDLAnimatedValue._interpolation, _MDLAnimatedValue._timeSampledData, 
-                       _MDLMatrix4x4Array._data, _MDLTransform._transform ]
+    objc-classes:    [ MDLAnimatedMatrix4x4, MDLAnimatedQuaternionArray, MDLAnimatedScalar, 
+                       MDLAnimatedScalarArray, MDLAnimatedValue, MDLAnimatedVector2, 
+                       MDLAnimatedVector3, MDLAnimatedVector3Array, MDLAnimatedVector4, 
+                       MDLAnimationBindComponent, MDLAreaLight, MDLAsset, MDLBundleAssetResolver, 
+                       MDLCamera, MDLCheckerboardTexture, MDLColorSwatchTexture, 
+                       MDLInteractiveCameraController, MDLLight, MDLLightProbe, MDLMaterial, 
+                       MDLMaterialProperty, MDLMaterialPropertyConnection, MDLMaterialPropertyGraph, 
+                       MDLMaterialPropertyNode, MDLMatrix4x4Array, MDLMesh, MDLMeshBufferAllocatorDefault, 
+                       MDLMeshBufferData, MDLMeshBufferDataAllocator, MDLMeshBufferMap, 
+                       MDLMeshBufferZoneDefault, MDLMorphDeformer, MDLNoiseTexture, 
+                       MDLNormalMapTexture, MDLObject, MDLObjectContainer, MDLPackedJointAnimation, 
+                       MDLPathAssetResolver, MDLPhotometricLight, MDLPhysicallyPlausibleLight, 
+                       MDLPhysicallyPlausibleScatteringFunction, MDLRelativeAssetResolver, 
+                       MDLScatteringFunction, MDLScene, MDLSkeleton, MDLSkinDeformer, 
+                       MDLSkyCubeTexture, MDLStereoscopicCamera, MDLSubmesh, MDLSubmeshTopology, 
+                       MDLTexture, MDLTextureFilter, MDLTextureSampler, MDLTransform, 
+                       MDLTransformMatrixOp, MDLTransformRotateOp, MDLTransformRotateXOp, 
+                       MDLTransformRotateYOp, MDLTransformRotateZOp, MDLTransformScaleOp, 
+                       MDLTransformStack, MDLTransformTranslateOp, MDLURLTexture, 
+                       MDLVertexAttribute, MDLVertexAttributeData, MDLVertexBufferLayout, 
+                       MDLVertexDescriptor, MDLVolumeGrid, MDLVoxelArray ]
+    objc-ivars:      [ MDLAnimatedValue._interpolation, MDLAnimatedValue._timeSampledData, 
+                       MDLMatrix4x4Array._data, MDLTransform._transform ]
     weak-def-symbols: [ __ZTIFNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEmE, 
                         __ZTIFvRKNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEE, 
                         __ZTIFvRKNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEES7_E, 

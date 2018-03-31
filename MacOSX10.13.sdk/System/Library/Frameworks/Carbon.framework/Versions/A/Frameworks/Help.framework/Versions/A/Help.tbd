@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 1E913488-5D7B-388E-904D-64EF8C99E704', 'x86_64: 18D02016-119A-33E8-AEB0-E9466BA4AD56' ]
+uuids:           [ 'i386: F48AE0AF-9AF5-3E16-96D5-8D90A74CCAAF', 'x86_64: DEBADFA8-C189-3195-B0D6-A1F2DE95882A' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Help.framework/Versions/A/Help
-current-version: 64
+current-version: 66
 objc-constraint: none
 parent-umbrella: Carbon
 exports:         

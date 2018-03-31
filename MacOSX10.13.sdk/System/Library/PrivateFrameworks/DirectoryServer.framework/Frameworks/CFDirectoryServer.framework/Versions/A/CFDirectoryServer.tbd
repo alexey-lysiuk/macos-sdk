@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A15EE970-729B-3912-9D03-08E7FA15B5A5' ]
+uuids:           [ 'x86_64: 6C548A0E-A6AD-34DE-820F-6EE5E0A029CA' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DirectoryServer.framework/Frameworks/CFDirectoryServer.framework/Versions/A/CFDirectoryServer
 objc-constraint: none

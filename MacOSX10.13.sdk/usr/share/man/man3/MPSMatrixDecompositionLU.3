@@ -1,4 +1,4 @@
-.TH "MPSMatrixDecompositionLU" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "MPSMatrixDecompositionLU" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -25,9 +25,9 @@ Inherits \fBMPSMatrixUnaryKernel\fP\&.
 .PP 
 This depends on Metal\&.framework\&.
 .PP
-A kernel for computing the LU factorization of a matrix using partial pivoting with row interchanges\&.
+\fBA\fP kernel for computing the LU factorization of a matrix using partial pivoting with row interchanges\&.
 .PP
-A \fBMPSMatrixDecompositionLU\fP object computes an LU factorization: 
+\fBA\fP \fBMPSMatrixDecompositionLU\fP object computes an LU factorization: 
 .PP
 .nf
             P * A = L * U
@@ -40,20 +40,20 @@ A \fBMPSMatrixDecompositionLU\fP object computes an LU factorization:
  
 .SH "Method Documentation"
 .PP 
-.SS "\- (void) encodeToCommandBuffer: (nonnull id< MTLCommandBuffer >) commandBuffer(\fBMPSMatrix\fP const *__nonnull) sourceMatrix(\fBMPSMatrix\fP *__nonnull) resultMatrix(\fBMPSMatrix\fP *__nonnull) pivotIndices(__nullable id< MTLBuffer >) status"
+.SS "\- (void) encodeToCommandBuffer: (nonnull id< MTLCommandBuffer >) commandBuffer(\fBMPSMatrix\fP *__nonnull) sourceMatrix(\fBMPSMatrix\fP *__nonnull) resultMatrix(\fBMPSMatrix\fP *__nonnull) pivotIndices(__nullable id< MTLBuffer >) status"
 Encode a \fBMPSMatrixDecompositionLU\fP kernel into a command Buffer\&.
 .PP
 \fBParameters:\fP
 .RS 4
-\fIcommandBuffer\fP A valid MTLCommandBuffer to receive the encoded filter
+\fIcommandBuffer\fP \fBA\fP valid MTLCommandBuffer to receive the encoded filter
 .br
-\fIsourceMatrix\fP A valid \fBMPSMatrix\fP containing the source data\&. Must have enough space to hold a rows x columns matrix\&.
+\fIsourceMatrix\fP \fBA\fP valid \fBMPSMatrix\fP containing the source data\&. Must have enough space to hold a rows x columns matrix\&.
 .br
-\fIresultMatrix\fP A valid \fBMPSMatrix\fP to contain the result\&. Must have enough space to hold a rows x columns matrix\&.
+\fIresultMatrix\fP \fBA\fP valid \fBMPSMatrix\fP to contain the result\&. Must have enough space to hold a rows x columns matrix\&.
 .br
-\fIpivotIndices\fP A valid \fBMPSMatrix\fP to contain the pivot indices\&. Must have enough space to hold an array of size 1xmin(rows, columns) values\&. Element type must be MPSDataTypeUInt32\&.
+\fIpivotIndices\fP \fBA\fP valid \fBMPSMatrix\fP to contain the pivot indices\&. Must have enough space to hold an array of size 1xmin(rows, columns) values\&. Element type must be MPSDataTypeUInt32\&.
 .br
-\fIstatus\fP A MTLBuffer which indicates the resulting MPSMatrixDecompositionStatus value\&.
+\fIstatus\fP \fBA\fP MTLBuffer which indicates the resulting MPSMatrixDecompositionStatus value\&.
 .RE
 .PP
 This function encodes the \fBMPSMatrixDecompositionLU\fP object to a valid command buffer\&.
@@ -79,7 +79,7 @@ Initialize an \fBMPSMatrixDecompositionLU\fP object on a device
 .PP
 \fBReturns:\fP
 .RS 4
-A valid \fBMPSMatrixDecompositionLU\fP object or nil, if failure\&. 
+\fBA\fP valid \fBMPSMatrixDecompositionLU\fP object or nil, if failure\&. 
 .RE
 .PP
 

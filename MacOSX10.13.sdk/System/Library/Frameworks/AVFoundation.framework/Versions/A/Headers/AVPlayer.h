@@ -709,6 +709,21 @@ AVF_EXPORT NSNotificationName const AVPlayerAvailableHDRModesDidChangeNotificati
 
 @end
 
+@interface AVPlayer (AVPlayerVideoDecoderGPUSupport)
+
+/*!
+	@property		preferredVideoDecoderGPURegistryID
+	@abstract		Specifies a registryID associated with a GPU that should be used for video decode.
+
+	@discussion
+		By default, whenever possible, video decode will be performed on the GPU associated with the display on which the presenting CALayer is located.  Decode will be transitioned to a new GPU if appropriate when the CALayer moves to a new display.  This property overrides this default behavior, forcing decode to prefer an affinity to the GPU specified regardless of which GPU is being used to display the associated CALayer.
+
+		The GPU registryID can be obtained from the GPU MTLDevice using [MTLDevice registryID] or can be obtained from OpenGL or OpenCL.
+*/
+@property (nonatomic) uint64_t preferredVideoDecoderGPURegistryID API_AVAILABLE(macos(10.13)) API_UNAVAILABLE(ios, tvos, watchos);
+
+@end
+
 @interface AVPlayer (AVPlayerDeprecated)
 
 /*!

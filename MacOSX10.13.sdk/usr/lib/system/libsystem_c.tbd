@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 8BCBF89D-5CE7-3950-884A-86E37DBF2660', 'x86_64: E0136C71-0648-36F0-9F84-82EA2748A8D7' ]
+uuids:           [ 'i386: 3A7B32B2-F70C-3148-A2B0-38412EF1489F', 'x86_64: 1187BFE8-4576-3247-8177-481554E1F9E7' ]
 platform:        macosx
 install-name:    /usr/lib/system/libsystem_c.dylib
-current-version: 1244.30.3
+current-version: 1244.50.9
 objc-constraint: none
 parent-umbrella: System
 exports:         
@@ -226,26 +226,27 @@ exports:
                        _optarg, _opterr, _optind, _optopt, _optreset, _pause, _pclose, 
                        _perror, _popen, '_popen$DARWIN_EXTSN', _posix2time, _posix_openpt, 
                        _posix_spawnp, _printf, _printf_l, _psignal, _psort, _psort_b, 
-                       _psort_r, _ptsname, _putc, _putc_unlocked, _putchar, _putchar_unlocked, 
-                       _putenv, _puts, _pututxline, _putw, _putwc, _putwc_l, _putwchar, 
-                       _putwchar_l, _qsort, _qsort_b, _qsort_r, _querylocale, _radixsort, 
-                       _raise, _rand, _rand_r, _random, _rb_tree_count, _rb_tree_find_node, 
-                       _rb_tree_find_node_geq, _rb_tree_find_node_leq, _rb_tree_init, 
-                       _rb_tree_insert_node, _rb_tree_iterate, _rb_tree_remove_node, 
-                       _readdir, '_readdir$INODE64', _readdir_r, '_readdir_r$INODE64', 
-                       _readpassphrase, _reallocf, _realpath, '_realpath$DARWIN_EXTSN', 
-                       _recv, _regcomp, _regcomp_l, _regerror, _regexec, _regfree, 
-                       _register_printf_domain_function, _register_printf_domain_render_std, 
-                       _regncomp, _regncomp_l, _regnexec, _regwcomp, _regwcomp_l, 
-                       _regwexec, _regwncomp, _regwncomp_l, _regwnexec, _remove, 
-                       _remque, _rewind, _rewinddir, _rindex, _sbrk, _scandir, '_scandir$INODE64', 
-                       _scandir_b, '_scandir_b$INODE64', _scanf, _scanf_l, _seed48, 
-                       _seekdir, _send, _setbuf, _setbuffer, _setenv, _sethostid, 
-                       _sethostname, _setinvalidrune, _setipv4sourcefilter, _setkey, 
-                       _setlinebuf, _setlocale, _setlogin, _setmode, _setprogname, 
-                       _setrgid, _setruid, _setrunelocale, _setsourcefilter, _setstate, 
-                       _settimeofday, _setttyent, _setusershell, _setutxent, _setutxent_wtmp, 
-                       _setvbuf, _sigaction, _sigaddset, _sigblock, _sigdelset, _sigemptyset, 
+                       _psort_r, _ptsname, _ptsname_r, _putc, _putc_unlocked, _putchar, 
+                       _putchar_unlocked, _putenv, _puts, _pututxline, _putw, _putwc, 
+                       _putwc_l, _putwchar, _putwchar_l, _qsort, _qsort_b, _qsort_r, 
+                       _querylocale, _radixsort, _raise, _rand, _rand_r, _random, 
+                       _rb_tree_count, _rb_tree_find_node, _rb_tree_find_node_geq, 
+                       _rb_tree_find_node_leq, _rb_tree_init, _rb_tree_insert_node, 
+                       _rb_tree_iterate, _rb_tree_remove_node, _readdir, '_readdir$INODE64', 
+                       _readdir_r, '_readdir_r$INODE64', _readpassphrase, _reallocf, 
+                       _realpath, '_realpath$DARWIN_EXTSN', _recv, _regcomp, _regcomp_l, 
+                       _regerror, _regexec, _regfree, _register_printf_domain_function, 
+                       _register_printf_domain_render_std, _regncomp, _regncomp_l, 
+                       _regnexec, _regwcomp, _regwcomp_l, _regwexec, _regwncomp, 
+                       _regwncomp_l, _regwnexec, _remove, _remque, _rewind, _rewinddir, 
+                       _rindex, _sbrk, _scandir, '_scandir$INODE64', _scandir_b, 
+                       '_scandir_b$INODE64', _scanf, _scanf_l, _seed48, _seekdir, 
+                       _send, _setbuf, _setbuffer, _setenv, _sethostid, _sethostname, 
+                       _setinvalidrune, _setipv4sourcefilter, _setkey, _setlinebuf, 
+                       _setlocale, _setlogin, _setmode, _setprogname, _setrgid, _setruid, 
+                       _setrunelocale, _setsourcefilter, _setstate, _settimeofday, 
+                       _setttyent, _setusershell, _setutxent, _setutxent_wtmp, _setvbuf, 
+                       _sigaction, _sigaddset, _sigblock, _sigdelset, _sigemptyset, 
                        _sigfillset, _sighold, _sigignore, _siginterrupt, _sigismember, 
                        _signal, _sigpause, _sigrelse, _sigset, _sigsetmask, _sigvec, 
                        _sl_add, _sl_find, _sl_free, _sl_init, _sleep, _snprintf, 

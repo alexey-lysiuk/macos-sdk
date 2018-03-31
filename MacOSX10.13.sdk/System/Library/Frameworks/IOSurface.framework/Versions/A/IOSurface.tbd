@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 0CCA9904-FCBB-3278-96A1-714BDB961D8A', 'x86_64: 6D35A601-1C47-37BE-AD31-F8EB88F67573' ]
+uuids:           [ 'i386: B24705CD-3B67-3D4C-A194-FE817FAFF983', 'x86_64: 392CA7DE-B365-364E-AF4A-33EC2CC48E6F' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/IOSurface.framework/Versions/A/IOSurface
 exports:         
@@ -19,24 +19,25 @@ exports:
                        _IOSurfaceClientGetCacheMode, _IOSurfaceClientGetElementHeight, 
                        _IOSurfaceClientGetElementHeightOfPlane, _IOSurfaceClientGetElementWidth, 
                        _IOSurfaceClientGetElementWidthOfPlane, _IOSurfaceClientGetHeight, 
-                       _IOSurfaceClientGetHeightOfPlane, _IOSurfaceClientGetID, _IOSurfaceClientGetNameOfComponentOfPlane, 
-                       _IOSurfaceClientGetNumberOfComponentsOfPlane, _IOSurfaceClientGetPixelFormat, 
-                       _IOSurfaceClientGetPlaneCount, _IOSurfaceClientGetPropertyAlignment, 
-                       _IOSurfaceClientGetPropertyMaximum, _IOSurfaceClientGetProtectionOptions, 
-                       _IOSurfaceClientGetRangeOfComponentOfPlane, _IOSurfaceClientGetSeed, 
-                       _IOSurfaceClientGetSubsampling, _IOSurfaceClientGetTypeOfComponentOfPlane, 
-                       _IOSurfaceClientGetUseCount, _IOSurfaceClientGetWidth, _IOSurfaceClientGetWidthOfPlane, 
+                       _IOSurfaceClientGetHeightOfPlane, _IOSurfaceClientGetID, _IOSurfaceClientGetIndexedTimestamp, 
+                       _IOSurfaceClientGetNameOfComponentOfPlane, _IOSurfaceClientGetNumberOfComponentsOfPlane, 
+                       _IOSurfaceClientGetPixelFormat, _IOSurfaceClientGetPlaneCount, 
+                       _IOSurfaceClientGetPropertyAlignment, _IOSurfaceClientGetPropertyMaximum, 
+                       _IOSurfaceClientGetProtectionOptions, _IOSurfaceClientGetRangeOfComponentOfPlane, 
+                       _IOSurfaceClientGetRegistryID, _IOSurfaceClientGetSeed, _IOSurfaceClientGetSubsampling, 
+                       _IOSurfaceClientGetTypeOfComponentOfPlane, _IOSurfaceClientGetUseCount, 
+                       _IOSurfaceClientGetWidth, _IOSurfaceClientGetWidthOfPlane, 
                        _IOSurfaceClientGetYCbCrMatrix, _IOSurfaceClientIncrementUseCount, 
                        _IOSurfaceClientIsDisplayable, _IOSurfaceClientIsInUse, _IOSurfaceClientLock, 
                        _IOSurfaceClientLookup, _IOSurfaceClientLookupFromMachPort, 
                        _IOSurfaceClientNeedsBindAccel, _IOSurfaceClientRelease, _IOSurfaceClientRemoveSurfaceNotify, 
                        _IOSurfaceClientRemoveValue, _IOSurfaceClientRetain, _IOSurfaceClientSetBulkAttachments, 
-                       _IOSurfaceClientSetPurgeable, _IOSurfaceClientSetSurfaceNotify, 
-                       _IOSurfaceClientSetValue, _IOSurfaceClientSetYCbCrMatrix, 
-                       _IOSurfaceClientSupportsProtectionOptions, _IOSurfaceClientUnlock, 
-                       _IOSurfaceCopyAllValues, _IOSurfaceCopyDataValueBytes, _IOSurfaceCopyValue, 
-                       _IOSurfaceCreate, _IOSurfaceCreateMachPort, _IOSurfaceCreateXPCObject, 
-                       _IOSurfaceDecrementUseCount, _IOSurfaceFlushProcessorCaches, 
+                       _IOSurfaceClientSetIndexedTimestamp, _IOSurfaceClientSetPurgeable, 
+                       _IOSurfaceClientSetSurfaceNotify, _IOSurfaceClientSetValue, 
+                       _IOSurfaceClientSetYCbCrMatrix, _IOSurfaceClientSupportsProtectionOptions, 
+                       _IOSurfaceClientUnlock, _IOSurfaceCopyAllValues, _IOSurfaceCopyDataValueBytes, 
+                       _IOSurfaceCopyValue, _IOSurfaceCreate, _IOSurfaceCreateMachPort, 
+                       _IOSurfaceCreateXPCObject, _IOSurfaceDecrementUseCount, _IOSurfaceFlushProcessorCaches, 
                        _IOSurfaceGetAllocSize, _IOSurfaceGetBaseAddress, _IOSurfaceGetBaseAddressOfPlane, 
                        _IOSurfaceGetBitDepthOfComponentOfPlane, _IOSurfaceGetBitOffsetOfComponentOfPlane, 
                        _IOSurfaceGetBitsPerBlock, _IOSurfaceGetBitsPerBlockOfPlane, 
@@ -47,10 +48,11 @@ exports:
                        _IOSurfaceGetElementHeightOfPlane, _IOSurfaceGetElementWidth, 
                        _IOSurfaceGetElementWidthOfPlane, _IOSurfaceGetGraphicsCommPageAddress, 
                        _IOSurfaceGetHeight, _IOSurfaceGetHeightOfPlane, _IOSurfaceGetID, 
-                       _IOSurfaceGetNameOfComponentOfPlane, _IOSurfaceGetNumberOfComponentsOfPlane, 
-                       _IOSurfaceGetPixelFormat, _IOSurfaceGetPlaneCount, _IOSurfaceGetPropertyAlignment, 
-                       _IOSurfaceGetPropertyMaximum, _IOSurfaceGetProtectionOptions, 
-                       _IOSurfaceGetRangeOfComponentOfPlane, _IOSurfaceGetSeed, _IOSurfaceGetSeedOfPlane, 
+                       _IOSurfaceGetIndexedTimestamp, _IOSurfaceGetNameOfComponentOfPlane, 
+                       _IOSurfaceGetNumberOfComponentsOfPlane, _IOSurfaceGetPixelFormat, 
+                       _IOSurfaceGetPlaneCount, _IOSurfaceGetPropertyAlignment, _IOSurfaceGetPropertyMaximum, 
+                       _IOSurfaceGetProtectionOptions, _IOSurfaceGetRangeOfComponentOfPlane, 
+                       _IOSurfaceGetRegistryID, _IOSurfaceGetSeed, _IOSurfaceGetSeedOfPlane, 
                        _IOSurfaceGetSubsampling, _IOSurfaceGetTypeID, _IOSurfaceGetTypeOfComponentOfPlane, 
                        _IOSurfaceGetUseCount, _IOSurfaceGetWidth, _IOSurfaceGetWidthOfPlane, 
                        _IOSurfaceGetYCbCrMatrix, _IOSurfaceIncrementUseCount, _IOSurfaceIsDisplayable, 
@@ -75,8 +77,8 @@ exports:
                        _IOSurfacePropertyKeyProtectionOptions, _IOSurfacePropertyKeySubsampling, 
                        _IOSurfacePropertyKeyWidth, _IOSurfaceRemoveAllValues, _IOSurfaceRemoveValue, 
                        _IOSurfaceSetBulkAttachments, _IOSurfaceSetBulkAttachments2, 
-                       _IOSurfaceSetPurgeable, _IOSurfaceSetValue, _IOSurfaceSetValues, 
-                       _IOSurfaceSetYCbCrMatrix, _IOSurfaceSupportsProtectionOptions, 
+                       _IOSurfaceSetIndexedTimestamp, _IOSurfaceSetPurgeable, _IOSurfaceSetValue, 
+                       _IOSurfaceSetValues, _IOSurfaceSetYCbCrMatrix, _IOSurfaceSupportsProtectionOptions, 
                        _IOSurfaceUnlock, _IOSurfaceUnlockPlane, __ioSurfaceAddClientRef, 
                        _kIOFenceAllowTearing, _kIOSurfaceAllocSize, _kIOSurfaceBufferTileFormat, 
                        _kIOSurfaceBufferTileMode, _kIOSurfaceBytesPerElement, _kIOSurfaceBytesPerRow, 
@@ -125,5 +127,5 @@ exports:
                        _kIOSurfaceWidth, _kIOSurfaceYCbCrMatrix, _kIOSurfaceYCbCrMatrix_DCI_P3_String, 
                        _kIOSurfaceYCbCrMatrix_ITU_R_601_4_String, _kIOSurfaceYCbCrMatrix_ITU_R_709_2_String, 
                        _kIOSurfaceYCbCrMatrix_P3_D65_String, _kIOSurfaceYCbCrMatrix_SMPTE_240M_1995_String ]
-    objc-classes:    [ _IOSurface ]
+    objc-classes:    [ IOSurface ]
 ...

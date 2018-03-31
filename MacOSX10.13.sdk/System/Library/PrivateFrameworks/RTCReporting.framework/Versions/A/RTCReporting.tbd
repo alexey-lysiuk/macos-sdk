@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A62555BF-C5C0-3CD8-BBFA-DB6D0F25722B' ]
+uuids:           [ 'x86_64: 58FE4D8A-413C-3C91-B82A-43B931274C1D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/RTCReporting.framework/Versions/A/RTCReporting
 exports:         
@@ -27,9 +27,9 @@ exports:
                        _kRTCReportingSessionInfoSessionID, _kRTCReportingUserInfoClientName, 
                        _kRTCReportingUserInfoServiceName, _validateMessageWithCategory, 
                        _validateMessageWithDictionary, _validateSessionInfo ]
-    objc-classes:    [ _RTCReporting, _RTCReportingAggregationObject, _RTCReportingDeallocNotifier, 
-                       _RTCReportingLogging, _UpdateAndReportServices ]
-    objc-ivars:      [ _RTCReportingAggregationObject._aggregationBlock, _RTCReportingDeallocNotifier._delegate, 
-                       _UpdateAndReportServices._block, _UpdateAndReportServices._report, 
-                       _UpdateAndReportServices._update ]
+    objc-classes:    [ RTCReporting, RTCReportingAggregationObject, RTCReportingDeallocNotifier, 
+                       RTCReportingLogging, UpdateAndReportServices ]
+    objc-ivars:      [ RTCReportingAggregationObject._aggregationBlock, RTCReportingDeallocNotifier._delegate, 
+                       UpdateAndReportServices._block, UpdateAndReportServices._report, 
+                       UpdateAndReportServices._update ]
 ...

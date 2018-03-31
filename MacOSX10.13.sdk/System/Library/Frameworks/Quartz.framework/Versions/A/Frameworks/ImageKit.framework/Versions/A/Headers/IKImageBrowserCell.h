@@ -34,7 +34,7 @@ extern NSString *const IKImageBrowserCellPlaceHolderLayer;
 @interface IKImageBrowserCell : NSObject
 {
 	__weak id                   _parent;
-	void* __strong              _ibCellReserved;
+	void*                       _ibCellReserved;
 }
 
 /*! 

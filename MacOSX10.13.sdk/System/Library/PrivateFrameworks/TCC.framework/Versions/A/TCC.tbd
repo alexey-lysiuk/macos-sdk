@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 4B76752A-36A0-3175-87C7-CB42E33CCB5A', 'x86_64: C807D3F0-FE20-3FC0-8D61-306477ABEBC4' ]
+uuids:           [ 'i386: 449D3E94-0C9A-3F2A-835B-593D846F6006', 'x86_64: E1EB7272-FE6F-39AB-83CA-B2B5F2A88D9B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/TCC.framework/Versions/A/TCC
 objc-constraint: none
@@ -11,16 +11,20 @@ exports:
                        _TCCAccessCopyInformationForBundle, _TCCAccessDeclarePolicy, 
                        _TCCAccessGetOverride, _TCCAccessOverride, _TCCAccessPreflight, 
                        _TCCAccessRequest, _TCCAccessReset, _TCCAccessResetForBundle, 
-                       _TCCAccessResetForPath, _TCCAccessResetPoliciesExcept, _TCCAccessRestricted, 
-                       _TCCAccessSelectPolicyForExtensionWithIdentifier, _TCCAccessSet, 
-                       _TCCAccessSetForAuditToken, _TCCAccessSetForBundle, _TCCAccessSetForBundleId, 
-                       _TCCAccessSetForPath, _TCCAccessSetOverride, _TCCAccessSetPidResponsibleForPid, 
-                       _TCCTestInternal, _kTCCAccessCheckOptionPrompt, _kTCCAccessRequestOptionPurpose, 
-                       _kTCCInfoBundle, _kTCCInfoGranted, _kTCCInfoLastUsed, _kTCCInfoPath, 
-                       _kTCCInfoService, _kTCCServiceAccessibility, _kTCCServiceAddressBook, 
-                       _kTCCServiceAll, _kTCCServiceCalendar, _kTCCServiceFacebook, 
-                       _kTCCServiceLinkedIn, _kTCCServiceLiverpool, _kTCCServiceLocation, 
-                       _kTCCServicePhotos, _kTCCServiceReminders, _kTCCServiceShareKit, 
-                       _kTCCServiceSinaWeibo, _kTCCServiceTencentWeibo, _kTCCServiceTwitter, 
-                       _kTCCServiceUbiquity ]
+                       _TCCAccessResetForBundleId, _TCCAccessResetForPath, _TCCAccessResetPoliciesExcept, 
+                       _TCCAccessRestricted, _TCCAccessSelectPolicyForExtensionWithIdentifier, 
+                       _TCCAccessSet, _TCCAccessSetForAuditToken, _TCCAccessSetForBundle, 
+                       _TCCAccessSetForBundleId, _TCCAccessSetForBundleIdAndCodeRequirement, 
+                       _TCCAccessSetForCodeIdentity, _TCCAccessSetForPath, _TCCAccessSetOverride, 
+                       _TCCAccessSetPidResponsibleForPid, _TCCTestInternal, _kTCCAccessCheckOptionPrompt, 
+                       _kTCCAccessRequestOptionPurpose, _kTCCCodeIdentityAuthority, 
+                       _kTCCCodeIdentityBundleID, _kTCCCodeIdentityDevIDAuthority, 
+                       _kTCCCodeIdentityEntitlementName, _kTCCCodeIdentitySigningID, 
+                       _kTCCCodeIdentityTeamID, _kTCCInfoBundle, _kTCCInfoCodeRequirement, 
+                       _kTCCInfoGranted, _kTCCInfoLastUsed, _kTCCInfoPath, _kTCCInfoService, 
+                       _kTCCServiceAccessibility, _kTCCServiceAddressBook, _kTCCServiceAll, 
+                       _kTCCServiceCalendar, _kTCCServiceFacebook, _kTCCServiceLinkedIn, 
+                       _kTCCServiceLiverpool, _kTCCServiceLocation, _kTCCServicePhotos, 
+                       _kTCCServiceReminders, _kTCCServiceShareKit, _kTCCServiceSinaWeibo, 
+                       _kTCCServiceTencentWeibo, _kTCCServiceTwitter, _kTCCServiceUbiquity ]
 ...

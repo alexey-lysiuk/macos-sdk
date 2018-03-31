@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: FBC48404-D7AD-31FA-BDE2-5B6A1D8EFC7A', 'x86_64: D2E842AA-3B8D-31BF-8234-8C1BE11CFE32' ]
+uuids:           [ 'i386: EC91E854-920B-3229-8B96-A85638182A49', 'x86_64: 5CAAB092-02CC-3A37-9D5F-C4AD1083AB96' ]
 platform:        macosx
 install-name:    /usr/lib/system/libsystem_kernel.dylib
-current-version: 4570.31.3
+current-version: 4570.51.1
 objc-constraint: none
 parent-umbrella: System
 exports:         
@@ -35,8 +35,8 @@ exports:
                        '_sendto$UNIX2003', '_setattrlist$UNIX2003', _setpgrp, '_setregid$UNIX2003', 
                        '_setreuid$UNIX2003', '_setrlimit$UNIX2003', '_shmctl$UNIX2003', 
                        _sigaltstack, '_sigsuspend$NOCANCEL$UNIX2003', '_sigsuspend$UNIX2003', 
-                       '_socketpair$UNIX2003', _task_wire, _vm_map_64, _vm_mapped_pages_info, 
-                       _vm_region, _vm_region_recurse, '_waitid$NOCANCEL$UNIX2003', 
+                       '_socketpair$UNIX2003', _task_wire, _vm_map_64, _vm_map_exec_lockdown, 
+                       _vm_mapped_pages_info, _vm_region, _vm_region_recurse, '_waitid$NOCANCEL$UNIX2003', 
                        '_waitid$UNIX2003', '_write$NOCANCEL$UNIX2003', '_write$UNIX2003', 
                        '_writev$NOCANCEL$UNIX2003', '_writev$UNIX2003', tramp_cerror, 
                        tramp_cerror_nocancel ]
@@ -244,18 +244,19 @@ exports:
                        _mach_voucher_attr_command, _mach_voucher_deallocate, _mach_voucher_debug_info, 
                        _mach_voucher_extract_all_attr_recipes, _mach_voucher_extract_attr_content, 
                        _mach_voucher_extract_attr_recipe, _mach_voucher_extract_attr_recipe_trap, 
-                       _mach_wait_until, _mach_zone_force_gc, _mach_zone_info, _macx_backing_store_recovery, 
-                       _macx_backing_store_suspend, _macx_swapoff, _macx_swapon, 
-                       _macx_triggers, _madvise, _memorystatus_control, _memorystatus_get_level, 
-                       _mig_allocate, _mig_dealloc_reply_port, _mig_deallocate, _mig_get_reply_port, 
-                       _mig_put_reply_port, _mig_reply_setup, _mig_strncpy, _mig_strncpy_zerofill, 
-                       _mincore, _minherit, _mk_timer_arm, _mk_timer_arm_leeway, 
-                       _mk_timer_cancel, _mk_timer_create, _mk_timer_destroy, _mkdir, 
-                       _mkdirat, _mkfifo, _mknod, _mlock, _mlockall, _mmap, _modwatch, 
-                       _mount, _mprotect, _mremap_encrypted, _msg_receive, _msg_rpc, 
-                       _msg_send, _msgget, _msgrcv, _msgsnd, _msgsys, _msync, _munlock, 
-                       _munlockall, _munmap, _necp_client_action, _necp_match_policy, 
-                       _necp_open, _necp_session_action, _necp_session_open, _net_qos_guideline, 
+                       _mach_wait_until, _mach_zone_force_gc, _mach_zone_info, _mach_zone_info_for_largest_zone, 
+                       _mach_zone_info_for_zone, _macx_backing_store_recovery, _macx_backing_store_suspend, 
+                       _macx_swapoff, _macx_swapon, _macx_triggers, _madvise, _memorystatus_control, 
+                       _memorystatus_get_level, _mig_allocate, _mig_dealloc_reply_port, 
+                       _mig_deallocate, _mig_get_reply_port, _mig_put_reply_port, 
+                       _mig_reply_setup, _mig_strncpy, _mig_strncpy_zerofill, _mincore, 
+                       _minherit, _mk_timer_arm, _mk_timer_arm_leeway, _mk_timer_cancel, 
+                       _mk_timer_create, _mk_timer_destroy, _mkdir, _mkdirat, _mkfifo, 
+                       _mknod, _mlock, _mlockall, _mmap, _modwatch, _mount, _mprotect, 
+                       _mremap_encrypted, _msg_receive, _msg_rpc, _msg_send, _msgget, 
+                       _msgrcv, _msgsnd, _msgsys, _msync, _munlock, _munlockall, 
+                       _munmap, _necp_client_action, _necp_match_policy, _necp_open, 
+                       _necp_session_action, _necp_session_open, _net_qos_guideline, 
                        _netagent_trigger, _netname_check_in, _netname_check_out, 
                        _netname_look_up, _netname_version, _nfsclnt, _nfssvc, _non_boost_assertion_token, 
                        _normal_boost_assertion_token, _ntp_adjtime, _ntp_gettime, 
@@ -340,8 +341,8 @@ exports:
                        _proc_set_dirty, _proc_set_owner_vmpressure, _proc_set_wakemon_defaults, 
                        _proc_set_wakemon_params, _proc_setcpu_percentage, _proc_setpcontrol, 
                        _proc_setthread_cpupercent, _proc_suppress, _proc_terminate, 
-                       _proc_trace_log, _proc_track_dirty, _proc_uuid_policy, _processor_assign, 
-                       _processor_control, _processor_exit, _processor_get_assignment, 
+                       _proc_trace_log, _proc_track_dirty, _proc_udata_info, _proc_uuid_policy, 
+                       _processor_assign, _processor_control, _processor_exit, _processor_get_assignment, 
                        _processor_info, _processor_set_create, _processor_set_default, 
                        _processor_set_destroy, _processor_set_info, _processor_set_max_priority, 
                        _processor_set_policy_control, _processor_set_policy_disable, 
@@ -416,7 +417,14 @@ exports:
                        _vm_remap, _vm_wire, _vm_write, _voucher_mach_msg_adopt, _voucher_mach_msg_clear, 
                        _voucher_mach_msg_revert, _voucher_mach_msg_set, _vprintf_stderr_func, 
                        _wait4, _waitevent, _waitid, _watchevent, _work_interval_copy_port, 
-                       _work_interval_create, _work_interval_destroy, _work_interval_join, 
-                       _work_interval_join_port, _work_interval_leave, _work_interval_notify, 
-                       _work_interval_notify_simple, _write, _writev ]
+                       _work_interval_create, _work_interval_destroy, _work_interval_instance_alloc, 
+                       _work_interval_instance_finish, _work_interval_instance_free, 
+                       _work_interval_instance_get_complexity, _work_interval_instance_get_deadline, 
+                       _work_interval_instance_get_finish, _work_interval_instance_get_id, 
+                       _work_interval_instance_get_start, _work_interval_instance_set_complexity, 
+                       _work_interval_instance_set_deadline, _work_interval_instance_set_finish, 
+                       _work_interval_instance_set_start, _work_interval_instance_start, 
+                       _work_interval_instance_update, _work_interval_join, _work_interval_join_port, 
+                       _work_interval_leave, _work_interval_notify, _work_interval_notify_simple, 
+                       _write, _writev ]
 ...

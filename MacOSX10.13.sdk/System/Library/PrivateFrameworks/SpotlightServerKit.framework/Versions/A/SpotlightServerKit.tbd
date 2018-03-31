@@ -1,22 +1,22 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: E8E58000-466B-3F67-9E4A-A04EA546A6AA', 'x86_64: A693279E-D793-332E-A699-E4E547A2710D' ]
+uuids:           [ 'i386: D505871D-1567-35FC-9204-64E9AC8D2A61', 'x86_64: 87B3ACDE-24C8-36D5-94B8-E781E3D81D34' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SpotlightServerKit.framework/Versions/A/SpotlightServerKit
-current-version: 1191.2.6
+current-version: 1191.4.13
 exports:         
   - archs:           [ x86_64 ]
-    objc-ivars:      [ _MDSInternalToken._tokenID, _MDSMachPortNotificationRecord._aSelector, 
-                       _MDSMachPortNotificationRecord._anObject, _MDSMachPortNotificationRecord._previousPort, 
-                       _MDSMachPortObject._machSubsystem, _MDSMachSubsystem._dispatchChain, 
-                       _MDSNotificationTokenRecord._aName, _MDSNotificationTokenRecord._aSelector, 
-                       _MDSNotificationTokenRecord._anObject, _MDSNotificationTokenRecord._token, 
-                       _MDSObject._activityRegistrationLock, _MDSObject._activityRegistrationObjectId, 
-                       _MDSObject._deferShutdown, _MDSObject._dispatchQueue, _MDSObject._queueToken, 
-                       _MDSObject._registeredActivities, _MDSObject._retainCount, 
-                       _MDSObject._shutDown, _MDSReadCopyUpdate._queueTokenSet, _MDSReadCopyUpdate._resource, 
-                       _MDSToken._tokenID, _MDSTwoFaceMachPortObject._backgroundPort, 
-                       _MDSTwoFaceMachPortObject._backgroundQueue, _MDSTwoFaceMachPortObject._backgroundSubsystem ]
+    objc-ivars:      [ MDSInternalToken._tokenID, MDSMachPortNotificationRecord._aSelector, 
+                       MDSMachPortNotificationRecord._anObject, MDSMachPortNotificationRecord._previousPort, 
+                       MDSMachPortObject._machSubsystem, MDSMachSubsystem._dispatchChain, 
+                       MDSNotificationTokenRecord._aName, MDSNotificationTokenRecord._aSelector, 
+                       MDSNotificationTokenRecord._anObject, MDSNotificationTokenRecord._token, 
+                       MDSObject._activityRegistrationLock, MDSObject._activityRegistrationObjectId, 
+                       MDSObject._deferShutdown, MDSObject._dispatchQueue, MDSObject._queueToken, 
+                       MDSObject._registeredActivities, MDSObject._retainCount, MDSObject._shutDown, 
+                       MDSReadCopyUpdate._queueTokenSet, MDSReadCopyUpdate._resource, 
+                       MDSToken._tokenID, MDSTwoFaceMachPortObject._backgroundPort, 
+                       MDSTwoFaceMachPortObject._backgroundQueue, MDSTwoFaceMachPortObject._backgroundSubsystem ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ _BWA_Create, _BWA_DataAllocate, _BWA_DataDeallocate, _CFDataCreateWithContentsOfURL, 
                        _CF_MaxRange, _CF_RangeIntersection, _CF_RangeUnion, _GetSystemBuildVersionString, 
@@ -78,8 +78,7 @@ exports:
                        _token_propagating_async, _token_propagating_async2, _token_qos_async, 
                        _token_qos_async2, _token_qos_sync, _token_qos_sync2, _token_sync, 
                        _token_sync2 ]
-    objc-classes:    [ _MDSInternalToken, _MDSMachPortNotificationRecord, _MDSMachPortObject, 
-                       _MDSMachSubsystem, _MDSNotificationCenter, _MDSNotificationTokenRecord, 
-                       _MDSObject, _MDSObjectToken, _MDSReadCopyUpdate, _MDSToken, 
-                       _MDSTwoFaceMachPortObject ]
+    objc-classes:    [ MDSInternalToken, MDSMachPortNotificationRecord, MDSMachPortObject, 
+                       MDSMachSubsystem, MDSNotificationCenter, MDSNotificationTokenRecord, 
+                       MDSObject, MDSObjectToken, MDSReadCopyUpdate, MDSToken, MDSTwoFaceMachPortObject ]
 ...

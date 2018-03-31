@@ -377,6 +377,34 @@ VT_EXPORT const CFStringRef kVTDecompressionPropertyKey_PixelFormatsWithReducedR
 */
 VT_EXPORT const CFStringRef kVTDecompressionPropertyKey_PixelTransferProperties API_AVAILABLE(macosx(10.8), ios(8.0), tvos(10.2)); // Read/Write, CFDictionary containing properties from VTPixelTransferProperties.h.
 
+/*!
+	@constant	kVTVideoDecoderSpecification_RequiredDecoderGPURegistryID
+	@abstract
+		If set, the VideoToolbox will only use a hardware decoder running on the GPU specified by the provided GPU registryID.
+	@discussion
+		This specification implies kVTVideoDecoderSpecification_EnableHardwareAcceleratedVideoDecoder.  A separate hardware decode opt-in is not required.
+		The GPU registryID can be obtained from a MTLDevice using [MTLDevice registryID] or can be obtained from OpenGL or OpenCL.
+		This option can only be used to specify a GPU registryID corresponding to a removable GPU (eGPU).
+		If 0 is specified for the required GPU registryID, the VideoToolbox will not utilize removable GPUs for decode.
+*/
+VT_EXPORT const CFStringRef kVTVideoDecoderSpecification_RequiredDecoderGPURegistryID API_AVAILABLE(macos(10.13)); // CFNumber, Optional
+
+/*!
+	@constant	kVTVideoDecoderSpecification_PreferredDecoderGPURegistryID
+	@abstract
+		If set, the VideoToolbox will try to use a hardware decoder running on the GPU specified by the provided GPU registryID.  If the
+		GPU does not support decode of the specified format, the VideoToolbox will fall back to alternate decoders.
+	@discussion
+		This specification implies kVTVideoDecoderSpecification_EnableHardwareAcceleratedVideoDecoder.  A separate hardware decode opt-in is not required.
+		If both kVTVideoDecoderSpecification_PreferredDecoderGPURegistryID and kVTVideoDecoderSpecification_RequiredDecoderGPURegistryID are
+		set, kVTVideoDecoderSpecification_PreferredDecoderGPURegistryID will be ignored.
+		This specification can be used in conjunction with kVTVideoDecoderSpecification_RequireHardwareAcceleratedVideoDecoder to prevent a fallback
+		to software decode.
+		The GPU registryID can be obtained from a MTLDevice using [MTLDevice registryID] or can be obtained from OpenGL or OpenCL.
+		This option can only be used to specify a GPU registryID corresponding to a removable GPU (eGPU).
+*/
+VT_EXPORT const CFStringRef kVTVideoDecoderSpecification_PreferredDecoderGPURegistryID API_AVAILABLE(macos(10.13)); // CFNumber, Optional
+
 	
 CM_ASSUME_NONNULL_END
 

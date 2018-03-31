@@ -1,13 +1,13 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 685D4DD3-670A-33EB-88F3-9657C167A3F1', 'x86_64: CB936412-BC2A-301D-A37D-64FB41F66500' ]
+uuids:           [ 'i386: 0BF259C5-877D-31BF-85F9-BAB492DD395B', 'x86_64: A78ED6AB-08B0-383C-B441-67DB8E47D322' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Tk.framework/Versions/8.5/Tk
 current-version: 8.5.9
 compatibility-version: 8.5
 exports:         
   - archs:           [ i386 ]
-    objc-classes:    [ _TKApplication, _TKContentView, _TKMenu, _TKWindow ]
+    objc-classes:    [ TKApplication, TKContentView, TKMenu, TKWindow ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ _TkAboutDlg, _TkAllocWindow, _TkBezierPoints, _TkBezierScreenPoints, 
                        _TkBindDeadWindow, _TkBindEventProc, _TkBindFree, _TkBindInit, 

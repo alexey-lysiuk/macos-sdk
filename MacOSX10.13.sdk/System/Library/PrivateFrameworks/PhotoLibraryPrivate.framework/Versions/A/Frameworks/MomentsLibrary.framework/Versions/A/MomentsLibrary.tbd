@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A34A5435-2B51-30B2-88DE-4583739CF4FB' ]
+uuids:           [ 'x86_64: 58FA5256-D907-3634-91B6-68579495648B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoLibraryPrivate.framework/Versions/A/Frameworks/MomentsLibrary.framework/Versions/A/MomentsLibrary
-current-version: 3251.12.180
+current-version: 3271.13.150
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _MomentsFrameworkBundle, _MomentsHomeLocationName, _MomentsLibraryVersionNumber, 
@@ -13,11 +13,11 @@ exports:
                        _descriptionForGEOPlace, _descriptionForMapRegion, _stringFromDominantOrderType, 
                        _stringFromGEOMapItemPlaceType, _stringFromGEOPlaceType, _uniqueObjectIDsFromMomentLists, 
                        _uniqueObjectIDsFromMoments ]
-    objc-classes:    [ _PLLocationOfInterest, _PLMomentAnalyzer, _PLMomentAnalyzerGeoRequestInfo, 
-                       _PLMomentAnalyzerQueue, _PLMomentAnalyzerWorkThread, _PLMomentCluster, 
-                       _PLMomentClustering, _PLMomentGeneration, _PLMomentListCluster, 
-                       _PLMomentListClustering, _PLMomentNameInfo, _PLMomentNode, 
-                       _PLMomentNodeCache, _PLMomentTemporalSnapshot, _PLRevGeoCompoundNameInfo, 
-                       _PLRevGeoLocationInfo, _PLRevGeoPlace, _PLRevGeoPlaceAnnotation, 
-                       _PLRevGeoPlaceInfo, _PLRevGeoRepresentativeNameInfo ]
+    objc-classes:    [ PLLocationOfInterest, PLMomentAnalyzer, PLMomentAnalyzerGeoRequestInfo, 
+                       PLMomentAnalyzerQueue, PLMomentAnalyzerWorkThread, PLMomentCluster, 
+                       PLMomentClustering, PLMomentGeneration, PLMomentListCluster, 
+                       PLMomentListClustering, PLMomentNameInfo, PLMomentNode, PLMomentNodeCache, 
+                       PLMomentTemporalSnapshot, PLRevGeoCompoundNameInfo, PLRevGeoLocationInfo, 
+                       PLRevGeoPlace, PLRevGeoPlaceAnnotation, PLRevGeoPlaceInfo, 
+                       PLRevGeoRepresentativeNameInfo ]
 ...

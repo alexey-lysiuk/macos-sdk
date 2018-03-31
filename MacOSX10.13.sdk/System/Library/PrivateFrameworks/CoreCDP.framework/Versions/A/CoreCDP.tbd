@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F2101EC5-0B66-391F-BA19-7244186B1C5C' ]
+uuids:           [ 'x86_64: 21B88441-F33D-31C4-8769-AB680F3B10B3' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreCDP.framework/Versions/A/CoreCDP
 exports:         
@@ -14,17 +14,17 @@ exports:
                        _CDP_FOLLOWUP_STATE_REPAIR, _CoreCDPVersionNumber, _CoreCDPVersionString, 
                        __CDPGetLogSystem, __CDPStateError, __CDPStateErrorWithUnderlying, 
                        __CDPSuffixForDeviceClass, __CDPSuffixForSecretType, __CDPSuffixForUnqualifiedDeviceClass ]
-    objc-classes:    [ _CDPAccount, _CDPAuthProviderProxy, _CDPContext, _CDPController, 
-                       _CDPDaemonConnection, _CDPDevice, _CDPFollowUpContext, _CDPFollowUpController, 
-                       _CDPKeychainSync, _CDPLocalDevice, _CDPLocalDeviceSecretHandler, 
-                       _CDPLocalizedStringBuilder, _CDPRecoveryController, _CDPRecoveryKeyValidatorProxyImpl, 
-                       _CDPRemoteDeviceSecretValidator, _CDPStateController, _CDPStateUIProviderProxy, 
-                       _CDPUtilities ]
-    objc-ivars:      [ _CDPDevice._deviceColor, _CDPDevice._enclosureColor, _CDPDevice._hasNumericSecret, 
-                       _CDPDevice._hasRandomSecret, _CDPDevice._isCurrentDevice, 
-                       _CDPDevice._isUsingMultipleiCSC, _CDPDevice._localizedName, 
-                       _CDPDevice._machineID, _CDPDevice._model, _CDPDevice._modelClass, 
-                       _CDPDevice._modelVersion, _CDPDevice._numericSecretLength, 
-                       _CDPDevice._platform, _CDPDevice._recordDate, _CDPDevice._recordID, 
-                       _CDPDevice._remainingAttempts, _CDPDevice._serialNumber ]
+    objc-classes:    [ CDPAccount, CDPAuthProviderProxy, CDPContext, CDPController, 
+                       CDPDaemonConnection, CDPDevice, CDPFollowUpContext, CDPFollowUpController, 
+                       CDPKeychainSync, CDPLocalDevice, CDPLocalDeviceSecretHandler, 
+                       CDPLocalizedStringBuilder, CDPRecoveryController, CDPRecoveryKeyValidatorProxyImpl, 
+                       CDPRemoteDeviceSecretValidator, CDPStateController, CDPStateUIProviderProxy, 
+                       CDPUtilities ]
+    objc-ivars:      [ CDPDevice._deviceColor, CDPDevice._enclosureColor, CDPDevice._hasNumericSecret, 
+                       CDPDevice._hasRandomSecret, CDPDevice._isCurrentDevice, CDPDevice._isUsingMultipleiCSC, 
+                       CDPDevice._localizedName, CDPDevice._machineID, CDPDevice._model, 
+                       CDPDevice._modelClass, CDPDevice._modelVersion, CDPDevice._numericSecretLength, 
+                       CDPDevice._platform, CDPDevice._recordDate, CDPDevice._recordID, 
+                       CDPDevice._recordInfo, CDPDevice._remainingAttempts, CDPDevice._serialNumber, 
+                       CDPDevice._simplePublicKey ]
 ...

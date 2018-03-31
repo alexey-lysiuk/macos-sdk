@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CEBA58A5-FF67-348B-B820-B3D4429FE744' ]
+uuids:           [ 'x86_64: 441D08E8-B530-367B-A8D7-DA0F4318B690' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AXHearingSupport.framework/Versions/A/AXHearingSupport
 exports:         
@@ -30,13 +30,13 @@ exports:
                        __AXLogWithFacilityV, __AXStringForArgs, _accessibilityHearingAidSupportBundle, 
                        _accessibilityTTYSupportBundle, _currentProcessIsHeard, _kAXSAccessibilityPreferenceDomain, 
                        _ttyImageNamed, _ttyLocString ]
-    objc-classes:    [ _AXCloudKitHelper, _AXCloudKitHelperManagedObjectContext, 
-                       _AXHAAccessQueue, _AXHAAccessQueueTimer, _AXHADispatchTimer, 
-                       _AXHAFakeXPCClient, _AXHAMessageHandlerContext, _AXHASecurityHelper, 
-                       _AXHAUtilities, _AXHAXPCClient, _AXHAXPCMessage, _AXHeardController, 
-                       _AXHeardServer, _AXTTYController, _AXTTYSettingsListenerHelper, 
-                       _TTYCall, _TTYContactList, _TTYConversation, _TTYConversationViewController, 
-                       _TTYDatabaseHelper, _TTYDictionaryManager, _TTYHistory, _TTYServer, 
-                       _TTYSettings, _TTYStretchImageView, _TTYTelephonyUtilities, 
-                       _TTYUtilities, _TTYUtterance, _TTYUtteranceCell, _TTYUtteranceRequest ]
+    objc-classes:    [ AXCloudKitHelper, AXCloudKitHelperManagedObjectContext, AXHAAccessQueue, 
+                       AXHAAccessQueueTimer, AXHADispatchTimer, AXHAFakeXPCClient, 
+                       AXHAMessageHandlerContext, AXHASecurityHelper, AXHAUtilities, 
+                       AXHAXPCClient, AXHAXPCMessage, AXHeardController, AXHeardServer, 
+                       AXTTYController, AXTTYSettingsListenerHelper, TTYCall, TTYContactList, 
+                       TTYConversation, TTYConversationViewController, TTYDatabaseHelper, 
+                       TTYDictionaryManager, TTYHistory, TTYServer, TTYSettings, 
+                       TTYStretchImageView, TTYTelephonyUtilities, TTYUtilities, 
+                       TTYUtterance, TTYUtteranceCell, TTYUtteranceRequest ]
 ...

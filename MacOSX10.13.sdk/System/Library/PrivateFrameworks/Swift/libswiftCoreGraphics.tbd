@@ -1,10 +1,10 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C56A039A-8581-3EC9-8F85-CC1D0C88CF5C' ]
+uuids:           [ 'x86_64: 64566A39-0F46-3484-8B08-4F2F880AB692' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Swift/libswiftCoreGraphics.dylib
 current-version: 900.8.49
-swift-version:   5
+swift-abi-version: 5
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ __T012CoreGraphics024CGAffineTransformEqualToD0SbSC0cD0V_ADtF, 

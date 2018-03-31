@@ -1,13 +1,14 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AA1CFCDB-3E1D-3B25-8E15-480F0DBCA783' ]
+uuids:           [ 'x86_64: 878EE0C1-EEBE-3245-B981-9E82573BFD7E' ]
 platform:        macosx
 install-name:    /usr/lib/libsysdiagnose.dylib
+objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
-    symbols:         [ _extractDiagnosticID, _metricCompression, _metricGetLogCopying, 
-                       _metricGetLogGeneration, _metricGetOSLogArchive, _metricGetTimeSensitive, 
-                       _metricLogCopying, _metricLogGeneration, _metricOSLogarchiveGeneration, 
-                       _metricStartToTar, _metricTimeSensitive ]
-    objc-classes:    [ _Libsysdiagnose ]
+    symbols:         [ _metricCompression, _metricGetLogCopying, _metricGetLogGeneration, 
+                       _metricGetOSLogArchive, _metricGetTimeSensitive, _metricLogCopying, 
+                       _metricLogGeneration, _metricOSLogarchiveGeneration, _metricStartToTar, 
+                       _metricTimeSensitive, _metricTotalSize ]
+    objc-classes:    [ Libsysdiagnose ]
 ...

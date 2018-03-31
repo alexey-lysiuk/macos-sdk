@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 27D665D2-B845-3CDD-94F4-5F1D9B13ECED', 'x86_64: 30C6F0D0-4F4C-3BCA-AC2B-EDB6EF7BAE0A' ]
+uuids:           [ 'i386: 6AA5D5B6-FCF9-3E94-A09E-A916D1884EB1', 'x86_64: 220FB6F2-4892-3A66-8838-C134CF657D3A' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/OpenDirectory.framework/Versions/A/OpenDirectory
 exports:         
@@ -9,7 +9,6 @@ exports:
     symbols:         [ _ODFrameworkErrorDomain, _ODSessionProxyAddress, _ODSessionProxyPassword, 
                        _ODSessionProxyPort, _ODSessionProxyUsername, _ODTrustInfoCopy, 
                        _ODTrustTypeAnonymous, _ODTrustTypeJoined, _ODTrustTypeUsingCredentials ]
-    objc-classes:    [ _ODAttributeMap, _ODConfiguration, _ODContext, _ODMappings, 
-                       _ODModuleEntry, _ODNode, _ODQuery, _ODRecord, _ODRecordMap, 
-                       _ODSession ]
+    objc-classes:    [ ODAttributeMap, ODConfiguration, ODContext, ODMappings, ODModuleEntry, 
+                       ODNode, ODQuery, ODRecord, ODRecordMap, ODSession ]
 ...

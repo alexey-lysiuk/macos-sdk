@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 10FB8D1A-B550-30BE-A232-338623C83880' ]
+uuids:           [ 'x86_64: 843FF058-6F0B-3419-932C-F80DD775D6AC' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MobileAccessoryUpdater.framework/Versions/A/MobileAccessoryUpdater
 exports:         
@@ -14,14 +14,14 @@ exports:
                        _objectFromXpcDictionary, _sendMessageToExternalClient, _sendMessageToInternalClient, 
                        _sendReplyMessageToClient, _sendReplyMessageToExternalClient, 
                        _sendReplyMessageToInternalClient, _unarchivedKeyedObject ]
-    objc-classes:    [ _FudInternalConnection, _FudProgressWeights, _FudXPCConnection, 
-                       _MobileAccessoryUpdater ]
-    objc-ivars:      [ _FudInternalConnection.clientIdentifier, _FudInternalConnection.didStop, 
-                       _FudInternalConnection.handlerQueue, _FudInternalConnection.messageHandler, 
-                       _FudInternalConnection.pendingRequests, _FudProgressWeights.applyWeight, 
-                       _FudProgressWeights.finishWeight, _FudProgressWeights.prepareWeight, 
-                       _FudXPCConnection.clientIdentifier, _FudXPCConnection.connection, 
-                       _FudXPCConnection.connectionQueue, _FudXPCConnection.didStop, 
-                       _FudXPCConnection.messageHandler, _FudXPCConnection.notifyToken, 
-                       _FudXPCConnection.replyQueue, _FudXPCConnection.sessionQueue ]
+    objc-classes:    [ FudInternalConnection, FudProgressWeights, FudXPCConnection, 
+                       MobileAccessoryUpdater ]
+    objc-ivars:      [ FudInternalConnection.clientIdentifier, FudInternalConnection.didStop, 
+                       FudInternalConnection.handlerQueue, FudInternalConnection.messageHandler, 
+                       FudInternalConnection.pendingRequests, FudProgressWeights.applyWeight, 
+                       FudProgressWeights.finishWeight, FudProgressWeights.prepareWeight, 
+                       FudXPCConnection.clientIdentifier, FudXPCConnection.connection, 
+                       FudXPCConnection.connectionQueue, FudXPCConnection.didStop, 
+                       FudXPCConnection.messageHandler, FudXPCConnection.notifyToken, 
+                       FudXPCConnection.replyQueue, FudXPCConnection.sessionQueue ]
 ...

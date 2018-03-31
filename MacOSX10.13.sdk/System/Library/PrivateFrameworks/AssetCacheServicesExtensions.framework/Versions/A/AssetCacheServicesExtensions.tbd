@@ -1,12 +1,34 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7B06C3E9-3CBB-3A83-86F4-7B784101083D' ]
+uuids:           [ 'x86_64: 42E3DBD2-5EC6-335B-83C2-AE4BDD1821C7' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AssetCacheServicesExtensions.framework/Versions/A/AssetCacheServicesExtensions
-current-version: 71.1
+current-version: 82.1
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _AssetCacheServicesExtensionsVersionNumber, _AssetCacheServicesExtensionsVersionString, 
+                       __kACSMManagedPreferencesDomain, __kACSMSettingsAutoActivationKey, 
+                       __kACSMSettingsDenyActivationKey, __kACSMSettingsDenyTetheredCachingKey, 
+                       __kACSMSettingsListenWithPeersAndParentsKey, __kACSMSettingsLogClientIdentityKey, 
+                       __kACSMSettingsPortKey, _kACMetricsBytesDropped, _kACMetricsBytesFromCacheToChild, 
+                       _kACMetricsBytesFromCacheToClient, _kACMetricsBytesFromCacheToPeer, 
+                       _kACMetricsBytesFromOriginToChild, _kACMetricsBytesFromOriginToClient, 
+                       _kACMetricsBytesFromOriginToPeer, _kACMetricsBytesFromParentToChild, 
+                       _kACMetricsBytesFromParentToClient, _kACMetricsBytesFromParentToPeer, 
+                       _kACMetricsBytesFromPeerToChild, _kACMetricsBytesFromPeerToClient, 
+                       _kACMetricsBytesImportedByHTTP, _kACMetricsBytesImportedByXPC, 
+                       _kACMetricsBytesPurgedTotal, _kACMetricsBytesPurgedYoungerThan1Day, 
+                       _kACMetricsBytesPurgedYoungerThan30Days, _kACMetricsBytesPurgedYoungerThan7Days, 
+                       _kACMetricsCreationDate, _kACMetricsDatabaseDirectory, _kACMetricsDatabaseModelPath, 
+                       _kACMetricsDatabaseName, _kACMetricsEntityName, _kACMetricsImportsByHTTP, 
+                       _kACMetricsImportsByXPC, _kACMetricsPeriod, _kACMetricsRepliesFromCacheToChild, 
+                       _kACMetricsRepliesFromCacheToClient, _kACMetricsRepliesFromCacheToPeer, 
+                       _kACMetricsRepliesFromOriginToChild, _kACMetricsRepliesFromOriginToClient, 
+                       _kACMetricsRepliesFromOriginToPeer, _kACMetricsRepliesFromParentToChild, 
+                       _kACMetricsRepliesFromParentToClient, _kACMetricsRepliesFromParentToPeer, 
+                       _kACMetricsRepliesFromPeerToChild, _kACMetricsRepliesFromPeerToClient, 
+                       _kACMetricsRequestsFromChild, _kACMetricsRequestsFromClient, 
+                       _kACMetricsRequestsFromPeer, _kACMetricsRequestsRejectedForNoSpace, 
                        _kACSEAllServersKey, _kACSECurrentUserKey, _kACSEMightHaveKey, 
                        _kACSEPersonalCachingAndImportKey, _kACSEPersonalCachingKey, 
                        _kACSEPublicIPAddressKey, _kACSEPublicIPAddressRangesKey, 
@@ -47,17 +69,25 @@ exports:
                        _kACSMStatusPublicAddressKey, _kACSMStatusRegistrationErrorKey, 
                        _kACSMStatusRegistrationResponseCodeKey, _kACSMStatusRegistrationStartedKey, 
                        _kACSMStatusRegistrationStatusKey, _kACSMStatusRestrictedMediaKey, 
-                       _kACSMStatusServerGUIDKey, _kACSMStatusStartupStatusKey, _kACSMStatusTotalBytesDroppedKey, 
-                       _kACSMStatusTotalBytesImportedKey, _kACSMStatusTotalBytesReturnedToChildrenKey, 
-                       _kACSMStatusTotalBytesReturnedToClientsKey, _kACSMStatusTotalBytesReturnedToPeersKey, 
-                       _kACSMStatusTotalBytesStoredFromOriginKey, _kACSMStatusTotalBytesStoredFromParentsKey, 
-                       _kACSMStatusTotalBytesStoredFromPeersKey, _kACTSConnectionHandlerErrorDomain, 
-                       _kACTSErrorDomain, _kACTSPairingManagerErrorDomain, _kAssetCacheAlertSharingPrefsMainAnchor ]
-    objc-classes:    [ _AssetCacheAlert, _AssetCacheLowSpaceAlert, _AssetCacheNoSpaceAlert, 
-                       _AssetCacheParentCycleAlert, _AssetCacheParentDepthAlert, 
-                       _AssetCachePeerCycleAlert, _AssetCacheRegistrationRejectedAlert, 
-                       _AssetCacheRegistrationUnavailableAlert, _AssetCacheRejectedParentServerRequestAlert, 
-                       _AssetCacheResourceMissingAlert, _AssetCacheServicesManager, 
-                       _AssetCacheServicesReporter, _AssetCacheServicesTetherator, 
-                       _AssetCacheUnfriendlyPeerAlert, _AssetCacheUnfriendlyPeersInFilterRangeAlert ]
+                       _kACSMStatusServerGUIDKey, _kACSMStatusStartupStatusKey, _kACSMStatusTotalBytesAreSinceKey, 
+                       _kACSMStatusTotalBytesDroppedKey, _kACSMStatusTotalBytesImportedKey, 
+                       _kACSMStatusTotalBytesReturnedToChildrenKey, _kACSMStatusTotalBytesReturnedToClientsKey, 
+                       _kACSMStatusTotalBytesReturnedToPeersKey, _kACSMStatusTotalBytesStoredFromOriginKey, 
+                       _kACSMStatusTotalBytesStoredFromParentsKey, _kACSMStatusTotalBytesStoredFromPeersKey, 
+                       _kACTSConnectionHandlerErrorDomain, _kACTSDeviceManagerErrorDomain, 
+                       _kACTSErrorDomain, _kACTSStatusDeviceBridgedKey, _kACTSStatusDeviceCheckInAttemptsKey, 
+                       _kACTSStatusDeviceCheckInPendingKey, _kACTSStatusDeviceCheckedInKey, 
+                       _kACTSStatusDeviceLocationIDKey, _kACTSStatusDeviceNameKey, 
+                       _kACTSStatusDevicePairedKey, _kACTSStatusDeviceRosterKey, 
+                       _kACTSStatusDeviceSerialNumberKey, _kACTSStatusPrimaryInterfaceBSDNameKey, 
+                       _kACTSStatusPrimaryInterfaceIPAddressKey, _kACTSStatusPrimaryInterfaceKey, 
+                       _kACTSStatusPrimaryInterfaceMbpsKey, _kACTSStatusPrimaryInterfaceUserReadableKey, 
+                       _kACTSStatusPrimaryInterfaceWiredKey, _kAssetCacheAlertSharingPrefsMainAnchor ]
+    objc-classes:    [ AssetCacheAlert, AssetCacheLowSpaceAlert, AssetCacheMetric, 
+                       AssetCacheMetricsReader, AssetCacheNoSpaceAlert, AssetCacheParentCycleAlert, 
+                       AssetCacheParentDepthAlert, AssetCachePeerCycleAlert, AssetCacheRegistrationRejectedAlert, 
+                       AssetCacheRegistrationUnavailableAlert, AssetCacheRejectedParentServerRequestAlert, 
+                       AssetCacheResourceMissingAlert, AssetCacheServicesManager, 
+                       AssetCacheServicesReporter, AssetCacheServicesTetherator, 
+                       AssetCacheUnfriendlyPeerAlert, AssetCacheUnfriendlyPeersInFilterRangeAlert ]
 ...

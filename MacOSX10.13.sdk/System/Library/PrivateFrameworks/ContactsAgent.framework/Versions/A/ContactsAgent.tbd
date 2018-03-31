@@ -1,17 +1,17 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B3C8ACDD-934F-305F-92EC-8FEC01EBE4CB' ]
+uuids:           [ 'x86_64: A1E5B0AA-EF48-36CE-A1BD-0B2F2758E0E3' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ContactsAgent.framework/Versions/A/ContactsAgent
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _ABPredicateReferencedGroupUniqueIDs, _ContactsAgentVersionNumber, 
                        _ContactsAgentVersionString, _main ]
-    objc-classes:    [ _ABCDAlternateBirthdayPredicates, _ABCDPredicateGenerator, 
-                       _ABXPCActions, _CNAgent, _CNAgentAddressBookProxy, _CNAgentCoreDataMapper, 
-                       _CNAgentGeneralProxy, _CNAgentMeCardListener ]
-    objc-ivars:      [ _CNAgentCoreDataMapper.__ABEntitiesConverterKeys, _CNAgentCoreDataMapper.__ABEntitiesEntityWithValueSelector, 
-                       _CNAgentCoreDataMapper.__ABEntitiesForKeys, _CNAgentCoreDataMapper.__ABEntitiesMainKeys, 
-                       _CNAgentCoreDataMapper.__ABEntitiesValueWithEntitySelector, 
-                       _CNAgentCoreDataMapper.__ABKeysForProperties, _CNAgentCoreDataMapper.__ABPropertiesForKeys ]
+    objc-classes:    [ ABCDAlternateBirthdayPredicates, ABCDPredicateGenerator, ABXPCActions, 
+                       CNAgent, CNAgentAddressBookProxy, CNAgentCoreDataMapper, CNAgentGeneralProxy, 
+                       CNAgentMeCardListener ]
+    objc-ivars:      [ CNAgentCoreDataMapper.__ABEntitiesConverterKeys, CNAgentCoreDataMapper.__ABEntitiesEntityWithValueSelector, 
+                       CNAgentCoreDataMapper.__ABEntitiesForKeys, CNAgentCoreDataMapper.__ABEntitiesMainKeys, 
+                       CNAgentCoreDataMapper.__ABEntitiesValueWithEntitySelector, 
+                       CNAgentCoreDataMapper.__ABKeysForProperties, CNAgentCoreDataMapper.__ABPropertiesForKeys ]
 ...

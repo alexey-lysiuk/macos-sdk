@@ -1,11 +1,11 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2A0D68F9-206E-3F7F-8173-200A1962A48F' ]
+uuids:           [ 'x86_64: C3E340D2-7178-341B-94D4-10C6039AA2A6' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/FMFUI.framework/Versions/A/FMFUI
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
-    objc-classes:    [ _FMFActiveDeviceSelectionViewController, _FMFLocationSharingViewController, 
-                       _FMFMapViewController ]
+    objc-classes:    [ FMFActiveDeviceSelectionViewController, FMFLocationSharingViewController, 
+                       FMFMapViewController ]
 ...

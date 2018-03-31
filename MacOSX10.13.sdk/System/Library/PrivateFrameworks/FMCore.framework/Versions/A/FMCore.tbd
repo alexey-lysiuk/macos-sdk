@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C5C31F82-F206-3164-BAF7-32D64DDED78B' ]
+uuids:           [ 'x86_64: F570DEE9-2386-33BE-8913-F61CEE2BF93D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/FMCore.framework/Versions/A/FMCore
 objc-constraint: none
@@ -12,11 +12,11 @@ exports:
                        _FMDistanceCalculatorMeasurementSystemChangedNotification, 
                        _FMLocalNetworkStatusChangedNotification, _FMLocalNetworkStatusKey, 
                        _kFMReachabilityChangedNotification, _nanosecondTimestamp ]
-    objc-classes:    [ _FMAPSHandler, _FMAlertManager, _FMCommandBase, _FMDaemon, 
-                       _FMDispatchTimer, _FMDistanceCalculator, _FMJSONCommand, _FMKeychainManager, 
-                       _FMLocationShifter, _FMLocationShifterItem, _FMNetworkMonitor, 
-                       _FMOwnerAccount, _FMPastDateComponentsFormatter, _FMReachability, 
-                       _FMRelativeDateFormatter, _FMRunLoopMonitor, _FMServerInteractionController, 
-                       _FMStateCapture, _FMStopwatch, _FMSystemInfo, _FMSystemVersionNumber, 
-                       _FMWeakWrapper, _FMXPCNotificationsUtil, _FMXPCTransactionManager ]
+    objc-classes:    [ FMAPSHandler, FMAlertManager, FMCommandBase, FMDaemon, FMDispatchTimer, 
+                       FMDistanceCalculator, FMJSONCommand, FMKeychainManager, FMLocationShifter, 
+                       FMLocationShifterItem, FMNetworkMonitor, FMOwnerAccount, FMPastDateComponentsFormatter, 
+                       FMReachability, FMRelativeDateFormatter, FMRunLoopMonitor, 
+                       FMServerInteractionController, FMStateCapture, FMStopwatch, 
+                       FMSystemInfo, FMSystemVersionNumber, FMWeakWrapper, FMXPCNotificationsUtil, 
+                       FMXPCTransactionManager ]
 ...

@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 1245217B-ADBE-3C64-B0B6-B8E795391421', 'x86_64: B5E41E73-0F19-3026-A30E-121F66A38019' ]
+uuids:           [ 'i386: 0359CC2F-4C4C-369C-8867-32C8185AC464', 'x86_64: 6BD11C23-1AEA-3078-8D0C-A7152BCF9031' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Quartz.framework/Versions/A/Frameworks/PDFKit.framework/Versions/A/PDFKit
 objc-constraint: none
@@ -13,12 +13,12 @@ exports:
                        _PDFAnnotationKeyBorder, _PDFAnnotationKeyBorderStyle, _PDFAnnotationKeyColor, 
                        _PDFAnnotationKeyContents, _PDFAnnotationKeyDate, _PDFAnnotationKeyDefaultAppearance, 
                        _PDFAnnotationKeyDestination, _PDFAnnotationKeyFlags, _PDFAnnotationKeyHighlightingMode, 
-                       _PDFAnnotationKeyIconName, _PDFAnnotationKeyInklist, _PDFAnnotationKeyInteriorColor, 
-                       _PDFAnnotationKeyLineEndingStyles, _PDFAnnotationKeyLinePoints, 
-                       _PDFAnnotationKeyName, _PDFAnnotationKeyOpen, _PDFAnnotationKeyPage, 
-                       _PDFAnnotationKeyParent, _PDFAnnotationKeyPopup, _PDFAnnotationKeyQuadPoints, 
-                       _PDFAnnotationKeyQuadding, _PDFAnnotationKeyRect, _PDFAnnotationKeySubtype, 
-                       _PDFAnnotationKeyTextLabel, _PDFAnnotationKeyWidgetAppearanceDictionary, 
+                       _PDFAnnotationKeyIconName, _PDFAnnotationKeyInklist, _PDFAnnotationKeyIntentType, 
+                       _PDFAnnotationKeyInteriorColor, _PDFAnnotationKeyLineEndingStyles, 
+                       _PDFAnnotationKeyLinePoints, _PDFAnnotationKeyName, _PDFAnnotationKeyOpen, 
+                       _PDFAnnotationKeyPage, _PDFAnnotationKeyParent, _PDFAnnotationKeyPopup, 
+                       _PDFAnnotationKeyQuadPoints, _PDFAnnotationKeyQuadding, _PDFAnnotationKeyRect, 
+                       _PDFAnnotationKeySubtype, _PDFAnnotationKeyTextLabel, _PDFAnnotationKeyWidgetAppearanceDictionary, 
                        _PDFAnnotationKeyWidgetBackgroundColor, _PDFAnnotationKeyWidgetBorderColor, 
                        _PDFAnnotationKeyWidgetCaption, _PDFAnnotationKeyWidgetDefaultValue, 
                        _PDFAnnotationKeyWidgetDownCaption, _PDFAnnotationKeyWidgetFieldFlags, 
@@ -93,14 +93,13 @@ exports:
                        _kPDFAnnotationKey_WidgetValue, _kPDFDestinationUnspecifiedValue, 
                        _kPDFDocumentWriteOption_SaveWithCorePDFLayout, _kPDFDocumentWriteOption_SaveWithTaggedLayout, 
                        _kPDFDocumentWriteOption_UseAppendMode ]
-    objc-classes:    [ _PDFAction, _PDFActionGoTo, _PDFActionNamed, _PDFActionRemoteGoTo, 
-                       _PDFActionResetForm, _PDFActionURL, _PDFAnnotation, _PDFAnnotationButtonWidget, 
-                       _PDFAnnotationChoiceWidget, _PDFAnnotationCircle, _PDFAnnotationFreeText, 
-                       _PDFAnnotationInk, _PDFAnnotationLine, _PDFAnnotationLink, 
-                       _PDFAnnotationMarkup, _PDFAnnotationPopup, _PDFAnnotationSquare, 
-                       _PDFAnnotationStamp, _PDFAnnotationText, _PDFAnnotationTextWidget, 
-                       _PDFAppearanceCharacteristics, _PDFBorder, _PDFDestination, 
-                       _PDFDocument, _PDFHUDLayerController, _PDFLayerController, 
-                       _PDFOutline, _PDFPage, _PDFSelection, _PDFThumbnailView, _PDFView, 
-                       _PDFViewLayout ]
+    objc-classes:    [ PDFAction, PDFActionGoTo, PDFActionNamed, PDFActionRemoteGoTo, 
+                       PDFActionResetForm, PDFActionURL, PDFAnnotation, PDFAnnotationButtonWidget, 
+                       PDFAnnotationChoiceWidget, PDFAnnotationCircle, PDFAnnotationFreeText, 
+                       PDFAnnotationInk, PDFAnnotationLine, PDFAnnotationLink, PDFAnnotationMarkup, 
+                       PDFAnnotationPopup, PDFAnnotationSquare, PDFAnnotationStamp, 
+                       PDFAnnotationText, PDFAnnotationTextWidget, PDFAppearanceCharacteristics, 
+                       PDFBorder, PDFDestination, PDFDocument, PDFHUDLayerController, 
+                       PDFLayerController, PDFOutline, PDFPage, PDFSelection, PDFThumbnailView, 
+                       PDFView, PDFViewLayout ]
 ...

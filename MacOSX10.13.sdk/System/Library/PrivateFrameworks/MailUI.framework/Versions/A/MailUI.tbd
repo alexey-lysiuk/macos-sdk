@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A15268D3-A554-3419-B63C-0B15D14C72A5' ]
+uuids:           [ 'x86_64: 13EE34E4-8F00-32C6-8B31-E9AE828C396D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MailUI.framework/Versions/A/MailUI
-current-version: 3445.5.18
+current-version: 3445.6.18
 exports:         
   - archs:           [ x86_64 ]
     allowable-clients: [ Mail, MailShareExtension, MailUIWebBundle ]
@@ -49,15 +49,15 @@ exports:
                        _mUIWebAttachmentControllerSource, _mUIWebAttachmentControllerSourceLength, 
                        _mUIWebDocumentDisplayControllerDelegateSource, _mUIWebDocumentDisplayControllerDelegateSourceLength, 
                        _mUIWebDocumentDisplayControllerSource, _mUIWebDocumentDisplayControllerSourceLength ]
-    objc-classes:    [ _MUIAddressField, _MUIAddressFieldScrollDocumentView, _MUIAddressTokenAttachmentCell, 
-                       _MUIAutomaticallyAdjustingScrollView, _MUIBundleResourceURLProtocol, 
-                       _MUICollectionCellView, _MUICollectionHeightStorage, _MUICollectionView, 
-                       _MUIFramework, _MUILinkEditWindowController, _MUIMIMEDocumentGenerator, 
-                       _MUIRemoteImageCollector, _MUISegmentedToolbarItem, _MUISelectionAndClickInformation, 
-                       _MUITokenAddress, _MUITokenAddressField, _MUITokenAddressFieldCell, 
-                       _MUITokenAddressTextStorage, _MUITokenAddressTextView, _MUIWKWebView, 
-                       _MUIWKWebViewConfigurationManager, _MUIWKWebViewController, 
-                       _MUIWebAttachment, _MUIWebAttachmentController, _MUIWebDocument, 
-                       _MUIWebDocumentView, __AutoCompleteTouchBarItem, __MUIAddContactsButton, 
-                       __MUISnapshotView ]
+    objc-classes:    [ MUIAddressField, MUIAddressFieldScrollDocumentView, MUIAddressTokenAttachmentCell, 
+                       MUIAutomaticallyAdjustingScrollView, MUIBundleResourceURLProtocol, 
+                       MUICollectionCellView, MUICollectionHeightStorage, MUICollectionView, 
+                       MUIFramework, MUILinkEditWindowController, MUIMIMEDocumentGenerator, 
+                       MUIRemoteImageCollector, MUISegmentedToolbarItem, MUISelectionAndClickInformation, 
+                       MUITokenAddress, MUITokenAddressField, MUITokenAddressFieldCell, 
+                       MUITokenAddressTextStorage, MUITokenAddressTextView, MUIWKWebView, 
+                       MUIWKWebViewConfigurationManager, MUIWKWebViewController, 
+                       MUIWebAttachment, MUIWebAttachmentController, MUIWebDocument, 
+                       MUIWebDocumentView, _AutoCompleteTouchBarItem, _MUIAddContactsButton, 
+                       _MUISnapshotView ]
 ...

@@ -13,12 +13,12 @@
 .\" .Nm Other_name_for_same_program(),
 .\" .Nm Yet another name for the same program.
 .\" Use .Nm macro to designate other names for the documented program.
-.Nd Service to find local caching servers
+.Nd Service to find local macOS Content Caches
 .Sh SYNOPSIS             \" Section Header - required - don't modify
 .Nm
 .Sh DESCRIPTION          \" Section Header - required - don't modify
 .Nm
-finds Apple caching servers on the local network.
+finds macOS Content Caches on the local network.
 .Pp
 There are no configuration options to
 .Nm .
@@ -39,8 +39,10 @@ subsystem com.apple.AssetCacheServices category Daemon.
 .Sh SEE ALSO 
 .\" List links in ascending order by section, alphabetically within a section.
 .\" Please do not reference files that do not exist without filing a bug report
+System Preferences > Sharing > Content Caching,
 .Xr log 1 ,
 .Xr AssetCache 8 ,
-.Xr AssetCacheLocatorUtil 8
+.Xr AssetCacheLocatorUtil 8 ,
+.Xr AssetCacheManagerUtil 8
 .\" .Sh BUGS              \" Document known, unremedied bugs 
 .\" .Sh HISTORY           \" Document history if command behaves in a unique manner

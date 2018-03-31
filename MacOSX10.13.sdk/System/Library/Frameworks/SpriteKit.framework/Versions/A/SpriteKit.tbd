@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 348BD6F1-191E-3934-B68C-31663CED7247' ]
+uuids:           [ 'x86_64: DC9E0EAE-575B-37CB-8D77-0B5AB31C12E2' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/SpriteKit.framework/Versions/A/SpriteKit
 current-version: 2
@@ -19,27 +19,25 @@ exports:
                        _SKSetPrefersOpenGL, _SKSetResourceBundle, __SKGetPerformanceStatisticsForPid, 
                        __SKStartCollectingPerformanceStatisticsForPid, __SKStopCollectingPerformanceStatisticsForPid, 
                        __skPerformanceData, _skCurrentTime, _skSetTimeOffset ]
-    objc-classes:    [ _SK3DNode, _SKAction, _SKActionTable, _SKAttribute, _SKAttributeValue, 
-                       _SKAudioNode, _SKButtonNode, _SKButtonNodeSprite, _SKCameraNode, 
-                       _SKConstraint, _SKCropNode, _SKCustomFieldNode, _SKDragFieldNode, 
-                       _SKEffectNode, _SKElectricFieldNode, _SKEmitterNode, _SKFieldNode, 
-                       _SKFrameCaptureDelegate, _SKKeyframeSequence, _SKLabelNode, 
-                       _SKLightNode, _SKLinearGravityFieldNode, _SKMagneticFieldNode, 
-                       _SKMutableTexture, _SKNode, _SKNoiseFieldNode, _SKOpenGLNode, 
-                       _SKPhysicsBody, _SKPhysicsContact, _SKPhysicsGrid, _SKPhysicsJoint, 
-                       _SKPhysicsJointFixed, _SKPhysicsJointLimit, _SKPhysicsJointPin, 
-                       _SKPhysicsJointSliding, _SKPhysicsJointSpring, _SKPhysicsWorld, 
-                       _SKRadialGravityFieldNode, _SKRange, _SKReachConstraints, 
-                       _SKReferenceNode, _SKReferencedAction, _SKRegion, _SKRenderer, 
-                       _SKSCNRenderer, _SKScene, _SKShader, _SKShapeNode, _SKSpringFieldNode, 
-                       _SKSpriteNode, _SKTexture, _SKTextureAtlas, _SKTileDefinition, 
-                       _SKTileGroup, _SKTileGroupRule, _SKTileMapNode, _SKTileSet, 
-                       _SKTransformNode, _SKTransition, _SKTurbulenceFieldNode, _SKUniform, 
-                       _SKVelocityFieldNode, _SKVideoNode, _SKView, _SKVortexFieldNode, 
-                       _SKWarpGeometry, _SKWarpGeometryGrid ]
-    objc-ivars:      [ _SKFieldNode._animationSpeed, _SKFieldNode._field, _SKFieldNode._region, 
-                       _SKFieldNode._smoothness, _SKFieldNode._texture, _SKNode._actions, 
-                       _SKNode._attributeValues, _SKNode._children, _SKNode._constraints, 
-                       _SKNode._info, _SKNode._keyedActions, _SKNode._keyedSubSprites, 
-                       _SKNode._name, _SKNode._parent, _SKNode._skcNode, _SKNode._userData ]
+    objc-classes:    [ SK3DNode, SKAction, SKActionTable, SKAttribute, SKAttributeValue, 
+                       SKAudioNode, SKButtonNode, SKButtonNodeSprite, SKCameraNode, 
+                       SKConstraint, SKCropNode, SKCustomFieldNode, SKDragFieldNode, 
+                       SKEffectNode, SKElectricFieldNode, SKEmitterNode, SKFieldNode, 
+                       SKFrameCaptureDelegate, SKKeyframeSequence, SKLabelNode, SKLightNode, 
+                       SKLinearGravityFieldNode, SKMagneticFieldNode, SKMutableTexture, 
+                       SKNode, SKNoiseFieldNode, SKOpenGLNode, SKPhysicsBody, SKPhysicsContact, 
+                       SKPhysicsGrid, SKPhysicsJoint, SKPhysicsJointFixed, SKPhysicsJointLimit, 
+                       SKPhysicsJointPin, SKPhysicsJointSliding, SKPhysicsJointSpring, 
+                       SKPhysicsWorld, SKRadialGravityFieldNode, SKRange, SKReachConstraints, 
+                       SKReferenceNode, SKReferencedAction, SKRegion, SKRenderer, 
+                       SKSCNRenderer, SKScene, SKShader, SKShapeNode, SKSpringFieldNode, 
+                       SKSpriteNode, SKTexture, SKTextureAtlas, SKTileDefinition, 
+                       SKTileGroup, SKTileGroupRule, SKTileMapNode, SKTileSet, SKTransformNode, 
+                       SKTransition, SKTurbulenceFieldNode, SKUniform, SKVelocityFieldNode, 
+                       SKVideoNode, SKView, SKVortexFieldNode, SKWarpGeometry, SKWarpGeometryGrid ]
+    objc-ivars:      [ SKFieldNode._animationSpeed, SKFieldNode._field, SKFieldNode._region, 
+                       SKFieldNode._smoothness, SKFieldNode._texture, SKNode._actions, 
+                       SKNode._attributeValues, SKNode._children, SKNode._constraints, 
+                       SKNode._info, SKNode._keyedActions, SKNode._keyedSubSprites, 
+                       SKNode._name, SKNode._parent, SKNode._skcNode, SKNode._userData ]
 ...

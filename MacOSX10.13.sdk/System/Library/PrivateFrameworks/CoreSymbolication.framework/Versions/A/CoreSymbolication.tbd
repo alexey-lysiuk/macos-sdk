@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 6223068D-FCD8-39C1-841D-834EF0AC6445', 'x86_64: 2458D96C-1C31-34F8-93F0-73DB0042CB30' ]
+uuids:           [ 'i386: 7895DF41-EF5D-36AC-BB0E-C3020D87C200', 'x86_64: BAF3CE6E-8140-3159-BF1B-B953816459A0' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreSymbolication.framework/Versions/A/CoreSymbolication
-current-version: 63075
+current-version: 64026
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]
@@ -107,14 +107,13 @@ exports:
                        _CSSymbolicatorGetFlagsForNoSymbolOrSourceInfoData, _CSSymbolicatorGetPid, 
                        _CSSymbolicatorGetRegionCountAtTime, _CSSymbolicatorGetRegionWithAddressAtTime, 
                        _CSSymbolicatorGetRegionWithNameAtTime, _CSSymbolicatorGetSectionWithAddressAtTime, 
-                       _CSSymbolicatorGetSegmentWithAddressAtTime, _CSSymbolicatorGetSharedCacheSlide, 
-                       _CSSymbolicatorGetSharedCacheUUID, _CSSymbolicatorGetSourceInfoCountAtTime, 
-                       _CSSymbolicatorGetSourceInfoWithAddressAtTime, _CSSymbolicatorGetSymbolCountAtTime, 
-                       _CSSymbolicatorGetSymbolOwner, _CSSymbolicatorGetSymbolOwnerCountAtTime, 
-                       _CSSymbolicatorGetSymbolOwnerWithAddressAtTime, _CSSymbolicatorGetSymbolOwnerWithCFUUIDBytesAtTime, 
-                       _CSSymbolicatorGetSymbolOwnerWithNameAtTime, _CSSymbolicatorGetSymbolOwnerWithUUIDAtTime, 
-                       _CSSymbolicatorGetSymbolWithAddressAtTime, _CSSymbolicatorGetSymbolWithMangledNameAtTime, 
-                       _CSSymbolicatorGetSymbolWithMangledNameFromSymbolOwnerWithNameAtTime, 
+                       _CSSymbolicatorGetSegmentWithAddressAtTime, _CSSymbolicatorGetSharedCacheUUID, 
+                       _CSSymbolicatorGetSourceInfoCountAtTime, _CSSymbolicatorGetSourceInfoWithAddressAtTime, 
+                       _CSSymbolicatorGetSymbolCountAtTime, _CSSymbolicatorGetSymbolOwner, 
+                       _CSSymbolicatorGetSymbolOwnerCountAtTime, _CSSymbolicatorGetSymbolOwnerWithAddressAtTime, 
+                       _CSSymbolicatorGetSymbolOwnerWithCFUUIDBytesAtTime, _CSSymbolicatorGetSymbolOwnerWithNameAtTime, 
+                       _CSSymbolicatorGetSymbolOwnerWithUUIDAtTime, _CSSymbolicatorGetSymbolWithAddressAtTime, 
+                       _CSSymbolicatorGetSymbolWithMangledNameAtTime, _CSSymbolicatorGetSymbolWithMangledNameFromSymbolOwnerWithNameAtTime, 
                        _CSSymbolicatorGetSymbolWithNameAtTime, _CSSymbolicatorGetSymbolWithNameFromSymbolOwnerWithNameAtTime, 
                        _CSSymbolicatorGetTask, _CSSymbolicatorIsKernelSymbolicator, 
                        _CSSymbolicatorIsTaskTranslated, _CSSymbolicatorIsTaskValid, 

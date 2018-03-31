@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 6805C16F-21E5-3758-B77C-29870A7C6627', 'x86_64: BD86685B-6221-300D-9A97-119285C43DE9' ]
+uuids:           [ 'i386: D7355E97-AB0B-3587-82AD-6B9FBFF1C256', 'x86_64: 16627876-8CF5-3502-A1D6-35FCBDD5E79A' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Apple80211
 exports:         

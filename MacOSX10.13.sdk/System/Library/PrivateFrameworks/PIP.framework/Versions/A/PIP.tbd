@@ -1,4 +1,4 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 043872F7-0149-3202-84F6-EFC258D51795' ]
 platform:        macosx
@@ -12,5 +12,5 @@ exports:
                        _PIPProtocolMaxSize, _PIPProtocolMinSize, _PIPProtocolPlaying, 
                        _PIPProtocolService, _PIPProtocolTime, _PIPVersionNumber, 
                        _PIPVersionString ]
-    objc-classes:    [ _PIPPanel, _PIPViewController ]
+    objc-classes:    [ PIPPanel, PIPViewController ]
 ...

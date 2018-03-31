@@ -1,4 +1,4 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
 uuids:           [ 'i386: 2F464FD7-0319-3898-8F9D-EE0040729DE6', 'x86_64: BC3E756C-A066-325C-9383-A78A4A66C7BF' ]
 platform:        macosx
@@ -61,5 +61,5 @@ exports:
                        _kMIDIPropertyTransmitsMTC, _kMIDIPropertyTransmitsNotes, 
                        _kMIDIPropertyTransmitsProgramChanges, _kMIDIPropertyUniqueID, 
                        _kMIDIPropertyUserPatchNameFile ]
-    objc-classes:    [ _BLEMIDIAccessor ]
+    objc-classes:    [ BLEMIDIAccessor ]
 ...

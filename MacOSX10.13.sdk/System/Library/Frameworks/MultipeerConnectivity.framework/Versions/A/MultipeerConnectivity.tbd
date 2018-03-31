@@ -1,12 +1,12 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9A3C7391-479B-33FD-95A8-E59E2FBB0A21' ]
+uuids:           [ 'x86_64: F2BD6C5A-D03A-3241-91A1-D4CBD2B0DD43' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/MultipeerConnectivity.framework/Versions/A/MultipeerConnectivity
-current-version: 150
+current-version: 150.1
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _MCErrorDomain, _kMCSessionMaximumNumberOfPeers, _kMCSessionMinimumNumberOfPeers ]
-    objc-classes:    [ _MCAdvertiserAssistant, _MCBrowserViewController, _MCNearbyServiceAdvertiser, 
-                       _MCNearbyServiceBrowser, _MCPeerID, _MCSession ]
+    objc-classes:    [ MCAdvertiserAssistant, MCBrowserViewController, MCNearbyServiceAdvertiser, 
+                       MCNearbyServiceBrowser, MCPeerID, MCSession ]
 ...

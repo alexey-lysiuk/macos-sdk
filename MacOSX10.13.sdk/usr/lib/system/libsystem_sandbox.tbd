@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 8226258C-47FE-30A9-AE91-C13DE173E368', 'x86_64: A51828BA-26D8-3205-AF3A-DF5C37269468' ]
+uuids:           [ 'i386: B687BF9C-61B3-3F03-9A39-962FDEB0CE6F', 'x86_64: B48D256E-D7DB-3D4F-BC95-34557170C7AA' ]
 platform:        macosx
 install-name:    /usr/lib/system/libsystem_sandbox.dylib
-current-version: 765.30.4
+current-version: 765.50.51
 objc-constraint: none
 parent-umbrella: System
 exports:         
@@ -13,7 +13,7 @@ exports:
                        _IOS_SANDBOX_CONTAINER, _IOS_SANDBOX_EXECUTABLE, _IOS_SANDBOX_SYSTEM_CONTAINER, 
                        _IOS_SANDBOX_SYSTEM_GROUP, _SANDBOX_CHECK_CANONICAL, _SANDBOX_CHECK_NOFOLLOW, 
                        _SANDBOX_CHECK_NO_REPORT, _SANDBOX_EXTENSION_CANONICAL, _SANDBOX_EXTENSION_DEFAULT, 
-                       _SANDBOX_EXTENSION_MAGIC, _SANDBOX_EXTENSION_PREFIXMATCH, 
+                       _SANDBOX_EXTENSION_MAGIC, _SANDBOX_EXTENSION_NO_REPORT, _SANDBOX_EXTENSION_PREFIXMATCH, 
                        _SANDBOX_EXTENSION_UNRESOLVED, ___libsystem_sandboxVersionNumber, 
                        ___libsystem_sandboxVersionString, __amkrtemp, _gpu_bundle_find_trusted, 
                        _gpu_bundle_is_path_trusted, _kSBXProfileNoInternet, _kSBXProfileNoNetwork, 
@@ -35,7 +35,7 @@ exports:
                        _sandbox_extension_issue_mach, _sandbox_extension_issue_posix_ipc, 
                        _sandbox_extension_reap, _sandbox_extension_release, _sandbox_extension_release_file, 
                        _sandbox_extension_update_file, _sandbox_free_error, _sandbox_init, 
-                       _sandbox_init_with_extensions, _sandbox_init_with_parameters, 
+                       _sandbox_init_from_pid, _sandbox_init_with_extensions, _sandbox_init_with_parameters, 
                        _sandbox_issue_extension, _sandbox_issue_fs_extension, _sandbox_issue_fs_rw_extension, 
                        _sandbox_issue_mach_extension, _sandbox_note, _sandbox_passthrough_access, 
                        _sandbox_reference_release, _sandbox_reference_retain_by_audit_token, 
@@ -43,6 +43,5 @@ exports:
                        _sandbox_set_container_path_for_signing_id, _sandbox_spawnattrs_getcontainer, 
                        _sandbox_spawnattrs_getprofilename, _sandbox_spawnattrs_init, 
                        _sandbox_spawnattrs_setcontainer, _sandbox_spawnattrs_setprofilename, 
-                       _sandbox_suspend, _sandbox_unsuspend, _sandbox_vtrace, _sandbox_vtrace_disable, 
-                       _sandbox_vtrace_enable, _sandbox_vtrace_report ]
+                       _sandbox_suspend, _sandbox_unsuspend ]
 ...

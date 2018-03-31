@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: DACC5623-8E37-3134-9562-4E8601127F67', 'x86_64: A5E013D9-7305-3026-879E-4D1F038A430D' ]
+uuids:           [ 'i386: C28DA8B8-868E-3BF8-A327-904DC9348FA6', 'x86_64: D283C285-447D-3258-A7E4-59532123B8FF' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/ColorSync.framework/Versions/A/ColorSync
 current-version: 4.7
@@ -14,6 +14,7 @@ exports:
                        '$ld$install_name$os10.5$/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices', 
                        '$ld$install_name$os10.6$/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices', 
                        '$ld$install_name$os10.7$/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices', 
+                       '$ld$install_name$os10.8$/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices', 
                        '$ld$install_name$os10.9$/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices', 
                        _CGDisplayCreateUUIDFromDisplayID, _CGDisplayGetDisplayIDFromUUID, 
                        _CMProfileFromColorSyncProfile, _ColorSyncCMMCopyCMMIdentifier, 

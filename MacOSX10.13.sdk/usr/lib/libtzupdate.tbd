@@ -1,10 +1,10 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DBA11962-745B-3F85-B3A4-4CF583420F66' ]
+uuids:           [ 'x86_64: E561320F-FA5D-36F0-841D-5C44E172BA5F' ]
 platform:        macosx
 install-name:    /usr/lib/libtzupdate.dylib
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
-    objc-classes:    [ _TZUpdate ]
+    objc-classes:    [ TZUpdate ]
 ...

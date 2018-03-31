@@ -337,7 +337,7 @@ static simd_float4  SIMD_CFUNC simd_refract(simd_float4  __x, simd_float4  __n, 
 static simd_double2 SIMD_CFUNC simd_refract(simd_double2 __x, simd_double2 __n, double __eta);
 static simd_double3 SIMD_CFUNC simd_refract(simd_double3 __x, simd_double3 __n, double __eta);
 static simd_double4 SIMD_CFUNC simd_refract(simd_double4 __x, simd_double4 __n, double __eta);
-#define vector_refrace simd_refract
+#define vector_refract simd_refract
 
 #if SIMD_LIBRARY_VERSION >= 2
 /*  These functions require that you are building for OS X 10.12 or later,

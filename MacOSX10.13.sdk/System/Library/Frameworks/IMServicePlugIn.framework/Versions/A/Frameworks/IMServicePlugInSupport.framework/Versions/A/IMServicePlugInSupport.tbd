@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CDE344F4-BF06-3DF9-994F-2DFAB9675A1E' ]
+uuids:           [ 'x86_64: 9BE820BC-F3A5-34A3-9056-C13208E8A68A' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/IMServicePlugIn.framework/Versions/A/Frameworks/IMServicePlugInSupport.framework/Versions/A/IMServicePlugInSupport
 current-version: 1000
@@ -32,5 +32,5 @@ exports:
                        _IMServicePlugInSupportVersionString, _IMSessionPropertyAvailability, 
                        _IMSessionPropertyIdleDate, _IMSessionPropertyIsInvisible, 
                        _IMSessionPropertyPictureData, _IMSessionPropertyStatusMessage ]
-    objc-classes:    [ _IMServicePlugInBundle ]
+    objc-classes:    [ IMServicePlugInBundle ]
 ...

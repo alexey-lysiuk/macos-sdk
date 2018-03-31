@@ -77,9 +77,8 @@ MTL_EXTERN MTLDeviceNotificationName const MTLDeviceWasAddedNotification NS_AVAI
 MTL_EXTERN MTLDeviceNotificationName const MTLDeviceRemovalRequestedNotification NS_AVAILABLE_MAC(10_13);
 
 /*!
- @brief This notification is posted once the device has been removed.  Applications must expect that any attempt to use
- the device at this point will fail.  This includes creating new device specific objects of any kind.   Also, this notification
- may be posted without a prior MTLDeviceRemovalRequestedNotification notification in the case of unexpected removal.
+ @brief This notification is posted if the device is removed while there are still outstanding references to it, due to either a surprise
+  or forced disconnect by the user.  Applications must expect that any attempt to use the device after this point will fail.
 */
 MTL_EXTERN MTLDeviceNotificationName const MTLDeviceWasRemovedNotification NS_AVAILABLE_MAC(10_13);
 

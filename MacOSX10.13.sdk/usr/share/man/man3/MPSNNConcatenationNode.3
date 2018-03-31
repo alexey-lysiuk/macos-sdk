@@ -1,4 +1,4 @@
-.TH "MPSNNConcatenationNode" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "MPSNNConcatenationNode" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -16,6 +16,9 @@ Inherits \fBMPSNNFilterNode\fP\&.
 .ti -1c
 .RI "(nonnull instancetype) \- \fBinitWithSources:\fP"
 .br
+.ti -1c
+.RI "(\fBMPSNNGradientFilterNode\fP *__nonnull) \- \fBgradientFilterWithSources:\fP"
+.br
 .in -1c
 .SS "Class Methods"
 
@@ -30,6 +33,10 @@ Inherits \fBMPSNNFilterNode\fP\&.
 Node representing a the concatenation (in the feature channel dimension) of the results from one or more kernels 
 .SH "Method Documentation"
 .PP 
+.SS "\- (\fBMPSNNGradientFilterNode\fP*__nonnull) gradientFilterWithSources: (NSArray< \fBMPSNNImageNode\fP * > *__nonnull) gradientImages"
+Concatenation returns multiple gradient filters\&. Use -gradientFiltersWithSources: instead\&. 
+.PP
+Reimplemented from \fBMPSNNFilterNode\fP\&.
 .SS "\- (nonnull instancetype) initWithSources: (NSArray< \fBMPSNNImageNode\fP * > *__nonnull) sourceNodes"
 Init a node that concatenates feature channels from multiple images  In some neural network designs, it is necessary to append feature channels from one neural network filter to the results of another\&. If we have three image nodes with M, N and O feature channels in them, passed to -initWithSources: as @[imageM, imageN, imageO], then feature channels [0,M-1] will be drawn from image M, feature channels [M, M+N-1] will be drawn from image N and feature channels [M+N, M+N+O-1] will be drawn from image O\&.
 .PP
@@ -44,7 +51,7 @@ Performance Note: Generally, concatenation is free as long as all of the sourceN
 .PP
 \fBReturns:\fP
 .RS 4
-A new MPSNNFilter node that concatenates its inputs\&. 
+\fBA\fP new MPSNNFilter node that concatenates its inputs\&. 
 .RE
 .PP
 
@@ -62,7 +69,7 @@ Performance Note: Generally, concatenation is free as long as all of the sourceN
 .PP
 \fBReturns:\fP
 .RS 4
-A new MPSNNFilter node that concatenates its inputs\&. 
+\fBA\fP new MPSNNFilter node that concatenates its inputs\&. 
 .RE
 .PP
 

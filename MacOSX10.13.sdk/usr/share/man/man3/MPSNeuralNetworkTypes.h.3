@@ -1,4 +1,4 @@
-.TH "MPSNeuralNetworkTypes.h" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "MPSNeuralNetworkTypes.h" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -35,6 +35,12 @@ MPSNeuralNetworkTypes.h
 .RI "typedef enum \fBMPSCNNBinaryConvolutionType\fP \fBMPSCNNBinaryConvolutionType\fP"
 .br
 .ti -1c
+.RI "typedef enum \fBMPSNNTrainingStyle\fP \fBMPSNNTrainingStyle\fP"
+.br
+.ti -1c
+.RI "typedef enum \fBMPSCNNBatchNormalizationFlags\fP \fBMPSCNNBatchNormalizationFlags\fP"
+.br
+.ti -1c
 .RI "typedef enum \fBMPSNNPaddingMethod\fP \fBMPSNNPaddingMethod\fP"
 .br
 .in -1c
@@ -51,11 +57,24 @@ MPSNeuralNetworkTypes.h
 .RI "enum \fBMPSCNNBinaryConvolutionType\fP { \fBMPSCNNBinaryConvolutionTypeBinaryWeights\fP, \fBMPSCNNBinaryConvolutionTypeXNOR\fP, \fBMPSCNNBinaryConvolutionTypeAND\fP }"
 .br
 .ti -1c
+.RI "enum \fBMPSNNConvolutionAccumulatorPrecisionOption\fP { \fBMPSNNConvolutionAccumulatorPrecisionOptionHalf\fP, \fBMPSNNConvolutionAccumulatorPrecisionOptionFloat\fP }"
+.br
+.ti -1c
+.RI "enum \fBMPSNNTrainingStyle\fP { \fBMPSNNTrainingStyleUpdateDeviceNone\fP, \fBMPSNNTrainingStyleUpdateDeviceCPU\fP, \fBMPSNNTrainingStyleUpdateDeviceGPU\fP }"
+.br
+.ti -1c
+.RI "enum \fBMPSCNNBatchNormalizationFlags\fP { \fBMPSCNNBatchNormalizationFlagsDefault\fP, \fBMPSCNNBatchNormalizationFlagsCalculateStatisticsAutomatic\fP, \fBMPSCNNBatchNormalizationFlagsCalculateStatisticsAlways\fP, \fBMPSCNNBatchNormalizationFlagsCalculateStatisticsNever\fP, \fBMPSCNNBatchNormalizationFlagsCalculateStatisticsMask\fP }"
+.br
+.ti -1c
 .RI "enum \fBMPSNNPaddingMethod\fP { \fBMPSNNPaddingMethodAlignCentered\fP, \fBMPSNNPaddingMethodAlignTopLeft\fP, \fBMPSNNPaddingMethodAlignBottomRight\fP, \fBMPSNNPaddingMethodAlign_reserved\fP, \fBMPSNNPaddingMethodAlignMask\fP = MPSNNPaddingMethodAlign_reserved, \fBMPSNNPaddingMethodAddRemainderToTopLeft\fP, \fBMPSNNPaddingMethodAddRemainderToTopRight\fP, \fBMPSNNPaddingMethodAddRemainderToBottomLeft\fP, \fBMPSNNPaddingMethodAddRemainderToBottomRight\fP, \fBMPSNNPaddingMethodAddRemainderToMask\fP = MPSNNPaddingMethodAddRemainderToBottomRight, \fBMPSNNPaddingMethodSizeValidOnly\fP, \fBMPSNNPaddingMethodSizeSame\fP, \fBMPSNNPaddingMethodSizeFull\fP, \fBMPSNNPaddingMethodSize_reserved\fP, \fBMPSNNPaddingMethodCustom\fP, \fBMPSNNPaddingMethodSizeMask\fP, \fBMPSNNPaddingMethodExcludeEdges\fP }"
 .br
 .in -1c
 .SH "Typedef Documentation"
 .PP 
+.SS "typedef enum \fBMPSCNNBatchNormalizationFlags\fP
+
+     \fBMPSCNNBatchNormalizationFlags\fP"
+
 .SS "typedef enum \fBMPSCNNBinaryConvolutionFlags\fP
 
      \fBMPSCNNBinaryConvolutionFlags\fP"
@@ -72,8 +91,32 @@ MPSNeuralNetworkTypes.h
 
      \fBMPSNNPaddingMethod\fP"
 
+.SS "typedef enum \fBMPSNNTrainingStyle\fP
+
+ \fBMPSNNTrainingStyle\fP"
+
 .SH "Enumeration Type Documentation"
 .PP 
+.SS "enum \fBMPSCNNBatchNormalizationFlags\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIMPSCNNBatchNormalizationFlagsDefault \fP\fP
+Default Settings 
+.TP
+\fB\fIMPSCNNBatchNormalizationFlagsCalculateStatisticsAutomatic \fP\fP
+Statistics are calculated if another node consumes the gradient node (training)\&. The data source is used otherwise\&. 
+.TP
+\fB\fIMPSCNNBatchNormalizationFlagsCalculateStatisticsAlways \fP\fP
+Statistics are calculated always 
+.TP
+\fB\fIMPSCNNBatchNormalizationFlagsCalculateStatisticsNever \fP\fP
+Statistics are never calculated\&. Predefined values from the data source are used instead 
+.TP
+\fB\fIMPSCNNBatchNormalizationFlagsCalculateStatisticsMask \fP\fP
+Bits used for MPSCNNBatchNormalizationFlagsCalculateStatistics 
 .SS "enum \fBMPSCNNBinaryConvolutionFlags\fP"
 Options used to control CNN Binary convolution kernels\&. 
 .PP
@@ -107,6 +150,17 @@ Options used to control how kernel weights are stored and used in the CNN kernel
 .TP
 \fB\fIMPSCNNConvolutionFlagsNone \fP\fP
 Use default options 
+.SS "enum \fBMPSNNConvolutionAccumulatorPrecisionOption\fP"
+Options set on \fBMPSCNNConvolution\fP objects to control precision of accumulator used\&.  Convolution operation involves sequence of multiply-accumulate operation i\&.e\&. accumulator = imageData * weight + accumulator Default MPSDataType for both imageData and weight is MPSDataTypeFloat16 i\&.e\&. half precision float\&. Multiply-accumulate result (imageData * weight + accumulator) needs to be rounded to precision of accumulator\&. MPS allows either half float or full float accumulator type using appropriate flags\&. The choice of accmulator precision should be based on how much precision loss application can sustain without significanly affecting accuracy of network\&. Default accumulator precision is half (MPSNNConvolutionAccumulatorPrecisionOptionHalf)\&. If accumulation of computational rounding error in the result is excessive, user can specify MPSNNConvolutionAccumulatorPrecisionOptionFloat for full float accumulator\&. Note that on some devices, which doesnt provide IEEE compliant half arithmetic (A10 and older), half precision accumulator can cause excessive loss of precision causing severe loss in accuracy\&. MPS automatically ignores this option on those hardware and uses full float accumulator\&. On hardware that do support IEEE compliant half arithmetic and half accumulator do meet applications accuracy requirements, it can provide significant performance benefits\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIMPSNNConvolutionAccumulatorPrecisionOptionHalf \fP\fP
+Set accumulator type to half precision float\&. 
+.TP
+\fB\fIMPSNNConvolutionAccumulatorPrecisionOptionFloat \fP\fP
+Set accumulator type to single precision float\&. 
 .SS "enum \fBMPSNNPaddingMethod\fP"
 How to pad \fBMPSNNGraph\fP image nodes  The \fBMPSNNGraph\fP must make automatic decisions about how big to make the result of each filter node\&. This is typically determined by a combination of input image size, size of the filter window (e\&.g\&. convolution weights), filter stride, and a description of how much extra space beyond the edges of the image to allow the filter read\&. By knowing the properties of the filter, we can then infer the size of the result image\&. Most of this information is known to the \fBMPSNNGraph\fP as part of its normal operation\&. However, the amount of padding to add and where to add it is a matter of choice left to you, the developer\&. Different neural network frameworks such as TensorFlow and Caffe make different choices here\&. Depending on where your network was trained, you will need to adjust the policies used by MPS during inference\&. In the event that the padding method is not simply described by this enumeration, you may provide you own custom policy definition by overriding the -destinationImageDescriptorForSourceImages: sourceStates:forKernel:suggestedDescriptor: method in a custom \fBMPSNNPadding\fP child class\&.
 .PP
@@ -114,9 +168,9 @@ Common values that influence the size of the result image by adjusting the amoun
 .IP "\(bu" 2
 MPSNNPaddingMethodSizeValidOnly Result values are only produced for the area that is guaranteed to have all of its input values defined (i\&.e\&. not off the edge)\&. This produces the smallest result image\&.
 .IP "\(bu" 2
-MPSNNPaddingMethodSizeSame The result image is the same size as the input image\&. If the stride is not 1, then the result is scaled accordingly\&.
-.IP "\(bu" 2
-MPSNNPaddingMethodSizeFull Result values are produced for any position for which at least one input value is defined (i\&.e\&. not off the edge)
+MPSNNPaddingMethodSizeSame The result image is the same size as the input image\&. If the stride is not 1, then the result is scaled accordingly\&. 
+.br
+ - MPSNNPaddingMethodSizeFull Result values are produced for any position for which at least one input value is defined (i\&.e\&. not off the edge)
 .IP "\(bu" 2
 MPSNNPaddingMethodCustom The sizing and centering policy is given by the [\fBMPSNNPadding\fP destinationImageDescriptorForSourceImages: sourceStates:forKernel:suggestedDescriptor:]
 .PP
@@ -138,7 +192,7 @@ In some cases, Caffe intoduces the notion of a region beyond the padding which i
 .PP
 The MPSNNPaddingMethodSize and a MPSNNPaddingMethodAddRemainder policy always appear together in the MPSNNPaddingMethod\&. There is no provision for a MPSNNPaddingMethodSize without a remainder policy or vice versa\&. It is in practice used as a bit field\&.
 .PP
-Most MPSNN filters are considered forward filters\&. Some (e\&.g\&. convolution transpose and unpooling) are considered reverse filters\&. For the reverse filters, the image stride is measured in destination values rather than source values and has the effect of enlarging the image rather than reducing it\&. When a reverse filter is used to 'undo' the effects of a forward filter, the MPSNNPaddingMethodSize should be the opposite of the forward MPSNNPaddingMethod\&. For example, if the forward filter used MPSNNPaddingMethodSizeValidOnly | MPSNNPaddingMethodAddRemainderToTopLeft, the reverse filter should use MPSNNPaddingMethodSizeFull | MPSNNPaddingMethodAddRemainderToTopLeft\&. Some consideration of the geometry of inputs and outputs will reveal why this is so\&. It is usually not important to adjust the centering method because the size of the reverse result generally doesn't suffer from centering asymmetries\&. That is: the size would usually be given by: 
+Most MPSNN filters are considered forward filters\&. Some (e\&.g\&. convolution transpose) are considered reverse filters\&. For the reverse filters, the image stride is measured in destination values rather than source values and has the effect of enlarging the image rather than reducing it\&. When a reverse filter is used to 'undo' the effects of a forward filter, the MPSNNPaddingMethodSize should be the opposite of the forward MPSNNPaddingMethod\&. For example, if the forward filter used MPSNNPaddingMethodSizeValidOnly | MPSNNPaddingMethodAddRemainderToTopLeft, the reverse filter should use MPSNNPaddingMethodSizeFull | MPSNNPaddingMethodAddRemainderToTopLeft\&. Some consideration of the geometry of inputs and outputs will reveal why this is so\&. It is usually not important to adjust the centering method because the size of the reverse result generally doesn't suffer from centering asymmetries\&. That is: the size would usually be given by: 
 .PP
 .nf
 static int DestSizeReverse( int sourceSize, int stride, int filterWindowSize, Style style ) {
@@ -201,6 +255,20 @@ Most MPSCNNKernels have two types of -encode calls\&. There is one for which you
 .TP
 \fB\fIMPSNNPaddingMethodExcludeEdges \fP\fP
 The caffe framework constrains the average pooling area to the limits of the padding area in cases where a pixel would read beyond the padding area\&. Set this bit for Caffe emulation with average pooling\&. 
+.SS "enum \fBMPSNNTrainingStyle\fP"
+Options that control how the \fBMPSNNGraph\fP nodes are trained  Nodes tha are trainable conform to the \fBMPSNNTrainableNode\fP protocol\&. This adds a MPSNNTrainingStyle property to the node that may be used to influence when and where the neural network training paramers such as convolution weights are updated\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIMPSNNTrainingStyleUpdateDeviceNone \fP\fP
+Do not train this node, for example in transfer learning 
+.TP
+\fB\fIMPSNNTrainingStyleUpdateDeviceCPU \fP\fP
+The weight update pass will be called in a command buffer completion callback, with a nil command buffer 
+.TP
+\fB\fIMPSNNTrainingStyleUpdateDeviceGPU \fP\fP
+The weight update pass will be called immediately after the gradient pass is encoded, with a nonnull command buffer 
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for MetalPerformanceShaders\&.framework from the source code\&.

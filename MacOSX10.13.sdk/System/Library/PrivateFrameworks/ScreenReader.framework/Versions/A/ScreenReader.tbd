@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DEEE7BC2-9938-35FC-894E-8EE36F9F3334' ]
+uuids:           [ 'x86_64: BF8D4717-D9A4-3BA0-BE86-545D251E9E69' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ScreenReader.framework/Versions/A/ScreenReader
 current-version: 390
@@ -164,30 +164,28 @@ exports:
                        _kSCRVoiceUpperCaseInWordPitchRelativeChangeKey, _kSCRVoiceUpperCasePitchRelativeChangeKey, 
                        _kSCRVoiceUseCustomizedVoiceSettingsKey, _kSCRVolumeAsPercentKey, 
                        _kSCRWindowTypeToken ]
-    objc-classes:    [ _SCRElement, _SCRKeyboardKey, _SCROutputAction, _SCROutputManager, 
-                       _SCROutputRequest, _SCROutputSequentialStep, _SCRScreenReaderUIServer, 
-                       _SCRSitePattern, _SCRUIElement, _SCRWorkspace ]
-    objc-ivars:      [ _SCRElement._application, _SCRElement._autoFocusArrivedAtFront, 
-                       _SCRElement._autoFocusJustLandedOnGroup, _SCRElement._beginCountTime, 
-                       _SCRElement._bundle, _SCRElement._cachedFullNameDescription, 
-                       _SCRElement._children, _SCRElement._countSinceBegin, _SCRElement._currentCommand, 
-                       _SCRElement._focusedChild, _SCRElement._ignoreKBFocusChangeUntilTime, 
-                       _SCRElement._initialBounds, _SCRElement._keyboardChild, _SCRElement._lastMoveResizeEvent, 
-                       _SCRElement._outputContext, _SCRElement._parent, _SCRElement._readContentsElementIndex, 
-                       _SCRElement._retainedParentChains, _SCRElement._rotorCharacterIndex, 
-                       _SCRElement._sheetInfo, _SCRElement._sreFlags, _SCRElement._stackCache, 
-                       _SCRElement._titleUIElementRecursionStopper, _SCRElement._uiElement, 
-                       _SCRElement._wid, _SCRKeyboardKey._characters, _SCRKeyboardKey._didSetKeyCode, 
-                       _SCRKeyboardKey._eventFlags, _SCRKeyboardKey._keyCode, _SCRKeyboardKey._pressCount, 
-                       _SCRKeyboardKey._rawCharacters, _SCRKeyboardKey._srkFlags, 
-                       _SCROutputAction._category, _SCROutputAction._component, _SCROutputAction._hasBeenDispatched, 
-                       _SCROutputAction._hasBeenExecuted, _SCROutputAction._message, 
-                       _SCROutputAction._offsetMappedString, _SCROutputAction._synchronization, 
-                       _SCROutputAction._uniqueID, _SCROutputAction._variants, _SCROutputRequest._dateWhenSent, 
-                       _SCROutputRequest._info, _SCROutputRequest._nonInterruptibleQueueIdentifiers, 
-                       _SCROutputRequest._queueIdentifier, _SCROutputRequest._sendDelay, 
-                       _SCROutputRequest._sequentialSteps, _SCROutputRequest._sroFlags, 
-                       _SCROutputRequest._timeout, _SCROutputRequest._uniqueID, _SCROutputSequentialStep._actions, 
-                       _SCROutputSequentialStep._category, _SCROutputSequentialStep._repeatStyle, 
-                       _SCROutputSequentialStep._requestWasSentSynchronously ]
+    objc-classes:    [ SCRElement, SCROutputAction, SCROutputManager, SCROutputRequest, 
+                       SCROutputSequentialStep, SCRScreenReaderUIServer, SCRSitePattern, 
+                       SCRUIElement, SCRWorkspace ]
+    objc-ivars:      [ SCRElement._application, SCRElement._autoFocusArrivedAtFront, 
+                       SCRElement._autoFocusJustLandedOnGroup, SCRElement._beginCountTime, 
+                       SCRElement._bundle, SCRElement._cachedFullNameDescription, 
+                       SCRElement._children, SCRElement._countSinceBegin, SCRElement._currentCommand, 
+                       SCRElement._focusedChild, SCRElement._ignoreKBFocusChangeUntilTime, 
+                       SCRElement._initialBounds, SCRElement._keyboardChild, SCRElement._lastMoveResizeEvent, 
+                       SCRElement._outputContext, SCRElement._parent, SCRElement._readContentsElementIndex, 
+                       SCRElement._retainedParentChains, SCRElement._rotorCharacterIndex, 
+                       SCRElement._sheetInfo, SCRElement._sreFlags, SCRElement._stackCache, 
+                       SCRElement._titleUIElementRecursionStopper, SCRElement._uiElement, 
+                       SCRElement._wid, SCROutputAction._category, SCROutputAction._component, 
+                       SCROutputAction._hasBeenDispatched, SCROutputAction._hasBeenExecuted, 
+                       SCROutputAction._message, SCROutputAction._offsetMappedString, 
+                       SCROutputAction._synchronization, SCROutputAction._uniqueID, 
+                       SCROutputAction._variants, SCROutputRequest._dateWhenSent, 
+                       SCROutputRequest._info, SCROutputRequest._nonInterruptibleQueueIdentifiers, 
+                       SCROutputRequest._queueIdentifier, SCROutputRequest._sendDelay, 
+                       SCROutputRequest._sequentialSteps, SCROutputRequest._sroFlags, 
+                       SCROutputRequest._timeout, SCROutputRequest._uniqueID, SCROutputSequentialStep._actions, 
+                       SCROutputSequentialStep._category, SCROutputSequentialStep._repeatStyle, 
+                       SCROutputSequentialStep._requestWasSentSynchronously ]
 ...

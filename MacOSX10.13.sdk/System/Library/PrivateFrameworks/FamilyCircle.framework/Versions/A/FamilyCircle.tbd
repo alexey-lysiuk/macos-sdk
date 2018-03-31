@@ -1,16 +1,16 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F643EB2B-A0FD-30B4-8BC3-A6D4E4306D91' ]
+uuids:           [ 'x86_64: 13C98954-6C92-306F-840E-1CC9E4B089DA' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/FamilyCircle.framework/Versions/A/FamilyCircle
+objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _FAErrorDomain, _FAErrorResponseUserInfoKey, __FALogSystem, 
                        _kFAServicePasswordOption, _kFAServiceUsernameOption ]
-    objc-classes:    [ _FAAddFamilyMemberRequest, _FAClearFamilyCircleCacheRequest, 
-                       _FADispatchFamilyPushRequest, _FAFamilyCircle, _FAFamilyCircleRequest, 
-                       _FAFamilyCloudKitProperties, _FAFamilyMember, _FAFamilySettings, 
-                       _FAFetchFamilyCircleRequest, _FAFetchFamilyPhotoRequest, _FAHandleFamilyEventPushNotificationRequest, 
-                       _FAPushNotificationHandler, _FARegisterPushTokenRequest, _FARemoveFamilyMemberRequest, 
-                       __FAFamilyCircleRequestConnectionFactory, __FAFamilyCircleRequestConnectionProvider ]
+    objc-classes:    [ FAAddFamilyMemberRequest, FAClearFamilyCircleCacheRequest, 
+                       FADispatchFamilyPushRequest, FAFamilyCircle, FAFamilyCircleRequest, 
+                       FAFamilyCloudKitProperties, FAFamilyMember, FAFamilySettings, 
+                       FAFetchFamilyCircleRequest, FAFetchFamilyPhotoRequest, FAPushNotificationHandler, 
+                       FARegisterPushTokenRequest, FARemoveFamilyMemberRequest ]
 ...

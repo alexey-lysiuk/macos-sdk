@@ -1,21 +1,20 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9417D8B0-C7AC-3ABB-A180-E622D6E5043F' ]
+uuids:           [ 'x86_64: CDEA68A9-4B51-3622-9D13-8F53FED03AF6' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreInterest.framework/Versions/A/CoreInterest
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CoreInterestVersionNumber, _CoreInterestVersionString, _IFClientAny, 
                        _IFTermAny, _IFTypeAny, _errorCallback, _traceCallback ]
-    objc-classes:    [ _IFCentroidCommon, _IFCentroidDataStore, _IFCentroidModel, 
-                       _IFCentroidModelParameters, _IFCentroidScoringParameters, 
-                       _IFCentroidVolatileStore, _IFDataStore, _IFDataStorePaths, 
-                       _IFDataStoreQuery, _IFFeature, _IFFeatureMatch, _IFFeatureVector, 
-                       _IFGraphDataStore, _IFIndication, _IFLogChannel, _IFLogging, 
-                       _IFManager, _IFPropagatedScoreEngine, _IFPropagatedScoreEngineAttenuation, 
-                       _IFPropagatedScoreEngineNaive, _IFQuery, _IFSensedScoreEngine, 
-                       _IFSensedScoreEngineNaive, _IFSensedScoreEnginePower, _IFSensedScoreEngineSigmoid, 
-                       _IFTemporalScoreEngine, _IFTemporalScoreEngineExponential, 
-                       _IFTemporalScoreEngineNaive, _IFTopic, _IFTopicManager, _IFVector, 
-                       _IFVectorOperation, _IFVectorOperationScalar, _IFVectorOperations ]
+    objc-classes:    [ IFCentroidCommon, IFCentroidDataStore, IFCentroidModel, IFCentroidModelParameters, 
+                       IFCentroidScoringParameters, IFCentroidVolatileStore, IFDataStore, 
+                       IFDataStorePaths, IFDataStoreQuery, IFFeature, IFFeatureMatch, 
+                       IFFeatureVector, IFGraphDataStore, IFIndication, IFLogChannel, 
+                       IFLogging, IFManager, IFPropagatedScoreEngine, IFPropagatedScoreEngineAttenuation, 
+                       IFPropagatedScoreEngineNaive, IFQuery, IFSensedScoreEngine, 
+                       IFSensedScoreEngineNaive, IFSensedScoreEnginePower, IFSensedScoreEngineSigmoid, 
+                       IFTemporalScoreEngine, IFTemporalScoreEngineExponential, IFTemporalScoreEngineNaive, 
+                       IFTopic, IFTopicManager, IFVector, IFVectorOperation, IFVectorOperationScalar, 
+                       IFVectorOperations ]
 ...

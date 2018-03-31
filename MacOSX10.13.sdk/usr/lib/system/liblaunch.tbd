@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 0F3BF17D-FCFA-3692-8A6E-FDE5C58DB3B7', 'x86_64: E66F58ED-C15E-3DFB-BC22-A861E13918C6' ]
+uuids:           [ 'i386: 7EBFA8BE-2176-3A74-9218-3ED02CC6945D', 'x86_64: 4D52BB64-C568-3A36-8935-2480427EE2A2' ]
 platform:        macosx
 install-name:    /usr/lib/system/liblaunch.dylib
-current-version: 1205.30.29
+current-version: 1205.50.76
 objc-constraint: none
 parent-umbrella: System
 exports:         

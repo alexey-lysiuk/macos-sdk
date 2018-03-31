@@ -622,7 +622,7 @@ NS_CLASS_AVAILABLE(10_9, 7_0)
 /* NSFileSecurity encapsulates a file system object's security information. NSFileSecurity and CFFileSecurity are toll-free bridged. Use the CFFileSecurity API for access to the low-level file security properties encapsulated by NSFileSecurity.
  */
 NS_CLASS_AVAILABLE(10_7, 5_0)
-@interface NSFileSecurity : NSObject <NSCopying, NSCoding>
+@interface NSFileSecurity : NSObject <NSCopying, NSSecureCoding>
 - (nullable instancetype) initWithCoder:(NSCoder *)aDecoder NS_DESIGNATED_INITIALIZER;
 @end
 #endif

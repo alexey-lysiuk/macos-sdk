@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 489BC806-28CC-3340-BB52-D37A65CADEC9', 'x86_64: 71699B6E-8B94-39E2-801F-8467C2B5B621' ]
+uuids:           [ 'i386: C0E564FB-7C4D-3893-B03D-5FE49FBE4972', 'x86_64: 87D81714-F167-39F5-B5E7-A7A432EDAB5B' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox
 current-version: 492
@@ -40,9 +40,9 @@ exports:
                        _OpenSystemSoundAudioOutput ]
   - archs:           [ x86_64 ]
     symbols:         [ _AudioUnitExtensionCopyComponentList, _AudioUnitExtensionSetComponentList ]
-    objc-classes:    [ _AUAudioUnit, _AUAudioUnitBus, _AUAudioUnitBusArray, _AUAudioUnitPreset, 
-                       _AUAudioUnitV2Bridge, _AUHostExtensionContext, _AUParameter, 
-                       _AUParameterGroup, _AUParameterNode, _AUParameterTree, _AURemoteExtensionContext ]
+    objc-classes:    [ AUAudioUnit, AUAudioUnitBus, AUAudioUnitBusArray, AUAudioUnitPreset, 
+                       AUAudioUnitV2Bridge, AUHostExtensionContext, AUParameter, 
+                       AUParameterGroup, AUParameterNode, AUParameterTree, AURemoteExtensionContext ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ '$ld$hide$os10.10$_AudioCodecAppendInputBufferList', '$ld$hide$os10.10$_AudioCodecAppendInputData', 
                        '$ld$hide$os10.10$_AudioCodecGetProperty', '$ld$hide$os10.10$_AudioCodecGetPropertyInfo', 
@@ -406,5 +406,5 @@ exports:
                        _kMediaKind_iTunesUValue, _kSoundCheck_AvePerceivedPowerCoeffKey, 
                        _kSoundCheck_MaxPerceivedPowerCoeffKey, _kSoundCheck_MaxPerceivedPowerMsecKey, 
                        _kSoundCheck_PeakAmplitudeKey, _kSoundCheck_PeakAmplitudeMsecKey ]
-    objc-classes:    [ _AudioComponentRegistrar ]
+    objc-classes:    [ AudioComponentRegistrar ]
 ...

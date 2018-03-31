@@ -1,10 +1,10 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7295CC38-5DA0-34C5-93F3-6AB40B0BAA42' ]
+uuids:           [ 'x86_64: 3B3D67F3-136C-3C23-8055-DAF6C64620EC' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Swift/libswiftCloudKit.dylib
 current-version: 900.8.49
-swift-version:   5
+swift-abi-version: 5
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ __T0SC7CKErrorV8CloudKitE12clientRecordSo8CKRecordCSgfg, __T0SC7CKErrorV8CloudKitE12serverRecordSo8CKRecordCSgfg, 

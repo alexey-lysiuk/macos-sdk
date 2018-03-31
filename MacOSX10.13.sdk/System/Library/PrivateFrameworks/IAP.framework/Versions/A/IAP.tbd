@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FE92C7BF-48C3-36F7-A2D5-19A735C22A73' ]
+uuids:           [ 'x86_64: 1DC0142F-88BF-361C-85D9-FF9E0D124CE9' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IAP.framework/Versions/A/IAP
 exports:         
@@ -264,6 +264,6 @@ exports:
                        _kXPCUSBHostHIDComponentInfoStr, _kXPCUUIDDStr, _kXPCUserInfoStr, 
                        _kXPCVehicleStatusDictionaryStr, _kXPCVehicleStatusGetDataStr, 
                        _kXPCVoiceOverStr, _kXPCWaitSendDoneStr ]
-    objc-classes:    [ _IAPClientPort, _IAPClientPortManager, _IAPNavigation, _IAPNavigationAccessory, 
-                       _IAPNavigationAccessoryComponent ]
+    objc-classes:    [ IAPClientPort, IAPClientPortManager, IAPNavigation, IAPNavigationAccessory, 
+                       IAPNavigationAccessoryComponent ]
 ...

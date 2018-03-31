@@ -1,10 +1,10 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7ABC5AA7-0462-394F-908B-E86EA5295261' ]
+uuids:           [ 'x86_64: 11137D87-EBF4-39F5-8805-C6C3CEDF9903' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Swift/libswiftIOKit.dylib
 current-version: 900.8.49
-swift-version:   5
+swift-abi-version: 5
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ __T05IOKit13kIOReturnBusys5Int32Vfg, __T05IOKit14kIOReturnErrors5Int32Vfg, 

@@ -1,10 +1,10 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AB1F4212-1BF8-36F2-9ADE-A833B386C33D' ]
+uuids:           [ 'x86_64: 8F7AA695-2973-3ECF-A5FC-0F26CA2BC497' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Swift/libswiftsimd.dylib
 current-version: 900.8.49
-swift-version:   5
+swift-abi-version: 5
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ __T04simd12matrix_equalSbSC0A10_double2x2V_ADtF, __T04simd12matrix_equalSbSC0A10_double2x3V_ADtF, 

@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 30C8823F-C9FE-3A1E-B53B-FB9EB092D6C4' ]
+uuids:           [ 'x86_64: 4B6367E4-59CF-3664-B0AD-098DE27458D2' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Tourist.framework/Versions/A/Tourist
-current-version: 1.0.49
+current-version: 1.0.52
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _TouristDefinitionABTestCasesKey, _TouristDefinitionBoardIDKey, 
@@ -28,5 +28,5 @@ exports:
                        _TouristDefinitionTypeKey, _TouristDefinitionURLKey, _TouristDefinitionVersionKey, 
                        _TouristDefinitionViewedKey, _TouristDefinitionWaxwingKey, 
                        _kDaemonDefaultsID, _mt_log_quicktour_finder, _mt_log_quicktour_population ]
-    objc-classes:    [ _APDFinderTourList, _APDProfile, _APDTour ]
+    objc-classes:    [ APDFinderTourList, APDProfile, APDTour ]
 ...

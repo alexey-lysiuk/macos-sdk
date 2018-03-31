@@ -482,6 +482,7 @@ __BEGIN_DECLS
 #define DBG_HFS       0x8     /* HFS-specific events; see the hfs project */
 #define DBG_APFS      0x9     /* APFS-specific events; see the apfs project */
 #define DBG_SMB       0xA     /* SMB-specific events; see the smb project */
+#define DBG_MOUNT     0xB     /* Mounting/unmounting operations */
 #define DBG_EXFAT     0xE     /* ExFAT-specific events; see the exfat project */
 #define DBG_MSDOS     0xF     /* FAT-specific events; see the msdosfs project */
 #define DBG_ACFS      0x10    /* Xsan-specific events; see the XsanFS project */
@@ -902,11 +903,19 @@ extern unsigned int kdebug_enable;
 	do {                                                                      \
 		if (KDBG_IMPROBABLE(kdebug_enable & (type))) {                        \
 			kernel_debug((x), (uintptr_t)(a), (uintptr_t)(b), (uintptr_t)(c), \
-				(uintptr_t)(d), (uintptr_t)(e));                              \
+				(uintptr_t)(d), 0);                                           \
 		}                                                                     \
+	} while (0)
+#define KERNEL_DEBUG_CONSTANT_IST1(x, a, b, c, d, e)                     \
+	do {                                                                       \
+		if (KDBG_IMPROBABLE(kdebug_enable)) {                         \
+			kernel_debug1((x), (uintptr_t)(a), (uintptr_t)(b), (uintptr_t)(c), \
+				(uintptr_t)(d), (uintptr_t)(e));                               \
+		}                                                                      \
 	} while (0)
 #else /* (KDEBUG_LEVEL >= KDEBUG_LEVEL_IST) */
 #define KERNEL_DEBUG_CONSTANT_IST(type, x, a, b, c, d, e) do {} while (0)
+#define KERNEL_DEBUG_CONSTANT_IST1(x, a, b, c, d, e) do {} while (0)
 #endif /* (KDEBUG_LEVEL >= KDEBUG_LEVEL_IST) */
 
 #if NO_KDEBUG

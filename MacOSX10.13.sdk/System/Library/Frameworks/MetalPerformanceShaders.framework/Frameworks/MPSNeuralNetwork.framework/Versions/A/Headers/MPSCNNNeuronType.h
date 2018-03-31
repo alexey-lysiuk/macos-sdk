@@ -30,12 +30,12 @@ typedef NS_ENUM(int32_t, MPSCNNNeuronType)
     MPSCNNNeuronTypeELU             MPS_ENUM_AVAILABLE_STARTING(macos(10.13), ios(11.0), tvos(11.0)), ///< f(x) = x >= 0 ? x : a * (exp(x) - 1)
     MPSCNNNeuronTypePReLU           MPS_ENUM_AVAILABLE_STARTING(macos(10.13), ios(11.0), tvos(11.0)), ///< Same as ReLU except parameter a is per channel
     MPSCNNNeuronTypeReLUN           MPS_ENUM_AVAILABLE_STARTING(macos(10.13), ios(11.0), tvos(11.0)), ///< f(x) = min((x >= 0 ? x : a * x), b)
-    MPSCNNNeuronTypeReserved1       MPS_ENUM_AVAILABLE_STARTING(macos(10.13), ios(11.0), tvos(11.0)), /// Reserved for future use
-    MPSCNNNeuronTypeReserved2       MPS_ENUM_AVAILABLE_STARTING(macos(10.13), ios(11.0), tvos(11.0)), /// Reserved for future use
-    MPSCNNNeuronTypeReserved3       MPS_ENUM_AVAILABLE_STARTING(macos(10.13), ios(11.0), tvos(11.0)), /// Reserved for future use
+    MPSCNNNeuronTypePower           MPS_ENUM_AVAILABLE_STARTING(macos(10.13.4), ios(11.3), tvos(11.3)), ///< f(x) = (a * x + b) ^ c
+    MPSCNNNeuronTypeExponential     MPS_ENUM_AVAILABLE_STARTING(macos(10.13.4), ios(11.3), tvos(11.3)), ///< f(x) = c ^ (a * x + b)
+    MPSCNNNeuronTypeLogarithm       MPS_ENUM_AVAILABLE_STARTING(macos(10.13.4), ios(11.3), tvos(11.3)), ///< f(x) = log_c(a * x + b)
     
     // must be last
-    MPSCNNNeuronTypeCount      MPS_ENUM_AVAILABLE_STARTING(macos(10.13), ios(11.0), tvos(11.0)), ///< holds the number of MPSCNNNeuronTypes
+    MPSCNNNeuronTypeCount           MPS_ENUM_AVAILABLE_STARTING(macos(10.13), ios(11.0), tvos(11.0)), ///< holds the number of MPSCNNNeuronTypes
 }
 #if defined(DOXYGEN) || defined(__METAL_VERSION__)
     MPSCNNNeuronType

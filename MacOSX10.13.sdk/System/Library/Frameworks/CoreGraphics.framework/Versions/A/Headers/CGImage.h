@@ -32,6 +32,7 @@ typedef CF_ENUM(uint32_t, CGImageAlphaInfo) {
 
 typedef CF_ENUM(uint32_t, CGImageByteOrderInfo) {
     kCGImageByteOrderMask     = 0x7000,
+    kCGImageByteOrderDefault  = (0 << 12),
     kCGImageByteOrder16Little = (1 << 12),
     kCGImageByteOrder32Little = (2 << 12),
     kCGImageByteOrder16Big    = (3 << 12),
@@ -45,7 +46,7 @@ typedef CF_OPTIONS(uint32_t, CGBitmapInfo) {
     kCGBitmapFloatComponents = (1 << 8),
 
     kCGBitmapByteOrderMask     = kCGImageByteOrderMask,
-    kCGBitmapByteOrderDefault  = (0 << 12),
+    kCGBitmapByteOrderDefault  = kCGImageByteOrderDefault,
     kCGBitmapByteOrder16Little = kCGImageByteOrder16Little,
     kCGBitmapByteOrder32Little = kCGImageByteOrder32Little,
     kCGBitmapByteOrder16Big    = kCGImageByteOrder16Big,

@@ -11,6 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+NS_CLASS_AVAILABLE_MAC(10_13)
 @interface NSUserInterfaceCompressionOptions : NSObject <NSCopying, NSCoding> {
     NSSet *_identifiers;
 }

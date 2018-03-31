@@ -1,18 +1,17 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 14F1CFF5-DA43-3F48-AE20-A567ED36AA1A', 'x86_64: 44B47809-18BF-3522-B6A0-7C14AA4BE979' ]
+uuids:           [ 'i386: 6663E6A3-0C34-31E7-AB7C-40D7D060ECE2', 'x86_64: 2C987E75-B409-3824-84E8-0F1DD6B96E8B' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/ScriptingBridge.framework/Versions/A/ScriptingBridge
 exports:         
   - archs:           [ i386 ]
-    objc-classes:    [ _SBAppContext, _SBAppLocator, _SBFilePathAppLocator, _SBIdentifiedAppLocator, 
-                       _SBPIDAppLocator, _SBProxyByClass, _SBProxyByCode, _SBRelativePosition, 
-                       _SBRemoteURLAppLocator, _SdefDocument ]
+    objc-classes:    [ SBAppContext, SBAppLocator, SBFilePathAppLocator, SBIdentifiedAppLocator, 
+                       SBPIDAppLocator, SBProxyByClass, SBProxyByCode, SBRelativePosition, 
+                       SBRemoteURLAppLocator, SdefDocument ]
   - archs:           [ x86_64 ]
-    objc-ivars:      [ _SBElementArray._elementCode, _SBElementArray._parent, _SBElementArray._reserved, 
-                       _SBObject._ctx, _SBObject._reserved, _SBObject._specifier, 
-                       _SBProxy._createdObject, _SBProxy._data, _SBProxy._lastError, 
-                       _SBProxy._properties ]
+    objc-ivars:      [ SBElementArray._elementCode, SBElementArray._parent, SBElementArray._reserved, 
+                       SBObject._ctx, SBObject._reserved, SBObject._specifier, SBProxy._createdObject, 
+                       SBProxy._data, SBProxy._lastError, SBProxy._properties ]
   - archs:           [ i386, x86_64 ]
-    objc-classes:    [ _SBApplication, _SBElementArray, _SBObject, _SBProxy ]
+    objc-classes:    [ SBApplication, SBElementArray, SBObject, SBProxy ]
 ...

@@ -1,21 +1,21 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6166070F-273B-3614-A149-A22DBA673266' ]
+uuids:           [ 'x86_64: C8DE1082-A353-3482-B441-9E093F827385' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PlacesKit.framework/Versions/A/PlacesKit
-current-version: 3251.10.200
+current-version: 3271.11.180
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _PlacesKitVersionNumber, _PlacesKitVersionString, _kPKExtendedTraitCollectionChangedNotification, 
                        _kPKExtendedTraitCollectionKey, _stringForDiffEntryType ]
-    objc-classes:    [ _PKExtendedTraitCollection, _PXPlacesImageCache, _PXPlacesMapController, 
-                       _PXPlacesMapDefaultLayoutDiffer, _PXPlacesMapDefaultUpdatePlan, 
-                       _PXPlacesMapGeometricClusterLayout, _PXPlacesMapInPlaceLayoutDiffer, 
-                       _PXPlacesMapInPlaceUpdatePlan, _PXPlacesMapLayout, _PXPlacesMapLayoutChange, 
-                       _PXPlacesMapLayoutDiffer, _PXPlacesMapPipeline, _PXPlacesMapPipelineFactory, 
-                       _PXPlacesMapThumbnailAnnotationView, _PXPlacesMapThumbnailClusterLayout, 
-                       _PXPlacesMapThumbnailRenderer, _PXPlacesMapView, _PXPlacesMapViewPort, 
-                       _PXPlacesPinAnnotationView, _PXPlacesPopoverImageFactory, 
-                       _PXPlacesStore, _PXPlacesTestDataGenerator, _PXPlacesTestDataPoint ]
+    objc-classes:    [ PKExtendedTraitCollection, PXPlacesImageCache, PXPlacesMapController, 
+                       PXPlacesMapDefaultLayoutDiffer, PXPlacesMapDefaultUpdatePlan, 
+                       PXPlacesMapGeometricClusterLayout, PXPlacesMapInPlaceLayoutDiffer, 
+                       PXPlacesMapInPlaceUpdatePlan, PXPlacesMapLayout, PXPlacesMapLayoutChange, 
+                       PXPlacesMapLayoutDiffer, PXPlacesMapPipeline, PXPlacesMapPipelineFactory, 
+                       PXPlacesMapThumbnailAnnotationView, PXPlacesMapThumbnailClusterLayout, 
+                       PXPlacesMapThumbnailRenderer, PXPlacesMapView, PXPlacesMapViewPort, 
+                       PXPlacesPinAnnotationView, PXPlacesPopoverImageFactory, PXPlacesStore, 
+                       PXPlacesTestDataGenerator, PXPlacesTestDataPoint ]
 ...

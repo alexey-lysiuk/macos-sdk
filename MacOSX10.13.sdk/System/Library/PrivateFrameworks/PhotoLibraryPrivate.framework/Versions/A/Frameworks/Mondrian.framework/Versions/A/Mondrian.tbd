@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2C68CBFC-0F3C-3108-A64D-9AA59E280190' ]
+uuids:           [ 'x86_64: BD5AB358-A331-3D62-B19C-4D2C9772F180' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoLibraryPrivate.framework/Versions/A/Frameworks/Mondrian.framework/Versions/A/Mondrian
-current-version: 3251.12.180
+current-version: 3271.13.150
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _GridRectEdgeOppositeEdge, _MOAVAssetCreateThumbnailWithURL, 
@@ -104,29 +104,28 @@ exports:
                        _kMOMonitoringSystemStatsVMPageInBytesKey, _kMOMonitoringSystemStatsVMPageOutBytesKey, 
                        _kMOMonitoringSystemStatsVMSwapUsedBytesKey, _kMONSOperationErrorDomain, 
                        _kMONSOperationProgressKey, _kRecommendedVisibleContentPreparationWaitDelay ]
-    objc-classes:    [ _AXTextField, _MOAssetsLayout, _MOAssetsMediaView, _MOAssetsView, 
-                       _MOCollectionView, _MOCollectionView_NRS, _MOFast2DIndex, 
-                       _MOImageDiskCache, _MOLRUCache, _MOLiveUpdateController, _MOLogger, 
-                       _MOLoggingStore, _MOMSMonitoringProcessInfo, _MOMSMonitoringSystemInfo, 
-                       _MOMediaFileSystemItem, _MOMediaItem, _MOMediaItemsCache, 
-                       _MOMediaRedRockItem, _MOMediaSection, _MOMediaSectionsCache, 
-                       _MOMediaView, _MOMediaViewCell, _MOMediaViewCellThumbnailView, 
-                       _MOMediaViewCondensedLayout, _MOMediaViewDefaultCell, _MOMediaViewDefaultSupplementaryHeader, 
-                       _MOMediaViewEventLayout, _MOMediaViewGridLayout, _MOMediaViewLayout, 
-                       _MOMediaViewOrganicLayout, _MOMediaViewSupplementary, _MOMediaViewVerticalLayout, 
-                       _MOMonitoringController, _MOMonitoringPanel, _MOMonitoringPanelController, 
-                       _MONSOperation, _MONSOperationQueue, _MOOrganicLayout, _MOOrganicLayoutManager, 
-                       _MOOrganicLayoutPage, _MOPhotosAtlasLayout, _MOPhotosAtlasLayoutAccessibility, 
-                       _MOPhotosAtlasLayoutCellAccessibility, _MOPhotosAtlasSectionAccessibility, 
-                       _MOPhotosAtlasSegment, _MOPhotosAtlasSegmentRow, _MOPhotosAtlasSupplementaryRow, 
-                       _MOPhotosAtlasView, _MOPhotosCollectionsView, _MOPhotosLayout, 
-                       _MOPhotosLayoutInvalidationContext, _MOPhotosMomentCaptionCell, 
-                       _MOPhotosMomentCaptionTextField, _MOPhotosMomentCaptionTextFieldCell, 
-                       _MOPhotosMomentCell, _MOPhotosMomentsLayout, _MOPhotosMomentsLayoutAccessibility, 
-                       _MOPhotosMomentsLayoutInvalidationContext, _MOPhotosMomentsLayoutSectionAccessibility, 
-                       _MOPhotosMomentsView, _MOPhotosScroller, _MOPhotosSupplementaryFooter, 
-                       _MOPhotosSupplementaryFooterInfo, _MOPhotosSupplementaryHeader, 
-                       _MOPhotosView, _MOPhotosYearsView, _MOSettingsPanel, _MOSettingsPanelController, 
-                       _MOTextLayer, _MOTracing, _MOUIProgressBar, __MOMediaViewLayoutPresetNamingWindowController ]
-    objc-ivars:      [ _MOMediaItem._url, _MOMediaItem._urlHash ]
+    objc-classes:    [ AXTextField, MOAssetsLayout, MOAssetsMediaView, MOAssetsView, 
+                       MOCollectionView, MOCollectionView_NRS, MOFast2DIndex, MOImageDiskCache, 
+                       MOLRUCache, MOLiveUpdateController, MOLogger, MOLoggingStore, 
+                       MOMSMonitoringProcessInfo, MOMSMonitoringSystemInfo, MOMediaFileSystemItem, 
+                       MOMediaItem, MOMediaItemsCache, MOMediaRedRockItem, MOMediaSection, 
+                       MOMediaSectionsCache, MOMediaView, MOMediaViewCell, MOMediaViewCellThumbnailView, 
+                       MOMediaViewCondensedLayout, MOMediaViewDefaultCell, MOMediaViewDefaultSupplementaryHeader, 
+                       MOMediaViewEventLayout, MOMediaViewGridLayout, MOMediaViewLayout, 
+                       MOMediaViewOrganicLayout, MOMediaViewSupplementary, MOMediaViewVerticalLayout, 
+                       MOMonitoringController, MOMonitoringPanel, MOMonitoringPanelController, 
+                       MONSOperation, MONSOperationQueue, MOOrganicLayout, MOOrganicLayoutManager, 
+                       MOOrganicLayoutPage, MOPhotosAtlasLayout, MOPhotosAtlasLayoutAccessibility, 
+                       MOPhotosAtlasLayoutCellAccessibility, MOPhotosAtlasSectionAccessibility, 
+                       MOPhotosAtlasSegment, MOPhotosAtlasSegmentRow, MOPhotosAtlasSupplementaryRow, 
+                       MOPhotosAtlasView, MOPhotosCollectionsView, MOPhotosLayout, 
+                       MOPhotosLayoutInvalidationContext, MOPhotosMomentCaptionCell, 
+                       MOPhotosMomentCaptionTextField, MOPhotosMomentCaptionTextFieldCell, 
+                       MOPhotosMomentCell, MOPhotosMomentsLayout, MOPhotosMomentsLayoutAccessibility, 
+                       MOPhotosMomentsLayoutInvalidationContext, MOPhotosMomentsLayoutSectionAccessibility, 
+                       MOPhotosMomentsView, MOPhotosScroller, MOPhotosSupplementaryFooter, 
+                       MOPhotosSupplementaryFooterInfo, MOPhotosSupplementaryHeader, 
+                       MOPhotosView, MOPhotosYearsView, MOSettingsPanel, MOSettingsPanelController, 
+                       MOTextLayer, MOTracing, MOUIProgressBar, _MOMediaViewLayoutPresetNamingWindowController ]
+    objc-ivars:      [ MOMediaItem._url, MOMediaItem._urlHash ]
 ...

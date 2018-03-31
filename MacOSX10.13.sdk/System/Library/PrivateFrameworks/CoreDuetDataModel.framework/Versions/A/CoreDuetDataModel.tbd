@@ -1,17 +1,17 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D9E0C0D6-6FD5-30CF-B04A-5AA1D7DE6E27' ]
+uuids:           [ 'x86_64: 59883DF4-24AF-3BC4-8FA7-EB426C8FD1E0' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreDuetDataModel.framework/Versions/A/CoreDuetDataModel
 exports:         
   - archs:           [ x86_64 ]
-    objc-classes:    [ _CDDMAirplaneModeEvent, _CDDMAppNameMapper, _CDDMAppStateChangeEvent, 
-                       _CDDMAttributeNameMapper, _CDDMBacklightEvent, _CDDMBatteryEvent, 
-                       _CDDMBookkeeping, _CDDMBootOrShutdownEvent, _CDDMDeviceEvent, 
-                       _CDDMDeviceMapper, _CDDMForecast, _CDDMForecastInteger, _CDDMForecastReal, 
-                       _CDDMForecastScore, _CDDMForecastString, _CDDMIntegerAttribute, 
-                       _CDDMPluginEvent, _CDDMPool, _CDDMPoolNameMapper, _CDDMRealAttribute, 
-                       _CDDMScreenLockEvent, _CDDMSleepOrWakeEvent, _CDDMStatisticInteger, 
-                       _CDDMStatisticReal, _CDDMStatisticString, _CDDMStringAttribute, 
-                       _CDDMThermalEvent, _CDDMWakednessEvent ]
+    objc-classes:    [ CDDMAirplaneModeEvent, CDDMAppNameMapper, CDDMAppStateChangeEvent, 
+                       CDDMAttributeNameMapper, CDDMBacklightEvent, CDDMBatteryEvent, 
+                       CDDMBookkeeping, CDDMBootOrShutdownEvent, CDDMDeviceEvent, 
+                       CDDMDeviceMapper, CDDMForecast, CDDMForecastInteger, CDDMForecastReal, 
+                       CDDMForecastScore, CDDMForecastString, CDDMIntegerAttribute, 
+                       CDDMPluginEvent, CDDMPool, CDDMPoolNameMapper, CDDMRealAttribute, 
+                       CDDMScreenLockEvent, CDDMSleepOrWakeEvent, CDDMStatisticInteger, 
+                       CDDMStatisticReal, CDDMStatisticString, CDDMStringAttribute, 
+                       CDDMThermalEvent, CDDMWakednessEvent ]
 ...

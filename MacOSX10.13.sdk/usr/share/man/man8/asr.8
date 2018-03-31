@@ -236,17 +236,6 @@ with the
 verb.  See the section
 .Sy RESTORING WITH APFS FILESYSTEMS
 below for when this option is necessary.
-.It Fl -targetnewvolume
-can be used in place of the
-.Fl -target
-option for APFS restores, to tell
-.Nm
-that a new volume should be created on the
-.Ar target
-as the recipient of the volume data being restored.  The required argument should be a synthesized APFS container disk.
-See the section
-.Sy RESTORING WITH APFS FILESYSTEMS
-below for more details on the use of this option.
 .El
 .It Sy restoreexact
 performs the same operation as
@@ -364,7 +353,7 @@ can restore entire APFS containers, including all volumes.  Or it can restore va
 can get the effect of restoring a single system.  This requires understanding what is meant by a
 .Sy valid system.
 .Pp
-In order for an APFS volume to bootable, it must contain a properly installed macOS system.  It must also be
+In order for an APFS volume to be bootable, it must contain a properly installed macOS system.  It must also be
 part of an APFS container which also has two special volumes in it: a Preboot volume and a Recovery volume.  A
 container may have arbitrarily many system volumes in it, but it must have only one Preboot volume and one
 Recovery volume, each with the corresponding APFS volume role set (see
@@ -383,17 +372,6 @@ does different things depending on how
 .Ar target
 was specified:
 .Bl -tag -width "1234"
-.It Container Restore
-If
-.Ar target
-is an actual disk partition, either of type Apple_APFS or some other type, then
-.Nm
-will block restore the APFS container to the
-.Ar target
-partition, setting the partition type to Apple_APFS.  The resulting container on the
-.Ar target
-will then contain all the same volumes as the container in the
-.Ar source .
 .It Volume Restore
 If the
 .Ar target
@@ -424,13 +402,23 @@ creating those volumes on the
 .Ar target
 if necessary.
 .It Volume Restore with Creation
-if the
-.Fl -targetnewvolume
-option is used in place of
-.Fl -target ,
-and its argument is the synthesized APFS whole disk, then
+If the
+.Ar target
+is a synthesized APFS whole disk or Apple_APFS partition, and the
+.Fl -erase
+option is not present, then
 .Nm
 will create a new volume in the given container, after which it will do a volume restore to that new volume,
+as with the previous section.  All other volumes in the container are preserved.
+.It Volume Restore with Erase
+If the
+.Ar target
+is a synthesized APFS whole disk or any disk partition, and the
+.Fl -erase
+option is present, then
+.Nm
+will erase the existing partition, create a new APFS container and a new volume in it, after which
+it will do a volume restore to that new volume,
 as with the previous section.
 .El
 .Pp
@@ -519,11 +507,6 @@ attempts to start a restore. The server will continue to multicast the image unt
 Will receive the multicast stream from <hostname> and save it to a file. If <file> is a directory, the image of the streamed
 disk image will be used the save the file. --erase causes any existing file with the same name to be overwritten.
 .Pp
-.Em Restoring a complete APFS image
-.D1 sudo asr restore -s <APFS image> -t /dev/disk1s2 --erase
-In this case /dev/disk1s2 is a partition of arbitrary type, potentially including Apple_APFS.  The entire container is restored
-as-is, and all volumes in the source will be replicated in the target.  The target partition is completely erased.
-.Pp
 .Em Restoring a single APFS volume
 .D1 sudo asr restore -s <APFS image> -t /Volumes/MyAPFSVolume --erase
 In this case the contents of MyAPFSVolume will be replaced by the contents of the source container's single APFS volume,
@@ -541,16 +524,16 @@ there are more than one with that name, it is an error.  Use the
 verb to see the volume names and UUIDs for an image.  No other volumes in the target will be affected.
 .Pp
 .Em Creating a new APFS volume on the fly
-.D1 sudo asr restore -s <APFS image> --sourcevolumename SourceVolume --targetnewvolume /dev/disk2 --erase
+.D1 sudo asr restore -s <APFS image> --sourcevolumename SourceVolume -t /dev/disk2
 Here we get the same effect as the last example, except that
 .Nm
 will create a new volume on the target APFS container disk, given by /dev/disk2, and use that newly created volume as
-the target.  Note that there is no
-.Fl -target
-.Ns ( Fl t )
-option, instead the container disk is specified by the
-.Fl -targetnewvolume
-option.
+the target.  Any volumes which already existed in the container will still be there after the restore.
+.Pp
+.Em Overwriting the existing container
+.D1 sudo asr restore -s <APFS image> --sourcevolumename SourceVolume -t /dev/disk2 --erase
+Like the last example, we restore to a new volume on the target APFS container disk.  However
+in this case we are erasing the target, so any volumes which already existed are destroyed.
 .Pp
 .Em Looking at an image's volume names/UUIDs
 .D1 asr info -s <APFS image>

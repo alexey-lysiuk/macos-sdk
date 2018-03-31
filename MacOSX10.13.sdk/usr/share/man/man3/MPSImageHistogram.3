@@ -1,4 +1,4 @@
-.TH "MPSImageHistogram" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "MPSImageHistogram" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -53,11 +53,11 @@ Encode the filter to a command buffer using a MTLComputeCommandEncoder\&.  The f
 .PP
 \fBParameters:\fP
 .RS 4
-\fIcommandBuffer\fP A valid MTLCommandBuffer\&. 
+\fIcommandBuffer\fP \fBA\fP valid MTLCommandBuffer\&. 
 .br
-\fIsource\fP A valid MTLTexture containing the source image for the filter 
+\fIsource\fP \fBA\fP valid MTLTexture containing the source image for the filter 
 .br
-\fIhistogram\fP A valid MTLBuffer to receive the histogram results\&. 
+\fIhistogram\fP \fBA\fP valid MTLBuffer to receive the histogram results\&. 
 .br
 \fIhistogramOffset\fP Byte offset into histogram buffer at which to write the histogram results\&. Must be a multiple of 32 bytes\&. The histogram results / channel are stored together\&. The number of channels for which histogram results are stored is determined by the number of channels in the image\&. If histogramInfo\&.histogramForAlpha is false and the source image is RGBA then only histogram results for RGB channels are stored\&.
 .RE
@@ -70,7 +70,7 @@ histogram results for the G channel for all bins followed by
 .IP "\(bu" 2
 histogram results for the B channel for all bins followed by
 .IP "\(bu" 2
-histogram results for the A channel for all bins 
+histogram results for the \fBA\fP channel for all bins 
 .PP
 
 .SS "\- (size_t) histogramSizeForSourceFormat: (MTLPixelFormat) sourceFormat"
@@ -99,7 +99,7 @@ The number of bytes needed to store the result histograms\&.
 .PP
 \fBReturns:\fP
 .RS 4
-A new \fBMPSKernel\fP object, or nil if failure\&. 
+\fBA\fP new \fBMPSKernel\fP object, or nil if failure\&. 
 .RE
 .PP
 
@@ -117,14 +117,14 @@ Specifies information to compute the histogram for channels of an image\&.
 .PP
 \fBReturns:\fP
 .RS 4
-A valid \fBMPSImageHistogram\fP object or nil, if failure\&. 
+\fBA\fP valid \fBMPSImageHistogram\fP object or nil, if failure\&. 
 .RE
 .PP
 
 .SH "Property Documentation"
 .PP 
 .SS "\- clipRectSource\fC [read]\fP, \fC [write]\fP, \fC [nonatomic]\fP, \fC [assign]\fP"
-The source rectangle to use when reading data\&.  A MTLRegion that indicates which part of the source to read\&. If the clipRectSource does not lie completely within the source image, the intersection of the image bounds and clipRectSource will be used\&. The clipRectSource replaces the \fBMPSUnaryImageKernel\fP offset parameter for this filter\&. The latter is ignored\&. Default: MPSRectNoClip, use the entire source texture\&. 
+The source rectangle to use when reading data\&.  \fBA\fP MTLRegion that indicates which part of the source to read\&. If the clipRectSource does not lie completely within the source image, the intersection of the image bounds and clipRectSource will be used\&. The clipRectSource replaces the \fBMPSUnaryImageKernel\fP offset parameter for this filter\&. The latter is ignored\&. Default: MPSRectNoClip, use the entire source texture\&. 
 .SS "\- histogramInfo\fC [read]\fP, \fC [nonatomic]\fP, \fC [assign]\fP"
 Return a structure describing the histogram content  Returns a \fBMPSImageHistogramInfo\fP structure describing the format of the histogram\&. 
 .SS "\- minPixelThresholdValue\fC [read]\fP, \fC [write]\fP, \fC [nonatomic]\fP, \fC [assign]\fP"

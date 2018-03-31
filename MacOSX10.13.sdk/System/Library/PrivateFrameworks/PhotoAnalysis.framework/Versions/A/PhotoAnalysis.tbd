@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EDBF9C1D-43DC-3C46-ACCD-8C8950A83209' ]
+uuids:           [ 'x86_64: FF84D671-9A8D-39B1-AE82-20B561CC76D6' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Versions/A/PhotoAnalysis
-current-version: 3251.10.140
+current-version: 3271.10.210
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -20,5 +20,5 @@ exports:
                        ___PXLogjob_dataloaderOSLog, ___PXLogjob_dataloaderOnceToken, 
                        ___PXLogjob_dataloaderSetupOSLog, ___PXLogvision_workerOSLog, 
                        ___PXLogvision_workerOnceToken, ___PXLogvision_workerSetupOSLog ]
-    objc-classes:    [ _PHAExecutive ]
+    objc-classes:    [ PHAExecutive ]
 ...

@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 6A109F3F-7870-329B-A93C-AA965CF38A12', 'x86_64: ABAD6F81-41C0-3AD2-B104-0753A925A205' ]
+uuids:           [ 'i386: 6524DFC9-51F5-3DB0-9764-8750FA16B304', 'x86_64: 435CC540-20A7-3324-B757-E7209FE84303' ]
 platform:        macosx
 install-name:    /usr/lib/libpcre.0.dylib
 current-version: 1.1

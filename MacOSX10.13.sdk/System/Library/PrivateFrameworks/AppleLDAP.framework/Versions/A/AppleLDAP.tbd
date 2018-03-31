@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F7F893F5-A98A-39A1-9F28-61D7355B9280' ]
+uuids:           [ 'x86_64: 903F75F9-AB26-330A-86E7-B60FAEDC6012' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AppleLDAP.framework/Versions/A/AppleLDAP
 current-version: 46

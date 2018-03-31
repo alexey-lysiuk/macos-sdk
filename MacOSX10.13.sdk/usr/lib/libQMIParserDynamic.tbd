@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 72F6FF26-D075-3ECF-ADE7-BEC57853C245' ]
+uuids:           [ 'x86_64: 6934B031-8A2C-36E3-AF72-3E20E12C8567' ]
 platform:        macosx
 install-name:    /usr/lib/libQMIParserDynamic.dylib
 objc-constraint: none
@@ -16,8 +16,7 @@ exports:
                        __ZN3qmi11MessageBaseD1Ev, __ZN3qmi11MessageBaseD2Ev, __ZN3qmi11fixupHeaderERKNSt3__110shared_ptrINS_17SerializedMessageEEEhh, 
                        __ZN3qmi12ResponseBaseC1EPKvm, __ZN3qmi12ResponseBaseC2EPKvm, 
                        __ZN3qmi13createRequestEhNS_11buffer_viewE, __ZN3qmi13createRequestEhhttU13block_pointerFvPhmE, 
-                       __ZN3qmi15isInternalErrorENS_5ErrorE, __ZN3qmi16createRawRequestEhNS_11buffer_viewEm, 
-                       __ZN3qmi17validateTlvFieldsERNS_21RandomMessageReporterEPKvmS3_m, 
+                       __ZN3qmi15isInternalErrorENS_5ErrorE, __ZN3qmi17validateTlvFieldsERNS_21RandomMessageReporterEPKvmS3_m, 
                        __ZN3qmi17validateTlvFieldsERNS_21RandomMessageReporterERKNSt3__112basic_stringIcNS2_11char_traitsIcEENS2_9allocatorIcEEEESA_, 
                        __ZN3qmi17validateTlvFieldsERNS_21RandomMessageReporterERKNSt3__16vectorIhNS2_9allocatorIhEEEES8_, 
                        __ZN3qmi17validateTlvFieldsERNS_21RandomMessageReporterEaa, 

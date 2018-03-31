@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: EED11263-0CE3-3C40-953E-49F4E800FE74', 'x86_64: 0CB6717C-CCE2-3591-A31E-A8EF01DD4FC8' ]
+uuids:           [ 'i386: 5E1B7C5F-7BF8-340B-B579-DD4EABDC55E9', 'x86_64: 4FA54690-032B-3DE2-B088-6774034DEDB9' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/QuickLook.framework/Versions/A/QuickLook
 current-version: 0
@@ -10,8 +10,8 @@ exports:
                        __QLThumbnailRequestForward32, __Z18QLTryCatchAndCrashU13block_pointerFvvE, 
                        _ql_dispatch_async, _ql_dispatch_once, _ql_dispatch_source_set_cancel_handler, 
                        _ql_dispatch_source_set_event_handler, _ql_dispatch_sync ]
-    objc-ivars:      [ _QLDebugController._queue, _QLImageWrapper._discarded, _QLImageWrapper._image, 
-                       _QLImageWrapper._url, _QLPreview._previewRef ]
+    objc-ivars:      [ QLDebugController._queue, QLImageWrapper._discarded, QLImageWrapper._image, 
+                       QLImageWrapper._url, QLPreview._previewRef ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ _QLAdaptContextCTMToFitRectInRect, _QLAdaptContextCTMToScaleRectToRect, 
                        _QLAdaptSizeInSize, _QLAdaptSizeOutSize, _QLAdaptSizeToRect, 
@@ -384,7 +384,7 @@ exports:
                        _kQLThumbnailPropertyYBaselineKey, _kQLTypeLocation, _logTestState, 
                        _mt_log_quicklook_cache_size, _qlfuture_destroy, _qlfuture_dispatch, 
                        _qlfuture_notify, _qlfuture_wait, _qlstaticqueue ]
-    objc-classes:    [ _QLDebugController, _QLDebugSatelliteController, _QLDebugServerController, 
-                       _QLImageWrapper, _QLPreview, _QLTestingLog, _QLThumbnailAddition, 
-                       _QLThumbnailStoreRetrievalOperation ]
+    objc-classes:    [ QLDebugController, QLDebugSatelliteController, QLDebugServerController, 
+                       QLImageWrapper, QLPreview, QLTestingLog, QLThumbnailAddition, 
+                       QLThumbnailStoreRetrievalOperation ]
 ...

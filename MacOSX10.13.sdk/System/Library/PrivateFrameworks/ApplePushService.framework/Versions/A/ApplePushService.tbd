@@ -1,14 +1,14 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 2D303F4E-0F74-333F-B5DF-85B5BCD179E4', 'x86_64: 932274E4-DCD5-30D5-9AC7-58CEF4571EB3' ]
+uuids:           [ 'i386: 9391E31B-3849-3566-8324-5F3AC3251F7D', 'x86_64: 142A38BC-8266-3462-86A7-C39198651F2A' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ApplePushService.framework/Versions/A/ApplePushService
 exports:         
   - archs:           [ x86_64 ]
-    objc-ivars:      [ _APSPerAppTokenMap._enumerating, _APSPerAppTokenMap._missingTokens, 
-                       _APSPerAppTokenMap._perAppTokenMap, _APSPerAppTokenMapEntry._flag, 
-                       _APSPerAppTokenMapEntry._perAppToken, _APSSystemUser._daemonUser, 
-                       _APSSystemUser._status, _APSSystemUser._userID ]
+    objc-ivars:      [ APSPerAppTokenMap._enumerating, APSPerAppTokenMap._missingTokens, 
+                       APSPerAppTokenMap._perAppTokenMap, APSPerAppTokenMapEntry._flag, 
+                       APSPerAppTokenMapEntry._perAppToken, APSSystemUser._daemonUser, 
+                       APSSystemUser._status, APSSystemUser._userID ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ _APSAcknowledgedTokenHashesKey, _APSActivationRecordListenersKey, 
                        _APSAlbertNameKey, _APSAllTokenTopicsKey, _APSAppIdsKey, _APSArraysAreEqual, 
@@ -66,8 +66,8 @@ exports:
                        __APSConnectionDeliver_subsystem, __APSJWStringToCharPtr, 
                        __APSPingClient, _aps_connection_event_handler, _isAudioAccessory, 
                        _sConnectPortToEnvironmentNameMapping ]
-    objc-classes:    [ _APSAccessCheck, _APSCertificateStorage, _APSConnection, _APSIncomingMessage, 
-                       _APSLog, _APSMessage, _APSMultiUserFS, _APSMultiUserMode, 
-                       _APSOutgoingMessage, _APSPerAppTokenMap, _APSPerAppTokenMapEntry, 
-                       _APSPreferences, _APSSystemUser ]
+    objc-classes:    [ APSAccessCheck, APSCertificateStorage, APSConnection, APSIncomingMessage, 
+                       APSLog, APSMessage, APSMultiUserFS, APSMultiUserMode, APSOutgoingMessage, 
+                       APSPerAppTokenMap, APSPerAppTokenMapEntry, APSPreferences, 
+                       APSSystemUser ]
 ...

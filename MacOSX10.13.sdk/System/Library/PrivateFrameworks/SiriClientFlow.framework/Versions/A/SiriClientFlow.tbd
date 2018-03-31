@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CC73A751-2AF2-36D3-A891-7C0A3C955F1E' ]
+uuids:           [ 'x86_64: 9299DD61-FF8E-353D-8FEE-0CB60C2D4EAE' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SiriClientFlow.framework/Versions/A/SiriClientFlow
 objc-constraint: none
@@ -113,18 +113,18 @@ exports:
                        _CFVSGetVoiceAssetsRequestQualityPListKey, _CFVSGetVoiceAssetsResponseClassIdentifier, 
                        _CFVSGetVoiceAssetsResponseVoiceAssetsPListKey, _CFVSGroupAcronym, 
                        _CFVSGroupIdentifier, _CFVSNotSupportedErrorCode, _CFVSQueryFailedErrorCode ]
-    objc-classes:    [ _CFBCGetDiagnosticsSubmissionAllowed, _CFBCGetDiagnosticsSubmissionAllowedResponse, 
-                       _CFBCGetNumberFormattedString, _CFBCGetNumberFormattedStringResponse, 
-                       _CFBCWriteDnuForSubmission, _CFBSBatteryStatus, _CFBSBatteryStatusCommand, 
-                       _CFBSBatteryStatusCommandCompleted, _CFCBGetNightShiftMode, 
-                       _CFCBNightShiftSchedule, _CFCBNightShiftStatus, _CFCBNightShiftTransitionTime, 
-                       _CFCBSetNightShiftMode, _CFCLReverseGeoCode, _CFCLReverseGeoCodeCompleted, 
-                       _CFCNAutoCompleteFetchContext, _CFCNAutoCompleteFetchRequest, 
-                       _CFCNAutoCompleteFetchResponse, _CFCNAutoCompleteResult, _CFClient, 
-                       _CFMGGetMobileGestaltBoolRequest, _CFMGGetMobileGestaltBoolResponse, 
-                       _CFMGGetMobileGestaltStringRequest, _CFMGGetMobileGestaltStringResponse, 
-                       _CFMMessagesQuery, _CFMMessagesQueryResponse, _CFPBJSONUtils, 
-                       _CFSFAddToSafariReadingList, _CFSGSuggestContactMatchesWithTextSearch, 
-                       _CFSGSuggestedContact, _CFSGSuggestedContacts, _CFVSGetVoiceAssetsRequest, 
-                       _CFVSGetVoiceAssetsResponse ]
+    objc-classes:    [ CFBCGetDiagnosticsSubmissionAllowed, CFBCGetDiagnosticsSubmissionAllowedResponse, 
+                       CFBCGetNumberFormattedString, CFBCGetNumberFormattedStringResponse, 
+                       CFBCWriteDnuForSubmission, CFBSBatteryStatus, CFBSBatteryStatusCommand, 
+                       CFBSBatteryStatusCommandCompleted, CFCBGetNightShiftMode, 
+                       CFCBNightShiftSchedule, CFCBNightShiftStatus, CFCBNightShiftTransitionTime, 
+                       CFCBSetNightShiftMode, CFCLReverseGeoCode, CFCLReverseGeoCodeCompleted, 
+                       CFCNAutoCompleteFetchContext, CFCNAutoCompleteFetchRequest, 
+                       CFCNAutoCompleteFetchResponse, CFCNAutoCompleteResult, CFClient, 
+                       CFMGGetMobileGestaltBoolRequest, CFMGGetMobileGestaltBoolResponse, 
+                       CFMGGetMobileGestaltStringRequest, CFMGGetMobileGestaltStringResponse, 
+                       CFMMessagesQuery, CFMMessagesQueryResponse, CFPBJSONUtils, 
+                       CFSFAddToSafariReadingList, CFSGSuggestContactMatchesWithTextSearch, 
+                       CFSGSuggestedContact, CFSGSuggestedContacts, CFVSGetVoiceAssetsRequest, 
+                       CFVSGetVoiceAssetsResponse ]
 ...

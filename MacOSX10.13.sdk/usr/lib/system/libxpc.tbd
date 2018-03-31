@@ -1,19 +1,19 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: CD44097B-4B65-3F75-AB7F-52228229FFB5', 'x86_64: F7E5F1BC-614B-39CB-B6CE-92A9C7B7EC0B' ]
+uuids:           [ 'i386: 1C1C908A-B0A5-3BAF-8B3F-F0B2F19B4698', 'x86_64: 25DB244E-217D-3CE0-A8F2-0C4255783B42' ]
 platform:        macosx
 install-name:    /usr/lib/system/libxpc.dylib
-current-version: 1205.30.29
+current-version: 1205.50.76
 parent-umbrella: System
 exports:         
   - archs:           [ i386 ]
-    objc-classes:    [ _OS_os_transaction, _OS_xpc_activity, _OS_xpc_array, _OS_xpc_bool, 
-                       _OS_xpc_bundle, _OS_xpc_connection, _OS_xpc_data, _OS_xpc_date, 
-                       _OS_xpc_dictionary, _OS_xpc_double, _OS_xpc_endpoint, _OS_xpc_error, 
-                       _OS_xpc_fd, _OS_xpc_file_transfer, _OS_xpc_int64, _OS_xpc_mach_recv, 
-                       _OS_xpc_mach_send, _OS_xpc_null, _OS_xpc_pipe, _OS_xpc_pointer, 
-                       _OS_xpc_serializer, _OS_xpc_service, _OS_xpc_service_instance, 
-                       _OS_xpc_shmem, _OS_xpc_string, _OS_xpc_uint64, _OS_xpc_uuid ]
+    objc-classes:    [ OS_os_transaction, OS_xpc_activity, OS_xpc_array, OS_xpc_bool, 
+                       OS_xpc_bundle, OS_xpc_connection, OS_xpc_data, OS_xpc_date, 
+                       OS_xpc_dictionary, OS_xpc_double, OS_xpc_endpoint, OS_xpc_error, 
+                       OS_xpc_fd, OS_xpc_file_transfer, OS_xpc_int64, OS_xpc_mach_recv, 
+                       OS_xpc_mach_send, OS_xpc_null, OS_xpc_pipe, OS_xpc_pointer, 
+                       OS_xpc_serializer, OS_xpc_service, OS_xpc_service_instance, 
+                       OS_xpc_shmem, OS_xpc_string, OS_xpc_uint64, OS_xpc_uuid ]
   - archs:           [ x86_64 ]
     symbols:         [ __xpc_type_base ]
   - archs:           [ i386, x86_64 ]
@@ -45,7 +45,9 @@ exports:
                        _XPC_ACTIVITY_USES_DUET_POWER_BUDGETING, _XPC_COALITION_INFO_KEY_BUNDLE_IDENTIFIER, 
                        _XPC_COALITION_INFO_KEY_CID, _XPC_COALITION_INFO_KEY_NAME, 
                        _XPC_COALITION_INFO_KEY_RESOURCE_USAGE_BLOB, __launch_msg2, 
-                       __libxpc_initializer, __spawn_via_launchd, __vproc_get_last_exit_status, 
+                       __libxpc_initializer, __spawn_via_launchd, __system_version_copy_string_plist, 
+                       __system_version_copy_string_sysctl, __system_version_fallback, 
+                       __system_version_parse_string, __vproc_get_last_exit_status, 
                        __vproc_grab_subset, __vproc_kickstart_by_label, __vproc_log, 
                        __vproc_log_error, __vproc_logv, __vproc_pid_is_managed, __vproc_post_fork_ping, 
                        __vproc_send_signal_by_label, __vproc_set_global_on_demand, 
@@ -188,7 +190,8 @@ exports:
                        _xpc_dictionary_set_mach_send, _xpc_dictionary_set_pointer, 
                        _xpc_dictionary_set_string, _xpc_dictionary_set_uint64, _xpc_dictionary_set_uuid, 
                        _xpc_dictionary_set_value, _xpc_dictionary_taint, _xpc_double_create, 
-                       _xpc_double_get_value, _xpc_endpoint_create, _xpc_endpoint_create_mach_port_4sim, 
+                       _xpc_double_get_value, _xpc_endpoint_copy_listener_port_4sim, 
+                       _xpc_endpoint_create, _xpc_endpoint_create_mach_port_4sim, 
                        _xpc_equal, _xpc_event_stream_check_in, _xpc_event_stream_check_in2, 
                        _xpc_extension_type_init, _xpc_fd_create, _xpc_fd_dup, _xpc_file_transfer_cancel, 
                        _xpc_file_transfer_copy_io, _xpc_file_transfer_create_with_fd, 
@@ -229,5 +232,5 @@ exports:
                        _xpc_transaction_exit_clean, _xpc_transaction_interrupt_clean_exit, 
                        _xpc_transactions_enable, _xpc_uint64_create, _xpc_uint64_get_value, 
                        _xpc_unbootstrap_system, _xpc_uuid_create, _xpc_uuid_get_bytes ]
-    objc-classes:    [ _OS_xpc_object ]
+    objc-classes:    [ OS_xpc_object ]
 ...

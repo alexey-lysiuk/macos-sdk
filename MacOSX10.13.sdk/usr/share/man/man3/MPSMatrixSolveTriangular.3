@@ -1,4 +1,4 @@
-.TH "MPSMatrixSolveTriangular" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "MPSMatrixSolveTriangular" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -32,9 +32,9 @@ Copyright (c) 2016 Apple Inc\&. All rights reserved\&.  MetalPerformanceShaders 
 .PP
 This depends on Metal\&.framework\&.
 .PP
-A kernel for computing the solution of a linear system of equations using a triangular coefficient matrix\&.
+\fBA\fP kernel for computing the solution of a linear system of equations using a triangular coefficient matrix\&.
 .PP
-A \fBMPSMatrixSolveTriangular\fP finds the solution matrix to the triangular system: 
+\fBA\fP \fBMPSMatrixSolveTriangular\fP finds the solution matrix to the triangular system: 
 .PP
 .nf
 op(A) * X = alpha * B    or    X * op(A) = alpha * B
@@ -42,21 +42,21 @@ op(A) * X = alpha * B    or    X * op(A) = alpha * B
 .fi
 .PP
 .PP
-Where A is either upper or lower triangular and op(A) is A**T or A\&. B is the array of right hand sides for which the equations are to be solved\&. X is the resulting matrix of solutions\&. 
+Where \fBA\fP is either upper or lower triangular and op(A) is A**T or \fBA\fP\&. B is the array of right hand sides for which the equations are to be solved\&. X is the resulting matrix of solutions\&. 
 .SH "Method Documentation"
 .PP 
-.SS "\- (void) encodeToCommandBuffer: (nonnull id< MTLCommandBuffer >) commandBuffer(\fBMPSMatrix\fP const *__nonnull) sourceMatrix(\fBMPSMatrix\fP const *__nonnull) rightHandSideMatrix(\fBMPSMatrix\fP *__nonnull) solutionMatrix"
+.SS "\- (void) encodeToCommandBuffer: (nonnull id< MTLCommandBuffer >) commandBuffer(\fBMPSMatrix\fP *__nonnull) sourceMatrix(\fBMPSMatrix\fP *__nonnull) rightHandSideMatrix(\fBMPSMatrix\fP *__nonnull) solutionMatrix"
 Encode a \fBMPSMatrixSolveTriangular\fP kernel into a command Buffer\&.
 .PP
 \fBParameters:\fP
 .RS 4
-\fIcommandBuffer\fP A valid MTLCommandBuffer to receive the encoded filter
+\fIcommandBuffer\fP \fBA\fP valid MTLCommandBuffer to receive the encoded filter
 .br
-\fIsourceMatrix\fP A valid \fBMPSMatrix\fP containing the source matrix\&.
+\fIsourceMatrix\fP \fBA\fP valid \fBMPSMatrix\fP containing the source matrix\&.
 .br
-\fIrightHandSideMatrix\fP A valid \fBMPSMatrix\fP containing the right hand side values\&.
+\fIrightHandSideMatrix\fP \fBA\fP valid \fBMPSMatrix\fP containing the right hand side values\&.
 .br
-\fIsolutionMatrix\fP A valid \fBMPSMatrix\fP to contain the result\&.
+\fIsolutionMatrix\fP \fBA\fP valid \fBMPSMatrix\fP to contain the result\&.
 .RE
 .PP
 This function encodes the \fBMPSMatrixSolveTriangular\fP object to a valid command buffer\&.
@@ -71,26 +71,26 @@ Initialize an \fBMPSMatrixSolveTriangular\fP object on a device
 .RS 4
 \fIdevice\fP The device on which the kernel will execute\&.
 .br
-\fIright\fP A boolean value which indicates if the coefficient matrix is multiplied on the left or right side of the solution\&. NO indicates the multiplication is on the left\&.
+\fIright\fP \fBA\fP boolean value which indicates if the coefficient matrix is multiplied on the left or right side of the solution\&. NO indicates the multiplication is on the left\&.
 .br
-\fIupper\fP A boolean value which indicates if the source is lower or upper triangular\&. NO indicates that the coefficient matrix is lower triangular\&.
+\fIupper\fP \fBA\fP boolean value which indicates if the source is lower or upper triangular\&. NO indicates that the coefficient matrix is lower triangular\&.
 .br
-\fItranspose\fP A boolean value which indicates if the source matrix should be used in transposed form\&. NO indicates that the coefficient matrix is to be used normally\&.
+\fItranspose\fP \fBA\fP boolean value which indicates if the source matrix should be used in transposed form\&. NO indicates that the coefficient matrix is to be used normally\&.
 .br
-\fIunit\fP A boolean value which indicates if the source matrix is unit triangular\&.
+\fIunit\fP \fBA\fP boolean value which indicates if the source matrix is unit triangular\&.
 .br
 \fIorder\fP The order of the source matrix and, if right == NO, the number of rows in the solution and right hand side matrices\&. If right == YES the number of columns in the solution and right hand side matrices\&.
 .br
 \fInumberOfRightHandSides\fP If right == NO, the number of columns in the solution and right hand side matrices\&. The number of rows otherwise\&.
 .br
-\fIalpha\fP A double precision value used to scale the right hand sides\&.
+\fIalpha\fP \fBA\fP double precision value used to scale the right hand sides\&.
 .RE
 .PP
 This function initializes a \fBMPSMatrixSolveTriangular\fP object\&. It may allocate device side memory\&.
 .PP
 \fBReturns:\fP
 .RS 4
-A valid \fBMPSMatrixSolveTriangular\fP object or nil, if failure\&. 
+\fBA\fP valid \fBMPSMatrixSolveTriangular\fP object or nil, if failure\&. 
 .RE
 .PP
 

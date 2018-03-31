@@ -2,7 +2,7 @@
   +----------------------------------------------------------------------+
   | PHP Version 7                                                        |
   +----------------------------------------------------------------------+
-  | Copyright (c) 2006-2017 The PHP Group                                |
+  | Copyright (c) 2006-2018 The PHP Group                                |
   +----------------------------------------------------------------------+
   | This source file is subject to version 3.01 of the PHP license,      |
   | that is bundled with this package in the file LICENSE, and is        |
@@ -21,7 +21,7 @@
 #ifndef MYSQLND_H
 #define MYSQLND_H
 
-#define PHP_MYSQLND_VERSION "mysqlnd 5.0.12-dev - 20150407 - $Id$"
+#define PHP_MYSQLND_VERSION "mysqlnd 5.0.12-dev - 20150407 - $Id: 38fea24f2847fa7519001be390c98ae0acafe387 $"
 #define MYSQLND_VERSION_ID 50012
 
 #define MYSQLND_PLUGIN_API_VERSION 2

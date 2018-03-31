@@ -1,12 +1,14 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 687FB757-6E78-3C4E-932A-0A790B454CB8' ]
+uuids:           [ 'x86_64: F029B9E6-69EB-3643-A125-94A901C529A8' ]
 platform:        macosx
 install-name:    /usr/lib/log/liblog_coreacc.dylib
 exports:         
   - archs:           [ x86_64 ]
-    symbols:         [ _NSObjectIfNotNull, _OSLogCopyFormattedString, _classImplementsMethodsInProtocol, 
-                       _convertNSDataToNSString, _convertNSStringToNSData, _isNSObjectEqual, 
-                       _isNSObjectNull, _kACCConnection_Type_Strings, _kACCEndpoint_Protocol_Strings, 
-                       _kACCEndpoint_TransportType_Strings, _trimBidirectionalUnicodeCharacters ]
+    symbols:         [ _NSObjectIfNotNull, _OSLogCopyFormattedString, _base64DecodeArray, 
+                       _base64EncodeArray, _classImplementsMethodsInProtocol, _convertNSDataToNSString, 
+                       _convertNSStringToNSData, _isNSObjectEqual, _isNSObjectNull, 
+                       _kACCConnection_Type_Strings, _kACCEndpoint_Protocol_Strings, 
+                       _kACCEndpoint_TransportType_Strings, _readJSONFile, _trimBidirectionalUnicodeCharacters, 
+                       _writeJSONFile ]
 ...

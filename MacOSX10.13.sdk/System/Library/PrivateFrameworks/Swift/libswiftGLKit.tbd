@@ -1,10 +1,10 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6EA39875-7B4A-3FAB-B195-5AA3C6732B8E' ]
+uuids:           [ 'x86_64: A9A22BD3-6C54-3873-841F-FC9C350BFBB9' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Swift/libswiftGLKit.dylib
 current-version: 900.8.49
-swift-version:   5
+swift-abi-version: 5
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ __T05GLKit22_indexHomogeneousValueq_SPyxG_Sitr0_lF, __T0SC11_GLKMatrix2V5GLKitE9subscriptSfSicfg, 

@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: E0F40A70-9E04-31FE-A4C8-BE05F6432BAD', 'x86_64: 942F88A5-AD68-3359-90D5-6F1A3311C51A' ]
+uuids:           [ 'i386: D8E00284-8021-3A90-8379-CF161DA6078B', 'x86_64: E1335074-9D07-370E-8440-61C4874BAC56' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreBluetooth.framework/Versions/A/CoreBluetooth
 objc-constraint: none
@@ -67,9 +67,9 @@ exports:
                        _CBUUIDReportReferenceDescriptorString, _CBUUIDSerialNumberStringCharacteristicString, 
                        _CBUUIDServerCharacteristicConfigurationString, _CBUUIDServiceChangedString, 
                        _CBUUIDSoftwareRevisionStringCharacteristicString, _CBUUIDSystemIDCharacteristicString ]
-    objc-classes:    [ _CBATTRequest, _CBAttribute, _CBCentral, _CBCentralManager, 
-                       _CBCharacteristic, _CBDescriptor, _CBL2CAPChannel, _CBManager, 
-                       _CBMutableCharacteristic, _CBMutableDescriptor, _CBMutableService, 
-                       _CBPairingAgent, _CBPeer, _CBPeripheral, _CBPeripheralManager, 
-                       _CBScalablePipe, _CBScalablePipeManager, _CBService, _CBUUID ]
+    objc-classes:    [ CBATTRequest, CBAttribute, CBCentral, CBCentralManager, CBCharacteristic, 
+                       CBDescriptor, CBL2CAPChannel, CBManager, CBMutableCharacteristic, 
+                       CBMutableDescriptor, CBMutableService, CBPairingAgent, CBPeer, 
+                       CBPeripheral, CBPeripheralManager, CBScalablePipe, CBScalablePipeManager, 
+                       CBService, CBUUID ]
 ...

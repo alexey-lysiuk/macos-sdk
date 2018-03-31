@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: FA07FEE2-CEFE-3CC0-A82F-E601AA2CCB36', 'x86_64: 4487CFBA-A5D7-3282-9E6B-94CAD7BE507E' ]
+uuids:           [ 'i386: B9947B1F-9930-385A-A960-856CF6C539CF', 'x86_64: 968B8E3F-3681-3230-9D78-BB8732024F6E' ]
 platform:        macosx
 install-name:    /usr/lib/system/libcompiler_rt.dylib
 current-version: 62

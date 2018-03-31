@@ -125,7 +125,6 @@
 #include <simd/vector_make.h>
 #include <simd/logic.h>
 #include <simd/math.h>
-#include <simd/matrix_types.h>
 
 #ifdef __cplusplus
 extern "C" {

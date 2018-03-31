@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9B420145-E4CD-34AE-B6C2-D7D4CA8412C8' ]
+uuids:           [ 'x86_64: 48F05947-646F-3F5F-920B-F54601FD449F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreSpeech.framework/Versions/A/CoreSpeech
 objc-constraint: none
@@ -9,18 +9,16 @@ exports:
     symbols:         [ _CSAudioLogDirectory, _CSErrorDomain, _CSHasAOP, _CSIsBridgeOS, 
                        _CSIsEmbedded, _CSIsHorseman, _CSIsIOS, _CSIsIPhone, _CSIsInternalBuild, 
                        _CSIsMac, _CSIsOSX, _CSIsSimulator, _CSIsTV, _CSIsWatch, _CSLogContextFacilityCoreSpeech, 
-                       _CSLogInitIfNeeded, _CSMakeTimestampedAudioLogFilenameWithPrefixAndSuffix, 
-                       _CSSpeechRecordSettingsKey, _CSSystemRootDirectory, _CoreSpeechServiceListenerInterface, 
+                       _CSLogInitIfNeeded, _CSMachAbsoluteTimeAddTimeInterval, _CSMachAbsoluteTimeGetTimeInterval, 
+                       _CSMakeTimestampedAudioLogFilenameWithPrefixAndSuffix, _CSSpeechRecordSettingsKey, 
+                       _CSSystemRootDirectory, _CoreSpeechServiceListenerInterface, 
                        _kCSInitialContinousZerosMetricKey, _kCSLoggingContextFramework, 
                        _kCSMaxContinousZerosMetricKey, _kCSMidSegmentContinousZerosMetricKey, 
                        _kCSZeroRunLengthMetricKey, _kCSZeroRunStartingSampleMetricKey ]
-    objc-classes:    [ _CSAsset, _CSAssetManager, _CSAudioChunk, _CSAudioRecorder, 
-                       _CSAudioZeroFilter, _CSCoreSpeechServices, _CSEndpointerMetrics, 
-                       _CSKeywordAnalyzerNDAPI, _CSLanguageCodeUpdateMonitor, _CSNovDetector, 
-                       _CSNovDetectorResult, _CSPreferences, _CSRemoteControlClient, 
-                       _CSServerEndpointFeatures, _CSSmartSiriVolume, _CSSpeakerModel, 
-                       _CSSpeakerModelRetrainer, _CSSpeechController, _CSSpeechManager, 
-                       _CSUtils, _CSVTUITrainingManager, _CSVoiceTriggerEnabledMonitor, 
-                       _CSVoiceTriggerEventNotifier, _CSVoiceTriggerFirstPass, _CSVoiceTriggerSecondPass, 
-                       _CSVoiceTriggerSpeakerTrainer ]
+    objc-classes:    [ CSAsset, CSAssetManager, CSAudioChunk, CSAudioRecorder, CSAudioZeroFilter, 
+                       CSCoreSpeechServices, CSEndpointerMetrics, CSKeywordAnalyzerNDAPI, 
+                       CSLanguageCodeUpdateMonitor, CSNovDetector, CSNovDetectorResult, 
+                       CSPreferences, CSRemoteControlClient, CSServerEndpointFeatures, 
+                       CSSmartSiriVolume, CSSpeakerModel, CSSpeechController, CSSpeechManager, 
+                       CSUtils, CSVoiceTriggerEnabledMonitor ]
 ...

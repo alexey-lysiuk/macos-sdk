@@ -1,4 +1,4 @@
-.Dd September 27, 2017
+.Dd January 17, 2018
 .Dt fdesetup 8 
 .Os macOS
 .Sh NAME
@@ -20,9 +20,9 @@ By default, when enabling FileVault
 .Nm
 will only return a personal recovery key. Given the proper certificate information, 
 .Nm
-can install an institutional recovery key.  You can also set it up without a personal recovery key using the
+can install an institutional recovery key.  You can also set it up without creating a personal recovery key using the
 .Sy -norecoverykey
-option, though this is not recommended unless you are also installing an institutional recovery key.   Either type of keys can be added or changed at a later time.
+option, though this is not recommended unless you are also installing an institutional recovery key.  On APFS volumes, if you already have a personal recovery key created from a previous enablement, it will not remove or create a new personal recovery key, allowing you to reuse the existing key.  Either type of keys can be added or changed at a later time.
 .Pp
 With the
 .Sy -keychain
@@ -208,7 +208,7 @@ Removes enabled user from FileVault.   It will not remove the user if it's the l
 .Op Fl inputplist
 .Op Fl verbose
 .br
-Adds or updates the current recovery key.   Either personal and/or institutional options must be specified.  When changing the personal recovery key, the updated personal recovery key will be automatically generated.   When changing either key, the old value will be removed and replaced.  Because APFS volumes require an OD authentication before it will allow for the change, the current recovery key cannot be used for the authentication.  On CoreStorage volunes the -key option can be used to unlock FileVault.   More information on this is described elsewhere in this document.
+Adds or updates the current recovery key.   Either personal and/or institutional options must be specified.  When changing the personal recovery key, the updated personal recovery key will be automatically generated.   When changing either key, the old value will be removed and replaced.  Because APFS volumes require an OD authentication before it will allow for the change, the current recovery key cannot be used for the authentication.  On CoreStorage volumes the -key option can be used to unlock FileVault.   More information on this is described elsewhere in this document.
 .Pp
 .\"             -- removerecovery --
 .It Sy removerecovery
@@ -323,7 +323,7 @@ Use the certificate data located at the path. Any existing /Library/Keychains/Fi
 Use the keychain file located at the path containing the private key for the currently installed institutional recovery key to unlock and authenticate FileVault.
 .Pp
 .It Fl norecoverykey
-Do not return a personal recovery key.
+Do not return a personal recovery key.   On APFS volumes, you can use this option to reuse an existing recovery key previously created.
 .Pp
 .It Fl forceatlogin Ar max_cancel_attempts
 When using the -defer option, prompt the designated user at login time to enable FileVault.  The user has at most

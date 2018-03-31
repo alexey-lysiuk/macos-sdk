@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D50833D5-FD59-3436-96FF-9F91425254E2' ]
+uuids:           [ 'x86_64: 14256F70-7C15-3984-9BC9-0CE4D8B478FF' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IPTelephony.framework/Support/libIPTelephony.dylib
 exports:         
@@ -69,6 +69,7 @@ exports:
                        __ZN11IMSCallInfo30handleSessionResumeFailedEventEP14BambiCallEvent, 
                        __ZN11IMSCallInfo31handleOutputFrequencyLevelEventEPK9BambiCallPK8__CFData, 
                        __ZN11IMSCallInfo31handleParticipantLeftConferenceEP26BambiConferenceParticipantb, 
+                       __ZN11IMSCallInfo31handleRTTNegotiationFailedEventEP14BambiCallEvent, 
                        __ZN11IMSCallInfo33handlePreconditionsSatisfiedEventEP36BambiCallPreconditionsSatisfiedEvent, 
                        __ZN11IMSCallInfo6redialEv, __ZN11IMSCallInfo7endCallERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE, 
                        __ZN11IMSCallInfo7refreshEb, __ZN11IMSCallInfo8playDtmfERKNSt3__16vectorIhNS0_9allocatorIhEEEE, 
@@ -344,19 +345,19 @@ exports:
                        _kIMSCallStatusMediaActive, _kIMSCallStatusMediaInactive, 
                        _kIMSCallStatusMediaInitialized, _kIMSCallStatusMergeCallsFailed, 
                        _kIMSCallStatusMergedCalls, _kIMSCallStatusPlayLRBT, _kIMSCallStatusPulling, 
-                       _kIMSCallStatusResumeFailed, _kIMSCallStatusRinging, _kIMSCallStatusStopLRBT, 
-                       _kIMSCallStatusTextMediaDetected, _kIMSCallStatusTrying, _kIMSCallSubject, 
-                       _kIMSCallTTYEnabled, _kIMSCallUuid, _kIMSCodecAMR, _kIMSCodecAMRWB, 
-                       _kIMSCodecPCMA, _kIMSCodecPCMU, _kIMSDumpReason, _kIMSExtCallCanPull, 
-                       _kIMSExtCallDirection, _kIMSExtCallDuration, _kIMSExtCallId, 
-                       _kIMSExtCallIsEmergency, _kIMSExtCallLocal, _kIMSExtCallLocalSD, 
-                       _kIMSExtCallLocalURI, _kIMSExtCallOnHold, _kIMSExtCallRemote, 
-                       _kIMSExtCallRemoteSD, _kIMSExtCallRemoteURI, _kIMSExtCallState, 
-                       _kIMSExtCallState_FSM_Confirmed, _kIMSExtCallState_FSM_Terminated, 
-                       _kIMSFurtherInfoRequired, _kIMSIncomingCallerCountryCode, 
-                       _kIMSIncomingCallerId, _kIMSIncomingCallerIdBlocked, _kIMSIncomingCallerName, 
-                       _kIMSIncomingLegacyUSSDData, _kIMSIncomingUSSDData, _kIMSIncomingUSSDError, 
-                       _kIMSIsEmergencyMediaManager, _kIMSPreferredMediaStackAP, 
+                       _kIMSCallStatusRTTNegotiationFailed, _kIMSCallStatusResumeFailed, 
+                       _kIMSCallStatusRinging, _kIMSCallStatusStopLRBT, _kIMSCallStatusTextMediaDetected, 
+                       _kIMSCallStatusTrying, _kIMSCallSubject, _kIMSCallTTYEnabled, 
+                       _kIMSCallUuid, _kIMSCodecAMR, _kIMSCodecAMRWB, _kIMSCodecPCMA, 
+                       _kIMSCodecPCMU, _kIMSDumpReason, _kIMSExtCallCanPull, _kIMSExtCallDirection, 
+                       _kIMSExtCallDuration, _kIMSExtCallId, _kIMSExtCallIsEmergency, 
+                       _kIMSExtCallLocal, _kIMSExtCallLocalSD, _kIMSExtCallLocalURI, 
+                       _kIMSExtCallOnHold, _kIMSExtCallRemote, _kIMSExtCallRemoteSD, 
+                       _kIMSExtCallRemoteURI, _kIMSExtCallState, _kIMSExtCallState_FSM_Confirmed, 
+                       _kIMSExtCallState_FSM_Terminated, _kIMSFurtherInfoRequired, 
+                       _kIMSIncomingCallerCountryCode, _kIMSIncomingCallerId, _kIMSIncomingCallerIdBlocked, 
+                       _kIMSIncomingCallerName, _kIMSIncomingLegacyUSSDData, _kIMSIncomingUSSDData, 
+                       _kIMSIncomingUSSDError, _kIMSIsEmergencyMediaManager, _kIMSPreferredMediaStackAP, 
                        _kIMSPreferredMediaStackBaseband, _kIMSPreferredMediaStackKey, 
                        _kIMSQOSInfoPortList, _kIMSTextStreamToken, _kIMSThumperDialogId, 
                        _kIMSVocoderCodec, _kIMSVocoderSampleRate, _shouldSuppressLoggingOfEvent ]

@@ -1,4 +1,4 @@
-.TH "MPSState.h" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "MPSState.h" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -13,9 +13,90 @@ MPSState.h
 
 .in +1c
 .ti -1c
+.RI "class \fBMPSStateResourceList\fP"
+.br
+.ti -1c
+.RI "struct \fBMPSStateTextureInfo\fP"
+.br
+.ti -1c
 .RI "class \fBMPSState\fP"
 .br
 .in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBMPSStateTextureInfo\fP \fBMPSStateTextureInfo\fP"
+.br
+.ti -1c
+.RI "typedef enum \fBMPSStateResourceType\fP \fBMPSStateResourceType\fP"
+.br
+.ti -1c
+.RI "typedef NSArray< \fBMPSState\fP * > \fBMPSStateBatch\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBMPSStateResourceType\fP { \fBMPSStateResourceTypeNone\fP, \fBMPSStateResourceTypeBuffer\fP, \fBMPSStateResourceTypeTexture\fP }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "NSUInteger \fBMPSStateBatchIncrementReadCount\fP (\fBMPSStateBatch\fP *__nullable batch, NSInteger amount) ''"
+.br
+.ti -1c
+.RI "NSUInteger void \fBMPSStateBatchSynchronize\fP (\fBMPSStateBatch\fP *__nonnull batch, __nonnull id< MTLCommandBuffer > cmdBuf) ''"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef NSArray<\fBMPSState\fP*> \fBMPSStateBatch\fP"
+
+.SS "typedef enum \fBMPSStateResourceType\fP
+
+     \fBMPSStateResourceType\fP"
+
+.SS "typedef struct \fBMPSStateTextureInfo\fP \fBMPSStateTextureInfo\fP"
+
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBMPSStateResourceType\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIMPSStateResourceTypeNone \fP\fP
+.TP
+\fB\fIMPSStateResourceTypeBuffer \fP\fP
+.TP
+\fB\fIMPSStateResourceTypeTexture \fP\fP
+.SH "Function Documentation"
+.PP 
+.SS "NSUInteger MPSStateBatchIncrementReadCount (\fBMPSStateBatch\fP *__nullable batch, NSInteger amount)"
+raise or lower the readcount of a batch by a set amount  In some circumstances, a \fBMPSState\fP may appear in a MPSStateBatch multiple times\&. This is particularly common when the \fBMPSState\fP serves as an accumulator across the entire batch, such as when accumulating gradients for convolution weight update or batch statistics for batch normalization\&. \fBA\fP naive function would then end up incrementing the state multiple times, probably leading to an error\&.
+.PP
+\fBMPSStateBatchIncrementReadCount()\fP will efficiently increment the readCounts of each object in the batch only once, avoiding this problem\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbatch\fP The MPSStateBatch to increment 
+.br
+\fIamount\fP The value to add to the read count for each unique state in the batch 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The number of different objects in the batch 
+.RE
+.PP
+
+.SS "NSUInteger void MPSStateBatchSynchronize (\fBMPSStateBatch\fP *__nonnull batch, __nonnull id< MTLCommandBuffer > cmdBuf)"
+Call [MTLBlitEncoder synchronizeResource:] on unique resources 
 .SH "Author"
 .PP 
 Generated automatically by Doxygen for MetalPerformanceShaders\&.framework from the source code\&.

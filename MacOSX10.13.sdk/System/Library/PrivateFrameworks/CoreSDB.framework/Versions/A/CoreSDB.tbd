@@ -1,12 +1,12 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 727927D4-3DEA-3362-AF1E-7F5E7F4822F3', 'x86_64: F8A48B80-21F5-3B9E-A0D3-A8BA02E0640B' ]
+uuids:           [ 'i386: BB958748-ECB4-381F-8BAB-31720C437E08', 'x86_64: D3B7D144-53F2-34B8-B744-6D36CC3B8A59' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreSDB.framework/Versions/A/CoreSDB
 current-version: 800
 exports:         
   - archs:           [ i386 ]
-    objc-classes:    [ _CSDBThreadedRecordStore, __CSDBThreadObject ]
+    objc-classes:    [ CSDBThreadedRecordStore, _CSDBThreadObject ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ _CSDBCheckResultWithStatement, _CSDBConfigLookaside, _CSDBCreateDirectoriesToPath, 
                        _CSDBCreateDirectoriesToPathWithOwnership, _CSDBCreateThreadedRecordStore, 

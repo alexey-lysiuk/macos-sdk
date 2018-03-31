@@ -583,17 +583,22 @@ BOOL    MPSSupportsMTLDevice( __nullable id <MTLDevice> device )  MPS_AVAILABLE_
  *  base class are provided to help you implement these steps as efficiently as possible.
  *
 
- *      MPSCNNNeuronLinear              <MPSNeuralNetwork/MPSCNNConvolution.h>       A linear neuron activation function
- *      MPSCNNNeuronReLU                <MPSNeuralNetwork/MPSCNNConvolution.h>       A neuron activation function with rectified linear units
- *      MPSCNNNeuronSigmoid             <MPSNeuralNetwork/MPSCNNConvolution.h>       A sigmoid neuron activation function 1/(1+e**-x)
- *      MPSCNNNeuronHardSigmoid         <MPSNeuralNetwork/MPSCNNConvolution.h>       A hard sigmoid neuron activation function clamp((a*x)+b, 0, 1)
- *      MPSCNNNeuronTanH                <MPSNeuralNetwork/MPSCNNConvolution.h>       A neuron activation function using hyperbolic tangent
- *      MPSCNNNeuronAbsolute            <MPSNeuralNetwork/MPSCNNConvolution.h>       An absolute neuron activation function |x|
- *      MPSCNNNeuronSoftPlus            <MPSNeuralNetwork/MPSCNNConvolution.h>       A parametric SoftPlus neuron activation function a*log(1+e**(b*x))
- *      MPSCNNNeuronSoftSign            <MPSNeuralNetwork/MPSCNNConvolution.h>       A SoftSign neuron activation function x/(1+|x|)
- *      MPSCNNNeuronELU                 <MPSNeuralNetwork/MPSCNNConvolution.h>       A parametric ELU neuron activation function x<0 ? (a*(e**x-1)) : x
- *      MPSCNNNeuronReLUN               <MPSNeuralNetwork/MPSCNNConvolution.h>       A rectified linear N neuron activation function min((x>=0?x:a*x), b)
- *      MPSCNNNeuronPReLU               <MPSNeuralNetwork/MPSCNNConvolution.h>       ReLU, except a different a value is provided for each feature channel
+ *      MPSCNNNeuron                    <MPSNeuralNetwork/MPSCNNNeuron.h>            Neuron activation function filter
+ *      Activation filter types:
+ *          MPSCNNNeuronTypeLinear                                                   A linear neuron activation function
+ *          MPSCNNNeuronTypeReLU                                                     A neuron activation function with rectified linear units
+ *          MPSCNNNeuronTypeSigmoid                                                  A sigmoid neuron activation function 1/(1+e**-x)
+ *          MPSCNNNeuronTypeHardSigmoid                                              A hard sigmoid neuron activation function clamp((a*x)+b, 0, 1)
+ *          MPSCNNNeuronTypeTanH                                                     A neuron activation function using hyperbolic tangent
+ *          MPSCNNNeuronTypeAbsolute                                                 An absolute neuron activation function |x|
+ *          MPSCNNNeuronTypeSoftPlus                                                 A parametric SoftPlus neuron activation function a*log(1+e**(b*x))
+ *          MPSCNNNeuronTypeSoftSign                                                 A SoftSign neuron activation function x/(1+|x|)
+ *          MPSCNNNeuronTypeELU                                                      A parametric ELU neuron activation function x<0 ? (a*(e**x-1)) : x
+ *          MPSCNNNeuronTypeReLUN                                                    A rectified linear N neuron activation function min((x>=0?x:a*x), b)
+ *          MPSCNNNeuronTypePReLU                                                    ReLU, except a different a value is provided for each feature channel
+ *          MPSCNNNeuronPower                                                        A Power neuron activation function (a*x+b)^c
+ *          MPSCNNNeuronExponential                                                  A Exponential neuron activation function c^(a*x+b)
+ *          MPSCNNNeuronLogarithm                                                    A Logarithm neuron activation function log_c(a*x+b)
  *      MPSCNNConvolution               <MPSNeuralNetwork/MPSCNNConvolution.h>       A 4D convolution tensor
  *      MPSCNNConvolutionTranspose      <MPSNeuralNetwork/MPSCNNConvolution.h>       A 4D convolution transpose tensor
  *      MPSCNNFullyConnected            <MPSNeuralNetwork/MPSCNNConvolution.h>       A fully connected CNN layer
@@ -607,6 +612,7 @@ BOOL    MPSSupportsMTLDevice( __nullable id <MTLDevice> device )  MPS_AVAILABLE_
  *      MPSCNNLogSoftmax                <MPSNeuralNetwork/MPSCNNSoftMax.h>           pixel(x,y,k) - ln(sum(exp(pixel(x,y,0)) ... exp(pixel(x,y,N-1)))
  *      MPSCNNUpsamplingNearest         <MPSNeuralNetwork/MPSCNNUpsampling.h>        A nearest upsampling layer.
  *      MPSCNNUpsamplingBilinear        <MPSNeuralNetwork/MPSCNNUpsampling.h>        A bilinear upsampling layer.
+ *      MPSCNNDropout                   <MPSNeuralNetwork/MPSCNNDropout.h>           A dropout layer.
  *
  *  MPSCNNKernels operate on MPSImages.  MPSImages are at their core MTLTextures. However, whereas
  *  MTLTextures commonly represent image or texel data, a MPSImage is a more abstract representation
@@ -665,6 +671,51 @@ BOOL    MPSSupportsMTLDevice( __nullable id <MTLDevice> device )  MPS_AVAILABLE_
  *  @subsection subsection_RNN     Recurrent Neural Networks
  *
  *  @subsection subsection_matrix_primitives     Matrix Primitives
+ *  MPS provides kernels for performing common linear algebra operations.  These kernels operate on MPSMatrix objects.  MPSMatrix
+ *  objects are constructed from MTLBuffer objects and represent matrices which serve as inputs and outputs of MPSMatrix
+ *  kernels.
+ *
+ *  MPSMatrix objects allow the data in a MTLBuffer to be interpreted as a two-dimensional array or, a set of two-dimensional arrays.
+ *  This is done by associating length and layout parameters with the user-supplied MTLBuffer.  These parameters are encapsulated as
+ *  an MPSMatrixDescriptor object and are used, along with the user-supplied MTLBuffer, to construct an MPSMatrix.
+ *
+ *  Two initialization methods are provided for MPSMatrixDescriptor objects:
+ *
+ *      +[MPSMatrixDescriptor matrixDescriptorWithRows:columns:rowBytes:dataType]  and
+ *      +[MPSMatrixDescriptor matrixDescriptorWithRows:columns:matrices:rowBytes:matrixBytes:dataType]
+ *
+ *  'matrices' and 'matrixBytes' are used when the data will represent a set of multiple matrices with identical layouts.  Initializing
+ *  an MPSMatrixDescriptor object without these parameters constructs a descriptor to be used when the data will represent a single
+ *  matrix.  The size of a matrix is specified using the 'rows' and 'columns' arguments and indicate the number of rows and columns
+ *  in the matrix respectively.  'rowBytes' and 'matrixBytes' represent the stride, in bytes, between consecutive rows and matrices
+ *  respectively.  'dataType' is a parameter of type MPSDataType and specifies the type of the provided data.
+ *
+ *  Notes:
+ *      'rowBytes' must be a multiple of the size, in bytes, of a single data element.  'matrixBytes' must be a multiple of the value
+ *      of 'rowBytes'.
+ *      The value of 'rowBytes' can also have an impact on the performance of kernels which use the resulting MPSMatrix object; the
+ *      convenience method, +[MPSMatrixDescriptor rowBytesForColumns:dataType], can be used to query a performant value which may then
+ *      be used to initialize the data.
+ *
+ *  MPSMatrix objects are initialized using MPSMatrixDescriptor objects, specifying the layout, and MTLBuffer objects, containing the
+ *  data.  Some MPS kernels operate on one-dimensional arrays of data, these are known as MPSVector objects and are initialized in a
+ *  manner analogous to MPSMatrix objects.
+ *
+ *  The following kernels allow performing linear algebra operations using MPSMatrix/MPSVector objects:
+ *
+ *      MPSMatrixMultiplication         <MPSMatrix/MPSMatrixMultiplication.h>       Generalized matrix-matrix multiplication.
+ *      MPSMatrixVectorMultiplication   <MPSMatrix/MPSMatrixMultiplication.h>       Generalized matrix-vector multiplication.
+ *      MPSMatrixSolveTriangular        <MPSMatrix/MPSMatrixSolve.h>                Solve a system of equations using a triangular coefficient matrix.
+ *      MPSMatrixSolveLU                <MPSMatrix/MPSMatrixSolve.h>                Solve a system of equations using an LU factorization.
+ *      MPSMatrixSolveCholesky          <MPSMatrix/MPSMatrixSolve.h>                Solve a system of equations using a Cholesky factorization.
+ *      MPSMatrixDecompositionLU        <MPSMatrix/MPSMatrixDecomposition.h>        Perform an LU decomposition of a matrix.
+ *      MPSMatrixDecompositionCholesky  <MPSMatrix/MPSMatrixDecomposition.h>        Perform a Cholesky decomposition of a matrix.
+ *
+ *  MPSMatrix kernels allow operations on sub-regions of the data referenced by an MPSMatrix object.  This is done through offset and
+ *  batching properties of the kernel.  For example, MPSMatrixUnaryKernel kernels have the properties 'sourceMatrixOrigin' and
+ *  'resultMatrixOrigin' to indicate where in a given matrix to begin reading and writing data respectively.  The properties 'batchStart' and
+ *  'batchSize' also allow the kernel to reference only a subset of the provided matrices.
+ *
  *
  *  @section  section_validation    MPS API validation
  *  MPS uses the same API validation layer that Metal uses to alert you to API mistakes while
@@ -786,12 +837,12 @@ BOOL    MPSSupportsMTLDevice( __nullable id <MTLDevice> device )  MPS_AVAILABLE_
  *  neural networks. The graph is a network of MPSNNFilterNodes, MPSNNImageNodes and  MPSNNStateNodes. 
  *  MPSNNImageNodes represent MPSImages or MPSTemporaryImages. MPSNNFilterNodes represent MPSCNNKernel
  *  objects -- each of the lower level MPSCNNKernel subclasses has a sister object that is a
- *  subclass of the MPSNNFilterNode. Finally, MPSStateNodes stand in for MPSState objects. 
+ *  subclass of the MPSNNFilterNode. Finally, MPSNNStateNodes stand in for MPSState objects. 
  *
  *  MPSState objects are also new for macOS 10.13, iOS/tvOS 11. They stand in for bits of opaque state that
  *  need to be handed  between filter nodes.  For example, a MPSCNNConvolutionTranspose filter may need to
  *  know the original size of the filter passed into the corresponding MPSCNNConvolution node farther up the
- *  tree. There is a corresponding MPSCNNConvolutionState object that tracks this information. You will
+ *  tree. There is a corresponding MPSCNNConvolutionGradientState object that tracks this information. You will
  *  encounter state objects only infrequently. Most graphs are made up of images and filters.
  *
  *  To represent a graph, one usually first creates a MPSNNImageNode. This represents the input image or
@@ -1065,7 +1116,82 @@ BOOL    MPSSupportsMTLDevice( __nullable id <MTLDevice> device )  MPS_AVAILABLE_
  *  together — performance can be improved by up a factor of two 
  *  by breaking the work into tiles about 512 kB in size. Use
  *  -sourceRegionForDestinationSize: to find the MPSRegion needed
- *  for each tile. 
+ *  for each tile.
+ *
+ *  @section using_graph_for_training   Using MPSNNGraph for Training
+ *  This version of MPSNNGraph uses an explicit node structure to graph out
+ *  the training process. That is, you must build out the training segment
+ *  of the graph manually in addition to the inference passes. MPS doesn't do
+ *  this automatically. However, MPS will provide some help along the way.
+ *
+ *  To construct a training graph from a complete graph of inference MPSNNFilterNodes,
+ *  append a MPSNNLossNode to calculate the loss function for the inference pass. This
+ *  produces the first gradient MPSNNImageNode as its image result node. Next, walk
+ *  backwards up the graph adding gradient conjugate operations for each node in the
+ *  preceding inference section. For example, for a MPSCNNConvolutionNode, add a
+ *  MPSCNNConvolutionGradientNode.  This is most easily done using
+ *  [MPSNNFilterNode gradientFilterWithSources:] as you go. The gradient image result
+ *  from each MPSNNGradientFilterNode serves as the gradient input to the next one. Most
+ *  of the wiring up of image and state nodes will be done automatically for you, along
+ *  with the copying of various node properties. You need only mirror the topology
+ *  of MPSNNFilterNodes and MPSNNImageNodes with MPSNNGradientFilterNodes and
+ *  gradient MPSNNImageNodes on the way back up.
+ *
+ *  The loss data is passed to the graph at -encode time in a MPSNNLossGradientState
+ *  object. As typically there is only one state object passed in to a training graph,
+ *  you probably won't need to invest much in MPSHandles to disambiguate inputs here.
+ *  The images are passed in as the image argument. Training is generally done in batches
+ *  of images, so these will actually be passed in as MPSImageBatch and MPSNNStateBatch
+ *  instead. If you want to configure the node corresponding to this MPSNNLossGradientState
+ *  object, you can get it from the MPSNNLossNode.
+ *
+ *  The weight updates are handled through new callbacks into the MPSCNNConvolutionDataSource
+ *  and MPSCNNBatchNormalizationDataSource protocols. You will be handed gradients and
+ *  old weights and will be expected to calculate the new weights based on these.
+ *  You can add a metal command buffer completion callback at this time to save these to
+ *  the disk to mark your progress, if you like. Most updates happen on the GPU. 
+ *  Typically, your Application will use the same data source for both the MPSNNFilterNode
+ *  forward inference pass and the conjugate MPSNNGradientFilterNode pass. The gradient pass
+ *  will trigger weight updates. These will be applied to both nodes, provided that they use
+ *  the same data source.
+ *
+ *  If necessary, appropriate -init methods are provided that allow you to insert
+ *  differently configured nodes if you want to do something unusual instead. To manually
+ *  configure such, each MPSNNGradientFilterNode will consume a MPSNNGradientState node that
+ *  records MPSNNFilterNode settings at the time it was run. The MPSNNGradientFilterNode
+ *  will also need to see the image node used as input to the inference MPSNNFilterNode.
+ *  Finally, there is the input gradient calculated by the previous MPSNNGradientFilterNode
+ *  in the chain. These are all passed to the MPSNNGradientFilterNode when it is created.
+ *  If there are any configurable properties on the MPSNNFilterNode, these need to be copied
+ *  to the MPSNNGradientFilterNode as well. This complexity is handled for you in
+ *  [MPSNNFilterNode gradientFilterWithSources:], so it is recommended that when possible,
+ *  you use that instead to help make sure everything is wired up correctly.
+ *
+ *  @section release_notes   MPS Release Notes
+ *  @subsection macosX_13_4    macOS X.13.4
+ *  A preview for neural network training support is provided in macOS X.13.4.
+ *  It is intended to facilitate MPS adoption by major third party neural
+ *  networking frameworks. All interfaces marked macOS(10.13.4) should
+ *  be considered experimental, subject to change as a result of
+ *  feedback from the machine learning community before final release
+ *  in a major OS revision. To allow for changes during the comment period,
+ *  binary compatibility between experimental releases and the final release
+ *  is not guaranteed. To provide feedback, please file bugs against Metal
+ *  Performance Shaders / macOS using http://bugreporter.apple.com.  Feedback
+ *  in other forums such as social media will likely not be successful in
+ *  attracting our attention.
+ *
+ *  To avoid compile time versioning warnings while using these features on a
+ *  macOS X.13 SDK, set MACOSX_DEPLOYMENT_TARGET = 10.13.4 in your
+ *  .xcodeproj/project.pbxproj. New features very rarely come in support
+ *  updates and the Xcode GUI is not pre-configured to make this easy for you.
+ *  As a workaround, set the deployment target using Xcode GUI to some much
+ *  older, easily recognized version such as 10.11 to ensure that
+ *  MACOSX_DEPLOYMENT_TARGET appears in your project.pbxproj. Then, use a text
+ *  editor to adjust the value to 10.13.4 manually.  The availability versioning
+ *  will be revised upward to the first major release when binary compatibility
+ *  is guaranteed and the usual means of choosing a minimum OS revision will
+ *  function as intended in Xcode.
  */
 
 #ifdef __cplusplus

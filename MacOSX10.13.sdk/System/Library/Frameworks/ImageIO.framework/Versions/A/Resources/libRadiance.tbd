@@ -1,7 +1,7 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64, x86_64h ]
-uuids:           [ 'i386: EE872547-4C9F-397B-B41B-C79FEEE68267', 'x86_64: 09699DA5-3354-3D99-A544-CCC346BA4C1E', 
-                   'x86_64h: 31787C46-4A2B-3CDF-95E9-EC1BD4794917' ]
+uuids:           [ 'i386: 454F45E9-B7ED-33BE-8453-0D5ED4FBAE73', 'x86_64: 3320516C-A74A-323C-9BE9-C01D2E6A23EB', 
+                   'x86_64h: A6F1064A-FFFC-3B06-8CBF-5204CDFC41C6' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libRadiance.dylib
 objc-constraint: none

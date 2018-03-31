@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 3A9E7897-EB35-37B0-915B-B83BD602A172', 'x86_64: 010FE267-F593-36A2-8EC2-2F1E39C6076A' ]
+uuids:           [ 'i386: 1362E2E8-2C68-3F78-859A-8B633F196313', 'x86_64: DC87A6EE-FB68-3CCF-8A92-3CD05A064D00' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/APTransport.framework/Versions/A/APTransport
 exports:         
@@ -21,13 +21,13 @@ exports:
                        _gLogCategory_APDBluetoothHelper, _kAPBrowserBTLEEventInfoKey_DeviceID, 
                        _kAPBrowserBTLEEventInfoKey_IPAddress, _kAPBrowserBTLEEventInfoKey_Port, 
                        _kAPBrowserBTLEEventInfoKey_RSSI, _kAPBrowserBTLEEventInfoKey_SupportsSolo ]
-    objc-classes:    [ _APBluetoothClient, _APBrowserBTLEManager, _APDBrowserBluetoothHelper, 
-                       _APTargetBTLEDevice ]
-    objc-ivars:      [ _APDBrowserBluetoothHelper._bluetoothPowerChangedListeningStarted, 
-                       _APDBrowserBluetoothHelper._eventHandlerContext, _APDBrowserBluetoothHelper._eventHandlerFunc, 
-                       _APDBrowserBluetoothHelper._eventQueue, _APDBrowserBluetoothHelper._helperRef, 
-                       _APDBrowserBluetoothHelper._isBluetoothPoweredOn, _APDBrowserBluetoothHelper._isInvalidated, 
-                       _APDBrowserBluetoothHelper._queue ]
+    objc-classes:    [ APBluetoothClient, APBrowserBTLEManager, APDBrowserBluetoothHelper, 
+                       APTargetBTLEDevice ]
+    objc-ivars:      [ APDBrowserBluetoothHelper._bluetoothPowerChangedListeningStarted, 
+                       APDBrowserBluetoothHelper._eventHandlerContext, APDBrowserBluetoothHelper._eventHandlerFunc, 
+                       APDBrowserBluetoothHelper._eventQueue, APDBrowserBluetoothHelper._helperRef, 
+                       APDBrowserBluetoothHelper._isBluetoothPoweredOn, APDBrowserBluetoothHelper._isInvalidated, 
+                       APDBrowserBluetoothHelper._queue ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ _APAdvertiserInfoCopy, _APAdvertiserInfoCopyAirPlayData, _APAdvertiserInfoCopyProperty, 
                        _APAdvertiserInfoCopyRAOPData, _APAdvertiserInfoCreate, _APAdvertiserInfoCreateAirPlayServiceName, 
@@ -138,33 +138,31 @@ exports:
                        _kAPAdvertiserInfoProperty_GroupContainsGroupLeader, _kAPAdvertiserInfoProperty_GroupUUID, 
                        _kAPAdvertiserInfoProperty_HomeGroupUUID, _kAPAdvertiserInfoProperty_HouseholdID, 
                        _kAPAdvertiserInfoProperty_IsGroupLeader, _kAPAdvertiserInfoProperty_MetadataTypes, 
-                       _kAPAdvertiserInfoProperty_OSVersion, _kAPAdvertiserInfoProperty_PINRequired, 
-                       _kAPAdvertiserInfoProperty_PasswordRequired, _kAPAdvertiserInfoProperty_ProtocolVersion, 
-                       _kAPAdvertiserInfoProperty_PublicCUAirPlayPairingIdentity, 
+                       _kAPAdvertiserInfoProperty_OSVersion, _kAPAdvertiserInfoProperty_PasswordRequired, 
+                       _kAPAdvertiserInfoProperty_ProtocolVersion, _kAPAdvertiserInfoProperty_PublicCUAirPlayPairingIdentity, 
                        _kAPAdvertiserInfoProperty_PublicCUSystemPairingIdentity, 
                        _kAPAdvertiserInfoProperty_PublicKey, _kAPAdvertiserInfoProperty_RFC2617DigestAuthSupported, 
-                       _kAPAdvertiserInfoProperty_RequiredSenderFeatures, _kAPAdvertiserInfoProperty_SupportsRelay, 
-                       _kAPAdvertiserInfoProperty_SystemFlags, _kAPAdvertiserInfoProperty_TightSyncUUID, 
-                       _kAPAdvertiserInfoProperty_TransportTypes, _kAPBonjourBrowserEventInfoKey_DeviceInfo, 
-                       _kAPBonjourBrowserEventInfoKey_ServiceType, _kAPBonjourBrowserServiceType_AirPlay, 
-                       _kAPBonjourBrowserServiceType_RAOP, _kAPBrowserBTLEDeviceKey_BonjourDeviceID, 
-                       _kAPBrowserBTLEDeviceKey_DeviceID, _kAPBrowserBTLEDeviceKey_DeviceName, 
-                       _kAPBrowserBTLEDeviceKey_EventRecorder, _kAPBrowserBTLEDeviceKey_IPAddress, 
-                       _kAPBrowserBTLEDeviceKey_LastInfo, _kAPBrowserBTLEDeviceKey_LastQueryTicks, 
-                       _kAPBrowserBTLEDeviceKey_Port, _kAPBrowserBTLEDeviceKey_RSSI, 
-                       _kAPBrowserBTLEDeviceKey_SupportsSolo, _kAPBrowserBTLEDeviceKey_connectionError, 
-                       _kAPBrowserCreationOption_EventRecorder, _kAPBrowserDiscoveryMetricsKey_btleEventRecorder, 
-                       _kAPBrowserDiscoveryMetricsKey_btleRSSI, _kAPBrowserEventInfoKey_BrowserSessionID, 
-                       _kAPBrowserEventInfoKey_DeviceBtleRSSI, _kAPBrowserEventInfoKey_DeviceID, 
-                       _kAPBrowserEventInfoKey_DeviceInfo, _kAPBrowserEventInfoKey_EventRecorder, 
-                       _kAPBrowserEventInfoKey_IsLegacyPresent, _kAPBrowserEventInfoKey_IsLocallyAdvertised, 
-                       _kAPBrowserEventInfoKey_IsModernPresent, _kAPBrowserEventInfoKey_IsModernPresentOnInfra, 
-                       _kAPBrowserMaximumDiscoveryNeeds_BluetoothRadio, _kAPBrowserMaximumDiscoveryNeeds_WiFiRadio, 
-                       _kAPBrowserNearbyDeviceKey_AirPlayBonjourInfo, _kAPBrowserNearbyDeviceKey_CachedAirPlayDNS, 
-                       _kAPBrowserNearbyDeviceKey_CachedAirPlayP2PDNS, _kAPBrowserNearbyDeviceKey_CachedRAOPDNS, 
-                       _kAPBrowserNearbyDeviceKey_CachedRAOPP2PDNS, _kAPBrowserNearbyDeviceKey_DiscoveryMetrics, 
-                       _kAPBrowserNearbyDeviceKey_DispatchTimeStamp, _kAPBrowserNearbyDeviceKey_IsTracked, 
-                       _kAPBrowserNearbyDeviceKey_LastEventInfo, _kAPBrowserNearbyDeviceKey_RAOPBonjourInfo, 
+                       _kAPAdvertiserInfoProperty_RequiredSenderFeatures, _kAPAdvertiserInfoProperty_SystemFlags, 
+                       _kAPAdvertiserInfoProperty_TightSyncUUID, _kAPAdvertiserInfoProperty_TransportTypes, 
+                       _kAPBonjourBrowserEventInfoKey_DeviceInfo, _kAPBonjourBrowserEventInfoKey_ServiceType, 
+                       _kAPBonjourBrowserServiceType_AirPlay, _kAPBonjourBrowserServiceType_RAOP, 
+                       _kAPBrowserBTLEDeviceKey_BonjourDeviceID, _kAPBrowserBTLEDeviceKey_DeviceID, 
+                       _kAPBrowserBTLEDeviceKey_DeviceName, _kAPBrowserBTLEDeviceKey_EventRecorder, 
+                       _kAPBrowserBTLEDeviceKey_IPAddress, _kAPBrowserBTLEDeviceKey_LastInfo, 
+                       _kAPBrowserBTLEDeviceKey_LastQueryTicks, _kAPBrowserBTLEDeviceKey_Port, 
+                       _kAPBrowserBTLEDeviceKey_RSSI, _kAPBrowserBTLEDeviceKey_SupportsSolo, 
+                       _kAPBrowserBTLEDeviceKey_connectionError, _kAPBrowserCreationOption_EventRecorder, 
+                       _kAPBrowserDiscoveryMetricsKey_btleEventRecorder, _kAPBrowserDiscoveryMetricsKey_btleRSSI, 
+                       _kAPBrowserEventInfoKey_BrowserSessionID, _kAPBrowserEventInfoKey_DeviceBtleRSSI, 
+                       _kAPBrowserEventInfoKey_DeviceID, _kAPBrowserEventInfoKey_DeviceInfo, 
+                       _kAPBrowserEventInfoKey_EventRecorder, _kAPBrowserEventInfoKey_IsLegacyPresent, 
+                       _kAPBrowserEventInfoKey_IsLocallyAdvertised, _kAPBrowserEventInfoKey_IsModernPresent, 
+                       _kAPBrowserEventInfoKey_IsModernPresentOnInfra, _kAPBrowserMaximumDiscoveryNeeds_BluetoothRadio, 
+                       _kAPBrowserMaximumDiscoveryNeeds_WiFiRadio, _kAPBrowserNearbyDeviceKey_AirPlayBonjourInfo, 
+                       _kAPBrowserNearbyDeviceKey_CachedAirPlayP2PDNS, _kAPBrowserNearbyDeviceKey_CachedRAOPP2PDNS, 
+                       _kAPBrowserNearbyDeviceKey_DiscoveryMetrics, _kAPBrowserNearbyDeviceKey_DispatchTimeStamp, 
+                       _kAPBrowserNearbyDeviceKey_IsTracked, _kAPBrowserNearbyDeviceKey_LastEventInfo, 
+                       _kAPBrowserNearbyDeviceKey_RAOPBonjourInfo, _kAPBrowserNearbyDeviceKey_TrackedCount, 
                        _kAPBrowserNearbyDeviceKey_WasLastEventInfoDispatched, _kAPBrowserProperty_IsConfiguredForMaximumDiscovery, 
                        _kAPBrowserProperty_RadiosNeededForMaximumDiscovery, _kAPBrowserProperty_ShowInfo, 
                        _kAPBrowserShowInfoKey_DetailedDescription, _kAPConnectivityHelperEventInfoKey_USBInterfaceName, 
@@ -203,6 +201,7 @@ exports:
                        _kAPTransportStreamProperty_MaxMessageSize, _kAPTransportStreamProperty_MessageSendTimeout, 
                        _kAPTransportStreamProperty_NetworkInfo, _kAPTransportStreamProperty_Password, 
                        _kAPTransportStreamProperty_ReadyToSendThresholdBytes, _kAPTransportStreamProperty_RemoteNetworkIPAddress, 
+                       _kAPTransportStreamProperty_RemoteNetworkIPAddressCandidates, 
                        _kAPTransportStreamProperty_RemoteNetworkPort, _kAPTransportStreamProperty_RemoteReverseControlPort, 
                        _kAPTransportStreamProperty_UseRFC2617DigestAuth, _kAPTransportStreamProperty_UserAgent, 
                        _kAPTransportStreamProperty_UserName, _kAPTransportTrafficRegistrar_AWDLActiveKey, 
@@ -212,5 +211,5 @@ exports:
                        _kAPTransportWifiManagerClientWifiStatistic_PeerToPeerCCA, 
                        _session_sendEventRemoteWantsNewStreamCallback, _setChannelType, 
                        _updateKernelBuffer ]
-    objc-classes:    [ _APTTrafficRegistrationHelperOSX ]
+    objc-classes:    [ APTTrafficRegistrationHelperOSX ]
 ...

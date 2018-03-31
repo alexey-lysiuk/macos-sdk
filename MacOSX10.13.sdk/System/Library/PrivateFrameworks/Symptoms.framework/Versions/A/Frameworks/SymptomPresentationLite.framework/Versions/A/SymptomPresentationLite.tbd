@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2752CED1-9173-3188-8408-F235D8533D0F' ]
+uuids:           [ 'x86_64: 778B7738-4C8C-3ED2-AF94-CFDAEFD4FB95' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Symptoms.framework/Frameworks/SymptomPresentationLite.framework/Versions/A/SymptomPresentationLite
-current-version: 820.30.7
+current-version: 820.50.37
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _kPerformanceFlowAvgUsecsEstabTime, _kPerformanceFlowConnAttempts, 
@@ -62,5 +62,5 @@ exports:
                        _kSymptomAnalyticsServiceWatchpointKey, _kSymptomAnalyticsServiceWatchpointTarget, 
                        _kSymptomAnalyticsServiceWatchpointValue, _kSymptomAnalyticsTypeBundleIdentifier, 
                        _kSymptomAnalyticsTypeProcessName ]
-    objc-classes:    [ _NetworkPerformanceQuery ]
+    objc-classes:    [ NetworkPerformanceQuery ]
 ...

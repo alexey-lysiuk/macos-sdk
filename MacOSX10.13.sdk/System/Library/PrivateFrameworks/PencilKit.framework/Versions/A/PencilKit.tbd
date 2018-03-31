@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 185BD8CF-FBE1-3751-AF60-9FD70FD0589C' ]
+uuids:           [ 'x86_64: 02167EF1-2986-31AA-907B-510287BE129D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PencilKit.framework/Versions/A/PencilKit
 objc-constraint: none
@@ -11,8 +11,8 @@ exports:
                        _PKInkIdentifierPencil, _PKInputPointZero, _PencilKitVersionNumber, 
                        _PencilKitVersionString, __PKStrokePointZero, _kUTTypeAppleDrawing, 
                        _kUTTypeAppleStrokeSelection ]
-    objc-classes:    [ _PKCanvasView, _PKCanvasViewController, _PKDrawing, _PKImageRenderer, 
-                       _PKIndexableContent, _PKInk, _PKLinedPaper, _PKSearchQueryItem, 
-                       _PKSelectionController, _PKStroke, _PKStrokePoint, _PKStrokeSelection, 
-                       _PKTitleQuery, _PKTitleQueryItem, _PKUndoCommand, _PKVisualizationManager ]
+    objc-classes:    [ PKCanvasView, PKCanvasViewController, PKDrawing, PKImageRenderer, 
+                       PKIndexableContent, PKInk, PKLinedPaper, PKSearchQueryItem, 
+                       PKSelectionController, PKStroke, PKStrokePoint, PKStrokeSelection, 
+                       PKTitleQuery, PKTitleQueryItem, PKUndoCommand, PKVisualizationManager ]
 ...

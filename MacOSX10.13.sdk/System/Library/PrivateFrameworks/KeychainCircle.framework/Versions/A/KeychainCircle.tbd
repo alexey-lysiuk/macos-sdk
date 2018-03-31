@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 539F94F2-E5B7-335E-9D4A-6C03E3612E90' ]
+uuids:           [ 'x86_64: B5CF5BA6-C073-3F93-8873-39B85E5C4067' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/KeychainCircle.framework/Versions/A/KeychainCircle
 objc-constraint: none
@@ -15,9 +15,9 @@ exports:
                        _kcder_encode_raw_octet_space, _kcder_encode_string, _kcder_sizeof_data, 
                        _kcder_sizeof_string, _sizeof_initialmessage, _sizeof_initialmessage_version1, 
                        _sizeof_seq_data_data, _sizeof_seq_string_data ]
-    objc-classes:    [ _KCAESGCMDuplexSession, _KCJoiningAcceptAccountCircleDelegate, 
-                       _KCJoiningAcceptSession, _KCJoiningMessage, _KCJoiningRequestAccountCircleDelegate, 
-                       _KCJoiningRequestCircleSession, _KCJoiningRequestSecretSession, 
-                       _KCPairingChannel, _KCPairingChannelContext, _KCSRPClientContext, 
-                       _KCSRPContext, _KCSRPServerContext ]
+    objc-classes:    [ KCAESGCMDuplexSession, KCJoiningAcceptAccountCircleDelegate, 
+                       KCJoiningAcceptSession, KCJoiningMessage, KCJoiningRequestAccountCircleDelegate, 
+                       KCJoiningRequestCircleSession, KCJoiningRequestSecretSession, 
+                       KCPairingChannel, KCPairingChannelContext, KCSRPClientContext, 
+                       KCSRPContext, KCSRPServerContext ]
 ...

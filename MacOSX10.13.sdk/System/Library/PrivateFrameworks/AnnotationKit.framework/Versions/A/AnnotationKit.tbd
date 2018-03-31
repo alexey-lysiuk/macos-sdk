@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A1C7397B-C0A7-3988-A763-A3870F30881F' ]
+uuids:           [ 'x86_64: EB34367F-11DF-394B-B0B7-144DDD1006F8' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AnnotationKit.framework/Versions/A/AnnotationKit
 objc-constraint: none
@@ -20,21 +20,20 @@ exports:
                        _AKStatisticsDocumentTypeImage, _AKStatisticsDocumentTypePDF, 
                        _AKTouchBarItemIdentifierHighlights, _AKTouchBarItemIdentifierMain, 
                        _AKWillBeginEditingTextAnnotationNotification, _AKZeroQuadrilateral ]
-    objc-classes:    [ _AKActionController, _AKAnnotation, _AKAnnotationEventHandler, 
-                       _AKAnnotationPointOfInterestHelper, _AKAnnotationRenderer, 
-                       _AKArrowAnnotation, _AKArrowShapeAnnotation, _AKAttributeController, 
-                       _AKBorderMaskAnnotation, _AKController, _AKControllerForTesting, 
-                       _AKCropAnnotation, _AKDoodleAnnotation, _AKGeometryHelper, 
-                       _AKHeartAnnotation, _AKHighlightAnnotation, _AKImageAnnotation, 
-                       _AKInkAnnotation, _AKInkSignatureView, _AKLayerPresentationManager, 
-                       _AKLoupeAnnotation, _AKMainEventHandler, _AKModelController, 
-                       _AKNoteAnnotation, _AKOvalAnnotation, _AKOverlayView, _AKPageController, 
-                       _AKPageControllerForTesting, _AKPageModelController, _AKPolygonAnnotation, 
-                       _AKPopupAnnotation, _AKRectAnnotation, _AKRectangularShapeAnnotation, 
-                       _AKSecureSerializationHelper, _AKShapeAnnotation, _AKSignature, 
-                       _AKSignatureAnnotation, _AKSignatureView, _AKSpeechBubbleAnnotation, 
-                       _AKStarAnnotation, _AKStarAnnotationRenderer, _AKStrokedAnnotation, 
-                       _AKTextAnnotationAttributeHelper, _AKTextBoxAnnotation, _AKTextFieldAnnotation, 
-                       _AKThoughtBubbleAnnotation, _AKToolbarViewController, _AKTriangleAnnotation, 
-                       _AKUndoController ]
+    objc-classes:    [ AKActionController, AKAnnotation, AKAnnotationEventHandler, 
+                       AKAnnotationPointOfInterestHelper, AKAnnotationRenderer, AKArrowAnnotation, 
+                       AKArrowShapeAnnotation, AKAttributeController, AKBorderMaskAnnotation, 
+                       AKController, AKControllerForTesting, AKCropAnnotation, AKDoodleAnnotation, 
+                       AKGeometryHelper, AKHeartAnnotation, AKHighlightAnnotation, 
+                       AKImageAnnotation, AKInkAnnotation, AKInkSignatureView, AKLayerPresentationManager, 
+                       AKLoupeAnnotation, AKMainEventHandler, AKModelController, 
+                       AKNoteAnnotation, AKOvalAnnotation, AKOverlayView, AKPageController, 
+                       AKPageControllerForTesting, AKPageModelController, AKPolygonAnnotation, 
+                       AKPopupAnnotation, AKRectAnnotation, AKRectangularShapeAnnotation, 
+                       AKSecureSerializationHelper, AKShapeAnnotation, AKSignature, 
+                       AKSignatureAnnotation, AKSignatureView, AKSpeechBubbleAnnotation, 
+                       AKStarAnnotation, AKStarAnnotationRenderer, AKStrokedAnnotation, 
+                       AKTextAnnotationAttributeHelper, AKTextBoxAnnotation, AKTextFieldAnnotation, 
+                       AKThoughtBubbleAnnotation, AKToolbarViewController, AKTriangleAnnotation, 
+                       AKUndoController ]
 ...

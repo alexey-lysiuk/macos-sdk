@@ -1,4 +1,4 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64, x86_64h ]
 uuids:           [ 'i386: E109CCBF-357D-3C87-9CE5-D53AE03609A2', 'x86_64: DABEA1B1-806C-34C9-8AFF-DEB6AB2829E3', 
                    'x86_64h: 178ACDAD-DE7E-346C-A613-1CBF7929AC07' ]

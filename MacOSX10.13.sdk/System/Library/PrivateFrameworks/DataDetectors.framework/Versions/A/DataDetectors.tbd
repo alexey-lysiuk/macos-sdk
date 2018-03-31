@@ -1,31 +1,31 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 5618F0A2-EE92-3E6B-88B7-02074A507CC6', 'x86_64: 612C677D-BB71-35D2-BBF3-EA9EC51ADF12' ]
+uuids:           [ 'i386: B80BB2E4-5935-30E9-A60F-69662398764D', 'x86_64: 12BF834C-0B19-3719-BCC4-796568901107' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DataDetectors.framework/Versions/A/DataDetectors
-current-version: 376
+current-version: 376.1
 exports:         
   - archs:           [ i386 ]
-    objc-classes:    [ _DDBasicHighlightsView, _DDBubbleAction, _DDButtonBar, _DDDataDetectorsViewHost, 
-                       _DDDialController, _DDEventController, _DDFacetimeAudioController, 
-                       _DDFacetimeController, _DDFlightController, _DDGenericBubbleController, 
-                       _DDGenericTTYDialController, _DDHTMLMessageScanningOperation, 
-                       _DDHighlightButton, _DDHighlightButtonCell, _DDHighlightObject, 
-                       _DDHighlightRangeUpdater, _DDHighlightRequest, _DDLargeTypeController, 
-                       _DDMapLinkController, _DDMapTable, _DDMenuItem, _DDMessageController, 
-                       _DDMiscAction, _DDOperation, _DDParsecController, _DDPhoneNumber, 
-                       _DDPopover, _DDRange, _DDRemoteBubbleActionController, _DDScanRequest, 
-                       _DDSeparatorAction, _DDShowDateController, _DDSignatureExistingContactEditorController, 
-                       _DDSignatureMapController, _DDSignatureNewContactEditorController, 
-                       _DDSignaturePreviewController, _DDTTYDirectDialController, 
-                       _DDTTYRelayDialController, _DDURLAction ]
+    objc-classes:    [ DDBasicHighlightsView, DDBubbleAction, DDButtonBar, DDDataDetectorsViewHost, 
+                       DDDialController, DDEventController, DDFacetimeAudioController, 
+                       DDFacetimeController, DDFlightController, DDGenericBubbleController, 
+                       DDGenericTTYDialController, DDHTMLMessageScanningOperation, 
+                       DDHighlightButton, DDHighlightButtonCell, DDHighlightObject, 
+                       DDHighlightRangeUpdater, DDHighlightRequest, DDLargeTypeController, 
+                       DDMapLinkController, DDMapTable, DDMenuItem, DDMessageController, 
+                       DDMiscAction, DDOperation, DDParsecController, DDPhoneNumber, 
+                       DDPopover, DDRange, DDRemoteBubbleActionController, DDScanRequest, 
+                       DDSeparatorAction, DDShowDateController, DDSignatureExistingContactEditorController, 
+                       DDSignatureMapController, DDSignatureNewContactEditorController, 
+                       DDSignaturePreviewController, DDTTYDirectDialController, DDTTYRelayDialController, 
+                       DDURLAction ]
   - archs:           [ x86_64 ]
-    objc-classes:    [ _DDDetectorManager2 ]
-    objc-ivars:      [ _DDAction._actionUTI, _DDAction._actions, _DDAction._alternate, 
-                       _DDAction._hasDynamicName, _DDAction._isImmediate, _DDAction._name, 
-                       _DDAction._type, _DDPhoneOrMailURI._isHttpScheme, _DDPhoneOrMailURI._isMailScheme, 
-                       _DDPhoneOrMailURI._value, _DDPreviewMenuItem._beingDisplayed, 
-                       _DDPreviewMenuItem._context, _DDPreviewMenuItem._ddPreviewItem ]
+    objc-classes:    [ DDDetectorManager2 ]
+    objc-ivars:      [ DDAction._actionUTI, DDAction._actions, DDAction._alternate, 
+                       DDAction._hasDynamicName, DDAction._isImmediate, DDAction._name, 
+                       DDAction._type, DDPhoneOrMailURI._isHttpScheme, DDPhoneOrMailURI._isMailScheme, 
+                       DDPhoneOrMailURI._value, DDPreviewMenuItem._beingDisplayed, 
+                       DDPreviewMenuItem._context, DDPreviewMenuItem._ddPreviewItem ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ _DDActionLogHandle, _DDActionsManagerDidRunActionNotification, 
                        _DDActionsManagerWillRunActionNotification, _DDHighlightCreateWithRectsInVisibleRect, 
@@ -53,7 +53,6 @@ exports:
                        _kDataDetectorsMatchedStringKey, _kDataDetectorsReferenceDateKey, 
                        _kDataDetectorsSelectionStringKey, _kDataDetectorsSpecialURLKey, 
                        _kDataDetectorsTrailingTextKey, _separatorColorForDarkMode ]
-    objc-classes:    [ _DDAction, _DDActionContext, _DDActionViewController, _DDActionsManager, 
-                       _DDPatternCompiler, _DDPhoneOrMailURI, _DDPreviewMenuItem, 
-                       _DDThreadManager ]
+    objc-classes:    [ DDAction, DDActionContext, DDActionViewController, DDActionsManager, 
+                       DDPatternCompiler, DDPhoneOrMailURI, DDPreviewMenuItem, DDThreadManager ]
 ...

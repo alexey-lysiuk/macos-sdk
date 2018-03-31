@@ -1,4 +1,4 @@
-.TH "MPSLSTMDescriptor" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "MPSLSTMDescriptor" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -68,6 +68,9 @@ Inherits \fBMPSRNNDescriptor\fP\&.
 .ti -1c
 .RI "float \fBcellToOutputNeuronParamB\fP"
 .br
+.ti -1c
+.RI "float \fBcellToOutputNeuronParamC\fP"
+.br
 .in -1c
 .SH "Detailed Description"
 .PP 
@@ -122,7 +125,7 @@ Creates a LSTM descriptor\&.
 .PP
 \fBReturns:\fP
 .RS 4
-A valid MPSNNLSTMDescriptor object or nil, if failure\&. 
+\fBA\fP valid MPSNNLSTMDescriptor object or nil, if failure\&. 
 .RE
 .PP
 
@@ -135,9 +138,11 @@ Contains weights 'Vc_ij' - the 'peephole' weights - from the LSTM formula\&. if 
 .SS "\- cellGateRecurrentWeights\fC [read]\fP, \fC [write]\fP, \fC [nonatomic]\fP, \fC [retain]\fP"
 Contains weights 'Uc_ij' from the LSTM formula\&. If nil then assumed zero weights\&. Defaults to nil\&. 
 .SS "\- cellToOutputNeuronParamA\fC [read]\fP, \fC [write]\fP, \fC [nonatomic]\fP, \fC [assign]\fP"
-Neuron parameter A for 'gh'\&. Defaults to 1\&.0f\&. 
+Neuron parameter \fBA\fP for 'gh'\&. Defaults to 1\&.0f\&. 
 .SS "\- cellToOutputNeuronParamB\fC [read]\fP, \fC [write]\fP, \fC [nonatomic]\fP, \fC [assign]\fP"
 Neuron parameter B for 'gh'\&. Defaults to 1\&.0f\&. 
+.SS "\- cellToOutputNeuronParamC\fC [read]\fP, \fC [write]\fP, \fC [nonatomic]\fP, \fC [assign]\fP"
+Neuron parameter C for 'gh'\&. Defaults to 1\&.0f\&. 
 .SS "\- cellToOutputNeuronType\fC [read]\fP, \fC [write]\fP, \fC [nonatomic]\fP, \fC [assign]\fP"
 Neuron type definition for 'gh', see \fBMPSCNNNeuronType\fP\&. Defaults to MPSCNNNeuronTypeTanH\&. 
 .SS "\- forgetGateInputWeights\fC [read]\fP, \fC [write]\fP, \fC [nonatomic]\fP, \fC [retain]\fP"

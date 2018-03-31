@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4DD16E8A-64FA-3254-AC50-7057C8C3A2D8' ]
+uuids:           [ 'x86_64: 41A47B0A-56E4-30AF-9DAF-E2F1D76DBA5D' ]
 platform:        macosx
 install-name:    /usr/lib/libpmsample.dylib
 objc-constraint: none

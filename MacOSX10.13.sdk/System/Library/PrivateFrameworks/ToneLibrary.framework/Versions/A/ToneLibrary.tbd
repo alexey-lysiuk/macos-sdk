@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7EEABD7F-D0CB-327E-A772-ACF406B9C8F2' ]
+uuids:           [ 'x86_64: 40669A87-2E48-3A42-8310-34046580C684' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ToneLibrary.framework/Versions/A/ToneLibrary
 exports:         
@@ -28,10 +28,10 @@ exports:
                        _kTonePrivateKey, _kToneProtectedContentKey, _kTonePurchasedKey, 
                        _kToneStoreFrontIdentifierKey, _kToneStoreItemIdentifierKey, 
                        _kToneSyncIdentifierKey, _kToneTitleKey ]
-    objc-classes:    [ _TLAccessQueue, _TLAlert, _TLAlertActivationAssertion, _TLAlertConfiguration, 
-                       _TLAlertContext, _TLAlertController, _TLAlertPlaybackCompletionContext, 
-                       _TLAlertQueuePlayerController, _TLAlertStoppingOptions, _TLAlertSystemSoundContext, 
-                       _TLAlertSystemSoundController, _TLAlertTone, _TLBacklight, 
-                       _TLCapabilitiesManager, _TLITunesTone, _TLPreferencesUtilities, 
-                       _TLSystemApplication, _TLSystemSound, _TLToneManager, _TLToneStoreDownload ]
+    objc-classes:    [ TLAccessQueue, TLAlert, TLAlertActivationAssertion, TLAlertConfiguration, 
+                       TLAlertContext, TLAlertController, TLAlertPlaybackCompletionContext, 
+                       TLAlertQueuePlayerController, TLAlertStoppingOptions, TLAlertSystemSoundContext, 
+                       TLAlertSystemSoundController, TLAlertTone, TLBacklight, TLCapabilitiesManager, 
+                       TLITunesTone, TLPreferencesUtilities, TLSystemApplication, 
+                       TLSystemSound, TLToneManager, TLToneStoreDownload ]
 ...

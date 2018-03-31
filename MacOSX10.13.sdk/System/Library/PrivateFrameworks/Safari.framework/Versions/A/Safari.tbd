@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CC6D2E5B-3348-3D21-AC8B-68DEE8F4C97A' ]
+uuids:           [ 'x86_64: 3F1203C7-69AF-3EE3-A735-4F5C2629C576' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Safari.framework/Versions/A/Safari
-current-version: 604.4.7
+current-version: 605.1.33
 compatibility-version: 528
 exports:         
   - archs:           [ x86_64 ]
@@ -72,7 +72,8 @@ exports:
                        _messageFromContainingAppUserInfoKey, _resetCloudHistoryDefaultsKey, 
                        _safariFrameworkBundleIdentifier, _safariProductionApplicationBundleIdentifier, 
                        _safariSharedFrameworkBundleIdentifier, _safariTechnologyPreviewApplicationBundleIdentifier ]
-    objc-classes:    [ _BookmarksController, _PurgeableDirectory, _PurgeableItemController, 
-                       _PurgeableWebCache, _SafariContentBlockerAppExtensionsController, 
-                       _SnapshotCache, _SnapshotRequest, _SnapshotResponse, _WebBookmarkGroup ]
+    objc-classes:    [ BookmarksController, PurgeableDirectory, PurgeableItemController, 
+                       PurgeableWebCache, SafariContentBlockerAppExtensionsController, 
+                       SnapshotCache, SnapshotRequest, SnapshotResponse, WebBookmarkGroup, 
+                       WebBookmarkLeaf, WebBookmarkList, WebBookmarkProxy ]
 ...

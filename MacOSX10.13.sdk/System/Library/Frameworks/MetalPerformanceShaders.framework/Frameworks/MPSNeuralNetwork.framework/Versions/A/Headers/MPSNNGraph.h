@@ -57,10 +57,32 @@ MPS_CLASS_AVAILABLE_STARTING( macos(10.13), ios(11.0), tvos(11.0))
  *                          This is the image that will be returned.  Note: the imageAllocator
  *                          for this node is ignored and the MPSNNGraph.destinationImageAllocator
  *                          is used for this node instead.
+ *  @param      resultIsNeeded Commonly, when training a graph, the last MPSImage out of the
+ *                             graph is not used. The final gradient filter is run solely to update
+ *                             some weights. If resultIsNeeded is set to NO, nil will
+ *                             be returned from the left hand side of the -encode call instead,
+ *                             and computation to produce the last image may be pruned away.
  *  @result     A new MPSNNGraph.
  */
+
 -(nullable instancetype)  initWithDevice: (nonnull id <MTLDevice>) device
-                             resultImage: (MPSNNImageNode * __nonnull) resultImage NS_DESIGNATED_INITIALIZER;
+                             resultImage: (MPSNNImageNode * __nonnull) resultImage
+                     resultImageIsNeeded: (BOOL) resultIsNeeded NS_DESIGNATED_INITIALIZER;
+
+
++(nullable instancetype) graphWithDevice: (nonnull id <MTLDevice>) device
+                             resultImage: (MPSNNImageNode * __nonnull) resultImage
+                     resultImageIsNeeded: (BOOL) resultIsNeeded;
+
+-(nullable instancetype)  initWithDevice: (nonnull id <MTLDevice>) device
+                             resultImage: (MPSNNImageNode * __nonnull) resultImage
+MPS_AVAILABLE_STARTING_BUT_DEPRECATED( "Please use -initWithDevice:resultImage:resultIsNeeded: instead. Without this information, too much or too little work may occur. Results may be undefined.",
+                                      macos(10.13, 10.13.4), ios(11.0, 11.3), tvos(11.0,11.3));
+
++(nullable instancetype) graphWithDevice: (nonnull id <MTLDevice>) device
+                             resultImage: (MPSNNImageNode * __nonnull) resultImage
+MPS_AVAILABLE_STARTING_BUT_DEPRECATED( "Please use +graphWithDevice:resultImage:resultIsNeeded: instead. Without this information, too much or too little work may occur. Results may be undefined.",
+                                      macos(10.13, 10.13.4), ios(11.0, 11.3), tvos(11.0,11.3));
 
 /*! @abstract NSSecureCoding compatability
  *  @discussion While the standard NSSecureCoding/NSCoding method
@@ -96,7 +118,7 @@ MPS_CLASS_AVAILABLE_STARTING( macos(10.13), ios(11.0), tvos(11.0))
 @property (readonly, nullable, nonatomic) id <MPSHandle> resultHandle;
 
 /*! @abstract   Should MPSState objects produced by -encodeToCommandBuffer... be temporary objects.
- *  @discussion See MPSState description. Default: YES
+ *  @discussion See MPSState description. Default: NO
  */
 @property (readwrite, nonatomic) BOOL  outputStateIsTemporary;
 
@@ -105,6 +127,19 @@ MPS_CLASS_AVAILABLE_STARTING( macos(10.13), ios(11.0), tvos(11.0))
  *              the graph. Default: MPSImage.defaultAllocator
  */
 @property (readwrite, nonatomic, retain, nonnull) id <MPSImageAllocator> destinationImageAllocator;
+
+
+/*! @abstract   The default storage format used for graph intermediate images
+ *  @discussion This doesn't affect how data is stored in buffers in states.
+ *              Nor does it affect the storage format for weights
+ *              such as convolution weights stored by individual filters.
+ *              Default: MPSImageFeatureChannelFormatFloat16 */
+@property (readwrite, nonatomic) MPSImageFeatureChannelFormat   format;
+
+/*! @abstract   Set at -init time.
+ *  @discussion If NO, nil will be returned from -encode calls and some computation
+ *              may be omitted. */
+@property (readonly, nonatomic) BOOL resultImageIsNeeded;
 
 /*! @abstract       Encode the graph to a MTLCommandBuffer
  *  @param          commandBuffer       The command buffer
@@ -129,11 +164,44 @@ MPS_CLASS_AVAILABLE_STARTING( macos(10.13), ios(11.0), tvos(11.0))
  *  @result     A MPSImage or MPSTemporaryImage allocated per the destinationImageAllocator containing the output of the graph.
  *              It will be automatically released when commandBuffer completes.
  */
--(MPSImage * __nonnull)  encodeToCommandBuffer: (nonnull id <MTLCommandBuffer>) commandBuffer
-                                  sourceImages: (NSArray<MPSImage*> * __nonnull) sourceImages
-                                  sourceStates: (NSArray<MPSState*> * __nullable) sourceStates
-                            intermediateImages: (NSMutableArray <MPSImage*> * __nullable) intermediateImages
-                             destinationStates: (NSMutableArray<MPSState*> * __nullable) destinationStates;
+-(MPSImage * __nullable)  encodeToCommandBuffer: (nonnull id <MTLCommandBuffer>) commandBuffer
+                                   sourceImages: (NSArray<MPSImage*> * __nonnull) sourceImages
+                                   sourceStates: (NSArray<MPSState*> * __nullable) sourceStates
+                             intermediateImages: (NSMutableArray<MPSImage*> * __nullable) intermediateImages
+                              destinationStates: (NSMutableArray<MPSState*> * __nullable) destinationStates;
+
+/*! @abstract       Encode the graph to a MTLCommandBuffer
+ *  @discussion     This interface is like the other except that it operates on a batch of images all
+ *                  at once.  In addition, you may specify whether the result is needed.
+ *  @param          commandBuffer       The command buffer
+ *  @param          sourceImages        A list of MPSImages to use as the source images for the graph.
+ *                                      These should be in the same order as the list returned from MPSNNGraph.sourceImageHandles.
+ *                                      The images may be image arrays. Typically, this is only one or two images
+ *                                      such as a .JPG decoded into a MPSImage*.  If the sourceImages are MPSTemporaryImages,
+ *                                      the graph will decrement the readCount by 1, even if the graph actually
+ *                                      reads an image multiple times.
+ *  @param          sourceStates        A list of MPSState objects to use as state for a graph.
+ *                                      These should be in the same order as the list returned from MPSNNGraph.sourceStateHandles.
+ *                                      May be nil, if there is no source state. If the sourceStates are temporary,
+ *                                      the graph will decrement the readCount by 1, even if the graph actually
+ *                                      reads the state multiple times.
+ *  @param      intermediateImages      An optional NSMutableArray to receive any MPSImage objects exported as part of its operation.
+ *                                      These are only the images that were tagged with MPSNNImageNode.exportFromGraph = YES. The
+ *                                      identity of the states is given by -resultStateHandles.  If temporary, each intermediateImage
+ *                                      will have a readCount of 1.  If the result was tagged exportFromGraph = YES, it will be here
+ *                                      too, with a readCount of 2.
+ *  @param      destinationStates       An optional NSMutableArray to receive any MPSState objects created as part of its operation.
+ *                                      The identity of the states is given by -resultStateHandles.
+ *  @result     A MPSImageBatch or MPSTemporaryImageBatch allocated per the destinationImageAllocator containing the output of the graph.
+ *              It will be automatically released when commandBuffer completes. If resultIsNeeded == NO, then this
+ *              will return nil.
+ */
+-(MPSImageBatch * __nullable) encodeBatchToCommandBuffer: (__nonnull id <MTLCommandBuffer>) commandBuffer
+                                            sourceImages: (NSArray<MPSImageBatch*> * __nonnull) sourceImages
+                                            sourceStates: (NSArray<MPSStateBatch*> * __nullable) sourceStates
+                                      intermediateImages: (NSMutableArray <MPSImageBatch*> * __nullable) intermediateImages
+                                       destinationStates: (NSMutableArray <MPSStateBatch *> * __nullable) destinationStates
+                                MPS_AVAILABLE_STARTING( macos(10.13.4), ios(11.3), tvos(11.3));
 
 /*! @abstract       Encode the graph to a MTLCommandBuffer
  *
@@ -155,10 +223,15 @@ MPS_CLASS_AVAILABLE_STARTING( macos(10.13), ios(11.0), tvos(11.0))
  *  @param          sourceImages        A list of MPSImages to use as the source images for the graph.
  *                                      These should be in the same order as the list returned from MPSNNGraph.sourceImageHandles.
  *  @result     A MPSImage or MPSTemporaryImage allocated per the destinationImageAllocator containing the output of the graph.
- *              It will be automatically released when commandBuffer completes.
+ *              It will be automatically released when commandBuffer completes.  It can be nil if resultImageIsNeeded == NO
  */
--(MPSImage * __nonnull) encodeToCommandBuffer: (nonnull id <MTLCommandBuffer>) commandBuffer
+-(MPSImage * __nullable) encodeToCommandBuffer: (nonnull id <MTLCommandBuffer>) commandBuffer
                                  sourceImages: (NSArray<MPSImage*> * __nonnull) sourceImages;
+
+/*! @abstract Convenience method to encode a batch of images*/
+-(MPSImageBatch * __nullable) encodeBatchToCommandBuffer: (nonnull id <MTLCommandBuffer>) commandBuffer
+                                            sourceImages: (NSArray<MPSImageBatch*> * __nonnull) sourceImages
+                                            sourceStates: (NSArray<MPSStateBatch*> * __nullable) sourceStates;
 
 
 /*! @abstract Convenience method to execute a graph without having to manage many Metal details

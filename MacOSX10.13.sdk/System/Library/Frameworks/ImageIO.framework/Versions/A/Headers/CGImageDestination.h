@@ -11,7 +11,6 @@
 
 typedef struct IIO_BRIDGED_TYPE(id) CGImageDestination * CGImageDestinationRef;
 
-#include <CoreGraphics/CoreGraphics.h>
 #include <ImageIO/CGImageSource.h>
 #include <ImageIO/CGImageMetadata.h>
 

@@ -316,4 +316,16 @@ skip;
 
 skip;
 
+/*
+ * Returns information about a specific zone.
+ * The zone name is passed in via the argument name,
+ * info returns the zone info.
+ */
+routine mach_zone_info_for_zone(
+		host		: host_priv_t;
+		name		: mach_zone_name_t;
+	out	info		: mach_zone_info_t);
+
+skip;
+
 /* vim: set ft=c : */

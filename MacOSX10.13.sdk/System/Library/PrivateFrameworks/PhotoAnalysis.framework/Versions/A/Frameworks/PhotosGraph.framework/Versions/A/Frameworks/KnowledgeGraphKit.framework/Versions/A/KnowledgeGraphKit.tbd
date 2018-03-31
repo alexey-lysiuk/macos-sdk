@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 427A1E73-8227-3F42-ADFF-FF54B510CB48' ]
+uuids:           [ 'x86_64: 1A33253D-89A4-360F-9FCF-22C3F4B0B6B4' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Versions/A/Frameworks/PhotosGraph.framework/Versions/A/Frameworks/KnowledgeGraphKit.framework/Versions/A/KnowledgeGraphKit
 objc-constraint: none
@@ -12,6 +12,6 @@ exports:
                        _kMAElementIgnoreDomain, _kMAElementInvalidDomain, _kMAElementInvalidIdentifier, 
                        _kMAGraphDataExtension, _kMAGraphJSONExtension, _kMAGraphMLExtension, 
                        _kMAGraphPersistentStoreExtension ]
-    objc-classes:    [ _MAEdge, _MAElement, _MAError, _MAGraph, _MAMemoryFootprint, 
-                       _MANode, _MAPath, _MAPaths, _MASubGraph ]
+    objc-classes:    [ MAEdge, MAElement, MAError, MAGraph, MAMemoryFootprint, MANode, 
+                       MAPath, MAPaths, MASubGraph ]
 ...

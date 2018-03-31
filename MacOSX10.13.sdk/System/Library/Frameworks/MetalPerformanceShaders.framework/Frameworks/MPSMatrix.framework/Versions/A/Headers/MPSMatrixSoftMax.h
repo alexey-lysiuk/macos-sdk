@@ -106,8 +106,8 @@ MPS_AVAILABLE_STARTING(macos(10.13), ios(11.0), tvos(11.0) );
  *              MPSDataTypeFloat32 or MPSDataTypeFloat16.
  */
 -(void) encodeToCommandBuffer: (nonnull id <MTLCommandBuffer>) commandBuffer
-                  inputMatrix: (MPSMatrix const* __nonnull) inputMatrix
-                 resultMatrix: (MPSMatrix* __nonnull) resultMatrix
+                  inputMatrix: (MPSMatrix * __nonnull) inputMatrix
+                 resultMatrix: (MPSMatrix * __nonnull) resultMatrix
 MPS_SWIFT_NAME(encode(commandBuffer:inputMatrix:resultMatrix:));
 
 

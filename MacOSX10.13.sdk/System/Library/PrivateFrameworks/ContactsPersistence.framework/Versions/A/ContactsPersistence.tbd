@@ -1,45 +1,43 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
 uuids:           [ 'i386: ED578969-A558-3043-98E6-C009CDC7AF79', 'x86_64: B7EA2D0A-8A43-3E9C-A7D2-E9585064C328' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ContactsPersistence.framework/Versions/A/ContactsPersistence
 exports:         
   - archs:           [ i386 ]
-    objc-classes:    [ _ABCDContactIndex, _ABCDCoreDataDeprecations, _ABCDCustomPropertyValue, 
-                       _ABCDDateComponents, _ABCDDateUtils, _ABCDPlatform, _ABCDPostalAddress, 
-                       _ABCDRelatedName, _ABCDURLAddress, _CNAddPersistentStoreResult, 
-                       _CNCDContactIndexMigrator, _CNCDLabelMigrator, _CNCDLocalAccountDescription, 
-                       _CNCDMigrator, _CNCDOrphanPropertyMigrator, _CNCDPersistentBackend, 
-                       _CNCDPhoneNumberMigrator, _CNContactStoreChangesNotifier, 
-                       _CNContactStoreNotificationInfo, _CNCoreDataDeprecations, 
-                       _CNOnDiskAccountDescription, _CNPersistentStoreBuilder, _CNPersistentStoreBuilderEnvironment, 
-                       _CNPersistentStoreCoordinatorCache, _CNPersistentStoreCoordinatorCacheEntry, 
-                       _CNPersistentStoreCoordinatorFactory, _CNPersistentStoreCoordinatorResult, 
-                       _CNPersistentStoreCoordinatorUpdater, _CNPersistentStoreDescription, 
-                       _CNTempFileHelper ]
+    objc-classes:    [ ABCDContactIndex, ABCDCoreDataDeprecations, ABCDCustomPropertyValue, 
+                       ABCDDateComponents, ABCDDateUtils, ABCDPlatform, ABCDPostalAddress, 
+                       ABCDRelatedName, ABCDURLAddress, CNAddPersistentStoreResult, 
+                       CNCDContactIndexMigrator, CNCDLabelMigrator, CNCDLocalAccountDescription, 
+                       CNCDMigrator, CNCDOrphanPropertyMigrator, CNCDPersistentBackend, 
+                       CNCDPhoneNumberMigrator, CNContactStoreChangesNotifier, CNContactStoreNotificationInfo, 
+                       CNCoreDataDeprecations, CNOnDiskAccountDescription, CNPersistentStoreBuilder, 
+                       CNPersistentStoreBuilderEnvironment, CNPersistentStoreCoordinatorCache, 
+                       CNPersistentStoreCoordinatorCacheEntry, CNPersistentStoreCoordinatorFactory, 
+                       CNPersistentStoreCoordinatorResult, CNPersistentStoreCoordinatorUpdater, 
+                       CNPersistentStoreDescription, CNTempFileHelper ]
   - archs:           [ x86_64 ]
-    objc-ivars:      [ _ABCDContact.mHasUserImageChanges, _ABCDContainer._identifier, 
-                       _ABCDContainer._name, _ABCDContainer._permissions, _ABCDContainer._persistentStoreIdentifier, 
-                       _ABCDContainer._persistentStoreURL, _ABCDContainer._type, 
-                       _ABCDContainerPermissions._canCreateContacts, _ABCDContainerPermissions._canCreateGroups, 
-                       _ABCDContainerPermissions._canDeleteContacts, _ABCDImageHelper._contactIdentifier, 
-                       _ABCDImageHelper._emailAddresses, _ABCDImageHelper._imagesDirectory, 
-                       _ABCDRecord._propertyValueCache, _ABCDRecord._publicRecord, 
-                       _ABCDRecordNameFormatter._defaultNameOrder, _ABCDRecordNameFormatter._defaultSortOrder, 
-                       _ABCDRecordNameFormatter._showCompany, _ABCDRecordNameFormatter._showCompanyInFallback, 
-                       _ABCDRecordNameFormatter._showFallback, _ABCDRecordNameFormatter._showNickname, 
-                       _ABCDRecordNameFormatter._showPhonetic, _ABCDRecordNameFormatter._showPrefix, 
-                       _ABCDRecordNameFormatter._showSuffix, _CNACAccountCollection._accounts, 
-                       _CNACAccountCollection._baseURL, _CNACAccountCollection._enabledAccountsObservable, 
-                       _CNACAccountCollection._includeLocalAccount, _CNACAccountCollection._tag, 
-                       _CNACAccountCollection._updateWatcher, _CNCDInMemoryPersistenceBackend._containers, 
-                       _CNCDInMemoryPersistenceBackend._coordinator, _CNCDPersistenceContext._changesNotifier, 
-                       _CNCDPersistenceContext._managedObjectContext, _CNCDPersistenceContext._owningAddressBook, 
-                       _CNCDPersistenceContext._persistenceBackend, _CNCDPersistenceStack._backendProvider, 
-                       _CNCDPersistenceStack._notificationSource, _CNEmptyAccountCollection._baseURL, 
-                       _CNEmptyAccountCollection._tag, _CNOnDiskAccountCollection._allAccounts, 
-                       _CNOnDiskAccountCollection._baseURL, _CNOnDiskAccountCollection._includeLocalAccount, 
-                       _CNOnDiskAccountCollection._tag ]
+    objc-ivars:      [ ABCDContact.mHasUserImageChanges, ABCDContainer._identifier, 
+                       ABCDContainer._name, ABCDContainer._permissions, ABCDContainer._persistentStoreIdentifier, 
+                       ABCDContainer._persistentStoreURL, ABCDContainer._type, ABCDContainerPermissions._canCreateContacts, 
+                       ABCDContainerPermissions._canCreateGroups, ABCDContainerPermissions._canDeleteContacts, 
+                       ABCDImageHelper._contactIdentifier, ABCDImageHelper._emailAddresses, 
+                       ABCDImageHelper._imagesDirectory, ABCDRecord._propertyValueCache, 
+                       ABCDRecord._publicRecord, ABCDRecordNameFormatter._defaultNameOrder, 
+                       ABCDRecordNameFormatter._defaultSortOrder, ABCDRecordNameFormatter._showCompany, 
+                       ABCDRecordNameFormatter._showCompanyInFallback, ABCDRecordNameFormatter._showFallback, 
+                       ABCDRecordNameFormatter._showNickname, ABCDRecordNameFormatter._showPhonetic, 
+                       ABCDRecordNameFormatter._showPrefix, ABCDRecordNameFormatter._showSuffix, 
+                       CNACAccountCollection._accounts, CNACAccountCollection._baseURL, 
+                       CNACAccountCollection._enabledAccountsObservable, CNACAccountCollection._includeLocalAccount, 
+                       CNACAccountCollection._tag, CNACAccountCollection._updateWatcher, 
+                       CNCDInMemoryPersistenceBackend._containers, CNCDInMemoryPersistenceBackend._coordinator, 
+                       CNCDPersistenceContext._changesNotifier, CNCDPersistenceContext._managedObjectContext, 
+                       CNCDPersistenceContext._owningAddressBook, CNCDPersistenceContext._persistenceBackend, 
+                       CNCDPersistenceStack._backendProvider, CNCDPersistenceStack._notificationSource, 
+                       CNEmptyAccountCollection._baseURL, CNEmptyAccountCollection._tag, 
+                       CNOnDiskAccountCollection._allAccounts, CNOnDiskAccountCollection._baseURL, 
+                       CNOnDiskAccountCollection._includeLocalAccount, CNOnDiskAccountCollection._tag ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ _ABCDAccountContainerSuffix, _ABCDCompareByOrderingIndex, 
                        _ABCDCompareByOrderingIndexWithPrimaryFirst, _ABCDRecordPersistentStoreURLTransform, 
@@ -100,14 +98,13 @@ exports:
                        _kABSocialProfileRelationshipName, _kABSourceWhereContactIsMeRelationshipName, 
                        _kABSubscribedGroupRecordType, _kABSubscribedPersonRecordType, 
                        _kABSubscriptionRecordType, _kABUrlAddresses ]
-    objc-classes:    [ _ABCDAddressBookSource, _ABCDAlertTone, _ABCDCalendarURI, 
-                       _ABCDContact, _ABCDContactDate, _ABCDContainer, _ABCDContainerPermissions, 
-                       _ABCDCustomProperty, _ABCDDeletedRecordLog, _ABCDDistributionListConfig, 
-                       _ABCDEmailAddress, _ABCDGroup, _ABCDImageHelper, _ABCDInfo, 
-                       _ABCDMailRecent, _ABCDMessagingAddress, _ABCDNote, _ABCDOwnedObject, 
-                       _ABCDPhoneNumber, _ABCDRecord, _ABCDRecordNameFormatter, _ABCDService, 
-                       _ABCDSmartGroup, _ABCDSocialProfile, _ABCDSubscribedContact, 
-                       _ABCDSubscribedGroup, _CNACAccountCollection, _CNCDInMemoryPersistenceBackend, 
-                       _CNCDPersistenceContext, _CNCDPersistenceStack, _CNEmptyAccountCollection, 
-                       _CNOnDiskAccountCollection ]
+    objc-classes:    [ ABCDAddressBookSource, ABCDAlertTone, ABCDCalendarURI, ABCDContact, 
+                       ABCDContactDate, ABCDContainer, ABCDContainerPermissions, 
+                       ABCDCustomProperty, ABCDDeletedRecordLog, ABCDDistributionListConfig, 
+                       ABCDEmailAddress, ABCDGroup, ABCDImageHelper, ABCDInfo, ABCDMailRecent, 
+                       ABCDMessagingAddress, ABCDNote, ABCDOwnedObject, ABCDPhoneNumber, 
+                       ABCDRecord, ABCDRecordNameFormatter, ABCDService, ABCDSmartGroup, 
+                       ABCDSocialProfile, ABCDSubscribedContact, ABCDSubscribedGroup, 
+                       CNACAccountCollection, CNCDInMemoryPersistenceBackend, CNCDPersistenceContext, 
+                       CNCDPersistenceStack, CNEmptyAccountCollection, CNOnDiskAccountCollection ]
 ...

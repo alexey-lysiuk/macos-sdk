@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: F7BEF8BA-7D1F-34A2-97B8-D49F20886644', 'x86_64: E4CBAAFC-9045-38AC-9F93-8C931DDED9D8' ]
+uuids:           [ 'i386: 05E16D1D-98F1-3626-BD7C-D84771BCE71F', 'x86_64: 3682ABFB-2561-3419-847D-02C247F4800D' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Print.framework/Versions/A/Print
 current-version: 267

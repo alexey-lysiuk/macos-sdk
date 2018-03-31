@@ -166,8 +166,9 @@ typedef enum
 /*! 
   @class IKImageBrowserView
   @abstract An IKImageBrowserView object is a view that display and browse images and movies. It supports scrolling and zooming.  
-  @discussion The IKImageBrowserView will be deprecated soon. Please switch to NSCollectionView.
+  @discussion The IKImageBrowserView is deprecated. Please switch to NSCollectionView.
  */
+API_DEPRECATED("Deprecated - Please use NSCollectionView instead", macos(10.5, 10.14))
 @interface IKImageBrowserView : NSView <NSDraggingSource> {
 @private
 

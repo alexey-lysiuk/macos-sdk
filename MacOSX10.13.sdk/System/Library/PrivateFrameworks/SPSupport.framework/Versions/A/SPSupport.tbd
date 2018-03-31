@@ -1,13 +1,13 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 09799A46-42BA-3F72-AD12-9B3F0DB1FE33' ]
+uuids:           [ 'x86_64: CD08B5A8-2742-30D0-9006-036960D8941E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SPSupport.framework/Versions/A/SPSupport
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ __comparePropertyOrders ]
-    objc-classes:    [ _SPDevice, _SPDocument, _SPReporter ]
-    objc-ivars:      [ _SPDevice.children, _SPDevice.entry, _SPDevice.volumes, _SPReporter._bundle, 
-                       _SPReporter._fromAppleRequirement, _SPReporter._fromIdentifiedDeveloperRequirement, 
-                       _SPReporter._fromMacAppStoreRequirement ]
+    objc-classes:    [ SPDevice, SPDocument, SPReporter ]
+    objc-ivars:      [ SPDevice.children, SPDevice.entry, SPDevice.volumes, SPReporter._bundle, 
+                       SPReporter._fromAppleRequirement, SPReporter._fromIdentifiedDeveloperRequirement, 
+                       SPReporter._fromMacAppStoreRequirement ]
 ...

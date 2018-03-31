@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 60D12A36-C579-348F-B84C-E25F20C422E0' ]
+uuids:           [ 'x86_64: 1D199A76-E8CB-38BB-B00C-2AAEA1B9E712' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/WirelessDiagnostics.framework/Versions/A/WirelessDiagnostics
 current-version: 757
@@ -664,7 +664,7 @@ exports:
                        __ZTVN3awd7profile6MetricE, __ZTVN3awd7profile7ProfileE, __ZTVN3awd7profile9ConditionE, 
                        __ZTVN3awd7profile9TimerSpecE, _kAWDObserverEventKey, _kAwdDiagnosticsFileArray, 
                        _kAwdLoggingSystemName ]
-    objc-classes:    [ _AWDMetricContainer, _AWDMetricManager, _AWDObserver, _AWDServerConnection ]
+    objc-classes:    [ AWDMetricContainer, AWDMetricManager, AWDObserver, AWDServerConnection ]
     weak-def-symbols: [ __ZTI12PRNGenerator, __ZTIN3awd10AWDMessageE, __ZTIN3ctu20SharedSynchronizableI12PRNGeneratorEE, 
                         __ZTIN3ctu8LoggableIN3awd18AWDBasicConfigTypeENS_11OsLogLoggerEEE, 
                         __ZTINSt3__120__shared_ptr_emplaceIN3awd20ServerConnectionInfoENS_9allocatorIS2_EEEE, 

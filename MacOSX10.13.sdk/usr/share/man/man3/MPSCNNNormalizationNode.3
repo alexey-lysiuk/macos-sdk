@@ -1,4 +1,4 @@
-.TH "MPSCNNNormalizationNode" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "MPSCNNNormalizationNode" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -52,12 +52,12 @@ Implemented in \fBMPSCNNCrossChannelNormalizationNode\fP, \fBMPSCNNLocalContrast
 
 .SH "Property Documentation"
 .PP 
-.SS "\- (float) alpha\fC [read]\fP, \fC [write]\fP, \fC [nonatomic]\fP, \fC [assign]\fP"
-
-.SS "\- (float) beta\fC [read]\fP, \fC [write]\fP, \fC [nonatomic]\fP, \fC [assign]\fP"
-
-.SS "\- (float) delta\fC [read]\fP, \fC [write]\fP, \fC [nonatomic]\fP, \fC [assign]\fP"
-
+.SS "\- alpha\fC [read]\fP, \fC [write]\fP, \fC [nonatomic]\fP, \fC [assign]\fP"
+The value of alpha\&. Default is 1\&.0\&. Must be non-negative\&. 
+.SS "\- beta\fC [read]\fP, \fC [write]\fP, \fC [nonatomic]\fP, \fC [assign]\fP"
+The value of beta\&. Default is 5\&.0 
+.SS "\- delta\fC [read]\fP, \fC [write]\fP, \fC [nonatomic]\fP, \fC [assign]\fP"
+The value of delta\&. Default is 1\&.0 
 
 .SH "Author"
 .PP 

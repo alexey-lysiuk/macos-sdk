@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BEC07C7C-F3AC-3CF3-B13E-3EBFD6224C0D' ]
+uuids:           [ 'x86_64: 8D03D346-887A-3CE7-9483-4AD7804D1FBB' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DSExternalDisplay.framework/Versions/A/DSExternalDisplay
 objc-constraint: none

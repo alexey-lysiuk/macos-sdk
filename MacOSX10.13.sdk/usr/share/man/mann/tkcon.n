@@ -1,5 +1,5 @@
 '\"
-'\" Generated from file '/BuildRoot/Library/Caches/com.apple.xbs/Sources/tcl/tcl-118/tcl_ext/tkcon/tkcon/docs/tkcon.n.man' by tcllib/doctools with format 'nroff'
+'\" Generated from file '/BuildRoot/Library/Caches/com.apple.xbs/Sources/tcl/tcl-118.50.1/tcl_ext/tkcon/tkcon/docs/tkcon.n.man' by tcllib/doctools with format 'nroff'
 '\" Copyright (c) Jeffrey Hobbs <jeff at hobbs.org>
 '\"
 '\" The definitions below are for supplemental macros used in Tcl/Tk

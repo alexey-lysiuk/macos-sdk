@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 59905700-F4A9-32DA-9DF2-1B6D294C6D90' ]
+uuids:           [ 'x86_64: 66C08AC2-D647-32B6-A46D-351BDD838E04' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DFRDisplay.framework/Versions/A/DFRDisplay
-current-version: 112.30.1
+current-version: 112.50.22
 compatibility-version: 0
 objc-constraint: none
 exports:         
@@ -19,7 +19,12 @@ exports:
                        _DFRDisplayIsInterfacePresent, _DFRDisplayIsReady, _DFRDisplayMaxXferSize, 
                        _DFRDisplayRegisterForNotification, _DFRDisplayRunloopThread, 
                        _DFRDisplaySetArea, _DFRDisplaySetBrightness, _DFRDisplayVersionNumber, 
-                       _DFRDisplayVersionString, _GetInfoTimeout, __DFRDisplayGetTypeID, 
-                       __DFRDisplaySendZlp, __DFRDisplaySetOrientation, __dfr, _gDebug, 
-                       _gStartTime ]
+                       _DFRDisplayVersionString, _GetInfoTimeout, __DFRDisplayCheckPacket, 
+                       __DFRDisplayGetTypeID, __DFRDisplaySendZlp, __DFRDisplaySetOrientation, 
+                       __dfr, _dfr_util_copy_time_cfstr, _dfr_util_create_dictionary_from_xml, 
+                       _dfr_util_create_root_queue, _dfr_util_create_serial_queue, 
+                       _dfr_util_dictionary_add_cstr, _dfr_util_dictionary_add_data, 
+                       _dfr_util_dictionary_add_sint32, _dfr_util_dictionary_add_sint64, 
+                       _dfr_util_get_timestamp_ns, _dfr_util_get_timestamp_raw, _dfr_util_get_timestamp_with_factor, 
+                       _gDebug, _gStartTime ]
 ...

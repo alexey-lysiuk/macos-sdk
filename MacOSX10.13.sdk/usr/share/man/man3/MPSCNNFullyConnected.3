@@ -1,4 +1,4 @@
-.TH "MPSCNNFullyConnected" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "MPSCNNFullyConnected" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -29,7 +29,7 @@ Inherits \fBMPSCNNConvolution\fP\&.
 .SS "Additional Inherited Members"
 .SH "Detailed Description"
 .PP 
-This depends on Metal\&.framework  The \fBMPSCNNFullyConnected\fP specifies a fully connected convolution layer a\&.k\&.a\&. Inner product layer\&. A fully connected CNN layer is one where every input channel is connected to every output channel\&. The kernel width is equal to width of source image and the kernel height is equal to the height of source image\&. Width and height of the output is 1x1\&. Thus, it takes a srcW x srcH x Ni MPSCNNImage, convolves it with Weights[No][SrcW][srcH][Ni] and produces a 1 x 1 x No output\&. The following must be true: 
+This depends on Metal\&.framework  The \fBMPSCNNFullyConnected\fP specifies a fully connected convolution layer a\&.k\&.a\&. Inner product layer\&. \fBA\fP fully connected CNN layer is one where every input channel is connected to every output channel\&. The kernel width is equal to width of source image and the kernel height is equal to the height of source image\&. Width and height of the output is 1x1\&. Thus, it takes a srcW x srcH x Ni MPSCNNImage, convolves it with Weights[No][SrcW][srcH][Ni] and produces a 1 x 1 x No output\&. The following must be true: 
 .PP
 .nf
 kernelWidth  == source\&.width
@@ -65,7 +65,7 @@ strideX = strideY = group = 1
 .PP
 \fBReturns:\fP
 .RS 4
-A new \fBMPSKernel\fP object, or nil if failure\&. 
+\fBA\fP new \fBMPSKernel\fP object, or nil if failure\&. 
 .RE
 .PP
 
@@ -81,7 +81,7 @@ Standard init with default properties per filter type
 .PP
 \fBReturns:\fP
 .RS 4
-A pointer to the newly initialized object\&. This will fail, returning nil if the device is not supported\&. Devices must be MTLFeatureSet_iOS_GPUFamily2_v1 or later\&. 
+\fBA\fP pointer to the newly initialized object\&. This will fail, returning nil if the device is not supported\&. Devices must be MTLFeatureSet_iOS_GPUFamily2_v1 or later\&. 
 .RE
 .PP
 
@@ -94,23 +94,21 @@ Initializes a fully connected kernel\&.
 .RS 4
 \fIdevice\fP The MTLDevice on which this \fBMPSCNNFullyConnected\fP filter will be used 
 .br
-\fIfullyConnectedDescriptor\fP A pointer to a \fBMPSCNNConvolutionDescriptor\fP\&. strideInPixelsX, strideInPixelsY and group properties of fullyConnectedDescriptor must be set to 1 (default)\&. 
+\fIfullyConnectedDescriptor\fP \fBA\fP pointer to a \fBMPSCNNConvolutionDescriptor\fP\&. strideInPixelsX, strideInPixelsY and group properties of fullyConnectedDescriptor must be set to 1 (default)\&. 
 .br
-\fIkernelWeights\fP A pointer to a weights array\&. Each entry is a float value\&. The number of entries is = inputFeatureChannels * outputFeatureChannels * kernelHeight * kernelWidth The layout of filter weight is so that it can be reinterpreted as 4D tensor (array) weight[ outputChannels ][ kernelHeight ][ kernelWidth ][ inputChannels / groups ] Weights are converted to half float (fp16) internally for best performance\&. 
+\fIkernelWeights\fP \fBA\fP pointer to a weights array\&. Each entry is a float value\&. The number of entries is = inputFeatureChannels * outputFeatureChannels * kernelHeight * kernelWidth The layout of filter weight is so that it can be reinterpreted as 4D tensor (array) weight[ outputChannels ][ kernelHeight ][ kernelWidth ][ inputChannels / groups ] Weights are converted to half float (fp16) internally for best performance\&. 
 .br
-\fIbiasTerms\fP A pointer to bias terms to be applied to the convolution output\&. Each entry is a float value\&. The number of entries is = numberOfOutputFeatureMaps 
+\fIbiasTerms\fP \fBA\fP pointer to bias terms to be applied to the convolution output\&. Each entry is a float value\&. The number of entries is = numberOfOutputFeatureMaps 
 .br
 \fIflags\fP Currently unused\&. Pass MPSCNNConvolutionFlagsNone
 .RE
 .PP
 \fBReturns:\fP
 .RS 4
-A valid \fBMPSCNNConvolution\fP object or nil, if failure\&. 
+\fBA\fP valid \fBMPSCNNConvolution\fP object or nil, if failure\&. 
 .RE
 .PP
 
-.PP
-Reimplemented from \fBMPSCNNConvolution\fP\&.
 .SS "\- (nonnull instancetype) \fBinitWithDevice:\fP (nonnull id< MTLDevice >) device(nonnull id< \fBMPSCNNConvolutionDataSource\fP >) weights"
 Initializes a fully connected kernel 
 .PP
@@ -118,12 +116,12 @@ Initializes a fully connected kernel
 .RS 4
 \fIdevice\fP The MTLDevice on which this \fBMPSCNNFullyConnected\fP filter will be used 
 .br
-\fIweights\fP A pointer to a object that conforms to the \fBMPSCNNConvolutionDataSource\fP protocol\&. The \fBMPSCNNConvolutionDataSource\fP protocol declares the methods that an instance of \fBMPSCNNFullyConnected\fP uses to obtain the weights and bias terms for the CNN fully connected filter\&.
+\fIweights\fP \fBA\fP pointer to a object that conforms to the \fBMPSCNNConvolutionDataSource\fP protocol\&. The \fBMPSCNNConvolutionDataSource\fP protocol declares the methods that an instance of \fBMPSCNNFullyConnected\fP uses to obtain the weights and bias terms for the CNN fully connected filter\&.
 .RE
 .PP
 \fBReturns:\fP
 .RS 4
-A valid \fBMPSCNNFullyConnected\fP object or nil, if failure\&. 
+\fBA\fP valid \fBMPSCNNFullyConnected\fP object or nil, if failure\&. 
 .RE
 .PP
 

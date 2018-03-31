@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AD4CE5A1-3FCD-3697-ADEC-24F88C4779A9' ]
+uuids:           [ 'x86_64: 3906A24A-CAA5-3BFC-A0B0-C230921426FB' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IMDPersistence.framework/Versions/A/IMDPersistence
 current-version: 800
@@ -35,12 +35,12 @@ exports:
                        _IMDAttachmentRecordGetPurgeableDiskSpace, _IMDAttachmentRecordGetStartDate, 
                        _IMDAttachmentRecordGetTotalBytes, _IMDAttachmentRecordGetTransferState, 
                        _IMDAttachmentRecordGetTypeID, _IMDAttachmentRecordMarkAllAttachmentsAsNeedingCloudKitSync, 
-                       _IMDAttachmentRecordUpdateAttachmentGUIDWithGUID, _IMDAttachmentSpaceTakenByNonSyncedAttachmentClass, 
-                       _IMDBindAttachmentToMessage, _IMDBlobFromSqlColumn, _IMDCNRecordIDForAliases, 
-                       _IMDCanDowngradeDatabaseToVersion, _IMDChatAddMessageToSpotlight, 
-                       _IMDChatClearPendingDeleteChatsTable, _IMDChatCopyChatRecordIDsAndGUIDsToDeleteWithLimit, 
-                       _IMDChatInsertIntoDeletedChatsTable, _IMDChatRecordAddChat, 
-                       _IMDChatRecordAddHandle, _IMDChatRecordAddMessageIfNeededUnlocked, 
+                       _IMDAttachmentRecordUpdateAttachmentGUIDWithGUID, _IMDAttachmentResetAllAttachmentsInFailedCloudDownloadState, 
+                       _IMDAttachmentSpaceTakenByNonSyncedAttachmentClass, _IMDBindAttachmentToMessage, 
+                       _IMDBlobFromSqlColumn, _IMDCNRecordIDForAliases, _IMDCanDowngradeDatabaseToVersion, 
+                       _IMDChatAddMessageToSpotlight, _IMDChatClearPendingDeleteChatsTable, 
+                       _IMDChatCopyChatRecordIDsAndGUIDsToDeleteWithLimit, _IMDChatInsertIntoDeletedChatsTable, 
+                       _IMDChatRecordAddChat, _IMDChatRecordAddHandle, _IMDChatRecordAddMessageIfNeededUnlocked, 
                        _IMDChatRecordAssociateMessageWithGUIDToChatWithGUIDIfNeeded, 
                        _IMDChatRecordBulkCopy, _IMDChatRecordBulkUpdate, _IMDChatRecordCachedUnreadCount, 
                        _IMDChatRecordCopyAllActiveChats, _IMDChatRecordCopyAllActiveChatsWithLimitAndBlock, 
@@ -78,13 +78,13 @@ exports:
                        _IMDDatabaseCopy, _IMDDatabaseCopyWithAnonymize, _IMDDatabaseDelete, 
                        _IMDDatabaseReadTableInfo, _IMDDefaultSMSRecordStoreCreateSMSDBPath, 
                        _IMDDeleteOrphanedHandles, _IMDDeregisterReconnectBlockWithIdentifier, 
-                       _IMDDoubleFromSqlColumn, _IMDDowngradeDatabaseToVersion, _IMDDropAllIndexes, 
-                       _IMDDropAllIndexesWithOperation, _IMDDropAllTriggers, _IMDDropAllTriggersWithOperation, 
-                       _IMDDropTableWithOperation, _IMDDropTriggersWithTriggerNames, 
-                       _IMDDropUnknownIndexes, _IMDDropUnknownIndexesWithOperation, 
-                       _IMDDropUnknownTablesWithOperation, _IMDEnsureSharedRecordStoreInitialized, 
-                       _IMDFindOrphanedHandleRowIDs, _IMDGenerateInClauseForCount, 
-                       _IMDGetDatabasePath, _IMDGetDefaultAnonymizedDatabaseFilePath, 
+                       _IMDDisableHistoryImporter, _IMDDoubleFromSqlColumn, _IMDDowngradeDatabaseToVersion, 
+                       _IMDDropAllIndexes, _IMDDropAllIndexesWithOperation, _IMDDropAllTriggers, 
+                       _IMDDropAllTriggersWithOperation, _IMDDropTableWithOperation, 
+                       _IMDDropTriggersWithTriggerNames, _IMDDropUnknownIndexes, 
+                       _IMDDropUnknownIndexesWithOperation, _IMDDropUnknownTablesWithOperation, 
+                       _IMDEnsureSharedRecordStoreInitialized, _IMDFindOrphanedHandleRowIDs, 
+                       _IMDGenerateInClauseForCount, _IMDGetDatabasePath, _IMDGetDefaultAnonymizedDatabaseFilePath, 
                        _IMDGetDefaultAnonymizedDatabaseFolderPath, _IMDGetDefaultTrimmedDatabaseFilePath, 
                        _IMDGetDefaultTrimmedDatabaseFolderPath, _IMDGetDestinationFilePath, 
                        _IMDGetTimeStampedFilePath, _IMDHandleRecordAddHandleRecord, 
@@ -182,9 +182,12 @@ exports:
                        _IMDMigrateTo11009, _IMDMigrateTo11010, _IMDMigrateTo11011, 
                        _IMDMigrateTo11012, _IMDMigrateTo11013, _IMDMigrateTo11014, 
                        _IMDMigrateTo11015, _IMDMigrateTo11016, _IMDMigrateTo11017, 
-                       _IMDMigrateTo11018, _IMDMigrateTo8200, _IMDMigrateTo9002, 
-                       _IMDPersistenceCheckDatabaseThread, _IMDPersistencePerformBlock, 
-                       _IMDPersistencePerformBlockAfterDelay, _IMDPersistenceProtectionMerge_DeleteUnprotectedDatabase, 
+                       _IMDMigrateTo11018, _IMDMigrateTo11019, _IMDMigrateTo11020, 
+                       _IMDMigrateTo11021, _IMDMigrateTo11022, _IMDMigrateTo11023, 
+                       _IMDMigrateTo11024, _IMDMigrateTo11025, _IMDMigrateTo11026, 
+                       _IMDMigrateTo8200, _IMDMigrateTo9002, _IMDPersistenceCheckDatabaseThread, 
+                       _IMDPersistencePerformBlock, _IMDPersistencePerformBlockAfterDelay, 
+                       _IMDPersistenceProtectionMerge_DeleteUnprotectedDatabase, 
                        _IMDPersistenceProtectionMerge_MergeUnprotectedDatabase, _IMDPersistenceProtectionMerge_RenameUnprotectedDatabase, 
                        _IMDPersistenceProtectionMerge_SetChatRowIDIfTempDatabase, 
                        _IMDPersistenceProtectionMerge_UnprotectedDatabaseExists, 
@@ -282,9 +285,10 @@ exports:
                        __IMDUpdateSequenceNumberWithConnection, ___IMDPersistenceIPCServer_command_dispatcher, 
                        ___IMDPersistenceIPCServer_peer_event_handler, _kIMDSMSServiceIdentifier, 
                        _kIMDiMessageServiceIdentifier, _printToLogFile ]
-    objc-classes:    [ _IMAbstractDatabaseArchiver, _IMAbstractDatabaseTrimmer, _IMDAbstractDatabaseDowngrader, 
-                       _IMDDatabaseDowngradeHelper, _IMDMessageAutomaticHistoryDeletion, 
-                       _IMDPersistentAttachmentController, _IMDSqlQuery, _IMDSqlSelectQuery, 
-                       _IMDSuggestions, _IMDWhitetailToCoralDowngradeHelper, _IMDWhitetailToCoralDowngrader, 
-                       _IMDatabaseAnonymizer, _IMTrimDatabaseToDays, _IMTrimDatabaseToMessageCount ]
+    objc-classes:    [ IMAbstractDatabaseArchiver, IMAbstractDatabaseTrimmer, IMDAbstractDatabaseDowngrader, 
+                       IMDCoreSpotlightDispatchObject, IMDDatabaseDowngradeHelper, 
+                       IMDMessageAutomaticHistoryDeletion, IMDPersistence, IMDPersistentAttachmentController, 
+                       IMDSqlQuery, IMDSqlSelectQuery, IMDSuggestions, IMDWhitetailToCoralDowngradeHelper, 
+                       IMDWhitetailToCoralDowngrader, IMDatabaseAnonymizer, IMTrimDatabaseToDays, 
+                       IMTrimDatabaseToMessageCount ]
 ...

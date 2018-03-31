@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 85359A2C-9447-3286-8B65-6466D7B2D56B' ]
+uuids:           [ 'x86_64: 64D4E94E-43FD-3D1E-9BC2-E21AAC62A37C' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CalendarUIKit.framework/Versions/A/CalendarUIKit
 current-version: 0
@@ -16,20 +16,20 @@ exports:
                        _attributedStateGlyph, _attributedStatusGlyph, _colorForParticipationState, 
                        _compareNLEvents, _glyphWithAttributes, _gylphForCUIKParticipantDisplayImageState, 
                        _stateForParticipationStatus ]
-    objc-classes:    [ _CUIKAttendeeDescriptionGenerator, _CUIKAttendeeHeuristics, 
-                       _CUIKAvailabilityDescriptionGenerator, _CUIKDateDescriptionGenerator, 
-                       _CUIKDateStrings, _CUIKDescriptionGenerator, _CUIKEventDescriptionGenerator, 
-                       _CUIKEventHeuristics, _CUIKEventSuggestion, _CUIKEventSuggestionGenerator, 
-                       _CUIKEventTimeDetector, _CUIKFlightEventSuggestion, _CUIKInviteeDescriptionGenerator, 
-                       _CUIKLocationDescriptionGenerator, _CUIKNotificationDescriptionGenerator, 
-                       _CUIKPhoneNumberDescriptionGenerator, _CUIKRecents, _CUIKRecurrenceRuleDescriptionGenerator, 
-                       _CUIKSingleDayTimelineLayout, _CUIKSingleDayTimelineLayoutPartition, 
-                       _CUIKSingleDayTimelineOccurrenceBucket, _CUIKSplashScreenStrings, 
-                       _CUIKSuggestionCoalescedInfo, _CUIKSuggestionDescriptionGenerator, 
-                       _CUIKTTLDescriptionGeneratorUtilities, _CUIKTimeToLeaveDescriptionGenerator, 
-                       _CUIKTravelAdvisoryDescriptionUtilities, _CUIKTravelAdvisoryUtilities, 
-                       _CUIKUserActivity, _CUIKUserActivityCalendarDate, _CUIKUserActivityCalendarEvent, 
-                       _CUIKUserActivityRemindersListCategory, _CUIKUserActivityRemindersListDate, 
-                       _CUIKUserActivityRemindersListScheduled, _CUIKUserActivityRemindersListSharedInvitation, 
-                       _CUIKUserActivityWithSource, _CUIKiCloudKVStore ]
+    objc-classes:    [ CUIKAttendeeDescriptionGenerator, CUIKAttendeeHeuristics, 
+                       CUIKAvailabilityDescriptionGenerator, CUIKDateDescriptionGenerator, 
+                       CUIKDateStrings, CUIKDescriptionGenerator, CUIKEventDescriptionGenerator, 
+                       CUIKEventHeuristics, CUIKEventSuggestion, CUIKEventSuggestionGenerator, 
+                       CUIKEventTimeDetector, CUIKFlightEventSuggestion, CUIKInviteeDescriptionGenerator, 
+                       CUIKLocationDescriptionGenerator, CUIKNotificationDescriptionGenerator, 
+                       CUIKPhoneNumberDescriptionGenerator, CUIKRecents, CUIKRecurrenceRuleDescriptionGenerator, 
+                       CUIKSingleDayTimelineLayout, CUIKSingleDayTimelineLayoutPartition, 
+                       CUIKSingleDayTimelineOccurrenceBucket, CUIKSplashScreenStrings, 
+                       CUIKSuggestionCoalescedInfo, CUIKSuggestionDescriptionGenerator, 
+                       CUIKTTLDescriptionGeneratorUtilities, CUIKTimeToLeaveDescriptionGenerator, 
+                       CUIKTravelAdvisoryDescriptionUtilities, CUIKTravelAdvisoryUtilities, 
+                       CUIKUserActivity, CUIKUserActivityCalendarDate, CUIKUserActivityCalendarEvent, 
+                       CUIKUserActivityRemindersListCategory, CUIKUserActivityRemindersListDate, 
+                       CUIKUserActivityRemindersListScheduled, CUIKUserActivityRemindersListSharedInvitation, 
+                       CUIKUserActivityWithSource, CUIKiCloudKVStore ]
 ...

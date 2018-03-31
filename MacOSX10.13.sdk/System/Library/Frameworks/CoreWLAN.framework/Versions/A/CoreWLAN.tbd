@@ -1,11 +1,11 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: F2109362-0F47-3D05-A67F-D9752B03EB6B', 'x86_64: FFA24EBB-75A1-3B33-9B26-96BDAF758CC0' ]
+uuids:           [ 'i386: 68C405BD-8A07-3080-A9F0-938D0A2B49C8', 'x86_64: E862CC02-69D2-3503-887B-B6E8223081E7' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreWLAN.framework/Versions/A/CoreWLAN
 exports:         
   - archs:           [ x86_64 ]
-    objc-classes:    [ _CWPasswordSharingSimulator ]
+    objc-classes:    [ CWPasswordSharingSimulator ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ _Apple80211APIErrorDomain, _CWAddNetworkProfile, _CWAddNetworkProfileToBottom, 
                        _CWAddPasspointNetworkProfile, _CWAddPasspointNetworkProfileToBottom, 
@@ -118,26 +118,26 @@ exports:
                        _kCWScanKeyBSSID, _kCWScanKeyDwellTime, _kCWScanKeyMerge, 
                        _kCWScanKeyRestTime, _kCWScanKeySSID, _kCWScanKeyScanType, 
                        _knownNetworkEntryForNetworkProfile, _legacySecurityTypeForSecurityType, 
-                       _locStringForErrorCode, _readCurrentNetworkFromNVRAM, _readRecoveryNetworksFromNVRAM, 
-                       _roamingProfileTypeForSchemaString, _schemaStringForRoamingProfileType, 
-                       _schemaStringForSecurityType, _schemaStringForShareMode, _schemaStringForUserRole, 
-                       _securityTypeForLegacySecurityType, _securityTypeForSchemaString, 
-                       _shareModeForSchemaString, _stringFromData, _updateAPModeConfiguration, 
-                       _userRoleForSchemaString, _wlanNetworkInterfaceAvailable, 
+                       _locStringForErrorCode, _networkHiddenOrBroadcast, _readCurrentNetworkFromNVRAM, 
+                       _readRecoveryNetworksFromNVRAM, _roamingProfileTypeForSchemaString, 
+                       _schemaStringForRoamingProfileType, _schemaStringForSecurityType, 
+                       _schemaStringForShareMode, _schemaStringForUserRole, _securityTypeForLegacySecurityType, 
+                       _securityTypeForSchemaString, _shareModeForSchemaString, _stringFromData, 
+                       _updateAPModeConfiguration, _userRoleForSchemaString, _wlanNetworkInterfaceAvailable, 
                        _wow_get_parameters, _wow_preference_enabled, _wow_set_parameters, 
                        _wow_set_wake_condition, _wps_cancel, _wps_generate_pin, _wps_requires_pin, 
                        _wps_start, _wps_validate_checksum, _writeCurrentNetworkToNVRAM, 
                        _writeRecoveryNetworksToNVRAM ]
-    objc-classes:    [ _CW8021XProfile, _CWANQP3GPPCellular, _CWANQPCapabilityList, 
-                       _CWANQPConnectionCapability, _CWANQPDomainName, _CWANQPElement, 
-                       _CWANQPHS20CapabilityList, _CWANQPNAIRealm, _CWANQPNAIRealmEntry, 
-                       _CWANQPNetworkAuthenticationType, _CWANQPOperatorFriendlyName, 
-                       _CWANQPOperatorFriendlyNameEntry, _CWANQPRoamingConsortium, 
-                       _CWANQPVenueName, _CWANQPVenueNameEntry, _CWANQPWANMetrics, 
-                       _CWAutoJoinStatistics, _CWBTCStatus, _CWBaseStationPPPController, 
-                       _CWChannel, _CWChannelHistoryItem, _CWConfiguration, _CWEAPOLClient, 
-                       _CWIPMonitor, _CWInterface, _CWInterfaceManager, _CWLocationChannel, 
-                       _CWLocationClient, _CWMessageTracerCache, _CWMutableConfiguration, 
-                       _CWMutableNetworkProfile, _CWNetwork, _CWNetworkProfile, _CWRoamStatistics, 
-                       _CWTetherDevice, _CWUnlockSimulator, _CWWiFiClient, _CWWirelessProfile ]
+    objc-classes:    [ CW8021XProfile, CWANQP3GPPCellular, CWANQPCapabilityList, 
+                       CWANQPConnectionCapability, CWANQPDomainName, CWANQPElement, 
+                       CWANQPHS20CapabilityList, CWANQPNAIRealm, CWANQPNAIRealmEntry, 
+                       CWANQPNetworkAuthenticationType, CWANQPOperatorFriendlyName, 
+                       CWANQPOperatorFriendlyNameEntry, CWANQPRoamingConsortium, 
+                       CWANQPVenueName, CWANQPVenueNameEntry, CWANQPWANMetrics, CWAutoJoinStatistics, 
+                       CWBTCStatus, CWBaseStationPPPController, CWChannel, CWChannelHistoryItem, 
+                       CWConfiguration, CWEAPOLClient, CWIPMonitor, CWInterface, 
+                       CWInterfaceManager, CWLocationChannel, CWLocationClient, CWMessageTracerCache, 
+                       CWMutableConfiguration, CWMutableNetworkProfile, CWNetwork, 
+                       CWNetworkProfile, CWRoamStatistics, CWTetherDevice, CWUnlockSimulator, 
+                       CWWiFiClient, CWWirelessProfile ]
 ...

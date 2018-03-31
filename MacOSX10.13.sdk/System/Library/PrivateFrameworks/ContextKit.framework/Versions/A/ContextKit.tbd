@@ -1,12 +1,12 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4172AA08-3638-3D56-9A21-120838A5AD25' ]
+uuids:           [ 'x86_64: 544EB786-E5FA-3F88-A714-96EE5ED843C3' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ContextKit.framework/Versions/A/ContextKit
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _ContextKitErrorDomain, _ContextKitVersionNumber, _ContextKitVersionString ]
-    objc-classes:    [ _CKContextCompleter, _CKContextGlobals, _CKContextRequest, 
-                       _CKContextResponse, _CKContextResult ]
+    objc-classes:    [ CKContextCompleter, CKContextGlobals, CKContextRequest, CKContextResponse, 
+                       CKContextResult ]
 ...

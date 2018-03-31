@@ -1,4 +1,4 @@
-.TH "MPSCoreTypes.h" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "MPSCoreTypes.h" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -162,9 +162,9 @@ Copyright (c) 2017 Apple Inc\&. All rights reserved\&.  Types common to MetalPer
 .SH "Enumeration Type Documentation"
 .PP 
 .SS "enum \fBMPSDataType\fP"
-A value to specify a type of data\&.
+\fBA\fP value to specify a type of data\&.
 .PP
-MPSDataTypeFloatBit A common bit for all floating point data types\&. Zero for integer types  MPSDataTypeNormalizedBit If set, the value of the shall be interpreted as value / UNORM_TYPE_MAX Normalized values have range [0, 1\&.0] if unsigned and [-1,1] if signed\&. SNORM_TYPE_MIN is interpreted as SNORM_TYPE_MIN+1 per standard Metal rules\&.
+MPSDataTypeFloatBit \fBA\fP common bit for all floating point data types\&. Zero for integer types  MPSDataTypeNormalizedBit If set, the value of the shall be interpreted as value / UNORM_TYPE_MAX Normalized values have range [0, 1\&.0] if unsigned and [-1,1] if signed\&. SNORM_TYPE_MIN is interpreted as SNORM_TYPE_MIN+1 per standard Metal rules\&.
 .PP
 MSPDataTypeFloat32 32-bit floating point (single-precision)\&.  MSPDataTypeFloat16 16-bit floating point (half-precision)\&. (IEEE-754-2008 float16 exchange format)  MPSDataTypeInt8 Signed 8-bit integer\&.  MPSDataTypeInt16 Signed 16-bit integer\&.  MPSDataTypeUInt8 Unsigned 8-bit integer\&. Not normalized  MPSDataTypeUInt16 Unsigned 16-bit integer\&. Not normalized  MPSDataTypeUInt32 Unsigned 32-bit integer\&. Not normalized  MPSDataTypeUnorm1 Unsigned 1-bit normalized value\&.  MPSDataTypeUnorm8 Unsigned 8-bit normalized value\&. 
 .PP
@@ -210,7 +210,7 @@ Out of bound pixels are (0,0,0,1) for image with pixel format without alpha chan
 \fB\fIMPSImageEdgeModeClamp \fP\fP
 Out of bound pixels are clamped to nearest edge pixel 
 .SS "enum \fBMPSImageFeatureChannelFormat\fP"
-Encodes the representation of a single channel within a \fBMPSImage\fP\&.  A \fBMPSImage\fP pixel may have many channels in it, sometimes many more than 4, the limit of what MTLPixelFormats encode\&. The storage format for a single channel within a pixel can be given by the MPSImageFeatureChannelFormat\&. The number of channels is given by the featureChannels parameter of appropriate \fBMPSImage\fP APIs\&. The size of the pixel is size of the channel format multiplied by the number of feature channels\&. No padding is allowed, except to round out to a full byte\&. 
+Encodes the representation of a single channel within a \fBMPSImage\fP\&.  \fBA\fP \fBMPSImage\fP pixel may have many channels in it, sometimes many more than 4, the limit of what MTLPixelFormats encode\&. The storage format for a single channel within a pixel can be given by the MPSImageFeatureChannelFormat\&. The number of channels is given by the featureChannels parameter of appropriate \fBMPSImage\fP APIs\&. The size of the pixel is size of the channel format multiplied by the number of feature channels\&. No padding is allowed, except to round out to a full byte\&. 
 .PP
 \fBEnumerator\fP
 .in +1c

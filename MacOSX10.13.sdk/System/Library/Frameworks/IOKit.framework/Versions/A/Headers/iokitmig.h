@@ -51,7 +51,7 @@ typedef function_table_entry   *function_table_t;
 #endif /* AUTOTEST */
 
 #ifndef	iokit_MSG_COUNT
-#define	iokit_MSG_COUNT	87
+#define	iokit_MSG_COUNT	88
 #endif	/* iokit_MSG_COUNT */
 
 #include <mach/std_types.h>
@@ -1215,6 +1215,19 @@ kern_return_t io_registry_entry_from_path_ool
 	mach_msg_type_number_t path_oolCnt,
 	kern_return_t *result,
 	mach_port_t *registry_entry
+);
+
+/* Routine io_device_tree_entry_exists_with_name */
+#ifdef	mig_external
+mig_external
+#else
+extern
+#endif	/* mig_external */
+kern_return_t io_device_tree_entry_exists_with_name
+(
+	mach_port_t master_port,
+	io_name_t name,
+	boolean_t *exists
 );
 
 __END_DECLS
@@ -2409,6 +2422,20 @@ __END_DECLS
 #ifdef  __MigPackStructs
 #pragma pack()
 #endif
+
+#ifdef  __MigPackStructs
+#pragma pack(4)
+#endif
+	typedef struct {
+		mach_msg_header_t Head;
+		NDR_record_t NDR;
+		mach_msg_type_number_t nameOffset; /* MiG doesn't use it */
+		mach_msg_type_number_t nameCnt;
+		char name[128];
+	} __Request__io_device_tree_entry_exists_with_name_t __attribute__((unused));
+#ifdef  __MigPackStructs
+#pragma pack()
+#endif
 #endif /* !__Request__iokit_subsystem__defined */
 
 /* union of all requests */
@@ -2496,6 +2523,7 @@ union __RequestUnion__iokit_subsystem {
 	__Request__io_service_add_notification_bin_t Request_io_service_add_notification_bin;
 	__Request__io_registry_entry_get_path_ool_t Request_io_registry_entry_get_path_ool;
 	__Request__io_registry_entry_from_path_ool_t Request_io_registry_entry_from_path_ool;
+	__Request__io_device_tree_entry_exists_with_name_t Request_io_device_tree_entry_exists_with_name;
 };
 #endif /* !__RequestUnion__iokit_subsystem__defined */
 /* typedefs for all replies */
@@ -3621,6 +3649,19 @@ union __RequestUnion__iokit_subsystem {
 #ifdef  __MigPackStructs
 #pragma pack()
 #endif
+
+#ifdef  __MigPackStructs
+#pragma pack(4)
+#endif
+	typedef struct {
+		mach_msg_header_t Head;
+		NDR_record_t NDR;
+		kern_return_t RetCode;
+		boolean_t exists;
+	} __Reply__io_device_tree_entry_exists_with_name_t __attribute__((unused));
+#ifdef  __MigPackStructs
+#pragma pack()
+#endif
 #endif /* !__Reply__iokit_subsystem__defined */
 
 /* union of all replies */
@@ -3708,6 +3749,7 @@ union __ReplyUnion__iokit_subsystem {
 	__Reply__io_service_add_notification_bin_t Reply_io_service_add_notification_bin;
 	__Reply__io_registry_entry_get_path_ool_t Reply_io_registry_entry_get_path_ool;
 	__Reply__io_registry_entry_from_path_ool_t Reply_io_registry_entry_from_path_ool;
+	__Reply__io_device_tree_entry_exists_with_name_t Reply_io_device_tree_entry_exists_with_name;
 };
 #endif /* !__RequestUnion__iokit_subsystem__defined */
 
@@ -3792,7 +3834,8 @@ union __ReplyUnion__iokit_subsystem {
     { "io_service_match_property_table_bin", 2882 },\
     { "io_service_add_notification_bin", 2883 },\
     { "io_registry_entry_get_path_ool", 2885 },\
-    { "io_registry_entry_from_path_ool", 2886 }
+    { "io_registry_entry_from_path_ool", 2886 },\
+    { "io_device_tree_entry_exists_with_name", 2887 }
 #endif
 
 #ifdef __AfterMigUserHeader

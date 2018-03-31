@@ -1,17 +1,17 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 37C8FDD0-EA91-3D0C-BF42-B34DCAE2772C', 'x86_64: EA8152FE-6EE8-3FB3-B2C7-3DCA3D9E10C7' ]
+uuids:           [ 'i386: F38E566E-A951-3456-B9B6-870AABCD8B5E', 'x86_64: EBA404C6-D8B5-38F5-A119-B8A16844CE15' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AppleGVACore.framework/Versions/A/AppleGVACore
 current-version: 10.0.20
-objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]
-    symbols:         [ _AVFPixelProcessCore_CreateInstance, _AVFPixelProcessCore_PrepareToTransferImages, 
-                       _AVFPixelProcessCore_SetDestChromaLocation, _AVFPixelProcessCore_SetDestParametricCurves, 
-                       _AVFPixelProcessCore_SetDestYCbCrMatrix, _AVFPixelProcessCore_SetMainMatrix, 
-                       _AVFPixelProcessCore_SetPriority, _AVFPixelProcessCore_SetScaling, 
-                       _AVFPixelProcessCore_SetSourceChromaLocation, _AVFPixelProcessCore_SetSourceParametricCurves, 
-                       _AVFPixelProcessCore_SetSourceYCbCrMatrix, _AVFPixelProcessCore_TransferImageAsync, 
-                       _AVFPixelProcessCore_TransferImageSync, _AVFPixelProcessCore_WaitForAsyncTransfers ]
+    symbols:         [ _AVFPixelProcessCore_CreateInstance, _AVFPixelProcessCore_GetSupportedPixelFormats, 
+                       _AVFPixelProcessCore_PrepareToTransferImages, _AVFPixelProcessCore_SetDestChromaLocation, 
+                       _AVFPixelProcessCore_SetDestParametricCurves, _AVFPixelProcessCore_SetDestYCbCrMatrix, 
+                       _AVFPixelProcessCore_SetMainMatrix, _AVFPixelProcessCore_SetPriority, 
+                       _AVFPixelProcessCore_SetScaling, _AVFPixelProcessCore_SetSourceChromaLocation, 
+                       _AVFPixelProcessCore_SetSourceParametricCurves, _AVFPixelProcessCore_SetSourceYCbCrMatrix, 
+                       _AVFPixelProcessCore_TransferImageAsync, _AVFPixelProcessCore_TransferImageSync, 
+                       _AVFPixelProcessCore_WaitForAsyncTransfers ]
 ...

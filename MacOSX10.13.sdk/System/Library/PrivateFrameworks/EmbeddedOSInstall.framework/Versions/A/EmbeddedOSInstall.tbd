@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 829D4EA8-D85C-3E0A-A045-2AAAF345E834' ]
+uuids:           [ 'x86_64: CF8A9A60-6F1B-3123-9A6D-98C346B60487' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/EmbeddedOSInstall.framework/Versions/A/EmbeddedOSInstall
 exports:         
@@ -861,26 +861,26 @@ exports:
                        _tss_sha1, _tss_show_verbose, _tss_stitch_img3, _tss_stitch_img3_from_file, 
                        _tss_stitch_img3_from_file_to_file, _tss_stitch_img3_to_file, 
                        _tss_strip_img3_signature, _tss_submit, _tssclient_version ]
-    objc-classes:    [ _AMSupportURLConnectionDelegate, _EOSAppleSMC, _EOSBootDiagnostics, 
-                       _EOSBootTagRestoreOperation, _EOSBootstrapRecoveryRestoreOperation, 
-                       _EOSCleanUpOperation, _EOSDevice, _EOSDeviceHost, _EOSDeviceModeHelper, 
-                       _EOSDeviceMonitor, _EOSDeviceType, _EOSDiagnosticSummary, 
-                       _EOSEFISystemPartition, _EOSEFISystemPartitionLite, _EOSESPInstallationOperation, 
-                       _EOSError, _EOSFDRData, _EOSFDRManager, _EOSForceResetRestoreOperation, 
-                       _EOSHealingController, _EOSLocatePreflightContainerRestoreOperation, 
-                       _EOSLogBuffer, _EOSMachineSupport, _EOSMembootESPRestoreOperation, 
-                       _EOSNVRAM, _EOSNetworkReachabilityCheckOperation, _EOSNetworkReachabilityController, 
-                       _EOSOperation, _EOSPackagePreflightController, _EOSPersonalizationRestoreOperation, 
-                       _EOSPreflightContainer, _EOSPreflightContainerManager, _EOSPreflightFDRRestoreOperation, 
-                       _EOSPrepareDeviceRestoreOperation, _EOSPurgePreflightContainersOperation, 
-                       _EOSRecoveryModeRestoreOperation, _EOSRestoreAnalyzer, _EOSRestoreBuddyController, 
-                       _EOSRestoreBundle, _EOSRestoreBundleComparison, _EOSRestoreBundleSpecifier, 
-                       _EOSRestoreController, _EOSRestoreLoginwindowController, _EOSRestoreModeRestoreOperation, 
-                       _EOSRestoreOSTestAgentController, _EOSRestoreOperation, _EOSRestoreOperationController, 
-                       _EOSRestorePhaseHelper, _EOSRestoreRequest, _EOSRestoreServiceController, 
-                       _EOSSerialLog, _EOSStashPreflightContainerOperation, _EOSUtilities, 
-                       _EOSWaitForBootRestoreOperation ]
-    objc-ivars:      [ _AMSupportURLConnectionDelegate._data, _AMSupportURLConnectionDelegate._error, 
-                       _AMSupportURLConnectionDelegate.options, _AMSupportURLConnectionDelegate.requestComplete, 
-                       _AMSupportURLConnectionDelegate.response ]
+    objc-classes:    [ AMSupportURLConnectionDelegate, EOSAppleSMC, EOSBootDiagnostics, 
+                       EOSBootTagRestoreOperation, EOSBootstrapRecoveryRestoreOperation, 
+                       EOSCleanUpOperation, EOSDevice, EOSDeviceHost, EOSDeviceModeHelper, 
+                       EOSDeviceMonitor, EOSDeviceType, EOSDiagnosticSummary, EOSEFISystemPartition, 
+                       EOSEFISystemPartitionLite, EOSESPInstallationOperation, EOSError, 
+                       EOSFDRData, EOSFDRManager, EOSForceResetRestoreOperation, 
+                       EOSHealingController, EOSLocatePreflightContainerRestoreOperation, 
+                       EOSLogBuffer, EOSMachineSupport, EOSMembootESPRestoreOperation, 
+                       EOSNVRAM, EOSNetworkReachabilityCheckOperation, EOSNetworkReachabilityController, 
+                       EOSOperation, EOSPackagePreflightController, EOSPersonalizationRestoreOperation, 
+                       EOSPreflightContainer, EOSPreflightContainerManager, EOSPreflightFDRRestoreOperation, 
+                       EOSPrepareDeviceRestoreOperation, EOSPurgePreflightContainersOperation, 
+                       EOSRecoveryModeRestoreOperation, EOSRestoreAnalyzer, EOSRestoreBuddyController, 
+                       EOSRestoreBundle, EOSRestoreBundleComparison, EOSRestoreBundleSpecifier, 
+                       EOSRestoreController, EOSRestoreLoginwindowController, EOSRestoreModeRestoreOperation, 
+                       EOSRestoreOSTestAgentController, EOSRestoreOperation, EOSRestoreOperationController, 
+                       EOSRestorePhaseHelper, EOSRestoreRequest, EOSRestoreServiceController, 
+                       EOSSerialLog, EOSStashPreflightContainerOperation, EOSUtilities, 
+                       EOSWaitForBootRestoreOperation ]
+    objc-ivars:      [ AMSupportURLConnectionDelegate._data, AMSupportURLConnectionDelegate._error, 
+                       AMSupportURLConnectionDelegate.options, AMSupportURLConnectionDelegate.requestComplete, 
+                       AMSupportURLConnectionDelegate.response ]
 ...

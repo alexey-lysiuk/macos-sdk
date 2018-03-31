@@ -1,21 +1,20 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3E5C736C-D5B9-3EE4-A31A-CA4F058BB8A5' ]
+uuids:           [ 'x86_64: B6360AD1-28D3-3074-AEA0-195A6E39DE3C' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SignpostSupport.framework/Versions/A/SignpostSupport
+current-version: 2.4
+objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
-    symbols:         [ _SignpostSerializationErrorDomain, _SignpostSupportDeserializationEnumerateObjectArrayFromData, 
-                       _SignpostSupportVersionNumber, _SignpostSupportVersionString, 
+    symbols:         [ _SignpostSupportDeserializationEnumerateObjectArrayFromData, 
                        __SignpostSerializeableObjectFromSerializedObjectDictionary, 
-                       __SignpostSupportSerializationDataFromObjectArray, __machToNano, 
-                       __signpost_debug_log, _kSignpostSupportMachTimeTranslator_UnknownTime ]
-    objc-classes:    [ _SignpostAnimationInterval, _SignpostEvent, _SignpostInterval, 
-                       _SignpostIntervalBuilder, _SignpostNotificationEvent, _SignpostObject, 
-                       _SignpostSupportCompositorInterval, _SignpostSupportLogMessage, 
-                       _SignpostSupportMachTimeTranslationRange, _SignpostSupportMachTimeTranslator, 
-                       _SignpostSupportObject, _SignpostSupportObjectExtractor, _SignpostSupportObjectFilter, 
-                       _SignpostSupportSerializabledObjectCollection, _SignpostSupportSubsystemCategoryBlacklist, 
-                       _SignpostSupportSubsystemCategoryFilter, _SignpostSupportSubsystemCategoryFilterEntry, 
-                       _SignpostSupportSubsystemCategoryWhitelist ]
+                       __SignpostSupportSerializationDataFromObjectArray, _kSignpostSupportMachTimeTranslator_UnknownTime ]
+    objc-classes:    [ SignpostAnimationInterval, SignpostEvent, SignpostInterval, 
+                       SignpostNotificationEvent, SignpostObject, SignpostSupportCompositorInterval, 
+                       SignpostSupportLogMessage, SignpostSupportMachTimeTranslator, 
+                       SignpostSupportMessageArgument, SignpostSupportMetadataSegment, 
+                       SignpostSupportObject, SignpostSupportObjectExtractor, SignpostSupportObjectFilter, 
+                       SignpostSupportSubsystemCategoryBlacklist, SignpostSupportSubsystemCategoryFilter, 
+                       SignpostSupportSubsystemCategoryFilterEntry, SignpostSupportSubsystemCategoryWhitelist ]
 ...

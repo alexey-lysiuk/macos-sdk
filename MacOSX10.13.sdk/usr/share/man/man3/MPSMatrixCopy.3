@@ -1,4 +1,4 @@
-.TH "MPSMatrixCopy" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "MPSMatrixCopy" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -23,6 +23,9 @@ Inherits \fBMPSKernel\fP\&.
 .RI "(void) \- \fBencodeToCommandBuffer:copyDescriptor:\fP"
 .br
 .ti -1c
+.RI "(void) \- \fBencodeToCommandBuffer:copyDescriptor:rowPermuteIndices:rowPermuteOffset:columnPermuteIndices:columnPermuteOffset:\fP"
+.br
+.ti -1c
 .RI "(nullable instancetype) \- \fBinitWithCoder:device:\fP"
 .br
 .in -1c
@@ -45,8 +48,36 @@ Inherits \fBMPSKernel\fP\&.
 .SS "Additional Inherited Members"
 .SH "Method Documentation"
 .PP 
-.SS "\- (void) encodeToCommandBuffer: (nonnull id< MTLCommandBuffer >) cmdBuf(\fBMPSMatrixCopyDescriptor\fP *__nonnull) copyDescriptor"
-Encode the copy operations to the command buffer 
+.SS "\- (void) encodeToCommandBuffer: (nonnull id< MTLCommandBuffer >) commandBuffer(\fBMPSMatrixCopyDescriptor\fP *__nonnull) copyDescriptor"
+Encode the copy operations to the command buffer
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcommandBuffer\fP \fBA\fP valid MTLCommandBuffer to receive the encoded kernel\&.
+.br
+\fIcopyDescriptor\fP The descriptor that defines the copy operator 
+.RE
+.PP
+
+.SS "\- (void) encodeToCommandBuffer: (nonnull id< MTLCommandBuffer >) commandBuffer(\fBMPSMatrixCopyDescriptor\fP *__nonnull) copyDescriptor(\fBMPSVector\fP *__nullable) rowPermuteIndices(NSUInteger) rowPermuteOffset(\fBMPSVector\fP *__nullable) columnPermuteIndices(NSUInteger) columnPermuteOffset"
+Encode the copy operations to the command buffer\&. This of the encode version support permuting the outputs with custom vectors of indices\&. The permutations are defined on the destination indices and are the same for each copy operation\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcommandBuffer\fP \fBA\fP valid MTLCommandBuffer to receive the encoded kernel\&.
+.br
+\fIcopyDescriptor\fP The descriptor that defines the copy operator
+.br
+\fIrowPermuteIndices\fP If not nil then the output row index is 'rowPermuteIndices[i] + rowOffset' instead of 'i + rowOffset', where 'i' is the local row index of the copy operation\&. Note: if destinationsAreTransposed is set to YES then the destination transpose is performed before permutations\&.
+.br
+\fIrowPermuteOffset\fP Offset in numbers to apply to the 'rowPermuteIndices' vector\&.
+.br
+\fIcolumnPermuteIndices\fP If not nil then the output column index is 'columnPermuteIndices[i] + columnOffset' instead of 'i + columnOffset', where 'i' is the local column index of the copy operation\&. Note: if destinationsAreTransposed is set to YES then the destination transpose is performed before permutations\&.
+.br
+\fIcolumnPermuteOffset\fP Offset in numbers to apply to the 'columnPermuteIndices' vector\&. 
+.RE
+.PP
+
 .SS "\- (nullable instancetype) \fBinitWithCoder:\fP (NSCoder *__nonnull) aDecoder(nonnull id< MTLDevice >) device"
 \fBNSSecureCoding\fP compatability  See \fBMPSKernel::initWithCoder\fP\&. 
 .PP
@@ -59,7 +90,7 @@ Encode the copy operations to the command buffer
 .PP
 \fBReturns:\fP
 .RS 4
-A new MPSMatrixLookUpAndCopy object, or nil if failure\&. 
+\fBA\fP new MPSMatrixLookUpAndCopy object, or nil if failure\&. 
 .RE
 .PP
 

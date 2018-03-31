@@ -1,22 +1,22 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: A4EA3F7B-019C-3395-8FAE-4D718AB17F61', 'x86_64: 518FBC2C-0AF3-39DF-B454-526311796A49' ]
+uuids:           [ 'i386: 89339B57-A107-3680-BE68-17DC3C46F963', 'x86_64: 5EC02BD4-F1F8-3A96-BE1A-6620D3080CD4' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CommonUtilities.framework/Versions/A/CommonUtilities
 current-version: 800
 exports:         
   - archs:           [ i386 ]
-    objc-classes:    [ _CUTCheckpointSignpost, _CUTLog, __CUTWeakReference ]
+    objc-classes:    [ CUTCheckpointSignpost, CUTLog, _CUTWeakReference ]
   - archs:           [ x86_64 ]
-    objc-ivars:      [ _CUTCheckpoint._frozen, _CUTImplicitPromise._promise, _CUTNetworkInterfaceListener._IPv4Addresses, 
-                       _CUTNetworkInterfaceListener._IPv6Addresses, _CUTNetworkInterfaceListener._cellState, 
-                       _CUTNetworkInterfaceListener._delegateMap, _CUTNetworkInterfaceListener._delegateQueue, 
-                       _CUTNetworkInterfaceListener._dynamicStore, _CUTNetworkInterfaceListener._wifiState, 
-                       _CUTPowerAssertion._assertion, _CUTPowerAssertion._identifier, 
-                       _CUTPowerAssertion._stack, _CUTPromise._done, _CUTPromise._group, 
-                       _CUTPromise._queue, _CUTPromise._result, _CUTPromiseSeal._promise, 
-                       _CUTPromiseSeal._queue, _CUTResult._inError, _CUTResult._inValue, 
-                       _CUTResult._state ]
+    objc-ivars:      [ CUTCheckpoint._frozen, CUTImplicitPromise._promise, CUTNetworkInterfaceListener._IPv4Addresses, 
+                       CUTNetworkInterfaceListener._IPv6Addresses, CUTNetworkInterfaceListener._cellState, 
+                       CUTNetworkInterfaceListener._delegateMap, CUTNetworkInterfaceListener._delegateQueue, 
+                       CUTNetworkInterfaceListener._dynamicStore, CUTNetworkInterfaceListener._wifiState, 
+                       CUTPowerAssertion._assertion, CUTPowerAssertion._identifier, 
+                       CUTPowerAssertion._stack, CUTPromise._done, CUTPromise._group, 
+                       CUTPromise._queue, CUTPromise._result, CUTPromiseSeal._promise, 
+                       CUTPromiseSeal._queue, CUTResult._inError, CUTResult._inValue, 
+                       CUTResult._state ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ _CUTAuditTokenTaskHasEntitlement, _CUTCreateDictionaryFromXPCObject, 
                        _CUTCreateXPCObjectFromDictionary, _CUTDataForPropertyList, 
@@ -34,10 +34,10 @@ exports:
                        _CUTXPCCreateConnectionForService, _CUTXPCCreateConnectionForServiceWithQueue, 
                        _CUTXPCCreateServerConnection, _cut_arc_os_release, _cut_log_group_generation, 
                        _cut_non_arc_os_release ]
-    objc-classes:    [ _CUTAsyncReducer, _CUTAsyncReducerState, _CUTCheckpoint, _CUTCheckpointInstant, 
-                       _CUTCheckpointRange, _CUTCheckpointTrace, _CUTDeferredTaskQueue, 
-                       _CUTFileCopier, _CUTImplicitPromise, _CUTNetworkInterfaceListener, 
-                       _CUTPowerAssertion, _CUTPowerMonitor, _CUTPromise, _CUTPromiseSeal, 
-                       _CUTReachability, _CUTResult, _CUTTelephonyManager, _CUTWeakReference, 
-                       _CUTWiFiManager ]
+    objc-classes:    [ CUTAsyncReducer, CUTAsyncReducerState, CUTCheckpoint, CUTCheckpointInstant, 
+                       CUTCheckpointRange, CUTCheckpointTrace, CUTDeferredTaskQueue, 
+                       CUTFileCopier, CUTImplicitPromise, CUTNetworkInterfaceListener, 
+                       CUTPowerAssertion, CUTPowerMonitor, CUTPromise, CUTPromiseSeal, 
+                       CUTReachability, CUTResult, CUTTelephonyManager, CUTWeakReference, 
+                       CUTWiFiManager ]
 ...

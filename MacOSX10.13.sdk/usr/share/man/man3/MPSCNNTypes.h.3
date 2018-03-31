@@ -1,0 +1,111 @@
+.TH "MPSCNNTypes.h" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MPSCNNTypes.h
+.SH SYNOPSIS
+.br
+.PP
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBMPS_SWIFT_NAME\fP(_a)"
+.br
+.ti -1c
+.RI "#define \fBMPS_ENUM_AVAILABLE_STARTING\fP(\&.\&.\&.)"
+.br
+.ti -1c
+.RI "#define \fBMPS_SWIFT_NAME\fP(_a)"
+.br
+.ti -1c
+.RI "#define \fBMPS_ENUM_AVAILABLE_STARTING\fP(\&.\&.\&.)"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef enum \fBMPSCNNLossType\fP \fBMPSCNNLossType\fP"
+.br
+.ti -1c
+.RI "typedef enum \fBMPSCNNReductionType\fP \fBMPSCNNReductionType\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBMPSCNNLossType\fP { \fBMPSCNNLossTypeMeanAbsoluteError\fP, \fBMPSCNNLossTypeMeanSquaredError\fP, \fBMPSCNNLossTypeSoftMaxCrossEntropy\fP, \fBMPSCNNLossTypeSigmoidCrossEntropy\fP, \fBMPSCNNLossTypeCategoricalCrossEntropy\fP, \fBMPSCNNLossTypeHinge\fP, \fBMPSCNNLossTypeHuber\fP, \fBMPSCNNLossTypeCosineDistance\fP, \fBMPSCNNLossTypeLog\fP, \fBMPSCNNLossTypeKullbackLeiblerDivergence\fP, \fBMPSCNNLossTypeCount\fP }"
+.br
+.ti -1c
+.RI "enum \fBMPSCNNReductionType\fP { \fBMPSCNNReductionTypeNone\fP, \fBMPSCNNReductionTypeSum\fP, \fBMPSCNNReductionTypeMean\fP, \fBMPSCNNReductionTypeSumByNonZeroWeights\fP, \fBMPSCNNReductionTypeCount\fP }"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define MPS_ENUM_AVAILABLE_STARTING( \&.\&.\&.)"
+
+.SS "#define MPS_ENUM_AVAILABLE_STARTING( \&.\&.\&.)"
+
+.SS "#define MPS_SWIFT_NAME(_a)"
+Supported loss filter types (see \fBMPSCNNLoss\&.h\fP for more information): 
+.SS "#define MPS_SWIFT_NAME(_a)"
+Supported loss filter types (see \fBMPSCNNLoss\&.h\fP for more information): 
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef enum \fBMPSCNNLossType\fP
+
+ \fBMPSCNNLossType\fP"
+
+.SS "typedef enum \fBMPSCNNReductionType\fP
+
+ \fBMPSCNNReductionType\fP"
+
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBMPSCNNLossType\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIMPSCNNLossTypeMeanAbsoluteError \fP\fP
+.TP
+\fB\fIMPSCNNLossTypeMeanSquaredError \fP\fP
+.TP
+\fB\fIMPSCNNLossTypeSoftMaxCrossEntropy \fP\fP
+.TP
+\fB\fIMPSCNNLossTypeSigmoidCrossEntropy \fP\fP
+.TP
+\fB\fIMPSCNNLossTypeCategoricalCrossEntropy \fP\fP
+.TP
+\fB\fIMPSCNNLossTypeHinge \fP\fP
+.TP
+\fB\fIMPSCNNLossTypeHuber \fP\fP
+.TP
+\fB\fIMPSCNNLossTypeCosineDistance \fP\fP
+.TP
+\fB\fIMPSCNNLossTypeLog \fP\fP
+.TP
+\fB\fIMPSCNNLossTypeKullbackLeiblerDivergence \fP\fP
+.TP
+\fB\fIMPSCNNLossTypeCount \fP\fP
+.SS "enum \fBMPSCNNReductionType\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIMPSCNNReductionTypeNone \fP\fP
+.TP
+\fB\fIMPSCNNReductionTypeSum \fP\fP
+.TP
+\fB\fIMPSCNNReductionTypeMean \fP\fP
+.TP
+\fB\fIMPSCNNReductionTypeSumByNonZeroWeights \fP\fP
+.TP
+\fB\fIMPSCNNReductionTypeCount \fP\fP
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MetalPerformanceShaders\&.framework from the source code\&.

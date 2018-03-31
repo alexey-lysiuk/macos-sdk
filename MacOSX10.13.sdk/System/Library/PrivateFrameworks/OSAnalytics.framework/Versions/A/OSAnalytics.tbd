@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F358E7AF-449E-35F0-8575-48FDF7621811' ]
+uuids:           [ 'x86_64: FFBECDBF-F400-3070-B98B-951B0C8AC31E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/OSAnalytics.framework/Versions/A/OSAnalytics
 objc-constraint: none
@@ -8,17 +8,17 @@ exports:
   - archs:           [ x86_64 ]
     symbols:         [ _OSAnalyticsVersionNumber, _OSAnalyticsVersionString, _OTALoggingBaseDirectory, 
                        _XPCClientHasEntitlement ]
-    objc-classes:    [ _OSAAppleErrorReport, _OSAHttpSubmitter, _OSAJetsamReport, 
-                       _OSALog, _OSAProxyConfiguration, _OSASubmitter, _OSASystemConfiguration, 
-                       _OSATasking, _OSAXPCServices, _PCCBridgeEndpoint, _PCCEndpoint, 
-                       _PCCProxiedDevice, _PCCProxyingDevice ]
-    objc-ivars:      [ _OSAAppleErrorReport._capture_time, _OSAAppleErrorReport._incidentID, 
-                       _OSAAppleErrorReport._logType, _OSAAppleErrorReport._logWritingOptions, 
-                       _OSAAppleErrorReport._notes, _OSAJetsamReport._event_code, 
-                       _OSAJetsamReport._event_reason, _OSAJetsamReport._isSuspendedOnlyJetsam, 
-                       _OSAJetsamReport._killedActiveApps, _OSAJetsamReport._killed_or_suspended_count, 
-                       _OSAJetsamReport._largestActiveApp, _OSAJetsamReport._largestProcess, 
-                       _OSAJetsamReport._snapshot, _OSAJetsamReport._wiredBytes, 
-                       _OSALog._filepath, _OSALog._metaData, _OSALog._stream, _OSASubmitter._responseCode, 
-                       _OSASubmitter._responseData, _OSASubmitter._responseHeaders ]
+    objc-classes:    [ OSAAppleErrorReport, OSAHttpSubmitter, OSAJetsamReport, OSALog, 
+                       OSAProxyConfiguration, OSASubmitter, OSASystemConfiguration, 
+                       OSATasking, OSAXPCServices, PCCBridgeEndpoint, PCCEndpoint, 
+                       PCCProxiedDevice, PCCProxyingDevice ]
+    objc-ivars:      [ OSAAppleErrorReport._capture_time, OSAAppleErrorReport._incidentID, 
+                       OSAAppleErrorReport._logType, OSAAppleErrorReport._logWritingOptions, 
+                       OSAAppleErrorReport._notes, OSAJetsamReport._event_code, OSAJetsamReport._event_reason, 
+                       OSAJetsamReport._isSuspendedOnlyJetsam, OSAJetsamReport._killedActiveApps, 
+                       OSAJetsamReport._killed_or_suspended_count, OSAJetsamReport._largestActiveApp, 
+                       OSAJetsamReport._largestProcess, OSAJetsamReport._snapshot, 
+                       OSAJetsamReport._wiredBytes, OSALog._filepath, OSALog._metaData, 
+                       OSALog._stream, OSASubmitter._responseCode, OSASubmitter._responseData, 
+                       OSASubmitter._responseHeaders, PCCEndpoint._delegate ]
 ...

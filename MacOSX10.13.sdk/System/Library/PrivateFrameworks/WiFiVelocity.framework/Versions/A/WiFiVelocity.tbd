@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 74C3AB45-27C6-3181-A29A-EF465CEEC615' ]
+uuids:           [ 'x86_64: 8E3D6D02-3A77-3342-8A94-D1DCA341F1C1' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/WiFiVelocity.framework/Versions/A/WiFiVelocity
 exports:         
@@ -8,11 +8,11 @@ exports:
     symbols:         [ _W5FormattedDescriptionForDebugConfiguration, _W5FormattedDescriptionForDiagnosticsTestResult, 
                        _W5FormattedDescriptionForStatus, _W5FormattedHeaderForDiagnosticsTestResults, 
                        _W5IsSelfAssignedIPv4, _W5IsSelfAssignedIPv6, _W5MachineSerialNumber ]
-    objc-classes:    [ _W5AWDLStatus, _W5BluetoothDevice, _W5BluetoothStatus, _W5Client, 
-                       _W5DebugConfiguration, _W5DiagnosticsTestRequest, _W5DiagnosticsTestResult, 
-                       _W5Event, _W5LogItemReceipt, _W5LogItemRequest, _W5NetworkStatus, 
-                       _W5Peer, _W5PerfConfiguration, _W5PerfResult, _W5PerfUpdate, 
-                       _W5PingResult, _W5PowerStatus, _W5SpeedTestResult, _W5Status, 
-                       _W5WiFiChannel, _W5WiFiLinkQualityUpdate, _W5WiFiPreferredNetwork, 
-                       _W5WiFiScanResult, _W5WiFiStatus ]
+    objc-classes:    [ W5AWDLStatus, W5BluetoothDevice, W5BluetoothStatus, W5Client, 
+                       W5DebugConfiguration, W5DiagnosticsTestRequest, W5DiagnosticsTestResult, 
+                       W5Event, W5LogItemReceipt, W5LogItemRequest, W5NetworkStatus, 
+                       W5Peer, W5PerfConfiguration, W5PerfResult, W5PerfUpdate, W5PingResult, 
+                       W5PowerStatus, W5SpeedTestResult, W5Status, W5WiFiChannel, 
+                       W5WiFiLinkQualityUpdate, W5WiFiPreferredNetwork, W5WiFiScanResult, 
+                       W5WiFiStatus ]
 ...

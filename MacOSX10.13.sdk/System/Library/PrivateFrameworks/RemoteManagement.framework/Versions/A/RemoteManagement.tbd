@@ -1,0 +1,21 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: B4135C0A-70AC-3E94-891F-3BEA2736AD03' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/RemoteManagement.framework/Versions/A/RemoteManagement
+current-version: 1.26
+objc-constraint: none
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _RMConfigurationEntitlement, _RMEnrollmentPlistName, _RMErrorChainFromError, 
+                       _RMErrorDomain, _RMErrorHTTPStatusCodeKey, _RMErrorRequestUUIDKey, 
+                       _RMGetDeviceUUID, _RMIsAppleInternal, _RMMetadataPath, _RMMetadataPlistName, 
+                       _RMRootPath, _RMStringForBool, _RMTemporaryDirectoryURLForURL, 
+                       _RMToolEntitlement, _RemoteManagementVersionNumber, _RemoteManagementVersionString, 
+                       _kRMDeviceIdentitySCRTCapability, _kRMMessageMDMSignatureHeader, 
+                       _kRMPushDictionaryKey, _kRMPushMagicMismatchKey, _kRMPushMagicMismatchMaxAge, 
+                       _kRMPushServiceBootstrapNameDev, _kRMPushServiceBootstrapNameProd ]
+    objc-classes:    [ RMConfigurationClient, RMConfigurationServer, RMConfigurationServerDelegate, 
+                       RMCryptoUtils, RMKeychainAccess, RMLog, RMMetadataStore, RMSCRTUtils, 
+                       RMToolClient, RMToolServer, RMToolServerDelegate ]
+...

@@ -1,4 +1,4 @@
-.TH "MPSImageCopyToMatrix" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "MPSImageCopyToMatrix" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -58,11 +58,11 @@ NOTE: The destinationMatrix\&.dataType must match the feature channel data type 
 .PP
 \fBParameters:\fP
 .RS 4
-\fIcommandBuffer\fP A valid MTLCommandBuffer\&. 
+\fIcommandBuffer\fP \fBA\fP valid MTLCommandBuffer\&. 
 .br
-\fIsourceImage\fP A valid \fBMPSImage\fP describing the image to copy from\&. 
+\fIsourceImage\fP \fBA\fP valid \fBMPSImage\fP describing the image to copy from\&. 
 .br
-\fIdestinationMatrix\fP A valid \fBMPSMatrix\fP or \fBMPSTemporaryMatrix\fP object describing the matrix to copy to\&. 
+\fIdestinationMatrix\fP \fBA\fP valid \fBMPSMatrix\fP or \fBMPSTemporaryMatrix\fP object describing the matrix to copy to\&. 
 .RE
 .PP
 
@@ -78,7 +78,7 @@ NOTE: The destinationMatrix\&.dataType must match the feature channel data type 
 .PP
 \fBReturns:\fP
 .RS 4
-A new \fBMPSKernel\fP object, or nil if failure\&. 
+\fBA\fP new \fBMPSKernel\fP object, or nil if failure\&. 
 .RE
 .PP
 
@@ -96,7 +96,7 @@ Initialize a \fBMPSMatrixCopy\fP object on a device
 .PP
 \fBReturns:\fP
 .RS 4
-A valid \fBMPSMatrixCopy\fP object or nil, if failure\&. 
+\fBA\fP valid \fBMPSMatrixCopy\fP object or nil, if failure\&. 
 .RE
 .PP
 

@@ -1,4 +1,4 @@
-.TH "MPSUnaryImageKernel" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "MPSUnaryImageKernel" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -11,7 +11,7 @@ MPSUnaryImageKernel
 .PP
 Inherits \fBMPSKernel\fP\&.
 .PP
-Inherited by \fBMPSImageAreaMax\fP, \fBMPSImageBox\fP, \fBMPSImageConversion\fP, \fBMPSImageConvolution\fP, \fBMPSImageDilate\fP, \fBMPSImageGaussianBlur\fP, \fBMPSImageHistogramEqualization\fP, \fBMPSImageHistogramSpecification\fP, \fBMPSImageIntegral\fP, \fBMPSImageIntegralOfSquares\fP, \fBMPSImageLaplacian\fP, \fBMPSImageMedian\fP, \fBMPSImagePyramid\fP, \fBMPSImageScale\fP, \fBMPSImageSobel\fP, \fBMPSImageStatisticsMean\fP, \fBMPSImageStatisticsMeanAndVariance\fP, \fBMPSImageStatisticsMinAndMax\fP, \fBMPSImageThresholdBinary\fP, \fBMPSImageThresholdBinaryInverse\fP, \fBMPSImageThresholdToZero\fP, \fBMPSImageThresholdToZeroInverse\fP, \fBMPSImageThresholdTruncate\fP, and \fBMPSImageTranspose\fP\&.
+Inherited by \fBMPSImageAreaMax\fP, \fBMPSImageBox\fP, \fBMPSImageConversion\fP, \fBMPSImageConvolution\fP, \fBMPSImageDilate\fP, \fBMPSImageEuclideanDistanceTransform\fP, \fBMPSImageGaussianBlur\fP, \fBMPSImageHistogramEqualization\fP, \fBMPSImageHistogramSpecification\fP, \fBMPSImageIntegral\fP, \fBMPSImageIntegralOfSquares\fP, \fBMPSImageLaplacian\fP, \fBMPSImageMedian\fP, \fBMPSImagePyramid\fP, \fBMPSImageReduceUnary\fP, \fBMPSImageScale\fP, \fBMPSImageSobel\fP, \fBMPSImageStatisticsMean\fP, \fBMPSImageStatisticsMeanAndVariance\fP, \fBMPSImageStatisticsMinAndMax\fP, \fBMPSImageThresholdBinary\fP, \fBMPSImageThresholdBinaryInverse\fP, \fBMPSImageThresholdToZero\fP, \fBMPSImageThresholdToZeroInverse\fP, \fBMPSImageThresholdTruncate\fP, and \fBMPSImageTranspose\fP\&.
 .SS "Instance Methods"
 
 .in +1c
@@ -50,7 +50,7 @@ Inherited by \fBMPSImageAreaMax\fP, \fBMPSImageBox\fP, \fBMPSImageConversion\fP,
 .SS "Additional Inherited Members"
 .SH "Detailed Description"
 .PP 
-This depends on Metal\&.framework  A \fBMPSUnaryImageKernel\fP consumes one MTLTexture and produces one MTLTexture\&. 
+This depends on Metal\&.framework  \fBA\fP \fBMPSUnaryImageKernel\fP consumes one MTLTexture and produces one MTLTexture\&. 
 .SH "Method Documentation"
 .PP 
 .SS "\- (BOOL) encodeToCommandBuffer: (nonnull id< MTLCommandBuffer >) commandBuffer(__nonnull id< MTLTexture > __strong *__nonnull) texture(nullable \fBMPSCopyAllocator\fP) copyAllocator"
@@ -120,9 +120,9 @@ Attempt to apply a \fBMPSKernel\fP to a texture in place\&.
 .PP
 \fBParameters:\fP
 .RS 4
-\fIcommandBuffer\fP A valid MTLCommandBuffer to receive the encoded filter 
+\fIcommandBuffer\fP \fBA\fP valid MTLCommandBuffer to receive the encoded filter 
 .br
-\fItexture\fP A pointer to a valid MTLTexture containing source image\&. On success, the image contents and possibly texture itself will be replaced with the result image\&. 
+\fItexture\fP \fBA\fP pointer to a valid MTLTexture containing source image\&. On success, the image contents and possibly texture itself will be replaced with the result image\&. 
 .br
 \fIcopyAllocator\fP An optional block to allocate a new texture to hold the results, in case in-place operation is not possible\&. The allocator may use a different MTLPixelFormat or size than the original texture\&. You may enqueue operations on the provided MTLCommandBuffer using the provided MTLComputeCommandEncoder to initialize the texture contents\&. 
 .RE
@@ -138,11 +138,11 @@ Encode a \fBMPSKernel\fP into a command Buffer\&. The operation shall proceed ou
 .PP
 \fBParameters:\fP
 .RS 4
-\fIcommandBuffer\fP A valid MTLCommandBuffer to receive the encoded filter 
+\fIcommandBuffer\fP \fBA\fP valid MTLCommandBuffer to receive the encoded filter 
 .br
-\fIsourceImage\fP A valid \fBMPSImage\fP containing the source image\&. 
+\fIsourceImage\fP \fBA\fP valid \fBMPSImage\fP containing the source image\&. 
 .br
-\fIdestinationImage\fP A valid \fBMPSImage\fP to be overwritten by result image\&. DestinationImage may not alias sourceImage\&. 
+\fIdestinationImage\fP \fBA\fP valid \fBMPSImage\fP to be overwritten by result image\&. DestinationImage may not alias sourceImage\&. 
 .RE
 .PP
 
@@ -151,11 +151,11 @@ Encode a \fBMPSKernel\fP into a command Buffer\&. The operation shall proceed ou
 .PP
 \fBParameters:\fP
 .RS 4
-\fIcommandBuffer\fP A valid MTLCommandBuffer to receive the encoded filter 
+\fIcommandBuffer\fP \fBA\fP valid MTLCommandBuffer to receive the encoded filter 
 .br
-\fIsourceTexture\fP A valid MTLTexture containing the source image\&. 
+\fIsourceTexture\fP \fBA\fP valid MTLTexture containing the source image\&. 
 .br
-\fIdestinationTexture\fP A valid MTLTexture to be overwritten by result image\&. DestinationTexture may not alias sourceTexture\&. 
+\fIdestinationTexture\fP \fBA\fP valid MTLTexture to be overwritten by result image\&. DestinationTexture may not alias sourceTexture\&. 
 .RE
 .PP
 
@@ -171,14 +171,14 @@ Encode a \fBMPSKernel\fP into a command Buffer\&. The operation shall proceed ou
 .PP
 \fBReturns:\fP
 .RS 4
-A new \fBMPSKernel\fP object, or nil if failure\&. 
+\fBA\fP new \fBMPSKernel\fP object, or nil if failure\&. 
 .RE
 .PP
 
 .PP
 Reimplemented from \fBMPSKernel\fP\&.
 .PP
-Reimplemented in \fBMPSImagePyramid\fP, \fBMPSImageSobel\fP, \fBMPSImageHistogramSpecification\fP, \fBMPSImageThresholdToZeroInverse\fP, \fBMPSImageThresholdToZero\fP, \fBMPSImageHistogramEqualization\fP, \fBMPSImageBox\fP, \fBMPSImageGaussianBlur\fP, \fBMPSImageStatisticsMean\fP, \fBMPSImageThresholdBinary\fP, \fBMPSImageThresholdTruncate\fP, \fBMPSImageDilate\fP, \fBMPSImageScale\fP, \fBMPSImageLanczosScale\fP, \fBMPSImageBilinearScale\fP, \fBMPSImageStatisticsMeanAndVariance\fP, \fBMPSImageConvolution\fP, \fBMPSImageThresholdBinaryInverse\fP, \fBMPSImageStatisticsMinAndMax\fP, \fBMPSImageMedian\fP, and \fBMPSImageAreaMax\fP\&.
+Reimplemented in \fBMPSImagePyramid\fP, \fBMPSImageSobel\fP, \fBMPSImageHistogramSpecification\fP, \fBMPSImageThresholdToZeroInverse\fP, \fBMPSImageThresholdToZero\fP, \fBMPSImageHistogramEqualization\fP, \fBMPSImageBox\fP, \fBMPSImageGaussianBlur\fP, \fBMPSImageStatisticsMean\fP, \fBMPSImageThresholdBinary\fP, \fBMPSImageThresholdTruncate\fP, \fBMPSImageDilate\fP, \fBMPSImageScale\fP, \fBMPSImageLanczosScale\fP, \fBMPSImageBilinearScale\fP, \fBMPSImageStatisticsMeanAndVariance\fP, \fBMPSImageConvolution\fP, \fBMPSImageThresholdBinaryInverse\fP, \fBMPSImageEuclideanDistanceTransform\fP, \fBMPSImageStatisticsMinAndMax\fP, \fBMPSImageMedian\fP, and \fBMPSImageAreaMax\fP\&.
 .SS "\- (nonnull instancetype) initWithDevice: (nonnull id< MTLDevice >) device"
 Standard init with default properties per filter type 
 .PP
@@ -196,7 +196,7 @@ a pointer to the newly initialized object\&. This will fail, returning nil if th
 .PP
 Reimplemented from \fBMPSKernel\fP\&.
 .PP
-Reimplemented in \fBMPSImagePyramid\fP, \fBMPSImageSobel\fP, \fBMPSImageThresholdToZeroInverse\fP, \fBMPSImageThresholdToZero\fP, \fBMPSImageBox\fP, \fBMPSImageGaussianBlur\fP, \fBMPSImageStatisticsMean\fP, \fBMPSImageThresholdBinary\fP, \fBMPSImageThresholdTruncate\fP, \fBMPSImageDilate\fP, \fBMPSImageScale\fP, \fBMPSImageLanczosScale\fP, \fBMPSImageBilinearScale\fP, \fBMPSImageStatisticsMeanAndVariance\fP, \fBMPSImageThresholdBinaryInverse\fP, \fBMPSImageStatisticsMinAndMax\fP, \fBMPSImageMedian\fP, and \fBMPSImageAreaMax\fP\&.
+Reimplemented in \fBMPSImagePyramid\fP, \fBMPSImageSobel\fP, \fBMPSImageThresholdToZeroInverse\fP, \fBMPSImageThresholdToZero\fP, \fBMPSImageBox\fP, \fBMPSImageGaussianBlur\fP, \fBMPSImageStatisticsMean\fP, \fBMPSImageThresholdBinary\fP, \fBMPSImageThresholdTruncate\fP, \fBMPSImageDilate\fP, \fBMPSImageLanczosScale\fP, \fBMPSImageBilinearScale\fP, \fBMPSImageStatisticsMeanAndVariance\fP, \fBMPSImageThresholdBinaryInverse\fP, \fBMPSImageEuclideanDistanceTransform\fP, \fBMPSImageReduceUnary\fP, \fBMPSImageReduceRowMin\fP, \fBMPSImageReduceColumnMin\fP, \fBMPSImageReduceRowMax\fP, \fBMPSImageReduceColumnMax\fP, \fBMPSImageReduceRowMean\fP, \fBMPSImageReduceColumnMean\fP, \fBMPSImageReduceRowSum\fP, \fBMPSImageReduceColumnSum\fP, \fBMPSImageScale\fP, \fBMPSImageStatisticsMinAndMax\fP, \fBMPSImageMedian\fP, and \fBMPSImageAreaMax\fP\&.
 .SS "\- (\fBMPSRegion\fP) sourceRegionForDestinationSize: (MTLSize) destinationSize"
 sourceRegionForDestinationSize: is used to determine which region of the sourceTexture will be read by encodeToCommandBuffer:sourceTexture:destinationTexture (and similar) when the filter runs\&. This information may be needed if the source image is broken into multiple textures\&. The size of the full (untiled) destination image is provided\&. The region of the full (untiled) source image that will be read is returned\&. You can then piece together an appropriate texture containing that information for use in your tiled context\&.
 .PP
@@ -229,7 +229,7 @@ The area in the virtual source image that will be read\&.
 .SH "Property Documentation"
 .PP 
 .SS "\- clipRect\fC [read]\fP, \fC [write]\fP, \fC [nonatomic]\fP, \fC [assign]\fP"
-An optional clip rectangle to use when writing data\&. Only the pixels in the rectangle will be overwritten\&.  A MTLRegion that indicates which part of the destination to overwrite\&. If the clipRect does not lie completely within the destination image, the intersection between clip rectangle and destination bounds is used\&. Default: MPSRectNoClip (\fBMPSKernel::MPSRectNoClip\fP) indicating the entire image\&.
+An optional clip rectangle to use when writing data\&. Only the pixels in the rectangle will be overwritten\&.  \fBA\fP MTLRegion that indicates which part of the destination to overwrite\&. If the clipRect does not lie completely within the destination image, the intersection between clip rectangle and destination bounds is used\&. Default: MPSRectNoClip (\fBMPSKernel::MPSRectNoClip\fP) indicating the entire image\&.
 .PP
 See Also: \fBMetalPerformanceShaders\&.h\fP subsubsection_clipRect 
 .SS "\- edgeMode\fC [read]\fP, \fC [write]\fP, \fC [nonatomic]\fP, \fC [assign]\fP"

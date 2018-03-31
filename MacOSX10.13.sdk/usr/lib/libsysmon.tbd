@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BE3E1634-D1CB-3DF7-ACDD-80EAFF5E4928' ]
+uuids:           [ 'x86_64: 783354EA-7F4E-3215-BE04-AEC142BC53A2' ]
 platform:        macosx
 install-name:    /usr/lib/libsysmon.dylib
 exports:         
@@ -15,5 +15,5 @@ exports:
                        _sysmon_retain, _sysmon_row_alloc, _sysmon_row_apply, _sysmon_row_get_value, 
                        _sysmon_table_alloc, _sysmon_table_apply, _sysmon_table_copy_row, 
                        _sysmon_table_get_count, _sysmon_table_get_row, _sysmon_table_get_timestamp ]
-    objc-classes:    [ _OS_sysmon_object, _OS_sysmon_request, _OS_sysmon_row, _OS_sysmon_table ]
+    objc-classes:    [ OS_sysmon_object, OS_sysmon_request, OS_sysmon_row, OS_sysmon_table ]
 ...

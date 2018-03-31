@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0A93C5DE-0D28-312E-8764-6B0FB805ED91' ]
+uuids:           [ 'x86_64: B993B8A2-5700-3DFC-9EB7-4CCEE8F959F1' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/GraphVisualizer.framework/Versions/A/GraphVisualizer
 current-version: 0
@@ -8,5 +8,5 @@ compatibility-version: 0
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
-    objc-classes:    [ _GVEdge, _GVGraph, _GVNode ]
+    objc-classes:    [ GVEdge, GVGraph, GVNode ]
 ...

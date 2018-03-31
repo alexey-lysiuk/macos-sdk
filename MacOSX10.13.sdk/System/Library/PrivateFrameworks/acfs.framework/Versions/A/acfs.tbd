@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 43E99321-B0C9-30BC-B3FA-597F7089EAFF' ]
+uuids:           [ 'x86_64: DD427F9D-A467-3289-8D0A-406431C325F0' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/acfs.framework/Versions/A/acfs
 exports:         
@@ -23,10 +23,10 @@ exports:
                        _redactXsanSecretsWithHash, _requestSanConfig, _requestSanConfig1, 
                        _requestSanConfigC, _requestSanConfigCF, _resetSanController, 
                        _saveConfigPlist, _saveLocalXsanConfig, _saveRemoteXsanConfig, 
-                       _saveXsanConfig, _send_servermgr_request, _send_xsand_request, 
-                       _send_xsand_requestCF, _setPrimaryController, _xs_replace_file_close, 
-                       _xs_replace_file_commit, _xs_replace_file_get_dst, _xs_replace_file_get_src, 
-                       _xs_replace_file_open, _xs_replace_file_set_permissions, _xsanConfigProfileForPayload, 
+                       _saveXsanConfig, _send_xsand_request, _send_xsand_requestCF, 
+                       _setPrimaryController, _xs_replace_file_close, _xs_replace_file_commit, 
+                       _xs_replace_file_get_dst, _xs_replace_file_get_src, _xs_replace_file_open, 
+                       _xs_replace_file_set_permissions, _xsanConfigProfileForPayload, 
                        _xsanHostFromURL, _xsanProfileIsInstalled, _xsan_controller_from_ip, 
                        _xsan_migrate_automount, _xsan_migrate_automount_with_paths, 
                        _xsan_upgrade, _xsand_make_mount_for_dict, _xsand_make_mount_for_dict_and_path, 

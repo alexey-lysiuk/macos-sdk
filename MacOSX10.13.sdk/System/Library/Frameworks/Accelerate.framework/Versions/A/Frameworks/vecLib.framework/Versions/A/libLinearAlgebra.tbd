@@ -1,7 +1,7 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64, x86_64h ]
-uuids:           [ 'i386: 8A120E75-CAF4-3CAE-BBE6-E2F5FAE44DB8', 'x86_64: 2029891F-DF9C-38E9-B32C-5B846F38453E', 
-                   'x86_64h: 6C68F41D-1398-3AFE-BE72-C0ECA1B24BDC' ]
+uuids:           [ 'i386: E9BB8A56-3AB9-33F5-91B5-079F5BAF78E9', 'x86_64: FB5A35EA-D636-3D69-AB53-B67E1EB8134C', 
+                   'x86_64h: E8E0B7FD-A0B7-31E5-AF01-81781F71EBBE' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libLinearAlgebra.dylib
 parent-umbrella: vecLib

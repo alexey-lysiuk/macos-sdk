@@ -137,7 +137,7 @@ TCL_UNSHARED_LIB_SUFFIX='${VERSION}.a'
 # different place than the directory containing the source files, this
 # points to the location of the sources, not the location where Tcl was
 # compiled.
-TCL_SRC_DIR='/BuildRoot/Library/Caches/com.apple.xbs/Sources/tcl/tcl-118/tcl/tcl'
+TCL_SRC_DIR='/BuildRoot/Library/Caches/com.apple.xbs/Sources/tcl/tcl-118.50.1/tcl/tcl'
 
 # List of standard directories in which to look for packages during
 # "package require" commands.  Contains the "prefix" directory plus also

@@ -2,7 +2,7 @@
 //  GKLocalPlayer.h
 //  Game Center
 //
-//  Copyright 2010-2017 Apple Inc. All rights reserved.
+//  Copyright 2010-2018 Apple Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -18,6 +18,12 @@
 #else
 @class NSViewController;
 #endif
+
+typedef NS_ENUM(NSUInteger, GKAuthenticationType) {
+    GKAuthenticatingWithoutUI                = 0,
+    GKAuthenticatingWithGreenBuddyUI         = 1,    // need to accept T&C
+    GKAuthenticatingWithAuthKitInvocation    = 2,    // no account
+};
 
 
 NS_ASSUME_NONNULL_BEGIN

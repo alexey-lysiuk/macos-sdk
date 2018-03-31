@@ -1,10 +1,10 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5805EFC0-5CA8-3847-A038-C93B9799DBF4' ]
+uuids:           [ 'x86_64: 0B5D1113-D94E-3B85-B69E-63A9B9810C2D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Swift/libswiftAVFoundation.dylib
 current-version: 900.8.49
-swift-version:   5
+swift-abi-version: 5
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ __T0SC11CMTimeRangeV12AVFoundationE19_bridgeToObjectiveCSo7NSValueCyF, 

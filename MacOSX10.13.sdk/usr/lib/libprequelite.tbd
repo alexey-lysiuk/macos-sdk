@@ -1,13 +1,13 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6B1693DC-B13C-3251-AFAA-D158B6E78C15' ]
+uuids:           [ 'x86_64: CFF48A31-1A95-3A63-AFE8-0235DD31AB36' ]
 platform:        macosx
 install-name:    /usr/lib/libprequelite.dylib
-current-version: 77
+current-version: 77.1
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _PQLSqliteErrorDomain, _pql_sqlite3_bind_pointer, _pql_sqlite3_value_object, 
                        _pql_sqlite3_value_pointer ]
-    objc-classes:    [ _PQLConnection, _PQLFormatInjection, _PQLNameInjection, _PQLRawInjection, 
-                       _PQLResultSet ]
+    objc-classes:    [ PQLConnection, PQLFormatInjection, PQLNameInjection, PQLRawInjection, 
+                       PQLResultSet ]
 ...

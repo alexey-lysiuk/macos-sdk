@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 #import <ModelIO/MDLValueTypes.h>
 #import <ModelIO/MDLAnimatedValueTypes.h>
+#import <ModelIO/MDLObject.h> // <rdar://problem/33854609> ModelKit headers need change to allow standalone inclusion
 
 NS_ASSUME_NONNULL_BEGIN
 

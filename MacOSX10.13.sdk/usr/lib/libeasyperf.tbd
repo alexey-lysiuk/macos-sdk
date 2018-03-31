@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 55CF6014-BB90-3C8A-9604-D9DBCC500841' ]
+uuids:           [ 'x86_64: CCEDB41B-AA3E-3DA2-BD29-E41AFE87E553' ]
 platform:        macosx
 install-name:    /usr/lib/libeasyperf.dylib
 objc-constraint: none

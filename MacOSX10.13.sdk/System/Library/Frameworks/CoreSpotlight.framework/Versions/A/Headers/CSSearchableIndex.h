@@ -122,5 +122,4 @@ CS_TVOS_UNAVAILABLE
 - (nullable NSURL *)fileURLForSearchableIndex:(CSSearchableIndex *)searchableIndex itemIdentifier:(NSString *)itemIdentifier typeIdentifier:(NSString *)typeIdentifier inPlace:(BOOL)inPlace error:(out NSError ** __nullable)outError CS_AVAILABLE(10_13, 11_0) CS_TVOS_UNAVAILABLE;
 
 @end
-
 NS_ASSUME_NONNULL_END

@@ -1,0 +1,31 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 37A4ADE7-7697-357A-874B-9DB8C77D8323' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/OnBoardingKit.framework/Versions/A/OnBoardingKit
+objc-constraint: none
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _OBPrivacyActivityIdentifier, _OBPrivacyAdvertisingIdentifier, 
+                       _OBPrivacyAnalyticsAppIdentifier, _OBPrivacyAnalyticsDeviceIdentifier, 
+                       _OBPrivacyAnalyticsiCloudIdentifier, _OBPrivacyAppStoreIdentifier, 
+                       _OBPrivacyAppleIDIdentifier, _OBPrivacyAppleMusicIdentifier, 
+                       _OBPrivacyApplePayCashIdentifier, _OBPrivacyApplePayIdentifier, 
+                       _OBPrivacyAskSiriIdentifier, _OBPrivacyCloudCallingIdentifier, 
+                       _OBPrivacyDictationdentifier, _OBPrivacyEmergencySOSIdentifier, 
+                       _OBPrivacyFaceIDIdentifier, _OBPrivacyImproveHealthIdentifier, 
+                       _OBPrivacyImproveHealthRecordsIdentifier, _OBPrivacyImproveMapsIdentifier, 
+                       _OBPrivacyLocationServicesIdentifier, _OBPrivacyMapsRAPIdentifier, 
+                       _OBPrivacyNewsIdentifier, _OBPrivacyPodcastsIdentifier, _OBPrivacyPrivacyPaneIdentifier, 
+                       _OBPrivacyPrivacyPaneMiniIdentifier, _OBPrivacySafariIdentifier, 
+                       _OBPrivacySafariSearchIdentifier, _OBPrivacySearchIdentifier, 
+                       _OBPrivacySiriIdentifier, _OBPrivacySiriSuggestionsIdentifier, 
+                       _OBPrivacySpotlightSuggestionsIdentifier, _OBPrivacyTVAppIdentifier, 
+                       _OBPrivacyTVProviderIdentifier, _OBPrivacyVideosIdentifier, 
+                       _OBPrivacyWheelchairIdentifier, _OBPrivacyiBooksIdentifier, 
+                       _OBPrivacyiCloudKeychainIdentifier, _OBPrivacyiTunesStoreIdentifier, 
+                       _OBPrivacyiTunesUIdentifier ]
+    objc-classes:    [ OBBundle, OBBundleManager, OBCapabilities, OBFlow, OBPrivacyCombinedController, 
+                       OBPrivacyFlow, OBPrivacyLinkController, OBPrivacyPresenter, 
+                       OBPrivacySplashController, OBSplashBullet, OBSplashContent ]
+...

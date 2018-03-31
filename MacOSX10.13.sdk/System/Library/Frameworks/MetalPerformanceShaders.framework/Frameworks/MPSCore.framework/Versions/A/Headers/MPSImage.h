@@ -105,6 +105,31 @@ MPS_CLASS_AVAILABLE_STARTING( macos(10.13), ios(10.0), tvos(10.0))
 
 @class MPSKernel;
 @class MPSImage;
+typedef NSArray<MPSImage*>  MPSImageBatch;
+
+/*! @abstract raise or lower the readcount of a batch by a set amount
+ *  @discussion     In some circumstances, a MPSImage may appear in a MPSImageBatch
+ *                  multiple times. This is particularly common when the MPSImage serves
+ *                  as an accumulator across the entire batch, such as when accumulating
+ *                  gradients for convolution weight update or batch statistics for
+ *                  batch normalization.  A naive function would then end up incrementing
+ *                  the state multiple times, probably leading to an error.
+ *
+ *                  MPSImageBatchIncrementReadCount() will efficiently increment the readCounts of
+ *                  each object in the batch only once, avoiding this problem. Non-temporary
+ *                  images and images with readCount already 0 will be ignored.
+ *
+ *  @param  batch   The MPSImageBatch to increment
+ *  @param  amount  The value to add to the read count for each unique image in the batch
+ *  @return         The number of different images in the batch
+ */
+NSUInteger MPSImageBatchIncrementReadCount( MPSImageBatch * __nonnull batch, NSInteger amount )
+            MPS_AVAILABLE_STARTING( macos(10.13.4), ios(11.3), tvos(11.3));
+
+/*! @abstract Call [MTLBlitEncoder synchronizeResource:] on unique resources */
+void MPSImageBatchSynchronize( MPSImageBatch * __nonnull batch, __nonnull id <MTLCommandBuffer> cmdBuf )
+            MPS_AVAILABLE_STARTING( macos(10.13.4), ios(11.3), tvos(11.3));
+
 
 /*! @abstract       A class  that allocates new MPSImage or MPSTemporaryImage
  *  @discussion     Sometimes it is prohibitively costly for MPS to figure out how
@@ -382,6 +407,12 @@ MPS_CLASS_AVAILABLE_STARTING( macos(10.13), ios(10.0), tvos(10.0))
  */
 @property (copy, atomic, nullable)  NSString *label;
 
+/*! @abstract   The MPSImage from which this MPSImage was derived. Otherwise nil.
+ *  @discussion This will point to the original image if this image was created using
+ *              -batchRepresentation, -batchRepresentationWithRange: or
+ *              -subImageWithRange:.  */
+@property (readonly, nullable, retain, nonatomic)  MPSImage * parent;
+
 /*!
  *  @abstract   Initialize an empty image object
  *  @param      device              The device that the image will be used. May not be NULL.
@@ -393,6 +424,23 @@ MPS_CLASS_AVAILABLE_STARTING( macos(10.13), ios(10.0), tvos(10.0))
  */
 -(nonnull instancetype) initWithDevice: (nonnull id <MTLDevice>) device
                        imageDescriptor: (const MPSImageDescriptor * __nonnull) imageDescriptor;
+
+
+/*! @abstract   Use -batchRepresentation or -subImageWithFeatureChannelRange instead
+ *  @discussion Generally, you should call -batchRepresentation or -subImageWithFeatureChannelRange
+ *              instead because they are safer. This is provided so that these interfaces will work
+ *              with your MPSImage subclass.
+ *
+ *  @param  parent  The parent image that owns the texture. It may be a sub-image.
+ *  @param  sliceRange  The range of MTLTexture2dArray slices to be included in the sub-image
+ *  @param  featureChannels The number of feature channels in the new image. The number of images
+ *                          is inferred.
+ *  @return A MPSImage that references a subregion of the texel storage in parent instead of
+ *              using its own storage.  */
+-(nonnull instancetype) initWithParentImage: (MPSImage * __nonnull) parent
+                                 sliceRange: (NSRange) sliceRange
+                            featureChannels: (NSUInteger) featureChannels NS_DESIGNATED_INITIALIZER;
+
 
 /*!
  *  @abstract   Initialize an MPSImage object using Metal texture. Metal texture has been created by
@@ -429,16 +477,94 @@ MPS_CLASS_AVAILABLE_STARTING( macos(10.13), ios(10.0), tvos(10.0))
  */
 -(nonnull instancetype) init NS_UNAVAILABLE;
 
-/*!
- *  @method         setPurgeableState
- *  @abstract       Set (or query) the purgeability state of a MPSImage
+
+/*! @abstract       Make a representation of a MPSImage (batch) as a MPSImageBatch
+ *  @discussion     Before the MPSImageBatch was introduced, several images could be concatenated
+ *                  into a MPSImage as multiple image slices in a MTLTexture2DArray to make
+ *                  a image batch. If the image contained more than 4 feature channels, then each
+ *                  image would have round_up( feature channels / 4) slices and the total number
+ *                  of slices in the MPSImage would be slices * number of images.
+ *
+ *                  Because many devices can operate on texture arrays of no more than 2048 slices,
+ *                  storage in this format is limited. For example in InceptionV3, 2048 feature
+ *                  channels at its widest point, the largest batch size that can be processed in
+ *                  this way is 4, well under commonly accepted practice for training. Consequently,
+ *                  the older batching style is deprecated and the MPSImageBatch is introduced.
+ *                  It is also easier to manage sub-batches and to concatenate sub-batches for
+ *                  memory management with the MPSImageBatch, so this format is favored going forward.
+ *
+ *                  To facilitate forward migration, this method will prepare an array of MPSImages that
+ *                  each point to the appropriate set of slices in storage for the original image.
+ *                  Since they share storage, writes to the parent will alter the content of the
+ *                  children, and vice versa.
+ *
+ *                  If the original is a temporary image, the result will be a temporary image.
+ *                  It will hold 1 readCount on the original. When the readCount drops to 0, it
+ *                  will decrement the appropriate counter on the parent.
+ *
+ *                  This is a much cheaper form of the slice operator, and should be used instead
+ *                  when the slice operator does not need to operate out of place.
+ *
+ *  @param  subRange  The range of images in the original image from which the batch will be derived.
+ *  @return A MPSImageBatch referencing a subregion of the original batch image.
+ */
+-(MPSImageBatch * __nonnull)  batchRepresentationWithSubRange: (NSRange) subRange;
+ 
+ /*! @abstract    Make a MPSImageBatch that points to the individual images in the MPSImage
+  * @discussion   If the original is a temporary image, the result will be a temporary image.
+  *               It will hold 1 readCount on the original. When the readCount drops to 0, it
+  *               will decrement the appropriate counter on the parent.
+  *  @return A MPSImageBatch aliasing the texel storage in the original batch image */
+-(MPSImageBatch * __nonnull)  batchRepresentation;
+
+/* @abstract    Make a sub-image that points to a subset of feature channels in the original
+ * @discussion  This makes a MPSImage that points to a feature channel subregion within
+ *              the original image. It is a much cheaper form of the slice operator in both
+ *              memory usage and GPU time, and should be used instead when the slice operator
+ *              does not need to operate out of place and the feature channel range is a
+ *              multiple of 4.
+ *
+ *              If the original is a temporary image, the result will be a temporary image.
+ *              It will hold 1 readCount on the original. When the readCount drops to 0, it
+ *              will decrement the appropriate counter on the parent.
+ *
+ * @param       range     A range describing the sub-range within the MPSImage
+ *                        to make the subImage within. The location and length
+ *                        must be multiples of 4. If the length is too big, it
+ *                        will be reduced to fit in the image.
+ */
+-(MPSImage * __nonnull) subImageWithFeatureChannelRange: (NSRange) range;
+ 
+/*! @abstract       Get the number of bytes used to allocate underyling MTLResources
+ *  @discussion     This is the size of the backing store of underlying MTLResources.
+ *                  It does not include all storage used by the object, for example
+ *                  the storage used to hold the MPSImage instantiation and MTLTexture
+ *                  is not included. It only measures the size of the allocation
+ *                  used to hold the texels in the image. This value is subject to
+ *                  change between different devices and operating systems.
+ *
+ *                  Except when -initWithTexture:featureChannels: is used, most
+ *                  MPSImages (including MPSTemporaryImages) are allocated without
+ *                  a backing store. The backing store is allocated lazily when
+ *                  it is needed, typically when the .texture property is called.
+ *                  Consequently, in most cases, it should be inexpensive to make
+ *                  a MPSImage to see how much memory it will need, and release it
+ *                  if it is too large.
+ *
+ *                  This method may fail in certain circumstances, such as when the
+ *                  MPSImage is created with -initWithTexture:featureChannels:, in
+ *                  which case 0 will be returned. 0 will also be returned if
+ *                  it is a sub-image or sub-batch (.parent is not nil).
+ */
+-(NSUInteger)  resourceSize
+    MPS_AVAILABLE_STARTING( macos(10.13), ios(11.0), tvos(11.0));
+
+/*! @abstract       Set (or query) the purgeability state of a MPSImage
  *  @discussion     Usage is per [MTLResource setPurgeableState:], except that the MTLTexture might be
  *                  MPSPurgeableStateAllocationDeferred, which means there is no texture to mark volatile / nonvolatile.
  *                  Attempts to set purgeability on MTLTextures that have not been allocated will be ignored.
  */
 - (MPSPurgeableState)setPurgeableState:(MPSPurgeableState)state;
-
-
 
 /*!
  *  @method         readBytes
@@ -462,8 +588,8 @@ MPS_CLASS_AVAILABLE_STARTING( macos(10.13), ios(10.0), tvos(10.0))
             region: (MTLRegion)region
 featureChannelInfo: (MPSImageReadWriteParams)featureChannelInfo
         imageIndex: (NSUInteger)imageIndex
-
         MPS_AVAILABLE_STARTING( macos(10.13), ios(11.0), tvos(11.0));
+
 
 /*!
  *  @method         writeBytes
@@ -488,6 +614,59 @@ featureChannelInfo: (MPSImageReadWriteParams)featureChannelInfo
 featureChannelInfo: (MPSImageReadWriteParams)featureChannelInfo
         imageIndex: (NSUInteger)imageIndex
         MPS_AVAILABLE_STARTING( macos(10.13), ios(11.0), tvos(11.0));
+
+/*!
+ *  @method         readBytes
+ *  @abstract       Get the values inside MPSImage and put them in the Buffer passed in.
+ *  @param          dataBytes                    The array allocated by the user to be used to put data from MPSImage, the length should be
+ *                                               imageWidth * imageHeight * numberOfFeatureChannels and dataType should be inferred from pixelFormat
+ *                                               defined in the Image Descriptor.
+ *  @param          dataLayout                   The enum tells how to layout MPS data in the buffer.
+ *  @param          bytesPerRow                  Bytes to stride to point to next row(pixel just below current one) in the user buffer.
+ *  @param          bytesPerImage                Bytes to stride to point to next slice in the user buffer.
+ *  @param          featureChannelInfo           information user fills in to write to a set of feature channels in the image
+ *  @param          imageIndex                   Image index in MPSImage to write to.
+ *  @param          region                       region of the MPSImage to read from. A region is a structure with the origin in the Image from which to start
+ *                                               reading values and a size which represents the width and height of the rectangular region to read from.
+ *                                               The z direction denotes the number of images, thus for 1 image, origin.z = 0 and size.depth = 1
+ *  @discussion     Use the enum to set data is coming in with what order. The data type will be determined by the pixelFormat
+ *                  defined in the Image Descriptor.
+ */
+-(void)  readBytes: (void * __nonnull)dataBytes
+        dataLayout: (MPSDataLayout)dataLayout
+       bytesPerRow: (NSUInteger)bytesPerRow
+     bytesPerImage: (NSUInteger)bytesPerImage
+            region: (MTLRegion)region
+featureChannelInfo: (MPSImageReadWriteParams)featureChannelInfo
+        imageIndex: (NSUInteger)imageIndex
+        MPS_AVAILABLE_STARTING( macos(10.13), ios(11.0), tvos(11.0));
+
+/*!
+ *  @method         writeBytes
+ *  @abstract       Set the values inside MPSImage with the Buffer passed in.
+ *  @param          dataBytes                    The array allocated by the user to be used to put data from MPSImage, the length should be
+ *                                               imageWidth * imageHeight * numberOfFeatureChannels and dataType should be inferred from pixelFormat
+ *                                               defined in the Image Descriptor.
+ *  @param          dataLayout                   The enum tells how to layout MPS data in the buffer.
+ *  @param          bytesPerRow                  Bytes to stride to point to next row(pixel just below current one) in the user buffer.
+ *  @param          bytesPerImage                Bytes to stride to point to next slice in the user buffer.
+ *  @param          region                       region of the MPSImage to write to. A region is a structure with the origin in the Image from which to start
+ *                                               writing values and a size which represents the width and height of the rectangular region to write in.
+ *                                               The z direction denotes the number of images, thus for 1 image, origin.z = 0 and size.depth = 1
+ *  @param          featureChannelInfo           information user fills in to read from a set of feature channels in the image
+ *  @param          imageIndex                   Image index in MPSImage to write to.
+ *  @discussion     Use the enum to set data is coming in with what order. The data type will be determined by the pixelFormat
+ *                  defined in the Image Descriptor.
+ */
+-(void) writeBytes: (const void * __nonnull)dataBytes
+        dataLayout: (MPSDataLayout)dataLayout
+       bytesPerRow: (NSUInteger)bytesPerRow
+     bytesPerImage: (NSUInteger)bytesPerImage
+            region: (MTLRegion)region
+featureChannelInfo: (MPSImageReadWriteParams)featureChannelInfo
+        imageIndex: (NSUInteger)imageIndex
+        MPS_AVAILABLE_STARTING( macos(10.13.4), ios(11.3), tvos(11.3));
+
 
 /*!
  *  @method         readBytes
@@ -522,6 +701,14 @@ featureChannelInfo: (MPSImageReadWriteParams)featureChannelInfo
         imageIndex: (NSUInteger)imageIndex
         MPS_AVAILABLE_STARTING( macos(10.13), ios(11.0), tvos(11.0));
 
+/*! @abstract   Flush the underlying MTLTexture from the device's caches, and invalidate any CPU caches if needed.
+ *  @discussion This will call [id <MTLBlitEncoder> synchronizeResource: ] on the image's MTLTexture, if any.
+ *              This is necessary for all MTLStorageModeManaged resources. For other resources, including temporary
+ *              resources (these are all MTLStorageModePrivate), and textures that have not yet been allocated, nothing is done.
+ *              It is more efficient to use this method than to attempt to do this yourself with the texture property.
+ *  @param      commandBuffer       The commandbuffer on which to synchronize   */
+-(void) synchronizeOnCommandBuffer: (__nonnull id <MTLCommandBuffer>) commandBuffer
+        MPS_AVAILABLE_STARTING( macos(10.13.4), ios(11.3), tvos(11.3));
 
 
 @end
@@ -603,9 +790,25 @@ featureChannelInfo: (MPSImageReadWriteParams)featureChannelInfo
  *              There is no locking mechanism provided to prevent a MTLTexture returned 
  *              from the .texture property from becoming invalid when the readCount reaches 0.
  *
+ *              Finally, MPSTemporaryImages are complicated to use with blit encoders.
+ *              Your application should assume that the MPSTemporaryImage is backed by a MTLHeap,
+ *              and consequently needs a MTLFence to ensure that compute command encoders and other
+ *              encoders do not trip over one another with heap based memory. MPS will almost never
+ *              use a blit encoder for this reason. If you do need one, then you will need to make
+ *              a new compute encoder to block on whatever previous compute encoder last used the
+ *              heap block. (MPS will not tell you who previously used the heap block. That encoder
+ *              is almost certainly long dead anyway.) If concurrent encoders are involved, then a
+ *              barrier might be needed. Within that compute encoder, you will call -updateFence.
+ *              End the compute encoder, make a blit encoder wait for the fence, do the blit, update
+ *              a new fence, then make a new compute encoder, wait for the second fence, then you
+ *              can continue. Possibly the second do-nothing compute encoder needs to be ended so
+ *              MPS can be called. Frankly, we don't bother with blit encoders and just write a compute
+ *              operation for copy / clear as needed, or better yet find a way to eliminate the
+ *              clear / copy pass so we don't have to pay for it. Note: the most common use of a
+ *              blit encoder, -synchronizeResource: can not encounter this problem because
+ *              MPSTemporaryImages live in GPU private memory and can not be read by the CPU.
+ *
  *              MPSTemporaryImages can otherwise be used wherever MPSImages are used.
- *
- *
  */
 MPS_CLASS_AVAILABLE_STARTING( macos(10.13), ios(10.0), tvos(10.0))
 @interface  MPSTemporaryImage : MPSImage
@@ -651,6 +854,29 @@ MPS_CLASS_AVAILABLE_STARTING( macos(10.13), ios(10.0), tvos(10.0))
 +(nonnull instancetype) temporaryImageWithCommandBuffer: (nonnull id <MTLCommandBuffer>) commandBuffer
                                       textureDescriptor: (const MTLTextureDescriptor * __nonnull) textureDescriptor;
 
+/*!
+ *  @abstract       Low level interface for creating a MPSTemporaryImage using a MTLTextureDescriptor
+ *  @discussion     This function provides access to MTLPixelFormats not typically covered by -initForCommandBuffer:imageDescriptor:
+ *                  The number of images will be inferred from number of slices in the descriptor.arrayLength and
+ *                  the number of feature channels.
+ *
+ *                  The following restrictions apply:
+ *
+ *                      MTLTextureType must be MTLTextureType2D or MTLTextureType2DArray
+ *                      MTLTextureUsage must contain at least one of MTLTextureUsageShaderRead, MTLTextureUsageShaderWrite
+ *                      MTLStorageMode must be MTLStorageModePrivate
+ *
+ *  @param commandBuffer        The command buffer on which the MPSTemporaryImage may be used
+ *  @param textureDescriptor    A texture descriptor describing the MPSTemporaryImage texture
+ *
+ *  @return     A valid MPSTemporaryImage.  The object will be released when the command buffer
+ *              is committed. The underlying texture will become invalid before this time
+ *              due to the action of the readCount property.
+ */
++(nonnull instancetype) temporaryImageWithCommandBuffer: (nonnull id <MTLCommandBuffer>) commandBuffer
+                                      textureDescriptor: (const MTLTextureDescriptor * __nonnull) textureDescriptor
+                                        featureChannels: (NSUInteger) featureChannels
+                            MPS_AVAILABLE_STARTING(macos(10.13.4), ios(11.3), tvos(11.3));
 
 /*!
  *  @abstract       Help MPS decide which allocations to make ahead of time
@@ -706,6 +932,7 @@ MPS_CLASS_AVAILABLE_STARTING( macos(10.13), ios(10.0), tvos(10.0))
 
 
 @end
+
 
     
 #ifdef __cplusplus

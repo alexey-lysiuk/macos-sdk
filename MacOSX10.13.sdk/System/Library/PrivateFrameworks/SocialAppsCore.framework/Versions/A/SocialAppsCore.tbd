@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BFC0F9EB-6A54-31FE-866C-54E69B10C0A7' ]
+uuids:           [ 'x86_64: AB14E573-F417-3E69-BFDD-DB898ACD1964' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SocialAppsCore.framework/Versions/A/SocialAppsCore
 current-version: 5500
@@ -11,14 +11,21 @@ exports:
                        _SOAccountAliasVerificationStateChangedNotification, _SOAccountAliasesChangedNotification_Private, 
                        _SOAccountAuthenticationTimedOutNotification, _SOAccountEnabledStateChangedNotification, 
                        _SOAccountReadReceiptStatusChangedNotification, _SOAccountRegistrationErrorDomain, 
-                       _SOAccountRegistrationStateChangedNotification, _SOBlockListControllerListDidChangeNotification, 
-                       _SOChatShouldDisplayMessageContentsKey, _SOChatShouldDisplayMessageContentsNotification, 
-                       _SOCoreBundle, _SOFilterUnknownIMessageSendersSettingDidChangeNotification, 
+                       _SOAccountRegistrationStateChangedNotification, _SOArchiveDataContentsKey, 
+                       _SOArchiveDataMetadataDictionaryKey, _SOArchiveFileExtension, 
+                       _SOBlockListControllerListDidChangeNotification, _SOChatShouldDisplayMessageContentsKey, 
+                       _SOChatShouldDisplayMessageContentsNotification, _SOCoreBundle, 
+                       _SOFilterUnknownIMessageSendersSettingDidChangeNotification, 
                        _SOIDSServiceNameFaceTimeAudio, _SOIDSServiceNameFaceTimeVideo, 
                        _SOIDSServiceNameScreenSharing, _SOIsInternalInstall, _SOIsRunningUITests, 
+                       _SOMetadataDictionaryChatRoomKey, _SOMetadataDictionaryConversationKey, 
+                       _SOMetadataDictionaryEndTimeKey, _SOMetadataDictionaryIMHandleIDsKey, 
+                       _SOMetadataDictionaryLastMessageIDKey, _SOMetadataDictionaryParticipantsKey, 
+                       _SOMetadataDictionaryServiceKey, _SOMetadataDictionaryStartTimeKey, 
                        _SONotifyAboutMessagesFromUnknownContactsSettingKey, _SOOrderedSetControllerSelectionDidChangeNotification, 
-                       _SOPresentAlertURLScheme, _SOSettingsInputLineAutomaticDashSubstitutionEnabledKey, 
-                       _SOSettingsInputLineAutomaticDataDetectionEnabledKey, _SOSettingsInputLineAutomaticEmojiSubstitutionEnabledLegacyKey, 
+                       _SOPresentAlertURLScheme, _SOPresentBusinessMessageScheme, 
+                       _SOSettingsInputLineAutomaticDashSubstitutionEnabledKey, _SOSettingsInputLineAutomaticDataDetectionEnabledKey, 
+                       _SOSettingsInputLineAutomaticEmojiSubstitutionEnabledLegacyKey, 
                        _SOSettingsInputLineAutomaticEmojiSubstitutionEnablediMessageKey, 
                        _SOSettingsInputLineAutomaticLinkDetectionEnabledKey, _SOSettingsInputLineAutomaticQuoteSubstitutionEnabledKey, 
                        _SOSettingsInputLineAutomaticSpellingCorrectionEnabledKey, 
@@ -37,13 +44,14 @@ exports:
                        _kDelayInSecondsToForceReconnect, _kMaxAttemptsToForceReconnect, 
                        _kPhoneNumberPairVersion, _kPromptEnableReadReceipts, _kPromptMessagesInCloud, 
                        _kRespondToEmailInterval ]
-    objc-classes:    [ _ProfileAuthenticationMessage, _ProfileMessage, _SOAccountAlias, 
-                       _SOAccountAliasController, _SOAccountRegistrationController, 
-                       _SOBlockListController, _SOBlockListItem, _SOCloudKitAlertController, 
-                       _SOCloudKitPurchaseStorageAlertController, _SOCloudKitPurchaseStorageController, 
-                       _SODarkWakeHelper, _SOEmojifier, _SOIDSListener, _SOOrderedSetController, 
-                       _SOPeopleCollection, _SOShare, _SOSuddenTermination, _SOSystemIdleMonitor, 
-                       _SOTimer, _SOTimerCenter, _SOURLFetcher, _SOUserNotificationHelper, 
-                       __NotificationObserver ]
-    objc-ivars:      [ _SOAccountAlias._active ]
+    objc-classes:    [ ProfileAuthenticationMessage, ProfileMessage, SOAccountAlias, 
+                       SOAccountAliasController, SOAccountRegistrationController, 
+                       SOBlockListController, SOBlockListItem, SOCloudKitAlertController, 
+                       SOCloudKitPurchaseStorageAlertController, SOCloudKitPurchaseStorageController, 
+                       SODarkWakeHelper, SOEmojifier, SOFileWrapperSecureDecoder, 
+                       SOIDSListener, SOOrderedSetController, SOPeopleCollection, 
+                       SOShare, SOSuddenTermination, SOSystemIdleMonitor, SOTextAttachmentSecureDecoder, 
+                       SOTimer, SOTimerCenter, SOURLFetcher, SOUserNotificationHelper, 
+                       SocialAppsCore, _NotificationObserver ]
+    objc-ivars:      [ SOAccountAlias._active ]
 ...

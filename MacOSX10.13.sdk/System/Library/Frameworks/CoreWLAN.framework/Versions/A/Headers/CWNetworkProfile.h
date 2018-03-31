@@ -39,8 +39,8 @@ NS_CLASS_AVAILABLE_MAC(10_7)
     
     BOOL            _temporarilyDisabled;
     
-    BOOL            _autoLogin;
-    
+    BOOL            _captiveBypass;
+
     BOOL            _isPasspoint;
     
     NSString        *_domainName;

@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4FAC8104-9A48-3E8E-8267-2D359F95BBB8' ]
+uuids:           [ 'x86_64: 23EC1555-88B3-3620-A41D-4B3758A77618' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Versions/A/Frameworks/PhotosGraph.framework/Versions/A/PhotosGraph
 objc-constraint: none
@@ -27,8 +27,8 @@ exports:
                        _kPGMoodKeywordNature, _kPGMoodKeywordNewYorkCity, _kPGMoodKeywordParis, 
                        _kPGMoodKeywordParty, _kPGMoodKeywordPets, _kPGMoodKeywordSports, 
                        _kPGMoodKeywordUniversal, _kPGMoodKeywordWedding, _kPGMoodKeywordWinterHoliday ]
-    objc-classes:    [ _PGError, _PGFeature, _PGGraphHelper, _PGKeyAssetCurationOptions, 
-                       _PGManager, _PGMemory, _PGMemoryDebug, _PGMemoryOptions, _PGMoodGenerator, 
-                       _PGMoodGeneratorOptions, _PGMoodVector, _PGRelated, _PGTitle, 
-                       _PGTitleTuple, _PGUserDefaults ]
+    objc-classes:    [ PGError, PGFeature, PGGraphHelper, PGHighlightStatisticsEstimator, 
+                       PGKeyAssetCurationOptions, PGManager, PGMemory, PGMemoryDebug, 
+                       PGMemoryOptions, PGMoodGenerator, PGMoodGeneratorOptions, 
+                       PGMoodVector, PGRelated, PGTitle, PGTitleTuple, PGUserDefaults ]
 ...

@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 13FAB8A2-507A-3AEA-A571-27BDDFD96B31', 'x86_64: 5CC5E8EE-62A1-3EA5-B300-A39ABD0CF12D' ]
+uuids:           [ 'i386: C8DEE7FC-6CCE-3645-B6C1-CCF5FD07C20C', 'x86_64: DC94CF9E-1EB4-3C0E-B298-CA1190885276' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Lexicon.framework/Versions/A/Lexicon
-current-version: 33.2
+current-version: 33.5.2
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]
@@ -25,9 +25,10 @@ exports:
                        _LXLexiconCreateTransient, _LXLexiconCreateView, _LXLexiconEnumerateEntriesForString, 
                        _LXLexiconGetFirstTokenIDForString, _LXLexiconGetSortkeyBytes, 
                        _LXLexiconIncrementPenaltyCount, _LXLexiconIncrementUsageCount, 
-                       _LXLexiconMigrateEntry, _LXLexiconRemoveEntry, _LXLexiconSerializedSize, 
-                       _LXLexiconSetUserValue, _LXLexiconUpdateMetaFlags, _LXLexiconWrite, 
-                       _LXLexiconWriteDebugDump, _LXMutableEntryGetUserValue, _LXMutableEntrySetMetaFlags, 
+                       _LXLexiconLockMemory, _LXLexiconMigrateEntry, _LXLexiconRemoveEntry, 
+                       _LXLexiconSerializedSize, _LXLexiconSetUserValue, _LXLexiconUnlockMemory, 
+                       _LXLexiconUpdateMetaFlags, _LXLexiconWrite, _LXLexiconWriteDebugDump, 
+                       _LXMutableEntryGetUserValue, _LXMutableEntrySetMetaFlags, 
                        _LXMutableEntryUpdateUsageCount, _kLXLexiconDataFileKey, _kLXLexiconDeltaFilesKey, 
                        _kLXLexiconLocaleKey, _kLXLexiconNameDurableNamedEntity, _kLXLexiconNameKey, 
                        _kLXLexiconNameRecentNamedEntity, _kLXLexiconNameUserContacts, 

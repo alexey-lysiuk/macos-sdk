@@ -1,12 +1,12 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A56875A7-1DE5-3E9F-82C2-7511FFFB4C18' ]
+uuids:           [ 'x86_64: 59C36527-E6F7-30F0-B31E-A1FC14856E1C' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DuetRecommendation.framework/DuetRecommendation
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _DuetRecommendationVersionNumber, _DuetRecommendationVersionString ]
-    objc-classes:    [ __DRInMemoryTopicInterestModel, __DRPaths, __DRTopicActionEntry, 
-                       __DRTopicEnumerationQuery, __DRTopicInterestModel, __DRTopicInterestSummary, 
-                       __DRTopicStatisticsQuery ]
+    objc-classes:    [ _DRInMemoryTopicInterestModel, _DRPaths, _DRTopicActionEntry, 
+                       _DRTopicEnumerationQuery, _DRTopicInterestModel, _DRTopicInterestSummary, 
+                       _DRTopicStatisticsQuery ]
 ...

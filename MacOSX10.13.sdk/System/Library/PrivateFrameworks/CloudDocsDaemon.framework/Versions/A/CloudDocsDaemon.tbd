@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0B58384C-41D6-3689-81C5-44F3AD5BAE04' ]
+uuids:           [ 'x86_64: ACCCC904-1066-3575-9E92-82CAD581F024' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/Versions/A/CloudDocsDaemon
-current-version: 572.2
+current-version: 575.14
 compatibility-version: 0
 exports:         
   - archs:           [ x86_64 ]
@@ -42,41 +42,40 @@ exports:
                        _kBRRecordKeyThumbnailQuickLookMetadata, _kBRRecordKeyTrashPutBackParent, 
                        _kBRRecordKeyTrashPutBackPath, _kBRRecordKeyXattr, _kBRRecordTypeContent, 
                        _kBRRecordTypeStructure, _prettyprintFSEventFlags ]
-    objc-classes:    [ _BRCAccountHandler, _BRCAccountSession, _BRCBackupSession, 
-                       _BRCContainerScheduler, _BRCDaemon, _BRCDocumentItem, _BRCDumpContext, 
-                       _BRCDumper, _BRCExtensionErrorPayload, _BRCFSEventsMonitor, 
-                       _BRCFSReader, _BRCFSWriter, _BRCFileCoordinator, _BRCGenerationID, 
-                       _BRCItemID, _BRCItemToPathLookup, _BRCLocalItem, _BRCMinHeap, 
-                       _BRCPackageChecksummer, _BRCPackageItem, _BRCPackageManifestReader, 
-                       _BRCPackageManifestWriter, _BRCPathToItemLookup, _BRCPrivateServerZone, 
-                       _BRCRelativePath, _BRCServerItem, _BRCServerZone, _BRCSharedServerZone, 
-                       _BRCStageRegistry, _BRCStatInfo, _BRCSyncThrottle, _BRCTermDumper, 
-                       _BRCURLToItemLookup, _BRCUserDefaults, _BRCVersion, _BRFieldCKInfo, 
-                       _BRFieldFinderTags, _BRFieldPkgHeader, _BRFieldPkgItem, _BRFieldPkgLocalItem, 
-                       _BRFieldUserIdentity, _BRFieldXattr, _BRFieldXattrBlob ]
-    objc-ivars:      [ _BRCAccountSession._cloudDocsFD, _BRCAccountSession._databaseID, 
-                       _BRCAccountSession._dbCorruptionQueue, _BRCAccountSession._dbProfilingHook, 
-                       _BRCAccountSession._dbURL, _BRCAccountSession._dbWatcher, 
-                       _BRCAccountSession._dbWatcherQueue, _BRCAccountSession._defaultScheduler, 
-                       _BRCAccountSession._miscOperations, _BRCAccountSession._syncContexts, 
-                       _BRCDocumentItem._currentVersion, _BRCDocumentItem._desiredVersion, 
-                       _BRCExtensionErrorPayload._minimumOSName, _BRCLocalItem._dbRowID, 
-                       _BRCLocalItem._isUserVisible, _BRCLocalItem._itemID, _BRCLocalItem._localDiffs, 
-                       _BRCLocalItem._minimumSupportedOSRowID, _BRCLocalItem._notifsRank, 
-                       _BRCLocalItem._orig, _BRCLocalItem._ownerKey, _BRCLocalItem._parentZoneRowID, 
-                       _BRCLocalItem._sharingOptions, _BRCLocalItem._st, _BRCLocalItem._syncUpState, 
-                       _BRCServerItem._db, _BRCServerItem._session, _BRCServerItem._sharingOptions, 
-                       _BRCServerItem._zone, _BRCServerZone._changeState, _BRCServerZone._clientZone, 
-                       _BRCServerZone._db, _BRCServerZone._dbRowID, _BRCServerZone._session, 
-                       _BRCServerZone._zoneName, _BRFieldCKInfo._etag, _BRFieldCKInfo._etagBeforeCrossZoneMove, 
-                       _BRFieldCKInfo._has, _BRFieldCKInfo._knownToServer, _BRFieldCKInfo._wasCached, 
-                       _BRFieldFinderTags._tags, _BRFieldPkgHeader._version, _BRFieldPkgItem._has, 
-                       _BRFieldPkgItem._isExecutable, _BRFieldPkgItem._isWritable, 
-                       _BRFieldPkgItem._mtime, _BRFieldPkgItem._path, _BRFieldPkgItem._quarantineInfo, 
-                       _BRFieldPkgItem._signature, _BRFieldPkgItem._symlinkContent, 
-                       _BRFieldPkgItem._type, _BRFieldPkgItem._xattrIndex, _BRFieldPkgLocalItem._fileID, 
-                       _BRFieldPkgLocalItem._generationID, _BRFieldPkgLocalItem._has, 
-                       _BRFieldPkgLocalItem._item, _BRFieldPkgLocalItem._size, _BRFieldPkgLocalItem._xattrs, 
-                       _BRFieldUserIdentity._serializedNameComponents, _BRFieldXattr._name, 
-                       _BRFieldXattr._value, _BRFieldXattrBlob._xattrs ]
+    objc-classes:    [ BRCAccountHandler, BRCAccountSession, BRCBackupSession, BRCContainerScheduler, 
+                       BRCDaemon, BRCDocumentItem, BRCDumpContext, BRCDumper, BRCExtensionErrorPayload, 
+                       BRCFSEventsMonitor, BRCFSReader, BRCFSWriter, BRCFileCoordinator, 
+                       BRCGenerationID, BRCItemID, BRCItemToPathLookup, BRCLocalItem, 
+                       BRCMinHeap, BRCPackageChecksummer, BRCPackageItem, BRCPackageManifestReader, 
+                       BRCPackageManifestWriter, BRCPathToItemLookup, BRCPrivateServerZone, 
+                       BRCRelativePath, BRCServerItem, BRCServerZone, BRCSharedServerZone, 
+                       BRCStageRegistry, BRCStatInfo, BRCSyncThrottle, BRCTermDumper, 
+                       BRCURLToItemLookup, BRCUserDefaults, BRCVersion, BRFieldCKInfo, 
+                       BRFieldFinderTags, BRFieldPkgHeader, BRFieldPkgItem, BRFieldPkgLocalItem, 
+                       BRFieldUserIdentity, BRFieldXattr, BRFieldXattrBlob ]
+    objc-ivars:      [ BRCAccountSession._cloudDocsFD, BRCAccountSession._databaseID, 
+                       BRCAccountSession._dbCorruptionQueue, BRCAccountSession._dbProfilingHook, 
+                       BRCAccountSession._dbURL, BRCAccountSession._dbWatcher, BRCAccountSession._dbWatcherQueue, 
+                       BRCAccountSession._defaultScheduler, BRCAccountSession._miscOperations, 
+                       BRCAccountSession._syncContexts, BRCDocumentItem._currentVersion, 
+                       BRCDocumentItem._desiredVersion, BRCExtensionErrorPayload._minimumOSName, 
+                       BRCLocalItem._dbRowID, BRCLocalItem._isUserVisible, BRCLocalItem._itemID, 
+                       BRCLocalItem._localDiffs, BRCLocalItem._minimumSupportedOSRowID, 
+                       BRCLocalItem._notifsRank, BRCLocalItem._orig, BRCLocalItem._ownerKey, 
+                       BRCLocalItem._parentZoneRowID, BRCLocalItem._sharingOptions, 
+                       BRCLocalItem._st, BRCLocalItem._syncUpState, BRCServerItem._db, 
+                       BRCServerItem._session, BRCServerItem._sharingOptions, BRCServerItem._zone, 
+                       BRCServerZone._changeState, BRCServerZone._clientZone, BRCServerZone._db, 
+                       BRCServerZone._dbRowID, BRCServerZone._session, BRCServerZone._zoneName, 
+                       BRFieldCKInfo._etag, BRFieldCKInfo._etagBeforeCrossZoneMove, 
+                       BRFieldCKInfo._has, BRFieldCKInfo._knownToServer, BRFieldCKInfo._wasCached, 
+                       BRFieldFinderTags._tags, BRFieldPkgHeader._version, BRFieldPkgItem._has, 
+                       BRFieldPkgItem._isExecutable, BRFieldPkgItem._isWritable, 
+                       BRFieldPkgItem._mtime, BRFieldPkgItem._path, BRFieldPkgItem._quarantineInfo, 
+                       BRFieldPkgItem._signature, BRFieldPkgItem._symlinkContent, 
+                       BRFieldPkgItem._type, BRFieldPkgItem._xattrIndex, BRFieldPkgLocalItem._fileID, 
+                       BRFieldPkgLocalItem._generationID, BRFieldPkgLocalItem._has, 
+                       BRFieldPkgLocalItem._item, BRFieldPkgLocalItem._size, BRFieldPkgLocalItem._xattrs, 
+                       BRFieldUserIdentity._serializedNameComponents, BRFieldXattr._name, 
+                       BRFieldXattr._value, BRFieldXattrBlob._xattrs ]
 ...

@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 80DEB2CA-E747-3A70-B1A8-906DCFBF49CF' ]
+uuids:           [ 'x86_64: E1DAF029-7284-3A60-B66B-3487B5588277' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/BridgeXPC.framework/Versions/A/BridgeXPC
-current-version: 33
+current-version: 33.50.1
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -17,6 +17,6 @@ exports:
                        _bridge_xpc_connection_create_with_host_and_port_number, _bridge_xpc_connection_create_with_multiverse_device, 
                        _bridge_xpc_connection_send_barrier, _bridge_xpc_connection_send_message, 
                        _bridge_xpc_connection_set_event_handler, _bridge_xpc_connection_set_target_queue ]
-    objc-classes:    [ _BridgeXPCConnection, _BridgeXPCListener, _BridgeXPCSynchronousConnection, 
-                       _BridgeXPCSynchronousListener ]
+    objc-classes:    [ BridgeXPCConnection, BridgeXPCListener, BridgeXPCSynchronousConnection, 
+                       BridgeXPCSynchronousListener ]
 ...

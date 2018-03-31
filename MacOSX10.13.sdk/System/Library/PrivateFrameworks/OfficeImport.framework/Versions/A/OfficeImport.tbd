@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E979DB79-4C20-3F83-81EC-ABD5274A6246' ]
+uuids:           [ 'x86_64: 59FCEB9C-0034-378D-AD33-0E9449F52E57' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/OfficeImport.framework/Versions/A/OfficeImport
 current-version: 257.2
@@ -16,15 +16,15 @@ exports:
                        __Z25setNSStringValueForEDCellP12EDCellHeaderP8NSStringP11EDResources, 
                        __Z36EMNumberFormatterSetLocaleForTestingPK10__CFLocale, ___crashreporter_info__, 
                        _kOIPreviewOptionsPassphrase ]
-    objc-classes:    [ _CMArchiveManager, _CMDictArchiveManager, _CMDrawableStyle, 
-                       _CMFileManager, _CMLengthProperty, _CMOutlineState, _CMProgressiveArchiveManager, 
-                       _CMState, _CMStringProperty, _CMStyle, _CMToggleProperty, 
-                       _EDContentFormat, _EDFont, _EDHyperlink, _EDReference, _EDResources, 
-                       _EDString, _EDStyle, _EDWorkbook, _EDWorksheet, _EMCellNumberMapper, 
-                       _EMNumberFormatter, _EMState, _EMWorksheetMapper, _OADCharacterProperties, 
-                       _OADDrawable, _OADDrawableProperties, _OADHyperlink, _OADImageFill, 
-                       _OADRegularTextRun, _OITSUColor, _OIXMLElement, _PMTextRunMapper, 
-                       _WDCharacterRun, _WDDocument, _WDFieldMarker, _WDListDefinition, 
-                       _WDTable, _WDText, _WMDocumentMapper, _WMParagraphMapper, 
-                       _WMSectionMapper, _WMState, _WMTableMapper ]
+    objc-classes:    [ CMArchiveManager, CMDictArchiveManager, CMDrawableStyle, CMFileManager, 
+                       CMLengthProperty, CMOutlineState, CMProgressiveArchiveManager, 
+                       CMState, CMStringProperty, CMStyle, CMToggleProperty, EDContentFormat, 
+                       EDFont, EDHyperlink, EDReference, EDResources, EDString, EDStyle, 
+                       EDWorkbook, EDWorksheet, EMCellNumberMapper, EMNumberFormatter, 
+                       EMState, EMWorksheetMapper, OADCharacterProperties, OADDrawable, 
+                       OADDrawableProperties, OADHyperlink, OADImageFill, OADRegularTextRun, 
+                       OITSUColor, OIXMLElement, PMTextRunMapper, WDCharacterRun, 
+                       WDDocument, WDFieldMarker, WDListDefinition, WDTable, WDText, 
+                       WMDocumentMapper, WMParagraphMapper, WMSectionMapper, WMState, 
+                       WMTableMapper ]
 ...

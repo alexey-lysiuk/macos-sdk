@@ -28,6 +28,7 @@ volume
 .Nm
 .Op Fl o Ar options
 .Op Fl i
+.Op Fl b Ar block-size
 .Op Fl s Ar volume-size | Fl q Ar volume-quota Fl r Ar volume-reserve
 .Op Fl v Ar volume-name
 .Op Fl E | Fl P
@@ -37,6 +38,7 @@ volume
 .Fl C
 .Op Fl o Ar options
 .Op Fl i
+.Op Fl b Ar block-size
 .Ar special
 .Nm
 .Fl A
@@ -84,6 +86,10 @@ although can be specified as simply
 .Pp
 The options are as follows:
 .Bl -tag -width 17n
+.It Fl b Ar block-size
+The block size of the container.
+All volumes within this container will use this block size.
+The default is 4096 bytes.
 .It Fl o Ar options
 Additional (undocumented) formatting options.
 .It Fl i

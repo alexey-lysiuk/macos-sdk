@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F06F4CDC-138C-3991-A987-7C7332BE4508' ]
+uuids:           [ 'x86_64: 3DE92A6D-565E-3477-82B1-660987317BD8' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/StreamingZip.framework/Versions/A/StreamingZip
 exports:         
@@ -42,5 +42,5 @@ exports:
                        _kSZArchiverStatsResultSizeDeltaPercent, _kSZArchiverStatsTotalBytesRecovered, 
                        _kSZArchiverStatsTotalCompressedSize, _kSZArchiverStatsTotalExtractedSize, 
                        _kSZArchiverStatsTotalFileSize, _kSZArchiverStatsTotalUncompressedSize ]
-    objc-classes:    [ _SZExtractor, _StreamingUnzipper ]
+    objc-classes:    [ SZExtractor, StreamingUnzipper ]
 ...

@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 67BDD38B-DA9E-3F68-80B2-229581E67541' ]
+uuids:           [ 'x86_64: 1E30D875-4829-38CE-901E-7508C411568A' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CallKit.framework/Versions/A/CallKit
 objc-constraint: none
@@ -12,24 +12,24 @@ exports:
                        _CXCallDirectoryStoreExtensionsChangedNotification, _CXCallDirectoryStoreMigratorLatestSchemaVersion, 
                        _CXErrorDomain, _CXErrorDomainCallDirectoryManager, _CXErrorDomainCallDirectoryStore, 
                        _CXErrorDomainIncomingCall, _CXErrorDomainRequestTransaction ]
-    objc-classes:    [ _CXAction, _CXAnswerCallAction, _CXCall, _CXCallAction, _CXCallController, 
-                       _CXCallControllerHost, _CXCallDirectoryExtension, _CXCallDirectoryExtensionContext, 
-                       _CXCallDirectoryExtensionManager, _CXCallDirectoryHost, _CXCallDirectoryIdentificationEntry, 
-                       _CXCallDirectoryLabeledPhoneNumberEntryData, _CXCallDirectoryManager, 
-                       _CXCallDirectoryMutableLabeledPhoneNumberEntryData, _CXCallDirectoryMutablePhoneNumberEntryData, 
-                       _CXCallDirectoryNSExtensionManager, _CXCallDirectoryPhoneNumberEntryData, 
-                       _CXCallDirectoryProvider, _CXCallDirectorySanitizer, _CXCallDirectoryStore, 
-                       _CXCallDirectoryStoreExtension, _CXCallDirectoryStoreIdentificationEntry, 
-                       _CXCallDirectoryStoreMigrationResult, _CXCallDirectoryStoreMigrator, 
-                       _CXCallFailureContext, _CXCallObserver, _CXCallSource, _CXCallSourceManager, 
-                       _CXCallUpdate, _CXEndCallAction, _CXExtensionCallSource, _CXExtensionProvider, 
-                       _CXHandle, _CXHandoffContext, _CXInProcessCallSource, _CXInProcessProvider, 
-                       _CXLabeledHandle, _CXPlayDTMFCallAction, _CXProvider, _CXProviderConfiguration, 
-                       _CXProviderExtensionContext, _CXProviderExtensionHostContext, 
-                       _CXProviderExtensionVendorContext, _CXPullCallAction, _CXSendMMIOrUSSDCodeAction, 
-                       _CXSetGroupCallAction, _CXSetHeldCallAction, _CXSetMutedCallAction, 
-                       _CXSetRelayingCallAction, _CXSetSendingVideoCallAction, _CXSetTTYTypeCallAction, 
-                       _CXSetVideoPresentationSizeCallAction, _CXSetVideoPresentationStateCallAction, 
-                       _CXStartCallAction, _CXTransaction, _CXTransactionGroup, _CXTransactionManager, 
-                       _CXXPCCallSource, _CXXPCProvider ]
+    objc-classes:    [ CXAction, CXAnswerCallAction, CXCall, CXCallAction, CXCallController, 
+                       CXCallControllerHost, CXCallDirectoryExtension, CXCallDirectoryExtensionContext, 
+                       CXCallDirectoryExtensionManager, CXCallDirectoryHost, CXCallDirectoryIdentificationEntry, 
+                       CXCallDirectoryLabeledPhoneNumberEntryData, CXCallDirectoryManager, 
+                       CXCallDirectoryMutableLabeledPhoneNumberEntryData, CXCallDirectoryMutablePhoneNumberEntryData, 
+                       CXCallDirectoryNSExtensionManager, CXCallDirectoryPhoneNumberEntryData, 
+                       CXCallDirectoryProvider, CXCallDirectorySanitizer, CXCallDirectoryStore, 
+                       CXCallDirectoryStoreExtension, CXCallDirectoryStoreIdentificationEntry, 
+                       CXCallDirectoryStoreMigrationResult, CXCallDirectoryStoreMigrator, 
+                       CXCallFailureContext, CXCallObserver, CXCallSource, CXCallSourceManager, 
+                       CXCallUpdate, CXEndCallAction, CXExtensionCallSource, CXExtensionProvider, 
+                       CXHandle, CXHandoffContext, CXInProcessCallSource, CXInProcessProvider, 
+                       CXLabeledHandle, CXPlayDTMFCallAction, CXProvider, CXProviderConfiguration, 
+                       CXProviderExtensionContext, CXProviderExtensionHostContext, 
+                       CXProviderExtensionVendorContext, CXPullCallAction, CXSendMMIOrUSSDCodeAction, 
+                       CXSetGroupCallAction, CXSetHeldCallAction, CXSetMutedCallAction, 
+                       CXSetRelayingCallAction, CXSetSendingVideoCallAction, CXSetTTYTypeCallAction, 
+                       CXSetVideoPresentationSizeCallAction, CXSetVideoPresentationStateCallAction, 
+                       CXStartCallAction, CXTransaction, CXTransactionGroup, CXTransactionManager, 
+                       CXXPCCallSource, CXXPCProvider ]
 ...

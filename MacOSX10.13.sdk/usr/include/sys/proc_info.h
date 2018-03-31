@@ -619,7 +619,7 @@ struct appletalk_fdinfo {
 	struct appletalk_info	appletalkinfo;
 };
 
-
+typedef uint64_t proc_info_udata_t;
 
 /* defns of process file desc type */
 #define PROX_FDTYPE_ATALK	0
@@ -765,6 +765,10 @@ struct proc_fileportinfo {
 #define PROC_DIRTY_ALLOWS_IDLE_EXIT     0x2
 #define PROC_DIRTY_IS_DIRTY             0x4
 #define PROC_DIRTY_LAUNCH_IS_IN_PROGRESS   0x8
+
+/* Flavors for proc_udata_info */
+#define PROC_UDATA_INFO_GET		1
+#define PROC_UDATA_INFO_SET		2
 
 
 

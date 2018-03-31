@@ -1,0 +1,10 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: B79BA2CB-6A4B-314F-A7B6-42B69981F665' ]
+platform:        macosx
+install-name:    /usr/lib/libAppletTranslationLibrary.dylib
+objc-constraint: none
+exports:         
+  - archs:           [ x86_64 ]
+    objc-classes:    [ AppletTranslator ]
+...

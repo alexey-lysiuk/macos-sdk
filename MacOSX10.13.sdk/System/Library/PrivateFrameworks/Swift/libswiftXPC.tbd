@@ -1,10 +1,10 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C2A6B691-EAD5-3FE6-9057-621AAAD05487' ]
+uuids:           [ 'x86_64: 41808DEB-D03D-38C7-A1EC-662336C2F668' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Swift/libswiftXPC.dylib
 current-version: 900.8.49
-swift-version:   5
+swift-abi-version: 5
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ __T03XPC0A10_BOOL_TRUESo13OS_xpc_object_pfg, __T03XPC0A10_TYPE_BOOLs13OpaquePointerVfg, 

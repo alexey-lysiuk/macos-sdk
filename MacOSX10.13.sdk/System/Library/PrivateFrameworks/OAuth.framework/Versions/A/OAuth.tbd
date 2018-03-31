@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F1914BCB-72E8-33D7-BCB1-B710ACB2AD9B' ]
+uuids:           [ 'x86_64: A0B3D054-8F74-3719-99F9-E943B8ADD673' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/OAuth.framework/Versions/A/OAuth
 current-version: 25
@@ -8,8 +8,8 @@ exports:
   - archs:           [ x86_64 ]
     symbols:         [ _OAAuthTokenKey, _OAConsumerKeyKey, _OANonceKey, _OASignatureKey, 
                        _OASignatureMethodKey, _OATimestampKey, _OAVersionKey, _oauth_version ]
-    objc-classes:    [ _OACredential, _OAHMAC_SHA1Signer, _OAPlainTextSigner, _OAURLRequestSigner ]
-    objc-ivars:      [ _OACredential._consumerKey, _OACredential._consumerSecret, 
-                       _OACredential._oauthToken, _OACredential._oauthTokenSecret, 
-                       _OAURLRequestSigner._credential, _OAURLRequestSigner._signatureMethod ]
+    objc-classes:    [ OACredential, OAHMAC_SHA1Signer, OAPlainTextSigner, OAURLRequestSigner ]
+    objc-ivars:      [ OACredential._consumerKey, OACredential._consumerSecret, OACredential._oauthToken, 
+                       OACredential._oauthTokenSecret, OAURLRequestSigner._credential, 
+                       OAURLRequestSigner._signatureMethod ]
 ...

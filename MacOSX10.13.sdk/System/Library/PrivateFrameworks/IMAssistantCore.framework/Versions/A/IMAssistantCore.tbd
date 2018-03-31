@@ -1,16 +1,16 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6ABBD069-D6FD-3CF5-93A3-FEF0330CCE11' ]
+uuids:           [ 'x86_64: BF1ADF12-9DCF-37ED-B793-0BE6A8C4AB52' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IMAssistantCore.framework/Versions/A/IMAssistantCore
 current-version: 800
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _IMAssistantContinuityChatsKey, _IMAssistantContinuityHandlesKey ]
-    objc-classes:    [ _IMAssistantAudioPlayer, _IMAssistantINMessageConverter, _IMAssistantINPersonConverter, 
-                       _IMAssistantIntentHandler, _IMAssistantMessageAttributeOptions, 
-                       _IMAssistantMessageHandler, _IMAssistantMessagePlayAudioHandler, 
-                       _IMAssistantMessageQueryHandler, _IMAssistantMessageReadAttributeSanitizer, 
-                       _IMAssistantMessageSearchHandler, _IMAssistantMessageSendHandler, 
-                       _IMAssistantMessageSetAttributeHandler ]
+    objc-classes:    [ IMAssistantAudioPlayer, IMAssistantINMessageConverter, IMAssistantINPersonConverter, 
+                       IMAssistantIntentHandler, IMAssistantMessageAttributeOptions, 
+                       IMAssistantMessageHandler, IMAssistantMessagePlayAudioHandler, 
+                       IMAssistantMessageQueryHandler, IMAssistantMessageReadAttributeSanitizer, 
+                       IMAssistantMessageSearchHandler, IMAssistantMessageSendHandler, 
+                       IMAssistantMessageSetAttributeHandler ]
 ...

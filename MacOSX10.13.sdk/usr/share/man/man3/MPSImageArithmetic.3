@@ -1,4 +1,4 @@
-.TH "MPSImageArithmetic" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "MPSImageArithmetic" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -37,6 +37,12 @@ Inherited by \fBMPSImageAdd\fP, \fBMPSImageDivide\fP, \fBMPSImageMultiply\fP, an
 .ti -1c
 .RI "MTLSize \fBsecondaryStrideInPixels\fP"
 .br
+.ti -1c
+.RI "float \fBminimumValue\fP"
+.br
+.ti -1c
+.RI "float \fBmaximumValue\fP"
+.br
 .in -1c
 .SS "Additional Inherited Members"
 .SH "Detailed Description"
@@ -72,11 +78,13 @@ Multiplicaton: result = ((primaryScale * x) * (secondaryScale * y)) + bias
 Division: result = ((primaryScale * x) / (secondaryScale * y)) + bias
 .PP
 .PP
+To clamp the result of an arithmetic operation, where result = clamp(result, minimumValue, maximumValue), set the minimumValue and maximumValue appropriately\&. The default value of minimumValue is -FLT_MAX\&. The default value of maximumValue is FLT_MAX\&.
+.PP
 This filter also takes the following additional parameters:
 .IP "\(bu" 2
 primaryStrideInPixels
 .IP "\(bu" 2
-secondaryStrideInPixels These parameters can be used to control broadcasting for the data stored in the primary and secondary source images\&. For example, setting all strides for the primary source image to 0 will result in the primarySource image being treated as a scalar value\&. The default value of these parameters is 1\&.
+secondaryStrideInPixels These parameters can be used to control broadcasting for the data stored in the primary and secondary source images\&. For example, setting all strides for the primary source image to 0 will result in the primarySource image being treated as a scalar value\&. The only supported values are 0 or 1\&. The default value of these parameters is 1\&.
 .PP
 .PP
 This filter accepts uint and int data in addition to unorm and floating-point data\&.
@@ -106,14 +114,18 @@ Reimplemented in \fBMPSImageAdd\fP, \fBMPSImageSubtract\fP, \fBMPSImageMultiply\
 .PP 
 .SS "\- (float) bias\fC [read]\fP, \fC [write]\fP, \fC [nonatomic]\fP, \fC [assign]\fP"
 
+.SS "\- maximumValue\fC [read]\fP, \fC [write]\fP, \fC [nonatomic]\fP, \fC [assign]\fP"
+maximumValue is used to clamp the result of an arithmetic operation: result = clamp(result, minimumValue, maximumValue)\&. The default value of maximumValue is FLT_MAX\&. 
+.SS "\- minimumValue\fC [read]\fP, \fC [write]\fP, \fC [nonatomic]\fP, \fC [assign]\fP"
+minimumValue is to clamp the result of an arithmetic operation: result = clamp(result, minimumValue, maximumValue)\&. The default value of minimumValue is -FLT_MAX\&. 
 .SS "\- (float) primaryScale\fC [read]\fP, \fC [write]\fP, \fC [nonatomic]\fP, \fC [assign]\fP"
 
 .SS "\- primaryStrideInPixels\fC [read]\fP, \fC [write]\fP, \fC [nonatomic]\fP, \fC [assign]\fP"
-The secondarySource stride in the x, y, and z dimensions\&. The default value for each dimension is 1\&. 
+The secondarySource stride in the x, y, and z dimensions\&. The only supported values are 0 or 1\&. The default value for each dimension is 1\&. 
 .SS "\- (float) secondaryScale\fC [read]\fP, \fC [write]\fP, \fC [nonatomic]\fP, \fC [assign]\fP"
 
 .SS "\- secondaryStrideInPixels\fC [read]\fP, \fC [write]\fP, \fC [nonatomic]\fP, \fC [assign]\fP"
-The secondarySource stride in the x, y, and z dimensions\&. The default value for each dimension is 1\&. 
+The secondarySource stride in the x, y, and z dimensions\&. The only supported values are 0 or 1\&. The default value for each dimension is 1\&. 
 
 .SH "Author"
 .PP 

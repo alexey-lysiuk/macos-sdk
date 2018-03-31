@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3DDFF7A1-EC2E-3661-BBAF-8CAA93362254' ]
+uuids:           [ 'x86_64: 6195327E-ECD9-3053-8867-DDC34666CDA1' ]
 platform:        macosx
 install-name:    /usr/lib/log/liblog_SystemConfiguration.dylib
-current-version: 963.30.1
+current-version: 963.50.8
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _OSLogCopyFormattedString, _OSStateCreateStringWithData, _SystemConfigurationVersionNumber, 

@@ -1,15 +1,15 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 27884EE6-BFC1-378F-9B71-20BF8644398D' ]
+uuids:           [ 'x86_64: D8B17CC3-C7AF-3DC6-A7BB-DA83F3DF2C69' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/LocalAuthenticationUI.framework/Versions/A/LocalAuthenticationUI
-current-version: 425.30.30
+current-version: 425.50.68
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _LocalAuthenticationSheetTouchBarItemIdentifier, _LocalAuthenticationUIVersionNumber, 
                        _LocalAuthenticationUIVersionString ]
-    objc-classes:    [ _LAUIAuthenticationSheetController, _LAUIAuthenticationSheetWindow, 
-                       _LAUIAuthenticationViewController, _LAUIAuthenticationViewControllerUIDelegate, 
-                       _LAUIPasswordField, _LAUIPlaceholderTextField, _LAUIShakeAnimation, 
-                       _LAUIUserPasswordViewController ]
+    objc-classes:    [ LAUIAuthenticationSheetController, LAUIAuthenticationSheetWindow, 
+                       LAUIAuthenticationViewController, LAUIAuthenticationViewControllerUIDelegate, 
+                       LAUIPasswordField, LAUIPlaceholderTextField, LAUIShakeAnimation, 
+                       LAUIUserPasswordViewController ]
 ...

@@ -1,4 +1,4 @@
-.TH "MPSMatrixSolveCholesky" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "MPSMatrixSolveCholesky" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -25,9 +25,9 @@ Inherits \fBMPSMatrixBinaryKernel\fP\&.
 .PP 
 This depends on Metal\&.framework\&.
 .PP
-A kernel for computing the solution of a linear system of equations using the Cholesky factorization resulting from a \fBMPSMatrixDecompositionCholesky\fP kernel\&.
+\fBA\fP kernel for computing the solution of a linear system of equations using the Cholesky factorization resulting from a \fBMPSMatrixDecompositionCholesky\fP kernel\&.
 .PP
-A \fBMPSMatrixSolveCholesky\fP finds the solution matrix to the system: 
+\fBA\fP \fBMPSMatrixSolveCholesky\fP finds the solution matrix to the system: 
 .PP
 .nf
             A * X = B
@@ -40,18 +40,18 @@ A \fBMPSMatrixSolveCholesky\fP finds the solution matrix to the system:
  
 .SH "Method Documentation"
 .PP 
-.SS "\- (void) encodeToCommandBuffer: (nonnull id< MTLCommandBuffer >) commandBuffer(\fBMPSMatrix\fP const *__nonnull) sourceMatrix(\fBMPSMatrix\fP const *__nonnull) rightHandSideMatrix(\fBMPSMatrix\fP *__nonnull) solutionMatrix"
+.SS "\- (void) encodeToCommandBuffer: (nonnull id< MTLCommandBuffer >) commandBuffer(\fBMPSMatrix\fP *__nonnull) sourceMatrix(\fBMPSMatrix\fP *__nonnull) rightHandSideMatrix(\fBMPSMatrix\fP *__nonnull) solutionMatrix"
 Encode a \fBMPSMatrixSolveCholesky\fP kernel into a command Buffer\&.
 .PP
 \fBParameters:\fP
 .RS 4
-\fIcommandBuffer\fP A valid MTLCommandBuffer to receive the encoded filter
+\fIcommandBuffer\fP \fBA\fP valid MTLCommandBuffer to receive the encoded filter
 .br
-\fIsourceMatrix\fP A valid \fBMPSMatrix\fP containing the source matrix in factored form as returned by a previous successful execution of a \fBMPSMatrixDecompositionCholesky\fP kernel\&.
+\fIsourceMatrix\fP \fBA\fP valid \fBMPSMatrix\fP containing the source matrix in factored form as returned by a previous successful execution of a \fBMPSMatrixDecompositionCholesky\fP kernel\&.
 .br
-\fIrightHandSideMatrix\fP A valid \fBMPSMatrix\fP containing the right hand side values\&.
+\fIrightHandSideMatrix\fP \fBA\fP valid \fBMPSMatrix\fP containing the right hand side values\&.
 .br
-\fIsolutionMatrix\fP A valid \fBMPSMatrix\fP to contain the result\&.
+\fIsolutionMatrix\fP \fBA\fP valid \fBMPSMatrix\fP to contain the result\&.
 .RE
 .PP
 This function encodes the \fBMPSMatrixSolveCholesky\fP object to a valid command buffer\&. sourceMatrix should contain either the lower or upper triangular factors corresponding to the factorization returned by a previous execution of \fBMPSMatrixDecompositionCholesky\fP\&.
@@ -66,7 +66,7 @@ Initialize an \fBMPSMatrixSolveCholesky\fP object on a device
 .RS 4
 \fIdevice\fP The device on which the kernel will execute\&.
 .br
-\fIupper\fP A boolean value which indicates if the source matrix stores the lower or upper triangular factors\&.
+\fIupper\fP \fBA\fP boolean value which indicates if the source matrix stores the lower or upper triangular factors\&.
 .br
 \fIorder\fP The order of the source matrix and the number of rows in the solution and right hand side matrices\&.
 .br
@@ -75,7 +75,7 @@ Initialize an \fBMPSMatrixSolveCholesky\fP object on a device
 .PP
 \fBReturns:\fP
 .RS 4
-A valid \fBMPSMatrixSolveCholesky\fP object or nil, if failure\&. 
+\fBA\fP valid \fBMPSMatrixSolveCholesky\fP object or nil, if failure\&. 
 .RE
 .PP
 

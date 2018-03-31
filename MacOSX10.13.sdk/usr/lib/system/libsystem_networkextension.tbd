@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: E88F13BB-D751-3FF9-A136-2C1158129BAA', 'x86_64: C5ED4BAB-2480-369D-8AB6-DFB37C15A1EE' ]
+uuids:           [ 'i386: 42DC977C-3E83-34BA-9AEA-45270B973BF2', 'x86_64: 758F1414-796D-3422-83C9-92D2915A06CE' ]
 platform:        macosx
 install-name:    /usr/lib/system/libsystem_networkextension.dylib
 objc-constraint: none
@@ -17,7 +17,7 @@ exports:
                        _NEHelperInterfaceSetAddress, _NEHelperInterfaceSetMTU, _NEHelperInterfaceSetOption, 
                        _NEHelperSendRequest, _NEHelperSettingsSetArray, _NEHelperSettingsSetBool, 
                        _NEHelperSettingsSetNumber, ___nelog_debug_c, ___nelog_err_c, 
-                       ___nelog_info_c, ___nelog_notice_c, _ne_copy_signature_info_for_pid, 
+                       ___nelog_fault_c, ___nelog_info_c, ___nelog_notice_c, _ne_copy_signature_info_for_pid, 
                        _ne_copy_signing_identifier_for_pid, _ne_options_set_debug_logging, 
                        _ne_print_backtrace, _ne_session_address_matches_subnets, 
                        _ne_session_agent_get_advisory, _ne_session_agent_get_advisory_interface_index, 

@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5D85917E-4EE3-323A-B973-DF79F2A259C3' ]
+uuids:           [ 'x86_64: 6C636DF4-AAFF-36A7-A068-D7E357C1FC1A' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/HDRProcessing.framework/Versions/A/HDRProcessing
 objc-constraint: none
@@ -11,9 +11,14 @@ exports:
                        _kHDRProcessingCurrentMaxPanelNitsKey, _kHDRProcessingDestinationDisplayTypeDolbyVisionTV, 
                        _kHDRProcessingDestinationDisplayTypeHDR10TV, _kHDRProcessingDestinationDisplayTypeInternalPanel, 
                        _kHDRProcessingDestinationDisplayTypeInternalPanelLCD, _kHDRProcessingDestinationDisplayTypeInternalPanelMac, 
-                       _kHDRProcessingDestinationDisplayTypeKey, _kHDRProcessingDestinationDisplayTypeSDRTV, 
-                       _kHDRProcessingDisplayAverageBrightnessInNitsKey, _kHDRProcessingDisplayColorFormatKey, 
-                       _kHDRProcessingDisplayColorFormat_IPT422_12BITS, _kHDRProcessingDisplayColorFormat_YUV422_12BITS_DOLBYVISION, 
+                       _kHDRProcessingDestinationDisplayTypeKey, _kHDRProcessingDestinationDisplayTypeLowLatencyDolbyVisionTV, 
+                       _kHDRProcessingDestinationDisplayTypeSDRTV, _kHDRProcessingDisplayAverageBrightnessInNitsKey, 
+                       _kHDRProcessingDisplayChromaticityBx, _kHDRProcessingDisplayChromaticityBy, 
+                       _kHDRProcessingDisplayChromaticityGx, _kHDRProcessingDisplayChromaticityGy, 
+                       _kHDRProcessingDisplayChromaticityRx, _kHDRProcessingDisplayChromaticityRy, 
+                       _kHDRProcessingDisplayChromaticityWx, _kHDRProcessingDisplayChromaticityWy, 
+                       _kHDRProcessingDisplayColorFormatKey, _kHDRProcessingDisplayColorFormat_IPT422_12BITS, 
+                       _kHDRProcessingDisplayColorFormat_YUV422_12BITS_DOLBYVISION, 
                        _kHDRProcessingDisplayColorFormat_YUV422_12BITS_DP, _kHDRProcessingDisplayColorFormat_YUV422_12BITS_HDMI, 
                        _kHDRProcessingDisplayColorFormat_YUV422_12BITS_NATIVE, _kHDRProcessingDisplayDiagonalSizeInInchesKey, 
                        _kHDRProcessingDisplayKey, _kHDRProcessingDisplayMaximumBrightnessInNitsKey, 
@@ -26,8 +31,8 @@ exports:
                        _kHDRProcessingMaximumNominalBrightnessValueKey, _kHDRProcessingSDRMaxBrightnessInNits, 
                        _kHDRProcessingSourceContentBitDepthKey, _kHDRProcessingSourceContentKey, 
                        _kHDRProcessingSourceContentTypeDolbyVision, _kHDRProcessingSourceContentTypeHDR10, 
-                       _kHDRProcessingSourceContentTypeKey, _kHDRProcessingSourceContentTypeSDR, 
-                       _kHDRProcessingUILayerScaleFactor ]
-    objc-classes:    [ _HDRBackwardDisplayManagement, _HDRBackwardDisplayManagementLetterBox, 
-                       _HDRProcessorMetal ]
+                       _kHDRProcessingSourceContentTypeHLG, _kHDRProcessingSourceContentTypeKey, 
+                       _kHDRProcessingSourceContentTypeSDR, _kHDRProcessingUILayerScaleFactor ]
+    objc-classes:    [ HDRBackwardDisplayManagement, HDRBackwardDisplayManagementLetterBox, 
+                       HDRProcessorMetal ]
 ...

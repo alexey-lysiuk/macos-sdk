@@ -1,10 +1,10 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 35E35E7B-BAC4-34D4-89CE-73A88DDAC48F' ]
+uuids:           [ 'x86_64: AF342FAD-D85D-35FB-BDC0-9D2B6E1DB027' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Swift/libswiftCore.dylib
 current-version: 900.8.49
-swift-version:   5
+swift-abi-version: 5
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ __T036swift_stdlib_getErrorEmbeddedNSErrorTfq4g_n, __T043_swift_bridgeNonVerbatimFromObjectiveCToAnyTfq4gn_n, 
@@ -5986,18 +5986,17 @@ exports:
                        _swift_weakDestroy, _swift_weakInit, _swift_weakLoadStrong, 
                        _swift_weakTakeAssign, _swift_weakTakeInit, _swift_weakTakeStrong, 
                        _swift_willThrow ]
-    objc-classes:    [ _SwiftObject, __SwiftNativeNSArrayBase, __SwiftNativeNSDataBase, 
-                       __SwiftNativeNSDictionaryBase, __SwiftNativeNSEnumeratorBase, 
-                       __SwiftNativeNSIndexSetBase, __SwiftNativeNSSetBase, __SwiftNativeNSStringBase, 
-                       __TtCs17_SwiftNativeNSSet, __TtCs18_EmptyArrayStorage, __TtCs18_SwiftNativeNSData, 
-                       __TtCs19_NSContiguousString, __TtCs19_SwiftNativeNSArray, 
-                       __TtCs20_RawNativeSetStorage, __TtCs20_SwiftNativeNSString, 
-                       __TtCs21_SwiftDeferredNSArray, __TtCs24_SwiftNativeNSDictionary, 
-                       __TtCs24_SwiftNativeNSEnumerator, __TtCs27_ContiguousArrayStorageBase, 
-                       __TtCs27_RawNativeDictionaryStorage, __TtCs31_stdlib_ReturnAutoreleasedDummy, 
-                       __TtCs40_SwiftNativeNSArrayWithContiguousStorage ]
-    objc-ivars:      [ _SwiftObject.isa, _SwiftObject.refCounts, __SwiftNativeNSArrayBase.refCounts, 
-                       __SwiftNativeNSDataBase.refCounts, __SwiftNativeNSDictionaryBase.refCounts, 
-                       __SwiftNativeNSEnumeratorBase.refCounts, __SwiftNativeNSIndexSetBase.refCounts, 
-                       __SwiftNativeNSSetBase.refCounts, __SwiftNativeNSStringBase.refCounts ]
+    objc-classes:    [ SwiftObject, _SwiftNativeNSArrayBase, _SwiftNativeNSDataBase, 
+                       _SwiftNativeNSDictionaryBase, _SwiftNativeNSEnumeratorBase, 
+                       _SwiftNativeNSIndexSetBase, _SwiftNativeNSSetBase, _SwiftNativeNSStringBase, 
+                       _TtCs17_SwiftNativeNSSet, _TtCs18_EmptyArrayStorage, _TtCs18_SwiftNativeNSData, 
+                       _TtCs19_NSContiguousString, _TtCs19_SwiftNativeNSArray, _TtCs20_RawNativeSetStorage, 
+                       _TtCs20_SwiftNativeNSString, _TtCs21_SwiftDeferredNSArray, 
+                       _TtCs24_SwiftNativeNSDictionary, _TtCs24_SwiftNativeNSEnumerator, 
+                       _TtCs27_ContiguousArrayStorageBase, _TtCs27_RawNativeDictionaryStorage, 
+                       _TtCs31_stdlib_ReturnAutoreleasedDummy, _TtCs40_SwiftNativeNSArrayWithContiguousStorage ]
+    objc-ivars:      [ SwiftObject.isa, SwiftObject.refCounts, _SwiftNativeNSArrayBase.refCounts, 
+                       _SwiftNativeNSDataBase.refCounts, _SwiftNativeNSDictionaryBase.refCounts, 
+                       _SwiftNativeNSEnumeratorBase.refCounts, _SwiftNativeNSIndexSetBase.refCounts, 
+                       _SwiftNativeNSSetBase.refCounts, _SwiftNativeNSStringBase.refCounts ]
 ...

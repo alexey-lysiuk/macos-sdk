@@ -1,4 +1,4 @@
-.TH "MPSMatrixUnaryKernel" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "MPSMatrixUnaryKernel" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -11,7 +11,7 @@ MPSMatrixUnaryKernel
 .PP
 Inherits \fBMPSKernel\fP\&.
 .PP
-Inherited by \fBMPSMatrixDecompositionCholesky\fP, and \fBMPSMatrixDecompositionLU\fP\&.
+Inherited by \fBMPSMatrixDecompositionCholesky\fP, \fBMPSMatrixDecompositionLU\fP, \fBMPSMatrixFindTopK\fP, \fBMPSMatrixNeuron\fP, and \fBMPSMatrixSoftMax\fP\&.
 .SS "Properties"
 
 .in +1c
@@ -31,7 +31,7 @@ Inherited by \fBMPSMatrixDecompositionCholesky\fP, and \fBMPSMatrixDecomposition
 .SS "Additional Inherited Members"
 .SH "Detailed Description"
 .PP 
-This depends on Metal\&.framework  A \fBMPSMatrixUnaryKernel\fP consumes one \fBMPSMatrix\fP and produces one \fBMPSMatrix\fP\&. 
+This depends on Metal\&.framework  \fBA\fP \fBMPSMatrixUnaryKernel\fP consumes one \fBMPSMatrix\fP and produces one \fBMPSMatrix\fP\&. 
 .SH "Property Documentation"
 .PP 
 .SS "\- batchSize\fC [read]\fP, \fC [write]\fP, \fC [nonatomic]\fP, \fC [assign]\fP"

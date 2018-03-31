@@ -1,13 +1,13 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7712E999-526D-36CD-925B-4364472AA7DF' ]
+uuids:           [ 'x86_64: 6F8C7DAC-39E8-3476-91DD-0B096031642D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/UniversalAccess.framework/Versions/A/Frameworks/UAEHCommon.framework/Versions/A/UAEHCommon
 current-version: 236
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _kUAEHCommonOverlayWindowLevel ]
-    objc-classes:    [ _UAEHCommonDriver, _UAEHCommonOverlayWindow ]
-    objc-ivars:      [ _UAEHCommonDriver._enableCaptureFunction, _UAEHCommonDriver._safeToQuitFunction, 
-                       _UAEHCommonDriver._settingsBlockGen ]
+    objc-classes:    [ UAEHCommonDriver, UAEHCommonOverlayWindow ]
+    objc-ivars:      [ UAEHCommonDriver._enableCaptureFunction, UAEHCommonDriver._safeToQuitFunction, 
+                       UAEHCommonDriver._settingsBlockGen ]
 ...

@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 86237856-4417-3702-A364-A72CD2B1E34C' ]
+uuids:           [ 'x86_64: C5FC2041-ED08-3959-A06B-2C0AA2869777' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/UniversalAccess.framework/Versions/A/UniversalAccess
 current-version: 236
@@ -13,16 +13,16 @@ exports:
                        _kUAInvertDisplayColorFeatureID, _kUAMouseKeysFeatureID, _kUASlowKeysFeatureID, 
                        _kUAStickyKeysFeatureID, _kUASwitchControlFeatureID, _kUATransientOverlayMachServiceName, 
                        _kUAVirtualKeyboardFeatureID, _kUAVoiceOverFeatureID, _kUAZoomFeatureID ]
-    objc-classes:    [ _UAModifiersController, _UAModifiersEditor, _UAScrollZoomSheet, 
-                       _UAScrollZoomSheetController, _UAScrollZoomSimpleController, 
-                       _UAUtilities ]
-    objc-ivars:      [ _UAModifiersEditor._modifiers, _UAModifiersEditor._recording, 
-                       _UAScrollZoomSheet._didAwakeFromNib, _UAScrollZoomSheet._doneButton, 
-                       _UAScrollZoomSheet._modifiersComboBox, _UAScrollZoomSheet._modifiersController, 
-                       _UAScrollZoomSheet._modifiersLabel, _UAScrollZoomSheet._panningModeMatrix, 
-                       _UAScrollZoomSheet._scrollZoomCheckbox, _UAScrollZoomSheet._scrollZoomControlsView, 
-                       _UAScrollZoomSheet._sheet, _UAScrollZoomSheet._showModifiers, 
-                       _UAScrollZoomSheet._smoothImagesCheckbox, _UAScrollZoomSheetController.HostWindow, 
-                       _UAScrollZoomSimpleController.ModifiersComboBox, _UAScrollZoomSimpleController.ScrollZoomCheckBox, 
-                       _UAScrollZoomSimpleController._didAwakeFromNib ]
+    objc-classes:    [ UAModifiersController, UAModifiersEditor, UAScrollZoomSheet, 
+                       UAScrollZoomSheetController, UAScrollZoomSimpleController, 
+                       UAUtilities ]
+    objc-ivars:      [ UAModifiersEditor._modifiers, UAModifiersEditor._recording, 
+                       UAScrollZoomSheet._didAwakeFromNib, UAScrollZoomSheet._doneButton, 
+                       UAScrollZoomSheet._modifiersComboBox, UAScrollZoomSheet._modifiersController, 
+                       UAScrollZoomSheet._modifiersLabel, UAScrollZoomSheet._panningModeMatrix, 
+                       UAScrollZoomSheet._scrollZoomCheckbox, UAScrollZoomSheet._scrollZoomControlsView, 
+                       UAScrollZoomSheet._sheet, UAScrollZoomSheet._showModifiers, 
+                       UAScrollZoomSheet._smoothImagesCheckbox, UAScrollZoomSheetController.HostWindow, 
+                       UAScrollZoomSimpleController.ModifiersComboBox, UAScrollZoomSimpleController.ScrollZoomCheckBox, 
+                       UAScrollZoomSimpleController._didAwakeFromNib ]
 ...

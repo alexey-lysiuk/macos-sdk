@@ -1,29 +1,29 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 5DB01EC5-14D5-3E51-9FF1-E034E62354D3', 'x86_64: 0771325B-BBAD-3865-B2A3-BE7089641C52' ]
+uuids:           [ 'i386: B137373D-DB55-36AF-B437-6B82744DBF3B', 'x86_64: 8F0092E4-6494-349D-B4C9-494DF293D716' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/QuickLookThumbnailing.framework/Versions/A/QuickLookThumbnailing
 exports:         
   - archs:           [ i386 ]
-    objc-classes:    [ _QLThumbnailAdditionCache, _QLThumbnailCachedAddition ]
+    objc-classes:    [ QLThumbnailAdditionCache, QLThumbnailCachedAddition ]
   - archs:           [ x86_64 ]
-    objc-classes:    [ _QLThumbnailAdditionEntry ]
-    objc-ivars:      [ _QLThumbnailAddition._addition, _QLThumbnailAddition._additionURL, 
-                       _QLThumbnailAddition._additionURLSandboxToken, _QLThumbnailAddition._metadata, 
-                       _QLThumbnailAddition._thumbnailDataDictionary, _QLThumbnailAddition._thumbnailVersion, 
-                       _QLThumbnailItem._contentType, _QLThumbnailItem._data, _QLThumbnailItem._fileExtensionHandle, 
-                       _QLThumbnailItem._fileExtensionToken, _QLThumbnailItem._url, 
-                       _QLThumbnailServiceProxy._connection, _QLThumbnailServiceProxy._indexProxy, 
-                       _QLThumbnailServiceProxy._proxy, _QLThumbnailStoreRetrievalOperation._addition, 
-                       _QLThumbnailStoreRetrievalOperation._allowsThumbnailGeneration, 
-                       _QLThumbnailStoreRetrievalOperation._documentURL, _QLThumbnailStoreRetrievalOperation._error, 
-                       _QLThumbnailStoreRetrievalOperation._executing, _QLThumbnailStoreRetrievalOperation._finished, 
-                       _QLThumbnailStoreRetrievalOperation._generateThumbnailsAtBackgroundPriority, 
-                       _QLThumbnailStoreRetrievalOperation._generationActivity, _QLThumbnailStoreRetrievalOperation._retrievalActivity, 
-                       _QLThumbnailStoreRetrievalOperation._thumbnailRequest, _QLThumbnailStoreRetrievalOperation._thumbnailWasJustAutomaticallyGenerated, 
-                       _QLThumbnailVersion._fileSize, _QLThumbnailVersion._generatorID, 
-                       _QLThumbnailVersion._generatorVersion, _QLThumbnailVersion._modificationDate, 
-                       _QLThumbnailVersion._versionIdentifier ]
+    objc-classes:    [ QLThumbnailAdditionEntry ]
+    objc-ivars:      [ QLThumbnailAddition._addition, QLThumbnailAddition._additionURL, 
+                       QLThumbnailAddition._additionURLSandboxToken, QLThumbnailAddition._metadata, 
+                       QLThumbnailAddition._thumbnailDataDictionary, QLThumbnailAddition._thumbnailVersion, 
+                       QLThumbnailItem._contentType, QLThumbnailItem._data, QLThumbnailItem._fileExtensionHandle, 
+                       QLThumbnailItem._fileExtensionToken, QLThumbnailItem._url, 
+                       QLThumbnailServiceProxy._connection, QLThumbnailServiceProxy._indexProxy, 
+                       QLThumbnailServiceProxy._proxy, QLThumbnailStoreRetrievalOperation._addition, 
+                       QLThumbnailStoreRetrievalOperation._allowsThumbnailGeneration, 
+                       QLThumbnailStoreRetrievalOperation._documentURL, QLThumbnailStoreRetrievalOperation._error, 
+                       QLThumbnailStoreRetrievalOperation._executing, QLThumbnailStoreRetrievalOperation._finished, 
+                       QLThumbnailStoreRetrievalOperation._generateThumbnailsAtBackgroundPriority, 
+                       QLThumbnailStoreRetrievalOperation._generationActivity, QLThumbnailStoreRetrievalOperation._retrievalActivity, 
+                       QLThumbnailStoreRetrievalOperation._thumbnailRequest, QLThumbnailStoreRetrievalOperation._thumbnailWasJustAutomaticallyGenerated, 
+                       QLThumbnailVersion._fileSize, QLThumbnailVersion._generatorID, 
+                       QLThumbnailVersion._generatorVersion, QLThumbnailVersion._modificationDate, 
+                       QLThumbnailVersion._versionIdentifier ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ _GSDocumentThumbnailsNameSpace, _QLCheckAccessForURL, _QLTCreateCGContextWithSize, 
                        _QLTInitLogging, _QLThumbnailErrorDomain, _QLThumbnailMetadataContentRectKey, 
@@ -31,6 +31,6 @@ exports:
                        _QLThumbnailMetadataFlavorKey, _QLThumbnailMetadataQLPropertiesKey, 
                        _QLThumbnailsServiceErrorDomain, __QLCopyResourcePropertyForKey, 
                        __QLSetResourcePropertyForKey, _qltLogHandles ]
-    objc-classes:    [ _QLThumbnailAddition, _QLThumbnailItem, _QLThumbnailServiceProxy, 
-                       _QLThumbnailStoreRetrievalOperation, _QLThumbnailVersion ]
+    objc-classes:    [ QLThumbnailAddition, QLThumbnailItem, QLThumbnailServiceProxy, 
+                       QLThumbnailStoreRetrievalOperation, QLThumbnailVersion ]
 ...

@@ -140,6 +140,7 @@
 #define __MAC_10_13         101300
 #define __MAC_10_13_1       101301
 #define __MAC_10_13_2       101302
+#define __MAC_10_13_4       101304
 /* __MAC_NA is not defined to a value but is uses as a token by macros to indicate that the API is unavailable */
 
 #define __IPHONE_2_0      20000
@@ -174,6 +175,7 @@
 #define __IPHONE_11_0    110000
 #define __IPHONE_11_1    110100
 #define __IPHONE_11_2    110200
+#define __IPHONE_11_3    110300
 /* __IPHONE_NA is not defined to a value but is uses as a token by macros to indicate that the API is unavailable */
 
 #define __TVOS_9_0        90000
@@ -186,6 +188,7 @@
 #define __TVOS_11_0      110000
 #define __TVOS_11_1      110100
 #define __TVOS_11_2      110200
+#define __TVOS_11_3      110300
 
 #define __WATCHOS_1_0     10000
 #define __WATCHOS_2_0     20000
@@ -198,6 +201,7 @@
 #define __WATCHOS_4_0     40000
 #define __WATCHOS_4_1     40100
 #define __WATCHOS_4_2     40200
+#define __WATCHOS_4_3     40300
 
 #include <AvailabilityInternal.h>
 

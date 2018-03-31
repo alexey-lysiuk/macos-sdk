@@ -1,13 +1,14 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: C626A065-4C72-3286-A543-0E9B9ED37742', 'x86_64: 6888D693-7FFD-31BD-A33F-DC6F43421B9E' ]
+uuids:           [ 'i386: D595F994-DAF7-3B4A-86B9-08B1D66051C9', 'x86_64: 6F69EEB7-1C77-3967-A1F6-D461DC77A6B4' ]
 platform:        macosx
 install-name:    /usr/lib/libAudioIssueDetector.dylib
 exports:         
   - archs:           [ i386, x86_64 ]
     symbols:         [ _AudioIssueDetectorAnalyzeBuffer, _AudioIssueDetectorCreate, 
                        _AudioIssueDetectorDispose, _AudioIssueDetectorInitialize, 
-                       _AudioIssueDetectorRemoveNode, _AudioIssueDetectorReset, _AudioIssueDetectorSetNodeFormat, 
-                       _AudioIssueDetectorSetNodeFormatWithDirection, _AudioIssueDetectorSetUplinkMute, 
-                       _AudioIssueDetectorUpdateReportingSessions ]
+                       _AudioIssueDetectorRemoveNode, _AudioIssueDetectorReset, _AudioIssueDetectorSetDownlinkVolume, 
+                       _AudioIssueDetectorSetNodeFormat, _AudioIssueDetectorSetNodeFormatWithDirection, 
+                       _AudioIssueDetectorSetRouteSpecificDownlinkGainAdjustment, 
+                       _AudioIssueDetectorSetUplinkMute, _AudioIssueDetectorUpdateReportingSessions ]
 ...

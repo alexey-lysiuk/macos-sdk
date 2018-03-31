@@ -161,10 +161,10 @@ NS_DESIGNATED_INITIALIZER;
  *                  MIN(sourceOutputFeatureChannels, weightMatrix.columns - secondarySourceMatrixOrigin.y) elements.
  */
 -(void) encodeToCommandBuffer: (nonnull id <MTLCommandBuffer>) commandBuffer
-                  inputMatrix: (MPSMatrix const* __nonnull) inputMatrix
-                 weightMatrix: (MPSMatrix const* __nonnull) weightMatrix
-                   biasVector: (MPSVector const* __nullable) biasVector
-                 resultMatrix: (MPSMatrix* __nonnull) resultMatrix
+                  inputMatrix: (MPSMatrix * __nonnull) inputMatrix
+                 weightMatrix: (MPSMatrix * __nonnull) weightMatrix
+                   biasVector: (MPSVector * __nullable) biasVector
+                 resultMatrix: (MPSMatrix * __nonnull) resultMatrix
 MPS_SWIFT_NAME(encode(commandBuffer:inputMatrix:weightMatrix:biasVector:resultMatrix:));
 
 /*! @abstract NSSecureCoding compatability
@@ -344,9 +344,9 @@ NS_DESIGNATED_INITIALIZER;
  *                  MIN(inputMatrix.columns - sourceMatrixOrigin.y, sourceInputFeatureChannels) elements.
  */
 -(void) encodeToCommandBuffer: (nonnull id <MTLCommandBuffer>) commandBuffer
-                  inputMatrix: (MPSMatrix const* __nonnull) inputMatrix
-                   biasVector: (MPSVector const* __nullable) biasVector
-                 resultMatrix: (MPSMatrix* __nonnull) resultMatrix
+                  inputMatrix: (MPSMatrix * __nonnull) inputMatrix
+                   biasVector: (MPSVector * __nullable) biasVector
+                 resultMatrix: (MPSMatrix * __nonnull) resultMatrix
 MPS_SWIFT_NAME(encode(commandBuffer:inputMatrix:biasVector:resultMatrix:));
 
 /*! @abstract NSSecureCoding compatability

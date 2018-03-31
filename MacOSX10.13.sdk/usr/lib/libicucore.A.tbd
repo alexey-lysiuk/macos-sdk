@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 1048B064-30DD-30CA-BB7D-41F0F3159DA9', 'x86_64: 281C39FD-0C9A-3EB2-A407-36D4CCE938E5' ]
+uuids:           [ 'i386: 12FFE9D1-76F7-39FF-B93D-33E17C203292', 'x86_64: CECAD5E5-3EFD-3AAC-AD9B-E355B2DD5E9C' ]
 platform:        macosx
 install-name:    /usr/lib/libicucore.A.dylib
 current-version: 59.1

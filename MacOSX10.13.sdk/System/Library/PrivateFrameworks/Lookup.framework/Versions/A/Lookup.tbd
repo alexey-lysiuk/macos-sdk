@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: BA78D1B6-4B65-34DF-8F40-B0127C2FEBE5', 'x86_64: ACECB15D-1C21-3D3D-A4C5-F9736090E741' ]
+uuids:           [ 'i386: E9C64B51-A609-3070-B837-0EEF714B5C34', 'x86_64: 9A5E5226-6EA2-3487-887B-97A03B4169E0' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Lookup.framework/Versions/A/Lookup
 exports:         
@@ -11,9 +11,8 @@ exports:
                        _LUTermOptionKeySearchContext, _LUTermOptionKeySearchDomain, 
                        _LUTermOptionKeySelectionType, _LUTermOptionKeyTriggerType, 
                        _LookupVersionNumber, _LookupVersionString ]
-    objc-classes:    [ _LUAccessibilityTextAccessor, _LUExtractor, _LULogging, _LULookupDefinitionModule, 
-                       _LULookupRemoteViewController, _LUPresenter, _LUPresenterAnimationController, 
-                       _LUSearchTermIndicator, _LUTSMDocumentTextAccessor, _LUTextAccessor, 
-                       _LUTextInputClientTextAccessor, _LUTextInputTextAccessor, 
-                       _LUWebFrameViewTextAccessor ]
+    objc-classes:    [ LUAccessibilityTextAccessor, LUExtractor, LULogging, LULookupDefinitionModule, 
+                       LULookupRemoteViewController, LUPresenter, LUPresenterAnimationController, 
+                       LUSearchTermIndicator, LUTSMDocumentTextAccessor, LUTextAccessor, 
+                       LUTextInputClientTextAccessor, LUTextInputTextAccessor, LUWebFrameViewTextAccessor ]
 ...

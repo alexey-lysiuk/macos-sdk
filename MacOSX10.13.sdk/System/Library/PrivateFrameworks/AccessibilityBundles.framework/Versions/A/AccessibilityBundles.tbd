@@ -1,14 +1,14 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 0590EDDD-C595-32EC-B54C-31DB429F324B', 'x86_64: 0B2AD45A-FF7F-3807-92A3-9ECA792596BD' ]
+uuids:           [ 'i386: 1983EFB4-0774-3F0A-8C50-73201DF9235B', 'x86_64: F01A9EF2-49FA-3671-8830-35FB3DB2A796' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AccessibilityBundles.framework/Versions/A/AccessibilityBundles
 current-version: 12
 exports:         
   - archs:           [ x86_64 ]
-    objc-ivars:      [ _AXBBundleManager._blacklistedBundles, _AXBBundleManager._bundlesWithoutAXBundles, 
-                       _AXBBundleManager._loadedBundlePaths, _AXBBundleManager._loadedBundles, 
-                       _AXBBundleManager._lock, _AXBWeakReferenceContainer._weakReference ]
+    objc-ivars:      [ AXBBundleManager._blacklistedBundles, AXBBundleManager._bundlesWithoutAXBundles, 
+                       AXBBundleManager._loadedBundlePaths, AXBBundleManager._loadedBundles, 
+                       AXBBundleManager._lock, AXBWeakReferenceContainer._weakReference ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ _AXBBundleManagerLoadAXBundles, _AXBBundleManagerLoadAXBundlesWithClientToken, 
                        _AXBComponentsJoinedByComma, _AXBFormatFloat, _AXBFormatFloatWithPercentage, 
@@ -30,6 +30,6 @@ exports:
                        ___AXBCastAsClass, ___AXBCastAsForwardedClass, ___AXBCastAsForwardedSafeCategory, 
                        ___AXBCastAsProtocol, ___AXBCastAsSafeCategory, ___AXBValidationCheckClassMethodArguments, 
                        ___AXBValidationCheckInstanceMethodArguments ]
-    objc-classes:    [ _AXBBundleManager, _AXBNSBundleAccessibility, _AXBSafeCategory, 
-                       _AXBSafeCategory__NSObject, _AXBWeakReferenceContainer, ___AXBNSBundleAccessibility_super ]
+    objc-classes:    [ AXBBundleManager, AXBNSBundleAccessibility, AXBSafeCategory, 
+                       AXBSafeCategory__NSObject, AXBWeakReferenceContainer, __AXBNSBundleAccessibility_super ]
 ...

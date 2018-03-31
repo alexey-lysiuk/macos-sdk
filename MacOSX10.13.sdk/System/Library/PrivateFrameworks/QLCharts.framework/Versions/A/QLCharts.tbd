@@ -1,4 +1,4 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
 uuids:           [ 'x86_64: B677503F-9B04-3AB9-92C1-D659C02DA0BD' ]
 platform:        macosx
@@ -152,5 +152,5 @@ exports:
                        _kOIChartStockType, _kOIChartStrokeColorKey, _kOIChartStrokeWidthKey, 
                        _kOIChartSurfaceType, _kOIChartTextColorKey, _kOIChartTitleAreaKey, 
                        _kOIChartTitleKey, _kOIChartUseShadowsKey, _kOIChartXYType ]
-    objc-classes:    [ _OIPieChartRenderer, _OIPieSliceCGRenderer ]
+    objc-classes:    [ OIPieChartRenderer, OIPieSliceCGRenderer ]
 ...

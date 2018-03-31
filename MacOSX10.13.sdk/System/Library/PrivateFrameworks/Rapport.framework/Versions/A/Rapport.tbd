@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 81CC8029-791C-32E5-98F1-6878BB600CED' ]
+uuids:           [ 'x86_64: D02900CF-F384-362B-BEBC-8EC9BCF081F9' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Rapport.framework/Versions/A/Rapport
 current-version: 0
@@ -9,18 +9,21 @@ objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _RPAssertionDuckAudio, _RPAssertionImminentUse, _RPAssertionKeepAlive, 
+                       _RPBonjourFlagsUpdateWithRPCompanionLinkFlags, _RPCompanionLinkFlagsToShortString, 
+                       _RPCompanionLinkFlagsWithUpdateBonjourFlags, _RPDecodeNSError, 
                        _RPDestinationIdentifierActiveWatch, _RPDestinationIdentifierDirectPeer, 
                        _RPDestinationIdentifierPersonalCompanion, _RPDestinationIdentifierSameHome, 
-                       _RPDestinationIdentifierSameRoom, _RPDestinationIdentifierStereoCounterpart, 
-                       _RPDeviceRoleSolo, _RPDeviceRoleStereoLeft, _RPDeviceRoleStereoRight, 
-                       _RPErrorDomain, _RPErrorF, _RPOptionAllowUnauthenticated, 
-                       _RPOptionEventID, _RPOptionSenderID, _RPServiceTypeMobileDevice, 
+                       _RPDestinationIdentifierSameRoom, _RPDestinationIdentifierSelf, 
+                       _RPDestinationIdentifierStereoCounterpart, _RPDeviceRoleSolo, 
+                       _RPDeviceRoleStereoLeft, _RPDeviceRoleStereoRight, _RPEncodeNSError, 
+                       _RPErrorDomain, _RPErrorF, _RPEventIDAny, _RPOptionAllowUnauthenticated, 
+                       _RPOptionEventID, _RPOptionRequestID, _RPOptionSenderID, _RPOptionTimeoutSeconds, 
+                       _RPOptionXID, _RPRequestIDAny, _RPRequestIDIdentify, _RPServiceTypeMobileDevice, 
                        _RPServiceTypeNearbyAction, _RPServiceTypeNearbyInfo, _RPServiceTypeProximityPairing, 
                        _RPServiceTypeSystem, _RPServiceTypeWACAirPlay, _RPServiceTypeWACGeneric ]
-    objc-classes:    [ _RPClient, _RPCompanionLinkAssertion, _RPCompanionLinkClient, 
-                       _RPCompanionLinkDaemon, _RPCompanionLinkDevice, _RPDevice, 
-                       _RPDeviceDiscovery, _RPFileTransferInfo, _RPFileTransferMonitor, 
-                       _RPFileTransferSession, _RPProfileService, _RPProfileSession, 
-                       _RPRangingMeasurement, _RPRangingSession, _RPService, _RPSession, 
-                       _RPSystemService, _RPSystemSession ]
+    objc-classes:    [ RPClient, RPCompanionLinkAssertion, RPCompanionLinkClient, 
+                       RPCompanionLinkDevice, RPDevice, RPDeviceDiscovery, RPEventRegistration, 
+                       RPFileTransferInfo, RPFileTransferMonitor, RPFileTransferSession, 
+                       RPMediaControlSession, RPPeopleDiscovery, RPPerson, RPRequestRegistration, 
+                       RPService, RPSession ]
 ...

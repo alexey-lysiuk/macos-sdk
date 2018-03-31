@@ -1,0 +1,15 @@
+--- !tapi-tbd-v3
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: 9ECD1B81-EDA1-3DBC-ACDD-DF2EDB2222E7', 'x86_64: 28529610-0EFD-39A5-BB59-A0E2234A03D6' ]
+platform:        macosx
+install-name:    /usr/lib/libAudioStatistics.dylib
+exports:         
+  - archs:           [ x86_64 ]
+    objc-classes:    [ CAReporter, CAReportingClient ]
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _CAReportingClientCreateReporterID, _CAReportingClientDestroyReporterID, 
+                       _CAReportingClientGetAudioServiceType, _CAReportingClientSendMessage, 
+                       _CAReportingClientSendSingleMessage, _CAReportingClientSetAudioServiceType, 
+                       _CAReportingClientStartReporter, _CAReportingClientStopReporter, 
+                       _CreateSharedCAReportingClient ]
+...

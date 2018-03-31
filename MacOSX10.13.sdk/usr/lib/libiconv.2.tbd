@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: FE6D05A5-18DB-3FD8-A52F-B7BADB232C78', 'x86_64: 0772997F-4109-38A1-91ED-0F3F16AE99E5' ]
+uuids:           [ 'i386: F3BF51D6-CFAD-3105-AF32-0667945E0F99', 'x86_64: 2FEC9707-3FAF-3828-A50D-8605086D060F' ]
 platform:        macosx
 install-name:    /usr/lib/libiconv.2.dylib
 current-version: 7

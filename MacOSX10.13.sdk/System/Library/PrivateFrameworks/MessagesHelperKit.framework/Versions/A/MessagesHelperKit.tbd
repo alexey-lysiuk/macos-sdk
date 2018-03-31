@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 943B10CA-4008-367C-A096-DDB2756352BB' ]
+uuids:           [ 'x86_64: 511B23A8-CE54-3F93-B5F0-8897351FA88F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MessagesHelperKit.framework/Versions/A/MessagesHelperKit
 current-version: 800
@@ -11,6 +11,6 @@ exports:
                        _SOFaceTimeFavoritesDNDEnabledKey, _SOFaceTimeFavoritesKey, 
                        _SOFaceTimeFavoritesMenuOptionsKey, _SOFaceTimeFavoritesSelectedMenuOptionKey, 
                        _SOFaceTimeTwoTimeCallthroughEnabledKey ]
-    objc-classes:    [ _SOAActiveChatManager, _SOAController, _SOAMessageTime, _SOAPlugInController, 
-                       _SOAReceiver ]
+    objc-classes:    [ SOAActiveChatManager, SOAController, SOAMessageTime, SOAPlugInController, 
+                       SOAReceiver ]
 ...

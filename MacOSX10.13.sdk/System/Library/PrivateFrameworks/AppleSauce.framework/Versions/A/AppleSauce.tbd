@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 32FF4851-2F68-35BA-835F-91856A20C323' ]
+uuids:           [ 'x86_64: CCA8B094-1BCE-3AE3-A0A7-D544C818DE36' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AppleSauce.framework/Versions/A/AppleSauce
 current-version: 0

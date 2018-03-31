@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3982195E-6325-300D-8B70-9D894D7C6915' ]
+uuids:           [ 'x86_64: CACEEC23-7173-3178-8BE6-DE4DA6EB4E98' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/LocalAuthentication.framework/Versions/A/LocalAuthentication
-current-version: 425.30.30
+current-version: 425.50.68
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _LAAvailableMechanisms, _LABootstrapSEP, _LAContextCreate, 
@@ -19,5 +19,5 @@ exports:
                        _cStringFromCFString, _coreauthd_create_message, _coreauthd_message_no_error, 
                        _coreauthd_message_with_reply_sync, _coreauthd_send_sync_and_do, 
                        _kLACurrentContextKey, _makeCFError, _makeCFErrorWithUserInfo ]
-    objc-classes:    [ _LAClient, _LAContext ]
+    objc-classes:    [ LAClient, LAContext ]
 ...

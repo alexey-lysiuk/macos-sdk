@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5B5522F2-76ED-35BB-B0B9-7C3D984C6862' ]
+uuids:           [ 'x86_64: 1FC059D2-BC43-30BF-AA8D-79F57254A973' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoLibraryPrivate.framework/Versions/A/Frameworks/Moments.framework/Versions/A/Moments
-current-version: 3251.12.180
+current-version: 3271.13.150
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _MTAllAssetsKey, _MTAllMomentListsKey, _MTAllMomentsKey, _MTMomentApproximateLocationDataKey, 
@@ -29,10 +29,10 @@ exports:
                        _personPropertiesToMonitorFromLibrary, _versionPropertiesToLoadFromLibrary, 
                        _versionPropertiesToMonitorFromLibrary, _versionsForMomentRebuildFilter, 
                        _yearPropertiesToLoadFromLibrary ]
-    objc-classes:    [ _MTAnalysisDataProvider, _MTCachingModelInstanceStore, _MTDatabaseMomentsReader, 
-                       _MTFetchingModelInstanceStore, _MTGenerationAndAnalysisMomentProcessor, 
-                       _MTGenerationDataProvider, _MTModelChanges, _MTMomentGenerationDataProvider, 
-                       _MTMomentManager, _MTMomentManagerStatistics, _MTMomentModelSupport, 
-                       _MTMomentProcessor, _MTMomentStateStore, _MTMomentsDescription, 
-                       _MTNetworkObserver, _MTPlacesUpdater ]
+    objc-classes:    [ MTAnalysisDataProvider, MTCachingModelInstanceStore, MTDatabaseMomentsReader, 
+                       MTFetchingModelInstanceStore, MTGenerationAndAnalysisMomentProcessor, 
+                       MTGenerationDataProvider, MTModelChanges, MTMomentGenerationDataProvider, 
+                       MTMomentManager, MTMomentManagerStatistics, MTMomentModelSupport, 
+                       MTMomentProcessor, MTMomentStateStore, MTMomentsDescription, 
+                       MTNetworkObserver, MTPlacesUpdater ]
 ...

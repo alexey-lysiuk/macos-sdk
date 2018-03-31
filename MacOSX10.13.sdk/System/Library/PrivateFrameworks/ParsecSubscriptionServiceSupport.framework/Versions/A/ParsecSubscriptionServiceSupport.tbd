@@ -1,11 +1,11 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0D5388E4-C88F-345A-8D1D-9E1B4B70D85C' ]
+uuids:           [ 'x86_64: C3E8393F-5B15-364C-AC72-4A846C505C7D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ParsecSubscriptionServiceSupport.framework/Versions/A/ParsecSubscriptionServiceSupport
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _ParsecSubscriptionServiceSupportVersionNumber, _ParsecSubscriptionServiceSupportVersionString ]
-    objc-classes:    [ _PSSSSubscriptionManagerInternal ]
+    objc-classes:    [ PSSSSubscriptionManagerInternal ]
 ...

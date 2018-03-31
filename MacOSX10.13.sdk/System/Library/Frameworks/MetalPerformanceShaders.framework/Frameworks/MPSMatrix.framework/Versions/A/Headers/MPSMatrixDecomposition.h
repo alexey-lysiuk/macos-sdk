@@ -119,9 +119,9 @@ MPS_CLASS_AVAILABLE_STARTING( macos(10.13), ios(11.0), tvos(11.0))
  *              are undefined.
  */
 -(void) encodeToCommandBuffer: (nonnull id <MTLCommandBuffer>) commandBuffer
-                 sourceMatrix: (MPSMatrix const* __nonnull) sourceMatrix
-                 resultMatrix: (MPSMatrix* __nonnull) resultMatrix
-                 pivotIndices: (MPSMatrix* __nonnull) pivotIndices
+                 sourceMatrix: (MPSMatrix * __nonnull) sourceMatrix
+                 resultMatrix: (MPSMatrix * __nonnull) resultMatrix
+                 pivotIndices: (MPSMatrix * __nonnull) pivotIndices
                        status: (__nullable id <MTLBuffer>) status
 MPS_SWIFT_NAME(encode(commandBuffer:sourceMatrix:resultMatrix:pivotIndices:info:));
 
@@ -202,8 +202,8 @@ MPS_CLASS_AVAILABLE_STARTING( macos(10.13), ios(11.0), tvos(11.0))
  *              are undefined.
  */
 -(void) encodeToCommandBuffer: (nonnull id <MTLCommandBuffer>) commandBuffer
-                 sourceMatrix: (MPSMatrix const* __nonnull) sourceMatrix
-                 resultMatrix: (MPSMatrix* __nonnull) resultMatrix
+                 sourceMatrix: (MPSMatrix * __nonnull) sourceMatrix
+                 resultMatrix: (MPSMatrix * __nonnull) resultMatrix
                        status: (__nullable id <MTLBuffer>) status
 MPS_SWIFT_NAME(encode(commandBuffer:sourceMatrix:resultMatrix:status:));
 

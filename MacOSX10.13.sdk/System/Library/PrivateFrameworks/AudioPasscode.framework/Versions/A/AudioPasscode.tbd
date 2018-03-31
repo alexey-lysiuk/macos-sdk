@@ -1,4 +1,4 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
 uuids:           [ 'x86_64: A727673E-0EA2-358D-99EE-0EA2D0C665C7' ]
 platform:        macosx
@@ -7,7 +7,7 @@ objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _AudioPasscodeVersionNumber, _AudioPasscodeVersionString ]
-    objc-classes:    [ _APCCodecInfo, _APCDecoderProcessor, _APCEncoderProcessor, 
-                       _APCListener, _APCPlayer, _AUPasscodeCodecCapability, _AUPasscodeCodecCommandLineOption, 
-                       _AUPasscodeCodecConfiguration ]
+    objc-classes:    [ APCCodecInfo, APCDecoderProcessor, APCEncoderProcessor, APCListener, 
+                       APCPlayer, AUPasscodeCodecCapability, AUPasscodeCodecCommandLineOption, 
+                       AUPasscodeCodecConfiguration ]
 ...

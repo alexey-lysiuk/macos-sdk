@@ -1,18 +1,20 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: DC1D47F4-3D45-35F4-9D86-14B5946CEFA1', 'x86_64: 834EAD5F-0C4E-3C33-A654-8E1670CEC457' ]
+uuids:           [ 'i386: D3FBD99E-C1AF-3FA7-B05D-0B106F0BE498', 'x86_64: 976AFE4C-8BCA-3958-A4DA-186FBCD3DC6C' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/APFS.framework/Versions/A/APFS
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]
-    symbols:         [ _APFSContainerDefrag, _APFSContainerEFIEmbed, _APFSContainerGetDefrag, 
-                       _APFSContainerGetFreespaceInfo, _APFSContainerGetSpaceInfo, 
-                       _APFSContainerResize, _APFSContainerSetDefrag, _APFSContainerWipeVolumeKeys, 
-                       _APFSExtendedSpaceInfo, _APFSMakeCompatibleName, _APFSUniquifyName, 
-                       _APFSVolumeAddHints, _APFSVolumeAddUnlockRecords, _APFSVolumeCreate, 
-                       _APFSVolumeDelete, _APFSVolumeDisableEncryption, _APFSVolumeDisableFileVault, 
-                       _APFSVolumeEnableEncryption, _APFSVolumeEnableFilevault, _APFSVolumeEnableUserProtection, 
+    symbols:         [ _APFSCancelContainerResize, _APFSContainerDefrag, _APFSContainerEFIEmbed, 
+                       _APFSContainerGetDefrag, _APFSContainerGetFreespaceInfo, _APFSContainerGetMaxVolumeCount, 
+                       _APFSContainerGetMinimalSize, _APFSContainerGetResizeProgress, 
+                       _APFSContainerGetSpaceInfo, _APFSContainerResize, _APFSContainerSetDefrag, 
+                       _APFSContainerWipeVolumeKeys, _APFSExtendedSpaceInfo, _APFSMakeCompatibleName, 
+                       _APFSStatistics, _APFSStatisticsProcessContainer, _APFSUniquifyName, 
+                       _APFSVolumeAddHints, _APFSVolumeAddUnlockRecords, _APFSVolumeBindNewKEKToVEK, 
+                       _APFSVolumeCreate, _APFSVolumeDelete, _APFSVolumeDisableFileVault, 
+                       _APFSVolumeEnableFilevault, _APFSVolumeEnableUserProtection, 
                        _APFSVolumeEscrowVEK, _APFSVolumeGeneratePersonalRecoveryKey, 
                        _APFSVolumeGetDefrag, _APFSVolumeGetHint, _APFSVolumeGetSpaceInfo, 
                        _APFSVolumeGetUnlockRecord, _APFSVolumeGetVEKState, _APFSVolumeInfoForUnmountedDisk, 

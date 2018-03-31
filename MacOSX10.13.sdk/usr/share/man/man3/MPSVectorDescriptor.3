@@ -1,4 +1,4 @@
-.TH "MPSVectorDescriptor" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "MPSVectorDescriptor" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -43,7 +43,7 @@ Inherits NSObject\&.
 .PP 
 This depends on Metal\&.framework
 .PP
-A \fBMPSVectorDescriptor\fP describes the length and data type of a an array of 1-dimensional vectors\&. All vectors are stored as contiguous arrays of data\&. 
+\fBA\fP \fBMPSVectorDescriptor\fP describes the length and data type of a an array of 1-dimensional vectors\&. All vectors are stored as contiguous arrays of data\&. 
 .SH "Method Documentation"
 .PP 
 .SS "+ (size_t) vectorBytesForLength: (NSUInteger) length(\fBMPSDataType\fP) dataType"
@@ -56,7 +56,9 @@ Return the recommended stride, in bytes, to be used for an array of vectors of a
 \fIdataType\fP The type of vector data values\&.
 .RE
 .PP
-To achieve best performance the optimal stride between vectors within an array of vectors is not necessarily equivalent to the number of elements per vector\&. This method returns the stride, in bytes, which gives best performance for a given vector length\&. Using this stride to construct your array is recommended, but not required (provided that the stride used is still large enough to allocate a full vector of data)\&. 
+To achieve best performance the optimal stride between vectors within an array of vectors is not necessarily equivalent to the number of elements per vector\&. This method returns the stride, in bytes, which gives best performance for a given vector length\&. 
+.br
+ Using this stride to construct your array is recommended, but not required (provided that the stride used is still large enough to allocate a full vector of data)\&. 
 .SS "+ (__nonnull instancetype) vectorDescriptorWithLength: (NSUInteger) length(\fBMPSDataType\fP) dataType"
 Create a \fBMPSVectorDescriptor\fP with the specified length and data type\&.
 .PP

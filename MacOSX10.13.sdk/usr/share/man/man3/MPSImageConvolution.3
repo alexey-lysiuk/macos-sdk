@@ -1,4 +1,4 @@
-.TH "MPSImageConvolution" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "MPSImageConvolution" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -51,7 +51,7 @@ Optimized cases include 3x3,5x5,7x7,9x9,11x11, 1xN and Nx1\&. If a convolution k
 .PP
 If there are multiple channels in the source image, each channel is processed independently\&.
 .PP
-Separable convolution filters may perform better when done in two passes\&. A convolution filter is separable if the ratio of filter values between all rows is constant over the whole row\&. For example, this edge detection filter: 
+Separable convolution filters may perform better when done in two passes\&. \fBA\fP convolution filter is separable if the ratio of filter values between all rows is constant over the whole row\&. For example, this edge detection filter: 
 .PP
 .nf
 -1      0       1
@@ -84,7 +84,7 @@ Separable convolution filters may perform better when done in two passes\&. A co
 .PP
 \fBReturns:\fP
 .RS 4
-A new \fBMPSKernel\fP object, or nil if failure\&. 
+\fBA\fP new \fBMPSKernel\fP object, or nil if failure\&. 
 .RE
 .PP
 
@@ -101,12 +101,12 @@ Initialize a convolution filter
 .br
 \fIkernelHeight\fP the height of the kernel 
 .br
-\fIkernelWeights\fP A pointer to an array of kernelWidth * kernelHeight values to be used as the kernel\&. These are in row major order\&. 
+\fIkernelWeights\fP \fBA\fP pointer to an array of kernelWidth * kernelHeight values to be used as the kernel\&. These are in row major order\&. 
 .RE
 .PP
 \fBReturns:\fP
 .RS 4
-A valid \fBMPSImageConvolution\fP object or nil, if failure\&. 
+\fBA\fP valid \fBMPSImageConvolution\fP object or nil, if failure\&. 
 .RE
 .PP
 

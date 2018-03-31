@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6A8ECC17-F77A-3EE3-BEC6-15FD06B76C7B' ]
+uuids:           [ 'x86_64: CA785975-A539-319C-8CF7-4DCE34C91BD3' ]
 platform:        macosx
 install-name:    /usr/lib/PN548_HAL_OSX.dylib
 objc-constraint: none
@@ -27,7 +27,8 @@ exports:
                        _NFHardwareRelayUARTRead, _NFHardwareRelayUARTReadAbort, _NFHardwareRelayUARTSetBaudRate, 
                        _NFHardwareRelayUARTSetLogFunction, _NFHardwareRelayUARTWrite, 
                        _NFHardwareSetLogFunc, _NFHardwareUARTClose, _NFHardwareUARTDebugDump, 
-                       _NFHardwareUARTDebugLastMessage, _NFHardwareUARTDebugLog, 
+                       _NFHardwareUARTDebugDump_wCB, _NFHardwareUARTDebugLastMessage, 
+                       _NFHardwareUARTDebugLog, _NFHardwareUARTDebugMaxEntriesPrinted, 
                        _NFHardwareUARTDump, _NFHardwareUARTFlush, _NFHardwareUARTIsSupported, 
                        _NFHardwareUARTOpen, _NFHardwareUARTPower, _NFHardwareUARTRead, 
                        _NFHardwareUARTReadAbort, _NFHardwareUARTSetBaudRate, _NFHardwareUARTSetLogFunction, 

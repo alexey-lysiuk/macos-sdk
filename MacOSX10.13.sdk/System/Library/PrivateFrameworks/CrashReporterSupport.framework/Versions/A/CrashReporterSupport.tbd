@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 86DA5C7B-BA5E-3182-A787-28B6F580FF38', 'x86_64: 6B5B2B78-15D2-363F-BE34-8F9226E79E24' ]
+uuids:           [ 'i386: 07FFC150-E5A0-3EBC-825B-4BF8AAD306EF', 'x86_64: 4D0DF741-8BFA-3BCF-971D-6EF849019534' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CrashReporterSupport.framework/Versions/A/CrashReporterSupport
 exports:         
@@ -83,5 +83,5 @@ exports:
                        _kMsgTracerKeySignature2, _kMsgTracerKeySignature3, _kMsgTracerKeyUUID, 
                        _kMsgTracerKeyValue, _kMsgTracerKeyValue2, _kMsgTracerKeyValue3, 
                        _kOSAIPSHeaderTimestampKey ]
-    objc-classes:    [ _OSALogWriter ]
+    objc-classes:    [ OSALogWriter ]
 ...

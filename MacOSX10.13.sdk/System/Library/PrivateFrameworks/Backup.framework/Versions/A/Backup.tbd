@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 19BE4138-61BB-33C8-80C5-0309B58CA16A', 'x86_64: 40C6CFA8-4013-3AFB-97CE-8A09388FA343' ]
+uuids:           [ 'i386: 8088B8AD-8D2A-30D6-B4D8-1DC6299A6879', 'x86_64: BC020BDD-7C93-37E5-A762-4FDCBD2056A8' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Backup.framework/Versions/A/Backup
-current-version: 1054.2.4
+current-version: 1054.5.4
 exports:         
   - archs:           [ i386, x86_64 ]
     symbols:         [ _BUAboutToDeleteSnapshots, _BUActivatedSnapshot, _BUChangeTimeMachineTarget, 

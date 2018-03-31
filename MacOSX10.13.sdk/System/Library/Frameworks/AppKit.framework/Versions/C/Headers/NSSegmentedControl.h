@@ -111,6 +111,10 @@ typedef NS_ENUM(NSInteger, NSSegmentDistribution) {
 
 @property NSSegmentDistribution segmentDistribution NS_AVAILABLE_MAC(10_13); // Defaults to NSSegmentDistributionFill on 10.13, older systems will continue to behave similarly to NSSegmentDistributionFit
 
+- (void)compressWithPrioritizedCompressionOptions:(NSArray<NSUserInterfaceCompressionOptions *> *)prioritizedOptions NS_AVAILABLE_MAC(10_13);
+- (NSSize)minimumSizeWithPrioritizedCompressionOptions:(NSArray<NSUserInterfaceCompressionOptions *> *)prioritizedOptions NS_AVAILABLE_MAC(10_13);
+@property (readonly, copy) NSUserInterfaceCompressionOptions *activeCompressionOptions NS_AVAILABLE_MAC(10_13);
+
 @end
 
 @interface NSSegmentedControl (NSSegmentedControlConvenience)

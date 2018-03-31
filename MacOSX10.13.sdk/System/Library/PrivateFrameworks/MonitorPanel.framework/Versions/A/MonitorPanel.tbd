@@ -1,33 +1,33 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 9B1B2076-426B-3627-8135-B9D77379612D', 'x86_64: 001C5860-AB16-35B1-AED2-9C1C4D180DC8' ]
+uuids:           [ 'i386: 3C241078-47B9-38E6-B860-3FFBDC6FA125', 'x86_64: 52B8ABD5-64C4-3B7B-887D-48E5DE2F4354' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MonitorPanel.framework/Versions/A/MonitorPanel
 exports:         
   - archs:           [ x86_64 ]
-    objc-ivars:      [ _MPDisplay._accessLock, _MPDisplay._aliasID, _MPDisplay._allModes, 
-                       _MPDisplay._currentMode, _MPDisplay._defaultMode, _MPDisplay._displayID, 
-                       _MPDisplay._displayIcon, _MPDisplay._displayName, _MPDisplay._displayResolutionPreviewIcon, 
-                       _MPDisplay._displayResolutionPreviewRect, _MPDisplay._hasMultipleRates, 
-                       _MPDisplay._hasSafeMode, _MPDisplay._hasSimulscan, _MPDisplay._hasTVModes, 
-                       _MPDisplay._hasZeroRate, _MPDisplay._hqModesForChiclets, _MPDisplay._ioService, 
-                       _MPDisplay._is4K, _MPDisplay._isAirPlayDisplay, _MPDisplay._isBuiltIn, 
-                       _MPDisplay._isHiDPI, _MPDisplay._isMirrorMaster, _MPDisplay._isMirrored, 
-                       _MPDisplay._isProjector, _MPDisplay._isRetina, _MPDisplay._isSmartDisplay, 
-                       _MPDisplay._isTV, _MPDisplay._listHQModes, _MPDisplay._listHQResolutions, 
-                       _MPDisplay._listModes, _MPDisplay._listResolutions, _MPDisplay._nativeMode, 
-                       _MPDisplay._needsUpdate, _MPDisplay._orientation, _MPDisplay._scanRateStrings, 
-                       _MPDisplay._scanRates, _MPDisplay._trimmedModes, _MPDisplay._trimmedResolutions, 
-                       _MPDisplay._uiProjectorOverride, _MPDisplay._userFlags, _MPDisplay._userModes, 
-                       _MPDisplay._userResolutions, _MPDisplay._uuid, _MPDisplayMgr._accessLock, 
-                       _MPDisplayMgr._dataLock, _MPDisplayMgr._displays, _MPDisplayMgr._hasBuiltinRetina, 
-                       _MPDisplayMgr._hasSmallBuiltinRetina, _MPDisplayMgr._hwChangeLock, 
-                       _MPDisplayMgr._hwChanged, _MPDisplayMgr._mainDisplay, _MPDisplayMgr._safeMode, 
-                       _MPDisplayMode._desc, _MPDisplayMode._display, _MPDisplayMode._rateString, 
-                       _MPDisplayMode._tvMode, _MPDisplayModeBucket._maxHeight, _MPDisplayModeBucket._minHeight, 
-                       _MPDisplayModeBucket._modes, _MPDisplayModeBucket._targetHeight, 
-                       _MonitorPanel._bundle, _MonitorPanel._controller, _MonitorPanel._displayID, 
-                       _MonitorPanel._view ]
+    objc-ivars:      [ MPDisplay._accessLock, MPDisplay._aliasID, MPDisplay._allModes, 
+                       MPDisplay._currentMode, MPDisplay._defaultMode, MPDisplay._displayID, 
+                       MPDisplay._displayIcon, MPDisplay._displayName, MPDisplay._displayResolutionPreviewIcon, 
+                       MPDisplay._displayResolutionPreviewRect, MPDisplay._hasMultipleRates, 
+                       MPDisplay._hasSafeMode, MPDisplay._hasSimulscan, MPDisplay._hasTVModes, 
+                       MPDisplay._hasZeroRate, MPDisplay._hqModesForChiclets, MPDisplay._ioService, 
+                       MPDisplay._is4K, MPDisplay._isAirPlayDisplay, MPDisplay._isBuiltIn, 
+                       MPDisplay._isHiDPI, MPDisplay._isMirrorMaster, MPDisplay._isMirrored, 
+                       MPDisplay._isProjector, MPDisplay._isRetina, MPDisplay._isSmartDisplay, 
+                       MPDisplay._isTV, MPDisplay._listHQModes, MPDisplay._listHQResolutions, 
+                       MPDisplay._listModes, MPDisplay._listResolutions, MPDisplay._nativeMode, 
+                       MPDisplay._needsUpdate, MPDisplay._orientation, MPDisplay._scanRateStrings, 
+                       MPDisplay._scanRates, MPDisplay._trimmedModes, MPDisplay._trimmedResolutions, 
+                       MPDisplay._uiProjectorOverride, MPDisplay._userFlags, MPDisplay._userModes, 
+                       MPDisplay._userResolutions, MPDisplay._uuid, MPDisplayMgr._accessLock, 
+                       MPDisplayMgr._dataLock, MPDisplayMgr._displays, MPDisplayMgr._hasBuiltinRetina, 
+                       MPDisplayMgr._hasSmallBuiltinRetina, MPDisplayMgr._hwChangeLock, 
+                       MPDisplayMgr._hwChanged, MPDisplayMgr._mainDisplay, MPDisplayMgr._safeMode, 
+                       MPDisplayMode._desc, MPDisplayMode._display, MPDisplayMode._rateString, 
+                       MPDisplayMode._tvMode, MPDisplayModeBucket._maxHeight, MPDisplayModeBucket._minHeight, 
+                       MPDisplayModeBucket._modes, MPDisplayModeBucket._targetHeight, 
+                       MonitorPanel._bundle, MonitorPanel._controller, MonitorPanel._displayID, 
+                       MonitorPanel._view ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ _ChangeMirrorMaster, _ClearDisplayModeFlag, _ClearDisplayModeFlags, 
                        _CopyDisplayModes, _CopyPreferredModes, _DisplayHasMultipleScanRates, 
@@ -38,6 +38,6 @@ exports:
                        _kMPDisplaysReconfigureNotification, _kMPDisplaysWillReconfigureNotification, 
                        _kMPFamilyKey, _kMPMajorOrderKey, _kMPMinorOrderKey, _kMPNibNameKey, 
                        _kMPTypeKey ]
-    objc-classes:    [ _MPDisplay, _MPDisplayMgr, _MPDisplayMode, _MPDisplayModeBucket, 
-                       _MonitorPanel ]
+    objc-classes:    [ MPDisplay, MPDisplayMgr, MPDisplayMode, MPDisplayModeBucket, 
+                       MonitorPanel ]
 ...

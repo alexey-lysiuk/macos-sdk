@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3E2F2B28-BE23-37F6-89EE-BB041ED19B8C' ]
+uuids:           [ 'x86_64: 4C73D0AE-159A-3589-AAAA-E7A859E8F935' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/InstallerDiagnostics.framework/Versions/A/InstallerDiagnostics
 objc-constraint: none
@@ -23,6 +23,6 @@ exports:
                        _kIDInstallerDiagnosticsClientCategorybridgeOSUpdate, _kIDInstallerDiagnosticsClientCategorymacOSPersonalization, 
                        _kIDInstallerDiagnosticsNVRAMV1Key, _kIDInstallerDiagnosticsNVRAMV2Key, 
                        _kIDInstallerDiagnosticsStoreErrorDomain, _kInstallerDiagnosticsServiceName ]
-    objc-classes:    [ _IDDiagnosticsConnection, _IDDiagnosticsManager, _IDDiagnosticsServer, 
-                       _IDDiagnosticsStore, _IDDiagnosticsTransport ]
+    objc-classes:    [ IDDiagnosticsConnection, IDDiagnosticsManager, IDDiagnosticsServer, 
+                       IDDiagnosticsStore, IDDiagnosticsTransport ]
 ...

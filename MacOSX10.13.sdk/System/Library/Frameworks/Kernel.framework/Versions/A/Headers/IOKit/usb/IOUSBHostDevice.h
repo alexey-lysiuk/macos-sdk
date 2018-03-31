@@ -507,7 +507,7 @@ public:
     /*!
      * @brief       Return the device descriptor
      * @discussion  This method uses getDescriptor to retrieve the device descriptor.
-     * @return      Pointer to the device descriptor.
+     * @return      Pointer to the device descriptor, or NULL if the service is terminating.
      */
     virtual const StandardUSB::DeviceDescriptor* getDeviceDescriptor();
 

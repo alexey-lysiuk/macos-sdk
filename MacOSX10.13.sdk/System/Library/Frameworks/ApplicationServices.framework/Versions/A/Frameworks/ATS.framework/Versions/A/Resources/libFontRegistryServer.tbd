@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 51A97519-5C5D-3247-9D25-2AE67838044C' ]
+uuids:           [ 'x86_64: 0AC6E33D-E99A-337E-9EAA-E868C994D7CA' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Resources/libFontRegistryServer.dylib
 exports:         

@@ -1,4 +1,4 @@
-.TH "MPSKernel" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "MPSKernel" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -11,7 +11,7 @@ MPSKernel
 .PP
 Inherits NSObject, <NSCopying>, and <NSSecureCoding>\&.
 .PP
-Inherited by \fBMPSBinaryImageKernel\fP, \fBMPSCNNBinaryKernel\fP, \fBMPSCNNKernel\fP, \fBMPSImageCopyToMatrix\fP, \fBMPSImageFindKeypoints\fP, \fBMPSImageHistogram\fP, \fBMPSMatrixBinaryKernel\fP, \fBMPSMatrixCopy\fP, \fBMPSMatrixMultiplication\fP, \fBMPSMatrixUnaryKernel\fP, \fBMPSNNGraph\fP, \fBMPSRNNMatrixInferenceLayer\fP, and \fBMPSUnaryImageKernel\fP\&.
+Inherited by \fBMPSBinaryImageKernel\fP, \fBMPSCNNBinaryKernel\fP, \fBMPSCNNKernel\fP, \fBMPSImageCopyToMatrix\fP, \fBMPSImageFindKeypoints\fP, \fBMPSImageGuidedFilter\fP, \fBMPSImageHistogram\fP, \fBMPSMatrixBinaryKernel\fP, \fBMPSMatrixCopy\fP, \fBMPSMatrixMultiplication\fP, \fBMPSMatrixSum\fP, \fBMPSMatrixUnaryKernel\fP, \fBMPSNNGraph\fP, \fBMPSRNNMatrixInferenceLayer\fP, and \fBMPSUnaryImageKernel\fP\&.
 .SS "Instance Methods"
 
 .in +1c
@@ -118,7 +118,7 @@ After encoding any additional work to the command buffer using other encoders, s
 
 .PP
 .PP
-A \fBMPSKernel\fP can be saved to disk / network using NSCoders such as NSKeyedArchiver\&. When decoding, the system default MTLDevice will be chosen unless the NSCoder adopts the <MPSDeviceProvider> protocol\&. To accomplish this, subclass or extend your unarchiver to add this method\&. 
+\fBA\fP \fBMPSKernel\fP can be saved to disk / network using NSCoders such as NSKeyedArchiver\&. When decoding, the system default MTLDevice will be chosen unless the NSCoder adopts the <MPSDeviceProvider> protocol\&. To accomplish this, subclass or extend your unarchiver to add this method\&. 
 .SH "Method Documentation"
 .PP 
 .SS "\- (nonnull instancetype) copyWithZone: (nullable NSZone *) zone(nullable id< MTLDevice >) device"
@@ -138,7 +138,7 @@ a pointer to a copy of this \fBMPSKernel\fP\&. This will fail, returning nil if 
 .PP
 
 .PP
-Reimplemented in \fBMPSRNNMatrixInferenceLayer\fP, and \fBMPSRNNImageInferenceLayer\fP\&.
+Reimplemented in \fBMPSRNNMatrixInferenceLayer\fP, \fBMPSRNNImageInferenceLayer\fP, \fBMPSMatrixNeuron\fP, \fBMPSMatrixFindTopK\fP, \fBMPSMatrixFullyConnected\fP, and \fBMPSMatrixSoftMax\fP\&.
 .SS "\- (nullable instancetype) initWithCoder: (NSCoder *__nonnull) aDecoder"
 Called by NSCoder to decode MPSKernels  This isn't the right interface to decode a \fBMPSKernel\fP, but it is the one that NSCoder uses\&. To enable your NSCoder (e\&.g\&. NSKeyedUnarchiver) to set which device to use extend the object to adopt the \fBMPSDeviceProvider\fP protocol\&. Otherwise, the Metal system default device will be used\&. 
 .SS "\- (nullable instancetype) \fBinitWithCoder:\fP (NSCoder *__nonnull) aDecoder(nonnull id< MTLDevice >) device"
@@ -153,12 +153,12 @@ Called by NSCoder to decode MPSKernels  This isn't the right interface to decode
 .PP
 \fBReturns:\fP
 .RS 4
-A new \fBMPSKernel\fP object, or nil if failure\&. 
+\fBA\fP new \fBMPSKernel\fP object, or nil if failure\&. 
 .RE
 .PP
 
 .PP
-Reimplemented in \fBMPSCNNBinaryConvolution\fP, \fBMPSCNNBinaryFullyConnected\fP, \fBMPSCNNConvolutionTranspose\fP, \fBMPSCNNConvolution\fP, \fBMPSCNNFullyConnected\fP, \fBMPSRNNMatrixInferenceLayer\fP, \fBMPSRNNImageInferenceLayer\fP, \fBMPSCNNNeuron\fP, \fBMPSImagePyramid\fP, \fBMPSCNNBinaryKernel\fP, \fBMPSBinaryImageKernel\fP, \fBMPSCNNDilatedPoolingMax\fP, \fBMPSImageSobel\fP, \fBMPSCNNPoolingAverage\fP, \fBMPSCNNPoolingL2Norm\fP, \fBMPSCNNCrossChannelNormalization\fP, \fBMPSCNNPooling\fP, \fBMPSCNNPoolingMax\fP, \fBMPSImageHistogramSpecification\fP, \fBMPSImageThresholdToZeroInverse\fP, \fBMPSCNNKernel\fP, \fBMPSImageThresholdToZero\fP, \fBMPSCNNLocalContrastNormalization\fP, \fBMPSImageHistogramEqualization\fP, \fBMPSUnaryImageKernel\fP, \fBMPSImageBox\fP, \fBMPSImageGaussianBlur\fP, \fBMPSMatrixCopy\fP, \fBMPSImageStatisticsMean\fP, \fBMPSImageThresholdBinary\fP, \fBMPSImageThresholdTruncate\fP, \fBMPSImageDilate\fP, \fBMPSImageScale\fP, \fBMPSImageLanczosScale\fP, \fBMPSImageBilinearScale\fP, \fBMPSImageStatisticsMeanAndVariance\fP, \fBMPSImageConvolution\fP, \fBMPSImageThresholdBinaryInverse\fP, \fBMPSImageHistogram\fP, \fBMPSCNNSpatialNormalization\fP, \fBMPSImageCopyToMatrix\fP, \fBMPSImageFindKeypoints\fP, \fBMPSImageStatisticsMinAndMax\fP, \fBMPSImageMedian\fP, \fBMPSImageAreaMax\fP, and \fBMPSNNGraph\fP\&.
+Reimplemented in \fBMPSCNNBinaryConvolution\fP, \fBMPSCNNBinaryFullyConnected\fP, \fBMPSCNNConvolutionTranspose\fP, \fBMPSCNNConvolutionGradient\fP, \fBMPSCNNFullyConnected\fP, \fBMPSCNNFullyConnectedGradient\fP, \fBMPSCNNBinaryKernel\fP, \fBMPSCNNGradientKernel\fP, \fBMPSRNNMatrixInferenceLayer\fP, \fBMPSCNNConvolution\fP, \fBMPSRNNImageInferenceLayer\fP, \fBMPSCNNPoolingAverageGradient\fP, \fBMPSCNNPoolingMaxGradient\fP, \fBMPSCNNPoolingL2NormGradient\fP, \fBMPSCNNDilatedPoolingMaxGradient\fP, \fBMPSCNNSoftMaxGradient\fP, \fBMPSCNNLogSoftMaxGradient\fP, \fBMPSCNNCrossChannelNormalizationGradient\fP, \fBMPSCNNLoss\fP, \fBMPSCNNPoolingGradient\fP, \fBMPSCNNCrossChannelNormalization\fP, \fBMPSImagePyramid\fP, \fBMPSBinaryImageKernel\fP, \fBMPSCNNLocalContrastNormalizationGradient\fP, \fBMPSCNNDilatedPoolingMax\fP, \fBMPSImageSobel\fP, \fBMPSCNNNeuronGradient\fP, \fBMPSCNNPoolingAverage\fP, \fBMPSCNNPoolingL2Norm\fP, \fBMPSCNNLocalContrastNormalization\fP, \fBMPSMatrixNeuron\fP, \fBMPSCNNKernel\fP, \fBMPSImageHistogramSpecification\fP, \fBMPSImageThresholdToZeroInverse\fP, \fBMPSCNNBatchNormalization\fP, \fBMPSCNNBatchNormalizationStatistics\fP, \fBMPSCNNNeuron\fP, \fBMPSImageThresholdToZero\fP, \fBMPSImageHistogramEqualization\fP, \fBMPSCNNInstanceNormalization\fP, \fBMPSCNNDropoutGradient\fP, \fBMPSUnaryImageKernel\fP, \fBMPSImageBox\fP, \fBMPSImageGaussianBlur\fP, \fBMPSCNNSpatialNormalizationGradient\fP, \fBMPSMatrixCopy\fP, \fBMPSImageStatisticsMean\fP, \fBMPSImageThresholdBinary\fP, \fBMPSImageThresholdTruncate\fP, \fBMPSMatrixSum\fP, \fBMPSMatrixFindTopK\fP, \fBMPSImageDilate\fP, \fBMPSCNNDropout\fP, \fBMPSMatrixFullyConnected\fP, \fBMPSImageScale\fP, \fBMPSImageLanczosScale\fP, \fBMPSImageBilinearScale\fP, \fBMPSImageStatisticsMeanAndVariance\fP, \fBMPSImageConvolution\fP, \fBMPSMatrixSoftMax\fP, \fBMPSImageThresholdBinaryInverse\fP, \fBMPSImageHistogram\fP, \fBMPSImageGuidedFilter\fP, \fBMPSCNNSpatialNormalization\fP, \fBMPSImageCopyToMatrix\fP, \fBMPSImageEuclideanDistanceTransform\fP, \fBMPSImageFindKeypoints\fP, \fBMPSImageStatisticsMinAndMax\fP, \fBMPSImageMedian\fP, \fBMPSCNNPooling\fP, \fBMPSCNNPoolingMax\fP, \fBMPSImageAreaMax\fP, and \fBMPSNNGraph\fP\&.
 .SS "\- (nonnull instancetype) initWithDevice: (nonnull id< MTLDevice >) device"
 Standard init with default properties per filter type 
 .PP
@@ -174,7 +174,7 @@ a pointer to the newly initialized object\&. This will fail, returning nil if th
 .PP
 
 .PP
-Reimplemented in \fBMPSCNNBinaryConvolution\fP, \fBMPSCNNBinaryFullyConnected\fP, \fBMPSCNNKernel\fP, \fBMPSCNNConvolutionTranspose\fP, \fBMPSCNNConvolution\fP, \fBMPSCNNFullyConnected\fP, \fBMPSRNNMatrixInferenceLayer\fP, \fBMPSRNNImageInferenceLayer\fP, \fBMPSBinaryImageKernel\fP, \fBMPSImagePyramid\fP, \fBMPSCNNNeuronReLUN\fP, \fBMPSCNNNeuronELU\fP, \fBMPSImageSobel\fP, \fBMPSCNNCrossChannelNormalization\fP, \fBMPSCNNPooling\fP, \fBMPSCNNNeuronSoftPlus\fP, \fBMPSCNNNeuronSoftSign\fP, \fBMPSImageThresholdToZeroInverse\fP, \fBMPSCNNNeuronTanH\fP, \fBMPSCNNNeuronAbsolute\fP, \fBMPSCNNBinaryKernel\fP, \fBMPSImageThresholdToZero\fP, \fBMPSCNNNeuronHardSigmoid\fP, \fBMPSCNNLocalContrastNormalization\fP, \fBMPSUnaryImageKernel\fP, \fBMPSImageBox\fP, \fBMPSImageGaussianBlur\fP, \fBMPSImageStatisticsMean\fP, \fBMPSImageThresholdBinary\fP, \fBMPSImageThresholdTruncate\fP, \fBMPSImageDilate\fP, \fBMPSImageScale\fP, \fBMPSCNNNeuronReLU\fP, \fBMPSCNNNeuronPReLU\fP, \fBMPSCNNNeuronSigmoid\fP, \fBMPSImageLanczosScale\fP, \fBMPSImageBilinearScale\fP, \fBMPSImageStatisticsMeanAndVariance\fP, \fBMPSMatrixMultiplication\fP, \fBMPSMatrixVectorMultiplication\fP, \fBMPSImageThresholdBinaryInverse\fP, \fBMPSImageArithmetic\fP, \fBMPSImageAdd\fP, \fBMPSImageSubtract\fP, \fBMPSImageMultiply\fP, \fBMPSImageDivide\fP, \fBMPSCNNNeuronLinear\fP, \fBMPSCNNSpatialNormalization\fP, \fBMPSImageFindKeypoints\fP, \fBMPSCNNUpsampling\fP, \fBMPSImageStatisticsMinAndMax\fP, \fBMPSImageMedian\fP, \fBMPSImageAreaMax\fP, and \fBMPSMatrixCopy\fP\&.
+Reimplemented in \fBMPSCNNBinaryConvolution\fP, \fBMPSCNNBinaryFullyConnected\fP, \fBMPSCNNConvolutionTranspose\fP, \fBMPSCNNConvolutionGradient\fP, \fBMPSCNNFullyConnected\fP, \fBMPSCNNFullyConnectedGradient\fP, \fBMPSCNNGradientKernel\fP, \fBMPSRNNMatrixInferenceLayer\fP, \fBMPSCNNConvolution\fP, \fBMPSRNNImageInferenceLayer\fP, \fBMPSCNNSoftMaxGradient\fP, \fBMPSCNNLogSoftMaxGradient\fP, \fBMPSCNNLoss\fP, \fBMPSCNNPoolingGradient\fP, \fBMPSCNNCrossChannelNormalization\fP, \fBMPSBinaryImageKernel\fP, \fBMPSNNReduceFeatureChannelsAndWeightsSum\fP, \fBMPSNNReshape\fP, \fBMPSNNSlice\fP, \fBMPSImagePyramid\fP, \fBMPSCNNArithmeticGradient\fP, \fBMPSCNNAddGradient\fP, \fBMPSCNNSubtractGradient\fP, \fBMPSCNNMultiplyGradient\fP, \fBMPSNNReduceBinary\fP, \fBMPSNNReduceFeatureChannelsAndWeightsMean\fP, \fBMPSImageSobel\fP, \fBMPSCNNNeuronGradient\fP, \fBMPSCNNNeuronLinear\fP, \fBMPSCNNNeuronReLU\fP, \fBMPSCNNNeuronPReLU\fP, \fBMPSCNNNeuronSigmoid\fP, \fBMPSCNNNeuronHardSigmoid\fP, \fBMPSCNNNeuronTanH\fP, \fBMPSCNNNeuronAbsolute\fP, \fBMPSCNNNeuronSoftPlus\fP, \fBMPSCNNNeuronSoftSign\fP, \fBMPSCNNNeuronELU\fP, \fBMPSCNNNeuronReLUN\fP, \fBMPSCNNNeuronPower\fP, \fBMPSCNNNeuronExponential\fP, \fBMPSCNNNeuronLogarithm\fP, \fBMPSNNReduceFeatureChannelsSum\fP, \fBMPSCNNLocalContrastNormalization\fP, \fBMPSMatrixNeuron\fP, \fBMPSMatrixSum\fP, \fBMPSCNNBinaryKernel\fP, \fBMPSImageThresholdToZeroInverse\fP, \fBMPSCNNBatchNormalization\fP, \fBMPSCNNBatchNormalizationStatistics\fP, \fBMPSCNNNeuron\fP, \fBMPSImageThresholdToZero\fP, \fBMPSCNNInstanceNormalization\fP, \fBMPSCNNKernel\fP, \fBMPSCNNDropoutGradient\fP, \fBMPSCNNUpsamplingGradient\fP, \fBMPSUnaryImageKernel\fP, \fBMPSImageBox\fP, \fBMPSImageGaussianBlur\fP, \fBMPSImageStatisticsMean\fP, \fBMPSImageThresholdBinary\fP, \fBMPSImageThresholdTruncate\fP, \fBMPSCNNArithmetic\fP, \fBMPSCNNAdd\fP, \fBMPSCNNSubtract\fP, \fBMPSCNNMultiply\fP, \fBMPSCNNDivide\fP, \fBMPSMatrixFindTopK\fP, \fBMPSImageDilate\fP, \fBMPSCNNDropout\fP, \fBMPSMatrixFullyConnected\fP, \fBMPSImageLanczosScale\fP, \fBMPSImageBilinearScale\fP, \fBMPSImageArithmetic\fP, \fBMPSImageAdd\fP, \fBMPSImageSubtract\fP, \fBMPSImageMultiply\fP, \fBMPSImageDivide\fP, \fBMPSImageStatisticsMeanAndVariance\fP, \fBMPSMatrixMultiplication\fP, \fBMPSMatrixVectorMultiplication\fP, \fBMPSMatrixSoftMax\fP, \fBMPSImageThresholdBinaryInverse\fP, \fBMPSImageGuidedFilter\fP, \fBMPSCNNSpatialNormalization\fP, \fBMPSImageEuclideanDistanceTransform\fP, \fBMPSImageFindKeypoints\fP, \fBMPSCNNUpsampling\fP, \fBMPSNNReduceUnary\fP, \fBMPSNNReduceRowMin\fP, \fBMPSNNReduceColumnMin\fP, \fBMPSNNReduceFeatureChannelsMin\fP, \fBMPSNNReduceRowMax\fP, \fBMPSNNReduceColumnMax\fP, \fBMPSNNReduceFeatureChannelsMax\fP, \fBMPSNNReduceRowMean\fP, \fBMPSNNReduceColumnMean\fP, \fBMPSNNReduceFeatureChannelsMean\fP, \fBMPSNNReduceRowSum\fP, \fBMPSNNReduceColumnSum\fP, \fBMPSImageReduceUnary\fP, \fBMPSImageReduceRowMin\fP, \fBMPSImageReduceColumnMin\fP, \fBMPSImageReduceRowMax\fP, \fBMPSImageReduceColumnMax\fP, \fBMPSImageReduceRowMean\fP, \fBMPSImageReduceColumnMean\fP, \fBMPSImageReduceRowSum\fP, \fBMPSImageReduceColumnSum\fP, \fBMPSImageScale\fP, \fBMPSImageStatisticsMinAndMax\fP, \fBMPSImageMedian\fP, \fBMPSCNNPooling\fP, \fBMPSImageAreaMax\fP, and \fBMPSMatrixCopy\fP\&.
 .SS "\- MPSCopyAllocator"
 \fBMPSImageKernel\&.h\fP  MetalPerformanceShaders\&.framework
 .PP
@@ -183,7 +183,7 @@ Reimplemented in \fBMPSCNNBinaryConvolution\fP, \fBMPSCNNBinaryFullyConnected\fP
 Copyright (c) 2015 Apple Inc\&. All rights reserved\&.  MetalPerformanceShaders filter base classes
 .RE
 .PP
-A block to make a copy of sourceTexture for MPSKernels that can only execute out of place\&.  Some \fBMPSKernel\fP objects may not be able to operate in place\&. When that occurs, and in-place operation is requested, MPS will call back to this block to get a new texture to return instead\&. To avoid spending long periods of time allocating pages to back the MTLTexture, the block should attempt to reuse textures\&. The texture returned from the MPSCopyAllocator will be returned instead of the sourceTexture from the \fBMPSKernel\fP method on return\&. 
+\fBA\fP block to make a copy of sourceTexture for MPSKernels that can only execute out of place\&.  Some \fBMPSKernel\fP objects may not be able to operate in place\&. When that occurs, and in-place operation is requested, MPS will call back to this block to get a new texture to return instead\&. To avoid spending long periods of time allocating pages to back the MTLTexture, the block should attempt to reuse textures\&. The texture returned from the MPSCopyAllocator will be returned instead of the sourceTexture from the \fBMPSKernel\fP method on return\&. 
 .PP
 .nf
 // A MPSCopyAllocator to handle cases where in-place operation fails\&.
@@ -248,16 +248,16 @@ When the MPSCopyAllocator is called, no MTLCommandEncoder is active on the comma
 .PP
 \fBParameters:\fP
 .RS 4
-\fIfilter\fP A valid pointer to the \fBMPSKernel\fP that is calling the MPSCopyAllocator\&. From it you can get the clipRect of the intended operation\&. 
+\fIfilter\fP \fBA\fP valid pointer to the \fBMPSKernel\fP that is calling the MPSCopyAllocator\&. From it you can get the clipRect of the intended operation\&. 
 .br
-\fIcommandBuffer\fP A valid MTLCommandBuffer\&. It can be used to obtain the device against which to allocate the new texture\&. You may also enqueue operations on the commandBuffer to initialize the texture on a encoder allocated in the block\&. You may not submit, enqueue or wait for scheduling/completion of the command buffer\&. 
+\fIcommandBuffer\fP \fBA\fP valid MTLCommandBuffer\&. It can be used to obtain the device against which to allocate the new texture\&. You may also enqueue operations on the commandBuffer to initialize the texture on a encoder allocated in the block\&. You may not submit, enqueue or wait for scheduling/completion of the command buffer\&. 
 .br
 \fIsourceTexture\fP The texture that is providing the source image for the filter\&. You may wish to use its size and MTLPixelFormat for the new texture, but it is not requred\&.
 .RE
 .PP
 \fBReturns:\fP
 .RS 4
-A new valid MTLTexture to use as the destination for the \fBMPSKernel\fP\&. If the calling function succeeds, its texture parameter will be overwritten with a pointer to this texture\&. If the calling function fails (highly unlikely, except for user error) then the texture will be released before the calling function returns\&. 
+\fBA\fP new valid MTLTexture to use as the destination for the \fBMPSKernel\fP\&. If the calling function succeeds, its texture parameter will be overwritten with a pointer to this texture\&. If the calling function fails (highly unlikely, except for user error) then the texture will be released before the calling function returns\&. 
 .RE
 .PP
 
@@ -270,7 +270,7 @@ MPSRectNoClip  This is a special constant to indicate no clipping is to be done\
 .SS "\- device\fC [read]\fP, \fC [nonatomic]\fP, \fC [retain]\fP"
 The device on which the kernel will be used 
 .SS "\- label\fC [read]\fP, \fC [write]\fP, \fC [atomic]\fP, \fC [copy]\fP"
-A string to help identify this object\&. 
+\fBA\fP string to help identify this object\&. 
 .SS "\- options\fC [read]\fP, \fC [write]\fP, \fC [nonatomic]\fP, \fC [assign]\fP"
 The set of options used to run the kernel\&. \fBMPSKernelOptions\fP 
 

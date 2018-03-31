@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B1E687BA-4E62-321B-8C87-D37C540A5A68' ]
+uuids:           [ 'x86_64: A26425DF-E222-333B-8CAE-6141A58B172C' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CorePrediction.framework/Versions/A/CorePrediction
 exports:         
@@ -445,11 +445,11 @@ exports:
                        _svm_get_svr_probability, _svm_load_model, _svm_predict, _svm_predict_probability, 
                        _svm_predict_values, _svm_save_model, _svm_set_print_string_function, 
                        _svm_train, _train ]
-    objc-classes:    [ _CPMLDB, _CPMLEvalutionResult, _CPMLKMeansModel, _CPMLModel, 
-                       _CPMLModelEvaluate, _CPMLNaiveBayesStorageManager, _CPMLSchema, 
-                       _CPMLStorageManager, _CPMLTrainer ]
-    objc-ivars:      [ _CPMLModel._mData, _CPMLModel._realBase, _CPMLModel._totalBytesIntSection, 
-                       _CPMLModel._totalBytesRealSection ]
+    objc-classes:    [ CPMLDB, CPMLEvalutionResult, CPMLKMeansModel, CPMLModel, CPMLModelEvaluate, 
+                       CPMLNaiveBayesStorageManager, CPMLSchema, CPMLStorageManager, 
+                       CPMLTrainer ]
+    objc-ivars:      [ CPMLModel._mData, CPMLModel._realBase, CPMLModel._totalBytesIntSection, 
+                       CPMLModel._totalBytesRealSection ]
     weak-def-symbols: [ __ZTI19CPMLAnalysisHandler, __ZTI23CPMLNaiveBayesDBAdaptor, 
                         __ZTIN10CPMLLibSVM11ONE_CLASS_QE, __ZTIN10CPMLLibSVM5SVC_QE, 
                         __ZTIN10CPMLLibSVM5SVR_QE, __ZTIN10CPMLLibSVM7QMatrixE, __ZTIN13CPMLlinearSVM8functionE, 

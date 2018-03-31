@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 5FD502B3-60DC-3190-B9A0-60383B8DE9CA', 'x86_64: 061306B9-9DDA-3CFC-8F90-DA58863DF087' ]
+uuids:           [ 'i386: A9F07B56-3E4A-3016-9C12-5BE9C875293C', 'x86_64: 30B3F914-5ED4-38F5-B569-B61AB424331A' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MachineSettings.framework/Versions/A/MachineSettings
 exports:         
@@ -22,5 +22,5 @@ exports:
                        _setIgnoreTrackpadIfMousePresent, _setMultitouchTrackpadBehavior, 
                        _setTrackpadBehavior, _setTrackpadBehaviorExtended, _setTrackpadTapBehavior, 
                        _setXServeLockEnclosureState, _setXServeLockEnclosureStateForConnection ]
-    objc-classes:    [ _SoundSettings ]
+    objc-classes:    [ SoundSettings ]
 ...

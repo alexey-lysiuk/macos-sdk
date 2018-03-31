@@ -374,4 +374,25 @@ NS_CLASS_AVAILABLE(10_13, 11_0)
 
 @end
 
+/*!
+ @extension NSUserActivity
+ @abstract
+    A NSUserActivity extension for passing detected barcodes.
+ */
+
+#if __OBJC2__
+
+@class NSUserActivity;
+
+@interface NSUserActivity (CIBarcodeDescriptor)
+
+/*! 
+ @abstract The scanned code in the user activity passed in by system scanner.
+ */
+@property (nonatomic, nullable, readonly, copy) CIBarcodeDescriptor *detectedBarcodeDescriptor API_AVAILABLE(macos(10.13.4), ios(11.3), tvos(11.3));
+
+@end
+
+#endif // __OBJC2__
+
 NS_ASSUME_NONNULL_END

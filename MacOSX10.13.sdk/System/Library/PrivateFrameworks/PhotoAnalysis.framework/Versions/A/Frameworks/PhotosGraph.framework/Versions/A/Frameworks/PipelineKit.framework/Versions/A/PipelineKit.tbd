@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BEFCBBB9-7DA9-3437-B419-248283D77F7E' ]
+uuids:           [ 'x86_64: 85F90737-E7C5-3B18-9ACC-D5B990D31531' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Versions/A/Frameworks/PhotosGraph.framework/Versions/A/Frameworks/PipelineKit.framework/Versions/A/PipelineKit
 objc-constraint: none
@@ -8,8 +8,7 @@ exports:
   - archs:           [ x86_64 ]
     allowable-clients: [ MediaMiningKit, PhotosGraph ]
     symbols:         [ _PIErrorDomain, _PipelineKitVersionNumber, _PipelineKitVersionString ]
-    objc-classes:    [ _PICLGeocoderOperation, _PIEKEventStoreOperation, _PIError, 
-                       _PIGroup, _PIMKLocalSearchOperation, _PIOperation, _PIOperationSubclass, 
-                       _PIPipeline, _PIURLDataOperation, _PIURLDownloadOperation, 
-                       _PIURLSessionOperationSubclass ]
+    objc-classes:    [ PICLGeocoderOperation, PIEKEventStoreOperation, PIError, PIGroup, 
+                       PIMKLocalSearchOperation, PIOperation, PIOperationSubclass, 
+                       PIPipeline, PIURLDataOperation, PIURLDownloadOperation, PIURLSessionOperationSubclass ]
 ...

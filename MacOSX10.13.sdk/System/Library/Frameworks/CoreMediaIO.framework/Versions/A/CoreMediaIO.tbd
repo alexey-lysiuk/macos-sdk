@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 78FA5884-4BE4-366F-AAAD-8831A8978C0F', 'x86_64: 1D78D2AE-626B-3D0C-83EA-EA385682F3F3' ]
+uuids:           [ 'i386: 2885B19F-D84F-39B6-913B-F4464E14F513', 'x86_64: 5A3B9482-21AC-38A3-B014-67012F3C39C7' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreMediaIO.framework/Versions/A/CoreMediaIO
 exports:         

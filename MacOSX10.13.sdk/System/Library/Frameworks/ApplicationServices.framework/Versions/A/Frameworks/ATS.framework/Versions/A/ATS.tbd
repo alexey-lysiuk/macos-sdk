@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: CD3D5685-2BB9-3A7B-AC97-2A74A81CB7CC', 'x86_64: CDF5F6D7-4E7D-3D28-9FBA-1B53AD9FA8F8' ]
+uuids:           [ 'i386: C6B16951-7522-3C29-908F-6AEC4A9E3003', 'x86_64: 000C4E9F-E0D9-371D-B304-83BA37460724' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/ATS
 current-version: 236

@@ -1,15 +1,15 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 16A5F426-C732-30B0-B141-6AC3DAB4E86A', 'x86_64: D99600D5-C066-3D49-8641-369A69300D16' ]
+uuids:           [ 'i386: 4D68CD07-F213-33EC-8461-443AFFCD2B16', 'x86_64: 1369D6DA-8842-3878-B546-1D09828331F5' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Quartz.framework/Versions/A/Frameworks/QuartzComposer.framework/Versions/A/QuartzComposer
 current-version: 168
 exports:         
   - archs:           [ x86_64 ]
-    objc-ivars:      [ _GFList._count, _GFList._values, _GFNode._parent, _GFPort._flags, 
-                       _QCArray._array, _QCArray._count, _QCArray._elementSize, _QCContext._iterationManager, 
-                       _QCParameterInfo.size, _QCParameterInfo.type, _QCPatch._renderingInfo, 
-                       _QCPatchRenderingInfo._context, _QCPatchRenderingInfo.flags ]
+    objc-ivars:      [ GFList._count, GFList._values, GFNode._parent, GFPort._flags, 
+                       QCArray._array, QCArray._count, QCArray._elementSize, QCContext._iterationManager, 
+                       QCParameterInfo.size, QCParameterInfo.type, QCPatch._renderingInfo, 
+                       QCPatchRenderingInfo._context, QCPatchRenderingInfo.flags ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ _GFArrayFromArgumentList, _GFBacktrace, _GFDebug, _GFDebuggingLevel, 
                        _GFException, _GFFilterStringsWithKeywords, _GFGetDebugMessageCallback, 
@@ -105,35 +105,33 @@ exports:
                        _kQCPixelFormatCompatibility_CIImage, _kQCPixelFormatCompatibility_CoreVideo, 
                        _kQCPixelFormatCompatibility_GLContext, _kQCPixelFormatCompatibility_OpenGL, 
                        _kQCPixelFormatCompatibility_QuickTime ]
-    objc-classes:    [ _GFConnection, _GFGraph, _GFGraphBrowserView, _GFGraphEditorInspector, 
-                       _GFGraphEditorView, _GFGraphPathView, _GFGraphView, _GFList, 
-                       _GFNode, _GFNodeActor, _GFNodeManager, _GFNodeManagerView, 
-                       _GFPort, _GFSettingsView, _GFStringEditor, _GFTooltipView, 
-                       _GFTooltipWindow, _QCAgeProfileView, _QCArray, _QCArrayMemObject, 
-                       _QCBooleanPort, _QCCGLContext, _QCCLContext, _QCCache, _QCCircularSlider, 
-                       _QCColorPort, _QCComposition, _QCCompositionLayer, _QCCompositionParameterView, 
-                       _QCCompositionPickerPanel, _QCCompositionPickerView, _QCCompositionRepository, 
-                       _QCContext, _QCDataImage, _QCDatagramBroadcaster, _QCDatagramReceiver, 
-                       _QCDatagramSocket, _QCDownloadPatch, _QCGraphicsContext, _QCImage, 
-                       _QCImage2DMemObject, _QCImageBuffer, _QCImageBufferConverter, 
-                       _QCImageExporter, _QCImageFilter, _QCImageManager, _QCImageManagerAgeProfileView, 
-                       _QCImageManagerProfileView, _QCImagePixelBuffer, _QCImagePort, 
-                       _QCImageProvider, _QCImageSurfaceBuffer, _QCImageTextureBuffer, 
-                       _QCImageView, _QCIndexPort, _QCInspector, _QCInteractionManager, 
-                       _QCInteractionPatchActor, _QCInteractionPort, _QCInterpolationPort, 
-                       _QCLink, _QCList, _QCLogView, _QCMemObject, _QCNetworkPatch, 
-                       _QCNetworkPatchUI, _QCNodeManager, _QCNumberPort, _QCNumericalFormatter, 
-                       _QCObject, _QCObjectPort, _QCOpenGLContext, _QCOpenGLPort_Blending, 
-                       _QCOpenGLPort_Color, _QCOpenGLPort_Culling, _QCOpenGLPort_Image, 
-                       _QCOpenGLPort_ZBuffer, _QCParameterInfo, _QCPatch, _QCPatchActor, 
-                       _QCPatchBrowserView, _QCPatchClassDescription, _QCPatchController, 
-                       _QCPatchEditorView, _QCPatchManagerView, _QCPatchParametersView, 
-                       _QCPatchPathView, _QCPatchProfileView, _QCPatchView, _QCPixelFormat, 
-                       _QCPlugIn, _QCPlugInViewController, _QCPort, _QCPortTooltipView, 
-                       _QCProfileConfigurationView, _QCProfileView, _QCProgrammablePatch, 
-                       _QCProgrammablePatchView, _QCProxyPort, _QCRegion, _QCRenderState, 
-                       _QCRenderer, _QCResourcePool, _QCRunLoopPatch, _QCSharedTimers, 
-                       _QCSlideShowController, _QCSourceTextView, _QCStream, _QCStreamManager, 
-                       _QCStringPort, _QCStructure, _QCStructurePort, _QCTableView, 
-                       _QCTextView, _QCThreadPatch, _QCView, _QCVirtualPort ]
+    objc-classes:    [ GFConnection, GFGraph, GFGraphBrowserView, GFGraphEditorInspector, 
+                       GFGraphEditorView, GFGraphPathView, GFGraphView, GFList, GFNode, 
+                       GFNodeActor, GFNodeManager, GFNodeManagerView, GFPort, GFSettingsView, 
+                       GFStringEditor, GFTooltipView, GFTooltipWindow, QCAgeProfileView, 
+                       QCArray, QCArrayMemObject, QCBooleanPort, QCCGLContext, QCCLContext, 
+                       QCCache, QCCircularSlider, QCColorPort, QCComposition, QCCompositionLayer, 
+                       QCCompositionParameterView, QCCompositionPickerPanel, QCCompositionPickerView, 
+                       QCCompositionRepository, QCContext, QCDataImage, QCDatagramBroadcaster, 
+                       QCDatagramReceiver, QCDatagramSocket, QCDownloadPatch, QCGraphicsContext, 
+                       QCImage, QCImage2DMemObject, QCImageBuffer, QCImageBufferConverter, 
+                       QCImageExporter, QCImageFilter, QCImageManager, QCImageManagerAgeProfileView, 
+                       QCImageManagerProfileView, QCImagePixelBuffer, QCImagePort, 
+                       QCImageProvider, QCImageSurfaceBuffer, QCImageTextureBuffer, 
+                       QCImageView, QCIndexPort, QCInspector, QCInteractionManager, 
+                       QCInteractionPatchActor, QCInteractionPort, QCInterpolationPort, 
+                       QCLink, QCList, QCLogView, QCMemObject, QCNetworkPatch, QCNetworkPatchUI, 
+                       QCNodeManager, QCNumberPort, QCNumericalFormatter, QCObject, 
+                       QCObjectPort, QCOpenGLContext, QCOpenGLPort_Blending, QCOpenGLPort_Color, 
+                       QCOpenGLPort_Culling, QCOpenGLPort_Image, QCOpenGLPort_ZBuffer, 
+                       QCParameterInfo, QCPatch, QCPatchActor, QCPatchBrowserView, 
+                       QCPatchClassDescription, QCPatchController, QCPatchEditorView, 
+                       QCPatchManagerView, QCPatchParametersView, QCPatchPathView, 
+                       QCPatchProfileView, QCPatchView, QCPixelFormat, QCPlugIn, 
+                       QCPlugInViewController, QCPort, QCPortTooltipView, QCProfileConfigurationView, 
+                       QCProfileView, QCProgrammablePatch, QCProgrammablePatchView, 
+                       QCProxyPort, QCRegion, QCRenderState, QCRenderer, QCResourcePool, 
+                       QCRunLoopPatch, QCSharedTimers, QCSlideShowController, QCSourceTextView, 
+                       QCStream, QCStreamManager, QCStringPort, QCStructure, QCStructurePort, 
+                       QCTableView, QCTextView, QCThreadPatch, QCView, QCVirtualPort ]
 ...

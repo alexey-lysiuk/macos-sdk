@@ -1,13 +1,14 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 40736208-5167-300B-97CE-BD0D7E4E3F92' ]
+uuids:           [ 'x86_64: 51195498-9963-31D0-BCBF-820919208E68' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreMediaStream.framework/Versions/A/CoreMediaStream
 current-version: 510.8
 exports:         
   - archs:           [ x86_64 ]
-    symbols:         [ _MSASInitialize, _MSASPlatform, _MSASPlatformIsDebugLoggingEnabled, 
-                       _MSCFCopyLocalizedString, _MSCFCreateLocalizedFormat, _MSCoreMediaStreamInitialize, 
+    symbols:         [ _MPSStateRequestReadFrom, _MPSStateResponseReadFrom, _MSASInitialize, 
+                       _MSASPlatform, _MSASPlatformIsDebugLoggingEnabled, _MSCFCopyLocalizedString, 
+                       _MSCFCreateLocalizedFormat, _MSCoreMediaStreamInitialize, 
                        _MSDSPCSendDeletionRequestAsync, _MSLog, _MSLogFile, _MSLogSqliteError, 
                        _MSMMCSHashForData, _MSMMCSHashForFD, _MSMMCSHashForFileAtPath, 
                        _MSMediaStreamDir, _MSObjectsAreEquivalent, _MSPCUCreateBase64StringFromData, 
@@ -43,9 +44,9 @@ exports:
                        _MSSqliteDataFromStatementColumn, _MSSqliteDateFromTimeIntervalStatementColumn, 
                        _MSSqliteIntFromStatementColumn, _MSSqliteObjectFromStatementColumn, 
                        _MSSqliteStringFromStatementColumn, _MSSqliteTrapForDBLockError, 
-                       __MSSPCForcedProtocolVersionString, _kMMCSKitErrorDomain, 
-                       _kMSASAccessControlGUIDKey, _kMSASAccessControlKey, _kMSASAlbumGUIDKey, 
-                       _kMSASAlbumKey, _kMSASAlbumMetadataAllowMultipleContributorsKey, 
+                       __MSSPCForcedProtocolVersionString, _createSHA1StringOfUDID, 
+                       _kMMCSKitErrorDomain, _kMSASAccessControlGUIDKey, _kMSASAccessControlKey, 
+                       _kMSASAlbumGUIDKey, _kMSASAlbumKey, _kMSASAlbumMetadataAllowMultipleContributorsKey, 
                        _kMSASAlbumMetadataCreationDateKey, _kMSASAlbumMetadataIsPublicKey, 
                        _kMSASAlbumMetadataNameKey, _kMSASAlbumMetadataPhoneTokenKey, 
                        _kMSASAlbumStateKey, _kMSASAlbumsKey, _kMSASAssetCollectionGUIDKey, 
@@ -186,25 +187,29 @@ exports:
                        _kMSStreamsGetConnectionErrorDomain, _kMSStreamsProtocolCoreErrorDomain, 
                        _kMSStreamsPutConnectionErrorDomain, _kMSSubscribeStorageProtocolErrorDomain, 
                        _kMSSubscribeStreamsProtocolCoreErrorDomain, _kMSSubscriberErrorDomain ]
-    objc-classes:    [ _MMCSEngine, _MMCSRequestorContext, _MSASAlbum, _MSASAlbumChange, 
-                       _MSASAssetCollection, _MSASAssetCollectionChange, _MSASAssetDownloader, 
-                       _MSASAssetInfoToReauthForDownload, _MSASAssetTransferer, _MSASAssetUploader, 
-                       _MSASComment, _MSASCommentChange, _MSASCommentCheckOperation, 
-                       _MSASDaemonModel, _MSASEnqueuedCommand, _MSASGroupedQueue, 
-                       _MSASInvitation, _MSASModelBase, _MSASModelEnumerator, _MSASPConnectionGate, 
-                       _MSASPendingChanges, _MSASPersonInfoManager, _MSASPersonModel, 
-                       _MSASPersonModelItem, _MSASPhoneInvitations, _MSASProtocol, 
-                       _MSASServerSideModel, _MSASServerSideModelGroupedCommandQueue, 
-                       _MSASSharingRelationship, _MSASStateMachine, _MSAlbumSharingDaemon, 
-                       _MSAsset, _MSAssetCollection, _MSBackoffManager, _MSCupidStateMachine, 
-                       _MSDaemon, _MSDeleteStreamsProtocol, _MSDeleter, _MSFileUtilities, 
-                       _MSImageScalingSpecification, _MSInvitationResponse, _MSInvitationStrings, 
-                       _MSMMCSProtocol, _MSMediaStreamDaemon, _MSObjectQueue, _MSObjectWrapper, 
-                       _MSPerformanceLogger, _MSProtocolUtilities, _MSPublishMMCSProtocol, 
-                       _MSPublishStreamsProtocol, _MSPublisher, _MSReauthorizationProtocol, 
-                       _MSResetServer, _MSResetServerProtocol, _MSServerSideConfigManager, 
-                       _MSServerSideConfigProtocol, _MSShare, _MSShareStateNotificationString, 
-                       _MSSharingManager, _MSSharingProtocol, _MSStreamsProtocol, 
-                       _MSSubscribeMMCSProtocol, _MSSubscribeStreamsProtocol, _MSSubscribedStream, 
-                       _MSSubscriber, _MSTimerGate, _MSVideoDerivativeSpecification ]
+    objc-classes:    [ MMCSEngine, MMCSRequestorContext, MPSStateRequest, MPSStateResponse, 
+                       MSASAlbum, MSASAlbumChange, MSASAssetCollection, MSASAssetCollectionChange, 
+                       MSASAssetDownloader, MSASAssetInfoToReauthForDownload, MSASAssetTransferer, 
+                       MSASAssetUploader, MSASComment, MSASCommentChange, MSASCommentCheckOperation, 
+                       MSASDaemonModel, MSASEnqueuedCommand, MSASGroupedQueue, MSASInvitation, 
+                       MSASModelBase, MSASModelEnumerator, MSASPConnectionGate, MSASPendingChanges, 
+                       MSASPersonInfoManager, MSASPersonModel, MSASPersonModelItem, 
+                       MSASPhoneInvitations, MSASProtocol, MSASServerSideModel, MSASServerSideModelGroupedCommandQueue, 
+                       MSASSharingRelationship, MSASStateMachine, MSAlbumSharingDaemon, 
+                       MSAsset, MSAssetCollection, MSBackoffManager, MSCupidStateMachine, 
+                       MSDaemon, MSDeleteStreamsProtocol, MSDeleter, MSFileUtilities, 
+                       MSImageScalingSpecification, MSInvitationResponse, MSInvitationStrings, 
+                       MSMMCSProtocol, MSMediaStreamDaemon, MSObjectQueue, MSObjectWrapper, 
+                       MSPerformanceLogger, MSProtocolUtilities, MSPublishMMCSProtocol, 
+                       MSPublishStreamsProtocol, MSPublisher, MSReauthorizationProtocol, 
+                       MSResetServer, MSResetServerProtocol, MSServerSideConfigManager, 
+                       MSServerSideConfigProtocol, MSShare, MSShareStateNotificationString, 
+                       MSSharingManager, MSSharingProtocol, MSStreamsProtocol, MSSubscribeMMCSProtocol, 
+                       MSSubscribeStreamsProtocol, MSSubscribedStream, MSSubscriber, 
+                       MSTimerGate, MSVideoDerivativeSpecification ]
+    objc-ivars:      [ MPSStateRequest._backupDeviceID, MPSStateRequest._backupDeviceUDID, 
+                       MPSStateRequest._backupDeviceUUID, MPSStateRequest._iCPLDeviceID, 
+                       MPSStateRequest._mPSDeviceID, MPSStateResponse._has, MPSStateResponse._icplAction, 
+                       MPSStateResponse._mpsAction, MPSStateResponse._retryAfterSeconds, 
+                       MPSStateResponse._version ]
 ...

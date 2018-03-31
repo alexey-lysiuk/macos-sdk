@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 3892843F-2B4B-3B19-8468-269B0E15F620', 'x86_64: DA29622B-A541-3B84-97A6-DACF95BBD3AA' ]
+uuids:           [ 'i386: E3BDEA1E-82BB-3FB0-93D3-A8497172F4D9', 'x86_64: 1938C255-8221-32C4-8D37-9E27E6C9085E' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ColorSyncLegacy.framework/Versions/A/Resources/ColorSyncDeprecated.dylib
 current-version: 4.6

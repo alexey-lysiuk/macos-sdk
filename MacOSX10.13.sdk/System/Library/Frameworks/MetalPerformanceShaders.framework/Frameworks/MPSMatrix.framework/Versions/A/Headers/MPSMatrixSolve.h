@@ -106,9 +106,9 @@ MPS_CLASS_AVAILABLE_STARTING( macos(10.13), ios(11.0), tvos(11.0))
  *              primarySourceMatrixOrigin.
  */
 -(void) encodeToCommandBuffer: (nonnull id <MTLCommandBuffer>) commandBuffer
-                 sourceMatrix: (MPSMatrix const* __nonnull) sourceMatrix
-          rightHandSideMatrix: (MPSMatrix const* __nonnull) rightHandSideMatrix
-               solutionMatrix: (MPSMatrix* __nonnull) solutionMatrix
+                 sourceMatrix: (MPSMatrix * __nonnull) sourceMatrix
+          rightHandSideMatrix: (MPSMatrix * __nonnull) rightHandSideMatrix
+               solutionMatrix: (MPSMatrix * __nonnull) solutionMatrix
 MPS_SWIFT_NAME(encode(commandBuffer:sourceMatrix:rightHandSideMatrix:solutionMatrix:));
 
 @end // MPSMatrixSolveTriangular
@@ -183,10 +183,10 @@ MPS_CLASS_AVAILABLE_STARTING( macos(10.13), ios(11.0), tvos(11.0))
  *              sourceMatrix must be at least size order x order starting at primarySourceMatrixOrigin.
  */
 -(void) encodeToCommandBuffer: (nonnull id <MTLCommandBuffer>) commandBuffer
-                 sourceMatrix: (MPSMatrix const* __nonnull) sourceMatrix
-          rightHandSideMatrix: (MPSMatrix const* __nonnull) rightHandSideMatrix
-                 pivotIndices: (MPSMatrix const* __nonnull) pivotIndices
-               solutionMatrix: (MPSMatrix* __nonnull) solutionMatrix
+                 sourceMatrix: (MPSMatrix * __nonnull) sourceMatrix
+          rightHandSideMatrix: (MPSMatrix * __nonnull) rightHandSideMatrix
+                 pivotIndices: (MPSMatrix * __nonnull) pivotIndices
+               solutionMatrix: (MPSMatrix * __nonnull) solutionMatrix
 MPS_SWIFT_NAME(encode(commandBuffer:sourceMatrix:rightHandSideMatrix:pivotIndices:solutionMatrix:));
 
 @end // MPSMatrixSolveLU
@@ -257,9 +257,9 @@ MPS_CLASS_AVAILABLE_STARTING( macos(10.13), ios(11.0), tvos(11.0))
  *              sourceMatrix must be at least size order x order starting at primarySourceMatrixOrigin.
  */
 -(void) encodeToCommandBuffer: (nonnull id <MTLCommandBuffer>) commandBuffer
-                 sourceMatrix: (MPSMatrix const* __nonnull) sourceMatrix
-          rightHandSideMatrix: (MPSMatrix const* __nonnull) rightHandSideMatrix
-               solutionMatrix: (MPSMatrix* __nonnull) solutionMatrix
+                 sourceMatrix: (MPSMatrix * __nonnull) sourceMatrix
+          rightHandSideMatrix: (MPSMatrix * __nonnull) rightHandSideMatrix
+               solutionMatrix: (MPSMatrix * __nonnull) solutionMatrix
 MPS_SWIFT_NAME(encode(commandBuffer:sourceMatrix:rightHandSideMatrix:solutionMatrix:));
 
 @end // MPSMatrixSolveCholesky

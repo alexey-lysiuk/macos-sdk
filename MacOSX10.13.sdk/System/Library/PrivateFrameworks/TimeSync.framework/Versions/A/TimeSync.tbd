@@ -1,12 +1,12 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 014DDBFA-9327-3B07-8EDB-3373FB866825', 'x86_64: 5045CA17-321C-36A6-BA35-3F6DB55DD2E6' ]
+uuids:           [ 'i386: 2276FACB-E7D9-3D10-8A04-DD0419F0F2B6', 'x86_64: 7CD12054-56A6-3A59-B397-33997EEA96AE' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/TimeSync.framework/Versions/A/TimeSync
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
-    objc-classes:    [ _TSIntervalFilter, _TSIntervalTimeLineFilter, _TSTimeLineFilter ]
+    objc-classes:    [ TSIntervalFilter, TSIntervalTimeLineFilter, TSTimeLineFilter ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ _TSASCapableKey, _TSAllowedLostResponsesExceededCounterKey, 
                        _TSAnnounceReceiptTimeoutCounterKey, _TSBatteryPoweredKey, 
@@ -63,21 +63,22 @@ exports:
                        _TimeSyncClockSetLockStateChangeCallback, _TimeSyncClockSetMasterChangeCallback, 
                        _TimeSyncClockSetgPTPGrandmasterChangeCallback, _TimeSyncRemovegPTPServices, 
                        _TimeSyncSystemDomainClockIdentifier, __TSKernelClockConvertFromDomainToMachAbsoluteTime, 
-                       __TSKernelClockConvertFromMachAbsoluteToDomainTime ]
-    objc-classes:    [ _TSADEVValue, _TSAllanDeviationAnalysis, _TSAudioTimeErrorCalculator, 
-                       _TSAudioTimeErrorCorrelator, _TSAudioTimeErrorCorrelatorPostUpsampler, 
-                       _TSAudioTimeErrorCorrelatorQuick, _TSAudioTimeErrorCorrelatorResampler, 
-                       _TSAudioTimeErrorValue, _TSBonjourAddress, _TSBonjourAdvertise, 
-                       _TSBonjourBrowser, _TSBonjourNode, _TSClock, _TSClockManager, 
-                       _TSFrequencyAnalysis, _TSInterface, _TSKernelClock, _TSMADEVValue, 
-                       _TSMTIEMask, _TSMTIEMaskElement, _TSMTIEMaskError, _TSMTIEValue, 
-                       _TSMachAbsoluteNanoseconds, _TSMaximumTimeIntervalErrorAnalysis, 
-                       _TSModifiedAllanDeviationAnalysis, _TSRMSTIEValue, _TSRootMeanSquaredTimeIntervalErrorAnalysis, 
-                       _TSTDEVValue, _TSTimeDeviationAnalysis, _TSTimeErrorAnalysis, 
-                       _TSTimeErrorSequence, _TSTimeErrorValue, _TSUserFilteredClock, 
-                       _TSgPTPClock, _TSgPTPEthernetPort, _TSgPTPFDEtEPort, _TSgPTPFDPtPPort, 
-                       _TSgPTPMachPort, _TSgPTPManager, _TSgPTPNetworkPort, _TSgPTPPort, 
-                       _TSgPTPPortStatistics, _TSgPTPTime, _TSgPTPUnicastLinkLayerEtEPort, 
-                       _TSgPTPUnicastLinkLayerPtPPort, _TSgPTPUnicastUDPv4EtEPort, 
-                       _TSgPTPUnicastUDPv4PtPPort, _TSgPTPUnicastUDPv6EtEPort, _TSgPTPUnicastUDPv6PtPPort ]
+                       __TSKernelClockConvertFromMachAbsoluteToDomainTime, __TSgPTPClockConvertFromDomainToMachAbsoluteTime, 
+                       __TSgPTPClockConvertFromMachAbsoluteToDomainTime ]
+    objc-classes:    [ TSADEVValue, TSAllanDeviationAnalysis, TSAudioTimeErrorCalculator, 
+                       TSAudioTimeErrorCorrelator, TSAudioTimeErrorCorrelatorPostUpsampler, 
+                       TSAudioTimeErrorCorrelatorQuick, TSAudioTimeErrorCorrelatorResampler, 
+                       TSAudioTimeErrorValue, TSBonjourAddress, TSBonjourAdvertise, 
+                       TSBonjourBrowser, TSBonjourNode, TSClock, TSClockManager, 
+                       TSFrequencyAnalysis, TSInterface, TSKernelClock, TSMADEVValue, 
+                       TSMTIEMask, TSMTIEMaskElement, TSMTIEMaskError, TSMTIEValue, 
+                       TSMachAbsoluteNanoseconds, TSMaximumTimeIntervalErrorAnalysis, 
+                       TSModifiedAllanDeviationAnalysis, TSRMSTIEValue, TSRootMeanSquaredTimeIntervalErrorAnalysis, 
+                       TSTDEVValue, TSTimeDeviationAnalysis, TSTimeErrorAnalysis, 
+                       TSTimeErrorSequence, TSTimeErrorValue, TSUserFilteredClock, 
+                       TSgPTPClock, TSgPTPEthernetPort, TSgPTPFDEtEPort, TSgPTPFDPtPPort, 
+                       TSgPTPMachPort, TSgPTPManager, TSgPTPNetworkPort, TSgPTPPort, 
+                       TSgPTPPortStatistics, TSgPTPTime, TSgPTPUnicastLinkLayerEtEPort, 
+                       TSgPTPUnicastLinkLayerPtPPort, TSgPTPUnicastUDPv4EtEPort, 
+                       TSgPTPUnicastUDPv4PtPPort, TSgPTPUnicastUDPv6EtEPort, TSgPTPUnicastUDPv6PtPPort ]
 ...

@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 77B8CC80-6639-30FA-83EA-FFB3489466D3' ]
+uuids:           [ 'x86_64: 366FC242-7BDD-39E0-A544-B68DA3E5326D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/iCalendar.framework/Versions/A/iCalendar
-current-version: 275
+current-version: 275.4.1
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _ICSDecodeBase64, _ICSEncodeBase64, _ICSObscuritySalt, _ICSTravelAdvisoryBehavior_Automatic, 
@@ -92,21 +92,20 @@ exports:
                        _kICSSymbolicColorRed, _kICSSymbolicColorYellow, _kXAppleAlarmProxArrive, 
                        _kXAppleAlarmProxConnect, _kXAppleAlarmProxDepart, _kXAppleAlarmProxDisconnect, 
                        _strncmp_s, _symbolicColorForLegacyRGB ]
-    objc-classes:    [ _ICSActionValue, _ICSAlarm, _ICSAlternateTimeProposal, _ICSAlternateTimeProposalStatusParameter, 
-                       _ICSAttachment, _ICSAttendeeComment, _ICSAvailability, _ICSAvailable, 
-                       _ICSBusyStatusValue, _ICSByDayValue, _ICSCalendar, _ICSCalendarItem, 
-                       _ICSCalendarServerAccessValue, _ICSCalendarUserParameter, 
-                       _ICSClassificationValue, _ICSColor, _ICSComponent, _ICSConference, 
-                       _ICSDate, _ICSDateTimeUTCValue, _ICSDateTimeValue, _ICSDateValue, 
-                       _ICSDocument, _ICSDuration, _ICSEvent, _ICSFreeBusy, _ICSFreeBusyTime, 
-                       _ICSFreeBusyTypeParameter, _ICSJournal, _ICSLogger, _ICSMethodValue, 
-                       _ICSMultiValueProperty, _ICSParser, _ICSParticipationStatusParameter, 
-                       _ICSPeriod, _ICSPredefinedValue, _ICSProperty, _ICSRecurrenceRule, 
-                       _ICSRelationshipTypeParameter, _ICSRoleParameter, _ICSScheduleAgentParameter, 
-                       _ICSScheduleForceSendParameter, _ICSScheduleStatusParameter, 
-                       _ICSStatusValue, _ICSStringWriter, _ICSStructuredLocation, 
-                       _ICSTimeZone, _ICSTimeZoneBlock, _ICSTimeZoneChange, _ICSTimeZoneDaylightBlock, 
-                       _ICSTimeZoneStandardBlock, _ICSTimeZoneTranslator, _ICSTodo, 
-                       _ICSTokenizer, _ICSTransparencyValue, _ICSTravelAdvisoryBehavior, 
-                       _ICSTravelDuration, _ICSTrigger, _ICSUserAddress, _ICSZStringWriter ]
+    objc-classes:    [ ICSActionValue, ICSAlarm, ICSAlternateTimeProposal, ICSAlternateTimeProposalStatusParameter, 
+                       ICSAttachment, ICSAttendeeComment, ICSAvailability, ICSAvailable, 
+                       ICSBusyStatusValue, ICSByDayValue, ICSCalendar, ICSCalendarItem, 
+                       ICSCalendarServerAccessValue, ICSCalendarUserParameter, ICSClassificationValue, 
+                       ICSColor, ICSComponent, ICSConference, ICSDate, ICSDateTimeUTCValue, 
+                       ICSDateTimeValue, ICSDateValue, ICSDocument, ICSDuration, 
+                       ICSEvent, ICSFreeBusy, ICSFreeBusyTime, ICSFreeBusyTypeParameter, 
+                       ICSJournal, ICSLogger, ICSMethodValue, ICSMultiValueProperty, 
+                       ICSParser, ICSParticipationStatusParameter, ICSPeriod, ICSPredefinedValue, 
+                       ICSProperty, ICSRecurrenceRule, ICSRelationshipTypeParameter, 
+                       ICSRoleParameter, ICSScheduleAgentParameter, ICSScheduleForceSendParameter, 
+                       ICSScheduleStatusParameter, ICSStatusValue, ICSStringWriter, 
+                       ICSStructuredLocation, ICSTimeZone, ICSTimeZoneBlock, ICSTimeZoneChange, 
+                       ICSTimeZoneDaylightBlock, ICSTimeZoneStandardBlock, ICSTimeZoneTranslator, 
+                       ICSTodo, ICSTokenizer, ICSTransparencyValue, ICSTravelAdvisoryBehavior, 
+                       ICSTravelDuration, ICSTrigger, ICSUserAddress, ICSZStringWriter ]
 ...

@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: FD0F7A18-6F78-34C9-B067-B3AB76C3D4C8', 'x86_64: A69E2BAD-2B66-38CC-9D3A-0A0EBC41341D' ]
+uuids:           [ 'i386: E28CF09A-9AEC-3D70-AF27-F428332FEB74', 'x86_64: B90C67C1-0292-3CEC-885D-F1882CD104BE' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/PrintCore.framework/Versions/A/PrintCore
-current-version: 503
+current-version: 503.2
 parent-umbrella: ApplicationServices
 exports:         
   - archs:           [ i386 ]
@@ -188,7 +188,7 @@ exports:
     symbols:         [ __ZN20OpaquePMPrintSession10SetPreviewEhj, __ZN20OpaquePMPrintSession8SetErrorEi, 
                        __ZN21OpaquePMPrintSettings14PJCGetLastPageEPj, __ZN21OpaquePMPrintSettings14PJCSetLastPageEP17OpaquePMTicketRefjhh, 
                        __ZN21OpaquePMPrintSettings15PJCGetFirstPageEPj ]
-    objc-ivars:      [ _PMInkChecker._consumables, _PMInkChecker._printer, _PMInkChecker._supplies ]
+    objc-ivars:      [ PMInkChecker._consumables, PMInkChecker._printer, PMInkChecker._supplies ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ '$ld$hide$os10.10$_PMFlattenPageFormatToCFData', '$ld$hide$os10.10$_PMFlattenPageFormatToURL', 
                        '$ld$hide$os10.10$_PMFlattenPrintSettingsToCFData', '$ld$hide$os10.10$_PMFlattenPrintSettingsToURL', 
@@ -402,5 +402,5 @@ exports:
                        _getMediaNameFromPaperInfo, _getPDFSpoolingFunctionCallbacks, 
                        _parsePostScriptStatus, _printUIToolAuthenticateJob, _printUIToolCreateConnection, 
                        _printUIToolGetAuthenticationInfo, _printUIToolPrintFD ]
-    objc-classes:    [ _PMInkChecker ]
+    objc-classes:    [ PMInkChecker ]
 ...

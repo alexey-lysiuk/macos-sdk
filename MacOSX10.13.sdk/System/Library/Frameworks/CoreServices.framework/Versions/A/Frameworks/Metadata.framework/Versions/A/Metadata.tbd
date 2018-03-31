@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 6CE69880-6AF3-3A1A-A8E0-F89FC750EE4C', 'x86_64: FB66B298-D55D-398A-BEDB-CB7B82956AE5' ]
+uuids:           [ 'i386: 95F0D9F8-315B-364C-AC92-A750D8CE3CD4', 'x86_64: B5C22E70-C265-3C9F-865F-B138994A418D' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Metadata
-current-version: 1191.2.6
+current-version: 1191.4.13
 parent-umbrella: CoreServices
 exports:         
   - archs:           [ i386, x86_64 ]
@@ -426,6 +426,6 @@ exports:
                        _mdsChannelRequest, _mdsClientCheckin, _mdsFetchAccessTokenIDForUID, 
                        _mdsManageCheckin, _mdsMarkItemsAsUsed, _mdsPeerCheckin, _mdsRequestVolume, 
                        _mdsServerBootstrap ]
-    objc-classes:    [ _MDSPathFilter, __MDLabel, __MDMutablePlistBytes, __MDPlistBytes, 
-                       __MDServiceConnection ]
+    objc-classes:    [ MDSPathFilter, _MDLabel, _MDMutablePlistBytes, _MDPlistBytes, 
+                       _MDServiceConnection ]
 ...

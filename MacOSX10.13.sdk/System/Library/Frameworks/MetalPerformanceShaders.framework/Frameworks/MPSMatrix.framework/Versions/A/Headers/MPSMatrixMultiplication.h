@@ -183,9 +183,9 @@ MPS_AVAILABLE_STARTING(macos(10.13), ios(11.0), tvos(11.0));
  *              be processed.
  */
 -(void) encodeToCommandBuffer: (nonnull id <MTLCommandBuffer>) commandBuffer
-                   leftMatrix: (MPSMatrix const* __nonnull) leftMatrix
-                  rightMatrix: (MPSMatrix const* __nonnull) rightMatrix
-                 resultMatrix: (MPSMatrix* __nonnull) resultMatrix
+                   leftMatrix: (MPSMatrix * __nonnull) leftMatrix
+                  rightMatrix: (MPSMatrix * __nonnull) rightMatrix
+                 resultMatrix: (MPSMatrix * __nonnull) resultMatrix
                     MPS_SWIFT_NAME(encode(commandBuffer:leftMatrix:rightMatrix:resultMatrix:));
 
 
@@ -298,9 +298,9 @@ MPS_CLASS_AVAILABLE_STARTING( macos(10.13), ios(11.0), tvos(11.0))
  *              resultMatrixOrigin.z must be zero.
  */
 -(void) encodeToCommandBuffer: (nonnull id <MTLCommandBuffer>)  commandBuffer
-                  inputMatrix: (MPSMatrix const* __nonnull)     inputMatrix
-                  inputVector: (MPSVector const* __nonnull)     inputVector
-                 resultVector: (MPSVector* __nonnull)           resultVector
+                  inputMatrix: (MPSMatrix * __nonnull)     inputMatrix
+                  inputVector: (MPSVector * __nonnull)     inputVector
+                 resultVector: (MPSVector * __nonnull)           resultVector
                     MPS_SWIFT_NAME(encode(commandBuffer:inputMatrix:inputVector:resultVector:));
 
 @end // MPSMatrixVectorMultiplication

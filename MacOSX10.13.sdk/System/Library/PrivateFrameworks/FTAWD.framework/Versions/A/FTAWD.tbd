@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: D661DBAD-3B0E-3D6A-BB02-334096D58C7D', 'x86_64: 7D33A952-8948-3BB1-961D-643774AB3455' ]
+uuids:           [ 'i386: B3C29BEE-181C-3456-8F78-1849FFDEEA04', 'x86_64: 7D35EE12-738A-3B15-87DB-40EB5F7CAD43' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/FTAWD.framework/Versions/A/FTAWD
 current-version: 800
@@ -15,8 +15,8 @@ exports:
                        _FTAWDLogCallRelayUpdatedReceived, _FTAWDLogCallStarted, _FTAWDLogIMessageAttachmentDownload, 
                        _FTAWDLogIMessageAttachmentDownloadNew, _FTAWDLogIMessageAttachmentUpload, 
                        _FTAWDLogIMessageAttachmentUploadNew, _FTAWDLogIMessageCloudKitSyncFailed, 
-                       _FTAWDLogIMessageDeduplicated, _FTAWDLogIMessageDelivered, 
-                       _FTAWDLogIMessageDowngrade, _FTAWDLogIMessageHealthCheckPerformed, 
+                       _FTAWDLogIMessageCloudKitValidatePurgeableAttachment, _FTAWDLogIMessageDeduplicated, 
+                       _FTAWDLogIMessageDelivered, _FTAWDLogIMessageDowngrade, _FTAWDLogIMessageHealthCheckPerformed, 
                        _FTAWDLogIMessageQueryFinished, _FTAWDLogIMessageReceived, 
                        _FTAWDLogIMessageReversePushQueryPerformed, _FTAWDLogIMessageSent, 
                        _FTAWDLogIMessageSentWithConnectionType, _FTAWDLogRegistrationAuthenticate, 

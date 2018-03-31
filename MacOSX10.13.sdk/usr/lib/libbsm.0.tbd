@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 067E9003-0673-32A3-9B40-492323182C5C', 'x86_64: 770B341F-3BB7-3123-B53C-F2D58868A963' ]
+uuids:           [ 'i386: 6A4D8D43-8AD8-3B0C-A19C-22A77D30DD8E', 'x86_64: 6BC96A72-AFBE-34FD-91B1-748A530D8AE6' ]
 platform:        macosx
 install-name:    /usr/lib/libbsm.0.dylib
 objc-constraint: none

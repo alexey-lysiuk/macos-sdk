@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: CABC21F7-E3AB-3954-ACBE-B8066A37516A', 'x86_64: 7BBC5CB7-DBC8-316B-99B0-781827159A2F' ]
+uuids:           [ 'i386: C0631AEA-6D41-3BA5-B5D0-4ACD95234303', 'x86_64: 3637CEC7-DF0E-320E-9634-44A442925C65' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/FSEvents
-current-version: 1239
+current-version: 1239.50.1
 objc-constraint: none
 parent-umbrella: CoreServices
 exports:         

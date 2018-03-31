@@ -169,6 +169,7 @@ int	printf(const char *, ...) __printflike(1,2);
 uint16_t	crc16(uint16_t crc, const void *bufp, size_t len);
 uint32_t	crc32(uint32_t crc, const void *bufp, size_t len);
 
+
 int	copystr(const void *kfaddr, void *kdaddr, size_t len, size_t *done);
 int	copyinstr(const user_addr_t uaddr, void *kaddr, size_t len, size_t *done);
 int	copyoutstr(const void *kaddr, user_addr_t udaddr, size_t len, size_t *done);
@@ -196,6 +197,7 @@ clz(unsigned int num)
 	// On Intel, clz(0) is undefined
 	return num ? __builtin_clz(num) : sizeof(num) * CHAR_BIT;
 }
+
 
 __END_DECLS
 

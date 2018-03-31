@@ -195,7 +195,9 @@ protected:
 /*! @var reserved
     Reserved for future use.  (Internal use only) 
 */
+    APPLE_KEXT_WSHADOW_PUSH;
     ExpansionData * reserved;
+    APPLE_KEXT_WSHADOW_POP;
 
     bool reserve();
 
@@ -351,6 +353,7 @@ public:
     */
     virtual IOReturn exportObjectToClient(task_t task,
 				OSObject *obj, io_object_t *clientObj);
+
 
     // Old methods for accessing method vector backward compatiblility only
     virtual IOExternalMethod *

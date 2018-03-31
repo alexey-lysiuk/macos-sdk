@@ -1,16 +1,16 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F325B335-DC5F-3335-AA54-DE5B77BFE369' ]
+uuids:           [ 'x86_64: 07A687AA-E6AE-3F00-A1F6-9B309DD9BDA0' ]
 platform:        macosx
 install-name:    /usr/lib/libnetworkextension.dylib
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
-    symbols:         [ ___nelog_debug_c, ___nelog_err_c, ___nelog_info_c, ___nelog_notice_c, 
-                       _ne_filter_connection_queue, _ne_filter_copy_connection, _ne_filter_partial_input_frame_finalizer, 
-                       _ne_filter_protocol_identifier, _ne_filter_request_connection, 
-                       _ne_filter_send_message, _ne_print_backtrace, _nelog, _nelog_is_debug_logging_enabled, 
-                       _nelog_is_extra_vpn_logging_enabled, _nelog_is_info_logging_enabled, 
-                       _nelog_is_logging_at_level, _nelog_legacy, _nelog_legacy_v, 
-                       _nelogv ]
+    symbols:         [ ___nelog_debug_c, ___nelog_err_c, ___nelog_fault_c, ___nelog_info_c, 
+                       ___nelog_notice_c, _ne_filter_connection_queue, _ne_filter_copy_connection, 
+                       _ne_filter_partial_input_frame_finalizer, _ne_filter_protocol_identifier, 
+                       _ne_filter_request_connection, _ne_filter_send_message, _ne_print_backtrace, 
+                       _nelog, _nelog_is_debug_logging_enabled, _nelog_is_extra_vpn_logging_enabled, 
+                       _nelog_is_info_logging_enabled, _nelog_is_logging_at_level, 
+                       _nelog_legacy, _nelog_legacy_v, _nelogv ]
 ...

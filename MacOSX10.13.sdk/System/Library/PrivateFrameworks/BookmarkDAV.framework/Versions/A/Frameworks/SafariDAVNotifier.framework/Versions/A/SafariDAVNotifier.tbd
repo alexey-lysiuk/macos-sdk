@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 040D1D5C-BC9A-3EBA-8ADF-56DB900B42DA', 'x86_64: 19DA25EA-2D46-3A67-B248-FF4582A7F070' ]
+uuids:           [ 'i386: F7503F2E-6900-3195-9E64-705A89DF46B1', 'x86_64: A60B67F6-2B6C-39B9-A529-A1649741D9C1' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/BookmarkDAV.framework/Versions/A/Frameworks/SafariDAVNotifier.framework/Versions/A/SafariDAVNotifier
 exports:         

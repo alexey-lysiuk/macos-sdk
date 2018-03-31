@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 597CE9B9-829C-373A-A818-1A79C86B725D', 'x86_64: 75EB86B9-D2CC-3FD4-A235-0173A98754D5' ]
+uuids:           [ 'i386: C4386FAC-F340-319C-B4D4-80B188C7ECF4', 'x86_64: BE66CAD6-47A8-35BB-BA7B-938B43F26D3B' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/lib/libruby.2.3.0.dylib
 current-version: 2.3

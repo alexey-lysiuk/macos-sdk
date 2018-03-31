@@ -224,6 +224,11 @@ long	 mrand48(void) __swift_unavailable("Use arc4random instead.");
 long	 nrand48(unsigned short[3]) __swift_unavailable("Use arc4random instead.");
 int	 posix_openpt(int);
 char	*ptsname(int);
+
+#if (!defined(_POSIX_C_SOURCE) || defined(_DARWIN_C_SOURCE))
+int ptsname_r(int fildes, char *buffer, size_t buflen) __API_AVAILABLE(macos(10.13.4), ios(11.3), tvos(11.3), watchos(4.3));
+#endif
+
 int	 putenv(char *) __DARWIN_ALIAS(putenv);
 long	 random(void) __swift_unavailable("Use arc4random instead.");
 int	 rand_r(unsigned *) __swift_unavailable("Use arc4random instead.");

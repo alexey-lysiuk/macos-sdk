@@ -1,24 +1,24 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 88CD600B-B7E0-3962-BDA1-12678F6872C4' ]
+uuids:           [ 'x86_64: 45B3F6CB-71D0-3B76-B969-83059BDCDA38' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/EAFirmwareUpdater.framework/Versions/A/EAFirmwareUpdater
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
-    objc-classes:    [ _EAFirmwareUpdater, _FirmwareBundle, _iAUPServer ]
-    objc-ivars:      [ _EAFirmwareUpdater._accessory, _EAFirmwareUpdater._appProtocol, 
-                       _EAFirmwareUpdater._applyCompletion, _EAFirmwareUpdater._bootloaderProtocol, 
-                       _EAFirmwareUpdater._eaNotificationDispatchQueue, _EAFirmwareUpdater._firmwareBundleFilename, 
-                       _EAFirmwareUpdater._firmwareBundleURL, _EAFirmwareUpdater._firmwareUpdateComplete, 
-                       _EAFirmwareUpdater._firmwareVersionMajor, _EAFirmwareUpdater._firmwareVersionMinor, 
-                       _EAFirmwareUpdater._firmwareVersionRelease, _EAFirmwareUpdater._forceSilentUpdate, 
-                       _EAFirmwareUpdater._iAUPServer, _EAFirmwareUpdater._isExpectingReconnect, 
-                       _EAFirmwareUpdater._outputData, _EAFirmwareUpdater._productIDCode, 
-                       _EAFirmwareUpdater._progressHandler, _EAFirmwareUpdater._protocolString, 
-                       _EAFirmwareUpdater._reconnectTimer, _EAFirmwareUpdater._session, 
-                       _EAFirmwareUpdater._skipDFUMode, _FirmwareBundle._bundleDescription, 
-                       _iAUPServer._delegate, _iAUPServer._escapeInProgress, _iAUPServer._firmwareImageBaseTransferAddress, 
-                       _iAUPServer._parserState, _iAUPServer._telegramChecksum, _iAUPServer._telegramDataIn, 
-                       _iAUPServer._telegramLength, _iAUPServer.objectBlockTransferSizes ]
+    objc-classes:    [ EAFirmwareUpdater, FirmwareBundle, iAUPServer ]
+    objc-ivars:      [ EAFirmwareUpdater._accessory, EAFirmwareUpdater._appProtocol, 
+                       EAFirmwareUpdater._applyCompletion, EAFirmwareUpdater._bootloaderProtocol, 
+                       EAFirmwareUpdater._eaNotificationDispatchQueue, EAFirmwareUpdater._firmwareBundleFilename, 
+                       EAFirmwareUpdater._firmwareBundleURL, EAFirmwareUpdater._firmwareUpdateComplete, 
+                       EAFirmwareUpdater._firmwareVersionMajor, EAFirmwareUpdater._firmwareVersionMinor, 
+                       EAFirmwareUpdater._firmwareVersionRelease, EAFirmwareUpdater._forceSilentUpdate, 
+                       EAFirmwareUpdater._iAUPServer, EAFirmwareUpdater._isExpectingReconnect, 
+                       EAFirmwareUpdater._outputData, EAFirmwareUpdater._productIDCode, 
+                       EAFirmwareUpdater._progressHandler, EAFirmwareUpdater._protocolString, 
+                       EAFirmwareUpdater._reconnectTimer, EAFirmwareUpdater._session, 
+                       EAFirmwareUpdater._skipDFUMode, FirmwareBundle._bundleDescription, 
+                       iAUPServer._delegate, iAUPServer._escapeInProgress, iAUPServer._firmwareImageBaseTransferAddress, 
+                       iAUPServer._parserState, iAUPServer._telegramChecksum, iAUPServer._telegramDataIn, 
+                       iAUPServer._telegramLength, iAUPServer.objectBlockTransferSizes ]
 ...

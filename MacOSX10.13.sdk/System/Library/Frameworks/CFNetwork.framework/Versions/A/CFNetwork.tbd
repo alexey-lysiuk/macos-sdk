@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 960BA636-F94A-3DF7-B587-3165654BF020', 'x86_64: 567231F4-4080-3B2D-8349-9177BD358804' ]
+uuids:           [ 'i386: BF5FABE4-2843-30A1-B884-9A34CA184A9B', 'x86_64: 0C03AF39-3527-3E0D-8413-8E1B2A962F0D' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork
-current-version: 893.13.1
+current-version: 897.15
 exports:         
   - archs:           [ i386 ]
     symbols:         [ '$ld$hide$os10.0$.objc_class_name_NSCachedURLResponse', '$ld$hide$os10.0$.objc_class_name_NSGZipDecoder', 
@@ -409,7 +409,7 @@ exports:
                        '$ld$hide$os10.9$_OBJC_METACLASS_$_NSURLSessionTask', '$ld$hide$os10.9$_OBJC_METACLASS_$_NSURLSessionUploadTask', 
                        __NSServerConfigurationOutboundConnectionProxyDictionary, 
                        __NSServerConfigurationSOCKS5ServerCredentials ]
-    objc-classes:    [ __NSCFServer ]
+    objc-classes:    [ _NSCFServer ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ '$ld$hide$os10.0$_NSHTTPCookieComment', '$ld$hide$os10.0$_NSHTTPCookieCommentURL', 
                        '$ld$hide$os10.0$_NSHTTPCookieDiscard', '$ld$hide$os10.0$_NSHTTPCookieDomain', 
@@ -1010,12 +1010,13 @@ exports:
                        __CFNetworkUnitTestVaryHeaderSupport, __CFNetworkUnitTest_AuthChallengeWithConnectionCloseDuringBodyRead, 
                        __CFNetworkUnitTest_BrotliDecoding, __CFNetworkUnitTest_BrotliDecodingHTTP, 
                        __CFNetworkUnitTest_CheckStorageCorrectness_24988003, __CFNetworkUnitTest_CopyAllHosts, 
-                       __CFNetworkUnitTest_HSTSHostNameStorage, __CFNetworkUnitTest_HSTSIgnoreHSTSProperty, 
-                       __CFNetworkUnitTest_HSTSPreloadEdgeCases, __CFNetworkUnitTest_HSTSPreloadEntryHSTSState, 
-                       __CFNetworkUnitTest_HSTSPreloadLookups, __CFNetworkUnitTest_HSTSPreventHSTSStorageProperty, 
-                       __CFNetworkUnitTest_HSTSSchemeUpgrade, __CFNetworkUnitTest_HSTSSchemeUpgradeApplePreloadHosts, 
-                       __CFNetworkUnitTest_HSTSSchemeUpgradeCancel, __CFNetworkUnitTest_HSTSSchemeUpgradeForbidInsecureLoad, 
-                       __CFNetworkUnitTest_HSTSSchemeUpgradeLoadOtherHSTSURL, __CFNetworkUnitTest_HSTSSchemeUpgradeLoadOtherHSTSURLAndForbidInsecureLoad, 
+                       __CFNetworkUnitTest_EphemeralSessionConfigurationStress, __CFNetworkUnitTest_HSTSHostNameStorage, 
+                       __CFNetworkUnitTest_HSTSIgnoreHSTSProperty, __CFNetworkUnitTest_HSTSPreloadEdgeCases, 
+                       __CFNetworkUnitTest_HSTSPreloadEntryHSTSState, __CFNetworkUnitTest_HSTSPreloadLookups, 
+                       __CFNetworkUnitTest_HSTSPreventHSTSStorageProperty, __CFNetworkUnitTest_HSTSSchemeUpgrade, 
+                       __CFNetworkUnitTest_HSTSSchemeUpgradeApplePreloadHosts, __CFNetworkUnitTest_HSTSSchemeUpgradeCancel, 
+                       __CFNetworkUnitTest_HSTSSchemeUpgradeForbidInsecureLoad, __CFNetworkUnitTest_HSTSSchemeUpgradeLoadOtherHSTSURL, 
+                       __CFNetworkUnitTest_HSTSSchemeUpgradeLoadOtherHSTSURLAndForbidInsecureLoad, 
                        __CFNetworkUnitTest_HSTSSchemeUpgradeLoadOtherURL, __CFNetworkUnitTest_HSTSSchemeUpgradeRedirect, 
                        __CFNetworkUnitTest_HSTSSchemeWasUpgradedDueToDynamicHSTSProperty, 
                        __CFNetworkUnitTest_HTTPConnection_EndpointNTLM_UnexpectedResponseConnectionReuse, 
@@ -1067,6 +1068,7 @@ exports:
                        __CFURLCredentialCreateOAuth2, __CFURLCredentialCreateWithInitialAccess, 
                        __CFURLCredentialCreateWithInitialAccessAndPersistencePolicy, 
                        __CFURLCredentialCreateXMobileMeAuthToken, __CFURLCredentialGetInitialAccess, 
+                       __CFURLCredentialStorageCopyAllCredentialsWithAccessControlGroupIncludeLegacyKeychain, 
                        __CFURLCredentialStorageHasCredentials, __CFURLDestroyResource, 
                        __CFURLProtectionSpaceCreateArchive, __CFURLProtectionSpaceCreateFromArchive, 
                        __CFURLProtocolSendCacheResponseIsValidCallback, __CFURLProtocolSendDidFailCallback, 
@@ -1263,14 +1265,14 @@ exports:
                        _kNSURLSessionLaunchOnDemandClientIdentifierKey, _kNSURLSessionLaunchOnDemandNotificationName, 
                        _kNSURLSessionLaunchOnDemandSessionIdentifierKey, _shim_CFURLRequestCopyPropertyList, 
                        _shim_CFURLResponseCopyPropertyList ]
-    objc-classes:    [ _NSCachedURLResponse, _NSGZipDecoder, _NSHTTPCookie, _NSHTTPCookieStorage, 
-                       _NSHTTPURLResponse, _NSHost, _NSMutableURLRequest, _NSNetService, 
-                       _NSNetServiceBrowser, _NSURLAuthenticationChallenge, _NSURLCache, 
-                       _NSURLConnection, _NSURLCredential, _NSURLCredentialStorage, 
-                       _NSURLDownload, _NSURLProtectionSpace, _NSURLProtocol, _NSURLRequest, 
-                       _NSURLResponse, _NSURLSession, _NSURLSessionConfiguration, 
-                       _NSURLSessionDataTask, _NSURLSessionDownloadTask, _NSURLSessionStreamTask, 
-                       _NSURLSessionTask, _NSURLSessionTaskDependency, _NSURLSessionTaskDependencyDescription, 
-                       _NSURLSessionTaskDependencyTree, _NSURLSessionTaskMetrics, 
-                       _NSURLSessionTaskTransactionMetrics, _NSURLSessionUploadTask ]
+    objc-classes:    [ NSCachedURLResponse, NSGZipDecoder, NSHTTPCookie, NSHTTPCookieStorage, 
+                       NSHTTPURLResponse, NSHost, NSMutableURLRequest, NSNetService, 
+                       NSNetServiceBrowser, NSURLAuthenticationChallenge, NSURLCache, 
+                       NSURLConnection, NSURLCredential, NSURLCredentialStorage, 
+                       NSURLDownload, NSURLProtectionSpace, NSURLProtocol, NSURLRequest, 
+                       NSURLResponse, NSURLSession, NSURLSessionConfiguration, NSURLSessionDataTask, 
+                       NSURLSessionDownloadTask, NSURLSessionStreamTask, NSURLSessionTask, 
+                       NSURLSessionTaskDependency, NSURLSessionTaskDependencyDescription, 
+                       NSURLSessionTaskDependencyTree, NSURLSessionTaskMetrics, NSURLSessionTaskTransactionMetrics, 
+                       NSURLSessionUploadTask ]
 ...

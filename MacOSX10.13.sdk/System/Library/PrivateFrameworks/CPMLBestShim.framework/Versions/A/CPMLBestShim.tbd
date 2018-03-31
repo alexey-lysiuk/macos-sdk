@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2F02B81D-C8A9-35D1-AD9F-0A5FB0C2D88E' ]
+uuids:           [ 'x86_64: EE2749AD-A2C8-352E-AF10-86AAE0C2D67B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CPMLBestShim.framework/Versions/A/CPMLBestShim
 exports:         
@@ -15,5 +15,5 @@ exports:
                        _kCPMLExpertUniqueX1, _kCPMLExpertUniqueX2, _kCPMLExpertUniqueX3, 
                        _kCPMLLastModifiedDate, _kCPMLRadioCondition, _kCPMLTimeSinceLastUsed, 
                        _kCPMLUUID, _kCPMLWifiCondition ]
-    objc-classes:    [ _CPMLBestAppShim, _CPMLBestBadgeShim, _CPMLBestShim, _CPMLBestShimContext ]
+    objc-classes:    [ CPMLBestAppShim, CPMLBestBadgeShim, CPMLBestShim, CPMLBestShimContext ]
 ...

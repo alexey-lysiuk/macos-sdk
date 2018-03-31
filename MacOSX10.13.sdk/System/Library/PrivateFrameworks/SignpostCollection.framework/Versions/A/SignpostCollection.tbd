@@ -1,11 +1,12 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 608FA148-F58C-38F2-8103-7A0EAB5BBD89' ]
+uuids:           [ 'x86_64: B3DE5B66-7FCE-35B4-9762-97C5EF9AC742' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SignpostCollection.framework/Versions/A/SignpostCollection
+current-version: 2.4
+objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
-    symbols:         [ _SignpostCollectionVersionNumber, _SignpostCollectionVersionString, 
-                       __signpostcollection_debug_log, _kSignpostNotification_NoTimeout ]
-    objc-classes:    [ _SignpostSupportObjectSerializer ]
+    symbols:         [ _kSignpostNotification_NoTimeout ]
+    objc-classes:    [ SignpostSupportObjectSerializer ]
 ...

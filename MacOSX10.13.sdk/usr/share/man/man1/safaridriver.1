@@ -79,6 +79,21 @@ in the background prior to returning a newly-created window. To view the recordi
 the Web Inspector through Safari's
 .Em Develop
 menu.
+.It Ar webkit:WebRTC
+This capability allows a test to temporarily change Safari's policies for WebRTC and Media Capture.
+The value of the
+.Em webkit:WebRTC
+capability is a dictionary with the following sub-keys, all of which are optional:
+.Bl -ohang -offset indent
+.It Ar DisableInsecureMediaCapture
+Normally, Safari refuses to allow media capture over insecure connections. This capability
+suppresses that restriction for testing purposes. For example, it would allow a test to exercise
+media capture code paths using a local test web server that is not configured to use HTTPS.
+.It Ar DisableICECandidateFiltering
+To protect a user's privacy, Safari normally filters out WebRTC ICE candidates that correspond to internal
+network addresses when capture devices are not in use. This capability suppresses ICE candidate
+filtering so that both internal and external network addresses are always sent as ICE candidates.
+.El
 .El
 .Sh NOTES
 For security reasons, the HTTP server accepts connections from localhost only. The

@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 66700D66-B459-3D3B-A063-DAB31E19BF89' ]
+uuids:           [ 'x86_64: B9C31FBB-F5A2-355E-AA30-092A9CEF7B80' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Symptoms.framework/Frameworks/SymptomPresentationFeed.framework/Versions/A/SymptomPresentationFeed
-current-version: 820.30.7
+current-version: 820.50.37
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _NSTargetObjectUserInfoKey, _NSUnknownKeyException, _NSUnknownUserInfoKey, 
@@ -53,7 +53,7 @@ exports:
                        _kUsageNetworkWiredOutBytes_var, _kUsageNetworkWiredSampleCount, 
                        _kUsageProcessBundleName, _kUsageProcessDataKey, _kUsageProcessProcName, 
                        _kUsageSinceTime, _stringToAdvisory ]
-    objc-classes:    [ _NWNetworkOfInterest, _NWNetworkOfInterestManager, _NWNetworkPredictions, 
-                       _NetworkInterfaceUtils, _NetworkPerformanceFeed, _ProcessNetStatsIndividualEntity, 
-                       _UsageFeed ]
+    objc-classes:    [ NWNetworkOfInterest, NWNetworkOfInterestManager, NWNetworkPredictions, 
+                       NetworkInterfaceUtils, NetworkPerformanceFeed, ProcessNetStatsIndividualEntity, 
+                       UsageFeed ]
 ...

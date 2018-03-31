@@ -1,4 +1,4 @@
-.TH "<MPSNNPadding>" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "<MPSNNPadding>" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -12,7 +12,7 @@
 Inherited by \fBMPSNNDefaultPadding\fP\&.
 .SH "Detailed Description"
 .PP 
-A method to describe how MPSCNNKernels should pad images when data outside the image is needed  Different (non-Apple) CNN frameworks have different policies for how to size the result of a CNN filter and what padding to add around the edges\&. Some filters such as pooling and convolution read from neighboring feature channel (pixel) values\&. Four predefined MPSPaddingMethods are available: MPSNNPaddingMethodValidOnly, MPSNNPaddingMethodFull, MPSNNPaddingMethodSameTL, MPSNNPaddingMethodSameBR\&. You may also implement your own padding definition with a block that conforms to this prototype\&. 
+\fBA\fP method to describe how MPSCNNKernels should pad images when data outside the image is needed  Different (non-Apple) CNN frameworks have different policies for how to size the result of a CNN filter and what padding to add around the edges\&. Some filters such as pooling and convolution read from neighboring feature channel (pixel) values\&. Four predefined MPSPaddingMethods are available: MPSNNPaddingMethodValidOnly, MPSNNPaddingMethodFull, MPSNNPaddingMethodSameTL, MPSNNPaddingMethodSameBR\&. You may also implement your own padding definition with a block that conforms to this prototype\&. 
 
 .SH "Author"
 .PP 

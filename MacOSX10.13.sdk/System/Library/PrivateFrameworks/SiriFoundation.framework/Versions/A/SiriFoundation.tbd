@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B481EAA8-B269-3119-B66C-F2CF9069976F' ]
+uuids:           [ 'x86_64: 2E4FD236-862E-30CD-9EE6-441B6D5C728A' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SiriFoundation.framework/Versions/A/SiriFoundation
 exports:         
@@ -27,6 +27,6 @@ exports:
                        _SiriUIStatusMenuPressBeganNotification, _SiriUIStatusMenuPressEndedNotification, 
                        _SiriUITouchBarPressBeganNotification, _SiriUITouchBarPressEndedNotification, 
                        _SiriUIVoiceTriggerActivateNotification ]
-    objc-classes:    [ _SRFLauncher, _SRFLoggingDefaults, _SRFPreferences, _SRFStateNotifier, 
-                       _SRFUserDefaultsController, _SRFUtilities ]
+    objc-classes:    [ SRFLauncher, SRFLoggingDefaults, SRFPreferences, SRFStateNotifier, 
+                       SRFUserDefaultsController, SRFUtilities ]
 ...

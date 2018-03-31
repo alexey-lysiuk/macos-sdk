@@ -61,7 +61,6 @@ By default certificates do not need to be trusted to allow association. Certific
 .Bd -literal -offset indent
 sudo defaults write /Library/Preferences/com.apple.security.smartcard checkCertificateTrust -int <level>
 .Ed
-
 Possible level values are:
 .Bl -tag
 .It 0
@@ -73,7 +72,6 @@ certificate trust check is turned on and revocation check is set to the soft lev
 .It 3
 certificate trust check is turned on and revocation check is set to the hard level (verified positive response is needed to succeed)
 .El
-
 .Sh CONFIGURATION FILE
 The world-readable configuration file should be located at
 .Em /etc/SmartcardLogin.plist
@@ -87,22 +85,14 @@ This section is used to set up an optional attribute mapping for the system User
 .Em fields
 contains an array of string values. This is the list of certificate field names that will be used to compare against the attribute string. The following field names are supported:
 .Bl -tag -width
-.It 
-Common Name
-.It
-RFC 822 Name
-.It
-NT Principal Name
-.It
-Organization
-.It
-OrganizationalUnit:1
-.It
-OrganizationalUnit:2
-.It
-OrganizationalUnit:3
-.It
-Country
+.It Common Name
+.It RFC 822 Name
+.It NT Principal Name
+.It Organization
+.It OrganizationalUnit:1
+.It OrganizationalUnit:2
+.It OrganizationalUnit:3
+.It Country
 .El
 .Pp
 .Em formatString
@@ -113,33 +103,44 @@ value at the appropriate index.
 contains a string value. This defines the target attributes for the desired OpenDirectory user record. It will be compared against the generated format strings.
 .El                      \" Ends the list
 .br
-
 .Sh ATTRIBUTE MAPPING CONFIG EXAMPLE
 Let's have following sample configuration:
+.Pp
+<?xml version="1.0" encoding="UTF-8"?>
 .br
-<key>AttributeMapping</key>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+.br
+<plist version="1.0">
 .br
 <dict>
 .br
-	<key>fields</key>
+	<key>AttributeMapping</key>
 .br
-	<array>
+	<dict>
 .br
-		<string>Common Name</string>
+		<key>fields</key>
 .br
-		<string>RFC 822 Name</string>
+		<array>
 .br
-	</array>
+			<string>Common Name</string>
 .br
-	<key>formatString</key>
+			<string>RFC 822 Name</string>
 .br
-	<string>$2-$1</string>
+		</array>
 .br
-	<key>dsAttributeString</key>
+		<key>formatString</key>
 .br
-	<string>dsAttrTypeNative:longName</string>
+		<string>$2-$1</string>
+.br
+		<key>dsAttributeString</key>
+.br
+		<string>dsAttrTypeNative:longName</string>
+.br
+	</dict>
 .br
 </dict>
+.br
+</plist>
 .Pp
 Let's also have a certificate that has
 .Em Common Name
@@ -153,6 +154,49 @@ the result would be
 and this result would be compared to a
 .Em dsAttrTypeNative:email
 field. When a match is found, the corresponding user is considered associated with the SmartCard.
+.Sh OFFLINE SMARTCARD LOGIN VIA KERBEROS CACHING
+In environments where macOS clients may not always be able to reach Directory Servers, cached SmartCard login support is possible via Kerberos caching. This configuration allows users with network accounts to authenticate via SmartCard when operating outside the enterprise environment. Note: Initial account setup requires machine binding and access to the directory server.
+.Ss Mapping example
+The following example SmartcardLogin.plist file matches the Subject Alternative Name type, NT Principal Name, in the identity on the SmartCard against the Directory Server's altSecurityIdentities field (Kerberos), allowing for offline login and authentication:
+.Pp
+.br
+<?xml version="1.0" encoding="UTF-8"?>
+.br
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+.br
+<plist version="1.0">
+.br
+<dict>
+.br
+	<key>AttributeMapping</key>
+.br
+	<dict>
+.br
+		<key>fields</key>
+.br
+		<array>
+.br
+			<string>NT Principal Name</string>
+.br
+		</array>
+.br
+		<key>formatString</key>
+.br
+		<string>Kerberos:$1</string>
+.br
+		<key>dsAttributeString</key>
+.br
+		<string>dsAttrTypeStandard:AltSecurityIdentities</string>
+.br
+	</dict>
+.br
+</dict>
+.br
+</plist>
+.Ss Additional considerations
+Certificate Checking: checkCertificateTrust should not be set to 3 (hard revocation check) if certificate revocation or OCSP servers are not always available to the client machines.
+.br
+User accounts should be created setting the "Create Mobile User on Login" flag in the Directory Utility application, when binding client machines via the command line, or with a Configuration Profile. When used in conjunction with Kerberos Caching, a mobile user account will allow users to authenticate either online and offline.
 .Sh EXTENSION
 Extensions can be created using the Xcode SmartCard Token Extension template.
 .Sh SYSTEM REPORT
@@ -160,6 +204,7 @@ It is possible to show the current status of SmartCardServices by command:
 .Pp
 .Bd -literal -offset indent
 system_profiler SPSmartCardsDataType
+.Ed
 .Sh USB SMART CARD READER DRIVERS
 OS X has built-in support for USB CCID class-compliant SmartCard readers. For other readers, install the reader driver in
 .Pa /usr/local/libexec/SmartCardServices/drivers .
@@ -192,4 +237,5 @@ Sandboxed PCSC clients require 'com.apple.security.smartcard=YES' entitlement. N
 .Xr log 1 ,
 .Xr ssh-keychain 8 ,
 .Xr pam_smartcard 8 ,
-.Xr security 1
+.Xr security 1 ,
+.Xr UserSelector 7

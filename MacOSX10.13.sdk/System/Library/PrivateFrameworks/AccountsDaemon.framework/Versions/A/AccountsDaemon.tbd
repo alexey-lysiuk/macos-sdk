@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0DC6C422-33A4-3B34-A6A9-A4378533DDE4' ]
+uuids:           [ 'x86_64: E081912D-CBB1-3A09-8EC7-69FEFD006F67' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AccountsDaemon.framework/Versions/A/AccountsDaemon
 objc-constraint: none
@@ -21,9 +21,9 @@ exports:
                        __ACDConnectionLogSystem, __ACDLogSystem, _kACDSyncDataTypeBookmarks, 
                        _kACDSyncDataTypeCalendars, _kACDSyncDataTypeContacts, _kACDSyncDataTypeMailAccounts, 
                        _kACDSyncDataTypeNotes, _syncDataTypeForDataclass, _tetheredSyncSourceTypeForDataType ]
-    objc-classes:    [ _ACDAccountStore, _ACDAccountSync, _ACDClient, _ACDClientAuthorization, 
-                       _ACDClientAuthorizationManager, _ACDDataclassOwnersManagerInterface, 
-                       _ACDKeychainCleanupActivity, _ACDKeychainManager, _ACDOAuthSigner, 
-                       _ACDPluginLoader, _ACDTestManager, _ACDTimeMachineAccountStore, 
-                       _ACDUserNotification ]
+    objc-classes:    [ ACDAccountStore, ACDAccountSync, ACDClient, ACDClientAuthorization, 
+                       ACDClientAuthorizationManager, ACDDataclassOwnersManagerInterface, 
+                       ACDKeychainCleanupActivity, ACDKeychainManager, ACDOAuthSigner, 
+                       ACDPluginLoader, ACDTestManager, ACDTimeMachineAccountStore, 
+                       ACDUserNotification ]
 ...

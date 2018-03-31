@@ -1,15 +1,15 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 3107C139-B359-376E-8330-B21612F87B36', 'x86_64: FE6893F6-A4A6-3C28-9364-5536D97F9A56' ]
+uuids:           [ 'i386: 03253492-2415-3827-A3C4-C61CDC6391B8', 'x86_64: D34E7D0A-5B06-3A16-83C7-3238EF4D4139' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/FinderKit.framework/Versions/A/FinderKit
-current-version: 1054.2.4
+current-version: 1054.5.4
 exports:         
   - archs:           [ x86_64 ]
-    objc-classes:    [ _FIIconHeaderView, _FIIconView, __FIBrowseBySizeView ]
+    objc-classes:    [ FIIconHeaderView, FIIconView, _FIBrowseBySizeView ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ _FITagEditorDidEndEditingNotification, __FIAddNewTagsToSidebar, 
                        __FISetTagsForURL, __FITagCirclesImage, __FITagNamesFromTags, 
                        __FITagsForURL, __FITagsFromTagNames ]
-    objc-classes:    [ _FIAirDropView, _FIFinderView, _FILocationPopUp, _FITagEditorView ]
+    objc-classes:    [ FIAirDropView, FIFinderView, FILocationPopUp, FITagEditorView ]
 ...

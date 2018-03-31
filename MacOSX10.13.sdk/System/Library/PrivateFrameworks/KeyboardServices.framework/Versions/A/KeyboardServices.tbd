@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2E8BA756-D6F4-3F8A-B94A-15FE882ABCF4' ]
+uuids:           [ 'x86_64: 8F7A23DE-4DB0-3C5B-A174-55E670F1CAFF' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/KeyboardServices.framework/KeyboardServices
 objc-constraint: none
@@ -8,10 +8,11 @@ exports:
   - archs:           [ x86_64 ]
     symbols:         [ _KSCKErrorDomain, _KSCloudKitAccountDidChange, _KSCloudKitAccountDidChangeAccountChangedKey, 
                        _KSCloudKitAccountDidChangeDeviceToDeviceKey, _KSCloudKitAccountDidChangeStatusKey, 
-                       _KSCloudKitAccountDidChangeUserChangedKey, _KSCloudKitIdentitiesDidChange, 
-                       _KSDeviceProtectionClassDidChange, _KSTextReplacementDidChangeNotification, 
-                       _KeyboardServicesVersionNumber, _KeyboardServicesVersionString, 
-                       __KSDevicesMigrationStateDidChange, __KSGetSetting, __KSTIBuddySetupDidFinishNotification_Private, 
+                       _KSCloudKitAccountDidChangeUserChangedKey, _KSCloudKitAccountDidSuccessfullyCreateZone, 
+                       _KSCloudKitIdentitiesDidChange, _KSDeviceProtectionClassDidChange, 
+                       _KSTextReplacementDidChangeNotification, _KeyboardServicesVersionNumber, 
+                       _KeyboardServicesVersionString, __KSDevicesMigrationStateDidChange, 
+                       __KSGetSetting, __KSTIBuddySetupDidFinishNotification_Private, 
                        __KSTRCKStoreDidReceiveChangesNotification, __KSTRLegacyStoreDidImportChangesNotification, 
                        __KSTRLegacyStoreDidImportUbiquitousChanges, __KSTRShouldCleanupResources, 
                        __KSTextReplacementDeleteDidFailEntriesKey, __KSTextReplacementDeleteDidFailErrorsKey, 
@@ -25,12 +26,12 @@ exports:
                        _ksDefaultDateNormalise, _ksDefaultEnabled, _ksDefaultPullTime, 
                        _ksDefaultPushTime, _ksDefaultSaveDynamicData, _ksDefaultSaveLanguageModel, 
                        _ksDefaultSizeNormalise, _ksDefaultSortDynamicData, _ksDefaultSortLanguageModel ]
-    objc-classes:    [ __KSCKSyncStateManagedObject, __KSCloudKitManager, __KSControlFileController, 
-                       __KSDeviceInfo, __KSDeviceStateMonitor, __KSFileDirectory, 
-                       __KSFileEntry, __KSFileFile, __KSTextReplacementCKStore, __KSTextReplacementClientStore, 
-                       __KSTextReplacementCoreDataStore, __KSTextReplacementEntry, 
-                       __KSTextReplacementHelper, __KSTextReplacementLegacyStore, 
-                       __KSTextReplacementManagedObject, __KSTextReplacementManager, 
-                       __KSTextReplacementServer, __KSUserWordsInfo, __KSUserWordsSynchroniser, 
-                       __KSUtilities, __KSiCloudDeviceListMonitor ]
+    objc-classes:    [ _KSCKSyncStateManagedObject, _KSCloudKitManager, _KSControlFileController, 
+                       _KSDeviceInfo, _KSDeviceStateMonitor, _KSFileDirectory, _KSFileEntry, 
+                       _KSFileFile, _KSRequestThrottle, _KSTextReplacementCKStore, 
+                       _KSTextReplacementClientStore, _KSTextReplacementCoreDataStore, 
+                       _KSTextReplacementEntry, _KSTextReplacementHelper, _KSTextReplacementLegacyStore, 
+                       _KSTextReplacementManagedObject, _KSTextReplacementManager, 
+                       _KSTextReplacementServer, _KSUserWordsInfo, _KSUserWordsSynchroniser, 
+                       _KSUtilities, _KSiCloudDeviceListMonitor ]
 ...

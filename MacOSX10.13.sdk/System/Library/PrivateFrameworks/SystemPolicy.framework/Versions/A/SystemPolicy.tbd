@@ -1,17 +1,17 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 9012FA8C-8DE0-371B-8226-EA81999B654B', 'x86_64: A17DA146-EF17-3F2F-8DE1-4B78154C1C85' ]
+uuids:           [ 'i386: 95FDA796-35E8-3AF8-B87E-E0EBA7969691', 'x86_64: 3A3EBF93-DEBC-3B40-8102-A55FAB91AD39' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SystemPolicy.framework/Versions/A/SystemPolicy
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
-    objc-ivars:      [ _SPKernelExtensionPolicy._connection, _SPKernelExtensionPolicy._currentPolicy, 
-                       _SPKernelExtensionPolicy._interface, _SPKernelExtensionPolicyItem._allowed, 
-                       _SPKernelExtensionPolicyItem._applicationName, _SPKernelExtensionPolicyItem._applicationPath, 
-                       _SPKernelExtensionPolicyItem._bundleIDs, _SPKernelExtensionPolicyItem._developerName, 
-                       _SPKernelExtensionPolicyItem._originalAllowed, _SPKernelExtensionPolicyItem._rebootRequired, 
-                       _SPKernelExtensionPolicyItem._teamID ]
+    objc-ivars:      [ SPKernelExtensionPolicy._connection, SPKernelExtensionPolicy._currentPolicy, 
+                       SPKernelExtensionPolicy._interface, SPKernelExtensionPolicyItem._allowed, 
+                       SPKernelExtensionPolicyItem._applicationName, SPKernelExtensionPolicyItem._applicationPath, 
+                       SPKernelExtensionPolicyItem._bundleIDs, SPKernelExtensionPolicyItem._developerName, 
+                       SPKernelExtensionPolicyItem._originalAllowed, SPKernelExtensionPolicyItem._rebootRequired, 
+                       SPKernelExtensionPolicyItem._teamID ]
   - archs:           [ i386, x86_64 ]
-    objc-classes:    [ _SPKernelExtensionPolicy, _SPKernelExtensionPolicyItem, _SPMigration ]
+    objc-classes:    [ SPKernelExtensionPolicy, SPKernelExtensionPolicyItem, SPMigration ]
 ...

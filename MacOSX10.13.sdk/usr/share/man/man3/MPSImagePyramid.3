@@ -1,4 +1,4 @@
-.TH "MPSImagePyramid" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "MPSImagePyramid" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -88,7 +88,7 @@ h_n = max(1, floor(h_0 / 2^n)),
 .PP
 \fBReturns:\fP
 .RS 4
-A new \fBMPSCNNPooling\fP object, or nil if failure\&. 
+\fBA\fP new \fBMPSCNNPooling\fP object, or nil if failure\&. 
 .RE
 .PP
 
@@ -106,7 +106,7 @@ The filter kernel is the outer product of w = [ 1/16, 1/4, 3/8, 1/4, 1/16 ]^T, w
 .PP
 \fBReturns:\fP
 .RS 4
-A valid object or nil, if failure\&. 
+\fBA\fP valid object or nil, if failure\&. 
 .RE
 .PP
 
@@ -124,7 +124,7 @@ Initialize a downwards 5-tap image pyramid with a central weight parameter and d
 .PP
 \fBReturns:\fP
 .RS 4
-A valid object or nil, if failure\&. 
+\fBA\fP valid object or nil, if failure\&. 
 .RE
 .PP
 
@@ -139,12 +139,12 @@ Initialize a downwards n-tap pyramid with a custom filter kernel and device
 .br
 \fIkernelHeight\fP The height of the filtering kernel\&. See \fBMPSImageConvolution\fP\&. 
 .br
-\fIkernelWeights\fP A pointer to an array of kernelWidth * kernelHeight values to be used as the kernel\&. These are in row major order\&. See \fBMPSImageConvolution\fP\&.
+\fIkernelWeights\fP \fBA\fP pointer to an array of kernelWidth * kernelHeight values to be used as the kernel\&. These are in row major order\&. See \fBMPSImageConvolution\fP\&.
 .RE
 .PP
 \fBReturns:\fP
 .RS 4
-A valid object or nil, if failure\&. 
+\fBA\fP valid object or nil, if failure\&. 
 .RE
 .PP
 

@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386 ]
-uuids:           [ 'i386: BAF5C846-FF50-3C80-97F5-71F1399CA85C' ]
+uuids:           [ 'i386: B284D63E-3A46-30BE-8C68-43982CFE0531' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HTMLRendering.framework/Versions/A/HTMLRendering
 objc-constraint: none

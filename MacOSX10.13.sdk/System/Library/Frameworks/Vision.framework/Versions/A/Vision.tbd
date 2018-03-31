@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 07E7F52F-0C82-39F6-A4FA-AB3796BECF30' ]
+uuids:           [ 'x86_64: 2A03FC17-0E8F-3474-A58A-F42DE01679AA' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Vision.framework/Versions/A/Vision
-current-version: 1.2.1
+current-version: 1.5.3
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -104,39 +104,37 @@ exports:
                        _VNVerticallyFlippedNormalizedPoint, _VNVerticallyFlippedNormalizedRect, 
                        _VNVisionVersionNumber, _createPerMeshForFFTSIZE, _horizonDetectionFFT, 
                        _initializePerMesh ]
-    objc-classes:    [ _VNAlignFaceRectangleRequest, _VNAppendBurstSequenceFrameRequest, 
-                       _VNBarcodeObservation, _VNBurstAnalysisResultsRequest, _VNBurstObservation, 
-                       _VNCanceller, _VNClassificationObservation, _VNCluster, _VNClusterObservation, 
-                       _VNClusterObservationsRequest, _VNClustererBuilder, _VNClustererBuilderOptions, 
-                       _VNClustererOptions, _VNClustererQuery, _VNClustererQueryOptions, 
-                       _VNCoreMLFeatureValueObservation, _VNCoreMLModel, _VNCoreMLRequest, 
-                       _VNCreateFaceRegionMapRequest, _VNCreateFaceprintRequest, 
-                       _VNCreateImageprintRequest, _VNCreateSceneprintRequest, _VNCreateSmartCamprintRequest, 
-                       _VNDetectBarcodesRequest, _VNDetectFace3DLandmarksRequest, 
-                       _VNDetectFaceExpressionsRequest, _VNDetectFaceLandmarksRequest, 
-                       _VNDetectFacePoseRequest, _VNDetectFaceRectanglesRequest, 
-                       _VNDetectHorizonRequest, _VNDetectHumanRectanglesRequest, 
-                       _VNDetectRectanglesRequest, _VNDetectTextRectanglesRequest, 
-                       _VNDetectedObjectObservation, _VNEspressoModelImageprint, 
-                       _VNFaceLandmarkRegion, _VNFaceLandmarkRegion2D, _VNFaceLandmarkRegion3D, 
-                       _VNFaceLandmarks, _VNFaceLandmarks2D, _VNFaceLandmarks3D, 
-                       _VNFaceObservation, _VNFaceObservationDrivenClusteringRequest, 
-                       _VNFaceRegionMap, _VNFaceprint, _VNGetClustersRequest, _VNGetDistancesRequest, 
-                       _VNGroupImagesByTimeAndContentRequest, _VNHomographicImageRegistrationRequest, 
-                       _VNHorizonObservation, _VNHumanObservation, _VNIdentifyJunkRequest, 
-                       _VNImageAlignmentObservation, _VNImageBasedRequest, _VNImageBlurObservation, 
-                       _VNImageBlurScoreRequest, _VNImageBrightnessObservation, _VNImageExposureScoreRequest, 
-                       _VNImageHomographicAlignmentObservation, _VNImageRegistrationRequest, 
-                       _VNImageRequestHandler, _VNImageScoreObservation, _VNImageSpecifier, 
-                       _VNImageTranslationAlignmentObservation, _VNImageprint, _VNImageprintObservation, 
-                       _VNMutablePersonsModel, _VNObservation, _VNPersonsModeReadOptions, 
-                       _VNPersonsModel, _VNPersonsModelConfiguration, _VNPersonsModelInformation, 
-                       _VNPersonsModelPrediction, _VNPersonsModelWriteOptions, _VNPhotosRequestHandler, 
-                       _VNPixelBufferObservation, _VNRectangleObservation, _VNRefinedSuggestionsForClustersRequest, 
-                       _VNRepresentativeForClusterRequest, _VNRequest, _VNSceneClassificationRequest, 
-                       _VNSceneObservation, _VNSceneprint, _VNSequenceRequestHandler, 
-                       _VNSimilarityMatrix, _VNSmartCamObservation, _VNSmartCamprint, 
-                       _VNSuggestionsForClustersRequest, _VNTargetedImageRequest, 
-                       _VNTextObservation, _VNTrackFaceRequest, _VNTrackObjectRequest, 
-                       _VNTrackRectangleRequest, _VNTrackingRequest, _VNTranslationalImageRegistrationRequest ]
+    objc-classes:    [ VNAlignFaceRectangleRequest, VNAppendBurstSequenceFrameRequest, 
+                       VNBarcodeObservation, VNBurstAnalysisResultsRequest, VNBurstObservation, 
+                       VNCanceller, VNClassificationObservation, VNCluster, VNClusterObservation, 
+                       VNClusterObservationsRequest, VNClustererBuilder, VNClustererBuilderOptions, 
+                       VNClustererOptions, VNClustererQuery, VNClustererQueryOptions, 
+                       VNCoreMLFeatureValueObservation, VNCoreMLModel, VNCoreMLRequest, 
+                       VNCreateFaceRegionMapRequest, VNCreateFaceprintRequest, VNCreateImageprintRequest, 
+                       VNCreateSceneprintRequest, VNCreateSmartCamprintRequest, VNDetectBarcodesRequest, 
+                       VNDetectFace3DLandmarksRequest, VNDetectFaceExpressionsRequest, 
+                       VNDetectFaceLandmarksRequest, VNDetectFacePoseRequest, VNDetectFaceRectanglesRequest, 
+                       VNDetectHorizonRequest, VNDetectHumanRectanglesRequest, VNDetectRectanglesRequest, 
+                       VNDetectTextRectanglesRequest, VNDetectedObjectObservation, 
+                       VNEspressoModelImageprint, VNFaceLandmarkRegion, VNFaceLandmarkRegion2D, 
+                       VNFaceLandmarkRegion3D, VNFaceLandmarks, VNFaceLandmarks2D, 
+                       VNFaceLandmarks3D, VNFaceObservation, VNFaceObservationDrivenClusteringRequest, 
+                       VNFaceRegionMap, VNFaceprint, VNGetClustersRequest, VNGetDistancesRequest, 
+                       VNGroupImagesByTimeAndContentRequest, VNHomographicImageRegistrationRequest, 
+                       VNHorizonObservation, VNHumanObservation, VNIdentifyJunkRequest, 
+                       VNImageAlignmentObservation, VNImageBasedRequest, VNImageBlurObservation, 
+                       VNImageBlurScoreRequest, VNImageBrightnessObservation, VNImageExposureScoreRequest, 
+                       VNImageHomographicAlignmentObservation, VNImageRegistrationRequest, 
+                       VNImageRequestHandler, VNImageScoreObservation, VNImageSpecifier, 
+                       VNImageTranslationAlignmentObservation, VNImageprint, VNImageprintObservation, 
+                       VNMutablePersonsModel, VNObservation, VNPersonsModeReadOptions, 
+                       VNPersonsModel, VNPersonsModelConfiguration, VNPersonsModelInformation, 
+                       VNPersonsModelPrediction, VNPersonsModelWriteOptions, VNPhotosRequestHandler, 
+                       VNPixelBufferObservation, VNRectangleObservation, VNRefinedSuggestionsForClustersRequest, 
+                       VNRepresentativeForClusterRequest, VNRequest, VNSceneClassificationRequest, 
+                       VNSceneObservation, VNSceneprint, VNSequenceRequestHandler, 
+                       VNSimilarityMatrix, VNSmartCamObservation, VNSmartCamprint, 
+                       VNSuggestionsForClustersRequest, VNTargetedImageRequest, VNTextObservation, 
+                       VNTrackFaceRequest, VNTrackObjectRequest, VNTrackRectangleRequest, 
+                       VNTrackingRequest, VNTranslationalImageRegistrationRequest ]
 ...

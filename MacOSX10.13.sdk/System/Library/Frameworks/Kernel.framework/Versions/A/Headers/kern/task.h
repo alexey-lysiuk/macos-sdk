@@ -131,6 +131,10 @@ extern void		task_inspect_deallocate(
 
 extern void		task_suspension_token_deallocate(
 					task_suspension_token_t	token);
+
+extern boolean_t task_self_region_footprint(void);
+extern void task_self_region_footprint_set(boolean_t newval);
+
 __END_DECLS
 
 #endif	/* _KERN_TASK_H_ */

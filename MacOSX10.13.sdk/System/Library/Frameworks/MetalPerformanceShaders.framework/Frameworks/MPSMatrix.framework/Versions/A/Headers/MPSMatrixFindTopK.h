@@ -26,7 +26,8 @@
  *              rows and matrices in batch of the source matrix.
  *
  */
-MPS_CLASS_AVAILABLE_STARTING( macos(10.13), ios(11.0), tvos(11.0))
+
+MPS_CLASS_AVAILABLE_STARTING( macos(10.13.4), ios(11.3), tvos(11.3))
 @interface MPSMatrixFindTopK : MPSMatrixUnaryKernel
 
 /*! @property   sourceRows
@@ -119,10 +120,12 @@ MPS_CLASS_AVAILABLE_STARTING( macos(10.13), ios(11.0), tvos(11.0))
  *
  *  @return     A valid MPSMatrixFindTopK object or nil, if failure.
  */
+
+// FIXME: Fix availability macros to 10.14 and 12.0 once we get there
 -(nonnull instancetype) initWithDevice: (nonnull id<MTLDevice>) device
                     numberOfTopKValues: (NSUInteger) numberOfTopKValues
-NS_DESIGNATED_INITIALIZER
-MPS_AVAILABLE_STARTING(macos(10.13), ios(11.0), tvos(11.0) );
+NS_DESIGNATED_INITIALIZER;
+
 
 
 /*!
@@ -160,9 +163,9 @@ MPS_AVAILABLE_STARTING(macos(10.13), ios(11.0), tvos(11.0) );
  *              MPSDataTypeFloat32 or MPSDataTypeFloat16.
  */
 -(void) encodeToCommandBuffer: (nonnull id <MTLCommandBuffer>) commandBuffer
-                  inputMatrix: (MPSMatrix const* __nonnull) inputMatrix
-            resultIndexMatrix: (MPSMatrix* __nonnull) resultIndexMatrix
-            resultValueMatrix: (MPSMatrix* __nonnull) resultValueMatrix
+                  inputMatrix: (MPSMatrix * __nonnull) inputMatrix
+            resultIndexMatrix: (MPSMatrix * __nonnull) resultIndexMatrix
+            resultValueMatrix: (MPSMatrix * __nonnull) resultValueMatrix
 MPS_SWIFT_NAME(encode(commandBuffer:inputMatrix:resultIndexMatrix:resultValueMatrix:));
 
 
@@ -173,9 +176,10 @@ MPS_SWIFT_NAME(encode(commandBuffer:inputMatrix:resultIndexMatrix:resultValueMat
  *  @param      device      The MTLDevice on which to make the MPSMatrixFindTopK
  *  @return     A new MPSMatrixFindTopK object, or nil if failure.
  */
+
+// FIXME: Fix availability macros to 10.14 and 12.0 once we get there
 -(nullable instancetype) initWithCoder:(NSCoder * __nonnull)aDecoder
-                                device:(nonnull id <MTLDevice>) device NS_DESIGNATED_INITIALIZER
-MPS_AVAILABLE_STARTING(macos(10.13), ios(11.0), tvos(11.0));
+                                device:(nonnull id <MTLDevice>) device NS_DESIGNATED_INITIALIZER;
 
 /*!
  *  @abstract   Make a copy of this kernel for a new device - @see MPSKernel

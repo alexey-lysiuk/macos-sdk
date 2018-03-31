@@ -1,10 +1,10 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E9E56708-3C89-30FB-83EE-CE6C06BE9BE0' ]
+uuids:           [ 'x86_64: 3936808D-5F81-3B4B-9D3E-7BC56740E71D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Swift/libswiftAppKit.dylib
 current-version: 900.8.49
-swift-version:   5
+swift-abi-version: 5
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ __T010Foundation10CocoaErrorV4CodeV6AppKitE016ServiceMalformedg10DictionaryC0AEfgZ, 

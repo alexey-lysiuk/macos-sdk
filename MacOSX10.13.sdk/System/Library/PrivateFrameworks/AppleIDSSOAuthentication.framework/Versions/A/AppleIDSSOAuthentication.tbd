@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AADE96AD-FE15-3B9B-A5C3-3404DDAD6C32' ]
+uuids:           [ 'x86_64: 21918FA8-4692-320A-928E-ADB32A8F14C9' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AppleIDSSOAuthentication.framework/Versions/A/AppleIDSSOAuthentication
 exports:         
@@ -13,8 +13,8 @@ exports:
                        _AppleIDAuthenticationiCloudSettingsTokenIdentifier, __AIDALogSystem, 
                        _kDeviceProvisioningMIDKey, _kDeviceProvisioningOTPKey, _kLegacyAlternateDSIDKey, 
                        _kiCloudPersonIDKey, _kiCloudPrimaryAccountKey ]
-    objc-classes:    [ _AIDAMutableServiceContext, _AIDAServiceContext, _AIDAServiceOwnersManager, 
-                       _MockServiceOwner ]
-    objc-ivars:      [ _AIDAServiceContext._authenticationResults, _AIDAServiceContext._hostWindow, 
-                       _AIDAServiceContext._shouldForceOperation ]
+    objc-classes:    [ AIDAMutableServiceContext, AIDAServiceContext, AIDAServiceOwnersManager, 
+                       MockServiceOwner ]
+    objc-ivars:      [ AIDAServiceContext._authenticationResults, AIDAServiceContext._hostWindow, 
+                       AIDAServiceContext._shouldForceOperation ]
 ...

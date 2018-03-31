@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F869E8BD-F00D-3D02-884C-3E27C6DF5053' ]
+uuids:           [ 'x86_64: E605E64F-7349-3405-A444-F185CCB327B8' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreRecognition.framework/Versions/A/CoreRecognition
 current-version: 111
@@ -39,7 +39,7 @@ exports:
                        _kCROverrideShouldRunFreeformPath, _kCROverrideShouldRunLandscapeFlatPrintedPath, 
                        _kCROverrideShouldRunOffline, _kCROverrideShouldRunPortraitFlatPrintedPath, 
                        _writeBuffer, _writeCGImageToPNG ]
-    objc-classes:    [ _CRCameraReader, _CRCameraReaderOutput, _CRCameraReaderOutputExpirationDate, 
-                       _CRCodeRedeemerLayer, _CRCodeRedeemerView, _CRImage, _CRInsights, 
-                       _CRTextFeature, _CRTextFeatureMultiRegion ]
+    objc-classes:    [ CRCameraReader, CRCameraReaderOutput, CRCameraReaderOutputExpirationDate, 
+                       CRCodeRedeemerLayer, CRCodeRedeemerView, CRImage, CRInsights, 
+                       CRTextFeature, CRTextFeatureMultiRegion ]
 ...

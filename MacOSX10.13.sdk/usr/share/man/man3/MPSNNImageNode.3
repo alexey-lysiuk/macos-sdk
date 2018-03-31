@@ -1,4 +1,4 @@
-.TH "MPSNNImageNode" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "MPSNNImageNode" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -45,10 +45,13 @@ Inherits NSObject\&.
 .ti -1c
 .RI "BOOL \fBexportFromGraph\fP"
 .br
+.ti -1c
+.RI "BOOL \fBsynchronizeResource\fP"
+.br
 .in -1c
 .SH "Detailed Description"
 .PP 
-A placeholder node denoting the position of a \fBMPSImage\fP in a graph  MPS neural network graphs are made up of filter nodes connected by image (or state) nodes\&. An image node is produced by one filter but may be consumed by more than one filter\&.
+\fBA\fP placeholder node denoting the position of a \fBMPSImage\fP in a graph  MPS neural network graphs are made up of filter nodes connected by image (or state) nodes\&. An image node is produced by one filter but may be consumed by more than one filter\&.
 .PP
 Most image nodes will be created by MPS and made available through \fBMPSNNFilterNode\&.resultImage\fP\&. Image nodes that are not created by MPS (i\&.e\&. 'the graph inputs') must be created by you\&. 
 .SH "Method Documentation"
@@ -64,7 +67,7 @@ Create a autoreleased \fBMPSNNImageNode\fP with exportFromGraph = YES\&.  Note: 
 .SH "Property Documentation"
 .PP 
 .SS "\- (BOOL) exportFromGraph\fC [read]\fP, \fC [write]\fP, \fC [nonatomic]\fP, \fC [assign]\fP"
-Tag a image node for view later  Most image nodes are private to the graph\&. These alias memory heavily and consequently generally have invalid state when the graph exists\&. When exportFromGraph = YES, the image is preserved and made available through the [\fBMPSNNGraph\fP encode\&.\&.\&. intermediateImages:\&.\&.\&. list\&.
+Tag a image node for view later  Most image nodes are private to the graph\&. These alias memory heavily and consequently generally have invalid state when the graph exits\&. When exportFromGraph = YES, the image is preserved and made available through the [\fBMPSNNGraph\fP encode\&.\&.\&. intermediateImages:\&.\&.\&. list\&.
 .PP
 CAUTION: exporting an image from a graph prevents MPS from recycling memory\&. It will nearly always cause the amount of memory used by the graph to increase by the size of the image\&. There will probably be a performance regression accordingly\&. This feature should generally be used only when the node is needed as an input for further work and recomputing it is prohibitively costly\&.
 .PP
@@ -75,6 +78,8 @@ The preferred precision for the image  Default: MPSImageFeatureChannelFormatNone
 MPS resource identifier  See \fBMPSHandle\fP protocol description\&. Default: nil 
 .SS "\- (id<MPSImageAllocator>) imageAllocator\fC [read]\fP, \fC [write]\fP, \fC [nonatomic]\fP, \fC [retain]\fP"
 Configurability for image allocation  Allows you to influence how the image is allocated Default: \fBdefaultAllocator (MPSTemporaryImage)\fP 
+.SS "\- (BOOL) synchronizeResource\fC [read]\fP, \fC [write]\fP, \fC [nonatomic]\fP, \fC [assign]\fP"
+Set to true to cause the resource to be synchronized with the CPU  Ignored on non-MacOS\&. 
 
 .SH "Author"
 .PP 

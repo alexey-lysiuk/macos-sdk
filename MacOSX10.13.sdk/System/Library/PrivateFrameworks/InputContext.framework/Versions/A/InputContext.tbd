@@ -1,14 +1,14 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 807662BA-A713-3E16-BC99-0CA413A51097' ]
+uuids:           [ 'x86_64: 1C23A232-AA25-39EE-833F-C9985EB4DD3D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/InputContext.framework/InputContext
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _InputContextVersionNumber, _InputContextVersionString ]
-    objc-classes:    [ __ICContact, __ICInputContextManager, __ICInternalSource, 
-                       __ICLexiconManager, __ICNamedEntityStore, __ICNullLexiconManager, 
-                       __ICNullSource, __ICPredictedItem, __ICProactiveTrigger, __ICResultCache, 
-                       __ICSearchContext, __ICTransientLexicon ]
+    objc-classes:    [ _ICContact, _ICInputContextManager, _ICInternalSource, _ICLexiconManager, 
+                       _ICNamedEntityStore, _ICNullLexiconManager, _ICNullSource, 
+                       _ICPredictedItem, _ICProactiveTrigger, _ICResultCache, _ICSearchContext, 
+                       _ICTransientLexicon ]
 ...

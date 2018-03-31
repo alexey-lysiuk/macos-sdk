@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EA67E1F8-9506-3336-8F84-FD3512F321B7' ]
+uuids:           [ 'x86_64: B99EC5B7-8981-321F-80FE-E09909FA42FD' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/NotificationCenter.framework/Versions/A/NotificationCenter
 exports:         
@@ -37,29 +37,28 @@ exports:
                        _kNCRemotePlugInManagerWidgetExtension, _kNotificationServiceBackgroundStyleKey, 
                        _kNotificationServiceExpandedActionTitleKey, _kNotificationServiceFullCustomizationKey, 
                        _kNotificationServicePinnedKey ]
-    objc-classes:    [ _NCJSONTransformer, _NCLineView, _NCLinearDodgeImageView, 
-                       _NCListItemViewController, _NCListViewDeleteButton, _NCMaterialLayer, 
-                       _NCNotificationExtensionContext, _NCNotificationExtensionHostContext, 
-                       _NCNotificationExtensionProvider, _NCNotificationHostViewController, 
-                       _NCNotificationServiceSubsystem, _NCNotificationServiceViewController, 
-                       _NCObjectToken, _NCRemoteNotificationPlugIn, _NCRemotePlugIn, 
-                       _NCRemotePlugInManager, _NCRemoteViewHostRemoteView, _NCRemoteViewHostViewController, 
-                       _NCRemoteViewService, _NCRemoteViewServiceContainerView, _NCRemoteViewServiceSubsystem, 
-                       _NCRemoteViewServiceViewController, _NCRemoteViewServiceWindow, 
-                       _NCScrollView, _NCScroller, _NCSearchItemViewController, _NCSearchTextItemViewController, 
-                       _NCSelectionMaterialLayer, _NCTextField, _NCTexturedView, 
-                       _NCVerticalListController, _NCWidgetController, _NCWidgetExtensionContext, 
-                       _NCWidgetFlippedView, _NCWidgetHostViewController, _NCWidgetListView, 
-                       _NCWidgetListViewController, _NCWidgetSearchView, _NCWidgetSearchViewController, 
-                       _NCWidgetServiceSubsystem, _NCWidgetServiceViewController, 
-                       _NCWidgetViewService, __NCCocoaBinding, __NCConcreteWidgetController, 
-                       __NCFlippedView, __NCMachSendRight, __NCRVSVCClientMarginContainer, 
-                       __NCRVSVCClientRootContainer, __NCRVSVCPresentedContainer, 
-                       __NCRemoteViewHostContainerView, __NCRemoteViewHostContentView, 
-                       __NCRemoteViewServicePlugInKitSubsystem, __NCShieldView, __NCVerticalListContainer, 
-                       __NCVerticalListOperation, __NCVerticalListRoot, __NCWidgetDragBackground, 
-                       __NCWidgetPreferences, __NCWidgetPrefsItem, __NCWidgetPresentationAnimator ]
-    objc-ivars:      [ __NCCocoaBinding._observesSelf, __NCMachSendRight._sendRight, 
-                       __NCWidgetDragBackground._dark, __NCWidgetDragBackground.backgroundLayer1, 
-                       __NCWidgetDragBackground.backgroundLayer2 ]
+    objc-classes:    [ NCJSONTransformer, NCLineView, NCLinearDodgeImageView, NCListItemViewController, 
+                       NCListViewDeleteButton, NCMaterialLayer, NCNotificationExtensionContext, 
+                       NCNotificationExtensionHostContext, NCNotificationExtensionProvider, 
+                       NCNotificationHostViewController, NCNotificationServiceSubsystem, 
+                       NCNotificationServiceViewController, NCObjectToken, NCRemoteNotificationPlugIn, 
+                       NCRemotePlugIn, NCRemotePlugInManager, NCRemoteViewHostRemoteView, 
+                       NCRemoteViewHostViewController, NCRemoteViewService, NCRemoteViewServiceContainerView, 
+                       NCRemoteViewServiceSubsystem, NCRemoteViewServiceViewController, 
+                       NCRemoteViewServiceWindow, NCScrollView, NCScroller, NCSearchItemViewController, 
+                       NCSearchTextItemViewController, NCSelectionMaterialLayer, 
+                       NCTextField, NCTexturedView, NCVerticalListController, NCWidgetController, 
+                       NCWidgetExtensionContext, NCWidgetFlippedView, NCWidgetHostViewController, 
+                       NCWidgetListView, NCWidgetListViewController, NCWidgetSearchView, 
+                       NCWidgetSearchViewController, NCWidgetServiceSubsystem, NCWidgetServiceViewController, 
+                       NCWidgetViewService, _NCCocoaBinding, _NCConcreteWidgetController, 
+                       _NCFlippedView, _NCMachSendRight, _NCRVSVCClientMarginContainer, 
+                       _NCRVSVCClientRootContainer, _NCRVSVCPresentedContainer, _NCRemoteViewHostContainerView, 
+                       _NCRemoteViewHostContentView, _NCRemoteViewServicePlugInKitSubsystem, 
+                       _NCShieldView, _NCVerticalListContainer, _NCVerticalListOperation, 
+                       _NCVerticalListRoot, _NCWidgetDragBackground, _NCWidgetPreferences, 
+                       _NCWidgetPrefsItem, _NCWidgetPresentationAnimator ]
+    objc-ivars:      [ _NCCocoaBinding._observesSelf, _NCMachSendRight._sendRight, 
+                       _NCWidgetDragBackground._dark, _NCWidgetDragBackground.backgroundLayer1, 
+                       _NCWidgetDragBackground.backgroundLayer2 ]
 ...

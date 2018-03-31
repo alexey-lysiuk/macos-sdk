@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 144CAC65-0AC0-3B66-A5AD-CD3F123996A8' ]
+uuids:           [ 'x86_64: 06063A8C-3DE8-32CD-A071-733379FE4054' ]
 platform:        macosx
 install-name:    /usr/lib/libipconfig.dylib
 objc-constraint: none

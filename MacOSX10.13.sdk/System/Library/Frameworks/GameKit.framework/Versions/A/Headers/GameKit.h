@@ -2,7 +2,7 @@
 //  GameKit.h
 //  Game Center
 //
-//  Copyright 2010-2017 Apple Inc. All rights reserved.
+//  Copyright 2010-2018 Apple Inc. All rights reserved.
 //
 
 #import <TargetConditionals.h>
@@ -36,6 +36,7 @@
 #import <GameKit/GKGameSession.h>
 #import <GameKit/GKGameSessionError.h>
 #import <GameKit/GKGameSessionEventListener.h>
+#import <GameKit/GKGameSessionEventListenerPrivate.h>
 #import <GameKit/GKGameSessionSharingViewController.h>
 #import <GameKit/GKLeaderboard.h>
 #import <GameKit/GKLeaderboardSet.h>

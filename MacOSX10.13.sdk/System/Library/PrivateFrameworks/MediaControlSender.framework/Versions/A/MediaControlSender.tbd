@@ -1,17 +1,17 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 9F1FD02E-06B7-3B73-8FF7-99B5A334CDBC', 'x86_64: 83543645-3E69-3F09-89D0-BF4A833B37D8' ]
+uuids:           [ 'i386: 5A60287F-3284-342F-B564-A7181EBFE898', 'x86_64: 905FDEDC-1F5E-33DA-96DB-6C5C676920C1' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MediaControlSender.framework/Versions/A/MediaControlSender
 exports:         
   - archs:           [ i386 ]
-    objc-classes:    [ _AVSystemControllerUI ]
+    objc-classes:    [ AVSystemControllerUI ]
   - archs:           [ x86_64 ]
-    objc-ivars:      [ _AirPlayRemoteSlideshow._client, _AirPlayRemoteSlideshow._delegate, 
-                       _AirPlayRemoteSlideshow._internalQueue, _AirPlayRemoteSlideshow._startTime, 
-                       _AirPlayRemoteSlideshow._started, _AirPlayRemoteSlideshow._userQueue, 
-                       _MediaControlClient._client, _MediaControlClient._eventHandlerBlock, 
-                       _MediaControlClient._eventHandlerQueue, _MediaControlClient._queue ]
+    objc-ivars:      [ AirPlayRemoteSlideshow._client, AirPlayRemoteSlideshow._delegate, 
+                       AirPlayRemoteSlideshow._internalQueue, AirPlayRemoteSlideshow._startTime, 
+                       AirPlayRemoteSlideshow._started, AirPlayRemoteSlideshow._userQueue, 
+                       MediaControlClient._client, MediaControlClient._eventHandlerBlock, 
+                       MediaControlClient._eventHandlerQueue, MediaControlClient._queue ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ _APAudioFormatToASBD, _AVRouteDescription_HasFeature, _AVSystemController_CopyProperty, 
                        _AVSystemController_GetAirPlayInfo, _AVSystemController_GetSharedController, 
@@ -88,5 +88,5 @@ exports:
                        _kAVSystemControllerProperty_PickedRoute, _kAVSystemControllerProperty_RunningInAgent, 
                        _kAVSystemControllerProperty_SelectionInProgress, _kAVSystemControllerProperty_SuspendRoute, 
                        _o4IBrWf, _rJPl3sdBfc0E3yB, _tGvVBtfGSsOH67XQ, _xOvZekdnwD6 ]
-    objc-classes:    [ _AirPlayRemoteSlideshow, _MediaControlClient ]
+    objc-classes:    [ AirPlayRemoteSlideshow, MediaControlClient ]
 ...

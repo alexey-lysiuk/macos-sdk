@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 74744B76-524A-3052-A4CF-3C47446A32C0', 'x86_64: 92CC5BBD-2FB2-3864-BF6B-B4B1BFF4C1EE' ]
+uuids:           [ 'i386: 506C07FB-2EE1-3948-A062-BB0E5C40FA85', 'x86_64: 0EA35E7E-B536-3628-B462-A4098805CEAC' ]
 platform:        macosx
 install-name:    '/usr/lib/libstdc++.6.dylib'
 current-version: 104.1

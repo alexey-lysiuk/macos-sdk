@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E5E2C99E-0210-3C21-BA8F-4D16C9A08AFA' ]
+uuids:           [ 'x86_64: 5FE41AA6-4963-359C-98EC-D259ED08166B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IntentsCore.framework/Versions/A/IntentsCore
 objc-constraint: none
@@ -8,5 +8,5 @@ exports:
   - archs:           [ x86_64 ]
     symbols:         [ _INCExtractPreferencesResponseFromMetricsContext, _INCGenerateMetricsContextUsingAppPreferenceResponse, 
                        _IntentsCoreVersionNumber, _IntentsCoreVersionString ]
-    objc-classes:    [ _INCExtensionRequest, _INCWatchdogTimer ]
+    objc-classes:    [ INCExtensionRequest, INCWatchdogTimer ]
 ...

@@ -1,12 +1,12 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 58BD363A-8198-334B-ABF2-7F7B07E3E69F', 'x86_64: B305DA7D-7866-3194-B498-F9995D232486' ]
+uuids:           [ 'i386: 547106C7-6177-3C04-84BD-EAE6FD626E10', 'x86_64: 343FFA91-89CF-3A3F-833A-D65A2647CCF1' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/SecurityInterface.framework/Versions/A/SecurityInterface
-current-version: 55109.30.2
+current-version: 55109.50.6
 exports:         
   - archs:           [ x86_64 ]
-    objc-ivars:      [ _AuthorizationSpecialEngineRef.mAuthPluginView, _AuthorizationSpecialEngineRef.mEngineRef ]
+    objc-ivars:      [ AuthorizationSpecialEngineRef.mAuthPluginView, AuthorizationSpecialEngineRef.mEngineRef ]
   - archs:           [ i386, x86_64 ]
     re-exports:      [ /System/Library/Frameworks/SecurityFoundation.framework/Versions/A/SecurityFoundation ]
     symbols:         [ '$ld$add$os10.3$.objc_class_name_SFCertificateData', '$ld$add$os10.4$.objc_class_name_SFCertificateData', 
@@ -18,13 +18,13 @@ exports:
                        __CommonCocoaPanels_CreateKeychainPanel, __CommonCocoaPanels_DisplayCertificate, 
                        __CommonCocoaPanels_DisplayCertificateGroup, __CommonCocoaPanels_KeychainSettingsPanel, 
                        __CommonCocoaPanels_SecEditTrust, __CommonCocoaPanels_SecEditTrustSheet ]
-    objc-classes:    [ _AuthorizationSpecialEngineRef, _SFAnimatedLockButton, _SFAuthorizationPluginView, 
-                       _SFAuthorizationView, _SFAutoLockTextValue, _SFBasicTLV, _SFButtonNotBecomeKey, 
-                       _SFCertificateGroupView, _SFCertificateImportManager, _SFCertificatePanel, 
-                       _SFCertificateTrust, _SFCertificateTrustPanel, _SFCertificateView, 
-                       _SFChooseIdentityPanel, _SFEntropyBarView, _SFIconCache, _SFKeychainSavePanel, 
-                       _SFKeychainSettingsPanel, _SFKeychainStorage, _SFPasswordAssistantButton, 
-                       _SFPasswordAssistantInspectorController, _SFPasswordAsstController, 
-                       _SFPasswordAsstModel, _SFPasswordAsstView, _SFPasswordErrorSource, 
-                       _SFPasswordStrengthView, _SFTokenHIPlugin, _SFTokenHIPluginSupport ]
+    objc-classes:    [ AuthorizationSpecialEngineRef, SFAnimatedLockButton, SFAuthorizationPluginView, 
+                       SFAuthorizationView, SFAutoLockTextValue, SFBasicTLV, SFButtonNotBecomeKey, 
+                       SFCertificateGroupView, SFCertificateImportManager, SFCertificatePanel, 
+                       SFCertificateTrust, SFCertificateTrustPanel, SFCertificateView, 
+                       SFChooseIdentityPanel, SFEntropyBarView, SFIconCache, SFKeychainSavePanel, 
+                       SFKeychainSettingsPanel, SFKeychainStorage, SFPasswordAssistantButton, 
+                       SFPasswordAssistantInspectorController, SFPasswordAsstController, 
+                       SFPasswordAsstModel, SFPasswordAsstView, SFPasswordErrorSource, 
+                       SFPasswordStrengthView, SFTokenHIPlugin, SFTokenHIPluginSupport ]
 ...

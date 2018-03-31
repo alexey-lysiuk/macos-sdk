@@ -1,4 +1,4 @@
-.TH "MPSMatrixMultiplication" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "MPSMatrixMultiplication" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -57,9 +57,9 @@ Copyright (c) 2016 Apple Inc\&. All rights reserved\&.  MetalPerformanceShaders 
 .PP
 This depends on Metal\&.framework\&.
 .PP
-A matrix multiplication kernel\&.
+\fBA\fP matrix multiplication kernel\&.
 .PP
-A \fBMPSMatrixMultiplication\fP object computes: 
+\fBA\fP \fBMPSMatrixMultiplication\fP object computes: 
 .PP
 .nf
             C = alpha * op(A) * op(B) + beta * C
@@ -80,18 +80,18 @@ A \fBMPSMatrixMultiplication\fP object computes:
  
 .SH "Method Documentation"
 .PP 
-.SS "\- (void) encodeToCommandBuffer: (nonnull id< MTLCommandBuffer >) commandBuffer(\fBMPSMatrix\fP const *__nonnull) leftMatrix(\fBMPSMatrix\fP const *__nonnull) rightMatrix(\fBMPSMatrix\fP *__nonnull) resultMatrix"
+.SS "\- (void) encodeToCommandBuffer: (nonnull id< MTLCommandBuffer >) commandBuffer(\fBMPSMatrix\fP *__nonnull) leftMatrix(\fBMPSMatrix\fP *__nonnull) rightMatrix(\fBMPSMatrix\fP *__nonnull) resultMatrix"
 Encode a \fBMPSMatrixMultiplication\fP object to a command buffer\&.
 .PP
 \fBParameters:\fP
 .RS 4
-\fIcommandBuffer\fP A valid MTLCommandBuffer to receive the encoded kernel\&.
+\fIcommandBuffer\fP \fBA\fP valid MTLCommandBuffer to receive the encoded kernel\&.
 .br
-\fIleftMatrix\fP A valid \fBMPSMatrix\fP object which specifies the left input matrix\&.
+\fIleftMatrix\fP \fBA\fP valid \fBMPSMatrix\fP object which specifies the left input matrix\&.
 .br
-\fIrightMatrix\fP A valid \fBMPSMatrix\fP object which specifies the right input matrix\&.
+\fIrightMatrix\fP \fBA\fP valid \fBMPSMatrix\fP object which specifies the right input matrix\&.
 .br
-\fIresultMatrix\fP A valid \fBMPSMatrix\fP object which specifies the addend matrix which will also be overwritten by the result\&.
+\fIresultMatrix\fP \fBA\fP valid \fBMPSMatrix\fP object which specifies the addend matrix which will also be overwritten by the result\&.
 .RE
 .PP
 Certain constraints apply to the sizes of the matrices depending on the transposition operations and sizes requested at initialization time as well as the origins at the time this routine is called:
@@ -123,7 +123,7 @@ Convenience initialization for a matrix-matrix multiplication with no transposit
 .PP
 \fBReturns:\fP
 .RS 4
-A valid \fBMPSMatrixMultiplication\fP object or nil, if failure\&. 
+\fBA\fP valid \fBMPSMatrixMultiplication\fP object or nil, if failure\&. 
 .RE
 .PP
 
@@ -134,9 +134,9 @@ Initialize an \fBMPSMatrixMultiplication\fP object on a device for a given size 
 .RS 4
 \fIdevice\fP The device on which the kernel will execute\&.
 .br
-\fItransposeLeft\fP A boolean value which indicates if the left input matrix should be used in transposed form\&. If 'YES' then op(A) = A**T, otherwise op(A) = A\&.
+\fItransposeLeft\fP \fBA\fP boolean value which indicates if the left input matrix should be used in transposed form\&. If 'YES' then op(A) = A**T, otherwise op(A) = \fBA\fP\&.
 .br
-\fItransposeRight\fP A boolean value which indicates if the right input matrix should be used in transposed form\&. If 'YES' then op(B) = B**T, otherwise op(B) = B\&.
+\fItransposeRight\fP \fBA\fP boolean value which indicates if the right input matrix should be used in transposed form\&. If 'YES' then op(B) = B**T, otherwise op(B) = B\&.
 .br
 \fIresultRows\fP The number of rows in the result matrix, M in BLAS GEMM description\&.
 .br
@@ -151,7 +151,7 @@ Initialize an \fBMPSMatrixMultiplication\fP object on a device for a given size 
 .PP
 \fBReturns:\fP
 .RS 4
-A valid \fBMPSMatrixMultiplication\fP object or nil, if failure\&. 
+\fBA\fP valid \fBMPSMatrixMultiplication\fP object or nil, if failure\&. 
 .RE
 .PP
 

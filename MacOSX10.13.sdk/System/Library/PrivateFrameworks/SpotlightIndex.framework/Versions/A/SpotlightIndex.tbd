@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 8F11D551-9384-3364-9A3B-B6431381E1E4', 'x86_64: 236BC19C-F361-344B-91DE-1B40C6E31878' ]
+uuids:           [ 'i386: 77255973-1E4A-39F6-B070-AC3558FDDD99', 'x86_64: 14C6EDFD-B843-35A4-AEA6-F485D756FF88' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SpotlightIndex.framework/Versions/A/SpotlightIndex
-current-version: 1191.2.6
+current-version: 1191.4.13
 exports:         
   - archs:           [ i386, x86_64 ]
     symbols:         [ _RLEOIDArrayAddOid, _RLEOIDArrayAddOid_locked, _RLEOIDArrayAddOids, 
@@ -26,11 +26,12 @@ exports:
                        _SIGetStoreCookie, _SIHasInFlightUpdates, _SIHasPersistentStoreCookie, 
                        _SIHealthCheckFiles, _SIIndexInactive, _SIIndexingFullyCaughtUp, 
                        _SIInitialIndexingEnded, _SIInitialIndexingStarted, _SIMatch, 
-                       _SIMatcherCreate, _SIMatcherDispose, _SIMigrateIndex, _SIMoveDirectories, 
-                       _SIMoveFiles, _SINotePermChange, _SIOpenIndex, _SIOpenIndexAtPathWithCallbacks, 
-                       _SIPathFilterCreate, _SIPathFilterEvaluate, _SIPathFilterFilter, 
-                       _SIPersistentIDStoreCheckAccessAndScopesForOIDs, _SIPersistentIDStoreCheckSandboxForOIDs, 
-                       _SIPersistentIDStoreClose, _SIPersistentIDStoreCreate, _SIPersistentIDStoreGetCredential, 
+                       _SIMatchWithFuzzyIndicies, _SIMatcherCreate, _SIMatcherDispose, 
+                       _SIMigrateIndex, _SIMoveDirectories, _SIMoveFiles, _SINotePermChange, 
+                       _SIOpenIndex, _SIOpenIndexAtPathWithCallbacks, _SIPathFilterCreate, 
+                       _SIPathFilterEvaluate, _SIPathFilterFilter, _SIPersistentIDStoreCheckAccessAndScopesForOIDs, 
+                       _SIPersistentIDStoreCheckSandboxForOIDs, _SIPersistentIDStoreClose, 
+                       _SIPersistentIDStoreCreate, _SIPersistentIDStoreGetCredential, 
                        _SIPersistentIDStoreGetFastPathForOid, _SIPersistentIDStoreGetOIDForCPath, 
                        _SIPersistentIDStoreGetOidPathForOid, _SIPersistentIDStoreGetOidPathForPath, 
                        _SIPersistentIDStoreGetParentForOid, _SIPersistentIDStoreGetRealPathForOid, 
@@ -42,12 +43,13 @@ exports:
                        _SIQueryCreateWithItems, _SIQueryCreateWithItemsAndCompletionString, 
                        _SIQueryRelease, _SIQueryResolveFriendlyFieldNames, _SIQueryRetain, 
                        _SIQuerySetBatchingParameters, _SIQuerySetDominantRankingQueryCount, 
-                       _SIQuerySetGetFriendlyFieldNamesMapCallback, _SIQuerySetStrongRankingQueryCount, 
-                       _SIReaderWriterLockCreate, _SIReaderWriterLockDestroy, _SIReaderWriterLockReadLock, 
-                       _SIReaderWriterLockReadUnlock, _SIReaderWriterLockWriteLock, 
-                       _SIReaderWriterLockWriteUnlock, _SIRecomputeSizes, _SIRestoreCacheData, 
-                       _SIResultBatchFree, _SIResultQueueCancel, _SIResultQueueCreate, 
-                       _SIResultQueueDequeue, _SIResultQueueGetEnqueuedSize, _SIResultQueueGetLastPollTime, 
+                       _SIQuerySetFuzzyQueryInfo, _SIQuerySetGetFriendlyFieldNamesMapCallback, 
+                       _SIQuerySetStrongRankingQueryCount, _SIReaderWriterLockCreate, 
+                       _SIReaderWriterLockDestroy, _SIReaderWriterLockReadLock, _SIReaderWriterLockReadUnlock, 
+                       _SIReaderWriterLockWriteLock, _SIReaderWriterLockWriteUnlock, 
+                       _SIRecomputeSizes, _SIRestoreCacheData, _SIResultBatchFree, 
+                       _SIResultQueueCancel, _SIResultQueueCreate, _SIResultQueueDequeue, 
+                       _SIResultQueueGetEnqueuedSize, _SIResultQueueGetLastPollTime, 
                        _SIResultQueueRelease, _SIResultQueueRetain, _SIResultQueueSetWakeupTrigger, 
                        _SIResumeForUnlock, _SIResumeIndex, _SISerialize, _SISerializeCacheData, 
                        _SISetAttributes, _SISetCSAttributes, _SISetCodedAttributes, 

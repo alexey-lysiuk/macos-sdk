@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 26708021-560B-3CB9-A980-ECF0FD413C3A' ]
+uuids:           [ 'x86_64: 94FED93A-78FD-3425-85DC-C9CE01295566' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/EmojiFoundation.framework/Versions/A/EmojiFoundation
 objc-constraint: none
@@ -12,7 +12,7 @@ exports:
                        _EMFEmojiCategoryTravelAndPlaces, _EMFEmojiPreferencesChangedNotification, 
                        _EMFEmojiPreferencesServiceName, _EMFEmojiUsageAdornment, 
                        _EMFEmojiUsageKeyboard, _EMFEmojiUsageKeywordMatch, _EMFEmojiUsageLearning ]
-    objc-classes:    [ _EMFEmojiCategory, _EMFEmojiLocaleData, _EMFEmojiPreferences, 
-                       _EMFEmojiPreferencesClient, _EMFEmojiPreferencesService, _EMFEmojiToken, 
-                       _EMFStringUtilities ]
+    objc-classes:    [ EMFEmojiCategory, EMFEmojiLocaleData, EMFEmojiPreferences, 
+                       EMFEmojiPreferencesClient, EMFEmojiPreferencesService, EMFEmojiToken, 
+                       EMFStringUtilities ]
 ...

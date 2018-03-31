@@ -1,11 +1,11 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D2090A05-9521-3D4C-8FD1-F4C87E2EEF8B' ]
+uuids:           [ 'x86_64: 9AD2F1B7-731D-3B8A-B99E-C8F048FE1EAE' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/RevealCore.framework/Versions/A/RevealCore
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _RevealCoreVersionNumber, _RevealCoreVersionString ]
-    objc-classes:    [ _RVDocumentContext, _RVItem ]
+    objc-classes:    [ RVDocumentContext, RVItem ]
 ...

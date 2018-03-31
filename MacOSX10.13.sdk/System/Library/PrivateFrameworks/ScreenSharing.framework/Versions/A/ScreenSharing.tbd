@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4F200B7A-FEA6-3BDA-B01D-3A2F0811D54F' ]
+uuids:           [ 'x86_64: ABDCB43B-9ED0-3D95-A377-6D4BF8EDF0B7' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ScreenSharing.framework/Versions/A/ScreenSharing
 exports:         
@@ -49,23 +49,22 @@ exports:
                        _kSSVideoEncoding_Zlib, _mt_log_screensharing_AppleIDSessionEnded, 
                        _mt_log_screensharing_addressResolutionEnded, _sockaddrEquivalent, 
                        _sockaddrPort, _sockaddrStorageEqual, _sockaddrStorageEquivalent ]
-    objc-classes:    [ _BlockedInvitersManager, _BlockedInvitersManagerYosemite, 
-                       _DNSResolver, _ODHelper, _PerformSelectorOnThreadManager, 
-                       _RDMutex, _RDSemaphore, _SSAddress, _SSAddressResolver, _SSApplication, 
-                       _SSConnectionAddressViewController, _SSConnectionAuthenticationGuestlessViewController, 
-                       _SSConnectionAuthenticationVNCViewController, _SSConnectionAuthenticationViewController, 
-                       _SSConnectionOptions, _SSConnectionProgressViewController, 
-                       _SSConnectionWindowController, _SSCredentials, _SSCredentialsManager, 
-                       _SSCurtainMessageViewController, _SSDisplaySegmentedControl, 
-                       _SSDragEvent, _SSEncryptionKeyCredentials, _SSEventHelperManager, 
-                       _SSFadeView, _SSFileTransfer, _SSFileTransferWindowController, 
-                       _SSFrameBuffer, _SSFrameBufferAVConferenceView, _SSFrameBufferRenderView, 
-                       _SSFrameBufferView, _SSGestureEvent, _SSInputEvent, _SSInputEventSourceCoordinator, 
-                       _SSInvitationHelper, _SSKerberosCredentials, _SSKeyboardEvent, 
-                       _SSMouseButtonEvent, _SSMouseEvent, _SSMouseScrollEvent, _SSPanningScrollView, 
-                       _SSPasswordCredentials, _SSPreauthorizedUDPServer, _SSReconnectProgressIndicator, 
-                       _SSScreenConfiguration, _SSScreenInfo, _SSSession, _SSSessionSelectViewController, 
-                       _SSSessionView, _SSUDPSocketAddress, _SSUsernameCredentials, 
-                       _SSUsernamePasswordCredentials, _SSVirtualDisplayStateNotificationView, 
-                       _TextLengthFormatter ]
+    objc-classes:    [ BlockedInvitersManager, BlockedInvitersManagerYosemite, DNSResolver, 
+                       ODHelper, PerformSelectorOnThreadManager, RDMutex, RDSemaphore, 
+                       SSAddress, SSAddressResolver, SSApplication, SSConnectionAddressViewController, 
+                       SSConnectionAuthenticationGuestlessViewController, SSConnectionAuthenticationVNCViewController, 
+                       SSConnectionAuthenticationViewController, SSConnectionOptions, 
+                       SSConnectionProgressViewController, SSConnectionWindowController, 
+                       SSCredentials, SSCredentialsManager, SSCurtainMessageViewController, 
+                       SSDisplaySegmentedControl, SSDragEvent, SSEncryptionKeyCredentials, 
+                       SSEventHelperManager, SSFadeView, SSFileTransfer, SSFileTransferWindowController, 
+                       SSFrameBuffer, SSFrameBufferAVConferenceView, SSFrameBufferRenderView, 
+                       SSFrameBufferView, SSGestureEvent, SSInputEvent, SSInputEventSourceCoordinator, 
+                       SSInvitationHelper, SSKerberosCredentials, SSKeyboardEvent, 
+                       SSMouseButtonEvent, SSMouseEvent, SSMouseScrollEvent, SSPanningScrollView, 
+                       SSPasswordCredentials, SSPreauthorizedUDPServer, SSReconnectProgressIndicator, 
+                       SSScreenConfiguration, SSScreenInfo, SSSession, SSSessionSelectViewController, 
+                       SSSessionView, SSUDPSocketAddress, SSUsernameCredentials, 
+                       SSUsernamePasswordCredentials, SSVirtualDisplayStateNotificationView, 
+                       TextLengthFormatter ]
 ...

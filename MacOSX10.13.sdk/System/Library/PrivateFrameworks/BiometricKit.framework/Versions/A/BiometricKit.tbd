@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 709F4F55-C4D8-36B3-9B22-EC567D04D337' ]
+uuids:           [ 'x86_64: 47DA846E-3742-325C-88A8-DCD59C8326C8' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/BiometricKit.framework/Versions/A/BiometricKit
 objc-constraint: none
@@ -19,14 +19,14 @@ exports:
                        _kBiometricKitTemplateDetailLargestComponentArea, _kBiometricKitTemplateDetailLargestComponentNodes, 
                        _kBiometricKitTemplateDetailTotalArea, _kBiometricKitTemplateDetailTotalNodes, 
                        _kBiometricKitTemplateUpdated ]
-    objc-classes:    [ _BKDevice, _BKDeviceDescriptor, _BKDeviceManager, _BKDevicePearl, 
-                       _BKDeviceTouchID, _BKEnrollOperation, _BKEnrollPearlOperation, 
-                       _BKEnrollPearlProgressInfo, _BKEnrollTouchIDOperation, _BKExtendEnrollTouchIDOperation, 
-                       _BKFaceDetectOperation, _BKFaceDetectStateInfo, _BKFingerDetectOperation, 
-                       _BKIdentity, _BKMatchOperation, _BKMatchPearlOperation, _BKMatchResultInfo, 
-                       _BKMatchTouchIDOperation, _BKOperation, _BKPresenceDetectOperation, 
-                       _BKSystemProtectedConfiguration, _BKUserProtectedConfiguration, 
-                       _BiometricKit, _BiometricKitEnrollProgressCoordinates, _BiometricKitEnrollProgressInfo, 
-                       _BiometricKitEnrollProgressMergedComponent, _BiometricKitIdentity, 
-                       _BiometricKitMatchInfo, _BiometricKitTemplateInfo ]
+    objc-classes:    [ BKDevice, BKDeviceDescriptor, BKDeviceManager, BKDevicePearl, 
+                       BKDeviceTouchID, BKEnrollOperation, BKEnrollPearlOperation, 
+                       BKEnrollPearlProgressInfo, BKEnrollTouchIDOperation, BKExtendEnrollTouchIDOperation, 
+                       BKFaceDetectOperation, BKFaceDetectStateInfo, BKFingerDetectOperation, 
+                       BKIdentity, BKMatchOperation, BKMatchPearlOperation, BKMatchResultInfo, 
+                       BKMatchTouchIDOperation, BKOperation, BKPresenceDetectOperation, 
+                       BKSystemProtectedConfiguration, BKUserProtectedConfiguration, 
+                       BiometricKit, BiometricKitEnrollProgressCoordinates, BiometricKitEnrollProgressInfo, 
+                       BiometricKitEnrollProgressMergedComponent, BiometricKitIdentity, 
+                       BiometricKitMatchInfo, BiometricKitTemplateInfo ]
 ...

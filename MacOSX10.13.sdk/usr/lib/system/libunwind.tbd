@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 642BBA03-0411-3FAA-A421-D79A9156AB1C', 'x86_64: 6D4FCD49-D2A9-3233-95C7-A7635CE265F2' ]
+uuids:           [ 'i386: C9C74974-E6CE-386D-AF72-DC21323AF40B', 'x86_64: BEF3FB49-5604-3B5F-82B5-332B80023AC3' ]
 platform:        macosx
 install-name:    /usr/lib/system/libunwind.dylib
 current-version: 35.3

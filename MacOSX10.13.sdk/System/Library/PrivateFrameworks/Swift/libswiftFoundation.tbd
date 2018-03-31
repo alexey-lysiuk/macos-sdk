@@ -1,10 +1,10 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 32CB7640-0B21-3559-96EB-2F3E972265A3' ]
+uuids:           [ 'x86_64: F8AC0B40-989E-38A5-B57B-3B8823C82431' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Swift/libswiftFoundation.dylib
 current-version: 900.8.49
-swift-version:   5
+swift-abi-version: 5
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ __T010Foundation10CocoaErrorV010formattingC0AC4CodeVfgZ, __T010Foundation10CocoaErrorV011fileLockingC0AC4CodeVfgZ, 
@@ -2524,5 +2524,5 @@ exports:
                        '__swift_FORCE_LOAD_$_swiftFoundation', _swift_Foundation_getErrorDefaultUserInfo, 
                        _swift_convertErrorToNSError, _swift_convertNSErrorToError, 
                        _swift_convertStringToNSString, _swift_stdlib_bridgeNSErrorToError ]
-    objc-classes:    [ __TtC10Foundation21NSKeyValueObservation ]
+    objc-classes:    [ _TtC10Foundation21NSKeyValueObservation ]
 ...

@@ -1,4 +1,4 @@
-.TH "MPSCNNConvolutionNode" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "MPSCNNConvolutionNode" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -30,7 +30,7 @@ Inherited by \fBMPSCNNBinaryConvolutionNode\fP, \fBMPSCNNConvolutionTransposeNod
 
 .in +1c
 .ti -1c
-.RI "\fBMPSCNNConvolutionStateNode\fP * \fBconvolutionState\fP"
+.RI "\fBMPSCNNConvolutionGradientStateNode\fP * \fBconvolutionGradientState\fP"
 .br
 .in -1c
 .SH "Method Documentation"
@@ -42,12 +42,12 @@ Init a node representing a \fBMPSCNNConvolution\fP kernel
 .RS 4
 \fIsourceNode\fP The \fBMPSNNImageNode\fP representing the source \fBMPSImage\fP for the filter 
 .br
-\fIweights\fP A pointer to a valid object conforming to the \fBMPSCNNConvolutionDataSource\fP protocol\&. This object is provided by you to encapsulate storage for convolution weights and biases\&. 
+\fIweights\fP \fBA\fP pointer to a valid object conforming to the \fBMPSCNNConvolutionDataSource\fP protocol\&. This object is provided by you to encapsulate storage for convolution weights and biases\&. If it is used for training, it may not have a neuron embedded in the convolution descriptor\&. 
 .RE
 .PP
 \fBReturns:\fP
 .RS 4
-A new MPSNNFilter node for a \fBMPSCNNConvolution\fP kernel\&. 
+\fBA\fP new MPSNNFilter node for a \fBMPSCNNConvolution\fP kernel\&. 
 .RE
 .PP
 
@@ -60,12 +60,12 @@ Init an autoreleased not representing a \fBMPSCNNConvolution\fP kernel
 .RS 4
 \fIsourceNode\fP The \fBMPSNNImageNode\fP representing the source \fBMPSImage\fP for the filter 
 .br
-\fIweights\fP A pointer to a valid object conforming to the \fBMPSCNNConvolutionDataSource\fP protocol\&. This object is provided by you to encapsulate storage for convolution weights and biases\&. 
+\fIweights\fP \fBA\fP pointer to a valid object conforming to the \fBMPSCNNConvolutionDataSource\fP protocol\&. This object is provided by you to encapsulate storage for convolution weights and biases\&. If it is used for training, it may not have a neuron embedded in the convolution descriptor\&. 
 .RE
 .PP
 \fBReturns:\fP
 .RS 4
-A new MPSNNFilter node for a \fBMPSCNNConvolution\fP kernel\&. 
+\fBA\fP new MPSNNFilter node for a \fBMPSCNNConvolution\fP kernel\&. 
 .RE
 .PP
 
@@ -73,8 +73,8 @@ A new MPSNNFilter node for a \fBMPSCNNConvolution\fP kernel\&.
 Implemented in \fBMPSCNNFullyConnectedNode\fP\&.
 .SH "Property Documentation"
 .PP 
-.SS "\- (\fBMPSCNNConvolutionStateNode\fP*) convolutionState\fC [read]\fP, \fC [nonatomic]\fP, \fC [assign]\fP"
-A node to represent a \fBMPSCNNConvolutionState\fP object  Use this if the convolution is mirrored by a convolution transpose node later on in the graph to make sure that the size of the image returned from the convolution transpose matches the size of the image passed in to this node\&. 
+.SS "\- (\fBMPSCNNConvolutionGradientStateNode\fP*) convolutionGradientState\fC [read]\fP, \fC [nonatomic]\fP, \fC [assign]\fP"
+\fBA\fP node to represent a \fBMPSCNNConvolutionGradientState\fP object  Use this if the convolution is mirrored by a convolution transpose node later on in the graph to make sure that the size of the image returned from the convolution transpose matches the size of the image passed in to this node\&. 
 
 .SH "Author"
 .PP 

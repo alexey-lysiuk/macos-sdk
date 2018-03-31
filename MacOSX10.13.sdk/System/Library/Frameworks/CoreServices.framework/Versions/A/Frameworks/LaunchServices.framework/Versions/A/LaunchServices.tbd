@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 44D623FB-2F50-3322-BEEC-A6A2DD3CD9E6', 'x86_64: F3AC96C3-0B52-3AA9-9DA8-288BBC523C07' ]
+uuids:           [ 'i386: 33F11880-9AD1-3521-B1AB-0793E36CBA22', 'x86_64: BDFAB0FF-C2C6-375B-9E84-E43E267E2F82' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices
-current-version: 822.19
+current-version: 822.31
 parent-umbrella: CoreServices
 exports:         
   - archs:           [ i386 ]
@@ -17,11 +17,11 @@ exports:
                        _LSUserApplicationType, _LSVPNPluginType, __LSAddToRecentsAfterOpening, 
                        __LSHandlerRankAlternate, __LSHandlerRankDefault, __LSHandlerRankNone, 
                        __LSHandlerRankOwner, __LSSetDatabaseIsSeeded ]
-    objc-classes:    [ _LSApplicationProxy, _LSApplicationWorkspace, _LSApplicationWorkspaceObserver, 
-                       _LSBundleInfoCachedValues, _LSBundleProxy, _LSDocumentProxy, 
-                       _LSPlugInKitProxy, _LSPlugInQuery, _LSPlugInQueryWithIdentifier, 
-                       _LSPlugInQueryWithQueryDictionary, _LSPlugInQueryWithURL, 
-                       _LSResourceProxy, _NSUserActivity, __LSApplicationState, __LSDiskUsage ]
+    objc-classes:    [ LSApplicationProxy, LSApplicationWorkspace, LSApplicationWorkspaceObserver, 
+                       LSBundleInfoCachedValues, LSBundleProxy, LSDocumentProxy, 
+                       LSPlugInKitProxy, LSPlugInQuery, LSPlugInQueryWithIdentifier, 
+                       LSPlugInQueryWithQueryDictionary, LSPlugInQueryWithURL, LSResourceProxy, 
+                       NSUserActivity, _LSApplicationState, _LSDiskUsage ]
   - archs:           [ i386, x86_64 ]
     allowable-clients: [ Foundation ]
     symbols:         [ _AcquireIconRef, _CompositeIconRef, _GetCustomIconsEnabled, 
@@ -339,7 +339,7 @@ exports:
                        _kUTTypeWebArchive, _kUTTypeWindowsExecutable, _kUTTypeX509Certificate, 
                        _kUTTypeXML, _kUTTypeXMLPropertyList, _kUTTypeXPCService, 
                        _kUTTypeZipArchive ]
-    objc-classes:    [ _LSExtensionPoint, __LSDefaults, __LSDisplayNameConstructor, 
-                       __LSExceptions, __LSLazyPropertyList, __LSQuery, __LSQueryContext, 
-                       __LSQueryResult, __LSStringLocalizer, __UTType, __UTTypeQuery ]
+    objc-classes:    [ LSExtensionPoint, _LSDefaults, _LSDisplayNameConstructor, 
+                       _LSExceptions, _LSLazyPropertyList, _LSQuery, _LSQueryContext, 
+                       _LSQueryResult, _LSStringLocalizer, _UTType, _UTTypeQuery ]
 ...

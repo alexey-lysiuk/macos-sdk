@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 3C4400C4-C531-3653-872B-E22892D7B29A', 'x86_64: EB9BB165-45A4-367C-B33A-688D4F383A95' ]
+uuids:           [ 'i386: 7B2BF425-F98C-34F8-A574-CB1FD08F169C', 'x86_64: 9033B909-BCF7-37EB-A040-ADE8081611D6' ]
 platform:        macosx
 install-name:    /usr/lib/system/libsystem_dnssd.dylib
-current-version: 878.30.4
+current-version: 878.50.17
 objc-constraint: none
 parent-umbrella: System
 exports:         

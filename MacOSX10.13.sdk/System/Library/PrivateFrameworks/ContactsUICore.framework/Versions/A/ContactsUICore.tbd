@@ -1,4 +1,4 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 01BFDE8F-019C-3E59-AE80-CA410F15C439' ]
 platform:        macosx
@@ -9,17 +9,17 @@ exports:
     symbols:         [ _CNContactsUIErrorDialRequestKey, _CNContactsUIErrorDomain, 
                        _CNContactsUIErrorURLKey, _CNContactsUIErrorUserActivityKey, 
                        _CNUILikenessResolverMaxContacts ]
-    objc-classes:    [ _CNCapabilities, _CNContactsUIError, _CNHandle, _CNLSApplicationWorkspace, 
-                       _CNUIContactPropertyIDSHandle, _CNUIContactPropertyRanker, 
-                       _CNUICoreRecentsManager, _CNUIDefaultUserActionFetcher, _CNUIIDSAvailabilityProvider, 
-                       _CNUIIDSContactPropertyResolver, _CNUIIDSIDQueryControllerWrapper, 
-                       _CNUIImageUtilities, _CNUILikenessRenderer, _CNUILikenessRenderingScope, 
-                       _CNUIMeContactComparisonStrategyIdentifier, _CNUIMeContactComparisonStrategyUnified, 
-                       _CNUIMeContactMonitor, _CNUIMeMonitor, _CNUIPRLikenessLookup, 
-                       _CNUIPRLikenessProvider, _CNUIPRLikenessResolver, _CNUIPlaceholderProviderFactory, 
-                       _CNUIPropertyListRepresentation, _CNUIPropertyListRepresentationAttachmentsBuilder, 
-                       _CNUIUserActionContext, _CNUIUserActionDisambiguationViewDataSource, 
-                       _CNUIUserActionDiscoveringEnvironment, _CNUIUserActionItem, 
-                       _CNUIUserActionListDataSource, _CNUIUserActionListModel, _CNUIUserActionTarget, 
-                       __CNUIUserActionImageProvider ]
+    objc-classes:    [ CNCapabilities, CNContactsUIError, CNHandle, CNLSApplicationWorkspace, 
+                       CNUIContactPropertyIDSHandle, CNUIContactPropertyRanker, CNUICoreRecentsManager, 
+                       CNUIDefaultUserActionFetcher, CNUIIDSAvailabilityProvider, 
+                       CNUIIDSContactPropertyResolver, CNUIIDSIDQueryControllerWrapper, 
+                       CNUIImageUtilities, CNUILikenessRenderer, CNUILikenessRenderingScope, 
+                       CNUIMeContactComparisonStrategyIdentifier, CNUIMeContactComparisonStrategyUnified, 
+                       CNUIMeContactMonitor, CNUIMeMonitor, CNUIPRLikenessLookup, 
+                       CNUIPRLikenessProvider, CNUIPRLikenessResolver, CNUIPlaceholderProviderFactory, 
+                       CNUIPropertyListRepresentation, CNUIPropertyListRepresentationAttachmentsBuilder, 
+                       CNUIUserActionContext, CNUIUserActionDisambiguationViewDataSource, 
+                       CNUIUserActionDiscoveringEnvironment, CNUIUserActionItem, 
+                       CNUIUserActionListDataSource, CNUIUserActionListModel, CNUIUserActionTarget, 
+                       _CNUIUserActionImageProvider ]
 ...

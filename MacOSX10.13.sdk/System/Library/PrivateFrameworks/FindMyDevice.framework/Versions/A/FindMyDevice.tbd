@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 534BBB1D-A62C-3E8E-A31A-D6DB3FC6B357' ]
+uuids:           [ 'x86_64: B0A5D457-3775-35EC-AD66-2B6E659B62BE' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/FindMyDevice.framework/Versions/A/FindMyDevice
 objc-constraint: none
@@ -15,7 +15,7 @@ exports:
                        _kFMDWatchNotBackedUpPrefDomain, _kFMDWatchPrefDomain, _kFMMAuthRight, 
                        _kFMMEnabledPrefDomain, _kFMMEnabledPrefKey, _kFMMLocateAlertPendingNotification, 
                        _kFMMRemoveAuthRight, _kFindMyDeviceIdentityXPCInterfaceErrorDomain ]
-    objc-classes:    [ _FMDAccessoryIdentifier, _FMDFMMAccountInfo, _FMDFMMManager, 
-                       _FMDVolatileMetaDataRecord, _FMNSXPCConnection, _FMNSXPCConnectionCache, 
-                       _FMNSXPCConnectionConfiguration ]
+    objc-classes:    [ FMDAccessoryIdentifier, FMDFMMAccountInfo, FMDFMMManager, 
+                       FMDVolatileMetaDataRecord, FMNSXPCConnection, FMNSXPCConnectionCache, 
+                       FMNSXPCConnectionConfiguration ]
 ...

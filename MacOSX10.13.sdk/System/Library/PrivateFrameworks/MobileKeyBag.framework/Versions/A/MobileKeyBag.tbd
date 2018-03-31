@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 170AD2F3-9D3E-3FF6-BA02-60C48C1E6724' ]
+uuids:           [ 'x86_64: 88876B8D-A68A-3461-84F3-A1A8D5F3D497' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MobileKeyBag.framework/Versions/A/MobileKeyBag
 objc-constraint: none
@@ -9,9 +9,9 @@ exports:
     symbols:         [ _MKBDeviceGetGracePeriod, _MKBDeviceLockAssertion, _MKBDeviceSetGracePeriod, 
                        _MKBDeviceUnlockedSinceBoot, _MKBFilevaultStashKek, _MKBGetDeviceConfigurations, 
                        _MKBGetDeviceLockState, _MKBGetDeviceLockStateIndirect, _MKBGetDeviceLockStateInfo, 
-                       _MKBKeyBagChangeSystemSecret, _MKBKeyBagCopySytemSecretBlob, 
-                       _MKBKeyBagCreateWithData, _MKBKeyBagGetAKSHandle, _MKBKeyBagKeyStashCommit, 
-                       _MKBKeyBagKeyStashCreate, _MKBKeyBagKeyStashCreateWithManifest, 
+                       _MKBGetPolicyStatus, _MKBKeyBagBindKEK, _MKBKeyBagChangeSystemSecret, 
+                       _MKBKeyBagCopySytemSecretBlob, _MKBKeyBagCreateWithData, _MKBKeyBagGetAKSHandle, 
+                       _MKBKeyBagKeyStashCommit, _MKBKeyBagKeyStashCreate, _MKBKeyBagKeyStashCreateWithManifest, 
                        _MKBKeyBagKeyStashCreateWithMode, _MKBKeyBagKeyStashDestroy, 
                        _MKBKeyBagKeyStashEnable, _MKBKeyBagKeyStashEnableWithManifest, 
                        _MKBKeyBagKeyStashLoad, _MKBKeyBagKeyStashPersist, _MKBKeyBagKeyStashSetManifest, 
@@ -24,12 +24,14 @@ exports:
                        _kMKBConfigBackOffDelay, _kMKBConfigFlags, _kMKBConfigGracePeriod, 
                        _kMKBConfigMaxUnlockAttempts, _kMKBInfoBackOff, _kMKBInfoBagState, 
                        _kMKBInfoFailedAttempts, _kMKBInfoLockState, _kMKBInfoPermanentlyBlocked, 
-                       _kMKBInfoRecoveryCountdown, _kMKBInfoShouldWipe, _kMKBUserSessionCachedLoginEndTimeKey, 
-                       _kMKBUserSessionCachedLoginStartTimeKey, _kMKBUserSessionCreateTimeStampKey, 
-                       _kMKBUserSessionFirstLoginEndTimeKey, _kMKBUserSessionFirstLoginStartTimeKey, 
-                       _kMKBUserSessionForegroundKey, _kMKBUserSessionIDKey, _kMKBUserSessionManagedDevice, 
-                       _kMKBUserSessionNameKey, _kMKBUserSessionOther, _kMKBUserSessionTypeKey, 
-                       _kMKBUserSessionUUIDKey, _kMobileKeyBagLockStatusNotification, 
-                       _kMobileKeyBagLockStatusNotifyToken, _kMobileKeyBagUserChangedNotificationToken, 
-                       _kMobileKeyBagUserStartedNotificationToken ]
+                       _kMKBInfoRecoveryCountdown, _kMKBInfoShouldWipe, _kMKBPolicyAuditToken, 
+                       _kMKBPolicyBackOffDelay, _kMKBPolicyFailedUnlockAttempts, 
+                       _kMKBPolicyIndex, _kMKBPolicyMaxUnlockAttempts, _kMKBPolicyUID, 
+                       _kMKBUserSessionCachedLoginEndTimeKey, _kMKBUserSessionCachedLoginStartTimeKey, 
+                       _kMKBUserSessionCreateTimeStampKey, _kMKBUserSessionFirstLoginEndTimeKey, 
+                       _kMKBUserSessionFirstLoginStartTimeKey, _kMKBUserSessionForegroundKey, 
+                       _kMKBUserSessionIDKey, _kMKBUserSessionManagedDevice, _kMKBUserSessionNameKey, 
+                       _kMKBUserSessionOther, _kMKBUserSessionTypeKey, _kMKBUserSessionUUIDKey, 
+                       _kMobileKeyBagLockStatusNotification, _kMobileKeyBagLockStatusNotifyToken, 
+                       _kMobileKeyBagUserChangedNotificationToken, _kMobileKeyBagUserStartedNotificationToken ]
 ...

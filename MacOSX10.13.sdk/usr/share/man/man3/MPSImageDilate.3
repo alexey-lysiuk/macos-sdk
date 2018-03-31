@@ -1,4 +1,4 @@
-.TH "MPSImageDilate" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "MPSImageDilate" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -50,7 +50,7 @@ for each pixel in the filter window:
 
 .fi
 .PP
- A filter that contains all zeros and is identical to a \fBMPSImageAreaMax\fP filter\&. The center filter element is assumed to be 0 to avoid causing a general darkening of the image\&.
+ \fBA\fP filter that contains all zeros and is identical to a \fBMPSImageAreaMax\fP filter\&. The center filter element is assumed to be 0 to avoid causing a general darkening of the image\&.
 .PP
 The edgeMode property is assumed to always be MPSImageEdgeModeClamp for this filter\&. 
 .SH "Method Documentation"
@@ -67,7 +67,7 @@ The edgeMode property is assumed to always be MPSImageEdgeModeClamp for this fil
 .PP
 \fBReturns:\fP
 .RS 4
-A new \fBMPSKernel\fP object, or nil if failure\&. 
+\fBA\fP new \fBMPSKernel\fP object, or nil if failure\&. 
 .RE
 .PP
 

@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 3F593C33-E45D-3D77-B82C-F811428C4901', 'x86_64: C84A6CA5-8C50-3288-8572-CC3DABF5BBCE' ]
+uuids:           [ 'i386: C107CE67-BF5F-3AC9-A514-C864310F2BBB', 'x86_64: A56D826D-20D2-34BE-AACC-A80CFCB4E915' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IconServices.framework/Versions/A/IconServices
-current-version: 97.4
+current-version: 97.6
 exports:         
   - archs:           [ i386 ]
     symbols:         [ __ISAddPictToIconFamily, __ISGetIconSizesFromIconRef, __ISIconFamilyToIconSuite, 
@@ -15,7 +15,7 @@ exports:
     symbols:         [ __ISProcessIsRoot, _kIconCompilerImageInfoIsSelectedVariantKey, 
                        _kIconCompilerImageInfoNameKey, _kIconCompilerImageInfoScaleKey, 
                        _kIconCompilerImageInfoSizeKey ]
-    objc-classes:    [ _ISIconset, _ISImageDescriptor, _ISMutableStoreIndex ]
+    objc-classes:    [ ISIconset, ISImageDescriptor, ISMutableStoreIndex ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ _ISCreateCGImageFromBindingWithSizeScaleAndOptions, __ISContextScale, 
                        __ISCopyCacheContentsDescription, __ISCopyCachePath, __ISCopyICNSDataFromBinding, 
@@ -28,6 +28,6 @@ exports:
                        __ISIconServicesGetCGImageRefFromURL, __ISIsIconRefMaskEmpty, 
                        __ISPlotIconRefInContext, __ISSetGlobalIconImagesCacheMaxEntriesAndMaxDataSize, 
                        __ISSetIconFamilyData, __kISImageRequestTimeoutForeverKey ]
-    objc-classes:    [ _ISIcns, _ISIconCache, _ISImage, _ISMutableIcns, _ISResourceFile, 
-                       _ISStore, _ISStoreIndex ]
+    objc-classes:    [ ISIcns, ISIconCache, ISImage, ISMutableIcns, ISResourceFile, 
+                       ISStore, ISStoreIndex ]
 ...

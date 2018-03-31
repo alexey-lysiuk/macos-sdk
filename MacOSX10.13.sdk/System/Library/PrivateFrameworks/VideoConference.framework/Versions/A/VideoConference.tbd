@@ -1,45 +1,44 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 771BC104-A4A9-37D1-A3C0-232D0968F6EC', 'x86_64: CE75C719-835E-34F8-9449-F08DA654E8FB' ]
+uuids:           [ 'i386: B0A1420E-CEAE-3C1D-8C58-A9DD99ED8667', 'x86_64: AB4515EC-D69C-34DA-911D-42E283DB22FC' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/VideoConference.framework/Versions/A/VideoConference
 current-version: 2
 compatibility-version: 2
 exports:         
   - archs:           [ i386 ]
-    objc-classes:    [ _AudioDeviceMonitor, _BWDConfiguration, _CallBackData, _CommNATConfiguration, 
-                       _DNSSDMappingClient, _DNSSDMappingInfo, _DotMacConfiguration, 
-                       _SDPAnalyzer, _SIPManager, _SNATMAPConfiguration, _VCCallMgr, 
-                       _VCCamera, _VCChannelExtra, _VCChannelModel, _VCChannelSecureConfiguration, 
-                       _VCDispatchQueues, _VCMicrophone, _VCNotificationGateway, 
-                       _VCPowerNotifier, _VCRules, _VCRulesBandwidth, _VCRulesBandwidthList, 
-                       _VCRulesCPU, _VCRulesCPUList, _VCRulesImageSize, _VCRulesImageSizeList, 
-                       _VCSNATMAPData, _VCSleepWakeMonitor, _VCSoundDevice, _VCSpeaker, 
-                       _VCStateMgr ]
+    objc-classes:    [ AudioDeviceMonitor, BWDConfiguration, CallBackData, CommNATConfiguration, 
+                       DNSSDMappingClient, DNSSDMappingInfo, DotMacConfiguration, 
+                       SDPAnalyzer, SIPManager, SNATMAPConfiguration, VCCallMgr, 
+                       VCCamera, VCChannelExtra, VCChannelModel, VCChannelSecureConfiguration, 
+                       VCDispatchQueues, VCMicrophone, VCNotificationGateway, VCPowerNotifier, 
+                       VCRules, VCRulesBandwidth, VCRulesBandwidthList, VCRulesCPU, 
+                       VCRulesCPUList, VCRulesImageSize, VCRulesImageSizeList, VCSNATMAPData, 
+                       VCSleepWakeMonitor, VCSoundDevice, VCSpeaker, VCStateMgr ]
   - archs:           [ x86_64 ]
-    objc-ivars:      [ _HardwareCapsChangeNotifier._cameraCallbackObjs, _HardwareCapsChangeNotifier._deviceList, 
-                       _HardwareCapsChangeNotifier._hasDV, _HardwareCapsChangeNotifier._hasQ8, 
-                       _HardwareCapsChangeNotifier._iterators, _HardwareCapsChangeNotifier._notificationPort, 
-                       _HardwareCapsChangeNotifier._notifierMap, _HardwareCapsChangeNotifier._numDevices, 
-                       _VCChannel._model, _VideoConferenceController._NATTraversal, 
-                       _VideoConferenceController._SDForced, _VideoConferenceController._allowsAudioRecv, 
-                       _VideoConferenceController._allowsAudioSend, _VideoConferenceController._allowsVideoRecv, 
-                       _VideoConferenceController._allowsVideoSend, _VideoConferenceController._audioQuality, 
-                       _VideoConferenceController._autoDetectBandwidth, _VideoConferenceController._bitrate, 
-                       _VideoConferenceController._cameraDeviceID, _VideoConferenceController._cameraGUID, 
-                       _VideoConferenceController._cameraName, _VideoConferenceController._connectionDataAndCallIDDictionary, 
-                       _VideoConferenceController._defaultHeight, _VideoConferenceController._defaultPayload, 
-                       _VideoConferenceController._defaultWidth, _VideoConferenceController._doNotDisturb, 
-                       _VideoConferenceController._dynamicStore, _VideoConferenceController._enableEchoCancellation, 
-                       _VideoConferenceController._enableNewAudioProcessing, _VideoConferenceController._enableOldAudioProcessing, 
-                       _VideoConferenceController._framerate, _VideoConferenceController._keyrate, 
-                       _VideoConferenceController._lightingProfile, _VideoConferenceController._localIPAddress, 
-                       _VideoConferenceController._localSecIdentityRef, _VideoConferenceController._maxBitrate, 
-                       _VideoConferenceController._maxFramerate, _VideoConferenceController._notificationGateway, 
-                       _VideoConferenceController._oneWayOnly, _VideoConferenceController._optimalImageSize, 
-                       _VideoConferenceController._postFilter, _VideoConferenceController._preFilter, 
-                       _VideoConferenceController._remoteUserName, _VideoConferenceController._statsDictionary, 
-                       _VideoConferenceController._useEncryption, _VideoConferenceController._userName ]
+    objc-ivars:      [ HardwareCapsChangeNotifier._cameraCallbackObjs, HardwareCapsChangeNotifier._deviceList, 
+                       HardwareCapsChangeNotifier._hasDV, HardwareCapsChangeNotifier._hasQ8, 
+                       HardwareCapsChangeNotifier._iterators, HardwareCapsChangeNotifier._notificationPort, 
+                       HardwareCapsChangeNotifier._notifierMap, HardwareCapsChangeNotifier._numDevices, 
+                       VCChannel._model, VideoConferenceController._NATTraversal, 
+                       VideoConferenceController._SDForced, VideoConferenceController._allowsAudioRecv, 
+                       VideoConferenceController._allowsAudioSend, VideoConferenceController._allowsVideoRecv, 
+                       VideoConferenceController._allowsVideoSend, VideoConferenceController._audioQuality, 
+                       VideoConferenceController._autoDetectBandwidth, VideoConferenceController._bitrate, 
+                       VideoConferenceController._cameraDeviceID, VideoConferenceController._cameraGUID, 
+                       VideoConferenceController._cameraName, VideoConferenceController._connectionDataAndCallIDDictionary, 
+                       VideoConferenceController._defaultHeight, VideoConferenceController._defaultPayload, 
+                       VideoConferenceController._defaultWidth, VideoConferenceController._doNotDisturb, 
+                       VideoConferenceController._dynamicStore, VideoConferenceController._enableEchoCancellation, 
+                       VideoConferenceController._enableNewAudioProcessing, VideoConferenceController._enableOldAudioProcessing, 
+                       VideoConferenceController._framerate, VideoConferenceController._keyrate, 
+                       VideoConferenceController._lightingProfile, VideoConferenceController._localIPAddress, 
+                       VideoConferenceController._localSecIdentityRef, VideoConferenceController._maxBitrate, 
+                       VideoConferenceController._maxFramerate, VideoConferenceController._notificationGateway, 
+                       VideoConferenceController._oneWayOnly, VideoConferenceController._optimalImageSize, 
+                       VideoConferenceController._postFilter, VideoConferenceController._preFilter, 
+                       VideoConferenceController._remoteUserName, VideoConferenceController._statsDictionary, 
+                       VideoConferenceController._useEncryption, VideoConferenceController._userName ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ _VCAddParticipantCompleted, _VCAddParticipantStarted, _VCAudioIPAndPortInfo, 
                        _VCAudioNetworkIndicatorStatistic, _VCAuxiliaryInputUserID, 
@@ -75,6 +74,6 @@ exports:
                        _VCRemoteUserNameKey, _VCRouterInfoKey, _VCShouldFindExternalIP, 
                        _VCSupportARDAudioMux, _VCUpstreamKbits, _VCVideoIPAndPortInfo, 
                        _VCVideoNetworkIndicatorStatistic, _VideoConferenceInit, __CVScaleAndResizeBuffer ]
-    objc-classes:    [ _HardwareCapsChangeNotifier, _VCChannel, _VideoConferenceController, 
-                       _VideoConferenceMultiController ]
+    objc-classes:    [ HardwareCapsChangeNotifier, VCChannel, VideoConferenceController, 
+                       VideoConferenceMultiController ]
 ...

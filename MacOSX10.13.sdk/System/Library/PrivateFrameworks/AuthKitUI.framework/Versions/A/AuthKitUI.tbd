@@ -1,19 +1,18 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2F5DFC3E-67CF-390B-9EFC-2ECB9F6F4B44' ]
+uuids:           [ 'x86_64: 7DA93781-BD56-39F5-B7F6-5527C9577332' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AuthKitUI.framework/Versions/A/AuthKitUI
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
-    objc-classes:    [ _AKAppleIDAuthenticationInAppContext, _AKAppleIDAuthenticationInAssistantContext, 
-                       _AKAppleIDAuthenticationMacOSExtenstionContext, _AKAppleIDAuthenticationUISurrogateContext, 
-                       _AKAppleIDAuthenticationiCloudPrefPaneContext, _AKAppleIDServerUIDataHarvester, 
-                       _AKBaseSignInViewController, _AKGeneratedComplexCodeFormatter, 
-                       _AKInlineSignInViewController, _AKLegacyInlineSignInViewController, 
-                       _AKMaxLengthFormatter, _AKNoCodeReceivedController, _AKPinFieldView, 
-                       _AKShortInlineSignInViewController, _AKTapToSignInViewController, 
-                       _AKTrustedDeviceViewItem, _AKiCDPDeviceValidationFlowViewController, 
-                       _AKiCDPRecoveryKeyViewController, _AKiCDPValidationDevice, 
-                       _AKiCSCEntryView ]
+    objc-classes:    [ AKAppleIDAuthenticationInAppContext, AKAppleIDAuthenticationInAssistantContext, 
+                       AKAppleIDAuthenticationMacOSExtenstionContext, AKAppleIDAuthenticationUISurrogateContext, 
+                       AKAppleIDAuthenticationiCloudPrefPaneContext, AKAppleIDServerUIDataHarvester, 
+                       AKBaseSignInViewController, AKGeneratedComplexCodeFormatter, 
+                       AKInlineSignInViewController, AKLegacyInlineSignInViewController, 
+                       AKMaxLengthFormatter, AKNoCodeReceivedController, AKPinFieldView, 
+                       AKShortInlineSignInViewController, AKTapToSignInViewController, 
+                       AKTrustedDeviceViewItem, AKiCDPDeviceValidationFlowViewController, 
+                       AKiCDPRecoveryKeyViewController, AKiCDPValidationDevice, AKiCSCEntryView ]
 ...

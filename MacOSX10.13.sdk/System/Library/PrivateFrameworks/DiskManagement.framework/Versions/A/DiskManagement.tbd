@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: BD5D176C-418C-3DB9-921E-C009402C692E', 'x86_64: 0B17E79A-0BF6-3FD8-8AD0-A8498545030F' ]
+uuids:           [ 'i386: A113CF43-AF5A-3FEA-9CB4-40E33D596569', 'x86_64: BEA3294F-3BF2-3395-A5C2-B26BEF9508C5' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DiskManagement.framework/Versions/A/DiskManagement
 exports:         
@@ -18,6 +18,6 @@ exports:
                        _DMProtocolDiskImage, _DMProtocolFibreChannel, _DMProtocolFireWire, 
                        _DMProtocolSAS, _DMProtocolSATA, _DMProtocolSCSI, _DMProtocolUSB, 
                        _DMUnlocalizedTechnicalErrorString ]
-    objc-classes:    [ _DMAPFS, _DMAppleRAID, _DMCoreStorage, _DMDisk, _DMEraseDisk, 
-                       _DMFilesystem, _DMManager, _DMPartitionDisk, _DMRepairDisk ]
+    objc-classes:    [ DMAPFS, DMAppleRAID, DMCoreStorage, DMDisk, DMEraseDisk, DMFilesystem, 
+                       DMManager, DMPartitionDisk, DMRepairDisk ]
 ...

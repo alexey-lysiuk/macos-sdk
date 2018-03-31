@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4A07E88B-E016-3832-9096-4D10A5E05FD5' ]
+uuids:           [ 'x86_64: BCCF70E9-7456-35D6-AD13-C32EE158BA7F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AXMediaUtilities.framework/Versions/A/AXMediaUtilities
 objc-constraint: none
@@ -38,28 +38,27 @@ exports:
                        _kAXMBlurMeasureLow, _kAXMBlurMeasureMedium, _kAXMBlurMeasureNone, 
                        _kAXMBrightnessMeasureHigh, _kAXMBrightnessMeasureLow, _kAXMBrightnessMeasureNone, 
                        _kAXMblurMeasureHigh ]
-    objc-classes:    [ _AXMAVCaptureSessionNode, _AXMAVPlayerItemNode, _AXMAssetMetadataNode, 
-                       _AXMAudioSession, _AXMBarcodeNode, _AXMDataDetector, _AXMDeviceInfo, 
-                       _AXMDisplay, _AXMDisplayManager, _AXMEmailAddressSpeechFormatter, 
-                       _AXMEvaluationNode, _AXMFaceDetectorNode, _AXMFeatureTracker, 
-                       _AXMFeatureTrackingManager, _AXMHorizonDetectorNode, _AXMHumanDetectorNode, 
-                       _AXMImageCharacteristicsNode, _AXMImageNode, _AXMLanguage, 
-                       _AXMLexiconManager, _AXMModelDetectorNode, _AXMOCRNode, _AXMOutputComponent, 
-                       _AXMOutputManager, _AXMOutputRequest, _AXMOutputRequestDispatchOptions, 
-                       _AXMRectangleDetectorNode, _AXMSceneDetectorNode, _AXMScreenCaptureNode, 
-                       _AXMScreenGrabber, _AXMSettings, _AXMSoundComponent, _AXMSourceNode, 
-                       _AXMSpeechBlockFormatter, _AXMSpeechComponent, _AXMSpeechFormatter, 
-                       _AXMSpeechFormatterCache, _AXMSpellChecker, _AXMTag, _AXMTaggedText, 
-                       _AXMTagger, _AXMTask, _AXMTaskDispatcher, _AXMTextDetectorNode, 
-                       _AXMTextLayoutManager, _AXMTextProcessingOperation, _AXMTextProcessor, 
-                       _AXMTimer, _AXMTraitDetectorNode, _AXMVisionAnalysisOptions, 
-                       _AXMVisionColor, _AXMVisionColorMarker, _AXMVisionEngine, 
-                       _AXMVisionEngineCache, _AXMVisionEngineDiagnosticInfo, _AXMVisionEngineNode, 
-                       _AXMVisionEnginePipelineDiagnosticInfo, _AXMVisionFeature, 
-                       _AXMVisionFeatureAssetMetadata, _AXMVisionFeatureColorInfo, 
-                       _AXMVisionFeatureComparator, _AXMVisionFeatureFaceLandmarks, 
-                       _AXMVisionNode, _AXMVisionPipelineContext, _AXMVisionResult, 
-                       _AXMVoiceOverVisionEngine ]
-    objc-ivars:      [ _AXMVisionColor._blue, _AXMVisionColor._brightness, _AXMVisionColor._green, 
-                       _AXMVisionColor._hue, _AXMVisionColor._red, _AXMVisionColor._saturation ]
+    objc-classes:    [ AXMAVCaptureSessionNode, AXMAVPlayerItemNode, AXMAssetMetadataNode, 
+                       AXMAudioSession, AXMBarcodeNode, AXMDataDetector, AXMDeviceInfo, 
+                       AXMDisplay, AXMDisplayManager, AXMEmailAddressSpeechFormatter, 
+                       AXMEvaluationNode, AXMFaceDetectorNode, AXMFeatureTracker, 
+                       AXMFeatureTrackingManager, AXMHorizonDetectorNode, AXMHumanDetectorNode, 
+                       AXMImageCharacteristicsNode, AXMImageNode, AXMLanguage, AXMLexiconManager, 
+                       AXMModelDetectorNode, AXMOCRNode, AXMOutputComponent, AXMOutputManager, 
+                       AXMOutputRequest, AXMOutputRequestDispatchOptions, AXMRectangleDetectorNode, 
+                       AXMSceneDetectorNode, AXMScreenCaptureNode, AXMScreenGrabber, 
+                       AXMSettings, AXMSoundComponent, AXMSourceNode, AXMSpeechBlockFormatter, 
+                       AXMSpeechComponent, AXMSpeechFormatter, AXMSpeechFormatterCache, 
+                       AXMSpellChecker, AXMTag, AXMTaggedText, AXMTagger, AXMTask, 
+                       AXMTaskDispatcher, AXMTextDetectorNode, AXMTextLayoutManager, 
+                       AXMTextProcessingOperation, AXMTextProcessor, AXMTimer, AXMTraitDetectorNode, 
+                       AXMVisionAnalysisOptions, AXMVisionColor, AXMVisionColorMarker, 
+                       AXMVisionEngine, AXMVisionEngineCache, AXMVisionEngineDiagnosticInfo, 
+                       AXMVisionEngineNode, AXMVisionEnginePipelineDiagnosticInfo, 
+                       AXMVisionFeature, AXMVisionFeatureAssetMetadata, AXMVisionFeatureColorInfo, 
+                       AXMVisionFeatureComparator, AXMVisionFeatureFaceLandmarks, 
+                       AXMVisionNode, AXMVisionPipelineContext, AXMVisionResult, 
+                       AXMVoiceOverVisionEngine ]
+    objc-ivars:      [ AXMVisionColor._blue, AXMVisionColor._brightness, AXMVisionColor._green, 
+                       AXMVisionColor._hue, AXMVisionColor._red, AXMVisionColor._saturation ]
 ...

@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 54362CD6-89D0-3328-9915-EC2F74748529', 'x86_64: A1201529-3718-31C4-9D9E-BBD2A04B6751' ]
+uuids:           [ 'i386: A939EC99-FA21-39A7-972F-B6080294DCAA', 'x86_64: 087D601E-7813-3F9E-97EE-BC7081F520BD' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/SecurityFoundation.framework/Versions/A/SecurityFoundation
-current-version: 55185.30.4
+current-version: 55185.50.5
 exports:         
   - archs:           [ i386, x86_64 ]
     re-exports:      [ /System/Library/Frameworks/Security.framework/Versions/A/Security ]
@@ -36,21 +36,21 @@ exports:
                        _caSubjectInfoEmailAddressKey, _caSubjectInfoLocalityKey, 
                        _caSubjectInfoOrganizationKey, _caSubjectInfoOrganizationUnitKey, 
                        _caSubjectInfoStateKey, _certPrintName, _createCertCsr ]
-    objc-classes:    [ _CAAdditionalCertInfo, _CABasicConstraintsExtension, _CACertInfo, 
-                       _CAExtendedKeyUsageExtension, _CAIdentityName, _CAKeyPairAttributes, 
-                       _CAKeyUsageExtension, _CASubjectAltNameExtension, _SFAuthorization, 
-                       _SFCSR, _SFCertAuthorityInvitation, _SFCertAuthorityInvitationSigner, 
-                       _SFCertificateAuthority, _SFCertificateAuthorityClient, _SFCertificateData, 
-                       _SFMachPort, _SFSyncManager, _SecFoundationModVector, __SFAESKey, 
-                       __SFAESKeySpecifier, __SFAccessPolicy, __SFAsymmetricKeySpecifier, 
-                       __SFAuthenticatedCiphertext, __SFAuthenticatedEncryptionOperation, 
-                       __SFCiphertext, __SFECDHKeySource, __SFECDHOperation, __SFECKeyPair, 
-                       __SFECKeySpecifier, __SFECPublicKey, __SFEC_X962SigningOperation, 
-                       __SFIESCiphertext, __SFIESOperation, __SFIdentity, __SFKey, 
-                       __SFKeyPair, __SFKeySpecifier, __SFKeychainFetchResult, __SFKeychainIdentityFetchResult, 
-                       __SFKeychainKeyFetchResult, __SFKeychainManager, __SFMD5DigestOperation, 
-                       __SFPublicKey, __SFRSAKeySpecifier, __SFSHA1DigestOperation, 
-                       __SFSHA224DigestOperation, __SFSHA256DigestOperation, __SFSHA384DigestOperation, 
-                       __SFSHA512DigestOperation, __SFSignedData, __SFSymmetricKey, 
-                       __SFSymmetricKeySpecifier, __SFTripleDESKeySpecifier ]
+    objc-classes:    [ CAAdditionalCertInfo, CABasicConstraintsExtension, CACertInfo, 
+                       CAExtendedKeyUsageExtension, CAIdentityName, CAKeyPairAttributes, 
+                       CAKeyUsageExtension, CASubjectAltNameExtension, SFAuthorization, 
+                       SFCSR, SFCertAuthorityInvitation, SFCertAuthorityInvitationSigner, 
+                       SFCertificateAuthority, SFCertificateAuthorityClient, SFCertificateData, 
+                       SFMachPort, SFSyncManager, SecFoundationModVector, _SFAESKey, 
+                       _SFAESKeySpecifier, _SFAccessPolicy, _SFAsymmetricKeySpecifier, 
+                       _SFAuthenticatedCiphertext, _SFAuthenticatedEncryptionOperation, 
+                       _SFCiphertext, _SFECDHKeySource, _SFECDHOperation, _SFECKeyPair, 
+                       _SFECKeySpecifier, _SFECPublicKey, _SFEC_X962SigningOperation, 
+                       _SFIESCiphertext, _SFIESOperation, _SFIdentity, _SFKey, _SFKeyPair, 
+                       _SFKeySpecifier, _SFKeychainFetchResult, _SFKeychainIdentityFetchResult, 
+                       _SFKeychainKeyFetchResult, _SFKeychainManager, _SFMD5DigestOperation, 
+                       _SFPublicKey, _SFRSAKeySpecifier, _SFSHA1DigestOperation, 
+                       _SFSHA224DigestOperation, _SFSHA256DigestOperation, _SFSHA384DigestOperation, 
+                       _SFSHA512DigestOperation, _SFSignedData, _SFSymmetricKey, 
+                       _SFSymmetricKeySpecifier, _SFTripleDESKeySpecifier ]
 ...

@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 4D093308-93DA-3110-BC7C-15B6EF21FC45', 'x86_64: 9966298D-C45D-39FC-8CC4-58288F50D3F8' ]
+uuids:           [ 'i386: B2C5AF7C-97E2-3D79-B0A6-144C4D2A9CD8', 'x86_64: A5D41251-9F38-3AB9-9DE7-F77023FAAA44' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CorePhoneNumbers.framework/Versions/A/CorePhoneNumbers
 objc-constraint: none

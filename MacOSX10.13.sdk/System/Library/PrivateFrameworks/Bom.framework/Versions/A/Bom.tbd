@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 2355D53D-A903-3F33-BD5A-2DF3E48A2991', 'x86_64: ED2FFB9D-4DA4-322B-89C0-102D790649CD' ]
+uuids:           [ 'i386: BEA0D399-00C6-3EC4-A38D-17C523117DC6', 'x86_64: EAC5AB86-CC57-3ACD-8C71-B6F91A062D9B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Bom.framework/Versions/A/Bom
 current-version: 194

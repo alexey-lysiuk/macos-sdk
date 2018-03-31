@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C9374E53-4FF2-32A5-931D-445A879DD0B7' ]
+uuids:           [ 'x86_64: 13A6195C-8712-34AF-9001-3F22C243B146' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DataDetectorsNaturalLanguage.framework/Versions/A/DataDetectorsNaturalLanguage
 exports:         
@@ -34,12 +34,11 @@ exports:
                        _ipsos_usesDefaultClassificationTypeStartTimeKey, _kScoreThresholdConfirmation, 
                        _kScoreThresholdProposal, _kScoreThresholdProposalOrConfirmation, 
                        _kScoreThresholdRejection ]
-    objc-classes:    [ _IPCircularBufferArray, _IPDataDetectorsFeatureExtractor, 
-                       _IPEventClassificationType, _IPFeature, _IPFeatureData, _IPFeatureExtractor, 
-                       _IPFeatureKeyword, _IPFeatureMailScanner, _IPFeatureManager, 
-                       _IPFeatureScanner, _IPFeatureSentence, _IPFeatureSentenceFragment, 
-                       _IPFeatureTextMessageScanner, _IPKeywordFeatureExtractor, 
-                       _IPMessage, _IPMessageUnit, _IPMessageXMLParser, _IPPerson, 
-                       _IPQuoteParser, _IPRegexToolbox, _IPSentenceFeatureExtractor, 
-                       _IPTenseDetector, _IPTextMessageConversation ]
+    objc-classes:    [ IPCircularBufferArray, IPDataDetectorsFeatureExtractor, IPEventClassificationType, 
+                       IPFeature, IPFeatureData, IPFeatureExtractor, IPFeatureKeyword, 
+                       IPFeatureMailScanner, IPFeatureManager, IPFeatureScanner, 
+                       IPFeatureSentence, IPFeatureSentenceFragment, IPFeatureTextMessageScanner, 
+                       IPKeywordFeatureExtractor, IPMessage, IPMessageUnit, IPMessageXMLParser, 
+                       IPPerson, IPQuoteParser, IPRegexToolbox, IPSentenceFeatureExtractor, 
+                       IPTenseDetector, IPTextMessageConversation ]
 ...

@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E36A5F9E-7B97-39EB-8A57-3C56FDA8B904' ]
+uuids:           [ 'x86_64: BD61475E-3C46-3160-B47C-F269EAB3C195' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MessagesKit.framework/Versions/A/MessagesKit
 current-version: 800
@@ -42,9 +42,9 @@ exports:
                        _SOUnreadCountChatGUIDKey, _SOUnreadCountKey, _SOUnreadCountUpdatedNotification, 
                        _kBuddyPictureServiceID, _kGUIDToAccountIDMap, _kGUIDToOtherPersonMap, 
                        _kIncompleteFileTransfers, _kVisibleFileTransfers ]
-    objc-classes:    [ _BuddyPictureHelper, _SOAccountInfoHelper, _SOAccountStatusHelper, 
-                       _SOAlertsHelper, _SOBuddyHelper, _SOChatHelper, _SOFavoritesHelper, 
-                       _SOFileTransferHelper, _SOHelper, _SOHelperCenter, _SOHelperReceiver, 
-                       _SOMessageHelper, _SOUnreadCountHelper ]
-    objc-ivars:      [ _BuddyPictureHelper._connection ]
+    objc-classes:    [ BuddyPictureHelper, SOAccountInfoHelper, SOAccountStatusHelper, 
+                       SOAlertsHelper, SOBuddyHelper, SOChatHelper, SOFavoritesHelper, 
+                       SOFileTransferHelper, SOHelper, SOHelperCenter, SOHelperReceiver, 
+                       SOMessageHelper, SOUnreadCountHelper ]
+    objc-ivars:      [ BuddyPictureHelper._connection ]
 ...

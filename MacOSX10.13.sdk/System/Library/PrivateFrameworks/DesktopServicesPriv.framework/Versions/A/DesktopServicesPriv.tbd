@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: DC51DB71-E241-3715-8EEF-BA1166B551DD', 'x86_64: 8E068AF7-FB72-38E2-948E-6C13F359C69D' ]
+uuids:           [ 'i386: 740CDF58-92A8-31CA-A103-1128680D29DE', 'x86_64: 47C3FBF3-5E75-3821-B003-2A4DC3657D8D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DesktopServicesPriv.framework/Versions/A/DesktopServicesPriv
-current-version: 895.2.5
+current-version: 895.5.5
 exports:         
   - archs:           [ i386, x86_64 ]
     symbols:         [ _CloseCatalog, _CopyNodeRef, _CopyPropertyList, _CreateClientNodeRef, 
@@ -193,5 +193,5 @@ exports:
                        _kNodeInlineProgressUserDownloadKey, _kNodeQueryScopeArrayKey, 
                        _kNodeQueryStringKey, _kNodeQueryVersionStringKey, _kNodeUploadCompletedSizeKey, 
                        _kNodeUploadProgressPercentageDoneKey, _kNodeUploadProgressTotalSizeKey ]
-    objc-classes:    [ _FINode ]
+    objc-classes:    [ FINode ]
 ...

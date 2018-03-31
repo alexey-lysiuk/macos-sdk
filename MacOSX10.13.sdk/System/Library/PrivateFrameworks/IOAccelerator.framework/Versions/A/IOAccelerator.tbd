@@ -1,9 +1,8 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 4EFED596-8863-35F6-8EA3-CB11C5D9D157', 'x86_64: A47129CC-F386-3C31-AD66-C19A70615A50' ]
+uuids:           [ 'i386: DCD4FB12-85BA-3C00-B8E1-2D0B816D4C39', 'x86_64: B19A98C5-8194-3A22-9BE6-0D55F1D3F765' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IOAccelerator.framework/Versions/A/IOAccelerator
-objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]
     symbols:         [ _IOAccelCLContextCreate, _IOAccelCLContextFinish, _IOAccelCLContextFinishFenceEvent, 
@@ -30,20 +29,21 @@ exports:
                        _IOAccelContextSetDataBufferClassUsedBytes, _IOAccelContextSetExecutableName, 
                        _IOAccelContextSubmitDataBuffers, _IOAccelContextSubmitDataBuffersExt, 
                        _IOAccelContextSubmitDataBuffersExt2, _IOAccelContextTestResourceSysMem, 
-                       _IOAccelDeviceCreate, _IOAccelDeviceGetConfig, _IOAccelDeviceGetConfig64, 
-                       _IOAccelDeviceGetConnect, _IOAccelDeviceGetCurrentTraceFilter, 
-                       _IOAccelDeviceGetGlobalTraceObjectID, _IOAccelDeviceGetName, 
-                       _IOAccelDeviceGetNextGlobalTraceID, _IOAccelDeviceGetSharedMemorySize, 
-                       _IOAccelDeviceGetSurfaceInfo, _IOAccelDeviceGetTypeID, _IOAccelDeviceRelease, 
-                       _IOAccelDeviceSetFramebufferStereo, _IOAccelDeviceTestEvent, 
-                       _IOAccelDeviceTestEventFast, _IOAccelDeviceTraceEvent, _IOAccelDeviceTraceObjectLabel, 
-                       _IOAccelDisplayPipeCopyCapabilities, _IOAccelDisplayPipeCreate, 
-                       _IOAccelDisplayPipeCreateSetVBLNotifyPort, _IOAccelDisplayPipeGetDisplayModePipeScalerSetup, 
-                       _IOAccelDisplayPipeGetTypeID, _IOAccelDisplayPipeRelease, 
-                       _IOAccelDisplayPipeRequestVBLNotifyCallback, _IOAccelDisplayPipeSetTransactionNotifyPort, 
-                       _IOAccelDisplayPipeTransactionBegin, _IOAccelDisplayPipeTransactionEnd, 
-                       _IOAccelDisplayPipeTransactionSetCompletionHandler, _IOAccelDisplayPipeTransactionSetOptions, 
-                       _IOAccelDisplayPipeTransactionSetPipeColorMatrix, _IOAccelDisplayPipeTransactionSetPipeColorMatrixExtended, 
+                       _IOAccelDeviceCreate, _IOAccelDeviceCreateWithAPIProperty, 
+                       _IOAccelDeviceGetConfig, _IOAccelDeviceGetConfig64, _IOAccelDeviceGetConnect, 
+                       _IOAccelDeviceGetCurrentTraceFilter, _IOAccelDeviceGetGlobalTraceObjectID, 
+                       _IOAccelDeviceGetName, _IOAccelDeviceGetNextGlobalTraceID, 
+                       _IOAccelDeviceGetSharedMemorySize, _IOAccelDeviceGetSurfaceInfo, 
+                       _IOAccelDeviceGetTypeID, _IOAccelDeviceRelease, _IOAccelDeviceSetFramebufferStereo, 
+                       _IOAccelDeviceTestEvent, _IOAccelDeviceTestEventFast, _IOAccelDeviceTraceEvent, 
+                       _IOAccelDeviceTraceObjectLabel, _IOAccelDisplayPipeCopyCapabilities, 
+                       _IOAccelDisplayPipeCreate, _IOAccelDisplayPipeCreateSetVBLNotifyPort, 
+                       _IOAccelDisplayPipeGetDisplayModePipeScalerSetup, _IOAccelDisplayPipeGetTypeID, 
+                       _IOAccelDisplayPipeRelease, _IOAccelDisplayPipeRequestVBLNotifyCallback, 
+                       _IOAccelDisplayPipeSetTransactionNotifyPort, _IOAccelDisplayPipeTransactionBegin, 
+                       _IOAccelDisplayPipeTransactionEnd, _IOAccelDisplayPipeTransactionSetCompletionHandler, 
+                       _IOAccelDisplayPipeTransactionSetOptions, _IOAccelDisplayPipeTransactionSetPipeColorMatrix, 
+                       _IOAccelDisplayPipeTransactionSetPipeColorMatrixExtended, 
                        _IOAccelDisplayPipeTransactionSetPipePostCSCGamma, _IOAccelDisplayPipeTransactionSetPipePostGammaTable, 
                        _IOAccelDisplayPipeTransactionSetPipePreCSCLinearization, 
                        _IOAccelDisplayPipeTransactionSetPipePreGammaTable, _IOAccelDisplayPipeTransactionSetPipeScaler, 
@@ -93,5 +93,5 @@ exports:
                        _IOAccelVideoContextSetDataBufferClassUsedBytes, _IOAccelVideoContextSetExecutableName, 
                        _IOAccelVideoContextSubmitDataBuffers, _IOAccelVideoContextTestResourceSysMem, 
                        ___globalCommPage, ___ktrace_enabled, _ioAccelContextBlockFenceCallback, 
-                       _kIOAccelContextCount ]
+                       _kIOAccelContextCount, _main ]
 ...

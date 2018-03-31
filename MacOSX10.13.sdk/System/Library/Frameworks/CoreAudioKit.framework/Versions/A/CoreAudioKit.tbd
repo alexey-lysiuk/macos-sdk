@@ -1,48 +1,48 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: AA3F7E24-F173-3CCB-A4CB-E9D118174134', 'x86_64: 107CE036-D89A-365A-AD00-E37F261C20E3' ]
+uuids:           [ 'i386: 6A332052-D34D-34E7-9504-2A905C002654', 'x86_64: 1F8BBEB7-E177-35FA-A1B5-17DC1F4593F1' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreAudioKit.framework/Versions/A/CoreAudioKit
 exports:         
   - archs:           [ x86_64 ]
-    objc-classes:    [ _AUAudioUnitRemoteViewController, _AUAudioUnitViewConfiguration, 
-                       _AUAudioUnitViewService, _AUViewController, _CAInterDeviceAudioViewController, 
-                       _iDamDevice ]
-    objc-ivars:      [ _CAAppleAUCustomViewBase.auRendering, _CAAppleAUCustomViewBase.backgroundGradient, 
-                       _CAAppleAUCustomViewBase.blueGradient, _CAAppleAUCustomViewBase.cachedGenericViewData, 
-                       _CAAppleAUCustomViewBase.cachedPersistantViewData, _CAAppleAUCustomViewBase.detailsButton, 
-                       _CAAppleAUCustomViewBase.detailsDefaultsToOpen, _CAAppleAUCustomViewBase.detailsLabel, 
-                       _CAAppleAUCustomViewBase.detailsView, _CAAppleAUCustomViewBase.detailsViewHeight, 
-                       _CAAppleAUCustomViewBase.detailsViewVerticalHeightConstraint, 
-                       _CAAppleAUCustomViewBase.drawsBackground, _CAAppleAUCustomViewBase.graphView, 
-                       _CAAppleAUCustomViewBase.hasDetails, _CAAppleAUCustomViewBase.initialized, 
-                       _CAAppleAUCustomViewBase.lastRenderedSampleTime, _CAAppleAUCustomViewBase.mAU, 
-                       _CAAppleAUCustomViewBase.mAUEventListener, _CAAppleAUCustomViewBase.meterTimer, 
-                       _CAAppleAUCustomViewBase.needsRealtimeDrawing, _CAAppleAUCustomViewBase.realtimeDrawingInterval, 
-                       _CAAppleAUGraphView.activeWidth, _CAAppleAUGraphView.bottomMargin, 
-                       _CAAppleAUGraphView.graphBorderColor, _CAAppleAUGraphView.graphFillColor, 
-                       _CAAppleAUGraphView.graphFrame, _CAAppleAUGraphView.gridPointColor, 
-                       _CAAppleAUGraphView.gridPointHighlightColor, _CAAppleAUGraphView.gridPointSelectedColor, 
-                       _CAAppleAUGraphView.guideColor, _CAAppleAUGraphView.guideHighlightColor, 
-                       _CAAppleAUGraphView.labelGap, _CAAppleAUGraphView.leftMargin, 
-                       _CAAppleAUGraphView.rightMargin, _CAAppleAUGraphView.topMargin, 
-                       _CAAppleAUGraphView.widthAreaFillColor, _CAAppleAUGraphView.xAxisSettings, 
-                       _CAAppleAUGraphView.yAxisSettings, _CAAppleEQGraphView.activePointIndex, 
-                       _CAAppleEQGraphView.controlList, _CAAppleEQGraphView.currentPart, 
-                       _CAAppleEQGraphView.curveGradient, _CAAppleEQGraphView.curvePath, 
-                       _CAAppleEQGraphView.dataSource, _CAAppleEQGraphView.dragConstraint, 
-                       _CAAppleEQGraphView.dragOffset, _CAAppleEQGraphView.drawActivePointOnly, 
-                       _CAAppleEQGraphView.hideTooltip, _CAAppleEQGraphView.lastControlPoint, 
-                       _CAAppleEQGraphView.lastMousePoint, _CAAppleEQGraphView.paramCache, 
-                       _CAAppleEQGraphView.plotActiveRangeOnly, _CAAppleEQGraphView.slowDragOrigin, 
-                       _CAAppleEQGraphView.toolTipTimer, _CAAppleEQGraphView.wasSlowDragging ]
+    objc-classes:    [ AUAudioUnitRemoteViewController, AUAudioUnitViewConfiguration, 
+                       AUAudioUnitViewService, AUViewController, CAInterDeviceAudioViewController, 
+                       iDamDevice ]
+    objc-ivars:      [ CAAppleAUCustomViewBase.auRendering, CAAppleAUCustomViewBase.backgroundGradient, 
+                       CAAppleAUCustomViewBase.blueGradient, CAAppleAUCustomViewBase.cachedGenericViewData, 
+                       CAAppleAUCustomViewBase.cachedPersistantViewData, CAAppleAUCustomViewBase.detailsButton, 
+                       CAAppleAUCustomViewBase.detailsDefaultsToOpen, CAAppleAUCustomViewBase.detailsLabel, 
+                       CAAppleAUCustomViewBase.detailsView, CAAppleAUCustomViewBase.detailsViewHeight, 
+                       CAAppleAUCustomViewBase.detailsViewVerticalHeightConstraint, 
+                       CAAppleAUCustomViewBase.drawsBackground, CAAppleAUCustomViewBase.graphView, 
+                       CAAppleAUCustomViewBase.hasDetails, CAAppleAUCustomViewBase.initialized, 
+                       CAAppleAUCustomViewBase.lastRenderedSampleTime, CAAppleAUCustomViewBase.mAU, 
+                       CAAppleAUCustomViewBase.mAUEventListener, CAAppleAUCustomViewBase.meterTimer, 
+                       CAAppleAUCustomViewBase.needsRealtimeDrawing, CAAppleAUCustomViewBase.realtimeDrawingInterval, 
+                       CAAppleAUGraphView.activeWidth, CAAppleAUGraphView.bottomMargin, 
+                       CAAppleAUGraphView.graphBorderColor, CAAppleAUGraphView.graphFillColor, 
+                       CAAppleAUGraphView.graphFrame, CAAppleAUGraphView.gridPointColor, 
+                       CAAppleAUGraphView.gridPointHighlightColor, CAAppleAUGraphView.gridPointSelectedColor, 
+                       CAAppleAUGraphView.guideColor, CAAppleAUGraphView.guideHighlightColor, 
+                       CAAppleAUGraphView.labelGap, CAAppleAUGraphView.leftMargin, 
+                       CAAppleAUGraphView.rightMargin, CAAppleAUGraphView.topMargin, 
+                       CAAppleAUGraphView.widthAreaFillColor, CAAppleAUGraphView.xAxisSettings, 
+                       CAAppleAUGraphView.yAxisSettings, CAAppleEQGraphView.activePointIndex, 
+                       CAAppleEQGraphView.controlList, CAAppleEQGraphView.currentPart, 
+                       CAAppleEQGraphView.curveGradient, CAAppleEQGraphView.curvePath, 
+                       CAAppleEQGraphView.dataSource, CAAppleEQGraphView.dragConstraint, 
+                       CAAppleEQGraphView.dragOffset, CAAppleEQGraphView.drawActivePointOnly, 
+                       CAAppleEQGraphView.hideTooltip, CAAppleEQGraphView.lastControlPoint, 
+                       CAAppleEQGraphView.lastMousePoint, CAAppleEQGraphView.paramCache, 
+                       CAAppleEQGraphView.plotActiveRangeOnly, CAAppleEQGraphView.slowDragOrigin, 
+                       CAAppleEQGraphView.toolTipTimer, CAAppleEQGraphView.wasSlowDragging ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ _kEQViewGraphSizeChangedNotification, _kEQViewParameterChangedNotification, 
                        _kGraphViewBeginGestureNotification, _kGraphViewEndGestureNotification, 
                        _kTooltipTextBeganEditingNotification, _kTooltipTextValueChangedNotification, 
                        _logValueForNumber ]
-    objc-classes:    [ _AUGenericView, _AUGenericViewFactory, _AUPannerView, _CAAppleAUCustomViewBase, 
-                       _CAAppleAUGraphView, _CAAppleAU_ToolTipWindow, _CAAppleEQGraphView, 
-                       _CAAxisSettings, _CABTLEMIDIWindowController, _CAFilterControl, 
-                       _CANetworkBrowserWindowController, _CAToolTipEditTextField ]
+    objc-classes:    [ AUGenericView, AUGenericViewFactory, AUPannerView, CAAppleAUCustomViewBase, 
+                       CAAppleAUGraphView, CAAppleAU_ToolTipWindow, CAAppleEQGraphView, 
+                       CAAxisSettings, CABTLEMIDIWindowController, CAFilterControl, 
+                       CANetworkBrowserWindowController, CAToolTipEditTextField ]
 ...

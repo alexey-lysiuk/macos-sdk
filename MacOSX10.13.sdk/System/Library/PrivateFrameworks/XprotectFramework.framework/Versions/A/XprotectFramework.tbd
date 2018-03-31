@@ -1,18 +1,18 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 1457C57A-7180-3A03-AC8B-4CD3DC0B549B', 'x86_64: 214D1146-B590-3B80-8D0E-374972D42C74' ]
+uuids:           [ 'i386: 985BDB7C-96E8-35E2-992F-1BBEF6B448C4', 'x86_64: E733A814-5E6A-3DC9-9C7A-F2975C0E5ADE' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/XprotectFramework.framework/Versions/A/XprotectFramework
 exports:         
   - archs:           [ x86_64 ]
-    objc-ivars:      [ _XProtectAnalysis._feedback, _XProtectAnalysis._feedbackQueue, 
-                       _XProtectAnalysis._fileURL, _XProtectAnalysis._lsProperties, 
-                       _XProtectAnalysis._results, _XProtectAnalysis._xpc ]
+    objc-ivars:      [ XProtectAnalysis._feedback, XProtectAnalysis._feedbackQueue, 
+                       XProtectAnalysis._fileURL, XProtectAnalysis._lsProperties, 
+                       XProtectAnalysis._results, XProtectAnalysis._xpc ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ _XProtectAnalysisError, _XProtectCaspianContext, _XProtectDetectionType, 
                        _XProtectMalwareType, _XProtectShouldTranslocateDMG, _XProtectSignatureName, 
                        __analysisClientInterface, __analysisServiceInterface, _fileHasDownloadQuarantine, 
                        _fileIsUnixExecutable, _hasLibraryValidation, _itemConformsToUTI, 
                        _xprotectGetLog ]
-    objc-classes:    [ _XProtectAnalysis ]
+    objc-classes:    [ XProtectAnalysis ]
 ...

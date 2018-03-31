@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9EECE55D-B16F-313E-A953-1B0C6467322C' ]
+uuids:           [ 'x86_64: 0B13D2C3-3D02-332B-8E6D-7FDE76463760' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/BluetoothAudio.framework/Versions/A/BluetoothAudio
 objc-constraint: none
@@ -21,6 +21,6 @@ exports:
                        _kBluetoothEndpointDescriptionProperty_ModelID, _kBluetoothEndpointDescriptionProperty_Name, 
                        _kBluetoothEndpointDescriptionProperty_Nearby, _kBluetoothEndpointDescriptionProperty_Started, 
                        _kBluetoothEndpointDescriptionProperty_SupportedFormats ]
-    objc-classes:    [ _BluetoothBridge ]
-    objc-ivars:      [ _BluetoothBridge._connectedSemaphore, _BluetoothBridge._disconnectedSemaphore ]
+    objc-classes:    [ BluetoothBridge ]
+    objc-ivars:      [ BluetoothBridge._connectedSemaphore, BluetoothBridge._disconnectedSemaphore ]
 ...

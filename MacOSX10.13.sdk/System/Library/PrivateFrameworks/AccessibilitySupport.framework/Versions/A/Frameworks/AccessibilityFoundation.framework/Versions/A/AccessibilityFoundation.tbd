@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4B72C91D-18DE-3351-BFE7-F7F93F0FD132' ]
+uuids:           [ 'x86_64: 32EC8F72-7EF5-318E-9E8E-8E3C7FA73DB5' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AccessibilitySupport.framework/Versions/A/Frameworks/AccessibilityFoundation.framework/Versions/A/AccessibilityFoundation
 current-version: 2
@@ -70,20 +70,20 @@ exports:
                        __AXFApplicationComAppleWebKitPrefix, __AXFApplicationViewBridgeServiceKey, 
                        __AXFSelectorCopyDescription, __AXFStringPropertyValueFromPID, 
                        __runningApplications ]
-    objc-classes:    [ _AXFApplicationManager, _AXFComposedCharacter, _AXFCountedQueue, 
-                       _AXFDispatchGroup, _AXFDispatchQueue, _AXFDispatchSemaphore, 
-                       _AXFDispatchWorkItem, _AXFMarshal, _AXFMouse, _AXFMouseTest, 
-                       _AXFObserver, _AXFObserverManager, _AXFObserverManagerIPC, 
-                       _AXFRemoteSearchManager, _AXFRunLoopThread, _AXFScreenCaptureManager, 
-                       _AXFScreenManager, _AXFScreenSourceTest, _AXFScreenTest, _AXFTargetSelector, 
-                       _AXFTextPosition, _AXFTextRange, _AXFUIElement, __AXFAction, 
-                       __AXFAttributedStringProxy, __AXFComposedCharacterEnumerator, 
-                       __AXFFaultingArray, __AXFFaultingElementArray, __AXFInvalidTextPosition, 
-                       __AXFMouseHardware, __AXFObserverGroupIPC, __AXFObserverGroupIPCFiringCopy, 
-                       __AXFObserverIPC, __AXFScreenHardware, __AXFScreenSourceHardware, 
-                       __AXFSelectorMap, __AXFTextPositionIndexBased, __AXFTextPositionMarkerBased, 
-                       __AXFUIElementArchiver, __AXFUIElementDataProvider, __AXFUIElementDataProviderApplication, 
-                       __AXFUIElementDataProviderIPC, __AXFUIElementDataProviderInvalid, 
-                       __AXFUIElementDataProviderSystemWide, __AXFUIElementDataProviderTest ]
-    objc-ivars:      [ __AXFFaultingArray._elements ]
+    objc-classes:    [ AXFApplicationManager, AXFComposedCharacter, AXFCountedQueue, 
+                       AXFDispatchGroup, AXFDispatchQueue, AXFDispatchSemaphore, 
+                       AXFDispatchWorkItem, AXFMarshal, AXFMouse, AXFMouseTest, AXFObserver, 
+                       AXFObserverManager, AXFObserverManagerIPC, AXFRemoteSearchManager, 
+                       AXFRunLoopThread, AXFScreenCaptureManager, AXFScreenManager, 
+                       AXFScreenSourceTest, AXFScreenTest, AXFTargetSelector, AXFTextPosition, 
+                       AXFTextRange, AXFUIElement, _AXFAction, _AXFAttributedStringProxy, 
+                       _AXFComposedCharacterEnumerator, _AXFFaultingArray, _AXFFaultingElementArray, 
+                       _AXFInvalidTextPosition, _AXFMouseHardware, _AXFObserverGroupIPC, 
+                       _AXFObserverGroupIPCFiringCopy, _AXFObserverIPC, _AXFScreenHardware, 
+                       _AXFScreenSourceHardware, _AXFSelectorMap, _AXFTextPositionIndexBased, 
+                       _AXFTextPositionMarkerBased, _AXFUIElementArchiver, _AXFUIElementDataProvider, 
+                       _AXFUIElementDataProviderApplication, _AXFUIElementDataProviderIPC, 
+                       _AXFUIElementDataProviderInvalid, _AXFUIElementDataProviderSystemWide, 
+                       _AXFUIElementDataProviderTest ]
+    objc-ivars:      [ _AXFFaultingArray._elements ]
 ...

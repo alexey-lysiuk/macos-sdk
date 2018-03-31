@@ -1,4 +1,4 @@
-.TH "MPSImage.h" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "MPSImage.h" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -30,6 +30,13 @@ MPSImage.h
 .RI "class \fBMPSTemporaryImage\fP"
 .br
 .in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef NSArray< \fBMPSImage\fP * > \fBMPSImageBatch\fP"
+.br
+.in -1c
 .SS "Enumerations"
 
 .in +1c
@@ -43,6 +50,12 @@ MPSImage.h
 .SS "Functions"
 
 .in +1c
+.ti -1c
+.RI "NSUInteger \fBMPSImageBatchIncrementReadCount\fP (\fBMPSImageBatch\fP *__nonnull batch, NSInteger amount) ''"
+.br
+.ti -1c
+.RI "NSUInteger void \fBMPSImageBatchSynchronize\fP (\fBMPSImageBatch\fP *__nonnull batch, __nonnull id< MTLCommandBuffer > cmdBuf) ''"
+.br
 .ti -1c
 .RI "enum \fBMPSPurgeableState\fP \fBNS_ENUM_AVAILABLE\fP (10_11, 8_0) MPSPurgeableState"
 .br
@@ -78,6 +91,10 @@ MPSImage.h
 .RI "\fBMPSDataLayoutFeatureChannelsxHeightxWidth\fP"
 .br
 .in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef NSArray<\fBMPSImage\fP*> \fBMPSImageBatch\fP"
+
 .SH "Enumeration Type Documentation"
 .PP 
 .SS "enum \fBMPSDataLayout\fP"
@@ -86,6 +103,26 @@ MPSImage.h
 
 .SH "Function Documentation"
 .PP 
+.SS "NSUInteger MPSImageBatchIncrementReadCount (\fBMPSImageBatch\fP *__nonnull batch, NSInteger amount)"
+raise or lower the readcount of a batch by a set amount  In some circumstances, a \fBMPSImage\fP may appear in a MPSImageBatch multiple times\&. This is particularly common when the \fBMPSImage\fP serves as an accumulator across the entire batch, such as when accumulating gradients for convolution weight update or batch statistics for batch normalization\&. \fBA\fP naive function would then end up incrementing the state multiple times, probably leading to an error\&.
+.PP
+\fBMPSImageBatchIncrementReadCount()\fP will efficiently increment the readCounts of each object in the batch only once, avoiding this problem\&. Non-temporary images and images with readCount already 0 will be ignored\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbatch\fP The MPSImageBatch to increment 
+.br
+\fIamount\fP The value to add to the read count for each unique image in the batch 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The number of different images in the batch 
+.RE
+.PP
+
+.SS "NSUInteger void MPSImageBatchSynchronize (\fBMPSImageBatch\fP *__nonnull batch, __nonnull id< MTLCommandBuffer > cmdBuf)"
+Call [MTLBlitEncoder synchronizeResource:] on unique resources 
 .SS "enum \fBMPSPurgeableState\fP NS_ENUM_AVAILABLE (10_11, 8_0)"
 
 .SS "enum \fBMPSDataLayout\fP NS_ENUM_AVAILABLE (10_13, 11_0)"

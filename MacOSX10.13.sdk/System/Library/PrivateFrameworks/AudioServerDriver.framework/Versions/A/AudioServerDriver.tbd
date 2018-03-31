@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 54130E76-25A7-311F-BF92-D33F4B66EA37' ]
+uuids:           [ 'x86_64: 2550BF8D-8ADB-3D33-9E72-2DFB7512CF1A' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AudioServerDriver.framework/Versions/A/AudioServerDriver
 objc-constraint: none
@@ -8,16 +8,16 @@ exports:
   - archs:           [ x86_64 ]
     symbols:         [ _ASDStereoPanControlCenter, _ASDStereoPanControlFullLeft, 
                        _ASDStereoPanControlFullRight ]
-    objc-classes:    [ _ASDAUStripInfo, _ASDAudioDevice, _ASDAudioDeviceDSPConfiguration, 
-                       _ASDAudioDeviceDSPDatabase, _ASDBooleanControl, _ASDBox, _ASDClockDevice, 
-                       _ASDControl, _ASDCustomProperty, _ASDDSPAudioDevice, _ASDDSPConfiguration, 
-                       _ASDDSPDevice, _ASDDSPGraph, _ASDDSPGraphBox, _ASDDSPGraphInfo, 
-                       _ASDDSPGraphInterpreter, _ASDDSPGraphUtilities, _ASDDSPItemInfo, 
-                       _ASDDSPStream, _ASDDevice, _ASDLevelControl, _ASDManagedRingBuffer, 
-                       _ASDNullStream, _ASDObject, _ASDPlugin, _ASDPluginDSPDatabase, 
-                       _ASDProperty, _ASDPropertyAddress, _ASDPropertyStripInfo, 
-                       _ASDRingBuffer, _ASDRingBufferInputStream, _ASDRingBufferOutputStream, 
-                       _ASDRingBufferStreamPair, _ASDSRCAudioDevice, _ASDSRCStream, 
-                       _ASDSelectorControl, _ASDSelectorValue, _ASDStereoPanControl, 
-                       _ASDStream, _ASDStreamDSPConfiguration, _ASDStreamFormat ]
+    objc-classes:    [ ASDAUStripInfo, ASDAudioDevice, ASDAudioDeviceDSPConfiguration, 
+                       ASDAudioDeviceDSPDatabase, ASDBooleanControl, ASDBox, ASDClockDevice, 
+                       ASDControl, ASDCustomProperty, ASDDSPAudioDevice, ASDDSPConfiguration, 
+                       ASDDSPDevice, ASDDSPGraph, ASDDSPGraphBox, ASDDSPGraphInfo, 
+                       ASDDSPGraphInterpreter, ASDDSPGraphLoader, ASDDSPGraphUtilities, 
+                       ASDDSPItemInfo, ASDDSPStream, ASDDevice, ASDLevelControl, 
+                       ASDManagedRingBuffer, ASDNullStream, ASDObject, ASDPlugin, 
+                       ASDPluginDSPDatabase, ASDProperty, ASDPropertyAddress, ASDPropertyStripInfo, 
+                       ASDRingBuffer, ASDRingBufferInputStream, ASDRingBufferOutputStream, 
+                       ASDRingBufferStreamPair, ASDSRCAudioDevice, ASDSRCStream, 
+                       ASDSelectorControl, ASDSelectorValue, ASDStereoPanControl, 
+                       ASDStream, ASDStreamDSPConfiguration, ASDStreamFormat ]
 ...

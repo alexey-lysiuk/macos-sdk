@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D103215B-A88A-3EA0-BD7F-D4E2D4E653B3' ]
+uuids:           [ 'x86_64: A362E976-4F61-315C-99ED-D893AA62B34B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/BiometricSupport.framework/Versions/A/BiometricSupport
 objc-constraint: none
@@ -10,16 +10,16 @@ exports:
                        _RIESDelete, _RIESInit, _RIESLoad, _RIESSave, _RIESUpdate, 
                        _SaveRawImageAsPGM, ___osLog, ___osLogTrace, _absoluteToMiliseconds, 
                        _absoluteToNanoseconds, _dictionaryGetBool, _dictionaryGetDouble, 
-                       _dictionaryGetInteger, _getSensorPatchVersion, _isFaceIDPlatform, 
-                       _isTouchIDPlatform, _kBioOpParamEnrollType, _kBioOpParamFdetOptions, 
-                       _kBioOpParamMatchFilter, _kBioOpParamMatchOptions, _kBiometricKitIdentityAttributeKey, 
-                       _kBiometricKitIdentityCreationTimeKey, _kBiometricKitIdentityEntityKey, 
-                       _kBiometricKitIdentityMatchCountKey, _kBiometricKitIdentityNameKey, 
-                       _kBiometricKitIdentityTypeKey, _kBiometricKitIdentityUUIDKey, 
-                       _kBiometricKitIdentityUpdateCountKey, _kBiometricKitIdentityUserIDKey, 
-                       _localizeAbsolute, _nanosecondsToAbsolute, _rotateBitmap90Data16, 
-                       _rotateBitmap90Data8, _roundMostSignificant ]
-    objc-classes:    [ _BKCatacomb, _BKLocalization, _BiometricKitIdentity, _BiometricKitXPCExportedClientObject, 
-                       _BiometricKitXPCExportedObject, _BiometricKitXPCServer, _BiometricOperation, 
-                       _BiometricSupportUserNotification ]
+                       _dictionaryGetInteger, _getSensorPatchVersion, _isEphemeralMultiUser, 
+                       _isFaceIDPlatform, _isTouchIDPlatform, _kBioOpParamEnrollType, 
+                       _kBioOpParamFdetOptions, _kBioOpParamMatchFilter, _kBioOpParamMatchOptions, 
+                       _kBiometricKitIdentityAttributeKey, _kBiometricKitIdentityCreationTimeKey, 
+                       _kBiometricKitIdentityEntityKey, _kBiometricKitIdentityMatchCountKey, 
+                       _kBiometricKitIdentityNameKey, _kBiometricKitIdentityTypeKey, 
+                       _kBiometricKitIdentityUUIDKey, _kBiometricKitIdentityUpdateCountKey, 
+                       _kBiometricKitIdentityUserIDKey, _localizeAbsolute, _nanosecondsToAbsolute, 
+                       _rotateBitmap90Data16, _rotateBitmap90Data8, _roundMostSignificant ]
+    objc-classes:    [ BKCatacomb, BKLocalization, BiometricKitIdentity, BiometricKitXPCExportedClientObject, 
+                       BiometricKitXPCExportedObject, BiometricKitXPCServer, BiometricOperation, 
+                       BiometricSupportUserNotification ]
 ...

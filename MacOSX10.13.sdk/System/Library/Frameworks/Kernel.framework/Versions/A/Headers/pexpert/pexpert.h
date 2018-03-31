@@ -43,6 +43,8 @@ __BEGIN_DECLS
 typedef void *cpu_id_t;
 
 
+extern void lpss_uart_enable (boolean_t on_off);
+
 void PE_enter_debugger(
 	const char *cause);
 

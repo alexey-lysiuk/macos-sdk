@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 746EDA3B-D3F7-3932-BEA2-AC4DF35ACA85' ]
+uuids:           [ 'x86_64: 24F71E7C-B347-32B5-BF3B-29362617207B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Uninstall.framework/Versions/A/Uninstall
 current-version: 211
@@ -21,12 +21,12 @@ exports:
                        _uninstall_status_update_status_subsystem, _uninstall_status_update_uninstall_cant_be_aborted, 
                        _uninstall_status_update_uninstall_did_finish, _uninstall_status_update_uninstall_did_start, 
                        _uninstall_status_update_uninstall_failed, _uninstall_status_update_uninstall_progress ]
-    objc-classes:    [ _UNDaemonConnection, _UNError, _UNUninstallRequest ]
-    objc-ivars:      [ _UNDaemonConnection.inShutdown, _UNDaemonConnection.inSource, 
-                       _UNDaemonConnection.outSource, _UNDaemonConnection.requestLookup, 
-                       _UNDaemonConnection.serverPort, _UNDaemonConnection.servicePort, 
-                       _UNDaemonConnection.statusPort, _UNUninstallRequest._bundlePaths, 
-                       _UNUninstallRequest._connection, _UNUninstallRequest._forceApplicationQuit, 
-                       _UNUninstallRequest._isClient, _UNUninstallRequest._remoteBootstrap, 
-                       _UNUninstallRequest._requestNumber, _UNUninstallRequest._requestingClient ]
+    objc-classes:    [ UNDaemonConnection, UNError, UNUninstallRequest ]
+    objc-ivars:      [ UNDaemonConnection.inShutdown, UNDaemonConnection.inSource, 
+                       UNDaemonConnection.outSource, UNDaemonConnection.requestLookup, 
+                       UNDaemonConnection.serverPort, UNDaemonConnection.servicePort, 
+                       UNDaemonConnection.statusPort, UNUninstallRequest._bundlePaths, 
+                       UNUninstallRequest._connection, UNUninstallRequest._forceApplicationQuit, 
+                       UNUninstallRequest._isClient, UNUninstallRequest._remoteBootstrap, 
+                       UNUninstallRequest._requestNumber, UNUninstallRequest._requestingClient ]
 ...

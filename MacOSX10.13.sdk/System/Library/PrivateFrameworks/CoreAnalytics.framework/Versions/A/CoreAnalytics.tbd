@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2D7C7B8C-C9C8-3F32-B43E-E792CD88A77D' ]
+uuids:           [ 'x86_64: A508C74C-114D-3156-AC87-8F12A2C023C9' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreAnalytics.framework/Versions/A/CoreAnalytics
 objc-constraint: none
@@ -9,9 +9,9 @@ exports:
     symbols:         [ _AnalyticsIsEventUsed, _AnalyticsSendEvent, _AnalyticsSetCallbackForQueriedEvent, 
                        _AnalyticsSetCallbackForQueriedEventWithQueue, __Z19analytics_tool_dumpNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
                        __Z19analytics_tool_saveNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
-                       __Z21analytics_tool_commitv, __Z26analytics_tool_config_dumpv, 
-                       __Z26analytics_tool_config_infov, __Z26analytics_tool_config_listv, 
-                       __Z26analytics_tool_config_loadRKNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEEE, 
+                       __Z21analytics_tool_commitv, __Z23analytics_tool_rolloverv, 
+                       __Z26analytics_tool_config_dumpv, __Z26analytics_tool_config_infov, 
+                       __Z26analytics_tool_config_listv, __Z26analytics_tool_config_loadRKNSt3__16vectorINS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEENS4_IS6_EEEE, 
                        __Z27analytics_tool_send_barrierv, __Z28analytics_tool_config_reloadv, 
                        __Z33analytics_tool_config_set_taskingNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
                        __Z33analytics_tool_get_queried_eventsv, _analytics_cancel_queried_awd_metric, 
@@ -19,5 +19,5 @@ exports:
                        _analytics_send_awd_trigger, _analytics_send_event, _analytics_send_queried_awd_metric, 
                        _analytics_send_queried_awd_trigger, _analytics_set_awd_query_callback, 
                        _analytics_set_callback_for_queried_event, _analytics_set_callback_for_queried_event_with_queue ]
-    objc-classes:    [ _AnalyticsConfigurationObserver, _AnalyticsEventObserver ]
+    objc-classes:    [ AnalyticsConfigurationObserver, AnalyticsEventObserver ]
 ...

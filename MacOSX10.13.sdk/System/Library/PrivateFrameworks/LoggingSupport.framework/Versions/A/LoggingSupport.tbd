@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 36773F50-4CB4-3929-B252-9247F04AB1C1', 'x86_64: C18A123C-4A83-30D7-95E9-ECE593B4FDF9' ]
+uuids:           [ 'i386: 4E8A7363-DBB0-3450-8D97-DCB2F63D077F', 'x86_64: 79F4DE10-A646-3AA4-A6FE-79A637EFA7E1' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/LoggingSupport.framework/Versions/A/LoggingSupport
-current-version: 829.30.14
+current-version: 829.50.17
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _OSLogArchiveRepairUUIDDatabase, _OSLogClearOptions, _OSLogConstructArchive, 
@@ -14,27 +14,28 @@ exports:
                        _OSLogInstallProfilePayload, _OSLogLogdAdminConnection, _OSLogRemoveProfilePayload, 
                        _OSLogSetOptions, _OSLogStateCaptureForAllPIDs, _OSLogValidateProfilePayload, 
                        __OSLogErrorInternalCode, __OSLogErrorInternalError, __OSLogErrorPOSIXErrno, 
-                       _kOSLogPersistenceKeyActivityCreationCount, _kOSLogPersistenceKeyLogMessageCount, 
-                       _kOSLogPersistenceKeyLogPrivateSize, _kOSLogPersistenceKeyLogPublicSize, 
-                       _kOSLogPersistenceKeyPath, _kOSLogPersistenceKeyPerProcessStatistics, 
-                       _kOSLogPersistenceKeyPerSenderStatistics, _kOSLogPersistenceKeyTotalProcessPrivateSize, 
-                       _kOSLogPersistenceKeyTotalProcessPublicSize, _kOSLogPersistenceKeyTraceMessageCount, 
-                       _kOSLogPersistenceKeyTracePublicSize, _kOSLogPersistenceKeyUUID, 
-                       _kOSLogPersistenceKeyUserActionCount, _logarchive_key_base_size, 
-                       _logarchive_key_base_time, _logarchive_key_eventlog, _logarchive_key_fe_size, 
-                       _logarchive_key_fe_time, _logarchive_key_hv_size, _logarchive_key_hv_time, 
-                       _logarchive_key_livedata, _logarchive_key_path, _logarchive_key_ttl_size, 
-                       _logarchive_key_ttl_time, _os_activity_stream_persistence ]
-    objc-classes:    [ _OSActivityCreateEvent, _OSActivityEvent, _OSActivityEventMessage, 
-                       _OSActivityInstrumentation, _OSActivityLogMessageEvent, _OSActivitySignpostEvent, 
-                       _OSActivityStatedumpEvent, _OSActivityStream, _OSActivityTimesyncEvent, 
-                       _OSActivityTraceMessageEvent, _OSActivityTransitionEvent, 
-                       _OSActivityUserActionEvent, _OSLogEventProxy, _OSLogEventSource, 
-                       _OSLogEventStore, _OSLogEventStream, _OSLogEventStreamPosition, 
-                       _OSLogPersistence, _OSLogPreferencesCategory, _OSLogPreferencesManager, 
-                       _OSLogPreferencesProcess, _OSLogPreferencesSubsystem, _OSLogTermDumper, 
-                       __OSLogVersioning ]
-    objc-ivars:      [ _OSLogTermDumper._ob ]
+                       __os_log_set_nscf_formatter, _kOSLogPersistenceKeyActivityCreationCount, 
+                       _kOSLogPersistenceKeyLogMessageCount, _kOSLogPersistenceKeyLogPrivateSize, 
+                       _kOSLogPersistenceKeyLogPublicSize, _kOSLogPersistenceKeyPath, 
+                       _kOSLogPersistenceKeyPerProcessStatistics, _kOSLogPersistenceKeyPerSenderStatistics, 
+                       _kOSLogPersistenceKeyTotalProcessPrivateSize, _kOSLogPersistenceKeyTotalProcessPublicSize, 
+                       _kOSLogPersistenceKeyTraceMessageCount, _kOSLogPersistenceKeyTracePublicSize, 
+                       _kOSLogPersistenceKeyUUID, _kOSLogPersistenceKeyUserActionCount, 
+                       _logarchive_key_base_size, _logarchive_key_base_time, _logarchive_key_eventlog, 
+                       _logarchive_key_fe_size, _logarchive_key_fe_time, _logarchive_key_hv_size, 
+                       _logarchive_key_hv_time, _logarchive_key_livedata, _logarchive_key_path, 
+                       _logarchive_key_ttl_size, _logarchive_key_ttl_time, _os_activity_stream_persistence, 
+                       _os_log_fmt_compose, _os_log_fmt_convert_trace, _os_log_fmt_extract_pubdata, 
+                       _os_log_fmt_get_plugin ]
+    objc-classes:    [ OSActivityCreateEvent, OSActivityEvent, OSActivityEventMessage, 
+                       OSActivityInstrumentation, OSActivityLogMessageEvent, OSActivitySignpostEvent, 
+                       OSActivityStatedumpEvent, OSActivityStream, OSActivityTimesyncEvent, 
+                       OSActivityTraceMessageEvent, OSActivityTransitionEvent, OSActivityUserActionEvent, 
+                       OSLogEventProxy, OSLogEventSource, OSLogEventStore, OSLogEventStream, 
+                       OSLogEventStreamPosition, OSLogPersistence, OSLogPreferencesCategory, 
+                       OSLogPreferencesManager, OSLogPreferencesProcess, OSLogPreferencesSubsystem, 
+                       OSLogTermDumper, _OSLogVersioning ]
+    objc-ivars:      [ OSLogEventProxy._eint, OSLogTermDumper._ob ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ _OSLogLookupPathWithUUID, __catalog_create, __catalog_create_with_chunk, 
                        __catalog_destroy, __catalog_for_each_uuid, __catalog_lookup_procinfo_by_procid, 

@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 7799AE3F-E4D4-36A7-B774-E8413EB25F6C', 'x86_64: 938A96C7-67FB-3185-B997-51B1AD6C1AFE' ]
+uuids:           [ 'i386: CAA56620-55E7-38AC-95D6-C5AC7415D67F', 'x86_64: 969EEA8E-6768-32D3-89F2-6629496E8DEA' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/VideoProcessing.framework/Versions/A/VideoProcessing
 exports:         
@@ -54,11 +54,10 @@ exports:
                        _MediaAnalysisTypesUpdatedSince, _MediaAnalysisUtteranceResultsKey, 
                        _MediaAnalysisVersion, _MediaAnalysisVersionKey, _MediaAnalysisVoiceResultsKey, 
                        _VCPContentTypeKey ]
-    objc-classes:    [ _VCPContentAnalysis, _VCPFingerprint, _VCPImageConverter, 
-                       _VCPImageDescriptor, _VCPImageManager, _VCPInterAssetAnalyzer, 
-                       _VCPLogManager, _VCPMediaAnalysisService, _VCPMediaAnalyzer, 
-                       _VCPMovieAnalyzer, _VCPPhotoAnalyzer, _VCPProtoAssetAnalysis, 
-                       _VCPRealTimeAnalysisService, _VCPSceneTaxonomy ]
+    objc-classes:    [ VCPContentAnalysis, VCPFingerprint, VCPImageConverter, VCPImageDescriptor, 
+                       VCPImageManager, VCPInterAssetAnalyzer, VCPLogManager, VCPMediaAnalysisService, 
+                       VCPMediaAnalyzer, VCPMovieAnalyzer, VCPPhotoAnalyzer, VCPProtoAssetAnalysis, 
+                       VCPRealTimeAnalysisService, VCPSceneTaxonomy ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ _VCPCodecGetProperty, _VCPCompressionSessionCompleteFrames, 
                        _VCPCompressionSessionCopyProperty, _VCPCompressionSessionCopySupportedPropertyDictionary, 

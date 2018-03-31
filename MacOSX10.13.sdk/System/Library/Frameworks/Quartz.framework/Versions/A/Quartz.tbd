@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: AFDC52CF-3DDF-3100-9D60-9DEFAE551CD7', 'x86_64: 3F3BE91F-A032-3E92-ACEA-E2DFEC999E93' ]
+uuids:           [ 'i386: 739C09DB-942D-3C12-9591-954CACB785F3', 'x86_64: DCEB0FCC-2C32-3D02-8752-7B6FA009AB85' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Quartz.framework/Versions/A/Quartz
 objc-constraint: none

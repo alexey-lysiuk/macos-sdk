@@ -1,6 +1,6 @@
 .\" see 'man mdoc' for syntax examples
 .\" this should go in /usr/share/man/man1/
-.Dd May 26, 2017
+.Dd January 26, 2018
 .Dt profiles 1
 .Os macOS
 .Sh NAME
@@ -15,6 +15,8 @@
 is used to install, remove, list, or otherwise handle various profile types on macOS.
 .Pp
 Note that the command parameters have changed starting in version 5.0 of this tool, but the older options are still valid and can also be used.  Use the man profiles.old(1) page to view the old parameters.  These older style options will not be updated to provide support for some of the newer profiles tool features, so it's suggested you move to use the new parameter structure.
+.Pp
+To prevent unintended installations, profiles containing certain payloads (specifically com.apple.Safari) will require a manual verification even when running as root.
 .Pp
 .Sh VERBS
 Each command verb is listed with its description and optional individual arguments.   Most commands use the -type option to determine which kind of profile should be used in the command.  For those commands, if no type is specified, the default will be to use the configuration profile type.
@@ -69,7 +71,7 @@ Remove profiles.  Startup profiles can only be removed before they are fully ins
 .It Sy status
 .Sy -type Ar profile_type
 .br
-Display status of the profiles installed on this client.
+Display status of the profiles installed on this client.   When displaying the enrollment type status, if the MDM enrollment was user approved, the status output will show "(User Approved)".
 .Pp
 .\"             -- sync --
 .It Sy sync
@@ -113,7 +115,7 @@ A canonical form UUID to specify a profile's PayloadUUID, such as 5A15247B-899C-
 .It Fl identifier Ar profile_identifier
 A profile identifier (PayloadIdentifier) to specify a profile.
 .It Fl output Ar output_path
-The output path location .   The output_path argument must be specified to use this option, Use 'stdout' to send this informaton to the console.  File output will be written as an XML plist file, or you can use 'stdout-xml' to write XML to the console.  The toplevel key of the dictionary will contain either the user name, or _computerLevel for device or provisioning profile information.
+The output path location.  The output_path argument must be specified to use this option, Use 'stdout' to send this informaton to the console.  File output will be written as an XML plist file, or you can use 'stdout-xml' to write XML to the console.  The toplevel key of the dictionary will contain either the user name, or _computerLevel for device or provisioning profile information.
 .It Fl enrolledUser Ar enrollment_user_name
 The user name specified when installing an enrollment profile.
 .It Fl password Ar password

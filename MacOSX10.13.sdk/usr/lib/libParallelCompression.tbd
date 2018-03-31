@@ -1,15 +1,23 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: AC3E9C27-9FAB-31C2-AA95-F4EC01416255', 'x86_64: 6ED59B0F-54A5-34FE-B195-B3A50E2489CF' ]
+uuids:           [ 'i386: 82EE73C0-D870-3F05-955C-4DAFDC67B9EC', 'x86_64: 22AD284C-1126-387F-A097-47B6A4D55B37' ]
 platform:        macosx
 install-name:    /usr/lib/libParallelCompression.dylib
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]
-    symbols:         [ _BXDiff5, _BXPatch5, _BXPatch5InPlace, _BXPatchFile, _CachePatch, 
-                       _DirectoryDiff, _DirectoryPatch, _ISparseArchiveStreamCreate, 
-                       _ISparseArchiveStreamDestroy, _ISparseArchiveStreamRead, _PCompressFilter, 
-                       _PackagePatch, _ParallelArchiveExtract, _ParallelArchiveGenerateBOM, 
+    symbols:         [ _BXDiff5, _BXPatch5, _BXPatch5InPlace, _BXPatchFile, _DirectoryDiff, 
+                       _DirectoryPatch, _ISparseArchiveStreamCreate, _ISparseArchiveStreamDestroy, 
+                       _ISparseArchiveStreamRead, _PCompressFilter, _PackagePatch, 
+                       _ParallelArchiveCombine, _ParallelArchiveConvert, _ParallelArchiveExtract, 
+                       _ParallelArchiveExtractClones, _ParallelArchiveExtractSubtree, 
+                       _ParallelArchiveFilesystemCreate, _ParallelArchiveFilesystemDestroy, 
+                       _ParallelArchiveFilesystemEntryClose, _ParallelArchiveFilesystemEntryFirstChild, 
+                       _ParallelArchiveFilesystemEntryLink, _ParallelArchiveFilesystemEntryName, 
+                       _ParallelArchiveFilesystemEntryNextSibling, _ParallelArchiveFilesystemEntryOpen, 
+                       _ParallelArchiveFilesystemEntryPRead, _ParallelArchiveFilesystemEntryParent, 
+                       _ParallelArchiveFilesystemEntryPath, _ParallelArchiveFilesystemEntryStat, 
+                       _ParallelArchiveFilesystemEntryType, _ParallelArchiveGenerateBOM, 
                        _ParallelArchiveGenerateMSUBOM, _ParallelArchiveGetPayloadSize, 
                        _ParallelArchiveOLDWriterAddEntry, _ParallelArchiveOLDWriterCreate, 
                        _ParallelArchiveOLDWriterDestroy, _ParallelArchiveRead, _ParallelArchiveReadMetadata, 

@@ -1,35 +1,35 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 4F3EE6F0-7359-33CB-B8A7-7BA7943101C8', 'x86_64: 3BAA60B0-8F63-3570-B276-01EF45B9B4DF' ]
+uuids:           [ 'i386: 57E8D4E7-B96D-36D4-B5DF-E313F3C6376C', 'x86_64: F5405BB4-1344-345F-9065-0E9230D69DD2' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IDS.framework/Versions/A/IDS
 current-version: 800
 exports:         
   - archs:           [ i386 ]
-    objc-classes:    [ _IDSAppleCareDaemonResponseListener, _IDSAutoCleanup, _IDSDaemonListener, 
-                       _IDSDaemonProtocolController, _IDSDaemonRequestContext, _IDSDaemonRequestTimer, 
-                       _IDSDaemonResponseHandler, _IDSGroupContextController, _IDSGroupContextControllerContent, 
-                       _IDSGroupContextDataSource, _IDSGroupContextNotifyingObserver, 
-                       _IDSHomeKitManager, _IDSInternalQueueController, _IDSLocalPairingDaemonResponseListener, 
-                       _IDSLogging, _IDSQuickRelayFixedTokenAllocator, _IDSQuickSwitchAcknowledgementTracker, 
-                       _IDSRegistrationControlDaemonResponseListener, _IDSReportiMessageSpamDaemonResponseListener, 
-                       _IDSServiceContainer, _IDSServiceMonitor, _IDSTransactionLogBaseTaskHandler, 
-                       _IDSTransactionLogSyncTaskHandler, _IDSTransactionLogTaskHandler, 
-                       _IDSTransactionLogTaskHandlerAccountInfo, __IDSAccount, __IDSAccountController, 
-                       __IDSBatchIDQueryController, __IDSCompletionHandler, __IDSConnection, 
-                       __IDSContinuity, __IDSDataChannelLinkContext, __IDSDatagramChannel, 
-                       __IDSDevice, __IDSDeviceConnection, __IDSDeviceConnectionActiveMap, 
-                       __IDSGenericCompletionHandler, __IDSGroupSession, __IDSGroupStatusNotifier, 
-                       __IDSIDQueryController, __IDSService, __IDSSession ]
+    objc-classes:    [ IDSAppleCareDaemonResponseListener, IDSAutoCleanup, IDSDaemonListener, 
+                       IDSDaemonProtocolController, IDSDaemonRequestContext, IDSDaemonRequestTimer, 
+                       IDSDaemonResponseHandler, IDSGroupContextController, IDSGroupContextControllerContent, 
+                       IDSGroupContextDataSource, IDSGroupContextNotifyingObserver, 
+                       IDSHomeKitManager, IDSInternalQueueController, IDSLocalPairingDaemonResponseListener, 
+                       IDSLogging, IDSQuickRelayFixedTokenAllocator, IDSQuickSwitchAcknowledgementTracker, 
+                       IDSRegistrationControlDaemonResponseListener, IDSReportiMessageSpamDaemonResponseListener, 
+                       IDSServiceContainer, IDSServiceMonitor, IDSTransactionLogBaseTaskHandler, 
+                       IDSTransactionLogSyncTaskHandler, IDSTransactionLogTaskHandler, 
+                       IDSTransactionLogTaskHandlerAccountInfo, _IDSAccount, _IDSAccountController, 
+                       _IDSBatchIDQueryController, _IDSCompletionHandler, _IDSConnection, 
+                       _IDSContinuity, _IDSDataChannelLinkContext, _IDSDatagramChannel, 
+                       _IDSDevice, _IDSDeviceConnection, _IDSDeviceConnectionActiveMap, 
+                       _IDSGenericCompletionHandler, _IDSGroupSession, _IDSGroupStatusNotifier, 
+                       _IDSIDQueryController, _IDSService, _IDSSession ]
   - archs:           [ x86_64 ]
-    objc-ivars:      [ _IDSDataChannelLinkContext._internal, _IDSDatagramChannel._internal, 
-                       _IDSPairedDeviceManager._allowedTrafficClassifiers, _IDSPairedDeviceManager._deleteCompletion, 
-                       _IDSPairedDeviceManager._deliveryStatsCompletion, _IDSPairedDeviceManager._localCompletion, 
-                       _IDSPairedDeviceManager._pairedCompletion, _IDSTransactionLogDataMessage._dataValue, 
-                       _IDSTransactionLogDictionaryMessage._dictionaryValue, _IDSTransactionLogMessage._accountUniqueID, 
-                       _IDSTransactionLogMessage._fromID, _IDSTransactionLogMessage._loginID, 
-                       _IDSTransactionLogMessage._serviceName, _IDSTransactionLogSyncTask._batchProcessingBlock, 
-                       _IDSTransactionLogSyncTask._knownRecordIDsFromList, _IDSTransactionLogTask._completionBlock ]
+    objc-ivars:      [ IDSDataChannelLinkContext._internal, IDSDatagramChannel._internal, 
+                       IDSPairedDeviceManager._allowedTrafficClassifiers, IDSPairedDeviceManager._deleteCompletion, 
+                       IDSPairedDeviceManager._deliveryStatsCompletion, IDSPairedDeviceManager._localCompletion, 
+                       IDSPairedDeviceManager._pairedCompletion, IDSTransactionLogDataMessage._dataValue, 
+                       IDSTransactionLogDictionaryMessage._dictionaryValue, IDSTransactionLogMessage._accountUniqueID, 
+                       IDSTransactionLogMessage._fromID, IDSTransactionLogMessage._loginID, 
+                       IDSTransactionLogMessage._serviceName, IDSTransactionLogSyncTask._batchProcessingBlock, 
+                       IDSTransactionLogSyncTask._knownRecordIDsFromList, IDSTransactionLogTask._completionBlock ]
   - archs:           [ i386, x86_64 ]
     re-exports:      [ /System/Library/PrivateFrameworks/IDSFoundation.framework/Versions/A/IDSFoundation ]
     symbols:         [ _ACAccountForIDSAccount, _IDSAddPairedDevice, _IDSAppleCareSetDaemonDisconnectedBlock, 
@@ -79,23 +79,23 @@ exports:
                        _IDSLinkPreferenceOptionTimestamp, _IDSLocalSetupCompleted, 
                        _IDSLocalSetupStart, _IDSLocalSetupStop, _IDSLocalSetupUnpair, 
                        _IDSLocalSetupUnpairStart, _IDSLog, _IDSLogEvent, _IDSLogLevel, 
-                       _IDSOSVersionCompare, _IDSOSVersionFromString, _IDSReRegister, 
-                       _IDSRefreshUserAccessTokensWithCompletionBlock, _IDSRegistrationControlDisableRegistrationType, 
-                       _IDSRegistrationControlEnableRegistrationType, _IDSRegistrationControlGetStateForRegistrationType, 
-                       _IDSRepairAccounts, _IDSReportiMessageSpam, _IDSReportiMessageUnknownSender, 
-                       _IDSSecurityKeyRollingRegenerateRegisteredIdentity, _IDSSecurityKeyRollingRollKeys, 
-                       _IDSSendMessageOptionAccessTokenKey, _IDSSendMessageOptionActivityContinuationKey, 
-                       _IDSSendMessageOptionAllowCloudDeliveryKey, _IDSSendMessageOptionAlternateCallbackIdentifierKey, 
-                       _IDSSendMessageOptionAlwaysSkipSelfKey, _IDSSendMessageOptionBypassDuetKey, 
-                       _IDSSendMessageOptionCommandKey, _IDSSendMessageOptionCompressPayloadKey, 
-                       _IDSSendMessageOptionDataToEncryptKey, _IDSSendMessageOptionDeliveryStatusContextKey, 
-                       _IDSSendMessageOptionDisableAliasValidationKey, _IDSSendMessageOptionDuetIdentifiersOverrideKey, 
-                       _IDSSendMessageOptionDuetKey, _IDSSendMessageOptionEncryptPayloadKey, 
-                       _IDSSendMessageOptionEnforceRemoteTimeoutsKey, _IDSSendMessageOptionExpectsPeerResponseKey, 
-                       _IDSSendMessageOptionFakeMessage, _IDSSendMessageOptionFireAndForgetKey, 
-                       _IDSSendMessageOptionForceEncryptionOffKey, _IDSSendMessageOptionForceLocalDeliveryKey, 
-                       _IDSSendMessageOptionFromIDKey, _IDSSendMessageOptionHomeKitMessageKey, 
-                       _IDSSendMessageOptionInterestingRegistrationPropertiesKey, 
+                       _IDSOSVersionCompare, _IDSOSVersionFromString, _IDSPhoneCertificateVendorErrorDomain, 
+                       _IDSReRegister, _IDSRefreshUserAccessTokensWithCompletionBlock, 
+                       _IDSRegistrationControlDisableRegistrationType, _IDSRegistrationControlEnableRegistrationType, 
+                       _IDSRegistrationControlGetStateForRegistrationType, _IDSRepairAccounts, 
+                       _IDSReportiMessageSpam, _IDSReportiMessageUnknownSender, _IDSSecurityKeyRollingRegenerateRegisteredIdentity, 
+                       _IDSSecurityKeyRollingRollKeys, _IDSSendMessageOptionAccessTokenKey, 
+                       _IDSSendMessageOptionActivityContinuationKey, _IDSSendMessageOptionAllowCloudDeliveryKey, 
+                       _IDSSendMessageOptionAlternateCallbackIdentifierKey, _IDSSendMessageOptionAlwaysSkipSelfKey, 
+                       _IDSSendMessageOptionBypassDuetKey, _IDSSendMessageOptionCommandKey, 
+                       _IDSSendMessageOptionCompressPayloadKey, _IDSSendMessageOptionDataToEncryptKey, 
+                       _IDSSendMessageOptionDeliveryStatusContextKey, _IDSSendMessageOptionDisableAliasValidationKey, 
+                       _IDSSendMessageOptionDuetIdentifiersOverrideKey, _IDSSendMessageOptionDuetKey, 
+                       _IDSSendMessageOptionEncryptPayloadKey, _IDSSendMessageOptionEnforceRemoteTimeoutsKey, 
+                       _IDSSendMessageOptionExpectsPeerResponseKey, _IDSSendMessageOptionFakeMessage, 
+                       _IDSSendMessageOptionFireAndForgetKey, _IDSSendMessageOptionForceEncryptionOffKey, 
+                       _IDSSendMessageOptionForceLocalDeliveryKey, _IDSSendMessageOptionFromIDKey, 
+                       _IDSSendMessageOptionHomeKitMessageKey, _IDSSendMessageOptionInterestingRegistrationPropertiesKey, 
                        _IDSSendMessageOptionLiveMessageDeliveryKey, _IDSSendMessageOptionLocalDeliveryKey, 
                        _IDSSendMessageOptionMapTileKey, _IDSSendMessageOptionMetricReportIdentifierKey, 
                        _IDSSendMessageOptionNSURLSessionKey, _IDSSendMessageOptionNonCloudWakingKey, 
@@ -119,11 +119,12 @@ exports:
                        _IDSiCloudSignIn, _IDSiCloudSignInHack, _IDSiCloudSignOut, 
                        _IDSiCloudSignOutHack, _IDSiCloudUpdate, _IDSiTunesSignIn, 
                        _IDSiTunesSignOut, __IDSDaemonDidConnectNotification ]
-    objc-classes:    [ _IDSAccount, _IDSAccountController, _IDSBatchIDQueryController, 
-                       _IDSConnection, _IDSContinuity, _IDSDaemonController, _IDSDataChannelLinkContext, 
-                       _IDSDatagramChannel, _IDSDevice, _IDSDeviceConnection, _IDSGroupSession, 
-                       _IDSGroupStatusNotifier, _IDSIDQueryController, _IDSPairedDeviceManager, 
-                       _IDSService, _IDSServiceAvailabilityController, _IDSSession, 
-                       _IDSSignInController, _IDSTransactionLogDataMessage, _IDSTransactionLogDictionaryMessage, 
-                       _IDSTransactionLogMessage, _IDSTransactionLogSyncTask, _IDSTransactionLogTask ]
+    objc-classes:    [ IDSAccount, IDSAccountController, IDSAuthenticationSigningResult, 
+                       IDSBatchIDQueryController, IDSConnection, IDSContinuity, IDSDaemonController, 
+                       IDSDataChannelLinkContext, IDSDatagramChannel, IDSDevice, 
+                       IDSDeviceConnection, IDSGroupSession, IDSGroupStatusNotifier, 
+                       IDSIDQueryController, IDSPairedDeviceManager, IDSPhoneCertificateVendor, 
+                       IDSService, IDSServiceAvailabilityController, IDSSession, 
+                       IDSSignInController, IDSTransactionLogDataMessage, IDSTransactionLogDictionaryMessage, 
+                       IDSTransactionLogMessage, IDSTransactionLogSyncTask, IDSTransactionLogTask ]
 ...

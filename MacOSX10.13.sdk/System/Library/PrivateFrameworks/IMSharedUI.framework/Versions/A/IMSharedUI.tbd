@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A57E9FB7-A036-3108-B190-AC04CC75BE48' ]
+uuids:           [ 'x86_64: EBC3C8BA-8AE5-3669-A926-35F90A930E57' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IMSharedUI.framework/Versions/A/IMSharedUI
 objc-constraint: none
@@ -12,7 +12,7 @@ exports:
                        _IMGroupAcknowledgementPollViewHeight, _IMGroupAcknowledgementPollViewWidth, 
                        _IMSetAnonymizeContentAndContacts, _IMSharedUIBundle, _IMSharedUIBundleID, 
                        _IMSharedUIVersionNumber, _IMSharedUIVersionString ]
-    objc-classes:    [ _IMFullScreenEffect, _IMFullScreenEffectManager, _IMFullScreenMomentBundleManager, 
-                       _IMFullscreenEffectFilter, _IMGroupAcknowledgementPollViewController, 
-                       _IMHeaderView, _IMTypingIndicatorLayer ]
+    objc-classes:    [ IMFullScreenEffect, IMFullScreenEffectManager, IMFullScreenMomentBundleManager, 
+                       IMFullscreenEffectFilter, IMGroupAcknowledgementPollViewController, 
+                       IMHeaderView, IMTypingIndicatorLayer ]
 ...

@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 9BE04599-41D6-36F3-B46F-9FEA218E70F0', 'x86_64: DB7326B0-DE38-392D-AAFA-E81BE0EDE99E' ]
+uuids:           [ 'i386: 9809E78E-365C-3F94-A230-4933A28558E0', 'x86_64: B04E7791-EAF9-3D72-B4ED-DD8F135140EC' ]
 platform:        macosx
 install-name:    /usr/lib/libcurl.4.dylib
 current-version: 9

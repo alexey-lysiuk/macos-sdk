@@ -1,30 +1,30 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: B46FD025-BC89-3A84-B2E1-5E744E2F9C33', 'x86_64: C98BFACA-7807-3DCA-945D-58EBA2B723C8' ]
+uuids:           [ 'i386: 9D532312-C024-38CA-B137-A4C88919C5EC', 'x86_64: F8BAC954-405D-3CC3-AB7B-048C866EF980' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/TextureIO.framework/Versions/A/TextureIO
 current-version: 3.7
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
-    objc-ivars:      [ _TXRArrayElement._faces, _TXRAssetCatalogConfig._baseFileAttributes, 
-                       _TXRAssetCatalogConfig._displayColorSpace, _TXRAssetCatalogConfig._fileAttributesList, 
-                       _TXRAssetCatalogConfig._graphicsFeatureSet, _TXRAssetCatalogConfig._idiom, 
-                       _TXRAssetCatalogConfig._memory, _TXRAssetCatalogConfig._mipmapOption, 
-                       _TXRAssetCatalogConfig._pixelFormat, _TXRAssetCatalogConfig._scaleFactor, 
-                       _TXRAssetCatalogConfig._texture, _TXRAssetCatalogFileAttributes._colorSpace, 
-                       _TXRAssetCatalogFileAttributes._exifOrientation, _TXRAssetCatalogFileAttributes._fileFormat, 
-                       _TXRAssetCatalogMipFileAttributes._face, _TXRAssetCatalogMipFileAttributes._level, 
-                       _TXRAssetCatalogSet._configs, _TXRAssetCatalogSet._cubemap, 
-                       _TXRAssetCatalogSet._interpretation, _TXRAssetCatalogSet._name, 
-                       _TXRAssetCatalogSet._origin, _TXRImage._buffer, _TXRImage._bytesPerImage, 
-                       _TXRImage._bytesPerRow, _TXRImage._offset, _TXRMipmapLevel._elements, 
-                       _TXRTexture._alphaInfo, _TXRTexture._bufferAllocator, _TXRTexture._cubemap, 
-                       _TXRTexture._dimensions, _TXRTexture._mipmapLevels, _TXRTexture._pixelFormat ]
+    objc-ivars:      [ TXRArrayElement._faces, TXRAssetCatalogConfig._baseFileAttributes, 
+                       TXRAssetCatalogConfig._displayColorSpace, TXRAssetCatalogConfig._fileAttributesList, 
+                       TXRAssetCatalogConfig._graphicsFeatureSet, TXRAssetCatalogConfig._idiom, 
+                       TXRAssetCatalogConfig._memory, TXRAssetCatalogConfig._mipmapOption, 
+                       TXRAssetCatalogConfig._pixelFormat, TXRAssetCatalogConfig._scaleFactor, 
+                       TXRAssetCatalogConfig._texture, TXRAssetCatalogFileAttributes._colorSpace, 
+                       TXRAssetCatalogFileAttributes._exifOrientation, TXRAssetCatalogFileAttributes._fileFormat, 
+                       TXRAssetCatalogMipFileAttributes._face, TXRAssetCatalogMipFileAttributes._level, 
+                       TXRAssetCatalogSet._configs, TXRAssetCatalogSet._cubemap, 
+                       TXRAssetCatalogSet._interpretation, TXRAssetCatalogSet._name, 
+                       TXRAssetCatalogSet._origin, TXRImage._buffer, TXRImage._bytesPerImage, 
+                       TXRImage._bytesPerRow, TXRImage._offset, TXRMipmapLevel._elements, 
+                       TXRTexture._alphaInfo, TXRTexture._bufferAllocator, TXRTexture._cubemap, 
+                       TXRTexture._dimensions, TXRTexture._mipmapLevels, TXRTexture._pixelFormat ]
   - archs:           [ i386, x86_64 ]
-    objc-classes:    [ _TXRArrayElement, _TXRAssetCatalogConfig, _TXRAssetCatalogFileAttributes, 
-                       _TXRAssetCatalogMipFileAttributes, _TXRAssetCatalogSet, _TXRDataConverter, 
-                       _TXRDataScaler, _TXRDefaultBufferAllocator, _TXRImage, _TXRImageIndependent, 
-                       _TXRImageInfo, _TXRMipmapLevel, _TXROptions, _TXRPixelFormatInfo, 
-                       _TXRTexture, _TXRTextureInfo ]
+    objc-classes:    [ TXRArrayElement, TXRAssetCatalogConfig, TXRAssetCatalogFileAttributes, 
+                       TXRAssetCatalogMipFileAttributes, TXRAssetCatalogSet, TXRDataConverter, 
+                       TXRDataScaler, TXRDefaultBufferAllocator, TXRImage, TXRImageIndependent, 
+                       TXRImageInfo, TXRMipmapLevel, TXROptions, TXRPixelFormatInfo, 
+                       TXRTexture, TXRTextureInfo ]
 ...

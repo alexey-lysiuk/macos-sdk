@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3DEAD278-9153-36F0-ABF7-0A2928A02470' ]
+uuids:           [ 'x86_64: 2C3DB7C6-D932-3B62-B5C8-5261A35F8230' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotosPlayer.framework/Versions/A/PhotosPlayer
 objc-constraint: none
@@ -10,14 +10,14 @@ exports:
                        _ISQuadraticEaseOut, _ISQuarticEaseOut, _ISQuinticEaseOut, 
                        _ISSineEaseOut, _ISStringFromPlaybackState, _ISStringFromPlayerItemLoadingTarget, 
                        _ISVideoAnalyzerErrorDomain, _PhotosPlayerErrorDomain ]
-    objc-classes:    [ _ISAVPlayer, _ISAnimatedImage, _ISAnimatedImagePlayer, _ISAnimatedImageView, 
-                       _ISAsset, _ISBasePlayer, _ISBasePlayerNSView, _ISEditSession, 
-                       _ISExportDestination, _ISForcePressLivePhotoPlaybackFilter, 
-                       _ISFrameCache, _ISFrameProcessingRequest, _ISLivePhotoNSView, 
-                       _ISLivePhotoPlaybackFilter, _ISLivePhotoPlayer, _ISNSScrollViewVitalityController, 
-                       _ISObservable, _ISPlaybackSettings, _ISPlaybackSpec, _ISPlayerContent, 
-                       _ISPlayerItem, _ISPlayerOutputContent, _ISRootSettings, _ISScrollViewVitalityController, 
-                       _ISSettings, _ISTouchLivePhotoPlaybackFilter, _ISVideoAnalyzer, 
-                       _ISVideoPlayerNSView, _ISVitalitySettings, _ISWrappedAVAudioSession, 
-                       _ISWrappedAVPlayer ]
+    objc-classes:    [ ISAVPlayer, ISAnimatedImage, ISAnimatedImagePlayer, ISAnimatedImageView, 
+                       ISAsset, ISBasePlayer, ISBasePlayerNSView, ISEditSession, 
+                       ISExportDestination, ISForcePressLivePhotoPlaybackFilter, 
+                       ISFrameCache, ISFrameProcessingRequest, ISLivePhotoNSView, 
+                       ISLivePhotoPlaybackFilter, ISLivePhotoPlayer, ISNSScrollViewVitalityController, 
+                       ISObservable, ISPlaybackSettings, ISPlaybackSpec, ISPlayerContent, 
+                       ISPlayerItem, ISPlayerOutputContent, ISRootSettings, ISScrollViewVitalityController, 
+                       ISSettings, ISTouchLivePhotoPlaybackFilter, ISVideoAnalyzer, 
+                       ISVideoPlayerNSView, ISVitalitySettings, ISWrappedAVAudioSession, 
+                       ISWrappedAVPlayer ]
 ...

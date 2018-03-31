@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E2AEA0D7-23E6-3198-96EF-2F1F8ACD98B4' ]
+uuids:           [ 'x86_64: C735038A-BC7E-3DE3-B350-6449404FC259' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/RemoteServiceDiscovery.framework/Versions/A/RemoteServiceDiscovery
-current-version: 1205.30.29
+current-version: 1205.50.76
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -12,6 +12,7 @@ exports:
                        _bridge_version_read_current, _bridge_version_read_plist, 
                        _bridge_version_serialize, _bridge_version_unparse, _remote_control_attach_loopback, 
                        _remote_control_connect_loopback, _remote_control_detach_loopback, 
+                       _remote_control_resume_loopback, _remote_control_suspend_loopback, 
                        _remote_device_browse_present, _remote_device_browser_cancel, 
                        _remote_device_cancel, _remote_device_copy_boot_session_uuid, 
                        _remote_device_copy_bridge_version_string, _remote_device_copy_build_version, 
@@ -21,8 +22,10 @@ exports:
                        _remote_device_copy_properties, _remote_device_copy_property, 
                        _remote_device_copy_service, _remote_device_copy_service_names, 
                        _remote_device_copy_unique_of_type, _remote_device_copy_uuid, 
-                       _remote_device_get_bridge_version, _remote_device_get_name, 
-                       _remote_device_get_state, _remote_device_get_type, _remote_device_get_xpc_remote_connection_version_flags, 
+                       _remote_device_get_bridge_version, _remote_device_get_connectable, 
+                       _remote_device_get_heartbeat_stats, _remote_device_get_messaging_protocol_version, 
+                       _remote_device_get_name, _remote_device_get_state, _remote_device_get_type, 
+                       _remote_device_get_xpc_remote_connection_version_flags, _remote_device_heartbeat, 
                        _remote_device_set_connected_callback, _remote_device_set_disconnected_callback, 
                        _remote_device_start_browsing, _remote_device_start_browsing_matching, 
                        _remote_device_state_get_description, _remote_device_type_get_description, 

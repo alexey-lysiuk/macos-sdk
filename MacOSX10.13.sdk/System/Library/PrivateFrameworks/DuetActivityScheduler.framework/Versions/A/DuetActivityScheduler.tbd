@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EF7C1113-4F89-369B-9687-970017F7FBD8' ]
+uuids:           [ 'x86_64: ADDDEE9E-E475-337A-9159-AA51DC74B066' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DuetActivityScheduler.framework/Versions/A/DuetActivityScheduler
 exports:         
@@ -27,6 +27,6 @@ exports:
                        __DASSchedulingPriorityDefault, __DASSchedulingPriorityMaintenance, 
                        __DASSchedulingPriorityUserInitiated, __DASSchedulingPriorityUserInitiatedOvercommit, 
                        __DASSchedulingPriorityUtility, _kNWEndpointKey, _kNWParametersKey ]
-    objc-classes:    [ __DASActivity, __DASActivityGroup, __DASFileProtection, __DASPriorityQueue, 
-                       __DASScheduler, __DASStrings, __DASSubmissionRateLimiter ]
+    objc-classes:    [ _DASActivity, _DASActivityGroup, _DASFileProtection, _DASPriorityQueue, 
+                       _DASScheduler, _DASStrings, _DASSubmissionRateLimiter ]
 ...

@@ -327,7 +327,7 @@ typedef NS_ENUM(NSInteger, LABiometryType)
 
 /// Indicates the type of the biometry supported by the device.
 ///
-/// @discussion  This property is set only when canEvaluatePolicy succeeds for a biometric policy.
+/// @discussion  This property is set when canEvaluatePolicy has been called for a biometric policy.
 ///              The default value is LABiometryTypeNone.
 @property (nonatomic, readonly) LABiometryType biometryType API_AVAILABLE(macos(10.13.2), ios(11.0)) API_UNAVAILABLE(watchos, tvos);
 

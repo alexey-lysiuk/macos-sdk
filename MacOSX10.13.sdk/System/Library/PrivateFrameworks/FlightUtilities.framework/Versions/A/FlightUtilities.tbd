@@ -1,18 +1,18 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E91E94FF-201C-3C60-BC70-4262A119EBA1' ]
+uuids:           [ 'x86_64: FBE87D2D-24EB-38AF-BA43-01608157D0A6' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/FlightUtilities.framework/Versions/A/FlightUtilities
-current-version: 115.4
+current-version: 115.5
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _FUFactoryProvider_Default, _FUFactoryProvider_FlightStats, 
                        _FUFactoryProvider_FlyteComm ]
-    objc-classes:    [ _FUAirline, _FUAirport, _FUCompactFlightViewController, _FUFlight, 
-                       _FUFlightFactory, _FUFlightFactory_Parsec, _FUFlightLeg, _FUFlightStep, 
-                       _FUFlightView, _FUFlightViewController, _FUStepTime, _FUUtils ]
-    objc-ivars:      [ _FUFlightStep._delayFromSchedule, _FUFlightView._displayStyle, 
-                       _FUFlightView._ignoreMapUpdate, _FUFlightViewController._compactFlightView, 
-                       _FUFlightViewController._regularFlightView, _FUFlightViewController._requiresDataLoad, 
-                       _FUFlightViewController._viewLoaded ]
+    objc-classes:    [ FUAirline, FUAirport, FUCompactFlightViewController, FUFlight, 
+                       FUFlightFactory, FUFlightFactory_Parsec, FUFlightLeg, FUFlightStep, 
+                       FUFlightView, FUFlightViewController, FUStepTime, FUUtils ]
+    objc-ivars:      [ FUFlightStep._delayFromSchedule, FUFlightView._displayStyle, 
+                       FUFlightView._ignoreMapUpdate, FUFlightViewController._compactFlightView, 
+                       FUFlightViewController._regularFlightView, FUFlightViewController._requiresDataLoad, 
+                       FUFlightViewController._viewLoaded ]
 ...

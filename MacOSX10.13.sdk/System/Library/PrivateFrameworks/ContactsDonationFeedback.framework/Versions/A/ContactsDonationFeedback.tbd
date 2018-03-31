@@ -1,10 +1,10 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B8DEA8CD-B9AE-3254-B211-7D8CFA0895D9' ]
+uuids:           [ 'x86_64: 3394D445-1F89-32CA-94DE-58EBE05A5030' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ContactsDonationFeedback.framework/Versions/A/ContactsDonationFeedback
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
-    objc-classes:    [ _CDFDonationFeedbackStore ]
+    objc-classes:    [ CDFDonationFeedbackStore ]
 ...

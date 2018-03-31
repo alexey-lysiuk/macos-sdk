@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9079F810-DBF8-334F-AFCB-60BC10ADB40A' ]
+uuids:           [ 'x86_64: 2058AE11-AC75-3678-A4B3-33DC0C647954' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/UniversalAccess.framework/Versions/A/Frameworks/ZoomWindowSupport.framework/Versions/A/ZoomWindowSupport
 current-version: 68
@@ -11,5 +11,5 @@ exports:
                        __UADDaemonSendMessageWithInt, __UADDaemonStartup, __UADZoomWindowQuit, 
                        __UADZoomWindowQuitSynchronously, __UADZoomWindowStartup, 
                        __UADZoomWindowZoom, __ZoomWindowOptionsWindowController ]
-    objc-classes:    [ _ZoomWindowManager ]
+    objc-classes:    [ ZoomWindowManager ]
 ...

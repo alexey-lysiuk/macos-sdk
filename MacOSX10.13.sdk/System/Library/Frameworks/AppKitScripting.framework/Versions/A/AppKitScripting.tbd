@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386 ]
-uuids:           [ 'i386: 476ADFAD-8860-388F-A419-9AD9066E7D91' ]
+uuids:           [ 'i386: ACBD48D3-E14B-36F2-928E-7992EC01A064' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/AppKitScripting.framework/Versions/A/AppKitScripting
 current-version: 31

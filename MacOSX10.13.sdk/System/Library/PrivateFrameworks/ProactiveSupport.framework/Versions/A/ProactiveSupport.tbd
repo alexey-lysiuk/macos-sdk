@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BAE9A2BB-74DB-3592-B225-C860EF403F20' ]
+uuids:           [ 'x86_64: 8C082C72-3639-3411-9DDE-4CEA57C65B1D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ProactiveSupport.framework/Versions/A/ProactiveSupport
-current-version: 123.3
+current-version: 126.6.6
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -12,15 +12,15 @@ exports:
                        __PASSqliteDatabaseErrorKeyCode, __PASSqliteDatabaseErrorKeyQuery, 
                        __PASSqliteDatabaseErrorKeyReason, __PASSqliteDatabaseKeepGoing, 
                        __PASSqliteDatabaseStop, __PAS_MurmurHash3_x64_128, __PAS_MurmurHash3_x86_128, 
-                       __PAS_MurmurHash3_x86_32, _qmarksSeparatedByCommas, _sqlite3_bind_nscoding, 
-                       _sqlite3_bind_nsdata, _sqlite3_bind_nsstring, _sqlite3_column_nsdata, 
+                       __PAS_MurmurHash3_x86_32, _qmarksSeparatedByCommas, _sqlite3_bind_nsdata, 
+                       _sqlite3_bind_nssecurecoding, _sqlite3_bind_nsstring, _sqlite3_column_nsdata, 
                        _sqlite3_column_nssecurecoding, _sqlite3_column_nsstring ]
-    objc-classes:    [ __PASArgOption, __PASArgParser, __PASArgSubcommand, __PASArgSubcommandHandlerParams, 
-                       __PASArgToplevelHandlerParams, __PASAsset, __PASAssetMock, 
-                       __PASBloomFilter, __PASBloomFilterDummy, __PASBloomFilterForWriting, 
-                       __PASBloomFilterHashArray, __PASBuddyAllocator, __PASChangeUser, 
-                       __PASCompression, __PASCrashHelper, __PASDatabaseJournal, 
-                       __PASDatabaseJournalFile, __PASDeviceInfo, __PASDeviceState, 
-                       __PASFileUtils, __PASRng, __PASSqliteDatabase, __PASSqliteDefaultErrorHandler, 
-                       __PASSqliteStatement, __PASStringPairs, __PASTuple2, __PASTuple3 ]
+    objc-classes:    [ _PASArgOption, _PASArgParser, _PASArgSubcommand, _PASArgSubcommandHandlerParams, 
+                       _PASArgToplevelHandlerParams, _PASAsset, _PASAssetMock, _PASBloomFilter, 
+                       _PASBloomFilterDummy, _PASBloomFilterForWriting, _PASBloomFilterHashArray, 
+                       _PASBuddyAllocator, _PASChangeUser, _PASCompression, _PASCrashHelper, 
+                       _PASDatabaseJournal, _PASDatabaseJournalFile, _PASDeviceIdentifier, 
+                       _PASDeviceInfo, _PASDeviceState, _PASFileUtils, _PASLock, 
+                       _PASRng, _PASSqliteDatabase, _PASSqliteDefaultErrorHandler, 
+                       _PASSqliteStatement, _PASStringPairs, _PASTuple2, _PASTuple3 ]
 ...

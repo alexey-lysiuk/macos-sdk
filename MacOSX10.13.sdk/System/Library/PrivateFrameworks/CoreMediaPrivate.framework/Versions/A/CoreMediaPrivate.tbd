@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386 ]
-uuids:           [ 'i386: F02BE2AC-F734-3CEE-9D5C-584EC82BCA8E' ]
+uuids:           [ 'i386: F5CDF6A1-5184-3568-B4E9-D59EAB6E943D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreMediaPrivate.framework/Versions/A/CoreMediaPrivate
 objc-constraint: none

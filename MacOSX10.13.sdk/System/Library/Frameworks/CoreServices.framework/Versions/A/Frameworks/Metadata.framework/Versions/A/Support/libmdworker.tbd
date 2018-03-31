@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386 ]
-uuids:           [ 'i386: C53B0D6D-89F5-36BA-9551-37CA07D8FDFB' ]
+uuids:           [ 'i386: E40EFB0E-79DF-35AF-A772-12885500DA13' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Support/libmdworker.dylib
 objc-constraint: none

@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CC610A99-FC08-3374-9179-0861BE87B4E2' ]
+uuids:           [ 'x86_64: B2CA5FC7-1E49-3778-95CE-57247B7F90E0' ]
 platform:        macosx
 install-name:    /usr/lib/libXSEvent.dylib
 objc-constraint: none

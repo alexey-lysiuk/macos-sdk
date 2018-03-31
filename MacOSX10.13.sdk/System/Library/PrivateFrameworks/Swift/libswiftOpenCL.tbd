@@ -1,10 +1,10 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 42ADE0B2-D4E0-3246-86EC-CE4DF77B54CD' ]
+uuids:           [ 'x86_64: D4728269-1BDF-3822-9597-DA2E685063B0' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Swift/libswiftOpenCL.dylib
 current-version: 900.8.49
-swift-version:   5
+swift-abi-version: 5
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ __T06OpenCL24clSetKernelArgsListAPPLEs5Int32Vs13OpaquePointerV_s6UInt32VSays7CVarArg_pGdtF, 

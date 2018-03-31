@@ -1,25 +1,24 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 2210A987-9208-3E20-8425-90180C57DE8C', 'x86_64: 792593BC-21C7-3E0C-929E-067CD725FCBD' ]
+uuids:           [ 'i386: D3E43865-16C1-333D-8C55-1D5856755B53', 'x86_64: 83E85A62-44A8-33F8-AD79-AC4C807184C4' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DataDetectorsCore.framework/Versions/A/DataDetectorsCore
 current-version: 590.3
 exports:         
   - archs:           [ i386 ]
-    objc-classes:    [ _DDAbstractType, _DDBinderInfo, _DDCompilerState, _DDDictionaryError, 
-                       _DDEmptyPatternError, _DDErrorRegexp, _DDGrammar, _DDInvalidRangeError, 
-                       _DDLookupRegexp, _DDMessageCache, _DDMessageCacheElement, 
-                       _DDNonTerminal, _DDParserState, _DDProduction, _DDRepeatMinMax, 
-                       _DDScanServerDispatcher, _DDScannerList, _DDScannerObject, 
-                       _DDSymbol, _DDTypeChecker, _DDTypeInhabitant, _DDUnaryOperator, 
-                       _DDVariableNotFoundError ]
+    objc-classes:    [ DDAbstractType, DDBinderInfo, DDCompilerState, DDDictionaryError, 
+                       DDEmptyPatternError, DDErrorRegexp, DDGrammar, DDInvalidRangeError, 
+                       DDLookupRegexp, DDMessageCache, DDMessageCacheElement, DDNonTerminal, 
+                       DDParserState, DDProduction, DDRepeatMinMax, DDScanServerDispatcher, 
+                       DDScannerList, DDScannerObject, DDSymbol, DDTypeChecker, DDTypeInhabitant, 
+                       DDUnaryOperator, DDVariableNotFoundError ]
   - archs:           [ x86_64 ]
-    objc-ivars:      [ _DDOperatorRegexp._subMatchers, _DDScanServer._options, _DDScanServer._timeout, 
-                       _DataDetectorsSourceAccess._auditToken, _DataDetectorsSourceAccess._clientpid, 
-                       _DataDetectorsSourceAccess._clientuid, _DataDetectorsSourceAccess._privacySystemWriteEntitled, 
-                       _DataDetectorsSourceAccess._privacySystemWriteEntitlementChecked, 
-                       _DataDetectorsSourceAccess._privacyUserReadEntitled, _DataDetectorsSourceAccess._privacyUserReadEntitlementChecked, 
-                       _DataDetectorsSourceAccess._privacyUserWriteEntitled, _DataDetectorsSourceAccess._privacyUserWriteEntitlementChecked ]
+    objc-ivars:      [ DDOperatorRegexp._subMatchers, DDScanServer._options, DDScanServer._timeout, 
+                       DataDetectorsSourceAccess._auditToken, DataDetectorsSourceAccess._clientpid, 
+                       DataDetectorsSourceAccess._clientuid, DataDetectorsSourceAccess._privacySystemWriteEntitled, 
+                       DataDetectorsSourceAccess._privacySystemWriteEntitlementChecked, 
+                       DataDetectorsSourceAccess._privacyUserReadEntitled, DataDetectorsSourceAccess._privacyUserReadEntitlementChecked, 
+                       DataDetectorsSourceAccess._privacyUserWriteEntitled, DataDetectorsSourceAccess._privacyUserWriteEntitlementChecked ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ _DDAddressBookAccessAllowed, _DDAddressResultCanBeMergedWith, 
                        _DDApplyOptions, _DDBinderAIMOrEmailKey, _DDBinderAddressBookContactNameKey, 
@@ -140,10 +139,9 @@ exports:
                        _u_terminateUChars, _u_terminateWChars, _u_unescape, _u_unescapeAt, 
                        _umtx_atomic_dec, _umtx_atomic_inc, _umtx_lock, _umtx_unlock, 
                        _ustr_hashCharsN, _ustr_hashICharsN, _ustr_hashUCharsN ]
-    objc-classes:    [ _DDAtomicRegexp, _DDBasicRegexp, _DDBindableRegexp, _DDCompilationNote, 
-                       _DDConcatenationRegexp, _DDDisjunctionRegexp, _DDLRItem, _DDLocation, 
-                       _DDOneOrMoreExp, _DDOperatorRegexp, _DDOptionalExp, _DDRegexpManager, 
-                       _DDRepeatCount, _DDRepeatMax, _DDScanServer, _DDScannerResult, 
-                       _DDStarExp, _DDStatsBuilder, _DDTokenRegexp, _DDVariable, 
-                       _DataDetectorsSourceAccess ]
+    objc-classes:    [ DDAtomicRegexp, DDBasicRegexp, DDBindableRegexp, DDCompilationNote, 
+                       DDConcatenationRegexp, DDDisjunctionRegexp, DDLRItem, DDLocation, 
+                       DDOneOrMoreExp, DDOperatorRegexp, DDOptionalExp, DDRegexpManager, 
+                       DDRepeatCount, DDRepeatMax, DDScanServer, DDScannerResult, 
+                       DDStarExp, DDStatsBuilder, DDTokenRegexp, DDVariable, DataDetectorsSourceAccess ]
 ...

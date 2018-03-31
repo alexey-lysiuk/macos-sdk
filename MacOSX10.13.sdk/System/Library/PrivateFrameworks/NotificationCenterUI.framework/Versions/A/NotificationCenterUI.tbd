@@ -1,4 +1,4 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 79A30787-4C08-391B-9376-5E73D2E088F0' ]
 platform:        macosx
@@ -23,20 +23,20 @@ exports:
                        _kNCShowOnLockScreenKey, _kNCSnippetConfigurationImagePathKey, 
                        _kNCSnippetConfigurationRevealKey, _kNCSnippetConfigurationTitleKey, 
                        _printView ]
-    objc-classes:    [ _NCCardViewController, _NCCustomAlert, _NCCustomAlertBackgroundView, 
-                       _NCJSONTransformer, _NCMachSendRight, _NCMaterialLayer, _NCRemoteViewServiceContainerView, 
-                       _NCRoundedWindowContentView, _NCSelectionMaterialLayer, _NCServiceController, 
-                       _NCServiceViewService, _NCServiceWindow, __NCCardViewControllerCardView, 
-                       __NCCardViewControllerContentView, __NCCardViewControllerView ]
-    objc-ivars:      [ _NCMachSendRight._sendRight, _NCRoundedWindowContentView._canExpand, 
-                       _NCRoundedWindowContentView._delegateSupportsClick, _NCRoundedWindowContentView._delegateSupportsCloseButton, 
-                       _NCRoundedWindowContentView._delegateSupportsDragging, _NCRoundedWindowContentView._delegateSupportsEnterExit, 
-                       _NCRoundedWindowContentView._delegateSupportsLayout, _NCRoundedWindowContentView._delegateSupportsOrigin, 
-                       _NCRoundedWindowContentView._delegateSupportsScroll, _NCRoundedWindowContentView._delegateSupportsUpdateConstraints, 
-                       _NCRoundedWindowContentView._dragStartedLeft, _NCRoundedWindowContentView._dragging, 
-                       _NCRoundedWindowContentView._height, _NCRoundedWindowContentView._hitLayer, 
-                       _NCRoundedWindowContentView._ignoreOrb, _NCRoundedWindowContentView._lastDragDeltaX, 
-                       _NCRoundedWindowContentView._mouseDownInBottomEdge, _NCRoundedWindowContentView._mouseDownInView, 
-                       _NCRoundedWindowContentView._mouseInView, _NCRoundedWindowContentView._needsLayout, 
-                       _NCRoundedWindowContentView._shadowImageLayer, _NCRoundedWindowContentView._wasAcceptingMouseEvents ]
+    objc-classes:    [ NCCardViewController, NCCustomAlert, NCCustomAlertBackgroundView, 
+                       NCJSONTransformer, NCMachSendRight, NCMaterialLayer, NCRemoteViewServiceContainerView, 
+                       NCRoundedWindowContentView, NCSelectionMaterialLayer, NCServiceController, 
+                       NCServiceViewService, NCServiceWindow, _NCCardViewControllerCardView, 
+                       _NCCardViewControllerContentView, _NCCardViewControllerView ]
+    objc-ivars:      [ NCMachSendRight._sendRight, NCRoundedWindowContentView._canExpand, 
+                       NCRoundedWindowContentView._delegateSupportsClick, NCRoundedWindowContentView._delegateSupportsCloseButton, 
+                       NCRoundedWindowContentView._delegateSupportsDragging, NCRoundedWindowContentView._delegateSupportsEnterExit, 
+                       NCRoundedWindowContentView._delegateSupportsLayout, NCRoundedWindowContentView._delegateSupportsOrigin, 
+                       NCRoundedWindowContentView._delegateSupportsScroll, NCRoundedWindowContentView._delegateSupportsUpdateConstraints, 
+                       NCRoundedWindowContentView._dragStartedLeft, NCRoundedWindowContentView._dragging, 
+                       NCRoundedWindowContentView._height, NCRoundedWindowContentView._hitLayer, 
+                       NCRoundedWindowContentView._ignoreOrb, NCRoundedWindowContentView._lastDragDeltaX, 
+                       NCRoundedWindowContentView._mouseDownInBottomEdge, NCRoundedWindowContentView._mouseDownInView, 
+                       NCRoundedWindowContentView._mouseInView, NCRoundedWindowContentView._needsLayout, 
+                       NCRoundedWindowContentView._shadowImageLayer, NCRoundedWindowContentView._wasAcceptingMouseEvents ]
 ...

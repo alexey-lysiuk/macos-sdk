@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: F96973B5-C36B-3037-8AEC-3BF7147D79E2', 'x86_64: 94972913-9DF0-3C78-847C-43E58919E3DA' ]
+uuids:           [ 'i386: 8C2103F0-0293-3450-A4D5-CDA224D6B1DD', 'x86_64: 3B24F2D1-B578-359D-ADB2-0ED19A364C38' ]
 platform:        macosx
 install-name:    /usr/lib/system/libsystem_asl.dylib
-current-version: 356.1.1
+current-version: 356.50.1
 objc-constraint: none
 parent-umbrella: System
 exports:         

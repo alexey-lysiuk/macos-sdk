@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BAB423AE-3B78-3CB8-A79B-C0CD6471B7F9' ]
+uuids:           [ 'x86_64: FE2BE7E0-6A8C-30B5-AA55-349BA16336A3' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/BioKitAggD.framework/Versions/A/BioKitAggD
 objc-constraint: none
@@ -9,5 +9,5 @@ exports:
     symbols:         [ _BKADClientAddValueForScalarKey, _BKADClientClearDistributionKey, 
                        _BKADClientClearScalarKey, _BKADClientPushValueForDistributionKey, 
                        _BKADClientSetValueForDistributionKey, _BKADClientSetValueForScalarKey ]
-    objc-classes:    [ _BKADClient ]
+    objc-classes:    [ BKADClient ]
 ...

@@ -1,10 +1,10 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 36B551CE-7C4C-3E3D-8BDA-1059E8608EE9' ]
+uuids:           [ 'x86_64: 810D8B0C-5DDD-3546-BD24-959E2646ABC6' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Swift/libswiftSafariServices.dylib
 current-version: 900.8.49
-swift-version:   5
+swift-abi-version: 5
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ __T014SafariServices08SFSafariB9AvailableSbSC0cB7VersionOF, 

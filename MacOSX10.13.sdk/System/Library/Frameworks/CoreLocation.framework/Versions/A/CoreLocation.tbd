@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 7EF7FE7D-B792-32A5-8AAC-955BB6F10302', 'x86_64: 0E78BBE7-9016-3A12-88EB-425EFE69E643' ]
+uuids:           [ 'i386: 4C25C62F-FC70-3A05-87E3-379F4C9CD277', 'x86_64: 98296858-34F1-3F82-93F0-59E2150A89F1' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreLocation.framework/Versions/A/CoreLocation
-current-version: 2237.0.22
+current-version: 2245.0.41
 exports:         
   - archs:           [ i386, x86_64 ]
     symbols:         [ _CLAppResetChangedNotification, _CLAppStatusChangedNotification, 
@@ -58,9 +58,8 @@ exports:
                        _kCLLocationAccuracyNearestTenMeters, _kCLLocationAccuracyThreeKilometers, 
                        _kCLLocationCoordinate2DInvalid, _kCLLocationIntegrityHigh, 
                        _kCLLocationIntegrityLow, _kCLLocationIntegrityMedium, _kCLLocationIntegrityNone ]
-    objc-classes:    [ _CLAssertion, _CLBeacon, _CLBeaconRegion, _CLCircularRegion, 
-                       _CLEmergencyEnablementAssertion, _CLGeocoder, _CLHeading, 
-                       _CLLocation, _CLLocationManager, _CLLocationManagerRoutine, 
-                       _CLPlacemark, _CLRegion, _CLSimulationManager, _CLStateTracker, 
-                       _CLTilesManagerClient, __CLRangingPeer, __CLRangingPeerDistance ]
+    objc-classes:    [ CLAssertion, CLBeacon, CLBeaconRegion, CLCircularRegion, CLEmergencyEnablementAssertion, 
+                       CLGeocoder, CLHeading, CLLocation, CLLocationManager, CLLocationManagerRoutine, 
+                       CLPlacemark, CLRegion, CLSimulationManager, CLStateTracker, 
+                       CLTilesManagerClient, _CLRangingPeer, _CLRangingPeerDistance ]
 ...

@@ -683,7 +683,9 @@ typedef CF_OPTIONS(UInt32, AudioUnitRenderActionFlags)
 		The audio unit did not satisfy the render request in time.
 	@constant kAudioUnitErr_ExtensionNotFound
 		The specified identifier did not match any Audio Unit Extensions.
-	
+	@constant		kAudioUnitErr_InvalidParameterValue
+					The parameter value is not supported, e.g. the value specified is NaN or
+					infinite.
 */
 CF_ENUM(OSStatus) {
 	kAudioUnitErr_InvalidProperty			= -10879,
@@ -708,7 +710,8 @@ CF_ENUM(OSStatus) {
     kAudioUnitErr_MIDIOutputBufferFull		= -66753,
     kAudioComponentErr_InstanceInvalidated  = -66749,
 	kAudioUnitErr_RenderTimeout				= -66745,
-	kAudioUnitErr_ExtensionNotFound			= -66744
+	kAudioUnitErr_ExtensionNotFound			= -66744,
+	kAudioUnitErr_InvalidParameterValue		= -66743,
 };
 
 

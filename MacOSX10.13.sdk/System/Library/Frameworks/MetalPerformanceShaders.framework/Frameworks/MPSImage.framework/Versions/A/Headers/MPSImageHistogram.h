@@ -20,7 +20,7 @@ typedef struct
     NSUInteger      numberOfHistogramEntries;   /**<  Specifies the number of histogram entries, or "bins" for each channel.  For example, if you want 256 histogram bins then numberOfHistogramEntries must be set to 256.  The value stored in each histogram bin is a 32-bit unsigned integer.  The size of the histogram buffer in which these bins will be stored should be >= numberOfHistogramEntries * sizeof(uint32_t) * number of channels in the image. numberOfHistogramEntries must be a power of 2 and is a minimum of 256 bins.   */
     BOOL            histogramForAlpha;          /**<  Specifies whether the histogram for the alpha channel should be computed or not. */
     vector_float4   minPixelValue;              /**<  Specifies the minimum pixel value.  Any pixel value less than this will be clipped to this value (for the purposes of histogram calculation), and assigned to the first histogram entry. This minimum value is applied to each of the four channels separately. */
-    vector_float4   maxPixelValue;              /**<  Specifies the maximum pixel value.  Any pixel value greater than this will be clipped to this value (for the purposes of histogram calculation), and assigned to the first histogram entry. This maximum value is applied to each of the four channels separately. */
+    vector_float4   maxPixelValue;              /**<  Specifies the maximum pixel value.  Any pixel value greater than this will be clipped to this value (for the purposes of histogram calculation), and assigned to the last histogram entry. This maximum value is applied to each of the four channels separately. */
 } MPSImageHistogramInfo;
 
 

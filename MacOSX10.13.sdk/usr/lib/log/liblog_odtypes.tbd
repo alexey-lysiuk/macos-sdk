@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4DF70F2E-1CF6-39D7-8516-24CDE4238E06' ]
+uuids:           [ 'x86_64: AEC45F88-2C71-3997-9730-F0B2C314C99D' ]
 platform:        macosx
 install-name:    /usr/lib/log/liblog_odtypes.dylib
 exports:         

@@ -1,18 +1,18 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 6BA18970-1167-3947-BFEB-997DAD4F8644', 'x86_64: 99F7B6DE-E264-3AB7-A527-236E023D66C7' ]
+uuids:           [ 'i386: 8BABE619-EDDB-35A5-AA07-BB26D3D8669E', 'x86_64: 0BFD5ECB-93A4-3330-BB9B-CBA222C5DBB2' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/XPCService.framework/Versions/A/XPCService
 exports:         
   - archs:           [ x86_64 ]
-    objc-ivars:      [ _XPCServiceBundle._bundle, _XPCServiceBundle._executablePath, 
-                       _XPCServiceBundle._executablePathPredicate, _XPCServiceBundle._launchdJobDictionary, 
-                       _XPCServiceBundle._launchdJobDictionaryPredicate, _XPCServiceBundle._realExecutablePath, 
-                       _XPCServiceBundle._realExecutablePathPredicate, _XPCServiceBundle._serviceDictionary, 
-                       _XPCServiceBundle._serviceDictionaryPredicate, _XPCServiceBundle._serviceIdentifier, 
-                       _XPCServiceBundle._serviceIdentifierPredicate, _XPCServiceBundle._serviceType, 
-                       _XPCServiceBundle._serviceTypePredicate, _XPCServiceBundle._xpcJobData, 
-                       _XPCServiceBundle._xpcJobDataPredicate, _XPCServiceRuntime._entitlements ]
+    objc-ivars:      [ XPCServiceBundle._bundle, XPCServiceBundle._executablePath, 
+                       XPCServiceBundle._executablePathPredicate, XPCServiceBundle._launchdJobDictionary, 
+                       XPCServiceBundle._launchdJobDictionaryPredicate, XPCServiceBundle._realExecutablePath, 
+                       XPCServiceBundle._realExecutablePathPredicate, XPCServiceBundle._serviceDictionary, 
+                       XPCServiceBundle._serviceDictionaryPredicate, XPCServiceBundle._serviceIdentifier, 
+                       XPCServiceBundle._serviceIdentifierPredicate, XPCServiceBundle._serviceType, 
+                       XPCServiceBundle._serviceTypePredicate, XPCServiceBundle._xpcJobData, 
+                       XPCServiceBundle._xpcJobDataPredicate, XPCServiceRuntime._entitlements ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ _XPCServiceBundleExtention, _XPCServiceBundleInfoDictionaryKey, 
                        _XPCServiceDictionaryAdditionalServicesKey, _XPCServiceDictionaryAllowedClientsKey, 
@@ -23,5 +23,5 @@ exports:
                        _XPCServiceDictionaryServiceTypeKey, _XPCServiceDictionaryUseNSApplicationMainKey, 
                        _XPCServiceVersionNumber, _XPCServiceVersionString, __xpc_main, 
                        _connectionEvaluator, _xpc_service_main ]
-    objc-classes:    [ _XPCServiceBundle, _XPCServiceRuntime ]
+    objc-classes:    [ XPCServiceBundle, XPCServiceRuntime ]
 ...

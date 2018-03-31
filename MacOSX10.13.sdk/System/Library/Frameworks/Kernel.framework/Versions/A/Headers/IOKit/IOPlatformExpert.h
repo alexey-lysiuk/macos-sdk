@@ -73,6 +73,7 @@ enum {
 extern int (*PE_halt_restart)(unsigned int type);
 extern int PEHaltRestart(unsigned int type);
 
+
 // Save the Panic Info.  Returns the number of bytes saved.
 extern UInt32 PESavePanicInfo(UInt8 *buffer, UInt32 length);
 extern void PESavePanicInfoAction(void *buffer, UInt32 offset, UInt32 length);
@@ -141,7 +142,7 @@ protected:
     int        numInstancesRegistered;
 
     struct ExpansionData { };
-    ExpansionData *reserved;
+    ExpansionData *iope_reserved __unused;
 
     virtual void setBootROMType(long peBootROMType);
     virtual void setChipSetType(long peChipSetType);
@@ -236,7 +237,7 @@ private:
     IODTNVRAM *dtNVRAM;
 
     struct ExpansionData { };
-    ExpansionData *reserved;
+    ExpansionData *iodtpe_reserved;
 
 public:
     virtual IOService * probe(	IOService * 	provider,
@@ -313,7 +314,7 @@ private:
     IOWorkLoop *workLoop;
 
     struct ExpansionData { };
-    ExpansionData *reserved;
+    ExpansionData *ioped_reserved __unused;
 
 public:
     virtual bool initWithArgs( void * p1, void * p2,
@@ -345,7 +346,7 @@ class IOPlatformDevice : public IOService
     OSDeclareDefaultStructors(IOPlatformDevice)
 
     struct ExpansionData { };
-    ExpansionData *reserved;
+    ExpansionData *iopd_reserved;
 
 public:
     virtual bool compareName( OSString * name, OSString ** matched = 0 ) const APPLE_KEXT_OVERRIDE;

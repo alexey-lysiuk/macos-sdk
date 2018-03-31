@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: EC1CCEC3-19B3-3EC8-AEF5-2E1360E0B950', 'x86_64: 0AACB21D-AAC4-337C-8FF6-A8F6196614EE' ]
+uuids:           [ 'i386: FFCA8679-9AD8-3CC6-BE5E-E3CA580FB3D3', 'x86_64: 10829956-8A58-306F-BA24-4A5CA84A2A35' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/OpenCL.framework/Versions/A/OpenCL
 exports:         

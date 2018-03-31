@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E1DE0790-D91A-3D99-A61D-478391243A6F' ]
+uuids:           [ 'x86_64: 9F6CD2DB-230B-3E78-A341-4EDDAE8FD61A' ]
 platform:        macosx
 install-name:    /usr/lib/libodmodule.dylib
 exports:         
@@ -254,7 +254,7 @@ exports:
                        _odrequest_respond_success, _odxobject_create_internal, _odxobject_finalize, 
                        _osvtables, _xpc_array_append_cftype, _xpc_dictionary_set_cftype, 
                        _xpctype_to_cftype ]
-    objc-classes:    [ _OS_odx_connection, _OS_odx_context, _OS_odx_credential, _OS_odx_module, 
-                       _OS_odx_moduleconfig, _OS_odx_node, _OS_odx_nodeconfig, _OS_odx_object, 
-                       _OS_odx_request, _OS_odx_response, _OS_odx_session ]
+    objc-classes:    [ OS_odx_connection, OS_odx_context, OS_odx_credential, OS_odx_module, 
+                       OS_odx_moduleconfig, OS_odx_node, OS_odx_nodeconfig, OS_odx_object, 
+                       OS_odx_request, OS_odx_response, OS_odx_session ]
 ...

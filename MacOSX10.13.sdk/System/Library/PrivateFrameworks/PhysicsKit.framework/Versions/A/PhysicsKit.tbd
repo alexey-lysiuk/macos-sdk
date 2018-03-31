@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8F060C2D-BA72-33E7-B6A3-22E15E10B4E7' ]
+uuids:           [ 'x86_64: 02737DB1-A03F-3AE1-A31E-97DC18928068' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhysicsKit.framework/Versions/A/PhysicsKit
 exports:         
@@ -37,21 +37,20 @@ exports:
                        _getRegionOnField, _setRegionOnField, _setRepresentedObjectOnField, 
                        _snoise1, _snoise2, _snoise3, _snoise4, _srdnoise2, _srdnoise2_sincos, 
                        _srdnoise3, _srdnoise3_sincos, _srdnoise3_sincos_vector ]
-    objc-classes:    [ _PKPhysicsBody, _PKPhysicsContact, _PKPhysicsField, _PKPhysicsFieldCustomBlock, 
-                       _PKPhysicsFieldDrag, _PKPhysicsFieldElectric, _PKPhysicsFieldLinearGravity, 
-                       _PKPhysicsFieldMagnetic, _PKPhysicsFieldNoise, _PKPhysicsFieldRadialGravity, 
-                       _PKPhysicsFieldSpring, _PKPhysicsFieldTurbulence, _PKPhysicsFieldVelocity, 
-                       _PKPhysicsFieldVortex, _PKPhysicsGrid, _PKPhysicsJoint, _PKPhysicsJointDistance, 
-                       _PKPhysicsJointPrismatic, _PKPhysicsJointRevolute, _PKPhysicsJointRope, 
-                       _PKPhysicsJointWeld, _PKPhysicsWorld, _PKRegion ]
-    objc-ivars:      [ _PKPhysicsBody._edgeRadius, _PKPhysicsBody._mask, _PKPhysicsBody._p0, 
-                       _PKPhysicsBody._p1, _PKPhysicsBody._pathPtr, _PKPhysicsBody._quadTree, 
-                       _PKPhysicsBody._radius, _PKPhysicsBody._shapeType, _PKPhysicsBody._size, 
-                       _PKPhysicsField._field, _PKPhysicsField._position, _PKPhysicsField._region, 
-                       _PKPhysicsField._rotation, _PKPhysicsField._scale, _PKPhysicsFieldCustomBlock._batchBlock, 
-                       _PKPhysicsFieldCustomBlock._block, _PKPhysicsWorld._accumulatedDt, 
-                       _PKPhysicsWorld._bodies, _PKPhysicsWorld._contactListener, 
-                       _PKPhysicsWorld._doSleep, _PKPhysicsWorld._gravity, _PKPhysicsWorld._joints, 
-                       _PKPhysicsWorld._postStepBlocks, _PKPhysicsWorld._speed, _PKPhysicsWorld._world, 
-                       _PKPhysicsWorld.drawPacket ]
+    objc-classes:    [ PKPhysicsBody, PKPhysicsContact, PKPhysicsField, PKPhysicsFieldCustomBlock, 
+                       PKPhysicsFieldDrag, PKPhysicsFieldElectric, PKPhysicsFieldLinearGravity, 
+                       PKPhysicsFieldMagnetic, PKPhysicsFieldNoise, PKPhysicsFieldRadialGravity, 
+                       PKPhysicsFieldSpring, PKPhysicsFieldTurbulence, PKPhysicsFieldVelocity, 
+                       PKPhysicsFieldVortex, PKPhysicsGrid, PKPhysicsJoint, PKPhysicsJointDistance, 
+                       PKPhysicsJointPrismatic, PKPhysicsJointRevolute, PKPhysicsJointRope, 
+                       PKPhysicsJointWeld, PKPhysicsWorld, PKRegion ]
+    objc-ivars:      [ PKPhysicsBody._edgeRadius, PKPhysicsBody._mask, PKPhysicsBody._p0, 
+                       PKPhysicsBody._p1, PKPhysicsBody._pathPtr, PKPhysicsBody._quadTree, 
+                       PKPhysicsBody._radius, PKPhysicsBody._shapeType, PKPhysicsBody._size, 
+                       PKPhysicsField._field, PKPhysicsField._position, PKPhysicsField._region, 
+                       PKPhysicsField._rotation, PKPhysicsField._scale, PKPhysicsFieldCustomBlock._batchBlock, 
+                       PKPhysicsFieldCustomBlock._block, PKPhysicsWorld._accumulatedDt, 
+                       PKPhysicsWorld._bodies, PKPhysicsWorld._contactListener, PKPhysicsWorld._doSleep, 
+                       PKPhysicsWorld._gravity, PKPhysicsWorld._joints, PKPhysicsWorld._postStepBlocks, 
+                       PKPhysicsWorld._speed, PKPhysicsWorld._world, PKPhysicsWorld.drawPacket ]
 ...

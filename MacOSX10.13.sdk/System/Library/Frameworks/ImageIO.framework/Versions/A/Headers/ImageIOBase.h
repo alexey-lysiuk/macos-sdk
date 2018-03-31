@@ -9,6 +9,7 @@
 #define __IMAGEIOBASE__
 
 #include <CoreFoundation/CoreFoundation.h>
+#include <CoreGraphics/CoreGraphics.h>
 
 #if defined(IMAGEIO_BUILDING_IMAGEIO)
 

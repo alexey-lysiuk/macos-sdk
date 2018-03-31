@@ -1,31 +1,30 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6CB430EE-67DD-3241-9FDE-A3E990B3F41D' ]
+uuids:           [ 'x86_64: 53285A79-FC9F-3589-AE1C-3CEB1E5C5EE7' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/LinkPresentation.framework/Versions/A/LinkPresentation
-current-version: 59.5
+current-version: 59.16
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _LPErrorDomain, _LPYouTubePlayerErrorDomain ]
-    objc-classes:    [ _LPAppLinkPresentationProperties, _LPArtworkMetadata, _LPAudioMetadata, 
-                       _LPCaptionBarPresentationProperties, _LPCaptionPresentationProperties, 
-                       _LPCaptionRowPresentationProperties, _LPCustomLinkMetadata, 
-                       _LPGameCenterInvitationMetadata, _LPIconMetadata, _LPImage, 
-                       _LPImageMetadata, _LPImageProperties, _LPLinkHTMLGenerator, 
-                       _LPLinkHTMLTextGenerator, _LPLinkMetadata, _LPLinkMetadataPresentationTransformer, 
-                       _LPLinkMetadataPreviewTransformer, _LPLinkMetadataStatusTransformer, 
-                       _LPLinkMetadataStoreTransformer, _LPLinkView, _LPMIMETypeRegistry, 
-                       _LPMetadataProvider, _LPPresentationSpecializations, _LPSharingMetadataWrapper, 
-                       _LPSpecializationMetadata, _LPTestingOverrides, _LPVideo, 
-                       _LPVideoMetadata, _LPVideoProperties, _LPWebLinkPresentationProperties, 
-                       _LPYouTubePlayerView, _LPYouTubeURLComponents, _LPiCloudFamilyInvitationMetadata, 
-                       _LPiCloudSharingMetadata, _LPiTunesMediaAlbumMetadata, _LPiTunesMediaArtistMetadata, 
-                       _LPiTunesMediaAudioBookMetadata, _LPiTunesMediaBookMetadata, 
-                       _LPiTunesMediaMovieMetadata, _LPiTunesMediaMusicVideoMetadata, 
-                       _LPiTunesMediaPlaylistMetadata, _LPiTunesMediaPodcastEpisodeMetadata, 
-                       _LPiTunesMediaPodcastMetadata, _LPiTunesMediaRadioMetadata, 
-                       _LPiTunesMediaSoftwareMetadata, _LPiTunesMediaSongMetadata, 
-                       _LPiTunesMediaTVEpisodeMetadata, _LPiTunesMediaTVSeasonMetadata, 
-                       _LPiTunesPlaybackInformation ]
+    objc-classes:    [ LPAppLinkPresentationProperties, LPArtworkMetadata, LPAudioMetadata, 
+                       LPCaptionBarPresentationProperties, LPCaptionPresentationProperties, 
+                       LPCaptionRowPresentationProperties, LPCustomLinkMetadata, 
+                       LPGameCenterInvitationMetadata, LPIconMetadata, LPImage, LPImageMetadata, 
+                       LPImageProperties, LPLinkHTMLGenerator, LPLinkHTMLTextGenerator, 
+                       LPLinkMetadata, LPLinkMetadataPresentationTransformer, LPLinkMetadataPreviewTransformer, 
+                       LPLinkMetadataStatusTransformer, LPLinkMetadataStoreTransformer, 
+                       LPLinkView, LPMIMETypeRegistry, LPMetadataProvider, LPPresentationSpecializations, 
+                       LPSharingMetadataWrapper, LPSpecializationMetadata, LPTestingOverrides, 
+                       LPVideo, LPVideoMetadata, LPVideoProperties, LPWebLinkPresentationProperties, 
+                       LPYouTubePlayerView, LPYouTubeURLComponents, LPiCloudFamilyInvitationMetadata, 
+                       LPiCloudSharingMetadata, LPiTunesMediaAlbumMetadata, LPiTunesMediaArtistMetadata, 
+                       LPiTunesMediaAudioBookMetadata, LPiTunesMediaBookMetadata, 
+                       LPiTunesMediaMovieMetadata, LPiTunesMediaMusicVideoMetadata, 
+                       LPiTunesMediaPlaylistMetadata, LPiTunesMediaPodcastEpisodeMetadata, 
+                       LPiTunesMediaPodcastMetadata, LPiTunesMediaRadioMetadata, 
+                       LPiTunesMediaSoftwareMetadata, LPiTunesMediaSongMetadata, 
+                       LPiTunesMediaTVEpisodeMetadata, LPiTunesMediaTVSeasonMetadata, 
+                       LPiTunesPlaybackInformation ]
 ...

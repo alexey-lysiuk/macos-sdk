@@ -1,4 +1,4 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
 uuids:           [ 'x86_64: 8FCEC07D-FF61-3049-BEBE-D18AA9449802' ]
 platform:        macosx
@@ -31,6 +31,6 @@ exports:
                        __CRRecentDatesArchiveKey, __CRRecentIDArchiveKey, __CRRecentsDomainArchiveKey, 
                        __CRWeightArchiveKey, _kCRLogFacilitySync, _kCRRecentContactMaxDateEvents, 
                        _sCRRecentRecentIdentifier, _sCRRecentSyncKeyDict, _sCRSQLite3MPrintTransform ]
-    objc-classes:    [ _CRDRecentContactsLibraryInterface, _CRRecentContact, _CRRecentContactsLibrary, 
-                       _CRSQLRow, _CRSearchQuery ]
+    objc-classes:    [ CRDRecentContactsLibraryInterface, CRRecentContact, CRRecentContactsLibrary, 
+                       CRSQLRow, CRSearchQuery ]
 ...

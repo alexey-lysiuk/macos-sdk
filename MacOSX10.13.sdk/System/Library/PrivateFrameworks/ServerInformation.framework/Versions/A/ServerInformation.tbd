@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: A812B913-43BF-3A7D-9D71-4156FE82401B', 'x86_64: 9CF4E458-1879-30CF-8555-E2B28FBD8959' ]
+uuids:           [ 'i386: F4378852-B045-3E4C-9871-1F54CEF2A5F3', 'x86_64: 96B5C4DF-821D-3240-A462-1EA8FBD7118D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ServerInformation.framework/Versions/A/ServerInformation
 exports:         
@@ -11,5 +11,5 @@ exports:
                        _SIIsOSXServerVolumeConfigured, _SIIsServerHardware, _SIIsXsanCapable, 
                        _SISetServerPerformanceModeEnabled, __SIIsOSXVolumeVersionEqualToOrGreater, 
                        _kSIServerPerformanceModeDidChangeNotication ]
-    objc-classes:    [ _ServerInformationComputerModelInfo ]
+    objc-classes:    [ ServerInformationComputerModelInfo ]
 ...

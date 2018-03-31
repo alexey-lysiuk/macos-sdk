@@ -42,6 +42,11 @@ module Darwin [system] [extern_c] [no_undeclared_includes] {
 			export *
 		}
 
+		module _ctype {
+			header "_ctype.h"
+			export *
+		}
+
 		module err {
 			header "err.h"
 			export *
@@ -134,6 +139,11 @@ module Darwin [system] [extern_c] [no_undeclared_includes] {
 			export *
 		}
 
+		module _stdio {
+			header "_stdio.h"
+			export *
+		}
+
 		module stdlib {
 			header "stdlib.h"
 			export *
@@ -177,20 +187,15 @@ module Darwin [system] [extern_c] [no_undeclared_includes] {
 
 		module xlocale {
 			header "xlocale.h"
-			textual header "_xlocale.h"
-			textual header "xlocale/_ctype.h"
-			textual header "xlocale/_inttypes.h"
-			textual header "xlocale/_langinfo.h"
-			textual header "xlocale/_monetary.h"
-			textual header "xlocale/_regex.h"
-			textual header "xlocale/_stdio.h"
-			textual header "xlocale/_stdlib.h"
-			textual header "xlocale/_string.h"
-			textual header "xlocale/_time.h"
-			textual header "xlocale/_wchar.h"
-			textual header "xlocale/_wctype.h"
-			textual header "xlocale/__wctype.h"
 			export *
+
+			module _xlocale {
+				header "_xlocale.h"
+				export *
+			}
+
+			umbrella "xlocale"
+			module * { export * }
 		}
 
 		module xattr_flags {
@@ -386,6 +391,11 @@ module Darwin [system] [extern_c] [no_undeclared_includes] {
 
 		module regex {
 			header "regex.h"
+			export *
+		}
+
+		module _regex {
+			header "_regex.h"
 			export *
 		}
 
@@ -1239,6 +1249,11 @@ module Darwin [system] [extern_c] [no_undeclared_includes] {
 
 	module _types {
 		header "_types.h"
+		export *
+	}
+
+	module __wctype {
+		header "__wctype.h"
 		export *
 	}
 

@@ -14,11 +14,12 @@
 .It Nm Cm trace
 .Op Fl NnrSstu
 .Op Fl R Ar path | Fl E
-.Op Fl c Ar codes-path Op Ar ...
+.Op Fl C Ar codes-path Op Ar ...
 .Op Fl T Ar timeout
 .Op Fl f Ar filter-desc
 .Op Fl b Ar buffer-size-mb
 .Op Fl x Ar pid-or-process-name Oo Ar ... Oc | Fl p Ar pid-or-process-name Oo Ar ... Oc
+.Op Fl c Ar command Op ...
 .\"
 .It Nm Cm dump
 .Op Fl E
@@ -65,6 +66,7 @@
 .Op Fl f Ar filter-desc
 .Op Fl F Ar filter-desc
 .Op Fl p Ar pid-or-process-name
+.Op Fl c Ar command Op ...
 .\"
 .El
 .Sh DESCRIPTION
@@ -83,7 +85,7 @@ be used in multiple subcommands.
 Print information about the current configuration of kernel trace.
 .Pp
 .\" TRACE
-.It Cm trace Oo Fl NnrSstu Oc Oo Fl R Ar path | Fl E Oc Oo Fl T Ar timeout Oc Oo Fl c Ar codes-path Op Ar ... Oc Oo Fl b Ar buffer-size-mb Oc Oo Fl f Ar filter-desc Oc Oo Fl x Ar pid-or-process-name Oo Ar ... Oc | Fl p Ar pid-or-process-name Oo Ar ... Oc Oc
+.It Cm trace Oo Fl NnrsStu Oc Oo Fl R Ar path | Fl E Oc Oo Fl T Ar timeout Oc Oo Fl C Ar codes-path Op Ar ... Oc Oo Fl b Ar buffer-size-mb Oc Oo Fl f Ar filter-desc Oc Oo Fl x Ar pid-or-process-name Oo Ar ... Oc | Fl p Ar pid-or-process-name Oo Ar ... Oc Oc Oo Fl c Ar command Oo ... Oc Oc
 .Pp
 Print events to
 .Xr stdout 4
@@ -129,7 +131,7 @@ Print times as Mach absolute timestamps, instead of the default local wall clock
 time.
 .It Fl u
 Attempt to symbolicate addressess to uuid-offset tuples.
-.It Fl c Ar codes-path
+.It Fl C Ar codes-path
 Use a custom codes file to provide event ID to name mappings.  See
 .Xr trace 1
 for more details on the format of codes files.
@@ -160,6 +162,11 @@ exlusive.  Processes that cannot be attached to are always excluded on release
 kernels.  Similarly, events in the Mach scheduling subclass are included,
 regardless of the this option, to allow tools to maintain thread scheduling
 state machines.
+.It Fl c Ar command Op ...
+Run the command specified by
+.Ar command
+and stop tracing when it exits.  All arguments after this option are passed to
+the command.
 .El
 .\" DUMP
 .It Cm dump Oo Fl E Oc Oo Fl f Ar filter-desc Oc Oo Fl l Ar compression-level Oc Oo Fl T Ar timeout Oc Oo Ar path Oc Oo Fl p Ar pid-or-process-name Oc
@@ -290,7 +297,7 @@ using the small compression level, unless otherwise specified with the
 .Fl l
 option.
 .\" ARTRACE
-.It Nm Cm artrace Oo Fl nr Oc Oo Fl t Ar timeout Oc Oo Fl i Ar interval Oc Oo Fl o Ar filename Oc Oo Fl b Ar buffer-size-mb Oc Oo Fl f Ar filter-desc Oc Oo Fl F Ar filter-desc Oc Oo Fl p Ar pid-or-process-name Oc
+.It Nm Cm artrace Oo Fl nr Oc Oo Fl t Ar timeout Oc Oo Fl i Ar interval Oc Oo Fl o Ar filename Oc Oo Fl b Ar buffer-size-mb Oc Oo Fl f Ar filter-desc Oc Oo Fl F Ar filter-desc Oc Oo Fl p Ar pid-or-process-name Oc Oo Fl c Ar command Oo ... Oc Oc
 Profile the system, writing trace events to an automatically named file.  By
 default, this measures scheduler, VM, and system call usage, and samples
 threads on-core periodically.
@@ -332,6 +339,11 @@ Only record events that occur for the process identified by
 .Ar pid
 or
 .Ar process-name .
+.It Fl c Ar command Op ...
+Run the command specified by
+.Ar command
+and stop tracing when it exits.  All arguments after this option are passed to
+the command.
 .El
 .Sh FILTER DESCRIPTIONS
 A filter description is a comma-separated list of class and subclass specifiers

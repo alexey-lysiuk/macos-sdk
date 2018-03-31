@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 09D0ACD4-2693-34E9-9905-77DB26A196F7' ]
+uuids:           [ 'x86_64: 0D14A9E1-6EBF-3D15-9637-D44F0FB3DA48' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/SceneKit.framework/Versions/A/SceneKit
-current-version: 432.3
+current-version: 433.6
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _C3DAnimationManagerContainsSceneTimeBasedAnimation, _C3DAnimationManagerIsEmpty, 
@@ -141,30 +141,29 @@ exports:
                        _kC3DIOSceneSourceSplitMeshesForGLES, _kC3DIOSceneSourceTriggerOptionsForRealtimeViewer, 
                        _kC3DIOSceneSourceUseSafeMode, _kC3DImageInitFromPath, _kC3DImageLocation, 
                        _kC3DImageRelativePath, _kC3DSceneDidUpdateNotification, _kC3DSceneKitRevision ]
-    objc-classes:    [ _SCNAccelerationConstraint, _SCNAction, _SCNActionReference, 
-                       _SCNAnimation, _SCNAnimationEvent, _SCNAnimationPlayer, _SCNAnimationReference, 
-                       _SCNAssetCatalog, _SCNAudioPlayer, _SCNAudioSource, _SCNAuthoringEnvironment, 
-                       _SCNAuthoringEnvironment2, _SCNAvoidOccluderConstraint, _SCNBillboardConstraint, 
-                       _SCNBox, _SCNCamera, _SCNCameraControlEventHandler, _SCNCameraController, 
-                       _SCNCapsule, _SCNCone, _SCNConstantScaleConstraint, _SCNConstraint, 
-                       _SCNCylinder, _SCNDistanceConstraint, _SCNEventHandler, _SCNFloor, 
-                       _SCNGeometry, _SCNGeometryElement, _SCNGeometrySource, _SCNGeometryTessellator, 
-                       _SCNHitTestResult, _SCNIKConstraint, _SCNImageSource, _SCNKeyedArchiver, 
-                       _SCNKeyedUnarchiver, _SCNLayer, _SCNLevelOfDetail, _SCNLight, 
-                       _SCNLookAtConstraint, _SCNMaterial, _SCNMaterialProperty, 
-                       _SCNMetalLayer, _SCNMorpher, _SCNNode, _SCNNodeReference, 
-                       _SCNOffscreenRenderer, _SCNParticlePropertyController, _SCNParticleSystem, 
-                       _SCNPhysicsBallSocketJoint, _SCNPhysicsBehavior, _SCNPhysicsBody, 
-                       _SCNPhysicsCharacter, _SCNPhysicsConeTwistJoint, _SCNPhysicsContact, 
-                       _SCNPhysicsCustomField, _SCNPhysicsDragField, _SCNPhysicsField, 
-                       _SCNPhysicsHingeJoint, _SCNPhysicsLinearGravityField, _SCNPhysicsMagneticField, 
-                       _SCNPhysicsNoiseField, _SCNPhysicsRadialGravityField, _SCNPhysicsShape, 
-                       _SCNPhysicsSliderJoint, _SCNPhysicsSpringField, _SCNPhysicsTurbulenceField, 
-                       _SCNPhysicsVehicle, _SCNPhysicsVehicleWheel, _SCNPhysicsVortexField, 
-                       _SCNPhysicsWorld, _SCNPlane, _SCNProgram, _SCNPyramid, _SCNReferenceNode, 
-                       _SCNRenderer, _SCNReplicatorConstraint, _SCNScene, _SCNSceneSource, 
-                       _SCNShape, _SCNSkinner, _SCNSliderConstraint, _SCNSphere, 
-                       _SCNTechnique, _SCNText, _SCNTextureSource, _SCNTimingFunction, 
-                       _SCNTorus, _SCNTransaction, _SCNTransformConstraint, _SCNTube, 
-                       _SCNView, __SCNShadableCompilationIssue ]
+    objc-classes:    [ SCNAccelerationConstraint, SCNAction, SCNActionReference, 
+                       SCNAnimation, SCNAnimationEvent, SCNAnimationPlayer, SCNAnimationReference, 
+                       SCNAssetCatalog, SCNAudioPlayer, SCNAudioSource, SCNAuthoringEnvironment, 
+                       SCNAuthoringEnvironment2, SCNAvoidOccluderConstraint, SCNBillboardConstraint, 
+                       SCNBox, SCNCamera, SCNCameraControlEventHandler, SCNCameraController, 
+                       SCNCapsule, SCNCone, SCNConstantScaleConstraint, SCNConstraint, 
+                       SCNCylinder, SCNDistanceConstraint, SCNEventHandler, SCNFloor, 
+                       SCNGeometry, SCNGeometryElement, SCNGeometrySource, SCNGeometryTessellator, 
+                       SCNHitTestResult, SCNIKConstraint, SCNImageSource, SCNKeyedArchiver, 
+                       SCNKeyedUnarchiver, SCNLayer, SCNLevelOfDetail, SCNLight, 
+                       SCNLookAtConstraint, SCNMaterial, SCNMaterialProperty, SCNMetalLayer, 
+                       SCNMorpher, SCNNode, SCNNodeReference, SCNOffscreenRenderer, 
+                       SCNParticlePropertyController, SCNParticleSystem, SCNPhysicsBallSocketJoint, 
+                       SCNPhysicsBehavior, SCNPhysicsBody, SCNPhysicsCharacter, SCNPhysicsConeTwistJoint, 
+                       SCNPhysicsContact, SCNPhysicsCustomField, SCNPhysicsDragField, 
+                       SCNPhysicsField, SCNPhysicsHingeJoint, SCNPhysicsLinearGravityField, 
+                       SCNPhysicsMagneticField, SCNPhysicsNoiseField, SCNPhysicsRadialGravityField, 
+                       SCNPhysicsShape, SCNPhysicsSliderJoint, SCNPhysicsSpringField, 
+                       SCNPhysicsTurbulenceField, SCNPhysicsVehicle, SCNPhysicsVehicleWheel, 
+                       SCNPhysicsVortexField, SCNPhysicsWorld, SCNPlane, SCNProgram, 
+                       SCNPyramid, SCNReferenceNode, SCNRenderer, SCNReplicatorConstraint, 
+                       SCNScene, SCNSceneSource, SCNShape, SCNSkinner, SCNSliderConstraint, 
+                       SCNSphere, SCNTechnique, SCNText, SCNTextureSource, SCNTimingFunction, 
+                       SCNTorus, SCNTransaction, SCNTransformConstraint, SCNTube, 
+                       SCNView, _SCNShadableCompilationIssue ]
 ...

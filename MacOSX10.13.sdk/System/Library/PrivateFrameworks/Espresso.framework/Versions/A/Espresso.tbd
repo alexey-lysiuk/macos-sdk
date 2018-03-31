@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 50FDAE75-54D4-3645-B501-B8D09ADCD7AA' ]
+uuids:           [ 'x86_64: F7185CA7-4FFD-3A08-B2BF-D99D4BE04A65' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Espresso.framework/Versions/A/Espresso
-current-version: 66.11
+current-version: 66.15
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -396,8 +396,8 @@ exports:
                        _espresso_plan_get_phase, _espresso_plan_perfbench, _espresso_plan_wipe_tempoary, 
                        _espresso_set_fallback_context, _espresso_tmp_enable_montreal, 
                        _tmp_espresso_load_image_bgra, _tmp_espresso_load_image_grayscale ]
-    objc-classes:    [ _EspressoBrickRegistry, _EspressoBrickTensor, _EspressoBrickTensorCPU, 
-                       _EspressoBrickTensorMetal, _EspressoBrickTensorShape, _EspressoDCNEspressoOverfeatDetector, 
-                       _EspressoFDOverfeatNetwork, _EspressoFaceLandmarkDetector, 
-                       _EspressoImage2Image, _EspressoMetalSingleton, _EspressoOJBC ]
+    objc-classes:    [ EspressoBrickRegistry, EspressoBrickTensor, EspressoBrickTensorCPU, 
+                       EspressoBrickTensorMetal, EspressoBrickTensorShape, EspressoDCNEspressoOverfeatDetector, 
+                       EspressoFDOverfeatNetwork, EspressoFaceLandmarkDetector, EspressoImage2Image, 
+                       EspressoMetalSingleton, EspressoOJBC ]
 ...

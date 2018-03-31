@@ -1,10 +1,10 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 13B9CD58-0B5E-3DF0-95D0-965D24281D89' ]
+uuids:           [ 'x86_64: 7395E98A-F0D3-3D35-AA6D-4A34BB8D5216' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Swift/libswiftCoreAudio.dylib
 current-version: 900.8.49
-swift-version:   5
+swift-abi-version: 5
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ __T09CoreAudio013UnsafeMutableB17BufferListPointerV06unsafeG0SPySC0beF0VGfg, 

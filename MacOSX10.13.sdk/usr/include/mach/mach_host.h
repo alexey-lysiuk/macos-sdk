@@ -49,7 +49,7 @@ typedef function_table_entry   *function_table_t;
 #endif /* AUTOTEST */
 
 #ifndef	mach_host_MSG_COUNT
-#define	mach_host_MSG_COUNT	31
+#define	mach_host_MSG_COUNT	33
 #endif	/* mach_host_MSG_COUNT */
 
 #include <mach/std_types.h>
@@ -433,6 +433,19 @@ kern_return_t host_check_multiuser_mode
 	uint32_t *multiuser_mode
 );
 
+/* Routine mach_zone_info_for_zone */
+#ifdef	mig_external
+mig_external
+#else
+extern
+#endif	/* mig_external */
+kern_return_t mach_zone_info_for_zone
+(
+	host_priv_t host,
+	mach_zone_name_t name,
+	mach_zone_info_t *info
+);
+
 __END_DECLS
 
 /********************** Caution **************************/
@@ -765,6 +778,18 @@ __END_DECLS
 #ifdef  __MigPackStructs
 #pragma pack()
 #endif
+
+#ifdef  __MigPackStructs
+#pragma pack(4)
+#endif
+	typedef struct {
+		mach_msg_header_t Head;
+		NDR_record_t NDR;
+		mach_zone_name_t name;
+	} __Request__mach_zone_info_for_zone_t __attribute__((unused));
+#ifdef  __MigPackStructs
+#pragma pack()
+#endif
 #endif /* !__Request__mach_host_subsystem__defined */
 
 /* union of all requests */
@@ -798,6 +823,7 @@ union __RequestUnion__mach_host_subsystem {
 	__Request__host_set_multiuser_config_flags_t Request_host_set_multiuser_config_flags;
 	__Request__host_get_multiuser_config_flags_t Request_host_get_multiuser_config_flags;
 	__Request__host_check_multiuser_mode_t Request_host_check_multiuser_mode;
+	__Request__mach_zone_info_for_zone_t Request_mach_zone_info_for_zone;
 };
 #endif /* !__RequestUnion__mach_host_subsystem__defined */
 /* typedefs for all replies */
@@ -1181,6 +1207,19 @@ union __RequestUnion__mach_host_subsystem {
 #ifdef  __MigPackStructs
 #pragma pack()
 #endif
+
+#ifdef  __MigPackStructs
+#pragma pack(4)
+#endif
+	typedef struct {
+		mach_msg_header_t Head;
+		NDR_record_t NDR;
+		kern_return_t RetCode;
+		mach_zone_info_t info;
+	} __Reply__mach_zone_info_for_zone_t __attribute__((unused));
+#ifdef  __MigPackStructs
+#pragma pack()
+#endif
 #endif /* !__Reply__mach_host_subsystem__defined */
 
 /* union of all replies */
@@ -1214,6 +1253,7 @@ union __ReplyUnion__mach_host_subsystem {
 	__Reply__host_set_multiuser_config_flags_t Reply_host_set_multiuser_config_flags;
 	__Reply__host_get_multiuser_config_flags_t Reply_host_get_multiuser_config_flags;
 	__Reply__host_check_multiuser_mode_t Reply_host_check_multiuser_mode;
+	__Reply__mach_zone_info_for_zone_t Reply_mach_zone_info_for_zone;
 };
 #endif /* !__RequestUnion__mach_host_subsystem__defined */
 
@@ -1244,7 +1284,8 @@ union __ReplyUnion__mach_host_subsystem {
     { "mach_memory_info", 227 },\
     { "host_set_multiuser_config_flags", 228 },\
     { "host_get_multiuser_config_flags", 229 },\
-    { "host_check_multiuser_mode", 230 }
+    { "host_check_multiuser_mode", 230 },\
+    { "mach_zone_info_for_zone", 231 }
 #endif
 
 #ifdef __AfterMigUserHeader

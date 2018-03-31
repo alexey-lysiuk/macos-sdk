@@ -15,7 +15,7 @@
  @abstract Various types and utility functions used throughout SceneKit
  */
 
-#define SCN_ENABLE_METAL (defined(MAC_OS_X_VERSION_10_11) && (MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_11))
+#define SCN_ENABLE_METAL 1
 
 #if SCN_ENABLE_METAL
 #import <Metal/Metal.h>

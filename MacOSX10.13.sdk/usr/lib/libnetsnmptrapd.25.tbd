@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 23AC06FA-9C7C-37E7-9CE3-B03B554495F5', 'x86_64: 02C1D32F-4EE6-3F4D-877E-8CDC36AEA17D' ]
+uuids:           [ 'i386: 29D15BEE-50F9-3843-A553-B9874C63031F', 'x86_64: B8D2B1D4-E8D3-3083-9252-2D40DD683BAA' ]
 platform:        macosx
 install-name:    /usr/lib/libnetsnmptrapd.25.dylib
 current-version: 26.2

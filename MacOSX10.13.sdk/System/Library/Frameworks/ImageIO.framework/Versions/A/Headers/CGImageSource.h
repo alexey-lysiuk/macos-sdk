@@ -11,8 +11,7 @@
 
 typedef struct IIO_BRIDGED_TYPE(id) CGImageSource * CGImageSourceRef;
 
-#include <CoreGraphics/CoreGraphics.h>
-#include "CGImageMetadata.h"
+#include <ImageIO/CGImageMetadata.h>
 
 CF_IMPLICIT_BRIDGING_ENABLED
 

@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7404524A-1034-3B0D-9174-DCDA2C844209' ]
+uuids:           [ 'x86_64: 80447388-0D9A-3048-AF55-B7CED366000E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Symptoms.framework/Frameworks/SymptomAnalytics.framework/Versions/A/SymptomAnalytics
-current-version: 820.30.7
+current-version: 820.50.37
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _SymptomAnalyticsFrameworkDidSaveNotification, _analyticsHandle, 
@@ -46,12 +46,11 @@ exports:
                        _kSymptomAnalyticsServiceWatchpointKey, _kSymptomAnalyticsServiceWatchpointTarget, 
                        _kSymptomAnalyticsServiceWatchpointValue, _kSymptomAnalyticsTypeBundleIdentifier, 
                        _kSymptomAnalyticsTypeProcessName, _kSymptomAnalyticsWorkspacePersistenceOptionPersistentKey ]
-    objc-classes:    [ _AnalyticsWorkspace, _App, _AppAnalytics, _AppCalendarUsage, 
-                       _AppRun, _AppTypicalUsage, _CheckUpEvent, _DemoLiveUsage, 
-                       _DiagnosticCaseStorage, _DiagnosticCaseStorageAnalytics, _DiagnosticCaseUsage, 
-                       _DiagnosticCaseUsageAnalytics, _Event, _EventScene, _Flow, 
-                       _LiveFlowPerf, _LiveRoutePerf, _LiveUsage, _NetworkAttachment, 
-                       _NetworkAttachmentAnalytics, _ObjectAnalytics, _Peer, _Process, 
-                       _ProcessAnalytics, _ProvisioningData, _TshootingData, _UsageAnalytics, 
-                       _WiFiData ]
+    objc-classes:    [ AnalyticsWorkspace, App, AppAnalytics, AppCalendarUsage, AppRun, 
+                       AppTypicalUsage, CheckUpEvent, DemoLiveUsage, DiagnosticCaseStorage, 
+                       DiagnosticCaseStorageAnalytics, DiagnosticCaseUsage, DiagnosticCaseUsageAnalytics, 
+                       Event, EventScene, Flow, LiveFlowPerf, LiveRoutePerf, LiveUsage, 
+                       NetworkAttachment, NetworkAttachmentAnalytics, ObjectAnalytics, 
+                       Peer, Process, ProcessAnalytics, ProvisioningData, TshootingData, 
+                       UsageAnalytics, WiFiData ]
 ...

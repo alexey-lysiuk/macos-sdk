@@ -2,7 +2,7 @@
  * Copyright (c) 2000-2006 Apple Computer, Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
- * 
+ *
  * This file contains Original Code and/or Modifications of Original Code
  * as defined in and that are subject to the Apple Public Source License
  * Version 2.0 (the 'License'). You may not use this file except in
@@ -11,10 +11,10 @@
  * unlawful or unlicensed copies of an Apple operating system, or to
  * circumvent, violate, or enable the circumvention or violation of, any
  * terms of an Apple operating system software license agreement.
- * 
+ *
  * Please obtain a copy of the License at
  * http://www.opensource.apple.com/apsl/ and read it before using this file.
- * 
+ *
  * The Original Code and all software distributed under the License are
  * distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
  * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
@@ -22,7 +22,7 @@
  * FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.
  * Please see the License for the specific language governing rights and
  * limitations under the License.
- * 
+ *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_END@
  */
 /* Copyright (c) 1995 NeXT Computer, Inc. All Rights Reserved */
@@ -98,7 +98,7 @@
 
 /*
  * Each subsystem defined by sysctl defines a list of variables
- * for that subsystem. Each name is either a node with further 
+ * for that subsystem. Each name is either a node with further
  * levels defined below it, or it is a leaf of some particular
  * type given below. Each sysctl level defines a set of name/type
  * pairs to be used by sysctl(1) in manipulating the subsystem.
@@ -282,10 +282,10 @@ __END_DECLS
 
 #define SYSCTL_LINKER_SET_ENTRY(a, b)
 /*
- * Macros to define sysctl entries.  Which to use?  Pure data that are 
+ * Macros to define sysctl entries.  Which to use?  Pure data that are
  * returned without modification, SYSCTL_<data type> is for you, like
  * SYSCTL_QUAD for a 64-bit value.  When you want to run a handler of your
- * own, SYSCTL_PROC. 
+ * own, SYSCTL_PROC.
  *
  * parent:	parent in name hierarchy (e.g. _kern for "kern")
  * nbr:		ID.  Almost certainly OID_AUTO ("pick one for me") for you.
@@ -381,7 +381,7 @@ __END_DECLS
 		ptr, sizeof(struct type), sysctl_handle_opaque, \
 		"S," #type, descr)
 
-/* 
+/*
  * Oid for a procedure.  Specified by a pointer and an arg.
  * CTLTYPE_* macros can determine how the "sysctl" tool deals with
  * input (e.g. converting to int).
@@ -389,8 +389,8 @@ __END_DECLS
 #define SYSCTL_PROC(parent, nbr, name, access, ptr, arg, handler, fmt, descr) \
 	SYSCTL_OID(parent, nbr, name, access, \
 		ptr, arg, handler, fmt, descr)
-		
-		
+
+
 extern struct sysctl_oid_list sysctl__children;
 SYSCTL_DECL(_kern);
 SYSCTL_DECL(_sysctl);
@@ -539,7 +539,7 @@ SYSCTL_DECL(_user);
  * sysctl(8) to pick up your changes.
  */
 
-#if COUNT_SYSCALLS && defined(KERNEL) 
+#if COUNT_SYSCALLS && defined(KERNEL)
 #define	KERN_COUNT_SYSCALLS (KERN_OSTYPE + 1000)	/* keep called count for each bsd syscall */
 #endif
 
@@ -678,7 +678,7 @@ SYSCTL_DECL(_user);
 	{ "vfsconf", CTLTYPE_STRUCT } \
 }
 
-/* 
+/*
  * KERN_PROC subtypes
  */
 #define KERN_PROC_ALL		0	/* everything */
@@ -714,7 +714,7 @@ SYSCTL_DECL(_user);
 /*
  * Note: "3" was skipped sometime ago and should probably remain unused
  * to avoid any new entry from being accepted by older kernels...
- */ 
+ */
 #define	VM_MACHFACTOR	4		/* struct loadavg with mach factor*/
 #define VM_SWAPUSAGE	5		/* total swap usage */
 #define	VM_MAXID	6		/* number of valid vm ids */
@@ -864,7 +864,7 @@ extern struct loadavg averunnable;
  *
  *   hw.packages               - Gives the number of processor packages.
  *
- * These are the selectors for optional processor features for specific processors.  Selectors that return errors are not support 
+ * These are the selectors for optional processor features for specific processors.  Selectors that return errors are not support
  * on the system.  Supported features will return 1 if they are recommended or 0 if they are supported but are not expected to help .
  * performance.  Future versions of these selectors may return larger values as necessary so it is best to test for non zero.
  *
@@ -881,7 +881,7 @@ extern struct loadavg averunnable;
  *   hw.optional.dcbtstreams   - Data Cache Block Touch Steams Instruction Form
  *
  * For x86 Architecture:
- * 
+ *
  *   hw.optional.floatingpoint     - Floating Point Instructions
  *   hw.optional.mmx               - Original MMX vector instructions
  *   hw.optional.sse               - Streaming SIMD Extensions

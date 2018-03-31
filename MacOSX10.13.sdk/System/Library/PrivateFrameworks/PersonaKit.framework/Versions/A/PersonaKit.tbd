@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B86A7F74-DA6E-3191-8211-FC0B635026BF' ]
+uuids:           [ 'x86_64: 3FFAD75B-DF1C-31AA-83CE-AF5092E9A957' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PersonaKit.framework/Versions/A/PersonaKit
 objc-constraint: none
@@ -13,7 +13,7 @@ exports:
                        _PROtherLikenessesDidChangeNotification, _PRPersonaErrorDomain, 
                        _PRPersonaServiceMachName, _PRSelfLikenessesDidChangeNotification, 
                        __PRGetLogSystem, _kPRNilLikenessVersion ]
-    objc-classes:    [ _PRLikeness, _PRLikenessChange, _PRManagedLikeness, _PRManagedLikenessChange, 
-                       _PRManagedPropagationEvent, _PRManagedScreenName, _PRPersonaServiceInterface, 
-                       _PRPersonaStore ]
+    objc-classes:    [ PRLikeness, PRLikenessChange, PRManagedLikeness, PRManagedLikenessChange, 
+                       PRManagedPropagationEvent, PRManagedScreenName, PRPersonaServiceInterface, 
+                       PRPersonaStore ]
 ...

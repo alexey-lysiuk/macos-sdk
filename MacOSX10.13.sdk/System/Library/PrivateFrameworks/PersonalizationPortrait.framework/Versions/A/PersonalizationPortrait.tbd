@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B7B4E5DE-8F3C-3B06-8715-643F3BAD763F' ]
+uuids:           [ 'x86_64: B4CD3206-75C6-3407-AA09-6497088A3DFB' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PersonalizationPortrait.framework/Versions/A/PersonalizationPortrait
 exports:         
@@ -28,22 +28,21 @@ exports:
                        _PersonalizationPortraitVersionString, _kPPDayInterval, _kPPHourInterval, 
                        _kPPLongTermDecayRate, _kPPMediumTermDecayRate, _kPPShortTermDecayRate, 
                        _kPPWeekInterval ]
-    objc-classes:    [ _PPAllocSupport, _PPAsset, _PPDeletionTracker, _PPLocationNamedEntities, 
-                       _PPMFeedbackPortraitEngaged, _PPMFeedbackPortraitUsed, _PPMNamedEntitiesPerDonation, 
-                       _PPMObjectsDeleted, _PPMTopicDonation, _PPMTopicDonationError, 
-                       _PPMTopicItemDonation, _PPMTopicUniqueItems, _PPMTopicsScored, 
-                       _PPMTopicsScoredForMapping, _PPMUniqueNamedEntitiesFound, 
-                       _PPMutableNamedEntityRecord, _PPMutableTopicRecord, _PPNamedEntity, 
-                       _PPNamedEntityRecord, _PPPortrait, _PPPortraitConfiguration, 
-                       _PPPortraitDeletionTrackingXPCListenerDelegate, _PPPortraitKVOObserver, 
-                       _PPPortraitNamedEntityQuery, _PPPortraitStringDonationXPCListenerDelegate, 
-                       _PPPortraitTopicQuery, _PPPortraitXPC, _PPScoredItem, _PPSource, 
-                       _PPTopic, _PPTopicRecord, _PPTopicTransform ]
-    objc-ivars:      [ _PPNamedEntityRecord._algorithm, _PPNamedEntityRecord._decayRate, 
-                       _PPNamedEntityRecord._entity, _PPNamedEntityRecord._extractionAssetVersion, 
-                       _PPNamedEntityRecord._extractionOsBuild, _PPNamedEntityRecord._initialScore, 
-                       _PPNamedEntityRecord._source, _PPTopicRecord._algorithm, _PPTopicRecord._decayRate, 
-                       _PPTopicRecord._extractionAssetVersion, _PPTopicRecord._extractionOsBuild, 
-                       _PPTopicRecord._initialScore, _PPTopicRecord._isLocal, _PPTopicRecord._source, 
-                       _PPTopicRecord._topic ]
+    objc-classes:    [ PPAllocSupport, PPAsset, PPDeletionTracker, PPLocationNamedEntities, 
+                       PPMFeedbackPortraitEngaged, PPMFeedbackPortraitUsed, PPMNamedEntitiesPerDonation, 
+                       PPMObjectsDeleted, PPMTopicDonation, PPMTopicDonationError, 
+                       PPMTopicItemDonation, PPMTopicUniqueItems, PPMTopicsScored, 
+                       PPMTopicsScoredForMapping, PPMUniqueNamedEntitiesFound, PPMutableNamedEntityRecord, 
+                       PPMutableTopicRecord, PPNamedEntity, PPNamedEntityRecord, 
+                       PPPortrait, PPPortraitConfiguration, PPPortraitDeletionTrackingXPCListenerDelegate, 
+                       PPPortraitKVOObserver, PPPortraitNamedEntityQuery, PPPortraitStringDonationXPCListenerDelegate, 
+                       PPPortraitTopicQuery, PPPortraitXPC, PPScoredItem, PPSource, 
+                       PPTopic, PPTopicRecord, PPTopicTransform ]
+    objc-ivars:      [ PPNamedEntityRecord._algorithm, PPNamedEntityRecord._decayRate, 
+                       PPNamedEntityRecord._entity, PPNamedEntityRecord._extractionAssetVersion, 
+                       PPNamedEntityRecord._extractionOsBuild, PPNamedEntityRecord._initialScore, 
+                       PPNamedEntityRecord._source, PPTopicRecord._algorithm, PPTopicRecord._decayRate, 
+                       PPTopicRecord._extractionAssetVersion, PPTopicRecord._extractionOsBuild, 
+                       PPTopicRecord._initialScore, PPTopicRecord._isLocal, PPTopicRecord._source, 
+                       PPTopicRecord._topic ]
 ...

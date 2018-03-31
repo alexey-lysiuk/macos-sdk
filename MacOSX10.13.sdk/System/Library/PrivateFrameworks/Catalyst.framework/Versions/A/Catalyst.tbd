@@ -1,8 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0027452F-2912-3556-9689-72FDE7346B7E' ]
+uuids:           [ 'x86_64: 4800F20C-C230-3635-BBDB-C4ECEBE02090' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Catalyst.framework/Versions/A/Catalyst
+current-version: 4.3
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -10,19 +11,18 @@ exports:
                        _CATErrorWithCodeAndUserInfo, _CATErrorWithDomainCodeAndUserInfo, 
                        _CATFormattedStringForKey, _CATGetCatalystQueue, _CATLocalizedKey, 
                        _CATSetCatalystQueue, _CATUnlocalizedKey ]
-    objc-classes:    [ _CATAddress, _CATArbitrator, _CATBatchRemoteTaskOperation, 
-                       _CATBlockOperationObserver, _CATCollectionController, _CATEndPoint, 
-                       _CATEvent, _CATMessage, _CATMutableTaskProgress, _CATNetworkReachability, 
-                       _CATNotificationMessage, _CATOperation, _CATOperationQueue, 
-                       _CATProperty, _CATRemoteConnection, _CATRemoteConnectionSocketOptions, 
-                       _CATRemoteConnectionTrustDecision, _CATRemoteTaskOperation, 
-                       _CATRemoteTransport, _CATSerialOperationQueue, _CATSessionMessage, 
-                       _CATSessionMessageDidInvalidate, _CATSessionMessageInvalidate, 
-                       _CATSessionMessageResume, _CATSessionMessageResumed, _CATSocket, 
-                       _CATState, _CATStateMachine, _CATTaskBlockServer, _CATTaskClient, 
-                       _CATTaskMessage, _CATTaskMessageCancel, _CATTaskMessageError, 
-                       _CATTaskMessageFetchProgress, _CATTaskMessageIncrementalProgress, 
-                       _CATTaskMessageProgressUpdate, _CATTaskMessageStart, _CATTaskOperation, 
-                       _CATTaskProgress, _CATTaskRequest, _CATTaskResultObject, _CATTaskServer, 
-                       _CATTaskSession, _CATTransition, _CATTransport, _CATXPCTransport ]
+    objc-classes:    [ CATAddress, CATArbitrator, CATBatchRemoteTaskOperation, CATBlockOperationObserver, 
+                       CATCollectionController, CATEndPoint, CATEvent, CATMessage, 
+                       CATMutableTaskProgress, CATNetworkReachability, CATNotificationMessage, 
+                       CATOperation, CATOperationQueue, CATProperty, CATRemoteConnection, 
+                       CATRemoteConnectionSocketOptions, CATRemoteConnectionTrustDecision, 
+                       CATRemoteTaskOperation, CATRemoteTransport, CATSerialOperationQueue, 
+                       CATSessionMessage, CATSessionMessageDidInvalidate, CATSessionMessageInvalidate, 
+                       CATSessionMessageResume, CATSessionMessageResumed, CATSocket, 
+                       CATState, CATStateMachine, CATTaskBlockServer, CATTaskClient, 
+                       CATTaskMessage, CATTaskMessageCancel, CATTaskMessageError, 
+                       CATTaskMessageFetchProgress, CATTaskMessageIncrementalProgress, 
+                       CATTaskMessageProgressUpdate, CATTaskMessageStart, CATTaskOperation, 
+                       CATTaskProgress, CATTaskRequest, CATTaskResultObject, CATTaskServer, 
+                       CATTaskSession, CATTransition, CATTransport, CATXPCTransport ]
 ...

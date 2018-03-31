@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 560C8A98-E261-39C9-9862-3340EC6ABC9C', 'x86_64: ACC132E5-97F1-3B36-AD7B-4E6CC077E691' ]
+uuids:           [ 'i386: 03A4EE80-4E4A-390C-9E2E-0CEC3307496D', 'x86_64: 18607D75-DB78-3CC7-947E-AC769195164C' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Heimdal.framework/Versions/A/Heimdal
 exports:         
@@ -311,19 +311,19 @@ exports:
                        _krb5_init_creds_store_config, _krb5_init_creds_warn_user, 
                        _krb5_init_ets, _krb5_initlog, _krb5_is_config_principal, 
                        _krb5_is_thread_safe, _krb5_kcm_call, _krb5_kcm_check_ntlm_challenge, 
-                       _krb5_kcm_ntlm_challenge, _krb5_kcm_storage_request, _krb5_kerberos_enctypes, 
-                       _krb5_keyblock_get_enctype, _krb5_keyblock_init, _krb5_keyblock_key_proc, 
-                       _krb5_keyblock_zero, _krb5_krbhst_format_string, _krb5_krbhst_free, 
-                       _krb5_krbhst_get_addrinfo, _krb5_krbhst_init, _krb5_krbhst_init_flags, 
-                       _krb5_krbhst_next, _krb5_krbhst_next_as_string, _krb5_krbhst_reset, 
-                       _krb5_krbhst_set_delgated_uuid, _krb5_kt_add_entry, _krb5_kt_close, 
-                       _krb5_kt_compare, _krb5_kt_copy_entry_contents, _krb5_kt_default, 
-                       _krb5_kt_default_modify_name, _krb5_kt_default_name, _krb5_kt_destroy, 
-                       _krb5_kt_end_seq_get, _krb5_kt_free_entry, _krb5_kt_get_entry, 
-                       _krb5_kt_get_full_name, _krb5_kt_get_name, _krb5_kt_get_type, 
-                       _krb5_kt_have_content, _krb5_kt_next_entry, _krb5_kt_read_service_key, 
-                       _krb5_kt_register, _krb5_kt_remove_entry, _krb5_kt_resolve, 
-                       _krb5_kt_start_seq_get, _krb5_kuserok, _krb5_load_plugins, 
+                       _krb5_kcm_get_principal_list, _krb5_kcm_ntlm_challenge, _krb5_kcm_storage_request, 
+                       _krb5_kerberos_enctypes, _krb5_keyblock_get_enctype, _krb5_keyblock_init, 
+                       _krb5_keyblock_key_proc, _krb5_keyblock_zero, _krb5_krbhst_format_string, 
+                       _krb5_krbhst_free, _krb5_krbhst_get_addrinfo, _krb5_krbhst_init, 
+                       _krb5_krbhst_init_flags, _krb5_krbhst_next, _krb5_krbhst_next_as_string, 
+                       _krb5_krbhst_reset, _krb5_krbhst_set_delgated_uuid, _krb5_kt_add_entry, 
+                       _krb5_kt_close, _krb5_kt_compare, _krb5_kt_copy_entry_contents, 
+                       _krb5_kt_default, _krb5_kt_default_modify_name, _krb5_kt_default_name, 
+                       _krb5_kt_destroy, _krb5_kt_end_seq_get, _krb5_kt_free_entry, 
+                       _krb5_kt_get_entry, _krb5_kt_get_full_name, _krb5_kt_get_name, 
+                       _krb5_kt_get_type, _krb5_kt_have_content, _krb5_kt_next_entry, 
+                       _krb5_kt_read_service_key, _krb5_kt_register, _krb5_kt_remove_entry, 
+                       _krb5_kt_resolve, _krb5_kt_start_seq_get, _krb5_kuserok, _krb5_load_plugins, 
                        _krb5_log, _krb5_log_msg, _krb5_make_addrport, _krb5_make_principal, 
                        _krb5_max_sockaddr_size, _krb5_mcc_ops, _krb5_mk_error, _krb5_mk_priv, 
                        _krb5_mk_rep, _krb5_mk_req, _krb5_mk_req_exact, _krb5_mk_req_extended, 

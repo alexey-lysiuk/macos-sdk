@@ -1,11 +1,11 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FD5630E8-F716-34AE-9F9C-A2D2BA034A8F' ]
+uuids:           [ 'x86_64: F40FFDF3-5DF4-308A-8F46-C7A9BED5D8BB' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreBrightness.framework/Versions/A/CoreBrightness
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
-    objc-classes:    [ _BrightnessSystem, _BrightnessSystemClient, _CBAdaptationClient, 
-                       _CBBlueLightClient, _CBClient ]
+    objc-classes:    [ BrightnessSystem, BrightnessSystemClient, BrightnessSystemClientInternal, 
+                       CBAdaptationClient, CBBlueLightClient, CBClient, DisplayServicesClient ]
 ...

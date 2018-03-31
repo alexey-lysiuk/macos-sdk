@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D3F61C05-B1E8-370D-A400-5546CAA82CF2' ]
+uuids:           [ 'x86_64: 3492D511-44BC-3A17-BB73-0E404D295E0D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CloudPhotoServices.framework/Versions/A/CloudPhotoServices
-current-version: 3251.12.180
+current-version: 3271.13.150
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _AssetManagementAssetCollectionIDKey, _AssetManagementAssetCountKey, 
@@ -69,14 +69,14 @@ exports:
                        _PLCloudLibraryShouldReloadNotification, _kICPMyPhotoStreamDaemonQuotaNotification, 
                        _kICPMyPhotoStreamMockServiceEnabledKey, _kICPMyPhotoStreamStreamIdentifier, 
                        _kICPSharedPhotoStreamMockServiceEnabledKey ]
-    objc-classes:    [ _CPSCloudPhotoLibraryServiceClient, _ICPEmailDetector, _ICPMutableMyPhotoStreamMediaItem, 
-                       _ICPMutableSharedPhotoStream, _ICPMutableSharedPhotoStreamComment, 
-                       _ICPMutableSharedPhotoStreamCommentList, _ICPMutableSharedPhotoStreamMediaItem, 
-                       _ICPMutableSharedPhotoStreamPerson, _ICPMutableSharedPhotoStreamSharingRelationship, 
-                       _ICPMyPhotoStreamMediaItem, _ICPMyPhotoStreamServiceClient, 
-                       _ICPPhoneNumberDetector, _ICPServiceClient, _ICPSharedPhotoStream, 
-                       _ICPSharedPhotoStreamCloudFeedEntry, _ICPSharedPhotoStreamComment, 
-                       _ICPSharedPhotoStreamCommentList, _ICPSharedPhotoStreamMediaItem, 
-                       _ICPSharedPhotoStreamPerson, _ICPSharedPhotoStreamServiceClient, 
-                       _ICPSharedPhotoStreamSharingRelationship, _iCloudPhotosClient ]
+    objc-classes:    [ CPSCloudPhotoLibraryServiceClient, ICPEmailDetector, ICPMutableMyPhotoStreamMediaItem, 
+                       ICPMutableSharedPhotoStream, ICPMutableSharedPhotoStreamComment, 
+                       ICPMutableSharedPhotoStreamCommentList, ICPMutableSharedPhotoStreamMediaItem, 
+                       ICPMutableSharedPhotoStreamPerson, ICPMutableSharedPhotoStreamSharingRelationship, 
+                       ICPMyPhotoStreamMediaItem, ICPMyPhotoStreamServiceClient, 
+                       ICPPhoneNumberDetector, ICPServiceClient, ICPSharedPhotoStream, 
+                       ICPSharedPhotoStreamCloudFeedEntry, ICPSharedPhotoStreamComment, 
+                       ICPSharedPhotoStreamCommentList, ICPSharedPhotoStreamMediaItem, 
+                       ICPSharedPhotoStreamPerson, ICPSharedPhotoStreamServiceClient, 
+                       ICPSharedPhotoStreamSharingRelationship, iCloudPhotosClient ]
 ...

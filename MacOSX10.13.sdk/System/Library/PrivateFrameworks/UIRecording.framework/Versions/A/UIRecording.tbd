@@ -1,20 +1,20 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 84C90923-1729-3A26-B7FB-635FEFEB0F26', 'x86_64: CA435431-0D9C-32E2-9ACF-41A52C27120D' ]
+uuids:           [ 'i386: A26E1777-466C-355A-806B-4C4491D50CB1', 'x86_64: A8394B67-3064-3D78-819B-AEBCA6749A53' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/UIRecording.framework/Versions/A/UIRecording
 current-version: 28
 exports:         
   - archs:           [ x86_64 ]
-    objc-ivars:      [ _ActionTextField._action, _UIRAccessibilityElement._name, 
-                       _UIRAccessibilityElement._ref, _UIRAccessibilityElementRecord._properties, 
-                       _UIRAccessibilityProcess._LSASNRef, _UIRAccessibilityProcess._applicationInfo, 
-                       _UIRAccessibilityProcess._psn, _UIRAccessibilityProcess._title, 
-                       _UIRLocalRecorderController._recorder, _UIRTDrawFocus._actionsWindow, 
-                       _UIRTDrawFocus._focusAttributes, _UIRTDrawFocus._focusWindow, 
-                       _UIRTDrawFocus._selectedAction, _UIRTDrawFocus._selectedActionIndex, 
-                       _UIRTDrawFocusView._color, _UIRTDrawFocusView._isPreview, 
-                       _UIRTDrawFocusView._kind, _UIRTDrawFocusView._opacity, _UIRTDrawFocusView._width ]
+    objc-ivars:      [ ActionTextField._action, UIRAccessibilityElement._name, UIRAccessibilityElement._ref, 
+                       UIRAccessibilityElementRecord._properties, UIRAccessibilityProcess._LSASNRef, 
+                       UIRAccessibilityProcess._applicationInfo, UIRAccessibilityProcess._psn, 
+                       UIRAccessibilityProcess._title, UIRLocalRecorderController._recorder, 
+                       UIRTDrawFocus._actionsWindow, UIRTDrawFocus._focusAttributes, 
+                       UIRTDrawFocus._focusWindow, UIRTDrawFocus._selectedAction, 
+                       UIRTDrawFocus._selectedActionIndex, UIRTDrawFocusView._color, 
+                       UIRTDrawFocusView._isPreview, UIRTDrawFocusView._kind, UIRTDrawFocusView._opacity, 
+                       UIRTDrawFocusView._width ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ _AMUIRecordingVersionNumber, _AMUIRecordingVersionString, 
                        _AXUIElementHasAttribute, _CGPointChanged, _CGStringForEventType, 
@@ -26,10 +26,9 @@ exports:
                        _descriptionOfModifiers, _eventRecordToDict, _eventRecordsAreEqual, 
                        _mouseWasDragged, _pointChanged, _pointToDict, _print_event, 
                        _stringRepresentationOfModifiers, _uiElementIsInMenuBar, _uiElementIsInMenuBarWithObjects ]
-    objc-classes:    [ _ActionTextField, _NSPrivateUIRecordingFrameworkClassForFindingBundle, 
-                       _UIRAccessibilityElement, _UIRAccessibilityElementRecord, 
-                       _UIRAccessibilityExtensions, _UIRAccessibilityProcess, _UIREvent, 
-                       _UIRKeyEvent, _UIRLocalRecorder, _UIRLocalRecorderController, 
-                       _UIRMouseEvent, _UIRRecord, _UIRRemoteRecorder, _UIRTDrawFocus, 
-                       _UIRTDrawFocusView ]
+    objc-classes:    [ ActionTextField, NSPrivateUIRecordingFrameworkClassForFindingBundle, 
+                       UIRAccessibilityElement, UIRAccessibilityElementRecord, UIRAccessibilityExtensions, 
+                       UIRAccessibilityProcess, UIREvent, UIRKeyEvent, UIRLocalRecorder, 
+                       UIRLocalRecorderController, UIRMouseEvent, UIRRecord, UIRRemoteRecorder, 
+                       UIRTDrawFocus, UIRTDrawFocusView ]
 ...

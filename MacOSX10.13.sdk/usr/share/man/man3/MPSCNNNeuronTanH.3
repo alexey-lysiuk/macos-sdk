@@ -1,4 +1,4 @@
-.TH "MPSCNNNeuronTanH" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "MPSCNNNeuronTanH" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -7,7 +7,7 @@ MPSCNNNeuronTanH
 .br
 .PP
 .PP
-\fC#import <MPSCNNConvolution\&.h>\fP
+\fC#import <MPSCNNNeuron\&.h>\fP
 .PP
 Inherits \fBMPSCNNNeuron\fP\&.
 .SS "Instance Methods"
@@ -18,16 +18,6 @@ Inherits \fBMPSCNNNeuron\fP\&.
 .br
 .ti -1c
 .RI "(nonnull instancetype) \- \fBinitWithDevice:\fP"
-.br
-.in -1c
-.SS "Properties"
-
-.in +1c
-.ti -1c
-.RI "float \fBa\fP"
-.br
-.ti -1c
-.RI "float \fBb\fP"
 .br
 .in -1c
 .SS "Additional Inherited Members"
@@ -46,12 +36,12 @@ Standard init with default properties per filter type
 .PP
 \fBReturns:\fP
 .RS 4
-A pointer to the newly initialized object\&. This will fail, returning nil if the device is not supported\&. Devices must be MTLFeatureSet_iOS_GPUFamily2_v1 or later\&. 
+\fBA\fP pointer to the newly initialized object\&. This will fail, returning nil if the device is not supported\&. Devices must be MTLFeatureSet_iOS_GPUFamily2_v1 or later\&. 
 .RE
 .PP
 
 .PP
-Reimplemented from \fBMPSCNNKernel\fP\&.
+Reimplemented from \fBMPSCNNNeuron\fP\&.
 .SS "\- (nonnull instancetype) \fBinitWithDevice:\fP (nonnull id< MTLDevice >) device(float) a(float) b"
 Initialize the hyperbolic tangent neuron filter 
 .PP
@@ -66,15 +56,9 @@ Initialize the hyperbolic tangent neuron filter
 .PP
 \fBReturns:\fP
 .RS 4
-A valid \fBMPSCNNNeuronTanH\fP object or nil, if failure\&. 
+\fBA\fP valid \fBMPSCNNNeuronTanH\fP object or nil, if failure\&. 
 .RE
 .PP
-
-.SH "Property Documentation"
-.PP 
-.SS "\- (float) a\fC [read]\fP, \fC [nonatomic]\fP, \fC [assign]\fP"
-
-.SS "\- (float) b\fC [read]\fP, \fC [nonatomic]\fP, \fC [assign]\fP"
 
 
 .SH "Author"

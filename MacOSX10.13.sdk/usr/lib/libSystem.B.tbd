@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 334D9E12-F209-3C28-875B-77E0FD623AD7', 'x86_64: 5EDEEA85-0387-31EE-9D9B-DA1B75E7AEF3' ]
+uuids:           [ 'i386: D2F5AA26-747C-3378-B200-54B45DBCD5EF', 'x86_64: C7810EA7-A61F-3817-8E54-E2EC4E26F946' ]
 platform:        macosx
 install-name:    /usr/lib/libSystem.B.dylib
-current-version: 1252
+current-version: 1252.50.4
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]

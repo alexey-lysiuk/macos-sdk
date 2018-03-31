@@ -27,7 +27,7 @@
 .Fl f Ar file
 .Sh DESCRIPTION          \" Section Header - required - don't modify
 .Nm
-is for creating and examining .helpindex files. These files were historically created by Help Indexer.app, which now calls this tool.
+is for creating and examining .helpindex files.
 .Pp
 There are several different (and mutually-exclusive) modes:
 .Bl -tag -width -indent  \" Differs from above in tag removed 
@@ -56,7 +56,7 @@ Prints out the version of the tool.
 These can be used with any mode.
 .Bl -tag -width -indent
 .It Fl f, \-file
-P	ass in the path to	a file, either one to be created or one to be examined.
+Pass in the path to	a file, either one to be created or one to be examined.
 .It Fl v, \-verbose
 Verbose output. Errors are always shown, but passing this argument once will print out warnings too. Twice will print out errors, warnings and progress notes. This can be a lot of data!
 .El
@@ -75,10 +75,14 @@ Generate summary text. This can be slow, but is useful if you don't have DESCRIP
 Include files which match this pattern. Uses NSPredicate's MATCHES comparison method on the file's path relative to the directory being indexed. The default patterns to index are ".htm" and ".html". If these defaults are undesirable, you may use \-e above to exclude them. This option can be passed as many times as necessary, once per pattern.
 .It Fl m, \-min-term-length\fR=\fINUM\fR
 Minimum term length. Can be 1, 2 or 3. This is the number of consecutive tokens (typically a character) required for a term not to be ignored by the indexer. Recommended values are 3 for English and 1 for Chinese and other ideographic languages.
+.It Fl r, \-remote-url\fR=\fIURL\fR
+Include a remote URL with the index. This is only useful in Type 1 or Type 2 help books, because the URL is in the help bundle's Info.plist for Type 3 books. The URL should be fully qualified, for example:
+.Pp
+.Dl Ar https://www.mycompany.com/help_v1/
 .It Fl s, \-stopwords\fR=\fILANG\fR|\fIPATH\fR
 Use stopwords. If you have your own stopwords .plist, provide that path. Otherwise, pass the two-character language code:
 .Pp
-.Bl -tag -width 4n -offset indent -compact
+.Bl -tag -width 6n -offset indent -compact
 .It \f(CB en
 English
 .It \f(CB es
@@ -94,12 +98,10 @@ Italian
 .It \f(CB sv
 Swedish
 .El
-.It Fl r, \-remote-url\fR=\fIURL\fR
-Include a remote URL with the index. This is only useful in Type 1 or Type 2 help books, because the URL is in the help bundle's Info.plist for Type 3 books. The URL should be fully qualified, for example:
 .It Fl l, \-locale\fR=\fILANG\fR
 Index for a specific locale. Instead of having to boot into the locale to index, pass the language code or locale identifier here to index for that language. Example locale identifiers:
 .Pp
-.Bl -tag -width 4n -offset indent -compact
+.Bl -tag -width 6n -offset indent -compact
 .It \f(CB en_US
 US English
 .It \f(CB es_ES
@@ -113,8 +115,6 @@ Hungarian
 .It \f(CB ru_RU
 Russian
 .El
-.Pp
-.Dl Ar https://www.mycompany.com/help_v1/
 .El                      \" Ends the list
 .Sh FILES                \" File used or created by the topic of the man page
 .Bl -tag -compact

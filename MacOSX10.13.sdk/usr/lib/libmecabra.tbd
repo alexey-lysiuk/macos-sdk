@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 08A39874-BF80-3A92-A088-C494C518218A', 'x86_64: 7808C544-161E-37CE-9D42-F368C82A180D' ]
+uuids:           [ 'i386: A6D0BC1B-9DF2-3A26-8E1A-06AE207355E7', 'x86_64: F462F170-E872-3D09-B219-973D5E99C09F' ]
 platform:        macosx
 install-name:    /usr/lib/libmecabra.dylib
 current-version: 779.7.5
@@ -94,5 +94,5 @@ exports:
                        _kMecabraTraditionalChineseIndustryDictionary, _kMecabraTraditionalChineseLawPoliticsDictionary, 
                        _kMecabraTraditionalChineseMilitaryDictionary, _kMecabraTraditionalChinesePhysicsChemistryDictionary, 
                        _kMecabraTraditionalChineseSportsDictionary, _kMecabraTraditionalChineseWesternMedicineDictionary ]
-    objc-classes:    [ _MecabraFacemarkCandidate ]
+    objc-classes:    [ MecabraFacemarkCandidate ]
 ...

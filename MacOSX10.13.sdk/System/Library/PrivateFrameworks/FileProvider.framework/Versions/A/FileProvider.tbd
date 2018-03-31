@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 1CF7CDB6-2A86-32F1-9209-152C1AC425FA', 'x86_64: 3E0D74F8-D088-3586-B970-C6F319F530E3' ]
+uuids:           [ 'i386: 17ED58C6-A9F7-3467-B75E-813695FF1F53', 'x86_64: 2E707F97-6271-3561-8A94-54412293B783' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/FileProvider.framework/Versions/A/FileProvider
 exports:         
@@ -52,21 +52,21 @@ exports:
                        _kACLWriteEntitlement, _kAlternateContentsEntitlement, _kDebugEntitlement, 
                        _kEnumerateEntitlement, _kFetchURLEntitlement, _kTestingHarnessEntitlement, 
                        _kiWorkCollaborationMessagingEntitlement ]
-    objc-classes:    [ _FPActionOperation, _FPCTLTermDumper, _FPCopyOperation, _FPCreateFolderOperation, 
-                       _FPDeleteOperation, _FPDownloadOperation, _FPError, _FPEvictOperation, 
-                       _FPExtensionProvider, _FPFetchThumbnailsOperation, _FPFileProviderService, 
-                       _FPGracePeriodTimer, _FPItem, _FPItemCollection, _FPItemID, 
-                       _FPItemManager, _FPModifyFavoritesOperation, _FPMoveOperation, 
-                       _FPOperation, _FPPacer, _FPProvider, _FPProviderMonitor, _FPRenameOperation, 
-                       _FPSandboxingURLWrapper, _FPSetLastOpenDateOperation, _FPSetTagsOperation, 
-                       _FPSpotlightCollection, _FPTag, _FPTransferOperation, _FPTrashOperation, 
-                       _FPUntrashOperation, _NSFileProviderDomain, _NSFileProviderEnumerationProperties, 
-                       _NSFileProviderExtension, _NSFileProviderManager ]
-    objc-ivars:      [ _FPDaemonConnection._connectionQueue, _FPDaemonConnection._connectionQueueConnection, 
-                       _FPDaemonConnection._getAttributeConnections, _FPDaemonConnection._getAttributeConnectionsIdleCleanupTimer, 
-                       _FPDaemonConnection._user, _FPFrameworkOverridesIterator._currentIndex, 
-                       _FPFrameworkOverridesIterator._invocation, _FPFrameworkOverridesIterator._noSuitableModuleFoundHandler, 
-                       _FPFrameworkOverridesIterator._overrides ]
+    objc-classes:    [ FPActionOperation, FPCTLTermDumper, FPCopyOperation, FPCreateFolderOperation, 
+                       FPDeleteOperation, FPDownloadOperation, FPError, FPEvictOperation, 
+                       FPExtensionProvider, FPFetchThumbnailsOperation, FPFileProviderService, 
+                       FPGracePeriodTimer, FPItem, FPItemCollection, FPItemID, FPItemManager, 
+                       FPModifyFavoritesOperation, FPMoveOperation, FPOperation, 
+                       FPPacer, FPProvider, FPProviderMonitor, FPRenameOperation, 
+                       FPSetLastOpenDateOperation, FPSetTagsOperation, FPSpotlightCollection, 
+                       FPTag, FPTransferOperation, FPTrashOperation, FPUntrashOperation, 
+                       NSFileProviderDomain, NSFileProviderEnumerationProperties, 
+                       NSFileProviderExtension, NSFileProviderManager ]
+    objc-ivars:      [ FPDaemonConnection._connectionQueue, FPDaemonConnection._connectionQueueConnection, 
+                       FPDaemonConnection._getAttributeConnections, FPDaemonConnection._getAttributeConnectionsIdleCleanupTimer, 
+                       FPDaemonConnection._user, FPFrameworkOverridesIterator._currentIndex, 
+                       FPFrameworkOverridesIterator._invocation, FPFrameworkOverridesIterator._noSuitableModuleFoundHandler, 
+                       FPFrameworkOverridesIterator._overrides ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ _FPBookmarkableStringFromDocumentURL, _FPCFGetAttributeValuesForItem, 
                        _FPDidUpdateAlternateContentsDocumentForDocumentAtURL, _FPDocumentURLFromBookmarkableString, 
@@ -80,5 +80,6 @@ exports:
                        _NSFileProviderFavoriteRankUnranked, _NSFileProviderRootContainerItemIdentifier, 
                        _NSFileProviderSearchContainer, _NSFileProviderTemporaryLocalFolderItemIdentifier, 
                        _NSFileProviderWorkingSetContainerItemIdentifier ]
-    objc-classes:    [ _FPDaemonConnection, _FPFrameworkOverridesIterator, _FPLocalization ]
+    objc-classes:    [ FPDaemonConnection, FPFrameworkOverridesIterator, FPLocalization, 
+                       FPSandboxingURLWrapper ]
 ...

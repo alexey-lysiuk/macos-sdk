@@ -2,7 +2,7 @@
 //  GKLeaderboardViewController.h
 //  Game Center
 //
-//  Copyright 2010-2017 Apple Inc. All rights reserved.
+//  Copyright 2010-2018 Apple Inc. All rights reserved.
 //
 
 #import <GameKit/GKLeaderboard.h>

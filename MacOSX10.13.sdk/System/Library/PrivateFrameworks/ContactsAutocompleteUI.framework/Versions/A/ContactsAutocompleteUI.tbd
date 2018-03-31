@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1A88EEC0-9294-3B7B-91D3-F99F28B61975' ]
+uuids:           [ 'x86_64: 85ADECD9-C917-3E91-B7E5-87B59FE263DF' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ContactsAutocompleteUI.framework/Versions/A/ContactsAutocompleteUI
 current-version: 0
@@ -10,11 +10,11 @@ exports:
                        _AutcompleteColumnName, _CNViewIsAutocompleteHeaderView, _MFComposeRecipientStringMatchAddress, 
                        _MFComposeRecipientStringMatchFirstName, _MFComposeRecipientStringMatchLastName, 
                        _MFComposeRecipientStringMatchMiddleName, _MFComposeRecipientStringMatchType ]
-    objc-classes:    [ _CNAutocompleteGroupResultNamer, _CNAutocompleteHeaderView, 
-                       _CNAutocompleteResultFormatter, _CNAutocompleteResultIconView, 
-                       _CNAutocompleteResultNamer, _CNAutocompleteResultPartitioner, 
-                       _CNAutocompleteResultTable, _CNAutocompleteResultView, _CNAutocompleteResultWindow, 
-                       _CNAutocompleteResultWindowBase, _CNAutocompleteRowView, _CNAutocompleteSortsGroupMembers, 
-                       _CNAutocompleteUIDelegateWrapper, _CNAutocompleteUIModeler, 
-                       _CNExtendedAutocompleteResultWindow, _CNStringRearranger ]
+    objc-classes:    [ CNAutocompleteGroupResultNamer, CNAutocompleteHeaderView, 
+                       CNAutocompleteResultFormatter, CNAutocompleteResultIconView, 
+                       CNAutocompleteResultNamer, CNAutocompleteResultPartitioner, 
+                       CNAutocompleteResultTable, CNAutocompleteResultView, CNAutocompleteResultWindow, 
+                       CNAutocompleteResultWindowBase, CNAutocompleteRowView, CNAutocompleteSortsGroupMembers, 
+                       CNAutocompleteUIDelegateWrapper, CNAutocompleteUIModeler, 
+                       CNExtendedAutocompleteResultWindow, CNStringRearranger ]
 ...

@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 26CC1BF7-08D8-34C6-9E8B-0F689E53C4E8' ]
+uuids:           [ 'x86_64: 55CFEA13-1CDD-3E38-BCE5-7E0F07D13C61' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AccountPolicy.framework/Versions/A/AccountPolicy
 exports:         
@@ -28,15 +28,14 @@ exports:
                        _kAPPolicyParameterKeyMinimumMixedCaseLetters, _kAPPolicyParameterKeyMinimumNumbers, 
                        _kAPPolicyParameterKeyMinimumPasswordLength, _kAPPolicyParameterKeyMinimumPunctutation, 
                        _kAPPolicyParameterKeyMinimumSymbols, _kAPPolicyParameterKeyMinimumUppercaseLetters ]
-    objc-classes:    [ _APMessage, _APPolicy, _APPolicyAccountExpiresOnDate, _APPolicyChangePasswordEveryNDays, 
-                       _APPolicyChangePasswordOnDate, _APPolicyMaximum, _APPolicyMaximumAccountLifetime, 
-                       _APPolicyMaximumConsecutiveCharacters, _APPolicyMaximumDaysOfAccountInactivity, 
-                       _APPolicyMaximumFailedAuthentications, _APPolicyMaximumPasswordLength, 
-                       _APPolicyMaximumSequentialCharacters, _APPolicyMinimum, _APPolicyMinimumAlphanumeric, 
-                       _APPolicyMinimumLetters, _APPolicyMinimumLowercaseLetters, 
-                       _APPolicyMinimumMixedCaseLetters, _APPolicyMinimumNumbers, 
-                       _APPolicyMinimumPasswordLength, _APPolicyMinimumPunctuation, 
-                       _APPolicyMinimumSymbols, _APPolicyMinimumUppercaseLetters, 
-                       _APPolicyPasswordCannotBeModified, _APPolicyPasswordCannotBeUserName, 
-                       _APPolicyPasswordHistory, _APPolicySet, _APRequest, _AccountPolicy ]
+    objc-classes:    [ APMessage, APPolicy, APPolicyAccountExpiresOnDate, APPolicyChangePasswordEveryNDays, 
+                       APPolicyChangePasswordOnDate, APPolicyMaximum, APPolicyMaximumAccountLifetime, 
+                       APPolicyMaximumConsecutiveCharacters, APPolicyMaximumDaysOfAccountInactivity, 
+                       APPolicyMaximumFailedAuthentications, APPolicyMaximumPasswordLength, 
+                       APPolicyMaximumSequentialCharacters, APPolicyMinimum, APPolicyMinimumAlphanumeric, 
+                       APPolicyMinimumLetters, APPolicyMinimumLowercaseLetters, APPolicyMinimumMixedCaseLetters, 
+                       APPolicyMinimumNumbers, APPolicyMinimumPasswordLength, APPolicyMinimumPunctuation, 
+                       APPolicyMinimumSymbols, APPolicyMinimumUppercaseLetters, APPolicyPasswordCannotBeModified, 
+                       APPolicyPasswordCannotBeUserName, APPolicyPasswordHistory, 
+                       APPolicySet, APRequest, AccountPolicy ]
 ...

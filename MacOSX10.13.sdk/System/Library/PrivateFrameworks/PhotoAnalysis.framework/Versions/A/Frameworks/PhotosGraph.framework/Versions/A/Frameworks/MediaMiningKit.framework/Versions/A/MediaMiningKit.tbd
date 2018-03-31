@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7B25DCD9-1E26-329D-883C-78A1E73798D6' ]
+uuids:           [ 'x86_64: 8FAE4A54-96CE-3CC4-83CA-186A230F8697' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Versions/A/Frameworks/PhotosGraph.framework/Versions/A/Frameworks/MediaMiningKit.framework/Versions/A/MediaMiningKit
 objc-constraint: none
@@ -69,8 +69,7 @@ exports:
                        _CLSClueWeatherConditionValueStorm, _CLSClueWeatherConditionValueSunny, 
                        _CLSConfidenceBest, _CLSConfidenceHigh, _CLSConfidenceLow, 
                        _CLSConfidenceMedium, _CLSConfidenceUnknown, _CLSConfidenceVeryHigh, 
-                       _CLSConfidenceVeryLow, _CLSDiscoveryProfileKeyResult, _CLSErrorDomain, 
-                       _CLSFullSentenceProfileMeaningClueKeyFullSentence, _CLSInformantFamilyContent, 
+                       _CLSConfidenceVeryLow, _CLSErrorDomain, _CLSInformantFamilyContent, 
                        _CLSInformantFamilyCore, _CLSInformantFamilyData, _CLSInformantFamilyService, 
                        _CLSInformantFamilyUnknown, _CLSInvestigationItemMetadataKeyDescription, 
                        _CLSInvestigationItemMetadataKeyIdentifier, _CLSInvestigationItemMetadataKeyKeywords, 
@@ -253,33 +252,30 @@ exports:
                        _kCLSHolidayCalendarEventRuleExtendedAreaRadiusDistance, _kCLSHolidayCalendarEventRuleKeyDateRules, 
                        _kCLSHolidayCalendarEventRuleKeyName, _kCLSHolidayCalendarEventRuleKeyTraits, 
                        _kCLSHolidayCalendarEventRuleKeyUUID, _kCLSReachabilityChangedNotification ]
-    objc-classes:    [ _CLSAggregate, _CLSArchiveFile, _CLSArchiveRoom, _CLSAreaOfInterestQueryPerformer, 
-                       _CLSAssetsBeautifier, _CLSAutoupdatingCurrentCalendar, _CLSBeatsSentenceProfile, 
-                       _CLSBeatsSentenceProfileResult, _CLSBusinessCategoryCache, 
-                       _CLSBusinessItem, _CLSBusinessItemGenericQueryPerformer, _CLSCachedGeocoderOperation, 
-                       _CLSCalculation, _CLSCalendar, _CLSChecklist, _CLSChecklistItem, 
-                       _CLSClue, _CLSClueCollection, _CLSClueDefines, _CLSCurrentCalendar, 
-                       _CLSDBCache, _CLSDBSCANClustering, _CLSDataCluster, _CLSDataClustering, 
-                       _CLSDataDensityClustering, _CLSDateIntervalFormatter, _CLSDiscoveryMatch, 
-                       _CLSDiscoveryProfile, _CLSEKCalendar, _CLSEKEvent, _CLSEKParticipant, 
-                       _CLSEKSharee, _CLSError, _CLSEvent, _CLSFeederPrefetchOptions, 
-                       _CLSFocusPeopleCache, _CLSFullSentenceProfile, _CLSHierarchicalClustering, 
-                       _CLSHolidayCalendarEventRule, _CLSHolidayCalendarEventRuleRequiredTraits, 
-                       _CLSHolidayCalendarEventRuleTraits, _CLSHolidayCalendarEventService, 
-                       _CLSInformant, _CLSInputClue, _CLSInputLocationClue, _CLSInputPeopleClue, 
-                       _CLSInputTimeClue, _CLSInspector, _CLSInvestigation, _CLSInvestigationFeeder, 
-                       _CLSInvestigationPhotoKitFeeder, _CLSInvestigationSnapshotAsset, 
-                       _CLSInvestigationSnapshotAssetCollectionBundle, _CLSInvestigationSnapshotAssetFeeder, 
-                       _CLSKMeansClustering, _CLSLocationCache, _CLSLocationOfInterest, 
-                       _CLSLocationQueryPerformer, _CLSLocationShifter, _CLSMeaningClue, 
-                       _CLSMessageSuggestionProfile, _CLSMoodProfile, _CLSMoodProfileResult, 
-                       _CLSNatureQueryPerformer, _CLSOPTICSClustering, _CLSOutputClue, 
-                       _CLSPartOfDayCalculation, _CLSPerson, _CLSPlace, _CLSPointOfInterestQueryPerformer, 
-                       _CLSPrimitive, _CLSProfile, _CLSRate, _CLSRatingService, _CLSRatingServiceManager, 
-                       _CLSReachability, _CLSRegionItemCacheCreator, _CLSRegionOfInterestQueryPerformer, 
-                       _CLSRegionsAgglomerativeClustering, _CLSRegionsClustering, 
-                       _CLSRegionsDensityClustering, _CLSRegionsHierarchicalClustering, 
-                       _CLSRoutineService, _CLSServiceManager, _CLSSummaryClustering, 
-                       _CLSTestInvestigationFeeder, _CLSTestInvestigationItem, _CLSTimeSpanClustering, 
-                       _CLSVisionKitManager, _CLSVisionKitResult ]
+    objc-classes:    [ CLSAggregate, CLSAreaOfInterestQueryPerformer, CLSAssetsBeautifier, 
+                       CLSAutoupdatingCurrentCalendar, CLSBeatsSentenceProfile, CLSBeatsSentenceProfileResult, 
+                       CLSBusinessCategoryCache, CLSBusinessItem, CLSBusinessItemGenericQueryPerformer, 
+                       CLSCachedGeocoderOperation, CLSCalculation, CLSCalendar, CLSChecklist, 
+                       CLSChecklistItem, CLSClue, CLSClueCollection, CLSClueDefines, 
+                       CLSCurrentCalendar, CLSDBCache, CLSDBSCANClustering, CLSDataCluster, 
+                       CLSDataClustering, CLSDataDensityClustering, CLSDateIntervalFormatter, 
+                       CLSEKCalendar, CLSEKEvent, CLSEKParticipant, CLSEKSharee, 
+                       CLSError, CLSEvent, CLSFeederPrefetchOptions, CLSFocusPeopleCache, 
+                       CLSHierarchicalClustering, CLSHolidayCalendarEventRule, CLSHolidayCalendarEventRuleRequiredTraits, 
+                       CLSHolidayCalendarEventRuleTraits, CLSHolidayCalendarEventService, 
+                       CLSInformant, CLSInputClue, CLSInputLocationClue, CLSInputPeopleClue, 
+                       CLSInputTimeClue, CLSInspector, CLSInvestigation, CLSInvestigationFeeder, 
+                       CLSInvestigationPhotoKitFeeder, CLSInvestigationSnapshotAsset, 
+                       CLSInvestigationSnapshotAssetCollectionBundle, CLSInvestigationSnapshotAssetFeeder, 
+                       CLSKMeansClustering, CLSLocationCache, CLSLocationOfInterest, 
+                       CLSLocationQueryPerformer, CLSLocationShifter, CLSMeaningClue, 
+                       CLSMessageSuggestionProfile, CLSMoodProfile, CLSMoodProfileResult, 
+                       CLSNatureQueryPerformer, CLSOPTICSClustering, CLSOutputClue, 
+                       CLSPartOfDayCalculation, CLSPerson, CLSPlace, CLSPointOfInterestQueryPerformer, 
+                       CLSPrimitive, CLSProfile, CLSRate, CLSRatingService, CLSRatingServiceManager, 
+                       CLSReachability, CLSRegionItemCacheCreator, CLSRegionOfInterestQueryPerformer, 
+                       CLSRegionsAgglomerativeClustering, CLSRegionsClustering, CLSRegionsDensityClustering, 
+                       CLSRegionsHierarchicalClustering, CLSRoutineService, CLSServiceManager, 
+                       CLSSummaryClustering, CLSTestInvestigationFeeder, CLSTestInvestigationItem, 
+                       CLSTimeSpanClustering, CLSVisionKitManager, CLSVisionKitResult ]
 ...

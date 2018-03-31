@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DBFE1C16-1D3B-3B39-8329-965E9374404F' ]
+uuids:           [ 'x86_64: A0A30D38-2AC0-333C-B81D-BB5DE3F7FBD7' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ScreenReader.framework/Versions/A/Frameworks/ScreenReaderBrailleDriver.framework/Versions/A/ScreenReaderBrailleDriver
 current-version: 390
@@ -93,10 +93,9 @@ exports:
                        _kSCRDNinepointSystemsNinepointBluetoothName, _kSCRDOrbitReader20DeviceIdentifier, 
                        _kSCRDSeikaNotetakerBluetoothNameRegExPattern, _kSCRDUSBDeviceDisconnectNotification, 
                        _kSCRODBaumVario340DeviceIdentifier ]
-    objc-classes:    [ _SCRDFileReader, _SCRDUSBDevice ]
-    objc-ivars:      [ _SCRDFileReader._delegate, _SCRDFileReader._fileHandle, _SCRDFileReader._readerThread, 
-                       _SCRDFileReader._threadStartCount, _SCRDUSBDevice._device, 
-                       _SCRDUSBDevice._interface, _SCRDUSBDevice._isConfigured, _SCRDUSBDevice._isOpen, 
-                       _SCRDUSBDevice._notification, _SCRDUSBDevice._notificationPort, 
-                       _SCRDUSBDevice._privateRunLoopMode ]
+    objc-classes:    [ SCRDFileReader, SCRDUSBDevice ]
+    objc-ivars:      [ SCRDFileReader._delegate, SCRDFileReader._fileHandle, SCRDFileReader._readerThread, 
+                       SCRDFileReader._threadStartCount, SCRDUSBDevice._device, SCRDUSBDevice._interface, 
+                       SCRDUSBDevice._isConfigured, SCRDUSBDevice._isOpen, SCRDUSBDevice._notification, 
+                       SCRDUSBDevice._notificationPort, SCRDUSBDevice._privateRunLoopMode ]
 ...

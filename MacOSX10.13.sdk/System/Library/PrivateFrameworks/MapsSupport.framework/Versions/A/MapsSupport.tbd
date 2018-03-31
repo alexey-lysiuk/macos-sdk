@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 75EC6B75-0B94-355E-96A0-5FD948256DB3' ]
+uuids:           [ 'x86_64: 394FAF59-00D3-3E67-8E8D-A01A97E7A398' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MapsSupport.framework/Versions/A/MapsSupport
 exports:         
@@ -29,34 +29,32 @@ exports:
                        _kMSPContainerErrorUnkownStorageIdentifierKey, _kMSPContainerUnavailableKeysKey, 
                        _kMSPContainerUntransferableObjectKey, _kMSPDuplicateStorageIdentifierObjectsKey, 
                        _kMSPSearchResultHistoryItemDataKey, _kMSPUnderlyingErrorsKey ]
-    objc-classes:    [ _MSPBookmarkStorage, _MSPCloudCoalescedOperationExecutor, 
-                       _MSPCloudKitAccountAccess, _MSPCloudRepeatableTask, _MSPCloudSyncManager, 
-                       _MSPCloudSynchronizer, _MSPCompanionSyncedItem, _MSPContainer, 
-                       _MSPContainerArrayStateSnapshot, _MSPContainerPersister, _MSPContainerPolicyObserver, 
-                       _MSPDirectionsSearch, _MSPDroppedPin, _MSPEditableQuery, _MSPFavoritesCloudSyncManager, 
-                       _MSPFavoritesContainer, _MSPFavoritesFileContainerPersister, 
-                       _MSPFavoritesReplica, _MSPFavoritesReplicaMergeOptions, _MSPFavoritesReplicaSimpleRecord, 
-                       _MSPFileContainerPersister, _MSPHistoryCloudSyncManager, _MSPHistoryContainer, 
-                       _MSPHistoryEntryStorage, _MSPHistoryFileContainerPersister, 
-                       _MSPHistoryReplica, _MSPHistoryReplicaEditDeleteTombstone, 
-                       _MSPHistoryReplicaEditUpdateModificationDate, _MSPHistoryReplicaMergeOptions, 
-                       _MSPHistoryReplicaSimpleRecord, _MSPLowFuelDetails, _MSPMapsPaths, 
-                       _MSPMapsPushDaemonRemoteProxy, _MSPMutableFavorite, _MSPMutableFavoritePlace, 
-                       _MSPMutableFavoriteRegion, _MSPMutableFavoriteRoute, _MSPMutableFavoriteTransitLine, 
-                       _MSPMutableHistoryEntry, _MSPMutableHistoryEntryPlaceDisplay, 
-                       _MSPMutableHistoryEntryRoute, _MSPMutableHistoryEntrySearch, 
-                       _MSPMutableHistoryEntryTransitLineItem, _MSPOrderedReplica, 
-                       _MSPOrderedReplicaEditUpdatePosition, _MSPPathComponent, _MSPPin, 
-                       _MSPPinStorage, _MSPPlaceBookmark, _MSPPlaceDisplay, _MSPPosition, 
-                       _MSPPromiseOperation, _MSPQuery, _MSPQuerySearch, _MSPRegionBookmark, 
-                       _MSPRemoteFavoritesContainerPersister, _MSPRemoteHistoryContainerPersister, 
-                       _MSPReplica, _MSPReplicaEdit, _MSPReplicaEditInsertRecord, 
-                       _MSPReplicaEditUpdateContents, _MSPRidesharingInformationSource, 
-                       _MSPRidesharingTrip, _MSPRouteBookmark, _MSPTransitLineBookmark, 
-                       _MSPTransitStorageArtwork, _MSPTransitStorageAttribution, 
-                       _MSPTransitStorageIcon, _MSPTransitStorageIncident, _MSPTransitStorageIncidentEntity, 
-                       _MSPTransitStorageLine, _MSPTransitStorageLineItem, _MSPTransitStorageShield, 
-                       _MSPTransitStorageSystem, _MSPUserRoutingPreferences, _MSPVectorTimestamp, 
-                       __MSPCloudKitAccountAccessFixZonesAndSubscriptionsTask, __MSPMockCloudAccess ]
-    objc-ivars:      [ _MSPCloudSyncManager._journal ]
+    objc-classes:    [ MSPBookmarkStorage, MSPCloudCoalescedOperationExecutor, MSPCloudKitAccountAccess, 
+                       MSPCloudRepeatableTask, MSPCloudSyncManager, MSPCloudSynchronizer, 
+                       MSPCompanionSyncedItem, MSPContainer, MSPContainerArrayStateSnapshot, 
+                       MSPContainerPersister, MSPContainerPolicyObserver, MSPDirectionsSearch, 
+                       MSPDroppedPin, MSPEditableQuery, MSPFavoritesCloudSyncManager, 
+                       MSPFavoritesContainer, MSPFavoritesFileContainerPersister, 
+                       MSPFavoritesReplica, MSPFavoritesReplicaMergeOptions, MSPFavoritesReplicaSimpleRecord, 
+                       MSPFileContainerPersister, MSPHistoryCloudSyncManager, MSPHistoryContainer, 
+                       MSPHistoryEntryStorage, MSPHistoryFileContainerPersister, 
+                       MSPHistoryReplica, MSPHistoryReplicaEditDeleteTombstone, MSPHistoryReplicaEditUpdateModificationDate, 
+                       MSPHistoryReplicaMergeOptions, MSPHistoryReplicaSimpleRecord, 
+                       MSPLowFuelDetails, MSPMapsPaths, MSPMapsPushDaemonRemoteProxy, 
+                       MSPMutableFavorite, MSPMutableFavoritePlace, MSPMutableFavoriteRegion, 
+                       MSPMutableFavoriteRoute, MSPMutableFavoriteTransitLine, MSPMutableHistoryEntry, 
+                       MSPMutableHistoryEntryPlaceDisplay, MSPMutableHistoryEntryRoute, 
+                       MSPMutableHistoryEntrySearch, MSPMutableHistoryEntryTransitLineItem, 
+                       MSPOrderedReplica, MSPOrderedReplicaEditUpdatePosition, MSPPathComponent, 
+                       MSPPin, MSPPinStorage, MSPPlaceBookmark, MSPPlaceDisplay, 
+                       MSPPosition, MSPPromiseOperation, MSPQuery, MSPQuerySearch, 
+                       MSPRegionBookmark, MSPRemoteFavoritesContainerPersister, MSPRemoteHistoryContainerPersister, 
+                       MSPReplica, MSPReplicaEdit, MSPReplicaEditInsertRecord, MSPReplicaEditUpdateContents, 
+                       MSPRidesharingInformationSource, MSPRidesharingTrip, MSPRouteBookmark, 
+                       MSPTransitLineBookmark, MSPTransitStorageArtwork, MSPTransitStorageAttribution, 
+                       MSPTransitStorageIcon, MSPTransitStorageIncident, MSPTransitStorageIncidentEntity, 
+                       MSPTransitStorageLine, MSPTransitStorageLineItem, MSPTransitStorageShield, 
+                       MSPTransitStorageSystem, MSPUserRoutingPreferences, MSPVectorTimestamp, 
+                       _MSPCloudKitAccountAccessFixZonesAndSubscriptionsTask, _MSPMockCloudAccess ]
+    objc-ivars:      [ MSPCloudSyncManager._journal ]
 ...

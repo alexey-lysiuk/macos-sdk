@@ -1,17 +1,17 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: AB295618-B4E2-3ED9-B50D-FEB179C47EFD', 'x86_64: D8B1A974-F0F7-3584-870D-4BC37D1CBA13' ]
+uuids:           [ 'i386: 40450561-C611-33C8-A082-4F5D58C99573', 'x86_64: F18D99FC-F246-3061-8CCB-7EACF987EDD3' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Restore.framework/Versions/A/Restore
-current-version: 451
+current-version: 475
 exports:         
   - archs:           [ x86_64 ]
-    objc-ivars:      [ _RestoreHelper._asrTask, _RestoreHelper._authRef, _RestoreHelper._completionFn, 
-                       _RestoreHelper._context, _RestoreHelper._operation, _RestoreHelper._server, 
-                       _RestoreHelper._serverID, _RestoreHelper._startTimer, _RestoreHelper._statusFn, 
-                       _RestoreHelper._tool, _RestoreHelper._toolConnection, _RestoreHelper._toolDone, 
-                       _RestoreHelper._toolPath ]
+    objc-ivars:      [ RestoreHelper._asrTask, RestoreHelper._authRef, RestoreHelper._completionFn, 
+                       RestoreHelper._context, RestoreHelper._operation, RestoreHelper._server, 
+                       RestoreHelper._serverID, RestoreHelper._startTimer, RestoreHelper._statusFn, 
+                       RestoreHelper._tool, RestoreHelper._toolConnection, RestoreHelper._toolDone, 
+                       RestoreHelper._toolPath ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ _RestoreOperation ]
-    objc-classes:    [ _RestoreHelper ]
+    objc-classes:    [ RestoreHelper ]
 ...

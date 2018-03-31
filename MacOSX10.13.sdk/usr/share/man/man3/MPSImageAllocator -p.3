@@ -1,4 +1,4 @@
-.TH "<MPSImageAllocator >" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "<MPSImageAllocator >" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -19,7 +19,7 @@ Inherits <NSObjectNSObject>, and <NSSecureCoding>\&.
 .in -1c
 .SH "Detailed Description"
 .PP 
-A class that allocates new \fBMPSImage\fP or \fBMPSTemporaryImage\fP  Sometimes it is prohibitively costly for MPS to figure out how big an image should be in advance\&. In addition, you may want to have some say over whether the image is a temporary image or not\&. In such circumstances, the MPSImageAllocator is used to provide the developer with an opportunity for just in time feedback about how the image should be allocated\&.
+\fBA\fP class that allocates new \fBMPSImage\fP or \fBMPSTemporaryImage\fP  Sometimes it is prohibitively costly for MPS to figure out how big an image should be in advance\&. In addition, you may want to have some say over whether the image is a temporary image or not\&. In such circumstances, the MPSImageAllocator is used to provide the developer with an opportunity for just in time feedback about how the image should be allocated\&.
 .PP
 Two standard MPSImageAllocators are provided: MPSImageDefaultAllocator and MPSTemporaryImageDefaultAllocator\&. You may of course provide your own allocator instead\&.
 .PP
@@ -76,14 +76,14 @@ Create a new \fBMPSImage\fP  See class description for sample implementation
 .RS 4
 \fIcmdBuf\fP The MTLCommandBuffer on which the image will be initialized\&. cmdBuf\&.device encodes the MTLDevice\&. 
 .br
-\fIdescriptor\fP A \fBMPSImageDescriptor\fP containing the image format to use\&. This format is the result of your MPSPadding policy\&. 
+\fIdescriptor\fP \fBA\fP \fBMPSImageDescriptor\fP containing the image format to use\&. This format is the result of your MPSPadding policy\&. 
 .br
 \fIkernel\fP The kernel that will overwrite the image returned by the filter\&.
 .RE
 .PP
 \fBReturns:\fP
 .RS 4
-A valid \fBMPSImage\fP or \fBMPSTemporaryImage\fP\&. It will be automatically released when the command buffer completes\&. 
+\fBA\fP valid \fBMPSImage\fP or \fBMPSTemporaryImage\fP\&. It will be automatically released when the command buffer completes\&. 
 .RE
 .PP
 

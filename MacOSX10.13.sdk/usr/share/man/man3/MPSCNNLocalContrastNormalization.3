@@ -1,4 +1,4 @@
-.TH "MPSCNNLocalContrastNormalization" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "MPSCNNLocalContrastNormalization" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -64,7 +64,7 @@ Y(i,j) = pm + ps * ( X(i,j) - p0 * M(i,j)) / (delta + alpha * VAR(i,j))^beta,
 .fi
 .PP
 .PP
-where kw and kh are the kernelWidth and the kernelHeight and pm, ps and p0 are parameters that can be used to offset and scale the result in various ways\&. For example setting pm=0, ps=1, p0=1, delta=0, alpha=1\&.0 and beta=0\&.5 scales input data so that the result has unit variance and zero mean, provided that input variance is positive\&. It is the end-users responsibility to ensure that the combination of the parameters delta and alpha does not result in a situation where the denominator becomes zero - in such situations the resulting pixel-value is undefined\&. A good way to guard against tiny variances is to regulate the expression with a small value for delta, for example delta = 1/1024 = 0\&.0009765625\&. 
+where kw and kh are the kernelWidth and the kernelHeight and pm, ps and p0 are parameters that can be used to offset and scale the result in various ways\&. For example setting pm=0, ps=1, p0=1, delta=0, alpha=1\&.0 and beta=0\&.5 scales input data so that the result has unit variance and zero mean, provided that input variance is positive\&. It is the end-users responsibility to ensure that the combination of the parameters delta and alpha does not result in a situation where the denominator becomes zero - in such situations the resulting pixel-value is undefined\&. \fBA\fP good way to guard against tiny variances is to regulate the expression with a small value for delta, for example delta = 1/1024 = 0\&.0009765625\&. 
 .SH "Method Documentation"
 .PP 
 .SS "\- (nullable instancetype) \fBinitWithCoder:\fP (NSCoder *__nonnull) aDecoder(nonnull id< MTLDevice >) device"
@@ -79,7 +79,7 @@ where kw and kh are the kernelWidth and the kernelHeight and pm, ps and p0 are p
 .PP
 \fBReturns:\fP
 .RS 4
-A new \fBMPSKernel\fP object, or nil if failure\&. 
+\fBA\fP new \fBMPSKernel\fP object, or nil if failure\&. 
 .RE
 .PP
 
@@ -95,7 +95,7 @@ Standard init with default properties per filter type
 .PP
 \fBReturns:\fP
 .RS 4
-A pointer to the newly initialized object\&. This will fail, returning nil if the device is not supported\&. Devices must be MTLFeatureSet_iOS_GPUFamily2_v1 or later\&. 
+\fBA\fP pointer to the newly initialized object\&. This will fail, returning nil if the device is not supported\&. Devices must be MTLFeatureSet_iOS_GPUFamily2_v1 or later\&. 
 .RE
 .PP
 
@@ -115,7 +115,7 @@ Initialize a local contrast normalization filter
 .PP
 \fBReturns:\fP
 .RS 4
-A valid \fBMPSCNNLocalContrastNormalization\fP object or nil, if failure\&.
+\fBA\fP valid \fBMPSCNNLocalContrastNormalization\fP object or nil, if failure\&.
 .RE
 .PP
 NOTE: For now, kernelWidth must be equal to kernelHeight 

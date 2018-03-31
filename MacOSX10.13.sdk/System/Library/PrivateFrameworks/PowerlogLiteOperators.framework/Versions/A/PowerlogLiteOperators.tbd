@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2F01C617-013D-3334-825A-1BBFEDE96346' ]
+uuids:           [ 'x86_64: 38F44EE9-F82E-308F-80A5-CA9C6D62FF45' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/Versions/A/PowerlogLiteOperators
 exports:         
@@ -87,5 +87,5 @@ exports:
                        _kPLBatteryAgentStringUpoReboot, _kPLBatteryAgentStringVoltage, 
                        _kPLBatteryAgentStringVoltagePrevious, _kPLBatteryAgentStringWeekManufactured, 
                        _setChannelType, _updateKernelBuffer ]
-    objc-classes:    [ _PLBatteryAgent, _PLEventBackwardBatteryEntry, _PLIOReportStats ]
+    objc-classes:    [ PLBatteryAgent, PLEventBackwardBatteryEntry, PLIOReportStats ]
 ...

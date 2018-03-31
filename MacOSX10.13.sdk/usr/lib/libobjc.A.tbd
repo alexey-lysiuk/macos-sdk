@@ -1,7 +1,7 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64, x86_64h ]
-uuids:           [ 'i386: 4AF346B8-C1A8-3199-B1BB-ADEDD64D5C1A', 'x86_64: 37A7D77E-952C-3F5D-970B-3CDE349B2322', 
-                   'x86_64h: 93A92316-DE1E-378C-8891-99720B50D075' ]
+uuids:           [ 'i386: 069E8DD2-ECBD-3296-9688-199A93DB8F1F', 'x86_64: BEEA51E2-1C4D-3672-87F6-F267B4AC6221', 
+                   'x86_64h: DD9E5EC5-B507-3249-B700-93433E2D5EDF' ]
 platform:        macosx
 install-name:    /usr/lib/libobjc.A.dylib
 current-version: 228
@@ -23,7 +23,7 @@ exports:
                        _objc_getOrigClass, _objc_loadModule, _objc_loadModules, _objc_msgSendv, 
                        _objc_msgSendv_fpret, _objc_msgSendv_stret, _objc_setClassHandler, 
                        _objc_unloadModules, _object_realloc, _object_reallocFromZone ]
-    objc-classes:    [ _List ]
+    objc-classes:    [ List ]
   - archs:           [ x86_64, x86_64h ]
     symbols:         [ '$ld$hide$os10.0$_OBJC_CLASS_$_NSObject', '$ld$hide$os10.0$_OBJC_IVAR_$_NSObject.isa', 
                        '$ld$hide$os10.0$_OBJC_METACLASS_$_NSObject', '$ld$hide$os10.1$_OBJC_CLASS_$_NSObject', 
@@ -62,7 +62,7 @@ exports:
                        _objc_msgSend_stret_fixup, _objc_readClassPair, _objc_removeExceptionHandler, 
                        _objc_setExceptionMatcher, _objc_setExceptionPreprocessor, 
                        _objc_setUncaughtExceptionHandler, _objc_terminate ]
-    objc-ivars:      [ _NSObject.isa, _Object.isa ]
+    objc-ivars:      [ NSObject.isa, Object.isa ]
   - archs:           [ i386, x86_64, x86_64h ]
     symbols:         [ _NXCompareHashTables, _NXCompareMapTables, _NXCopyHashTable, 
                        _NXCountHashTable, _NXCountMapTable, _NXCreateHashTable, _NXCreateHashTableFromZone, 
@@ -156,5 +156,5 @@ exports:
                        _protocol_getMethodDescription, _protocol_getName, _protocol_getProperty, 
                        _protocol_isEqual, _sel_getName, _sel_getUid, _sel_isEqual, 
                        _sel_isMapped, _sel_registerName ]
-    objc-classes:    [ _NSObject, _Object, _Protocol ]
+    objc-classes:    [ NSObject, Object, Protocol ]
 ...

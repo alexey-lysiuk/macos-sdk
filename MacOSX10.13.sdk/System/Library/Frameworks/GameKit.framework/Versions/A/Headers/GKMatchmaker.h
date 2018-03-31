@@ -2,7 +2,7 @@
 //  GKMatchmaker.h
 //  Game Center
 //
-//  Copyright 2010-2017 Apple Inc. All rights reserved.
+//  Copyright 2010-2018 Apple Inc. All rights reserved.
 //
 
 #include <Foundation/Foundation.h>

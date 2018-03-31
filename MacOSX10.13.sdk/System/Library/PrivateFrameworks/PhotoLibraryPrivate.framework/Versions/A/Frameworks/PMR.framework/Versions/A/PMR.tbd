@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 213ACC23-E869-3C3F-B819-16EFAF8FA43A' ]
+uuids:           [ 'x86_64: 79F1166D-A35E-3C46-8675-2EBB9A50C72A' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoLibraryPrivate.framework/Versions/A/Frameworks/PMR.framework/Versions/A/PMR
-current-version: 3251.12.180
+current-version: 3271.13.150
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _PMRDurationUnits, _PMRFPSUnits, _PMRTimestampUnits, _kPMRStdDevDefaultTolerance, 
@@ -12,15 +12,15 @@ exports:
                        _pmr_stopwatch_nanoseconds, _pmr_stopwatch_release, _pmr_stopwatch_reset, 
                        _pmr_stopwatch_restart, _pmr_stopwatch_running, _pmr_stopwatch_seconds, 
                        _pmr_stopwatch_start, _pmr_stopwatch_stop ]
-    objc-classes:    [ _PMR, _PMRAbstractTimer, _PMRActivity, _PMRArrayLogger, _PMRBlockObserver, 
-                       _PMRCSVFormatter, _PMRCodeLocation, _PMRCounterTimer, _PMRDataSet, 
-                       _PMRFileLogger, _PMRFilterObserver, _PMRFormatter, _PMRHistogram, 
-                       _PMRJSONFormatter, _PMRKeepaliveTimer, _PMRLogger, _PMRMeasurement, 
-                       _PMRMeasurementFilter, _PMRMeasurementList, _PMRMedMadMeasurementFilter, 
-                       _PMRMutableDataSet, _PMRNSLogLogger, _PMRObserver, _PMRStatisticTimer, 
-                       _PMRStatistics, _PMRStdDevMeasurementFilter, _PMRStreamingStatistics, 
-                       _PMRTimedTask, _PMRTimer, _PMRXMLFormatter ]
-    objc-ivars:      [ _PMRAbstractTimer._isComplete, _PMRAbstractTimer._serializer, 
-                       _PMRAbstractTimer._stopwatch, _PMRDataSet._data, _PMRLogger._formatter, 
-                       _PMRStatisticTimer._currentTask, _PMRStatisticTimer._statistic ]
+    objc-classes:    [ PMR, PMRAbstractTimer, PMRActivity, PMRArrayLogger, PMRBlockObserver, 
+                       PMRCSVFormatter, PMRCodeLocation, PMRCounterTimer, PMRDataSet, 
+                       PMRFileLogger, PMRFilterObserver, PMRFormatter, PMRHistogram, 
+                       PMRJSONFormatter, PMRKeepaliveTimer, PMRLogger, PMRMeasurement, 
+                       PMRMeasurementFilter, PMRMeasurementList, PMRMedMadMeasurementFilter, 
+                       PMRMutableDataSet, PMRNSLogLogger, PMRObserver, PMRStatisticTimer, 
+                       PMRStatistics, PMRStdDevMeasurementFilter, PMRStreamingStatistics, 
+                       PMRTimedTask, PMRTimer, PMRXMLFormatter ]
+    objc-ivars:      [ PMRAbstractTimer._isComplete, PMRAbstractTimer._serializer, 
+                       PMRAbstractTimer._stopwatch, PMRDataSet._data, PMRLogger._formatter, 
+                       PMRStatisticTimer._currentTask, PMRStatisticTimer._statistic ]
 ...

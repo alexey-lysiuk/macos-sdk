@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 98B9E629-50B7-300E-AEA0-593519CA96CE' ]
+uuids:           [ 'x86_64: 47357DEF-662E-3091-83A9-FE267208A87F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/UniversalAccess.framework/Versions/A/Frameworks/UAEHCommon.framework/Versions/A/Libraries/libUAEHZoom.dylib
 exports:         
@@ -8,5 +8,5 @@ exports:
     symbols:         [ _UADEventHandlerGetVtable, __ZoomDriver, _handleEvent, _handleMessage, 
                        _initialize, _libraryWillUnload, _safeToQuit, _shouldSnarfEvent, 
                        _updateSettings, _userSessionDidChange ]
-    objc-classes:    [ _UAEHZoomDriver ]
+    objc-classes:    [ UAEHZoomDriver ]
 ...

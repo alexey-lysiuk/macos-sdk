@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: A78C5D21-4D37-358A-8C18-EADA8084BFCA', 'x86_64: 390012E0-39E3-3D18-8271-D447990FDD21' ]
+uuids:           [ 'i386: A61B8BFA-FBC3-30C0-9E30-3B9371E58E5F', 'x86_64: 0CF4C608-8748-32BF-9586-A1601945F82C' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SkyLight.framework/Versions/A/SkyLight
 current-version: 600
@@ -101,7 +101,7 @@ exports:
                        _kSLSHMDDisplayQueueOptionColorSpace, _kSLSHMDDisplayQueueOptionCount, 
                        _kSLSHMDDisplayQueueOptionFlags, _kSLSHMDDisplayQueueOptionPixelFormat, 
                        _kSLSHMDDisplayQueueOptionSize ]
-    objc-classes:    [ _SLSessionOwner ]
+    objc-classes:    [ SLSessionOwner ]
   - archs:           [ i386, x86_64 ]
     symbols:         [ _SLAcquireDisplayFadeReservation, _SLAssociateMouseAndMouseCursorPosition, 
                        _SLBeginDisplayConfiguration, _SLCFDictionaryGetBoolean, _SLCFDictionaryGetFloat, 
@@ -539,21 +539,21 @@ exports:
                        _SLSUnregisterWindowWithSystemStatusBar, _SLSUnshieldCursor, 
                        _SLSUpdateCurrentSessionWorkspaceData, _SLSUpdateLastEventTime, 
                        _SLSUpdateSystemActivity, _SLSUpdateWindowAnimationEdges, 
-                       _SLSUpdateWindowAnimationOrigin, _SLSWaitOnCoalescedUpdates, 
-                       _SLSWarpCursorPosition, _SLSWillSwitchSpaces, _SLSWindowAnimationChangeLevel, 
-                       _SLSWindowAnimationChangeShiftPoint, _SLSWindowAnimationChangeSubLevel, 
-                       _SLSWindowAnimationHideSlot, _SLSWindowAnimationSetParent, 
-                       _SLSWindowBackdropActivate, _SLSWindowBackdropActivateAll, 
-                       _SLSWindowBackdropBlendModeStringToEnum, _SLSWindowBackdropCreateWithLevel, 
-                       _SLSWindowBackdropCreateWithLevelAndMask, _SLSWindowBackdropDeactivate, 
-                       _SLSWindowBackdropDeactivateAll, _SLSWindowBackdropMaterialStringToEnum, 
-                       _SLSWindowBackdropRelease, _SLSWindowBackdropSetSaturation, 
-                       _SLSWindowDirtyRegionSeed, _SLSWindowFreezeBackdrops, _SLSWindowFreezeWithOptions, 
-                       _SLSWindowGetTileRect, _SLSWindowIsOnCurrentSpace, _SLSWindowIsOrderedIn, 
-                       _SLSWindowIsVisible, _SLSWindowListSetLockedBounds, _SLSWindowRightForKey, 
-                       _SLSWindowRightKeyForMask, _SLSWindowRightsSetGrantCompletedBlockForToken, 
-                       _SLSWindowRightsSetGrantOfferedBlockForToken, _SLSWindowScrollRegion, 
-                       _SLSWindowSetActiveShadowLegacy, _SLSWindowSetBackdropBackgroundBleed, 
+                       _SLSUpdateWindowAnimationOrigin, _SLSValidateUnobscuredLayerSecurityToken, 
+                       _SLSWaitOnCoalescedUpdates, _SLSWarpCursorPosition, _SLSWillSwitchSpaces, 
+                       _SLSWindowAnimationChangeLevel, _SLSWindowAnimationChangeShiftPoint, 
+                       _SLSWindowAnimationChangeSubLevel, _SLSWindowAnimationHideSlot, 
+                       _SLSWindowAnimationSetParent, _SLSWindowBackdropActivate, 
+                       _SLSWindowBackdropActivateAll, _SLSWindowBackdropBlendModeStringToEnum, 
+                       _SLSWindowBackdropCreateWithLevel, _SLSWindowBackdropCreateWithLevelAndMask, 
+                       _SLSWindowBackdropDeactivate, _SLSWindowBackdropDeactivateAll, 
+                       _SLSWindowBackdropMaterialStringToEnum, _SLSWindowBackdropRelease, 
+                       _SLSWindowBackdropSetSaturation, _SLSWindowDirtyRegionSeed, 
+                       _SLSWindowFreezeBackdrops, _SLSWindowFreezeWithOptions, _SLSWindowGetTileRect, 
+                       _SLSWindowIsOnCurrentSpace, _SLSWindowIsOrderedIn, _SLSWindowIsVisible, 
+                       _SLSWindowListSetLockedBounds, _SLSWindowRightForKey, _SLSWindowRightKeyForMask, 
+                       _SLSWindowRightsSetGrantCompletedBlockForToken, _SLSWindowRightsSetGrantOfferedBlockForToken, 
+                       _SLSWindowScrollRegion, _SLSWindowSetActiveShadowLegacy, _SLSWindowSetBackdropBackgroundBleed, 
                        _SLSWindowSetKeepsExcessBackingAllocation, _SLSWindowSetResizeRegionShape, 
                        _SLSWindowSetShadowProperties, _SLSWindowThaw, _SLSWindowThawBackdrops, 
                        _SLSWindowVisibleRegionSeed, _SLScreenRegisterMoveCallback, 

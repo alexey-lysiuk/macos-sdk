@@ -1,4 +1,4 @@
-.TH "MPSCNNDilatedPoolingMaxNode" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "MPSCNNDilatedPoolingMaxNode" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -45,7 +45,7 @@ Inherits \fBMPSNNFilterNode\fP\&.
 .in -1c
 .SH "Detailed Description"
 .PP 
-A node for a MPSCNNDilatedPooling kernel  This class corresponds to the MPSCNNDilatedPooling class\&. 
+\fBA\fP node for a MPSCNNDilatedPooling kernel  This class corresponds to the MPSCNNDilatedPooling class\&. 
 .SH "Method Documentation"
 .PP 
 .SS "\- (nonnull instancetype) initWithSource: (\fBMPSNNImageNode\fP *__nonnull) sourceNode(NSUInteger) size"
@@ -60,7 +60,7 @@ Convenience initializer for MPSCNNDilatedPooling nodes with square non-overlappi
 .PP
 \fBReturns:\fP
 .RS 4
-A new MPSNNFilter node for a MPSCNNDilatedPooling kernel\&. 
+\fBA\fP new MPSNNFilter node for a MPSCNNDilatedPooling kernel\&. 
 .RE
 .PP
 
@@ -80,7 +80,7 @@ Convenience initializer for MPSCNNDilatedPooling nodes with square kernels and e
 .PP
 \fBReturns:\fP
 .RS 4
-A new MPSNNFilter node for a MPSCNNDilatedPooling kernel\&. 
+\fBA\fP new MPSNNFilter node for a MPSCNNDilatedPooling kernel\&. 
 .RE
 .PP
 
@@ -106,7 +106,7 @@ Init a node representing a \fBMPSCNNPooling\fP kernel
 .PP
 \fBReturns:\fP
 .RS 4
-A new MPSNNFilter node for a \fBMPSCNNPooling\fP kernel\&. 
+\fBA\fP new MPSNNFilter node for a \fBMPSCNNPooling\fP kernel\&. 
 .RE
 .PP
 
@@ -117,12 +117,12 @@ Convenience initializer for MPSCNNDilatedPooling nodes with square non-overlappi
 .RS 4
 \fIsourceNode\fP The \fBMPSNNImageNode\fP representing the source \fBMPSImage\fP for the filter 
 .br
-\fIsize\fP kernelWidth = kernelHeight = strideInPixelsX = strideInPixelsY = dilationFactorX = dilationFactorY = size 
+\fIsize\fP kernelWidth = kernelHeight = strideInPixelsX = strideInPixelsY = dilationRateX = dilationRateY = size 
 .RE
 .PP
 \fBReturns:\fP
 .RS 4
-A new MPSNNFilter node for a MPSCNNDilatedPooling kernel\&. 
+\fBA\fP new MPSNNFilter node for a MPSCNNDilatedPooling kernel\&. 
 .RE
 .PP
 
@@ -142,7 +142,7 @@ Convenience initializer for MPSCNNDilatedPooling nodes with square kernels and e
 .PP
 \fBReturns:\fP
 .RS 4
-A new MPSNNFilter node for a MPSCNNDilatedPooling kernel\&. 
+\fBA\fP new MPSNNFilter node for a MPSCNNDilatedPooling kernel\&. 
 .RE
 .PP
 

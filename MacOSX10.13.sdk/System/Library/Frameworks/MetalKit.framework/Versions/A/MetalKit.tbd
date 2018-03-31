@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 374492DE-CB22-3A68-8D43-A692E1A7A4D9' ]
+uuids:           [ 'x86_64: 3893FB36-FABA-3ED8-AE7F-3F1BB23AF4BF' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/MetalKit.framework/Versions/A/MetalKit
 current-version: 98.3
@@ -23,10 +23,10 @@ exports:
                        __newMTKTextureErrorWithCodeAndUserInfo, _gCGColorSpaceModelString, 
                        _gCGImageAlphaString, _gCGImageBitmapByteOrder, _gCGImageComponentTypeString, 
                        _gKTXFileIdentifier, _printIndices16, _printIndices32, _reflectImage ]
-    objc-classes:    [ _MTKMesh, _MTKMeshBuffer, _MTKMeshBufferAllocator, _MTKMeshBufferHolder, 
-                       _MTKMeshBufferZone, _MTKOffscreenDrawable, _MTKSubmesh, _MTKTextureIOBuffer, 
-                       _MTKTextureIOBufferAllocator, _MTKTextureIOBufferMap, _MTKTextureLoader, 
-                       _MTKTextureLoaderData, _MTKTextureLoaderImageIO, _MTKTextureLoaderKTX, 
-                       _MTKTextureLoaderMDL, _MTKTextureLoaderPVR, _MTKTextureLoaderPVR3, 
-                       _MTKTextureUploader, _MTKView ]
+    objc-classes:    [ MTKMesh, MTKMeshBuffer, MTKMeshBufferAllocator, MTKMeshBufferHolder, 
+                       MTKMeshBufferZone, MTKOffscreenDrawable, MTKSubmesh, MTKTextureIOBuffer, 
+                       MTKTextureIOBufferAllocator, MTKTextureIOBufferMap, MTKTextureLoader, 
+                       MTKTextureLoaderData, MTKTextureLoaderImageIO, MTKTextureLoaderKTX, 
+                       MTKTextureLoaderMDL, MTKTextureLoaderPVR, MTKTextureLoaderPVR3, 
+                       MTKTextureUploader, MTKView ]
 ...

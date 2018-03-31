@@ -41,6 +41,7 @@
 .Op Fl -end Ar date/time
 .Op Fl -info
 .Op Fl -debug
+.Op Fl -signpost
 .Op Fl -last Ar time Op m|h|d
 .Op Fl -timezone Ar local | timezone
 .Pp
@@ -138,6 +139,7 @@ If a file or archive is not specified, the system datastore will be shown.
 If it is from a future system version that log cannot understand,
 it exists with EX_DATAERR (65) and an error message.
 The output contains only default level messages unless --info and/or --debug are specified.
+The output does not contain signposts unless --signpost is specified.
 .Bl -tag -width "--archive path "
 .It Fl -archive Ar archive
 Display events stored in the given archive. The archive must be a valid log archive bundle with the suffix
@@ -182,6 +184,8 @@ was written to source archive or file.
 Shows info level messages in the output.
 .It Fl -debug
 Shows debug level messages in the output.
+.It Fl -signpost
+Shows signposts in the output.
 .El
 .It Cm stats
 Shows a breakdown of the events contained within a log datastore or archive. The

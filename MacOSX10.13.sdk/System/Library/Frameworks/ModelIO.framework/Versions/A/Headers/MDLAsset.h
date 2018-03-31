@@ -277,14 +277,14 @@ MDL_EXPORT
 /*!
  @property masters
  @abstract Master objects that can be instanced into the asset's object hierarchy
- @discussion @see MDLObjectContainerComponent
+ @see MDLObjectContainerComponent
  */
 @property (nonatomic, retain) id<MDLObjectContainerComponent> masters;
 
 /*!
  @property animations
  @abstract Animations that can be bound to MDLObjects (@see MDLAnimationBindComponent)
- @discussion @see MDLObjectContainerComponent
+ @see MDLObjectContainerComponent
  */
 @property (nonatomic, retain) id<MDLObjectContainerComponent> animations API_AVAILABLE(macos(10.13), ios(11.0), tvos(11.0));
 

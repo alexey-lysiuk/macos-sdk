@@ -1,4 +1,4 @@
-.TH "MPSNNGraph" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "MPSNNGraph" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -14,6 +14,9 @@ Inherits \fBMPSKernel\fP, <NSCopying>, and <NSSecureCoding>\&.
 
 .in +1c
 .ti -1c
+.RI "(nullable instancetype) \- \fBinitWithDevice:resultImage:resultImageIsNeeded:\fP"
+.br
+.ti -1c
 .RI "(nullable instancetype) \- \fBinitWithDevice:resultImage:\fP"
 .br
 .ti -1c
@@ -23,13 +26,29 @@ Inherits \fBMPSKernel\fP, <NSCopying>, and <NSSecureCoding>\&.
 .RI "(nonnull instancetype) \- \fBinitWithDevice:\fP"
 .br
 .ti -1c
-.RI "(\fBMPSImage\fP *__nonnull) \- \fBencodeToCommandBuffer:sourceImages:sourceStates:intermediateImages:destinationStates:\fP"
+.RI "(\fBMPSImage\fP *__nullable) \- \fBencodeToCommandBuffer:sourceImages:sourceStates:intermediateImages:destinationStates:\fP"
 .br
 .ti -1c
-.RI "(\fBMPSImage\fP *__nonnull) \- \fBencodeToCommandBuffer:sourceImages:\fP"
+.RI "(\fBMPSImageBatch\fP *__nullable) \- \fBencodeBatchToCommandBuffer:sourceImages:sourceStates:intermediateImages:destinationStates:\fP"
+.br
+.ti -1c
+.RI "(\fBMPSImage\fP *__nullable) \- \fBencodeToCommandBuffer:sourceImages:\fP"
+.br
+.ti -1c
+.RI "(\fBMPSImageBatch\fP *__nullable) \- \fBencodeBatchToCommandBuffer:sourceImages:sourceStates:\fP"
 .br
 .ti -1c
 .RI "(\fBMPSImage\fP *__nonnull) \- \fBexecuteAsyncWithSourceImages:completionHandler:\fP"
+.br
+.in -1c
+.SS "Class Methods"
+
+.in +1c
+.ti -1c
+.RI "(nullable instancetype) + \fBgraphWithDevice:resultImage:resultImageIsNeeded:\fP"
+.br
+.ti -1c
+.RI "(nullable instancetype) + \fBgraphWithDevice:resultImage:\fP"
 .br
 .in -1c
 .SS "Properties"
@@ -56,6 +75,12 @@ Inherits \fBMPSKernel\fP, <NSCopying>, and <NSSecureCoding>\&.
 .ti -1c
 .RI "id< MPSImageAllocator > \fBdestinationImageAllocator\fP"
 .br
+.ti -1c
+.RI "\fBMPSImageFeatureChannelFormat\fP \fBformat\fP"
+.br
+.ti -1c
+.RI "BOOL \fBresultImageIsNeeded\fP"
+.br
 .in -1c
 .SS "Additional Inherited Members"
 .SH "Detailed Description"
@@ -71,7 +96,31 @@ When decoding a \fBMPSNNGraph\fP using a NSCoder, it will be created against the
 You may find it helpful to set MPSKernelOptionsVerbose on the graph when debugging\&. 
 .SH "Method Documentation"
 .PP 
-.SS "\- (\fBMPSImage\fP * __nonnull) encodeToCommandBuffer: (nonnull id< MTLCommandBuffer >) commandBuffer(NSArray< \fBMPSImage\fP * > *__nonnull) sourceImages"
+.SS "\- (\fBMPSImageBatch\fP * __nullable) encodeBatchToCommandBuffer: (nonnull id< MTLCommandBuffer >) commandBuffer(NSArray< \fBMPSImageBatch\fP * > *__nonnull) sourceImages(NSArray< \fBMPSStateBatch\fP * > *__nullable) sourceStates"
+Convenience method to encode a batch of images 
+.SS "\- (\fBMPSImageBatch\fP * __nullable) encodeBatchToCommandBuffer: (__nonnull id< MTLCommandBuffer >) commandBuffer(NSArray< \fBMPSImageBatch\fP * > *__nonnull) sourceImages(NSArray< \fBMPSStateBatch\fP * > *__nullable) sourceStates(NSMutableArray< \fBMPSImageBatch\fP * > *__nullable) intermediateImages(NSMutableArray< \fBMPSStateBatch\fP * > *__nullable) destinationStates"
+Encode the graph to a MTLCommandBuffer  This interface is like the other except that it operates on a batch of images all at once\&. In addition, you may specify whether the result is needed\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcommandBuffer\fP The command buffer 
+.br
+\fIsourceImages\fP \fBA\fP list of MPSImages to use as the source images for the graph\&. These should be in the same order as the list returned from \fBMPSNNGraph\&.sourceImageHandles\fP\&. The images may be image arrays\&. Typically, this is only one or two images such as a \&.JPG decoded into a MPSImage*\&. If the sourceImages are MPSTemporaryImages, the graph will decrement the readCount by 1, even if the graph actually reads an image multiple times\&. 
+.br
+\fIsourceStates\fP \fBA\fP list of \fBMPSState\fP objects to use as state for a graph\&. These should be in the same order as the list returned from \fBMPSNNGraph\&.sourceStateHandles\fP\&. May be nil, if there is no source state\&. If the sourceStates are temporary, the graph will decrement the readCount by 1, even if the graph actually reads the state multiple times\&. 
+.br
+\fIintermediateImages\fP An optional NSMutableArray to receive any \fBMPSImage\fP objects exported as part of its operation\&. These are only the images that were tagged with \fBMPSNNImageNode\&.exportFromGraph\fP = YES\&. The identity of the states is given by -resultStateHandles\&. If temporary, each intermediateImage will have a readCount of 1\&. If the result was tagged exportFromGraph = YES, it will be here too, with a readCount of 2\&. 
+.br
+\fIdestinationStates\fP An optional NSMutableArray to receive any \fBMPSState\fP objects created as part of its operation\&. The identity of the states is given by -resultStateHandles\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBA\fP MPSImageBatch or MPSTemporaryImageBatch allocated per the destinationImageAllocator containing the output of the graph\&. It will be automatically released when commandBuffer completes\&. If resultIsNeeded == NO, then this will return nil\&. 
+.RE
+.PP
+
+.SS "\- (\fBMPSImage\fP * __nullable) encodeToCommandBuffer: (nonnull id< MTLCommandBuffer >) commandBuffer(NSArray< \fBMPSImage\fP * > *__nonnull) sourceImages"
 Encode the graph to a MTLCommandBuffer
 .PP
 IMPORTANT: Please use [MTLCommandBuffer addCompletedHandler:] to determine when this work is done\&. Use CPU time that would have been spent waiting for the GPU to encode the next command buffer and commit it too\&. That way, the work for the next command buffer is ready to go the moment the GPU is done\&. This will keep the GPU busy and running at top speed\&.
@@ -82,25 +131,25 @@ Those who ignore this advice and use [MTLCommandBuffer waitUntilCompleted] inste
 .RS 4
 \fIcommandBuffer\fP The command buffer 
 .br
-\fIsourceImages\fP A list of MPSImages to use as the source images for the graph\&. These should be in the same order as the list returned from \fBMPSNNGraph\&.sourceImageHandles\fP\&. 
+\fIsourceImages\fP \fBA\fP list of MPSImages to use as the source images for the graph\&. These should be in the same order as the list returned from \fBMPSNNGraph\&.sourceImageHandles\fP\&. 
 .RE
 .PP
 \fBReturns:\fP
 .RS 4
-A \fBMPSImage\fP or \fBMPSTemporaryImage\fP allocated per the destinationImageAllocator containing the output of the graph\&. It will be automatically released when commandBuffer completes\&. 
+\fBA\fP \fBMPSImage\fP or \fBMPSTemporaryImage\fP allocated per the destinationImageAllocator containing the output of the graph\&. It will be automatically released when commandBuffer completes\&. It can be nil if resultImageIsNeeded == NO 
 .RE
 .PP
 
-.SS "\- (\fBMPSImage\fP * __nonnull) encodeToCommandBuffer: (nonnull id< MTLCommandBuffer >) commandBuffer(NSArray< \fBMPSImage\fP * > *__nonnull) sourceImages(NSArray< \fBMPSState\fP * > *__nullable) sourceStates(NSMutableArray< \fBMPSImage\fP * > *__nullable) intermediateImages(NSMutableArray< \fBMPSState\fP * > *__nullable) destinationStates"
+.SS "\- (\fBMPSImage\fP * __nullable) encodeToCommandBuffer: (nonnull id< MTLCommandBuffer >) commandBuffer(NSArray< \fBMPSImage\fP * > *__nonnull) sourceImages(NSArray< \fBMPSState\fP * > *__nullable) sourceStates(NSMutableArray< \fBMPSImage\fP * > *__nullable) intermediateImages(NSMutableArray< \fBMPSState\fP * > *__nullable) destinationStates"
 Encode the graph to a MTLCommandBuffer 
 .PP
 \fBParameters:\fP
 .RS 4
 \fIcommandBuffer\fP The command buffer 
 .br
-\fIsourceImages\fP A list of MPSImages to use as the source images for the graph\&. These should be in the same order as the list returned from \fBMPSNNGraph\&.sourceImageHandles\fP\&. The images may be image arrays\&. Typically, this is only one or two images such as a \&.JPG decoded into a MPSImage*\&. If the sourceImages are MPSTemporaryImages, the graph will decrement the readCount by 1, even if the graph actually reads an image multiple times\&. 
+\fIsourceImages\fP \fBA\fP list of MPSImages to use as the source images for the graph\&. These should be in the same order as the list returned from \fBMPSNNGraph\&.sourceImageHandles\fP\&. The images may be image arrays\&. Typically, this is only one or two images such as a \&.JPG decoded into a MPSImage*\&. If the sourceImages are MPSTemporaryImages, the graph will decrement the readCount by 1, even if the graph actually reads an image multiple times\&. 
 .br
-\fIsourceStates\fP A list of \fBMPSState\fP objects to use as state for a graph\&. These should be in the same order as the list returned from \fBMPSNNGraph\&.sourceStateHandles\fP\&. May be nil, if there is no source state\&. If the sourceStates are temporary, the graph will decrement the readCount by 1, even if the graph actually reads the state multiple times\&. 
+\fIsourceStates\fP \fBA\fP list of \fBMPSState\fP objects to use as state for a graph\&. These should be in the same order as the list returned from \fBMPSNNGraph\&.sourceStateHandles\fP\&. May be nil, if there is no source state\&. If the sourceStates are temporary, the graph will decrement the readCount by 1, even if the graph actually reads the state multiple times\&. 
 .br
 \fIintermediateImages\fP An optional NSMutableArray to receive any \fBMPSImage\fP objects exported as part of its operation\&. These are only the images that were tagged with \fBMPSNNImageNode\&.exportFromGraph\fP = YES\&. The identity of the states is given by -resultStateHandles\&. If temporary, each intermediateImage will have a readCount of 1\&. If the result was tagged exportFromGraph = YES, it will be here too, with a readCount of 2\&. 
 .br
@@ -109,7 +158,7 @@ Encode the graph to a MTLCommandBuffer
 .PP
 \fBReturns:\fP
 .RS 4
-A \fBMPSImage\fP or \fBMPSTemporaryImage\fP allocated per the destinationImageAllocator containing the output of the graph\&. It will be automatically released when commandBuffer completes\&. 
+\fBA\fP \fBMPSImage\fP or \fBMPSTemporaryImage\fP allocated per the destinationImageAllocator containing the output of the graph\&. It will be automatically released when commandBuffer completes\&. 
 .RE
 .PP
 
@@ -138,16 +187,20 @@ o     If preprocessing or post-processing of the MPSImage is required,
 .PP
 \fBParameters:\fP
 .RS 4
-\fIsourceImages\fP A list of MPSImages to use as the source images for the graph\&. These should be in the same order as the list returned from \fBMPSNNGraph\&.sourceImageHandles\fP\&. They should be allocated against the same MTLDevice\&. There must be at least one source image\&. Note: this array is intended to handle the case where multiple input images are required to generate a single graph result\&. That is, the graph itself has multiple inputs\&. If you need to execute the graph multiple times, then call this API multiple times, or better yet use [encodeToCommandBuffer:sourceImages:] multiple times\&. (See discussion)
+\fIsourceImages\fP \fBA\fP list of MPSImages to use as the source images for the graph\&. These should be in the same order as the list returned from \fBMPSNNGraph\&.sourceImageHandles\fP\&. They should be allocated against the same MTLDevice\&. There must be at least one source image\&. Note: this array is intended to handle the case where multiple input images are required to generate a single graph result\&. That is, the graph itself has multiple inputs\&. If you need to execute the graph multiple times, then call this API multiple times, or better yet use [encodeToCommandBuffer:sourceImages:] multiple times\&. (See discussion)
 .br
-\fIhandler\fP A block to receive any errors generated\&. This block may run on any thread and may be called before this method returns\&. The image, if any, passed to this callback is the same image as that returned from the left hand side\&.
+\fIhandler\fP \fBA\fP block to receive any errors generated\&. This block may run on any thread and may be called before this method returns\&. The image, if any, passed to this callback is the same image as that returned from the left hand side\&.
 .RE
 .PP
 \fBReturns:\fP
 .RS 4
-A \fBMPSImage\fP to receive the result\&. The data in the image will not be valid until the completionHandler is called\&. 
+\fBA\fP \fBMPSImage\fP to receive the result\&. The data in the image will not be valid until the completionHandler is called\&. 
 .RE
 .PP
+
+.SS "+ (nullable instancetype) graphWithDevice: (nonnull id< MTLDevice >) device(\fBMPSNNImageNode\fP *__nonnull) resultImage"
+
+.SS "+ (nullable instancetype) graphWithDevice: (nonnull id< MTLDevice >) device(\fBMPSNNImageNode\fP *__nonnull) resultImage(BOOL) resultIsNeeded"
 
 .SS "\- (nullable instancetype) \fBinitWithCoder:\fP (NSCoder *__nonnull) aDecoder(nonnull id< MTLDevice >) device"
 \fBNSSecureCoding\fP compatability  While the standard NSSecureCoding/NSCoding method -initWithCoder: should work, since the file can't know which device your data is allocated on, we have to guess and may guess incorrectly\&. To avoid that problem, use initWithCoder:device instead\&. 
@@ -161,7 +214,7 @@ A \fBMPSImage\fP to receive the result\&. The data in the image will not be vali
 .PP
 \fBReturns:\fP
 .RS 4
-A new \fBMPSKernel\fP object, or nil if failure\&. 
+\fBA\fP new \fBMPSKernel\fP object, or nil if failure\&. 
 .RE
 .PP
 
@@ -170,6 +223,8 @@ Reimplemented from \fBMPSKernel\fP\&.
 .SS "\- (nonnull instancetype) initWithDevice: (__nonnull id< MTLDevice >) device"
 Use initWithDevice:resultImage: instead 
 .SS "\- (nullable instancetype) \fBinitWithDevice:\fP (nonnull id< MTLDevice >) device(\fBMPSNNImageNode\fP *__nonnull) resultImage"
+
+.SS "\- (nullable instancetype) \fBinitWithDevice:\fP (nonnull id< MTLDevice >) device(\fBMPSNNImageNode\fP *__nonnull) resultImage(BOOL) resultIsNeeded"
 Initialize a \fBMPSNNGraph\fP object on a device starting with resultImage working backward  The \fBMPSNNGraph\fP constructor will start with the indicated result image, and look to see what \fBMPSNNFilterNode\fP produced it, then look to its dependencies and so forth to reveal the subsection of the graph necessary to compute the image\&. 
 .PP
 \fBParameters:\fP
@@ -177,11 +232,13 @@ Initialize a \fBMPSNNGraph\fP object on a device starting with resultImage worki
 \fIdevice\fP The MTLDevice on which to run the graph 
 .br
 \fIresultImage\fP The \fBMPSNNImageNode\fP corresponding to the last image in the graph\&. This is the image that will be returned\&. Note: the imageAllocator for this node is ignored and the \fBMPSNNGraph\&.destinationImageAllocator\fP is used for this node instead\&. 
+.br
+\fIresultIsNeeded\fP Commonly, when training a graph, the last \fBMPSImage\fP out of the graph is not used\&. The final gradient filter is run solely to update some weights\&. If resultIsNeeded is set to NO, nil will be returned from the left hand side of the -encode call instead, and computation to produce the last image may be pruned away\&. 
 .RE
 .PP
 \fBReturns:\fP
 .RS 4
-A new \fBMPSNNGraph\fP\&. 
+\fBA\fP new \fBMPSNNGraph\fP\&. 
 .RE
 .PP
 
@@ -189,12 +246,16 @@ A new \fBMPSNNGraph\fP\&.
 .PP 
 .SS "\- (id<MPSImageAllocator>) destinationImageAllocator\fC [read]\fP, \fC [write]\fP, \fC [nonatomic]\fP, \fC [retain]\fP"
 Method to allocate the result image from -encodeToCommandBuffer\&.\&.\&.  This property overrides the allocator for the final result image in the graph\&. Default: \fBdefaultAllocator (MPSImage)\fP 
+.SS "\- (\fBMPSImageFeatureChannelFormat\fP) format\fC [read]\fP, \fC [write]\fP, \fC [nonatomic]\fP, \fC [assign]\fP"
+The default storage format used for graph intermediate images  This doesn't affect how data is stored in buffers in states\&. Nor does it affect the storage format for weights such as convolution weights stored by individual filters\&. Default: MPSImageFeatureChannelFormatFloat16 
 .SS "\- (NSArray<id <\fBMPSHandle\fP> >*) intermediateImageHandles\fC [read]\fP, \fC [nonatomic]\fP, \fC [copy]\fP"
 Get a list of identifiers for intermediate images objects produced by the graph 
 .SS "\- (BOOL) outputStateIsTemporary\fC [read]\fP, \fC [write]\fP, \fC [nonatomic]\fP, \fC [assign]\fP"
-Should \fBMPSState\fP objects produced by -encodeToCommandBuffer\&.\&.\&. be temporary objects\&.  See \fBMPSState\fP description\&. Default: YES 
+Should \fBMPSState\fP objects produced by -encodeToCommandBuffer\&.\&.\&. be temporary objects\&.  See \fBMPSState\fP description\&. Default: NO 
 .SS "\- (id<\fBMPSHandle\fP>) resultHandle\fC [read]\fP, \fC [nonatomic]\fP, \fC [assign]\fP"
 Get a handle for the graph result image 
+.SS "\- (BOOL) resultImageIsNeeded\fC [read]\fP, \fC [nonatomic]\fP, \fC [assign]\fP"
+Set at -init time\&.  If NO, nil will be returned from -encode calls and some computation may be omitted\&. 
 .SS "\- (NSArray<id <\fBMPSHandle\fP> >*) resultStateHandles\fC [read]\fP, \fC [nonatomic]\fP, \fC [copy]\fP"
 Get a list of identifiers for result state objects produced by the graph  Not guaranteed to be in the same order as sourceStateHandles 
 .SS "\- (NSArray<id <\fBMPSHandle\fP> >*) sourceImageHandles\fC [read]\fP, \fC [nonatomic]\fP, \fC [copy]\fP"

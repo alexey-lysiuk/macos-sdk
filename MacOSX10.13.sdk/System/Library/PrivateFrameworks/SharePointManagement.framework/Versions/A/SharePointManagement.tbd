@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AC7FC6A0-5881-36B4-884E-86B93B74969A' ]
+uuids:           [ 'x86_64: C16995DE-D902-38A3-8674-4521864DFFD3' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SharePointManagement.framework/Versions/A/SharePointManagement
 current-version: 57.1
@@ -18,5 +18,5 @@ exports:
                        __kSharePointPropertySMBOpLocksKey, __kSharePointPropertySMBSharedKey, 
                        __kSharePointPropertySMBStrictLockingKey, __kSharePointPropertySharePointAccountUUIDKey, 
                        __kSharePointPropertySharePointGroupIDKey, __kSharePointPropertySharePointVersionKey ]
-    objc-classes:    [ _SPMSharePoint, _SPMSharePointManager, _SPMVolume, _SPMVolumeObserver ]
+    objc-classes:    [ SPMSharePoint, SPMSharePointManager, SPMVolume, SPMVolumeObserver ]
 ...

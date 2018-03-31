@@ -1,10 +1,10 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 78030A54-25A4-3761-A09D-D183A5AC6B8F' ]
+uuids:           [ 'x86_64: A8870BD8-FBE8-321F-85C2-EB496C7ACFA7' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IDSKVStore.framework/Versions/A/IDSKVStore
 current-version: 800
 exports:         
   - archs:           [ x86_64 ]
-    objc-classes:    [ _IDSKVDeleteContext, _IDSKVStore ]
+    objc-classes:    [ IDSKVDeleteContext, IDSKVStore ]
 ...

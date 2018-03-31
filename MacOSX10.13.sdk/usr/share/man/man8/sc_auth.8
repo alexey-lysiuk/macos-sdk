@@ -35,6 +35,12 @@
 .Op Fl v
 .Op Fl u Ar user
 .Op Fl d Ar domain
+.Nm
+.Ar changepin
+.Op Fl t Ar tokenid
+.Op Fl u
+.Nm
+.Ar list " "
 .Sh SYNOPSIS - legacy             \" Section Header - required - don't modify
 .Nm
 .Ar accept
@@ -77,6 +83,8 @@ Enable, disable and force to display pairing dialog when card with unpaired iden
 List all identities on all SmartCards and display appropriate associations with users (for associated keys) or key names (for unassociated keys).
 .It Ar list
 List all public keys associated with a user.
+.It Ar changepin
+Change or unblock SmartCard PIN.  This command works only for Personal Identity Verification (PIV) SmartCards. With -u argument, PIN can be unblocked using PUK and without the -u argument, PIN can be changed. Optional -t argument allows specifying tokenID.
 .El                      \" Ends the list
 .Pp
 .Sh DESCRIPTION - legacy          \" Section Header - required - don't modify

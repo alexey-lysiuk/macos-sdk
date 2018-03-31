@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 379870FA-BCDA-3F08-9365-EE733455B836' ]
+uuids:           [ 'x86_64: FF5A8BEA-1D86-392B-BA0E-4ED3366ADCDB' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DrawingKit.framework/Versions/A/DrawingKit
 objc-constraint: none
@@ -12,6 +12,6 @@ exports:
                        _DKInkViewTouchesEndedNotification, _DKRenderPointWidthForPoint, 
                        _MaxForceValue, _MaxVelocityValue, _NSStringFromCGPoint, _NSStringFromCGRect, 
                        _NSStringFromCGSize, _NSStringFromVectorFloat4 ]
-    objc-classes:    [ _DKDrawing, _DKDrawingStroke, _DKDrawingStrokePoint, _DKInkThumbnailRenderer, 
-                       _DKInkView ]
+    objc-classes:    [ DKDrawing, DKDrawingStroke, DKDrawingStrokePoint, DKInkThumbnailRenderer, 
+                       DKInkView ]
 ...

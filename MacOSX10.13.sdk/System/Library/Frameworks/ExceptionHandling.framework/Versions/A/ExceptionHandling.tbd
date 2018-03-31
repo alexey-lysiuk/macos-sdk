@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 2B358A2E-E6FC-3284-9F84-E04CB1F1AF77', 'x86_64: 47D558A6-45B1-3A1A-A619-9CA52225CB49' ]
+uuids:           [ 'i386: 98002AAB-45B6-3838-A59C-DC065F64C9FF', 'x86_64: 66F613CE-62BE-31C0-9F52-DCC2DAB762CA' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/ExceptionHandling.framework/Versions/A/ExceptionHandling
 current-version: 12
@@ -8,5 +8,5 @@ exports:
   - archs:           [ i386, x86_64 ]
     symbols:         [ _NSExceptionHandlerResume, _NSStackTraceKey, _NSUncaughtRuntimeErrorException, 
                        _NSUncaughtSystemExceptionException ]
-    objc-classes:    [ _NSExceptionHandler ]
+    objc-classes:    [ NSExceptionHandler ]
 ...

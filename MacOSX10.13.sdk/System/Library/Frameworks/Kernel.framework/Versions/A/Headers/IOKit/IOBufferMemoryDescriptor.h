@@ -67,6 +67,7 @@ private:
 
 /*! @var reserved
     Reserved for future use.  (Internal use only)  */
+    APPLE_KEXT_WSHADOW_PUSH;
     ExpansionData * reserved;
 
 protected:
@@ -77,6 +78,7 @@ protected:
 private:
     uintptr_t		 _internalReserved;
     unsigned             _internalFlags;
+    APPLE_KEXT_WSHADOW_POP;
 
 private:
 #ifndef __LP64__

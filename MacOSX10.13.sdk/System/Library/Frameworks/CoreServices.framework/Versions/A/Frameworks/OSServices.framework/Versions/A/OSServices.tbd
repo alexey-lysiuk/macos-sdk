@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: CA9178CA-70B1-3BDC-B61B-A176DD7CE7F9', 'x86_64: 408FB1A4-58E9-34D4-8022-A9EEC8502762' ]
+uuids:           [ 'i386: CD331BCB-DFB4-3CF5-A98F-B3F9C22AC7CC', 'x86_64: 690E3C93-8799-39FF-8663-190A49B002E3' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSServices.framework/Versions/A/OSServices
-current-version: 822.19
+current-version: 822.31
 parent-umbrella: CoreServices
 exports:         
   - archs:           [ i386 ]
@@ -99,9 +99,10 @@ exports:
                        __CSCopyAppleIDAccounts, __CSCopyCommentForServerName, __CSCopyDefaultSharingSecIdentities, 
                        __CSCopyKerberosPrincipalForCertificate, __CSCopyLocalHostnameForComputerName, 
                        __CSCopySecIdentityForAppleID, __CSCopyUserIdentityForPersonInfo, 
-                       __CSCreateAppleIDIdentityWithCertificate, __CSCreatePosixNameFromString, 
-                       __CSDeviceSupportsAirDrop, __CSDeviceSupportsODisk, __CSDisassociateWireless, 
-                       __CSEnableWirelessP2P, __CSGetAppleIDIdentityAuthority, __CSIdentityAddLinkedIdentityWithNameAndAuthority, 
+                       __CSCreateAppleIDIdentityWithCertificate, __CSCreateAppleIDIdentityWithNameAndAccountIdentifier, 
+                       __CSCreatePosixNameFromString, __CSDeviceSupportsAirDrop, 
+                       __CSDeviceSupportsODisk, __CSDisassociateWireless, __CSEnableWirelessP2P, 
+                       __CSGetAppleIDIdentityAuthority, __CSIdentityAddLinkedIdentityWithNameAndAuthority, 
                        __CSIdentityAllowsPasswordResetWithAuthority, __CSIdentityAllowsPasswordResetWithAuthorityFromDSAttrData, 
                        __CSIdentityAuthenticateUsingCertificate, __CSIdentityAuthenticateUsingCertificateChain, 
                        __CSIdentityAuthenticateUsingPassword, __CSIdentityAuthorityAuthenticateNameAndPassword, 
@@ -115,11 +116,13 @@ exports:
                        __CSIdentityUpdateLinkedIdentityProvisioning, __CSIsComputerToComputerEnabled, 
                        __CSIsCurrentUserAdmin, __CSIsMobileTimeMachineDisk, __CSIsMobileTimeMachineEnabled, 
                        __CSIsOpticalDisk, __CSIsWirelessAccessPointEnabled, __CSIsWirelessP2PEnabled, 
+                       __CSLinkCurrentUserToAppleIDWithVerifiedAccountIdentifier, 
                        __CSLinkUserToAppleID, __CSLog, __CSRemoveAppleIDAccount, 
-                       __CSRemoveDotMacIdentitiesFromKeychain, __ISAcquireImageRef, 
-                       __ISAddFSRefIconToImage, __ISAddIconFamilyHandleToImage, __ISAddIconFamilyPtrToImage, 
-                       __ISAddStorageToImage, __ISAddSystemIconToImage, __ISAddSystemUTIIconToImage, 
-                       __ISCopySystemIconStorageInfo, __ISDumpStorage, __ISEnumerateIconIndexByPresidenceWithBlock, 
+                       __CSRemoveDotMacIdentitiesFromKeychain, __CSUnlinkCurrentUserFromAppleID, 
+                       __ISAcquireImageRef, __ISAddFSRefIconToImage, __ISAddIconFamilyHandleToImage, 
+                       __ISAddIconFamilyPtrToImage, __ISAddStorageToImage, __ISAddSystemIconToImage, 
+                       __ISAddSystemUTIIconToImage, __ISCopySystemIconStorageInfo, 
+                       __ISDumpStorage, __ISEnumerateIconIndexByPresidenceWithBlock, 
                        __ISEnumerateIconIndexWithJPEGFlag, __ISFlattenImageRef, __ISGetARGBDataPointer, 
                        __ISGetBackgoundImage, __ISGetCustomIconsEnabled, __ISGetEmptyIconStorage, 
                        __ISGetGlobalImageRefFromLocal, __ISGetISImageForVolume, __ISGetISImageForVolumeWithFlags, 

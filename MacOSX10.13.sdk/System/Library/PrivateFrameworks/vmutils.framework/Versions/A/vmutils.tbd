@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386 ]
-uuids:           [ 'i386: E0F135E6-103C-34C2-B4F3-C986B716A665' ]
+uuids:           [ 'i386: 508C8C7A-8CB0-3D11-A5FB-5A261FA35B23' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/vmutils.framework/Versions/A/vmutils
 current-version: 110
@@ -19,11 +19,11 @@ exports:
                        _task_peek_string, _task_poke, _task_read_ptr_at, _task_read_unsigned_at, 
                        _task_start_peeking, _task_stop_peeking, _task_try_peek, _thread_get_pc_sp_and_fp, 
                        _thread_read_stack ]
-    objc-classes:    [ _CallNode, _ImageSymbols, _MappedMemoryCache, _MemoryCache, 
-                       _NSArchiveParser, _NSBinaryHeader, _NSFunctionNameDemangler, 
-                       _NSMachODyldSecrets, _NSMachOFileImage, _NSMachOHeader, _NSMachOImage, 
-                       _NSMachOSymbolTable, _NSMachOTaskImage, _NSNonOverlappingRangeValueTable, 
-                       _NSProcInfo, _NSProcList, _NSSampler, _NSStackBacktrace, _NonOverlappingRangeArray, 
-                       _PrivateRangeValueContainer, _RangeArray, _TaskMemoryCache, 
-                       __NSDWARFAbbrevDecl, __NSDWARFAttribute, __NSSourceInfo ]
+    objc-classes:    [ CallNode, ImageSymbols, MappedMemoryCache, MemoryCache, NSArchiveParser, 
+                       NSBinaryHeader, NSFunctionNameDemangler, NSMachODyldSecrets, 
+                       NSMachOFileImage, NSMachOHeader, NSMachOImage, NSMachOSymbolTable, 
+                       NSMachOTaskImage, NSNonOverlappingRangeValueTable, NSProcInfo, 
+                       NSProcList, NSSampler, NSStackBacktrace, NonOverlappingRangeArray, 
+                       PrivateRangeValueContainer, RangeArray, TaskMemoryCache, _NSDWARFAbbrevDecl, 
+                       _NSDWARFAttribute, _NSSourceInfo ]
 ...

@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E5C44656-94CB-37B7-A490-00E929C0CEDD' ]
+uuids:           [ 'x86_64: 8C558365-979A-310C-9A24-031E34A9FDAD' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AccountsUI.framework/Versions/A/AccountsUI
 exports:         
@@ -9,13 +9,13 @@ exports:
                        _ACUIIsRunningInternetAccountsPref, _ACUILog, _ACUIOpenPreferencePaneWithArgs, 
                        _ACUIRevealAccountInPreferencePane, _ACUIUID, _AccountsUIVersionNumber, 
                        _AccountsUIVersionString ]
-    objc-classes:    [ _ACUIAccountDataclass, _ACUIAccountDataclassCellView, _ACUIAccountDataclassShareMenu, 
-                       _ACUIAccountDetailsViewController, _ACUIAccountInfoViewController, 
-                       _ACUIAccountNotifier, _ACUIAccountSetupViewController, _ACUIAccountTypeRowRadio, 
-                       _ACUIAccountTypesCellView, _ACUIAccountTypesViewController, 
-                       _ACUIAccountsTableViewController, _ACUICertificatePanelManager, 
-                       _ACUICredentialPromptViewController, _ACUIInvisibleButton, 
-                       _ACUILegalSheetViewController, _ACUIPluginManager, _ACUISetupManagerViewController, 
-                       _ACUITableCellView, _ACUIUpdateContactsViewController, _ACUIUtilities, 
-                       _ACUIViewController, _ACUIWebLoginViewController ]
+    objc-classes:    [ ACUIAccountDataclass, ACUIAccountDataclassCellView, ACUIAccountDataclassShareMenu, 
+                       ACUIAccountDetailsViewController, ACUIAccountInfoViewController, 
+                       ACUIAccountNotifier, ACUIAccountSetupViewController, ACUIAccountTypeRowRadio, 
+                       ACUIAccountTypesCellView, ACUIAccountTypesViewController, 
+                       ACUIAccountsTableViewController, ACUICertificatePanelManager, 
+                       ACUICredentialPromptViewController, ACUIInvisibleButton, ACUILegalSheetViewController, 
+                       ACUIPluginManager, ACUISetupManagerViewController, ACUITableCellView, 
+                       ACUIUpdateContactsViewController, ACUIUtilities, ACUIViewController, 
+                       ACUIWebLoginViewController ]
 ...

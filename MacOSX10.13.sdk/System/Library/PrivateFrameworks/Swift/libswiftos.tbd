@@ -1,10 +1,10 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 87EC34CB-7F45-3437-A26E-5ACA2C4ECAB1' ]
+uuids:           [ 'x86_64: A41617E2-6DFC-3DE1-8D58-E02C491D2E7E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Swift/libswiftos.dylib
 current-version: 900.8.49
-swift-version:   5
+swift-abi-version: 5
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ __T02os0A4_logys12StaticStringV_SVSg3dsoSo5OSLogC0B0SC0F4TypeV4typeSays7CVarArg_pGdtF, 

@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 10489460-9476-3E7C-A3CE-8B85E37733DA' ]
+uuids:           [ 'x86_64: 394251E2-E715-3D24-816A-A81FB79F5D22' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CalendarFoundation.framework/Versions/A/CalendarFoundation
-current-version: 552.2.3
+current-version: 552.4.3
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CALAbbrevDateFormat, _CALAbbrevDateWithoutYearFormat, _CALAbbrevDayOfWeekFormat, 
@@ -115,26 +115,26 @@ exports:
                        _mt_log_reminders_geofence, _mt_log_reminders_notification_action, 
                        _mt_log_usage, _timezonesAreEquivalent, _tzload, _tzname, 
                        _tzparse, _tzset, _tzsetwall ]
-    objc-classes:    [ _CalAccountsProvider, _CalAccumulatingQueue, _CalCancellableSearch, 
-                       _CalChronometry, _CalContactProvider, _CalContactsProvider, 
-                       _CalCrashReporter, _CalDarwinNotificationListener, _CalDateLocalization, 
-                       _CalDateRange, _CalDefaults, _CalDescriptionBuilder, _CalDeviceLockObserver, 
-                       _CalDisjointDateRange, _CalEntitlementsVerifier, _CalFileSensor, 
-                       _CalFoundationBundle, _CalFoundationPreferences, _CalGeocoder, 
-                       _CalLazyCreateUtils, _CalLimitingQueue, _CalLocation, _CalLocationBundle, 
-                       _CalLocationManager, _CalLocationManagerDelegate, _CalLocationPrediction, 
-                       _CalLogASLWriter, _CalLogBasicTextFormatter, _CalLogConfiguration, 
-                       _CalLogEnvelope, _CalLogFileWriter, _CalLogFilter, _CalLogMaster, 
-                       _CalLogNSLogWriter, _CalLogNode, _CalLogUserNotificationWriter, 
-                       _CalLogWriter, _CalLogXMLFormatter, _CalMeCard, _CalMemorySensor, 
-                       _CalMessageTracer, _CalNWideQueue, _CalOSLogWriter, _CalPersistentLRUCache, 
-                       _CalPersistentLRUCacheItem, _CalPreferences, _CalRoute, _CalScriptSecurityPolicy, 
-                       _CalSignalSensor, _CalSpotlightPendingSearch, _CalSpotlightQueryController, 
-                       _CalSpotlightQueryResult, _CalStopwatch, _CalSuggestionsProvider, 
-                       _CalTimeIntervalLocalization, _CalWellKnownPaths, _CalendarColors, 
-                       _CaliCalendarPRODID, _EKCalendarDate, _EKFoundInAppsEventTracker, 
-                       _EKMutableCalendarDate, _EKProtocolObject_Shared, _EKSuggestionsServiceLogger, 
-                       _EKTTLEventTracker, _EKTimeZone ]
-    objc-ivars:      [ _EKCalendarDate._dateAbs, _EKCalendarDate._dateGr, _EKCalendarDate._flags, 
-                       _EKCalendarDate._timeZone ]
+    objc-classes:    [ CalAccountsProvider, CalAccumulatingQueue, CalCancellableSearch, 
+                       CalChronometry, CalContactProvider, CalContactsProvider, CalCrashReporter, 
+                       CalDarwinNotificationListener, CalDateLocalization, CalDateRange, 
+                       CalDefaults, CalDescriptionBuilder, CalDeviceLockObserver, 
+                       CalDisjointDateRange, CalEntitlementsVerifier, CalFileSensor, 
+                       CalFoundationBundle, CalFoundationPreferences, CalGeocoder, 
+                       CalLazyCreateUtils, CalLimitingQueue, CalLocation, CalLocationBundle, 
+                       CalLocationManager, CalLocationManagerDelegate, CalLocationPrediction, 
+                       CalLogASLWriter, CalLogBasicTextFormatter, CalLogConfiguration, 
+                       CalLogEnvelope, CalLogFileWriter, CalLogFilter, CalLogMaster, 
+                       CalLogNSLogWriter, CalLogNode, CalLogUserNotificationWriter, 
+                       CalLogWriter, CalLogXMLFormatter, CalMeCard, CalMemorySensor, 
+                       CalMessageTracer, CalNWideQueue, CalOSLogWriter, CalPersistentLRUCache, 
+                       CalPersistentLRUCacheItem, CalPreferences, CalRoute, CalScriptSecurityPolicy, 
+                       CalSignalSensor, CalSpotlightPendingSearch, CalSpotlightQueryController, 
+                       CalSpotlightQueryResult, CalStopwatch, CalStructuredDataArchiver, 
+                       CalSuggestionsProvider, CalTimeIntervalLocalization, CalWellKnownPaths, 
+                       CalendarColors, CaliCalendarPRODID, EKCalendarDate, EKFoundInAppsEventTracker, 
+                       EKMutableCalendarDate, EKProtocolObject_Shared, EKSuggestionsServiceLogger, 
+                       EKTTLEventTracker, EKTimeZone ]
+    objc-ivars:      [ EKCalendarDate._dateAbs, EKCalendarDate._dateGr, EKCalendarDate._flags, 
+                       EKCalendarDate._timeZone ]
 ...

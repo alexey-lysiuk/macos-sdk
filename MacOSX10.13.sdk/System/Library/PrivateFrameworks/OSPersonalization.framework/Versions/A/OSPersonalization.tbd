@@ -1,17 +1,19 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 342146B5-5E00-3964-9BF7-A1F02C81067C' ]
+uuids:           [ 'x86_64: FB77A8EA-1D71-331D-8E78-B1867C1F391C' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/OSPersonalization.framework/Versions/A/OSPersonalization
+current-version: 48.1
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
-    symbols:         [ _OSPDeviceIdentityKeyBoardID, _OSPDeviceIdentityKeyChipEpoch, 
-                       _OSPDeviceIdentityKeyChipID, _OSPDeviceIdentityKeyECID, _OSPDeviceIdentityKeyGlobalSigningEnabled, 
+    symbols:         [ _OSPDeviceIdentityKeyBoardID, _OSPDeviceIdentityKeyChipID, 
+                       _OSPDeviceIdentityKeyECID, _OSPDeviceIdentityKeyGlobalSigningEnabled, 
                        _OSPDeviceIdentityKeyHardwareModel, _OSPDeviceIdentityKeyImage4DigestType, 
                        _OSPDeviceIdentityKeyPersonalizationEnabled, _OSPDeviceIdentityKeyProductionMode, 
                        _OSPDeviceIdentityKeySecurityMode, _OSPDeviceIdentityKeySupportsImage4, 
                        _OSPErrorDomain, _OSPErrorIsNetworkingRelated, _OSPLogObject, 
+                       _OSPNVRAMNamespaceAppleSecureBoot, _OSPNVRAMNamespaceStartupManager, 
                        _OSPShouldLogToInstallLog, _OSPShouldLogToStderr, _OSPStderrDateFormatter, 
                        _OSPersonalizationOptionApRequestEntries, _OSPersonalizationOptionBundlePath, 
                        _OSPersonalizationOptionEnableSSO, _OSPersonalizationOptionOutputPath, 
@@ -25,11 +27,12 @@ exports:
                        _OSPersonalizedManifestRootTypeBoot, _OSPersonalizedManifestRootTypeFirmwareUpdate, 
                        _OSPersonalizedManifestRootTypeInstallerBoot, _OSPersonalizedManifestRootTypePreboot, 
                        _OSPersonalizedManifestRootTypeRecoveryBoot ]
-    objc-classes:    [ _OSPConfigureRequestOperation, _OSPDevice, _OSPError, _OSPGlobalSigningController, 
-                       _OSPInstallSignedManifestsOperation, _OSPManifestFile, _OSPNVRAM, 
-                       _OSPNetworkReachability, _OSPNetworkReachabilityCheckOperation, 
-                       _OSPOperation, _OSPOperationController, _OSPPersonalizationOperation, 
-                       _OSPRequest, _OSPSecureBootBundle, _OSPTDMDisk, _OSPTelemetry, 
-                       _OSPUpdatePrebootOperation, _OSPUtilities, _OSPackagePersonalizationController, 
-                       _OSPersonalizationController, _OSPersonalizationDeviceIdentity ]
+    objc-classes:    [ OSPConfigureRequestOperation, OSPDevice, OSPError, OSPGlobalSigningController, 
+                       OSPInstallSignedManifestsOperation, OSPManifestFile, OSPNVRAM, 
+                       OSPNetworkReachability, OSPNetworkReachabilityCheckOperation, 
+                       OSPOperation, OSPOperationController, OSPPersonalizationOperation, 
+                       OSPRequest, OSPSecureBootBundle, OSPTDMDisk, OSPTelemetry, 
+                       OSPUpdatePrebootOperation, OSPUtilities, OSPVolumeAnalyzer, 
+                       OSPackagePersonalizationController, OSPersonalizationController, 
+                       OSPersonalizationDeviceIdentity ]
 ...

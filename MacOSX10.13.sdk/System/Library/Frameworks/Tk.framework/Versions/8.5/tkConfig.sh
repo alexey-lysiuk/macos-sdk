@@ -71,7 +71,7 @@ TK_INCLUDE_SPEC='-I/System/Library/Frameworks/Tk.framework/Versions/8.5/Headers'
 # different place than the directory containing the source files, this
 # points to the location of the sources, not the location where Tk was
 # compiled.
-TK_SRC_DIR='/BuildRoot/Library/Caches/com.apple.xbs/Sources/tcl/tcl-118/tk/tk'
+TK_SRC_DIR='/BuildRoot/Library/Caches/com.apple.xbs/Sources/tcl/tcl-118.50.1/tk/tk'
 
 # Needed if you want to make a 'fat' shared library library
 # containing tk objects or link a different wish.

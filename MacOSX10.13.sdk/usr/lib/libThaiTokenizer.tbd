@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 057C38A0-A484-3DEB-B512-42DC2885B88B', 'x86_64: 04AC7CD4-BD9A-3B1D-8CEB-9E2030B6B667' ]
+uuids:           [ 'i386: 70BEEBB2-F8FD-3942-B874-3F9D7098AD86', 'x86_64: 6F416F41-BF77-3078-A05C-AFF5DA5AB008' ]
 platform:        macosx
 install-name:    /usr/lib/libThaiTokenizer.dylib
 objc-constraint: none

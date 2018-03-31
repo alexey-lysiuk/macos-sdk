@@ -1,10 +1,10 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B2986032-AECE-3E1A-85DC-B422A2EB8F8F' ]
+uuids:           [ 'x86_64: D3C27B90-17CA-3496-86F4-7CF0CE34FBA4' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Swift/libswiftSwiftOnoneSupport.dylib
 current-version: 900.8.49
-swift-version:   5
+swift-abi-version: 5
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ __T017SwiftOnoneSupport14_PrespecializeVMa, __T017SwiftOnoneSupport14_PrespecializeVMn, 

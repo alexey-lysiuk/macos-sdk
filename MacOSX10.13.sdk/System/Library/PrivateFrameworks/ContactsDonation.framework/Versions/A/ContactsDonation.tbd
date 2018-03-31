@@ -1,4 +1,4 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
 uuids:           [ 'x86_64: FC3D227F-12EC-3FBF-A6B2-A0BA2F42A8DC' ]
 platform:        macosx
@@ -22,12 +22,12 @@ exports:
                        _CNDonationValuePostalAddressKey, _CNDonationValuePostalAddressPostalCodeKey, 
                        _CNDonationValuePostalAddressStateKey, _CNDonationValuePostalAddressStreetKey, 
                        _CNDonationValuePostalAddressSubAdministrativeAreaKey, _CNDonationValuePostalAddressSubLocalityKey ]
-    objc-classes:    [ _CNDDonationPreferences, _CNDDonorExtension, _CNDDonorLoader, 
-                       _CNDInMemoryDonationPreferences, _CNDPhoneNumberMonitor, _CNDonationAgentXPCAdapter, 
-                       _CNDonationExtensionRequestHandler, _CNDonationLoggerProvider, 
-                       _CNDonationOrigin, _CNDonationStore, _CNDonationValue, _CNMutableDonationOrigin, 
-                       __CNDonationAgentXPCMethodScope ]
-    objc-ivars:      [ _CNDonationOrigin._bundleIdentifier, _CNDonationOrigin._clusterIdentifier, 
-                       _CNDonationOrigin._donationDate, _CNDonationOrigin._donationIdentifier, 
-                       _CNDonationOrigin._expirationDate ]
+    objc-classes:    [ CNDDonationPreferences, CNDDonorExtension, CNDDonorLoader, 
+                       CNDInMemoryDonationPreferences, CNDPhoneNumberMonitor, CNDonationAgentXPCAdapter, 
+                       CNDonationExtensionRequestHandler, CNDonationLoggerProvider, 
+                       CNDonationOrigin, CNDonationStore, CNDonationValue, CNMutableDonationOrigin, 
+                       _CNDonationAgentXPCMethodScope ]
+    objc-ivars:      [ CNDonationOrigin._bundleIdentifier, CNDonationOrigin._clusterIdentifier, 
+                       CNDonationOrigin._donationDate, CNDonationOrigin._donationIdentifier, 
+                       CNDonationOrigin._expirationDate ]
 ...

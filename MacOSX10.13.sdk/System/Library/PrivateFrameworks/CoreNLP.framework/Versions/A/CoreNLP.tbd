@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: DC07A535-113D-3418-AFDC-70842E55FB1B', 'x86_64: 1F329E38-E7D0-3455-981B-48F434C9E8CC' ]
+uuids:           [ 'i386: A0BB2248-F651-33F7-94D6-AC674C33DB6E', 'x86_64: 1FDB3609-F745-3874-84EB-473570632E50' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreNLP.framework/Versions/A/CoreNLP
-current-version: 130.4.1
+current-version: 130.5.4
 objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]

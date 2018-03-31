@@ -29,7 +29,7 @@
  *  before converting.
  *
  *  Unlike most vector operations in <simd/>, there are no abbreviated C++
- *  names for these fuctions in the simd:: namespace.
+ *  names for these functions in the simd:: namespace.
  */
 
 #ifndef __SIMD_CONVERSION_HEADER__

@@ -333,10 +333,55 @@ MPS_CLASS_AVAILABLE_STARTING( macos(10.13), ios(10.0), tvos(10.0))
 -(nonnull instancetype) initWithBuffer: (nonnull id<MTLBuffer>) buffer
                             descriptor: (nonnull MPSMatrixDescriptor*) descriptor;
 
+/*! @abstract   Initialize a MPSMatrix object with a descriptor. Allocate the buffer.
+ *  @param      device      The device with which it will be used
+ *  @param      descriptor  The shape and style of the matrix
+ *  @return     A valid MPSMatrix object or nil
+ *  @discussion The matrix object will be created, but the storage to hold the
+ *              matrix data will only be allocated when it is needed, typically
+ *              when the data property is invoked.  In conjunction
+ *              with -resourceSize, this will allow you to estimate storage needs
+ *              without actually creating the backing store for the matrix.
+ */
+-(nonnull instancetype) initWithDevice: (nonnull id <MTLDevice>) device
+                            descriptor: (MPSMatrixDescriptor * __nonnull) descriptor;
+
 /*
  * Use one of the above initialization methods instead.
  */
 -(nonnull instancetype) init NS_UNAVAILABLE;
+
+
+/*! @abstract   Flush the underlying MTLBuffer from the device's caches, and invalidate any CPU caches if needed.
+ *  @discussion This will call [id <MTLBlitEncoder> synchronizeResource: ] on the matrix's MTLBuffer, if any.
+ *              This is necessary for all MTLStorageModeManaged resources. For other resources, including temporary
+ *              resources (these are all MTLStorageModePrivate), and buffers that have not yet been allocated, nothing is done.
+ *              It is more efficient to use this method than to attempt to do this yourself with the data property.
+ *  @param      commandBuffer       The commandbuffer on which to synchronize   */
+-(void) synchronizeOnCommandBuffer: (__nonnull id <MTLCommandBuffer>) commandBuffer
+        MPS_AVAILABLE_STARTING( macos(10.13.4), ios(11.3), tvos(11.3));
+
+/*! @abstract       Get the number of bytes used to allocate underyling MTLResources
+ *  @discussion     This is the size of the backing store of underlying MTLResources.
+ *                  It does not include all storage used by the object, for example
+ *                  the storage used to hold the MPSMatrix instantiation and MTLBuffer
+ *                  is not included. It only measures the size of the allocation used
+ *                  to hold the matrix data in the buffer. This value is subject to
+ *                  change between different devices and operating systems.
+ *
+ *                  Except when -initWithBuffer:descriptor: is used, most MPSMatrixes are allocated
+ *                  without a backing store. The backing store is allocated lazily when
+ *                  it is needed, typically when the .texture property is called.
+ *                  Consequently, in most cases, it should be inexpensive to make
+ *                  a MPSImage to see how much memory it will need, and release it
+ *                  if it is too large.
+ *
+ *                  This method may fail in certain circumstances, such as when the
+ *                  MPSImage is created with -initWithTexture:featureChannels:. In
+ *                  such cases, 0 will be returned.
+ */
+-(NSUInteger)  resourceSize
+    MPS_AVAILABLE_STARTING( macos(10.13.4), ios(11.3), tvos(11.3));
 
 @end // MPSMatrix
     
@@ -406,10 +451,56 @@ MPS_CLASS_AVAILABLE_STARTING( macos(10.13), ios(11.0), tvos(11.0))
 -(nonnull instancetype) initWithBuffer: (nonnull id<MTLBuffer>) buffer
                             descriptor: (nonnull MPSVectorDescriptor*) descriptor;
 
+/*! @abstract   Initialize a lazily backed MPSVector object with a descriptor
+ *  @param      device      The device with which it will be used
+ *  @param      descriptor  The shape and style of the matrix
+ *  @return     A valid MPSVector object or nil
+ *  @discussion The vector object will be created, but the storage to hold the
+ *              vector data will only be allocated when it is needed, typically
+ *              when the data property is invoked.  In conjunction
+ *              with -resourceSize, this will allow you to estimate storage needs
+ *              without actually creating the backing store for the vector.
+ */
+-(nonnull instancetype) initWithDevice: (nonnull id <MTLDevice>) device
+                            descriptor: (MPSVectorDescriptor * __nonnull) descriptor
+        MPS_AVAILABLE_STARTING( macos(10.13.4), ios(11.3), tvos(11.3));
+
 /*
  * Use the above initialization methods instead.
  */
 -(nonnull instancetype) init NS_UNAVAILABLE;
+
+
+/*! @abstract   Flush the underlying MTLBuffer from the device's caches, and invalidate any CPU caches if needed.
+ *  @discussion This will call [id <MTLBlitEncoder> synchronizeResource: ] on the vector's MTLBuffer, if any.
+ *              This is necessary for all MTLStorageModeManaged resources. For other resources, including temporary
+ *              resources (these are all MTLStorageModePrivate), and buffers that have not yet been allocated, nothing is done.
+ *              It is more efficient to use this method than to attempt to do this yourself with the data property.
+ *  @param      commandBuffer       The commandbuffer on which to synchronize   */
+-(void) synchronizeOnCommandBuffer: (__nonnull id <MTLCommandBuffer>) commandBuffer
+        MPS_AVAILABLE_STARTING( macos(10.13.4), ios(11.3), tvos(11.3));
+
+/*! @abstract       Get the number of bytes used to allocate underyling MTLResources
+ *  @discussion     This is the size of the backing store of underlying MTLResources.
+ *                  It does not include all storage used by the object, for example
+ *                  the storage used to hold the MPSVector instantiation and MTLBuffer
+ *                  is not included. It only measures the size of the allocation used
+ *                  to hold the vector data in the buffer. This value is subject to
+ *                  change between different devices and operating systems.
+ *
+ *                  Except when -initWithBuffer:descriptor: is used, most MPSVectors are allocated
+ *                  without a backing store. The backing store is allocated lazily when
+ *                  it is needed, typically when the .texture property is called.
+ *                  Consequently, in most cases, it should be inexpensive to make
+ *                  a MPSMatrix to see how much memory it will need, and release it
+ *                  if it is too large.
+ *
+ *                  This method may fail in certain circumstances, such as when the
+ *                  MPSMatrix is created with -initWithBuffer:descriptor:. In
+ *                  such cases, 0 will be returned.
+ */
+-(NSUInteger)  resourceSize
+    MPS_AVAILABLE_STARTING( macos(10.13.4), ios(11.3), tvos(11.3));
 
 @end // MPSVector
     

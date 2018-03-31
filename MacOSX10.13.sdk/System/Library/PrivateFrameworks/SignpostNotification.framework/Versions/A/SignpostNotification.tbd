@@ -1,14 +1,15 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 9AD547F6-ED5A-3AC8-BF4C-811C69801CDF', 'x86_64: D4C967BA-92C6-3BAB-AFB5-59F98B35F921' ]
+uuids:           [ 'i386: D6D411F3-D20B-31B6-9191-99306C60CC3D', 'x86_64: 9957B2C0-4D48-3337-8A4D-5E457CC7B542' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SignpostNotification.framework/Versions/A/SignpostNotification
+current-version: 2.4
+objc-constraint: none
 exports:         
   - archs:           [ i386, x86_64 ]
     symbols:         [ _EnableSignpostNotificationGeneration, _FillLogMessageUsingSignpostReportXPCDictionary, 
                        _SignpostEventReportXPCDictionaryForHook, _SignpostGetNewNotificationConnection, 
                        _SignpostNotificationSendNotificationSubscriptionRequestOnConnection, 
-                       _SignpostNotificationVersionNumber, _SignpostNotificationVersionString, 
                        _kSignpostNotificationXPCDict_CategoryKey, _kSignpostNotificationXPCDict_ComposedMessageKey, 
                        _kSignpostNotificationXPCDict_MachContinuousTimeKey, _kSignpostNotificationXPCDict_ProcessIDKey, 
                        _kSignpostNotificationXPCDict_ProcessImagePathKey, _kSignpostNotificationXPCDict_ScopeKey, 

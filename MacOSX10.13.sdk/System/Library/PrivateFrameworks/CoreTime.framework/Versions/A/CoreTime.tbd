@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DE732067-D0B8-309D-96C3-81E7EF3E58E5' ]
+uuids:           [ 'x86_64: 21A92D23-D686-3C48-8C67-82E0D8483970' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreTime.framework/Versions/A/CoreTime
-current-version: 224
+current-version: 224.5
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

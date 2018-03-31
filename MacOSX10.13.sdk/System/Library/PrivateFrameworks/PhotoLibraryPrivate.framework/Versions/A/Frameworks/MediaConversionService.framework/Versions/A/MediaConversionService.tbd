@@ -1,9 +1,9 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B7E97889-6B29-3293-A266-7DC6354897BC' ]
+uuids:           [ 'x86_64: A228B507-1F2E-3F16-90E4-C23B8F574655' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoLibraryPrivate.framework/Versions/A/Frameworks/MediaConversionService.framework/Versions/A/MediaConversionService
-current-version: 3251.12.180
+current-version: 3271.13.150
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _MediaConversionServiceVersionNumber, _MediaConversionServiceVersionString, 
@@ -30,17 +30,17 @@ exports:
                        _PAMediaConversionServiceResultDataKey, _PAMediaConversionServiceRotationAngleDegreesKey, 
                        _PAMediaConversionServiceScaleFactorKey, _PHMediaFormatConversionErrorDomain, 
                        _PHMediaFormatConversionUnknownFutureIdentifierPlaceholder ]
-    objc-classes:    [ _PAImageConversionServiceClient, _PAMediaConversionServiceAddPFMediaMetadataPolicy, 
-                       _PAMediaConversionServiceCompositeImageMetadataPolicy, _PAMediaConversionServiceImageMetadataPolicy, 
-                       _PAMediaConversionServiceImagingUtilities, _PAMediaConversionServiceSharedPhotoStreamImageMetadataPolicy, 
-                       _PAMediaConversionServiceiCloudPhotoLibraryImageMetadataPolicy, 
-                       _PAVideoConversionServiceClient, _PHMediaFormatChainedConversionRequest, 
-                       _PHMediaFormatConversionCompositeRequest, _PHMediaFormatConversionContent, 
-                       _PHMediaFormatConversionDestination, _PHMediaFormatConversionImplementation_macOS, 
-                       _PHMediaFormatConversionJob, _PHMediaFormatConversionLivePhotoBundleSource, 
-                       _PHMediaFormatConversionManager, _PHMediaFormatConversionRequest, 
-                       _PHMediaFormatConversionSource, _PHMediaFormatLivePhotoBundleConversionRequest, 
-                       _PHMediaFormatLivePhotoConversionRequest ]
-    objc-ivars:      [ _PHMediaFormatConversionContent._fileSignature, _PHMediaFormatConversionContent._fileURL, 
-                       _PHMediaFormatConversionContent._length ]
+    objc-classes:    [ PAImageConversionServiceClient, PAMediaConversionServiceAddPFMediaMetadataPolicy, 
+                       PAMediaConversionServiceCompositeImageMetadataPolicy, PAMediaConversionServiceImageMetadataPolicy, 
+                       PAMediaConversionServiceImagingUtilities, PAMediaConversionServiceSharedPhotoStreamImageMetadataPolicy, 
+                       PAMediaConversionServiceiCloudPhotoLibraryImageMetadataPolicy, 
+                       PAVideoConversionServiceClient, PHMediaFormatChainedConversionRequest, 
+                       PHMediaFormatConversionCompositeRequest, PHMediaFormatConversionContent, 
+                       PHMediaFormatConversionDestination, PHMediaFormatConversionImplementation_macOS, 
+                       PHMediaFormatConversionJob, PHMediaFormatConversionLivePhotoBundleSource, 
+                       PHMediaFormatConversionManager, PHMediaFormatConversionRequest, 
+                       PHMediaFormatConversionSource, PHMediaFormatLivePhotoBundleConversionRequest, 
+                       PHMediaFormatLivePhotoConversionRequest ]
+    objc-ivars:      [ PHMediaFormatConversionContent._fileSignature, PHMediaFormatConversionContent._fileURL, 
+                       PHMediaFormatConversionContent._length ]
 ...

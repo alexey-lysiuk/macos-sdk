@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 97DD630C-F956-387A-8FD9-51FCCACC7D7F' ]
+uuids:           [ 'x86_64: A9F87761-790D-3350-8395-5772455CE95B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PowerlogCore.framework/Versions/A/PowerlogCore
 exports:         
@@ -115,20 +115,18 @@ exports:
                        _kPLStorageModeLite, _kPLStorageModeLockedFull, _kPLStorageModeLockedLite, 
                        _kPLStorageModeLockedTask, _kPLStorageModeTask, _kPLStoragePID, 
                        _kPLStorageParentProcessName, _kPLStorageProcessName, _kPLStorageVersion ]
-    objc-classes:    [ _PLAccountingOperator, _PLActivity, _PLActivityCriterion, 
-                       _PLActivityCriterionEntry, _PLActivityCriterionTime, _PLActivityScheduler, 
-                       _PLAgent, _PLAggregateEntry, _PLArchiveEntry, _PLArchiveJob, 
-                       _PLArchiveManager, _PLCFNotificationOperatorComposition, _PLCoreAgent, 
-                       _PLCoreOperator, _PLCoreService, _PLCoreStorage, _PLDefaults, 
-                       _PLEntry, _PLEntryDefinition, _PLEntryKey, _PLEntryNotificationOperatorComposition, 
-                       _PLFileStats, _PLHIDEventOperatorComposition, _PLIOHIDOperatorComposition, 
-                       _PLIOKitOperatorComposition, _PLKQueue, _PLMonotonicTimer, 
-                       _PLMultiKeyEntry, _PLNSNotificationOperatorComposition, _PLOperator, 
-                       _PLPowerNode, _PLQLDuetInMemoryCache, _PLSQLStatement, _PLSQLiteConnection, 
-                       _PLSemaphore, _PLService, _PLStorageCache, _PLStorageOperator, 
-                       _PLTimeManager, _PLTimeReference, _PLTimeReferenceDynamic, 
-                       _PLTimeReferenceKernel, _PLTimeReferenceSystem, _PLTimer, 
-                       _PLUtilities, _PLValueComparison, _PLValueUtilties, _PLWeakTimerTarget, 
-                       _PLXPCListenerOperatorComposition, _PLXPCResponderOperatorComposition, 
-                       _PowerlogCore ]
+    objc-classes:    [ PLAccountingOperator, PLActivity, PLActivityCriterion, PLActivityCriterionEntry, 
+                       PLActivityCriterionTime, PLActivityScheduler, PLAgent, PLAggregateEntry, 
+                       PLArchiveEntry, PLArchiveJob, PLArchiveManager, PLCFNotificationOperatorComposition, 
+                       PLCoreAgent, PLCoreOperator, PLCoreService, PLCoreStorage, 
+                       PLDefaults, PLEntry, PLEntryDefinition, PLEntryKey, PLEntryNotificationOperatorComposition, 
+                       PLFileStats, PLHIDEventOperatorComposition, PLIOHIDOperatorComposition, 
+                       PLIOKitOperatorComposition, PLKQueue, PLMonotonicTimer, PLMultiKeyEntry, 
+                       PLNSNotificationOperatorComposition, PLOperator, PLPowerNode, 
+                       PLQLDuetInMemoryCache, PLSQLStatement, PLSQLiteConnection, 
+                       PLSemaphore, PLService, PLStorageCache, PLStorageOperator, 
+                       PLTimeManager, PLTimeReference, PLTimeReferenceDynamic, PLTimeReferenceKernel, 
+                       PLTimeReferenceSystem, PLTimer, PLUtilities, PLValueComparison, 
+                       PLValueUtilties, PLWeakTimerTarget, PLXPCListenerOperatorComposition, 
+                       PLXPCResponderOperatorComposition, PowerlogCore ]
 ...

@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 47C57F20-B553-306D-804F-6006E98362A1' ]
+uuids:           [ 'x86_64: 662A1A5D-42F0-3074-BB9C-0BCA4C2D78B3' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/NetworkStatistics.framework/Versions/A/NetworkStatistics
 exports:         
@@ -25,8 +25,8 @@ exports:
                        _kNStatProviderTCP, _kNStatProviderUDP, _kNStatSrcKeyAvgRTT, 
                        _kNStatSrcKeyChannelArchitecture, _kNStatSrcKeyConnProbeFailed, 
                        _kNStatSrcKeyConnectAttempt, _kNStatSrcKeyConnectSuccess, 
-                       _kNStatSrcKeyEPID, _kNStatSrcKeyEUPID, _kNStatSrcKeyEUUID, 
-                       _kNStatSrcKeyInterface, _kNStatSrcKeyInterfaceCellConfigBackoffTime, 
+                       _kNStatSrcKeyDurationAbsoluteTime, _kNStatSrcKeyEPID, _kNStatSrcKeyEUPID, 
+                       _kNStatSrcKeyEUUID, _kNStatSrcKeyInterface, _kNStatSrcKeyInterfaceCellConfigBackoffTime, 
                        _kNStatSrcKeyInterfaceCellConfigInactivityTime, _kNStatSrcKeyInterfaceCellUlAvgQueueSize, 
                        _kNStatSrcKeyInterfaceCellUlMaxQueueSize, _kNStatSrcKeyInterfaceCellUlMinQueueSize, 
                        _kNStatSrcKeyInterfaceDescription, _kNStatSrcKeyInterfaceDlCurrentBandwidth, 
@@ -53,20 +53,21 @@ exports:
                        _kNStatSrcKeyRouteMask, _kNStatSrcKeyRouteParentID, _kNStatSrcKeyRxBytes, 
                        _kNStatSrcKeyRxCellularBytes, _kNStatSrcKeyRxDupeBytes, _kNStatSrcKeyRxOOOBytes, 
                        _kNStatSrcKeyRxPackets, _kNStatSrcKeyRxWiFiBytes, _kNStatSrcKeyRxWiredBytes, 
-                       _kNStatSrcKeySndBufSize, _kNStatSrcKeySndBufUsed, _kNStatSrcKeyTCPCCAlgorithm, 
-                       _kNStatSrcKeyTCPState, _kNStatSrcKeyTCPTxCongWindow, _kNStatSrcKeyTCPTxUnacked, 
-                       _kNStatSrcKeyTCPTxWindow, _kNStatSrcKeyTrafficClass, _kNStatSrcKeyTrafficMgtFlags, 
-                       _kNStatSrcKeyTxBytes, _kNStatSrcKeyTxCellularBytes, _kNStatSrcKeyTxPackets, 
-                       _kNStatSrcKeyTxReTx, _kNStatSrcKeyTxWiFiBytes, _kNStatSrcKeyTxWiredBytes, 
-                       _kNStatSrcKeyUPID, _kNStatSrcKeyUUID, _kNStatSrcKeyVUUID, 
-                       _kNStatSrcKeyVarRTT, _kNStatSrcKeyWriteProbeFailed, _kNStatSrcTCPStateCloseWait, 
-                       _kNStatSrcTCPStateClosed, _kNStatSrcTCPStateClosing, _kNStatSrcTCPStateEstablished, 
-                       _kNStatSrcTCPStateFinWait1, _kNStatSrcTCPStateFinWait2, _kNStatSrcTCPStateLastAck, 
-                       _kNStatSrcTCPStateListen, _kNStatSrcTCPStateSynReceived, _kNStatSrcTCPStateSynSent, 
+                       _kNStatSrcKeySndBufSize, _kNStatSrcKeySndBufUsed, _kNStatSrcKeyStartAbsoluteTime, 
+                       _kNStatSrcKeyTCPCCAlgorithm, _kNStatSrcKeyTCPState, _kNStatSrcKeyTCPTxCongWindow, 
+                       _kNStatSrcKeyTCPTxUnacked, _kNStatSrcKeyTCPTxWindow, _kNStatSrcKeyTrafficClass, 
+                       _kNStatSrcKeyTrafficMgtFlags, _kNStatSrcKeyTxBytes, _kNStatSrcKeyTxCellularBytes, 
+                       _kNStatSrcKeyTxPackets, _kNStatSrcKeyTxReTx, _kNStatSrcKeyTxWiFiBytes, 
+                       _kNStatSrcKeyTxWiredBytes, _kNStatSrcKeyUPID, _kNStatSrcKeyUUID, 
+                       _kNStatSrcKeyVUUID, _kNStatSrcKeyVarRTT, _kNStatSrcKeyWriteProbeFailed, 
+                       _kNStatSrcTCPStateCloseWait, _kNStatSrcTCPStateClosed, _kNStatSrcTCPStateClosing, 
+                       _kNStatSrcTCPStateEstablished, _kNStatSrcTCPStateFinWait1, 
+                       _kNStatSrcTCPStateFinWait2, _kNStatSrcTCPStateLastAck, _kNStatSrcTCPStateListen, 
+                       _kNStatSrcTCPStateSynReceived, _kNStatSrcTCPStateSynSent, 
                        _kNStatSrcTCPStateTimeWait ]
-    objc-classes:    [ _NWSInterfaceSnapshot, _NWSProtocolSnapshot, _NWSRouteSnapshot, 
-                       _NWSRouteSnapshotter, _NWSSnapshot, _NWSSnapshotSource, _NWSSnapshotter, 
-                       _NWSTCPSnapshot, _NWSUDPSnapshot, _NWStatisticsDelegateBlockWrapper, 
-                       _NWStatisticsInterfaceSource, _NWStatisticsManager, _NWStatisticsRouteSource, 
-                       _NWStatisticsSource, _NWStatisticsTCPSource, _NWStatisticsUDPSource ]
+    objc-classes:    [ NWSInterfaceSnapshot, NWSProtocolSnapshot, NWSRouteSnapshot, 
+                       NWSRouteSnapshotter, NWSSnapshot, NWSSnapshotSource, NWSSnapshotter, 
+                       NWSTCPSnapshot, NWSUDPSnapshot, NWStatisticsDelegateBlockWrapper, 
+                       NWStatisticsInterfaceSource, NWStatisticsManager, NWStatisticsRouteSource, 
+                       NWStatisticsSource, NWStatisticsTCPSource, NWStatisticsUDPSource ]
 ...

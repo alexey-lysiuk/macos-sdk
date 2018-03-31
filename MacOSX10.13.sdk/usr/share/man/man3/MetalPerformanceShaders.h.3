@@ -1,0 +1,50 @@
+.TH "MetalPerformanceShaders.h" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MetalPerformanceShaders.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#import <MPSCore/MPSCore\&.h>\fP
+.br
+\fC#import <MPSImage/MPSImage\&.h>\fP
+.br
+\fC#import <MPSMatrix/MPSMatrix\&.h>\fP
+.br
+\fC#import <MPSNeuralNetwork/MPSNeuralNetwork\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "BOOL \fBMPSSupportsMTLDevice\fP (__nullable id< MTLDevice > device) ''"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "BOOL MPSSupportsMTLDevice (__nullable id< MTLDevice > device)"
+\fBMetalPerformanceShaders\&.h\fP  MetalPerformanceShaders
+.PP
+\fBCopyright:\fP
+.RS 4
+Copyright (c) 2015 Apple Inc\&. All rights reserved\&.
+.RE
+.PP
+MPSSupportsMTLDevice  Determine whether a MetalPerformanceShaders\&.framework supports a MTLDevice\&.  Use this function to determine whether a MTLDevice can be used with interfaces in MetalPerformanceShaders\&.framework\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdevice\fP \fBA\fP valid MTLDevice 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+YES The device is supported\&. NO The device is not supported 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for MetalPerformanceShaders\&.framework from the source code\&.

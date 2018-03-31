@@ -7,7 +7,7 @@
 #import <CoreImage/CoreImageDefines.h>
 #import <CoreVideo/CoreVideo.h>
 
-#if TARGET_OS_IPHONE
+#if TARGET_OS_IPHONE && !TARGET_OS_IOSMAC
  #import <OpenGLES/EAGL.h>
 #else
  #import <OpenGL/CGLTypes.h>
@@ -413,7 +413,7 @@ CORE_IMAGE_EXPORT NSString * const kCIImageRepresentationDisparityImage NS_AVAIL
 - (nullable NSData*) HEIFRepresentationOfImage:(CIImage*)image
                                         format:(CIFormat)format
                                     colorSpace:(CGColorSpaceRef)colorSpace
-                                       options:(NSDictionary*)options NS_AVAILABLE_IOS(11_0);
+                                       options:(NSDictionary*)options NS_AVAILABLE(10_13_4,11_0);
 
 /* Render a CIImage to PNG data. Image must have a finite non-empty extent. */
 /* The CGColorSpace must be kCGColorSpaceModelRGB or kCGColorSpaceModelMonochrome */
@@ -468,7 +468,7 @@ CORE_IMAGE_EXPORT NSString * const kCIImageRepresentationDisparityImage NS_AVAIL
                                  format:(CIFormat)format
                              colorSpace:(CGColorSpaceRef)colorSpace
                                 options:(NSDictionary*)options
-                                  error:(NSError **)errorPtr NS_AVAILABLE_IOS(11_0);
+                                  error:(NSError **)errorPtr NS_AVAILABLE(10_13_4,11_0);
 
 
 @end

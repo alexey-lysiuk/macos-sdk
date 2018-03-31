@@ -1,4 +1,4 @@
-.TH "MPSTemporaryImage" 3 "Thu Jul 13 2017" "Version MetalPerformanceShaders-87.2" "MetalPerformanceShaders.framework" \" -*- nroff -*-
+.TH "MPSTemporaryImage" 3 "Thu Feb 8 2018" "Version MetalPerformanceShaders-100" "MetalPerformanceShaders.framework" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -31,6 +31,9 @@ Inherits \fBMPSImage\fP\&.
 .br
 .ti -1c
 .RI "(nonnull instancetype) + \fBtemporaryImageWithCommandBuffer:textureDescriptor:\fP"
+.br
+.ti -1c
+.RI "(nonnull instancetype) + \fBtemporaryImageWithCommandBuffer:textureDescriptor:featureChannels:\fP"
 .br
 .ti -1c
 .RI "(void) + \fBprefetchStorageWithCommandBuffer:imageDescriptorList:\fP"
@@ -93,7 +96,7 @@ It is never necessary to call this method\&. It is purely a performance and memo
 .RS 4
 \fIcommandBuffer\fP The command buffer on which the MPSTemporaryImages will be used 
 .br
-\fIdescriptorList\fP A NSArray of MPSImageDescriptors, indicating images that will be created 
+\fIdescriptorList\fP \fBA\fP NSArray of MPSImageDescriptors, indicating images that will be created 
 .RE
 .PP
 
@@ -104,12 +107,12 @@ Initialize a \fBMPSTemporaryImage\fP for use on a MTLCommandBuffer
 .RS 4
 \fIcommandBuffer\fP The MTLCommandBuffer on which the \fBMPSTemporaryImage\fP will be exclusively used
 .br
-\fIimageDescriptor\fP A valid imageDescriptor describing the \fBMPSImage\fP format to create\&.
+\fIimageDescriptor\fP \fBA\fP valid imageDescriptor describing the \fBMPSImage\fP format to create\&.
 .RE
 .PP
 \fBReturns:\fP
 .RS 4
-A valid \fBMPSTemporaryImage\fP\&. The object will be released when the command buffer is committed\&. The underlying texture will become invalid before this time due to the action of the readCount property\&. 
+\fBA\fP valid \fBMPSTemporaryImage\fP\&. The object will be released when the command buffer is committed\&. The underlying texture will become invalid before this time due to the action of the readCount property\&. 
 .RE
 .PP
 
@@ -129,12 +132,38 @@ depth must be 1
 .RS 4
 \fIcommandBuffer\fP The command buffer on which the \fBMPSTemporaryImage\fP may be used 
 .br
-\fItextureDescriptor\fP A texture descriptor describing the \fBMPSTemporaryImage\fP texture
+\fItextureDescriptor\fP \fBA\fP texture descriptor describing the \fBMPSTemporaryImage\fP texture
 .RE
 .PP
 \fBReturns:\fP
 .RS 4
-A valid \fBMPSTemporaryImage\fP\&. The object will be released when the command buffer is committed\&. The underlying texture will become invalid before this time due to the action of the readCount property\&. 
+\fBA\fP valid \fBMPSTemporaryImage\fP\&. The object will be released when the command buffer is committed\&. The underlying texture will become invalid before this time due to the action of the readCount property\&. 
+.RE
+.PP
+
+.SS "+ (nonnull instancetype) temporaryImageWithCommandBuffer: (nonnull id< MTLCommandBuffer >) commandBuffer(const MTLTextureDescriptor *__nonnull) textureDescriptor(NSUInteger) featureChannels"
+Low level interface for creating a \fBMPSTemporaryImage\fP using a MTLTextureDescriptor  This function provides access to MTLPixelFormats not typically covered by -initForCommandBuffer:imageDescriptor: The number of images will be inferred from number of slices in the descriptor\&.arrayLength and the number of feature channels\&.
+.PP
+The following restrictions apply: 
+.PP
+.nf
+MTLTextureType must be MTLTextureType2D or MTLTextureType2DArray
+MTLTextureUsage must contain at least one of MTLTextureUsageShaderRead, MTLTextureUsageShaderWrite
+MTLStorageMode must be MTLStorageModePrivate
+
+.fi
+.PP
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcommandBuffer\fP The command buffer on which the \fBMPSTemporaryImage\fP may be used 
+.br
+\fItextureDescriptor\fP \fBA\fP texture descriptor describing the \fBMPSTemporaryImage\fP texture
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBA\fP valid \fBMPSTemporaryImage\fP\&. The object will be released when the command buffer is committed\&. The underlying texture will become invalid before this time due to the action of the readCount property\&. 
 .RE
 .PP
 

@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9F814C41-933F-3ED6-95D2-0AE22C15828A' ]
+uuids:           [ 'x86_64: A5130669-D0E9-3B6D-9836-D222E8C9A808' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CalendarNotification.framework/Versions/A/CalendarNotification
 current-version: 0
@@ -9,9 +9,8 @@ exports:
     symbols:         [ _CALNAlarmEngineLogHandle, _CALNDataProviderLogHandle, _CALNEventProviderLogHandle, 
                        _CALNLogInitialize, _CALNReminderProviderLogHandle, _EKEngineNS_Log, 
                        _EKEngineNS_Log_Nobo, _EKEngineNS_Log_Reminders, _EKEngineNS_Log_Timer ]
-    objc-classes:    [ _CALNBundle, _CALNNotificationFilter, _CalendarNotificationMessageTracer, 
-                       _EKEventCounterEngine, _EKMessageEngine, _EKNotificationEngine, 
-                       _EKNotificationInfo, _EKRemindersEngine, _EKSummaryEngine, 
-                       _EKTravelEngine, _EKTravelEngineAgendaEntry, _EKTravelEngineOriginalEvent, 
-                       _EKTravelEngineThrottle ]
+    objc-classes:    [ CALNBundle, CALNNotificationFilter, CalendarNotificationMessageTracer, 
+                       EKEventCounterEngine, EKMessageEngine, EKNotificationEngine, 
+                       EKNotificationInfo, EKRemindersEngine, EKSummaryEngine, EKTravelEngine, 
+                       EKTravelEngineAgendaEntry, EKTravelEngineOriginalEvent, EKTravelEngineThrottle ]
 ...

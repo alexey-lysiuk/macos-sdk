@@ -21,7 +21,7 @@ PDFKIT_CLASS_AVAILABLE(10_5, 11_0)
 
 - (instancetype)initWithURL:(NSURL *)url NS_DESIGNATED_INITIALIZER;
 
-@property (nonatomic, copy) NSURL *URL;
+@property (nonatomic, copy, nullable) NSURL *URL;
 
 @end
 

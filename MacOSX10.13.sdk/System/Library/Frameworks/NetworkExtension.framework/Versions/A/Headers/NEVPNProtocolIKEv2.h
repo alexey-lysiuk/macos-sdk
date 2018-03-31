@@ -109,8 +109,8 @@ typedef NS_ENUM(NSInteger, NEVPNIKEv2CertificateType) {
 } NS_ENUM_AVAILABLE(10_11, 8_3);
 
 /*!
- * @typedef NEVPNIKEv2CertificateType
- * @abstract IKEv2 Certificate types
+ * @typedef NEVPNIKEv2TLSVersion
+ * @abstract TLS Versions for use in EAP-TLS
  */
 typedef NS_ENUM(NSInteger, NEVPNIKEv2TLSVersion) {
 	/*! @const NEVPNIKEv2TLSVersionDefault Use the default TLS configuration */

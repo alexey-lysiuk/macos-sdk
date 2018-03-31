@@ -1,6 +1,6 @@
---- !tapi-tbd-v2
+--- !tapi-tbd-v3
 archs:           [ i386 ]
-uuids:           [ 'i386: 83AE7AA9-8661-3449-99F4-291A42640692' ]
+uuids:           [ 'i386: FA75FD1F-2FEE-3E25-A160-AF78044082BE' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CarbonSound.framework/Versions/A/CarbonSound
 objc-constraint: none
