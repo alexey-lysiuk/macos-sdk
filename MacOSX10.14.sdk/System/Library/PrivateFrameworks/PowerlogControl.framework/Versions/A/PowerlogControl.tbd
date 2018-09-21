@@ -1,0 +1,12 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: DA31EBA7-3D3D-3566-8583-F137873E4FF2' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/PowerlogControl.framework/Versions/A/PowerlogControl
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _PowerlogControlDefaultsChanged, _PowerlogControlEnablePowerLog, 
+                       _PowerlogControlEnablePowerLogOld, _PowerlogControlModeKey, 
+                       _PowerlogControlModeKeyOld, _PowerlogControlReadMode, _PowerlogControlSwitchMode, 
+                       _allowModeTransition, _containerPath, _validValue ]
+...

@@ -1,0 +1,11 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 12F38BFE-022D-33D3-B8B1-0D4FBF0CAEEA' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/ManagedClient.framework/Versions/A/ManagedClient
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _MCXLW_LaunchMCXD, _MCXLW_NetworkChange, _MCXLW_QuitMCXD, 
+                       _MCX_Composite, _MCX_FindNodesForComputer, _MCX_FindNodesForGroup, 
+                       _MCX_GetCurrentWorkgroup, _MCX_Recomposite, _MCX_RecompositeWithAuthentication ]
+...

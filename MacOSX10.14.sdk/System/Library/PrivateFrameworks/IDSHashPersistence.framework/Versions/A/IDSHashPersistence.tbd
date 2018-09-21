@@ -1,0 +1,10 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: B7B52612-3B88-3B8A-99A6-ECB419469BFA' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/IDSHashPersistence.framework/Versions/A/IDSHashPersistence
+current-version: 800
+exports:         
+  - archs:           [ x86_64 ]
+    objc-classes:    [ IDSMessageHashStore ]
+...

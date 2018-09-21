@@ -1,0 +1,12 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64, x86_64h ]
+uuids:           [ 'x86_64: 5E944326-17FE-334C-B5C4-D67841B3A37E', 'x86_64h: 2C602CED-72CA-37C2-BDF5-31697FC9100B' ]
+platform:        macosx
+install-name:    /System/Library/Frameworks/Accelerate.framework/Versions/A/Accelerate
+current-version: 4
+objc-constraint: none
+exports:         
+  - archs:           [ x86_64, x86_64h ]
+    re-exports:      [ /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vImage.framework/Versions/A/vImage, 
+                       /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/vecLib ]
+...

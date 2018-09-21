@@ -1,0 +1,19 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 8C3E7A0F-966C-3192-8841-81EC516E3B1E' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/UIKitHostAppServices.framework/Versions/A/UIKitHostAppServices
+current-version: 35
+exports:         
+  - archs:           [ x86_64 ]
+    re-exports:      [ /System/Library/PrivateFrameworks/UIKitHostAppProtocols.framework/Versions/A/UIKitHostAppProtocols ]
+    symbols:         [ _UIKitHostAppServicesVersionNumber, _UIKitHostAppServicesVersionString ]
+    objc-classes:    [ UHADragImage, UHADragItem, UHADragOperationMasks, UHASAccessibilityInfo, 
+                       UHASButtonToolbarItem, UHASCursor, UHASGroupToolbarItem, UHASLabelToolbarItem, 
+                       UHASMenu, UHASMenuItem, UHASPopupButtonToolbarItem, UHASRemoteObject, 
+                       UHASSearchFieldToolbarItem, UHASSegmentedControlToolbarItem, 
+                       UHASShareToolbarItem, UHASToolbarItem, UHASTouchBar, UHASTouchBarItem, 
+                       UHASWorkspace ]
+    objc-ivars:      [ UHASTouchBar._principalItemIdentifier, UHASTouchBar._templateItems, 
+                       UHASTouchBarItem._itemDescription ]
+...

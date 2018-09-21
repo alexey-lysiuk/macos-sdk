@@ -1,0 +1,11 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: FAFE96D6-CBC1-3B2A-8172-8A486EF16DC8' ]
+platform:        macosx
+install-name:    /System/Library/CoreServices/Encodings/libLatin5Converter.dylib
+current-version: 73
+objc-constraint: none
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ ___CFStringEncodingGetLatin5ConverterDefinition ]
+...

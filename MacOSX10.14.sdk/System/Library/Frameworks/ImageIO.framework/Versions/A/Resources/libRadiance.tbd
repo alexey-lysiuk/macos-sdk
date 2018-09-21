@@ -1,0 +1,11 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64, x86_64h ]
+uuids:           [ 'x86_64: 57F10F14-4758-31F3-9BCC-721967DF4661', 'x86_64h: 2C07887C-0584-3538-A9EC-3988AA5B234B' ]
+platform:        macosx
+install-name:    /System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libRadiance.dylib
+objc-constraint: none
+exports:         
+  - archs:           [ x86_64, x86_64h ]
+    symbols:         [ __cg_RadReadRGBFloat, __cg_RadReadRGBSize, __cg_RadReadRGBUInt16, 
+                       __cg_RadWriteRGB ]
+...

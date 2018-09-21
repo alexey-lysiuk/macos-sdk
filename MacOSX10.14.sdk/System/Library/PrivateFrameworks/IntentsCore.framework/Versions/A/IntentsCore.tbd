@@ -1,0 +1,17 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: F0468CCE-D32E-3418-9F9F-E8BEE64E94A9' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/IntentsCore.framework/Versions/A/IntentsCore
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _INCDeserializeNSUserActivityData, _INCExtensionErrorDomain, 
+                       _INCExtensionTransactionStateTypeGetName, _INCExtractPreferencesResponseFromMetricsContext, 
+                       _INCGenerateMetricsContextUsingAppPreferenceResponse, _INCIsCarPlayActive, 
+                       _INCLaunchAppWithCompletion, _INCLaunchAppWithSockPuppet, 
+                       _INCLaunchAppWithUserActivity, _INCSerializeNSUserActivity, 
+                       _IntentsCoreVersionNumber, _IntentsCoreVersionString ]
+    objc-classes:    [ INCAppProxy, INCExtensionConnection, INCExtensionError, INCExtensionManager, 
+                       INCExtensionPlugInBundleManager, INCExtensionProxy, INCExtensionRequest, 
+                       INCExtensionTransaction, INCExtensionTransactionState, INCLocalExtensionRegistry ]
+...

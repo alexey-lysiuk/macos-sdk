@@ -1,0 +1,36 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 7A3019EE-6715-3CF5-9319-85A591FAFF68' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/Rapport.framework/Versions/A/Rapport
+current-version: 0
+compatibility-version: 0
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _RPAssertionDuckAudio, _RPAssertionImminentUse, _RPAssertionKeepAlive, 
+                       _RPBonjourFlagsUpdateWithRPCompanionLinkFlags, _RPCloudServiceIdentifierDigitalHealth, 
+                       _RPCompanionLinkFlagsToShortString, _RPCompanionLinkFlagsWithUpdateBonjourFlags, 
+                       _RPDecodeNSError, _RPDestinationIdentifierActivePhone, _RPDestinationIdentifierActiveWatch, 
+                       _RPDestinationIdentifierDirectPeer, _RPDestinationIdentifierPairedCompanion, 
+                       _RPDestinationIdentifierPersonalCompanion, _RPDestinationIdentifierSameHome, 
+                       _RPDestinationIdentifierSameRoom, _RPDestinationIdentifierSelf, 
+                       _RPDestinationIdentifierStereoCounterpart, _RPDeviceRoleSolo, 
+                       _RPDeviceRoleStereoLeft, _RPDeviceRoleStereoRight, _RPEncodeNSError, 
+                       _RPErrorDomain, _RPErrorF, _RPEventIDAny, _RPNestedErrorF, 
+                       _RPOptionAllowUnauthenticated, _RPOptionDataLinkType, _RPOptionEventID, 
+                       _RPOptionFailIfAsleep, _RPOptionRequestID, _RPOptionSenderID, 
+                       _RPOptionSenderIDSDeviceID, _RPOptionTimeoutSeconds, _RPOptionXID, 
+                       _RPProfileIDDuetSync, _RPRequestIDAny, _RPRequestIDIdentify, 
+                       _RPServiceTypeMobileDevice, _RPServiceTypeNearbyAction, _RPServiceTypeNearbyInfo, 
+                       _RPServiceTypeProximityPairing, _RPServiceTypeSystem, _RPServiceTypeWACAirPlay, 
+                       _RPServiceTypeWACGeneric, _RPTopicNone, _RPTopicNowPlayingArtwork, 
+                       _RPTopicNowPlayingProgress, _RPTopicNowPlayingText ]
+    objc-classes:    [ RPClient, RPCloudServer, RPCloudSession, RPCompanionLinkAssertion, 
+                       RPCompanionLinkClient, RPCompanionLinkDevice, RPDevice, RPDeviceDiscovery, 
+                       RPEndpoint, RPEventRegistration, RPFileTransferInfo, RPFileTransferMonitor, 
+                       RPFileTransferSession, RPHIDSession, RPIdentity, RPLiveAudioSession, 
+                       RPMediaControlSession, RPPeopleDiscovery, RPPerson, RPRemoteDisplayDevice, 
+                       RPRemoteDisplayDiscovery, RPRemoteDisplayServer, RPRemoteDisplaySession, 
+                       RPRequestRegistration, RPService, RPSession, RPSiriAudioSession, 
+                       RPSiriSession ]
+...

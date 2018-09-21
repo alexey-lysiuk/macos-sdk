@@ -1,0 +1,23 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: B362F6EF-9750-3F81-A0EF-4402CFFE2D1A' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/SidecarCore.framework/Versions/A/SidecarCore
+current-version: 38
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _SidecarDeviceGeneration, _SidecarDevicesChangedNotification, 
+                       _SidecarDiagnose, _SidecarErrorDomain, _SidecarLocalizedString, 
+                       _SidecarMessageCreateMutable, _SidecarMessageGetDefaults, 
+                       _SidecarMessageGetDictionaryRepresentation, _SidecarMessageGetItemData, 
+                       _SidecarMessageGetRequestID, _SidecarMessageGetServiceName, 
+                       _SidecarMessageGetTransferID, _SidecarMessageGetType, _SidecarMessageSetDefaults, 
+                       _SidecarMessageSetItemData, _SidecarMessageSetItemMetaData, 
+                       _SidecarMessageSetRequestID, _SidecarMessageSetServiceName, 
+                       _SidecarMessageSetTransferID, _SidecarMessageSetType, _SidecarPDFDefaultPageRect, 
+                       _SidecarPDFJPEGCompression, _SidecarPasteboardInfoType, _SidecarRegisterServiceProvider, 
+                       _SidecarServiceNameScanDocument, _SidecarServiceNameTakePhoto, 
+                       _SidecarServiceName_32FD056D3D ]
+    objc-classes:    [ SidecarDevice, SidecarItem, SidecarPasteboardInfo, SidecarRequest, 
+                       SidecarResponse, SidecarService, SidecarSession ]
+...

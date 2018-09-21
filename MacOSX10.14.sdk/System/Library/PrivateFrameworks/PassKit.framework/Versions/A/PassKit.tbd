@@ -1,0 +1,14 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 7E918093-DA60-3B4C-A828-E2F36F3FF1CF' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/PassKit.framework/Versions/A/PassKit
+exports:         
+  - archs:           [ x86_64 ]
+    re-exports:      [ /System/Library/PrivateFrameworks/PassKitCore.framework/Versions/A/PassKitCore ]
+    symbols:         [ _PKExtensionAvailableExtensions, _PKExtensionAvailableExtensionsChangedNotification, 
+                       _PKExtensionPaymentAuthorizationUIExtensionPointName, _PKExtensionPaymentAuthorizationUIIdentifier ]
+    objc-classes:    [ PKExtension, PKExtensionBaseContext, PKExtensionHostContext, 
+                       PKExtensionProvider, PKExtensionRemoteViewController, PKExtensionServiceViewController, 
+                       PKExtensionVendorContext, PKPaymentAuthorizationViewController ]
+...

@@ -1,0 +1,14 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 0E60D709-0A48-3905-ACD1-9DDE6FD8B476' ]
+platform:        macosx
+install-name:    /usr/lib/libspindump.dylib
+objc-constraint: none
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _SPCachePort, _SPGenerateSpindump, _SPNotifyLeavingFullWake, 
+                       _SPReportCPUUsageResource, _SPReportCPUWakeupsResource, _SPReportCorpseExcResource, 
+                       _SPReportDiskWritesResource, _SPReportHIDResponseDelay, _SPReportMemoryResource, 
+                       _SPReportStuckProcess, _SPReportStuckProcessWithCallback, 
+                       _SPReportUnstuckProcess ]
+...

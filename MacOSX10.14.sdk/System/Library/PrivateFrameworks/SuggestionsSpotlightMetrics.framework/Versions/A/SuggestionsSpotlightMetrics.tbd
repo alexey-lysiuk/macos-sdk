@@ -1,0 +1,10 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: DFB5C71A-35DF-3C91-8585-E8216882ADC8' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/SuggestionsSpotlightMetrics.framework/Versions/A/SuggestionsSpotlightMetrics
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _SuggestionsSpotlightMetricsVersionNumber, _SuggestionsSpotlightMetricsVersionString ]
+    objc-classes:    [ SGSMFeedbackListener, SGSMMutableSearchState ]
+...

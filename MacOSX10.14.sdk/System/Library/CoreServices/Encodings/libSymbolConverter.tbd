@@ -1,0 +1,11 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: E4033858-C2B7-3418-A5BA-3D9064082292' ]
+platform:        macosx
+install-name:    /System/Library/CoreServices/Encodings/libSymbolConverter.dylib
+current-version: 73
+objc-constraint: none
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ ___CFStringEncodingGetSymbolConverterDefinition ]
+...

@@ -1,0 +1,9 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: FE0A26E5-B089-3F4F-9E3C-CF0A12CA6251' ]
+platform:        macosx
+install-name:    /usr/lib/log/liblog_geo.dylib
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _OSLogCopyFormattedString, _OSStateCreateStringWithData ]
+...

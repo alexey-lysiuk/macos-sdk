@@ -1,0 +1,11 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 9F934EE4-3970-3B0F-B31F-DF7A7F431C1E' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/WirelessCoexManager.framework/Versions/A/WirelessCoexManager
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _WCMEnabled, _WirelessRadioManagerDumpLog, _WirelessRadioManagerSetLogToFile ]
+    objc-classes:    [ WCMClientProxy, WCMSetting, WRMClientInterface, WRM_iRATInterface, 
+                       WRM_iRATProximityRecommendation, WRM_iRATProximityRecommendationLogging ]
+...

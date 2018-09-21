@@ -1,0 +1,9 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: AACE6BA0-C031-33A0-9133-B914D20C7AAC' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/PLShutdown.framework/Versions/A/PLShutdown
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _logShutdown ]
+...

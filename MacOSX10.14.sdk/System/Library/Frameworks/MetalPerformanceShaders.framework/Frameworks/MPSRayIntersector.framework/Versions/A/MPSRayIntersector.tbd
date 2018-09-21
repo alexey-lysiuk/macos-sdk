@@ -1,0 +1,21 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 8F02CFCA-41E1-3194-915F-3106E8B48B32' ]
+platform:        macosx
+install-name:    /System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSRayIntersector.framework/Versions/A/MPSRayIntersector
+current-version: 121.0.3
+parent-umbrella: MetalPerformanceShaders
+exports:         
+  - archs:           [ x86_64 ]
+    allowable-clients: [ MetalPerformanceShaders ]
+    symbols:         [ _MPSAccelerationStructureOptionBatchSize, _MPSAccelerationStructureOptionBinExponent, 
+                       _MPSAccelerationStructureOptionComputeStatistics, _MPSAccelerationStructureOptionFragmentCost, 
+                       _MPSAccelerationStructureOptionMaxDepth, _MPSAccelerationStructureOptionMaxFragmentsPerLeaf, 
+                       _MPSAccelerationStructureOptionMaximumConcurrentNodeSize, 
+                       _MPSAccelerationStructureOptionMinFragmentsPerLeaf, _MPSAccelerationStructureOptionMinimumOverlap, 
+                       _MPSAccelerationStructureOptionSplitHeuristic, _MPSAccelerationStructureSplitHeuristicBinnedSAH, 
+                       _MPSAccelerationStructureSplitHeuristicBinnedSpatialSAH, _MPSAccelerationStructureSplitHeuristicObjectMedian, 
+                       _MPSAccelerationStructureSplitHeuristicSAH ]
+    objc-classes:    [ MPSAccelerationStructure, MPSAccelerationStructureGroup, MPSInstanceAccelerationStructure, 
+                       MPSRayIntersector, MPSTriangleAccelerationStructure ]
+...

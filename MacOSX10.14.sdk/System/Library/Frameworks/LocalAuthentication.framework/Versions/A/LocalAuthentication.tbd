@@ -1,0 +1,14 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 31C8F444-6676-3CF5-810D-6BC7AD05070F' ]
+platform:        macosx
+install-name:    /System/Library/Frameworks/LocalAuthentication.framework/Versions/A/LocalAuthentication
+current-version: 425.200.47
+objc-constraint: none
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _LAAvailableMechanisms, _LACopyExternalizedContext, _LAEnabledBiometryUsers, 
+                       _LAErrorDomain, _LAErrorInfoBiometryType, _LAErrorSubcodeKey, 
+                       _LAFingerDatabaseHash, _LAPasswordRetryTime, _LATouchIDAuthenticationMaximumAllowableReuseDuration ]
+    objc-classes:    [ LAContext ]
+...

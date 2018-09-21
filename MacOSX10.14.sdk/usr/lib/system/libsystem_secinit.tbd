@@ -1,0 +1,12 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: CBEAB62B-F0A0-342F-9878-CADC14A3CB0D' ]
+platform:        macosx
+install-name:    /usr/lib/system/libsystem_secinit.dylib
+current-version: 30.200.13
+objc-constraint: none
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ __libsecinit_initializer, _libsecinit_fileoperation_save, 
+                       _libsecinit_fileoperation_set_attributes, _libsecinit_fileoperation_symlink ]
+...

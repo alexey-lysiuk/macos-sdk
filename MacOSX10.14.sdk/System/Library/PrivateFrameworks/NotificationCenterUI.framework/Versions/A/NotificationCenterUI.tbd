@@ -1,0 +1,11 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 6E3C752A-8AAC-3619-98E5-7E5EB2AFA3DF' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/NotificationCenterUI.framework/Versions/A/NotificationCenterUI
+current-version: 747
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _NCSnippetCreate, _NCSnippetDestroy ]
+    objc-classes:    [ NCCardViewController, NCCustomAlert, NCCustomAlertBackgroundView ]
+...

@@ -1,0 +1,13 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: ACBEFDC2-FC65-34CB-B099-CBDAF289BC09' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/CSCSupport.framework/Versions/A/CSCSupport
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _CSCGetDeviceDataEncoding, _CSCGetDeviceDataEncrypted, _CSCGetQRCodePositionAndSize, 
+                       _CSCGetValueForPropertyEncoding, _CSCGetValueForPropertyEncrypted, 
+                       _CSCSupportVersionNumber, _CSCSupportVersionString, _getDataForRuleMapping, 
+                       _getRuleMapping ]
+    objc-classes:    [ CSCGestalt, CSCHelper, CSCRemoteMessenger ]
+...
