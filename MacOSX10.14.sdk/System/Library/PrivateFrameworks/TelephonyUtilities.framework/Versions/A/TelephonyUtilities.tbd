@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C57FC6E1-060C-35ED-8647-4F79976F9D57' ]
+uuids:           [ 'x86_64: 044DAF5A-735A-3947-B750-C450187E2017' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/TelephonyUtilities.framework/Versions/A/TelephonyUtilities
 exports:         
@@ -17,8 +17,7 @@ exports:
                        _TUBundleIdentifierMessagesApplication, _TUBundleIdentifierMobilePhoneApplication, 
                        _TUBundleIdentifierNanoPhoneApplication, _TUBundleIdentifierTelephonyUtilitiesFramework, 
                        _TUCTServerConnection, _TUCallAudioPropertiesChangedNotification, 
-                       _TUCallCameraTypeChangedNotification, _TUCallCapabilitiesCarrierSpaceCapabilitiesChangedNotification, 
-                       _TUCallCapabilitiesCloudCallingDevicesChangedNotification, 
+                       _TUCallCameraTypeChangedNotification, _TUCallCapabilitiesCloudCallingDevicesChangedNotification, 
                        _TUCallCapabilitiesEmergencyCallbackModeChangedNotification, 
                        _TUCallCapabilitiesEmergencyCallbackPossibleChangedNotification, 
                        _TUCallCapabilitiesFaceTimeAvailabilityChangedNotification, 

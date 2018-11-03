@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CBEAB62B-F0A0-342F-9878-CADC14A3CB0D' ]
+uuids:           [ 'x86_64: 6C681113-8C48-3256-BEF6-0C3723DEB926' ]
 platform:        macosx
 install-name:    /usr/lib/system/libsystem_secinit.dylib
-current-version: 30.200.13
+current-version: 30.220.1
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

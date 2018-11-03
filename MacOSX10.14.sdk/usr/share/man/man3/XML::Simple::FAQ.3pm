@@ -133,28 +133,39 @@
 .\" ========================================================================
 .\"
 .IX Title "XML::Simple::FAQ 3"
-.TH XML::Simple::FAQ 3 "2012-06-20" "perl v5.18.2" "User Contributed Perl Documentation"
+.TH XML::Simple::FAQ 3 "2018-03-17" "perl v5.18.2" "User Contributed Perl Documentation"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
 .nh
-.SH "Frequently Asked Questions about XML::Simple"
-.IX Header "Frequently Asked Questions about XML::Simple"
+.SH "NAME"
+XML::Simple::FAQ \- Frequently Asked Questions about XML::Simple
 .SH "Basics"
 .IX Header "Basics"
-.SS "What is XML::Simple designed to be used for?"
-.IX Subsection "What is XML::Simple designed to be used for?"
-XML::Simple is a Perl module that was originally developed as a tool for
-reading and writing configuration data in \s-1XML\s0 format.  You can use it for
-many other purposes that involve storing and retrieving structured data in
-\&\s-1XML.\s0
+.SS "What should I use XML::Simple for?"
+.IX Subsection "What should I use XML::Simple for?"
+Nothing!
 .PP
-You might also find XML::Simple a good starting point for playing with \s-1XML\s0
-from Perl.  It doesn't have a steep learning curve and if you outgrow its
-capabilities there are plenty of other Perl/XML modules to 'step up' to.
+It's as simple as that.
+.PP
+Choose a better module. See
+Perl XML::LibXML by Example <http://grantm.github.io/perl-libxml-by-example/>
+for a gentle introduction to XML::LibXML with lots of examples.
+.SS "What was XML::Simple designed to be used for?"
+.IX Subsection "What was XML::Simple designed to be used for?"
+XML::Simple is a Perl module that was originally developed as a tool for
+reading and writing configuration data in \s-1XML\s0 format.  You could use it for
+other purposes that involve storing and retrieving structured data in
+\&\s-1XML\s0 but it's likely to be a frustrating experience.
 .SS "Why store configuration data in \s-1XML\s0 anyway?"
 .IX Subsection "Why store configuration data in XML anyway?"
-The many advantages of using \s-1XML\s0 format for configuration data include:
+It seemed like a good idea at the time.  Now, I use and recommend
+Config::General which uses a format similar to that used by the Apache web
+server.  This is easier to read than \s-1XML\s0 while still allowing advanced concepts
+such as nested sections.
+.PP
+At the time XML::Simple was written, the advantages of using \s-1XML\s0 format for
+configuration data were thought to include:
 .IP "\(bu" 4
 Using existing \s-1XML\s0 parsing tools requires less development time, is easier
 and more robust than developing your own config file parsing code
@@ -186,6 +197,13 @@ The main limitation of XML::Simple is that it does not work with 'mixed
 content' (see the next question).  If you consider your \s-1XML\s0 files contain
 marked up text rather than structured data, you should probably use another
 module.
+.PP
+If your source \s-1XML\s0 documents change regularly, it's likely that you will
+experience intermittent failures.  In particular, failure to properly use the
+ForceArray and KeyAttr options will produce code that works when you get a list
+of elements with the same name, but fails when there's only one item in the
+list.  These types of problems can be avoided by not using XML::Simple in the
+first place.
 .PP
 If you are working with very large \s-1XML\s0 files, XML::Simple's approach of
 representing the whole file in memory as a 'tree' data structure may not be
@@ -240,8 +258,10 @@ If you're looking for a recommendation, I'd suggest you look at the Perl-XML
 .IX Header "Installation"
 .SS "How do I install XML::Simple?"
 .IX Subsection "How do I install XML::Simple?"
-If you're running ActiveState Perl, you've probably already got XML::Simple
-(although you may want to upgrade to version 1.09 or better for \s-1SAX\s0 support).
+If you're running ActiveState Perl, or
+Strawberry Perl <http://strawberryperl.com/> you've probably already got
+XML::Simple and therefore do not need to install it at all.  But you probably
+also have XML::LibXML, which is a much better module, so just use that.
 .PP
 If you do need to install XML::Simple, you'll need to install an \s-1XML\s0 parser
 module first.  Install either XML::Parser (which you may have already) or
@@ -280,7 +300,7 @@ directory under your Perl installation (typically C:\ePerl).
 .IX Subsection "I'm trying to install XML::Simple and 'make test' fails"
 Is the directory where you've unpacked XML::Simple mounted from a file server
 using \s-1NFS, SMB\s0 or some other network file sharing?  If so, that may cause
-errors in the the following test scripts:
+errors in the following test scripts:
 .PP
 .Vb 3
 \&  3_Storable.t
@@ -312,7 +332,7 @@ used.
 .PP
 Is one of the three test scripts (above) failing but you're not running on
 a network filesystem?  Are you running Win32?  If so, you may be seeing a bug
-in Win32 where writes to a file do not affect its modfication timestamp.
+in Win32 where writes to a file do not affect its modification timestamp.
 .PP
 If none of these scenarios match your situation, please confirm you're
 running the latest version of XML::Simple and then email the output of
@@ -328,16 +348,12 @@ XML::SAX::Expat or XML::LibXML.
 .IX Header "Usage"
 .SS "How do I use XML::Simple?"
 .IX Subsection "How do I use XML::Simple?"
-If you had an \s-1XML\s0 document called /etc/appconfig/foo.xml you could 'slurp' it
-into a simple data structure (typically a hashref) with these lines of code:
+If you don't know how to use XML::Simple then the best approach is to
+learn to use XML::LibXML <http://grantm.github.io/perl-libxml-by-example/>
+instead.  Stop reading this document and use that one instead.
 .PP
-.Vb 1
-\&  use XML::Simple;
-\&
-\&  my $config = XMLin(\*(Aq/etc/appconfig/foo.xml\*(Aq);
-.Ve
-.PP
-The \fIXMLin()\fR function accepts options after the filename.
+If you are determined to use XML::Simple, it come with copious documentation,
+so read that.
 .SS "There are so many options, which ones do I really need to know about?"
 .IX Subsection "There are so many options, which ones do I really need to know about?"
 Although you can get by without using any options, you shouldn't even

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4AE5C221-B8E1-3A4F-91E0-96ED5926E82B' ]
+uuids:           [ 'x86_64: 52C96B6A-B119-3BE2-B47D-65F12E987609' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreDisplay.framework/Versions/A/CoreDisplay
-current-version: 101.38
+current-version: 104.4
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

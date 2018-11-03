@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AEB638D9-BFE9-319E-A70B-557ACF41117A' ]
+uuids:           [ 'x86_64: 6725D63D-378F-3751-8602-3122016E4AA4' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Security.framework/Versions/A/Security
-current-version: 58286.200.222
+current-version: 58286.220.15
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -1138,9 +1138,10 @@ exports:
                        _kSecAttrAccessGroupToken, _kSecAttrAccessible, _kSecAttrAccessibleAfterFirstUnlock, 
                        _kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly, _kSecAttrAccessibleAlways, 
                        _kSecAttrAccessibleAlwaysPrivate, _kSecAttrAccessibleAlwaysThisDeviceOnly, 
-                       _kSecAttrAccessibleAlwaysThisDeviceOnlyPrivate, _kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly, 
-                       _kSecAttrAccessibleWhenUnlocked, _kSecAttrAccessibleWhenUnlockedThisDeviceOnly, 
-                       _kSecAttrAccount, _kSecAttrAddress, _kSecAttrAlias, _kSecAttrApplicationLabel, 
+                       _kSecAttrAccessibleAlwaysThisDeviceOnlyPrivate, _kSecAttrAccessibleUntilReboot, 
+                       _kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly, _kSecAttrAccessibleWhenUnlocked, 
+                       _kSecAttrAccessibleWhenUnlockedThisDeviceOnly, _kSecAttrAccount, 
+                       _kSecAttrAddress, _kSecAttrAlias, _kSecAttrApplicationLabel, 
                        _kSecAttrApplicationTag, _kSecAttrAuthenticationType, _kSecAttrAuthenticationTypeDPA, 
                        _kSecAttrAuthenticationTypeDefault, _kSecAttrAuthenticationTypeHTMLForm, 
                        _kSecAttrAuthenticationTypeHTTPBasic, _kSecAttrAuthenticationTypeHTTPDigest, 

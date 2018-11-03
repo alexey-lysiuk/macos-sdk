@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 83EC088D-55B1-35EA-B2AE-FB8344CAE98F' ]
+uuids:           [ 'x86_64: 2B189414-F61D-3629-932B-E2D6B6DE8368' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ParsecSubscriptionServiceSupport.framework/Versions/A/ParsecSubscriptionServiceSupport
 exports:         

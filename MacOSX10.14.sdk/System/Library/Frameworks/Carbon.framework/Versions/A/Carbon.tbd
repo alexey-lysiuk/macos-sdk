@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DAF95685-B793-34EB-96EA-3E292A9E3378' ]
+uuids:           [ 'x86_64: BF1EC28F-CBA8-3B2F-B9FA-E583BC2D6C1F' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Carbon.framework/Versions/A/Carbon
 current-version: 158

@@ -212,7 +212,7 @@ enum micro_snapshot_flags {
 	kTimerArmingRecord	= 0x2,
 	kUserMode		= 0x4, /* interrupted usermode, or armed by usermode */
 	kIORecord		= 0x8,
-	kPMIRecord		= 0x10
+	kPMIRecord		= 0x10,
 };
 
 /*

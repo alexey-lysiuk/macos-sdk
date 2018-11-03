@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DA4ED91F-2CC9-3CFD-9200-9D5D31EEE4F3' ]
+uuids:           [ 'x86_64: B58031DE-A6B7-3685-840F-361670C06836' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/IOKit.framework/Versions/A/IOKit
 current-version: 275
@@ -496,11 +496,11 @@ exports:
                        __IOHIDServiceCopyEventLog, __IOHIDServiceCopyFilterDebugInfoForClient, 
                        __IOHIDServiceCopyPropertyForClient, __IOHIDServiceCopyProperyFromPlugin, 
                        __IOHIDServiceCopyServiceInfoForClient, __IOHIDServiceCopyServiceRecordForClient, 
-                       __IOHIDServiceCreate, __IOHIDServiceCreateVirtual, __IOHIDServiceDispatchEvent, 
-                       __IOHIDServiceGetEventDeadlineForClient, __IOHIDServiceGetOwner, 
-                       __IOHIDServiceGetReportInterval, __IOHIDServiceGetReportIntervalForClient, 
-                       __IOHIDServiceGetSenderID, __IOHIDServiceIsInactive, __IOHIDServiceOpen, 
-                       __IOHIDServiceRemoveConnection, __IOHIDServiceRemovePropertiesForClient, 
+                       __IOHIDServiceCreate, __IOHIDServiceCreateVirtual, __IOHIDServiceCurrentBatchInterval, 
+                       __IOHIDServiceDispatchEvent, __IOHIDServiceGetEventDeadlineForClient, 
+                       __IOHIDServiceGetOwner, __IOHIDServiceGetReportInterval, __IOHIDServiceGetReportIntervalForClient, 
+                       __IOHIDServiceGetSenderID, __IOHIDServiceHidden, __IOHIDServiceIsInactive, 
+                       __IOHIDServiceOpen, __IOHIDServiceRemoveConnection, __IOHIDServiceRemovePropertiesForClient, 
                        __IOHIDServiceRemoveVirtual, __IOHIDServiceScheduleAsync, 
                        __IOHIDServiceSetBatchIntervalForClient, __IOHIDServiceSetEventCallback, 
                        __IOHIDServiceSetEventDeadlineForClient, __IOHIDServiceSetMiscDebugDebugInfo, 
@@ -648,11 +648,12 @@ exports:
                        _iohideventsystem_copy_event_from_virtual_service, _iohideventsystem_output_event_to_virtual_service, 
                        _iohideventsystem_server, _iohideventsystem_server_routine, 
                        _iokit_user_client_trap, _isA_GenericPref, _isCrossLinking, 
-                       _kIOEthernetHardwareAddress, _kIOHIDEventSystemConnectionDispatchFilterWaitTimeoutMS, 
-                       _kIOHIDFilterPluginArrayCallBacks, _kIOHIDServerConnectionRootQueue, 
-                       _kIOHIDServiceCapsLockLEDKey, _kIOHIDServiceCapsLockLEDKey_Auto, 
-                       _kIOHIDServiceCapsLockLEDKey_Inhibit, _kIOHIDServiceCapsLockLEDKey_Off, 
-                       _kIOHIDServiceCapsLockLEDKey_On, _kIOHIDServiceEnumerationRootQueue, 
+                       _kIOEthernetHardwareAddress, _kIOHIDEventAttachmentSender, 
+                       _kIOHIDEventSystemConnectionDispatchFilterWaitTimeoutMS, _kIOHIDFilterPluginArrayCallBacks, 
+                       _kIOHIDServerConnectionRootQueue, _kIOHIDServiceCapsLockLEDKey, 
+                       _kIOHIDServiceCapsLockLEDKey_Auto, _kIOHIDServiceCapsLockLEDKey_Inhibit, 
+                       _kIOHIDServiceCapsLockLEDKey_Off, _kIOHIDServiceCapsLockLEDKey_On, 
+                       _kIOHIDServiceEnumerationRootQueue, _kIOHIDServiceHiddenKey, 
                        _kIOHIDServiceInterruptRootQueue, _kIOMasterPortDefault, _kIOUserEthernetInterfaceMergeProperties, 
                        _kIOUserEthernetInterfaceRole, _kOSKextDependencyCircularReference, 
                        _kOSKextDependencyCompatibleVersionUndeclared, _kOSKextDependencyInauthentic, 

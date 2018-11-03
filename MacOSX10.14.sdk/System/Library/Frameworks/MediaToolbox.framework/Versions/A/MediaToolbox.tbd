@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FB1C3DD9-A91B-3952-A892-9F009B854F8F' ]
+uuids:           [ 'x86_64: 7603C180-8050-3355-A851-A67B6A4197AD' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/MediaToolbox.framework/Versions/A/MediaToolbox
 objc-constraint: none
@@ -1957,12 +1957,10 @@ exports:
                        _kFigQuickTimeMetadataKey_Year, _kFigQuickTimeMetadataKey_iXML, 
                        _kFigQuickTimeMetadataKeyspace, _kFigQuickTimeMetadata_PixelDensityKey_HeightPixels, 
                        _kFigQuickTimeMetadata_PixelDensityKey_HeightPoints, _kFigQuickTimeMetadata_PixelDensityKey_WidthPixels, 
-                       _kFigQuickTimeMetadata_PixelDensityKey_WidthPoints, _kFigQuicktimeMetadataKey_LivePhotoAuto, 
-                       _kFigQuicktimeMetadataKey_LivePhotoVitalityScore, _kFigQuicktimeMetadataKey_LivePhotoVitalityScoringVersion, 
-                       _kFigReadPerformanceKey_AverageReadSize, _kFigReadPerformanceKey_AverageReadTime, 
-                       _kFigReadPerformanceKey_ByteStreamType, _kFigReadPerformanceKey_LargestReadSize, 
-                       _kFigReadPerformanceKey_LongestReadTime, _kFigReadPerformanceKey_NumberOfReads, 
-                       _kFigReadPerformanceKey_NumberOfReadsTakingHalfASecondOrLonger, 
+                       _kFigQuickTimeMetadata_PixelDensityKey_WidthPoints, _kFigReadPerformanceKey_AverageReadSize, 
+                       _kFigReadPerformanceKey_AverageReadTime, _kFigReadPerformanceKey_ByteStreamType, 
+                       _kFigReadPerformanceKey_LargestReadSize, _kFigReadPerformanceKey_LongestReadTime, 
+                       _kFigReadPerformanceKey_NumberOfReads, _kFigReadPerformanceKey_NumberOfReadsTakingHalfASecondOrLonger, 
                        _kFigReadPerformanceKey_NumberOfReadsTakingOneSecondOrLonger, 
                        _kFigReadPerformanceKey_ShortestReadTime, _kFigReadPerformanceKey_SmallestReadSize, 
                        _kFigReadPerformanceKey_TotalBytesRead, _kFigReadPerformanceKey_TotalReadTime, 
@@ -2005,10 +2003,10 @@ exports:
                        _kFigRenderPipelineNotificationParameter_RequestID, _kFigRenderPipelineNotification_CompletedDecodeForPreroll, 
                        _kFigRenderPipelineNotification_DecodeError, _kFigRenderPipelineNotification_DefaultDeviceChanged, 
                        _kFigRenderPipelineNotification_FirstVideoFrameEnqueued, _kFigRenderPipelineNotification_ImageReleased, 
-                       _kFigRenderPipelineNotification_LatencyChanged, _kFigRenderPipelineNotification_PlayResourceReleased, 
-                       _kFigRenderPipelineNotification_PrerollLost, _kFigRenderPipelineNotification_RanDry, 
-                       _kFigRenderPipelineNotification_SegmentFinished, _kFigRenderPipelineNotification_StartupFailed, 
-                       _kFigRenderPipelineNotification_SynchronousFrameEnqueued, 
+                       _kFigRenderPipelineNotification_LatencyChanged, _kFigRenderPipelineNotification_PlayResourcePreempted, 
+                       _kFigRenderPipelineNotification_PlayResourceReleased, _kFigRenderPipelineNotification_PrerollLost, 
+                       _kFigRenderPipelineNotification_RanDry, _kFigRenderPipelineNotification_SegmentFinished, 
+                       _kFigRenderPipelineNotification_StartupFailed, _kFigRenderPipelineNotification_SynchronousFrameEnqueued, 
                        _kFigRenderPipelineOption_AllowAMRDecode, _kFigRenderPipelineOption_AllowAudibleContent, 
                        _kFigRenderPipelineOption_AllowCaptionGroupSampleBuffers, 
                        _kFigRenderPipelineOption_AllowClientProcessDecode, _kFigRenderPipelineOption_AudioDeviceUID, 

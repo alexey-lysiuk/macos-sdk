@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1A5E88CA-36C3-30A8-9D39-71CC6923D009' ]
+uuids:           [ 'x86_64: B78BC7CF-A267-3E53-A876-6F5C02BB2AB8' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MarkupUI.framework/Versions/A/MarkupUI
 exports:         

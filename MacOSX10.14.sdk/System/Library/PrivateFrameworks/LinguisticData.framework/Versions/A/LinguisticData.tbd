@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D27B30BA-3F5D-3AF2-895C-3B64569EEA1B' ]
+uuids:           [ 'x86_64: A8DEE139-5D20-3BAC-AF5E-4E5E0C42C795' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/LinguisticData.framework/Versions/A/LinguisticData
 current-version: 238.15.29

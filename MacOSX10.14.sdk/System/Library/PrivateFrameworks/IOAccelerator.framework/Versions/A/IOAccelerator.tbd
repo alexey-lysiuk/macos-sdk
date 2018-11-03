@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 01551ED8-6AE1-307D-A3F0-DCA85FAA5210' ]
+uuids:           [ 'x86_64: 6FA8A133-57A7-3C35-BF94-8469B09885FB' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IOAccelerator.framework/Versions/A/IOAccelerator
 exports:         

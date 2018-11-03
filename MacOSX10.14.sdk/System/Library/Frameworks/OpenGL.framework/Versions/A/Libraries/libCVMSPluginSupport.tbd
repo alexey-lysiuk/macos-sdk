@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 38A18A32-BBF2-3A0F-AE37-51734B6CA91A' ]
+uuids:           [ 'x86_64: E47B2819-913A-3588-A3F5-CE3EDA8551A2' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libCVMSPluginSupport.dylib
 objc-constraint: none

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 30E102AA-F3D3-3572-A1AE-1F2287DEF696' ]
+uuids:           [ 'x86_64: 0ECEC3FC-935D-3EA5-8B3D-5CBD4E80AB78' ]
 platform:        macosx
 install-name:    /usr/lib/libmecabra.dylib
-current-version: 779.15.23
+current-version: 779.19.2
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

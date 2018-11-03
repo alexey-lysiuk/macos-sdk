@@ -35,7 +35,7 @@
 /* VERSION_MINOR, version_minor is an integer that represents the minor version
  * of the kernel
  */
-#define VERSION_MINOR		0
+#define VERSION_MINOR		2
 
 /* VERSION_VARIANT, version_variant is a string that contains the revision,
  * stage, and prerelease level of the kernel
@@ -59,11 +59,15 @@
  */
 #define VERSION_PRERELEASE_LEVEL	0
 
+/* OSBUILD_CONFIG, osbuild_config is a one-word string describing the build
+ * configuration of the kernel, e.g., development or release */
+#define OSBUILD_CONFIG  "development"
+
 /* OSTYPE, ostype, is a string as returned by uname -s */
 #define	OSTYPE		"Darwin"
 
 /* OSRELEASE, osrelease, is a string as returned by uname -r */
-#define OSRELEASE	"18.0.0"
+#define OSRELEASE	"18.2.0"
 
 #ifndef ASSEMBLER
 
@@ -88,6 +92,9 @@ extern const int version_stage;
 
 /* Build-time value of VERSION_PRERELEASE_LEVEL */
 extern const int version_prerelease_level;
+
+/* Build-time value of CURRENT_KERNEL_CONFIG */
+extern const char osbuild_config[];
 
 /* Build-time value of OSTYPE */
 extern const char ostype[];

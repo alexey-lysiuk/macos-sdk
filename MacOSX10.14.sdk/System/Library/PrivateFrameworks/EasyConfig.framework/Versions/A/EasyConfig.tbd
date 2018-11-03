@@ -1,19 +1,21 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 05302E57-8668-3464-AFBB-EDF6C0807D23' ]
+uuids:           [ 'x86_64: F9D17762-5F19-3CC9-9243-08EEC3983812' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/EasyConfig.framework/Versions/A/EasyConfig
 exports:         
   - archs:           [ x86_64 ]
-    symbols:         [ _EasyConfigDeviceProgressNotification, _EasyConfigDeviceStoppedNotification, 
+    symbols:         [ _EasyConfigCreateDictionaryFromTLV, _EasyConfigCreateTLVfromDictionary, 
+                       _EasyConfigDeviceProgressNotification, _EasyConfigDeviceStoppedNotification, 
                        _EasyConfigKey_AdminPassword, _EasyConfigKey_AllowPairing, 
                        _EasyConfigKey_BundleSeedID, _EasyConfigKey_DeviceID, _EasyConfigKey_FirmwareRevision, 
                        _EasyConfigKey_Flags, _EasyConfigKey_HardwareRevision, _EasyConfigKey_Language, 
                        _EasyConfigKey_MFiProtocols, _EasyConfigKey_Manufacturer, 
-                       _EasyConfigKey_Model, _EasyConfigKey_Name, _EasyConfigKey_PlayPassword, 
-                       _EasyConfigKey_Progress, _EasyConfigKey_ReasonError, _EasyConfigKey_Response, 
-                       _EasyConfigKey_SerialNumber, _EasyConfigKey_WiFiPSK, _EasyConfigKey_WiFiSSID, 
-                       _EasyConfigLogControl ]
+                       _EasyConfigKey_Model, _EasyConfigKey_Name, _EasyConfigKey_OperationType, 
+                       _EasyConfigKey_PlayPassword, _EasyConfigKey_Progress, _EasyConfigKey_ReasonError, 
+                       _EasyConfigKey_Response, _EasyConfigKey_SerialNumber, _EasyConfigKey_WiFiEAPTLSCertificate, 
+                       _EasyConfigKey_WiFiPSK, _EasyConfigKey_WiFiRouterCertificate, 
+                       _EasyConfigKey_WiFiSSID, _EasyConfigLogControl ]
     objc-classes:    [ EasyConfigDevice ]
     objc-ivars:      [ EasyConfigDevice._airplayBonjourInfo, EasyConfigDevice._airplayBrowser, 
                        EasyConfigDevice._applyConfigFinishTime, EasyConfigDevice._applyConfigStartTime, 

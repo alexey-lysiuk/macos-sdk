@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0F4697D8-8231-3710-A528-3E4F32E1AFFB' ]
+uuids:           [ 'x86_64: 378C2F54-6C87-3B1B-A52A-C53A3B804FFC' ]
 platform:        macosx
 install-name:    /usr/lib/libnfshared.dylib
 exports:         

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C98FF2E4-8BDC-3A35-8AE1-25085BD8514B' ]
+uuids:           [ 'x86_64: E0B68F26-45CB-3F97-97D6-E2BC178933E1' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SocialAppsCore.framework/Versions/A/SocialAppsCore
 current-version: 5500

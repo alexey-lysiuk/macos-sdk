@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7399D8B6-FB33-3B8B-9F81-50E1CADE85F8' ]
+uuids:           [ 'x86_64: 45DDA3BF-6289-3C66-8847-CA19BFA37EA8' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AVConference.framework/Frameworks/SimpleKeyExchange.framework/Versions/A/SimpleKeyExchange
 objc-constraint: none

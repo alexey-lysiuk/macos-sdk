@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B7DAD0E0-1C09-34F9-BB8F-B2922BE288B0' ]
+uuids:           [ 'x86_64: 1866B678-B444-3211-8939-CAAE13650CE7' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/VCXMPP.framework/Versions/A/Frameworks/uxmi.framework/Versions/0.1/uxmi
 objc-constraint: none

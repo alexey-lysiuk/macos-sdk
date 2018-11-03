@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: ACC604FA-5D40-34CE-9206-8091010306B7' ]
+uuids:           [ 'x86_64: 99BD4FA0-8BD3-35E5-8FB1-C757D439716C' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork
-current-version: 974.1
+current-version: 975.0.3
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ '$ld$hide$os10.0$_NSHTTPCookieComment', '$ld$hide$os10.0$_NSHTTPCookieCommentURL', 
@@ -831,10 +831,10 @@ exports:
                        __CFNetworkUnitTestConditionalConnectionSIMScheduler, __CFNetworkUnitTestCookieDiskFuzzing, 
                        __CFNetworkUnitTestCookieFileChecking, __CFNetworkUnitTestCookieFuzzing, 
                        __CFNetworkUnitTestCookiePrefix, __CFNetworkUnitTestCookieSameSiteGetAsDOM, 
-                       __CFNetworkUnitTestCookieSameSiteSetAsDOM, __CFNetworkUnitTestDataBecomeDownload, 
-                       __CFNetworkUnitTestDigestAuthNonceCount, __CFNetworkUnitTestEndpointNTLM, 
-                       __CFNetworkUnitTestEndpointNTLMBadPassword, __CFNetworkUnitTestEndpointNTLMConnectionReuse, 
-                       __CFNetworkUnitTestEndpointNTLMPOSTBodyStreamWithClientDefinedContentLength, 
+                       __CFNetworkUnitTestCookieSameSiteSetAsDOM, __CFNetworkUnitTestCookieStorgeNotification, 
+                       __CFNetworkUnitTestDataBecomeDownload, __CFNetworkUnitTestDigestAuthNonceCount, 
+                       __CFNetworkUnitTestEndpointNTLM, __CFNetworkUnitTestEndpointNTLMBadPassword, 
+                       __CFNetworkUnitTestEndpointNTLMConnectionReuse, __CFNetworkUnitTestEndpointNTLMPOSTBodyStreamWithClientDefinedContentLength, 
                        __CFNetworkUnitTestHTTP2ConnectionCoalecsing, __CFNetworkUnitTestHTTP2ConnectionEquality, 
                        __CFNetworkUnitTestHTTP2ConnectionIdleTimer, __CFNetworkUnitTestHTTP2ServerPush, 
                        __CFNetworkUnitTestHTTP2ServerPushAcceptHeaderMatch, __CFNetworkUnitTestHTTPRedirectWithNonHTTPLocationHeader, 

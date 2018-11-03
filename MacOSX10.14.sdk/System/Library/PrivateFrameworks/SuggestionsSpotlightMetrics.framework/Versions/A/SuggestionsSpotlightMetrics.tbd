@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DFB5C71A-35DF-3C91-8585-E8216882ADC8' ]
+uuids:           [ 'x86_64: 6BBB7111-7FD4-3301-8866-5F5625A2B1F8' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SuggestionsSpotlightMetrics.framework/Versions/A/SuggestionsSpotlightMetrics
 exports:         

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5A3CBA4E-2409-3B60-807B-1C1B89337A5E' ]
+uuids:           [ 'x86_64: 470C0943-30AD-3BA2-AFCE-EB7DD26E1709' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices
 current-version: 50.1

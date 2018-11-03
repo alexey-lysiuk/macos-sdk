@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7A3019EE-6715-3CF5-9319-85A591FAFF68' ]
+uuids:           [ 'x86_64: CB553805-AF0D-382F-9A25-94B4D025252A' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Rapport.framework/Versions/A/Rapport
 current-version: 0
@@ -16,11 +16,13 @@ exports:
                        _RPDestinationIdentifierSameRoom, _RPDestinationIdentifierSelf, 
                        _RPDestinationIdentifierStereoCounterpart, _RPDeviceRoleSolo, 
                        _RPDeviceRoleStereoLeft, _RPDeviceRoleStereoRight, _RPEncodeNSError, 
-                       _RPErrorDomain, _RPErrorF, _RPEventIDAny, _RPNestedErrorF, 
-                       _RPOptionAllowUnauthenticated, _RPOptionDataLinkType, _RPOptionEventID, 
-                       _RPOptionFailIfAsleep, _RPOptionRequestID, _RPOptionSenderID, 
-                       _RPOptionSenderIDSDeviceID, _RPOptionTimeoutSeconds, _RPOptionXID, 
-                       _RPProfileIDDuetSync, _RPRequestIDAny, _RPRequestIDIdentify, 
+                       _RPErrorDomain, _RPErrorF, _RPEventIDAny, _RPMessageKeySpeakText, 
+                       _RPNestedErrorF, _RPOptionAllowFamily, _RPOptionAllowGuest, 
+                       _RPOptionAllowPaired, _RPOptionAllowSharedHome, _RPOptionAllowUnauthenticated, 
+                       _RPOptionDataLinkType, _RPOptionEventID, _RPOptionFailIfAsleep, 
+                       _RPOptionRequestID, _RPOptionSenderID, _RPOptionSenderIDSDeviceID, 
+                       _RPOptionTimeoutSeconds, _RPOptionXID, _RPProfileIDDuetSync, 
+                       _RPRequestIDAny, _RPRequestIDIdentify, _RPRequestIDSpeak, 
                        _RPServiceTypeMobileDevice, _RPServiceTypeNearbyAction, _RPServiceTypeNearbyInfo, 
                        _RPServiceTypeProximityPairing, _RPServiceTypeSystem, _RPServiceTypeWACAirPlay, 
                        _RPServiceTypeWACGeneric, _RPTopicNone, _RPTopicNowPlayingArtwork, 

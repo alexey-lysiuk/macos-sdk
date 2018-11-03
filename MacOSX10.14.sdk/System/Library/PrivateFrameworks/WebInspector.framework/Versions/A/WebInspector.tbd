@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A1802371-127D-3146-9D86-A03327756257' ]
+uuids:           [ 'x86_64: 638F06ED-CE57-3A1C-9E5D-7DA06D7EB936' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/WebInspector.framework/Versions/A/WebInspector
-current-version: 606.1.36
+current-version: 606.2.104
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _RWIProtocolInspectorFrontendConnectedNotification, _RWIProtocolInspectorFrontendDisconnectedNotification, 

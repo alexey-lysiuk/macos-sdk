@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8C3E7A0F-966C-3192-8841-81EC516E3B1E' ]
+uuids:           [ 'x86_64: 4731328E-645D-3586-9A86-6E3AA2703BEF' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/UIKitHostAppServices.framework/Versions/A/UIKitHostAppServices
-current-version: 35
+current-version: 37
 exports:         
   - archs:           [ x86_64 ]
     re-exports:      [ /System/Library/PrivateFrameworks/UIKitHostAppProtocols.framework/Versions/A/UIKitHostAppProtocols ]

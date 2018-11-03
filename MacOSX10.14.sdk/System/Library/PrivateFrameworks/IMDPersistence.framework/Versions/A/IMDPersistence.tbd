@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8BE2FB3F-E7A2-3FAA-9AB5-F40286071334' ]
+uuids:           [ 'x86_64: 78C6EA52-D345-3C8D-98D3-896DB524DB88' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IMDPersistence.framework/Versions/A/IMDPersistence
 current-version: 800
@@ -178,6 +178,7 @@ exports:
                        _IMDMessageRecordMarkAllUnsuccessFullSyncMessagesAsNeedingSync, 
                        _IMDMessageRecordMarkAttachmentWithROWIDAsSyncedWithCloudKit, 
                        _IMDMessageRecordMarkFailedAllUnsentUnfailedMessages, _IMDMessageRecordMarkMessageGUIDAsDeduplicated, 
+                       _IMDMessageRecordMarkMessageWithROWIDAsIgnoreButNeedingSyncWithCloudKit, 
                        _IMDMessageRecordMarkMessageWithROWIDAsSyncedWithCloudKit, 
                        _IMDMessageRecordSelectMessagesWithGUIDsChatIdentifiersOnServicesQuery1, 
                        _IMDMessageRecordSelectMessagesWithGUIDsChatIdentifiersOnServicesQuery1_Original, 

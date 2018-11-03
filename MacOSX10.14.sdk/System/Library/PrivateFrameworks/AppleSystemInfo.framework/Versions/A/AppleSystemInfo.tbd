@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2449197F-DF0D-32BB-B0B1-D78855528692' ]
+uuids:           [ 'x86_64: A2EE39BD-C721-33BD-8549-E087C04CF784' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AppleSystemInfo.framework/Versions/A/AppleSystemInfo
 objc-constraint: none

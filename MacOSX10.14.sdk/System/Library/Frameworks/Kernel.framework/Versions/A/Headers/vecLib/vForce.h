@@ -1,5 +1,5 @@
 /*
-vForce.h (from vecLib-671.201)
+vForce.h (from vecLib-671.220)
 Copyright (c) 1999-2018 by Apple Inc. All rights reserved.
 
 @APPLE_LICENSE_HEADER_START@

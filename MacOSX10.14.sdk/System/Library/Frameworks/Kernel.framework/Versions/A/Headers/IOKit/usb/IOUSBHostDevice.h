@@ -231,8 +231,6 @@ class AppleUSBHostRequestCompleter;
 class AppleUSBHostPort;
 class AppleUSBDescriptorCache;
 class AppleUSBHostResources;
-class IOSimpleReporter;
-class IOStateReporter;
 
 /*!
  * @class       IOUSBHostDevice
@@ -346,9 +344,6 @@ public:
 
     virtual bool setProperty(const char* aKey, unsigned long long aValue, unsigned int aNumberOfBits);
     virtual bool setProperty(const char* aKey, void*      	      bytes,  unsigned int length);
-
-    virtual IOReturn configureReport(IOReportChannelList* channels, IOReportConfigureAction action, void* result, void* destination);
-    virtual IOReturn updateReport(IOReportChannelList*channels, IOReportUpdateAction action, void* result, void* destination);
 
 protected:
     virtual IOReturn terminateGated(IOOptionBits options = 0);
@@ -805,9 +800,6 @@ protected:
 
     struct tExpansionData
     {
-        OSSet*              _reports;
-        IOStateReporter*    _powerStateReport;
-        IOSimpleReporter*   _idlePolicyReport;
         OSDictionary*       _lpmLatencyCache;
         tUSBDeviceLPMStatus _lpmU1Status;
         tUSBDeviceLPMStatus _lpmU2Status;

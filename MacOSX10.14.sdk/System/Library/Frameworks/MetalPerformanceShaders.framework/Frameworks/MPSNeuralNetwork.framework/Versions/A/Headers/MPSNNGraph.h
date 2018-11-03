@@ -78,6 +78,32 @@ MPS_CLASS_AVAILABLE_STARTING( macos(10.13), ios(11.0), tvos(11.0))
                              resultImage: (MPSNNImageNode * __nonnull) resultImage
                      resultImageIsNeeded: (BOOL) resultIsNeeded;
 
+/*! @abstract   Initialize a MPSNNGraph object on a device starting with resultImage working backward
+ *  @discussion The MPSNNGraph constructor will start with the indicated result images, and look
+ *              to see what MPSNNFilterNode produced them, then look to its dependencies and so
+ *              forth to reveal the subsection of the graph necessary to compute the image. This variant
+ *              is provided to support graphs and subgraphs with multiple image outputs.
+ *  @param      device      The MTLDevice on which to run the graph
+ *  @param      resultImages The MPSNNImageNodes corresponding to the last images in the graph.
+ *                           The first image in the array will be returned from the -encode method
+ *                           LHS. The rest will be included in the list of intermediate images.
+ *  @param      areResultsNeeded  An array of BOOL values with count equal to resultImages.count.
+ *                                If NO is passed for a given image, the image itself is marked unneeded
+ *                                and might be skipped. The graph will prune this branch back to the
+ *                                first requred filter. A filter is required if it generates a needed
+ *                                result image, or is needed to update training parameters.
+ *  @result     A new MPSNNGraph.
+ */
+-(nullable instancetype)  initWithDevice: (nonnull id <MTLDevice>) device
+                            resultImages: (NSArray <MPSNNImageNode *> * __nonnull) resultImages
+                        resultsAreNeeded: (BOOL * __nullable) areResultsNeeded NS_DESIGNATED_INITIALIZER
+MPS_AVAILABLE_STARTING(macos(10.15), ios(13.0), tvos(13.0));
+
++(nullable instancetype)  graphWithDevice: (nonnull id <MTLDevice>) device
+                             resultImages: (NSArray <MPSNNImageNode *> * __nonnull) resultImages
+                         resultsAreNeeded: (BOOL * __nullable) areResultsNeeded
+MPS_AVAILABLE_STARTING(macos(10.15), ios(13.0), tvos(13.0));
+
 
 -(nullable instancetype)  initWithDevice: (nonnull id <MTLDevice>) device
                              resultImage: (MPSNNImageNode * __nonnull) resultImage
@@ -311,6 +337,30 @@ MPS_AVAILABLE_STARTING_BUT_DEPRECATED( "Please use +graphWithDevice:resultImage:
  */
  -(MPSImage * __nonnull) executeAsyncWithSourceImages: (NSArray<MPSImage*> * __nonnull) sourceImages
                                     completionHandler: (MPSNNGraphCompletionHandler __nonnull) handler;
+
+/*! @abstract   Find the number of times a image will be read by the graph *
+ *  @discussion From the set of images (or image batches) passed in to the graph, find
+ *              the number of times the graph will read an image.  This may be needed
+ *              by your application to correctly set the MPSImage.readCount property.
+ *  @param      index   The index of the image. The index of the image matches the index of the image in the array returned
+ *              by the sourceImageHandles property.
+ *  @return     The read count of the image(s) at the index will be reduced by the value returned
+ *              when the graph is finished encoding. The readcount of the image(s) must be at least
+ *              this value when it is passed into the -encode... method. */
+-(NSUInteger) readCountForSourceImageAtIndex: (NSUInteger) index
+    MPS_AVAILABLE_STARTING( macos(10.14.1), ios(12.1), tvos(12.1));
+
+/*! @abstract   Find the number of times a state will be read by the graph *
+ *  @discussion From the set of state (or state batches) passed in to the graph, find
+ *              the number of times the graph will read a state.  This may be needed
+ *              by your application to correctly set the MPSState.readCount property.
+ *  @param      index   The index of the state. The index of the state matches the index of the state in the array returned
+ *              by the sourceStateHandles property.
+ *  @return     The read count of the state(s) at the index will be reduced by the value returned
+ *              when the graph is finished encoding. The read count of the state(s) must be at least
+ *              this value when it is passed into the -encode... method. */
+-(NSUInteger) readCountForSourceStateAtIndex: (NSUInteger) index
+    MPS_AVAILABLE_STARTING( macos(10.14.1), ios(12.1), tvos(12.1));
 
 @end
 

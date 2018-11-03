@@ -133,7 +133,7 @@
 .\" ========================================================================
 .\"
 .IX Title "DBIx::Class::PK 3"
-.TH DBIx::Class::PK 3 "2014-01-05" "perl v5.18.2" "User Contributed Perl Documentation"
+.TH DBIx::Class::PK 3 "2014-01-30" "perl v5.18.2" "User Contributed Perl Documentation"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -172,6 +172,11 @@ to \*(L"set_primary_key\*(R" in DBIx::Class::ResultSource.
 .Ve
 .PP
 Produces a condition hash to locate a row based on the primary key(s).
+.SH "INHERITED METHODS"
+.IX Header "INHERITED METHODS"
+.IP "DBIx::Class::Row" 4
+.IX Item "DBIx::Class::Row"
+copy, delete, discard_changes, get_column, get_columns, get_dirty_columns, get_from_storage, get_inflated_columns, has_column_loaded, in_storage, inflate_result, insert, insert_or_update, is_changed, is_column_changed, make_column_dirty, new, register_column, result_source, set_column, set_columns, set_inflated_columns, store_column, throw_exception, update, update_or_insert
 .SH "AUTHOR AND CONTRIBUTORS"
 .IX Header "AUTHOR AND CONTRIBUTORS"
 See \s-1AUTHOR\s0 and \s-1CONTRIBUTORS\s0 in DBIx::Class

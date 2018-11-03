@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3EAE5BC8-E948-3926-9319-9DAC2A8B5484' ]
+uuids:           [ 'x86_64: CCAC9774-C4BF-33C1-AC87-F2AEB972632F' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/OpenCL.framework/Versions/A/OpenCL
 objc-constraint: none

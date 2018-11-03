@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8BB63C7D-1233-3164-82B1-CBBF09E8A50D' ]
+uuids:           [ 'x86_64: C378F6B3-2473-3B2B-BFDA-E79D10A704BB' ]
 platform:        macosx
 install-name:    /usr/lib/libQMIParserDynamic.dylib
 objc-constraint: none

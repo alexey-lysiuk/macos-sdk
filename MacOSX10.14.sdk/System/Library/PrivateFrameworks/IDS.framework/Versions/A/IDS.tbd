@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7B5C217A-82F3-3BD6-BB5D-A788080BDE79' ]
+uuids:           [ 'x86_64: 63A00A35-7F7B-34FF-B9B2-160CD6E4697E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IDS.framework/Versions/A/IDS
 current-version: 800

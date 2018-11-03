@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5B55B533-F4DE-32CE-8739-16FFFA1A64F8' ]
+uuids:           [ 'x86_64: AC3B4909-564A-3C26-B055-7687E5DE1697' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreText.framework/Versions/A/CoreText
 objc-constraint: none

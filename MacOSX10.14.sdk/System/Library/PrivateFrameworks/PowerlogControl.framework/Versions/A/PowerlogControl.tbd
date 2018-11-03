@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DA31EBA7-3D3D-3566-8583-F137873E4FF2' ]
+uuids:           [ 'x86_64: 530D8F1A-58BE-3C99-87A9-026E7994C84A' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PowerlogControl.framework/Versions/A/PowerlogControl
 exports:         

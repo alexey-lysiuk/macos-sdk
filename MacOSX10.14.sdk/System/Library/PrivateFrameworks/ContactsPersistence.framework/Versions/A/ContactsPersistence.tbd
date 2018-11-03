@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1700A26A-3951-3B33-B503-B0272BF33C3D' ]
+uuids:           [ 'x86_64: 6CE2F528-5CD6-35AE-B5BB-30070C5755B6' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ContactsPersistence.framework/Versions/A/ContactsPersistence
 exports:         

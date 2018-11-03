@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5F7D2312-0003-354C-82BC-DC346B1A98E6' ]
+uuids:           [ 'x86_64: DE7FD278-A178-3A5B-8A26-7295340A54BE' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SkyLight.framework/Versions/A/SkyLight
 current-version: 600
@@ -543,13 +543,13 @@ exports:
                        _SLSWindowRightsSetGrantCompletedBlockForToken, _SLSWindowRightsSetGrantOfferedBlockForToken, 
                        _SLSWindowScrollRegion, _SLSWindowSetActiveShadowLegacy, _SLSWindowSetBackdropBackgroundBleed, 
                        _SLSWindowSetKeepsExcessBackingAllocation, _SLSWindowSetResizeRegionShape, 
-                       _SLSWindowSetShadowProperties, _SLSWindowThaw, _SLSWindowThawBackdrops, 
-                       _SLSWindowVisibleRegionSeed, _SLSZoomPoint, _SLScreenRegisterMoveCallback, 
-                       _SLScreenUnregisterMoveCallback, _SLSessionCopyCurrentDictionary, 
-                       _SLSessionOwnerCopyXPCSerializationAndInvalidate, _SLSessionOwnerCreateBySettingLoginwindowConnection, 
-                       _SLSessionOwnerCreateNewSessionWithAuditSessionID, _SLSessionOwnerCreateWithXPCSerialization, 
-                       _SLSessionOwnerGetAuditSessionID, _SLSessionOwnerGetSessionID, 
-                       _SLSessionOwnerIsValid, _SLSetDisplayTransferByByteTable, 
+                       _SLSWindowSetShadowProperties, _SLSWindowSetTrustedForObscuring, 
+                       _SLSWindowThaw, _SLSWindowThawBackdrops, _SLSWindowVisibleRegionSeed, 
+                       _SLSZoomPoint, _SLScreenRegisterMoveCallback, _SLScreenUnregisterMoveCallback, 
+                       _SLSessionCopyCurrentDictionary, _SLSessionOwnerCopyXPCSerializationAndInvalidate, 
+                       _SLSessionOwnerCreateBySettingLoginwindowConnection, _SLSessionOwnerCreateNewSessionWithAuditSessionID, 
+                       _SLSessionOwnerCreateWithXPCSerialization, _SLSessionOwnerGetAuditSessionID, 
+                       _SLSessionOwnerGetSessionID, _SLSessionOwnerIsValid, _SLSetDisplayTransferByByteTable, 
                        _SLSetDisplayTransferByFormula, _SLSetDisplayTransferByTable, 
                        _SLSetLocalEventsFilterDuringSuppressionState, _SLSetLocalEventsFilterDuringSupressionState, 
                        _SLSetLocalEventsSuppressionInterval, _SLShieldingWindowID, 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0D095FFF-BDEA-3AE5-B9A9-4FDF1B0F16CF' ]
+uuids:           [ 'x86_64: F9F76C3F-2D0C-321B-AD8D-083F7ACFFD30' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/TextInput.framework/Versions/A/TextInput
 exports:         
@@ -206,9 +206,10 @@ exports:
                        _circumflex_form, _combine_with_accent, _combines_with_selective_modifier, 
                        _diaeresis_form, _dialytika_tonos_form, _grave_accent_form, 
                        _kMaxRecordEntries, _kMaxTraceLogEntries, _kMecabraCandidatePointerValue, 
-                       _kac_get_log, _kace_get_log, _macron_form, _preferenceKeyForEnumKey, 
-                       _ring_above_form, _small_tilde_form, _strip_accent, _strip_acute_accent, 
-                       _strip_caron, _strip_circumflex, _strip_diaeresis, _strip_dialytika_tonos, 
+                       _kTIMaxContextLength, _kTITrimmedContextLength, _kac_get_log, 
+                       _kace_get_log, _macron_form, _preferenceKeyForEnumKey, _ring_above_form, 
+                       _small_tilde_form, _strip_accent, _strip_acute_accent, _strip_caron, 
+                       _strip_circumflex, _strip_diaeresis, _strip_dialytika_tonos, 
                        _strip_grave_accent, _strip_greek_accent, _strip_macron, _strip_ring_above, 
                        _strip_small_tilde ]
     objc-classes:    [ TIAccessibilityClient, TIAggdReporter, TIAssistantSettings, 

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0CCAF9AF-F7AF-3174-98D4-6C188B1079CC' ]
+uuids:           [ 'x86_64: B5DC275C-12C9-320A-A117-C8FE9034931A' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation
-current-version: 1555.10
+current-version: 1560.12
 compatibility-version: 300
 exports:         
   - archs:           [ x86_64 ]

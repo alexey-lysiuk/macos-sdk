@@ -1,12 +1,13 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2E75BACA-F472-330B-A361-E8FE18A6D6DB' ]
+uuids:           [ 'x86_64: 76C76B2F-6AF6-3D2B-804C-04FACE7A8BCF' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ConversationKit.framework/Versions/A/ConversationKit
 swift-abi-version: 6
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ '_$S15ConversationKit14EffectsHandlerMp', '_$S15ConversationKit14EffectsHandlerPAAE04wipeC5StateyyF', 
+                       '_$S15ConversationKit14EffectsHandlerPAAE06updateC5Views17localVideoEnabledySb_tF', 
                        '_$S15ConversationKit14EffectsHandlerPAAE12contentsRect4with012presentationF021shouldSwapOrientationSo6CGRectVSo11CVBufferRefa_AISbtF', 
                        '_$S15ConversationKit17DeviceOrientationO4hash4intoys6HasherVz_tF', 
                        '_$S15ConversationKit17DeviceOrientationO8rawValueACSgSi_tcfC', 
@@ -15,18 +16,25 @@ exports:
                        '_$S15ConversationKit17DeviceOrientationON', '_$S15ConversationKit17DeviceOrientationOSHAAMc', 
                        '_$S15ConversationKit17DeviceOrientationOSHAAWa', '_$S15ConversationKit17DeviceOrientationOSQAAMc', 
                        '_$S15ConversationKit17DeviceOrientationOSQAAWa', '_$S15ConversationKit17DeviceOrientationOSYAAMc', 
-                       '_$S15ConversationKit17DeviceOrientationOSYAAWa', '_$S15ConversationKit19InCallControlsStateO16debugDescriptionSSvg', 
+                       '_$S15ConversationKit17DeviceOrientationOSYAAWa', '_$S15ConversationKit19InCallControlsStateO10isExpandedSbvg', 
+                       '_$S15ConversationKit19InCallControlsStateO13isShowingDockSbvg', 
+                       '_$S15ConversationKit19InCallControlsStateO16debugDescriptionSSvg', 
+                       '_$S15ConversationKit19InCallControlsStateO16stateWithoutDockACvg', 
                        '_$S15ConversationKit19InCallControlsStateO4hash4intoys6HasherVz_tF', 
                        '_$S15ConversationKit19InCallControlsStateO8rawValueACSgSi_tcfC', 
                        '_$S15ConversationKit19InCallControlsStateO8rawValueSivg', 
                        '_$S15ConversationKit19InCallControlsStateO9hashValueSivg', 
+                       '_$S15ConversationKit19InCallControlsStateO9isVisibleSbvg', 
                        '_$S15ConversationKit19InCallControlsStateOMa', '_$S15ConversationKit19InCallControlsStateOMn', 
                        '_$S15ConversationKit19InCallControlsStateON', '_$S15ConversationKit19InCallControlsStateOSHAAMc', 
                        '_$S15ConversationKit19InCallControlsStateOSHAAWa', '_$S15ConversationKit19InCallControlsStateOSQAAMc', 
                        '_$S15ConversationKit19InCallControlsStateOSQAAWa', '_$S15ConversationKit19InCallControlsStateOSYAAMc', 
                        '_$S15ConversationKit19InCallControlsStateOSYAAWa', '_$S15ConversationKit19InCallControlsStateOs28CustomDebugStringConvertibleAAMc', 
                        '_$S15ConversationKit19InCallControlsStateOs28CustomDebugStringConvertibleAAWa', 
+                       '_$S15ConversationKit22MultiwayViewControllerC010constraintE0AA0cd11ConstraintsE0CSgvg', 
                        '_$S15ConversationKit22MultiwayViewControllerC012openMessagesA0yyF', 
+                       '_$S15ConversationKit22MultiwayViewControllerC013effectsLayoutE033_055EFD27ECDD2CFC2CD9ED96D724A17ELLAA07EffectsgE0CSgvpfi', 
+                       '_$S15ConversationKit22MultiwayViewControllerC014effectsBrowserdE0AA08PlatformdE0CSgvg', 
                        '_$S15ConversationKit22MultiwayViewControllerC014inCallControlsdE0_6didAddyAA02InghdE0C_So9CNContactCtF', 
                        '_$S15ConversationKit22MultiwayViewControllerC014inCallControlsdE0_6didTapyAA02InghdE0C_AA7CommandOtF', 
                        '_$S15ConversationKit22MultiwayViewControllerC018inCallControlsDragE0_06didEndI2AtyAA02InghiE0C_AA0mgH5StateOtF', 
@@ -58,9 +66,12 @@ exports:
                        '_$S15ConversationKit22MultiwayViewControllerC17deviceOrientationAA06DeviceG0OvpWvd', 
                        '_$S15ConversationKit22MultiwayViewControllerC17deviceOrientationAA06DeviceG0Ovpfi', 
                        '_$S15ConversationKit22MultiwayViewControllerC17deviceOrientationAA06DeviceG0Ovs', 
+                       '_$S15ConversationKit22MultiwayViewControllerC23removeAllEffectsObjectsyyF', 
+                       '_$S15ConversationKit22MultiwayViewControllerC23setEffectsButtonEnabledyySbF', 
                        '_$S15ConversationKit22MultiwayViewControllerC26inCallControlsDismissTimer33_055EFD27ECDD2CFC2CD9ED96D724A17ELLSo7NSTimerCSgvpfi', 
                        '_$S15ConversationKit22MultiwayViewControllerC27isHandlingMouseEnteredEvent33_055EFD27ECDD2CFC2CD9ED96D724A17ELLSbvpfi', 
                        '_$S15ConversationKit22MultiwayViewControllerC29hideInactiveParticipantsTimer33_055EFD27ECDD2CFC2CD9ED96D724A17ELLSo7NSTimerCSgvpfi', 
+                       '_$S15ConversationKit22MultiwayViewControllerC30wantsApplicationDismissalStyleSbvg', 
                        '_$S15ConversationKit22MultiwayViewControllerC4callSo6TUCallCvg', 
                        '_$S15ConversationKit22MultiwayViewControllerC5coderACSgSo7NSCoderC_tcfC', 
                        '_$S15ConversationKit22MultiwayViewControllerC5coderACSgSo7NSCoderC_tcfc', 
@@ -72,6 +83,7 @@ exports:
                        '_$S15ConversationKit22MultiwayViewControllerC8delegateAA0cdE8Delegate_pSgXwvpfi', 
                        '_$S15ConversationKit22MultiwayViewControllerC8delegateAA0cdE8Delegate_pSgXwvs', 
                        '_$S15ConversationKit22MultiwayViewControllerC8isPipped33_055EFD27ECDD2CFC2CD9ED96D724A17ELLSbvpfi', 
+                       '_$S15ConversationKit22MultiwayViewControllerC9muteVideoyyF', 
                        '_$S15ConversationKit22MultiwayViewControllerCAA14EffectsHandlerAAMc', 
                        '_$S15ConversationKit22MultiwayViewControllerCAA14EffectsHandlerAAWP', 
                        '_$S15ConversationKit22MultiwayViewControllerCAA14EffectsHandlerAAWa', 
@@ -82,6 +94,12 @@ exports:
                        '_$S15ConversationKit22PlatformViewControllerC7nibName6bundleACSo05NSNibG0aSg_So8NSBundleCSgtcfc', 
                        '_$S15ConversationKit22PlatformViewControllerCMa', '_$S15ConversationKit22PlatformViewControllerCMn', 
                        '_$S15ConversationKit22PlatformViewControllerCN', '_$S15ConversationKit22PlatformViewControllerCfD', 
+                       '_$S15ConversationKit23EffectsLayoutControllerC014containingViewE033_0BB18FD0AAE85153DA9052EA1CCF36FCLLAA08PlatformgE0CSgXwvpfi', 
+                       '_$S15ConversationKit23EffectsLayoutControllerC014containingViewE0AcA08PlatformgE0C_tcfC', 
+                       '_$S15ConversationKit23EffectsLayoutControllerC014containingViewE0AcA08PlatformgE0C_tcfc', 
+                       '_$S15ConversationKit23EffectsLayoutControllerCACycfC', '_$S15ConversationKit23EffectsLayoutControllerCACycfc', 
+                       '_$S15ConversationKit23EffectsLayoutControllerCMa', '_$S15ConversationKit23EffectsLayoutControllerCMn', 
+                       '_$S15ConversationKit23EffectsLayoutControllerCN', '_$S15ConversationKit23EffectsLayoutControllerCfD', 
                        '_$S15ConversationKit23MacViewControllerLayoutC18currentConstraints33_DD16B479E4A2C8EF18B901AA6EB558E6LLSaySo18NSLayoutConstraintCGvpfi', 
                        '_$S15ConversationKit23MacViewControllerLayoutC27floatingControlsConstraints33_DD16B479E4A2C8EF18B901AA6EB558E6LLSDyAA08MultiwaydiE0C08FloatingH5StateOSaySo18NSLayoutConstraintCGGSgvpfi', 
                        '_$S15ConversationKit23MacViewControllerLayoutCMa', '_$S15ConversationKit23MacViewControllerLayoutCMm', 
@@ -150,10 +168,13 @@ exports:
                        '_$S15ConversationKit28InCallControlsViewControllerC9groupNameSSSgvpfi', 
                        '_$S15ConversationKit28InCallControlsViewControllerCMa', '_$S15ConversationKit28InCallControlsViewControllerCMn', 
                        '_$S15ConversationKit28InCallControlsViewControllerCN', '_$S15ConversationKit28InCallControlsViewControllerCfD', 
+                       '_$S15ConversationKit33MultiwayViewConstraintsControllerC013removeEffectsE0yyF', 
+                       '_$S15ConversationKit33MultiwayViewConstraintsControllerC06updateE04with08controlsdF007effectsD00j7BrowserdF0ySo6NSViewC_AA014InCallControlsdF0CAJSgAA08PlatformdF0CSgtF', 
                        '_$S15ConversationKit33MultiwayViewConstraintsControllerC19inCallControlsStateAA02InhiJ0Ovg', 
                        '_$S15ConversationKit33MultiwayViewConstraintsControllerC19inCallControlsStateAA02InhiJ0Ovm', 
                        '_$S15ConversationKit33MultiwayViewConstraintsControllerC19inCallControlsStateAA02InhiJ0OvpWvd', 
                        '_$S15ConversationKit33MultiwayViewConstraintsControllerC19inCallControlsStateAA02InhiJ0Ovs', 
+                       '_$S15ConversationKit33MultiwayViewConstraintsControllerC6update3for17deviceOrientationySo6CGRectV_AA06DeviceJ0OtF', 
                        '_$S15ConversationKit33MultiwayViewConstraintsControllerCACycfC', 
                        '_$S15ConversationKit33MultiwayViewConstraintsControllerCACycfc', 
                        '_$S15ConversationKit33MultiwayViewConstraintsControllerCMa', 
@@ -181,8 +202,8 @@ exports:
                        '_$SSo19TUConversationStateVs28CustomDebugStringConvertible15ConversationKitWa', 
                        _ConversationKitVersionNumber, _ConversationKitVersionString, 
                        _notifyRegisterDispatch ]
-    objc-classes:    [ CNKFaceTimeConstraintsController, CNKFaceTimeMultiwayConversationViewController, 
-                       CNKStagingAreaViewController, _TtC15ConversationKit22PlatformViewController, 
-                       _TtC15ConversationKit28InCallControlsDragController, _TtC15ConversationKit28InCallControlsViewController, 
-                       _TtC15ConversationKit36StagingAreaViewConstraintsController ]
+    objc-classes:    [ CNKEffectsLayoutController, CNKFaceTimeConstraintsController, 
+                       CNKFaceTimeMultiwayConversationViewController, CNKStagingAreaViewController, 
+                       _TtC15ConversationKit22PlatformViewController, _TtC15ConversationKit28InCallControlsDragController, 
+                       _TtC15ConversationKit28InCallControlsViewController, _TtC15ConversationKit36StagingAreaViewConstraintsController ]
 ...

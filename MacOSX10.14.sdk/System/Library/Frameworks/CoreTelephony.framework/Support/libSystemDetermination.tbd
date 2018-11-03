@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3CEEC4D6-D541-3F4D-BFE8-9F55A2024494' ]
+uuids:           [ 'x86_64: D6D426FA-BE93-3CD4-A9CB-E25E03552096' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreTelephony.framework/Support/libSystemDetermination.dylib
 objc-constraint: none

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1300C067-693E-355E-B533-9F15CE942377' ]
+uuids:           [ 'x86_64: 2E93DA04-8A16-3124-B8C1-67451CE2E90E' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/iTunesLibrary.framework/Versions/A/iTunesLibrary
 objc-constraint: none

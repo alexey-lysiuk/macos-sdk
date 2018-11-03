@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F9BE7040-D1CF-3076-86C1-8E440BB8D34F' ]
+uuids:           [ 'x86_64: 4A62A74C-B263-3E55-ACBE-7A11FA0DE3D5' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/LoginUIKit.framework/Versions/A/LoginUIKit
 exports:         

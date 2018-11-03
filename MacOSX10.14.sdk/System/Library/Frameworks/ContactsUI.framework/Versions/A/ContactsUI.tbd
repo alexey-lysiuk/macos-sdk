@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FDCA9164-68EB-31A3-9009-3884E0568CEC' ]
+uuids:           [ 'x86_64: 66FACCE0-D505-345E-BD66-25372A6384B2' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/ContactsUI.framework/Versions/A/ContactsUI
-current-version: 1882
+current-version: 1885
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _ABCNContactSortByFirstName, _ABCNContactSortByLastName, _ABCNContactSortingSubstringAttributeName, 
@@ -41,9 +41,10 @@ exports:
                        _touchBarIdentifierContactViewEditButton, _touchBarIdentifierContactViewShareButton ]
     objc-classes:    [ ABCNContactNameFormatter, ABCNContactShortNameFormatter, ABPersonListSearchControllerUsageStatisticsHelper, 
                        CNAddFieldTouchBar, CNAntialiasedImageView, CNAvatarCache, 
-                       CNAvatarEditOverlayView, CNAvatarEditorViewController, CNAvatarImageLoading, 
-                       CNAvatarImageLoadingOptions, CNAvatarImageRenderer, CNAvatarImageRenderingScope, 
-                       CNAvatarView, CNAvatarViewController, CNAvatarViewModel, CNCameraChangeWatcher, 
+                       CNAvatarCacheLiveUpdatingQueryObservable, CNAvatarEditOverlayView, 
+                       CNAvatarEditorViewController, CNAvatarImageLoading, CNAvatarImageLoadingOptions, 
+                       CNAvatarImageRenderer, CNAvatarImageRenderingScope, CNAvatarView, 
+                       CNAvatarViewController, CNAvatarViewModel, CNCameraChangeWatcher, 
                        CNClickableTextView, CNCollectionViewTouchBar, CNContactActionsDisambiguationMenuGenerator, 
                        CNContactActionsGroupGenerator, CNContactActionsView, CNContactActionsViewController, 
                        CNContactAvatarNameCompositeViewController, CNContactAvatarViewController, 

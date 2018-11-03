@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E72B5298-1CFE-3EC9-945C-423BF62C40C2' ]
+uuids:           [ 'x86_64: 4B5C4A8A-4977-3554-9726-FABEDED75FE6' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CallHistory.framework/Versions/A/CallHistory
 current-version: 2

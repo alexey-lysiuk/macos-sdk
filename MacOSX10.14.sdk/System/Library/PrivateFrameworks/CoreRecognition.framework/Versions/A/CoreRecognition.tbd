@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F4D57A00-6697-3207-85BC-D109FCFCF2B1' ]
+uuids:           [ 'x86_64: C4706C4C-8E30-367A-8629-D7AC0C1762CB' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreRecognition.framework/Versions/A/CoreRecognition
-current-version: 112.3
+current-version: 112.5
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CRAdaptiveThresholdImage, _CRInsightsCardImageCutBufferKey, 

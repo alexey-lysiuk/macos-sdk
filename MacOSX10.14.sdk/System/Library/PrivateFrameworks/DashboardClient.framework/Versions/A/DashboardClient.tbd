@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 661E8CE5-F393-35FF-B046-459182C0BA36' ]
+uuids:           [ 'x86_64: A1672961-7C38-3156-9A8E-B783424C4683' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DashboardClient.framework/Versions/A/DashboardClient
 exports:         

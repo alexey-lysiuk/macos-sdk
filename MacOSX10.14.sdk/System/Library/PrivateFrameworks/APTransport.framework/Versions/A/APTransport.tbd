@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EF7D71D8-13BE-3CCE-9AEA-673DBE23A9BB' ]
+uuids:           [ 'x86_64: 1F758CDA-1CA6-3DDF-B262-492F9D8D5D6F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/APTransport.framework/Versions/A/APTransport
 exports:         

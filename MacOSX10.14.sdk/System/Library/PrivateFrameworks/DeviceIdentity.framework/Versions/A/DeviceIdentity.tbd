@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1883A98E-D64C-371E-90CB-E2917976C5B0' ]
+uuids:           [ 'x86_64: 5EB2391A-B942-349B-A781-05E860363DB1' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DeviceIdentity.framework/Versions/A/DeviceIdentity
 current-version: 0

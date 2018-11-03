@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 073E752F-2349-3DD2-A713-3599AF6A0917' ]
+uuids:           [ 'x86_64: B79829B2-451A-3BF2-99C9-FA02E1C9801F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/GameCenter.framework/Versions/A/GameCenter
 current-version: 563.125

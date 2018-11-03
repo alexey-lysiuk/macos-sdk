@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 36052010-04B5-3FFC-9A76-22E5CE6D328F' ]
+uuids:           [ 'x86_64: BA677C4D-5BC5-37BB-B9BC-8B7EBF5FEE19' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/BridgeOSInstall.framework/Versions/A/BridgeOSInstall
 exports:         
@@ -17,6 +17,7 @@ exports:
                        _BridgeOSInstallClientUnitTest, _BridgeOSInstallOptionBridgeOSSoftwareUpdateEventRecordingServiceURL, 
                        _BridgeOSInstallOptionCleanInstall, _BridgeOSInstallOptionEnableSSO, 
                        _BridgeOSInstallOptionLoopbackEnabled, _BridgeOSInstallOptionMinimumRequiredBridgeOSVersion, 
+                       _BridgeOSInstallOptionPredicateProductOriginatingCatalogURL, 
                        _BridgeOSInstallOptionShowUI, _BridgeOSInstallOptionTestModeEnabled, 
                        _BridgeOSInstallStatusKeyEstimatedTimeRemaining, _BridgeOSInstallStatusKeyPercentComplete, 
                        _BridgeOSInstallVersionNumber, _BridgeOSInstallVersionString, 

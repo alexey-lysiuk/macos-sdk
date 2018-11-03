@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1EBFF73E-95B6-31E7-83D5-A75A260D7F25' ]
+uuids:           [ 'x86_64: F5E2C817-2D01-3401-89F0-B024FE296FC6' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreLocation.framework/Versions/A/CoreLocation
-current-version: 2245.7.106
+current-version: 2245.8.12
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

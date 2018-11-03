@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B36E5438-7275-32E0-BC24-D49EB87CA3A4' ]
+uuids:           [ 'x86_64: F9458598-3677-35A0-8FED-E990CE48B6AD' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SiriUI.framework/Versions/A/SiriUI
 exports:         

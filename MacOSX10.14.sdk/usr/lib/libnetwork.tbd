@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AD59D28C-CCB2-3B34-B904-8CCCEB2CF320' ]
+uuids:           [ 'x86_64: CE7ACD18-109F-382E-963B-C68419E301A1' ]
 platform:        macosx
 install-name:    /usr/lib/libnetwork.dylib
 objc-constraint: none

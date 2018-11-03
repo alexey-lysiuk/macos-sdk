@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A1710D96-DED3-37AC-983A-3D2F3ECDFFE6' ]
+uuids:           [ 'x86_64: 3C7D3F8A-C43D-3993-8BD9-B685C05BEC89' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/HMFoundation.framework/Versions/A/HMFoundation
 exports:         
@@ -29,8 +29,10 @@ exports:
                        _HMFProductInfoEmperorOSVersion, _HMFProductInfoErieOSVersion, 
                        _HMFProductInfoFatsaOSVersion, _HMFProductInfoFerryOSVersion, 
                        _HMFProductInfoFortuneOSVersion, _HMFProductInfoFrancisOSVersion, 
-                       _HMFProductInfoGloryOSVersion, _HMFProductInfoHopeOSVersion, 
-                       _HMFProductInfoLibertyOSVersion, _HMFProductInfoMonarchOSVersion, 
+                       _HMFProductInfoGloryBOSVersion, _HMFProductInfoGloryOSVersion, 
+                       _HMFProductInfoHopeBOSVersion, _HMFProductInfoHopeOSVersion, 
+                       _HMFProductInfoLibertyBOSVersion, _HMFProductInfoLibertyOSVersion, 
+                       _HMFProductInfoMonarchOSVersion, _HMFProductInfoPeaceBOSVersion, 
                        _HMFProductInfoPeaceOSVersion, _HMFProductInfoTigrisOSVersion, 
                        _HMFProductInfoTildenOSVersion, _HMFProductInfoTopazOSVersion, 
                        _HMFProductInfoUnionOSVersion, _HMFProductInfoWhitetailOSVersion, 

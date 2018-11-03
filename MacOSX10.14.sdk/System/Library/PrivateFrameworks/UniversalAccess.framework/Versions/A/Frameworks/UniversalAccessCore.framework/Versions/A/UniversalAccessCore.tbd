@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 385AC51C-D68A-3CBE-A0AF-F6AF2F287550' ]
+uuids:           [ 'x86_64: 3C69058F-0C5E-3978-A991-B6EFE21FD8B9' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/UniversalAccess.framework/Versions/A/Frameworks/UniversalAccessCore.framework/Versions/A/UniversalAccessCore
 current-version: 236

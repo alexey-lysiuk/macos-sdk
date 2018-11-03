@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A0D90572-914B-323B-9C18-E0DDA7DBFD1B' ]
+uuids:           [ 'x86_64: 4037D594-2FD8-350B-8D33-9210E7689DC4' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/RTCReporting.framework/Versions/A/RTCReporting
 exports:         

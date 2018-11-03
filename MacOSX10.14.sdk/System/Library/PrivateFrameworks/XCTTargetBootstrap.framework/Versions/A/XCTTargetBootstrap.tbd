@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 63A533F6-988D-3FED-A1C7-20BC725A0D4B' ]
+uuids:           [ 'x86_64: 697834E4-FEFD-305C-80EE-5052E61573FA' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/XCTTargetBootstrap.framework/Versions/A/XCTTargetBootstrap
 exports:         

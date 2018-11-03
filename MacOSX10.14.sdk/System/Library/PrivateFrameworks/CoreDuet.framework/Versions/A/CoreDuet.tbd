@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C96F9C0A-03A3-3828-A489-2C650BC83787' ]
+uuids:           [ 'x86_64: 00D084E3-E0A0-345A-A398-A07EC094AE86' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreDuet.framework/Versions/A/CoreDuet
 exports:         

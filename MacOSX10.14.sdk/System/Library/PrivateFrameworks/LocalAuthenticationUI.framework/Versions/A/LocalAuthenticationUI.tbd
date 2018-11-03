@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 570FFDFA-6DEF-36AD-A76B-84F4F748AC4D' ]
+uuids:           [ 'x86_64: 14909538-FE79-3F25-94F8-B5A18120D480' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/LocalAuthenticationUI.framework/Versions/A/LocalAuthenticationUI
-current-version: 425.200.47
+current-version: 425.220.25
 exports:         
   - archs:           [ x86_64 ]
     objc-classes:    [ LAUIAuthenticationSheetController, LAUIAuthenticationViewController, 

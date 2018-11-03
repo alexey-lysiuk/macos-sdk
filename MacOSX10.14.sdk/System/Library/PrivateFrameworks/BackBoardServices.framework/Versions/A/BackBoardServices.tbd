@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8AC8CEB0-850D-31C4-A300-594908A7EBE0' ]
+uuids:           [ 'x86_64: E1BFD279-7DD9-3CBA-9A67-13E2D504E1AC' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/BackBoardServices.framework/Versions/A/BackBoardServices
 exports:         

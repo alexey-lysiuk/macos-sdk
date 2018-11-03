@@ -157,6 +157,7 @@ extern void kpc_thread_destroy(thread_t thread);
 /* allocate a buffer big enough for all counters */
 extern uint64_t *kpc_counterbuf_alloc(void);
 extern void      kpc_counterbuf_free(uint64_t*);
+extern uint32_t  kpc_get_counterbuf_size(void);
 
 /* whether we're currently accounting into threads */
 extern int kpc_threads_counting;

@@ -37,6 +37,7 @@
 #include <MPSCore/MPSState.h>
 #include <MPSNeuralNetwork/MPSNeuralNetworkTypes.h>
 #include <MPSNeuralNetwork/MPSCNNNeuronType.h>
+#include <MPSNeuralNetwork/MPSCNNMath.h>
 
 #pragma mark -
 #pragma mark Base Classes
@@ -1241,6 +1242,97 @@ MPS_CLASS_AVAILABLE_STARTING(macos(10.13.4), ios(11.3), tvos(11.3))
 
 
 #pragma mark -
+#pragma mark Reduction Nodes
+
+MPS_CLASS_AVAILABLE_STARTING( macos(10.14.1), ios(12.1), tvos(12.1))
+/*! @abstract  A node for a unary MPSNNReduce node.
+ *  @discussion This is an abstract base class that does not correspond with any
+ *              particular MPSCNNKernel. Please make one of the MPSNNReduction
+ *              subclasses instead. */
+@interface MPSNNUnaryReductionNode : MPSNNFilterNode
+
+/*! @abstract   The clip rectangle to apply to the source image.
+ */
+@property (readwrite, nonatomic) MTLRegion clipRectSource;
+
+/*! @abstract   Create an autoreleased node representing an MPS reduction kernel.
+ *  @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
+ *  @return     A new MPSNNFilter node for an MPS reduction kernel.
+ */
++(nonnull instancetype) nodeWithSource: (MPSNNImageNode * __nonnull) sourceNode;
+
+/*! @abstract   Init a node representing an MPS reduction kernel.
+ *  @param      sourceNode              The MPSNNImageNode representing the source MPSImage for the filter
+ *  @return     A new MPSNNFilter node for an MPS reduction kernel.
+ */
+-(nonnull instancetype) initWithSource: (MPSNNImageNode * __nonnull) sourceNode;
+@end    // MPSNNUnaryReductionNode
+
+MPS_CLASS_AVAILABLE_STARTING( macos(10.14.1), ios(12.1), tvos(12.1))
+@interface MPSNNReductionRowMinNode : MPSNNUnaryReductionNode
+@end    // MPSNNReductionRowMinNode
+
+MPS_CLASS_AVAILABLE_STARTING( macos(10.14.1), ios(12.1), tvos(12.1))
+@interface MPSNNReductionColumnMinNode : MPSNNUnaryReductionNode
+@end    // MPSNNReductionColumnMinNode
+
+MPS_CLASS_AVAILABLE_STARTING( macos(10.14.1), ios(12.1), tvos(12.1))
+@interface MPSNNReductionFeatureChannelsMinNode : MPSNNUnaryReductionNode
+@end    // MPSNNReductionFeatureChannelsMinNode
+
+MPS_CLASS_AVAILABLE_STARTING( macos(10.14.1), ios(12.1), tvos(12.1))
+@interface MPSNNReductionFeatureChannelsArgumentMinNode : MPSNNUnaryReductionNode
+@end    // MPSNNReductionFeatureChannelsArgumentMinNode
+
+MPS_CLASS_AVAILABLE_STARTING( macos(10.14.1), ios(12.1), tvos(12.1))
+@interface MPSNNReductionRowMaxNode : MPSNNUnaryReductionNode
+@end    // MPSNNReductionRowMaxNode
+
+MPS_CLASS_AVAILABLE_STARTING( macos(10.14.1), ios(12.1), tvos(12.1))
+@interface MPSNNReductionColumnMaxNode : MPSNNUnaryReductionNode
+@end    // MPSNNReductionColumnMaxNode
+
+MPS_CLASS_AVAILABLE_STARTING( macos(10.14.1), ios(12.1), tvos(12.1))
+@interface MPSNNReductionFeatureChannelsMaxNode : MPSNNUnaryReductionNode
+@end    // MPSNNReductionFeatureChannelsMaxNode
+
+MPS_CLASS_AVAILABLE_STARTING( macos(10.14.1), ios(12.1), tvos(12.1))
+@interface MPSNNReductionFeatureChannelsArgumentMaxNode : MPSNNUnaryReductionNode
+@end    // MPSNNReductionFeatureChannelsArgumentMaxNode
+
+MPS_CLASS_AVAILABLE_STARTING( macos(10.14.1), ios(12.1), tvos(12.1))
+@interface MPSNNReductionRowMeanNode : MPSNNUnaryReductionNode
+@end    // MPSNNReductionRowMeanNode
+
+MPS_CLASS_AVAILABLE_STARTING( macos(10.14.1), ios(12.1), tvos(12.1))
+@interface MPSNNReductionColumnMeanNode : MPSNNUnaryReductionNode
+@end    // MPSNNReductionColumnMeanNode
+
+MPS_CLASS_AVAILABLE_STARTING( macos(10.14.1), ios(12.1), tvos(12.1))
+@interface MPSNNReductionFeatureChannelsMeanNode : MPSNNUnaryReductionNode
+@end    // MPSNNReductionFeatureChannelsMeanNode
+
+MPS_CLASS_AVAILABLE_STARTING( macos(10.14.1), ios(12.1), tvos(12.1))
+@interface MPSNNReductionSpatialMeanNode : MPSNNUnaryReductionNode
+@end    // MPSNNReductionSpatialMeanNode
+
+MPS_CLASS_AVAILABLE_STARTING( macos(10.14.1), ios(12.1), tvos(12.1))
+@interface MPSNNReductionRowSumNode : MPSNNUnaryReductionNode
+@end    // MPSNNReductionRowSumNode
+
+MPS_CLASS_AVAILABLE_STARTING( macos(10.14.1), ios(12.1), tvos(12.1))
+@interface MPSNNReductionColumnSumNode : MPSNNUnaryReductionNode
+@end    // MPSNNReductionColumnSumNode
+
+MPS_CLASS_AVAILABLE_STARTING( macos(10.14.1), ios(12.1), tvos(12.1))
+@interface MPSNNReductionFeatureChannelsSumNode : MPSNNUnaryReductionNode
+
+/*! @abstract   A scale factor to apply to each feature channel sum.
+ */
+@property (readwrite, nonatomic) float weight;
+@end    // MPSNNReductionFeatureChannelsSumNode
+
+#pragma mark -
 #pragma mark Pooling Nodes
 
 MPS_CLASS_AVAILABLE_STARTING( macos(10.13), ios(11.0), tvos(11.0))
@@ -1942,6 +2034,18 @@ MPS_CLASS_AVAILABLE_STARTING( macos(10.13), ios(11.0), tvos(11.0))
 @interface MPSNNDivisionNode : MPSNNBinaryArithmeticNode
 @end
 
+MPS_CLASS_AVAILABLE_STARTING( macos(10.14.1), ios(12.1), tvos(12.1))
+/*! @abstract returns elementwise comparison of left and right */
+@interface MPSNNComparisonNode : MPSNNBinaryArithmeticNode
+
+/*! @property   comparisonType
+ *  @abstract   The comparison type to set on the underlying kernel.  Defaults
+ *              to MPSNNComparisonTypeEqual.
+ */
+@property (readwrite, nonatomic) MPSNNComparisonType   comparisonType;
+
+@end
+
 #pragma mark -
 #pragma mark Arithmetic Gradient
 
@@ -2261,6 +2365,145 @@ MPS_CLASS_AVAILABLE_STARTING( macos(10.13.4), ios(11.3), tvos(11.3))
                                  gradientState: (MPSNNGradientStateNode*__nonnull) gradientState;
 
 @end
+
+MPS_CLASS_AVAILABLE_STARTING( macos(10.14.1), ios(12.1), tvos(12.1))
+/*! @abstract  A node for a MPSNNReshape kernel */
+@interface MPSNNReshapeNode : MPSNNFilterNode
+
+/*! @abstract   Init a node representing a autoreleased MPSNNReshape kernel
+ *  @param      source                  The MPSNNImageNode representing the source MPSImage for the filter
+ *  @param      resultWidth             The width of the reshaped image.
+ *  @param      resultHeight            The height of the reshaped image.
+ *  @param      resultFeatureChannels   The number of feature channels in the reshaped image.
+ *  @return     A new MPSNNFilter node for a MPSNNReshape kernel.
+ */
++(nonnull instancetype) nodeWithSource: (MPSNNImageNode * __nonnull) source
+                           resultWidth: (NSUInteger) resultWidth
+                          resultHeight: (NSUInteger) resultHeight
+                 resultFeatureChannels: (NSUInteger) resultFeatureChannels;
+
+/*! @abstract   Init a node representing a MPSNNReshape kernel
+ *  @param      source                  The MPSNNImageNode representing the source MPSImage for the filter
+ *  @param      resultWidth             The width of the reshaped image.
+ *  @param      resultHeight            The height of the reshaped image.
+ *  @param      resultFeatureChannels   The number of feature channels in the reshaped image.
+ *  @return     A new MPSNNFilter node for a MPSNNReshape kernel.
+ */
+-(nonnull instancetype) initWithSource: (MPSNNImageNode * __nonnull) source
+                           resultWidth: (NSUInteger) resultWidth
+                          resultHeight: (NSUInteger) resultHeight
+                 resultFeatureChannels: (NSUInteger) resultFeatureChannels;
+@end
+
+MPS_CLASS_AVAILABLE_STARTING(macos(10.14.1), ios(12.1), tvos(12.1))
+@interface MPSNNReshapeGradientNode : MPSNNGradientFilterNode
+/*! @abstract   A node to represent the gradient of a reshape node.
+ *  @param sourceGradient   The input gradient from the 'downstream' gradient filter.
+ *  @param sourceImage      The input image from the forward reshape node.
+ *  @return  A MPSNNReshapeGradientNode    */
++(nonnull instancetype) nodeWithSourceGradient: (MPSNNImageNode*__nonnull) sourceGradient
+                                   sourceImage: (MPSNNImageNode*__nonnull) sourceImage
+                                 gradientState: (MPSNNGradientStateNode*__nonnull) gradientState;
+
+/*! @abstract   A node to represent the gradient of a reshape node.
+ *  @param sourceGradient   The input gradient from the 'downstream' gradient filter.
+ *  @param sourceImage      The input image from the forward reshape node.
+ *  @return  A MPSCNNConvolutionGradientNode    */
+-(nonnull instancetype) initWithSourceGradient: (MPSNNImageNode*__nonnull) sourceGradient
+                                   sourceImage: (MPSNNImageNode*__nonnull) sourceImage
+                                 gradientState: (MPSNNGradientStateNode*__nonnull) gradientState;
+@end
+
+MPS_CLASS_AVAILABLE_STARTING(macos(10.14.1), ios(12.1), tvos(12.1))
+@interface MPSNNReductionSpatialMeanGradientNode : MPSNNGradientFilterNode
+/*! @abstract   A node to represent the gradient of a spatial mean reduction node.
+ *  @param sourceGradient   The input gradient from the 'downstream' gradient filter.
+ *  @param sourceImage      The input image from the forward spatial mean reduction node.
+ *  @return  A MPSNNReductionSpatialMeanGradientNode    */
++(nonnull instancetype) nodeWithSourceGradient: (MPSNNImageNode*__nonnull) sourceGradient
+                                   sourceImage: (MPSNNImageNode*__nonnull) sourceImage
+                                 gradientState: (MPSNNGradientStateNode*__nonnull) gradientState;
+
+/*! @abstract   A node to represent the gradient of a spatial mean reduction node.
+ *  @param sourceGradient   The input gradient from the 'downstream' gradient filter.
+ *  @param sourceImage      The input image from the forward spatial mean reduction node.
+ *  @return  A MPSNNReductionSpatialMeanGradientNode    */
+-(nonnull instancetype) initWithSourceGradient: (MPSNNImageNode*__nonnull) sourceGradient
+                                   sourceImage: (MPSNNImageNode*__nonnull) sourceImage
+                                 gradientState: (MPSNNGradientStateNode*__nonnull) gradientState;
+@end
+
+
+MPS_CLASS_AVAILABLE_STARTING( macos(10.14.1), ios(12.1), tvos(12.1))
+/*!  @class         MPSNNPadNode
+ *   @abstract      A node for a MPSNNPad kernel
+ *   @discussion    You should not use this node to zero pad your data in the XY-plane.
+ *                  This node copies the input image and therefore should only be used in
+ *                  special circumstances where the normal padding operation, defined for most
+ *                  filters and nodes through @ref MPSNNPadding, cannot achieve the necessary padding.
+ *                  Therefore use this node only when you need one of the special edge modes:
+ *                  @ref MPSImageEdgeModeConstant, @ref MPSImageEdgeModeMirror,
+ *                  @ref MPSImageEdgeModeMirrorWithEdge or, if you need padding in the
+ *                  feature-channel dimesion.
+ *                  In other cases use to @ref MPSNNPadding to get best performance.
+ */
+@interface MPSNNPadNode : MPSNNFilterNode
+
+/*! @property   fillValue
+ *  @abstract   Determines the constant value to apply when using @ref MPSImageEdgeModeConstant. Default: 0.0f.
+ */
+@property(readwrite, nonatomic) float               fillValue;
+
+/*! @abstract   Init a node representing a autoreleased MPSNNPad kernel
+ *  @param      source                  The MPSNNImageNode representing the source MPSImage for the filter
+ *  @param      paddingSizeBefore       The amount of padding to apply before the image in each dimension.
+ *  @param      paddingSizeAfter        The amount of padding to apply after the image in each dimension.
+ *  @param      edgeMode                The @ref MPSImageEdgeMode for the padding node - Note that for now
+ *                                      the pad-node and its gradient are the only nodes that support
+ *                                      the extended edge-modes, ie. the ones beyond MPSImageEdgeModeClamp.
+ *  @return     A new MPSNNFilter node for a MPSNNPad kernel.
+ */
++(nonnull instancetype) nodeWithSource: (MPSNNImageNode * __nonnull) source
+                     paddingSizeBefore: (MPSImageCoordinate) paddingSizeBefore
+                      paddingSizeAfter: (MPSImageCoordinate) paddingSizeAfter
+                              edgeMode: (MPSImageEdgeMode) edgeMode;
+
+/*! @abstract   Init a node representing a MPSNNPad kernel
+ *  @param      source                  The MPSNNImageNode representing the source MPSImage for the filter
+ *  @param      paddingSizeBefore       The amount of padding to apply before the image in each dimension.
+ *  @param      paddingSizeAfter        The amount of padding to apply after the image in each dimension.
+ *  @param      edgeMode                The @ref MPSImageEdgeMode for the padding node - Note that for now
+ *                                      the pad-node and its gradient are the only nodes that support
+ *                                      the extended edge-modes, ie. the ones beyond MPSImageEdgeModeClamp.
+ *  @return     A new MPSNNFilter node for a MPSNNPad kernel.
+ */
+-(nonnull instancetype) initWithSource: (MPSNNImageNode * __nonnull) source
+                     paddingSizeBefore: (MPSImageCoordinate) paddingSizeBefore
+                      paddingSizeAfter: (MPSImageCoordinate) paddingSizeAfter
+                              edgeMode: (MPSImageEdgeMode) edgeMode;
+@end
+
+MPS_CLASS_AVAILABLE_STARTING(macos(10.14.1), ios(12.1), tvos(12.1))
+@interface MPSNNPadGradientNode : MPSNNGradientFilterNode
+/*! @abstract   A node to represent the gradient of a padding node.
+ *  @param      sourceGradient   The input gradient from the 'downstream' gradient filter.
+ *  @param      sourceImage      The input image from the forward padding node.
+ *  @return     A MPSNNPadGradientNode    */
++(nonnull instancetype) nodeWithSourceGradient: (MPSNNImageNode * __nonnull) sourceGradient
+                                   sourceImage: (MPSNNImageNode * __nonnull) sourceImage
+                                 gradientState: (MPSNNGradientStateNode * __nonnull) gradientState;
+
+/*! @abstract   A node to represent the gradient of a padding node.
+ *  @param      sourceGradient   The input gradient from the 'downstream' gradient filter.
+ *  @param      sourceImage      The input image from the forward reshape node.
+ *  @return     A MPSNNPadGradientNode    */
+-(nonnull instancetype) initWithSourceGradient: (MPSNNImageNode * __nonnull) sourceGradient
+                                   sourceImage: (MPSNNImageNode * __nonnull) sourceImage
+                                 gradientState: (MPSNNGradientStateNode * __nonnull) gradientState;
+@end
+
+
+
 
 
 MPS_CLASS_AVAILABLE_STARTING( macos(10.13), ios(11.0), tvos(11.0))

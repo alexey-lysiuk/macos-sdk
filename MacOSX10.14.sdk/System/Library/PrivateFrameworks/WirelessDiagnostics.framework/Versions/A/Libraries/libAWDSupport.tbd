@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9EDCC637-1AD7-3798-B358-1807F8CCA2CE' ]
+uuids:           [ 'x86_64: 3673A2F4-7A31-3B86-9220-42974CEE989B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/WirelessDiagnostics.framework/Versions/A/Libraries/libAWDSupport.dylib
 objc-constraint: none

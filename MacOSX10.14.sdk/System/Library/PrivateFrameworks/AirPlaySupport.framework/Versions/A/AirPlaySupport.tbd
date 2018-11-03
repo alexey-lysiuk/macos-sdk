@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CEB400C2-ADA1-385A-BDA1-717407463A4E' ]
+uuids:           [ 'x86_64: 58E8D85A-B21E-3BB7-87B9-D1C860AD5458' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AirPlaySupport.framework/Versions/A/AirPlaySupport
 exports:         
@@ -60,8 +60,8 @@ exports:
                        _APSNetworkAddressGetSocketAddr, _APSNetworkAddressGetTypeID, 
                        _APSNetworkAddressSetPort, _APSNetworkClockAddOrUpdatePeerFromSerializablePeerDictionary, 
                        _APSNetworkClockAddOrUpdatePeerWithAddressAndInterfaceNameStrings, 
-                       _APSNetworkClockCopyLocalPeerInfoAsSerializablePeerDictionary, 
-                       _APSNetworkClockCreateSetPeersMessagePayloadFromPeerArray, 
+                       _APSNetworkClockCopyPeerAsAddressesAndSerializablePeerDictionary, 
+                       _APSNetworkClockCopySetPeersMessagePayload, _APSNetworkClockCreateSetPeersMessagePayloadFromPeerArray, 
                        _APSNetworkClockDetermineAndSetLocalPeerInfo, _APSNetworkClockGetCMBaseObject, 
                        _APSNetworkClockGetClassID, _APSNetworkClockGetTypeID, _APSNetworkClockLogCurrentNetworkTime, 
                        _APSNetworkClockNTPClientCreate, _APSNetworkClockNTPServerCreate, 

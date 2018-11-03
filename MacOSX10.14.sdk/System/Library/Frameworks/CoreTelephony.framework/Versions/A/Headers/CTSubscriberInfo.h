@@ -16,7 +16,13 @@ NS_ASSUME_NONNULL_BEGIN
 CORETELEPHONY_CLASS_AVAILABLE(6_0)
 @interface CTSubscriberInfo : NSObject
 
-+ (CTSubscriber*) subscriber;
++ (NSArray<CTSubscriber *> *)subscribers
+API_AVAILABLE(ios(12.1))
+;
+
++ (CTSubscriber*) subscriber
+API_DEPRECATED_WITH_REPLACEMENT("Use subscribers instead", ios(6.0, 12.1))
+;
 
 @end
 

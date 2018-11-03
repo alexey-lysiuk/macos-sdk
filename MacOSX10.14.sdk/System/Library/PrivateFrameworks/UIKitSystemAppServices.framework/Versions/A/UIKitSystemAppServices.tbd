@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BB4D09CD-A486-387F-BF8A-D36AC46374F0' ]
+uuids:           [ 'x86_64: AA26E0E6-D304-3FDB-94C0-F8485CAF34C4' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/UIKitSystemAppServices.framework/Versions/A/UIKitSystemAppServices
-current-version: 35
+current-version: 37
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _UIKitSystemAppServicesVersionNumber, _UIKitSystemAppServicesVersionString, 

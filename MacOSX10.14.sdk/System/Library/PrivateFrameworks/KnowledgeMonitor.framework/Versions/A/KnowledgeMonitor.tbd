@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FC5E9FD2-4882-3044-A499-1367191AD299' ]
+uuids:           [ 'x86_64: 870E11D7-E946-3AC3-972E-8BEE86C8DBDB' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/KnowledgeMonitor.framework/Versions/A/KnowledgeMonitor
 exports:         

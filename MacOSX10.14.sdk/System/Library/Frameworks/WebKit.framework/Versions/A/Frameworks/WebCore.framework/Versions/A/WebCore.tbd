@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 099B8FA5-D49D-3C7E-B40A-613CA6E7B769' ]
+uuids:           [ 'x86_64: 50CEEC5A-34FC-339A-A05F-257D9D0F4666' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/WebKit.framework/Versions/A/Frameworks/WebCore.framework/Versions/A/WebCore
-current-version: 606.1.36
+current-version: 606.2.104
 parent-umbrella: WebKit
 exports:         
   - archs:           [ x86_64 ]
@@ -2701,6 +2701,7 @@ exports:
                        __ZN7WebCore32PlaybackSessionModelMediaElement22selectAudioMediaOptionEy, 
                        __ZN7WebCore32PlaybackSessionModelMediaElement22togglePictureInPictureEv, 
                        __ZN7WebCore32PlaybackSessionModelMediaElement24selectLegibleMediaOptionEy, 
+                       __ZN7WebCore32PlaybackSessionModelMediaElement24setPlayingOnSecondScreenEb, 
                        __ZN7WebCore32PlaybackSessionModelMediaElement4playEv, __ZN7WebCore32PlaybackSessionModelMediaElement5pauseEv, 
                        __ZN7WebCore32PlaybackSessionModelMediaElement8fastSeekEd, 
                        __ZN7WebCore32PlaybackSessionModelMediaElement8setMutedEb, 

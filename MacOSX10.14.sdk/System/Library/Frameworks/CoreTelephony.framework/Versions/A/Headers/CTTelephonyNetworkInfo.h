@@ -32,7 +32,6 @@ CORETELEPHONY_EXTERN NSString * const CTServiceRadioAccessTechnologyDidChangeNot
 CORETELEPHONY_EXTERN NSString * const CTRadioAccessTechnologyDidChangeNotification __OSX_AVAILABLE_BUT_DEPRECATED_MSG(__MAC_NA, __MAC_NA,
     __IPHONE_7_0, __IPHONE_12_0, "Replaced by CTServiceRadioAccessTechnologyDidChangeNotification");
 
-
 /*
  * Radio Access Technology values
  */
@@ -59,7 +58,6 @@ CORETELEPHONY_EXTERN NSString * const CTRadioAccessTechnologyLTE           __OSX
 CORETELEPHONY_CLASS_AVAILABLE(4_0)
 @interface CTTelephonyNetworkInfo : NSObject
 
-
 /*
  * serviceSubscriberCellularProviders
  *
@@ -77,7 +75,7 @@ CORETELEPHONY_CLASS_AVAILABLE(4_0)
  *   home cellular service provider for the service.
  */
 @property(readonly, retain, nullable) CTCarrier *subscriberCellularProvider __OSX_AVAILABLE_BUT_DEPRECATED_MSG(__MAC_NA, __MAC_NA, __IPHONE_4_0, __IPHONE_12_0,
-	"Replaced by serviceSubscriberCellularProviders");
+    "Replaced by serviceSubscriberCellularProviders");
 
 /*
  * serviceSubscriberCellularProvidersDidUpdateNotifier
@@ -102,7 +100,7 @@ CORETELEPHONY_CLASS_AVAILABLE(4_0)
  *   updated information.
  */
 @property(nonatomic, copy, nullable) void (^subscriberCellularProviderDidUpdateNotifier)(CTCarrier*) __OSX_AVAILABLE_BUT_DEPRECATED_MSG(__MAC_NA, __MAC_NA, __IPHONE_4_0, __IPHONE_12_0,
-	"Replaced by serviceSubscriberCellularProvidersDidUpdateNotifier");
+    "Replaced by serviceSubscriberCellularProvidersDidUpdateNotifier");
 
 /*
  * serviceCurrentRadioAccessTechnology
@@ -121,8 +119,7 @@ CORETELEPHONY_CLASS_AVAILABLE(4_0)
  *   if the device is not registered on any network.
  */
 @property (nonatomic, readonly, retain, nullable) NSString* currentRadioAccessTechnology __OSX_AVAILABLE_BUT_DEPRECATED_MSG(__MAC_NA, __MAC_NA, __IPHONE_7_0, __IPHONE_12_0,
-	"Replaced by serviceCurrentRadioAccessTechnology");
-
+    "Replaced by serviceCurrentRadioAccessTechnology");
 
 @end
 

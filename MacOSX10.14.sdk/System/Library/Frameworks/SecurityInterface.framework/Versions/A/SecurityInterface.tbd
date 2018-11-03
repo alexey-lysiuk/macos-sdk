@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8BDA8A18-C4EB-3267-96AB-0C2F2321866D' ]
+uuids:           [ 'x86_64: F2E44252-2A22-30FD-9706-E33EF75C3ED2' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/SecurityInterface.framework/Versions/A/SecurityInterface
 current-version: 55109.200.8

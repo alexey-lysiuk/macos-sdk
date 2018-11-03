@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6D3F7E26-2AE9-3CF8-A482-3425F8EB35F9' ]
+uuids:           [ 'x86_64: F251881D-AEBE-38BD-BAFD-243A22F88AB6' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreTelephony.framework/Support/libCommCenterAWDMetrics.dylib
 objc-constraint: none
@@ -1794,6 +1794,7 @@ exports:
                        __ZN3awd7metrics25CommCenterCellularProfile20kIsActiveFieldNumberE, 
                        __ZN3awd7metrics25CommCenterCellularProfile21CheckTypeAndMergeFromERKN20wireless_diagnostics6google8protobuf11MessageLiteE, 
                        __ZN3awd7metrics25CommCenterCellularProfile21InitAsDefaultInstanceEv, 
+                       __ZN3awd7metrics25CommCenterCellularProfile23kCarrierNameFieldNumberE, 
                        __ZN3awd7metrics25CommCenterCellularProfile23kHashedIccidFieldNumberE, 
                        __ZN3awd7metrics25CommCenterCellularProfile23kIsBootstrapFieldNumberE, 
                        __ZN3awd7metrics25CommCenterCellularProfile27MergePartialFromCodedStreamEPN20wireless_diagnostics6google8protobuf2io16CodedInputStreamE, 

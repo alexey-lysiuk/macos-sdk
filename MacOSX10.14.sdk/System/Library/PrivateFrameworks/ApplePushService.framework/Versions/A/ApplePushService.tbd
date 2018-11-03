@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C1F1D153-CB1A-3C12-93E5-CDD38F0481E3' ]
+uuids:           [ 'x86_64: F737E01A-E9D1-3A9A-B54B-CA1B9750A08D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ApplePushService.framework/Versions/A/ApplePushService
 exports:         

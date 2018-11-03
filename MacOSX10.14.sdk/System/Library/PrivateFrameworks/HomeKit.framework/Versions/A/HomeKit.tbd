@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2D550087-FA05-3218-BD25-8B26CDA0B6D3' ]
+uuids:           [ 'x86_64: 4EC1A575-F230-3A27-B04F-E111110FD318' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/HomeKit.framework/Versions/A/HomeKit
-current-version: 484.0.70
+current-version: 484.2.2
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CODER_RemoteLoginMessage_Error, _CODER_RemoteLoginMessage_SessionID, 
@@ -60,6 +60,7 @@ exports:
                        _HMAccessorySupportsIdentifyCodingKey, _HMAccessorySupportsMediaAccessControlCodingKey, 
                        _HMAccessorySymptomsHandlerUpdatedMessage, _HMAccessoryTargetControlSupportCodingKey, 
                        _HMAccessoryTargetControlSupportMessageKey, _HMAccessoryTargetControlUpdatedMessage, 
+                       _HMAccessoryTargetControllerHardwareSupportCodingKey, _HMAccessoryTargetControllerHardwareSupportMessageKey, 
                        _HMAccessoryTargetControllerSupportCodingKey, _HMAccessoryTargetControllerSupportMessageKey, 
                        _HMAccessoryUpdateControlTargetsMessageKey, _HMAccessoryWiFiNetworkInfoCodingKey, 
                        _HMActionSetTypeHomeArrival, _HMActionSetTypeHomeDeparture, 

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A2BB198C-0B1A-3988-8611-9A9BCCE650B5' ]
+uuids:           [ 'x86_64: 8D87A3ED-4CBD-300F-92E3-B1B79D7E0BF3' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MultitouchSupport.framework/Versions/A/MultitouchSupport
-current-version: 2400.15
+current-version: 2410.5
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

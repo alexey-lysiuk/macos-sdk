@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3DE86891-CEA4-373B-B2B5-F6EF8D86D522' ]
+uuids:           [ 'x86_64: B418C2E2-E553-34A7-A132-5E2B472A0359' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AppSandbox.framework/Versions/A/AppSandbox
 exports:         

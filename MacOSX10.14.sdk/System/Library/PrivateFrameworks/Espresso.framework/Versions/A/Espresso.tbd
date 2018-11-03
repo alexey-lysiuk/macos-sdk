@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 673D7C7E-62BC-3B81-8A32-B9AC3FD13A92' ]
+uuids:           [ 'x86_64: 7B2CB758-7FD9-3D6B-9BD4-AFD254008BEF' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Espresso.framework/Versions/A/Espresso
 current-version: 120

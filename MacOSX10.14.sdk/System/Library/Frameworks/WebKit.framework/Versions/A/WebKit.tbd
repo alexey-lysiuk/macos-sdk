@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5E4AF277-D207-3647-9D5C-A6F1543A2D4D' ]
+uuids:           [ 'x86_64: BFA28A42-A2DA-31A7-86F9-4838F5FEC3B1' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/WebKit.framework/Versions/A/WebKit
-current-version: 606.1.36
+current-version: 606.2.104
 exports:         
   - archs:           [ x86_64 ]
     re-exports:      [ /System/Library/Frameworks/WebKit.framework/Versions/A/Frameworks/WebCore.framework/Versions/A/WebCore, 

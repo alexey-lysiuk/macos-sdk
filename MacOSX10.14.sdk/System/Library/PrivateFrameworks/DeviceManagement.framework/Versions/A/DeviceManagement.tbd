@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A1A715CF-B2D6-3A63-911D-268B0D750599' ]
+uuids:           [ 'x86_64: B06DC6A8-9AC0-39C5-8C93-3BA02F2171C8' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DeviceManagement.framework/Versions/A/DeviceManagement
-current-version: 20.65
+current-version: 21.1
 exports:         
   - archs:           [ x86_64 ]
     re-exports:      [ /System/Library/PrivateFrameworks/Catalyst.framework/Versions/A/Catalyst ]
@@ -108,9 +108,9 @@ exports:
                        _DMFInvalidParameterErrorKey, _DMFInvalidPropertyErrorKey, 
                        _DMFItemNameErrorKey, _DMFItemPathErrorKey, _DMFLowestPolicyPriority, 
                        _DMFMachServiceName, _DMFObjectDescription, _DMFObjectDescriptionWithProperties, 
-                       _DMFPolicyLog, _DMFPolicyMachServiceName, _DMFProfileIdentifierErrorKey, 
-                       _DMFRMEchoStatusFail, _DMFRMEchoStatusOK, _DMFRMEchoStatusPending, 
-                       _DMFReportingRequirementsUpdateCoalescenceIntervalDefault, 
+                       _DMFPolicyLog, _DMFPolicyMachServiceName, _DMFPolicyUnlocalizedDisplayName, 
+                       _DMFProfileIdentifierErrorKey, _DMFRMEchoStatusFail, _DMFRMEchoStatusOK, 
+                       _DMFRMEchoStatusPending, _DMFReportingRequirementsUpdateCoalescenceIntervalDefault, 
                        _DMFSecuirtySupportsFileLevelEncryptionKey, _DMFSecurityFirewallSettingsKey, 
                        _DMFSecurityFirmwarePasswordStatusKey, _DMFSecurityFullDiskEncryptionEnabledKey, 
                        _DMFSecurityFullDiskEncryptionHasInstitutionalRecoveryKey, 

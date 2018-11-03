@@ -158,8 +158,6 @@ while(deviceCandidate != NULL)
 #include <IOKit/usb/IOUSBHostFamily.h>
 #include <IOKit/usb/IOUSBHostDevice.h>
 
-class IOSimpleReporter;
-
 /*!
  * @class       IOUSBHostInterface
  * @brief       The IOService object representing a USB interface
@@ -233,9 +231,6 @@ public:
     virtual void        close(IOService* forClient, IOOptionBits options = 0);
     
     virtual IOReturn    message(UInt32 type, IOService* provider,  void* argument = 0);
-
-    virtual IOReturn configureReport(IOReportChannelList* channels, IOReportConfigureAction action, void* result, void* destination);
-    virtual IOReturn updateReport(IOReportChannelList*channels, IOReportUpdateAction action, void* result, void* destination);
 
     virtual const char* stringFromReturn(IOReturn code);
 
@@ -449,13 +444,9 @@ protected:
     OSMetaClassDeclareReservedUsed(IOUSBHostInterface, 71);
     virtual IOReturn destroyPipesGated();
 
-    OSMetaClassDeclareReservedUsed(IOUSBHostInterface, 72);
-    virtual IOReturn configureReportGated(IOReportChannelList* channels, IOReportConfigureAction action, void* result, void* destination);
-
-    OSMetaClassDeclareReservedUsed(IOUSBHostInterface, 73);
-    virtual IOReturn updateReportGated(IOReportChannelList* channels, IOReportUpdateAction action, void* result, void* destination);
-
     // Protected pad slots for alternate setting and pipe management
+    OSMetaClassDeclareReservedUnused(IOUSBHostInterface, 72);
+    OSMetaClassDeclareReservedUnused(IOUSBHostInterface, 73);
     OSMetaClassDeclareReservedUnused(IOUSBHostInterface, 74);
     OSMetaClassDeclareReservedUnused(IOUSBHostInterface, 75);
     OSMetaClassDeclareReservedUnused(IOUSBHostInterface, 76);
@@ -537,9 +528,6 @@ protected:
 protected:
     struct tExpansionData
     {
-        IOLock*             _reportLock;
-        OSSet*              _reports;
-        IOSimpleReporter*   _idlePolicyReport;
     };
     tExpansionData* _expansionData;
 };

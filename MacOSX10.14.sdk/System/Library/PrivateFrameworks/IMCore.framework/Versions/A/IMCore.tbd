@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 572CDA41-7338-37E9-81D3-6FF0440253EF' ]
+uuids:           [ 'x86_64: 2584CCC8-4679-3AFA-AC7E-9071599039AD' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IMCore.framework/Versions/A/IMCore
 current-version: 800

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 49A3AE7F-D122-3087-B156-53DCA4B18D43' ]
+uuids:           [ 'x86_64: 9193647C-BF6C-39BE-BDAE-AF8AE0516D07' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreParsec.framework/Versions/A/CoreParsec
 exports:         

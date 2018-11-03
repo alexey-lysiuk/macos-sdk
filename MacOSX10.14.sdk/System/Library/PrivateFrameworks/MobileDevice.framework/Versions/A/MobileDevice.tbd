@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EB2F212B-FDEB-30D8-9678-0F2DE2E2EBA6' ]
+uuids:           [ 'x86_64: 08E91D2C-64CE-3BCF-BA7F-A98331C8B1B0' ]
 platform:        macosx
 flags:           [ not_app_extension_safe ]
 install-name:    /System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/MobileDevice

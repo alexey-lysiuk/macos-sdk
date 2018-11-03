@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D2F48E3D-79FC-32D7-B281-658EAD2CC50B' ]
+uuids:           [ 'x86_64: 61235BEA-BF5F-31B2-B9C1-DE722E15840F' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreBluetooth.framework/Versions/A/CoreBluetooth
 objc-constraint: none

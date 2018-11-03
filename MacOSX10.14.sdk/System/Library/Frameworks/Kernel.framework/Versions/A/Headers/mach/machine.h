@@ -325,6 +325,11 @@ typedef integer_t	cpu_threadtype_t;
  */
 #define CPU_SUBTYPE_ARM64_ALL           ((cpu_subtype_t) 0)
 #define CPU_SUBTYPE_ARM64_V8            ((cpu_subtype_t) 1)
+#define CPU_SUBTYPE_ARM64E              ((cpu_subtype_t) 2)
+
+/* CPU subtype feature flags for ptrauth on arm64e platforms */
+#define CPU_SUBTYPE_ARM64_PTR_AUTH_MASK 0x0f000000
+#define CPU_SUBTYPE_ARM64_PTR_AUTH_VERSION(x) (((x) & CPU_SUBTYPE_ARM64_PTR_AUTH_MASK) >> 24)
 
 /*
  *  ARM64_32 subtypes
@@ -372,6 +377,7 @@ typedef integer_t	cpu_threadtype_t;
 #define CPUFAMILY_ARM_TWISTER		0x92fb37c8
 #define CPUFAMILY_ARM_HURRICANE		0x67ceee93
 #define CPUFAMILY_ARM_MONSOON_MISTRAL	0xe81e7ef6
+#define CPUFAMILY_ARM_VORTEX_TEMPEST	0x07d34b9f
 
 /* The following synonyms are deprecated: */
 #define CPUFAMILY_INTEL_6_23	CPUFAMILY_INTEL_PENRYN

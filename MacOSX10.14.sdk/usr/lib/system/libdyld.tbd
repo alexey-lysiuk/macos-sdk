@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4B16C209-83D4-3817-9B62-C2F7FFB23755' ]
+uuids:           [ 'x86_64: 1B79A5CE-125F-301F-A441-C1869573AED0' ]
 platform:        macosx
 install-name:    /usr/lib/system/libdyld.dylib
-current-version: 625.13
+current-version: 635.2
 objc-constraint: none
 parent-umbrella: System
 exports:         

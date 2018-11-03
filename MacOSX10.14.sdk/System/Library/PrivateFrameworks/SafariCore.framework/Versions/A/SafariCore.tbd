@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 788B1927-EF2B-311A-8A6D-CC92F13EF1F4' ]
+uuids:           [ 'x86_64: F5845B79-81F1-335E-BF69-051B5063B621' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SafariCore.framework/Versions/A/SafariCore
-current-version: 606.1.36
+current-version: 606.2.104
 compatibility-version: 0
 exports:         
   - archs:           [ x86_64 ]

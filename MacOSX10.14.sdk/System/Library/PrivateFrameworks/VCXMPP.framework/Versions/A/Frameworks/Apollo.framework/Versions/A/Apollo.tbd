@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3EABC4F4-941D-3E4C-809E-1736ADD04ABB' ]
+uuids:           [ 'x86_64: B240D6BC-D209-3309-9D76-38A6C1AC200A' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/VCXMPP.framework/Versions/A/Frameworks/Apollo.framework/Versions/A/Apollo
 exports:         

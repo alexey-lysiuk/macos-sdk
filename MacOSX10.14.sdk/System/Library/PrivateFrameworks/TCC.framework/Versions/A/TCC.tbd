@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 55C045F7-D8AB-3BE6-970B-9457FA78E7E3' ]
+uuids:           [ 'x86_64: B84E7234-A993-328C-A054-EFEB0402C55C' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/TCC.framework/Versions/A/TCC
 objc-constraint: none
@@ -12,9 +12,9 @@ exports:
                        _TCCAccessGetOverride, _TCCAccessOverride, _TCCAccessPreflight, 
                        _TCCAccessPreflightWithAuditToken, _TCCAccessRequest, _TCCAccessRequestIndirect, 
                        _TCCAccessReset, _TCCAccessResetForBundle, _TCCAccessResetForBundleId, 
-                       _TCCAccessResetForPath, _TCCAccessResetPoliciesExcept, _TCCAccessRestricted, 
-                       _TCCAccessSelectPolicyForExtensionWithIdentifier, _TCCAccessSet, 
-                       _TCCAccessSetForAuditToken, _TCCAccessSetForAuditTokenWithOptions, 
+                       _TCCAccessResetForBundleIdWithAuditToken, _TCCAccessResetForPath, 
+                       _TCCAccessResetPoliciesExcept, _TCCAccessRestricted, _TCCAccessSelectPolicyForExtensionWithIdentifier, 
+                       _TCCAccessSet, _TCCAccessSetForAuditToken, _TCCAccessSetForAuditTokenWithOptions, 
                        _TCCAccessSetForBundle, _TCCAccessSetForBundleId, _TCCAccessSetForBundleIdAndCodeRequirement, 
                        _TCCAccessSetForCodeIdentity, _TCCAccessSetForIndirectObject, 
                        _TCCAccessSetForPath, _TCCAccessSetOverride, _TCCAccessSetPidResponsibleForPid, 

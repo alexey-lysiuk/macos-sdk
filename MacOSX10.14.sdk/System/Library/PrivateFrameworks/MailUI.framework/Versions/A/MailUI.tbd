@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5D08A96B-F71C-352F-8A28-41DCEC10E38E' ]
+uuids:           [ 'x86_64: DAE4D76A-6454-3104-9E16-43450A1937FE' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MailUI.framework/Versions/A/MailUI
-current-version: 3445.100.39
+current-version: 3445.100.43
 exports:         
   - archs:           [ x86_64 ]
     allowable-clients: [ Mail, MailShareExtension, MailUIWebBundle ]
@@ -12,8 +12,8 @@ exports:
                        _MUIAttachmentInfoKeySnapshot, _MUIBundleResourceProtocolScheme, 
                        _MUIDefaultsKeyEnableAutomaticListInsertion, _MUIDismissAutocompletionNotification, 
                        _MUIDocumentLoadContextKeyAttachmentRegistrationScript, _MUIDocumentLoadContextKeyBaseURLHost, 
-                       _MUIDocumentLoadContextKeyBlockRemoteContent, _MUIDocumentLoadContextKeyDataDetectorsContext, 
-                       _MUIDocumentLoadContextKeyJSDocumentContext, _MUIKeyPathAddresses, 
+                       _MUIDocumentLoadContextKeyDataDetectorsContext, _MUIDocumentLoadContextKeyJSDocumentContext, 
+                       _MUIDocumentLoadContextKeyMessageContentTypeToBlock, _MUIKeyPathAddresses, 
                        _MUIRemoteImageCollectorFullResolutionDataDidBecomeAvailableNotification, 
                        _MUISegmentedControlForDescriptors, _MUISelectionContextDictionaryKeyAbsoluteImageURL, 
                        _MUISelectionContextDictionaryKeyAbsoluteLinkURL, _MUISelectionContextDictionaryKeyAbsoluteMediaURL, 

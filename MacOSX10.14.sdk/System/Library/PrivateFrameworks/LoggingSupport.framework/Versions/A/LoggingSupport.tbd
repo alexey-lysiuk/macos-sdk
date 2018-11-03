@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F206FBD4-C8E3-390B-8126-A76780F2C862' ]
+uuids:           [ 'x86_64: F0A16F21-DF2A-3415-960F-4E6D36A92BB9' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/LoggingSupport.framework/Versions/A/LoggingSupport
-current-version: 906.200.86
+current-version: 906.220.1
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _OSLogClearOptions, _OSLogConstructArchive, _OSLogConstructHighVolumeAgeLimit, 

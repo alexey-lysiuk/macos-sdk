@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9CC4325B-DC0C-38CC-9075-142CB2F1F729' ]
+uuids:           [ 'x86_64: 02B2F8D5-D305-355F-B0DF-1598429F987E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/Versions/A/CoreSuggestionsInternals
 exports:         
@@ -25,16 +25,17 @@ exports:
                        _SGFeatureVectorSize, _SGFullwidthLatinToHalfwidth, _SGGetNameCharacterSet, 
                        _SGGetNounsAndNames, _SGGetQuotationMarkCharacterSet, _SGGuessNamingTradition, 
                        _SGHexToBytes, _SGInhumanityFeatureVecLog, _SGIsAllDigits, 
-                       _SGIsAllUppercase, _SGJSWatchdogTimerMakeVMWithTimeout, _SGJoinStrings, 
-                       _SGKeepOnlyCharacterSet, _SGLooksLikeNumber, _SGMCHeaderKeyBcc, 
-                       _SGMCHeaderKeyCc, _SGMCHeaderKeyListId, _SGMCHeaderKeyMessageId, 
-                       _SGMCHeaderKeyReceived, _SGMCHeaderKeyReplyTo, _SGMachTimeToNanoseconds, 
-                       _SGMailAttachmentMimeTypeCalendar, _SGMailAttachmentMimeTypeVcard, 
-                       _SGMemoryHeavyOperation, _SGMurmurhashString, _SGNamesAsciify, 
-                       _SGNamesIsMostlyAlpha, _SGNamesOnlyNameChars, _SGNormalizeAddress, 
-                       _SGNormalizeCNAddress, _SGNormalizeEmailAddress, _SGNormalizeInstantMessageAddress, 
-                       _SGNormalizeName, _SGNormalizePhoneNumber, _SGNormalizePhoneNumberCached, 
-                       _SGNormalizeSocialProfile, _SGNormalizeUnicodeString, _SGNormalizeUnicodeStringMinimally, 
+                       _SGIsAllUppercase, _SGIsPhoneNumberWithRangeBlacklisted, _SGJSWatchdogTimerMakeVMWithTimeout, 
+                       _SGJoinStrings, _SGKeepOnlyCharacterSet, _SGLooksLikeNumber, 
+                       _SGMCHeaderKeyBcc, _SGMCHeaderKeyCc, _SGMCHeaderKeyListId, 
+                       _SGMCHeaderKeyMessageId, _SGMCHeaderKeyReceived, _SGMCHeaderKeyReplyTo, 
+                       _SGMachTimeToNanoseconds, _SGMailAttachmentMimeTypeCalendar, 
+                       _SGMailAttachmentMimeTypeVcard, _SGMemoryHeavyOperation, _SGMurmurhashString, 
+                       _SGNamesAsciify, _SGNamesIsMostlyAlpha, _SGNamesOnlyNameChars, 
+                       _SGNormalizeAddress, _SGNormalizeCNAddress, _SGNormalizeEmailAddress, 
+                       _SGNormalizeInstantMessageAddress, _SGNormalizeName, _SGNormalizePhoneNumber, 
+                       _SGNormalizePhoneNumberCached, _SGNormalizeSocialProfile, 
+                       _SGNormalizeUnicodeString, _SGNormalizeUnicodeStringMinimally, 
                        _SGNotUserInitiated, _SGPhoneNumberMatchInSet, _SGPostalAddressParse, 
                        _SGPostalAddressParsedCompare, _SGPostalAddressUnparse, _SGPostalAddressesMatch, 
                        _SGPostalAddressesMatchWithParsed, _SGPreferChineseNamesForTesting, 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8BAA4A30-57FB-3BC1-BBCC-6D54419B972E' ]
+uuids:           [ 'x86_64: 074D83D0-2B73-3ED1-880A-F0834AEE5F2D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/GameCenterUI.framework/Versions/A/GameCenterUI
 exports:         

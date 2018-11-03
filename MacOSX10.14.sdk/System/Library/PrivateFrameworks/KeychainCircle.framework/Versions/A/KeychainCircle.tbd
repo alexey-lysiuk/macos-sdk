@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 10A17A9D-564E-3841-A433-D6D7401ED733' ]
+uuids:           [ 'x86_64: 1DB4E862-C010-38BA-B535-5DAD679FEADA' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/KeychainCircle.framework/Versions/A/KeychainCircle
 exports:         

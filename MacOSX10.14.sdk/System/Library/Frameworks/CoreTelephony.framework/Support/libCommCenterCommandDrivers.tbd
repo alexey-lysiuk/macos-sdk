@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A635CB31-E9BA-3003-9A5E-5AE6F637F73E' ]
+uuids:           [ 'x86_64: 30E71E3A-E11B-3AFA-9B47-EFFC45E79FA3' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreTelephony.framework/Support/libCommCenterCommandDrivers.dylib
 objc-constraint: none
@@ -17,6 +17,7 @@ exports:
                        __Z15read_rest_valueR3MCCRKN3xpc6objectE, __Z15read_rest_valueR3MNCRKN3xpc6objectE, 
                        __Z15read_rest_valueR7GsmCellRKN3xpc6objectE, __Z15read_rest_valueR7LteCellRKN3xpc6objectE, 
                        __Z15read_rest_valueR8UmtsCellRKN3xpc6objectE, __Z15read_rest_valueR9MCCAndMNCRKN3xpc6objectE, 
+                       __Z15sAreSimsSettledRKNSt3__110shared_ptrIK8RegistryEERKNS_3mapIN10subscriber7SimSlotE12BasicSimInfoNS_4lessIS8_EENS_9allocatorINS_4pairIKS8_S9_EEEEEE, 
                        __Z16write_rest_valueRK10Cdma1xCell, __Z16write_rest_valueRK11TDSCDMACell, 
                        __Z16write_rest_valueRK12BasicSimInfo, __Z16write_rest_valueRK12CdmaEvdoCell, 
                        __Z16write_rest_valueRK16CSGSearchRequest, __Z16write_rest_valueRK16CSGServingSystem, 
@@ -28,15 +29,18 @@ exports:
                        __Z17sIsSimTypePresentRK12BasicSimInfoN10subscriber7SimTypeE, 
                        __Z18decodeOperatorNamePKN3ctu10LoggerBaseINSt3__110shared_ptrINS_9LogServerEEEEERKNS1_6vectorIhNS1_9allocatorIhEEEE16DataCodingScheme, 
                        __Z18sGetSimTypeForCardRK12BasicSimInfoN10subscriber7SimCardE, 
+                       __Z18sIsSimReadyForSlotN10subscriber7SimSlotERKNSt3__13mapIS0_12BasicSimInfoNS1_4lessIS0_EENS1_9allocatorINS1_4pairIKS0_S3_EEEEEE, 
                        __Z19enforceStringIsUtf8PKN3ctu10LoggerBaseINSt3__110shared_ptrINS_9LogServerEEEEERNS1_12basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE, 
-                       __Z20convertLteBandToMaskt, __Z21convertLteMaskToBandsy, __Z23convertLteBandToInteger7LTEBand, 
+                       __Z19sDidSimStatesChangeRKNSt3__13mapIN10subscriber7SimSlotE12BasicSimInfoNS_4lessIS2_EENS_9allocatorINS_4pairIKS2_S3_EEEEEESD_, 
+                       __Z20convertLteBandToMaskt, __Z20sGetChangedSimStatesRKNSt3__13mapIN10subscriber7SimSlotE12BasicSimInfoNS_4lessIS2_EENS_9allocatorINS_4pairIKS2_S3_EEEEEESD_, 
+                       __Z21convertLteMaskToBandsy, __Z23convertLteBandToInteger7LTEBand, 
                        __Z23sIsEmptyEsimCapableCardRK12BasicSimInfo, __Z3end8FileType, 
                        __Z5begin8FileType, __Z8asString14DormancyStatus, __Z8asString14FileFormatType, 
                        __Z8asString14FilePushReason, __Z8asString16VinylDriverError, 
                        __Z8asString16VinylDriverReady, __Z8asString18FileTransferResult, 
                        __Z8asString18FileTransferStatus, __Z8asString26ApplicationProcessorStatus, 
-                       __Z8asString27ClosedSubscriberGroupAction, __Z8asString8BandType, 
-                       __Z8asString8FileType, __Z8asStringN21NetworkListScanResult5StateE, 
+                       __Z8asString27CellularPlanBootstrapStatus, __Z8asString27ClosedSubscriberGroupAction, 
+                       __Z8asString8BandType, __Z8asString8FileType, __Z8asStringN21NetworkListScanResult5StateE, 
                        __Z8asStringN22PhonebookCommandDriver13ResponseError5ErrorE, 
                        __Z8asStringN22PhonebookCommandDriver13ResponseError7CommandE, 
                        __Z8asStringN23ActivationCommandDriver13ResponseError5ErrorE, 
@@ -359,8 +363,7 @@ exports:
                        __ZN4rest16write_rest_valueERKNS_13NetworkRejectE, __ZN4rest16write_rest_valueERKNS_14ServingNetworkE, 
                        __ZN4rest16write_rest_valueERKNS_17SimFileAttributesE, __ZN4rest16write_rest_valueERKNS_18ImsPreferenceStateE, 
                        __ZN4rest16write_rest_valueERKNS_8DataModeE, __ZN4rest17kDefaultDataModesE, 
-                       __ZN4rest19kDefaultDeviceImeisE, __ZN4rest21kDefaultCipherDomainsE, 
-                       __ZN4rest21kDefaultPsiSmscValuesE, __ZN4rest22kDefaultDeviceImeiSvnsE, 
+                       __ZN4rest21kDefaultCipherDomainsE, __ZN4rest21kDefaultPsiSmscValuesE, 
                        __ZN4rest22kDefaultNetworkRejectsE, __ZN4rest22kDefaultRoamingResultsE, 
                        __ZN4rest23kDefaultInHomeCountriesE, __ZN4rest23kDefaultIsimFilesStatusE, 
                        __ZN4rest23kDefaultLastVisibleMccsE, __ZN4rest23kDefaultLastVisibleMncsE, 
@@ -574,8 +577,7 @@ exports:
                        __ZneRKNSt3__13mapIN10subscriber7SimSlotE18RegistrationStatusNS_4lessIS2_EENS_9allocatorINS_4pairIKS2_S3_EEEEEESD_, 
                        __ZppR8FileType, _kDefaultSMSCommandTimeoutMS ]
     weak-def-symbols: [ __ZTI17SimInstanceLoggerI22BasebandSettingsDriverE, __ZTI17SimInstanceLoggerIN10subscriber16SimCommandDriverEE, 
-                        __ZTI19SimInstanceLoggableI22BasebandSettingsDriverE, __ZTI19SimInstanceLoggableIN10subscriber16SimCommandDriverEE, 
-                        __ZTIN3ctu10LoggerBaseINSt3__110shared_ptrINS_9LogServerEEEEE, 
+                        __ZTI19SimInstanceLoggableI22BasebandSettingsDriverE, __ZTIN3ctu10LoggerBaseINSt3__110shared_ptrINS_9LogServerEEEEE, 
                         __ZTIN3ctu14SharedLoggableI15ATCommandDriverNS_10LoggerBaseINSt3__110shared_ptrINS_9LogServerEEEEEEE, 
                         __ZTIN3ctu14SharedLoggableI15CallAudioDriverNS_10LoggerBaseINSt3__110shared_ptrINS_9LogServerEEEEEEE, 
                         __ZTIN3ctu14SharedLoggableI16AQMCommandDriverNS_10LoggerBaseINSt3__110shared_ptrINS_9LogServerEEEEEEE, 
@@ -669,8 +671,7 @@ exports:
                         __ZTINSt3__123enable_shared_from_thisIN10subscriber16SimCommandDriverEEE, 
                         __ZTINSt3__123enable_shared_from_thisIN3awd16AwdCommandDriverEEE, 
                         __ZTS17SimInstanceLoggerI22BasebandSettingsDriverE, __ZTS17SimInstanceLoggerIN10subscriber16SimCommandDriverEE, 
-                        __ZTS19SimInstanceLoggableI22BasebandSettingsDriverE, __ZTS19SimInstanceLoggableIN10subscriber16SimCommandDriverEE, 
-                        __ZTSN3ctu10LoggerBaseINSt3__110shared_ptrINS_9LogServerEEEEE, 
+                        __ZTS19SimInstanceLoggableI22BasebandSettingsDriverE, __ZTSN3ctu10LoggerBaseINSt3__110shared_ptrINS_9LogServerEEEEE, 
                         __ZTSN3ctu14SharedLoggableI15ATCommandDriverNS_10LoggerBaseINSt3__110shared_ptrINS_9LogServerEEEEEEE, 
                         __ZTSN3ctu14SharedLoggableI15CallAudioDriverNS_10LoggerBaseINSt3__110shared_ptrINS_9LogServerEEEEEEE, 
                         __ZTSN3ctu14SharedLoggableI16AQMCommandDriverNS_10LoggerBaseINSt3__110shared_ptrINS_9LogServerEEEEEEE, 

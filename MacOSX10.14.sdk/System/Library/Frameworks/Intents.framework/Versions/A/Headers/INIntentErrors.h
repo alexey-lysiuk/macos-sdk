@@ -28,6 +28,7 @@ typedef NS_ENUM(NSInteger, INIntentErrorCode) {
     
     // Requests
     INIntentErrorRequestTimedOut = 3001,
+    INIntentErrorMissingInformation = 3002,
     
     // User Vocabulary Sync
     INIntentErrorInvalidUserVocabularyFileLocation = 4000,

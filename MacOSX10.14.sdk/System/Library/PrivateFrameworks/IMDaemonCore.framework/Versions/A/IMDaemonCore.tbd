@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FFFF8BC2-814B-314C-868B-FCC3F9AB4CFF' ]
+uuids:           [ 'x86_64: AFC6B895-B61C-32FA-BB18-D6938D718914' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IMDaemonCore.framework/Versions/A/IMDaemonCore
 current-version: 800
@@ -65,7 +65,11 @@ exports:
                        _IMInitialAttachmentSyncFailed, _IMInitialAttachmentSyncInitiated, 
                        _IMInitialChatSyncFailed, _IMInitialChatSyncInitiated, _IMInitialMessageSyncFailed, 
                        _IMInitialMessageSyncInitiated, _IMInitialSyncCompleted, _IMInitialSyncInitiated, 
-                       _IMItemFuzzDateForUnencryptedTime, _IMManateeIdentiyFetchAttemptFullSync, 
+                       _IMItemFuzzDateForUnencryptedTime, _IMLastCKSyncWasNotWithin3Days, 
+                       _IMLastCKSyncWasNotWithin7Days, _IMLastCKSyncWasWithin3Days, 
+                       _IMLastCKSyncWasWithin7Days, _IMLastCompleteDBCKSyncWasNotWithin3Days, 
+                       _IMLastCompleteDBCKSyncWasNotWithin7Days, _IMLastCompleteDBCKSyncWasWithin3Days, 
+                       _IMLastCompleteDBCKSyncWasWithin7Days, _IMManateeIdentiyFetchAttemptFullSync, 
                        _IMManateeIdentiyFetchAttemptFullSyncFailed, _IMManateeIdentiyFetchAttemptRestoreSync, 
                        _IMManateeIdentiyFetchAttemptRestoreSyncFailed, _IMManateeNotAvailable, 
                        _IMMaxRecoverableAttemptReached, _IMMessageGuidFromIMFileTransferGuid, 

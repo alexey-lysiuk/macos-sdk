@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0D587574-4A5D-3FE9-86A5-C6A0CECCFF92' ]
+uuids:           [ 'x86_64: 3FC5C605-00D9-3230-9447-9CDAA1B63BF9' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Mail.framework/Versions/A/Mail
-current-version: 3445.100.39
+current-version: 3445.100.43
 exports:         
   - archs:           [ x86_64 ]
     allowable-clients: [ CoreSuggestionsTests, DebugBundle, EmailAuthenticationPlugin, 

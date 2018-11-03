@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 84B0814D-7DE5-3518-9BA3-2DA235E0EA35' ]
+uuids:           [ 'x86_64: 1AE1A7AE-506D-3A52-B710-9CFB16414EDC' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreBrightness.framework/Versions/A/CoreBrightness
 exports:         

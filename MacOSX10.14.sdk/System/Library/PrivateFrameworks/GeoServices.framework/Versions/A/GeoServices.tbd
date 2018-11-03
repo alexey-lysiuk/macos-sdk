@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8662E9B6-2249-359D-B7A9-FE8BE9B55B51' ]
+uuids:           [ 'x86_64: 8C22C9A9-B322-3CED-9714-9F3365845C4C' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/GeoServices.framework/Versions/A/GeoServices
-current-version: 1364.20.2
+current-version: 1364.21.8
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _AnalyticsLoggingSubsystem, _DefaultLoggingSubsystem, _GEO3DBuildingFeatureAtIndex, 
@@ -519,8 +519,9 @@ exports:
                        _GEOVoltaireProblemSubmissionURLKey, _GEOWaitForURLsFromManifestAndThen, 
                        _GEOWaitForURLsFromManifestAndThenOnQueue, _GEOWalkingOptionsReadFrom, 
                        _GEOWaypointIDReadFrom, _GEOWaypointLocationReadFrom, _GEOWaypointPlaceReadFrom, 
-                       _GEOWaypointReadFrom, _GEOWaypointTypedReadFrom, _GEOWiFiConnectionQualityProbeURLKey, 
-                       _GEOWiFiConnectionQualityReadFrom, _GEOWifiAccessPointReadFrom, 
+                       _GEOWaypointReadFrom, _GEOWaypointTypedReadFrom, _GEOWiFiAPReadFrom, 
+                       _GEOWiFiConnectionQualityProbeURLKey, _GEOWiFiConnectionQualityReadFrom, 
+                       _GEOWiFiQualityFeedbackReadFrom, _GEOWifiAccessPointReadFrom, 
                        _GEOWrapAngleDegrees, _GEOXPCErrorFromReply, _GEOXPCSendMessage, 
                        _GEOXPCSendMessageWithReply, _GEOXPCSendMessageWithReplyReportingProgress, 
                        _GEOXPCSendMessageWithReplySync, _GEOXPCSendXPCMessage, _GEOXPCSendXPCMessageWithReply, 
@@ -975,9 +976,10 @@ exports:
                        GEOVoltaireSimple3DTileRequester, GEOVoltaireSimpleTileRequester, 
                        GEOVoltaireTileRequester, GEOWalkingOptions, GEOWaypoint, 
                        GEOWaypointID, GEOWaypointLocation, GEOWaypointPlace, GEOWaypointTyped, 
-                       GEOWiFiConnectionQuality, GEOWifiAccessPoint, GEOXPCClientLogAdaptor, 
-                       GEOXPCRemoteLogAdaptor, GEOXPCReply, GEOXPCRequest, GEOXPCUtil, 
-                       GeoIpLookupResult, LOGMSGEVENTBookedTable, LOGMSGEVENTLogMsgEventRideBookedSession, 
+                       GEOWiFiAP, GEOWiFiConnectionQuality, GEOWiFiQualityFeedback, 
+                       GEOWifiAccessPoint, GEOXPCClientLogAdaptor, GEOXPCRemoteLogAdaptor, 
+                       GEOXPCReply, GEOXPCRequest, GEOXPCUtil, GeoIpLookupResult, 
+                       LOGMSGEVENTBookedTable, LOGMSGEVENTLogMsgEventRideBookedSession, 
                        LOGMSGEVENTLogMsgEventRideBookingSession, LOGMSGEVENTLogMsgEventTableBookedSession, 
                        LOGMSGEVENTLogMsgEventTableBookingSession, LOGMSGEVENTRideBookingIntentResponseFailure, 
                        _GEODirectionsError, _GEOMapURLBuilder, _GEOMapURLParser, 

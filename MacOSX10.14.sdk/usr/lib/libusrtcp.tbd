@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 07B2AEC8-5FD4-34BE-B35B-B595283D9DC9' ]
+uuids:           [ 'x86_64: 7AB42596-89F7-3026-8289-AB2682153A36' ]
 platform:        macosx
 install-name:    /usr/lib/libusrtcp.dylib
 objc-constraint: none

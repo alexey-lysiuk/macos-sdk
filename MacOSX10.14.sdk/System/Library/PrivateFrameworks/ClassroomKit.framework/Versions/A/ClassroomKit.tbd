@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 094C23A8-D1D4-3982-9464-E54746F35282' ]
+uuids:           [ 'x86_64: 061967F9-AB4F-3DF4-AA50-570829CF1F58' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ClassroomKit.framework/Versions/A/ClassroomKit
 exports:         

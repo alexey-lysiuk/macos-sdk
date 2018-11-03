@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 19E41424-B956-34DF-AE02-9822308FA3DC' ]
+uuids:           [ 'x86_64: 735EEBA3-C63B-38C8-A1A7-23B12C2E9550' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreWLAN.framework/Versions/A/CoreWLAN
 exports:         

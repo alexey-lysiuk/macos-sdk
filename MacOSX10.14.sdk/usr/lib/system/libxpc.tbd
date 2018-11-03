@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0A8747D1-33AA-37E1-B97A-BA9B95FE4E8C' ]
+uuids:           [ 'x86_64: B2137772-E202-3656-A089-F6DD517007D5' ]
 platform:        macosx
 install-name:    /usr/lib/system/libxpc.dylib
-current-version: 1336.201.2
+current-version: 1336.220.5
 parent-umbrella: System
 exports:         
   - archs:           [ x86_64 ]

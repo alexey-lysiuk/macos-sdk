@@ -133,15 +133,18 @@
 .\" ========================================================================
 .\"
 .IX Title "XML::Simple 3"
-.TH XML::Simple 3 "2012-06-20" "perl v5.18.2" "User Contributed Perl Documentation"
+.TH XML::Simple 3 "2018-03-17" "perl v5.18.2" "User Contributed Perl Documentation"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
 .nh
 .SH "NAME"
-XML::Simple \- Easily read/write XML (esp config files)
+XML::Simple \- An API for simple XML files
 .SH "SYNOPSIS"
 .IX Header "SYNOPSIS"
+\&\s-1PLEASE DO NOT USE THIS MODULE IN NEW CODE. \s0 If you ignore this
+warning and use it anyway, the \f(CW\*(C`qw(:strict)\*(C'\fR mode will save you a little pain.
+.PP
 .Vb 1
 \&    use XML::Simple qw(:strict);
 \&
@@ -168,12 +171,17 @@ Note, in these examples, the square brackets are used to denote optional items
 not to imply items should be supplied in arrayrefs.
 .SH "STATUS OF THIS MODULE"
 .IX Header "STATUS OF THIS MODULE"
-The use of this module in new code is discouraged.  Other modules are available
-which provide more straightforward and consistent interfaces.  In particular,
-XML::LibXML is highly recommended.
+The use of this module in new code is \fBstrongly discouraged\fR.  Other modules
+are available which provide more straightforward and consistent interfaces.  In
+particular, XML::LibXML is highly recommended and you can refer to
+Perl XML::LibXML by Example <http://grantm.github.io/perl-libxml-by-example/>
+for a tutorial introduction.
 .PP
-The major problems with this module are the large number of options and the
-arbitrary ways in which these options interact \- often with unexpected results.
+XML::Twig is another excellent alternative.
+.PP
+The major problems with this module are the large number of options (some of
+which have unfortunate defaults) and the arbitrary ways in which these options
+interact \- often producing unexpected results.
 .PP
 Patches with bug fixes and documentation fixes are welcome, but new features
 are unlikely to be added.
@@ -285,7 +293,7 @@ case, you might want to read \*(L"\s-1WHERE TO FROM HERE\s0?\*(R".
 .IX Header "DESCRIPTION"
 The XML::Simple module provides a simple \s-1API\s0 layer on top of an underlying \s-1XML\s0
 parsing module (either XML::Parser or one of the \s-1SAX2\s0 parser modules).  Two
-functions are exported: \f(CW\*(C`XMLin()\*(C'\fR and \f(CW\*(C`XMLout()\*(C'\fR.  Note: you can explicity
+functions are exported: \f(CW\*(C`XMLin()\*(C'\fR and \f(CW\*(C`XMLout()\*(C'\fR.  Note: you can explicitly
 request the lower case versions of the function names: \f(CW\*(C`xml_in()\*(C'\fR and
 \&\f(CW\*(C`xml_out()\*(C'\fR.
 .PP
@@ -474,7 +482,7 @@ synchronised with the clock where your script is run, updates to the source \s-1
 file may appear to be ignored.
 .SS "ContentKey => 'keyname' \fI# in+out \- seldom used\fP"
 .IX Subsection "ContentKey => 'keyname' # in+out - seldom used"
-When text content is parsed to a hash value, this option let's you specify a
+When text content is parsed to a hash value, this option lets you specify a
 name for the hash key to override the default 'content'.  So for example:
 .PP
 .Vb 1
@@ -763,7 +771,7 @@ rolled up into a scalar rather than an array and therefore will not be folded
 (since only arrays get folded).
 .SS "KeyAttr => { list } \fI# in+out \- important\fP"
 .IX Subsection "KeyAttr => { list } # in+out - important"
-This alternative (and preferred) method of specifiying the key attributes
+This alternative (and preferred) method of specifying the key attributes
 allows more fine grained control over which elements are folded and on which
 attributes.  For example the option 'KeyAttr => { package => 'id' } will cause
 any package elements to be folded on the 'id' attribute.  No other elements
@@ -772,7 +780,8 @@ which have an 'id' attribute will be folded at all.
 Note: \f(CW\*(C`XMLin()\*(C'\fR will generate a warning (or a fatal error in \*(L"\s-1STRICT MODE\*(R"\s0)
 if this syntax is used and an element which does not have the specified key
 attribute is encountered (eg: a 'package' element without an 'id' attribute, to
-use the example above).  Warnings will only be generated if \fB\-w\fR is in force.
+use the example above).  Warnings can be suppressed with the lexical
+\&\f(CW\*(C`no warnings;\*(C'\fR pragma or \f(CW\*(C`no warnings \*(AqXML::Simple\*(Aq;\*(C'\fR.
 .PP
 Two further variations are made possible by prefixing a '+' or a '\-' character
 to the attribute name:
@@ -1117,6 +1126,10 @@ You can make your own class which inherits from XML::Simple and overrides
 certain behaviours.  The following methods may provide useful 'hooks' upon
 which to hang your modified behaviour.  You may find other undocumented methods
 by examining the source, but those may be subject to change in future releases.
+.IP "\fInew_xml_parser()\fR" 4
+.IX Item "new_xml_parser()"
+This method will be called when a new XML::Parser object must be constructed
+(either because \s-1XML::SAX\s0 is not installed or XML::Parser is preferred).
 .IP "handle_options(direction, name => value ...)" 4
 .IX Item "handle_options(direction, name => value ...)"
 This method will be called when one of the parsing methods or the \f(CW\*(C`XMLout()\*(C'\fR
@@ -1146,6 +1159,11 @@ should appear in the output.
 .IX Item "escape_value(string)"
 Called from \f(CW\*(C`XMLout()\*(C'\fR, takes a string and returns a copy of the string with
 \&\s-1XML\s0 character escaping rules applied.
+.IP "escape_attr(string)" 4
+.IX Item "escape_attr(string)"
+Called from \f(CW\*(C`XMLout()\*(C'\fR, to handle attribute values.  By default, just calls
+\&\f(CW\*(C`escape_value()\*(C'\fR, but you can override this method if you want attributes
+escaped differently than text content.
 .IP "numeric_escape(string)" 4
 .IX Item "numeric_escape(string)"
 Called from \f(CW\*(C`escape_value()\*(C'\fR, to handle non-ASCII characters (depending on the
@@ -1194,8 +1212,8 @@ KeyAttr hash.
 .IP "\(bu" 4
 Data error \- KeyAttr is set to say { part => 'partnum' } but the \s-1XML\s0 contains
 one or more <part> elements without a 'partnum' attribute (or nested
-element).  Note: if strict mode is not set but \-w is, this condition triggers a
-warning.
+element).  Note: if strict mode is not set but \f(CW\*(C`use warnings;\*(C'\fR is in force,
+this condition triggers a warning.
 .IP "\(bu" 4
 Data error \- as above, but non-unique values are present in the key attribute
 (eg: more than one <part> element with the same partnum).  This will
@@ -1466,7 +1484,7 @@ The <anon> tag can be used to form anonymous arrays:
 \&    }
 .Ve
 .PP
-Anonymous arrays can be nested to arbirtrary levels and as a special case, if
+Anonymous arrays can be nested to arbitrary levels and as a special case, if
 the surrounding tags for an \s-1XML\s0 document contain only an anonymous array the
 arrayref will be returned directly rather than the usual hashref:
 .PP
@@ -1521,7 +1539,7 @@ You would never use a hash key that was not a legal \s-1XML\s0 element name
 You don't need help converting between different encodings
 .PP
 In a serious \s-1XML\s0 project, you'll probably outgrow these assumptions fairly
-quickly.  This section of the document used to offer some advice on chosing a
+quickly.  This section of the document used to offer some advice on choosing a
 more powerful option.  That advice has now grown into the 'Perl\-XML \s-1FAQ\s0'
 document which you can find at: <http://perl\-xml.sourceforge.net/faq/>
 .PP
@@ -1529,7 +1547,7 @@ The advice in the \s-1FAQ\s0 boils down to a quick explanation of tree versus
 event based parsers and then recommends:
 .PP
 For event based parsing, use \s-1SAX \s0(do not set out to write any new code for
-XML::Parser's handler \s-1API \-\s0 it is obselete).
+XML::Parser's handler \s-1API \-\s0 it is obsolete).
 .PP
 For tree-based parsing, you could choose between the 'Perlish' approach of
 XML::Twig and more standards based \s-1DOM\s0 implementations \- preferably one with

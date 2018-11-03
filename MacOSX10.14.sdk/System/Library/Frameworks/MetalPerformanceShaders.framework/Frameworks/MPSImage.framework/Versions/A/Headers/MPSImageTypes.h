@@ -66,7 +66,6 @@ typedef NS_ENUM( NSUInteger, MPSAlphaType )
 #endif
 ;
     
-    
 
 #ifdef __cplusplus
 }

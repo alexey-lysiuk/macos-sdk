@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7D5FB79E-1121-3DB0-9CBE-C023835ACE60' ]
+uuids:           [ 'x86_64: 1B488612-4C7F-3D9D-B6DC-64CF8D2CB3D6' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Symbolication.framework/Versions/A/Symbolication
-current-version: 64254.5
+current-version: 64460.8
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _VMUBacktraceIsExcludedMarker, _VMUEnumerateVMAnnotatedMallocObjectsWithBlock, 

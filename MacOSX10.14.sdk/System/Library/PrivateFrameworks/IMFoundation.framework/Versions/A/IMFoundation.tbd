@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A3B33CE3-1297-3E05-A82D-6D5B913389F9' ]
+uuids:           [ 'x86_64: 0B3040A6-7DD8-3C63-BECC-F0846DDC368C' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IMFoundation.framework/Versions/A/IMFoundation
 current-version: 800

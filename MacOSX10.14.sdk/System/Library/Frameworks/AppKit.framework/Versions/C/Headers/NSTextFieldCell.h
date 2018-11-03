@@ -41,7 +41,8 @@ typedef NS_ENUM(NSUInteger, NSTextFieldBezelStyle) {
         unsigned int allowsDefaultTightening:1;
         unsigned int enableCP:1;
         unsigned int automaticCompletionDisabled:1;
-        unsigned int reservedTextFieldCell:7;
+        unsigned int determiningMenuItemTextColor:1;
+        unsigned int reservedTextFieldCell:6;
     } _tfFlags APPKIT_IVAR;
 }
 

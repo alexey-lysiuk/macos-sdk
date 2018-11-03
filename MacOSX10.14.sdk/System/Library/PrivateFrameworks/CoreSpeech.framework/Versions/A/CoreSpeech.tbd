@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FA378D17-4647-3665-A0C5-C647A264BF11' ]
+uuids:           [ 'x86_64: 9CEBE60F-1433-3D0E-80E8-7099CA337BAC' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreSpeech.framework/Versions/A/CoreSpeech
 exports:         
@@ -87,20 +87,21 @@ exports:
                        _kVTMetaTrainingTypeKey, _kVTMetaUtteranceWavKey, _setup, 
                        _snrSetup, _snrWindow, _sumsegment, _vecsqrt, _zeroCrossingVAD ]
     objc-classes:    [ CSAESKeyManager, CSActivationEvent, CSActivationEventNotifier, 
-                       CSAlarmMonitor, CSAsset, CSAssetManager, CSAssetManagerEnablePolicy, 
-                       CSAssetManagerEnablePolicyFactory, CSAssetManagerEnablePolicyMac, 
-                       CSAudioChunk, CSAudioCircularBuffer, CSAudioConverter, CSAudioDecoder, 
-                       CSAudioFileLog, CSAudioFileManager, CSAudioFileReader, CSAudioPowerMeter, 
-                       CSAudioRecordDeviceInfo, CSAudioRecorder, CSAudioRouteChangeMonitor, 
-                       CSAudioSampleRateConverter, CSAudioSessionMonitor, CSAudioTimeConverter, 
-                       CSAudioZeroCounter, CSAudioZeroFilter, CSBeepCanceller, CSClamshellStateMonitor, 
+                       CSAlarmMonitor, CSAsset, CSAssetController, CSAssetManager, 
+                       CSAssetManagerEnablePolicy, CSAssetManagerEnablePolicyFactory, 
+                       CSAssetManagerEnablePolicyMac, CSAudioChunk, CSAudioCircularBuffer, 
+                       CSAudioConverter, CSAudioDecoder, CSAudioFileLog, CSAudioFileManager, 
+                       CSAudioFileReader, CSAudioPowerMeter, CSAudioRecordDeviceInfo, 
+                       CSAudioRecorder, CSAudioRouteChangeMonitor, CSAudioSampleRateConverter, 
+                       CSAudioSessionMonitor, CSAudioTimeConverter, CSAudioZeroCounter, 
+                       CSAudioZeroFilter, CSBeepCanceller, CSClamshellStateMonitor, 
                        CSConfig, CSContinuousVoiceTrigger, CSCoreSpeechServices, 
                        CSDispatchGroup, CSEncryptedAudioFileReader, CSEncryptedAudioFileWriter, 
                        CSEndpointerMetrics, CSEndpointerProxy, CSEventMonitor, CSFirstUnlockMonitor, 
-                       CSHybridEndpointAnalyzer, CSKeywordAnalyzerNDAPI, CSKeywordAnalyzerQuasar, 
-                       CSKeywordDetector, CSLanguageCodeUpdateMonitor, CSMediaPlayingMonitor, 
-                       CSMyriadPHash, CSNetworkAvailabilityMonitor, CSNovDetector, 
-                       CSNovDetectorResult, CSP2PService, CSPlainAudioFileWriter, 
+                       CSHybridEndpointAnalyzer, CSKeywordAnalyzerNDAPI, CSKeywordAnalyzerNDEAPI, 
+                       CSKeywordAnalyzerQuasar, CSKeywordDetector, CSLanguageCodeUpdateMonitor, 
+                       CSMediaPlayingMonitor, CSMyriadPHash, CSNetworkAvailabilityMonitor, 
+                       CSNovDetector, CSNovDetectorResult, CSP2PService, CSPlainAudioFileWriter, 
                        CSPolicy, CSPreferences, CSRemoteControlClient, CSRemoteRecordClient, 
                        CSSACInfoMonitor, CSSRFUserSettingMonitor, CSScreenLockMonitor, 
                        CSSelfTriggerDetector, CSServerEndpointFeatures, CSSiriDebugConnection, 
@@ -115,13 +116,13 @@ exports:
                        CSVTUIASRGrammars, CSVTUIAudioSessionRemote, CSVTUIKeywordDetector, 
                        CSVTUIRegularExpressionMatcher, CSVTUITrainingManager, CSVTUITrainingSession, 
                        CSVTUITrainingSessionWithPayload, CSVoiceTriggerAssetChangeMonitor, 
-                       CSVoiceTriggerAssetMetaUpdateMonitor, CSVoiceTriggerEnabledMonitor, 
-                       CSVoiceTriggerEnabledPolicyFactory, CSVoiceTriggerEnabledPolicyMac, 
-                       CSVoiceTriggerEnabledPolicyNonAOP, CSVoiceTriggerEnrollmentDataManager, 
-                       CSVoiceTriggerEventNotifier, CSVoiceTriggerFidesClient, CSVoiceTriggerFileLogger, 
-                       CSVoiceTriggerFirstPass, CSVoiceTriggerInfo, CSVoiceTriggerRTModel, 
-                       CSVoiceTriggerSecondPass, CSVoiceTriggerSpeakerTrainer, CSVoiceTriggerStatistics, 
-                       CSVolumeMonitor ]
+                       CSVoiceTriggerAssetDownloadMonitor, CSVoiceTriggerAssetMetaUpdateMonitor, 
+                       CSVoiceTriggerEnabledMonitor, CSVoiceTriggerEnabledPolicyFactory, 
+                       CSVoiceTriggerEnabledPolicyMac, CSVoiceTriggerEnabledPolicyNonAOP, 
+                       CSVoiceTriggerEnrollmentDataManager, CSVoiceTriggerEventNotifier, 
+                       CSVoiceTriggerFidesClient, CSVoiceTriggerFileLogger, CSVoiceTriggerFirstPass, 
+                       CSVoiceTriggerInfo, CSVoiceTriggerRTModel, CSVoiceTriggerSecondPass, 
+                       CSVoiceTriggerSpeakerTrainer, CSVoiceTriggerStatistics, CSVolumeMonitor ]
     objc-ivars:      [ CSVTUITrainingSession._ASRErrorOccured, CSVTUITrainingSession._audioSession, 
                        CSVTUITrainingSession._keywordDetector, CSVTUITrainingSession._locale, 
                        CSVTUITrainingSession._masterTimer, CSVTUITrainingSession._pcmBufArray, 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E27783AE-8315-3DAB-BFF7-5B24FBA632D7' ]
+uuids:           [ 'x86_64: 02901152-1494-36E4-88CD-7BEB44D9DC51' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AXHearingCoreSupport.framework/Versions/A/AXHearingCoreSupport
 exports:         
@@ -13,6 +13,6 @@ exports:
                        _AXLEHIAuthServiceUUIDString, _AXLEHIAuthVersionCharacteristicUUIDString, 
                        _AXLEHIDISFirmwareVersionCharacteristicUUIDString, _AXLEHIDISHardwareVersionCharacteristicUUIDString, 
                        _AXLEHIDISManufacturerCharacteristicUUIDString, _AXLEHIDISModelNumberCharacteristicUUIDString, 
-                       _AXLEHIDISServiceUUIDString, _AXLEHIServiceUUIDString ]
-    objc-classes:    [ AXHACoreUtilities, AXHeardServer ]
+                       _AXLEHIDISServiceUUIDString, _AXLEHIServiceUUIDString, _HCPerformSafeBlock ]
+    objc-classes:    [ HCServer, HCUtilities ]
 ...

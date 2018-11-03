@@ -64,6 +64,7 @@ MPS_AVAILABLE_STARTING(macos(10.13.4), ios(11.3), tvos(11.3));
  *              - Subtraction
  *              - Multiplication
  *              - Division
+ *              - Comparison
  *
  *              This filter takes additional parameters: primaryScale, secondaryScale, and bias. The default
  *              value for primaryScale and secondaryScale is 1.0f. The default value for bias is 0.0f. This
@@ -73,6 +74,7 @@ MPS_AVAILABLE_STARTING(macos(10.13.4), ios(11.3), tvos(11.3));
  *              - Subtraction:      result = ((primaryScale * x) - (secondaryScale * y)) + bias
  *              - Multiplicaton:    result = ((primaryScale * x) * (secondaryScale * y)) + bias
  *              - Division:         result = ((primaryScale * x) / (secondaryScale * y)) + bias
+ *              - Comparison:       Unused.
  *
  *              To clamp the result of an arithmetic operation, where
  *              result = clamp(result, minimumValue, maximumValue),
@@ -265,6 +267,56 @@ MPS_CLASS_AVAILABLE_STARTING( macos(10.13.4), ios(11.3), tvos(11.3))
 
 @end    /* MPSCNNDivide */
 
+#pragma mark -
+#pragma mark MPSNNCompare
+
+/*! @enum       MPSNNComparisonType
+ *  @abstract   The type of comparison an MPSNNCompare kernel should perform.
+ */
+#if defined(DOXYGEN)
+    typedef enum MPSNNComparisonType
+#else
+    typedef NS_OPTIONS(NSUInteger, MPSNNComparisonType)
+#endif
+{
+    MPSNNComparisonTypeEqual       MPS_ENUM_AVAILABLE_STARTING( macos(10.14.1), ios(12.1), tvos(12.1))   MPS_SWIFT_NAME(equal),
+    MPSNNComparisonTypeNotEqual    MPS_ENUM_AVAILABLE_STARTING( macos(10.14.1), ios(12.1), tvos(12.1))   MPS_SWIFT_NAME(notEqual),
+    MPSNNComparisonTypeLess        MPS_ENUM_AVAILABLE_STARTING( macos(10.14.1), ios(12.1), tvos(12.1))   MPS_SWIFT_NAME(less),
+    MPSNNComparisonTypeLessOrEqual MPS_ENUM_AVAILABLE_STARTING( macos(10.14.1), ios(12.1), tvos(12.1))   MPS_SWIFT_NAME(lessOrEqual),
+    MPSNNComparisonTypeGreater     MPS_ENUM_AVAILABLE_STARTING( macos(10.14.1), ios(12.1), tvos(12.1))   MPS_SWIFT_NAME(greater),
+    MPSNNComparisonTypeGreaterOrEqual  MPS_ENUM_AVAILABLE_STARTING( macos(10.14.1), ios(12.1), tvos(12.1))   MPS_SWIFT_NAME(greaterOrEqual)
+};
+    
+/*!
+ *  @class      MPSNNCompare
+ *  @dependency This depends on Metal.framework.
+ *  @discussion Specifies the elementwise comparison operator.
+ *              For each pixel in the primary source image (x) and each pixel in a secondary source image (y),
+ *              it applies the following function: result = (abs(x-y)) <= threshold
+ */
+MPS_CLASS_AVAILABLE_STARTING( macos(10.14.1), ios(12.1), tvos(12.1))
+@interface  MPSNNCompare : MPSCNNArithmetic
+/*! @property   comparisonType
+ *  @abstract   The comparison type to use
+ */
+@property (readwrite, nonatomic) MPSNNComparisonType   comparisonType;
+
+/*! @property   threshold
+ *  @abstract   The threshold to use when comparing for equality.  Two values will
+ *              be considered to be equal if the absolute value of their difference
+ *              is less than, or equal, to the specified threshold:
+ *                  result = |b - a| <= threshold
+ */
+@property (readwrite, nonatomic) float          threshold;
+
+/*!
+ *  @abstract  Initialize the comparison operator
+ *  @param     device           The device the filter will run on.
+ *  @return    A valid MPSNNCompare object or nil, if failure.
+ */
+-(nonnull instancetype) initWithDevice: (nonnull id <MTLDevice>) device NS_DESIGNATED_INITIALIZER;
+
+@end    /* MPSNNCompare */
 
 #pragma mark -
 #pragma mark MPSCNNArithmeticGradient

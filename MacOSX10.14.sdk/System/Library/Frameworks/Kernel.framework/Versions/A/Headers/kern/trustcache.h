@@ -66,6 +66,15 @@ struct trust_cache_module1 {
 #define CS_TRUST_CACHE_AMFID    0x1			// valid cdhash for amfid
 #define CS_TRUST_CACHE_ANE		0x2			// ANE model hash
 
+#define TC_LOOKUP_HASH_TYPE_SHIFT               16
+#define TC_LOOKUP_HASH_TYPE_MASK                0xff0000L;
+#define TC_LOOKUP_FLAGS_SHIFT                   8
+#define TC_LOOKUP_FLAGS_MASK                    0xff00L
+#define TC_LOOKUP_RESULT_SHIFT                  0
+#define TC_LOOKUP_RESULT_MASK                   0xffL
+
+#define TC_LOOKUP_FOUND         1
+#define TC_LOOKUP_FALLBACK      2
 
 
 #endif /* _KERN_TRUSTCACHE_H */

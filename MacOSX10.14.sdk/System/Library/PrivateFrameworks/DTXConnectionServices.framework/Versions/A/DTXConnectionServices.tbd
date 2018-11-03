@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D8054413-CC86-353F-B3BF-F0B7CA3ED878' ]
+uuids:           [ 'x86_64: ED76F8B7-7F7F-325F-9596-24CA682194A5' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DTXConnectionServices.framework/Versions/A/DTXConnectionServices
-current-version: 64258
+current-version: 64460.15
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CFArrayCreateWithDTXPrimitiveArray, _CFDictionaryCreateWithDTXPrimitiveDictionary, 

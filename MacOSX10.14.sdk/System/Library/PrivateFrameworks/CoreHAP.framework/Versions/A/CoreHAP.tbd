@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5320B50A-D8CA-3EB5-BF9A-3E1AFBD8E8B9' ]
+uuids:           [ 'x86_64: D0DA9338-8E35-3AEB-9DB1-188537B9CCA3' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreHAP.framework/Versions/A/CoreHAP
-current-version: 484.0.70
+current-version: 484.2.2
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CBUUIDCharacteristicValidRange, _HAPAccessoryHasPairings, 
@@ -20,7 +20,8 @@ exports:
                        _HAPAttributeDatabaseKey_TTL, _HAPAttributeDatabaseKey_Type, 
                        _HAPAttributeDatabaseKey_Value, _HAPAuthMethodToString, _HAPBTLEControlTypeString, 
                        _HAPBaseUUIDString, _HAPBonjourDomain, _HAPBonjourEventProcessDelayTime, 
-                       _HAPBonjourEventProcessTick, _HAPBonjourServiceType, _HAPCharacteristicFormatFromString, 
+                       _HAPBonjourEventProcessTick, _HAPBonjourServiceType, _HAPCharacteristicEventNotification, 
+                       _HAPCharacteristicEventsUserInfoKey, _HAPCharacteristicFormatFromString, 
                        _HAPCharacteristicFormatToString, _HAPCharacteristicFormatType_Array, 
                        _HAPCharacteristicFormatType_Bool, _HAPCharacteristicFormatType_Data, 
                        _HAPCharacteristicFormatType_Date, _HAPCharacteristicFormatType_Dictionary, 
@@ -354,13 +355,13 @@ exports:
                        HAPBTLERequest, HAPBTLEResponse, HAPBTLEServiceSignature, 
                        HAPBTLETransactionIdentifier, HAPBTLETuple, HAPBridgedAccessory, 
                        HAPCharacteristic, HAPCharacteristicConfigurationRequestTuple, 
-                       HAPCharacteristicEnableEventCompletionTuple, HAPCharacteristicMetadata, 
-                       HAPCharacteristicReadCompletionTuple, HAPCharacteristicResponseTuple, 
-                       HAPCharacteristicWriteRequestTuple, HAPDataValueTransformer, 
-                       HAPDeviceID, HAPDiscoveredBTLEAccessoryServerTuple, HAPFragmentationPacket, 
-                       HAPFragmentationStream, HAPHTTPClient, HAPJSONValueTransformer, 
-                       HAPKeychainItem, HAPKeychainStoreRemovedAccessory, HAPMetadata, 
-                       HAPMetadataCharacteristic, HAPMetadataCharacteristicValue, 
+                       HAPCharacteristicEnableEventCompletionTuple, HAPCharacteristicEvent, 
+                       HAPCharacteristicMetadata, HAPCharacteristicReadCompletionTuple, 
+                       HAPCharacteristicResponseTuple, HAPCharacteristicWriteRequestTuple, 
+                       HAPDataValueTransformer, HAPDeviceID, HAPDiscoveredBTLEAccessoryServerTuple, 
+                       HAPFragmentationPacket, HAPFragmentationStream, HAPHTTPClient, 
+                       HAPJSONValueTransformer, HAPKeychainItem, HAPKeychainStoreRemovedAccessory, 
+                       HAPMetadata, HAPMetadataCharacteristic, HAPMetadataCharacteristicValue, 
                        HAPMetadataConstraints, HAPMetadataProperty, HAPMetadataService, 
                        HAPMetadataTuple, HAPMetadataUnit, HAPPairSetupSession, HAPPairingIdentity, 
                        HAPPairingUtilities, HAPProtocolMessages, HAPRecentlySeenPairedBTLEPeripheralTuple, 

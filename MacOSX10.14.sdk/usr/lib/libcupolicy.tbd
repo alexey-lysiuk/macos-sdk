@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4F89405E-C14E-3CE4-B9CB-80052B2FC5B3' ]
+uuids:           [ 'x86_64: E0EBB56D-FC35-33EA-9CCD-674731322595' ]
 platform:        macosx
 install-name:    /usr/lib/libcupolicy.dylib
 exports:         

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2613E2F4-AE45-3A77-A6E0-86B5A37147BA' ]
+uuids:           [ 'x86_64: 9EE38C5E-997A-34C2-B601-0B27DFFF19A8' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AppleMediaServices.framework/Versions/A/AppleMediaServices
 exports:         
@@ -100,7 +100,8 @@ exports:
                        AMSMetricsLoadURLEvent, AMSMutableBagKeySet, AMSMutableLogConfig, 
                        AMSOpenURL, AMSOperation, AMSProcessInfo, AMSPromise, AMSRemoteNotification, 
                        AMSRestrictions, AMSSnapshotBag, AMSTask, AMSURLAction, AMSURLProtocolDialog, 
-                       AMSURLProtocolHandler, AMSURLRequestEncoder, AMSURLResponseDecoder, 
-                       AMSURLResult, AMSURLSecurityPolicy, AMSURLSession, AMSUserNotification, 
-                       AMSUserNotificationAction, AMSUserNotificationCenter ]
+                       AMSURLProtocolHandler, AMSURLRequest, AMSURLRequestEncoder, 
+                       AMSURLResponseDecoder, AMSURLResult, AMSURLSecurityPolicy, 
+                       AMSURLSession, AMSUserNotification, AMSUserNotificationAction, 
+                       AMSUserNotificationCenter ]
 ...

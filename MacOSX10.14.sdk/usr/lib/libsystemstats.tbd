@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 06B5DCDD-2130-38C6-9D5D-C3B9DA21862C' ]
+uuids:           [ 'x86_64: B94C1DF0-2DD5-35DC-A675-6C0C4EC5CA65' ]
 platform:        macosx
 install-name:    /usr/lib/libsystemstats.dylib
-current-version: 403.200.12
+current-version: 403.220.2
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _SystemStatsLogCoreDuetEventsAggregate, _SystemStatsReportDiscretionaryBudgetForDuet, 

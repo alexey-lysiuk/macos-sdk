@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 592E2914-5A3E-3B2E-84C3-E7C1F287F0A1' ]
+uuids:           [ 'x86_64: 3DEB226C-44D7-332A-AD03-86C608C99894' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AOSUI.framework/Versions/A/AOSUI
 current-version: 415
@@ -198,9 +198,10 @@ exports:
                        MMCSCPinRecoveryViewController, MMCSCPinSetupViewController, 
                        MMCSCRecoveryController, MMCSCSMSTargetRecoveryViewController, 
                        MMCSCSMSTargetSetupViewController, MMCSCSetupController, MMCalendarsService, 
-                       MMContactsService, MMDateFormatter, MMDeviceInfo, MMDiskManagement, 
-                       MMDynamicDialogController, MMFindMyMacService, MMICAWebKitViewController, 
-                       MMInfoCapacityBarCategory, MMInfoCapacityBarView, MMInfoCapacityPopoverViewController, 
+                       MMCommerceBagContract, MMContactsService, MMDateFormatter, 
+                       MMDeviceInfo, MMDiskManagement, MMDynamicDialogController, 
+                       MMFindMyMacService, MMICAWebKitViewController, MMInfoCapacityBarCategory, 
+                       MMInfoCapacityBarView, MMInfoCapacityPopoverViewController, 
                        MMJSDialog, MMJSDialogController, MMKeychainOptionsController, 
                        MMKeychainService, MMLengthFormatter, MMLinkTextField, MMMBWebKitViewController, 
                        MMMailService, MMMediaStreamService, MMMobileDocumentsService, 

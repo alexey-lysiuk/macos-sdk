@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 883365FF-6BEF-3437-A4FE-295D67A5B641' ]
+uuids:           [ 'x86_64: 29BF4B35-3A96-3C42-B7EA-87CC19178218' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/TextInputCore.framework/Versions/A/TextInputCore
 exports:         
@@ -139,7 +139,6 @@ exports:
                        __ZN14TIInputManager34apply_case_insensitive_constraintsERN2KB19CandidateCollectionENS0_10LookupTypeEP10__CFString, 
                        __ZN14TIInputManager35delete_from_favonius_stroke_historyEv, 
                        __ZN14TIInputManager35k_min_string_length_for_spell_checkE, 
-                       __ZN14TIInputManager36MaxStringLengthForShortcutConversionE, 
                        __ZN14TIInputManager36set_candidate_quality_filter_factoryEU13block_pointerFNSt3__110shared_ptrI19TICandQualityFilterEERKN2KB19CandidateCollectionENS4_10LookupTypeEE, 
                        __ZN14TIInputManager46initialize_search_if_necessary_from_last_touchEv, 
                        __ZN14TIInputManager50drop_input_prefix_and_update_autocorrection_engineEjU13block_pointerFvvE, 

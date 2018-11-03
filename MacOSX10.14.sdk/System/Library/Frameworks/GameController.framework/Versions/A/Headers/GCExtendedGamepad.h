@@ -102,6 +102,12 @@ typedef void (^GCExtendedGamepadValueChangedHandler)(GCExtendedGamepad *gamepad,
 @property (nonatomic, readonly) GCControllerButtonInput *leftTrigger;
 @property (nonatomic, readonly) GCControllerButtonInput *rightTrigger;
 
+/**
+ A thumbstick may also have a clickable component, which is treated as a non-analog button.
+ */
+@property (nonatomic, readonly, nullable) GCControllerButtonInput *leftThumbstickButton API_AVAILABLE(macos(10.14.1), ios(12.1), tvos(12.1));
+@property (nonatomic, readonly, nullable) GCControllerButtonInput *rightThumbstickButton API_AVAILABLE(macos(10.14.1), ios(12.1), tvos(12.1));
+
 @end
 
 NS_ASSUME_NONNULL_END

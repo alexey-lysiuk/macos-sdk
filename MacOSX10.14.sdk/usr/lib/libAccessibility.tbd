@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3044BCB8-1470-3054-9FB6-3D88AA57115B' ]
+uuids:           [ 'x86_64: 8DCEF4C2-7004-391B-B872-980AE10BB077' ]
 platform:        macosx
 install-name:    /usr/lib/libAccessibility.dylib
 objc-constraint: none

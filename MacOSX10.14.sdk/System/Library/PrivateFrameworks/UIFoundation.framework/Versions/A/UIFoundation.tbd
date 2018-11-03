@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1CAAA3AC-1477-3E24-B55C-07A704D7CA03' ]
+uuids:           [ 'x86_64: 7B73C4E0-256B-3C59-8E18-475A42BE0B12' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/UIFoundation.framework/Versions/A/UIFoundation
-current-version: 550.35
+current-version: 551
 exports:         
   - archs:           [ x86_64 ]
     allowable-clients: [ AppKit, UIKitCore ]

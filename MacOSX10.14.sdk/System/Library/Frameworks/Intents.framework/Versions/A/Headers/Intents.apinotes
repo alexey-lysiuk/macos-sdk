@@ -1,13 +1,13 @@
 ---
 Classes:
-- Name: INShortcut
-  SwiftName: INShortcutReference
-  SwiftBridge: INShortcut
 - Name: INRequestRideIntent
   Methods:
   - Selector: 'initWithPickupLocation:dropOffLocation:rideOptionName:partySize:paymentMethod:'
     MethodKind: Instance
     SwiftPrivate: true
+- Name: INShortcut
+  SwiftBridge: INShortcut
+  SwiftName: INShortcutReference
 Name: Intents
 SwiftVersions:
 - Version: 3

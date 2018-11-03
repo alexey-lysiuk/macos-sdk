@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 230A1C99-6AC1-39E9-A304-2F03DEAA3EB7' ]
+uuids:           [ 'x86_64: 1532E481-152C-33A6-858B-AC3D841DA8A9' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AirPlaySender.framework/Versions/A/AirPlaySender
 objc-constraint: none
@@ -73,9 +73,10 @@ exports:
                        _kAPBrowserControllerProperty_IsConfiguredForMaximumDiscovery, 
                        _kAPBrowserControllerProperty_RadiosNeededForMaximumDiscovery, 
                        _kAPBrowserControllerProperty_ShowInfo, _kAPBrowserControllerShowInfoKey_DetailedDescription, 
-                       _kAPEndpointActivationOptionKey_GroupContext, _kAPEndpointActivationOptionKey_ScreenProcessor, 
-                       _kAPEndpointActivationOptionKey_ScreenSource, _kAPEndpointAggregateStreamProperty_EnableLocalPlayback, 
-                       _kAPEndpointAirPlayDiagnosticsTargetInfo_InfraDNSName, _kAPEndpointAirPlayDiagnosticsTargetInfo_PeerToPeerDNSName, 
+                       _kAPEndpointActivationOptionKey_AvoidAuthentication, _kAPEndpointActivationOptionKey_GroupContext, 
+                       _kAPEndpointActivationOptionKey_ScreenProcessor, _kAPEndpointActivationOptionKey_ScreenSource, 
+                       _kAPEndpointAggregateStreamProperty_EnableLocalPlayback, _kAPEndpointAirPlayDiagnosticsTargetInfo_InfraDNSName, 
+                       _kAPEndpointAirPlayDiagnosticsTargetInfo_PeerToPeerDNSName, 
                        _kAPEndpointConfiguration_ConfigurationDictionary, _kAPEndpointConfiguration_CurrentAdminKey, 
                        _kAPEndpointCreationOption_EventRecorder, _kAPEndpointCreationOption_IsRemoteControlOnly, 
                        _kAPEndpointDescriptionAirPlayProperty_TransportDevice, _kAPEndpointDescriptionExtendedFeaturesKey_ProvidesHighAccuracyTimeStamps, 

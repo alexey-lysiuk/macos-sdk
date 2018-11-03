@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6DEFF0B3-3EB7-31DD-B404-611E9368CB50' ]
+uuids:           [ 'x86_64: 4EF9C350-9CBB-36DA-9964-2CF615C7E84B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/VectorKit.framework/Versions/A/VectorKit
-current-version: 1360.20.2
+current-version: 1360.21.8
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _GEOMapRectEnclosingCameraProperties, _GEOPDCameraPathFrameFromVKCameraFrame, 

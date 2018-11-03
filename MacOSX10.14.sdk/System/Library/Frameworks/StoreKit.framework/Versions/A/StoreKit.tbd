@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3A4D0B33-E43C-3D96-8870-0084DA848A18' ]
+uuids:           [ 'x86_64: 958A1250-2103-3A16-B24D-3FF5799F4B47' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/StoreKit.framework/Versions/A/StoreKit
 current-version: 379

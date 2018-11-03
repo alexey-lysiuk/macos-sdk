@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 54BAFB45-49FD-38EA-A6DA-86F8536F07C0' ]
+uuids:           [ 'x86_64: AA166889-22F1-31D5-96FC-EABF871D2E8D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/FrontBoardServices.framework/Versions/A/FrontBoardServices
 current-version: 0

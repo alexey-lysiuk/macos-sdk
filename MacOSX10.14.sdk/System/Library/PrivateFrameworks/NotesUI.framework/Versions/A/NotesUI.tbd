@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 60C0E052-460A-3E25-968A-979D7B54A383' ]
+uuids:           [ 'x86_64: 226A0539-9793-371B-A88D-3B1D33E56F39' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/NotesUI.framework/Versions/A/NotesUI
 exports:         

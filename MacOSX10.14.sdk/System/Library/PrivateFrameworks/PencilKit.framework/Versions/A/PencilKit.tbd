@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 30261DA0-5099-3ECE-8DF6-E2D15BFA2B5C' ]
+uuids:           [ 'x86_64: 188DB13A-53B4-3F3C-8433-193AEAFDF17D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PencilKit.framework/Versions/A/PencilKit
 exports:         
@@ -128,7 +128,8 @@ exports:
                        __Z28DKDNearestPointOnLineToPointP7CGPointS_, __Z28PKSplinePointsToBezierPointsP7CGPointS0_, 
                        __Z29_PKAddFlattenedElementApplierP17PKFlattenPathInfoPK13CGPathElement, 
                        __Z40_PKControlPointsFromFlattenedPathApplierPNSt3__16vectorI7CGPointNS_9allocatorIS1_EEEEPK13CGPathElement, 
-                       __Z7PKClampddd, __ZN14legacy_drawing10Parameters8readFromERN2PB6ReaderE, 
+                       __Z7PKClampddd, __ZN13PKRunningStat4pushEd, __ZN13PKRunningStat5clearEd, 
+                       __ZN13PKRunningStatC1Ev, __ZN13PKRunningStatC2Ev, __ZN14legacy_drawing10Parameters8readFromERN2PB6ReaderE, 
                        __ZN14legacy_drawing10ParametersC1EOS0_, __ZN14legacy_drawing10ParametersC1ERKS0_, 
                        __ZN14legacy_drawing10ParametersC1Ev, __ZN14legacy_drawing10ParametersC2EOS0_, 
                        __ZN14legacy_drawing10ParametersC2ERKS0_, __ZN14legacy_drawing10ParametersC2Ev, 
@@ -278,7 +279,9 @@ exports:
                        __ZN7drawing9TransformC2ERKS0_, __ZN7drawing9TransformC2Ev, 
                        __ZN7drawing9TransformD0Ev, __ZN7drawing9TransformD1Ev, __ZN7drawing9TransformD2Ev, 
                        __ZN7drawing9TransformaSEOS0_, __ZN7drawing9TransformaSERKS0_, 
-                       __ZNK14legacy_drawing10Parameters10formatTextERN2PB13TextFormatterEPKc, 
+                       __ZNK13PKRunningStat14countOverLimitEv, __ZNK13PKRunningStat17standardDeviationEv, 
+                       __ZNK13PKRunningStat3maxEv, __ZNK13PKRunningStat4meanEv, __ZNK13PKRunningStat5countEv, 
+                       __ZNK13PKRunningStat8varianceEv, __ZNK14legacy_drawing10Parameters10formatTextERN2PB13TextFormatterEPKc, 
                        __ZNK14legacy_drawing10Parameters10hash_valueEv, __ZNK14legacy_drawing10Parameters7writeToERN2PB6WriterE, 
                        __ZNK14legacy_drawing10ParameterseqERKS0_, __ZNK14legacy_drawing15VectorTimestamp10formatTextERN2PB13TextFormatterEPKc, 
                        __ZNK14legacy_drawing15VectorTimestamp10hash_valueEv, __ZNK14legacy_drawing15VectorTimestamp7writeToERN2PB6WriterE, 

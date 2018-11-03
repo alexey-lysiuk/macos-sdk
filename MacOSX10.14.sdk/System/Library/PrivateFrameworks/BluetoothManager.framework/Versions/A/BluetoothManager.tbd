@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4CE392DC-0C7F-3FFA-8A33-045E1D09CAC8' ]
+uuids:           [ 'x86_64: 938732CC-4DEA-3F2E-9401-F4424BCBC5D7' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/BluetoothManager.framework/Versions/A/BluetoothManager
 exports:         

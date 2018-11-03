@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: D164CC0F-3CB2-3B81-BE97-E6D51E573571', 'x86_64h: 6455899E-BAC7-34D1-802B-FFE19A2337E2' ]
+uuids:           [ 'x86_64: A8D5A0CF-62C8-3E8F-AB97-8BDC54B5F816', 'x86_64h: 8A894DB4-A48B-31A0-9316-DC41061D9549' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vImage.framework/Versions/A/Libraries/libCGInterfaces.dylib
-current-version: 506.19
+current-version: 506.19.1
 objc-constraint: none
 exports:         
   - archs:           [ x86_64, x86_64h ]

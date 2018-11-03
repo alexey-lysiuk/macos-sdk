@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6B9CCA98-6F68-3908-A7A9-96D3E2AE5968' ]
+uuids:           [ 'x86_64: 5A758D93-4BBD-3C6D-861B-000536ED9B2D' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Metadata
-current-version: 1191.51
+current-version: 1191.52
 parent-umbrella: CoreServices
 exports:         
   - archs:           [ x86_64 ]
@@ -394,12 +394,13 @@ exports:
                        _kMDQueryBatchFirstDelay, _kMDQueryBatchProgressCount, _kMDQueryBatchProgressDelay, 
                        _kMDQueryBatchUpdateCount, _kMDQueryBatchUpdateDelay, _kMDQueryCompletionFields, 
                        _kMDQueryCompletionString, _kMDQueryDidFinishNotification, 
-                       _kMDQueryDidUpdateNotification, _kMDQueryFlatScopes, _kMDQueryGroupMaxCount, 
-                       _kMDQueryGroupingRules, _kMDQueryHasUpdateNotification, _kMDQueryIndexedOnly, 
-                       _kMDQueryIsLive, _kMDQueryIsLowPriority, _kMDQueryItemArray, 
-                       _kMDQueryLiftingRules, _kMDQueryMDFilter, _kMDQueryMatchOnlyFinderFiles, 
-                       _kMDQueryMatchSupportFiles, _kMDQueryMaxCount, _kMDQueryNoProgress, 
-                       _kMDQueryNoRewrite, _kMDQueryOptionContextIdentifier, _kMDQueryOptionFinderLabelsDict, 
+                       _kMDQueryDidUpdateNotification, _kMDQueryFilters, _kMDQueryFlatScopes, 
+                       _kMDQueryGroupMaxCount, _kMDQueryGroupingRules, _kMDQueryHasUpdateNotification, 
+                       _kMDQueryIndexedOnly, _kMDQueryIsLive, _kMDQueryIsLowPriority, 
+                       _kMDQueryItemArray, _kMDQueryLiftingRules, _kMDQueryMDFilter, 
+                       _kMDQueryMatchOnlyFinderFiles, _kMDQueryMatchSupportFiles, 
+                       _kMDQueryMaxCount, _kMDQueryNoProgress, _kMDQueryNoRewrite, 
+                       _kMDQueryOptionContextIdentifier, _kMDQueryOptionFinderLabelsDict, 
                        _kMDQueryOptionFinderLabelsDictLocale, _kMDQueryProgressNotification, 
                        _kMDQueryQoSClass, _kMDQueryResultContentRelevance, _kMDQueryResultGroupId, 
                        _kMDQueryResultMLRelevance, _kMDQueryResultMatchedDisplayNameField, 

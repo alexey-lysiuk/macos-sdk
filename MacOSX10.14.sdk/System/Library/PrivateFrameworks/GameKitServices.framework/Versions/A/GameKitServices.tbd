@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A0A98057-A08D-3E91-860E-26232D5D2380' ]
+uuids:           [ 'x86_64: 87292064-7FF9-3FD8-AEFD-A5806FBF2ACB' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/GameKitServices.framework/Versions/A/GameKitServices
 exports:         

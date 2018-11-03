@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C4B177DB-5CD3-339D-A700-987A19559F9D' ]
+uuids:           [ 'x86_64: 3CE1E7F2-39E5-38FF-AC59-C16B445795DA' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/FamilyCircle.framework/Versions/A/FamilyCircle
 exports:         
