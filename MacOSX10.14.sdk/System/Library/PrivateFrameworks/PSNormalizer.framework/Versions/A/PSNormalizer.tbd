@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1CFABE94-328E-3BE1-B68C-B3472A059011' ]
+uuids:           [ 'x86_64: 57A3B4D9-081A-30FE-9858-A886C440633D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PSNormalizer.framework/Versions/A/PSNormalizer
 current-version: 24

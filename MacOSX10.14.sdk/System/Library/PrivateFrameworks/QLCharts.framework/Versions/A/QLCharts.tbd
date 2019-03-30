@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8E8E0703-667D-3F37-95B4-A4809CD92819' ]
+uuids:           [ 'x86_64: 24EA47CF-E5E0-3CEF-9162-F49D5CB8AC1B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/QLCharts.framework/Versions/A/QLCharts
 exports:         

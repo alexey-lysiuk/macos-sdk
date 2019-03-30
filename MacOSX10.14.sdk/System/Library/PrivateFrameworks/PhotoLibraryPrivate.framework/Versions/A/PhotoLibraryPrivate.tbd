@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B77C3B20-BBE5-3408-87F7-2463BD982DF9' ]
+uuids:           [ 'x86_64: 2B0811C1-64C4-33D0-8AFD-F90A63C42003' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoLibraryPrivate.framework/Versions/A/PhotoLibraryPrivate
-current-version: 3411.5.190
+current-version: 3441.7.100
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _AUDIO_PREVIEW_EXTENSION, _IMAGE_PREVIEW_EXTENSION, _IPAAdjustmentLiveUpgradeVersion10, 

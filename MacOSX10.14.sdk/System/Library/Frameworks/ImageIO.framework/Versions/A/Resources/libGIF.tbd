@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: 658AC780-4640-3A69-8629-61F60C656687', 'x86_64h: 032CA0C2-8AAA-3D3F-8E61-25CE9267C2A7' ]
-platform:        macosx
+uuids:           [ 'x86_64: 5EE06C74-D45E-3DBB-B64E-0C1FD1720827', 'x86_64h: 4B7B283B-84C8-38D1-BED4-B507C3EF6E7E' ]
+platform:        zippered
 install-name:    /System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libGIF.dylib
 objc-constraint: none
 exports:         

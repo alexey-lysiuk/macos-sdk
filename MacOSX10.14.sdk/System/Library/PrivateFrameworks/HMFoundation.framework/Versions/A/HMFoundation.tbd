@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3C7D3F8A-C43D-3993-8BD9-B685C05BEC89' ]
+uuids:           [ 'x86_64: 6EE9DF11-987F-391D-A179-023E29353A6E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/HMFoundation.framework/Versions/A/HMFoundation
 exports:         
@@ -12,8 +12,10 @@ exports:
                        _HMFHTTPMessageHeaderFieldContentTypeKey, _HMFHTTPMessageHeaderFieldDateKey, 
                        _HMFHTTPMessageHeaderFieldTransferEncodingKey, _HMFHTTPServerDefaultConnectionIdleTimeout, 
                        _HMFHardwareAddressMaxLength, _HMFHomeKitLoggingSubsystem, 
-                       _HMFLogCategoryDefault, _HMFLogCategoryDumpState, _HMFLoggingSubsystem, 
-                       _HMFMACAddressLength, _HMFMessageActivityPrefix, _HMFNetServiceDidStartMonitoringInternalNotification, 
+                       _HMFKeySizeDefault, _HMFKeySizeIRK128, _HMFKeySizeToString, 
+                       _HMFKeyTypeIRK, _HMFKeyTypeUnknown, _HMFLogCategoryDefault, 
+                       _HMFLogCategoryDumpState, _HMFLoggingSubsystem, _HMFMACAddressLength, 
+                       _HMFMessageActivityPrefix, _HMFNetServiceDidStartMonitoringInternalNotification, 
                        _HMFObjectDescription, _HMFObjectDescriptionDefaultOptions, 
                        _HMFOperatingSystemVersionCompare, _HMFPairingKeyLength, _HMFPowerManagerBatteryLevelDidChangeNotification, 
                        _HMFPowerManagerBatteryStateDidChangeNotification, _HMFPreferenceShouldLogPrivateInformation, 
@@ -29,10 +31,12 @@ exports:
                        _HMFProductInfoEmperorOSVersion, _HMFProductInfoErieOSVersion, 
                        _HMFProductInfoFatsaOSVersion, _HMFProductInfoFerryOSVersion, 
                        _HMFProductInfoFortuneOSVersion, _HMFProductInfoFrancisOSVersion, 
-                       _HMFProductInfoGloryBOSVersion, _HMFProductInfoGloryOSVersion, 
-                       _HMFProductInfoHopeBOSVersion, _HMFProductInfoHopeOSVersion, 
-                       _HMFProductInfoLibertyBOSVersion, _HMFProductInfoLibertyOSVersion, 
-                       _HMFProductInfoMonarchOSVersion, _HMFProductInfoPeaceBOSVersion, 
+                       _HMFProductInfoGloryBOSVersion, _HMFProductInfoGloryCOSVersion, 
+                       _HMFProductInfoGloryOSVersion, _HMFProductInfoHopeBOSVersion, 
+                       _HMFProductInfoHopeCOSVersion, _HMFProductInfoHopeOSVersion, 
+                       _HMFProductInfoLibertyBOSVersion, _HMFProductInfoLibertyCOSVersion, 
+                       _HMFProductInfoLibertyOSVersion, _HMFProductInfoMonarchOSVersion, 
+                       _HMFProductInfoPeaceBOSVersion, _HMFProductInfoPeaceCOSVersion, 
                        _HMFProductInfoPeaceOSVersion, _HMFProductInfoTigrisOSVersion, 
                        _HMFProductInfoTildenOSVersion, _HMFProductInfoTopazOSVersion, 
                        _HMFProductInfoUnionOSVersion, _HMFProductInfoWhitetailOSVersion, 
@@ -67,11 +71,11 @@ exports:
                        HMFCache, HMFClassRegistry, HMFDigest, HMFDumpCategory, HMFExponentialBackoffTimer, 
                        HMFHTTPClient, HMFHTTPClientConnection, HMFHTTPRequest, HMFHTTPRequestHandler, 
                        HMFHTTPRequestInternal, HMFHTTPResponse, HMFHTTPResponseInternal, 
-                       HMFHTTPServer, HMFHardwareAddress, HMFLogCategory, HMFMACAddress, 
-                       HMFMemoryAssertion, HMFMemoryMonitor, HMFMessage, HMFMessageDestination, 
-                       HMFMessageDispatcher, HMFMessageInternal, HMFMessageTransport, 
-                       HMFMutableHTTPRequest, HMFMutableHTTPResponse, HMFMutableMessage, 
-                       HMFMutableNetService, HMFNetAddress, HMFNetAddressInternal, 
+                       HMFHTTPServer, HMFHardwareAddress, HMFKey, HMFLogCategory, 
+                       HMFMACAddress, HMFMemoryAssertion, HMFMemoryMonitor, HMFMessage, 
+                       HMFMessageDestination, HMFMessageDispatcher, HMFMessageInternal, 
+                       HMFMessageTransport, HMFMutableHTTPRequest, HMFMutableHTTPResponse, 
+                       HMFMutableMessage, HMFMutableNetService, HMFNetAddress, HMFNetAddressInternal, 
                        HMFNetManager, HMFNetMonitor, HMFNetService, HMFNetServiceBrowser, 
                        HMFOSTransaction, HMFObject, HMFObjectObserver, HMFOperation, 
                        HMFOperationBudget, HMFPairingIdentity, HMFPairingKey, HMFPowerAssertion, 

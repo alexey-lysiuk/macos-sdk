@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B8D45114-3868-3154-BC35-22597E3E7D8A' ]
-platform:        macosx
+uuids:           [ 'x86_64: 96F6DF29-D31C-3097-9C3E-63B1D62D756C' ]
+platform:        zippered
 install-name:    /usr/lib/libapple_nghttp2.dylib
 current-version: 1.24.1
 objc-constraint: none

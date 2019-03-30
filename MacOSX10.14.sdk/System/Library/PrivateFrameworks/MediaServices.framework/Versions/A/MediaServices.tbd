@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9F824FE7-0F63-37E0-ACD9-F43B947EC407' ]
-platform:        macosx
+uuids:           [ 'x86_64: C6E32715-E375-33A6-83E9-E62DBBE98E47' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/MediaServices.framework/Versions/A/MediaServices
 exports:         
   - archs:           [ x86_64 ]
@@ -42,10 +42,11 @@ exports:
                        MSVArtworkServiceRequest, MSVArtworkServiceResizeRequest, 
                        MSVArtworkServiceResizeRequestDestination, MSVBidirectionalDictionary, 
                        MSVBlockGuard, MSVBloomFilter, MSVCLICommand, MSVCLICommandInterpreter, 
-                       MSVCallback, MSVDistributedNotificationObserver, MSVFileBufferedPipe, 
-                       MSVFinally, MSVLRUDictionary, MSVMessageParser, MSVMultiCallback, 
-                       MSVMutableBidirectionalDictionary, MSVPair, MSVPropertyListEncoder, 
-                       MSVStreamReader, MSVStreamWriter, MSVSystemDialog, MSVSystemDialogOptions, 
-                       MSVSystemDialogResponse, MSVSystemDialogTextField, MSVTaskAssertion, 
-                       MSVTimer, MSVWatchdog, MSVXPCTransaction, MSVZipArchive ]
+                       MSVCallback, MSVDistributedNotificationObserver, MSVEntitlementUtilities, 
+                       MSVFileBufferedPipe, MSVFinally, MSVLRUDictionary, MSVMessageParser, 
+                       MSVMultiCallback, MSVMutableBidirectionalDictionary, MSVPair, 
+                       MSVPropertyListEncoder, MSVStreamReader, MSVStreamWriter, 
+                       MSVSystemDialog, MSVSystemDialogOptions, MSVSystemDialogResponse, 
+                       MSVSystemDialogTextField, MSVTaskAssertion, MSVTimer, MSVWatchdog, 
+                       MSVXPCTransaction, MSVZipArchive ]
 ...

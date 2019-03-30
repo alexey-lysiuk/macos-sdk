@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 347DDC13-0159-3146-9FA2-07185ED646FF' ]
+uuids:           [ 'x86_64: EDEA6A72-8C7D-3F62-B2C8-0E5CCF04F692' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SoftwareUpdate.framework/Versions/A/SoftwareUpdate
 current-version: 747
@@ -59,7 +59,7 @@ exports:
                        _SUSDSeedProgramManager, _SUSDSeedProgramMigrator, _SUScanAppleCatalogURLKey, 
                        _SUScanCatalogURLKey, _SUScanExtendedMetaMacBuddyMaxVersionKey, 
                        _SUScanExtendedMetaMacBuddyMinVersionKey, _SUScanMacBuddyEligibleUpdateErrorDomain, 
-                       _SUScanPrefAllowAnyCertCatalog, _SUScanPrefAllowBGStageWithoutInactivity, 
+                       _SUScanMajorOSVariant, _SUScanPrefAllowAnyCertCatalog, _SUScanPrefAllowBGStageWithoutInactivity, 
                        _SUScanPrefAllowSameOrOlderMajorOSVersionKey, _SUScanPrefAutoUpdateRestartRequired, 
                        _SUScanPrefAutomaticCheckEnabledKey, _SUScanPrefBackgroundDownloadKey, 
                        _SUScanPrefBridgeOSIgnoresMacOSStagingStatus, _SUScanPrefBypassEVChecking, 

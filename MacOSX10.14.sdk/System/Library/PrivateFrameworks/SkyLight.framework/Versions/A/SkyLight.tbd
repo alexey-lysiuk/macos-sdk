@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DE7FD278-A178-3A5B-8A26-7295340A54BE' ]
+uuids:           [ 'x86_64: BC8D3BBE-DF9B-3B7C-B163-665979805F90' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SkyLight.framework/Versions/A/SkyLight
 current-version: 600

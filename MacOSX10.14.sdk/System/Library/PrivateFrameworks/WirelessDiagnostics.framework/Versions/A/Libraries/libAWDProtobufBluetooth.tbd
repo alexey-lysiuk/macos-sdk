@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 77C367FF-0AB7-35A2-B10E-15AAD17E87DB' ]
+uuids:           [ 'x86_64: 1FCC4B00-DC44-3296-941C-E61C056E40DA' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/WirelessDiagnostics.framework/Versions/A/Libraries/libAWDProtobufBluetooth.dylib
 objc-constraint: none
@@ -669,6 +669,8 @@ exports:
                        __ZN3awd7metrics26BluetoothA2DPAudioLinkInfo38kAvgMaxGoodPacketsPerSwitchFieldNumberE, 
                        __ZN3awd7metrics26BluetoothA2DPAudioLinkInfo38kAvgMinGoodPacketsPerSwitchFieldNumberE, 
                        __ZN3awd7metrics26BluetoothA2DPAudioLinkInfo40kTotalPurgeCountDueToOverwaitFieldNumberE, 
+                       __ZN3awd7metrics26BluetoothA2DPAudioLinkInfo42kTotalAudioDurationInLowLatencyFieldNumberE, 
+                       __ZN3awd7metrics26BluetoothA2DPAudioLinkInfo43kTotalAudioDurationInHighLatencyFieldNumberE, 
                        __ZN3awd7metrics26BluetoothA2DPAudioLinkInfo4SwapEPS1_, __ZN3awd7metrics26BluetoothA2DPAudioLinkInfo5ClearEv, 
                        __ZN3awd7metrics26BluetoothA2DPAudioLinkInfo8CopyFromERKS1_, 
                        __ZN3awd7metrics26BluetoothA2DPAudioLinkInfo9MergeFromERKS1_, 

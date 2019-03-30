@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 26419398-C30C-30F1-B656-A92AFA9560F6' ]
-platform:        macosx
+uuids:           [ 'x86_64: 0CD6861B-EC5F-3345-9C24-B21EEB85E44F' ]
+platform:        zippered
 install-name:    /usr/lib/system/libsystem_blocks.dylib
 current-version: 73
 objc-constraint: none

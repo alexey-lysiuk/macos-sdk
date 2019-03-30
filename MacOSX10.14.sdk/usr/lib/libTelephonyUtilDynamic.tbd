@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 56815350-CAD8-33A0-B958-D7503B4DC519' ]
-platform:        macosx
+uuids:           [ 'x86_64: BF0C94B6-EC48-3DAC-A0E6-F3643254255C' ]
+platform:        zippered
 install-name:    /usr/lib/libTelephonyUtilDynamic.dylib
 objc-constraint: none
 exports:         
@@ -163,6 +163,7 @@ exports:
                        __ZN3ctu13TextConverter18getGsm7EncodedSizeEiNS0_16Ucs2ToGsm7TablesE, 
                        __ZN3ctu13TextConverter21countSeptetsInMessageEPKcmNS0_16Ucs2ToGsm7TablesE, 
                        __ZN3ctu13TextConverter25decodeCbsDataCodingSchemeEiRNS0_12MessageClassERNS0_15MessageEncodingERb, 
+                       __ZN3ctu13TextConverter25decodeCbsDataCodingSchemeEiRNS0_16DcsLanguageTypesE, 
                        __ZN3ctu13TextConverter25decodeSmsDataCodingSchemeEiRNS0_12MessageClassERNS0_15MessageEncodingERbS5_S5_S5_S5_RKNS_12StaticLoggerE, 
                        __ZN3ctu13TextConverter28countCharactersInUtf8MessageEPKcm, 
                        __ZN3ctu13TextConverter8nextCodeEv, __ZN3ctu13TextConverter9readCharsEm, 
@@ -523,7 +524,8 @@ exports:
                        __ZN3ctu8PathView4skipENS_4llvm13TempStringRefE, __ZN3ctu8PathView7advanceEl, 
                        __ZN3ctu8PathViewC1ENS_4llvm9StringRefE, __ZN3ctu8PathViewC1Ev, 
                        __ZN3ctu8PathViewC2ENS_4llvm9StringRefE, __ZN3ctu8PathViewC2Ev, 
-                       __ZN3ctu8asStringENS_13TextConverter15MessageEncodingE, __ZN3ctu8asStringENS_13TextConverter18NationalLanguageIdE, 
+                       __ZN3ctu8asStringENS_13TextConverter15MessageEncodingE, __ZN3ctu8asStringENS_13TextConverter16DcsLanguageTypesE, 
+                       __ZN3ctu8asStringENS_13TextConverter18NationalLanguageIdE, 
                        __ZN3ctu8asStringENS_8LogLevelE, __ZN3ctu8basenameENS_4llvm9StringRefE, 
                        __ZN3ctu8bitfieldEaNSt3__14pairIhhEE, __ZN3ctu8bitfieldEcNSt3__14pairIhhEE, 
                        __ZN3ctu8bitfieldEhNSt3__14pairIhhEE, __ZN3ctu8bitfieldEiNSt3__14pairIhhEE, 

@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4D713DDA-AE5D-3316-8468-F509BB5852C1' ]
-platform:        macosx
+uuids:           [ 'x86_64: E853491F-E03C-33E0-A8BE-BDF49CA5EC1E' ]
+platform:        zippered
 install-name:    /System/Library/Frameworks/CoreMIDI.framework/Versions/A/CoreMIDI
 current-version: 69
 objc-constraint: none

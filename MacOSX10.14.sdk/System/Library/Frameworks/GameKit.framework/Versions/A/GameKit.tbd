@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 09D931C6-D91A-3794-B24E-FA915B0496D9' ]
+uuids:           [ 'x86_64: 38FC942F-5600-3AC7-9A13-7241F06FD5BE' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/GameKit.framework/Versions/A/GameKit
-current-version: 563.125
+current-version: 566.2
 exports:         
   - archs:           [ x86_64 ]
     re-exports:      [ /System/Library/Frameworks/Cocoa.framework/Versions/A/Cocoa, 

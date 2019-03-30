@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9FBE7BFB-3A81-37AC-8E15-E6F7932BBDC0' ]
+uuids:           [ 'x86_64: B5B61DE0-93F8-3A9F-8AA6-ACAAD04B3547' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore
-current-version: 1178.11
+current-version: 1178.32
 objc-constraint: none
 parent-umbrella: CoreServices
 exports:         

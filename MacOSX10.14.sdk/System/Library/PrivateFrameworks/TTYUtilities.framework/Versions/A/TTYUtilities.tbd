@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 447B9370-9834-34F0-846C-2E03C6F611DF' ]
+uuids:           [ 'x86_64: 7C9CEF6B-03DF-3843-9856-AD15AB7E4809' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/TTYUtilities.framework/Versions/A/TTYUtilities
 exports:         

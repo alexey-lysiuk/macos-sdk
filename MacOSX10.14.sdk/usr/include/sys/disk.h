@@ -2,7 +2,7 @@
  * Copyright (c) 1998-2014 Apple Computer, Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
- * 
+ *
  * This file contains Original Code and/or Modifications of Original Code
  * as defined in and that are subject to the Apple Public Source License
  * Version 2.0 (the 'License'). You may not use this file except in
@@ -11,10 +11,10 @@
  * unlawful or unlicensed copies of an Apple operating system, or to
  * circumvent, violate, or enable the circumvention or violation of, any
  * terms of an Apple operating system software license agreement.
- * 
+ *
  * Please obtain a copy of the License at
  * http://www.opensource.apple.com/apsl/ and read it before using this file.
- * 
+ *
  * The Original Code and all software distributed under the License are
  * distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
  * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
@@ -22,12 +22,12 @@
  * FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.
  * Please see the License for the specific language governing rights and
  * limitations under the License.
- * 
+ *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_END@
  */
 
-#ifndef	_SYS_DISK_H_
-#define	_SYS_DISK_H_
+#ifndef _SYS_DISK_H_
+#define _SYS_DISK_H_
 
 #include <stdint.h>
 #include <sys/ioctl.h>
@@ -85,62 +85,55 @@
 
 #define DK_SYNCHRONIZE_OPTION_BARRIER         0x00000002
 
-typedef struct
-{
-    uint64_t               offset;
-    uint64_t               length;
+typedef struct{
+	uint64_t               offset;
+	uint64_t               length;
 } dk_extent_t;
 
-typedef struct
-{
-    char                   path[128];
+typedef struct{
+	char                   path[128];
 } dk_firmware_path_t;
 
-typedef struct
-{
-    uint64_t               blockCount;
-    uint32_t               blockSize;
+typedef struct{
+	uint64_t               blockCount;
+	uint32_t               blockSize;
 
-    uint8_t                reserved0096[4];        /* reserved, clear to zero */
+	uint8_t                reserved0096[4];    /* reserved, clear to zero */
 } dk_format_capacity_t;
 
-typedef struct
-{
-    dk_format_capacity_t * capacities;
-    uint32_t               capacitiesCount;        /* use zero to probe count */
+typedef struct{
+	dk_format_capacity_t * capacities;
+	uint32_t               capacitiesCount;    /* use zero to probe count */
 
 #ifdef __LP64__
-    uint8_t                reserved0096[4];        /* reserved, clear to zero */
+	uint8_t                reserved0096[4];    /* reserved, clear to zero */
 #else /* !__LP64__ */
-    uint8_t                reserved0064[8];        /* reserved, clear to zero */
+	uint8_t                reserved0064[8];    /* reserved, clear to zero */
 #endif /* !__LP64__ */
 } dk_format_capacities_t;
 
-typedef struct
-{
-    uint64_t               offset;
-    uint64_t               length;
+typedef struct{
+	uint64_t               offset;
+	uint64_t               length;
 
-    uint32_t               options;
+	uint32_t               options;
 
-    uint8_t                reserved0160[4];        /* reserved, clear to zero */
+	uint8_t                reserved0160[4];    /* reserved, clear to zero */
 } dk_synchronize_t;
 
-typedef struct
-{
-    dk_extent_t *          extents;
-    uint32_t               extentsCount;
+typedef struct{
+	dk_extent_t *          extents;
+	uint32_t               extentsCount;
 
-    uint32_t               options;
+	uint32_t               options;
 
 #ifndef __LP64__
-    uint8_t                reserved0096[4];        /* reserved, clear to zero */
+	uint8_t                reserved0096[4];    /* reserved, clear to zero */
 #endif /* !__LP64__ */
 } dk_unmap_t;
 
 
-typedef struct
-{
+typedef struct{
 	uint64_t           flags;
 	uint64_t           hotfile_size;           /* in bytes */
 	uint64_t           hibernate_minsize;
@@ -157,26 +150,23 @@ typedef struct
 #define DK_PROVISION_TYPE_DEALLOCATED           0x01
 #define DK_PROVISION_TYPE_ANCHORED              0x02
 
-typedef struct
-{
+typedef struct{
 	uint64_t           offset;
 	uint64_t           length;
 	uint8_t            provisionType;
 	uint8_t            reserved[7];
 } dk_provision_extent_t;
 
-typedef struct
-{
+typedef struct{
 	uint64_t                offset;         /* input:        logical byte offset */
 	uint64_t                length;         /* input:        byte length, 0 for whole length */
 	uint64_t                options;        /*               reserved, clear to zero */
 	uint32_t                reserved;       /*               not used */
 	uint32_t                extentsCount;   /* input/output: count for extents */
-	dk_provision_extent_t *	extents;        /* output:       provision extents */
+	dk_provision_extent_t * extents;        /* output:       provision extents */
 } dk_provision_status_t;
 
-typedef struct
-{
+typedef struct{
 	uint64_t               options;        /*               reserved, clear to zero */
 	uint64_t               reserved;       /*               reserved, clear to zero */
 	uint64_t               description_size;
@@ -227,4 +217,4 @@ typedef struct
 
 
 
-#endif	/* _SYS_DISK_H_ */
+#endif  /* _SYS_DISK_H_ */

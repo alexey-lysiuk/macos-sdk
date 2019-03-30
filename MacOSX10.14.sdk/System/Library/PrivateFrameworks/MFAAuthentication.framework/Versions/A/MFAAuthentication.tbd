@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3DDA5227-49AD-3A59-A621-08F50C44D362' ]
+uuids:           [ 'x86_64: 3E480F86-8046-3459-9F3E-98B7F6332B5E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MFAAuthentication.framework/Versions/A/MFAAuthentication
 exports:         
@@ -25,7 +25,9 @@ exports:
                        _MFAAUserDefaultsKey_CustomServer, _MFAAUserDefaultsKey_DisableFairPlaySAP, 
                        _MFAAUserDefaultsKey_FairPlaySAPServer, _MFAAUserDefaultsKey_ForceFairPlaySAPFailure, 
                        _MFAAUserDefaultsKey_ForceNetworkFailure, _MFAAUserDefaultsKey_ForceTokenActivationFailure, 
-                       _MFAAUserDefaultsKey_ForceTokenConfirmationFailure, _MFAAUserDefaultsKey_Server, 
+                       _MFAAUserDefaultsKey_ForceTokenConfirmationFailure, _MFAAUserDefaultsKey_InvalidCertCache, 
+                       _MFAAUserDefaultsKey_InvalidCertCacheVersion, _MFAAUserDefaultsKey_InvalidCertCache_Status, 
+                       _MFAAUserDefaultsKey_InvalidCertCache_Timestamp, _MFAAUserDefaultsKey_Server, 
                        _MFAAUserDefaultsKey_SpoofCertificateStatus, _MFAAUserDefaultsKey_SpoofPPIDMetadata, 
                        _MFAAUserDefaultsKey_SpoofTokenActivation, _MFAAUserDefaultsKey_StaticContentServer, 
                        _MFAAUserDefaultsNotification, _MFAAUserDefaultsValue_Server_Custom, 
@@ -54,7 +56,7 @@ exports:
                        _mfaa_certificateManager_validateCertificate, _obfuscatedPointer, 
                        _printBytes, _removeNewline, _systemInfo_copyDeviceClass, 
                        _systemInfo_getCurrentUnixTime, _systemInfo_getCurrentUnixTimeMS, 
-                       _systemInfo_isDeveloperBuild, _systemInfo_isInternalBuild, 
+                       _systemInfo_isDeveloperBuild, _systemInfo_isHomePod, _systemInfo_isInternalBuild, 
                        _systemInfo_systemSupportsPearl ]
     objc-classes:    [ MFAACertificateManager, MFAATokenManager ]
 ...

@@ -30,13 +30,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 
-#if TARGET_OS_WIN32
 
-#ifndef CACHE_PUBLIC_API
-#define CACHE_PUBLIC_API __declspec( dllimport )
-#endif /* CACHE_PUBLIC_API */
-
-#else
 
 #include <sys/cdefs.h> 
 #ifndef CACHE_PUBLIC_API
@@ -50,7 +44,7 @@
 #endif /* __GNUC__ */
 #endif /* CACHE_PUBLIC_API */
 
-#endif /* ! TARGET_OS_WIN32 */
+
 
 #ifndef __BEGIN_DECLS
 #define __BEGIN_DECLS extern "C" {

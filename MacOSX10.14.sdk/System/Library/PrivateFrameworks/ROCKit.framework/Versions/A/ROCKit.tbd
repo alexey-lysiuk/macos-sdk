@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5437F6F7-453F-3D75-9E87-D2A090D82D25' ]
-platform:        macosx
+uuids:           [ 'x86_64: A8116AFC-F78F-32BF-A66C-ED3B5E9FF1D9' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/ROCKit.framework/Versions/A/ROCKit
-current-version: 24
+current-version: 27.6
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _ROCKSessionManagerOptionEnableMessageQueueSending, _kROCKDictionaryTypeEntryKey, 

@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6FA8A133-57A7-3C35-BF94-8469B09885FB' ]
-platform:        macosx
+uuids:           [ 'x86_64: FB11472D-74D7-31D4-8DF6-9A668BB08D4F' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/IOAccelerator.framework/Versions/A/IOAccelerator
 exports:         
   - archs:           [ x86_64 ]
@@ -73,27 +73,28 @@ exports:
                        _IOAccelResourceGetClientSharedPrivate, _IOAccelResourceGetDataBytes, 
                        _IOAccelResourceGetDataSize, _IOAccelResourceGetGPUVirtualAddress, 
                        _IOAccelResourceGetGlobalTraceObjectID, _IOAccelResourceGetInfo, 
-                       _IOAccelResourceGetPrivate, _IOAccelResourceGetResidentDataSize, 
-                       _IOAccelResourceGetTypeID, _IOAccelResourceListAddResource, 
-                       _IOAccelResourceListAddResourceNoThreshold, _IOAccelResourceListDestroy, 
-                       _IOAccelResourceListInit, _IOAccelResourceListMerge, _IOAccelResourceListMergeLists, 
-                       _IOAccelResourceListReset, _IOAccelResourceListShowResources, 
-                       _IOAccelResourcePageoff, _IOAccelResourceRelease, _IOAccelResourceSetPurgeable, 
-                       _IOAccelResourceTestEvent, _IOAccelSharedAllocateFenceMemory, 
-                       _IOAccelSharedCreate, _IOAccelSharedCreateDeviceShmem, _IOAccelSharedDestroyDeviceShmem, 
-                       _IOAccelSharedDirtyResourceBufferRange, _IOAccelSharedDirtyResourceFaceLevels, 
-                       _IOAccelSharedGetConnect, _IOAccelSharedGetGlobalTraceObjectID, 
-                       _IOAccelSharedGetMemoryData, _IOAccelSharedGetTypeID, _IOAccelSharedRelease, 
-                       _IOAccelSharedSetWaitForGPUCallback, _IOAccelSharedSetupDirtyRing, 
-                       _IOAccelSurfaceSignalEvent, _IOAccelVideoContextCreate, _IOAccelVideoContextFinish, 
-                       _IOAccelVideoContextFinishFenceEvent, _IOAccelVideoContextFinishResourceSysMem, 
-                       _IOAccelVideoContextFlushResourceSysMem, _IOAccelVideoContextGetConnect, 
-                       _IOAccelVideoContextGetDataBufferClassCount, _IOAccelVideoContextGetDataBufferResource, 
-                       _IOAccelVideoContextGetFenceBuffer, _IOAccelVideoContextGetSidebandBuffer, 
-                       _IOAccelVideoContextReclaimResources, _IOAccelVideoContextRelease, 
-                       _IOAccelVideoContextRequestDataBuffer, _IOAccelVideoContextSetDataBufferClassUsedBytes, 
-                       _IOAccelVideoContextSetExecutableName, _IOAccelVideoContextSubmitDataBuffers, 
-                       _IOAccelVideoContextTestResourceSysMem, ___globalCommPage ]
+                       _IOAccelResourceGetPhysicalOffset, _IOAccelResourceGetPrivate, 
+                       _IOAccelResourceGetResidentDataSize, _IOAccelResourceGetTypeID, 
+                       _IOAccelResourceListAddResource, _IOAccelResourceListAddResourceNoThreshold, 
+                       _IOAccelResourceListDestroy, _IOAccelResourceListInit, _IOAccelResourceListMerge, 
+                       _IOAccelResourceListMergeLists, _IOAccelResourceListReset, 
+                       _IOAccelResourceListShowResources, _IOAccelResourcePageoff, 
+                       _IOAccelResourceRelease, _IOAccelResourceSetPurgeable, _IOAccelResourceTestEvent, 
+                       _IOAccelSharedAllocateFenceMemory, _IOAccelSharedCreate, _IOAccelSharedCreateDeviceShmem, 
+                       _IOAccelSharedDestroyDeviceShmem, _IOAccelSharedDirtyResourceBufferRange, 
+                       _IOAccelSharedDirtyResourceFaceLevels, _IOAccelSharedGetConnect, 
+                       _IOAccelSharedGetGlobalTraceObjectID, _IOAccelSharedGetMemoryData, 
+                       _IOAccelSharedGetTypeID, _IOAccelSharedRelease, _IOAccelSharedSetWaitForGPUCallback, 
+                       _IOAccelSharedSetupDirtyRing, _IOAccelSurfaceSignalEvent, 
+                       _IOAccelVideoContextCreate, _IOAccelVideoContextFinish, _IOAccelVideoContextFinishFenceEvent, 
+                       _IOAccelVideoContextFinishResourceSysMem, _IOAccelVideoContextFlushResourceSysMem, 
+                       _IOAccelVideoContextGetConnect, _IOAccelVideoContextGetDataBufferClassCount, 
+                       _IOAccelVideoContextGetDataBufferResource, _IOAccelVideoContextGetFenceBuffer, 
+                       _IOAccelVideoContextGetSidebandBuffer, _IOAccelVideoContextReclaimResources, 
+                       _IOAccelVideoContextRelease, _IOAccelVideoContextRequestDataBuffer, 
+                       _IOAccelVideoContextSetDataBufferClassUsedBytes, _IOAccelVideoContextSetExecutableName, 
+                       _IOAccelVideoContextSubmitDataBuffers, _IOAccelVideoContextTestResourceSysMem, 
+                       ___globalCommPage ]
     objc-classes:    [ IOAccelMTLEvent ]
     objc-ivars:      [ IOAccelMTLEvent._eventName, IOAccelMTLEvent._globalTraceObjectID, 
                        IOAccelMTLEvent._sharedRef ]

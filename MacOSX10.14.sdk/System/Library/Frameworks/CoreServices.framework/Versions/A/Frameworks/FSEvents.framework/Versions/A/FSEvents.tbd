@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E40A3C4A-79C7-37D8-999B-D1169A06870B' ]
-platform:        macosx
+uuids:           [ 'x86_64: 727151AB-D38F-39B8-B7B3-F0039DBD45D0' ]
+platform:        zippered
 install-name:    /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/FSEvents
 current-version: 1239.200.12
 objc-constraint: none

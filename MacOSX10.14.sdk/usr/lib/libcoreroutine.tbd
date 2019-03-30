@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C4593B07-5143-3160-AD29-3530A56DF981' ]
+uuids:           [ 'x86_64: 6DB0DFA0-37A0-34F2-97C7-CAEB3F9D5DDB' ]
 platform:        macosx
 install-name:    /usr/lib/libcoreroutine.dylib
 exports:         
@@ -31,12 +31,12 @@ exports:
                        _RTApplicationManagerExecutableDuetExpertd, _RTApplicationManagerExecutableLocationd, 
                        _RTApplicationManagerExecutableRoutineDiagnosticExtension, 
                        _RTApplicationManagerExecutableWedge, _RTApplicationManagerExecutableXctest, 
-                       _RTApplicationManagerSiriAppSuggestionsExtension, _RTAssetManagerRemoteDefaultsFileName, 
-                       _RTAssetManagerXPCActivityIdentifier, _RTAuthorizationManagerMagicalMomentsBundlePath, 
-                       _RTCommonCalculateBoundingBox, _RTCommonCalculateDistance, 
-                       _RTCommonCalculateDistanceHighPrecision, _RTCommonCalculateDistanceRadius, 
-                       _RTCommonGetDestinationCoordinate, _RTCommonIsCoordinateValid, 
-                       _RTCommonRandomDouble, _RTConflictingItemIdentifierKey, _RTContactsManagerMaxDistanceBetweenContactAddressAndMapItemAddress, 
+                       _RTAssetManagerRemoteDefaultsFileName, _RTAssetManagerXPCActivityIdentifier, 
+                       _RTAuthorizationManagerMagicalMomentsBundlePath, _RTCommonCalculateBoundingBox, 
+                       _RTCommonCalculateDistance, _RTCommonCalculateDistanceHighPrecision, 
+                       _RTCommonCalculateDistanceRadius, _RTCommonGetDestinationCoordinate, 
+                       _RTCommonIsCoordinateValid, _RTCommonRandomDouble, _RTConflictingItemIdentifierKey, 
+                       _RTContactsManagerMaxDistanceBetweenContactAddressAndMapItemAddress, 
                        _RTDaemonClientRegistrarActionCodingKeyMonitoredActions, _RTDaemonClientRegistrarApplicationPredictionCodingKeyApplicationPredicate, 
                        _RTDaemonClientRegistrarScenarioTriggerCodingKeyMonitoredScenarioTriggerTypes, 
                        _RTDataVaultStorageClass, _RTDetailedErrorsKey, _RTDirectionsRequesterErrorDomain, 
@@ -254,9 +254,9 @@ exports:
                        RTMediaRemote, RTMediaRemoteNotificationNowPlayingInfoChanged, 
                        RTMediaRemoteNotificationPrimingBundleIdentifiersChanged, 
                        RTMemoryTransaction, RTMetricManager, RTMicroLocationCache, 
-                       RTMicroLocationRequester, RTMigrationHelperOneStateAndEntryExitPair, 
-                       RTMotionActivityHistogram, RTMotionActivityHistogramBin, RTMotionActivityManager, 
-                       RTMotionActivityManagerNotificationActivity, RTMotionActivityManagerNotificationMotionSettledStateChange, 
+                       RTMigrationHelperOneStateAndEntryExitPair, RTMotionActivityHistogram, 
+                       RTMotionActivityHistogramBin, RTMotionActivityManager, RTMotionActivityManagerNotificationActivity, 
+                       RTMotionActivityManagerNotificationMotionSettledStateChange, 
                        RTMotionActivityManagerNotificationVehicleConnected, RTMotionActivityManagerNotificationVehicleExit, 
                        RTNSClassArrayTransformer, RTNSStringArrayTransformer, RTNSUUIDTransformer, 
                        RTNavigationManager, RTNavigationManagerRouteSummaryNotification, 

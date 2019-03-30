@@ -2,7 +2,7 @@
  * Copyright (c) 2000-2006 Apple Computer, Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
- * 
+ *
  * This file contains Original Code and/or Modifications of Original Code
  * as defined in and that are subject to the Apple Public Source License
  * Version 2.0 (the 'License'). You may not use this file except in
@@ -11,10 +11,10 @@
  * unlawful or unlicensed copies of an Apple operating system, or to
  * circumvent, violate, or enable the circumvention or violation of, any
  * terms of an Apple operating system software license agreement.
- * 
+ *
  * Please obtain a copy of the License at
  * http://www.opensource.apple.com/apsl/ and read it before using this file.
- * 
+ *
  * The Original Code and all software distributed under the License are
  * distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
  * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
@@ -22,7 +22,7 @@
  * FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.
  * Please see the License for the specific language governing rights and
  * limitations under the License.
- * 
+ *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_END@
  */
 /*
@@ -83,8 +83,8 @@
  * failure). The timer is started when the user crosses their soft limit, it
  * is reset when they go below their soft limit.
  */
-#define	MAX_IQ_TIME	(7*24*60*60)	/* seconds in 1 week */
-#define	MAX_DQ_TIME	(7*24*60*60)	/* seconds in 1 week */
+#define MAX_IQ_TIME     (7*24*60*60)    /* seconds in 1 week */
+#define MAX_DQ_TIME     (7*24*60*60)    /* seconds in 1 week */
 
 /*
  * The following constants define the usage of the quota file array in the
@@ -93,38 +93,38 @@
  * the remainder of the quota code treats them generically and need not be
  * inspected when changing the size of the array.
  */
-#define	MAXQUOTAS	2
-#define	USRQUOTA	0	/* element used for user quotas */
-#define	GRPQUOTA	1	/* element used for group quotas */
+#define MAXQUOTAS       2
+#define USRQUOTA        0       /* element used for user quotas */
+#define GRPQUOTA        1       /* element used for group quotas */
 
 /*
  * Definitions for the default names of the quotas files.
  */
 #define INITQFNAMES { \
-	"user",		/* USRQUOTA */ \
-	"group",	/* GRPQUOTA */ \
+	"user",         /* USRQUOTA */ \
+	"group",        /* GRPQUOTA */ \
 	"undefined", \
 };
-#define	QUOTAFILENAME	".quota"
+#define QUOTAFILENAME   ".quota"
 #define QUOTAOPSNAME    ".quota.ops"
-#define	QUOTAGROUP	"operator"
+#define QUOTAGROUP      "operator"
 
 /*
  * Command definitions for the 'quotactl' system call.  The commands are
  * broken into a main command defined below and a subcommand that is used
  * to convey the type of quota that is being manipulated (see above).
  */
-#define SUBCMDMASK	0x00ff
-#define SUBCMDSHIFT	8
-#define	QCMD(cmd, type)	(((cmd) << SUBCMDSHIFT) | ((type) & SUBCMDMASK))
+#define SUBCMDMASK      0x00ff
+#define SUBCMDSHIFT     8
+#define QCMD(cmd, type) (((cmd) << SUBCMDSHIFT) | ((type) & SUBCMDMASK))
 
-#define	Q_QUOTAON	0x0100	/* enable quotas */
-#define	Q_QUOTAOFF	0x0200	/* disable quotas */
-#define	Q_GETQUOTA	0x0300	/* get limits and usage */
-#define	Q_SETQUOTA	0x0400	/* set limits and usage */
-#define	Q_SETUSE	0x0500	/* set usage */
-#define	Q_SYNC		0x0600	/* sync disk copy of a filesystems quotas */
-#define	Q_QUOTASTAT	0x0700	/* get quota on/off status */
+#define Q_QUOTAON       0x0100  /* enable quotas */
+#define Q_QUOTAOFF      0x0200  /* disable quotas */
+#define Q_GETQUOTA      0x0300  /* get limits and usage */
+#define Q_SETQUOTA      0x0400  /* set limits and usage */
+#define Q_SETUSE        0x0500  /* set usage */
+#define Q_SYNC          0x0600  /* sync disk copy of a filesystems quotas */
+#define Q_QUOTASTAT     0x0700  /* get quota on/off status */
 
 /*
  * The following two structures define the format of the disk
@@ -144,35 +144,35 @@
  * file (a pointer is retained in the filesystem  mount structure).
  */
 struct dqfilehdr {
-	u_int32_t dqh_magic;		
-	u_int32_t dqh_version;		/* == QF_VERSION */
-	u_int32_t dqh_maxentries;	/* must be a power of 2 */
-	u_int32_t dqh_entrycnt;		/* count of active entries */
-	u_int32_t dqh_flags;		/* reserved for now (0) */
-	u_int32_t dqh_chktime;		/* time of last quota check */
-	u_int32_t dqh_btime;		/* time limit for excessive disk use */
-	u_int32_t dqh_itime;		/* time limit for excessive files */
-	char      dqh_string[16];	/* tag string */
-	u_int32_t dqh_spare[4];		/* pad struct to power of 2 */
+	u_int32_t dqh_magic;
+	u_int32_t dqh_version;          /* == QF_VERSION */
+	u_int32_t dqh_maxentries;       /* must be a power of 2 */
+	u_int32_t dqh_entrycnt;         /* count of active entries */
+	u_int32_t dqh_flags;            /* reserved for now (0) */
+	u_int32_t dqh_chktime;          /* time of last quota check */
+	u_int32_t dqh_btime;            /* time limit for excessive disk use */
+	u_int32_t dqh_itime;            /* time limit for excessive files */
+	char      dqh_string[16];       /* tag string */
+	u_int32_t dqh_spare[4];         /* pad struct to power of 2 */
 };
 
 struct dqblk {
-	u_int64_t dqb_bhardlimit;	/* absolute limit on disk bytes alloc */
-	u_int64_t dqb_bsoftlimit;	/* preferred limit on disk bytes */
-	u_int64_t dqb_curbytes;	        /* current byte count */
-	u_int32_t dqb_ihardlimit;	/* maximum # allocated inodes + 1 */
-	u_int32_t dqb_isoftlimit;	/* preferred inode limit */
-	u_int32_t dqb_curinodes;	/* current # allocated inodes */
-	u_int32_t dqb_btime;		/* time limit for excessive disk use */
-	u_int32_t dqb_itime;		/* time limit for excessive files */
-	u_int32_t dqb_id;		/* identifier (0 for empty entries) */
-	u_int32_t dqb_spare[4];		/* pad struct to power of 2 */
+	u_int64_t dqb_bhardlimit;       /* absolute limit on disk bytes alloc */
+	u_int64_t dqb_bsoftlimit;       /* preferred limit on disk bytes */
+	u_int64_t dqb_curbytes;         /* current byte count */
+	u_int32_t dqb_ihardlimit;       /* maximum # allocated inodes + 1 */
+	u_int32_t dqb_isoftlimit;       /* preferred inode limit */
+	u_int32_t dqb_curinodes;        /* current # allocated inodes */
+	u_int32_t dqb_btime;            /* time limit for excessive disk use */
+	u_int32_t dqb_itime;            /* time limit for excessive files */
+	u_int32_t dqb_id;               /* identifier (0 for empty entries) */
+	u_int32_t dqb_spare[4];         /* pad struct to power of 2 */
 };
 
 
 #define INITQMAGICS { \
-	0xff31ff35,	/* USRQUOTA */ \
-	0xff31ff27,	/* GRPQUOTA */ \
+	0xff31ff35,     /* USRQUOTA */ \
+	0xff31ff27,     /* GRPQUOTA */ \
 };
 
 #define QF_VERSION          1
@@ -214,9 +214,10 @@ dqhashshift(u_int32_t size)
 {
 	int shift;
 
-	for (shift = 32; size > 1; size >>= 1, --shift)
+	for (shift = 32; size > 1; size >>= 1, --shift) {
 		continue;
-	return (shift);
+	}
+	return shift;
 }
 
 

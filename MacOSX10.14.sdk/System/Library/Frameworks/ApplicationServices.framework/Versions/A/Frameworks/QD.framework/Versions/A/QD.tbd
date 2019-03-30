@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 94A30038-C545-327A-B1C0-E19C79D62BAB' ]
+uuids:           [ 'x86_64: A414332F-72EC-393B-B2BC-7285268A19BD' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/QD.framework/Versions/A/QD
 objc-constraint: none

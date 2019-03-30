@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6EBC7A8C-7815-3826-BC2F-EFD7361DF827' ]
-platform:        macosx
+uuids:           [ 'x86_64: 1AE19030-97AA-3564-8E54-095BCC17A537' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/RevealCore.framework/Versions/A/RevealCore
 exports:         
   - archs:           [ x86_64 ]

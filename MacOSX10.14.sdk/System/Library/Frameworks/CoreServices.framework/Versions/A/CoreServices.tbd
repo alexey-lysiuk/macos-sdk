@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EBA4A3BF-0B07-3E1B-9C14-8E6879453C6C' ]
-platform:        macosx
+uuids:           [ 'x86_64: 62F21E40-D45C-3C01-872F-FA5822671CE3' ]
+platform:        zippered
 install-name:    /System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices
-current-version: 934
+current-version: 944.3
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

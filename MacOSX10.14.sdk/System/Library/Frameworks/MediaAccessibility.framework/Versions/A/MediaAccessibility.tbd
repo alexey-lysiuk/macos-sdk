@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 29D89F2B-6254-3D0D-BD0C-8472FCA373F4' ]
-platform:        macosx
+uuids:           [ 'x86_64: FD877F9B-6CAF-3BCD-8D74-5F25D61CB78C' ]
+platform:        zippered
 install-name:    /System/Library/Frameworks/MediaAccessibility.framework/Versions/A/MediaAccessibility
 current-version: 62
 objc-constraint: none

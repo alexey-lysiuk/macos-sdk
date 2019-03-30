@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1F5A49A9-370C-311B-B67C-DEA6DF6D2983' ]
-platform:        macosx
+uuids:           [ 'x86_64: BB1034F0-B791-3AF1-B166-6532B2AB54FE' ]
+platform:        zippered
 install-name:    /System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore
 current-version: 1.11
 compatibility-version: 1.2
@@ -418,22 +418,24 @@ exports:
     objc-classes:    [ CAAnimation, CAAnimationGroup, CABackdropLayer, CABasicAnimation, 
                        CABehavior, CABoxLayoutManager, CAChameleonLayer, CAConstraint, 
                        CAConstraintLayoutManager, CAContext, CADisplay, CADisplayAttributes, 
-                       CADisplayLink, CADisplayMode, CADisplayProperties, CADistanceFieldLayer, 
-                       CADynamicsBehavior, CAEmitterBehavior, CAEmitterCell, CAEmitterLayer, 
-                       CAFilter, CAForceField, CAGradientLayer, CAKeyframeAnimation, 
-                       CALayer, CALayerHost, CALight, CALinearMaskLayer, CAMLParser, 
-                       CAMLWriter, CAMatchMoveAnimation, CAMediaTimingFunction, CAMeshTransform, 
-                       CAMetalDrawable, CAMetalLayer, CAMutableMeshTransform, CAOpenGLLayer, 
-                       CAPackage, CAPluginLayer, CAPortalLayer, CAPresentationModifier, 
-                       CAPresentationModifierGroup, CAPropertyAnimation, CAProxyLayer, 
-                       CARemoteLayerClient, CARemoteLayerServer, CARenderer, CAReplicatorLayer, 
-                       CAScrollLayer, CAScrollLayoutManager, CAShapeLayer, CASmoothedTextLayer, 
-                       CASpring, CASpringAnimation, CAState, CAStateAddAnimation, 
-                       CAStateAddElement, CAStateController, CAStateElement, CAStateRemoveAnimation, 
-                       CAStateRemoveElement, CAStateSetValue, CAStateTransition, 
-                       CAStateTransitionElement, CATableLayoutManager, CATextLayer, 
-                       CATiledLayer, CATransaction, CATransactionCompletionItem, 
-                       CATransformLayer, CATransition, CAValueFunction, CAWrappedLayoutManager ]
+                       CADisplayLink, CADisplayMode, CADisplayModeCriteria, CADisplayPreferences, 
+                       CADisplayProperties, CADistanceFieldLayer, CADynamicsBehavior, 
+                       CAEmitterBehavior, CAEmitterCell, CAEmitterLayer, CAFilter, 
+                       CAForceField, CAGradientLayer, CAKeyframeAnimation, CALayer, 
+                       CALayerHost, CALight, CALinearMaskLayer, CAMLParser, CAMLWriter, 
+                       CAMatchMoveAnimation, CAMediaTimingFunction, CAMeshTransform, 
+                       CAMetalDrawable, CAMetalLayer, CAMutableDisplayPreferences, 
+                       CAMutableMeshTransform, CAOpenGLLayer, CAPackage, CAPluginLayer, 
+                       CAPortalLayer, CAPresentationModifier, CAPresentationModifierGroup, 
+                       CAPropertyAnimation, CAProxyLayer, CARemoteLayerClient, CARemoteLayerServer, 
+                       CARenderer, CAReplicatorLayer, CAScrollLayer, CAScrollLayoutManager, 
+                       CAShapeLayer, CASmoothedTextLayer, CASpring, CASpringAnimation, 
+                       CAState, CAStateAddAnimation, CAStateAddElement, CAStateController, 
+                       CAStateElement, CAStateRemoveAnimation, CAStateRemoveElement, 
+                       CAStateSetValue, CAStateTransition, CAStateTransitionElement, 
+                       CATableLayoutManager, CATextLayer, CATiledLayer, CATransaction, 
+                       CATransactionCompletionItem, CATransformLayer, CATransition, 
+                       CAValueFunction, CAWrappedLayoutManager ]
     objc-ivars:      [ CADisplayProperties._connectionSeed, CADisplayProperties._currentMode, 
                        CADisplayProperties._overscanAdjustment, CAStateAddElement._beforeObject, 
                        CAStateAddElement._keyPath, CAStateAddElement._object, CAStateElement._source, 

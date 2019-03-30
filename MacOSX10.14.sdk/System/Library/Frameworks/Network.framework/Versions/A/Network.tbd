@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: ADE86D62-7847-32D4-96E7-FD05CFC20B97' ]
-platform:        macosx
+uuids:           [ 'x86_64: B1AC55B1-7FE5-3E5B-AEF9-8928615F2E99' ]
+platform:        zippered
 install-name:    /System/Library/Frameworks/Network.framework/Versions/A/Network
 objc-constraint: none
 exports:         

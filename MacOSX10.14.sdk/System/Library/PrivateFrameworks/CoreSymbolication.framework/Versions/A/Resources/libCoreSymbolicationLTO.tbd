@@ -1,11 +1,12 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A6089FD8-F25D-3BA6-AA78-DEF90A48F6CC' ]
-platform:        macosx
-install-name:    Do not use or link with this private dylib.
-current-version: 64460.6
+uuids:           [ 'x86_64: 13B76A9F-A459-3AB2-94F0-47337A82C392' ]
+platform:        zippered
+install-name:    /System/Library/PrivateFrameworks//CoreSymbolication.framework/Versions/A/Resources/libCoreSymbolicationLTO.dylib
+current-version: 64490.25.1
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
+    allowable-clients: [ '!' ]
     symbols:         [ _Create, _Dispose, _Handler, _Initialize ]
 ...

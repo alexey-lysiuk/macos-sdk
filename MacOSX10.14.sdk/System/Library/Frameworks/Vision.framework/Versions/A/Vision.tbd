@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0F7A0D22-DA0B-3FBA-9ECE-ED9BC115B0CA' ]
-platform:        macosx
+uuids:           [ 'x86_64: 85BB01C2-6983-343E-BD29-D67BAB0589F4' ]
+platform:        zippered
 install-name:    /System/Library/Frameworks/Vision.framework/Versions/A/Vision
-current-version: 2.0.62
+current-version: 2.0.70
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

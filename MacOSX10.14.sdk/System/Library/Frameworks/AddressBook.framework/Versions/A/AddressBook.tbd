@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0C7FCB1A-15C2-38E8-8085-D484650F5140' ]
+uuids:           [ 'x86_64: AD9DE1B9-49D8-3328-A132-C06EA5FAA73F' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/AddressBook.framework/Versions/A/AddressBook
-current-version: 1885
+current-version: 1893
 exports:         
   - archs:           [ x86_64 ]
     re-exports:      [ /System/Library/PrivateFrameworks/AddressBookCore.framework/Versions/A/AddressBookCore, 
@@ -233,8 +233,8 @@ exports:
                        ABPopUpButton, ABPopUpButtonCell, ABPopupTableHeaderCell, 
                        ABPopupTableHeaderView, ABPostalAddressCollectionViewItem, 
                        ABPostalAddressFormatSubmenuGenerator, ABPreferredNameCollectionViewItem, 
-                       ABPropertyHeaderCell, ABQuerySearchConfiguration, ABRecordContext, 
-                       ABRectObject, ABRemotePersonView, ABRemoveMembersCommand, 
+                       ABPropertyHeaderCell, ABQuerySearchConfiguration, ABRTTServices, 
+                       ABRecordContext, ABRectObject, ABRemotePersonView, ABRemoveMembersCommand, 
                        ABRemoveMembersCommandBuilder, ABRemovesEmptyCardViewData, 
                        ABRenameGroupCommand, ABRolloverButton, ABSearchController, 
                        ABSearchElementOrderManager, ABSearchElementSetView, ABSearchElementUIController, 
@@ -246,8 +246,8 @@ exports:
                        ABSocialProfileCollectionViewItem, ABSourceSyncPeriodicTaskScheduler, 
                        ABSpaceFormatter, ABStopWatch, ABSuggestedEntriesFetcher, 
                        ABSuggestedValueSnippet, ABSuggestedValueViewController, ABSuggestedValueViewControllerSnippetHelper, 
-                       ABSuggestionsTracing, ABTTYServices, ABTableEntry, ABTableHeaderView, 
-                       ABTelURLHelper, ABTemplatePreferencesSaving, ABTemplateViewStyleProvider, 
+                       ABSuggestionsTracing, ABTableEntry, ABTableHeaderView, ABTelURLHelper, 
+                       ABTemplatePreferencesSaving, ABTemplateViewStyleProvider, 
                        ABTextContainer, ABTextStorage, ABThrottledTrackingAreaMonitor, 
                        ABTrackingArea, ABTypesetter, ABURLCollectionViewItem, ABUndoableCommandVisitor, 
                        ABUnlinkPeopleCommand, ABUserActivityRestoration, ABUserActivityScore, 

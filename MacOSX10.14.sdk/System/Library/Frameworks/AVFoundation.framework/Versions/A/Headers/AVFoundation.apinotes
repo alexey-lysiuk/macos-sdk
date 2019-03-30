@@ -35,11 +35,11 @@ Classes:
     MethodKind: Instance
   # AVAudioSession setCategory
   - Selector: 'setCategory:error:'
+    SwiftName: setCategory(_:)
     MethodKind: Instance
-    Availability: nonswift
   - Selector: 'setCategory:withOptions:error:'
+    SwiftName: setCategory(_:options:)
     MethodKind: Instance
-    Availability: nonswift
   - Selector: 'setCategory:mode:options:error:'
     SwiftName: setCategory(_:mode:options:)
     MethodKind: Instance
@@ -608,6 +608,8 @@ Tags:
   SwiftName: AVAudioSession.RouteChangeReason
 - Name: AVAudioSessionRouteSharingPolicy
   SwiftName: AVAudioSession.RouteSharingPolicy
+- Name: AVAudioSessionPromptStyle
+  SwiftName: AVAudioSession.PromptStyle
 - Name: AVAudioSessionSetActiveOptions
   SwiftName: AVAudioSession.SetActiveOptions
 - Name: AVAudioSessionSilenceSecondaryAudioHintType
@@ -2570,3 +2572,14 @@ SwiftVersions:
     SwiftName: AVAudioSessionRouteChange
   - Name: AVAudioSessionSilenceSecondaryAudioHintNotification
     SwiftName: AVAudioSessionSilenceSecondaryAudioHint
+
+- Version: 4.2
+  Classes:
+  - Name: AVCaptureConnection
+    Properties:
+    - Name: output
+      PropertyKind: Instance
+      Nullability: N
+    - Name: videoPreviewLayer
+      PropertyKind: Instance
+      Nullability: N

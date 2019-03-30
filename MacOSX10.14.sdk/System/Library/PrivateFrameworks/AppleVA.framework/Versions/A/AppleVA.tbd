@@ -1,8 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A7D2AD26-D52A-39E0-8296-1ADDDB6B6CED' ]
+uuids:           [ 'x86_64: 30C1F5C1-0742-3863-95F1-FCE51DF97E2D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AppleVA.framework/Versions/A/AppleVA
+current-version: 5.1.1
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

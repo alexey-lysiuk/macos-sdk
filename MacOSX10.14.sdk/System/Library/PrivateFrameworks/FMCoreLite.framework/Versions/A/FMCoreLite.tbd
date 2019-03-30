@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2BC50179-CDF8-3968-BF89-2DBA0BECA028' ]
-platform:        macosx
+uuids:           [ 'x86_64: C262FF3E-63B9-3081-BA3C-228394F4BD92' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/FMCoreLite.framework/Versions/A/FMCoreLite
 exports:         
   - archs:           [ x86_64 ]

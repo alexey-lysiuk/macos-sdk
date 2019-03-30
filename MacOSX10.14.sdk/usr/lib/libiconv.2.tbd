@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3240A278-F537-3EC8-BE0C-983797520A50' ]
-platform:        macosx
+uuids:           [ 'x86_64: E767B418-3531-3BB0-B58D-9ECB203407B7' ]
+platform:        zippered
 install-name:    /usr/lib/libiconv.2.dylib
 current-version: 7
 compatibility-version: 7

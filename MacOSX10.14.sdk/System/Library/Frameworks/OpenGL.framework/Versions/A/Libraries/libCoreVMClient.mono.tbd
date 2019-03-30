@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7D752B69-1E79-3B97-963E-26B12EB352CA' ]
-platform:        macosx
+uuids:           [ 'x86_64: 7A923D79-05F7-3119-8A45-C8F9D1EF16DB' ]
+platform:        zippered
 install-name:    /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries//libCoreVMClient.mono.dylib
 objc-constraint: none
 exports:         

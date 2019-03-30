@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F65BC9B4-77AB-3254-8432-9F7D3B0E169E' ]
+uuids:           [ 'x86_64: 5D15F5B8-9D7B-356D-A224-A86CF809BFBF' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/GPUWrangler.framework/Versions/A/GPUWrangler
 current-version: 0

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5A758D93-4BBD-3C6D-861B-000536ED9B2D' ]
+uuids:           [ 'x86_64: 8DD9AC75-7D3E-3607-BEA0-556E98C30765' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Metadata
-current-version: 1191.52
+current-version: 1191.56
 parent-umbrella: CoreServices
 exports:         
   - archs:           [ x86_64 ]
@@ -191,20 +191,21 @@ exports:
                        __MDFilterIsItemOut, __MDGetAllowedTaskCount, __MDGetCurrentTaskCount, 
                        __MDGetLabelServicesConnection, __MDGetLastUsedDate, __MDGetPrivateXattrServicesConnection, 
                        __MDGetPublicXattrServicesConnection, __MDHealthCheckDirectory, 
-                       __MDIgnoreFileOperations, __MDImportDirectory, __MDImportFilesWithUTIs, 
-                       __MDImportPrivateXattrsFromItems, __MDIndexingProgress, __MDIsCustomizableGroupName, 
-                       __MDIsRootVolumePath, __MDIssueStoreCommand, __MDItemCopyCFURL, 
-                       __MDItemCopyExAttrWithURL, __MDItemCreate, __MDItemCreateFSRef, 
-                       __MDItemCreateFileSystemObject, __MDItemGetContentType, __MDItemGetDevice, 
-                       __MDItemGetFileId, __MDItemGetTextEncodingHint, __MDItemGetTextSnippets, 
-                       __MDItemGetVRefNum, __MDItemMarkAsCreated, __MDItemMarkAsDownloaded, 
-                       __MDItemMarkAsModified, __MDItemMarkAsPrinted, __MDItemMarkAsReceived, 
-                       __MDItemMarkAsSent, __MDItemMarkAsUsed, __MDItemMarkAsUsedWithAbsoluteTime, 
-                       __MDItemMarkAsUsedWithPathAndCatInfo, __MDItemMarkAsUsedWithPathAndStatBuf, 
-                       __MDItemMarkAsUsedWithURL, __MDItemMarkAsUsedWithURLAndAbsoluteTime, 
-                       __MDItemRemoveAttributesWithURL, __MDItemSetAttributesForAbsolutePathsNoExAttr, 
-                       __MDItemSetAttributesWithURL, __MDItemSetContentType, __MDItemSetFinderColor, 
-                       __MDItemSetInSniffer, __MDItemSetPrivateAttributes, __MDItemSetTextEncodingHint, 
+                       __MDIgnoreFileOperations, __MDImportDirectory, __MDImportFile, 
+                       __MDImportFilesWithUTIs, __MDImportPrivateXattrsFromItems, 
+                       __MDIndexingProgress, __MDIsCustomizableGroupName, __MDIsRootVolumePath, 
+                       __MDIssueStoreCommand, __MDItemCopyCFURL, __MDItemCopyExAttrWithURL, 
+                       __MDItemCreate, __MDItemCreateFSRef, __MDItemCreateFileSystemObject, 
+                       __MDItemGetContentType, __MDItemGetDevice, __MDItemGetFileId, 
+                       __MDItemGetTextEncodingHint, __MDItemGetTextSnippets, __MDItemGetVRefNum, 
+                       __MDItemMarkAsCreated, __MDItemMarkAsDownloaded, __MDItemMarkAsModified, 
+                       __MDItemMarkAsPrinted, __MDItemMarkAsReceived, __MDItemMarkAsSent, 
+                       __MDItemMarkAsUsed, __MDItemMarkAsUsedWithAbsoluteTime, __MDItemMarkAsUsedWithPathAndCatInfo, 
+                       __MDItemMarkAsUsedWithPathAndStatBuf, __MDItemMarkAsUsedWithURL, 
+                       __MDItemMarkAsUsedWithURLAndAbsoluteTime, __MDItemRemoveAttributesWithURL, 
+                       __MDItemSetAttributesForAbsolutePathsNoExAttr, __MDItemSetAttributesWithURL, 
+                       __MDItemSetContentType, __MDItemSetFinderColor, __MDItemSetInSniffer, 
+                       __MDItemSetPrivateAttributes, __MDItemSetTextEncodingHint, 
                        __MDItemsCreateWithFileIdsAndAbsolutePathsOnDevice, __MDItemsWritePrivateXattrUpdatesWithKeysAndValues, 
                        __MDLabelCopyAttributeNameForUUID, __MDLabelCopyPrivateAttrs, 
                        __MDLabelCopyPrivateAttrsForUid, __MDLabelMatchExpressionApply, 

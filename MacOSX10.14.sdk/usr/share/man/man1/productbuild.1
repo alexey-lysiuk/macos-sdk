@@ -342,7 +342,8 @@ At the top level, this property list is a dictionary, with the following keys:
 .It Sy all-bundles Ta "Are all of the bundles specified required? (Boolean)" 
 .It Sy gl-renderer Ta "Required OpenGL capabilities (string)"
 .It Sy cl-device Ta "Required OpenCL capabilities (string)"
-.It Sy single-graphics-device Ta "Must OpenGL and OpenCL requirements be met by a single device? (Boolean)"
+.It Sy metal-device Ta "Required Metal capabilities (string)"
+.It Sy single-graphics-device Ta "Requires that OpenGL, OpenCL, and Metal requirements be met by a single device. (Boolean)"
 .It Sy sysctl-requirements Ta "Additional required hardware properties (string)"
 .It Sy home Ta "Should installation be allowed in user home directory? (Boolean)"
 .El
@@ -374,7 +375,7 @@ The
 key specifies a predicate, against which each of the OpenGL hardware renderers will be checked. For the
 product to be installed, at least one of the renderers must match the requirements of the predicate.
 The given predicate string must be convertible to an NSPredicate, and can use the following key paths:
-.Bl -column ".Sy limits.param<value>" A012345678901234567890123456789012345678901234567890123456789
+.Bl -column ".Sy limits.param<value>>>>>>>" A0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789
 .It Sy "Key Path" Ta Sy Description
 .It Sy version Ta "The supported OpenGL version as a double (e.g. major.minor)."
 .It Sy extensions Ta "An array of OpenGL extension strings supported."
@@ -414,23 +415,13 @@ The
 key specifies a predicate, against which each of the OpenCL GPU devices will be checked. For the
 product to be installed, at least one of the devices must match the requirements of the predicate.
 The given predicate string must be convertible to an NSPredicate, and can use the following key paths:
-.Bl -column ".Sy limits.param<value>" A012345678901234567890123456789012345678901234567890123456789
+.Bl -column ".Sy limits.param<value>>>>>>>" A0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789
 .It Sy "Key Path" Ta Sy Description
 .It Sy version Ta "The supported OpenCL version as a double (e.g. major.minor)."
 .It Sy extensions Ta "An array of OpenCL extension strings supported."
 .It Sy limits.<cl-parameter> Ta "The integer value of the named CL deviceInfo parameter."
 .It Sy limits.param<value> Ta "The integer value of the CL parameter named by enum <value>."
 .El
-.Pp
-If both 
-.Sy cl-device
-and
-.Sy gl-renderer
-are specified, both must be satisfied. By default, the requirements are considered met even if one
-graphics device satisfies the OpenGL requirement and a different one satisfies the OpenCL one.
-If you want to require that a single device satisfies both, add the
-.Sy single-graphics-device
-key with a value of true.
 .Pp
 .Em NOTE:
 The
@@ -440,6 +431,65 @@ requirement is ignored on versions of Mac OS X before 10.7. For this reason, spe
 will cause the minimum system version to be raised to 10.7. This may override the values set via the
 .Sy os
 key.
+.It
+The
+.Sy metal-device
+key specifies a predicate, against which each of the Metal GPU devices will be checked. For the
+product to be installed, at least one of the devices must match the requirements of the predicate.
+The given predicate string must be convertible to an NSPredicate, and can use the following key paths:
+.Bl -column ".Sy limits.param<value>>>>>>>" A0123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789
+.It Sy KeyPath Ta Sy Description
+.It Sy deviceName Ta "The name of the Metal Device that the hardware is using. <string>"
+.It Sy supportedFeatureSets Ta "An array of Metal (MTLFeatureSet) feature sets that the device supports. <array<string>>"
+.It Sy isRemovable Ta "The device is considered to be removable. This is useful for requiring an eGPU. <bool>"
+.It Sy isHeadless Ta "The device can not and does not have any displays attached. <bool>"
+.It Sy isLowPowerDevice Ta "Returns if the device is the low power device for automatic gfx switching. <bool>"
+.It Sy rasterOrderGroupsSupported Ta "The device supports raster order groups. <bool>"
+.It Sy argumentBuffersTier Ta "The graphics buffer tier that the device supports. <integer>"
+.El
+.Pp
+.Em NOTE:
+The
+.Sy metal-device
+requirement is ignored on versions of macOS before 10.14.4. For this reason, specifying
+.Sy metal-device
+will cause the minimum system version to be raised to 10.14.4. This may override the value set via the
+.Sy os
+key.
+.Pp
+.Em NOTE:
+An example of an MTLFeatureSet that would go into the
+.Sy supportedFeatureSets
+array would be
+.Em MTLFeatureSet_macOS_GPUFamily1_v1
+, a list of the current feature sets can be found in MTLDevice.h inside of Metal.framework.
+.Pp
+If the
+.Sy gl-device,
+.Sy cl-renderer,
+and
+.Sy metal-device
+are specified, all of the requirements must be satisfied. By default, the requirements are considered met even if one
+graphics device satisfies the OpenGL requirement and a different one satisfies the OpenCL one (Same with Metal).
+If you want to require that a single device satisfies all of the graphics requirements, add the
+.Sy single-graphics-device
+key with a value of true.
+.Pp
+.Em NOTE:
+Setting the
+.Sy single-graphics-device
+to
+.Sy true
+will only be honored if all three of the graphics types are specified (
+.Sy gl-device,
+.Sy cl-device,
+.Sy metal-device
+).
+However, since legacy packages before 10.14.4 are supported, it can also be used if only
+.Sy gl-device
+and
+.Sy cl-device
+are specified.
 .It
 The
 .Sy sysctl-requirements

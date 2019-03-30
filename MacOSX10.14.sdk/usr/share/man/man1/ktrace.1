@@ -1,6 +1,6 @@
-.\" Copyright (c) 2016, Apple Inc.  All rights reserved.
+.\" Copyright (c) 2016-2018, Apple Inc.  All rights reserved.
 .\"
-.Dd 15 April 2016
+.Dd 5 November 2018
 .Dt KTRACE 1
 .Os "Darwin"
 .Sh NAME
@@ -45,6 +45,8 @@
 .It Nm Cm remove
 .\"
 .It Nm Cm reset
+.\"
+.It Nm Cm decode Ar debugid Op Ar debugid Op Ar ...
 .\"
 .It Nm Cm emit
 .Ar debugid
@@ -289,6 +291,11 @@ tracing.
 .\" RESET
 .It Cm reset
 Reset tracing and associated subsystems, including kperf, to their default state.
+.Pp
+.\" DECODE
+.It Cm decode Ar debugid Op debugid Op Ar ...
+Print the components that make up the provided
+.Ar debugids .
 .Pp
 .\" EMIT
 .It Cm emit Ar debugid Op arg1 Op arg2 Op arg3 Op arg4

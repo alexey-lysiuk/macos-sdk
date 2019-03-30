@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C37D89CF-707A-3151-A37B-911AF6BF3B23' ]
-platform:        macosx
+uuids:           [ 'x86_64: 7EEE25C8-2680-32E1-9B4F-F76684E92BE1' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/ProtectedCloudStorage.framework/Versions/A/ProtectedCloudStorage
 exports:         
   - archs:           [ x86_64 ]
@@ -58,9 +58,9 @@ exports:
                        _PCSIdentityCreate, _PCSIdentityCreateCollection, _PCSIdentityCreateDiversifiedIdentity, 
                        _PCSIdentityCreateDiversifiedIdentityOptions, _PCSIdentityCreateExportedRawCompact, 
                        _PCSIdentityCreateFromData, _PCSIdentityCreateFromPersistentReference, 
-                       _PCSIdentityCreateFromRaw, _PCSIdentityCreateMaster, _PCSIdentityCreatePEMParser, 
-                       _PCSIdentityCreateRandomCompactRaw, _PCSIdentityCreateService, 
-                       _PCSIdentityCreateSignature, _PCSIdentityCreateWithExportedPrivateKey, 
+                       _PCSIdentityCreateFromPersistentReferenceAndGetSHA1, _PCSIdentityCreateFromRaw, 
+                       _PCSIdentityCreateMaster, _PCSIdentityCreatePEMParser, _PCSIdentityCreateRandomCompactRaw, 
+                       _PCSIdentityCreateService, _PCSIdentityCreateSignature, _PCSIdentityCreateWithExportedPrivateKey, 
                        _PCSIdentityCreateWithPrivateKey, _PCSIdentityEnoughToCreate, 
                        _PCSIdentityForeachService, _PCSIdentityGetCDPStatus, _PCSIdentityGetCreationTime, 
                        _PCSIdentityGetKeyID, _PCSIdentityGetKsID, _PCSIdentityGetPrivateKey, 

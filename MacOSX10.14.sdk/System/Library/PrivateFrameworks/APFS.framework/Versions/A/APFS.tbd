@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 42FBBAE8-A3B7-365A-AE8A-D5B10A1A06EC' ]
-platform:        macosx
+uuids:           [ 'x86_64: BA5A03A1-09AF-3859-AA38-BD24C4225E23' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/APFS.framework/Versions/A/APFS
 objc-constraint: none
 exports:         

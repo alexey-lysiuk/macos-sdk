@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 25156C7C-351A-32E0-9F2E-8400270D8967' ]
+uuids:           [ 'x86_64: 3ED498D3-4D5A-38C4-8BE2-5290301020FD' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/EAFirmwareUpdater.framework/Versions/A/EAFirmwareUpdater
 exports:         

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 65B2399B-BE55-3EA9-A0D4-A6858AC44D41' ]
+uuids:           [ 'x86_64: 494ADEC2-B175-3A33-8B52-AAC8E2C4F370' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ktrace.framework/Versions/A/ktrace
-current-version: 271.200.30
+current-version: 271.250.1
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

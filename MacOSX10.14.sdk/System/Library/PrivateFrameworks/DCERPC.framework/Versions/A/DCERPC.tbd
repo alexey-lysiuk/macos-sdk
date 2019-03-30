@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AC5BA3FA-17AE-3D1D-BDEA-AE217934B527' ]
+uuids:           [ 'x86_64: EA2D8DD3-D673-3E76-8CDB-8CAC1DF25461' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DCERPC.framework/Versions/A/DCERPC
 current-version: 63

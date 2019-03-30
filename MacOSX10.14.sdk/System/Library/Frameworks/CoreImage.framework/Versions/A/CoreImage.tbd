@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CAEE3AAA-0781-311A-B987-72C7332C1A3F' ]
-platform:        macosx
+uuids:           [ 'x86_64: D09743D4-3B21-367D-8C4A-3DB0F1C1E36D' ]
+platform:        zippered
 install-name:    /System/Library/Frameworks/CoreImage.framework/Versions/A/CoreImage
 current-version: 5
 compatibility-version: 1.0.1

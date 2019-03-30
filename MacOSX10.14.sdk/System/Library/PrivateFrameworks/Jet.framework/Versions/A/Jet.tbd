@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 35F80579-653D-3999-A39E-D484BCC8916A' ]
+uuids:           [ 'x86_64: D19C54D5-40F3-3DE2-B482-E3549BA93210' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Jet.framework/Versions/A/Jet
 exports:         

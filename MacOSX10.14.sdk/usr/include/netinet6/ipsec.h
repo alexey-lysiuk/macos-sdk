@@ -42,26 +42,26 @@
 #include <net/pfkeyv2.h>
 
 /* according to IANA assignment, port 0x0000 and proto 0xff are reserved. */
-#define IPSEC_PORT_ANY		0
-#define IPSEC_ULPROTO_ANY	255
-#define IPSEC_PROTO_ANY		255
+#define IPSEC_PORT_ANY          0
+#define IPSEC_ULPROTO_ANY       255
+#define IPSEC_PROTO_ANY         255
 
 /* mode of security protocol */
 /* NOTE: DON'T use IPSEC_MODE_ANY at SPD.  It's only use in SAD */
-#define	IPSEC_MODE_ANY		0	/* i.e. wildcard. */
-#define	IPSEC_MODE_TRANSPORT	1
-#define	IPSEC_MODE_TUNNEL	2
+#define IPSEC_MODE_ANY          0       /* i.e. wildcard. */
+#define IPSEC_MODE_TRANSPORT    1
+#define IPSEC_MODE_TUNNEL       2
 
 /*
  * Direction of security policy.
  * NOTE: Since INVALID is used just as flag.
  * The other are used for loop counter too.
  */
-#define IPSEC_DIR_ANY		0
-#define IPSEC_DIR_INBOUND	1
-#define IPSEC_DIR_OUTBOUND	2
-#define IPSEC_DIR_MAX		3
-#define IPSEC_DIR_INVALID	4
+#define IPSEC_DIR_ANY           0
+#define IPSEC_DIR_INBOUND       1
+#define IPSEC_DIR_OUTBOUND      2
+#define IPSEC_DIR_MAX           3
+#define IPSEC_DIR_INVALID       4
 
 /* Policy level */
 /*
@@ -69,60 +69,60 @@
  * DISCARD, IPSEC and NONE are allowed for setkey() in SPD.
  * DISCARD and NONE are allowed for system default.
  */
-#define IPSEC_POLICY_DISCARD	0	/* discarding packet */
-#define IPSEC_POLICY_NONE	1	/* through IPsec engine */
-#define IPSEC_POLICY_IPSEC	2	/* do IPsec */
-#define IPSEC_POLICY_ENTRUST	3	/* consulting SPD if present. */
-#define IPSEC_POLICY_BYPASS	4	/* only for privileged socket. */
+#define IPSEC_POLICY_DISCARD    0       /* discarding packet */
+#define IPSEC_POLICY_NONE       1       /* through IPsec engine */
+#define IPSEC_POLICY_IPSEC      2       /* do IPsec */
+#define IPSEC_POLICY_ENTRUST    3       /* consulting SPD if present. */
+#define IPSEC_POLICY_BYPASS     4       /* only for privileged socket. */
 #define IPSEC_POLICY_GENERATE   5       /* same as discard - IKE daemon can override with generated policy */
 
 /* Security protocol level */
-#define	IPSEC_LEVEL_DEFAULT	0	/* reference to system default */
-#define	IPSEC_LEVEL_USE		1	/* use SA if present. */
-#define	IPSEC_LEVEL_REQUIRE	2	/* require SA. */
-#define	IPSEC_LEVEL_UNIQUE	3	/* unique SA. */
+#define IPSEC_LEVEL_DEFAULT     0       /* reference to system default */
+#define IPSEC_LEVEL_USE         1       /* use SA if present. */
+#define IPSEC_LEVEL_REQUIRE     2       /* require SA. */
+#define IPSEC_LEVEL_UNIQUE      3       /* unique SA. */
 
-#define IPSEC_MANUAL_REQID_MAX	0x3fff
-				/*
-				 * if security policy level == unique, this id
-				 * indicate to a relative SA for use, else is
-				 * zero.
-				 * 1 - 0x3fff are reserved for manual keying.
-				 * 0 are reserved for above reason.  Others is
-				 * for kernel use.
-				 * Note that this id doesn't identify SA
-				 * by only itself.
-				 */
+#define IPSEC_MANUAL_REQID_MAX  0x3fff
+/*
+ * if security policy level == unique, this id
+ * indicate to a relative SA for use, else is
+ * zero.
+ * 1 - 0x3fff are reserved for manual keying.
+ * 0 are reserved for above reason.  Others is
+ * for kernel use.
+ * Note that this id doesn't identify SA
+ * by only itself.
+ */
 #define IPSEC_REPLAYWSIZE  32
 
 /* statistics for ipsec processing */
 struct ipsecstat {
-	u_quad_t in_success __attribute__ ((aligned (8))); /* succeeded inbound process */
-	u_quad_t in_polvio __attribute__ ((aligned (8)));
-			/* security policy violation for inbound process */
-	u_quad_t in_nosa __attribute__ ((aligned (8)));     /* inbound SA is unavailable */
-	u_quad_t in_inval __attribute__ ((aligned (8)));    /* inbound processing failed due to EINVAL */
-	u_quad_t in_nomem __attribute__ ((aligned (8)));    /* inbound processing failed due to ENOBUFS */
-	u_quad_t in_badspi __attribute__ ((aligned (8)));   /* failed getting a SPI */
-	u_quad_t in_ahreplay __attribute__ ((aligned (8))); /* AH replay check failed */
-	u_quad_t in_espreplay __attribute__ ((aligned (8))); /* ESP replay check failed */
-	u_quad_t in_ahauthsucc __attribute__ ((aligned (8))); /* AH authentication success */
-	u_quad_t in_ahauthfail __attribute__ ((aligned (8))); /* AH authentication failure */
-	u_quad_t in_espauthsucc __attribute__ ((aligned (8))); /* ESP authentication success */
-	u_quad_t in_espauthfail __attribute__ ((aligned (8))); /* ESP authentication failure */
-	u_quad_t in_esphist[256] __attribute__ ((aligned (8)));
-	u_quad_t in_ahhist[256] __attribute__ ((aligned (8)));
-	u_quad_t in_comphist[256] __attribute__ ((aligned (8)));
-	u_quad_t out_success __attribute__ ((aligned (8))); /* succeeded outbound process */
-	u_quad_t out_polvio __attribute__ ((aligned (8)));
-			/* security policy violation for outbound process */
-	u_quad_t out_nosa __attribute__ ((aligned (8)));    /* outbound SA is unavailable */
-	u_quad_t out_inval __attribute__ ((aligned (8)));   /* outbound process failed due to EINVAL */
-	u_quad_t out_nomem __attribute__ ((aligned (8)));    /* inbound processing failed due to ENOBUFS */
-	u_quad_t out_noroute __attribute__ ((aligned (8))); /* there is no route */
-	u_quad_t out_esphist[256] __attribute__ ((aligned (8)));
-	u_quad_t out_ahhist[256] __attribute__ ((aligned (8)));
-	u_quad_t out_comphist[256] __attribute__ ((aligned (8)));
+	u_quad_t in_success __attribute__ ((aligned(8)));  /* succeeded inbound process */
+	u_quad_t in_polvio __attribute__ ((aligned(8)));
+	/* security policy violation for inbound process */
+	u_quad_t in_nosa __attribute__ ((aligned(8)));      /* inbound SA is unavailable */
+	u_quad_t in_inval __attribute__ ((aligned(8)));     /* inbound processing failed due to EINVAL */
+	u_quad_t in_nomem __attribute__ ((aligned(8)));     /* inbound processing failed due to ENOBUFS */
+	u_quad_t in_badspi __attribute__ ((aligned(8)));    /* failed getting a SPI */
+	u_quad_t in_ahreplay __attribute__ ((aligned(8)));  /* AH replay check failed */
+	u_quad_t in_espreplay __attribute__ ((aligned(8)));  /* ESP replay check failed */
+	u_quad_t in_ahauthsucc __attribute__ ((aligned(8)));  /* AH authentication success */
+	u_quad_t in_ahauthfail __attribute__ ((aligned(8)));  /* AH authentication failure */
+	u_quad_t in_espauthsucc __attribute__ ((aligned(8)));  /* ESP authentication success */
+	u_quad_t in_espauthfail __attribute__ ((aligned(8)));  /* ESP authentication failure */
+	u_quad_t in_esphist[256] __attribute__ ((aligned(8)));
+	u_quad_t in_ahhist[256] __attribute__ ((aligned(8)));
+	u_quad_t in_comphist[256] __attribute__ ((aligned(8)));
+	u_quad_t out_success __attribute__ ((aligned(8)));  /* succeeded outbound process */
+	u_quad_t out_polvio __attribute__ ((aligned(8)));
+	/* security policy violation for outbound process */
+	u_quad_t out_nosa __attribute__ ((aligned(8)));     /* outbound SA is unavailable */
+	u_quad_t out_inval __attribute__ ((aligned(8)));    /* outbound process failed due to EINVAL */
+	u_quad_t out_nomem __attribute__ ((aligned(8)));     /* inbound processing failed due to ENOBUFS */
+	u_quad_t out_noroute __attribute__ ((aligned(8)));  /* there is no route */
+	u_quad_t out_esphist[256] __attribute__ ((aligned(8)));
+	u_quad_t out_ahhist[256] __attribute__ ((aligned(8)));
+	u_quad_t out_comphist[256] __attribute__ ((aligned(8)));
 };
 
 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9CEB3006-FCFE-3AD6-A781-45FD5790C4A8' ]
+uuids:           [ 'x86_64: 9D9DB237-9E15-391D-BAE1-864D9CC37E8A' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AOSAccountsLite.framework/Versions/A/AOSAccountsLite
 current-version: 1.9.95

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1B3E1D04-66FF-3C69-85A8-61E11BE6980D' ]
+uuids:           [ 'x86_64: FB4D7474-3025-3CF6-A8BA-90504CD68712' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Speech.framework/Versions/A/Speech
 exports:         

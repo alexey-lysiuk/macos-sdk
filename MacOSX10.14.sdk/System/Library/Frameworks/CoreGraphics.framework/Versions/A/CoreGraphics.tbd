@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: 57F76BD4-4472-3B04-A41B-87767D5639CD', 'x86_64h: D2F1DD53-09BD-307B-8B80-46B259530ED8' ]
-platform:        macosx
+uuids:           [ 'x86_64: BB033674-310A-39FF-85D3-4FE17875CE65', 'x86_64h: 58D98B52-5BEF-3345-B8DD-AAE476234FC1' ]
+platform:        zippered
 install-name:    /System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics
-current-version: 1247.4.1
+current-version: 1251.12
 compatibility-version: 64
 objc-constraint: none
 exports:         
@@ -1119,7 +1119,8 @@ exports:
                        _kCGColorClear, _kCGColorConversionBlackPointCompensation, 
                        _kCGColorConversionTRCSize, _kCGColorSpaceACESCGLinear, _kCGColorSpaceAdobeRGB1998, 
                        _kCGColorSpaceDCIP3, _kCGColorSpaceDisplayP3, _kCGColorSpaceDisplayRGB, 
-                       _kCGColorSpaceExtendedGray, _kCGColorSpaceExtendedLinearGray, 
+                       _kCGColorSpaceExtendedGray, _kCGColorSpaceExtendedLinearDisplayP3, 
+                       _kCGColorSpaceExtendedLinearGray, _kCGColorSpaceExtendedLinearITUR_2020, 
                        _kCGColorSpaceExtendedLinearSRGB, _kCGColorSpaceExtendedSRGB, 
                        _kCGColorSpaceGenericCMYK, _kCGColorSpaceGenericGray, _kCGColorSpaceGenericGrayGamma2_2, 
                        _kCGColorSpaceGenericHDR, _kCGColorSpaceGenericLab, _kCGColorSpaceGenericRGB, 
@@ -1274,4 +1275,6 @@ exports:
                        _shape_inset, _shape_intersect, _shape_intersect_with_bounds, 
                        _shape_is_empty, _shape_is_rectangular, _shape_length, _shape_offset, 
                        _shape_qdrgn_alloc, _shape_qdrgn_free, _shape_union, _shape_xor ]
+    objc-classes:    [ CGVirtualDisplay, CGVirtualDisplayDescriptor, CGVirtualDisplayMode, 
+                       CGVirtualDisplaySettings ]
 ...

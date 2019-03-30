@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E5BF810E-D196-3402-9C65-6F7D10C054C4' ]
+uuids:           [ 'x86_64: 57F5BC38-8C81-3ADE-B3A8-774BE4A5E38E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotosImagingFoundation.framework/Versions/A/PhotosImagingFoundation
-current-version: 3411.5.190
+current-version: 3441.7.100
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CGAffineTransformDeterminant, _CGAffineTransformDot, _CGAffineTransformFixedPoint, 

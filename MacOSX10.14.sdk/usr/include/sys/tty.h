@@ -2,7 +2,7 @@
  * Copyright (c) 2000-2002 Apple Computer, Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
- * 
+ *
  * This file contains Original Code and/or Modifications of Original Code
  * as defined in and that are subject to the Apple Public Source License
  * Version 2.0 (the 'License'). You may not use this file except in
@@ -11,10 +11,10 @@
  * unlawful or unlicensed copies of an Apple operating system, or to
  * circumvent, violate, or enable the circumvention or violation of, any
  * terms of an Apple operating system software license agreement.
- * 
+ *
  * Please obtain a copy of the License at
  * http://www.opensource.apple.com/apsl/ and read it before using this file.
- * 
+ *
  * The Original Code and all software distributed under the License are
  * distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
  * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
@@ -22,7 +22,7 @@
  * FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.
  * Please see the License for the specific language governing rights and
  * limitations under the License.
- * 
+ *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_END@
  */
 /* Copyright (c) 1997 Apple Computer, Inc. All Rights Reserved */
@@ -67,86 +67,86 @@
  */
 
 #ifndef _SYS_TTY_H_
-#define	_SYS_TTY_H_
+#define _SYS_TTY_H_
 
 #include <sys/appleapiopts.h>
 #include <sys/cdefs.h>
 #include <sys/termios.h>
-#include <sys/select.h>		/* For struct selinfo. */
+#include <sys/select.h>         /* For struct selinfo. */
 
 
 struct tty;
 struct clist;
 
 /* These flags are kept in t_state. */
-#define	TS_SO_OLOWAT	0x00001		/* Wake up when output <= low water. */
-#define	TS_ASYNC	0x00002		/* Tty in async I/O mode. */
-#define	TS_BUSY		0x00004		/* Draining output. */
-#define	TS_CARR_ON	0x00008		/* Carrier is present. */
-#define	TS_FLUSH	0x00010		/* Outq has been flushed during DMA. */
-#define	TS_ISOPEN	0x00020		/* Open has completed. */
-#define	TS_TBLOCK	0x00040		/* Further input blocked. */
-#define	TS_TIMEOUT	0x00080		/* Wait for output char processing. */
-#define	TS_TTSTOP	0x00100		/* Output paused. */
+#define TS_SO_OLOWAT    0x00001         /* Wake up when output <= low water. */
+#define TS_ASYNC        0x00002         /* Tty in async I/O mode. */
+#define TS_BUSY         0x00004         /* Draining output. */
+#define TS_CARR_ON      0x00008         /* Carrier is present. */
+#define TS_FLUSH        0x00010         /* Outq has been flushed during DMA. */
+#define TS_ISOPEN       0x00020         /* Open has completed. */
+#define TS_TBLOCK       0x00040         /* Further input blocked. */
+#define TS_TIMEOUT      0x00080         /* Wait for output char processing. */
+#define TS_TTSTOP       0x00100         /* Output paused. */
 #ifdef notyet
-#define	TS_WOPEN	0x00200		/* Open in progress. */
+#define TS_WOPEN        0x00200         /* Open in progress. */
 #endif
-#define	TS_XCLUDE	0x00400		/* Tty requires exclusivity. */
+#define TS_XCLUDE       0x00400         /* Tty requires exclusivity. */
 
 /* State for intra-line fancy editing work. */
-#define	TS_BKSL		0x00800		/* State for lowercase \ work. */
-#define	TS_CNTTB	0x01000		/* Counting tab width, ignore FLUSHO. */
-#define	TS_ERASE	0x02000		/* Within a \.../ for PRTRUB. */
-#define	TS_LNCH		0x04000		/* Next character is literal. */
-#define	TS_TYPEN	0x08000		/* Retyping suspended input (PENDIN). */
-#define	TS_LOCAL	(TS_BKSL | TS_CNTTB | TS_ERASE | TS_LNCH | TS_TYPEN)
+#define TS_BKSL         0x00800         /* State for lowercase \ work. */
+#define TS_CNTTB        0x01000         /* Counting tab width, ignore FLUSHO. */
+#define TS_ERASE        0x02000         /* Within a \.../ for PRTRUB. */
+#define TS_LNCH         0x04000         /* Next character is literal. */
+#define TS_TYPEN        0x08000         /* Retyping suspended input (PENDIN). */
+#define TS_LOCAL        (TS_BKSL | TS_CNTTB | TS_ERASE | TS_LNCH | TS_TYPEN)
 
 /* Extras. */
-#define	TS_CAN_BYPASS_L_RINT 0x010000	/* Device in "raw" mode. */
-#define	TS_CONNECTED	0x020000	/* Connection open. */
-#define	TS_SNOOP	0x040000	/* Device is being snooped on. */
-#define	TS_SO_OCOMPLETE	0x080000	/* Wake up when output completes. */
-#define	TS_ZOMBIE	0x100000	/* Connection lost. */
+#define TS_CAN_BYPASS_L_RINT 0x010000   /* Device in "raw" mode. */
+#define TS_CONNECTED    0x020000        /* Connection open. */
+#define TS_SNOOP        0x040000        /* Device is being snooped on. */
+#define TS_SO_OCOMPLETE 0x080000        /* Wake up when output completes. */
+#define TS_ZOMBIE       0x100000        /* Connection lost. */
 
 /* Hardware flow-control-invoked bits. */
-#define	TS_CAR_OFLOW	0x200000	/* For MDMBUF (XXX handle in driver). */
+#define TS_CAR_OFLOW    0x200000        /* For MDMBUF (XXX handle in driver). */
 #ifdef notyet
-#define	TS_CTS_OFLOW	0x400000	/* For CCTS_OFLOW. */
-#define	TS_DSR_OFLOW	0x800000	/* For CDSR_OFLOW. */
+#define TS_CTS_OFLOW    0x400000        /* For CCTS_OFLOW. */
+#define TS_DSR_OFLOW    0x800000        /* For CDSR_OFLOW. */
 #endif
 
-#define	TS_IOCTL_NOT_OK	0x1000000	/* Workaround <rdar://....> */
-#define	TS_PGRPHUP	0x2000000       /* Don't change Foregroud process group */
+#define TS_IOCTL_NOT_OK 0x1000000       /* Workaround <rdar://....> */
+#define TS_PGRPHUP      0x2000000       /* Don't change Foregroud process group */
 
 
 /* Character type information. */
-#define	ORDINARY	0
-#define	CONTROL		1
-#define	BACKSPACE	2
-#define	NEWLINE		3
-#define	TAB		4
-#define	VTAB		5
-#define	RETURN		6
+#define ORDINARY        0
+#define CONTROL         1
+#define BACKSPACE       2
+#define NEWLINE         3
+#define TAB             4
+#define VTAB            5
+#define RETURN          6
 
 struct speedtab {
-	int sp_speed;			/* Speed. */
-	int sp_code;			/* Code. */
+	int sp_speed;                   /* Speed. */
+	int sp_code;                    /* Code. */
 };
 
 /* Modem control commands (driver). */
-#define	DMSET		0
-#define	DMBIS		1
-#define	DMBIC		2
-#define	DMGET		3
+#define DMSET           0
+#define DMBIS           1
+#define DMBIC           2
+#define DMGET           3
 
 /* Flags on a character passed to ttyinput. */
-#define	TTY_CHARMASK	0x000000ff	/* Character mask */
-#define	TTY_QUOTE	0x00000100	/* Character quoted */
-#define	TTY_ERRORMASK	0xff000000	/* Error mask */
-#define	TTY_FE		0x01000000	/* Framing error */
-#define	TTY_PE		0x02000000	/* Parity error */
-#define	TTY_OE		0x04000000	/* Overrun error */
-#define	TTY_BI		0x08000000	/* Break condition */
+#define TTY_CHARMASK    0x000000ff      /* Character mask */
+#define TTY_QUOTE       0x00000100      /* Character quoted */
+#define TTY_ERRORMASK   0xff000000      /* Error mask */
+#define TTY_FE          0x01000000      /* Framing error */
+#define TTY_PE          0x02000000      /* Parity error */
+#define TTY_OE          0x04000000      /* Overrun error */
+#define TTY_BI          0x08000000      /* Break condition */
 
 
 #endif /* !_SYS_TTY_H_ */

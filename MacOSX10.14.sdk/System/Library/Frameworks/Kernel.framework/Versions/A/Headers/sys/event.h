@@ -63,76 +63,76 @@
 /*
  * Filter types
  */
-#define EVFILT_READ		(-1)
-#define EVFILT_WRITE		(-2)
-#define EVFILT_AIO		(-3)	/* attached to aio requests */
-#define EVFILT_VNODE		(-4)	/* attached to vnodes */
-#define EVFILT_PROC		(-5)	/* attached to struct proc */
-#define EVFILT_SIGNAL		(-6)	/* attached to struct proc */
-#define EVFILT_TIMER		(-7)	/* timers */
-#define EVFILT_MACHPORT         (-8)	/* Mach portsets */
-#define EVFILT_FS		(-9)	/* Filesystem events */
+#define EVFILT_READ             (-1)
+#define EVFILT_WRITE            (-2)
+#define EVFILT_AIO              (-3)    /* attached to aio requests */
+#define EVFILT_VNODE            (-4)    /* attached to vnodes */
+#define EVFILT_PROC             (-5)    /* attached to struct proc */
+#define EVFILT_SIGNAL           (-6)    /* attached to struct proc */
+#define EVFILT_TIMER            (-7)    /* timers */
+#define EVFILT_MACHPORT         (-8)    /* Mach portsets */
+#define EVFILT_FS               (-9)    /* Filesystem events */
 #define EVFILT_USER             (-10)   /* User events */
-					/* (-11) unused */
-#define EVFILT_VM		(-12)	/* Virtual memory events */
+                                        /* (-11) unused */
+#define EVFILT_VM               (-12)   /* Virtual memory events */
 
-#define EVFILT_EXCEPT		(-15)	/* Exception events */
+#define EVFILT_EXCEPT           (-15)   /* Exception events */
 
-#define EVFILT_SYSCOUNT		17
-#define EVFILT_THREADMARKER	EVFILT_SYSCOUNT /* Internal use only */
+#define EVFILT_SYSCOUNT         17
+#define EVFILT_THREADMARKER     EVFILT_SYSCOUNT /* Internal use only */
 
 #pragma pack(4)
 
 struct kevent {
-	uintptr_t	ident;		/* identifier for this event */
-	int16_t		filter;		/* filter for event */
-	uint16_t	flags;		/* general flags */
-	uint32_t	fflags;		/* filter-specific flags */
-	intptr_t	data;		/* filter-specific data */
-	void		*udata;		/* opaque user data identifier */
+	uintptr_t       ident;          /* identifier for this event */
+	int16_t         filter;         /* filter for event */
+	uint16_t        flags;          /* general flags */
+	uint32_t        fflags;         /* filter-specific flags */
+	intptr_t        data;           /* filter-specific data */
+	void            *udata;         /* opaque user data identifier */
 };
 
 
 #pragma pack()
 
 struct kevent64_s {
-	uint64_t	ident;		/* identifier for this event */
-	int16_t		filter;		/* filter for event */
-	uint16_t	flags;		/* general flags */
-	uint32_t	fflags;		/* filter-specific flags */
-	int64_t		data;		/* filter-specific data */
-	uint64_t	udata;		/* opaque user data identifier */
-	uint64_t	ext[2];		/* filter-specific extensions */
+	uint64_t        ident;          /* identifier for this event */
+	int16_t         filter;         /* filter for event */
+	uint16_t        flags;          /* general flags */
+	uint32_t        fflags;         /* filter-specific flags */
+	int64_t         data;           /* filter-specific data */
+	uint64_t        udata;          /* opaque user data identifier */
+	uint64_t        ext[2];         /* filter-specific extensions */
 };
 
 
-#define EV_SET(kevp, a, b, c, d, e, f) do {	\
-	struct kevent *__kevp__ = (kevp);	\
-	__kevp__->ident = (a);			\
-	__kevp__->filter = (b);			\
-	__kevp__->flags = (c);			\
-	__kevp__->fflags = (d);			\
-	__kevp__->data = (e);			\
-	__kevp__->udata = (f);			\
+#define EV_SET(kevp, a, b, c, d, e, f) do {     \
+	struct kevent *__kevp__ = (kevp);       \
+	__kevp__->ident = (a);                  \
+	__kevp__->filter = (b);                 \
+	__kevp__->flags = (c);                  \
+	__kevp__->fflags = (d);                 \
+	__kevp__->data = (e);                   \
+	__kevp__->udata = (f);                  \
 } while(0)
 
-#define EV_SET64(kevp, a, b, c, d, e, f, g, h) do {	\
-	struct kevent64_s *__kevp__ = (kevp);		\
-	__kevp__->ident = (a);				\
-	__kevp__->filter = (b);				\
-	__kevp__->flags = (c);				\
-	__kevp__->fflags = (d);				\
-	__kevp__->data = (e);				\
-	__kevp__->udata = (f);				\
-	__kevp__->ext[0] = (g);				\
-	__kevp__->ext[1] = (h);				\
+#define EV_SET64(kevp, a, b, c, d, e, f, g, h) do {     \
+	struct kevent64_s *__kevp__ = (kevp);           \
+	__kevp__->ident = (a);                          \
+	__kevp__->filter = (b);                         \
+	__kevp__->flags = (c);                          \
+	__kevp__->fflags = (d);                         \
+	__kevp__->data = (e);                           \
+	__kevp__->udata = (f);                          \
+	__kevp__->ext[0] = (g);                         \
+	__kevp__->ext[1] = (h);                         \
 } while(0)
 
 
 /* kevent system call flags */
-#define KEVENT_FLAG_NONE                         0x000000	/* no flag value */
-#define KEVENT_FLAG_IMMEDIATE                    0x000001	/* immediate timeout */
-#define KEVENT_FLAG_ERROR_EVENTS                 0x000002	/* output events only include change errors */
+#define KEVENT_FLAG_NONE                         0x000000       /* no flag value */
+#define KEVENT_FLAG_IMMEDIATE                    0x000001       /* immediate timeout */
+#define KEVENT_FLAG_ERROR_EVENTS                 0x000002       /* output events only include change errors */
 
 
 /* actions */
@@ -153,10 +153,10 @@ struct kevent64_s {
 #define EV_UDATA_SPECIFIC   0x0100      /* unique kevent per udata value */
 
 #define EV_DISPATCH2        (EV_DISPATCH | EV_UDATA_SPECIFIC)
-                                        /* ... in combination with EV_DELETE */
-                                        /* will defer delete until udata-specific */
-                                        /* event enabled. EINPROGRESS will be */
-                                        /* returned to indicate the deferral */
+/* ... in combination with EV_DELETE */
+/* will defer delete until udata-specific */
+/* event enabled. EINPROGRESS will be */
+/* returned to indicate the deferral */
 
 #define EV_VANISHED         0x0200      /* report that source has vanished  */
                                         /* ... only valid with EV_DISPATCH2 */
@@ -194,8 +194,8 @@ struct kevent64_s {
  * number of bytes before the current OOB marker, else data count is the number
  * of bytes beyond OOB marker.
  */
-#define EV_POLL		EV_FLAG0
-#define EV_OOBAND	EV_FLAG1
+#define EV_POLL         EV_FLAG0
+#define EV_OOBAND       EV_FLAG1
 
 /*
  * data/hint fflags for EVFILT_USER, shared with userspace
@@ -204,7 +204,7 @@ struct kevent64_s {
 /*
  * On input, NOTE_TRIGGER causes the event to be triggered for output.
  */
-#define NOTE_TRIGGER	0x01000000
+#define NOTE_TRIGGER    0x01000000
 
 /*
  * On input, the top two bits of fflags specifies how the lower twenty four
@@ -218,7 +218,7 @@ struct kevent64_s {
 #define NOTE_FFOR       0x80000000              /* or fflags */
 #define NOTE_FFCOPY     0xc0000000              /* copy fflags */
 #define NOTE_FFCTRLMASK 0xc0000000              /* mask for operations */
-#define NOTE_FFLAGSMASK	0x00ffffff
+#define NOTE_FFLAGSMASK 0x00ffffff
 
 
 /*
@@ -227,23 +227,23 @@ struct kevent64_s {
  * The default behavior for EVFILT_READ is to make the determination
  * realtive to the current file descriptor read pointer.
  */
-#define NOTE_LOWAT	0x00000001		/* low water mark */
+#define NOTE_LOWAT      0x00000001              /* low water mark */
 
 /* data/hint flags for EVFILT_EXCEPT, shared with userspace */
-#define NOTE_OOB	0x00000002		/* OOB data */
+#define NOTE_OOB        0x00000002              /* OOB data */
 
 /*
  * data/hint fflags for EVFILT_VNODE, shared with userspace
  */
-#define NOTE_DELETE	0x00000001		/* vnode was removed */
-#define NOTE_WRITE	0x00000002		/* data contents changed */
-#define NOTE_EXTEND	0x00000004		/* size increased */
-#define NOTE_ATTRIB	0x00000008		/* attributes changed */
-#define NOTE_LINK	0x00000010		/* link count changed */
-#define NOTE_RENAME	0x00000020		/* vnode was renamed */
-#define NOTE_REVOKE	0x00000040		/* vnode access was revoked */
-#define NOTE_NONE	0x00000080		/* No specific vnode event: to test for EVFILT_READ activation*/
-#define NOTE_FUNLOCK	0x00000100		/* vnode was unlocked by flock(2) */
+#define NOTE_DELETE     0x00000001              /* vnode was removed */
+#define NOTE_WRITE      0x00000002              /* data contents changed */
+#define NOTE_EXTEND     0x00000004              /* size increased */
+#define NOTE_ATTRIB     0x00000008              /* attributes changed */
+#define NOTE_LINK       0x00000010              /* link count changed */
+#define NOTE_RENAME     0x00000020              /* vnode was renamed */
+#define NOTE_REVOKE     0x00000040              /* vnode access was revoked */
+#define NOTE_NONE       0x00000080              /* No specific vnode event: to test for EVFILT_READ activation*/
+#define NOTE_FUNLOCK    0x00000100              /* vnode was unlocked by flock(2) */
 
 /*
  * data/hint fflags for EVFILT_PROC, shared with userspace
@@ -259,16 +259,16 @@ enum {
 	eNoteReapDeprecated __deprecated_enum_msg("This kqueue(2) EVFILT_PROC flag is deprecated") = 0x10000000
 };
 
-#define NOTE_EXIT		0x80000000	/* process exited */
-#define NOTE_FORK		0x40000000	/* process forked */
-#define NOTE_EXEC		0x20000000	/* process exec'd */
-#define NOTE_REAP		((unsigned int)eNoteReapDeprecated /* 0x10000000 */)	/* process reaped */
-#define NOTE_SIGNAL		0x08000000	/* shared with EVFILT_SIGNAL */
-#define NOTE_EXITSTATUS		0x04000000	/* exit status to be returned, valid for child process only */
-#define NOTE_EXIT_DETAIL	0x02000000	/* provide details on reasons for exit */
+#define NOTE_EXIT               0x80000000      /* process exited */
+#define NOTE_FORK               0x40000000      /* process forked */
+#define NOTE_EXEC               0x20000000      /* process exec'd */
+#define NOTE_REAP               ((unsigned int)eNoteReapDeprecated /* 0x10000000 */ )   /* process reaped */
+#define NOTE_SIGNAL             0x08000000      /* shared with EVFILT_SIGNAL */
+#define NOTE_EXITSTATUS         0x04000000      /* exit status to be returned, valid for child process only */
+#define NOTE_EXIT_DETAIL        0x02000000      /* provide details on reasons for exit */
 
-#define NOTE_PDATAMASK	0x000fffff		/* mask for signal & exit status */
-#define NOTE_PCTRLMASK	(~NOTE_PDATAMASK)
+#define NOTE_PDATAMASK  0x000fffff              /* mask for signal & exit status */
+#define NOTE_PCTRLMASK  (~NOTE_PDATAMASK)
 
 /*
  * If NOTE_EXITSTATUS is present, provide additional info about exiting process.
@@ -276,24 +276,24 @@ enum {
 enum {
 	eNoteExitReparentedDeprecated __deprecated_enum_msg("This kqueue(2) EVFILT_PROC flag is no longer sent") = 0x00080000
 };
-#define NOTE_EXIT_REPARENTED	((unsigned int)eNoteExitReparentedDeprecated)	/* exited while reparented */
+#define NOTE_EXIT_REPARENTED    ((unsigned int)eNoteExitReparentedDeprecated)   /* exited while reparented */
 
 /*
  * If NOTE_EXIT_DETAIL is present, these bits indicate specific reasons for exiting.
  */
-#define NOTE_EXIT_DETAIL_MASK		0x00070000
-#define NOTE_EXIT_DECRYPTFAIL		0x00010000
-#define NOTE_EXIT_MEMORY		0x00020000
-#define NOTE_EXIT_CSERROR		0x00040000
+#define NOTE_EXIT_DETAIL_MASK           0x00070000
+#define NOTE_EXIT_DECRYPTFAIL           0x00010000
+#define NOTE_EXIT_MEMORY                0x00020000
+#define NOTE_EXIT_CSERROR               0x00040000
 
 
 /*
  * data/hint fflags for EVFILT_VM, shared with userspace.
  */
-#define NOTE_VM_PRESSURE			0x80000000              /* will react on memory pressure */
-#define NOTE_VM_PRESSURE_TERMINATE		0x40000000              /* will quit on memory pressure, possibly after cleaning up dirty state */
-#define NOTE_VM_PRESSURE_SUDDEN_TERMINATE	0x20000000		/* will quit immediately on memory pressure */
-#define NOTE_VM_ERROR				0x10000000              /* there was an error */
+#define NOTE_VM_PRESSURE                        0x80000000              /* will react on memory pressure */
+#define NOTE_VM_PRESSURE_TERMINATE              0x40000000              /* will quit on memory pressure, possibly after cleaning up dirty state */
+#define NOTE_VM_PRESSURE_SUDDEN_TERMINATE       0x20000000              /* will quit immediately on memory pressure */
+#define NOTE_VM_ERROR                           0x10000000              /* there was an error */
 
 
 /*
@@ -303,24 +303,24 @@ enum {
  *
  * All timeouts are implicitly EV_CLEAR events.
  */
-#define NOTE_SECONDS	0x00000001		/* data is seconds         */
-#define NOTE_USECONDS	0x00000002		/* data is microseconds    */
-#define NOTE_NSECONDS	0x00000004		/* data is nanoseconds     */
-#define NOTE_ABSOLUTE	0x00000008		/* absolute timeout        */
-	/* ... implicit EV_ONESHOT, timeout uses the gettimeofday epoch */
-#define NOTE_LEEWAY		0x00000010		/* ext[1] holds leeway for power aware timers */
-#define NOTE_CRITICAL	0x00000020		/* system does minimal timer coalescing */
-#define NOTE_BACKGROUND	0x00000040		/* system does maximum timer coalescing */
-#define NOTE_MACH_CONTINUOUS_TIME	0x00000080
-	/*
-	 * NOTE_MACH_CONTINUOUS_TIME:
-	 * with NOTE_ABSOLUTE: causes the timer to continue to tick across sleep,
-	 *      still uses gettimeofday epoch
-	 * with NOTE_MACHTIME and NOTE_ABSOLUTE: uses mach continuous time epoch
-	 * without NOTE_ABSOLUTE (interval timer mode): continues to tick across sleep
-	 */
+#define NOTE_SECONDS    0x00000001              /* data is seconds         */
+#define NOTE_USECONDS   0x00000002              /* data is microseconds    */
+#define NOTE_NSECONDS   0x00000004              /* data is nanoseconds     */
+#define NOTE_ABSOLUTE   0x00000008              /* absolute timeout        */
+/* ... implicit EV_ONESHOT, timeout uses the gettimeofday epoch */
+#define NOTE_LEEWAY             0x00000010              /* ext[1] holds leeway for power aware timers */
+#define NOTE_CRITICAL   0x00000020              /* system does minimal timer coalescing */
+#define NOTE_BACKGROUND 0x00000040              /* system does maximum timer coalescing */
+#define NOTE_MACH_CONTINUOUS_TIME       0x00000080
+/*
+ * NOTE_MACH_CONTINUOUS_TIME:
+ * with NOTE_ABSOLUTE: causes the timer to continue to tick across sleep,
+ *      still uses gettimeofday epoch
+ * with NOTE_MACHTIME and NOTE_ABSOLUTE: uses mach continuous time epoch
+ * without NOTE_ABSOLUTE (interval timer mode): continues to tick across sleep
+ */
 #define NOTE_MACHTIME   0x00000100              /* data is mach absolute time units */
-	/* timeout uses the mach absolute time epoch */
+/* timeout uses the mach absolute time epoch */
 
 
 /*
@@ -361,9 +361,9 @@ enum {
  * NOTE_TRACK, NOTE_TRACKERR, and NOTE_CHILD are no longer supported as of 10.5
  */
 /* additional flags for EVFILT_PROC */
-#define NOTE_TRACK	0x00000001		/* follow across forks */
-#define NOTE_TRACKERR	0x00000002		/* could not track child */
-#define NOTE_CHILD	0x00000004		/* am a child process */
+#define NOTE_TRACK      0x00000001              /* follow across forks */
+#define NOTE_TRACKERR   0x00000002              /* could not track child */
+#define NOTE_CHILD      0x00000004              /* am a child process */
 
 
 

@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A3A0B581-CA6E-31E1-AE67-5DB8EABFEA04' ]
-platform:        macosx
+uuids:           [ 'x86_64: 744B1F04-5F34-39F4-A594-34518CEA2421' ]
+platform:        zippered
 install-name:    /System/Library/Frameworks/AVFoundation.framework/Versions/A/AVFoundation
 current-version: 2
 objc-constraint: none
@@ -89,17 +89,19 @@ exports:
                        _AVContentAuthorizationInfoSessionIDKey, _AVContentKeyRequestProtocolVersionsKey, 
                        _AVContentKeyRequestRetryReasonReceivedObsoleteContentKey, 
                        _AVContentKeyRequestRetryReasonReceivedResponseWithExpiredLease, 
-                       _AVContentKeyRequestRetryReasonTimedOut, _AVContentKeySystemClearKey, 
-                       _AVContentKeySystemFairPlayStreaming, _AVCoreAnimationBeginTimeAtZero, 
-                       _AVErrorDeviceKey, _AVErrorDiscontinuityFlagsKey, _AVErrorExceptionKey, 
-                       _AVErrorFileSizeKey, _AVErrorFileTypeKey, _AVErrorMediaSubTypeKey, 
-                       _AVErrorMediaTypeKey, _AVErrorPIDKey, _AVErrorPersistentTrackIDKey, 
-                       _AVErrorPresentationTimeStampKey, _AVErrorRecordingSuccessfullyFinishedKey, 
-                       _AVErrorTimeKey, _AVFigRouteDiscovererFactorySetFactoryForQueue, 
-                       _AVFileType3GPP, _AVFileType3GPP2, _AVFileTypeAC3, _AVFileTypeAIFC, 
-                       _AVFileTypeAIFF, _AVFileTypeAMR, _AVFileTypeAVCI, _AVFileTypeAppleM4A, 
-                       _AVFileTypeAppleM4V, _AVFileTypeAppleiTT, _AVFileTypeCoreAudioFormat, 
-                       _AVFileTypeDNG, _AVFileTypeEnhancedAC3, _AVFileTypeHEIC, _AVFileTypeHEIF, 
+                       _AVContentKeyRequestRetryReasonTimedOut, _AVContentKeySessionServerPlaybackContextOptionProtocolVersions, 
+                       _AVContentKeySessionServerPlaybackContextOptionServerChallenge, 
+                       _AVContentKeySystemClearKey, _AVContentKeySystemFairPlayStreaming, 
+                       _AVCoreAnimationBeginTimeAtZero, _AVErrorDeviceKey, _AVErrorDiscontinuityFlagsKey, 
+                       _AVErrorExceptionKey, _AVErrorFileSizeKey, _AVErrorFileTypeKey, 
+                       _AVErrorMediaSubTypeKey, _AVErrorMediaTypeKey, _AVErrorPIDKey, 
+                       _AVErrorPersistentTrackIDKey, _AVErrorPresentationTimeStampKey, 
+                       _AVErrorRecordingSuccessfullyFinishedKey, _AVErrorTimeKey, 
+                       _AVFigRouteDiscovererFactorySetFactoryForQueue, _AVFileType3GPP, 
+                       _AVFileType3GPP2, _AVFileTypeAC3, _AVFileTypeAIFC, _AVFileTypeAIFF, 
+                       _AVFileTypeAMR, _AVFileTypeAVCI, _AVFileTypeAppleM4A, _AVFileTypeAppleM4V, 
+                       _AVFileTypeAppleiTT, _AVFileTypeCoreAudioFormat, _AVFileTypeDNG, 
+                       _AVFileTypeEnhancedAC3, _AVFileTypeHEIC, _AVFileTypeHEIF, 
                        _AVFileTypeJPEG, _AVFileTypeMPEG4, _AVFileTypeMPEGLayer3, 
                        _AVFileTypeQuickTimeMovie, _AVFileTypeSCC, _AVFileTypeSunAU, 
                        _AVFileTypeTIFF, _AVFileTypeWAVE, _AVFoundationErrorDomain, 
@@ -470,6 +472,7 @@ exports:
                        _AVOutputContextDestinationChangeCancellationReasonAuthorizationSkipped, 
                        _AVOutputContextDestinationChangeInitiatedNotification, _AVOutputContextDestinationChangeKey, 
                        _AVOutputContextDeviceConnectionFailureReasonDeviceInUse, 
+                       _AVOutputContextDeviceConnectionFailureReasonDeviceNotConnectedToInternet, 
                        _AVOutputContextDeviceConnectionFailureReasonDeviceOutOfRange, 
                        _AVOutputContextDeviceConnectionFailureReasonNotAPeerInHomeGroup, 
                        _AVOutputContextDeviceGroupControlOptionCancelAddDeviceIfAuthRequired, 
@@ -478,6 +481,7 @@ exports:
                        _AVOutputContextManagerOutputDeviceKey, _AVOutputContextOutputDeviceDidChangeNotification, 
                        _AVOutputContextOutputDevicesDidChangeNotification, _AVOutputContextProvidesControlForAllVolumeFeaturesDidChangeNotification, 
                        _AVOutputContextSetOutputDeviceCancelIfAuthRequiredKey, _AVOutputContextSetOutputDevicePasswordKey, 
+                       _AVOutputContextSetOutputDeviceSuppressUserInteractionOnSenderOnlyKey, 
                        _AVOutputContextTypeAudio, _AVOutputContextTypeGroupControl, 
                        _AVOutputContextTypeScreen, _AVOutputContextTypeSharedAudioPresentation, 
                        _AVOutputContextTypeSharedSystemAudio, _AVOutputContextTypeSharedSystemScreen, 

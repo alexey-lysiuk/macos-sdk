@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F3784EB9-BF9E-3BDD-8A7B-0F95EB282CA2' ]
+uuids:           [ 'x86_64: 1D5FE656-3645-39C9-8128-C3E2254183ED' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SpeechObjects.framework/Versions/A/SpeechObjects
 exports:         
@@ -8,7 +8,7 @@ exports:
     symbols:         [ _CreateKeySequenceNameStringForKeyCombo, _NSSpeechSynthesizerImmedidateBoundary, 
                        _NSSpeechSynthesizerSentenceBoundary, _NSSpeechSynthesizerWordBoundary, 
                        _SDIMLocalCallBack, _SODecodeSecureArray, _SODecodeSecureDictionary, 
-                       _SOEncodeSecureObject, _StartDownloadingHighestQualityIfNecessaryForVoiceIdentifier, 
+                       _SOEncodeSecureObject, _SOOSLog, _StartDownloadingHighestQualityIfNecessaryForVoiceIdentifier, 
                        _StartDownloadingHighestQualityIfNecessaryForVoiceIdentifierAsRequestedByClientIdentifier, 
                        __icuDisplayName, _gSliderBreaks, _kSOFileAttributesKeyAudioFileData, 
                        _kSOFileAttributesKeyAudioFileStreamDescriptionData, _kSOFileAttributesKeyCreationDate, 

@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F700484C-1ABC-33E8-A550-13FD206D4195' ]
-platform:        macosx
+uuids:           [ 'x86_64: 40711FCF-5A01-3AAE-8C66-C1E2E1F9A5B9' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/EmbeddedAcousticRecognition.framework/Versions/A/EmbeddedAcousticRecognition
 exports:         
   - archs:           [ x86_64 ]
@@ -17,7 +17,8 @@ exports:
                        _EARCSpeechRecognitionTokenGetStart, _EARCSpeechRecognitionTokenGetTokenName, 
                        _EARCSpeechRecognitionTokenHasSpaceAfter, _EARCSpeechRecognizerCreate, 
                        _EARCSpeechRecognizerCreateRecognitionBuffer, _EARCSpeechRecognizerSetDetectUtterances, 
-                       _EARCSpeechRecognizerSetJitProfileData, _EARCSpeechRecognizerSetUserProfileData, 
+                       _EARCSpeechRecognizerSetJitProfileData, _EARCSpeechRecognizerSetLeftContext, 
+                       _EARCSpeechRecognizerSetLeftContextText, _EARCSpeechRecognizerSetUserProfileData, 
                        _EARCSpeechRecognizerUpdateUserProfileData, _EARCUserProfileAddWord, 
                        _EARCUserProfileCopyDataProfile, _EARCUserProfileCopyPronunciationsForOrthography, 
                        _EARCUserProfileCopySanitizedString, _EARCUserProfileCreate, 
@@ -30,9 +31,10 @@ exports:
                        EARTokenPronounciations, EMTResult, EMTToken, EMTTokenizer, 
                        EMTTranslator, _EARAcousticFeature, _EARAudioAnalytics, _EARCombinedResult, 
                        _EARCommandTagger, _EARCommandTagging, _EARCommandTaggingResult, 
-                       _EARDefaultServerEndpointFeatures, _EAREndpointFeatures, _EAREndpointer, 
-                       _EARFormatter, _EARLanguageModel, _EARResultCombiner, _EARSpeechModelInfo, 
-                       _EARSpeechRecognition, _EARSpeechRecognitionAudioBuffer, _EARSpeechRecognitionResult, 
+                       _EARCustomLMBuilder, _EARDefaultServerEndpointFeatures, _EAREndpointFeatures, 
+                       _EAREndpointer, _EARFormatter, _EARLanguageModel, _EARNnetUtil, 
+                       _EARResultCombiner, _EARSpeechModelInfo, _EARSpeechRecognition, 
+                       _EARSpeechRecognitionAudioBuffer, _EARSpeechRecognitionResult, 
                        _EARSpeechRecognitionResultPackage, _EARSpeechRecognitionToken, 
                        _EARSpeechRecognizer, _EARSystemResult, _EARTransformUtil, 
                        _EARUserProfile, _EARUserProfileBuilder, _EARWordPart ]

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 15DAAC63-DD01-3B08-B74F-8FCC546C5248' ]
+uuids:           [ 'x86_64: 6ED771AC-654A-3E38-84D8-4B458A9228D3' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/NetworkMenusCommon.framework/NetworkMenusCommon
 exports:         

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 79E1C46E-7D88-3348-897E-B8F8EDDD07CB' ]
+uuids:           [ 'x86_64: 86920BF2-7E3A-3995-830A-09C0F349F8A6' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/GLUT.framework/Versions/A/GLUT
 exports:         

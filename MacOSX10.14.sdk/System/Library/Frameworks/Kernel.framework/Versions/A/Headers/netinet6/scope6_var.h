@@ -63,6 +63,6 @@
  * 16 is correspondent to 4bit multicast scope field.
  * i.e. from node-local to global with some reserved/unassigned types.
  */
-#define	SCOPE6_ID_MAX   16
+#define SCOPE6_ID_MAX   16
 
 #endif /* _NETINET6_SCOPE6_VAR_H_ */

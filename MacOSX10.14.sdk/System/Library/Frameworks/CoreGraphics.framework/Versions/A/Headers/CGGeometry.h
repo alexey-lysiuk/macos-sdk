@@ -51,7 +51,7 @@ typedef struct CG_BOXABLE CGRect CGRect;
 
 /* Rectangle edges. */
 
-typedef CF_ENUM(uint32_t, CGRectEdge) {
+typedef CF_CLOSED_ENUM(uint32_t, CGRectEdge) {
     CGRectMinXEdge, CGRectMinYEdge, CGRectMaxXEdge, CGRectMaxYEdge
 };
 

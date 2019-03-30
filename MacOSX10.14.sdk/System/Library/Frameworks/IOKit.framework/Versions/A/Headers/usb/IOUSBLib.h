@@ -490,8 +490,8 @@ __BEGIN_DECLS
 
 
 
-// The preferred interface ID is the newest version
-#define kIOUSBDeviceInterfaceID kIOUSBDeviceInterfaceID942
+// The undecorated interface ID is the oldest version
+#define kIOUSBDeviceInterfaceID kIOUSBDeviceInterfaceID100
 
 
 
@@ -1033,8 +1033,8 @@ __BEGIN_DECLS
 
 
 
-// The preferred interface ID is the newest version
-#define kIOUSBInterfaceInterfaceID kIOUSBInterfaceInterfaceID942
+// The undecorated interface ID is the oldest version
+#define kIOUSBInterfaceInterfaceID kIOUSBInterfaceInterfaceID100
 
 
 

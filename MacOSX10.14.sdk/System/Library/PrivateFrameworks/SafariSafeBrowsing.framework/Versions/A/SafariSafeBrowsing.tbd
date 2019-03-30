@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E7BC40BA-F760-3F28-9E07-7253A08B77D7' ]
+uuids:           [ 'x86_64: 0B04C4E0-B046-3BDF-91F9-321771174B73' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SafariSafeBrowsing.framework/Versions/A/SafariSafeBrowsing
 current-version: 0
@@ -8,7 +8,9 @@ compatibility-version: 0
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _SSBLookupContextDatabasesDidUpdateNotification, _SSBLookupContextDatabasesDidUpdateNotificationUserInfoProviderKey, 
-                       _SSBProviderGoogle, _SSBProviderTencent, __ZN12SafeBrowsing7Service4mainEv ]
+                       _SSBProviderGoogle, _SSBProviderTencent, _SSBSafeBrowsingEnabledDefaultsKey, 
+                       _SSBSafeBrowsingEnabledStateDidChangeNotification, _SSBSafeBrowsingEnabledStateDidChangeNotificationUserInfoEnabledStateKey, 
+                       __ZN12SafeBrowsing7Service4mainEv ]
     objc-classes:    [ SSBAvailability, SSBDatabaseUpdaterStatus, SSBLookupContext, 
                        SSBLookupResult, SSBServiceLookupResult, _SSBDatabaseStatus, 
                        _SSBSafeHashCache, _SSBServiceStatus ]

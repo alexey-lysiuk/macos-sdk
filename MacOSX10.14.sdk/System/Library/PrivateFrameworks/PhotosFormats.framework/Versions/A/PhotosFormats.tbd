@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: ED09B5E8-3E0F-3A98-892C-42F3523C12B2' ]
+uuids:           [ 'x86_64: 918527C3-3DCB-354B-B89B-892AD823D11A' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotosFormats.framework/Versions/A/PhotosFormats
-current-version: 3411.5.190
+current-version: 3441.7.100
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CAMUserPreferenceCaptureEncodingBehavior, _CAMUserPreferenceSlomoConfiguration, 
@@ -13,15 +13,15 @@ exports:
                        _PFAssetAdjustmentsFormatVersionKey, _PFAssetAdjustmentsRenderTypesKey, 
                        _PFCreateGIFFromVideoURL, _PFCurrentPlatformLivePhotoBundleTypeIdentifier, 
                        _PFFaceFractionIntercept, _PFFaceFractionSlope, _PFIsLivePhotoBundleTypeIdentifier, 
-                       _PFMediaCapabilitiesOptionsSupportsTranscodeChoice, _PFMetadataLivePhotoMinimumClientVersion, 
-                       _PFMetadataOriginatingSignature, _PFMetadataRenderOriginatingSignature, 
-                       _PFMetadataVariationIdentifier, _PFReadImageDisplayTimeFromVideoFileAtPath, 
-                       _PFReadMetadataFromVideoAVAsset, _PFReadMetadataFromVideoAtPath, 
-                       _PFReadPairingIdentifierFromCGImageProperties, _PFReadPairingIdentifierFromImageAtPath, 
-                       _PFReadPairingIdentifierFromVideoAtPath, _PFReadVideoDurationFromVideoFileAtPath, 
-                       _PFRemovePairingIdentifierFromCGImageProperties, _PFSlowMotionUtilitiesCreateErrorWithDescription, 
-                       _PFVideoAVCFObjectBuilderCopyAVCFAsset, _PFVideoAVCFObjectBuilderCreateErrorWithDescription, 
-                       _PFVideoAVCFObjectBuilderCreateExportSessionWithExportPreset, 
+                       _PFMediaCapabilitiesOptionsSupportsTranscodeChoice, _PFMediaUtilitiesDynamicUTIPrefix, 
+                       _PFMetadataLivePhotoMinimumClientVersion, _PFMetadataOriginatingSignature, 
+                       _PFMetadataRenderOriginatingSignature, _PFMetadataVariationIdentifier, 
+                       _PFReadImageDisplayTimeFromVideoFileAtPath, _PFReadMetadataFromVideoAVAsset, 
+                       _PFReadMetadataFromVideoAtPath, _PFReadPairingIdentifierFromCGImageProperties, 
+                       _PFReadPairingIdentifierFromImageAtPath, _PFReadPairingIdentifierFromVideoAtPath, 
+                       _PFReadVideoDurationFromVideoFileAtPath, _PFRemovePairingIdentifierFromCGImageProperties, 
+                       _PFSlowMotionUtilitiesCreateErrorWithDescription, _PFVideoAVCFObjectBuilderCopyAVCFAsset, 
+                       _PFVideoAVCFObjectBuilderCreateErrorWithDescription, _PFVideoAVCFObjectBuilderCreateExportSessionWithExportPreset, 
                        _PFVideoAVCFObjectBuilderCreatePlayerItem, _PFVideoAVCFObjectBuilderCreateWithVideoAsset, 
                        _PFVideoAVCFObjectBuilderDefaultVideoAdjustments, _PFVideoAVCFObjectBuilderGetAudioMix, 
                        _PFVideoAVCFObjectBuilderGetMutableComposition, _PFVideoAVCFObjectBuilderGetTypeID, 
@@ -35,11 +35,11 @@ exports:
                        _kUTTypeLivePhotoBundlePrivate, _m ]
     objc-classes:    [ PFAssetAdjustmentFingerprintData, PFAssetAdjustments, PFCVML, 
                        PFImageMetadata, PFMediaCapabilities, PFMediaCapabilitiesQuery, 
-                       PFPhotosFaceUtilities, PFProportionalIntegralController, PFSinglePassVideoExportItem, 
-                       PFSinglePassVideoExportItemStatistics, PFSlowMotionConfiguration, 
-                       PFSlowMotionRampConfiguration, PFSlowMotionTimeRangeMapper, 
-                       PFSlowMotionTimeRangeMapperScaledRegion, PFSlowMotionUtilities, 
-                       PFVideoAVObjectBuilder, PFVideoAdjustments, PFVideoComplement, 
-                       PFVideoExport, PFVideoExportRangeCoordinator, PFVideoExportRangeWaitingCaller, 
-                       PFVideoMetadata ]
+                       PFMediaUtilities, PFPhotosFaceUtilities, PFProportionalIntegralController, 
+                       PFSinglePassVideoExportItem, PFSinglePassVideoExportItemStatistics, 
+                       PFSlowMotionConfiguration, PFSlowMotionRampConfiguration, 
+                       PFSlowMotionTimeRangeMapper, PFSlowMotionTimeRangeMapperScaledRegion, 
+                       PFSlowMotionUtilities, PFVideoAVObjectBuilder, PFVideoAdjustments, 
+                       PFVideoComplement, PFVideoExport, PFVideoExportRangeCoordinator, 
+                       PFVideoExportRangeWaitingCaller, PFVideoMetadata ]
 ...

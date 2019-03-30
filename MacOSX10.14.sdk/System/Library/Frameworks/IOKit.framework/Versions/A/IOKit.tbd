@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B58031DE-A6B7-3685-840F-361670C06836' ]
-platform:        macosx
+uuids:           [ 'x86_64: 1170EC49-1912-3657-9C71-991653959191' ]
+platform:        zippered
 install-name:    /System/Library/Frameworks/IOKit.framework/Versions/A/IOKit
 current-version: 275
 objc-constraint: none
@@ -300,16 +300,16 @@ exports:
                        _IOPMCopyBatteryInfo, _IOPMCopyCPUPowerStatus, _IOPMCopyConnectionStatus, 
                        _IOPMCopyCycleCountData, _IOPMCopyDefaultPreferences, _IOPMCopyDeviceRestartPreventers, 
                        _IOPMCopyFromPrefs, _IOPMCopyHIDPostEventHistory, _IOPMCopyInactiveAssertionsByProcess, 
-                       _IOPMCopyPMPreferences, _IOPMCopyPMSetting, _IOPMCopyPowerHistory, 
-                       _IOPMCopyPowerHistoryDetailed, _IOPMCopyPowerStateInfo, _IOPMCopyPreferencesOnFile, 
-                       _IOPMCopyRepeatingPowerEvents, _IOPMCopyScheduledPowerEvents, 
-                       _IOPMCopySleepPreventersList, _IOPMCopySleepWakeFailure, _IOPMCopySystemPowerSettings, 
-                       _IOPMCopyUPSShutdownLevels, _IOPMCopyUserActivityLevelDescription, 
-                       _IOPMCtlAssertionType, _IOPMDeclareNetworkClientActivity, 
-                       _IOPMDisableAsyncAssertions, _IOPMEnableAsyncAssertions, _IOPMFeatureIsAvailable, 
-                       _IOPMFeatureIsAvailableWithSupportedTable, _IOPMFindPowerManagement, 
-                       _IOPMGetActivePushConnectionState, _IOPMGetAggressiveness, 
-                       _IOPMGetCapabilitiesDescription, _IOPMGetDarkWakeThermalEmergencyCount, 
+                       _IOPMCopyKioskModeData, _IOPMCopyPMPreferences, _IOPMCopyPMSetting, 
+                       _IOPMCopyPowerHistory, _IOPMCopyPowerHistoryDetailed, _IOPMCopyPowerStateInfo, 
+                       _IOPMCopyPreferencesOnFile, _IOPMCopyRepeatingPowerEvents, 
+                       _IOPMCopyScheduledPowerEvents, _IOPMCopySleepPreventersList, 
+                       _IOPMCopySleepWakeFailure, _IOPMCopySystemPowerSettings, _IOPMCopyUPSShutdownLevels, 
+                       _IOPMCopyUserActivityLevelDescription, _IOPMCtlAssertionType, 
+                       _IOPMDeclareNetworkClientActivity, _IOPMDisableAsyncAssertions, 
+                       _IOPMEnableAsyncAssertions, _IOPMFeatureIsAvailable, _IOPMFeatureIsAvailableWithSupportedTable, 
+                       _IOPMFindPowerManagement, _IOPMGetActivePushConnectionState, 
+                       _IOPMGetAggressiveness, _IOPMGetCapabilitiesDescription, _IOPMGetDarkWakeThermalEmergencyCount, 
                        _IOPMGetLastWakeTime, _IOPMGetPerformanceWarningLevel, _IOPMGetSleepServicesActive, 
                        _IOPMGetThermalWarningLevel, _IOPMGetUUID, _IOPMGetUserActivityLevel, 
                        _IOPMGetValueInt, _IOPMIsADarkWake, _IOPMIsASilentWake, _IOPMIsASleep, 
@@ -626,8 +626,8 @@ exports:
                        _io_pm_assertion_copy_details, _io_pm_assertion_create, _io_pm_assertion_notify, 
                        _io_pm_assertion_retain_release, _io_pm_assertion_set_properties, 
                        _io_pm_cancel_repeat_events, _io_pm_change_sa_assertion_behavior, 
-                       _io_pm_connection_acknowledge_event, _io_pm_connection_copy_status, 
-                       _io_pm_connection_create, _io_pm_connection_release, _io_pm_connection_schedule_notification, 
+                       _io_pm_connection_acknowledge_event, _io_pm_connection_create, 
+                       _io_pm_connection_release, _io_pm_connection_schedule_notification, 
                        _io_pm_ctl_assertion_type, _io_pm_declare_network_client_active, 
                        _io_pm_declare_system_active, _io_pm_declare_user_active, 
                        _io_pm_force_active_settings, _io_pm_get_capability_bits, 

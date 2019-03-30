@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0D549E7A-825A-3963-B139-52428A358AA4' ]
-platform:        macosx
+uuids:           [ 'x86_64: A3CBFCFF-05AD-30D8-BB0E-BD77FBE7CCDB' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/AdCore.framework/Versions/A/AdCore
 exports:         
   - archs:           [ x86_64 ]

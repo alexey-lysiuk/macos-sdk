@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @class SKPaymentTransaction;
 
-typedef NS_ENUM(NSInteger, SKDownloadState) {
+typedef NS_CLOSED_ENUM(NSInteger, SKDownloadState) {
     SKDownloadStateWaiting,     // Download is inactive, waiting to be downloaded
     SKDownloadStateActive,      // Download is actively downloading
     SKDownloadStatePaused,      // Download was paused by the user

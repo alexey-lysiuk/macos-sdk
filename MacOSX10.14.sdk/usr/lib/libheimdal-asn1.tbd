@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5302394C-ECF0-3C3B-BA67-4830EEF3CC40' ]
-platform:        macosx
+uuids:           [ 'x86_64: DE1C4650-FDFE-3A31-98AD-597B57C947E5' ]
+platform:        zippered
 install-name:    /usr/lib/libheimdal-asn1.dylib
 objc-constraint: none
 exports:         

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1E5851C3-8DD0-3CC5-8C56-F9431667C27E' ]
-platform:        macosx
+uuids:           [ 'x86_64: FA6D3652-8514-347A-905A-29B869328883' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/MMCS.framework/Versions/A/MMCS
-current-version: 438.19
+current-version: 438.211
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _C3BaseRelease, _C3BaseRetain, _CKChunkSchemeAndEncryptionKeySize, 
@@ -41,7 +41,8 @@ exports:
                        _createCStringWithCFString, _debug_begin_writing_http_message_to_file, 
                        _gMMCS_DebugLevel, _hextostrdup, _kMMCSAuthorizationToken, 
                        _kMMCSBoundaryKey, _kMMCSChunkCount, _kMMCSChunkerAllowItemChunkLengthServerConfigurationOverride, 
-                       _kMMCSDefaultReaderWriterSparseAware, _kMMCSEnginePropertyEnableAttemptedPersistedConnections, 
+                       _kMMCSDefaultReaderWriterSparseAware, _kMMCSDerivativeAssetDownloadURL, 
+                       _kMMCSDerivativeAssetEstimatedSize, _kMMCSEnginePropertyEnableAttemptedPersistedConnections, 
                        _kMMCSEnginePropertyEnableGetChunks, _kMMCSEnginePropertyEnableGetResume, 
                        _kMMCSEnginePropertyEnableLocallySatisfiedGets, _kMMCSEnginePropertyMaxConsecutiveNetworkErrors, 
                        _kMMCSEnginePropertyMaxInflightContainerRequests, _kMMCSEnginePropertyTestMaxInflightContainerRequests, 
@@ -69,10 +70,11 @@ exports:
                        _kMMCSRequestOptionBackgroundConnectionPoolSize, _kMMCSRequestOptionBoundInterfaceIdentifier, 
                        _kMMCSRequestOptionCallerRequestUUID, _kMMCSRequestOptionClientLocation, 
                        _kMMCSRequestOptionContainerIdentifier, _kMMCSRequestOptionDiscretionaryNetworkBehavior, 
-                       _kMMCSRequestOptionHTTPClass, _kMMCSRequestOptionHttpAdaptiveReadTimeout, 
-                       _kMMCSRequestOptionHttpAdaptiveWriteTimeout, _kMMCSRequestOptionInlineCompleteLogicInvertedMode, 
-                       _kMMCSRequestOptionInsertHeaders, _kMMCSRequestOptionItemOptions, 
-                       _kMMCSRequestOptionMetaserverAllowedHostnamesOverride, _kMMCSRequestOptionMetaserverAllowedSchemesOverride, 
+                       _kMMCSRequestOptionForceGetChunks, _kMMCSRequestOptionHTTPClass, 
+                       _kMMCSRequestOptionHttpAdaptiveReadTimeout, _kMMCSRequestOptionHttpAdaptiveWriteTimeout, 
+                       _kMMCSRequestOptionInlineCompleteLogicInvertedMode, _kMMCSRequestOptionInsertHeaders, 
+                       _kMMCSRequestOptionItemOptions, _kMMCSRequestOptionMetaserverAllowedHostnamesOverride, 
+                       _kMMCSRequestOptionMetaserverAllowedSchemesOverride, _kMMCSRequestOptionMetricOptions, 
                        _kMMCSRequestOptionNetworkServiceType, _kMMCSRequestOptionPreauthorization, 
                        _kMMCSRequestOptionPriority, _kMMCSRequestOptionQoS, _kMMCSRequestOptionReaderWriterCallbackForDownloads, 
                        _kMMCSRequestOptionRequireInlineComplete, _kMMCSRequestOptionRequiresPowerPluggedIn, 
@@ -144,8 +146,8 @@ exports:
                        _mmcs_request_queue_request_did_transmit, _mmcs_request_type_for_behavior_and_activity, 
                        _mmcs_server_version_make_from_CFString, _mmcs_time_convert_cfabsolutetime_to_server_time, 
                        _mmcs_time_convert_date_header_to_cfabsolutetime, _mmcs_time_convert_server_time_to_cfabsolutetime, 
-                       _registerItemSignatureEqualitySetCallbacks, _ub_log_facility, 
-                       _ub_log_levels, _ub_log_set_all_facility_level, _ub_log_set_facility_level, 
-                       _ub_log_set_print_state ]
+                       _mmcs_url_copy_query_value_for_tag, _registerItemSignatureEqualitySetCallbacks, 
+                       _ub_log_facility, _ub_log_levels, _ub_log_set_all_facility_level, 
+                       _ub_log_set_facility_level, _ub_log_set_print_state ]
     objc-classes:    [ MMCSBoundedQueue ]
 ...

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E92F1EB3-BFDF-3E41-8177-5F85556DA719' ]
+uuids:           [ 'x86_64: CAE13212-25FE-3D94-95FE-27CA3E3FEC9A' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DrawingKit.framework/Versions/A/DrawingKit
 exports:         

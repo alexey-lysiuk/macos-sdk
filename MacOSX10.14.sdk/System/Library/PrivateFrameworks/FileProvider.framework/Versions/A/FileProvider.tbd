@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 31642A56-F183-3DA3-8713-745358CAE55D' ]
-platform:        macosx
+uuids:           [ 'x86_64: 30851CFB-6179-3BFB-A93E-EC9B0C97F50F' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/FileProvider.framework/Versions/A/FileProvider
 exports:         
   - archs:           [ x86_64 ]

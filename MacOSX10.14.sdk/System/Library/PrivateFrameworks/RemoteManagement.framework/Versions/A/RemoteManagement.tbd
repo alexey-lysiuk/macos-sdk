@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B7E2C5C7-676D-3920-85D3-297D9A1AEA78' ]
+uuids:           [ 'x86_64: 8C92D076-2E17-38AE-9757-F1721D49B4A3' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/RemoteManagement.framework/Versions/A/RemoteManagement
 current-version: 1.79

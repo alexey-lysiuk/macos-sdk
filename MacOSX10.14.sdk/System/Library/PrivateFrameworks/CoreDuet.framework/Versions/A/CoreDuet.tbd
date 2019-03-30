@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 00D084E3-E0A0-345A-A398-A07EC094AE86' ]
-platform:        macosx
+uuids:           [ 'x86_64: 58E827F4-E1D2-3A65-B34E-2D6D5C053AD0' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/CoreDuet.framework/Versions/A/CoreDuet
 exports:         
   - archs:           [ x86_64 ]
@@ -27,9 +27,10 @@ exports:
                        __DKPREventDataReadFrom, __DKPREventReadFrom, __DKPRMetadataEntryReadFrom, 
                        __DKPRMetadataReadFrom, __DKPRSourceReadFrom, __DKPRStreamReadFrom, 
                        __DKPRValueReadFrom, __DKPRValueTypeReadFrom, __DKPeriodOfDayCategoryValue, 
-                       __DKRapportTransportAvailablityChangedNotification, __DKRoutineLocationCategoryValue, 
-                       __DKSync2CoordinatorDidIdleNotification, __DKSync2PolicyDidChangeNotification, 
-                       __DKSyncCoordinatorDidAddRemoteEventsNotification, __DKSyncCoordinatorDidApplyRemoteAdditionChangeSetNotification, 
+                       __DKQueryLoggingEnabled, __DKRapportTransportAvailablityChangedNotification, 
+                       __DKRoutineLocationCategoryValue, __DKSync2CoordinatorDidIdleNotification, 
+                       __DKSync2PolicyDidChangeNotification, __DKSyncCoordinatorDidAddRemoteEventsNotification, 
+                       __DKSyncCoordinatorDidApplyRemoteAdditionChangeSetNotification, 
                        __DKSyncCoordinatorDidApplyRemoteDeletionChangeSetNotification, 
                        __DKSyncCoordinatorDidCreateAdditionChangeSetNotification, 
                        __DKSyncCoordinatorDidCreateDeletionChangeSetNotification, 
@@ -192,8 +193,8 @@ exports:
                        _CDPSimpleModelParameterManagerTuningValue._score, _CDPSimpleModelParameterManagerTuningValue._threshold, 
                        _CDPSimpleModelParameterManagerTuningValue._w0, _CDStatsPrinter._indent, 
                        _CDStatsPrinter._s, _DKActivityThrottler._cache, _DKActivityThrottler._delayScheduledActions, 
-                       _DKActivityThrottler._minimumIntervalScheduledActions, _DKPRChangeSet._deleteEventIDs, 
-                       _DKPRChangeSet._events, _DKPRCompressedChangeSet._compressedData, 
+                       _DKActivityThrottler._minimumIntervalScheduledActions, _DKActivityThrottler._storeQueue, 
+                       _DKPRChangeSet._deleteEventIDs, _DKPRChangeSet._events, _DKPRCompressedChangeSet._compressedData, 
                        _DKPRCompressedChangeSet._uncompressedLength, _DKPREvent._creationDate, 
                        _DKPREvent._endDate, _DKPREvent._has, _DKPREvent._identifier, 
                        _DKPREvent._metadatas, _DKPREvent._source, _DKPREvent._startDate, 

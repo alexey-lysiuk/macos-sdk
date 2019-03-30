@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1077BBAF-7233-35E6-BB49-B61C947127D2' ]
+uuids:           [ 'x86_64: 34E9F550-CE71-385D-BAFA-9F7A1EB4B8F6' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/InstallerDiagnostics.framework/Versions/A/InstallerDiagnostics
 exports:         
@@ -9,10 +9,12 @@ exports:
                        _InstallerDiagnosticsVersionNumber, _InstallerDiagnosticsVersionString, 
                        __IDGetDefaultLogger, __activity, __nvramSema, _kIDInstallerDiagnosticsClientCategoryAPFSConversions, 
                        _kIDInstallerDiagnosticsClientCategoryEFIUpdates, _kIDInstallerDiagnosticsClientCategoryEmbeddedOSInstalls, 
-                       _kIDInstallerDiagnosticsClientCategoryFailedInstalls, _kIDInstallerDiagnosticsClientCategoryKeyRecoveryAssistant, 
+                       _kIDInstallerDiagnosticsClientCategoryFailedInstalls, _kIDInstallerDiagnosticsClientCategoryGPUFirmwareUpdates, 
+                       _kIDInstallerDiagnosticsClientCategoryKeyRecoveryAssistant, 
                        _kIDInstallerDiagnosticsClientCategoryNameAPFSConversions, 
                        _kIDInstallerDiagnosticsClientCategoryNameEFIUpdates, _kIDInstallerDiagnosticsClientCategoryNameEmbeddedOSInstalls, 
                        _kIDInstallerDiagnosticsClientCategoryNameFailedInstalls, 
+                       _kIDInstallerDiagnosticsClientCategoryNameGPUFirmwareUpdates, 
                        _kIDInstallerDiagnosticsClientCategoryNameKeyRecoveryAssistant, 
                        _kIDInstallerDiagnosticsClientCategoryNameSampledMetrics, 
                        _kIDInstallerDiagnosticsClientCategoryNameSuccessfulInstalls, 
@@ -22,6 +24,7 @@ exports:
                        _kIDInstallerDiagnosticsClientCategorybridgeOSUpdate, _kIDInstallerDiagnosticsClientCategorymacOSPersonalization, 
                        _kIDInstallerDiagnosticsNVRAMV1Key, _kIDInstallerDiagnosticsNVRAMV2Key, 
                        _kIDInstallerDiagnosticsStoreErrorDomain, _kInstallerDiagnosticsServiceName ]
-    objc-classes:    [ IDDiagnosticsConnection, IDDiagnosticsManager, IDDiagnosticsServer, 
-                       IDDiagnosticsStore, IDDiagnosticsTransport ]
+    objc-classes:    [ IDDiagnosticsConnection, IDDiagnosticsGPUGatherStatistics, 
+                       IDDiagnosticsManager, IDDiagnosticsServer, IDDiagnosticsStore, 
+                       IDDiagnosticsTransport ]
 ...

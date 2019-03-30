@@ -61,8 +61,8 @@
  *	@(#)user.h	8.2 (Berkeley) 9/23/93
  */
 
-#ifndef	_SYS_USER_H_
-#define	_SYS_USER_H_
+#ifndef _SYS_USER_H_
+#define _SYS_USER_H_
 
 #include <sys/appleapiopts.h>
 struct waitq_set;
@@ -72,7 +72,7 @@ struct waitq_set;
 #include <sys/resource.h>
 #include <sys/ucred.h>
 #include <sys/uio.h>
-#include <sys/vm.h>		/* XXX */
+#include <sys/vm.h>             /* XXX */
 #include <sys/sysctl.h>
 
 
@@ -83,8 +83,8 @@ struct waitq_set;
  * in all processes.
  */
 
-struct	user {
+struct  user {
 	/* NOT USED ANYMORE */
 };
 
-#endif	/* !_SYS_USER_H_ */
+#endif  /* !_SYS_USER_H_ */

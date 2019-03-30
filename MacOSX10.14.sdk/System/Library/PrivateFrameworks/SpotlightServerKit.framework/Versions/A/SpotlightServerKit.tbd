@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C0673C65-3142-3258-9668-7ECD482BB09A' ]
+uuids:           [ 'x86_64: E2248474-3833-3E71-8466-7814959AD25B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SpotlightServerKit.framework/Versions/A/SpotlightServerKit
-current-version: 1191.52
+current-version: 1191.56
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _BWA_Create, _BWA_DataAllocate, _BWA_DataDeallocate, _CFDataCreateWithContentsOfURL, 
@@ -16,8 +16,7 @@ exports:
                        _MDHashQuickPtrAsInt, _MDKillTask, _MDMachAbsoluteTimeDiff, 
                        _MDNumberCreateDouble, _MDNumberCreateInt32, _MDNumberCreateInt64, 
                        _MDNumberGetDouble, _MDNumberGetInt32, _MDNumberGetInt64, 
-                       _MDPowerInfoCollect, _MDPowerInfoDifference, _MDPowerInfoEnd, 
-                       _MDPowerInfoSum, _MDRunningInRosetta, _MDRunningIntel32, _MDRunningIntel64, 
+                       _MDRunningInRosetta, _MDRunningIntel32, _MDRunningIntel64, 
                        _MDRunningOnEffectivePPC, _MDRunningOnPhysicalIntel, _MDRunningOnPhysicalPPC, 
                        _MDSGetSystemLoadAdvisory, _MDSLogCategoryDescriptions, _MDSLogCategoryNameStrings, 
                        _MDSLogCategoryNames, _MDSLogLevelCreateLogArrayDictionary, 
@@ -34,7 +33,8 @@ exports:
                        _MDSUnregisterSystemLoadAdvisory, _MDSecondsToMachAbsoluteTime, 
                        _MDSetCreateMutable, _MDSetIterate, _MDSetProcessIOPolicy, 
                        _MDSetProcessVNodeRapidAging, _MDSetThreadIOPolicy, _MDSetThreadPriority, 
-                       _MDSetThreadVNodeRapidAging, _MDTimeSinceBoot, _SpotlightServerKitVersionNumber, 
+                       _MDSetThreadVNodeRapidAging, _MDTimeInfoCollect, _MDTimeInfoDifference, 
+                       _MDTimeInfoEnd, _MDTimeInfoSum, _MDTimeSinceBoot, _SpotlightServerKitVersionNumber, 
                        _SpotlightServerKitVersionString, _XPCUtil_CopyCFFromArray, 
                        _XPCUtil_CopyCFFromDictionary, _XPCUtil_CopyCFFromObject, 
                        _XPCUtil_CopyXPCObjectFromCF, _XPCUtil_PackCFIntoArray, _XPCUtil_PackCFIntoDictionary, 

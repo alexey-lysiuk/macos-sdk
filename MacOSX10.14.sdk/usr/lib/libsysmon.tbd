@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4447F6A5-B757-3EC8-A3A4-AE8E32DDE536' ]
+uuids:           [ 'x86_64: C3C1D38E-A0B4-3883-851B-FB53E77CD233' ]
 platform:        macosx
 install-name:    /usr/lib/libsysmon.dylib
 exports:         

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D5045DC5-A165-3238-A470-1796F12BF84F' ]
-platform:        macosx
+uuids:           [ 'x86_64: AE77ACC7-488F-3AE1-BB0C-1ACFC7E1CE77' ]
+platform:        zippered
 install-name:    /usr/lib/system/libsystem_trace.dylib
-current-version: 906.220.1
+current-version: 906.250.5
 parent-umbrella: System
 exports:         
   - archs:           [ x86_64 ]

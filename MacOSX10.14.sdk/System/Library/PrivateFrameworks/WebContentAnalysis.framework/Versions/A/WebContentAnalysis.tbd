@@ -1,36 +1,20 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9EE6C276-70BC-3FBA-89FA-1AB1CF3E5842' ]
+uuids:           [ 'x86_64: E2BF9973-2A83-368D-8E50-FE01C92B370A' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/WebContentAnalysis.framework/Versions/A/WebContentAnalysis
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _ComposeDebugPage, _ComposeDebugPageSimple, _DecodeBase64, 
-                       _DecodeBase64WithNewlines, _EncodeBase64, _EncodeBase64WithNewlines, 
-                       _HolyInquisitionDebugPrint, _HolyInquisitionGetIPv4Proxy, 
+                       _DecodeBase64WithNewlines, _HolyInquisitionDebugPrint, _HolyInquisitionGetIPv4Proxy, 
                        _HolyInquisitionGetIPv6Proxy, _HolyInquisitionGetManagedUser, 
                        _HolyInquisitionOpenControlSocket, _HolyInquisitionSetIPv4Proxy, 
                        _HolyInquisitionSetIPv6Proxy, _HolyInquisitionSetManagedUser, 
                        _HolyInquisitionSetProxyToLocalPort, _HolyInquisitionTurnOnHTTPSFiltering, 
-                       _KILOPIXELS, _MEGAPIXELS, _NS64BaseStringFromString, _NSStringFrom64BaseString, 
-                       _OSLogForCategory, _WFDebugLevel, _WFIsURLExplicit, _WFIsURLToRestrictForUser, 
+                       _NS64BaseStringFromString, _NSStringFrom64BaseString, _OSLogForCategory, 
+                       _WFDebugLevel, _WFIsURLExplicit, _WFIsURLToRestrictForUser, 
                        _WFIsWebPageExplicit, _WFIsWebPageToRestrictForUser, _WFSetDebugLevel, 
-                       _WFWebPageToTrainingText_Category1, _WFWebPageToTrainingText_Category2, 
-                       _WFWebPageToTrainingText_Category3, _WFWebPageToTrainingText_Category4, 
-                       _WFWebPageToTrainingText_Category5, _WFWebPageToTrainingText_Category6, 
-                       _WFWebPageToTrainingText_Category7, _WFWebPageToTrainingText_Category8, 
-                       _WFWebPageToTrainingText_Category9, _WFWebPageToTrainingText_Signature, 
-                       __HolyInquisitionGetUserForType, __HolyInquisitionSetValueForType, 
-                       __NSHTMLEncoding, __WFEvaluateVerdict, __WebFilterIsActive, 
-                       _ignorableCharacterSet_NSString, _kDefaultCategoryThreshold, 
-                       _kWFIgnoreRefreshCutoff, _kWFImgDimensionUnknown, _kWFLSMExplicitThresholdKey, 
-                       _kWFWebPageToFilterText_AdWord, _kWFWebPageToFilterText_Description, 
-                       _kWFWebPageToFilterText_ExternalRefs, _kWFWebPageToFilterText_FuzzyURL, 
-                       _kWFWebPageToFilterText_ImageAlts, _kWFWebPageToFilterText_Keywords, 
-                       _kWFWebPageToFilterText_LinkTitles, _kWFWebPageToFilterText_PageContent, 
-                       _kWFWebPageToFilterText_ScriptBlocks, _kWFWebPageToFilterText_Signature, 
-                       _kWFWebPageToFilterText_Tags, _kWFWebPageToFilterText_Title, 
-                       _kWFWebPageToFilterText_URL, _kWFWhitelistSiteBufferDefaultMaxSize ]
+                       _WFWebPageToTrainingText_Category1, _kWFImgDimensionUnknown ]
     objc-classes:    [ WCAUserSettings, WFBlockPage, WFCategoryJudgement, WFContentSniffer, 
                        WFDocumentStructureTag, WFImg, WFImgArrayCache, WFJavascriptStripper, 
                        WFJudge, WFLSMMap, WFLSMResult, WFLSMScoreNormalizedMap, WFLink, 
@@ -59,10 +43,10 @@ exports:
                        WFWebPageDecorator.webPageStripper, WFWebPageToTrainingText.categorySignature, 
                        WFWhitelistSite._domainName, WFWhitelistSite._url, WFWhitelistSite._urlString, 
                        WFWhitelistSiteBuffer._siteBuffer, WFWhitelistSiteBuffer._siteSet, 
-                       WFWhitelistSiteBuffer.maxSize, WFWhitelistUserPreferences.alwaysAllowHTTPS, 
-                       WFWhitelistUserPreferences.filterBlacklist, WFWhitelistUserPreferences.filterEnabled, 
-                       WFWhitelistUserPreferences.filterWhitelist, WFWhitelistUserPreferences.username, 
-                       WFWhitelistUserPreferences.webWhitelist, WFWhitelistUserPreferences.whitelistEnabled, 
+                       WFWhitelistSiteBuffer.maxSize, WFWhitelistUserPreferences._alwaysAllowHTTPS, 
+                       WFWhitelistUserPreferences._filterBlacklist, WFWhitelistUserPreferences._filterEnabled, 
+                       WFWhitelistUserPreferences._filterWhitelist, WFWhitelistUserPreferences._username, 
+                       WFWhitelistUserPreferences._webWhitelist, WFWhitelistUserPreferences._whitelistEnabled, 
                        WebFilterEvaluator._buffer, WebFilterEvaluator._filterState, 
                        WebFilterEvaluator._url, XMLNode._xmlNode ]
 ...

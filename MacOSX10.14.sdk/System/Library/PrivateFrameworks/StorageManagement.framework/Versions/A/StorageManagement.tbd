@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7FBD1946-0936-3CAF-9F3F-D120314EF265' ]
+uuids:           [ 'x86_64: B5B98FD4-36F2-3717-BF8F-6612C2E936F7' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/StorageManagement.framework/Versions/A/StorageManagement
 exports:         

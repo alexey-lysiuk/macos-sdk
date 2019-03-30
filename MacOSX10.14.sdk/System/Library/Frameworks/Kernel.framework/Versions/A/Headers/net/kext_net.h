@@ -31,7 +31,7 @@
  */
 
 #ifndef NET_KEXT_NET_H
-#define	NET_KEXT_NET_H
+#define NET_KEXT_NET_H
 
 #include <sys/appleapiopts.h>
 
@@ -39,11 +39,11 @@
 #include <sys/cdefs.h>
 
 
-#define	NFF_BEFORE		0x01
-#define	NFF_AFTER		0x02
+#define NFF_BEFORE              0x01
+#define NFF_AFTER               0x02
 
-#define	NKE_OK			0
-#define	NKE_REMOVE		(-1)
+#define NKE_OK                  0
+#define NKE_REMOVE              (-1)
 
 /*
  * Interface structure for inserting an installed socket NKE into an
@@ -59,7 +59,7 @@ struct so_nke {
 	unsigned int nke_handle;
 	unsigned int nke_where;
 	int nke_flags; /* NFF_BEFORE, NFF_AFTER: net/kext_net.h */
-	u_int32_t reserved[4];	/* for future use */
+	u_int32_t reserved[4];  /* for future use */
 };
 
 #pragma pack()

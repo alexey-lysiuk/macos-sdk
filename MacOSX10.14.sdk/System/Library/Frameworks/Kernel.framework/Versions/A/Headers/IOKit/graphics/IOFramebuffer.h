@@ -249,6 +249,17 @@ enum {
 #define kIOFBDependentIDKey     "IOFBDependentID"
 #define kIOFBDependentIndexKey  "IOFBDependentIndex"
 
+#ifndef _OPEN_SOURCE_
+// GTrace V2 support for AGDC markers
+#define HAS_AGDCGTRACETOKEN 1
+extern void agdcGTraceToken(
+        const IOFramebuffer* fb, const uint16_t line, const bool useController,
+        const uint16_t fnID, const uint8_t fnType,
+        const uint16_t tag1, const uint64_t arg1,
+        const uint16_t tag2, const uint64_t arg2,
+        const uint16_t tag3, const uint64_t arg3);
+#endif // !_OPEN_SOURCE_
+
 struct StdFBShmem_t;
 class IOFramebufferUserClient;
 class IODisplay;
@@ -269,8 +280,14 @@ class IOFramebuffer : public IOGraphicsDevice
     friend class IOFramebufferDiagnosticUserClient;
     friend class IOFramebufferParameterHandler;
     friend class IODisplay;
+#ifndef _OPEN_SOURCE_
+    friend void agdcGTraceToken(
+            const IOFramebuffer*, const uint16_t, const bool, const uint16_t,
+            const uint8_t, const uint16_t, const uint64_t, const uint16_t,
+            const uint64_t, const uint16_t, const uint64_t);
+#endif // !_OPEN_SOURCE_
 
-    OSDeclareDefaultStructors(IOFramebuffer)
+    OSDeclareDefaultStructors(IOFramebuffer);
 
 protected:
 /*! @struct ExpansionData
@@ -435,6 +452,7 @@ private:
 
 
 public:
+    // IOKit overrides
     static void initialize();
 
     virtual bool attach( IOService * provider ) APPLE_KEXT_OVERRIDE;

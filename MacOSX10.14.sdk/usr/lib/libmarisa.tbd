@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AFC43F0E-4FDF-31DF-A854-935F411635A1' ]
-platform:        macosx
+uuids:           [ 'x86_64: 156C1F8B-DAE1-36F9-AC2B-801679A06F41' ]
+platform:        zippered
 install-name:    /usr/lib/libmarisa.dylib
 current-version: 9.15.2
 objc-constraint: none

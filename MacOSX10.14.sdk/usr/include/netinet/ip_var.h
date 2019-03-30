@@ -67,74 +67,74 @@
  */
 
 #ifndef _NETINET_IP_VAR_H_
-#define	_NETINET_IP_VAR_H_
+#define _NETINET_IP_VAR_H_
 #include <sys/appleapiopts.h>
 
 /*
  * Overlay for ip header used by other protocols (tcp, udp).
  */
 struct ipovly {
-	u_char	ih_x1[9];		/* (unused) */
-	u_char	ih_pr;			/* protocol */
-	u_short	ih_len;			/* protocol length */
-	struct	in_addr ih_src;		/* source internet address */
-	struct	in_addr ih_dst;		/* destination internet address */
+	u_char  ih_x1[9];               /* (unused) */
+	u_char  ih_pr;                  /* protocol */
+	u_short ih_len;                 /* protocol length */
+	struct  in_addr ih_src;         /* source internet address */
+	struct  in_addr ih_dst;         /* destination internet address */
 };
 
-#define	MAX_IPOPTLEN	40
+#define MAX_IPOPTLEN    40
 
-struct	ipstat {
-	u_int32_t ips_total;		/* total packets received */
-	u_int32_t ips_badsum;		/* checksum bad */
-	u_int32_t ips_tooshort;		/* packet too short */
-	u_int32_t ips_toosmall;		/* not enough data */
-	u_int32_t ips_badhlen;		/* ip header length < data size */
-	u_int32_t ips_badlen;		/* ip length < ip header length */
-	u_int32_t ips_fragments;	/* fragments received */
-	u_int32_t ips_fragdropped;	/* frags dropped (dups, out of space) */
-	u_int32_t ips_fragtimeout;	/* fragments timed out */
-	u_int32_t ips_forward;		/* packets forwarded */
-	u_int32_t ips_fastforward;	/* packets fast forwarded */
-	u_int32_t ips_cantforward;	/* packets rcvd for unreachable dest */
-	u_int32_t ips_redirectsent;	/* packets forwarded on same net */
-	u_int32_t ips_noproto;		/* unknown or unsupported protocol */
-	u_int32_t ips_delivered;	/* datagrams delivered to upper level */
-	u_int32_t ips_localout;		/* total ip packets generated here */
-	u_int32_t ips_odropped;		/* lost packets due to nobufs, etc. */
-	u_int32_t ips_reassembled;	/* total packets reassembled ok */
-	u_int32_t ips_fragmented;	/* datagrams successfully fragmented */
-	u_int32_t ips_ofragments;	/* output fragments created */
-	u_int32_t ips_cantfrag;		/* don't fragment flag was set, etc. */
-	u_int32_t ips_badoptions;	/* error in option processing */
-	u_int32_t ips_noroute;		/* packets discarded due to no route */
-	u_int32_t ips_badvers;		/* ip version != 4 */
-	u_int32_t ips_rawout;		/* total raw ip packets generated */
-	u_int32_t ips_toolong;		/* ip length > max ip packet size */
-	u_int32_t ips_notmember;	/* multicasts for unregistered grps */
-	u_int32_t ips_nogif;		/* no match gif found */
-	u_int32_t ips_badaddr;		/* invalid address on header */
-	u_int32_t ips_pktdropcntrl;	/* pkt dropped, no mbufs for ctl data */
-	u_int32_t ips_rcv_swcsum;	/* ip hdr swcksum (inbound), packets */
-	u_int32_t ips_rcv_swcsum_bytes;	/* ip hdr swcksum (inbound), bytes */
-	u_int32_t ips_snd_swcsum;	/* ip hdr swcksum (outbound), packets */
-	u_int32_t ips_snd_swcsum_bytes;	/* ip hdr swcksum (outbound), bytes */
-	u_int32_t ips_adj;		/* total packets trimmed/adjusted */
-	u_int32_t ips_adj_hwcsum_clr;	/* hwcksum discarded during adj */
-	u_int32_t ips_rxc_collisions;	/* rx chaining collisions */
-	u_int32_t ips_rxc_chained;	/* rx chains */
-	u_int32_t ips_rxc_notchain;	/* rx bypassed chaining */
-	u_int32_t ips_rxc_chainsz_gt2;	/* rx chain size greater than 2 */
+struct  ipstat {
+	u_int32_t ips_total;            /* total packets received */
+	u_int32_t ips_badsum;           /* checksum bad */
+	u_int32_t ips_tooshort;         /* packet too short */
+	u_int32_t ips_toosmall;         /* not enough data */
+	u_int32_t ips_badhlen;          /* ip header length < data size */
+	u_int32_t ips_badlen;           /* ip length < ip header length */
+	u_int32_t ips_fragments;        /* fragments received */
+	u_int32_t ips_fragdropped;      /* frags dropped (dups, out of space) */
+	u_int32_t ips_fragtimeout;      /* fragments timed out */
+	u_int32_t ips_forward;          /* packets forwarded */
+	u_int32_t ips_fastforward;      /* packets fast forwarded */
+	u_int32_t ips_cantforward;      /* packets rcvd for unreachable dest */
+	u_int32_t ips_redirectsent;     /* packets forwarded on same net */
+	u_int32_t ips_noproto;          /* unknown or unsupported protocol */
+	u_int32_t ips_delivered;        /* datagrams delivered to upper level */
+	u_int32_t ips_localout;         /* total ip packets generated here */
+	u_int32_t ips_odropped;         /* lost packets due to nobufs, etc. */
+	u_int32_t ips_reassembled;      /* total packets reassembled ok */
+	u_int32_t ips_fragmented;       /* datagrams successfully fragmented */
+	u_int32_t ips_ofragments;       /* output fragments created */
+	u_int32_t ips_cantfrag;         /* don't fragment flag was set, etc. */
+	u_int32_t ips_badoptions;       /* error in option processing */
+	u_int32_t ips_noroute;          /* packets discarded due to no route */
+	u_int32_t ips_badvers;          /* ip version != 4 */
+	u_int32_t ips_rawout;           /* total raw ip packets generated */
+	u_int32_t ips_toolong;          /* ip length > max ip packet size */
+	u_int32_t ips_notmember;        /* multicasts for unregistered grps */
+	u_int32_t ips_nogif;            /* no match gif found */
+	u_int32_t ips_badaddr;          /* invalid address on header */
+	u_int32_t ips_pktdropcntrl;     /* pkt dropped, no mbufs for ctl data */
+	u_int32_t ips_rcv_swcsum;       /* ip hdr swcksum (inbound), packets */
+	u_int32_t ips_rcv_swcsum_bytes; /* ip hdr swcksum (inbound), bytes */
+	u_int32_t ips_snd_swcsum;       /* ip hdr swcksum (outbound), packets */
+	u_int32_t ips_snd_swcsum_bytes; /* ip hdr swcksum (outbound), bytes */
+	u_int32_t ips_adj;              /* total packets trimmed/adjusted */
+	u_int32_t ips_adj_hwcsum_clr;   /* hwcksum discarded during adj */
+	u_int32_t ips_rxc_collisions;   /* rx chaining collisions */
+	u_int32_t ips_rxc_chained;      /* rx chains */
+	u_int32_t ips_rxc_notchain;     /* rx bypassed chaining */
+	u_int32_t ips_rxc_chainsz_gt2;  /* rx chain size greater than 2 */
 	u_int32_t ips_rxc_chainsz_gt4;  /* rx chain size greater than 4 */
-	u_int32_t ips_rxc_notlist;	/* count of pkts through ip_input */
-	u_int32_t ips_raw_sappend_fail;	/* sock append failed */
+	u_int32_t ips_rxc_notlist;      /* count of pkts through ip_input */
+	u_int32_t ips_raw_sappend_fail; /* sock append failed */
 	u_int32_t ips_necp_policy_drop; /* NECP policy related drop */
 };
 
 struct ip_linklocal_stat {
-	u_int32_t	iplls_in_total;
-	u_int32_t	iplls_in_badttl;
-	u_int32_t	iplls_out_total;
-	u_int32_t	iplls_out_badttl;
+	u_int32_t       iplls_in_total;
+	u_int32_t       iplls_in_badttl;
+	u_int32_t       iplls_out_total;
+	u_int32_t       iplls_out_badttl;
 };
 
 

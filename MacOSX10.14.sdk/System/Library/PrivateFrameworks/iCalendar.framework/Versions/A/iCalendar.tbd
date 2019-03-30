@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7F8DB8E6-9AE2-3DC9-A876-33197BF1F8F5' ]
+uuids:           [ 'x86_64: F0B6AC3A-EAE2-3224-8C9A-B5A29230C9AE' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/iCalendar.framework/Versions/A/iCalendar
 current-version: 287

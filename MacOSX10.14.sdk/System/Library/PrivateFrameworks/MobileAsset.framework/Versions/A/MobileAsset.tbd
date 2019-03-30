@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0C9B7077-BFCF-3A2E-8F54-D7C2820893FD' ]
-platform:        macosx
+uuids:           [ 'x86_64: 95ACB386-7899-3661-BE5B-7E3133FE971B' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/MobileAsset.framework/Versions/A/MobileAsset
 exports:         
   - archs:           [ x86_64 ]
@@ -36,22 +36,23 @@ exports:
                        _ASSetDefaultAssetServerURLForAssetType, _ASSetLogLevel, _ASStateOperation, 
                        _ASStateOperationEstimatedTimeRemaining, _ASStateOperationProgress, 
                        _ASStatePausedOperation, _ASStateStallError, _ASStateStallReason, 
-                       _MACleanV1Repository, _MAMigrateAssets, _MASendRepairState, 
-                       _MASetPallasAudience, _MASetPallasUrl, _MASetServerUrlOverride, 
-                       _MobileAssetCancelDownload, _MobileAssetCopyAssetInfo, _MobileAssetCopyAssetProperties, 
-                       _MobileAssetCopyLocalURL, _MobileAssetCreateForType, _MobileAssetDownload, 
-                       _MobileAssetGetTypeID, _MobileAssetPauseDownload, _MobileAssetPurge, 
-                       _MobileAssetQueryCreate, _MobileAssetQueryCreateArrayOfKnownAssets, 
-                       _MobileAssetQueryGetMatchingAsset, _MobileAssetQueryGetTypeID, 
-                       _MobileAssetQueryRefreshAssetsAgainstLocalCache, _MobileAssetQueryRefreshKnownAssets, 
-                       _MobileAssetResumeDownload, _MobileAssetSetLogLevel, __ForceMetadataUpdate, 
-                       __MACleanV1Repository, __MAClientSendRepairState, __MAMigrateAssets, 
-                       __MAclientSendCoverageDump, __MAclientSendQueryNSUrlState, 
-                       __MAclientSendRepairStateSync, __MAclientSendServerUrlOverride, 
-                       __MAensureExtension, __MAgetClientConnection, __MAgetProgressHandlers, 
-                       __MAsendCancelDownload, __MAsendConfigDownload, __MAsendDownloadAsset, 
-                       __MAsendDownloadMetaData, __MAsendPurgeAsset, __MAsendQueryMetaData, 
-                       __MAsendSetPallasAudience, __MAsendSetPallasUrl, __MobileAssetGarbageCollectionBehaviorForAttributes, 
+                       _MACleanV1Repository, _MAGetPallasAudience, _MAMigrateAssets, 
+                       _MASendRepairState, _MASetPallasAudience, _MASetPallasUrl, 
+                       _MASetServerUrlOverride, _MobileAssetCancelDownload, _MobileAssetCopyAssetInfo, 
+                       _MobileAssetCopyAssetProperties, _MobileAssetCopyLocalURL, 
+                       _MobileAssetCreateForType, _MobileAssetDownload, _MobileAssetGetTypeID, 
+                       _MobileAssetPauseDownload, _MobileAssetPurge, _MobileAssetQueryCreate, 
+                       _MobileAssetQueryCreateArrayOfKnownAssets, _MobileAssetQueryGetMatchingAsset, 
+                       _MobileAssetQueryGetTypeID, _MobileAssetQueryRefreshAssetsAgainstLocalCache, 
+                       _MobileAssetQueryRefreshKnownAssets, _MobileAssetResumeDownload, 
+                       _MobileAssetSetLogLevel, __ForceMetadataUpdate, __MACleanV1Repository, 
+                       __MAClientSendRepairState, __MAMigrateAssets, __MAclientSendCoverageDump, 
+                       __MAclientSendQueryNSUrlState, __MAclientSendRepairStateSync, 
+                       __MAclientSendServerUrlOverride, __MAensureExtension, __MAgetClientConnection, 
+                       __MAgetProgressHandlers, __MAsendCancelDownload, __MAsendConfigDownload, 
+                       __MAsendDownloadAsset, __MAsendDownloadMetaData, __MAsendGetPallasAudience, 
+                       __MAsendPurgeAsset, __MAsendQueryMetaData, __MAsendSetPallasAudience, 
+                       __MAsendSetPallasUrl, __MobileAssetGarbageCollectionBehaviorForAttributes, 
                        __MobileAssetLog, __MobileAssetReplaceProperties, ___DiscardDownloadQueueToken, 
                        ___GetDownloadQueueToken, ___MobileAssetVersionNumber, ___MobileAssetVersionString, 
                        ___RepositoryWasModified, ___RestartDownloads, ___RetryQueuedDownloads, 
@@ -59,10 +60,11 @@ exports:
                        ___SetCachedContentURLs, ___SetEnforceProductionSigning, ___SetLastDanglingReferenceCheckDate, 
                        ___SetPreinstalledAssetURLs, ___StartBackgroundedDownloads, 
                        ___TerminateDaemon, ___TriggerAssetMigration, __getClientAsyncMessageQueue, 
-                       __getClientStateMessageQueue, __getV1DecodeClasses, __hashCFDataOfLength, 
-                       __hashCFDictionary, __hashCFString, __hashCFStringOfLength, 
-                       __isAssetTypeWhitelisted, _addObjectToMessage, _allowStreamingZip, 
-                       _assembleTaskDescriptor, _assetTypeFromNormalized, _determineUnarchiveSizeFromAttributes, 
+                       __getClientInternalStateQueue, __getClientStateMessageQueue, 
+                       __getV1DecodeClasses, __hashCFDataOfLength, __hashCFDictionary, 
+                       __hashCFString, __hashCFStringOfLength, __isAssetTypeWhitelisted, 
+                       _addObjectToMessage, _allowStreamingZip, _assembleTaskDescriptor, 
+                       _assetTypeFromNormalized, _determineUnarchiveSizeFromAttributes, 
                        _determineUnarchiveSizeFromMessage, _disassembleTaskDescriptor, 
                        _ensureAndIncrementNumberAtKey, _getAssetDirectoryName, _getAssetId, 
                        _getAssetIdFromDict, _getAssetTypeFromTaskDescriptor, _getLocalUrlFromTypeAndId, 
@@ -75,7 +77,8 @@ exports:
                        _logDebug, _logError, _logInfo, _mergeDictionaries, _normalizedAssetType, 
                        _notifyClientsOfProgress, _sendAction, _sendAssetSpecificMessage, 
                        _sendAssetSpecificWithMessage, _sendAsync, _sendClientResponse, 
-                       _sendIfNecessary, _setClientConnectionHandler, _shouldHashAttribute ]
+                       _sendIfNecessary, _sendReply, _sendSync, _setClientConnectionHandler, 
+                       _shouldHashAttribute ]
     objc-classes:    [ ASAsset, ASAssetQuery, MAAsset, MAAssetQuery, MADownloadConfig, 
                        MADownloadOptions, MAMsuDownloadOptions, MAProgressHandler, 
                        MAProgressNotification ]

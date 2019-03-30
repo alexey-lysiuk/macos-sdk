@@ -50,7 +50,7 @@ character in the
 .Cm --list
 output.
 .It Ar -R | --restart
-Automatically restart (or shut down) if required to complete installation.
+Automatically restart (or shut down) if required to complete installation. If the user invoking this tool is logged in then macOS will attempt to quit all applications, logout, and restart. If the user is not logged in, macOS will trigger a forced reboot if necessary. If you wish to always perform a forced reboot, pass --force.
 .It Ar -a | --all
 All updates that are applicable to your system, including those non-recommended ones,
 which are prefixed with a 

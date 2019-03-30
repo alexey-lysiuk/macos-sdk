@@ -19,7 +19,7 @@
 # define __has_attribute(x) 0
 #endif
 
-#if defined(CT_BUILDING_CoreText) || TARGET_OS_WIN32
+#if defined(CT_BUILDING_CoreText) || 0
 # define CT_AVAILABLE(...)
 # define CT_UNAVAILABLE(...)
 # define CT_DEPRECATED(...)
@@ -54,28 +54,8 @@
 # endif /* defined(__OBJC__) */
 #endif /*  __has_attribute(objc_bridge) */
 
-#if TARGET_OS_WIN32
-#define _Nullable
-#define _Nonnull
 
-#define CF_BRIDGED_TYPE(T)
-#define CF_BRIDGED_MUTABLE_TYPE(T)
-#define CF_RELATED_TYPE(T,C,I)
-
-#define CF_ASSUME_NONNULL_BEGIN
-#define CF_ASSUME_NONNULL_END
-
-# if defined(CT_BUILDING_CoreText) && defined(__cplusplus)
-#  define CT_EXPORT extern "C" __declspec(dllexport)
-# elif defined(CT_BUILDING_CoreText) && !defined(__cplusplus)
-#  define CT_EXPORT extern __declspec(dllexport)
-# elif defined(__cplusplus)
-#  define CT_EXPORT extern "C" __declspec(dllimport)
-# else
-#  define CT_EXPORT extern __declspec(dllimport)
-# endif
-#else
 # define CT_EXPORT extern
-#endif
+
 
 #endif

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7B04BAF2-B734-3238-8F38-74629ADE6CF2' ]
+uuids:           [ 'x86_64: 781D9C50-9A70-3E7B-B087-6E1847A9366B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Suggestions.framework/Versions/A/Suggestions
 current-version: 226

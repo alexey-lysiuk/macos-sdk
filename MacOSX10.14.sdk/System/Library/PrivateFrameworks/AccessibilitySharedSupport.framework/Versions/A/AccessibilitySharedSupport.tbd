@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1C93571A-F52E-3248-A147-A442F5EA2276' ]
-platform:        macosx
+uuids:           [ 'x86_64: 9904238D-F547-35A5-A4A7-E69C4A61FE00' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/AccessibilitySharedSupport.framework/Versions/A/AccessibilitySharedSupport
 exports:         
   - archs:           [ x86_64 ]

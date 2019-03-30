@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 03EF6E79-2294-3E8A-AF10-D374E3DE55A3' ]
+uuids:           [ 'x86_64: C5238777-625A-3DD4-BDCC-3C065A0932FF' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Symptoms.framework/Frameworks/SymptomPresentationFeed.framework/Versions/A/SymptomPresentationFeed
-current-version: 820.227.2
+current-version: 820.255.1
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _NSTargetObjectUserInfoKey, _NSUnknownKeyException, _NSUnknownUserInfoKey, 

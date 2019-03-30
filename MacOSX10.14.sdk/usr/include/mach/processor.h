@@ -198,7 +198,7 @@ __END_DECLS
 		mach_msg_header_t Head;
 		NDR_record_t NDR;
 		mach_msg_type_number_t processor_cmdCnt;
-		integer_t processor_cmd[12];
+		integer_t processor_cmd[20];
 	} __Request__processor_control_t __attribute__((unused));
 #ifdef  __MigPackStructs
 #pragma pack()
@@ -284,7 +284,7 @@ union __RequestUnion__processor_subsystem {
 		/* end of the kernel processed data */
 		NDR_record_t NDR;
 		mach_msg_type_number_t processor_info_outCnt;
-		integer_t processor_info_out[12];
+		integer_t processor_info_out[20];
 	} __Reply__processor_info_t __attribute__((unused));
 #ifdef  __MigPackStructs
 #pragma pack()

@@ -536,6 +536,7 @@ NS_ENUM(NSStringEncoding) {
 #endif
 #define NS_UNICHAR_IS_EIGHT_BIT 0
 
+NS_SWIFT_UNAVAILABLE("Use String or NSString instead.")
 @interface NSSimpleCString : NSString {
 @package
     char *bytes;
@@ -546,6 +547,7 @@ NS_ENUM(NSStringEncoding) {
 }
 @end
 
+NS_SWIFT_UNAVAILABLE("Use String or NSString instead.")
 @interface NSConstantString : NSSimpleCString
 @end
 

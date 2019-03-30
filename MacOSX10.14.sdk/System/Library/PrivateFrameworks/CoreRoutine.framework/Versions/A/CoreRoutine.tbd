@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 933E29CF-24E4-3E1F-A532-E4FAE20284D1' ]
-platform:        macosx
+uuids:           [ 'x86_64: 88EF30FD-C06A-38D6-B407-FF42121065C7' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/CoreRoutine.framework/Versions/A/CoreRoutine
-current-version: 558.4.42
+current-version: 558.12.5
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _RTConflictingItemIdentifierKey, _RTDetailedErrorsKey, _RTErrorDomain, 

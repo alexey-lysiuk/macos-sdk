@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E007C937-3217-3A7B-88B6-A96FC6F6DD29' ]
+uuids:           [ 'x86_64: 117217B4-B545-34C7-AE57-0ADD4823B306' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SyncedDefaults.framework/Versions/A/SyncedDefaults
 exports:         

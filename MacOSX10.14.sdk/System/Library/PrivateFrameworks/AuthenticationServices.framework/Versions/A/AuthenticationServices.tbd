@@ -1,0 +1,11 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 3396AE25-2665-3FC6-B36B-5B1C42D26EF6' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/AuthenticationServices.framework/Versions/A/AuthenticationServices
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _ASWebAuthenticationSessionErrorDomain, __authenticationSessionRequestServerErrorDomain ]
+    objc-classes:    [ ASWebAuthenticationSession, _ASWebAuthenticationSessionRequest, 
+                       _ASWebAuthenticationSessionRequestServer ]
+...

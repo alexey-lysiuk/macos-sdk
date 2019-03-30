@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4EE3C5E8-BEF3-3910-A231-B1AE2B437E01' ]
-platform:        macosx
+uuids:           [ 'x86_64: 62019AC3-20C9-3DDC-9C83-189C1F258073' ]
+platform:        zippered
 install-name:    /usr/lib/libbz2.1.0.dylib
 current-version: 1.0.5
 objc-constraint: none

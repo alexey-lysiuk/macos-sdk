@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E1046E01-A2FD-35B4-B018-ACC372F3880E' ]
-platform:        macosx
+uuids:           [ 'x86_64: 3A6CBD41-AFFE-3E06-B1EC-3E95BC79BAC5' ]
+platform:        zippered
 install-name:    /usr/lib/system/libcorecrypto.dylib
-current-version: 602.220.6
+current-version: 602.250.23
 objc-constraint: none
 parent-umbrella: System
 exports:         
@@ -104,10 +104,12 @@ exports:
                        _ccec_x963_export, _ccec_x963_import_priv, _ccec_x963_import_priv_size, 
                        _ccec_x963_import_pub, _ccec_x963_import_pub_size, _ccecdh_compute_shared_secret, 
                        _ccecdh_generate_key, _ccecies_decrypt_gcm, _ccecies_decrypt_gcm_composite, 
-                       _ccecies_decrypt_gcm_plaintext_size, _ccecies_decrypt_gcm_setup, 
+                       _ccecies_decrypt_gcm_from_shared_secret, _ccecies_decrypt_gcm_plaintext_size, 
+                       _ccecies_decrypt_gcm_plaintext_size_cp, _ccecies_decrypt_gcm_setup, 
                        _ccecies_encrypt_gcm, _ccecies_encrypt_gcm_ciphertext_size, 
-                       _ccecies_encrypt_gcm_composite, _ccecies_encrypt_gcm_setup, 
-                       _ccecies_pub_key_size, _cced25519_make_key_pair, _cced25519_make_pub, 
+                       _ccecies_encrypt_gcm_composite, _ccecies_encrypt_gcm_from_shared_secret, 
+                       _ccecies_encrypt_gcm_setup, _ccecies_import_eph_pub, _ccecies_pub_key_size, 
+                       _ccecies_pub_key_size_cp, _cced25519_make_key_pair, _cced25519_make_pub, 
                        _cced25519_sign, _cced25519_verify, _ccgcm_inc_iv, _ccgcm_init_with_iv, 
                        _ccgcm_one_shot, _ccgcm_one_shot_legacy, _ccgcm_set_iv_legacy, 
                        _cchkdf, _cchkdf_expand, _cchkdf_extract, _cchmac, _cchmac_final, 
@@ -125,24 +127,24 @@ exports:
                        _ccn_div_euclid_ws, _ccn_lprint, _ccn_mul, _ccn_mul1, _ccn_n, 
                        _ccn_print, _ccn_random_bits, _ccn_read_uint, _ccn_set, _ccn_shift_right, 
                        _ccn_sub, _ccn_sub1, _ccn_write_int, _ccn_write_int_size, 
-                       _ccn_write_uint, _ccn_write_uint_size, _ccn_zero_multi, _ccnistkdf_ctr_cmac, 
-                       _ccnistkdf_ctr_cmac_fixed, _ccnistkdf_ctr_hmac, _ccnistkdf_ctr_hmac_fixed, 
-                       _ccnistkdf_fb_hmac, _ccnistkdf_fb_hmac_fixed, _ccpad_cts1_decrypt, 
-                       _ccpad_cts1_encrypt, _ccpad_cts2_decrypt, _ccpad_cts2_encrypt, 
-                       _ccpad_cts3_decrypt, _ccpad_cts3_encrypt, _ccpad_pkcs7_decode, 
-                       _ccpad_pkcs7_decrypt, _ccpad_pkcs7_ecb_decrypt, _ccpad_pkcs7_ecb_encrypt, 
-                       _ccpad_pkcs7_encrypt, _ccpad_xts_decrypt, _ccpad_xts_encrypt, 
-                       _ccpbkdf2_hmac, _ccpoly1305, _ccpoly1305_final, _ccpoly1305_init, 
-                       _ccpoly1305_update, _ccprime_rabin_miller, _ccrc2_cbc_decrypt_mode, 
-                       _ccrc2_cbc_encrypt_mode, _ccrc2_cfb8_decrypt_mode, _ccrc2_cfb8_encrypt_mode, 
-                       _ccrc2_cfb_decrypt_mode, _ccrc2_cfb_encrypt_mode, _ccrc2_ctr_crypt_mode, 
-                       _ccrc2_ecb_decrypt_mode, _ccrc2_ecb_encrypt_mode, _ccrc2_ofb_crypt_mode, 
-                       _ccrc4, _ccrc4_eay, _ccrmd128_ltc_di, _ccrmd160_ltc_di, _ccrmd256_ltc_di, 
-                       _ccrmd320_ltc_di, _ccrng, _ccrng_drbg_done, _ccrng_drbg_init, 
-                       _ccrng_drbg_reseed, _ccrng_ecfips_test_init, _ccrng_pbkdf2_prng_init, 
-                       _ccrng_rsafips_test_init, _ccrng_rsafips_test_set_next, _ccrng_sequence_init, 
-                       _ccrng_system_done, _ccrng_system_init, _ccrng_test_done, 
-                       _ccrng_test_init, _ccrsa_crt_makekey, _ccrsa_decrypt_eme_pkcs1v15, 
+                       _ccn_write_uint, _ccn_write_uint_padded_ct, _ccn_write_uint_size, 
+                       _ccn_zero_multi, _ccnistkdf_ctr_cmac, _ccnistkdf_ctr_cmac_fixed, 
+                       _ccnistkdf_ctr_hmac, _ccnistkdf_ctr_hmac_fixed, _ccnistkdf_fb_hmac, 
+                       _ccnistkdf_fb_hmac_fixed, _ccpad_cts1_decrypt, _ccpad_cts1_encrypt, 
+                       _ccpad_cts2_decrypt, _ccpad_cts2_encrypt, _ccpad_cts3_decrypt, 
+                       _ccpad_cts3_encrypt, _ccpad_pkcs7_decode, _ccpad_pkcs7_decrypt, 
+                       _ccpad_pkcs7_ecb_decrypt, _ccpad_pkcs7_ecb_encrypt, _ccpad_pkcs7_encrypt, 
+                       _ccpad_xts_decrypt, _ccpad_xts_encrypt, _ccpbkdf2_hmac, _ccpoly1305, 
+                       _ccpoly1305_final, _ccpoly1305_init, _ccpoly1305_update, _ccprime_rabin_miller, 
+                       _ccrc2_cbc_decrypt_mode, _ccrc2_cbc_encrypt_mode, _ccrc2_cfb8_decrypt_mode, 
+                       _ccrc2_cfb8_encrypt_mode, _ccrc2_cfb_decrypt_mode, _ccrc2_cfb_encrypt_mode, 
+                       _ccrc2_ctr_crypt_mode, _ccrc2_ecb_decrypt_mode, _ccrc2_ecb_encrypt_mode, 
+                       _ccrc2_ofb_crypt_mode, _ccrc4, _ccrc4_eay, _ccrmd128_ltc_di, 
+                       _ccrmd160_ltc_di, _ccrmd256_ltc_di, _ccrmd320_ltc_di, _ccrng, 
+                       _ccrng_drbg_done, _ccrng_drbg_init, _ccrng_drbg_reseed, _ccrng_ecfips_test_init, 
+                       _ccrng_pbkdf2_prng_init, _ccrng_rsafips_test_init, _ccrng_rsafips_test_set_next, 
+                       _ccrng_sequence_init, _ccrng_system_done, _ccrng_system_init, 
+                       _ccrng_test_done, _ccrng_test_init, _ccrsa_crt_makekey, _ccrsa_decrypt_eme_pkcs1v15, 
                        _ccrsa_decrypt_eme_pkcs1v15_blinded, _ccrsa_decrypt_oaep, 
                        _ccrsa_decrypt_oaep_blinded, _ccrsa_dump_full_key, _ccrsa_dump_public_key, 
                        _ccrsa_eme_pkcs1v15_decode, _ccrsa_eme_pkcs1v15_encode, _ccrsa_emsa_pkcs1v15_encode, 

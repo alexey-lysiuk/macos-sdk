@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 274D28E2-0DB2-3D22-9B3F-DC3D1A061700' ]
+uuids:           [ 'x86_64: 8BB4AD0C-D66E-3ED4-B5EF-877180B5BC38' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ShareKit.framework/Versions/A/ShareKit
-current-version: 577
+current-version: 577.5
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _NSSharingPlugInServiceOptionAppIDKey, _NSSharingPlugInServiceOptionAppIsBackgroundOnlyKey, 
@@ -16,7 +16,7 @@ exports:
                        _NSSharingPlugInServiceOptionUIDKey, _SHKExtractInformationFromText, 
                        _SHK_NSSharingAccountConfigurationViewControllerClass, _SHK_NSSharingViewControllerClass, 
                        _SHK_anyAncestorWindowIsFullscreen, _SHK_anyAncestorWindowIsMovable, 
-                       _SHK_computeThumbnail, _SHK_convertSharingItemsToExtensionItem, 
+                       _SHK_asyncConvertSharingItemsToExtensionItem, _SHK_computeThumbnail, 
                        _SHK_defaultMailApplicationBundle, _SHK_defaultMailApplicationBundleIdentifier, 
                        _SHK_defaultMailApplicationIsMailApp, _SHK_defaultMailApplicationSupportsSpecialAppleEvent, 
                        _SHK_defaultMailApplicationSupportsWebPageMailing, _SHK_defaultMailApplicationURL, 

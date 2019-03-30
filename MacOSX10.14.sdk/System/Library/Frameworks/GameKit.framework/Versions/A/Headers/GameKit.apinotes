@@ -59,7 +59,7 @@ Classes:
     Properties:
     - Name: player
       PropertyKind: Instance
-      Nullability: N
+      Nullability: O
   - Name: GKTurnBasedMatch
     Properties:
     - Name: matchID

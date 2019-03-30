@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DACF519F-B70F-3720-93A3-891622E0FC4E' ]
+uuids:           [ 'x86_64: 89182F6A-F9BD-33A7-8A85-BCFD064C0216' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/VCXMPP.framework/Versions/A/Frameworks/XMPPToolkit.framework/Versions/A/XMPPToolkit
 exports:         

@@ -1,6 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
 platform:        macosx
+flags:           [ installapi ]
 install-name:    /usr/lib/libcupsimage.2.dylib
 current-version: 2.3
 compatibility-version: 2

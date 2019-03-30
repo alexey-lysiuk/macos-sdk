@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CE7ACD18-109F-382E-963B-C68419E301A1' ]
-platform:        macosx
+uuids:           [ 'x86_64: D8F52B1D-1AD9-3D33-8D59-2D631A3CBFEC' ]
+platform:        zippered
 install-name:    /usr/lib/libnetwork.dylib
 objc-constraint: none
 exports:         
@@ -595,21 +595,22 @@ exports:
                        _nw_setting_tcp_input_batch_size, _nw_setting_tcp_input_max_aggregate, 
                        _nw_setting_tcp_slab_buffer_size, _nw_setting_tcp_timer_disable_qos_override, 
                        _nw_setting_tcpconn_disable_boringssl, _nw_setting_tcpconn_disable_simulate_crash, 
-                       _nw_setting_tcpconn_enable_tls13, _nw_setting_tcpconn_enable_tls13_denominator, 
-                       _nw_setting_tcpconn_enable_tls13_numerator, _nw_setting_tcpconn_enable_tls_tickets, 
-                       _nw_setting_tcpconn_fallback_delay_cap_ms, _nw_setting_tcpconn_fallback_full_stack, 
-                       _nw_setting_tcpconn_fallback_post_transport_timeout, _nw_setting_tcpconn_fallback_usage_cap_interval, 
-                       _nw_setting_tcpconn_fallback_wifi_advantage_per_rtt_ms, _nw_setting_tcpconn_first_address_family_count, 
-                       _nw_setting_tcpconn_ipv4_delay, _nw_setting_tcpconn_ipv6_delay, 
-                       _nw_setting_tcpconn_keepalive_cnt, _nw_setting_tcpconn_keepalive_time, 
-                       _nw_setting_tcpconn_max_delay, _nw_setting_tcpconn_min_delay, 
-                       _nw_setting_tcpconn_rtt_leeway, _nw_setting_tcpconn_rtt_leeway_small, 
-                       _nw_setting_tcpconn_strong_fallback_delay, _nw_setting_tcpconn_tls13_probe_denominator, 
-                       _nw_setting_tcpconn_tls13_probe_numerator, _nw_setting_tcpconn_trigger_agent_delay, 
-                       _nw_setting_tcpconn_v6_head_start, _nw_setting_tcpconn_weak_fallback_delay, 
-                       _nw_settings_carrier_settings, _nw_settings_managed_settings, 
-                       _nw_settings_register_boringssl_log_debug_updates, _nw_settings_register_networkd_privileged, 
-                       _nw_settings_setup_atfork, _nw_shoes_server_cancel, _nw_shoes_server_copy_parameters, 
+                       _nw_setting_tcpconn_disable_tls13, _nw_setting_tcpconn_enable_tls13, 
+                       _nw_setting_tcpconn_enable_tls13_denominator, _nw_setting_tcpconn_enable_tls13_numerator, 
+                       _nw_setting_tcpconn_enable_tls_tickets, _nw_setting_tcpconn_fallback_delay_cap_ms, 
+                       _nw_setting_tcpconn_fallback_full_stack, _nw_setting_tcpconn_fallback_post_transport_timeout, 
+                       _nw_setting_tcpconn_fallback_usage_cap_interval, _nw_setting_tcpconn_fallback_wifi_advantage_per_rtt_ms, 
+                       _nw_setting_tcpconn_first_address_family_count, _nw_setting_tcpconn_ipv4_delay, 
+                       _nw_setting_tcpconn_ipv6_delay, _nw_setting_tcpconn_keepalive_cnt, 
+                       _nw_setting_tcpconn_keepalive_time, _nw_setting_tcpconn_max_delay, 
+                       _nw_setting_tcpconn_min_delay, _nw_setting_tcpconn_rtt_leeway, 
+                       _nw_setting_tcpconn_rtt_leeway_small, _nw_setting_tcpconn_strong_fallback_delay, 
+                       _nw_setting_tcpconn_tls13_probe_denominator, _nw_setting_tcpconn_tls13_probe_numerator, 
+                       _nw_setting_tcpconn_trigger_agent_delay, _nw_setting_tcpconn_v6_head_start, 
+                       _nw_setting_tcpconn_weak_fallback_delay, _nw_settings_carrier_settings, 
+                       _nw_settings_managed_settings, _nw_settings_register_boringssl_log_debug_updates, 
+                       _nw_settings_register_networkd_privileged, _nw_settings_setup_atfork, 
+                       _nw_shoes_server_cancel, _nw_shoes_server_copy_parameters, 
                        _nw_shoes_server_create, _nw_shoes_server_get_port, _nw_shoes_server_set_error_handler, 
                        _nw_shoes_server_start, _nw_socket_protocol_identifier, _nw_socks5_server_cancel, 
                        _nw_socks5_server_copy_parameters, _nw_socks5_server_create, 

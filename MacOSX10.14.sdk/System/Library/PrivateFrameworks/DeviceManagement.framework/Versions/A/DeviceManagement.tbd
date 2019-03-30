@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B06DC6A8-9AC0-39C5-8C93-3BA02F2171C8' ]
+uuids:           [ 'x86_64: 74FE1FA3-089B-3310-9D57-7340F92EB9CE' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DeviceManagement.framework/Versions/A/DeviceManagement
 current-version: 21.1
@@ -197,4 +197,31 @@ exports:
                        DMFUpdateAppRequest, DMFUpdateDeclarationsRequest, DMFUpdateEnqueuedCommandsRequest, 
                        DMFUpdatePickableAirPlayRoutesRequest, DMFUser, DMFValidateApplicationsRequest, 
                        DMFWebsitePolicyMonitor, DMFiCloudPolicyMonitor ]
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 4C17B701-F12A-3AA7-A0D9-3BDC103CD2BE' ]
+platform:        zippered
+install-name:    /System/Library/PrivateFrameworks/Catalyst.framework/Versions/A/Catalyst
+current-version: 5.10
+objc-constraint: none
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _CATAssertIsNotQueue, _CATAssertIsQueue, _CATErrorDomain, 
+                       _CATErrorWithCodeAndUserInfo, _CATErrorWithDomainCodeAndUserInfo, 
+                       _CATFormattedStringForKey, _CATGetCatalystQueue, _CATLocalizedKey, 
+                       _CATSetCatalystQueue, _CATUnlocalizedKey ]
+    objc-classes:    [ CATAddress, CATArbitrator, CATBatchRemoteTaskOperation, CATBlockOperationObserver, 
+                       CATCollectionController, CATEndPoint, CATMessage, CATMutableTaskProgress, 
+                       CATNetworkReachability, CATNotificationMessage, CATOperation, 
+                       CATOperationQueue, CATProperty, CATRemoteConnection, CATRemoteConnectionSocketOptions, 
+                       CATRemoteConnectionTrustDecision, CATRemoteTaskOperation, 
+                       CATRemoteTransport, CATSerialOperationQueue, CATSessionMessage, 
+                       CATSessionMessageDidInvalidate, CATSessionMessageInvalidate, 
+                       CATSessionMessageResume, CATSessionMessageResumed, CATSocket, 
+                       CATState, CATStateMachine, CATStateMachineEvent, CATTaskBlockServer, 
+                       CATTaskClient, CATTaskMessage, CATTaskMessageCancel, CATTaskMessageError, 
+                       CATTaskMessageFetchProgress, CATTaskMessageIncrementalProgress, 
+                       CATTaskMessageProgressUpdate, CATTaskMessageStart, CATTaskOperation, 
+                       CATTaskProgress, CATTaskRequest, CATTaskResultObject, CATTaskServer, 
+                       CATTaskSession, CATTransition, CATTransport, CATXPCTransport ]
 ...

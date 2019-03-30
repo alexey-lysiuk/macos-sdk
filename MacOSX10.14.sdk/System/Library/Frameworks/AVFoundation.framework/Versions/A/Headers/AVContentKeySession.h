@@ -134,7 +134,7 @@ AV_INIT_UNAVAILABLE
  @param         initializationData
                 Container- and protocol-specific data to be used to obtain a key response. Either identifier or initializationData must be non-nil. Both can be non-nil, if the content protection protocol requires both.
  @param         options
-                No options are defined at this time, may be nil.
+                Additional information necessary to obtain the key, or nil if none. See AVContentKeyRequest*Key below.
  @discussion    May be used to generate an AVContentKeyRequest from request initialization data already in hand, without awaiting such data during the processing of media data of an associated recipient.
 */
 - (void)processContentKeyRequestWithIdentifier:(nullable id)identifier initializationData:(nullable NSData *)initializationData options:(nullable NSDictionary<NSString *, id> *)options;
@@ -147,7 +147,7 @@ AV_INIT_UNAVAILABLE
 - (void)renewExpiringResponseDataForContentKeyRequest:(AVContentKeyRequest *)contentKeyRequest;
 
 /*!
- @method        makeSecureTokenForExpirationDateOfPersistableContentKey:
+ @method        makeSecureTokenForExpirationDateOfPersistableContentKey:completionHandler:
  @abstract      Creates a secure server playback context (SPC) that the client could send to the key server to obtain an expiration date for the provided persistable content key data.
  @param         persistableContentKeyData
                 Persistable content key data that was previously created using -[AVContentKeyRequest persistableContentKeyFromKeyVendorResponse:options:error:] or obtained via AVContentKeySessionDelegate callback -contentKeySession:didUpdatePersistableContentKey:forContentKeyIdentifier:.
@@ -156,6 +156,56 @@ AV_INIT_UNAVAILABLE
  */
 - (void)makeSecureTokenForExpirationDateOfPersistableContentKey:(NSData *)persistableContentKeyData
 											  completionHandler:(void (^)(NSData * _Nullable secureTokenData, NSError * _Nullable error))handler API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(macos, tvos, watchos);
+
+/*!
+ @typedef       AVContentKeySessionServerPlaybackContextKey
+ @abstract      Options keys used to specify additional information for generating server playback context (SPC) in
+                    -[AVContentKeySession invalidatePersistableContentKey:options:completionHandler:] and
+                    -[AVContentKeySession invalidateAllPersistableContentKeysForApp:options:completionHandler:]
+ */
+typedef NSString * AVContentKeySessionServerPlaybackContextOption NS_STRING_ENUM;
+
+/*!
+ @constant      AVContentKeySessionServerPlaybackContextOptionProtocolVersions
+ @abstract      Specifies the versions of the content protection protocol supported by the application as an NSArray of one or more NSNumber objects. If not specified default protocol version of 1 is assumed.
+ */
+AVF_EXPORT AVContentKeySessionServerPlaybackContextOption const AVContentKeySessionServerPlaybackContextOptionProtocolVersions API_AVAILABLE(ios(12.2)) API_UNAVAILABLE(macos, tvos, watchos);
+
+/*!
+ @constant      AVContentKeySessionServerPlaybackContextOptionServerChallenge
+ @abstract      Specifies a nonce as a 8-byte NSData object to be included in the secure server playback context (SPC) in order to prevent replay attacks. If not specified default server challenge of 0 is assumed.
+ */
+AVF_EXPORT AVContentKeySessionServerPlaybackContextOption const AVContentKeySessionServerPlaybackContextOptionServerChallenge API_AVAILABLE(ios(12.2)) API_UNAVAILABLE(macos, tvos, watchos);
+
+/*!
+ @method        invalidatePersistableContentKey:options:completionHandler:
+ @abstract      Invalidates the persistable content key and creates a secure server playback context (SPC) that the client could send to the key server to verify the outcome of invalidation request.
+ @param         persistableContentKeyData
+                Persistable content key data that was previously created using -[AVContentKeyRequest persistableContentKeyFromKeyVendorResponse:options:error:] or obtained via AVContentKeySessionDelegate callback -contentKeySession:didUpdatePersistableContentKey:forContentKeyIdentifier:.
+ @param         options
+                Additional information necessary to generate the server playback context, or nil if none. See AVContentKeySessionServerPlaybackContextOption for supported options.
+ @param         handler
+                Once the server playback context is ready, this block will be called with the data or an error describing the failure.
+ @discussion    Once invalidated, a persistable content key cannot be used to answer key requests during later playback sessions.
+ */
+- (void)invalidatePersistableContentKey:(NSData *)persistableContentKeyData
+								options:(nullable NSDictionary<AVContentKeySessionServerPlaybackContextOption, id> *)options
+					  completionHandler:(void (^)(NSData * _Nullable secureTokenData, NSError * _Nullable error))handler API_AVAILABLE(ios(12.2)) API_UNAVAILABLE(macos, tvos, watchos);
+
+/*!
+ @method        invalidateAllPersistableContentKeysForApp:options:completionHandler:
+ @abstract      Invalidates all persistable content keys associated with the application and creates a secure server playback context (SPC) that the client could send to the key server to verify the outcome of invalidation request.
+ @param         appIdentifier
+                An opaque identifier for the application. The contents of this identifier depend on the particular protocol in use by the entity that controls the use of the media data.
+ @param         options
+                Additional information necessary to generate the server playback context, or nil if none. See AVContentKeySessionServerPlaybackContextOption for supported options.
+ @param         handler
+                Once the server playback context is ready, this block will be called with the data or an error describing the failure.
+ @discussion    Once invalidated, persistable content keys cannot be used to answer key requests during later playback sessions.
+ */
+- (void)invalidateAllPersistableContentKeysForApp:(NSData *)appIdentifier
+										  options:(nullable NSDictionary<AVContentKeySessionServerPlaybackContextOption, id> *)options
+								completionHandler:(void (^)(NSData * _Nullable secureTokenData, NSError * _Nullable error))handler API_AVAILABLE(ios(12.2)) API_UNAVAILABLE(macos, tvos, watchos);
 
 @end
 
@@ -408,6 +458,12 @@ API_AVAILABLE(macos(10.12.4), ios(10.3), tvos(10.2)) __WATCHOS_PROHIBITED
 @property (nonatomic, readonly, nullable) NSData *initializationData;
 
 /*
+ @property      options
+ @abstract      Additional information specified while initiaing key loading using -processContentKeyRequestWithIdentifier:initializationData:options:.
+ */
+@property (readonly, copy) NSDictionary<NSString *, id> *options API_AVAILABLE(macos(10.14.4), ios(12.2), tvos(12.2)) API_UNAVAILABLE(watchos);
+
+/*
  @property      canProvidePersistableContentKey
  @abstract      When the value of this property is YES, you can use the method -persistableContentKeyFromKeyVendorResponse:options:error: to create a persistable content key from the content key response.
  @dicsussion    The value of this property will be YES only when the receiver is provided to your AVContentKeySession delegate via the method -contentKeySession:didProvidePersistableContentKeyRequest:. If you have an AVContentKeyRequest for which the value of canProvidePersistableContentKey is NO, but you wish to obtain a persistable content key, send the AVContentKeyRequest the message -respondByRequestingPersistableContentKeyRequest.
@@ -536,7 +592,12 @@ API_AVAILABLE(macos(10.12.4), ios(10.3), tvos(10.2)) __WATCHOS_PROHIBITED
 
 @end
 
-// Options keys for use with -[AVContentKeyRequest makeStreamingContentKeyRequestDataForApp:contentIdentifier:options:completionHandler:]
+/*!
+ Options keys for use with the following methods:
+	-[AVContentKeySession processContentKeyRequestWithIdentifier:initializationData:options:]
+	-[AVContentKeyRequest makeStreamingContentKeyRequestDataForApp:contentIdentifier:options:completionHandler:]
+ */
+
 /*!
  @constant      AVContentKeyRequestProtocolVersionsKey
  @abstract      Specifies the versions of the content protection protocol supported by the application as an NSArray of one or more NSNumber objects.

@@ -383,59 +383,59 @@ __BEGIN_DECLS
  */
 
 /*!
-* @define   kOSKextKernelIdentifier
-* @abstract
-* This is the CFBundleIdentifier user for the kernel itself.
-*/
+ * @define   kOSKextKernelIdentifier
+ * @abstract
+ * This is the CFBundleIdentifier user for the kernel itself.
+ */
 #define kOSKextKernelIdentifier                 "__kernel__"
 
 /*!
-* @define   kOSBundleRequiredRoot
-* @abstract
-* This <code>@link kOSBundleRequiredKey OSBundleRequired@/link</code>
-* value indicates that the kext may be needed to mount the root filesystem
-* whether starting from a local or a network volume.
-*/
+ * @define   kOSBundleRequiredRoot
+ * @abstract
+ * This <code>@link kOSBundleRequiredKey OSBundleRequired@/link</code>
+ * value indicates that the kext may be needed to mount the root filesystem
+ * whether starting from a local or a network volume.
+ */
 #define kOSBundleRequiredRoot                   "Root"
 
 /*!
-* @define   kOSBundleRequiredLocalRoot
-* @abstract
-* This <code>@link kOSBundleRequiredKey OSBundleRequired@/link</code>
-* value indicates that the kext may be needed to mount the root filesystem
-* when starting from a local disk.
-*/
+ * @define   kOSBundleRequiredLocalRoot
+ * @abstract
+ * This <code>@link kOSBundleRequiredKey OSBundleRequired@/link</code>
+ * value indicates that the kext may be needed to mount the root filesystem
+ * when starting from a local disk.
+ */
 #define kOSBundleRequiredLocalRoot              "Local-Root"
 
 /*!
-* @define   kOSBundleRequiredNetworkRoot
-* @abstract
-* This <code>@link kOSBundleRequiredKey OSBundleRequired@/link</code>
-* value indicates that the kext may be needed to mount the root filesystem
-* when starting over a network connection.
-*/
+ * @define   kOSBundleRequiredNetworkRoot
+ * @abstract
+ * This <code>@link kOSBundleRequiredKey OSBundleRequired@/link</code>
+ * value indicates that the kext may be needed to mount the root filesystem
+ * when starting over a network connection.
+ */
 #define kOSBundleRequiredNetworkRoot            "Network-Root"
 
 /*!
-* @define   kOSBundleRequiredSafeBoot
-* @abstract
-* This <code>@link kOSBundleRequiredKey OSBundleRequired@/link</code>
-* value indicates that the kext can be loaded during a safe startup.
-* This value does not normally cause the kext to be read by the booter
-* or included in startup kext caches.
-*/
+ * @define   kOSBundleRequiredSafeBoot
+ * @abstract
+ * This <code>@link kOSBundleRequiredKey OSBundleRequired@/link</code>
+ * value indicates that the kext can be loaded during a safe startup.
+ * This value does not normally cause the kext to be read by the booter
+ * or included in startup kext caches.
+ */
 #define kOSBundleRequiredSafeBoot               "Safe Boot"
 
 /*!
-* @define   kOSBundleRequiredConsole
-* @abstract
-* This <code>@link kOSBundleRequiredKey OSBundleRequired@/link</code>
-* value indicates that the kext may be needed for console access
-* (specifically in a single-user startup when
-* <code>@link //apple_ref/doc/man/8/kextd kextd(8)@/link</code>.
-* does not run)
-* and should be loaded during early startup.
-*/
+ * @define   kOSBundleRequiredConsole
+ * @abstract
+ * This <code>@link kOSBundleRequiredKey OSBundleRequired@/link</code>
+ * value indicates that the kext may be needed for console access
+ * (specifically in a single-user startup when
+ * <code>@link //apple_ref/doc/man/8/kextd kextd(8)@/link</code>.
+ * does not run)
+ * and should be loaded during early startup.
+ */
 #define kOSBundleRequiredConsole                "Console"
 
 

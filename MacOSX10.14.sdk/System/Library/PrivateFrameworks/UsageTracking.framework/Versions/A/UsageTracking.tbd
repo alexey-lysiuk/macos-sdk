@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FEED1996-3271-34CE-943B-8D9ACAAE8E5B' ]
+uuids:           [ 'x86_64: BFC1F23E-8C43-3DC6-994A-0E23146BC65C' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/UsageTracking.framework/Versions/A/UsageTracking
 current-version: 43

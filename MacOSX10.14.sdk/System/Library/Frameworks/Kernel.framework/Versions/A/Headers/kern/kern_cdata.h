@@ -52,7 +52,7 @@
 #define KCDATA_ITEM_DATA_PTR(item)      kcdata_iter_payload(KCDATA_ITEM_ITER(item))
 #define KCDATA_ITEM_FIND_TYPE(itemx, type) (kcdata_iter_find_type(KCDATA_ITEM_ITER(itemx), type).item)
 #define kcdata_get_container_type(buffer) kcdata_iter_container_type(KCDATA_ITEM_ITER(buffer))
-#define kcdata_get_data_with_desc(buf,desc,data) kcdata_iter_get_data_with_desc(KCDATA_ITEM_ITER(buf),desc,data,NULL)
+#define kcdata_get_data_with_desc(buf, desc, data) kcdata_iter_get_data_with_desc(KCDATA_ITEM_ITER(buf),desc,data,NULL)
 /* Do not use these macros! */
 
 
@@ -66,6 +66,6 @@ kern_return_t kcdata_memcpy(kcdata_descriptor_t data, mach_vm_address_t dst_addr
 kern_return_t kcdata_bzero(kcdata_descriptor_t data, mach_vm_address_t dst_addr, uint32_t size);
 kern_return_t kcdata_get_memory_addr(kcdata_descriptor_t data, uint32_t type, uint32_t size, mach_vm_address_t * user_addr);
 kern_return_t kcdata_get_memory_addr_for_array(
-    kcdata_descriptor_t data, uint32_t type_of_element, uint32_t size_of_element, uint32_t count, mach_vm_address_t * user_addr);
+	kcdata_descriptor_t data, uint32_t type_of_element, uint32_t size_of_element, uint32_t count, mach_vm_address_t * user_addr);
 
 #endif /* _KERN_CDATA_H_ */

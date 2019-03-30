@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 95C39B46-7397-38BB-8781-C71A626E203A' ]
+uuids:           [ 'x86_64: B19997CD-B3EF-3A20-85B1-562F98BBDDDD' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/MediaPlayer.framework/Versions/A/MediaPlayer
 objc-constraint: none
@@ -42,6 +42,7 @@ exports:
                        _MPMediaItemPropertyPodcastTitle, _MPMediaItemPropertyRating, 
                        _MPMediaItemPropertyReleaseDate, _MPMediaItemPropertySkipCount, 
                        _MPMediaItemPropertyTitle, _MPMediaItemPropertyUserGrouping, 
+                       _MPNSStringForMPActiveRouteType, _MPNSStringFromQueueLoadAction, 
                        _MPNowPlayingContentItemArtworkMaxSize, _MPNowPlayingContentItemDeviceUserInfoKeyAlbumArtistPersistentID, 
                        _MPNowPlayingContentItemDeviceUserInfoKeyAlbumPersistentID, 
                        _MPNowPlayingContentItemDeviceUserInfoKeyArtistPersistentID, 
@@ -118,11 +119,11 @@ exports:
                        MPChangePlaybackRateCommandEvent, MPChangeRepeatModeCommand, 
                        MPChangeRepeatModeCommandEvent, MPChangeShuffleModeCommand, 
                        MPChangeShuffleModeCommandEvent, MPContentItem, MPFeedbackCommand, 
-                       MPFeedbackCommandEvent, MPMRAVEndpointWrapper, MPMRAVOutputContextWrapper, 
-                       MPMediaEntity, MPMediaItem, MPMediaItemArtwork, MPMiddlewareChain, 
-                       MPNowPlayingContentItem, MPNowPlayingInfoCenter, MPNowPlayingInfoLanguageOption, 
-                       MPNowPlayingInfoLanguageOptionGroup, MPNowPlayingInfoLyricsEvent, 
-                       MPNowPlayingInfoLyricsItem, MPNowPlayingInfoLyricsItemToken, 
+                       MPFeedbackCommandEvent, MPMRAVEndpointObserverWrapper, MPMRAVEndpointWrapper, 
+                       MPMRAVOutputContextWrapper, MPMediaEntity, MPMediaItem, MPMediaItemArtwork, 
+                       MPMiddlewareChain, MPNowPlayingContentItem, MPNowPlayingInfoCenter, 
+                       MPNowPlayingInfoLanguageOption, MPNowPlayingInfoLanguageOptionGroup, 
+                       MPNowPlayingInfoLyricsEvent, MPNowPlayingInfoLyricsItem, MPNowPlayingInfoLyricsItemToken, 
                        MPPlayableContentManager, MPPlayableContentManagerContext, 
                        MPRatingCommand, MPRatingCommandEvent, MPRemoteCommand, MPRemoteCommandCenter, 
                        MPRemoteCommandEvent, MPRequest, MPRequestResponseController, 

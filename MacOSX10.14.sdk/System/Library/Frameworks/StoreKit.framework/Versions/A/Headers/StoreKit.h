@@ -7,6 +7,7 @@
 
 #import <StoreKit/SKError.h>
 #import <StoreKit/SKPayment.h>
+#import <StoreKit/SKPaymentDiscount.h>
 #import <StoreKit/SKPaymentQueue.h>
 #import <StoreKit/SKPaymentTransaction.h>
 #import <StoreKit/SKProduct.h>

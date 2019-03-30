@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DAA41AF4-2D37-3FC9-896B-4219E429D0AE' ]
-platform:        macosx
+uuids:           [ 'x86_64: 0A7DB0DE-06B5-3055-9939-839291378EBB' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/EmailCore.framework/Versions/A/EmailCore
-current-version: 3445.100.43
+current-version: 3445.104.2
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _ECBytesInEncodingCanBeConcatenated, _ECConvertCharacterSetNameToEncoding, 

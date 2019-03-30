@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 190009F9-B82F-3DD8-935B-F2A881A324E4' ]
+uuids:           [ 'x86_64: B6B784D7-A8FA-3880-A3B9-F3B4076E9ECF' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/XCTAutomationSupport.framework/Versions/A/XCTAutomationSupport
 exports:         
@@ -26,9 +26,9 @@ exports:
                        _XCTDefaultIdentifierFromSubrole, _XCTElementTypeFromClassAndTraits, 
                        _XCTElementTypeFromRole, _XCTElementTypeShouldIgnoreSubrole, 
                        _XCTInvalidExpressionsKey, _XCTPerformOnMainRunLoop, _XCTSetSharedAccessibilityFramework, 
-                       _XCTSharedAccessibilityFramework, _XCTStringFromAXError, _XCUISetSharedCapabilities, 
-                       _XCUISharedCapabilities, _XCUIUnsetSharedCapabilities, _XCValueIsAXError, 
-                       _XC_kAXXCAttributeAbsoluteValue, _XC_kAXXCAttributeActiveKeyboard, 
+                       _XCTSharedAccessibilityFramework, _XCTStringFromAXError, _XCTStringFromAXNotification, 
+                       _XCUISetSharedCapabilities, _XCUISharedCapabilities, _XCUIUnsetSharedCapabilities, 
+                       _XCValueIsAXError, _XC_kAXXCAttributeAbsoluteValue, _XC_kAXXCAttributeActiveKeyboard, 
                        _XC_kAXXCAttributeApplication, _XC_kAXXCAttributeApplicationOrientation, 
                        _XC_kAXXCAttributeAvailableKeyplanes, _XC_kAXXCAttributeCallState, 
                        _XC_kAXXCAttributeCenterPoint, _XC_kAXXCAttributeChildren, 
@@ -73,15 +73,19 @@ exports:
                        _XC_kAXXCParameterizedAttributeConvertPositionToContext, _XC_kAXXCParameterizedAttributeKeyboardKeyForString, 
                        _XC_kAXXCParameterizedAttributeUserTestingSnapshotParameterized, 
                        __XCTASLog, __XCUIStringFromElementType ]
-    objc-classes:    [ XCAXCycleDetector, XCAccessibilityElement, XCElementSnapshot, 
-                       XCTAccessibilityFramework, XCTAccessibilityInterface, XCTAnimationsIdleNotifier, 
-                       XCTApplicationStateSnapshot, XCTAutomationSession, XCTContainingTransformerIterator, 
-                       XCTElementBlockFilteringTransformer, XCTElementBlockSortingTransformer, 
-                       XCTElementContainingTransformer, XCTElementFilteringTransformer, 
+    objc-classes:    [ XCAXCycleDetector, XCAccessibilityElement, XCDeviceEvent, 
+                       XCElementSnapshot, XCTAccessibilityFramework, XCTAccessibilityInterface, 
+                       XCTAnimationsIdleNotifier, XCTApplicationStateSnapshot, XCTAutomationSession, 
+                       XCTContainingTransformerIterator, XCTElementBlockFilteringTransformer, 
+                       XCTElementBlockSortingTransformer, XCTElementContainingTransformer, 
+                       XCTElementDisclosedChildRowsTransformer, XCTElementFilteringTransformer, 
                        XCTElementIndexingTransformer, XCTElementQuery, XCTElementQueryProcessor, 
                        XCTElementQueryResults, XCTElementSetCodableTransformer, XCTElementSnapshotDescendantsEnumerator, 
                        XCTElementSnapshotRequest, XCTElementSortingTransformer, XCTFilteringTransformerIterator, 
                        XCTIndexingTransformerIterator, XCTLogArchiveRequest, XCTMainRunLoopIdleNotifier, 
-                       XCTMatchingElementIterator, XCTSpindumpRequestSpecification, 
-                       XCUIBridgedProcessCapabilities, XCUICapabilities ]
+                       XCTMatchingElementIterator, XCTSerializedTransportWrapper2, 
+                       XCTSpindumpRequestSpecification, XCUIBridgedProcessCapabilities, 
+                       XCUICapabilities ]
+    objc-ivars:      [ XCDeviceEvent._duration, XCDeviceEvent._eventPage, XCDeviceEvent._rotation, 
+                       XCDeviceEvent._type, XCDeviceEvent._usage ]
 ...

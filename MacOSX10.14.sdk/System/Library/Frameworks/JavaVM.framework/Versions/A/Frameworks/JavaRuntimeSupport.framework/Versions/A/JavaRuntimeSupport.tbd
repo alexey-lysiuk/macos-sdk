@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4A4A9D6F-0656-3AB4-8BF6-83CA27873BC3' ]
+uuids:           [ 'x86_64: 79CE01B8-DE49-3A39-8AF4-2D9937CC8005' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/JavaVM.framework/Versions/A/Frameworks/JavaRuntimeSupport.framework/Versions/A/JavaRuntimeSupport
 exports:         

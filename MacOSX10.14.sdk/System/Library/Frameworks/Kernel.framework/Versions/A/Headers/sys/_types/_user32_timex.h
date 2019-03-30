@@ -26,27 +26,26 @@
  * @APPLE_OSREFERENCE_LICENSE_HEADER_END@
  */
 #ifndef _STRUCT_USER32_TIMEX
-#define _STRUCT_USER32_TIMEX	struct user32_timex
+#define _STRUCT_USER32_TIMEX    struct user32_timex
 _STRUCT_USER32_TIMEX
 {
 	u_int32_t modes;
-	user32_long_t	offset;
-	user32_long_t	freq;
-	user32_long_t	maxerror;
-	user32_long_t	esterror;
-	__int32_t	status;
-	user32_long_t	constant;
-	user32_long_t	precision;
-	user32_long_t	tolerance;
+	user32_long_t   offset;
+	user32_long_t   freq;
+	user32_long_t   maxerror;
+	user32_long_t   esterror;
+	__int32_t       status;
+	user32_long_t   constant;
+	user32_long_t   precision;
+	user32_long_t   tolerance;
 
-	user32_long_t	ppsfreq;
-	user32_long_t	jitter;
-	__int32_t	shift;
-	user32_long_t	stabil;
-	user32_long_t	jitcnt;
-	user32_long_t	calcnt;
-	user32_long_t	errcnt;
-	user32_long_t	stbcnt;
-
+	user32_long_t   ppsfreq;
+	user32_long_t   jitter;
+	__int32_t       shift;
+	user32_long_t   stabil;
+	user32_long_t   jitcnt;
+	user32_long_t   calcnt;
+	user32_long_t   errcnt;
+	user32_long_t   stbcnt;
 };
 #endif /* _STRUCT_USER32_TIMEX */

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 68530B4D-B2C0-3271-941B-D9EA62095727' ]
+uuids:           [ 'x86_64: E22D4E74-7B87-31ED-86D2-D63258D1B792' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/RemoteViewServices.framework/Versions/A/RemoteViewServices
 exports:         

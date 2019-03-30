@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4DA77C5F-3E69-38FD-B24E-C23BA8FCA64F' ]
+uuids:           [ 'x86_64: F0E67742-2326-31A2-9D7D-BC7F24240D7B' ]
 platform:        macosx
 install-name:    /usr/lib/libATCommandStudioDynamic.dylib
 objc-constraint: none
@@ -387,7 +387,7 @@ exports:
                         __ZTIN3ctu8LoggableIN3qmi6Server5StateENS_10LoggerBaseINSt3__110shared_ptrINS_9LogServerEEEEEEE, 
                         __ZTIN3qmi15QMuxClientIfaceE, __ZTIN3qmi18MutableMessageBase14TlvWrapperBaseE, 
                         __ZTIN3qmi6Server8AccepterE, __ZTINSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
-                        __ZTINSt3__117bad_function_callE, __ZTINSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                        __ZTINSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
                         __ZTINSt3__123enable_shared_from_thisI10QMIControlEE, __ZTINSt3__123enable_shared_from_thisIN3qmi11ClientProxy5StateEEE, 
                         __ZTINSt3__123enable_shared_from_thisIN3qmi18QMuxServerAccepter5StateEEE, 
                         __ZTINSt3__123enable_shared_from_thisIN3qmi6Client5StateEEE, 
@@ -405,7 +405,7 @@ exports:
                         __ZTSN3qmi15QMuxClientIfaceE, __ZTSN3qmi16TransactionQueue5State7DeleterE, 
                         __ZTSN3qmi18MutableMessageBase14TlvWrapperBaseE, __ZTSN3qmi6Server8AccepterE, 
                         __ZTSNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
-                        __ZTSNSt3__117bad_function_callE, __ZTSNSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                        __ZTSNSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
                         __ZTSNSt3__123enable_shared_from_thisI10QMIControlEE, __ZTSNSt3__123enable_shared_from_thisIN3qmi11ClientProxy5StateEEE, 
                         __ZTSNSt3__123enable_shared_from_thisIN3qmi18QMuxServerAccepter5StateEEE, 
                         __ZTSNSt3__123enable_shared_from_thisIN3qmi6Client5StateEEE, 

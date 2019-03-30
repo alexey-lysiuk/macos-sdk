@@ -14,12 +14,9 @@
 	#include <CoreAudioTypes.h>
 #endif
 
-#if TARGET_OS_WIN32
-#define ATTRIBUTE_PACKED
-#pragma pack(push, 1)
-#else
+
 #define ATTRIBUTE_PACKED __attribute__((__packed__))
-#endif
+
 
 // In a CAF File all of these types' byte order is big endian.
 // When reading or writing these values the program will need to flip byte order to native endian
@@ -360,9 +357,7 @@ struct CAFUMIDChunk
 } ATTRIBUTE_PACKED;
 typedef struct CAFUMIDChunk CAFUMIDChunk;
 
-#if TARGET_OS_WIN32
-#pragma pack(pop)
-#endif
+
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
 #endif // AudioToolbox_CAFFile_h

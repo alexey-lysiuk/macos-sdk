@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8D2D970B-0DFC-3006-B4C0-51A2EAE9ED71' ]
+uuids:           [ 'x86_64: 7D560EE2-B6FB-31A2-A8DC-248A8E6D4B25' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DifferentialPrivacy.framework/Versions/A/DifferentialPrivacy
 exports:         

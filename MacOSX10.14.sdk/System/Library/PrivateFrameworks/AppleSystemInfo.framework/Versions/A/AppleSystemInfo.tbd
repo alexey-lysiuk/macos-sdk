@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A2EE39BD-C721-33BD-8549-E087C04CF784' ]
-platform:        macosx
+uuids:           [ 'x86_64: 38206770-87AF-3969-A393-2741BF0DC958' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/AppleSystemInfo.framework/Versions/A/AppleSystemInfo
 objc-constraint: none
 exports:         

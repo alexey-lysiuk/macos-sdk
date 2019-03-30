@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B948D85A-165F-3E58-A8DD-24CF6454380A' ]
+uuids:           [ 'x86_64: 6F9C56A4-40B2-31A6-A64D-CC591EC427A9' ]
 platform:        macosx
 install-name:    /usr/lib/libodfde.dylib
 objc-constraint: none

@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C542CB3C-AA44-3D7F-B88C-79CC31B481AB' ]
-platform:        macosx
+uuids:           [ 'x86_64: B5675E8C-2F34-3E0A-B7E8-6F2373589038' ]
+platform:        zippered
 install-name:    /usr/lib/libDiagnosticMessagesClient.dylib
 current-version: 107
 objc-constraint: none

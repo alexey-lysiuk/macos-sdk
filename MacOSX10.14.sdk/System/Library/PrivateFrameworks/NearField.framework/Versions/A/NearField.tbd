@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5F9A4B54-9A63-3C51-92CB-AF757E271303' ]
+uuids:           [ 'x86_64: A553B369-0B93-3F66-8EEB-2B8C2B0472C4' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/NearField.framework/Versions/A/NearField
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _NFSecureElementManagerSessionECDSACertificateKey, _NFSecureElementManagerSessionRSAACertificateKey, 
                        _NFSignedPlatformData, _NFSignedPlatformSignatureBlob, _NfRestoreCopyUniqueFDRKey, 
-                       _ObliterationDeleteAllApplets ]
+                       _ObliterationDeleteAllApplets, ___PTErrorString ]
     objc-classes:    [ NFApplet, NFContactlessPaymentEndEvent, NFContactlessPaymentSession, 
                        NFContactlessPaymentSessionCallbacks, NFContactlessPaymentSessionInterface, 
                        NFContactlessPaymentStartEvent, NFContactlessSession, NFContactlessSessionCallbacks, 
@@ -25,7 +25,10 @@ exports:
                        NFRemoteAdminManager, NFRemoteAdminManagerCallbacks, NFRemoteAdminManagerInterface, 
                        NFSecureElement, NFSecureElementManagerSession, NFSecureElementManagerSessionInterface, 
                        NFSecureElementSession, NFSecureElementSessionInterface, NFSeshatSession, 
-                       NFSession, NFSignatureInfo, NFTag, NFTechnologyEvent, NFValueAddedServiceCard, 
+                       NFSession, NFSignatureInfo, NFTag, NFTapToRadar, NFTechnologyEvent, 
+                       NFTrustKey, NFTrustKeyRequest, NFTrustLocalValidation, NFTrustObject, 
+                       NFTrustPaymentSignResponse, NFTrustSession, NFTrustSessionInterface, 
+                       NFTrustSignRequest, NFTrustSignResponse, NFValueAddedServiceCard, 
                        NFValueAddedServiceSession, NFValueAddedServiceSessionCallbacks, 
                        NFValueAddedServiceSessionInterface, NFValueAddedServiceTransaction ]
 ...

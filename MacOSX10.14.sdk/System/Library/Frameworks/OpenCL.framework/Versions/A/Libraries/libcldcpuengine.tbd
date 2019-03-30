@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B8E5266D-999E-341C-A0CF-1571DD961669' ]
+uuids:           [ 'x86_64: 49B139D2-D0D6-3333-9603-DF158D61544C' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/OpenCL.framework/Versions/A/Libraries/libcldcpuengine.dylib
-current-version: 2.10.3
+current-version: 2.11
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ ___printf_cl, _barrier, _glrCompBuildProgram, _glrCompCloseDevice, 

@@ -567,27 +567,7 @@ struct HMenuBarMenu {
   SInt16              reserved;
 };
 typedef struct HMenuBarMenu             HMenuBarMenu;
-#if TARGET_OS_WIN32
-/* QuickTime 3.0 */
-struct MenuAccessKeyRec {
-  short               count;
-  long                flags;
-  unsigned char       keys[1];
-};
-typedef struct MenuAccessKeyRec         MenuAccessKeyRec;
-typedef MenuAccessKeyRec *              MenuAccessKeyPtr;
-typedef MenuAccessKeyPtr *              MenuAccessKeyHandle;
-/*
- *  SetMenuItemHotKey()
- *  
- *  Availability:
- *    Mac OS X:         not available
- *    CarbonLib:        not available
- *    Non-Carbon CFM:   not available
- */
 
-
-#endif  /* TARGET_OS_WIN32 */
 
 
 /*
@@ -7552,8 +7532,7 @@ typedef STACK_UPP_TYPE(MBarHookProcPtr)                         MBarHookUPP;
 
 
 
-#if TARGET_OS_WIN32
-#endif  /* TARGET_OS_WIN32 */
+
 
 
 #pragma pack(pop)

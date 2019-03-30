@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 969815D4-A345-31BB-82B7-0C3B58CA7E90' ]
-platform:        macosx
+uuids:           [ 'x86_64: 3936C798-1978-3C6C-9050-3BBD57CDA53E' ]
+platform:        zippered
 install-name:    /usr/lib/libicucore.A.dylib
 current-version: 62.1
 objc-constraint: none

@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AC3B4909-564A-3C26-B055-7687E5DE1697' ]
-platform:        macosx
+uuids:           [ 'x86_64: C7E919A8-5840-39C9-A9E7-0E686F486109' ]
+platform:        zippered
 install-name:    /System/Library/Frameworks/CoreText.framework/Versions/A/CoreText
 objc-constraint: none
 exports:         
@@ -256,9 +256,9 @@ exports:
                        _kCTFontSystemCondensedThin, _kCTFontSystemCondensedUltraLight, 
                        _kCTFontTrackAttribute, _kCTFontTrademarkNameKey, _kCTFontTraitsAttribute, 
                        _kCTFontUIFontDesignAlternate, _kCTFontUIFontDesignCompact, 
-                       _kCTFontUIFontDesignDefault, _kCTFontUIFontDesignRounded, 
-                       _kCTFontUIFontDesignTrait, _kCTFontURLAttribute, _kCTFontUniqueNameKey, 
-                       _kCTFontUserInstalledAttribute, _kCTFontValidationActivationInfo, 
+                       _kCTFontUIFontDesignCompactRounded, _kCTFontUIFontDesignDefault, 
+                       _kCTFontUIFontDesignRounded, _kCTFontUIFontDesignTrait, _kCTFontURLAttribute, 
+                       _kCTFontUniqueNameKey, _kCTFontUserInstalledAttribute, _kCTFontValidationActivationInfo, 
                        _kCTFontValidationFontMD5, _kCTFontValidationOptionActivationInfoKeep, 
                        _kCTFontValidationOptionDynamicActivationInfo, _kCTFontValidationOptionDynamicGlyphTests, 
                        _kCTFontValidationOptionFontSummaryOnly, _kCTFontValidationOptionGenerateFontChecksum, 

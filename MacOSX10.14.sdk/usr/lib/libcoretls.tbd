@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3F98C144-397C-36A2-84F1-BB0D841D3D89' ]
-platform:        macosx
+uuids:           [ 'x86_64: FF7EA01E-9A26-36F9-A6FF-9665B501B536' ]
+platform:        zippered
 install-name:    /usr/lib/libcoretls.dylib
 current-version: 155.220.1
 objc-constraint: none

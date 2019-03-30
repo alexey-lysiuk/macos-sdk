@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5CD250DF-98AD-30B8-A5D5-47634FF9E74D' ]
+uuids:           [ 'x86_64: 3E310F68-2BC7-365B-B36C-AAC243C7FFC4' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Print.framework/Versions/A/Print
-current-version: 267.3
+current-version: 267.4
 objc-constraint: none
 parent-umbrella: Carbon
 exports:         

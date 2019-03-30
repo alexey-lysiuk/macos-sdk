@@ -2,7 +2,7 @@
  * Copyright (c) 2003-2004 Apple Computer, Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
- * 
+ *
  * This file contains Original Code and/or Modifications of Original Code
  * as defined in and that are subject to the Apple Public Source License
  * Version 2.0 (the 'License'). You may not use this file except in
@@ -11,10 +11,10 @@
  * unlawful or unlicensed copies of an Apple operating system, or to
  * circumvent, violate, or enable the circumvention or violation of, any
  * terms of an Apple operating system software license agreement.
- * 
+ *
  * Please obtain a copy of the License at
  * http://www.opensource.apple.com/apsl/ and read it before using this file.
- * 
+ *
  * The Original Code and all software distributed under the License are
  * distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
  * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
@@ -22,11 +22,11 @@
  * FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.
  * Please see the License for the specific language governing rights and
  * limitations under the License.
- * 
+ *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_END@
  */
 
-#ifndef	LIBKERN_OSMALLOC_h
+#ifndef LIBKERN_OSMALLOC_h
 #define LIBKERN_OSMALLOC_h
 
 #include <sys/cdefs.h>
@@ -55,7 +55,7 @@ __BEGIN_DECLS
  * None of the OSMalloc functions are safe to call
  * in a primary interrupt handler.
  */
- 
+
 /*!
  * @typedef OSMallocTag
  *
@@ -131,8 +131,8 @@ typedef struct __OSMallocTag__ * OSMallocTag_t;
  * </ul>
  */
 extern OSMallocTag OSMalloc_Tagalloc(
-    const char * name,
-    uint32_t    flags);
+	const char * name,
+	uint32_t    flags);
 
 
 /*!
@@ -175,8 +175,8 @@ extern void OSMalloc_Tagfree(OSMallocTag tag);
  * otherwise it is wired.
  */
 extern void * OSMalloc(
-    uint32_t    size,
-    OSMallocTag tag) __attribute__((alloc_size(1)));
+	uint32_t    size,
+	OSMallocTag tag) __attribute__((alloc_size(1)));
 
 
 /*!
@@ -186,8 +186,8 @@ extern void * OSMalloc(
  * Equivalent to <code>@link OSMalloc_noblock OSMalloc_noblock@/link</code>.
  */
 extern void * OSMalloc_nowait(
-    uint32_t    size,
-    OSMallocTag tag) __attribute__((alloc_size(1)));
+	uint32_t    size,
+	OSMallocTag tag) __attribute__((alloc_size(1)));
 
 
 /*!
@@ -216,8 +216,8 @@ extern void * OSMalloc_nowait(
  * This function is guaranteed not to block.
  */
 extern void * OSMalloc_noblock(
-    uint32_t    size,
-    OSMallocTag tag) __attribute__((alloc_size(1)));
+	uint32_t    size,
+	OSMallocTag tag) __attribute__((alloc_size(1)));
 
 
 /*!
@@ -232,11 +232,11 @@ extern void * OSMalloc_noblock(
  *              with which <code>addr</code> was originally allocated.
  */
 extern void OSFree(
-    void      * addr,
-    uint32_t    size,
-    OSMallocTag tag); 
+	void      * addr,
+	uint32_t    size,
+	OSMallocTag tag);
 
 
 __END_DECLS
 
-#endif	/* LIBKERN_OSMALLOC_h */
+#endif  /* LIBKERN_OSMALLOC_h */

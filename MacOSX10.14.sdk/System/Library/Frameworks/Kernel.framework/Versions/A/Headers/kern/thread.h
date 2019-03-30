@@ -2,7 +2,7 @@
  * Copyright (c) 2000-2016 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
- * 
+ *
  * This file contains Original Code and/or Modifications of Original Code
  * as defined in and that are subject to the Apple Public Source License
  * Version 2.0 (the 'License'). You may not use this file except in
@@ -11,10 +11,10 @@
  * unlawful or unlicensed copies of an Apple operating system, or to
  * circumvent, violate, or enable the circumvention or violation of, any
  * terms of an Apple operating system software license agreement.
- * 
+ *
  * Please obtain a copy of the License at
  * http://www.opensource.apple.com/apsl/ and read it before using this file.
- * 
+ *
  * The Original Code and all software distributed under the License are
  * distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
  * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
@@ -22,34 +22,34 @@
  * FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.
  * Please see the License for the specific language governing rights and
  * limitations under the License.
- * 
+ *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_END@
  */
 /*
  * @OSF_FREE_COPYRIGHT@
  */
-/* 
+/*
  * Mach Operating System
  * Copyright (c) 1991,1990,1989,1988,1987 Carnegie Mellon University
  * All Rights Reserved.
- * 
+ *
  * Permission to use, copy, modify and distribute this software and its
  * documentation is hereby granted, provided that both the copyright
  * notice and this permission notice appear in all copies of the
  * software, derivative works or modified versions, and any portions
  * thereof, and that both notices appear in supporting documentation.
- * 
+ *
  * CARNEGIE MELLON ALLOWS FREE USE OF THIS SOFTWARE IN ITS "AS IS"
  * CONDITION.  CARNEGIE MELLON DISCLAIMS ANY LIABILITY OF ANY KIND FOR
  * ANY DAMAGES WHATSOEVER RESULTING FROM THE USE OF THIS SOFTWARE.
- * 
+ *
  * Carnegie Mellon requests users of this software to return to
- * 
+ *
  *  Software Distribution Coordinator  or  Software.Distribution@CS.CMU.EDU
  *  School of Computer Science
  *  Carnegie Mellon University
  *  Pittsburgh PA 15213-3890
- * 
+ *
  * any improvements or extensions that they make and grant Carnegie Mellon
  * the rights to redistribute these changes.
  */
@@ -81,7 +81,7 @@
  *
  */
 
-#ifndef	_KERN_THREAD_H_
+#ifndef _KERN_THREAD_H_
 #define _KERN_THREAD_H_
 
 #include <mach/kern_return.h>
@@ -105,13 +105,13 @@ extern void thread_mtx_lock(thread_t thread);
 
 extern void thread_mtx_unlock(thread_t thread);
 
-extern thread_t		current_thread(void);
+extern thread_t         current_thread(void);
 
-extern void			thread_reference(
-						thread_t	thread);
+extern void                     thread_reference(
+	thread_t        thread);
 
-extern void			thread_deallocate(
-						thread_t	thread);
+extern void                     thread_deallocate(
+	thread_t        thread);
 
 __END_DECLS
 
@@ -119,7 +119,7 @@ __END_DECLS
 
 __BEGIN_DECLS
 
-extern uint64_t			thread_tid(thread_t thread);
+extern uint64_t                 thread_tid(thread_t thread);
 
 __END_DECLS
 
@@ -129,20 +129,20 @@ __BEGIN_DECLS
 
 
 /*! @function kernel_thread_start
-    @abstract Create a kernel thread.
-    @discussion This function takes three input parameters, namely reference to the function that the thread should execute, caller specified data and a reference which is used to return the newly created kernel thread. The function returns KERN_SUCCESS on success or an appropriate kernel code type indicating the error. It may be noted that the caller is responsible for explicitly releasing the reference to the created thread when no longer needed. This should be done by calling thread_deallocate(new_thread).
-    @param continuation A C-function pointer where the thread will begin execution.
-    @param parameter Caller specified data to be passed to the new thread.
-    @param new_thread Reference to the new thread is returned in this parameter.
-    @result Returns KERN_SUCCESS on success or an appropriate kernel code type.
-*/
+ *   @abstract Create a kernel thread.
+ *   @discussion This function takes three input parameters, namely reference to the function that the thread should execute, caller specified data and a reference which is used to return the newly created kernel thread. The function returns KERN_SUCCESS on success or an appropriate kernel code type indicating the error. It may be noted that the caller is responsible for explicitly releasing the reference to the created thread when no longer needed. This should be done by calling thread_deallocate(new_thread).
+ *   @param continuation A C-function pointer where the thread will begin execution.
+ *   @param parameter Caller specified data to be passed to the new thread.
+ *   @param new_thread Reference to the new thread is returned in this parameter.
+ *   @result Returns KERN_SUCCESS on success or an appropriate kernel code type.
+ */
 
-extern kern_return_t	kernel_thread_start(
-							thread_continue_t	continuation,
-							void				*parameter,
-							thread_t			*new_thread);
+extern kern_return_t    kernel_thread_start(
+	thread_continue_t       continuation,
+	void                            *parameter,
+	thread_t                        *new_thread);
 
 
 __END_DECLS
 
-#endif	/* _KERN_THREAD_H_ */
+#endif  /* _KERN_THREAD_H_ */

@@ -5,6 +5,9 @@
  *  @copyright Copyright (c) 2015 Apple Inc. All rights reserved.
  */
 
+#ifndef MetalPerformanceShaders_h
+#define MetalPerformanceShaders_h 1
+
 #ifndef __METAL_VERSION__
 #import <MPSCore/MPSCore.h>
 #import <MPSImage/MPSImage.h>
@@ -103,6 +106,7 @@ void    MPSHintTemporaryMemoryHighWaterMark( __nonnull id <MTLCommandBuffer> cmd
 void    MPSSetHeapCacheDuration( __nonnull id <MTLCommandBuffer> cmdBuf,
                                  double seconds );
 
+    
 //
 //  These headers contain doxygen formatted documentation. They are human readable as is,
 //  but can be processed as such to make something a bit nicer looking.  Our version of
@@ -1308,3 +1312,5 @@ void    MPSSetHeapCacheDuration( __nonnull id <MTLCommandBuffer> cmdBuf,
 }
 #endif
 
+
+#endif  /* MetalPerformanceShaders_h*/

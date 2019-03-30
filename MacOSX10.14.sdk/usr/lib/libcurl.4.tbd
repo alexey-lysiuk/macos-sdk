@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 607613FE-3D84-3035-9C79-C6F72AF287D7' ]
-platform:        macosx
+uuids:           [ 'x86_64: 4512BCAA-D30E-3BCD-9372-49EE93406823' ]
+platform:        zippered
 install-name:    /usr/lib/libcurl.4.dylib
 current-version: 9
 compatibility-version: 7

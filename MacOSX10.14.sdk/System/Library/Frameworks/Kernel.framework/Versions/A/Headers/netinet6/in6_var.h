@@ -91,7 +91,7 @@
  */
 
 #ifndef _NETINET6_IN6_VAR_H_
-#define	_NETINET6_IN6_VAR_H_
+#define _NETINET6_IN6_VAR_H_
 #include <sys/appleapiopts.h>
 #include <net/net_kev.h>
 
@@ -108,10 +108,10 @@
  *	in kernel: modify preferred/expire only
  */
 struct in6_addrlifetime {
-	time_t ia6t_expire;	/* valid lifetime expiration time */
-	time_t ia6t_preferred;	/* preferred lifetime expiration time */
-	u_int32_t ia6t_vltime;	/* valid lifetime */
-	u_int32_t ia6t_pltime;	/* prefix lifetime */
+	time_t ia6t_expire;     /* valid lifetime expiration time */
+	time_t ia6t_preferred;  /* preferred lifetime expiration time */
+	u_int32_t ia6t_vltime;  /* valid lifetime */
+	u_int32_t ia6t_pltime;  /* prefix lifetime */
 };
 
 
@@ -119,52 +119,52 @@ struct in6_addrlifetime {
 struct in6_addrpolicy {
 	struct sockaddr_in6 addr; /* prefix address */
 	struct sockaddr_in6 addrmask; /* prefix mask */
-	int preced;		/* precedence */
-	int label;		/* matching label */
-	u_quad_t use;		/* statistics */
+	int preced;             /* precedence */
+	int label;              /* matching label */
+	u_quad_t use;           /* statistics */
 };
 
 /*
  * IPv6 interface statistics, as defined in RFC2465 Ipv6IfStatsEntry (p12).
  */
 struct in6_ifstat {
-	u_quad_t ifs6_in_receive;	/* # of total input datagram */
-	u_quad_t ifs6_in_hdrerr;	/* # of datagrams with invalid hdr */
-	u_quad_t ifs6_in_toobig;	/* # of datagrams exceeded MTU */
-	u_quad_t ifs6_in_noroute;	/* # of datagrams with no route */
-	u_quad_t ifs6_in_addrerr;	/* # of datagrams with invalid dst */
-	u_quad_t ifs6_in_protounknown;	/* # of datagrams with unknown proto */
-					/* NOTE: increment on final dst if */
-	u_quad_t ifs6_in_truncated;	/* # of truncated datagrams */
-	u_quad_t ifs6_in_discard;	/* # of discarded datagrams */
-					/* NOTE: fragment timeout is not here */
-	u_quad_t ifs6_in_deliver;	/* # of datagrams delivered to ULP */
-					/* NOTE: increment on final dst if */
-	u_quad_t ifs6_out_forward;	/* # of datagrams forwarded */
-					/* NOTE: increment on outgoing if */
-	u_quad_t ifs6_out_request;	/* # of outgoing datagrams from ULP */
-					/* NOTE: does not include forwrads */
-	u_quad_t ifs6_out_discard;	/* # of discarded datagrams */
-	u_quad_t ifs6_out_fragok;	/* # of datagrams fragmented */
-	u_quad_t ifs6_out_fragfail;	/* # of datagrams failed on fragment */
-	u_quad_t ifs6_out_fragcreat;	/* # of fragment datagrams */
-					/* NOTE: this is # after fragment */
-	u_quad_t ifs6_reass_reqd;	/* # of incoming fragmented packets */
-					/* NOTE: increment on final dst if */
-	u_quad_t ifs6_reass_ok;		/* # of reassembled packets */
-					/* NOTE: this is # after reass */
-					/* NOTE: increment on final dst if */
-	u_quad_t ifs6_atmfrag_rcvd;	/* # of atomic fragments received */
-	u_quad_t ifs6_reass_fail;	/* # of reass failures */
-					/* NOTE: may not be packet count */
-					/* NOTE: increment on final dst if */
-	u_quad_t ifs6_in_mcast;		/* # of inbound multicast datagrams */
-	u_quad_t ifs6_out_mcast;	/* # of outbound multicast datagrams */
+	u_quad_t ifs6_in_receive;       /* # of total input datagram */
+	u_quad_t ifs6_in_hdrerr;        /* # of datagrams with invalid hdr */
+	u_quad_t ifs6_in_toobig;        /* # of datagrams exceeded MTU */
+	u_quad_t ifs6_in_noroute;       /* # of datagrams with no route */
+	u_quad_t ifs6_in_addrerr;       /* # of datagrams with invalid dst */
+	u_quad_t ifs6_in_protounknown;  /* # of datagrams with unknown proto */
+	                                /* NOTE: increment on final dst if */
+	u_quad_t ifs6_in_truncated;     /* # of truncated datagrams */
+	u_quad_t ifs6_in_discard;       /* # of discarded datagrams */
+	                                /* NOTE: fragment timeout is not here */
+	u_quad_t ifs6_in_deliver;       /* # of datagrams delivered to ULP */
+	                                /* NOTE: increment on final dst if */
+	u_quad_t ifs6_out_forward;      /* # of datagrams forwarded */
+	                                /* NOTE: increment on outgoing if */
+	u_quad_t ifs6_out_request;      /* # of outgoing datagrams from ULP */
+	                                /* NOTE: does not include forwrads */
+	u_quad_t ifs6_out_discard;      /* # of discarded datagrams */
+	u_quad_t ifs6_out_fragok;       /* # of datagrams fragmented */
+	u_quad_t ifs6_out_fragfail;     /* # of datagrams failed on fragment */
+	u_quad_t ifs6_out_fragcreat;    /* # of fragment datagrams */
+	                                /* NOTE: this is # after fragment */
+	u_quad_t ifs6_reass_reqd;       /* # of incoming fragmented packets */
+	                                /* NOTE: increment on final dst if */
+	u_quad_t ifs6_reass_ok;         /* # of reassembled packets */
+	                                /* NOTE: this is # after reass */
+	                                /* NOTE: increment on final dst if */
+	u_quad_t ifs6_atmfrag_rcvd;     /* # of atomic fragments received */
+	u_quad_t ifs6_reass_fail;       /* # of reass failures */
+	                                /* NOTE: may not be packet count */
+	                                /* NOTE: increment on final dst if */
+	u_quad_t ifs6_in_mcast;         /* # of inbound multicast datagrams */
+	u_quad_t ifs6_out_mcast;        /* # of outbound multicast datagrams */
 
-	u_quad_t ifs6_cantfoward_icmp6;	/* # of ICMPv6 packets received for unreachable dest */
-	u_quad_t ifs6_addr_expiry_cnt;	/* # of address expiry events (excluding privacy addresses) */
-	u_quad_t ifs6_pfx_expiry_cnt;	/* # of prefix expiry events */
-	u_quad_t ifs6_defrtr_expiry_cnt;	/* # of default router expiry events */
+	u_quad_t ifs6_cantfoward_icmp6; /* # of ICMPv6 packets received for unreachable dest */
+	u_quad_t ifs6_addr_expiry_cnt;  /* # of address expiry events (excluding privacy addresses) */
+	u_quad_t ifs6_pfx_expiry_cnt;   /* # of prefix expiry events */
+	u_quad_t ifs6_defrtr_expiry_cnt;        /* # of default router expiry events */
 };
 
 /*
@@ -250,15 +250,15 @@ struct icmp6_ifstat {
 };
 
 struct in6_ifreq {
-	char	ifr_name[IFNAMSIZ];
+	char    ifr_name[IFNAMSIZ];
 	union {
-		struct	sockaddr_in6 ifru_addr;
-		struct	sockaddr_in6 ifru_dstaddr;
-		int	ifru_flags;
-		int	ifru_flags6;
-		int	ifru_metric;
-		int	ifru_intval;
-		caddr_t	ifru_data;
+		struct  sockaddr_in6 ifru_addr;
+		struct  sockaddr_in6 ifru_dstaddr;
+		int     ifru_flags;
+		int     ifru_flags6;
+		int     ifru_metric;
+		int     ifru_intval;
+		caddr_t ifru_data;
 		struct in6_addrlifetime ifru_lifetime;
 		struct in6_ifstat ifru_stat;
 		struct icmp6_ifstat ifru_icmp6stat;
@@ -267,19 +267,19 @@ struct in6_ifreq {
 };
 
 struct in6_aliasreq {
-	char	ifra_name[IFNAMSIZ];
-	struct	sockaddr_in6 ifra_addr;
-	struct	sockaddr_in6 ifra_dstaddr;
-	struct	sockaddr_in6 ifra_prefixmask;
-	int	ifra_flags;
+	char    ifra_name[IFNAMSIZ];
+	struct  sockaddr_in6 ifra_addr;
+	struct  sockaddr_in6 ifra_dstaddr;
+	struct  sockaddr_in6 ifra_prefixmask;
+	int     ifra_flags;
 	struct in6_addrlifetime ifra_lifetime;
 };
 
 
 
 /* prefix type macro */
-#define	IN6_PREFIX_ND	1
-#define	IN6_PREFIX_RR	2
+#define IN6_PREFIX_ND   1
+#define IN6_PREFIX_RR   2
 
 /*
  * prefix related flags passed between kernel(NDP related part) and
@@ -304,36 +304,36 @@ struct in6_prflags {
 };
 
 struct  in6_prefixreq {
-	char	ipr_name[IFNAMSIZ];
-	u_char	ipr_origin;
-	u_char	ipr_plen;
+	char    ipr_name[IFNAMSIZ];
+	u_char  ipr_origin;
+	u_char  ipr_plen;
 	u_int32_t ipr_vltime;
 	u_int32_t ipr_pltime;
 	struct in6_prflags ipr_flags;
-	struct	sockaddr_in6 ipr_prefix;
+	struct  sockaddr_in6 ipr_prefix;
 };
 
-#define	PR_ORIG_RA	0
-#define	PR_ORIG_RR	1
-#define	PR_ORIG_STATIC	2
-#define	PR_ORIG_KERNEL	3
+#define PR_ORIG_RA      0
+#define PR_ORIG_RR      1
+#define PR_ORIG_STATIC  2
+#define PR_ORIG_KERNEL  3
 
-#define	ipr_raf_onlink		ipr_flags.prf_ra.onlink
-#define	ipr_raf_auto		ipr_flags.prf_ra.autonomous
+#define ipr_raf_onlink          ipr_flags.prf_ra.onlink
+#define ipr_raf_auto            ipr_flags.prf_ra.autonomous
 
-#define	ipr_statef_onlink	ipr_flags.prf_state.onlink
+#define ipr_statef_onlink       ipr_flags.prf_state.onlink
 
-#define	ipr_rrf_decrvalid	ipr_flags.prf_rr.decrvalid
-#define	ipr_rrf_decrprefd	ipr_flags.prf_rr.decrprefd
+#define ipr_rrf_decrvalid       ipr_flags.prf_rr.decrvalid
+#define ipr_rrf_decrprefd       ipr_flags.prf_rr.decrprefd
 
 struct in6_rrenumreq {
-	char	irr_name[IFNAMSIZ];
-	u_char	irr_origin;
-	u_char	irr_m_len;	/* match len for matchprefix */
-	u_char	irr_m_minlen;	/* minlen for matching prefix */
-	u_char	irr_m_maxlen;	/* maxlen for matching prefix */
-	u_char	irr_u_uselen;	/* uselen for adding prefix */
-	u_char	irr_u_keeplen;	/* keeplen from matching prefix */
+	char    irr_name[IFNAMSIZ];
+	u_char  irr_origin;
+	u_char  irr_m_len;      /* match len for matchprefix */
+	u_char  irr_m_minlen;   /* minlen for matching prefix */
+	u_char  irr_m_maxlen;   /* maxlen for matching prefix */
+	u_char  irr_u_uselen;   /* uselen for adding prefix */
+	u_char  irr_u_keeplen;  /* keeplen from matching prefix */
 	struct irr_raflagmask {
 		u_char onlink : 1;
 		u_char autonomous : 1;
@@ -342,22 +342,22 @@ struct in6_rrenumreq {
 	u_int32_t irr_vltime;
 	u_int32_t irr_pltime;
 	struct in6_prflags irr_flags;
-	struct	sockaddr_in6 irr_matchprefix;
-	struct	sockaddr_in6 irr_useprefix;
+	struct  sockaddr_in6 irr_matchprefix;
+	struct  sockaddr_in6 irr_useprefix;
 };
 
-#define	irr_raf_mask_onlink	irr_raflagmask.onlink
-#define	irr_raf_mask_auto	irr_raflagmask.autonomous
-#define	irr_raf_mask_reserved	irr_raflagmask.reserved
+#define irr_raf_mask_onlink     irr_raflagmask.onlink
+#define irr_raf_mask_auto       irr_raflagmask.autonomous
+#define irr_raf_mask_reserved   irr_raflagmask.reserved
 
-#define	irr_raf_onlink		irr_flags.prf_ra.onlink
-#define	irr_raf_auto		irr_flags.prf_ra.autonomous
+#define irr_raf_onlink          irr_flags.prf_ra.onlink
+#define irr_raf_auto            irr_flags.prf_ra.autonomous
 
-#define	irr_statef_onlink	irr_flags.prf_state.onlink
+#define irr_statef_onlink       irr_flags.prf_state.onlink
 
-#define	irr_rrf			irr_flags.prf_rr
-#define	irr_rrf_decrvalid	irr_flags.prf_rr.decrvalid
-#define	irr_rrf_decrprefd	irr_flags.prf_rr.decrprefd
+#define irr_rrf                 irr_flags.prf_rr
+#define irr_rrf_decrvalid       irr_flags.prf_rr.decrvalid
+#define irr_rrf_decrprefd       irr_flags.prf_rr.decrprefd
 
 /*
  * Event data, inet6 style.
@@ -371,114 +371,114 @@ struct kev_in6_addrlifetime {
 
 struct kev_in6_data {
 	struct net_event_data link_data;
-	struct sockaddr_in6 ia_addr;	/* interface address */
-	struct sockaddr_in6 ia_net;	/* network number of interface */
+	struct sockaddr_in6 ia_addr;    /* interface address */
+	struct sockaddr_in6 ia_net;     /* network number of interface */
 	struct sockaddr_in6 ia_dstaddr; /* space for destination addr */
 	struct sockaddr_in6 ia_prefixmask; /* prefix mask */
-	u_int32_t ia_plen;		/* prefix length */
-	u_int32_t ia6_flags;		/* address flags from in6_ifaddr */
+	u_int32_t ia_plen;              /* prefix length */
+	u_int32_t ia6_flags;            /* address flags from in6_ifaddr */
 	struct kev_in6_addrlifetime ia_lifetime; /* address life info */
-	uint8_t	ia_mac[ETHER_ADDR_LEN];
+	uint8_t ia_mac[ETHER_ADDR_LEN];
 };
 
 
-#define	SIOCSIFADDR_IN6		 _IOW('i', 12, struct in6_ifreq)
-#define	SIOCGIFADDR_IN6		_IOWR('i', 33, struct in6_ifreq)
+#define SIOCSIFADDR_IN6          _IOW('i', 12, struct in6_ifreq)
+#define SIOCGIFADDR_IN6         _IOWR('i', 33, struct in6_ifreq)
 
 /*
  * SIOCSxxx ioctls should be unused (see comments in in6.c), but
  * we do not shift numbers for binary compatibility.
  */
-#define	SIOCSIFDSTADDR_IN6	_IOW('i', 14, struct in6_ifreq)
-#define	SIOCSIFNETMASK_IN6	_IOW('i', 22, struct in6_ifreq)
+#define SIOCSIFDSTADDR_IN6      _IOW('i', 14, struct in6_ifreq)
+#define SIOCSIFNETMASK_IN6      _IOW('i', 22, struct in6_ifreq)
 
-#define	SIOCGIFDSTADDR_IN6	_IOWR('i', 34, struct in6_ifreq)
-#define	SIOCGIFNETMASK_IN6	_IOWR('i', 37, struct in6_ifreq)
+#define SIOCGIFDSTADDR_IN6      _IOWR('i', 34, struct in6_ifreq)
+#define SIOCGIFNETMASK_IN6      _IOWR('i', 37, struct in6_ifreq)
 
-#define	SIOCDIFADDR_IN6		_IOW('i', 25, struct in6_ifreq)
-#define	SIOCAIFADDR_IN6		_IOW('i', 26, struct in6_aliasreq)
+#define SIOCDIFADDR_IN6         _IOW('i', 25, struct in6_ifreq)
+#define SIOCAIFADDR_IN6         _IOW('i', 26, struct in6_aliasreq)
 
-#define	SIOCSIFPHYADDR_IN6	_IOW('i', 62, struct in6_aliasreq)
-#define	SIOCGIFPSRCADDR_IN6	_IOWR('i', 63, struct in6_ifreq)
-#define	SIOCGIFPDSTADDR_IN6	_IOWR('i', 64, struct in6_ifreq)
-#define	SIOCGIFAFLAG_IN6	_IOWR('i', 73, struct in6_ifreq)
+#define SIOCSIFPHYADDR_IN6      _IOW('i', 62, struct in6_aliasreq)
+#define SIOCGIFPSRCADDR_IN6     _IOWR('i', 63, struct in6_ifreq)
+#define SIOCGIFPDSTADDR_IN6     _IOWR('i', 64, struct in6_ifreq)
+#define SIOCGIFAFLAG_IN6        _IOWR('i', 73, struct in6_ifreq)
 
-#define	SIOCGDRLST_IN6		_IOWR('i', 74, struct in6_drlist)
+#define SIOCGDRLST_IN6          _IOWR('i', 74, struct in6_drlist)
 
-#define	SIOCGPRLST_IN6		_IOWR('i', 75, struct in6_prlist)
+#define SIOCGPRLST_IN6          _IOWR('i', 75, struct in6_prlist)
 
-#define	OSIOCGIFINFO_IN6	_IOWR('i', 108, struct in6_ondireq)
-#define	SIOCGIFINFO_IN6		_IOWR('i', 76, struct in6_ondireq)
-#define	SIOCSNDFLUSH_IN6	_IOWR('i', 77, struct in6_ifreq)
+#define OSIOCGIFINFO_IN6        _IOWR('i', 108, struct in6_ondireq)
+#define SIOCGIFINFO_IN6         _IOWR('i', 76, struct in6_ondireq)
+#define SIOCSNDFLUSH_IN6        _IOWR('i', 77, struct in6_ifreq)
 
-#define	SIOCGNBRINFO_IN6	_IOWR('i', 78, struct in6_nbrinfo)
+#define SIOCGNBRINFO_IN6        _IOWR('i', 78, struct in6_nbrinfo)
 
-#define	SIOCSPFXFLUSH_IN6	_IOWR('i', 79, struct in6_ifreq)
-#define	SIOCSRTRFLUSH_IN6	_IOWR('i', 80, struct in6_ifreq)
+#define SIOCSPFXFLUSH_IN6       _IOWR('i', 79, struct in6_ifreq)
+#define SIOCSRTRFLUSH_IN6       _IOWR('i', 80, struct in6_ifreq)
 
-#define	SIOCGIFALIFETIME_IN6	_IOWR('i', 81, struct in6_ifreq)
-#define	SIOCSIFALIFETIME_IN6	_IOWR('i', 82, struct in6_ifreq)
-#define	SIOCGIFSTAT_IN6		_IOWR('i', 83, struct in6_ifreq)
-#define	SIOCGIFSTAT_ICMP6	_IOWR('i', 84, struct in6_ifreq)
+#define SIOCGIFALIFETIME_IN6    _IOWR('i', 81, struct in6_ifreq)
+#define SIOCSIFALIFETIME_IN6    _IOWR('i', 82, struct in6_ifreq)
+#define SIOCGIFSTAT_IN6         _IOWR('i', 83, struct in6_ifreq)
+#define SIOCGIFSTAT_ICMP6       _IOWR('i', 84, struct in6_ifreq)
 
-#define	SIOCSDEFIFACE_IN6	_IOWR('i', 85, struct in6_ndifreq)
-#define	SIOCGDEFIFACE_IN6	_IOWR('i', 86, struct in6_ndifreq)
+#define SIOCSDEFIFACE_IN6       _IOWR('i', 85, struct in6_ndifreq)
+#define SIOCGDEFIFACE_IN6       _IOWR('i', 86, struct in6_ndifreq)
 
-#define	SIOCSIFINFO_FLAGS	_IOWR('i', 87, struct in6_ndireq) /* XXX */
+#define SIOCSIFINFO_FLAGS       _IOWR('i', 87, struct in6_ndireq) /* XXX */
 
 /* N.B.: These 3 ioctls are deprecated and won't work */
-#define	SIOCSSCOPE6		_IOW('i', 88, struct in6_ifreq)
-#define	SIOCGSCOPE6		_IOWR('i', 89, struct in6_ifreq)
-#define	SIOCGSCOPE6DEF		_IOWR('i', 90, struct in6_ifreq)
+#define SIOCSSCOPE6             _IOW('i', 88, struct in6_ifreq)
+#define SIOCGSCOPE6             _IOWR('i', 89, struct in6_ifreq)
+#define SIOCGSCOPE6DEF          _IOWR('i', 90, struct in6_ifreq)
 
-#define	SIOCSIFPREFIX_IN6	_IOW('i', 100, struct in6_prefixreq) /* set */
-#define	SIOCGIFPREFIX_IN6	_IOWR('i', 101, struct in6_prefixreq) /* get */
-#define	SIOCDIFPREFIX_IN6	_IOW('i', 102, struct in6_prefixreq) /* del */
-#define	SIOCAIFPREFIX_IN6	_IOW('i', 103, struct in6_rrenumreq) /* add */
+#define SIOCSIFPREFIX_IN6       _IOW('i', 100, struct in6_prefixreq) /* set */
+#define SIOCGIFPREFIX_IN6       _IOWR('i', 101, struct in6_prefixreq) /* get */
+#define SIOCDIFPREFIX_IN6       _IOW('i', 102, struct in6_prefixreq) /* del */
+#define SIOCAIFPREFIX_IN6       _IOW('i', 103, struct in6_rrenumreq) /* add */
 
 /* change */
-#define	SIOCCIFPREFIX_IN6	_IOW('i', 104, struct in6_rrenumreq)
+#define SIOCCIFPREFIX_IN6       _IOW('i', 104, struct in6_rrenumreq)
 
 /* set global */
-#define	SIOCSGIFPREFIX_IN6	_IOW('i', 105, struct in6_rrenumreq)
+#define SIOCSGIFPREFIX_IN6      _IOW('i', 105, struct in6_rrenumreq)
 
 /*
  * multicast routing, get s/g pkt cnt, pkt cnt per interface.
  */
-#define	SIOCGETSGCNT_IN6	_IOWR('u', 28, struct sioc_sg_req6)
-#define	SIOCGETMIFCNT_IN6	_IOWR('u', 107, struct sioc_mif_req6)
+#define SIOCGETSGCNT_IN6        _IOWR('u', 28, struct sioc_sg_req6)
+#define SIOCGETMIFCNT_IN6       _IOWR('u', 107, struct sioc_mif_req6)
 
-#define	SIOCAADDRCTL_POLICY	_IOW('u', 108, struct in6_addrpolicy)
-#define	SIOCDADDRCTL_POLICY	_IOW('u', 109, struct in6_addrpolicy)
+#define SIOCAADDRCTL_POLICY     _IOW('u', 108, struct in6_addrpolicy)
+#define SIOCDADDRCTL_POLICY     _IOW('u', 109, struct in6_addrpolicy)
 
 
-#define	IN6_IFF_ANYCAST		0x0001	/* anycast address */
-#define	IN6_IFF_TENTATIVE	0x0002	/* tentative address */
-#define	IN6_IFF_DUPLICATED	0x0004	/* DAD detected duplicate */
-#define	IN6_IFF_DETACHED	0x0008	/* may be detached from the link */
-#define	IN6_IFF_DEPRECATED	0x0010	/* deprecated address */
+#define IN6_IFF_ANYCAST         0x0001  /* anycast address */
+#define IN6_IFF_TENTATIVE       0x0002  /* tentative address */
+#define IN6_IFF_DUPLICATED      0x0004  /* DAD detected duplicate */
+#define IN6_IFF_DETACHED        0x0008  /* may be detached from the link */
+#define IN6_IFF_DEPRECATED      0x0010  /* deprecated address */
 
 /* don't perform DAD on this address (used only at first SIOC* call) */
-#define	IN6_IFF_NODAD		0x0020
+#define IN6_IFF_NODAD           0x0020
 
-#define	IN6_IFF_AUTOCONF	0x0040	/* autoconfigurable address. */
-#define	IN6_IFF_TEMPORARY	0x0080	/* temporary (anonymous) address. */
-#define	IN6_IFF_DYNAMIC		0x0100	/* assigned by DHCPv6 service */
-#define	IN6_IFF_OPTIMISTIC	0x0200	/* optimistic DAD, i.e. RFC 4429 */
-#define	IN6_IFF_SECURED		0x0400	/* cryptographically generated */
-#define	IN6_IFF_CLAT46		0x1000  /* Address reserved for CLAT46 */
-#define	IN6_IFF_NOPFX		0x8000	/* Depreciated. Don't use. */
+#define IN6_IFF_AUTOCONF        0x0040  /* autoconfigurable address. */
+#define IN6_IFF_TEMPORARY       0x0080  /* temporary (anonymous) address. */
+#define IN6_IFF_DYNAMIC         0x0100  /* assigned by DHCPv6 service */
+#define IN6_IFF_OPTIMISTIC      0x0200  /* optimistic DAD, i.e. RFC 4429 */
+#define IN6_IFF_SECURED         0x0400  /* cryptographically generated */
+#define IN6_IFF_CLAT46          0x1000  /* Address reserved for CLAT46 */
+#define IN6_IFF_NOPFX           0x8000  /* Depreciated. Don't use. */
 
 /* Duplicate Address Detection [DAD] in progress. */
-#define	IN6_IFF_DADPROGRESS	(IN6_IFF_TENTATIVE|IN6_IFF_OPTIMISTIC)
+#define IN6_IFF_DADPROGRESS     (IN6_IFF_TENTATIVE|IN6_IFF_OPTIMISTIC)
 
 /* do not input/output */
-#define	IN6_IFF_NOTREADY	(IN6_IFF_TENTATIVE|IN6_IFF_DUPLICATED)
+#define IN6_IFF_NOTREADY        (IN6_IFF_TENTATIVE|IN6_IFF_DUPLICATED)
 
 /* SLAAC/DHCPv6 address */
-#define IN6_IFF_NOTMANUAL	(IN6_IFF_AUTOCONF|IN6_IFF_DYNAMIC)
+#define IN6_IFF_NOTMANUAL       (IN6_IFF_AUTOCONF|IN6_IFF_DYNAMIC)
 
-#define	IN6_ARE_SCOPE_CMP(a, b)		((a) - (b))
-#define	IN6_ARE_SCOPE_EQUAL(a, b)	((a) == (b))
+#define IN6_ARE_SCOPE_CMP(a, b)         ((a) - (b))
+#define IN6_ARE_SCOPE_EQUAL(a, b)       ((a) == (b))
 
 #endif /* _NETINET6_IN6_VAR_H_ */

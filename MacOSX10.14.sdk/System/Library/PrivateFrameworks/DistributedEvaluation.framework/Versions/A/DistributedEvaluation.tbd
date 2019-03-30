@@ -1,16 +1,23 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4D21A484-A074-3A79-88F6-C1DFDD7FB295' ]
-platform:        macosx
+uuids:           [ 'x86_64: 9D8DB70F-569E-3443-8FD1-FFBEEBDD225A' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/DistributedEvaluation.framework/Versions/A/DistributedEvaluation
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _DESAggregatorLogEvaluation, _DESAggregatorLogRecording, _DESApplyAsynchronousSequence, 
-                       _DESDiagnosticsSubmissionAllowed, _DESGetDeviceClass, _DESGetDeviceID, 
-                       _DESGetDeviceType, _DESGetOSVersion, _DESIsInternalInstall, 
-                       _DESPathHasFileVault, _DESServiceAvailable, _DESServiceGetXPCInterface, 
+                       _DESDiagnosticsSubmissionAllowed, _DESEncryptedDataReadFrom, 
+                       _DESGetDeviceClass, _DESGetDeviceID, _DESGetDeviceType, _DESGetOSVersion, 
+                       _DESIsInternalInstall, _DESPFLNoisableReadFrom, _DESPathHasFileVault, 
+                       _DESRecipeResponseLocalOnlyPrefix, _DESServiceAvailable, _DESServiceGetXPCInterface, 
                        _DESSubmissionLogDirectoryURL, _DESSubmissionLogFileURLs, 
-                       _DESSubmissionLogGarbageCollect, _DESWriteSubmissionLog, _DistributedEvaluationVersionNumber, 
+                       _DESSubmissionLogGarbageCollect, _DESSubmissionLogSetHandler, 
+                       _DESWriteSubmissionLog, _DistributedEvaluationVersionNumber, 
                        _DistributedEvaluationVersionString, __DESIsHorseman, _kDESDistributedEvaluationErrorDomain ]
-    objc-classes:    [ DESDeviceIdentifierStore, DESJSONPredicate, DESRecordStore ]
+    objc-classes:    [ DESEncryptedData, DESJSONPredicate, DESPFLNoisable, DESRecipe, 
+                       DESRecordSet, DESRecordStore ]
+    objc-ivars:      [ DESEncryptedData._algorithm, DESEncryptedData._data, DESEncryptedData._encryptedKey, 
+                       DESEncryptedData._has, DESEncryptedData._version, DESPFLNoisable._datas, 
+                       DESPFLNoisable._has, DESPFLNoisable._iteration, DESPFLNoisable._recipeId, 
+                       DESPFLNoisable._version, DESPFLNoisable._weight ]
 ...

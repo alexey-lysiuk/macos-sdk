@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C115E88F-5E16-3804-8ACD-29C0F8895EFA' ]
+uuids:           [ 'x86_64: B3365E07-6FC3-3AAA-884D-D6EE7ACDAE16' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IOPresentment.framework/Versions/A/IOPresentment
-current-version: 42.6
+current-version: 44.4
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -124,14 +124,15 @@ exports:
                        __ZN24IOPresentmentDisplayPipe16IOPresentmentEndEP26__IOPresentmentTransactionyb, 
                        __ZN24IOPresentmentDisplayPipe18IOPresentmentBeginEP23__IOPresentmentResourceh, 
                        __ZN24IOPresentmentDisplayPipe18_IOPresentmentInitEP15__IOPresentment, 
-                       __ZN24IOPresentmentDisplayPipe18_IOPresentmentTermEv, __ZN24IOPresentmentDisplayPipe18__TransactionStateEP35IOPresentmentTransactionDisplayPipeP28sIOPresentmentCompletionDatadj, 
+                       __ZN24IOPresentmentDisplayPipe18_IOPresentmentTermEv, __ZN24IOPresentmentDisplayPipe18__TransactionStateEP24IOPresentmentTransactionP28sIOPresentmentCompletionDatadj, 
                        __ZN24IOPresentmentDisplayPipe19__DisplayPipeCreateEjy, __ZN24IOPresentmentDisplayPipe20__DisplayPipeReleaseEv, 
+                       __ZN24IOPresentmentDisplayPipe21DisplayPipeDoCallbackEPFvPvPK10__CFStringPmjES0_P26__IOPresentmentTransactionmmmm, 
                        __ZN24IOPresentmentDisplayPipe21IOPresentmentIsActiveEP26__IOPresentmentTransaction, 
                        __ZN24IOPresentmentDisplayPipe22IOPresentmentTerminateEv, 
                        __ZN24IOPresentmentDisplayPipe23IOPresentmentInitializeEv, 
                        __ZN24IOPresentmentDisplayPipe23IOPresentmentIsCompleteEP26__IOPresentmentTransactionP28sIOPresentmentCompletionData, 
                        __ZN24IOPresentmentDisplayPipe23IOPresentmentWaitActiveEP26__IOPresentmentTransactiony, 
-                       __ZN24IOPresentmentDisplayPipe23__TransactionStateQueryEP35IOPresentmentTransactionDisplayPipe, 
+                       __ZN24IOPresentmentDisplayPipe23__TransactionStateQueryEP24IOPresentmentTransaction, 
                        __ZN24IOPresentmentDisplayPipe25IOPresentmentWaitCompleteEP26__IOPresentmentTransactionP28sIOPresentmentCompletionDatay, 
                        __ZN24IOPresentmentDisplayPipe26IOPresentmentSetPlaneStateEP26__IOPresentmentTransactionj24eIOPresentmentPlaneState, 
                        __ZN24IOPresentmentDisplayPipe27IOPresentmentCreateResourceEPK14__CFDictionaryjP18sIOPresentmentRect, 
@@ -241,7 +242,7 @@ exports:
                        __ZN35IOPresentmentTransactionDisplayPipe39DisplayPipeTransactionSetPlaneIOSurfaceEjP11__IOSurface18IOAccelDisplayRectS2_j, 
                        __ZN35IOPresentmentTransactionDisplayPipe41DisplayPipeTransactionSetPipePostCSCGammaEv, 
                        __ZN35IOPresentmentTransactionDisplayPipe41__FreePlaneLinearizationConfigurationDataEj, 
-                       __ZN35IOPresentmentTransactionDisplayPipe43DisplayPipeTransactionSetCompletionCallbackEPFvPvPK10__CFStringPmjES0_P26__IOPresentmentTransaction, 
+                       __ZN35IOPresentmentTransactionDisplayPipe43DisplayPipeTransactionSetCompletionCallbackEPFvPvPK10__CFStringPmjES0_P26__IOPresentmentTransactionP24IOPresentmentDisplayPipe, 
                        __ZN35IOPresentmentTransactionDisplayPipe43DisplayPipeTransactionSetPipePostGammaTableEv, 
                        __ZN35IOPresentmentTransactionDisplayPipe44DisplayPipeTransactionSetColorMatrixExtendedEv, 
                        __ZN35IOPresentmentTransactionDisplayPipe44DisplayPipeTransactionSetPlaneIOAccelSurfaceEjj18IOAccelDisplayRectS0_j, 

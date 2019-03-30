@@ -14,6 +14,26 @@
 #include <Availability.h>
 #include <AvailabilityMacros.h>
 
+// Pre-10.14.4, weak import
+#ifndef __AVAILABILITY_INTERNAL__MAC_10_14_4
+#define __AVAILABILITY_INTERNAL__MAC_10_14_4 __AVAILABILITY_INTERNAL_WEAK_IMPORT
+#endif
+
+// Pre- iOS 12.2 weak import
+#ifndef __AVAILABILITY_INTERNAL__IPHONE_12_2
+#define __AVAILABILITY_INTERNAL__IPHONE_12_2 __AVAILABILITY_INTERNAL_WEAK_IMPORT
+#endif
+
+
+// Pre-10.14, weak import
+#ifndef __AVAILABILITY_INTERNAL__MAC_10_14
+#define __AVAILABILITY_INTERNAL__MAC_10_14 __AVAILABILITY_INTERNAL_WEAK_IMPORT
+#endif
+
+// Pre- iOS 12.0 weak import
+#ifndef __AVAILABILITY_INTERNAL__IPHONE_12_0
+#define __AVAILABILITY_INTERNAL__IPHONE_12_0 __AVAILABILITY_INTERNAL_WEAK_IMPORT
+#endif
 
 // Pre-10.13, weak import
 #ifndef __AVAILABILITY_INTERNAL__MAC_10_13
@@ -120,7 +140,7 @@
 #include <stddef.h>						// size_t
 
 #include <CoreFoundation/CFBase.h>		// OSStatus, Boolean, Float32, Float64, CF_NOESCAPE
-#if ! TARGET_OS_WINDOWS
+#if ! 0
 #include <CoreFoundation/CFAvailability.h>	// CF_EXTENSIBLE_STRING_ENUM
 #endif
 
@@ -146,21 +166,14 @@ extern "C" {
 	#define CM_EXPORT extern
 	#define VT_EXPORT extern
 	#define MT_EXPORT extern
-#elif TARGET_OS_WIN32
-	#define CM_EXPORT __declspec( dllimport ) extern
-	#define VT_EXPORT __declspec( dllimport ) extern
-	#define MT_EXPORT __declspec( dllimport ) extern
 #else
 	#error "specify your platform"
 #endif
 
-#if TARGET_OS_WINDOWS && TARGET_CPU_X86_64
-typedef int64_t CMItemCount;
-typedef int64_t CMItemIndex;
-#else
+
 typedef signed long	CMItemCount;
 typedef signed long	CMItemIndex;
-#endif
+
 
 #ifndef COREMEDIA_USE_ALIGNED_CMBASECLASS_VERSION
 #define COREMEDIA_USE_ALIGNED_CMBASECLASS_VERSION COREMEDIA_TRUE
@@ -169,7 +182,7 @@ typedef signed long	CMItemIndex;
 #if ! COREMEDIA_USE_ALIGNED_CMBASECLASS_VERSION
 	typedef uint32_t CMBaseClassVersion, CMStructVersion;
 #else
-#if (TARGET_OS_OSX || 0 || TARGET_OS_WINDOWS) && TARGET_CPU_X86_64
+#if (TARGET_OS_OSX || 0 || 0) && TARGET_CPU_X86_64
 	typedef uint32_t CMBaseClassVersion, CMStructVersion;
 #else
 	typedef uintptr_t CMBaseClassVersion, CMStructVersion;

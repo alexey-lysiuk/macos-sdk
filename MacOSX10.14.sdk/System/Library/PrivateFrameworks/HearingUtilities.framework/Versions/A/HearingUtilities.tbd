@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 43FBEF29-0B91-3AC5-9C61-EC50B7035D0B' ]
-platform:        macosx
+uuids:           [ 'x86_64: 7B7050C5-DBA0-3B92-8918-FBE7F6B2969F' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/HearingUtilities.framework/Versions/A/HearingUtilities
 exports:         
   - archs:           [ x86_64 ]
@@ -14,9 +14,9 @@ exports:
                        _AXLEHIDISManufacturerCharacteristicUUIDString, _AXLEHIDISModelNumberCharacteristicUUIDString, 
                        _AXLEHIDISServiceUUIDString, _AXLEHIServiceUUIDString, _HearingUtilitiesVersionNumber, 
                        _HearingUtilitiesVersionString, _accessibilityHearingAidSupportBundle, 
-                       _hearingAidStreamAvailable, _hearingAidStreamSelected, _hearingInputRouteStringForOption, 
-                       _hearingLocString, _hearingPropertyDescription, _liveListenStreamSelected, 
-                       _propertyContainsProperty, _supportsBinauralStreamingForHearingAid ]
+                       _hearingAidStreamAvailable, _hearingAidStreamSelected, _hearingLocString, 
+                       _hearingPropertyDescription, _liveListenStreamSelected, _propertyContainsProperty, 
+                       _supportsBinauralStreamingForHearingAid ]
     objc-classes:    [ AXFakeHearingAidDevice, AXHAController, AXHAControllerBrowser, 
                        AXHAListenerHelper, AXHALiveListenController, AXHAMessageHandlerContext, 
                        AXHAPacket, AXHARemoteController, AXHASecurityHelper, AXHAServer, 

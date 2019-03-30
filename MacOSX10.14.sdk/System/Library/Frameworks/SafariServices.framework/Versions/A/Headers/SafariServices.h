@@ -10,6 +10,7 @@
 #import <SafariServices/SFError.h>
 #import <SafariServices/SFFoundation.h>
 #import <SafariServices/SFSafariApplication.h>
+#import <SafariServices/SFSafariExtension.h>
 #import <SafariServices/SFSafariExtensionHandler.h>
 #import <SafariServices/SFSafariExtensionHandling.h>
 #import <SafariServices/SFSafariExtensionManager.h>

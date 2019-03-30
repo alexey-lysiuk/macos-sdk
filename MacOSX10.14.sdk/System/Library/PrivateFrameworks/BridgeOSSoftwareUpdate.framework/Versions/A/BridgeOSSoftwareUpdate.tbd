@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 666309E1-E041-3E41-8742-69F4F5241371' ]
+uuids:           [ 'x86_64: B0D5B0DD-EC84-30E4-AC19-D83D7F6E3B3D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/BridgeOSSoftwareUpdate.framework/Versions/A/BridgeOSSoftwareUpdate
 exports:         
@@ -19,6 +19,7 @@ exports:
                        _BridgeOSSoftwareUpdateOptionKeyForceSEUpdaterInfoFailure, 
                        _BridgeOSSoftwareUpdateOptionKeyLoopbackEnabled, _BridgeOSSoftwareUpdateOptionKeyLoopbackError, 
                        _BridgeOSSoftwareUpdateOptionKeyLoopbackResults, _BridgeOSSoftwareUpdateOptionKeyMaxLogSizeKB, 
+                       _BridgeOSSoftwareUpdateOptionKeyPersonalizationServerURL, 
                        _BridgeOSSoftwareUpdateOptionKeyUpdateUUIDString, _BridgeOSSoftwareUpdateOptionsKeyResetTestMode, 
                        _BridgeOSSoftwareUpdateOptionsKeyTestModeEnabled, _BridgeOSSoftwareUpdateOptionsKeyTestModeNumProgressReports, 
                        _BridgeOSSoftwareUpdateOptionsKeyTestModeOperationDuration, 

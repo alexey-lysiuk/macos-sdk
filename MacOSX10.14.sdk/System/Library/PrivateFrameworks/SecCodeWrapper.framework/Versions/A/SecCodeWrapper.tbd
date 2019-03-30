@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 763BAC4A-DC1A-3C0F-BFF4-88D0E0A3804F' ]
-platform:        macosx
+uuids:           [ 'x86_64: 9C7CB374-18B8-39D3-8B18-816911DFB0BE' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/SecCodeWrapper.framework/Versions/A/SecCodeWrapper
 exports:         
   - archs:           [ x86_64 ]

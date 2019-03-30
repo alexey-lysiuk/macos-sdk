@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 401F5284-A984-32A1-A547-CC8156381070' ]
-platform:        macosx
+uuids:           [ 'x86_64: 5191A681-5DF3-359A-B401-C29109EA420A' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/CoreNLP.framework/Versions/A/CoreNLP
 current-version: 130.15.22
 objc-constraint: none

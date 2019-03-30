@@ -551,15 +551,17 @@ API_AVAILABLE(macos(10.11), ios(8.0))
 
 
 /*!
- * @method executeCommandsInBuffer:buffer:withRange
- * @abstract Execute  commands in the range executionRange within the given buffer.
+ * @method executeCommandsInBuffer:withRange:
+ * @abstract Execute commands in the buffer within the range specified.
  * @discussion The same indirect command buffer may be executed any number of times within the same encoder.
  */
 - (void)executeCommandsInBuffer:(id<MTLIndirectCommandBuffer>)indirectCommandBuffer withRange:(NSRange)executionRange API_AVAILABLE(macos(10.14), ios(12.0));
 
 /*!
- * @method executeCommandsInBuffer:buffer:indirectRangeBuffer:indirectBufferOffset:
- * @abstract Execute the commands in the given indirect range
+ * @method executeCommandsInBuffer:indirectBuffer:indirectBufferOffset:
+ * @abstract Execute commands in the buffer within the range specified by the indirect range buffer.
+ * @param indirectRangeBuffer An indirect buffer from which the device reads the execution range parameter, as laid out in the MTLIndirectCommandBufferExecutionRange structure.
+ * @param indirectBufferOffset The byte offset within indirectBuffer where the execution range parameter is located. Must be a multiple of 4 bytes.
  * @discussion The same indirect command buffer may be executed any number of times within the same encoder.
  */
 - (void)executeCommandsInBuffer:(id<MTLIndirectCommandBuffer>)indirectCommandbuffer indirectBuffer:(id<MTLBuffer>)indirectRangeBuffer indirectBufferOffset:(NSUInteger)indirectBufferOffset API_AVAILABLE(macos(10.14)) API_UNAVAILABLE(ios);

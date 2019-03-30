@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A1992F1C-A3B3-36EA-BDA7-7663AEC5DF8F' ]
+uuids:           [ 'x86_64: 2348B659-6380-302B-B3AE-A3E1E337672B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/NetworkStatistics.framework/Versions/A/NetworkStatistics
 exports:         

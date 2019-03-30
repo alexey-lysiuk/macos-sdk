@@ -256,16 +256,13 @@ Classes:
     SwiftName: 'init(data:semantic:vectorCount:usesFloatComponents:componentsPerVector:bytesPerComponent:dataOffset:dataStride:)'
   - Selector: 'geometrySourceWithTextureCoordinates:count:'
     MethodKind: Class
-    Availability: nonswift
-    AvailabilityMsg: "Use init(textureCoordinates:) instead"
+    SwiftPrivate: true
   - Selector: 'geometrySourceWithNormals:count:'
     MethodKind: Class
-    Availability: nonswift
-    AvailabilityMsg: "Use init(normals:) instead"
+    SwiftPrivate: true
   - Selector: 'geometrySourceWithVertices:count:'
     MethodKind: Class
-    Availability: nonswift
-    AvailabilityMsg: "Use init(vertices:) instead"
+    SwiftPrivate: true
   Properties:
   - Name: floatComponents
     SwiftName: usesFloatComponents

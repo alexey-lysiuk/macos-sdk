@@ -35,17 +35,20 @@
 // Zone function pointer, type-diversified but not address-diversified (because
 // the zone can be copied). Process-independent because the zone structure may
 // be in the shared library cache.
-#define MALLOC_ZONE_FN_PTR(fn)  fn
+#define MALLOC_ZONE_FN_PTR(fn) __ptrauth(ptrauth_key_process_independent_code, \
+		FALSE, ptrauth_string_discriminator("malloc_zone_fn." #fn)) fn
 
 // Introspection function pointer, address- and type-diversified.
 // Process-independent because the malloc_introspection_t structure that contains
 // these pointers may be in the shared library cache.
-#define MALLOC_INTROSPECT_FN_PTR(fn)  fn
+#define MALLOC_INTROSPECT_FN_PTR(fn) __ptrauth(ptrauth_key_process_independent_code, \
+		TRUE, ptrauth_string_discriminator("malloc_introspect_fn." #fn)) fn
 
 // Pointer to the introspection pointer table, type-diversified but not
 // address-diversified (because the zone can be copied).
 // Process-independent because the table pointer may be in the shared library cache.
-#define MALLOC_INTROSPECT_TBL_PTR(ptr)  ptr
+#define MALLOC_INTROSPECT_TBL_PTR(ptr) __ptrauth(ptrauth_key_process_independent_data,\
+		FALSE, ptrauth_string_discriminator("malloc_introspect_tbl")) ptr
 
 #endif	// __has_feature(ptrauth_calls)
 

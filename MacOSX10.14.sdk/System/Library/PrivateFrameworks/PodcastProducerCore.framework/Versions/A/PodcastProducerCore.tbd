@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4D850B5B-E0C1-3580-9731-8192520F7432' ]
+uuids:           [ 'x86_64: 5A88002F-4097-3955-B688-E185BD4BDFFF' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PodcastProducerCore.framework/Versions/A/PodcastProducerCore
 current-version: 79

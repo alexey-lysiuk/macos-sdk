@@ -11,8 +11,6 @@
 #if __has_include(<CFNetwork/CFNetwork.h>)
 #import <CFNetwork/CFNetwork.h>
 #endif
-#elif TARGET_OS_WIN32
-#import <CFNetwork/CFNetwork.h>
 #else
 #import <CoreServices/CoreServices.h>
 #endif

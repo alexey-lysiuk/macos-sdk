@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F099E6ED-E08D-3F37-B381-0DF3109B27AA' ]
-platform:        macosx
+uuids:           [ 'x86_64: E9B26BDF-8044-31F8-9B0A-3F89F9318D70' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/GraphicsServices.framework/Versions/A/GraphicsServices
 current-version: 14
 exports:         

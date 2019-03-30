@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 72CE2946-5369-3F81-9C4C-D4C5744BB3B6' ]
+uuids:           [ 'x86_64: 0A18F353-A6E4-39FA-8207-74B2D0CC786F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Symptoms.framework/Frameworks/SymptomNetworkUsage.framework/Versions/A/SymptomNetworkUsage
 exports:         

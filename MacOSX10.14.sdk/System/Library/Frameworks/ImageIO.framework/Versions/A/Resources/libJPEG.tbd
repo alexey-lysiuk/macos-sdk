@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: 8863EEE3-14A1-3F15-82BD-BED2539D28C5', 'x86_64h: DD334010-2B8D-3A5E-BC17-39A9D94AC92D' ]
-platform:        macosx
+uuids:           [ 'x86_64: 3E7E462F-6008-395A-B542-023F16C0D7F6', 'x86_64h: 0968BAF1-5E5A-3AA0-A971-3B3FFC4A4B66' ]
+platform:        zippered
 install-name:    /System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libJPEG.dylib
 objc-constraint: none
 exports:         

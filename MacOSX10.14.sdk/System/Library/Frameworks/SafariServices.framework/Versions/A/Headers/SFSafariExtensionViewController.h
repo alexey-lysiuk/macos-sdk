@@ -13,6 +13,9 @@
 
 SF_CLASS_AVAILABLE_MAC_SAFARI(10_0)
 @interface SFSafariExtensionViewController : NSViewController
+
+- (void)dismissPopover SF_AVAILABLE_MAC_SAFARI(12_1);
+
 @end
 
 #endif // __OBJC2__

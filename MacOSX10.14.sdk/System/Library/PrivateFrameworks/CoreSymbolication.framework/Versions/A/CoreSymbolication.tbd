@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F985088F-5323-3D84-80FE-3A3135C4A320' ]
-platform:        macosx
+uuids:           [ 'x86_64: CBA82F08-26CC-3FB4-9539-B0B55B35C5E1' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/CoreSymbolication.framework/Versions/A/CoreSymbolication
-current-version: 64460.6
+current-version: 64490.25.1
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

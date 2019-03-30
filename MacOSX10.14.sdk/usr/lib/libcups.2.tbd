@@ -1,6 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
 platform:        macosx
+flags:           [ installapi ]
 install-name:    /usr/lib/libcups.2.dylib
 current-version: 2.13
 compatibility-version: 2
@@ -33,11 +34,11 @@ exports:
                        __cups_strcasecmp, __cups_strcpy, __cups_strncasecmp, __httpAddrSetPort, 
                        __httpCreateCredentials, __httpDecodeURI, __httpDisconnect, 
                        __httpEncodeURI, __httpFreeCredentials, __httpResolveURI, 
-                       __httpStatus, __httpTLSInitialize, __httpTLSPending, __httpTLSRead, 
-                       __httpTLSSetOptions, __httpTLSStart, __httpTLSStop, __httpTLSWrite, 
-                       __httpUpdate, __httpWait, __ippFindOption, __ppdCacheCreateWithFile, 
-                       __ppdCacheCreateWithPPD, __ppdCacheDestroy, __ppdCacheGetBin, 
-                       __ppdCacheGetFinishingOptions, __ppdCacheGetFinishingValues, 
+                       __httpSetDigestAuthString, __httpStatus, __httpTLSInitialize, 
+                       __httpTLSPending, __httpTLSRead, __httpTLSSetOptions, __httpTLSStart, 
+                       __httpTLSStop, __httpTLSWrite, __httpUpdate, __httpWait, __ippFindOption, 
+                       __ppdCacheCreateWithFile, __ppdCacheCreateWithPPD, __ppdCacheDestroy, 
+                       __ppdCacheGetBin, __ppdCacheGetFinishingOptions, __ppdCacheGetFinishingValues, 
                        __ppdCacheGetInputSlot, __ppdCacheGetMediaType, __ppdCacheGetOutputBin, 
                        __ppdCacheGetPageSize, __ppdCacheGetSize, __ppdCacheGetSource, 
                        __ppdCacheGetType, __ppdCacheWriteFile, __ppdCreateFromIPP, 

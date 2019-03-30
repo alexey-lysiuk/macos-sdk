@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: 2554E8DD-7E40-3763-A528-3BC3666AFC09', 'x86_64h: B74013FA-621B-30F9-8CFE-3290FF63C2B8' ]
-platform:        macosx
+uuids:           [ 'x86_64: 3B9084AB-04EA-3294-9A9D-99929795C5CB', 'x86_64h: 7A8DBE88-C7D4-39B4-87E6-508DA68BDAA8' ]
+platform:        zippered
 install-name:    /System/Library/Frameworks/CoreData.framework/Versions/A/CoreData
-current-version: 866.1
+current-version: 866.5
 exports:         
   - archs:           [ x86_64, x86_64h ]
     symbols:         [ _NSAddedPersistentStoresKey, _NSAffectedObjectsErrorKey, _NSAffectedStoresErrorKey, 

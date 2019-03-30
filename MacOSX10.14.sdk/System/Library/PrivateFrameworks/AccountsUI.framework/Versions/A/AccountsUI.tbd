@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F86129B4-A5C7-3B0E-A579-084A0FB0DBE2' ]
+uuids:           [ 'x86_64: 929DC815-A1C6-3E58-B8CE-BAFDD3007C28' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AccountsUI.framework/Versions/A/AccountsUI
 exports:         
@@ -15,5 +15,5 @@ exports:
                        ACUIAccountsTableViewController, ACUICertificatePanelManager, 
                        ACUICredentialPromptViewController, ACUIInvisibleButton, ACUIPluginManager, 
                        ACUISetupManagerViewController, ACUITableCellView, ACUIUtilities, 
-                       ACUIViewController, ACUIWebLoginViewController ]
+                       ACUIViewController, ACUIWebAuthViewController, ACUIWebLoginViewController ]
 ...

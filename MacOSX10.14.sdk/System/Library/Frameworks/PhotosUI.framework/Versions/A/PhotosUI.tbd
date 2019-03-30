@@ -1,14 +1,15 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 28919CF1-CFD5-3092-A775-9DD7BD4E653B' ]
+uuids:           [ 'x86_64: 7316531A-997E-3B81-BB65-2C62C906FF31' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/PhotosUI.framework/Versions/A/PhotosUI
-current-version: 3411.5.190
+current-version: 3441.7.100
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _PHProjectCategoryBook, _PHProjectCategoryCalendar, _PHProjectCategoryCard, 
                        _PHProjectCategoryOther, _PHProjectCategoryPrints, _PHProjectCategorySlideshow, 
-                       _PHProjectCategoryWallDecor, _PHProjectTypeUndefined, _PUEditingFullsizeImageDataTypeIdentifer, 
+                       _PHProjectCategoryUndefined, _PHProjectCategoryWallDecor, 
+                       _PHProjectTypeUndefined, _PUEditingFullsizeImageDataTypeIdentifer, 
                        _PUEditingInitialPayloadTypeIdentifier, _PUErrorDomain, _PUProjectExtensionPointIdentifier, 
                        _PhotosUIVersionNumber, _PhotosUIVersionString, _ph_dispatch_on_main_queue ]
     objc-classes:    [ PHEditingExtensionContext, PHEditingRemoteViewController, 

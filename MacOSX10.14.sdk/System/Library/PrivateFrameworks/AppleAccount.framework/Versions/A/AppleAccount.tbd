@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 64AB7795-8B90-30EF-B911-8FACBF3D5F4E' ]
-platform:        macosx
+uuids:           [ 'x86_64: BCEC6C17-D265-3965-B1EC-7F3515CD0113' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/AppleAccount.framework/Versions/A/AppleAccount
 exports:         
   - archs:           [ x86_64 ]
@@ -172,20 +172,20 @@ exports:
                        AAFMIPAuthenticateResponse, AAFamilyDetailsRequest, AAFamilyDetailsResponse, 
                        AAFamilyEligibilityRequest, AAFamilyEligibilityResponse, AAFamilyInvite, 
                        AAFamilyMember, AAFamilyMemberDetailsUIRequest, AAFamilyRequest, 
-                       AAFollowUpController, AAGenericTermsUIRequest, AAGenericTermsUIResponse, 
-                       AAGrandSlamSigner, AAHighSecurityAccountAlert, AAInitiateEmailVettingRequest, 
-                       AAInviteFamilyMemberRequest, AAKeychainManager, AALocalization, 
-                       AALoginContextManager, AALoginContextTransientStorage, AALoginDelegatesRequest, 
-                       AALoginDelegatesResponse, AALoginOrCreateDelegatesRequest, 
-                       AALoginPluginManager, AAMobileMeOfferResponse, AAPasswordSecurityUIRequest, 
-                       AAPaymentSummaryRequest, AAPaymentSummaryResponse, AAPaymentUIRequest, 
-                       AAPersonalInfoUIRequest, AAProvisioningResponse, AAQuotaDepletionAlert, 
-                       AARegionInfo, AARegisterRequest, AARemoteServer, AARemoteServerConfigurationCache, 
-                       AARequest, AARequester, AAResponse, AASecondaryAuthenticationRequest, 
-                       AASecondaryAuthenticationResponse, AASetupAssistantAuthenticateRequest, 
-                       AASetupAssistantConfigRequest, AASetupAssistantConfigResponse, 
-                       AASetupAssistantCreateRequest, AASetupAssistantCreateResponse, 
-                       AASetupAssistantService, AASetupAssistantSetupDelegatesRequest, 
+                       AAFollowUpController, AAFollowUpUtilities, AAGenericTermsUIRequest, 
+                       AAGenericTermsUIResponse, AAGrandSlamSigner, AAHighSecurityAccountAlert, 
+                       AAInitiateEmailVettingRequest, AAInviteFamilyMemberRequest, 
+                       AAKeychainManager, AALocalization, AALoginContextManager, 
+                       AALoginContextTransientStorage, AALoginDelegatesRequest, AALoginDelegatesResponse, 
+                       AALoginOrCreateDelegatesRequest, AALoginPluginManager, AAMobileMeOfferResponse, 
+                       AAPasswordSecurityUIRequest, AAPaymentSummaryRequest, AAPaymentSummaryResponse, 
+                       AAPaymentUIRequest, AAPersonalInfoUIRequest, AAProvisioningResponse, 
+                       AAQuotaDepletionAlert, AARegionInfo, AARegisterRequest, AARemoteServer, 
+                       AARemoteServerConfigurationCache, AARequest, AARequester, 
+                       AAResponse, AASecondaryAuthenticationRequest, AASecondaryAuthenticationResponse, 
+                       AASetupAssistantAuthenticateRequest, AASetupAssistantConfigRequest, 
+                       AASetupAssistantConfigResponse, AASetupAssistantCreateRequest, 
+                       AASetupAssistantCreateResponse, AASetupAssistantService, AASetupAssistantSetupDelegatesRequest, 
                        AASetupAssistantSetupDelegatesResponse, AASetupAssistantTermsFetchRequest, 
                        AASetupAssistantUpdateRequest, AASetupAssistantUpgradeStatusRequest, 
                        AASetupAssistantUpgradeStatusResponse, AASigningSession, AASigningSessionRequest, 

@@ -2,7 +2,7 @@
  * Copyright (c) 2000-2005 Apple Computer, Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
- * 
+ *
  * This file contains Original Code and/or Modifications of Original Code
  * as defined in and that are subject to the Apple Public Source License
  * Version 2.0 (the 'License'). You may not use this file except in
@@ -11,10 +11,10 @@
  * unlawful or unlicensed copies of an Apple operating system, or to
  * circumvent, violate, or enable the circumvention or violation of, any
  * terms of an Apple operating system software license agreement.
- * 
+ *
  * Please obtain a copy of the License at
  * http://www.opensource.apple.com/apsl/ and read it before using this file.
- * 
+ *
  * The Original Code and all software distributed under the License are
  * distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
  * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
@@ -22,7 +22,7 @@
  * FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.
  * Please see the License for the specific language governing rights and
  * limitations under the License.
- * 
+ *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_END@
  */
 
@@ -48,23 +48,23 @@
  * and the default ones are being returned instead.
  */
 
-typedef natural_t	task_policy_flavor_t;
-typedef integer_t	*task_policy_t;
+typedef natural_t       task_policy_flavor_t;
+typedef integer_t       *task_policy_t;
 
 /*
-kern_return_t	task_policy_set(
-					task_t					task,
-					task_policy_flavor_t	flavor,
-					task_policy_t			policy_info,
-					mach_msg_type_number_t	count);
-
-kern_return_t	task_policy_get(
-					task_t					task,
-					task_policy_flavor_t	flavor,
-					task_policy_t			policy_info,
-					mach_msg_type_number_t	*count,
-					boolean_t				*get_default);
-*/
+ *  kern_return_t	task_policy_set(
+ *                                       task_t					task,
+ *                                       task_policy_flavor_t	flavor,
+ *                                       task_policy_t			policy_info,
+ *                                       mach_msg_type_number_t	count);
+ *
+ *  kern_return_t	task_policy_get(
+ *                                       task_t					task,
+ *                                       task_policy_flavor_t	flavor,
+ *                                       task_policy_t			policy_info,
+ *                                       mach_msg_type_number_t	*count,
+ *                                       boolean_t				*get_default);
+ */
 
 /*
  * Defined flavors.
@@ -101,14 +101,14 @@ kern_return_t	task_policy_get(
  * a time with this designation, which is assigned FCFS.
  */
 
-#define TASK_CATEGORY_POLICY		1
+#define TASK_CATEGORY_POLICY            1
 
-#define TASK_SUPPRESSION_POLICY		3
-#define TASK_POLICY_STATE		4
-#define TASK_BASE_QOS_POLICY		8
-#define TASK_OVERRIDE_QOS_POLICY	9
-#define TASK_BASE_LATENCY_QOS_POLICY	10
-#define TASK_BASE_THROUGHPUT_QOS_POLICY	11
+#define TASK_SUPPRESSION_POLICY         3
+#define TASK_POLICY_STATE               4
+#define TASK_BASE_QOS_POLICY            8
+#define TASK_OVERRIDE_QOS_POLICY        9
+#define TASK_BASE_LATENCY_QOS_POLICY    10
+#define TASK_BASE_THROUGHPUT_QOS_POLICY 11
 
 
 enum task_role {
@@ -124,44 +124,43 @@ enum task_role {
 	TASK_DARWINBG_APPLICATION       = 8,
 };
 
-typedef integer_t	task_role_t;
+typedef integer_t       task_role_t;
 
 struct task_category_policy {
-	task_role_t		role;
+	task_role_t             role;
 };
 
-typedef struct task_category_policy		task_category_policy_data_t;
-typedef struct task_category_policy		*task_category_policy_t;
+typedef struct task_category_policy             task_category_policy_data_t;
+typedef struct task_category_policy             *task_category_policy_t;
 
-#define TASK_CATEGORY_POLICY_COUNT	((mach_msg_type_number_t) \
+#define TASK_CATEGORY_POLICY_COUNT      ((mach_msg_type_number_t) \
 	(sizeof (task_category_policy_data_t) / sizeof (integer_t)))
 
 
 enum task_latency_qos {
 	LATENCY_QOS_TIER_UNSPECIFIED = 0x0,
-	LATENCY_QOS_TIER_0 = ((0xFF<<16) | 1),
-	LATENCY_QOS_TIER_1 = ((0xFF<<16) | 2),
-	LATENCY_QOS_TIER_2 = ((0xFF<<16) | 3),
-	LATENCY_QOS_TIER_3 = ((0xFF<<16) | 4),
-	LATENCY_QOS_TIER_4 = ((0xFF<<16) | 5),
-	LATENCY_QOS_TIER_5 = ((0xFF<<16) | 6)
-
+	LATENCY_QOS_TIER_0 = ((0xFF << 16) | 1),
+	LATENCY_QOS_TIER_1 = ((0xFF << 16) | 2),
+	LATENCY_QOS_TIER_2 = ((0xFF << 16) | 3),
+	LATENCY_QOS_TIER_3 = ((0xFF << 16) | 4),
+	LATENCY_QOS_TIER_4 = ((0xFF << 16) | 5),
+	LATENCY_QOS_TIER_5 = ((0xFF << 16) | 6)
 };
-typedef integer_t	task_latency_qos_t;
+typedef integer_t       task_latency_qos_t;
 enum task_throughput_qos {
 	THROUGHPUT_QOS_TIER_UNSPECIFIED = 0x0,
-	THROUGHPUT_QOS_TIER_0 = ((0xFE<<16) | 1),
-	THROUGHPUT_QOS_TIER_1 = ((0xFE<<16) | 2),
-	THROUGHPUT_QOS_TIER_2 = ((0xFE<<16) | 3),
-	THROUGHPUT_QOS_TIER_3 = ((0xFE<<16) | 4),
-	THROUGHPUT_QOS_TIER_4 = ((0xFE<<16) | 5),
-	THROUGHPUT_QOS_TIER_5 = ((0xFE<<16) | 6),
+	THROUGHPUT_QOS_TIER_0 = ((0xFE << 16) | 1),
+	THROUGHPUT_QOS_TIER_1 = ((0xFE << 16) | 2),
+	THROUGHPUT_QOS_TIER_2 = ((0xFE << 16) | 3),
+	THROUGHPUT_QOS_TIER_3 = ((0xFE << 16) | 4),
+	THROUGHPUT_QOS_TIER_4 = ((0xFE << 16) | 5),
+	THROUGHPUT_QOS_TIER_5 = ((0xFE << 16) | 6),
 };
 
 #define LATENCY_QOS_LAUNCH_DEFAULT_TIER LATENCY_QOS_TIER_3
 #define THROUGHPUT_QOS_LAUNCH_DEFAULT_TIER THROUGHPUT_QOS_TIER_3
 
-typedef integer_t	task_throughput_qos_t;
+typedef integer_t       task_throughput_qos_t;
 
 struct task_qos_policy {
 	task_latency_qos_t task_latency_qos_tier;
@@ -169,12 +168,12 @@ struct task_qos_policy {
 };
 
 typedef struct task_qos_policy *task_qos_policy_t;
-#define TASK_QOS_POLICY_COUNT	((mach_msg_type_number_t) \
+#define TASK_QOS_POLICY_COUNT   ((mach_msg_type_number_t) \
 	(sizeof (struct task_qos_policy) / sizeof (integer_t)))
 
 /* These should be removed - they belong in proc_info.h */
 #define PROC_FLAG_DARWINBG           0x8000    /* process in darwin background */
-#define PROC_FLAG_EXT_DARWINBG		 0x10000   /* process in darwin background - external enforcement */
+#define PROC_FLAG_EXT_DARWINBG           0x10000   /* process in darwin background - external enforcement */
 #define PROC_FLAG_IOS_APPLEDAEMON    0x20000   /* process is apple ios daemon */
 #define PROC_FLAG_IOS_IMPPROMOTION   0x80000   /* process is apple ios daemon */
 #define PROC_FLAG_ADAPTIVE           0x100000  /* Process is adaptive */
@@ -187,4 +186,4 @@ typedef struct task_qos_policy *task_qos_policy_t;
 
 
 
-#endif	/* _MACH_TASK_POLICY_H_ */
+#endif  /* _MACH_TASK_POLICY_H_ */

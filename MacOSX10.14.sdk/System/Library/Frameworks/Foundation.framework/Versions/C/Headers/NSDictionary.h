@@ -17,11 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (nullable ObjectType)objectForKey:(KeyType)aKey;
 - (NSEnumerator<KeyType> *)keyEnumerator;
 - (instancetype)init NS_DESIGNATED_INITIALIZER;
-#if TARGET_OS_WIN32
-- (instancetype)initWithObjects:(const ObjectType _Nonnull [_Nullable])objects forKeys:(const KeyType _Nonnull [_Nullable])keys count:(NSUInteger)cnt;
-#else
+
 - (instancetype)initWithObjects:(const ObjectType _Nonnull [_Nullable])objects forKeys:(const KeyType <NSCopying> _Nonnull [_Nullable])keys count:(NSUInteger)cnt NS_DESIGNATED_INITIALIZER;
-#endif
+
 - (nullable instancetype)initWithCoder:(NSCoder *)aDecoder NS_DESIGNATED_INITIALIZER;
 
 @end
@@ -78,11 +76,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)dictionary;
 + (instancetype)dictionaryWithObject:(ObjectType)object forKey:(KeyType <NSCopying>)key;
-#if TARGET_OS_WIN32
-+ (instancetype)dictionaryWithObjects:(const ObjectType _Nonnull [_Nullable])objects forKeys:(const KeyType _Nonnull [_Nullable])keys count:(NSUInteger)cnt;
-#else
+
 + (instancetype)dictionaryWithObjects:(const ObjectType _Nonnull [_Nullable])objects forKeys:(const KeyType <NSCopying> _Nonnull [_Nullable])keys count:(NSUInteger)cnt;
-#endif
+
 
 + (instancetype)dictionaryWithObjectsAndKeys:(id)firstObject, ... NS_REQUIRES_NIL_TERMINATION NS_SWIFT_UNAVAILABLE("Use dictionary literals instead");
 

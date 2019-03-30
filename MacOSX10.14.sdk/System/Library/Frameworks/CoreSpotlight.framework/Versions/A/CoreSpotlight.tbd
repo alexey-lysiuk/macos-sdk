@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CE58BBD2-CB65-365F-A904-DB30B24E7983' ]
-platform:        macosx
+uuids:           [ 'x86_64: 4D7D6140-E480-3DC0-AE84-DA7C37A35669' ]
+platform:        zippered
 install-name:    /System/Library/Frameworks/CoreSpotlight.framework/Versions/A/CoreSpotlight
 objc-constraint: none
 exports:         

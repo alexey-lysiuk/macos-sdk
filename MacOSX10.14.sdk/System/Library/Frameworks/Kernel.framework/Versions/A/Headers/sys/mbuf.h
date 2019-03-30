@@ -76,8 +76,8 @@
  * Version 2.0.
  */
 
-#ifndef	_SYS_MBUF_H_
-#define	_SYS_MBUF_H_
+#ifndef _SYS_MBUF_H_
+#define _SYS_MBUF_H_
 
 #include <sys/appleapiopts.h>
 #include <sys/cdefs.h>
@@ -89,113 +89,113 @@
 
 
 /* mbuf types */
-#define	MT_FREE		0	/* should be on free list */
-#define	MT_DATA		1	/* dynamic (data) allocation */
-#define	MT_HEADER	2	/* packet header */
-#define	MT_SOCKET	3	/* socket structure */
-#define	MT_PCB		4	/* protocol control block */
-#define	MT_RTABLE	5	/* routing tables */
-#define	MT_HTABLE	6	/* IMP host tables */
-#define	MT_ATABLE	7	/* address resolution tables */
-#define	MT_SONAME	8	/* socket name */
-#define	MT_SOOPTS	10	/* socket options */
-#define	MT_FTABLE	11	/* fragment reassembly header */
-#define	MT_RIGHTS	12	/* access rights */
-#define	MT_IFADDR	13	/* interface address */
-#define	MT_CONTROL	14	/* extra-data protocol message */
-#define	MT_OOBDATA	15	/* expedited data  */
-#define	MT_TAG		16	/* volatile metadata associated to pkts */
-#define	MT_MAX		32	/* enough? */
+#define MT_FREE         0       /* should be on free list */
+#define MT_DATA         1       /* dynamic (data) allocation */
+#define MT_HEADER       2       /* packet header */
+#define MT_SOCKET       3       /* socket structure */
+#define MT_PCB          4       /* protocol control block */
+#define MT_RTABLE       5       /* routing tables */
+#define MT_HTABLE       6       /* IMP host tables */
+#define MT_ATABLE       7       /* address resolution tables */
+#define MT_SONAME       8       /* socket name */
+#define MT_SOOPTS       10      /* socket options */
+#define MT_FTABLE       11      /* fragment reassembly header */
+#define MT_RIGHTS       12      /* access rights */
+#define MT_IFADDR       13      /* interface address */
+#define MT_CONTROL      14      /* extra-data protocol message */
+#define MT_OOBDATA      15      /* expedited data  */
+#define MT_TAG          16      /* volatile metadata associated to pkts */
+#define MT_MAX          32      /* enough? */
 
 
 /*
  * Mbuf statistics (legacy).
  */
 struct mbstat {
-	u_int32_t	m_mbufs;	/* mbufs obtained from page pool */
-	u_int32_t	m_clusters;	/* clusters obtained from page pool */
-	u_int32_t	m_spare;	/* spare field */
-	u_int32_t	m_clfree;	/* free clusters */
-	u_int32_t	m_drops;	/* times failed to find space */
-	u_int32_t	m_wait;		/* times waited for space */
-	u_int32_t	m_drain;	/* times drained protocols for space */
-	u_short		m_mtypes[256];	/* type specific mbuf allocations */
-	u_int32_t	m_mcfail;	/* times m_copym failed */
-	u_int32_t	m_mpfail;	/* times m_pullup failed */
-	u_int32_t	m_msize;	/* length of an mbuf */
-	u_int32_t	m_mclbytes;	/* length of an mbuf cluster */
-	u_int32_t	m_minclsize;	/* min length of data to allocate a cluster */
-	u_int32_t	m_mlen;		/* length of data in an mbuf */
-	u_int32_t	m_mhlen;	/* length of data in a header mbuf */
-	u_int32_t	m_bigclusters;	/* clusters obtained from page pool */
-	u_int32_t	m_bigclfree;	/* free clusters */
-	u_int32_t	m_bigmclbytes;	/* length of an mbuf cluster */
+	u_int32_t       m_mbufs;        /* mbufs obtained from page pool */
+	u_int32_t       m_clusters;     /* clusters obtained from page pool */
+	u_int32_t       m_spare;        /* spare field */
+	u_int32_t       m_clfree;       /* free clusters */
+	u_int32_t       m_drops;        /* times failed to find space */
+	u_int32_t       m_wait;         /* times waited for space */
+	u_int32_t       m_drain;        /* times drained protocols for space */
+	u_short         m_mtypes[256];  /* type specific mbuf allocations */
+	u_int32_t       m_mcfail;       /* times m_copym failed */
+	u_int32_t       m_mpfail;       /* times m_pullup failed */
+	u_int32_t       m_msize;        /* length of an mbuf */
+	u_int32_t       m_mclbytes;     /* length of an mbuf cluster */
+	u_int32_t       m_minclsize;    /* min length of data to allocate a cluster */
+	u_int32_t       m_mlen;         /* length of data in an mbuf */
+	u_int32_t       m_mhlen;        /* length of data in a header mbuf */
+	u_int32_t       m_bigclusters;  /* clusters obtained from page pool */
+	u_int32_t       m_bigclfree;    /* free clusters */
+	u_int32_t       m_bigmclbytes;  /* length of an mbuf cluster */
 };
 
 /* Compatibillity with 10.3 */
 struct ombstat {
-	u_int32_t	m_mbufs;	/* mbufs obtained from page pool */
-	u_int32_t	m_clusters;	/* clusters obtained from page pool */
-	u_int32_t	m_spare;	/* spare field */
-	u_int32_t	m_clfree;	/* free clusters */
-	u_int32_t	m_drops;	/* times failed to find space */
-	u_int32_t	m_wait;		/* times waited for space */
-	u_int32_t	m_drain;	/* times drained protocols for space */
-	u_short		m_mtypes[256];	/* type specific mbuf allocations */
-	u_int32_t	m_mcfail;	/* times m_copym failed */
-	u_int32_t	m_mpfail;	/* times m_pullup failed */
-	u_int32_t	m_msize;	/* length of an mbuf */
-	u_int32_t	m_mclbytes;	/* length of an mbuf cluster */
-	u_int32_t	m_minclsize;	/* min length of data to allocate a cluster */
-	u_int32_t	m_mlen;		/* length of data in an mbuf */
-	u_int32_t	m_mhlen;	/* length of data in a header mbuf */
+	u_int32_t       m_mbufs;        /* mbufs obtained from page pool */
+	u_int32_t       m_clusters;     /* clusters obtained from page pool */
+	u_int32_t       m_spare;        /* spare field */
+	u_int32_t       m_clfree;       /* free clusters */
+	u_int32_t       m_drops;        /* times failed to find space */
+	u_int32_t       m_wait;         /* times waited for space */
+	u_int32_t       m_drain;        /* times drained protocols for space */
+	u_short         m_mtypes[256];  /* type specific mbuf allocations */
+	u_int32_t       m_mcfail;       /* times m_copym failed */
+	u_int32_t       m_mpfail;       /* times m_pullup failed */
+	u_int32_t       m_msize;        /* length of an mbuf */
+	u_int32_t       m_mclbytes;     /* length of an mbuf cluster */
+	u_int32_t       m_minclsize;    /* min length of data to allocate a cluster */
+	u_int32_t       m_mlen;         /* length of data in an mbuf */
+	u_int32_t       m_mhlen;        /* length of data in a header mbuf */
 };
 
 /*
  * mbuf class statistics.
  */
-#define	MAX_MBUF_CNAME	15
+#define MAX_MBUF_CNAME  15
 
 
 typedef struct mb_class_stat {
-	char		mbcl_cname[MAX_MBUF_CNAME + 1]; /* class name */
-	u_int32_t	mbcl_size;	/* buffer size */
-	u_int32_t	mbcl_total;	/* # of buffers created */
-	u_int32_t	mbcl_active;	/* # of active buffers */
-	u_int32_t	mbcl_infree;	/* # of available buffers */
-	u_int32_t	mbcl_slab_cnt;	/* # of available slabs */
-	u_int32_t	mbcl_pad;	/* padding */
-	u_int64_t	mbcl_alloc_cnt;	/* # of times alloc is called */
-	u_int64_t	mbcl_free_cnt;	/* # of times free is called */
-	u_int64_t	mbcl_notified;	/* # of notified wakeups */
-	u_int64_t	mbcl_purge_cnt;	/* # of purges so far */
-	u_int64_t	mbcl_fail_cnt;	/* # of allocation failures */
-	u_int32_t	mbcl_ctotal;	/* total only for this class */
-	u_int32_t	mbcl_release_cnt; /* amount of memory returned */
+	char            mbcl_cname[MAX_MBUF_CNAME + 1]; /* class name */
+	u_int32_t       mbcl_size;      /* buffer size */
+	u_int32_t       mbcl_total;     /* # of buffers created */
+	u_int32_t       mbcl_active;    /* # of active buffers */
+	u_int32_t       mbcl_infree;    /* # of available buffers */
+	u_int32_t       mbcl_slab_cnt;  /* # of available slabs */
+	u_int32_t       mbcl_pad;       /* padding */
+	u_int64_t       mbcl_alloc_cnt; /* # of times alloc is called */
+	u_int64_t       mbcl_free_cnt;  /* # of times free is called */
+	u_int64_t       mbcl_notified;  /* # of notified wakeups */
+	u_int64_t       mbcl_purge_cnt; /* # of purges so far */
+	u_int64_t       mbcl_fail_cnt;  /* # of allocation failures */
+	u_int32_t       mbcl_ctotal;    /* total only for this class */
+	u_int32_t       mbcl_release_cnt; /* amount of memory returned */
 	/*
 	 * Cache layer statistics
 	 */
-	u_int32_t	mbcl_mc_state;	/* cache state (see below) */
-	u_int32_t	mbcl_mc_cached;	/* # of cached buffers */
-	u_int32_t	mbcl_mc_waiter_cnt;  /* # waiters on the cache */
-	u_int32_t	mbcl_mc_wretry_cnt;  /* # of wait retries */
-	u_int32_t	mbcl_mc_nwretry_cnt; /* # of no-wait retry attempts */
-	u_int32_t	mbcl_peak_reported; /* last usage peak reported */
-	u_int32_t	mbcl_reserved[7];    /* for future use */
+	u_int32_t       mbcl_mc_state;  /* cache state (see below) */
+	u_int32_t       mbcl_mc_cached; /* # of cached buffers */
+	u_int32_t       mbcl_mc_waiter_cnt;  /* # waiters on the cache */
+	u_int32_t       mbcl_mc_wretry_cnt;  /* # of wait retries */
+	u_int32_t       mbcl_mc_nwretry_cnt; /* # of no-wait retry attempts */
+	u_int32_t       mbcl_peak_reported; /* last usage peak reported */
+	u_int32_t       mbcl_reserved[7];    /* for future use */
 } mb_class_stat_t;
 
-#define	MCS_DISABLED	0	/* cache is permanently disabled */
-#define	MCS_ONLINE	1	/* cache is online */
-#define	MCS_PURGING	2	/* cache is being purged */
-#define	MCS_OFFLINE	3	/* cache is offline (resizing) */
+#define MCS_DISABLED    0       /* cache is permanently disabled */
+#define MCS_ONLINE      1       /* cache is online */
+#define MCS_PURGING     2       /* cache is being purged */
+#define MCS_OFFLINE     3       /* cache is offline (resizing) */
 
 
 typedef struct mb_stat {
-	u_int32_t	mbs_cnt;	/* number of classes */
-	u_int32_t	mbs_pad;	/* padding */
-	mb_class_stat_t	mbs_class[1];	/* class array */
+	u_int32_t       mbs_cnt;        /* number of classes */
+	u_int32_t       mbs_pad;        /* padding */
+	mb_class_stat_t mbs_class[1];   /* class array */
 } mb_stat_t;
 
 
 
-#endif	/* !_SYS_MBUF_H_ */
+#endif  /* !_SYS_MBUF_H_ */

@@ -26,9 +26,9 @@ NS_CLASS_AVAILABLE_MAC(10_14)
 @property (class, readonly, strong) NSBindingSelectionMarker *notApplicableSelectionMarker NS_AVAILABLE_MAC(10_14);
 @end
 
-APPKIT_EXTERN NSBindingSelectionMarker * NSMultipleValuesMarker NS_DEPRECATED_WITH_REPLACEMENT_MAC("NSBindingSelectionMarker.multipleValuesSelectionMarker", 10_0, API_TO_BE_DEPRECATED);
-APPKIT_EXTERN NSBindingSelectionMarker * NSNoSelectionMarker NS_DEPRECATED_WITH_REPLACEMENT_MAC("NSBindingSelectionMarker.noSelectionMarker", 10_0, API_TO_BE_DEPRECATED);
-APPKIT_EXTERN NSBindingSelectionMarker * NSNotApplicableMarker NS_DEPRECATED_WITH_REPLACEMENT_MAC("NSBindingSelectionMarker.notApplicableSelectionMarker", 10_0, API_TO_BE_DEPRECATED);
+APPKIT_EXTERN id NSMultipleValuesMarker NS_DEPRECATED_WITH_REPLACEMENT_MAC("NSBindingSelectionMarker.multipleValuesSelectionMarker", 10_0, API_TO_BE_DEPRECATED);
+APPKIT_EXTERN id NSNoSelectionMarker NS_DEPRECATED_WITH_REPLACEMENT_MAC("NSBindingSelectionMarker.noSelectionMarker", 10_0, API_TO_BE_DEPRECATED);
+APPKIT_EXTERN id NSNotApplicableMarker NS_DEPRECATED_WITH_REPLACEMENT_MAC("NSBindingSelectionMarker.notApplicableSelectionMarker", 10_0, API_TO_BE_DEPRECATED);
 
 APPKIT_EXTERN BOOL NSIsControllerMarker(__nullable id object);
 
@@ -72,8 +72,8 @@ APPKIT_EXTERN NSBindingInfoKey NSOptionsKey;
 
 @interface NSObject (NSPlaceholders)
 
-+ (void)setDefaultPlaceholder:(nullable id)placeholder forMarker:(nullable NSBindingSelectionMarker *)marker withBinding:(NSBindingName)binding;    // marker can be nil or one of multipleValuesSelectionMarker, noSelectionMarker, notApplicableSelectionMarker
-+ (nullable id)defaultPlaceholderForMarker:(nullable NSBindingSelectionMarker *)marker withBinding:(NSBindingName)binding;    // marker can be nil or one of multipleValuesSelectionMarker, noSelectionMarker, notApplicableSelectionMarker
++ (void)setDefaultPlaceholder:(nullable id)placeholder forMarker:(nullable id)marker withBinding:(NSBindingName)binding;    // marker can be nil or one of multipleValuesSelectionMarker, noSelectionMarker, notApplicableSelectionMarker
++ (nullable id)defaultPlaceholderForMarker:(nullable id)marker withBinding:(NSBindingName)binding;    // marker can be nil or one of multipleValuesSelectionMarker, noSelectionMarker, notApplicableSelectionMarker
 
 @end
 

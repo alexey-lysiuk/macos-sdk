@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CBB79C40-0806-315A-86F4-A66EB1F1D458' ]
+uuids:           [ 'x86_64: 0E83B564-D518-3FA9-A5C9-050AB0E41E39' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SpotlightDaemon.framework/Versions/A/SpotlightDaemon
 exports:         

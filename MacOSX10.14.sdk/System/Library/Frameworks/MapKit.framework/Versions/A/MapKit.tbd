@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F816FC0F-0941-3FD3-8A3F-5C18CEBCDEBE' ]
+uuids:           [ 'x86_64: 6EE5D4EA-E4AD-39F1-9635-126F8CEE29C7' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/MapKit.framework/Versions/A/MapKit
 current-version: 0
@@ -138,11 +138,13 @@ exports:
                        MKMapSnapshotter, MKMapView, MKModernUserLocationView, MKMultiPartAttributedString, 
                        MKMultiPartLabel, MKMultiPoint, MKOverlayPathRenderer, MKOverlayRenderer, 
                        MKPinAnnotationView, MKPlaceActionManager, MKPlaceActivityProvider, 
-                       MKPlaceCardActionItem, MKPlaceCardHeaderViewController, MKPlaceLocVCardActivityProvider, 
-                       MKPlaceMapItemActivityProvider, MKPlaceReservationRowView, 
+                       MKPlaceCardActionItem, MKPlaceCardHeaderViewController, MKPlaceCompleteHoursView, 
+                       MKPlaceHoursView, MKPlaceHoursViewController, MKPlaceHoursViewHelper, 
+                       MKPlaceLocVCardActivityProvider, MKPlaceMapItemActivityProvider, 
+                       MKPlaceMessageHoursViewController, MKPlaceReservationRowView, 
                        MKPlaceSectionItemView, MKPlaceSectionRowView, MKPlaceSectionView, 
-                       MKPlaceSectionViewController, MKPlaceTextActivityProvider, 
-                       MKPlaceURLActivityProvider, MKPlaceUnfinishedViewController, 
+                       MKPlaceSectionViewController, MKPlaceServiceHoursView, MKPlaceServiceHoursViewController, 
+                       MKPlaceTextActivityProvider, MKPlaceURLActivityProvider, MKPlaceUnfinishedViewController, 
                        MKPlacemark, MKPointAnnotation, MKPolygon, MKPolygonRenderer, 
                        MKPolyline, MKPolylineRenderer, MKResizableImage, MKResizedArtworkDataSourceCache, 
                        MKRoute, MKRouteActivityProvider, MKRouteStep, MKRouteTextActivityProvider, 
@@ -155,10 +157,11 @@ exports:
                        MKTransitInfoLabelView, MKTransitLineItemViewController, MKTransitShield, 
                        MKUILabelNoAutoFontSmoothingBackground, MKURLBuilder, MKURLHandler, 
                        MKURLParser, MKURLSerializer, MKUserLocation, MKUserLocationView, 
-                       MKVibrancyAwareLabelView, MKViewWithHairline, MKZoomSegmentedControl, 
-                       NVMapScaleSegment, _MKBalloonCalloutView, _MKClickableTableView, 
-                       _MKClickableTableViewController, _MKContactPlaceItem, _MKCustomFeatureStore, 
-                       _MKLabelMarkerItem, _MKLocalSearchExternalTransitLookupParameters, 
+                       MKVibrancyAwareLabelView, MKViewWithHairline, MKWalletMerchantLookupRequest, 
+                       MKWalletMerchantResponse, MKWalletMerchantStylingInfo, MKWalletRAPReport, 
+                       MKZoomSegmentedControl, NVMapScaleSegment, _MKBalloonCalloutView, 
+                       _MKClickableTableView, _MKClickableTableViewController, _MKContactPlaceItem, 
+                       _MKCustomFeatureStore, _MKLabelMarkerItem, _MKLocalSearchExternalTransitLookupParameters, 
                        _MKLocalSearchMerchantParameters, _MKLocalizedHoursBuilder, 
                        _MKLocationShifter, _MKMapItemAttribution, _MKMapItemPhotosAttribution, 
                        _MKMapItemPlaceAttribution, _MKMapItemPlaceItem, _MKMapItemReviewsAttribution, 

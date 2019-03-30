@@ -66,6 +66,8 @@ SK_EXTERN_CLASS_AVAILABLE(10_7, 3_0) @interface SKProduct : NSObject {
 
 @property(nonatomic, readonly, nullable) NSString *subscriptionGroupIdentifier NS_AVAILABLE(10_14, 12_0);
 
+@property(nonatomic, readonly) NSArray<SKProductDiscount *> *discounts NS_AVAILABLE(10_14_4, 12_2);
+
 @end
 
 NS_ASSUME_NONNULL_END

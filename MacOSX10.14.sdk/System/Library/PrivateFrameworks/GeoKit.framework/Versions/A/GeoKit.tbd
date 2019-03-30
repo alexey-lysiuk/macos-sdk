@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F200299E-F1F8-3699-BEA0-61FE2895DE77' ]
+uuids:           [ 'x86_64: 82AE6879-02B3-36C6-8D43-BD14EACC927A' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/GeoKit.framework/Versions/A/GeoKit
 exports:         

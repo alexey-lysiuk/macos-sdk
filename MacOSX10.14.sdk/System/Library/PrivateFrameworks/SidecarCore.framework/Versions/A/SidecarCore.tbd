@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: ED88E1A7-F24F-32A4-A0B7-933A01EF669B' ]
+uuids:           [ 'x86_64: 8486E4D8-0E95-37C0-9BE8-9D9AD02C8CB6' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SidecarCore.framework/Versions/A/SidecarCore
 current-version: 38.1

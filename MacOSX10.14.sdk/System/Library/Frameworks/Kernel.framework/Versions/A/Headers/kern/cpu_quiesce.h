@@ -31,4 +31,3 @@
 
 
 #endif /* _KERN_CPU_QUIESCE_H_ */
-

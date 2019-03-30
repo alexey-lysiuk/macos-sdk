@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EED5BC9B-CE8D-343C-BCDC-04A79F704828' ]
-platform:        macosx
+uuids:           [ 'x86_64: 90F4626B-F9F6-377C-AA62-B8C23E857244' ]
+platform:        zippered
 install-name:    /System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration
-current-version: 963.200.27
+current-version: 963.250.1
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

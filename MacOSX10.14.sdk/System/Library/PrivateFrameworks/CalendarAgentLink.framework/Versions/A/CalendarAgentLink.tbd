@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3741CC99-814F-3E74-97A7-B658D8DB5C72' ]
+uuids:           [ 'x86_64: 177A3F0A-A52B-3B32-8032-038881079025' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CalendarAgentLink.framework/Versions/A/CalendarAgentLink
 current-version: 326

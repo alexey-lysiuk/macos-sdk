@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8C7550A3-3036-3311-BA9F-3D1349228E2B' ]
+uuids:           [ 'x86_64: DCFBEB8D-370E-393A-AB23-7B0841861CAF' ]
 platform:        macosx
 install-name:    /usr/lib/libAudioIssueDetector.dylib
 exports:         

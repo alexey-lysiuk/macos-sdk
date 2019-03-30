@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 65EF867E-81EB-3D62-9785-C6A4644F50D4' ]
-platform:        macosx
+uuids:           [ 'x86_64: 64B7911E-E56A-3501-BA92-AE326EFEE9C0' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/PhysicsKit.framework/Versions/A/PhysicsKit
 exports:         
   - archs:           [ x86_64 ]

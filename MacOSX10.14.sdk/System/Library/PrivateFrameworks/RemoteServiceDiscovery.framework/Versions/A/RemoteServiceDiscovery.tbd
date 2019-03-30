@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 79F17D52-38B4-360E-88AC-CF1E3944CA7E' ]
+uuids:           [ 'x86_64: 937941A3-23E9-3DB4-B934-C8002EF1179D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/RemoteServiceDiscovery.framework/Versions/A/RemoteServiceDiscovery
-current-version: 1336.220.5
+current-version: 1336.251.2
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _bridge_version_compare, _bridge_version_copy_current_string, 
@@ -33,6 +33,7 @@ exports:
                        _remote_service_copy_property, _remote_service_create_connected_socket, 
                        _remote_service_get_name, _remote_service_get_version, _remote_service_get_xpc_remote_connection_version_flags, 
                        _remote_service_listen, _remote_service_listen_with_device, 
-                       _remote_service_supports_feature, _remote_socket_create_connected_ipv6_pair, 
-                       _remote_socket_poll_connect_async, _remote_socket_poll_connect_sync ]
+                       _remote_service_set_connect_timeout, _remote_service_supports_feature, 
+                       _remote_socket_create_connected_ipv6_pair, _remote_socket_poll_connect_async, 
+                       _remote_socket_poll_connect_sync ]
 ...

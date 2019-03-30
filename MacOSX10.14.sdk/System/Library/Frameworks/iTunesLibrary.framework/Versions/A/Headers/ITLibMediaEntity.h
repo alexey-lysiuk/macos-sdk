@@ -1,6 +1,6 @@
 /*!
 	@file		ITLibMediaEntity.h
-	@copyright	© 2012-2016 Apple Inc.
+	@copyright	© 2012-2019 Apple Inc.
  */
 
 #import <Foundation/Foundation.h>
@@ -40,7 +40,7 @@ ITLIB_EXPORT @interface ITLibMediaEntity : NSObject
 	@param properties A set of keys for the properties that will be enumerated, or nil to enumerate all properties.
 	@param block A block object that executes for each property in the properties set.
  */
-- (void) enumerateValuesForProperties:(NSSet<NSString *> *) properties usingBlock: (void (^)(NSString *property, id value, BOOL *stop)) block;
+- (void) enumerateValuesForProperties:(NSSet<NSString *> * _Nullable) properties usingBlock: (void (^)(NSString *property, id value, BOOL *stop)) block;
 
 /*!
 	@abstract Executes a provided block with the fetched values for all properties in the entity except for the provided set.
@@ -52,7 +52,7 @@ ITLIB_EXPORT @interface ITLibMediaEntity : NSObject
 	@param properties A set of property keys that should NOT be enumerated, or nil to enumerate all properties.
 	@param block A block object that executes for each property except for the ones in the properties set.
  */
-- (void) enumerateValuesExceptForProperties:(NSSet<NSString *> *) properties usingBlock: (void (^)(NSString *property, id value, BOOL *stop)) block;
+- (void) enumerateValuesExceptForProperties:(NSSet<NSString *> * _Nullable) properties usingBlock: (void (^)(NSString *property, id value, BOOL *stop)) block;
 
 @end
 

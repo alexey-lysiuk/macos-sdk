@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E23D6B34-8930-304D-9F30-AC7FCAAAD98E' ]
-platform:        macosx
+uuids:           [ 'x86_64: A65D5411-E5EE-3974-86AA-BB9129D560A1' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/FMF.framework/Versions/A/FMF
 exports:         
   - archs:           [ x86_64 ]

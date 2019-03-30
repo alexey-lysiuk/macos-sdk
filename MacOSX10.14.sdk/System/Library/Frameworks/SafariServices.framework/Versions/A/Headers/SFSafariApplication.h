@@ -25,6 +25,9 @@ SF_CLASS_AVAILABLE_MAC_SAFARI(10_0)
 /// Calls the completion handler with the active browser window.
 + (void)getActiveWindowWithCompletionHandler:(void (^)(SFSafariWindow * _Nullable activeWindow))completionHandler;
 
+/// Calls the completion handler with all currently open windows ordered front to back.
++ (void)getAllWindowsWithCompletionHandler:(void (^)(NSArray<SFSafariWindow *> *windows))completionHandler SF_AVAILABLE_MAC_SAFARI(12_1);
+
 /// Opens a new window with a tab containing the URL to pass in.
 + (void)openWindowWithURL:(NSURL *)url completionHandler:(void (^ _Nullable)(SFSafariWindow * _Nullable window))completionHandler;
 

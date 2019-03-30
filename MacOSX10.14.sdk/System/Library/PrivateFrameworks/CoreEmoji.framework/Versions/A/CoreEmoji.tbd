@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E909BE8D-AE0C-327E-BE0A-D60B1F4012A4' ]
-platform:        macosx
+uuids:           [ 'x86_64: 90ACD3F0-1542-3094-A1F6-FF2F508A8561' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/CoreEmoji.framework/Versions/A/CoreEmoji
-current-version: 69.19.8
+current-version: 69.19.9
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CEMCopyEmojiTokens, _CEMCreateEmojiCharacterSet, _CEMCreateEmojiLocaleData, 

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FC3855E2-C4F2-318C-A2B3-B006E9875D79' ]
+uuids:           [ 'x86_64: A18363DD-BEA0-3062-A32B-CB7D607F8C08' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AutoBugCaptureCore.framework/Versions/A/AutoBugCaptureCore
-current-version: 820.227.2
+current-version: 820.255.1
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _AWDSymptomsDiagnosticIncidentEventReadFrom, _AWDSymptomsDiagnosticIncidentReportReadFrom, 

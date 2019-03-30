@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 291C1310-57C4-34C4-A887-A574C1AFBF4E' ]
+uuids:           [ 'x86_64: 58FAC6D1-3FF5-320B-A4BB-6D223C8A04C6' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoImaging.framework/Versions/A/PhotoImaging
-current-version: 3401.2.150
+current-version: 3441.2.160
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _GUInvertMatrix, _GUMatrixVector, _PIAutoLoopFlavorFromString, 

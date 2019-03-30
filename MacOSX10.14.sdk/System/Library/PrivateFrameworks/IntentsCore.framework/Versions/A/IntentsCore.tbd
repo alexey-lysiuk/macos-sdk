@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 384367B3-A46D-3AAB-A3D9-932E4911BDB0' ]
+uuids:           [ 'x86_64: 6673A1F1-8A54-3D90-8BD7-208AD69E79DD' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IntentsCore.framework/Versions/A/IntentsCore
 exports:         

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 622329BE-883D-3BE8-8516-8E73E3D16B74' ]
+uuids:           [ 'x86_64: BD29E56E-F32C-3B6C-93E8-46C1CB000758' ]
 platform:        macosx
 install-name:    /usr/lib/libMaxEnt.dylib
 objc-constraint: none

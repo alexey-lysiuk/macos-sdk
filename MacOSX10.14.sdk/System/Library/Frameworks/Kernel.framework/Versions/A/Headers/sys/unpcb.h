@@ -2,7 +2,7 @@
  * Copyright (c) 2008-2010 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
- * 
+ *
  * This file contains Original Code and/or Modifications of Original Code
  * as defined in and that are subject to the Apple Public Source License
  * Version 2.0 (the 'License'). You may not use this file except in
@@ -11,10 +11,10 @@
  * unlawful or unlicensed copies of an Apple operating system, or to
  * circumvent, violate, or enable the circumvention or violation of, any
  * terms of an Apple operating system software license agreement.
- * 
+ *
  * Please obtain a copy of the License at
  * http://www.opensource.apple.com/apsl/ and read it before using this file.
- * 
+ *
  * The Original Code and all software distributed under the License are
  * distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
  * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
@@ -22,7 +22,7 @@
  * FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.
  * Please see the License for the specific language governing rights and
  * limitations under the License.
- * 
+ *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_END@
  */
 /*
@@ -99,27 +99,27 @@ typedef u_quad_t        unp_gen_t;
 
 #if defined(__LP64__)
 struct _unpcb_list_entry {
-    u_int32_t   le_next; 
-    u_int32_t   le_prev;
-}; 
-#define _UCPCB_LIST_HEAD(name, type)	\
-struct name {				\
-	u_int32_t	lh_first;	\
+	u_int32_t   le_next;
+	u_int32_t   le_prev;
 };
-#define _UNPCB_LIST_ENTRY(x)		struct _unpcb_list_entry
-#define _UNPCB_PTR(x)			u_int32_t
-#else 
-#define _UCPCB_LIST_HEAD(name, type)	LIST_HEAD(name, type)
-#define _UNPCB_LIST_ENTRY(x)		LIST_ENTRY(x)
-#define _UNPCB_PTR(x)			x
+#define _UCPCB_LIST_HEAD(name, type)    \
+struct name {                           \
+	u_int32_t	lh_first;       \
+};
+#define _UNPCB_LIST_ENTRY(x)            struct _unpcb_list_entry
+#define _UNPCB_PTR(x)                   u_int32_t
+#else
+#define _UCPCB_LIST_HEAD(name, type)    LIST_HEAD(name, type)
+#define _UNPCB_LIST_ENTRY(x)            LIST_ENTRY(x)
+#define _UNPCB_PTR(x)                   x
 #endif
 
 
-struct	xunpgen {
-	u_int32_t	xug_len;
-	u_int		xug_count;
-	unp_gen_t	xug_gen;
-	so_gen_t	xug_sogen;
+struct  xunpgen {
+	u_int32_t       xug_len;
+	u_int           xug_count;
+	unp_gen_t       xug_gen;
+	so_gen_t        xug_sogen;
 };
 
 #endif /* _SYS_UNPCB_H_ */

@@ -1,29 +1,29 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0AF772DE-4694-3A2D-BF01-E17949C1E3AF' ]
-platform:        macosx
+uuids:           [ 'x86_64: AAF61DE0-758D-3220-ADE3-8D1996D908BD' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/TextToSpeech.framework/Versions/A/TextToSpeech
 exports:         
   - archs:           [ x86_64 ]
-    symbols:         [ _AXSpeechReplaceJapaneseElongationCharactersIfNeeded, _TTSAssetKeyCustomVoiceCompatibilityVersion, 
-                       _TTSAssetKeyCustomVoiceFootprint, _TTSAssetKeyCustomVoiceGender, 
-                       _TTSAssetKeyCustomVoiceLanguages, _TTSAssetKeyCustomVoiceMasteredVersion, 
-                       _TTSAssetKeyCustomVoiceName, _TTSAssetKeyCustomVoiceVersion, 
-                       _TTSAssetKeyGryphonVoiceLanguages, _TTSAssetTypeCombinedVoice, 
-                       _TTSAssetTypeCombinedVoiceId, _TTSAssetTypeCombinedVoiceProjectKey, 
-                       _TTSAssetTypeCustomVoice, _TTSAssetTypeGryphonVoice, _TTSAssetTypeSystemVoice, 
-                       _TTSAssetValueCustomVoiceFootprintCompact, _TTSAssetValueCustomVoiceFootprintPremium, 
-                       _TTSAssetValueCustomVoiceFootprintPremiumHigh, _TTSAssetValueCustomVoiceGenderFemale, 
-                       _TTSAssetValueCustomVoiceGenderMale, _TTSAssetValueSystemVoiceFormatVersionKey, 
-                       _TTSAssetValueSystemVoiceLanguageKey, _TTSAttributedStringCreateFromSerializedAttributes, 
-                       _TTSAttributedStringCreateSerializedAttributes, _TTSAudioSessionConfigureForActivity, 
-                       _TTSAudioSessionCopyActiveInputRoute, _TTSAudioSessionDeregisterQueue, 
-                       _TTSAudioSessionGetAudioSessionID, _TTSAudioSessionGetOutputLatency, 
-                       _TTSAudioSessionGetServerGeneration, _TTSAudioSessionInitialize, 
-                       _TTSAudioSessionPreferredHardwareSampleRate, _TTSAudioSessionPreferredHardwareSampleRateGryphon, 
-                       _TTSAudioSessionRegisterQueue, _TTSAudioSessionSetActive, 
-                       _TTSAudioSessionSetBluetoothInputAllowed, _TTSCFArrayGetValueAtIndexIfType, 
-                       _TTSCFAttributedStringCreateStringByBracketingAttributeWithString, 
+    symbols:         [ _AXSpeechReplaceJapaneseElongationCharactersIfNeeded, _TTSAllCachedAvailableVoicesKey, 
+                       _TTSAssetKeyCustomVoiceCompatibilityVersion, _TTSAssetKeyCustomVoiceFootprint, 
+                       _TTSAssetKeyCustomVoiceGender, _TTSAssetKeyCustomVoiceLanguages, 
+                       _TTSAssetKeyCustomVoiceMasteredVersion, _TTSAssetKeyCustomVoiceName, 
+                       _TTSAssetKeyCustomVoiceVersion, _TTSAssetKeyGryphonVoiceLanguages, 
+                       _TTSAssetTypeCombinedVoice, _TTSAssetTypeCombinedVoiceId, 
+                       _TTSAssetTypeCombinedVoiceProjectKey, _TTSAssetTypeCustomVoice, 
+                       _TTSAssetTypeGryphonVoice, _TTSAssetTypeSystemVoice, _TTSAssetValueCustomVoiceFootprintCompact, 
+                       _TTSAssetValueCustomVoiceFootprintPremium, _TTSAssetValueCustomVoiceFootprintPremiumHigh, 
+                       _TTSAssetValueCustomVoiceGenderFemale, _TTSAssetValueCustomVoiceGenderMale, 
+                       _TTSAssetValueSystemVoiceFormatVersionKey, _TTSAssetValueSystemVoiceLanguageKey, 
+                       _TTSAttributedStringCreateFromSerializedAttributes, _TTSAttributedStringCreateSerializedAttributes, 
+                       _TTSAudioSessionConfigureForActivity, _TTSAudioSessionCopyActiveInputRoute, 
+                       _TTSAudioSessionDeregisterQueue, _TTSAudioSessionGetAudioSessionID, 
+                       _TTSAudioSessionGetOutputLatency, _TTSAudioSessionGetServerGeneration, 
+                       _TTSAudioSessionInitialize, _TTSAudioSessionPreferredHardwareSampleRate, 
+                       _TTSAudioSessionPreferredHardwareSampleRateGryphon, _TTSAudioSessionRegisterQueue, 
+                       _TTSAudioSessionSetActive, _TTSAudioSessionSetBluetoothInputAllowed, 
+                       _TTSCFArrayGetValueAtIndexIfType, _TTSCFAttributedStringCreateStringByBracketingAttributeWithString, 
                        _TTSCFAttributedStringGetAttributeAndLongestEffectiveRange, 
                        _TTSCFDictionaryGetValueIfType, _TTSCFSetCreateMutableArray, 
                        _TTSCFSetSendDifferences, _TTSCFURLDeleteDirectoryContents, 

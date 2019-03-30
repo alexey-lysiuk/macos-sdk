@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: 0B27DB67-00B9-3979-9307-447C593A4AEB', 'x86_64h: C647A80F-6F80-3FDA-A9B4-92800999F963' ]
-platform:        macosx
+uuids:           [ 'x86_64: E9801F27-69B1-3829-A67F-A6C1D563A647', 'x86_64h: D4150381-557F-3E9D-9119-ED4F2A8878A1' ]
+platform:        zippered
 install-name:    /usr/lib/libate.dylib
 current-version: 1.13.8
 objc-constraint: none

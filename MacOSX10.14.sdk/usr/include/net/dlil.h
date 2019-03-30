@@ -26,5 +26,5 @@
  * @APPLE_OSREFERENCE_LICENSE_HEADER_END@
  */
 #ifndef DLIL_H
-#define	DLIL_H
+#define DLIL_H
 #endif /* DLIL_H */

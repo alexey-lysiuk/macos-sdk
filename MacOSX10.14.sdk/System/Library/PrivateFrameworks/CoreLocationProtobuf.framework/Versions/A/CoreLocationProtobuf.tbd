@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2EF47370-8345-37D0-80E7-F01AF5C83E2F' ]
-platform:        macosx
+uuids:           [ 'x86_64: 12E52AA0-9F8A-3AB6-B08F-53A1FB2ECF8E' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/CoreLocationProtobuf.framework/Versions/A/CoreLocationProtobuf
 exports:         
   - archs:           [ x86_64 ]

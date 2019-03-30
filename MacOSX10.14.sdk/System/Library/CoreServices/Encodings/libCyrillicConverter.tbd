@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B38E03A8-4EB8-3C79-8334-DC93E22DD7CA' ]
+uuids:           [ 'x86_64: FF5B45FE-78B1-3DDC-8A41-912FE71EBC21' ]
 platform:        macosx
 install-name:    /System/Library/CoreServices/Encodings/libCyrillicConverter.dylib
 current-version: 73

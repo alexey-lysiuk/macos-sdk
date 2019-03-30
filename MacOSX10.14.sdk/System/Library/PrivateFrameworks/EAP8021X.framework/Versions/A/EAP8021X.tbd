@@ -1,11 +1,12 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8B9C16DF-F188-3867-A091-954DDB66733C' ]
+uuids:           [ 'x86_64: B290EEC1-BC95-3FD5-AEEC-D19B7536BA37' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/EAP8021X.framework/Versions/A/EAP8021X
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _EAP8021XVersionNumber, _EAP8021XVersionString, _EAPCFDataArrayCreateSecCertificateArray, 
+                       _EAPClientConfigurationCopyAndImport, _EAPClientConfigurationCopyShareable, 
                        _EAPClientModuleAddBuiltinModule, _EAPClientModuleDefaultType, 
                        _EAPClientModuleLookup, _EAPClientModulePluginCopyIdentity, 
                        _EAPClientModulePluginCopyPacketDescription, _EAPClientModulePluginEAPName, 

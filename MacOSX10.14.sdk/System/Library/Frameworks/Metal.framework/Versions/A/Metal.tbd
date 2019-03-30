@@ -1,8 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B38C577A-CD24-30AD-A396-219945949F39' ]
-platform:        macosx
+uuids:           [ 'x86_64: 18BEB663-0D31-3255-9710-50BC5C3D2A0F' ]
+platform:        zippered
 install-name:    /System/Library/Frameworks/Metal.framework/Versions/A/Metal
+current-version: 161.7.1
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -62,8 +63,9 @@ exports:
                        _MTLPipelinePerformanceKeyThreadgroupMemory, _MTLPipelinePerformanceKeyThreadgroupStoreCount, 
                        _MTLPipelinePerformanceKeyUniformRegisterCount, _MTLPipelinePerformanceKeyVertexShader, 
                        _MTLPipelinePerformanceKeyWaitCount, _MTLPixelFormatCompatibilityString, 
-                       _MTLPixelFormatGetInfo, _MTLPixelFormatGetInfoForDevice, _MTLPixelFormatGetName, 
-                       _MTLPurgeableStateString, _MTLRangeAllocatorAllocate, _MTLRangeAllocatorAllocateRange, 
+                       _MTLPixelFormatComputeiOSTotalSizeUsed, _MTLPixelFormatGetInfo, 
+                       _MTLPixelFormatGetInfoForDevice, _MTLPixelFormatGetName, _MTLPurgeableStateString, 
+                       _MTLRangeAllocatorAllocate, _MTLRangeAllocatorAllocateRange, 
                        _MTLRangeAllocatorDeallocate, _MTLRangeAllocatorDestroy, _MTLRangeAllocatorGetFragmentCapacity, 
                        _MTLRangeAllocatorGetFragmentCount, _MTLRangeAllocatorGetFreeCount, 
                        _MTLRangeAllocatorGetMaxFreeSize, _MTLRangeAllocatorInit, 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 72C562E5-2BEF-3F39-8CAA-051A096CDFD9' ]
+uuids:           [ 'x86_64: 57337EB4-4376-3C89-98A9-2E0D5672ED34' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/OSAnalytics.framework/Versions/A/OSAnalytics
 exports:         

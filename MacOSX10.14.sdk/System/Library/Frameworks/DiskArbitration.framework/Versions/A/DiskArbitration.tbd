@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C53C1905-9BCF-3AE8-8BB3-C8A2C7DB7D25' ]
+uuids:           [ 'x86_64: F30DF62A-0BE9-371D-8D86-96554FF45811' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration
 objc-constraint: none
@@ -27,21 +27,23 @@ exports:
                        _kDADiskDescriptionDeviceGUIDKey, _kDADiskDescriptionDeviceInternalKey, 
                        _kDADiskDescriptionDeviceModelKey, _kDADiskDescriptionDevicePathKey, 
                        _kDADiskDescriptionDeviceProtocolKey, _kDADiskDescriptionDeviceRevisionKey, 
-                       _kDADiskDescriptionDeviceUnitKey, _kDADiskDescriptionDeviceVendorKey, 
-                       _kDADiskDescriptionMatchMediaUnformatted, _kDADiskDescriptionMatchMediaWhole, 
-                       _kDADiskDescriptionMatchVolumeMountable, _kDADiskDescriptionMatchVolumeUnrecognized, 
-                       _kDADiskDescriptionMediaBSDMajorKey, _kDADiskDescriptionMediaBSDMinorKey, 
-                       _kDADiskDescriptionMediaBSDNameKey, _kDADiskDescriptionMediaBSDUnitKey, 
-                       _kDADiskDescriptionMediaBlockSizeKey, _kDADiskDescriptionMediaContentKey, 
-                       _kDADiskDescriptionMediaEjectableKey, _kDADiskDescriptionMediaIconKey, 
-                       _kDADiskDescriptionMediaKindKey, _kDADiskDescriptionMediaLeafKey, 
-                       _kDADiskDescriptionMediaMatchKey, _kDADiskDescriptionMediaNameKey, 
-                       _kDADiskDescriptionMediaPathKey, _kDADiskDescriptionMediaRemovableKey, 
-                       _kDADiskDescriptionMediaSizeKey, _kDADiskDescriptionMediaTypeKey, 
-                       _kDADiskDescriptionMediaUUIDKey, _kDADiskDescriptionMediaWholeKey, 
-                       _kDADiskDescriptionMediaWritableKey, _kDADiskDescriptionVolumeKindKey, 
-                       _kDADiskDescriptionVolumeMountableKey, _kDADiskDescriptionVolumeNameKey, 
-                       _kDADiskDescriptionVolumeNetworkKey, _kDADiskDescriptionVolumePathKey, 
-                       _kDADiskDescriptionVolumeTypeKey, _kDADiskDescriptionVolumeUUIDKey, 
-                       _kDADiskDescriptionWatchVolumeName, _kDADiskDescriptionWatchVolumePath ]
+                       _kDADiskDescriptionDeviceTDMLockedKey, _kDADiskDescriptionDeviceUnitKey, 
+                       _kDADiskDescriptionDeviceVendorKey, _kDADiskDescriptionMatchMediaUnformatted, 
+                       _kDADiskDescriptionMatchMediaWhole, _kDADiskDescriptionMatchVolumeMountable, 
+                       _kDADiskDescriptionMatchVolumeUnrecognized, _kDADiskDescriptionMediaBSDMajorKey, 
+                       _kDADiskDescriptionMediaBSDMinorKey, _kDADiskDescriptionMediaBSDNameKey, 
+                       _kDADiskDescriptionMediaBSDUnitKey, _kDADiskDescriptionMediaBlockSizeKey, 
+                       _kDADiskDescriptionMediaContentKey, _kDADiskDescriptionMediaEjectableKey, 
+                       _kDADiskDescriptionMediaEncryptedKey, _kDADiskDescriptionMediaEncryptionDetailKey, 
+                       _kDADiskDescriptionMediaIconKey, _kDADiskDescriptionMediaKindKey, 
+                       _kDADiskDescriptionMediaLeafKey, _kDADiskDescriptionMediaMatchKey, 
+                       _kDADiskDescriptionMediaNameKey, _kDADiskDescriptionMediaPathKey, 
+                       _kDADiskDescriptionMediaRemovableKey, _kDADiskDescriptionMediaSizeKey, 
+                       _kDADiskDescriptionMediaTypeKey, _kDADiskDescriptionMediaUUIDKey, 
+                       _kDADiskDescriptionMediaWholeKey, _kDADiskDescriptionMediaWritableKey, 
+                       _kDADiskDescriptionVolumeKindKey, _kDADiskDescriptionVolumeMountableKey, 
+                       _kDADiskDescriptionVolumeNameKey, _kDADiskDescriptionVolumeNetworkKey, 
+                       _kDADiskDescriptionVolumePathKey, _kDADiskDescriptionVolumeTypeKey, 
+                       _kDADiskDescriptionVolumeUUIDKey, _kDADiskDescriptionWatchVolumeName, 
+                       _kDADiskDescriptionWatchVolumePath ]
 ...

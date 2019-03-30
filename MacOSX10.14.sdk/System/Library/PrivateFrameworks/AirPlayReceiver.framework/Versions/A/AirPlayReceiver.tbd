@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CD3C707E-89CE-308B-8E85-F2AA931B4689' ]
+uuids:           [ 'x86_64: 1E041A73-87AF-3633-A9E2-4A86628F8493' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AirPlayReceiver.framework/Versions/A/AirPlayReceiver
 exports:         
@@ -69,22 +69,23 @@ exports:
                        _kAPAdvertiserInfoProperty_PublicKey, _kAPAdvertiserInfoProperty_RFC2617DigestAuthSupported, 
                        _kAPAdvertiserInfoProperty_RequiredSenderFeatures, _kAPAdvertiserInfoProperty_SystemFlags, 
                        _kAPAdvertiserInfoProperty_TightSyncUUID, _kAPAdvertiserInfoProperty_TransportTypes, 
-                       _kAPAdvertiserNotification_AdvertiserStatusChanged, _kAPAdvertiserProperty_AdvertiserInfo, 
-                       _kAPAdvertiserProperty_EnforceSolo, _kAPAdvertiserProperty_InterfaceIndex, 
-                       _kAPAdvertiserProperty_ListeningPort, _kAPAdvertiserProperty_ReadyToStartAdvertising, 
-                       _kAPReceiverAudioSessionNotificationKey_DidTimeout, _kAPReceiverAudioSessionNotification_IdleTimeout, 
-                       _kAPReceiverAudioSessionOption_AllowP2P, _kAPReceiverAudioSessionOption_AudioFormat, 
-                       _kAPReceiverAudioSessionOption_AudioLatencyMaxMs, _kAPReceiverAudioSessionOption_AudioLatencyMinMs, 
-                       _kAPReceiverAudioSessionOption_AudioLatencyMs, _kAPReceiverAudioSessionOption_CompressionType, 
-                       _kAPReceiverAudioSessionOption_EncryptionKey, _kAPReceiverAudioSessionOption_FramesPerPacket, 
-                       _kAPReceiverAudioSessionOption_NetworkClock, _kAPReceiverAudioSessionOption_QosDisabled, 
-                       _kAPReceiverAudioSessionOption_RTCPPortRemote, _kAPReceiverAudioSessionOption_RTPSkewPlatformAdjust, 
-                       _kAPReceiverAudioSessionOption_ReceiverSession, _kAPReceiverAudioSessionOption_RedundantAudio, 
-                       _kAPReceiverAudioSessionOption_StatsCollector, _kAPReceiverAudioSessionOption_UsingScreen, 
-                       _kAPReceiverAudioSessionProperty_AudioBufferSize, _kAPReceiverAudioSessionProperty_AudioFormat, 
-                       _kAPReceiverAudioSessionProperty_CompressionType, _kAPReceiverAudioSessionProperty_IsPlayingBufferedAudio, 
-                       _kAPReceiverAudioSessionProperty_MaximumLatency, _kAPReceiverAudioSessionProperty_MinimumLatency, 
-                       _kAPReceiverAudioSessionProperty_NumberOfChannels, _kAPReceiverAudioSessionProperty_PlatformAudioLatency, 
+                       _kAPAdvertiserInfoProperty_VodkaVersion, _kAPAdvertiserNotification_AdvertiserStatusChanged, 
+                       _kAPAdvertiserProperty_AdvertiserInfo, _kAPAdvertiserProperty_EnforceSolo, 
+                       _kAPAdvertiserProperty_InterfaceIndex, _kAPAdvertiserProperty_ListeningPort, 
+                       _kAPAdvertiserProperty_ReadyToStartAdvertising, _kAPReceiverAudioSessionNotificationKey_DidTimeout, 
+                       _kAPReceiverAudioSessionNotification_IdleTimeout, _kAPReceiverAudioSessionOption_AllowP2P, 
+                       _kAPReceiverAudioSessionOption_AudioFormat, _kAPReceiverAudioSessionOption_AudioLatencyMaxMs, 
+                       _kAPReceiverAudioSessionOption_AudioLatencyMinMs, _kAPReceiverAudioSessionOption_AudioLatencyMs, 
+                       _kAPReceiverAudioSessionOption_CompressionType, _kAPReceiverAudioSessionOption_EncryptionKey, 
+                       _kAPReceiverAudioSessionOption_FramesPerPacket, _kAPReceiverAudioSessionOption_NetworkClock, 
+                       _kAPReceiverAudioSessionOption_QosDisabled, _kAPReceiverAudioSessionOption_RTCPPortRemote, 
+                       _kAPReceiverAudioSessionOption_RTPSkewPlatformAdjust, _kAPReceiverAudioSessionOption_ReceiverSession, 
+                       _kAPReceiverAudioSessionOption_RedundantAudio, _kAPReceiverAudioSessionOption_StatsCollector, 
+                       _kAPReceiverAudioSessionOption_UsingScreen, _kAPReceiverAudioSessionProperty_AudioBufferSize, 
+                       _kAPReceiverAudioSessionProperty_AudioFormat, _kAPReceiverAudioSessionProperty_CompressionType, 
+                       _kAPReceiverAudioSessionProperty_IsPlayingBufferedAudio, _kAPReceiverAudioSessionProperty_MaximumLatency, 
+                       _kAPReceiverAudioSessionProperty_MinimumLatency, _kAPReceiverAudioSessionProperty_NumberOfChannels, 
+                       _kAPReceiverAudioSessionProperty_PlatformAudioLatency, _kAPReceiverAudioSessionProperty_RTCMetadata, 
                        _kAPReceiverAudioSessionProperty_RTCPPort, _kAPReceiverAudioSessionProperty_RTCPPortRemote, 
                        _kAPReceiverAudioSessionProperty_RTPAudioPort, _kAPReceiverAudioSessionProperty_SampleRate, 
                        _kAPReceiverNTPClientProperty_TimingPortLocal, _kAPReceiverScreenSessionEventPayload_ErrorCode, 

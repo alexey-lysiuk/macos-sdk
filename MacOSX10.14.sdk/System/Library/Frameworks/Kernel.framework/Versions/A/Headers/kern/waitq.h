@@ -27,4 +27,4 @@
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_END@
  */
-#endif	/* _WAITQ_H_ */
+#endif  /* _WAITQ_H_ */

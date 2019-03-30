@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4C7C8C07-3E20-3AC2-B4DB-8DB77942E1FB' ]
+uuids:           [ 'x86_64: 6FC38F09-A8AC-33FF-8467-A1D2F205B94F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotosUICore.framework/Versions/A/PhotosUICore
 current-version: 3401.4.130

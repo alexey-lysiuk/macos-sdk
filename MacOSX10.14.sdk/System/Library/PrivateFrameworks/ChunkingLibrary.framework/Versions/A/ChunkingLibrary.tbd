@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 13F1F769-E8E7-372A-8F0B-2BB4B7753248' ]
-platform:        macosx
+uuids:           [ 'x86_64: 08B75C80-CAA3-3128-BE6C-A1FA3A52A79B' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/ChunkingLibrary.framework/Versions/A/ChunkingLibrary
-current-version: 194
+current-version: 201
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -32,7 +32,8 @@ exports:
                        _CKChunkSignatureGeneratorUpdate, _CKChunkSignatureIsValidN, 
                        _CKChunkSignatureSize, _CKChunkSignaturesEqual, _CKChunkStoreCreate, 
                        _CKChunkStoreCreateAtFilesystemPath, _CKChunkStoreCreateAtFilesystemPathWithTmpDir, 
-                       _CKChunkStoreInvalidate, _CKChunkStoreRelease, _CKChunkTypeDescription, 
+                       _CKChunkStoreInvalidate, _CKChunkStoreRelease, _CKChunkStoreResetTestFlags, 
+                       _CKChunkStoreSetTestFlags, _CKChunkStoreTestFlags, _CKChunkTypeDescription, 
                        _CKChunkerProfileTypeDescription, _CKCleanChunkStoreDBForInode, 
                        _CKCommitChunkedFile, _CKCommitDatabaseTransactions, _CKCompactStorage, 
                        _CKConvertFileToChunked, _CKConvertTemporaryChunks, _CKCopyChunkCache, 
@@ -72,11 +73,13 @@ exports:
                        _CKRegisteredChunkType, _CKRegisteredItemCount, _CKRelocateTemporaryChunk, 
                        _CKRemoveStoredFile, _CKSchemeAndEncryptionKeySize, _CKSchemeAndSignatureSize, 
                        _CKSchemeSignatureAndKeySize, _CKSetCacheBlobFd, _CKSignatureAndKeySize, 
-                       _CKSignatureSize, _CKTokenForRegisteredChunk, _CKTokenForStoredChunk, 
-                       _CKUnlockChunkStore, _CKUnlockChunks, _CKUnregisterAllTemporaryChunks, 
-                       _CKUnregisterChunksForItem, _CKUnregisterFile, _CKUnregisterTemporaryChunk, 
-                       _CKUnregisterTemporaryChunks, _CKUnregisterTemporaryNChunk, 
-                       _CKUnregisterTemporaryTChunk, _CKValidateSignature, _kCKChunkListCacheXattrName, 
-                       _kCKCustomFixedChunkFileTypeHint, _kCKFileSignatureCacheMinFileSize, 
-                       _kCKFileSignatureCacheXattrName, _kCKItemChunkLength, _kChunkingLibraryErrorDomain ]
+                       _CKSignatureSize, _CKStreamCoderCreate, _CKStreamCoderFinish, 
+                       _CKStreamCoderUpdate, _CKStreamKeyDerivation, _CKTokenForRegisteredChunk, 
+                       _CKTokenForStoredChunk, _CKUnlockChunkStore, _CKUnlockChunks, 
+                       _CKUnregisterAllTemporaryChunks, _CKUnregisterChunksForItem, 
+                       _CKUnregisterFile, _CKUnregisterTemporaryChunk, _CKUnregisterTemporaryChunks, 
+                       _CKUnregisterTemporaryNChunk, _CKUnregisterTemporaryTChunk, 
+                       _CKValidateSignature, _kCKChunkListCacheXattrName, _kCKCustomFixedChunkFileTypeHint, 
+                       _kCKFileSignatureCacheMinFileSize, _kCKFileSignatureCacheXattrName, 
+                       _kCKItemChunkLength, _kChunkingLibraryErrorDomain ]
 ...

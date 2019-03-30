@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E7AB84E4-1006-3200-80AC-BAA71B73BDC4' ]
+uuids:           [ 'x86_64: 57FDF955-62D9-3B4A-8B3B-775DD8C6852F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ExchangeWebServices.framework/Versions/A/ExchangeWebServices
 current-version: 281
@@ -56,9 +56,9 @@ exports:
                        _ExchangeWebServicesVersionString, _SOAPErrorFaultCodeKey, 
                        _SOAPErrorFaultStringKey, _SOAPErrorHTTPStatusKey, _SOAPErrorSOAPHeaderKey, 
                        _SOAPFaultKey, _SOAPNamespaceURI, _SOAPWebServicesErrorDomain, 
-                       _kAutodiscoverProtocolActiveSync, _kAutodiscoverProtocolEWS, 
-                       _kExchangeOAuthSupportedKey, _kExchangeTokenRequestURI, _kExchangeWebSignInURI, 
-                       _sMapping ]
+                       _autodiscoverKillSwitchURL, _kAutodiscoverProtocolActiveSync, 
+                       _kAutodiscoverProtocolEWS, _kExchangeOAuthSupportedKey, _kExchangeTokenRequestURI, 
+                       _kExchangeWebSignInURI, _sMapping ]
     objc-classes:    [ EWSAbsoluteMonthlyRecurrencePatternType, EWSAbsoluteYearlyRecurrencePatternType, 
                        EWSAcceptItemType, EWSActiveDirectoryLookup, EWSAddDelegateResponseMessageType, 
                        EWSAddDelegateType, EWSAffectedTaskOccurrencesTypeDefinition, 
@@ -73,9 +73,9 @@ exports:
                        EWSArrayOfStringsType, EWSArrayOfUnknownEntriesType, EWSArrayOfUserIdType, 
                        EWSArrayOfWorkingPeriod, EWSAttachmentIdType, EWSAttachmentInfoResponseMessageType, 
                        EWSAttachmentResponseShapeType, EWSAttachmentType, EWSAttendeeType, 
-                       EWSAutodiscoverBinding, EWSAutodiscoverOperation, EWSAutodiscoverRequest, 
-                       EWSAutodiscoverResponse, EWSAutodiscoverV2Binding, EWSAutodiscoverV2Operation, 
-                       EWSAutodiscoverV2Response, EWSBaseDelegateResponseMessageType, 
+                       EWSAutodiscoverBinding, EWSAutodiscoverKillSwitch, EWSAutodiscoverOperation, 
+                       EWSAutodiscoverRequest, EWSAutodiscoverResponse, EWSAutodiscoverV2Binding, 
+                       EWSAutodiscoverV2Operation, EWSAutodiscoverV2Response, EWSBaseDelegateResponseMessageType, 
                        EWSBaseDelegateType, EWSBaseEmailAddressType, EWSBaseFolderIdDefinition, 
                        EWSBaseFolderIdType, EWSBaseFolderType, EWSBaseItemIdDefinition, 
                        EWSBaseItemIdType, EWSBaseMessageResponseType, EWSBaseMoveCopyFolderType, 

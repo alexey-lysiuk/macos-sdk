@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2C243063-105A-3A42-AFEF-8299D23CA8EF' ]
-platform:        macosx
+uuids:           [ 'x86_64: 92ECF5B7-96F7-310C-87F3-7848C9A393EB' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/AdPlatforms.framework/Versions/A/AdPlatforms
 exports:         
   - archs:           [ x86_64 ]

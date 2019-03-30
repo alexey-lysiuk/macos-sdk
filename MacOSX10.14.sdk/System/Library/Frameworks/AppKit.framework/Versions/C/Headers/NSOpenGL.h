@@ -213,7 +213,7 @@ NS_OPENGL_CLASS_DEPRECATED(10_0, 10_14, "Please use Metal or MetalKit.")
 @property (readonly, strong) NSOpenGLPixelFormat *pixelFormat NS_AVAILABLE_MAC(10_10);
 
 /* Drawable management */
-@property (nullable, weak) NSView *view;
+@property (nullable, weak) NSView *view NS_DEPRECATED_MAC(10_0, 10_14);
 - (void)setView:(nullable NSView *)view NS_DEPRECATED_MAC(10_0, 10_14, "Use NSOpenGLView to provide OpenGL content in a Cocoa app.");
 - (void)setFullScreen NS_DEPRECATED_MAC(10_0, 10_7, "Use a fullscreen NSOpenGLView instead");
 
@@ -250,7 +250,7 @@ NS_OPENGL_CLASS_DEPRECATED(10_0, 10_14, "Please use Metal or MetalKit.")
 
 @end
 
-@interface NSOpenGLContext (NSOpenGLPixelBufer)
+@interface NSOpenGLContext (NSOpenGLPixelBuffer)
 /*
  ** NOTE: PBuffers have been Deprecated as of 10.7.  Use GL_EXT_framebuffer_object instead.
  **

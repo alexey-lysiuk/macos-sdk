@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 314FE1B9-3B4E-3B89-A101-33CE7B78FCE6' ]
-platform:        macosx
+uuids:           [ 'x86_64: 0C57BF6E-A713-3AE8-8AD3-80F65D4CCC15' ]
+platform:        zippered
 install-name:    /usr/lib/libmecab.1.0.0.dylib
-current-version: 779.19.2
+current-version: 779.19.3
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

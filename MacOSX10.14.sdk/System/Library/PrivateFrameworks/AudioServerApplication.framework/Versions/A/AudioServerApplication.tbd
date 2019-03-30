@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 13C23A24-0BCE-37FF-8762-E4E51BCBB207' ]
+uuids:           [ 'x86_64: 27717899-11C7-392B-B725-0FA541444D78' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AudioServerApplication.framework/Versions/A/AudioServerApplication
 exports:         

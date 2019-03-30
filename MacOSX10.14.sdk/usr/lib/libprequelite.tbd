@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 24E8E66D-8A77-3BC3-B9B1-4C155512DDE5' ]
+uuids:           [ 'x86_64: F3295F75-565B-34DA-86DD-4E69BFB1BD23' ]
 platform:        macosx
 install-name:    /usr/lib/libprequelite.dylib
 current-version: 77.102

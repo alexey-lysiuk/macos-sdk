@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 044DAF5A-735A-3947-B750-C450187E2017' ]
-platform:        macosx
+uuids:           [ 'x86_64: BEE8D6FF-BA73-38A1-A7EC-1261126D3A25' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/TelephonyUtilities.framework/Versions/A/TelephonyUtilities
 exports:         
   - archs:           [ x86_64 ]
@@ -57,6 +57,7 @@ exports:
                        _TUCallIsOnHoldChangedNotification, _TUCallIsSendingAudioChangedNotification, 
                        _TUCallIsSendingVideoChangedNotification, _TUCallIsThirdPartyVideoChangedNotification, 
                        _TUCallIsUplinkMutedChangedNotification, _TUCallIsUsingBasebandChangedNotification, 
+                       _TUCallLocalSenderIdentityAccountUUIDChangedNotification, 
                        _TUCallModelChangedNotification, _TUCallNeedsManualInCallSoundsChangedNotification, 
                        _TUCallPhoneAppHistoryActivityType, _TUCallPrefersExclusiveAccessToCellularNetworkChangedNotification, 
                        _TUCallProviderContextChangedNotification, _TUCallProviderManagerProvidersChangedNotification, 

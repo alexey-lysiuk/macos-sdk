@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9F404A86-514A-3220-8625-A06013071D55' ]
+uuids:           [ 'x86_64: 440B7616-5D47-387B-BD53-C5F0FECF4C4F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/FindMyDevice.framework/Versions/A/FindMyDevice
 exports:         

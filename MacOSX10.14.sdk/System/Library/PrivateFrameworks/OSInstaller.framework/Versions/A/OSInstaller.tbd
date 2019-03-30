@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4A2B06B1-D244-3353-B5DF-E1A0E4FC9A05' ]
+uuids:           [ 'x86_64: CF327060-FBF4-3CB8-955F-4A4AE2A9B07B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/OSInstaller.framework/Versions/A/OSInstaller
 current-version: 660
@@ -22,11 +22,12 @@ exports:
     objc-classes:    [ APFSMachineSupport, OSIAIPostInstall, OSIAttachLoggingElement, 
                        OSICleanUpElement, OSICleanupFailedInstallElement, OSICollectionInstallElement, 
                        OSIConvertToAPFSElement, OSIConvertToCS, OSIDebuggerTool, 
-                       OSIEraseDiskElement, OSIEraseInstallElement, OSIError, OSIInstallElement, 
-                       OSIInstallPersonalizedManifestsElement, OSIInstallPreflightContainersElement, 
-                       OSIInstallQueueElement, OSIInstallRecoverySystemElement, OSIMessageTracer, 
-                       OSIMigrateElement, OSIMountBaseSystemElement, OSIMountPayloadElement, 
-                       OSIPersonalizedManifests, OSIPowerController, OSIPreSizingElement, 
+                       OSIEraseDiskElement, OSIEraseInstallElement, OSIError, OSIGatherGPUStatistics, 
+                       OSIInstallElement, OSIInstallPersonalizedManifestsElement, 
+                       OSIInstallPreflightContainersElement, OSIInstallQueueElement, 
+                       OSIInstallRecoverySystemElement, OSIMessageTracer, OSIMigrateElement, 
+                       OSIMountBaseSystemElement, OSIMountPayloadElement, OSIPersonalizedManifests, 
+                       OSIPowerButtonMonitor, OSIPowerController, OSIPreSizingElement, 
                        OSIPrepareVolumeElement, OSIPromoteInstallVolumeElement, OSIReapPreviousSystem, 
                        OSIReapableSpaceChecker, OSIRepairDiskElement, OSISyntheticChoice, 
                        OSISystemProfiler, OSIUnmountPayloadElement, OSIUpdateFirmwareElement, 

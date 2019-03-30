@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FEC80202-44F7-3AFB-AEE1-C059FA467EDF' ]
+uuids:           [ 'x86_64: 7573A111-8A89-30C5-BC18-ACAF20049B25' ]
 platform:        macosx
 install-name:    /usr/lib/libSMC.dylib
-current-version: 6.200.5
+current-version: 6.250.1
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

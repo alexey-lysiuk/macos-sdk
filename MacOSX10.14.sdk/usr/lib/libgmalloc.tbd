@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 276725E7-B84C-3C32-A7E8-A440DD411ED8' ]
+uuids:           [ 'x86_64: 68A1F3CA-E24C-339C-A1BE-D1ACC41F1669' ]
 platform:        macosx
 install-name:    /usr/lib/libgmalloc.dylib
 current-version: 109

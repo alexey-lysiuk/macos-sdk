@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 37E14D7B-8321-3418-9AB5-00C0FDBE133D' ]
+uuids:           [ 'x86_64: AE685C41-04FF-3EF8-B8A2-29C0B03A749A' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SecurityTokend.framework/Versions/A/SecurityTokend
 current-version: 55111

@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0A25D75C-35A7-3ED5-8900-EBC05522B5A9' ]
-platform:        macosx
+uuids:           [ 'x86_64: 189807AC-4BB1-3C37-B6EC-D4F0B645902D' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/IconServices.framework/Versions/A/IconServices
 current-version: 379
 exports:         

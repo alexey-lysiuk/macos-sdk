@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 67BC5855-B7A3-39E6-B5DD-52B287EB1532' ]
+uuids:           [ 'x86_64: 76B698A9-18B9-3089-9570-4FC3F754D56D' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LangAnalysis.framework/Versions/A/LangAnalysis
 objc-constraint: none

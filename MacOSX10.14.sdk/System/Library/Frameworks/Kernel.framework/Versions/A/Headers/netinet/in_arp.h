@@ -27,7 +27,7 @@
  */
 
 #ifndef _NETINET_IN_ARP_H_
-#define	_NETINET_IN_ARP_H_
+#define _NETINET_IN_ARP_H_
 #include <sys/kernel_types.h>
 
 struct sockaddr;

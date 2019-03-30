@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D87D6558-3F4E-3460-8840-39A2036C3DD4' ]
+uuids:           [ 'x86_64: 5376A251-9700-3E1E-AE98-8588A4A311BF' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AVConference.framework/Versions/A/AVConference
 exports:         

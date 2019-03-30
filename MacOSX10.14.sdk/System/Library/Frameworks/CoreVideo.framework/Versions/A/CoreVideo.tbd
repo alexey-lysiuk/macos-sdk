@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C7BB7D0F-3AF2-3046-A387-A802BCA52A3A' ]
-platform:        macosx
+uuids:           [ 'x86_64: 0376A7EC-8C71-3F26-9599-4CA7AB7924EA' ]
+platform:        zippered
 install-name:    /System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo
 current-version: 1.5
 compatibility-version: 1.2

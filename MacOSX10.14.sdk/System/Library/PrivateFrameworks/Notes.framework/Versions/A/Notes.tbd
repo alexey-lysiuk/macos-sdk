@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 807B6A5C-FF6A-31C3-B786-7AA174B3DE96' ]
+uuids:           [ 'x86_64: 284E2AE8-FCB5-3392-8437-1799E06CDBE0' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Notes.framework/Versions/A/Notes
 current-version: 351

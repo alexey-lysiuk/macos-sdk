@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E093776E-C367-3CCF-BFD5-623476A89E9A' ]
+uuids:           [ 'x86_64: 5D6A617C-999A-3D51-8350-109D55E9428A' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AppleFSCompression.framework/Versions/A/AppleFSCompression
 current-version: 96.200.3

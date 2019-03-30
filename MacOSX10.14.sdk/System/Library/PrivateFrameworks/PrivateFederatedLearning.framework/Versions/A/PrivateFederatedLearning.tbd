@@ -1,0 +1,27 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: F5E12F10-F555-3106-9880-FEFE85ACD064' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/PrivateFederatedLearning.framework/Versions/A/PrivateFederatedLearning
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _PFLPrivatize, _PrivateFederatedLearningVersionNumber, _PrivateFederatedLearningVersionString, 
+                       __FindEpsilon, __PFLFindGamma, __Z12innerProductPfmS_m, __Z15arrayNormalizerPfm, 
+                       __Z18solveGammaEquationmdd, __Z19arrayMultiplyScalarPfmf, 
+                       __Z20PFLSeparatedDPCustomPfmddddid, __Z9arrayNormPfm, __ZN14PFLSeparatedDP11SeparatedDPEPfmddddid, 
+                       __ZN14PFLSeparatedDP18deBiasTermUniArrayEmddd, __ZN14PFLSeparatedDP19SeparatedDPUniarrayEPfmdiddd, 
+                       __ZN14PFLSeparatedDP20SeparatedDPMagnitudeEddd, __ZN20PFLContinuedFraction10valueForCFEdddd, 
+                       __ZN20PFLContinuedFraction19logComplementaryCDFEddmd, __ZN20PFLContinuedFraction21sampleConditionalBetaEmddd, 
+                       __ZN20PFLContinuedFraction25regularizeIncompletedBetaEdddd, 
+                       __ZN20PFLContinuedFraction8dOfIndexEdddm, __ZN20PFLContinuedFraction8logCoeffEdd, 
+                       __ZN20PFLRejectionSampling19sampleUniformSphereEPfm, __ZN21PFLUniformRVGenerator27uniformRandomVariableSampleEv, 
+                       __ZN21PFLUniformRVGenerator34uniformRandomVariableInRangeSampleEdd, 
+                       __ZN22PFLGaussianRVGenerator31PFLGaussianRandomVariableSampleEdd, 
+                       _count, _kPFLCFMaxBetaComputation, _kPFLIdentifierVocalClassifier, 
+                       _temp ]
+    objc-classes:    [ PFLDiagnosticReporting, _PFLContinuedFraction, _PFLGaussianNoiseGenerator, 
+                       _PFLLog, _PFLMathHelper, _PFLModelTrainer, _PFLPrivacyParameters, 
+                       _PFLRejectionSampling, _PFLVectorPrivatizer ]
+    weak-def-symbols: [ __ZTINSt3__120__shared_ptr_pointerIPfNS_14default_deleteIA_fEENS_9allocatorIfEEEE, 
+                        __ZTSNSt3__114default_deleteIA_fEE, __ZTSNSt3__120__shared_ptr_pointerIPfNS_14default_deleteIA_fEENS_9allocatorIfEEEE ]
+...

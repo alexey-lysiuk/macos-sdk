@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 78C6EA52-D345-3C8D-98D3-896DB524DB88' ]
+uuids:           [ 'x86_64: E88EBA0F-EB10-39C7-92AC-8EBC88A5A092' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IMDPersistence.framework/Versions/A/IMDPersistence
 current-version: 800
@@ -42,10 +42,11 @@ exports:
                        _IMDAttachmentRecordGetTotalBytes, _IMDAttachmentRecordGetTransferState, 
                        _IMDAttachmentRecordGetTypeID, _IMDAttachmentRecordMarkAllAttachmentsAsNeedingCloudKitSync, 
                        _IMDAttachmentRecordUpdateAttachmentGUIDWithGUID, _IMDAttachmentResetAllAttachmentsInFailedCloudDownloadState, 
-                       _IMDAttachmentSpaceTakenByNonSyncedAttachmentClass, _IMDBindAttachmentToMessage, 
-                       _IMDBlobFromSqlColumn, _IMDCNRecordIDForAliases, _IMDCanDowngradeDatabaseToVersion, 
-                       _IMDChatAddMessageToSpotlight, _IMDChatClearPendingDeleteChatsTable, 
-                       _IMDChatCopyChatRecordIDsAndGUIDsToDeleteWithLimit, _IMDChatGetMessageDateAndLastAddressedHandleFromChatIdentifiersAndLastAddressedHandles, 
+                       _IMDAttachmentSpaceTakenByNonSyncedAttachmentClass, _IMDAttachmentUpdateAttachmentFileSizeWithRowIDGreaterThanWatermark, 
+                       _IMDBindAttachmentToMessage, _IMDBlobFromSqlColumn, _IMDCNRecordIDForAliases, 
+                       _IMDCanDowngradeDatabaseToVersion, _IMDChatAddMessageToSpotlight, 
+                       _IMDChatClearPendingDeleteChatsTable, _IMDChatCopyChatRecordIDsAndGUIDsToDeleteWithLimit, 
+                       _IMDChatGetMessageDateAndLastAddressedHandleFromChatIdentifiersAndLastAddressedHandles, 
                        _IMDChatGetMessageDateAndLastAddressedLabelIDFromChatIdentifiersAndLastAddressedLabelIDs, 
                        _IMDChatInsertIntoDeletedChatsTable, _IMDChatRecordAddChat, 
                        _IMDChatRecordAddHandle, _IMDChatRecordAddMessageIfNeededUnlocked, 
@@ -257,9 +258,10 @@ exports:
                        __IMDAttachmentRecordDeleteStickersExceptPreviewsToKeep, __IMDAttachmentRecordGetGuidsAndTransferNamesFromQueryRows, 
                        __IMDAttachmentRecordGetStickerPathFromTransferName, __IMDAttachmentRecordProcessStickerPathAttachmentCount, 
                        __IMDAttachmentRecordShouldDeleteSticketPreviewWithFolderName, 
-                       __IMDChatRecordBulkCopyXPCDictionary, __IMDChatRecordCopyProperty, 
-                       __IMDChatRecordGetDateProperty, __IMDChatRecordGetProperty, 
-                       __IMDChatRecordSetProperty, __IMDContactsApiInit, __IMDContactsKindForID, 
+                       __IMDAttachmentUpdateAttachmentWithRowidToFileSize, __IMDChatRecordBulkCopyXPCDictionary, 
+                       __IMDChatRecordCopyProperty, __IMDChatRecordGetDateProperty, 
+                       __IMDChatRecordGetProperty, __IMDChatRecordSetProperty, __IMDContactsApiInit, 
+                       __IMDContactsKindForID, __IMDCopyAttachmentsNeedingFileSizeUpdatesForWatermark, 
                        __IMDCopyIMDAttachmentRecordFromXPCObjectClient, __IMDCopyIMDAttachmentRecordFromXPCObjectServer, 
                        __IMDCopyIMDChatRecordFromXPCObjectClient, __IMDCopyIMDChatRecordFromXPCObjectServer, 
                        __IMDCopyIMDHandleRecordFromXPCObjectClient, __IMDCopyIMDHandleRecordFromXPCObjectServer, 
@@ -298,9 +300,10 @@ exports:
                        __IMDSqlOperationGetRows, __IMDSqlOperationGetRowsForQuery, 
                        __IMDSqlOperationGetRowsForQueryWithBindingBlock, __IMDSqlOperationGetRowsWithBindingBlock, 
                        __IMDSqlOperationRunQuery, __IMDSqlOperationRunQueryWithString, 
-                       __IMDUpdateSequenceNumberWithConnection, ___IMDPersistenceIPCServer_command_dispatcher, 
-                       ___IMDPersistenceIPCServer_peer_event_handler, _kIMDSMSServiceIdentifier, 
-                       _kIMDiMessageServiceIdentifier, _printToLogFile ]
+                       __IMDUpdateAttachmentFileSizeIfNeeded, __IMDUpdateSequenceNumberWithConnection, 
+                       ___IMDPersistenceIPCServer_command_dispatcher, ___IMDPersistenceIPCServer_peer_event_handler, 
+                       _kIMDSMSServiceIdentifier, _kIMDiMessageServiceIdentifier, 
+                       _printToLogFile ]
     objc-classes:    [ IMAbstractDatabaseArchiver, IMAbstractDatabaseTrimmer, IMDAbstractDatabaseDowngrader, 
                        IMDCoreSpotlightDispatchObject, IMDDatabaseDowngradeHelper, 
                        IMDMessageAutomaticHistoryDeletion, IMDPersistence, IMDPersistentAttachmentController, 

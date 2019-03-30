@@ -66,4 +66,4 @@
 #ifndef _SYS_DOMAIN_H_
 #define _SYS_DOMAIN_H_
 
-#endif	/* _SYS_DOMAIN_H_ */
+#endif  /* _SYS_DOMAIN_H_ */

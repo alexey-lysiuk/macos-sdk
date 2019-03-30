@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D258016E-4FE2-3E99-9699-33D56BADD619' ]
+uuids:           [ 'x86_64: 45A2C9B1-787E-3BF8-AFB8-375822FC6AF4' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/RemoteXPC.framework/Versions/A/RemoteXPC
-current-version: 1336.220.5
+current-version: 1336.251.2
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _XPC_REMOTE_CONNECTION_PROTOCOL_VERSION_CURRENT, __xpc_type_remote_connection, 

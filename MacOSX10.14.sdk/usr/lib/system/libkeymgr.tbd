@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A73AA788-C35C-3284-BFCA-95B1BBDF0CF3' ]
-platform:        macosx
+uuids:           [ 'x86_64: BEA04E04-FCF1-3A70-810F-08D0FF54CA36' ]
+platform:        zippered
 install-name:    /usr/lib/system/libkeymgr.dylib
 current-version: 30
 objc-constraint: none

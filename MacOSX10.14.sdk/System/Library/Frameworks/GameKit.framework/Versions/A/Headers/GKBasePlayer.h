@@ -2,7 +2,7 @@
 //  GKBasePlayer.h
 //  Game Center
 //
-//  Copyright 2016-2018 Apple Inc. All rights reserved.
+//  Copyright 2016-2019 Apple Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

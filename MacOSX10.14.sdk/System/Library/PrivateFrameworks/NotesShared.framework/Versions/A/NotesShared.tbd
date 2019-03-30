@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 44D9FDCB-CB8B-3E13-900A-B907DE052CD4' ]
+uuids:           [ 'x86_64: 51AF55DB-2F38-3CEC-B52A-31DC9ADFED04' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/NotesShared.framework/Versions/A/NotesShared
 exports:         
@@ -1628,7 +1628,8 @@ exports:
                        _kICEvernote, _kICFindInNoteUsage, _kICGrayscaleFilter, _kICHintForOpeningPPNoteDisplayedCount, 
                        _kICInternalSettingsDebugModeEnabledDefaultKey, _kICInternalSettingsDisableLetterpressRendering, 
                        _kICInternalSettingsDisableLetterpressTitleVelocity, _kICInternalSettingsDisableNoteModificationDateUpdates, 
-                       _kICInternalSettingsDisableTextViewClippingWorkaround, _kICInternalSettingsDisableTextViewContentOffsetWorkaround, 
+                       _kICInternalSettingsDisableSingleLineA, _kICInternalSettingsDisableTextViewClippingWorkaround, 
+                       _kICInternalSettingsDisableTextViewContentOffsetWorkaround, 
                        _kICInternalSettingsDisableTextViewEmptyLastLineWorkaround, 
                        _kICInternalSettingsDrawingAPT_FingerMinimumMovementLimitKey, 
                        _kICInternalSettingsDrawingAPT_FingerMinimumMovementRenderTimeoutKey, 

@@ -22,7 +22,7 @@
 #include <AvailabilityMacros.h>
 
 // For legacy reasons CVImageBuffer.h includes CoreGraphics.h and ApplicationServices.h
-#if TARGET_OS_IPHONE || TARGET_OS_WIN32
+#if TARGET_OS_IPHONE || 0
 #include <CoreGraphics/CoreGraphics.h>
 #else
 #include <ApplicationServices/ApplicationServices.h>

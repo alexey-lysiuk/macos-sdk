@@ -630,10 +630,11 @@ APPKIT_EXTERN NSNotificationName NSViewFocusDidChangeNotification NS_DEPRECATED_
  */
 APPKIT_EXTERN NSNotificationName NSViewBoundsDidChangeNotification;
 
-/* This notification is sent whenever an NSView that has an attached NSSurface changes size or changes screens (thus potentially changing graphics hardware drivers.)
+
+/* This notification is sent whenever an NSView that has an attached NSOpenGLContext changes size or changes screens (thus potentially changing graphics hardware drivers).
  */
-APPKIT_EXTERN NSNotificationName NSViewGlobalFrameDidChangeNotification;
-    
+APPKIT_EXTERN NSNotificationName NSViewGlobalFrameDidChangeNotification NS_DEPRECATED_MAC(10_0, 10_14, "Use NSOpenGLView instead.");
+
 /* This notification is sent whenever tracking areas should be recalculated for the view.  It is sent after the view receives -updateTrackingAreas.
  */
 APPKIT_EXTERN NSNotificationName NSViewDidUpdateTrackingAreasNotification NS_AVAILABLE_MAC(10_5);

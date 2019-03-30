@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AFC6B895-B61C-32FA-BB18-D6938D718914' ]
+uuids:           [ 'x86_64: C141C3B6-4D80-397A-BC71-9A735EBD6F16' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IMDaemonCore.framework/Versions/A/IMDaemonCore
 current-version: 800
@@ -69,9 +69,9 @@ exports:
                        _IMLastCKSyncWasNotWithin7Days, _IMLastCKSyncWasWithin3Days, 
                        _IMLastCKSyncWasWithin7Days, _IMLastCompleteDBCKSyncWasNotWithin3Days, 
                        _IMLastCompleteDBCKSyncWasNotWithin7Days, _IMLastCompleteDBCKSyncWasWithin3Days, 
-                       _IMLastCompleteDBCKSyncWasWithin7Days, _IMManateeIdentiyFetchAttemptFullSync, 
-                       _IMManateeIdentiyFetchAttemptFullSyncFailed, _IMManateeIdentiyFetchAttemptRestoreSync, 
-                       _IMManateeIdentiyFetchAttemptRestoreSyncFailed, _IMManateeNotAvailable, 
+                       _IMLastCompleteDBCKSyncWasWithin7Days, _IMManateeIdentityFetchAttemptFullSync, 
+                       _IMManateeIdentityFetchAttemptFullSyncFailed, _IMManateeIdentityFetchAttemptRestoreSync, 
+                       _IMManateeIdentityFetchAttemptRestoreSyncFailed, _IMManateeNotAvailable, 
                        _IMMaxRecoverableAttemptReached, _IMMessageGuidFromIMFileTransferGuid, 
                        _IMMessageSyncFailed, _IMMessageSyncStarted, _IMMessageSyncStoppedDueToDeviceConditions, 
                        _IMNotStartingCoreDuetSync, _IMNotSyncDueToIMAuto, _IMPCSIdentityWasLost, 
@@ -83,8 +83,10 @@ exports:
                        _IMSyncInProgressCloudKitMetric, _IMSyncNoDueToCrash, _IMSyncNoDueToFirstUnlock, 
                        _IMSyncNoDueToPower, _IMSyncNoDueToRecent, _IMSyncNoDueToSyncing, 
                        _IMSyncNoDueToWifi, _NSStringFromAKAppleIDSecurityLevel, _NSStringFromIMDCKAccountStatus, 
-                       __IMDHashParticipants, __IMDShouldSaveAttachment, _kPictureCacheAddedPictureNotification, 
-                       _kPictureCacheDataKey, _kPictureCacheHashKey, _kPictureCacheNameChangedNotification, 
+                       __IMDHashParticipants, __IMDShouldSaveAttachment, _kIMDCKAnalyticBagKey, 
+                       _kIMDCKAnalyticDetailsBagKey, _kIMDCKClientVersion, _kIMDCKMetricBagKey, 
+                       _kPictureCacheAddedPictureNotification, _kPictureCacheDataKey, 
+                       _kPictureCacheHashKey, _kPictureCacheNameChangedNotification, 
                        _kPictureCacheNameKey ]
     objc-classes:    [ CKRecordUtilities, IMDAccount, IMDAccountController, IMDAppleServiceSession, 
                        IMDAttachmentStore, IMDCKAbstractSyncController, IMDCKAttachmentSyncCKOperationFactory, 

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 589CFD41-8493-33A3-A2AF-349E1AA92592' ]
+uuids:           [ 'x86_64: A0ADDCA7-E460-39E6-AD0A-22DC7B2BBF4C' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/LocalAuthentication.framework/Support/DaemonUtils.framework/Versions/A/DaemonUtils
-current-version: 425.220.25
+current-version: 425.250.11
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _LANVRAMNamespaceStartupManager, __libBiometricKit ]

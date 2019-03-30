@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 974E9EF7-DE72-34B7-B056-0A81C10DF8EB' ]
-platform:        macosx
+uuids:           [ 'x86_64: 6983A268-20F4-3F98-A3F5-D63848933B02' ]
+platform:        zippered
 install-name:    /usr/lib/system/libsystem_darwin.dylib
 objc-constraint: none
 parent-umbrella: System
@@ -16,8 +16,9 @@ exports:
                        _os_mach_msg_get_trailer, _os_mach_msg_trailer_copy_description, 
                        _os_mach_port_copy_description, _os_parse_boot_arg_int, _os_parse_boot_arg_string, 
                        _os_simple_hash, _os_simple_hash_string, _os_variant_allows_internal_security_policies, 
-                       _os_variant_has_internal_content, _os_variant_has_internal_diagnostics, 
-                       _os_variant_has_internal_ui, _strerror_np, _symerror_np, _symexit_np, 
-                       _sysctl_get_data_np, _sysctlbyname_get_data_np, _sysexit_np, 
-                       _verr_np, _verrc_np, _vwarn_np, _warn_np, _zsnprintf_np ]
+                       _os_variant_has_factory_content, _os_variant_has_internal_content, 
+                       _os_variant_has_internal_diagnostics, _os_variant_has_internal_ui, 
+                       _strerror_np, _symerror_np, _symexit_np, _sysctl_get_data_np, 
+                       _sysctlbyname_get_data_np, _sysexit_np, _verr_np, _verrc_np, 
+                       _vwarn_np, _warn_np, _zsnprintf_np ]
 ...

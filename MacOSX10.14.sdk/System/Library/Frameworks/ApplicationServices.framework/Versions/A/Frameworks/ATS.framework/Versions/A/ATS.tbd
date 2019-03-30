@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7599E619-EE21-3EB7-875B-AE3B8D3E13BB' ]
-platform:        macosx
+uuids:           [ 'x86_64: 5B30E86D-B3AB-3346-A19F-F2CABF342465' ]
+platform:        zippered
 install-name:    /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/ATS
 current-version: 236
 objc-constraint: none

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B7FA1B46-C6B0-3118-BC0A-6D8DA77FEC22' ]
+uuids:           [ 'x86_64: 02323D72-F6A2-3322-9E22-11E94EADB8DE' ]
 platform:        macosx
 install-name:    /usr/libexec/SmartCardServices/drivers/ifd-ccid.bundle/Contents/MacOS/libccid.dylib
 current-version: 0

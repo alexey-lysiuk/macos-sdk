@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 16D2ABCD-1242-3F48-977A-B7AAD5BC9F41' ]
-platform:        macosx
+uuids:           [ 'x86_64: D8CC8AE8-FF18-3BD1-A433-077152196A26' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/PrototypeTools.framework/Versions/A/PrototypeTools
 exports:         
   - archs:           [ x86_64 ]

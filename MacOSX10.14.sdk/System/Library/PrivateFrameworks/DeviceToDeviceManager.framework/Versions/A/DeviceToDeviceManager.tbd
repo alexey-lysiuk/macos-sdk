@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A63026EE-E9A5-3330-85F7-0DA99CF16994' ]
+uuids:           [ 'x86_64: 3B8162C3-260E-3978-B77F-3EFC50E2B9BF' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DeviceToDeviceManager.framework/Versions/A/DeviceToDeviceManager
 current-version: 32

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D721B8F6-D6DD-39D9-9021-A51230B89E83' ]
+uuids:           [ 'x86_64: 69C0B14F-AE48-3C32-8111-A928AFBFE408' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AVFoundationCF.framework/Versions/A/AVFoundationCF
 current-version: 2
@@ -442,6 +442,12 @@ exports:
                        _AVCFURLAssetResolvedURLKey, _AVCFURLAssetShouldMatchDataInCacheByURLPathComponentOnlyKey, 
                        _AVCFURLAssetShouldMatchDataInCacheByURLWithoutQueryComponentKey, 
                        _AVCFURLAssetShouldPrepareToOptimizeForExclusivePlaybackKey, 
+                       _AVCFURLAssetiTunesStoreContentAlternateContentInfoAssetURLStringKey, 
+                       _AVCFURLAssetiTunesStoreContentAlternateContentInfoKey, _AVCFURLAssetiTunesStoreContentDSIDKey, 
+                       _AVCFURLAssetiTunesStoreContentDownloadParametersKey, _AVCFURLAssetiTunesStoreContentHLSAssetURLStringKey, 
+                       _AVCFURLAssetiTunesStoreContentIDKey, _AVCFURLAssetiTunesStoreContentInfoKey, 
+                       _AVCFURLAssetiTunesStoreContentPurchasedMediaKindKey, _AVCFURLAssetiTunesStoreContentRentalIDKey, 
+                       _AVCFURLAssetiTunesStoreContentTypeKey, _AVCFURLAssetiTunesStoreContentUserAgentKey, 
                        _AVCFVideoFrameRateConversionAlgorithmFast, _AVCFVideoFrameRateConversionAlgorithmPrecise, 
                        _AVFoundationCFBundleIdentifier, _AVFoundationCFErrorDomain, 
                        __AVCFInitializeRetainedProtectedContentPlaybackSupportSessionAsynchronouslyForProviderWithOptions, 
@@ -452,7 +458,7 @@ exports:
                        __AVCFPlayerItemIsRentalPlaybackStarted, __AVCFPlayerItemSetApplicationAuthorizationChallengeResponse, 
                        __AVCFUninitializeProtectedContentPlaybackSupportSession, 
                        _kAIGRequestKey_RequestID, _kAVCFAssetExportSessionDesc, _kAVCFAssetProxyVersionNumber, 
-                       _kAVCFPlayerItemLegibleOutputDesc ]
+                       _kAVCFPlayerItemLegibleOutputDesc, _kFigAirPlayCustomURLResponseKey_RequestID ]
     objc-classes:    [ AVCFInternalPlayerLayer, AVCFInternalSubtitleLayer ]
     objc-ivars:      [ AVCFInternalPlayerLayer.AVCFLayer, AVCFInternalSubtitleLayer._subtitleLayerRef ]
 ...

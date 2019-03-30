@@ -9,6 +9,7 @@
 #import <StoreKit/StoreKitDefines.h>
 
 @class SKProduct;
+@class SKPaymentDiscount;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -36,12 +37,16 @@ SK_EXTERN_CLASS_AVAILABLE(10_7, 3_0) @interface SKPayment : NSObject <NSCopying,
 // Force an "ask to buy" flow for this payment, in the sandbox
 @property(nonatomic, readonly) BOOL simulatesAskToBuyInSandbox NS_AVAILABLE(10_14, 8_3);
 
+// The relevant data for specifying a discount to be applied to this payment. Optional.
+@property(nonatomic, copy, readonly, nullable) SKPaymentDiscount *paymentDiscount NS_AVAILABLE(10_14_4, 12_2);
+
 @end
 
 
 SK_EXTERN_CLASS_AVAILABLE(10_7, 3_0) @interface SKMutablePayment : SKPayment
 
 @property(nonatomic, copy, readwrite, nullable) NSString *applicationUsername NS_AVAILABLE(10_9, 7_0);
+@property(nonatomic, copy, readwrite, nullable) SKPaymentDiscount *paymentDiscount NS_AVAILABLE(10_14_4, 12_2);
 @property(nonatomic, copy, readwrite) NSString *productIdentifier NS_AVAILABLE(10_7, 3_0);
 @property(nonatomic, readwrite) NSInteger quantity NS_AVAILABLE(10_7, 3_0);
 @property(nonatomic, copy, readwrite, nullable) NSData *requestData NS_AVAILABLE(10_7, 3_0);

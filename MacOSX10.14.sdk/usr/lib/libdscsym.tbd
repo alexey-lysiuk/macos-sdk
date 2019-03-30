@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 67E8E048-708A-3A89-9691-286AE2D41046' ]
+uuids:           [ 'x86_64: 67E0BEA3-9BF4-37C0-81E2-0F5D2F4535A6' ]
 platform:        macosx
 install-name:    /usr/lib/libdscsym.dylib
-current-version: 217
+current-version: 218.2
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ __dscsym_iterate_live_shared_cache, _dscsymVersionNumber, 

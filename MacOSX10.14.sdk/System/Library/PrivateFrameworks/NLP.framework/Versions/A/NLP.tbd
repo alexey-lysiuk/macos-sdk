@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E995F65D-859E-370C-8241-B336049EBDE2' ]
+uuids:           [ 'x86_64: 57F5918E-80EF-3FDD-8C46-7A5DF5927271' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/NLP.framework/Versions/A/NLP
-current-version: 122.16.16
+current-version: 122.25.1
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _NLEmojiPredictorCreate, _NLEmojiPredictorCreateCandidatesForString, 

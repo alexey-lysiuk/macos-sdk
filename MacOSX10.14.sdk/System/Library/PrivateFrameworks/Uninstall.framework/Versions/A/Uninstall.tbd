@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CA3E1C3E-2BA1-37A4-865F-29011E5CACF0' ]
+uuids:           [ 'x86_64: 7AA4BF7A-62DC-3F07-B8BC-684B339CCF6D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Uninstall.framework/Versions/A/Uninstall
 current-version: 211

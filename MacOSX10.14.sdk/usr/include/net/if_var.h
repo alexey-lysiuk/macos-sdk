@@ -61,14 +61,14 @@
  * $FreeBSD: src/sys/net/if_var.h,v 1.18.2.7 2001/07/24 19:10:18 brooks Exp $
  */
 
-#ifndef	_NET_IF_VAR_H_
-#define	_NET_IF_VAR_H_
+#ifndef _NET_IF_VAR_H_
+#define _NET_IF_VAR_H_
 
 #include <sys/appleapiopts.h>
 #include <stdint.h>
 #include <sys/types.h>
 #include <sys/time.h>
-#include <sys/queue.h>		/* get TAILQ macros */
+#include <sys/queue.h>          /* get TAILQ macros */
 
 
 #ifdef __APPLE__
@@ -82,7 +82,7 @@
 #define APPLE_IF_FAM_DISC      8
 #define APPLE_IF_FAM_MDECAP    9
 #define APPLE_IF_FAM_GIF       10
-#define APPLE_IF_FAM_FAITH     11	/* deprecated */
+#define APPLE_IF_FAM_FAITH     11       /* deprecated */
 #define APPLE_IF_FAM_STF       12
 #define APPLE_IF_FAM_FIREWIRE  13
 #define APPLE_IF_FAM_BOND      14
@@ -92,8 +92,8 @@
  * 72 was chosen below because it is the size of a TCP/IP
  * header (40) + the minimum mss (32).
  */
-#define	IF_MINMTU	72
-#define	IF_MAXMTU	65535
+#define IF_MINMTU       72
+#define IF_MAXMTU       65535
 
 /*
  * Structures defining a network interface, providing a packet
@@ -120,16 +120,16 @@
  * interfaces.  These routines live in the files if.c and route.c
  */
 
-#define	IFNAMSIZ	16
+#define IFNAMSIZ        16
 
 /* This belongs up in socket.h or socketvar.h, depending on how far the
  *   event bubbles up.
  */
 
 struct net_event_data {
-	u_int32_t	if_family;
-	u_int32_t	if_unit;
-	char		if_name[IFNAMSIZ];
+	u_int32_t       if_family;
+	u_int32_t       if_unit;
+	char            if_name[IFNAMSIZ];
 };
 
 #if defined(__LP64__)
@@ -147,36 +147,36 @@ struct net_event_data {
  */
 struct if_data {
 	/* generic interface information */
-	u_char		ifi_type;	/* ethernet, tokenring, etc */
-	u_char		ifi_typelen;	/* Length of frame type id */
-	u_char		ifi_physical;	/* e.g., AUI, Thinnet, 10base-T, etc */
-	u_char		ifi_addrlen;	/* media address length */
-	u_char		ifi_hdrlen;	/* media header length */
-	u_char		ifi_recvquota;	/* polling quota for receive intrs */
-	u_char		ifi_xmitquota;	/* polling quota for xmit intrs */
-	u_char		ifi_unused1;	/* for future use */
-	u_int32_t	ifi_mtu;	/* maximum transmission unit */
-	u_int32_t	ifi_metric;	/* routing metric (external only) */
-	u_int32_t	ifi_baudrate;	/* linespeed */
+	u_char          ifi_type;       /* ethernet, tokenring, etc */
+	u_char          ifi_typelen;    /* Length of frame type id */
+	u_char          ifi_physical;   /* e.g., AUI, Thinnet, 10base-T, etc */
+	u_char          ifi_addrlen;    /* media address length */
+	u_char          ifi_hdrlen;     /* media header length */
+	u_char          ifi_recvquota;  /* polling quota for receive intrs */
+	u_char          ifi_xmitquota;  /* polling quota for xmit intrs */
+	u_char          ifi_unused1;    /* for future use */
+	u_int32_t       ifi_mtu;        /* maximum transmission unit */
+	u_int32_t       ifi_metric;     /* routing metric (external only) */
+	u_int32_t       ifi_baudrate;   /* linespeed */
 	/* volatile statistics */
-	u_int32_t	ifi_ipackets;	/* packets received on interface */
-	u_int32_t	ifi_ierrors;	/* input errors on interface */
-	u_int32_t	ifi_opackets;	/* packets sent on interface */
-	u_int32_t	ifi_oerrors;	/* output errors on interface */
-	u_int32_t	ifi_collisions;	/* collisions on csma interfaces */
-	u_int32_t	ifi_ibytes;	/* total number of octets received */
-	u_int32_t	ifi_obytes;	/* total number of octets sent */
-	u_int32_t	ifi_imcasts;	/* packets received via multicast */
-	u_int32_t	ifi_omcasts;	/* packets sent via multicast */
-	u_int32_t	ifi_iqdrops;	/* dropped on input, this interface */
-	u_int32_t	ifi_noproto;	/* destined for unsupported protocol */
-	u_int32_t	ifi_recvtiming;	/* usec spent receiving when timing */
-	u_int32_t	ifi_xmittiming;	/* usec spent xmitting when timing */
-	struct IF_DATA_TIMEVAL ifi_lastchange;	/* time of last administrative change */
-	u_int32_t	ifi_unused2;	/* used to be the default_proto */
-	u_int32_t	ifi_hwassist;	/* HW offload capabilities */
-	u_int32_t	ifi_reserved1;	/* for future use */
-	u_int32_t	ifi_reserved2;	/* for future use */
+	u_int32_t       ifi_ipackets;   /* packets received on interface */
+	u_int32_t       ifi_ierrors;    /* input errors on interface */
+	u_int32_t       ifi_opackets;   /* packets sent on interface */
+	u_int32_t       ifi_oerrors;    /* output errors on interface */
+	u_int32_t       ifi_collisions; /* collisions on csma interfaces */
+	u_int32_t       ifi_ibytes;     /* total number of octets received */
+	u_int32_t       ifi_obytes;     /* total number of octets sent */
+	u_int32_t       ifi_imcasts;    /* packets received via multicast */
+	u_int32_t       ifi_omcasts;    /* packets sent via multicast */
+	u_int32_t       ifi_iqdrops;    /* dropped on input, this interface */
+	u_int32_t       ifi_noproto;    /* destined for unsupported protocol */
+	u_int32_t       ifi_recvtiming; /* usec spent receiving when timing */
+	u_int32_t       ifi_xmittiming; /* usec spent xmitting when timing */
+	struct IF_DATA_TIMEVAL ifi_lastchange;  /* time of last administrative change */
+	u_int32_t       ifi_unused2;    /* used to be the default_proto */
+	u_int32_t       ifi_hwassist;   /* HW offload capabilities */
+	u_int32_t       ifi_reserved1;  /* for future use */
+	u_int32_t       ifi_reserved2;  /* for future use */
 };
 
 /*
@@ -185,32 +185,32 @@ struct if_data {
  */
 struct if_data64 {
 	/* generic interface information */
-	u_char		ifi_type;		/* ethernet, tokenring, etc */
-	u_char		ifi_typelen;		/* Length of frame type id */
-	u_char		ifi_physical;		/* e.g., AUI, Thinnet, 10base-T, etc */
-	u_char		ifi_addrlen;		/* media address length */
-	u_char		ifi_hdrlen;		/* media header length */
-	u_char		ifi_recvquota;		/* polling quota for receive intrs */
-	u_char		ifi_xmitquota;		/* polling quota for xmit intrs */
-	u_char		ifi_unused1;		/* for future use */
-	u_int32_t	ifi_mtu;		/* maximum transmission unit */
-	u_int32_t	ifi_metric;		/* routing metric (external only) */
-	u_int64_t	ifi_baudrate;		/* linespeed */
+	u_char          ifi_type;               /* ethernet, tokenring, etc */
+	u_char          ifi_typelen;            /* Length of frame type id */
+	u_char          ifi_physical;           /* e.g., AUI, Thinnet, 10base-T, etc */
+	u_char          ifi_addrlen;            /* media address length */
+	u_char          ifi_hdrlen;             /* media header length */
+	u_char          ifi_recvquota;          /* polling quota for receive intrs */
+	u_char          ifi_xmitquota;          /* polling quota for xmit intrs */
+	u_char          ifi_unused1;            /* for future use */
+	u_int32_t       ifi_mtu;                /* maximum transmission unit */
+	u_int32_t       ifi_metric;             /* routing metric (external only) */
+	u_int64_t       ifi_baudrate;           /* linespeed */
 	/* volatile statistics */
-	u_int64_t	ifi_ipackets;		/* packets received on interface */
-	u_int64_t	ifi_ierrors;		/* input errors on interface */
-	u_int64_t	ifi_opackets;		/* packets sent on interface */
-	u_int64_t	ifi_oerrors;		/* output errors on interface */
-	u_int64_t	ifi_collisions;		/* collisions on csma interfaces */
-	u_int64_t	ifi_ibytes;		/* total number of octets received */
-	u_int64_t	ifi_obytes;		/* total number of octets sent */
-	u_int64_t	ifi_imcasts;		/* packets received via multicast */
-	u_int64_t	ifi_omcasts;		/* packets sent via multicast */
-	u_int64_t	ifi_iqdrops;		/* dropped on input, this interface */
-	u_int64_t	ifi_noproto;		/* destined for unsupported protocol */
-	u_int32_t	ifi_recvtiming;		/* usec spent receiving when timing */
-	u_int32_t	ifi_xmittiming;		/* usec spent xmitting when timing */
-	struct IF_DATA_TIMEVAL ifi_lastchange;	/* time of last administrative change */
+	u_int64_t       ifi_ipackets;           /* packets received on interface */
+	u_int64_t       ifi_ierrors;            /* input errors on interface */
+	u_int64_t       ifi_opackets;           /* packets sent on interface */
+	u_int64_t       ifi_oerrors;            /* output errors on interface */
+	u_int64_t       ifi_collisions;         /* collisions on csma interfaces */
+	u_int64_t       ifi_ibytes;             /* total number of octets received */
+	u_int64_t       ifi_obytes;             /* total number of octets sent */
+	u_int64_t       ifi_imcasts;            /* packets received via multicast */
+	u_int64_t       ifi_omcasts;            /* packets sent via multicast */
+	u_int64_t       ifi_iqdrops;            /* dropped on input, this interface */
+	u_int64_t       ifi_noproto;            /* destined for unsupported protocol */
+	u_int32_t       ifi_recvtiming;         /* usec spent receiving when timing */
+	u_int32_t       ifi_xmittiming;         /* usec spent xmitting when timing */
+	struct IF_DATA_TIMEVAL ifi_lastchange;  /* time of last administrative change */
 };
 
 
@@ -219,12 +219,12 @@ struct if_data64 {
 /*
  * Structure defining a queue for a network interface.
  */
-struct	ifqueue {
-	void	*ifq_head;
-	void	*ifq_tail;
-	int	ifq_len;
-	int	ifq_maxlen;
-	int	ifq_drops;
+struct  ifqueue {
+	void    *ifq_head;
+	void    *ifq_tail;
+	int     ifq_len;
+	int     ifq_maxlen;
+	int     ifq_drops;
 };
 
 

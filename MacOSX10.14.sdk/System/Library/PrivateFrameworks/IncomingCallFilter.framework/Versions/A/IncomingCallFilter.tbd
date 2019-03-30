@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 181DCD42-CAED-320D-89F2-475D5EEA8062' ]
-platform:        macosx
+uuids:           [ 'x86_64: 0809A789-B5AC-32B8-9290-26E968C1062F' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/IncomingCallFilter.framework/Versions/A/IncomingCallFilter
 current-version: 800
 exports:         

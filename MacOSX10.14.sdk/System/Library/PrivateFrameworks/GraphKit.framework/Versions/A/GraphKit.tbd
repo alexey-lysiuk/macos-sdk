@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 16BB7C7C-AA59-341E-B685-EBF9EEA90F9C' ]
+uuids:           [ 'x86_64: 7E24B212-AB3F-3C6D-8656-2236DD9C50B3' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/GraphKit.framework/Versions/A/GraphKit
 current-version: 25

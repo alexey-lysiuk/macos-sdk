@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: 13B000B6-285E-3A31-A4AD-6EA2742351F6', 'x86_64h: EA767836-CBDC-318D-AC14-963C90D6CC67' ]
-platform:        macosx
+uuids:           [ 'x86_64: 2AD18016-88F4-3A10-B235-50B44C3A70A8', 'x86_64h: 9E125D43-CE4E-34F8-ACBA-C0835E5F8062' ]
+platform:        zippered
 install-name:    /usr/lib/libcompression.dylib
 objc-constraint: none
 exports:         

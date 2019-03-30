@@ -1,16 +1,18 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CEC8383B-7D6F-3A35-9892-7076DAEBF661' ]
-platform:        macosx
+uuids:           [ 'x86_64: 344E2908-750E-3D68-B0BF-9505A1A443F9' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/SafariFoundation.framework/Versions/A/SafariFoundation
-current-version: 606.2.104
+current-version: 607.1.40
 exports:         
   - archs:           [ x86_64 ]
-    symbols:         [ _SFPasswordCredentialIdentityInvalidRowIdentifier, _SFPasswordGenerationNoLengthLimit, 
-                       _SFSharablePasswordURLSchemeForAirDrop, _maximumNumberOfWebCredentialEntriesToReturnForAppID ]
-    objc-classes:    [ SFCredentialProviderExtensionState, SFDomainAssociationUtilities, 
-                       SFPasswordCredentialIdentity, SFSafariCredential, SFSafariCredentialStore, 
-                       SFSharablePassword, SFSharablePasswordReceiver, SFSharedWebCredentialsDatabaseEntry, 
+    symbols:         [ _SFAutoFillFromAddressBookPreferenceKey, _SFPasswordCredentialIdentityInvalidRowIdentifier, 
+                       _SFPasswordGenerationNoLengthLimit, _SFSharablePasswordURLSchemeForAirDrop, 
+                       _maximumNumberOfWebCredentialEntriesToReturnForAppID ]
+    objc-classes:    [ SFAutoFillFeatureManager, SFCredentialProviderExtensionState, 
+                       SFDomainAssociationUtilities, SFPasswordCredentialIdentity, 
+                       SFSafariCredential, SFSafariCredentialStore, SFSharablePassword, 
+                       SFSharablePasswordReceiver, SFSharedWebCredentialsDatabaseEntry, 
                        SFStrongPasswordGenerator, SFSuggestedUser, SFSuggestedUserProvider, 
                        _SFSharablePasswordEncryptionInformation ]
 ...

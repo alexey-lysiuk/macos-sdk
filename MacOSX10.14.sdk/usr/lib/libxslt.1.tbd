@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F191E8B9-7530-30CA-873B-2FA2BF2D6374' ]
-platform:        macosx
+uuids:           [ 'x86_64: FB93A727-731D-313F-AF6B-4518FE830FFB' ]
+platform:        zippered
 install-name:    /usr/lib/libxslt.1.dylib
 current-version: 3.26
 compatibility-version: 3

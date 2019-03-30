@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 23CA5A39-D954-3A87-B2ED-E528ACBD11C7' ]
+uuids:           [ 'x86_64: 2953ECBB-0660-3EBC-AA50-01F91A361820' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DFRBrightness.framework/Versions/A/DFRBrightness
 exports:         

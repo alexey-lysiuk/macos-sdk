@@ -22,6 +22,6 @@ typedef NS_ENUM(NSInteger, MPErrorCode) {
     MPErrorNotSupported,                            // the request is not supported (ex: trying to add items to a smart playlist)
     MPErrorCancelled MP_API(ios(10.1)),             // the request was cancelled before it could complete
     MPErrorRequestTimedOut MP_API(ios(10.3)),
-} MP_API(ios(9.3)) MP_PROHIBITED(watchos);
+} MP_API(ios(9.3), macos(10.14.2)) MP_PROHIBITED(watchos);
 
 NS_ASSUME_NONNULL_END

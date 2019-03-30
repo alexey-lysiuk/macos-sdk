@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E11142A6-62BA-3BA2-AC6F-DE55AC53607D' ]
-platform:        macosx
+uuids:           [ 'x86_64: 13391226-7E02-3416-B5AA-234DB3E039C0' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/CoreDuetDaemonProtocol.framework/Versions/A/CoreDuetDaemonProtocol
 exports:         
   - archs:           [ x86_64 ]

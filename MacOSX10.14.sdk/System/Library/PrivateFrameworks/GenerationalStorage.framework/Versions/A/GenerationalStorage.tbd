@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 089301DF-60C9-3BED-9357-2F91336C1579' ]
+uuids:           [ 'x86_64: E4F747EB-7D8B-39ED-B72E-C323C201B6E1' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/GenerationalStorage.framework/Versions/A/GenerationalStorage
 current-version: 285.101

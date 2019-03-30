@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 91EE9BF4-FB06-3260-B502-7EFDAD5AF59B' ]
-platform:        macosx
+uuids:           [ 'x86_64: 336F9184-A739-3770-ACFA-4659DFEEACC4' ]
+platform:        zippered
 install-name:    /usr/lib/libutil.dylib
 objc-constraint: none
 exports:         

@@ -2,7 +2,7 @@
 //  GKFriendRequestComposeViewController.h
 //  Game Center
 //
-//  Copyright 2010-2018 Apple Inc. All rights reserved.
+//  Copyright 2010-2019 Apple Inc. All rights reserved.
 //
 
 #if TARGET_OS_IPHONE

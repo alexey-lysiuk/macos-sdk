@@ -3,7 +3,7 @@
  
     Framework:  AVFoundation
  
-    Copyright 2010-2017 Apple Inc. All rights reserved.
+    Copyright 2010-2019 Apple Inc. All rights reserved.
 */
 
 #import <AVFoundation/AVBase.h>
@@ -607,7 +607,7 @@ API_AVAILABLE(macos(10.7), ios(4.0)) __WATCHOS_PROHIBITED __TVOS_PROHIBITED
  @discussion
     An AVCaptureConnection may involve one or more AVCaptureInputPorts producing data to the connection's AVCaptureOutput. This property is read-only. An AVCaptureConnection's output remains static for the life of the object. Note that a connection can either be to an output or a video preview layer, but never to both.
  */
-@property(nonatomic, readonly) AVCaptureOutput *output;
+@property(nonatomic, readonly, nullable) AVCaptureOutput *output;
 
 /*!
  @property videoPreviewLayer
@@ -617,7 +617,7 @@ API_AVAILABLE(macos(10.7), ios(4.0)) __WATCHOS_PROHIBITED __TVOS_PROHIBITED
  @discussion
     An AVCaptureConnection may involve one AVCaptureInputPort producing data to an AVCaptureVideoPreviewLayer object. This property is read-only. An AVCaptureConnection's videoPreviewLayer remains static for the life of the object. Note that a connection can either be to an output or a video preview layer, but never to both.
  */
-@property(nonatomic, readonly) AVCaptureVideoPreviewLayer *videoPreviewLayer API_AVAILABLE(ios(6.0));
+@property(nonatomic, readonly, nullable) AVCaptureVideoPreviewLayer *videoPreviewLayer API_AVAILABLE(ios(6.0));
 
 /*!
  @property enabled

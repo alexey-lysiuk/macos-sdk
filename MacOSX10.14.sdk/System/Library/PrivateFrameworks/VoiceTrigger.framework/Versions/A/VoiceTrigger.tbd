@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 053E0E6C-0864-346F-BC9E-7F35902951A3' ]
+uuids:           [ 'x86_64: C92298A2-9EF9-3DB8-93DC-BE1A7E309FE8' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/VoiceTrigger.framework/Versions/A/VoiceTrigger
 exports:         
@@ -366,22 +366,24 @@ exports:
                        __ZTV9NPipeFile, __ZlsR7NStringRKS_, __ZlsR7NStringRKd, __ZlsR7NStringRKf, 
                        __ZlsR7NStringRKi, __ZlsR7NStringRKj, __ZlsRNSt3__113basic_ostreamIcNS_11char_traitsIcEEEERK7NString, 
                        __baseDir, _gVTRTModelData, _kCurrVTMetaVersion, _kNDEConfigDataMaxSizeBytes, 
-                       _kNDEStateBufferSizeBytes, _kVTExplicitTrainingType, _kVTFarField, 
+                       _kNDEStateBufferSizeBytes, _kVTAudioRecordContextKey, _kVTAudioRecordDeviceInfoKey, 
+                       _kVTContainsPayload, _kVTExplicitTrainingType, _kVTFarField, 
                        _kVTImplicitTrainingType, _kVTLoggingContextFramework, _kVTMetaHandheldKey, 
                        _kVTMetaProductTypeKey, _kVTMetaProductVersionKey, _kVTMetaTrainingTypeKey, 
                        _kVTMetaUtteranceWavKey, _kVTMetaVersionFileName, _kVTMetaVersionKey, 
-                       _kVTNearField, _kVTNotBackedupPreferencesDomain, _kVTPreferencesDomain, 
-                       _kVTPreferencesPhraseSpotterEnabledDidChangeDarwinNotification, 
+                       _kVTNearField, _kVTNotBackedupPreferencesDomain, _kVTOtherBiometricResultKey, 
+                       _kVTPreferencesDomain, _kVTPreferencesPhraseSpotterEnabledDidChangeDarwinNotification, 
                        _kVTPreferencesVoiceTriggerEnabledDidChangeDarwinNotification, 
-                       _nd_close, _nd_create, _nd_error, _nd_getoption, _nd_getphraseresults, 
-                       _nd_getresults, _nd_getresultsstr, _nd_getsupervector, _nd_initialize, 
-                       _nd_initlog, _nd_logcontrol, _nd_phrasecount, _nd_reset, _nd_resetbest, 
-                       _nd_sat_analyze, _nd_sat_deletevector, _nd_sat_initialize, 
-                       _nd_sat_reset, _nd_sat_update, _nd_sat_vectorcount, _nd_scoresupervector, 
-                       _nd_wavedata, _nde_create, _nde_destroy, _nde_process, _nde_process_v2, 
-                       _nde_processframe, _nde_processframe_v2, _nde_reset ]
-    objc-classes:    [ VTBlobBuilder, VTPreferences, VTStateManager, VTUtilities, 
-                       VTUtteranceMetadataManager ]
+                       _kVTRecordingTimeStampKey, _nd_close, _nd_create, _nd_error, 
+                       _nd_getoption, _nd_getphraseresults, _nd_getresults, _nd_getresultsstr, 
+                       _nd_getsupervector, _nd_initialize, _nd_initlog, _nd_logcontrol, 
+                       _nd_phrasecount, _nd_reset, _nd_resetbest, _nd_sat_analyze, 
+                       _nd_sat_deletevector, _nd_sat_initialize, _nd_sat_reset, _nd_sat_update, 
+                       _nd_sat_vectorcount, _nd_scoresupervector, _nd_wavedata, _nde_create, 
+                       _nde_destroy, _nde_process, _nde_process_v2, _nde_processframe, 
+                       _nde_processframe_v2, _nde_reset ]
+    objc-classes:    [ VTBlobBuilder, VTPreferences, VTSpeakerIdUtilities, VTStateManager, 
+                       VTUtilities, VTUtteranceMetadataManager, VTVoiceProfileMigration ]
     weak-def-symbols: [ __ZTI10NAutoArrayI9NPhoneHMME, __ZTI10NAutoArrayIjE, __ZTI10NAutoArrayItE, 
                         __ZTI10NBaseLayer, __ZTI10NClipLayer, __ZTI10NLSTMLayer, 
                         __ZTI11NDEPhoneHMM, __ZTI11NLinkedListI6NArrayIN14NResizingQueueI6NFrameE8NElementEEE, 

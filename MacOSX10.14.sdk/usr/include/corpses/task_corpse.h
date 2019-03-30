@@ -34,16 +34,16 @@
 #include <kern/kern_cdata.h>
 #include <kern/kcdata.h>
 
-typedef struct kcdata_item	*task_crashinfo_item_t;
+typedef struct kcdata_item      *task_crashinfo_item_t;
 
 /* Deprecated: use the KCDATA_* macros for all future use */
-#define CRASHINFO_ITEM_TYPE(item)		  KCDATA_ITEM_TYPE(item)
-#define CRASHINFO_ITEM_SIZE(item)		  KCDATA_ITEM_SIZE(item)
-#define CRASHINFO_ITEM_DATA_PTR(item)	  KCDATA_ITEM_DATA_PTR(item)
+#define CRASHINFO_ITEM_TYPE(item)                 KCDATA_ITEM_TYPE(item)
+#define CRASHINFO_ITEM_SIZE(item)                 KCDATA_ITEM_SIZE(item)
+#define CRASHINFO_ITEM_DATA_PTR(item)     KCDATA_ITEM_DATA_PTR(item)
 
 #define CRASHINFO_ITEM_NEXT_HEADER(item)  KCDATA_ITEM_NEXT_HEADER(item)
 
-#define CRASHINFO_ITEM_FOREACH(head)	  KCDATA_ITEM_FOREACH(head)
+#define CRASHINFO_ITEM_FOREACH(head)      KCDATA_ITEM_FOREACH(head)
 
 
 #define task_crashinfo_get_data_with_desc kcdata_get_data_with_desc

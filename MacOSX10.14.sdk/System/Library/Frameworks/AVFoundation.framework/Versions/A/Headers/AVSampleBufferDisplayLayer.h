@@ -179,4 +179,14 @@ API_AVAILABLE(macos(10.8), ios(8.0), tvos(10.2)) __WATCHOS_PROHIBITED
 
 @end
 
+@interface AVSampleBufferDisplayLayer (AVSampleBufferDisplayLayerImageProtection)
+
+/*!
+	@property		preventsCapture
+	@abstract		Indicates that image data should be protected from capture.
+ */
+@property (nonatomic) BOOL preventsCapture API_AVAILABLE(macos(10.15), ios(13.0), tvos(13.0)) API_UNAVAILABLE(watchos);
+
+@end
+
 NS_ASSUME_NONNULL_END

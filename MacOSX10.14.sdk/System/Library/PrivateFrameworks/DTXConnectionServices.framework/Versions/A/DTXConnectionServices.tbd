@@ -1,23 +1,23 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: ED76F8B7-7F7F-325F-9596-24CA682194A5' ]
-platform:        macosx
+uuids:           [ 'x86_64: AD587091-B24C-3936-8968-05A83F0BC0DF' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/DTXConnectionServices.framework/Versions/A/DTXConnectionServices
-current-version: 64460.15
+current-version: 64490.42.1
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CFArrayCreateWithDTXPrimitiveArray, _CFDictionaryCreateWithDTXPrimitiveDictionary, 
                        _DTXConnectionServicesVersionNumber, _DTXConnectionServicesVersionString, 
-                       _DTXErrorExceptionUserInfoKey, _DTXPrimitiveArrayAppendBuffer, 
-                       _DTXPrimitiveArrayAppendValues, _DTXPrimitiveArrayCreate, 
-                       _DTXPrimitiveArrayCreateWithTypesAndValues, _DTXPrimitiveArrayDestroy, 
-                       _DTXPrimitiveArrayGetSerialized, _DTXPrimitiveArrayReferencingSerialized, 
-                       _DTXPrimitiveDictionaryAddBufferPair, _DTXPrimitiveDictionaryAddPrimitivePair, 
-                       _DTXPrimitiveDictionaryCreate, _DTXPrimitiveDictionaryDestroy, 
-                       _DTXPrimitiveDictionaryGetSerialized, _DTXPrimitiveDictionaryReferencingSerialized, 
-                       __DTXPrimitiveDictionaryEnumerate, __DTXPrimitiveDictionaryGetCount, 
-                       __createObjectFromPrimitiveType, _kDTXAckBarrierMessage, _kDTXBarrierMessage, 
-                       _kDTXHeartbeatMessage, _kDTXInterruptionMessage ]
+                       _DTXPrimitiveArrayAppendBuffer, _DTXPrimitiveArrayAppendValues, 
+                       _DTXPrimitiveArrayCreate, _DTXPrimitiveArrayCreateWithTypesAndValues, 
+                       _DTXPrimitiveArrayDestroy, _DTXPrimitiveArrayGetSerialized, 
+                       _DTXPrimitiveArrayReferencingSerialized, _DTXPrimitiveDictionaryAddBufferPair, 
+                       _DTXPrimitiveDictionaryAddPrimitivePair, _DTXPrimitiveDictionaryCreate, 
+                       _DTXPrimitiveDictionaryDestroy, _DTXPrimitiveDictionaryGetSerialized, 
+                       _DTXPrimitiveDictionaryReferencingSerialized, __DTXPrimitiveDictionaryEnumerate, 
+                       __DTXPrimitiveDictionaryGetCount, __createObjectFromPrimitiveType, 
+                       _kDTXAckBarrierMessage, _kDTXBarrierMessage, _kDTXHeartbeatMessage, 
+                       _kDTXInterruptionMessage ]
     objc-classes:    [ DTXBlockCompressorFactory, DTXBlockCompressorLibCompression, 
                        DTXChannel, DTXConnection, DTXDecompressionException, DTXFileDescriptorTransport, 
                        DTXFoundationURLTransport, DTXMachTransport, DTXMessage, DTXMessageParser, 

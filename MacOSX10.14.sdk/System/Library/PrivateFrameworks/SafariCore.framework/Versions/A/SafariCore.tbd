@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F5845B79-81F1-335E-BF69-051B5063B621' ]
-platform:        macosx
+uuids:           [ 'x86_64: 7B88C301-869C-3B33-BF7B-BAA9A7461C29' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/SafariCore.framework/Versions/A/SafariCore
-current-version: 606.2.104
+current-version: 607.1.40
 compatibility-version: 0
 exports:         
   - archs:           [ x86_64 ]
@@ -20,6 +20,8 @@ exports:
                        _WBSAnalyticsSafariContactAutoFillDidShowSetsEventReadFrom, 
                        _WBSAnalyticsSafariDedupedDAVBookmarksEventReadFrom, _WBSAnalyticsSafariDidReceiveInvalidMessageFromWebProcessEventReadFrom, 
                        _WBSAnalyticsSafariDidTerminateWebProcessBeforeNavigationReadFrom, 
+                       _WBSAnalyticsSafariDuplicatedPasswordsWarningEventReadFrom, 
+                       _WBSAnalyticsSafariEnterPasswordsPreferencesEventReadFrom, 
                        _WBSAnalyticsSafariEnterTwoUpEventReadFrom, _WBSAnalyticsSafariInteractedWithGeneratedPasswordEventReadFrom, 
                        _WBSAnalyticsSafariPageLoadCompleteEventReadFrom, _WBSAnalyticsSafariPageLoadStartedEventReadFrom, 
                        _WBSAnalyticsSafariParticipatedInPasswordAutoFillReadFrom, 
@@ -79,6 +81,7 @@ exports:
                        WBSAnalyticsSafariContactAutoFillDidSelectSetEvent, WBSAnalyticsSafariContactAutoFillDidShowSetsEvent, 
                        WBSAnalyticsSafariDedupedDAVBookmarksEvent, WBSAnalyticsSafariDidReceiveInvalidMessageFromWebProcessEvent, 
                        WBSAnalyticsSafariDidTerminateWebProcessBeforeNavigation, 
+                       WBSAnalyticsSafariDuplicatedPasswordsWarningEvent, WBSAnalyticsSafariEnterPasswordsPreferencesEvent, 
                        WBSAnalyticsSafariEnterTwoUpEvent, WBSAnalyticsSafariInteractedWithGeneratedPasswordEvent, 
                        WBSAnalyticsSafariPageLoadCompleteEvent, WBSAnalyticsSafariPageLoadStartedEvent, 
                        WBSAnalyticsSafariParticipatedInPasswordAutoFill, WBSAnalyticsSafariReaderActiveOptInOutEvent, 
@@ -99,15 +102,16 @@ exports:
                        WBSFileLogger, WBSKeyBagLockStatusChangedHandlerToken, WBSKeyBagLockStatusManager, 
                        WBSKeychainCredentialNotificationMonitor, WBSLazyURLCredentialCache, 
                        WBSMaxConsecutivePasswordRule, WBSMaxLengthPasswordRule, WBSMemoryFootprint, 
-                       WBSMemoryFootprintMallocZone, WBSMinLengthPasswordRule, WBSMutableOrderedSet, 
-                       WBSPair, WBSPasswordAuditingEligibleDomainsManager, WBSPasswordCharacterClass, 
-                       WBSPasswordGenerationManager, WBSPasswordManagerURL, WBSPasswordRule, 
-                       WBSPasswordRuleParser, WBSPasswordRuleSet, WBSRemotePlistController, 
-                       WBSRequiredPasswordRule, WBSSQLiteDatabase, WBSSQLiteRow, 
-                       WBSSQLiteRowEnumerator, WBSSQLiteStatement, WBSSQLiteStatementCache, 
-                       WBSSQLiteStore, WBSSafariBookmarksSyncAgentProxy, WBSSandboxExtensionDataPair, 
-                       WBSSavedPassword, WBSSavedPasswordStore, WBSScopeExitHandler, 
-                       WBSSoftLinkingUtilities, WBSURLCredentialCache, _WBSNSURLProtectionSpaceAndDate ]
+                       WBSMemoryFootprintMallocZone, WBSMinLengthPasswordRule, WBSMutableOrderedDictionary, 
+                       WBSMutableOrderedSet, WBSPair, WBSPasswordAuditingEligibleDomainsManager, 
+                       WBSPasswordCharacterClass, WBSPasswordGenerationManager, WBSPasswordManagerURL, 
+                       WBSPasswordRule, WBSPasswordRuleParser, WBSPasswordRuleSet, 
+                       WBSRemotePlistController, WBSRequiredPasswordRule, WBSSQLiteDatabase, 
+                       WBSSQLiteRow, WBSSQLiteRowEnumerator, WBSSQLiteStatement, 
+                       WBSSQLiteStatementCache, WBSSQLiteStore, WBSSafariBookmarksSyncAgentProxy, 
+                       WBSSandboxExtensionDataPair, WBSSavedPassword, WBSSavedPasswordAuditor, 
+                       WBSSavedPasswordStore, WBSScopeExitHandler, WBSSoftLinkingUtilities, 
+                       WBSURLCredentialCache, _WBSNSURLProtectionSpaceAndDate ]
     objc-ivars:      [ WBSAnalyticsLogger._analyticsSynchronizationQueue, WBSAnalyticsSafariActivatedHomeScreenQuickActionEvent._has, 
                        WBSAnalyticsSafariActivatedHomeScreenQuickActionEvent._quickAction, 
                        WBSAnalyticsSafariActivatedHomeScreenQuickActionEvent._timestamp, 
@@ -149,6 +153,10 @@ exports:
                        WBSAnalyticsSafariDidTerminateWebProcessBeforeNavigation._has, 
                        WBSAnalyticsSafariDidTerminateWebProcessBeforeNavigation._terminationReason, 
                        WBSAnalyticsSafariDidTerminateWebProcessBeforeNavigation._timestamp, 
+                       WBSAnalyticsSafariDuplicatedPasswordsWarningEvent._duplicatedPasswordsWarningInteractionType, 
+                       WBSAnalyticsSafariDuplicatedPasswordsWarningEvent._has, WBSAnalyticsSafariDuplicatedPasswordsWarningEvent._timestamp, 
+                       WBSAnalyticsSafariEnterPasswordsPreferencesEvent._has, WBSAnalyticsSafariEnterPasswordsPreferencesEvent._percentageOfDuplicatedPasswords, 
+                       WBSAnalyticsSafariEnterPasswordsPreferencesEvent._timestamp, 
                        WBSAnalyticsSafariEnterTwoUpEvent._has, WBSAnalyticsSafariEnterTwoUpEvent._method, 
                        WBSAnalyticsSafariEnterTwoUpEvent._timestamp, WBSAnalyticsSafariInteractedWithGeneratedPasswordEvent._generatedPasswordInteractionType, 
                        WBSAnalyticsSafariInteractedWithGeneratedPasswordEvent._has, 

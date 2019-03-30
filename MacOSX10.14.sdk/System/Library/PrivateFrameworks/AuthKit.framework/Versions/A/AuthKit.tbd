@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8920796A-C818-3163-B6D0-FD05D1A6ADF5' ]
-platform:        macosx
+uuids:           [ 'x86_64: 5BC0D7C7-A46A-3B1A-BDC9-7E9150B5A876' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/AuthKit.framework/Versions/A/AuthKit
 exports:         
   - archs:           [ x86_64 ]

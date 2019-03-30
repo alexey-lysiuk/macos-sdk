@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A7C260BA-3823-37C6-A710-5435457F2F41' ]
+uuids:           [ 'x86_64: 343FE06C-3CED-3383-802D-CAB23D089C06' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/Versions/A/CoreThemeDefinition
-current-version: 346.28
+current-version: 348.3
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _AbortDistillKey, _CSIDataKey, _CoreThemeArtworkFormatCAAR, 
@@ -118,12 +118,12 @@ exports:
                        TDRenditionKeySpec._memoryClass, TDRenditionKeySpec._nameIdentifier, 
                        TDRenditionKeySpec._scaleFactor, TDRenditionKeySpec._scratchKey, 
                        TDRenditionKeySpec._stackScratchKey, TDRenditionKeySpec._subtype, 
-                       TDRenditionsDistiller.document, TDRenditionsDistiller.inQueueLock, 
-                       TDRenditionsDistiller.noMoreCSIDataInfo, TDRenditionsDistiller.noMoreRenditions, 
-                       TDRenditionsDistiller.outQueueLock, TDRenditionsDistiller.psiDataInfoOutQueue, 
-                       TDRenditionsDistiller.renditionInQueue, TDRenditionsDistiller.shouldCompressCSIDataFlag, 
-                       TDSimpleArtworkRenditionSpec._alignmentRect, TDSlice._sliceRect, 
-                       TDStringProperty._stringValue, TDThemeConstant._identifier, 
+                       TDRenditionsDistiller._group, TDRenditionsDistiller.document, 
+                       TDRenditionsDistiller.inQueueLock, TDRenditionsDistiller.noMoreCSIDataInfo, 
+                       TDRenditionsDistiller.noMoreRenditions, TDRenditionsDistiller.outQueueLock, 
+                       TDRenditionsDistiller.psiDataInfoOutQueue, TDRenditionsDistiller.renditionInQueue, 
+                       TDRenditionsDistiller.shouldCompressCSIDataFlag, TDSimpleArtworkRenditionSpec._alignmentRect, 
+                       TDSlice._sliceRect, TDStringProperty._stringValue, TDThemeConstant._identifier, 
                        TDThemeLook._supportsContrastAdjustment, TDThemeSchema._doc, 
                        TDThreadMOCOrganizer.document, TDThreadMOCOrganizer.mainThread, 
                        _TDLayerStackFilterHelper._excludedDirections, _TDLayerStackFilterHelper._excludedHorizontalSizeClasses, 

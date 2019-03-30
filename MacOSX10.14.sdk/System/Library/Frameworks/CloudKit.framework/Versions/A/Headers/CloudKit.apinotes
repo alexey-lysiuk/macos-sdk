@@ -149,29 +149,12 @@ Classes:
 
 - Name: CKContainer
   Methods:
-  - Selector: 'discoverAllContactUserInfosWithCompletionHandler:'
-    MethodKind: Instance
-    Availability: nonswift
-  - Selector: 'discoverUserInfoWithEmailAddress:completionHandler:'
-    MethodKind: Instance
-    Availability: nonswift
-  - Selector: 'discoverUserInfoWithUserRecordID:completionHandler:'
-    MethodKind: Instance
-    Availability: nonswift
   - Selector: "fetchAllLongLivedOperationIDsWithCompletionHandler:"
     MethodKind: Instance
     SwiftPrivate: true
   - Selector: "fetchLongLivedOperationWithID:completionHandler:"
     MethodKind: Instance
     SwiftPrivate: true
-- Name: CKDiscoverAllContactsOperation
-  Availability: nonswift
-- Name: CKDiscoverUserInfosOperation
-  Availability: nonswift
-- Name: CKDiscoveredUserInfo
-  Availability: nonswift
-- Name: CKFetchRecordChangesOperation
-  Availability: nonswift
 - Name: CKFetchRecordZoneChangesOperation
   Methods:
   - Selector: "initWithRecordZoneIDs:configurationsByRecordZoneID:"
@@ -203,38 +186,12 @@ Classes:
     SwiftPrivate: true
 - Name: CKOperationConfiguration
   SwiftName: CKOperation.Configuration
-- Name: CKQueryNotification
-  Properties:
-  - Name: isPublicDatabase
-    Availability: nonswift
 - Name: CKShareMetadata
   SwiftName: CKShare.Metadata
 - Name: CKSubscription
-  Methods:
-  - Selector: "initWithCoder:"
-    MethodKind: Instance
-    Availability: nonswift
-  - Selector: "initWithRecordType:predicate:options:"
-    MethodKind: Instance
-    Availability: nonswift
-  - Selector: "initWithRecordType:predicate:subscriptionID:options:"
-    MethodKind: Instance
-    Availability: nonswift
-  - Selector: "initWithZoneID:options:"
-    MethodKind: Instance
-    Availability: nonswift
-  - Selector: "initWithZoneID:subscriptionID:options:"
-    MethodKind: Instance
-    Availability: nonswift
   Properties:
   - Name: recordType
     SwiftPrivate: true
-  - Name: predicate
-    Availability: nonswift
-  - Name: subscriptionOptions
-    Availability: nonswift
-  - Name: zoneID
-    Availability: nonswift
   - Name: subscriptionID
     SwiftPrivate: true
 - Name: CKOperation
@@ -294,8 +251,6 @@ Protocols:
   SwiftName: __CKRecordObjCValue
 
 Globals:
-- Name: CKOwnerDefaultName
-  Availability: nonswift
 - Name: CKQueryOperationMaximumResults
   SwiftName: CKQueryOperation.maximumResults
 - Name: CKRecordTypeUserRecord
@@ -361,10 +316,20 @@ Tags:
   SwiftName: CKSubscription.SubscriptionType
 - Name: CKQuerySubscriptionOptions
   SwiftName: CKQuerySubscription.Options
-- Name: CKSubscriptionOptions
-  Availability: nonswift
 
 SwiftVersions:
+- Version: 4.2
+  Classes:
+  - Name: CKNotification
+    Methods:
+    - Selector: "notificationFromRemoteNotificationDictionary:"
+      MethodKind: Class
+      ResultType: "CKNotification * _Nonnull"
+  - Name: CKAsset
+    Properties:
+    - Name: fileURL
+      Nullability: N
+
 - Version: 4
   Classes:
   - Name: CKDatabase
@@ -477,15 +442,6 @@ SwiftVersions:
 
   - Name: CKContainer
     Methods:
-    - Selector: 'discoverAllContactUserInfosWithCompletionHandler:'
-      MethodKind: Instance
-      Availability: available
-    - Selector: 'discoverUserInfoWithEmailAddress:completionHandler:'
-      MethodKind: Instance
-      Availability: available
-    - Selector: 'discoverUserInfoWithUserRecordID:completionHandler:'
-      MethodKind: Instance
-      Availability: available
     - Selector: "fetchAllLongLivedOperationIDsWithCompletionHandler:"
       MethodKind: Instance
       SwiftPrivate: false
@@ -504,14 +460,6 @@ SwiftVersions:
     - Name: modifySubscriptionsCompletionBlock
       SwiftPrivate: false
 
-  - Name: CKDiscoverAllContactsOperation
-    Availability: available
-  - Name: CKDiscoverUserInfosOperation
-    Availability: available
-  - Name: CKDiscoveredUserInfo
-    Availability: available
-  - Name: CKFetchRecordChangesOperation
-    Availability: available
   - Name: CKFetchRecordZoneChangesOperation
     Methods:
     - Selector: "initWithRecordZoneIDs:configurationsByRecordZoneID:"
@@ -532,38 +480,12 @@ SwiftVersions:
       Availability: available
   - Name: CKOperationConfiguration
     SwiftName: CKOperationConfiguration
-  - Name: CKQueryNotification
-    Properties:
-    - Name: isPublicDatabase
-      Availability: available
   - Name: CKShareMetadata
     SwiftName: CKShareMetadata
   - Name: CKSubscription
-    Methods:
-    - Selector: "initWithCoder:"
-      MethodKind: Instance
-      Availability: available
-    - Selector: "initWithRecordType:predicate:options:"
-      MethodKind: Instance
-      Availability: available
-    - Selector: "initWithRecordType:predicate:subscriptionID:options:"
-      MethodKind: Instance
-      Availability: available
-    - Selector: "initWithZoneID:options:"
-      MethodKind: Instance
-      Availability: available
-    - Selector: "initWithZoneID:subscriptionID:options:"
-      MethodKind: Instance
-      Availability: available
     Properties:
     - Name: recordType
       SwiftPrivate: false
-    - Name: predicate
-      Availability: available
-    - Name: subscriptionOptions
-      Availability: available
-    - Name: zoneID
-      Availability: available
     - Name: subscriptionID
       SwiftPrivate: false
   - Name: CKOperation
@@ -621,8 +543,6 @@ SwiftVersions:
     SwiftName: CKRecordValue
 
   Globals:
-  - Name: CKOwnerDefaultName
-    Availability: available
   - Name: CKQueryOperationMaximumResults
     SwiftName: CKQueryOperationMaximumResults
 
@@ -661,8 +581,6 @@ SwiftVersions:
     SwiftName: CKSubscriptionType
   - Name: CKQuerySubscriptionOptions
     SwiftName: CKQuerySubscriptionOptions
-  - Name: CKSubscriptionOptions
-    Availability: available
 
 
 - Version: 3

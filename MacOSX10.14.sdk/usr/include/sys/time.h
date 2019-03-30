@@ -2,7 +2,7 @@
  * Copyright (c) 2000-2006 Apple Computer, Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
- * 
+ *
  * This file contains Original Code and/or Modifications of Original Code
  * as defined in and that are subject to the Apple Public Source License
  * Version 2.0 (the 'License'). You may not use this file except in
@@ -11,10 +11,10 @@
  * unlawful or unlicensed copies of an Apple operating system, or to
  * circumvent, violate, or enable the circumvention or violation of, any
  * terms of an Apple operating system software license agreement.
- * 
+ *
  * Please obtain a copy of the License at
  * http://www.opensource.apple.com/apsl/ and read it before using this file.
- * 
+ *
  * The Original Code and all software distributed under the License are
  * distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
  * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
@@ -22,7 +22,7 @@
  * FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.
  * Please see the License for the specific language governing rights and
  * limitations under the License.
- * 
+ *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_END@
  */
 /* Copyright (c) 1995 NeXT Computer, Inc. All Rights Reserved */
@@ -88,18 +88,18 @@
  * Structure used as a parameter by getitimer(2) and setitimer(2) system
  * calls.
  */
-struct	itimerval {
-	struct	timeval it_interval;	/* timer interval */
-	struct	timeval it_value;	/* current value */
+struct  itimerval {
+	struct  timeval it_interval;    /* timer interval */
+	struct  timeval it_value;       /* current value */
 };
 
 /*
  * Names of the interval timers, and structure
  * defining a timer setting.
  */
-#define	ITIMER_REAL	0
-#define	ITIMER_VIRTUAL	1
-#define	ITIMER_PROF	2
+#define ITIMER_REAL     0
+#define ITIMER_VIRTUAL  1
+#define ITIMER_PROF     2
 
 /*
  * Select uses bit masks of file descriptors in longs.  These macros
@@ -117,51 +117,51 @@ struct	itimerval {
 
 #include <sys/_types/_fd_copy.h>
 
-#define	TIMEVAL_TO_TIMESPEC(tv, ts) {					\
-	(ts)->tv_sec = (tv)->tv_sec;					\
-	(ts)->tv_nsec = (tv)->tv_usec * 1000;				\
+#define TIMEVAL_TO_TIMESPEC(tv, ts) {                                   \
+	(ts)->tv_sec = (tv)->tv_sec;                                    \
+	(ts)->tv_nsec = (tv)->tv_usec * 1000;                           \
 }
-#define	TIMESPEC_TO_TIMEVAL(tv, ts) {					\
-	(tv)->tv_sec = (ts)->tv_sec;					\
-	(tv)->tv_usec = (ts)->tv_nsec / 1000;				\
+#define TIMESPEC_TO_TIMEVAL(tv, ts) {                                   \
+	(tv)->tv_sec = (ts)->tv_sec;                                    \
+	(tv)->tv_usec = (ts)->tv_nsec / 1000;                           \
 }
 
 struct timezone {
-	int	tz_minuteswest;	/* minutes west of Greenwich */
-	int	tz_dsttime;	/* type of dst correction */
+	int     tz_minuteswest; /* minutes west of Greenwich */
+	int     tz_dsttime;     /* type of dst correction */
 };
-#define	DST_NONE	0	/* not on dst */
-#define	DST_USA		1	/* USA style dst */
-#define	DST_AUST	2	/* Australian style dst */
-#define	DST_WET		3	/* Western European dst */
-#define	DST_MET		4	/* Middle European dst */
-#define	DST_EET		5	/* Eastern European dst */
-#define	DST_CAN		6	/* Canada */
+#define DST_NONE        0       /* not on dst */
+#define DST_USA         1       /* USA style dst */
+#define DST_AUST        2       /* Australian style dst */
+#define DST_WET         3       /* Western European dst */
+#define DST_MET         4       /* Middle European dst */
+#define DST_EET         5       /* Eastern European dst */
+#define DST_CAN         6       /* Canada */
 
 /* Operations on timevals. */
-#define	timerclear(tvp)		(tvp)->tv_sec = (tvp)->tv_usec = 0
-#define	timerisset(tvp)		((tvp)->tv_sec || (tvp)->tv_usec)
-#define	timercmp(tvp, uvp, cmp)						\
-	(((tvp)->tv_sec == (uvp)->tv_sec) ?				\
-	    ((tvp)->tv_usec cmp (uvp)->tv_usec) :			\
+#define timerclear(tvp)         (tvp)->tv_sec = (tvp)->tv_usec = 0
+#define timerisset(tvp)         ((tvp)->tv_sec || (tvp)->tv_usec)
+#define timercmp(tvp, uvp, cmp)                                         \
+	(((tvp)->tv_sec == (uvp)->tv_sec) ?                             \
+	    ((tvp)->tv_usec cmp (uvp)->tv_usec) :                       \
 	    ((tvp)->tv_sec cmp (uvp)->tv_sec))
-#define	timeradd(tvp, uvp, vvp)						\
-	do {								\
-		(vvp)->tv_sec = (tvp)->tv_sec + (uvp)->tv_sec;		\
-		(vvp)->tv_usec = (tvp)->tv_usec + (uvp)->tv_usec;	\
-		if ((vvp)->tv_usec >= 1000000) {			\
-			(vvp)->tv_sec++;				\
-			(vvp)->tv_usec -= 1000000;			\
-		}							\
+#define timeradd(tvp, uvp, vvp)                                         \
+	do {                                                            \
+	        (vvp)->tv_sec = (tvp)->tv_sec + (uvp)->tv_sec;          \
+	        (vvp)->tv_usec = (tvp)->tv_usec + (uvp)->tv_usec;       \
+	        if ((vvp)->tv_usec >= 1000000) {                        \
+	                (vvp)->tv_sec++;                                \
+	                (vvp)->tv_usec -= 1000000;                      \
+	        }                                                       \
 	} while (0)
-#define	timersub(tvp, uvp, vvp)						\
-	do {								\
-		(vvp)->tv_sec = (tvp)->tv_sec - (uvp)->tv_sec;		\
-		(vvp)->tv_usec = (tvp)->tv_usec - (uvp)->tv_usec;	\
-		if ((vvp)->tv_usec < 0) {				\
-			(vvp)->tv_sec--;				\
-			(vvp)->tv_usec += 1000000;			\
-		}							\
+#define timersub(tvp, uvp, vvp)                                         \
+	do {                                                            \
+	        (vvp)->tv_sec = (tvp)->tv_sec - (uvp)->tv_sec;          \
+	        (vvp)->tv_usec = (tvp)->tv_usec - (uvp)->tv_usec;       \
+	        if ((vvp)->tv_usec < 0) {                               \
+	                (vvp)->tv_sec--;                                \
+	                (vvp)->tv_usec += 1000000;                      \
+	        }                                                       \
 	} while (0)
 
 #define timevalcmp(l, r, cmp)   timercmp(l, r, cmp) /* freebsd */
@@ -170,11 +170,11 @@ struct timezone {
  * Getkerninfo clock information structure
  */
 struct clockinfo {
-	int	hz;		/* clock frequency */
-	int	tick;		/* micro-seconds per hz tick */
-	int	tickadj;	/* clock skew rate for adjtime() */
-	int	stathz;		/* statistics clock frequency */
-	int	profhz;		/* profiling clock frequency */
+	int     hz;             /* clock frequency */
+	int     tick;           /* micro-seconds per hz tick */
+	int     tickadj;        /* clock skew rate for adjtime() */
+	int     stathz;         /* statistics clock frequency */
+	int     profhz;         /* profiling clock frequency */
 };
 #endif /* (!_POSIX_C_SOURCE || _DARWIN_C_SOURCE) */
 
@@ -187,20 +187,20 @@ struct clockinfo {
 __BEGIN_DECLS
 
 #if !defined(_POSIX_C_SOURCE) || defined(_DARWIN_C_SOURCE)
-int	adjtime(const struct timeval *, struct timeval *);
-int	futimes(int, const struct timeval *);
-int	lutimes(const char *, const struct timeval *) __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_2_0);
-int	settimeofday(const struct timeval *, const struct timezone *);
+int     adjtime(const struct timeval *, struct timeval *);
+int     futimes(int, const struct timeval *);
+int     lutimes(const char *, const struct timeval *) __OSX_AVAILABLE_STARTING(__MAC_10_5, __IPHONE_2_0);
+int     settimeofday(const struct timeval *, const struct timezone *);
 #endif /* (!_POSIX_C_SOURCE || _DARWIN_C_SOURCE) */
 
-int	getitimer(int, struct itimerval *);
-int	gettimeofday(struct timeval * __restrict, void * __restrict);
+int     getitimer(int, struct itimerval *);
+int     gettimeofday(struct timeval * __restrict, void * __restrict);
 
-#include <sys/_select.h>	/* select() prototype */
+#include <sys/_select.h>        /* select() prototype */
 
-int	setitimer(int, const struct itimerval * __restrict,
-		struct itimerval * __restrict);
-int	utimes(const char *, const struct timeval *);
+int     setitimer(int, const struct itimerval * __restrict,
+    struct itimerval * __restrict);
+int     utimes(const char *, const struct timeval *);
 
 __END_DECLS
 

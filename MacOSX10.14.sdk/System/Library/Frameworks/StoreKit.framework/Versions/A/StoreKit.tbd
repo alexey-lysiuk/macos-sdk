@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 958A1250-2103-3A16-B24D-3FF5799F4B47' ]
-platform:        macosx
+uuids:           [ 'x86_64: 5F85D7AF-AD00-3179-8642-7562B83D4B61' ]
+platform:        zippered
 install-name:    /System/Library/Frameworks/StoreKit.framework/Versions/A/StoreKit
 current-version: 379
 objc-constraint: none
@@ -10,8 +10,9 @@ exports:
     symbols:         [ _SKDownloadTimeRemainingUnknown, _SKErrorDomain, _SKReceiptPropertyIsExpired, 
                        _SKReceiptPropertyIsRevoked, _SKReceiptPropertyIsVolumePurchase, 
                        _SKTerminateForInvalidReceipt ]
-    objc-classes:    [ SKDownload, SKMutablePayment, SKPayment, SKPaymentQueue, SKPaymentQueueClient, 
-                       SKPaymentTransaction, SKProduct, SKProductDiscount, SKProductSubscriptionPeriod, 
+    objc-classes:    [ SKDownload, SKMutablePayment, SKPayment, SKPaymentDiscount, 
+                       SKPaymentQueue, SKPaymentQueueClient, SKPaymentTransaction, 
+                       SKProduct, SKProductDiscount, SKProductSubscriptionPeriod, 
                        SKProductsRequest, SKProductsResponse, SKReceiptRefreshRequest, 
                        SKRequest, SKStoreReviewController ]
 ...

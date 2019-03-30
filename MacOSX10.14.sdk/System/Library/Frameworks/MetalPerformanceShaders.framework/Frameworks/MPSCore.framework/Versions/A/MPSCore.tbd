@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A9E87429-4788-3B2F-B970-4052F16C5961' ]
+uuids:           [ 'x86_64: BE0FF8B9-2DBA-3276-A293-C8B0F62BFFC4' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSCore.framework/Versions/A/MPSCore
-current-version: 121.1.1
+current-version: 121.4.2
 parent-umbrella: MetalPerformanceShaders
 exports:         
   - archs:           [ x86_64 ]

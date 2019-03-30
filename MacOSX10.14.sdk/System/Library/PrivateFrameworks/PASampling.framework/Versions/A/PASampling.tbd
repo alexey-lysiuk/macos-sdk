@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2EF55F38-B856-33FB-938F-E7C367C8AA49' ]
+uuids:           [ 'x86_64: 0F9F4B75-6A0A-34D7-98F9-63E3B025A7FA' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PASampling.framework/Versions/A/PASampling
-current-version: 217
+current-version: 218.2
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CopyDonatingUniqueIds, _CopyMountStatusData, _CountedStateForSampleThread, 

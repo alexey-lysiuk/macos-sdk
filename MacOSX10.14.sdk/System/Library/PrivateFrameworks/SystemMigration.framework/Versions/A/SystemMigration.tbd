@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 48D9BDE5-CD79-3A7A-9048-896FEBB88F40' ]
+uuids:           [ 'x86_64: 3DA80A66-0BBD-3BDC-A0B5-9263A101E9E6' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SystemMigration.framework/Versions/A/SystemMigration
 current-version: 866
@@ -49,10 +49,9 @@ exports:
                        _kEXTRA_FG_PATHS_CM_KEY, _kMacBuddyBundleIdentifier, _kSMDaemonConnectionEntitlementName, 
                        _portForAddress, _str_to_key, _strnupper ]
     objc-classes:    [ DSMigrator, MigrationHelper_Client, OrderedSetArrayValueTransformer, 
-                       SMArchiver, SMAttemptPeerToPeerStep, SMAuthenticatedMountWindowController, 
-                       SMCollectIncompatibleApps, SMCommitDeferredSandboxElement, 
-                       SMConfMigrator, SMConfMigratorPlugin, SMConfMigratorRule, 
-                       SMConflictResolutionViewController, SMConnectionFamilyIconTransformer, 
+                       SMArchiver, SMAttemptPeerToPeerStep, SMCollectIncompatibleApps, 
+                       SMCommitDeferredSandboxElement, SMConfMigrator, SMConfMigratorPlugin, 
+                       SMConfMigratorRule, SMConflictResolutionViewController, SMConnectionFamilyIconTransformer, 
                        SMConnectionFamilyIconTypeTransformer, SMConnectionFamilyNameTransformer, 
                        SMCopyEngine, SMCopyEngineCopier, SMCopyEngineFileCopier, 
                        SMCopyEngineNetworkCopier, SMCopyEngineNopCopier, SMCopyEngineShoveCopier, 

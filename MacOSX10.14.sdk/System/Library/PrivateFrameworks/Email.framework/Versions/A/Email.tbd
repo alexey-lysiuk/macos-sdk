@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0D436182-8A93-37C7-8B0C-0542EE04DBBC' ]
+uuids:           [ 'x86_64: 4DC11427-7116-3ABF-862E-758E02516EE3' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Email.framework/Versions/A/Email
-current-version: 3445.100.43
+current-version: 3445.104.2
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _EMDirectoryNameLostAndFound, _EMDirectoryNameMail, _EMDirectoryNameV1MailData, 

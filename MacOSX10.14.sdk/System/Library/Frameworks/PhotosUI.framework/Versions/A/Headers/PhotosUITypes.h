@@ -40,3 +40,6 @@ extern PHProjectCategory const PHProjectCategoryPrints API_AVAILABLE(macos(10.14
 extern PHProjectCategory const PHProjectCategorySlideshow API_AVAILABLE(macos(10.14)); // value: slideshow
 extern PHProjectCategory const PHProjectCategoryWallDecor API_AVAILABLE(macos(10.14)); // value: walldecor
 extern PHProjectCategory const PHProjectCategoryOther API_AVAILABLE(macos(10.14)); // value: other
+/// PHProjectCategoryUndefined is used to indicate that -[PHProjectExtensionController typeDescriptionDataSourceForCategory:invalidator:]
+/// should return the data source which provides all project types descriptions.
+extern PHProjectCategory const PHProjectCategoryUndefined API_AVAILABLE(macos(10.14.2)); // value: undefined

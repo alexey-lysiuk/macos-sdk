@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 122BDB84-C9B2-386B-9D63-78C768B7D72E' ]
-platform:        macosx
+uuids:           [ 'x86_64: 49168161-86B4-386D-A792-F344F0C11673' ]
+platform:        zippered
 install-name:    /System/Library/Frameworks/UserNotifications.framework/Versions/A/UserNotifications
 objc-constraint: none
 exports:         

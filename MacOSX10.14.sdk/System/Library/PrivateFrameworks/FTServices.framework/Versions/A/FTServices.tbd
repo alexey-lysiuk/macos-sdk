@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: ED6E0676-1762-3198-9224-4D766223B8B0' ]
+uuids:           [ 'x86_64: 0DC9281C-F5E8-3626-B260-D7F680FFA2B0' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/FTServices.framework/Versions/A/FTServices
 current-version: 800
@@ -17,9 +17,11 @@ exports:
                        _FaceTimeDeviceSIMInsertedNotification, _FaceTimeDeviceSIMRemovedNotification, 
                        _MessageLogEvent, _MessageLogStatistic, __AuthenticationDictionaryFromParameters, 
                        __BindingsArrayFromURIs, __DeviceCapabilitiesFromParameters, 
-                       __FTAreIDsEquivalent, __FTIDSFlagsNumber, __FTProfileVersionNumber, 
-                       __FZErrorTypeFromNSError, __FZErrorTypeFromResponseCodeAndError, 
-                       __GenerateDigestForSigning, __GenerateNonceAndSignature, _kDualModeDeliveryTypeHeader ]
+                       __FTAreIDsEquivalent, __FTGenerateDigestForSigningFromComponents, 
+                       __FTGenerateDigestForSigningFromPayload, __FTGenerateNonceAndSignatureFromComponents, 
+                       __FTGenerateNonceAndSignatureFromPayload, __FTIDSFlagsNumber, 
+                       __FTProfileVersionNumber, __FZErrorTypeFromNSError, __FZErrorTypeFromResponseCodeAndError, 
+                       _kDualModeDeliveryTypeHeader ]
     objc-classes:    [ FTDeviceSupport, FTEntitlementSupport, FTIDSMessage, FTMessageDelivery, 
                        FTMessageDelivery_APS, FTMessageDelivery_DualMode, FTMessageDelivery_HTTP, 
                        FTMessageQueue, FTNetworkSupport, FTPasswordManager, FTRegion, 

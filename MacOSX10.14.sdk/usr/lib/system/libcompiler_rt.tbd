@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A4D9CF37-D076-3CE9-95F1-DA89DA1601B6' ]
-platform:        macosx
+uuids:           [ 'x86_64: 8CB2B2B6-2C55-3733-9842-0E037AE3F46A' ]
+platform:        zippered
 install-name:    /usr/lib/system/libcompiler_rt.dylib
 current-version: 63.4
 objc-constraint: none

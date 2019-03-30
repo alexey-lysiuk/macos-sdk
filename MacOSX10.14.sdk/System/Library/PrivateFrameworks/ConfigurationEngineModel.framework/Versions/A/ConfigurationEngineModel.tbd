@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FD944226-0076-3DFF-A00F-F94697DCDFA1' ]
+uuids:           [ 'x86_64: 3DDCD8F5-788A-3872-961C-51B677FD3A06' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ConfigurationEngineModel.framework/Versions/A/ConfigurationEngineModel
 current-version: 21.1

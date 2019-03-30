@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BB1651A0-05CD-3F97-8355-39CD326C0AFD' ]
+uuids:           [ 'x86_64: 80CB3AF2-4401-3B3C-8941-7DEB648DD001' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSRayIntersector.framework/Versions/A/MPSRayIntersector
-current-version: 121.1.1
+current-version: 121.4.2
 parent-umbrella: MetalPerformanceShaders
 exports:         
   - archs:           [ x86_64 ]

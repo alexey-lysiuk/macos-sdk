@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 922102BF-0F85-3396-910B-B27255F15A4F' ]
-platform:        macosx
+uuids:           [ 'x86_64: F0DED0D7-EAEF-3607-A8D8-BCA60DAC1CBD' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/SymptomDiagnosticReporter.framework/Versions/A/SymptomDiagnosticReporter
-current-version: 820.227.2
+current-version: 820.255.1
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _kAutoBugCaptureStatusKeyAPNSEnable, _kAutoBugCaptureStatusKeyAPNSEnvironment, 

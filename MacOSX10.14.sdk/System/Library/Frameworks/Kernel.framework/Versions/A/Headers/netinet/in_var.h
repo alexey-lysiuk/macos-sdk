@@ -61,7 +61,7 @@
  */
 
 #ifndef _NETINET_IN_VAR_H_
-#define	_NETINET_IN_VAR_H_
+#define _NETINET_IN_VAR_H_
 #include <sys/appleapiopts.h>
 
 #include <sys/queue.h>
@@ -70,10 +70,10 @@
 
 
 struct in_aliasreq {
-	char ifra_name[IFNAMSIZ];	/* if name, e.g. "en0" */
+	char ifra_name[IFNAMSIZ];       /* if name, e.g. "en0" */
 	struct sockaddr_in ifra_addr;
 	struct sockaddr_in ifra_broadaddr;
-#define	ifra_dstaddr	ifra_broadaddr
+#define ifra_dstaddr    ifra_broadaddr
 	struct sockaddr_in ifra_mask;
 };
 
@@ -82,20 +82,20 @@ struct in_aliasreq {
  */
 struct kev_in_data {
 	struct net_event_data link_data;
-	struct in_addr ia_addr;		/* interface address */
-	u_int32_t ia_net;		/* network number of interface */
-	u_int32_t ia_netmask;		/* mask of net part */
-	u_int32_t ia_subnet;		/* subnet number, including net */
-	u_int32_t ia_subnetmask;	/* mask of subnet part */
-	struct in_addr ia_netbroadcast;	/* to recognize net broadcasts */
+	struct in_addr ia_addr;         /* interface address */
+	u_int32_t ia_net;               /* network number of interface */
+	u_int32_t ia_netmask;           /* mask of net part */
+	u_int32_t ia_subnet;            /* subnet number, including net */
+	u_int32_t ia_subnetmask;        /* mask of subnet part */
+	struct in_addr ia_netbroadcast; /* to recognize net broadcasts */
 	struct in_addr ia_dstaddr;
 };
 
 struct kev_in_collision {
 	struct net_event_data link_data; /* link where ARP was received on */
-	struct in_addr ia_ipaddr;	/* conflicting IP address */
-	u_char hw_len;			/* length of hardware address */
-	u_char hw_addr[0];		/* variable length hardware address */
+	struct in_addr ia_ipaddr;       /* conflicting IP address */
+	u_char hw_len;                  /* length of hardware address */
+	u_char hw_addr[0];              /* variable length hardware address */
 };
 
 struct kev_in_arpfailure {
@@ -109,8 +109,8 @@ struct kev_in_arpalive {
 
 #ifdef __APPLE_API_PRIVATE
 struct kev_in_portinuse {
-	u_int16_t port;		/* conflicting port number in host order */
-	u_int32_t req_pid;	/* PID port requestor */
+	u_int16_t port;         /* conflicting port number in host order */
+	u_int32_t req_pid;      /* PID port requestor */
 	u_int32_t reserved[2];
 };
 #endif /* __APPLE_API_PRIVATE */

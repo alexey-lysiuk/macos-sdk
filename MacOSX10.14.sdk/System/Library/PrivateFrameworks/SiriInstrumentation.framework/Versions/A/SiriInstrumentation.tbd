@@ -1,0 +1,32 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 95222ADB-E63F-3769-880D-0D3F35D129B7' ]
+platform:        zippered
+install-name:    /System/Library/PrivateFrameworks/SiriInstrumentation.framework/Versions/A/SiriInstrumentation
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _SIReflectionHydrateProtoFromEventTypeAndData, _SIReflectionInferClassFromEventType, 
+                       _SIReflectionInferEventTypeFromClass, _SISchemaAudioFirstBufferRecordedReadFrom, 
+                       _SISchemaAudioStopRecordingReadFrom, _SISchemaClientAnyEventReadFrom, 
+                       _SISchemaClientEventMetadataReadFrom, _SISchemaClientTransportEventMetadataReadFrom, 
+                       _SISchemaClientTurnBasedEventReadFrom, _SISchemaClientTurnContextReadFrom, 
+                       _SISchemaConversationTraceReadFrom, _SISchemaDeviceDynamicContextReadFrom, 
+                       _SISchemaDeviceFixedContextReadFrom, _SISchemaDictationContextReadFrom, 
+                       _SISchemaInvocationReadFrom, _SISchemaLocationReadFrom, _SISchemaPunchOutReadFrom, 
+                       _SISchemaServerEnvelopeReadFrom, _SISchemaServerEventMetadataReadFrom, 
+                       _SISchemaSiriCueReadFrom, _SISchemaSpeechTranscriptionReadFrom, 
+                       _SISchemaTextToSpeechBeginReadFrom, _SISchemaTextToSpeechEndReadFrom, 
+                       _SISchemaTurnInteractionReadFrom, _SISchemaUIStateTransitionReadFrom, 
+                       _SISchemaUUFRPresentedReadFrom, _SISchemaUserSpeechDurationReadFrom, 
+                       _SISchemaViewContainerReadFrom, _SiriInstrumentationVersionNumber, 
+                       _SiriInstrumentationVersionString ]
+    objc-classes:    [ SIEventWrapper, SISchemaAudioFirstBufferRecorded, SISchemaAudioStopRecording, 
+                       SISchemaClientAnyEvent, SISchemaClientEventMetadata, SISchemaClientTransportEventMetadata, 
+                       SISchemaClientTurnBasedEvent, SISchemaClientTurnContext, SISchemaConversationTrace, 
+                       SISchemaDeviceDynamicContext, SISchemaDeviceFixedContext, 
+                       SISchemaDictationContext, SISchemaInvocation, SISchemaLocation, 
+                       SISchemaPunchOut, SISchemaServerEnvelope, SISchemaServerEventMetadata, 
+                       SISchemaSiriCue, SISchemaSpeechTranscription, SISchemaTextToSpeechBegin, 
+                       SISchemaTextToSpeechEnd, SISchemaTurnInteraction, SISchemaUIStateTransition, 
+                       SISchemaUUFRPresented, SISchemaUserSpeechDuration, SISchemaViewContainer ]
+...

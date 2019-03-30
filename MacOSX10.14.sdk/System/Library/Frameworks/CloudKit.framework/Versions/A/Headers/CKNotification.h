@@ -37,7 +37,7 @@ API_AVAILABLE(macos(10.10), ios(8.0), watchos(3.0))
 - (instancetype)init NS_UNAVAILABLE;
 + (instancetype)new NS_UNAVAILABLE;
 
-+ (instancetype)notificationFromRemoteNotificationDictionary:(NSDictionary *)notificationDictionary;
++ (nullable instancetype)notificationFromRemoteNotificationDictionary:(NSDictionary *)notificationDictionary;
 
 /*! When you instantiate a CKNotification from a remote notification dictionary, you will get back a concrete
  subclass defined below.  Use notificationType to avoid -isKindOfClass: checks */

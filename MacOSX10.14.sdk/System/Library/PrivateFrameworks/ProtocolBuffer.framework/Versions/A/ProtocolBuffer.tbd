@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C5AC21FB-74AD-3FC2-B231-B1376751BBAE' ]
-platform:        macosx
+uuids:           [ 'x86_64: DBBA73C9-E9AE-3CF5-88A4-7E4262BDE34E' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/ProtocolBuffer.framework/Versions/A/ProtocolBuffer
 current-version: 263
 exports:         

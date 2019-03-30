@@ -26,7 +26,7 @@
  * @APPLE_OSREFERENCE_LICENSE_HEADER_END@
  */
 #ifndef DLIL_H
-#define	DLIL_H
+#define DLIL_H
 
 #include <sys/kernel_types.h>
 #include <net/kpi_interface.h>
@@ -54,8 +54,8 @@ enum {
  * variants.native_type_length.
  */
 /* Ethernet specific types */
-#define	DLIL_DESC_ETYPE2	4
-#define	DLIL_DESC_SAP		5
-#define	DLIL_DESC_SNAP		6
+#define DLIL_DESC_ETYPE2        4
+#define DLIL_DESC_SAP           5
+#define DLIL_DESC_SNAP          6
 
 #endif /* DLIL_H */

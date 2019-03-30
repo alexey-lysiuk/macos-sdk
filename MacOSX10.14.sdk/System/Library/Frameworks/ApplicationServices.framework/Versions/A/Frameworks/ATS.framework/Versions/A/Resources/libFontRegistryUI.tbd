@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 330A2B95-F552-3CA0-8536-5F8E8EA1D6BE' ]
-platform:        macosx
+uuids:           [ 'x86_64: 9446490F-E2BC-3CB6-9F3C-2E4846CADBE9' ]
+platform:        zippered
 install-name:    /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Resources/libFontRegistryUI.dylib
 objc-constraint: none
 ...

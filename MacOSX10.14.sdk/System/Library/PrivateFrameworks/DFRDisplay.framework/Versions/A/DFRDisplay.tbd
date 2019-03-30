@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 45B060E2-7B84-31D1-AD70-106FE072A7EA' ]
+uuids:           [ 'x86_64: 0030C2B4-F7EB-3966-B255-54195B4F6290' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DFRDisplay.framework/Versions/A/DFRDisplay
 current-version: 112.220.3

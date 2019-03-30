@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9599289C-E8A4-3E64-B13C-F4A4A65A7C2B' ]
-platform:        macosx
+uuids:           [ 'x86_64: 38FB372C-B7ED-34E0-A6B0-FB49F5621179' ]
+platform:        zippered
 install-name:    /usr/lib/libnetworkextension.dylib
 objc-constraint: none
 exports:         

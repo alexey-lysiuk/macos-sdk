@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 08F74C41-7CDE-3977-A8B2-C32BBA85E5BC' ]
+uuids:           [ 'x86_64: 7E43EFF3-41AC-3AF2-A2FD-1AE013FF32E6' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SystemPolicy.framework/Versions/A/SystemPolicy
 exports:         
@@ -10,12 +10,12 @@ exports:
                        _copyCdhashFromKextURL, _copyDeveloperName, _copyLegacyBundleID, 
                        _copyLegacyCdhash, _copyLegacyDeveloperName, _copyLegacyKextListEntry, 
                        _copySigningID, _copySystemRequiredKernelExtensions, _copyTeamIdentifier, 
-                       _copyUnstagedURL, _createCodeReference, _createHexStringFromData, 
-                       _createURLWithoutPrefix, _doBooleanXPCFunction, _doObjectXPCFunction, 
-                       _findFirstSubdirectoryURL, _getDictionaryValue, _hasCodeRequirementString, 
-                       _isAdhocSignature, _isAppleInternalMachine, _isAppleSignedCode, 
-                       _isCdhashOnLegacyList, _isCodelessKext, _isDeveloperIDKextSignedCode, 
-                       _isDeveloperIDSignedCode, _isKernelExtensionPolicyForceEnabled, 
+                       _copyTeamIdentifierFromCertificates, _copyUnstagedURL, _createCodeReference, 
+                       _createHexStringFromData, _createURLWithoutPrefix, _doBooleanXPCFunction, 
+                       _doObjectXPCFunction, _findFirstSubdirectoryURL, _getDictionaryValue, 
+                       _hasCodeRequirementString, _isAdhocSignature, _isAppleInternalMachine, 
+                       _isAppleSignedCode, _isCdhashOnLegacyList, _isCodelessKext, 
+                       _isDeveloperIDKextSignedCode, _isDeveloperIDSignedCode, _isKernelExtensionPolicyForceEnabled, 
                        _isKernelExtensionSystemRequired, _isMacAppStoreSignedCode, 
                        _isSIPDisabledMachine, _isSKELDisabledMachine, _kextDefaultAllowed, 
                        _scanForBundledKernelExtensions, _scanForKernelExtensions, 

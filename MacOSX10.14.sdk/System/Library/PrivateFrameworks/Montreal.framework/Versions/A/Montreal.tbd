@@ -1,13 +1,14 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F7AAEEC2-B981-30C4-995F-4D98FB808984' ]
-platform:        macosx
+uuids:           [ 'x86_64: 84278E37-0BA4-32D2-BAA4-49D84831588D' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/Montreal.framework/Versions/A/Montreal
-current-version: 42.15.8
+current-version: 42.15.9
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
-    symbols:         [ _MRLModelCompile, _MRLModelCopyQuantizedSerializedData, _MRLModelCopySerializedData, 
+    symbols:         [ _MRLModelCompile, _MRLModelConvertFlatWeights, _MRLModelCopyFlatWeights, 
+                       _MRLModelCopyQuantizedSerializedData, _MRLModelCopySerializedData, 
                        _MRLModelCreate, _MRLModelEvaluate, _MRLModelGetIOMappings, 
                        _MRLModelGetInputSize, _MRLModelGetOutputSize, _MRLModelGetWeights, 
                        _MRLModelInitEpoch, _MRLModelLock, _MRLModelRecognize, _MRLModelRecognizeIncremental, 

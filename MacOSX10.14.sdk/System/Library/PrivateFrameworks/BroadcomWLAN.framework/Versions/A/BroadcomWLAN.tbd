@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2FC83BE6-8F5F-3E6C-B6A1-81466E06B2C0' ]
+uuids:           [ 'x86_64: CCC5549B-5352-36B3-B049-EFD9BF1B0E8A' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/BroadcomWLAN.framework/Versions/A/BroadcomWLAN
 objc-constraint: none

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 85C62567-03FB-36BC-9423-C6A3166642C9' ]
+uuids:           [ 'x86_64: C8ABB585-75FB-3A15-891D-CD63BE0C1A3B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/BiometricKit.framework/Versions/A/BiometricKit
 exports:         
@@ -34,13 +34,14 @@ exports:
                        BKDeviceTouchID, BKEnrollOperation, BKEnrollPearlOperation, 
                        BKEnrollPearlProgressInfo, BKEnrollTouchIDOperation, BKErrorHelper, 
                        BKExtendEnrollTouchIDOperation, BKFaceDetectOperation, BKFaceDetectStateInfo, 
-                       BKFingerDetectOperation, BKIdentity, BKMatchOperation, BKMatchPearlOperation, 
-                       BKMatchPearlResultInfo, BKMatchResultInfo, BKMatchTouchIDOperation, 
-                       BKOperation, BKPresenceDetectOperation, BKSystemProtectedConfiguration, 
-                       BKUserProtectedConfiguration, BiometricKit, BiometricKitEnrollProgressCoordinates, 
-                       BiometricKitEnrollProgressInfo, BiometricKitEnrollProgressMergedComponent, 
-                       BiometricKitIdentity, BiometricKitMatchInfo, BiometricKitStatistics, 
-                       BiometricKitTemplateInfo, BiometricKitXPCClient, BiometricKitXPCClientConnection ]
+                       BKFingerDetectOperation, BKIdentity, BKMatchEvent, BKMatchOperation, 
+                       BKMatchPearlOperation, BKMatchPearlResultInfo, BKMatchResultInfo, 
+                       BKMatchTouchIDOperation, BKOperation, BKPresenceDetectOperation, 
+                       BKSystemProtectedConfiguration, BKUserProtectedConfiguration, 
+                       BiometricKit, BiometricKitEnrollProgressCoordinates, BiometricKitEnrollProgressInfo, 
+                       BiometricKitEnrollProgressMergedComponent, BiometricKitIdentity, 
+                       BiometricKitMatchInfo, BiometricKitStatistics, BiometricKitTemplateInfo, 
+                       BiometricKitXPCClient, BiometricKitXPCClientConnection ]
     objc-ivars:      [ BKDevice._xpcClient, BKOperation._cancelPending, BKOperation._startPending, 
                        BKOperation._xpcClient ]
 ...

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6A6986E0-B527-3E1E-8833-246C40D16C58' ]
+uuids:           [ 'x86_64: DABBA152-DAD4-3BD3-9ED2-A88230516845' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/AGL.framework/Versions/A/AGL
 objc-constraint: none

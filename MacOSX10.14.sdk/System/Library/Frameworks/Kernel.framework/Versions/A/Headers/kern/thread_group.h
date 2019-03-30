@@ -2,7 +2,7 @@
  * Copyright (c) 2016 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
- * 
+ *
  * This file contains Original Code and/or Modifications of Original Code
  * as defined in and that are subject to the Apple Public Source License
  * Version 2.0 (the 'License'). You may not use this file except in
@@ -11,10 +11,10 @@
  * unlawful or unlicensed copies of an Apple operating system, or to
  * circumvent, violate, or enable the circumvention or violation of, any
  * terms of an Apple operating system software license agreement.
- * 
+ *
  * Please obtain a copy of the License at
  * http://www.opensource.apple.com/apsl/ and read it before using this file.
- * 
+ *
  * The Original Code and all software distributed under the License are
  * distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
  * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
@@ -22,7 +22,7 @@
  * FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.
  * Please see the License for the specific language governing rights and
  * limitations under the License.
- * 
+ *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_END@
  */
 
@@ -47,12 +47,13 @@ struct thread_group;
 #define THREAD_GROUP_MAX                (CONFIG_TASK_MAX + 10)
 #define THREAD_GROUP_MAXNAME            (16)
 
-#define	THREAD_GROUP_SYSTEM	0	// kernel (-VM) + launchd
-#define	THREAD_GROUP_BACKGROUND	1	// background daemons
-#define	THREAD_GROUP_ADAPTIVE	2	// adaptive daemons
-#define	THREAD_GROUP_VM		3	// kernel VM threads
+#define THREAD_GROUP_SYSTEM     0       // kernel (-VM) + launchd
+#define THREAD_GROUP_BACKGROUND 1       // background daemons
+#define THREAD_GROUP_ADAPTIVE   2       // adaptive daemons
+#define THREAD_GROUP_VM         3       // kernel VM threads
+#define THREAD_GROUP_IO_STORAGE 4       // kernel io storage threads
 
-#define THREAD_GROUP_INVALID	UINT64_MAX
+#define THREAD_GROUP_INVALID    UINT64_MAX
 
 /* Thread group flags */
 #define THREAD_GROUP_FLAGS_EFFICIENT    0x1
@@ -88,7 +89,7 @@ uint32_t        thread_group_machine_data_size(void);
 cluster_type_t  thread_group_recommendation(struct thread_group *tg);
 
 typedef         void (*thread_group_iterate_fn_t)(void*, int, struct thread_group *);
-kern_return_t	thread_group_iterate_stackshot(thread_group_iterate_fn_t callout, void *arg);
+kern_return_t   thread_group_iterate_stackshot(thread_group_iterate_fn_t callout, void *arg);
 uint64_t kdp_thread_group_get_flags(struct thread_group *);
 
 

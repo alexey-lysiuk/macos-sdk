@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 33C71E69-649D-3F1A-9B1D-DA7C175D944B' ]
-platform:        macosx
+uuids:           [ 'x86_64: 771E035C-5FE2-34D2-A4BA-4981B65CAE1E' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/AppStoreDaemon.framework/Versions/A/AppStoreDaemon
 exports:         
   - archs:           [ x86_64 ]
@@ -33,11 +33,11 @@ exports:
                        _ASDSoftwareUpdateRequirementNetwork, _ASDSoftwareUpdateRequirementPower, 
                        _ASDSoftwareUpdateRequirementWiFi, _ASDSoftwareUpdatesStoreDidChangeNotification, 
                        _ASDStoreItemMetadataPropertyBundleIdentifier, _ASDStoreItemMetadataPropertyItemIdentifier, 
-                       _ASDUpdateItemMetricsAvailableDate, _ASDUpdateItemMetricsDiscoveryDate, 
-                       _ASDUpdateItemMetricsDownloadCompeleteDate, _ASDUpdateItemMetricsDownloadStartDate, 
-                       _ASDUpdateItemMetricsInstallComplete, _ASDUpdateItemMetricsInstallStart, 
-                       _ASDUpdateItemMetricsPurchaseCompleteDate, _ASDUpdateItemMetricsPurchaseStartDate, 
-                       _kASDPurchaseHistoryQuerySortOptionDate ]
+                       _ASDSubscriptionEntitlementsDidChangeNotification, _ASDUpdateItemMetricsAvailableDate, 
+                       _ASDUpdateItemMetricsDiscoveryDate, _ASDUpdateItemMetricsDownloadCompeleteDate, 
+                       _ASDUpdateItemMetricsDownloadStartDate, _ASDUpdateItemMetricsInstallComplete, 
+                       _ASDUpdateItemMetricsInstallStart, _ASDUpdateItemMetricsPurchaseCompleteDate, 
+                       _ASDUpdateItemMetricsPurchaseStartDate, _kASDPurchaseHistoryQuerySortOptionDate ]
     objc-classes:    [ ASDAccountLookupRequest, ASDAccountLookupRequestOptions, ASDAccountLookupResponse, 
                        ASDAggregateClusterMappingData, ASDApp, ASDAppClusterMapping, 
                        ASDAppEvent, ASDAppLibrary, ASDAppQuery, ASDAppUsageStats, 

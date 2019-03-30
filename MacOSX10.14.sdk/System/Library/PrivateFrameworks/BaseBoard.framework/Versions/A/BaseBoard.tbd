@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AC0E4924-994E-3B54-869C-C831B4DE0136' ]
-platform:        macosx
+uuids:           [ 'x86_64: 215A242E-BD57-3A4B-BCA4-FCC9D674CE7B' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/BaseBoard.framework/Versions/A/BaseBoard
 current-version: 0
 exports:         

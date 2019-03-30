@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2E0759D1-BF1D-30B2-973A-F79125FAE3DF' ]
-platform:        macosx
+uuids:           [ 'x86_64: E9C400BF-0A38-3694-9F5B-CEE457F941B1' ]
+platform:        zippered
 install-name:    /usr/lib/libCTGreenTeaLogger.dylib
 objc-constraint: none
 exports:         

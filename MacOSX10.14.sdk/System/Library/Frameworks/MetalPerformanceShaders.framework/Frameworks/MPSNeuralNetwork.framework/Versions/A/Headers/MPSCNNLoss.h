@@ -150,7 +150,7 @@ MPS_CLASS_AVAILABLE_STARTING(macos(10.13.4), ios(11.3), tvos(11.3))
  *              The loss data is populated in the -encode call, thus the contents
  *              are undefined until you -encode the filter.
  *
- *              In order to gaurantee that the image is correctly synchronized for CPU side access,
+ *              In order to guarantee that the image is correctly synchronized for CPU side access,
  *              it is the application's responsibility to call the [gradientState synchronizeOnCommandBuffer:]
  *              method before accessing the data in the image.
  */
@@ -161,7 +161,7 @@ MPS_CLASS_AVAILABLE_STARTING(macos(10.13.4), ios(11.3), tvos(11.3))
  *  @return     An autoreleased MPSImage object, containing the labels data.
  *              The labels data is populated in the -initWithDevice call.
  *
- *              In order to gaurantee that the image is correctly synchronized for CPU side access,
+ *              In order to guarantee that the image is correctly synchronized for CPU side access,
  *              it is the application's responsibility to call the [gradientState synchronizeOnCommandBuffer:]
  *              method before accessing the data in the image.
  */
@@ -172,7 +172,7 @@ MPS_CLASS_AVAILABLE_STARTING(macos(10.13.4), ios(11.3), tvos(11.3))
  *  @return     An autoreleased MPSImage object, containing the weights data.
  *              The weights data is populated in the -initWithDevice call.
  *
- *              In order to gaurantee that the image is correctly synchronized for CPU side access,
+ *              In order to guarantee that the image is correctly synchronized for CPU side access,
  *              it is the application's responsibility to call the [gradientState synchronizeOnCommandBuffer:]
  *              method before accessing the data in the image.
  */
@@ -308,7 +308,7 @@ MPS_CLASS_AVAILABLE_STARTING(macos(10.13.4), ios(11.3), tvos(11.3))
  *              objects, which are in turn used to initialize the MPSCNNLossLabels object.
  *
  *              If the specified reduction operation is MPSCNNReductionTypeNone, the destinationImage should be
- *              at least as large as the specified clipRect. The detinationImage will then contain per-element
+ *              at least as large as the specified clipRect. The destinationImage will then contain per-element
  *              losses. Otherse, a reduction operation will be performed, according to the specified reduction
  *              type, and the filter will return a scalar value containing the overall loss. For more information
  *              on the available reduction types, see MPSCNNTypes.h. Also see MPSCNNLossDescriptor for the
@@ -336,7 +336,7 @@ MPS_CLASS_AVAILABLE_STARTING(macos(10.13.4), ios(11.3), tvos(11.3))
  *                                                                    labels: labels
  *                                                          destinationImage: lossGradientsImage];
  *
- *              // In order to gaurantee that the loss image data is correctly synchronized for CPU side access,
+ *              // In order to guarantee that the loss image data is correctly synchronized for CPU side access,
  *              // it is the application's responsibility to call the [labels synchronizeOnCommandBuffer:]
  *              // method before accessing the loss image data.
  *              [labels synchronizeOnCommandBuffer:commandBuffer];

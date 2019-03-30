@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 096A901D-1653-3D1F-862E-B6A7635EABA3' ]
+uuids:           [ 'x86_64: B3A9A665-B23E-3801-91EB-6DD70C6C93C5' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AssistiveControlSupport.framework/Versions/A/AssistiveControlSupport
 current-version: 87

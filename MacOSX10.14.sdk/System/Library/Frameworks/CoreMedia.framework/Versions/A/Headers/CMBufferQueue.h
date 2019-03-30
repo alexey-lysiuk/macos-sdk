@@ -151,6 +151,17 @@ typedef CMTime (*CMBufferGetTimeCallback)(
 	CMBufferRef CM_NONNULL buf,		/*! @param buf Buffer being interrogated. */
 	void * CM_NULLABLE refcon);		/*! @param refcon Client refcon. Can be NULL. */
 
+#if __BLOCKS__
+/*!
+	@typedef	CMBufferGetTimeHandler
+	@abstract	Client block that returns a CMTime from a CMBufferRef
+	@discussion	There are three blocks of this type that can be provided to CMBufferQueueCreate: getDuration (required),
+				getDecodeTimeStamp (optional), and getPresentationTimeStamp (optional).
+*/
+typedef CMTime (^CMBufferGetTimeHandler)(
+	CMBufferRef CM_NONNULL buf);	/*! @param buf Buffer being interrogated. */
+#endif // __BLOCKS__
+
 /*!
 	@typedef	CMBufferGetBooleanCallback
 	@abstract	Client callback that returns a Boolean from a CMBufferRef
@@ -159,6 +170,16 @@ typedef CMTime (*CMBufferGetTimeCallback)(
 typedef Boolean (*CMBufferGetBooleanCallback)(
 	CMBufferRef CM_NONNULL buf,		/*! @param buf Buffer being interrogated. */
 	void * CM_NULLABLE refcon);		/*! @param refcon Client refcon. Can be NULL. */
+
+#if __BLOCKS__
+/*!
+	@typedef	CMBufferGetBooleanHandler
+	@abstract	Client block that returns a Boolean from a CMBufferRef
+	@discussion	There is one callback of this type that can be provided to CMBufferQueueCreate: isDataReady (optional).
+*/
+typedef Boolean (^CMBufferGetBooleanHandler)(
+	CMBufferRef CM_NONNULL buf);	/*! @param buf Buffer being interrogated. */
+#endif // __BLOCKS__
 
 /*!
 	@typedef	CMBufferCompareCallback
@@ -170,6 +191,16 @@ typedef CFComparisonResult (*CMBufferCompareCallback)(
 	CMBufferRef CM_NONNULL buf2,	/*! @param buf Other buffer being compared. */
 	void * CM_NULLABLE refcon);		/*! @param refcon Client refcon. Can be NULL. */
 
+#if __BLOCKS__
+/*!
+	@typedef	CMBufferCompareHandler
+	@abstract	Client block that compares one CMBufferRef with another.
+*/
+typedef CFComparisonResult (^CMBufferCompareHandler)(
+	CMBufferRef CM_NONNULL buf1,	/*! @param buf Buffer being compared. */
+	CMBufferRef CM_NONNULL buf2);	/*! @param buf Other buffer being compared. */
+#endif // __BLOCKS__
+
 /*!
 	 @typedef	CMBufferGetSizeCallback
 	 @abstract	Client callback that returns a size_t from a CMBufferRef
@@ -178,6 +209,16 @@ typedef CFComparisonResult (*CMBufferCompareCallback)(
 typedef size_t (*CMBufferGetSizeCallback)(
 	CMBufferRef CM_NONNULL buf,		/*! @param buf Buffer being interrogated. */
 	void * CM_NULLABLE refcon);		/*! @param refcon Client refcon. Can be NULL. */
+
+#if __BLOCKS__
+/*!
+	 @typedef	CMBufferGetSizeHandler
+	 @abstract	Client block that returns a size_t from a CMBufferRef
+	 @discussion	There is one block of this type that can be provided to CMBufferQueueCreate: getTotalSize.
+ */
+typedef size_t (^CMBufferGetSizeHandler)(
+	CMBufferRef CM_NONNULL buf);	/*! @param buf Buffer being interrogated. */
+#endif // __BLOCKS__
 	
 /*!
 	@typedef	CMBufferCallbacks
@@ -227,6 +268,48 @@ typedef struct {
 																	update the total size of the queue. Can be NULL.  Ignored if version < 1. */
 } CMBufferCallbacks;
 
+#if __BLOCKS__
+#pragma pack(push)
+#pragma pack()
+typedef struct {
+	uintptr_t version;											/*! @field version
+																	Must be 1. */
+	CMBufferGetTimeHandler CM_NULLABLE getDecodeTimeStamp;		/*! @field getDecodeTimeStamp
+																	This block is called from CMBufferQueueGetFirstDecodeTimeStamp (once),
+																	and from CMBufferQueueGetMinDecodeTimeStamp (multiple times).  It should
+																	return the decode timestamp of the buffer.  If there are multiple samples
+																	in the buffer, this block should return the minimum decode timestamp
+																	in the buffer. Can be NULL (CMBufferQueueGetFirstDecodeTimeStamp and
+																	CMBufferQueueGetMinDecodeTimeStamp will return kCMTimeInvalid). */
+	CMBufferGetTimeHandler CM_NULLABLE getPresentationTimeStamp;/*! @field getPresentationTimeStamp
+																	This block is called from CMBufferQueueGetFirstPresentationTimeStamp
+																	(once) and from CMBufferQueueGetMinPresentationTimeStamp (multiple times).
+																	It should return the presentation timestamp of the buffer.  If there are
+																	multiple samples in the buffer, this block should return the minimum
+																	presentation timestamp in the buffer. Can be NULL
+																	(CMBufferQueueGetFirstPresentationTimeStamp and
+																	CMBufferQueueGetMinPresentationTimeStamp will return kCMTimeInvalid). */
+	CMBufferGetTimeHandler CM_NONNULL getDuration;				/*! @field getDuration
+																	This block is called (once) during enqueue and dequeue operations to
+																	update the total duration of the queue.  Must not be NULL. */
+	CMBufferGetBooleanHandler CM_NULLABLE isDataReady;			/*! @field isDataReady
+																	This block is called from CMBufferQueueDequeueIfDataReadyAndRetain, to
+																	ask if the buffer that is about to be dequeued is ready.  Can be NULL
+																	(data will be assumed to be ready). */
+	CMBufferCompareHandler CM_NULLABLE compare;					/*! @field compare
+																	This block is called (multiple times) from CMBufferQueueEnqueue, to
+																	perform an insertion sort. Can be NULL (queue will be FIFO). */
+	CFStringRef CM_NULLABLE dataBecameReadyNotification;		/*! @field dataBecameReadyNotification
+																	If triggers of type kCMBufferQueueTrigger_WhenDataBecomesReady are installed,
+																	the queue will listen for this notification on the head buffer. 
+																	Can be NULL (then the queue won't listen for it). */
+	CMBufferGetSizeHandler CM_NULLABLE getSize;					/*! @field getSize
+																	This block is called (once) during enqueue and dequeue operation to
+																	update the total size of the queue. Can be NULL. */
+} CMBufferHandlers;
+#pragma pack(pop)
+#endif // __BLOCKS__
+
 /*!
 	@function	CMBufferQueueGetCallbacksForUnsortedSampleBuffers
 	@abstract	Returns a pointer to a callback struct for unsorted CMSampleBuffers, provided as a convenience.
@@ -262,6 +345,28 @@ CM_EXPORT OSStatus CMBufferQueueCreate(
 	CM_RETURNS_RETAINED_PARAMETER CMBufferQueueRef CM_NULLABLE * CM_NONNULL queueOut)	/*! @param queueOut
 												Returned newly created CMBufferQueue. */
 							__OSX_AVAILABLE_STARTING(__MAC_10_7,__IPHONE_4_0);
+
+#if __BLOCKS__
+/*!
+	@function	CMBufferQueueCreateWithHandlers
+	@abstract	Creates a CMBufferQueue object.
+	@discussion	On return, the caller owns the returned CMBufferQueue, and must release it when done with it.
+*/
+CM_EXPORT OSStatus CMBufferQueueCreateWithHandlers(
+	CFAllocatorRef CM_NULLABLE allocator,	/*! @param allocator
+												The allocator to use for allocating the CMBufferQueue object.
+												Pass kCFAllocatorDefault to use the default allocator. */
+	CMItemCount	capacity,					/*! @param capacity
+												Maximum number of buffers in the queue.  Pass 0 to create
+												a queue that will grow as needed. */
+	const CMBufferHandlers * CM_NONNULL handlers,	/*! @param handlers
+												Blocks the queue should use to interrogate the buffer objects.
+												This struct is copied internally, so the client can pass a pointer
+												to a temporary struct on the stack. */
+	CM_RETURNS_RETAINED_PARAMETER CMBufferQueueRef CM_NULLABLE * CM_NONNULL queueOut)	/*! @param queueOut
+												Returned newly created CMBufferQueue. */
+							__OSX_AVAILABLE_STARTING(__MAC_10_14_4,__IPHONE_12_2);
+#endif // __BLOCKS__
 	
 CF_IMPLICIT_BRIDGING_ENABLED
 
@@ -501,9 +606,9 @@ CM_EXPORT CMTime CMBufferQueueGetEndPresentationTimeStamp(
 
 	
 /*!
-	 @function	CMBufferQueueGetTotalSize
-	 @abstract	Gets the total size of all sample buffers of a CMBufferQueue.
- @discussion	The total size of the CMBufferQueue is the sum of all the individual
+	@function	CMBufferQueueGetTotalSize
+	@abstract	Gets the total size of all sample buffers of a CMBufferQueue.
+	@discussion	The total size of the CMBufferQueue is the sum of all the individual
 				buffer sizes, as reported by the getTotalSize callback (provided to
 				CMBufferQueueCreate).  If there are no buffers in the queue,
 				0 will be returned.
@@ -546,7 +651,10 @@ typedef struct opaqueCMBufferQueueTriggerToken *CMBufferQueueTriggerToken;
 typedef void (*CMBufferQueueTriggerCallback)(
 	void * CM_NULLABLE triggerRefcon,						/*! @param triggerRefcon Refcon for trigger callback.  */
 	CMBufferQueueTriggerToken CM_NONNULL triggerToken );	/*! @param triggerToken Trigger whose condition became true. */
-
+#if __BLOCKS__
+typedef void (^CMBufferQueueTriggerHandler)(
+	CMBufferQueueTriggerToken CM_NONNULL triggerToken );	/*! @param triggerToken Trigger whose condition became true. */
+#endif // __BLOCKS__
 /*!
 	@enum		CMBufferQueueTriggerCondition
 	@abstract	A condition to be associated with a CMBufferQueueTrigger.
@@ -651,6 +759,50 @@ CM_EXPORT OSStatus CMBufferQueueInstallTriggerWithIntegerThreshold(
 																				is NULL, since then the trigger would be meaningless. */
 							__OSX_AVAILABLE_STARTING(__MAC_10_7,__IPHONE_4_0);
 
+#if __BLOCKS__
+CM_EXPORT OSStatus CMBufferQueueInstallTriggerHandler(
+	CMBufferQueueRef CM_NONNULL queue,					/*! @param queue
+															CMBufferQueue on which the trigger is being set. */
+	CMBufferQueueTriggerCondition condition,			/*! @param condition
+															The condition to be tested when evaluating the trigger. */
+	CMTime time,										/*! @param time
+															The time value to compare against when evaluating the trigger.
+															Must be numeric (ie. not invalid, indefinite, or infinite),
+															except for certain trigger conditions which ignore it
+															(eg, kCMBufferQueueTrigger_WhenMinPresentationTimeStampChanges). */
+	CMBufferQueueTriggerToken CM_NULLABLE * CM_NULLABLE triggerTokenOut,	/*! @param triggerTokenOut
+															Address where created trigger token will be written.
+															Can be NULL, if client has no need to explicitly test
+															or remove the trigger. Cannot be NULL if handler
+															is NULL, since then the trigger would be meaningless. */
+	CMBufferQueueTriggerHandler CM_NULLABLE handler )	/*! @param handler
+															Handler to be called when the trigger condition becomes true.
+															Can be NULL, if client intends only to explicitly test the
+															condition.  Cannot be NULL if triggerTokenOut is NULL,
+															since then the trigger would be meaningless. */
+							__OSX_AVAILABLE_STARTING(__MAC_10_14_4,__IPHONE_12_2);
+
+CM_EXPORT OSStatus CMBufferQueueInstallTriggerHandlerWithIntegerThreshold(
+	CMBufferQueueRef CM_NONNULL queue,										/*! @param queue
+																				CMBufferQueue on which the trigger is being set. */
+	CMBufferQueueTriggerCondition condition,								/*! @param triggerCondition
+																				The condition to be tested when evaluating the trigger.
+																				Must be a valid condition for an integer threshold. */
+	CMItemCount threshold,													/*! @param threshold
+																				The integer value to compare against when evaluating the trigger. */
+	CMBufferQueueTriggerToken CM_NULLABLE * CM_NULLABLE triggerTokenOut,	/*! @param triggerTokenOut
+																				Address where created trigger token will be written.
+																				Can be NULL, if client has no need to explicitly test
+																				or remove the trigger. Cannot be NULL if handler
+																				is NULL, since then the trigger would be meaningless. */
+	CMBufferQueueTriggerHandler CM_NULLABLE handler )						/*! @param handler
+																				Handler to be called when the trigger condition becomes true.
+																				Can be NULL, if client intends only to explicitly test the
+																				condition.  Cannot be NULL if triggerTokenOut is NULL,
+																				since then the trigger would be meaningless. */
+							__OSX_AVAILABLE_STARTING(__MAC_10_14_4,__IPHONE_12_2);
+#endif // __BLOCKS__
+
 /*!
 	@function	CMBufferQueueRemoveTrigger
 	@abstract	Removes a previously installed trigger from a CMBufferQueue.
@@ -712,6 +864,20 @@ CMBufferQueueCallForEachBuffer(
 */
 typedef OSStatus (*CMBufferValidationCallback)(CMBufferQueueRef CM_NONNULL queue, CMBufferRef CM_NONNULL buf, void * CM_NULLABLE validationRefCon );
 
+#if __BLOCKS__
+/*!
+	@typedef	CMBufferValidationHandler
+	@abstract	Tests whether a buffer is OK to add to a queue.
+	@discussion
+		CMBufferQueueEnqueue will call this block to validate buffers.
+		Return noErr if the buffer is OK to add.  
+		Return a nonzero error code if the buffer should be rejected; 
+		CMBufferQueueEnqueue will return this error to the caller.
+		If you do not have a more descriptive error code, use kCMBufferQueueError_InvalidBuffer.
+*/
+typedef OSStatus (^CMBufferValidationHandler)(CMBufferQueueRef CM_NONNULL queue, CMBufferRef CM_NONNULL buf);
+#endif // __BLOCKS__
+
 /*!
 	@function	CMBufferQueueSetValidationCallback
 	@abstract	Sets a function that CMBufferQueueEnqueue will call to validate buffers before adding them to the queue.
@@ -724,7 +890,24 @@ CM_EXPORT OSStatus CMBufferQueueSetValidationCallback(
 		void * CM_NULLABLE refcon )							/*! @param refcon
 																	Context refcon for validation callback. */
 							__OSX_AVAILABLE_STARTING(__MAC_10_7,__IPHONE_4_0);
-	
+
+#if __BLOCKS__
+/*!
+	@function	CMBufferQueueSetValidationHandler
+	@abstract	Sets a block that CMBufferQueueEnqueue will call to validate buffers before adding them to the queue.
+	@discussion
+		Both a validation callback and a validation handler can be set at the
+		same time, in which case they will both be called when enqueueing
+		buffers. They both need to return noErr for the buffer to be enqueued.
+*/
+CM_EXPORT OSStatus CMBufferQueueSetValidationHandler( 
+		CMBufferQueueRef CM_NONNULL queue,					/*! @param queue
+																	CMBufferQueue that will use the validation callback. */
+		CMBufferValidationHandler CM_NONNULL handler)		/*! @param handler
+																	Handler that will validate each buffer enqueued. */
+							__OSX_AVAILABLE_STARTING(__MAC_10_14_4,__IPHONE_12_2);
+#endif // __BLOCKS__
+
 CF_IMPLICIT_BRIDGING_DISABLED
 
 #pragma pack(pop)

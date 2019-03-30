@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E04F0569-2C2C-3081-A56A-D424B157DF38' ]
-platform:        macosx
+uuids:           [ 'x86_64: 8916B498-4D11-3D8C-AAFA-15A8D5BB2D0A' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/ContactsUICore.framework/Versions/A/ContactsUICore
 exports:         
   - archs:           [ x86_64 ]
@@ -43,8 +43,8 @@ exports:
                        CNUIPRLikenessLookup, CNUIPRLikenessPhotoProvider, CNUIPRLikenessPlaceholderProvider, 
                        CNUIPRLikenessProvider, CNUIPRLikenessResolver, CNUIPRPersonaStoreObservableProvider, 
                        CNUIPlaceholderProviderFactory, CNUIPropertyListRepresentation, 
-                       CNUIPropertyListRepresentationAttachmentsBuilder, CNUIRemotePhotoFutures, 
-                       CNUIRenderedLikenessCacheEntry, CNUITTYUtilitiesWrapper, CNUIUserActionContext, 
+                       CNUIPropertyListRepresentationAttachmentsBuilder, CNUIRTTUtilitiesWrapper, 
+                       CNUIRemotePhotoFutures, CNUIRenderedLikenessCacheEntry, CNUIUserActionContext, 
                        CNUIUserActionDisambiguationModelFinalizer, CNUIUserActionDisambiguationModeler, 
                        CNUIUserActionDisambiguationViewDataSource, CNUIUserActionDiscoveringEnvironment, 
                        CNUIUserActionExtensionURLOpener, CNUIUserActionItem, CNUIUserActionItemComparator, 

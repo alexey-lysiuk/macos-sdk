@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4F1CFC04-337C-3EDA-A5E3-799AFF34A567' ]
+uuids:           [ 'x86_64: 9CEB3972-2DC7-3388-9B13-8AFA27696EE0' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DAAPKit.framework/Versions/A/DAAPKit
 exports:         

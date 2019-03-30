@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A8F8CF29-052E-3D44-9364-3AB52AB2F07F' ]
+uuids:           [ 'x86_64: 5308B011-438A-3D25-B9BA-EED824F7F4E6' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/InputMethodKit.framework/Versions/A/InputMethodKit
-current-version: 365.16.25
+current-version: 365.25
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _IMKButtonCallbackKey, _IMKButtonCallbackObjectKey, _IMKCandidateControllerFunctionViewPadding, 
@@ -39,14 +39,14 @@ exports:
                        _IMKSimulatorSelectedText, _IMKSimulatorStringKey, _IMKSimulatorStringValue, 
                        _IMKSimulatorTouchBarCandidateSurfaces, _IMKSimulatorTouchBarCandidateWindowSelectedSurface, 
                        _IMKTextFieldPadding, _IMKUIArrayElementsToAdd, _IMKUIArrayElementsToDelete, 
-                       _IMKUIArrayElementsToRemain, _IMKUICandidateControllerTouchBarChevronWidth, 
-                       _IMKUICandidateFunctionKeyTouchBarControllerMaxWidth, _IMKUICandidateItemLayoutAnnotationAttributesKey, 
-                       _IMKUICandidateItemLayoutCellDictionaryKey, _IMKUICandidateItemLayoutIdentifierKey, 
-                       _IMKUICandidateItemLayoutTitleAttributesKey, _IMKUICandidateItemViewSpacing, 
-                       _IMKUICandidateSortingBarButtonCornerRadius, _IMKUICandidateSortingBarExtraPadding, 
-                       _IMKUICandidateSortingBarHeight, _IMKUICandidateSortingBarViewPadding, 
-                       _IMKUICandidateSortingButtonHoveringColor, _IMKUICandidateSortingButtonOnColor, 
-                       _IMKUICandidateSteppingWindowControllerCandidateRightEdge, 
+                       _IMKUIArrayElementsToRemain, _IMKUIBackingAwareCeil, _IMKUIBackingAwareFloor, 
+                       _IMKUICandidateControllerTouchBarChevronWidth, _IMKUICandidateFunctionKeyTouchBarControllerMaxWidth, 
+                       _IMKUICandidateItemLayoutAnnotationAttributesKey, _IMKUICandidateItemLayoutCellDictionaryKey, 
+                       _IMKUICandidateItemLayoutIdentifierKey, _IMKUICandidateItemLayoutTitleAttributesKey, 
+                       _IMKUICandidateItemViewSpacing, _IMKUICandidateSortingBarButtonCornerRadius, 
+                       _IMKUICandidateSortingBarExtraPadding, _IMKUICandidateSortingBarHeight, 
+                       _IMKUICandidateSortingBarViewPadding, _IMKUICandidateSortingButtonHoveringColor, 
+                       _IMKUICandidateSortingButtonOnColor, _IMKUICandidateSteppingWindowControllerCandidateRightEdge, 
                        _IMKUICandidateTouchBarControllerMaxWidth, _IMKUICandidateTouchBarHandwritingHorizontalPosition, 
                        _IMKUICandidateTouchBarItemChevronWidth, _IMKUICandidateTouchBarItemControllerHeight, 
                        _IMKUICandidateTouchBarViewItemKey, _IMKUICandidateVerticalDefaultWidthValue, 

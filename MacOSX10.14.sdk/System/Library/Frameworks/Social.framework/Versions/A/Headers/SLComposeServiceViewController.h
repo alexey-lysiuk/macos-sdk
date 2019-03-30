@@ -16,10 +16,10 @@
 
 
 #if TARGET_OS_IPHONE
-SOCIAL_CLASS_AVAILABLE_IOS(8_0)
+API_AVAILABLE(ios(8.0)) API_UNAVAILABLE(macos)
 @interface SLComposeServiceViewController : UIViewController <UITextViewDelegate>
 #else
-SOCIAL_CLASS_AVAILABLE_MAC(10_10)
+API_AVAILABLE(macos(10.10)) API_UNAVAILABLE(ios)
 @interface SLComposeServiceViewController : NSViewController <NSTextViewDelegate>
 #endif
 

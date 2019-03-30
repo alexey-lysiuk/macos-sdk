@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 30C9E6DF-FF9F-396C-AFE1-070329E09B68' ]
+uuids:           [ 'x86_64: BEE4C694-EE98-30DD-9C17-280EDE159BD5' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CalDAV.framework/Versions/A/CalDAV
 current-version: 265

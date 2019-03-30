@@ -3,7 +3,7 @@
 	
 	Framework:  CoreMedia
  
-	Copyright © 2005-2018 Apple Inc. All rights reserved.
+	Copyright © 2005-2019 Apple Inc. All rights reserved.
  
 */
 
@@ -172,6 +172,19 @@ typedef OSStatus (*CMSampleBufferMakeDataReadyCallback)
 												For example, it could point at info about the
 												scheduled read that needs to be forced to finish. */
 
+#if __BLOCKS__
+/*!
+	@typedef	CMSampleBufferMakeDataReadyHandler
+	@abstract	Client block called by CMSampleBufferMakeDataReady (client provides it when calling CMSampleBufferCreateWithMakeDataReadyHandler).
+	@discussion	This block must make the data ready (e.g. force a scheduled read to finish). If this block
+				succeeds and returns 0, the CMSampleBuffer will then be marked as "data ready".
+*/
+typedef OSStatus (^CMSampleBufferMakeDataReadyHandler)
+	(CMSampleBufferRef CM_NONNULL sbuf);	/*! @param sbuf
+									The CMSampleBuffer to make ready. */
+
+#endif // __BLOCKS__
+
 CF_IMPLICIT_BRIDGING_DISABLED
 
 /*! 
@@ -294,6 +307,54 @@ OSStatus CMSampleBufferCreate(
 	CM_RETURNS_RETAINED_PARAMETER CMSampleBufferRef CM_NULLABLE * CM_NONNULL sampleBufferOut)		/*! @param sampleBufferOut
 																Returned newly created CMSampleBuffer. */
 							__OSX_AVAILABLE_STARTING(__MAC_10_7,__IPHONE_4_0);
+
+#if __BLOCKS__
+/*!
+	@function	CMSampleBufferCreateWithMakeDataReadyHandler
+	@abstract	Creates a CMSampleBuffer.
+	@discussion	See CMSampleBufferCreate; this variant allows for passing a block to make the data ready.
+*/
+
+OSStatus CMSampleBufferCreateWithMakeDataReadyHandler(
+	CFAllocatorRef CM_NULLABLE allocator,						/*! @param allocator
+																	The allocator to use for allocating the CMSampleBuffer object.
+																	Pass kCFAllocatorDefault to use the default allocator. */
+	CMBlockBufferRef CM_NULLABLE dataBuffer,					/*! @param dataBuffer
+																	CMBlockBuffer for the media data. This can be NULL, a CMBlockBuffer with
+																	no backing memory, a CMBlockBuffer with backing memory but no data yet,
+																	or a CMBlockBuffer that already contains the media data. Only in that
+																	last case (or if NULL and numSamples is 0) should dataReady be true. */
+	Boolean dataReady,											/*! @param dataReady
+																	Indicates whether or not the BlockBuffer already contains the media data. */
+	CMFormatDescriptionRef CM_NULLABLE formatDescription,		/*! @param formatDescription
+																	A description of the media data's format. Can be NULL. */
+	CMItemCount numSamples,										/*! @param numSamples
+																	Number of samples in the CMSampleBuffer. Can be 0. */
+	CMItemCount numSampleTimingEntries,							/*! @param numSampleTimingEntries
+																	Number of entries in sampleTimingArray. Must be 0, 1, or numSamples. */
+	const CMSampleTimingInfo * CM_NULLABLE sampleTimingArray,	/*! @param sampleTimingArray
+																	Array of CMSampleTimingInfo structs, one struct per sample.
+																	If all samples have the same duration and are in presentation order, you can pass a single
+																	CMSampleTimingInfo struct with duration set to the duration of one sample, presentationTimeStamp
+																	set to the presentation time of the numerically earliest sample, and decodeTimeStamp set to
+																	kCMTimeInvalid. Behaviour is undefined if samples in a CMSampleBuffer (or even in multiple
+																	buffers in the same stream) have the same presentationTimeStamp. Can be NULL. */
+	CMItemCount numSampleSizeEntries,							/*! @param numSampleSizeEntries
+																	Number of entries in sampleSizeArray. Must be 0, 1, or numSamples. */
+	const size_t * CM_NULLABLE sampleSizeArray,					/*! @param sampleSizeArray
+																	Array of size entries, one entry per sample. If all samples have the
+																	same size, you can pass a single size entry containing the size of one sample. Can be NULL. Must be
+																	NULL if the samples are non-contiguous in the buffer (eg. non-interleaved audio, where the channel
+																	values for a single sample are scattered through the buffer). */
+	CM_RETURNS_RETAINED_PARAMETER CMSampleBufferRef CM_NULLABLE * CM_NONNULL sampleBufferOut,
+																/*! @param sampleBufferOut
+																	Returned newly created CMSampleBuffer. */
+	CMSampleBufferMakeDataReadyHandler CM_NULLABLE makeDataReadyHandler)
+																/*! @param makeDataReadyHandler
+																	Block that CMSampleBufferMakeDataReady should call to make the
+																	data ready. Can be NULL. */
+							__OSX_AVAILABLE_STARTING(__MAC_10_14_4,__IPHONE_12_2);
+#endif // __BLOCKS__
 
 /*!
 	@function	CMSampleBufferCreateReady
@@ -442,6 +503,45 @@ OSStatus CMAudioSampleBufferCreateWithPacketDescriptions(
 																Returned newly created CMSampleBuffer. */
 							__OSX_AVAILABLE_STARTING(__MAC_10_7,__IPHONE_4_0);
 
+#if __BLOCKS__
+/*!
+	@function	CMAudioSampleBufferCreateWithPacketDescriptionsAndMakeDataReadyHandler
+	@abstract	Creates an CMSampleBuffer containing audio given packetDescriptions instead of sizing and timing info
+	@discussion	See CMAudioSampleBufferCreateWithPacketDescriptions; this variant allows for passing a block to make the data ready.
+*/
+CM_EXPORT
+OSStatus CMAudioSampleBufferCreateWithPacketDescriptionsAndMakeDataReadyHandler(
+	CFAllocatorRef CM_NULLABLE allocator,					/*! @param allocator
+																The allocator to use for allocating the CMSampleBuffer object.
+																Pass kCFAllocatorDefault to use the default allocator. */
+	CMBlockBufferRef CM_NULLABLE dataBuffer,				/*! @param dataBuffer
+																CMBlockBuffer for the media data. This can be NULL, a CMBlockBuffer with
+																no backing memory, a CMBlockBuffer with backing memory but no data yet,
+																or a CMBlockBuffer that already contains the media data. Only in that
+																last case should dataReady be true. */
+	Boolean dataReady,										/*! @param dataReady
+																Indicates whether or not the BlockBuffer already contains the media data. */
+	CMFormatDescriptionRef CM_NONNULL formatDescription,	/*! @param formatDescription
+																A description of the media data's format. Cannot be NULL. */
+	CMItemCount numSamples,									/*! @param numSamples
+																Number of samples in the CMSampleBuffer. Must not be 0. */
+	CMTime	presentationTimeStamp,							/*! @param presentationTimeStamp
+																Timestamp of the first sample in the buffer. Must be a numeric CMTime. */
+	const AudioStreamPacketDescription * CM_NULLABLE packetDescriptions,
+															/*! @param packetDescriptions
+																Array of packetDescriptions, one for each of numSamples. May be NULL
+																if the samples are known to have a constant number of frames per
+																packet and a constant size. */
+	CM_RETURNS_RETAINED_PARAMETER CMSampleBufferRef CM_NULLABLE * CM_NONNULL sampleBufferOut,
+															/*! @param sampleBufferOut
+															Returned newly created CMSampleBuffer. */
+	CMSampleBufferMakeDataReadyHandler CM_NULLABLE makeDataReadyHandler)
+															/*! @param makeDataReadyHandler
+																Block that CMSampleBufferMakeDataReady should call to make the
+																data ready. Can be NULL. */
+							__OSX_AVAILABLE_STARTING(__MAC_10_14_4,__IPHONE_12_2);
+#endif // __BLOCKS__
+
 /*!
 	@function	CMAudioSampleBufferCreateReadyWithPacketDescriptions
 	@abstract	Creates an CMSampleBuffer containing audio given packetDescriptions instead of sizing and timing info
@@ -522,6 +622,39 @@ OSStatus CMSampleBufferCreateForImageBuffer(
 																Returned newly created CMSampleBuffer. */
 							__OSX_AVAILABLE_STARTING(__MAC_10_7,__IPHONE_4_0);
 
+#if __BLOCKS__
+/*!
+	@function	CMSampleBufferCreateForImageBufferWithMakeDataReadyHandler
+	@abstract	Creates a CMSampleBuffer that contains a CVImageBuffer instead of a CMBlockBuffer.
+	@discussion	See CMSampleBufferCreateForImageBuffer; this variant allows for passing a block to make the data ready.
+*/
+CM_EXPORT
+OSStatus CMSampleBufferCreateForImageBufferWithMakeDataReadyHandler(
+	CFAllocatorRef CM_NULLABLE allocator,					/*! @param allocator
+																The allocator to use for allocating the CMSampleBuffer object.
+																Pass kCFAllocatorDefault to use the default allocator. */
+	CVImageBufferRef CM_NONNULL imageBuffer,				/*! @param imageBuffer
+																CVImageBuffer for the media data. This can be a CVImageBuffer whose content
+																has not yet been rendered, or a CVImageBuffer that already contains the media data
+																(in which case dataReady should be true).  May not be NULL. */
+	Boolean dataReady,										/*! @param dataReady
+																Indicates whether or not the CVImageBuffer already contains the media data. */
+	CMVideoFormatDescriptionRef CM_NONNULL formatDescription,
+															/*! @param formatDescription
+																A description of the media data's format. See discussion above for constraints.
+																May not be NULL. */
+	const CMSampleTimingInfo * CM_NONNULL sampleTiming,		/*! @param sampleTiming
+																A CMSampleTimingInfo struct that provides the timing information for the media
+																represented by the CVImageBuffer. */
+	CM_RETURNS_RETAINED_PARAMETER CMSampleBufferRef CM_NULLABLE * CM_NONNULL sampleBufferOut,
+															/*! @param sampleBufferOut
+																Returned newly created CMSampleBuffer. */
+	CMSampleBufferMakeDataReadyHandler CM_NULLABLE makeDataReadyHandler)
+															/*! @param makeDataReadyHandler
+																Block that CMSampleBufferMakeDataReady should call to make the
+																data ready. Can be NULL. */
+							__OSX_AVAILABLE_STARTING(__MAC_10_14_4,__IPHONE_12_2);
+#endif // __BLOCKS__
 /*!
 	@function	CMSampleBufferCreateReadyWithImageBuffer
 	@abstract	Creates a CMSampleBuffer that contains a CVImageBuffer instead of a CMBlockBuffer.
@@ -801,7 +934,7 @@ OSStatus CMSampleBufferGetAudioStreamPacketDescriptions(
 CM_EXPORT
 OSStatus CMSampleBufferGetAudioStreamPacketDescriptionsPtr(
     CMSampleBufferRef CM_NONNULL 						sbuf,							/*! @param sbuf CMSampleBuffer being modified. */
-    const AudioStreamPacketDescription   * CM_NULLABLE * CM_NULLABLE packetDescriptionsPtrOut,		/*! @param packetDescriptionsPtrOut returned pointer to constant array of AudioStreamPacketDescriptions. May be NULL. */
+    const AudioStreamPacketDescription   * CM_NULLABLE * CM_NULLABLE packetDescriptionsPointerOut,		/*! @param packetDescriptionsPointerOut returned pointer to constant array of AudioStreamPacketDescriptions. May be NULL. */
     size_t								  * CM_NULLABLE packetDescriptionsSizeOut )		/*! @param packetDescriptionsSizeOut size in bytes of constant array of AudioStreamPacketDescriptions. May be NULL. */
 							__OSX_AVAILABLE_STARTING(__MAC_10_7,__IPHONE_4_0);
 

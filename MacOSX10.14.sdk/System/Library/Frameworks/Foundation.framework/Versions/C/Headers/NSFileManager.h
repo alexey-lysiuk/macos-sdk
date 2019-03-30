@@ -216,7 +216,7 @@ extern NSNotificationName const NSUbiquityIdentityDidChangeNotification API_AVAI
 - (BOOL)createSymbolicLinkAtPath:(NSString *)path pathContent:(NSString *)otherpath API_DEPRECATED("Use -createSymbolicLinkAtPath:error: instead", macos(10.0,10.5), ios(2.0,2.0), watchos(2.0,2.0), tvos(9.0,9.0));
 - (BOOL)createDirectoryAtPath:(NSString *)path attributes:(NSDictionary *)attributes API_DEPRECATED("Use -createDirectoryAtPath:withIntermediateDirectories:attributes:error: instead", macos(10.0,10.5), ios(2.0,2.0), watchos(2.0,2.0), tvos(9.0,9.0));
 
-#if (TARGET_OS_MAC && !(TARGET_OS_EMBEDDED || TARGET_OS_IPHONE)) || TARGET_OS_WIN32
+#if (TARGET_OS_MAC && !(TARGET_OS_EMBEDDED || TARGET_OS_IPHONE)) || 0
 - (BOOL)linkPath:(NSString *)src toPath:(NSString *)dest handler:(nullable id)handler API_DEPRECATED("Not supported", macos(10.0,10.5), ios(2.0,2.0), watchos(2.0,2.0), tvos(9.0,9.0));
 - (BOOL)copyPath:(NSString *)src toPath:(NSString *)dest handler:(nullable id)handler API_DEPRECATED("Not supported", macos(10.0,10.5), ios(2.0,2.0), watchos(2.0,2.0), tvos(9.0,9.0));
 - (BOOL)movePath:(NSString *)src toPath:(NSString *)dest handler:(nullable id)handler API_DEPRECATED("Not supported", macos(10.0,10.5), ios(2.0,2.0), watchos(2.0,2.0), tvos(9.0,9.0));

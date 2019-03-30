@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F27A91FB-D55E-3E1C-80AD-36819270FC6A' ]
-platform:        macosx
+uuids:           [ 'x86_64: 35440CDF-51AC-3798-830B-E4F9575B283C' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/ProactiveML.framework/Versions/A/ProactiveML
-current-version: 126.32
+current-version: 126.37
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _AWDProactiveModelFittingAvailableSessionsReadFrom, _AWDProactiveModelFittingEvalMetricsReadFrom, 
@@ -40,15 +40,14 @@ exports:
                        PMLLinearRegressionModel, PMLLogRegEvaluationPlan, PMLLogRegTrainingPlan, 
                        PMLLogisticRegressionModel, PMLMockPlan, PMLMockSyncPlan, 
                        PMLModelDescriptor, PMLModelLearningRates, PMLModelRegressor, 
-                       PMLModelWeights, PMLMutableDenseVector, PMLNaiveBayesEvaluationPlan, 
-                       PMLNaiveBayesModel, PMLNaiveBayesSolver, PMLNoNoiseStrategy, 
-                       PMLPassThroughTracker, PMLPlanDescriptor, PMLPlanSerialization, 
-                       PMLPlanSimulator, PMLPlanWrapper, PMLPreinstalledPlansBuilder, 
-                       PMLPreinstalledPlansManager, PMLProtoBufTracker, PMLSessionDescriptor, 
-                       PMLSparseMatrix, PMLSparseVector, PMLSpotlightReference, PMLTrackerAWDAdapter, 
-                       PMLTrackerMockAdapter, PMLTrackerParsecAdapter, PMLTraining, 
-                       PMLTrainingDatabaseMigrations, PMLTrainingLogEntry, PMLTrainingMock, 
-                       PMLTrainingStore, PMLTrainingStoredSessionBatch ]
+                       PMLModelWeights, PMLMultiLabelRegressionEvaluationPlan, PMLMutableDenseVector, 
+                       PMLNaiveBayesEvaluationPlan, PMLNaiveBayesModel, PMLNaiveBayesSolver, 
+                       PMLNoNoiseStrategy, PMLPassThroughTracker, PMLPlanDescriptor, 
+                       PMLPlanSerialization, PMLPlanSimulator, PMLPlanWrapper, PMLProtoBufTracker, 
+                       PMLSessionDescriptor, PMLSparseMatrix, PMLSparseVector, PMLSpotlightReference, 
+                       PMLTrackerAWDAdapter, PMLTrackerMockAdapter, PMLTrackerParsecAdapter, 
+                       PMLTraining, PMLTrainingDatabaseMigrations, PMLTrainingLogEntry, 
+                       PMLTrainingMock, PMLTrainingStore, PMLTrainingStoredSessionBatch ]
     objc-ivars:      [ AWDProactiveModelFittingAvailableSessions._has, AWDProactiveModelFittingAvailableSessions._perModelStats, 
                        AWDProactiveModelFittingAvailableSessions._timestamp, AWDProactiveModelFittingEvalMetrics._f1, 
                        AWDProactiveModelFittingEvalMetrics._falseNegatives, AWDProactiveModelFittingEvalMetrics._falsePositives, 

@@ -59,12 +59,8 @@
 #define PDFKitPlatformColor                                     NSColor
 #define PDFKitPlatformControl                                   NSControl
 #define PDFKitPlatformTextField                                 NSTextField
-#define PDFKitPlatformTextFieldCell                             NSTextFieldCell
-#define PDFKitPlatformTextFieldDidBeginEditing                  NSControlTextDidBeginEditingNotification
-#define PDFKitPlatformTextFieldDidChangeText                    NSControlTextDidChangeNotification
-#define PDFKitPlatformTextFieldDidEndEditing                    NSControlTextDidEndEditingNotification
 #define PDFKitPlatformTextView                                  NSTextView
-#define PDFKitPlatformTextViewDidChangeSelection                NSTextViewDidChangeSelectionNotification
+#define PDFKitPlatformTextViewDelegate                          NSTextViewDelegate
 #define PDFKitPlatformChoiceWidgetComboBoxView                  NSPopUpButton
 #define PDFKitPlatformChoiceWidgetListView                      NSTableView
 #define PDFKitPlatformButton                                    NSButton

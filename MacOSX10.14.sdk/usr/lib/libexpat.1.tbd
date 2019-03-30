@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D91D81FF-D190-36A7-B440-F4AEB4220C80' ]
+uuids:           [ 'x86_64: E614130E-8794-31EC-9434-837434962616' ]
 platform:        macosx
 install-name:    /usr/lib/libexpat.1.dylib
 current-version: 8

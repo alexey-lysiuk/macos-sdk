@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E38E99D7-75AE-390E-9EE0-36A2C5156D79' ]
+uuids:           [ 'x86_64: C5964386-276B-3680-B036-653A91EAF764' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreCaptureDaemon.framework/Versions/A/CoreCaptureDaemon
 exports:         
@@ -187,11 +187,13 @@ exports:
                        __ZN6CCFile8copyFileEPKc, __ZN6CCFileC2Ev, __ZN6CCFileD0Ev, 
                        __ZN6CCFileD1Ev, __ZN6CCFileD2Ev, __ZN8CCDaemon11withRunLoopEP11__CFRunLoop, 
                        __ZN8CCDaemon13activityCheckEv, __ZN8CCDaemon13freeResourcesEv, 
+                       __ZN8CCDaemon13resumeAllTapsEv, __ZN8CCDaemon14quiesceAllTapsEv, 
                        __ZN8CCDaemon15initWithRunLoopEP11__CFRunLoop, __ZN8CCDaemon17runShutdownThreadEPv, 
-                       __ZN8CCDaemon21setCaptureIdAndReasonEP11CCTimestampPc, __ZN8CCDaemon26activityCheckTimerCallbackEP16__CFRunLoopTimerPv, 
-                       __ZN8CCDaemon6ccfreeEv, __ZN8CCDaemon8shutdownEv, __ZN8CCDaemonC1Ev, 
-                       __ZN8CCDaemonC2Ev, __ZN8CCDaemonD0Ev, __ZN8CCDaemonD1Ev, __ZN8CCDaemonD2Ev, 
-                       __ZN8CCLogTap11setLogFlagsEP33CCLogPipeUserClientStreamLogFlags, 
+                       __ZN8CCDaemon21setCaptureIdAndReasonEP11CCTimestampPc, __ZN8CCDaemon23enablePowerNotificationEv, 
+                       __ZN8CCDaemon24disablePowerNotificationEv, __ZN8CCDaemon26activityCheckTimerCallbackEP16__CFRunLoopTimerPv, 
+                       __ZN8CCDaemon28sysPowerNotificationCallbackEPvjjS0_, __ZN8CCDaemon6ccfreeEv, 
+                       __ZN8CCDaemon8shutdownEv, __ZN8CCDaemonC1Ev, __ZN8CCDaemonC2Ev, 
+                       __ZN8CCDaemonD0Ev, __ZN8CCDaemonD1Ev, __ZN8CCDaemonD2Ev, __ZN8CCLogTap11setLogFlagsEP33CCLogPipeUserClientStreamLogFlags, 
                        __ZN8CCLogTap11setLogLevelEP33CCLogPipeUserClientStreamLogLevel, 
                        __ZN8CCLogTap12processEventEv, __ZN8CCLogTap13freeResourcesEv, 
                        __ZN8CCLogTap13profileLoadedEv, __ZN8CCLogTap14profileRemovedEv, 

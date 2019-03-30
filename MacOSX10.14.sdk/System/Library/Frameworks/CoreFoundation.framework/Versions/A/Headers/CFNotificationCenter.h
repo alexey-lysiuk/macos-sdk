@@ -37,7 +37,7 @@ CF_EXPORT CFTypeID CFNotificationCenterGetTypeID(void);
 
 CF_EXPORT CFNotificationCenterRef CFNotificationCenterGetLocalCenter(void);
 
-#if TARGET_OS_OSX || TARGET_OS_WIN32
+#if TARGET_OS_OSX || 0
 CF_EXPORT CFNotificationCenterRef CFNotificationCenterGetDistributedCenter(void);
 #endif
 

@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D23BFDE4-8664-335A-B43B-A13A8EF29E40' ]
-platform:        macosx
+uuids:           [ 'x86_64: 8F2DA883-4A0E-389A-AB1D-C66FAA3B8E7C' ]
+platform:        zippered
 install-name:    /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Resources/libTrueTypeScaler.dylib
 objc-constraint: none
 exports:         

@@ -2,7 +2,7 @@
  * Copyright (c) 2008-2013 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
- * 
+ *
  * This file contains Original Code and/or Modifications of Original Code
  * as defined in and that are subject to the Apple Public Source License
  * Version 2.0 (the 'License'). You may not use this file except in
@@ -11,10 +11,10 @@
  * unlawful or unlicensed copies of an Apple operating system, or to
  * circumvent, violate, or enable the circumvention or violation of, any
  * terms of an Apple operating system software license agreement.
- * 
+ *
  * Please obtain a copy of the License at
  * http://www.opensource.apple.com/apsl/ and read it before using this file.
- * 
+ *
  * The Original Code and all software distributed under the License are
  * distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
  * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
@@ -22,7 +22,7 @@
  * FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.
  * Please see the License for the specific language governing rights and
  * limitations under the License.
- * 
+ *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_END@
  */
 
@@ -68,7 +68,7 @@
 
 
 struct esp {
-	u_int32_t	esp_spi;	/* ESP */
+	u_int32_t       esp_spi;        /* ESP */
 	/*variable size, 32bit bound*/	/* Initialization Vector */
 	/*variable size*/		/* Payload data */
 	/*variable size*/		/* padding */
@@ -79,8 +79,8 @@ struct esp {
 };
 
 struct newesp {
-	u_int32_t	esp_spi;	/* ESP */
-	u_int32_t	esp_seq;	/* Sequence number */
+	u_int32_t       esp_spi;        /* ESP */
+	u_int32_t       esp_seq;        /* Sequence number */
 	/*variable size*/		/* (IV and) Payload data */
 	/*variable size*/		/* padding */
 	/*8bit*/			/* pad size */
@@ -90,8 +90,8 @@ struct newesp {
 };
 
 struct esptail {
-	u_int8_t	esp_padlen;	/* pad length */
-	u_int8_t	esp_nxt;	/* Next header */
+	u_int8_t        esp_padlen;     /* pad length */
+	u_int8_t        esp_nxt;        /* Next header */
 	/*variable size, 32bit bound*/	/* Authentication data (new IPsec)*/
 };
 

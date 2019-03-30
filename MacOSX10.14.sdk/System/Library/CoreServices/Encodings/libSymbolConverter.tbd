@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B427A7C3-41FC-3A18-A1D4-60B090AEE139' ]
+uuids:           [ 'x86_64: A1C38E45-C290-3AA6-84C0-61BE44870F1D' ]
 platform:        macosx
 install-name:    /System/Library/CoreServices/Encodings/libSymbolConverter.dylib
 current-version: 73

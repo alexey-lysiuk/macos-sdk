@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 56A7277E-B1C3-3AD8-AF4B-8BAA41D6E640' ]
+uuids:           [ 'x86_64: 37EC79E3-5D56-3733-856C-5DB46CC9453B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/HelpData.framework/Versions/A/HelpData
-current-version: 184
+current-version: 184.4
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _DDMAssetURLProtocolRequest, _DDMBookConfigKeyAppBundleID, 

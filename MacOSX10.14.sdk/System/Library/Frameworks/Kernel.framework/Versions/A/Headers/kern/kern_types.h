@@ -2,7 +2,7 @@
  * Copyright (c) 2000-2007 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
- * 
+ *
  * This file contains Original Code and/or Modifications of Original Code
  * as defined in and that are subject to the Apple Public Source License
  * Version 2.0 (the 'License'). You may not use this file except in
@@ -11,10 +11,10 @@
  * unlawful or unlicensed copies of an Apple operating system, or to
  * circumvent, violate, or enable the circumvention or violation of, any
  * terms of an Apple operating system software license agreement.
- * 
+ *
  * Please obtain a copy of the License at
  * http://www.opensource.apple.com/apsl/ and read it before using this file.
- * 
+ *
  * The Original Code and all software distributed under the License are
  * distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
  * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
@@ -22,41 +22,41 @@
  * FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.
  * Please see the License for the specific language governing rights and
  * limitations under the License.
- * 
+ *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_END@
  */
 /*
  * @OSF_COPYRIGHT@
  */
 
-#ifndef	_KERN_KERN_TYPES_H_
-#define	_KERN_KERN_TYPES_H_
+#ifndef _KERN_KERN_TYPES_H_
+#define _KERN_KERN_TYPES_H_
 
 #include <stdint.h>
 #include <mach/mach_types.h>
 #include <mach/machine/vm_types.h>
 
 
-typedef	void *event_t;		/* wait event */
-#define		NO_EVENT			((event_t) 0)
+typedef void *event_t;          /* wait event */
+#define         NO_EVENT                        ((event_t) 0)
 
-typedef uint64_t event64_t;		/* 64 bit wait event */
-#define		NO_EVENT64		((event64_t) 0)
-#define		CAST_EVENT64_T(a_ptr)	((event64_t)((uintptr_t)(a_ptr)))
+typedef uint64_t event64_t;             /* 64 bit wait event */
+#define         NO_EVENT64              ((event64_t) 0)
+#define         CAST_EVENT64_T(a_ptr)   ((event64_t)((uintptr_t)(a_ptr)))
 
 /*
  *	Possible wait_result_t values.
  */
 typedef int wait_result_t;
-#define THREAD_WAITING		-1		/* thread is waiting */
-#define THREAD_AWAKENED		0		/* normal wakeup */
-#define THREAD_TIMED_OUT	1		/* timeout expired */
-#define THREAD_INTERRUPTED	2		/* aborted/interrupted */
-#define THREAD_RESTART		3		/* restart operation entirely */
+#define THREAD_WAITING          -1              /* thread is waiting */
+#define THREAD_AWAKENED         0               /* normal wakeup */
+#define THREAD_TIMED_OUT        1               /* timeout expired */
+#define THREAD_INTERRUPTED      2               /* aborted/interrupted */
+#define THREAD_RESTART          3               /* restart operation entirely */
 #define THREAD_NOT_WAITING      10              /* thread didn't need to wait */
 
-typedef	void (*thread_continue_t)(void *, wait_result_t);
-#define	THREAD_CONTINUE_NULL	((thread_continue_t) 0)
+typedef void (*thread_continue_t)(void *, wait_result_t);
+#define THREAD_CONTINUE_NULL    ((thread_continue_t) 0)
 
 /*
  * Interruptible flag for waits.
@@ -148,28 +148,28 @@ typedef int wait_interrupt_t;
 #define THREAD_WAIT_NOREPORT            (THREAD_WAIT_NOREPORT_KERNEL | THREAD_WAIT_NOREPORT_USER)
 
 typedef int wait_timeout_urgency_t;
-#define TIMEOUT_URGENCY_SYS_NORMAL	0x00		/* use default leeway thresholds for system */
-#define TIMEOUT_URGENCY_SYS_CRITICAL	0x01		/* use critical leeway thresholds for system */
-#define TIMEOUT_URGENCY_SYS_BACKGROUND	0x02		/* use background leeway thresholds for system */
+#define TIMEOUT_URGENCY_SYS_NORMAL      0x00            /* use default leeway thresholds for system */
+#define TIMEOUT_URGENCY_SYS_CRITICAL    0x01            /* use critical leeway thresholds for system */
+#define TIMEOUT_URGENCY_SYS_BACKGROUND  0x02            /* use background leeway thresholds for system */
 
-#define TIMEOUT_URGENCY_USER_MASK	0x10		/* mask to identify user timeout urgency classes */
-#define TIMEOUT_URGENCY_USER_NORMAL	0x10		/* use default leeway thresholds for user */
-#define TIMEOUT_URGENCY_USER_CRITICAL	0x11		/* use critical leeway thresholds for user */
-#define TIMEOUT_URGENCY_USER_BACKGROUND	0x12		/* use background leeway thresholds for user */
+#define TIMEOUT_URGENCY_USER_MASK       0x10            /* mask to identify user timeout urgency classes */
+#define TIMEOUT_URGENCY_USER_NORMAL     0x10            /* use default leeway thresholds for user */
+#define TIMEOUT_URGENCY_USER_CRITICAL   0x11            /* use critical leeway thresholds for user */
+#define TIMEOUT_URGENCY_USER_BACKGROUND 0x12            /* use background leeway thresholds for user */
 
-#define TIMEOUT_URGENCY_MASK		0x13		/* mask to identify timeout urgency */
+#define TIMEOUT_URGENCY_MASK            0x13            /* mask to identify timeout urgency */
 
-#define TIMEOUT_URGENCY_LEEWAY		0x20		/* don't ignore provided leeway value */
+#define TIMEOUT_URGENCY_LEEWAY          0x20            /* don't ignore provided leeway value */
 
-#define TIMEOUT_URGENCY_FIRST_AVAIL	0x40		/* first available bit outside of urgency mask/leeway */
-#define	TIMEOUT_URGENCY_RATELIMITED	0x80
+#define TIMEOUT_URGENCY_FIRST_AVAIL     0x40            /* first available bit outside of urgency mask/leeway */
+#define TIMEOUT_URGENCY_RATELIMITED     0x80
 
 /*
  * Timeout and deadline tokens for waits.
  * The following tokens define common values for leeway and deadline parameters.
  */
-#define TIMEOUT_NO_LEEWAY		(0ULL)
-#define TIMEOUT_WAIT_FOREVER		(0ULL)
+#define TIMEOUT_NO_LEEWAY               (0ULL)
+#define TIMEOUT_WAIT_FOREVER            (0ULL)
 
 
-#endif	/* _KERN_KERN_TYPES_H_ */
+#endif  /* _KERN_KERN_TYPES_H_ */

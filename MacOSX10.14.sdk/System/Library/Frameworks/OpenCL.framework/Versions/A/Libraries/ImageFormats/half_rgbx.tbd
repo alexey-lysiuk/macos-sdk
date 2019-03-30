@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2B9C7C3A-FAC2-302E-9CE1-1BECEF3E28C8' ]
+uuids:           [ 'x86_64: 8C03324E-737B-3209-8265-95D303793B2E' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/OpenCL.framework/Versions/A/Libraries/ImageFormats/half_rgbx.dylib
 objc-constraint: none

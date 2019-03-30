@@ -39,10 +39,10 @@
  * Used for loadable trust caches only, until phasing out support. */
 typedef uint8_t trust_cache_hash0[CS_CDHASH_LEN];
 struct trust_cache_module0 {
-    uint32_t version;
-    uuid_t uuid;
-    uint32_t num_hashes;
-    trust_cache_hash0 hashes[];
+	uint32_t version;
+	uuid_t uuid;
+	uint32_t num_hashes;
+	trust_cache_hash0 hashes[];
 } __attribute__((__packed__));
 
 
@@ -56,15 +56,15 @@ struct trust_cache_entry1 {
 } __attribute__((__packed__));
 
 struct trust_cache_module1 {
-    uint32_t version;
-    uuid_t uuid;
-    uint32_t num_entries;
-    struct trust_cache_entry1 entries[];
+	uint32_t version;
+	uuid_t uuid;
+	uint32_t num_entries;
+	struct trust_cache_entry1 entries[];
 } __attribute__((__packed__));
 
 // Trust Cache Entry Flags
-#define CS_TRUST_CACHE_AMFID    0x1			// valid cdhash for amfid
-#define CS_TRUST_CACHE_ANE		0x2			// ANE model hash
+#define CS_TRUST_CACHE_AMFID    0x1                     // valid cdhash for amfid
+#define CS_TRUST_CACHE_ANE              0x2                     // ANE model hash
 
 #define TC_LOOKUP_HASH_TYPE_SHIFT               16
 #define TC_LOOKUP_HASH_TYPE_MASK                0xff0000L;
@@ -74,7 +74,7 @@ struct trust_cache_module1 {
 #define TC_LOOKUP_RESULT_MASK                   0xffL
 
 #define TC_LOOKUP_FOUND         1
-#define TC_LOOKUP_FALLBACK      2
+// #define TC_LOOKUP_FALLBACK      2 /* obsolete with removal of legacy static trust caches */
 
 
 #endif /* _KERN_TRUSTCACHE_H */

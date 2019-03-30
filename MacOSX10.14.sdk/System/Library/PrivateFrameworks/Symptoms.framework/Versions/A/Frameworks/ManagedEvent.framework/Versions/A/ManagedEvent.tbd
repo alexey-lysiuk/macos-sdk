@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0351255B-6D19-3876-B54C-B6538CC5F153' ]
+uuids:           [ 'x86_64: 6375E4BE-671A-3EB8-BD66-B322BFC31159' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Symptoms.framework/Frameworks/ManagedEvent.framework/Versions/A/ManagedEvent
-current-version: 820.227.2
+current-version: 820.255.1
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

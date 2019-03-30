@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5F293B33-27A9-35A8-BD1E-86C655EBCDA8' ]
+uuids:           [ 'x86_64: 3943807F-3AEB-3653-BB0A-69873D2C6737' ]
 platform:        macosx
 flags:           [ not_app_extension_safe ]
 install-name:    /System/Library/PrivateFrameworks/DeviceLink.framework/Versions/A/DeviceLink

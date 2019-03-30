@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 35383802-CED2-3A91-8E33-DA7B208F9DBE' ]
+uuids:           [ 'x86_64: 4672286B-0543-3E27-BCAC-696228688719' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/StoreJavaScript.framework/Versions/A/StoreJavaScript
 current-version: 379

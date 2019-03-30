@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 48CC931C-76EB-3EED-8D0C-B55124C77354' ]
+uuids:           [ 'x86_64: 980DA40F-C4FB-3964-ABA6-4071402D83EB' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/NetworkServiceProxy.framework/Versions/A/NetworkServiceProxy
 exports:         

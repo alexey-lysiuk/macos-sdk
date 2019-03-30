@@ -847,6 +847,8 @@ CM_EXPORT const CFStringRef kCMFormatDescriptionExtension_MasteringDisplayColorV
 							__OSX_AVAILABLE_STARTING(__MAC_10_13,__IPHONE_11_0);
 CM_EXPORT const CFStringRef kCMFormatDescriptionExtension_ContentLightLevelInfo			// CFData(4 bytes); big-endian structure; same as kCVImageBufferContentLightLevelInfoKey
 							__OSX_AVAILABLE_STARTING(__MAC_10_13,__IPHONE_11_0);
+CM_EXPORT const CFStringRef kCMFormatDescriptionExtension_AlternativeTransferCharacteristics	// CFString (usually kCMFormatDescriptionTransferFunction_ITU_R_2100_HLG when used); corresponds to D.2.38 Alternative Transfer Characteristics SEI message
+							__OSX_AVAILABLE_STARTING(__MAC_10_14,__IPHONE_12_0);
 
 CM_ASSUME_NONNULL_END
 
@@ -1588,6 +1590,7 @@ typedef CMFormatDescriptionRef CMMetadataFormatDescriptionRef;
 	@constant	kCMMetadataFormatType_ICY		SHOUTCast format.
 	@constant	kCMMetadataFormatType_ID3		ID3 format.
 	@constant	kCMMetadataFormatType_Boxed		Boxed format.
+	@constant	kCMMetadataFormatType_EMSG		EMSG format.
 */
 typedef FourCharCode CMMetadataFormatType;
 #if COREMEDIA_USE_DERIVED_ENUMS_FOR_CONSTANTS
@@ -1599,6 +1602,7 @@ enum
 	kCMMetadataFormatType_ICY   = 'icy ',
 	kCMMetadataFormatType_ID3   = 'id3 ',
 	kCMMetadataFormatType_Boxed = 'mebx',
+	kCMMetadataFormatType_EMSG 	= 'emsg',
 };
 
 CM_ASSUME_NONNULL_BEGIN

@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E524CC46-42C7-3046-AD6C-5D5D768EA478' ]
-platform:        macosx
+uuids:           [ 'x86_64: 229A8E92-CCB6-3BC7-BCD3-B2309FA744B3' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/LanguageModeling.framework/Versions/A/LanguageModeling
 current-version: 159.15.15
 exports:         

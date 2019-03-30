@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 28DEBFFB-BABE-3493-8230-12CE3E5EC1E3' ]
+uuids:           [ 'x86_64: D87D2FD6-871F-3EC6-BB19-9719A37E3B27' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CorePDF.framework/Versions/A/CorePDF
 exports:         

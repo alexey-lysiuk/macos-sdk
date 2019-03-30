@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 98F777A6-0038-3CDD-A25B-1B3F07DC15D7' ]
+uuids:           [ 'x86_64: 4D3BAEA0-B09D-3722-95EE-24BF91BD7A8F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/TransparencyDetailsViewMac.framework/Versions/A/TransparencyDetailsViewMac
 exports:         

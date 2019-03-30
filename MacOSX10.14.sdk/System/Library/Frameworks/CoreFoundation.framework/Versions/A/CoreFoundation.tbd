@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: E1F39C45-A37D-3A28-81CB-4B0BBDC290F4', 'x86_64h: B5BDC307-6C89-3DE0-B4B9-4C2C650E4528' ]
-platform:        macosx
+uuids:           [ 'x86_64: 0FFAF1F7-9D27-3406-AD0C-D242FA3213F4', 'x86_64h: 2A4F43DA-6CC6-387F-8099-B80CEFC5EE8E' ]
+platform:        zippered
 install-name:    /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
-current-version: 1560.12
+current-version: 1570.15
 compatibility-version: 150
 objc-constraint: none
 exports:         
@@ -634,15 +634,15 @@ exports:
                        __CFPreferencesSetAccessRestricted, __CFPreferencesSetAppCloudSyncEnabled, 
                        __CFPreferencesSetAppValueWithContainer, __CFPreferencesSetAppValueWithContainerAndConfiguration, 
                        __CFPreferencesSetBackupDisabled, __CFPreferencesSetDaemonCacheEnabled, 
-                       __CFPreferencesSetValueWithContainer, __CFPreferencesSynchronizeWithContainer, 
-                       __CFPreferencesWebServicesCopyProvider, __CFPreferencesWebServicesSetProvider, 
-                       __CFPreferencesWriteDomainDictionaryToPath, __CFPreferencesWriteManagedDomain, 
-                       __CFPreferencesWriteManagedDomainForUser, __CFPreferencesWriteUserPreferencesWithCorrectOwner, 
-                       __CFPrefsCopyAppDictionary, __CFPrefsCopyAppDictionaryWithContainer, 
-                       __CFPrefsCopyDescriptionOfAllSearchLists, __CFPrefsCopyUserForContainer, 
-                       __CFPrefsDumpDescriptionOfAllSearchLists, __CFPrefsEnableWritingToExternalAppCloudPreferences, 
-                       __CFPrefsExtractQuadrupleFromPathIfPossible, __CFPrefsGenerateDirectoryURLForTriplet_testing, 
-                       __CFPrefsImpersonateApplicationWithIdentifierAndAuditToken, 
+                       __CFPreferencesSetFileProtectionClass, __CFPreferencesSetValueWithContainer, 
+                       __CFPreferencesSynchronizeWithContainer, __CFPreferencesWebServicesCopyProvider, 
+                       __CFPreferencesWebServicesSetProvider, __CFPreferencesWriteDomainDictionaryToPath, 
+                       __CFPreferencesWriteManagedDomain, __CFPreferencesWriteManagedDomainForUser, 
+                       __CFPreferencesWriteUserPreferencesWithCorrectOwner, __CFPrefsCopyAppDictionary, 
+                       __CFPrefsCopyAppDictionaryWithContainer, __CFPrefsCopyDescriptionOfAllSearchLists, 
+                       __CFPrefsCopyUserForContainer, __CFPrefsDumpDescriptionOfAllSearchLists, 
+                       __CFPrefsEnableWritingToExternalAppCloudPreferences, __CFPrefsExtractQuadrupleFromPathIfPossible, 
+                       __CFPrefsGenerateDirectoryURLForTriplet_testing, __CFPrefsImpersonateApplicationWithIdentifierAndAuditToken, 
                        __CFPrefsImpersonateApplicationWithIdentifierAndContainerDataPath, 
                        __CFPrefsImpersonateApplicationWithIdentifierAndPID, __CFPrefsInterruptConnectionOnceEachMessage, 
                        __CFPrefsRegisterUserDefaultsInstance, __CFPrefsRegisterUserDefaultsInstanceWithCloudConfigurationURL, 

@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C3C3B925-843B-374A-8E5B-0BB1594F663E' ]
-platform:        macosx
+uuids:           [ 'x86_64: 64E75636-4466-31CD-9BE4-7A8B0B19C68D' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/DuetActivityScheduler.framework/Versions/A/DuetActivityScheduler
 exports:         
   - archs:           [ x86_64 ]

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F5C6CB56-3F50-3159-B0D4-F070FBC28CFF' ]
+uuids:           [ 'x86_64: 09B948A8-8ED8-3328-AC7D-CE24F5C4B523' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/StatsKit.framework/Versions/A/StatsKit
 objc-constraint: none

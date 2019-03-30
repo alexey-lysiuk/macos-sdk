@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F0C7660E-9301-3F57-979A-2AC9218775EE' ]
+uuids:           [ 'x86_64: 8ED6ED0C-AD3E-3E45-8989-F217A14DD202' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ConfigurationProfiles.framework/Versions/A/ConfigurationProfiles
 exports:         
@@ -45,10 +45,10 @@ exports:
                        _CP_CloudConfigRecordObtainedHintFlagFileLocation, _CP_CloudConfigSetupConfigurationFileLocation, 
                        _CP_CloudConfigUSetupUserFileLocation, _CP_CloudConfigUserSkippedEnrollmentFlagFileLocation, 
                        _CP_ConfigurationProfilesAreInstalled, _CP_CreatePersistentStoreDirectory, 
-                       _CP_DeviceIsEnrolledViaDEP, _CP_ExpandPayloadVariables, _CP_ExpandPayloadVariablesDidChange, 
-                       _CP_FDEGetPRKEscrowRedirectionInfo, _CP_FDEPRKEscrowRedirectionInfoForEFI, 
-                       _CP_FDESavePRKForEscrow, _CP_GetCertificateSignerSummary, 
-                       _CP_GetDeviceProfiles, _CP_GetManagedPreferencesFromPayload, 
+                       _CP_DeviceIsEnrolledViaDEP, _CP_EnableRemoteDesktop, _CP_ExpandPayloadVariables, 
+                       _CP_ExpandPayloadVariablesDidChange, _CP_FDEGetPRKEscrowRedirectionInfo, 
+                       _CP_FDEPRKEscrowRedirectionInfoForEFI, _CP_FDESavePRKForEscrow, 
+                       _CP_GetCertificateSignerSummary, _CP_GetDeviceProfiles, _CP_GetManagedPreferencesFromPayload, 
                        _CP_GetManagementIdentityPersistRef, _CP_GetManagementStatus, 
                        _CP_GetPathForPID, _CP_GetUserProfiles, _CP_GetXPCSuccess, 
                        _CP_ImportCertificatesForPayload, _CP_IsAccountManaged, _CP_MDMOrgInfoManagingDomain, 
@@ -56,8 +56,9 @@ exports:
                        _CP_PasscodePoliciesAreInstalledHintFlagFileLocation, _CP_PreLoginCheckIn, 
                        _CP_ProfileInstalledFromUserApprovedManagementService, _CP_ProfilesAreInstalledHintFlagFileLocation, 
                        _CP_ReadSecureSettingsForDevice, _CP_ReadSecureSettingsForUser, 
-                       _CP_RemoveProfilesWithXsanPayloads, _CP_RemoveSystemProfileWithIdentifier, 
-                       _CP_RemoveUserProfileWithIdentifier, _CP_SetCloudConfigInstalledHintInfo, 
+                       _CP_RemoteDesktopStatus, _CP_RemoveProfilesWithXsanPayloads, 
+                       _CP_RemoveSystemProfileWithIdentifier, _CP_RemoveUserProfileWithIdentifier, 
+                       _CP_RestrictSupervisedPrefs, _CP_SetCloudConfigInstalledHintInfo, 
                        _CP_SetCloudConfigSetupUserInfo, _CP_SetXPCSuccess, _CP_StartupProfileChangeNeedsRestartHintFlagFileLocation, 
                        _CP_TransferXPCSuccess, _CP_UnarchiveSecureObject, _CP_UnlockUserAccount, 
                        _CloudConfig_SetUserMustEnroll, _CloudConfig_ShouldEnroll, 

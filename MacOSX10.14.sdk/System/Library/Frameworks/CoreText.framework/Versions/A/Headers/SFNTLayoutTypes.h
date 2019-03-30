@@ -9,7 +9,7 @@
 #ifndef __SFNTLAYOUTTYPES__
 #define __SFNTLAYOUTTYPES__
 
-#if !TARGET_OS_WIN32
+#if !0
 #include <MacTypes.h>
 #elif !defined(__MACTYPES__)
 typedef SInt32 Fixed;

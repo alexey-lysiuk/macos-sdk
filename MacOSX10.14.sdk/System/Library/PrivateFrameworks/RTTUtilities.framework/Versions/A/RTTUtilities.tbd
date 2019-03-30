@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6C92C8A6-7FCB-3C6C-854F-A87B6946625A' ]
-platform:        macosx
+uuids:           [ 'x86_64: 6769347E-328E-3251-852B-24C7F0536AE6' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/RTTUtilities.framework/Versions/A/RTTUtilities
 exports:         
   - archs:           [ x86_64 ]
@@ -11,13 +11,15 @@ exports:
                        _AXTTYMessageKeyContactPathSearchAction, _AXTTYMessageKeyContactSearchAction, 
                        _AXTTYMessageKeyConversation, _AXTTYMessageKeyConversationUpdates, 
                        _AXTTYMessageKeyDeleteAction, _AXTTYMessageKeyReadAction, 
-                       _AXTTYMessageKeyResult, _AXTTYMessageKeySettingsKey, _AXTTYMessageKeyUUID, 
-                       _AXTTYMessageKeyValue, _AXTTYMessageKeyWriteAction, _AXTTYPreferredTransportMethodChangedNotification, 
-                       _RTTUtilitiesVersionNumber, _RTTUtilitiesVersionString, _accessibilityRTTUtilitiesBundle, 
+                       _AXTTYMessageKeyRemoteConversationUpdates, _AXTTYMessageKeyResult, 
+                       _AXTTYMessageKeyServiceMessageUpdates, _AXTTYMessageKeySettingsKey, 
+                       _AXTTYMessageKeyUUID, _AXTTYMessageKeyValue, _AXTTYMessageKeyWriteAction, 
+                       _AXTTYPreferredTransportMethodChangedNotification, _RTTUtilitiesVersionNumber, 
+                       _RTTUtilitiesVersionString, _accessibilityRTTUtilitiesBundle, 
                        _ttyLocString, _ttyLocStringAndLocale ]
     objc-classes:    [ AXCloudKitHelper, AXCloudKitHelperManagedObjectContext, AXRTTSettingsListenerHelper, 
                        AXTTYSimulatorSubscriptionContext, RTTCall, RTTController, 
                        RTTConversation, RTTDatabaseHelper, RTTDictionaryManager, 
-                       RTTServer, RTTSettings, RTTTelephonyUtilities, RTTUtterance, 
-                       TTYContactList, TTYHistory ]
+                       RTTNanoSettings, RTTRemoteCall, RTTServer, RTTSettings, RTTTelephonyUtilities, 
+                       RTTUtterance, TTYContactList, TTYHistory ]
 ...

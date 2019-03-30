@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 35500671-A576-3B70-B7B0-BA16E8AF31D6' ]
+uuids:           [ 'x86_64: 79DE4A4A-C589-3169-B75D-F0B2B01C2C72' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SpotlightIndex.framework/Versions/A/SpotlightIndex
-current-version: 1191.52
+current-version: 1191.56
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _RLEOIDArrayAddOid, _RLEOIDArrayAddOid_locked, _RLEOIDArrayAddOids, 
@@ -68,10 +68,10 @@ exports:
                        __SICleanupStrings, __SIConsistencyCheck, __SICooldownIndexFilesForMerge, 
                        __SICopyPropertyIDMap, __SIDirectoryStoreIterate, __SIFlushAndSyncIndex, 
                        __SIGetAllOids, __SIGetErrorString, __SIGetLastUsedDate, __SIGetRecoverTimeStamp, 
-                       __SIIssueCacheCleanup, __SIIssueFlush, __SIIssueFullMerge, 
-                       __SIIssueFullMergeWithGroup, __SIIssueMerge, __SIIssueRecovery, 
-                       __SIIssueSchedulerDump, __SIIssueSizeRepair, __SIIssueSplit, 
-                       __SIIssueVerify, __SIMinimizeDiskSpace, __SIOpenIndexFilesForMerge, 
+                       __SIIssueBadIndex, __SIIssueCacheCleanup, __SIIssueFlush, 
+                       __SIIssueFullMerge, __SIIssueFullMergeWithGroup, __SIIssueMerge, 
+                       __SIIssueRecovery, __SIIssueSchedulerDump, __SIIssueSizeRepair, 
+                       __SIIssueSplit, __SIIssueVerify, __SIMinimizeDiskSpace, __SIOpenIndexFilesForMerge, 
                        __SIPreHeatPermissions, __SIQuerySetTMNameSpaces, __SIReverseStoreIterate, 
                        __SIScanQueuesDrained, __SIScheduleBackgroundOperation, __SIScheduleDiskOperation, 
                        __SIScheduleOperation, __SISchedulerCopyDump, __SISetContactsIndex, 

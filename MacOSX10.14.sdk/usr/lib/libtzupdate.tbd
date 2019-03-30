@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A3912486-C681-3A9A-8B7D-FCED18098353' ]
+uuids:           [ 'x86_64: 79C25EC7-D7DC-38AC-8549-67BCDE0D2E26' ]
 platform:        macosx
 install-name:    /usr/lib/libtzupdate.dylib
 objc-constraint: none

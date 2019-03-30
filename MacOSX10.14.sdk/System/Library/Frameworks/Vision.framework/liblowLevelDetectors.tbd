@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5779C5BC-284B-369C-9A2B-9B82303C73F3' ]
+uuids:           [ 'x86_64: 273E3E8A-5404-3F85-A5B2-C94B390FA4D6' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Vision.framework/liblowLevelDetectors.dylib
-current-version: 2.0.62
+current-version: 2.0.70
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

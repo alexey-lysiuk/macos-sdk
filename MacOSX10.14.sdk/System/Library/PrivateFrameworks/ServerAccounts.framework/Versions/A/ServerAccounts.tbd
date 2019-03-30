@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F90C32B3-7964-34AD-8ED0-1B5BAAB5ACAD' ]
+uuids:           [ 'x86_64: 4C0E7633-BAA3-37E0-95A7-190B3D1B357C' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ServerAccounts.framework/Versions/A/ServerAccounts
 exports:         

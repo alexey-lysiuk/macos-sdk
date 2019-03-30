@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4D5D4968-E233-3598-B434-E1009D48A628' ]
+uuids:           [ 'x86_64: 22483667-CCD1-377F-83F7-72D8FD8A6AA0' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Cocoa.framework/Versions/A/Cocoa
 current-version: 23

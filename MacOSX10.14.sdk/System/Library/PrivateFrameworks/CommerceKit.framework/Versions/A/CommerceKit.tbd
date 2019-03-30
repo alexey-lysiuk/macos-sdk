@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 288D0D7A-FA36-3ACE-931E-80851A3FD68E' ]
+uuids:           [ 'x86_64: 3DBBFF0C-58AF-34AA-A2F5-B7A0FF936F92' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CommerceKit.framework/Versions/A/CommerceKit
 current-version: 379
@@ -116,4 +116,56 @@ exports:
                        ISProcessPropertyListOperation._dataProvider, ISProcessPropertyListOperation._preParserBlock, 
                        ISProcessPropertyListOperation._propertyList, ISProcessPropertyListOperation._propertyListURL, 
                        _CKDAAPBuffer._data ]
+--- !tapi-tbd-v3
+archs:           [ i386, x86_64 ]
+uuids:           [ 'i386: 44ABC428-1AA3-3043-BAB9-E24323DFD9B4', 'x86_64: 864F9266-5DFB-3305-BCD9-BA94126DCA50' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/CommerceKit.framework/Versions/A/Frameworks/CommerceCore.framework/Versions/A/CommerceCore
+current-version: 379
+exports:         
+  - archs:           [ x86_64 ]
+    objc-ivars:      [ ISPurchaseReceipt._createdFromCoder, ISPurchaseReceipt.mAdamID, 
+                       ISPurchaseReceipt.mBundleID, ISPurchaseReceipt.mBundleVersion, 
+                       ISPurchaseReceipt.mCancellationReason, ISPurchaseReceipt.mDecoder, 
+                       ISPurchaseReceipt.mDeveloperID, ISPurchaseReceipt.mDownloadID, 
+                       ISPurchaseReceipt.mExpirationDate, ISPurchaseReceipt.mExpirationDateString, 
+                       ISPurchaseReceipt.mFRToolVersion, ISPurchaseReceipt.mHWType, 
+                       ISPurchaseReceipt.mHashIsValid, ISPurchaseReceipt.mInstallerVersionID, 
+                       ISPurchaseReceipt.mOpaqueDSIDString, ISPurchaseReceipt.mOraganizationDisplayName, 
+                       ISPurchaseReceipt.mParentalControls, ISPurchaseReceipt.mPurchaseDate, 
+                       ISPurchaseReceipt.mPurchaseDateString, ISPurchaseReceipt.mReceiptCreationDate, 
+                       ISPurchaseReceipt.mReceiptData, ISPurchaseReceipt.mReceiptPath, 
+                       ISPurchaseReceipt.mReceiptType, ISPurchaseReceipt.mRenewalDate, 
+                       ISPurchaseReceipt.mRenewalDateString, asn1IntegerToken.mValue, 
+                       asn1OSToken.mValue, asn1ReceiptToken.mContentToken, asn1ReceiptToken.mType, 
+                       asn1ReceiptToken.mTypeVersion, asn1SequenceToken.mReadPointer, 
+                       asn1SetToken.mReadPointer, asn1Token.mClass, asn1Token.mContent, 
+                       asn1Token.mIdentifier, asn1Token.mLength ]
+  - archs:           [ i386, x86_64 ]
+    symbols:         [ _CKAdoptionInfoPlistPath, _CKCheckBookDownloadQueue, _CKCreateCriticalUpdateTimeStamp, 
+                       _CKCriticalUpdateTimeStamp, _CKDownloadDirectory, _CKInstallPathForIAP, 
+                       _CKInstallPathForSharedIAP, _CKMDMCheckMajorOSUpdateStatus, 
+                       _CKMDMDownloadAndInstallMajorOSUpdate, _CKMDMDownloadOptionAllowRedownload, 
+                       _CKMDMDownloadOptionDsidFailback, _CKMDMDownloadOptionPerformPreflightCheck, 
+                       _CKMDMDownloadSoftwareProductByBundleIdentifierAndType, _CKMDMDownloadSoftwareProductByItemIdentifierAndType, 
+                       _CKMDMManifestOptionPinCertificates, _CKMDMManifestOptionPinningRevocationCheckRequired, 
+                       _CKMDMProcessManifest, _CKMDMProcessManifestAtURL, _CKManifestPath, 
+                       _CKRedownloadVPPSoftwareProductByBundleIdentifier, _CKRedownloadVPPSoftwareProductByBundleIdentifierAndType, 
+                       _CKRedownloadVPPSoftwareProductByItemIdentifier, _CKRedownloadVPPSoftwareProductByItemIdentifierAndType, 
+                       _CKRemoveCriticalUpdateTimeStamp, _CKShowVPPInviteForAllUsers, 
+                       _CKShowVPPInviteForCurrentUser, _CKUpToDateFirstCheckinCookiePath, 
+                       _CKUpToDateInfoPlistPath, _CKVPPError, _CKVPPGetAvailableManagedUpdates, 
+                       _CKVPPManagedApps, _CKVPPReloadAvailableManagedUpdates, _CKWhatsNewMenuItemClicked, 
+                       _CKWhatsNewMenuItemShouldBeVisible, _ISCopyDecodedBase64, 
+                       _ISCopyEncodedBase64, _ISCopyGzippedDataForData, _ISSHA1DataForBytes, 
+                       _ISStringFromDigest, _MD5StringForBytes, _SendStoreagentEvent, 
+                       __CKAppStoreSpecialExitHandler, __CKDownloadSoftwareProduct, 
+                       __CKRedownloadVPPSoftwareProduct, __setCriticalUpdateTimeStamp, 
+                       _b64_decode, _b64_decode2, _b64_encode, _b64_encode2, _b64_getErrorString, 
+                       _b64_getErrorStringLength, _get_mac_address, _kCKVPPErrorDomain, 
+                       _kCKVPPInviteMetadataOrgNameKey, _kCKVPPInviteOrgNamePreferencesKey, 
+                       _kCKVPPInviteURLPreferencesKey, _kCheckQueueDSID, _kCheckQueuePurchasedItems, 
+                       _parseISO8601, _sAppleROOTCert, _sWWDRCACert ]
+    objc-classes:    [ ISPurchaseReceipt, asn1IntegerToken, asn1OSToken, asn1ReceiptToken, 
+                       asn1SequenceToken, asn1SetToken, asn1Token ]
 ...

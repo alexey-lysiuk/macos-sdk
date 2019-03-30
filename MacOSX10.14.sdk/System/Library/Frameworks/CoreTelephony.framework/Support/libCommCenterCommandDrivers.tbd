@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 30E71E3A-E11B-3AFA-9B47-EFFC45E79FA3' ]
+uuids:           [ 'x86_64: FE97A980-B026-32AC-856B-E2CAFEF9C4C1' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreTelephony.framework/Support/libCommCenterCommandDrivers.dylib
 objc-constraint: none
@@ -363,18 +363,18 @@ exports:
                        __ZN4rest16write_rest_valueERKNS_13NetworkRejectE, __ZN4rest16write_rest_valueERKNS_14ServingNetworkE, 
                        __ZN4rest16write_rest_valueERKNS_17SimFileAttributesE, __ZN4rest16write_rest_valueERKNS_18ImsPreferenceStateE, 
                        __ZN4rest16write_rest_valueERKNS_8DataModeE, __ZN4rest17kDefaultDataModesE, 
-                       __ZN4rest21kDefaultCipherDomainsE, __ZN4rest21kDefaultPsiSmscValuesE, 
-                       __ZN4rest22kDefaultNetworkRejectsE, __ZN4rest22kDefaultRoamingResultsE, 
-                       __ZN4rest23kDefaultInHomeCountriesE, __ZN4rest23kDefaultIsimFilesStatusE, 
-                       __ZN4rest23kDefaultLastVisibleMccsE, __ZN4rest23kDefaultLastVisibleMncsE, 
-                       __ZN4rest23kDefaultServingNetworksE, __ZN4rest24kDefaultCsAttachedStatesE, 
-                       __ZN4rest24kDefaultLastVisiblePlmnsE, __ZN4rest24kDefaultPsAttachedStatesE, 
-                       __ZN4rest26kDefaultDataAttachedStatesE, __ZN4rest27kDefaultImsPreferenceStatesE, 
-                       __ZN4rest27kDefaultNetworkAttachStatesE, __ZN4rest28kDefaultRegistrationStatusesE, 
-                       __ZN4rest29kDefaultImsVoiceSupportsOnLteE, __ZN4rest31kDefaultRadioAccessTechnologiesE, 
-                       __ZN4rest32kDefaultTrackingAreaUpdateTimersE, __ZN4resteqERKNS_14ServingNetworkES2_, 
-                       __ZN4resteqERKNS_18ImsPreferenceStateES2_, __ZN4resteqERKNS_8DataModeES2_, 
-                       __ZN4resteqERKNSt3__13mapIN10subscriber7SimSlotE13RoamingResultNS0_4lessIS3_EENS0_9allocatorINS0_4pairIKS3_S4_EEEEEESE_, 
+                       __ZN4rest18kDefaultTypeOfEvosE, __ZN4rest21kDefaultCipherDomainsE, 
+                       __ZN4rest21kDefaultPsiSmscValuesE, __ZN4rest22kDefaultNetworkRejectsE, 
+                       __ZN4rest22kDefaultRoamingResultsE, __ZN4rest23kDefaultInHomeCountriesE, 
+                       __ZN4rest23kDefaultIsimFilesStatusE, __ZN4rest23kDefaultLastVisibleMccsE, 
+                       __ZN4rest23kDefaultLastVisibleMncsE, __ZN4rest23kDefaultServingNetworksE, 
+                       __ZN4rest24kDefaultCsAttachedStatesE, __ZN4rest24kDefaultLastVisiblePlmnsE, 
+                       __ZN4rest24kDefaultPsAttachedStatesE, __ZN4rest26kDefaultDataAttachedStatesE, 
+                       __ZN4rest27kDefaultImsPreferenceStatesE, __ZN4rest27kDefaultNetworkAttachStatesE, 
+                       __ZN4rest28kDefaultRegistrationStatusesE, __ZN4rest29kDefaultImsVoiceSupportsOnLteE, 
+                       __ZN4rest31kDefaultRadioAccessTechnologiesE, __ZN4rest32kDefaultTrackingAreaUpdateTimersE, 
+                       __ZN4resteqERKNS_14ServingNetworkES2_, __ZN4resteqERKNS_18ImsPreferenceStateES2_, 
+                       __ZN4resteqERKNS_8DataModeES2_, __ZN4resteqERKNSt3__13mapIN10subscriber7SimSlotE13RoamingResultNS0_4lessIS3_EENS0_9allocatorINS0_4pairIKS3_S4_EEEEEESE_, 
                        __ZN4resteqERKNSt3__13mapIN10subscriber7SimSlotE21RadioAccessTechnologyNS0_4lessIS3_EENS0_9allocatorINS0_4pairIKS3_S4_EEEEEESE_, 
                        __ZN4resteqERKNSt3__13mapIN10subscriber7SimSlotE3MCCNS0_4lessIS3_EENS0_9allocatorINS0_4pairIKS3_S4_EEEEEESE_, 
                        __ZN4resteqERKNSt3__13mapIN10subscriber7SimSlotE3MNCNS0_4lessIS3_EENS0_9allocatorINS0_4pairIKS3_S4_EEEEEESE_, 
@@ -414,6 +414,8 @@ exports:
                        __ZN9SetupMenuD1Ev, __ZN9SetupMenuD2Ev, __ZNK10subscriber16SimCommandDriver12sendFileDataENS_7SimSlotENS_11SimFilePathERKNSt3__16vectorIhNS3_9allocatorIhEEEE, 
                        __ZNK10subscriber16SimCommandDriver15allowSimRefreshEv, __ZNK10subscriber16SimCommandDriver17sendFileDataErrorENS_7SimSlotEbNS_11SimFilePathE, 
                        __ZNK10subscriber16SimCommandDriver17sendSimDriverInfoERKNSt3__16vectorINS_13SimDriverInfoENS1_9allocatorIS3_EEEE, 
+                       __ZNK10subscriber16SimCommandDriver28markAllowedToReadCDMAAuxInfoENS_7SimSlotEb, 
+                       __ZNK10subscriber16SimCommandDriver28markAllowedToReadCDMAAuxInfoENSt3__13mapINS_7SimSlotEbNS1_4lessIS3_EENS1_9allocatorINS1_4pairIKS3_bEEEEEE, 
                        __ZNK10subscriber16SimCommandDriver7getNameEv, __ZNK12BasicSimInfoeqERKS_, 
                        __ZNK12BasicSimInfoneERKS_, __ZNK15ATCommandDriver7getNameEv, 
                        __ZNK15CallAudioDriver7getNameEv, __ZNK16AQMCommandDriver7getNameEv, 

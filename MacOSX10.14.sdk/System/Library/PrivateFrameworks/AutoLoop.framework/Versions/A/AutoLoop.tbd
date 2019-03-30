@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 26E4753F-0DBA-3323-9241-AEBC4BA3EABA' ]
+uuids:           [ 'x86_64: 13BCA6D2-98F6-361D-837D-D683EB0E538A' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AutoLoop.framework/Versions/A/AutoLoop
 exports:         
@@ -36,5 +36,4 @@ exports:
                        _runAutoLoopRender, _runAutoLoopStabilize, _runLiveAnalysisPipeline, 
                        _runPingPongRender, _validateAutoLoopSettings, _validateInputVideoAndGetDuration, 
                        _validateLiveAnalysisDictionaryFormatAndVersion, _validateLiveAnalysisDictionaryVersion ]
-    weak-def-symbols: [ __ZTINSt3__117bad_function_callE, __ZTSNSt3__117bad_function_callE ]
 ...

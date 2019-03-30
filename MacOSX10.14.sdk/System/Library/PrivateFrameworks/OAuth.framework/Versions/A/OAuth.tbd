@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8938B438-399A-3B1A-99DF-956A5A5BF8FF' ]
-platform:        macosx
+uuids:           [ 'x86_64: 81E87B19-170B-3DBA-B3E2-9A4099D9974C' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/OAuth.framework/Versions/A/OAuth
 current-version: 25
 exports:         

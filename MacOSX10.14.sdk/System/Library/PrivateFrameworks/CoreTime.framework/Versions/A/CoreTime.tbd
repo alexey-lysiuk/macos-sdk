@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CBA462F8-224E-394C-BF19-2C7BE35C430E' ]
-platform:        macosx
+uuids:           [ 'x86_64: 4833F39E-1BB3-32E3-9BF4-D2200ACC2D49' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/CoreTime.framework/Versions/A/CoreTime
-current-version: 258
+current-version: 258.4
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _TMAirplaneModeChanged, _TMBBTimeActiveNotification, _TMConfirmTimeZone, 

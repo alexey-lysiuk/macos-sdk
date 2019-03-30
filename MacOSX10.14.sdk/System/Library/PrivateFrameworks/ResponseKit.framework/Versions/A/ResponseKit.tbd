@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CE99C49F-4F61-3864-BDCF-478F0ED3C67C' ]
+uuids:           [ 'x86_64: 89F88CA0-C5C9-311B-81CC-A6C901F7AE73' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ResponseKit.framework/Versions/A/ResponseKit
 current-version: 109.15.14

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B2D2B1D8-0AF2-398C-80A3-0EC2ABB3773B' ]
+uuids:           [ 'x86_64: F0600695-6659-3E14-A065-4CCC5D4D9EA1' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/TimeSync.framework/Versions/A/TimeSync
 exports:         
@@ -72,6 +72,9 @@ exports:
                        _TimeSyncClockSetAllPortRemoteSyncMessageIntervals, _TimeSyncClockSetLockStateChangeCallback, 
                        _TimeSyncClockSetMasterChangeCallback, _TimeSyncClockSetgPTPGrandmasterAndPortChangeCallback, 
                        _TimeSyncClockSetgPTPGrandmasterChangeCallback, _TimeSyncClockSetgPTPLocalPortChangeCallback, 
+                       _TimeSyncPortCreateFromClock, _TimeSyncPortDisable, _TimeSyncPortDispose, 
+                       _TimeSyncPortEnable, _TimeSyncPortGetCurrentPortInfo, _TimeSyncPortOverridePortReceiveMatching, 
+                       _TimeSyncPortRestorePortReceiveMatching, _TimeSyncPortSetRemoteSyncMessageIntervals, 
                        _TimeSyncRemovegPTPServices, _TimeSyncSystemDomainClockIdentifier, 
                        _TimeSyncgPTPManagerNotifyWhenAvailable, __TSKernelClockConvertFromDomainToMachAbsoluteTime, 
                        __TSKernelClockConvertFromMachAbsoluteToDomainTime, __TSgPTPClockConvertFromDomainToMachAbsoluteTime, 
@@ -83,19 +86,19 @@ exports:
                        TSAudioTimeErrorCorrelatorQuick, TSAudioTimeErrorCorrelatorResampler, 
                        TSAudioTimeErrorValue, TSBonjourAdvertise, TSBonjourBrowser, 
                        TSBonjourIPv4Address, TSBonjourIPv6Address, TSBonjourInterface, 
-                       TSBonjourNode, TSClock, TSClockManager, TSFrequencyAnalysis, 
-                       TSInterface, TSIntervalFilter, TSIntervalTimeLineFilter, TSKernelClock, 
-                       TSMADEVValue, TSMTIEMask, TSMTIEMaskElement, TSMTIEMaskError, 
-                       TSMTIEValue, TSMachAbsoluteNanoseconds, TSMaximumTimeIntervalErrorAnalysis, 
-                       TSModifiedAllanDeviationAnalysis, TSRMSTIEValue, TSRootMeanSquaredTimeIntervalErrorAnalysis, 
-                       TSTDEVValue, TSTimeDeviationAnalysis, TSTimeErrorAnalysis, 
-                       TSTimeErrorSequence, TSTimeErrorValue, TSTimeLineFilter, TSUserFilteredClock, 
-                       TSgPTPClock, TSgPTPEthernetPort, TSgPTPFDEtEPort, TSgPTPFDPtPPort, 
-                       TSgPTPMachPort, TSgPTPManager, TSgPTPNetworkPort, TSgPTPPort, 
-                       TSgPTPPortStatistics, TSgPTPTime, TSgPTPUnicastLinkLayerEtEPort, 
-                       TSgPTPUnicastLinkLayerPtPPort, TSgPTPUnicastUDPv4EtEPort, 
-                       TSgPTPUnicastUDPv4PtPPort, TSgPTPUnicastUDPv6EtEPort, TSgPTPUnicastUDPv6PtPPort, 
-                       __TSKernelClockNotification, __TSgPTPPortNotification ]
+                       TSBonjourNode, TSClock, TSClockInterface, TSClockManager, 
+                       TSFrequencyAnalysis, TSIntervalFilter, TSIntervalTimeLineFilter, 
+                       TSKernelClock, TSMADEVValue, TSMTIEMask, TSMTIEMaskElement, 
+                       TSMTIEMaskError, TSMTIEValue, TSMachAbsoluteNanoseconds, TSMaximumTimeIntervalErrorAnalysis, 
+                       TSModifiedAllanDeviationAnalysis, TSPortInterface, TSRMSTIEValue, 
+                       TSRootMeanSquaredTimeIntervalErrorAnalysis, TSTDEVValue, TSTimeDeviationAnalysis, 
+                       TSTimeErrorAnalysis, TSTimeErrorSequence, TSTimeErrorValue, 
+                       TSTimeLineFilter, TSUserFilteredClock, TSgPTPClock, TSgPTPEthernetPort, 
+                       TSgPTPFDEtEPort, TSgPTPFDPtPPort, TSgPTPMachPort, TSgPTPManager, 
+                       TSgPTPNetworkPort, TSgPTPPort, TSgPTPPortStatistics, TSgPTPTime, 
+                       TSgPTPUnicastLinkLayerEtEPort, TSgPTPUnicastLinkLayerPtPPort, 
+                       TSgPTPUnicastUDPv4EtEPort, TSgPTPUnicastUDPv4PtPPort, TSgPTPUnicastUDPv6EtEPort, 
+                       TSgPTPUnicastUDPv6PtPPort, __TSKernelClockNotification, __TSgPTPPortNotification ]
     objc-ivars:      [ TSAudioTimeErrorCorrelator._maxCorrelationLength, TSAudioTimeErrorCorrelator._samplingRate, 
                        TSAudioTimeErrorCorrelator._upscaleFactor, TSAudioTimeErrorCorrelatorResampler._channelABuffer, 
                        TSAudioTimeErrorCorrelatorResampler._channelBBuffer, TSAudioTimeErrorCorrelatorResampler._correlationBuffer, 

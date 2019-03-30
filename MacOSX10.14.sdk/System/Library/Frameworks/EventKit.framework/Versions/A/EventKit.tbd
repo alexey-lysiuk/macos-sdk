@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 89B2F95A-A848-3759-AB9E-8F025B251DF1' ]
+uuids:           [ 'x86_64: 6CB465DD-FA8E-3217-9A53-44D2C2D5F93F' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/EventKit.framework/Versions/A/EventKit
-current-version: 809.1.3
+current-version: 809.4.2
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _BirthdaySourceType, _CalDAVSourceType, _EKActionConfirmSuggestedEvent, 

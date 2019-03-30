@@ -23,7 +23,7 @@
 #include <TargetConditionals.h>
 
 #if TARGET_OS_OSX
-# define CA_OSX_VERSION(v) ((v) > 0 && MAC_OS_X_VERSION_MIN_REQUIRED >= (v))
+# define CA_OSX_VERSION(v) ((v) > 0 && __MAC_OS_X_VERSION_MAX_ALLOWED >= (v))
 #else
 # define CA_OSX_VERSION(v) (0)
 #endif

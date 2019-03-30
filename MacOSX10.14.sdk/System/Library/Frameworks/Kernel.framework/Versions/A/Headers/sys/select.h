@@ -2,7 +2,7 @@
  * Copyright (c) 2000-2005 Apple Computer, Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
- * 
+ *
  * This file contains Original Code and/or Modifications of Original Code
  * as defined in and that are subject to the Apple Public Source License
  * Version 2.0 (the 'License'). You may not use this file except in
@@ -11,10 +11,10 @@
  * unlawful or unlicensed copies of an Apple operating system, or to
  * circumvent, violate, or enable the circumvention or violation of, any
  * terms of an Apple operating system software license agreement.
- * 
+ *
  * Please obtain a copy of the License at
  * http://www.opensource.apple.com/apsl/ and read it before using this file.
- * 
+ *
  * The Original Code and all software distributed under the License are
  * distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
  * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
@@ -22,7 +22,7 @@
  * FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.
  * Please see the License for the specific language governing rights and
  * limitations under the License.
- * 
+ *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_END@
  */
 /*
@@ -61,7 +61,7 @@
  */
 
 #ifndef _SYS_SELECT_H_
-#define	_SYS_SELECT_H_
+#define _SYS_SELECT_H_
 
 #include <sys/appleapiopts.h>
 #include <sys/cdefs.h>
@@ -105,7 +105,7 @@
 
 #if !defined(_POSIX_C_SOURCE) || defined(_DARWIN_C_SOURCE)
 #include <sys/_types/_fd_copy.h>
-#endif	/* (!_POSIX_C_SOURCE || _DARWIN_C_SOURCE) */
+#endif  /* (!_POSIX_C_SOURCE || _DARWIN_C_SOURCE) */
 
 #include <sys/kernel_types.h>
 #include <kern/waitq.h>
@@ -120,9 +120,9 @@ struct selinfo;
 __BEGIN_DECLS
 
 extern int selwait;
-void	selrecord(proc_t selector, struct selinfo *, void *);
-void	selwakeup(struct selinfo *);
-void	selthreadclear(struct selinfo *);
+void    selrecord(proc_t selector, struct selinfo *, void *);
+void    selwakeup(struct selinfo *);
+void    selthreadclear(struct selinfo *);
 
 __END_DECLS
 

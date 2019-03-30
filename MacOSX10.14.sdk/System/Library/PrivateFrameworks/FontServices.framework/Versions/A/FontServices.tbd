@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 147D06E0-D2C3-3A26-B229-C8EC99307C58' ]
-platform:        macosx
+uuids:           [ 'x86_64: 080B8259-2DAE-38F5-80E0-018F53334B8A' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/FontServices.framework/Versions/A/FontServices
 exports:         
   - archs:           [ x86_64 ]

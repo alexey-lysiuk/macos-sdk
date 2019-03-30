@@ -3,9 +3,9 @@
  
      Contains:   Basic Algebraic Operations for AltiVec
  
-     Version:    vecLib-671.220
+     Version:    vecLib-671.250
  
-     Copyright:  Copyright (c) 1999-2018 by Apple Inc. All rights reserved.
+     Copyright:  Copyright (c) 1999-2019 by Apple Inc. All rights reserved.
  
      Bugs:       For bug reports, consult the following page on
                  the World Wide Web:

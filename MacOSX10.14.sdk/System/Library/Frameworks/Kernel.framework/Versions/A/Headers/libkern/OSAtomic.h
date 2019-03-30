@@ -51,7 +51,7 @@ extern "C" {
  * This header declares the OSAtomic group of functions for atomic
  * reading and updating of values.
  */
- 
+
 /*!
  * @function OSCompareAndSwap64
  *
@@ -62,9 +62,9 @@ extern "C" {
  * See OSCompareAndSwap.
  */
 extern Boolean OSCompareAndSwap64(
-    UInt64            oldValue,
-    UInt64            newValue,
-    volatile UInt64 * address);
+	UInt64            oldValue,
+	UInt64            newValue,
+	volatile UInt64 * address);
 #define OSCompareAndSwap64(a, b, c) \
 	(OSCompareAndSwap64(a, b, __SAFE_CAST_PTR(volatile UInt64*,c)))
 
@@ -78,8 +78,8 @@ extern Boolean OSCompareAndSwap64(
  * See OSAddAtomic.
  */
 extern SInt64 OSAddAtomic64(
-    SInt64            theAmount,
-    volatile SInt64 * address);
+	SInt64            theAmount,
+	volatile SInt64 * address);
 #define OSAddAtomic64(a, b) \
 	(OSAddAtomic64(a, __SAFE_CAST_PTR(volatile SInt64*,b)))
 
@@ -91,10 +91,11 @@ extern SInt64 OSAddAtomic64(
  *
  * @discussion
  * See OSIncrementAtomic.
-*/
-inline static SInt64 OSIncrementAtomic64(volatile SInt64 * address)
+ */
+inline static SInt64
+OSIncrementAtomic64(volatile SInt64 * address)
 {
-    return OSAddAtomic64(1LL, address);
+	return OSAddAtomic64(1LL, address);
 }
 
 /*!
@@ -105,10 +106,11 @@ inline static SInt64 OSIncrementAtomic64(volatile SInt64 * address)
  *
  * @discussion
  * See OSDecrementAtomic.
-*/
-inline static SInt64 OSDecrementAtomic64(volatile SInt64 * address)
+ */
+inline static SInt64
+OSDecrementAtomic64(volatile SInt64 * address)
 {
-    return OSAddAtomic64(-1LL, address);
+	return OSAddAtomic64(-1LL, address);
 }
 
 
@@ -130,9 +132,9 @@ inline static SInt64 OSDecrementAtomic64(volatile SInt64 * address)
  * @result true if newValue was written to the address.
  */
 extern Boolean OSCompareAndSwap(
-    UInt32            oldValue,
-    UInt32            newValue,
-    volatile UInt32 * address);
+	UInt32            oldValue,
+	UInt32            newValue,
+	volatile UInt32 * address);
 #define OSCompareAndSwap(a, b, c) \
 	(OSCompareAndSwap(a, b, __SAFE_CAST_PTR(volatile UInt32*,c)))
 
@@ -152,9 +154,9 @@ extern Boolean OSCompareAndSwap(
  * @result true if newValue was written to the address.
  */
 extern Boolean OSCompareAndSwapPtr(
-    void            * oldValue,
-    void            * newValue,
-    void * volatile * address);
+	void            * oldValue,
+	void            * newValue,
+	void * volatile * address);
 #define OSCompareAndSwapPtr(a, b, c) \
 	(OSCompareAndSwapPtr(a, b, __SAFE_CAST_PTR(void * volatile *,c)))
 
@@ -173,8 +175,8 @@ extern Boolean OSCompareAndSwapPtr(
  * @result The value before the addition
  */
 extern SInt32 OSAddAtomic(
-    SInt32            amount,
-    volatile SInt32 * address);
+	SInt32            amount,
+	volatile SInt32 * address);
 #define OSAddAtomic(a, b) \
 	(OSAddAtomic(a, __SAFE_CAST_PTR(volatile SInt32*,b)))
 
@@ -192,8 +194,8 @@ extern SInt32 OSAddAtomic(
  * @result The value before the addition
  */
 extern SInt16 OSAddAtomic16(
-    SInt32            amount,
-    volatile SInt16 * address);
+	SInt32            amount,
+	volatile SInt16 * address);
 
 /*!
  * @function OSAddAtomic8
@@ -210,8 +212,8 @@ extern SInt16 OSAddAtomic16(
  * @result The value before the addition.
  */
 extern SInt8 OSAddAtomic8(
-    SInt32           amount,
-    volatile SInt8 * address);
+	SInt32           amount,
+	volatile SInt8 * address);
 
 /*!
  * @function OSIncrementAtomic
@@ -322,8 +324,8 @@ extern SInt8 OSDecrementAtomic8(volatile SInt8 * address);
  * @result The value before the bitwise operation
  */
 extern UInt32 OSBitAndAtomic(
-    UInt32            mask,
-    volatile UInt32 * address);
+	UInt32            mask,
+	volatile UInt32 * address);
 #define OSBitAndAtomic(a, b) \
 	(OSBitAndAtomic(a, __SAFE_CAST_PTR(volatile UInt32*,b)))
 
@@ -342,8 +344,8 @@ extern UInt32 OSBitAndAtomic(
  * @result The value before the bitwise operation.
  */
 extern UInt16 OSBitAndAtomic16(
-    UInt32            mask,
-    volatile UInt16 * address);
+	UInt32            mask,
+	volatile UInt16 * address);
 
 /*!
  * @function OSBitAndAtomic8
@@ -360,8 +362,8 @@ extern UInt16 OSBitAndAtomic16(
  * @result The value before the bitwise operation.
  */
 extern UInt8 OSBitAndAtomic8(
-    UInt32           mask,
-    volatile UInt8 * address);
+	UInt32           mask,
+	volatile UInt8 * address);
 
 /*!
  * @function OSBitOrAtomic
@@ -378,8 +380,8 @@ extern UInt8 OSBitAndAtomic8(
  * @result The value before the bitwise operation.
  */
 extern UInt32 OSBitOrAtomic(
-    UInt32            mask,
-    volatile UInt32 * address);
+	UInt32            mask,
+	volatile UInt32 * address);
 #define OSBitOrAtomic(a, b) \
 	(OSBitOrAtomic(a, __SAFE_CAST_PTR(volatile UInt32*,b)))
 
@@ -398,8 +400,8 @@ extern UInt32 OSBitOrAtomic(
  * @result The value before the bitwise operation.
  */
 extern UInt16 OSBitOrAtomic16(
-    UInt32            mask,
-    volatile UInt16 * address);
+	UInt32            mask,
+	volatile UInt16 * address);
 
 /*!
  * @function OSBitOrAtomic8
@@ -416,8 +418,8 @@ extern UInt16 OSBitOrAtomic16(
  * @result The value before the bitwise operation.
  */
 extern UInt8 OSBitOrAtomic8(
-    UInt32           mask,
-    volatile UInt8 * address);
+	UInt32           mask,
+	volatile UInt8 * address);
 
 /*!
  * @function OSBitXorAtomic
@@ -434,8 +436,8 @@ extern UInt8 OSBitOrAtomic8(
  * @result The value before the bitwise operation.
  */
 extern UInt32 OSBitXorAtomic(
-    UInt32            mask,
-    volatile UInt32 * address);
+	UInt32            mask,
+	volatile UInt32 * address);
 #define OSBitXorAtomic(a, b) \
 	(OSBitXorAtomic(a, __SAFE_CAST_PTR(volatile UInt32*,b)))
 
@@ -454,8 +456,8 @@ extern UInt32 OSBitXorAtomic(
  * @result The value before the bitwise operation.
  */
 extern UInt16 OSBitXorAtomic16(
-    UInt32            mask,
-    volatile UInt16 * address);
+	UInt32            mask,
+	volatile UInt16 * address);
 
 /*!
  * @function OSBitXorAtomic8
@@ -472,8 +474,8 @@ extern UInt16 OSBitXorAtomic16(
  * @result The value before the bitwise operation.
  */
 extern UInt8 OSBitXorAtomic8(
-    UInt32           mask,
-    volatile UInt8 * address);
+	UInt32           mask,
+	volatile UInt8 * address);
 
 /*!
  * @function OSTestAndSet
@@ -490,8 +492,8 @@ extern UInt8 OSBitXorAtomic8(
  * @result true if the bit was already set, false otherwise.
  */
 extern Boolean OSTestAndSet(
-    UInt32           bit,
-    volatile UInt8 * startAddress);
+	UInt32           bit,
+	volatile UInt8 * startAddress);
 
 /*!
  * @function OSTestAndClear
@@ -508,8 +510,8 @@ extern Boolean OSTestAndSet(
  * @result true if the bit was already clear, false otherwise.
  */
 extern Boolean OSTestAndClear(
-    UInt32           bit,
-    volatile UInt8 * startAddress);
+	UInt32           bit,
+	volatile UInt8 * startAddress);
 
 /*!
  * @defined OS_SPINLOCK_INIT
@@ -520,9 +522,9 @@ extern Boolean OSTestAndClear(
  * @discussion
  * The convention is that unlocked is zero, locked is nonzero.
  */
-#define	OS_SPINLOCK_INIT 0
+#define OS_SPINLOCK_INIT 0
 
-/*! 
+/*!
  * @typedef OSSpinLock
  *
  * @abstract
@@ -543,7 +545,8 @@ typedef SInt32 OSSpinLock;
  * @discussion
  * The OSSynchronizeIO routine ensures orderly load and store operations to noncached memory mapped I/O devices. It executes the eieio instruction on PowerPC processors.
  */
-static __inline__ void OSSynchronizeIO(void)
+static __inline__ void
+OSSynchronizeIO(void)
 {
 }
 

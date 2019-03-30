@@ -1,0 +1,16 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 3D455A01-113F-34AD-A93C-6E40EE50530A' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/CoreMLTestFramework.framework/Versions/A/CoreMLTestFramework
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _CoreMLTestFrameworkVersionNumber, _CoreMLTestFrameworkVersionString, 
+                       __Z11channelAMaxP12MLMultiArray, __Z13channelArgMaxP12MLMultiArray, 
+                       __Z25calculateL2NormForNSArrayP7NSArrayIP8NSNumberES3_, __Z28simpleArrayFromMultiDimArrayP12MLMultiArray ]
+    objc-classes:    [ _MLTCSVUtils, _MLTError, _MLTFeatureTransformer, _MLTImageReader, 
+                       _MLTInferenceValidator, _MLTInputGenerator, _MLTInputGeneratorConfiguration, 
+                       _MLTInputGeneratorUtils, _MLTInputReader, _MLTJSONReader, 
+                       _MLTModelLoader, _MLTModelTester, _MLTMultiArrayUtils, _MLTPerfTrace, 
+                       _MLTPerfTraceTimeObject, _MLTTestInput, _MLTToolArgs ]
+...

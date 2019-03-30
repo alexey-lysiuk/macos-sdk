@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4D1D4098-2B7A-35DF-B443-D5A37A3A550D' ]
+uuids:           [ 'x86_64: F77B5D7D-3FBF-3961-AAB0-A4991459F0CA' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AudioPasscode.framework/Versions/A/AudioPasscode
 exports:         

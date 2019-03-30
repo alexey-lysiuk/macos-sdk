@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 92C5BDBA-CFAD-344E-95BD-26EA05033F8A' ]
+uuids:           [ 'x86_64: AEA4FBDA-4D5B-3A23-B727-4168E90BF84D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PersonaUI.framework/Versions/A/PersonaUI
 exports:         

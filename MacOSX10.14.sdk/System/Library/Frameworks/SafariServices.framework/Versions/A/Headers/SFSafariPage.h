@@ -14,9 +14,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @class SFSafariPageProperties;
+@class SFSafariTab;
 
 SF_CLASS_AVAILABLE_MAC_SAFARI(10_0)
-@interface SFSafariPage : NSObject
+@interface SFSafariPage : NSObject <NSSecureCoding>
 
 + (instancetype)new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;
@@ -29,6 +30,12 @@ SF_CLASS_AVAILABLE_MAC_SAFARI(10_0)
 
 /// This calls the completion handler with the properties of the page.
 - (void)getPagePropertiesWithCompletionHandler:(void (^)(SFSafariPageProperties * _Nullable properties))completionHandler;
+
+/// This calls the completion handler with the tab containing this page. This will return a non-nil tab for any pages being preloaded by Safari.
+- (void)getContainingTabWithCompletionHandler:(void (^)(SFSafariTab *tab))completionHandler SF_AVAILABLE_MAC_SAFARI(12_1);
+
+/// Gets a screenshot of the currently visible area of the page.
+- (void)getScreenshotOfVisibleAreaWithCompletionHandler:(void (^)(NSImage * _Nullable image))completionHandler SF_AVAILABLE_MAC_SAFARI(12_1);
 
 @end
 

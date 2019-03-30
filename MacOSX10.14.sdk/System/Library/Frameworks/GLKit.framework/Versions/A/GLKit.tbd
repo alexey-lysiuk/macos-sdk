@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D9194F54-7D0A-3E17-955C-647C5D3E879B' ]
+uuids:           [ 'x86_64: 1D8587D9-5AD2-3B3E-A407-BE28B2FED707' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/GLKit.framework/Versions/A/GLKit
 current-version: 103.2

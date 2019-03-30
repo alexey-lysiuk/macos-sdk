@@ -2,7 +2,7 @@
  * Copyright (c) 2000-2014 Apple Computer, Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
- * 
+ *
  * This file contains Original Code and/or Modifications of Original Code
  * as defined in and that are subject to the Apple Public Source License
  * Version 2.0 (the 'License'). You may not use this file except in
@@ -11,10 +11,10 @@
  * unlawful or unlicensed copies of an Apple operating system, or to
  * circumvent, violate, or enable the circumvention or violation of, any
  * terms of an Apple operating system software license agreement.
- * 
+ *
  * Please obtain a copy of the License at
  * http://www.opensource.apple.com/apsl/ and read it before using this file.
- * 
+ *
  * The Original Code and all software distributed under the License are
  * distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
  * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
@@ -22,7 +22,7 @@
  * FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.
  * Please see the License for the specific language governing rights and
  * limitations under the License.
- * 
+ *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_END@
  */
 /*
@@ -67,7 +67,7 @@
 
 
 /* Keep the external definition the same for binary compatibility */
-#define TCPT_NTIMERS_EXT	4
+#define TCPT_NTIMERS_EXT        4
 
 /*
  * Definitions of the TCP timers.
@@ -78,7 +78,7 @@
  * timeout will send the last unacknowledged segment to generate more acks
  * with SACK information which can be used for fast-retransmiting the lost
  * packets. This will fire in the order of 10ms.
- * 
+ *
  * The TCPT_REXMT timer is used to force retransmissions.
  * The TCP has the TCPT_REXMT timer set whenever segments
  * have been sent for which ACKs are expected but not yet
@@ -105,7 +105,7 @@
  * a window update from the peer.
  *
  * The TCPT_KEEP timer is used to keep connections alive.  If an
- * connection is idle (no segments received) for TCPTV_KEEP_INIT amount 
+ * connection is idle (no segments received) for TCPTV_KEEP_INIT amount
  * of time, but not yet established, then we drop the connection.
  * Once the connection is established, if the connection is idle for
  * TCPTV_KEEP_IDLE time (and keepalives have been enabled on the socket),
@@ -120,20 +120,19 @@
  * The TCPT_2MSL timer is used for keeping the conenction in Time-wait state
  * before fully closing it so that the connection 4-tuple can be reused.
  */
-#define	TCPT_REXMT	0		/* retransmit */
-#define	TCPT_PERSIST	1		/* retransmit persistence */
-#define	TCPT_KEEP	2		/* keep alive */
-#define	TCPT_2MSL	3		/* 2*msl quiet time timer */
-#define	TCPT_DELACK	4		/* delayed ack timer */
+#define TCPT_REXMT      0               /* retransmit */
+#define TCPT_PERSIST    1               /* retransmit persistence */
+#define TCPT_KEEP       2               /* keep alive */
+#define TCPT_2MSL       3               /* 2*msl quiet time timer */
+#define TCPT_DELACK     4               /* delayed ack timer */
 #if MPTCP
-#define	TCPT_JACK_RXMT	5	/* retransmit timer for join ack */
-#define	TCPT_MAX	5
+#define TCPT_JACK_RXMT  5       /* retransmit timer for join ack */
+#define TCPT_MAX        5
 #else /* MPTCP */
-#define	TCPT_MAX	4
+#define TCPT_MAX        4
 #endif /* !MPTCP */
-#define	TCPT_NONE	(TCPT_MAX + 1)
-#define	TCPT_NTIMERS	(TCPT_MAX + 1)
+#define TCPT_NONE       (TCPT_MAX + 1)
+#define TCPT_NTIMERS    (TCPT_MAX + 1)
 
 
 #endif /* !_NETINET_TCP_TIMER_H_ */
-

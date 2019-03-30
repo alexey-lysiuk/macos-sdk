@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 23244339-0E10-3CAF-BD5E-1E110DEF831F' ]
+uuids:           [ 'x86_64: 5D5019C0-A53A-3753-A4E6-C8C4FE5923F1' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoLibraryPrivate.framework/Versions/A/Frameworks/MediaConversionService.framework/Versions/A/MediaConversionService
-current-version: 3411.5.190
+current-version: 3441.7.100
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _MediaConversionServiceVersionNumber, _MediaConversionServiceVersionString, 
@@ -22,7 +22,9 @@ exports:
                        _PAMediaConversionServiceOptionAVMetadataTitleKey, _PAMediaConversionServiceOptionBoundingBoxKey, 
                        _PAMediaConversionServiceOptionExportPresetNameKey, _PAMediaConversionServiceOptionIsPassthroughConversionKey, 
                        _PAMediaConversionServiceOptionJobPriorityKey, _PAMediaConversionServiceOptionLivePhotoPairingIdentifierKey, 
-                       _PAMediaConversionServiceOptionOutputFileTypeKey, _PAMediaConversionServiceOptionProgressUpdateTimeIntervalKey, 
+                       _PAMediaConversionServiceOptionOutputFileTypeKey, _PAMediaConversionServiceOptionPowerEfficiencyKey, 
+                       _PAMediaConversionServiceOptionPowerEfficiencyMinimumDurationKey, 
+                       _PAMediaConversionServiceOptionProgressUpdateTimeIntervalKey, 
                        _PAMediaConversionServiceOptionTimeScaleMultiplierKey, _PAMediaConversionServiceOptionTimeScaleRangeKey, 
                        _PAMediaConversionServiceOptionTrimRangeKey, _PAMediaConversionServiceOptionWantsInputAssetCodecKey, 
                        _PAMediaConversionServiceOptionWantsProgressKey, _PAMediaConversionServiceOptionWantsResultAsDataKey, 

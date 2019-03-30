@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7EF38BCC-1BEE-37E9-AD95-CCF2A3DDFDB9' ]
+uuids:           [ 'x86_64: 3B31CE91-21AE-33A2-8899-356322CFF40E' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/IMServicePlugIn.framework/Versions/A/IMServicePlugIn
 current-version: 1000
@@ -18,4 +18,39 @@ exports:
                        IMFileTransferOutputStream._stream, IMFileTransferOutputStream._transfer, 
                        IMServicePlugInFileTransfer._internal, IMServicePlugInFileTransferSession._internal, 
                        IMServicePlugInMessage._internal ]
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 27D99414-AD3A-3008-BB14-881697185891' ]
+platform:        macosx
+install-name:    /System/Library/Frameworks/IMServicePlugIn.framework/Versions/A/Frameworks/IMServicePlugInSupport.framework/Versions/A/IMServicePlugInSupport
+current-version: 1000
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _IMAccountSettingLoginHandle, _IMAccountSettingPassword, _IMAccountSettingServerHost, 
+                       _IMAccountSettingServerPort, _IMAccountSettingUsesSSL, _IMAttributeAddress, 
+                       _IMAttributeBackgroundColor, _IMAttributeBaseWritingDirection, 
+                       _IMAttributeBold, _IMAttributeFontFamily, _IMAttributeFontSize, 
+                       _IMAttributeForegroundColor, _IMAttributeItalic, _IMAttributeLink, 
+                       _IMAttributeMessageBackgroundColor, _IMAttributePreformatted, 
+                       _IMAttributeStrikethrough, _IMAttributeUnderline, _IMCalendarEventAttributeName, 
+                       _IMDataDetectedAttributeName, _IMGroupListDefaultGroup, _IMGroupListHandlesKey, 
+                       _IMGroupListNameKey, _IMGroupListPermissionsKey, _IMHandleCapabilityChatRoom, 
+                       _IMHandleCapabilityDirectoryFileTransfer, _IMHandleCapabilityFileTransfer, 
+                       _IMHandleCapabilityHandlePicture, _IMHandleCapabilityInlineFileTransfer, 
+                       _IMHandleCapabilityMessaging, _IMHandleCapabilityOfflineMessaging, 
+                       _IMHandlePropertyAlias, _IMHandlePropertyAuthorizationStatus, 
+                       _IMHandlePropertyAvailability, _IMHandlePropertyCapabilities, 
+                       _IMHandlePropertyEmailAddress, _IMHandlePropertyFirstName, 
+                       _IMHandlePropertyIdleDate, _IMHandlePropertyLastName, _IMHandlePropertyNickname, 
+                       _IMHandlePropertyPictureData, _IMHandlePropertyPictureIdentifier, 
+                       _IMHandlePropertyStatusMessage, _IMMoneyAttributeName, _IMServiceCapabilityChatRoomSupport, 
+                       _IMServiceCapabilityFileTransferSessionSupport, _IMServiceCapabilityGroupListAuthorizationSupport, 
+                       _IMServiceCapabilityGroupListHandlePictureSupport, _IMServiceCapabilityGroupListOrderingSupport, 
+                       _IMServiceCapabilityGroupListSupport, _IMServiceCapabilityInstantMessagingSupport, 
+                       _IMServiceCapabilityOfflineMessagingSupport, _IMServiceCapabilityPresenceInvisibilitySupport, 
+                       _IMServiceCapabilityPresenceSupport, _IMServicePlugInSupportVersionNumber, 
+                       _IMServicePlugInSupportVersionString, _IMSessionPropertyAvailability, 
+                       _IMSessionPropertyIdleDate, _IMSessionPropertyIsInvisible, 
+                       _IMSessionPropertyPictureData, _IMSessionPropertyStatusMessage ]
+    objc-classes:    [ IMServicePlugInBundle ]
 ...

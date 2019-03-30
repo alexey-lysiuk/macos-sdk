@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A5934475-71CA-3406-8896-04FAA58B2956' ]
+uuids:           [ 'x86_64: E33F6672-01CC-3D36-875F-6528F93E9513' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ContactsAgent.framework/Versions/A/ContactsAgent
 exports:         

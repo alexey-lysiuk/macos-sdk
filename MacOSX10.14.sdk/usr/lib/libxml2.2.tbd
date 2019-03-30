@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1CE77741-2E67-34B6-BB9F-B8E043966FCE' ]
-platform:        macosx
+uuids:           [ 'x86_64: 064C2F49-C054-38F9-A6B2-032C4AC9738B' ]
+platform:        zippered
 install-name:    /usr/lib/libxml2.2.dylib
 current-version: 10.9
 compatibility-version: 10

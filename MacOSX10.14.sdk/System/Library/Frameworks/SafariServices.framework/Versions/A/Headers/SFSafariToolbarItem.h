@@ -14,7 +14,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 SF_CLASS_AVAILABLE_MAC_SAFARI(10_0)
-@interface SFSafariToolbarItem : NSObject
+@interface SFSafariToolbarItem : NSObject <NSSecureCoding>
 
 + (instancetype)new NS_UNAVAILABLE;
 - (instancetype)init NS_UNAVAILABLE;
@@ -33,6 +33,9 @@ SF_CLASS_AVAILABLE_MAC_SAFARI(10_0)
 
 /// Sets the label for the toolbar button. Setting the label to nil will set the default label.
 - (void)setLabel:(nullable NSString *)label SF_AVAILABLE_MAC_SAFARI(11_0);
+
+/// Shows the popover associated with this toolbar button.
+- (void)showPopover SF_AVAILABLE_MAC_SAFARI(12_1);
 
 @end
 

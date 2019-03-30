@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 538F0257-A408-36AF-AB1E-1D7037D6359E' ]
-platform:        macosx
+uuids:           [ 'x86_64: 9025E034-7D75-36E3-B71B-96E91FAE109B' ]
+platform:        zippered
 install-name:    /System/Library/Frameworks/IOSurface.framework/Versions/A/IOSurface
 objc-constraint: none
 exports:         
@@ -46,8 +46,9 @@ exports:
                        _IOSurfacePropertyKeyPlaneHeight, _IOSurfacePropertyKeyPlaneInfo, 
                        _IOSurfacePropertyKeyPlaneOffset, _IOSurfacePropertyKeyPlaneSize, 
                        _IOSurfacePropertyKeyPlaneWidth, _IOSurfacePropertyKeyProtectionOptions, 
-                       _IOSurfacePropertyKeyWidth, _IOSurfaceRemoveAllValues, _IOSurfaceRemoveValue, 
-                       _IOSurfaceSetBulkAttachments, _IOSurfaceSetBulkAttachments2, 
+                       _IOSurfacePropertyKeyWidth, _IOSurfaceRemoteServerOptionDebugLogBlock, 
+                       _IOSurfaceRemoteServerOptionDebugLogQueue, _IOSurfaceRemoveAllValues, 
+                       _IOSurfaceRemoveValue, _IOSurfaceSetBulkAttachments, _IOSurfaceSetBulkAttachments2, 
                        _IOSurfaceSetDetachModeCode, _IOSurfaceSetIndexedTimestamp, 
                        _IOSurfaceSetPurgeable, _IOSurfaceSetValue, _IOSurfaceSetValues, 
                        _IOSurfaceSetYCbCrMatrix, _IOSurfaceSharedEventAddEventListener, 
@@ -90,18 +91,18 @@ exports:
                        _kIOSurfacePlaneHeight, _kIOSurfacePlaneInfo, _kIOSurfacePlaneOffset, 
                        _kIOSurfacePlaneSize, _kIOSurfacePlaneWidth, _kIOSurfacePreallocPages, 
                        _kIOSurfacePrefetchPages, _kIOSurfaceProtectionOptions, _kIOSurfacePurgeWhenNotInUse, 
-                       _kIOSurfaceSubsampling, _kIOSurfaceSysMemOnly, _kIOSurfaceTransferFunction, 
-                       _kIOSurfaceTransferFunction_ARIB_STD_B67_HLG, _kIOSurfaceTransferFunction_ITU_R_2100_HLG, 
-                       _kIOSurfaceTransferFunction_ITU_R_709_2, _kIOSurfaceTransferFunction_Linear, 
-                       _kIOSurfaceTransferFunction_SMPTE_240M_1995, _kIOSurfaceTransferFunction_SMPTE_ST_2084_PQ, 
-                       _kIOSurfaceTransferFunction_SMPTE_ST_428_1, _kIOSurfaceTransferFunction_UseGamma, 
-                       _kIOSurfaceTransferFunction_aYCC, _kIOSurfaceTransferFunction_sRGB, 
-                       _kIOSurfaceType, _kIOSurfaceUseReserve, _kIOSurfaceWidth, 
-                       _kIOSurfaceYCbCrMatrix, _kIOSurfaceYCbCrMatrix_DCI_P3_String, 
+                       _kIOSurfaceRemoteServiceName, _kIOSurfaceSubsampling, _kIOSurfaceSysMemOnly, 
+                       _kIOSurfaceTransferFunction, _kIOSurfaceTransferFunction_ARIB_STD_B67_HLG, 
+                       _kIOSurfaceTransferFunction_ITU_R_2100_HLG, _kIOSurfaceTransferFunction_ITU_R_709_2, 
+                       _kIOSurfaceTransferFunction_Linear, _kIOSurfaceTransferFunction_SMPTE_240M_1995, 
+                       _kIOSurfaceTransferFunction_SMPTE_ST_2084_PQ, _kIOSurfaceTransferFunction_SMPTE_ST_428_1, 
+                       _kIOSurfaceTransferFunction_UseGamma, _kIOSurfaceTransferFunction_aYCC, 
+                       _kIOSurfaceTransferFunction_sRGB, _kIOSurfaceType, _kIOSurfaceUseReserve, 
+                       _kIOSurfaceWidth, _kIOSurfaceYCbCrMatrix, _kIOSurfaceYCbCrMatrix_DCI_P3_String, 
                        _kIOSurfaceYCbCrMatrix_ITU_R_601_4_String, _kIOSurfaceYCbCrMatrix_ITU_R_709_2_String, 
                        _kIOSurfaceYCbCrMatrix_P3_D65_String, _kIOSurfaceYCbCrMatrix_SMPTE_240M_1995_String ]
-    objc-classes:    [ IOSurface, IOSurfaceDebugDescription, IOSurfaceSharedEvent, 
-                       IOSurfaceSharedEventListener ]
+    objc-classes:    [ IOSurface, IOSurfaceDebugDescription, IOSurfaceRemoteServer, 
+                       IOSurfaceSharedEvent, IOSurfaceSharedEventListener ]
     objc-ivars:      [ IOSurfaceSharedEvent._eventPort, IOSurfaceSharedEvent._globalTraceObjectID, 
                        IOSurfaceSharedEventListener._dispatchQueue, IOSurfaceSharedEventListener._notificationPort ]
 ...

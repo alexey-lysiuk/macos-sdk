@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BD9AFAF9-CBE3-3F2C-ABC7-F2A0AB551078' ]
+uuids:           [ 'x86_64: 89B7EC81-0A6E-3A56-B53B-A072D94F9939' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/RemoteTextInput.framework/Versions/A/RemoteTextInput
 exports:         

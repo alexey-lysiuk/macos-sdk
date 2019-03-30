@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D59F401B-7940-3A51-B737-087AA9E5776B' ]
+uuids:           [ 'x86_64: A73CBFA6-BA5B-34F3-99CB-70B390EBD05E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IMAssistantCore.framework/Versions/A/IMAssistantCore
 current-version: 800

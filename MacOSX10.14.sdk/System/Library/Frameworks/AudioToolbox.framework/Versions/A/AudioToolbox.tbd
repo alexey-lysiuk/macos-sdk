@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F56518BA-B21B-32D8-B077-40A989815F46' ]
-platform:        macosx
+uuids:           [ 'x86_64: 1C76AD80-1106-312E-B2C0-126A8D62F192' ]
+platform:        zippered
 install-name:    /System/Library/Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox
 current-version: 492
 objc-constraint: none

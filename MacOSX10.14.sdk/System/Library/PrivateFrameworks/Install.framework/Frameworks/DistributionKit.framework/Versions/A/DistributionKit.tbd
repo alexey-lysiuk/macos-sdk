@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8D75CB56-2066-3A90-9737-D8D20320B046' ]
+uuids:           [ 'x86_64: A5F1C664-CEEF-3795-A440-BDEAFF8D13F5' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Install.framework/Frameworks/DistributionKit.framework/Versions/A/DistributionKit
 current-version: 1000
@@ -16,7 +16,8 @@ exports:
                        PKDistributionChoiceTitleButtonCell, PKDistributionController, 
                        PKDistributionControllerCommonCheckRecoveryAttempter, PKDistributionEvaluator, 
                        PKDistributionValueNode, PKGraphicsHardwareRequirements, PKPredicateRequirements, 
-                       PKRequiredCLDevice, PKRequiredGLRenderer, _PKBasicHardwareRequirementsMatcher ]
+                       PKRequiredCLDevice, PKRequiredGLRenderer, PKRequiredMetalDevice, 
+                       _PKBasicHardwareRequirementsMatcher ]
     objc-ivars:      [ IFJS_Context.allowInsecure, IFJS_Context.choiceItem, IFJS_Context.choicesDelegate, 
                        IFJS_Context.currentBundle, IFJS_Context.currentChoice, IFJS_Context.destinationPath, 
                        IFJS_Context.distributionController, IFJS_Context.distributionScriptsPath, 
@@ -47,8 +48,9 @@ exports:
                        PKDistributionValueNode._evaluationError, PKDistributionValueNode._identifier, 
                        PKDistributionValueNode._script, PKDistributionValueNode._valueQueue, 
                        PKGraphicsHardwareRequirements._requireSingleDevice, PKGraphicsHardwareRequirements._requiredCLPredicate, 
-                       PKGraphicsHardwareRequirements._requiredGLPredicate, PKGraphicsHardwareRequirements._symbolTable, 
-                       PKRequiredCLDevice._device, PKRequiredCLDevice._extensions, 
-                       PKRequiredCLDevice._symbolTable, PKRequiredGLRenderer._extensions, 
-                       PKRequiredGLRenderer._queryVersion, PKRequiredGLRenderer._symbolTable ]
+                       PKGraphicsHardwareRequirements._requiredGLPredicate, PKGraphicsHardwareRequirements._requiredMetalPredicate, 
+                       PKGraphicsHardwareRequirements._symbolTable, PKRequiredCLDevice._device, 
+                       PKRequiredCLDevice._extensions, PKRequiredCLDevice._symbolTable, 
+                       PKRequiredGLRenderer._extensions, PKRequiredGLRenderer._queryVersion, 
+                       PKRequiredGLRenderer._symbolTable ]
 ...

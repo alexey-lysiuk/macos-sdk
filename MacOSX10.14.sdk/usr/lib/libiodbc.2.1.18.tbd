@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6E4D0F87-4255-3686-8FD4-B9965997137B' ]
+uuids:           [ 'x86_64: 7980B8A1-89EB-393D-A486-5AD58101F45C' ]
 platform:        macosx
 install-name:    /usr/lib/libiodbc.2.dylib
 current-version: 4.18

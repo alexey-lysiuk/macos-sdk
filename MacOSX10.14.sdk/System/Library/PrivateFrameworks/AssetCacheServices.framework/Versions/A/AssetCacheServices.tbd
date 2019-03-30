@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CB6F7B37-D115-3F52-94FC-0D72BF923706' ]
+uuids:           [ 'x86_64: B1870DB1-0CB3-3C43-9E5A-467F9D1F3855' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AssetCacheServices.framework/Versions/A/AssetCacheServices
-current-version: 83.3
+current-version: 83.4
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _ACSImportFileIntoCachingServer, _ACSLocateCachingServer, 

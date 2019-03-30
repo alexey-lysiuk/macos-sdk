@@ -1,5 +1,5 @@
 /*
- * Copyright © 1998-2012 Apple Inc. All rights reserved.
+ * Copyright ï¿½ 1998-2012 Apple Inc. All rights reserved.
  *
  * @APPLE_LICENSE_HEADER_START@
  * 
@@ -583,6 +583,7 @@ enum {
 #define kUSBVendorString			"USB Vendor Name"
 #define kUSBSerialNumberString		"USB Serial Number"
 #define kUSB1284DeviceID			"1284 Device ID"
+#define kUSBDeviceContainerID       "kUSBContainerID"
  /*! @/defineblock */
 	
 	/*!

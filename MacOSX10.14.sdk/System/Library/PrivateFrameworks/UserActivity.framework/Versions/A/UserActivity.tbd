@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 66D81D27-BA48-3A12-AA97-2666D7170749' ]
-platform:        macosx
+uuids:           [ 'x86_64: 7EBD9C7A-E48A-3A0F-BFC6-8A4DEBE6DFAB' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/UserActivity.framework/Versions/A/UserActivity
-current-version: 213
+current-version: 232
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _UAAlwaysAdvertise, _UAContinuityErrorDomain, _UAUserActivityAdvertisePriority, 

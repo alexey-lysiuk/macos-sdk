@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5759766D-6945-3DA7-8113-55E8CE37E4EA' ]
-platform:        macosx
+uuids:           [ 'x86_64: 5B40E337-87FB-3468-B5DB-89E3852EFB96' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/ProactiveSupport.framework/Versions/A/ProactiveSupport
-current-version: 126.32
+current-version: 126.37
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _ProactiveSupportVersionNumber, _ProactiveSupportVersionString, 

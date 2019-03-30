@@ -1,23 +1,26 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1B488612-4C7F-3D9D-B6DC-64CF8D2CB3D6' ]
-platform:        macosx
+uuids:           [ 'x86_64: 15A1DF22-3EE2-359A-8F94-B27F89F35ECE' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/Symbolication.framework/Versions/A/Symbolication
-current-version: 64460.8
+current-version: 64490.38.1
 exports:         
   - archs:           [ x86_64 ]
-    symbols:         [ _VMUBacktraceIsExcludedMarker, _VMUEnumerateVMAnnotatedMallocObjectsWithBlock, 
-                       _VMUGetFlagsForAllVMRegionStatistics, _VMUGraphNodeType_IsRoot, 
-                       _VMUGraphNodeType_IsVMRegion, _VMUIntersectionRange, _VMUIsOwningReference, 
-                       _VMUMarkObject, _VMUMemorySizeString, _VMUPurgeableDisplayCharacter, 
-                       _VMURangeContainsRange, _VMURangeIntersectsOrAbutsRange, _VMURangeIntersectsRange, 
-                       _VMURegionTypeDescriptionForTagShareProtAndPager, _VMUScanTypeKeywordDescription, 
-                       _VMUScanTypeScanDescription, _VMUScanningMaskForAllReferences, 
-                       _VMUScanningMaskForOwningReferences, _VMUSortIndexForLibraryPath, 
-                       _VMUUnionRange, _VMUVMRegionShareModeName, _VMUWithRootNodeMarkingMap, 
-                       _VMUmallocMetadataLabel, _VMUmappedFileLabel, _VMUunusedSharedLibLabelPrefix, 
-                       __VMUEnumerateMarkedObjects, _kVMURootRetainCycle, _pidFromHint, 
-                       _psName, _task_enumerate_malloc_blocks, _task_find_leaks, 
+    symbols:         [ _VMUBacktraceIsExcludedMarker, _VMUDirectedGraphCompatibilityVersionNumberInGraphKey, 
+                       _VMUDirectedGraphToolCompatibilityVersionKey, _VMUEnumerateVMAnnotatedMallocObjectsWithBlock, 
+                       _VMUGetFlagsForAllVMRegionStatistics, _VMUGraphNodeTypeDescription, 
+                       _VMUGraphNodeType_IsRoot, _VMUGraphNodeType_IsVMRegion, _VMUIntersectionRange, 
+                       _VMUIsOwningReference, _VMULiteZoneIndex, _VMUMarkObject, 
+                       _VMUMemorySizeString, _VMUPurgeableDisplayCharacter, _VMURangeContainsRange, 
+                       _VMURangeIntersectsOrAbutsRange, _VMURangeIntersectsRange, 
+                       _VMURegionTypeDescriptionForTagShareProtAndPager, _VMUSanitizePath, 
+                       _VMUScanTypeKeywordDescription, _VMUScanTypeScanDescription, 
+                       _VMUScanningMaskForAllReferences, _VMUScanningMaskForOwningReferences, 
+                       _VMUSortIndexForLibraryPath, _VMUUnionRange, _VMUVMRegionShareModeName, 
+                       _VMUWithRootNodeMarkingMap, _VMUmallocMetadataLabel, _VMUmappedFileLabel, 
+                       _VMUunusedSharedLibLabelPrefix, __VMUEnumerateMarkedObjects, 
+                       _kVMUAutoreleasePoolBoundaryClassName, _kVMURootRetainCycle, 
+                       _pidFromHint, _psName, _task_enumerate_malloc_blocks, _task_find_leaks, 
                        _task_foreach_malloc_zone, _task_get_malloc_ptrs, _task_get_malloc_ptrs_by_zone, 
                        _task_get_mapped_memory_cache, _task_peek, _task_peek_clear_cache, 
                        _task_peek_natural_size, _task_peek_string, _task_read_ptr_at, 
@@ -35,8 +38,8 @@ exports:
                        VMUObjectGraph, VMUObjectIdentifier, VMUProcInfo, VMUProcList, 
                        VMUProcessDescription, VMUProcessObjectGraph, VMURangeArray, 
                        VMURangeToStringMap, VMUSampler, VMUScanOverlay, VMUSourceInfo, 
-                       VMUStackLogConsolidator, VMUStackLogReaderBase, VMUSymbol, 
-                       VMUSymbolOwnerCache, VMUSymbolicator, VMUTaskMemoryCache, 
+                       VMUStackLogConsolidator, VMUStackLogReaderBase, VMUSwiftRuntimeInfo, 
+                       VMUSymbol, VMUSymbolOwnerCache, VMUSymbolicator, VMUTaskMemoryCache, 
                        VMUTaskMemoryScanner, VMUTaskStackLogReader, VMUVMRegion, 
                        VMUVMRegionIdentifier, VMUVMRegionRangeInfo, VMUVMRegionTracker ]
     objc-ivars:      [ VMUBacktrace._callstack, VMUBacktrace._flavor, VMUCallTreeNode._address, 
@@ -50,8 +53,14 @@ exports:
                        VMUSourceInfo._path, VMUStackLogReaderBase._addressToSymbolicationMap, 
                        VMUStackLogReaderBase._binaryImagePathToIdentifierMap, VMUStackLogReaderBase._excludedFrames, 
                        VMUStackLogReaderBase._regionTracker, VMUStackLogReaderBase._task, 
-                       VMUStackLogReaderBase._usesLiteMode, VMUSymbol._name, VMUSymbol._sourceInfo, 
-                       VMUSymbolicator._symbolicator, VMUVMRegion.coalesced_region_count, 
+                       VMUStackLogReaderBase._usesLiteMode, VMUSwiftRuntimeInfo._nativeWeakReferenceMarkerMask, 
+                       VMUSwiftRuntimeInfo._nativeWeakReferenceMarkerValue, VMUSwiftRuntimeInfo._nativeWeakReferencePointerIsSideTable, 
+                       VMUSwiftRuntimeInfo._nativeWeakReferencePointerMask, VMUSwiftRuntimeInfo._refcountIsSideTableMarkerMask, 
+                       VMUSwiftRuntimeInfo._refcountIsSideTableMarkerValue, VMUSwiftRuntimeInfo._runtimeHasStableABI, 
+                       VMUSwiftRuntimeInfo._sideTableLayout, VMUSwiftRuntimeInfo._sideTablePointerLeftShift, 
+                       VMUSwiftRuntimeInfo._sideTablePointerMask, VMUSwiftRuntimeInfo._sideTablePointerRightShift, 
+                       VMUSwiftRuntimeInfo._unownedExtraDataLayout, VMUSymbol._name, 
+                       VMUSymbol._sourceInfo, VMUSymbolicator._symbolicator, VMUVMRegion.coalesced_region_count, 
                        VMUVMRegion.dirty_size, VMUVMRegion.external_pager, VMUVMRegion.is_macho_region, 
                        VMUVMRegion.is_submap, VMUVMRegion.is_unused_data_page_shared_with_active_content, 
                        VMUVMRegion.is_unused_data_region, VMUVMRegion.mallocBlockCount, 

@@ -248,7 +248,7 @@ OBJC_EXPORT const NXHashTablePrototype NXStrStructKeyPrototype
     OBJC_HASH_AVAILABILITY;
 
 
-#if !__OBJC2__  &&  !TARGET_OS_WIN32
+#if !__OBJC2__  &&  !0
 
 /*************************************************************************
  *	Unique strings and buffers

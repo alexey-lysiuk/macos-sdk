@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D62ED169-B91C-3CCB-ADF5-E66AE4007B51' ]
-platform:        macosx
+uuids:           [ 'x86_64: F0A35E72-B772-359B-81AC-0C94B8A621CA' ]
+platform:        zippered
 install-name:    /usr/lib/libenergytrace.dylib
 objc-constraint: none
 exports:         

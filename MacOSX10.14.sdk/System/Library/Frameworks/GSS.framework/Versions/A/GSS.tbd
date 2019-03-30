@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 721B6FEF-9E0E-311B-8CAF-93ADEE2AE548' ]
-platform:        macosx
+uuids:           [ 'x86_64: F5E9FADD-D2DF-3A27-A08B-C74C9F7DB98D' ]
+platform:        zippered
 install-name:    /System/Library/Frameworks/GSS.framework/Versions/A/GSS
 objc-constraint: none
 exports:         

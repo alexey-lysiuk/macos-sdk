@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 057A27EA-4C47-31B3-94A2-E4E2FE202464' ]
+uuids:           [ 'x86_64: 60E54D2D-EC84-3827-A56E-1600FAEABF31' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Automator.framework/Versions/A/Automator
 current-version: 0
@@ -165,9 +165,9 @@ exports:
                        AMPluginHeaderViewController, AMPluginInstallerController, 
                        AMPopUpButton, AMPrintWorkflowPersonality, AMProxyAction, 
                        AMRelativeDateRowTemplate, AMRemoteRunnerController, AMRemoteRunnerXPCDelegate, 
-                       AMResultsItem, AMResultsTableView, AMResultsViewController, 
-                       AMResultsViewOverlayView, AMRunActionAsyncOperation, AMRunActionOperation, 
-                       AMSBObjectToAliasConversionAction, AMSBObjectToSBObjectConversionAction, 
+                       AMRemoveQuarantineRecoveryAttempter, AMResultsItem, AMResultsTableView, 
+                       AMResultsViewController, AMResultsViewOverlayView, AMRunActionAsyncOperation, 
+                       AMRunActionOperation, AMSBObjectToAliasConversionAction, AMSBObjectToSBObjectConversionAction, 
                        AMScriptMenuWorkflowPersonality, AMScriptingBridgeAppRegistry, 
                        AMScriptingBridgeConversionAction, AMSecurityHelperWindowController, 
                        AMSecurityHelperWindowControllerRecoveryAttempter, AMSendProc, 
@@ -323,7 +323,8 @@ exports:
                        AMCacheLocationEntry._firstKeyInPlistData, AMCacheLocationEntry._regularActionsByBundleIdentifier, 
                        AMCacheLocationEntry._rootDirectoryLocationURL, AMCacheLocationEntry._rootDirectoryModificationDate, 
                        AMMediaPanel._mediaBrowserView, AMMediaPanel._observers, AMMediaPanel._segmentedControl, 
-                       AMOpenAutomatorRecoveryAttempter.__recoveryOptionIndex, AMUnknownXPCToken._classDescription, 
+                       AMOpenAutomatorRecoveryAttempter.__recoveryOptionIndex, AMRemoveQuarantineRecoveryAttempter.__recoveryOptionIndex, 
+                       AMRemoveQuarantineRecoveryAttempter.__url, AMUnknownXPCToken._classDescription, 
                        AMUnknownXPCToken._objectDescription, AMValidatedCacheLocationEntry._actionBundleIDListsByActionType, 
                        AMValidatedCacheLocationEntry._plistKeyPathMutableString, 
                        AMValidatedCacheLocationEntry._propertyListData, AMWorkflowController.workflowView, 

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 179A5F4A-6467-31BD-93F2-CC27E046221E' ]
+uuids:           [ 'x86_64: 3333F693-4C42-3AFC-8CF3-6F6D5390D66B' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/AppKit.framework/Versions/C/AppKit
-current-version: 1671.10.106
+current-version: 1671.40.118
 compatibility-version: 45
 exports:         
   - archs:           [ x86_64 ]
@@ -1204,25 +1204,26 @@ exports:
                        NSFontPanel._sizeStyle, NSFontPanel._sizeStyleButton, NSFontPanel._sliderButton, 
                        NSFontPanel._targetObject, NSFontPanel._typographyPanel, NSFormCell._preferredTextFieldWidth, 
                        NSFormCell._titleCell, NSFormCell._titleEndPoint, NSFormCell._titleWidth, 
-                       NSFrameView.styleMask, NSHelpManager._bundleMapTable, NSHelpManager._evtWindow, 
-                       NSHelpManager._helpBundle, NSHelpManager._helpMapTable, NSHelpManager._helpWindow, 
-                       NSHelpManager._keyMapTable, NSHelpManager._shadowWindow, NSImage._flags, 
-                       NSImage._imageAuxiliary, NSImage._name, NSImage._reps, NSImage._size, 
-                       NSImageCell._animationState, NSImageCell._controlView, NSImageCell._icFlags, 
-                       NSImageCell._scaledImage, NSImageRep._colorSpaceName, NSImageRep._pixelsHigh, 
-                       NSImageRep._pixelsWide, NSImageRep._repFlags, NSImageRep._size, 
-                       NSImageView._action, NSImageView._ivFlags, NSImageView._target, 
-                       NSInputServer._delegate, NSInputServer._name, NSInspectorBar._inspectorBarView, 
-                       NSMatrix._backgroundColor, NSMatrix._cellClass, NSMatrix._cellSize, 
-                       NSMatrix._cells, NSMatrix._delegate, NSMatrix._doubleAction, 
-                       NSMatrix._errorAction, NSMatrix._font, NSMatrix._intercell, 
-                       NSMatrix._mFlags, NSMatrix._numCols, NSMatrix._numRows, NSMatrix._private, 
-                       NSMatrix._protoCell, NSMatrix._reserved2, NSMatrix._reserved3, 
-                       NSMatrix._selectedCell, NSMatrix._selectedCol, NSMatrix._selectedRow, 
-                       NSObjectController._content, NSObjectController._objectHandler, 
-                       NSPDFInfo._URL, NSPDFInfo._attributes, NSPDFInfo._fileExtensionHidden, 
-                       NSPDFInfo._orientation, NSPDFInfo._paperSize, NSPDFInfo._tagNames, 
-                       NSPDFPanel._accessoryController, NSPDFPanel._defaultFileName, 
+                       NSFrameView.closeButton, NSFrameView.minimizeButton, NSFrameView.styleMask, 
+                       NSFrameView.titleCell, NSFrameView.zoomButton, NSHelpManager._bundleMapTable, 
+                       NSHelpManager._evtWindow, NSHelpManager._helpBundle, NSHelpManager._helpMapTable, 
+                       NSHelpManager._helpWindow, NSHelpManager._keyMapTable, NSHelpManager._shadowWindow, 
+                       NSImage._flags, NSImage._imageAuxiliary, NSImage._name, NSImage._reps, 
+                       NSImage._size, NSImageCell._animationState, NSImageCell._controlView, 
+                       NSImageCell._icFlags, NSImageCell._scaledImage, NSImageRep._colorSpaceName, 
+                       NSImageRep._pixelsHigh, NSImageRep._pixelsWide, NSImageRep._repFlags, 
+                       NSImageRep._size, NSImageView._action, NSImageView._ivFlags, 
+                       NSImageView._target, NSInputServer._delegate, NSInputServer._name, 
+                       NSInspectorBar._inspectorBarView, NSMatrix._backgroundColor, 
+                       NSMatrix._cellClass, NSMatrix._cellSize, NSMatrix._cells, 
+                       NSMatrix._delegate, NSMatrix._doubleAction, NSMatrix._errorAction, 
+                       NSMatrix._font, NSMatrix._intercell, NSMatrix._mFlags, NSMatrix._numCols, 
+                       NSMatrix._numRows, NSMatrix._private, NSMatrix._protoCell, 
+                       NSMatrix._reserved2, NSMatrix._reserved3, NSMatrix._selectedCell, 
+                       NSMatrix._selectedCol, NSMatrix._selectedRow, NSObjectController._content, 
+                       NSObjectController._objectHandler, NSPDFInfo._URL, NSPDFInfo._attributes, 
+                       NSPDFInfo._fileExtensionHidden, NSPDFInfo._orientation, NSPDFInfo._paperSize, 
+                       NSPDFInfo._tagNames, NSPDFPanel._accessoryController, NSPDFPanel._defaultFileName, 
                        NSPDFPanel._options, NSPDFPanel._panel, NSPDFPanel._private, 
                        NSPICTImageRep._imageRep, NSPICTImageRep._pictData, NSPICTImageRep._pictOffset, 
                        NSPICTImageRep._pictOrigin, NSPredicateEditor._allTemplates, 

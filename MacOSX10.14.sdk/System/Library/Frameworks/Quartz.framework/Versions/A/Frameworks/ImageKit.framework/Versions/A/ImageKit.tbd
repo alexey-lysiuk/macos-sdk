@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A43B90AB-8FCB-35BF-996A-CEB28B67EEB5' ]
+uuids:           [ 'x86_64: 42C1AB59-562B-3966-82A6-8380A6CD03C6' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Quartz.framework/Versions/A/Frameworks/ImageKit.framework/Versions/A/ImageKit
 objc-constraint: none

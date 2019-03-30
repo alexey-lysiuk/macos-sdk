@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0753D3C4-CBC6-317D-86FA-C8A718F75FCD' ]
+uuids:           [ 'x86_64: D6EFA0D7-1B33-397A-8627-544CD36FA68B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Symptoms.framework/Frameworks/SymptomEvaluator.framework/Versions/A/SymptomEvaluator
-current-version: 820.227.2
+current-version: 820.255.1
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _AWDSymptomsAdvisoryAlternateNetworkTypeReadFrom, _AWDSymptomsAdvisoryAppCanUseAlternateNetworkReadFrom, 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DE73E785-6B60-3673-AF7C-F95C02CAF879' ]
+uuids:           [ 'x86_64: 9E2D6E43-B09B-38F4-9F45-91BE8242FC0D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IPTelephony.framework/Support/libIPTelephony.dylib
 exports:         
@@ -45,8 +45,8 @@ exports:
                        __ZN11IMSCallInfo12setRelayModeEb, __ZN11IMSCallInfo15handleLRBTEventEP14BambiCallEventb, 
                        __ZN11IMSCallInfo16createCallHandleEv, __ZN11IMSCallInfo16logIncomingPrackERK10SipRequestPK9BambiCall, 
                        __ZN11IMSCallInfo16logPrackResponseERK11SipResponsePK9BambiCall, 
-                       __ZN11IMSCallInfo16setMuteVoiceCallEb, __ZN11IMSCallInfo17handleTryingEventEP14BambiCallEvent, 
-                       __ZN11IMSCallInfo17setBasebandCallIdEh, __ZN11IMSCallInfo18handleRingingEventEP33BambiCallProvisionalResponseEvent, 
+                       __ZN11IMSCallInfo17handleTryingEventEP14BambiCallEvent, __ZN11IMSCallInfo17setBasebandCallIdEh, 
+                       __ZN11IMSCallInfo18handleRingingEventEP33BambiCallProvisionalResponseEvent, 
                        __ZN11IMSCallInfo21handleCallInvalidatedEP9BambiCall, __ZN11IMSCallInfo22handleUnprocessedEventEP14BambiCallEvent, 
                        __ZN11IMSCallInfo22handleVocoderInfoEventEPK10__CFStringPK10__CFNumber, 
                        __ZN11IMSCallInfo23setTextMediaSessionModeEN3ims20TextMediaSessionModeE, 
@@ -95,8 +95,7 @@ exports:
                        __ZN14IMSCallManager12setRelayModeE7ImsUuidb, __ZN14IMSCallManager13endLegacyCallEhRKN3ims13CallEndReasonE, 
                        __ZN14IMSCallManager13mergeAllCallsEv, __ZN14IMSCallManager14deactivateCallE7ImsUuid, 
                        __ZN14IMSCallManager14removeCallInfoEP11IMSCallInfo, __ZN14IMSCallManager15callInfoForUuidE7ImsUuid, 
-                       __ZN14IMSCallManager16setMuteVoiceCallE7ImsUuidb, __ZN14IMSCallManager17endConferenceCallEv, 
-                       __ZN14IMSCallManager18initializePullCallE14IMSCallOptions, 
+                       __ZN14IMSCallManager17endConferenceCallEv, __ZN14IMSCallManager18initializePullCallE14IMSCallOptions, 
                        __ZN14IMSCallManager18nextBasebandCallIdEv, __ZN14IMSCallManager18sendBambiCallEventEP14BambiCallEvent, 
                        __ZN14IMSCallManager19callOptionsFromDictERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEEN3ctu2cf11CFSharedRefIK14__CFDictionaryEEP14IMSCallOptions, 
                        __ZN14IMSCallManager19sipStackInitializedERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE, 
@@ -291,6 +290,7 @@ exports:
                        __ZN18IPTelephonyManager32handleEmergencyRegistrationErrorERK32SipRegistrationErrorNotification, 
                        __ZN18IPTelephonyManager33handleEmergencyRegistrationActiveERK33SipRegistrationActiveNotification, 
                        __ZN18IPTelephonyManager34handleTransportInitializedForStackEP8SipStack, 
+                       __ZN18IPTelephonyManager7setMuteERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEEb, 
                        __ZN18IPTelephonyManager9dumpStateERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEES8_, 
                        __ZN18IPTelephonyManagerC1Ev, __ZN18IPTelephonyManagerC2Ev, 
                        __ZN18IPTelephonyManagerD0Ev, __ZN18IPTelephonyManagerD1Ev, 
@@ -405,14 +405,13 @@ exports:
                        __ZNK19CapSuppServicesInfo20CallerIdPresentation9serializeEv, 
                        __ZNK19CapSuppServicesInfo6Result19asStringFailureTypeEv, 
                        __ZNK19CapSuppServicesInfo6Result8asStringEv, __ZNK19CapSuppServicesInfo6Result9serializeEv, 
-                       __ZNK19CapSuppServicesInfo9serializeEv, __ZNK3ims10CallHandle4muteEb, 
-                       __ZNK3ims10CallHandle6answerERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE, 
+                       __ZNK19CapSuppServicesInfo9serializeEv, __ZNK3ims10CallHandle6answerERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE, 
                        __ZNK3ims10CallHandle6hangupERKNS_13CallEndReasonE, __ZNK3ims10CallHandle8playDtmfERKNSt3__16vectorIhNS1_9allocatorIhEEEE, 
                        __ZNK3ims10CallHandle8playDtmfEh, __ZNK3ims10CallHandle8stopDtmfEv, 
                        __ZNK3ims12ClientHandle13setCapabilityERKNS_12CapabilitiesEb, 
                        __ZNK3ims12ClientHandle14qosEstablishedERKNSt3__16vectorIjNS1_9allocatorIjEEEE, 
                        __ZNK3ims12ClientHandle17reportDeviceEventERKj, __ZNK3ims12ClientHandle27reportConnectivityAvailableEb, 
-                       __ZNK3ims12ClientHandle9dumpStateERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEES9_, 
+                       __ZNK3ims12ClientHandle7setMuteEb, __ZNK3ims12ClientHandle9dumpStateERKNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEES9_, 
                        __ZNK3ims13AccessNetwork5isFDDEv, __ZNK3ims13AccessNetwork5isGSMEv, 
                        __ZNK3ims13AccessNetwork5isLTEEv, __ZNK3ims13AccessNetwork5isTDDEv, 
                        __ZNK3ims13AccessNetwork6isUMTSEv, __ZNK3ims13AccessNetwork6isWifiEv, 

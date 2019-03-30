@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C65AB92C-E3A2-3516-9CC5-210B8F0612ED' ]
-platform:        macosx
+uuids:           [ 'x86_64: 4C59119B-6C1B-3808-831E-AE18B0182EF1' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/CoreSuggestions.framework/Versions/A/CoreSuggestions
 exports:         
   - archs:           [ x86_64 ]
@@ -96,8 +96,9 @@ exports:
                        _SGRealtimeSuggestionMockErrorDomain, _SGThrottle, _SGWeakLinkClass, 
                        _SGWeakLinkProtocol, _SGWeakLinkStringConstant, _SGWeakLinkSymbol, 
                        _kParsecCachingFlightAPIBaseURL, _kSGAllowAgeBasedPruning, 
-                       _kSGAllowGeocode, _kSGAllowUseMLModelForContacts, _kSGAllowUseMLModelForSelfId, 
-                       _kSGAlwaysShowCancelledEvents, _kSGCloudKitPersistedState, 
+                       _kSGAllowGeocode, _kSGAllowUseMLModelForContactSharing, _kSGAllowUseMLModelForContacts, 
+                       _kSGAllowUseMLModelForSelfId, _kSGAlwaysShowCancelledEvents, 
+                       _kSGCloudKitPersistedState, _kSGContactSharingNegativeSamplingRate, 
                        _kSGDetectContacts, _kSGDetectNLEvents, _kSGDetectStructuredEvents, 
                        _kSGEmailSearchableItemSourceKey, _kSGEventMetadataCategoryDescriptionKey, 
                        _kSGEventMetadataConfidenceKey, _kSGEventMetadataKey, _kSGEventMetadataOriginBundleIdKey, 
@@ -127,7 +128,7 @@ exports:
                        _kSuggestionsEkEventSavedFromSyncKey, _kSuggestionsEkEventSchemaOrgKey, 
                        _kSuggestionsNotificationsWebPageWhiteListAssetUpdated, _sgFilter, 
                        _sgLogHandle, _sgMap, _sgMapAndFilter, _sgMapParallel, _sgMapSelector, 
-                       _sgPrivateLogHandle, _sgShuffledArrayFrom ]
+                       _sgPrivateLogHandle, _sgShuffledArrayFrom, _sgSignpostHandle ]
     objc-classes:    [ SGCircularBufferArray, SGContact, SGContactMatch, SGContactMatchArrayOption, 
                        SGDSuggestManagerInterface, SGDaemonConnection, SGEKEventConversions, 
                        SGEmailAddress, SGEntityTag, SGEntityTagPrefixOptions, SGErrorMetrics, 

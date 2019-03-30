@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0B3040A6-7DD8-3C63-BECC-F0846DDC368C' ]
-platform:        macosx
+uuids:           [ 'x86_64: C85E1558-F051-3B97-A26E-136505E52791' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/IMFoundation.framework/Versions/A/IMFoundation
 current-version: 800
 exports:         

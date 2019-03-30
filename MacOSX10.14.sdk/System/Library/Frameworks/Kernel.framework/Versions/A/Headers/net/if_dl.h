@@ -2,7 +2,7 @@
  * Copyright (c) 2000-2011 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
- * 
+ *
  * This file contains Original Code and/or Modifications of Original Code
  * as defined in and that are subject to the Apple Public Source License
  * Version 2.0 (the 'License'). You may not use this file except in
@@ -11,10 +11,10 @@
  * unlawful or unlicensed copies of an Apple operating system, or to
  * circumvent, violate, or enable the circumvention or violation of, any
  * terms of an Apple operating system software license agreement.
- * 
+ *
  * Please obtain a copy of the License at
  * http://www.opensource.apple.com/apsl/ and read it before using this file.
- * 
+ *
  * The Original Code and all software distributed under the License are
  * distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
  * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
@@ -22,7 +22,7 @@
  * FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.
  * Please see the License for the specific language governing rights and
  * limitations under the License.
- * 
+ *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_END@
  */
 /*
@@ -90,19 +90,19 @@
  * Structure of a Link-Level sockaddr:
  */
 struct sockaddr_dl {
-	u_char	sdl_len;	/* Total length of sockaddr */
-	u_char	sdl_family;	/* AF_LINK */
-	u_short	sdl_index;	/* if != 0, system given index for interface */
-	u_char	sdl_type;	/* interface type */
-	u_char	sdl_nlen;	/* interface name length, no trailing 0 reqd. */
-	u_char	sdl_alen;	/* link level address length */
-	u_char	sdl_slen;	/* link layer selector length */
-	char	sdl_data[12];	/* minimum work area, can be larger;
-				   contains both if name and ll address */
+	u_char  sdl_len;        /* Total length of sockaddr */
+	u_char  sdl_family;     /* AF_LINK */
+	u_short sdl_index;      /* if != 0, system given index for interface */
+	u_char  sdl_type;       /* interface type */
+	u_char  sdl_nlen;       /* interface name length, no trailing 0 reqd. */
+	u_char  sdl_alen;       /* link level address length */
+	u_char  sdl_slen;       /* link layer selector length */
+	char    sdl_data[12];   /* minimum work area, can be larger;
+	                         *  contains both if name and ll address */
 #ifndef __APPLE__
 	/* For TokenRing */
-	u_short	sdl_rcf;	/* source routing control */
-	u_short	sdl_route[16];	/* source routing information */
+	u_short sdl_rcf;        /* source routing control */
+	u_short sdl_route[16];  /* source routing information */
 #endif
 };
 

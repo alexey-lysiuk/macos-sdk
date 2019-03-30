@@ -140,11 +140,9 @@ typedef struct {
     CFStringRef	(*copyDescription)(const void *info);
 } CFSocketContext;
 
-#if TARGET_OS_WIN32
-typedef uintptr_t CFSocketNativeHandle;
-#else
+
 typedef int CFSocketNativeHandle;
-#endif
+
 
 CF_EXPORT CFTypeID	CFSocketGetTypeID(void);
 

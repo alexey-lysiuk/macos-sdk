@@ -2,7 +2,7 @@
  * Copyright (c) 2000-2007 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
- * 
+ *
  * This file contains Original Code and/or Modifications of Original Code
  * as defined in and that are subject to the Apple Public Source License
  * Version 2.0 (the 'License'). You may not use this file except in
@@ -11,10 +11,10 @@
  * unlawful or unlicensed copies of an Apple operating system, or to
  * circumvent, violate, or enable the circumvention or violation of, any
  * terms of an Apple operating system software license agreement.
- * 
+ *
  * Please obtain a copy of the License at
  * http://www.opensource.apple.com/apsl/ and read it before using this file.
- * 
+ *
  * The Original Code and all software distributed under the License are
  * distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
  * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
@@ -22,7 +22,7 @@
  * FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.
  * Please see the License for the specific language governing rights and
  * limitations under the License.
- * 
+ *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_END@
  */
 /* Copyright (c) 1995 NeXT Computer, Inc. All Rights Reserved */
@@ -65,7 +65,7 @@
  *
  *	@(#)systm.h	8.7 (Berkeley) 3/29/95
  */
- 
+
 /*
  * The `securelevel' variable controls the security level of the system.
  * It can only be decreased by process 1 (/sbin/init).
@@ -78,7 +78,7 @@
  *	raw disks of mounted filesystems, /dev/mem, and /dev/kmem are
  *	read-only.
  *    2	highly secure mode - same as (1) plus raw disks are always
- *	read-only whether mounted or not. This level precludes tampering 
+ *	read-only whether mounted or not. This level precludes tampering
  *	with filesystems by unmounting them, but also inhibits running
  *	newfs while the system is secured.
  *
@@ -95,7 +95,7 @@
  */
 
 #ifndef _SYS_SYSTM_H_
-#define	_SYS_SYSTM_H_
+#define _SYS_SYSTM_H_
 
 #include <sys/appleapiopts.h>
 #include <sys/cdefs.h>
@@ -112,11 +112,11 @@ __END_DECLS
 
 
 
-#define SYSINIT(a,b,c,d,e)
-#define MALLOC_DEFINE(a,b,c)
+#define SYSINIT(a, b, c, d, e)
+#define MALLOC_DEFINE(a, b, c)
 
-#define getenv_int(a,b) (*b = 0)
-#define	KASSERT(exp,msg)
+#define getenv_int(a, b) (*b = 0)
+#define KASSERT(exp, msg)
 /*
  * General function declarations.
  */
@@ -124,53 +124,53 @@ __BEGIN_DECLS
 
 
 
-int	nullop(void);
-int	nulldev(void);
-int	enoioctl(void);
-int	enosys(void);
-int	enxio(void);
-int	eopnotsupp(void);
-void	*hashinit(int count, int type, u_long *hashmask);
-void	ovbcopy(const void *from, void *to, size_t len);
-int	fubyte(user_addr_t addr);
-int	fuibyte(user_addr_t addr);
-int	subyte(user_addr_t addr, int byte);
-int	suibyte(user_addr_t addr, int byte);
+int     nullop(void);
+int     nulldev(void);
+int     enoioctl(void);
+int     enosys(void);
+int     enxio(void);
+int     eopnotsupp(void);
+void    *hashinit(int count, int type, u_long *hashmask);
+void    ovbcopy(const void *from, void *to, size_t len);
+int     fubyte(user_addr_t addr);
+int     fuibyte(user_addr_t addr);
+int     subyte(user_addr_t addr, int byte);
+int     suibyte(user_addr_t addr, int byte);
 long   fuword(user_addr_t addr);
 long   fuiword(user_addr_t addr);
 int    suword(user_addr_t addr, long word);
 int    suiword(user_addr_t addr, long word);
-#define fusize(_a)	((user_size_t)fulong(_a))
-#define susize(_a, _s)	sulong((_a), (_s))
-#define fuptr(a)	((user_addr_t)fulong(_a)
-#define suptr(_a, _p)	sulong((_a), (_p))
-int	useracc(user_addr_t addr, user_size_t len,int prot);
+#define fusize(_a)      ((user_size_t)fulong(_a))
+#define susize(_a, _s)  sulong((_a), (_s))
+#define fuptr(a)        ((user_addr_t)fulong(_a)
+#define suptr(_a, _p)   sulong((_a), (_p))
+int     useracc(user_addr_t addr, user_size_t len, int prot);
 typedef void (*timeout_fcn_t)(void *);
-void	bsd_timeout(void (*)(void *), void *arg, struct timespec * ts);
-void	bsd_untimeout(void (*)(void *), void *arg);
-void	set_fsblocksize(struct vnode *);
+void    bsd_timeout(void (*)(void *), void *arg, struct timespec * ts);
+void    bsd_untimeout(void (*)(void *), void *arg);
+void    set_fsblocksize(struct vnode *);
 uint64_t tvtoabstime(struct timeval *);
 uint64_t tstoabstime(struct timespec *);
-void	*throttle_info_create(void);
-void	throttle_info_mount_ref(mount_t mp, void * throttle_info);
-void	throttle_info_mount_rel(mount_t mp);
-void	throttle_info_release(void *throttle_info);
-void	throttle_info_update(void *throttle_info, int flags);
+void    *throttle_info_create(void);
+void    throttle_info_mount_ref(mount_t mp, void * throttle_info);
+void    throttle_info_mount_rel(mount_t mp);
+void    throttle_info_release(void *throttle_info);
+void    throttle_info_update(void *throttle_info, int flags);
 uint32_t throttle_lowpri_io(int sleep_amount);
-void	throttle_set_thread_io_policy(int policy);
-int		throttle_get_thread_effective_io_policy(void);
+void    throttle_set_thread_io_policy(int policy);
+int             throttle_get_thread_effective_io_policy(void);
 
 typedef struct __throttle_info_handle *throttle_info_handle_t;
-int	throttle_info_ref_by_mask(uint64_t throttle_mask, throttle_info_handle_t *throttle_info_handle);
-void	throttle_info_rel_by_mask(throttle_info_handle_t throttle_info_handle);
-void	throttle_info_update_by_mask(void *throttle_info_handle, int flags);
-void 	throttle_info_disable_throttle(int devno, boolean_t isfusion);
+int     throttle_info_ref_by_mask(uint64_t throttle_mask, throttle_info_handle_t *throttle_info_handle);
+void    throttle_info_rel_by_mask(throttle_info_handle_t throttle_info_handle);
+void    throttle_info_update_by_mask(void *throttle_info_handle, int flags);
+void    throttle_info_disable_throttle(int devno, boolean_t isfusion);
 /*
  * 'throttle_info_handle' acquired via 'throttle_info_ref_by_mask'
  * 'policy' should be specified as either IOPOL_UTILITY or IPOL_THROTTLE,
  * all other values will be treated as IOPOL_NORMAL (i.e. no throttling)
  */
-int	throttle_info_io_will_be_throttled(void *throttle_info_handle, int policy);
+int     throttle_info_io_will_be_throttled(void *throttle_info_handle, int policy);
 
 
 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C351AD1D-9AA6-38B9-8176-F9C66D059086' ]
+uuids:           [ 'x86_64: 87DFA27A-EADF-3BD8-A2CE-D07849943083' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/BookKit.framework/Versions/A/Frameworks/BookKitFoundation.framework/Versions/A/BookKitFoundation
 exports:         

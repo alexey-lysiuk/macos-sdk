@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 42A21105-8F57-30AA-8D7E-D7D81914D0DB' ]
+uuids:           [ 'x86_64: B240DD44-41D1-3B1B-B7D7-24984EC5B133' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/IOBluetoothUI.framework/Versions/A/IOBluetoothUI
 exports:         
@@ -30,8 +30,8 @@ exports:
                        __IOBluetoothUI_AlignCGRectToUserSpace, __IOBluetoothUI_AlignPointToUserSpace, 
                        __IOBluetoothUI_AlignRectToUserSpace, _gAppleObjectPushServiceClassUUID, 
                        _isDebugLogEnabled, _registerValueTransformers, _sOBEXObjectPushSupportFormatsListNameMapping ]
-    objc-classes:    [ AppleOptions, AudioOptions2, EnhancedAppleOptions, FauxUIElement, 
-                       IOBluetoothAccessibilityIgnoredImageCell, IOBluetoothAccessibilityIgnoredTextFieldCell, 
+    objc-classes:    [ AppleOptions, AudioOptions2, EnhancedAppleOptions, EnhancedAppleOptions2, 
+                       FauxUIElement, IOBluetoothAccessibilityIgnoredImageCell, IOBluetoothAccessibilityIgnoredTextFieldCell, 
                        IOBluetoothConcreteDeviceController, IOBluetoothConcreteDeviceSelectorController, 
                        IOBluetoothConcreteObjectPush, IOBluetoothConcretePairingController, 
                        IOBluetoothConcreteServiceBrowserController, IOBluetoothDeviceImageVault, 
@@ -59,6 +59,10 @@ exports:
                        EnhancedAppleOptions.appleOptionsViewPlaceholder, EnhancedAppleOptions.appleOptionsWindow, 
                        EnhancedAppleOptions.checkBoxEnableInEarDetection, EnhancedAppleOptions.leftDoubleTapButton, 
                        EnhancedAppleOptions.microphoneButton, EnhancedAppleOptions.rightDoubleTapButton, 
+                       EnhancedAppleOptions2.appleDeviceSetting, EnhancedAppleOptions2.appleOptionsViewPlaceholder, 
+                       EnhancedAppleOptions2.appleOptionsWindow, EnhancedAppleOptions2.checkBoxEnableInEarDetection, 
+                       EnhancedAppleOptions2.doubleTapBox, EnhancedAppleOptions2.leftDoubleTapButton, 
+                       EnhancedAppleOptions2.microphoneButton, EnhancedAppleOptions2.rightDoubleTapButton, 
                        FauxUIElement.parent, FauxUIElement.role, IOBluetoothConcreteDeviceController._collectionView, 
                        IOBluetoothConcreteDeviceController._placeHolderView, IOBluetoothConcreteDeviceController.mAllowedServiceArray, 
                        IOBluetoothConcreteDeviceController.mBTNotificationRef, IOBluetoothConcreteDeviceController.mCancel, 

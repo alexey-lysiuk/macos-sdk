@@ -67,11 +67,11 @@
  */
 
 #ifndef _SYS_PROC_H_
-#define	_SYS_PROC_H_
+#define _SYS_PROC_H_
 
 #include <sys/appleapiopts.h>
 #include <sys/cdefs.h>
-#include <sys/select.h>			/* For struct selinfo. */
+#include <sys/select.h>                 /* For struct selinfo. */
 #include <sys/queue.h>
 #include <sys/lock.h>
 #include <sys/param.h>
@@ -90,8 +90,8 @@ extern proc_t kernproc;
 extern int proc_is_classic(proc_t p);
 proc_t current_proc_EXTERNAL(void);
 
-extern int	msleep(void *chan, lck_mtx_t *mtx, int pri, const char *wmesg, struct timespec * ts );
-extern void	wakeup(void *chan);
+extern int      msleep(void *chan, lck_mtx_t *mtx, int pri, const char *wmesg, struct timespec * ts );
+extern void     wakeup(void *chan);
 extern void wakeup_one(caddr_t chan);
 
 /* proc kpis */
@@ -154,17 +154,17 @@ extern int proc_issetugid(proc_t p);
 extern int proc_tbe(proc_t);
 
 /*!
- @function proc_selfpgrpid
- @abstract Get the process group id for the current process, as with proc_pgrpid().
- @return pgrpid of current process.
+ *  @function proc_selfpgrpid
+ *  @abstract Get the process group id for the current process, as with proc_pgrpid().
+ *  @return pgrpid of current process.
  */
 pid_t proc_selfpgrpid(void);
 
 /*!
- @function proc_pgrpid
- @abstract Get the process group id for the passed-in process.
- @param p Process whose pgrpid to grab.
- @return pgrpid for "p".
+ *  @function proc_pgrpid
+ *  @abstract Get the process group id for the passed-in process.
+ *  @param p Process whose pgrpid to grab.
+ *  @return pgrpid for "p".
  */
 pid_t proc_pgrpid(proc_t p);
 
@@ -175,4 +175,4 @@ __END_DECLS
 
 
 
-#endif	/* !_SYS_PROC_H_ */
+#endif  /* !_SYS_PROC_H_ */

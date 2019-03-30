@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6BC2FEB1-4E13-3A47-9F13-54F465DDC228' ]
+uuids:           [ 'x86_64: 854836D3-49E8-38C4-B1D0-A65B27DE6190' ]
 platform:        macosx
 install-name:    /usr/lib/libhunspell-1.2.0.dylib
 objc-constraint: none

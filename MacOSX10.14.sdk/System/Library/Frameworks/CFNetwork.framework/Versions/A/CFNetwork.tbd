@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 99BD4FA0-8BD3-35E5-8FB1-C757D439716C' ]
-platform:        macosx
+uuids:           [ 'x86_64: EFB91439-6953-3CD4-8A14-3E7DC90DDF7E' ]
+platform:        zippered
 install-name:    /System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork
-current-version: 975.0.3
+current-version: 978.0.7
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ '$ld$hide$os10.0$_NSHTTPCookieComment', '$ld$hide$os10.0$_NSHTTPCookieCommentURL', 
@@ -1154,6 +1154,6 @@ exports:
                        NSURLSessionDownloadTask, NSURLSessionStreamTask, NSURLSessionTask, 
                        NSURLSessionTaskDependency, NSURLSessionTaskDependencyDescription, 
                        NSURLSessionTaskDependencyTree, NSURLSessionTaskMetrics, NSURLSessionTaskTransactionMetrics, 
-                       NSURLSessionUploadTask, _NSCFServer, __NSCFURLSessionTaskInfo, 
-                       __NSCFURLSessionXPC, __NSURLSessionStatistics ]
+                       NSURLSessionUploadTask, _NSCFServer, __NSCFTaskPerformanceTiming, 
+                       __NSCFURLSessionTaskInfo, __NSCFURLSessionXPC, __NSURLSessionStatistics ]
 ...

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 20091E90-65CC-37EE-BD0B-BDBD79FD11D8' ]
+uuids:           [ 'x86_64: F05DE0CF-54B8-3226-A483-6B3CC42332ED' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoLibraryPrivate.framework/Versions/A/Frameworks/Mondrian.framework/Versions/A/Mondrian
-current-version: 3411.5.190
+current-version: 3441.7.100
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _GridRectEdgeOppositeEdge, _MOAVAssetCreateThumbnailWithURL, 
@@ -16,11 +16,11 @@ exports:
                        _MOCGImageCreateWithURL, _MOCGImageDecompressImage, _MOCGImageDecompressImageInDeviceRGB, 
                        _MOCGImageJPEGRepresentation, _MOCGImagePNGRepresentation, 
                        _MOCGImageSaveJPEGToURL, _MOCGImageSavePNGToURL, _MOCGImageSizeWithURL, 
-                       _MOCGRectMakeFitSizeInRect, _MOCGSizeFitAspectInSize, _MOCollectionViewCommonInit, 
-                       _MOErrorDomain, _MOGridLocationInvalid, _MOGridLocationZero, 
-                       _MOGridRectEdgeFromCGRectEdge, _MOGridRectGetEdge, _MOGridRectIntersection, 
-                       _MOGridRectInvalid, _MOGridSizeForAspectRatio, _MOGridSizeInvalid, 
-                       _MOGridSizeUnit, _MOGridSizeZero, _MOGridSlotConsumerColumnIsCompletelyConsumed, 
+                       _MOCGImageWithClipRect, _MOCGRectMakeFitSizeInRect, _MOCGSizeFitAspectInSize, 
+                       _MOCollectionViewCommonInit, _MOErrorDomain, _MOGridLocationInvalid, 
+                       _MOGridLocationZero, _MOGridRectEdgeFromCGRectEdge, _MOGridRectGetEdge, 
+                       _MOGridRectIntersection, _MOGridRectInvalid, _MOGridSizeForAspectRatio, 
+                       _MOGridSizeInvalid, _MOGridSizeUnit, _MOGridSizeZero, _MOGridSlotConsumerColumnIsCompletelyConsumed, 
                        _MOGridSlotConsumerConsumeSlots, _MOGridSlotConsumerCreate, 
                        _MOGridSlotConsumerDispose, _MOGridSlotConsumerIsCompletelyConsumed, 
                        _MOGridSlotConsumerRectIsCompletelyConsumed, _MOGridSlotConsumerReset, 

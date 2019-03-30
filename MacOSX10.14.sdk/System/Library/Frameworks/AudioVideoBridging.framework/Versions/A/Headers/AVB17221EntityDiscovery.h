@@ -2,7 +2,7 @@
 //  AVB17221EntityDiscovery.h
 //  AudioVideoBridging
 //
-//  Copyright (c) 2010-2014 Apple Inc. All rights reserved.
+//  Copyright (c) 2010-2018 Apple Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -44,6 +44,7 @@ NS_CLASS_AVAILABLE(10_8, NA)
 	IONotificationPortRef notificationPort;
 	
 	dispatch_queue_t callbackQueue;
+	dispatch_queue_t callbackActionQueue;
 	
 	io_iterator_t localArrivalIterator;
 	io_iterator_t localDepartureIterator;

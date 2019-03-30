@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A47E7880-607A-3842-89D4-E069503AF150' ]
-platform:        macosx
+uuids:           [ 'x86_64: 6AEC6A61-F072-37FA-9884-E985BA423E5E' ]
+platform:        zippered
 install-name:    /usr/lib/libauditd.0.dylib
 objc-constraint: none
 exports:         

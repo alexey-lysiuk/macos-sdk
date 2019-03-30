@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B12B691D-7D22-323C-A13D-2172A66D5212' ]
+uuids:           [ 'x86_64: 9B0CD279-F3BD-36D2-A52C-48AF6C43A0D2' ]
 platform:        macosx
 install-name:    /usr/lib/libtailspin.dylib
 current-version: 60

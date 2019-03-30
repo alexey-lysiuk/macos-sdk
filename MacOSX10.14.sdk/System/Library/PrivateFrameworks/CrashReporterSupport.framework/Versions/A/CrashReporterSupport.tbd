@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 36754BB2-680F-36AE-A5DE-548B4F41F0AE' ]
+uuids:           [ 'x86_64: AB842AE0-8594-3530-ABB7-30E583F82FC5' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CrashReporterSupport.framework/Versions/A/CrashReporterSupport
-current-version: 938.23
+current-version: 938.25
 exports:         
   - archs:           [ x86_64 ]
     re-exports:      [ /usr/lib/libDiagnosticMessagesClient.dylib ]

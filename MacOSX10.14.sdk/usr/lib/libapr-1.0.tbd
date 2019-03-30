@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E66AF05A-521C-34BE-AC8B-440394517DDC' ]
+uuids:           [ 'x86_64: 1263087C-1D3F-3774-990C-E6FC7E1B70EF' ]
 platform:        macosx
 flags:           [ flat_namespace ]
 install-name:    /usr/lib/libapr-1.0.dylib
@@ -166,48 +166,4 @@ exports:
                        _apr_unix_child_file_cleanup, _apr_unix_file_cleanup, _apr_unix_mode2perms, 
                        _apr_unix_perms2mode, _apr_unix_setup_time, _apr_version, 
                        _apr_version_string, _apr_vformatter, _apr_vsnprintf, _apr_wait_for_io_or_timeout ]
-undefineds:      
-  - archs:           [ x86_64 ]
-    symbols:         [ __DefaultRuneLocale, __NSGetEnviron, ___assert_rtn, ___bzero, 
-                       ___error, ___maskrune, ___memcpy_chk, ___stack_chk_fail, ___stack_chk_guard, 
-                       ___stderrp, ___stdinp, ___stdoutp, ___strcpy_chk, ___tolower, 
-                       ___toupper, __exit, _accept, _access, _atoi, _bind, _calloc, 
-                       _chdir, _chmod, _close, _closedir, _connect, _dlclose, _dlerror, 
-                       _dlopen, _dlsym, _dup, _dup2, _execv, _execve, _execvp, _exit, 
-                       _fcntl, _fdatasync, _flock, _fork, _fprintf, _free, _freeaddrinfo, 
-                       _freeifaddrs, _freopen, _fstat, '_fstat$INODE64', _fsync, 
-                       _ftok, _ftruncate, _fwrite, _gai_strerror, _getaddrinfo, _getcwd, 
-                       _getenv, _geteuid, _getgid, _getgrgid_r, _getgrnam_r, _gethostname, 
-                       _getifaddrs, _getnameinfo, _getpass, _getpeername, _getpid, 
-                       _getpwnam_r, _getpwuid_r, _getservbyname, _getsockname, _getsockopt, 
-                       _gettimeofday, _getuid, _gmtime_r, _h_errno, _if_nametoindex, 
-                       _ioctl, _kevent, _kill, _kqueue, _link, _listen, _localtime_r, 
-                       _lseek, _lstat, '_lstat$INODE64', _malloc, _memchr, _memcmp, 
-                       _memcpy, _memmove, _memset, _mkdir, _mkfifo, _mkstemp, _mmap, 
-                       _modf, _munmap, _nl_langinfo, _open, _opendir, '_opendir$INODE64', 
-                       _perror, _pipe, _poll, _posix_spawn_file_actions_addclose, 
-                       _posix_spawn_file_actions_adddup2, _posix_spawn_file_actions_destroy, 
-                       _posix_spawn_file_actions_init, _posix_spawnp, _pthread_attr_destroy, 
-                       _pthread_attr_getdetachstate, _pthread_attr_init, _pthread_attr_setdetachstate, 
-                       _pthread_attr_setguardsize, _pthread_attr_setstacksize, _pthread_cond_broadcast, 
-                       _pthread_cond_destroy, _pthread_cond_init, _pthread_cond_signal, 
-                       _pthread_cond_timedwait, _pthread_cond_wait, _pthread_create, 
-                       _pthread_detach, _pthread_equal, _pthread_exit, _pthread_getspecific, 
-                       _pthread_join, _pthread_key_create, _pthread_key_delete, _pthread_mutex_destroy, 
-                       _pthread_mutex_init, _pthread_mutex_lock, _pthread_mutex_trylock, 
-                       _pthread_mutex_unlock, _pthread_mutexattr_destroy, _pthread_mutexattr_init, 
-                       _pthread_mutexattr_settype, _pthread_once, _pthread_rwlock_destroy, 
-                       _pthread_rwlock_init, _pthread_rwlock_rdlock, _pthread_rwlock_tryrdlock, 
-                       _pthread_rwlock_trywrlock, _pthread_rwlock_unlock, _pthread_rwlock_wrlock, 
-                       _pthread_self, _pthread_setspecific, _rand, _read, _readdir_r, 
-                       '_readdir_r$INODE64', _realloc, _recvfrom, _rename, _rewinddir, 
-                       '_rewinddir$INODE64', _rmdir, _sched_yield, '_select$1050', 
-                       _sem_close, _sem_open, _sem_post, _sem_trywait, _sem_unlink, 
-                       _sem_wait, _semctl, _semget, _semop, _sendfile, _sendto, _setenv, 
-                       _setgid, _setrlimit, _setsid, _setsockopt, _setuid, _shmat, 
-                       _shmctl, _shmdt, _shmget, _shutdown, _sigaction, _sigprocmask, 
-                       _sigwait, _socket, _stat, '_stat$INODE64', _strcasecmp, _strchr, 
-                       _strcmp, _strcpy, _strerror_r, _strftime, _strlen, _strncmp, 
-                       _strrchr, _strtol, _sys_siglist, _unlink, _unsetenv, _utimes, 
-                       _uuid_generate, _waitpid, _write, _writev, dyld_stub_binder ]
 ...

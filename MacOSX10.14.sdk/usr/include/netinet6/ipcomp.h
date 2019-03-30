@@ -40,18 +40,18 @@
 #include <netinet6/ipsec.h>
 
 struct ipcomp {
-	u_int8_t comp_nxt;	/* Next Header */
-	u_int8_t comp_flags;	/* reserved, must be zero */
-	u_int16_t comp_cpi;	/* Compression parameter index */
+	u_int8_t comp_nxt;      /* Next Header */
+	u_int8_t comp_flags;    /* reserved, must be zero */
+	u_int16_t comp_cpi;     /* Compression parameter index */
 };
 
 /* well-known algorithm number (in CPI), from RFC2409 */
-#define IPCOMP_OUI	1	/* vendor specific */
-#define IPCOMP_DEFLATE	2	/* RFC2394 */
-#define IPCOMP_LZS	3	/* RFC2395 */
-#define IPCOMP_MAX	4
+#define IPCOMP_OUI      1       /* vendor specific */
+#define IPCOMP_DEFLATE  2       /* RFC2394 */
+#define IPCOMP_LZS      3       /* RFC2395 */
+#define IPCOMP_MAX      4
 
-#define IPCOMP_CPI_NEGOTIATE_MIN	256
+#define IPCOMP_CPI_NEGOTIATE_MIN        256
 
 
 #endif /* _NETINET6_IPCOMP_H_ */

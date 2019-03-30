@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B132562B-5AC5-32C9-B519-40E481356A83' ]
+uuids:           [ 'x86_64: 242E989F-D8D4-3AE7-80EB-459D8D2B55CA' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreChineseEngine.framework/Versions/A/CoreChineseEngine
-current-version: 391.16.10
+current-version: 391.17
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CCEGetLionUserDictionariesMigrated, _CCEGetPidForApplication, 

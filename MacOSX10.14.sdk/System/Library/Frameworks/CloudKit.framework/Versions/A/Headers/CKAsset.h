@@ -18,7 +18,7 @@ API_AVAILABLE(macos(10.10), ios(8.0), watchos(3.0))
 - (instancetype)initWithFileURL:(NSURL *)fileURL;
 
 /*! Local file URL where fetched records are cached and saved records originate from. */
-@property (nonatomic, readonly, copy) NSURL *fileURL;
+@property (nonatomic, readonly, copy, nullable) NSURL *fileURL;
 
 @end
 NS_ASSUME_NONNULL_END

@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 366C4160-5238-363E-8D0E-13D059AFF6F8' ]
-platform:        macosx
+uuids:           [ 'x86_64: 95C288EF-47F5-3DFD-9ABF-C4919951F125' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/CacheDelete.framework/Versions/A/CacheDelete
 exports:         
   - archs:           [ x86_64 ]

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: ED555BD3-E30A-35D2-A878-71867DE2D674' ]
+uuids:           [ 'x86_64: 39A4A7C1-2377-3F49-B983-E13CC7129260' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/EmbeddedOSInstall.framework/Versions/A/EmbeddedOSInstall
 exports:         

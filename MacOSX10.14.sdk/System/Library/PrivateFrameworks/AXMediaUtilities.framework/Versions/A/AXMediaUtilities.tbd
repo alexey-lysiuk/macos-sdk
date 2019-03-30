@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D3D9EB87-162A-3F9D-A082-63366D807FA5' ]
+uuids:           [ 'x86_64: 58F9F161-928F-390C-BF63-6C96C8D479D4' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AXMediaUtilities.framework/Versions/A/AXMediaUtilities
 exports:         

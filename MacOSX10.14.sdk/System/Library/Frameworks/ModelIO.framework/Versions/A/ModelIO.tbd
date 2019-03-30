@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F46B32FA-25A5-38D3-82EC-26105AD630F6' ]
-platform:        macosx
+uuids:           [ 'x86_64: 42221855-B143-3265-B288-B0F60378DD4A' ]
+platform:        zippered
 install-name:    /System/Library/Frameworks/ModelIO.framework/Versions/A/ModelIO
 objc-constraint: none
 exports:         

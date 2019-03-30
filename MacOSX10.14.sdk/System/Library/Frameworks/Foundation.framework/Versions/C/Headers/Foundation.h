@@ -128,7 +128,7 @@
 #import <Foundation/NSUUID.h>
 #endif
 
-#if (TARGET_OS_MAC && !(TARGET_OS_EMBEDDED || TARGET_OS_IPHONE)) || TARGET_OS_WIN32
+#if (TARGET_OS_MAC && !(TARGET_OS_EMBEDDED || TARGET_OS_IPHONE)) || 0
 
 #import <Foundation/NSArchiver.h>
 #import <Foundation/NSBackgroundActivityScheduler.h>

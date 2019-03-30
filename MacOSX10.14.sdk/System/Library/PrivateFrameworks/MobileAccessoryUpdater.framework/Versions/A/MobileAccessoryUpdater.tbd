@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DCB2169E-6951-3453-B23E-221F20E39FAB' ]
+uuids:           [ 'x86_64: E2894056-0FA4-334F-AB20-DCDAE468700E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MobileAccessoryUpdater.framework/Versions/A/MobileAccessoryUpdater
 exports:         
@@ -10,8 +10,8 @@ exports:
                        _copyEntitlementsForPid, _dumpXPCObject, _getOperationNameFromCode, 
                        _getProgressWeightsFromPluginInfo, _kMAU_STEP_APPLY, _kMAU_STEP_BOOTSTRAP, 
                        _kMAU_STEP_COMPLETE_INFO_KEY_NEXT_STEP, _kMAU_STEP_CONTINUE, 
-                       _kMAU_STEP_DOWNLOAD, _kMAU_STEP_END, _kMAU_STEP_FIND, _kMAU_STEP_FINISH, 
-                       _kMAU_STEP_PREPARE, _objectFinalizer, _objectFromXpcDictionary, 
+                       _kMAU_STEP_DONE, _kMAU_STEP_DOWNLOAD, _kMAU_STEP_END, _kMAU_STEP_FIND, 
+                       _kMAU_STEP_FINISH, _kMAU_STEP_PREPARE, _objectFinalizer, _objectFromXpcDictionary, 
                        _sendMessageToExternalClient, _sendMessageToInternalClient, 
                        _sendReplyMessageToClient, _sendReplyMessageToExternalClient, 
                        _sendReplyMessageToInternalClient, _unarchivedKeyedObject ]

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: 92515835-B51A-35DA-98E2-07A63353D4B8', 'x86_64h: 4434B695-BC65-30D6-AFED-1B6488DB3D2E' ]
-platform:        macosx
+uuids:           [ 'x86_64: 4DB422B2-DFBD-3C46-ABA9-50CC2D4490FD', 'x86_64h: 378D7B48-4661-3BA6-AC55-0B3A64F8C7E3' ]
+platform:        zippered
 install-name:    /usr/lib/libsqlite3.dylib
-current-version: 274.20
+current-version: 274.22
 compatibility-version: 9
 objc-constraint: none
 exports:         

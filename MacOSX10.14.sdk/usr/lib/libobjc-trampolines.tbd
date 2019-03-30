@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: 9038F299-E122-39D1-BBB9-48EC919CD5CE', 'x86_64h: EAFE392F-7BD6-3988-9C6F-DFD359AE0AD3' ]
-platform:        macosx
+uuids:           [ 'x86_64: 74D736F6-9BA0-3DFA-A02D-4076B1CE5ABA', 'x86_64h: E0ADAED0-0649-399B-856E-29BA398C6433' ]
+platform:        zippered
 install-name:    /usr/lib/libobjc-trampolines.dylib
 current-version: 228
 objc-constraint: none

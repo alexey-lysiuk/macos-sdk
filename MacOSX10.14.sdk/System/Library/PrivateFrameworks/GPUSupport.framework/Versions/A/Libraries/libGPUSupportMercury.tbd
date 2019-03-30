@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C064C162-B99E-3027-986D-9BAF7B979C5F' ]
-platform:        macosx
+uuids:           [ 'x86_64: 1B76D376-781A-3631-B00B-30EC27E5EDAC' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/GPUSupport.framework/Versions/A/Libraries/libGPUSupportMercury.dylib
 objc-constraint: none
 exports:         

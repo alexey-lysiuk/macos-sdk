@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AF5B209C-4A32-335D-87AB-D1118668A76B' ]
+uuids:           [ 'x86_64: 4DA9A58F-44CD-3BCD-949E-D04C9454E30E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AXHearingSupport.framework/Versions/A/AXHearingSupport
 exports:         
@@ -21,15 +21,16 @@ exports:
                        _AXTTYMessageKeyReadAction, _AXTTYMessageKeyResult, _AXTTYMessageKeySettingsKey, 
                        _AXTTYMessageKeyUUID, _AXTTYMessageKeyValue, _AXTTYMessageKeyWriteAction, 
                        _AXTTYPreferredTransportMethodChangedNotification, _AXUnitTestingException, 
-                       _AXWillLogDebugWithFacility, _AXWillLogInfoWithFacility, _HAPerformBlockAsynchronouslyOnMainThread, 
+                       _AXWillLogDebugWithFacility, _AXWillLogInfoWithFacility, _HAMessageKeyIdentifier, 
+                       _HAMessageKeyPayload, _HANULL, _HAPerformBlockAsynchronouslyOnMainThread, 
                        _HAPerformBlockOnMainThread, _HAPerformBlockOnMainThreadAfterDelay, 
                        _HAPerformBlockSynchronouslyOnMainThread, _HAPerformSafeBlock, 
-                       __AXAssert, __AXLogWithFacility, __AXLogWithFacilityV, __AXStringForArgs, 
-                       _accessibilityHearingAidSupportBundle, _accessibilityTTYSupportBundle, 
-                       _currentProcessIsHeard, _hearingLocString, _hearingPropertyDescription, 
-                       _kAXSAccessibilityPreferenceDomain, _propertyContainsProperty, 
-                       _supportsBinauralStreamingForHearingAid, _ttyImageNamed, _ttyLocString, 
-                       _ttyLocStringAndLocale ]
+                       _HearingAidServerName, __AXAssert, __AXLogWithFacility, __AXLogWithFacilityV, 
+                       __AXStringForArgs, _accessibilityHearingAidSupportBundle, 
+                       _accessibilityTTYSupportBundle, _currentProcessIsHeard, _hearingLocString, 
+                       _hearingPropertyDescription, _kAXSAccessibilityPreferenceDomain, 
+                       _propertyContainsProperty, _supportsBinauralStreamingForHearingAid, 
+                       _ttyImageNamed, _ttyLocString, _ttyLocStringAndLocale ]
     objc-classes:    [ AXCloudKitHelper, AXCloudKitHelperManagedObjectContext, AXFakeHearingAidDevice, 
                        AXHAController, AXHAControllerBrowser, AXHAFakeXPCClient, 
                        AXHAListenerHelper, AXHAMessageHandlerContext, AXHAPacket, 

@@ -3,6 +3,8 @@ Name: EventKit
 Tags:
 - Name: EKErrorCode
   NSErrorDomain: EKErrorDomain
+- Name: EKWeekday
+  EnumKind: NSClosedEnum
 SwiftVersions:
 - Version: 3
   Classes:

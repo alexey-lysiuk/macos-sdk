@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3B196122-4E0D-3E3F-AA3E-5115B976DE26' ]
-platform:        macosx
+uuids:           [ 'x86_64: 90DA09E3-1276-3FCF-8F5F-C9AA61AB9B6D' ]
+platform:        zippered
 install-name:    /usr/lib/system/libsystem_malloc.dylib
-current-version: 166.220.1
+current-version: 166.251.2
 objc-constraint: none
 parent-umbrella: System
 exports:         

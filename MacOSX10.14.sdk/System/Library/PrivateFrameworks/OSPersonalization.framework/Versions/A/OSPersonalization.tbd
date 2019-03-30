@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B7D8588D-0B61-3CA9-B4E0-E34271E9E18A' ]
+uuids:           [ 'x86_64: 20118AE8-88E0-355E-92A4-494D51E3BFEA' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/OSPersonalization.framework/Versions/A/OSPersonalization
-current-version: 55.1
+current-version: 55.3
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _AMAuthInstallApAddTag, _AMAuthInstallApApplyRequestRules, 

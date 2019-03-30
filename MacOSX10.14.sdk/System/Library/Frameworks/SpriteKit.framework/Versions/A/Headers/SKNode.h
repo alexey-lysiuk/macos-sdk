@@ -21,13 +21,14 @@ NS_ASSUME_NONNULL_BEGIN
  Blend modes that the SKNode uses to compose with the framebuffer to produce blended colors.
  */
 typedef NS_ENUM(NSInteger, SKBlendMode) {
-    SKBlendModeAlpha        = 0,    // Blends the source and destination colors by multiplying the source alpha value.
-    SKBlendModeAdd          = 1,    // Blends the source and destination colors by adding them up.
-    SKBlendModeSubtract     = 2,    // Blends the source and destination colors by subtracting the source from the destination.
-    SKBlendModeMultiply     = 3,    // Blends the source and destination colors by multiplying them.
-    SKBlendModeMultiplyX2   = 4,    // Blends the source and destination colors by multiplying them and doubling the result.
-    SKBlendModeScreen       = 5,    // Blends the source and destination colors by multiplying one minus the source with the destination and adding the source.
-    SKBlendModeReplace      = 6     // Replaces the destination with the source (ignores alpha).
+    SKBlendModeAlpha         = 0,    // Blends the source and destination colors by multiplying the source alpha value.
+    SKBlendModeAdd           = 1,    // Blends the source and destination colors by adding them up.
+    SKBlendModeSubtract      = 2,    // Blends the source and destination colors by subtracting the source from the destination.
+    SKBlendModeMultiply      = 3,    // Blends the source and destination colors by multiplying them.
+    SKBlendModeMultiplyX2    = 4,    // Blends the source and destination colors by multiplying them and doubling the result.
+    SKBlendModeScreen        = 5,    // Blends the source and destination colors by multiplying one minus the source with the destination and adding the source.
+    SKBlendModeReplace       = 6,    // Replaces the destination with the source (ignores alpha).
+    SKBlendModeMultiplyAlpha = 7     // Blends the source and destination colors by multiplying them (with alpha).
 } NS_ENUM_AVAILABLE(10_9, 7_0);
 
 typedef NS_ENUM(NSInteger, SKNodeFocusBehavior) {

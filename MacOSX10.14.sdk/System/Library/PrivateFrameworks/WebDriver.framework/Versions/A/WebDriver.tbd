@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BCBAB769-1EF9-36F2-A1A4-D6B769D62661' ]
+uuids:           [ 'x86_64: D2B09AFC-BD1B-3EC4-A1C4-F7B3D594D61F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/WebDriver.framework/Versions/A/WebDriver
-current-version: 606.2.104
+current-version: 607.1.40
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _DDExtractFileNameWithoutExtension, _DDIntersectionRange, 
@@ -13,15 +13,14 @@ exports:
                        _GCDAsyncSocketSSLAllowsExpiredRoots, _GCDAsyncSocketSSLCipherSuites, 
                        _GCDAsyncSocketSSLClientSideAuthentication, _GCDAsyncSocketSSLDiffieHellmanParameters, 
                        _GCDAsyncSocketSSLProtocolVersionMax, _GCDAsyncSocketSSLProtocolVersionMin, 
-                       _GCDAsyncSocketThreadName, _WDDetailedMessageForLegacyResponseCode, 
-                       _WDElementAttributeScriptFunctionString, _WDElementAttributeScriptSource, 
-                       _WDElementDisplayedScriptFunctionString, _WDElementDisplayedScriptSource, 
-                       _WDElementFetchAttributesScriptFunctionString, _WDElementFetchAttributesScriptSource, 
-                       _WDEnterFullscreenScriptFunctionString, _WDEnterFullscreenScriptSource, 
-                       _WDFindNodesScriptFunctionString, _WDFindNodesScriptSource, 
-                       _WDFormElementClearScriptFunctionString, _WDFormElementClearScriptSource, 
-                       _WDFormSubmitScriptFunctionString, _WDFormSubmitScriptSource, 
-                       _WDHTTPContentTypeTextPlain, _WDHTTPContentTypeUTF8EncodedJSON, 
+                       _GCDAsyncSocketThreadName, _WDElementAttributeScriptFunctionString, 
+                       _WDElementAttributeScriptSource, _WDElementDisplayedScriptFunctionString, 
+                       _WDElementDisplayedScriptSource, _WDElementFetchAttributesScriptFunctionString, 
+                       _WDElementFetchAttributesScriptSource, _WDEnterFullscreenScriptFunctionString, 
+                       _WDEnterFullscreenScriptSource, _WDFindNodesScriptFunctionString, 
+                       _WDFindNodesScriptSource, _WDFormElementClearScriptFunctionString, 
+                       _WDFormElementClearScriptSource, _WDFormSubmitScriptFunctionString, 
+                       _WDFormSubmitScriptSource, _WDHTTPContentTypeTextPlain, _WDHTTPContentTypeUTF8EncodedJSON, 
                        _WDLoggingInitializeIfNecessary, _WDNSStringFromCoordinateSystem, 
                        _WDNSStringFromRemoteElementSearchStrategy, _WDOSLogLauncher, 
                        _WDOSLogProtocol, _WDOSLogRouting, _WDOSLogSession, _WDOSLogTestHost, 
@@ -44,19 +43,20 @@ exports:
                        MultipartMessageHeader, MultipartMessageHeaderField, PendingResponseData, 
                        Route, RouteRequest, RouteResponse, RoutingConnection, RoutingHTTPServer, 
                        WDBrowsingContext, WDBrowsingContextProperties, WDCommandRequest, 
-                       WDDiagnosticUtilities, WDHTTPAsyncDataResponse, WDHTTPCookie, 
-                       WDHTTPDriverInterface, WDHTTPServer, WDHTTPService, WDInputSource, 
-                       WDInputSourceState, WDKeyInteraction, WDLegacyRouteHandler, 
-                       WDProtocolAutomationBrowsingContext, WDProtocolAutomationCookie, 
-                       WDProtocolAutomationInputSource, WDProtocolAutomationInputSourceState, 
-                       WDProtocolAutomationInteractionStep, WDProtocolAutomationKeyboardInteraction, 
-                       WDProtocolAutomationPoint, WDProtocolAutomationRect, WDProtocolAutomationSessionPermissionData, 
+                       WDDiagnosticFileLogger, WDDiagnosticLogFormatter, WDDiagnosticUtilities, 
+                       WDGlobalDiagnosticLogFileManager, WDHTTPAsyncDataResponse, 
+                       WDHTTPCookie, WDHTTPDriverInterface, WDHTTPServer, WDHTTPService, 
+                       WDInputSource, WDInputSourceState, WDKeyInteraction, WDProtocolAutomationBrowsingContext, 
+                       WDProtocolAutomationCookie, WDProtocolAutomationInputSource, 
+                       WDProtocolAutomationInputSourceState, WDProtocolAutomationInteractionStep, 
+                       WDProtocolAutomationKeyboardInteraction, WDProtocolAutomationPoint, 
+                       WDProtocolAutomationRect, WDProtocolAutomationSessionPermissionData, 
                        WDProtocolAutomationSize, WDProtocolBackendProxy, WDProtocolCommand, 
-                       WDProtocolEvent, WDProtocolModel, WDProtocolParameter, WDProtocolTraceFileManager, 
-                       WDProtocolTraceFormatter, WDProtocolType, WDProtocolTypeConversions, 
-                       WDProtocolTypeParser, WDRemoteElement, WDRemoteElementLayoutResult, 
-                       WDRemoteSession, WDRemoteSessionHost, WDRemoteSessionManager, 
-                       WDSafariDriver, WDSafariDriverXPCClient, WDSessionNotificationHandler, 
+                       WDProtocolEvent, WDProtocolModel, WDProtocolParameter, WDProtocolType, 
+                       WDProtocolTypeConversions, WDProtocolTypeParser, WDRemoteElement, 
+                       WDRemoteElementLayoutResult, WDRemoteSession, WDRemoteSessionHost, 
+                       WDRemoteSessionManager, WDSafariDriver, WDSafariDriverXPCClient, 
+                       WDSessionDiagnosticLogFileManager, WDSessionNotificationHandler, 
                        WDSessionNotificationManager, WDSessionQueueState, WDToplevelBrowsingContext, 
                        WDW3CError, WDW3CRouteHandler, WebSocket ]
     objc-ivars:      [ DDASLLogger.client, DDAbstractDatabaseLogger.deleteInterval, 

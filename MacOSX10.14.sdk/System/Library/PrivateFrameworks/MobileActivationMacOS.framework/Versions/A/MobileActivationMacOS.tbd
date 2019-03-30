@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E0E002C1-E48B-3694-95C1-DA868750BD92' ]
+uuids:           [ 'x86_64: 381C9CB9-6F9A-3D49-BF0C-3C8B6F616C5E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MobileActivationMacOS.framework/Versions/A/MobileActivationMacOS
 current-version: 0

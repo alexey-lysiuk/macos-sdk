@@ -70,82 +70,82 @@
  */
 
 #ifndef _SYS_SOCKETVAR_H_
-#define	_SYS_SOCKETVAR_H_
+#define _SYS_SOCKETVAR_H_
 
 #include <sys/appleapiopts.h>
 #include <sys/cdefs.h>
 #include <sys/types.h> /* u_quad_t */
 
-typedef	u_quad_t so_gen_t;
+typedef u_quad_t so_gen_t;
 
 
 
 
 #if defined(__LP64__)
-#define	_XSOCKET_PTR(x)		u_int32_t
+#define _XSOCKET_PTR(x)         u_int32_t
 #else
-#define	_XSOCKET_PTR(x)		x
+#define _XSOCKET_PTR(x)         x
 #endif
 
 
 #pragma pack(4)
 
 struct xsockbuf {
-	u_int32_t	sb_cc;
-	u_int32_t	sb_hiwat;
-	u_int32_t	sb_mbcnt;
-	u_int32_t	sb_mbmax;
-	int32_t		sb_lowat;
-	short		sb_flags;
-	short		sb_timeo;
+	u_int32_t       sb_cc;
+	u_int32_t       sb_hiwat;
+	u_int32_t       sb_mbcnt;
+	u_int32_t       sb_mbmax;
+	int32_t         sb_lowat;
+	short           sb_flags;
+	short           sb_timeo;
 };
 
 /*
  * Externalized form of struct socket used by the sysctl(3) interface.
  */
-struct	xsocket {
-	u_int32_t		xso_len;	/* length of this structure */
-	_XSOCKET_PTR(struct socket *) xso_so;	/* makes a convenient handle */
-	short			so_type;
-	short			so_options;
-	short			so_linger;
-	short			so_state;
-	_XSOCKET_PTR(caddr_t)	so_pcb;		/* another convenient handle */
-	int			xso_protocol;
-	int			xso_family;
-	short			so_qlen;
-	short			so_incqlen;
-	short			so_qlimit;
-	short			so_timeo;
-	u_short			so_error;
-	pid_t			so_pgid;
-	u_int32_t		so_oobmark;
-	struct xsockbuf		so_rcv;
-	struct xsockbuf		so_snd;
-	uid_t			so_uid;		/* XXX */
+struct  xsocket {
+	u_int32_t               xso_len;        /* length of this structure */
+	_XSOCKET_PTR(struct socket *) xso_so;   /* makes a convenient handle */
+	short                   so_type;
+	short                   so_options;
+	short                   so_linger;
+	short                   so_state;
+	_XSOCKET_PTR(caddr_t)   so_pcb;         /* another convenient handle */
+	int                     xso_protocol;
+	int                     xso_family;
+	short                   so_qlen;
+	short                   so_incqlen;
+	short                   so_qlimit;
+	short                   so_timeo;
+	u_short                 so_error;
+	pid_t                   so_pgid;
+	u_int32_t               so_oobmark;
+	struct xsockbuf         so_rcv;
+	struct xsockbuf         so_snd;
+	uid_t                   so_uid;         /* XXX */
 };
 
 #if !CONFIG_EMBEDDED
-struct	xsocket64 {
-	u_int32_t		xso_len;	/* length of this structure */
-	u_int64_t		xso_so;		/* makes a convenient handle */
-	short			so_type;
-	short			so_options;
-	short			so_linger;
-	short			so_state;
-	u_int64_t		so_pcb;		/* another convenient handle */
-	int			xso_protocol;
-	int			xso_family;
-	short			so_qlen;
-	short			so_incqlen;
-	short			so_qlimit;
-	short			so_timeo;
-	u_short			so_error;
-	pid_t			so_pgid;
-	u_int32_t		so_oobmark;
-	struct xsockbuf		so_rcv;
-	struct xsockbuf		so_snd;
-	uid_t			so_uid;		/* XXX */
+struct  xsocket64 {
+	u_int32_t               xso_len;        /* length of this structure */
+	u_int64_t               xso_so;         /* makes a convenient handle */
+	short                   so_type;
+	short                   so_options;
+	short                   so_linger;
+	short                   so_state;
+	u_int64_t               so_pcb;         /* another convenient handle */
+	int                     xso_protocol;
+	int                     xso_family;
+	short                   so_qlen;
+	short                   so_incqlen;
+	short                   so_qlimit;
+	short                   so_timeo;
+	u_short                 so_error;
+	pid_t                   so_pgid;
+	u_int32_t               so_oobmark;
+	struct xsockbuf         so_rcv;
+	struct xsockbuf         so_snd;
+	uid_t                   so_uid;         /* XXX */
 };
 #endif /* !CONFIG_EMBEDDED */
 

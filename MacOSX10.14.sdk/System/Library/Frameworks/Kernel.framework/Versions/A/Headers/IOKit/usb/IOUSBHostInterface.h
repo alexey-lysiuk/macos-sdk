@@ -421,7 +421,8 @@ protected:
     enum
     {
         kInitIORetries       = 3,
-        kInitIORetryInterval = 100
+        kInitIORetryInterval = 100,
+        kDestroyPipesOptionAll = StandardUSBBit(0)
     };
     
     virtual void updateMatchingProperties();
@@ -439,10 +440,10 @@ protected:
 
 
     OSMetaClassDeclareReservedUsed(IOUSBHostInterface, 70);
-    virtual void destroyPipes();
-
+    virtual void destroyPipes(IOOptionBits options = 0);
+    
     OSMetaClassDeclareReservedUsed(IOUSBHostInterface, 71);
-    virtual IOReturn destroyPipesGated();
+    virtual IOReturn destroyPipesGated(IOOptionBits options);
 
     // Protected pad slots for alternate setting and pipe management
     OSMetaClassDeclareReservedUnused(IOUSBHostInterface, 72);
@@ -528,6 +529,8 @@ protected:
 protected:
     struct tExpansionData
     {
+        uint16_t _persistentOutEndpointMask;
+        uint16_t _persistentInEndpointMask;
     };
     tExpansionData* _expansionData;
 };

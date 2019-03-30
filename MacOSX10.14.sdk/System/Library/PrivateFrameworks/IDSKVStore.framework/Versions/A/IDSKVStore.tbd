@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 30E896D2-966A-31CB-85C3-3C354D757805' ]
+uuids:           [ 'x86_64: CD3ACB40-2667-34BB-81E1-D2383D8E5E6F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IDSKVStore.framework/Versions/A/IDSKVStore
 current-version: 800

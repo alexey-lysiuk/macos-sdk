@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8FB0D908-6C46-3399-92D6-4E7D4B5F4F19' ]
-platform:        macosx
+uuids:           [ 'x86_64: F64A3177-294E-320C-A0E1-25C4322B98E9' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/AssertionServices.framework/Versions/A/AssertionServices
 exports:         
   - archs:           [ x86_64 ]

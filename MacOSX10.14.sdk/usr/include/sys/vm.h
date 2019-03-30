@@ -2,7 +2,7 @@
  * Copyright (c) 2000-2006 Apple Computer, Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
- * 
+ *
  * This file contains Original Code and/or Modifications of Original Code
  * as defined in and that are subject to the Apple Public Source License
  * Version 2.0 (the 'License'). You may not use this file except in
@@ -11,10 +11,10 @@
  * unlawful or unlicensed copies of an Apple operating system, or to
  * circumvent, violate, or enable the circumvention or violation of, any
  * terms of an Apple operating system software license agreement.
- * 
+ *
  * Please obtain a copy of the License at
  * http://www.opensource.apple.com/apsl/ and read it before using this file.
- * 
+ *
  * The Original Code and all software distributed under the License are
  * distributed on an 'AS IS' basis, WITHOUT WARRANTY OF ANY KIND, EITHER
  * EXPRESS OR IMPLIED, AND APPLE HEREBY DISCLAIMS ALL SUCH WARRANTIES,
@@ -22,7 +22,7 @@
  * FITNESS FOR A PARTICULAR PURPOSE, QUIET ENJOYMENT OR NON-INFRINGEMENT.
  * Please see the License for the specific language governing rights and
  * limitations under the License.
- * 
+ *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_END@
  */
 /* Copyright (c) 1995 NeXT Computer, Inc. All Rights Reserved */
@@ -62,7 +62,7 @@
  */
 /* HISTORY
  *  05-Jun-95  Mac Gillon (mgillon) at NeXT
- * 	4.4 code uses this file to import MACH API
+ *      4.4 code uses this file to import MACH API
  */
 
 #ifndef _SYS_VM_H
@@ -78,10 +78,10 @@
 /* just to keep kinfo_proc happy */
 /* NOTE: Pointer fields are size variant for LP64 */
 struct vmspace {
-	int32_t	dummy;
-	caddr_t	dummy2;
-	int32_t	dummy3[5];
-	caddr_t	dummy4[3];
+	int32_t dummy;
+	caddr_t dummy2;
+	int32_t dummy3[5];
+	caddr_t dummy4[3];
 };
 
 

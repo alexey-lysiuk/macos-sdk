@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4E821CC0-D8CB-33D7-9C8C-27B789ACB7B5' ]
-platform:        macosx
+uuids:           [ 'x86_64: 3A226EAE-7A18-3C63-ACFE-D2F272FEE034' ]
+platform:        zippered
 install-name:    /usr/lib/libedit.3.dylib
 current-version: 3
 compatibility-version: 2

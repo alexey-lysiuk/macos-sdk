@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C6C42827-C645-3441-A08B-DBA83AFAA04D' ]
+uuids:           [ 'x86_64: C6870B0D-B01B-3BAE-B3E9-492F91B8FF8B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/iLifeMediaBrowser.framework/Versions/A/iLifeMediaBrowser
-current-version: 762
+current-version: 764
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _ASL_LEVEL_ERR_STR, _ASL_LEVEL_INFO_STR, _ILApertureAlbumDotMacWebGalleryTypeIdentifier, 

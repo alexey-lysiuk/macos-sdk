@@ -26,7 +26,7 @@
  * @APPLE_OSREFERENCE_LICENSE_HEADER_END@
  */
 #ifndef _STRUCT_USER32_NTPTIMEVAL
-#define _STRUCT_USER32_NTPTIMEVAL	struct user32_ntptimeval
+#define _STRUCT_USER32_NTPTIMEVAL       struct user32_ntptimeval
 _STRUCT_USER32_NTPTIMEVAL
 {
 	struct user32_timespec time;
@@ -34,6 +34,5 @@ _STRUCT_USER32_NTPTIMEVAL
 	user32_long_t esterror;
 	user32_long_t tai;
 	__int32_t time_state;
-
 };
 #endif /* _STRUCT_USER32_NTPTIMEVAL */

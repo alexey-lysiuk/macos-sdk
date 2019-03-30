@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8560F263-31F4-3CCA-84B1-30C296DC1A7D' ]
+uuids:           [ 'x86_64: DAF9D379-F0E9-3929-829E-7B2FAFC7DC64' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PerformanceAnalysis.framework/Versions/A/PerformanceAnalysis
-current-version: 217
+current-version: 218.2
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _MachToNano, _PACFBundleCopyStringForKey, _PACancelOperation, 

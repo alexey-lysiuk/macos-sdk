@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0444734C-964A-3937-9FBC-F15D0EDBB3FC' ]
-platform:        macosx
+uuids:           [ 'x86_64: 7B3FE90C-00DB-30B7-8A09-92AC81796941' ]
+platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/MTLCompiler.framework/Versions/3802/MTLCompiler
 exports:         
   - archs:           [ x86_64 ]

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1D2AC09A-653F-3C2D-B5B9-F9ABA307E51C' ]
+uuids:           [ 'x86_64: B631283D-9B71-3BF0-B0E7-65F8D444179F' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSServices.framework/Versions/A/OSServices
-current-version: 934
+current-version: 944.3
 parent-umbrella: CoreServices
 exports:         
   - archs:           [ x86_64 ]
@@ -74,15 +74,16 @@ exports:
                        __CSAddAppleIDAccount, __CSAddAppleIDAccountUsingCompletionBlock, 
                        __CSBackToMyMacCopyDomain, __CSBackToMyMacCopyDomains, __CSBackToMyMacDisableEveryone, 
                        __CSBackToMyMacIsEnabledForSomeUser, __CSBackToMyMacResetForUser, 
-                       __CSCopyAccountIdentifierForAppleIDCertificate, __CSCopyAccountInfoForAppleID, 
-                       __CSCopyAccountStatusForAppleID, __CSCopyAppleIDAccountForAppleIDCertificate, 
-                       __CSCopyAppleIDAccounts, __CSCopyCommentForServerName, __CSCopyDefaultSharingSecIdentities, 
+                       __CSCopyAccountIdentifierForAppleIDCertificate, __CSCopyAccountIdentifierForAppleIDCertificateChain, 
+                       __CSCopyAccountInfoForAppleID, __CSCopyAccountStatusForAppleID, 
+                       __CSCopyAppleIDAccountForAppleIDCertificate, __CSCopyAppleIDAccounts, 
+                       __CSCopyCommentForServerName, __CSCopyDefaultSharingSecIdentities, 
                        __CSCopyKerberosPrincipalForCertificate, __CSCopyLocalHostnameForComputerName, 
                        __CSCopySecIdentityForAppleID, __CSCopyUserIdentityForPersonInfo, 
-                       __CSCreateAppleIDIdentityWithCertificate, __CSCreateAppleIDIdentityWithNameAndAccountIdentifier, 
-                       __CSCreatePosixNameFromString, __CSDeviceSupportsAirDrop, 
-                       __CSDeviceSupportsODisk, __CSDisassociateWireless, __CSEnableWirelessP2P, 
-                       __CSGetAppleIDIdentityAuthority, __CSIdentityAddLinkedIdentityWithNameAndAuthority, 
+                       __CSCreateAppleIDIdentityWithCertificate, __CSCreateAppleIDIdentityWithCertificateChain, 
+                       __CSCreateAppleIDIdentityWithNameAndAccountIdentifier, __CSCreatePosixNameFromString, 
+                       __CSDeviceSupportsAirDrop, __CSDeviceSupportsODisk, __CSDisassociateWireless, 
+                       __CSEnableWirelessP2P, __CSGetAppleIDIdentityAuthority, __CSIdentityAddLinkedIdentityWithNameAndAuthority, 
                        __CSIdentityAllowsPasswordResetWithAuthority, __CSIdentityAllowsPasswordResetWithAuthorityFromDSAttrData, 
                        __CSIdentityAuthenticateUsingCertificate, __CSIdentityAuthenticateUsingCertificateChain, 
                        __CSIdentityAuthenticateUsingPassword, __CSIdentityAuthorityAuthenticateNameAndPassword, 

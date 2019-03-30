@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 75F182B9-D381-3FAC-9364-5F6F79F65A86' ]
+uuids:           [ 'x86_64: 483D5F7E-C655-3CC1-9389-06C8D4427EF8' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/perfdata.framework/Versions/A/perfdata
-current-version: 4.200.14
+current-version: 4.250.16
 compatibility-version: 0
 exports:         
   - archs:           [ x86_64 ]
@@ -17,27 +17,27 @@ exports:
                        _pdunit_EBps, _pdunit_EFLOPS, _pdunit_EHz, _pdunit_EIPS, _pdunit_EJ, 
                        _pdunit_EW, _pdunit_EWh, _pdunit_Eb, _pdunit_Ebps, _pdunit_EiB, 
                        _pdunit_EiBps, _pdunit_Eib, _pdunit_Eibps, _pdunit_FLOPS, 
-                       _pdunit_GB, _pdunit_GBps, _pdunit_GFLOPS, _pdunit_GHz, _pdunit_GIPS, 
-                       _pdunit_GJ, _pdunit_GW, _pdunit_GWh, _pdunit_Gb, _pdunit_Gbps, 
-                       _pdunit_GiB, _pdunit_GiBps, _pdunit_Gib, _pdunit_Gibps, _pdunit_Hz, 
-                       _pdunit_IPC, _pdunit_IPS, _pdunit_J, _pdunit_KiB, _pdunit_KiBps, 
-                       _pdunit_Kib, _pdunit_Kibps, _pdunit_MB, _pdunit_MBps, _pdunit_MFLOPS, 
-                       _pdunit_MHz, _pdunit_MIPS, _pdunit_MJ, _pdunit_MW, _pdunit_MWh, 
-                       _pdunit_Mb, _pdunit_Mbps, _pdunit_MiB, _pdunit_MiBps, _pdunit_Mib, 
-                       _pdunit_Mibps, _pdunit_PB, _pdunit_PBps, _pdunit_PFLOPS, _pdunit_PHz, 
-                       _pdunit_PIPS, _pdunit_PJ, _pdunit_PW, _pdunit_PWh, _pdunit_Pb, 
-                       _pdunit_Pbps, _pdunit_PiB, _pdunit_PiBps, _pdunit_Pib, _pdunit_Pibps, 
-                       _pdunit_TB, _pdunit_TBps, _pdunit_TFLOPS, _pdunit_THz, _pdunit_TIPS, 
-                       _pdunit_TJ, _pdunit_TW, _pdunit_TWh, _pdunit_Tb, _pdunit_Tbps, 
-                       _pdunit_TiB, _pdunit_TiBps, _pdunit_Tib, _pdunit_Tibps, _pdunit_W, 
-                       _pdunit_Wh, _pdunit_YB, _pdunit_YBps, _pdunit_YFLOPS, _pdunit_YHz, 
-                       _pdunit_YIPS, _pdunit_YJ, _pdunit_YW, _pdunit_YWh, _pdunit_Yb, 
-                       _pdunit_Ybps, _pdunit_YiB, _pdunit_YiBps, _pdunit_Yib, _pdunit_Yibps, 
-                       _pdunit_ZB, _pdunit_ZBps, _pdunit_ZFLOPS, _pdunit_ZHz, _pdunit_ZIPS, 
-                       _pdunit_ZJ, _pdunit_ZW, _pdunit_ZWh, _pdunit_Zb, _pdunit_Zbps, 
-                       _pdunit_ZiB, _pdunit_ZiBps, _pdunit_Zib, _pdunit_Zibps, _pdunit_aHz, 
-                       _pdunit_aJ, _pdunit_aW, _pdunit_aWh, _pdunit_as, _pdunit_asCPU, 
-                       _pdunit_attohertz, _pdunit_attojoules, _pdunit_attoseconds, 
+                       _pdunit_FPS, _pdunit_GB, _pdunit_GBps, _pdunit_GFLOPS, _pdunit_GHz, 
+                       _pdunit_GIPS, _pdunit_GJ, _pdunit_GW, _pdunit_GWh, _pdunit_Gb, 
+                       _pdunit_Gbps, _pdunit_GiB, _pdunit_GiBps, _pdunit_Gib, _pdunit_Gibps, 
+                       _pdunit_Hz, _pdunit_IPC, _pdunit_IPS, _pdunit_J, _pdunit_KiB, 
+                       _pdunit_KiBps, _pdunit_Kib, _pdunit_Kibps, _pdunit_MB, _pdunit_MBps, 
+                       _pdunit_MFLOPS, _pdunit_MHz, _pdunit_MIPS, _pdunit_MJ, _pdunit_MW, 
+                       _pdunit_MWh, _pdunit_Mb, _pdunit_Mbps, _pdunit_MiB, _pdunit_MiBps, 
+                       _pdunit_Mib, _pdunit_Mibps, _pdunit_PB, _pdunit_PBps, _pdunit_PFLOPS, 
+                       _pdunit_PHz, _pdunit_PIPS, _pdunit_PJ, _pdunit_PW, _pdunit_PWh, 
+                       _pdunit_Pb, _pdunit_Pbps, _pdunit_PiB, _pdunit_PiBps, _pdunit_Pib, 
+                       _pdunit_Pibps, _pdunit_TB, _pdunit_TBps, _pdunit_TFLOPS, _pdunit_THz, 
+                       _pdunit_TIPS, _pdunit_TJ, _pdunit_TW, _pdunit_TWh, _pdunit_Tb, 
+                       _pdunit_Tbps, _pdunit_TiB, _pdunit_TiBps, _pdunit_Tib, _pdunit_Tibps, 
+                       _pdunit_W, _pdunit_Wh, _pdunit_YB, _pdunit_YBps, _pdunit_YFLOPS, 
+                       _pdunit_YHz, _pdunit_YIPS, _pdunit_YJ, _pdunit_YW, _pdunit_YWh, 
+                       _pdunit_Yb, _pdunit_Ybps, _pdunit_YiB, _pdunit_YiBps, _pdunit_Yib, 
+                       _pdunit_Yibps, _pdunit_ZB, _pdunit_ZBps, _pdunit_ZFLOPS, _pdunit_ZHz, 
+                       _pdunit_ZIPS, _pdunit_ZJ, _pdunit_ZW, _pdunit_ZWh, _pdunit_Zb, 
+                       _pdunit_Zbps, _pdunit_ZiB, _pdunit_ZiBps, _pdunit_Zib, _pdunit_Zibps, 
+                       _pdunit_aHz, _pdunit_aJ, _pdunit_aW, _pdunit_aWh, _pdunit_as, 
+                       _pdunit_asCPU, _pdunit_attohertz, _pdunit_attojoules, _pdunit_attoseconds, 
                        _pdunit_attoseconds_cpu, _pdunit_attowatt_hours, _pdunit_attowatts, 
                        _pdunit_b, _pdunit_bits, _pdunit_bits_per_second, _pdunit_bps, 
                        _pdunit_bytes, _pdunit_bytes_per_second, _pdunit_cHz, _pdunit_cJ, 
@@ -64,8 +64,8 @@ exports:
                        _pdunit_exbibytes_per_second, _pdunit_fHz, _pdunit_fJ, _pdunit_fW, 
                        _pdunit_fWh, _pdunit_femptohertz, _pdunit_femptojoules, _pdunit_femptoseconds, 
                        _pdunit_femptoseconds_cpu, _pdunit_femptowatt_hours, _pdunit_femptowatts, 
-                       _pdunit_floating_point_operations_per_second, _pdunit_fs, 
-                       _pdunit_fsCPU, _pdunit_gibibits, _pdunit_gibibits_per_second, 
+                       _pdunit_floating_point_operations_per_second, _pdunit_frames_per_second, 
+                       _pdunit_fs, _pdunit_fsCPU, _pdunit_gibibits, _pdunit_gibibits_per_second, 
                        _pdunit_gibibytes, _pdunit_gibibytes_per_second, _pdunit_gigabits, 
                        _pdunit_gigabits_per_second, _pdunit_gigabytes, _pdunit_gigabytes_per_second, 
                        _pdunit_gigacycles, _pdunit_gigafloating_point_operations_per_second, 

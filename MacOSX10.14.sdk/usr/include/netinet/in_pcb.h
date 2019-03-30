@@ -68,7 +68,7 @@
  */
 
 #ifndef _NETINET_IN_PCB_H_
-#define	_NETINET_IN_PCB_H_
+#define _NETINET_IN_PCB_H_
 #include <sys/appleapiopts.h>
 
 #include <sys/types.h>
@@ -83,7 +83,7 @@
 #endif
 
 
-typedef	u_quad_t	inp_gen_t;
+typedef u_quad_t        inp_gen_t;
 
 /*
  * PCB with AF_INET6 null bind'ed laddr can receive AF_INET input packet.
@@ -91,8 +91,8 @@ typedef	u_quad_t	inp_gen_t;
  * the following structure.
  */
 struct in_addr_4in6 {
-	u_int32_t	ia46_pad32[3];
-	struct	in_addr	ia46_addr4;
+	u_int32_t       ia46_pad32[3];
+	struct  in_addr ia46_addr4;
 };
 
 
@@ -104,14 +104,14 @@ struct in_addr_4in6 {
 
 #if defined(__LP64__)
 struct _inpcb_list_entry {
-    u_int32_t	le_next;
-    u_int32_t	le_prev;
+	u_int32_t   le_next;
+	u_int32_t   le_prev;
 };
-#define	_INPCB_PTR(x)		u_int32_t
-#define	_INPCB_LIST_ENTRY(x)	struct _inpcb_list_entry
+#define _INPCB_PTR(x)           u_int32_t
+#define _INPCB_LIST_ENTRY(x)    struct _inpcb_list_entry
 #else /* !__LP64__ */
-#define	_INPCB_PTR(x)		x
-#define	_INPCB_LIST_ENTRY(x)	LIST_ENTRY(x)
+#define _INPCB_PTR(x)           x
+#define _INPCB_LIST_ENTRY(x)    LIST_ENTRY(x)
 #endif /* !__LP64__ */
 
 struct inpcbinfo;
@@ -123,27 +123,27 @@ struct icmp6_filter;
 struct inpcbpolicy;
 
 struct inpcb {
-	_INPCB_LIST_ENTRY(inpcb) inp_hash;	/* hash list */
-	struct in_addr reserved1;		/* reserved */
-	struct in_addr reserved2;		/* reserved */
-	u_short	inp_fport;			/* foreign port */
-	u_short	inp_lport;			/* local port */
-	_INPCB_LIST_ENTRY(inpcb) inp_list;	/* list for all peer PCBs */
-	_INPCB_PTR(caddr_t) inp_ppcb;		/* per-protocol pcb */
-	_INPCB_PTR(struct inpcbinfo *) inp_pcbinfo;	/* PCB list info */
-	_INPCB_PTR(void *) inp_socket;	/* back pointer to socket */
-	u_char nat_owner;		/* Used to NAT TCP/UDP traffic */
-	u_int32_t nat_cookie;		/* Cookie stored and returned to NAT */
-	_INPCB_LIST_ENTRY(inpcb) inp_portlist;	/* this PCB's local port list */
+	_INPCB_LIST_ENTRY(inpcb) inp_hash;      /* hash list */
+	struct in_addr reserved1;               /* reserved */
+	struct in_addr reserved2;               /* reserved */
+	u_short inp_fport;                      /* foreign port */
+	u_short inp_lport;                      /* local port */
+	_INPCB_LIST_ENTRY(inpcb) inp_list;      /* list for all peer PCBs */
+	_INPCB_PTR(caddr_t) inp_ppcb;           /* per-protocol pcb */
+	_INPCB_PTR(struct inpcbinfo *) inp_pcbinfo;     /* PCB list info */
+	_INPCB_PTR(void *) inp_socket;  /* back pointer to socket */
+	u_char nat_owner;               /* Used to NAT TCP/UDP traffic */
+	u_int32_t nat_cookie;           /* Cookie stored and returned to NAT */
+	_INPCB_LIST_ENTRY(inpcb) inp_portlist;  /* this PCB's local port list */
 	_INPCB_PTR(struct inpcbport *) inp_phd; /* head of this list */
-	inp_gen_t inp_gencnt;		/* generation count of this instance */
-	int inp_flags;			/* generic IP/datagram flags */
+	inp_gen_t inp_gencnt;           /* generation count of this instance */
+	int inp_flags;                  /* generic IP/datagram flags */
 	u_int32_t inp_flow;
 
 	u_char inp_vflag;
 
-	u_char inp_ip_ttl;		/* time to live proto */
-	u_char inp_ip_p;		/* protocol proto */
+	u_char inp_ip_ttl;              /* time to live proto */
+	u_char inp_ip_p;                /* protocol proto */
 	/* protocol dependent part */
 	union {
 		/* foreign host table entry */
@@ -182,74 +182,74 @@ struct inpcb {
 		/* ICMPv6 code type filter */
 		_INPCB_PTR(struct icmp6_filter *) inp6_icmp6filt;
 		/* IPV6_CHECKSUM setsockopt */
-		int	inp6_cksum;
-		u_short	inp6_ifindex;
-		short	inp6_hops;
+		int     inp6_cksum;
+		u_short inp6_ifindex;
+		short   inp6_hops;
 	} inp_depend6;
 
-	int hash_element;		/* Array index of pcb's hash list */
+	int hash_element;               /* Array index of pcb's hash list */
 	_INPCB_PTR(caddr_t) inp_saved_ppcb; /* pointer while cached */
 	_INPCB_PTR(struct inpcbpolicy *) inp_sp;
-	u_int32_t	reserved[3];	/* reserved */
+	u_int32_t       reserved[3];    /* reserved */
 };
 
-struct	xinpcb {
-	u_int32_t	xi_len;		/* length of this structure */
-	struct	inpcb xi_inp;
-	struct	xsocket xi_socket;
-	u_quad_t	xi_alignment_hack;
+struct  xinpcb {
+	u_int32_t       xi_len;         /* length of this structure */
+	struct  inpcb xi_inp;
+	struct  xsocket xi_socket;
+	u_quad_t        xi_alignment_hack;
 };
 
 #if !CONFIG_EMBEDDED
 struct inpcb64_list_entry {
-    u_int64_t   le_next;
-    u_int64_t   le_prev;
+	u_int64_t   le_next;
+	u_int64_t   le_prev;
 };
 
-struct	xinpcb64 {
-	u_int64_t	xi_len;		/* length of this structure */
-	u_int64_t	xi_inpp;
-	u_short		inp_fport;	/* foreign port */
-	u_short		inp_lport;	/* local port */
+struct  xinpcb64 {
+	u_int64_t       xi_len;         /* length of this structure */
+	u_int64_t       xi_inpp;
+	u_short         inp_fport;      /* foreign port */
+	u_short         inp_lport;      /* local port */
 	struct inpcb64_list_entry inp_list; /* list for all PCBs */
-	u_int64_t	inp_ppcb;	/* ptr to per-protocol PCB */
-	u_int64_t	inp_pcbinfo;	/* PCB list info */
-	struct inpcb64_list_entry inp_portlist;	/* this PCB's local port list */
-	u_int64_t	inp_phd;	/* head of this list */
-	inp_gen_t	inp_gencnt;	/* current generation count */
-	int		inp_flags;	/* generic IP/datagram flags */
-	u_int32_t	inp_flow;
-	u_char		inp_vflag;
-	u_char		inp_ip_ttl;	/* time to live */
-	u_char		inp_ip_p;	/* protocol */
-	union {				/* foreign host table entry */
-		struct  in_addr_4in6	inp46_foreign;
-		struct  in6_addr	inp6_foreign;
+	u_int64_t       inp_ppcb;       /* ptr to per-protocol PCB */
+	u_int64_t       inp_pcbinfo;    /* PCB list info */
+	struct inpcb64_list_entry inp_portlist; /* this PCB's local port list */
+	u_int64_t       inp_phd;        /* head of this list */
+	inp_gen_t       inp_gencnt;     /* current generation count */
+	int             inp_flags;      /* generic IP/datagram flags */
+	u_int32_t       inp_flow;
+	u_char          inp_vflag;
+	u_char          inp_ip_ttl;     /* time to live */
+	u_char          inp_ip_p;       /* protocol */
+	union {                         /* foreign host table entry */
+		struct  in_addr_4in6    inp46_foreign;
+		struct  in6_addr        inp6_foreign;
 	} inp_dependfaddr;
-	union {				/* local host table entry */
-		struct  in_addr_4in6	inp46_local;
-		struct  in6_addr	inp6_local;
+	union {                         /* local host table entry */
+		struct  in_addr_4in6    inp46_local;
+		struct  in6_addr        inp6_local;
 	} inp_dependladdr;
 	struct {
-		u_char	inp4_ip_tos;	/* type of service */
+		u_char  inp4_ip_tos;    /* type of service */
 	} inp_depend4;
 	struct {
 		u_int8_t inp6_hlim;
-		int	inp6_cksum;
-		u_short	inp6_ifindex;
-		short	inp6_hops;
+		int     inp6_cksum;
+		u_short inp6_ifindex;
+		short   inp6_hops;
 	} inp_depend6;
 	struct  xsocket64 xi_socket;
-	u_quad_t	xi_alignment_hack;
+	u_quad_t        xi_alignment_hack;
 };
 #endif /* !CONFIG_EMBEDDED */
 
 
-struct	xinpgen {
-	u_int32_t	xig_len;	/* length of this structure */
-	u_int		xig_count;	/* number of PCBs at this time */
-	inp_gen_t	xig_gen;	/* generation count at this time */
-	so_gen_t	xig_sogen;	/* current socket generation count */
+struct  xinpgen {
+	u_int32_t       xig_len;        /* length of this structure */
+	u_int           xig_count;      /* number of PCBs at this time */
+	inp_gen_t       xig_gen;        /* generation count at this time */
+	so_gen_t        xig_sogen;      /* current socket generation count */
 };
 
 #pragma pack()
@@ -257,12 +257,12 @@ struct	xinpgen {
 /*
  * These defines are for use with the inpcb.
  */
-#define	INP_IPV4	0x1
-#define	INP_IPV6	0x2
-#define	inp_faddr	inp_dependfaddr.inp46_foreign.ia46_addr4
-#define	inp_laddr	inp_dependladdr.inp46_local.ia46_addr4
-#define	in6p_faddr	inp_dependfaddr.inp6_foreign
-#define	in6p_laddr	inp_dependladdr.inp6_local
+#define INP_IPV4        0x1
+#define INP_IPV6        0x2
+#define inp_faddr       inp_dependfaddr.inp46_foreign.ia46_addr4
+#define inp_laddr       inp_dependladdr.inp46_local.ia46_addr4
+#define in6p_faddr      inp_dependfaddr.inp6_foreign
+#define in6p_laddr      inp_dependladdr.inp6_local
 
 
 /*
@@ -273,12 +273,12 @@ struct	xinpgen {
  * time, whether or not the OS supports certain features.
  */
 
-#define	INP_ANONPORT		0x00000040 /* port chosen for user */
+#define INP_ANONPORT            0x00000040 /* port chosen for user */
 
 
-#define	IN6P_IPV6_V6ONLY	0x00008000 /* restrict AF_INET6 socket for v6 */
+#define IN6P_IPV6_V6ONLY        0x00008000 /* restrict AF_INET6 socket for v6 */
 
 
-#define	IN6P_BINDV6ONLY		0x01000000 /* do not grab IPv4 traffic */
+#define IN6P_BINDV6ONLY         0x01000000 /* do not grab IPv4 traffic */
 
 #endif /* !_NETINET_IN_PCB_H_ */
