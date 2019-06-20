@@ -1,0 +1,17 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: BD07E1E9-EBE6-390E-BE00-4FB3C9BC31A9' ]
+platform:        macosx
+install-name:    '/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Ink.framework/Versions/A/Ink'
+current-version: 227
+parent-umbrella: Carbon
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _InkAddStrokeToCurrentPhrase, _InkIsPhraseInProgress, _InkSetApplicationRecognitionMode, 
+                       _InkSetApplicationWritingMode, _InkSetDrawingMode, _InkSetPhraseTerminationMode, 
+                       _InkStrokeGetPointCount, _InkStrokeGetPoints, _InkStrokeGetTypeID, 
+                       _InkTerminateCurrentPhrase, _InkTextAlternatesCount, _InkTextBounds, 
+                       _InkTextCopy, _InkTextCreateCFString, _InkTextCreateFromCFData, 
+                       _InkTextDraw, _InkTextFlatten, _InkTextGetStroke, _InkTextGetStrokeCount, 
+                       _InkTextGetTypeID, _InkTextKeyModifiers, _InkUserWritingMode ]
+...

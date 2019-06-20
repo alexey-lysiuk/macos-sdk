@@ -1,0 +1,15 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64, x86_64h ]
+uuids:           [ 'x86_64: 6C08A90A-5485-313D-9DA0-864079B816F4', 'x86_64: 6C08A90A-5485-313D-9DA0-864079B816F4', 
+                   'x86_64h: A4B20D00-7CD4-3679-BDFB-273C7CFA66EF', 'x86_64h: A4B20D00-7CD4-3679-BDFB-273C7CFA66EF' ]
+platform:        zippered
+install-name:    '/System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libJP2.dylib'
+exports:         
+  - archs:           [ x86_64, x86_64h ]
+    symbols:         [ __cg_JP2CompressorProcessImage, __cg_JP2CompressorSetDisplayResolution, 
+                       __cg_JP2CompressorSetup, __cg_JP2CompressorTearDown, __cg_JP2DecompressBand, 
+                       __cg_JP2DecompressBlock, __cg_JP2DecompressLayer, __cg_JP2GetDisplayResolution, 
+                       __cg_JP2GetMaxQualityLayers, __cg_JP2GetPalette, __cg_JP2GetTileSize, 
+                       __cg_JP2InitCompressionSettings, __cg_JP2ResetSource, __cg_JP2SetupDecompressor, 
+                       __cg_JP2TearDownDecompressor, __cg_JP2TearDownJP2Storage ]
+...

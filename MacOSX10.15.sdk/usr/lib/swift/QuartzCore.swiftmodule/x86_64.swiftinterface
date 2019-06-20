@@ -1,0 +1,13 @@
+// swift-interface-format-version: 1.0
+// swift-tools-version: Apple Swift version 5.1 effective-4.1.50 (swiftlang-1100.8.32.26 clang-1100.0.18.2)
+// swift-module-flags: -target x86_64-apple-macosx10.15 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftQuartzCore -swift-version 4 -O -enforce-exclusivity=unchecked -module-name QuartzCore
+import Foundation
+@_exported import QuartzCore
+import Swift
+extension CATransform3D : _ObjectiveCBridgeable {
+  public func _bridgeToObjectiveC() -> NSValue
+  public static func _forceBridgeFromObjectiveC(_ source: NSValue, result: inout CATransform3D?)
+  public static func _conditionallyBridgeFromObjectiveC(_ source: NSValue, result: inout CATransform3D?) -> Bool
+  public static func _unconditionallyBridgeFromObjectiveC(_ source: NSValue?) -> CATransform3D
+  public typealias _ObjectiveCType = Foundation.NSValue
+}

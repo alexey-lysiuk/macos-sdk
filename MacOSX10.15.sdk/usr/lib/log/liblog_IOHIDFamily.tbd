@@ -1,0 +1,9 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 45CAF378-ADF4-3B27-BEFA-C04C31D94DAD' ]
+platform:        macosx
+install-name:    '/usr/lib/log/liblog_IOHIDFamily.dylib'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _OSLogCopyFormattedString, _getEventDescription ]
+...

@@ -1,0 +1,15 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: C5596F10-FB04-3D55-82B3-117D693E5F22' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/AOSAccountsLite.framework/Versions/A/AOSAccountsLite'
+current-version: 1.9.95
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _AOSAccountsLiteVersionNumber, _AOSAccountsLiteVersionString, 
+                       _MMLAccountCopyProperty, _MMLAccountIsVetted, _MMLAccountLogin, 
+                       _MMLCopyLoggedInAccount, _MMLCopyMailActivationInfo, _MMLServiceCopyProperty, 
+                       __copyBagAccountProperty, __copyBagServiceProperty, __getBag, 
+                       __useFullAOSAccounts ]
+    objc-classes:    [ AOSAccountLite ]
+...

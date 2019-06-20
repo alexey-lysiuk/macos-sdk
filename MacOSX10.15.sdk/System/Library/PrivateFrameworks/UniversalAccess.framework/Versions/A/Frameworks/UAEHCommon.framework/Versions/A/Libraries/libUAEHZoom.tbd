@@ -1,0 +1,9 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: D0103CCB-733C-3927-93B9-57A03F112C08' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/UniversalAccess.framework/Versions/A/Frameworks/UAEHCommon.framework/Versions/A/Libraries/libUAEHZoom.dylib'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _UADEventHandlerGetVtable ]
+...

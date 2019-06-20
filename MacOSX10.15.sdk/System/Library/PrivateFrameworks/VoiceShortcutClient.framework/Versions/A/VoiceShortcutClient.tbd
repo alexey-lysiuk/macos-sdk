@@ -1,0 +1,42 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: C74B2D4B-8DB9-3844-9E60-8FE2D3E59A89' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/VoiceShortcutClient.framework/Versions/A/VoiceShortcutClient'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _VCActionDonationCategoryAll, _VCBundleIdentifierDaemon, _VCBundleIdentifierDocuments, 
+                       _VCBundleIdentifierFaceTime, _VCBundleIdentifierMail, _VCBundleIdentifierMaps, 
+                       _VCBundleIdentifierMessages, _VCBundleIdentifierMobilePhone, 
+                       _VCBundleIdentifierNotes, _VCBundleIdentifierNotificationSource, 
+                       _VCBundleIdentifierPassbookUIService, _VCBundleIdentifierPodcasts, 
+                       _VCBundleIdentifierPreferences, _VCBundleIdentifierShortcuts, 
+                       _VCBundleIdentifierShortcutsAppStore, _VCBundleIdentifierTV, 
+                       _VCBundleIdentifierVoiceMemos, _VCBundleIdentifierWallet, 
+                       _VCCKAccountAddedNotification, _VCCKAccountModifiedNotification, 
+                       _VCDKQuerySourceId, _VCDeviceHasBeenUnlocked, _VCFileProviderNonUIExtensionPointName, 
+                       _VCInactiveAppsFromList, _VCIsAppWithIdentifierInstalled, 
+                       _VCIsDeviceLocked, _VCIsInternalBuild, _VCLogContext, _VCLogContextCloudKitSync, 
+                       _VCLogContextShortcutsAsset, _VCLogContextSpotlightSync, _VCLogContextWatchSync, 
+                       _VCLogInitIfNeeded, _VCLoggingCategory, _VCLoggingCategoryCloudKitSync, 
+                       _VCLoggingCategoryShortcutsAsset, _VCLoggingCategorySpotlightSync, 
+                       _VCLoggingCategoryWatchSync, _VCLoggingSubsystem, _VCPartialErrorsByItemIDKey, 
+                       _VCShortcutActionExtensionWorkflowTokenKey, _VCShortcutSuggestionsMaxCount, 
+                       _VCSpeakableStringFromVoiceShortcut, _VCValidatedUUIDFromString, 
+                       _VCVoiceShortcutClientDataDidUpdateNotification, _VCVoiceShortcutDataDidUpdateNotification, 
+                       _VCVoiceShortcutExistsWithPhraseAssociatedAppBundleIdentifierKey, 
+                       _VCVoiceShortcutExistsWithPhraseIdentifierKey, _VCVoiceShortcutExistsWithPhraseNameKey, 
+                       _VCVoiceShortcutKeyAssociatedAppBundleIdentifier, _VCVoiceShortcutKeyCachedBlacklistStatus, 
+                       _VCVoiceShortcutKeyDateCreated, _VCVoiceShortcutKeyDateLastModified, 
+                       _VCVoiceShortcutKeyIdentifier, _VCVoiceShortcutKeyKeyImageData, 
+                       _VCVoiceShortcutKeyPhrase, _VCVoiceShortcutKeySerializedWorkflowData, 
+                       _VCVoiceShortcutKeyShortcutDescription, _VCVoiceShortcutKeyShortcutName, 
+                       _VCVoiceShortcutManagerXPCInterface, _VCVoiceShortcutManagerXPCInterfaceMachServiceName, 
+                       _VCVoiceShortcutsErrorDomain, _VoiceShortcutClientVersionNumber, 
+                       _VoiceShortcutClientVersionString ]
+    objc-classes:    [ VCAccessSpecifier, VCActionDonationAggregator, VCActionDonationDefaultsRecommender, 
+                       VCActionDonationFetcher, VCActionDonationRecommender, VCActionDonationSet, 
+                       VCInteractionDonation, VCInteractionDonationFetcher, VCUserActivityDonation, 
+                       VCUserActivityDonationFetcher, VCVoiceShortcut, VCVoiceShortcutClient, 
+                       VCVoiceShortcutPhraseValidationResult ]
+...

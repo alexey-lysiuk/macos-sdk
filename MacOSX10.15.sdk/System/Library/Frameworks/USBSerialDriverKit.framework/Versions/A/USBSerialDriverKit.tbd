@@ -1,0 +1,38 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: BFD47AC6-9613-36E6-9434-93B992EA2A6F' ]
+platform:        macosx
+install-name:    '/System/Library/Frameworks/USBSerialDriverKit.framework/Versions/A/USBSerialDriverKit'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _IOUserUSBSerial_Class, __ZN15IOUserUSBSerial10HwActivateEbPFiP15OSMetaClassBase5IORPCE, 
+                       __ZN15IOUserUSBSerial11HwResetFIFOEbbPFiP15OSMetaClassBase5IORPCE, 
+                       __ZN15IOUserUSBSerial11HwResetUARTEPFiP15OSMetaClassBase5IORPCE, 
+                       __ZN15IOUserUSBSerial11HwSendBreakEbPFiP15OSMetaClassBase5IORPCE, 
+                       __ZN15IOUserUSBSerial12HwProgramMCREbbPFiP15OSMetaClassBase5IORPCE, 
+                       __ZN15IOUserUSBSerial13HwProgramUARTEjhhhPFiP15OSMetaClassBase5IORPCE, 
+                       __ZN15IOUserUSBSerial14RxError_InvokeE5IORPCMS_FibbbbE, __ZN15IOUserUSBSerial15HwActivate_ImplEb, 
+                       __ZN15IOUserUSBSerial15SetState_InvokeE5IORPCMS_FijjE, __ZN15IOUserUSBSerial16HwResetFIFO_ImplEbb, 
+                       __ZN15IOUserUSBSerial16HwResetUART_ImplEv, __ZN15IOUserUSBSerial16HwSendBreak_ImplEb, 
+                       __ZN15IOUserUSBSerial17HwActivate_InvokeE5IORPCMS_FibE, __ZN15IOUserUSBSerial17HwProgramBaudRateEjPFiP15OSMetaClassBase5IORPCE, 
+                       __ZN15IOUserUSBSerial17HwProgramMCR_ImplEbb, __ZN15IOUserUSBSerial18HwProgramUART_ImplEjhhh, 
+                       __ZN15IOUserUSBSerial18HwResetFIFO_InvokeE5IORPCMS_FibbE, 
+                       __ZN15IOUserUSBSerial18HwResetUART_InvokeE5IORPCMS_FivE, __ZN15IOUserUSBSerial18HwSendBreak_InvokeE5IORPCMS_FibE, 
+                       __ZN15IOUserUSBSerial19HwProgramMCR_InvokeE5IORPCMS_FibbE, 
+                       __ZN15IOUserUSBSerial20HwProgramUART_InvokeE5IORPCMS_FijhhhE, 
+                       __ZN15IOUserUSBSerial21HwProgramFlowClontrolEjhhPFiP15OSMetaClassBase5IORPCE, 
+                       __ZN15IOUserUSBSerial21HwProgramLatencyTimerEjPFiP15OSMetaClassBase5IORPCE, 
+                       __ZN15IOUserUSBSerial22HwProgramBaudRate_ImplEj, __ZN15IOUserUSBSerial23ProcessLineStatusHeaderEPKhjPFiP15OSMetaClassBase5IORPCE, 
+                       __ZN15IOUserUSBSerial24HwProgramBaudRate_InvokeE5IORPCMS_FijE, 
+                       __ZN15IOUserUSBSerial26HwProgramFlowClontrol_ImplEjhh, __ZN15IOUserUSBSerial26HwProgramLatencyTimer_ImplEj, 
+                       __ZN15IOUserUSBSerial28HwProgramFlowClontrol_InvokeE5IORPCMS_FijhhE, 
+                       __ZN15IOUserUSBSerial28HwProgramLatencyTimer_InvokeE5IORPCMS_FijE, 
+                       __ZN15IOUserUSBSerial28ProcessLineStatusHeader_ImplEPKhj, 
+                       __ZN15IOUserUSBSerial30ProcessLineStatusHeader_InvokeE5IORPCMS_FiPKhjE, 
+                       __ZN15IOUserUSBSerial7RxErrorEbbbbPFiP15OSMetaClassBase5IORPCE, 
+                       __ZN15IOUserUSBSerial8DispatchE5IORPC, __ZN15IOUserUSBSerial8SetStateEjjPFiP15OSMetaClassBase5IORPCE, 
+                       __ZN15IOUserUSBSerial9_DispatchEPS_5IORPC, __ZN24IOUserUSBSerialMetaClass3NewEP8OSObject, 
+                       __ZN24IOUserUSBSerialMetaClass8DispatchE5IORPC, __ZTI15IOUserUSBSerial, 
+                       __ZTI24IOUserUSBSerialMetaClass, __ZTS15IOUserUSBSerial, __ZTS24IOUserUSBSerialMetaClass, 
+                       __ZTV15IOUserUSBSerial, __ZTV24IOUserUSBSerialMetaClass, _gIOUserUSBSerialMetaClass ]
+...

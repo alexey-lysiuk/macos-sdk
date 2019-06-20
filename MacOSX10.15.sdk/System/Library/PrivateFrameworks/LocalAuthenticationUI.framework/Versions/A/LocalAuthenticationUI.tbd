@@ -1,0 +1,15 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: A59EC38D-B67B-3960-952B-7C5E4CA91949' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/LocalAuthenticationUI.framework/Versions/A/LocalAuthenticationUI'
+current-version: 661
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _LAUIAuthenticationSheetAccountBlocked, _LAUIAuthenticationSheetBackoffTimeout ]
+    objc-classes:    [ LAUIAuthenticationSheetController, LAUIAuthenticationView, 
+                       LAUIAuthenticationViewController, LAUICheckmarkLayer, LAUIPasswordField, 
+                       LAUIUserPasswordViewController ]
+    weak-def-symbols: [ __ZTISt11logic_error, __ZTISt12length_error, __ZTISt9exception, 
+                        __ZTSSt11logic_error, __ZTSSt12length_error, __ZTSSt9exception ]
+...

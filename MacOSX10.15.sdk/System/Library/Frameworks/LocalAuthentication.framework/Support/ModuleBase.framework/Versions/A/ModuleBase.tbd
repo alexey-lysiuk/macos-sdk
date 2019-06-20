@@ -1,0 +1,11 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 23C04C34-5C95-35B1-8123-3B7713FA1B72' ]
+platform:        macosx
+install-name:    '/System/Library/Frameworks/LocalAuthentication.framework/Support/ModuleBase.framework/Versions/A/ModuleBase'
+current-version: 661
+exports:         
+  - archs:           [ x86_64 ]
+    objc-classes:    [ AuthenticationInProgress, AuthenticationInProgressToken, AuthenticationManager, 
+                       ContextPlugin, MechanismManager, Module ]
+...

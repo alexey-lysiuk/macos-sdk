@@ -1,0 +1,14 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: CC86146D-EF78-3AE8-97B4-A801F699F1E3' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/Proximity.framework/Versions/A/Proximity'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _PRErrorDomain, _PRErrorWithCodeAndUserInfo ]
+    objc-classes:    [ PRDeviceScore, PRProximityEstimator, PRSharingSession, PRTrustedContact ]
+    weak-def-symbols: [ __ZTINSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                        __ZTINSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                        __ZTSNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                        __ZTSNSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE ]
+...

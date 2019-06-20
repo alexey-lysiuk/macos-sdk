@@ -1,0 +1,28 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 79E198FA-B11C-3D5E-A6FE-3CD930813A48' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/AskPermission.framework/Versions/A/AskPermission'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _APCustomError, _APError, _APErrorDomain, _APGenerateLogKey, 
+                       _APLogSubsystemAskPermission, _ConnectionServiceName, _KPRRequestInfoStoreSalableParent, 
+                       _kPRRequestInfoStoreAdamID, _kPRRequestInfoStoreApprovalStatus, 
+                       _kPRRequestInfoStoreApprovalWindowHeight, _kPRRequestInfoStoreApprovalWindowWidth, 
+                       _kPRRequestInfoStoreApproveButtonTitle, _kPRRequestInfoStoreApprovedMessageString, 
+                       _kPRRequestInfoStoreApproverDSID, _kPRRequestInfoStoreBuyParams, 
+                       _kPRRequestInfoStoreDeclineButtonTitle, _kPRRequestInfoStoreDeclinedMessageString, 
+                       _kPRRequestInfoStoreItemPrice, _kPRRequestInfoStoreParentSalableLocalizedName, 
+                       _kPRRequestInfoStorePreviewURL, _kPRRequestInfoStorePriceString, 
+                       _kPRRequestInfoStorePricingParameters, _kPRRequestInfoStoreProductTypeCode, 
+                       _kPRRequestInfoStoreRequestID, _kPRRequestInfoStoreRequestMessageString, 
+                       _kPRRequestInfoStoreRequestNotificationString, _kPRRequestInfoStoreRequesterDSID, 
+                       _kPRRequestInfoStoreSalableAdamID, _kPRRequestInfoStoreSalableAppVersionID, 
+                       _kPRRequestInfoStoreSalableLocalizedDefinitiveProductType, 
+                       _kPRRequestInfoStoreSalableLocalizedProductType, _kPRRequestInfoStoreSalableProductName, 
+                       _kPRRequestInfoStoreSalableProductType, _kPRRequestInfoStoreSalableProductTypeID, 
+                       _kPRRequestInfoStoreSalableURL, _kPRRequestInfoStoreSalables, 
+                       _kPRRequestInfoStoreSandboxRequest, _kPRRequestQueueiTunesStoreIdentifier ]
+    objc-classes:    [ APDefaults, APLogConfig, APMutableLogConfig, APRequestExtension, 
+                       APRequestHandler, APResult, PRRequest, PRRequestQueue ]
+...

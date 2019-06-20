@@ -1,0 +1,10 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 1FBDF4F9-AC2F-39F7-8C5A-2A6B90C3D39A', 'x86_64: 1FBDF4F9-AC2F-39F7-8C5A-2A6B90C3D39A' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/AVConference.framework/Frameworks/LegacyHandle.framework/Versions/A/LegacyHandle'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _CheckInHandleDebug, _CheckOutHandleDebug, _CloseAllHandles, 
+                       _CreateHandle, _FindHandle, _GetNumHandles ]
+...

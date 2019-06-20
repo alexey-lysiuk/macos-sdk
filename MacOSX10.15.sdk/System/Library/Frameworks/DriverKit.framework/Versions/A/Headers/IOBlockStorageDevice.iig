@@ -1,0 +1,45 @@
+#ifndef _IOKIT_UIOBLOCKSTORAGEDEVICE_H
+#define _IOKIT_UIOBLOCKSTORAGEDEVICE_H
+
+#include <DriverKit/OSAction.iig>
+#include <DriverKit/IOService.iig>
+#include <DriverKit/IOMemoryDescriptor.iig>
+#include <DriverKit/IODataQueueDispatchSource.iig>
+
+class REMOTE _IOBlockStorageDevice : public IOService
+{
+public:
+
+    virtual void
+    DoAsyncReadWriteCompletion(
+        OSAction      * action TARGET,
+        IOReturn        status,
+        uint64_t        actualByteCount) = 0;
+
+    virtual kern_return_t
+        DoAsyncReadWrite(
+        IOMemoryDescriptor * buffer,
+        uint64_t             block,
+        uint64_t             nblks,
+        OSAction           * completion TYPE(DoAsyncReadWriteCompletion)) = 0;
+
+    virtual kern_return_t
+        CopyProducerDataQueue(
+        IODataQueueDispatchSource ** dataQueue) = 0;
+
+    virtual kern_return_t
+        CopyReceiverDataQueue(
+        IODataQueueDispatchSource ** dataQueue) = 0;
+
+private:
+
+    virtual void
+    KernelCompletion(
+        OSAction      * action,
+        IOReturn        status,
+        uint64_t        actualByteCount)
+        KERNEL
+        TYPE(_IOBlockStorageDevice::DoAsyncReadWriteCompletion);
+};
+
+#endif /* ! _IOKIT_UIOBLOCKSTORAGEDEVICE_H */

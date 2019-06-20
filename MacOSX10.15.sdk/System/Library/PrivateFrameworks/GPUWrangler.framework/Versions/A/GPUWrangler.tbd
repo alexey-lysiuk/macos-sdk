@@ -1,0 +1,26 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 709B91B9-E8D4-3966-9973-304CD7795705', 'x86_64: 709B91B9-E8D4-3966-9973-304CD7795705' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/GPUWrangler.framework/Versions/A/GPUWrangler'
+current-version: 0
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _GPUWranglerClose, _GPUWranglerDispatchEvent, _GPUWranglerForEachGPU, 
+                       _GPUWranglerGPUByID, _GPUWranglerGPUCopyProperty, _GPUWranglerGPUCopyPropertyStr, 
+                       _GPUWranglerGPUCopyRegistryService, _GPUWranglerGPUEject, 
+                       _GPUWranglerGPUEjectCancel, _GPUWranglerGPUEjectFinalize, 
+                       _GPUWranglerGPUEjectFinalized, _GPUWranglerGPUGetAttribute, 
+                       _GPUWranglerGPUGetFramebufferAccelIndex, _GPUWranglerGPUGetFramebufferCount, 
+                       _GPUWranglerGPUGetFramebufferRegistryEntryID, _GPUWranglerGPUGetID, 
+                       _GPUWranglerGPUGetPCIDeviceID, _GPUWranglerGPUGetPCIVendorID, 
+                       _GPUWranglerGPUGetPropertyBool, _GPUWranglerGPUGetPropertyU64, 
+                       _GPUWranglerGPUGetRegistryEntryID, _GPUWranglerGPUGetTypeID, 
+                       _GPUWranglerGPUGetUserPtr, _GPUWranglerGPUIsDiscrete, _GPUWranglerGPUIsEjectFinalized, 
+                       _GPUWranglerGPUIsEjectFinalizing, _GPUWranglerGPUIsEjected, 
+                       _GPUWranglerGPUIsIntegrated, _GPUWranglerGPUIsRemovable, _GPUWranglerGPUSetAttribute, 
+                       _GPUWranglerGPUSetUserPtr, _GPUWranglerGetEventPort, _GPUWranglerGetTypeID, 
+                       _GPUWranglerOpen, _GPUWranglerOpenWithTimeout, _GPUWranglerRegisterEventBlock, 
+                       _GPUWranglerWaitForPublish, __GPUWranglerGPUGetFlags, __GPUWranglerGPUGetKernGPU, 
+                       __GPUWranglerGPULoadDrivers, __GPUWranglerSetConfiguration ]
+...

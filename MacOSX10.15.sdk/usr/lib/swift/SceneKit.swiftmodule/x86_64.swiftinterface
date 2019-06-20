@@ -1,0 +1,85 @@
+// swift-interface-format-version: 1.0
+// swift-tools-version: Apple Swift version 5.1 effective-4.1.50 (swiftlang-1100.8.32.26 clang-1100.0.18.2)
+// swift-module-flags: -target x86_64-apple-macosx10.15 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftSceneKit -swift-version 4 -O -enforce-exclusivity=unchecked -module-name SceneKit
+import CoreGraphics
+import Foundation
+@_exported import SceneKit
+import Swift
+import simd
+public typealias SCNFloat = CGFloat
+extension SCNVector3 {
+  public init(_ x: Float, _ y: Float, _ z: Float)
+  public init(_ x: CGFloat, _ y: CGFloat, _ z: CGFloat)
+  public init(_ x: Double, _ y: Double, _ z: Double)
+  public init(_ x: Int, _ y: Int, _ z: Int)
+  public init(_ v: float3)
+  public init(_ v: double3)
+}
+extension SIMD3 where Scalar == Swift.Float {
+  public init(_ v: SCNVector3)
+}
+extension SIMD3 where Scalar == Swift.Double {
+  public init(_ v: SCNVector3)
+}
+extension SCNVector4 {
+  public init(_ x: Float, _ y: Float, _ z: Float, _ w: Float)
+  public init(_ x: CGFloat, _ y: CGFloat, _ z: CGFloat, _ w: CGFloat)
+  public init(_ x: Double, _ y: Double, _ z: Double, _ w: Double)
+  public init(_ x: Int, _ y: Int, _ z: Int, _ w: Int)
+  public init(_ v: float4)
+  public init(_ v: double4)
+}
+extension SIMD4 where Scalar == Swift.Float {
+  public init(_ v: SCNVector4)
+}
+extension SIMD4 where Scalar == Swift.Double {
+  public init(_ v: SCNVector4)
+}
+extension CATransform3D {
+  public init(_ m: float4x4)
+  public init(_ m: double4x4)
+}
+extension simd_float4x4 {
+  public init(_ m: SCNMatrix4)
+}
+extension simd_double4x4 {
+  public init(_ m: SCNMatrix4)
+}
+@available(iOS 8.0, OSX 10.8, *)
+extension SCNGeometryElement {
+  convenience public init<IndexType>(indices: [IndexType], primitiveType: SCNGeometryPrimitiveType) where IndexType : Swift.FixedWidthInteger
+}
+@available(iOS 8.0, OSX 10.8, *)
+extension SCNGeometrySource {
+  @nonobjc convenience public init(vertices: [SCNVector3])
+  @nonobjc convenience public init(normals: [SCNVector3])
+  @nonobjc convenience public init(textureCoordinates: [CGPoint])
+}
+@available(iOS 8.0, OSX 10.10, *)
+extension SCNBoundingVolume {
+  public var boundingBox: (min: SCNVector3, max: SCNVector3) {
+    get
+    set
+  }
+  public var boundingSphere: (center: SCNVector3, radius: Float) {
+    get
+  }
+}
+@available(iOS 8.0, OSX 10.8, *)
+extension SCNSceneSource {
+  public func entryWithIdentifier<T>(_ uid: String, withClass entryClass: T.Type) -> T? where T : AnyObject
+}
+extension SCNVector3 : _ObjectiveCBridgeable {
+  public func _bridgeToObjectiveC() -> NSValue
+  public static func _forceBridgeFromObjectiveC(_ source: NSValue, result: inout SCNVector3?)
+  public static func _conditionallyBridgeFromObjectiveC(_ source: NSValue, result: inout SCNVector3?) -> Bool
+  public static func _unconditionallyBridgeFromObjectiveC(_ source: NSValue?) -> SCNVector3
+  public typealias _ObjectiveCType = Foundation.NSValue
+}
+extension SCNVector4 : _ObjectiveCBridgeable {
+  public func _bridgeToObjectiveC() -> NSValue
+  public static func _forceBridgeFromObjectiveC(_ source: NSValue, result: inout SCNVector4?)
+  public static func _conditionallyBridgeFromObjectiveC(_ source: NSValue, result: inout SCNVector4?) -> Bool
+  public static func _unconditionallyBridgeFromObjectiveC(_ source: NSValue?) -> SCNVector4
+  public typealias _ObjectiveCType = Foundation.NSValue
+}

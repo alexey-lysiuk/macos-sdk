@@ -1,0 +1,10 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 8B4D8E93-68C0-38AF-9F93-E8FE4365294E', 'x86_64: 8B4D8E93-68C0-38AF-9F93-E8FE4365294E' ]
+platform:        zippered
+install-name:    '/System/Library/CoreServices/Encodings/libGreekConverter.dylib'
+current-version: 76
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ ___CFStringEncodingGetGreekConverterDefinition ]
+...

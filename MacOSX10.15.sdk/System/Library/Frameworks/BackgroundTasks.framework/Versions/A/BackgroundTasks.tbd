@@ -1,0 +1,11 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: BE3941D5-FDC6-399C-B925-3218356DAA54', 'x86_64: BE3941D5-FDC6-399C-B925-3218356DAA54' ]
+platform:        zippered
+install-name:    '/System/Library/Frameworks/BackgroundTasks.framework/Versions/A/BackgroundTasks'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _BGTaskSchedulerErrorDomain, __BGTaskSchedulerRunningTasksDidChangeNotification ]
+    objc-classes:    [ BGAppRefreshTask, BGAppRefreshTaskRequest, BGProcessingTask, 
+                       BGProcessingTaskRequest, BGTask, BGTaskRequest, BGTaskScheduler ]
+...

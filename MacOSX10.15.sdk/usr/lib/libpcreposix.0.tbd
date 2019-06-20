@@ -1,0 +1,9 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 0E274D4E-FD85-3A53-A848-77A47148600C' ]
+platform:        macosx
+install-name:    '/usr/lib/libpcreposix.0.dylib'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _regcomp, _regerror, _regexec, _regfree ]
+...

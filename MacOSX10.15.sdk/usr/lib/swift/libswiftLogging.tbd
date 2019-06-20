@@ -1,0 +1,24 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: C258EE94-22AA-39C6-BA96-E129F2915874', 'x86_64: C258EE94-22AA-39C6-BA96-E129F2915874' ]
+platform:        zippered
+install-name:    '/usr/lib/swift/libswiftLogging.dylib'
+current-version: 0
+swift-abi-version: 7
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ '$ld$install_name$os10.10$@rpath/libswiftLogging.dylib', '$ld$install_name$os10.11$@rpath/libswiftLogging.dylib', 
+                       '$ld$install_name$os10.12$@rpath/libswiftLogging.dylib', '$ld$install_name$os10.13$@rpath/libswiftLogging.dylib', 
+                       '$ld$install_name$os10.14$@rpath/libswiftLogging.dylib', '$ld$install_name$os10.9$@rpath/libswiftLogging.dylib', 
+                       '_$sSo10OSLogStoreC7LoggingE10getEntries4with2at8matchings11AnySequenceVySo0A5EntryCGSo0A17EnumeratorOptionsV_So0A8PositionCSgSo11NSPredicateCSgtKF', 
+                       '_$sSo21OSLogMessageComponentC7LoggingE8ArgumentO4datayAE10Foundation4DataVcAEmFWC', 
+                       '_$sSo21OSLogMessageComponentC7LoggingE8ArgumentO6doubleyAESdcAEmFWC', 
+                       '_$sSo21OSLogMessageComponentC7LoggingE8ArgumentO6signedyAEs5Int64VcAEmFWC', 
+                       '_$sSo21OSLogMessageComponentC7LoggingE8ArgumentO6stringyAESScAEmFWC', 
+                       '_$sSo21OSLogMessageComponentC7LoggingE8ArgumentO8unsignedyAEs6UInt64VcAEmFWC', 
+                       '_$sSo21OSLogMessageComponentC7LoggingE8ArgumentO9undefinedyA2EmFWC', 
+                       '_$sSo21OSLogMessageComponentC7LoggingE8ArgumentOMa', '_$sSo21OSLogMessageComponentC7LoggingE8ArgumentOMn', 
+                       '_$sSo21OSLogMessageComponentC7LoggingE8ArgumentON', '_$sSo21OSLogMessageComponentC7LoggingE8argumentAbCE8ArgumentOvg', 
+                       '_$sSo21OSLogMessageComponentC7LoggingE8argumentAbCE8ArgumentOvpMV', 
+                       '__swift_FORCE_LOAD_$_swiftLogging' ]
+...

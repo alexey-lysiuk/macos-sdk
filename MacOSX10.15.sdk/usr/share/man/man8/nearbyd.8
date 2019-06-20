@@ -1,0 +1,28 @@
+.Dd 10/4/17
+.Dt nearbyd 8
+.Os Darwin
+.Sh NAME
+.Nm nearbyd
+.Nd The proximity daemon
+.
+.Sh SYNOPSIS
+.Nm
+takes no arguments, and users should not launch it manually.
+.
+.Sh DESCRIPTION          \" Section Header - required - don't modify
+.Nm
+supports proximity-related user experiences, including proximity setup, auto-unlock, and proximity pairing
+.
+.Sh FILES
+.Bl -tag -width "/var/db/nearbyd/"
+.It Pa /System/Library/LaunchDaemons/com.apple.nearbyd.plist
+The
+.Nm
+service's property list file for launchd(8)
+.El
+.
+.Sh SEE ALSO
+.Xr launchd 8
+.
+.Sh HISTORY
+first appeared in macOS 10.14 and iOS 12.0

@@ -1,0 +1,10 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: D448A38F-4E1E-34D4-852A-9B11BC8E5F73' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/SocialServices.framework/Versions/A/SocialServices'
+current-version: 0
+exports:         
+  - archs:           [ x86_64 ]
+    objc-classes:    [ SLGoogleAuthController ]
+...

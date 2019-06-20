@@ -1,0 +1,9 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: A920B07B-6D67-3DF3-A999-5328ED1E7538' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/OSD.framework/Versions/A/OSD'
+exports:         
+  - archs:           [ x86_64 ]
+    objc-classes:    [ OSDManager ]
+...

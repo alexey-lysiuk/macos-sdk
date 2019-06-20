@@ -1,0 +1,10 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 6D13293F-2A9F-303D-9643-B64277CAF049' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/SafeEjectGPU.framework/Versions/A/SafeEjectGPU'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _SafeEjectGPUVersionNumber, _SafeEjectGPUVersionString ]
+    objc-classes:    [ SafeEjectGPU, SafeEjectGPUSession ]
+...

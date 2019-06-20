@@ -1,0 +1,24 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 4DBE17B0-F59B-38E4-B5EC-841AE17D9EA3' ]
+platform:        macosx
+install-name:    '/System/Library/Frameworks/AuthenticationServices.framework/Versions/A/AuthenticationServices'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _ASAuthorizationAppleIDProviderCredentialRevokedNotification, 
+                       _ASAuthorizationErrorDomain, _ASAuthorizationOperationImplicit, 
+                       _ASAuthorizationOperationLogin, _ASAuthorizationOperationLogout, 
+                       _ASAuthorizationOperationRefresh, _ASAuthorizationScopeEmail, 
+                       _ASAuthorizationScopeFullName, _ASWebAuthenticationSessionErrorDomain, 
+                       __authenticationSessionRequestServerErrorDomain ]
+    objc-classes:    [ ASAuthorization, ASAuthorizationAppleIDCredential, ASAuthorizationAppleIDProvider, 
+                       ASAuthorizationAppleIDRequest, ASAuthorizationController, 
+                       ASAuthorizationOpenIDRequest, ASAuthorizationPasswordProvider, 
+                       ASAuthorizationPasswordRequest, ASAuthorizationProviderExtensionAuthorizationRequest, 
+                       ASAuthorizationRequest, ASAuthorizationSingleSignOnCredential, 
+                       ASAuthorizationSingleSignOnProvider, ASAuthorizationSingleSignOnRequest, 
+                       ASPasswordCredential, ASWebAuthenticationSession, ASWebAuthenticationSessionController, 
+                       ASWebAuthenticationSessionLaunchAgentProxy, ASWebAuthenticationSessionRequest, 
+                       ASWebAuthenticationSessionRequestClient, ASWebAuthenticationSessionWebBrowserSessionManager, 
+                       _ASWebAuthenticationSessionRequestServer ]
+...

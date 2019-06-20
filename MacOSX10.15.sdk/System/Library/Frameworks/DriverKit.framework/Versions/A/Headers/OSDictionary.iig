@@ -1,0 +1,94 @@
+#ifndef _IOKIT_OSDICTIONARY_H
+#define _IOKIT_OSDICTIONARY_H
+
+#include <DriverKit/OSCollection.iig>
+
+class OSDictionary;
+typedef OSDictionary * OSDictionaryPtr;
+
+class OSString;
+
+typedef bool (^OSDictionaryIterateObjectsBlock)(OSObject * key, OSObject * value);
+typedef bool (*OSDictionaryIterateObjectsCallback)(void * refcon, OSObject * key, OSObject * value);
+
+class LOCALONLY OSDictionary : public OSCollection
+{
+public:
+
+	// OSObject
+
+	virtual void
+	free() override;
+
+	// OSCollection
+
+	virtual uint32_t
+	getCount() const override;
+
+	virtual uint32_t
+	getCapacity() const override;
+	virtual uint32_t
+	ensureCapacity(uint32_t newCapacity) override;
+
+	virtual void
+	flushCollection() override;
+
+	bool
+	iterateObjects(OSCollectionIterateObjectsBlock block) const override;
+
+	// OSDictionary
+
+	static OSDictionaryPtr
+	withCapacity(uint32_t capacity);
+
+	static OSDictionaryPtr
+	withObjects(
+		const OSObject ** values,
+		const OSObject ** keys,
+		uint32_t     count,
+		uint32_t     capacity);
+
+	static OSDictionaryPtr
+	withDictionary(
+		const OSDictionary * dict,
+		uint32_t         capacity);
+
+	bool
+	setObject(
+		const OSObject        * aKey,
+		const OSMetaClassBase * anObject);
+
+	bool
+	setObject(
+		const char            * aKey,
+		const OSMetaClassBase * anObject);
+
+	void
+	removeObject(const OSObject * aKey);
+	void
+	removeObject(const char * aKey);
+
+	bool
+	merge(const OSDictionary * aDictionary);
+
+	OSObject *
+	getObject(const OSObject * aKey) const;
+	OSObject *
+	getObject(const char * aKey) const;
+
+	bool
+	isEqualTo(
+		const OSDictionary * aDictionary,
+		const OSCollection * keys) const;
+	bool
+	isEqualTo(const OSDictionary * aDictionary) const;
+	bool
+	isEqualTo(const OSMetaClassBase * anObject) const override;
+
+	bool
+	iterateObjects(void * refcon, OSDictionaryIterateObjectsCallback callback) const;
+	bool
+	iterateObjects(OSDictionaryIterateObjectsBlock block) const;
+};
+
+#endif /* ! _IOKIT_OSDICTIONARY_H */

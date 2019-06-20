@@ -1,0 +1,26 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 83D33F66-1E6D-36CC-867A-AA7D9DBD966B' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/ShareServicesCore.framework/Versions/A/ShareServicesCore'
+current-version: 101.8.152
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _SBLFileURLFromFileURLs, _SBLNeedsLivePhotoBundleForSharingService, 
+                       _SBLShareKitShareableItemErrorDomain, _SBLShareKitSharingParameterBounds, 
+                       _SBLShareKitSharingParameterImage, _SBLShouldProvideImageForAsset, 
+                       _SBLShouldProvideMovieForAsset, _SBLSubsystemShareKit, _SBLTemporaryExportURLFromURL, 
+                       _SBLVariantFromVariants, _SBLVideoSharingServicePrefix, _ShareServicesCoreVersionNumber, 
+                       _ShareServicesCoreVersionString, _kCompletedUnitCountProperty, 
+                       _kSBLItemKey, _kSBLPreSharingAlertCancelButtonTitle, _kSBLPreSharingAlertConfirmButtonTitle, 
+                       _kSBLPreSharingAlertMessage, _kSBLPreSharingAlertNeeded, _kSBLPreSharingAlertTitle, 
+                       _kSBLProgressFormatKey, _kSBLProgressSamplesPerUnitKey, _kSBLProgressTotalCountKey, 
+                       _kSBLSelectionSummaryKey, _kSBLShareKitFullscreenKey, _kSBLShareKitPublishLocationKey, 
+                       _kSBLShareKitScreenInfoKey, _kSBLShareKitSessionErrorDomain, 
+                       _kSBLShareKitSharedAlbumActionKey, _kSBLShareKitWindowKey ]
+    objc-classes:    [ SBLAssetsShareKitManager, SBLDebugShareKitManager, SBLDownloadProvidersOperation, 
+                       SBLFullfillProvidersOperation, SBLPrepareProvidersOperation, 
+                       SBLProvidersOperation, SBLReconnectProvidersOperation, SBLSetDesktopSharingService, 
+                       SBLShareKitManager, SBLShareKitSession, SBLShareKitShareableItem, 
+                       SBLSharedAlbumsSharingService, SharingServiceString ]
+...

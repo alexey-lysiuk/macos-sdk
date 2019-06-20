@@ -1,0 +1,12 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 40F99815-784C-3779-87A1-5074A17A6534' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/MMCSServices.framework/Versions/A/MMCSServices'
+current-version: 800
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _failReasonStringForMMCSError, _parseMMCSError ]
+    objc-classes:    [ MMCSController, MMCSGetFile, MMCSPutFile, MMCSRequestorContext, 
+                       MMCSSimpleFile ]
+...

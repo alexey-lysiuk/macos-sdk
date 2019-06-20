@@ -1,0 +1,39 @@
+#if !__IIG
+#endif
+
+#ifndef _IOKIT_UIOMEMORYMAP_H
+#define _IOKIT_UIOMEMORYMAP_H
+
+#include <DriverKit/OSObject.iig>
+
+struct IOMemoryMapPrivateState {
+	uint64_t length;
+	uint64_t options;
+	uint64_t address;
+};
+
+class KERNEL IOMemoryMap : public OSObject
+{
+public:
+
+	virtual bool
+	init() override;
+
+	virtual void
+	free() override;
+	
+	uint64_t
+	GetAddress() LOCALONLY;
+
+	uint64_t
+	GetLength() LOCALONLY;
+};
+
+class EXTENDS (IOMemoryMap) IOMemoryMapPrivate
+{
+	virtual kern_return_t
+	_CopyState(
+		IOMemoryMapPrivateState * state);
+};
+
+#endif /* ! _IOKIT_UIOMEMORYMAP_H */

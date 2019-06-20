@@ -1,0 +1,12 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: D6B8FF41-89A1-3127-9150-B263CDD54E44', 'x86_64: D6B8FF41-89A1-3127-9150-B263CDD54E44' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/DeviceCheckInternal.framework/Versions/A/DeviceCheckInternal'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _DCCryptoErrorDomain, _DCFetchErrorDomain, _DeviceCheckInternalVersionNumber, 
+                       _DeviceCheckInternalVersionString, _fallback_server_pubkey ]
+    objc-classes:    [ DCAsset, DCAssetFetcher, DCAssetFetcherContext, DCCertificateGenerator, 
+                       DCCryptoProxyImpl, DCDDeviceMetadata, DCXPCActivityController ]
+...

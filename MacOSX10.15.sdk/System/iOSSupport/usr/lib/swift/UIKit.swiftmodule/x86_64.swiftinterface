@@ -1,0 +1,307 @@
+// swift-interface-format-version: 1.0
+// swift-tools-version: Apple Swift version 5.1 effective-4.2 (swiftlang-1100.8.32.26 clang-1100.0.18.2)
+// swift-module-flags: -target x86_64-apple-ios13.0-macabi -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftUIKit -swift-version 4.2 -O -enforce-exclusivity=unchecked -module-name UIKit
+import Foundation
+import Swift
+@_exported import UIKit
+import _SwiftUIKitOverlayShims
+extension UIEdgeInsets : Equatable {
+  @_transparent public static func == (lhs: UIEdgeInsets, rhs: UIEdgeInsets) -> Bool {
+    return lhs.top == rhs.top &&
+           lhs.left == rhs.left &&
+           lhs.bottom == rhs.bottom &&
+           lhs.right == rhs.right
+  }
+}
+@available(iOS 11.0, tvOS 11.0, watchOS 4.0, *)
+extension NSDirectionalEdgeInsets : Equatable {
+  @_transparent public static func == (lhs: NSDirectionalEdgeInsets, rhs: NSDirectionalEdgeInsets) -> Bool {
+    return lhs.top == rhs.top &&
+           lhs.leading == rhs.leading &&
+           lhs.bottom == rhs.bottom &&
+           lhs.trailing == rhs.trailing
+  }
+}
+extension UIOffset : Equatable {
+  @_transparent public static func == (lhs: UIOffset, rhs: UIOffset) -> Bool {
+    return lhs.horizontal == rhs.horizontal &&
+           lhs.vertical == rhs.vertical
+  }
+}
+extension UIFloatRange : Equatable {
+  @_transparent public static func == (lhs: UIFloatRange, rhs: UIFloatRange) -> Bool {
+    return lhs.minimum == rhs.minimum &&
+           lhs.maximum == rhs.maximum
+  }
+}
+@available(swift, deprecated: 4.2, message: "Use == operator instead.")
+public func UIEdgeInsetsEqualToEdgeInsets(_ insets1: UIEdgeInsets, _ insets2: UIEdgeInsets) -> Bool
+@available(swift, deprecated: 4.2, message: "Use == operator instead.")
+public func UIOffsetEqualToOffset(_ offset1: UIOffset, _ offset2: UIOffset) -> Bool
+@available(swift, deprecated: 4.2, message: "Use == operator instead.")
+public func UIFloatRangeIsEqualToRange(_ range: UIFloatRange, _ otherRange: UIFloatRange) -> Bool
+extension UIEdgeInsets : Codable {
+  public init(from decoder: Decoder) throws
+  public func encode(to encoder: Encoder) throws
+}
+@available(iOS 11.0, tvOS 11.0, watchOS 4.0, *)
+extension NSDirectionalEdgeInsets : Codable {
+  public init(from decoder: Decoder) throws
+  public func encode(to encoder: Encoder) throws
+}
+extension UIOffset : Codable {
+  public init(from decoder: Decoder) throws
+  public func encode(to encoder: Encoder) throws
+}
+extension UIFloatRange : Codable {
+  public init(from decoder: Decoder) throws
+  public func encode(to encoder: Encoder) throws
+}
+@available(swift 4)
+public protocol _UIKitNumericRawRepresentable : Swift.Comparable, Swift.RawRepresentable where Self.RawValue : Swift.Comparable, Self.RawValue : Swift.Numeric {
+}
+extension _UIKitNumericRawRepresentable {
+  public static func < (lhs: Self, rhs: Self) -> Bool
+  public static func + (lhs: Self, rhs: RawValue) -> Self
+  public static func + (lhs: RawValue, rhs: Self) -> Self
+  public static func - (lhs: Self, rhs: RawValue) -> Self
+  public static func - (lhs: Self, rhs: Self) -> RawValue
+  public static func += (lhs: inout Self, rhs: RawValue)
+  public static func -= (lhs: inout Self, rhs: RawValue)
+}
+extension UIFont.Weight : _UIKitNumericRawRepresentable {
+}
+extension UILayoutPriority : _UIKitNumericRawRepresentable {
+}
+extension UIWindow.Level : _UIKitNumericRawRepresentable {
+}
+@available(swift, obsoleted: 4.2, renamed: "getter:UIDeviceOrientation.isLandscape(self:)")
+public func UIDeviceOrientationIsLandscape(_ orientation: UIDeviceOrientation) -> Bool
+@available(swift, obsoleted: 4.2, renamed: "getter:UIDeviceOrientation.isPortrait(self:)")
+public func UIDeviceOrientationIsPortrait(_ orientation: UIDeviceOrientation) -> Bool
+@available(swift, obsoleted: 4.2, renamed: "getter:UIDeviceOrientation.isValidInterfaceOrientation(self:)")
+public func UIDeviceOrientationIsValidInterfaceOrientation(_ orientation: UIDeviceOrientation) -> Bool
+@available(swift, obsoleted: 4.2, renamed: "getter:UIInterfaceOrientation.isPortrait(self:)")
+public func UIInterfaceOrientationIsPortrait(_ orientation: UIInterfaceOrientation) -> Bool
+@available(swift, obsoleted: 4.2, renamed: "getter:UIInterfaceOrientation.isLandscape(self:)")
+public func UIInterfaceOrientationIsLandscape(_ orientation: UIInterfaceOrientation) -> Bool
+extension UIActionSheet {
+  convenience public init(title: String?, delegate: UIActionSheetDelegate?, cancelButtonTitle: String?, destructiveButtonTitle: String?, otherButtonTitles firstButtonTitle: String, _ moreButtonTitles: String...)
+}
+extension UIAlertView {
+  convenience public init(title: String, message: String, delegate: UIAlertViewDelegate?, cancelButtonTitle: String?, otherButtonTitles firstButtonTitle: String, _ moreButtonTitles: String...)
+}
+extension UIView : _DefaultCustomPlaygroundQuickLookable {
+  @available(*, deprecated, message: "UIView._defaultCustomPlaygroundQuickLook will be removed in a future Swift version")
+  public var _defaultCustomPlaygroundQuickLook: PlaygroundQuickLook {
+    get
+  }
+}
+extension UIColor : _ExpressibleByColorLiteral {
+  @nonobjc required convenience public init(_colorLiteralRed red: Float, green: Float, blue: Float, alpha: Float)
+}
+public typealias _ColorLiteralType = UIColor
+extension UIImage : _ExpressibleByImageLiteral {
+  required convenience public init(imageLiteralResourceName name: String)
+}
+public typealias _ImageLiteralType = UIImage
+extension UIFont.TextStyle {
+  @available(iOS 11.0, watchOS 4.0, tvOS 11.0, *)
+  public var metrics: UIFontMetrics {
+    get
+  }
+}
+extension UIContentSizeCategory {
+  @available(iOS 11.0, tvOS 11.0, *)
+  public var isAccessibilityCategory: Bool {
+    get
+  }
+  @available(iOS 11.0, tvOS 11.0, *)
+  public static func < (left: UIContentSizeCategory, right: UIContentSizeCategory) -> Bool
+  @available(iOS 11.0, tvOS 11.0, *)
+  public static func <= (left: UIContentSizeCategory, right: UIContentSizeCategory) -> Bool
+  @available(iOS 11.0, tvOS 11.0, *)
+  public static func > (left: UIContentSizeCategory, right: UIContentSizeCategory) -> Bool
+  @available(iOS 11.0, tvOS 11.0, *)
+  public static func >= (left: UIContentSizeCategory, right: UIContentSizeCategory) -> Bool
+}
+@available(iOS 11.0, tvOS 11.0, *)
+extension UIFocusEnvironment {
+  @available(iOS 11.0, tvOS 11.0, *)
+  public func contains(_ environment: UIFocusEnvironment) -> Bool
+}
+@available(iOS 11.0, tvOS 11.0, *)
+extension UIFocusItem {
+  @available(iOS 11.0, tvOS 11.0, *)
+  public var isFocused: Bool {
+    get
+  }
+}
+@available(iOS 11.0, *)
+extension UIDragDropSession {
+  @available(iOS 11.0, *)
+  public func canLoadObjects<T>(ofClass: T.Type) -> Bool where T : Swift._ObjectiveCBridgeable, T._ObjectiveCType : Foundation.NSItemProviderReading
+}
+@available(iOS 11.0, *)
+extension UIDropSession {
+  @available(iOS 11.0, *)
+  public func loadObjects<T>(ofClass: T.Type, completion: @escaping ([T]) -> Void) -> Progress where T : Swift._ObjectiveCBridgeable, T._ObjectiveCType : Foundation.NSItemProviderReading
+}
+@available(iOS 11.0, *)
+extension UIPasteConfiguration {
+  @available(iOS 11.0, *)
+  convenience public init<T>(forAccepting _: T.Type) where T : Swift._ObjectiveCBridgeable, T._ObjectiveCType : Foundation.NSItemProviderReading
+  @available(iOS 11.0, *)
+  public func addTypeIdentifiers<T>(forAccepting aClass: T.Type) where T : Swift._ObjectiveCBridgeable, T._ObjectiveCType : Foundation.NSItemProviderReading
+}
+extension UIPasteboard {
+  @available(iOS 11.0, *)
+  public func setObjects<T>(_ objects: [T]) where T : Swift._ObjectiveCBridgeable, T._ObjectiveCType : Foundation.NSItemProviderWriting
+  @available(iOS 11.0, *)
+  public func setObjects<T>(_ objects: [T], localOnly: Bool, expirationDate: Date?) where T : Swift._ObjectiveCBridgeable, T._ObjectiveCType : Foundation.NSItemProviderWriting
+}
+@available(swift, obsoleted: 4.2, renamed: "UIPrintError.Code.notAvailable.rawValue")
+public let UIPrintingNotAvailableError: Swift.Int
+@available(swift, obsoleted: 4.2, renamed: "UIPrintError.Code.noContent.rawValue")
+public let UIPrintNoContentError: Swift.Int
+@available(swift, obsoleted: 4.2, renamed: "UIPrintError.Code.unknownImageFormat.rawValue")
+public let UIPrintUnknownImageFormatError: Swift.Int
+@available(swift, obsoleted: 4.2, renamed: "UIPrintError.Code.jobFailed.rawValue")
+public let UIPrintJobFailedError: Swift.Int
+@available(swift, deprecated: 4.2, message: "Use the overload of UIApplicationMain where the type of the second parameter is UnsafeMutablePointer<UnsafeMutablePointer<Int8>?>, which is the same as the type of CommandLine.unsafeArgv.")
+public func UIApplicationMain(_ argc: Int32, _ argv: UnsafeMutablePointer<UnsafeMutablePointer<Int8>>!, _ principalClassName: String?, _ delegateClassName: String?) -> Int32
+extension UIStoryboard {
+  @available(iOS 13.0, tvOS 13.0, *)
+  public func instantiateInitialViewController<ViewController>(creator: ((NSCoder) -> ViewController?)? = nil) -> ViewController? where ViewController : UIKit.UIViewController
+  @available(iOS 13.0, tvOS 13.0, *)
+  public func instantiateViewController<ViewController>(identifier: String, creator: ((NSCoder) -> ViewController?)? = nil) -> ViewController where ViewController : UIKit.UIViewController
+}
+extension UIAccessibilityTraits : OptionSet {
+  public typealias Element = UIKit.UIAccessibilityTraits
+  public typealias ArrayLiteralElement = UIKit.UIAccessibilityTraits
+}
+extension UITextDirection {
+  public static func storage(_ direction: UITextStorageDirection) -> UITextDirection
+  public static func layout(_ direction: UITextLayoutDirection) -> UITextDirection
+}
+@available(iOS 13.0, tvOS 13.0, *)
+public class NSDiffableDataSourceSnapshot<SectionIdentifierType, ItemIdentifierType> where SectionIdentifierType : Swift.Hashable, ItemIdentifierType : Swift.Hashable {
+  public init()
+  public var numberOfItems: Int {
+    get
+  }
+  public var numberOfSections: Int {
+    get
+  }
+  public var sectionIdentifiers: [SectionIdentifierType] {
+    get
+  }
+  public var itemIdentifiers: [ItemIdentifierType] {
+    get
+  }
+  public func numberOfItems(inSection identifier: SectionIdentifierType) -> Int
+  public func itemIdentifiers(inSection identifier: SectionIdentifierType) -> [ItemIdentifierType]
+  public func sectionIdentifier(containingItem identifier: ItemIdentifierType) -> SectionIdentifierType?
+  public func indexOfItem(_ identifier: ItemIdentifierType) -> Int?
+  public func indexOfSection(_ identifier: SectionIdentifierType) -> Int?
+  public func appendItems(_ identifiers: [ItemIdentifierType], toSection sectionIdentifier: SectionIdentifierType? = nil)
+  public func insertItems(_ identifiers: [ItemIdentifierType], beforeItem beforeIdentifier: ItemIdentifierType)
+  public func insertItems(_ identifiers: [ItemIdentifierType], afterItem afterIdentifier: ItemIdentifierType)
+  public func deleteItems(_ identifiers: [ItemIdentifierType])
+  public func deleteAllItems()
+  public func moveItem(_ identifier: ItemIdentifierType, beforeItem toIdentifier: ItemIdentifierType)
+  public func moveItem(_ identifier: ItemIdentifierType, afterItem toIdentifier: ItemIdentifierType)
+  public func reloadItems(_ identifiers: [ItemIdentifierType])
+  public func appendSections(_ identifiers: [SectionIdentifierType])
+  public func insertSections(_ identifiers: [SectionIdentifierType], beforeSection toIdentifier: SectionIdentifierType)
+  public func insertSections(_ identifiers: [SectionIdentifierType], afterSection toIdentifier: SectionIdentifierType)
+  public func deleteSections(_ identifiers: [SectionIdentifierType])
+  public func moveSection(_ identifier: SectionIdentifierType, beforeSection toIdentifier: SectionIdentifierType)
+  public func moveSection(_ identifier: SectionIdentifierType, afterSection toIdentifier: SectionIdentifierType)
+  public func reloadSections(_ identifiers: [SectionIdentifierType])
+  @objc deinit
+}
+@available(iOS 13.0, tvOS 13.0, *)
+public class UICollectionViewDiffableDataSource<SectionIdentifierType, ItemIdentifierType> : NSObject, UICollectionViewDataSource where SectionIdentifierType : Swift.Hashable, ItemIdentifierType : Swift.Hashable {
+  public typealias CellProvider = (UICollectionView, IndexPath, ItemIdentifierType) -> UICollectionViewCell?
+  public typealias SupplementaryViewProvider = (UICollectionView, String, IndexPath) -> UICollectionReusableView?
+  public var supplementaryViewProvider: SupplementaryViewProvider? {
+    get
+    set
+  }
+  public init(collectionView: UICollectionView, cellProvider: @escaping CellProvider)
+  public func apply(_ snapshot: NSDiffableDataSourceSnapshot<SectionIdentifierType, ItemIdentifierType>, animatingDifferences: Bool = true)
+  public func snapshot() -> NSDiffableDataSourceSnapshot<SectionIdentifierType, ItemIdentifierType>
+  public func itemIdentifier(for indexPath: IndexPath) -> ItemIdentifierType?
+  public func indexPath(for itemIdentifier: ItemIdentifierType) -> IndexPath?
+  @objc public func numberOfSections(in collectionView: UICollectionView) -> Int
+  @objc public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+  @objc public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+  @objc public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView
+  @objc override dynamic public init()
+  @objc deinit
+}
+@available(iOS 13.0, tvOS 13.0, *)
+public class UITableViewDiffableDataSource<SectionIdentifierType, ItemIdentifierType> : NSObject, UITableViewDataSource where SectionIdentifierType : Swift.Hashable, ItemIdentifierType : Swift.Hashable {
+  public typealias CellProvider = (UITableView, IndexPath, ItemIdentifierType) -> UITableViewCell?
+  public init(tableView: UITableView, cellProvider: @escaping CellProvider)
+  public func apply(_ snapshot: NSDiffableDataSourceSnapshot<SectionIdentifierType, ItemIdentifierType>, animatingDifferences: Bool = true)
+  public func snapshot() -> NSDiffableDataSourceSnapshot<SectionIdentifierType, ItemIdentifierType>
+  public func itemIdentifier(for indexPath: IndexPath) -> ItemIdentifierType?
+  public func indexPath(for itemIdentifier: ItemIdentifierType) -> IndexPath?
+  public var defaultRowAnimation: UITableView.RowAnimation {
+    get
+    set
+  }
+  @objc public func numberOfSections(in tableView: UITableView) -> Int
+  @objc public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+  @objc public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension IndexPath {
+  public init(row: Int, section: Int)
+  public var section: Int {
+    get
+    set
+  }
+  public var row: Int {
+    get
+    set
+  }
+}
+extension IndexPath {
+  public init(item: Int, section: Int)
+  public var item: Int {
+    get
+    set
+  }
+}
+extension URLResourceValues {
+  @available(iOS 8.0, *)
+  public var thumbnailDictionary: [URLThumbnailDictionaryItem : UIImage]? {
+    get
+  }
+}
+extension UIEdgeInsets : _ObjectiveCBridgeable {
+  public func _bridgeToObjectiveC() -> NSValue
+  public static func _forceBridgeFromObjectiveC(_ source: NSValue, result: inout UIEdgeInsets?)
+  public static func _conditionallyBridgeFromObjectiveC(_ source: NSValue, result: inout UIEdgeInsets?) -> Bool
+  public static func _unconditionallyBridgeFromObjectiveC(_ source: NSValue?) -> UIEdgeInsets
+  public typealias _ObjectiveCType = Foundation.NSValue
+}
+@available(iOS 11.0, tvOS 11.0, watchOS 4.0, *)
+extension NSDirectionalEdgeInsets : _ObjectiveCBridgeable {
+  public func _bridgeToObjectiveC() -> NSValue
+  public static func _forceBridgeFromObjectiveC(_ source: NSValue, result: inout NSDirectionalEdgeInsets?)
+  public static func _conditionallyBridgeFromObjectiveC(_ source: NSValue, result: inout NSDirectionalEdgeInsets?) -> Bool
+  public static func _unconditionallyBridgeFromObjectiveC(_ source: NSValue?) -> NSDirectionalEdgeInsets
+  public typealias _ObjectiveCType = Foundation.NSValue
+}
+extension UIOffset : _ObjectiveCBridgeable {
+  public func _bridgeToObjectiveC() -> NSValue
+  public static func _forceBridgeFromObjectiveC(_ source: NSValue, result: inout UIOffset?)
+  public static func _conditionallyBridgeFromObjectiveC(_ source: NSValue, result: inout UIOffset?) -> Bool
+  public static func _unconditionallyBridgeFromObjectiveC(_ source: NSValue?) -> UIOffset
+  public typealias _ObjectiveCType = Foundation.NSValue
+}

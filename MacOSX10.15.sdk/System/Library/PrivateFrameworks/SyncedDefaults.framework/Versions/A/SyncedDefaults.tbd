@@ -1,0 +1,13 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 637AB67A-6FC2-360D-9A00-7B5B770E383F', 'x86_64: 637AB67A-6FC2-360D-9A00-7B5B770E383F' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/SyncedDefaults.framework/Versions/A/SyncedDefaults'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _SYDRemotePreferencesSourceConfigurationDidChangeNotification, 
+                       _SYDRemotePreferencesSourceDidChangeNotification, _SYDUbiquitousKeyValueStoreDidChangeExternallyNotification, 
+                       _SYDXPCCreateCFObjectFromXPCObject, _SYDXPCCreateXPCObjectFromCFObject, 
+                       _SyncedDefaultsVersionNumber, _SyncedDefaultsVersionString ]
+    objc-classes:    [ SYDClient, SYDClientToDaemonConnection, SYDJournal, SYDRemotePreferencesSource ]
+...

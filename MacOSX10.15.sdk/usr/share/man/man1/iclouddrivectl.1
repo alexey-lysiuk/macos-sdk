@@ -1,0 +1,28 @@
+.\""Copyright (c) 2014 Apple Inc. All Rights Reserved.
+.Dd 22/04/14
+.Dt ICLOUDDRIVECTL 1
+.Os Mac OS X
+.Sh NAME
+.Nm iclouddrivectl
+.Nd Manage the iCloud Drive File Provider
+.Sh SYNOPSIS
+.Nm
+.Ao Ar command Ac
+.Op command-options and arguments
+.Sh DESCRIPTION
+.Nm
+understands the following commands:
+.Pp
+.Sy log
+.Op options
+.Op Ao Ar command Ac
+.Pp
+.Sy dump
+.Op options
+.Op Ao Ar container Ac
+    dump the iCloud Drive databases
+.Pp
+    -o,--output=<file-path>
+                         redirect output to <file-path>
+    -d,--database-path=<db-path>
+                         Use the database at <db-path>

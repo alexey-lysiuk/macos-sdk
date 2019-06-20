@@ -1,0 +1,1869 @@
+// swift-interface-format-version: 1.0
+// swift-tools-version: Apple Swift version 5.1 effective-4.1.50 (swiftlang-1100.8.32.26 clang-1100.0.18.2)
+// swift-module-flags: -target x86_64-apple-ios13.0-macabi -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftAccelerate -swift-version 4 -O -enforce-exclusivity=unchecked -module-name Accelerate
+@_exported import Accelerate
+@_exported import Accelerate
+@_exported import Accelerate.vecLib.BNNS
+import Swift
+public enum vImage {
+}
+public enum vDSP {
+}
+public enum vForce {
+}
+extension vDSP {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public struct VectorizableFloat {
+    public typealias Scalar = Float
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public struct VectorizableDouble {
+    public typealias Scalar = Double
+  }
+}
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+extension BNNSDataType {
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public static var float16: BNNSDataType {
+    get
+  }
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public static var float: BNNSDataType {
+    get
+  }
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public static var int8: BNNSDataType {
+    get
+  }
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public static var int16: BNNSDataType {
+    get
+  }
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public static var int32: BNNSDataType {
+    get
+  }
+  @available(OSX 10.13, iOS 11.0, tvOS 11.0, watchOS 4.0, *)
+  public static var uint8: BNNSDataType {
+    get
+  }
+  @available(OSX 10.13, iOS 11.0, tvOS 11.0, watchOS 4.0, *)
+  public static var uint16: BNNSDataType {
+    get
+  }
+  @available(OSX 10.13, iOS 11.0, tvOS 11.0, watchOS 4.0, *)
+  public static var uint32: BNNSDataType {
+    get
+  }
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public static var indexed8: BNNSDataType {
+    get
+  }
+}
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@available(*, deprecated, renamed: "BNNSDataType.float16")
+public var BNNSDataTypeFloat16: Accelerate.BNNSDataType
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@available(*, deprecated, renamed: "BNNSDataType.float")
+public var BNNSDataTypeFloat32: Accelerate.BNNSDataType
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@available(*, deprecated, renamed: "BNNSDataType.int8")
+public var BNNSDataTypeInt8: Accelerate.BNNSDataType
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@available(*, deprecated, renamed: "BNNSDataType.int16")
+public var BNNSDataTypeInt16: Accelerate.BNNSDataType
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@available(*, deprecated, renamed: "BNNSDataType.int32")
+public var BNNSDataTypeInt32: Accelerate.BNNSDataType
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@available(*, deprecated, renamed: "BNNSDataType.indexed8")
+public var BNNSDataTypeIndexed8: Accelerate.BNNSDataType
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+extension BNNSPoolingFunction {
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public static var max: BNNSPoolingFunction {
+    get
+  }
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public static var average: BNNSPoolingFunction {
+    get
+  }
+}
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@available(*, deprecated, renamed: "BNNSPoolingFunction.max")
+public var BNNSPoolingFunctionMax: Accelerate.BNNSPoolingFunction
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@available(*, deprecated, renamed: "BNNSPoolingFunction.average")
+public var BNNSPoolingFunctionAverage: Accelerate.BNNSPoolingFunction
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+extension BNNSActivationFunction {
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public static var identity: BNNSActivationFunction {
+    get
+  }
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public static var rectifiedLinear: BNNSActivationFunction {
+    get
+  }
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public static var leakyRectifiedLinear: BNNSActivationFunction {
+    get
+  }
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public static var sigmoid: BNNSActivationFunction {
+    get
+  }
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public static var tanh: BNNSActivationFunction {
+    get
+  }
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public static var scaledTanh: BNNSActivationFunction {
+    get
+  }
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public static var abs: BNNSActivationFunction {
+    get
+  }
+  @available(OSX 10.13, iOS 11.0, tvOS 11.0, watchOS 4.0, *)
+  public static var linear: BNNSActivationFunction {
+    get
+  }
+  @available(OSX 10.13, iOS 11.0, tvOS 11.0, watchOS 4.0, *)
+  public static var clamp: BNNSActivationFunction {
+    get
+  }
+  @available(OSX 10.13, iOS 11.0, tvOS 11.0, watchOS 4.0, *)
+  public static var integerLinearSaturate: BNNSActivationFunction {
+    get
+  }
+  @available(OSX 10.13, iOS 11.0, tvOS 11.0, watchOS 4.0, *)
+  public static var integerLinearSaturatePerChannel: BNNSActivationFunction {
+    get
+  }
+  @available(OSX 10.13, iOS 11.0, tvOS 11.0, watchOS 4.0, *)
+  public static var softmax: BNNSActivationFunction {
+    get
+  }
+}
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@available(*, deprecated, renamed: "BNNSActivationFunction.identity")
+public var BNNSActivationFunctionIdentity: Accelerate.BNNSActivationFunction
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@available(*, deprecated, renamed: "BNNSActivationFunction.rectifiedLinear")
+public var BNNSActivationFunctionRectifiedLinear: Accelerate.BNNSActivationFunction
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@available(*, deprecated, renamed: "BNNSActivationFunction.leakyRectifiedLinear")
+public var BNNSActivationFunctionLeakyRectifiedLinear: Accelerate.BNNSActivationFunction
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@available(*, deprecated, renamed: "BNNSActivationFunction.sigmoid")
+public var BNNSActivationFunctionSigmoid: Accelerate.BNNSActivationFunction
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@available(*, deprecated, renamed: "BNNSActivationFunction.tanh")
+public var BNNSActivationFunctionTanh: Accelerate.BNNSActivationFunction
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@available(*, deprecated, renamed: "BNNSActivationFunction.scaledTanh")
+public var BNNSActivationFunctionScaledTanh: Accelerate.BNNSActivationFunction
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@available(*, deprecated, renamed: "BNNSActivationFunction.abs")
+public var BNNSActivationFunctionAbs: Accelerate.BNNSActivationFunction
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+extension BNNSFlags {
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public static var useClientPointer: BNNSFlags {
+    get
+  }
+}
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@available(*, deprecated, renamed: "BNNSFlags.useClientPointer")
+public var BNNSFlagsUseClientPtr: Accelerate.BNNSFlags
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+extension BNNSImageStackDescriptor {
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public init(width: Int, height: Int, channels: Int, row_stride: Int, image_stride: Int, data_type: BNNSDataType)
+}
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+extension BNNSVectorDescriptor {
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public init(size: Int, data_type: BNNSDataType)
+}
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+extension BNNSLayerData {
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public init(data: UnsafeRawPointer?, data_type: BNNSDataType, data_scale: Float = 1, data_bias: Float = 0)
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public static var zero: BNNSLayerData {
+    get
+  }
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public static func indexed8(data: UnsafePointer<Int8>?, data_table: UnsafePointer<Float>) -> BNNSLayerData
+}
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+extension BNNSActivation {
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public init(function: BNNSActivationFunction, alpha: Float = .nan, beta: Float = .nan)
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public static var identity: BNNSActivation {
+    get
+  }
+  @available(OSX 10.13, iOS 11.0, tvOS 11.0, watchOS 4.0, *)
+  public static func integerLinearSaturate(scale: Int32 = 1, offset: Int32 = 0, shift: Int32 = 0) -> BNNSActivation
+  @available(OSX 10.13, iOS 11.0, tvOS 11.0, watchOS 4.0, *)
+  public static func integerLinearSaturatePerChannel(scale: UnsafePointer<Int32>, offset: UnsafePointer<Int32>, shift: UnsafePointer<Int32>) -> BNNSActivation
+}
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+extension BNNSConvolutionLayerParameters {
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public init(x_stride: Int, y_stride: Int, x_padding: Int, y_padding: Int, k_width: Int, k_height: Int, in_channels: Int, out_channels: Int, weights: BNNSLayerData)
+}
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+extension BNNSPoolingLayerParameters {
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public init(x_stride: Int, y_stride: Int, x_padding: Int, y_padding: Int, k_width: Int, k_height: Int, in_channels: Int, out_channels: Int, pooling_function: BNNSPoolingFunction)
+}
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+extension BNNSFullyConnectedLayerParameters {
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public init(in_size: Int, out_size: Int, weights: BNNSLayerData)
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension vImage {
+  public enum Error : Int, Swift.Error {
+    case noError
+    case roiLargerThanInputBuffer
+    case invalidKernelSize
+    case invalidEdgeStyle
+    case invalidOffset_X
+    case invalidOffset_Y
+    case memoryAllocationError
+    case nullPointerArgument
+    case invalidParameter
+    case bufferSizeMismatch
+    case unknownFlagsBit
+    case internalError
+    case invalidRowBytes
+    case invalidImageFormat
+    case colorSyncIsAbsent
+    case outOfPlaceOperationRequired
+    case invalidImageObject
+    case invalidCVImageFormat
+    case unsupportedConversion
+    case coreVideoIsAbsent
+    public init(vImageError: vImage_Error)
+    public typealias RawValue = Swift.Int
+    public init?(rawValue: Swift.Int)
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension vImage {
+  public struct Options : OptionSet {
+    public init(rawValue: vImage_Flags)
+    public let rawValue: vImage_Flags
+    public static let noFlags: Accelerate.vImage.Options
+    public static let leaveAlphaUnchanged: Accelerate.vImage.Options
+    public static let copyInPlace: Accelerate.vImage.Options
+    public static let backgroundColorFill: Accelerate.vImage.Options
+    public static let imageExtend: Accelerate.vImage.Options
+    public static let doNotTile: Accelerate.vImage.Options
+    public static let highQualityResampling: Accelerate.vImage.Options
+    public static let truncateKernel: Accelerate.vImage.Options
+    public static let getTempBufferSize: Accelerate.vImage.Options
+    public static let printDiagnosticsToConsole: Accelerate.vImage.Options
+    public static let noAllocate: Accelerate.vImage.Options
+    public static let hdrContent: Accelerate.vImage.Options
+    public static let doNotClamp: Accelerate.vImage.Options
+    public var flags: vImage_Flags {
+      get
+    }
+    public typealias Element = Accelerate.vImage.Options
+    public typealias ArrayLiteralElement = Accelerate.vImage.Options
+    public typealias RawValue = Accelerate.vImage_Flags
+  }
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension vImage_Buffer {
+  public var size: CGSize {
+    get
+  }
+  public static func preferredAlignmentAndRowBytes(width: Int, height: Int, bitsPerPixel: UInt32) throws -> (alignment: Int, rowBytes: Int)
+  public init(width: Int, height: Int, bitsPerPixel: UInt32) throws
+  public func free()
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension vImage_Buffer {
+  public init(cgImage: CGImage, flags options: vImage.Options = .noFlags) throws
+  public init(cgImage: CGImage, format: vImage_CGImageFormat, flags options: vImage.Options = .noFlags) throws
+  public func createCGImage(format: vImage_CGImageFormat, flags options: vImage.Options = .noFlags) throws -> CGImage
+  public func copy(destinationBuffer: inout vImage_Buffer, flags options: vImage.Options = .noFlags) throws
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension vImageCVImageFormat {
+  public static func make(format: Format, matrix: vImage_ARGBToYpCbCrMatrix, chromaSiting: ChromaSiting, colorSpace: CGColorSpace, alphaIsOpaqueHint: Bool) -> vImageCVImageFormat?
+  public static func make(buffer: CVPixelBuffer) -> vImageCVImageFormat?
+  public var alphaIsOpaqueHint: Bool {
+    get
+    set
+  }
+  public var channelCount: UInt32 {
+    get
+  }
+  public var channels: [vImage.BufferType] {
+    get
+  }
+  public func channelDescription(bufferType: vImage.BufferType) -> vImageChannelDescription?
+  public var chromaSiting: ChromaSiting? {
+    get
+    set
+  }
+  public var colorSpace: CGColorSpace? {
+    get
+    set
+  }
+  public var formatCode: UInt32 {
+    get
+  }
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension vImage {
+  public enum BufferType : Int {
+    case alpha
+    case coreGraphics
+    case cmykBlack
+    case cmykCyan
+    case cmykMagenta
+    case cmykYellow
+    case YCbCr
+    case Cb
+    case Cr
+    case chroma
+    case chunky
+    case indexed
+    case labA
+    case labB
+    case labL
+    case luminance
+    case monochrome
+    case rgbRed
+    case rgbGreen
+    case rgbBlue
+    case xyzX
+    case xyzY
+    case xyzZ
+    public init?(rawValue: Int)
+    public init?(bufferTypeCode: Int, model: CGColorSpaceModel?)
+    public var bufferTypeCode: vImageBufferTypeCode {
+      get
+    }
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension vImageCVImageFormat {
+  public enum Format {
+    case format1Monochrome
+    case format2Indexed
+    case format4Indexed
+    case format8Indexed
+    case format1IndexedGray_WhiteIsZero
+    case format2IndexedGray_WhiteIsZero
+    case format4IndexedGray_WhiteIsZero
+    case format8IndexedGray_WhiteIsZero
+    case format16BE555
+    case format16LE555
+    case format16LE5551
+    case format16BE565
+    case format16LE565
+    case format24RGB
+    case format24BGR
+    case format32ARGB
+    case format32BGRA
+    case format32ABGR
+    case format32RGBA
+    case format64ARGB
+    case format48RGB
+    case format32AlphaGray
+    case format16Gray
+    case format30RGB
+    case format422YpCbCr8
+    case format4444YpCbCrA8
+    case format4444YpCbCrA8R
+    case format4444AYpCbCr8
+    case format4444AYpCbCr16
+    case format444YpCbCr8
+    case format422YpCbCr16
+    case format422YpCbCr10
+    case format444YpCbCr10
+    case format420YpCbCr8Planar
+    case format420YpCbCr8PlanarFullRange
+    case format422YpCbCr_4A_8BiPlanar
+    case format420YpCbCr8BiPlanarVideoRange
+    case format420YpCbCr8BiPlanarFullRange
+    case format422YpCbCr8_yuvs
+    case format422YpCbCr8FullRange
+    case formatOneComponent8
+    case formatTwoComponent8
+    case format30RGBLEPackedWideGamut
+    case formatARGB2101010LEPacked
+    case formatOneComponent16Half
+    case formatOneComponent32Float
+    case formatTwoComponent16Half
+    case formatTwoComponent32Float
+    case format64RGBAHalf
+    case format128RGBAFloat
+    case format14Bayer_GRBG
+    case format14Bayer_RGGB
+    case format14Bayer_BGGR
+    case format14Bayer_GBRG
+    case formatDisparityFloat16
+    case formatDisparityFloat32
+    case formatDepthFloat16
+    case formatDepthFloat32
+    case format420YpCbCr10BiPlanarVideoRange
+    case format422YpCbCr10BiPlanarVideoRange
+    case format444YpCbCr10BiPlanarVideoRange
+    case format420YpCbCr10BiPlanarFullRange
+    case format422YpCbCr10BiPlanarFullRange
+    case format444YpCbCr10BiPlanarFullRange
+    public static func == (a: Accelerate.vImageCVImageFormat.Format, b: Accelerate.vImageCVImageFormat.Format) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+  public enum ChromaSiting {
+    case left
+    case center
+    case topLeft
+    case top
+    case bottomLeft
+    case bottom
+    case dv420
+    public static func == (a: Accelerate.vImageCVImageFormat.ChromaSiting, b: Accelerate.vImageCVImageFormat.ChromaSiting) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension vImage_CGImageFormat {
+  public init?(cgImage: CGImage)
+  public init?(bitsPerComponent: Int, bitsPerPixel: Int, colorSpace: CGColorSpace, bitmapInfo: CGBitmapInfo, renderingIntent: CGColorRenderingIntent = .defaultIntent)
+  public var componentCount: Int {
+    get
+  }
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension vImageConverter {
+  public func sourceBuffers(colorSpace: CGColorSpace) -> [vImage.BufferType?]
+  public func destinationBuffers(colorSpace: CGColorSpace) -> [vImage.BufferType?]
+  public var sourceBufferCount: Int {
+    get
+  }
+  public var destinationBufferCount: Int {
+    get
+  }
+  public func mustOperateOutOfPlace(source: vImage_Buffer, destination: vImage_Buffer, flags options: vImage.Options = .noFlags) throws -> Bool
+  public static func make(sourceFormat: vImage_CGImageFormat, destinationFormat: vImage_CGImageFormat, flags options: vImage.Options = .noFlags) throws -> vImageConverter
+  public static func make(sourceFormat: vImage_CGImageFormat, destinationFormat: vImageCVImageFormat, flags options: vImage.Options = .noFlags) throws -> vImageConverter
+  public static func make(sourceFormat: vImageCVImageFormat, destinationFormat: vImage_CGImageFormat, flags options: vImage.Options = .noFlags) throws -> vImageConverter
+  public func convert(source: vImage_Buffer, destination: inout vImage_Buffer, flags options: vImage.Options = .noFlags) throws
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public protocol AccelerateBuffer {
+  associatedtype Element
+  var count: Int { get }
+  func withUnsafeBufferPointer<R>(_ body: (UnsafeBufferPointer<Element>) throws -> R) rethrows -> R
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public protocol AccelerateMutableBuffer : Accelerate.AccelerateBuffer {
+  mutating func withUnsafeMutableBufferPointer<R>(_ body: (inout UnsafeMutableBufferPointer<Element>) throws -> R) rethrows -> R
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension AccelerateBuffer where Self : Swift.Collection {
+  public func withUnsafeBufferPointer<R>(_ body: (UnsafeBufferPointer<Element>) throws -> R) rethrows -> R
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension AccelerateMutableBuffer where Self : Swift.MutableCollection {
+  mutating public func withUnsafeMutableBufferPointer<R>(_ body: (inout UnsafeMutableBufferPointer<Element>) throws -> R) rethrows -> R
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension Array : AccelerateMutableBuffer {
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension ContiguousArray : AccelerateMutableBuffer {
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension ArraySlice : AccelerateMutableBuffer {
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension UnsafeBufferPointer : AccelerateBuffer {
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension UnsafeMutableBufferPointer : AccelerateMutableBuffer {
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension Slice : AccelerateBuffer where Base : Accelerate.AccelerateBuffer {
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension Slice : AccelerateMutableBuffer where Base : Accelerate.AccelerateMutableBuffer, Base : Swift.MutableCollection {
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public struct Quadrature {
+  public init(integrator: Integrator, absoluteTolerance: Double = 1.0e-8, relativeTolerance: Double = 1.0e-2)
+  public var absoluteTolerance: Double {
+    get
+    set
+  }
+  public var relativeTolerance: Double {
+    get
+    set
+  }
+  public func integrate(over interval: ClosedRange<Double>, integrand: (_ input: UnsafeBufferPointer<Double>, _ result: UnsafeMutableBufferPointer<Double>) -> ()) -> Result<(integralResult: Double, estimatedAbsoluteError: Double), Error>
+  public func integrate(over interval: ClosedRange<Double>, integrand: (Double) -> Double) -> Result<(integralResult: Double, estimatedAbsoluteError: Double), Error>
+  public enum Integrator {
+    case qng
+    public static let nonAdaptive: Accelerate.Quadrature.Integrator
+    case qag(pointsPerInterval: QAGPointsPerInterval, maxIntervals: Int)
+    public static func adaptive(pointsPerInterval: QAGPointsPerInterval, maxIntervals: Int) -> Integrator
+    case qags(maxIntervals: Int)
+    public static func adaptiveWithSingularities(maxIntervals: Int) -> Integrator
+  }
+  public struct QAGPointsPerInterval {
+    public let points: Int
+    public static let fifteen: Accelerate.Quadrature.QAGPointsPerInterval
+    public static let twentyOne: Accelerate.Quadrature.QAGPointsPerInterval
+    public static let thirtyOne: Accelerate.Quadrature.QAGPointsPerInterval
+    public static let fortyOne: Accelerate.Quadrature.QAGPointsPerInterval
+    public static let fiftyOne: Accelerate.Quadrature.QAGPointsPerInterval
+    public static let sixtyOne: Accelerate.Quadrature.QAGPointsPerInterval
+  }
+  public enum Error : Swift.Error {
+    case generic
+    case invalidArgument
+    case `internal`
+    case integrateMaxEval
+    case badIntegrandBehaviour
+    public init(quadratureStatus: quadrature_status)
+    public var errorDescription: String {
+      get
+    }
+    public static func == (a: Accelerate.Quadrature.Error, b: Accelerate.Quadrature.Error) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+}
+extension vDSP {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func add<U>(_ scalar: Float, _ vector: U) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func add<U, V>(_ scalar: Float, _ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func add<U>(_ scalar: Double, _ vector: U) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func add<U, V>(_ scalar: Double, _ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func add<T, U>(_ vectorA: T, _ vectorB: U) -> [Float] where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, T.Element == Swift.Float, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func add<T, U, V>(_ vectorA: T, _ vectorB: U, result: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Float, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func add<T, U>(_ vectorA: T, _ vectorB: U) -> [Double] where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, T.Element == Swift.Double, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func add<T, U, V>(_ vectorA: T, _ vectorB: U, result: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Double, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func subtract<T, U>(_ vectorA: U, _ vectorB: T) -> [Float] where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, T.Element == Swift.Float, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func subtract<T, U, V>(_ vectorA: U, _ vectorB: T, result: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Float, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func subtract<T, U>(_ vectorA: U, _ vectorB: T) -> [Double] where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, T.Element == Swift.Double, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func subtract<T, U, V>(_ vectorA: U, _ vectorB: T, result: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Double, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func multiply<U>(_ scalar: Float, _ vector: U) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func multiply<U, V>(_ scalar: Float, _ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func multiply<U>(_ scalar: Double, _ vector: U) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func multiply<U, V>(_ scalar: Double, _ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func multiply<T, U>(_ vectorA: T, _ vectorB: U) -> [Float] where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, T.Element == Swift.Float, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func multiply<T, U, V>(_ vectorA: T, _ vectorB: U, result: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Float, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func multiply<T, U>(_ vectorA: T, _ vectorB: U) -> [Double] where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, T.Element == Swift.Double, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func multiply<T, U, V>(_ vectorA: T, _ vectorB: U, result: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Double, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func divide<U>(_ vector: U, _ scalar: Float) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func divide<U, V>(_ vector: U, _ scalar: Float, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func divide<U>(_ vector: U, _ scalar: Double) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func divide<U, V>(_ vector: U, _ scalar: Double, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func divide<U>(_ scalar: Float, _ vector: U) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func divide<U, V>(_ scalar: Float, _ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func divide<U>(_ scalar: Double, _ vector: U) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func divide<U, V>(_ scalar: Double, _ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func divide<T, U>(_ vectorA: T, _ vectorB: U) -> [Float] where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, T.Element == Swift.Float, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func divide<T, U, V>(_ vectorA: T, _ vectorB: U, result: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Float, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func divide<T, U>(_ vectorA: T, _ vectorB: U) -> [Double] where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, T.Element == Swift.Double, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func divide<T, U, V>(_ vectorA: T, _ vectorB: U, result: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Double, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func addSubtract<S, T, U, V>(_ vectorA: S, _ vectorB: T, addResult: inout U, subtractResult: inout V) where S : Accelerate.AccelerateBuffer, T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateMutableBuffer, V : Accelerate.AccelerateMutableBuffer, S.Element == Swift.Float, T.Element == Swift.Float, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func addSubtract<S, T, U, V>(_ vectorA: S, _ vectorB: T, addResult: inout U, subtractResult: inout V) where S : Accelerate.AccelerateBuffer, T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateMutableBuffer, V : Accelerate.AccelerateMutableBuffer, S.Element == Swift.Double, T.Element == Swift.Double, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func multiply<T, U>(addition: (a: T, b: U), _ scalar: Float) -> [Float] where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, T.Element == Swift.Float, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func multiply<T, U, V>(addition: (a: T, b: U), _ scalar: Float, result: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Float, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func multiply<T, U>(addition: (a: T, b: U), _ scalar: Double) -> [Double] where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, T.Element == Swift.Double, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func multiply<T, U, V>(addition: (a: T, b: U), _ scalar: Double, result: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Double, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func multiply<S, T, U>(addition: (a: S, b: T), _ vector: U) -> [Float] where S : Accelerate.AccelerateBuffer, T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, S.Element == Swift.Float, T.Element == Swift.Float, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func multiply<S, T, U, V>(addition: (a: S, b: T), _ vector: U, result: inout V) where S : Accelerate.AccelerateBuffer, T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, S.Element == Swift.Float, T.Element == Swift.Float, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func multiply<S, T, U>(addition: (a: S, b: T), _ vector: U) -> [Double] where S : Accelerate.AccelerateBuffer, T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, S.Element == Swift.Double, T.Element == Swift.Double, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func multiply<S, T, U, V>(addition: (a: S, b: T), _ vector: U, result: inout V) where S : Accelerate.AccelerateBuffer, T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, S.Element == Swift.Double, T.Element == Swift.Double, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func multiply<T, U>(subtraction: (a: T, b: U), _ scalar: Float) -> [Float] where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, T.Element == Swift.Float, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func multiply<T, U, V>(subtraction: (a: T, b: U), _ scalar: Float, result: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Float, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func multiply<T, U>(subtraction: (a: T, b: U), _ scalar: Double) -> [Double] where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, T.Element == Swift.Double, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func multiply<T, U, V>(subtraction: (a: T, b: U), _ scalar: Double, result: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Double, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func multiply<S, T, U>(subtraction: (a: S, b: T), _ vector: U) -> [Float] where S : Accelerate.AccelerateBuffer, T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, S.Element == Swift.Float, T.Element == Swift.Float, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func multiply<S, T, U, V>(subtraction: (a: S, b: T), _ vector: U, result: inout V) where S : Accelerate.AccelerateBuffer, T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, S.Element == Swift.Float, T.Element == Swift.Float, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func multiply<S, T, U>(subtraction: (a: S, b: T), _ vector: U) -> [Double] where S : Accelerate.AccelerateBuffer, T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, S.Element == Swift.Double, T.Element == Swift.Double, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func multiply<S, T, U, V>(subtraction: (a: S, b: T), _ vector: U, result: inout V) where S : Accelerate.AccelerateBuffer, T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, S.Element == Swift.Double, T.Element == Swift.Double, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func add<T, U>(multiplication: (a: T, b: U), _ scalar: Float) -> [Float] where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, T.Element == Swift.Float, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func add<T, U, V>(multiplication: (a: T, b: U), _ scalar: Float, result: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Float, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func add<T, U>(multiplication: (a: T, b: U), _ scalar: Double) -> [Double] where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, T.Element == Swift.Double, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func add<T, U, V>(multiplication: (a: T, b: U), _ scalar: Double, result: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Double, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func add<T, U>(multiplication: (a: T, b: Float), _ vector: U) -> [Float] where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, T.Element == Swift.Float, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func add<T, U, V>(multiplication: (a: T, b: Float), _ vector: U, result: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Float, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func add<T, U>(multiplication: (a: T, b: Double), _ vector: U) -> [Double] where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, T.Element == Swift.Double, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func add<T, U, V>(multiplication: (a: T, b: Double), _ vector: U, result: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Double, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func add<S, T, U>(multiplication: (a: S, b: T), _ vector: U) -> [Float] where S : Accelerate.AccelerateBuffer, T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, S.Element == Swift.Float, T.Element == Swift.Float, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func add<S, T, U, V>(multiplication: (a: S, b: T), _ vector: U, result: inout V) where S : Accelerate.AccelerateBuffer, T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, S.Element == Swift.Float, T.Element == Swift.Float, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func add<S, T, U>(multiplication: (a: S, b: T), _ vector: U) -> [Double] where S : Accelerate.AccelerateBuffer, T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, S.Element == Swift.Double, T.Element == Swift.Double, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func add<S, T, U, V>(multiplication: (a: S, b: T), _ vector: U, result: inout V) where S : Accelerate.AccelerateBuffer, T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, S.Element == Swift.Double, T.Element == Swift.Double, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func subtract<S, T, U>(multiplication: (a: T, b: U), _ vector: S) -> [Float] where S : Accelerate.AccelerateBuffer, T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, S.Element == Swift.Float, T.Element == Swift.Float, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func subtract<S, T, U, V>(multiplication: (a: T, b: U), _ vector: S, result: inout V) where S : Accelerate.AccelerateBuffer, T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, S.Element == Swift.Float, T.Element == Swift.Float, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func subtract<S, T, U>(multiplication: (a: T, b: U), _ vector: S) -> [Double] where S : Accelerate.AccelerateBuffer, T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, S.Element == Swift.Double, T.Element == Swift.Double, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func subtract<S, T, U, V>(multiplication: (a: T, b: U), _ vector: S, result: inout V) where S : Accelerate.AccelerateBuffer, T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, S.Element == Swift.Double, T.Element == Swift.Double, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func add<T, U>(multiplication multiplicationAB: (a: T, b: Float), multiplication multiplicationCD: (c: U, d: Float)) -> [Float] where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, T.Element == Swift.Float, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func add<T, U, V>(multiplication multiplicationAB: (a: T, b: Float), multiplication multiplicationCD: (c: U, d: Float), result: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Float, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func add<T, U>(multiplication multiplicationAB: (a: T, b: Double), multiplication multiplicationCD: (c: U, d: Double)) -> [Double] where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, T.Element == Swift.Double, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func add<T, U, V>(multiplication multiplicationAB: (a: T, b: Double), multiplication multiplicationCD: (c: U, d: Double), result: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Double, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func add<R, S, T, U>(multiplication multiplicationAB: (a: R, b: S), multiplication multiplicationCD: (c: T, d: U)) -> [Float] where R : Accelerate.AccelerateBuffer, S : Accelerate.AccelerateBuffer, T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, R.Element == Swift.Float, S.Element == Swift.Float, T.Element == Swift.Float, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func add<R, S, T, U, V>(multiplication multiplicationAB: (a: R, b: S), multiplication multiplicationCD: (c: T, d: U), result: inout V) where R : Accelerate.AccelerateBuffer, S : Accelerate.AccelerateBuffer, T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, R.Element == Swift.Float, S.Element == Swift.Float, T.Element == Swift.Float, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func add<R, S, T, U>(multiplication multiplicationAB: (a: R, b: S), multiplication multiplicationCD: (c: T, d: U)) -> [Double] where R : Accelerate.AccelerateBuffer, S : Accelerate.AccelerateBuffer, T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, R.Element == Swift.Double, S.Element == Swift.Double, T.Element == Swift.Double, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func add<R, S, T, U, V>(multiplication multiplicationAB: (a: R, b: S), multiplication multiplicationCD: (c: T, d: U), result: inout V) where R : Accelerate.AccelerateBuffer, S : Accelerate.AccelerateBuffer, T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, R.Element == Swift.Double, S.Element == Swift.Double, T.Element == Swift.Double, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func multiply<S, T, U>(addition additionAB: (a: S, b: T), addition additionCD: (c: U, d: U)) -> [Float] where S : Accelerate.AccelerateBuffer, T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, S.Element == Swift.Float, T.Element == Swift.Float, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func multiply<S, T, U, V>(addition additionAB: (a: S, b: T), addition additionCD: (c: U, d: U), result: inout V) where S : Accelerate.AccelerateBuffer, T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, S.Element == Swift.Float, T.Element == Swift.Float, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func multiply<S, T, U>(addition additionAB: (a: S, b: T), addition additionCD: (c: U, d: U)) -> [Double] where S : Accelerate.AccelerateBuffer, T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, S.Element == Swift.Double, T.Element == Swift.Double, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func multiply<S, T, U, V>(addition additionAB: (a: S, b: T), addition additionCD: (c: U, d: U), result: inout V) where S : Accelerate.AccelerateBuffer, T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, S.Element == Swift.Double, T.Element == Swift.Double, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func subtract<R, S, T, U>(multiplication multiplicationAB: (a: T, b: U), multiplication multiplicationCD: (c: R, d: S)) -> [Float] where R : Accelerate.AccelerateBuffer, S : Accelerate.AccelerateBuffer, T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, R.Element == Swift.Float, S.Element == Swift.Float, T.Element == Swift.Float, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func subtract<R, S, T, U, V>(multiplication multiplicationAB: (a: T, b: U), multiplication multiplicationCD: (c: R, d: S), result: inout V) where R : Accelerate.AccelerateBuffer, S : Accelerate.AccelerateBuffer, T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, R.Element == Swift.Float, S.Element == Swift.Float, T.Element == Swift.Float, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func subtract<R, S, T, U>(multiplication multiplicationAB: (a: T, b: U), multiplication multiplicationCD: (c: R, d: S)) -> [Double] where R : Accelerate.AccelerateBuffer, S : Accelerate.AccelerateBuffer, T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, R.Element == Swift.Double, S.Element == Swift.Double, T.Element == Swift.Double, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func subtract<R, S, T, U, V>(multiplication multiplicationAB: (a: T, b: U), multiplication multiplicationCD: (c: R, d: S), result: inout V) where R : Accelerate.AccelerateBuffer, S : Accelerate.AccelerateBuffer, T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, R.Element == Swift.Double, S.Element == Swift.Double, T.Element == Swift.Double, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func multiply<R, S, T, U>(subtraction subtractionAB: (a: R, b: S), subtraction subtractionCD: (c: T, d: U)) -> [Float] where R : Accelerate.AccelerateBuffer, S : Accelerate.AccelerateBuffer, T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, R.Element == Swift.Float, S.Element == Swift.Float, T.Element == Swift.Float, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func multiply<R, S, T, U, V>(subtraction subtractionAB: (a: R, b: S), subtraction subtractionCD: (c: T, d: U), result: inout V) where R : Accelerate.AccelerateBuffer, S : Accelerate.AccelerateBuffer, T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, R.Element == Swift.Float, S.Element == Swift.Float, T.Element == Swift.Float, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func multiply<R, S, T, U>(subtraction subtractionAB: (a: R, b: S), subtraction subtractionCD: (c: T, d: U)) -> [Double] where R : Accelerate.AccelerateBuffer, S : Accelerate.AccelerateBuffer, T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, R.Element == Swift.Double, S.Element == Swift.Double, T.Element == Swift.Double, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func multiply<R, S, T, U, V>(subtraction subtractionAB: (a: R, b: S), subtraction subtractionCD: (c: T, d: U), result: inout V) where R : Accelerate.AccelerateBuffer, S : Accelerate.AccelerateBuffer, T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, R.Element == Swift.Double, S.Element == Swift.Double, T.Element == Swift.Double, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func multiply<R, S, T, U>(addition: (a: R, b: S), subtraction: (c: T, d: U)) -> [Float] where R : Accelerate.AccelerateBuffer, S : Accelerate.AccelerateBuffer, T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, R.Element == Swift.Float, S.Element == Swift.Float, T.Element == Swift.Float, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func multiply<R, S, T, U, V>(addition: (a: R, b: S), subtraction: (c: T, d: U), result: inout V) where R : Accelerate.AccelerateBuffer, S : Accelerate.AccelerateBuffer, T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, R.Element == Swift.Float, S.Element == Swift.Float, T.Element == Swift.Float, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func multiply<R, S, T, U>(addition: (a: R, b: S), subtraction: (c: T, d: U)) -> [Double] where R : Accelerate.AccelerateBuffer, S : Accelerate.AccelerateBuffer, T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, R.Element == Swift.Double, S.Element == Swift.Double, T.Element == Swift.Double, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func multiply<R, S, T, U, V>(addition: (a: R, b: S), subtraction: (c: T, d: U), result: inout V) where R : Accelerate.AccelerateBuffer, S : Accelerate.AccelerateBuffer, T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, R.Element == Swift.Double, S.Element == Swift.Double, T.Element == Swift.Double, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func add<U>(multiplication: (a: U, b: Float), _ scalar: Float) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func add<U, V>(multiplication: (a: U, b: Float), _ scalar: Float, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func add<U>(multiplication: (a: U, b: Double), _ scalar: Double) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func add<U, V>(multiplication: (a: U, b: Double), _ scalar: Double, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func subtract<T, U>(multiplication: (a: U, b: Float), _ vector: T) -> [Float] where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, T.Element == Swift.Float, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func subtract<T, U, V>(multiplication: (a: U, b: Float), _ vector: T, result: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Float, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func subtract<T, U>(multiplication: (a: U, b: Double), _ vector: T) -> [Double] where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, T.Element == Swift.Double, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func subtract<T, U, V>(multiplication: (a: U, b: Double), _ vector: T, result: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Double, U.Element == Swift.Double, V.Element == Swift.Double
+}
+extension vDSP {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public struct Biquad<T> where T : Accelerate.vDSP_FloatingPointBiquadFilterable {
+    public init?(coefficients: [Double], channelCount: vDSP_Length, sectionCount: vDSP_Length, ofType: T.Type)
+    mutating public func apply<U>(input: U) -> [T] where T == U.Element, U : Accelerate.AccelerateBuffer
+    mutating public func apply<U, V>(input: U, output: inout V) where T == U.Element, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == V.Element
+  }
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public protocol vDSP_FloatingPointBiquadFilterable : Swift.BinaryFloatingPoint {
+  associatedtype BiquadFunctions : Accelerate.vDSP_BiquadFunctions where Self == Self.BiquadFunctions.Scalar
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension Float : vDSP_FloatingPointBiquadFilterable {
+  public typealias BiquadFunctions = vDSP.VectorizableFloat
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension Double : vDSP_FloatingPointBiquadFilterable {
+  public typealias BiquadFunctions = vDSP.VectorizableDouble
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public protocol vDSP_BiquadFunctions {
+  associatedtype Scalar
+  static func makeBiquadSetup(channelCount: vDSP_Length, coefficients: [Double], sectionCount: vDSP_Length) -> OpaquePointer?
+  static func applySingle<U, V>(source: U, destination: inout V, delays: UnsafeMutablePointer<Scalar>, setup: vDSP_biquad_Setup, sectionCount: vDSP_Length, count: vDSP_Length) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, Self.Scalar == U.Element, U.Element == V.Element
+  static func applyMulti(setup: vDSP_biquadm_SetupD, pInputs: UnsafeMutablePointer<UnsafePointer<Scalar>>, pOutputs: UnsafeMutablePointer<UnsafeMutablePointer<Scalar>>, count: vDSP_Length)
+  static func destroySetup(channelCount: UInt, biquadSetup: OpaquePointer)
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension vDSP.VectorizableFloat : vDSP_BiquadFunctions {
+  @inline(__always) public static func makeBiquadSetup(channelCount: UInt, coefficients: [Double], sectionCount: UInt) -> OpaquePointer?
+  @inline(__always) public static func applySingle<U, V>(source: U, destination: inout V, delays: UnsafeMutablePointer<Scalar>, setup: vDSP_biquad_Setup, sectionCount: vDSP_Length, count: vDSP_Length) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @inline(__always) public static func applyMulti(setup: vDSP_biquadm_SetupD, pInputs: UnsafeMutablePointer<UnsafePointer<Scalar>>, pOutputs: UnsafeMutablePointer<UnsafeMutablePointer<Scalar>>, count: vDSP_Length)
+  @inline(__always) public static func destroySetup(channelCount: UInt, biquadSetup: OpaquePointer)
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension vDSP.VectorizableDouble : vDSP_BiquadFunctions {
+  @inline(__always) public static func makeBiquadSetup(channelCount: vDSP_Length, coefficients: [Double], sectionCount: vDSP_Length) -> OpaquePointer?
+  @inline(__always) public static func applySingle<U, V>(source: U, destination: inout V, delays: UnsafeMutablePointer<Scalar>, setup: vDSP_biquad_Setup, sectionCount: vDSP_Length, count: vDSP_Length) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @inline(__always) public static func applyMulti(setup: vDSP_biquadm_SetupD, pInputs: UnsafeMutablePointer<UnsafePointer<Scalar>>, pOutputs: UnsafeMutablePointer<UnsafeMutablePointer<Scalar>>, count: vDSP_Length)
+  @inline(__always) public static func destroySetup(channelCount: UInt, biquadSetup: OpaquePointer)
+}
+extension vDSP {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func clip<U>(_ vector: U, to bounds: ClosedRange<Float>) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func clip<U, V>(_ vector: U, to bounds: ClosedRange<Float>, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func clip<U>(_ vector: U, to bounds: ClosedRange<Double>) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func clip<U, V>(_ vector: U, to bounds: ClosedRange<Double>, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func invertedClip<U>(_ vector: U, to bounds: ClosedRange<Float>) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func invertedClip<U, V>(_ vector: U, to bounds: ClosedRange<Float>, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func invertedClip<U>(_ vector: U, to bounds: ClosedRange<Double>) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func invertedClip<U, V>(_ vector: U, to bounds: ClosedRange<Double>, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public enum ThresholdRule<T> where T : Swift.BinaryFloatingPoint {
+    case clampToThreshold
+    case zeroFill
+    case signedConstant(_: T)
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func threshold<U>(_ vector: U, to lowerBound: Float, with rule: ThresholdRule<Float>) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func threshold<U, V>(_ vector: U, to lowerBound: Float, with rule: ThresholdRule<Float>, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func threshold<U>(_ vector: U, to lowerBound: Double, with rule: ThresholdRule<Double>) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func threshold<U, V>(_ vector: U, to lowerBound: Double, with rule: ThresholdRule<Double>, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func limit<U>(_ vector: U, limit: Float, withOutputConstant outputConstant: Float) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func limit<U, V>(_ vector: U, limit: Float, withOutputConstant outputConstant: Float, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func limit<U>(_ vector: U, limit: Double, withOutputConstant outputConstant: Double) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func limit<U, V>(_ vector: U, limit: Double, withOutputConstant outputConstant: Double, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+}
+extension vDSP {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convert(splitComplexVector: DSPSplitComplex, toInterleavedComplexVector interleavedComplexVector: inout [DSPComplex])
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convert(interleavedComplexVector: [DSPComplex], toSplitComplexVector splitComplexVector: inout DSPSplitComplex)
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convert(splitComplexVector: DSPDoubleSplitComplex, toInterleavedComplexVector interleavedComplexVector: inout [DSPDoubleComplex])
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convert(interleavedComplexVector: [DSPDoubleComplex], toSplitComplexVector splitComplexVector: inout DSPDoubleSplitComplex)
+}
+extension vDSP {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func phase<V>(_ splitComplex: DSPSplitComplex, result: inout V) where V : Accelerate.AccelerateMutableBuffer, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func phase<V>(_ splitComplex: DSPDoubleSplitComplex, result: inout V) where V : Accelerate.AccelerateMutableBuffer, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func copy(_ source: DSPSplitComplex, to destination: inout DSPSplitComplex, count: Int)
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func copy(_ source: DSPDoubleSplitComplex, to destination: inout DSPDoubleSplitComplex, count: Int)
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func conjugate(_ splitComplex: DSPSplitComplex, count: Int, result: inout DSPSplitComplex)
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func conjugate(_ splitComplex: DSPDoubleSplitComplex, count: Int, result: inout DSPDoubleSplitComplex)
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func divide<U>(_ splitComplex: DSPSplitComplex, by vector: U, result: inout DSPSplitComplex) where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func divide<U>(_ splitComplex: DSPDoubleSplitComplex, by vector: U, result: inout DSPDoubleSplitComplex) where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func multiply<U>(_ splitComplex: DSPSplitComplex, by vector: U, result: inout DSPSplitComplex) where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func multiply<U>(_ splitComplex: DSPDoubleSplitComplex, by vector: U, result: inout DSPDoubleSplitComplex) where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func multiply(_ splitComplexA: DSPSplitComplex, by splitComplexB: DSPSplitComplex, count: Int, useConjugate: Bool, result: inout DSPSplitComplex)
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func multiply(_ splitComplexA: DSPDoubleSplitComplex, by splitComplexB: DSPDoubleSplitComplex, count: Int, useConjugate: Bool, result: inout DSPDoubleSplitComplex)
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func add(_ splitComplexA: DSPSplitComplex, to splitComplexB: DSPSplitComplex, count: Int, result: inout DSPSplitComplex)
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func add(_ splitComplexA: DSPDoubleSplitComplex, to splitComplexB: DSPDoubleSplitComplex, count: Int, result: inout DSPDoubleSplitComplex)
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func divide(_ splitComplexA: DSPSplitComplex, by splitComplexB: DSPSplitComplex, count: Int, result: inout DSPSplitComplex)
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func divide(_ splitComplexA: DSPDoubleSplitComplex, by splitComplexB: DSPDoubleSplitComplex, count: Int, result: inout DSPDoubleSplitComplex)
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func subtract(_ splitComplexB: DSPSplitComplex, from splitComplexA: DSPSplitComplex, count: Int, result: inout DSPSplitComplex)
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func subtract(_ splitComplexB: DSPDoubleSplitComplex, from splitComplexA: DSPDoubleSplitComplex, count: Int, result: inout DSPDoubleSplitComplex)
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func absolute<V>(_ vector: DSPSplitComplex, result: inout V) where V : Accelerate.AccelerateMutableBuffer, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func absolute<V>(_ vector: DSPDoubleSplitComplex, result: inout V) where V : Accelerate.AccelerateMutableBuffer, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func squareMagnitudes<V>(_ splitComplex: DSPSplitComplex, result: inout V) where V : Accelerate.AccelerateMutableBuffer, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func squareMagnitudes<V>(_ splitComplex: DSPDoubleSplitComplex, result: inout V) where V : Accelerate.AccelerateMutableBuffer, V.Element == Swift.Double
+}
+extension vDSP {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convertElements<U, V>(of source: U, to destination: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.UInt8, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convertElements<U, V>(of source: U, to destination: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.UInt8, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convertElements<U, V>(of source: U, to destination: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.UInt16, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convertElements<U, V>(of source: U, to destination: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.UInt16, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convertElements<U, V>(of source: U, to destination: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.UInt32, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convertElements<U, V>(of source: U, to destination: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.UInt32, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convertElements<U, V>(of source: U, to destination: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Int8, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convertElements<U, V>(of source: U, to destination: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Int8, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convertElements<U, V>(of source: U, to destination: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Int16, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convertElements<U, V>(of source: U, to destination: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Int16, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convertElements<U, V>(of source: U, to destination: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Int32, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convertElements<U, V>(of source: U, to destination: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Int32, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public enum RoundingMode {
+    case towardZero
+    case towardNearestInteger
+    public static func == (a: Accelerate.vDSP.RoundingMode, b: Accelerate.vDSP.RoundingMode) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convertElements<U, V>(of source: U, to destination: inout V, rounding: RoundingMode) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Int32
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convertElements<U, V>(of source: U, to destination: inout V, rounding: RoundingMode) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Int32
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convertElements<U, V>(of source: U, to destination: inout V, rounding: RoundingMode) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.UInt16
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convertElements<U, V>(of source: U, to destination: inout V, rounding: RoundingMode) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.UInt16
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convertElements<U, V>(of source: U, to destination: inout V, rounding: RoundingMode) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.UInt32
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convertElements<U, V>(of source: U, to destination: inout V, rounding: RoundingMode) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.UInt32
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convertElements<U, V>(of source: U, to destination: inout V, rounding: RoundingMode) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Int16
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convertElements<U, V>(of source: U, to destination: inout V, rounding: RoundingMode) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Int16
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convertElements<U, V>(of source: U, to destination: inout V, rounding: RoundingMode) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Int8
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convertElements<U, V>(of source: U, to destination: inout V, rounding: RoundingMode) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Int8
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convertElements<U, V>(of source: U, to destination: inout V, rounding: RoundingMode) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.UInt8
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convertElements<U, V>(of source: U, to destination: inout V, rounding: RoundingMode) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.UInt8
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convertElements<U, V>(of source: U, to destination: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convertElements<U, V>(of source: U, to destination: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Float
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public protocol vDSP_IntegerConvertable {
+}
+extension UInt8 : vDSP_IntegerConvertable {
+}
+extension UInt16 : vDSP_IntegerConvertable {
+}
+extension UInt32 : vDSP_IntegerConvertable {
+}
+extension Int8 : vDSP_IntegerConvertable {
+}
+extension Int16 : vDSP_IntegerConvertable {
+}
+extension Int32 : vDSP_IntegerConvertable {
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public protocol vDSP_FloatingPointConvertable {
+}
+extension Float : vDSP_FloatingPointConvertable {
+}
+extension Double : vDSP_FloatingPointConvertable {
+}
+extension vDSP {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func integerToFloatingPoint<T, U>(_ vector: T, floatingPointType: U.Type) -> [U] where T : Accelerate.AccelerateBuffer, U : Accelerate.vDSP_FloatingPointConvertable, T.Element == Swift.UInt8
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func integerToFloatingPoint<T, U>(_ vector: T, floatingPointType: U.Type) -> [U] where T : Accelerate.AccelerateBuffer, U : Accelerate.vDSP_FloatingPointConvertable, T.Element == Swift.UInt16
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func integerToFloatingPoint<T, U>(_ vector: T, floatingPointType: U.Type) -> [U] where T : Accelerate.AccelerateBuffer, U : Accelerate.vDSP_FloatingPointConvertable, T.Element == Swift.UInt32
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func integerToFloatingPoint<T, U>(_ vector: T, floatingPointType: U.Type) -> [U] where T : Accelerate.AccelerateBuffer, U : Accelerate.vDSP_FloatingPointConvertable, T.Element == Swift.Int8
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func integerToFloatingPoint<T, U>(_ vector: T, floatingPointType: U.Type) -> [U] where T : Accelerate.AccelerateBuffer, U : Accelerate.vDSP_FloatingPointConvertable, T.Element == Swift.Int16
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func integerToFloatingPoint<T, U>(_ vector: T, floatingPointType: U.Type) -> [U] where T : Accelerate.AccelerateBuffer, U : Accelerate.vDSP_FloatingPointConvertable, T.Element == Swift.Int32
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func floatingPointToInteger<T, U>(_ vector: T, integerType: U.Type, rounding: RoundingMode) -> [U] where T : Accelerate.AccelerateBuffer, U : Accelerate.vDSP_IntegerConvertable, T.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func floatingPointToInteger<T, U>(_ vector: T, integerType: U.Type, rounding: RoundingMode) -> [U] where T : Accelerate.AccelerateBuffer, U : Accelerate.vDSP_IntegerConvertable, T.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func floatToDouble<U>(_ source: U) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func doubleToFloat<U>(_ source: U) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+}
+extension vDSP {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convolve<T, U>(_ vector: T, withKernel kernel: U) -> [Float] where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, T.Element == Swift.Float, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convolve<T, U, V>(_ vector: T, withKernel kernel: U, result: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Float, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convolve<T, U>(_ vector: T, withKernel kernel: U) -> [Double] where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, T.Element == Swift.Double, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convolve<T, U, V>(_ vector: T, withKernel kernel: U, result: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Double, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func correlate<T, U>(_ vector: T, withKernel kernel: U) -> [Float] where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, T.Element == Swift.Float, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func correlate<T, U, V>(_ vector: T, withKernel kernel: U, result: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Float, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func correlate<T, U>(_ vector: T, withKernel kernel: U) -> [Double] where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, T.Element == Swift.Double, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func correlate<T, U, V>(_ vector: T, withKernel kernel: U, result: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Double, U.Element == Swift.Double, V.Element == Swift.Double
+}
+extension vDSP {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convolve<T, U>(_ vector: T, rowCount: Int, columnCount: Int, with3x3Kernel kernel: U) -> [Float] where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, T.Element == Swift.Float, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convolve<T, U, V>(_ vector: T, rowCount: Int, columnCount: Int, with3x3Kernel kernel: U, result: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Float, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convolve<T, U>(_ vector: T, rowCount: Int, columnCount: Int, with3x3Kernel kernel: U) -> [Double] where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, T.Element == Swift.Double, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convolve<T, U, V>(_ vector: T, rowCount: Int, columnCount: Int, with3x3Kernel kernel: U, result: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Double, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convolve<T, U>(_ vector: T, rowCount: Int, columnCount: Int, with5x5Kernel kernel: U) -> [Float] where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, T.Element == Swift.Float, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convolve<T, U, V>(_ vector: T, rowCount: Int, columnCount: Int, with5x5Kernel kernel: U, result: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Float, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convolve<T, U>(_ vector: T, rowCount: Int, columnCount: Int, with5x5Kernel kernel: U) -> [Double] where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, T.Element == Swift.Double, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convolve<T, U, V>(_ vector: T, rowCount: Int, columnCount: Int, with5x5Kernel kernel: U, result: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Double, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convolve<T, U>(_ vector: T, rowCount: Int, columnCount: Int, withKernel kernel: U, kernelRowCount: Int, kernelColumnCount: Int) -> [Float] where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, T.Element == Swift.Float, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convolve<T, U, V>(_ vector: T, rowCount: Int, columnCount: Int, withKernel kernel: U, kernelRowCount: Int, kernelColumnCount: Int, result: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Float, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convolve<T, U>(_ vector: T, rowCount: Int, columnCount: Int, withKernel kernel: U, kernelRowCount: Int, kernelColumnCount: Int) -> [Double] where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, T.Element == Swift.Double, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convolve<T, U, V>(_ vector: T, rowCount: Int, columnCount: Int, withKernel kernel: U, kernelRowCount: Int, kernelColumnCount: Int, result: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Double, U.Element == Swift.Double, V.Element == Swift.Double
+}
+extension vDSP {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public enum DCTTransformType : CaseIterable {
+    case II
+    case III
+    case IV
+    public var dctType: vDSP_DCT_Type {
+      get
+    }
+    public static func == (a: Accelerate.vDSP.DCTTransformType, b: Accelerate.vDSP.DCTTransformType) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+    public typealias AllCases = [Accelerate.vDSP.DCTTransformType]
+    public static var allCases: [Accelerate.vDSP.DCTTransformType] {
+      get
+    }
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public class DCT {
+    public init?(previous: DCT? = nil, count: Int, transformType: DCTTransformType)
+    @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+    @inline(__always) public func transform<U>(_ vector: U) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+    @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+    @inline(__always) public func transform<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+    @objc deinit
+  }
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension Float {
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension vDSP.VectorizableFloat {
+}
+extension vDSP {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public enum DFTTransformType {
+    case complexComplex
+    case complexReal
+    public static func == (a: Accelerate.vDSP.DFTTransformType, b: Accelerate.vDSP.DFTTransformType) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public class DFT<T> where T : Accelerate.vDSP_FloatingPointDiscreteFourierTransformable {
+    public init?(previous: DFT? = nil, count: Int, direction: vDSP.FourierTransformDirection, transformType: DFTTransformType, ofType: T.Type)
+    public func transform<U>(inputReal: U, inputImaginary: U) -> (real: [T], imaginary: [T]) where T == U.Element, U : Accelerate.AccelerateBuffer
+    public func transform<U, V>(inputReal: U, inputImaginary: U, outputReal: inout V, outputImaginary: inout V) where T == U.Element, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == V.Element
+    @objc deinit
+  }
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public protocol vDSP_FloatingPointDiscreteFourierTransformable : Swift.BinaryFloatingPoint {
+  associatedtype DFTFunctions : Accelerate.vDSP_DFTFunctions where Self == Self.DFTFunctions.Scalar
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension Float : vDSP_FloatingPointDiscreteFourierTransformable {
+  public typealias DFTFunctions = vDSP.VectorizableFloat
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension Double : vDSP_FloatingPointDiscreteFourierTransformable {
+  public typealias DFTFunctions = vDSP.VectorizableDouble
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public protocol vDSP_DFTFunctions {
+  associatedtype Scalar
+  @inline(__always) static func makeDFTSetup<T>(previous: vDSP.DFT<T>?, count: Int, direction: vDSP.FourierTransformDirection, transformType: vDSP.DFTTransformType) -> OpaquePointer? where T : Accelerate.vDSP_FloatingPointDiscreteFourierTransformable
+  @inline(__always) static func transform<U, V>(dftSetup: OpaquePointer, inputReal: U, inputImaginary: U, outputReal: inout V, outputImaginary: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, Self.Scalar == U.Element, U.Element == V.Element
+  @inline(__always) static func destroySetup(_ setup: OpaquePointer)
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension vDSP.VectorizableFloat : vDSP_DFTFunctions {
+  @inline(__always) public static func makeDFTSetup<T>(previous: vDSP.DFT<T>? = nil, count: Int, direction: vDSP.FourierTransformDirection, transformType: vDSP.DFTTransformType) -> OpaquePointer? where T : Accelerate.vDSP_FloatingPointDiscreteFourierTransformable
+  @inline(__always) public static func transform<U, V>(dftSetup: OpaquePointer, inputReal: U, inputImaginary: U, outputReal: inout V, outputImaginary: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @inline(__always) public static func destroySetup(_ setup: OpaquePointer)
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension vDSP.VectorizableDouble : vDSP_DFTFunctions {
+  @inline(__always) public static func makeDFTSetup<T>(previous: vDSP.DFT<T>? = nil, count: Int, direction: vDSP.FourierTransformDirection, transformType: vDSP.DFTTransformType) -> OpaquePointer? where T : Accelerate.vDSP_FloatingPointDiscreteFourierTransformable
+  @inline(__always) public static func transform<U, V>(dftSetup: OpaquePointer, inputReal: U, inputImaginary: U, outputReal: inout V, outputImaginary: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @inline(__always) public static func destroySetup(_ setup: OpaquePointer)
+}
+extension vDSP {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func powerToDecibels<U>(_ power: U, zeroReference: Float) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convert<U, V>(power: U, toDecibels decibels: inout V, zeroReference: Float) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func powerToDecibels<U>(_ power: U, zeroReference: Double) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convert<U, V>(power: U, toDecibels decibels: inout V, zeroReference: Double) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func amplitudeToDecibels<U>(_ amplitude: U, zeroReference: Float) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convert<U, V>(amplitude: U, toDecibels decibels: inout V, zeroReference: Float) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func amplitudeToDecibels<U>(_ amplitude: U, zeroReference: Double) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convert<U, V>(amplitude: U, toDecibels decibels: inout V, zeroReference: Double) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension vDSP {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public enum Radix {
+    case radix2
+    case radix3
+    case radix5
+    public var fftRadix: FFTRadix {
+      get
+    }
+    public static func == (a: Accelerate.vDSP.Radix, b: Accelerate.vDSP.Radix) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public class FFT<T> where T : Accelerate.vDSP_FourierTransformable {
+    @inline(__always) public init?(log2n: vDSP_Length, radix: Radix, ofType: T.Type)
+    @inline(__always) public func transform<T>(input: T, output: inout T, direction: vDSP.FourierTransformDirection) where T : Accelerate.vDSP_FourierTransformable
+    public func forward(input: DSPSplitComplex, output: inout DSPSplitComplex)
+    public func inverse(input: DSPSplitComplex, output: inout DSPSplitComplex)
+    @objc deinit
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public class FFT2D<T> : FFT<T> where T : Accelerate.vDSP_FourierTransformable {
+    @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+    @inline(__always) required public init?(width: Int, height: Int, ofType: T.Type)
+    @inline(__always) override public func transform<T>(input: T, output: inout T, direction: vDSP.FourierTransformDirection) where T : Accelerate.vDSP_FourierTransformable
+    override public init?(log2n: vDSP_Length, radix: Radix, ofType: T.Type)
+    @objc deinit
+  }
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public protocol vDSP_FourierTransformFunctions {
+  associatedtype SplitComplex
+  static func makeFFTSetup(log2n: vDSP_Length, radix: vDSP.Radix) -> OpaquePointer?
+  static func transform(fftSetup: OpaquePointer, log2n: vDSP_Length, source: UnsafePointer<SplitComplex>, destination: UnsafeMutablePointer<SplitComplex>, direction: vDSP.FourierTransformDirection)
+  static func transform2D(fftSetup: OpaquePointer, width: Int, height: Int, source: UnsafePointer<SplitComplex>, destination: UnsafeMutablePointer<SplitComplex>, direction: vDSP.FourierTransformDirection)
+  static func destroySetup(_ setup: OpaquePointer)
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public struct vDSP_SplitComplexFloat : vDSP_FourierTransformFunctions {
+  public typealias SplitComplex = DSPSplitComplex
+  @inline(__always) public static func makeFFTSetup(log2n: vDSP_Length, radix: vDSP.Radix) -> OpaquePointer?
+  @inline(__always) public static func transform(fftSetup: OpaquePointer, log2n: vDSP_Length, source: UnsafePointer<SplitComplex>, destination: UnsafeMutablePointer<SplitComplex>, direction: vDSP.FourierTransformDirection)
+  public static func transform2D(fftSetup: OpaquePointer, width: Int, height: Int, source: UnsafePointer<SplitComplex>, destination: UnsafeMutablePointer<SplitComplex>, direction: vDSP.FourierTransformDirection)
+  @inline(__always) public static func destroySetup(_ setup: OpaquePointer)
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public struct vDSP_SplitComplexDouble : vDSP_FourierTransformFunctions {
+  public typealias SplitComplex = DSPDoubleSplitComplex
+  @inline(__always) public static func makeFFTSetup(log2n: vDSP_Length, radix: vDSP.Radix) -> OpaquePointer?
+  @inline(__always) public static func transform(fftSetup: OpaquePointer, log2n: vDSP_Length, source: UnsafePointer<SplitComplex>, destination: UnsafeMutablePointer<SplitComplex>, direction: vDSP.FourierTransformDirection)
+  public static func transform2D(fftSetup: OpaquePointer, width: Int, height: Int, source: UnsafePointer<SplitComplex>, destination: UnsafeMutablePointer<SplitComplex>, direction: vDSP.FourierTransformDirection)
+  @inline(__always) public static func destroySetup(_ setup: OpaquePointer)
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public protocol vDSP_FourierTransformable {
+  associatedtype FFTFunctions : Accelerate.vDSP_FourierTransformFunctions where Self == Self.FFTFunctions.SplitComplex
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension DSPSplitComplex : vDSP_FourierTransformable {
+  public typealias FFTFunctions = vDSP_SplitComplexFloat
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension DSPDoubleSplitComplex : vDSP_FourierTransformable {
+  public typealias FFTFunctions = vDSP_SplitComplexDouble
+}
+extension DSPSplitComplex {
+  public init(fromInputArray inputArray: [Float], realParts: inout [Float], imaginaryParts: inout [Float])
+}
+extension DSPDoubleSplitComplex {
+  public init(fromInputArray inputArray: [Double], realParts: inout [Double], imaginaryParts: inout [Double])
+}
+extension Array where Element == Swift.Float {
+  public init(fromSplitComplex splitComplex: DSPSplitComplex, scale: Float, count: Int)
+}
+extension Array where Element == Swift.Double {
+  public init(fromSplitComplex splitComplex: DSPDoubleSplitComplex, scale: Double, count: Int)
+}
+extension vDSP {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public enum FourierTransformDirection {
+    case forward
+    case inverse
+    public var dftDirection: vDSP_DFT_Direction {
+      get
+    }
+    public var fftDirection: FFTDirection {
+      get
+    }
+    public static func == (a: Accelerate.vDSP.FourierTransformDirection, b: Accelerate.vDSP.FourierTransformDirection) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+}
+extension vDSP {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func downsample<T, U>(_ source: U, decimationFactor: Int, filter: T) -> [Float] where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, T.Element == Swift.Float, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func downsample<T, U, V>(_ source: U, decimationFactor: Int, filter: T, result: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Float, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func downsample<T, U>(_ source: U, decimationFactor: Int, filter: T) -> [Double] where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, T.Element == Swift.Double, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func downsample<T, U, V>(_ source: U, decimationFactor: Int, filter: T, result: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Double, U.Element == Swift.Double, V.Element == Swift.Double
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public protocol vDSP_FloatingPointGeneratable : Swift.BinaryFloatingPoint {
+}
+extension Float : vDSP_FloatingPointGeneratable {
+}
+extension Double : vDSP_FloatingPointGeneratable {
+}
+extension vDSP {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func fill<V>(_ vector: inout V, with value: Float) where V : Accelerate.AccelerateMutableBuffer, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func fill<V>(_ vector: inout V, with value: Double) where V : Accelerate.AccelerateMutableBuffer, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func clear<V>(_ vector: inout V) where V : Accelerate.AccelerateMutableBuffer, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func clear<V>(_ vector: inout V) where V : Accelerate.AccelerateMutableBuffer, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public enum WindowSequence {
+    case hanningNormalized
+    case hanningDenormalized
+    case hamming
+    case blackman
+    public static func == (a: Accelerate.vDSP.WindowSequence, b: Accelerate.vDSP.WindowSequence) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func window<T>(ofType: T.Type, usingSequence sequence: WindowSequence, count: Int, isHalfWindow: Bool) -> [T] where T : Accelerate.vDSP_FloatingPointGeneratable
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func formWindow<V>(usingSequence sequence: WindowSequence, result: inout V, isHalfWindow: Bool) where V : Accelerate.AccelerateMutableBuffer, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func formWindow<V>(usingSequence sequence: WindowSequence, result: inout V, isHalfWindow: Bool) where V : Accelerate.AccelerateMutableBuffer, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func ramp(withInitialValue initialValue: Float, increment: Float, count: Int) -> [Float]
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func formRamp<V>(withInitialValue initialValue: Float, increment: Float, result: inout V) where V : Accelerate.AccelerateMutableBuffer, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func ramp(withInitialValue initialValue: Double, increment: Double, count: Int) -> [Double]
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func formRamp<V>(withInitialValue initialValue: Double, increment: Double, result: inout V) where V : Accelerate.AccelerateMutableBuffer, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func ramp(in range: ClosedRange<Float>, count: Int) -> [Float]
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func formRamp<V>(in range: ClosedRange<Float>, result: inout V) where V : Accelerate.AccelerateMutableBuffer, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func ramp(in range: ClosedRange<Double>, count: Int) -> [Double]
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func formRamp<V>(in range: ClosedRange<Double>, result: inout V) where V : Accelerate.AccelerateMutableBuffer, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func ramp<U>(withInitialValue initialValue: inout Float, multiplyingBy vector: U, increment: Float) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func formRamp<U, V>(withInitialValue initialValue: inout Float, multiplyingBy vector: U, increment: Float, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func ramp<U>(withInitialValue initialValue: inout Double, multiplyingBy vector: U, increment: Double) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func formRamp<U, V>(withInitialValue initialValue: inout Double, multiplyingBy vector: U, increment: Double, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func stereoRamp<U>(withInitialValue initialValue: inout Float, multiplyingBy multiplierOne: U, _ multiplierTwo: U, increment: Float) -> (firstOutput: [Float], secondOutput: [Float]) where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func formStereoRamp<U, V>(withInitialValue initialValue: inout Float, multiplyingBy multiplierOne: U, _ multiplierTwo: U, increment: Float, results resultOne: inout V, _ resultTwo: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func stereoRamp<U>(withInitialValue initialValue: inout Double, multiplyingBy multiplierOne: U, _ multiplierTwo: U, increment: Double) -> (firstOutput: [Double], secondOutput: [Double]) where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func formStereoRamp<U, V>(withInitialValue initialValue: inout Double, multiplyingBy multiplierOne: U, _ multiplierTwo: U, increment: Double, results resultOne: inout V, _ resultTwo: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+}
+extension vDSP {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func dot<U>(_ vectorA: U, _ vectorB: U) -> Float where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func dot<U>(_ vectorA: U, _ vectorB: U) -> Double where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func hypot<U, V>(_ x: U, _ y: V) -> [Float] where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func hypot<T, U, V>(_ x: T, _ y: U, result: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Float, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func hypot<U, V>(_ x: U, _ y: V) -> [Double] where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func hypot<T, U, V>(_ x: T, _ y: U, result: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Double, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func hypot<R, S, T, U>(x0: R, x1: S, y0: T, y1: U) -> [Float] where R : Accelerate.AccelerateBuffer, S : Accelerate.AccelerateBuffer, T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, R.Element == Swift.Float, S.Element == Swift.Float, T.Element == Swift.Float, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func hypot<R, S, T, U, V>(x0: R, x1: S, y0: T, y1: U, result: inout V) where R : Accelerate.AccelerateBuffer, S : Accelerate.AccelerateBuffer, T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, R.Element == Swift.Float, S.Element == Swift.Float, T.Element == Swift.Float, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func hypot<R, S, T, U>(x0: R, x1: S, y0: T, y1: U) -> [Double] where R : Accelerate.AccelerateBuffer, S : Accelerate.AccelerateBuffer, T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, R.Element == Swift.Double, S.Element == Swift.Double, T.Element == Swift.Double, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func hypot<R, S, T, U, V>(x0: R, x1: S, y0: T, y1: U, result: inout V) where R : Accelerate.AccelerateBuffer, S : Accelerate.AccelerateBuffer, T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, R.Element == Swift.Double, S.Element == Swift.Double, T.Element == Swift.Double, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func distanceSquared<U, V>(_ pointA: U, _ pointB: V) -> Float where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func distanceSquared<U, V>(_ pointA: U, _ pointB: V) -> Double where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+}
+extension vDSP {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public enum IntegrationRule {
+    case runningSum
+    case simpson
+    case trapezoidal
+    public static func == (a: Accelerate.vDSP.IntegrationRule, b: Accelerate.vDSP.IntegrationRule) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func integrate<U>(_ vector: U, using rule: IntegrationRule, stepSize: Float = 1) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func integrate<U, V>(_ vector: U, using rule: IntegrationRule, stepSize: Float = 1, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func integrate<U>(_ vector: U, using rule: IntegrationRule, stepSize: Double = 1) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func integrate<U, V>(_ vector: U, using rule: IntegrationRule, stepSize: Double = 1, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+}
+extension vDSP {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func linearInterpolate<T, U>(_ vectorA: T, _ vectorB: U, using interpolationConstant: Float) -> [Float] where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, T.Element == Swift.Float, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func linearInterpolate<T, U, V>(_ vectorA: T, _ vectorB: U, using interpolationConstant: Float, result: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Float, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func linearInterpolate<T, U>(_ vectorA: T, _ vectorB: U, using interpolationConstant: Double) -> [Double] where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, T.Element == Swift.Double, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func linearInterpolate<T, U, V>(_ vectorA: T, _ vectorB: U, using interpolationConstant: Double, result: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Double, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func linearInterpolate<T, U>(elementsOf vector: T, using controlVector: U) -> [Float] where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, T.Element == Swift.Float, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func linearInterpolate<T, U, V>(elementsOf vector: T, using controlVector: U, result: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Float, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func linearInterpolate<T, U>(elementsOf vector: T, using controlVector: U) -> [Double] where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, T.Element == Swift.Double, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func linearInterpolate<T, U, V>(elementsOf vector: T, using controlVector: U, result: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Double, U.Element == Swift.Double, V.Element == Swift.Double
+}
+extension vDSP {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func rectangularToPolar<U>(_ rectangularCoordinates: U) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convert<U, V>(rectangularCoordinates: U, toPolarCoordinates polarCoordinates: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func rectangularToPolar<U>(_ rectangularCoordinates: U) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convert<U, V>(rectangularCoordinates: U, toPolarCoordinates polarCoordinates: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func polarToRectangular<U>(_ polarCoordinates: U) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convert<U, V>(polarCoordinates: U, toRectangularCoordinates rectangularCoordinates: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func polarToRectangular<U>(_ polarCoordinates: U) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func convert<U, V>(polarCoordinates: U, toRectangularCoordinates rectangularCoordinates: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+}
+extension vDSP {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func evaluatePolynomial<U>(usingCoefficients coefficients: [Float], withVariables variables: U) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func evaluatePolynomial<U, V>(usingCoefficients coefficients: [Float], withVariables variables: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func evaluatePolynomial<U>(usingCoefficients coefficients: [Double], withVariables variables: U) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func evaluatePolynomial<U, V>(usingCoefficients coefficients: [Double], withVariables variables: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+}
+extension vDSP {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func twoPoleTwoZeroFilter<U>(_ source: U, coefficients: (Float, Float, Float, Float, Float)) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func twoPoleTwoZeroFilter<U, V>(_ source: U, coefficients: (Float, Float, Float, Float, Float), result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func twoPoleTwoZeroFilter<U>(_ source: U, coefficients: (Double, Double, Double, Double, Double)) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func twoPoleTwoZeroFilter<U, V>(_ source: U, coefficients: (Double, Double, Double, Double, Double), result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+}
+extension vDSP {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func maximum<U>(_ vector: U) -> Float where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func maximum<U>(_ vector: U) -> Double where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func maximumMagnitude<U>(_ vector: U) -> Float where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func maximumMagnitude<U>(_ vector: U) -> Double where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func minimum<U>(_ vector: U) -> Float where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func minimum<U>(_ vector: U) -> Double where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func sum<U>(_ vector: U) -> Float where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func sum<U>(_ vector: U) -> Double where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func sumOfSquares<U>(_ vector: U) -> Float where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func sumOfSquares<U>(_ vector: U) -> Double where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func sumAndSumOfSquares<U>(_ vector: U) -> (elementsSum: Float, squaresSum: Float) where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func sumAndSumOfSquares<U>(_ vector: U) -> (elementsSum: Double, squaresSum: Double) where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func sumOfMagnitudes<U>(_ vector: U) -> Float where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func sumOfMagnitudes<U>(_ vector: U) -> Double where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+}
+extension vDSP {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func indexOfMaximum<U>(_ vector: U) -> (UInt, Float) where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func indexOfMaximum<U>(_ vector: U) -> (UInt, Double) where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func indexOfMaximumMagnitude<U>(_ vector: U) -> (UInt, Float) where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func indexOfMaximumMagnitude<U>(_ vector: U) -> (UInt, Double) where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func indexOfMinimum<U>(_ vector: U) -> (UInt, Float) where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func indexOfMinimum<U>(_ vector: U) -> (UInt, Double) where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+}
+extension vDSP {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func meanSquare<U>(_ vector: U) -> Float where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func meanSquare<U>(_ vector: U) -> Double where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func meanMagnitude<U>(_ vector: U) -> Float where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func meanMagnitude<U>(_ vector: U) -> Double where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func mean<U>(_ vector: U) -> Float where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func mean<U>(_ vector: U) -> Double where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func rootMeanSquare<U>(_ vector: U) -> Float where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func rootMeanSquare<U>(_ vector: U) -> Double where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+}
+extension vDSP {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func minimum<U>(_ vectorA: U, _ vectorB: U) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func minimum<U, V>(_ vectorA: U, _ vectorB: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func minimum<U>(_ vectorA: U, _ vectorB: U) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func minimum<U, V>(_ vectorA: U, _ vectorB: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func maximum<U>(_ vectorA: U, _ vectorB: U) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func maximum<U, V>(_ vectorA: U, _ vectorB: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func maximum<U>(_ vectorA: U, _ vectorB: U) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func maximum<U, V>(_ vectorA: U, _ vectorB: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+}
+extension vDSP {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func absolute<U>(_ vector: U) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func absolute<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func absolute<U>(_ vector: U) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func absolute<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func negativeAbsolute<U>(_ vector: U) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func negativeAbsolute<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func negativeAbsolute<U>(_ vector: U) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func negativeAbsolute<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func negative<U>(_ vector: U) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func negative<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func negative<U>(_ vector: U) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func negative<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+}
+extension vDSP {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func reverse<V>(_ vector: inout V) where V : Accelerate.AccelerateMutableBuffer, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func reverse<V>(_ vector: inout V) where V : Accelerate.AccelerateMutableBuffer, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public enum SortOrder : Int32 {
+    case ascending
+    case descending
+    public typealias RawValue = Swift.Int32
+    public init?(rawValue: Swift.Int32)
+    public var rawValue: Swift.Int32 {
+      get
+    }
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func sort<V>(_ vector: inout V, sortOrder: SortOrder) where V : Accelerate.AccelerateMutableBuffer, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func sort<V>(_ vector: inout V, sortOrder: SortOrder) where V : Accelerate.AccelerateMutableBuffer, V.Element == Swift.Double
+}
+extension vDSP {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func square<U>(_ vector: U) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func square<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func square<U>(_ vector: U) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func square<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func signedSquare<U>(_ vector: U) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func signedSquare<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func signedSquare<U>(_ vector: U) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func signedSquare<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func trunc<U>(_ vector: U) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func trunc<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func trunc<U>(_ vector: U) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func trunc<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func countZeroCrossings<U>(_ vector: U) -> UInt where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func countZeroCrossings<U>(_ vector: U) -> UInt where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+}
+extension vDSP {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func slidingWindowSum<U>(_ vector: U, usingWindowLength windowLength: Int) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func slidingWindowSum<U, V>(_ vector: U, usingWindowLength windowLength: Int, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func slidingWindowSum<U>(_ vector: U, usingWindowLength windowLength: Int) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func slidingWindowSum<U, V>(_ vector: U, usingWindowLength windowLength: Int, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+}
+extension vForce {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func ceil<U>(_ vector: U) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func ceil<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func ceil<U>(_ vector: U) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func ceil<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func floor<U>(_ vector: U) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func floor<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func floor<U>(_ vector: U) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func floor<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func copysign<U, V>(magnitudes: U, signs: V) -> [Float] where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func copysign<T, U, V>(magnitudes: T, signs: U, result: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Float, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func copysign<U, V>(magnitudes: U, signs: V) -> [Double] where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func copysign<T, U, V>(magnitudes: T, signs: U, result: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Double, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func truncatingRemainder<U, V>(dividends: U, divisors: V) -> [Float] where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func truncatingRemainder<T, U, V>(dividends: T, divisors: U, result: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Float, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func truncatingRemainder<U, V>(dividends: U, divisors: V) -> [Double] where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func truncatingRemainder<T, U, V>(dividends: T, divisors: U, result: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Double, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func remainder<U, V>(dividends: U, divisors: V) -> [Float] where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func remainder<T, U, V>(dividends: T, divisors: U, result: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Float, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func remainder<U, V>(dividends: U, divisors: V) -> [Double] where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func remainder<T, U, V>(dividends: T, divisors: U, result: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Double, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func trunc<U>(_ vector: U) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func trunc<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func trunc<U>(_ vector: U) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func trunc<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func nearestInteger<U>(_ vector: U) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func nearestInteger<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func nearestInteger<U>(_ vector: U) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func nearestInteger<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func rsqrt<U>(_ vector: U) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func rsqrt<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func rsqrt<U>(_ vector: U) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func rsqrt<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func sqrt<U>(_ vector: U) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func sqrt<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func sqrt<U>(_ vector: U) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func sqrt<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func reciprocal<U>(_ vector: U) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func reciprocal<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func reciprocal<U>(_ vector: U) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func reciprocal<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+}
+extension vForce {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func exp<U>(_ vector: U) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func exp<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func expm1<U>(_ vector: U) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func expm1<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func exp2<U>(_ vector: U) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func exp2<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func exp<U>(_ vector: U) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func exp<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func expm1<U>(_ vector: U) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func expm1<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func exp2<U>(_ vector: U) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func exp2<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func log2<U>(_ vector: U) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func log2<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func log10<U>(_ vector: U) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func log10<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func log2<U>(_ vector: U) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func log2<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func log10<U>(_ vector: U) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func log10<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func logb<U>(_ vector: U) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func logb<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func logb<U>(_ vector: U) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func logb<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+}
+extension vForce {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func pow<U, V>(bases: U, exponents: V) -> [Float] where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func pow<T, U, V>(bases: T, exponents: U, result: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Float, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func pow<U, V>(bases: U, exponents: V) -> [Double] where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func pow<T, U, V>(bases: T, exponents: U, result: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Double, U.Element == Swift.Double, V.Element == Swift.Double
+}
+extension vForce {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func sin<U>(_ vector: U) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func sin<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func sin<U>(_ vector: U) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func sin<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func sinPi<U>(_ vector: U) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func sinPi<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func sinPi<U>(_ vector: U) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func sinPi<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func cos<U>(_ vector: U) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func cos<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func cos<U>(_ vector: U) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func cos<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func cosPi<U>(_ vector: U) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func cosPi<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func cosPi<U>(_ vector: U) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func cosPi<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func sincos<T, U, V>(_ vector: T, sinResult: inout U, cosResult: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateMutableBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Float, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func sincos<T, U, V>(_ vector: T, sinResult: inout U, cosResult: inout V) where T : Accelerate.AccelerateBuffer, U : Accelerate.AccelerateMutableBuffer, V : Accelerate.AccelerateMutableBuffer, T.Element == Swift.Double, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func tan<U>(_ vector: U) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func tan<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func tan<U>(_ vector: U) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func tan<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func tanPi<U>(_ vector: U) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func tanPi<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func tanPi<U>(_ vector: U) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func tanPi<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func asin<U>(_ vector: U) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func asin<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func asin<U>(_ vector: U) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func asin<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func acos<U>(_ vector: U) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func acos<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func acos<U>(_ vector: U) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func acos<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func atan<U>(_ vector: U) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func atan<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func atan<U>(_ vector: U) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func atan<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+}
+extension vForce {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func sinh<U>(_ vector: U) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func sinh<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func sinh<U>(_ vector: U) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func sinh<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func cosh<U>(_ vector: U) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func cosh<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func cosh<U>(_ vector: U) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func cosh<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func tanh<U>(_ vector: U) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func tanh<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func tanh<U>(_ vector: U) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func tanh<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func asinh<U>(_ vector: U) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func asinh<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func asinh<U>(_ vector: U) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func asinh<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func acosh<U>(_ vector: U) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func acosh<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func acosh<U>(_ vector: U) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func acosh<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func atanh<U>(_ vector: U) -> [Float] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func atanh<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Float, V.Element == Swift.Float
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func atanh<U>(_ vector: U) -> [Double] where U : Accelerate.AccelerateBuffer, U.Element == Swift.Double
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  @inline(__always) public static func atanh<U, V>(_ vector: U, result: inout V) where U : Accelerate.AccelerateBuffer, V : Accelerate.AccelerateMutableBuffer, U.Element == Swift.Double, V.Element == Swift.Double
+}

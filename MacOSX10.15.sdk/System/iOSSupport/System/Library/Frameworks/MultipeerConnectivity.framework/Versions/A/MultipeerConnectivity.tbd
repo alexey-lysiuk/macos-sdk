@@ -1,0 +1,12 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 0923E30B-4B31-32AA-8DFF-17D024E5663D' ]
+platform:        uikitformac
+install-name:    '/System/iOSSupport/System/Library/Frameworks/MultipeerConnectivity.framework/Versions/A/MultipeerConnectivity'
+current-version: 164
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _MCErrorDomain, _kMCSessionMaximumNumberOfPeers, _kMCSessionMinimumNumberOfPeers ]
+    objc-classes:    [ MCAdvertiserAssistant, MCBrowserViewController, MCNearbyServiceAdvertiser, 
+                       MCNearbyServiceBrowser, MCPeerID, MCSession ]
+...

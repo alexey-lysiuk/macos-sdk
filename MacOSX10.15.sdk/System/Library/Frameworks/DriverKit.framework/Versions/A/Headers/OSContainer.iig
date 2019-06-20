@@ -1,0 +1,14 @@
+#ifndef _IOKIT_OSCONTAINER_H
+#define _IOKIT_OSCONTAINER_H
+
+#include <DriverKit/OSObject.iig>
+
+
+class OSContainer;
+typedef OSContainer * OSContainerPtr;
+
+class LOCALONLY OSContainer : public OSObject
+{
+};
+
+#endif /* ! _IOKIT_OSCONTAINER_H */

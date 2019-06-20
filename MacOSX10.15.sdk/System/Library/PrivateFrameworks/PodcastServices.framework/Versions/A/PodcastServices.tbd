@@ -1,0 +1,19 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 1F739DF6-7E1A-3978-925E-A813660A77DF', 'x86_64: 1F739DF6-7E1A-3978-925E-A813660A77DF' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/PodcastServices.framework/Versions/A/PodcastServices'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _PODContentDomainITunesDatabase, _PODContentDomainSyncToApp, 
+                       _PODContentDomainSyncToDevice, _PODContentDomainUnitTest, 
+                       _PODContentServiceErrorDomain, _PODContentSourceIdentifierNull, 
+                       _PODServiceErrorDomain ]
+    objc-classes:    [ PODArtwork, PODContentAnchor, PODContentChange, PODContentChangeEntityData, 
+                       PODContentChangeSet, PODContentChangeSetBuilder, PODContentEntity, 
+                       PODContentService, PODEpisode, PODEpisodeChange, PODEpisodeChangeEntityData, 
+                       PODEpisodePlayMetadata, PODLibrarySettings, PODPlaylist, PODPlaylistChange, 
+                       PODPlaylistChangeEntityData, PODSecurityScopedURLWrapper, 
+                       PODService, PODShow, PODShowArtworkChange, PODShowArtworkChangeEntityData, 
+                       PODShowChange, PODShowChangeEntityData, PODShowSettings ]
+...

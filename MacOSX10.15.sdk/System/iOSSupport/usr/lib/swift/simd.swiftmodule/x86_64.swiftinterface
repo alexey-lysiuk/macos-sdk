@@ -1,0 +1,2877 @@
+// swift-interface-format-version: 1.0
+// swift-tools-version: Apple Swift version 5.1 effective-4.1.50 (swiftlang-1100.8.32.26 clang-1100.0.18.2)
+// swift-module-flags: -disable-objc-attr-requires-foundation-module -target x86_64-apple-ios13.0-macabi -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftsimd -parse-stdlib -swift-version 4 -O -enforce-exclusivity=unchecked -module-name simd
+import Darwin
+import Swift
+@_exported import simd
+extension SIMD {
+  @available(swift, deprecated: 5, renamed: "init(repeating:)")
+  @_transparent public init(_ scalar: Scalar) { self.init(repeating: scalar) }
+}
+extension SIMD where Self.Scalar : Swift.FixedWidthInteger {
+  @available(swift, deprecated: 5, message: "use 0 &- rhs")
+  @_transparent prefix public static func - (rhs: Self) -> Self { return 0 &- rhs }
+}
+@available(swift, deprecated: 5.1, message: "Use SIMD2<Float>")
+public typealias float2 = SIMD2<Float>
+@_transparent public func abs(_ x: float2) -> float2 {
+  return simd_abs(x)
+}
+@_transparent public func min(_ x: float2, _ y: float2) -> float2 {
+  return simd_min(x, y)
+}
+@_transparent public func max(_ x: float2, _ y: float2) -> float2 {
+  return simd_max(x, y)
+}
+@_transparent public func min(_ vector: float2, _ scalar: Float) -> float2 {
+  return min(vector, float2(repeating: scalar))
+}
+@_transparent public func max(_ vector: float2, _ scalar: Float) -> float2 {
+  return max(vector, float2(repeating: scalar))
+}
+@_transparent public func clamp(_ x: float2, min: float2, max: float2) -> float2 {
+  return simd.min(simd.max(x, min), max)
+}
+@_transparent public func clamp(_ x: float2, min: Float, max: Float) -> float2 {
+  return simd.min(simd.max(x, min), max)
+}
+@_transparent public func reduce_add(_ x: float2) -> Float {
+  return simd_reduce_add(x)
+}
+@_transparent public func reduce_min(_ x: float2) -> Float {
+  return simd_reduce_min(x)
+}
+@_transparent public func reduce_max(_ x: float2) -> Float {
+  return simd_reduce_max(x)
+}
+@_transparent public func sign(_ x: float2) -> float2 {
+  return simd_sign(x)
+}
+@_transparent public func mix(_ x: float2, _ y: float2, t: float2) -> float2 {
+  return x + t*(y-x)
+}
+@_transparent public func mix(_ x: float2, _ y: float2, t: Float) -> float2 {
+  return x + t*(y-x)
+}
+@_transparent public func recip(_ x: float2) -> float2 {
+  return simd_recip(x)
+}
+@_transparent public func rsqrt(_ x: float2) -> float2 {
+  return simd_rsqrt(x)
+}
+@_transparent public func fmin(_ x: float2, _ y: float2) -> float2 {
+  return min(x, y)
+}
+@_transparent public func fmax(_ x: float2, _ y: float2) -> float2 {
+  return max(x, y)
+}
+@_transparent public func ceil(_ x: float2) -> float2 {
+  return __tg_ceil(x)
+}
+@_transparent public func floor(_ x: float2) -> float2 {
+  return __tg_floor(x)
+}
+@_transparent public func trunc(_ x: float2) -> float2 {
+  return __tg_trunc(x)
+}
+@_transparent public func fract(_ x: float2) -> float2 {
+  return simd_fract(x)
+}
+@_transparent public func step(_ x: float2, edge: float2) -> float2 {
+  return simd_step(edge, x)
+}
+@_transparent public func smoothstep(_ x: float2, edge0: float2, edge1: float2) -> float2 {
+  return simd_smoothstep(edge0, edge1, x)
+}
+@_transparent public func dot(_ x: float2, _ y: float2) -> Float {
+  return reduce_add(x * y)
+}
+@_transparent public func project(_ x: float2, _ y: float2) -> float2 {
+  return simd_project(x, y)
+}
+@_transparent public func length_squared(_ x: float2) -> Float {
+  return dot(x, x)
+}
+@_transparent public func length(_ x: float2) -> Float {
+  return sqrt(length_squared(x))
+}
+@_transparent public func norm_one(_ x: float2) -> Float {
+  return reduce_add(abs(x))
+}
+@_transparent public func norm_inf(_ x: float2) -> Float {
+  return reduce_max(abs(x))
+}
+@_transparent public func distance_squared(_ x: float2, _ y: float2) -> Float {
+  return length_squared(x - y)
+}
+@_transparent public func distance(_ x: float2, _ y: float2) -> Float {
+  return length(x - y)
+}
+@_transparent public func normalize(_ x: float2) -> float2 {
+  return simd_normalize(x)
+}
+@_transparent public func reflect(_ x: float2, n: float2) -> float2 {
+  return simd_reflect(x, n)
+}
+@_transparent public func refract(_ x: float2, n: float2, eta: Float) -> float2 {
+  return simd_refract(x, n, eta)
+}
+@available(swift, deprecated: 5.1, message: "Use SIMD3<Float>")
+public typealias float3 = SIMD3<Float>
+@_transparent public func abs(_ x: float3) -> float3 {
+  return simd_abs(x)
+}
+@_transparent public func min(_ x: float3, _ y: float3) -> float3 {
+  return simd_min(x, y)
+}
+@_transparent public func max(_ x: float3, _ y: float3) -> float3 {
+  return simd_max(x, y)
+}
+@_transparent public func min(_ vector: float3, _ scalar: Float) -> float3 {
+  return min(vector, float3(repeating: scalar))
+}
+@_transparent public func max(_ vector: float3, _ scalar: Float) -> float3 {
+  return max(vector, float3(repeating: scalar))
+}
+@_transparent public func clamp(_ x: float3, min: float3, max: float3) -> float3 {
+  return simd.min(simd.max(x, min), max)
+}
+@_transparent public func clamp(_ x: float3, min: Float, max: Float) -> float3 {
+  return simd.min(simd.max(x, min), max)
+}
+@_transparent public func reduce_add(_ x: float3) -> Float {
+  return simd_reduce_add(x)
+}
+@_transparent public func reduce_min(_ x: float3) -> Float {
+  return simd_reduce_min(x)
+}
+@_transparent public func reduce_max(_ x: float3) -> Float {
+  return simd_reduce_max(x)
+}
+@_transparent public func sign(_ x: float3) -> float3 {
+  return simd_sign(x)
+}
+@_transparent public func mix(_ x: float3, _ y: float3, t: float3) -> float3 {
+  return x + t*(y-x)
+}
+@_transparent public func mix(_ x: float3, _ y: float3, t: Float) -> float3 {
+  return x + t*(y-x)
+}
+@_transparent public func recip(_ x: float3) -> float3 {
+  return simd_recip(x)
+}
+@_transparent public func rsqrt(_ x: float3) -> float3 {
+  return simd_rsqrt(x)
+}
+@_transparent public func fmin(_ x: float3, _ y: float3) -> float3 {
+  return min(x, y)
+}
+@_transparent public func fmax(_ x: float3, _ y: float3) -> float3 {
+  return max(x, y)
+}
+@_transparent public func ceil(_ x: float3) -> float3 {
+  return __tg_ceil(x)
+}
+@_transparent public func floor(_ x: float3) -> float3 {
+  return __tg_floor(x)
+}
+@_transparent public func trunc(_ x: float3) -> float3 {
+  return __tg_trunc(x)
+}
+@_transparent public func fract(_ x: float3) -> float3 {
+  return simd_fract(x)
+}
+@_transparent public func step(_ x: float3, edge: float3) -> float3 {
+  return simd_step(edge, x)
+}
+@_transparent public func smoothstep(_ x: float3, edge0: float3, edge1: float3) -> float3 {
+  return simd_smoothstep(edge0, edge1, x)
+}
+@_transparent public func dot(_ x: float3, _ y: float3) -> Float {
+  return reduce_add(x * y)
+}
+@_transparent public func project(_ x: float3, _ y: float3) -> float3 {
+  return simd_project(x, y)
+}
+@_transparent public func length_squared(_ x: float3) -> Float {
+  return dot(x, x)
+}
+@_transparent public func length(_ x: float3) -> Float {
+  return sqrt(length_squared(x))
+}
+@_transparent public func norm_one(_ x: float3) -> Float {
+  return reduce_add(abs(x))
+}
+@_transparent public func norm_inf(_ x: float3) -> Float {
+  return reduce_max(abs(x))
+}
+@_transparent public func distance_squared(_ x: float3, _ y: float3) -> Float {
+  return length_squared(x - y)
+}
+@_transparent public func distance(_ x: float3, _ y: float3) -> Float {
+  return length(x - y)
+}
+@_transparent public func normalize(_ x: float3) -> float3 {
+  return simd_normalize(x)
+}
+@_transparent public func reflect(_ x: float3, n: float3) -> float3 {
+  return simd_reflect(x, n)
+}
+@_transparent public func refract(_ x: float3, n: float3, eta: Float) -> float3 {
+  return simd_refract(x, n, eta)
+}
+@available(swift, deprecated: 5.1, message: "Use SIMD4<Float>")
+public typealias float4 = SIMD4<Float>
+@_transparent public func abs(_ x: float4) -> float4 {
+  return simd_abs(x)
+}
+@_transparent public func min(_ x: float4, _ y: float4) -> float4 {
+  return simd_min(x, y)
+}
+@_transparent public func max(_ x: float4, _ y: float4) -> float4 {
+  return simd_max(x, y)
+}
+@_transparent public func min(_ vector: float4, _ scalar: Float) -> float4 {
+  return min(vector, float4(repeating: scalar))
+}
+@_transparent public func max(_ vector: float4, _ scalar: Float) -> float4 {
+  return max(vector, float4(repeating: scalar))
+}
+@_transparent public func clamp(_ x: float4, min: float4, max: float4) -> float4 {
+  return simd.min(simd.max(x, min), max)
+}
+@_transparent public func clamp(_ x: float4, min: Float, max: Float) -> float4 {
+  return simd.min(simd.max(x, min), max)
+}
+@_transparent public func reduce_add(_ x: float4) -> Float {
+  return simd_reduce_add(x)
+}
+@_transparent public func reduce_min(_ x: float4) -> Float {
+  return simd_reduce_min(x)
+}
+@_transparent public func reduce_max(_ x: float4) -> Float {
+  return simd_reduce_max(x)
+}
+@_transparent public func sign(_ x: float4) -> float4 {
+  return simd_sign(x)
+}
+@_transparent public func mix(_ x: float4, _ y: float4, t: float4) -> float4 {
+  return x + t*(y-x)
+}
+@_transparent public func mix(_ x: float4, _ y: float4, t: Float) -> float4 {
+  return x + t*(y-x)
+}
+@_transparent public func recip(_ x: float4) -> float4 {
+  return simd_recip(x)
+}
+@_transparent public func rsqrt(_ x: float4) -> float4 {
+  return simd_rsqrt(x)
+}
+@_transparent public func fmin(_ x: float4, _ y: float4) -> float4 {
+  return min(x, y)
+}
+@_transparent public func fmax(_ x: float4, _ y: float4) -> float4 {
+  return max(x, y)
+}
+@_transparent public func ceil(_ x: float4) -> float4 {
+  return __tg_ceil(x)
+}
+@_transparent public func floor(_ x: float4) -> float4 {
+  return __tg_floor(x)
+}
+@_transparent public func trunc(_ x: float4) -> float4 {
+  return __tg_trunc(x)
+}
+@_transparent public func fract(_ x: float4) -> float4 {
+  return simd_fract(x)
+}
+@_transparent public func step(_ x: float4, edge: float4) -> float4 {
+  return simd_step(edge, x)
+}
+@_transparent public func smoothstep(_ x: float4, edge0: float4, edge1: float4) -> float4 {
+  return simd_smoothstep(edge0, edge1, x)
+}
+@_transparent public func dot(_ x: float4, _ y: float4) -> Float {
+  return reduce_add(x * y)
+}
+@_transparent public func project(_ x: float4, _ y: float4) -> float4 {
+  return simd_project(x, y)
+}
+@_transparent public func length_squared(_ x: float4) -> Float {
+  return dot(x, x)
+}
+@_transparent public func length(_ x: float4) -> Float {
+  return sqrt(length_squared(x))
+}
+@_transparent public func norm_one(_ x: float4) -> Float {
+  return reduce_add(abs(x))
+}
+@_transparent public func norm_inf(_ x: float4) -> Float {
+  return reduce_max(abs(x))
+}
+@_transparent public func distance_squared(_ x: float4, _ y: float4) -> Float {
+  return length_squared(x - y)
+}
+@_transparent public func distance(_ x: float4, _ y: float4) -> Float {
+  return length(x - y)
+}
+@_transparent public func normalize(_ x: float4) -> float4 {
+  return simd_normalize(x)
+}
+@_transparent public func reflect(_ x: float4, n: float4) -> float4 {
+  return simd_reflect(x, n)
+}
+@_transparent public func refract(_ x: float4, n: float4, eta: Float) -> float4 {
+  return simd_refract(x, n, eta)
+}
+@_transparent public func sign(_ x: Float) -> Float {
+  return simd_sign(x)
+}
+@_transparent public func recip(_ x: Float) -> Float {
+  return simd_recip(x)
+}
+@_transparent public func rsqrt(_ x: Float) -> Float {
+  return simd_rsqrt(x)
+}
+@_transparent public func step(_ x: Float, edge: Float) -> Float {
+  return simd_step(edge, x)
+}
+@_transparent public func cross(_ x: float2, _ y: float2) -> float3 {
+  return simd_cross(x,y)
+}
+@_transparent public func cross(_ x: float3, _ y: float3) -> float3 {
+  return simd_cross(x,y)
+}
+@available(swift, deprecated: 5.1, message: "Use SIMD2<Double>")
+public typealias double2 = SIMD2<Double>
+@_transparent public func abs(_ x: double2) -> double2 {
+  return simd_abs(x)
+}
+@_transparent public func min(_ x: double2, _ y: double2) -> double2 {
+  return simd_min(x, y)
+}
+@_transparent public func max(_ x: double2, _ y: double2) -> double2 {
+  return simd_max(x, y)
+}
+@_transparent public func min(_ vector: double2, _ scalar: Double) -> double2 {
+  return min(vector, double2(repeating: scalar))
+}
+@_transparent public func max(_ vector: double2, _ scalar: Double) -> double2 {
+  return max(vector, double2(repeating: scalar))
+}
+@_transparent public func clamp(_ x: double2, min: double2, max: double2) -> double2 {
+  return simd.min(simd.max(x, min), max)
+}
+@_transparent public func clamp(_ x: double2, min: Double, max: Double) -> double2 {
+  return simd.min(simd.max(x, min), max)
+}
+@_transparent public func reduce_add(_ x: double2) -> Double {
+  return simd_reduce_add(x)
+}
+@_transparent public func reduce_min(_ x: double2) -> Double {
+  return simd_reduce_min(x)
+}
+@_transparent public func reduce_max(_ x: double2) -> Double {
+  return simd_reduce_max(x)
+}
+@_transparent public func sign(_ x: double2) -> double2 {
+  return simd_sign(x)
+}
+@_transparent public func mix(_ x: double2, _ y: double2, t: double2) -> double2 {
+  return x + t*(y-x)
+}
+@_transparent public func mix(_ x: double2, _ y: double2, t: Double) -> double2 {
+  return x + t*(y-x)
+}
+@_transparent public func recip(_ x: double2) -> double2 {
+  return simd_recip(x)
+}
+@_transparent public func rsqrt(_ x: double2) -> double2 {
+  return simd_rsqrt(x)
+}
+@_transparent public func fmin(_ x: double2, _ y: double2) -> double2 {
+  return min(x, y)
+}
+@_transparent public func fmax(_ x: double2, _ y: double2) -> double2 {
+  return max(x, y)
+}
+@_transparent public func ceil(_ x: double2) -> double2 {
+  return __tg_ceil(x)
+}
+@_transparent public func floor(_ x: double2) -> double2 {
+  return __tg_floor(x)
+}
+@_transparent public func trunc(_ x: double2) -> double2 {
+  return __tg_trunc(x)
+}
+@_transparent public func fract(_ x: double2) -> double2 {
+  return simd_fract(x)
+}
+@_transparent public func step(_ x: double2, edge: double2) -> double2 {
+  return simd_step(edge, x)
+}
+@_transparent public func smoothstep(_ x: double2, edge0: double2, edge1: double2) -> double2 {
+  return simd_smoothstep(edge0, edge1, x)
+}
+@_transparent public func dot(_ x: double2, _ y: double2) -> Double {
+  return reduce_add(x * y)
+}
+@_transparent public func project(_ x: double2, _ y: double2) -> double2 {
+  return simd_project(x, y)
+}
+@_transparent public func length_squared(_ x: double2) -> Double {
+  return dot(x, x)
+}
+@_transparent public func length(_ x: double2) -> Double {
+  return sqrt(length_squared(x))
+}
+@_transparent public func norm_one(_ x: double2) -> Double {
+  return reduce_add(abs(x))
+}
+@_transparent public func norm_inf(_ x: double2) -> Double {
+  return reduce_max(abs(x))
+}
+@_transparent public func distance_squared(_ x: double2, _ y: double2) -> Double {
+  return length_squared(x - y)
+}
+@_transparent public func distance(_ x: double2, _ y: double2) -> Double {
+  return length(x - y)
+}
+@_transparent public func normalize(_ x: double2) -> double2 {
+  return simd_normalize(x)
+}
+@_transparent public func reflect(_ x: double2, n: double2) -> double2 {
+  return simd_reflect(x, n)
+}
+@_transparent public func refract(_ x: double2, n: double2, eta: Double) -> double2 {
+  return simd_refract(x, n, eta)
+}
+@available(swift, deprecated: 5.1, message: "Use SIMD3<Double>")
+public typealias double3 = SIMD3<Double>
+@_transparent public func abs(_ x: double3) -> double3 {
+  return simd_abs(x)
+}
+@_transparent public func min(_ x: double3, _ y: double3) -> double3 {
+  return simd_min(x, y)
+}
+@_transparent public func max(_ x: double3, _ y: double3) -> double3 {
+  return simd_max(x, y)
+}
+@_transparent public func min(_ vector: double3, _ scalar: Double) -> double3 {
+  return min(vector, double3(repeating: scalar))
+}
+@_transparent public func max(_ vector: double3, _ scalar: Double) -> double3 {
+  return max(vector, double3(repeating: scalar))
+}
+@_transparent public func clamp(_ x: double3, min: double3, max: double3) -> double3 {
+  return simd.min(simd.max(x, min), max)
+}
+@_transparent public func clamp(_ x: double3, min: Double, max: Double) -> double3 {
+  return simd.min(simd.max(x, min), max)
+}
+@_transparent public func reduce_add(_ x: double3) -> Double {
+  return simd_reduce_add(x)
+}
+@_transparent public func reduce_min(_ x: double3) -> Double {
+  return simd_reduce_min(x)
+}
+@_transparent public func reduce_max(_ x: double3) -> Double {
+  return simd_reduce_max(x)
+}
+@_transparent public func sign(_ x: double3) -> double3 {
+  return simd_sign(x)
+}
+@_transparent public func mix(_ x: double3, _ y: double3, t: double3) -> double3 {
+  return x + t*(y-x)
+}
+@_transparent public func mix(_ x: double3, _ y: double3, t: Double) -> double3 {
+  return x + t*(y-x)
+}
+@_transparent public func recip(_ x: double3) -> double3 {
+  return simd_recip(x)
+}
+@_transparent public func rsqrt(_ x: double3) -> double3 {
+  return simd_rsqrt(x)
+}
+@_transparent public func fmin(_ x: double3, _ y: double3) -> double3 {
+  return min(x, y)
+}
+@_transparent public func fmax(_ x: double3, _ y: double3) -> double3 {
+  return max(x, y)
+}
+@_transparent public func ceil(_ x: double3) -> double3 {
+  return __tg_ceil(x)
+}
+@_transparent public func floor(_ x: double3) -> double3 {
+  return __tg_floor(x)
+}
+@_transparent public func trunc(_ x: double3) -> double3 {
+  return __tg_trunc(x)
+}
+@_transparent public func fract(_ x: double3) -> double3 {
+  return simd_fract(x)
+}
+@_transparent public func step(_ x: double3, edge: double3) -> double3 {
+  return simd_step(edge, x)
+}
+@_transparent public func smoothstep(_ x: double3, edge0: double3, edge1: double3) -> double3 {
+  return simd_smoothstep(edge0, edge1, x)
+}
+@_transparent public func dot(_ x: double3, _ y: double3) -> Double {
+  return reduce_add(x * y)
+}
+@_transparent public func project(_ x: double3, _ y: double3) -> double3 {
+  return simd_project(x, y)
+}
+@_transparent public func length_squared(_ x: double3) -> Double {
+  return dot(x, x)
+}
+@_transparent public func length(_ x: double3) -> Double {
+  return sqrt(length_squared(x))
+}
+@_transparent public func norm_one(_ x: double3) -> Double {
+  return reduce_add(abs(x))
+}
+@_transparent public func norm_inf(_ x: double3) -> Double {
+  return reduce_max(abs(x))
+}
+@_transparent public func distance_squared(_ x: double3, _ y: double3) -> Double {
+  return length_squared(x - y)
+}
+@_transparent public func distance(_ x: double3, _ y: double3) -> Double {
+  return length(x - y)
+}
+@_transparent public func normalize(_ x: double3) -> double3 {
+  return simd_normalize(x)
+}
+@_transparent public func reflect(_ x: double3, n: double3) -> double3 {
+  return simd_reflect(x, n)
+}
+@_transparent public func refract(_ x: double3, n: double3, eta: Double) -> double3 {
+  return simd_refract(x, n, eta)
+}
+@available(swift, deprecated: 5.1, message: "Use SIMD4<Double>")
+public typealias double4 = SIMD4<Double>
+@_transparent public func abs(_ x: double4) -> double4 {
+  return simd_abs(x)
+}
+@_transparent public func min(_ x: double4, _ y: double4) -> double4 {
+  return simd_min(x, y)
+}
+@_transparent public func max(_ x: double4, _ y: double4) -> double4 {
+  return simd_max(x, y)
+}
+@_transparent public func min(_ vector: double4, _ scalar: Double) -> double4 {
+  return min(vector, double4(repeating: scalar))
+}
+@_transparent public func max(_ vector: double4, _ scalar: Double) -> double4 {
+  return max(vector, double4(repeating: scalar))
+}
+@_transparent public func clamp(_ x: double4, min: double4, max: double4) -> double4 {
+  return simd.min(simd.max(x, min), max)
+}
+@_transparent public func clamp(_ x: double4, min: Double, max: Double) -> double4 {
+  return simd.min(simd.max(x, min), max)
+}
+@_transparent public func reduce_add(_ x: double4) -> Double {
+  return simd_reduce_add(x)
+}
+@_transparent public func reduce_min(_ x: double4) -> Double {
+  return simd_reduce_min(x)
+}
+@_transparent public func reduce_max(_ x: double4) -> Double {
+  return simd_reduce_max(x)
+}
+@_transparent public func sign(_ x: double4) -> double4 {
+  return simd_sign(x)
+}
+@_transparent public func mix(_ x: double4, _ y: double4, t: double4) -> double4 {
+  return x + t*(y-x)
+}
+@_transparent public func mix(_ x: double4, _ y: double4, t: Double) -> double4 {
+  return x + t*(y-x)
+}
+@_transparent public func recip(_ x: double4) -> double4 {
+  return simd_recip(x)
+}
+@_transparent public func rsqrt(_ x: double4) -> double4 {
+  return simd_rsqrt(x)
+}
+@_transparent public func fmin(_ x: double4, _ y: double4) -> double4 {
+  return min(x, y)
+}
+@_transparent public func fmax(_ x: double4, _ y: double4) -> double4 {
+  return max(x, y)
+}
+@_transparent public func ceil(_ x: double4) -> double4 {
+  return __tg_ceil(x)
+}
+@_transparent public func floor(_ x: double4) -> double4 {
+  return __tg_floor(x)
+}
+@_transparent public func trunc(_ x: double4) -> double4 {
+  return __tg_trunc(x)
+}
+@_transparent public func fract(_ x: double4) -> double4 {
+  return simd_fract(x)
+}
+@_transparent public func step(_ x: double4, edge: double4) -> double4 {
+  return simd_step(edge, x)
+}
+@_transparent public func smoothstep(_ x: double4, edge0: double4, edge1: double4) -> double4 {
+  return simd_smoothstep(edge0, edge1, x)
+}
+@_transparent public func dot(_ x: double4, _ y: double4) -> Double {
+  return reduce_add(x * y)
+}
+@_transparent public func project(_ x: double4, _ y: double4) -> double4 {
+  return simd_project(x, y)
+}
+@_transparent public func length_squared(_ x: double4) -> Double {
+  return dot(x, x)
+}
+@_transparent public func length(_ x: double4) -> Double {
+  return sqrt(length_squared(x))
+}
+@_transparent public func norm_one(_ x: double4) -> Double {
+  return reduce_add(abs(x))
+}
+@_transparent public func norm_inf(_ x: double4) -> Double {
+  return reduce_max(abs(x))
+}
+@_transparent public func distance_squared(_ x: double4, _ y: double4) -> Double {
+  return length_squared(x - y)
+}
+@_transparent public func distance(_ x: double4, _ y: double4) -> Double {
+  return length(x - y)
+}
+@_transparent public func normalize(_ x: double4) -> double4 {
+  return simd_normalize(x)
+}
+@_transparent public func reflect(_ x: double4, n: double4) -> double4 {
+  return simd_reflect(x, n)
+}
+@_transparent public func refract(_ x: double4, n: double4, eta: Double) -> double4 {
+  return simd_refract(x, n, eta)
+}
+@_transparent public func sign(_ x: Double) -> Double {
+  return simd_sign(x)
+}
+@_transparent public func recip(_ x: Double) -> Double {
+  return simd_recip(x)
+}
+@_transparent public func rsqrt(_ x: Double) -> Double {
+  return simd_rsqrt(x)
+}
+@_transparent public func step(_ x: Double, edge: Double) -> Double {
+  return simd_step(edge, x)
+}
+@_transparent public func cross(_ x: double2, _ y: double2) -> double3 {
+  return simd_cross(x,y)
+}
+@_transparent public func cross(_ x: double3, _ y: double3) -> double3 {
+  return simd_cross(x,y)
+}
+@available(swift, deprecated: 5.1, message: "Use SIMD2<Int32>")
+public typealias int2 = SIMD2<Int32>
+@_transparent public func abs(_ x: int2) -> int2 {
+  return simd_abs(x)
+}
+@_transparent public func min(_ x: int2, _ y: int2) -> int2 {
+  return simd_min(x, y)
+}
+@_transparent public func max(_ x: int2, _ y: int2) -> int2 {
+  return simd_max(x, y)
+}
+@_transparent public func min(_ vector: int2, _ scalar: Int32) -> int2 {
+  return min(vector, int2(repeating: scalar))
+}
+@_transparent public func max(_ vector: int2, _ scalar: Int32) -> int2 {
+  return max(vector, int2(repeating: scalar))
+}
+@_transparent public func clamp(_ x: int2, min: int2, max: int2) -> int2 {
+  return simd.min(simd.max(x, min), max)
+}
+@_transparent public func clamp(_ x: int2, min: Int32, max: Int32) -> int2 {
+  return simd.min(simd.max(x, min), max)
+}
+@_transparent public func reduce_add(_ x: int2) -> Int32 {
+  return simd_reduce_add(x)
+}
+@_transparent public func reduce_min(_ x: int2) -> Int32 {
+  return simd_reduce_min(x)
+}
+@_transparent public func reduce_max(_ x: int2) -> Int32 {
+  return simd_reduce_max(x)
+}
+@available(swift, deprecated: 5.1, message: "Use SIMD3<Int32>")
+public typealias int3 = SIMD3<Int32>
+@_transparent public func abs(_ x: int3) -> int3 {
+  return simd_abs(x)
+}
+@_transparent public func min(_ x: int3, _ y: int3) -> int3 {
+  return simd_min(x, y)
+}
+@_transparent public func max(_ x: int3, _ y: int3) -> int3 {
+  return simd_max(x, y)
+}
+@_transparent public func min(_ vector: int3, _ scalar: Int32) -> int3 {
+  return min(vector, int3(repeating: scalar))
+}
+@_transparent public func max(_ vector: int3, _ scalar: Int32) -> int3 {
+  return max(vector, int3(repeating: scalar))
+}
+@_transparent public func clamp(_ x: int3, min: int3, max: int3) -> int3 {
+  return simd.min(simd.max(x, min), max)
+}
+@_transparent public func clamp(_ x: int3, min: Int32, max: Int32) -> int3 {
+  return simd.min(simd.max(x, min), max)
+}
+@_transparent public func reduce_add(_ x: int3) -> Int32 {
+  return simd_reduce_add(x)
+}
+@_transparent public func reduce_min(_ x: int3) -> Int32 {
+  return simd_reduce_min(x)
+}
+@_transparent public func reduce_max(_ x: int3) -> Int32 {
+  return simd_reduce_max(x)
+}
+@available(swift, deprecated: 5.1, message: "Use SIMD4<Int32>")
+public typealias int4 = SIMD4<Int32>
+@_transparent public func abs(_ x: int4) -> int4 {
+  return simd_abs(x)
+}
+@_transparent public func min(_ x: int4, _ y: int4) -> int4 {
+  return simd_min(x, y)
+}
+@_transparent public func max(_ x: int4, _ y: int4) -> int4 {
+  return simd_max(x, y)
+}
+@_transparent public func min(_ vector: int4, _ scalar: Int32) -> int4 {
+  return min(vector, int4(repeating: scalar))
+}
+@_transparent public func max(_ vector: int4, _ scalar: Int32) -> int4 {
+  return max(vector, int4(repeating: scalar))
+}
+@_transparent public func clamp(_ x: int4, min: int4, max: int4) -> int4 {
+  return simd.min(simd.max(x, min), max)
+}
+@_transparent public func clamp(_ x: int4, min: Int32, max: Int32) -> int4 {
+  return simd.min(simd.max(x, min), max)
+}
+@_transparent public func reduce_add(_ x: int4) -> Int32 {
+  return simd_reduce_add(x)
+}
+@_transparent public func reduce_min(_ x: int4) -> Int32 {
+  return simd_reduce_min(x)
+}
+@_transparent public func reduce_max(_ x: int4) -> Int32 {
+  return simd_reduce_max(x)
+}
+@available(swift, deprecated: 5.1, message: "Use SIMD2<UInt32>")
+public typealias uint2 = SIMD2<UInt32>
+@_transparent public func min(_ x: uint2, _ y: uint2) -> uint2 {
+  return simd_min(x, y)
+}
+@_transparent public func max(_ x: uint2, _ y: uint2) -> uint2 {
+  return simd_max(x, y)
+}
+@_transparent public func min(_ vector: uint2, _ scalar: UInt32) -> uint2 {
+  return min(vector, uint2(repeating: scalar))
+}
+@_transparent public func max(_ vector: uint2, _ scalar: UInt32) -> uint2 {
+  return max(vector, uint2(repeating: scalar))
+}
+@_transparent public func clamp(_ x: uint2, min: uint2, max: uint2) -> uint2 {
+  return simd.min(simd.max(x, min), max)
+}
+@_transparent public func clamp(_ x: uint2, min: UInt32, max: UInt32) -> uint2 {
+  return simd.min(simd.max(x, min), max)
+}
+@_transparent public func reduce_add(_ x: uint2) -> UInt32 {
+  return simd_reduce_add(x)
+}
+@_transparent public func reduce_min(_ x: uint2) -> UInt32 {
+  return simd_reduce_min(x)
+}
+@_transparent public func reduce_max(_ x: uint2) -> UInt32 {
+  return simd_reduce_max(x)
+}
+@available(swift, deprecated: 5.1, message: "Use SIMD3<UInt32>")
+public typealias uint3 = SIMD3<UInt32>
+@_transparent public func min(_ x: uint3, _ y: uint3) -> uint3 {
+  return simd_min(x, y)
+}
+@_transparent public func max(_ x: uint3, _ y: uint3) -> uint3 {
+  return simd_max(x, y)
+}
+@_transparent public func min(_ vector: uint3, _ scalar: UInt32) -> uint3 {
+  return min(vector, uint3(repeating: scalar))
+}
+@_transparent public func max(_ vector: uint3, _ scalar: UInt32) -> uint3 {
+  return max(vector, uint3(repeating: scalar))
+}
+@_transparent public func clamp(_ x: uint3, min: uint3, max: uint3) -> uint3 {
+  return simd.min(simd.max(x, min), max)
+}
+@_transparent public func clamp(_ x: uint3, min: UInt32, max: UInt32) -> uint3 {
+  return simd.min(simd.max(x, min), max)
+}
+@_transparent public func reduce_add(_ x: uint3) -> UInt32 {
+  return simd_reduce_add(x)
+}
+@_transparent public func reduce_min(_ x: uint3) -> UInt32 {
+  return simd_reduce_min(x)
+}
+@_transparent public func reduce_max(_ x: uint3) -> UInt32 {
+  return simd_reduce_max(x)
+}
+@available(swift, deprecated: 5.1, message: "Use SIMD4<UInt32>")
+public typealias uint4 = SIMD4<UInt32>
+@_transparent public func min(_ x: uint4, _ y: uint4) -> uint4 {
+  return simd_min(x, y)
+}
+@_transparent public func max(_ x: uint4, _ y: uint4) -> uint4 {
+  return simd_max(x, y)
+}
+@_transparent public func min(_ vector: uint4, _ scalar: UInt32) -> uint4 {
+  return min(vector, uint4(repeating: scalar))
+}
+@_transparent public func max(_ vector: uint4, _ scalar: UInt32) -> uint4 {
+  return max(vector, uint4(repeating: scalar))
+}
+@_transparent public func clamp(_ x: uint4, min: uint4, max: uint4) -> uint4 {
+  return simd.min(simd.max(x, min), max)
+}
+@_transparent public func clamp(_ x: uint4, min: UInt32, max: UInt32) -> uint4 {
+  return simd.min(simd.max(x, min), max)
+}
+@_transparent public func reduce_add(_ x: uint4) -> UInt32 {
+  return simd_reduce_add(x)
+}
+@_transparent public func reduce_min(_ x: uint4) -> UInt32 {
+  return simd_reduce_min(x)
+}
+@_transparent public func reduce_max(_ x: uint4) -> UInt32 {
+  return simd_reduce_max(x)
+}
+public typealias float2x2 = simd_float2x2
+extension simd_float2x2 {
+  public init(_ scalar: Float)
+  public init(diagonal: float2)
+  public init(_ columns: [float2])
+  public init(rows: [float2])
+  public init(_ col0: float2, _ col1: float2)
+  @available(swift, deprecated: 4, message: "This conversion is no longer necessary; use `cmatrix` directly.")
+  @_transparent public init(_ cmatrix: simd_float2x2) {
+    self = cmatrix
+  }
+  @available(swift, deprecated: 4, message: "This property is no longer needed; use the matrix itself.")
+  @_transparent public var cmatrix: simd_float2x2 {
+    get {
+    return self
+  }
+  }
+  public subscript(column: Int) -> float2 {
+    get
+    set(value)
+  }
+  public subscript(column: Int, row: Int) -> Float {
+    get
+    set(value)
+  }
+}
+extension simd_float2x2 : CustomDebugStringConvertible {
+  public var debugDescription: String {
+    get
+  }
+}
+extension simd_float2x2 : Equatable {
+  @_transparent public static func == (lhs: simd_float2x2, rhs: simd_float2x2) -> Bool {
+    return simd_equal(lhs, rhs)
+  }
+}
+extension simd_float2x2 {
+  @_transparent public var transpose: float2x2 {
+    get {
+    return simd_transpose(self)
+  }
+  }
+  @available(OSX 10.10, iOS 8.0, tvOS 10.0, watchOS 3.0, *)
+  @_transparent public var inverse: simd_float2x2 {
+    get {
+    return simd_inverse(self)
+  }
+  }
+  @_transparent public var determinant: Float {
+    get {
+    return simd_determinant(self)
+  }
+  }
+  @_transparent public static func + (lhs: simd_float2x2, rhs: simd_float2x2) -> simd_float2x2 {
+    return simd_add(lhs, rhs)
+  }
+  @_transparent prefix public static func - (rhs: simd_float2x2) -> simd_float2x2 {
+    return simd_float2x2() - rhs
+  }
+  @_transparent public static func - (lhs: simd_float2x2, rhs: simd_float2x2) -> simd_float2x2 {
+    return simd_sub(lhs, rhs)
+  }
+  @_transparent public static func += (lhs: inout simd_float2x2, rhs: simd_float2x2) {
+    lhs = lhs + rhs
+  }
+  @_transparent public static func -= (lhs: inout simd_float2x2, rhs: simd_float2x2) {
+    lhs = lhs - rhs
+  }
+  @_transparent public static func * (lhs: Float, rhs: simd_float2x2) -> simd_float2x2 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_float2x2, rhs: Float) -> simd_float2x2 {
+    return rhs*lhs
+  }
+  @_transparent public static func *= (lhs: inout simd_float2x2, rhs: Float) {
+    lhs = lhs*rhs
+  }
+  @_transparent public static func * (lhs: simd_float2x2, rhs: float2) -> float2 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: float2, rhs: simd_float2x2) -> float2 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_float2x2, rhs: float2x2) -> float2x2 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_float2x2, rhs: float3x2) -> float3x2 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_float2x2, rhs: float4x2) -> float4x2 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func *= (lhs: inout simd_float2x2, rhs: float2x2) {
+    lhs = lhs*rhs
+  }
+}
+@available(swift, deprecated: 4, renamed: "simd_float2x2(diagonal:)")
+public func matrix_from_diagonal(_ d: float2) -> simd_float2x2
+@available(OSX 10.10, iOS 8.0, tvOS 10.0, watchOS 3.0, *)
+@available(swift, deprecated: 4, message: "Use the .inverse property instead.")
+public func matrix_invert(_ x: simd_float2x2) -> simd_float2x2
+@available(swift, deprecated: 4, message: "Use the .determinant property instead.")
+public func matrix_determinant(_ x: simd_float2x2) -> Float
+@available(swift, deprecated: 4, renamed: "simd_float2x2")
+public func matrix_from_columns(_ col0: float2, _ col1: float2) -> simd_float2x2
+public func matrix_from_rows(_ row0: float2, _ row1: float2) -> simd_float2x2
+@available(swift, deprecated: 4, message: "Use the .transpose property instead.")
+public func matrix_transpose(_ x: simd_float2x2) -> float2x2
+@available(swift, deprecated: 4, renamed: "==")
+public func matrix_equal(_ lhs: simd_float2x2, _ rhs: simd_float2x2) -> Bool
+public typealias float3x2 = simd_float3x2
+extension simd_float3x2 {
+  public init(_ scalar: Float)
+  public init(diagonal: float2)
+  public init(_ columns: [float2])
+  public init(rows: [float3])
+  public init(_ col0: float2, _ col1: float2, _ col2: float2)
+  @available(swift, deprecated: 4, message: "This conversion is no longer necessary; use `cmatrix` directly.")
+  @_transparent public init(_ cmatrix: simd_float3x2) {
+    self = cmatrix
+  }
+  @available(swift, deprecated: 4, message: "This property is no longer needed; use the matrix itself.")
+  @_transparent public var cmatrix: simd_float3x2 {
+    get {
+    return self
+  }
+  }
+  public subscript(column: Int) -> float2 {
+    get
+    set(value)
+  }
+  public subscript(column: Int, row: Int) -> Float {
+    get
+    set(value)
+  }
+}
+extension simd_float3x2 : CustomDebugStringConvertible {
+  public var debugDescription: String {
+    get
+  }
+}
+extension simd_float3x2 : Equatable {
+  @_transparent public static func == (lhs: simd_float3x2, rhs: simd_float3x2) -> Bool {
+    return simd_equal(lhs, rhs)
+  }
+}
+extension simd_float3x2 {
+  @_transparent public var transpose: float2x3 {
+    get {
+    return simd_transpose(self)
+  }
+  }
+  @_transparent public static func + (lhs: simd_float3x2, rhs: simd_float3x2) -> simd_float3x2 {
+    return simd_add(lhs, rhs)
+  }
+  @_transparent prefix public static func - (rhs: simd_float3x2) -> simd_float3x2 {
+    return simd_float3x2() - rhs
+  }
+  @_transparent public static func - (lhs: simd_float3x2, rhs: simd_float3x2) -> simd_float3x2 {
+    return simd_sub(lhs, rhs)
+  }
+  @_transparent public static func += (lhs: inout simd_float3x2, rhs: simd_float3x2) {
+    lhs = lhs + rhs
+  }
+  @_transparent public static func -= (lhs: inout simd_float3x2, rhs: simd_float3x2) {
+    lhs = lhs - rhs
+  }
+  @_transparent public static func * (lhs: Float, rhs: simd_float3x2) -> simd_float3x2 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_float3x2, rhs: Float) -> simd_float3x2 {
+    return rhs*lhs
+  }
+  @_transparent public static func *= (lhs: inout simd_float3x2, rhs: Float) {
+    lhs = lhs*rhs
+  }
+  @_transparent public static func * (lhs: simd_float3x2, rhs: float3) -> float2 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: float2, rhs: simd_float3x2) -> float3 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_float3x2, rhs: float2x3) -> float2x2 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_float3x2, rhs: float3x3) -> float3x2 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_float3x2, rhs: float4x3) -> float4x2 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func *= (lhs: inout simd_float3x2, rhs: float3x3) {
+    lhs = lhs*rhs
+  }
+}
+@available(swift, deprecated: 4, renamed: "simd_float3x2")
+public func matrix_from_columns(_ col0: float2, _ col1: float2, _ col2: float2) -> simd_float3x2
+public func matrix_from_rows(_ row0: float3, _ row1: float3) -> simd_float3x2
+@available(swift, deprecated: 4, message: "Use the .transpose property instead.")
+public func matrix_transpose(_ x: simd_float3x2) -> float2x3
+@available(swift, deprecated: 4, renamed: "==")
+public func matrix_equal(_ lhs: simd_float3x2, _ rhs: simd_float3x2) -> Bool
+public typealias float4x2 = simd_float4x2
+extension simd_float4x2 {
+  public init(_ scalar: Float)
+  public init(diagonal: float2)
+  public init(_ columns: [float2])
+  public init(rows: [float4])
+  public init(_ col0: float2, _ col1: float2, _ col2: float2, _ col3: float2)
+  @available(swift, deprecated: 4, message: "This conversion is no longer necessary; use `cmatrix` directly.")
+  @_transparent public init(_ cmatrix: simd_float4x2) {
+    self = cmatrix
+  }
+  @available(swift, deprecated: 4, message: "This property is no longer needed; use the matrix itself.")
+  @_transparent public var cmatrix: simd_float4x2 {
+    get {
+    return self
+  }
+  }
+  public subscript(column: Int) -> float2 {
+    get
+    set(value)
+  }
+  public subscript(column: Int, row: Int) -> Float {
+    get
+    set(value)
+  }
+}
+extension simd_float4x2 : CustomDebugStringConvertible {
+  public var debugDescription: String {
+    get
+  }
+}
+extension simd_float4x2 : Equatable {
+  @_transparent public static func == (lhs: simd_float4x2, rhs: simd_float4x2) -> Bool {
+    return simd_equal(lhs, rhs)
+  }
+}
+extension simd_float4x2 {
+  @_transparent public var transpose: float2x4 {
+    get {
+    return simd_transpose(self)
+  }
+  }
+  @_transparent public static func + (lhs: simd_float4x2, rhs: simd_float4x2) -> simd_float4x2 {
+    return simd_add(lhs, rhs)
+  }
+  @_transparent prefix public static func - (rhs: simd_float4x2) -> simd_float4x2 {
+    return simd_float4x2() - rhs
+  }
+  @_transparent public static func - (lhs: simd_float4x2, rhs: simd_float4x2) -> simd_float4x2 {
+    return simd_sub(lhs, rhs)
+  }
+  @_transparent public static func += (lhs: inout simd_float4x2, rhs: simd_float4x2) {
+    lhs = lhs + rhs
+  }
+  @_transparent public static func -= (lhs: inout simd_float4x2, rhs: simd_float4x2) {
+    lhs = lhs - rhs
+  }
+  @_transparent public static func * (lhs: Float, rhs: simd_float4x2) -> simd_float4x2 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_float4x2, rhs: Float) -> simd_float4x2 {
+    return rhs*lhs
+  }
+  @_transparent public static func *= (lhs: inout simd_float4x2, rhs: Float) {
+    lhs = lhs*rhs
+  }
+  @_transparent public static func * (lhs: simd_float4x2, rhs: float4) -> float2 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: float2, rhs: simd_float4x2) -> float4 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_float4x2, rhs: float2x4) -> float2x2 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_float4x2, rhs: float3x4) -> float3x2 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_float4x2, rhs: float4x4) -> float4x2 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func *= (lhs: inout simd_float4x2, rhs: float4x4) {
+    lhs = lhs*rhs
+  }
+}
+@available(swift, deprecated: 4, renamed: "simd_float4x2")
+public func matrix_from_columns(_ col0: float2, _ col1: float2, _ col2: float2, _ col3: float2) -> simd_float4x2
+public func matrix_from_rows(_ row0: float4, _ row1: float4) -> simd_float4x2
+@available(swift, deprecated: 4, message: "Use the .transpose property instead.")
+public func matrix_transpose(_ x: simd_float4x2) -> float2x4
+@available(swift, deprecated: 4, renamed: "==")
+public func matrix_equal(_ lhs: simd_float4x2, _ rhs: simd_float4x2) -> Bool
+public typealias float2x3 = simd_float2x3
+extension simd_float2x3 {
+  public init(_ scalar: Float)
+  public init(diagonal: float2)
+  public init(_ columns: [float3])
+  public init(rows: [float2])
+  public init(_ col0: float3, _ col1: float3)
+  @available(swift, deprecated: 4, message: "This conversion is no longer necessary; use `cmatrix` directly.")
+  @_transparent public init(_ cmatrix: simd_float2x3) {
+    self = cmatrix
+  }
+  @available(swift, deprecated: 4, message: "This property is no longer needed; use the matrix itself.")
+  @_transparent public var cmatrix: simd_float2x3 {
+    get {
+    return self
+  }
+  }
+  public subscript(column: Int) -> float3 {
+    get
+    set(value)
+  }
+  public subscript(column: Int, row: Int) -> Float {
+    get
+    set(value)
+  }
+}
+extension simd_float2x3 : CustomDebugStringConvertible {
+  public var debugDescription: String {
+    get
+  }
+}
+extension simd_float2x3 : Equatable {
+  @_transparent public static func == (lhs: simd_float2x3, rhs: simd_float2x3) -> Bool {
+    return simd_equal(lhs, rhs)
+  }
+}
+extension simd_float2x3 {
+  @_transparent public var transpose: float3x2 {
+    get {
+    return simd_transpose(self)
+  }
+  }
+  @_transparent public static func + (lhs: simd_float2x3, rhs: simd_float2x3) -> simd_float2x3 {
+    return simd_add(lhs, rhs)
+  }
+  @_transparent prefix public static func - (rhs: simd_float2x3) -> simd_float2x3 {
+    return simd_float2x3() - rhs
+  }
+  @_transparent public static func - (lhs: simd_float2x3, rhs: simd_float2x3) -> simd_float2x3 {
+    return simd_sub(lhs, rhs)
+  }
+  @_transparent public static func += (lhs: inout simd_float2x3, rhs: simd_float2x3) {
+    lhs = lhs + rhs
+  }
+  @_transparent public static func -= (lhs: inout simd_float2x3, rhs: simd_float2x3) {
+    lhs = lhs - rhs
+  }
+  @_transparent public static func * (lhs: Float, rhs: simd_float2x3) -> simd_float2x3 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_float2x3, rhs: Float) -> simd_float2x3 {
+    return rhs*lhs
+  }
+  @_transparent public static func *= (lhs: inout simd_float2x3, rhs: Float) {
+    lhs = lhs*rhs
+  }
+  @_transparent public static func * (lhs: simd_float2x3, rhs: float2) -> float3 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: float3, rhs: simd_float2x3) -> float2 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_float2x3, rhs: float2x2) -> float2x3 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_float2x3, rhs: float3x2) -> float3x3 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_float2x3, rhs: float4x2) -> float4x3 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func *= (lhs: inout simd_float2x3, rhs: float2x2) {
+    lhs = lhs*rhs
+  }
+}
+@available(swift, deprecated: 4, renamed: "simd_float2x3")
+public func matrix_from_columns(_ col0: float3, _ col1: float3) -> simd_float2x3
+public func matrix_from_rows(_ row0: float2, _ row1: float2, _ row2: float2) -> simd_float2x3
+@available(swift, deprecated: 4, message: "Use the .transpose property instead.")
+public func matrix_transpose(_ x: simd_float2x3) -> float3x2
+@available(swift, deprecated: 4, renamed: "==")
+public func matrix_equal(_ lhs: simd_float2x3, _ rhs: simd_float2x3) -> Bool
+public typealias float3x3 = simd_float3x3
+extension simd_float3x3 {
+  public init(_ scalar: Float)
+  public init(diagonal: float3)
+  public init(_ columns: [float3])
+  public init(rows: [float3])
+  public init(_ col0: float3, _ col1: float3, _ col2: float3)
+  @available(swift, deprecated: 4, message: "This conversion is no longer necessary; use `cmatrix` directly.")
+  @_transparent public init(_ cmatrix: simd_float3x3) {
+    self = cmatrix
+  }
+  @available(swift, deprecated: 4, message: "This property is no longer needed; use the matrix itself.")
+  @_transparent public var cmatrix: simd_float3x3 {
+    get {
+    return self
+  }
+  }
+  public subscript(column: Int) -> float3 {
+    get
+    set(value)
+  }
+  public subscript(column: Int, row: Int) -> Float {
+    get
+    set(value)
+  }
+}
+extension simd_float3x3 : CustomDebugStringConvertible {
+  public var debugDescription: String {
+    get
+  }
+}
+extension simd_float3x3 : Equatable {
+  @_transparent public static func == (lhs: simd_float3x3, rhs: simd_float3x3) -> Bool {
+    return simd_equal(lhs, rhs)
+  }
+}
+extension simd_float3x3 {
+  @_transparent public var transpose: float3x3 {
+    get {
+    return simd_transpose(self)
+  }
+  }
+  @available(OSX 10.10, iOS 8.0, tvOS 10.0, watchOS 3.0, *)
+  @_transparent public var inverse: simd_float3x3 {
+    get {
+    return simd_inverse(self)
+  }
+  }
+  @_transparent public var determinant: Float {
+    get {
+    return simd_determinant(self)
+  }
+  }
+  @_transparent public static func + (lhs: simd_float3x3, rhs: simd_float3x3) -> simd_float3x3 {
+    return simd_add(lhs, rhs)
+  }
+  @_transparent prefix public static func - (rhs: simd_float3x3) -> simd_float3x3 {
+    return simd_float3x3() - rhs
+  }
+  @_transparent public static func - (lhs: simd_float3x3, rhs: simd_float3x3) -> simd_float3x3 {
+    return simd_sub(lhs, rhs)
+  }
+  @_transparent public static func += (lhs: inout simd_float3x3, rhs: simd_float3x3) {
+    lhs = lhs + rhs
+  }
+  @_transparent public static func -= (lhs: inout simd_float3x3, rhs: simd_float3x3) {
+    lhs = lhs - rhs
+  }
+  @_transparent public static func * (lhs: Float, rhs: simd_float3x3) -> simd_float3x3 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_float3x3, rhs: Float) -> simd_float3x3 {
+    return rhs*lhs
+  }
+  @_transparent public static func *= (lhs: inout simd_float3x3, rhs: Float) {
+    lhs = lhs*rhs
+  }
+  @_transparent public static func * (lhs: simd_float3x3, rhs: float3) -> float3 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: float3, rhs: simd_float3x3) -> float3 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_float3x3, rhs: float2x3) -> float2x3 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_float3x3, rhs: float3x3) -> float3x3 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_float3x3, rhs: float4x3) -> float4x3 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func *= (lhs: inout simd_float3x3, rhs: float3x3) {
+    lhs = lhs*rhs
+  }
+}
+@available(swift, deprecated: 4, renamed: "simd_float3x3(diagonal:)")
+public func matrix_from_diagonal(_ d: float3) -> simd_float3x3
+@available(OSX 10.10, iOS 8.0, tvOS 10.0, watchOS 3.0, *)
+@available(swift, deprecated: 4, message: "Use the .inverse property instead.")
+public func matrix_invert(_ x: simd_float3x3) -> simd_float3x3
+@available(swift, deprecated: 4, message: "Use the .determinant property instead.")
+public func matrix_determinant(_ x: simd_float3x3) -> Float
+@available(swift, deprecated: 4, renamed: "simd_float3x3")
+public func matrix_from_columns(_ col0: float3, _ col1: float3, _ col2: float3) -> simd_float3x3
+public func matrix_from_rows(_ row0: float3, _ row1: float3, _ row2: float3) -> simd_float3x3
+@available(swift, deprecated: 4, message: "Use the .transpose property instead.")
+public func matrix_transpose(_ x: simd_float3x3) -> float3x3
+@available(swift, deprecated: 4, renamed: "==")
+public func matrix_equal(_ lhs: simd_float3x3, _ rhs: simd_float3x3) -> Bool
+public typealias float4x3 = simd_float4x3
+extension simd_float4x3 {
+  public init(_ scalar: Float)
+  public init(diagonal: float3)
+  public init(_ columns: [float3])
+  public init(rows: [float4])
+  public init(_ col0: float3, _ col1: float3, _ col2: float3, _ col3: float3)
+  @available(swift, deprecated: 4, message: "This conversion is no longer necessary; use `cmatrix` directly.")
+  @_transparent public init(_ cmatrix: simd_float4x3) {
+    self = cmatrix
+  }
+  @available(swift, deprecated: 4, message: "This property is no longer needed; use the matrix itself.")
+  @_transparent public var cmatrix: simd_float4x3 {
+    get {
+    return self
+  }
+  }
+  public subscript(column: Int) -> float3 {
+    get
+    set(value)
+  }
+  public subscript(column: Int, row: Int) -> Float {
+    get
+    set(value)
+  }
+}
+extension simd_float4x3 : CustomDebugStringConvertible {
+  public var debugDescription: String {
+    get
+  }
+}
+extension simd_float4x3 : Equatable {
+  @_transparent public static func == (lhs: simd_float4x3, rhs: simd_float4x3) -> Bool {
+    return simd_equal(lhs, rhs)
+  }
+}
+extension simd_float4x3 {
+  @_transparent public var transpose: float3x4 {
+    get {
+    return simd_transpose(self)
+  }
+  }
+  @_transparent public static func + (lhs: simd_float4x3, rhs: simd_float4x3) -> simd_float4x3 {
+    return simd_add(lhs, rhs)
+  }
+  @_transparent prefix public static func - (rhs: simd_float4x3) -> simd_float4x3 {
+    return simd_float4x3() - rhs
+  }
+  @_transparent public static func - (lhs: simd_float4x3, rhs: simd_float4x3) -> simd_float4x3 {
+    return simd_sub(lhs, rhs)
+  }
+  @_transparent public static func += (lhs: inout simd_float4x3, rhs: simd_float4x3) {
+    lhs = lhs + rhs
+  }
+  @_transparent public static func -= (lhs: inout simd_float4x3, rhs: simd_float4x3) {
+    lhs = lhs - rhs
+  }
+  @_transparent public static func * (lhs: Float, rhs: simd_float4x3) -> simd_float4x3 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_float4x3, rhs: Float) -> simd_float4x3 {
+    return rhs*lhs
+  }
+  @_transparent public static func *= (lhs: inout simd_float4x3, rhs: Float) {
+    lhs = lhs*rhs
+  }
+  @_transparent public static func * (lhs: simd_float4x3, rhs: float4) -> float3 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: float3, rhs: simd_float4x3) -> float4 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_float4x3, rhs: float2x4) -> float2x3 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_float4x3, rhs: float3x4) -> float3x3 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_float4x3, rhs: float4x4) -> float4x3 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func *= (lhs: inout simd_float4x3, rhs: float4x4) {
+    lhs = lhs*rhs
+  }
+}
+@available(swift, deprecated: 4, renamed: "simd_float4x3")
+public func matrix_from_columns(_ col0: float3, _ col1: float3, _ col2: float3, _ col3: float3) -> simd_float4x3
+public func matrix_from_rows(_ row0: float4, _ row1: float4, _ row2: float4) -> simd_float4x3
+@available(swift, deprecated: 4, message: "Use the .transpose property instead.")
+public func matrix_transpose(_ x: simd_float4x3) -> float3x4
+@available(swift, deprecated: 4, renamed: "==")
+public func matrix_equal(_ lhs: simd_float4x3, _ rhs: simd_float4x3) -> Bool
+public typealias float2x4 = simd_float2x4
+extension simd_float2x4 {
+  public init(_ scalar: Float)
+  public init(diagonal: float2)
+  public init(_ columns: [float4])
+  public init(rows: [float2])
+  public init(_ col0: float4, _ col1: float4)
+  @available(swift, deprecated: 4, message: "This conversion is no longer necessary; use `cmatrix` directly.")
+  @_transparent public init(_ cmatrix: simd_float2x4) {
+    self = cmatrix
+  }
+  @available(swift, deprecated: 4, message: "This property is no longer needed; use the matrix itself.")
+  @_transparent public var cmatrix: simd_float2x4 {
+    get {
+    return self
+  }
+  }
+  public subscript(column: Int) -> float4 {
+    get
+    set(value)
+  }
+  public subscript(column: Int, row: Int) -> Float {
+    get
+    set(value)
+  }
+}
+extension simd_float2x4 : CustomDebugStringConvertible {
+  public var debugDescription: String {
+    get
+  }
+}
+extension simd_float2x4 : Equatable {
+  @_transparent public static func == (lhs: simd_float2x4, rhs: simd_float2x4) -> Bool {
+    return simd_equal(lhs, rhs)
+  }
+}
+extension simd_float2x4 {
+  @_transparent public var transpose: float4x2 {
+    get {
+    return simd_transpose(self)
+  }
+  }
+  @_transparent public static func + (lhs: simd_float2x4, rhs: simd_float2x4) -> simd_float2x4 {
+    return simd_add(lhs, rhs)
+  }
+  @_transparent prefix public static func - (rhs: simd_float2x4) -> simd_float2x4 {
+    return simd_float2x4() - rhs
+  }
+  @_transparent public static func - (lhs: simd_float2x4, rhs: simd_float2x4) -> simd_float2x4 {
+    return simd_sub(lhs, rhs)
+  }
+  @_transparent public static func += (lhs: inout simd_float2x4, rhs: simd_float2x4) {
+    lhs = lhs + rhs
+  }
+  @_transparent public static func -= (lhs: inout simd_float2x4, rhs: simd_float2x4) {
+    lhs = lhs - rhs
+  }
+  @_transparent public static func * (lhs: Float, rhs: simd_float2x4) -> simd_float2x4 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_float2x4, rhs: Float) -> simd_float2x4 {
+    return rhs*lhs
+  }
+  @_transparent public static func *= (lhs: inout simd_float2x4, rhs: Float) {
+    lhs = lhs*rhs
+  }
+  @_transparent public static func * (lhs: simd_float2x4, rhs: float2) -> float4 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: float4, rhs: simd_float2x4) -> float2 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_float2x4, rhs: float2x2) -> float2x4 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_float2x4, rhs: float3x2) -> float3x4 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_float2x4, rhs: float4x2) -> float4x4 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func *= (lhs: inout simd_float2x4, rhs: float2x2) {
+    lhs = lhs*rhs
+  }
+}
+@available(swift, deprecated: 4, renamed: "simd_float2x4")
+public func matrix_from_columns(_ col0: float4, _ col1: float4) -> simd_float2x4
+public func matrix_from_rows(_ row0: float2, _ row1: float2, _ row2: float2, _ row3: float2) -> simd_float2x4
+@available(swift, deprecated: 4, message: "Use the .transpose property instead.")
+public func matrix_transpose(_ x: simd_float2x4) -> float4x2
+@available(swift, deprecated: 4, renamed: "==")
+public func matrix_equal(_ lhs: simd_float2x4, _ rhs: simd_float2x4) -> Bool
+public typealias float3x4 = simd_float3x4
+extension simd_float3x4 {
+  public init(_ scalar: Float)
+  public init(diagonal: float3)
+  public init(_ columns: [float4])
+  public init(rows: [float3])
+  public init(_ col0: float4, _ col1: float4, _ col2: float4)
+  @available(swift, deprecated: 4, message: "This conversion is no longer necessary; use `cmatrix` directly.")
+  @_transparent public init(_ cmatrix: simd_float3x4) {
+    self = cmatrix
+  }
+  @available(swift, deprecated: 4, message: "This property is no longer needed; use the matrix itself.")
+  @_transparent public var cmatrix: simd_float3x4 {
+    get {
+    return self
+  }
+  }
+  public subscript(column: Int) -> float4 {
+    get
+    set(value)
+  }
+  public subscript(column: Int, row: Int) -> Float {
+    get
+    set(value)
+  }
+}
+extension simd_float3x4 : CustomDebugStringConvertible {
+  public var debugDescription: String {
+    get
+  }
+}
+extension simd_float3x4 : Equatable {
+  @_transparent public static func == (lhs: simd_float3x4, rhs: simd_float3x4) -> Bool {
+    return simd_equal(lhs, rhs)
+  }
+}
+extension simd_float3x4 {
+  @_transparent public var transpose: float4x3 {
+    get {
+    return simd_transpose(self)
+  }
+  }
+  @_transparent public static func + (lhs: simd_float3x4, rhs: simd_float3x4) -> simd_float3x4 {
+    return simd_add(lhs, rhs)
+  }
+  @_transparent prefix public static func - (rhs: simd_float3x4) -> simd_float3x4 {
+    return simd_float3x4() - rhs
+  }
+  @_transparent public static func - (lhs: simd_float3x4, rhs: simd_float3x4) -> simd_float3x4 {
+    return simd_sub(lhs, rhs)
+  }
+  @_transparent public static func += (lhs: inout simd_float3x4, rhs: simd_float3x4) {
+    lhs = lhs + rhs
+  }
+  @_transparent public static func -= (lhs: inout simd_float3x4, rhs: simd_float3x4) {
+    lhs = lhs - rhs
+  }
+  @_transparent public static func * (lhs: Float, rhs: simd_float3x4) -> simd_float3x4 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_float3x4, rhs: Float) -> simd_float3x4 {
+    return rhs*lhs
+  }
+  @_transparent public static func *= (lhs: inout simd_float3x4, rhs: Float) {
+    lhs = lhs*rhs
+  }
+  @_transparent public static func * (lhs: simd_float3x4, rhs: float3) -> float4 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: float4, rhs: simd_float3x4) -> float3 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_float3x4, rhs: float2x3) -> float2x4 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_float3x4, rhs: float3x3) -> float3x4 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_float3x4, rhs: float4x3) -> float4x4 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func *= (lhs: inout simd_float3x4, rhs: float3x3) {
+    lhs = lhs*rhs
+  }
+}
+@available(swift, deprecated: 4, renamed: "simd_float3x4")
+public func matrix_from_columns(_ col0: float4, _ col1: float4, _ col2: float4) -> simd_float3x4
+public func matrix_from_rows(_ row0: float3, _ row1: float3, _ row2: float3, _ row3: float3) -> simd_float3x4
+@available(swift, deprecated: 4, message: "Use the .transpose property instead.")
+public func matrix_transpose(_ x: simd_float3x4) -> float4x3
+@available(swift, deprecated: 4, renamed: "==")
+public func matrix_equal(_ lhs: simd_float3x4, _ rhs: simd_float3x4) -> Bool
+public typealias float4x4 = simd_float4x4
+extension simd_float4x4 {
+  public init(_ scalar: Float)
+  public init(diagonal: float4)
+  public init(_ columns: [float4])
+  public init(rows: [float4])
+  public init(_ col0: float4, _ col1: float4, _ col2: float4, _ col3: float4)
+  @available(swift, deprecated: 4, message: "This conversion is no longer necessary; use `cmatrix` directly.")
+  @_transparent public init(_ cmatrix: simd_float4x4) {
+    self = cmatrix
+  }
+  @available(swift, deprecated: 4, message: "This property is no longer needed; use the matrix itself.")
+  @_transparent public var cmatrix: simd_float4x4 {
+    get {
+    return self
+  }
+  }
+  public subscript(column: Int) -> float4 {
+    get
+    set(value)
+  }
+  public subscript(column: Int, row: Int) -> Float {
+    get
+    set(value)
+  }
+}
+extension simd_float4x4 : CustomDebugStringConvertible {
+  public var debugDescription: String {
+    get
+  }
+}
+extension simd_float4x4 : Equatable {
+  @_transparent public static func == (lhs: simd_float4x4, rhs: simd_float4x4) -> Bool {
+    return simd_equal(lhs, rhs)
+  }
+}
+extension simd_float4x4 {
+  @_transparent public var transpose: float4x4 {
+    get {
+    return simd_transpose(self)
+  }
+  }
+  @available(OSX 10.10, iOS 8.0, tvOS 10.0, watchOS 3.0, *)
+  @_transparent public var inverse: simd_float4x4 {
+    get {
+    return simd_inverse(self)
+  }
+  }
+  @_transparent public var determinant: Float {
+    get {
+    return simd_determinant(self)
+  }
+  }
+  @_transparent public static func + (lhs: simd_float4x4, rhs: simd_float4x4) -> simd_float4x4 {
+    return simd_add(lhs, rhs)
+  }
+  @_transparent prefix public static func - (rhs: simd_float4x4) -> simd_float4x4 {
+    return simd_float4x4() - rhs
+  }
+  @_transparent public static func - (lhs: simd_float4x4, rhs: simd_float4x4) -> simd_float4x4 {
+    return simd_sub(lhs, rhs)
+  }
+  @_transparent public static func += (lhs: inout simd_float4x4, rhs: simd_float4x4) {
+    lhs = lhs + rhs
+  }
+  @_transparent public static func -= (lhs: inout simd_float4x4, rhs: simd_float4x4) {
+    lhs = lhs - rhs
+  }
+  @_transparent public static func * (lhs: Float, rhs: simd_float4x4) -> simd_float4x4 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_float4x4, rhs: Float) -> simd_float4x4 {
+    return rhs*lhs
+  }
+  @_transparent public static func *= (lhs: inout simd_float4x4, rhs: Float) {
+    lhs = lhs*rhs
+  }
+  @_transparent public static func * (lhs: simd_float4x4, rhs: float4) -> float4 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: float4, rhs: simd_float4x4) -> float4 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_float4x4, rhs: float2x4) -> float2x4 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_float4x4, rhs: float3x4) -> float3x4 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_float4x4, rhs: float4x4) -> float4x4 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func *= (lhs: inout simd_float4x4, rhs: float4x4) {
+    lhs = lhs*rhs
+  }
+}
+@available(swift, deprecated: 4, renamed: "simd_float4x4(diagonal:)")
+public func matrix_from_diagonal(_ d: float4) -> simd_float4x4
+@available(OSX 10.10, iOS 8.0, tvOS 10.0, watchOS 3.0, *)
+@available(swift, deprecated: 4, message: "Use the .inverse property instead.")
+public func matrix_invert(_ x: simd_float4x4) -> simd_float4x4
+@available(swift, deprecated: 4, message: "Use the .determinant property instead.")
+public func matrix_determinant(_ x: simd_float4x4) -> Float
+@available(swift, deprecated: 4, renamed: "simd_float4x4")
+public func matrix_from_columns(_ col0: float4, _ col1: float4, _ col2: float4, _ col3: float4) -> simd_float4x4
+public func matrix_from_rows(_ row0: float4, _ row1: float4, _ row2: float4, _ row3: float4) -> simd_float4x4
+@available(swift, deprecated: 4, message: "Use the .transpose property instead.")
+public func matrix_transpose(_ x: simd_float4x4) -> float4x4
+@available(swift, deprecated: 4, renamed: "==")
+public func matrix_equal(_ lhs: simd_float4x4, _ rhs: simd_float4x4) -> Bool
+public typealias double2x2 = simd_double2x2
+extension simd_double2x2 {
+  public init(_ scalar: Double)
+  public init(diagonal: double2)
+  public init(_ columns: [double2])
+  public init(rows: [double2])
+  public init(_ col0: double2, _ col1: double2)
+  @available(swift, deprecated: 4, message: "This conversion is no longer necessary; use `cmatrix` directly.")
+  @_transparent public init(_ cmatrix: simd_double2x2) {
+    self = cmatrix
+  }
+  @available(swift, deprecated: 4, message: "This property is no longer needed; use the matrix itself.")
+  @_transparent public var cmatrix: simd_double2x2 {
+    get {
+    return self
+  }
+  }
+  public subscript(column: Int) -> double2 {
+    get
+    set(value)
+  }
+  public subscript(column: Int, row: Int) -> Double {
+    get
+    set(value)
+  }
+}
+extension simd_double2x2 : CustomDebugStringConvertible {
+  public var debugDescription: String {
+    get
+  }
+}
+extension simd_double2x2 : Equatable {
+  @_transparent public static func == (lhs: simd_double2x2, rhs: simd_double2x2) -> Bool {
+    return simd_equal(lhs, rhs)
+  }
+}
+extension simd_double2x2 {
+  @_transparent public var transpose: double2x2 {
+    get {
+    return simd_transpose(self)
+  }
+  }
+  @available(OSX 10.10, iOS 8.0, tvOS 10.0, watchOS 3.0, *)
+  @_transparent public var inverse: simd_double2x2 {
+    get {
+    return simd_inverse(self)
+  }
+  }
+  @_transparent public var determinant: Double {
+    get {
+    return simd_determinant(self)
+  }
+  }
+  @_transparent public static func + (lhs: simd_double2x2, rhs: simd_double2x2) -> simd_double2x2 {
+    return simd_add(lhs, rhs)
+  }
+  @_transparent prefix public static func - (rhs: simd_double2x2) -> simd_double2x2 {
+    return simd_double2x2() - rhs
+  }
+  @_transparent public static func - (lhs: simd_double2x2, rhs: simd_double2x2) -> simd_double2x2 {
+    return simd_sub(lhs, rhs)
+  }
+  @_transparent public static func += (lhs: inout simd_double2x2, rhs: simd_double2x2) {
+    lhs = lhs + rhs
+  }
+  @_transparent public static func -= (lhs: inout simd_double2x2, rhs: simd_double2x2) {
+    lhs = lhs - rhs
+  }
+  @_transparent public static func * (lhs: Double, rhs: simd_double2x2) -> simd_double2x2 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_double2x2, rhs: Double) -> simd_double2x2 {
+    return rhs*lhs
+  }
+  @_transparent public static func *= (lhs: inout simd_double2x2, rhs: Double) {
+    lhs = lhs*rhs
+  }
+  @_transparent public static func * (lhs: simd_double2x2, rhs: double2) -> double2 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: double2, rhs: simd_double2x2) -> double2 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_double2x2, rhs: double2x2) -> double2x2 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_double2x2, rhs: double3x2) -> double3x2 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_double2x2, rhs: double4x2) -> double4x2 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func *= (lhs: inout simd_double2x2, rhs: double2x2) {
+    lhs = lhs*rhs
+  }
+}
+@available(swift, deprecated: 4, renamed: "simd_double2x2(diagonal:)")
+public func matrix_from_diagonal(_ d: double2) -> simd_double2x2
+@available(OSX 10.10, iOS 8.0, tvOS 10.0, watchOS 3.0, *)
+@available(swift, deprecated: 4, message: "Use the .inverse property instead.")
+public func matrix_invert(_ x: simd_double2x2) -> simd_double2x2
+@available(swift, deprecated: 4, message: "Use the .determinant property instead.")
+public func matrix_determinant(_ x: simd_double2x2) -> Double
+@available(swift, deprecated: 4, renamed: "simd_double2x2")
+public func matrix_from_columns(_ col0: double2, _ col1: double2) -> simd_double2x2
+public func matrix_from_rows(_ row0: double2, _ row1: double2) -> simd_double2x2
+@available(swift, deprecated: 4, message: "Use the .transpose property instead.")
+public func matrix_transpose(_ x: simd_double2x2) -> double2x2
+@available(swift, deprecated: 4, renamed: "==")
+public func matrix_equal(_ lhs: simd_double2x2, _ rhs: simd_double2x2) -> Bool
+public typealias double3x2 = simd_double3x2
+extension simd_double3x2 {
+  public init(_ scalar: Double)
+  public init(diagonal: double2)
+  public init(_ columns: [double2])
+  public init(rows: [double3])
+  public init(_ col0: double2, _ col1: double2, _ col2: double2)
+  @available(swift, deprecated: 4, message: "This conversion is no longer necessary; use `cmatrix` directly.")
+  @_transparent public init(_ cmatrix: simd_double3x2) {
+    self = cmatrix
+  }
+  @available(swift, deprecated: 4, message: "This property is no longer needed; use the matrix itself.")
+  @_transparent public var cmatrix: simd_double3x2 {
+    get {
+    return self
+  }
+  }
+  public subscript(column: Int) -> double2 {
+    get
+    set(value)
+  }
+  public subscript(column: Int, row: Int) -> Double {
+    get
+    set(value)
+  }
+}
+extension simd_double3x2 : CustomDebugStringConvertible {
+  public var debugDescription: String {
+    get
+  }
+}
+extension simd_double3x2 : Equatable {
+  @_transparent public static func == (lhs: simd_double3x2, rhs: simd_double3x2) -> Bool {
+    return simd_equal(lhs, rhs)
+  }
+}
+extension simd_double3x2 {
+  @_transparent public var transpose: double2x3 {
+    get {
+    return simd_transpose(self)
+  }
+  }
+  @_transparent public static func + (lhs: simd_double3x2, rhs: simd_double3x2) -> simd_double3x2 {
+    return simd_add(lhs, rhs)
+  }
+  @_transparent prefix public static func - (rhs: simd_double3x2) -> simd_double3x2 {
+    return simd_double3x2() - rhs
+  }
+  @_transparent public static func - (lhs: simd_double3x2, rhs: simd_double3x2) -> simd_double3x2 {
+    return simd_sub(lhs, rhs)
+  }
+  @_transparent public static func += (lhs: inout simd_double3x2, rhs: simd_double3x2) {
+    lhs = lhs + rhs
+  }
+  @_transparent public static func -= (lhs: inout simd_double3x2, rhs: simd_double3x2) {
+    lhs = lhs - rhs
+  }
+  @_transparent public static func * (lhs: Double, rhs: simd_double3x2) -> simd_double3x2 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_double3x2, rhs: Double) -> simd_double3x2 {
+    return rhs*lhs
+  }
+  @_transparent public static func *= (lhs: inout simd_double3x2, rhs: Double) {
+    lhs = lhs*rhs
+  }
+  @_transparent public static func * (lhs: simd_double3x2, rhs: double3) -> double2 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: double2, rhs: simd_double3x2) -> double3 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_double3x2, rhs: double2x3) -> double2x2 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_double3x2, rhs: double3x3) -> double3x2 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_double3x2, rhs: double4x3) -> double4x2 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func *= (lhs: inout simd_double3x2, rhs: double3x3) {
+    lhs = lhs*rhs
+  }
+}
+@available(swift, deprecated: 4, renamed: "simd_double3x2")
+public func matrix_from_columns(_ col0: double2, _ col1: double2, _ col2: double2) -> simd_double3x2
+public func matrix_from_rows(_ row0: double3, _ row1: double3) -> simd_double3x2
+@available(swift, deprecated: 4, message: "Use the .transpose property instead.")
+public func matrix_transpose(_ x: simd_double3x2) -> double2x3
+@available(swift, deprecated: 4, renamed: "==")
+public func matrix_equal(_ lhs: simd_double3x2, _ rhs: simd_double3x2) -> Bool
+public typealias double4x2 = simd_double4x2
+extension simd_double4x2 {
+  public init(_ scalar: Double)
+  public init(diagonal: double2)
+  public init(_ columns: [double2])
+  public init(rows: [double4])
+  public init(_ col0: double2, _ col1: double2, _ col2: double2, _ col3: double2)
+  @available(swift, deprecated: 4, message: "This conversion is no longer necessary; use `cmatrix` directly.")
+  @_transparent public init(_ cmatrix: simd_double4x2) {
+    self = cmatrix
+  }
+  @available(swift, deprecated: 4, message: "This property is no longer needed; use the matrix itself.")
+  @_transparent public var cmatrix: simd_double4x2 {
+    get {
+    return self
+  }
+  }
+  public subscript(column: Int) -> double2 {
+    get
+    set(value)
+  }
+  public subscript(column: Int, row: Int) -> Double {
+    get
+    set(value)
+  }
+}
+extension simd_double4x2 : CustomDebugStringConvertible {
+  public var debugDescription: String {
+    get
+  }
+}
+extension simd_double4x2 : Equatable {
+  @_transparent public static func == (lhs: simd_double4x2, rhs: simd_double4x2) -> Bool {
+    return simd_equal(lhs, rhs)
+  }
+}
+extension simd_double4x2 {
+  @_transparent public var transpose: double2x4 {
+    get {
+    return simd_transpose(self)
+  }
+  }
+  @_transparent public static func + (lhs: simd_double4x2, rhs: simd_double4x2) -> simd_double4x2 {
+    return simd_add(lhs, rhs)
+  }
+  @_transparent prefix public static func - (rhs: simd_double4x2) -> simd_double4x2 {
+    return simd_double4x2() - rhs
+  }
+  @_transparent public static func - (lhs: simd_double4x2, rhs: simd_double4x2) -> simd_double4x2 {
+    return simd_sub(lhs, rhs)
+  }
+  @_transparent public static func += (lhs: inout simd_double4x2, rhs: simd_double4x2) {
+    lhs = lhs + rhs
+  }
+  @_transparent public static func -= (lhs: inout simd_double4x2, rhs: simd_double4x2) {
+    lhs = lhs - rhs
+  }
+  @_transparent public static func * (lhs: Double, rhs: simd_double4x2) -> simd_double4x2 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_double4x2, rhs: Double) -> simd_double4x2 {
+    return rhs*lhs
+  }
+  @_transparent public static func *= (lhs: inout simd_double4x2, rhs: Double) {
+    lhs = lhs*rhs
+  }
+  @_transparent public static func * (lhs: simd_double4x2, rhs: double4) -> double2 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: double2, rhs: simd_double4x2) -> double4 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_double4x2, rhs: double2x4) -> double2x2 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_double4x2, rhs: double3x4) -> double3x2 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_double4x2, rhs: double4x4) -> double4x2 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func *= (lhs: inout simd_double4x2, rhs: double4x4) {
+    lhs = lhs*rhs
+  }
+}
+@available(swift, deprecated: 4, renamed: "simd_double4x2")
+public func matrix_from_columns(_ col0: double2, _ col1: double2, _ col2: double2, _ col3: double2) -> simd_double4x2
+public func matrix_from_rows(_ row0: double4, _ row1: double4) -> simd_double4x2
+@available(swift, deprecated: 4, message: "Use the .transpose property instead.")
+public func matrix_transpose(_ x: simd_double4x2) -> double2x4
+@available(swift, deprecated: 4, renamed: "==")
+public func matrix_equal(_ lhs: simd_double4x2, _ rhs: simd_double4x2) -> Bool
+public typealias double2x3 = simd_double2x3
+extension simd_double2x3 {
+  public init(_ scalar: Double)
+  public init(diagonal: double2)
+  public init(_ columns: [double3])
+  public init(rows: [double2])
+  public init(_ col0: double3, _ col1: double3)
+  @available(swift, deprecated: 4, message: "This conversion is no longer necessary; use `cmatrix` directly.")
+  @_transparent public init(_ cmatrix: simd_double2x3) {
+    self = cmatrix
+  }
+  @available(swift, deprecated: 4, message: "This property is no longer needed; use the matrix itself.")
+  @_transparent public var cmatrix: simd_double2x3 {
+    get {
+    return self
+  }
+  }
+  public subscript(column: Int) -> double3 {
+    get
+    set(value)
+  }
+  public subscript(column: Int, row: Int) -> Double {
+    get
+    set(value)
+  }
+}
+extension simd_double2x3 : CustomDebugStringConvertible {
+  public var debugDescription: String {
+    get
+  }
+}
+extension simd_double2x3 : Equatable {
+  @_transparent public static func == (lhs: simd_double2x3, rhs: simd_double2x3) -> Bool {
+    return simd_equal(lhs, rhs)
+  }
+}
+extension simd_double2x3 {
+  @_transparent public var transpose: double3x2 {
+    get {
+    return simd_transpose(self)
+  }
+  }
+  @_transparent public static func + (lhs: simd_double2x3, rhs: simd_double2x3) -> simd_double2x3 {
+    return simd_add(lhs, rhs)
+  }
+  @_transparent prefix public static func - (rhs: simd_double2x3) -> simd_double2x3 {
+    return simd_double2x3() - rhs
+  }
+  @_transparent public static func - (lhs: simd_double2x3, rhs: simd_double2x3) -> simd_double2x3 {
+    return simd_sub(lhs, rhs)
+  }
+  @_transparent public static func += (lhs: inout simd_double2x3, rhs: simd_double2x3) {
+    lhs = lhs + rhs
+  }
+  @_transparent public static func -= (lhs: inout simd_double2x3, rhs: simd_double2x3) {
+    lhs = lhs - rhs
+  }
+  @_transparent public static func * (lhs: Double, rhs: simd_double2x3) -> simd_double2x3 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_double2x3, rhs: Double) -> simd_double2x3 {
+    return rhs*lhs
+  }
+  @_transparent public static func *= (lhs: inout simd_double2x3, rhs: Double) {
+    lhs = lhs*rhs
+  }
+  @_transparent public static func * (lhs: simd_double2x3, rhs: double2) -> double3 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: double3, rhs: simd_double2x3) -> double2 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_double2x3, rhs: double2x2) -> double2x3 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_double2x3, rhs: double3x2) -> double3x3 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_double2x3, rhs: double4x2) -> double4x3 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func *= (lhs: inout simd_double2x3, rhs: double2x2) {
+    lhs = lhs*rhs
+  }
+}
+@available(swift, deprecated: 4, renamed: "simd_double2x3")
+public func matrix_from_columns(_ col0: double3, _ col1: double3) -> simd_double2x3
+public func matrix_from_rows(_ row0: double2, _ row1: double2, _ row2: double2) -> simd_double2x3
+@available(swift, deprecated: 4, message: "Use the .transpose property instead.")
+public func matrix_transpose(_ x: simd_double2x3) -> double3x2
+@available(swift, deprecated: 4, renamed: "==")
+public func matrix_equal(_ lhs: simd_double2x3, _ rhs: simd_double2x3) -> Bool
+public typealias double3x3 = simd_double3x3
+extension simd_double3x3 {
+  public init(_ scalar: Double)
+  public init(diagonal: double3)
+  public init(_ columns: [double3])
+  public init(rows: [double3])
+  public init(_ col0: double3, _ col1: double3, _ col2: double3)
+  @available(swift, deprecated: 4, message: "This conversion is no longer necessary; use `cmatrix` directly.")
+  @_transparent public init(_ cmatrix: simd_double3x3) {
+    self = cmatrix
+  }
+  @available(swift, deprecated: 4, message: "This property is no longer needed; use the matrix itself.")
+  @_transparent public var cmatrix: simd_double3x3 {
+    get {
+    return self
+  }
+  }
+  public subscript(column: Int) -> double3 {
+    get
+    set(value)
+  }
+  public subscript(column: Int, row: Int) -> Double {
+    get
+    set(value)
+  }
+}
+extension simd_double3x3 : CustomDebugStringConvertible {
+  public var debugDescription: String {
+    get
+  }
+}
+extension simd_double3x3 : Equatable {
+  @_transparent public static func == (lhs: simd_double3x3, rhs: simd_double3x3) -> Bool {
+    return simd_equal(lhs, rhs)
+  }
+}
+extension simd_double3x3 {
+  @_transparent public var transpose: double3x3 {
+    get {
+    return simd_transpose(self)
+  }
+  }
+  @available(OSX 10.10, iOS 8.0, tvOS 10.0, watchOS 3.0, *)
+  @_transparent public var inverse: simd_double3x3 {
+    get {
+    return simd_inverse(self)
+  }
+  }
+  @_transparent public var determinant: Double {
+    get {
+    return simd_determinant(self)
+  }
+  }
+  @_transparent public static func + (lhs: simd_double3x3, rhs: simd_double3x3) -> simd_double3x3 {
+    return simd_add(lhs, rhs)
+  }
+  @_transparent prefix public static func - (rhs: simd_double3x3) -> simd_double3x3 {
+    return simd_double3x3() - rhs
+  }
+  @_transparent public static func - (lhs: simd_double3x3, rhs: simd_double3x3) -> simd_double3x3 {
+    return simd_sub(lhs, rhs)
+  }
+  @_transparent public static func += (lhs: inout simd_double3x3, rhs: simd_double3x3) {
+    lhs = lhs + rhs
+  }
+  @_transparent public static func -= (lhs: inout simd_double3x3, rhs: simd_double3x3) {
+    lhs = lhs - rhs
+  }
+  @_transparent public static func * (lhs: Double, rhs: simd_double3x3) -> simd_double3x3 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_double3x3, rhs: Double) -> simd_double3x3 {
+    return rhs*lhs
+  }
+  @_transparent public static func *= (lhs: inout simd_double3x3, rhs: Double) {
+    lhs = lhs*rhs
+  }
+  @_transparent public static func * (lhs: simd_double3x3, rhs: double3) -> double3 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: double3, rhs: simd_double3x3) -> double3 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_double3x3, rhs: double2x3) -> double2x3 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_double3x3, rhs: double3x3) -> double3x3 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_double3x3, rhs: double4x3) -> double4x3 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func *= (lhs: inout simd_double3x3, rhs: double3x3) {
+    lhs = lhs*rhs
+  }
+}
+@available(swift, deprecated: 4, renamed: "simd_double3x3(diagonal:)")
+public func matrix_from_diagonal(_ d: double3) -> simd_double3x3
+@available(OSX 10.10, iOS 8.0, tvOS 10.0, watchOS 3.0, *)
+@available(swift, deprecated: 4, message: "Use the .inverse property instead.")
+public func matrix_invert(_ x: simd_double3x3) -> simd_double3x3
+@available(swift, deprecated: 4, message: "Use the .determinant property instead.")
+public func matrix_determinant(_ x: simd_double3x3) -> Double
+@available(swift, deprecated: 4, renamed: "simd_double3x3")
+public func matrix_from_columns(_ col0: double3, _ col1: double3, _ col2: double3) -> simd_double3x3
+public func matrix_from_rows(_ row0: double3, _ row1: double3, _ row2: double3) -> simd_double3x3
+@available(swift, deprecated: 4, message: "Use the .transpose property instead.")
+public func matrix_transpose(_ x: simd_double3x3) -> double3x3
+@available(swift, deprecated: 4, renamed: "==")
+public func matrix_equal(_ lhs: simd_double3x3, _ rhs: simd_double3x3) -> Bool
+public typealias double4x3 = simd_double4x3
+extension simd_double4x3 {
+  public init(_ scalar: Double)
+  public init(diagonal: double3)
+  public init(_ columns: [double3])
+  public init(rows: [double4])
+  public init(_ col0: double3, _ col1: double3, _ col2: double3, _ col3: double3)
+  @available(swift, deprecated: 4, message: "This conversion is no longer necessary; use `cmatrix` directly.")
+  @_transparent public init(_ cmatrix: simd_double4x3) {
+    self = cmatrix
+  }
+  @available(swift, deprecated: 4, message: "This property is no longer needed; use the matrix itself.")
+  @_transparent public var cmatrix: simd_double4x3 {
+    get {
+    return self
+  }
+  }
+  public subscript(column: Int) -> double3 {
+    get
+    set(value)
+  }
+  public subscript(column: Int, row: Int) -> Double {
+    get
+    set(value)
+  }
+}
+extension simd_double4x3 : CustomDebugStringConvertible {
+  public var debugDescription: String {
+    get
+  }
+}
+extension simd_double4x3 : Equatable {
+  @_transparent public static func == (lhs: simd_double4x3, rhs: simd_double4x3) -> Bool {
+    return simd_equal(lhs, rhs)
+  }
+}
+extension simd_double4x3 {
+  @_transparent public var transpose: double3x4 {
+    get {
+    return simd_transpose(self)
+  }
+  }
+  @_transparent public static func + (lhs: simd_double4x3, rhs: simd_double4x3) -> simd_double4x3 {
+    return simd_add(lhs, rhs)
+  }
+  @_transparent prefix public static func - (rhs: simd_double4x3) -> simd_double4x3 {
+    return simd_double4x3() - rhs
+  }
+  @_transparent public static func - (lhs: simd_double4x3, rhs: simd_double4x3) -> simd_double4x3 {
+    return simd_sub(lhs, rhs)
+  }
+  @_transparent public static func += (lhs: inout simd_double4x3, rhs: simd_double4x3) {
+    lhs = lhs + rhs
+  }
+  @_transparent public static func -= (lhs: inout simd_double4x3, rhs: simd_double4x3) {
+    lhs = lhs - rhs
+  }
+  @_transparent public static func * (lhs: Double, rhs: simd_double4x3) -> simd_double4x3 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_double4x3, rhs: Double) -> simd_double4x3 {
+    return rhs*lhs
+  }
+  @_transparent public static func *= (lhs: inout simd_double4x3, rhs: Double) {
+    lhs = lhs*rhs
+  }
+  @_transparent public static func * (lhs: simd_double4x3, rhs: double4) -> double3 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: double3, rhs: simd_double4x3) -> double4 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_double4x3, rhs: double2x4) -> double2x3 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_double4x3, rhs: double3x4) -> double3x3 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_double4x3, rhs: double4x4) -> double4x3 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func *= (lhs: inout simd_double4x3, rhs: double4x4) {
+    lhs = lhs*rhs
+  }
+}
+@available(swift, deprecated: 4, renamed: "simd_double4x3")
+public func matrix_from_columns(_ col0: double3, _ col1: double3, _ col2: double3, _ col3: double3) -> simd_double4x3
+public func matrix_from_rows(_ row0: double4, _ row1: double4, _ row2: double4) -> simd_double4x3
+@available(swift, deprecated: 4, message: "Use the .transpose property instead.")
+public func matrix_transpose(_ x: simd_double4x3) -> double3x4
+@available(swift, deprecated: 4, renamed: "==")
+public func matrix_equal(_ lhs: simd_double4x3, _ rhs: simd_double4x3) -> Bool
+public typealias double2x4 = simd_double2x4
+extension simd_double2x4 {
+  public init(_ scalar: Double)
+  public init(diagonal: double2)
+  public init(_ columns: [double4])
+  public init(rows: [double2])
+  public init(_ col0: double4, _ col1: double4)
+  @available(swift, deprecated: 4, message: "This conversion is no longer necessary; use `cmatrix` directly.")
+  @_transparent public init(_ cmatrix: simd_double2x4) {
+    self = cmatrix
+  }
+  @available(swift, deprecated: 4, message: "This property is no longer needed; use the matrix itself.")
+  @_transparent public var cmatrix: simd_double2x4 {
+    get {
+    return self
+  }
+  }
+  public subscript(column: Int) -> double4 {
+    get
+    set(value)
+  }
+  public subscript(column: Int, row: Int) -> Double {
+    get
+    set(value)
+  }
+}
+extension simd_double2x4 : CustomDebugStringConvertible {
+  public var debugDescription: String {
+    get
+  }
+}
+extension simd_double2x4 : Equatable {
+  @_transparent public static func == (lhs: simd_double2x4, rhs: simd_double2x4) -> Bool {
+    return simd_equal(lhs, rhs)
+  }
+}
+extension simd_double2x4 {
+  @_transparent public var transpose: double4x2 {
+    get {
+    return simd_transpose(self)
+  }
+  }
+  @_transparent public static func + (lhs: simd_double2x4, rhs: simd_double2x4) -> simd_double2x4 {
+    return simd_add(lhs, rhs)
+  }
+  @_transparent prefix public static func - (rhs: simd_double2x4) -> simd_double2x4 {
+    return simd_double2x4() - rhs
+  }
+  @_transparent public static func - (lhs: simd_double2x4, rhs: simd_double2x4) -> simd_double2x4 {
+    return simd_sub(lhs, rhs)
+  }
+  @_transparent public static func += (lhs: inout simd_double2x4, rhs: simd_double2x4) {
+    lhs = lhs + rhs
+  }
+  @_transparent public static func -= (lhs: inout simd_double2x4, rhs: simd_double2x4) {
+    lhs = lhs - rhs
+  }
+  @_transparent public static func * (lhs: Double, rhs: simd_double2x4) -> simd_double2x4 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_double2x4, rhs: Double) -> simd_double2x4 {
+    return rhs*lhs
+  }
+  @_transparent public static func *= (lhs: inout simd_double2x4, rhs: Double) {
+    lhs = lhs*rhs
+  }
+  @_transparent public static func * (lhs: simd_double2x4, rhs: double2) -> double4 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: double4, rhs: simd_double2x4) -> double2 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_double2x4, rhs: double2x2) -> double2x4 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_double2x4, rhs: double3x2) -> double3x4 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_double2x4, rhs: double4x2) -> double4x4 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func *= (lhs: inout simd_double2x4, rhs: double2x2) {
+    lhs = lhs*rhs
+  }
+}
+@available(swift, deprecated: 4, renamed: "simd_double2x4")
+public func matrix_from_columns(_ col0: double4, _ col1: double4) -> simd_double2x4
+public func matrix_from_rows(_ row0: double2, _ row1: double2, _ row2: double2, _ row3: double2) -> simd_double2x4
+@available(swift, deprecated: 4, message: "Use the .transpose property instead.")
+public func matrix_transpose(_ x: simd_double2x4) -> double4x2
+@available(swift, deprecated: 4, renamed: "==")
+public func matrix_equal(_ lhs: simd_double2x4, _ rhs: simd_double2x4) -> Bool
+public typealias double3x4 = simd_double3x4
+extension simd_double3x4 {
+  public init(_ scalar: Double)
+  public init(diagonal: double3)
+  public init(_ columns: [double4])
+  public init(rows: [double3])
+  public init(_ col0: double4, _ col1: double4, _ col2: double4)
+  @available(swift, deprecated: 4, message: "This conversion is no longer necessary; use `cmatrix` directly.")
+  @_transparent public init(_ cmatrix: simd_double3x4) {
+    self = cmatrix
+  }
+  @available(swift, deprecated: 4, message: "This property is no longer needed; use the matrix itself.")
+  @_transparent public var cmatrix: simd_double3x4 {
+    get {
+    return self
+  }
+  }
+  public subscript(column: Int) -> double4 {
+    get
+    set(value)
+  }
+  public subscript(column: Int, row: Int) -> Double {
+    get
+    set(value)
+  }
+}
+extension simd_double3x4 : CustomDebugStringConvertible {
+  public var debugDescription: String {
+    get
+  }
+}
+extension simd_double3x4 : Equatable {
+  @_transparent public static func == (lhs: simd_double3x4, rhs: simd_double3x4) -> Bool {
+    return simd_equal(lhs, rhs)
+  }
+}
+extension simd_double3x4 {
+  @_transparent public var transpose: double4x3 {
+    get {
+    return simd_transpose(self)
+  }
+  }
+  @_transparent public static func + (lhs: simd_double3x4, rhs: simd_double3x4) -> simd_double3x4 {
+    return simd_add(lhs, rhs)
+  }
+  @_transparent prefix public static func - (rhs: simd_double3x4) -> simd_double3x4 {
+    return simd_double3x4() - rhs
+  }
+  @_transparent public static func - (lhs: simd_double3x4, rhs: simd_double3x4) -> simd_double3x4 {
+    return simd_sub(lhs, rhs)
+  }
+  @_transparent public static func += (lhs: inout simd_double3x4, rhs: simd_double3x4) {
+    lhs = lhs + rhs
+  }
+  @_transparent public static func -= (lhs: inout simd_double3x4, rhs: simd_double3x4) {
+    lhs = lhs - rhs
+  }
+  @_transparent public static func * (lhs: Double, rhs: simd_double3x4) -> simd_double3x4 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_double3x4, rhs: Double) -> simd_double3x4 {
+    return rhs*lhs
+  }
+  @_transparent public static func *= (lhs: inout simd_double3x4, rhs: Double) {
+    lhs = lhs*rhs
+  }
+  @_transparent public static func * (lhs: simd_double3x4, rhs: double3) -> double4 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: double4, rhs: simd_double3x4) -> double3 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_double3x4, rhs: double2x3) -> double2x4 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_double3x4, rhs: double3x3) -> double3x4 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_double3x4, rhs: double4x3) -> double4x4 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func *= (lhs: inout simd_double3x4, rhs: double3x3) {
+    lhs = lhs*rhs
+  }
+}
+@available(swift, deprecated: 4, renamed: "simd_double3x4")
+public func matrix_from_columns(_ col0: double4, _ col1: double4, _ col2: double4) -> simd_double3x4
+public func matrix_from_rows(_ row0: double3, _ row1: double3, _ row2: double3, _ row3: double3) -> simd_double3x4
+@available(swift, deprecated: 4, message: "Use the .transpose property instead.")
+public func matrix_transpose(_ x: simd_double3x4) -> double4x3
+@available(swift, deprecated: 4, renamed: "==")
+public func matrix_equal(_ lhs: simd_double3x4, _ rhs: simd_double3x4) -> Bool
+public typealias double4x4 = simd_double4x4
+extension simd_double4x4 {
+  public init(_ scalar: Double)
+  public init(diagonal: double4)
+  public init(_ columns: [double4])
+  public init(rows: [double4])
+  public init(_ col0: double4, _ col1: double4, _ col2: double4, _ col3: double4)
+  @available(swift, deprecated: 4, message: "This conversion is no longer necessary; use `cmatrix` directly.")
+  @_transparent public init(_ cmatrix: simd_double4x4) {
+    self = cmatrix
+  }
+  @available(swift, deprecated: 4, message: "This property is no longer needed; use the matrix itself.")
+  @_transparent public var cmatrix: simd_double4x4 {
+    get {
+    return self
+  }
+  }
+  public subscript(column: Int) -> double4 {
+    get
+    set(value)
+  }
+  public subscript(column: Int, row: Int) -> Double {
+    get
+    set(value)
+  }
+}
+extension simd_double4x4 : CustomDebugStringConvertible {
+  public var debugDescription: String {
+    get
+  }
+}
+extension simd_double4x4 : Equatable {
+  @_transparent public static func == (lhs: simd_double4x4, rhs: simd_double4x4) -> Bool {
+    return simd_equal(lhs, rhs)
+  }
+}
+extension simd_double4x4 {
+  @_transparent public var transpose: double4x4 {
+    get {
+    return simd_transpose(self)
+  }
+  }
+  @available(OSX 10.10, iOS 8.0, tvOS 10.0, watchOS 3.0, *)
+  @_transparent public var inverse: simd_double4x4 {
+    get {
+    return simd_inverse(self)
+  }
+  }
+  @_transparent public var determinant: Double {
+    get {
+    return simd_determinant(self)
+  }
+  }
+  @_transparent public static func + (lhs: simd_double4x4, rhs: simd_double4x4) -> simd_double4x4 {
+    return simd_add(lhs, rhs)
+  }
+  @_transparent prefix public static func - (rhs: simd_double4x4) -> simd_double4x4 {
+    return simd_double4x4() - rhs
+  }
+  @_transparent public static func - (lhs: simd_double4x4, rhs: simd_double4x4) -> simd_double4x4 {
+    return simd_sub(lhs, rhs)
+  }
+  @_transparent public static func += (lhs: inout simd_double4x4, rhs: simd_double4x4) {
+    lhs = lhs + rhs
+  }
+  @_transparent public static func -= (lhs: inout simd_double4x4, rhs: simd_double4x4) {
+    lhs = lhs - rhs
+  }
+  @_transparent public static func * (lhs: Double, rhs: simd_double4x4) -> simd_double4x4 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_double4x4, rhs: Double) -> simd_double4x4 {
+    return rhs*lhs
+  }
+  @_transparent public static func *= (lhs: inout simd_double4x4, rhs: Double) {
+    lhs = lhs*rhs
+  }
+  @_transparent public static func * (lhs: simd_double4x4, rhs: double4) -> double4 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: double4, rhs: simd_double4x4) -> double4 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_double4x4, rhs: double2x4) -> double2x4 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_double4x4, rhs: double3x4) -> double3x4 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_double4x4, rhs: double4x4) -> double4x4 {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func *= (lhs: inout simd_double4x4, rhs: double4x4) {
+    lhs = lhs*rhs
+  }
+}
+@available(swift, deprecated: 4, renamed: "simd_double4x4(diagonal:)")
+public func matrix_from_diagonal(_ d: double4) -> simd_double4x4
+@available(OSX 10.10, iOS 8.0, tvOS 10.0, watchOS 3.0, *)
+@available(swift, deprecated: 4, message: "Use the .inverse property instead.")
+public func matrix_invert(_ x: simd_double4x4) -> simd_double4x4
+@available(swift, deprecated: 4, message: "Use the .determinant property instead.")
+public func matrix_determinant(_ x: simd_double4x4) -> Double
+@available(swift, deprecated: 4, renamed: "simd_double4x4")
+public func matrix_from_columns(_ col0: double4, _ col1: double4, _ col2: double4, _ col3: double4) -> simd_double4x4
+public func matrix_from_rows(_ row0: double4, _ row1: double4, _ row2: double4, _ row3: double4) -> simd_double4x4
+@available(swift, deprecated: 4, message: "Use the .transpose property instead.")
+public func matrix_transpose(_ x: simd_double4x4) -> double4x4
+@available(swift, deprecated: 4, renamed: "==")
+public func matrix_equal(_ lhs: simd_double4x4, _ rhs: simd_double4x4) -> Bool
+extension simd_quatf {
+  @_transparent public init(ix: Float, iy: Float, iz: Float, r: Float) {
+    self.init(vector: float4(ix, iy, iz, r))
+  }
+  @_transparent public init(real: Float, imag: float3) {
+    self.init(vector: simd_make_float4(imag, real))
+  }
+  @_transparent public init(angle: Float, axis: float3) {
+    self = simd_quaternion(angle, axis)
+  }
+  @_transparent public init(from: float3, to: float3) {
+    self = simd_quaternion(from, to)
+  }
+  @_transparent public init(_ rotationMatrix: simd_float3x3) {
+    self = simd_quaternion(rotationMatrix)
+  }
+  @_transparent public init(_ rotationMatrix: simd_float4x4) {
+    self = simd_quaternion(rotationMatrix)
+  }
+  public var real: Float {
+    @_transparent get { return vector.w }
+    @_transparent set { vector.w = newValue }
+  }
+  public var imag: float3 {
+    @_transparent get { return simd_make_float3(vector) }
+    @_transparent set { vector = simd_make_float4(newValue, vector.w) }
+  }
+  @_transparent public var angle: Float {
+    get {
+    return simd_angle(self)
+  }
+  }
+  @_transparent public var axis: float3 {
+    get {
+    return simd_axis(self)
+  }
+  }
+  @_transparent public var conjugate: simd_quatf {
+    get {
+    return simd_conjugate(self)
+  }
+  }
+  @_transparent public var inverse: simd_quatf {
+    get {
+    return simd_inverse(self)
+  }
+  }
+  @_transparent public var normalized: simd_quatf {
+    get {
+    return simd_normalize(self)
+  }
+  }
+  @_transparent public var length: Float {
+    get {
+    return simd_length(self)
+  }
+  }
+  @_transparent public func act(_ vector: float3) -> float3 {
+    return simd_act(self, vector)
+  }
+}
+extension simd_float3x3 {
+  public init(_ quaternion: simd_quatf)
+}
+extension simd_float4x4 {
+  public init(_ quaternion: simd_quatf)
+}
+extension simd_quatf : CustomDebugStringConvertible {
+  public var debugDescription: String {
+    get
+  }
+}
+extension simd_quatf : Equatable {
+  @_transparent public static func == (lhs: simd_quatf, rhs: simd_quatf) -> Bool {
+    return lhs.vector == rhs.vector
+  }
+}
+extension simd_quatf {
+  @_transparent public static func + (lhs: simd_quatf, rhs: simd_quatf) -> simd_quatf {
+    return simd_add(lhs, rhs)
+  }
+  @_transparent public static func += (lhs: inout simd_quatf, rhs: simd_quatf) {
+    lhs = lhs + rhs
+  }
+  @_transparent public static func - (lhs: simd_quatf, rhs: simd_quatf) -> simd_quatf {
+    return simd_sub(lhs, rhs)
+  }
+  @_transparent public static func -= (lhs: inout simd_quatf, rhs: simd_quatf) {
+    lhs = lhs - rhs
+  }
+  @_transparent prefix public static func - (rhs: simd_quatf) -> simd_quatf {
+    return simd_sub(simd_quatf(), rhs)
+  }
+  @_transparent public static func * (lhs: simd_quatf, rhs: simd_quatf) -> simd_quatf {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: Float, rhs: simd_quatf) -> simd_quatf {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_quatf, rhs: Float) -> simd_quatf {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func *= (lhs: inout simd_quatf, rhs: simd_quatf) {
+    lhs = lhs * rhs
+  }
+  @_transparent public static func *= (lhs: inout simd_quatf, rhs: Float) {
+    lhs = lhs * rhs
+  }
+  @_transparent public static func / (lhs: simd_quatf, rhs: simd_quatf) -> simd_quatf {
+    return simd_mul(lhs, rhs.inverse)
+  }
+  @_transparent public static func / (lhs: simd_quatf, rhs: Float) -> simd_quatf {
+    return simd_quatf(vector: lhs.vector/rhs)
+  }
+  @_transparent public static func /= (lhs: inout simd_quatf, rhs: simd_quatf) {
+    lhs = lhs / rhs
+  }
+  @_transparent public static func /= (lhs: inout simd_quatf, rhs: Float) {
+    lhs = lhs / rhs
+  }
+}
+@_transparent public func dot(_ lhs: simd_quatf, _ rhs: simd_quatf) -> Float {
+  return simd_dot(lhs, rhs)
+}
+public func log(_ q: simd_quatf) -> simd_quatf
+@_transparent public func exp(_ q: simd_quatf) -> simd_quatf {
+  return __tg_exp(q)
+}
+extension simd_quatd {
+  @_transparent public init(ix: Double, iy: Double, iz: Double, r: Double) {
+    self.init(vector: double4(ix, iy, iz, r))
+  }
+  @_transparent public init(real: Double, imag: double3) {
+    self.init(vector: simd_make_double4(imag, real))
+  }
+  @_transparent public init(angle: Double, axis: double3) {
+    self = simd_quaternion(angle, axis)
+  }
+  @_transparent public init(from: double3, to: double3) {
+    self = simd_quaternion(from, to)
+  }
+  @_transparent public init(_ rotationMatrix: simd_double3x3) {
+    self = simd_quaternion(rotationMatrix)
+  }
+  @_transparent public init(_ rotationMatrix: simd_double4x4) {
+    self = simd_quaternion(rotationMatrix)
+  }
+  public var real: Double {
+    @_transparent get { return vector.w }
+    @_transparent set { vector.w = newValue }
+  }
+  public var imag: double3 {
+    @_transparent get { return simd_make_double3(vector) }
+    @_transparent set { vector = simd_make_double4(newValue, vector.w) }
+  }
+  @_transparent public var angle: Double {
+    get {
+    return simd_angle(self)
+  }
+  }
+  @_transparent public var axis: double3 {
+    get {
+    return simd_axis(self)
+  }
+  }
+  @_transparent public var conjugate: simd_quatd {
+    get {
+    return simd_conjugate(self)
+  }
+  }
+  @_transparent public var inverse: simd_quatd {
+    get {
+    return simd_inverse(self)
+  }
+  }
+  @_transparent public var normalized: simd_quatd {
+    get {
+    return simd_normalize(self)
+  }
+  }
+  @_transparent public var length: Double {
+    get {
+    return simd_length(self)
+  }
+  }
+  @_transparent public func act(_ vector: double3) -> double3 {
+    return simd_act(self, vector)
+  }
+}
+extension simd_double3x3 {
+  public init(_ quaternion: simd_quatd)
+}
+extension simd_double4x4 {
+  public init(_ quaternion: simd_quatd)
+}
+extension simd_quatd : CustomDebugStringConvertible {
+  public var debugDescription: String {
+    get
+  }
+}
+extension simd_quatd : Equatable {
+  @_transparent public static func == (lhs: simd_quatd, rhs: simd_quatd) -> Bool {
+    return lhs.vector == rhs.vector
+  }
+}
+extension simd_quatd {
+  @_transparent public static func + (lhs: simd_quatd, rhs: simd_quatd) -> simd_quatd {
+    return simd_add(lhs, rhs)
+  }
+  @_transparent public static func += (lhs: inout simd_quatd, rhs: simd_quatd) {
+    lhs = lhs + rhs
+  }
+  @_transparent public static func - (lhs: simd_quatd, rhs: simd_quatd) -> simd_quatd {
+    return simd_sub(lhs, rhs)
+  }
+  @_transparent public static func -= (lhs: inout simd_quatd, rhs: simd_quatd) {
+    lhs = lhs - rhs
+  }
+  @_transparent prefix public static func - (rhs: simd_quatd) -> simd_quatd {
+    return simd_sub(simd_quatd(), rhs)
+  }
+  @_transparent public static func * (lhs: simd_quatd, rhs: simd_quatd) -> simd_quatd {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: Double, rhs: simd_quatd) -> simd_quatd {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func * (lhs: simd_quatd, rhs: Double) -> simd_quatd {
+    return simd_mul(lhs, rhs)
+  }
+  @_transparent public static func *= (lhs: inout simd_quatd, rhs: simd_quatd) {
+    lhs = lhs * rhs
+  }
+  @_transparent public static func *= (lhs: inout simd_quatd, rhs: Double) {
+    lhs = lhs * rhs
+  }
+  @_transparent public static func / (lhs: simd_quatd, rhs: simd_quatd) -> simd_quatd {
+    return simd_mul(lhs, rhs.inverse)
+  }
+  @_transparent public static func / (lhs: simd_quatd, rhs: Double) -> simd_quatd {
+    return simd_quatd(vector: lhs.vector/rhs)
+  }
+  @_transparent public static func /= (lhs: inout simd_quatd, rhs: simd_quatd) {
+    lhs = lhs / rhs
+  }
+  @_transparent public static func /= (lhs: inout simd_quatd, rhs: Double) {
+    lhs = lhs / rhs
+  }
+}
+@_transparent public func dot(_ lhs: simd_quatd, _ rhs: simd_quatd) -> Double {
+  return simd_dot(lhs, rhs)
+}
+public func log(_ q: simd_quatd) -> simd_quatd
+@_transparent public func exp(_ q: simd_quatd) -> simd_quatd {
+  return __tg_exp(q)
+}

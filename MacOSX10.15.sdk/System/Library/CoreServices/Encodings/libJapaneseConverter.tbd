@@ -1,0 +1,10 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: C1AB8135-D1E1-32FA-9FC9-3C4901A4FB4D', 'x86_64: C1AB8135-D1E1-32FA-9FC9-3C4901A4FB4D' ]
+platform:        zippered
+install-name:    '/System/Library/CoreServices/Encodings/libJapaneseConverter.dylib'
+current-version: 76
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ ___CFStringEncodingGetJapaneseConverterDefinition ]
+...

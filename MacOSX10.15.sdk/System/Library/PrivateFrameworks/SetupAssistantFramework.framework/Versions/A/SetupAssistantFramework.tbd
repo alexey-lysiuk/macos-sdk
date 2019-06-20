@@ -1,0 +1,13 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 3C57AD47-31EE-3D16-A6B5-B47A06FAA67E' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/SetupAssistantFramework.framework/Versions/A/SetupAssistantFramework'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _SetupAssistantFrameworkVersionNumber, _SetupAssistantFrameworkVersionString, 
+                       _kMBSetupUserUID, _kSetupAssistantWindowDataKey, _kSetupAssistantWindowScreenNumberKey, 
+                       _kSetupAssistantWindowXPositionKey, _kSetupAssistantWindowYPositionKey, 
+                       _kSetupCompletedNotificationName ]
+    objc-classes:    [ SALauncher, SAUserSetupState ]
+...

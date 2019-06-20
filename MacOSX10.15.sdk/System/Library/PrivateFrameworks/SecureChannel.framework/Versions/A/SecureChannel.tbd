@@ -1,0 +1,9 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 1EAF0045-8B4F-35AC-B8F2-E1D6868528A0', 'x86_64: 1EAF0045-8B4F-35AC-B8F2-E1D6868528A0' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/SecureChannel.framework/Versions/A/SecureChannel'
+exports:         
+  - archs:           [ x86_64 ]
+    objc-classes:    [ SecureChannelAction, SecureChannelController ]
+...

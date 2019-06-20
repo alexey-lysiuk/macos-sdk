@@ -1,0 +1,10 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: A630743C-636B-3228-9150-B97F1E85FD07' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/FamilyCircleUI.framework/Versions/A/FamilyCircleUI'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _FamilyCircleUIVersionNumber, _FamilyCircleUIVersionString ]
+    objc-classes:    [ FASharedService, FASharedServicesResponse ]
+...

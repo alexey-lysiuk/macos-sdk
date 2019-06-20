@@ -1,0 +1,15 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 47AAB5FD-FF30-3233-9C0C-5DF034C7E9E1', 'x86_64: 47AAB5FD-FF30-3233-9C0C-5DF034C7E9E1' ]
+platform:        zippered
+install-name:    '/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLImage.dylib'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _glgCompress, _glgConvertPixelHeightToBlocks, _glgConvertPixelWidthToBlocks, 
+                       _glgConvertPixels, _glgConvertType, _glgCreateProcessor, _glgDecompress, 
+                       _glgDestroyProcessor, _glgGetCompressedBlockBytes, _glgGetCompressedBlockHeight, 
+                       _glgGetCompressedBlockWidth, _glgGetCompressedImageBytes, 
+                       _glgGetCompressedMinBlockDimensions, _glgGetPixelSize, _glgInitializeLibrary, 
+                       _glgPixelCenters, _glgProcessPixelsWithProcessor, _glgSaveImageToFile, 
+                       _glgSaveImageToFileGLG, _glgSetTakeLock, _glgTerminateLibrary ]
+...

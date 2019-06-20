@@ -1,0 +1,45 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 098C7400-2306-3FFF-8212-6C5B98487598' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/AirPlaySync.framework/Versions/A/AirPlaySync'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _APSyncStateManagerAddGroup, _APSyncStateManagerAddGroupChangeListener, 
+                       _APSyncStateManagerAddGroupsAvailableChangeListener, _APSyncStateManagerAddSpeakerChangeListener, 
+                       _APSyncStateManagerAdjustGroupVolume, _APSyncStateManagerAdjustSpeakerVolume, 
+                       _APSyncStateManagerApplyVolumeUpdate, _APSyncStateManagerConnectToServer, 
+                       _APSyncStateManagerCopyDeviceIDList, _APSyncStateManagerCopyDeviceName, 
+                       _APSyncStateManagerCopyGroupIDList, _APSyncStateManagerCopyHomeIDList, 
+                       _APSyncStateManagerCopyShowInfo, _APSyncStateManagerCopySpeakerGroupID, 
+                       _APSyncStateManagerCopySpeakerIDList, _APSyncStateManagerCopySpeakerIDsInGroup, 
+                       _APSyncStateManagerCopySpeakerName, _APSyncStateManagerCopyStatusDump, 
+                       _APSyncStateManagerCreate, _APSyncStateManagerCreateDesiredVolumeUpdate, 
+                       _APSyncStateManagerCreateVolumeUpdateFromNotification, _APSyncStateManagerEndCurrentInteraction, 
+                       _APSyncStateManagerGetGroupMute, _APSyncStateManagerGetGroupVolume, 
+                       _APSyncStateManagerGetShared, _APSyncStateManagerGetSpeakerMute, 
+                       _APSyncStateManagerGetSpeakerVolume, _APSyncStateManagerGetTypeID, 
+                       _APSyncStateManagerRemoveGroup, _APSyncStateManagerRemoveGroupChangeListener, 
+                       _APSyncStateManagerRemoveGroupsAvailableChangeListener, _APSyncStateManagerRemoveSpeakerChangeListener, 
+                       _APSyncStateManagerSetDeviceInfo, _APSyncStateManagerSetGroupMute, 
+                       _APSyncStateManagerSetGroupVolume, _APSyncStateManagerSetSpeakerGroupIDCurrent, 
+                       _APSyncStateManagerSetSpeakerGroupIDProposal, _APSyncStateManagerSetSpeakerMute, 
+                       _APSyncStateManagerSetSpeakerVolume, _APSyncStateManagerStartGroupInteraction, 
+                       _APSyncStateManagerStartServer, _APSyncStateManagerStartSpeakerInteraction, 
+                       _APSyncStateManagerUpdateSpeakerGroupIDProposal, _APSyncVolumeUpdateConfirmChange, 
+                       _APSyncVolumeUpdateGetSequenceNumber, _APSyncVolumeUpdateGetTimestamp, 
+                       _APSyncVolumeUpdateGetTypeID, _APSyncVolumeUpdateGetVolumeAndMute, 
+                       _APSyncVolumeUpdateSetSequenceNumber ]
+    weak-def-symbols: [ __ZTIFNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEERKS5_E, 
+                        __ZTINSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                        __ZTINSt3__117bad_function_callE, __ZTINSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                        __ZTINSt3__119basic_istringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                        __ZTINSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                        __ZTIPFNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEERKS5_E, 
+                        __ZTSFNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEERKS5_E, 
+                        __ZTSNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                        __ZTSNSt3__117bad_function_callE, __ZTSNSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                        __ZTSNSt3__119basic_istringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                        __ZTSNSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                        __ZTSPFNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEERKS5_E ]
+...

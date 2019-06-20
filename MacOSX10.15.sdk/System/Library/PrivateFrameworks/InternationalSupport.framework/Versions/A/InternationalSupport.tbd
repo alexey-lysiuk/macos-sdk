@@ -1,0 +1,11 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: EAE695A6-873C-333D-BC4D-70C68FED5A2C', 'x86_64: EAE695A6-873C-333D-BC4D-70C68FED5A2C' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/InternationalSupport.framework/Versions/A/InternationalSupport'
+current-version: 35
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _InternationalSupportVersionNumber, _InternationalSupportVersionString ]
+    objc-classes:    [ ISUtilities ]
+...

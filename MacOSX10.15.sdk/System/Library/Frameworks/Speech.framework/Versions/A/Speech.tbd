@@ -1,0 +1,13 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: A2B3241F-F240-3077-A5F6-88FF9EB705EB', 'x86_64: A2B3241F-F240-3077-A5F6-88FF9EB705EB' ]
+platform:        zippered
+install-name:    '/System/Library/Frameworks/Speech.framework/Versions/A/Speech'
+exports:         
+  - archs:           [ x86_64 ]
+    objc-classes:    [ SFAcousticFeature, SFSpeechAudioBufferRecognitionRequest, 
+                       SFSpeechRecognitionRequest, SFSpeechRecognitionResult, SFSpeechRecognitionTask, 
+                       SFSpeechRecognizer, SFSpeechURLRecognitionRequest, SFTranscription, 
+                       SFTranscriptionSegment, SFVoiceAnalytics, _SFSearchRequest, 
+                       _SFSearchResult ]
+...

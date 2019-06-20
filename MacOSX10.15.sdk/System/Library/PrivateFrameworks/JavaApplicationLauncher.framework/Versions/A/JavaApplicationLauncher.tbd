@@ -1,0 +1,12 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 605CFA3F-4F2C-35E6-8B9E-F7318C4C5DA9' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/JavaApplicationLauncher.framework/Versions/A/JavaApplicationLauncher'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _GetJavaDictionaryFromInfoPlist, _MRJApplicationMain, _MRJApplicationMainArgs, 
+                       _SetDockInformation, _launchFromPropertiesList, _launchJavaApplication, 
+                       _launchJavaApplicationWithJVMInfo, _runFromPropertiesList, 
+                       _startAppFromPropertiesList, _startJavaApplication ]
+...

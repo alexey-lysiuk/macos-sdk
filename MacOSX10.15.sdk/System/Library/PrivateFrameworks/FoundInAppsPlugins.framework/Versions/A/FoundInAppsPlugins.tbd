@@ -1,0 +1,11 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: DFD61B0F-010A-3A8B-A07E-FD6AFF44814C', 'x86_64: DFD61B0F-010A-3A8B-A07E-FD6AFF44814C' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/FoundInAppsPlugins.framework/Versions/A/FoundInAppsPlugins'
+current-version: 973.5
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _FoundInAppsPluginsVersionNumber, _FoundInAppsPluginsVersionString ]
+    objc-classes:    [ FIAPHistoricalDataRequest, FIAPResult ]
+...

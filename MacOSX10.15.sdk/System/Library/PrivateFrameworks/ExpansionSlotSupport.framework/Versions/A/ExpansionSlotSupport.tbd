@@ -1,0 +1,19 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: A85F1D8F-A281-3755-984C-B25489EE6B01' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/ExpansionSlotSupport.framework/Versions/A/ExpansionSlotSupport'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _BG_DI_GetMemoryProperty, _BG_DI_GetNumberOfDIMMs, _BG_DI_GetSizeOfDIMMs, 
+                       _BG_DI_InitializeIOUtils, _BG_DI_ReleaseIOUtils, _CloseUserClient, 
+                       _Combinatorics_main, _DetectTypeCChanges, _FetchCardInfo, 
+                       _FetchCardInfoDict, _FindChildWithLowestFunctionNumber, _FormatOptimalConfig, 
+                       _GetBridgeForSlot, _GetDefaultPoolAllocation, _GetDeviceForSlot, 
+                       _GetMemoryConfigs, _GetPathToSlot, _GetSlotRecommendations, 
+                       _GetSystemPoolUsage, _IsConfigurationDefault, _MatchPlatformName, 
+                       _OpenUserClient, _PlatformSupportsMemorySlotUtility, _PlatformSupportsPCIELaneConfig, 
+                       _PlatformUsesIoRegPath, _PrintArray, _ReadCurrentPCIELaneConfig, 
+                       _ReleaseCardInfo, _ReleaseCardInfoDict, _WriteSwitchData, 
+                       _callFunction, _getSimpleSize, _isSlotBehindSwitch, _printIOReturn ]
+...

@@ -1,0 +1,17 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: B8B5DE0D-5721-338E-98F3-FA93AC40DEB3', 'x86_64: B8B5DE0D-5721-338E-98F3-FA93AC40DEB3' ]
+platform:        zippered
+install-name:    '/usr/lib/swift/libswiftIntents.dylib'
+current-version: 0
+swift-abi-version: 7
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ '$ld$install_name$os10.10$@rpath/libswiftIntents.dylib', '$ld$install_name$os10.11$@rpath/libswiftIntents.dylib', 
+                       '$ld$install_name$os10.12$@rpath/libswiftIntents.dylib', '$ld$install_name$os10.13$@rpath/libswiftIntents.dylib', 
+                       '$ld$install_name$os10.14$@rpath/libswiftIntents.dylib', '$ld$install_name$os10.9$@rpath/libswiftIntents.dylib', 
+                       '_$sSo8NSStringC7IntentsE017deferredLocalizedB6String4with5table9argumentsABSS_SSs14CVaListPointerVtFZ', 
+                       '_$sSo8NSStringC7IntentsE017deferredLocalizedB6String4with5table_ABSS_SSs7CVarArg_pdtFZ', 
+                       '_$sSo8NSStringC7IntentsE017deferredLocalizedB6String4with_ABSS_s7CVarArg_pdtFZ', 
+                       '__swift_FORCE_LOAD_$_swiftIntents' ]
+...

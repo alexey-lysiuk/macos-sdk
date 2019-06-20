@@ -1,0 +1,9 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: C2B7090D-69C5-3B05-889D-6D5A5908CE45', 'x86_64: C2B7090D-69C5-3B05-889D-6D5A5908CE45' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/AppStoreFoundation.framework/Versions/A/AppStoreFoundation'
+exports:         
+  - archs:           [ x86_64 ]
+    objc-classes:    [ ASFIAPItem, ASFReceipt ]
+...

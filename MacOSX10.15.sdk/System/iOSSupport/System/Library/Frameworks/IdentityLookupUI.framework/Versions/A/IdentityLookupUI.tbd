@@ -1,0 +1,10 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: F3BF6501-190A-35C1-8DB3-0F593508A68F' ]
+platform:        uikitformac
+install-name:    '/System/iOSSupport/System/Library/Frameworks/IdentityLookupUI.framework/Versions/A/IdentityLookupUI'
+exports:         
+  - archs:           [ x86_64 ]
+    objc-classes:    [ ILClassificationUIExtensionContext, ILClassificationUIExtensionHostContext, 
+                       ILClassificationUIExtensionHostViewController, ILClassificationUIExtensionViewController ]
+...

@@ -1,0 +1,14 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 4941CF5B-65C2-3AAA-AE08-7507A282EE27' ]
+platform:        macosx
+install-name:    '/usr/lib/libEndpointSecurity.dylib'
+current-version: 33
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _es_clear_cache, _es_copy_message, _es_delete_client, _es_exec_arg, 
+                       _es_exec_arg_count, _es_exec_env, _es_exec_env_count, _es_message_size, 
+                       _es_mute_process, _es_new_client, _es_respond_auth_result, 
+                       _es_respond_flags_result, _es_subscribe, _es_unsubscribe, 
+                       _es_unsubscribe_all ]
+...

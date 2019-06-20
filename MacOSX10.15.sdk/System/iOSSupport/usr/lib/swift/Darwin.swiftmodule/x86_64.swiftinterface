@@ -1,0 +1,938 @@
+// swift-interface-format-version: 1.0
+// swift-tools-version: Apple Swift version 5.1 effective-4.1.50 (swiftlang-1100.8.32.26 clang-1100.0.18.2)
+// swift-module-flags: -target x86_64-apple-ios13.0-macabi -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftDarwin -swift-version 4 -O -enforce-exclusivity=unchecked -disable-objc-attr-requires-foundation-module -module-name Darwin
+@_exported import Darwin
+import Swift
+import SwiftOverlayShims
+import SwiftShims
+public let MAP_FAILED: UnsafeMutableRawPointer!
+@available(swift, deprecated: 3.0, message: "Please use 'Double.pi' or '.pi' to get the value of correct type and avoid casting.")
+public let M_PI: Swift.Double
+@available(swift, deprecated: 3.0, message: "Please use 'Double.pi / 2' or '.pi / 2' to get the value of correct type and avoid casting.")
+public let M_PI_2: Swift.Double
+@available(swift, deprecated: 3.0, message: "Please use 'Double.pi / 4' or '.pi / 4' to get the value of correct type and avoid casting.")
+public let M_PI_4: Swift.Double
+@available(swift, deprecated: 3.0, message: "Please use '2.squareRoot()'.")
+public let M_SQRT2: Swift.Double
+@available(swift, deprecated: 3.0, message: "Please use '0.5.squareRoot()'.")
+public let M_SQRT1_2: Swift.Double
+@available(swift, deprecated: 3.0, message: "Please use 'T.radix' to get the radix of a FloatingPoint type 'T'.")
+public let FLT_RADIX: Swift.Int
+@available(swift, deprecated: 3.0, message: "Please use 'Float.significandBitCount + 1'.")
+public let FLT_MANT_DIG: Swift.Int
+@available(swift, deprecated: 3.0, message: "Please use 'Float.greatestFiniteMagnitude.exponent + 1'.")
+public let FLT_MAX_EXP: Swift.Int
+@available(swift, deprecated: 3.0, message: "Please use 'Float.leastNormalMagnitude.exponent + 1'.")
+public let FLT_MIN_EXP: Swift.Int
+@available(swift, deprecated: 3.0, message: "Please use 'Float.greatestFiniteMagnitude' or '.greatestFiniteMagnitude'.")
+public let FLT_MAX: Swift.Float
+@available(swift, deprecated: 3.0, message: "Please use 'Float.ulpOfOne' or '.ulpOfOne'.")
+public let FLT_EPSILON: Swift.Float
+@available(swift, deprecated: 3.0, message: "Please use 'Float.leastNormalMagnitude' or '.leastNormalMagnitude'.")
+public let FLT_MIN: Swift.Float
+@available(swift, deprecated: 3.0, message: "Please use 'Float.leastNonzeroMagnitude' or '.leastNonzeroMagnitude'.")
+public let FLT_TRUE_MIN: Swift.Float
+@available(swift, deprecated: 3.0, message: "Please use 'Double.significandBitCount + 1'.")
+public let DBL_MANT_DIG: Swift.Int
+@available(swift, deprecated: 3.0, message: "Please use 'Double.greatestFiniteMagnitude.exponent + 1'.")
+public let DBL_MAX_EXP: Swift.Int
+@available(swift, deprecated: 3.0, message: "Please use 'Double.leastNormalMagnitude.exponent + 1'.")
+public let DBL_MIN_EXP: Swift.Int
+@available(swift, deprecated: 3.0, message: "Please use 'Double.greatestFiniteMagnitude' or '.greatestFiniteMagnitude'.")
+public let DBL_MAX: Swift.Double
+@available(swift, deprecated: 3.0, message: "Please use 'Double.ulpOfOne' or '.ulpOfOne'.")
+public let DBL_EPSILON: Swift.Double
+@available(swift, deprecated: 3.0, message: "Please use 'Double.leastNormalMagnitude' or '.leastNormalMagnitude'.")
+public let DBL_MIN: Swift.Double
+@available(swift, deprecated: 3.0, message: "Please use 'Double.leastNonzeroMagnitude' or '.leastNonzeroMagnitude'.")
+public let DBL_TRUE_MIN: Swift.Double
+@available(swift, deprecated: 3.0, message: "Please use 'Float80.significandBitCount + 1'.")
+public let LDBL_MANT_DIG: Swift.Int
+@available(swift, deprecated: 3.0, message: "Please use 'Float80.greatestFiniteMagnitude.exponent + 1'.")
+public let LDBL_MAX_EXP: Swift.Int
+@available(swift, deprecated: 3.0, message: "Please use 'Float80.leastNormalMagnitude.exponent + 1'.")
+public let LDBL_MIN_EXP: Swift.Int
+@available(swift, deprecated: 3.0, message: "Please use 'Float80.greatestFiniteMagnitude' or '.greatestFiniteMagnitude'.")
+public let LDBL_MAX: Swift.Float80
+@available(swift, deprecated: 3.0, message: "Please use 'Float80.ulpOfOne' or '.ulpOfOne'.")
+public let LDBL_EPSILON: Swift.Float80
+@available(swift, deprecated: 3.0, message: "Please use 'Float80.leastNormalMagnitude' or '.leastNormalMagnitude'.")
+public let LDBL_MIN: Swift.Float80
+@available(swift, deprecated: 3.0, message: "Please use 'Float80.leastNonzeroMagnitude' or '.leastNonzeroMagnitude'.")
+public let LDBL_TRUE_MIN: Swift.Float80
+extension extern_proc {
+  @_transparent public var p_starttime: timeval {
+    get { return self.p_un.__p_starttime }
+    set { self.p_un.__p_starttime = newValue }
+  }
+}
+public var noErr: OSStatus {
+  get
+}
+@_fixed_layout public struct DarwinBoolean : ExpressibleByBooleanLiteral {
+  internal var _value: UInt8
+  public init(_ value: Bool)
+  public var boolValue: Bool {
+    get
+  }
+  @_transparent public init(booleanLiteral value: Bool) {
+    self.init(value)
+  }
+  public typealias BooleanLiteralType = Swift.Bool
+}
+extension DarwinBoolean : CustomReflectable {
+  public var customMirror: Mirror {
+    get
+  }
+}
+extension DarwinBoolean : CustomStringConvertible {
+  public var description: String {
+    get
+  }
+}
+extension DarwinBoolean : Equatable {
+  public static func == (lhs: DarwinBoolean, rhs: DarwinBoolean) -> Bool
+}
+public func _convertBoolToDarwinBoolean(_ x: Bool) -> DarwinBoolean
+public func _convertDarwinBooleanToBool(_ x: DarwinBoolean) -> Bool
+public var errno: Int32 {
+  get
+  set(val)
+}
+public var stdin: UnsafeMutablePointer<FILE> {
+  get
+  set
+}
+public var stdout: UnsafeMutablePointer<FILE> {
+  get
+  set
+}
+public var stderr: UnsafeMutablePointer<FILE> {
+  get
+  set
+}
+public func dprintf(_ fd: Int, _ format: UnsafePointer<Int8>, _ args: CVarArg...) -> Int32
+public func snprintf(ptr: UnsafeMutablePointer<Int8>, _ len: Int, _ format: UnsafePointer<Int8>, _ args: CVarArg...) -> Int32
+public func open(_ path: UnsafePointer<CChar>, _ oflag: Int32) -> Int32
+public func open(_ path: UnsafePointer<CChar>, _ oflag: Int32, _ mode: mode_t) -> Int32
+public func openat(_ fd: Int32, _ path: UnsafePointer<CChar>, _ oflag: Int32) -> Int32
+public func openat(_ fd: Int32, _ path: UnsafePointer<CChar>, _ oflag: Int32, _ mode: mode_t) -> Int32
+public func fcntl(_ fd: Int32, _ cmd: Int32) -> Int32
+public func fcntl(_ fd: Int32, _ cmd: Int32, _ value: Int32) -> Int32
+public func fcntl(_ fd: Int32, _ cmd: Int32, _ ptr: UnsafeMutableRawPointer) -> Int32
+public var S_IFMT: mode_t {
+  get
+}
+public var S_IFIFO: mode_t {
+  get
+}
+public var S_IFCHR: mode_t {
+  get
+}
+public var S_IFDIR: mode_t {
+  get
+}
+public var S_IFBLK: mode_t {
+  get
+}
+public var S_IFREG: mode_t {
+  get
+}
+public var S_IFLNK: mode_t {
+  get
+}
+public var S_IFSOCK: mode_t {
+  get
+}
+public var S_IFWHT: mode_t {
+  get
+}
+public var S_IRWXU: mode_t {
+  get
+}
+public var S_IRUSR: mode_t {
+  get
+}
+public var S_IWUSR: mode_t {
+  get
+}
+public var S_IXUSR: mode_t {
+  get
+}
+public var S_IRWXG: mode_t {
+  get
+}
+public var S_IRGRP: mode_t {
+  get
+}
+public var S_IWGRP: mode_t {
+  get
+}
+public var S_IXGRP: mode_t {
+  get
+}
+public var S_IRWXO: mode_t {
+  get
+}
+public var S_IROTH: mode_t {
+  get
+}
+public var S_IWOTH: mode_t {
+  get
+}
+public var S_IXOTH: mode_t {
+  get
+}
+public var S_ISUID: mode_t {
+  get
+}
+public var S_ISGID: mode_t {
+  get
+}
+public var S_ISVTX: mode_t {
+  get
+}
+public var S_ISTXT: mode_t {
+  get
+}
+public var S_IREAD: mode_t {
+  get
+}
+public var S_IWRITE: mode_t {
+  get
+}
+public var S_IEXEC: mode_t {
+  get
+}
+public func ioctl(_ fd: CInt, _ request: UInt, _ value: CInt) -> CInt
+public func ioctl(_ fd: CInt, _ request: UInt, _ ptr: UnsafeMutableRawPointer) -> CInt
+public func ioctl(_ fd: CInt, _ request: UInt) -> CInt
+@available(*, unavailable, message: "Please use threads or posix_spawn*()")
+public func fork() -> Int32
+@available(*, unavailable, message: "Please use threads or posix_spawn*()")
+public func vfork() -> Int32
+public var SIG_DFL: sig_t? {
+  get
+}
+public var SIG_IGN: sig_t {
+  get
+}
+public var SIG_ERR: sig_t {
+  get
+}
+public var SIG_HOLD: sig_t {
+  get
+}
+public var SEM_FAILED: UnsafeMutablePointer<sem_t>? {
+  get
+}
+public func sem_open(_ name: UnsafePointer<CChar>, _ oflag: Int32) -> UnsafeMutablePointer<sem_t>?
+public func sem_open(_ name: UnsafePointer<CChar>, _ oflag: Int32, _ mode: mode_t, _ value: CUnsignedInt) -> UnsafeMutablePointer<sem_t>?
+public var environ: UnsafeMutablePointer<UnsafeMutablePointer<CChar>?> {
+  get
+}
+public var TIOCEXCL: UInt {
+  get
+}
+public var TIOCNXCL: UInt {
+  get
+}
+public var TIOCFLUSH: UInt {
+  get
+}
+public var TIOCGETD: UInt {
+  get
+}
+public var TIOCSETD: UInt {
+  get
+}
+public var TIOCSBRK: UInt {
+  get
+}
+public var TIOCCBRK: UInt {
+  get
+}
+public var TIOCSDTR: UInt {
+  get
+}
+public var TIOCCDTR: UInt {
+  get
+}
+public var TIOCGPGRP: UInt {
+  get
+}
+public var TIOCSPGRP: UInt {
+  get
+}
+public var TIOCOUTQ: UInt {
+  get
+}
+public var TIOCSTI: UInt {
+  get
+}
+public var TIOCNOTTY: UInt {
+  get
+}
+public var TIOCPKT: UInt {
+  get
+}
+public var TIOCSTOP: UInt {
+  get
+}
+public var TIOCSTART: UInt {
+  get
+}
+public var TIOCMSET: UInt {
+  get
+}
+public var TIOCMBIS: UInt {
+  get
+}
+public var TIOCMBIC: UInt {
+  get
+}
+public var TIOCMGET: UInt {
+  get
+}
+public var TIOCGWINSZ: UInt {
+  get
+}
+public var TIOCSWINSZ: UInt {
+  get
+}
+public var TIOCUCNTL: UInt {
+  get
+}
+public var TIOCSTAT: UInt {
+  get
+}
+public var TIOCCONS: UInt {
+  get
+}
+public var TIOCSCTTY: UInt {
+  get
+}
+public var TIOCEXT: UInt {
+  get
+}
+public var TIOCDRAIN: UInt {
+  get
+}
+public var TIOCMSDTRWAIT: UInt {
+  get
+}
+public var TIOCMGDTRWAIT: UInt {
+  get
+}
+public var TIOCTIMESTAMP: UInt {
+  get
+}
+public var TIOCSDRAINWAIT: UInt {
+  get
+}
+public var TIOCGDRAINWAIT: UInt {
+  get
+}
+public var TIOCHPCL: UInt {
+  get
+}
+public var TIOCGETP: UInt {
+  get
+}
+public var TIOCSETP: UInt {
+  get
+}
+public var TIOCSETN: UInt {
+  get
+}
+public var TIOCSETC: UInt {
+  get
+}
+public var TIOCGETC: UInt {
+  get
+}
+public var TIOCLBIS: UInt {
+  get
+}
+public var TIOCLBIC: UInt {
+  get
+}
+public var TIOCLSET: UInt {
+  get
+}
+public var TIOCLGET: UInt {
+  get
+}
+public var TIOCSLTC: UInt {
+  get
+}
+public var TIOCGLTC: UInt {
+  get
+}
+public var TIOCGETA: UInt {
+  get
+}
+public var TIOCSETA: UInt {
+  get
+}
+public var TIOCSETAW: UInt {
+  get
+}
+public var TIOCSETAF: UInt {
+  get
+}
+public var TIOCSIG: UInt {
+  get
+}
+public var TIOCMODG: UInt {
+  get
+}
+public var TIOCMODS: UInt {
+  get
+}
+public var TIOCIXON: UInt {
+  get
+}
+public var TIOCIXOFF: UInt {
+  get
+}
+public var TIOCREMOTE: UInt {
+  get
+}
+public var TIOCSCONS: UInt {
+  get
+}
+public var TIOCDCDTIMESTAMP: UInt {
+  get
+}
+public var TIOCDSIMICROCODE: UInt {
+  get
+}
+public var TIOCPTYGRANT: UInt {
+  get
+}
+public var TIOCPTYGNAME: UInt {
+  get
+}
+public var TIOCPTYUNLK: UInt {
+  get
+}
+@available(swift, deprecated: 4.2, renamed: "abs")
+@_transparent public func fabs<T>(_ x: T) -> T where T : Swift.FloatingPoint {
+  return x.magnitude
+}
+@_transparent public func sqrt<T>(_ x: T) -> T where T : Swift.FloatingPoint {
+  return x.squareRoot()
+}
+@_transparent public func fma<T>(_ x: T, _ y: T, _ z: T) -> T where T : Swift.FloatingPoint {
+  return z.addingProduct(x, y)
+}
+@_transparent public func remainder<T>(_ x: T, _ y: T) -> T where T : Swift.FloatingPoint {
+  return x.remainder(dividingBy: y)
+}
+@_transparent public func fmod<T>(_ x: T, _ y: T) -> T where T : Swift.FloatingPoint {
+  return x.truncatingRemainder(dividingBy: y)
+}
+@_transparent public func ceil<T>(_ x: T) -> T where T : Swift.FloatingPoint {
+  return x.rounded(.up)
+}
+@_transparent public func floor<T>(_ x: T) -> T where T : Swift.FloatingPoint {
+  return x.rounded(.down)
+}
+@_transparent public func round<T>(_ x: T) -> T where T : Swift.FloatingPoint {
+  return x.rounded()
+}
+@_transparent public func trunc<T>(_ x: T) -> T where T : Swift.FloatingPoint {
+  return x.rounded(.towardZero)
+}
+@_transparent public func scalbn<T>(_ x: T, _ n: Int) -> T where T : Swift.FloatingPoint {
+  return T(sign: .plus, exponent: T.Exponent(n), significand: x)
+}
+@_transparent public func modf<T>(_ x: T) -> (T, T) where T : Swift.FloatingPoint {
+  // inf/NaN: return canonicalized x, fractional part zero.
+  guard x.isFinite else { return (x+0, 0) }
+  let integral = trunc(x)
+  let fractional = x - integral
+  return (integral, fractional)
+}
+@_transparent public func frexp<T>(_ x: T) -> (T, Int) where T : Swift.BinaryFloatingPoint {
+  guard x.isFinite else { return (x+0, 0) }
+  guard x != 0 else { return (x, 0) }
+  // The C stdlib `frexp` uses a different notion of significand / exponent
+  // than IEEE 754, so we need to adjust them by a factor of two.
+  return (x.significand / 2, Int(x.exponent + 1))
+}
+@available(swift, deprecated: 4.2, renamed: "scalbn")
+@_transparent public func ldexp(_ x: Float, _ n: Int) -> Float {
+  return Float(sign: .plus, exponent: n, significand: x)
+}
+@available(swift, deprecated: 4.2, renamed: "scalbn")
+@_transparent public func ldexp(_ x: Double, _ n: Int) -> Double {
+  return Double(sign: .plus, exponent: n, significand: x)
+}
+@available(*, unavailable, message: "use the floatingPointClass property.")
+public func fpclassify<T>(_ value: T) -> Int where T : Swift.FloatingPoint
+@available(*, unavailable, message: "use the isNormal property.")
+public func isnormal<T>(_ value: T) -> Bool where T : Swift.FloatingPoint
+@available(*, unavailable, message: "use the isFinite property.")
+public func isfinite<T>(_ value: T) -> Bool where T : Swift.FloatingPoint
+@available(*, unavailable, message: "use the isInfinite property.")
+public func isinf<T>(_ value: T) -> Bool where T : Swift.FloatingPoint
+@available(*, unavailable, message: "use the isNaN property.")
+public func isnan<T>(_ value: T) -> Bool where T : Swift.FloatingPoint
+@available(*, unavailable, message: "use the sign property.")
+public func signbit<T>(_ value: T) -> Int where T : Swift.FloatingPoint
+@available(swift, deprecated: 4.2, message: "use the exponent property.")
+public func ilogb<T>(_ x: T) -> Int where T : Swift.BinaryFloatingPoint
+@_transparent public func acos(_ x: Float) -> Float {
+  return Float(acosf(CFloat(x)))
+}
+@_transparent public func acos(_ x: Float80) -> Float80 {
+  return Float80(acosl(CLongDouble(x)))
+}
+@_transparent public func asin(_ x: Float) -> Float {
+  return Float(asinf(CFloat(x)))
+}
+@_transparent public func asin(_ x: Float80) -> Float80 {
+  return Float80(asinl(CLongDouble(x)))
+}
+@_transparent public func atan(_ x: Float) -> Float {
+  return Float(atanf(CFloat(x)))
+}
+@_transparent public func atan(_ x: Float80) -> Float80 {
+  return Float80(atanl(CLongDouble(x)))
+}
+@_transparent public func tan(_ x: Float) -> Float {
+  return Float(tanf(CFloat(x)))
+}
+@_transparent public func tan(_ x: Float80) -> Float80 {
+  return Float80(tanl(CLongDouble(x)))
+}
+@_transparent public func acosh(_ x: Float) -> Float {
+  return Float(acoshf(CFloat(x)))
+}
+@_transparent public func acosh(_ x: Float80) -> Float80 {
+  return Float80(acoshl(CLongDouble(x)))
+}
+@_transparent public func asinh(_ x: Float) -> Float {
+  return Float(asinhf(CFloat(x)))
+}
+@_transparent public func asinh(_ x: Float80) -> Float80 {
+  return Float80(asinhl(CLongDouble(x)))
+}
+@_transparent public func atanh(_ x: Float) -> Float {
+  return Float(atanhf(CFloat(x)))
+}
+@_transparent public func atanh(_ x: Float80) -> Float80 {
+  return Float80(atanhl(CLongDouble(x)))
+}
+@_transparent public func cosh(_ x: Float) -> Float {
+  return Float(coshf(CFloat(x)))
+}
+@_transparent public func cosh(_ x: Float80) -> Float80 {
+  return Float80(coshl(CLongDouble(x)))
+}
+@_transparent public func sinh(_ x: Float) -> Float {
+  return Float(sinhf(CFloat(x)))
+}
+@_transparent public func sinh(_ x: Float80) -> Float80 {
+  return Float80(sinhl(CLongDouble(x)))
+}
+@_transparent public func tanh(_ x: Float) -> Float {
+  return Float(tanhf(CFloat(x)))
+}
+@_transparent public func tanh(_ x: Float80) -> Float80 {
+  return Float80(tanhl(CLongDouble(x)))
+}
+@_transparent public func expm1(_ x: Float) -> Float {
+  return Float(expm1f(CFloat(x)))
+}
+@_transparent public func expm1(_ x: Float80) -> Float80 {
+  return Float80(expm1l(CLongDouble(x)))
+}
+@_transparent public func log1p(_ x: Float) -> Float {
+  return Float(log1pf(CFloat(x)))
+}
+@_transparent public func log1p(_ x: Float80) -> Float80 {
+  return Float80(log1pl(CLongDouble(x)))
+}
+@_transparent public func logb(_ x: Float) -> Float {
+  return Float(logbf(CFloat(x)))
+}
+@_transparent public func logb(_ x: Float80) -> Float80 {
+  return Float80(logbl(CLongDouble(x)))
+}
+@_transparent public func cbrt(_ x: Float) -> Float {
+  return Float(cbrtf(CFloat(x)))
+}
+@_transparent public func cbrt(_ x: Float80) -> Float80 {
+  return Float80(cbrtl(CLongDouble(x)))
+}
+@_transparent public func erf(_ x: Float) -> Float {
+  return Float(erff(CFloat(x)))
+}
+@_transparent public func erf(_ x: Float80) -> Float80 {
+  return Float80(erfl(CLongDouble(x)))
+}
+@_transparent public func erfc(_ x: Float) -> Float {
+  return Float(erfcf(CFloat(x)))
+}
+@_transparent public func erfc(_ x: Float80) -> Float80 {
+  return Float80(erfcl(CLongDouble(x)))
+}
+@_transparent public func tgamma(_ x: Float) -> Float {
+  return Float(tgammaf(CFloat(x)))
+}
+@_transparent public func tgamma(_ x: Float80) -> Float80 {
+  return Float80(tgammal(CLongDouble(x)))
+}
+@_transparent public func cos(_ x: Float) -> Float {
+  return _cos(x)
+}
+@_transparent public func cos(_ x: Double) -> Double {
+  return _cos(x)
+}
+@_transparent public func cos(_ x: Float80) -> Float80 {
+  return _cos(x)
+}
+@_transparent public func sin(_ x: Float) -> Float {
+  return _sin(x)
+}
+@_transparent public func sin(_ x: Double) -> Double {
+  return _sin(x)
+}
+@_transparent public func sin(_ x: Float80) -> Float80 {
+  return _sin(x)
+}
+@_transparent public func exp(_ x: Float) -> Float {
+  return _exp(x)
+}
+@_transparent public func exp(_ x: Double) -> Double {
+  return _exp(x)
+}
+@_transparent public func exp(_ x: Float80) -> Float80 {
+  return _exp(x)
+}
+@_transparent public func exp2(_ x: Float) -> Float {
+  return _exp2(x)
+}
+@_transparent public func exp2(_ x: Double) -> Double {
+  return _exp2(x)
+}
+@_transparent public func exp2(_ x: Float80) -> Float80 {
+  return _exp2(x)
+}
+@_transparent public func log(_ x: Float) -> Float {
+  return _log(x)
+}
+@_transparent public func log(_ x: Double) -> Double {
+  return _log(x)
+}
+@_transparent public func log(_ x: Float80) -> Float80 {
+  return _log(x)
+}
+@_transparent public func log10(_ x: Float) -> Float {
+  return _log10(x)
+}
+@_transparent public func log10(_ x: Double) -> Double {
+  return _log10(x)
+}
+@_transparent public func log10(_ x: Float80) -> Float80 {
+  return _log10(x)
+}
+@_transparent public func log2(_ x: Float) -> Float {
+  return _log2(x)
+}
+@_transparent public func log2(_ x: Double) -> Double {
+  return _log2(x)
+}
+@_transparent public func log2(_ x: Float80) -> Float80 {
+  return _log2(x)
+}
+@_transparent public func nearbyint(_ x: Float) -> Float {
+  return _nearbyint(x)
+}
+@_transparent public func nearbyint(_ x: Double) -> Double {
+  return _nearbyint(x)
+}
+@_transparent public func nearbyint(_ x: Float80) -> Float80 {
+  return _nearbyint(x)
+}
+@_transparent public func rint(_ x: Float) -> Float {
+  return _rint(x)
+}
+@_transparent public func rint(_ x: Double) -> Double {
+  return _rint(x)
+}
+@_transparent public func rint(_ x: Float80) -> Float80 {
+  return _rint(x)
+}
+@_transparent public func atan2(_ lhs: Float, _ rhs: Float) -> Float {
+  return Float(atan2f(CFloat(lhs), CFloat(rhs)))
+}
+@_transparent public func atan2(_ lhs: Float80, _ rhs: Float80) -> Float80 {
+  return Float80(atan2l(CLongDouble(lhs), CLongDouble(rhs)))
+}
+@_transparent public func hypot(_ lhs: Float, _ rhs: Float) -> Float {
+  return Float(hypotf(CFloat(lhs), CFloat(rhs)))
+}
+@_transparent public func hypot(_ lhs: Float80, _ rhs: Float80) -> Float80 {
+  return Float80(hypotl(CLongDouble(lhs), CLongDouble(rhs)))
+}
+@_transparent public func pow(_ lhs: Float, _ rhs: Float) -> Float {
+  return Float(powf(CFloat(lhs), CFloat(rhs)))
+}
+@_transparent public func pow(_ lhs: Float80, _ rhs: Float80) -> Float80 {
+  return Float80(powl(CLongDouble(lhs), CLongDouble(rhs)))
+}
+@_transparent public func copysign(_ lhs: Float, _ rhs: Float) -> Float {
+  return Float(copysignf(CFloat(lhs), CFloat(rhs)))
+}
+@_transparent public func copysign(_ lhs: Float80, _ rhs: Float80) -> Float80 {
+  return Float80(copysignl(CLongDouble(lhs), CLongDouble(rhs)))
+}
+@_transparent public func nextafter(_ lhs: Float, _ rhs: Float) -> Float {
+  return Float(nextafterf(CFloat(lhs), CFloat(rhs)))
+}
+@_transparent public func nextafter(_ lhs: Float80, _ rhs: Float80) -> Float80 {
+  return Float80(nextafterl(CLongDouble(lhs), CLongDouble(rhs)))
+}
+@_transparent public func fdim(_ lhs: Float, _ rhs: Float) -> Float {
+  return Float(fdimf(CFloat(lhs), CFloat(rhs)))
+}
+@_transparent public func fdim(_ lhs: Float80, _ rhs: Float80) -> Float80 {
+  return Float80(fdiml(CLongDouble(lhs), CLongDouble(rhs)))
+}
+@_transparent public func fmax(_ lhs: Float, _ rhs: Float) -> Float {
+  return Float(fmaxf(CFloat(lhs), CFloat(rhs)))
+}
+@_transparent public func fmax(_ lhs: Float80, _ rhs: Float80) -> Float80 {
+  return Float80(fmaxl(CLongDouble(lhs), CLongDouble(rhs)))
+}
+@_transparent public func fmin(_ lhs: Float, _ rhs: Float) -> Float {
+  return Float(fminf(CFloat(lhs), CFloat(rhs)))
+}
+@_transparent public func fmin(_ lhs: Float80, _ rhs: Float80) -> Float80 {
+  return Float80(fminl(CLongDouble(lhs), CLongDouble(rhs)))
+}
+@_transparent public func lgamma(_ x: Float) -> (Float, Int) {
+  var sign = Int32(0)
+  let value = lgammaf_r(CFloat(x), &sign)
+  return (Float(value), Int(sign))
+}
+@_transparent public func lgamma(_ x: Double) -> (Double, Int) {
+  var sign = Int32(0)
+  let value = lgamma_r(CDouble(x), &sign)
+  return (Double(value), Int(sign))
+}
+@_transparent public func lgamma(_ x: Float80) -> (Float80, Int) {
+  var sign = Int32(0)
+  let value = lgammal_r(CLongDouble(x), &sign)
+  return (Float80(value), Int(sign))
+}
+@_transparent public func remquo(_ x: Float, _ y: Float) -> (Float, Int) {
+  var quo = Int32(0)
+  let rem = remquof(CFloat(x), CFloat(y), &quo)
+  return (Float(rem), Int(quo))
+}
+@_transparent public func remquo(_ x: Double, _ y: Double) -> (Double, Int) {
+  var quo = Int32(0)
+  let rem = remquo(CDouble(x), CDouble(y), &quo)
+  return (Double(rem), Int(quo))
+}
+@_transparent public func remquo(_ x: Float80, _ y: Float80) -> (Float80, Int) {
+  var quo = Int32(0)
+  let rem = remquol(CLongDouble(x), CLongDouble(y), &quo)
+  return (Float80(rem), Int(quo))
+}
+@available(swift, deprecated: 4.2, message: "use Float(nan: Float.RawSignificand) instead.")
+@_transparent public func nan(_ tag: String) -> Float {
+  return Float(nanf(tag))
+}
+@available(swift, deprecated: 4.2, message: "use Float80(nan: Float80.RawSignificand) instead.")
+@_transparent public func nan(_ tag: String) -> Float80 {
+  return Float80(nanl(tag))
+}
+@_transparent public func jn(_ n: Int, _ x: Double) -> Double {
+  return jn(Int32(n), x)
+}
+@_transparent public func yn(_ n: Int, _ x: Double) -> Double {
+  return yn(Int32(n), x)
+}
+@objc public enum POSIXErrorCode : Int32 {
+  case EPERM = 1
+  case ENOENT = 2
+  case ESRCH = 3
+  case EINTR = 4
+  case EIO = 5
+  case ENXIO = 6
+  case E2BIG = 7
+  case ENOEXEC = 8
+  case EBADF = 9
+  case ECHILD = 10
+  case EDEADLK = 11
+  case ENOMEM = 12
+  case EACCES = 13
+  case EFAULT = 14
+  case ENOTBLK = 15
+  case EBUSY = 16
+  case EEXIST = 17
+  case EXDEV = 18
+  case ENODEV = 19
+  case ENOTDIR = 20
+  case EISDIR = 21
+  case EINVAL = 22
+  case ENFILE = 23
+  case EMFILE = 24
+  case ENOTTY = 25
+  case ETXTBSY = 26
+  case EFBIG = 27
+  case ENOSPC = 28
+  case ESPIPE = 29
+  case EROFS = 30
+  case EMLINK = 31
+  case EPIPE = 32
+  case EDOM = 33
+  case ERANGE = 34
+  case EAGAIN = 35
+  public static var EWOULDBLOCK: POSIXErrorCode {
+    get
+  }
+  case EINPROGRESS = 36
+  case EALREADY = 37
+  case ENOTSOCK = 38
+  case EDESTADDRREQ = 39
+  case EMSGSIZE = 40
+  case EPROTOTYPE = 41
+  case ENOPROTOOPT = 42
+  case EPROTONOSUPPORT = 43
+  case ESOCKTNOSUPPORT = 44
+  case ENOTSUP = 45
+  case EPFNOSUPPORT = 46
+  case EAFNOSUPPORT = 47
+  case EADDRINUSE = 48
+  case EADDRNOTAVAIL = 49
+  case ENETDOWN = 50
+  case ENETUNREACH = 51
+  case ENETRESET = 52
+  case ECONNABORTED = 53
+  case ECONNRESET = 54
+  case ENOBUFS = 55
+  case EISCONN = 56
+  case ENOTCONN = 57
+  case ESHUTDOWN = 58
+  case ETOOMANYREFS = 59
+  case ETIMEDOUT = 60
+  case ECONNREFUSED = 61
+  case ELOOP = 62
+  case ENAMETOOLONG = 63
+  case EHOSTDOWN = 64
+  case EHOSTUNREACH = 65
+  case ENOTEMPTY = 66
+  case EPROCLIM = 67
+  case EUSERS = 68
+  case EDQUOT = 69
+  case ESTALE = 70
+  case EREMOTE = 71
+  case EBADRPC = 72
+  case ERPCMISMATCH = 73
+  case EPROGUNAVAIL = 74
+  case EPROGMISMATCH = 75
+  case EPROCUNAVAIL = 76
+  case ENOLCK = 77
+  case ENOSYS = 78
+  case EFTYPE = 79
+  case EAUTH = 80
+  case ENEEDAUTH = 81
+  case EPWROFF = 82
+  case EDEVERR = 83
+  case EOVERFLOW = 84
+  case EBADEXEC = 85
+  case EBADARCH = 86
+  case ESHLIBVERS = 87
+  case EBADMACHO = 88
+  case ECANCELED = 89
+  case EIDRM = 90
+  case ENOMSG = 91
+  case EILSEQ = 92
+  case ENOATTR = 93
+  case EBADMSG = 94
+  case EMULTIHOP = 95
+  case ENODATA = 96
+  case ENOLINK = 97
+  case ENOSR = 98
+  case ENOSTR = 99
+  case EPROTO = 100
+  case ETIME = 101
+  case ENOPOLICY = 103
+  case ENOTRECOVERABLE = 104
+  case EOWNERDEAD = 105
+  case EQFULL = 106
+  public static var ELAST: POSIXErrorCode {
+    get
+  }
+  public typealias RawValue = Swift.Int32
+  public init?(rawValue: Swift.Int32)
+  public var rawValue: Swift.Int32 {
+    get
+  }
+}
+@objc public enum MachErrorCode : Int32 {
+  case success = 0
+  case invalidAddress = 1
+  case protectionFailure = 2
+  case noSpace = 3
+  case invalidArgument = 4
+  case failure = 5
+  case resourceShortage = 6
+  case notReceiver = 7
+  case noAccess = 8
+  case memoryFailure = 9
+  case memoryError = 10
+  case alreadyInSet = 11
+  case notInSet = 12
+  case nameExists = 13
+  case aborted = 14
+  case invalidName = 15
+  case invalidTask = 16
+  case invalidRight = 17
+  case invalidValue = 18
+  case userReferencesOverflow = 19
+  case invalidCapability = 20
+  case rightExists = 21
+  case invalidHost = 22
+  case memoryPresent = 23
+  case memoryDataMoved = 24
+  case memoryRestartCopy = 25
+  case invalidProcessorSet = 26
+  case policyLimit = 27
+  case invalidPolicy = 28
+  case invalidObject = 29
+  case alreadyWaiting = 30
+  case defaultSet = 31
+  case exceptionProtected = 32
+  case invalidLedger = 33
+  case invalidMemoryControl = 34
+  case invalidSecurity = 35
+  case notDepressed = 36
+  case terminated = 37
+  case lockSetDestroyed = 38
+  case lockUnstable = 39
+  case lockOwned = 40
+  case lockOwnedSelf = 41
+  case semaphoreDestroyed = 42
+  case rpcServerTerminated = 43
+  case rpcTerminateOrphan = 44
+  case rpcContinueOrphan = 45
+  case notSupported = 46
+  case nodeDown = 47
+  case notWaiting = 48
+  case operationTimedOut = 49
+  case codesignError = 50
+  case policyStatic = 51
+  public typealias RawValue = Swift.Int32
+  public init?(rawValue: Swift.Int32)
+  public var rawValue: Swift.Int32 {
+    get
+  }
+}

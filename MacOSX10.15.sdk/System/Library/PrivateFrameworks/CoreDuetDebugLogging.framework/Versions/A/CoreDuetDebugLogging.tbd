@@ -1,0 +1,10 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 1361F6F2-5E7C-3C9D-96C9-0E5B17B7B956', 'x86_64: 1361F6F2-5E7C-3C9D-96C9-0E5B17B7B956' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/CoreDuetDebugLogging.framework/Versions/A/CoreDuetDebugLogging'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _CDDSetError, _CDDebugErrorStrings ]
+    objc-classes:    [ CDDebug ]
+...

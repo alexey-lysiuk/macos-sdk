@@ -1,0 +1,12 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: E5CDFB7A-F93C-3D36-99E4-98DA8917CBD5' ]
+platform:        macosx
+install-name:    '/usr/lib/libnfstorage.dylib'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _nfstorageVersionNumber, _nfstorageVersionString ]
+    objc-classes:    [ ExpressESEEntity, ExpressIcfEntity, NFStorageController, NFStorageControllerESEExpress, 
+                       NFStorageControllerIcfExpress, PurpleTrustAppletEntity, PurpleTrustClientEntity, 
+                       PurpleTrustKeyEntity ]
+...

@@ -1,0 +1,7 @@
+// swift-interface-format-version: 1.0
+// swift-tools-version: Apple Swift version 5.1 effective-4.1.50 (swiftlang-1100.8.32.26 clang-1100.0.18.2)
+// swift-module-flags: -target x86_64-apple-ios13.0-macabi -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftOpenCL -swift-version 4 -O -enforce-exclusivity=unchecked -module-name OpenCL
+@_exported import OpenCL
+import Swift
+@available(OSX 10.7, *)
+public func clSetKernelArgsListAPPLE(_ kernel: cl_kernel, _ uint: cl_uint, _ args: CVarArg...) -> cl_int

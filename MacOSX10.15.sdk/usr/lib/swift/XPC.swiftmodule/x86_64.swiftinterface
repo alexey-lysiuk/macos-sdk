@@ -1,0 +1,77 @@
+// swift-interface-format-version: 1.0
+// swift-tools-version: Apple Swift version 5.1 effective-4.1.50 (swiftlang-1100.8.32.26 clang-1100.0.18.2)
+// swift-module-flags: -target x86_64-apple-macosx10.15 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftXPC -swift-version 4 -O -enforce-exclusivity=unchecked -module-name XPC
+import Swift
+@_exported import XPC
+import _SwiftXPCOverlayShims
+public var XPC_TYPE_CONNECTION: xpc_type_t {
+  get
+}
+public var XPC_TYPE_ENDPOINT: xpc_type_t {
+  get
+}
+public var XPC_TYPE_NULL: xpc_type_t {
+  get
+}
+public var XPC_TYPE_BOOL: xpc_type_t {
+  get
+}
+public var XPC_TYPE_INT64: xpc_type_t {
+  get
+}
+public var XPC_TYPE_UINT64: xpc_type_t {
+  get
+}
+public var XPC_TYPE_DOUBLE: xpc_type_t {
+  get
+}
+public var XPC_TYPE_DATE: xpc_type_t {
+  get
+}
+public var XPC_TYPE_DATA: xpc_type_t {
+  get
+}
+public var XPC_TYPE_STRING: xpc_type_t {
+  get
+}
+public var XPC_TYPE_UUID: xpc_type_t {
+  get
+}
+public var XPC_TYPE_FD: xpc_type_t {
+  get
+}
+public var XPC_TYPE_SHMEM: xpc_type_t {
+  get
+}
+public var XPC_TYPE_ARRAY: xpc_type_t {
+  get
+}
+public var XPC_TYPE_DICTIONARY: xpc_type_t {
+  get
+}
+public var XPC_TYPE_ERROR: xpc_type_t {
+  get
+}
+public var XPC_TYPE_ACTIVITY: xpc_type_t {
+  get
+}
+public let XPC_ERROR_KEY_DESCRIPTION: UnsafePointer<Int8>
+public let XPC_EVENT_KEY_NAME: UnsafePointer<Int8>
+public var XPC_BOOL_TRUE: xpc_object_t {
+  get
+}
+public var XPC_BOOL_FALSE: xpc_object_t {
+  get
+}
+public var XPC_ARRAY_APPEND: size_t {
+  get
+}
+public var XPC_ERROR_CONNECTION_INTERRUPTED: xpc_object_t {
+  get
+}
+public var XPC_ERROR_CONNECTION_INVALID: xpc_object_t {
+  get
+}
+public var XPC_ERROR_TERMINATION_IMMINENT: xpc_object_t {
+  get
+}

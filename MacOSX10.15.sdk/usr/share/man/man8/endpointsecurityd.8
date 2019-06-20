@@ -1,0 +1,43 @@
+.\" Copyright (c) 2017 Apple Inc. All rights reserved.
+.Dd 27 November, 2018
+.Dt endpointsecurityd 8
+.Os Darwin
+.Sh NAME
+.Nm endpointsecurityd
+.Nd Daemon to facilitate applications to operate within the Endpoint
+Security (ES) subsystem
+.Sh DESCRIPTION
+.Nm
+is a daemon that manages the ES components. The primary way to interface
+with
+.Nm
+is via the
+.Xr esctl 1
+tool.
+.Pp
+Applications can also interact with
+.Nm
+and opt into ES functionality by utilizing the
+.Xr libEndpointSecurity 3
+library. For these applications,
+.Nm
+is responsible for mediating connections to other ES components, as well as
+monitoring the health of these applications and acting as a watchdog when
+necessary.
+.Pp
+You cannot invoke
+.Nm
+directly.
+.Sh FILES
+.Bl -tag -width "/System"
+.It Pa /System/Library/LaunchDaemons/com.apple.endpointsecurity.endpointsecurityd.plist
+The
+.Xr launchd.plist 5
+controlling the
+.Nm
+job.
+.Sh SEE ALSO
+.Xr EndpointSecurity 7 ,
+.Xr esctl 1 ,
+.Xr libEndpointSecurity 3 ,
+.Xr launchd.plist 5

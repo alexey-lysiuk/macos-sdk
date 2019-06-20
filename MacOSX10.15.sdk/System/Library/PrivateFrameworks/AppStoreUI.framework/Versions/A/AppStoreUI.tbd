@@ -1,0 +1,15 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: D8065D26-AB87-3699-AE68-7698130690D2' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/AppStoreUI.framework/Versions/A/AppStoreUI'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _ASLogDefault, _ASLogInit, _ASWriteReviewConfigurationIconSize, 
+                       _AppStoreUIVersionNumber, _AppStoreUIVersionString ]
+    objc-classes:    [ ASMaxLengthFormatter, ASRateViewController, ASRatingControl, 
+                       ASReviewViewController, ASTextField, ASThanksViewController, 
+                       ASTransitionViewController, ASWriteReviewBodyView, ASWriteReviewConfiguration, 
+                       ASWriteReviewController, ASWriteReviewDialogView, ASWriteReviewRateView, 
+                       ASWriteReviewThanksView, ASWriteReviewWindowController ]
+...

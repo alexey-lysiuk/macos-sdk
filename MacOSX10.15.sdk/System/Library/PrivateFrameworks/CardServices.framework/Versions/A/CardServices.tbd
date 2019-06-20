@@ -1,0 +1,12 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 4139AC24-B853-3B85-96E5-6EA844DB6CDD' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/CardServices.framework/Versions/A/CardServices'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _CardServicesVersionNumber, _CardServicesVersionString ]
+    objc-classes:    [ CRSCardRequest, CRSCardResponse, CRSIdentifiedServiceRegistry, 
+                       CRSRequest, CRSResponse, _CRSCardServiceBundle, _CRSCardServiceBundleManager, 
+                       _CRSPassthroughService, _CRSServiceBundle, _CRSServiceBundleManager ]
+...

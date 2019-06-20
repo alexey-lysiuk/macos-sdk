@@ -1,0 +1,35 @@
+#ifndef _IOKIT_UIOUSERSERVER_H
+#define _IOKIT_UIOUSERSERVER_H
+
+#include <DriverKit/OSObject.iig>
+#include <DriverKit/OSAction.iig>
+#include <DriverKit/IOService.iig>
+
+
+/*!
+@iig implementation
+#include <IOKit/IOUserServer.h>
+@iig end
+*/
+
+class KERNEL IOUserServer : public IOService
+{
+public:
+	static kern_return_t
+	Create(
+		const char      name[64],
+		uint64_t        tag,
+		uint64_t        options,
+		IOUserServer ** server);
+
+	virtual bool
+	init() override;
+
+	virtual void
+	free() override;
+
+	virtual kern_return_t
+	LoadModule(const char path[1024]) LOCAL;
+};
+
+#endif /* ! _IOKIT_UIOUSERSERVER_H */

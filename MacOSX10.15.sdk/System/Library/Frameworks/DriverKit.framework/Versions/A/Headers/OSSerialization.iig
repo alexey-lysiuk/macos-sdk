@@ -1,0 +1,38 @@
+#ifndef _IOKIT_OSSERIALIZATION_H
+#define _IOKIT_OSSERIALIZATION_H
+
+#include <DriverKit/OSContainer.iig>
+
+class OSSerialization;
+typedef OSSerialization * OSSerializationPtr;
+
+typedef void (^OSSerializationFreeBufferHandler)(const void * buffer, size_t length);
+
+class LOCALONLY OSSerialization : public OSContainer
+{
+public:
+
+	// OSObject
+
+	virtual void
+	free() override;
+
+	// OSSerialization
+
+	static OSSerializationPtr
+	createFromObject(const OSObjectPtr object);
+
+	static OSSerializationPtr
+	createFromBytes(const void * bytes, size_t length, OSSerializationFreeBufferHandler freeBuffer);
+
+	OSObjectPtr
+	copyObject();
+
+	size_t
+	getLength();
+
+	const void *
+	getBytesPtr(size_t * length);
+};
+
+#endif /* ! _IOKIT_OSSERIALIZATION_H */

@@ -1,0 +1,10 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 2219AB4E-BA16-37EF-B456-8F52AA637F91' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/PackageKit.framework/Frameworks/PackageUIKit.framework/Versions/A/PackageUIKit'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _PUKLogObject, _PackageUIKitVersionNumber, _PackageUIKitVersionString ]
+    objc-classes:    [ PUKApplicationCloser, PUKProcessInfo, PUKUser ]
+...

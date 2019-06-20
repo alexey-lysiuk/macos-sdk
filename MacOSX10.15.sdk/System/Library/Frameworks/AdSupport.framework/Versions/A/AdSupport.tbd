@@ -1,0 +1,9 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 1855C63E-2C5B-38EC-8A4F-8B14DA3C4372', 'x86_64: 1855C63E-2C5B-38EC-8A4F-8B14DA3C4372' ]
+platform:        zippered
+install-name:    '/System/Library/Frameworks/AdSupport.framework/Versions/A/AdSupport'
+exports:         
+  - archs:           [ x86_64 ]
+    objc-classes:    [ ASIdentifierManager ]
+...

@@ -1,0 +1,10 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 493AE6A7-1B30-3E24-B7A4-2BE7BB01C705', 'x86_64: 493AE6A7-1B30-3E24-B7A4-2BE7BB01C705' ]
+platform:        zippered
+install-name:    '/System/Library/CoreServices/Encodings/libArabicConverter.dylib'
+current-version: 76
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ ___CFStringEncodingGetArabicConverterDefinition ]
+...

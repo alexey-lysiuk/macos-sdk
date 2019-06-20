@@ -1,0 +1,6 @@
+framework module AppSSO {
+  umbrella header "AppSSO.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,51 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 3A424FC7-E555-3432-8DDB-23655CE1BBF3', 'x86_64: 3A424FC7-E555-3432-8DDB-23655CE1BBF3' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/IconServices.framework/Versions/A/IconServices'
+current-version: 421.4
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _ISCreateCGImageFromBindingWithSizeScaleAndOptions, __ISCopyCacheContentsDescription, 
+                       __ISCopyCachePath, __ISCopyICNSDataFromBinding, __ISCreateCGImageForTypeAtScaleInternal, 
+                       __ISCreateCGImageFromBindingWithSizeScaleAndOptions, __ISCreateCGImageFromBindingWithSizeScaleAndOptionsAsync, 
+                       __ISGDBIconsCGCacheList, __ISGenerateCacheImagesFromBindingWithSizeRangeScaleAndOptions, 
+                       __ISGetGlobalIconImagesCacheMaxEntriesAndMaxDataSize, __ISGetIconFamilyData, 
+                       __ISGetIconRefVariant, __ISIconRefContainsCGPoint, __ISIconRefIntersectsCGRect, 
+                       __ISIconRefToHIShape, __ISIconRefToIconFamily, __ISIconServicesGetCGImageRefFromIconRef, 
+                       __ISIconServicesGetCGImageRefFromURL, __ISIsIconRefMaskEmpty, 
+                       __ISPlotIconRefInContext, __ISPlotInContext, __ISProcessIsRoot, 
+                       __ISSetGlobalIconImagesCacheMaxEntriesAndMaxDataSize, __ISSetIconFamilyData, 
+                       __kISIconsInvalidatedDarwinNotification, __kISIconsInvalidatedNotification, 
+                       __kISImageRequestTimeoutForeverKey, _kISIcnsDarkVariantName, 
+                       _kISIcnsErrorDomain, _kISIcnsPrimaryVariantName, _kISIcnsSelectedVariantName, 
+                       _kISIcnsTemplateVariantName, _kISIconDecorationAliasType, 
+                       _kISIconDecorationBadgeType, _kISIconDecorationCautionAlertType, 
+                       _kISIconDecorationDropFolderBadgeType, _kISIconDecorationEmbossType, 
+                       _kISIconDecorationLockedBadgeType, _kISIconDecorationNewFolderType, 
+                       _kISIconDecorationPositionType, _kISIconDecorationPositionTypeCenter, 
+                       _kISIconDecorationPositionTypeLeadingBottom, _kISIconDecorationPositionTypeTrailingBottom, 
+                       _kISIconDecorationPrivateFolderBadgeType, _kISIconDecorationReadOnlyFolderBadgeType, 
+                       _kISIconDecorationSystemType, _kISIconDecorationType, _kISIconDecorationUnsupportedBadgeType, 
+                       _kISImageDescriptorActivity, _kISImageDescriptorBadgedDocumentScalableSize, 
+                       _kISImageDescriptorBadgedDocumentSize, _kISImageDescriptorCarLauncher, 
+                       _kISImageDescriptorCarNotification, _kISImageDescriptorCustomDocumentCompact, 
+                       _kISImageDescriptorCustomDocumentRegular, _kISImageDescriptorCustomDocumentScalableSize, 
+                       _kISImageDescriptorCustomDocumentSize, _kISImageDescriptorCustomDocumentTable, 
+                       _kISImageDescriptorHomeScreen, _kISImageDescriptorMessagesExtensionBadge, 
+                       _kISImageDescriptorMessagesExtensionLauncher, _kISImageDescriptorMessagesExtensionStatus, 
+                       _kISImageDescriptorNotification, _kISImageDescriptorSpotlight, 
+                       _kISImageDescriptorTableUIName, _kISPrimaryResourceKey, _kIconCompilerImageInfoIsSelectedVariantKey, 
+                       _kIconCompilerImageInfoNameKey, _kIconCompilerImageInfoScaleKey, 
+                       _kIconCompilerImageInfoSizeKey ]
+    objc-classes:    [ ISAssetCatalogResource, ISCenterEmbossRecipe, ISCompositor, 
+                       ISContentLayer, ISContinuousRoundedRect, ISGenerationRequest, 
+                       ISGenericRecipe, ISHintedRect, ISIcns, ISIcon, ISIconCache, 
+                       ISIconDecoration, ISIconDecorationResource, ISIconLayer, ISIconManager, 
+                       ISIconObserver, ISIconResourceLocator, ISIconSpecification, 
+                       ISIconset, ISImage, ISImageBag, ISImageDescriptor, ISImageSpecification, 
+                       ISLayer, ISLeadingStatusBadgeRecipe, ISMutableIcns, ISMutableStoreIndex, 
+                       ISResourceFile, ISShapeCompositorResource, ISStore, ISStoreIndex, 
+                       ISStoreUnit, ISTrailingStatusBadgeRecipe, ISiOSAppRecipe, 
+                       ISiOSMacAppRecipe ]
+...

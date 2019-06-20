@@ -1,0 +1,31 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 7411FC01-C11F-3148-919F-D62A9A8B9FCC', 'x86_64: 7411FC01-C11F-3148-919F-D62A9A8B9FCC' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/SPOwner.framework/Versions/A/SPOwner'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _SPBeaconEphemeralLocationChangedNotification, _SPBeaconEstimatedLocationChangedNotification, 
+                       _SPBeaconRoleIdUndefined, _SPBeaconTaskNameAcceptShare, _SPBeaconTaskNameBeginLeashing, 
+                       _SPBeaconTaskNameBeginRanging, _SPBeaconTaskNameDeclineShare, 
+                       _SPBeaconTaskNameDisableLostMode, _SPBeaconTaskNameDisableNotifyWhenFound, 
+                       _SPBeaconTaskNameEnableLostMode, _SPBeaconTaskNameEnableNotifyWhenFound, 
+                       _SPBeaconTaskNameEndLeashing, _SPBeaconTaskNameEndRanging, 
+                       _SPBeaconTaskNamePlaySound, _SPBeaconTaskNameStartSharing, 
+                       _SPBeaconTaskNameStopSharing, _SPBeaconTaskNameStopSound, 
+                       _SPBeaconingStateChangedNotification, _SPBeaconsChangedNotification, 
+                       _SPDisabledReasonLowAccountSecurity, _SPDisabledReasonNone, 
+                       _SPDisabledReasonUserOptOut, _SPDisabledReasoniCloudSignedOut, 
+                       _SPEvaluateLocalBeaconingNotification, _SPOwnerBeaconsChangedLocalNotification, 
+                       _SPOwnerSessionErrorDomain, _SPPairingSessionErrorDomain, 
+                       _SPSelfBeaconingChangedNotification, _SPServiceSettingsChangedNotification, 
+                       _SPServiceStateDisabled, _SPServiceStateEnabled, _SPSettingsServiceDisabledReasonsKey, 
+                       _SPSettingsServiceStateKey, _SPSettingsSharedSuiteName ]
+    objc-classes:    [ SPBeacon, SPBeaconDescription, SPBeaconLocation, SPBeaconManager, 
+                       SPBeaconRole, SPBeaconShare, SPBeaconTaskInformation, SPBeaconUpdates, 
+                       SPBeaconingKey, SPCommand, SPCommandKeys, SPHandle, SPLocationAddress, 
+                       SPLostModeInfo, SPObservationLocation, SPOwnerInterface, SPOwnerSession, 
+                       SPPairingData, SPPairingManager, SPPairingSession, SPRawSearchResult, 
+                       SPRole, SPSafeLocation, SPSettingsConfiguration, SPWildStaticObservation, 
+                       SPWildStaticPayload ]
+...

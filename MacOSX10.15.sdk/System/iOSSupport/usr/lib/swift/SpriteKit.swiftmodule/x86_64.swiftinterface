@@ -1,0 +1,37 @@
+// swift-interface-format-version: 1.0
+// swift-tools-version: Apple Swift version 5.1 effective-4.1.50 (swiftlang-1100.8.32.26 clang-1100.0.18.2)
+// swift-module-flags: -target x86_64-apple-ios13.0-macabi -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftSpriteKit -swift-version 4 -O -enforce-exclusivity=unchecked -module-name SpriteKit
+@_exported import SpriteKit
+import Swift
+import simd
+public typealias SKColor = UIColor
+@available(iOS 10.0, OSX 10.12, tvOS 10.0, watchOS 3.0, *)
+extension SKWarpGeometryGrid {
+  convenience public init(columns: Int, rows: Int, sourcePositions: [simd.float2] = [float2](), destinationPositions: [simd.float2] = [float2]())
+  public func replacingBySourcePositions(positions source: [simd.float2]) -> SKWarpGeometryGrid
+  public func replacingByDestinationPositions(positions destination: [simd.float2]) -> SKWarpGeometryGrid
+}
+extension SKShapeNode : _CustomPlaygroundQuickLookable {
+  @available(*, deprecated, message: "SKShapeNode.customPlaygroundQuickLook will be removed in a future Swift version")
+  public var customPlaygroundQuickLook: PlaygroundQuickLook {
+    get
+  }
+}
+extension SKSpriteNode : _CustomPlaygroundQuickLookable {
+  @available(*, deprecated, message: "SKSpriteNode.customPlaygroundQuickLook will be removed in a future Swift version")
+  public var customPlaygroundQuickLook: PlaygroundQuickLook {
+    get
+  }
+}
+extension SKTextureAtlas : _CustomPlaygroundQuickLookable {
+  @available(*, deprecated, message: "SKTextureAtlas.customPlaygroundQuickLook will be removed in a future Swift version")
+  public var customPlaygroundQuickLook: PlaygroundQuickLook {
+    get
+  }
+}
+extension SKTexture : _CustomPlaygroundQuickLookable {
+  @available(*, deprecated, message: "SKTexture.customPlaygroundQuickLook will be removed in a future Swift version")
+  public var customPlaygroundQuickLook: PlaygroundQuickLook {
+    get
+  }
+}

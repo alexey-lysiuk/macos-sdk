@@ -1,0 +1,24 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 62E7AB2B-BDD8-324A-A478-5A24B603C448', 'x86_64: 62E7AB2B-BDD8-324A-A478-5A24B603C448' ]
+platform:        zippered
+install-name:    '/usr/lib/swift/libswiftVision.dylib'
+current-version: 0
+swift-abi-version: 7
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ '$ld$install_name$os10.10$@rpath/libswiftVision.dylib', '$ld$install_name$os10.11$@rpath/libswiftVision.dylib', 
+                       '$ld$install_name$os10.12$@rpath/libswiftVision.dylib', '$ld$install_name$os10.13$@rpath/libswiftVision.dylib', 
+                       '$ld$install_name$os10.14$@rpath/libswiftVision.dylib', '$ld$install_name$os10.9$@rpath/libswiftVision.dylib', 
+                       '_$sSo16VNRecognizedTextC6VisionE11boundingBox3forSo22VNRectangleObservationCSgSnySS5IndexVG_tKF', 
+                       '_$sSo17VNFaceObservationC6VisionE18faceCaptureQualitySfSgvg', 
+                       '_$sSo17VNFaceObservationC6VisionE18faceCaptureQualitySfSgvpMV', 
+                       '_$sSo22VNFaceLandmarkRegion2DC6VisionE13pointsInImage9imageSizeSaySo7CGPointVGSo6CGSizeV_tF', 
+                       '_$sSo22VNFaceLandmarkRegion2DC6VisionE16normalizedPointsSaySo7CGPointVGvg', 
+                       '_$sSo22VNFaceLandmarkRegion2DC6VisionE16normalizedPointsSaySo7CGPointVGvpMV', 
+                       '_$sSo22VNFaceLandmarkRegion2DC6VisionE22occlusionFlagsPerPointSaySfGSgvg', 
+                       '_$sSo22VNFaceLandmarkRegion2DC6VisionE22occlusionFlagsPerPointSaySfGSgvpMV', 
+                       '_$sSo22VNFaceLandmarkRegion2DC6VisionE26precisionEstimatesPerPointSaySfGSgvg', 
+                       '_$sSo22VNFaceLandmarkRegion2DC6VisionE26precisionEstimatesPerPointSaySfGSgvpMV', 
+                       '__swift_FORCE_LOAD_$_swiftVision' ]
+...

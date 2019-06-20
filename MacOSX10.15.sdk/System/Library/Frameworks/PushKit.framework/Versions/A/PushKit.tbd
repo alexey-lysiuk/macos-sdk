@@ -1,0 +1,11 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: CA72B84C-8C86-3595-88DB-F405C5C5271D', 'x86_64: CA72B84C-8C86-3595-88DB-F405C5C5271D' ]
+platform:        zippered
+install-name:    '/System/Library/Frameworks/PushKit.framework/Versions/A/PushKit'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _PKPushIncomingCallReportedNotification, _PKPushTypeFileProvider, 
+                       _PKPushTypeUserNotifications ]
+    objc-classes:    [ PKPushCredentials, PKPushPayload, PKPushRegistry, PKUserNotificationsRemoteNotificationServiceConnection ]
+...

@@ -1,0 +1,10 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: E99C7174-7ECD-3A90-9834-82F6E70EBFC4' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/HID.framework/Versions/A/HID'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _HIDVersionNumber, _HIDVersionString ]
+    objc-classes:    [ HIDEventSystemClient, HIDManager, HIDUserDevice, HIDVirtualEventService ]
+...

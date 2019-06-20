@@ -1,0 +1,39 @@
+#ifndef _IOKIT_UIOPCIDEVICE_H
+#define _IOKIT_UIOPCIDEVICE_H
+
+#include <DriverKit/IOService.iig>
+#include <DriverKit/IOMemoryDescriptor.iig>
+
+enum {
+    kIOPCIMemoryApertureAccessReadDevice   = 0x00000100,
+    kIOPCIMemoryApertureAccessWriteDevice  = 0x00000200,
+    kIOPCIMemoryApertureAccessApertureMask = 0x000000FF,
+
+    kIOPCIMemoryConfigAccessReadDevice     = 0x00000300,
+    kIOPCIMemoryConfigAccessWriteDevice    = 0x00000400,
+
+    kIOPCIMemoryAccess8Bit                 = 0x00080000,
+    kIOPCIMemoryAccess16Bit                = 0x00100000,
+    kIOPCIMemoryAccess32Bit                = 0x00200000,
+    kIOPCIMemoryAccess64Bit                = 0x00400000,
+};
+
+class KERNEL IOPCIDevice : public IOService
+{
+public:
+    virtual kern_return_t
+    MemoryAccess(
+        uint64_t operation,
+        uint64_t space,
+        uint64_t address,
+        uint64_t data,
+
+        uint64_t * returnData);
+
+    virtual kern_return_t
+    CopyMemoryDescriptor(
+        uint64_t index,
+        IOMemoryDescriptor ** memory);
+};
+
+#endif /* ! _IOKIT_UIOPCIDEVICE_H */

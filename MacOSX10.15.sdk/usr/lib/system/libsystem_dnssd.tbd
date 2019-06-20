@@ -1,0 +1,25 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 7B72765D-8D49-3E28-8C12-7771768C4451', 'x86_64: 7B72765D-8D49-3E28-8C12-7771768C4451' ]
+platform:        zippered
+install-name:    '/usr/lib/system/libsystem_dnssd.dylib'
+current-version: 1070
+parent-umbrella: System
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _DNSServiceAddRecord, _DNSServiceBrowse, _DNSServiceBrowserCreate, 
+                       _DNSServiceConstructFullName, _DNSServiceCreateConnection, 
+                       _DNSServiceCreateDelegateConnection, _DNSServiceDiscoveryDeallocate, 
+                       _DNSServiceDiscoveryMachPort, _DNSServiceDiscovery_handleReply, 
+                       _DNSServiceEnumerateDomains, _DNSServiceGetAddrInfo, _DNSServiceGetPID, 
+                       _DNSServiceGetProperty, _DNSServiceNATPortMappingCreate, _DNSServiceProcessResult, 
+                       _DNSServiceQueryRecord, _DNSServiceReconfirmRecord, _DNSServiceRefDeallocate, 
+                       _DNSServiceRefSockFD, _DNSServiceRegister, _DNSServiceRegisterRecord, 
+                       _DNSServiceRemoveRecord, _DNSServiceResolve, _DNSServiceResolverResolve, 
+                       _DNSServiceSetDefaultDomainForUser, _DNSServiceSetDispatchQueue, 
+                       _DNSServiceSleepKeepalive, _DNSServiceUpdateRecord, _PeerConnectionRelease, 
+                       _TXTRecordContainsKey, _TXTRecordCreate, _TXTRecordDeallocate, 
+                       _TXTRecordGetBytesPtr, _TXTRecordGetCount, _TXTRecordGetItemAtIndex, 
+                       _TXTRecordGetLength, _TXTRecordGetValuePtr, _TXTRecordRemoveValue, 
+                       _TXTRecordSetValue ]
+...

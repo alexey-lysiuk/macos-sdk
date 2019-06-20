@@ -1,0 +1,55 @@
+#ifndef _IOKIT_OSSTRING_H
+#define _IOKIT_OSSTRING_H
+
+#include <DriverKit/OSContainer.iig>
+
+class OSString;
+typedef OSString * OSStringPtr;
+typedef OSString OSSymbol;
+
+class OSData;
+
+class LOCALONLY OSString : public OSContainer
+{
+public:
+
+	// OSObject
+
+	virtual void
+	free() override;
+
+	bool
+	isEqualTo(const OSMetaClassBase * anObject) const override;
+
+	// OSString
+
+	static OSStringPtr
+	withCString(const char * cString);
+
+	static OSStringPtr
+	withCStringNoCopy(const char * cString);
+
+	static OSStringPtr
+	withCString(const char * cString, size_t length);
+
+	static OSStringPtr
+	withString(const OSString * aString);
+
+	size_t
+	getLength() const;
+
+	const char *
+	getCStringNoCopy() const;
+
+	bool
+	isEqualTo(const OSString * aString) const;
+
+	bool
+	isEqualTo(const char * cString) const;
+
+	bool
+	isEqualTo(const OSData * aDataObject) const;
+
+};
+
+#endif /* ! _IOKIT_OSSTRING_H */

@@ -1,0 +1,10 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: B847A583-5B5C-3252-8CC6-1F5FB3F9EE51', 'x86_64: B847A583-5B5C-3252-8CC6-1F5FB3F9EE51' ]
+platform:        zippered
+install-name:    '/System/Library/CoreServices/Encodings/libLatinSuppConverter.dylib'
+current-version: 76
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ ___CFStringEncodingGetLatinSuppConverterDefinition ]
+...

@@ -1,0 +1,85 @@
+#ifndef _IOKIT_OSARRAY_H
+#define _IOKIT_OSARRAY_H
+
+#include <DriverKit/OSCollection.iig>
+
+class OSArray;
+typedef OSArray * OSArrayPtr;
+
+class LOCALONLY OSArray : public OSCollection
+{
+public:
+
+	// OSObject
+
+	virtual void
+	free() override;
+
+	// OSCollection
+
+	virtual uint32_t
+	getCount() const override;
+
+	virtual uint32_t
+	getCapacity() const override;
+
+	virtual uint32_t
+	ensureCapacity(uint32_t newCapacity) override;
+
+	virtual void
+	flushCollection() override;
+
+	bool
+	iterateObjects(OSCollectionIterateObjectsBlock block) const override;
+
+	// OSArray
+
+	static OSArrayPtr withCapacity(uint32_t capacity);
+
+	static OSArrayPtr withObjects(
+		const OSObject ** values,
+		uint32_t     count,
+		uint32_t     capacity);
+
+	static OSArrayPtr withArray(
+		const OSArray * array,
+		uint32_t    capacity);
+
+	bool
+	setObject(const OSMetaClassBase * anObject);
+
+	bool
+	setObject(
+		uint32_t            index,
+		const OSMetaClassBase * anObject);
+
+	bool
+	merge(const OSArray * otherArray);
+
+	void
+	replaceObject(
+		uint32_t            index,
+		const OSMetaClassBase * anObject);
+
+	void
+	removeObject(uint32_t index);
+
+	bool
+	isEqualTo(const OSArray * anArray) const;
+
+	bool
+	isEqualTo(const OSMetaClassBase * anObject) const override;
+
+	OSObject *
+	getObject(uint32_t index) const;
+
+	OSObject *
+	getLastObject() const;
+
+	uint32_t
+	getNextIndexOfObject(
+		const OSMetaClassBase * anObject,
+		uint32_t            index) const;
+};
+
+#endif /* ! _IOKIT_OSARRAY_H */

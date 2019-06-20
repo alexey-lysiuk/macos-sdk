@@ -1,0 +1,15 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: EC76BACF-57DC-3FF8-960E-CA2C0E28B383' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/FlightUtilities.framework/Versions/A/FlightUtilities'
+current-version: 130
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _FUFactoryProvider_Default, _FUFactoryProvider_FlightStats, 
+                       _FUFactoryProvider_FlyteComm, _FUFactoryProvider_Parsec ]
+    objc-classes:    [ FUAirline, FUAirport, FUCompactFlightViewController, FUFlight, 
+                       FUFlightFactory, FUFlightLeg, FUFlightStep, FUFlightView, 
+                       FUFlightViewController, FUStepTime, FUUtils ]
+    objc-ivars:      [ FUFlightStep._delayFromSchedule ]
+...

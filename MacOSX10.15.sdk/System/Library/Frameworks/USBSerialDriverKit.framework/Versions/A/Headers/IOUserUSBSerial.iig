@@ -1,0 +1,45 @@
+//#pragma once
+
+#ifndef _IOUSERSERIAL_IIG_
+#define _IOUSERSERIAL_IIG_
+
+#include <DriverKit/IOService.iig>
+
+#define kLineStatusHeaderLengthKey	"LineStatusHeaderLength"
+#define usbSerialLineStatusHeaderCount	16
+
+/*!
+ @iig implementation
+ #if KERNEL
+ #include "IOUserUSBSerial.k.h"
+ #endif
+ @iig end
+ */
+
+class KERNEL IOUserUSBSerial : public IOService
+{
+	virtual kern_return_t   SetState(uint32_t state, uint32_t mask);
+	virtual kern_return_t   RxError(bool overrun, bool gotBreak, bool framingError,
+			bool parityError);
+
+	virtual kern_return_t   ProcessLineStatusHeader(
+			const uint8_t usbSerialLineStatusHeader[usbSerialLineStatusHeaderCount],
+			uint32_t dataLength) LOCAL;
+
+	virtual kern_return_t   HwActivate(bool bActivate) LOCAL;
+	virtual kern_return_t   HwResetFIFO(bool tx, bool rx) LOCAL;
+	virtual kern_return_t   HwSendBreak(bool sendBreak) LOCAL;
+	virtual kern_return_t   HwResetUART() LOCAL;
+
+	virtual kern_return_t   HwProgramUART(
+			uint32_t baudRate, uint8_t nDataBits, uint8_t nHalfStopBits,
+			uint8_t parity) LOCAL;
+
+	virtual kern_return_t   HwProgramBaudRate(uint32_t baudRate) LOCAL;
+	virtual kern_return_t   HwProgramMCR(bool dtr, bool rts) LOCAL;
+	virtual kern_return_t   HwProgramLatencyTimer(uint32_t latency) LOCAL;
+	virtual kern_return_t   HwProgramFlowClontrol(uint32_t arg,
+			uint8_t xon, uint8_t xoff) LOCAL;
+};
+
+#endif // _IOUSERSERIAL_IIG_

@@ -1,0 +1,19 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 84A68076-70E8-3027-BA5D-36BE7E32738A' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/DVD.framework/Versions/A/DVD'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _DVDVideoApplySPDCSQ, _DVDVideoBackEndDecode, _DVDVideoBeginDecode, 
+                       _DVDVideoClearMP, _DVDVideoClearSP, _DVDVideoCloseDevice, 
+                       _DVDVideoContinueDecode, _DVDVideoCreateRenderer, _DVDVideoDecode, 
+                       _DVDVideoDeinterlace, _DVDVideoEnableButton, _DVDVideoEnableMP, 
+                       _DVDVideoEnableSP, _DVDVideoEndDecode, _DVDVideoFrontEndAndBackEndDecode, 
+                       _DVDVideoFrontEndDecode, _DVDVideoGetFeatureParam, _DVDVideoGetFrame, 
+                       _DVDVideoGetKeyColor, _DVDVideoGetSPBuffer, _DVDVideoOpenDevice, 
+                       _DVDVideoPrepareButton, _DVDVideoSetFeatureParam, _DVDVideoSetMPRects, 
+                       _DVDVideoSetMVLevel, _DVDVideoSetSPBuffer, _DVDVideoSetSPColorControl, 
+                       _DVDVideoSetSPDefaultColorControl, _DVDVideoSetSPPalette, 
+                       _DVDVideoShowMPBuffer, _DVDVideoShowSPBuffer ]
+...

@@ -1,0 +1,24 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: B2A53721-98FC-377F-A547-7CA84B324665', 'x86_64: B2A53721-98FC-377F-A547-7CA84B324665' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/SampleAnalysis.framework/Versions/A/SampleAnalysis'
+current-version: 233
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _EventTypeString, _SABinarySearchArray, _SACFAbsoluteTimeFromTimespec, 
+                       _SAFormattedBytes, _SAFormattedBytesDouble, _SAFormattedSignedBytes, 
+                       _SAIsAppResponsive, _SAMachAbsTimeSecondsGetCurrent, _SAMachContTimeSecondsGetCurrent, 
+                       _SAMachTimeFromNanosecondsUsingLiveTimebase, _SAMachTimeFromNanosecondsUsingTimebase, 
+                       _SAMachTimeFromSecondsUsingLiveTimebase, _SAMachTimeFromSecondsUsingTimebase, 
+                       _SAMessageUserAgent, _SAMessageUserAgentWithReply, _SAMessageUserAgentWithReplyAsync, 
+                       _SANanosecondsFromMachTimeUsingLiveTimebase, _SANanosecondsFromMachTimeUsingTimebase, 
+                       _SASecondsFromMachTimeUsingLiveTimebase, _SASecondsFromMachTimeUsingTimebase, 
+                       _TracePointString ]
+    objc-classes:    [ SAAuxiliaryData, SABinary, SABinaryLoadInfo, SADispatchQueue, 
+                       SADispatchQueueState, SAFanSpeed, SAFrame, SAHIDEvent, SAHIDStep, 
+                       SAInstruction, SAKernelCache, SASamplePrintOptions, SASamplePrinter, 
+                       SASampleStore, SASharedCache, SASourceInfo, SASymbol, SATask, 
+                       SATaskState, SAThread, SAThreadState, SATimeRange, SATimestamp, 
+                       SAWaitInfo ]
+...

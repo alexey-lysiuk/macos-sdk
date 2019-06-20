@@ -1,0 +1,10 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 7314DD21-634D-35B7-819C-802E8451158F' ]
+platform:        macosx
+install-name:    '/System/Library/Frameworks/IncomingCallNotifications.framework/Versions/A/IncomingCallNotifications'
+exports:         
+  - archs:           [ x86_64 ]
+    objc-classes:    [ ICHandle, ICNotification, ICNotificationManager, ICNotificationManagerConfiguration, 
+                       ICNotificationManagerHost ]
+...

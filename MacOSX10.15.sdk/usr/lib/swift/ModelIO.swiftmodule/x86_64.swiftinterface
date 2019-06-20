@@ -1,0 +1,123 @@
+// swift-interface-format-version: 1.0
+// swift-tools-version: Apple Swift version 5.1 effective-4.1.50 (swiftlang-1100.8.32.26 clang-1100.0.18.2)
+// swift-module-flags: -target x86_64-apple-macosx10.15 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftModelIO -swift-version 4 -O -enforce-exclusivity=unchecked -module-name ModelIO
+@_exported import ModelIO
+import Swift
+import simd
+@available(OSX 10.13, iOS 11.0, tvOS 11.0, *)
+extension MDLMatrix4x4Array {
+  @nonobjc public var float4x4Array: [float4x4] {
+    get
+    set(array)
+  }
+  @nonobjc public var double4x4Array: [double4x4] {
+    get
+    set(array)
+  }
+}
+@available(OSX 10.13, iOS 11.0, tvOS 11.0, *)
+extension MDLAnimatedValue {
+  @nonobjc public var times: [TimeInterval] {
+    get
+  }
+}
+@available(OSX 10.13, iOS 11.0, tvOS 11.0, *)
+extension MDLAnimatedScalarArray {
+  @nonobjc public func set(floatArray array: [Float], atTime time: TimeInterval)
+  @nonobjc public func set(doubleArray array: [Double], atTime time: TimeInterval)
+  @nonobjc public func floatArray(atTime time: TimeInterval) -> [Float]
+  @nonobjc public func doubleArray(atTime time: TimeInterval) -> [Double]
+  @nonobjc public func reset(floatArray array: [Float], atTimes times: [TimeInterval])
+  @nonobjc public func reset(doubleArray array: [Double], atTimes times: [TimeInterval])
+  @nonobjc public var floatArray: [Float] {
+    get
+  }
+  @nonobjc public var doubleArray: [Double] {
+    get
+  }
+}
+@available(OSX 10.13, iOS 11.0, tvOS 11.0, *)
+extension MDLAnimatedVector3Array {
+  @nonobjc public func set(float3Array array: [float3], atTime time: TimeInterval)
+  @nonobjc public func set(double3Array array: [double3], atTime time: TimeInterval)
+  @nonobjc public func float3Array(atTime time: TimeInterval) -> [float3]
+  @nonobjc public func double3Array(atTime time: TimeInterval) -> [double3]
+  @nonobjc public func reset(float3Array array: [float3], atTimes times: [TimeInterval])
+  @nonobjc public func reset(double3Array array: [double3], atTimes times: [TimeInterval])
+  @nonobjc public var float3Array: [float3] {
+    get
+  }
+  @nonobjc public var double3Array: [double3] {
+    get
+  }
+}
+@available(OSX 10.13, iOS 11.0, tvOS 11.0, *)
+extension MDLAnimatedQuaternionArray {
+  @nonobjc public func set(floatQuaternionArray array: [simd_quatf], atTime time: TimeInterval)
+  @nonobjc public func set(doubleQuaternionArray array: [simd_quatd], atTime time: TimeInterval)
+  @nonobjc public func floatQuaternionArray(atTime time: TimeInterval) -> [simd_quatf]
+  @nonobjc public func doubleQuaternionArray(atTime time: TimeInterval) -> [simd_quatd]
+  @nonobjc public func reset(floatQuaternionArray array: [simd_quatf], atTimes times: [TimeInterval])
+  @nonobjc public func reset(doubleQuaternionArray array: [simd_quatd], atTimes times: [TimeInterval])
+  @nonobjc public var floatQuaternionArray: [simd_quatf] {
+    get
+  }
+  @nonobjc public var doubleQuaternionArray: [simd_quatd] {
+    get
+  }
+}
+@available(OSX 10.13, iOS 11.0, tvOS 11.0, *)
+extension MDLAnimatedScalar {
+  @nonobjc public func reset(floatArray array: [Float], atTimes times: [TimeInterval])
+  @nonobjc public func reset(doubleArray array: [Double], atTimes times: [TimeInterval])
+  @nonobjc public var floatArray: [Float] {
+    get
+  }
+  @nonobjc public var doubleArray: [Double] {
+    get
+  }
+}
+@available(OSX 10.13, iOS 11.0, tvOS 11.0, *)
+extension MDLAnimatedVector2 {
+  @nonobjc public func reset(float2Array array: [float2], atTimes times: [TimeInterval])
+  @nonobjc public func reset(double2Array array: [double2], atTimes times: [TimeInterval])
+  @nonobjc public var float2Array: [float2] {
+    get
+  }
+  @nonobjc public var double2Array: [double2] {
+    get
+  }
+}
+@available(OSX 10.13, iOS 11.0, tvOS 11.0, *)
+extension MDLAnimatedVector3 {
+  @nonobjc public func reset(float3Array array: [float3], atTimes times: [TimeInterval])
+  @nonobjc public func reset(double3Array array: [double3], atTimes times: [TimeInterval])
+  @nonobjc public var float3Array: [float3] {
+    get
+  }
+  @nonobjc public var double3Array: [double3] {
+    get
+  }
+}
+@available(OSX 10.13, iOS 11.0, tvOS 11.0, *)
+extension MDLAnimatedVector4 {
+  @nonobjc public func reset(float4Array array: [float4], atTimes times: [TimeInterval])
+  @nonobjc public func reset(double4Array array: [double4], atTimes times: [TimeInterval])
+  @nonobjc public var float4Array: [float4] {
+    get
+  }
+  @nonobjc public var double4Array: [double4] {
+    get
+  }
+}
+@available(OSX 10.13, iOS 11.0, tvOS 11.0, *)
+extension MDLAnimatedMatrix4x4 {
+  @nonobjc public func reset(float4x4Array array: [float4x4], atTimes times: [TimeInterval])
+  @nonobjc public func reset(double4Array array: [double4x4], atTimes times: [TimeInterval])
+  @nonobjc public var float4x4Array: [float4x4] {
+    get
+  }
+  @nonobjc public var double4x4Array: [double4x4] {
+    get
+  }
+}

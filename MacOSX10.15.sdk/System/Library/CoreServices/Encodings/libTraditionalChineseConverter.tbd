@@ -1,0 +1,10 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 2C912464-B569-3232-8341-45F9746479EB', 'x86_64: 2C912464-B569-3232-8341-45F9746479EB' ]
+platform:        zippered
+install-name:    '/System/Library/CoreServices/Encodings/libTraditionalChineseConverter.dylib'
+current-version: 76
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ ___CFStringEncodingGetTraditionalChineseConverterDefinition ]
+...

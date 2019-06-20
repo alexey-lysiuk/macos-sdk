@@ -1,0 +1,34 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 75D7FCEB-F34B-3108-BC6C-1892383E8343' ]
+platform:        macosx
+install-name:    '/System/Library/Frameworks/GameController.framework/Versions/A/GameController'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _ADClientAddValueForScalarKey, _ControllerClassForInterface, 
+                       _ControllerClassForService, _GCControllerDidConnectNotification, 
+                       _GCControllerDidDisconnectNotification, _GCControllerManagerInit, 
+                       _GCControllerManagerInitXPC, _GCCurrentExtendedGamepadSnapshotDataVersion, 
+                       _GCCurrentMicroGamepadSnapshotDataVersion, _GCExtendedGamepadSnapShotDataV100FromNSData, 
+                       _GCExtendedGamepadSnapshotDataFromNSData, _GCGamepadSnapShotDataV100FromNSData, 
+                       _GCMicroGamepadSnapShotDataV100FromNSData, _GCMicroGamepadSnapshotDataFromNSData, 
+                       _HIDControllerClassForVendorAndProduct, _NSDataFromGCExtendedGamepadSnapShotDataV100, 
+                       _NSDataFromGCExtendedGamepadSnapshotData, _NSDataFromGCGamepadSnapShotDataV100, 
+                       _NSDataFromGCMicroGamepadSnapShotDataV100, _NSDataFromGCMicroGamepadSnapshotData, 
+                       _ProductNameFromVIDPID, _USBControllerClassForVendorAndProduct, 
+                       _VendorNameForATVProfile, _VendorNameFromVID, __GCHIDEventCallback, 
+                       _clamp, _doesDescriptorConformToSpec, _elementRangesMatch, 
+                       _gc_isInternalBuild, _getInterfaceNumberForDevice, _isDeviceAppleB239Digitizer, 
+                       _isDeviceAppleControlCenterRemote, _isDeviceAppleEmbeddedBluetoothButtons, 
+                       _isDeviceMotionLite, _s_cbDelegate, _s_cbDelegateQueue, _s_mbDelegate, 
+                       _s_sfDelegate, _serviceMatchesUsageAndUsagePage, _threadRunLoopSourceCallback ]
+    objc-classes:    [ GCController, GCControllerAxisInput, GCControllerButtonInput, 
+                       GCControllerCBDelegate, GCControllerDirectionPad, GCControllerElement, 
+                       GCControllerMBDelegate, GCControllerSFDelegate, GCEventViewController, 
+                       GCExtendedGamepad, GCExtendedGamepadSnapshot, GCGamepad, GCGamepadSnapshot, 
+                       GCMicroGamepad, GCMicroGamepadSnapshot, GCMotion, GCRay, _GCController ]
+    objc-ivars:      [ GCControllerCBDelegate._centralManager, GCControllerCBDelegate._completionHandler, 
+                       GCControllerCBDelegate._connectedPeripherals, GCControllerCBDelegate._foundPeripherals, 
+                       GCControllerMBDelegate._inquiry, GCControllerMBDelegate._pairings, 
+                       GCControllerSFDelegate._activity ]
+...

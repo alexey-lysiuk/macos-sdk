@@ -1,0 +1,502 @@
+// swift-interface-format-version: 1.0
+// swift-tools-version: Apple Swift version 5.1 (swiftlang-1100.8.32.26 clang-1100.0.18.2)
+// swift-module-flags: -target x86_64-apple-macosx10.15 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftAppKit -swift-version 5 -O -enforce-exclusivity=unchecked -module-name AppKit
+@_exported import AppKit
+import Foundation
+import Swift
+extension NSCursor : __DefaultCustomPlaygroundQuickLookable {
+  @available(*, deprecated, message: "NSCursor._defaultCustomPlaygroundQuickLook will be removed in a future Swift version")
+  public var _defaultCustomPlaygroundQuickLook: PlaygroundQuickLook {
+    get
+  }
+}
+extension NSView : __DefaultCustomPlaygroundQuickLookable {
+  @available(*, deprecated, message: "NSView._defaultCustomPlaygroundQuickLook will be removed in a future Swift version")
+  public var _defaultCustomPlaygroundQuickLook: PlaygroundQuickLook {
+    get
+  }
+}
+@available(OSX 10.12.2, *)
+extension NSTouchBar : __DefaultCustomPlaygroundQuickLookable {
+  public var _defaultCustomPlaygroundQuickLook: PlaygroundQuickLook {
+    get
+  }
+}
+@available(OSX 10.12.2, *)
+extension NSTouchBarItem : __DefaultCustomPlaygroundQuickLookable {
+  public var _defaultCustomPlaygroundQuickLook: PlaygroundQuickLook {
+    get
+  }
+}
+extension NSGradient {
+  convenience public init?(colorsAndLocations objects: (NSColor, CGFloat)...)
+}
+public func NSApplicationMain(_ argc: Int32, _ argv: UnsafeMutablePointer<UnsafeMutablePointer<CChar>?>) -> Int32
+extension NSApplication {
+  @available(swift 4)
+  public static func loadApplication()
+}
+extension NSColor : _ExpressibleByColorLiteral {
+  @nonobjc required convenience public init(_colorLiteralRed red: Float, green: Float, blue: Float, alpha: Float)
+}
+public typealias _ColorLiteralType = NSColor
+extension NSImage : _ExpressibleByImageLiteral {
+  @nonobjc required convenience public init(imageLiteralResourceName name: String)
+}
+public typealias _ImageLiteralType = NSImage
+@available(swift 4)
+public protocol _AppKitKitNumericRawRepresentable : Swift.Comparable, Swift.RawRepresentable where Self.RawValue : Swift.Comparable, Self.RawValue : Swift.Numeric {
+}
+extension _AppKitKitNumericRawRepresentable {
+  public static func < (lhs: Self, rhs: Self) -> Bool
+  public static func + (lhs: Self, rhs: RawValue) -> Self
+  public static func + (lhs: RawValue, rhs: Self) -> Self
+  public static func - (lhs: Self, rhs: RawValue) -> Self
+  public static func - (lhs: Self, rhs: Self) -> RawValue
+  public static func += (lhs: inout Self, rhs: RawValue)
+  public static func -= (lhs: inout Self, rhs: RawValue)
+}
+@available(swift 4)
+extension NSAppKitVersion : _AppKitKitNumericRawRepresentable {
+}
+@available(swift 4)
+extension NSLayoutConstraint.Priority : _AppKitKitNumericRawRepresentable {
+}
+@available(swift 4)
+extension NSStackView.VisibilityPriority : _AppKitKitNumericRawRepresentable {
+}
+@available(swift 4)
+extension NSToolbarItem.VisibilityPriority : _AppKitKitNumericRawRepresentable {
+}
+@available(swift 4)
+@available(OSX 10.12.2, *)
+extension NSTouchBarItem.Priority : _AppKitKitNumericRawRepresentable {
+}
+@available(swift 4)
+extension NSWindow.Level : _AppKitKitNumericRawRepresentable {
+}
+@available(swift 4)
+extension NSFont.Weight : _AppKitKitNumericRawRepresentable {
+}
+extension IndexPath {
+  public init(item: Int, section: Int)
+  public var item: Int {
+    get
+    set
+  }
+  public var section: Int {
+    get
+    set
+  }
+}
+extension URLResourceValues {
+  @available(OSX 10.10, *)
+  public var thumbnail: NSImage? {
+    get
+  }
+  public var labelColor: NSColor? {
+    get
+  }
+  public var effectiveIcon: AnyObject? {
+    get
+  }
+  public var customIcon: NSImage? {
+    get
+  }
+  @available(OSX 10.10, *)
+  public var thumbnailDictionary: [URLThumbnailDictionaryItem : NSImage]? {
+    get
+  }
+}
+extension CocoaError.Code {
+  public static var textReadInapplicableDocumentType: CocoaError.Code {
+    get
+  }
+  public static var textWriteInapplicableDocumentType: CocoaError.Code {
+    get
+  }
+  public static var serviceApplicationNotFound: CocoaError.Code {
+    get
+  }
+  public static var serviceApplicationLaunchFailed: CocoaError.Code {
+    get
+  }
+  public static var serviceRequestTimedOut: CocoaError.Code {
+    get
+  }
+  public static var serviceInvalidPasteboardData: CocoaError.Code {
+    get
+  }
+  public static var serviceMalformedServiceDictionary: CocoaError.Code {
+    get
+  }
+  public static var serviceMiscellaneousError: CocoaError.Code {
+    get
+  }
+  public static var sharingServiceNotConfigured: CocoaError.Code {
+    get
+  }
+  @available(OSX 10.13, *)
+  public static var fontAssetDownloadError: CocoaError.Code {
+    get
+  }
+}
+extension CocoaError.Code {
+  @available(*, deprecated, renamed: "textReadInapplicableDocumentType")
+  public static var textReadInapplicableDocumentTypeError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "textWriteInapplicableDocumentType")
+  public static var textWriteInapplicableDocumentTypeError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "serviceApplicationNotFound")
+  public static var serviceApplicationNotFoundError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "serviceApplicationLaunchFailed")
+  public static var serviceApplicationLaunchFailedError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "serviceRequestTimedOut")
+  public static var serviceRequestTimedOutError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "serviceInvalidPasteboardData")
+  public static var serviceInvalidPasteboardDataError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "serviceMalformedServiceDictionary")
+  public static var serviceMalformedServiceDictionaryError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "serviceMiscellaneousError")
+  public static var serviceMiscellaneous: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "sharingServiceNotConfigured")
+  public static var sharingServiceNotConfiguredError: CocoaError.Code {
+    get
+  }
+}
+extension CocoaError {
+  public static var textReadInapplicableDocumentType: CocoaError.Code {
+    get
+  }
+  public static var textWriteInapplicableDocumentType: CocoaError.Code {
+    get
+  }
+  public static var serviceApplicationNotFound: CocoaError.Code {
+    get
+  }
+  public static var serviceApplicationLaunchFailed: CocoaError.Code {
+    get
+  }
+  public static var serviceRequestTimedOut: CocoaError.Code {
+    get
+  }
+  public static var serviceInvalidPasteboardData: CocoaError.Code {
+    get
+  }
+  public static var serviceMalformedServiceDictionary: CocoaError.Code {
+    get
+  }
+  public static var serviceMiscellaneous: CocoaError.Code {
+    get
+  }
+  public static var sharingServiceNotConfigured: CocoaError.Code {
+    get
+  }
+  @available(OSX 10.13, *)
+  public static var fontAssetDownloadError: CocoaError.Code {
+    get
+  }
+}
+extension CocoaError {
+  @available(*, deprecated, renamed: "textReadInapplicableDocumentType")
+  public static var textReadInapplicableDocumentTypeError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "textWriteInapplicableDocumentType")
+  public static var textWriteInapplicableDocumentTypeError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "serviceApplicationNotFound")
+  public static var serviceApplicationNotFoundError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "serviceApplicationLaunchFailed")
+  public static var serviceApplicationLaunchFailedError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "serviceRequestTimedOut")
+  public static var serviceRequestTimedOutError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "serviceInvalidPasteboardData")
+  public static var serviceInvalidPasteboardDataError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "serviceMalformedServiceDictionary")
+  public static var serviceMalformedServiceDictionaryError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "serviceMiscellaneous")
+  public static var serviceMiscellaneousError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "sharingServiceNotConfigured")
+  public static var sharingServiceNotConfiguredError: CocoaError.Code {
+    get
+  }
+}
+extension CocoaError {
+  public var isServiceError: Bool {
+    get
+  }
+  public var isSharingServiceError: Bool {
+    get
+  }
+  public var isTextReadWriteError: Bool {
+    get
+  }
+  @available(OSX 10.13, *)
+  public var isFontError: Bool {
+    get
+  }
+}
+extension CocoaError {
+  @available(*, deprecated, renamed: "textReadInapplicableDocumentType")
+  public static var TextReadInapplicableDocumentTypeError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "textWriteInapplicableDocumentType")
+  public static var TextWriteInapplicableDocumentTypeError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "serviceApplicationNotFound")
+  public static var ServiceApplicationNotFoundError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "serviceApplicationLaunchFailed")
+  public static var ServiceApplicationLaunchFailedError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "serviceRequestTimedOut")
+  public static var ServiceRequestTimedOutError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "serviceInvalidPasteboardData")
+  public static var ServiceInvalidPasteboardDataError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "serviceMalformedServiceDictionary")
+  public static var ServiceMalformedServiceDictionaryError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "serviceMiscellaneous")
+  public static var ServiceMiscellaneousError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "sharingServiceNotConfigured")
+  public static var SharingServiceNotConfiguredError: CocoaError.Code {
+    get
+  }
+}
+extension CocoaError.Code {
+  @available(*, deprecated, renamed: "textReadInapplicableDocumentType")
+  public static var TextReadInapplicableDocumentTypeError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "textWriteInapplicableDocumentType")
+  public static var TextWriteInapplicableDocumentTypeError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "serviceApplicationNotFound")
+  public static var ServiceApplicationNotFoundError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "serviceApplicationLaunchFailed")
+  public static var ServiceApplicationLaunchFailedError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "serviceRequestTimedOut")
+  public static var ServiceRequestTimedOutError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "serviceInvalidPasteboardData")
+  public static var ServiceInvalidPasteboardDataError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "serviceMalformedServiceDictionary")
+  public static var ServiceMalformedServiceDictionaryError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "serviceMiscellaneous")
+  public static var ServiceMiscellaneousError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "sharingServiceNotConfigured")
+  public static var SharingServiceNotConfiguredError: CocoaError.Code {
+    get
+  }
+}
+extension NSEvent {
+  public struct SpecialKey : RawRepresentable, Equatable, Hashable {
+    public init(rawValue: Int)
+    public let rawValue: Int
+    public var unicodeScalar: Unicode.Scalar {
+      get
+    }
+    public typealias RawValue = Swift.Int
+  }
+  open var specialKey: SpecialKey? {
+    get
+  }
+}
+extension NSEvent.SpecialKey {
+  public static let upArrow: AppKit.NSEvent.SpecialKey
+  public static let downArrow: AppKit.NSEvent.SpecialKey
+  public static let leftArrow: AppKit.NSEvent.SpecialKey
+  public static let rightArrow: AppKit.NSEvent.SpecialKey
+  public static let f1: AppKit.NSEvent.SpecialKey
+  public static let f2: AppKit.NSEvent.SpecialKey
+  public static let f3: AppKit.NSEvent.SpecialKey
+  public static let f4: AppKit.NSEvent.SpecialKey
+  public static let f5: AppKit.NSEvent.SpecialKey
+  public static let f6: AppKit.NSEvent.SpecialKey
+  public static let f7: AppKit.NSEvent.SpecialKey
+  public static let f8: AppKit.NSEvent.SpecialKey
+  public static let f9: AppKit.NSEvent.SpecialKey
+  public static let f10: AppKit.NSEvent.SpecialKey
+  public static let f11: AppKit.NSEvent.SpecialKey
+  public static let f12: AppKit.NSEvent.SpecialKey
+  public static let f13: AppKit.NSEvent.SpecialKey
+  public static let f14: AppKit.NSEvent.SpecialKey
+  public static let f15: AppKit.NSEvent.SpecialKey
+  public static let f16: AppKit.NSEvent.SpecialKey
+  public static let f17: AppKit.NSEvent.SpecialKey
+  public static let f18: AppKit.NSEvent.SpecialKey
+  public static let f19: AppKit.NSEvent.SpecialKey
+  public static let f20: AppKit.NSEvent.SpecialKey
+  public static let f21: AppKit.NSEvent.SpecialKey
+  public static let f22: AppKit.NSEvent.SpecialKey
+  public static let f23: AppKit.NSEvent.SpecialKey
+  public static let f24: AppKit.NSEvent.SpecialKey
+  public static let f25: AppKit.NSEvent.SpecialKey
+  public static let f26: AppKit.NSEvent.SpecialKey
+  public static let f27: AppKit.NSEvent.SpecialKey
+  public static let f28: AppKit.NSEvent.SpecialKey
+  public static let f29: AppKit.NSEvent.SpecialKey
+  public static let f30: AppKit.NSEvent.SpecialKey
+  public static let f31: AppKit.NSEvent.SpecialKey
+  public static let f32: AppKit.NSEvent.SpecialKey
+  public static let f33: AppKit.NSEvent.SpecialKey
+  public static let f34: AppKit.NSEvent.SpecialKey
+  public static let f35: AppKit.NSEvent.SpecialKey
+  public static let insert: AppKit.NSEvent.SpecialKey
+  public static let deleteForward: AppKit.NSEvent.SpecialKey
+  public static let home: AppKit.NSEvent.SpecialKey
+  public static let begin: AppKit.NSEvent.SpecialKey
+  public static let end: AppKit.NSEvent.SpecialKey
+  public static let pageUp: AppKit.NSEvent.SpecialKey
+  public static let pageDown: AppKit.NSEvent.SpecialKey
+  public static let printScreen: AppKit.NSEvent.SpecialKey
+  public static let scrollLock: AppKit.NSEvent.SpecialKey
+  public static let pause: AppKit.NSEvent.SpecialKey
+  public static let sysReq: AppKit.NSEvent.SpecialKey
+  public static let `break`: AppKit.NSEvent.SpecialKey
+  public static let reset: AppKit.NSEvent.SpecialKey
+  public static let stop: AppKit.NSEvent.SpecialKey
+  public static let menu: AppKit.NSEvent.SpecialKey
+  public static let user: AppKit.NSEvent.SpecialKey
+  public static let system: AppKit.NSEvent.SpecialKey
+  public static let print: AppKit.NSEvent.SpecialKey
+  public static let clearLine: AppKit.NSEvent.SpecialKey
+  public static let clearDisplay: AppKit.NSEvent.SpecialKey
+  public static let insertLine: AppKit.NSEvent.SpecialKey
+  public static let deleteLine: AppKit.NSEvent.SpecialKey
+  public static let insertCharacter: AppKit.NSEvent.SpecialKey
+  public static let deleteCharacter: AppKit.NSEvent.SpecialKey
+  public static let prev: AppKit.NSEvent.SpecialKey
+  public static let next: AppKit.NSEvent.SpecialKey
+  public static let select: AppKit.NSEvent.SpecialKey
+  public static let execute: AppKit.NSEvent.SpecialKey
+  public static let undo: AppKit.NSEvent.SpecialKey
+  public static let redo: AppKit.NSEvent.SpecialKey
+  public static let find: AppKit.NSEvent.SpecialKey
+  public static let help: AppKit.NSEvent.SpecialKey
+  public static let modeSwitch: AppKit.NSEvent.SpecialKey
+  public static let enter: AppKit.NSEvent.SpecialKey
+  public static let backspace: AppKit.NSEvent.SpecialKey
+  public static let tab: AppKit.NSEvent.SpecialKey
+  public static let newline: AppKit.NSEvent.SpecialKey
+  public static let formFeed: AppKit.NSEvent.SpecialKey
+  public static let carriageReturn: AppKit.NSEvent.SpecialKey
+  public static let backTab: AppKit.NSEvent.SpecialKey
+  public static let delete: AppKit.NSEvent.SpecialKey
+  public static let lineSeparator: AppKit.NSEvent.SpecialKey
+  public static let paragraphSeparator: AppKit.NSEvent.SpecialKey
+}
+extension CGRect {
+  @available(swift 4)
+  public func fill(using operation: NSCompositingOperation = NSGraphicsContext.current?.compositingOperation ?? .sourceOver)
+  @available(swift 4)
+  public func frame(withWidth width: CGFloat = 1.0, using operation: NSCompositingOperation = NSGraphicsContext.current?.compositingOperation ?? .sourceOver)
+  @available(swift 4)
+  public func clip()
+}
+extension Sequence where Self.Element == Foundation.NSRect {
+  @available(swift 4)
+  public func fill(using operation: NSCompositingOperation = NSGraphicsContext.current?.compositingOperation ?? .sourceOver)
+  @available(swift 4)
+  public func clip()
+}
+extension Sequence where Self.Element == (CoreGraphics.CGRect, AppKit.NSColor) {
+  @available(swift 4)
+  public func fill(using operation: NSCompositingOperation = NSGraphicsContext.current?.compositingOperation ?? .sourceOver)
+}
+extension Sequence where Self.Element == (CoreGraphics.CGRect, gray: CoreGraphics.CGFloat) {
+  @available(swift 4)
+  public func fill(using operation: NSCompositingOperation = NSGraphicsContext.current?.compositingOperation ?? .sourceOver)
+}
+extension NSWindow.Depth {
+  @available(swift 4)
+  public static func bestDepth(colorSpaceName: NSColorSpaceName, bitsPerSample: Int, bitsPerPixel: Int, isPlanar: Bool) -> (NSWindow.Depth, isExactMatch: Bool)
+  @available(swift 4)
+  public static var availableDepths: [NSWindow.Depth] {
+    get
+  }
+}
+extension NSAnimationEffect {
+  @available(swift 4)
+  public func show(centeredAt centerLocation: NSPoint, size: NSSize, completionHandler: @escaping () -> Void = { })
+}
+extension NSSound {
+  @available(swift 4)
+  public static func beep()
+}
+extension NSOpenGLGlobalOption {
+  @available(swift 4)
+  public var globalValue: GLint {
+    get
+    set
+  }
+}
+extension NSOpenGLContext {
+  @available(swift 4)
+  public static var openGLVersion: (major: GLint, minor: GLint) {
+    get
+  }
+}
+@available(OSX 10.10, *)
+extension NSStoryboard {
+  @available(OSX 10.15, *)
+  public func instantiateInitialController<Controller>(creator: ((NSCoder) -> Controller?)? = nil) -> Controller? where Controller : AppKit.NSViewController
+  @available(OSX 10.15, *)
+  public func instantiateInitialController<Controller>(creator: ((NSCoder) -> Controller?)? = nil) -> Controller? where Controller : AppKit.NSWindowController
+  @available(OSX 10.15, *)
+  public func instantiateController<Controller>(identifier: NSStoryboard.SceneIdentifier, creator: ((NSCoder) -> Controller?)? = nil) -> Controller where Controller : AppKit.NSViewController
+  @available(OSX 10.15, *)
+  public func instantiateController<Controller>(identifier: NSStoryboard.SceneIdentifier, creator: ((NSCoder) -> Controller?)? = nil) -> Controller where Controller : AppKit.NSWindowController
+}

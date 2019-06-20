@@ -1,0 +1,6 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: D30CB105-BB8B-35B0-A241-E5C9AA0331E8', 'x86_64: D30CB105-BB8B-35B0-A241-E5C9AA0331E8' ]
+platform:        zippered
+install-name:    '/usr/lib/libgmalloc.dylib'
+...

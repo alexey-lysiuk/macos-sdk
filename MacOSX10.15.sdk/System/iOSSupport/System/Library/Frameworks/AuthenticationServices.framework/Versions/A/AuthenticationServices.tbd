@@ -1,0 +1,23 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: D3D83C06-383F-39F3-A72E-54A7A511524C' ]
+platform:        uikitformac
+install-name:    '/System/iOSSupport/System/Library/Frameworks/AuthenticationServices.framework/Versions/A/AuthenticationServices'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _ASAuthorizationAppleIDProviderCredentialRevokedNotification, 
+                       _ASAuthorizationErrorDomain, _ASAuthorizationOperationImplicit, 
+                       _ASAuthorizationOperationLogin, _ASAuthorizationOperationLogout, 
+                       _ASAuthorizationOperationRefresh, _ASAuthorizationScopeEmail, 
+                       _ASAuthorizationScopeFullName, _ASWebAuthenticationSessionErrorDomain, 
+                       __authenticationSessionRequestServerErrorDomain ]
+    objc-classes:    [ ASAuthorization, ASAuthorizationAppleIDButton, ASAuthorizationAppleIDCredential, 
+                       ASAuthorizationAppleIDProvider, ASAuthorizationAppleIDRequest, 
+                       ASAuthorizationController, ASAuthorizationOpenIDRequest, ASAuthorizationPasswordProvider, 
+                       ASAuthorizationPasswordRequest, ASAuthorizationProviderExtensionAuthorizationRequest, 
+                       ASAuthorizationRequest, ASAuthorizationSingleSignOnCredential, 
+                       ASAuthorizationSingleSignOnProvider, ASAuthorizationSingleSignOnRequest, 
+                       ASPasswordCredential, ASWebAuthenticationSession, ASWebAuthenticationSessionLaunchAgentProxy, 
+                       ASWebAuthenticationSessionRequest, ASWebAuthenticationSessionRequestClient, 
+                       _ASWebAuthenticationSessionRequestServer ]
+...

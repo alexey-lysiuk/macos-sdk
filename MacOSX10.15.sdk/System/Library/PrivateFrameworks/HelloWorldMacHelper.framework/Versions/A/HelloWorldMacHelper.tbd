@@ -1,0 +1,11 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 5A103E8B-3FD6-3B43-8A84-5E27A11256D4', 'x86_64: 5A103E8B-3FD6-3B43-8A84-5E27A11256D4' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/HelloWorldMacHelper.framework/Versions/A/HelloWorldMacHelper'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _HelloWorldMacHelperVersionNumber, _HelloWorldMacHelperVersionString, 
+                       _HelloWorldNewMacExtensionViewer ]
+    objc-classes:    [ HelloWorldMacExtensionViewerViewController, HelloWorldMacExtensionViewerWindowController ]
+...

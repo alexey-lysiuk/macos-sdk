@@ -1,0 +1,10 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: A43991CA-8190-3C9B-A304-22AC91DE486B', 'x86_64: A43991CA-8190-3C9B-A304-22AC91DE486B' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/IDSHashPersistence.framework/Versions/A/IDSHashPersistence'
+current-version: 800
+exports:         
+  - archs:           [ x86_64 ]
+    objc-classes:    [ IDSMessageHashStore ]
+...

@@ -1,0 +1,9 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 4C8B8ACF-1939-3A5C-A892-06567B1542C8' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/UniversalAccess.framework/Versions/A/Frameworks/UAEHCommon.framework/Versions/A/Libraries/libUAEHPointerControl.dylib'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _UADEventHandlerGetVtable ]
+...

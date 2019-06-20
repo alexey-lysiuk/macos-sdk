@@ -1,0 +1,19 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 41D7C155-9AA1-34CF-8CF4-7223C876ECA0', 'x86_64: 41D7C155-9AA1-34CF-8CF4-7223C876ECA0' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/FMF.framework/Versions/A/FMF'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _FMFDevicesChangedNotification, _FMFErrorDomain, _FMFFenceAcceptanceStatusAccepted, 
+                       _FMFFenceAcceptanceStatusPending, _FMFFenceAcceptanceStatusPendingHidden, 
+                       _FMFFenceErrorDomain, _FMFFenceTriggerArriving, _FMFFenceTriggerImmediate, 
+                       _FMFFenceTriggerLeaving, _FMFFenceTriggerStatusEnter, _FMFFenceTriggerStatusExit, 
+                       _FMFFenceTypeNotifyMe, _FMFFenceTypeNotifyOther, _FMFFollowersChangedNotification, 
+                       _FMFGroupIdDefault, _FMFGroupIdGroup, _FMFGroupIdOneToOne, 
+                       _FMFHomeKitAutomationDeviceChangedNotification, _FMFMeDeviceChangedNotification, 
+                       _kFMFSyncXPCTimeout, _kMapImageKey ]
+    objc-classes:    [ FMFAppAccountInfo, FMFContactUtility, FMFDevice, FMFFence, 
+                       FMFFriendshipRequest, FMFHandle, FMFLocation, FMFMapImageRequest, 
+                       FMFMapSession, FMFPlacemark, FMFSession, FMFSynchronizer ]
+...

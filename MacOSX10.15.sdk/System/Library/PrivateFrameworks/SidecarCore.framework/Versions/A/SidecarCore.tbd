@@ -1,0 +1,28 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 511187FF-17C0-325A-AB0E-082A15FA7526', 'x86_64: 511187FF-17C0-325A-AB0E-082A15FA7526' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/SidecarCore.framework/Versions/A/SidecarCore'
+current-version: 148.1
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _SidecarBundle, _SidecarDeviceGeneration, _SidecarDevicesChangedNotification, 
+                       _SidecarDiagnose, _SidecarDisplayManagerConnectedDevicesChangedNotification, 
+                       _SidecarDisplayManagerPreferencesChangedNotification, _SidecarErrorDomain, 
+                       _SidecarGetProcessUniqueID, _SidecarLocalizedString, _SidecarMessageCreateMutable, 
+                       _SidecarMessageGetDefaults, _SidecarMessageGetDictionaryRepresentation, 
+                       _SidecarMessageGetItemData, _SidecarMessageGetRequestID, _SidecarMessageGetServiceName, 
+                       _SidecarMessageGetTransferID, _SidecarMessageGetType, _SidecarMessageSetDefaults, 
+                       _SidecarMessageSetItemData, _SidecarMessageSetItemMetaData, 
+                       _SidecarMessageSetRequestID, _SidecarMessageSetServiceName, 
+                       _SidecarMessageSetTransferID, _SidecarMessageSetType, _SidecarPDFDefaultPageRect, 
+                       _SidecarPDFJPEGCompression, _SidecarPasteboardInfoType, _SidecarRegisterServicePresenter, 
+                       _SidecarRegisterServiceProvider, _SidecarServiceNameAnnotation, 
+                       _SidecarServiceNameDisplay, _SidecarServiceNameMarkupDisplay, 
+                       _SidecarServiceNameScanDocument, _SidecarServiceNameSignature, 
+                       _SidecarServiceNameSketch, _SidecarServiceNameTakePhoto, _makeDeviceIdentifierMap ]
+    objc-classes:    [ SidecarDebugRequest, SidecarDevice, SidecarDisplayConfig, 
+                       SidecarDisplayManager, SidecarItem, SidecarPasteboardInfo, 
+                       SidecarRequest, SidecarResponse, SidecarService, SidecarSession, 
+                       SidecarStream ]
+...

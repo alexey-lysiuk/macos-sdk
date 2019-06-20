@@ -1,0 +1,1194 @@
+// swift-interface-format-version: 1.0
+// swift-tools-version: Apple Swift version 5.1 effective-4.1.50 (swiftlang-1100.8.32.26 clang-1100.0.18.2)
+// swift-module-flags: -target x86_64-apple-macosx10.15 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftNetwork -swift-version 4 -O -enforce-exclusivity=unchecked -module-name Network
+import Darwin
+import Dispatch
+import Foundation
+@_exported import Network
+import Security
+import Swift
+import _SwiftNetworkOverlayShims
+@available(OSX 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
+final public class NWBrowser : CustomDebugStringConvertible {
+  final public var debugDescription: String {
+    get
+  }
+  public enum Descriptor {
+    case bonjour(type: String, domain: String?)
+    case bonjourWithTXTRecord(type: String, domain: String?)
+  }
+  public struct Result : Hashable {
+    public let endpoint: NWEndpoint
+    public let interfaces: [NWInterface]
+    public let metadata: Metadata
+    public enum Metadata : Equatable & CustomDebugStringConvertible {
+      case none
+      case bonjour(_: NWTXTRecord)
+      public static func == (lhs: Metadata, rhs: Metadata) -> Bool
+      public var debugDescription: String {
+        get
+      }
+    }
+    public func hash(into hasher: inout Hasher)
+    public static func == (lhs: Result, rhs: Result) -> Bool
+    public enum Change : Hashable {
+      case identical
+      case added(Result)
+      case removed(Result)
+      case changed(old: Result, new: Result, flags: Flags)
+      public func hash(into hasher: inout Hasher)
+      public static func == (lhs: Change, rhs: Change) -> Bool
+      public struct Flags : OptionSet, Hashable {
+        public let rawValue: UInt8
+        public init(rawValue: UInt8)
+        public static let identical: Network.NWBrowser.Result.Change.Flags
+        public static let interfaceAdded: Network.NWBrowser.Result.Change.Flags
+        public static let interfaceRemoved: Network.NWBrowser.Result.Change.Flags
+        public static let metadataChanged: Network.NWBrowser.Result.Change.Flags
+        public typealias Element = Network.NWBrowser.Result.Change.Flags
+        public typealias ArrayLiteralElement = Network.NWBrowser.Result.Change.Flags
+        public typealias RawValue = Swift.UInt8
+      }
+      public init(between old: Result?, _ new: Result?)
+      public var hashValue: Swift.Int {
+        get
+      }
+    }
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public enum State : Equatable {
+    case setup
+    case ready
+    case failed(NWError)
+    case cancelled
+    public static func == (a: Network.NWBrowser.State, b: Network.NWBrowser.State) -> Swift.Bool
+  }
+  final public let descriptor: Descriptor
+  final public let parameters: NWParameters
+  final public var state: State {
+    get
+    }
+  final public var browseResults: Swift.Set<Network.NWBrowser.Result> {
+    get
+    }
+  final public var queue: DispatchQueue? {
+    get
+    }
+  final public var stateUpdateHandler: ((_ newState: State) -> Void)? {
+    get
+    set
+  }
+  final public var browseResultsChangedHandler: ((_ newResults: Set<Result>, _ changes: Set<Result.Change>) -> Void)? {
+    get
+    set
+  }
+  public init(for descriptor: Descriptor, using parameters: NWParameters)
+  final public func start(queue: DispatchQueue)
+  final public func cancel()
+  @objc deinit
+}
+@available(OSX 10.14, iOS 12.0, watchOS 5.0, tvOS 12.0, *)
+@_objcRuntimeName(_TtC7Network13_NWConnection) final public class NWConnection : CustomDebugStringConvertible {
+  final public var debugDescription: String {
+    get
+  }
+  public enum State : Equatable {
+    case setup
+    case waiting(NWError)
+    case preparing
+    case ready
+    case failed(NWError)
+    case cancelled
+    public static func == (a: Network.NWConnection.State, b: Network.NWConnection.State) -> Swift.Bool
+  }
+  final public var state: NWConnection.State {
+    get
+  }
+  final public var stateUpdateHandler: ((_ state: NWConnection.State) -> Void)? {
+    get
+    set
+  }
+  @available(OSX 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
+  final public var maximumDatagramSize: Int {
+    get
+  }
+  final public var currentPath: NWPath? {
+    get
+  }
+  final public var pathUpdateHandler: ((_ newPath: NWPath) -> Void)? {
+    get
+    set
+  }
+  final public var viabilityUpdateHandler: ((_ isViable: Bool) -> Void)? {
+    get
+    set
+  }
+  final public var betterPathUpdateHandler: ((_ betterPathAvailable: Bool) -> Void)? {
+    get
+    set
+  }
+  final public let endpoint: NWEndpoint
+  final public let parameters: NWParameters
+  public init(to: NWEndpoint, using: NWParameters)
+  convenience public init(host: NWEndpoint.Host, port: NWEndpoint.Port, using: NWParameters)
+  final public func start(queue: DispatchQueue)
+  final public var queue: DispatchQueue? {
+    get
+  }
+  final public func cancel()
+  final public func forceCancel()
+  final public func cancelCurrentEndpoint()
+  final public func restart()
+  @_objcRuntimeName(_TtCC7Network13_NWConnection14ContentContext) public class ContentContext {
+    final public let identifier: String
+    final public let expirationMilliseconds: UInt64
+    final public let relativePriority: Double
+    final public let antecedent: NWConnection.ContentContext?
+    final public let isFinal: Bool
+    public var protocolMetadata: [NWProtocolMetadata] {
+      get
+    }
+    public func protocolMetadata(definition: NWProtocolDefinition) -> NWProtocolMetadata?
+    public init(identifier: String, expiration: UInt64 = 0, priority: Double = 0.5, isFinal: Bool = false, antecedent: NWConnection.ContentContext? = nil, metadata: [NWProtocolMetadata]? = [])
+    public static let defaultMessage: NWConnection.ContentContext
+    public static let finalMessage: NWConnection.ContentContext
+    public static let defaultStream: NWConnection.ContentContext
+    @objc deinit
+  }
+  final public func receive(minimumIncompleteLength: Int, maximumLength: Int, completion: @escaping (_ content: Data?, _ contentContext: NWConnection.ContentContext?, _ isComplete: Bool, _ error: NWError?) -> Void)
+  final public func receiveMessage(completion: @escaping (_ completeContent: Data?, _ contentContext: NWConnection.ContentContext?, _ isComplete: Bool, _ error: NWError?) -> Void)
+  public enum SendCompletion {
+    case contentProcessed((_ error: NWError?) -> Void)
+    case idempotent
+  }
+  final public func send(content: Data?, contentContext: NWConnection.ContentContext = .defaultMessage, isComplete: Bool = true, completion: SendCompletion)
+  final public func batch(_ block: () -> Void)
+  final public func metadata(definition: NWProtocolDefinition) -> NWProtocolMetadata?
+  @available(OSX 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
+  public struct EstablishmentReport : CustomDebugStringConvertible {
+    public var debugDescription: String {
+      get
+    }
+    public let duration: TimeInterval
+    public let attemptStartedAfterInterval: TimeInterval
+    public let previousAttemptCount: Int
+    public let usedProxy: Bool
+    public let proxyConfigured: Bool
+    public let proxyEndpoint: NWEndpoint?
+    public struct Resolution {
+      public enum Source {
+        case query
+        case cache
+        case expiredCache
+        public static func == (a: Network.NWConnection.EstablishmentReport.Resolution.Source, b: Network.NWConnection.EstablishmentReport.Resolution.Source) -> Swift.Bool
+        public var hashValue: Swift.Int {
+          get
+        }
+        public func hash(into hasher: inout Swift.Hasher)
+      }
+      public let source: Source
+      public let duration: TimeInterval
+      public let endpointCount: Int
+      public let successfulEndpoint: NWEndpoint
+      public let preferredEndpoint: NWEndpoint
+    }
+    public let resolutions: [Resolution]
+    public struct Handshake {
+      public let definition: NWProtocolDefinition
+      public let handshakeDuration: TimeInterval
+      public let handshakeRTT: TimeInterval
+    }
+    public let handshakes: [Handshake]
+  }
+  @available(OSX 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
+  final public func requestEstablishmentReport(queue: DispatchQueue, completion: @escaping (_ report: EstablishmentReport?) -> Void)
+  @available(OSX 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
+  public struct DataTransferReport : CustomDebugStringConvertible {
+    public var debugDescription: String {
+      get
+    }
+    public let duration: TimeInterval
+    public struct PathReport {
+      public let interface: NWInterface
+      public let receivedIPPacketCount: UInt64
+      public let sentIPPacketCount: UInt64
+      public let receivedTransportByteCount: UInt64
+      public let receivedTransportDuplicateByteCount: UInt64
+      public let receivedTransportOutOfOrderByteCount: UInt64
+      public let sentTransportByteCount: UInt64
+      public let retransmittedTransportByteCount: UInt64
+      public let transportSmoothedRTT: TimeInterval
+      public let transportMinimumRTT: TimeInterval
+      public let transportRTTVariance: TimeInterval
+      public let receivedApplicationByteCount: UInt64
+      public let sentApplicationByteCount: UInt64
+    }
+    public let aggregatePathReport: PathReport
+    public let pathReports: [PathReport]
+  }
+  @available(OSX 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
+  public class PendingDataTransferReport {
+    public func collect(queue: DispatchQueue, completion: @escaping (_ report: DataTransferReport) -> Void)
+    @objc deinit
+  }
+  @available(OSX 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
+  final public func startDataTransferReport() -> PendingDataTransferReport
+  @objc deinit
+}
+@available(OSX 10.14, iOS 12.0, watchOS 5.0, tvOS 12.0, *)
+public protocol IPAddress {
+  var rawValue: Data { get }
+  init?(_ rawValue: Data, _ interface: NWInterface?)
+  init?(_ string: String)
+  var interface: NWInterface? { get }
+  var isLoopback: Bool { get }
+  var isLinkLocal: Bool { get }
+  var isMulticast: Bool { get }
+}
+@available(OSX 10.14, iOS 12.0, watchOS 5.0, tvOS 12.0, *)
+public struct IPv4Address : IPAddress, Hashable, CustomDebugStringConvertible {
+  public static let any: Network.IPv4Address
+  public static let broadcast: Network.IPv4Address
+  public static let loopback: Network.IPv4Address
+  public static let allHostsGroup: Network.IPv4Address
+  public static let allRoutersGroup: Network.IPv4Address
+  public static let allReportsGroup: Network.IPv4Address
+  public static let mdnsGroup: Network.IPv4Address
+  public var isLoopback: Bool {
+    get
+  }
+  public var isLinkLocal: Bool {
+    get
+  }
+  public var isMulticast: Bool {
+    get
+  }
+  public var rawValue: Data {
+    get
+  }
+  public init?(_ rawValue: Data, _ interface: NWInterface? = nil)
+  public init?(_ string: String)
+  public let interface: NWInterface?
+  public static func == (lhs: IPv4Address, rhs: IPv4Address) -> Bool
+  public func hash(into hasher: inout Hasher)
+  public var debugDescription: String {
+    get
+  }
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@available(OSX 10.14, iOS 12.0, watchOS 5.0, tvOS 12.0, *)
+public struct IPv6Address : IPAddress, Hashable, CustomDebugStringConvertible {
+  public static let any: Network.IPv6Address
+  public static let broadcast: Network.IPv6Address
+  public static let loopback: Network.IPv6Address
+  public static let nodeLocalNodes: Network.IPv6Address
+  public static let linkLocalNodes: Network.IPv6Address
+  public static let linkLocalRouters: Network.IPv6Address
+  public enum Scope : UInt8 {
+    case nodeLocal
+    case linkLocal
+    case siteLocal
+    case organizationLocal
+    case global
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+  }
+  public var isAny: Bool {
+    get
+  }
+  public var isLoopback: Bool {
+    get
+  }
+  public var isIPv4Compatabile: Bool {
+    get
+  }
+  public var isIPv4Mapped: Bool {
+    get
+  }
+  public var asIPv4: IPv4Address? {
+    get
+  }
+  public var is6to4: Bool {
+    get
+  }
+  public var isLinkLocal: Bool {
+    get
+  }
+  public var isMulticast: Bool {
+    get
+  }
+  public var multicastScope: IPv6Address.Scope? {
+    get
+  }
+  public init?(_ rawValue: Data, _ interface: NWInterface? = nil)
+  public init?(_ string: String)
+  public let interface: NWInterface?
+  public var rawValue: Data {
+    get
+  }
+  public static func == (lhs: IPv6Address, rhs: IPv6Address) -> Bool
+  public func hash(into hasher: inout Hasher)
+  public var debugDescription: String {
+    get
+  }
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@available(OSX 10.14, iOS 12.0, watchOS 5.0, tvOS 12.0, *)
+public enum NWEndpoint : Hashable, CustomDebugStringConvertible {
+  case hostPort(host: NWEndpoint.Host, port: NWEndpoint.Port)
+  case service(name: String, type: String, domain: String, interface: NWInterface?)
+  case unix(path: String)
+  case url(_: URL)
+  public enum Host : Hashable, CustomDebugStringConvertible, ExpressibleByStringLiteral {
+    public typealias StringLiteralType = String
+    public func hash(into hasher: inout Hasher)
+    case name(String, NWInterface?)
+    case ipv4(IPv4Address)
+    case ipv6(IPv6Address)
+    public init(stringLiteral: StringLiteralType)
+    public init(_ string: String)
+    public var interface: NWInterface? {
+      get
+    }
+    public var debugDescription: String {
+      get
+    }
+    public static func == (a: Network.NWEndpoint.Host, b: Network.NWEndpoint.Host) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public typealias ExtendedGraphemeClusterLiteralType = Network.NWEndpoint.Host.StringLiteralType
+    public typealias UnicodeScalarLiteralType = Network.NWEndpoint.Host.StringLiteralType
+  }
+  public struct Port : Hashable, CustomDebugStringConvertible, ExpressibleByIntegerLiteral, RawRepresentable {
+    public typealias IntegerLiteralType = UInt16
+    public static let any: NWEndpoint.Port
+    public static let ssh: NWEndpoint.Port
+    public static let smtp: NWEndpoint.Port
+    public static let http: NWEndpoint.Port
+    public static let pop: NWEndpoint.Port
+    public static let imap: NWEndpoint.Port
+    public static let https: NWEndpoint.Port
+    public static let imaps: NWEndpoint.Port
+    public static let socks: NWEndpoint.Port
+    public var rawValue: UInt16 {
+      get
+    }
+    public init?(_ service: String)
+    public init(integerLiteral value: IntegerLiteralType)
+    public init?(rawValue: UInt16)
+    public var debugDescription: String {
+      get
+    }
+    public typealias RawValue = Swift.UInt16
+  }
+  public var interface: NWInterface? {
+    get
+  }
+  public func hash(into hasher: inout Hasher)
+  public var debugDescription: String {
+    get
+  }
+  public static func == (a: Network.NWEndpoint, b: Network.NWEndpoint) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@available(OSX 10.14, iOS 12.0, watchOS 5.0, tvOS 12.0, *)
+public enum NWError : Error, CustomDebugStringConvertible, Equatable {
+  case posix(POSIXErrorCode)
+  case dns(DNSServiceErrorType)
+  case tls(OSStatus)
+  public var debugDescription: String {
+    get
+  }
+  public static func == (a: Network.NWError, b: Network.NWError) -> Swift.Bool
+}
+@available(OSX 10.15, *)
+@available(iOS, unavailable)
+@available(tvOS, unavailable)
+@available(watchOS, unavailable)
+final public class NWEthernetChannel : CustomDebugStringConvertible {
+  final public var debugDescription: String {
+    get
+  }
+  public enum State : Equatable {
+    case setup
+    case waiting(NWError)
+    case preparing
+    case ready
+    case failed(NWError)
+    case cancelled
+    public static func == (a: Network.NWEthernetChannel.State, b: Network.NWEthernetChannel.State) -> Swift.Bool
+  }
+  final public var state: NWEthernetChannel.State {
+    get
+  }
+  final public var stateUpdateHandler: ((_ state: NWEthernetChannel.State) -> Void)? {
+    get
+    set
+  }
+  final public let etherType: UInt16
+  final public let interface: NWInterface
+  public init(on interface: NWInterface, etherType: UInt16)
+  final public func start(queue: DispatchQueue)
+  final public var queue: DispatchQueue? {
+    get
+  }
+  final public func cancel()
+  public struct EthernetAddress : Hashable, CustomDebugStringConvertible {
+    public init?(_ rawValue: Data)
+    public init?(_ string: String)
+    public static func == (lhs: EthernetAddress, rhs: EthernetAddress) -> Bool
+    public func hash(into hasher: inout Hasher)
+    public var debugDescription: String {
+      get
+    }
+    public var rawValue: Data {
+      get
+    }
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  final public func send(content: Data, to remoteAddress: EthernetAddress, vlanTag: UInt16, completion: @escaping (_ error: NWError?) -> Void)
+  final public var receiveHandler: ((_ content: Data, _ vlanTag: UInt16, _ localAddress: EthernetAddress, _ remoteAddress: EthernetAddress) -> Void)? {
+    get
+    set
+  }
+  @objc deinit
+}
+@available(OSX 10.14, iOS 12.0, watchOS 5.0, tvOS 12.0, *)
+@_objcRuntimeName(_TtC7Network11_NWListener) final public class NWListener : CustomDebugStringConvertible {
+  final public var debugDescription: String {
+    get
+  }
+  public struct Service : Equatable, CustomDebugStringConvertible {
+    public static func == (lhs: NWListener.Service, rhs: NWListener.Service) -> Bool
+    public var debugDescription: String {
+      get
+    }
+    public let name: String?
+    public let type: String
+    public let domain: String?
+    @available(OSX 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
+    public var txtRecordObject: NWTXTRecord? {
+      get
+      set
+    }
+    public let txtRecord: Data?
+    @available(OSX 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
+    public var noAutoRename: Bool {
+      get
+      set
+    }
+    public init(name: String? = nil, type: String, domain: String? = nil, txtRecord: Data? = nil)
+    @available(OSX 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
+    public init(name: String? = nil, type: String, domain: String? = nil, txtRecord: NWTXTRecord)
+  }
+  public enum State : Equatable {
+    case setup
+    case waiting(NWError)
+    case ready
+    case failed(NWError)
+    case cancelled
+    public static func == (a: Network.NWListener.State, b: Network.NWListener.State) -> Swift.Bool
+  }
+  final public var newConnectionHandler: ((_ connection: NWConnection) -> Void)? {
+    get
+    set
+  }
+  final public var stateUpdateHandler: ((_ state: NWListener.State) -> Void)? {
+    get
+    set
+  }
+  final public let parameters: NWParameters
+  final public var service: NWListener.Service? {
+    get
+    set
+  }
+  @available(OSX 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
+  public static let InfiniteConnectionLimit: Int
+  @available(OSX 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
+  final public var newConnectionLimit: Int {
+    get
+    set
+  }
+  final public var port: NWEndpoint.Port? {
+    get
+  }
+  public enum ServiceRegistrationChange {
+    case add(NWEndpoint)
+    case remove(NWEndpoint)
+  }
+  final public var serviceRegistrationUpdateHandler: ((_ change: NWListener.ServiceRegistrationChange) -> Void)? {
+    get
+    set
+  }
+  public init(using: NWParameters, on: NWEndpoint.Port = .any) throws
+  final public func start(queue: DispatchQueue)
+  final public var queue: DispatchQueue? {
+    get
+  }
+  final public func cancel()
+  @objc deinit
+}
+@available(OSX 10.14, iOS 12.0, watchOS 5.0, tvOS 12.0, *)
+@_objcRuntimeName(_TtC7Network13_NWParameters) final public class NWParameters : CustomDebugStringConvertible {
+  final public var debugDescription: String {
+    get
+  }
+  convenience public init(tls: NWProtocolTLS.Options?, tcp: NWProtocolTCP.Options = NWProtocolTCP.Options())
+  convenience public init(dtls: NWProtocolTLS.Options?, udp: NWProtocolUDP.Options = NWProtocolUDP.Options())
+  @available(OSX 10.15, *)
+  @available(iOS, unavailable)
+  @available(tvOS, unavailable)
+  @available(watchOS, unavailable)
+  public init(customIPProtocolNumber: UInt8)
+  public init()
+  final public class var tls: NWParameters {
+    get
+  }
+  final public class var dtls: NWParameters {
+    get
+  }
+  final public class var tcp: NWParameters {
+    get
+  }
+  final public class var udp: NWParameters {
+    get
+  }
+  final public var requiredInterface: NWInterface? {
+    get
+    set
+  }
+  final public var requiredInterfaceType: NWInterface.InterfaceType {
+    get
+    set
+  }
+  final public var prohibitedInterfaces: [NWInterface]? {
+    get
+    set
+  }
+  final public var prohibitedInterfaceTypes: [NWInterface.InterfaceType]? {
+    get
+    set
+  }
+  final public var prohibitExpensivePaths: Bool {
+    get
+    set
+  }
+  @available(OSX 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
+  final public var prohibitConstrainedPaths: Bool {
+    get
+    set
+  }
+  final public var preferNoProxies: Bool {
+    get
+    set
+  }
+  final public var requiredLocalEndpoint: NWEndpoint? {
+    get
+    set
+  }
+  final public var allowLocalEndpointReuse: Bool {
+    get
+    set
+  }
+  final public var acceptLocalOnly: Bool {
+    get
+    set
+  }
+  final public var includePeerToPeer: Bool {
+    get
+    set
+  }
+  public enum ServiceClass {
+    case bestEffort
+    case background
+    case interactiveVideo
+    case interactiveVoice
+    case responsiveData
+    case signaling
+    public static func == (a: Network.NWParameters.ServiceClass, b: Network.NWParameters.ServiceClass) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+  final public var serviceClass: NWParameters.ServiceClass {
+    get
+    set
+  }
+  public enum MultipathServiceType {
+    case disabled
+    case handover
+    case interactive
+    case aggregate
+    public static func == (a: Network.NWParameters.MultipathServiceType, b: Network.NWParameters.MultipathServiceType) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+  final public var multipathServiceType: NWParameters.MultipathServiceType {
+    get
+    set
+  }
+  final public var allowFastOpen: Bool {
+    get
+    set
+  }
+  public enum ExpiredDNSBehavior {
+    case systemDefault
+    case allow
+    case prohibit
+    public static func == (a: Network.NWParameters.ExpiredDNSBehavior, b: Network.NWParameters.ExpiredDNSBehavior) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+  final public var expiredDNSBehavior: NWParameters.ExpiredDNSBehavior {
+    get
+    set
+  }
+  @_objcRuntimeName(_TtCC7Network13_NWParameters13ProtocolStack) public class ProtocolStack {
+    public var applicationProtocols: [NWProtocolOptions] {
+      get
+      set
+    }
+    public var transportProtocol: NWProtocolOptions? {
+      get
+      set
+    }
+    public var internetProtocol: NWProtocolOptions? {
+      get
+      set
+    }
+    @objc deinit
+  }
+  final public var defaultProtocolStack: NWParameters.ProtocolStack {
+    get
+  }
+  final public func copy() -> NWParameters
+  @objc deinit
+}
+@available(OSX 10.14, iOS 12.0, watchOS 5.0, tvOS 12.0, *)
+public struct NWInterface : Hashable, CustomDebugStringConvertible {
+  public var debugDescription: String {
+    get
+  }
+  public static func == (lhs: NWInterface, rhs: NWInterface) -> Bool
+  public func hash(into hasher: inout Hasher)
+  public enum InterfaceType {
+    case other
+    case wifi
+    case cellular
+    case wiredEthernet
+    case loopback
+    public static func == (a: Network.NWInterface.InterfaceType, b: Network.NWInterface.InterfaceType) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+  public let type: InterfaceType
+  public let name: String
+  public let index: Int
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@available(OSX 10.14, iOS 12.0, watchOS 5.0, tvOS 12.0, *)
+public struct NWPath : Equatable, CustomDebugStringConvertible {
+  public var debugDescription: String {
+    get
+  }
+  public enum Status {
+    case satisfied
+    case unsatisfied
+    case requiresConnection
+    public static func == (a: Network.NWPath.Status, b: Network.NWPath.Status) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+  public let status: NWPath.Status
+  public let availableInterfaces: [NWInterface]
+  public let isExpensive: Bool
+  @available(OSX 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
+  public var isConstrained: Bool {
+    get
+  }
+  public let supportsIPv4: Bool
+  public let supportsIPv6: Bool
+  public let supportsDNS: Bool
+  @available(OSX 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
+  public var gateways: [NWEndpoint] {
+    get
+  }
+  public let localEndpoint: NWEndpoint?
+  public let remoteEndpoint: NWEndpoint?
+  public func usesInterfaceType(_ type: NWInterface.InterfaceType) -> Bool
+  public static func == (lhs: NWPath, rhs: NWPath) -> Bool
+}
+@available(OSX 10.14, iOS 12.0, watchOS 5.0, tvOS 12.0, *)
+@_objcRuntimeName(_TtC7Network14_NWPathMonitor) final public class NWPathMonitor {
+  final public var currentPath: Network.NWPath
+  final public var pathUpdateHandler: ((_ newPath: NWPath) -> Void)? {
+    get
+    set
+  }
+  final public func start(queue: DispatchQueue)
+  final public func cancel()
+  final public var queue: DispatchQueue? {
+    get
+  }
+  public init()
+  public init(requiredInterfaceType: NWInterface.InterfaceType)
+  @objc deinit
+}
+@available(OSX 10.14, iOS 12.0, watchOS 5.0, tvOS 12.0, *)
+@_objcRuntimeName(_TtC7Network21_NWProtocolDefinition) public class NWProtocolDefinition : Equatable, CustomDebugStringConvertible {
+  public static func == (lhs: NWProtocolDefinition, rhs: NWProtocolDefinition) -> Bool
+  final public let name: String
+  public var debugDescription: String {
+    get
+  }
+  @objc deinit
+}
+@available(OSX 10.14, iOS 12.0, watchOS 5.0, tvOS 12.0, *)
+@_objcRuntimeName(_TtC7Network18_NWProtocolOptions) public class NWProtocolOptions {
+  @objc deinit
+}
+@available(OSX 10.14, iOS 12.0, watchOS 5.0, tvOS 12.0, *)
+@_objcRuntimeName(_TtC7Network19_NWProtocolMetadata) public class NWProtocolMetadata {
+  @objc deinit
+}
+@available(OSX 10.14, iOS 12.0, watchOS 5.0, tvOS 12.0, *)
+@_objcRuntimeName(_TtC7Network11_NWProtocol) public class NWProtocol {
+  @objc deinit
+}
+@available(OSX 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
+public class NWProtocolFramer : NWProtocol {
+  public class Definition : NWProtocolDefinition {
+    public init(implementation: NWProtocolFramerImplementation.Type)
+    @objc deinit
+  }
+  public class Options : NWProtocolOptions {
+    public init(definition: NWProtocolFramer.Definition)
+    @objc deinit
+  }
+  public class Message : NWProtocolMetadata {
+    public init(definition: NWProtocolFramer.Definition)
+    public init(instance: NWProtocolFramer.Instance)
+    public subscript(key: String) -> Any? {
+      get
+      set(value)
+    }
+    @objc deinit
+  }
+  final public class Instance : CustomDebugStringConvertible {
+    final public var debugDescription: String {
+      get
+    }
+    final public func markReady()
+    final public func markFailed(error: NWError?)
+    final public func parseInput(minimumIncompleteLength: Int, maximumLength: Int, parse: (_ buffer: UnsafeMutableRawBufferPointer?, _ isComplete: Bool) -> Int) -> Bool
+    final public func deliverInput(data: Data, message: NWProtocolFramer.Message, isComplete: Bool)
+    final public func deliverInputNoCopy(length: Int, message: NWProtocolFramer.Message, isComplete: Bool) -> Bool
+    final public func passThroughInput()
+    final public func parseOutput(minimumIncompleteLength: Int, maximumLength: Int, parse: (_ buffer: UnsafeMutableRawBufferPointer?, _ isComplete: Bool) -> Int) -> Bool
+    final public func writeOutput(data: Data)
+    final public func writeOutputNoCopy(length: Int) throws
+    final public func passThroughOutput()
+    public enum WakeupTime {
+      case milliseconds(UInt64)
+      case forever
+    }
+    final public func scheduleWakeup(wakeupTime: WakeupTime)
+    final public func async(execute: @escaping () -> Void)
+    final public var remote: NWEndpoint? {
+      get
+    }
+    final public var local: NWEndpoint? {
+      get
+    }
+    final public var parameters: NWParameters? {
+      get
+    }
+    final public func prependApplicationProtocol(options: NWProtocolOptions) throws
+    @objc deinit
+  }
+  public enum StartResult {
+    case ready
+    case willMarkReady
+    public static func == (a: Network.NWProtocolFramer.StartResult, b: Network.NWProtocolFramer.StartResult) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+  @objc deinit
+}
+@available(OSX 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
+public protocol NWProtocolFramerImplementation : AnyObject {
+  static var label: String { get }
+  init(framer: NWProtocolFramer.Instance)
+  func start(framer: NWProtocolFramer.Instance) -> NWProtocolFramer.StartResult
+  func handleInput(framer: NWProtocolFramer.Instance) -> Int
+  func handleOutput(framer: NWProtocolFramer.Instance, message: NWProtocolFramer.Message, messageLength: Int, isComplete: Bool)
+  func wakeup(framer: NWProtocolFramer.Instance)
+  func stop(framer: NWProtocolFramer.Instance) -> Bool
+  func cleanup(framer: NWProtocolFramer.Instance)
+}
+@available(OSX 10.14, iOS 12.0, watchOS 5.0, tvOS 12.0, *)
+@_objcRuntimeName(_TtC7Network13_NWProtocolIP) public class NWProtocolIP : NWProtocol {
+  public static let definition: NWProtocolDefinition
+  @_objcRuntimeName(_TtCC7Network13_NWProtocolIP7Options) public class Options : NWProtocolOptions {
+    public enum Version {
+      case any
+      case v4
+      case v6
+      public static func == (a: Network.NWProtocolIP.Options.Version, b: Network.NWProtocolIP.Options.Version) -> Swift.Bool
+      public var hashValue: Swift.Int {
+        get
+      }
+      public func hash(into hasher: inout Swift.Hasher)
+    }
+    public var version: Version {
+      get
+      set
+    }
+    public var hopLimit: UInt8 {
+      get
+      set
+    }
+    public var useMinimumMTU: Bool {
+      get
+      set
+    }
+    public var disableFragmentation: Bool {
+      get
+      set
+    }
+    public var shouldCalculateReceiveTime: Bool {
+      get
+      set
+    }
+    @objc deinit
+  }
+  public enum ECN {
+    case nonECT
+    case ect0
+    case ect1
+    case ce
+    public static func == (a: Network.NWProtocolIP.ECN, b: Network.NWProtocolIP.ECN) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+  @_objcRuntimeName(_TtCC7Network13_NWProtocolIP8Metadata) public class Metadata : NWProtocolMetadata {
+    public var ecn: ECN {
+      get
+      set
+    }
+    public var serviceClass: NWParameters.ServiceClass {
+      get
+      set
+    }
+    public var receiveTime: UInt64 {
+      get
+    }
+    public init()
+    @objc deinit
+  }
+  @objc deinit
+}
+@available(OSX 10.14, iOS 12.0, watchOS 5.0, tvOS 12.0, *)
+@_objcRuntimeName(_TtC7Network14_NWProtocolTCP) public class NWProtocolTCP : NWProtocol {
+  public static let definition: NWProtocolDefinition
+  @_objcRuntimeName(_TtCC7Network14_NWProtocolTCP7Options) public class Options : NWProtocolOptions {
+    public var noDelay: Bool {
+      get
+      set
+    }
+    public var noPush: Bool {
+      get
+      set
+    }
+    public var noOptions: Bool {
+      get
+      set
+    }
+    public var enableKeepalive: Bool {
+      get
+      set
+    }
+    public var keepaliveCount: Int {
+      get
+      set
+    }
+    public var keepaliveIdle: Int {
+      get
+      set
+    }
+    public var keepaliveInterval: Int {
+      get
+      set
+    }
+    public var maximumSegmentSize: Int {
+      get
+      set
+    }
+    public var connectionTimeout: Int {
+      get
+      set
+    }
+    public var persistTimeout: Int {
+      get
+      set
+    }
+    public var connectionDropTime: Int {
+      get
+      set
+    }
+    public var retransmitFinDrop: Bool {
+      get
+      set
+    }
+    public var disableAckStretching: Bool {
+      get
+      set
+    }
+    public var enableFastOpen: Bool {
+      get
+      set
+    }
+    public var disableECN: Bool {
+      get
+      set
+    }
+    public init()
+    @objc deinit
+  }
+  @_objcRuntimeName(_TtCC7Network14_NWProtocolTCP8Metadata) public class Metadata : NWProtocolMetadata {
+    public var availableReceiveBuffer: UInt32 {
+      get
+    }
+    public var availableSendBuffer: UInt32 {
+      get
+    }
+    @objc deinit
+  }
+  @objc deinit
+}
+@available(OSX 10.14, iOS 12.0, watchOS 5.0, tvOS 12.0, *)
+@_objcRuntimeName(_TtC7Network14_NWProtocolTLS) public class NWProtocolTLS : NWProtocol {
+  public static let definition: NWProtocolDefinition
+  @_objcRuntimeName(_TtCC7Network14_NWProtocolTLS7Options) public class Options : NWProtocolOptions {
+    public var securityProtocolOptions: sec_protocol_options_t {
+      get
+    }
+    public init()
+    @objc deinit
+  }
+  @_objcRuntimeName(_TtCC7Network14_NWProtocolTLS8Metadata) public class Metadata : NWProtocolMetadata {
+    public var securityProtocolMetadata: sec_protocol_metadata_t {
+      get
+    }
+    @objc deinit
+  }
+  @objc deinit
+}
+@available(OSX 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
+public class NWProtocolWebSocket : NWProtocol {
+  public static let definition: Network.NWProtocolDefinition
+  public enum Version {
+    case version13
+    public static func == (a: Network.NWProtocolWebSocket.Version, b: Network.NWProtocolWebSocket.Version) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+  public enum Opcode : UInt8 {
+    case cont
+    case text
+    case binary
+    case close
+    case ping
+    case pong
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+  }
+  public enum CloseCode : Equatable {
+    public enum Defined : UInt16 {
+      case normalClosure
+      case goingAway
+      case protocolError
+      case unsupportedData
+      case noStatusReceived
+      case abnormalClosure
+      case invalidFramePayloadData
+      case policyViolation
+      case messageTooBig
+      case mandatoryExtension
+      case internalServerError
+      case tlsHandshake
+      public typealias RawValue = Swift.UInt16
+      public init?(rawValue: Swift.UInt16)
+      public var rawValue: Swift.UInt16 {
+        get
+      }
+    }
+    case protocolCode(Defined)
+    case applicationCode(UInt16)
+    case privateCode(UInt16)
+    public init(rawValue: UInt16) throws
+    public static func == (a: Network.NWProtocolWebSocket.CloseCode, b: Network.NWProtocolWebSocket.CloseCode) -> Swift.Bool
+  }
+  public class Options : NWProtocolOptions {
+    public var autoReplyPing: Bool {
+      get
+      set
+    }
+    public var maximumMessageSize: Int {
+      get
+      set
+    }
+    public var skipHandshake: Bool {
+      get
+      set
+    }
+    public init(_ version: Version = .version13)
+    public func setAdditionalHeaders(_ headers: [(name: String, value: String)])
+    public func setSubprotocols(_ subprotocols: [String])
+    public func setClientRequestHandler(_ queue: DispatchQueue, handler: @escaping ((_ subprotocols: [String], _ additionalHeaders: [(name: String, value: String)]) -> Response))
+    @objc deinit
+  }
+  public class Metadata : NWProtocolMetadata {
+    final public let opcode: Opcode
+    public init(opcode: Opcode)
+    public var closeCode: CloseCode {
+      get
+      set
+    }
+    public func setPongHandler(_ queue: DispatchQueue, handler: @escaping ((NWError?) -> Void))
+    public var selectedSubprotocol: String? {
+      get
+    }
+    public var additionalServerHeaders: [(String, String)]? {
+      get
+    }
+    @objc deinit
+  }
+  public struct Response {
+    public enum Status {
+      case accept
+      case reject
+      public static func == (a: Network.NWProtocolWebSocket.Response.Status, b: Network.NWProtocolWebSocket.Response.Status) -> Swift.Bool
+      public var hashValue: Swift.Int {
+        get
+      }
+      public func hash(into hasher: inout Swift.Hasher)
+    }
+    public let status: Status
+    public let subprotocol: String?
+    public let additionalHeaders: [(name: String, value: String)]?
+    public init(status: Status, subprotocol: String?, additionalHeaders: [(name: String, value: String)]? = nil)
+  }
+  @objc deinit
+}
+@available(OSX 10.14, iOS 12.0, watchOS 5.0, tvOS 12.0, *)
+@_objcRuntimeName(_TtC7Network14_NWProtocolUDP) public class NWProtocolUDP : NWProtocol {
+  public static let definition: NWProtocolDefinition
+  @_objcRuntimeName(_TtCC7Network14_NWProtocolUDP7Options) public class Options : NWProtocolOptions {
+    public var preferNoChecksum: Bool {
+      get
+      set
+    }
+    public init()
+    @objc deinit
+  }
+  @_objcRuntimeName(_TtCC7Network14_NWProtocolUDP8Metadata) public class Metadata : NWProtocolMetadata {
+    public init()
+    @objc deinit
+  }
+  @objc deinit
+}
+@available(OSX 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
+public struct NWTXTRecord {
+  public enum Entry : Hashable, CustomDebugStringConvertible {
+    case none
+    case empty
+    case string(String)
+    public var debugDescription: String {
+      get
+    }
+    public static func == (a: Network.NWTXTRecord.Entry, b: Network.NWTXTRecord.Entry) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+  public init(_ dictionary: [String : String] = [:])
+  @discardableResult
+  mutating public func removeEntry(key: String) -> Bool
+  public func getEntry(for key: String) -> Entry?
+  @discardableResult
+  mutating public func setEntry(_ entry: Entry, for key: String) -> Bool
+  public subscript(key: String) -> String? {
+    get
+    set
+  }
+  public var dictionary: [String : String] {
+    get
+  }
+}
+@available(OSX 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
+extension NWTXTRecord : Equatable {
+  public static func == (lhs: NWTXTRecord, rhs: NWTXTRecord) -> Bool
+}
+@available(OSX 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
+extension NWTXTRecord : Collection {
+  public typealias Element = (key: String, value: Entry)
+  public subscript(position: NWTXTRecord.Index) -> NWTXTRecord.Element {
+    get
+  }
+  public struct Index : Comparable {
+    public static func == (lhs: NWTXTRecord.Index, rhs: NWTXTRecord.Index) -> Bool
+    public static func < (lhs: NWTXTRecord.Index, rhs: NWTXTRecord.Index) -> Bool
+  }
+  public var startIndex: Index {
+    get
+  }
+  public var endIndex: Index {
+    get
+  }
+  public func index(after i: Index) -> Index
+  public typealias Iterator = Swift.IndexingIterator<Network.NWTXTRecord>
+  public typealias SubSequence = Swift.Slice<Network.NWTXTRecord>
+  public typealias Indices = Swift.DefaultIndices<Network.NWTXTRecord>
+}
+@available(OSX 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
+extension NWTXTRecord : CustomDebugStringConvertible {
+  public var debugDescription: String {
+    get
+  }
+}

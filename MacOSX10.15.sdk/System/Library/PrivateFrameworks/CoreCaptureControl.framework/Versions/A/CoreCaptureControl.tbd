@@ -1,0 +1,12 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 7326B79E-4B00-3E83-8F94-E39DD9D84305', 'x86_64: 7326B79E-4B00-3E83-8F94-E39DD9D84305' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/CoreCaptureControl.framework/Versions/A/CoreCaptureControl'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _CoreCaptureControlCapture, _CoreCaptureControlCaptureWithComponentDirectory, 
+                       _CoreCaptureControlConfigurePipe, _CoreCaptureControlConfigureProfile, 
+                       _CoreCaptureControlConfigureStream, _CoreCaptureControlCreate, 
+                       _CoreCaptureControlStart, _CoreCaptureControlStop ]
+...

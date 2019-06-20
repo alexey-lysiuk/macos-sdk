@@ -1,0 +1,42 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 7372D955-77EB-34F8-8EF8-0FC0CA99FBE4' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/SiriFoundation.framework/Versions/A/SiriFoundation'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _SRFBugReporterSubtypeConfigurationGuide, _SRFBugReporterSubtypeFault, 
+                       _SRFBugReporterSubtypeInvocationSuppression, _SRFBugReporterSubtypePerformance, 
+                       _SRFBugReporterSubtypeServerImproperResponse, _SRFBugReporterSubtypeTesting, 
+                       _SRFBugReporterTypeAssertion, _SRFBugReporterTypeAudio, _SRFBugReporterTypeConfiguration, 
+                       _SRFBugReporterTypeInvocation, _SRFBugReporterTypeServer, 
+                       _SRFBugReporterTypeTesting, _SRFClamshellStateNotifierDidCloseDeviceLid, 
+                       _SRFClamshellStateNotifierDidOpenDeviceLid, _SRFInvocationWasSuccessful, 
+                       _SRFLockStateNotifierDidLockDeviceNotification, _SRFLockStateNotifierDidUnlockDeviceNotification, 
+                       _SRFPinningCommandDictionaryKey, _SRFPinningConversationInfoKey, 
+                       _SRFPinningExpectedSnippetKindKey, _SRFPinningIsFirstRunKey, 
+                       _SRFPinningPendingDataStoreKey, _SRFPinningPinnedSnippetsKey, 
+                       _SRFPinningShouldShowAllKey, _SiriKeyboardShortcutDidChangeNotificationName, 
+                       _SiriLockscreenEnabledDidChangeNotificationName, _SiriStatusMenuVisibilityDidChangeNotificationName, 
+                       _SiriUIAccessibilityPressNotification, _SiriUIAppleMikeyActivateNotification, 
+                       _SiriUIBluetoothATBVRAActivateNotification, _SiriUIBluetoothATBVRADeactivateNotification, 
+                       _SiriUIDidActivateNotification, _SiriUIDidAppearNotification, 
+                       _SiriUIDidDisappearNotification, _SiriUIGenericDeactivateNotification, 
+                       _SiriUIHotkeyPressBeganNotification, _SiriUIHotkeyPressEndedNotification, 
+                       _SiriUIHotkeyPressPendingNotification, _SiriUIIdleAndQuietNotification, 
+                       _SiriUIInvocationRequestCompleted, _SiriUIMicStartedListeningNotification, 
+                       _SiriUIMicStoppedListeningNotification, _SiriUIPreferencesChanged, 
+                       _SiriUIPrewarmNotification, _SiriUIStateDictationAboutToListenNotification, 
+                       _SiriUIStateDictationListeningNotification, _SiriUIStateSiriAboutToListenNotification, 
+                       _SiriUIStateSiriListeningNotification, _SiriUIStateSiriSuccessNotification, 
+                       _SiriUIStateSiriThinkingNotification, _SiriUIStateTrainingAboutToListenNotification, 
+                       _SiriUIStateTrainingListeningNotification, _SiriUIStateTrainingThinkingNotification, 
+                       _SiriUIStatusMenuPressBeganNotification, _SiriUIStatusMenuPressEndedNotification, 
+                       _SiriUITouchBarPressBeganNotification, _SiriUITouchBarPressEndedNotification, 
+                       _SiriUIVoiceTriggerActivateNotification, _SiriUserDidSwitchOnVoiceTriggerNotification, 
+                       _SiriVoiceTriggerNoLongerSuppressedNotification, __SRFAssertionFailed ]
+    objc-classes:    [ SRFBugReporter, SRFClamshellStateNotifier, SRFLauncher, SRFLockStateNotifier, 
+                       SRFLoggingDefaults, SRFPreferences, SRFProcessInfo, SRFSignpostLog, 
+                       SRFStateNotifier, SRFUserDefaultsController, SRFUtilities, 
+                       SRFVoiceTriggerDevices, SRFVoiceTriggerSuppressor ]
+...

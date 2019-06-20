@@ -1,0 +1,17 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 14049F3A-D8FE-3845-82B8-3705503AC4C6', 'x86_64: 14049F3A-D8FE-3845-82B8-3705503AC4C6' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/KnowledgeMonitor.framework/Versions/A/KnowledgeMonitor'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _KnowledgeMonitorVersionNumber, _KnowledgeMonitorVersionString, 
+                       __DKApplicationIsForegroundType, __DKUserIsActiveByActivityState ]
+    objc-classes:    [ _DKApplicationMonitor, _DKApplicationUsageMonitor, _DKAssertionsPreventingRestartMonitor, 
+                       _DKBacklightMonitor, _DKBatteryMonitor, _DKCPUUsageMonitor, 
+                       _DKDeviceActivityLevelMonitor, _DKDoNotDisturbMonitor, _DKMonitor, 
+                       _DKNetworkQualityMonitor, _DKNextAlarmForTopOffProtectionMonitor, 
+                       _DKNowPlayingMonitor, _DKPeriod, _DKPluggedInMonitor, _DKSunriseSunsetMonitor, 
+                       _DKTemporalNumericState, _DKThermalPressureMonitor, _DKUserNearbyMonitor, 
+                       _DKWakeRequestMonitor, _DKWifiNetworkQualityMonitor, _DKWiredNetworkQualityMonitor ]
+...

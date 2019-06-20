@@ -1,0 +1,947 @@
+// swift-interface-format-version: 1.0
+// swift-tools-version: Apple Swift version 5.1 effective-4.1.50 (swiftlang-1100.8.32.26 clang-1100.0.18.2)
+// swift-module-flags: -target x86_64-apple-ios13.0-macabi -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftCoreGraphics -swift-version 4 -O -enforce-exclusivity=unchecked -module-name CoreGraphics
+@_exported import CoreGraphics
+import Darwin
+import Swift
+extension CGAffineTransform : Equatable {
+  public static func == (lhs: CGAffineTransform, rhs: CGAffineTransform) -> Bool
+}
+extension CGColor {
+  @available(OSX 10.3, iOS 2.0, *)
+  public var components: [CGFloat]? {
+    get
+  }
+}
+public protocol _CGColorInitTrampoline {
+  init?(colorSpace space: CGColorSpace, components: UnsafePointer<CGFloat>)
+}
+extension _CGColorInitTrampoline {
+  public init(_colorLiteralRed red: Float, green: Float, blue: Float, alpha: Float)
+}
+extension CGColor : _CGColorInitTrampoline, _ExpressibleByColorLiteral {
+}
+extension CGColorSpace {
+  public var colorTable: [UInt8]? {
+    get
+  }
+}
+extension CGContext {
+  public func setLineDash(phase: CGFloat, lengths: [CGFloat])
+  public func move(to point: CGPoint)
+  public func addLine(to point: CGPoint)
+  public func addCurve(to end: CGPoint, control1: CGPoint, control2: CGPoint)
+  public func addQuadCurve(to end: CGPoint, control: CGPoint)
+  public func addRects(_ rects: [CGRect])
+  public func addLines(between points: [CGPoint])
+  public func addArc(center: CGPoint, radius: CGFloat, startAngle: CGFloat, endAngle: CGFloat, clockwise: Bool)
+  public func addArc(tangent1End: CGPoint, tangent2End: CGPoint, radius: CGFloat)
+  public func fillPath(using rule: CGPathFillRule = .winding)
+  public func clip(using rule: CGPathFillRule = .winding)
+  public func fill(_ rects: [CGRect])
+  public func strokeLineSegments(between points: [CGPoint])
+  public func clip(to rects: [CGRect])
+  public func draw(_ image: CGImage, in rect: CGRect, byTiling: Bool = false)
+  public var textPosition: CGPoint {
+    get
+    set
+  }
+  public func showGlyphs(_ glyphs: [CGGlyph], at positions: [CGPoint])
+}
+extension CGPoint {
+  public static var zero: CGPoint {
+    @_transparent get { return CGPoint(x: 0, y: 0) }
+  }
+  @_transparent public init(x: Int, y: Int) {
+    self.init(x: CGFloat(x), y: CGFloat(y))
+  }
+  @_transparent public init(x: Double, y: Double) {
+    self.init(x: CGFloat(x), y: CGFloat(y))
+  }
+  public init?(dictionaryRepresentation dict: CFDictionary)
+}
+extension CGPoint : CustomReflectable {
+  public var customMirror: Mirror {
+    get
+  }
+}
+extension CGPoint : _CustomPlaygroundQuickLookable {
+  @available(*, deprecated, message: "CGPoint.customPlaygroundQuickLook will be removed in a future Swift version")
+  public var customPlaygroundQuickLook: PlaygroundQuickLook {
+    get
+  }
+}
+extension CGPoint : CustomDebugStringConvertible {
+  public var debugDescription: String {
+    get
+  }
+}
+extension CGPoint : Equatable {
+  @_transparent public static func == (lhs: CGPoint, rhs: CGPoint) -> Bool {
+    return lhs.x == rhs.x  &&  lhs.y == rhs.y
+  }
+}
+extension CGPoint : Codable {
+  public init(from decoder: Decoder) throws
+  public func encode(to encoder: Encoder) throws
+}
+extension CGSize {
+  public static var zero: CGSize {
+    @_transparent get { return CGSize(width: 0, height: 0) }
+  }
+  @_transparent public init(width: Int, height: Int) {
+    self.init(width: CGFloat(width), height: CGFloat(height))
+  }
+  @_transparent public init(width: Double, height: Double) {
+    self.init(width: CGFloat(width), height: CGFloat(height))
+  }
+  public init?(dictionaryRepresentation dict: CFDictionary)
+}
+extension CGSize : CustomReflectable {
+  public var customMirror: Mirror {
+    get
+  }
+}
+extension CGSize : _CustomPlaygroundQuickLookable {
+  @available(*, deprecated, message: "CGSize.customPlaygroundQuickLook will be removed in a future Swift version")
+  public var customPlaygroundQuickLook: PlaygroundQuickLook {
+    get
+  }
+}
+extension CGSize : CustomDebugStringConvertible {
+  public var debugDescription: String {
+    get
+  }
+}
+extension CGSize : Equatable {
+  @_transparent public static func == (lhs: CGSize, rhs: CGSize) -> Bool {
+    return lhs.width == rhs.width  &&  lhs.height == rhs.height
+  }
+}
+extension CGSize : Codable {
+  public init(from decoder: Decoder) throws
+  public func encode(to encoder: Encoder) throws
+}
+extension CGVector {
+  public static var zero: CGVector {
+    @_transparent get { return CGVector(dx: 0, dy: 0) }
+  }
+  @_transparent public init(dx: Int, dy: Int) {
+    self.init(dx: CGFloat(dx), dy: CGFloat(dy))
+  }
+  @_transparent public init(dx: Double, dy: Double) {
+    self.init(dx: CGFloat(dx), dy: CGFloat(dy))
+  }
+}
+extension CGVector : Equatable {
+  @_transparent public static func == (lhs: CGVector, rhs: CGVector) -> Bool {
+    return lhs.dx == rhs.dx  &&  lhs.dy == rhs.dy
+  }
+}
+extension CGVector : CustomDebugStringConvertible {
+  public var debugDescription: String {
+    get
+  }
+}
+extension CGVector : Codable {
+  public init(from decoder: Decoder) throws
+  public func encode(to encoder: Encoder) throws
+}
+extension CGRect {
+  public static var zero: CGRect {
+    @_transparent get { return CGRect(x: 0, y: 0, width: 0, height: 0) }
+  }
+  @_transparent public init(x: CGFloat, y: CGFloat, width: CGFloat, height: CGFloat) {
+    self.init(origin: CGPoint(x: x, y: y),
+              size: CGSize(width: width, height: height))
+  }
+  @_transparent public init(x: Double, y: Double, width: Double, height: Double) {
+    self.init(origin: CGPoint(x: x, y: y),
+              size: CGSize(width: width, height: height))
+  }
+  @_transparent public init(x: Int, y: Int, width: Int, height: Int) {
+    self.init(origin: CGPoint(x: x, y: y),
+              size: CGSize(width: width, height: height))
+  }
+  public init?(dictionaryRepresentation dict: CFDictionary)
+  @_transparent public func divided(atDistance: CGFloat, from fromEdge: CGRectEdge) -> (slice: CGRect, remainder: CGRect) {
+    var slice = CGRect.zero
+    var remainder = CGRect.zero
+    self.__divided(slice: &slice, remainder: &remainder, atDistance: atDistance,
+           from: fromEdge)
+    return (slice, remainder)
+  }
+  @available(*, unavailable, renamed: "minX")
+  public var x: CGFloat {
+    get
+  }
+  @available(*, unavailable, renamed: "minY")
+  public var y: CGFloat {
+    get
+  }
+}
+extension CGRect : CustomReflectable {
+  public var customMirror: Mirror {
+    get
+  }
+}
+extension CGRect : _CustomPlaygroundQuickLookable {
+  @available(*, deprecated, message: "CGRect.customPlaygroundQuickLook will be removed in a future Swift version")
+  public var customPlaygroundQuickLook: PlaygroundQuickLook {
+    get
+  }
+}
+extension CGRect : CustomDebugStringConvertible {
+  public var debugDescription: String {
+    get
+  }
+}
+extension CGRect : Equatable {
+  @_transparent public static func == (lhs: CGRect, rhs: CGRect) -> Bool {
+    return lhs.equalTo(rhs)
+  }
+}
+extension CGRect : Codable {
+  public init(from decoder: Decoder) throws
+  public func encode(to encoder: Encoder) throws
+}
+extension CGAffineTransform {
+  public static var identity: CGAffineTransform {
+    @_transparent get { return CGAffineTransform(a: 1, b: 0, c: 0, d: 1, tx: 0, ty: 0) }
+  }
+}
+extension CGAffineTransform : Codable {
+  public init(from decoder: Decoder) throws
+  public func encode(to encoder: Encoder) throws
+}
+extension CGImage {
+  public func copy(maskingColorComponents components: [CGFloat]) -> CGImage?
+}
+extension CGContext {
+  public func draw(_ layer: CGLayer, in rect: CGRect)
+  public func draw(_ layer: CGLayer, at point: CGPoint)
+}
+public enum CGPathFillRule : Int {
+  case winding
+  case evenOdd
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension CGPath {
+  public func copy(dashingWithPhase phase: CGFloat, lengths: [CGFloat], transform: CGAffineTransform = .identity) -> CGPath
+  public func copy(strokingWithWidth lineWidth: CGFloat, lineCap: CGLineCap, lineJoin: CGLineJoin, miterLimit: CGFloat, transform: CGAffineTransform = .identity) -> CGPath
+  public func contains(_ point: CGPoint, using rule: CGPathFillRule = .winding, transform: CGAffineTransform = .identity) -> Bool
+}
+extension CGMutablePath {
+  public func addRoundedRect(in rect: CGRect, cornerWidth: CGFloat, cornerHeight: CGFloat, transform: CGAffineTransform = .identity)
+  public func move(to point: CGPoint, transform: CGAffineTransform = .identity)
+  public func addLine(to point: CGPoint, transform: CGAffineTransform = .identity)
+  public func addQuadCurve(to end: CGPoint, control: CGPoint, transform: CGAffineTransform = .identity)
+  public func addCurve(to end: CGPoint, control1: CGPoint, control2: CGPoint, transform: CGAffineTransform = .identity)
+  public func addRect(_ rect: CGRect, transform: CGAffineTransform = .identity)
+  public func addRects(_ rects: [CGRect], transform: CGAffineTransform = .identity)
+  public func addLines(between points: [CGPoint], transform: CGAffineTransform = .identity)
+  public func addEllipse(in rect: CGRect, transform: CGAffineTransform = .identity)
+  public func addRelativeArc(center: CGPoint, radius: CGFloat, startAngle: CGFloat, delta: CGFloat, transform: CGAffineTransform = .identity)
+  public func addArc(center: CGPoint, radius: CGFloat, startAngle: CGFloat, endAngle: CGFloat, clockwise: Bool, transform: CGAffineTransform = .identity)
+  public func addArc(tangent1End: CGPoint, tangent2End: CGPoint, radius: CGFloat, transform: CGAffineTransform = .identity)
+  public func addPath(_ path: CGPath, transform: CGAffineTransform = .identity)
+}
+@_fixed_layout public struct CGFloat {
+  public typealias NativeType = Double
+  @_transparent public init() {
+    self.native = 0.0
+  }
+  @_transparent public init(_ value: Float) {
+    self.native = NativeType(value)
+  }
+  @_transparent public init(_ value: Double) {
+    self.native = NativeType(value)
+  }
+  @_transparent public init(_ value: Float80) {
+    self.native = NativeType(value)
+  }
+  @_transparent public init(_ value: CGFloat) {
+    self.native = value.native
+  }
+  public var native: NativeType
+}
+extension CGFloat : SignedNumeric {
+  @_transparent public init?<T>(exactly source: T) where T : Swift.BinaryInteger {
+    guard let native = NativeType(exactly: source) else { return nil }
+    self.native = native
+  }
+  @_transparent public var magnitude: CGFloat {
+    get {
+    return CGFloat(native.magnitude)
+  }
+  }
+  public typealias Magnitude = CoreGraphics.CGFloat
+  public typealias IntegerLiteralType = Swift.Int
+}
+extension CGFloat : BinaryFloatingPoint {
+  public typealias RawSignificand = UInt
+  public typealias Exponent = Int
+  @_transparent public static var exponentBitCount: Int {
+    get {
+    return NativeType.exponentBitCount
+  }
+  }
+  @_transparent public static var significandBitCount: Int {
+    get {
+    return NativeType.significandBitCount
+  }
+  }
+  @_transparent public var bitPattern: UInt {
+    get {
+    return UInt(native.bitPattern)
+  }
+  }
+  @_transparent public init(bitPattern: UInt) {
+    native = NativeType(bitPattern: UInt64(bitPattern))
+  }
+  @_transparent public var sign: FloatingPointSign {
+    get {
+    return native.sign
+  }
+  }
+  @_transparent public var exponentBitPattern: UInt {
+    get {
+    return native.exponentBitPattern
+  }
+  }
+  @_transparent public var significandBitPattern: UInt {
+    get {
+    return UInt(native.significandBitPattern)
+  }
+  }
+  @_transparent public init(sign: FloatingPointSign, exponentBitPattern: UInt, significandBitPattern: UInt) {
+    native = NativeType(sign: sign,
+      exponentBitPattern: exponentBitPattern,
+      significandBitPattern: NativeType.RawSignificand(significandBitPattern))
+  }
+  @_transparent public init(nan payload: RawSignificand, signaling: Bool) {
+    native = NativeType(nan: NativeType.RawSignificand(payload),
+                        signaling: signaling)
+  }
+  @_transparent public static var infinity: CGFloat {
+    get {
+    return CGFloat(NativeType.infinity)
+  }
+  }
+  @_transparent public static var nan: CGFloat {
+    get {
+    return CGFloat(NativeType.nan)
+  }
+  }
+  @_transparent public static var signalingNaN: CGFloat {
+    get {
+    return CGFloat(NativeType.signalingNaN)
+  }
+  }
+  @available(*, unavailable, renamed: "nan")
+  public static var quietNaN: CGFloat {
+    get
+  }
+  @_transparent public static var greatestFiniteMagnitude: CGFloat {
+    get {
+    return CGFloat(NativeType.greatestFiniteMagnitude)
+  }
+  }
+  @_transparent public static var pi: CGFloat {
+    get {
+    return CGFloat(NativeType.pi)
+  }
+  }
+  @_transparent public var ulp: CGFloat {
+    get {
+    return CGFloat(native.ulp)
+  }
+  }
+  @_transparent public static var leastNormalMagnitude: CGFloat {
+    get {
+    return CGFloat(NativeType.leastNormalMagnitude)
+  }
+  }
+  @_transparent public static var leastNonzeroMagnitude: CGFloat {
+    get {
+    return CGFloat(NativeType.leastNonzeroMagnitude)
+  }
+  }
+  @_transparent public var exponent: Int {
+    get {
+    return native.exponent
+  }
+  }
+  @_transparent public var significand: CGFloat {
+    get {
+    return CGFloat(native.significand)
+  }
+  }
+  @_transparent public init(sign: FloatingPointSign, exponent: Int, significand: CGFloat) {
+    native = NativeType(sign: sign,
+      exponent: exponent, significand: significand.native)
+  }
+  @_transparent mutating public func round(_ rule: FloatingPointRoundingRule) {
+    native.round(rule)
+  }
+  @_transparent public var nextUp: CGFloat {
+    get {
+    return CGFloat(native.nextUp)
+  }
+  }
+  @_transparent mutating public func negate() {
+    native.negate()
+  }
+  @_transparent public static func += (lhs: inout CGFloat, rhs: CGFloat) {
+    lhs.native += rhs.native
+  }
+  @_transparent public static func -= (lhs: inout CGFloat, rhs: CGFloat) {
+    lhs.native -= rhs.native
+  }
+  @_transparent public static func *= (lhs: inout CGFloat, rhs: CGFloat) {
+    lhs.native *= rhs.native
+  }
+  @_transparent public static func /= (lhs: inout CGFloat, rhs: CGFloat) {
+    lhs.native /= rhs.native
+  }
+  @_transparent mutating public func formTruncatingRemainder(dividingBy other: CGFloat) {
+    native.formTruncatingRemainder(dividingBy: other.native)
+  }
+  @_transparent mutating public func formRemainder(dividingBy other: CGFloat) {
+    native.formRemainder(dividingBy: other.native)
+  }
+  @_transparent mutating public func formSquareRoot() {
+    native.formSquareRoot( )
+  }
+  @_transparent mutating public func addProduct(_ lhs: CGFloat, _ rhs: CGFloat) {
+    native.addProduct(lhs.native, rhs.native)
+  }
+  @_transparent public func isEqual(to other: CGFloat) -> Bool {
+    return self.native.isEqual(to: other.native)
+  }
+  @_transparent public func isLess(than other: CGFloat) -> Bool {
+    return self.native.isLess(than: other.native)
+  }
+  @_transparent public func isLessThanOrEqualTo(_ other: CGFloat) -> Bool {
+    return self.native.isLessThanOrEqualTo(other.native)
+  }
+  @_transparent public var isNormal: Bool {
+    get {
+    return native.isNormal
+  }
+  }
+  @_transparent public var isFinite: Bool {
+    get {
+    return native.isFinite
+  }
+  }
+  @_transparent public var isZero: Bool {
+    get {
+    return native.isZero
+  }
+  }
+  @_transparent public var isSubnormal: Bool {
+    get {
+    return native.isSubnormal
+  }
+  }
+  @_transparent public var isInfinite: Bool {
+    get {
+    return native.isInfinite
+  }
+  }
+  @_transparent public var isNaN: Bool {
+    get {
+    return native.isNaN
+  }
+  }
+  @_transparent public var isSignalingNaN: Bool {
+    get {
+    return native.isSignalingNaN
+  }
+  }
+  @available(*, unavailable, renamed: "isSignalingNaN")
+  public var isSignaling: Bool {
+    get
+  }
+  @_transparent public var isCanonical: Bool {
+    get {
+    return true
+  }
+  }
+  @_transparent public var floatingPointClass: FloatingPointClassification {
+    get {
+    return native.floatingPointClass
+  }
+  }
+  @_transparent public var binade: CGFloat {
+    get {
+    return CGFloat(native.binade)
+  }
+  }
+  @_transparent public var significandWidth: Int {
+    get {
+    return native.significandWidth
+  }
+  }
+  @_transparent public init(floatLiteral value: NativeType) {
+    native = value
+  }
+  @_transparent public init(integerLiteral value: Int) {
+    native = NativeType(value)
+  }
+  public typealias FloatLiteralType = CoreGraphics.CGFloat.NativeType
+  public typealias RawExponent = Swift.UInt
+}
+extension CGFloat {
+  @available(*, unavailable, renamed: "leastNormalMagnitude")
+  public static var min: CGFloat {
+    get
+  }
+  @available(*, unavailable, renamed: "greatestFiniteMagnitude")
+  public static var max: CGFloat {
+    get
+  }
+}
+@available(*, unavailable, renamed: "CGFloat.leastNormalMagnitude")
+public var CGFLOAT_MIN: CGFloat {
+  get
+}
+@available(*, unavailable, renamed: "CGFloat.greatestFiniteMagnitude")
+public var CGFLOAT_MAX: CGFloat {
+  get
+}
+extension CGFloat : CustomReflectable {
+  public var customMirror: Mirror {
+    get
+  }
+}
+extension CGFloat : CustomStringConvertible {
+  @_transparent public var description: String {
+    get {
+    return native.description
+  }
+  }
+}
+extension CGFloat : Hashable {
+  @_transparent public var hashValue: Int {
+    get {
+    return native.hashValue
+  }
+  }
+  @inlinable @_transparent public func hash(into hasher: inout Hasher) {
+    hasher.combine(native)
+  }
+  @inlinable @_transparent public func _rawHashValue(seed: Int) -> Int {
+    return native._rawHashValue(seed: seed)
+  }
+}
+extension UInt8 {
+  @_transparent public init(_ value: CGFloat) {
+    self = UInt8(value.native)
+  }
+}
+extension Int8 {
+  @_transparent public init(_ value: CGFloat) {
+    self = Int8(value.native)
+  }
+}
+extension UInt16 {
+  @_transparent public init(_ value: CGFloat) {
+    self = UInt16(value.native)
+  }
+}
+extension Int16 {
+  @_transparent public init(_ value: CGFloat) {
+    self = Int16(value.native)
+  }
+}
+extension UInt32 {
+  @_transparent public init(_ value: CGFloat) {
+    self = UInt32(value.native)
+  }
+}
+extension Int32 {
+  @_transparent public init(_ value: CGFloat) {
+    self = Int32(value.native)
+  }
+}
+extension UInt64 {
+  @_transparent public init(_ value: CGFloat) {
+    self = UInt64(value.native)
+  }
+}
+extension Int64 {
+  @_transparent public init(_ value: CGFloat) {
+    self = Int64(value.native)
+  }
+}
+extension UInt {
+  @_transparent public init(_ value: CGFloat) {
+    self = UInt(value.native)
+  }
+}
+extension Int {
+  @_transparent public init(_ value: CGFloat) {
+    self = Int(value.native)
+  }
+}
+extension Double {
+  @_transparent public init(_ value: CGFloat) {
+    self = Double(value.native)
+  }
+}
+extension Float {
+  @_transparent public init(_ value: CGFloat) {
+    self = Float(value.native)
+  }
+}
+extension CGFloat {
+  @_transparent public static func + (lhs: CGFloat, rhs: CGFloat) -> CGFloat {
+    var lhs = lhs
+    lhs += rhs
+    return lhs
+  }
+  @_transparent public static func - (lhs: CGFloat, rhs: CGFloat) -> CGFloat {
+    var lhs = lhs
+    lhs -= rhs
+    return lhs
+  }
+  @_transparent public static func * (lhs: CGFloat, rhs: CGFloat) -> CGFloat {
+    var lhs = lhs
+    lhs *= rhs
+    return lhs
+  }
+  @_transparent public static func / (lhs: CGFloat, rhs: CGFloat) -> CGFloat {
+    var lhs = lhs
+    lhs /= rhs
+    return lhs
+  }
+}
+extension CGFloat : Strideable {
+  @_transparent public func distance(to other: CGFloat) -> CGFloat {
+    return CGFloat(other.native - self.native)
+  }
+  @_transparent public func advanced(by amount: CGFloat) -> CGFloat {
+    return CGFloat(self.native + amount.native)
+  }
+  public typealias Stride = CoreGraphics.CGFloat
+}
+@available(*, unavailable, message: "Use truncatingRemainder instead")
+@_transparent public func % (lhs: CGFloat, rhs: CGFloat) -> CGFloat {
+  fatalError("% is not available.")
+}
+@available(*, unavailable, message: "Use formTruncatingRemainder instead")
+@_transparent public func %= (lhs: inout CGFloat, rhs: CGFloat) {
+  fatalError("%= is not available.")
+}
+@_transparent public func acos(_ x: CGFloat) -> CGFloat {
+  return CGFloat(acos(x.native))
+}
+@_transparent public func asin(_ x: CGFloat) -> CGFloat {
+  return CGFloat(asin(x.native))
+}
+@_transparent public func atan(_ x: CGFloat) -> CGFloat {
+  return CGFloat(atan(x.native))
+}
+@_transparent public func cos(_ x: CGFloat) -> CGFloat {
+  return CGFloat(cos(x.native))
+}
+@_transparent public func sin(_ x: CGFloat) -> CGFloat {
+  return CGFloat(sin(x.native))
+}
+@_transparent public func tan(_ x: CGFloat) -> CGFloat {
+  return CGFloat(tan(x.native))
+}
+@_transparent public func acosh(_ x: CGFloat) -> CGFloat {
+  return CGFloat(acosh(x.native))
+}
+@_transparent public func asinh(_ x: CGFloat) -> CGFloat {
+  return CGFloat(asinh(x.native))
+}
+@_transparent public func atanh(_ x: CGFloat) -> CGFloat {
+  return CGFloat(atanh(x.native))
+}
+@_transparent public func cosh(_ x: CGFloat) -> CGFloat {
+  return CGFloat(cosh(x.native))
+}
+@_transparent public func sinh(_ x: CGFloat) -> CGFloat {
+  return CGFloat(sinh(x.native))
+}
+@_transparent public func tanh(_ x: CGFloat) -> CGFloat {
+  return CGFloat(tanh(x.native))
+}
+@_transparent public func exp(_ x: CGFloat) -> CGFloat {
+  return CGFloat(exp(x.native))
+}
+@_transparent public func exp2(_ x: CGFloat) -> CGFloat {
+  return CGFloat(exp2(x.native))
+}
+@_transparent public func expm1(_ x: CGFloat) -> CGFloat {
+  return CGFloat(expm1(x.native))
+}
+@_transparent public func log(_ x: CGFloat) -> CGFloat {
+  return CGFloat(log(x.native))
+}
+@_transparent public func log10(_ x: CGFloat) -> CGFloat {
+  return CGFloat(log10(x.native))
+}
+@_transparent public func log1p(_ x: CGFloat) -> CGFloat {
+  return CGFloat(log1p(x.native))
+}
+@_transparent public func log2(_ x: CGFloat) -> CGFloat {
+  return CGFloat(log2(x.native))
+}
+@_transparent public func logb(_ x: CGFloat) -> CGFloat {
+  return CGFloat(logb(x.native))
+}
+@_transparent public func cbrt(_ x: CGFloat) -> CGFloat {
+  return CGFloat(cbrt(x.native))
+}
+@_transparent public func erf(_ x: CGFloat) -> CGFloat {
+  return CGFloat(erf(x.native))
+}
+@_transparent public func erfc(_ x: CGFloat) -> CGFloat {
+  return CGFloat(erfc(x.native))
+}
+@_transparent public func tgamma(_ x: CGFloat) -> CGFloat {
+  return CGFloat(tgamma(x.native))
+}
+@_transparent public func nearbyint(_ x: CGFloat) -> CGFloat {
+  return CGFloat(nearbyint(x.native))
+}
+@_transparent public func rint(_ x: CGFloat) -> CGFloat {
+  return CGFloat(rint(x.native))
+}
+@_transparent public func atan2(_ lhs: CGFloat, _ rhs: CGFloat) -> CGFloat {
+  return CGFloat(atan2(lhs.native, rhs.native))
+}
+@_transparent public func hypot(_ lhs: CGFloat, _ rhs: CGFloat) -> CGFloat {
+  return CGFloat(hypot(lhs.native, rhs.native))
+}
+@_transparent public func pow(_ lhs: CGFloat, _ rhs: CGFloat) -> CGFloat {
+  return CGFloat(pow(lhs.native, rhs.native))
+}
+@_transparent public func copysign(_ lhs: CGFloat, _ rhs: CGFloat) -> CGFloat {
+  return CGFloat(copysign(lhs.native, rhs.native))
+}
+@_transparent public func nextafter(_ lhs: CGFloat, _ rhs: CGFloat) -> CGFloat {
+  return CGFloat(nextafter(lhs.native, rhs.native))
+}
+@_transparent public func fdim(_ lhs: CGFloat, _ rhs: CGFloat) -> CGFloat {
+  return CGFloat(fdim(lhs.native, rhs.native))
+}
+@_transparent public func fmax(_ lhs: CGFloat, _ rhs: CGFloat) -> CGFloat {
+  return CGFloat(fmax(lhs.native, rhs.native))
+}
+@_transparent public func fmin(_ lhs: CGFloat, _ rhs: CGFloat) -> CGFloat {
+  return CGFloat(fmin(lhs.native, rhs.native))
+}
+@available(*, unavailable, message: "use the floatingPointClass property.")
+@_transparent public func fpclassify(_ x: CGFloat) -> Int {
+  fatalError("unavailable")
+}
+@available(*, unavailable, message: "use the isNormal property.")
+public func isnormal(_ value: CGFloat) -> Bool
+@available(*, unavailable, message: "use the isFinite property.")
+public func isfinite(_ value: CGFloat) -> Bool
+@available(*, unavailable, message: "use the isInfinite property.")
+public func isinf(_ value: CGFloat) -> Bool
+@available(*, unavailable, message: "use the isNaN property.")
+public func isnan(_ value: CGFloat) -> Bool
+@available(*, unavailable, message: "use the sign property.")
+public func signbit(_ value: CGFloat) -> Int
+@available(swift, deprecated: 4.2, renamed: "scalbn")
+@_transparent public func ldexp(_ x: CGFloat, _ n: Int) -> CGFloat {
+  return CGFloat(ldexp(x.native, n))
+}
+@available(swift, deprecated: 4.2, message: "use the exponent property.")
+@_transparent public func ilogb(_ x: CGFloat) -> Int {
+  return Int(x.exponent)
+}
+@_transparent public func lgamma(_ x: CGFloat) -> (CGFloat, Int) {
+  let (value, sign) = lgamma(x.native)
+  return (CGFloat(value), sign)
+}
+@_transparent public func remquo(_ x: CGFloat, _ y: CGFloat) -> (CGFloat, Int) {
+  let (rem, quo) = remquo(x.native, y.native)
+  return (CGFloat(rem), quo)
+}
+@available(swift, deprecated: 4.2, message: "use CGFloat(nan: CGFloat.RawSignificand) instead.")
+@_transparent public func nan(_ tag: String) -> CGFloat {
+  return CGFloat(nan(tag) as CGFloat.NativeType)
+}
+@_transparent public func j0(_ x: CGFloat) -> CGFloat {
+  return CGFloat(j0(Double(x.native)))
+}
+@_transparent public func j1(_ x: CGFloat) -> CGFloat {
+  return CGFloat(j1(Double(x.native)))
+}
+@_transparent public func jn(_ n: Int, _ x: CGFloat) -> CGFloat {
+  return CGFloat(jn(n, Double(x.native)))
+}
+@_transparent public func y0(_ x: CGFloat) -> CGFloat {
+  return CGFloat(y0(Double(x.native)))
+}
+@_transparent public func y1(_ x: CGFloat) -> CGFloat {
+  return CGFloat(y1(Double(x.native)))
+}
+@_transparent public func yn(_ n: Int, _ x: CGFloat) -> CGFloat {
+  return CGFloat(yn(n, Double(x.native)))
+}
+extension CGFloat : _CVarArgPassedAsDouble, _CVarArgAligned {
+  @_transparent public var _cVarArgEncoding: [Int] {
+    get {
+    return native._cVarArgEncoding
+  }
+  }
+  @_transparent public var _cVarArgAlignment: Int {
+    get {
+    return native._cVarArgAlignment
+  }
+  }
+}
+extension CGFloat : Codable {
+  @_transparent public init(from decoder: Decoder) throws {
+    let container = try decoder.singleValueContainer()
+    do {
+      self.native = try container.decode(NativeType.self)
+    } catch DecodingError.typeMismatch(let type, let context) {
+      // We may have encoded as a different type on a different platform. A
+      // strict fixed-format decoder may disallow a conversion, so let's try the
+      // other type.
+      do {
+        if NativeType.self == Float.self {
+          self.native = NativeType(try container.decode(Double.self))
+        } else {
+          self.native = NativeType(try container.decode(Float.self))
+        }
+      } catch {
+        // Failed to decode as the other type, too. This is neither a Float nor
+        // a Double. Throw the old error; we don't want to clobber the original
+        // info.
+        throw DecodingError.typeMismatch(type, context)
+      }
+    }
+  }
+  @_transparent public func encode(to encoder: Encoder) throws {
+    var container = encoder.singleValueContainer()
+    try container.encode(self.native)
+  }
+}
+@available(*, unavailable, message: "Use == instead")
+public func CGAffineTransformEqualToTransform(_ t1: CGAffineTransform, _ t2: CGAffineTransform) -> Bool
+@available(*, unavailable, message: "Use class var white/black/clear instead")
+public func CGColorGetConstantColor(_ colorName: CFString?) -> CGColor?
+@available(*, unavailable, message: "Use == instead")
+public func CGColorEqualToColor(_ color1: CGColor?, _ color2: CGColor?) -> Bool
+@available(*, unavailable, renamed: "getter:CGColor.components(self:)")
+public func CGColorGetComponents(_ color: CGColor?) -> UnsafePointer<CGFloat>
+@available(*, unavailable, message: "Use colorTable.count instead")
+public func CGColorSpaceGetColorTableCount(_ space: CGColorSpace?) -> Int
+@available(*, unavailable, renamed: "CGColorSpace.colorTable(self:_:)")
+public func CGColorSpaceGetColorTable(_ space: CGColorSpace?, _ table: UnsafeMutablePointer<UInt8>)
+@available(*, unavailable, message: "Use setLineDash(self:phase:lengths:)")
+public func CGContextSetLineDash(_ c: CGContext?, _ phase: CGFloat, _ lengths: UnsafePointer<CGFloat>, _ count: Int)
+@available(*, unavailable, message: "Use move(to:) instead")
+public func CGContextMoveToPoint(_ c: CGContext?, _ x: CGFloat, _ y: CGFloat)
+@available(*, unavailable, message: "Use addLine(to:) instead")
+public func CGContextAddLineToPoint(_ c: CGContext?, _ x: CGFloat, _ y: CGFloat)
+@available(*, unavailable, message: "Use addCurve(to:control1:control2:) instead")
+public func CGContextAddCurveToPoint(_ c: CGContext?, _ cp1x: CGFloat, _ cp1y: CGFloat, _ cp2x: CGFloat, _ cp2y: CGFloat, _ x: CGFloat, _ y: CGFloat)
+@available(*, unavailable, message: "Use addQuadCurve(to:control:)")
+public func CGContextAddQuadCurveToPoint(_ c: CGContext?, _ cpx: CGFloat, _ cpy: CGFloat, _ x: CGFloat, _ y: CGFloat)
+@available(*, unavailable, message: "Use addRects(_:)")
+public func CGContextAddRects(_ c: CGContext?, _ rects: UnsafePointer<CGRect>, _ count: Int)
+@available(*, unavailable, message: "Use addLines(between:)")
+public func CGContextAddLines(_ c: CGContext?, _ points: UnsafePointer<CGPoint>, _ count: Int)
+@available(*, unavailable, message: "Use addArc(center:radius:startAngle:endAngle:clockwise:)")
+public func CGContextAddArc(_ c: CGContext?, _ x: CGFloat, _ y: CGFloat, _ radius: CGFloat, _ startAngle: CGFloat, _ endAngle: CGFloat, _ clockwise: Int32)
+@available(*, unavailable, message: "Use addArc(self:x1:y1:x2:y2:radius:)")
+public func CGContextAddArcToPoint(_ c: CGContext?, _ x1: CGFloat, _ y1: CGFloat, _ x2: CGFloat, _ y2: CGFloat, _ radius: CGFloat)
+@available(*, unavailable, message: "Use fill(self:_:count:)")
+public func CGContextFillRects(_ c: CGContext?, _ rects: UnsafePointer<CGRect>, _ count: Int)
+@available(*, unavailable, message: "Use strokeLineSegments(self:between:count:)")
+public func CGContextStrokeLineSegments(_ c: CGContext?, _ points: UnsafePointer<CGPoint>, _ count: Int)
+@available(*, unavailable, message: "Use clip(to:)")
+public func CGContextClipToRects(_ c: CGContext?, _ rects: UnsafePointer<CGRect>, _ count: Int)
+@available(*, unavailable, message: "Use draw(_:in:)")
+public func CGContextDrawImage(_ c: CGContext?, _ rect: CGRect, _ image: CGImage?)
+@available(*, unavailable, message: "Use draw(_:in:byTiling:)")
+public func CGContextDrawTiledImage(_ c: CGContext?, _ rect: CGRect, _ image: CGImage?)
+@available(*, unavailable, renamed: "getter:CGContext.textPosition(self:)")
+public func CGContextGetTextPosition(_ c: CGContext?) -> CGPoint
+@available(*, unavailable, message: "Use var textPosition")
+public func CGContextSetTextPosition(_ c: CGContext?, _ x: CGFloat, _ y: CGFloat)
+@available(*, unavailable, message: "Use showGlyphs(_:at:)")
+public func CGContextShowGlyphsAtPositions(_ c: CGContext?, _ glyphs: UnsafePointer<CGGlyph>, _ Lpositions: UnsafePointer<CGPoint>, _ count: Int)
+@available(*, unavailable, renamed: "CGContext.fillPath(self:)")
+public func CGContextFillPath(_ c: CGContext?)
+@available(*, unavailable, message: "Use fillPath(using:)")
+public func CGContextEOFillPath(_ c: CGContext?)
+@available(*, unavailable, renamed: "CGContext.clip(self:)")
+public func CGContextClip(_ c: CGContext?)
+@available(*, unavailable, message: "Use clip(using:)")
+public func CGContextEOClip(_ c: CGContext?)
+@available(*, unavailable, renamed: "CGGetLastMouseDelta")
+public func CGGetLastMouseDelta(_ deltaX: UnsafeMutablePointer<Int32>?, _ deltaY: UnsafeMutablePointer<Int32>?)
+@available(*, unavailable, message: "Use divided(atDistance:from:)")
+public func CGRectDivide(_ rect: CGRect, _ slice: UnsafeMutablePointer<CGRect>, _ remainder: UnsafeMutablePointer<CGRect>, _ amount: CGFloat, _ edge: CGRectEdge)
+@available(*, unavailable, message: "Use CGPoint.init(dictionaryRepresentation:)")
+public func CGPointMakeWithDictionaryRepresentation(_ dict: CFDictionary?, _ point: UnsafeMutablePointer<CGPoint>) -> Bool
+@available(*, unavailable, message: "Use CGSize.init(dictionaryRepresentation:)")
+public func CGSizeMakeWithDictionaryRepresentation(_ dict: CFDictionary?, _ size: UnsafeMutablePointer<CGSize>) -> Bool
+@available(*, unavailable, message: "Use CGRect.init(dictionaryRepresentation:)")
+public func CGRectMakeWithDictionaryRepresentation(_ dict: CFDictionary?, _ rect: UnsafeMutablePointer<CGRect>) -> Bool
+@available(*, unavailable, renamed: "CGImage.copy(self:maskingColorComponents:)")
+public func CGImageCreateWithMaskingColors(_ image: CGImage?, _ components: UnsafePointer<CGFloat>) -> CGImage?
+@available(*, unavailable, message: "Use draw(_:in:)")
+public func CGContextDrawLayerInRect(_ context: CGContext?, _ rect: CGRect, _ layer: CGLayer?)
+@available(*, unavailable, message: "Use draw(_:at:)")
+public func CGContextDrawLayerAtPoint(_ context: CGContext?, _ point: CGPoint, _ layer: CGLayer?)
+@available(*, unavailable, message: "Use copy(byDashingWithPhase:lengths:transform:)")
+public func CGPathCreateCopyByDashingPath(_ path: CGPath?, _ transform: UnsafePointer<CGAffineTransform>, _ phase: CGFloat, _ lengths: UnsafePointer<CGFloat>, _ count: Int) -> CGPath?
+@available(*, unavailable, message: "Use copy(byStroking:lineWidth:lineCap:lineJoin:miterLimit:transform:)")
+public func CGPathCreateCopyByStrokingPath(_ path: CGPath?, _ transform: UnsafePointer<CGAffineTransform>, _ lineWidth: CGFloat, _ lineCap: CGLineCap, _ lineJoin: CGLineJoin, _ miterLimit: CGFloat) -> CGPath?
+@available(*, unavailable, message: "Use == instead")
+public func CGPathEqualToPath(_ path1: CGPath?, _ path2: CGPath?) -> Bool
+@available(*, unavailable, message: "Use move(to:transform:)")
+public func CGPathMoveToPoint(_ path: CGMutablePath?, _ m: UnsafePointer<CGAffineTransform>, _ x: CGFloat, _ y: CGFloat)
+@available(*, unavailable, message: "Use addLine(to:transform:)")
+public func CGPathAddLineToPoint(_ path: CGMutablePath?, _ m: UnsafePointer<CGAffineTransform>, _ x: CGFloat, _ y: CGFloat)
+@available(*, unavailable, message: "Use addCurve(to:control1:control2:transform:)")
+public func CGPathAddCurveToPoint(_ path: CGMutablePath?, _ m: UnsafePointer<CGAffineTransform>, _ cp1x: CGFloat, _ cp1y: CGFloat, _ cp2x: CGFloat, _ cp2y: CGFloat, _ x: CGFloat, _ y: CGFloat)
+@available(*, unavailable, message: "Use addQuadCurve(to:control:transform:)")
+public func CGPathAddQuadCurveToPoint(_ path: CGMutablePath?, _ m: UnsafePointer<CGAffineTransform>, _ cpx: CGFloat, _ cpy: CGFloat, _ x: CGFloat, _ y: CGFloat)
+@available(*, unavailable, message: "Use addRect(_:transform:)")
+public func CGPathAddRect(_ path: CGMutablePath?, _ m: UnsafePointer<CGAffineTransform>, _ rect: CGRect)
+@available(*, unavailable, message: "Use addRects(_:transform:)")
+public func CGPathAddRects(_ path: CGMutablePath?, _ m: UnsafePointer<CGAffineTransform>, _ rects: UnsafePointer<CGRect>, _ count: Int)
+@available(*, unavailable, message: "Use addLines(between:transform:)")
+public func CGPathAddLines(_ path: CGMutablePath?, _ m: UnsafePointer<CGAffineTransform>, _ points: UnsafePointer<CGPoint>, _ count: Int)
+@available(*, unavailable, message: "Use addEllipse(rect:transform:)")
+public func CGPathAddEllipseInRect(_ path: CGMutablePath?, _ m: UnsafePointer<CGAffineTransform>, _ rect: CGRect)
+@available(*, unavailable, message: "Use addRelativeArc(center:radius:startAngle:delta:transform:)")
+public func CGPathAddRelativeArc(_ path: CGMutablePath?, _ matrix: UnsafePointer<CGAffineTransform>, _ x: CGFloat, _ y: CGFloat, _ radius: CGFloat, _ startAngle: CGFloat, _ delta: CGFloat)
+@available(*, unavailable, message: "Use addArc(center:radius:startAngle:endAngle:clockwise:transform:)")
+public func CGPathAddArc(_ path: CGMutablePath?, _ m: UnsafePointer<CGAffineTransform>, _ x: CGFloat, _ y: CGFloat, _ radius: CGFloat, _ startAngle: CGFloat, _ endAngle: CGFloat, _ clockwise: Bool)
+@available(*, unavailable, message: "Use addArc(tangent1End:tangent2End:radius:transform:)")
+public func CGPathAddArcToPoint(_ path: CGMutablePath?, _ m: UnsafePointer<CGAffineTransform>, _ x1: CGFloat, _ y1: CGFloat, _ x2: CGFloat, _ y2: CGFloat, _ radius: CGFloat)
+@available(*, unavailable, message: "Use addPath(_:transform:)")
+public func CGPathAddPath(_ path1: CGMutablePath?, _ m: UnsafePointer<CGAffineTransform>, _ path2: CGPath?)
+@available(*, unavailable, message: "Use CGColor.white")
+public var kCGColorWhite: CFString {
+  get
+}
+@available(*, unavailable, message: "Use CGColor.black")
+public var kCGColorBlack: CFString {
+  get
+}
+@available(*, unavailable, message: "Use CGColor.clear")
+public var kCGColorClear: CFString {
+  get
+}

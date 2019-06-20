@@ -1,0 +1,19 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 1AABBE9C-47B0-3969-9231-1E9A85EBFC62' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/AccountsUI.framework/Versions/A/AccountsUI'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _ACUICreateAccountInPreferencePane, _ACUIIsNetworkAvailable, 
+                       _ACUIIsRunningInternetAccountsPref, _ACUILog, _ACUIOpenPreferencePaneWithArgs, 
+                       _ACUIRevealAccountInPreferencePane, _ACUIRevealAccountInPreferencePaneAndPromptToEnable, 
+                       _ACUIUID, _AccountsUIVersionNumber, _AccountsUIVersionString ]
+    objc-classes:    [ ACUIAccountDataclass, ACUIAccountDataclassCellView, ACUIAccountDetailsViewController, 
+                       ACUIAccountInfoViewController, ACUIAccountNotifier, ACUIAccountSetupViewController, 
+                       ACUIAccountTypeRowRadio, ACUIAccountTypesCellView, ACUIAccountTypesViewController, 
+                       ACUIAccountsTableViewController, ACUICertificatePanelManager, 
+                       ACUICredentialPromptViewController, ACUIInvisibleButton, ACUIPluginManager, 
+                       ACUISetupManagerViewController, ACUITableCellView, ACUIUtilities, 
+                       ACUIViewController, ACUIWebAuthViewController, ACUIWebLoginViewController ]
+...

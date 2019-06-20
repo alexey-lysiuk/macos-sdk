@@ -1,0 +1,100 @@
+// swift-interface-format-version: 1.0
+// swift-tools-version: Apple Swift version 5.1 effective-4.1.50 (swiftlang-1100.8.32.26 clang-1100.0.18.2)
+// swift-module-flags: -target x86_64-apple-ios13.0-macabi -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftAVFoundation -swift-version 4 -O -enforce-exclusivity=unchecked -module-name AVFoundation
+@_exported import AVFoundation
+import CoreGraphics
+import CoreMedia
+import Foundation
+import Swift
+extension AVCaptureVideoDataOutput {
+  @available(OSX 10.7, iOS 5.0, *)
+  @available(swift, obsoleted: 4.0)
+  @nonobjc public var availableVideoCVPixelFormatTypes: [Any]! {
+    get
+  }
+  @available(swift 4.0)
+  @available(OSX 10.7, iOS 5.0, *)
+  @nonobjc public var availableVideoPixelFormatTypes: [OSType] {
+    get
+  }
+}
+@available(watchOS 6.0, *)
+extension AVError {
+  @available(swift, obsoleted: 4.2, message: "Use `device: AVCaptureDevice?` instead")
+  public var device: String? {
+    get
+  }
+  @available(swift 4.2)
+  public var device: AVCaptureDevice? {
+    get
+  }
+  @available(watchOS 6.0, *)
+  public var time: CMTime? {
+    get
+  }
+  @available(watchOS 6.0, *)
+  public var fileSize: Int64? {
+    get
+  }
+  @available(watchOS 6.0, *)
+  public var processID: Int? {
+    get
+  }
+  @available(watchOS 6.0, *)
+  public var recordingSuccessfullyFinished: Bool? {
+    get
+  }
+  @available(watchOS 6.0, *)
+  @available(swift, obsoleted: 4.2)
+  public var mediaType: String? {
+    get
+  }
+  @available(swift 4.2)
+  @available(watchOS 6.0, *)
+  public var mediaType: AVMediaType? {
+    get
+  }
+  @available(watchOS 6.0, *)
+  public var mediaSubtypes: [Int]? {
+    get
+  }
+  @available(swift 4.2)
+  @available(OSX 10.10, iOS 8.0, tvOS 9.0, watchOS 6.0, *)
+  public var presentationTimeStamp: CMTime? {
+    get
+  }
+  @available(swift 4.2)
+  @available(OSX 10.10, iOS 8.0, tvOS 9.0, watchOS 6.0, *)
+  public var persistentTrackID: CMPersistentTrackID? {
+    get
+  }
+  @available(swift 4.2)
+  @available(OSX 10.10, iOS 8.0, tvOS 9.0, watchOS 6.0, *)
+  public var fileType: AVFileType? {
+    get
+  }
+}
+@available(watchOS 6.0, *)
+extension CMTime : _ObjectiveCBridgeable {
+  public func _bridgeToObjectiveC() -> NSValue
+  public static func _forceBridgeFromObjectiveC(_ source: NSValue, result: inout CMTime?)
+  public static func _conditionallyBridgeFromObjectiveC(_ source: NSValue, result: inout CMTime?) -> Bool
+  public static func _unconditionallyBridgeFromObjectiveC(_ source: NSValue?) -> CMTime
+  public typealias _ObjectiveCType = Foundation.NSValue
+}
+@available(watchOS 6.0, *)
+extension CMTimeRange : _ObjectiveCBridgeable {
+  public func _bridgeToObjectiveC() -> NSValue
+  public static func _forceBridgeFromObjectiveC(_ source: NSValue, result: inout CMTimeRange?)
+  public static func _conditionallyBridgeFromObjectiveC(_ source: NSValue, result: inout CMTimeRange?) -> Bool
+  public static func _unconditionallyBridgeFromObjectiveC(_ source: NSValue?) -> CMTimeRange
+  public typealias _ObjectiveCType = Foundation.NSValue
+}
+@available(watchOS 6.0, *)
+extension CMTimeMapping : _ObjectiveCBridgeable {
+  public func _bridgeToObjectiveC() -> NSValue
+  public static func _forceBridgeFromObjectiveC(_ source: NSValue, result: inout CMTimeMapping?)
+  public static func _conditionallyBridgeFromObjectiveC(_ source: NSValue, result: inout CMTimeMapping?) -> Bool
+  public static func _unconditionallyBridgeFromObjectiveC(_ source: NSValue?) -> CMTimeMapping
+  public typealias _ObjectiveCType = Foundation.NSValue
+}

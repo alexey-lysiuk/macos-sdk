@@ -1,0 +1,17 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 24728A0C-6B08-377D-920B-CD0FD5174458' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/SystemMigrationUtils.framework/Versions/A/SystemMigrationUtils'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _SMAnalyticsManagerYAACallbackNameExtractEntryACL, _SMAnalyticsManagerYAACallbackNameExtractEntryBegin, 
+                       _SMAnalyticsManagerYAACallbackNameExtractEntryEnd, _SMAnalyticsManagerYAACallbackNameExtractEntryProgress, 
+                       _SMAnalyticsManagerYAACallbackNameExtractEntryValidate, _SMAnalyticsManagerYAACallbackNameMetadataBegin, 
+                       _SystemMigrationUtilsVersionNumber, _SystemMigrationUtilsVersionString, 
+                       _logBatteryState ]
+    objc-classes:    [ SMAnalyticsManager, SMConnectionFamilyIcons, SMLogging, SMPathSizer, 
+                       SMSystemConfiguration, SMSystem_FileManager_DiskBased, SMSystem_FileManager_ROSV, 
+                       SMSystem_FileManager_Traditional, SMTask, SMToolBox, SMUMessageTracing, 
+                       SMUtilities ]
+...

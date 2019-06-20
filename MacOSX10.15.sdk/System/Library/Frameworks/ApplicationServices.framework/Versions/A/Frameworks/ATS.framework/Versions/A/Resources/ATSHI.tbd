@@ -1,0 +1,9 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 1042A8F6-B16F-378C-BFC5-A2190824FD98', 'x86_64: 1042A8F6-B16F-378C-BFC5-A2190824FD98' ]
+platform:        zippered
+install-name:    '/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Resources/ATSHI.dylib'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _ATSCopyAutoActivationConfirmDialogResult, _ATSIsApplicationReadyForAutoFontActivation ]
+...

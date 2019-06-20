@@ -1,0 +1,9 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 5EA851DB-16AA-396C-A8CA-C85E078B261D' ]
+platform:        macosx
+install-name:    '/System/Library/Frameworks/OpenCL.framework/Versions/A/Libraries/Vectorizer.dylib'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _createVectorizerPass, _getVectorizerFunctions, _getVectorizerWidths ]
+...

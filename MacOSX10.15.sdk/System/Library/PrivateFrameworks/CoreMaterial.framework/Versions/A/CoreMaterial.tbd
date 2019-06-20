@@ -1,0 +1,61 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 6016BB4C-B525-3F8D-AA3F-2B7D463AEA08', 'x86_64: 6016BB4C-B525-3F8D-AA3F-2B7D463AEA08' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/CoreMaterial.framework/Versions/A/CoreMaterial'
+exports:         
+  - archs:           [ x86_64 ]
+    allowable-clients: [ CoreMaterialTester, MaterialKit, Materials, SpringBoard, 
+                         SpringBoard-Tests, SpringBoardCore, UIKitCore, UIKitester ]
+    symbols:         [ _CoreMaterialVersionNumber, _CoreMaterialVersionString, _MTAllMaterialConfigurations, 
+                       _MTAllMaterialOverlayConfigurations, _MTAllVisualStyles, _MTCAColorMatrixCreateDictionaryRepresentation, 
+                       _MTCAColorMatrixEqualToMatrix, _MTCAColorMatrixInterpolate, 
+                       _MTCAColorMatrixIsDictionaryRepresentation, _MTCAColorMatrixIsIdentity, 
+                       _MTCAColorMatrixMakeWithDictionaryRepresentation, _MTCAMaterialDescriptionForRecipeAndConfiguration, 
+                       _MTCompareBlurInputQualities, _MTCompareObjectsWithOrder, 
+                       _MTComposedFilterCreateDictionaryRepresentation, _MTCoreMaterialConfigurationAuxiliaryOverlay, 
+                       _MTCoreMaterialConfigurationBaseMaterial, _MTCoreMaterialConfigurationBaseOverlay, 
+                       _MTCoreMaterialConfigurationNone, _MTCoreMaterialConfigurationPrimaryOverlay, 
+                       _MTCoreMaterialConfigurationSecondaryOverlay, _MTCoreMaterialRecipeKnowledgeBackground, 
+                       _MTCoreMaterialRecipeKnowledgePlatters, _MTCoreMaterialRecipeKnowledgePlattersDark, 
+                       _MTCoreMaterialRecipeModules, _MTCoreMaterialRecipeModulesSheer, 
+                       _MTCoreMaterialRecipeModulesSheerSimple, _MTCoreMaterialRecipeModulesSimple, 
+                       _MTCoreMaterialRecipeNone, _MTCoreMaterialRecipePlatformChromeDark, 
+                       _MTCoreMaterialRecipePlatformChromeLight, _MTCoreMaterialRecipePlatformContentDark, 
+                       _MTCoreMaterialRecipePlatformContentLight, _MTCoreMaterialRecipePlatformContentThickDark, 
+                       _MTCoreMaterialRecipePlatformContentThickLight, _MTCoreMaterialRecipePlatformContentThinDark, 
+                       _MTCoreMaterialRecipePlatformContentThinLight, _MTCoreMaterialRecipePlatformContentUltraThinDark, 
+                       _MTCoreMaterialRecipePlatformContentUltraThinLight, _MTCoreMaterialRecipePlatters, 
+                       _MTCoreMaterialRecipePlattersDark, _MTCoreMaterialRecipePreviewBackground, 
+                       _MTCoreMaterialVisualStyleCategoryFill, _MTCoreMaterialVisualStyleCategoryNone, 
+                       _MTCoreMaterialVisualStyleCategoryStroke, _MTCoreMaterialVisualStyleHighlight, 
+                       _MTCoreMaterialVisualStyleNone, _MTCoreMaterialVisualStylePrimary, 
+                       _MTCoreMaterialVisualStyleQuaternary, _MTCoreMaterialVisualStyleSecondary, 
+                       _MTCoreMaterialVisualStyleSeparator, _MTCoreMaterialVisualStyleTertiary, 
+                       _MTDefaultLuminanceColorMap, _MTDiscoveredMaterialRecipes, 
+                       _MTDynamicBlurRadiusGraphicsQuality, _MTFloatIsOne, _MTFloatIsZero, 
+                       _MTIdentityValueForFilter, _MTIsValidBlurInputQuality, _MTLogConfiguration, 
+                       _MTLogMaterials, _MTLogSubsystem, _MTMaterialCreateDictionaryRepresentation, 
+                       _MTMaterialSettingsForRecipe, _MTMaterialSettingsForRecipeFromBundle, 
+                       _MTPreferredDisplayModeScale, _MTProtocolGetProperties, _MTRegisterCoreMaterialLogging, 
+                       _MTSharedVisualStyleSetForRecipeAndCategory, _MTSharedVisualStyleSetForStyleNameFromBundle, 
+                       _MTTintingFilteringSettingsCreateDictionaryRepresentation, 
+                       _MTVisualStylingCreateDictionaryRepresentation, _MTVisualStylingSettingsCreateDictionaryRepresentation, 
+                       __IdentityPropertyForFilterType, __MTCreateDefaultLuminanceColorMap, 
+                       __MTCurrentProduct, __MTDefaultBackdropScaleAdjustmentForWeighting, 
+                       __MTLowQualityDevicesForDynamicBlurRadius, _kMTCAFilterPropertyNameInputAmount, 
+                       _kMTCAFilterPropertyNameInputColor0, _kMTCAFilterPropertyNameInputColor1, 
+                       _kMTCAFilterPropertyNameInputColorBurn, _kMTCAFilterPropertyNameInputColorDarken, 
+                       _kMTCAFilterPropertyNameInputColorDodge, _kMTCAFilterPropertyNameInputColorLighten, 
+                       _kMTCAFilterPropertyNameInputColorMap, _kMTCAFilterPropertyNameInputColorMatrix, 
+                       _kMTCAFilterPropertyNameInputDarkenAll, _kMTCAFilterPropertyNameInputDarkenShadows, 
+                       _kMTCAFilterPropertyNameInputDither, _kMTCAFilterPropertyNameInputIncreaseSaturation, 
+                       _kMTCAFilterPropertyNameInputNormalizeEdges, _kMTCAFilterPropertyNameInputQuality, 
+                       _kMTCAFilterPropertyNameInputRadius, _kMTCAFilterPropertyNameInputReversed, 
+                       _kMTCAFilterPropertyNameType, _kMTCAFilterPropertyNameinputValues ]
+    objc-classes:    [ MTColor, MTCoreMaterialVisualStyling, MTCoreMaterialVisualStylingProvider, 
+                       MTMaterialLayer, MTMaterialSettingsInterpolator, MTRGBColor, 
+                       MTRecipeMaterialSettings, MTTintingFilteringMaterialSettings, 
+                       MTTintingMaterialSettings, MTVisualStyleSet, MTWhiteColor ]
+    objc-ivars:      [ MTColor._cachedColor ]
+...

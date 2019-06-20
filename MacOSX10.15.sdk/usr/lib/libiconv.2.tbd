@@ -1,0 +1,13 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 440D56AC-60CF-366B-8498-07322E64906B', 'x86_64: 440D56AC-60CF-366B-8498-07322E64906B' ]
+platform:        zippered
+install-name:    '/usr/lib/libiconv.2.dylib'
+current-version: 7
+compatibility-version: 7
+exports:         
+  - archs:           [ x86_64 ]
+    re-exports:      [ '/usr/lib/libcharset.1.dylib' ]
+    symbols:         [ __libiconv_version, _iconv, _iconv_canonicalize, _iconv_close, 
+                       _iconv_open, _iconvctl, _iconvlist, _libiconv_set_relocation_prefix ]
+...

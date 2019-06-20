@@ -1,0 +1,12 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: B68C9E48-3881-35E4-B967-EB1560845FC2', 'x86_64: B68C9E48-3881-35E4-B967-EB1560845FC2' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/DuetRecommendation.framework/DuetRecommendation'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _DuetRecommendationVersionNumber, _DuetRecommendationVersionString ]
+    objc-classes:    [ _DRInMemoryTopicInterestModel, _DRPaths, _DRTopicActionEntry, 
+                       _DRTopicEnumerationQuery, _DRTopicInterestModel, _DRTopicInterestSummary, 
+                       _DRTopicStatisticsQuery ]
+...

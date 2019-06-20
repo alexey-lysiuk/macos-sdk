@@ -1,0 +1,14 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: C26CB5D6-D70B-361A-83E9-87E4F3484B54' ]
+platform:        uikitformac
+install-name:    '/System/iOSSupport/System/Library/Frameworks/CoreNFC.framework/Versions/A/CoreNFC'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _NFCErrorDomain, _NFCISO15693TagResponseErrorKey, _NFCTagResponseUnexpectedLengthErrorKey ]
+    objc-classes:    [ NFCISO15693CustomCommandConfiguration, NFCISO15693ReadMultipleBlocksConfiguration, 
+                       NFCISO15693ReaderSession, NFCISO7816APDU, NFCNDEFMessage, 
+                       NFCNDEFPayload, NFCNDEFReaderSession, NFCReaderSession, NFCTagCommandConfiguration, 
+                       NFCTagReaderSession, NFCVASCommandConfiguration, NFCVASReaderSession, 
+                       NFCVASResponse ]
+...

@@ -1,0 +1,13 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 59D99CD3-F8A0-3691-A7C0-4C3ED197E5D8', 'x86_64: 59D99CD3-F8A0-3691-A7C0-4C3ED197E5D8' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/login.framework/Versions/A/Frameworks/loginsupport.framework/Versions/A/loginsupport'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _DBLoggerMaxFlag, _DBLoggerStartFlag, _DBLoggingGetMaskForController, 
+                       _DBLoggingLogWithFormat, _DBLoggingSetLogFileForController, 
+                       _DBLoggingSetMaskForController, _DBLoggingSetSignalEnabled, 
+                       _DBLoggingStartWithController, _DBLoggingStop, _DBLoggingStopController, 
+                       _gDBLoggingMasks, _kUnknownFacility, _kUnknownProcess ]
+...

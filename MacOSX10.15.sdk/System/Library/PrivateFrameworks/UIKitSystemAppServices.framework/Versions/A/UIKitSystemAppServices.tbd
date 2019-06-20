@@ -1,0 +1,35 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: A8D041F1-E723-3AA3-A333-C6643DFF8604', 'x86_64: A8D041F1-E723-3AA3-A333-C6643DFF8604' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/UIKitSystemAppServices.framework/Versions/A/UIKitSystemAppServices'
+current-version: 166.11
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _UIKitSystemAppServicesVersionNumber, _UIKitSystemAppServicesVersionString, 
+                       _USSAppManagerLog, _USSClientServiceLog, _USSCreateDeserializedNSSecureEncodableObjectOfClassFromXPCDictionaryWithKey, 
+                       _USSDecodeConformingObjectFromDictionary, _USSDecodeObjectFromDictionary, 
+                       _USSDeserializerWhiteListClass, _USSEncodeObject, _USSEncodeObjectToDictionary, 
+                       _USSErrorDomain, _USSGetDictionaryArray, _USSGetDictionaryData, 
+                       _USSGetDictionaryNumber, _USSGetDictionaryString, _USSGetDictionaryUUID, 
+                       _USSNewClientToServerXPCInterface, _USSNewDaemonClientToServerXPCInterface, 
+                       _USSNewServerToClientXPCInterface, _USSNotificationNameConnected, 
+                       _USSNotificationNameSceneUpdate, _USSNotificationNameTerminate, 
+                       _USSSceneResizeReplyKeyFencePort, _USSSceneUpdateNotificationKeyContextID, 
+                       _USSSceneUpdateNotificationKeyIdentifier, _USSSerializeNSSecureEncodableObjectToXPCDictionaryWithKey, 
+                       _USSServicesPayloadClassNameKey, _USSServicesPayloadKey, _USSSetDictionaryArray, 
+                       _USSTerminateNotificationKeyReason, _USSWhiteListedClasses, 
+                       _USSXPCNotificationKeyNotificationName, __isDifferentiateWithoutColorEnabled, 
+                       __isIncreaseContrastEnabled, __isInvertColorsEnabled, __isReduceMotionEnabled, 
+                       __isReduceTransparencyEnabled, _kUSSAccessibilitySettingsDifferentiateWithoutColorKey, 
+                       _kUSSAccessibilitySettingsIncreaseContrastKey, _kUSSAccessibilitySettingsInvertColorsKey, 
+                       _kUSSAccessibilitySettingsReduceMotionKey, _kUSSAccessibilitySettingsReduceTransparencyKey, 
+                       _kUSSServicesClientServiceName, _kUSSServicesDaemonClientServiceName ]
+    objc-classes:    [ USSAccessibilityService, USSApplicationGracefulTerminationRequest, 
+                       USSBackgroundLaunchRequest, USSConnectedNotification, USSDaemonServicesClient, 
+                       USSNotification, USSOpenURLRequest, USSRemoteNotificationReply, 
+                       USSRemoteNotificationRequest, USSSceneActiveRequest, USSSceneResizeReply, 
+                       USSSceneResizeRequest, USSSceneUpdateNotification, USSServicesClient, 
+                       USSTerminateNotification, USSUserActivityContinuationRequest, 
+                       USSUserNotificationResponseRequest ]
+...

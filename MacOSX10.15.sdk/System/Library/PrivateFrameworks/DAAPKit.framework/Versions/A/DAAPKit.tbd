@@ -1,0 +1,11 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 0A1FD226-6DD4-305D-A6C3-BD32BC151B91', 'x86_64: 0A1FD226-6DD4-305D-A6C3-BD32BC151B91' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/DAAPKit.framework/Versions/A/DAAPKit'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _DKDAAPParserErrorDomain, _DKDAAPWriterErrorDomain, _DKParseUtilitiesCopyStringFromBytes, 
+                       _NSStringFromDAAPCode, _NSStringFromDAAPValueType ]
+    objc-classes:    [ DKDAAPParser, DKDAAPWriter ]
+...

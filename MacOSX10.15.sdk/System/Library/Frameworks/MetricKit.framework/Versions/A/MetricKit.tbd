@@ -1,0 +1,26 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 1016BEC2-983F-3682-B4EF-DDE8704F69F4', 'x86_64: 1016BEC2-983F-3682-B4EF-DDE8704F69F4' ]
+platform:        zippered
+install-name:    '/System/Library/Frameworks/MetricKit.framework/Versions/A/MetricKit'
+exports:         
+  - archs:           [ x86_64 ]
+    re-exports:      [ '/System/Library/PrivateFrameworks/SignpostMetrics.framework/Versions/A/SignpostMetrics' ]
+    symbols:         [ _MetricKitVersionNumber, _MetricKitVersionString ]
+    objc-classes:    [ MXAppLaunchMetric, MXAppResponsivenessMetric, MXAppRunTimeMetric, 
+                       MXAverage, MXCPUMetric, MXCellularConditionMetric, MXDiskIOMetric, 
+                       MXDisplayMetric, MXFramerateMetric, MXGPUMetric, MXHistogram, 
+                       MXHistogramBucket, MXLocationActivityMetric, MXMemoryMetric, 
+                       MXMetaData, MXMetric, MXMetricManager, MXMetricPayload, MXNetworkTransferMetric, 
+                       MXResourceExceptionMetric, MXSignpostIntervalData, MXSignpostMetric, 
+                       MXUnitAveragePixelLuminance, MXUnitSignalBars ]
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 44BB1179-0B72-38E1-A4E1-B295481F01E4' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/SignpostMetrics.framework/Versions/A/SignpostMetrics'
+current-version: 32
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ __MXSignpostMetricsSnapshot ]
+...

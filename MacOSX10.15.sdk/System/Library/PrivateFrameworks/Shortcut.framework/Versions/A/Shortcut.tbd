@@ -1,0 +1,15 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: CD165F53-B63A-3BED-AA5D-42F97DE692A4' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/Shortcut.framework/Versions/A/Shortcut'
+current-version: 105
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _SCTHideHelpPointerForItem, _SCTInitShortcut, _SCTIsDefaultHelpBookSearchEnabled, 
+                       _SCTRegisterSearchHandler, _SCTSetDefaultHelpBookSearchEnabled, 
+                       _SCTShowHelpPointerForItem, _SCTToggleHelpMenu, _SCTUnregisterSearchHandler, 
+                       _SCTUserInterfaceItemPerformActionForItem, _SCTUserInterfaceItemRangeOfStringMatching, 
+                       _SCTUserInterfaceItemSearchScreenRectForItem, _SCTUserInterfaceItemSearchTitleForItem, 
+                       _SCTUserInterfaceItemShowItem ]
+...

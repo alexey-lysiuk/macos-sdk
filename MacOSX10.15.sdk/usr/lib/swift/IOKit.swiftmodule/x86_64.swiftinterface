@@ -1,0 +1,161 @@
+// swift-interface-format-version: 1.0
+// swift-tools-version: Apple Swift version 5.1 effective-4.1.50 (swiftlang-1100.8.32.26 clang-1100.0.18.2)
+// swift-module-flags: -target x86_64-apple-macosx10.15 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftIOKit -swift-version 4 -O -enforce-exclusivity=unchecked -module-name IOKit
+@_exported import IOKit
+import Swift
+public var kIOReturnError: IOReturn {
+  get
+}
+public var kIOReturnNoMemory: IOReturn {
+  get
+}
+public var kIOReturnNoResources: IOReturn {
+  get
+}
+public var kIOReturnIPCError: IOReturn {
+  get
+}
+public var kIOReturnNoDevice: IOReturn {
+  get
+}
+public var kIOReturnNotPrivileged: IOReturn {
+  get
+}
+public var kIOReturnBadArgument: IOReturn {
+  get
+}
+public var kIOReturnLockedRead: IOReturn {
+  get
+}
+public var kIOReturnLockedWrite: IOReturn {
+  get
+}
+public var kIOReturnExclusiveAccess: IOReturn {
+  get
+}
+public var kIOReturnBadMessageID: IOReturn {
+  get
+}
+public var kIOReturnUnsupported: IOReturn {
+  get
+}
+public var kIOReturnVMError: IOReturn {
+  get
+}
+public var kIOReturnInternalError: IOReturn {
+  get
+}
+public var kIOReturnIOError: IOReturn {
+  get
+}
+public var kIOReturnCannotLock: IOReturn {
+  get
+}
+public var kIOReturnNotOpen: IOReturn {
+  get
+}
+public var kIOReturnNotReadable: IOReturn {
+  get
+}
+public var kIOReturnNotWritable: IOReturn {
+  get
+}
+public var kIOReturnNotAligned: IOReturn {
+  get
+}
+public var kIOReturnBadMedia: IOReturn {
+  get
+}
+public var kIOReturnStillOpen: IOReturn {
+  get
+}
+public var kIOReturnRLDError: IOReturn {
+  get
+}
+public var kIOReturnDMAError: IOReturn {
+  get
+}
+public var kIOReturnBusy: IOReturn {
+  get
+}
+public var kIOReturnTimeout: IOReturn {
+  get
+}
+public var kIOReturnOffline: IOReturn {
+  get
+}
+public var kIOReturnNotReady: IOReturn {
+  get
+}
+public var kIOReturnNotAttached: IOReturn {
+  get
+}
+public var kIOReturnNoChannels: IOReturn {
+  get
+}
+public var kIOReturnNoSpace: IOReturn {
+  get
+}
+public var kIOReturnPortExists: IOReturn {
+  get
+}
+public var kIOReturnCannotWire: IOReturn {
+  get
+}
+public var kIOReturnNoInterrupt: IOReturn {
+  get
+}
+public var kIOReturnNoFrames: IOReturn {
+  get
+}
+public var kIOReturnMessageTooLarge: IOReturn {
+  get
+}
+public var kIOReturnNotPermitted: IOReturn {
+  get
+}
+public var kIOReturnNoPower: IOReturn {
+  get
+}
+public var kIOReturnNoMedia: IOReturn {
+  get
+}
+public var kIOReturnUnformattedMedia: IOReturn {
+  get
+}
+public var kIOReturnUnsupportedMode: IOReturn {
+  get
+}
+public var kIOReturnUnderrun: IOReturn {
+  get
+}
+public var kIOReturnOverrun: IOReturn {
+  get
+}
+public var kIOReturnDeviceError: IOReturn {
+  get
+}
+public var kIOReturnNoCompletion: IOReturn {
+  get
+}
+public var kIOReturnAborted: IOReturn {
+  get
+}
+public var kIOReturnNoBandwidth: IOReturn {
+  get
+}
+public var kIOReturnNotResponding: IOReturn {
+  get
+}
+public var kIOReturnIsoTooOld: IOReturn {
+  get
+}
+public var kIOReturnIsoTooNew: IOReturn {
+  get
+}
+public var kIOReturnNotFound: IOReturn {
+  get
+}
+public var kIOReturnInvalid: IOReturn {
+  get
+}

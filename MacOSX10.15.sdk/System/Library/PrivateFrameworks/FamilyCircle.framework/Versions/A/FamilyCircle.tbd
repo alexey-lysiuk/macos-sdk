@@ -1,0 +1,18 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: BCAF7140-233D-3735-9BF4-3F48796DDCAE', 'x86_64: BCAF7140-233D-3735-9BF4-3F48796DDCAE' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/FamilyCircle.framework/Versions/A/FamilyCircle'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _FAErrorDomain, _FAErrorResponseUserInfoKey, _FAFamilyUpdateNotification, 
+                       _FAMemberFlagScreenTime, __FALogSystem, _kFAServicePasswordOption, 
+                       _kFAServiceUsernameOption ]
+    objc-classes:    [ FAAddFamilyMemberRequest, FAClearFamilyCircleCacheRequest, 
+                       FADispatchFamilyPushRequest, FAFamilyCircle, FAFamilyCircleRequest, 
+                       FAFamilyCloudKitProperties, FAFamilyMember, FAFamilySettings, 
+                       FAFetchFamilyCircleRequest, FAFetchFamilyPhotoRequest, FAHandleFamilyEventPushNotificationRequest, 
+                       FAPushNotificationHandler, FARegisterPushTokenRequest, FARemoveFamilyMemberRequest, 
+                       FAUpdateFamilyMemberFlagRequest, _FAFamilyCircleRequestConnectionFactory, 
+                       _FAFamilyCircleRequestConnectionProvider ]
+...

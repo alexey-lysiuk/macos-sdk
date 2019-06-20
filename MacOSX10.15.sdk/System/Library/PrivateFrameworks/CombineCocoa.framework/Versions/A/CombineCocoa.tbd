@@ -1,0 +1,11 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 087C356F-49DF-3D0D-8DA6-73EB6200FEC9', 'x86_64: 087C356F-49DF-3D0D-8DA6-73EB6200FEC9' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/CombineCocoa.framework/Versions/A/CombineCocoa'
+current-version: 111.10
+compatibility-version: 0
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _CombineCocoaVersionNumber, _CombineCocoaVersionString ]
+...

@@ -1,0 +1,11 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 97F01AA2-EBDA-35D9-BDDD-AC3FE0FB5853', 'x86_64: 97F01AA2-EBDA-35D9-BDDD-AC3FE0FB5853' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/iWorkXPC.framework/Versions/A/iWorkXPC'
+current-version: 9
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _iWorkXPCVersionNumber, _iWorkXPCVersionString ]
+    objc-classes:    [ IWXPCFrameworkPlaceholder ]
+...

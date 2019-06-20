@@ -1,0 +1,17 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 65FFF3E1-FE34-3CB2-9E15-6885189D3DF5' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/FontServices.framework/libhvf.dylib'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ __ZN3hvf14HVFontRenderer16newWithTableDataEPKvm, __ZN3hvf14HVFontRenderer17newWithGlyphTableENSt3__110shared_ptrIN4hvgl10GlyphTableEEE, 
+                       __ZN3hvf14HVFontRendererD0Ev, __ZN3hvf14HVFontRendererD1Ev, 
+                       __ZN3hvf14HVFontRendererD2Ev, __ZN4hvgl10GlyphTableD0Ev, __ZN4hvgl10GlyphTableD1Ev, 
+                       __ZN4hvgl10GlyphTableD2Ev, __ZN4hvgl10PartLoaderD0Ev, __ZN4hvgl10PartLoaderD1Ev, 
+                       __ZN4hvgl10PartLoaderD2Ev, __ZNK4hvgl11ShapeLoader11isCompositeEv, 
+                       __ZNK4hvgl15CompositeLoader11isCompositeEv, __ZTVN3hvf14HVFontRendererE, 
+                       __ZTVN4hvgl10GlyphTableE, __ZTVN4hvgl10PartLoaderE, __ZTVN4hvgl11ShapeLoaderE, 
+                       __ZTVN4hvgl15CompositeLoaderE ]
+    objc-classes:    [ HVFontRenderer ]
+...

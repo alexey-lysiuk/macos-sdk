@@ -1,0 +1,28 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: A645541C-09D2-3C5F-9628-5EB7D8F78466', 'x86_64: A645541C-09D2-3C5F-9628-5EB7D8F78466' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/SiriTasks.framework/Versions/A/SiriTasks'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _STStringFromGenericIntentResponseCode, _STWorkoutErrorDomain ]
+    objc-classes:    [ STAlarmAction, STAlarmModification, STAlarmShowAlarmAndPerformActionRequest, 
+                       STCreateAlarmAction, STDeleteAlarmAction, STEmailMessage, 
+                       STGenericIntent, STGenericIntentDateRange, STGenericIntentGroup, 
+                       STGenericIntentHelper, STGenericIntentLocation, STGenericIntentPerson, 
+                       STGenericIntentRequest, STGenericIntentResponse, STGenericIntentTopic, 
+                       STMapItem, STMapViewport, STMapViewportVertex, STMediaChannel, 
+                       STPromptManeuverRequest, STReminderListObject, STSendDraftMessageRequest, 
+                       STSendEmailRequest, STShowActivityRequest, STShowAlarmAction, 
+                       STShowChannelRequest, STShowDailyWeatherForecastRequest, STShowDraftMessageRequest, 
+                       STShowDraftMessageUsageResult, STShowHourlyWeatherForecastRequest, 
+                       STShowMapPointRequest, STShowMapsSearchResultsRequest, STShowMessageRequest, 
+                       STShowStockOverviewRequest, STShowWeatherConditionsRequest, 
+                       STShowWeatherCurrentConditionsRequest, STShowWeatherForecastRequest, 
+                       STStartNavigationRequest, STStartWorkoutRequest, STStopNavigationRequest, 
+                       STStopwatchShowAndPerformStopwatchAction, STSurfPaymentAction, 
+                       STTemperature, STTimerShowTimerAndPerformAction, STUpdateAlarmAction, 
+                       STUpdateWatchListRequest, STWatchFace, STWeatherAttributes, 
+                       STWeatherCurrentConditions, STWeatherHourlyForecast, STWeatherUnits, 
+                       STWorkoutSetStateRequest ]
+...

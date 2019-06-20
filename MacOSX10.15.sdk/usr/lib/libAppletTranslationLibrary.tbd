@@ -1,0 +1,9 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: A30FAB35-D1A8-35D9-A49E-846F18F5D975', 'x86_64: A30FAB35-D1A8-35D9-A49E-846F18F5D975' ]
+platform:        zippered
+install-name:    '/usr/lib/libAppletTranslationLibrary.dylib'
+exports:         
+  - archs:           [ x86_64 ]
+    objc-classes:    [ AppletTranslator ]
+...

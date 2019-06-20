@@ -1,0 +1,33 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 52D61738-74DB-35D2-9451-716C8F10C708' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/HomeKitBackingStore.framework/Versions/A/HomeKitBackingStore'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _HMBCKErrorNoRetryTime, _HMBStringFromLoggingVisibility, _HMFBackingStoreLocalErrorExtendedCode, 
+                       _HMFBackingStoreLocalErrorStatement, _HMFBackingStoreLocalErrorText, 
+                       _hmbBindDataSQLite3, _hmbBindIntSQLite3, _hmbBindStringSQLite3, 
+                       _hmbBindUUIDSQLite3, _hmbNSUIntegerWithSQLite3Column, _kBackingStoreTransactionResult, 
+                       _kCloudVersionKey, _kHMBCloudDatabaseIsInternalObjectKey, 
+                       _kHMBCloudDatabaseModelIDKey, _kHMBCloudDatabaseModelTypeKey, 
+                       _kHMBCloudDatabaseParentModelIDKey, _kHMBCloudDatabasePushDeviceKey, 
+                       _kHMBCloudDatabasePushEncodingKey, _kHMBModelDataVersionKey, 
+                       _kHMBModelDeprecatedDataVersionKey, _kHMBModelGenericTypeKey, 
+                       _kHMBModelParentUUIDKey, _kHMBModelTypeKey, _kHMBModelUUIDKey, 
+                       _prepareSQLite3 ]
+    objc-classes:    [ HMBAction, HMBBackedObject, HMBBackedObjectBase, HMBBackedObjectRoot, 
+                       HMBCloudDatabase, HMBCloudDatabaseStateModel, HMBCloudID, 
+                       HMBCloudStateModel, HMBCloudZone, HMBCloudZoneConflict, HMBCloudZoneID, 
+                       HMBCloudZonePullResult, HMBCloudZonePushResult, HMBCloudZoneRecordPushResult, 
+                       HMBCloudZoneStateModel, HMBEntrySearch, HMBLocalCloudZoneID, 
+                       HMBLocalDatabase, HMBLocalSQLContext, HMBLocalZone, HMBLocalZoneIDUnshared, 
+                       HMBLocalZoneReplicationItem, HMBMirrorInput, HMBMirrorOutputGroup, 
+                       HMBMirrorOutputResult, HMBMirrorOutputTuple, HMBModel, HMBModelCloudReference, 
+                       HMBModelContainer, HMBModelField, HMBModelFieldDeprecatedField, 
+                       HMBModelFieldOption, HMBModelReference, HMBModelUnsupported, 
+                       HMBMutableAction, HMBMutableModelContainer, HMBMutableModelField, 
+                       HMBProcessingOptions, HMBProcessingOptionsMirror, HMBProcessingResult, 
+                       HMBSQLContext, HMBSQLFile, HMBShareInvitation, HMBShareInvitationContext, 
+                       HMBShareParticipant ]
+...

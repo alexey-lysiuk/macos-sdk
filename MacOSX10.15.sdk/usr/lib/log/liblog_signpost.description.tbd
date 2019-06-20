@@ -1,0 +1,7 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 3E2908EF-313F-3A87-93F6-328106B22F9C' ]
+platform:        macosx
+install-name:    '/usr/lib/log/liblog_signpost.description.dylib'
+current-version: 32
+...

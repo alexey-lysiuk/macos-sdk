@@ -1,0 +1,20 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 2745E6A4-626C-3705-A516-EC2AA2B3E30B', 'x86_64: 2745E6A4-626C-3705-A516-EC2AA2B3E30B' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/UsageTracking.framework/Versions/A/UsageTracking'
+current-version: 109
+exports:         
+  - archs:           [ x86_64 ]
+    allowable-clients: [ DeviceManagementTests, PowerlogHelperdOperators, PowerlogLiteOperators, 
+                         RemoteManagementTests, SafariShared, ScreenTime, ScreenTimeAgent, 
+                         ScreenTimeTests, UsageTrackingAgent, dmd, remotemanagementd, 
+                         usagetool ]
+    symbols:         [ _USDuetClientNameUsageTracking, _USErrorDomain, _USMachServiceNameUsageTracking, 
+                       _USNotificationReceivedValue, _USUsageTrackingVersionNumber, 
+                       _USUsageTrackingVersionString ]
+    objc-classes:    [ USApplicationUsageReport, USBudget, USCategoryUsageReport, 
+                       USDomainNormalization, USTrackingAgentProxy, USUsageMonitor, 
+                       USUsageQuerying, USUsageReport, USUsageReporter, USUsageTrackingBundle, 
+                       USWebHistory, USWebUsageReport, USWebpageUsage ]
+...

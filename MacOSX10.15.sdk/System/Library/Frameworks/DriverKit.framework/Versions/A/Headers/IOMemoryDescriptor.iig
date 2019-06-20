@@ -1,0 +1,97 @@
+#if !__IIG
+#endif
+
+#ifndef _IOKIT_UIOMEMORYDESCRIPTOR_H
+#define _IOKIT_UIOMEMORYDESCRIPTOR_H
+
+#include <DriverKit/OSObject.iig>
+
+class IOService;
+class IOMemoryMap;
+
+
+enum{
+	kIOMemoryDirectionIn    = 0x00000001,
+	kIOMemoryDirectionOut   = 0x00000002,
+	kIOMemoryDirectionOutIn = kIOMemoryDirectionIn | kIOMemoryDirectionOut,
+	kIOMemoryDirectionInOut = kIOMemoryDirectionOutIn,
+};
+
+struct IOAddressSegment {
+	uint64_t address;
+	uint64_t length;
+};
+
+struct IOMDPrivateState {
+	uint64_t length;
+	uint64_t options;
+};
+
+/*!
+@iig implementation
+#include <DriverKit/IOService.h>
+@iig end
+*/
+
+class KERNEL IOMemoryDescriptor : public OSObject
+{
+public:
+
+	static kern_return_t
+	Create(
+		uint64_t options,
+		uint32_t segmentsCount,
+		const IOAddressSegment segments[32],
+		IOMemoryDescriptor ** memory);
+
+	virtual bool
+	init() override;
+
+	virtual void
+	free() override;
+
+	kern_return_t
+	GetLength(
+		uint64_t * returnLength) LOCALONLY;
+
+	kern_return_t
+	Map(
+		uint64_t options,
+		uint64_t address,
+		uint64_t length,
+		uint64_t alignment,
+
+		uint64_t * returnAddress,
+		uint64_t * returnLength) LOCALONLY;
+
+	virtual kern_return_t
+	CreateMapping(
+		uint64_t options,
+		uint64_t address,
+		uint64_t length,
+		uint64_t alignment,
+		IOMemoryMap ** map);
+
+	virtual kern_return_t
+	PrepareForDMA(
+		uint64_t options,
+		IOService * device,
+		uint64_t offset,
+		uint64_t length,
+
+		uint64_t * flags,
+		uint64_t * returnLength,
+		uint32_t * segmentsCount,
+		IOAddressSegment segments[32]);
+};
+
+class EXTENDS (IOMemoryDescriptor) IOMemoryDescriptorPrivate
+{
+	virtual kern_return_t
+	_CopyState(
+		IOMDPrivateState * state);
+};
+
+
+
+#endif /* ! _IOKIT_UIOMEMORYDESCRIPTOR_H */

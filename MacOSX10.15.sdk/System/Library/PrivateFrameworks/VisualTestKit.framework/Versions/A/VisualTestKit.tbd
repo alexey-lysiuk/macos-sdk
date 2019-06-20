@@ -1,0 +1,14 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 6CBF8F71-1826-35F2-961A-5BCAE8628978' ]
+platform:        uikitformac
+install-name:    '/System/Library/PrivateFrameworks/VisualTestKit.framework/Versions/A/VisualTestKit'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _NSStringFromVTKAssertID, _VTKID, ___VTKAddExclusionAreaAt, 
+                       ___VTKAddHorizontalGuideAt, ___VTKAddSqureGuideAt, ___VTKAddVerticalGuideAt, 
+                       ___VTKAssertView, ___VTKExclusionAreaStatusBar, ___VTKSetImageComparatorStrategy, 
+                       ___VTKSetImageComparisonOptions, ___VTKSetReferenceImagesDirectory, 
+                       ___VTKSetReferenceItemSourceType ]
+    objc-classes:    [ VTKAssertID ]
+...

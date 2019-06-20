@@ -1,0 +1,44 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 8290A293-D423-31A3-827E-1BC08E5DFCCB' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/WorkflowKit.framework/Frameworks/Realm.framework/Versions/A/Realm'
+exports:         
+  - archs:           [ x86_64 ]
+    allowable-clients: [ WorkflowKit ]
+    symbols:         [ _RLMAddObjectToRealm, _RLMCreateObjectInRealmWithValue, _RLMDeleteAllObjectsFromRealm, 
+                       _RLMDeleteObjectFromRealm, _RLMDescriptionMaxDepth, _RLMDisableSyncToDisk, 
+                       _RLMDynamicGet, _RLMDynamicGetByName, _RLMDynamicSet, _RLMDynamicValidatedSet, 
+                       _RLMErrorDomain, _RLMExceptionName, _RLMGetObject, _RLMGetObjects, 
+                       _RLMInitializeSwiftAccessorGenerics, _RLMInvalidatedKey, _RLMManagedAccessorClassForObjectClass, 
+                       _RLMNotVersioned, _RLMObjectAddNotificationBlock, _RLMObjectBaseAreEqual, 
+                       _RLMObjectBaseObjectForKeyedSubscript, _RLMObjectBaseObjectSchema, 
+                       _RLMObjectBaseRealm, _RLMObjectBaseSetObjectForKeyedSubscript, 
+                       _RLMObjectUtilClass, _RLMPropertyTypeIsComputed, _RLMPropertyTypeIsNullable, 
+                       _RLMRealmCoreVersionKey, _RLMRealmCreateAccessors, _RLMRealmDidChangeNotification, 
+                       _RLMRealmPathForFile, _RLMRealmPathForFileAndBundleIdentifier, 
+                       _RLMRealmRefreshRequiredNotification, _RLMRealmTranslateException, 
+                       _RLMRealmValidatedEncryptionKey, _RLMRealmVersionKey, _RLMReplaceClassNameMethod, 
+                       _RLMReplaceSharedSchemaMethod, _RLMUnknownSystemErrorDomain, 
+                       _RLMUnmanagedAccessorClassForObjectClass, _RLMValidateSwiftPropertyName, 
+                       _RLMValidatedValueForProperty, __Z23RLMCreateObjectAccessorP8RLMRealmR12RLMClassInfoN5realm12BasicRowExprINS3_5TableEEE, 
+                       __Z23RLMCreateObjectAccessorP8RLMRealmR12RLMClassInfom ]
+    objc-classes:    [ RLMArray, RLMCollectionChange, RLMDynamicObject, RLMLinkingObjects, 
+                       RLMListBase, RLMMigration, RLMNotificationToken, RLMObject, 
+                       RLMObjectBase, RLMObjectSchema, RLMObjectUtil, RLMOptionalBase, 
+                       RLMProperty, RLMPropertyChange, RLMPropertyDescriptor, RLMRealm, 
+                       RLMRealmConfiguration, RLMResults, RLMSchema, RLMSortDescriptor, 
+                       RLMThreadSafeReference, RLMWeakObjectHandle ]
+    objc-ivars:      [ RLMArray._backingArray, RLMArray._key, RLMArray._objectClassName, 
+                       RLMArray._parentObject, RLMObjectBase._info, RLMObjectBase._objectSchema, 
+                       RLMObjectBase._observationInfo, RLMObjectBase._realm, RLMObjectBase._row, 
+                       RLMObjectSchema._isSwiftClass, RLMProperty._swiftIvar, RLMProperty._type, 
+                       RLMRealm._info, RLMRealm._realm ]
+    weak-def-symbols: [ __ZTIFP12NSExpressionS0_E, __ZTINSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                        __ZTINSt3__117bad_function_callE, __ZTINSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                        __ZTINSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                        __ZTIPFP12NSExpressionS0_E, __ZTSFP12NSExpressionS0_E, __ZTSNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                        __ZTSNSt3__117bad_function_callE, __ZTSNSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                        __ZTSNSt3__119basic_ostringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
+                        __ZTSPFP12NSExpressionS0_E ]
+...

@@ -1,0 +1,12 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 733E4F36-F230-3D1E-B207-C420121D2997' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/UHASHelloExtensionPoint-macOS.framework/Versions/A/UHASHelloExtensionPoint-macOS'
+current-version: 166.11
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _UHASHelloExtensionHostToServiceInterface, _UHASHelloExtensionPoint_macOSVersionNumber, 
+                       _UHASHelloExtensionPoint_macOSVersionString, _UHASHelloExtensionServiceToHostInterface ]
+    objc-classes:    [ UHASHelloExtensionHostContext, UHASHelloExtensionServiceContext ]
+...

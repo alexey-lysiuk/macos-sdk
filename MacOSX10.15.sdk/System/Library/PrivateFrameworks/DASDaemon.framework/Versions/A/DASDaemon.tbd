@@ -1,0 +1,11 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: D26F6C1B-BA46-39B2-8095-DE8B65C57D37' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/DASDaemon.framework/Versions/A/DASDaemon'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _DASDaemonVersionNumber, _DASDaemonVersionString ]
+    objc-classes:    [ _DASLogCondition, _DASLogConditionHistory, _DASLogEntry, _DASLogExtractor, 
+                       _DASLogValueInterval ]
+...

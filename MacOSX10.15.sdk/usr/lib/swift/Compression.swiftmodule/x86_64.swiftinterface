@@ -1,0 +1,64 @@
+// swift-interface-format-version: 1.0
+// swift-tools-version: Apple Swift version 5.1 effective-4.1.50 (swiftlang-1100.8.32.26 clang-1100.0.18.2)
+// swift-module-flags: -target x86_64-apple-macosx10.15 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftCompression -swift-version 4 -O -enforce-exclusivity=unchecked -module-name Compression
+@_exported import Compression
+import Darwin
+import Foundation
+import Swift
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public enum Algorithm : CaseIterable, RawRepresentable {
+  case lzfse
+  case zlib
+  case lz4
+  case lzma
+  public init?(rawValue: compression_algorithm)
+  public var rawValue: compression_algorithm {
+    get
+  }
+  public typealias RawValue = Compression.compression_algorithm
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+  public typealias AllCases = [Compression.Algorithm]
+  public static var allCases: [Compression.Algorithm] {
+    get
+  }
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public enum FilterOperation : RawRepresentable {
+  case compress
+  case decompress
+  public init?(rawValue: compression_stream_operation)
+  public var rawValue: compression_stream_operation {
+    get
+  }
+  public typealias RawValue = Compression.compression_stream_operation
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public enum FilterError : Error {
+  case invalidState
+  case invalidData
+  public static func == (a: Compression.FilterError, b: Compression.FilterError) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public class OutputFilter {
+  public init(_ operation: FilterOperation, using algorithm: Algorithm, bufferCapacity: Int = 65536, writingTo writeFunc: @escaping (Data?) throws -> Void) throws
+  public func write<D>(_ data: D?) throws where D : Foundation.DataProtocol
+  public func finalize() throws
+  @objc deinit
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public class InputFilter<D> where D : Foundation.DataProtocol {
+  public init(_ operation: FilterOperation, using algorithm: Algorithm, bufferCapacity: Int = 65536, readingFrom readFunc: @escaping (Int) throws -> D?) throws
+  public func readData(ofLength count: Int) throws -> Data?
+  @objc deinit
+}

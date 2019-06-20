@@ -1,0 +1,53 @@
+#ifndef _IOKIT_OSNUMBER_H
+#define _IOKIT_OSNUMBER_H
+
+#include <DriverKit/OSContainer.iig>
+
+class OSNumber;
+typedef OSNumber * OSNumberPtr;
+
+
+class LOCALONLY OSNumber : public OSContainer
+{
+public:
+
+	// OSObject
+
+	virtual void
+	free() override;
+
+	bool
+	isEqualTo(const OSMetaClassBase * anObject) const override;
+
+	// OSNumber
+
+	static OSNumberPtr
+	withNumber(
+		uint64_t value,
+		size_t   numberOfBits);
+
+	static OSNumberPtr
+	withNumber(
+		const char   * valueString,
+		size_t         numberOfBits);
+
+	size_t
+	numberOfBits() const;
+
+	uint8_t
+	unsigned8BitValue() const;
+
+	uint16_t
+	unsigned16BitValue() const;
+
+	uint32_t
+	unsigned32BitValue() const;
+
+	uint64_t
+	unsigned64BitValue() const;
+
+	bool
+	isEqualTo(const OSNumber * aNumber) const;
+};
+
+#endif /* ! _IOKIT_OSNUMBER_H */

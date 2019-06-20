@@ -1,0 +1,87 @@
+// swift-interface-format-version: 1.0
+// swift-tools-version: Apple Swift version 5.1 effective-4.1.50 (swiftlang-1100.8.32.26 clang-1100.0.18.2)
+// swift-module-flags: -target x86_64-apple-ios13.0-macabi -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftMetal -swift-version 4 -O -enforce-exclusivity=unchecked -module-name Metal
+@_exported import Metal
+import Swift
+@available(OSX 10.11, iOS 8.0, tvOS 8.0, *)
+extension MTLBlitCommandEncoder {
+  public func fill(buffer: MTLBuffer, range: Range<Int>, value: UInt8)
+  @available(OSX 10.14, iOS 12.0, tvOS 12.0, *)
+  public func resetCommandsInBuffer(_ buffer: MTLIndirectCommandBuffer, range: Range<Int>)
+  @available(OSX 10.14, iOS 12.0, tvOS 12.0, *)
+  public func copyIndirectCommandBuffer(_ buffer: MTLIndirectCommandBuffer, sourceRange: Range<Int>, destination: MTLIndirectCommandBuffer, destinationIndex: Int)
+  @available(OSX 10.14, iOS 12.0, tvOS 12.0, *)
+  public func optimizeIndirectCommandBuffer(_ buffer: MTLIndirectCommandBuffer, range: Range<Int>)
+}
+@available(OSX 10.11, iOS 8.0, tvOS 8.0, *)
+extension MTLBuffer {
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, *)
+  public func addDebugMarker(_ marker: String, range: Range<Int>)
+}
+@available(OSX 10.11, iOS 8.0, tvOS 8.0, *)
+extension MTLComputeCommandEncoder {
+  @available(OSX 10.13, iOS 11.0, tvOS 11.0, *)
+  public func useResources(_ resources: [MTLResource], usage: MTLResourceUsage)
+  @available(OSX 10.13, iOS 11.0, tvOS 11.0, *)
+  public func useHeaps(_ heaps: [MTLHeap])
+  public func setBuffers(_ buffers: [MTLBuffer?], offsets: [Int], range: Range<Int>)
+  public func setTextures(_ textures: [MTLTexture?], range: Range<Int>)
+  public func setSamplerStates(_ samplers: [MTLSamplerState?], range: Range<Int>)
+  public func setSamplerStates(_ samplers: [MTLSamplerState?], lodMinClamps: [Float], lodMaxClamps: [Float], range: Range<Int>)
+  @available(OSX 10.14, iOS 12.0, tvOS 12.0, *)
+  public func memoryBarrier(resources: [MTLResource])
+}
+@available(OSX 10.11, iOS 8.0, tvOS 8.0, *)
+extension MTLDevice {
+  @available(OSX 10.13, iOS 11.0, tvOS 11.0, *)
+  public func getDefaultSamplePositions(sampleCount: Int) -> [MTLSamplePosition]
+}
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, *)
+extension MTLFunctionConstantValues {
+  public func setConstantValues(_ values: UnsafeRawPointer, type: MTLDataType, range: Range<Int>)
+}
+@available(OSX 10.13, iOS 11.0, tvOS 11.0, *)
+extension MTLArgumentEncoder {
+  public func setBuffers(_ buffers: [MTLBuffer?], offsets: [Int], range: Range<Int>)
+  public func setTextures(_ textures: [MTLTexture?], range: Range<Int>)
+  public func setSamplerStates(_ samplers: [MTLSamplerState?], range: Range<Int>)
+  @available(OSX 10.14, iOS 12.0, tvOS 12.0, *)
+  public func setIndirectCommandBuffers(_ buffers: [MTLIndirectCommandBuffer?], range: Range<Int>)
+}
+@available(OSX 10.11, iOS 8.0, tvOS 8.0, *)
+extension MTLRenderCommandEncoder {
+  @available(OSX 10.13, iOS 11.0, tvOS 11.0, *)
+  public func useResources(_ resources: [MTLResource], usage: MTLResourceUsage)
+  @available(OSX 10.13, iOS 11.0, tvOS 11.0, *)
+  public func useHeaps(_ heaps: [MTLHeap])
+  @available(OSX 10.13, iOS 12.0, *)
+  public func setViewports(_ viewports: [MTLViewport])
+  @available(OSX 10.13, iOS 12.0, *)
+  public func setScissorRects(_ scissorRects: [MTLScissorRect])
+  public func setVertexBuffers(_ buffers: [MTLBuffer?], offsets: [Int], range: Range<Int>)
+  public func setVertexTextures(_ textures: [MTLTexture?], range: Range<Int>)
+  public func setVertexSamplerStates(_ samplers: [MTLSamplerState?], range: Range<Int>)
+  public func setVertexSamplerStates(_ samplers: [MTLSamplerState?], lodMinClamps: [Float], lodMaxClamps: [Float], range: Range<Int>)
+  public func setFragmentBuffers(_ buffers: [MTLBuffer?], offsets: [Int], range: Range<Int>)
+  public func setFragmentTextures(_ textures: [MTLTexture?], range: Range<Int>)
+  public func setFragmentSamplerStates(_ samplers: [MTLSamplerState?], range: Range<Int>)
+  public func setFragmentSamplerStates(_ samplers: [MTLSamplerState?], lodMinClamps: [Float], lodMaxClamps: [Float], range: Range<Int>)
+  @available(OSX 10.14, iOS 12.0, tvOS 12.0, *)
+  public func executeCommandsInBuffer(_ buffer: MTLIndirectCommandBuffer, range: Range<Int>)
+}
+@available(OSX 10.14, iOS 12.0, tvOS 12.0, *)
+extension MTLIndirectCommandBuffer {
+  public func reset(_ range: Range<Int>)
+}
+@available(OSX 10.11, iOS 8.0, tvOS 8.0, *)
+extension MTLRenderPassDescriptor {
+  @available(OSX 10.13, iOS 11.0, tvOS 11.0, *)
+  public func setSamplePositions(_ positions: [MTLSamplePosition])
+  @available(OSX 10.13, iOS 11.0, tvOS 11.0, *)
+  public func getSamplePositions() -> [MTLSamplePosition]
+}
+@available(OSX 10.11, iOS 8.0, tvOS 8.0, *)
+extension MTLTexture {
+  @available(OSX 10.11, iOS 9.0, tvOS 9.0, *)
+  public func makeTextureView(pixelFormat: MTLPixelFormat, textureType: MTLTextureType, levels levelRange: Range<Int>, slices sliceRange: Range<Int>) -> MTLTexture?
+}

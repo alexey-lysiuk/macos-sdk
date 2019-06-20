@@ -1,0 +1,15 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 27BB2510-A3EF-325F-94F8-096C98494AE8', 'x86_64: 27BB2510-A3EF-325F-94F8-096C98494AE8' ]
+platform:        zippered
+install-name:    '/usr/lib/libipconfig.dylib'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _IPConfigurationForgetNetwork, _IPConfigurationServiceCopyInformation, 
+                       _IPConfigurationServiceCreate, _IPConfigurationServiceGetNotificationKey, 
+                       _IPConfigurationServiceGetTypeID, _IPConfigurationServiceRefreshConfiguration, 
+                       _kIPConfigurationServiceOptionAPNName, _kIPConfigurationServiceOptionEnableCLAT46, 
+                       _kIPConfigurationServiceOptionEnableDAD, _kIPConfigurationServiceOptionIPv6Entity, 
+                       _kIPConfigurationServiceOptionIPv6LinkLocalAddress, _kIPConfigurationServiceOptionMTU, 
+                       _kIPConfigurationServiceOptionPerformNUD ]
+...

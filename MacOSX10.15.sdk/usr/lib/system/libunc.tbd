@@ -1,0 +1,11 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 8959B715-A567-36A7-8859-4A77E465FFE9' ]
+platform:        macosx
+install-name:    '/usr/lib/system/libunc.dylib'
+current-version: 30
+parent-umbrella: System
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _uncVersionNumber, _uncVersionString ]
+...

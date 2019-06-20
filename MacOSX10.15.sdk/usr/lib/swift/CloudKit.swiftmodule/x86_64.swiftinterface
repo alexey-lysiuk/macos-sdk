@@ -1,0 +1,460 @@
+// swift-interface-format-version: 1.0
+// swift-tools-version: Apple Swift version 5.1 effective-4.2 (swiftlang-1100.8.32.26 clang-1100.0.18.2)
+// swift-module-flags: -target x86_64-apple-macosx10.15 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftCloudKit -swift-version 4.2 -O -enforce-exclusivity=unchecked -module-name CloudKit
+@_exported import CloudKit
+import Foundation
+import Swift
+@available(OSX 10.10, iOS 8.0, watchOS 3.0, *)
+@nonobjc extension CKContainer {
+  @available(swift 4.2)
+  public enum Application {
+    public typealias Permissions = CKContainer_Application_Permissions
+    public typealias PermissionStatus = CKContainer_Application_PermissionStatus
+    public typealias PermissionBlock = CKContainer_Application_PermissionBlock
+  }
+}
+@available(OSX 10.10, iOS 8.0, watchOS 3.0, *)
+@nonobjc extension CKOperation {
+  @available(swift 4.2)
+  public typealias ID = String
+}
+@available(OSX 10.10, iOS 8.0, watchOS 3.0, *)
+extension CKSubscription {
+  @available(swift 4.2)
+  public typealias ID = String
+}
+@available(OSX 10.12, iOS 9.3, tvOS 9.2, watchOS 3.0, *)
+@nonobjc extension CKContainer {
+  @available(swift 4.2)
+  public func fetchAllLongLivedOperationIDs(completionHandler: @escaping ([CKOperation.ID]?, Error?) -> Void)
+  @available(swift 4.2)
+  public func fetchLongLivedOperation(withID operationID: CKOperation.ID, completionHandler: @escaping (CKOperation?, Error?) -> Void)
+}
+@available(OSX 10.12, iOS 9.3, tvOS 9.2, watchOS 3.0, *)
+@nonobjc extension CKOperation {
+  @available(swift 4.2)
+  public var operationID: CKOperation.ID {
+    get
+  }
+}
+@available(OSX 10.10, iOS 8.0, *)
+@available(watchOS, unavailable)
+@nonobjc extension CKModifySubscriptionsOperation {
+  @available(swift 4.2)
+  public var subscriptionIDsToDelete: [CKSubscription.ID]? {
+    get
+    set
+  }
+  @available(swift 4.2)
+  public var modifySubscriptionsCompletionBlock: (([CKSubscription]?, [CKSubscription.ID]?, Error?) -> Void)? {
+    get
+    set
+  }
+}
+@available(OSX 10.10, iOS 8.0, *)
+@available(watchOS, unavailable)
+@nonobjc extension CKFetchSubscriptionsOperation {
+  @available(swift 4.2)
+  convenience public init(subscriptionIDs: [CKSubscription.ID])
+  @available(swift 4.2)
+  public var subscriptionIDs: [CKSubscription.ID]? {
+    get
+    set
+  }
+  @available(swift 4.2)
+  public var fetchSubscriptionCompletionBlock: (([CKSubscription.ID : CKSubscription]?, Error?) -> Void)? {
+    get
+    set
+  }
+}
+@available(OSX 10.10, iOS 8.0, *)
+@available(watchOS, unavailable)
+@nonobjc extension CKDatabase {
+  @available(swift 4.2)
+  public func fetch(withSubscriptionID subscriptionID: CKSubscription.ID, completionHandler: @escaping (CKSubscription?, Error?) -> Void)
+  @available(swift 4.2)
+  public func delete(withSubscriptionID subscriptionID: CKSubscription.ID, completionHandler: @escaping (String?, Error?) -> Void)
+}
+@available(OSX 10.10, iOS 8.0, *)
+@available(watchOS, unavailable)
+@nonobjc extension CKSubscription {
+  @available(swift 4.2)
+  public var subscriptionID: CKSubscription.ID {
+    get
+  }
+}
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, *)
+@available(watchOS, unavailable)
+@nonobjc extension CKQuerySubscription {
+  @available(swift 4.2)
+  public var recordType: CKRecord.RecordType? {
+    get
+  }
+}
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, *)
+@available(watchOS, unavailable)
+@nonobjc extension CKRecordZoneSubscription {
+  @available(swift 4.2)
+  convenience public init(zoneID: CKRecordZone.ID, subscriptionID: CKSubscription.ID)
+  @available(swift 4.2)
+  public var recordType: CKRecord.RecordType? {
+    get
+    set
+  }
+}
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, *)
+@available(watchOS, unavailable)
+@nonobjc extension CKDatabaseSubscription {
+  @available(swift 4.2)
+  convenience public init(subscriptionID: CKSubscription.ID)
+  @available(swift 4.2)
+  public var recordType: CKRecord.RecordType? {
+    get
+    set
+  }
+}
+@available(OSX 10.11, iOS 9.0, watchOS 3.0, *)
+@nonobjc extension CKNotification {
+  @available(swift 4.2)
+  public var subscriptionID: CKSubscription.ID? {
+    get
+  }
+}
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@nonobjc extension CKFetchRecordZoneChangesOperation {
+  @available(swift 4.2)
+  public var recordWithIDWasDeletedBlock: ((CKRecord.ID, CKRecord.RecordType) -> Void)? {
+    get
+    set
+  }
+}
+@available(OSX 10.10, iOS 8.0, watchOS 3.0, *)
+@nonobjc extension CKQuery {
+  @available(swift 4.2)
+  convenience public init(recordType: CKRecord.RecordType, predicate: NSPredicate)
+  @available(swift 4.2)
+  public var recordType: CKRecord.RecordType {
+    get
+  }
+}
+@available(OSX 10.10, iOS 8.0, watchOS 3.0, *)
+@nonobjc extension CKRecord {
+  @available(swift 4.2)
+  public var recordType: CKRecord.RecordType {
+    get
+  }
+  @available(swift 4.2)
+  public func object(forKey key: CKRecord.FieldKey) -> __CKRecordObjCValue?
+  @available(swift 4.2)
+  public func setObject(_ object: __CKRecordObjCValue?, forKey key: CKRecord.FieldKey)
+  @available(swift 4.2)
+  public subscript(key: CKRecord.FieldKey) -> __CKRecordObjCValue? {
+    get
+    set
+  }
+  @available(swift 4.2)
+  public func allKeys() -> [CKRecord.FieldKey]
+  @available(swift 4.2)
+  public func changedKeys() -> [CKRecord.FieldKey]
+}
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@nonobjc extension CKFetchShareMetadataOperation {
+  @available(swift 4.2)
+  public var rootRecordDesiredKeys: [CKRecord.FieldKey]? {
+    get
+    set
+  }
+}
+@available(OSX 10.10, iOS 8.0, watchOS 3.0, *)
+@nonobjc extension CKFetchRecordsOperation {
+  @available(swift 4.2)
+  public var desiredKeys: [CKRecord.FieldKey]? {
+    get
+    set
+  }
+}
+@available(OSX 10.10, iOS 8.0, watchOS 3.0, *)
+@nonobjc extension CKQueryOperation {
+  @available(swift 4.2)
+  public var desiredKeys: [CKRecord.FieldKey]? {
+    get
+    set
+  }
+}
+@available(OSX 10.10, iOS 8.0, watchOS 3.0, *)
+@available(swift, obsoleted: 4.2, renamed: "CKRecord.SystemType.userRecord")
+@nonobjc public let CKRecordTypeUserRecord: String
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@available(swift, obsoleted: 4.2, renamed: "CKRecord.SystemFieldKey.parent")
+@nonobjc public let CKRecordParentKey: String
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@available(swift, obsoleted: 4.2, renamed: "CKRecord.SystemFieldKey.share")
+@nonobjc public let CKRecordShareKey: String
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@available(swift, obsoleted: 4.2, renamed: "CKRecord.SystemType.share")
+@nonobjc public let CKRecordTypeShare: String
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@available(swift, obsoleted: 4.2, renamed: "CKShare.SystemFieldKey.title")
+@nonobjc public let CKShareTitleKey: String
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@available(swift, obsoleted: 4.2, renamed: "CKShare.SystemFieldKey.thumbnailImageData")
+@nonobjc public let CKShareThumbnailImageDataKey: String
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@available(swift, obsoleted: 4.2, renamed: "CKShare.SystemFieldKey.shareType")
+@nonobjc public let CKShareTypeKey: String
+@available(OSX 10.10, iOS 8.0, watchOS 3.0, *)
+extension CKError {
+  public var partialErrorsByItemID: [AnyHashable : Error]? {
+    get
+  }
+  public var ancestorRecord: CKRecord? {
+    get
+  }
+  public var serverRecord: CKRecord? {
+    get
+  }
+  public var clientRecord: CKRecord? {
+    get
+  }
+  public var retryAfterSeconds: Double? {
+    get
+  }
+}
+@available(OSX 10.14, iOS 12.0, tvOS 12.0, watchOS 5.0, *)
+@nonobjc extension CKFetchRecordZoneChangesOperation.ZoneConfiguration {
+  @available(swift 4.2)
+  public var desiredKeys: [CKRecord.FieldKey]? {
+    get
+    set
+  }
+  @available(swift 4.2)
+  convenience public init(previousServerChangeToken: CKServerChangeToken? = nil, resultsLimit: Int? = nil, desiredKeys: [CKRecord.FieldKey]? = nil)
+}
+@available(OSX 10.10, iOS 8.0, watchOS 3.0, *)
+public struct CKRecordKeyValueIterator : IteratorProtocol {
+  mutating public func next() -> (CKRecord.FieldKey, CKRecordValueProtocol)?
+  public typealias Element = (Swift.String, CloudKit.CKRecordValueProtocol)
+}
+@available(OSX 10.10, iOS 8.0, watchOS 3.0, *)
+@nonobjc extension CKRecord : Sequence {
+  public func makeIterator() -> CKRecordKeyValueIterator
+  public typealias Element = (Swift.String, CloudKit.CKRecordValueProtocol)
+  public typealias Iterator = CloudKit.CKRecordKeyValueIterator
+}
+@available(OSX 10.10, iOS 8.0, watchOS 3.0, *)
+@nonobjc extension CKRecord {
+  public typealias RecordType = String
+  public typealias FieldKey = String
+  @available(swift 4.2)
+  public enum SystemType {
+    public static let userRecord: CKRecord.RecordType
+    @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+    public static let share: CKRecord.RecordType
+  }
+  @available(swift 4.2)
+  public enum SystemFieldKey {
+    @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+    public static let parent: CKRecord.FieldKey
+    @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+    public static let share: CKRecord.FieldKey
+  }
+}
+@available(OSX 10.10, iOS 8.0, watchOS 3.0, *)
+@nonobjc extension CKRecordZone.ID {
+  convenience public init(zoneName: String = CKRecordZone.ID.defaultZoneName, ownerName: String = "__defaultOwner__")
+  public static let `default`: CloudKit.CKRecordZone.ID
+  public static let defaultZoneName: Swift.String
+}
+@available(OSX 10.10, iOS 8.0, watchOS 3.0, *)
+@available(swift, obsoleted: 4.2, renamed: "CKRecordZone.ID.defaultZoneName")
+@nonobjc public let CKRecordZoneDefaultName: String
+@available(OSX 10.10, iOS 8.0, watchOS 3.0, *)
+@nonobjc extension CKRecord.ID {
+  @available(swift 4.2)
+  convenience public init(recordName: String = UUID().uuidString, zoneID: CKRecordZone.ID = CKRecordZone.ID.default)
+}
+@available(OSX 10.10, iOS 8.0, watchOS 3.0, *)
+@nonobjc extension CKRecord.Reference {
+  @available(swift 4.2)
+  public typealias Action = CKRecord_Reference_Action
+}
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@nonobjc extension CKShare {
+  @available(swift 4.2)
+  public enum SystemFieldKey {
+    public static let title: CKRecord.FieldKey
+    public static let thumbnailImageData: CKRecord.FieldKey
+    public static let shareType: CKRecord.FieldKey
+  }
+}
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@nonobjc extension CKShare.Participant {
+  @available(swift 4.2)
+  public typealias AcceptanceStatus = CKShare_Participant_AcceptanceStatus
+  @available(swift 4.2)
+  public typealias Permission = CKShare_Participant_Permission
+  @available(swift 4.2)
+  @available(OSX 10.14, iOS 12.0, tvOS 12.0, watchOS 5.0, *)
+  public typealias Role = CKShare_Participant_Role
+  @available(swift 4.2)
+  @available(OSX, deprecated: 10.14, renamed: "CKShare.Participant.Role")
+  @available(iOS, deprecated: 12.0, renamed: "CKShare.Participant.Role")
+  @available(tvOS, deprecated: 12.0, renamed: "CKShare.Participant.Role")
+  @available(watchOS, deprecated: 5.0, renamed: "CKShare.Participant.Role")
+  public typealias ParticipantType = CKShare_Participant_ParticipantType
+}
+@available(OSX 10.10, iOS 8.0, *)
+@available(watchOS, unavailable)
+@nonobjc extension CKSubscription.NotificationInfo {
+  @available(swift 4.2)
+  @available(tvOS, unavailable)
+  public var alertLocalizationArgs: [CKRecord.FieldKey]? {
+    get
+    set
+  }
+  @available(swift 4.2)
+  @available(OSX 10.13, iOS 11.0, *)
+  @available(tvOS, unavailable)
+  public var titleLocalizationArgs: [CKRecord.FieldKey]? {
+    get
+    set
+  }
+  @available(swift 4.2)
+  @available(OSX 10.13, iOS 11.0, *)
+  @available(tvOS, unavailable)
+  public var subtitleLocalizationArgs: [CKRecord.FieldKey]? {
+    get
+    set
+  }
+  @available(swift 4.2)
+  public var desiredKeys: [CKRecord.FieldKey]? {
+    get
+    set
+  }
+  convenience public init(alertBody: String? = nil, alertLocalizationKey: String? = nil, alertLocalizationArgs: [CKRecord.FieldKey] = [], title: String? = nil, titleLocalizationKey: String? = nil, titleLocalizationArgs: [CKRecord.FieldKey] = [], subtitle: String? = nil, subtitleLocalizationKey: String? = nil, subtitleLocalizationArgs: [CKRecord.FieldKey] = [], alertActionLocalizationKey: String? = nil, alertLaunchImage: String? = nil, soundName: String? = nil, desiredKeys: [CKRecord.FieldKey] = [], shouldBadge: Bool = false, shouldSendContentAvailable: Bool = false, shouldSendMutableContent: Bool = false, category: String? = nil, collapseIDKey: String? = nil)
+}
+@available(OSX 10.10, iOS 8.0, watchOS 3.0, *)
+public protocol CKRecordValueProtocol {
+}
+@available(OSX 10.10, iOS 8.0, watchOS 3.0, *)
+public typealias CKRecordValue = __CKRecordObjCValue
+@available(OSX 10.11, iOS 9.0, watchOS 3.0, *)
+extension CKRecordKeyValueSetting {
+  @nonobjc public subscript<T>(key: CKRecord.FieldKey) -> T? where T : CloudKit.CKRecordValueProtocol {
+    get
+    set
+  }
+  @nonobjc public subscript(key: CKRecord.FieldKey) -> CKRecordValueProtocol? {
+    get
+    set
+  }
+}
+@available(OSX 10.10, iOS 8.0, watchOS 3.0, *)
+extension String : CKRecordValueProtocol {
+}
+@available(OSX 10.10, iOS 8.0, watchOS 3.0, *)
+extension Date : CKRecordValueProtocol {
+}
+@available(OSX 10.10, iOS 8.0, watchOS 3.0, *)
+extension Data : CKRecordValueProtocol {
+}
+@available(OSX 10.10, iOS 8.0, watchOS 3.0, *)
+extension Bool : CKRecordValueProtocol {
+}
+@available(OSX 10.10, iOS 8.0, watchOS 3.0, *)
+extension Double : CKRecordValueProtocol {
+}
+@available(OSX 10.10, iOS 8.0, watchOS 3.0, *)
+extension Int : CKRecordValueProtocol {
+}
+@available(OSX 10.10, iOS 8.0, watchOS 3.0, *)
+extension UInt : CKRecordValueProtocol {
+}
+@available(OSX 10.10, iOS 8.0, watchOS 3.0, *)
+extension Int8 : CKRecordValueProtocol {
+}
+@available(OSX 10.10, iOS 8.0, watchOS 3.0, *)
+extension UInt8 : CKRecordValueProtocol {
+}
+@available(OSX 10.10, iOS 8.0, watchOS 3.0, *)
+extension Int16 : CKRecordValueProtocol {
+}
+@available(OSX 10.10, iOS 8.0, watchOS 3.0, *)
+extension UInt16 : CKRecordValueProtocol {
+}
+@available(OSX 10.10, iOS 8.0, watchOS 3.0, *)
+extension Int32 : CKRecordValueProtocol {
+}
+@available(OSX 10.10, iOS 8.0, watchOS 3.0, *)
+extension UInt32 : CKRecordValueProtocol {
+}
+@available(OSX 10.10, iOS 8.0, watchOS 3.0, *)
+extension Int64 : CKRecordValueProtocol {
+}
+@available(OSX 10.10, iOS 8.0, watchOS 3.0, *)
+extension UInt64 : CKRecordValueProtocol {
+}
+@available(OSX 10.10, iOS 8.0, watchOS 3.0, *)
+extension Float : CKRecordValueProtocol {
+}
+@available(OSX 10.10, iOS 8.0, watchOS 3.0, *)
+extension Array : CKRecordValueProtocol where Element : CloudKit.CKRecordValueProtocol {
+}
+@available(OSX 10.10, iOS 8.0, watchOS 3.0, *)
+@nonobjc extension NSString : CKRecordValueProtocol {
+}
+@available(OSX 10.10, iOS 8.0, watchOS 3.0, *)
+@nonobjc extension NSDate : CKRecordValueProtocol {
+}
+@available(OSX 10.10, iOS 8.0, watchOS 3.0, *)
+@nonobjc extension NSData : CKRecordValueProtocol {
+}
+@available(OSX 10.10, iOS 8.0, watchOS 3.0, *)
+@nonobjc extension NSNumber : CKRecordValueProtocol {
+}
+@available(OSX 10.10, iOS 8.0, watchOS 3.0, *)
+@nonobjc extension NSArray : CKRecordValueProtocol {
+}
+@available(OSX 10.10, iOS 8.0, watchOS 3.0, *)
+@nonobjc extension CKRecord.Reference : CKRecordValueProtocol {
+}
+@available(OSX 10.10, iOS 8.0, watchOS 3.0, *)
+@nonobjc extension CKAsset : CKRecordValueProtocol {
+}
+@available(OSX 10.10, iOS 8.0, watchOS 3.0, *)
+@nonobjc extension CLLocation : CKRecordValueProtocol {
+}
+@available(OSX 10.14, iOS 12.0, tvOS 12.0, watchOS 5.0, *)
+@nonobjc extension CKFetchRecordZoneChangesOperation {
+  @available(swift 4.2)
+  convenience public init(recordZoneIDs: [CKRecordZone.ID]? = nil, configurationsByRecordZoneID: [CKRecordZone.ID : ZoneConfiguration]? = nil)
+}
+@available(OSX 10.10, iOS 8.0, watchOS 3.0, *)
+@nonobjc extension CKModifyRecordZonesOperation {
+  @available(swift 4.2)
+  convenience public init(recordZonesToSave: [CKRecordZone]? = nil, recordZoneIDsToDelete: [CKRecordZone.ID]? = nil)
+}
+@available(OSX 10.10, iOS 8.0, watchOS 3.0, *)
+@nonobjc extension CKModifyRecordsOperation {
+  @available(swift 4.2)
+  convenience public init(recordsToSave: [CKRecord]? = nil, recordIDsToDelete: [CKRecord.ID]? = nil)
+}
+@available(OSX 10.10, iOS 8.0, *)
+@available(watchOS, unavailable)
+@nonobjc extension CKModifySubscriptionsOperation {
+  @available(swift 4.2)
+  convenience public init(subscriptionsToSave: [CKSubscription]? = nil, subscriptionIDsToDelete: [CKSubscription.ID]? = nil)
+}
+@available(OSX 10.10, iOS 8.0, watchOS 3.0, *)
+@nonobjc extension CKRecord {
+  @available(swift, introduced: 4.2, deprecated: 4.2, message: "Use init(recordType:recordID:) + CKRecord.ID(zoneID:) instead")
+  convenience public init(recordType: CKRecord.RecordType, zoneID: CKRecordZone.ID)
+  @available(swift 4.2)
+  convenience public init(recordType: CKRecord.RecordType, recordID: CKRecord.ID = CKRecord.ID())
+}
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, *)
+@available(watchOS, unavailable)
+@nonobjc extension CKQuerySubscription {
+  @available(swift 4.2)
+  convenience public init(recordType: CKRecord.RecordType, predicate: NSPredicate, subscriptionID: CKSubscription.ID = UUID().uuidString, options querySubscriptionOptions: CKQuerySubscription.Options = [])
+}

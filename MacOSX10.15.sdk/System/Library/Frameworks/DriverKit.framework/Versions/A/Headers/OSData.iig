@@ -1,0 +1,79 @@
+#ifndef _IOKIT_OSDATA_H
+#define _IOKIT_OSDATA_H
+
+#include <DriverKit/OSContainer.iig>
+
+class OSData;
+typedef OSData * OSDataPtr;
+class OSString;
+
+class LOCALONLY OSData : public OSContainer
+{
+public:
+
+	// OSObject
+
+	virtual void
+	free() override;
+
+	virtual
+	bool isEqualTo(const OSMetaClassBase * anObject) const override;
+
+	// OSData
+
+	static OSDataPtr
+	withCapacity(uint32_t capacity);
+
+	static OSDataPtr
+	withBytes(
+		const void   * bytes,
+		size_t         numBytes);
+
+	static OSDataPtr
+	withBytesNoCopy(
+		void         * bytes,
+		size_t         numBytes);
+
+	static OSDataPtr
+	withData(const OSData * inData);
+
+	static OSDataPtr
+	withData(
+		const OSData * inData,
+		size_t         start,
+		size_t         numBytes);
+
+	size_t
+	getLength() const;
+
+	size_t
+	getCapacity() const;
+
+	bool
+	appendBytes(
+		const void   * bytes,
+		size_t         numBytes);
+
+	bool
+	appendBytes(const OSData * aDataObj);
+	
+	const void *
+	getBytesNoCopy() const;
+
+	const void *
+	getBytesNoCopy(
+		size_t start,
+		size_t numBytes) const;
+
+	bool
+	isEqualTo(const OSData * aDataObj) const;
+
+	bool isEqualTo(const OSString * aString) const;
+
+    bool isEqualTo(
+		const void   * bytes,
+		size_t         numBytes) const;
+
+};
+
+#endif /* ! _IOKIT_OSDATA_H */

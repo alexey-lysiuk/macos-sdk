@@ -1,0 +1,20 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: E001E3D5-8F74-387D-88B0-C76614CF9A61', 'x86_64: E001E3D5-8F74-387D-88B0-C76614CF9A61' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/InputTranscoder.framework/Versions/A/InputTranscoder'
+current-version: 36
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _ITCandidateEnumerateTokenIDs, _ITCandidateGetScore, _ITCandidateGetSources, 
+                       _ITCandidateGetString, _ITCandidateGetStrokedPath, _ITDecoderCreate, 
+                       _ITDecoderEnumerateCandidates, _ITDecoderSetLinguisticContext, 
+                       _ITKeyInfoNull, _ITTouchTranscoderAddLexicon, _ITTouchTranscoderCreateSession, 
+                       _ITTouchTranscoderCreateWithKeyboardLayout, _ITTouchTranscoderSessionAddEvent, 
+                       _ITTouchTranscoderSessionEnumerateCandidates, _ITTouchTranscoderSessionSetLinguisticContext, 
+                       _ITTouchTranscoderSessionSetPrefix, _ITTouchTranscoderSupportsLocale, 
+                       _ITTouchTranscoderUpdateKeyboardLayout, _kITCandidateSourceDynamicLexicon, 
+                       _kITCandidateSourceStaticLexicon, _kITDecoderLocaleKey, _kITDecoderResourceDirectoryKey, 
+                       _kITTouchTranscoderBundleIdentifierKey, _kITTouchTranscoderKeyboardLayoutNameKey, 
+                       _kITTouchTranscoderLocaleKey ]
+...

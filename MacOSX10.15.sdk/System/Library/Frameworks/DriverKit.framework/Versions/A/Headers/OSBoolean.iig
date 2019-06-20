@@ -1,0 +1,29 @@
+#ifndef _IOKIT_OSBOOLEAN_H
+#define _IOKIT_OSBOOLEAN_H
+
+#include <DriverKit/OSCollection.iig>
+
+class OSBoolean;
+typedef OSBoolean * OSBooleanPtr;
+
+extern OSBooleanPtr kOSBooleanTrue;
+extern OSBooleanPtr kOSBooleanFalse;
+
+class LOCALONLY OSBoolean : public OSContainer
+{
+public:
+	// OSObject
+
+    virtual void
+    free() override;
+
+    virtual void
+    retain() const override;
+
+    virtual void
+    release() const override;
+
+	// OSBoolean
+};
+
+#endif /* ! _IOKIT_OSBOOLEAN_H */

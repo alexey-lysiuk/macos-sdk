@@ -1,0 +1,15 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: AA28C521-1735-3C1A-8E9A-1E54260D9C9F', 'x86_64: AA28C521-1735-3C1A-8E9A-1E54260D9C9F' ]
+platform:        zippered
+install-name:    '/usr/lib/libDHCPServer.A.dylib'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _DHCPSCopyDisabledInterfaces, _DHCPSDHCPLeaseListCreate, _DHCPSDHCPLeaseListNotificationKey, 
+                       _DHCPSDisabledInterfacesNotificationKey, _DHCPSNetBootClientListCreate, 
+                       _kDHCPSPropDHCPHWAddress, _kDHCPSPropDHCPIPAddress, _kDHCPSPropDHCPLease, 
+                       _kDHCPSPropIdentifier, _kDHCPSPropName, _kDHCPSPropNetBootArch, 
+                       _kDHCPSPropNetBootIPAddress, _kDHCPSPropNetBootImageID, _kDHCPSPropNetBootImageIndex, 
+                       _kDHCPSPropNetBootImageIsInstall, _kDHCPSPropNetBootImageKind, 
+                       _kDHCPSPropNetBootLastBootTime, _kDHCPSPropNetBootSysid ]
+...

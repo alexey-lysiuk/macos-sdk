@@ -1,0 +1,56 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: E34EEF62-B545-3411-8C05-520C53D7A3A2', 'x86_64: E34EEF62-B545-3411-8C05-520C53D7A3A2' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/EmailFoundation.framework/Versions/A/EmailFoundation'
+current-version: 3554.18.2
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _EFArraysAreEqual, _EFBundleIdentifierForXPCConnection, _EFComparatorFromSortDescriptors, 
+                       _EFContentProtectionDumpDiagnosticState, _EFContentProtectionGetDeviceLockState, 
+                       _EFContentProtectionGetObservedState, _EFContentProtectionSimulateState, 
+                       _EFDefaultsKeyLogWithPII, _EFDeviceUnlockedSinceBoot, _EFEmailMessageUTType, 
+                       _EFErrorDomain, _EFFrameworkVersion, _EFIsNotNull, _EFIsNull, 
+                       _EFIsSeedBuild, _EFObjectsAreEqual, _EFPriorityDesignatorKey, 
+                       _EFProductName, _EFProtectedDataAvailable, _EFPublicErrorInfoKey, 
+                       _EFRegisterContentProtectionObserver, _EFRoundUnsignedInteger, 
+                       _EFSQLSchemaColumnNameRowID, _EFSQLSchemaDatabaseNameMain, 
+                       _EFSQLStringForCollation, _EFSQLStringForConflictResolution, 
+                       _EFSQLStringForOrderDirection, _EFSQLiteErrorDomain, _EFSQLiteExtendedErrorCodeKey, 
+                       _EFSetsAreEqual, _EFStackshotWriteWithReason, _EFStackshotWriteWithReasonIncludingStack, 
+                       _EFStringWithInt, _EFStringWithInt64, _EFStringWithUInt64, 
+                       _EFStringWithUnsignedInteger, _EFSystemBuildVersion, _EFSystemVersion, 
+                       _EFUnregisterContentProtectionObserver, _EFVerboseVersion, 
+                       __EFLocalizedString, _ef_xpc_register_activity ]
+    objc-classes:    [ EFAutoBugCaptureReporter, EFByteSet, EFCancelationToken, EFCoalescer, 
+                       EFDebouncer, EFDevice, EFFuture, EFHTMLUtilities, EFImmediateScheduler, 
+                       EFInvocationToken, EFLazyCache, EFLazyFuture, EFMainThreadScheduler, 
+                       EFMeasuredObject, EFMutableByteSet, EFMutableIndexMap, EFMutableInt64Set, 
+                       EFObservable, EFObserver, EFOperationQueueScheduler, EFPair, 
+                       EFPriorityDesignator, EFPrivacy, EFProcessBoost, EFProcessTransaction, 
+                       EFPromise, EFQuery, EFQueue, EFQueueScheduler, EFResource, 
+                       EFResourcePool, EFSQLAggregateFunction, EFSQLAndExpression, 
+                       EFSQLBetweenExpression, EFSQLBinaryExpression, EFSQLBinding, 
+                       EFSQLBitExpression, EFSQLBitExpressionGenerator, EFSQLCaseExpression, 
+                       EFSQLColumn, EFSQLColumnExpression, EFSQLColumnSchema, EFSQLConnection, 
+                       EFSQLDeleteStatement, EFSQLDisqualifiedColumnExpression, EFSQLExpressionGenerator, 
+                       EFSQLFunction, EFSQLGeneratorComparisonPredicateNode, EFSQLGeneratorCompoundPredicateNode, 
+                       EFSQLGeneratorTableRelationship, EFSQLIndexSchema, EFSQLIndexedColumnSchema, 
+                       EFSQLInsertStatement, EFSQLJoinOnExpressionGenerator, EFSQLLikeEscapedExpression, 
+                       EFSQLObjectPropertyMapper, EFSQLOrExpression, EFSQLOrderByExpressionGenerator, 
+                       EFSQLPreparedStatement, EFSQLPropertyMapper, EFSQLQueryGenerator, 
+                       EFSQLRow, EFSQLSchema, EFSQLSelectExpressionGenerator, EFSQLSelectStatement, 
+                       EFSQLTableSchema, EFSQLUnaryExpression, EFSQLUpdateStatement, 
+                       EFSQLUpsertStatement, EFSandboxedURLWrapper, EFScheduler, 
+                       EFSchedulerTrampoline, EFSearchableIndexObjectPropertyMapper, 
+                       EFSortDescriptor, EFStringHash, _EFBlockObservable, _EFBlockObserver, 
+                       _EFCombineLatestObservable, _EFCombineLatestObservableSubscription, 
+                       _EFConcatenatingObservable, _EFConnectableObservable, _EFContentProtectionObserverWrapper, 
+                       _EFDistinctUntilChangedObservable, _EFGeneratorObservable, 
+                       _EFIdealTimerObservable, _EFManualObservable, _EFMergingObservable, 
+                       _EFMutableIndexMapTuple, _EFReplayObservable, _EFSQLAliasedExpression, 
+                       _EFSQLCharacterExpression, _EFSQLDataBinding, _EFSQLDistinctExpression, 
+                       _EFSQLDoubleBinding, _EFSQLInsertStatementFirstValue, _EFSQLInsertStatementFollowUpValue, 
+                       _EFSQLInsertStatementValue, _EFSQLInt64Binding, _EFSQLJoinExpression, 
+                       _EFSQLOrderExpression, _EFSQLStringBinding, _EFSamplingObservable ]
+...

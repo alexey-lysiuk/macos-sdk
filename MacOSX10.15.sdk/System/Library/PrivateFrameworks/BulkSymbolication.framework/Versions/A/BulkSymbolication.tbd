@@ -1,0 +1,12 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 20C63323-41BE-31F6-BA9A-1513A6BDFF0A' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/BulkSymbolication.framework/Versions/A/BulkSymbolication'
+current-version: 233
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _BulkSymbolicationVersionNumber, _BulkSymbolicationVersionString, 
+                       _kBKSRequestErrorDomain, _kSpeedTracerEndPoint ]
+    objc-classes:    [ BKSJob, BKSRequest, BKSResult, BKSSymbolOwner ]
+...

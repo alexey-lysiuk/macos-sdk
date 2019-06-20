@@ -1,0 +1,12 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: A5726E58-73FC-30AB-AF4C-BD26C12D72F9', 'x86_64: A5726E58-73FC-30AB-AF4C-BD26C12D72F9' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/AudioPasscode.framework/Versions/A/AudioPasscode'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _AudioPasscodeVersionNumber, _AudioPasscodeVersionString ]
+    objc-classes:    [ APCCodecInfo, APCDecoderProcessor, APCEncoderProcessor, APCListener, 
+                       APCListenerResultData, APCPlayer, APCPlayerEmbedInfo, AUPasscodeCodecCapability, 
+                       AUPasscodeCodecCommandLineOption, AUPasscodeCodecConfiguration ]
+...

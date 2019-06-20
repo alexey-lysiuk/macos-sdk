@@ -1,0 +1,11 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 226DFF55-5C06-3970-BD6E-A9EC9A75D2CE', 'x86_64: 226DFF55-5C06-3970-BD6E-A9EC9A75D2CE' ]
+platform:        zippered
+install-name:    '/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLVMPlugin.dylib'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _cvmsPluginElementBuild, _cvmsPluginServiceInitialize, _cvmsPluginServiceTerminate, 
+                       _oglCodeGenServiceGenerateIR, _oglCodeGenServiceInitialize, 
+                       _oglCodeGenServiceTerminate ]
+...

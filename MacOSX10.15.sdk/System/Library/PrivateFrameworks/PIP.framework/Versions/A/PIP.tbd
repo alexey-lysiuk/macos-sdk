@@ -1,0 +1,10 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 7890ACE3-B64B-33B0-B643-55FD316AE383' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/PIP.framework/Versions/A/PIP'
+current-version: 100
+exports:         
+  - archs:           [ x86_64 ]
+    objc-classes:    [ PIPViewController ]
+...

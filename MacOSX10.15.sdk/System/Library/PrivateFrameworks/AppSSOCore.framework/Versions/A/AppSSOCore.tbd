@@ -1,0 +1,14 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 1052A525-9E98-3201-A410-2903E29BB59A', 'x86_64: 1052A525-9E98-3201-A410-2903E29BB59A' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/AppSSOCore.framework/Versions/A/AppSSOCore'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _SOErrorDomain, _SOErrorSubcodeKey, _appSSO_init, _appSSO_performResponse, 
+                       _appSSO_performResponseCredential, _appSSO_willPerform ]
+    objc-classes:    [ SOAuthorizationCore, SOAuthorizationCredentialCore, SOAuthorizationParametersCore, 
+                       SOAuthorizationRequestParametersCore, SOConfiguration, SOConfigurationClient, 
+                       SOConfigurationVersion, SOErrorHelper, SOFullProfile, SOInternalProtocols, 
+                       SOServiceConnection, SOUtils ]
+...

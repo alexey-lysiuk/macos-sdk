@@ -1,0 +1,47 @@
+#if !__IIG
+#endif
+
+
+#ifndef _IOKIT_UIOBUFFERMEMORYDESCRIPTOR_H
+#define _IOKIT_UIOBUFFERMEMORYDESCRIPTOR_H
+
+#include <DriverKit/IOMemoryDescriptor.iig>
+
+struct IOBMDPrivateState {
+	IOMDPrivateState mdstate;
+	uint64_t         address;
+};
+
+class KERNEL IOBufferMemoryDescriptor : public IOMemoryDescriptor
+{
+public:
+
+	static kern_return_t
+	Create(
+		uint64_t options,
+		uint64_t length,
+		uint64_t alignment,
+		IOBufferMemoryDescriptor ** memory);
+
+	virtual bool
+	init() override;
+
+	virtual void
+	free() override;
+
+	kern_return_t
+	GetAddressRange(IOAddressSegment * range) LOCALONLY;
+
+	virtual kern_return_t
+	SetLength(uint64_t length);
+};
+
+class EXTENDS (IOBufferMemoryDescriptor) IOBufferMemoryDescriptorPrivate
+{
+	virtual kern_return_t
+	_CopyState(
+		IOBMDPrivateState * state);
+};
+
+
+#endif /* ! _IOKIT_UIOBUFFERMEMORYDESCRIPTOR_H */

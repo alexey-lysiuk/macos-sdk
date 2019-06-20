@@ -1,0 +1,18 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 019845D2-C5F1-374F-9090-1B4F484410CC' ]
+platform:        macosx
+install-name:    '/usr/lib/swift/libswiftSafariServices.dylib'
+current-version: 0
+swift-abi-version: 7
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ '$ld$install_name$os10.10$@rpath/libswiftSafariServices.dylib', 
+                       '$ld$install_name$os10.11$@rpath/libswiftSafariServices.dylib', 
+                       '$ld$install_name$os10.12$@rpath/libswiftSafariServices.dylib', 
+                       '$ld$install_name$os10.13$@rpath/libswiftSafariServices.dylib', 
+                       '$ld$install_name$os10.14$@rpath/libswiftSafariServices.dylib', 
+                       '$ld$install_name$os10.9$@rpath/libswiftSafariServices.dylib', 
+                       '_$s14SafariServices08SFSafariB9AvailableySbSo0cB7VersionVF', 
+                       '__swift_FORCE_LOAD_$_swiftSafariServices' ]
+...

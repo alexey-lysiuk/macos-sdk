@@ -1,0 +1,6 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 283E9B77-3925-36A9-AC0D-B12080A12947', 'x86_64: 283E9B77-3925-36A9-AC0D-B12080A12947' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/CoreCapture.framework/Versions/A/CoreCapture'
+...

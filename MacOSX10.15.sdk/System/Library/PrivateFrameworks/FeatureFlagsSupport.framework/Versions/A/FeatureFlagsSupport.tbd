@@ -1,0 +1,10 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 78AB85ED-F973-3906-9C14-EC6452BADE11', 'x86_64: 78AB85ED-F973-3906-9C14-EC6452BADE11' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/FeatureFlagsSupport.framework/Versions/A/FeatureFlagsSupport'
+current-version: 17
+exports:         
+  - archs:           [ x86_64 ]
+    objc-classes:    [ FFConfiguration, FFFeatureState ]
+...

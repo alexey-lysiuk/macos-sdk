@@ -1,0 +1,9 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: B72DD441-E8B1-3BB9-9060-E3A274F9F307' ]
+platform:        macosx
+install-name:    '/usr/lib/libXSEvent.dylib'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _XSEventPortCreate, _XSEventPortDelete, _XSEventPortPostEvent ]
+...

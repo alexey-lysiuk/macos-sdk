@@ -1,0 +1,13 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: A15C15FF-681F-38FE-95E2-36076A6F9B32', 'x86_64: A15C15FF-681F-38FE-95E2-36076A6F9B32' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/SymptomReporter.framework/Versions/A/SymptomReporter'
+current-version: 1194
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _set_symptom_verbosity, _symptom_create, _symptom_framework_init, 
+                       _symptom_framework_set_version, _symptom_framework_stats, 
+                       _symptom_new, _symptom_send, _symptom_send_immediate, _symptom_set_additional_digest, 
+                       _symptom_set_additional_qualifier, _symptom_set_qualifier ]
+...

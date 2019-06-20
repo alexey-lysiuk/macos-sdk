@@ -1,0 +1,18 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 4ED0B97F-40A7-3682-B3A7-B2076BBB2CD3', 'x86_64: 4ED0B97F-40A7-3682-B3A7-B2076BBB2CD3' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/AddressBookAutocomplete.framework/Versions/A/AddressBookAutocomplete'
+current-version: 2383.4
+exports:         
+  - archs:           [ x86_64 ]
+    objc-classes:    [ ABAutocompleteContactPredicate, ABAutocompleteLocalContactResultTransformBuilder, 
+                       ABAutocompleteLocalContactResultTransformer, ABAutocompleteLocalQuery, 
+                       ABAutocompleteLocalQueryContactStrategy, ABAutocompleteLocalQueryGroupsStrategy, 
+                       ABAutocompleteLocalSearch, ABAutocompleteLocalSearchObservable, 
+                       ABAutocompleteLocalSmartGroupsQuery, ABAutocompleteServerSearch, 
+                       ABAutocompleteServerSearchObservable, CNAutocompleteContactFetchPredicateFactory, 
+                       CNAutocompleteContactFilterPredicateFactory, CNAutocompleteContactPredicateFactory ]
+    objc-ivars:      [ ABAutocompleteLocalQuery._cancelationToken, ABAutocompleteLocalQuery._contactStore, 
+                       ABAutocompleteLocalQuery._request, ABAutocompleteLocalQuery._strategy ]
+...

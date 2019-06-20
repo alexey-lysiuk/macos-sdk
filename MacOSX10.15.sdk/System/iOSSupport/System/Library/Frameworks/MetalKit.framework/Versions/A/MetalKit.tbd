@@ -1,0 +1,22 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 30FD4075-DFDC-35EB-A4B1-AAD767113394' ]
+platform:        uikitformac
+install-name:    '/System/iOSSupport/System/Library/Frameworks/MetalKit.framework/Versions/A/MetalKit'
+current-version: 126
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _MTKMetalVertexDescriptorFromModelIO, _MTKMetalVertexDescriptorFromModelIOWithError, 
+                       _MTKMetalVertexFormatFromModelIO, _MTKModelErrorDomain, _MTKModelErrorKey, 
+                       _MTKModelIOVertexDescriptorFromMetal, _MTKModelIOVertexDescriptorFromMetalWithError, 
+                       _MTKModelIOVertexFormatFromMetal, _MTKTextureLoaderCubeLayoutVertical, 
+                       _MTKTextureLoaderErrorDomain, _MTKTextureLoaderErrorKey, _MTKTextureLoaderOptionAllocateMipmaps, 
+                       _MTKTextureLoaderOptionCubeLayout, _MTKTextureLoaderOptionGenerateMipmaps, 
+                       _MTKTextureLoaderOptionOrigin, _MTKTextureLoaderOptionSRGB, 
+                       _MTKTextureLoaderOptionTextureCPUCacheMode, _MTKTextureLoaderOptionTextureStorageMode, 
+                       _MTKTextureLoaderOptionTextureUsage, _MTKTextureLoaderOriginBottomLeft, 
+                       _MTKTextureLoaderOriginFlippedVertically, _MTKTextureLoaderOriginTopLeft ]
+    objc-classes:    [ MTKMesh, MTKMeshBuffer, MTKMeshBufferAllocator, MTKSubmesh, 
+                       MTKTextureIOBuffer, MTKTextureIOBufferAllocator, MTKTextureIOBufferMap, 
+                       MTKTextureLoader, MTKView ]
+...

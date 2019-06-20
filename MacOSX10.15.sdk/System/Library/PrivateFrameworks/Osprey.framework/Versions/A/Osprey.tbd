@@ -1,0 +1,10 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 31993D85-E0DD-3A5F-85B6-25951C452C99' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/Osprey.framework/Versions/A/Osprey'
+exports:         
+  - archs:           [ x86_64 ]
+    objc-classes:    [ OspreyChannel, OspreyGRPCBidiStreamingCallContext, OspreyGRPCCallContext, 
+                       OspreyServiceClient ]
+...

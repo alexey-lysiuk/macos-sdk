@@ -1,0 +1,18 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 9912CE89-FE9B-3536-A690-3FB71053E6B9' ]
+platform:        uikitformac
+install-name:    '/System/iOSSupport/System/Library/Frameworks/IntentsUI.framework/Versions/A/IntentsUI'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _INUIRemoteViewControllerErrorDomain, _INUIVoiceShortcutExtensionItemBundleURLKey, 
+                       _INUIVoiceShortcutExtensionItemSandboxExtensionDataKey, _IntentsUIVersionNumber, 
+                       _IntentsUIVersionString, __INUIRemoteViewControllerErrorDomain, 
+                       __INUIUtilitiesBestFittingSizeForSizeBySystemVersionDictionary ]
+    objc-classes:    [ INUIAddVoiceShortcutButton, INUIAddVoiceShortcutViewController, 
+                       INUIAppIntentDeliverer, INUIEditVoiceShortcutViewController, 
+                       INUIExtensionRequestInfo, INUIExtensionViewControllerConfiguration, 
+                       INUIImageLoader, INUIImageServiceConnection, INUIInterfaceSection, 
+                       INUIPortableImageLoaderHelper, INUIRemoteViewController, INUISearchFoundationImageAdapter, 
+                       INUIVoiceShortcutXPCInterface, _INUIExtensionContextState ]
+...

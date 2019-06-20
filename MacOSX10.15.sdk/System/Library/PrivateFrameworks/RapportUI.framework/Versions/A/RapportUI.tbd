@@ -1,0 +1,13 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: B9377C86-F5C9-329D-9058-AB2351057372' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/RapportUI.framework/Versions/A/RapportUI'
+current-version: 0
+compatibility-version: 0
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _RPImageForDeviceModel, _RPUILocalizedString, _RPUILocalizedStringF, 
+                       _RPUILocalizedStringV ]
+    objc-classes:    [ RPPINEntryView, RPPairingManagerUIController, RPPairingUIController ]
+...

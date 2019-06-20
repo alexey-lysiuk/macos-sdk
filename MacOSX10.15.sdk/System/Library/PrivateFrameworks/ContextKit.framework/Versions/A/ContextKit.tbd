@@ -1,0 +1,13 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: B4B18B67-C258-31AC-9D50-32B3BEACBFE1', 'x86_64: B4B18B67-C258-31AC-9D50-32B3BEACBFE1' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/ContextKit.framework/Versions/A/ContextKit'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _CKContextKitNotification_ConfigurationUpdate, _ContextKitErrorDomain, 
+                       _ContextKitVersionNumber, _ContextKitVersionString ]
+    objc-classes:    [ CKContextClient, CKContextCompleter, CKContextCountedItem, 
+                       CKContextGlobals, CKContextRequest, CKContextResponse, CKContextResult, 
+                       CKContextSemaphore ]
+...

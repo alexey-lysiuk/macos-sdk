@@ -1,0 +1,9 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 587D3372-447A-3BC5-A4B4-FDAF30C2A27F' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/AppleMediaServicesUI.framework/Versions/A/AppleMediaServicesUI'
+exports:         
+  - archs:           [ x86_64 ]
+    objc-classes:    [ AMSUIAlertDialogTask, AMSUIAuthenticateTask ]
+...

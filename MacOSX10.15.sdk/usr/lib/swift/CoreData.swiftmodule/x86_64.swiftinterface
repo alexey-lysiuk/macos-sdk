@@ -1,0 +1,799 @@
+// swift-interface-format-version: 1.0
+// swift-tools-version: Apple Swift version 5.1 effective-4.1.50 (swiftlang-1100.8.32.26 clang-1100.0.18.2)
+// swift-module-flags: -target x86_64-apple-macosx10.15 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftCoreData -swift-version 4 -O -enforce-exclusivity=unchecked -module-name CoreData
+@_exported import CoreData
+import Foundation
+import Swift
+extension CocoaError.Code {
+  public static var managedObjectValidation: CocoaError.Code {
+    get
+  }
+  public static var validationMultipleErrors: CocoaError.Code {
+    get
+  }
+  public static var validationMissingMandatoryProperty: CocoaError.Code {
+    get
+  }
+  public static var validationRelationshipLacksMinimumCount: CocoaError.Code {
+    get
+  }
+  public static var validationRelationshipExceedsMaximumCount: CocoaError.Code {
+    get
+  }
+  public static var validationRelationshipDeniedDelete: CocoaError.Code {
+    get
+  }
+  public static var validationNumberTooLarge: CocoaError.Code {
+    get
+  }
+  public static var validationNumberTooSmall: CocoaError.Code {
+    get
+  }
+  public static var validationDateTooLate: CocoaError.Code {
+    get
+  }
+  public static var validationDateTooSoon: CocoaError.Code {
+    get
+  }
+  public static var validationInvalidDate: CocoaError.Code {
+    get
+  }
+  public static var validationStringTooLong: CocoaError.Code {
+    get
+  }
+  public static var validationStringTooShort: CocoaError.Code {
+    get
+  }
+  public static var validationStringPatternMatching: CocoaError.Code {
+    get
+  }
+  public static var managedObjectContextLocking: CocoaError.Code {
+    get
+  }
+  public static var persistentStoreCoordinatorLocking: CocoaError.Code {
+    get
+  }
+  public static var managedObjectReferentialIntegrity: CocoaError.Code {
+    get
+  }
+  public static var managedObjectExternalRelationship: CocoaError.Code {
+    get
+  }
+  public static var managedObjectMerge: CocoaError.Code {
+    get
+  }
+  public static var managedObjectConstraintMerge: CocoaError.Code {
+    get
+  }
+  public static var persistentStoreInvalidType: CocoaError.Code {
+    get
+  }
+  public static var persistentStoreTypeMismatch: CocoaError.Code {
+    get
+  }
+  public static var persistentStoreIncompatibleSchema: CocoaError.Code {
+    get
+  }
+  public static var persistentStoreSave: CocoaError.Code {
+    get
+  }
+  public static var persistentStoreIncompleteSave: CocoaError.Code {
+    get
+  }
+  public static var persistentStoreSaveConflicts: CocoaError.Code {
+    get
+  }
+  public static var coreData: CocoaError.Code {
+    get
+  }
+  public static var persistentStoreOperation: CocoaError.Code {
+    get
+  }
+  public static var persistentStoreOpen: CocoaError.Code {
+    get
+  }
+  public static var persistentStoreTimeout: CocoaError.Code {
+    get
+  }
+  public static var persistentStoreUnsupportedRequestType: CocoaError.Code {
+    get
+  }
+  public static var persistentStoreIncompatibleVersionHash: CocoaError.Code {
+    get
+  }
+  public static var migration: CocoaError.Code {
+    get
+  }
+  public static var migrationCancelled: CocoaError.Code {
+    get
+  }
+  public static var migrationMissingSourceModel: CocoaError.Code {
+    get
+  }
+  public static var migrationMissingMappingModel: CocoaError.Code {
+    get
+  }
+  public static var migrationManagerSourceStore: CocoaError.Code {
+    get
+  }
+  public static var migrationManagerDestinationStore: CocoaError.Code {
+    get
+  }
+  public static var entityMigrationPolicy: CocoaError.Code {
+    get
+  }
+  public static var sqlite: CocoaError.Code {
+    get
+  }
+  public static var inferredMappingModel: CocoaError.Code {
+    get
+  }
+  public static var externalRecordImport: CocoaError.Code {
+    get
+  }
+}
+extension CocoaError.Code {
+  @available(*, deprecated, renamed: "managedObjectValidation")
+  public static var managedObjectValidationError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationMultipleErrors")
+  public static var validationMultipleErrorsError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationMissingMandatoryProperty")
+  public static var validationMissingMandatoryPropertyError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationRelationshipLacksMinimumCount")
+  public static var validationRelationshipLacksMinimumCountError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationRelationshipExceedsMaximumCount")
+  public static var validationRelationshipExceedsMaximumCountError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationRelationshipDeniedDelete")
+  public static var validationRelationshipDeniedDeleteError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationNumberTooLarge")
+  public static var validationNumberTooLargeError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationNumberTooSmall")
+  public static var validationNumberTooSmallError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationDateTooLate")
+  public static var validationDateTooLateError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationDateTooSoon")
+  public static var validationDateTooSoonError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationInvalidDate")
+  public static var validationInvalidDateError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationStringTooLong")
+  public static var validationStringTooLongError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationStringTooShort")
+  public static var validationStringTooShortError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationStringPatternMatching")
+  public static var validationStringPatternMatchingError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "managedObjectContextLocking")
+  public static var managedObjectContextLockingError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreCoordinatorLocking")
+  public static var persistentStoreCoordinatorLockingError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "managedObjectReferentialIntegrity")
+  public static var managedObjectReferentialIntegrityError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "managedObjectExternalRelationship")
+  public static var managedObjectExternalRelationshipError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "managedObjectMerge")
+  public static var managedObjectMergeError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "managedObjectConstraintMerge")
+  public static var managedObjectConstraintMergeError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreInvalidType")
+  public static var persistentStoreInvalidTypeError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreTypeMismatch")
+  public static var persistentStoreTypeMismatchError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreIncompatibleSchema")
+  public static var persistentStoreIncompatibleSchemaError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreSave")
+  public static var persistentStoreSaveError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreIncompleteSave")
+  public static var persistentStoreIncompleteSaveError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreSaveConflicts")
+  public static var persistentStoreSaveConflictsError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "coreData")
+  public static var coreDataError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreOperation")
+  public static var persistentStoreOperationError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreOpen")
+  public static var persistentStoreOpenError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreTimeout")
+  public static var persistentStoreTimeoutError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreUnsupportedRequestType")
+  public static var persistentStoreUnsupportedRequestTypeError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreIncompatibleVersionHash")
+  public static var persistentStoreIncompatibleVersionHashError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "migration")
+  public static var migrationError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "migrationCancelled")
+  public static var migrationCancelledError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "migrationMissingSourceModel")
+  public static var migrationMissingSourceModelError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "migrationMissingMappingModel")
+  public static var migrationMissingMappingModelError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "migrationManagerSourceStore")
+  public static var migrationManagerSourceStoreError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "migrationManagerDestinationStore")
+  public static var migrationManagerDestinationStoreError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "entityMigrationPolicy")
+  public static var entityMigrationPolicyError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "sqlite")
+  public static var sqliteError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "inferredMappingModel")
+  public static var inferredMappingModelError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "externalRecordImport")
+  public static var externalRecordImportError: CocoaError.Code {
+    get
+  }
+}
+extension CocoaError {
+  public static var managedObjectValidation: CocoaError.Code {
+    get
+  }
+  public static var validationMultipleErrors: CocoaError.Code {
+    get
+  }
+  public static var validationMissingMandatoryProperty: CocoaError.Code {
+    get
+  }
+  public static var validationRelationshipLacksMinimumCount: CocoaError.Code {
+    get
+  }
+  public static var validationRelationshipExceedsMaximumCount: CocoaError.Code {
+    get
+  }
+  public static var validationRelationshipDeniedDelete: CocoaError.Code {
+    get
+  }
+  public static var validationNumberTooLarge: CocoaError.Code {
+    get
+  }
+  public static var validationNumberTooSmall: CocoaError.Code {
+    get
+  }
+  public static var validationDateTooLate: CocoaError.Code {
+    get
+  }
+  public static var validationDateTooSoon: CocoaError.Code {
+    get
+  }
+  public static var validationInvalidDate: CocoaError.Code {
+    get
+  }
+  public static var validationStringTooLong: CocoaError.Code {
+    get
+  }
+  public static var validationStringTooShort: CocoaError.Code {
+    get
+  }
+  public static var validationStringPatternMatching: CocoaError.Code {
+    get
+  }
+  public static var managedObjectContextLocking: CocoaError.Code {
+    get
+  }
+  public static var persistentStoreCoordinatorLocking: CocoaError.Code {
+    get
+  }
+  public static var managedObjectReferentialIntegrity: CocoaError.Code {
+    get
+  }
+  public static var managedObjectExternalRelationship: CocoaError.Code {
+    get
+  }
+  public static var managedObjectMerge: CocoaError.Code {
+    get
+  }
+  public static var managedObjectConstraintMerge: CocoaError.Code {
+    get
+  }
+  public static var persistentStoreInvalidType: CocoaError.Code {
+    get
+  }
+  public static var persistentStoreTypeMismatch: CocoaError.Code {
+    get
+  }
+  public static var persistentStoreIncompatibleSchema: CocoaError.Code {
+    get
+  }
+  public static var persistentStoreSave: CocoaError.Code {
+    get
+  }
+  public static var persistentStoreIncompleteSave: CocoaError.Code {
+    get
+  }
+  public static var persistentStoreSaveConflicts: CocoaError.Code {
+    get
+  }
+  public static var coreData: CocoaError.Code {
+    get
+  }
+  public static var persistentStoreOperation: CocoaError.Code {
+    get
+  }
+  public static var persistentStoreOpen: CocoaError.Code {
+    get
+  }
+  public static var persistentStoreTimeout: CocoaError.Code {
+    get
+  }
+  public static var persistentStoreUnsupportedRequestType: CocoaError.Code {
+    get
+  }
+  public static var persistentStoreIncompatibleVersionHash: CocoaError.Code {
+    get
+  }
+  public static var migration: CocoaError.Code {
+    get
+  }
+  public static var migrationCancelled: CocoaError.Code {
+    get
+  }
+  public static var migrationMissingSourceModel: CocoaError.Code {
+    get
+  }
+  public static var migrationMissingMappingModel: CocoaError.Code {
+    get
+  }
+  public static var migrationManagerSourceStore: CocoaError.Code {
+    get
+  }
+  public static var migrationManagerDestinationStore: CocoaError.Code {
+    get
+  }
+  public static var entityMigrationPolicy: CocoaError.Code {
+    get
+  }
+  public static var sqlite: CocoaError.Code {
+    get
+  }
+  public static var inferredMappingModel: CocoaError.Code {
+    get
+  }
+  public static var externalRecordImport: CocoaError.Code {
+    get
+  }
+}
+extension CocoaError {
+  @available(*, deprecated, renamed: "managedObjectValidation")
+  public static var managedObjectValidationError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationMultipleErrors")
+  public static var validationMultipleErrorsError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationMissingMandatoryProperty")
+  public static var validationMissingMandatoryPropertyError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationRelationshipLacksMinimumCount")
+  public static var validationRelationshipLacksMinimumCountError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationRelationshipExceedsMaximumCount")
+  public static var validationRelationshipExceedsMaximumCountError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationRelationshipDeniedDelete")
+  public static var validationRelationshipDeniedDeleteError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationNumberTooLarge")
+  public static var validationNumberTooLargeError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationNumberTooSmall")
+  public static var validationNumberTooSmallError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationDateTooLate")
+  public static var validationDateTooLateError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationDateTooSoon")
+  public static var validationDateTooSoonError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationInvalidDate")
+  public static var validationInvalidDateError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationStringTooLong")
+  public static var validationStringTooLongError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationStringTooShort")
+  public static var validationStringTooShortError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "validationStringPatternMatching")
+  public static var validationStringPatternMatchingError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "managedObjectContextLocking")
+  public static var managedObjectContextLockingError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreCoordinatorLocking")
+  public static var persistentStoreCoordinatorLockingError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "managedObjectReferentialIntegrity")
+  public static var managedObjectReferentialIntegrityError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "managedObjectExternalRelationship")
+  public static var managedObjectExternalRelationshipError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "managedObjectMerge")
+  public static var managedObjectMergeError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "managedObjectConstraintMerge")
+  public static var managedObjectConstraintMergeError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreInvalidType")
+  public static var persistentStoreInvalidTypeError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreTypeMismatch")
+  public static var persistentStoreTypeMismatchError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreIncompatibleSchema")
+  public static var persistentStoreIncompatibleSchemaError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreSave")
+  public static var persistentStoreSaveError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreIncompleteSave")
+  public static var persistentStoreIncompleteSaveError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreSaveConflicts")
+  public static var persistentStoreSaveConflictsError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "coreData")
+  public static var coreDataError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreOperation")
+  public static var persistentStoreOperationError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreOpen")
+  public static var persistentStoreOpenError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreTimeout")
+  public static var persistentStoreTimeoutError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreUnsupportedRequestType")
+  public static var persistentStoreUnsupportedRequestTypeError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "persistentStoreIncompatibleVersionHash")
+  public static var persistentStoreIncompatibleVersionHashError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "migration")
+  public static var migrationError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "migrationCancelled")
+  public static var migrationCancelledError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "migrationMissingSourceModel")
+  public static var migrationMissingSourceModelError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "migrationMissingMappingModel")
+  public static var migrationMissingMappingModelError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "migrationManagerSourceStore")
+  public static var migrationManagerSourceStoreError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "migrationManagerDestinationStore")
+  public static var migrationManagerDestinationStoreError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "entityMigrationPolicy")
+  public static var entityMigrationPolicyError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "sqlite")
+  public static var sqliteError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "inferredMappingModel")
+  public static var inferredMappingModelError: CocoaError.Code {
+    get
+  }
+  @available(*, deprecated, renamed: "externalRecordImport")
+  public static var externalRecordImportError: CocoaError.Code {
+    get
+  }
+}
+extension CocoaError {
+  public var validationObject: Any? {
+    get
+  }
+  public var validationKey: String? {
+    get
+  }
+  public var validationPredicate: NSPredicate? {
+    get
+  }
+  public var validationValue: Any? {
+    get
+  }
+  public var affectedStores: [AnyObject]? {
+    get
+  }
+  public var affectedObjects: [AnyObject]? {
+    get
+  }
+  public var persistentStoreSaveConflicts: [NSMergeConflict]? {
+    get
+  }
+}
+extension CocoaError {
+  @available(*, unavailable, renamed: "managedObjectValidation")
+  public static var ManagedObjectValidationError: CocoaError.Code {
+    get
+  }
+  @available(*, unavailable, renamed: "validationMultipleErrors")
+  public static var ValidationMultipleErrorsError: CocoaError.Code {
+    get
+  }
+  @available(*, unavailable, renamed: "validationMissingMandatoryProperty")
+  public static var ValidationMissingMandatoryPropertyError: CocoaError.Code {
+    get
+  }
+  @available(*, unavailable, renamed: "validationRelationshipLacksMinimumCount")
+  public static var ValidationRelationshipLacksMinimumCountError: CocoaError.Code {
+    get
+  }
+  @available(*, unavailable, renamed: "validationRelationshipExceedsMaximumCount")
+  public static var ValidationRelationshipExceedsMaximumCountError: CocoaError.Code {
+    get
+  }
+  @available(*, unavailable, renamed: "validationRelationshipDeniedDelete")
+  public static var ValidationRelationshipDeniedDeleteError: CocoaError.Code {
+    get
+  }
+  @available(*, unavailable, renamed: "validationNumberTooLarge")
+  public static var ValidationNumberTooLargeError: CocoaError.Code {
+    get
+  }
+  @available(*, unavailable, renamed: "validationNumberTooSmall")
+  public static var ValidationNumberTooSmallError: CocoaError.Code {
+    get
+  }
+  @available(*, unavailable, renamed: "validationDateTooLate")
+  public static var ValidationDateTooLateError: CocoaError.Code {
+    get
+  }
+  @available(*, unavailable, renamed: "validationDateTooSoon")
+  public static var ValidationDateTooSoonError: CocoaError.Code {
+    get
+  }
+  @available(*, unavailable, renamed: "validationInvalidDate")
+  public static var ValidationInvalidDateError: CocoaError.Code {
+    get
+  }
+  @available(*, unavailable, renamed: "validationStringTooLong")
+  public static var ValidationStringTooLongError: CocoaError.Code {
+    get
+  }
+  @available(*, unavailable, renamed: "validationStringTooShort")
+  public static var ValidationStringTooShortError: CocoaError.Code {
+    get
+  }
+  @available(*, unavailable, renamed: "validationStringPatternMatching")
+  public static var ValidationStringPatternMatchingError: CocoaError.Code {
+    get
+  }
+  @available(*, unavailable, renamed: "managedObjectContextLocking")
+  public static var ManagedObjectContextLockingError: CocoaError.Code {
+    get
+  }
+  @available(*, unavailable, renamed: "persistentStoreCoordinatorLocking")
+  public static var PersistentStoreCoordinatorLockingError: CocoaError.Code {
+    get
+  }
+  @available(*, unavailable, renamed: "managedObjectReferentialIntegrity")
+  public static var ManagedObjectReferentialIntegrityError: CocoaError.Code {
+    get
+  }
+  @available(*, unavailable, renamed: "managedObjectExternalRelationship")
+  public static var ManagedObjectExternalRelationshipError: CocoaError.Code {
+    get
+  }
+  @available(*, unavailable, renamed: "managedObjectMerge")
+  public static var ManagedObjectMergeError: CocoaError.Code {
+    get
+  }
+  @available(*, unavailable, renamed: "managedObjectConstraintMerge")
+  public static var ManagedObjectConstraintMergeError: CocoaError.Code {
+    get
+  }
+  @available(*, unavailable, renamed: "persistentStoreInvalidType")
+  public static var PersistentStoreInvalidTypeError: CocoaError.Code {
+    get
+  }
+  @available(*, unavailable, renamed: "persistentStoreTypeMismatch")
+  public static var PersistentStoreTypeMismatchError: CocoaError.Code {
+    get
+  }
+  @available(*, unavailable, renamed: "persistentStoreIncompatibleSchema")
+  public static var PersistentStoreIncompatibleSchemaError: CocoaError.Code {
+    get
+  }
+  @available(*, unavailable, renamed: "persistentStoreSave")
+  public static var PersistentStoreSaveError: CocoaError.Code {
+    get
+  }
+  @available(*, unavailable, renamed: "persistentStoreIncompleteSave")
+  public static var PersistentStoreIncompleteSaveError: CocoaError.Code {
+    get
+  }
+  @available(*, unavailable, renamed: "persistentStoreSaveConflicts")
+  public static var PersistentStoreSaveConflictsError: CocoaError.Code {
+    get
+  }
+  @available(*, unavailable, renamed: "coreData")
+  public static var CoreDataError: CocoaError.Code {
+    get
+  }
+  @available(*, unavailable, renamed: "persistentStoreOperation")
+  public static var PersistentStoreOperationError: CocoaError.Code {
+    get
+  }
+  @available(*, unavailable, renamed: "persistentStoreOpen")
+  public static var PersistentStoreOpenError: CocoaError.Code {
+    get
+  }
+  @available(*, unavailable, renamed: "persistentStoreTimeout")
+  public static var PersistentStoreTimeoutError: CocoaError.Code {
+    get
+  }
+  @available(*, unavailable, renamed: "persistentStoreUnsupportedRequestType")
+  public static var PersistentStoreUnsupportedRequestTypeError: CocoaError.Code {
+    get
+  }
+  @available(*, unavailable, renamed: "persistentStoreIncompatibleVersionHash")
+  public static var PersistentStoreIncompatibleVersionHashError: CocoaError.Code {
+    get
+  }
+  @available(*, unavailable, renamed: "migration")
+  public static var MigrationError: CocoaError.Code {
+    get
+  }
+  @available(*, unavailable, renamed: "migrationCancelled")
+  public static var MigrationCancelledError: CocoaError.Code {
+    get
+  }
+  @available(*, unavailable, renamed: "migrationMissingSourceModel")
+  public static var MigrationMissingSourceModelError: CocoaError.Code {
+    get
+  }
+  @available(*, unavailable, renamed: "migrationMissingMappingModel")
+  public static var MigrationMissingMappingModelError: CocoaError.Code {
+    get
+  }
+  @available(*, unavailable, renamed: "migrationManagerSourceStore")
+  public static var MigrationManagerSourceStoreError: CocoaError.Code {
+    get
+  }
+  @available(*, unavailable, renamed: "migrationManagerDestinationStore")
+  public static var MigrationManagerDestinationStoreError: CocoaError.Code {
+    get
+  }
+  @available(*, unavailable, renamed: "entityMigrationPolicy")
+  public static var EntityMigrationPolicyError: CocoaError.Code {
+    get
+  }
+  @available(*, unavailable, renamed: "sqlite")
+  public static var SQLiteError: CocoaError.Code {
+    get
+  }
+  @available(*, unavailable, renamed: "inferredMappingModel")
+  public static var InferredMappingModelError: CocoaError.Code {
+    get
+  }
+  @available(*, unavailable, renamed: "externalRecordImport")
+  public static var ExternalRecordImportError: CocoaError.Code {
+    get
+  }
+}
+extension NSManagedObjectContext {
+  public func fetch<T>(_ request: NSFetchRequest<T>) throws -> [T] where T : CoreData.NSFetchRequestResult
+  public func count<T>(for request: NSFetchRequest<T>) throws -> Int where T : CoreData.NSFetchRequestResult
+}

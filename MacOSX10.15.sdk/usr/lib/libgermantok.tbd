@@ -1,0 +1,9 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 1F0CD37E-E3FC-346E-88E9-0D2AD0D1D0B2', 'x86_64: 1F0CD37E-E3FC-346E-88E9-0D2AD0D1D0B2' ]
+platform:        zippered
+install-name:    '/usr/lib/libgermantok.dylib'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _germantok_tokenize ]
+...

@@ -1,0 +1,21 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 9A7B6A07-B8FE-38B1-ABE8-674613B93196', 'x86_64: 9A7B6A07-B8FE-38B1-ABE8-674613B93196' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/CoreBrightness.framework/Versions/A/CoreBrightness'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _CBALCALSCopyALSServiceClient, _CBALCDisplayFeatureAvailable, 
+                       _CBALCGetBoolPreferenceForKey, _CBALCGetDictPreferenceForKey, 
+                       _CBALCGetDisplayAutoBrightnessEnabled, _CBALCGetFloatPreferenceForKey, 
+                       _CBALCGetIntPreferenceForKey, _CBALCGetKeyboardAutoBrightnessEnabled, 
+                       _CBALCGetKeyboardDimTime, _CBALCKeyboardFeatureAvailable, 
+                       _CBALCLGPVersion, _CBALCRegisterALSPluginCallback, _CBALCSetBoolPreferenceForKey, 
+                       _CBALCSetDictPreferenceForKey, _CBALCSetDictionary, _CBALCSetDisplayAutoBrightnessEnabled, 
+                       _CBALCSetFloatPreferenceForKey, _CBALCSetIntPreferenceForKey, 
+                       _CBALCSetKeyboardAutoBrightnessEnabled, _CBALCSetKeyboardDimTime, 
+                       _CBALCUnregisterALSPluginCallback, _kKBIDBuiltIn ]
+    objc-classes:    [ BrightnessSystem, BrightnessSystemClient, BrightnessSystemClientInternal, 
+                       CBAdaptationClient, CBBlueLightClient, CBClient, CBTrueToneClient, 
+                       DisplayServicesClient, KeyboardBrightnessClient ]
+...

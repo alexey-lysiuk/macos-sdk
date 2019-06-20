@@ -1,0 +1,18 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 5D008688-5AFA-3CCD-8F1C-274C022E432F' ]
+platform:        macosx
+install-name:    '/System/Library/Frameworks/FileProviderUI.framework/Versions/A/FileProviderUI'
+current-version: 24
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _FPUIActionIdentifierAuthenticate, _FPUIActionViewControllerErrorDomain, 
+                       _FPUIActionViewControllerNavigationBarDoneButtonIdentifier, 
+                       _FPUIActionViewControllerNavigationBarIdentifier, _FPUIErrorDomain, 
+                       _FPUILoc, _FPUIPresentActionButtonIdentifier, _FPUInternalActionCancelButtonIdentifier, 
+                       _FPUInternalActionContentLabelIdentifier, _FPUInternalActionFailButtonIdentifier, 
+                       _FPUInternalActionSucceedButtonIdentifier, _FPUInternalActionTypeLabelIdentifier ]
+    objc-classes:    [ FPUIAction, FPUIActionController, FPUIActionExtensionContext, 
+                       FPUIActionExtensionController, FPUIActionExtensionViewController, 
+                       FPUIActionViewController, FPUIManager ]
+...

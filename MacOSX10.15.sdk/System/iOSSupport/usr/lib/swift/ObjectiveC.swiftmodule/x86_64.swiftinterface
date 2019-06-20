@@ -1,0 +1,82 @@
+// swift-interface-format-version: 1.0
+// swift-tools-version: Apple Swift version 5.1 effective-4.1.50 (swiftlang-1100.8.32.26 clang-1100.0.18.2)
+// swift-module-flags: -target x86_64-apple-ios13.0-macabi -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftObjectiveC -swift-version 4 -O -enforce-exclusivity=unchecked -disable-objc-attr-requires-foundation-module -module-name ObjectiveC
+@_exported import ObjectiveC
+import Swift
+import _SwiftObjectiveCOverlayShims
+@_fixed_layout public struct ObjCBool : ExpressibleByBooleanLiteral {
+  internal var _value: Int8
+  public init(_ value: Bool)
+  public var boolValue: Bool {
+    get
+  }
+  @_transparent public init(booleanLiteral value: Bool) {
+    self.init(value)
+  }
+  public typealias BooleanLiteralType = Swift.Bool
+}
+extension ObjCBool : CustomReflectable {
+  public var customMirror: Mirror {
+    get
+  }
+}
+extension ObjCBool : CustomStringConvertible {
+  public var description: String {
+    get
+  }
+}
+public func _convertBoolToObjCBool(_ x: Bool) -> ObjCBool
+public func _convertObjCBoolToBool(_ x: ObjCBool) -> Bool
+@_fixed_layout public struct Selector : ExpressibleByStringLiteral {
+  internal var ptr: OpaquePointer
+  public init(_ str: String)
+  public init(stringLiteral value: String)
+  public typealias StringLiteralType = Swift.String
+  public typealias ExtendedGraphemeClusterLiteralType = Swift.String
+  public typealias UnicodeScalarLiteralType = Swift.String
+}
+extension Selector : Equatable, Hashable {
+  public static func == (a: ObjectiveC.Selector, b: ObjectiveC.Selector) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+extension Selector : CustomStringConvertible {
+  public var description: String {
+    get
+  }
+}
+extension String {
+  public init(_sel: Selector)
+}
+extension Selector : CustomReflectable {
+  public var customMirror: Mirror {
+    get
+  }
+}
+@_fixed_layout public struct NSZone {
+  internal var pointer: OpaquePointer
+}
+public func autoreleasepool<Result>(invoking body: () throws -> Result) rethrows -> Result
+@available(*, unavailable, message: "Use 'Bool' value 'true' instead")
+public var YES: ObjCBool {
+  get
+}
+@available(*, unavailable, message: "Use 'Bool' value 'false' instead")
+public var NO: ObjCBool {
+  get
+}
+extension NSObject : Equatable, Hashable {
+  public static func == (lhs: NSObject, rhs: NSObject) -> Bool
+  @nonobjc public var hashValue: Int {
+    get
+  }
+  public func hash(into hasher: inout Hasher)
+  public func _rawHashValue(seed: Int) -> Int
+}
+extension NSObject : CVarArg {
+  public var _cVarArgEncoding: [Int] {
+    get
+  }
+}

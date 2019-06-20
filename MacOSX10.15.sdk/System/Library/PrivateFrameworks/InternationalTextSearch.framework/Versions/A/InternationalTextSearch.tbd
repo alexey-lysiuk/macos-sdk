@@ -1,0 +1,20 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: D3D33881-B1DE-3576-AD3A-56A2104309EE', 'x86_64: D3D33881-B1DE-3576-AD3A-56A2104309EE' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/InternationalTextSearch.framework/Versions/A/InternationalTextSearch'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _ITSCollationContextFreeContextForDatabaseHandle, _ITSCopyFTSTableCreateStatementUsingCurrentLanguage, 
+                       _ITSCopyFTSTableCreateStatementWithLanguageAndCollator, _ITSCopySearchCollatorForLanguage, 
+                       _ITSCopyUserLanguage, _ITSCreateCollator, _ITSCreateCollatorWithPreferredLocale, 
+                       _ITSCreateSortKey, _ITSFTSIsEnabled, _ITSRegisterSQLiteICUTokenizer, 
+                       _ITSSetCollatorOverrideForDatabaseConnectionHandle, _ITSSetLocaleOverrideForDatabaseConnectionHandle, 
+                       _ITSTokenListCopyEscapedTokenAtIndex, _ITSTokenListCreate, 
+                       _ITSTokenListDestroy, _ITSTokenListGetCount, _ITSTokenListGetTokenAtIndex, 
+                       _ITSTokenListGetTokenCollationKeyAtIndex, _ITSTokenListGetTokenCollationKeyLengthAtIndex, 
+                       _ITSTokenListGetTokenEndByteOffsetAtIndex, _ITSTokenListGetTokenRangeAtIndex, 
+                       _ITSTokenListGetTokenStartByteOffsetAtIndex, _ITSTokenListPopulateFromString, 
+                       _ITSTokenListRemoveAllTokens, _InternationalTextSearchVersionNumber, 
+                       _InternationalTextSearchVersionString ]
+...

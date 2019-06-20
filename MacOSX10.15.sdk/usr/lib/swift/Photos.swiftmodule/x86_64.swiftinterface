@@ -1,0 +1,26 @@
+// swift-interface-format-version: 1.0
+// swift-tools-version: Apple Swift version 5.1 effective-4.1.50 (swiftlang-1100.8.32.26 clang-1100.0.18.2)
+// swift-module-flags: -target x86_64-apple-macosx10.15 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftPhotos -swift-version 4 -O -enforce-exclusivity=unchecked -module-name Photos
+@_exported import Photos
+import Swift
+@available(iOS 8.0, tvOS 10.0, OSX 10.13, *)
+extension PHChange {
+  @_alwaysEmitIntoClient public func changeDetails<T>(for object: T) -> PHObjectChangeDetails<T>? where T : Photos.PHObject {
+    return self.__changeDetails(for: object) as! PHObjectChangeDetails<T>?
+  }
+  @_alwaysEmitIntoClient public func changeDetails<T>(for fetchResult: PHFetchResult<T>) -> PHFetchResultChangeDetails<T>? where T : Photos.PHObject {
+    return self.__changeDetails(
+      for: fetchResult as! PHFetchResult<AnyObject>
+    ) as! PHFetchResultChangeDetails<T>?
+  }
+  @_alwaysEmitIntoClient public func changeDetails(for fetchResult: PHFetchResult<AnyObject>) -> PHFetchResultChangeDetails<PHObject>? {
+    return self.__changeDetails(for: fetchResult)
+  }
+}
+@available(OSX 10.13, iOS 13.0, *)
+extension PHProjectChangeRequest {
+  @available(OSX 10.14, *)
+  public func removeAssets<T>(_ assets: T) where T : Swift.Collection, T.Element == Photos.PHAsset
+  @available(OSX 10.14, *)
+  public func removeAssets(_ assets: PHFetchResult<PHAsset>)
+}

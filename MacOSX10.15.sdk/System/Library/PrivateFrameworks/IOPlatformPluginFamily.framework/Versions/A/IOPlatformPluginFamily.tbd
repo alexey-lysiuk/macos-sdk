@@ -1,0 +1,11 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: CBA22199-1D90-3287-9905-4080E8C00D52' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/IOPlatformPluginFamily.framework/Versions/A/IOPlatformPluginFamily'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _IOPPFGetDiagProperty, _IOPPFGetDiagPropertyFromDict, _IOPPFGetHandler, 
+                       _IOPPFGetProperty, _IOPPFPrintTest, _IOPPFSetFanThrottleMode, 
+                       _IOPPFSetProperties ]
+...

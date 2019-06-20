@@ -1,0 +1,10 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 5221E594-59B1-30F0-BEEA-49BC39C65D90', 'x86_64: 5221E594-59B1-30F0-BEEA-49BC39C65D90' ]
+platform:        zippered
+install-name:    '/System/Library/CoreServices/Encodings/libCyrillicConverter.dylib'
+current-version: 76
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ ___CFStringEncodingGetCyrillicConverterDefinition ]
+...

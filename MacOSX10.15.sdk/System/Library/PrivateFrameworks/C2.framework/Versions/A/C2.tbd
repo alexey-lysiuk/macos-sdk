@@ -1,0 +1,15 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: D943AD2D-3CBB-353D-B989-9D6D4F421C18', 'x86_64: D943AD2D-3CBB-353D-B989-9D6D4F421C18' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/C2.framework/Versions/A/C2'
+current-version: 470
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _C2VersionNumber, _C2VersionString, _kServerTimeBeginning ]
+    objc-classes:    [ C2DeviceInfo, C2Logging, C2Metric, C2MetricOperationGroupOptions, 
+                       C2MetricOperationOptions, C2MetricOptions, C2MetricRequestOptions, 
+                       C2ReportMetrics, C2RequestManager, C2RequestOptions, C2Route, 
+                       C2RoutingTable, C2Session, C2SessionGroup, C2SessionPool, 
+                       C2SessionTLSCache, C2SessionTask, C2Time ]
+...

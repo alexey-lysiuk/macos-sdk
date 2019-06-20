@@ -1,0 +1,14 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 51F7FD88-88B5-342C-A3E6-56039C301192' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/IMTransferAgent.framework/Versions/A/IMTransferAgent'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _IMOptOutOfOptimizedMadridAttachmentDownloadPath, _IMOptOutOfOptimizedMadridAttachmentUploadPath, 
+                       _IMSetOptOutOfOptimizedMadridAttachmentDownloadPath, _IMSetOptOutOfOptimizedMadridAttachmentUploadPath ]
+    objc-classes:    [ FTiMessageRequestMMCSDownloadToken, FTiMessageRequestMMCSUploadToken, 
+                       IMTransferAgentController, IMTransferAgentDeliveryController, 
+                       IMTransferAgentIDSInterface, IMTransferEncryptionController, 
+                       IMTransferEncryptionHelpers ]
+...

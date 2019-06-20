@@ -1,0 +1,12 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: C0CFF656-F6E3-30E8-82B2-1116FB75BD9E' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/AppleAppSupport.framework/Versions/A/AppleAppSupport'
+current-version: 1.4
+compatibility-version: 1.2
+exports:         
+  - archs:           [ x86_64 ]
+    re-exports:      [ '/System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore' ]
+    symbols:         [ _AppleAppSupportLivesOn ]
+...

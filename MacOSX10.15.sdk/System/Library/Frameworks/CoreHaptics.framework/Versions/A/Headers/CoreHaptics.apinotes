@@ -1,0 +1,18 @@
+---
+Name: CoreHaptics
+
+Classes:
+    - Name: CHHapticEngine
+      Methods:
+        - Selector: "initAndReturnError:"
+          MethodKind: Instance
+          SwiftName: "init()"
+          DesignatedInit: true
+
+Protocols:
+    - Name: CHHapticPatternPlayer
+      Methods:
+        - Selector: "sendParameters:atTime:error:"
+          MethodKind: Instance
+          SwiftName: "sendParameters(_:atTime:)"
+

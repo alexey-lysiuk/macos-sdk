@@ -1,0 +1,720 @@
+// swift-interface-format-version: 1.0
+// swift-tools-version: Apple Swift version 5.1 effective-4.1.50 (swiftlang-1100.8.32.26 clang-1100.0.18.2)
+// swift-module-flags: -target x86_64-apple-ios13.0-macabi -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftDispatch -swift-version 4 -O -enforce-exclusivity=unchecked -module-name Dispatch
+@_exported import Dispatch
+import Swift
+import _SwiftDispatchOverlayShims
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+public enum DispatchPredicate {
+  case onQueue(DispatchQueue)
+  case onQueueAsBarrier(DispatchQueue)
+  case notOnQueue(DispatchQueue)
+}
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+public func _dispatchPreconditionTest(_ condition: DispatchPredicate) -> Bool
+@available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+@_transparent public func dispatchPrecondition(condition: @autoclosure () -> DispatchPredicate) {
+	// precondition is able to determine release-vs-debug asserts where the overlay
+	// cannot, so formulating this into a call that we can call with precondition()
+	precondition(_dispatchPreconditionTest(condition()), "dispatchPrecondition failure")
+}
+public struct DispatchQoS : Equatable {
+  public let qosClass: QoSClass
+  public let relativePriority: Int
+  @available(OSX 10.10, iOS 8.0, *)
+  public static let background: Dispatch.DispatchQoS
+  @available(OSX 10.10, iOS 8.0, *)
+  public static let utility: Dispatch.DispatchQoS
+  @available(OSX 10.10, iOS 8.0, *)
+  public static let `default`: Dispatch.DispatchQoS
+  @available(OSX 10.10, iOS 8.0, *)
+  public static let userInitiated: Dispatch.DispatchQoS
+  @available(OSX 10.10, iOS 8.0, *)
+  public static let userInteractive: Dispatch.DispatchQoS
+  public static let unspecified: Dispatch.DispatchQoS
+  public enum QoSClass {
+    case background
+    case utility
+    case `default`
+    case userInitiated
+    case userInteractive
+    case unspecified
+    @available(OSX 10.10, iOS 8.0, *)
+    public init?(rawValue: qos_class_t)
+    @available(OSX 10.10, iOS 8.0, *)
+    public var rawValue: qos_class_t {
+      get
+    }
+    public static func == (a: Dispatch.DispatchQoS.QoSClass, b: Dispatch.DispatchQoS.QoSClass) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+  public init(qosClass: QoSClass, relativePriority: Int)
+  public static func == (a: DispatchQoS, b: DispatchQoS) -> Bool
+}
+@_frozen public enum DispatchTimeoutResult {
+  case success
+  case timedOut
+  public static func == (a: Dispatch.DispatchTimeoutResult, b: Dispatch.DispatchTimeoutResult) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+extension DispatchGroup {
+  public func notify(qos: DispatchQoS = .unspecified, flags: DispatchWorkItemFlags = [], queue: DispatchQueue, execute work: @escaping @convention(block) () -> Void)
+  @available(OSX 10.10, iOS 8.0, *)
+  public func notify(queue: DispatchQueue, work: DispatchWorkItem)
+  public func wait()
+  public func wait(timeout: DispatchTime) -> DispatchTimeoutResult
+  public func wait(wallTimeout timeout: DispatchWallTime) -> DispatchTimeoutResult
+}
+extension DispatchSemaphore {
+  @discardableResult
+  public func signal() -> Int
+  public func wait()
+  public func wait(timeout: DispatchTime) -> DispatchTimeoutResult
+  public func wait(wallTimeout: DispatchWallTime) -> DispatchTimeoutResult
+}
+public struct DispatchWorkItemFlags : OptionSet, RawRepresentable {
+  public let rawValue: UInt
+  public init(rawValue: UInt)
+  public static let barrier: Dispatch.DispatchWorkItemFlags
+  @available(OSX 10.10, iOS 8.0, *)
+  public static let detached: Dispatch.DispatchWorkItemFlags
+  @available(OSX 10.10, iOS 8.0, *)
+  public static let assignCurrentContext: Dispatch.DispatchWorkItemFlags
+  @available(OSX 10.10, iOS 8.0, *)
+  public static let noQoS: Dispatch.DispatchWorkItemFlags
+  @available(OSX 10.10, iOS 8.0, *)
+  public static let inheritQoS: Dispatch.DispatchWorkItemFlags
+  @available(OSX 10.10, iOS 8.0, *)
+  public static let enforceQoS: Dispatch.DispatchWorkItemFlags
+  public typealias Element = Dispatch.DispatchWorkItemFlags
+  public typealias ArrayLiteralElement = Dispatch.DispatchWorkItemFlags
+  public typealias RawValue = Swift.UInt
+}
+@available(OSX 10.10, iOS 8.0, *)
+@_objcRuntimeName(_TtC8Dispatch17_DispatchWorkItem) public class DispatchWorkItem {
+  public init(qos: DispatchQoS = .unspecified, flags: DispatchWorkItemFlags = [], block: @escaping @convention(block) () -> Void)
+  public func perform()
+  public func wait()
+  public func wait(timeout: DispatchTime) -> DispatchTimeoutResult
+  public func wait(wallTimeout: DispatchWallTime) -> DispatchTimeoutResult
+  public func notify(qos: DispatchQoS = .unspecified, flags: DispatchWorkItemFlags = [], queue: DispatchQueue, execute: @escaping @convention(block) () -> Void)
+  public func notify(queue: DispatchQueue, execute: DispatchWorkItem)
+  public func cancel()
+  public var isCancelled: Bool {
+    get
+  }
+  @objc deinit
+}
+public struct DispatchData : RandomAccessCollection, _ObjectiveCBridgeable {
+  public typealias Iterator = DispatchDataIterator
+  public typealias Index = Int
+  public typealias Indices = DefaultIndices<DispatchData>
+  public static let empty: DispatchData
+  public enum Deallocator {
+    case free
+    case unmap
+    case custom(DispatchQueue?, @convention(block) () -> Void)
+  }
+  @available(swift, deprecated: 4, message: "Use init(bytes: UnsafeRawBufferPointer) instead")
+  public init(bytes buffer: UnsafeBufferPointer<UInt8>)
+  public init(bytes buffer: UnsafeRawBufferPointer)
+  @available(swift, deprecated: 4, message: "Use init(bytesNoCopy: UnsafeRawBufferPointer, deallocater: Deallocator) instead")
+  public init(bytesNoCopy bytes: UnsafeBufferPointer<UInt8>, deallocator: Deallocator = .free)
+  public init(bytesNoCopy bytes: UnsafeRawBufferPointer, deallocator: Deallocator = .free)
+  public var count: Int {
+    get
+  }
+  public func withUnsafeBytes<Result, ContentType>(body: (UnsafePointer<ContentType>) throws -> Result) rethrows -> Result
+  @available(swift 4.2)
+  public func enumerateBytes(_ block: (_ buffer: UnsafeBufferPointer<UInt8>, _ byteIndex: Int, _ stop: inout Bool) -> Void)
+  @available(swift, obsoleted: 4.2, renamed: "enumerateBytes(_:)")
+  public func enumerateBytes(block: (_ buffer: UnsafeBufferPointer<UInt8>, _ byteIndex: Int, _ stop: inout Bool) -> Void)
+  @available(swift, deprecated: 4, message: "Use append(_: UnsafeRawBufferPointer) instead")
+  mutating public func append(_ bytes: UnsafePointer<UInt8>, count: Int)
+  mutating public func append(_ bytes: UnsafeRawBufferPointer)
+  mutating public func append(_ other: DispatchData)
+  mutating public func append<SourceType>(_ buffer: UnsafeBufferPointer<SourceType>)
+  @available(swift, deprecated: 4, message: "Use copyBytes(to: UnsafeMutableRawBufferPointer, count: Int) instead")
+  public func copyBytes(to pointer: UnsafeMutablePointer<UInt8>, count: Int)
+  public func copyBytes(to pointer: UnsafeMutableRawBufferPointer, count: Int)
+  @available(swift, deprecated: 4, message: "Use copyBytes(to: UnsafeMutableRawBufferPointer, from: Range<Index>) instead")
+  public func copyBytes(to pointer: UnsafeMutablePointer<UInt8>, from range: Range<Index>)
+  public func copyBytes(to pointer: UnsafeMutableRawBufferPointer, from range: Range<Index>)
+  public func copyBytes<DestinationType>(to buffer: UnsafeMutableBufferPointer<DestinationType>, from range: Range<Index>? = nil) -> Int
+  public subscript(index: Index) -> UInt8 {
+    get
+  }
+  public subscript(bounds: Range<Int>) -> Slice<DispatchData> {
+    get
+  }
+  public func subdata(in range: Range<Index>) -> DispatchData
+  public func region(location: Int) -> (data: DispatchData, offset: Int)
+  public var startIndex: Index {
+    get
+  }
+  public var endIndex: Index {
+    get
+  }
+  public func index(before i: Index) -> Index
+  public func index(after i: Index) -> Index
+  public func makeIterator() -> DispatchData.Iterator
+  public typealias Element = Swift.UInt8
+  public typealias SubSequence = Swift.Slice<Dispatch.DispatchData>
+  public typealias _ObjectiveCType = Dispatch.__DispatchData
+}
+public struct DispatchDataIterator : IteratorProtocol, Sequence {
+  public typealias Element = UInt8
+  public init(_data: DispatchData)
+  mutating public func next() -> DispatchData.Element?
+  public typealias Iterator = Dispatch.DispatchDataIterator
+}
+extension DispatchData {
+  @_semantics("convertToObjectiveC") public func _bridgeToObjectiveC() -> __DispatchData
+  public static func _forceBridgeFromObjectiveC(_ input: __DispatchData, result: inout DispatchData?)
+  public static func _conditionallyBridgeFromObjectiveC(_ input: __DispatchData, result: inout DispatchData?) -> Bool
+  @_effects(readonly) public static func _unconditionallyBridgeFromObjectiveC(_ source: __DispatchData?) -> DispatchData
+}
+extension DispatchIO {
+  public enum StreamType : UInt {
+    case stream
+    case random
+    public typealias RawValue = Swift.UInt
+    public init?(rawValue: Swift.UInt)
+    public var rawValue: Swift.UInt {
+      get
+    }
+  }
+  public struct CloseFlags : OptionSet, RawRepresentable {
+    public let rawValue: UInt
+    public init(rawValue: UInt)
+    public static let stop: Dispatch.DispatchIO.CloseFlags
+    public typealias Element = Dispatch.DispatchIO.CloseFlags
+    public typealias ArrayLiteralElement = Dispatch.DispatchIO.CloseFlags
+    public typealias RawValue = Swift.UInt
+  }
+  public struct IntervalFlags : OptionSet, RawRepresentable {
+    public let rawValue: UInt
+    public init(rawValue: UInt)
+    public init(nilLiteral: ())
+    public static let strictInterval: Dispatch.DispatchIO.IntervalFlags
+    public typealias Element = Dispatch.DispatchIO.IntervalFlags
+    public typealias ArrayLiteralElement = Dispatch.DispatchIO.IntervalFlags
+    public typealias RawValue = Swift.UInt
+  }
+  public class func read(fromFileDescriptor: Int32, maxLength: Int, runningHandlerOn queue: DispatchQueue, handler: @escaping (_ data: DispatchData, _ error: Int32) -> Void)
+  public class func write(toFileDescriptor: Int32, data: DispatchData, runningHandlerOn queue: DispatchQueue, handler: @escaping (_ data: DispatchData?, _ error: Int32) -> Void)
+  convenience public init(type: StreamType, fileDescriptor: Int32, queue: DispatchQueue, cleanupHandler: @escaping (_ error: Int32) -> Void)
+  @available(swift, obsoleted: 4)
+  convenience public init(type: StreamType, path: UnsafePointer<Int8>, oflag: Int32, mode: mode_t, queue: DispatchQueue, cleanupHandler: @escaping (_ error: Int32) -> Void)
+  @available(swift 4)
+  convenience public init?(type: StreamType, path: UnsafePointer<Int8>, oflag: Int32, mode: mode_t, queue: DispatchQueue, cleanupHandler: @escaping (_ error: Int32) -> Void)
+  convenience public init(type: StreamType, io: DispatchIO, queue: DispatchQueue, cleanupHandler: @escaping (_ error: Int32) -> Void)
+  public func read(offset: off_t, length: Int, queue: DispatchQueue, ioHandler: @escaping (_ done: Bool, _ data: DispatchData?, _ error: Int32) -> Void)
+  public func write(offset: off_t, data: DispatchData, queue: DispatchQueue, ioHandler: @escaping (_ done: Bool, _ data: DispatchData?, _ error: Int32) -> Void)
+  public func setInterval(interval: DispatchTimeInterval, flags: IntervalFlags = [])
+  public func close(flags: CloseFlags = [])
+}
+@available(*, unavailable, renamed: "DispatchQueue.init(label:qos:attributes:autoreleaseFrequency:target:)")
+public func dispatch_queue_create(_ label: UnsafePointer<Int8>?, _ attr: __OS_dispatch_queue_attr?) -> DispatchQueue
+@available(*, unavailable, renamed: "DispatchQueue.init(label:qos:attributes:autoreleaseFrequency:target:)")
+public func dispatch_queue_create_with_target(_ label: UnsafePointer<Int8>?, _ attr: __OS_dispatch_queue_attr?, _ queue: DispatchQueue?) -> DispatchQueue
+@available(*, unavailable, renamed: "DispatchIO.init(type:fileDescriptor:queue:cleanupHandler:)")
+public func dispatch_io_create(_ type: UInt, _ fd: Int32, _ queue: DispatchQueue, _ cleanup_handler: (Int32) -> Void) -> DispatchIO
+@available(*, unavailable, renamed: "DispatchIO.init(type:path:oflag:mode:queue:cleanupHandler:)")
+public func dispatch_io_create_with_path(_ type: UInt, _ path: UnsafePointer<Int8>, _ oflag: Int32, _ mode: mode_t, _ queue: DispatchQueue, _ cleanup_handler: (Int32) -> Void) -> DispatchIO
+@available(*, unavailable, renamed: "DispatchIO.init(type:io:queue:cleanupHandler:)")
+public func dispatch_io_create_with_io(_ type: UInt, _ io: DispatchIO, _ queue: DispatchQueue, _ cleanup_handler: (Int32) -> Void) -> DispatchIO
+@available(*, unavailable, renamed: "DispatchIO.read(fileDescriptor:length:queue:handler:)")
+public func dispatch_read(_ fd: Int32, _ length: Int, _ queue: DispatchQueue, _ handler: (__DispatchData, Int32) -> Void)
+@available(*, unavailable, renamed: "DispatchData.init(bytes:)")
+public func dispatch_data_create(_ buffer: UnsafeRawPointer, _ size: Int, _ queue: DispatchQueue?, _ destructor: (() -> Void)?) -> __DispatchData
+@available(*, unavailable, renamed: "getter:DispatchData.count(self:)")
+public func dispatch_data_get_size(_ data: __DispatchData) -> Int
+@available(*, unavailable, renamed: "DispatchData.withUnsafeBytes(self:body:)")
+public func dispatch_data_create_map(_ data: __DispatchData, _ buffer_ptr: UnsafeMutablePointer<UnsafeRawPointer?>?, _ size_ptr: UnsafeMutablePointer<Int>?) -> __DispatchData
+@available(*, unavailable, renamed: "DispatchData.append(self:_:)")
+public func dispatch_data_create_concat(_ data1: __DispatchData, _ data2: __DispatchData) -> __DispatchData
+@available(*, unavailable, renamed: "DispatchData.subdata(self:in:)")
+public func dispatch_data_create_subrange(_ data: __DispatchData, _ offset: Int, _ length: Int) -> __DispatchData
+@available(*, unavailable, renamed: "DispatchData.enumerateBytes(self:block:)")
+public func dispatch_data_apply(_ data: __DispatchData, _ applier: (__DispatchData, Int, UnsafeRawPointer, Int) -> Bool) -> Bool
+@available(*, unavailable, renamed: "DispatchData.region(self:location:)")
+public func dispatch_data_copy_region(_ data: __DispatchData, _ location: Int, _ offset_ptr: UnsafeMutablePointer<Int>) -> __DispatchData
+@available(*, unavailable, renamed: "DispatchQueue.async(self:group:qos:flags:execute:)")
+public func dispatch_group_async(_ group: DispatchGroup, _ queue: DispatchQueue, _ block: () -> Void)
+@available(*, unavailable, renamed: "DispatchGroup.notify(self:qos:flags:queue:execute:)")
+public func dispatch_group_notify(_ group: DispatchGroup, _ queue: DispatchQueue, _ block: () -> Void)
+@available(*, unavailable, renamed: "DispatchGroup.wait(self:timeout:)")
+public func dispatch_group_wait(_ group: DispatchGroup, _ timeout: dispatch_time_t) -> Int
+@available(*, unavailable, renamed: "DispatchIO.close(self:flags:)")
+public func dispatch_io_close(_ channel: DispatchIO, _ flags: UInt)
+@available(*, unavailable, renamed: "DispatchIO.setInterval(self:interval:flags:)")
+public func dispatch_io_set_interval(_ channel: DispatchIO, _ interval: UInt64, _ flags: UInt)
+@available(*, unavailable, message: "Use DispatchQueue.concurrentPerform(iterations:execute:). The 'queue' argument is not required because the system chooses the appropriate execution context for the block")
+public func dispatch_apply(_ iterations: Int, _ queue: DispatchQueue, _ block: (Int) -> Void)
+@available(*, unavailable, renamed: "DispatchQueue.async(self:execute:)")
+public func dispatch_async(_ queue: DispatchQueue, _ block: () -> Void)
+@available(*, unavailable, renamed: "DispatchQueue.global(attributes:)")
+public func dispatch_get_global_queue(_ identifier: Int, _ flags: UInt) -> DispatchQueue
+@available(*, unavailable, renamed: "getter:DispatchQueue.main()")
+public func dispatch_get_main_queue() -> DispatchQueue
+@available(*, unavailable, renamed: "DispatchQueue.Attributes.initiallyInactive")
+public func dispatch_queue_attr_make_initially_inactive(_ attr: __OS_dispatch_queue_attr?) -> __OS_dispatch_queue_attr
+@available(*, unavailable, renamed: "DispatchQueue.AutoreleaseFrequency.workItem")
+public func dispatch_queue_attr_make_with_autorelease_frequency(_ attr: __OS_dispatch_queue_attr?, _ frequency: __dispatch_autorelease_frequency_t) -> __OS_dispatch_queue_attr
+@available(*, unavailable, renamed: "DispatchQoS")
+public func dispatch_queue_attr_make_with_qos_class(_ attr: __OS_dispatch_queue_attr?, _ qos_class: qos_class_t, _ relative_priority: Int32) -> __OS_dispatch_queue_attr
+@available(*, unavailable, renamed: "getter:DispatchQueue.label(self:)")
+public func dispatch_queue_get_label(_ queue: DispatchQueue?) -> UnsafePointer<Int8>
+@available(*, unavailable, renamed: "getter:DispatchQueue.qos(self:)")
+public func dispatch_queue_get_qos_class(_ queue: DispatchQueue, _ relative_priority_ptr: UnsafeMutablePointer<Int32>?) -> qos_class_t
+@available(*, unavailable, renamed: "DispatchQueue.asyncAfter(self:deadline:qos:flags:execute:)")
+public func dispatch_after(_ when: dispatch_time_t, _ queue: DispatchQueue, _ block: () -> Void)
+@available(*, unavailable, renamed: "DispatchQueue.async(self:group:qos:flags:execute:)")
+public func dispatch_barrier_async(_ queue: DispatchQueue, _ block: () -> Void)
+@available(*, unavailable, renamed: "DispatchQueue.sync(self:flags:execute:)")
+public func dispatch_barrier_sync(_ queue: DispatchQueue, _ block: () -> Void)
+@available(*, unavailable, renamed: "DispatchQueue.setSpecific(self:key:value:)")
+public func dispatch_queue_set_specific(_ queue: DispatchQueue, _ key: UnsafeRawPointer, _ context: UnsafeMutableRawPointer?, _ destructor: (@convention(c) (UnsafeMutableRawPointer?) -> Void)?)
+@available(*, unavailable, renamed: "DispatchQueue.getSpecific(self:key:)")
+public func dispatch_queue_get_specific(_ queue: DispatchQueue, _ key: UnsafeRawPointer) -> UnsafeMutableRawPointer?
+@available(*, unavailable, renamed: "DispatchQueue.getSpecific(key:)")
+public func dispatch_get_specific(_ key: UnsafeRawPointer) -> UnsafeMutableRawPointer?
+@available(*, unavailable, renamed: "dispatchPrecondition(_:)")
+public func dispatch_assert_queue(_ queue: DispatchQueue)
+@available(*, unavailable, renamed: "dispatchPrecondition(_:)")
+public func dispatch_assert_queue_barrier(_ queue: DispatchQueue)
+@available(*, unavailable, renamed: "dispatchPrecondition(_:)")
+public func dispatch_assert_queue_not(_ queue: DispatchQueue)
+@available(*, unavailable, renamed: "DispatchSemaphore.wait(self:timeout:)")
+public func dispatch_semaphore_wait(_ dsema: DispatchSemaphore, _ timeout: dispatch_time_t) -> Int
+@available(*, unavailable, renamed: "DispatchSemaphore.signal(self:)")
+public func dispatch_semaphore_signal(_ dsema: DispatchSemaphore) -> Int
+@available(*, unavailable, message: "Use DispatchSource class methods")
+public func dispatch_source_create(_ type: __dispatch_source_type_t, _ handle: UInt, _ mask: UInt, _ queue: DispatchQueue?) -> DispatchSource
+@available(*, unavailable, renamed: "DispatchSource.setEventHandler(self:handler:)")
+public func dispatch_source_set_event_handler(_ source: DispatchSource, _ handler: (() -> Void)?)
+@available(*, unavailable, renamed: "DispatchSource.setCancelHandler(self:handler:)")
+public func dispatch_source_set_cancel_handler(_ source: DispatchSource, _ handler: (() -> Void)?)
+@available(*, unavailable, renamed: "DispatchSource.cancel(self:)")
+public func dispatch_source_cancel(_ source: DispatchSource)
+@available(*, unavailable, renamed: "getter:DispatchSource.isCancelled(self:)")
+public func dispatch_source_testcancel(_ source: DispatchSource) -> Int
+@available(*, unavailable, renamed: "getter:DispatchSource.handle(self:)")
+public func dispatch_source_get_handle(_ source: DispatchSource) -> UInt
+@available(*, unavailable, renamed: "getter:DispatchSource.mask(self:)")
+public func dispatch_source_get_mask(_ source: DispatchSource) -> UInt
+@available(*, unavailable, renamed: "getter:DispatchSource.data(self:)")
+public func dispatch_source_get_data(_ source: DispatchSource) -> UInt
+@available(*, unavailable, renamed: "DispatchUserDataAdd.mergeData(self:value:)")
+public func dispatch_source_merge_data(_ source: DispatchSource, _ value: UInt)
+@available(*, unavailable, renamed: "DispatchTimerSource.setTimer(self:start:interval:leeway:)")
+public func dispatch_source_set_timer(_ source: DispatchSource, _ start: dispatch_time_t, _ interval: UInt64, _ leeway: UInt64)
+@available(*, unavailable, renamed: "DispatchSource.setRegistrationHandler(self:handler:)")
+public func dispatch_source_set_registration_handler(_ source: DispatchSource, _ handler: (() -> Void)?)
+@available(*, unavailable, renamed: "DispatchTime.now()")
+public func dispatch_time(_ when: dispatch_time_t, _ delta: Int64) -> dispatch_time_t
+@available(*, unavailable, renamed: "DispatchWalltime.init(time:)")
+public func dispatch_walltime(_ when: UnsafePointer<timespec>?, _ delta: Int64) -> dispatch_time_t
+@available(*, unavailable, renamed: "DispatchQueue.GlobalQueuePriority.high")
+public var DISPATCH_QUEUE_PRIORITY_HIGH: Int {
+  get
+}
+@available(*, unavailable, renamed: "DispatchQueue.GlobalQueuePriority.default")
+public var DISPATCH_QUEUE_PRIORITY_DEFAULT: Int {
+  get
+}
+@available(*, unavailable, renamed: "DispatchQueue.GlobalQueuePriority.low")
+public var DISPATCH_QUEUE_PRIORITY_LOW: Int {
+  get
+}
+@available(*, unavailable, renamed: "DispatchQueue.GlobalQueuePriority.background")
+public var DISPATCH_QUEUE_PRIORITY_BACKGROUND: Int {
+  get
+}
+@available(*, unavailable, renamed: "DispatchIO.StreamType.stream")
+public var DISPATCH_IO_STREAM: Int {
+  get
+}
+@available(*, unavailable, renamed: "DispatchIO.StreamType.random")
+public var DISPATCH_IO_RANDOM: Int {
+  get
+}
+@available(*, unavailable, renamed: "DispatchIO.CloseFlags.stop")
+public var DISPATCH_IO_STOP: Int {
+  get
+}
+@available(*, unavailable, renamed: "DispatchIO.IntervalFlags.strictInterval")
+public var DISPATCH_IO_STRICT_INTERVAL: Int {
+  get
+}
+@available(*, unavailable, renamed: "DispatchSource.MachSendEvent.dead")
+public var DISPATCH_MACH_SEND_DEAD: Int {
+  get
+}
+@available(*, unavailable, renamed: "DispatchSource.MemoryPressureEvent.normal")
+public var DISPATCH_MEMORYPRESSURE_NORMAL: Int {
+  get
+}
+@available(*, unavailable, renamed: "DispatchSource.MemoryPressureEvent.warning")
+public var DISPATCH_MEMORYPRESSURE_WARN: Int {
+  get
+}
+@available(*, unavailable, renamed: "DispatchSource.MemoryPressureEvent.critical")
+public var DISPATCH_MEMORYPRESSURE_CRITICAL: Int {
+  get
+}
+@available(*, unavailable, renamed: "DispatchSource.ProcessEvent.exit")
+public var DISPATCH_PROC_EXIT: Int {
+  get
+}
+@available(*, unavailable, renamed: "DispatchSource.ProcessEvent.fork")
+public var DISPATCH_PROC_FORK: Int {
+  get
+}
+@available(*, unavailable, renamed: "DispatchSource.ProcessEvent.exec")
+public var DISPATCH_PROC_EXEC: Int {
+  get
+}
+@available(*, unavailable, renamed: "DispatchSource.ProcessEvent.signal")
+public var DISPATCH_PROC_SIGNAL: Int {
+  get
+}
+@available(*, unavailable, renamed: "DispatchSource.TimerFlags.strict")
+public var DISPATCH_TIMER_STRICT: Int {
+  get
+}
+@available(*, unavailable, renamed: "DispatchSource.FileSystemEvent.delete")
+public var DISPATCH_VNODE_DELETE: Int {
+  get
+}
+@available(*, unavailable, renamed: "DispatchSource.FileSystemEvent.write")
+public var DISPATCH_VNODE_WRITE: Int {
+  get
+}
+@available(*, unavailable, renamed: "DispatchSource.FileSystemEvent.extend")
+public var DISPATCH_VNODE_EXTEND: Int {
+  get
+}
+@available(*, unavailable, renamed: "DispatchSource.FileSystemEvent.attrib")
+public var DISPATCH_VNODE_ATTRIB: Int {
+  get
+}
+@available(*, unavailable, renamed: "DispatchSource.FileSystemEvent.link")
+public var DISPATCH_VNODE_LINK: Int {
+  get
+}
+@available(*, unavailable, renamed: "DispatchSource.FileSystemEvent.rename")
+public var DISPATCH_VNODE_RENAME: Int {
+  get
+}
+@available(*, unavailable, renamed: "DispatchSource.FileSystemEvent.revoke")
+public var DISPATCH_VNODE_REVOKE: Int {
+  get
+}
+@available(*, unavailable, renamed: "DispatchSource.FileSystemEvent.funlock")
+public var DISPATCH_VNODE_FUNLOCK: Int {
+  get
+}
+@available(*, unavailable, renamed: "DispatchTime.now()")
+public var DISPATCH_TIME_NOW: Int {
+  get
+}
+@available(*, unavailable, renamed: "DispatchTime.distantFuture")
+public var DISPATCH_TIME_FOREVER: Int {
+  get
+}
+final public class DispatchSpecificKey<T> {
+  public init()
+  @objc deinit
+}
+extension DispatchQueue {
+  public struct Attributes : OptionSet {
+    public let rawValue: UInt64
+    public init(rawValue: UInt64)
+    public static let concurrent: Dispatch.DispatchQueue.Attributes
+    @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+    public static let initiallyInactive: Dispatch.DispatchQueue.Attributes
+    public typealias Element = Dispatch.DispatchQueue.Attributes
+    public typealias ArrayLiteralElement = Dispatch.DispatchQueue.Attributes
+    public typealias RawValue = Swift.UInt64
+  }
+  public enum GlobalQueuePriority {
+    case high
+    case `default`
+    case low
+    case background
+    public static func == (a: Dispatch.DispatchQueue.GlobalQueuePriority, b: Dispatch.DispatchQueue.GlobalQueuePriority) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+  public enum AutoreleaseFrequency {
+    case inherit
+    case workItem
+    case never
+    public static func == (a: Dispatch.DispatchQueue.AutoreleaseFrequency, b: Dispatch.DispatchQueue.AutoreleaseFrequency) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+  public class func concurrentPerform(iterations: Int, execute work: (Int) -> Void)
+  public class var main: DispatchQueue {
+    get
+  }
+  @available(OSX, deprecated: 10.10)
+  @available(iOS, deprecated: 8.0)
+  @available(tvOS, deprecated)
+  @available(watchOS, deprecated)
+  public class func global(priority: GlobalQueuePriority) -> DispatchQueue
+  @available(OSX 10.10, iOS 8.0, *)
+  public class func global(qos: DispatchQoS.QoSClass = .default) -> DispatchQueue
+  public class func getSpecific<T>(key: DispatchSpecificKey<T>) -> T?
+  convenience public init(label: String, qos: DispatchQoS = .unspecified, attributes: Attributes = [], autoreleaseFrequency: AutoreleaseFrequency = .inherit, target: DispatchQueue? = nil)
+  public var label: String {
+    get
+  }
+  @available(OSX 10.10, iOS 8.0, *)
+  public func sync(execute workItem: DispatchWorkItem)
+  @available(OSX 10.10, iOS 8.0, *)
+  public func async(execute workItem: DispatchWorkItem)
+  @available(OSX 10.10, iOS 8.0, *)
+  public func async(group: DispatchGroup, execute workItem: DispatchWorkItem)
+  public func async(group: DispatchGroup? = nil, qos: DispatchQoS = .unspecified, flags: DispatchWorkItemFlags = [], execute work: @escaping @convention(block) () -> Void)
+  public func sync<T>(execute work: () throws -> T) rethrows -> T
+  public func sync<T>(flags: DispatchWorkItemFlags, execute work: () throws -> T) rethrows -> T
+  public func asyncAfter(deadline: DispatchTime, qos: DispatchQoS = .unspecified, flags: DispatchWorkItemFlags = [], execute work: @escaping @convention(block) () -> Void)
+  public func asyncAfter(wallDeadline: DispatchWallTime, qos: DispatchQoS = .unspecified, flags: DispatchWorkItemFlags = [], execute work: @escaping @convention(block) () -> Void)
+  @available(OSX 10.10, iOS 8.0, *)
+  public func asyncAfter(deadline: DispatchTime, execute: DispatchWorkItem)
+  @available(OSX 10.10, iOS 8.0, *)
+  public func asyncAfter(wallDeadline: DispatchWallTime, execute: DispatchWorkItem)
+  @available(OSX 10.10, iOS 8.0, *)
+  public var qos: DispatchQoS {
+    get
+  }
+  public func getSpecific<T>(key: DispatchSpecificKey<T>) -> T?
+  public func setSpecific<T>(key: DispatchSpecificKey<T>, value: T?)
+}
+extension DispatchSourceProtocol {
+  public typealias DispatchSourceHandler = @convention(block) () -> Void
+  public func setEventHandler(qos: DispatchQoS = .unspecified, flags: DispatchWorkItemFlags = [], handler: DispatchSourceHandler?)
+  @available(OSX 10.10, iOS 8.0, *)
+  public func setEventHandler(handler: DispatchWorkItem)
+  public func setCancelHandler(qos: DispatchQoS = .unspecified, flags: DispatchWorkItemFlags = [], handler: DispatchSourceHandler?)
+  @available(OSX 10.10, iOS 8.0, *)
+  public func setCancelHandler(handler: DispatchWorkItem)
+  public func setRegistrationHandler(qos: DispatchQoS = .unspecified, flags: DispatchWorkItemFlags = [], handler: DispatchSourceHandler?)
+  @available(OSX 10.10, iOS 8.0, *)
+  public func setRegistrationHandler(handler: DispatchWorkItem)
+  @available(OSX 10.12, iOS 10.0, tvOS 10.0, watchOS 3.0, *)
+  public func activate()
+  public func cancel()
+  public func resume()
+  public func suspend()
+  public var handle: UInt {
+    get
+  }
+  public var mask: UInt {
+    get
+  }
+  public var data: UInt {
+    get
+  }
+  public var isCancelled: Bool {
+    get
+  }
+}
+extension DispatchSource {
+  public struct MachSendEvent : OptionSet, RawRepresentable {
+    public let rawValue: UInt
+    public init(rawValue: UInt)
+    public static let dead: Dispatch.DispatchSource.MachSendEvent
+    public typealias Element = Dispatch.DispatchSource.MachSendEvent
+    public typealias ArrayLiteralElement = Dispatch.DispatchSource.MachSendEvent
+    public typealias RawValue = Swift.UInt
+  }
+  public struct MemoryPressureEvent : OptionSet, RawRepresentable {
+    public let rawValue: UInt
+    public init(rawValue: UInt)
+    public static let normal: Dispatch.DispatchSource.MemoryPressureEvent
+    public static let warning: Dispatch.DispatchSource.MemoryPressureEvent
+    public static let critical: Dispatch.DispatchSource.MemoryPressureEvent
+    public static let all: MemoryPressureEvent
+    public typealias Element = Dispatch.DispatchSource.MemoryPressureEvent
+    public typealias ArrayLiteralElement = Dispatch.DispatchSource.MemoryPressureEvent
+    public typealias RawValue = Swift.UInt
+  }
+  public struct ProcessEvent : OptionSet, RawRepresentable {
+    public let rawValue: UInt
+    public init(rawValue: UInt)
+    public static let exit: Dispatch.DispatchSource.ProcessEvent
+    public static let fork: Dispatch.DispatchSource.ProcessEvent
+    public static let exec: Dispatch.DispatchSource.ProcessEvent
+    public static let signal: Dispatch.DispatchSource.ProcessEvent
+    public static let all: ProcessEvent
+    public typealias Element = Dispatch.DispatchSource.ProcessEvent
+    public typealias ArrayLiteralElement = Dispatch.DispatchSource.ProcessEvent
+    public typealias RawValue = Swift.UInt
+  }
+  public struct TimerFlags : OptionSet, RawRepresentable {
+    public let rawValue: UInt
+    public init(rawValue: UInt)
+    public static let strict: Dispatch.DispatchSource.TimerFlags
+    public typealias Element = Dispatch.DispatchSource.TimerFlags
+    public typealias ArrayLiteralElement = Dispatch.DispatchSource.TimerFlags
+    public typealias RawValue = Swift.UInt
+  }
+  public struct FileSystemEvent : OptionSet, RawRepresentable {
+    public let rawValue: UInt
+    public init(rawValue: UInt)
+    public static let delete: Dispatch.DispatchSource.FileSystemEvent
+    public static let write: Dispatch.DispatchSource.FileSystemEvent
+    public static let extend: Dispatch.DispatchSource.FileSystemEvent
+    public static let attrib: Dispatch.DispatchSource.FileSystemEvent
+    public static let link: Dispatch.DispatchSource.FileSystemEvent
+    public static let rename: Dispatch.DispatchSource.FileSystemEvent
+    public static let revoke: Dispatch.DispatchSource.FileSystemEvent
+    public static let funlock: Dispatch.DispatchSource.FileSystemEvent
+    public static let all: FileSystemEvent
+    public typealias Element = Dispatch.DispatchSource.FileSystemEvent
+    public typealias ArrayLiteralElement = Dispatch.DispatchSource.FileSystemEvent
+    public typealias RawValue = Swift.UInt
+  }
+  public class func makeMachSendSource(port: mach_port_t, eventMask: MachSendEvent, queue: DispatchQueue? = nil) -> DispatchSourceMachSend
+  public class func makeMachReceiveSource(port: mach_port_t, queue: DispatchQueue? = nil) -> DispatchSourceMachReceive
+  public class func makeMemoryPressureSource(eventMask: MemoryPressureEvent, queue: DispatchQueue? = nil) -> DispatchSourceMemoryPressure
+  public class func makeProcessSource(identifier: pid_t, eventMask: ProcessEvent, queue: DispatchQueue? = nil) -> DispatchSourceProcess
+  public class func makeReadSource(fileDescriptor: Int32, queue: DispatchQueue? = nil) -> DispatchSourceRead
+  public class func makeSignalSource(signal: Int32, queue: DispatchQueue? = nil) -> DispatchSourceSignal
+  public class func makeTimerSource(flags: TimerFlags = [], queue: DispatchQueue? = nil) -> DispatchSourceTimer
+  public class func makeUserDataAddSource(queue: DispatchQueue? = nil) -> DispatchSourceUserDataAdd
+  public class func makeUserDataOrSource(queue: DispatchQueue? = nil) -> DispatchSourceUserDataOr
+  public class func makeUserDataReplaceSource(queue: DispatchQueue? = nil) -> DispatchSourceUserDataReplace
+  public class func makeFileSystemObjectSource(fileDescriptor: Int32, eventMask: FileSystemEvent, queue: DispatchQueue? = nil) -> DispatchSourceFileSystemObject
+  public class func makeWriteSource(fileDescriptor: Int32, queue: DispatchQueue? = nil) -> DispatchSourceWrite
+}
+extension DispatchSourceMachSend {
+  public var handle: mach_port_t {
+    get
+  }
+  public var data: DispatchSource.MachSendEvent {
+    get
+  }
+  public var mask: DispatchSource.MachSendEvent {
+    get
+  }
+}
+extension DispatchSourceMachReceive {
+  public var handle: mach_port_t {
+    get
+  }
+}
+extension DispatchSourceMemoryPressure {
+  public var data: DispatchSource.MemoryPressureEvent {
+    get
+  }
+  public var mask: DispatchSource.MemoryPressureEvent {
+    get
+  }
+}
+extension DispatchSourceProcess {
+  public var handle: pid_t {
+    get
+  }
+  public var data: DispatchSource.ProcessEvent {
+    get
+  }
+  public var mask: DispatchSource.ProcessEvent {
+    get
+  }
+}
+extension DispatchSourceTimer {
+  @available(swift, deprecated: 4, renamed: "schedule(deadline:repeating:leeway:)")
+  public func scheduleOneshot(deadline: DispatchTime, leeway: DispatchTimeInterval = .nanoseconds(0))
+  @available(swift, deprecated: 4, renamed: "schedule(wallDeadline:repeating:leeway:)")
+  public func scheduleOneshot(wallDeadline: DispatchWallTime, leeway: DispatchTimeInterval = .nanoseconds(0))
+  @available(swift, deprecated: 4, renamed: "schedule(deadline:repeating:leeway:)")
+  public func scheduleRepeating(deadline: DispatchTime, interval: DispatchTimeInterval, leeway: DispatchTimeInterval = .nanoseconds(0))
+  @available(swift, deprecated: 4, renamed: "schedule(deadline:repeating:leeway:)")
+  public func scheduleRepeating(deadline: DispatchTime, interval: Double, leeway: DispatchTimeInterval = .nanoseconds(0))
+  @available(swift, deprecated: 4, renamed: "schedule(wallDeadline:repeating:leeway:)")
+  public func scheduleRepeating(wallDeadline: DispatchWallTime, interval: DispatchTimeInterval, leeway: DispatchTimeInterval = .nanoseconds(0))
+  @available(swift, deprecated: 4, renamed: "schedule(wallDeadline:repeating:leeway:)")
+  public func scheduleRepeating(wallDeadline: DispatchWallTime, interval: Double, leeway: DispatchTimeInterval = .nanoseconds(0))
+  @available(swift 4)
+  public func schedule(deadline: DispatchTime, repeating interval: DispatchTimeInterval = .never, leeway: DispatchTimeInterval = .nanoseconds(0))
+  @available(swift 4)
+  public func schedule(deadline: DispatchTime, repeating interval: Double, leeway: DispatchTimeInterval = .nanoseconds(0))
+  @available(swift 4)
+  public func schedule(wallDeadline: DispatchWallTime, repeating interval: DispatchTimeInterval = .never, leeway: DispatchTimeInterval = .nanoseconds(0))
+  @available(swift 4)
+  public func schedule(wallDeadline: DispatchWallTime, repeating interval: Double, leeway: DispatchTimeInterval = .nanoseconds(0))
+}
+extension DispatchSourceFileSystemObject {
+  public var handle: Int32 {
+    get
+  }
+  public var data: DispatchSource.FileSystemEvent {
+    get
+  }
+  public var mask: DispatchSource.FileSystemEvent {
+    get
+  }
+}
+extension DispatchSourceUserDataAdd {
+  public func add(data: UInt)
+}
+extension DispatchSourceUserDataOr {
+  public func or(data: UInt)
+}
+extension DispatchSourceUserDataReplace {
+  public func replace(data: UInt)
+}
+public struct DispatchTime : Comparable {
+  public let rawValue: dispatch_time_t
+  public static func now() -> DispatchTime
+  public static let distantFuture: Dispatch.DispatchTime
+  public init(uptimeNanoseconds: UInt64)
+  public var uptimeNanoseconds: UInt64 {
+    get
+  }
+}
+extension DispatchTime {
+  public static func < (a: DispatchTime, b: DispatchTime) -> Bool
+  public static func == (a: DispatchTime, b: DispatchTime) -> Bool
+}
+public struct DispatchWallTime : Comparable {
+  public let rawValue: dispatch_time_t
+  public static func now() -> DispatchWallTime
+  public static let distantFuture: Dispatch.DispatchWallTime
+  public init(timespec: timespec)
+}
+extension DispatchWallTime {
+  public static func < (a: DispatchWallTime, b: DispatchWallTime) -> Bool
+  public static func == (a: DispatchWallTime, b: DispatchWallTime) -> Bool
+}
+public enum DispatchTimeInterval : Equatable {
+  case seconds(Int)
+  case milliseconds(Int)
+  case microseconds(Int)
+  case nanoseconds(Int)
+  case never
+  public static func == (lhs: DispatchTimeInterval, rhs: DispatchTimeInterval) -> Bool
+}
+public func + (time: DispatchTime, interval: DispatchTimeInterval) -> DispatchTime
+public func - (time: DispatchTime, interval: DispatchTimeInterval) -> DispatchTime
+public func + (time: DispatchTime, seconds: Double) -> DispatchTime
+public func - (time: DispatchTime, seconds: Double) -> DispatchTime
+public func + (time: DispatchWallTime, interval: DispatchTimeInterval) -> DispatchWallTime
+public func - (time: DispatchWallTime, interval: DispatchTimeInterval) -> DispatchWallTime
+public func + (time: DispatchWallTime, seconds: Double) -> DispatchWallTime
+public func - (time: DispatchWallTime, seconds: Double) -> DispatchWallTime

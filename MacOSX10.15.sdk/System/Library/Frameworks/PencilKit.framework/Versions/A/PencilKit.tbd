@@ -1,0 +1,29 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: E324BE8A-5E22-3A75-81D5-CB18AAC8702B' ]
+platform:        macosx
+install-name:    '/System/Library/Frameworks/PencilKit.framework/Versions/A/PencilKit'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ '$ld$install_name$os10.13$/System/Library/PrivateFrameworks/PencilKit.framework/Versions/A/PencilKit', 
+                       '$ld$install_name$os10.14$/System/Library/PrivateFrameworks/PencilKit.framework/Versions/A/PencilKit', 
+                       _PKAppleDrawingTypeIdentifier, _PKAppleStrokeSelectionTypeIdentifier, 
+                       _PKAttachmentViewDefaultDrawingWidth, _PKClipperScaling, _PKInkBlueComponentProperty, 
+                       _PKInkColorProperty, _PKInkGreenComponentProperty, _PKInkIdentifierCharcoal, 
+                       _PKInkIdentifierEraser, _PKInkIdentifierFountainPen, _PKInkIdentifierLasso, 
+                       _PKInkIdentifierMarker, _PKInkIdentifierMicronPen, _PKInkIdentifierObjectEraser, 
+                       _PKInkIdentifierPen, _PKInkIdentifierPencil, _PKInkOpacityProperty, 
+                       _PKInkRedComponentProperty, _PKInkTypeMarker, _PKInkTypePen, 
+                       _PKInkTypePencil, _PKInkVariantDefault, _PKInkVariantThick, 
+                       _PKInkWeightProperty, _PKInputPointZero, _PKToolIdentifierRuler, 
+                       __PKStrokePointZero, _kUTTypeAppleDrawing, _kUTTypeAppleStrokeSelection ]
+    objc-classes:    [ PKCanvasView, PKDrawing, PKEraserTool, PKFatStroke, PKImageCompare, 
+                       PKImageRenderer, PKIndexableContent, PKInk, PKInkBehavior, 
+                       PKInkFeatheringDescriptor, PKInkFunction, PKInkParticleDescriptor, 
+                       PKInkProperties, PKInkRenderingDescriptor, PKInkSmoothingDescriptor, 
+                       PKInkingTool, PKLRUCache, PKLassoTool, PKLegacyDrawingRegressionTester, 
+                       PKLinedPaper, PKMutableStroke, PKReplicaManager, PKSearchQueryItem, 
+                       PKStroke, PKStrokeDelta, PKStrokeProvider, PKStrokeProviderSlice, 
+                       PKStrokeSelection, PKTextAttachmentDrawingView, PKTitleQuery, 
+                       PKTitleQueryItem, PKTool, PKUndoCommand, PKVisualizationManager ]
+...

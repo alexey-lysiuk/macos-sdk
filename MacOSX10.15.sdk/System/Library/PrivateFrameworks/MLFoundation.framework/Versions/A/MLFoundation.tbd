@@ -1,0 +1,31 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: C1EA71D5-3BF0-33F8-A96F-0DF5632D36F2' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/MLFoundation.framework/Versions/A/MLFoundation'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _CPU_CompileConvolutionLayer, _CPU_CompileFullyConnectedLayer, 
+                       _CPU_CompileNeuronLayer, _CPU_CompilePoolingLayer, _CPU_CreateConvolutionLayer, 
+                       _CPU_CreateFullyConnectedLayer, _CPU_CreateNeuronLayer, _CPU_CreatePoolingLayer, 
+                       _GPU_CreateAdamOptimizer, _GPU_CreateArithmeticLayer, _GPU_CreateBatchNormalizationLayer, 
+                       _GPU_CreateConvolutionLayer, _GPU_CreateDropoutLayer, _GPU_CreateFullyConnectedLayer, 
+                       _GPU_CreateFusedBatchNormalizationAndNeuronLayer, _GPU_CreateImageRescale, 
+                       _GPU_CreateLossLayer, _GPU_CreateNeuronLayer, _GPU_CreatePoolingLayer, 
+                       _GPU_CreateSGDOptimizer, _GPU_CreateSoftmaxLayer, _MLFoundationVersionNumber, 
+                       _MLFoundationVersionString, _createNeuronDescriptor ]
+    objc-classes:    [ MLFoundationArithmeticLayer, MLFoundationBatchNormalizationLayer, 
+                       MLFoundationConcatenationLayer, MLFoundationConvolutionDescriptor, 
+                       MLFoundationConvolutionLayer, MLFoundationConvolutionTransposeLayer, 
+                       MLFoundationDevice, MLFoundationDeviceCPU, MLFoundationDeviceGPU, 
+                       MLFoundationDeviceGPUHeapAllocator, MLFoundationDeviceOps, 
+                       MLFoundationDeviceOptimizer, MLFoundationDropoutLayer, MLFoundationErrors, 
+                       MLFoundationFullyConnectedLayer, MLFoundationImageRescaleLayer, 
+                       MLFoundationLayer, MLFoundationLog, MLFoundationLossDescriptor, 
+                       MLFoundationLossLayer, MLFoundationNeuronDescriptor, MLFoundationNeuronLayer, 
+                       MLFoundationOptimizer, MLFoundationOptimizerDescriptor, MLFoundationOptimizerStochasticGradientDescent, 
+                       MLFoundationPoolingDescriptor, MLFoundationPoolingLayer, MLFoundationReshapeLayer, 
+                       MLFoundationSoftmaxLayer, MLFoundationStrings, MLFoundationTensor, 
+                       MLFoundationTensorDescriptor, MLFoundationTrainingGraph, _MLFGPUBatchNormDataSource, 
+                       _MLFGPUWeightsConvolution ]
+...

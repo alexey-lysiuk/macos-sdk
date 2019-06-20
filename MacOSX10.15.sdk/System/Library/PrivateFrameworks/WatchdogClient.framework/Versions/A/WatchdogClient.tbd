@@ -1,0 +1,12 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 1346B15C-CECF-34DE-A514-3AD76C4DB368' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/WatchdogClient.framework/Versions/A/WatchdogClient'
+current-version: 60
+compatibility-version: 0
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _wd_endpoint_activate, _wd_endpoint_add_queue, _wd_endpoint_add_work_processor, 
+                       _wd_endpoint_register, _wd_endpoint_set_alive_func ]
+...

@@ -1,0 +1,10 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 9D995E1F-0B6F-37D5-AEFE-AB75B2DA3E6A', 'x86_64: 9D995E1F-0B6F-37D5-AEFE-AB75B2DA3E6A' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/GPUCompiler.framework/Versions/3902/Libraries/libComposeFilters.dylib'
+current-version: 902.9.38
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _composeImageFilterFunctionsFromModulesSPI, _composeImageFilterFunctionsSPI ]
+...

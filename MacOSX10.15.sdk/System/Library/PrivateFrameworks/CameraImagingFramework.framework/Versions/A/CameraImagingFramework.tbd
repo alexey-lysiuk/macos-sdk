@@ -1,0 +1,10 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 68E1AE2A-232F-3177-AE3A-583E51C1746A', 'x86_64: 68E1AE2A-232F-3177-AE3A-583E51C1746A' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/CameraImagingFramework.framework/Versions/A/CameraImagingFramework'
+current-version: 100.1
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _CameraImagingVersionNumber, _CameraImagingVersionString ]
+...

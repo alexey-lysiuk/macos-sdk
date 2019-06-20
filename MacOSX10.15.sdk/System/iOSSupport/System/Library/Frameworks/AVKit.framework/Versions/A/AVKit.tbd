@@ -1,0 +1,25 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: AF54EF40-6ECB-32DC-9E4C-436E175C543F' ]
+platform:        uikitformac
+install-name:    '/System/iOSSupport/System/Library/Frameworks/AVKit.framework/Versions/A/AVKit'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _AVKitErrorDomain, _AVKitMetadataIdentifierBrandIdentifier, 
+                       _AVKitMetadataIdentifierExternalContentIdentifier, _AVKitMetadataIdentifierExternalUserProfileIdentifier, 
+                       _AVKitMetadataIdentifierPlaybackProgress, _AVKitMetadataIdentifierServiceIdentifier, 
+                       _AVKitMetadataIdentifieriTunesStoreIdentifier, _AVPictureInPictureControllerContentSourceKey, 
+                       _AVPictureInPictureControllerDidStartNotification, _AVPictureInPictureControllerDidStopNotification, 
+                       _AVPictureInPictureControllerWillStartNotification, _AVPictureInPictureControllerWillStopNotification, 
+                       _AVPlayerItemAVKitDataDidChangeNotification ]
+    objc-classes:    [ AVAppStorePlayerView, AVBackgroundView, AVChapter, AVControlItem, 
+                       AVEditBehavior, AVEditBehaviorContext, AVExternalPlaybackController, 
+                       AVHomeIPCameraBehavior, AVHomeIPCameraBehaviorContext, AVHomeLoadingButtonControlItem, 
+                       AVKeyValueChange, AVMediaSelectionViewController, AVMusicAppBehavior, 
+                       AVMusicAppBehaviorContext, AVMutableValueTiming, AVNewsWidgetPlayerBehavior, 
+                       AVNewsWidgetPlayerBehaviorContext, AVObservationController, 
+                       AVPictureInPictureController, AVPictureInPicturePlayerLayerView, 
+                       AVPlayerController, AVPlayerControllerTimeResolver, AVPlayerViewController, 
+                       AVPlayerViewControllerCustomControlsView, AVRoutePickerView, 
+                       AVTimer, AVValueTiming, __AVPlayerLayerView ]
+...

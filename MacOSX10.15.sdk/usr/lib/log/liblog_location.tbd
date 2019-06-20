@@ -1,0 +1,12 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: DE2999DC-7C74-3F1B-91A9-46693A2A2B1D' ]
+platform:        macosx
+install-name:    '/usr/lib/log/liblog_location.dylib'
+current-version: 2368.3.3
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _OSLogCopyFormattedString, _OSStateCreateStringWithData, _liblog_locationVersionNumber, 
+                       _liblog_locationVersionString ]
+    objc-classes:    [ CLLogFormatter ]
+...

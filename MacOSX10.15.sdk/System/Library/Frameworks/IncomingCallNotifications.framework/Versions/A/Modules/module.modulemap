@@ -1,0 +1,6 @@
+framework module IncomingCallNotifications {
+  umbrella header "IncomingCallNotifications.h"
+
+  export *
+  module * { export * }
+}

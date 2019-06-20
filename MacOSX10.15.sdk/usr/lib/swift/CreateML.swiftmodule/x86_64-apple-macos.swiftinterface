@@ -1,0 +1,2330 @@
+// swift-interface-format-version: 1.0
+// swift-tools-version: Apple Swift version 5.1 effective-4.1.50 (swiftlang-1100.8.32.26 clang-1100.0.18.2)
+// swift-module-flags: -target x86_64-apple-macos10.15 -enable-objc-interop -module-link-name swiftCreateML -swift-version 4 -enforce-exclusivity=checked -O -enable-resilience -module-name CreateML
+import AVFoundation
+import CoreGraphics
+import CoreML
+import CoreVideo
+import Foundation
+import IOKit
+import ImageIO
+import NaturalLanguage
+import Swift
+import Vision
+import _CreateMLInternal
+import os
+import IOKit.pwr_mgt
+@available(OSX 10.15, *)
+public struct MLWordEmbedding {
+  public var model: MLModel
+  public let modelParameters: ModelParameters
+  public let dimension: Int
+  public let vocabularySize: Int
+  public init(dictionary: [String : [Double]], parameters: ModelParameters = ModelParameters()) throws
+  public func prediction(from text: String, maxCount: Int = 10, maxDistance: Double = 2.0, distanceType: NLDistanceType = .cosine) throws -> [(text: String, distance: Double)]
+  public func write(to fileURL: URL, metadata: MLModelMetadata? = nil) throws
+  public func write(toFile path: String, metadata: MLModelMetadata? = nil) throws
+  public struct ModelParameters {
+    public var language: NLLanguage?
+    public var revision: Int
+    public init(language: NLLanguage? = nil, revision: Int = 1)
+  }
+}
+@available(OSX 10.15, *)
+extension MLWordEmbedding {
+  public func contains(_ text: String) -> Bool
+  public func distance(between first: String, and second: String, distanceType: NLDistanceType = .cosine) -> Double
+  public func vector(for text: String) -> [Double]?
+}
+@available(OSX 10.15, *)
+extension MLWordEmbedding : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.15, *)
+extension MLWordEmbedding.ModelParameters : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.15, *)
+public struct MLObjectDetector {
+  public typealias DetectedObjects = [ObjectAnnotation]
+  public var model: MLModel {
+    get
+  }
+  public let modelParameters: ModelParameters
+  public var trainingMetrics: MLObjectDetectorMetrics {
+    get
+  }
+  public var validationMetrics: MLObjectDetectorMetrics {
+    get
+  }
+  public init(trainingData: DataSource, boundingBoxOrigin: Origin = .center, parameters: ModelParameters = ModelParameters()) throws
+  public init(trainingData: MLDataTable, imageColumn: String, annotationColumn: String, boundingBoxOrigin: Origin = .center, parameters: ModelParameters = ModelParameters()) throws
+  public func prediction(from image: URL) throws -> DetectedObjects
+  public func predictions(from images: [URL]) throws -> [DetectedObjects]
+  public func evaluation(on annotatedImages: DataSource) -> MLObjectDetectorMetrics
+  public func evaluation(on annotatedImages: MLDataTable, imageColumn: String, annotationColumn: String) -> MLObjectDetectorMetrics
+  public func write(to fileURL: URL, metadata: MLModelMetadata? = MLModelMetadata()) throws
+  public func write(toFile path: String, metadata: MLModelMetadata? = MLModelMetadata()) throws
+  public struct ObjectAnnotation {
+    public var label: String
+    public var boundingBox: CGRect
+    public var confidence: Double
+    public init(label: String, boundingBox: CGRect, confidence: Double)
+  }
+  public struct ModelParameters {
+    public var validationData: MLDataTable?
+    public var batchSize: Int?
+    public var maxIterations: Int?
+    public init(validationData: MLDataTable? = nil, batchSize: Int? = nil, maxIterations: Int? = nil)
+    public init(validationData: DataSource, batchSize: Int? = nil, maxIterations: Int? = nil) throws
+  }
+  public enum DataSource {
+    case directoryWithImagesAndJsonAnnotation(at: URL)
+    case directoryWithImages(at: URL, annotationFile: URL)
+    public func imagesWithObjectAnnotations() throws -> MLDataTable
+  }
+  public enum Origin {
+    case center
+    public static func == (a: CreateML.MLObjectDetector.Origin, b: CreateML.MLObjectDetector.Origin) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+}
+@available(OSX 10.15, *)
+public struct MLObjectDetectorMetrics {
+  public var averagePrecision: (variedIoU: [String : Double], IoU50: [String : Double]) {
+    get
+  }
+  public var meanAveragePrecision: (variedIoU: Double, IoU50: Double) {
+    get
+  }
+  public init(averagePrecision: (variedIoU: [String : Double], IoU50: [String : Double]), meanAveragePrecision: (variedIoU: Double, IoU50: Double))
+  public var error: Error? {
+    get
+  }
+  public var isValid: Bool {
+    get
+  }
+}
+@available(OSX 10.15, *)
+extension MLObjectDetector.ModelParameters : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.15, *)
+extension MLObjectDetector.ObjectAnnotation : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.15, *)
+extension MLObjectDetectorMetrics : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.15, *)
+extension MLObjectDetector : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.14, *)
+public struct MLImageClassifier {
+  public var model: MLModel {
+    get
+  }
+  public let modelParameters: ModelParameters
+  public var trainingMetrics: MLClassifierMetrics {
+    get
+  }
+  public var validationMetrics: MLClassifierMetrics {
+    get
+  }
+  public init(trainingData: DataSource, parameters: ModelParameters = ModelParameters()) throws
+  public init(trainingData: [String : [URL]], parameters: ModelParameters = ModelParameters()) throws
+  public func prediction(from image: CGImage) throws -> String
+  public func prediction(from image: URL) throws -> String
+  public func predictions(from images: [URL]) throws -> [String]
+  public func evaluation(on labeledImages: DataSource) -> MLClassifierMetrics
+  public func evaluation(on labeledImages: [String : [URL]]) -> MLClassifierMetrics
+  public func write(to fileURL: URL, metadata: MLModelMetadata? = nil) throws
+  public func write(toFile path: String, metadata: MLModelMetadata? = nil) throws
+  public enum DataSource {
+    case labeledDirectories(at: URL)
+    case labeledFiles(at: URL)
+    public func labeledImages() throws -> [String : [URL]]
+  }
+  public struct ModelParameters {
+    public var featureExtractor: FeatureExtractorType
+    public var validationData: [String : [URL]]?
+    public var maxIterations: Int
+    public var augmentationOptions: ImageAugmentationOptions
+    public init(featureExtractor: FeatureExtractorType = .scenePrint(revision: 1), validationData: [String : [URL]]? = nil, maxIterations: Int = 25, augmentationOptions: ImageAugmentationOptions = [])
+    public init(featureExtractor: FeatureExtractorType = .scenePrint(revision: 1), validationData: DataSource, maxIterations: Int = 25, augmentationOptions: ImageAugmentationOptions = [])
+  }
+  public enum FeatureExtractorType {
+    case scenePrint(revision: Int?)
+    case custom(CustomFeatureExtractor)
+  }
+  @available(OSX 10.15, *)
+  public struct CustomFeatureExtractor {
+    public var modelPath: URL
+    public var outputName: String?
+    public init(modelPath: URL, outputName: String? = nil)
+  }
+  public struct ImageAugmentationOptions : OptionSet {
+    public let rawValue: Int
+    public static let blur: CreateML.MLImageClassifier.ImageAugmentationOptions
+    public static let flip: CreateML.MLImageClassifier.ImageAugmentationOptions
+    public static let exposure: CreateML.MLImageClassifier.ImageAugmentationOptions
+    public static let noise: CreateML.MLImageClassifier.ImageAugmentationOptions
+    public static let rotation: CreateML.MLImageClassifier.ImageAugmentationOptions
+    public static let crop: CreateML.MLImageClassifier.ImageAugmentationOptions
+    public init(rawValue: Int)
+    public typealias Element = CreateML.MLImageClassifier.ImageAugmentationOptions
+    public typealias ArrayLiteralElement = CreateML.MLImageClassifier.ImageAugmentationOptions
+    public typealias RawValue = Swift.Int
+  }
+}
+@available(OSX 10.14, *)
+extension MLImageClassifier.ModelParameters : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.14, *)
+extension MLImageClassifier : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.14, *)
+extension MLImageClassifier.FeatureExtractorType : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.15, *)
+public struct MLActivityClassifier {
+  public var model: MLModel {
+    get
+  }
+  public let modelParameters: ModelParameters
+  public var trainingMetrics: MLClassifierMetrics {
+    get
+  }
+  public var validationMetrics: MLClassifierMetrics {
+    get
+  }
+  public var labelColumn: String
+  public var featureColumns: [String]
+  public var recordingFileColumn: String
+  public struct TimeRangeNames {
+    public var start: String
+    public var end: String
+    public init(start: String, end: String)
+  }
+  public enum DataSource {
+    case labeledDirectories(at: URL)
+    case directoryWithDataAndAnnotation(at: URL, annotationFileName: String, timeStampColumn: String, timeRangeColumns: TimeRangeNames)
+    public func labeledSensorData(featureColumns: [String], labelColumn: String? = nil, recordingFileColumn: String? = nil) throws -> MLDataTable
+  }
+  public init(trainingData: DataSource, featureColumns: [String], labelColumn: String? = nil, recordingFileColumn: String? = nil, parameters: ModelParameters = ModelParameters()) throws
+  public init(trainingData: MLDataTable, featureColumns: [String], labelColumn: String, recordingFileColumn: String, parameters: ModelParameters = ModelParameters()) throws
+  public func evaluation(on testingData: MLDataTable, featureColumns: [String], labelColumn: String, recordingFileColumn: String) -> MLClassifierMetrics
+  public func evaluation(on testingData: DataSource, featureColumns: [String], labelColumn: String? = nil, recordingFileColumn: String? = nil) -> MLClassifierMetrics
+  public func predictions(from data: MLDataTable, perWindowPrediction: Bool? = false) throws -> [String]
+  public func write(to fileURL: URL, metadata: MLModelMetadata? = MLModelMetadata()) throws
+  public func write(toFile path: String, metadata: MLModelMetadata? = MLModelMetadata()) throws
+  public struct ModelParameters {
+    public var validationData: MLDataTable?
+    public var maximumIterations: Int?
+    public var batchSize: Int?
+    public var predictionWindowSize: Int?
+    public init(validationData: MLDataTable? = nil, batchSize: Int? = 32, maximumIterations: Int? = 10, predictionWindowSize: Int? = 100)
+    public init(validationData: DataSource, batchSize: Int? = 32, maximumIterations: Int? = 10, predictionWindowSize: Int? = 100)
+  }
+}
+@available(OSX 10.15, *)
+extension MLActivityClassifier : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.15, *)
+extension MLActivityClassifier.ModelParameters : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.14, *)
+public struct MLTextClassifier {
+  public var model: MLModel {
+    get
+  }
+  public let modelParameters: ModelParameters
+  public var trainingMetrics: MLClassifierMetrics {
+    get
+  }
+  public var validationMetrics: MLClassifierMetrics {
+    get
+  }
+  public init(trainingData: DataSource, parameters: ModelParameters = ModelParameters()) throws
+  public init(trainingData: [String : [String]], parameters: ModelParameters = ModelParameters()) throws
+  public init(trainingData: MLDataTable, textColumn: String, labelColumn: String, parameters: ModelParameters = ModelParameters()) throws
+  public func prediction(from text: String) throws -> String
+  public func predictions(from texts: [String]) throws -> [String]
+  public func predictions(from texts: MLDataColumn<String>) throws -> MLDataColumn<String>
+  public func evaluation(on labeledTexts: DataSource) -> MLClassifierMetrics
+  public func evaluation(on labeledTexts: [String : [String]]) -> MLClassifierMetrics
+  public func evaluation(on labeledTexts: MLDataTable, textColumn: String, labelColumn: String) -> MLClassifierMetrics
+  public func write(to fileURL: URL, metadata: MLModelMetadata? = nil) throws
+  public func write(toFile path: String, metadata: MLModelMetadata? = nil) throws
+  public enum DataSource {
+    case labeledDirectories(at: URL)
+    public func labeledTexts() throws -> [String : [String]]
+  }
+  public struct ModelParameters {
+    public var validationData: MLDataTable?
+    public var algorithm: ModelAlgorithmType
+    public var language: NLLanguage?
+    public var textColumnValidationData: String?
+    public var labelColumnValidationData: String?
+    public init(validationData: MLDataTable? = nil, algorithm: ModelAlgorithmType = .maxEnt(revision: 1), language: NLLanguage? = nil, textColumnValidationData: String? = nil, labelColumnValidationData: String? = nil)
+    public init(validationData: [String : [String]], algorithm: ModelAlgorithmType = .maxEnt(revision: 1), language: NLLanguage? = nil)
+    public init(validationData: DataSource, algorithm: ModelAlgorithmType = .maxEnt(revision: 1), language: NLLanguage? = nil)
+  }
+  public enum ModelAlgorithmType {
+    case maxEnt(revision: Int?)
+    case crf(revision: Int?)
+    case transferLearning(FeatureExtractorType, revision: Int?)
+  }
+  @available(OSX 10.15, *)
+  public enum FeatureExtractorType {
+    case staticEmbedding
+    case dynamicEmbedding
+    case customEmbedding(URL)
+  }
+}
+@available(OSX 10.14, *)
+extension MLTextClassifier.ModelParameters : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.14, *)
+extension MLTextClassifier : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.14, *)
+extension MLTextClassifier.ModelAlgorithmType : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.15, *)
+extension MLTextClassifier.FeatureExtractorType : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.14, *)
+public struct MLWordTagger {
+  public typealias Token = String
+  public var model: MLModel {
+    get
+  }
+  public let modelParameters: ModelParameters
+  public var trainingMetrics: MLWordTaggerMetrics {
+    get
+  }
+  public var validationMetrics: MLWordTaggerMetrics {
+    get
+  }
+  public init(trainingData: [(tokens: [Token], labels: [String])], parameters: ModelParameters = ModelParameters()) throws
+  public init(trainingData: MLDataTable, tokenColumn: String, labelColumn: String, parameters: ModelParameters = ModelParameters()) throws
+  public func prediction(from text: String) throws -> [String]
+  public func prediction(from tokens: [Token]) throws -> [String]
+  public func predictions(from texts: MLDataColumn<String>) throws -> MLDataTable
+  public func evaluation(on labeledTokens: [(tokens: [Token], labels: [String])]) -> MLWordTaggerMetrics
+  public func evaluation(on labeledTokens: MLDataTable, tokenColumn: String, labelColumn: String) -> MLWordTaggerMetrics
+  public func write(to fileURL: URL, metadata: MLModelMetadata? = nil) throws
+  public func write(toFile path: String, metadata: MLModelMetadata? = nil) throws
+  public struct ModelParameters {
+    public var validationData: MLDataTable?
+    public var algorithm: ModelAlgorithmType
+    public var language: NLLanguage?
+    public var tokenColumnValidationData: String?
+    public var labelColumnValidationData: String?
+    public init(validationData: MLDataTable? = nil, algorithm: ModelAlgorithmType = .crf(revision: 1), language: NLLanguage? = nil, tokenColumnValidationData: String? = nil, labelColumnValidationData: String? = nil)
+    public init(validationData: [(tokens: [Token], labels: [String])], algorithm: ModelAlgorithmType = .crf(revision: 1), language: NLLanguage? = nil)
+  }
+  public enum ModelAlgorithmType {
+    case crf(revision: Int?)
+  }
+}
+@available(OSX 10.14, *)
+extension MLWordTagger : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.14, *)
+extension MLWordTagger.ModelParameters : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.14, *)
+extension MLWordTagger.ModelAlgorithmType : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.14, *)
+public struct MLWordTaggerMetrics {
+  public var error: Error? {
+    get
+  }
+  public var isValid: Bool {
+    get
+  }
+  public var taggingError: Double {
+    get
+  }
+  public var confusion: MLDataTable {
+    get
+  }
+  public var precisionRecall: MLDataTable {
+    get
+  }
+}
+@available(OSX 10.14, *)
+extension MLWordTaggerMetrics : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.15, *)
+public struct MLRecommender {
+  public var model: MLModel {
+    get
+  }
+  public var itemIdentifierColumn: String
+  public var userIdentifierColumn: String
+  public var ratingColumn: String?
+  public let modelParameters: ModelParameters
+  public init(trainingData: MLDataTable, userColumn: String, itemColumn: String, ratingColumn: String? = nil, parameters: ModelParameters = ModelParameters()) throws
+  public func recommendations(fromUsers: [MLIdentifier], maxCount: Int = 10, restrictingToItems: [MLIdentifier]? = nil, excluding userItemObservations: MLDataTable? = nil, excludingObserved: Bool = true) throws -> MLDataTable
+  public func recommendations<T>(fromUsers: MLDataColumn<T>, maxCount: Int = 10, restrictingToItems: MLDataColumn<T>? = nil, excluding userItemObservations: MLDataTable? = nil, excludingObserved: Bool = true) throws -> MLDataTable where T : CreateML.MLDataValueConvertible, T : CreateML.MLIdentifier
+  public func evaluation(on testingData: MLDataTable, userColumn: String, itemColumn: String, ratingColumn: String? = nil, cutoffs: [Int] = [1,2,3,4,5], excludingObserved: Bool = true) -> MLRecommenderMetrics
+  public func write(to fileURL: URL, metadata: MLModelMetadata? = nil) throws
+  public func write(toFile path: String, metadata: MLModelMetadata? = nil) throws
+  public struct ModelParameters {
+    public var algorithm: ModelAlgorithmType
+    public var threshold: Double
+    public var maxCount: Int
+    public var nearestItems: MLDataTable?
+    public var maxSimilarityIterations: Int
+    public init(algorithm: ModelAlgorithmType = .itemSimilarity(.cosine), threshold: Double = 0.001, maxCount: Int = 64, nearestItems: MLDataTable? = nil, maxSimilarityIterations: Int = 1024)
+  }
+  public enum ModelAlgorithmType {
+    case itemSimilarity(SimilarityType)
+  }
+  public enum SimilarityType {
+    case cosine
+    case jaccard
+    case pearson
+    public static func == (a: CreateML.MLRecommender.SimilarityType, b: CreateML.MLRecommender.SimilarityType) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+}
+@available(OSX 10.15, *)
+public struct MLRecommenderMetrics {
+  public var error: Error? {
+    get
+  }
+  public var isValid: Bool {
+    get
+  }
+  public var precisionRecall: MLDataTable {
+    get
+  }
+  public var excludingObserved: Bool {
+    get
+  }
+  public init(precisionRecall: MLDataTable, excludingObserved: Bool)
+}
+@available(OSX 10.15, *)
+extension MLRecommender {
+  public func getSimilarItems(fromItems: [MLIdentifier], maxCount: Int = 10) throws -> MLDataTable
+  public func getSimilarItems<T>(fromItems: MLDataColumn<T>, maxCount: Int = 10) throws -> MLDataTable where T : CreateML.MLDataValueConvertible
+}
+@available(OSX 10.15, *)
+extension MLRecommender.ModelAlgorithmType : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.15, *)
+extension MLRecommender.SimilarityType : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.15, *)
+public protocol MLIdentifier {
+  var identifierValue: MLDataValue { get }
+}
+@available(OSX 10.15, *)
+extension Int : MLIdentifier {
+  public var identifierValue: MLDataValue {
+    get
+  }
+}
+@available(OSX 10.15, *)
+extension String : MLIdentifier {
+  public var identifierValue: MLDataValue {
+    get
+  }
+}
+@available(OSX 10.15, *)
+public protocol MLVisualizable : Swift.CustomPlaygroundDisplayConvertible {
+  var cgImage: CGImage? { get }
+}
+@available(OSX 10.15, *)
+public protocol MLStreamingVisualizable : CreateML.MLVisualizable {
+  mutating func nextIteration()
+  var finishedStreaming: Bool { get }
+}
+@available(OSX 10.14, *)
+public enum MLClassifier {
+  case boostedTree(MLBoostedTreeClassifier)
+  case decisionTree(MLDecisionTreeClassifier)
+  case randomForest(MLRandomForestClassifier)
+  case logisticRegression(MLLogisticRegressionClassifier)
+  case supportVector(MLSupportVectorClassifier)
+  public init(trainingData: MLDataTable, targetColumn: String, featureColumns: [String]? = nil) throws
+  public func predictions(from data: MLDataTable) throws -> MLUntypedColumn
+  public func evaluation(on labeledData: MLDataTable) -> MLClassifierMetrics
+  public func write(to fileURL: URL, metadata: MLModelMetadata?) throws
+  public func write(toFile path: String, metadata: MLModelMetadata?) throws
+}
+@available(OSX 10.14, *)
+extension MLClassifier {
+  public var model: MLModel {
+    get
+  }
+  public var trainingMetrics: MLClassifierMetrics {
+    get
+  }
+  public var validationMetrics: MLClassifierMetrics {
+    get
+  }
+  public var targetColumn: String {
+    get
+  }
+  public var featureColumns: [String] {
+    get
+  }
+}
+@available(OSX 10.14, *)
+extension MLClassifier : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.14, *)
+public enum MLRegressor {
+  case boostedTree(MLBoostedTreeRegressor)
+  case decisionTree(MLDecisionTreeRegressor)
+  case randomForest(MLRandomForestRegressor)
+  case linear(MLLinearRegressor)
+  public init(trainingData: MLDataTable, targetColumn: String, featureColumns: [String]? = nil) throws
+  public func predictions(from data: MLDataTable) throws -> MLUntypedColumn
+  public func evaluation(on labeledData: MLDataTable) -> MLRegressorMetrics
+  public func write(to fileURL: URL, metadata: MLModelMetadata?) throws
+  public func write(toFile path: String, metadata: MLModelMetadata?) throws
+}
+@available(OSX 10.14, *)
+extension MLRegressor {
+  public var model: MLModel {
+    get
+  }
+  public var trainingMetrics: MLRegressorMetrics {
+    get
+  }
+  public var validationMetrics: MLRegressorMetrics {
+    get
+  }
+  public var targetColumn: String {
+    get
+  }
+  public var featureColumns: [String] {
+    get
+  }
+}
+@available(OSX 10.14, *)
+extension MLRegressor : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.14, *)
+public struct MLBoostedTreeClassifier {
+  public var model: MLModel {
+    get
+  }
+  public var targetColumn: String
+  public var featureColumns: [String]
+  public let modelParameters: ModelParameters
+  public var trainingMetrics: MLClassifierMetrics {
+    get
+  }
+  public var validationMetrics: MLClassifierMetrics {
+    get
+  }
+  public init(trainingData: MLDataTable, targetColumn: String, featureColumns: [String]? = nil, parameters: ModelParameters = ModelParameters()) throws
+  public func predictions(from data: MLDataTable) throws -> MLUntypedColumn
+  public func evaluation(on labeledData: MLDataTable) -> MLClassifierMetrics
+  public func write(to fileURL: URL, metadata: MLModelMetadata? = nil) throws
+  public func write(toFile path: String, metadata: MLModelMetadata? = nil) throws
+  public struct ModelParameters {
+    public var validationData: MLDataTable?
+    public var maxDepth: Int
+    public var maxIterations: Int
+    public var minLossReduction: Double
+    public var minChildWeight: Double
+    public var randomSeed: Int
+    public var stepSize: Double
+    public var earlyStoppingRounds: Int?
+    public var rowSubsample: Double
+    public var columnSubsample: Double
+    public init(validationData: MLDataTable? = nil, maxDepth: Int = 6, maxIterations: Int = 10, minLossReduction: Double = 0, minChildWeight: Double = 0.1, randomSeed: Int = 42, stepSize: Double = 0.3, earlyStoppingRounds: Int? = nil, rowSubsample: Double = 1.0, columnSubsample: Double = 1.0)
+  }
+}
+@available(OSX 10.14, *)
+extension MLBoostedTreeClassifier.ModelParameters : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.14, *)
+extension MLBoostedTreeClassifier : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.14, *)
+public struct MLRandomForestClassifier {
+  public var model: MLModel {
+    get
+  }
+  public var targetColumn: String
+  public var featureColumns: [String]
+  public let modelParameters: ModelParameters
+  public var trainingMetrics: MLClassifierMetrics {
+    get
+  }
+  public var validationMetrics: MLClassifierMetrics {
+    get
+  }
+  public init(trainingData: MLDataTable, targetColumn: String, featureColumns: [String]? = nil, parameters: ModelParameters = ModelParameters()) throws
+  public func predictions(from data: MLDataTable) throws -> MLUntypedColumn
+  public func evaluation(on labeledData: MLDataTable) -> MLClassifierMetrics
+  public func write(to fileURL: URL, metadata: MLModelMetadata? = nil) throws
+  public func write(toFile path: String, metadata: MLModelMetadata? = nil) throws
+  public struct ModelParameters {
+    public var validationData: MLDataTable?
+    public var maxDepth: Int
+    public var maxIterations: Int
+    public var minLossReduction: Double
+    public var minChildWeight: Double
+    public var randomSeed: Int
+    public var rowSubsample: Double
+    public var columnSubsample: Double
+    public init(validationData: MLDataTable? = nil, maxDepth: Int = 6, maxIterations: Int = 10, minLossReduction: Double = 0, minChildWeight: Double = 0.1, randomSeed: Int = 42, rowSubsample: Double = 0.8, columnSubsample: Double = 0.8)
+  }
+}
+@available(OSX 10.14, *)
+extension MLRandomForestClassifier.ModelParameters : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.14, *)
+extension MLRandomForestClassifier : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.14, *)
+public struct MLDecisionTreeClassifier {
+  public var model: MLModel {
+    get
+  }
+  public var targetColumn: String
+  public var featureColumns: [String]
+  public let modelParameters: ModelParameters
+  public var trainingMetrics: MLClassifierMetrics {
+    get
+  }
+  public var validationMetrics: MLClassifierMetrics {
+    get
+  }
+  public init(trainingData: MLDataTable, targetColumn: String, featureColumns: [String]? = nil, parameters: ModelParameters = ModelParameters()) throws
+  public func predictions(from data: MLDataTable) throws -> MLUntypedColumn
+  public func evaluation(on labeledData: MLDataTable) -> MLClassifierMetrics
+  public func write(to fileURL: URL, metadata: MLModelMetadata? = nil) throws
+  public func write(toFile path: String, metadata: MLModelMetadata? = nil) throws
+  public struct ModelParameters {
+    public var maxDepth: Int
+    public var validationData: MLDataTable?
+    public var minLossReduction: Double
+    public var minChildWeight: Double
+    public var randomSeed: Int
+    public init(validationData: MLDataTable? = nil, maxDepth: Int = 6, minLossReduction: Double = 0, minChildWeight: Double = 0.1, randomSeed: Int = 42)
+  }
+}
+@available(OSX 10.14, *)
+extension MLDecisionTreeClassifier.ModelParameters : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.14, *)
+extension MLDecisionTreeClassifier : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.14, *)
+public struct MLLogisticRegressionClassifier {
+  public var model: MLModel {
+    get
+  }
+  public var targetColumn: String
+  public var featureColumns: [String]
+  public let modelParameters: ModelParameters
+  public var trainingMetrics: MLClassifierMetrics {
+    get
+  }
+  public var validationMetrics: MLClassifierMetrics {
+    get
+  }
+  public init(trainingData: MLDataTable, targetColumn: String, featureColumns: [String]? = nil, parameters: ModelParameters = ModelParameters()) throws
+  public func predictions(from data: MLDataTable) throws -> MLUntypedColumn
+  public func evaluation(on labeledData: MLDataTable) -> MLClassifierMetrics
+  public func write(to fileURL: URL, metadata: MLModelMetadata? = nil) throws
+  public func write(toFile path: String, metadata: MLModelMetadata? = nil) throws
+  public struct ModelParameters {
+    public var maxIterations: Int
+    public var validationData: MLDataTable?
+    public var l1Penalty: Double
+    public var l2Penalty: Double
+    public var stepSize: Double
+    public var convergenceThreshold: Double
+    public var featureRescaling: Bool
+    public init(validationData: MLDataTable? = nil, maxIterations: Int = 10, l1Penalty: Double = 0, l2Penalty: Double = 0.01, stepSize: Double = 1.0, convergenceThreshold: Double = 0.01, featureRescaling: Bool = true)
+  }
+}
+@available(OSX 10.14, *)
+extension MLLogisticRegressionClassifier.ModelParameters : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.14, *)
+extension MLLogisticRegressionClassifier : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.14, *)
+public struct MLSupportVectorClassifier {
+  public var model: MLModel {
+    get
+  }
+  public var targetColumn: String
+  public var featureColumns: [String]
+  public let modelParameters: ModelParameters
+  public var trainingMetrics: MLClassifierMetrics {
+    get
+  }
+  public var validationMetrics: MLClassifierMetrics {
+    get
+  }
+  public init(trainingData: MLDataTable, targetColumn: String, featureColumns: [String]? = nil, parameters: ModelParameters = ModelParameters()) throws
+  public func predictions(from data: MLDataTable) throws -> MLUntypedColumn
+  public func evaluation(on labeledData: MLDataTable) -> MLClassifierMetrics
+  public func write(to fileURL: URL, metadata: MLModelMetadata? = nil) throws
+  public func write(toFile path: String, metadata: MLModelMetadata? = nil) throws
+  public struct ModelParameters {
+    public var maxIterations: Int
+    public var validationData: MLDataTable?
+    public var penalty: Double
+    public var convergenceThreshold: Double
+    public var featureRescaling: Bool
+    public init(validationData: MLDataTable? = nil, maxIterations: Int = 11, penalty: Double = 1.0, convergenceThreshold: Double = 0.01, featureRescaling: Bool = true)
+  }
+}
+@available(OSX 10.14, *)
+extension MLSupportVectorClassifier.ModelParameters : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.14, *)
+extension MLSupportVectorClassifier : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.14, *)
+public struct MLBoostedTreeRegressor {
+  public var model: MLModel {
+    get
+  }
+  public var targetColumn: String
+  public var featureColumns: [String]
+  public let modelParameters: ModelParameters
+  public var trainingMetrics: MLRegressorMetrics {
+    get
+  }
+  public var validationMetrics: MLRegressorMetrics {
+    get
+  }
+  public init(trainingData: MLDataTable, targetColumn: String, featureColumns: [String]? = nil, parameters: ModelParameters = ModelParameters()) throws
+  public func predictions(from data: MLDataTable) throws -> MLUntypedColumn
+  public func evaluation(on labeledData: MLDataTable) -> MLRegressorMetrics
+  public func write(to fileURL: URL, metadata: MLModelMetadata? = nil) throws
+  public func write(toFile path: String, metadata: MLModelMetadata? = nil) throws
+  public struct ModelParameters {
+    public var maxDepth: Int
+    public var validationData: MLDataTable?
+    public var maxIterations: Int
+    public var minLossReduction: Double
+    public var minChildWeight: Double
+    public var randomSeed: Int
+    public var stepSize: Double
+    public var earlyStoppingRounds: Int?
+    public var rowSubsample: Double
+    public var columnSubsample: Double
+    public init(validationData: MLDataTable? = nil, maxDepth: Int = 6, maxIterations: Int = 10, minLossReduction: Double = 0, minChildWeight: Double = 0.1, randomSeed: Int = 42, stepSize: Double = 0.3, earlyStoppingRounds: Int? = nil, rowSubsample: Double = 1.0, columnSubsample: Double = 1.0)
+  }
+}
+@available(OSX 10.14, *)
+extension MLBoostedTreeRegressor.ModelParameters : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.14, *)
+extension MLBoostedTreeRegressor : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.14, *)
+public struct MLRandomForestRegressor {
+  public var model: MLModel {
+    get
+  }
+  public var targetColumn: String
+  public var featureColumns: [String]
+  public let modelParameters: ModelParameters
+  public var trainingMetrics: MLRegressorMetrics {
+    get
+  }
+  public var validationMetrics: MLRegressorMetrics {
+    get
+  }
+  public init(trainingData: MLDataTable, targetColumn: String, featureColumns: [String]? = nil, parameters: ModelParameters = ModelParameters()) throws
+  public func predictions(from data: MLDataTable) throws -> MLUntypedColumn
+  public func evaluation(on labeledData: MLDataTable) -> MLRegressorMetrics
+  public func write(to fileURL: URL, metadata: MLModelMetadata? = nil) throws
+  public func write(toFile path: String, metadata: MLModelMetadata? = nil) throws
+  public struct ModelParameters {
+    public var maxDepth: Int
+    public var validationData: MLDataTable?
+    public var maxIterations: Int
+    public var minLossReduction: Double
+    public var minChildWeight: Double
+    public var randomSeed: Int
+    public var rowSubsample: Double
+    public var columnSubsample: Double
+    public init(validationData: MLDataTable? = nil, maxDepth: Int = 6, maxIterations: Int = 10, minLossReduction: Double = 0, minChildWeight: Double = 0.1, randomSeed: Int = 42, rowSubsample: Double = 0.8, columnSubsample: Double = 0.8)
+  }
+}
+@available(OSX 10.14, *)
+extension MLRandomForestRegressor.ModelParameters : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.14, *)
+extension MLRandomForestRegressor : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.14, *)
+public struct MLDecisionTreeRegressor {
+  public var model: MLModel {
+    get
+  }
+  public var targetColumn: String
+  public var featureColumns: [String]
+  public let modelParameters: ModelParameters
+  public var trainingMetrics: MLRegressorMetrics {
+    get
+  }
+  public var validationMetrics: MLRegressorMetrics {
+    get
+  }
+  public init(trainingData: MLDataTable, targetColumn: String, featureColumns: [String]? = nil, parameters: ModelParameters = ModelParameters()) throws
+  public func predictions(from data: MLDataTable) throws -> MLUntypedColumn
+  public func evaluation(on labeledData: MLDataTable) -> MLRegressorMetrics
+  public func write(to fileURL: URL, metadata: MLModelMetadata? = nil) throws
+  public func write(toFile path: String, metadata: MLModelMetadata? = nil) throws
+  public struct ModelParameters {
+    public var maxDepth: Int
+    public var validationData: MLDataTable?
+    public var minLossReduction: Double
+    public var minChildWeight: Double
+    public var randomSeed: Int
+    public init(validationData: MLDataTable? = nil, maxDepth: Int = 6, minLossReduction: Double = 0, minChildWeight: Double = 0.1, randomSeed: Int = 42)
+  }
+}
+@available(OSX 10.14, *)
+extension MLDecisionTreeRegressor.ModelParameters : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.14, *)
+extension MLDecisionTreeRegressor : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.14, *)
+public struct MLLinearRegressor {
+  public var model: MLModel {
+    get
+  }
+  public var targetColumn: String
+  public var featureColumns: [String]
+  public let modelParameters: ModelParameters
+  public var trainingMetrics: MLRegressorMetrics {
+    get
+  }
+  public var validationMetrics: MLRegressorMetrics {
+    get
+  }
+  public init(trainingData: MLDataTable, targetColumn: String, featureColumns: [String]? = nil, parameters: ModelParameters = ModelParameters()) throws
+  public func predictions(from data: MLDataTable) throws -> MLUntypedColumn
+  public func evaluation(on labeledData: MLDataTable) -> MLRegressorMetrics
+  public func write(to fileURL: URL, metadata: MLModelMetadata? = nil) throws
+  public func write(toFile path: String, metadata: MLModelMetadata? = nil) throws
+  public struct ModelParameters {
+    public var validationData: MLDataTable?
+    public var maxIterations: Int
+    public var l1Penalty: Double
+    public var l2Penalty: Double
+    public var stepSize: Double
+    public var convergenceThreshold: Double
+    public var featureRescaling: Bool
+    public init(validationData: MLDataTable? = nil, maxIterations: Int = 10, l1Penalty: Double = 0, l2Penalty: Double = 0.01, stepSize: Double = 1.0, convergenceThreshold: Double = 0.01, featureRescaling: Bool = true)
+  }
+}
+@available(OSX 10.14, *)
+extension MLLinearRegressor.ModelParameters : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.14, *)
+extension MLLinearRegressor : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.14, *)
+public struct MLClassifierMetrics {
+  public var error: Error? {
+    get
+  }
+  public var isValid: Bool {
+    get
+  }
+  public var classificationError: Double {
+    get
+  }
+  public var confusion: MLDataTable {
+    get
+  }
+  public var precisionRecall: MLDataTable {
+    get
+  }
+  public init(classificationError: Double, confusion: MLDataTable, precisionRecall: MLDataTable)
+}
+@available(OSX 10.14, *)
+extension MLClassifierMetrics : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.14, *)
+public struct MLRegressorMetrics {
+  public var error: Error? {
+    get
+  }
+  public var isValid: Bool {
+    get
+  }
+  public var maximumError: Double {
+    get
+  }
+  public var rootMeanSquaredError: Double {
+    get
+  }
+  public init(maximumError: Double, rootMeanSquaredError: Double)
+}
+@available(OSX 10.14, *)
+extension MLRegressorMetrics : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.14, *)
+public struct MLDataTable {
+  public var error: Error? {
+    get
+  }
+  public var isValid: Bool {
+    get
+  }
+  public var size: (rows: Int, columns: Int) {
+    get
+  }
+  public var columnTypes: [String : MLDataValue.ValueType] {
+    get
+  }
+  public init()
+  public init(contentsOf url: URL, options: ParsingOptions = ParsingOptions()) throws
+  public init(namedColumns: [String : MLUntypedColumn]) throws
+  public init(dictionary: [String : MLDataValueConvertible]) throws
+  public struct ParsingOptions {
+    public var containsHeader: Bool
+    public var delimiter: String
+    public var comment: String
+    public var escape: String
+    public var doubleQuote: Bool
+    public var quote: String
+    public var skipInitialSpaces: Bool
+    public var missingValues: [String]
+    public var lineTerminator: String
+    public var selectColumns: [String]?
+    public var maxRows: Int?
+    public var skipRows: Int
+    public init(containsHeader: Bool = true, delimiter: String = ",", comment: String = "", escape: String = "\\", doubleQuote: Bool = true, quote: String = "\"", skipInitialSpaces: Bool = true, missingValues: [String] = ["NA"], lineTerminator: String = "\n", selectColumns: [String]? = nil, maxRows: Int? = nil, skipRows: Int = 0)
+  }
+  public subscript(columnName: String) -> MLUntypedColumn {
+    get
+    set(newValue)
+  }
+  public subscript<Element>(columnName: String) -> MLDataColumn<Element> where Element : CreateML.MLDataValueConvertible {
+    get
+    set(newValue)
+  }
+  public subscript<T>(columnName: String, columnType: T.Type) -> MLDataColumn<T>? where T : CreateML.MLDataValueConvertible {
+    get
+  }
+  public subscript<S>(columnNames: S) -> MLDataTable where S : Swift.Sequence, S.Element == Swift.String {
+    get
+  }
+  public subscript(slice: Range<Int>) -> MLDataTable {
+    get
+  }
+  public subscript<R>(slice: R) -> MLDataTable where R : Swift.RangeExpression, R.Bound == Swift.Int {
+    get
+  }
+  mutating public func addColumn(_ newColumn: MLUntypedColumn, named: String)
+  mutating public func addColumn<Element>(_ newColumn: MLDataColumn<Element>, named: String) where Element : CreateML.MLDataValueConvertible
+  mutating public func removeColumn(named: String)
+  mutating public func renameColumn(named: String, to: String)
+  mutating public func append(contentsOf newTable: MLDataTable)
+  public func randomSplit(by proportion: Double, seed: Int = 1) -> (MLDataTable, MLDataTable)
+  public func randomSample(by proportion: Double, seed: Int = 42) -> MLDataTable
+  public func intersect<T>(_ values: T..., of columnNamed: String) -> MLDataTable where T : CreateML.MLDataValueConvertible
+  public func exclude<T>(_ values: T..., of columnNamed: String) -> MLDataTable where T : CreateML.MLDataValueConvertible
+  public func join(with: MLDataTable, on columnsNamed: String..., type: JoinType = .inner) -> MLDataTable
+  public enum JoinType {
+    case inner
+    case outer
+    case left
+    case right
+    public static func == (a: CreateML.MLDataTable.JoinType, b: CreateML.MLDataTable.JoinType) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+  public func group<S>(columnsNamed: String..., aggregators: S) -> MLDataTable where S : Swift.Sequence, S.Element == CreateML.MLDataTable.Aggregator
+  public struct Aggregator {
+    public var operations: [Operations]
+    public var columnName: String
+    public init(operations: Operations..., of columnNamed: String)
+    public enum Operations {
+      case min
+      case max
+      case sum
+      case mean
+      case stdev
+      case count
+      case distinctCount
+      case variance
+      case sequenceMerge
+      case randomlySelectOne
+      case dictionaryMerge(valueColumn: String)
+      case argmin(outputColumn: String)
+      case argmax(outputColumn: String)
+    }
+  }
+  public subscript(mask: MLUntypedColumn) -> MLDataTable {
+    get
+  }
+  public subscript(mask: MLDataColumn<Bool>) -> MLDataTable {
+    get
+  }
+  public func map<T>(_ lazyTransform: @escaping (Row) -> T?) -> MLDataColumn<T> where T : CreateML.MLDataValueConvertible
+  public func map<T>(_ lazyTransform: @escaping (Row) -> T) -> MLDataColumn<T> where T : CreateML.MLDataValueConvertible
+  public func dropMissing() -> MLDataTable
+  public func fillMissing(columnNamed: String, with value: MLDataValue) -> MLDataTable
+  public func dropDuplicates() -> MLDataTable
+  public func prefix(_ maxLength: Int = 10) -> MLDataTable
+  public func suffix(_ maxLength: Int = 10) -> MLDataTable
+  public func sort(columnNamed: String, byIncreasingOrder: Bool = true) -> MLDataTable
+  public func expand(columnNamed: String, to: String) -> MLDataTable
+  public func condense(columnNamed: String, to: String) -> MLDataTable
+  public func pack(columnsNamed: String..., to: String, type: PackType = .sequence, filling: MLDataValue = MLDataValue.invalid) -> MLDataTable
+  public enum PackType {
+    case sequence
+    case dictionary
+    public static func == (a: CreateML.MLDataTable.PackType, b: CreateML.MLDataTable.PackType) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+  public func unpack(columnNamed: String, valueTypes: [MLDataValue.ValueType]? = nil, indexSubset: [Int]? = nil, keySubset: [String]? = nil) -> MLDataTable
+}
+@available(OSX 10.14, *)
+extension MLDataTable {
+  public func write(to directoryURL: URL) throws
+  public func write(toDirectory path: String) throws
+  public func writeCSV(to fileURL: URL) throws
+  public func writeCSV(toFile path: String) throws
+}
+@available(OSX 10.14, *)
+extension MLDataTable {
+  public struct Row {
+    public typealias Keys = MLDataTable.ColumnNames
+    public typealias Key = Keys.Element
+    public typealias Value = Row.Values.Element
+    public var keys: Keys {
+      get
+    }
+    public var values: Row.Values {
+      get
+    }
+    public subscript(name: Key) -> Value? {
+      get
+    }
+    public subscript<T>(name: Key, type: T.Type) -> T? where T : CreateML.MLDataValueConvertible {
+      get
+    }
+  }
+  public struct Rows {
+  }
+}
+@available(OSX 10.14, *)
+extension MLDataTable.Row {
+  public struct Values : RandomAccessCollection {
+    public var startIndex: Int {
+      get
+    }
+    public var endIndex: Int {
+      get
+    }
+    public subscript(i: Int) -> MLDataValue {
+      get
+    }
+    public typealias Element = CreateML.MLDataValue
+    public typealias Index = Swift.Int
+    public typealias SubSequence = Swift.Slice<CreateML.MLDataTable.Row.Values>
+    public typealias Indices = Swift.Range<Swift.Int>
+    public typealias Iterator = Swift.IndexingIterator<CreateML.MLDataTable.Row.Values>
+  }
+}
+@available(OSX 10.14, *)
+extension MLDataTable.Row : Collection {
+  public typealias Element = (Key, Value)
+  public typealias Index = Int
+  public var count: Int {
+    get
+  }
+  public var isEmpty: Bool {
+    get
+  }
+  public var startIndex: Int {
+    get
+  }
+  public var endIndex: Int {
+    get
+  }
+  public func index(after i: Int) -> Int
+  public func index(forKey key: Key) -> Index?
+  public subscript(position: Int) -> (MLDataTable.Row.Key, MLDataTable.Row.Value) {
+    get
+  }
+  public typealias Iterator = Swift.IndexingIterator<CreateML.MLDataTable.Row>
+  public typealias SubSequence = Swift.Slice<CreateML.MLDataTable.Row>
+  public typealias Indices = Swift.DefaultIndices<CreateML.MLDataTable.Row>
+}
+@available(OSX 10.14, *)
+extension MLDataTable.Row : Equatable {
+  public static func == (lhs: MLDataTable.Row, rhs: MLDataTable.Row) -> Bool
+}
+@available(OSX 10.14, *)
+extension MLDataTable.Rows : RandomAccessCollection {
+  public typealias Element = MLDataTable.Row
+  public subscript(index: Int) -> Element {
+    get
+  }
+  public var startIndex: Int {
+    get
+  }
+  public var endIndex: Int {
+    get
+  }
+  public typealias Index = Swift.Int
+  public typealias Iterator = Swift.IndexingIterator<CreateML.MLDataTable.Rows>
+  public typealias SubSequence = Swift.Slice<CreateML.MLDataTable.Rows>
+  public typealias Indices = Swift.Range<Swift.Int>
+}
+@available(OSX 10.14, *)
+extension MLDataTable {
+  public var rows: Rows {
+    get
+  }
+}
+@available(OSX 10.15, *)
+extension MLDataTable {
+  public func show() -> MLStreamingVisualizable
+}
+@available(OSX 10.14, *)
+extension MLDataTable : CustomStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var playgroundDescription: Any {
+    get
+  }
+  public var description: String {
+    get
+  }
+}
+@available(OSX 10.14, *)
+extension MLDataTable {
+  public struct ColumnNames : RandomAccessCollection {
+    public var startIndex: Int {
+      get
+    }
+    public var endIndex: Int {
+      get
+    }
+    public subscript(i: Int) -> String {
+      get
+    }
+    public typealias Element = Swift.String
+    public typealias Index = Swift.Int
+    public typealias Iterator = Swift.IndexingIterator<CreateML.MLDataTable.ColumnNames>
+    public typealias SubSequence = Swift.Slice<CreateML.MLDataTable.ColumnNames>
+    public typealias Indices = Swift.Range<Swift.Int>
+  }
+  public var columnNames: ColumnNames {
+    get
+  }
+}
+@available(OSX 10.14, *)
+extension MLDataTable.ColumnNames : Equatable {
+  public static func == (lhs: MLDataTable.ColumnNames, rhs: MLDataTable.ColumnNames) -> Bool
+}
+@available(OSX 10.14, *)
+extension MLDataTable.ColumnNames : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.14, *)
+extension MLDataTable.Rows : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.14, *)
+extension MLDataTable.Row.Values : Equatable {
+  public static func == (lhs: MLDataTable.Row.Values, rhs: MLDataTable.Row.Values) -> Bool
+}
+@available(OSX 10.14, *)
+extension MLDataTable.Row : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.14, *)
+extension MLDataTable.Row.Values : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.14, *)
+public struct MLDataColumn<Element> where Element : CreateML.MLDataValueConvertible {
+  public var count: Int {
+    get
+  }
+  public var error: Error? {
+    get
+  }
+  public var isValid: Bool {
+    get
+  }
+  public init<S>(_ source: S) where Element == S.Element, S : Swift.Sequence
+  public init(repeating repeatedValue: Element, count: Int)
+  mutating public func append(contentsOf newColumn: MLDataColumn<Element>)
+}
+@available(OSX 10.14, *)
+extension MLDataColumn {
+  public static func == (a: MLDataColumn<Element>, b: MLDataColumn<Element>) -> MLDataColumn<Bool>
+  public static func != (a: MLDataColumn<Element>, b: MLDataColumn<Element>) -> MLDataColumn<Bool>
+  public static func > (a: MLDataColumn<Element>, b: MLDataColumn<Element>) -> MLDataColumn<Bool>
+  public static func < (a: MLDataColumn<Element>, b: MLDataColumn<Element>) -> MLDataColumn<Bool>
+  public static func >= (a: MLDataColumn<Element>, b: MLDataColumn<Element>) -> MLDataColumn<Bool>
+  public static func <= (a: MLDataColumn<Element>, b: MLDataColumn<Element>) -> MLDataColumn<Bool>
+  public static func == (a: MLDataColumn<Element>, b: Element) -> MLDataColumn<Bool>
+  public static func != (a: MLDataColumn<Element>, b: Element) -> MLDataColumn<Bool>
+  public static func > (a: MLDataColumn<Element>, b: Element) -> MLDataColumn<Bool>
+  public static func < (a: MLDataColumn<Element>, b: Element) -> MLDataColumn<Bool>
+  public static func >= (a: MLDataColumn<Element>, b: Element) -> MLDataColumn<Bool>
+  public static func <= (a: MLDataColumn<Element>, b: Element) -> MLDataColumn<Bool>
+  public static func == (a: Element, b: MLDataColumn<Element>) -> MLDataColumn<Bool>
+  public static func != (a: Element, b: MLDataColumn<Element>) -> MLDataColumn<Bool>
+  public static func > (a: Element, b: MLDataColumn<Element>) -> MLDataColumn<Bool>
+  public static func < (a: Element, b: MLDataColumn<Element>) -> MLDataColumn<Bool>
+  public static func >= (a: Element, b: MLDataColumn<Element>) -> MLDataColumn<Bool>
+  public static func <= (a: Element, b: MLDataColumn<Element>) -> MLDataColumn<Bool>
+}
+@available(OSX 10.14, *)
+extension MLDataColumn {
+  public subscript(mask: MLDataColumn<Bool>) -> MLDataColumn<Element> {
+    get
+  }
+  public func map<T>(_ lazyTransform: @escaping (Element) -> T?) -> MLDataColumn<T> where T : CreateML.MLDataValueConvertible
+  public func map<T>(_ lazyTransform: @escaping (Element) -> T) -> MLDataColumn<T> where T : CreateML.MLDataValueConvertible
+  public func mapMissing<T>(_ lazyTransform: @escaping (Element?) -> T?) -> MLDataColumn<T> where T : CreateML.MLDataValueConvertible
+  public func map<T>(to type: T.Type) -> MLDataColumn<T> where T : CreateML.MLDataValueConvertible
+  public func dropMissing() -> MLDataColumn<Element>
+  public func fillMissing(with value: Element) -> MLDataColumn<Element>
+  public func dropDuplicates() -> MLDataColumn<Element>
+  public func prefix(_ maxLength: Int = 10) -> MLDataColumn<Element>
+  public func suffix(_ maxLength: Int = 10) -> MLDataColumn<Element>
+  public func sort(byIncreasingOrder: Bool = true) -> MLDataColumn<Element>
+  public func copy() -> MLDataColumn<Element>
+  public func materialize() throws -> MLDataColumn<Element>
+}
+@available(OSX 10.14, *)
+extension MLDataColumn {
+  public func element(at index: Int) -> Element?
+  public subscript(index: Int) -> Element {
+    get
+  }
+}
+@available(OSX 10.14, *)
+extension MLDataColumn {
+  public subscript(slice: Range<Int>) -> MLDataColumn {
+    get
+  }
+  public subscript<R>(slice: R) -> MLDataColumn where R : Swift.RangeExpression, R.Bound == Swift.Int {
+    get
+  }
+}
+@available(OSX 10.15, *)
+extension MLDataColumn {
+  public func show() -> MLStreamingVisualizable
+}
+@available(OSX 10.14, *)
+extension Array where Element : CreateML.MLDataValueConvertible {
+  public init(_ column: MLDataColumn<Element>)
+}
+@available(OSX 10.14, *)
+extension MLDataColumn where Element == Swift.Int {
+  public init<T>(column: MLDataColumn<T>) where T : CreateML.MLDataValueConvertible
+  public static func + (a: MLDataColumn<Int>, b: MLDataColumn<Int>) -> MLDataColumn<Int>
+  public static func - (a: MLDataColumn<Int>, b: MLDataColumn<Int>) -> MLDataColumn<Int>
+  public static func * (a: MLDataColumn<Int>, b: MLDataColumn<Int>) -> MLDataColumn<Int>
+  public static func / (a: MLDataColumn<Int>, b: MLDataColumn<Int>) -> MLDataColumn<Int>
+  public static func + (a: Int, b: MLDataColumn<Int>) -> MLDataColumn<Int>
+  public static func - (a: Int, b: MLDataColumn<Int>) -> MLDataColumn<Int>
+  public static func * (a: Int, b: MLDataColumn<Int>) -> MLDataColumn<Int>
+  public static func / (a: Int, b: MLDataColumn<Int>) -> MLDataColumn<Int>
+  public static func + (a: MLDataColumn<Int>, b: Int) -> MLDataColumn<Int>
+  public static func - (a: MLDataColumn<Int>, b: Int) -> MLDataColumn<Int>
+  public static func * (a: MLDataColumn<Int>, b: Int) -> MLDataColumn<Int>
+  public static func / (a: MLDataColumn<Int>, b: Int) -> MLDataColumn<Int>
+  public func sum() -> Int?
+  public func min() -> Int?
+  public func max() -> Int?
+  @available(OSX, introduced: 10.14, deprecated: 10.15, renamed: "stdev")
+  public func std() -> Double?
+  public func mean() -> Double?
+}
+@available(OSX 10.14, *)
+extension MLDataColumn where Element == Swift.Double {
+  public init<T>(column: MLDataColumn<T>) where T : CreateML.MLDataValueConvertible
+  public static func + (a: MLDataColumn<Double>, b: MLDataColumn<Double>) -> MLDataColumn<Double>
+  public static func - (a: MLDataColumn<Double>, b: MLDataColumn<Double>) -> MLDataColumn<Double>
+  public static func * (a: MLDataColumn<Double>, b: MLDataColumn<Double>) -> MLDataColumn<Double>
+  public static func / (a: MLDataColumn<Double>, b: MLDataColumn<Double>) -> MLDataColumn<Double>
+  public static func + (a: Double, b: MLDataColumn<Double>) -> MLDataColumn<Double>
+  public static func - (a: Double, b: MLDataColumn<Double>) -> MLDataColumn<Double>
+  public static func * (a: Double, b: MLDataColumn<Double>) -> MLDataColumn<Double>
+  public static func / (a: Double, b: MLDataColumn<Double>) -> MLDataColumn<Double>
+  public static func + (a: MLDataColumn<Double>, b: Double) -> MLDataColumn<Double>
+  public static func - (a: MLDataColumn<Double>, b: Double) -> MLDataColumn<Double>
+  public static func * (a: MLDataColumn<Double>, b: Double) -> MLDataColumn<Double>
+  public static func / (a: MLDataColumn<Double>, b: Double) -> MLDataColumn<Double>
+  public func sum() -> Double?
+  public func min() -> Double?
+  public func max() -> Double?
+  @available(OSX, introduced: 10.14, deprecated: 10.15, renamed: "stdev")
+  public func std() -> Double?
+  public func mean() -> Double?
+}
+@available(OSX 10.15, *)
+extension MLDataColumn where Element == Swift.Int {
+  public func stdev() -> Double?
+}
+@available(OSX 10.15, *)
+extension MLDataColumn where Element == Swift.Double {
+  public func stdev() -> Double?
+}
+@available(OSX 10.14, *)
+extension MLDataColumn where Element == Swift.Bool {
+  public static func || (a: MLDataColumn<Bool>, b: MLDataColumn<Bool>) -> MLDataColumn<Bool>
+  public static func && (a: MLDataColumn<Bool>, b: MLDataColumn<Bool>) -> MLDataColumn<Bool>
+}
+@available(OSX 10.14, *)
+extension MLDataColumn where Element == Swift.String {
+  public init<T>(column: MLDataColumn<T>) where T : CreateML.MLDataValueConvertible
+}
+@available(OSX 10.14, *)
+extension MLDataColumn where Element == CreateML.MLDataValue.SequenceType {
+  public init<T>(column: MLDataColumn<T>) where T : CreateML.MLDataValueConvertible
+}
+@available(OSX 10.14, *)
+extension MLDataColumn where Element == [Swift.Int] {
+  public init<T>(column: MLDataColumn<T>) where T : CreateML.MLDataValueConvertible
+}
+@available(OSX 10.14, *)
+extension MLDataColumn where Element == [Swift.Double] {
+  public init<T>(column: MLDataColumn<T>) where T : CreateML.MLDataValueConvertible
+}
+@available(OSX 10.14, *)
+extension MLDataColumn where Element == [Swift.String] {
+  public init<T>(column: MLDataColumn<T>) where T : CreateML.MLDataValueConvertible
+}
+@available(OSX 10.14, *)
+extension MLDataColumn where Element == CreateML.MLDataValue.DictionaryType {
+  public init<T>(column: MLDataColumn<T>) where T : CreateML.MLDataValueConvertible
+}
+@available(OSX 10.14, *)
+extension MLDataColumn where Element == Swift.Int {
+  public init(_ range: Range<Int>)
+}
+@available(OSX 10.14, *)
+extension MLDataColumn : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.14, *)
+extension MLDataColumn {
+}
+@available(OSX 10.14, *)
+public struct MLUntypedColumn {
+  public var count: Int {
+    get
+  }
+  public var type: MLDataValue.ValueType {
+    get
+  }
+  public var error: Error? {
+    get
+  }
+  public var isValid: Bool {
+    get
+  }
+  public func column<T>(type: T.Type) -> MLDataColumn<T>? where T : CreateML.MLDataValueConvertible
+  public var ints: MLDataColumn<Int>? {
+    get
+  }
+  public var doubles: MLDataColumn<Double>? {
+    get
+  }
+  public var strings: MLDataColumn<String>? {
+    get
+  }
+  public var sequences: MLDataColumn<MLDataValue.SequenceType>? {
+    get
+  }
+  public var dictionaries: MLDataColumn<MLDataValue.DictionaryType>? {
+    get
+  }
+  public var multiArrays: MLDataColumn<MLDataValue.MultiArrayType>? {
+    get
+  }
+  public init<S>(_ source: S) where S : Swift.Sequence, S.Element == CreateML.MLDataValue
+  public init<S>(_ source: S) where S : Swift.Sequence, S.Element : CreateML.MLDataValueConvertible
+  public init(repeating repeatedValue: MLDataValue, count: Int)
+  public init<T>(repeating repeatedValue: T, count: Int) where T : CreateML.MLDataValueConvertible
+  public init(_ range: Range<Int>)
+  public init(_ range: ClosedRange<Int>)
+  public init()
+  mutating public func append(contentsOf newColumn: MLUntypedColumn)
+}
+@available(OSX 10.14, *)
+extension MLUntypedColumn {
+  public static func == (a: MLUntypedColumn, b: MLDataValueConvertible) -> MLUntypedColumn
+  public static func != (a: MLUntypedColumn, b: MLDataValueConvertible) -> MLUntypedColumn
+  public static func > (a: MLUntypedColumn, b: MLDataValueConvertible) -> MLUntypedColumn
+  public static func < (a: MLUntypedColumn, b: MLDataValueConvertible) -> MLUntypedColumn
+  public static func >= (a: MLUntypedColumn, b: MLDataValueConvertible) -> MLUntypedColumn
+  public static func <= (a: MLUntypedColumn, b: MLDataValueConvertible) -> MLUntypedColumn
+  public static func + (a: MLUntypedColumn, b: MLDataValueConvertible) -> MLUntypedColumn
+  public static func - (a: MLUntypedColumn, b: MLDataValueConvertible) -> MLUntypedColumn
+  public static func * (a: MLUntypedColumn, b: MLDataValueConvertible) -> MLUntypedColumn
+  public static func / (a: MLUntypedColumn, b: MLDataValueConvertible) -> MLUntypedColumn
+  public static func == (a: MLDataValueConvertible, b: MLUntypedColumn) -> MLUntypedColumn
+  public static func != (a: MLDataValueConvertible, b: MLUntypedColumn) -> MLUntypedColumn
+  public static func > (a: MLDataValueConvertible, b: MLUntypedColumn) -> MLUntypedColumn
+  public static func < (a: MLDataValueConvertible, b: MLUntypedColumn) -> MLUntypedColumn
+  public static func >= (a: MLDataValueConvertible, b: MLUntypedColumn) -> MLUntypedColumn
+  public static func <= (a: MLDataValueConvertible, b: MLUntypedColumn) -> MLUntypedColumn
+  public static func + (a: MLDataValueConvertible, b: MLUntypedColumn) -> MLUntypedColumn
+  public static func - (a: MLDataValueConvertible, b: MLUntypedColumn) -> MLUntypedColumn
+  public static func * (a: MLDataValueConvertible, b: MLUntypedColumn) -> MLUntypedColumn
+  public static func / (a: MLDataValueConvertible, b: MLUntypedColumn) -> MLUntypedColumn
+  public static func == (a: MLUntypedColumn, b: MLUntypedColumn) -> MLUntypedColumn
+  public static func != (a: MLUntypedColumn, b: MLUntypedColumn) -> MLUntypedColumn
+  public static func > (a: MLUntypedColumn, b: MLUntypedColumn) -> MLUntypedColumn
+  public static func < (a: MLUntypedColumn, b: MLUntypedColumn) -> MLUntypedColumn
+  public static func >= (a: MLUntypedColumn, b: MLUntypedColumn) -> MLUntypedColumn
+  public static func <= (a: MLUntypedColumn, b: MLUntypedColumn) -> MLUntypedColumn
+  public static func && (a: MLUntypedColumn, b: MLUntypedColumn) -> MLUntypedColumn
+  public static func || (a: MLUntypedColumn, b: MLUntypedColumn) -> MLUntypedColumn
+  public static func + (a: MLUntypedColumn, b: MLUntypedColumn) -> MLUntypedColumn
+  public static func - (a: MLUntypedColumn, b: MLUntypedColumn) -> MLUntypedColumn
+  public static func * (a: MLUntypedColumn, b: MLUntypedColumn) -> MLUntypedColumn
+  public static func / (a: MLUntypedColumn, b: MLUntypedColumn) -> MLUntypedColumn
+}
+@available(OSX 10.14, *)
+extension MLUntypedColumn {
+  public subscript(mask: MLUntypedColumn) -> MLUntypedColumn {
+    get
+  }
+  public subscript(mask: MLDataColumn<Bool>) -> MLUntypedColumn {
+    get
+  }
+  public func map<T>(_ lazyTransform: @escaping (MLDataValue) -> T?) -> MLDataColumn<T> where T : CreateML.MLDataValueConvertible
+  public func map<T>(_ lazyTransform: @escaping (MLDataValue) -> T) -> MLDataColumn<T> where T : CreateML.MLDataValueConvertible
+  public func mapMissing<T>(_ lazyTransform: @escaping (MLDataValue) -> T?) -> MLDataColumn<T> where T : CreateML.MLDataValueConvertible
+  public func map<T>(to type: T.Type) -> MLDataColumn<T> where T : CreateML.MLDataValueConvertible
+  public func dropMissing() -> MLUntypedColumn
+  public func fillMissing(with value: MLDataValue) -> MLUntypedColumn
+  public func dropDuplicates() -> MLUntypedColumn
+  public func prefix(_ maxLength: Int = 10) -> MLUntypedColumn
+  public func suffix(_ maxLength: Int = 10) -> MLUntypedColumn
+  public func sort(byIncreasingOrder: Bool = true) -> MLUntypedColumn
+  public func copy() -> MLUntypedColumn
+  public func materialize() throws -> MLUntypedColumn
+}
+@available(OSX 10.14, *)
+extension MLUntypedColumn {
+  public init(ints: MLUntypedColumn)
+  public init(doubles: MLUntypedColumn)
+  public init(strings: MLUntypedColumn)
+  public init(sequences: MLUntypedColumn)
+  public init(dictionaries: MLUntypedColumn)
+  public init(multiArrays: MLUntypedColumn)
+}
+@available(OSX 10.14, *)
+extension MLUntypedColumn {
+  public subscript(index: Int) -> MLDataValue {
+    get
+  }
+}
+@available(OSX 10.14, *)
+extension MLUntypedColumn {
+  public subscript(slice: Range<Int>) -> MLUntypedColumn {
+    get
+  }
+  public subscript<R>(slice: R) -> MLUntypedColumn where R : Swift.RangeExpression, R.Bound == Swift.Int {
+    get
+  }
+}
+@available(OSX 10.14, *)
+extension Array where Element == CreateML.MLDataValue {
+  public init(_ untypedColumn: MLUntypedColumn)
+}
+@available(OSX 10.15, *)
+extension MLUntypedColumn {
+  public func show() -> MLStreamingVisualizable
+}
+@available(OSX 10.14, *)
+extension MLUntypedColumn : CustomReflectable {
+  public var customMirror: Mirror {
+    get
+  }
+}
+@available(OSX 10.14, *)
+extension MLUntypedColumn : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.15, *)
+public struct MLGazetteer {
+  public var model: MLModel
+  public let modelParameters: ModelParameters
+  public init(dictionary: [String : [String]], parameters: ModelParameters = ModelParameters()) throws
+  public init(labeledData: MLDataTable, textColumn: String, labelColumn: String, parameters: ModelParameters = ModelParameters()) throws
+  public func prediction(from text: String) throws -> String
+  public func predictions(from texts: [String]) throws -> [String]
+  public func predictions(from texts: MLDataColumn<String>) throws -> MLDataColumn<String>
+  public func write(to fileURL: URL, metadata: MLModelMetadata? = nil) throws
+  public func write(toFile path: String, metadata: MLModelMetadata? = nil) throws
+  public struct ModelParameters {
+    public var language: NLLanguage?
+    public init(language: NLLanguage? = nil)
+  }
+}
+@available(OSX 10.15, *)
+extension MLGazetteer : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.15, *)
+extension MLGazetteer.ModelParameters : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.14, *)
+public enum MLDataValue {
+  case int(Int)
+  case double(Double)
+  case string(String)
+  case sequence(SequenceType)
+  case dictionary(DictionaryType)
+  case multiArray(MultiArrayType)
+  case invalid
+  public var type: MLDataValue.ValueType {
+    get
+  }
+  public var isValid: Bool {
+    get
+  }
+  public var intValue: Int? {
+    get
+  }
+  public var doubleValue: Double? {
+    get
+  }
+  public var stringValue: String? {
+    get
+  }
+  public var sequenceValue: SequenceType? {
+    get
+  }
+  public var dictionaryValue: DictionaryType? {
+    get
+  }
+  public var multiArrayValue: MultiArrayType? {
+    get
+  }
+  public struct SequenceType {
+  }
+  public struct DictionaryType {
+  }
+  public struct MultiArrayType {
+  }
+}
+@available(OSX 10.14, *)
+extension MLDataValue {
+  public enum ValueType {
+    case int
+    case double
+    case string
+    case sequence
+    case dictionary
+    case multiArray
+    case invalid
+    public static func == (a: CreateML.MLDataValue.ValueType, b: CreateML.MLDataValue.ValueType) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+}
+@available(OSX 10.14, *)
+extension MLDataValue.ValueType : CustomStringConvertible, CustomDebugStringConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+}
+@available(OSX 10.14, *)
+extension MLDataValue : CustomStringConvertible, CustomDebugStringConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+}
+@available(OSX 10.14, *)
+extension MLDataValue : Hashable {
+  public static func == (left: MLDataValue, right: MLDataValue) -> Bool
+  public var hashValue: Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+@available(OSX 10.14, *)
+public protocol MLDataValueConvertible {
+  static var dataValueType: MLDataValue.ValueType { get }
+  init?(from dataValue: MLDataValue)
+  init()
+  var dataValue: MLDataValue { get }
+}
+@available(OSX 10.14, *)
+extension Int : MLDataValueConvertible {
+  public static var dataValueType: MLDataValue.ValueType {
+    get
+  }
+  public init?(from dataValue: MLDataValue)
+  public var dataValue: MLDataValue {
+    get
+  }
+}
+@available(OSX 10.14, *)
+extension Bool : MLDataValueConvertible {
+  public static var dataValueType: MLDataValue.ValueType {
+    get
+  }
+  public init?(from dataValue: MLDataValue)
+  public var dataValue: MLDataValue {
+    get
+  }
+}
+@available(OSX 10.14, *)
+extension Int64 : MLDataValueConvertible {
+  public static var dataValueType: MLDataValue.ValueType {
+    get
+  }
+  public init?(from dataValue: MLDataValue)
+  public var dataValue: MLDataValue {
+    get
+  }
+}
+@available(OSX 10.14, *)
+extension Double : MLDataValueConvertible {
+  public static var dataValueType: MLDataValue.ValueType {
+    get
+  }
+  public init?(from dataValue: MLDataValue)
+  public var dataValue: MLDataValue {
+    get
+  }
+}
+@available(OSX 10.14, *)
+extension String : MLDataValueConvertible {
+  public static var dataValueType: MLDataValue.ValueType {
+    get
+  }
+  public init?(from dataValue: MLDataValue)
+  public var dataValue: MLDataValue {
+    get
+  }
+}
+@available(OSX 10.14, *)
+extension MLDataValue.SequenceType {
+  public init()
+  public init<S>(_ elements: S) where S : Swift.Sequence, S.Element == CreateML.MLDataValue.SequenceType.Element
+  public init<S>(_ elements: S) where S : Swift.Sequence, S.Element : CreateML.MLDataValueConvertible
+}
+@available(OSX 10.14, *)
+extension MLDataValue.SequenceType : RandomAccessCollection {
+  public typealias Element = MLDataValue
+  public typealias Index = Int
+  public var startIndex: Index {
+    get
+  }
+  public var endIndex: Index {
+    get
+  }
+  public subscript(index: Index) -> Element {
+    get
+  }
+  public typealias Iterator = Swift.IndexingIterator<CreateML.MLDataValue.SequenceType>
+  public typealias SubSequence = Swift.Slice<CreateML.MLDataValue.SequenceType>
+  public typealias Indices = Swift.Range<CreateML.MLDataValue.SequenceType.Index>
+}
+@available(OSX 10.14, *)
+extension MLDataValue.SequenceType : ExpressibleByArrayLiteral {
+  public init(arrayLiteral: Element...)
+  public typealias ArrayLiteralElement = CreateML.MLDataValue.SequenceType.Element
+}
+@available(OSX 10.14, *)
+extension MLDataValue.SequenceType : Equatable {
+  public static func == (lhs: MLDataValue.SequenceType, rhs: MLDataValue.SequenceType) -> Bool
+}
+@available(OSX 10.14, *)
+extension MLDataValue.SequenceType : CustomStringConvertible, CustomDebugStringConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+}
+@available(OSX 10.14, *)
+extension MLDataValue.SequenceType : MLDataValueConvertible {
+  public static var dataValueType: MLDataValue.ValueType {
+    get
+  }
+  public init?(from dataValue: MLDataValue)
+  public var dataValue: MLDataValue {
+    get
+  }
+}
+@available(OSX 10.14, *)
+extension Array : MLDataValueConvertible where Element : CreateML.MLDataValueConvertible {
+  public static var dataValueType: MLDataValue.ValueType {
+    get
+  }
+  public init?(from dataValue: MLDataValue)
+  public var dataValue: MLDataValue {
+    get
+  }
+}
+@available(OSX 10.14, *)
+extension MLDataValue.DictionaryType {
+  public typealias Key = MLDataValue
+  public typealias Value = MLDataValue
+  public init()
+  public init(_ contents: [MLDataValue : MLDataValue])
+  public init<S>(uniqueKeysWithValues keysAndValues: S) where S : Swift.Sequence, S.Element == (CreateML.MLDataValue.DictionaryType.Key, CreateML.MLDataValue.DictionaryType.Value)
+  public var count: Int {
+    get
+  }
+  public var isEmpty: Bool {
+    get
+  }
+  public subscript(key: Key) -> Value? {
+    get
+  }
+}
+@available(OSX 10.14, *)
+extension MLDataValue.DictionaryType : Collection {
+  public struct Index : Comparable {
+    public static func == (lhs: Index, rhs: Index) -> Bool
+    public static func < (lhs: Index, rhs: Index) -> Bool
+  }
+  public typealias Element = (key: MLDataValue, value: MLDataValue)
+  public var startIndex: Index {
+    get
+  }
+  public var endIndex: Index {
+    get
+  }
+  public subscript(index: Index) -> Element {
+    get
+  }
+  public func index(after i: Index) -> Index
+  public typealias Iterator = Swift.IndexingIterator<CreateML.MLDataValue.DictionaryType>
+  public typealias SubSequence = Swift.Slice<CreateML.MLDataValue.DictionaryType>
+  public typealias Indices = Swift.DefaultIndices<CreateML.MLDataValue.DictionaryType>
+}
+@available(OSX 10.14, *)
+extension MLDataValue.DictionaryType : CustomStringConvertible, CustomDebugStringConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+}
+@available(OSX 10.14, *)
+extension MLDataValue.DictionaryType : Equatable {
+  public static func == (lhs: MLDataValue.DictionaryType, rhs: MLDataValue.DictionaryType) -> Bool
+}
+@available(OSX 10.14, *)
+extension MLDataValue.DictionaryType : MLDataValueConvertible {
+  public static var dataValueType: MLDataValue.ValueType {
+    get
+  }
+  public init?(from dataValue: MLDataValue)
+  public var dataValue: MLDataValue {
+    get
+  }
+}
+@available(OSX 10.14, *)
+extension Dictionary : MLDataValueConvertible where Key : CreateML.MLDataValueConvertible, Value : CreateML.MLDataValueConvertible {
+  public static var dataValueType: MLDataValue.ValueType {
+    get
+  }
+  public init?(from dataValue: MLDataValue)
+  public init?(from dictionaryType: MLDataValue.DictionaryType)
+  public var dataValue: MLDataValue {
+    get
+  }
+}
+@available(OSX 10.14, *)
+extension MLDataValue.MultiArrayType : Equatable {
+  public init(shape: [Int])
+  public init(_ contents: MLMultiArray)
+  public subscript(index: Int) -> Double {
+    get
+  }
+  public subscript(index: [Int]) -> Double {
+    get
+  }
+  public var mlMultiArray: MLMultiArray {
+    get
+  }
+  public static func == (lhs: MLDataValue.MultiArrayType, rhs: MLDataValue.MultiArrayType) -> Bool
+}
+@available(OSX 10.14, *)
+extension MLDataValue.MultiArrayType : CustomStringConvertible, CustomDebugStringConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+}
+@available(OSX 10.14, *)
+extension MLDataValue.MultiArrayType : MLDataValueConvertible {
+  public static var dataValueType: MLDataValue.ValueType {
+    get
+  }
+  public init?(from dataValue: MLDataValue)
+  public init()
+  public var dataValue: MLDataValue {
+    get
+  }
+}
+public struct MLModelMetadata {
+  public var author: String
+  public var shortDescription: String
+  public var license: String?
+  public var version: String
+  public var additional: [String : String]?
+  public init(author: String = NSFullUserName(), shortDescription: String = "A model trained using CreateML for use with CoreML.", license: String? = nil, version: String = "1", additional: [String : String]? = nil)
+}
+@available(OSX 10.15, *)
+public struct MLSoundClassifier {
+  public var model: MLModel {
+    get
+  }
+  public let modelParameters: ModelParameters
+  public var trainingMetrics: MLClassifierMetrics {
+    get
+  }
+  public var validationMetrics: MLClassifierMetrics {
+    get
+  }
+  public init(trainingData: DataSource, parameters: ModelParameters = ModelParameters()) throws
+  public init(trainingData: [String : [URL]], parameters: ModelParameters = ModelParameters()) throws
+  public func evaluation(on testingData: DataSource) -> MLClassifierMetrics
+  public func evaluation(on testingData: [String : [URL]]) -> MLClassifierMetrics
+  public func write(to fileURL: URL, metadata: MLModelMetadata? = nil) throws
+  public func write(toFile path: String, metadata: MLModelMetadata? = nil) throws
+  public enum DataSource {
+    case labeledDirectories(at: URL)
+    case labeledFiles(at: URL)
+    public func labeledSounds() throws -> [String : [URL]]
+  }
+  public struct ModelParameters {
+    public var validationData: [String : [URL]]?
+    public var maxIterations: Int
+    public var overlapFactor: Double
+    public init(validationData: [String : [URL]]? = nil, maxIterations: Int = 25, overlapFactor: Double = 0.5)
+    public init(validationData: DataSource, maxIterations: Int = 25, overlapFactor: Double = 0.5)
+  }
+  public func predictions(from audioFiles: [URL]) throws -> [String]
+}
+@available(OSX 10.15, *)
+extension MLSoundClassifier.ModelParameters : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.15, *)
+extension MLSoundClassifier : CustomStringConvertible, CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+  public var description: String {
+    get
+  }
+  public var debugDescription: String {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+}
+@available(OSX 10.14, *)
+public let MLCreateErrorDomain: String
+@available(OSX 10.14, *)
+public enum MLCreateError : Error {
+  case generic(reason: String)
+  case type(reason: String)
+  case io(reason: String)
+}

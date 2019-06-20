@@ -1,0 +1,10 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 4B90608D-9B1F-3958-9520-0A5BD0CB8346', 'x86_64: 4B90608D-9B1F-3958-9520-0A5BD0CB8346' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/IDSKVStore.framework/Versions/A/IDSKVStore'
+current-version: 800
+exports:         
+  - archs:           [ x86_64 ]
+    objc-classes:    [ IDSKVDeleteContext, IDSKVStore ]
+...

@@ -1,0 +1,10 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: F6B1FCE0-26E1-3082-B644-614693272AB7' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/GPUCompiler.framework/Versions/A/Libraries/libComposeFilters.dylib'
+current-version: 0
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _composeImageFilterFunctionsSPI ]
+...

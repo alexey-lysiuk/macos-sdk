@@ -1,0 +1,11 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 6221AD2B-95DA-3C4F-9117-3C87B1D1D092', 'x86_64: 6221AD2B-95DA-3C4F-9117-3C87B1D1D092' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/AggregateDictionaryHistory.framework/Versions/A/AggregateDictionaryHistory'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _ADDatabaseUtilitiesCleanUpCorruption, _ADHistoryCalculateSummaryStatistics, 
+                       _ADHistoryGetLinearHistogram, _ADHistoryGetLogHistogram, _ADIsInternalDevice ]
+    objc-classes:    [ ADHistory, ADHistoryDistributionEnumerator ]
+...

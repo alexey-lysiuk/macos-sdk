@@ -1,0 +1,11 @@
+// swift-interface-format-version: 1.0
+// swift-tools-version: Apple Swift version 5.1 effective-4.1.50 (swiftlang-1100.8.32.26 clang-1100.0.18.2)
+// swift-module-flags: -target x86_64-apple-macosx10.15 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftMetricKit -swift-version 4 -O -enforce-exclusivity=unchecked -module-name MetricKit
+@_exported import MetricKit
+import Swift
+import _SwiftOSOverlayShims
+import os.log
+import os
+@available(iOS 13.0, OSX 10.15, *)
+@available(OSX, unavailable)
+public func mxSignpost(_ type: OSSignpostType, dso: UnsafeRawPointer = #dsohandle, log: OSLog, name: StaticString, signpostID: OSSignpostID = .exclusive, _ format: StaticString = "%{public, signpost:metrics}@", _ arguments: [CVarArg] = [Unmanaged<NSObject>.fromOpaque(_MXSignpostMetricsSnapshot()).takeUnretainedValue()])

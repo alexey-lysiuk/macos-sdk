@@ -1,0 +1,10 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 75593703-6E7D-3A2D-9DA0-6D1250BA3777', 'x86_64: 75593703-6E7D-3A2D-9DA0-6D1250BA3777' ]
+platform:        zippered
+install-name:    '/usr/lib/libffi-trampolines.dylib'
+current-version: 25
+exports:         
+  - archs:           [ x86_64 ]
+    allowable-clients: [ '!' ]
+...

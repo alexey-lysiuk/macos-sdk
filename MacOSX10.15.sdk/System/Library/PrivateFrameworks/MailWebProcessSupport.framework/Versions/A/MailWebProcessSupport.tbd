@@ -1,0 +1,16 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 6BB7A013-8EE0-336D-8C2C-F2C162D35647' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/MailWebProcessSupport.framework/Versions/A/MailWebProcessSupport'
+current-version: 3554.18.2
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _kBodyFieldSource, _kBodyFieldSourceLength, _kConstantsSource, 
+                       _kConstantsSourceLength, _kDocumentExtrasSource, _kDocumentExtrasSourceLength, 
+                       _kElementExtrasSource, _kElementExtrasSourceLength, _kHTMLDocumentExtrasSource, 
+                       _kHTMLDocumentExtrasSourceLength, _kHTMLElementExtrasSource, 
+                       _kHTMLElementExtrasSourceLength, _kNodeExtrasSource, _kNodeExtrasSourceLength, 
+                       _kRangeExtrasSource, _kRangeExtrasSourceLength ]
+    objc-classes:    [ MSComposeBundlePageController ]
+...

@@ -1,0 +1,23 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 5B5857A1-25E5-3A8D-9785-F5D496386A61', 'x86_64: 5B5857A1-25E5-3A8D-9785-F5D496386A61' ]
+platform:        zippered
+install-name:    '/usr/lib/libMobileGestalt.dylib'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _MGCancelNotifications, _MGCopyAnswer, _MGCopyAnswerWithError, 
+                       _MGCopyMultipleAnswers, _MGGetBoolAnswer, _MGGetFloat32Answer, 
+                       _MGGetProductType, _MGGetSInt32Answer, _MGGetSInt64Answer, 
+                       _MGGetStringAnswer, _MGIsDeviceOfType, _MGIsDeviceOneOfType, 
+                       _MGIsQuestionValid, _MGRegisterForBulkUpdates, _MGRegisterForUpdates, 
+                       _MGSetAnswer, _MGSetLogHandler, __MGCacheCopyValueForKey, 
+                       __MGCacheValid, __MGClearInProcessCache, __MGCopyDeviceDescription, 
+                       __MGCopyIteratedDeviceDescription, __MGGetFastPathLog, __MGIterateDevices, 
+                       __MGLog, __MGPrintIteratedDeviceDescription, __MGRebuildCache, 
+                       __MGServerCopyAnswerWithError, __MGServerQuestionIsPlatform, 
+                       __MGSetServer, __MGWaitForDevices, __MGWriteCache, _kMGQDiskUsageAmountDataAvailable, 
+                       _kMGQDiskUsageAmountDataReserved, _kMGQDiskUsageAmountRestoreAvailable, 
+                       _kMGQDiskUsageTotalDataAvailable, _kMGQDiskUsageTotalDataCapacity, 
+                       _kMGQDiskUsageTotalDiskCapacity, _kMGQDiskUsageTotalSystemAvailable, 
+                       _kMGQDiskUsageTotalSystemCapacity ]
+...

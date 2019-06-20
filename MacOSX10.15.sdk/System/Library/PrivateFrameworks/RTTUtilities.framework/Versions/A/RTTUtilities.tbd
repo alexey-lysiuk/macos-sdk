@@ -1,0 +1,23 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 214ED0B4-DC34-350E-87B0-DD03CB0845C1', 'x86_64: 214ED0B4-DC34-350E-87B0-DD03CB0845C1' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/RTTUtilities.framework/Versions/A/RTTUtilities'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _AXTTYMessageKeyCallID, _AXTTYMessageKeyContactID, _AXTTYMessageKeyContactPathSearchAction, 
+                       _AXTTYMessageKeyContactSearchAction, _AXTTYMessageKeyConversation, 
+                       _AXTTYMessageKeyConversationUpdates, _AXTTYMessageKeyDeleteAction, 
+                       _AXTTYMessageKeyReadAction, _AXTTYMessageKeyRemoteConversationUpdates, 
+                       _AXTTYMessageKeyResult, _AXTTYMessageKeyServiceMessageUpdates, 
+                       _AXTTYMessageKeySettingsKey, _AXTTYMessageKeyUUID, _AXTTYMessageKeyValue, 
+                       _AXTTYMessageKeyWriteAction, _AXTTYPreferredTransportMethodChangedNotification, 
+                       _RTTUtilitiesVersionNumber, _RTTUtilitiesVersionString, _accessibilityRTTUtilitiesBundle, 
+                       _kAXSRTTSettingsVersionPreference, _kAXSTTYPreferenceDomain, 
+                       _ttyLocString, _ttyLocStringAndLocale ]
+    objc-classes:    [ AXRTTSettingsListenerHelper, AXTTYSimulatorSubscriptionContext, 
+                       RTTCall, RTTController, RTTConversation, RTTDatabaseManager, 
+                       RTTDictionaryManager, RTTNanoSettings, RTTRemoteCall, RTTServer, 
+                       RTTSettings, RTTTelephonyUtilities, RTTUtterance, TTYContactList, 
+                       TTYHistory ]
+...

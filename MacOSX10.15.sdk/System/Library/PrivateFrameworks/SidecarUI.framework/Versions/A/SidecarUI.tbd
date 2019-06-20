@@ -1,0 +1,13 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 14D0D1F4-0B2F-39AC-956C-94314EEBC248' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/SidecarUI.framework/Versions/A/SidecarUI'
+current-version: 148.1
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _SidecarBundle, _SidecarDeviceTypeDescriptions, _SidecarDisplayMenuControllerMenuItemsChangedNotification, 
+                       _SidecarLocalizedString, _SidecarRequestFromRepresentedObject ]
+    objc-classes:    [ SidecarAlertController, SidecarDisplayMenuController, SidecarMenuController, 
+                       SidecarPopover ]
+...

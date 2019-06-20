@@ -1,0 +1,10 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 354B04A9-07C6-36FE-A006-19D0FE707200', 'x86_64: 354B04A9-07C6-36FE-A006-19D0FE707200' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/AdPlatformsInternal.framework/Versions/A/AdPlatformsInternal'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _AdPlatformsInternalVersionNumber, _AdPlatformsInternalVersionString ]
+    objc-classes:    [ ADAttributionRequester, ADAttributionService ]
+...

@@ -1,0 +1,39 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 8010B285-CF8D-3BED-92A5-B25031C31C48', 'x86_64: 8010B285-CF8D-3BED-92A5-B25031C31C48' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/Lexicon.framework/Versions/A/Lexicon'
+current-version: 65
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _LXCompileStemSuffixTokenIDConversionMap, _LXCompileUnigramsFile, 
+                       _LXCompileUnigramsFileWithError, _LXCursorConditionalProbability, 
+                       _LXCursorCopyFirstEntry, _LXCursorCopyTraversedCharacters, 
+                       _LXCursorCreateByAdvancing, _LXCursorCreateByAdvancingWithUTF16, 
+                       _LXCursorCreateByAdvancingWithUTF32, _LXCursorCreateByAdvancingWithUTF8, 
+                       _LXCursorEnumerateChildren, _LXCursorEnumerateEntries, _LXCursorEnumerateEntriesRecursively, 
+                       _LXCursorEnumerateEntriesRecursivelyWithPolicy, _LXCursorHasChildren, 
+                       _LXCursorHasEntries, _LXCursorHash, _LXCursorIsRoot, _LXCursorLastTraversedCharacter, 
+                       _LXCursorPrefixProbability, _LXCursorTerminatesWordStem, _LXCursorTerminationProbability, 
+                       _LXCursorUsageCount, _LXCursorUsageCountRecursive, _LXCursorsAreEqual, 
+                       _LXEntryCopyStoredString, _LXEntryCopyString, _LXEntryCreateMutable, 
+                       _LXEntryCreateMutableCopy, _LXEntryGetAffixData, _LXEntryGetMetaFlags, 
+                       _LXEntryGetPartialProbability, _LXEntryGetPenaltyCount, _LXEntryGetProbability, 
+                       _LXEntryGetTimestamp, _LXEntryGetTokenID, _LXEntryGetUsageCount, 
+                       _LXEntryGetUserBitfield, _LXLexiconAdd, _LXLexiconAddEntryWithTokenID, 
+                       _LXLexiconClear, _LXLexiconCompareStrings, _LXLexiconCopyEntryForTokenID, 
+                       _LXLexiconCopyName, _LXLexiconCreate, _LXLexiconCreateMutable, 
+                       _LXLexiconCreateRootCursor, _LXLexiconCreateTransient, _LXLexiconEnumerateEntriesForString, 
+                       _LXLexiconGetFirstTokenIDForString, _LXLexiconGetSortkeyBytes, 
+                       _LXLexiconIncrementPenaltyCount, _LXLexiconIncrementUsageCount, 
+                       _LXLexiconLockMemory, _LXLexiconRemoveEntry, _LXLexiconRepositoryAddOrUpdate, 
+                       _LXLexiconRepositoryCreateView, _LXLexiconSerializedSize, 
+                       _LXLexiconSetUserBitfield, _LXLexiconUnlockMemory, _LXLexiconUpdateMetaFlags, 
+                       _LXLexiconWrite, _LXLexiconWriteDebugDump, _LXMutableEntryGetUserBitfield, 
+                       _LXMutableEntrySetMetaFlags, _LXMutableEntryUpdateUsageCount, 
+                       _LXUnigramsCompilerCopyVersion, _kLXLexiconDataFileKey, _kLXLexiconDeltaFilesKey, 
+                       _kLXLexiconEnableInternalStemSuffixKey, _kLXLexiconLocaleKey, 
+                       _kLXLexiconNameDurableNamedEntity, _kLXLexiconNameKey, _kLXLexiconNameRecentNamedEntity, 
+                       _kLXLexiconNameUserContacts, _kLXLexiconResourceDirectoryKey, 
+                       _kLXMaximumStringLength, _kLXMinimumLogProbability, _kLXMinimumStringLength ]
+...

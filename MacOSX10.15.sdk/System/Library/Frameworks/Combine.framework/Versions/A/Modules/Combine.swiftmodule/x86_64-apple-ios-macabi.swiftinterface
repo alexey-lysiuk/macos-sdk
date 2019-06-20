@@ -1,0 +1,1771 @@
+// swift-interface-format-version: 1.0
+// swift-tools-version: Apple Swift version 5.1 (swiftlang-1100.8.32.26 clang-1100.0.18.2)
+// swift-module-flags: -target x86_64-apple-ios13.0-macabi -enable-objc-interop -swift-version 5 -enforce-exclusivity=checked -O -enable-resilience -module-name Combine
+import Darwin
+import Swift
+extension Publisher {
+  public func multicast<S>(_ createSubject: @escaping () -> S) -> Publishers.Multicast<Self, S> where S : Combine.Subject, Self.Failure == S.Failure, Self.Output == S.Output
+  public func multicast<S>(subject: S) -> Publishers.Multicast<Self, S> where S : Combine.Subject, Self.Failure == S.Failure, Self.Output == S.Output
+}
+extension Publishers {
+  final public class Multicast<Upstream, SubjectType> : ConnectablePublisher where Upstream : Combine.Publisher, SubjectType : Combine.Subject, Upstream.Failure == SubjectType.Failure, Upstream.Output == SubjectType.Output {
+    public typealias Output = Upstream.Output
+    public typealias Failure = Upstream.Failure
+    final public func receive<S>(subscriber: S) where S : Combine.Subscriber, SubjectType.Failure == S.Failure, SubjectType.Output == S.Input
+    final public func connect() -> Cancellable
+    @objc deinit
+  }
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public protocol Cancellable {
+  func cancel()
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public protocol Subscription : Combine.Cancellable, Combine.CustomCombineIdentifierConvertible {
+  func request(_ demand: Subscribers.Demand)
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public enum Subscriptions {
+}
+extension Subscriptions {
+  public static var empty: Subscription {
+    get
+  }
+}
+final public class AnyCancellable : Cancellable {
+  public init(_ cancel: @escaping () -> Void)
+  public init<C>(_ canceller: C) where C : Combine.Cancellable
+  @objc deinit
+  final public func cancel()
+}
+extension Publisher {
+  public func subscribe<S>(on scheduler: S, options: S.SchedulerOptions? = nil) -> Publishers.SubscribeOn<Self, S> where S : Combine.Scheduler
+}
+extension Publishers {
+  public struct SubscribeOn<Upstream, Context> : Publisher where Upstream : Combine.Publisher, Context : Combine.Scheduler {
+    public typealias Output = Upstream.Output
+    public typealias Failure = Upstream.Failure
+    public let upstream: Upstream
+    public let scheduler: Context
+    public let options: Context.SchedulerOptions?
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Failure == S.Failure, Upstream.Output == S.Input
+  }
+}
+extension Publisher {
+  public func measureInterval<S>(using scheduler: S, options: S.SchedulerOptions? = nil) -> Publishers.MeasureInterval<Self, S> where S : Combine.Scheduler
+}
+extension Publishers {
+  public struct MeasureInterval<Upstream, Context> : Publisher where Upstream : Combine.Publisher, Context : Combine.Scheduler {
+    public typealias Output = Context.SchedulerTimeType.Stride
+    public typealias Failure = Upstream.Failure
+    public let upstream: Upstream
+    public let scheduler: Context
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Failure == S.Failure, S.Input == Context.SchedulerTimeType.Stride
+  }
+}
+extension Publisher {
+  public func drop(while predicate: @escaping (Output) -> Bool) -> Publishers.DropWhile<Self>
+  public func tryDrop(while predicate: @escaping (Output) throws -> Bool) -> Publishers.TryDropWhile<Self>
+}
+extension Publishers {
+  public struct DropWhile<Upstream> : Publisher where Upstream : Combine.Publisher {
+    public typealias Output = Upstream.Output
+    public typealias Failure = Upstream.Failure
+    public let upstream: Upstream
+    public let predicate: (Output) -> Bool
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Failure == S.Failure, Upstream.Output == S.Input
+  }
+  public struct TryDropWhile<Upstream> : Publisher where Upstream : Combine.Publisher {
+    public typealias Output = Upstream.Output
+    public typealias Failure = Swift.Error
+    public let upstream: Upstream
+    public let predicate: (Output) throws -> Bool
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Output == S.Input, S.Failure == Combine.Publishers.TryDropWhile<Upstream>.Failure
+  }
+}
+extension Publisher {
+  public func filter(_ isIncluded: @escaping (Output) -> Bool) -> Publishers.Filter<Self>
+  public func tryFilter(_ isIncluded: @escaping (Output) throws -> Bool) -> Publishers.TryFilter<Self>
+}
+extension Publishers {
+  public struct Filter<Upstream> : Publisher where Upstream : Combine.Publisher {
+    public typealias Output = Upstream.Output
+    public typealias Failure = Upstream.Failure
+    public let upstream: Upstream
+    public let isIncluded: (Upstream.Output) -> Bool
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Failure == S.Failure, Upstream.Output == S.Input
+  }
+  public struct TryFilter<Upstream> : Publisher where Upstream : Combine.Publisher {
+    public typealias Output = Upstream.Output
+    public typealias Failure = Swift.Error
+    public let upstream: Upstream
+    public let isIncluded: (Upstream.Output) throws -> Bool
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Output == S.Input, S.Failure == Combine.Publishers.TryFilter<Upstream>.Failure
+  }
+}
+extension Publishers.Filter {
+  public func filter(_ isIncluded: @escaping (Output) -> Bool) -> Publishers.Filter<Upstream>
+  public func tryFilter(_ isIncluded: @escaping (Output) throws -> Bool) -> Publishers.TryFilter<Upstream>
+}
+extension Publishers.TryFilter {
+  public func filter(_ isIncluded: @escaping (Output) -> Bool) -> Publishers.TryFilter<Upstream>
+  public func tryFilter(_ isIncluded: @escaping (Output) throws -> Bool) -> Publishers.TryFilter<Upstream>
+}
+extension Publisher {
+  public func breakpoint(receiveSubscription: ((Subscription) -> Bool)? = nil, receiveOutput: ((Output) -> Bool)? = nil, receiveCompletion: ((Subscribers.Completion<Failure>) -> Bool)? = nil) -> Publishers.Breakpoint<Self>
+  public func breakpointOnError() -> Publishers.Breakpoint<Self>
+}
+extension Publishers {
+  public struct Breakpoint<Upstream> : Publisher where Upstream : Combine.Publisher {
+    public typealias Output = Upstream.Output
+    public typealias Failure = Upstream.Failure
+    public let upstream: Upstream
+    public let receiveSubscription: ((Subscription) -> Bool)?
+    public let receiveOutput: ((Upstream.Output) -> Bool)?
+    public let receiveCompletion: ((Subscribers.Completion<Failure>) -> Bool)?
+    public init(upstream: Upstream, receiveSubscription: ((Subscription) -> Bool)? = nil, receiveOutput: ((Upstream.Output) -> Bool)? = nil, receiveCompletion: ((Subscribers.Completion<Failure>) -> Bool)? = nil)
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Failure == S.Failure, Upstream.Output == S.Input
+  }
+}
+extension Publishers {
+  public struct Deferred<DeferredPublisher> : Publisher where DeferredPublisher : Combine.Publisher {
+    public typealias Output = DeferredPublisher.Output
+    public typealias Failure = DeferredPublisher.Failure
+    public let createPublisher: () -> DeferredPublisher
+    public init(createPublisher: @escaping () -> DeferredPublisher)
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, DeferredPublisher.Failure == S.Failure, DeferredPublisher.Output == S.Input
+  }
+}
+extension Publisher {
+  public func allSatisfy(_ predicate: @escaping (Output) -> Bool) -> Publishers.AllSatisfy<Self>
+  public func tryAllSatisfy(_ predicate: @escaping (Output) throws -> Bool) -> Publishers.TryAllSatisfy<Self>
+}
+extension Publishers {
+  public struct AllSatisfy<Upstream> : Publisher where Upstream : Combine.Publisher {
+    public typealias Output = Bool
+    public typealias Failure = Upstream.Failure
+    public let upstream: Upstream
+    public let predicate: (Upstream.Output) -> Bool
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Failure == S.Failure, S.Input == Combine.Publishers.AllSatisfy<Upstream>.Output
+  }
+  public struct TryAllSatisfy<Upstream> : Publisher where Upstream : Combine.Publisher {
+    public typealias Output = Bool
+    public typealias Failure = Swift.Error
+    public let upstream: Upstream
+    public let predicate: (Upstream.Output) throws -> Bool
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, S.Failure == Combine.Publishers.TryAllSatisfy<Upstream>.Failure, S.Input == Combine.Publishers.TryAllSatisfy<Upstream>.Output
+  }
+}
+extension Publisher {
+  public func sink(receiveCompletion: ((Subscribers.Completion<Failure>) -> Void)? = nil, receiveValue: @escaping ((Output) -> Void)) -> Subscribers.Sink<Self>
+}
+extension Subscribers {
+  final public class Sink<Upstream> : Subscriber, Cancellable, CustomStringConvertible, CustomReflectable, CustomPlaygroundDisplayConvertible where Upstream : Combine.Publisher {
+    public typealias Input = Upstream.Output
+    public typealias Failure = Upstream.Failure
+    final public let receiveValue: (Input) -> Void
+    final public let receiveCompletion: (Subscribers.Completion<Failure>) -> Void
+    final public var description: String {
+      get
+    }
+    final public var customMirror: Mirror {
+      get
+    }
+    final public var playgroundDescription: Any {
+      get
+    }
+    public init(receiveCompletion: ((Subscribers.Completion<Failure>) -> Void)? = nil, receiveValue: @escaping ((Input) -> Void))
+    final public func receive(subscription: Subscription)
+    final public func receive(_ value: Input) -> Subscribers.Demand
+    final public func receive(completion: Subscribers.Completion<Failure>)
+    final public func cancel()
+    @objc deinit
+  }
+}
+public struct AnySubscriber<Input, Failure> : Subscriber, CustomStringConvertible, CustomReflectable, CustomPlaygroundDisplayConvertible where Failure : Swift.Error {
+  public let combineIdentifier: CombineIdentifier
+  public var description: String {
+    get
+  }
+  public var customMirror: Mirror {
+    get
+  }
+  public var playgroundDescription: Any {
+    get
+  }
+  public init<S>(_ s: S) where Input == S.Input, Failure == S.Failure, S : Combine.Subscriber
+  public init<S>(_ s: S) where Input == S.Output, Failure == S.Failure, S : Combine.Subject
+  public init(receiveSubscription: ((Subscription) -> Void)? = nil, receiveValue: ((Input) -> Subscribers.Demand)? = nil, receiveCompletion: ((Subscribers.Completion<Failure>) -> Void)? = nil)
+  public func receive(subscription: Subscription)
+  public func receive(_ value: Input) -> Subscribers.Demand
+  public func receive(completion: Subscribers.Completion<Failure>)
+}
+extension Publisher where Self.Output : Swift.Equatable {
+  public func removeDuplicates() -> Publishers.RemoveDuplicates<Self>
+}
+extension Publisher {
+  public func removeDuplicates(by predicate: @escaping (Output, Output) -> Bool) -> Publishers.RemoveDuplicates<Self>
+  public func tryRemoveDuplicates(by predicate: @escaping (Output, Output) throws -> Bool) -> Publishers.TryRemoveDuplicates<Self>
+}
+extension Publishers {
+  public struct RemoveDuplicates<Upstream> : Publisher where Upstream : Combine.Publisher {
+    public typealias Output = Upstream.Output
+    public typealias Failure = Upstream.Failure
+    public let upstream: Upstream
+    public let predicate: (Output, Output) -> Bool
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Failure == S.Failure, Upstream.Output == S.Input
+  }
+  public struct TryRemoveDuplicates<Upstream> : Publisher where Upstream : Combine.Publisher {
+    public typealias Output = Upstream.Output
+    public typealias Failure = Swift.Error
+    public let upstream: Upstream
+    public let predicate: (Output, Output) throws -> Bool
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Output == S.Input, S.Failure == Combine.Publishers.TryRemoveDuplicates<Upstream>.Failure
+  }
+}
+public protocol TopLevelDecoder {
+  associatedtype Input
+  func decode<T>(_ type: T.Type, from: Input) throws -> T where T : Swift.Decodable
+}
+public protocol TopLevelEncoder {
+  associatedtype Output
+  func encode<T>(_ value: T) throws -> Output where T : Swift.Encodable
+}
+extension Publishers {
+  public struct Decode<Upstream, Output, Coder> : Publisher where Upstream : Combine.Publisher, Output : Swift.Decodable, Coder : Combine.TopLevelDecoder, Upstream.Output == Coder.Input {
+    public typealias Failure = Swift.Error
+    public let upstream: Upstream
+    public init(upstream: Upstream, decoder: Coder)
+    public func receive<S>(subscriber: S) where Output == S.Input, S : Combine.Subscriber, S.Failure == Combine.Publishers.Decode<Upstream, Output, Coder>.Failure
+  }
+  public struct Encode<Upstream, Coder> : Publisher where Upstream : Combine.Publisher, Coder : Combine.TopLevelEncoder, Upstream.Output : Swift.Encodable {
+    public typealias Failure = Swift.Error
+    public typealias Output = Coder.Output
+    public let upstream: Upstream
+    public init(upstream: Upstream, encoder: Coder)
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Coder.Output == S.Input, S.Failure == Combine.Publishers.Encode<Upstream, Coder>.Failure
+  }
+}
+extension Publisher {
+  public func decode<Item, Coder>(type: Item.Type, decoder: Coder) -> Publishers.Decode<Self, Item, Coder> where Item : Swift.Decodable, Coder : Combine.TopLevelDecoder, Self.Output == Coder.Input
+}
+extension Publisher where Self.Output : Swift.Encodable {
+  public func encode<Coder>(encoder: Coder) -> Publishers.Encode<Self, Coder> where Coder : Combine.TopLevelEncoder
+}
+extension Publishers {
+  public struct Just<Output> : Publisher {
+    public typealias Failure = Never
+    public let output: Output
+    public init(_ output: Output)
+    public func receive<S>(subscriber: S) where Output == S.Input, S : Combine.Subscriber, S.Failure == Combine.Publishers.Just<Output>.Failure
+  }
+}
+extension Publishers.Just : Equatable where Output : Swift.Equatable {
+  public static func == (lhs: Publishers.Just<Output>, rhs: Publishers.Just<Output>) -> Bool
+}
+extension Publishers.Just where Output : Swift.Comparable {
+  public func min() -> Publishers.Just<Output>
+  public func max() -> Publishers.Just<Output>
+}
+extension Publishers.Just where Output : Swift.Equatable {
+  public func contains(_ output: Output) -> Publishers.Just<Bool>
+  public func removeDuplicates() -> Publishers.Just<Output>
+}
+extension Publishers.Just {
+  public func allSatisfy(_ predicate: (Output) -> Bool) -> Publishers.Just<Bool>
+  public func tryAllSatisfy(_ predicate: (Output) throws -> Bool) -> Publishers.Once<Bool, Swift.Error>
+  public func collect() -> Publishers.Just<[Output]>
+  public func compactMap<T>(_ transform: (Output) -> T?) -> Publishers.Optional<T, Failure>
+  public func tryCompactMap<T>(_ transform: (Output) throws -> T?) -> Publishers.Optional<T, Swift.Error>
+  public func min(by areInIncreasingOrder: (Output, Output) -> Bool) -> Publishers.Just<Output>
+  public func tryMin(by areInIncreasingOrder: (Output, Output) throws -> Bool) -> Publishers.Just<Output>
+  public func max(by areInIncreasingOrder: (Output, Output) -> Bool) -> Publishers.Just<Output>
+  public func tryMax(by areInIncreasingOrder: (Output, Output) throws -> Bool) -> Publishers.Just<Output>
+  public func prepend(_ elements: Output...) -> Publishers.Sequence<[Output], Failure>
+  public func prepend<S>(_ elements: S) -> Publishers.Sequence<[Output], Failure> where Output == S.Element, S : Swift.Sequence
+  public func append(_ elements: Output...) -> Publishers.Sequence<[Output], Failure>
+  public func append<S>(_ elements: S) -> Publishers.Sequence<[Output], Failure> where Output == S.Element, S : Swift.Sequence
+  public func contains(where predicate: (Output) -> Bool) -> Publishers.Just<Bool>
+  public func tryContains(where predicate: (Output) throws -> Bool) -> Publishers.Once<Bool, Swift.Error>
+  public func count() -> Publishers.Just<Int>
+  public func dropFirst(_ count: Int = 1) -> Publishers.Optional<Output, Failure>
+  public func drop(while predicate: (Output) -> Bool) -> Publishers.Optional<Output, Failure>
+  public func tryDrop(while predicate: (Output) throws -> Bool) -> Publishers.Optional<Output, Swift.Error>
+  public func first() -> Publishers.Just<Output>
+  public func first(where predicate: (Output) -> Bool) -> Publishers.Optional<Output, Failure>
+  public func tryFirst(where predicate: (Output) throws -> Bool) -> Publishers.Optional<Output, Swift.Error>
+  public func last() -> Publishers.Just<Output>
+  public func last(where predicate: (Output) -> Bool) -> Publishers.Optional<Output, Failure>
+  public func tryLast(where predicate: (Output) throws -> Bool) -> Publishers.Optional<Output, Swift.Error>
+  public func filter(_ isIncluded: (Output) -> Bool) -> Publishers.Optional<Output, Failure>
+  public func tryFilter(_ isIncluded: (Output) throws -> Bool) -> Publishers.Optional<Output, Swift.Error>
+  public func ignoreOutput() -> Publishers.Empty<Output, Failure>
+  public func map<T>(_ transform: (Output) -> T) -> Publishers.Just<T>
+  public func tryMap<T>(_ transform: (Output) throws -> T) -> Publishers.Once<T, Swift.Error>
+  public func mapError<E>(_ transform: (Failure) -> E) -> Publishers.Once<Output, E> where E : Swift.Error
+  public func output(at index: Int) -> Publishers.Optional<Output, Failure>
+  public func output<R>(in range: R) -> Publishers.Optional<Output, Failure> where R : Swift.RangeExpression, R.Bound == Swift.Int
+  public func prefix(_ maxLength: Int) -> Publishers.Optional<Output, Failure>
+  public func prefix(while predicate: (Output) -> Bool) -> Publishers.Optional<Output, Failure>
+  public func tryPrefix(while predicate: (Output) throws -> Bool) -> Publishers.Optional<Output, Swift.Error>
+  public func reduce<T>(_ initialResult: T, _ nextPartialResult: (T, Output) -> T) -> Publishers.Once<T, Failure>
+  public func tryReduce<T>(_ initialResult: T, _ nextPartialResult: (T, Output) throws -> T) -> Publishers.Once<T, Swift.Error>
+  public func removeDuplicates(by predicate: (Output, Output) -> Bool) -> Publishers.Just<Output>
+  public func tryRemoveDuplicates(by predicate: (Output, Output) throws -> Bool) -> Publishers.Once<Output, Swift.Error>
+  public func replaceError(with output: Output) -> Publishers.Just<Output>
+  public func replaceEmpty(with output: Output) -> Publishers.Just<Output>
+  public func retry(_ times: Int) -> Publishers.Just<Output>
+  public func retry() -> Publishers.Just<Output>
+  public func scan<T>(_ initialResult: T, _ nextPartialResult: (T, Output) -> T) -> Publishers.Once<T, Failure>
+  public func tryScan<T>(_ initialResult: T, _ nextPartialResult: (T, Output) throws -> T) -> Publishers.Once<T, Swift.Error>
+  public func setFailureType<E>(to failureType: E.Type) -> Publishers.Once<Output, E> where E : Swift.Error
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+final public class PassthroughSubject<Output, Failure> : Subject where Failure : Swift.Error {
+  public init()
+  @objc deinit
+  final public func receive<S>(subscriber: S) where Output == S.Input, Failure == S.Failure, S : Combine.Subscriber
+  final public func send(_ input: Output)
+  final public func send(completion: Subscribers.Completion<Failure>)
+}
+extension Publisher where Self.Output : Swift.Equatable {
+  public func contains(_ output: Output) -> Publishers.Contains<Self>
+}
+extension Publishers {
+  public struct Contains<Upstream> : Publisher where Upstream : Combine.Publisher, Upstream.Output : Swift.Equatable {
+    public typealias Output = Bool
+    public typealias Failure = Upstream.Failure
+    public let upstream: Upstream
+    public let output: Upstream.Output
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Failure == S.Failure, S.Input == Combine.Publishers.Contains<Upstream>.Output
+  }
+}
+extension Publishers.Contains : Equatable where Upstream : Swift.Equatable {
+  public static func == (lhs: Publishers.Contains<Upstream>, rhs: Publishers.Contains<Upstream>) -> Bool
+}
+extension Publisher {
+  public func combineLatest<P, T>(_ other: P, _ transform: @escaping (Output, P.Output) -> T) -> Publishers.CombineLatest<Self, P, T> where P : Combine.Publisher, Self.Failure == P.Failure
+  public func combineLatest<P, Q, T>(_ publisher1: P, _ publisher2: Q, _ transform: @escaping (Output, P.Output, Q.Output) -> T) -> Publishers.CombineLatest3<Self, P, Q, T> where P : Combine.Publisher, Q : Combine.Publisher, Self.Failure == P.Failure, P.Failure == Q.Failure
+  public func combineLatest<P, Q, R, T>(_ publisher1: P, _ publisher2: Q, _ publisher3: R, _ transform: @escaping (Output, P.Output, Q.Output, R.Output) -> T) -> Publishers.CombineLatest4<Self, P, Q, R, T> where P : Combine.Publisher, Q : Combine.Publisher, R : Combine.Publisher, Self.Failure == P.Failure, P.Failure == Q.Failure, Q.Failure == R.Failure
+  public func tryCombineLatest<P, T>(_ other: P, _ transform: @escaping (Output, P.Output) throws -> T) -> Publishers.TryCombineLatest<Self, P, T> where P : Combine.Publisher, P.Failure == Swift.Error
+  public func tryCombineLatest<P, Q, T>(_ publisher1: P, _ publisher2: Q, _ transform: @escaping (Output, P.Output, Q.Output) throws -> T) -> Publishers.TryCombineLatest3<Self, P, Q, T> where P : Combine.Publisher, Q : Combine.Publisher, P.Failure == Swift.Error, Q.Failure == Swift.Error
+  public func tryCombineLatest<P, Q, R, T>(_ publisher1: P, _ publisher2: Q, _ publisher3: R, _ transform: @escaping (Output, P.Output, Q.Output, R.Output) throws -> T) -> Publishers.TryCombineLatest4<Self, P, Q, R, T> where P : Combine.Publisher, Q : Combine.Publisher, R : Combine.Publisher, P.Failure == Swift.Error, Q.Failure == Swift.Error, R.Failure == Swift.Error
+}
+extension Publishers {
+  public struct CombineLatest<A, B, Output> : Publisher where A : Combine.Publisher, B : Combine.Publisher, A.Failure == B.Failure {
+    public typealias Failure = A.Failure
+    public let a: A
+    public let b: B
+    public let transform: (A.Output, B.Output) -> Output
+    public func receive<S>(subscriber: S) where Output == S.Input, S : Combine.Subscriber, B.Failure == S.Failure
+  }
+  public struct CombineLatest3<A, B, C, Output> : Publisher where A : Combine.Publisher, B : Combine.Publisher, C : Combine.Publisher, A.Failure == B.Failure, B.Failure == C.Failure {
+    public typealias Failure = A.Failure
+    public let a: A
+    public let b: B
+    public let c: C
+    public let transform: (A.Output, B.Output, C.Output) -> Output
+    public func receive<S>(subscriber: S) where Output == S.Input, S : Combine.Subscriber, C.Failure == S.Failure
+  }
+  public struct CombineLatest4<A, B, C, D, Output> : Publisher where A : Combine.Publisher, B : Combine.Publisher, C : Combine.Publisher, D : Combine.Publisher, A.Failure == B.Failure, B.Failure == C.Failure, C.Failure == D.Failure {
+    public typealias Failure = A.Failure
+    public let a: A
+    public let b: B
+    public let c: C
+    public let d: D
+    public let transform: (A.Output, B.Output, C.Output, D.Output) -> Output
+    public func receive<S>(subscriber: S) where Output == S.Input, S : Combine.Subscriber, D.Failure == S.Failure
+  }
+  public struct TryCombineLatest<A, B, Output> : Publisher where A : Combine.Publisher, B : Combine.Publisher, A.Failure == Swift.Error, B.Failure == Swift.Error {
+    public typealias Failure = Swift.Error
+    public let a: A
+    public let b: B
+    public let transform: (A.Output, B.Output) throws -> Output
+    public func receive<S>(subscriber: S) where Output == S.Input, S : Combine.Subscriber, S.Failure == Combine.Publishers.TryCombineLatest<A, B, Output>.Failure
+  }
+  public struct TryCombineLatest3<A, B, C, Output> : Publisher where A : Combine.Publisher, B : Combine.Publisher, C : Combine.Publisher, A.Failure == Swift.Error, B.Failure == Swift.Error, C.Failure == Swift.Error {
+    public typealias Failure = Swift.Error
+    public let a: A
+    public let b: B
+    public let c: C
+    public let transform: (A.Output, B.Output, C.Output) throws -> Output
+    public func receive<S>(subscriber: S) where Output == S.Input, S : Combine.Subscriber, S.Failure == Combine.Publishers.TryCombineLatest3<A, B, C, Output>.Failure
+  }
+  public struct TryCombineLatest4<A, B, C, D, Output> : Publisher where A : Combine.Publisher, B : Combine.Publisher, C : Combine.Publisher, D : Combine.Publisher, A.Failure == Swift.Error, B.Failure == Swift.Error, C.Failure == Swift.Error, D.Failure == Swift.Error {
+    public typealias Failure = Swift.Error
+    public let a: A
+    public let b: B
+    public let c: C
+    public let d: D
+    public let transform: (A.Output, B.Output, C.Output, D.Output) throws -> Output
+    public func receive<S>(subscriber: S) where Output == S.Input, S : Combine.Subscriber, S.Failure == Combine.Publishers.TryCombineLatest4<A, B, C, D, Output>.Failure
+  }
+}
+extension Publisher {
+  public func prefix(_ maxLength: Int) -> Publishers.Output<Self>
+}
+extension ConnectablePublisher {
+  public func autoconnect() -> Publishers.Autoconnect<Self>
+}
+extension Publishers {
+  public class Autoconnect<Upstream> : Publisher where Upstream : Combine.ConnectablePublisher {
+    public typealias Output = Upstream.Output
+    public typealias Failure = Upstream.Failure
+    final public let upstream: Upstream
+    public init(_ upstream: Upstream)
+    @objc deinit
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Failure == S.Failure, Upstream.Output == S.Input
+  }
+}
+extension Publisher {
+  public func print(_ prefix: String = "", to stream: TextOutputStream? = nil) -> Publishers.Print<Self>
+}
+extension Publishers {
+  public struct Print<Upstream> : Publisher where Upstream : Combine.Publisher {
+    public typealias Output = Upstream.Output
+    public typealias Failure = Upstream.Failure
+    public let prefix: String
+    public let upstream: Upstream
+    public let stream: TextOutputStream?
+    public init(upstream: Upstream, prefix: String, to stream: TextOutputStream? = nil)
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Failure == S.Failure, Upstream.Output == S.Input
+  }
+}
+extension Publisher {
+  public func prefix(while predicate: @escaping (Output) -> Bool) -> Publishers.PrefixWhile<Self>
+  public func tryPrefix(while predicate: @escaping (Output) throws -> Bool) -> Publishers.TryPrefixWhile<Self>
+}
+extension Publishers {
+  public struct PrefixWhile<Upstream> : Publisher where Upstream : Combine.Publisher {
+    public typealias Output = Upstream.Output
+    public typealias Failure = Upstream.Failure
+    public let upstream: Upstream
+    public let predicate: (Output) -> Bool
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Failure == S.Failure, Upstream.Output == S.Input
+  }
+  public struct TryPrefixWhile<Upstream> : Publisher where Upstream : Combine.Publisher {
+    public typealias Output = Upstream.Output
+    public typealias Failure = Swift.Error
+    public let upstream: Upstream
+    public let predicate: (Output) throws -> Bool
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Output == S.Input, S.Failure == Combine.Publishers.TryPrefixWhile<Upstream>.Failure
+  }
+}
+extension Publishers {
+  final public class Future<Output, Failure> : Publisher where Failure : Swift.Error {
+    final public func receive<S>(subscriber: S) where Output == S.Input, Failure == S.Failure, S : Combine.Subscriber
+    public init(_ attemptToFulfill: @escaping (@escaping (Result<Output, Failure>) -> Void) -> Void)
+    @objc deinit
+  }
+}
+extension Publishers {
+  public struct Empty<Output, Failure> : Publisher, Equatable where Failure : Swift.Error {
+    public init(completeImmediately: Bool = true)
+    public init(completeImmediately: Bool = true, outputType: Output.Type, failureType: Failure.Type)
+    public let completeImmediately: Bool
+    public func receive<S>(subscriber: S) where Output == S.Input, Failure == S.Failure, S : Combine.Subscriber
+    public static func == (lhs: Empty<Output, Failure>, rhs: Empty<Output, Failure>) -> Bool
+  }
+}
+extension Publisher where Self.Failure == Swift.Never {
+  public func setFailureType<E>(to failureType: E.Type) -> Publishers.SetFailureType<Self, E> where E : Swift.Error
+}
+extension Publishers {
+  public struct SetFailureType<Upstream, Failure> : Publisher where Upstream : Combine.Publisher, Failure : Swift.Error, Upstream.Failure == Swift.Never {
+    public typealias Output = Upstream.Output
+    public let upstream: Upstream
+    public init(upstream: Upstream)
+    public func receive<S>(subscriber: S) where Failure == S.Failure, S : Combine.Subscriber, Upstream.Output == S.Input
+    public func setFailureType<E>(to failure: E.Type) -> Publishers.SetFailureType<Upstream, E> where E : Swift.Error
+  }
+}
+extension Publishers.SetFailureType : Equatable where Upstream : Swift.Equatable {
+  public static func == (lhs: Publishers.SetFailureType<Upstream, Failure>, rhs: Publishers.SetFailureType<Upstream, Failure>) -> Bool
+}
+extension Publisher {
+  public func contains(where predicate: @escaping (Output) -> Bool) -> Publishers.ContainsWhere<Self>
+  public func tryContains(where predicate: @escaping (Output) throws -> Bool) -> Publishers.TryContainsWhere<Self>
+}
+extension Publishers {
+  public struct ContainsWhere<Upstream> : Publisher where Upstream : Combine.Publisher {
+    public typealias Output = Bool
+    public typealias Failure = Upstream.Failure
+    public let upstream: Upstream
+    public let predicate: (Upstream.Output) -> Bool
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Failure == S.Failure, S.Input == Combine.Publishers.ContainsWhere<Upstream>.Output
+  }
+  public struct TryContainsWhere<Upstream> : Publisher where Upstream : Combine.Publisher {
+    public typealias Output = Bool
+    public typealias Failure = Swift.Error
+    public let upstream: Upstream
+    public let predicate: (Upstream.Output) throws -> Bool
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, S.Failure == Combine.Publishers.TryContainsWhere<Upstream>.Failure, S.Input == Combine.Publishers.TryContainsWhere<Upstream>.Output
+  }
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public enum Publishers {
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public protocol Publisher {
+  associatedtype Output
+  associatedtype Failure : Swift.Error
+  func receive<S>(subscriber: S) where S : Combine.Subscriber, Self.Failure == S.Failure, Self.Output == S.Input
+}
+extension Publisher {
+  @inline(never) public func subscribe<S>(_ subscriber: S) where S : Combine.Subscriber, Self.Failure == S.Failure, Self.Output == S.Input
+}
+public protocol ConnectablePublisher : Combine.Publisher {
+  func connect() -> Cancellable
+}
+extension Publisher where Self.Failure == Swift.Never {
+  public func makeConnectable() -> Publishers.MakeConnectable<Self>
+}
+extension Publishers {
+  public struct MakeConnectable<Upstream> : ConnectablePublisher where Upstream : Combine.Publisher {
+    public typealias Output = Upstream.Output
+    public typealias Failure = Upstream.Failure
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Failure == S.Failure, Upstream.Output == S.Input
+    public func connect() -> Cancellable
+  }
+}
+extension Publisher {
+  public func collect() -> Publishers.Collect<Self>
+  public func collect(_ count: Int) -> Publishers.CollectByCount<Self>
+  public func collect<S>(_ strategy: Publishers.TimeGroupingStrategy<S>, options: S.SchedulerOptions? = nil) -> Publishers.CollectByTime<Self, S> where S : Combine.Scheduler
+}
+extension Publishers {
+  public enum TimeGroupingStrategy<Context> where Context : Combine.Scheduler {
+    case byTime(Context, Context.SchedulerTimeType.Stride)
+    case byTimeOrCount(Context, Context.SchedulerTimeType.Stride, Int)
+  }
+  public struct CollectByTime<Upstream, Context> : Publisher where Upstream : Combine.Publisher, Context : Combine.Scheduler {
+    public typealias Output = [Upstream.Output]
+    public typealias Failure = Upstream.Failure
+    public let upstream: Upstream
+    public let strategy: TimeGroupingStrategy<Context>
+    public let options: Context.SchedulerOptions?
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Failure == S.Failure, S.Input == [Upstream.Output]
+  }
+  public struct Collect<Upstream> : Publisher where Upstream : Combine.Publisher {
+    public typealias Output = [Upstream.Output]
+    public typealias Failure = Upstream.Failure
+    public let upstream: Upstream
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Failure == S.Failure, S.Input == [Upstream.Output]
+  }
+  public struct CollectByCount<Upstream> : Publisher where Upstream : Combine.Publisher {
+    public typealias Output = [Upstream.Output]
+    public typealias Failure = Upstream.Failure
+    public let upstream: Upstream
+    public let count: Int
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Failure == S.Failure, S.Input == [Upstream.Output]
+  }
+}
+extension Publishers.Collect : Equatable where Upstream : Swift.Equatable {
+  public static func == (lhs: Publishers.Collect<Upstream>, rhs: Publishers.Collect<Upstream>) -> Bool
+}
+extension Publishers.CollectByCount : Equatable where Upstream : Swift.Equatable {
+  public static func == (lhs: Publishers.CollectByCount<Upstream>, rhs: Publishers.CollectByCount<Upstream>) -> Bool
+}
+extension Publishers {
+  public struct Optional<Output, Failure> : Publisher where Failure : Swift.Error {
+    public let result: Result<Output?, Failure>
+    public init(_ result: Result<Output?, Failure>)
+    public init(_ output: Output?)
+    public init(_ failure: Failure)
+    public func receive<S>(subscriber: S) where Output == S.Input, Failure == S.Failure, S : Combine.Subscriber
+  }
+}
+extension Publishers.Optional : Equatable where Output : Swift.Equatable, Failure : Swift.Equatable {
+  public static func == (lhs: Publishers.Optional<Output, Failure>, rhs: Publishers.Optional<Output, Failure>) -> Bool
+}
+extension Publishers.Optional where Output : Swift.Equatable {
+  public func contains(_ output: Output) -> Publishers.Optional<Bool, Failure>
+  public func removeDuplicates() -> Publishers.Optional<Output, Failure>
+}
+extension Publishers.Optional where Output : Swift.Comparable {
+  public func min() -> Publishers.Optional<Output, Failure>
+  public func max() -> Publishers.Optional<Output, Failure>
+}
+extension Publishers.Optional {
+  public func allSatisfy(_ predicate: (Output) -> Bool) -> Publishers.Optional<Bool, Failure>
+  public func tryAllSatisfy(_ predicate: (Output) throws -> Bool) -> Publishers.Optional<Bool, Swift.Error>
+  public func collect() -> Publishers.Optional<[Output], Failure>
+  public func compactMap<T>(_ transform: (Output) -> T?) -> Publishers.Optional<T, Failure>
+  public func tryCompactMap<T>(_ transform: (Output) throws -> T?) -> Publishers.Optional<T, Swift.Error>
+  public func min(by areInIncreasingOrder: (Output, Output) -> Bool) -> Publishers.Optional<Output, Failure>
+  public func tryMin(by areInIncreasingOrder: (Output, Output) throws -> Bool) -> Publishers.Optional<Output, Failure>
+  public func max(by areInIncreasingOrder: (Output, Output) -> Bool) -> Publishers.Optional<Output, Failure>
+  public func tryMax(by areInIncreasingOrder: (Output, Output) throws -> Bool) -> Publishers.Optional<Output, Failure>
+  public func contains(where predicate: (Output) -> Bool) -> Publishers.Optional<Bool, Failure>
+  public func tryContains(where predicate: (Output) throws -> Bool) -> Publishers.Optional<Bool, Swift.Error>
+  public func count() -> Publishers.Optional<Int, Failure>
+  public func dropFirst(_ count: Int = 1) -> Publishers.Optional<Output, Failure>
+  public func drop(while predicate: (Output) -> Bool) -> Publishers.Optional<Output, Failure>
+  public func tryDrop(while predicate: (Output) throws -> Bool) -> Publishers.Optional<Output, Swift.Error>
+  public func first() -> Publishers.Optional<Output, Failure>
+  public func first(where predicate: (Output) -> Bool) -> Publishers.Optional<Output, Failure>
+  public func tryFirst(where predicate: (Output) throws -> Bool) -> Publishers.Optional<Output, Swift.Error>
+  public func last() -> Publishers.Optional<Output, Failure>
+  public func last(where predicate: (Output) -> Bool) -> Publishers.Optional<Output, Failure>
+  public func tryLast(where predicate: (Output) throws -> Bool) -> Publishers.Optional<Output, Swift.Error>
+  public func filter(_ isIncluded: (Output) -> Bool) -> Publishers.Optional<Output, Failure>
+  public func tryFilter(_ isIncluded: (Output) throws -> Bool) -> Publishers.Optional<Output, Swift.Error>
+  public func ignoreOutput() -> Publishers.Empty<Output, Failure>
+  public func map<T>(_ transform: (Output) -> T) -> Publishers.Optional<T, Failure>
+  public func tryMap<T>(_ transform: (Output) throws -> T) -> Publishers.Optional<T, Swift.Error>
+  public func mapError<E>(_ transform: (Failure) -> E) -> Publishers.Optional<Output, E> where E : Swift.Error
+  public func output(at index: Int) -> Publishers.Optional<Output, Failure>
+  public func output<R>(in range: R) -> Publishers.Optional<Output, Failure> where R : Swift.RangeExpression, R.Bound == Swift.Int
+  public func prefix(_ maxLength: Int) -> Publishers.Optional<Output, Failure>
+  public func prefix(while predicate: (Output) -> Bool) -> Publishers.Optional<Output, Failure>
+  public func tryPrefix(while predicate: (Output) throws -> Bool) -> Publishers.Optional<Output, Swift.Error>
+  public func reduce<T>(_ initialResult: T, _ nextPartialResult: (T, Output) -> T) -> Publishers.Optional<T, Failure>
+  public func tryReduce<T>(_ initialResult: T, _ nextPartialResult: (T, Output) throws -> T) -> Publishers.Optional<T, Swift.Error>
+  public func removeDuplicates(by predicate: (Output, Output) -> Bool) -> Publishers.Optional<Output, Failure>
+  public func tryRemoveDuplicates(by predicate: (Output, Output) throws -> Bool) -> Publishers.Optional<Output, Swift.Error>
+  public func replaceError(with output: Output) -> Publishers.Optional<Output, Never>
+  public func replaceEmpty(with output: Output) -> Publishers.Optional<Output, Failure>
+  public func retry(_ times: Int) -> Publishers.Optional<Output, Failure>
+  public func retry() -> Publishers.Optional<Output, Failure>
+  public func scan<T>(_ initialResult: T, _ nextPartialResult: (T, Output) -> T) -> Publishers.Optional<T, Failure>
+  public func tryScan<T>(_ initialResult: T, _ nextPartialResult: (T, Output) throws -> T) -> Publishers.Optional<T, Swift.Error>
+}
+extension Publishers.Optional where Failure == Swift.Never {
+  public func setFailureType<E>(to failureType: E.Type) -> Publishers.Optional<Output, E> where E : Swift.Error
+}
+extension Publisher {
+  public func receive<S>(on scheduler: S, options: S.SchedulerOptions? = nil) -> Publishers.ReceiveOn<Self, S> where S : Combine.Scheduler
+}
+extension Publishers {
+  public struct ReceiveOn<Upstream, Context> : Publisher where Upstream : Combine.Publisher, Context : Combine.Scheduler {
+    public typealias Output = Upstream.Output
+    public typealias Failure = Upstream.Failure
+    public let upstream: Upstream
+    public let scheduler: Context
+    public let options: Context.SchedulerOptions?
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Failure == S.Failure, Upstream.Output == S.Input
+  }
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public enum Subscribers {
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public protocol Subscriber : Combine.CustomCombineIdentifierConvertible {
+  associatedtype Input
+  associatedtype Failure : Swift.Error
+  func receive(subscription: Subscription)
+  func receive(_ input: Input) -> Subscribers.Demand
+  func receive(completion: Subscribers.Completion<Failure>)
+}
+extension Subscribers {
+  @_frozen public enum Completion<Failure> where Failure : Swift.Error {
+    case finished
+    case failure(Failure)
+  }
+}
+extension Subscribers {
+  @_frozen public enum Demand : Equatable, Comparable {
+    case unlimited
+    case max(Int)
+    public static func + (lhs: Subscribers.Demand, rhs: Subscribers.Demand) -> Subscribers.Demand
+    public static var none: Demand {
+      get
+    }
+    public static func += (lhs: inout Subscribers.Demand, rhs: Subscribers.Demand)
+    public static func + (lhs: Subscribers.Demand, rhs: Int) -> Subscribers.Demand
+    public static func += (lhs: inout Subscribers.Demand, rhs: Int)
+    public static func * (lhs: Subscribers.Demand, rhs: Int) -> Subscribers.Demand
+    public static func *= (lhs: inout Subscribers.Demand, rhs: Int)
+    public static func - (lhs: Subscribers.Demand, rhs: Subscribers.Demand) -> Subscribers.Demand
+    public static func -= (lhs: inout Subscribers.Demand, rhs: Subscribers.Demand)
+    public static func - (lhs: Subscribers.Demand, rhs: Int) -> Subscribers.Demand
+    public static func -= (lhs: inout Subscribers.Demand, rhs: Int)
+    public static func > (lhs: Subscribers.Demand, rhs: Int) -> Bool
+    public static func >= (lhs: Subscribers.Demand, rhs: Int) -> Bool
+    public static func > (lhs: Int, rhs: Subscribers.Demand) -> Bool
+    public static func >= (lhs: Int, rhs: Subscribers.Demand) -> Bool
+    public static func < (lhs: Subscribers.Demand, rhs: Int) -> Bool
+    public static func < (lhs: Int, rhs: Subscribers.Demand) -> Bool
+    public static func <= (lhs: Subscribers.Demand, rhs: Int) -> Bool
+    public static func <= (lhs: Int, rhs: Subscribers.Demand) -> Bool
+    public static func == (lhs: Subscribers.Demand, rhs: Subscribers.Demand) -> Bool
+    public static func < (lhs: Subscribers.Demand, rhs: Subscribers.Demand) -> Bool
+    public static func <= (lhs: Subscribers.Demand, rhs: Subscribers.Demand) -> Bool
+    public static func >= (lhs: Subscribers.Demand, rhs: Subscribers.Demand) -> Bool
+    public static func > (lhs: Subscribers.Demand, rhs: Subscribers.Demand) -> Bool
+    public static func == (lhs: Subscribers.Demand, rhs: Int) -> Bool
+    public static func != (lhs: Subscribers.Demand, rhs: Int) -> Bool
+    public static func == (lhs: Int, rhs: Subscribers.Demand) -> Bool
+    public static func != (lhs: Int, rhs: Subscribers.Demand) -> Bool
+    public var max: Int? {
+      get
+    }
+  }
+}
+extension Publisher {
+  public func prefix<P>(untilOutputFrom publisher: P) -> Publishers.PrefixUntilOutput<Self, P> where P : Combine.Publisher
+}
+extension Publishers {
+  public struct PrefixUntilOutput<Upstream, Other> : Publisher where Upstream : Combine.Publisher, Other : Combine.Publisher {
+    public typealias Output = Upstream.Output
+    public typealias Failure = Upstream.Failure
+    public let upstream: Upstream
+    public let other: Other
+    public init(upstream: Upstream, other: Other)
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Failure == S.Failure, Upstream.Output == S.Input
+  }
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public protocol Subject : AnyObject, Combine.Publisher {
+  func send(_ value: Output)
+  func send(completion: Subscribers.Completion<Failure>)
+}
+extension Publisher {
+  public func subscribe<S>(_ subject: S) -> AnyCancellable where S : Combine.Subject, Self.Failure == S.Failure, Self.Output == S.Output
+}
+final public class AnySubject<Output, Failure> : Subject where Failure : Swift.Error {
+  public init<S>(_ subject: S) where Output == S.Output, Failure == S.Failure, S : Combine.Subject
+  public init(_ subscribe: @escaping (AnySubscriber<Output, Failure>) -> Void, _ receive: @escaping (Output) -> Void, _ receiveCompletion: @escaping (Subscribers.Completion<Failure>) -> Void)
+  final public func receive<S>(subscriber: S) where Output == S.Input, Failure == S.Failure, S : Combine.Subscriber
+  final public func send(_ value: Output)
+  final public func send(completion: Subscribers.Completion<Failure>)
+  @objc deinit
+}
+extension Publisher {
+  public func reduce<T>(_ initialResult: T, _ nextPartialResult: @escaping (T, Output) -> T) -> Publishers.Reduce<Self, T>
+  public func tryReduce<T>(_ initialResult: T, _ nextPartialResult: @escaping (T, Output) throws -> T) -> Publishers.TryReduce<Self, T>
+}
+extension Publishers {
+  public struct Reduce<Upstream, Output> : Publisher where Upstream : Combine.Publisher {
+    public typealias Failure = Upstream.Failure
+    public let upstream: Upstream
+    public let initial: Output
+    public let nextPartialResult: (Output, Upstream.Output) -> Output
+    public func receive<S>(subscriber: S) where Output == S.Input, S : Combine.Subscriber, Upstream.Failure == S.Failure
+  }
+  public struct TryReduce<Upstream, Output> : Publisher where Upstream : Combine.Publisher {
+    public typealias Failure = Swift.Error
+    public let upstream: Upstream
+    public let initial: Output
+    public let nextPartialResult: (Output, Upstream.Output) throws -> Output
+    public func receive<S>(subscriber: S) where Output == S.Input, S : Combine.Subscriber, S.Failure == Combine.Publishers.TryReduce<Upstream, Output>.Failure
+  }
+}
+extension Publisher {
+  public func compactMap<T>(_ transform: @escaping (Output) -> T?) -> Publishers.CompactMap<Self, T>
+  public func tryCompactMap<T>(_ transform: @escaping (Output) throws -> T?) -> Publishers.TryCompactMap<Self, T>
+}
+extension Publishers {
+  public struct CompactMap<Upstream, Output> : Publisher where Upstream : Combine.Publisher {
+    public typealias Failure = Upstream.Failure
+    public let upstream: Upstream
+    public let transform: (Upstream.Output) -> Output?
+    public func receive<S>(subscriber: S) where Output == S.Input, S : Combine.Subscriber, Upstream.Failure == S.Failure
+  }
+  public struct TryCompactMap<Upstream, Output> : Publisher where Upstream : Combine.Publisher {
+    public typealias Failure = Swift.Error
+    public let upstream: Upstream
+    public let transform: (Upstream.Output) throws -> Output?
+    public func receive<S>(subscriber: S) where Output == S.Input, S : Combine.Subscriber, S.Failure == Combine.Publishers.TryCompactMap<Upstream, Output>.Failure
+  }
+}
+extension Publishers.CompactMap {
+  public func compactMap<T>(_ transform: @escaping (Output) -> T?) -> Publishers.CompactMap<Upstream, T>
+  public func map<T>(_ transform: @escaping (Output) -> T) -> Publishers.CompactMap<Upstream, T>
+}
+extension Publishers.TryCompactMap {
+  public func compactMap<T>(_ transform: @escaping (Output) throws -> T?) -> Publishers.TryCompactMap<Upstream, T>
+}
+extension Publisher {
+  public func merge<P>(with other: P) -> Publishers.Merge<Self, P> where P : Combine.Publisher, Self.Failure == P.Failure, Self.Output == P.Output
+  public func merge<B, C>(with b: B, _ c: C) -> Publishers.Merge3<Self, B, C> where B : Combine.Publisher, C : Combine.Publisher, Self.Failure == B.Failure, Self.Output == B.Output, B.Failure == C.Failure, B.Output == C.Output
+  public func merge<B, C, D>(with b: B, _ c: C, _ d: D) -> Publishers.Merge4<Self, B, C, D> where B : Combine.Publisher, C : Combine.Publisher, D : Combine.Publisher, Self.Failure == B.Failure, Self.Output == B.Output, B.Failure == C.Failure, B.Output == C.Output, C.Failure == D.Failure, C.Output == D.Output
+  public func merge<B, C, D, E>(with b: B, _ c: C, _ d: D, _ e: E) -> Publishers.Merge5<Self, B, C, D, E> where B : Combine.Publisher, C : Combine.Publisher, D : Combine.Publisher, E : Combine.Publisher, Self.Failure == B.Failure, Self.Output == B.Output, B.Failure == C.Failure, B.Output == C.Output, C.Failure == D.Failure, C.Output == D.Output, D.Failure == E.Failure, D.Output == E.Output
+  public func merge<B, C, D, E, F>(with b: B, _ c: C, _ d: D, _ e: E, _ f: F) -> Publishers.Merge6<Self, B, C, D, E, F> where B : Combine.Publisher, C : Combine.Publisher, D : Combine.Publisher, E : Combine.Publisher, F : Combine.Publisher, Self.Failure == B.Failure, Self.Output == B.Output, B.Failure == C.Failure, B.Output == C.Output, C.Failure == D.Failure, C.Output == D.Output, D.Failure == E.Failure, D.Output == E.Output, E.Failure == F.Failure, E.Output == F.Output
+  public func merge<B, C, D, E, F, G>(with b: B, _ c: C, _ d: D, _ e: E, _ f: F, _ g: G) -> Publishers.Merge7<Self, B, C, D, E, F, G> where B : Combine.Publisher, C : Combine.Publisher, D : Combine.Publisher, E : Combine.Publisher, F : Combine.Publisher, G : Combine.Publisher, Self.Failure == B.Failure, Self.Output == B.Output, B.Failure == C.Failure, B.Output == C.Output, C.Failure == D.Failure, C.Output == D.Output, D.Failure == E.Failure, D.Output == E.Output, E.Failure == F.Failure, E.Output == F.Output, F.Failure == G.Failure, F.Output == G.Output
+  public func merge<B, C, D, E, F, G, H>(with b: B, _ c: C, _ d: D, _ e: E, _ f: F, _ g: G, _ h: H) -> Publishers.Merge8<Self, B, C, D, E, F, G, H> where B : Combine.Publisher, C : Combine.Publisher, D : Combine.Publisher, E : Combine.Publisher, F : Combine.Publisher, G : Combine.Publisher, H : Combine.Publisher, Self.Failure == B.Failure, Self.Output == B.Output, B.Failure == C.Failure, B.Output == C.Output, C.Failure == D.Failure, C.Output == D.Output, D.Failure == E.Failure, D.Output == E.Output, E.Failure == F.Failure, E.Output == F.Output, F.Failure == G.Failure, F.Output == G.Output, G.Failure == H.Failure, G.Output == H.Output
+  public func merge(with other: Self) -> Publishers.MergeMany<Self>
+}
+extension Publishers {
+  public struct Merge<A, B> : Publisher where A : Combine.Publisher, B : Combine.Publisher, A.Failure == B.Failure, A.Output == B.Output {
+    public typealias Output = A.Output
+    public typealias Failure = A.Failure
+    public let a: A
+    public let b: B
+    public init(_ a: A, _ b: B)
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, B.Failure == S.Failure, B.Output == S.Input
+    public func merge<P>(with other: P) -> Publishers.Merge3<A, B, P> where P : Combine.Publisher, B.Failure == P.Failure, B.Output == P.Output
+    public func merge<Z, Y>(with z: Z, _ y: Y) -> Publishers.Merge4<A, B, Z, Y> where Z : Combine.Publisher, Y : Combine.Publisher, B.Failure == Z.Failure, B.Output == Z.Output, Z.Failure == Y.Failure, Z.Output == Y.Output
+    public func merge<Z, Y, X>(with z: Z, _ y: Y, _ x: X) -> Publishers.Merge5<A, B, Z, Y, X> where Z : Combine.Publisher, Y : Combine.Publisher, X : Combine.Publisher, B.Failure == Z.Failure, B.Output == Z.Output, Z.Failure == Y.Failure, Z.Output == Y.Output, Y.Failure == X.Failure, Y.Output == X.Output
+    public func merge<Z, Y, X, W>(with z: Z, _ y: Y, _ x: X, _ w: W) -> Publishers.Merge6<A, B, Z, Y, X, W> where Z : Combine.Publisher, Y : Combine.Publisher, X : Combine.Publisher, W : Combine.Publisher, B.Failure == Z.Failure, B.Output == Z.Output, Z.Failure == Y.Failure, Z.Output == Y.Output, Y.Failure == X.Failure, Y.Output == X.Output, X.Failure == W.Failure, X.Output == W.Output
+    public func merge<Z, Y, X, W, V>(with z: Z, _ y: Y, _ x: X, _ w: W, _ v: V) -> Publishers.Merge7<A, B, Z, Y, X, W, V> where Z : Combine.Publisher, Y : Combine.Publisher, X : Combine.Publisher, W : Combine.Publisher, V : Combine.Publisher, B.Failure == Z.Failure, B.Output == Z.Output, Z.Failure == Y.Failure, Z.Output == Y.Output, Y.Failure == X.Failure, Y.Output == X.Output, X.Failure == W.Failure, X.Output == W.Output, W.Failure == V.Failure, W.Output == V.Output
+    public func merge<Z, Y, X, W, V, U>(with z: Z, _ y: Y, _ x: X, _ w: W, _ v: V, _ u: U) -> Publishers.Merge8<A, B, Z, Y, X, W, V, U> where Z : Combine.Publisher, Y : Combine.Publisher, X : Combine.Publisher, W : Combine.Publisher, V : Combine.Publisher, U : Combine.Publisher, B.Failure == Z.Failure, B.Output == Z.Output, Z.Failure == Y.Failure, Z.Output == Y.Output, Y.Failure == X.Failure, Y.Output == X.Output, X.Failure == W.Failure, X.Output == W.Output, W.Failure == V.Failure, W.Output == V.Output, V.Failure == U.Failure, V.Output == U.Output
+  }
+  public struct Merge3<A, B, C> : Publisher where A : Combine.Publisher, B : Combine.Publisher, C : Combine.Publisher, A.Failure == B.Failure, A.Output == B.Output, B.Failure == C.Failure, B.Output == C.Output {
+    public typealias Output = A.Output
+    public typealias Failure = A.Failure
+    public let a: A
+    public let b: B
+    public let c: C
+    public init(_ a: A, _ b: B, _ c: C)
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, C.Failure == S.Failure, C.Output == S.Input
+    public func merge<P>(with other: P) -> Publishers.Merge4<A, B, C, P> where P : Combine.Publisher, C.Failure == P.Failure, C.Output == P.Output
+    public func merge<Z, Y>(with z: Z, _ y: Y) -> Publishers.Merge5<A, B, C, Z, Y> where Z : Combine.Publisher, Y : Combine.Publisher, C.Failure == Z.Failure, C.Output == Z.Output, Z.Failure == Y.Failure, Z.Output == Y.Output
+    public func merge<Z, Y, X>(with z: Z, _ y: Y, _ x: X) -> Publishers.Merge6<A, B, C, Z, Y, X> where Z : Combine.Publisher, Y : Combine.Publisher, X : Combine.Publisher, C.Failure == Z.Failure, C.Output == Z.Output, Z.Failure == Y.Failure, Z.Output == Y.Output, Y.Failure == X.Failure, Y.Output == X.Output
+    public func merge<Z, Y, X, W>(with z: Z, _ y: Y, _ x: X, _ w: W) -> Publishers.Merge7<A, B, C, Z, Y, X, W> where Z : Combine.Publisher, Y : Combine.Publisher, X : Combine.Publisher, W : Combine.Publisher, C.Failure == Z.Failure, C.Output == Z.Output, Z.Failure == Y.Failure, Z.Output == Y.Output, Y.Failure == X.Failure, Y.Output == X.Output, X.Failure == W.Failure, X.Output == W.Output
+    public func merge<Z, Y, X, W, V>(with z: Z, _ y: Y, _ x: X, _ w: W, _ v: V) -> Publishers.Merge8<A, B, C, Z, Y, X, W, V> where Z : Combine.Publisher, Y : Combine.Publisher, X : Combine.Publisher, W : Combine.Publisher, V : Combine.Publisher, C.Failure == Z.Failure, C.Output == Z.Output, Z.Failure == Y.Failure, Z.Output == Y.Output, Y.Failure == X.Failure, Y.Output == X.Output, X.Failure == W.Failure, X.Output == W.Output, W.Failure == V.Failure, W.Output == V.Output
+  }
+  public struct Merge4<A, B, C, D> : Publisher where A : Combine.Publisher, B : Combine.Publisher, C : Combine.Publisher, D : Combine.Publisher, A.Failure == B.Failure, A.Output == B.Output, B.Failure == C.Failure, B.Output == C.Output, C.Failure == D.Failure, C.Output == D.Output {
+    public typealias Output = A.Output
+    public typealias Failure = A.Failure
+    public let a: A
+    public let b: B
+    public let c: C
+    public let d: D
+    public init(_ a: A, _ b: B, _ c: C, _ d: D)
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, D.Failure == S.Failure, D.Output == S.Input
+    public func merge<P>(with other: P) -> Publishers.Merge5<A, B, C, D, P> where P : Combine.Publisher, D.Failure == P.Failure, D.Output == P.Output
+    public func merge<Z, Y>(with z: Z, _ y: Y) -> Publishers.Merge6<A, B, C, D, Z, Y> where Z : Combine.Publisher, Y : Combine.Publisher, D.Failure == Z.Failure, D.Output == Z.Output, Z.Failure == Y.Failure, Z.Output == Y.Output
+    public func merge<Z, Y, X>(with z: Z, _ y: Y, _ x: X) -> Publishers.Merge7<A, B, C, D, Z, Y, X> where Z : Combine.Publisher, Y : Combine.Publisher, X : Combine.Publisher, D.Failure == Z.Failure, D.Output == Z.Output, Z.Failure == Y.Failure, Z.Output == Y.Output, Y.Failure == X.Failure, Y.Output == X.Output
+    public func merge<Z, Y, X, W>(with z: Z, _ y: Y, _ x: X, _ w: W) -> Publishers.Merge8<A, B, C, D, Z, Y, X, W> where Z : Combine.Publisher, Y : Combine.Publisher, X : Combine.Publisher, W : Combine.Publisher, D.Failure == Z.Failure, D.Output == Z.Output, Z.Failure == Y.Failure, Z.Output == Y.Output, Y.Failure == X.Failure, Y.Output == X.Output, X.Failure == W.Failure, X.Output == W.Output
+  }
+  public struct Merge5<A, B, C, D, E> : Publisher where A : Combine.Publisher, B : Combine.Publisher, C : Combine.Publisher, D : Combine.Publisher, E : Combine.Publisher, A.Failure == B.Failure, A.Output == B.Output, B.Failure == C.Failure, B.Output == C.Output, C.Failure == D.Failure, C.Output == D.Output, D.Failure == E.Failure, D.Output == E.Output {
+    public typealias Output = A.Output
+    public typealias Failure = A.Failure
+    public let a: A
+    public let b: B
+    public let c: C
+    public let d: D
+    public let e: E
+    public init(_ a: A, _ b: B, _ c: C, _ d: D, _ e: E)
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, E.Failure == S.Failure, E.Output == S.Input
+    public func merge<P>(with other: P) -> Publishers.Merge6<A, B, C, D, E, P> where P : Combine.Publisher, E.Failure == P.Failure, E.Output == P.Output
+    public func merge<Z, Y>(with z: Z, _ y: Y) -> Publishers.Merge7<A, B, C, D, E, Z, Y> where Z : Combine.Publisher, Y : Combine.Publisher, E.Failure == Z.Failure, E.Output == Z.Output, Z.Failure == Y.Failure, Z.Output == Y.Output
+    public func merge<Z, Y, X>(with z: Z, _ y: Y, _ x: X) -> Publishers.Merge8<A, B, C, D, E, Z, Y, X> where Z : Combine.Publisher, Y : Combine.Publisher, X : Combine.Publisher, E.Failure == Z.Failure, E.Output == Z.Output, Z.Failure == Y.Failure, Z.Output == Y.Output, Y.Failure == X.Failure, Y.Output == X.Output
+  }
+  public struct Merge6<A, B, C, D, E, F> : Publisher where A : Combine.Publisher, B : Combine.Publisher, C : Combine.Publisher, D : Combine.Publisher, E : Combine.Publisher, F : Combine.Publisher, A.Failure == B.Failure, A.Output == B.Output, B.Failure == C.Failure, B.Output == C.Output, C.Failure == D.Failure, C.Output == D.Output, D.Failure == E.Failure, D.Output == E.Output, E.Failure == F.Failure, E.Output == F.Output {
+    public typealias Output = A.Output
+    public typealias Failure = A.Failure
+    public let a: A
+    public let b: B
+    public let c: C
+    public let d: D
+    public let e: E
+    public let f: F
+    public init(_ a: A, _ b: B, _ c: C, _ d: D, _ e: E, _ f: F)
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, F.Failure == S.Failure, F.Output == S.Input
+    public func merge<P>(with other: P) -> Publishers.Merge7<A, B, C, D, E, F, P> where P : Combine.Publisher, F.Failure == P.Failure, F.Output == P.Output
+    public func merge<Z, Y>(with z: Z, _ y: Y) -> Publishers.Merge8<A, B, C, D, E, F, Z, Y> where Z : Combine.Publisher, Y : Combine.Publisher, F.Failure == Z.Failure, F.Output == Z.Output, Z.Failure == Y.Failure, Z.Output == Y.Output
+  }
+  public struct Merge7<A, B, C, D, E, F, G> : Publisher where A : Combine.Publisher, B : Combine.Publisher, C : Combine.Publisher, D : Combine.Publisher, E : Combine.Publisher, F : Combine.Publisher, G : Combine.Publisher, A.Failure == B.Failure, A.Output == B.Output, B.Failure == C.Failure, B.Output == C.Output, C.Failure == D.Failure, C.Output == D.Output, D.Failure == E.Failure, D.Output == E.Output, E.Failure == F.Failure, E.Output == F.Output, F.Failure == G.Failure, F.Output == G.Output {
+    public typealias Output = A.Output
+    public typealias Failure = A.Failure
+    public let a: A
+    public let b: B
+    public let c: C
+    public let d: D
+    public let e: E
+    public let f: F
+    public let g: G
+    public init(_ a: A, _ b: B, _ c: C, _ d: D, _ e: E, _ f: F, _ g: G)
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, G.Failure == S.Failure, G.Output == S.Input
+    public func merge<P>(with other: P) -> Publishers.Merge8<A, B, C, D, E, F, G, P> where P : Combine.Publisher, G.Failure == P.Failure, G.Output == P.Output
+  }
+  public struct Merge8<A, B, C, D, E, F, G, H> : Publisher where A : Combine.Publisher, B : Combine.Publisher, C : Combine.Publisher, D : Combine.Publisher, E : Combine.Publisher, F : Combine.Publisher, G : Combine.Publisher, H : Combine.Publisher, A.Failure == B.Failure, A.Output == B.Output, B.Failure == C.Failure, B.Output == C.Output, C.Failure == D.Failure, C.Output == D.Output, D.Failure == E.Failure, D.Output == E.Output, E.Failure == F.Failure, E.Output == F.Output, F.Failure == G.Failure, F.Output == G.Output, G.Failure == H.Failure, G.Output == H.Output {
+    public typealias Output = A.Output
+    public typealias Failure = A.Failure
+    public let a: A
+    public let b: B
+    public let c: C
+    public let d: D
+    public let e: E
+    public let f: F
+    public let g: G
+    public let h: H
+    public init(_ a: A, _ b: B, _ c: C, _ d: D, _ e: E, _ f: F, _ g: G, _ h: H)
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, H.Failure == S.Failure, H.Output == S.Input
+  }
+  public struct MergeMany<Upstream> : Publisher where Upstream : Combine.Publisher {
+    public typealias Output = Upstream.Output
+    public typealias Failure = Upstream.Failure
+    public let publishers: [Upstream]
+    public init(_ upstream: Upstream...)
+    public init<S>(_ upstream: S) where Upstream == S.Element, S : Swift.Sequence
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Failure == S.Failure, Upstream.Output == S.Input
+    public func merge(with other: Upstream) -> Publishers.MergeMany<Upstream>
+  }
+}
+extension Publishers.Merge : Equatable where A : Swift.Equatable, B : Swift.Equatable {
+  public static func == (lhs: Publishers.Merge<A, B>, rhs: Publishers.Merge<A, B>) -> Bool
+}
+extension Publishers.Merge3 : Equatable where A : Swift.Equatable, B : Swift.Equatable, C : Swift.Equatable {
+  public static func == (lhs: Publishers.Merge3<A, B, C>, rhs: Publishers.Merge3<A, B, C>) -> Bool
+}
+extension Publishers.Merge4 : Equatable where A : Swift.Equatable, B : Swift.Equatable, C : Swift.Equatable, D : Swift.Equatable {
+  public static func == (lhs: Publishers.Merge4<A, B, C, D>, rhs: Publishers.Merge4<A, B, C, D>) -> Bool
+}
+extension Publishers.Merge5 : Equatable where A : Swift.Equatable, B : Swift.Equatable, C : Swift.Equatable, D : Swift.Equatable, E : Swift.Equatable {
+  public static func == (lhs: Publishers.Merge5<A, B, C, D, E>, rhs: Publishers.Merge5<A, B, C, D, E>) -> Bool
+}
+extension Publishers.Merge6 : Equatable where A : Swift.Equatable, B : Swift.Equatable, C : Swift.Equatable, D : Swift.Equatable, E : Swift.Equatable, F : Swift.Equatable {
+  public static func == (lhs: Publishers.Merge6<A, B, C, D, E, F>, rhs: Publishers.Merge6<A, B, C, D, E, F>) -> Bool
+}
+extension Publishers.Merge7 : Equatable where A : Swift.Equatable, B : Swift.Equatable, C : Swift.Equatable, D : Swift.Equatable, E : Swift.Equatable, F : Swift.Equatable, G : Swift.Equatable {
+  public static func == (lhs: Publishers.Merge7<A, B, C, D, E, F, G>, rhs: Publishers.Merge7<A, B, C, D, E, F, G>) -> Bool
+}
+extension Publishers.Merge8 : Equatable where A : Swift.Equatable, B : Swift.Equatable, C : Swift.Equatable, D : Swift.Equatable, E : Swift.Equatable, F : Swift.Equatable, G : Swift.Equatable, H : Swift.Equatable {
+  public static func == (lhs: Publishers.Merge8<A, B, C, D, E, F, G, H>, rhs: Publishers.Merge8<A, B, C, D, E, F, G, H>) -> Bool
+}
+extension Publishers.MergeMany : Equatable where Upstream : Swift.Equatable {
+  public static func == (lhs: Publishers.MergeMany<Upstream>, rhs: Publishers.MergeMany<Upstream>) -> Bool
+}
+extension Publishers {
+  public struct Once<Output, Failure> : Publisher where Failure : Swift.Error {
+    public let result: Result<Output, Failure>
+    public init(_ result: Result<Output, Failure>)
+    public init(_ output: Output)
+    public init(_ failure: Failure)
+    public func receive<S>(subscriber: S) where Output == S.Input, Failure == S.Failure, S : Combine.Subscriber
+  }
+}
+extension Publishers.Once : Equatable where Output : Swift.Equatable, Failure : Swift.Equatable {
+  public static func == (lhs: Publishers.Once<Output, Failure>, rhs: Publishers.Once<Output, Failure>) -> Bool
+}
+extension Publishers.Once where Output : Swift.Equatable {
+  public func contains(_ output: Output) -> Publishers.Once<Bool, Failure>
+  public func removeDuplicates() -> Publishers.Once<Output, Failure>
+}
+extension Publishers.Once where Output : Swift.Comparable {
+  public func min() -> Publishers.Once<Output, Failure>
+  public func max() -> Publishers.Once<Output, Failure>
+}
+extension Publishers.Once {
+  public func allSatisfy(_ predicate: (Output) -> Bool) -> Publishers.Once<Bool, Failure>
+  public func tryAllSatisfy(_ predicate: (Output) throws -> Bool) -> Publishers.Once<Bool, Swift.Error>
+  public func collect() -> Publishers.Once<[Output], Failure>
+  public func compactMap<T>(_ transform: (Output) -> T?) -> Publishers.Optional<T, Failure>
+  public func tryCompactMap<T>(_ transform: (Output) throws -> T?) -> Publishers.Optional<T, Swift.Error>
+  public func min(by areInIncreasingOrder: (Output, Output) -> Bool) -> Publishers.Once<Output, Failure>
+  public func tryMin(by areInIncreasingOrder: (Output, Output) throws -> Bool) -> Publishers.Once<Output, Failure>
+  public func max(by areInIncreasingOrder: (Output, Output) -> Bool) -> Publishers.Once<Output, Failure>
+  public func tryMax(by areInIncreasingOrder: (Output, Output) throws -> Bool) -> Publishers.Once<Output, Failure>
+  public func contains(where predicate: (Output) -> Bool) -> Publishers.Once<Bool, Failure>
+  public func tryContains(where predicate: (Output) throws -> Bool) -> Publishers.Once<Bool, Swift.Error>
+  public func count() -> Publishers.Once<Int, Failure>
+  public func dropFirst(_ count: Int = 1) -> Publishers.Optional<Output, Failure>
+  public func drop(while predicate: (Output) -> Bool) -> Publishers.Optional<Output, Failure>
+  public func tryDrop(while predicate: (Output) throws -> Bool) -> Publishers.Optional<Output, Swift.Error>
+  public func first() -> Publishers.Once<Output, Failure>
+  public func first(where predicate: (Output) -> Bool) -> Publishers.Optional<Output, Failure>
+  public func tryFirst(where predicate: (Output) throws -> Bool) -> Publishers.Optional<Output, Swift.Error>
+  public func last() -> Publishers.Once<Output, Failure>
+  public func last(where predicate: (Output) -> Bool) -> Publishers.Optional<Output, Failure>
+  public func tryLast(where predicate: (Output) throws -> Bool) -> Publishers.Optional<Output, Swift.Error>
+  public func filter(_ isIncluded: (Output) -> Bool) -> Publishers.Optional<Output, Failure>
+  public func tryFilter(_ isIncluded: (Output) throws -> Bool) -> Publishers.Optional<Output, Swift.Error>
+  public func ignoreOutput() -> Publishers.Empty<Output, Failure>
+  public func map<T>(_ transform: (Output) -> T) -> Publishers.Once<T, Failure>
+  public func tryMap<T>(_ transform: (Output) throws -> T) -> Publishers.Once<T, Swift.Error>
+  public func mapError<E>(_ transform: (Failure) -> E) -> Publishers.Once<Output, E> where E : Swift.Error
+  public func output(at index: Int) -> Publishers.Optional<Output, Failure>
+  public func output<R>(in range: R) -> Publishers.Optional<Output, Failure> where R : Swift.RangeExpression, R.Bound == Swift.Int
+  public func prefix(_ maxLength: Int) -> Publishers.Optional<Output, Failure>
+  public func prefix(while predicate: (Output) -> Bool) -> Publishers.Optional<Output, Failure>
+  public func tryPrefix(while predicate: (Output) throws -> Bool) -> Publishers.Optional<Output, Swift.Error>
+  public func reduce<T>(_ initialResult: T, _ nextPartialResult: (T, Output) -> T) -> Publishers.Once<T, Failure>
+  public func tryReduce<T>(_ initialResult: T, _ nextPartialResult: (T, Output) throws -> T) -> Publishers.Once<T, Swift.Error>
+  public func removeDuplicates(by predicate: (Output, Output) -> Bool) -> Publishers.Once<Output, Failure>
+  public func tryRemoveDuplicates(by predicate: (Output, Output) throws -> Bool) -> Publishers.Once<Output, Swift.Error>
+  public func replaceError(with output: Output) -> Publishers.Once<Output, Never>
+  public func replaceEmpty(with output: Output) -> Publishers.Once<Output, Failure>
+  public func retry(_ times: Int) -> Publishers.Once<Output, Failure>
+  public func retry() -> Publishers.Once<Output, Failure>
+  public func scan<T>(_ initialResult: T, _ nextPartialResult: (T, Output) -> T) -> Publishers.Once<T, Failure>
+  public func tryScan<T>(_ initialResult: T, _ nextPartialResult: (T, Output) throws -> T) -> Publishers.Once<T, Swift.Error>
+}
+extension Publishers.Once where Failure == Swift.Never {
+  public func setFailureType<E>(to failureType: E.Type) -> Publishers.Once<Output, E> where E : Swift.Error
+}
+extension Publisher {
+  public func scan<T>(_ initialResult: T, _ nextPartialResult: @escaping (T, Output) -> T) -> Publishers.Scan<Self, T>
+  public func tryScan<T>(_ initialResult: T, _ nextPartialResult: @escaping (T, Output) throws -> T) -> Publishers.TryScan<Self, T>
+}
+extension Publishers {
+  public struct Scan<Upstream, Output> : Publisher where Upstream : Combine.Publisher {
+    public typealias Failure = Upstream.Failure
+    public let upstream: Upstream
+    public let nextPartialResult: (Output, Upstream.Output) -> Output
+    public let initialResult: Output
+    public func receive<S>(subscriber: S) where Output == S.Input, S : Combine.Subscriber, Upstream.Failure == S.Failure
+  }
+  public struct TryScan<Upstream, Output> : Publisher where Upstream : Combine.Publisher {
+    public typealias Failure = Swift.Error
+    public let upstream: Upstream
+    public let nextPartialResult: (Output, Upstream.Output) throws -> Output
+    public let initialResult: Output
+    public func receive<S>(subscriber: S) where Output == S.Input, S : Combine.Subscriber, S.Failure == Combine.Publishers.TryScan<Upstream, Output>.Failure
+  }
+}
+public struct ImmediateScheduler : Scheduler {
+  public struct SchedulerTimeType : Strideable {
+    public func distance(to other: SchedulerTimeType) -> Stride
+    public func advanced(by n: Stride) -> SchedulerTimeType
+    public struct Stride : ExpressibleByFloatLiteral, Comparable, SignedNumeric, Codable, SchedulerTimeIntervalConvertible {
+      public typealias FloatLiteralType = Double
+      public typealias IntegerLiteralType = Int
+      public typealias Magnitude = Int
+      public var magnitude: Int
+      public init(_ value: Int)
+      public init(integerLiteral value: Int)
+      public init(floatLiteral value: Double)
+      public init?<T>(exactly source: T) where T : Swift.BinaryInteger
+      public static func < (lhs: SchedulerTimeType.Stride, rhs: SchedulerTimeType.Stride) -> Bool
+      public static func * (lhs: SchedulerTimeType.Stride, rhs: SchedulerTimeType.Stride) -> SchedulerTimeType.Stride
+      public static func + (lhs: SchedulerTimeType.Stride, rhs: SchedulerTimeType.Stride) -> SchedulerTimeType.Stride
+      public static func - (lhs: SchedulerTimeType.Stride, rhs: SchedulerTimeType.Stride) -> SchedulerTimeType.Stride
+      public static func -= (lhs: inout SchedulerTimeType.Stride, rhs: SchedulerTimeType.Stride)
+      public static func *= (lhs: inout SchedulerTimeType.Stride, rhs: SchedulerTimeType.Stride)
+      public static func += (lhs: inout SchedulerTimeType.Stride, rhs: SchedulerTimeType.Stride)
+      public static func seconds(_ s: Int) -> Stride
+      public static func seconds(_ s: Double) -> Stride
+      public static func milliseconds(_ ms: Int) -> Stride
+      public static func microseconds(_ us: Int) -> Stride
+      public static func nanoseconds(_ ns: Int) -> Stride
+      public init(from decoder: Swift.Decoder) throws
+      public func encode(to encoder: Swift.Encoder) throws
+      public static func == (a: Combine.ImmediateScheduler.SchedulerTimeType.Stride, b: Combine.ImmediateScheduler.SchedulerTimeType.Stride) -> Swift.Bool
+    }
+  }
+  public typealias SchedulerOptions = Never
+  public static let shared: Combine.ImmediateScheduler
+  public func schedule(options: SchedulerOptions?, _ action: @escaping () -> Void)
+  public var now: SchedulerTimeType {
+    get
+  }
+  public var minimumTolerance: SchedulerTimeType.Stride {
+    get
+  }
+  public func schedule(after date: SchedulerTimeType, tolerance: SchedulerTimeType.Stride, options: SchedulerOptions?, _ action: @escaping () -> Void)
+  @discardableResult
+  public func schedule(after date: SchedulerTimeType, interval: SchedulerTimeType.Stride, tolerance: SchedulerTimeType.Stride, options: SchedulerOptions?, _ action: @escaping () -> Void) -> Cancellable
+}
+extension Publisher {
+  public func count() -> Publishers.Count<Self>
+}
+extension Publishers {
+  public struct Count<Upstream> : Publisher where Upstream : Combine.Publisher {
+    public typealias Output = Int
+    public typealias Failure = Upstream.Failure
+    public let upstream: Upstream
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Failure == S.Failure, S.Input == Combine.Publishers.Count<Upstream>.Output
+  }
+}
+extension Publisher {
+  public func last(where predicate: @escaping (Output) -> Bool) -> Publishers.LastWhere<Self>
+  public func tryLast(where predicate: @escaping (Output) throws -> Bool) -> Publishers.TryLastWhere<Self>
+}
+extension Publishers {
+  public struct LastWhere<Upstream> : Publisher where Upstream : Combine.Publisher {
+    public typealias Output = Upstream.Output
+    public typealias Failure = Upstream.Failure
+    public let upstream: Upstream
+    public let predicate: (Output) -> Bool
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Failure == S.Failure, Upstream.Output == S.Input
+  }
+  public struct TryLastWhere<Upstream> : Publisher where Upstream : Combine.Publisher {
+    public typealias Output = Upstream.Output
+    public typealias Failure = Swift.Error
+    public let upstream: Upstream
+    public let predicate: (Output) throws -> Bool
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Output == S.Input, S.Failure == Combine.Publishers.TryLastWhere<Upstream>.Failure
+  }
+}
+extension Publisher {
+  public func ignoreOutput() -> Publishers.IgnoreOutput<Self>
+}
+extension Publishers {
+  public struct IgnoreOutput<Upstream> : Publisher where Upstream : Combine.Publisher {
+    public typealias Output = Never
+    public typealias Failure = Upstream.Failure
+    public let upstream: Upstream
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Failure == S.Failure, S.Input == Combine.Publishers.IgnoreOutput<Upstream>.Output
+  }
+}
+extension Publishers.IgnoreOutput : Equatable where Upstream : Swift.Equatable {
+  public static func == (lhs: Publishers.IgnoreOutput<Upstream>, rhs: Publishers.IgnoreOutput<Upstream>) -> Bool
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+final public class CurrentValueSubject<Output, Failure> : Subject where Failure : Swift.Error {
+  final public var value: Output {
+    get
+    set
+  }
+  public init(_ value: Output)
+  @objc deinit
+  final public func receive<S>(subscriber: S) where Output == S.Input, Failure == S.Failure, S : Combine.Subscriber
+  final public func send(_ input: Output)
+  final public func send(completion: Subscribers.Completion<Failure>)
+}
+extension Publisher where Self.Failure == Swift.Never {
+  public func assign<Root>(to keyPath: ReferenceWritableKeyPath<Root, Output>, on object: Root) -> AnyCancellable
+}
+extension Subscribers {
+  final public class Assign<Root, Input> : Subscriber, Cancellable, CustomStringConvertible, CustomReflectable, CustomPlaygroundDisplayConvertible {
+    public typealias Failure = Never
+    final public var object: Root? {
+      get
+      }
+    final public let keyPath: ReferenceWritableKeyPath<Root, Input>
+    final public var description: String {
+      get
+    }
+    final public var customMirror: Mirror {
+      get
+    }
+    final public var playgroundDescription: Any {
+      get
+    }
+    public init(object: Root, keyPath: ReferenceWritableKeyPath<Root, Input>)
+    final public func receive(subscription: Subscription)
+    final public func receive(_ value: Input) -> Subscribers.Demand
+    final public func receive(completion: Subscribers.Completion<Never>)
+    final public func cancel()
+    @objc deinit
+  }
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public protocol SchedulerTimeIntervalConvertible {
+  static func seconds(_ s: Int) -> Self
+  static func seconds(_ s: Double) -> Self
+  static func milliseconds(_ ms: Int) -> Self
+  static func microseconds(_ us: Int) -> Self
+  static func nanoseconds(_ ns: Int) -> Self
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public protocol Scheduler {
+  associatedtype SchedulerTimeType : Swift.Strideable where Self.SchedulerTimeType.Stride : Combine.SchedulerTimeIntervalConvertible
+  associatedtype SchedulerOptions
+  var now: SchedulerTimeType { get }
+  var minimumTolerance: SchedulerTimeType.Stride { get }
+  func schedule(options: SchedulerOptions?, _ action: @escaping () -> Void)
+  func schedule(after date: SchedulerTimeType, tolerance: SchedulerTimeType.Stride, options: SchedulerOptions?, _ action: @escaping () -> Void)
+  @discardableResult
+  func schedule(after date: SchedulerTimeType, interval: SchedulerTimeType.Stride, tolerance: SchedulerTimeType.Stride, options: SchedulerOptions?, _ action: @escaping () -> Void) -> Cancellable
+}
+extension Scheduler {
+  public func schedule(after date: SchedulerTimeType, _ action: @escaping () -> Void)
+  public func schedule(_ action: @escaping () -> Void)
+  public func schedule(after date: SchedulerTimeType, tolerance: SchedulerTimeType.Stride, _ action: @escaping () -> Void)
+  @discardableResult
+  public func schedule(after date: SchedulerTimeType, interval: SchedulerTimeType.Stride, tolerance: SchedulerTimeType.Stride, _ action: @escaping () -> Void) -> Cancellable
+  @discardableResult
+  public func schedule(after date: SchedulerTimeType, interval: SchedulerTimeType.Stride, _ action: @escaping () -> Void) -> Cancellable
+}
+extension Publisher where Self.Failure == Self.Output.Failure, Self.Output : Combine.Publisher {
+  public func switchToLatest() -> Publishers.SwitchToLatest<Output, Self>
+}
+extension Publishers {
+  public struct SwitchToLatest<P, Upstream> : Publisher where P : Combine.Publisher, P == Upstream.Output, Upstream : Combine.Publisher, P.Failure == Upstream.Failure {
+    public typealias Output = P.Output
+    public typealias Failure = P.Failure
+    public let upstream: Upstream
+    public init(upstream: Upstream)
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, P.Output == S.Input, Upstream.Failure == S.Failure
+  }
+}
+extension Publisher {
+  public func retry(_ retries: Int) -> Publishers.Retry<Self>
+  public func retry() -> Publishers.Retry<Self>
+}
+extension Publishers {
+  public struct Retry<Upstream> : Publisher where Upstream : Combine.Publisher {
+    public typealias Output = Upstream.Output
+    public typealias Failure = Upstream.Failure
+    public let upstream: Upstream
+    public let retries: Int?
+    public init(upstream: Upstream, retries: Int?)
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Failure == S.Failure, Upstream.Output == S.Input
+  }
+}
+extension Publishers.Retry : Equatable where Upstream : Swift.Equatable {
+  public static func == (lhs: Publishers.Retry<Upstream>, rhs: Publishers.Retry<Upstream>) -> Bool
+}
+extension Publisher {
+  public func mapError<E>(_ transform: @escaping (Failure) -> E) -> Publishers.MapError<Self, E> where E : Swift.Error
+}
+extension Publishers {
+  public struct MapError<Upstream, Failure> : Publisher where Upstream : Combine.Publisher, Failure : Swift.Error {
+    public typealias Output = Upstream.Output
+    public let upstream: Upstream
+    public let transform: (Upstream.Failure) -> Failure
+    public init(upstream: Upstream, _ map: @escaping (Upstream.Failure) -> Failure)
+    public func receive<S>(subscriber: S) where Failure == S.Failure, S : Combine.Subscriber, Upstream.Output == S.Input
+  }
+}
+extension Publisher {
+  public func throttle<S>(for interval: S.SchedulerTimeType.Stride, scheduler: S, latest: Bool) -> Publishers.Throttle<Self, S> where S : Combine.Scheduler
+}
+extension Publishers {
+  public struct Throttle<Upstream, Context> : Publisher where Upstream : Combine.Publisher, Context : Combine.Scheduler {
+    public typealias Output = Upstream.Output
+    public typealias Failure = Upstream.Failure
+    public let upstream: Upstream
+    public let interval: Context.SchedulerTimeType.Stride
+    public let scheduler: Context
+    public let latest: Bool
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Failure == S.Failure, Upstream.Output == S.Input
+  }
+}
+extension Publisher {
+  public func share() -> Publishers.Share<Self>
+}
+extension Publishers {
+  final public class Share<Upstream> : Publisher, Equatable where Upstream : Combine.Publisher {
+    public typealias Output = Upstream.Output
+    public typealias Failure = Upstream.Failure
+    final public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Failure == S.Failure, Upstream.Output == S.Input
+    public static func == (lhs: Publishers.Share<Upstream>, rhs: Publishers.Share<Upstream>) -> Bool
+    @objc deinit
+  }
+}
+extension Publisher where Self.Output : Swift.Comparable {
+  public func min() -> Publishers.Comparison<Self>
+  public func max() -> Publishers.Comparison<Self>
+}
+extension Publisher {
+  public func min(by areInIncreasingOrder: @escaping (Output, Output) -> Bool) -> Publishers.Comparison<Self>
+  public func tryMin(by areInIncreasingOrder: @escaping (Output, Output) throws -> Bool) -> Publishers.TryComparison<Self>
+  public func max(by areInIncreasingOrder: @escaping (Output, Output) -> Bool) -> Publishers.Comparison<Self>
+  public func tryMax(by areInIncreasingOrder: @escaping (Output, Output) throws -> Bool) -> Publishers.TryComparison<Self>
+}
+extension Publishers {
+  public struct Comparison<Upstream> : Publisher where Upstream : Combine.Publisher {
+    public typealias Output = Upstream.Output
+    public typealias Failure = Upstream.Failure
+    public let upstream: Upstream
+    public let areInIncreasingOrder: (Upstream.Output, Upstream.Output) -> Bool
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Failure == S.Failure, Upstream.Output == S.Input
+  }
+  public struct TryComparison<Upstream> : Publisher where Upstream : Combine.Publisher {
+    public typealias Output = Upstream.Output
+    public typealias Failure = Swift.Error
+    public let upstream: Upstream
+    public let areInIncreasingOrder: (Upstream.Output, Upstream.Output) throws -> Bool
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Output == S.Input, S.Failure == Combine.Publishers.TryComparison<Upstream>.Failure
+  }
+}
+extension Publisher {
+  public func replaceNil<T>(with output: T) -> Publishers.Map<Self, T> where Self.Output == T?
+}
+extension Publisher {
+  public func replaceError(with output: Output) -> Publishers.ReplaceError<Self>
+  public func replaceEmpty(with output: Output) -> Publishers.ReplaceEmpty<Self>
+}
+extension Publishers {
+  public struct ReplaceEmpty<Upstream> : Publisher where Upstream : Combine.Publisher {
+    public typealias Output = Upstream.Output
+    public typealias Failure = Upstream.Failure
+    public let output: Output
+    public let upstream: Upstream
+    public init(upstream: Upstream, output: Output)
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Failure == S.Failure, Upstream.Output == S.Input
+  }
+  public struct ReplaceError<Upstream> : Publisher where Upstream : Combine.Publisher {
+    public typealias Output = Upstream.Output
+    public typealias Failure = Never
+    public let output: Output
+    public let upstream: Upstream
+    public init(upstream: Upstream, output: Output)
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Output == S.Input, S.Failure == Combine.Publishers.ReplaceError<Upstream>.Failure
+  }
+}
+extension Publishers.ReplaceEmpty : Equatable where Upstream : Swift.Equatable, Upstream.Output : Swift.Equatable {
+  public static func == (lhs: Publishers.ReplaceEmpty<Upstream>, rhs: Publishers.ReplaceEmpty<Upstream>) -> Bool
+}
+extension Publishers.ReplaceError : Equatable where Upstream : Swift.Equatable, Upstream.Output : Swift.Equatable {
+  public static func == (lhs: Publishers.ReplaceError<Upstream>, rhs: Publishers.ReplaceError<Upstream>) -> Bool
+}
+extension Publisher {
+  public func assertNoFailure(_ prefix: String = "", file: StaticString = #file, line: UInt = #line) -> Publishers.AssertNoFailure<Self>
+}
+extension Publishers {
+  public struct AssertNoFailure<Upstream> : Publisher where Upstream : Combine.Publisher {
+    public typealias Output = Upstream.Output
+    public typealias Failure = Never
+    public let upstream: Upstream
+    public let prefix: String
+    public let file: StaticString
+    public let line: UInt
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Output == S.Input, S.Failure == Combine.Publishers.AssertNoFailure<Upstream>.Failure
+  }
+}
+extension Publisher {
+  public func drop<P>(untilOutputFrom publisher: P) -> Publishers.DropUntilOutput<Self, P> where P : Combine.Publisher, Self.Failure == P.Failure
+}
+extension Publishers {
+  public struct DropUntilOutput<Upstream, Other> : Publisher where Upstream : Combine.Publisher, Other : Combine.Publisher, Upstream.Failure == Other.Failure {
+    public typealias Output = Upstream.Output
+    public typealias Failure = Upstream.Failure
+    public let upstream: Upstream
+    public let other: Other
+    public init(upstream: Upstream, other: Other)
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Output == S.Input, Other.Failure == S.Failure
+  }
+}
+extension Publishers.DropUntilOutput : Equatable where Upstream : Swift.Equatable, Other : Swift.Equatable {
+  public static func == (lhs: Publishers.DropUntilOutput<Upstream, Other>, rhs: Publishers.DropUntilOutput<Upstream, Other>) -> Bool
+}
+extension Publisher {
+  public func handleEvents(receiveSubscription: ((Subscription) -> Void)? = nil, receiveOutput: ((Output) -> Void)? = nil, receiveCompletion: ((Subscribers.Completion<Failure>) -> Void)? = nil, receiveCancel: (() -> Void)? = nil, receiveRequest: ((Subscribers.Demand) -> Void)? = nil) -> Publishers.HandleEvents<Self>
+}
+extension Publishers {
+  public struct HandleEvents<Upstream> : Publisher where Upstream : Combine.Publisher {
+    public typealias Output = Upstream.Output
+    public typealias Failure = Upstream.Failure
+    public let upstream: Upstream
+    public var receiveSubscription: ((Subscription) -> Void)?
+    public var receiveOutput: ((Output) -> Void)?
+    public var receiveCompletion: ((Subscribers.Completion<Failure>) -> Void)?
+    public var receiveCancel: (() -> Void)?
+    public var receiveRequest: ((Subscribers.Demand) -> Void)?
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Failure == S.Failure, Upstream.Output == S.Input
+  }
+}
+extension Publisher {
+  public func prepend(_ elements: Output...) -> Publishers.Concatenate<Publishers.Sequence<[Output], Failure>, Self>
+  public func prepend<S>(_ elements: S) -> Publishers.Concatenate<Publishers.Sequence<S, Failure>, Self> where S : Swift.Sequence, Self.Output == S.Element
+  public func prepend<P>(_ publisher: P) -> Publishers.Concatenate<P, Self> where P : Combine.Publisher, Self.Failure == P.Failure, Self.Output == P.Output
+  public func append(_ elements: Output...) -> Publishers.Concatenate<Self, Publishers.Sequence<[Output], Failure>>
+  public func append<S>(_ elements: S) -> Publishers.Concatenate<Self, Publishers.Sequence<S, Failure>> where S : Swift.Sequence, Self.Output == S.Element
+  public func append<P>(_ publisher: P) -> Publishers.Concatenate<Self, P> where P : Combine.Publisher, Self.Failure == P.Failure, Self.Output == P.Output
+}
+extension Publishers {
+  public struct Concatenate<Prefix, Suffix> : Publisher where Prefix : Combine.Publisher, Suffix : Combine.Publisher, Prefix.Failure == Suffix.Failure, Prefix.Output == Suffix.Output {
+    public typealias Output = Suffix.Output
+    public typealias Failure = Suffix.Failure
+    public let prefix: Prefix
+    public let suffix: Suffix
+    public init(prefix: Prefix, suffix: Suffix)
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Suffix.Failure == S.Failure, Suffix.Output == S.Input
+  }
+}
+extension Publishers.Concatenate : Equatable where Prefix : Swift.Equatable, Suffix : Swift.Equatable {
+  public static func == (lhs: Publishers.Concatenate<Prefix, Suffix>, rhs: Publishers.Concatenate<Prefix, Suffix>) -> Bool
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public struct CombineIdentifier : Hashable, CustomStringConvertible {
+  public init()
+  public init(_ obj: AnyObject)
+  public var description: String {
+    get
+  }
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: Combine.CombineIdentifier, b: Combine.CombineIdentifier) -> Swift.Bool
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public protocol CustomCombineIdentifierConvertible {
+  var combineIdentifier: CombineIdentifier { get }
+}
+extension CustomCombineIdentifierConvertible where Self : AnyObject {
+  public var combineIdentifier: CombineIdentifier {
+    get
+  }
+}
+extension Publisher {
+  public func debounce<S>(for dueTime: S.SchedulerTimeType.Stride, scheduler: S, options: S.SchedulerOptions? = nil) -> Publishers.Debounce<Self, S> where S : Combine.Scheduler
+}
+extension Publishers {
+  public struct Debounce<Upstream, Context> : Publisher where Upstream : Combine.Publisher, Context : Combine.Scheduler {
+    public typealias Output = Upstream.Output
+    public typealias Failure = Upstream.Failure
+    public let upstream: Upstream
+    public let dueTime: Context.SchedulerTimeType.Stride
+    public let scheduler: Context
+    public let options: Context.SchedulerOptions?
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Failure == S.Failure, Upstream.Output == S.Input
+  }
+}
+extension Publishers {
+  public struct Fail<Output, Failure> : Publisher where Failure : Swift.Error {
+    public init(error: Failure)
+    public init(outputType: Output.Type, failure: Failure)
+    public let error: Failure
+    public func receive<S>(subscriber: S) where Output == S.Input, Failure == S.Failure, S : Combine.Subscriber
+  }
+}
+extension Publishers.Fail : Equatable where Failure : Swift.Equatable {
+  public static func == (lhs: Publishers.Fail<Output, Failure>, rhs: Publishers.Fail<Output, Failure>) -> Bool
+}
+extension Publisher {
+  public func last() -> Publishers.Last<Self>
+}
+extension Publishers {
+  public struct Last<Upstream> : Publisher where Upstream : Combine.Publisher {
+    public typealias Output = Upstream.Output
+    public typealias Failure = Upstream.Failure
+    public let upstream: Upstream
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Failure == S.Failure, Upstream.Output == S.Input
+  }
+}
+extension Publishers.Last : Equatable where Upstream : Swift.Equatable {
+  public static func == (lhs: Publishers.Last<Upstream>, rhs: Publishers.Last<Upstream>) -> Bool
+}
+@usableFromInline
+@_fixed_layout internal class PublisherBoxBase<Output, Failure> : Publisher where Failure : Swift.Error {
+  @inlinable internal init() {}
+  @objc @inlinable deinit {}
+  @inlinable internal func receive<S>(subscriber: S) where Output == S.Input, Failure == S.Failure, S : Combine.Subscriber {
+        ABSTRACT_METHOD()
+    }
+}
+@usableFromInline
+@_fixed_layout internal struct ClosureBasedPublisher<Output, Failure> : Publisher where Failure : Swift.Error {
+  @usableFromInline
+  internal let subscribe: (AnySubscriber<Output, Failure>) -> Void
+  @inlinable internal init(_ subscribe: @escaping (AnySubscriber<Output, Failure>) -> Void) {
+        self.subscribe = subscribe
+    }
+  @inlinable internal func receive<S>(subscriber: S) where Output == S.Input, Failure == S.Failure, S : Combine.Subscriber {
+        if let erased = subscriber as? AnySubscriber<Output, Failure> {
+            subscribe(erased)
+        } else {
+            let erased = AnySubscriber(subscriber)
+            subscribe(erased)
+        }
+    }
+}
+@usableFromInline
+@_fixed_layout final internal class PublisherBox<Base> : PublisherBoxBase<Base.Output, Base.Failure> where Base : Combine.Publisher {
+  @usableFromInline
+  final internal let base: Base
+  @inlinable internal init(_ base: Base) {
+        self.base = base
+    }
+  @objc @inlinable deinit {}
+  @inlinable override final internal func receive<S>(subscriber: S) where S : Combine.Subscriber, Base.Failure == S.Failure, Base.Output == S.Input {
+        base.receive(subscriber: subscriber)
+    }
+  @inlinable override internal init()
+}
+@_fixed_layout public struct AnyPublisher<Output, Failure> where Failure : Swift.Error {
+  @usableFromInline
+  internal let box: PublisherBoxBase<Output, Failure>
+  @inlinable public init<P>(_ publisher: P) where Output == P.Output, Failure == P.Failure, P : Combine.Publisher {
+        box = PublisherBox(publisher)
+    }
+  @inlinable public init(_ subscribe: @escaping (AnySubscriber<Output, Failure>) -> Void) {
+        box = PublisherBox(ClosureBasedPublisher(subscribe))
+    }
+}
+extension AnyPublisher : Publisher {
+  @inlinable public func receive<S>(subscriber: S) where Output == S.Input, Failure == S.Failure, S : Combine.Subscriber {
+        return box.receive(subscriber: subscriber)
+    }
+}
+extension Publisher {
+  public func map<T>(_ transform: @escaping (Output) -> T) -> Publishers.Map<Self, T>
+  public func tryMap<T>(_ transform: @escaping (Output) throws -> T) -> Publishers.TryMap<Self, T>
+}
+extension Publishers {
+  public struct Map<Upstream, Output> : Publisher where Upstream : Combine.Publisher {
+    public typealias Failure = Upstream.Failure
+    public let upstream: Upstream
+    public let transform: (Upstream.Output) -> Output
+    public func receive<S>(subscriber: S) where Output == S.Input, S : Combine.Subscriber, Upstream.Failure == S.Failure
+  }
+  public struct TryMap<Upstream, Output> : Publisher where Upstream : Combine.Publisher {
+    public typealias Failure = Swift.Error
+    public let upstream: Upstream
+    public let transform: (Upstream.Output) throws -> Output
+    public func receive<S>(subscriber: S) where Output == S.Input, S : Combine.Subscriber, S.Failure == Combine.Publishers.TryMap<Upstream, Output>.Failure
+  }
+}
+extension Publishers.Map {
+  public func map<T>(_ transform: @escaping (Output) -> T) -> Publishers.Map<Upstream, T>
+  public func tryMap<T>(_ transform: @escaping (Output) throws -> T) -> Publishers.TryMap<Upstream, T>
+}
+extension Publishers.TryMap {
+  public func map<T>(_ transform: @escaping (Output) -> T) -> Publishers.TryMap<Upstream, T>
+  public func tryMap<T>(_ transform: @escaping (Output) throws -> T) -> Publishers.TryMap<Upstream, T>
+}
+extension Publisher {
+  public func timeout<S>(_ interval: S.SchedulerTimeType.Stride, scheduler: S, options: S.SchedulerOptions? = nil, customError: (() -> Failure)? = nil) -> Publishers.Timeout<Self, S> where S : Combine.Scheduler
+}
+extension Publishers {
+  public struct Timeout<Upstream, Context> : Publisher where Upstream : Combine.Publisher, Context : Combine.Scheduler {
+    public typealias Output = Upstream.Output
+    public typealias Failure = Upstream.Failure
+    public let upstream: Upstream
+    public let interval: Context.SchedulerTimeType.Stride
+    public let scheduler: Context
+    public let options: Context.SchedulerOptions?
+    public let customError: (() -> Failure)?
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Failure == S.Failure, Upstream.Output == S.Input
+  }
+}
+@usableFromInline
+@inline(never) internal func ABSTRACT_METHOD(file: StaticString = #file, line: UInt = #line) -> Never
+extension Publisher {
+  public func buffer(size: Int, prefetch: Publishers.PrefetchStrategy, whenFull: Publishers.BufferingStrategy<Self.Failure>) -> Publishers.Buffer<Self>
+}
+extension Publishers {
+  public enum PrefetchStrategy {
+    case keepFull
+    case byRequest
+    public static func == (a: Combine.Publishers.PrefetchStrategy, b: Combine.Publishers.PrefetchStrategy) -> Swift.Bool
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+  }
+  public enum BufferingStrategy<Failure> where Failure : Swift.Error {
+    case dropNewest
+    case dropOldest
+    case customError(() -> Failure)
+  }
+  public struct Buffer<Upstream> : Publisher where Upstream : Combine.Publisher {
+    public typealias Output = Upstream.Output
+    public typealias Failure = Upstream.Failure
+    public let upstream: Upstream
+    public let size: Int
+    public let prefetch: PrefetchStrategy
+    public let whenFull: BufferingStrategy<Failure>
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Failure == S.Failure, Upstream.Output == S.Input
+  }
+}
+extension Sequence {
+  public func publisher() -> Publishers.Sequence<Self, Never>
+}
+extension Publishers {
+  public struct Sequence<Elements, Failure> : Publisher where Elements : Swift.Sequence, Failure : Swift.Error {
+    public typealias Output = Elements.Element
+    public let sequence: Elements
+    public init(sequence: Elements)
+    public func receive<S>(subscriber: S) where Failure == S.Failure, S : Combine.Subscriber, Elements.Element == S.Input
+  }
+}
+extension Publishers.Sequence {
+  public func allSatisfy(_ predicate: (Output) -> Bool) -> Publishers.Once<Bool, Failure>
+  public func tryAllSatisfy(_ predicate: (Output) throws -> Bool) -> Publishers.Once<Bool, Swift.Error>
+  public func collect() -> Publishers.Once<[Output], Failure>
+  public func compactMap<T>(_ transform: (Output) -> T?) -> Publishers.Sequence<[T], Failure>
+  public func min(by areInIncreasingOrder: (Output, Output) -> Bool) -> Publishers.Optional<Output, Failure>
+  public func tryMin(by areInIncreasingOrder: (Output, Output) throws -> Bool) -> Publishers.Optional<Output, Swift.Error>
+  public func max(by areInIncreasingOrder: (Output, Output) -> Bool) -> Publishers.Optional<Output, Failure>
+  public func tryMax(by areInIncreasingOrder: (Output, Output) throws -> Bool) -> Publishers.Optional<Output, Swift.Error>
+  public func contains(where predicate: (Output) -> Bool) -> Publishers.Once<Bool, Failure>
+  public func tryContains(where predicate: (Output) throws -> Bool) -> Publishers.Once<Bool, Swift.Error>
+  public func drop(while predicate: (Elements.Element) -> Bool) -> Publishers.Sequence<DropWhileSequence<Elements>, Failure>
+  public func dropFirst(_ count: Int = 1) -> Publishers.Sequence<DropFirstSequence<Elements>, Failure>
+  public func first(where predicate: (Output) -> Bool) -> Publishers.Optional<Output, Failure>
+  public func tryFirst(where predicate: (Output) throws -> Bool) -> Publishers.Optional<Output, Swift.Error>
+  public func filter(_ isIncluded: (Output) -> Bool) -> Publishers.Sequence<[Output], Failure>
+  public func ignoreOutput() -> Publishers.Empty<Output, Failure>
+  public func map<T>(_ transform: (Elements.Element) -> T) -> Publishers.Sequence<[T], Failure>
+  public func prefix(_ maxLength: Int) -> Publishers.Sequence<PrefixSequence<Elements>, Failure>
+  public func prefix(while predicate: (Elements.Element) -> Bool) -> Publishers.Sequence<[Elements.Element], Failure>
+  public func reduce<T>(_ initialResult: T, _ nextPartialResult: @escaping (T, Output) -> T) -> Publishers.Once<T, Failure>
+  public func tryReduce<T>(_ initialResult: T, _ nextPartialResult: @escaping (T, Output) throws -> T) -> Publishers.Once<T, Swift.Error>
+  public func replaceNil<T>(with output: T) -> Publishers.Sequence<[Output], Failure> where Elements.Element == T?
+  public func scan<T>(_ initialResult: T, _ nextPartialResult: @escaping (T, Output) -> T) -> Publishers.Sequence<[T], Failure>
+  public func setFailureType<E>(to error: E.Type) -> Publishers.Sequence<Elements, E> where E : Swift.Error
+}
+extension Publishers.Sequence where Elements.Element : Swift.Equatable {
+  public func removeDuplicates() -> Publishers.Sequence<[Output], Failure>
+  public func contains(_ output: Elements.Element) -> Publishers.Once<Bool, Failure>
+}
+extension Publishers.Sequence where Elements.Element : Swift.Comparable {
+  public func min() -> Publishers.Optional<Elements.Element, Failure>
+  public func max() -> Publishers.Optional<Elements.Element, Failure>
+}
+extension Publishers.Sequence where Elements : Swift.Collection {
+  public func first() -> Publishers.Optional<Elements.Element, Failure>
+}
+extension Publishers.Sequence where Elements : Swift.Collection {
+  public func count() -> Publishers.Once<Int, Failure>
+}
+extension Publishers.Sequence where Elements : Swift.Collection {
+  public func output(at index: Elements.Index) -> Publishers.Optional<Output, Failure>
+  public func output(in range: Range<Elements.Index>) -> Publishers.Sequence<[Output], Failure>
+}
+extension Publishers.Sequence where Elements : Swift.BidirectionalCollection {
+  public func last() -> Publishers.Optional<Output, Failure>
+  public func last(where predicate: (Output) -> Bool) -> Publishers.Optional<Output, Failure>
+  public func tryLast(where predicate: (Output) throws -> Bool) -> Publishers.Optional<Output, Swift.Error>
+}
+extension Publishers.Sequence where Elements : Swift.RandomAccessCollection {
+  public func output(at index: Elements.Index) -> Publishers.Optional<Output, Failure>
+  public func output(in range: Range<Elements.Index>) -> Publishers.Sequence<[Output], Failure>
+}
+extension Publishers.Sequence where Elements : Swift.RandomAccessCollection {
+  public func count() -> Publishers.Optional<Int, Failure>
+}
+extension Publishers.Sequence where Elements : Swift.RangeReplaceableCollection {
+  public func prepend(_ elements: Output...) -> Publishers.Sequence<Elements, Failure>
+  public func prepend<S>(_ elements: S) -> Publishers.Sequence<Elements, Failure> where S : Swift.Sequence, Elements.Element == S.Element
+  public func prepend(_ publisher: Publishers.Sequence<Elements, Failure>) -> Publishers.Sequence<Elements, Failure>
+  public func append(_ elements: Output...) -> Publishers.Sequence<Elements, Failure>
+  public func append<S>(_ elements: S) -> Publishers.Sequence<Elements, Failure> where S : Swift.Sequence, Elements.Element == S.Element
+  public func append(_ publisher: Publishers.Sequence<Elements, Failure>) -> Publishers.Sequence<Elements, Failure>
+}
+extension Publishers.Sequence : Equatable where Elements : Swift.Equatable {
+  public static func == (lhs: Publishers.Sequence<Elements, Failure>, rhs: Publishers.Sequence<Elements, Failure>) -> Bool
+}
+extension Publisher {
+  public func zip<P>(_ other: P) -> Publishers.Zip<Self, P> where P : Combine.Publisher, Self.Failure == P.Failure
+  public func zip<P, Q>(_ publisher1: P, _ publisher2: Q) -> Publishers.Zip3<Self, P, Q> where P : Combine.Publisher, Q : Combine.Publisher, Self.Failure == P.Failure, P.Failure == Q.Failure
+  public func zip<P, Q, R>(_ publisher1: P, _ publisher2: Q, _ publisher3: R) -> Publishers.Zip4<Self, P, Q, R> where P : Combine.Publisher, Q : Combine.Publisher, R : Combine.Publisher, Self.Failure == P.Failure, P.Failure == Q.Failure, Q.Failure == R.Failure
+}
+extension Publishers {
+  public struct Zip<A, B> : Publisher where A : Combine.Publisher, B : Combine.Publisher, A.Failure == B.Failure {
+    public typealias Output = (A.Output, B.Output)
+    public typealias Failure = A.Failure
+    public let a: A
+    public let b: B
+    public init(_ a: A, _ b: B)
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, B.Failure == S.Failure, S.Input == (A.Output, B.Output)
+  }
+  public struct Zip3<A, B, C> : Publisher where A : Combine.Publisher, B : Combine.Publisher, C : Combine.Publisher, A.Failure == B.Failure, B.Failure == C.Failure {
+    public typealias Output = (A.Output, B.Output, C.Output)
+    public typealias Failure = A.Failure
+    public let a: A
+    public let b: B
+    public let c: C
+    public init(_ a: A, _ b: B, _ c: C)
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, C.Failure == S.Failure, S.Input == (A.Output, B.Output, C.Output)
+  }
+  public struct Zip4<A, B, C, D> : Publisher where A : Combine.Publisher, B : Combine.Publisher, C : Combine.Publisher, D : Combine.Publisher, A.Failure == B.Failure, B.Failure == C.Failure, C.Failure == D.Failure {
+    public typealias Output = (A.Output, B.Output, C.Output, D.Output)
+    public typealias Failure = A.Failure
+    public let a: A
+    public let b: B
+    public let c: C
+    public let d: D
+    public init(_ a: A, _ b: B, _ c: C, _ d: D)
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, D.Failure == S.Failure, S.Input == (A.Output, B.Output, C.Output, D.Output)
+  }
+}
+extension Publishers.Zip : Equatable where A : Swift.Equatable, B : Swift.Equatable {
+  public static func == (lhs: Publishers.Zip<A, B>, rhs: Publishers.Zip<A, B>) -> Bool
+}
+extension Publishers.Zip3 : Equatable where A : Swift.Equatable, B : Swift.Equatable, C : Swift.Equatable {
+  public static func == (lhs: Publishers.Zip3<A, B, C>, rhs: Publishers.Zip3<A, B, C>) -> Bool
+}
+extension Publishers.Zip4 : Equatable where A : Swift.Equatable, B : Swift.Equatable, C : Swift.Equatable, D : Swift.Equatable {
+  public static func == (lhs: Publishers.Zip4<A, B, C, D>, rhs: Publishers.Zip4<A, B, C, D>) -> Bool
+}
+extension Publisher {
+  public func output(at index: Int) -> Publishers.Output<Self>
+  public func output<R>(in range: R) -> Publishers.Output<Self> where R : Swift.RangeExpression, R.Bound == Swift.Int
+}
+extension Publishers {
+  public struct Output<Upstream> : Publisher where Upstream : Combine.Publisher {
+    public typealias Output = Upstream.Output
+    public typealias Failure = Upstream.Failure
+    public let upstream: Upstream
+    public let range: CountableRange<Int>
+    public init(upstream: Upstream, range: CountableRange<Int>)
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Failure == S.Failure, Upstream.Output == S.Input
+  }
+}
+extension Publishers.Output : Equatable where Upstream : Swift.Equatable {
+  public static func == (lhs: Publishers.Output<Upstream>, rhs: Publishers.Output<Upstream>) -> Bool
+}
+extension Publisher {
+  public func `catch`<P>(_ handler: @escaping (Failure) -> P) -> Publishers.Catch<Self, P> where P : Combine.Publisher, Self.Output == P.Output
+}
+extension Publishers {
+  public struct Catch<Upstream, NewPublisher> : Publisher where Upstream : Combine.Publisher, NewPublisher : Combine.Publisher, Upstream.Output == NewPublisher.Output {
+    public typealias Output = Upstream.Output
+    public typealias Failure = NewPublisher.Failure
+    public let upstream: Upstream
+    public let handler: (Upstream.Failure) -> NewPublisher
+    public init(upstream: Upstream, handler: @escaping (Upstream.Failure) -> NewPublisher)
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, NewPublisher.Failure == S.Failure, NewPublisher.Output == S.Input
+  }
+}
+extension Publisher {
+  public func flatMap<T, P>(maxPublishers: Subscribers.Demand = .unlimited, _ transform: @escaping (Output) -> P) -> Publishers.FlatMap<P, Self> where T == P.Output, P : Combine.Publisher, Self.Failure == P.Failure
+}
+extension Publishers {
+  public struct FlatMap<P, Upstream> : Publisher where P : Combine.Publisher, Upstream : Combine.Publisher, P.Failure == Upstream.Failure {
+    public typealias Output = P.Output
+    public typealias Failure = Upstream.Failure
+    public let upstream: Upstream
+    public let maxPublishers: Subscribers.Demand
+    public let transform: (Upstream.Output) -> P
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, P.Output == S.Input, Upstream.Failure == S.Failure
+  }
+}
+extension Publisher {
+  public func delay<S>(for interval: S.SchedulerTimeType.Stride, tolerance: S.SchedulerTimeType.Stride? = nil, scheduler: S, options: S.SchedulerOptions? = nil) -> Publishers.Delay<Self, S> where S : Combine.Scheduler
+}
+extension Publishers {
+  public struct Delay<Upstream, Context> : Publisher where Upstream : Combine.Publisher, Context : Combine.Scheduler {
+    public typealias Output = Upstream.Output
+    public typealias Failure = Upstream.Failure
+    public let upstream: Upstream
+    public let interval: Context.SchedulerTimeType.Stride
+    public let tolerance: Context.SchedulerTimeType.Stride
+    public let scheduler: Context
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Failure == S.Failure, Upstream.Output == S.Input
+  }
+}
+extension Publisher {
+  public func dropFirst(_ count: Int = 1) -> Publishers.Drop<Self>
+}
+extension Publishers {
+  public struct Drop<Upstream> : Publisher where Upstream : Combine.Publisher {
+    public typealias Output = Upstream.Output
+    public typealias Failure = Upstream.Failure
+    public let upstream: Upstream
+    public let count: Int
+    public init(upstream: Upstream, count: Int)
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Failure == S.Failure, Upstream.Output == S.Input
+  }
+}
+extension Publishers.Drop : Equatable where Upstream : Swift.Equatable {
+  public static func == (lhs: Publishers.Drop<Upstream>, rhs: Publishers.Drop<Upstream>) -> Bool
+}
+extension Publisher {
+  public func eraseToAnyPublisher() -> AnyPublisher<Output, Failure>
+}
+extension Subscriber {
+  public func eraseToAnySubscriber() -> AnySubscriber<Input, Failure>
+}
+extension Subject {
+  public func eraseToAnySubject() -> AnySubject<Output, Failure>
+}
+extension Publisher {
+  public func first() -> Publishers.First<Self>
+  public func first(where predicate: @escaping (Output) -> Bool) -> Publishers.FirstWhere<Self>
+  public func tryFirst(where predicate: @escaping (Output) throws -> Bool) -> Publishers.TryFirstWhere<Self>
+}
+extension Publishers {
+  public struct First<Upstream> : Publisher where Upstream : Combine.Publisher {
+    public typealias Output = Upstream.Output
+    public typealias Failure = Upstream.Failure
+    public let upstream: Upstream
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Failure == S.Failure, Upstream.Output == S.Input
+  }
+  public struct FirstWhere<Upstream> : Publisher where Upstream : Combine.Publisher {
+    public typealias Output = Upstream.Output
+    public typealias Failure = Upstream.Failure
+    public let upstream: Upstream
+    public let predicate: (Output) -> Bool
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Failure == S.Failure, Upstream.Output == S.Input
+  }
+  public struct TryFirstWhere<Upstream> : Publisher where Upstream : Combine.Publisher {
+    public typealias Output = Upstream.Output
+    public typealias Failure = Swift.Error
+    public let upstream: Upstream
+    public let predicate: (Output) throws -> Bool
+    public func receive<S>(subscriber: S) where S : Combine.Subscriber, Upstream.Output == S.Input, S.Failure == Combine.Publishers.TryFirstWhere<Upstream>.Failure
+  }
+}
+extension Publishers.First : Equatable where Upstream : Swift.Equatable {
+  public static func == (lhs: Publishers.First<Upstream>, rhs: Publishers.First<Upstream>) -> Bool
+}

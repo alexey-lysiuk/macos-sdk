@@ -1,0 +1,13 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 70EB9BAE-F003-34B4-AB45-F4BD8CE3BAAD' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/UniversalAccess.framework/Versions/A/Frameworks/UAEHCommon.framework/Versions/A/Libraries/libUADaemon.dylib'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _UADHandleEvent, _UADHandleMessage, _UADHandleXPCEvent, _UADInitialize, 
+                       _UADIsHandlerLoadedForEventType, _UADLoadHandlerForEventType, 
+                       _UADReadPreferences, _UADSafeToQuitForEventType, _UADSendMessageToLibraries, 
+                       _UADSetEnableCaptureFunctPtr, _UADSetSafeToQuitFunctPtr, _UADShouldStop, 
+                       _UADUpdateSettingsForEventType, _UADUserSessionDidChange ]
+...

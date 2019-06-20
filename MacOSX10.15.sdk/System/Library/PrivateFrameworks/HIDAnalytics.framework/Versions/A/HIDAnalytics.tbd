@@ -1,0 +1,14 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 9DCDE3B7-6CDC-3098-A55E-8BC30864E7FC' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/HIDAnalytics.framework/Versions/A/HIDAnalytics'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _HIDAnalyticsEventActivate, _HIDAnalyticsEventAddField, _HIDAnalyticsEventAddHistogramField, 
+                       _HIDAnalyticsEventCancel, _HIDAnalyticsEventCreate, _HIDAnalyticsEventSetIntegerValueForField, 
+                       _HIDAnalyticsHistogramEventCreate, _HIDAnalyticsHistogramEventSetIntegerValue, 
+                       _HIDAnalyticsVersionNumber, _HIDAnalyticsVersionString ]
+    objc-classes:    [ HIDAnalyticsEvent, HIDAnalyticsEventField, HIDAnalyticsHistogramEvent, 
+                       HIDAnalyticsHistogramEventField, HIDAnalyticsReporter ]
+...

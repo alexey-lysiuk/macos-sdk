@@ -1,0 +1,15 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: A15307BD-1670-3382-AA31-0C56965929D3', 'x86_64: A15307BD-1670-3382-AA31-0C56965929D3' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/SPFinder.framework/Versions/A/SPFinder'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _SPFinderStateChangedNotification, _kSPBeaconPayloadCacheNewRecordsDarwinNotification ]
+    objc-classes:    [ SPAdvertisement, SPAdvertisementCache, SPAdvertisementCacheSearchCriteria, 
+                       SPAdvertisementCacheSearchResult, SPBeaconAdvertisement, SPBeaconPayload, 
+                       SPBeaconPayloadCacheSearchCriteria, SPBeaconPayloadCacheSearchResult, 
+                       SPEstimatedLocation, SPFinderInterface, SPFinderStateInfo, 
+                       SPFinderStateManager, SPScheduler, SPSchedulerInformation, 
+                       SPSearchResultMarker ]
+...

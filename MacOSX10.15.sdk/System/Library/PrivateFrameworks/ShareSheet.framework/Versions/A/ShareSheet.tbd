@@ -1,0 +1,43 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: CD0AA7FA-09E5-3AD9-BFE4-C8C7348F2510' ]
+platform:        uikitformac
+install-name:    '/System/Library/PrivateFrameworks/ShareSheet.framework/Versions/A/ShareSheet'
+current-version: 1386.9.3
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _SFLocalizedString, _ShareSheetVersionNumber, _ShareSheetVersionString, 
+                       _UIActivityTypeAddToReadingList, _UIActivityTypeAirDrop, _UIActivityTypeAssignToContact, 
+                       _UIActivityTypeCloudSharing, _UIActivityTypeCopyToPasteboard, 
+                       _UIActivityTypeCreatePDF, _UIActivityTypeCreateReminder, _UIActivityTypeMail, 
+                       _UIActivityTypeMarkupAsPDF, _UIActivityTypeMessage, _UIActivityTypeOpenInIBooks, 
+                       _UIActivityTypePostToFacebook, _UIActivityTypePostToFlickr, 
+                       _UIActivityTypePostToTencentWeibo, _UIActivityTypePostToTwitter, 
+                       _UIActivityTypePostToVimeo, _UIActivityTypePostToWeibo, _UIActivityTypePrint, 
+                       _UIActivityTypeRemoteExtension, _UIActivityTypeRemoteOpenInApplication, 
+                       _UIActivityTypeRemoteOpenInApplicationUsingByCopyOpeningMethod, 
+                       _UIActivityTypeRemoteOpenInApplicationUsingInPlaceOpeningMethod, 
+                       _UIActivityTypeSaveToCameraRoll, _UIActivityTypeSaveToNotes, 
+                       _UIActivityTypeUserDefaults, _UIActivityTypeViewInAR, _UIActivityViewControllerSharingExpandedNotification, 
+                       __SUIBundleIDFromAuditToken, __ShareSheetBundle, __ShareSheetBundleIDFromAuditToken, 
+                       __SharingUIAuditTokenForCurrentProcess, __UIActivityOpenInApplicationTypeForActivityType, 
+                       __UIApplicationExtensionDiscoveryShouldExcludeiCloudDriveForActivityItemURLs, 
+                       __UIKitUserDefaults, __UINSExtensionItemUserInfoIsContentManagedKey, 
+                       __UISecureDecodeCGSizeWithKeyAndDefaultSize, __UISecureDecodeExtensionItemsWithKey, 
+                       __UISecureEncodeCGSizeWithKey, __UISecureStandardPropertyListClasses, 
+                       __UIShimSetIsContentManaged, __UIShimSetUnderbarIsContentManaged, 
+                       _share_sheet_log ]
+    objc-classes:    [ HalfCardPresentationController, ObjectManipulationViewController, 
+                       UIActivity, UIActivityActionGroupCell, UIActivityExtensionVendorContext, 
+                       UIActivityHelper, UIActivityItemCustomization, UIActivityItemProvider, 
+                       UIActivityItemSourceHelper, UIActivityViewController, UIAirDropNode, 
+                       UIDocumentInteractionController, UISDActivityItemData, UISDShareSheetSessionConfiguration, 
+                       UISUIActivityExtensionItemData, UISUIAirDropSecurityScopedResource, 
+                       UISUIOpenInByCopySecurityScopedResource, UISUISecurityContext, 
+                       UISUISecurityScopedResource, _UIActivityActionCellTitleLabel, 
+                       _UIActivityGroupViewFlowLayout, _UIActivityItemCustomization, 
+                       _UIActivityItemCustomizationCustom, _UIActivityItemCustomizationGroup, 
+                       _UIActivityItemCustomizationPicker, _UIActivityItemCustomizationSwitch, 
+                       _UIActivityPlaceholderItemProxy, _UIActivityResourceLoader, 
+                       _UIHostActivityProxy, _UIUserDefaultsActivityProxy ]
+...

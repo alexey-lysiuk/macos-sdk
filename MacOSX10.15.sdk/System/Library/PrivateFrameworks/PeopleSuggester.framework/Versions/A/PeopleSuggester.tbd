@@ -1,0 +1,23 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 9C24B185-9819-3F41-A439-7C686100B2D3', 'x86_64: 9C24B185-9819-3F41-A439-7C686100B2D3' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/PeopleSuggester.framework/Versions/A/PeopleSuggester'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _PeopleSuggesterVersionNumber, _PeopleSuggesterVersionString, 
+                       __PSAnalyticsEventName, __PSIntentForSelectedSuggestionWithContextExtensionUUID, 
+                       __PSShareSheetSuggestionBundleIDs, __PSSuggestionKey, _bundleIdPenalty, 
+                       _daysToPromoteRecentlyInstalledAppExtensions, _errRet, _fetchLimit, 
+                       _kForAutocomplete, _kForBackup, _kForGlobalContactRanker, 
+                       _kForGlobalNameRanker, _kForZkw, _minRuleConfidenceForSuggestion, 
+                       _regularizingContextOverlapConstraint, _resolve ]
+    objc-classes:    [ _PSAppUsageUtilities, _PSAttachment, _PSAutocompleteSuggestion, 
+                       _PSConstants, _PSContactResolver, _PSEnsembleModel, _PSFeedback, 
+                       _PSFeedbackAction, _PSHeuristics, _PSIMCoreUtils, _PSInteractionStoreUtils, 
+                       _PSKDNearestNeighbor, _PSKDNeighbors, _PSKDNode, _PSKDTree, 
+                       _PSKNNModel, _PSLogging, _PSMailUtils, _PSPhotoSuggestions, 
+                       _PSPhotoUtils, _PSPredictionContext, _PSProximityBooster, 
+                       _PSRecipient, _PSRuleMiningModel, _PSSuggester, _PSSuggesterConfiguration, 
+                       _PSSuggestion ]
+...

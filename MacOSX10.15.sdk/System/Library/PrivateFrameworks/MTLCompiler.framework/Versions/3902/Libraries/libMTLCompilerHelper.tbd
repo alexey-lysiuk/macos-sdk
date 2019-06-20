@@ -1,0 +1,11 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: B6E592A4-D7F4-3309-BD1C-9979C0E39D30', 'x86_64: B6E592A4-D7F4-3309-BD1C-9979C0E39D30' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/MTLCompiler.framework/Versions/3902/Libraries/libMTLCompilerHelper.dylib'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _createCompilerHelper, _deleteCompilerHelper ]
+    weak-def-symbols: [ __ZTI26MTLCompilerHelperInterface, __ZTI28MTLCompilerBuiltInFileReader, 
+                        __ZTS26MTLCompilerHelperInterface, __ZTS28MTLCompilerBuiltInFileReader ]
+...

@@ -1,0 +1,10 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: B4BC73FB-F237-3127-862D-079FD4F702FE', 'x86_64: B4BC73FB-F237-3127-862D-079FD4F702FE' ]
+platform:        zippered
+install-name:    '/usr/lib/libusrtcp.dylib'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _nw_protocol_sfotcp_identifier, _nw_protocol_tcp_identifier, 
+                       _tcp_next_mtu ]
+...

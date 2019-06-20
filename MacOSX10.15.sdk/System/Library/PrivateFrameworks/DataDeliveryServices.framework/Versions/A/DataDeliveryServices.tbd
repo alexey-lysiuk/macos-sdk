@@ -1,0 +1,9 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 12650A3D-AAA9-3ACC-BE72-3A7CB74A9C59' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/DataDeliveryServices.framework/Versions/A/DataDeliveryServices'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _DataDeliveryServicesVersionNumber, _DataDeliveryServicesVersionString ]
+...

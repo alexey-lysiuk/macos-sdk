@@ -1,0 +1,10 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 9F1D2758-FF4F-3D31-9986-FA4559E87F49', 'x86_64: 9F1D2758-FF4F-3D31-9986-FA4559E87F49' ]
+platform:        zippered
+install-name:    '/System/Library/CoreServices/Encodings/libVietnameseConverter.dylib'
+current-version: 76
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ ___CFStringEncodingGetVietnameseConverterDefinition ]
+...

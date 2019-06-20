@@ -1,0 +1,29 @@
+#ifndef _IOKIT_OSACTION_H
+#define _IOKIT_OSACTION_H
+
+#include <DriverKit/OSObject.iig>
+
+typedef void (^OSActionCancelHandler)(void);
+
+class NATIVE KERNEL OSAction : public OSObject
+{
+public:
+	static kern_return_t
+	Create(
+		OSObject      * target,
+		uint64_t        targetmsgid,
+		uint64_t        msgid,
+		size_t          referenceSize,
+		OSAction     ** action) LOCAL;
+
+	virtual void
+	free() override;
+
+	void *
+	GetReference() LOCALONLY;
+
+	kern_return_t
+	Cancel(OSActionCancelHandler handler) LOCALONLY;
+};
+
+#endif /* ! _IOKIT_OSACTION_H */

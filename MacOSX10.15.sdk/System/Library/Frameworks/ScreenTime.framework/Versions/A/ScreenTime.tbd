@@ -1,0 +1,7 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 5462377D-436C-3C26-872C-A0DB8D8EBECF' ]
+platform:        macosx
+install-name:    '/System/Library/Frameworks/ScreenTime.framework/Versions/A/ScreenTime'
+current-version: 259
+...

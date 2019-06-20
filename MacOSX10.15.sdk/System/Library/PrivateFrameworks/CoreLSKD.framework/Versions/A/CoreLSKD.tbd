@@ -1,0 +1,11 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 0103C593-879E-3A78-AE98-F6FB170A8D56' ]
+platform:        macosx
+flags:           [ not_app_extension_safe ]
+install-name:    '/System/Library/PrivateFrameworks/CoreLSKD.framework/CoreLSKD'
+current-version: 12.6
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _BBdyFX9JObVXUh8aGhB0aD3, _Mym0f1araacCU5xeSFjr ]
+...

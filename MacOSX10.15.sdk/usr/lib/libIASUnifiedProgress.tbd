@@ -1,0 +1,21 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 41BF5D74-3323-3694-910A-A91F7921A4F0' ]
+platform:        macosx
+install-name:    '/usr/lib/libIASUnifiedProgress.dylib'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _IASLog, _StartDebugLogging, _StopDebugLogging, _WriteDebugLog, 
+                       _kIASInstallPhaseConclusionDelayKey, _kIASInstallPhaseNameKey, 
+                       _kIASInstallPhasePercentageKey, _kIASUnifedProgressDelegateAnimateKey, 
+                       _kIASUnifiedProgressDelegateAbortNotificationName, _kIASUnifiedProgressDelegateAlternateStatusKey, 
+                       _kIASUnifiedProgressDelegateBatteryIsLowKey, _kIASUnifiedProgressDelegateDoneNotificationName, 
+                       _kIASUnifiedProgressDelegatePhaseNameKey, _kIASUnifiedProgressDelegateProcessIDKey, 
+                       _kIASUnifiedProgressDelegateProgessUpdatedNotificationName, 
+                       _kIASUnifiedProgressDelegateProgressKey, _kIASUnifiedProgressDelegateStatusKey, 
+                       _kIASUnifiedProgressDelegateStatusUpdatedNotificationName, 
+                       _kIASUnifiedProgressDelegateUUIDKey, _kIASUnifiedProgressManagerServiceName ]
+    objc-classes:    [ IASPPhase, IASPRegistryManager, IASUPCaller, IASUnifiedProgressClient, 
+                       IASUnifiedProgressConnection, IASUnifiedProgressManager ]
+    objc-ivars:      [ IASUnifiedProgressConnection._callers, IASUnifiedProgressConnection._connection ]
+...

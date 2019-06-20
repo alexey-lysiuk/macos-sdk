@@ -1,0 +1,35 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 19BF6084-5E8C-3D96-A06F-F03B27D9273E' ]
+platform:        macosx
+install-name:    '/System/Library/Frameworks/NotificationCenter.framework/Versions/A/NotificationCenter'
+current-version: 791
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _NCMaterialComputedStyle, _NCMaterialControlColor, _NCMaterialGetCustomAppearance, 
+                       _NCMaterialGetMediumLightAppearance, _NCMaterialMakeCardLayers, 
+                       _NCMaterialRegisterDelegate, _NCMaterialUnRegisterDelegate, 
+                       _NCMaterialUpdateMaterialStyle, _NCRemoveCocoaBindingsForObject, 
+                       _NCSetCocoaBinding, _NCViewLayoutAlignBottomWithPriority, 
+                       _NCViewLayoutAlignCenter, _NCViewLayoutAlignHorizontalCenter, 
+                       _NCViewLayoutAlignLeading, _NCViewLayoutAlignLeft, _NCViewLayoutAlignMinLeading, 
+                       _NCViewLayoutAlignMinTrailing, _NCViewLayoutAlignRight, _NCViewLayoutAlignTopWithPriority, 
+                       _NCViewLayoutAlignTrailingWithPriority, _NCViewLayoutAlignVerticalCenter, 
+                       _NCViewLayoutBelowWithPriority, _NCViewLayoutHeightWithPriority, 
+                       _NCViewLayoutMaxHeight, _NCViewLayoutMaxWidth, _NCViewLayoutMinHeight, 
+                       _NCViewLayoutMinWidth, _NCViewLayoutSubview, _NCViewLayoutSubviewWithInsets, 
+                       _NCViewLayoutSubviewWithInsetsAndSize, _NCViewLayoutTrailingWithPriority, 
+                       _NCViewLayoutWidthWithPriority, __NCWeatherDebugStringForConditions, 
+                       __NCWeatherImageForConditions, __NCWeatherImageSunrise, __NCWeatherImageSunset, 
+                       _kNCRemotePlugInExtensionInvalidatedNotification, _kNCRemotePlugInManagerNotificationExtension, 
+                       _kNCRemotePlugInManagerWidgetExtension ]
+    objc-classes:    [ NCLineView, NCMaterialLayer, NCNotificationExtensionContext, 
+                       NCNotificationExtensionProvider, NCRemoteNotificationPlugIn, 
+                       NCRemotePlugIn, NCRemotePlugInManager, NCRemoteViewHostViewController, 
+                       NCScrollView, NCScroller, NCTexturedView, NCVerticalListController, 
+                       NCWidgetController, NCWidgetFlippedView, NCWidgetHostViewController, 
+                       NCWidgetListView, NCWidgetListViewController, NCWidgetSearchView, 
+                       NCWidgetSearchViewController, _NCMachSendRight, _NCWidgetPreferences, 
+                       _NCWidgetPrefsItem ]
+    objc-ivars:      [ _NCMachSendRight._sendRight ]
+...

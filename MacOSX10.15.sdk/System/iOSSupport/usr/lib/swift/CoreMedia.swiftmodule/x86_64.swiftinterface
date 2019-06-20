@@ -1,0 +1,1661 @@
+// swift-interface-format-version: 1.0
+// swift-tools-version: Apple Swift version 5.1 (swiftlang-1100.8.32.26 clang-1100.0.18.2)
+// swift-module-flags: -target x86_64-apple-ios13.0-macabi -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftCoreMedia -swift-version 5 -O -enforce-exclusivity=unchecked -module-name CoreMedia
+@_exported import CoreMedia.CMAttachment
+@_exported import CoreMedia.CMBlockBuffer
+@_exported import CoreMedia.CMBufferQueue
+@_exported import CoreMedia.CMFormatDescription
+@_exported import CoreMedia.CMSampleBuffer
+@_exported import CoreMedia.CMSimpleQueue
+@_exported import CoreMedia.CMSync
+import CoreAudio
+@_exported import CoreMedia
+@_exported import CoreMedia
+@_exported import CoreMedia
+@_exported import CoreMedia
+@_exported import CoreMedia
+@_exported import CoreMedia
+import CoreVideo
+import Darwin
+import Foundation
+import Swift
+import _SwiftCoreMediaOverlayShims
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public protocol CMAttachmentBearerProtocol {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  var attachments: CMAttachmentBearerAttachments { get }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  func propagateAttachments<T>(to destination: T) where T : CoreMedia.CMAttachmentBearerProtocol
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public struct CMAttachmentBearerAttachments {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public enum Value {
+    case shouldNotPropagate(Any)
+    case shouldPropagate(Any)
+    public var value: Any {
+      get
+    }
+    public var mode: Mode {
+      get
+    }
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public enum Mode : CMAttachmentMode {
+    case shouldNotPropagate
+    case shouldPropagate
+    public typealias RawValue = CoreMedia.CMAttachmentMode
+    public init?(rawValue: CoreMedia.CMAttachmentMode)
+    public var rawValue: CoreMedia.CMAttachmentMode {
+      get
+    }
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public subscript(key: String) -> Value? {
+    get
+    set(newValue)
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func removeAll()
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var nonPropagated: [String : Any] {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var propagated: [String : Any] {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func merge(_ attachments: [String : Any], mode: Mode)
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension CMBlockBuffer : CMAttachmentBearerProtocol {
+  public var attachments: CMAttachmentBearerAttachments {
+    get
+    _modify
+  }
+  public func propagateAttachments<T>(to destination: T) where T : CoreMedia.CMAttachmentBearerProtocol
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension CMSampleBuffer : CMAttachmentBearerProtocol {
+  public var attachments: CMAttachmentBearerAttachments {
+    get
+    _modify
+  }
+  public func propagateAttachments<T>(to destination: T) where T : CoreMedia.CMAttachmentBearerProtocol
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension CVBuffer : CMAttachmentBearerProtocol {
+  public var attachments: CMAttachmentBearerAttachments {
+    get
+    _modify
+  }
+  public func propagateAttachments<T>(to destination: T) where T : CoreMedia.CMAttachmentBearerProtocol
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public protocol CMBlockBufferProtocol {
+  var owner: CMBlockBuffer { get }
+  var startIndex: Int { get }
+  var endIndex: Int { get }
+}
+@available(watchOS 6.0, *)
+extension CMBlockBuffer {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public struct Slice {
+  }
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension CMBlockBuffer.Slice : CMBlockBufferProtocol {
+  public var owner: CMBlockBuffer {
+    get
+  }
+  public var startIndex: Int {
+    get
+  }
+  public var endIndex: Int {
+    get
+  }
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension CMBlockBuffer : CMBlockBufferProtocol {
+  public var owner: CMBlockBuffer {
+    get
+  }
+  public var startIndex: Int {
+    get
+  }
+  public var endIndex: Int {
+    get
+  }
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension CMBlockBufferProtocol {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public subscript(bounds: ClosedRange<Int>) -> CMBlockBuffer.Slice {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public subscript(bounds: Range<Int>) -> CMBlockBuffer.Slice {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public subscript(bounds: PartialRangeUpTo<Int>) -> CMBlockBuffer.Slice {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public subscript(bounds: PartialRangeThrough<Int>) -> CMBlockBuffer.Slice {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public subscript(bounds: PartialRangeFrom<Int>) -> CMBlockBuffer.Slice {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public subscript(bounds: UnboundedRange) -> CMBlockBuffer.Slice {
+    get
+  }
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public protocol _CMBlockBufferInitTrampoline {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  init(referencing: CMBlockBuffer)
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension CMBlockBuffer {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public typealias CustomBlockAllocator = (Int) -> UnsafeMutableRawPointer?
+  public typealias CustomBlockDeallocator = (UnsafeMutableRawPointer, Int) -> Void
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension _CMBlockBufferInitTrampoline {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public init(capacity: Int = 0, flags: CMBlockBuffer.Flags = []) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public init(buffer: UnsafeMutableRawBufferPointer, allocator: CFAllocator? = kCFAllocatorDefault, flags: CMBlockBuffer.Flags = []) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public init(buffer: Slice<UnsafeMutableRawBufferPointer>, allocator: CFAllocator? = kCFAllocatorDefault, flags: CMBlockBuffer.Flags = []) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public init(length: Int, allocator: CFAllocator? = kCFAllocatorDefault, range: Range<Int>? = nil, flags: CMBlockBuffer.Flags = []) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public init(buffer: UnsafeMutableRawBufferPointer, deallocator: @escaping CMBlockBuffer.CustomBlockDeallocator, flags: CMBlockBuffer.Flags = []) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public init(buffer: Slice<UnsafeMutableRawBufferPointer>, deallocator: @escaping CMBlockBuffer.CustomBlockDeallocator, flags: CMBlockBuffer.Flags = []) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public init(length: Int, allocator: @escaping CMBlockBuffer.CustomBlockAllocator, deallocator: @escaping CMBlockBuffer.CustomBlockDeallocator, range: Range<Int>? = nil, flags: CMBlockBuffer.Flags = []) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public init<T>(bufferReference: T, flags: CMBlockBuffer.Flags = []) throws where T : CoreMedia.CMBlockBufferProtocol
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension CMBlockBuffer : _CMBlockBufferInitTrampoline {
+}
+@available(watchOS 6.0, *)
+extension CMBlockBuffer {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public struct Error {
+    public static var structureAllocationFailed: Foundation.NSError
+    public static var blockAllocationFailed: Foundation.NSError
+    public static var badCustomBlockSource: Foundation.NSError
+    public static var badOffsetParameter: Foundation.NSError
+    public static var badLengthParameter: Foundation.NSError
+    public static var badPointerParameter: Foundation.NSError
+    public static var emptyBlockBuffer: Foundation.NSError
+    public static var unallocatedBlock: Foundation.NSError
+    public static var insufficientSpace: Foundation.NSError
+  }
+}
+@available(watchOS 6.0, *)
+extension CMBlockBuffer {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public struct Flags : OptionSet {
+    public let rawValue: UInt32
+    public init(rawValue: UInt32)
+    public static let assureMemoryNow: CoreMedia.CMBlockBuffer.Flags
+    public static let alwaysCopyData: CoreMedia.CMBlockBuffer.Flags
+    public static let dontOptimizeDepth: CoreMedia.CMBlockBuffer.Flags
+    public static let permitEmptyReference: CoreMedia.CMBlockBuffer.Flags
+    public typealias Element = CoreMedia.CMBlockBuffer.Flags
+    public typealias ArrayLiteralElement = CoreMedia.CMBlockBuffer.Flags
+    public typealias RawValue = Swift.UInt32
+  }
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension CMBlockBufferProtocol {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func makeContiguous(allocator: CFAllocator? = kCFAllocatorDefault, flags: CMBlockBuffer.Flags = []) throws -> CMBlockBuffer
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func makeContiguous(allocator: @escaping CMBlockBuffer.CustomBlockAllocator, deallocator: @escaping CMBlockBuffer.CustomBlockDeallocator, flags: CMBlockBuffer.Flags = []) throws -> CMBlockBuffer
+}
+@available(watchOS 6.0, *)
+extension CMBlockBuffer {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func append(length: Int, allocator: CFAllocator? = kCFAllocatorDefault, range: Range<Int>? = nil, flags: CMBlockBuffer.Flags = []) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func append(buffer: UnsafeMutableRawBufferPointer, allocator: CFAllocator? = kCFAllocatorDefault, flags: CMBlockBuffer.Flags = []) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func append(buffer: Swift.Slice<UnsafeMutableRawBufferPointer>, allocator: CFAllocator? = kCFAllocatorDefault, flags: CMBlockBuffer.Flags = []) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func append(length: Int, allocator: @escaping CMBlockBuffer.CustomBlockAllocator, deallocator: @escaping CMBlockBuffer.CustomBlockDeallocator, range: Range<Int>? = nil, flags: CMBlockBuffer.Flags = []) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func append(buffer: UnsafeMutableRawBufferPointer, deallocator: @escaping CMBlockBuffer.CustomBlockDeallocator, flags: CMBlockBuffer.Flags = []) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func append(buffer: Swift.Slice<UnsafeMutableRawBufferPointer>, deallocator: @escaping CMBlockBuffer.CustomBlockDeallocator, flags: CMBlockBuffer.Flags = []) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func append<T>(bufferReference: T, flags: CMBlockBuffer.Flags = []) throws where T : CoreMedia.CMBlockBufferProtocol
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func assureBlockMemory() throws
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension CMBlockBufferProtocol {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func withContiguousStorage<R>(_ body: (UnsafeRawBufferPointer) throws -> R) throws -> R
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func dataBytes() throws -> Data
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func copyDataBytes(to destination: UnsafeMutableRawBufferPointer) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func replaceDataBytes(with sourceBytes: UnsafeRawBufferPointer) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func fillDataBytes(with fillByte: UInt8) throws
+}
+@available(watchOS 6.0, *)
+extension CMBlockBuffer {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func withUnsafeMutableBytes<R>(atOffset offset: Int = 0, _ body: (UnsafeMutableRawBufferPointer) throws -> R) throws -> R
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension CMBlockBufferProtocol {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var dataLength: Int {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var isContiguous: Bool {
+    get
+  }
+}
+@available(watchOS 6.0, *)
+extension CMBlockBuffer {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var isEmpty: Bool {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public class var typeID: CFTypeID {
+    get
+  }
+}
+@available(watchOS 6.0, *)
+extension CMBufferQueue {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public struct Handlers {
+    public var getDecodeTimeStamp: CMBufferGetTimeHandler? {
+      get
+      }
+    public var getPresentationTimeStamp: CMBufferGetTimeHandler? {
+      get
+      }
+    public var getDuration: CMBufferGetTimeHandler {
+      get
+      }
+    public var isDataReady: CMBufferGetBooleanHandler? {
+      get
+      }
+    public var compare: CMBufferCompareHandler? {
+      get
+      }
+    public var dataBecameReadyNotification: String? {
+      get
+      }
+    public var getSize: CMBufferGetSizeHandler? {
+      get
+      }
+    public struct Builder {
+      public var dataBecameReadyNotification: String?
+      mutating public func getDecodeTimeStamp(_ body: @escaping CMBufferGetTimeHandler)
+      mutating public func getPresentationTimeStamp(_ body: @escaping CMBufferGetTimeHandler)
+      mutating public func getDuration(_ body: @escaping CMBufferGetTimeHandler)
+      mutating public func isDataReady(_ body: @escaping CMBufferGetBooleanHandler)
+      mutating public func compare(_ body: @escaping CMBufferCompareHandler)
+      mutating public func getSize(_ body: @escaping CMBufferGetSizeHandler)
+    }
+    public init(withHandlers body: (inout Builder) -> Void)
+    public func withHandlers(_ body: (inout Builder) -> Void) -> Handlers
+    public static let unsortedSampleBuffers: Handlers
+    public static let outputPTSSortedSampleBuffers: Handlers
+  }
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public protocol _CMBufferQueueInitTrampoline {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  init(referencing: CMBufferQueue)
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension _CMBufferQueueInitTrampoline {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public init(capacity: CMItemCount, handlers: CMBufferQueue.Handlers) throws
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension CMBufferQueue : _CMBufferQueueInitTrampoline {
+}
+@available(watchOS 6.0, *)
+extension CMBufferQueue {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public struct Error {
+    public static var allocationFailed: Foundation.NSError
+    public static var requiredParameterMissing: Foundation.NSError
+    public static var invalidCMBufferCallbacksStruct: Foundation.NSError
+    public static var enqueueAfterEndOfData: Foundation.NSError
+    public static var queueIsFull: Foundation.NSError
+    public static var badTriggerDuration: Foundation.NSError
+    public static var cannotModifyQueueFromTriggerCallback: Foundation.NSError
+    public static var invalidTriggerCondition: Foundation.NSError
+    public static var invalidTriggerToken: Foundation.NSError
+    public static var invalidBuffer: Foundation.NSError
+  }
+}
+@available(watchOS 6.0, *)
+extension CMBufferQueue {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public typealias TriggerToken = CMBufferQueueTriggerToken
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public enum TriggerCondition {
+    case whenDurationBecomesLessThan(CMTime)
+    case whenDurationBecomesLessThanOrEqualTo(CMTime)
+    case whenDurationBecomesGreaterThan(CMTime)
+    case whenDurationBecomesGreaterThanOrEqualTo(CMTime)
+    case whenMinPresentationTimeStampChanges
+    case whenMaxPresentationTimeStampChanges
+    case whenDataBecomesReady
+    case whenEndOfDataReached
+    case whenReset
+    case whenBufferCountBecomesLessThan(CMItemCount)
+    case whenBufferCountBecomesGreaterThan(CMItemCount)
+  }
+}
+@available(watchOS 6.0, *)
+extension CMBufferQueue {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func enqueue(_ buffer: CMBuffer) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func dequeue() -> CMBuffer?
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func dequeueIfDataReady() -> CMBuffer?
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var head: CMBuffer? {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var isEmpty: Bool {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func markEndOfData() throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var containsEndOfData: Bool {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var isAtEndOfData: Bool {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func reset() throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func reset(_ body: (CMBuffer) throws -> ()) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var bufferCount: CMItemCount {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var duration: CMTime {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var minDecodeTimeStamp: CMTime {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var firstDecodeTimeStamp: CMTime {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var minPresentationTimeStamp: CMTime {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var firstPresentationTimeStamp: CMTime {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var maxPresentationTimeStamp: CMTime {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var endPresentationTimeStamp: CMTime {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var totalSize: Int {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func installTrigger(condition: TriggerCondition, _ body: CMBufferQueueTriggerHandler? = nil) throws -> TriggerToken
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func removeTrigger(_ triggerToken: TriggerToken) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func testTrigger(_ triggerToken: CMBufferQueue.TriggerToken) -> Bool
+}
+@available(watchOS 6.0, *)
+extension CMBufferQueue {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public struct Buffers : Sequence {
+    public typealias Element = CMBuffer
+    public struct Iterator : IteratorProtocol {
+      mutating public func next() -> CMBuffer?
+      public typealias Element = AnyObject
+    }
+    public func makeIterator() -> CMBufferQueue.Buffers.Iterator
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var buffers: Buffers {
+    get
+  }
+}
+@available(watchOS 6.0, *)
+extension CMBufferQueue {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func setValidationHandler(_ body: @escaping (CMBufferQueue, CMBuffer) throws -> Void)
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public class var typeID: CFTypeID {
+    get
+  }
+}
+@available(watchOS 6.0, *)
+extension CMFormatDescription {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public struct Extensions {
+    @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+    public struct Key : CMObjectiveCBridgeableWithRawValue {
+      public typealias RawValue = CFString
+      public typealias _ObjectiveCType = CFString
+      public var rawValue: CFString
+      public init(rawValue: CFString)
+      public static var originalCompressionSettings: CoreMedia.CMFormatDescription.Extensions.Key
+      public static var sampleDescriptionExtensionAtoms: CoreMedia.CMFormatDescription.Extensions.Key
+      public static var verbatimSampleDescription: CoreMedia.CMFormatDescription.Extensions.Key
+      public static var verbatimISOSampleEntry: CoreMedia.CMFormatDescription.Extensions.Key
+      public static var formatName: CoreMedia.CMFormatDescription.Extensions.Key
+      public static var depth: CoreMedia.CMFormatDescription.Extensions.Key
+      public static var cleanAperture: CoreMedia.CMFormatDescription.Extensions.Key
+      public static var fieldCount: CoreMedia.CMFormatDescription.Extensions.Key
+      public static var fieldDetail: CoreMedia.CMFormatDescription.Extensions.Key
+      public static var pixelAspectRatio: CoreMedia.CMFormatDescription.Extensions.Key
+      public static var colorPrimaries: CoreMedia.CMFormatDescription.Extensions.Key
+      public static var transferFunction: CoreMedia.CMFormatDescription.Extensions.Key
+      public static var gammaLevel: CoreMedia.CMFormatDescription.Extensions.Key
+      public static var yCbCrMatrix: CoreMedia.CMFormatDescription.Extensions.Key
+      public static var fullRangeVideo: CoreMedia.CMFormatDescription.Extensions.Key
+      public static var iccProfile: CoreMedia.CMFormatDescription.Extensions.Key
+      public static var bytesPerRow: CoreMedia.CMFormatDescription.Extensions.Key
+      public static var chromaLocationTopField: CoreMedia.CMFormatDescription.Extensions.Key
+      public static var chromaLocationBottomField: CoreMedia.CMFormatDescription.Extensions.Key
+      public static var conformsToMPEG2VideoProfile: CoreMedia.CMFormatDescription.Extensions.Key
+      public static var temporalQuality: CoreMedia.CMFormatDescription.Extensions.Key
+      public static var spatialQuality: CoreMedia.CMFormatDescription.Extensions.Key
+      public static var version: CoreMedia.CMFormatDescription.Extensions.Key
+      public static var revisionLevel: CoreMedia.CMFormatDescription.Extensions.Key
+      public static var vendor: CoreMedia.CMFormatDescription.Extensions.Key
+      public static var masteringDisplayColorVolume: CoreMedia.CMFormatDescription.Extensions.Key
+      public static var contentLightLevelInfo: CoreMedia.CMFormatDescription.Extensions.Key
+      public static var alternativeTransferCharacteristics: CoreMedia.CMFormatDescription.Extensions.Key
+      public static var auxiliaryTypeInfo: CoreMedia.CMFormatDescription.Extensions.Key
+      public static var alphaChannelMode: CoreMedia.CMFormatDescription.Extensions.Key
+      public static var containsAlphaChannel: CoreMedia.CMFormatDescription.Extensions.Key
+      public static var displayFlags: CoreMedia.CMFormatDescription.Extensions.Key
+      public static var backgroundColor: CoreMedia.CMFormatDescription.Extensions.Key
+      public static var defaultTextBox: CoreMedia.CMFormatDescription.Extensions.Key
+      public static var defaultStyle: CoreMedia.CMFormatDescription.Extensions.Key
+      public static var horizontalJustification: CoreMedia.CMFormatDescription.Extensions.Key
+      public static var verticalJustification: CoreMedia.CMFormatDescription.Extensions.Key
+      public static var fontTable: CoreMedia.CMFormatDescription.Extensions.Key
+      public static var textJustification: CoreMedia.CMFormatDescription.Extensions.Key
+      public static var defaultFontName: CoreMedia.CMFormatDescription.Extensions.Key
+      public static var sourceReferenceName: CoreMedia.CMFormatDescription.Extensions.Key
+      public static var metadataKeyTable: CoreMedia.CMFormatDescription.Extensions.Key
+    }
+    public init()
+    public init(base: [CFString : CFPropertyList]?)
+    public subscript(key: Key) -> CFPropertyList? {
+      get
+      set
+    }
+    public subscript(key: CFString) -> CFPropertyList? {
+      get
+      set
+    }
+  }
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension CMFormatDescription.Extensions : Collection {
+  public struct Index {
+  }
+  public var startIndex: Index {
+    get
+  }
+  public var endIndex: Index {
+    get
+  }
+  public subscript(position: Index) -> (key: CFString, value: CFPropertyList) {
+    get
+  }
+  public func index(after i: Index) -> Index
+  public typealias Element = (key: CoreFoundation.CFString, value: CoreFoundation.CFPropertyList)
+  public typealias Iterator = Swift.IndexingIterator<CoreMedia.CMFormatDescription.Extensions>
+  public typealias SubSequence = Swift.Slice<CoreMedia.CMFormatDescription.Extensions>
+  public typealias Indices = Swift.DefaultIndices<CoreMedia.CMFormatDescription.Extensions>
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension CMFormatDescription.Extensions.Index : Equatable {
+  public static func == (lhs: CMFormatDescription.Extensions.Index, rhs: CMFormatDescription.Extensions.Index) -> Bool
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension CMFormatDescription.Extensions.Index : Comparable {
+  public static func < (lhs: CMFormatDescription.Extensions.Index, rhs: CMFormatDescription.Extensions.Index) -> Bool
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension CMFormatDescription.Extensions.Index : Hashable {
+  public func hash(into hasher: inout Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension CMFormatDescription.Extensions : Equatable {
+  public static func == (lhs: CMFormatDescription.Extensions, rhs: CMFormatDescription.Extensions) -> Bool
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public protocol _CMFormatDescriptionInitTrampoline {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  init(referencing: CMFormatDescription)
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension _CMFormatDescriptionInitTrampoline {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public init(mediaType: CMFormatDescription.MediaType, mediaSubType: CMFormatDescription.MediaSubType, extensions: CMFormatDescription.Extensions? = nil) throws
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension _CMFormatDescriptionInitTrampoline {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public init(audioStreamBasicDescription: AudioStreamBasicDescription, layoutSize: Int, layout: UnsafePointer<AudioChannelLayout>?, magicCookie: Data?, extensions: CMFormatDescription.Extensions? = nil) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public init(audioFormatDescriptionArray: [CMAudioFormatDescription]) throws
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension _CMFormatDescriptionInitTrampoline {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public init(videoCodecType: CMFormatDescription.MediaSubType, width: Int, height: Int, extensions: CMFormatDescription.Extensions? = nil) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public init(imageBuffer: CVImageBuffer) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public init(h264ParameterSets: [Data], nalUnitHeaderLength: Int = 4) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public init(hevcParameterSets: [Data], nalUnitHeaderLength: Int = 4, extensions: CMFormatDescription.Extensions? = nil) throws
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension _CMFormatDescriptionInitTrampoline {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public init(muxedStreamType: CMFormatDescription.MediaSubType, extensions: CMFormatDescription.Extensions? = nil) throws
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension _CMFormatDescriptionInitTrampoline {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public init(timeCodeFormatType: CMFormatDescription.MediaSubType, frameDuration: CMTime, frameQuanta: Int, flags: CMTimeCodeFormatDescription.TimeCode.Flag, extensions: CMFormatDescription.Extensions? = nil) throws
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public protocol _CMMetadataFormatDescriptionInitTrampoline {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  init(allocator: CFAllocator?, metadataType: CMMetadataFormatType, keys: CFArray?, errorOut: UnsafeMutablePointer<OSStatus>)
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  init(allocator: CFAllocator?, metadataType: CMMetadataFormatType, metadataSpecifications: CFArray, errorOut: UnsafeMutablePointer<OSStatus>)
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  init(allocator: CFAllocator?, sourceDescription: CMMetadataFormatDescription, metadataSpecifications: CFArray, errorOut: UnsafeMutablePointer<OSStatus>)
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  init(allocator: CFAllocator?, sourceDescription: CMMetadataFormatDescription, otherSourceDescription: CMMetadataFormatDescription, errorOut: UnsafeMutablePointer<OSStatus>)
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension _CMFormatDescriptionInitTrampoline {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public init(metadataFormatType: CMFormatDescription.MediaSubType) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public init(boxedMetadataKeys: [[String : CFPropertyList]]) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public init(boxedMetadataSpecifications: [[String : CFPropertyList]]) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public init(sourceMetadata: CMMetadataFormatDescription, specifications: [[String : CFPropertyList]]) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public init(sourceMetadata: CMMetadataFormatDescription, otherSourceDescription: CMMetadataFormatDescription) throws
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension CMFormatDescription : _CMFormatDescriptionInitTrampoline {
+}
+@available(watchOS 6.0, *)
+extension CMFormatDescription {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public struct Error {
+    public static var invalidParameter: Foundation.NSError
+    public static var allocationFailed: Foundation.NSError
+    public static var valueNotAvailable: Foundation.NSError
+  }
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public protocol CMFormatDescriptionFourCCConvertible : CoreMedia.CMObjectiveCBridgeableWithRawValue, Swift.CustomStringConvertible where Self.RawValue == Darwin.FourCharCode, Self._ObjectiveCType == Foundation.NSNumber {
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension CMFormatDescriptionFourCCConvertible {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var description: String {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public init(string: String)
+}
+@available(watchOS 6.0, *)
+extension CMFormatDescription {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public struct MediaType : CMFormatDescriptionFourCCConvertible {
+    public var rawValue: CMMediaType
+    @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+    public init(rawValue: CMMediaType)
+    public static var video: CoreMedia.CMFormatDescription.MediaType
+    public static var audio: CoreMedia.CMFormatDescription.MediaType
+    public static var muxed: CoreMedia.CMFormatDescription.MediaType
+    public static var text: CoreMedia.CMFormatDescription.MediaType
+    public static var closedCaption: CoreMedia.CMFormatDescription.MediaType
+    public static var subtitle: CoreMedia.CMFormatDescription.MediaType
+    public static var timeCode: CoreMedia.CMFormatDescription.MediaType
+    public static var metadata: CoreMedia.CMFormatDescription.MediaType
+    public typealias RawValue = CoreMedia.CMMediaType
+    public typealias _ObjectiveCType = Foundation.NSNumber
+  }
+}
+@available(watchOS 6.0, *)
+extension CMFormatDescription {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public struct MediaSubType : CMFormatDescriptionFourCCConvertible {
+    public var rawValue: FourCharCode
+    @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+    public init(rawValue: FourCharCode)
+    public static var linearPCM: CoreMedia.CMFormatDescription.MediaSubType
+    public static var ac3: CoreMedia.CMFormatDescription.MediaSubType
+    public static var iec60958AC3: CoreMedia.CMFormatDescription.MediaSubType
+    public static var appleIMA4: CoreMedia.CMFormatDescription.MediaSubType
+    public static var mpeg4AAC: CoreMedia.CMFormatDescription.MediaSubType
+    public static var mpeg4CELP: CoreMedia.CMFormatDescription.MediaSubType
+    public static var mpeg4HVXC: CoreMedia.CMFormatDescription.MediaSubType
+    public static var mpeg4TwinVQ: CoreMedia.CMFormatDescription.MediaSubType
+    public static var mace3: CoreMedia.CMFormatDescription.MediaSubType
+    public static var mace6: CoreMedia.CMFormatDescription.MediaSubType
+    public static var uLaw: CoreMedia.CMFormatDescription.MediaSubType
+    public static var aLaw: CoreMedia.CMFormatDescription.MediaSubType
+    public static var qDesign: CoreMedia.CMFormatDescription.MediaSubType
+    public static var qDesign2: CoreMedia.CMFormatDescription.MediaSubType
+    public static var qualcomm: CoreMedia.CMFormatDescription.MediaSubType
+    public static var mpegLayer1: CoreMedia.CMFormatDescription.MediaSubType
+    public static var mpegLayer2: CoreMedia.CMFormatDescription.MediaSubType
+    public static var mpegLayer3: CoreMedia.CMFormatDescription.MediaSubType
+    public static var timeCode: CoreMedia.CMFormatDescription.MediaSubType
+    public static var midiStream: CoreMedia.CMFormatDescription.MediaSubType
+    public static var parameterValueStream: CoreMedia.CMFormatDescription.MediaSubType
+    public static var appleLossless: CoreMedia.CMFormatDescription.MediaSubType
+    public static var mpeg4AAC_HE: CoreMedia.CMFormatDescription.MediaSubType
+    public static var mpeg4AAC_LD: CoreMedia.CMFormatDescription.MediaSubType
+    public static var mpeg4AAC_ELD: CoreMedia.CMFormatDescription.MediaSubType
+    public static var mpeg4AAC_ELD_SBR: CoreMedia.CMFormatDescription.MediaSubType
+    public static var mpeg4AAC_ELD_V2: CoreMedia.CMFormatDescription.MediaSubType
+    public static var mpeg4AAC_HE_V2: CoreMedia.CMFormatDescription.MediaSubType
+    public static var mpeg4AAC_Spatial: CoreMedia.CMFormatDescription.MediaSubType
+    public static var mpegD_USAC: CoreMedia.CMFormatDescription.MediaSubType
+    public static var amr: CoreMedia.CMFormatDescription.MediaSubType
+    public static var amr_WB: CoreMedia.CMFormatDescription.MediaSubType
+    public static var audible: CoreMedia.CMFormatDescription.MediaSubType
+    public static var iLBC: CoreMedia.CMFormatDescription.MediaSubType
+    public static var dviIntelIMA: CoreMedia.CMFormatDescription.MediaSubType
+    public static var microsoftGSM: CoreMedia.CMFormatDescription.MediaSubType
+    public static var aes3: CoreMedia.CMFormatDescription.MediaSubType
+    public static var enhancedAC3: CoreMedia.CMFormatDescription.MediaSubType
+    public static var flac: CoreMedia.CMFormatDescription.MediaSubType
+    public static var opus: CoreMedia.CMFormatDescription.MediaSubType
+    public static var aacLCProtected: CoreMedia.CMFormatDescription.MediaSubType
+    public static var aacAudibleProtected: CoreMedia.CMFormatDescription.MediaSubType
+    public static var pixelFormat_32ARGB: CoreMedia.CMFormatDescription.MediaSubType
+    public static var pixelFormat_32BGRA: CoreMedia.CMFormatDescription.MediaSubType
+    public static var pixelFormat_24RGB: CoreMedia.CMFormatDescription.MediaSubType
+    public static var pixelFormat_16BE555: CoreMedia.CMFormatDescription.MediaSubType
+    public static var pixelFormat_16BE565: CoreMedia.CMFormatDescription.MediaSubType
+    public static var pixelFormat_16LE555: CoreMedia.CMFormatDescription.MediaSubType
+    public static var pixelFormat_16LE565: CoreMedia.CMFormatDescription.MediaSubType
+    public static var pixelFormat_16LE5551: CoreMedia.CMFormatDescription.MediaSubType
+    public static var pixelFormat_422YpCbCr8: CoreMedia.CMFormatDescription.MediaSubType
+    public static var pixelFormat_422YpCbCr8_yuvs: CoreMedia.CMFormatDescription.MediaSubType
+    public static var pixelFormat_444YpCbCr8: CoreMedia.CMFormatDescription.MediaSubType
+    public static var pixelFormat_4444YpCbCrA8: CoreMedia.CMFormatDescription.MediaSubType
+    public static var pixelFormat_422YpCbCr16: CoreMedia.CMFormatDescription.MediaSubType
+    public static var pixelFormat_422YpCbCr10: CoreMedia.CMFormatDescription.MediaSubType
+    public static var pixelFormat_444YpCbCr10: CoreMedia.CMFormatDescription.MediaSubType
+    public static var pixelFormat_8IndexedGray_WhiteIsZero: CoreMedia.CMFormatDescription.MediaSubType
+    public static var animation: CoreMedia.CMFormatDescription.MediaSubType
+    public static var cinepak: CoreMedia.CMFormatDescription.MediaSubType
+    public static var jpeg: CoreMedia.CMFormatDescription.MediaSubType
+    public static var jpeg_OpenDML: CoreMedia.CMFormatDescription.MediaSubType
+    public static var sorensonVideo: CoreMedia.CMFormatDescription.MediaSubType
+    public static var sorensonVideo3: CoreMedia.CMFormatDescription.MediaSubType
+    public static var h263: CoreMedia.CMFormatDescription.MediaSubType
+    public static var h264: CoreMedia.CMFormatDescription.MediaSubType
+    public static var hevc: CoreMedia.CMFormatDescription.MediaSubType
+    public static var hevcWithAlpha: CoreMedia.CMFormatDescription.MediaSubType
+    public static var mpeg4Video: CoreMedia.CMFormatDescription.MediaSubType
+    public static var mpeg2Video: CoreMedia.CMFormatDescription.MediaSubType
+    public static var mpeg1Video: CoreMedia.CMFormatDescription.MediaSubType
+    public static var dvcNTSC: CoreMedia.CMFormatDescription.MediaSubType
+    public static var dvcPAL: CoreMedia.CMFormatDescription.MediaSubType
+    public static var dvcProPAL: CoreMedia.CMFormatDescription.MediaSubType
+    public static var dvcPro50NTSC: CoreMedia.CMFormatDescription.MediaSubType
+    public static var dvcPro50PAL: CoreMedia.CMFormatDescription.MediaSubType
+    public static var dvcPROHD720p60: CoreMedia.CMFormatDescription.MediaSubType
+    public static var dvcPROHD720p50: CoreMedia.CMFormatDescription.MediaSubType
+    public static var dvcPROHD1080i60: CoreMedia.CMFormatDescription.MediaSubType
+    public static var dvcPROHD1080i50: CoreMedia.CMFormatDescription.MediaSubType
+    public static var dvcPROHD1080p30: CoreMedia.CMFormatDescription.MediaSubType
+    public static var dvcPROHD1080p25: CoreMedia.CMFormatDescription.MediaSubType
+    public static var proRes4444XQ: CoreMedia.CMFormatDescription.MediaSubType
+    public static var proRes4444: CoreMedia.CMFormatDescription.MediaSubType
+    public static var proRes422HQ: CoreMedia.CMFormatDescription.MediaSubType
+    public static var proRes422: CoreMedia.CMFormatDescription.MediaSubType
+    public static var proRes422LT: CoreMedia.CMFormatDescription.MediaSubType
+    public static var proRes422Proxy: CoreMedia.CMFormatDescription.MediaSubType
+    public static var proResRAW: CoreMedia.CMFormatDescription.MediaSubType
+    public static var proResRAWHQ: CoreMedia.CMFormatDescription.MediaSubType
+    public static var mpeg1System: CoreMedia.CMFormatDescription.MediaSubType
+    public static var mpeg2Transport: CoreMedia.CMFormatDescription.MediaSubType
+    public static var mpeg2Program: CoreMedia.CMFormatDescription.MediaSubType
+    public static var dv: CoreMedia.CMFormatDescription.MediaSubType
+    public static var cea608: CoreMedia.CMFormatDescription.MediaSubType
+    public static var cea708: CoreMedia.CMFormatDescription.MediaSubType
+    public static var atsc: CoreMedia.CMFormatDescription.MediaSubType
+    public static var qt: CoreMedia.CMFormatDescription.MediaSubType
+    public static var mobile3GPP: CoreMedia.CMFormatDescription.MediaSubType
+    public static var webVTT: CoreMedia.CMFormatDescription.MediaSubType
+    public static var timeCode32: CoreMedia.CMFormatDescription.MediaSubType
+    public static var timeCode64: CoreMedia.CMFormatDescription.MediaSubType
+    public static var counter32: CoreMedia.CMFormatDescription.MediaSubType
+    public static var counter64: CoreMedia.CMFormatDescription.MediaSubType
+    public static var icy: CoreMedia.CMFormatDescription.MediaSubType
+    public static var id3: CoreMedia.CMFormatDescription.MediaSubType
+    public static var boxed: CoreMedia.CMFormatDescription.MediaSubType
+    public static var emsg: CoreMedia.CMFormatDescription.MediaSubType
+    public typealias RawValue = Darwin.FourCharCode
+    public typealias _ObjectiveCType = Foundation.NSNumber
+  }
+}
+@available(watchOS 6.0, *)
+extension CMFormatDescription {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public static var typeID: CFTypeID {
+    get
+  }
+}
+@available(watchOS 6.0, *)
+extension CMFormatDescription {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func equalTo(_ otherFormatDescription: CMFormatDescription, extensionKeysToIgnore: [Extensions.Key] = [], sampleDescriptionExtensionAtomKeysToIgnore: [String] = []) -> Bool
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var mediaType: MediaType {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var mediaSubType: MediaSubType {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var extensions: Extensions {
+    get
+  }
+}
+@available(watchOS 6.0, *)
+extension CMFormatDescription {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public static func == (lhs: CMFormatDescription, rhs: CMFormatDescription) -> Bool
+}
+@available(watchOS 6.0, *)
+extension CMFormatDescription {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var audioStreamBasicDescription: AudioStreamBasicDescription? {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func withMagicCookie<R>(_ body: (UnsafeRawBufferPointer?) throws -> R) rethrows -> R
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var magicCookie: Data? {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func withAudioChannelLayout<R>(_ body: (UnsafeRawBufferPointer?) throws -> R) rethrows -> R
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var audioFormatList: [AudioFormatListItem] {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var richestDecodableFormat: AudioFormatListItem? {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var mostCompatibleFormat: AudioFormatListItem? {
+    get
+  }
+}
+@available(watchOS 6.0, *)
+extension CMFormatDescription {
+  public struct EqualityMask : OptionSet {
+    public let rawValue: CMAudioFormatDescriptionMask
+    public init(rawValue: CMAudioFormatDescriptionMask)
+    public static let streamBasicDescription: CoreMedia.CMFormatDescription.EqualityMask
+    public static let magicCookie: CoreMedia.CMFormatDescription.EqualityMask
+    public static let channelLayout: CoreMedia.CMFormatDescription.EqualityMask
+    public static let extensions: CoreMedia.CMFormatDescription.EqualityMask
+    public static let all: CoreMedia.CMFormatDescription.EqualityMask
+    public typealias Element = CoreMedia.CMFormatDescription.EqualityMask
+    public typealias ArrayLiteralElement = CoreMedia.CMFormatDescription.EqualityMask
+    public typealias RawValue = CoreMedia.CMAudioFormatDescriptionMask
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func equalTo(_ otherFormatDescription: CMAudioFormatDescription, equalityMask: EqualityMask = .all) -> (Bool, equalityMask: EqualityMask)
+}
+@available(watchOS 6.0, *)
+extension CMFormatDescription {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public struct ParameterSetCollection : RandomAccessCollection {
+    public typealias Element = Data
+    public typealias Index = Int
+    public var startIndex: Int {
+      get
+    }
+    public var endIndex: Int {
+      get
+    }
+    public subscript(position: Int) -> Data {
+      get
+    }
+    public typealias SubSequence = Swift.Slice<CoreMedia.CMFormatDescription.ParameterSetCollection>
+    public typealias Indices = Swift.Range<CoreMedia.CMFormatDescription.ParameterSetCollection.Index>
+    public typealias Iterator = Swift.IndexingIterator<CoreMedia.CMFormatDescription.ParameterSetCollection>
+  }
+}
+@available(watchOS 6.0, *)
+extension CMFormatDescription {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var nalUnitHeaderLength: Int? {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func parameterSets() -> ParameterSetCollection
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var dimensions: CMVideoDimensions {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func presentationDimensions(usePixelAspectRatio: Bool = true, useCleanAperture: Bool = true) -> CGSize
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func cleanAperture(originIsAtTopLeft: Bool) -> CGRect
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public static var extensionKeysCommonWithImageBuffers: [Extensions.Key] {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func matchesImageBuffer(_ imageBuffer: CVImageBuffer) -> Bool
+}
+@available(watchOS 6.0, *)
+extension CMFormatDescription {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func displayFlags() throws -> CMTextDisplayFlags
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func justification() throws -> (horizontal: CMTextJustificationValue, vertical: CMTextJustificationValue)
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func defaultTextBox(originIsAtTopLeft: Bool, heightOfTextTrack: CGFloat) throws -> CGRect
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func defaultStyle() throws -> (localFontID: UInt16, bold: Bool, italic: Bool, underline: Bool, fontSize: CGFloat, colorComponents: [CGFloat])
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func fontName(localFontID: Int) throws -> String
+}
+@available(watchOS 6.0, *)
+extension CMFormatDescription {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public struct TimeCode {
+    @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+    public struct Flag : OptionSet {
+      public let rawValue: UInt32
+      public init(rawValue: UInt32)
+      public static let dropFrame: CoreMedia.CMFormatDescription.TimeCode.Flag
+      public static let twentyFourHourMax: CoreMedia.CMFormatDescription.TimeCode.Flag
+      public static let negTimesOK: CoreMedia.CMFormatDescription.TimeCode.Flag
+      public typealias Element = CoreMedia.CMFormatDescription.TimeCode.Flag
+      public typealias ArrayLiteralElement = CoreMedia.CMFormatDescription.TimeCode.Flag
+      public typealias RawValue = Swift.UInt32
+    }
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var frameDuration: CMTime {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var frameQuanta: UInt32 {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var timeCodeFlags: TimeCode.Flag {
+    get
+  }
+}
+@available(watchOS 6.0, *)
+extension CMFormatDescription {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func keyWithLocalID(_ localKeyID: OSType) -> [String : CFPropertyList]?
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var identifiers: [String] {
+    get
+  }
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public protocol _CMSampleBufferInitTrampoline {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  init(referencing: CMSampleBuffer)
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension _CMSampleBufferInitTrampoline {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public init(dataBuffer: CMBlockBuffer?, formatDescription: CMFormatDescription?, numSamples: CMItemCount, sampleTimings: [CMSampleTimingInfo], sampleSizes: [Int]) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public init(dataBuffer: CMBlockBuffer?, dataReady: Bool = false, formatDescription: CMFormatDescription?, numSamples: CMItemCount, sampleTimings: [CMSampleTimingInfo], sampleSizes: [Int], makeDataReadyHandler: @escaping CMSampleBufferMakeDataReadyHandler) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public init(dataBuffer: CMBlockBuffer?, formatDescription: CMFormatDescription, numSamples: CMItemCount, presentationTimeStamp: CMTime, packetDescriptions: [AudioStreamPacketDescription]?) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public init(dataBuffer: CMBlockBuffer?, dataReady: Bool = false, formatDescription: CMFormatDescription, numSamples: CMItemCount, presentationTimeStamp: CMTime, packetDescriptions: [AudioStreamPacketDescription]?, makeDataReadyHandler: @escaping CMSampleBufferMakeDataReadyHandler) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public init(imageBuffer: CVImageBuffer, formatDescription: CMVideoFormatDescription, sampleTiming: CMSampleTimingInfo) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public init(imageBuffer: CVImageBuffer, dataReady: Bool = false, formatDescription: CMVideoFormatDescription, sampleTiming: CMSampleTimingInfo, makeDataReadyHandler: @escaping CMSampleBufferMakeDataReadyHandler) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public init(copying sampleBuffer: CMSampleBuffer) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public init(copying sampleBuffer: CMSampleBuffer, withNewTiming sampleTimings: [CMSampleTimingInfo]) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public init(copying sampleBuffer: CMSampleBuffer, forRange range: Range<Int>) throws
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension CMSampleBuffer : _CMSampleBufferInitTrampoline {
+}
+@available(watchOS 6.0, *)
+extension CMSampleBuffer {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public struct Error {
+    public static let allocationFailed: Foundation.NSError
+    public static let requiredParameterMissing: Foundation.NSError
+    public static let alreadyHasDataBuffer: Foundation.NSError
+    public static let bufferNotReady: Foundation.NSError
+    public static let sampleIndexOutOfRange: Foundation.NSError
+    public static let bufferHasNoSampleSizes: Foundation.NSError
+    public static let bufferHasNoSampleTimingInfo: Foundation.NSError
+    public static let arrayTooSmall: Foundation.NSError
+    public static let invalidEntryCount: Foundation.NSError
+    public static let cannotSubdivide: Foundation.NSError
+    public static let sampleTimingInfoInvalid: Foundation.NSError
+    public static let invalidMediaTypeForOperation: Foundation.NSError
+    public static let invalidSampleData: Foundation.NSError
+    public static let invalidMediaFormat: Foundation.NSError
+    public static let invalidated: Foundation.NSError
+    public static let dataFailed: Foundation.NSError
+    public static let dataCanceled: Foundation.NSError
+  }
+}
+@available(watchOS 6.0, *)
+extension CMSampleBuffer {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public struct Flags : OptionSet {
+    public let rawValue: UInt32
+    public init(rawValue: UInt32)
+    public static let audioBufferListAssure16ByteAlignment: CoreMedia.CMSampleBuffer.Flags
+    public typealias Element = CoreMedia.CMSampleBuffer.Flags
+    public typealias ArrayLiteralElement = CoreMedia.CMSampleBuffer.Flags
+    public typealias RawValue = Swift.UInt32
+  }
+}
+@available(watchOS 6.0, *)
+extension CMSampleBuffer {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public static var typeID: CFTypeID {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func setDataBuffer(_ dataBuffer: CMBlockBuffer) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var dataBuffer: CMBlockBuffer? {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var imageBuffer: CVImageBuffer? {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func setDataBuffer(fromAudioBufferList bufferList: UnsafePointer<AudioBufferList>, blockBufferMemoryAllocator: CFAllocator? = kCFAllocatorDefault, flags: CMSampleBuffer.Flags = []) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func withAudioBufferList<R>(blockBufferMemoryAllocator: CFAllocator? = kCFAllocatorDefault, flags: CMSampleBuffer.Flags = [], body: (UnsafeMutableAudioBufferListPointer, CMBlockBuffer) throws -> R) throws -> R
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func audioStreamPacketDescriptions() throws -> [AudioStreamPacketDescription]
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func withUnsafeAudioStreamPacketDescriptions<R>(_ body: (UnsafeBufferPointer<AudioStreamPacketDescription>) throws -> R) throws -> R
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func copyPCMData(fromRange range: Range<Int>, into bufferList: UnsafeMutablePointer<AudioBufferList>) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public enum DataReadiness : Hashable {
+    case notReady
+    case ready
+    case failed(OSStatus)
+    public var hashValue: Swift.Int {
+      get
+    }
+    public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: CoreMedia.CMSampleBuffer.DataReadiness, b: CoreMedia.CMSampleBuffer.DataReadiness) -> Swift.Bool
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var dataReadiness: DataReadiness {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func setDataReadiness(_ newValue: DataReadiness) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func makeDataReady() throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func trackDataReadiness(_ sampleBufferToTrack: CMSampleBuffer) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func invalidate() throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func setInvalidateHandler(_ body: @escaping (CMSampleBuffer) throws -> Void) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var isValid: Bool {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var numSamples: Int {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var duration: CMTime {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var presentationTimeStamp: CMTime {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var decodeTimeStamp: CMTime {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var outputDuration: CMTime {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var outputPresentationTimeStamp: CMTime {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func setOutputPresentationTimeStamp(_ pts: CMTime) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var outputDecodeTimeStamp: CMTime {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func sampleTimingInfos() throws -> [CMSampleTimingInfo]
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func outputSampleTimingInfos() throws -> [CMSampleTimingInfo]
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func sampleTimingInfo(at sampleIndex: CMItemIndex) throws -> CMSampleTimingInfo
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func sampleSizes() throws -> [Int]
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func sampleSize(at sampleIndex: Int) -> Int
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var totalSampleSize: Int {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var formatDescription: CMFormatDescription? {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public struct PerSampleAttachmentsDictionary : Sequence {
+    @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+    public struct Key : CMObjectiveCBridgeableWithRawValue {
+      public typealias _ObjectiveCType = CFString
+      public typealias RawValue = CFString
+      public var rawValue: CFString
+      public init(rawValue: CFString)
+      public static let notSync: CoreMedia.CMSampleBuffer.PerSampleAttachmentsDictionary.Key
+      public static let partialSync: CoreMedia.CMSampleBuffer.PerSampleAttachmentsDictionary.Key
+      public static let hasRedundantCoding: CoreMedia.CMSampleBuffer.PerSampleAttachmentsDictionary.Key
+      public static let isDependedOnByOthers: CoreMedia.CMSampleBuffer.PerSampleAttachmentsDictionary.Key
+      public static let dependsOnOthers: CoreMedia.CMSampleBuffer.PerSampleAttachmentsDictionary.Key
+      public static let earlierDisplayTimesAllowed: CoreMedia.CMSampleBuffer.PerSampleAttachmentsDictionary.Key
+      public static let displayImmediately: CoreMedia.CMSampleBuffer.PerSampleAttachmentsDictionary.Key
+      public static let doNotDisplay: CoreMedia.CMSampleBuffer.PerSampleAttachmentsDictionary.Key
+      public static let hevcTemporalLevelInfo: CoreMedia.CMSampleBuffer.PerSampleAttachmentsDictionary.Key
+      public static let hevcTemporalSubLayerAccess: CoreMedia.CMSampleBuffer.PerSampleAttachmentsDictionary.Key
+      public static let hevcStepwiseTemporalSubLayerAccess: CoreMedia.CMSampleBuffer.PerSampleAttachmentsDictionary.Key
+      public static let hevcSyncSampleNALUnitType: CoreMedia.CMSampleBuffer.PerSampleAttachmentsDictionary.Key
+      public static let audioIndependentSampleDecoderRefreshCount: CoreMedia.CMSampleBuffer.PerSampleAttachmentsDictionary.Key
+    }
+    public typealias Element = (key: String, value: Any)
+    public struct Iterator : IteratorProtocol {
+      mutating public func next() -> (key: String, value: Any)?
+      public typealias Element = (key: Swift.String, value: Any)
+    }
+    public func makeIterator() -> Iterator
+    public subscript(key: String) -> Any? {
+      get
+      set
+    }
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public struct SampleAttachmentsArray : Collection {
+    public func index(after i: Int) -> Int
+    public var startIndex: Int
+    public var endIndex: Int
+    public typealias Index = Int
+    public subscript(sample: Int) -> PerSampleAttachmentsDictionary {
+      get
+      _modify
+    }
+    public typealias Element = CoreMedia.CMSampleBuffer.PerSampleAttachmentsDictionary
+    public typealias Iterator = Swift.IndexingIterator<CoreMedia.CMSampleBuffer.SampleAttachmentsArray>
+    public typealias SubSequence = Swift.Slice<CoreMedia.CMSampleBuffer.SampleAttachmentsArray>
+    public typealias Indices = Swift.DefaultIndices<CoreMedia.CMSampleBuffer.SampleAttachmentsArray>
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var sampleAttachments: SampleAttachmentsArray {
+    get
+    _modify
+  }
+}
+@available(watchOS 6.0, *)
+extension CMSampleBuffer {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public struct SingleSampleBuffers : Sequence {
+    public typealias Element = CMSampleBuffer
+    public struct Iterator : IteratorProtocol {
+      mutating public func next() -> CMSampleBuffer?
+      public typealias Element = CoreMedia.CMSampleBuffer
+    }
+    public func makeIterator() -> CMSampleBuffer.SingleSampleBuffers.Iterator
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func singleSampleBuffers() throws -> SingleSampleBuffers
+}
+@available(watchOS 6.0, *)
+extension CMSampleBuffer {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public struct AttachmentKey : CMObjectiveCBridgeableWithRawValue {
+    public typealias RawValue = CFString
+    public typealias _ObjectiveCType = CFString
+    public var rawValue: CFString
+    public init(rawValue: CFString)
+    public static let resetDecoderBeforeDecoding: CoreMedia.CMSampleBuffer.AttachmentKey
+    public static let drainAfterDecoding: CoreMedia.CMSampleBuffer.AttachmentKey
+    public static let postNotificationWhenConsumed: CoreMedia.CMSampleBuffer.AttachmentKey
+    public static let resumeOutput: CoreMedia.CMSampleBuffer.AttachmentKey
+    public static let transitionID: CoreMedia.CMSampleBuffer.AttachmentKey
+    public static let trimDurationAtStart: CoreMedia.CMSampleBuffer.AttachmentKey
+    public static let trimDurationAtEnd: CoreMedia.CMSampleBuffer.AttachmentKey
+    public static let speedMultiplier: CoreMedia.CMSampleBuffer.AttachmentKey
+    public static let reverse: CoreMedia.CMSampleBuffer.AttachmentKey
+    public static let fillDiscontinuitiesWithSilence: CoreMedia.CMSampleBuffer.AttachmentKey
+    public static let emptyMedia: CoreMedia.CMSampleBuffer.AttachmentKey
+    public static let permanentEmptyMedia: CoreMedia.CMSampleBuffer.AttachmentKey
+    public static let displayEmptyMediaImmediately: CoreMedia.CMSampleBuffer.AttachmentKey
+    public static let endsPreviousSampleDuration: CoreMedia.CMSampleBuffer.AttachmentKey
+    public static let sampleReferenceURL: CoreMedia.CMSampleBuffer.AttachmentKey
+    public static let sampleReferenceByteOffset: CoreMedia.CMSampleBuffer.AttachmentKey
+    public static let gradualDecoderRefresh: CoreMedia.CMSampleBuffer.AttachmentKey
+    public static let droppedFrameReason: CoreMedia.CMSampleBuffer.AttachmentKey
+    public static let droppedFrameReasonInfo: CoreMedia.CMSampleBuffer.AttachmentKey
+    public static let stillImageLensStabilizationInfo: CoreMedia.CMSampleBuffer.AttachmentKey
+    public static let cameraIntrinsicMatrix: CoreMedia.CMSampleBuffer.AttachmentKey
+    public static let forceKeyFrame: CoreMedia.CMSampleBuffer.AttachmentKey
+  }
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension CMAttachmentBearerAttachments {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public subscript(key: CMSampleBuffer.AttachmentKey) -> Value? {
+    get
+    set(newValue)
+  }
+}
+@available(watchOS 6.0, *)
+extension CMSampleBuffer {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public static let dataBecameReady: Foundation.NSNotification.Name
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public static let dataFailed: Foundation.NSNotification.Name
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public static let inhibitOutputUntil: Foundation.NSNotification.Name
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public static let resetOutput: Foundation.NSNotification.Name
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public static let upcomingOutputPTSRangeChanged: Foundation.NSNotification.Name
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public static let bufferConsumed: Foundation.NSNotification.Name
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public struct NotificationKey : CMObjectiveCBridgeableWithRawValue {
+    public typealias RawValue = CFString
+    public typealias _ObjectiveCType = CFString
+    public var rawValue: CFString
+    public init(rawValue: CFString)
+    public static let dataFailed: CoreMedia.CMSampleBuffer.NotificationKey
+    public static let resumeTag: CoreMedia.CMSampleBuffer.NotificationKey
+    public static let upcomingOutputPTSRangeMayOverlapQueuedOutputPTSRange: CoreMedia.CMSampleBuffer.NotificationKey
+    public static let minUpcomingOutputPTS: CoreMedia.CMSampleBuffer.NotificationKey
+    public static let maxUpcomingOutputPTS: CoreMedia.CMSampleBuffer.NotificationKey
+  }
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public protocol _CMSimpleQueueInitTrampoline {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  init(referencing: CMSimpleQueue)
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension _CMSimpleQueueInitTrampoline {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public init(capacity: Int) throws
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension CMSimpleQueue : _CMSimpleQueueInitTrampoline {
+}
+@available(watchOS 6.0, *)
+extension CMSimpleQueue {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public struct Error {
+    public static var allocationFailed: Foundation.NSError
+    public static var requiredParameterMissing: Foundation.NSError
+    public static var parameterOutOfRange: Foundation.NSError
+    public static var queueIsFull: Foundation.NSError
+  }
+}
+@available(watchOS 6.0, *)
+extension CMSimpleQueue {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public static var typeID: CFTypeID {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func enqueue(_ element: UnsafeRawPointer) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func dequeue() -> UnsafeRawPointer?
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var head: UnsafeRawPointer? {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func reset() throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var capacity: Int {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var count: Int {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var fullness: Float {
+    get
+  }
+}
+@available(watchOS 6.0, *)
+extension CMClock {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public struct Error {
+    public static let missingRequiredParameter: Foundation.NSError
+    public static let invalidParameter: Foundation.NSError
+    public static let allocationFailed: Foundation.NSError
+    public static let unsupportedOperation: Foundation.NSError
+  }
+}
+@available(watchOS 6.0, *)
+extension CMTimebase {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public struct Error {
+    public static let missingRequiredParameter: Foundation.NSError
+    public static let invalidParameter: Foundation.NSError
+    public static let allocationFailed: Foundation.NSError
+    public static let timerIntervalTooShort: Foundation.NSError
+    public static let readOnly: Foundation.NSError
+  }
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public struct CMSync {
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension CMSync {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public struct Error {
+    public static let missingRequiredParameter: Foundation.NSError
+    public static let invalidParameter: Foundation.NSError
+    public static let allocationFailed: Foundation.NSError
+    public static let rateMustBeNonZero: Foundation.NSError
+  }
+}
+@available(watchOS 6.0, *)
+extension CMClock {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public static var typeID: CFTypeID {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public static var hostTimeClock: CMClock {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public static func convertHostTimeToSystemUnits(_ hostTime: CMTime) -> UInt64
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public static func convertSystemUnitsToHostTime(_ systemUnits: UInt64) -> CMTime
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var time: CMTime {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func anchorTime() throws -> (anchorTime: CMTime, referenceTime: CMTime)
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func mightDrift(relativeTo otherClock: CMClock) -> Bool
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func invalidate()
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public protocol _CMTimebaseInitTrampoline {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  init(referencing: CMTimebase)
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension _CMTimebaseInitTrampoline {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public init(masterClock: CMClock) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public init(masterTimebase: CMTimebase) throws
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension CMTimebase : _CMTimebaseInitTrampoline {
+}
+@available(watchOS 6.0, *)
+extension CMTimebase {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public static var typeID: CFTypeID {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var masterTimebase: CMTimebase? {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var masterClock: CMClock? {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var master: CMSyncProtocol {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var ultimateMasterClock: CMClock {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var time: CMTime {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func time(withTimescale timescale: CMTimeScale, rounding: CMTimeRoundingMethod = .`default`) -> CMTime
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func setTime(_ time: CMTime) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func setAnchorTime(_ anchorTime: CMTime, referenceTime: CMTime) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var rate: Double {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var timeAndRate: (time: CMTime, rate: Double) {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func setRate(_ rate: Double) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func setRateAndAnchorTime(rate: Double, anchorTime: CMTime, referenceTime: CMTime) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public var effectiveRate: Double {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func addTimer(_ timer: Timer, on runloop: RunLoop) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public static var veryLongTimeInterval: CFTimeInterval {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public static var farFuture: CFAbsoluteTime {
+    get
+  }
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func removeTimer(_ timer: Timer) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func setTimerNextFireTime(_ timer: Timer, fireTime: CMTime) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func setTimerToFireImmediately(_ timer: Timer) throws
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func addTimer<T>(_ timer: T) throws where T : Dispatch.DispatchSourceTimer
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func removeTimer<T>(_ timer: T) throws where T : Dispatch.DispatchSourceTimer
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func setTimerNextFireTime<T>(_ timer: T, fireTime: CMTime) throws where T : Dispatch.DispatchSourceTimer
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func setTimerToFireImmediately<T>(_ timer: T) throws where T : Dispatch.DispatchSourceTimer
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func notificationBarrier() throws
+}
+@available(watchOS 6.0, *)
+extension CMTimebase {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public static let effectiveRateChanged: Foundation.NSNotification.Name
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public static let timeJumped: Foundation.NSNotification.Name
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public struct NotificationKey : CMObjectiveCBridgeableWithRawValue {
+    public typealias RawValue = CFString
+    public typealias _ObjectiveCType = CFString
+    public var rawValue: CFString
+    public init(rawValue: CFString)
+    @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+    public static let eventTime: CoreMedia.CMTimebase.NotificationKey
+  }
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public protocol CMSyncProtocol {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  func rate<T>(relativeTo clockOrTimebase: T) -> Double where T : CoreMedia.CMSyncProtocol
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  func rateAndAnchorTime<T>(relativeTo clockOrTimebase: T) throws -> (rate: Double, anchorTime: CMTime, referenceTime: CMTime) where T : CoreMedia.CMSyncProtocol
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  func convertTime<T>(_ time: CMTime, to clockOrTimebase: T) -> CMTime where T : CoreMedia.CMSyncProtocol
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  func mightDrift<T>(relativeTo clockOrTimebase: T) -> Bool where T : CoreMedia.CMSyncProtocol
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  var time: CMTime { get }
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension CMTimebase : CMSyncProtocol {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func rate<T>(relativeTo relativeToClockOrTimebase: T) -> Double where T : CoreMedia.CMSyncProtocol
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func rateAndAnchorTime<T>(relativeTo clockOrTimebase: T) throws -> (rate: Double, anchorTime: CMTime, referenceTime: CMTime) where T : CoreMedia.CMSyncProtocol
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func convertTime<T>(_ time: CMTime, to clockOrTimebase: T) -> CMTime where T : CoreMedia.CMSyncProtocol
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func mightDrift<T>(relativeTo clockOrTimebase: T) -> Bool where T : CoreMedia.CMSyncProtocol
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension CMClock : CMSyncProtocol {
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func rate<T>(relativeTo relativeToClockOrTimebase: T) -> Double where T : CoreMedia.CMSyncProtocol
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func rateAndAnchorTime<T>(relativeTo clockOrTimebase: T) throws -> (rate: Double, anchorTime: CMTime, referenceTime: CMTime) where T : CoreMedia.CMSyncProtocol
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func convertTime<T>(_ time: CMTime, to clockOrTimebase: T) -> CMTime where T : CoreMedia.CMSyncProtocol
+  @available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+  public func mightDrift<T>(relativeTo clockOrTimebase: T) -> Bool where T : CoreMedia.CMSyncProtocol
+}
+@available(watchOS 6.0, *)
+extension CMTime {
+  @available(watchOS 6.0, *)
+  public init(seconds: Double, preferredTimescale: CMTimeScale)
+  @available(watchOS 6.0, *)
+  public init(value: CMTimeValue, timescale: CMTimeScale)
+}
+@available(watchOS 6.0, *)
+extension CMTime {
+  @available(watchOS 6.0, *)
+  public var isValid: Bool {
+    get
+  }
+  @available(watchOS 6.0, *)
+  public var isPositiveInfinity: Bool {
+    get
+  }
+  @available(watchOS 6.0, *)
+  public var isNegativeInfinity: Bool {
+    get
+  }
+  @available(watchOS 6.0, *)
+  public var isIndefinite: Bool {
+    get
+  }
+  @available(watchOS 6.0, *)
+  public var isNumeric: Bool {
+    get
+  }
+  @available(watchOS 6.0, *)
+  public var hasBeenRounded: Bool {
+    get
+  }
+  @available(watchOS 6.0, *)
+  public var seconds: Double {
+    get
+  }
+  @available(watchOS 6.0, *)
+  public func convertScale(_ newTimescale: Int32, method: CMTimeRoundingMethod) -> CMTime
+}
+@available(watchOS 6.0, *)
+public func CMTIME_IS_VALID(_ time: CMTime) -> Bool
+@available(watchOS 6.0, *)
+public func CMTIME_IS_INVALID(_ time: CMTime) -> Bool
+@available(watchOS 6.0, *)
+public func CMTIME_IS_POSITIVEINFINITY(_ time: CMTime) -> Bool
+@available(watchOS 6.0, *)
+public func CMTIME_IS_NEGATIVEINFINITY(_ time: CMTime) -> Bool
+@available(watchOS 6.0, *)
+public func CMTIME_IS_INDEFINITE(_ time: CMTime) -> Bool
+@available(watchOS 6.0, *)
+public func CMTIME_IS_NUMERIC(_ time: CMTime) -> Bool
+@available(watchOS 6.0, *)
+public func CMTIME_HAS_BEEN_ROUNDED(_ time: CMTime) -> Bool
+@available(watchOS 6.0, *)
+extension CMTime {
+  @available(watchOS 6.0, *)
+  public static func + (addend1: CMTime, addend2: CMTime) -> CMTime
+  @available(watchOS 6.0, *)
+  public static func - (minuend: CMTime, subtrahend: CMTime) -> CMTime
+}
+@available(watchOS 6.0, *)
+extension CMTime : Equatable, Comparable {
+  @available(watchOS 6.0, *)
+  public static func < (time1: CMTime, time2: CMTime) -> Bool
+  @available(watchOS 6.0, *)
+  public static func <= (time1: CMTime, time2: CMTime) -> Bool
+  @available(watchOS 6.0, *)
+  public static func > (time1: CMTime, time2: CMTime) -> Bool
+  @available(watchOS 6.0, *)
+  public static func >= (time1: CMTime, time2: CMTime) -> Bool
+  @available(watchOS 6.0, *)
+  public static func == (time1: CMTime, time2: CMTime) -> Bool
+  @available(watchOS 6.0, *)
+  public static func != (time1: CMTime, time2: CMTime) -> Bool
+}
+@available(watchOS 6.0, *)
+extension CMTimeRange {
+  @available(watchOS 6.0, *)
+  public init(start: CMTime, end: CMTime)
+  @available(watchOS 6.0, *)
+  public var isValid: Bool {
+    get
+  }
+  @available(watchOS 6.0, *)
+  public var isIndefinite: Bool {
+    get
+  }
+  @available(watchOS 6.0, *)
+  public var isEmpty: Bool {
+    get
+  }
+  @available(watchOS 6.0, *)
+  public var end: CMTime {
+    get
+  }
+  @available(watchOS 6.0, *)
+  public func union(_ otherRange: CMTimeRange) -> CMTimeRange
+  @available(watchOS 6.0, *)
+  public func intersection(_ otherRange: CMTimeRange) -> CMTimeRange
+  @available(watchOS 6.0, *)
+  public func containsTime(_ time: CMTime) -> Bool
+  @available(watchOS 6.0, *)
+  public func containsTimeRange(_ range: CMTimeRange) -> Bool
+}
+@available(watchOS 6.0, *)
+public func CMTIMERANGE_IS_VALID(_ range: CMTimeRange) -> Bool
+@available(watchOS 6.0, *)
+public func CMTIMERANGE_IS_INVALID(_ range: CMTimeRange) -> Bool
+@available(watchOS 6.0, *)
+public func CMTIMERANGE_IS_INDEFINITE(_ range: CMTimeRange) -> Bool
+@available(watchOS 6.0, *)
+public func CMTIMERANGE_IS_EMPTY(_ range: CMTimeRange) -> Bool
+@available(watchOS 6.0, *)
+extension CMTimeRange : Equatable {
+  @available(watchOS 6.0, *)
+  public static func == (range1: CMTimeRange, range2: CMTimeRange) -> Bool
+  @available(watchOS 6.0, *)
+  public static func != (range1: CMTimeRange, range2: CMTimeRange) -> Bool
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+public protocol CMObjectiveCBridgeableWithRawValue : Swift.Hashable, Swift.RawRepresentable, Swift._ObjectiveCBridgeable {
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension CMObjectiveCBridgeableWithRawValue where Self.RawValue : Swift.Hashable {
+  public func hash(into hasher: inout Hasher)
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension CMObjectiveCBridgeableWithRawValue where Self.RawValue == CoreFoundation.CFString, Self._ObjectiveCType == CoreFoundation.CFString {
+  public func _bridgeToObjectiveC() -> _ObjectiveCType
+  public static func _forceBridgeFromObjectiveC(_ source: _ObjectiveCType, result: inout Self?)
+  public static func _conditionallyBridgeFromObjectiveC(_ source: _ObjectiveCType, result: inout Self?) -> Bool
+  public static func _unconditionallyBridgeFromObjectiveC(_ source: _ObjectiveCType?) -> Self
+}
+@available(OSX 10.15, iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+extension CMObjectiveCBridgeableWithRawValue where Self.RawValue == Darwin.FourCharCode, Self._ObjectiveCType == Foundation.NSNumber {
+  public func _bridgeToObjectiveC() -> _ObjectiveCType
+  public static func _forceBridgeFromObjectiveC(_ source: _ObjectiveCType, result: inout Self?)
+  public static func _conditionallyBridgeFromObjectiveC(_ source: _ObjectiveCType, result: inout Self?) -> Bool
+  public static func _unconditionallyBridgeFromObjectiveC(_ source: _ObjectiveCType?) -> Self
+}

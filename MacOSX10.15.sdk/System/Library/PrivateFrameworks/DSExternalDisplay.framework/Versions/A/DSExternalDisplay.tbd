@@ -1,0 +1,16 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 084DCD74-2EE2-3708-A821-D240533AA0D0', 'x86_64: 084DCD74-2EE2-3708-A821-D240533AA0D0' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/DSExternalDisplay.framework/Versions/A/DSExternalDisplay'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _DSBrightnessExternalConvertLinearToNits, _DSBrightnessExternalConvertLinearToUser, 
+                       _DSBrightnessExternalConvertNitsToLinear, _DSBrightnessExternalConvertNitsToUser, 
+                       _DSBrightnessExternalConvertUserToLinear, _DSBrightnessExternalConvertUserToNits, 
+                       _DSBrightnessExternalCreate, _DSBrightnessExternalGetLinearBrightness, 
+                       _DSBrightnessExternalGetNitsBrightness, _DSBrightnessExternalGetRanges, 
+                       _DSBrightnessExternalGetUserBrightness, _DSBrightnessExternalRelease, 
+                       _DSBrightnessExternalSetLinearBrightness, _DSBrightnessExternalSetNitsBrightness, 
+                       _DSBrightnessExternalSetUserBrightness ]
+...

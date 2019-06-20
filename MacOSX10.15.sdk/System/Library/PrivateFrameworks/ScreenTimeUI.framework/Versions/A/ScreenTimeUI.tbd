@@ -1,0 +1,20 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: F8DD77EE-4B90-35CC-A80F-7C9C382EBF18' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/ScreenTimeUI.framework/Versions/A/ScreenTimeUI'
+current-version: 259
+exports:         
+  - archs:           [ x86_64 ]
+    allowable-clients: [ ContactsUI, FaceTime, FaceTimeNotificationCenterService, 
+                         IMCore, LockoutUI, Messages, Safari, SafariShared, SafariSharedUnitTests, 
+                         ScreenTime, ScreenTimeViewService ]
+    symbols:         [ _STPINRemoteViewControllerInterface, _STPINServiceViewControllerInterface, 
+                       _STServiceNameScreenTimeViewService ]
+    objc-classes:    [ STAlwaysAllowedController, STAlwaysAllowedItem, STBlockingViewService, 
+                       STContentAndPrivacyController, STDowntimeCommunicationViewController, 
+                       STKeyValuePair, STLockoutViewController, STPINAuthenticationViewController, 
+                       STPINRemoteViewController, STPINSetupViewController, STRequestsController, 
+                       STScreenTimeCommunicationViewController, STScreenTimeUIBundle, 
+                       STUILog, STURLBlockingViewController, STUsersController ]
+...

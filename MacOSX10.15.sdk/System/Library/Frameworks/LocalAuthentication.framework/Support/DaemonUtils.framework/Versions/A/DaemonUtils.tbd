@@ -1,0 +1,14 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 4BA63B22-F33C-313E-BE31-A8A89A649B06' ]
+platform:        macosx
+install-name:    '/System/Library/Frameworks/LocalAuthentication.framework/Support/DaemonUtils.framework/Versions/A/DaemonUtils'
+current-version: 661
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _LANVRAMNamespaceStartupManager, __libBiometricKit ]
+    objc-classes:    [ AirDb, BiometryHelper, Caller, DaemonUtils, InstalledAppsCache, 
+                       LADFROwnerToken, LANVRAM, LASIORemoteCall, LASecureIO, LASecureIOArchive, 
+                       LASecureIOCommunication, LASecureIOHelper, LASecureIOLoggingHelper, 
+                       Request, WatchMonitor ]
+...

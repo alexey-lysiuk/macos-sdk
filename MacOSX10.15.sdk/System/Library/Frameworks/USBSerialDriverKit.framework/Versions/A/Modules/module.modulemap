@@ -1,0 +1,6 @@
+framework module USBSerialDriverKit {
+  umbrella header "USBSerialDriverKit.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,13 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64, x86_64h ]
+uuids:           [ 'x86_64: BC8635D0-4745-3110-8C34-6F52ABEFECF3', 'x86_64: BC8635D0-4745-3110-8C34-6F52ABEFECF3', 
+                   'x86_64h: 3E484228-83EE-3CD6-8AE4-4DCDBE1ED2C3', 'x86_64h: 3E484228-83EE-3CD6-8AE4-4DCDBE1ED2C3' ]
+platform:        zippered
+install-name:    '/usr/lib/libobjc-trampolines.dylib'
+current-version: 228
+exports:         
+  - archs:           [ x86_64, x86_64h ]
+    symbols:         [ __objc_blockTrampolineImpl, __objc_blockTrampolineImpl_stret, 
+                       __objc_blockTrampolineLast, __objc_blockTrampolineLast_stret, 
+                       __objc_blockTrampolineStart, __objc_blockTrampolineStart_stret ]
+...

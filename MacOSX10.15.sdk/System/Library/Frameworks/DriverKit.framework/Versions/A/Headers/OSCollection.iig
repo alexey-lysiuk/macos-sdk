@@ -1,0 +1,42 @@
+#ifndef _IOKIT_OSCOLLECTION_H
+#define _IOKIT_OSCOLLECTION_H
+
+#include <DriverKit/OSObject.iig>
+#include <DriverKit/OSContainer.iig>
+
+
+class OSCollection;
+typedef OSCollection * OSCollectionPtr;
+
+class OSDictionary;
+
+typedef bool (^OSCollectionIterateObjectsBlock)(OSObject * object);
+typedef bool (*OSCollectionIterateObjectsCallback)(void * refcon, OSObject * object);
+
+class LOCALONLY OSCollection : public OSContainer
+{
+public:
+
+	virtual uint32_t
+	getCount() const = 0;
+
+	virtual uint32_t
+	getCapacity() const = 0;
+
+	virtual uint32_t
+	ensureCapacity(uint32_t newCapacity) = 0;
+
+	virtual void
+	flushCollection() = 0;
+
+	virtual bool
+	iterateObjects(OSCollectionIterateObjectsBlock block) const;
+
+	virtual
+	OSCollectionPtr copyCollection(OSDictionary * cycleDict) const;
+
+	bool
+	iterateObjects(void * refcon, OSCollectionIterateObjectsCallback callback) const;
+};
+
+#endif /* ! _IOKIT_OSCOLLECTION_H */

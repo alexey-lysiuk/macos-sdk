@@ -1,0 +1,10 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: EFD7F9A6-FF42-3DAA-B9E3-D4C21E325D31' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/TransparencyDetailsViewMac.framework/Versions/A/TransparencyDetailsViewMac'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _TransparencyDetailsViewMacVersionNumber, _TransparencyDetailsViewMacVersionString ]
+    objc-classes:    [ ADUserTransparencySheet ]
+...

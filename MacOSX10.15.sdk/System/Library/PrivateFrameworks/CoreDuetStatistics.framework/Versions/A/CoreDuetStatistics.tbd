@@ -1,0 +1,9 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 2A174695-DE73-32A5-AA3D-95E3DA298B92', 'x86_64: 2A174695-DE73-32A5-AA3D-95E3DA298B92' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/CoreDuetStatistics.framework/Versions/A/CoreDuetStatistics'
+exports:         
+  - archs:           [ x86_64 ]
+    objc-classes:    [ CDSBasisObject, CDSEngine ]
+...

@@ -1,0 +1,20 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 7A8CDB72-9110-3854-A9CA-1DEB1246019E', 'x86_64: 7A8CDB72-9110-3854-A9CA-1DEB1246019E' ]
+platform:        zippered
+install-name:    '/System/Library/Frameworks/AppSSO.framework/Versions/A/AppSSO'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _SOAuthorizationOptionInitiatingAction, _SOAuthorizationOptionInitiatorOrigin, 
+                       _SOAuthorizationOptionUserActionInitiated, _SODebugConfigurationKeyAssociatedDomainsValidated, 
+                       _SODebugConfigurationKeyConfig, _SODebugConfigurationKeyPlugins, 
+                       _SODebugConfigurationKeyRealms, _SODebugConfigurationKeyRequestQueue, 
+                       _SODebugConfigurationKeyServerConfigVersion, _SODebugConfigurationKeySignatureValidated, 
+                       _SONotificationExtensionsChanged, _appSSO_init, _appSSO_performResponse, 
+                       _appSSO_performResponseCredential, _appSSO_willPerform ]
+    objc-classes:    [ SOAuthorization, SOAuthorizationCredential, SOAuthorizationParameters, 
+                       SOAuthorizationRequest, SOAuthorizationRequestParameters, 
+                       SOConfigurationHost, SOConfigurationManager, SODebugHints, 
+                       SOExtension, SOExtensionManager, SOPreferences, SORequestQueue, 
+                       SORequestQueueItem ]
+...

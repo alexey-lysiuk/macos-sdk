@@ -1,0 +1,10 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 391BE068-64E5-376A-9078-E5ED4ECB7AF0' ]
+platform:        uikitformac
+install-name:    '/System/iOSSupport/System/Library/Frameworks/HealthKitUI.framework/Versions/A/HealthKitUI'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _HKHealthKitUIFrameworkBundle, _HKScrollPerformanceOptionCategoryKey ]
+    objc-classes:    [ HKActivityRingView ]
+...

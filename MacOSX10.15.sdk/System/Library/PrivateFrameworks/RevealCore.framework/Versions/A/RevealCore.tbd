@@ -1,0 +1,10 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 3C790706-8B8E-3F00-833F-ABEBAEB0B18B', 'x86_64: 3C790706-8B8E-3F00-833F-ABEBAEB0B18B' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/RevealCore.framework/Versions/A/RevealCore'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _RevealCoreVersionNumber, _RevealCoreVersionString ]
+    objc-classes:    [ RVDocumentContext, RVItem, RVSelection ]
+...

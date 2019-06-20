@@ -1,0 +1,10 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: F9439577-6DD4-35D4-B331-058987AE829A', 'x86_64: F9439577-6DD4-35D4-B331-058987AE829A' ]
+platform:        zippered
+install-name:    '/System/Library/CoreServices/Encodings/libSymbolConverter.dylib'
+current-version: 76
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ ___CFStringEncodingGetSymbolConverterDefinition ]
+...

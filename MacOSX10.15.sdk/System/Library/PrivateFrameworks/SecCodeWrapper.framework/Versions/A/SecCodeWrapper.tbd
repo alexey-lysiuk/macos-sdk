@@ -1,0 +1,12 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 0001E358-F03E-394B-8758-1045E5BB064D', 'x86_64: 0001E358-F03E-394B-8758-1045E5BB064D' ]
+platform:        zippered
+install-name:    '/System/Library/PrivateFrameworks/SecCodeWrapper.framework/Versions/A/SecCodeWrapper'
+exports:         
+  - archs:           [ x86_64 ]
+    objc-classes:    [ CodeIdentity, CodeRequirement, DynamicCodeIdentity, StaticCodeIdentity ]
+    objc-ivars:      [ CodeIdentity._cached_entitlements, CodeIdentity._haveCheckedValidity, 
+                       CodeIdentity._secCodeRef, CodeRequirement._data, CodeRequirement._secRequirementRef, 
+                       CodeRequirement._text, DynamicCodeIdentity._pid, StaticCodeIdentity._secStaticCodeRef ]
+...

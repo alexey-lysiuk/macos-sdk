@@ -1,0 +1,17 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 8071BD74-E08C-37EA-9611-78EA2008E888', 'x86_64: 8071BD74-E08C-37EA-9611-78EA2008E888' ]
+platform:        zippered
+install-name:    '/usr/lib/swift/libswiftCoreImage.dylib'
+current-version: 0
+swift-abi-version: 7
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ '$ld$install_name$os10.10$@rpath/libswiftCoreImage.dylib', 
+                       '$ld$install_name$os10.11$@rpath/libswiftCoreImage.dylib', 
+                       '$ld$install_name$os10.12$@rpath/libswiftCoreImage.dylib', 
+                       '$ld$install_name$os10.13$@rpath/libswiftCoreImage.dylib', 
+                       '$ld$install_name$os10.14$@rpath/libswiftCoreImage.dylib', 
+                       '$ld$install_name$os10.9$@rpath/libswiftCoreImage.dylib', 
+                       '__swift_FORCE_LOAD_$_swiftCoreImage' ]
+...

@@ -1,0 +1,10 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: 73D13E4B-2583-303A-AFCA-0C376D5D01CA', 'x86_64: 73D13E4B-2583-303A-AFCA-0C376D5D01CA' ]
+platform:        zippered
+install-name:    '/System/Library/Frameworks/OpenCL.framework/Versions/A/Libraries/libCLVMCPUPlugin.dylib'
+current-version: 2.12.7
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _cvmsPluginElementBuild, _cvmsPluginServiceInitialize, _cvmsPluginServiceTerminate ]
+...

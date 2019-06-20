@@ -1,0 +1,6 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: B288A284-5467-3606-BFDC-D54D202517BE', 'x86_64: B288A284-5467-3606-BFDC-D54D202517BE' ]
+platform:        zippered
+install-name:    '/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Resources/libFontRegistryUI.dylib'
+...

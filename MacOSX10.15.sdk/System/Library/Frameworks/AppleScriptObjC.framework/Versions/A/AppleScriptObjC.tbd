@@ -1,0 +1,10 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: C4D20947-0FB6-38B3-8CAB-215902D42094' ]
+platform:        macosx
+install-name:    '/System/Library/Frameworks/AppleScriptObjC.framework/Versions/A/AppleScriptObjC'
+current-version: 35
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _BACreateClassForOSAIDInComponent, _BAHandleEvent, _BAObjCIDForOSAIDInComponent ]
+...

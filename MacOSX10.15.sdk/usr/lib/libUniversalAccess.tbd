@@ -1,0 +1,18 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: DEBADE1F-58D8-3040-A838-204E3B438033' ]
+platform:        macosx
+install-name:    '/usr/lib/libUniversalAccess.dylib'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ __AXVisualSupportAgentEnterZoomResizeMode, __AXVisualSupportAgentRefreshState, 
+                       __UniversalAccessAssistiveControlIsRunning, __UniversalAccessAssistiveControlStart, 
+                       __UniversalAccessAssistiveControlStop, __UniversalAccessControlIsRunning, 
+                       __UniversalAccessControlStart, __UniversalAccessControlStop, 
+                       __UniversalAccessDIsRunning, __UniversalAccessDSendMessage, 
+                       __UniversalAccessDStart, __UniversalAccessDStartIfNeeded, 
+                       __UniversalAccessDStop, __UniversalAccessDStopAsynchronously, 
+                       __UniversalAccessDwellControlIsRunning, __UniversalAccessDwellControlStart, 
+                       __UniversalAccessDwellControlStop, __UniversalAccessRestoreSystemState ]
+    objc-classes:    [ UAIOHIDUtilities ]
+...

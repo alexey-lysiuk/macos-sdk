@@ -1,0 +1,10 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: F0EAFCA8-BA00-3BBB-A82A-A1793E277BA9' ]
+platform:        macosx
+install-name:    '/System/Library/PrivateFrameworks/Reveal.framework/Versions/A/Reveal'
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _RevealVersionNumber, _RevealVersionString ]
+    objc-classes:    [ RVPresenter, RVPresentingContext ]
+...

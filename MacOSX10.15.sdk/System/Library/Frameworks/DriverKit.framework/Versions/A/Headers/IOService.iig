@@ -1,0 +1,82 @@
+#if !__IIG
+#endif
+
+#ifndef _IOKIT_UIOSERVICE_H
+#define _IOKIT_UIOSERVICE_H
+
+#include <DriverKit/OSObject.iig>
+
+class IOMemoryDescriptor;
+class IOBufferMemoryDescriptor;
+
+class OSDictionary;
+typedef OSDictionary * OSDictionaryPtr;
+
+/*!
+@iig implementation
+#include <DriverKit/IOBufferMemoryDescriptor.h>
+@iig end
+*/
+
+class KERNEL IOService : public OSObject
+{
+public:
+	virtual bool
+	init() override;
+
+	virtual void
+	free() override;
+
+	virtual kern_return_t
+	GetRegistryEntryID(uint64_t * registryEntryID) LOCAL;
+
+	virtual kern_return_t
+	Start(IOService * provider) LOCAL;
+
+	virtual kern_return_t
+	Stop(IOService * provider) LOCAL;
+
+	virtual kern_return_t
+	RegisterService();
+
+	virtual kern_return_t
+	SetDispatchQueue(
+		const IODispatchQueueName name,
+		IODispatchQueue         * queue) override LOCAL;
+
+	virtual kern_return_t
+	CopyDispatchQueue(
+		const IODispatchQueueName name,
+		IODispatchQueue        ** queue) override;
+
+	virtual kern_return_t
+	SetProperties(
+		OSObjectPtr properties) LOCAL;
+
+	virtual kern_return_t
+	CopyProperties(
+		OSDictionaryPtr * properties) LOCAL;
+
+	virtual kern_return_t
+	SetPowerState(
+		uint32_t powerState) LOCAL;
+
+	virtual kern_return_t
+	ChangePowerState(
+		uint32_t powerState);
+};
+
+class EXTENDS (IOService) IOServicePrivate
+{
+public:
+	virtual kern_return_t
+	_SetProperties(
+		IOMemoryDescriptor * serialization);
+
+	virtual kern_return_t
+	_CopyProperties(
+		IOBufferMemoryDescriptor ** serialization);
+};
+
+
+#endif /* ! _IOKIT_UIOSERVICE_H */
