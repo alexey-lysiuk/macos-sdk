@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0C57BF6E-A713-3AE8-8AD3-80F65D4CCC15' ]
+uuids:           [ 'x86_64: A8D0379B-85FA-3B3D-89ED-5CF2C3826AB2' ]
 platform:        zippered
 install-name:    /usr/lib/libmecab.1.0.0.dylib
 current-version: 779.19.3

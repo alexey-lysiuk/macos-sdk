@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2558CFD8-2C5D-37D9-A392-96A48F8D574F' ]
+uuids:           [ 'x86_64: D1C55687-95A6-3170-B872-29CEA7661C96' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/TextInputCore.framework/Versions/A/TextInputCore
 exports:         

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CA95EEF2-4A75-34FA-87D9-4A1A69555CFF' ]
+uuids:           [ 'x86_64: 5F35E97B-2610-3744-94B6-062B0C27A6FD' ]
 platform:        zippered
 install-name:    /System/Library/Frameworks/CoreMediaIO.framework/Versions/A/CoreMediaIO
 objc-constraint: none

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EC8A8A07-FFC1-3C7E-B035-F032A6D0EE9F' ]
+uuids:           [ 'x86_64: 8775A158-3D2A-3A73-B7F8-BD59DCF656B2' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Seeding.framework/Versions/A/Seeding
 exports:         

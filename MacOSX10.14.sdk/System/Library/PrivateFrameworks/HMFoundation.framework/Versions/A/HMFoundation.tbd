@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6EE9DF11-987F-391D-A179-023E29353A6E' ]
+uuids:           [ 'x86_64: 2A852B87-E226-3D61-851D-CBB28E0F2F73' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/HMFoundation.framework/Versions/A/HMFoundation
 exports:         
@@ -32,11 +32,13 @@ exports:
                        _HMFProductInfoFatsaOSVersion, _HMFProductInfoFerryOSVersion, 
                        _HMFProductInfoFortuneOSVersion, _HMFProductInfoFrancisOSVersion, 
                        _HMFProductInfoGloryBOSVersion, _HMFProductInfoGloryCOSVersion, 
-                       _HMFProductInfoGloryOSVersion, _HMFProductInfoHopeBOSVersion, 
-                       _HMFProductInfoHopeCOSVersion, _HMFProductInfoHopeOSVersion, 
+                       _HMFProductInfoGloryGOSVersion, _HMFProductInfoGloryOSVersion, 
+                       _HMFProductInfoHopeBOSVersion, _HMFProductInfoHopeCOSVersion, 
+                       _HMFProductInfoHopeGOSVersion, _HMFProductInfoHopeOSVersion, 
                        _HMFProductInfoLibertyBOSVersion, _HMFProductInfoLibertyCOSVersion, 
-                       _HMFProductInfoLibertyOSVersion, _HMFProductInfoMonarchOSVersion, 
-                       _HMFProductInfoPeaceBOSVersion, _HMFProductInfoPeaceCOSVersion, 
+                       _HMFProductInfoLibertyGOSVersion, _HMFProductInfoLibertyOSVersion, 
+                       _HMFProductInfoMonarchOSVersion, _HMFProductInfoPeaceBOSVersion, 
+                       _HMFProductInfoPeaceCOSVersion, _HMFProductInfoPeaceGOSVersion, 
                        _HMFProductInfoPeaceOSVersion, _HMFProductInfoTigrisOSVersion, 
                        _HMFProductInfoTildenOSVersion, _HMFProductInfoTopazOSVersion, 
                        _HMFProductInfoUnionOSVersion, _HMFProductInfoWhitetailOSVersion, 
@@ -46,8 +48,8 @@ exports:
                        _HMFWiFiManagerCurrentNetworkDidChangeNotification, _HMFoundationVersionNumber, 
                        _HMFoundationVersionString, _NSOperatingSystemVersionToString, 
                        _checkMatchingSetupHash, _generateSetupHash, _isEqualToNumber, 
-                       _isEqualToObject, _kDumpStateAccessoryCategoryKey, _kDumpStateAccessoryKey, 
-                       _kDumpStateAccessoryProfileKey, _kDumpStateAccessorySetupHashKey, 
+                       _isEqualToObject, _isReversedBytes, _kDumpStateAccessoryCategoryKey, 
+                       _kDumpStateAccessoryKey, _kDumpStateAccessoryProfileKey, _kDumpStateAccessorySetupHashKey, 
                        _kDumpStateAccessoryTransportKey, _kDumpStateActionSetKey, 
                        _kDumpStateApplicationDataKey, _kDumpStateBridgeAccessoryKey, 
                        _kDumpStateBridgedAccessoryKey, _kDumpStateBulletinNotificationGroupCamerasKey, 
@@ -68,8 +70,9 @@ exports:
                        _kDumpStateWriteActionKey, _kDumpStateZoneKey, _kIndentLevel, 
                        _kSetupHashLength, _randomDataWithLength, _randomUInt32, _tagFromUUID ]
     objc-classes:    [ HMFActivity, HMFAssertion, HMFAttributeDescription, HMFBlockOperation, 
-                       HMFCache, HMFClassRegistry, HMFDigest, HMFDumpCategory, HMFExponentialBackoffTimer, 
-                       HMFHTTPClient, HMFHTTPClientConnection, HMFHTTPRequest, HMFHTTPRequestHandler, 
+                       HMFCache, HMFClassRegistry, HMFConnectivityInfo, HMFDigest, 
+                       HMFDumpCategory, HMFExponentialBackoffTimer, HMFHTTPClient, 
+                       HMFHTTPClientConnection, HMFHTTPRequest, HMFHTTPRequestHandler, 
                        HMFHTTPRequestInternal, HMFHTTPResponse, HMFHTTPResponseInternal, 
                        HMFHTTPServer, HMFHardwareAddress, HMFKey, HMFLogCategory, 
                        HMFMACAddress, HMFMemoryAssertion, HMFMemoryMonitor, HMFMessage, 
@@ -81,9 +84,10 @@ exports:
                        HMFOperationBudget, HMFPairingIdentity, HMFPairingKey, HMFPowerAssertion, 
                        HMFPowerLogger, HMFPowerManager, HMFPreference, HMFPreferences, 
                        HMFPrivateObjectFormatter, HMFProductInfo, HMFSoftwareVersion, 
-                       HMFSystemInfo, HMFSystemPreference, HMFTimer, HMFUnfairLock, 
-                       HMFVersion, HMFWeakObject, HMFWiFiManager, HMFWiFiManagerDataSource, 
-                       HMFWiFiNetworkInfo, HMMsgHandler, HMUIndent, _HMFCFHTTPMessage, 
+                       HMFStringIndentation, HMFSystemInfo, HMFSystemPreference, 
+                       HMFTimer, HMFUnfairLock, HMFVersion, HMFWeakObject, HMFWiFiManager, 
+                       HMFWiFiManagerDataSource, HMFWiFiNetworkInfo, HMFWoBLEInfo, 
+                       HMFWoWLANInfo, HMMsgHandler, HMUIndent, _HMFCFHTTPMessage, 
                        _HMFCFHTTPServer, _HMFCFHTTPServerConnection, _HMFCFHTTPServerRequest, 
                        _HMFCFHTTPServerResponse, _HMFNetAddressHostname, _HMFNetAddressIPV4, 
                        _HMFNetAddressIPV6, _HMFNetManagerWoWAssertion, _HMFNetServiceMonitor, 

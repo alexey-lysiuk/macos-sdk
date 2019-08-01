@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D3337506-8EDF-3891-A502-AE76DD0A4D1E' ]
+uuids:           [ 'x86_64: 5B930687-0052-30F9-BF02-680EADA3DA13' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AccountPolicy.framework/Versions/A/AccountPolicy
 exports:         
@@ -40,7 +40,7 @@ exports:
                        APPolicySet, APRequest, AccountPolicy ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 61403CBF-4F07-32A6-9997-A0356229BF75' ]
+uuids:           [ 'x86_64: 81BBE2C1-7289-3473-B201-0BDDA0F5E80E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AccountPolicy.framework/Frameworks/CFAccountPolicy.framework/Versions/A/CFAccountPolicy
 objc-constraint: none

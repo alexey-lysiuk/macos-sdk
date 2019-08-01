@@ -1098,6 +1098,8 @@ typedef struct __GLIFunctionDispatchRec
 	/* GL_NV_texture_barrier */
 	void (*texture_barrier_NV) (GLIContext ctx);
 
+    /* "GL_APPLE_multi_draw_indirect" */
+    void (*multi_draw_elements_indirect_APPLE) (GLIContext ctx, GLenum mode, GLenum type, const GLvoid *indirect, GLsizei drawcount, GLsizei stride);
 } GLIFunctionDispatch;
 
 

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 43E309F2-D415-37CA-BB58-F490783A0852' ]
+uuids:           [ 'x86_64: 20150BA3-74D6-3991-AD22-52735FAD0E24' ]
 platform:        zippered
 install-name:    /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation
-current-version: 1570.15
+current-version: 1575.17
 compatibility-version: 300
 exports:         
   - archs:           [ x86_64 ]
@@ -359,11 +359,12 @@ exports:
                        __NSCStringCharToUnichar, __NSCStringEncoding, __NSCodeAndEnumerationFlagForTypeInSuite, 
                        __NSConvertToASCIIorUnicode, __NSConvertToASCIIorUnicode2, 
                        __NSDateFormatterNoInit, __NSDefaultCStringEncoding, __NSDefaultFileSystemEncoding, 
-                       __NSDefaultStringEncoding, __NSDescriptionWithLocaleFunc, 
-                       __NSDescriptionWithStringProxyFunc, __NSDictionaryOfVariableBindings, 
-                       __NSDoNotDisturbDisabledNotification, __NSDoNotDisturbEnabledNotification, 
-                       __NSEncodingFromDataForExtendedAttribute, __NSEncodingToNewDataForExtendedAttribute, 
-                       __NSErrnoMessage, __NSErrorWithCloudSharingError, __NSErrorWithFSRefAndOSStatus, 
+                       __NSDefaultMallocZoneClaimedAddress, __NSDefaultStringEncoding, 
+                       __NSDescriptionWithLocaleFunc, __NSDescriptionWithStringProxyFunc, 
+                       __NSDictionaryOfVariableBindings, __NSDoNotDisturbDisabledNotification, 
+                       __NSDoNotDisturbEnabledNotification, __NSEncodingFromDataForExtendedAttribute, 
+                       __NSEncodingToNewDataForExtendedAttribute, __NSErrnoMessage, 
+                       __NSErrorWithCloudSharingError, __NSErrorWithFSRefAndOSStatus, 
                        __NSErrorWithFSRefOSStatusAndVariant, __NSErrorWithFilePath, 
                        __NSErrorWithFilePathAndEncoding, __NSErrorWithFilePathAndErrno, 
                        __NSErrorWithFilePathAndOSStatus, __NSErrorWithFilePathErrnoAndVariant, 

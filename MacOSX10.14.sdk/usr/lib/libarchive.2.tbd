@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D6370CDB-920D-37A3-A9C0-6C1FC95F2F99' ]
+uuids:           [ 'x86_64: 47289946-8504-3966-9127-6CE39993DC2C' ]
 platform:        zippered
 install-name:    /usr/lib/libarchive.2.dylib
 current-version: 9.2

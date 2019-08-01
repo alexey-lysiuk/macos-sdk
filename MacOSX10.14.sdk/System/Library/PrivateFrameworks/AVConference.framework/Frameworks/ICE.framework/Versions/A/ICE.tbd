@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 96D778EE-12F4-3F73-92A9-918A139D8661' ]
+uuids:           [ 'x86_64: 7C6C5A42-C571-3AC9-836E-D40E51175402' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AVConference.framework/Frameworks/ICE.framework/Versions/A/ICE
 objc-constraint: none

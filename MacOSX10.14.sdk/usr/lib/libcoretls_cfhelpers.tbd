@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 51572EB9-D154-348B-9934-3CA9444FAE5E' ]
+uuids:           [ 'x86_64: 0959B3E9-6643-3589-8BB3-21D52CDF0EF1' ]
 platform:        zippered
 install-name:    /usr/lib/libcoretls_cfhelpers.dylib
 current-version: 155.220.1

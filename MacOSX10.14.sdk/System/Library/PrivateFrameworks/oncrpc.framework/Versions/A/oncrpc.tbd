@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5B7FCEA9-16EC-3412-8520-05232EFCA32B' ]
+uuids:           [ 'x86_64: 329E82B7-D30D-3EF1-8057-97FA5B2F5A8C' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/oncrpc.framework/Versions/A/oncrpc
 current-version: 38.50.1

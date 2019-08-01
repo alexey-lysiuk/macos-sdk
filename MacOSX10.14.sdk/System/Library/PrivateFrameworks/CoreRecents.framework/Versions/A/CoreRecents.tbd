@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 86E5FD83-3426-3568-8BA9-16528C57FC04' ]
+uuids:           [ 'x86_64: 9066396F-6EF7-3A02-A368-9D916FE94500' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/CoreRecents.framework/Versions/A/CoreRecents
 exports:         

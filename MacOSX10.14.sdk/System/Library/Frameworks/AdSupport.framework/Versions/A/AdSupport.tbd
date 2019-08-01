@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 47B45BB0-8DE0-3B77-8F9F-D139B463AC23' ]
+uuids:           [ 'x86_64: F0F17235-24F7-301C-933F-0B56F92E8270' ]
 platform:        zippered
 install-name:    /System/Library/Frameworks/AdSupport.framework/Versions/A/AdSupport
 objc-constraint: none

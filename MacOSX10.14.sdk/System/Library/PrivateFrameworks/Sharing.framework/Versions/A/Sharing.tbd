@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E4C2CE6D-757D-322F-AA8D-52A0993E02D6' ]
+uuids:           [ 'x86_64: 48B1F247-7910-3C16-814C-B99DE231F7F0' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/Sharing.framework/Versions/A/Sharing
-current-version: 1288.25
+current-version: 1288.62
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _NSDataFromHexString, _SDAutoUnlockManagerMetricAWDLBringUpKey, 

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 66E91015-F62A-3365-BB81-AA88707E8F12' ]
+uuids:           [ 'x86_64: 9494594B-5199-3186-82AB-5FF8BED6EE16' ]
 platform:        zippered
 install-name:    /usr/lib/system/libsystem_sandbox.dylib
-current-version: 851.250.12
+current-version: 851.255.1
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

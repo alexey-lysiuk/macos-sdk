@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CA9BA845-7056-30B7-BD03-BA5EE29160E9' ]
+uuids:           [ 'x86_64: 711F433F-421A-3D99-9728-55B7F5A3AC72' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PubSub.framework/Versions/A/PubSub
 exports:         

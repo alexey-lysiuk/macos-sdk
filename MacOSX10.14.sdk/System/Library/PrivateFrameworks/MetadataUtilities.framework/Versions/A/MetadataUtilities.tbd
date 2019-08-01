@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 550876F2-D905-3D65-8FA6-3366D857437B' ]
+uuids:           [ 'x86_64: 38BB1FB7-3336-384C-B71F-4D0D402EB606' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/MetadataUtilities.framework/Versions/A/MetadataUtilities
-current-version: 1191.56
+current-version: 1191.57
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _MDCopyBestAvailableLanguage, _MDGetBestAvailableLanguage, 

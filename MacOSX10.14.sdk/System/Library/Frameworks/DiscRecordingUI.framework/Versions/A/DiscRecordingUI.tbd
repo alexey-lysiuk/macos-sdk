@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 658F5F81-8AD7-3F91-AA73-06966059FC3D' ]
+uuids:           [ 'x86_64: ED9144F4-1C1D-3995-8C76-CC9CA6E8707A' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/DiscRecordingUI.framework/Versions/A/DiscRecordingUI
 exports:         

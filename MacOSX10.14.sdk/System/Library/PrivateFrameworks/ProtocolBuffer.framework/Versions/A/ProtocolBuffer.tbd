@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DBBA73C9-E9AE-3CF5-88A4-7E4262BDE34E' ]
+uuids:           [ 'x86_64: 907D6C95-D050-31DE-99CA-16A5135BC6F9' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/ProtocolBuffer.framework/Versions/A/ProtocolBuffer
-current-version: 263
+current-version: 263.2
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _PBDataWriterPlaceMark, _PBDataWriterRecallMark, _PBDataWriterWriteBOOLField, 

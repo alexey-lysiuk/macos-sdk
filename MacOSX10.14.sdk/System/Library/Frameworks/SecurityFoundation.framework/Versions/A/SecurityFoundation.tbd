@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4A36D3BA-02B5-3C52-8B49-08EC290E1924' ]
+uuids:           [ 'x86_64: 1EE899E6-222A-3526-B505-B0D0B6FA042A' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/SecurityFoundation.framework/Versions/A/SecurityFoundation
-current-version: 55185.251.1
+current-version: 55185.255.1
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

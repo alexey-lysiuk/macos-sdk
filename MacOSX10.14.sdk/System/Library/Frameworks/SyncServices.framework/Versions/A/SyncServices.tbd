@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 08B4EADA-FB5D-37A0-B86C-189C447737F2' ]
+uuids:           [ 'x86_64: 401142E8-99D9-3FCB-985B-B1A839B5CA42' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/SyncServices.framework/Versions/A/SyncServices
 current-version: 727

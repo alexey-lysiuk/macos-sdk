@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 52B608D7-4347-39A3-A7C1-5F14C8467EE2' ]
+uuids:           [ 'x86_64: 8B9DE875-3AA0-3F72-9537-C12994675BE8' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PrintingPrivate.framework/Versions/A/PrintingPrivate
 current-version: 180.3

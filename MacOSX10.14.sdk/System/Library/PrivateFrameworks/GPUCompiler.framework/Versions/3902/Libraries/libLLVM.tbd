@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 181A6B04-E731-36F8-973F-7EB63B0323BD' ]
+uuids:           [ 'x86_64: 7414D673-DC69-3AA4-9BD5-BF9610F0C823' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/GPUCompiler.framework/Versions/3902/Libraries/libLLVM.dylib
 current-version: 3902.3.2

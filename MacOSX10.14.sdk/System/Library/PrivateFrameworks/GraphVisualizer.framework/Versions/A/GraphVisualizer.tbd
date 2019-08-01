@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C261C18C-C66F-39BA-A640-727434ADBEB7' ]
+uuids:           [ 'x86_64: 48D020B7-5938-3FAE-B468-E291AEE2C06F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/GraphVisualizer.framework/Versions/A/GraphVisualizer
 current-version: 0

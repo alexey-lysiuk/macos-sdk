@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 59C15CD9-ED54-3223-8505-57AE6F37792D' ]
+uuids:           [ 'x86_64: 42D90145-C2EF-3AB7-98E5-53D50D862F95' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/HTTPServer.framework/Versions/A/HTTPServer
 current-version: 36

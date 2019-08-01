@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: 0FFAF1F7-9D27-3406-AD0C-D242FA3213F4', 'x86_64h: 2A4F43DA-6CC6-387F-8099-B80CEFC5EE8E' ]
+uuids:           [ 'x86_64: 57B85682-96F5-3DD9-8969-DF83D07E0295', 'x86_64h: EE7948FC-FDA8-3F95-A1E0-69FAED5D81AA' ]
 platform:        zippered
 install-name:    /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
-current-version: 1570.15
+current-version: 1575.17
 compatibility-version: 150
 objc-constraint: none
 exports:         
@@ -844,7 +844,8 @@ exports:
                        __kCFURLFileAllocatedSizeOfResourceForkKey, __kCFURLFileIDKey, 
                        __kCFURLFilePathKey, __kCFURLFileSecurityKey, __kCFURLFileSizeOfResourceForkKey, 
                        __kCFURLFinderInfoKey, __kCFURLGroupIDKey, __kCFURLInodeNumberKey, 
-                       __kCFURLIsApplicationKey, __kCFURLIsCompressedKey, __kCFURLIsExecutableKey, 
+                       __kCFURLIsApplicationKey, __kCFURLIsCompressedKey, __kCFURLIsExcludedFromCloudBackupKey, 
+                       __kCFURLIsExcludedFromUnencryptedBackupKey, __kCFURLIsExecutableKey, 
                        __kCFURLIsReadableKey, __kCFURLIsRestrictedKey, __kCFURLIsSystemAppendKey, 
                        __kCFURLIsSystemArchivedKey, __kCFURLIsSystemNoUnlinkKey, 
                        __kCFURLIsUserAppendKey, __kCFURLIsUserDataVaultKey, __kCFURLIsUserNoDumpKey, 

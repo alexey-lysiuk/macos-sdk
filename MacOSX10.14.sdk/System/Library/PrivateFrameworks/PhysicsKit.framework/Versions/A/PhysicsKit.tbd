@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 64B7911E-E56A-3501-BA92-AE326EFEE9C0' ]
+uuids:           [ 'x86_64: 7CFDA5AC-9C40-3F87-9633-8FB4AD6AD815' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/PhysicsKit.framework/Versions/A/PhysicsKit
 exports:         

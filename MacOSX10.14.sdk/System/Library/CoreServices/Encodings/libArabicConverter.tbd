@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AC079A2E-97F6-3693-B77B-8A0055B5F5BE' ]
+uuids:           [ 'x86_64: 2CE0559C-875E-33FD-B232-DC8242069517' ]
 platform:        macosx
 install-name:    /System/Library/CoreServices/Encodings/libArabicConverter.dylib
 current-version: 73

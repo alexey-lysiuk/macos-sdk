@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: E344D532-344C-3D2A-9DA7-B2684DDFB43A', 'x86_64h: 4F86FC7C-496B-3E68-8A74-1EA2BA22FBCC' ]
+uuids:           [ 'x86_64: 20942D4E-CE6F-376A-8BCD-016F88E4BFD5', 'x86_64h: 7C312627-43CB-3234-9324-4DEA92D59F50' ]
 platform:        zippered
 install-name:    /usr/lib/libobjc.A.dylib
 current-version: 228

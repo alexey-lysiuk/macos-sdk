@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 62EAF065-5BC6-31E0-93D7-3E49C1F5122D' ]
+uuids:           [ 'x86_64: 7F1634EF-6016-3B13-A8A3-6B299B9EDA05' ]
 platform:        macosx
 install-name:    /usr/lib/libDHCPServer.A.dylib
 objc-constraint: none

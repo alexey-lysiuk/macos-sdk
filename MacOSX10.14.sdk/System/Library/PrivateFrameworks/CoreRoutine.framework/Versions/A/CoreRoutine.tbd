@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 88EF30FD-C06A-38D6-B407-FF42121065C7' ]
+uuids:           [ 'x86_64: 705656F1-71B5-3B92-9D6A-2BC556B1DB54' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/CoreRoutine.framework/Versions/A/CoreRoutine
 current-version: 558.12.5

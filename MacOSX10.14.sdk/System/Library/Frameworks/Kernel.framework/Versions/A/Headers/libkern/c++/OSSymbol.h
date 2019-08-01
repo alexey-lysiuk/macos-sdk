@@ -304,6 +304,43 @@ public:
  */
 	static const OSSymbol * withCStringNoCopy(const char * cString);
 
+/*!
+ * @function existingSymbolForString
+ *
+ * @abstract
+ * Returns an existing OSSymbol for the given OSString.
+ *
+ * @param aString   The OSString Object to look up.
+ *
+ * @result
+ * An existing instance of OSSymbol representing
+ * the same characters as <code>aString</code>;
+ * <code>NULL</code> if none is found.
+ *
+ * @discussion
+ * The returned OSSymbol object is returned with an incremented refcount
+ * that needs to be released.
+ */
+	static const OSSymbol* existingSymbolForString(const OSString *aString);
+
+/*!
+ * @function existingSymbolForCString
+ *
+ * @abstract
+ * Returns an existing OSSymbol for the given C string.
+ *
+ * @param aCString   The C string to look up.
+ *
+ * @result
+ * An existing instance of OSSymbol representing
+ * the same characters as <code>aString</code>;
+ * <code>NULL</code> if none is found.
+ *
+ * @discussion
+ * The returned OSSymbol object is returned with an incremented refcount
+ * that needs to be released.
+ */
+	static const OSSymbol* existingSymbolForCString(const char *aCString);
 
 /*!
  * @function isEqualTo

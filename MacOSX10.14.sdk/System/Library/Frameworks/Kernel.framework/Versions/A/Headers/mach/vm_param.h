@@ -245,6 +245,15 @@ extern uint64_t         max_mem;                /* 64-bit size of memory - limit
  */
 #define ANON_CHUNK_SIZE (128ULL * 1024 * 1024) /* 128MB */
 
+/*
+ * The 'medium' malloc allocator would like its regions
+ * to be chunked up into MALLOC_MEDIUM_CHUNK_SIZE chunks
+ * and backed by different objects. This avoids contention
+ * on a single large object and showed solid improvements on high
+ * core machines with workloads involving video and graphics processing.
+ */
+#define MALLOC_MEDIUM_CHUNK_SIZE (8ULL * 1024 * 1024) /* 8 MB */
+
 
 extern vm_size_t        page_size;
 extern vm_size_t        page_mask;

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3B31CE91-21AE-33A2-8899-356322CFF40E' ]
+uuids:           [ 'x86_64: A4E35C90-976B-308B-919D-BC0879999371' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/IMServicePlugIn.framework/Versions/A/IMServicePlugIn
 current-version: 1000
@@ -20,7 +20,7 @@ exports:
                        IMServicePlugInMessage._internal ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 27D99414-AD3A-3008-BB14-881697185891' ]
+uuids:           [ 'x86_64: 8E603DFC-741A-39F0-9FC8-3D8D58B38116' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/IMServicePlugIn.framework/Versions/A/Frameworks/IMServicePlugInSupport.framework/Versions/A/IMServicePlugInSupport
 current-version: 1000

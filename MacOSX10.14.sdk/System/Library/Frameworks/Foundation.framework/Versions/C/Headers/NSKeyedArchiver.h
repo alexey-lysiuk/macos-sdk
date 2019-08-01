@@ -1,5 +1,5 @@
 /*	NSKeyedArchiver.h
-	Copyright (c) 2001-2018, Apple Inc. All rights reserved.
+	Copyright (c) 2001-2019, Apple Inc. All rights reserved.
 */
 
 #import <Foundation/NSCoder.h>
@@ -63,7 +63,7 @@ FOUNDATION_EXPORT NSString * const NSKeyedArchiveRootObjectKey API_AVAILABLE(mac
 - (instancetype)init API_DEPRECATED("Use -initRequiringSecureCoding: instead", macosx(10.12,10.14), ios(10.0,12.0), watchos(3.0,5.0), tvos(10.0,12.0));
 - (instancetype)initForWritingWithMutableData:(NSMutableData *)data API_DEPRECATED("Use -initRequiringSecureCoding: instead", macosx(10.2,10.14), ios(2.0,12.0), watchos(2.0,5.0), tvos(9.0,12.0));
 
-+ (NSData *)archivedDataWithRootObject:(id)rootObject API_DEPRECATED("Use +archivedDataWithRootObject:requiringSecureCoding:error: instead", macosx(10.11,10.14), ios(2.0,12.0), watchos(2.0,5.0), tvos(9.0,12.0));
++ (NSData *)archivedDataWithRootObject:(id)rootObject API_DEPRECATED("Use +archivedDataWithRootObject:requiringSecureCoding:error: instead", macosx(10.2,10.14), ios(2.0,12.0), watchos(2.0,5.0), tvos(9.0,12.0));
 + (BOOL)archiveRootObject:(id)rootObject toFile:(NSString *)path API_DEPRECATED("Use +archivedDataWithRootObject:requiringSecureCoding:error: instead", macosx(10.2,10.14), ios(2.0,12.0), watchos(2.0,5.0), tvos(9.0,12.0));
 
 @property (nullable, assign) id <NSKeyedArchiverDelegate> delegate;
@@ -152,7 +152,7 @@ FOUNDATION_EXPORT NSString * const NSKeyedArchiveRootObjectKey API_AVAILABLE(mac
 - (instancetype)initForReadingWithData:(NSData *)data API_DEPRECATED("Use -initForReadingFromData:error: instead", macosx(10.2,10.14), ios(2.0,12.0), watchos(2.0,5.0), tvos(9.0,12.0));
 
 + (nullable id)unarchiveObjectWithData:(NSData *)data API_DEPRECATED("Use +unarchivedObjectOfClass:fromData:error: instead", macosx(10.2,10.14), ios(2.0,12.0), watchos(2.0,5.0), tvos(9.0,12.0));
-+ (nullable id)unarchiveTopLevelObjectWithData:(NSData *)data error:(NSError **)error API_DEPRECATED("Use +unarchivedObjectOfClass:fromData:error: instead", macosx(10.2,10.14), ios(2.0,12.0), watchos(2.0,5.0), tvos(9.0,12.0)) NS_SWIFT_UNAVAILABLE("Use 'unarchiveTopLevelObjectWithData(_:) throws' instead");
++ (nullable id)unarchiveTopLevelObjectWithData:(NSData *)data error:(NSError **)error API_DEPRECATED("Use +unarchivedObjectOfClass:fromData:error: instead", macosx(10.11,10.14), ios(2.0,12.0), watchos(2.0,5.0), tvos(9.0,12.0)) NS_SWIFT_UNAVAILABLE("Use 'unarchiveTopLevelObjectWithData(_:) throws' instead");
 + (nullable id)unarchiveObjectWithFile:(NSString *)path API_DEPRECATED("Use +unarchivedObjectOfClass:fromData:error: instead", macosx(10.2,10.14), ios(2.0,12.0), watchos(2.0,5.0), tvos(9.0,12.0));
 
 @property (nullable, assign) id <NSKeyedUnarchiverDelegate> delegate;

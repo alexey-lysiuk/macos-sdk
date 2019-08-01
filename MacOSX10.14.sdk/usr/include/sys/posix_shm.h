@@ -53,30 +53,15 @@ struct label;
 #define PSHMNAMLEN      31      /* maximum name segment length we bother with */
 
 struct pshminfo {
-	unsigned int    pshm_flags;
-	unsigned int    pshm_usecount;
-	off_t           pshm_length;
-	mode_t          pshm_mode;
-	uid_t           pshm_uid;
-	gid_t           pshm_gid;
-	char            pshm_name[PSHMNAMLEN + 1];      /* segment name */
-	void *          pshm_memobject;
-#if DIAGNOSTIC
-	unsigned int    pshm_readcount;
-	unsigned int    pshm_writecount;
-	struct proc *   pshm_proc;
-#endif /* DIAGNOSTIC */
-	struct label *  pshm_label;
+	unsigned int pshm_flags;
+	unsigned int pshm_usecount;
+	off_t        pshm_length;
+	mode_t       pshm_mode;
+	uid_t        pshm_uid;
+	gid_t        pshm_gid;
+	char         pshm_name[PSHMNAMLEN + 1];
+	void         *pshm_memobject;
+	struct label *pshm_label;
 };
-#define PSHMINFO_NULL (struct pshminfo *)0
-
-#define PSHM_NONE       1
-#define PSHM_DEFINED    2
-#define PSHM_ALLOCATED  4
-#define PSHM_MAPPED     8
-#define PSHM_INUSE      0x10
-#define PSHM_REMOVED    0x20
-#define PSHM_INCREATE   0x40
-#define PSHM_INDELETE   0x80
 
 #endif

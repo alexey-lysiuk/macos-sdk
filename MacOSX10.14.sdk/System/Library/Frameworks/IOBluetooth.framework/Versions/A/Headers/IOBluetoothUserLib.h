@@ -264,8 +264,7 @@ typedef enum IOBluetoothUserNotificationChannelDirection
     @param userRefCon	(void *) This user defined parameter was provided during the original call to register
 						the notification.
     @param inRef		(IOBluetoothUserNotificationRef) The notification responsible for sending the notification.
-    @param status		(IOBluetoothObjectRef) The object that originated the notification.
-    @result None.
+    @param objectRef	(IOBluetoothObjectRef) The object that originated the notification.
 */
 
 typedef void (*IOBluetoothUserNotificationCallback)( 	void * userRefCon,
@@ -279,7 +278,6 @@ typedef void (*IOBluetoothUserNotificationCallback)( 	void * userRefCon,
 				it will no longer call the callback.  Additionally, once this function has been called the
 				target IOBluetoothUserNotificationRef is no longer valid.
     @param	notificationRef The target IOBluetoothUserNotificationRef to be unregistered
-    @result None.
 */
 
 void IOBluetoothUserNotificationUnregister( IOBluetoothUserNotificationRef notificationRef );
@@ -343,7 +341,7 @@ IOBluetoothUserNotificationRef IOBluetoothRegisterForL2CAPChannelOpenNotificatio
 	@discussion	The given callback will be called whenever any L2CAP channel is opened.
 	@param		callback	The callback to be called when a new L2CAP channel is opened.
 	@param		inRefCon	Client-supplied refCon to be passed to the callback.
-	@param		psm			PSM to match a new L2CAP channel.  If the PSM doesn't matter, 0 may be passed in.
+	@param		inPSM		PSM to match a new L2CAP channel.  If the PSM doesn't matter, 0 may be passed in.
 	@param		inDirection	The desired direction of the L2CAP channel - kIOBluetoothUserNotificationChannelDirectionAny
 				if the direction doesn't matter.
 	@result		Returns an IOBluetoothUserNotificationRef representing the outstanding L2CAP channel notification.
@@ -402,7 +400,7 @@ IOBluetoothUserNotificationRef IOBluetoothRegisterForRFCOMMChannelOpenNotificati
 	@discussion	The given callback will be called whenever any RFCOMM channel is opened.
 	@param		callback	The callback to be called when a new RFCOMM channel is opened.
 	@param		inRefCon	Client-supplied refCon to be passed to the callback.
-	@param		channeLID	RFCOMM channel ID to match a new RFCOMM channel.  If the channel ID doesn't matter, 0 may be passed in.
+	@param		channelID	RFCOMM channel ID to match a new RFCOMM channel.  If the channel ID doesn't matter, 0 may be passed in.
 	@param		inDirection	The desired direction of the RFCOMM channel - kIOBluetoothUserNotificationChannelDirectionAny
 				if the direction doesn't matter.
 	@result		Returns an IOBluetoothUserNotificationRef representing the outstanding RFCOMM channel notification.
@@ -422,7 +420,7 @@ IOBluetoothUserNotificationRef IOBluetoothRegisterForFilteredRFCOMMChannelOpenNo
     @function	IOBluetoothRFCOMMChannelRegisterForChannelCloseNotification
 	@abstract	Allows a client to register for a channel close notification.
     @discussion	The given callback will be called when the RFCOMM channel is closed.
-	@param		channel		The target RFCOMM channel
+	@param		inChannel	The target RFCOMM channel
 	@param		callback	Callback to be called when the RFCOMM channel is closed.
 	@param		inRefCon	Client-supplied refCon to be passed to the callback.
 	@result		Returns an IOBluetoothUserNotificationRef representing the outstanding RFCOMM channel close notification.

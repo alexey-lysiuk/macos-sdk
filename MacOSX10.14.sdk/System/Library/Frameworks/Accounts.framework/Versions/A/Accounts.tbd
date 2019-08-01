@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A0BB170F-DD5A-3EDB-B8D0-BEEE1BAC0513' ]
+uuids:           [ 'x86_64: 251A1CB1-F972-3F60-8662-85459EAD6318' ]
 platform:        zippered
 install-name:    /System/Library/Frameworks/Accounts.framework/Versions/A/Accounts
 objc-constraint: none

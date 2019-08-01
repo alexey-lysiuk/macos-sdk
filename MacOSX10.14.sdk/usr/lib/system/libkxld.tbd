@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 649F5829-6AA8-32EE-9A33-B1244378C319' ]
+uuids:           [ 'x86_64: E9E37910-D3C3-3433-B071-674EFF6C0B9A' ]
 platform:        zippered
 install-name:    /usr/lib/system/libkxld.dylib
 objc-constraint: none

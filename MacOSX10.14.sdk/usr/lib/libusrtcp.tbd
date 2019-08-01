@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E9D688D6-5021-3544-ADF2-F9A9DC7D2AF2' ]
+uuids:           [ 'x86_64: 36BBD474-FAE5-366F-946D-16C5C4B4A792' ]
 platform:        zippered
 install-name:    /usr/lib/libusrtcp.dylib
 objc-constraint: none

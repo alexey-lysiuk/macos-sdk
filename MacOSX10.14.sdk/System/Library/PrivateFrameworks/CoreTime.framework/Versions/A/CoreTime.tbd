@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4833F39E-1BB3-32E3-9BF4-D2200ACC2D49' ]
+uuids:           [ 'x86_64: A265671F-B74D-39F0-931C-74CC77B0732F' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/CoreTime.framework/Versions/A/CoreTime
 current-version: 258.4

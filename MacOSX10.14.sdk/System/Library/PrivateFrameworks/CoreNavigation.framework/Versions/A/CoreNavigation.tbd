@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DB380BCF-9894-3A14-B691-C44469E58ACE' ]
+uuids:           [ 'x86_64: E13F79FD-A4E4-3006-BFA2-6997543A6576' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreNavigation.framework/Versions/A/CoreNavigation
 current-version: 0

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7D8A5C9A-3F58-38C2-A1DC-20765150C742' ]
+uuids:           [ 'x86_64: 1E8E64E6-0E58-375A-97F7-07CB4EE181AC' ]
 platform:        zippered
 install-name:    /System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio
 objc-constraint: none

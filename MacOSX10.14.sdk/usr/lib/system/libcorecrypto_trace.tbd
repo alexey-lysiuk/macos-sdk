@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BA1DC834-BF5C-3F0D-87BC-B4FF9E4DC53F' ]
+uuids:           [ 'x86_64: C5ECD7F9-2F53-384A-A924-9F86E2417FE2' ]
 platform:        zippered
 install-name:    /usr/lib/system/libcorecrypto_trace.dylib
-current-version: 602.250.23
+current-version: 602.255.2
 objc-constraint: none
 parent-umbrella: System
 exports:         

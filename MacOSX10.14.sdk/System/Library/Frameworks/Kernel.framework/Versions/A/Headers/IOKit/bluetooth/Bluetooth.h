@@ -1312,6 +1312,14 @@ struct BluetoothHCILinkQualityInfo
 	BluetoothHCILinkQuality			qualityValue;
 };
 
+typedef	uint8_t										        BluetoothHCIEncryptionKeySize;
+typedef struct BluetoothHCIEncryptionKeySizeInfo			BluetoothHCIEncryptionKeySizeInfo;
+struct BluetoothHCIEncryptionKeySizeInfo
+{
+	BluetoothConnectionHandle		        handle;
+	BluetoothHCIEncryptionKeySize			keySize;
+};
+        
 typedef uint8_t	BluetoothHCIRole;
 typedef struct	BluetoothHCIRoleInfo					BluetoothHCIRoleInfo;
 struct BluetoothHCIRoleInfo
@@ -1705,7 +1713,8 @@ enum BluetoothTransportTypes
 	kBluetoothTransportTypeUSB		= 0x01,
 	kBluetoothTransportTypePCCard	= 0x02,
 	kBluetoothTransportTypePCICard	= 0x03,
-	kBluetoothTransportTypeUART		= 0x04
+	kBluetoothTransportTypeUART		= 0x04,
+    kBluetoothTransportTypePCIe     = 0x05
 };
 
 // Inquiries

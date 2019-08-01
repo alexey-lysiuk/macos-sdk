@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F0E67742-2326-31A2-9D7D-BC7F24240D7B' ]
+uuids:           [ 'x86_64: FB00E26E-1BE2-3937-930B-1A067444422D' ]
 platform:        macosx
 install-name:    /usr/lib/libATCommandStudioDynamic.dylib
 objc-constraint: none

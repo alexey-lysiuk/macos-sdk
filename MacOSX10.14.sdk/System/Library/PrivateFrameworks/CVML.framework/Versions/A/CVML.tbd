@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3612378E-75CE-39C4-B721-1C2CBB9BDF17' ]
+uuids:           [ 'x86_64: CAA9501E-6D1D-3923-9688-A9533480D2CB' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CVML.framework/Versions/A/CVML
 current-version: 1.87

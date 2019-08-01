@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 201CCA68-44E4-3E09-8604-7D8833AC803B' ]
+uuids:           [ 'x86_64: E3F02F2A-2059-39CC-85DA-969676EB88EB' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DFRFoundation.framework/Versions/A/DFRFoundation
 current-version: 211.1

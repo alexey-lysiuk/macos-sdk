@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 95D4B7DF-78F3-3948-AA63-6425AF2C00CD' ]
+uuids:           [ 'x86_64: 73CF6FA9-44CE-30C9-887F-235940976585' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/TCC.framework/Versions/A/TCC
 objc-constraint: none

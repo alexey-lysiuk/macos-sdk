@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8540D4EA-D81C-3381-A196-5CB8F9A11EF7' ]
+uuids:           [ 'x86_64: D3391BA9-1039-3463-A48B-D1FAF845478B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/BulkSymbolication.framework/Versions/A/BulkSymbolication
 current-version: 218.2

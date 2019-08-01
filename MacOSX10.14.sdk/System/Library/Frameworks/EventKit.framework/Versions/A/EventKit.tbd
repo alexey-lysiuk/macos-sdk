@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6CB465DD-FA8E-3217-9A53-44D2C2D5F93F' ]
+uuids:           [ 'x86_64: 855805B1-A319-365E-A476-D61E5CE2A533' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/EventKit.framework/Versions/A/EventKit
-current-version: 809.4.2
+current-version: 809.5.1
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _BirthdaySourceType, _CalDAVSourceType, _EKActionConfirmSuggestedEvent, 
@@ -141,10 +141,9 @@ exports:
                        _ExchangeSourceType, _IMAPSourceType, _LocalSourceType, _SubscriptionSourceType, 
                        __EKCalendarURLScheme, __EKEventURLScheme, __EKReminderURLScheme, 
                        __bitmaskContainsOption, __bitmaskExclusivelyMatchesOption, 
-                       __bitmaskMatchesExactlyOneOptionFromList, __boolToString, 
-                       __validMoveEventRequirementsCombination, _barrierAsyncIfQueueNotNil, 
-                       _barrierSyncBool, _barrierSyncIfQueueNotNil, _defaultValueForKey, 
-                       _dispatch_async_main_if_necessary, _dispatch_queue_create_recursive_concurrent, 
+                       __bitmaskMatchesExactlyOneOptionFromList, __validMoveEventRequirementsCombination, 
+                       _barrierAsyncIfQueueNotNil, _barrierSyncBool, _barrierSyncIfQueueNotNil, 
+                       _defaultValueForKey, _dispatch_async_main_if_necessary, _dispatch_queue_create_recursive_concurrent, 
                        _dispatch_sync_recursive, _ekSubSystem, _kDomain, _kEKCalendarItemNotesPropertyName, 
                        _kEKCalendarItemStructuredLocationPropertyName, _kEKCalendarItemURLPropertyName, 
                        _kNumberOfSharedLocks, _resetStaticObjectCreationVariables, 

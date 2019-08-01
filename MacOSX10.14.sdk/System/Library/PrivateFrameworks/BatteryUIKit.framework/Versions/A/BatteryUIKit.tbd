@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7368435E-923B-3DB6-BD47-791CEE5956E5' ]
+uuids:           [ 'x86_64: 5BB7FC4D-6AD9-3D07-A82C-FBF65537F106' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/BatteryUIKit.framework/Versions/A/BatteryUIKit
 exports:         

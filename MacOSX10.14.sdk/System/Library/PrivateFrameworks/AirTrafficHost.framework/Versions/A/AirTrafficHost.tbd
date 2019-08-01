@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 178AA2C6-9793-3213-93D6-0D0A20FFE421' ]
+uuids:           [ 'x86_64: 757C946C-C672-3321-A6A9-626F59B02073' ]
 platform:        macosx
 flags:           [ not_app_extension_safe ]
 install-name:    /System/Library/PrivateFrameworks/AirTrafficHost.framework/Versions/A/AirTrafficHost

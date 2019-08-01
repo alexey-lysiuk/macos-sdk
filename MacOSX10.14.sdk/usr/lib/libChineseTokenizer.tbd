@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BE41A678-907E-3031-B2BA-ECDB81282499' ]
+uuids:           [ 'x86_64: 9B7F6109-3A5D-3641-9A7E-31D2239D73EE' ]
 platform:        zippered
 install-name:    /usr/lib/libChineseTokenizer.dylib
 current-version: 28.15.3

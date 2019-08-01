@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7CE68972-0FBD-3109-BE6C-6116F593C21C' ]
+uuids:           [ 'x86_64: 77F2CFD0-8439-36FE-B472-CD701AF326CC' ]
 platform:        macosx
 install-name:    /usr/lib/libAppleSSEExt.dylib
 objc-constraint: none

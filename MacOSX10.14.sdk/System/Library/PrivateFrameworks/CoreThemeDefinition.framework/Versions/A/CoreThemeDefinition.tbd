@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 343FE06C-3CED-3383-802D-CAB23D089C06' ]
+uuids:           [ 'x86_64: D647F522-841E-3991-85C1-FA5B12F54791' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/Versions/A/CoreThemeDefinition
-current-version: 348.3
+current-version: 349
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _AbortDistillKey, _CSIDataKey, _CoreThemeArtworkFormatCAAR, 

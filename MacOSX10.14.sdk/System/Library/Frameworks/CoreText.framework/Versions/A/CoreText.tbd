@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C7E919A8-5840-39C9-A9E7-0E686F486109' ]
+uuids:           [ 'x86_64: 59919B0C-CBD5-3877-8D6F-D6048F1E5F42' ]
 platform:        zippered
 install-name:    /System/Library/Frameworks/CoreText.framework/Versions/A/CoreText
 objc-constraint: none

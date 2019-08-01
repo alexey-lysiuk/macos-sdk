@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C6870B0D-B01B-3BAE-B3E9-492F91B8FF8B' ]
+uuids:           [ 'x86_64: 1A2AB2A0-3B44-3E23-886C-7CBF8C61FF59' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/iLifeMediaBrowser.framework/Versions/A/iLifeMediaBrowser
 current-version: 764

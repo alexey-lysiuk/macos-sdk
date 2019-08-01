@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6983A268-20F4-3F98-A3F5-D63848933B02' ]
+uuids:           [ 'x86_64: EC9B39A5-9592-3577-8997-7DC721D20D8C' ]
 platform:        zippered
 install-name:    /usr/lib/system/libsystem_darwin.dylib
 objc-constraint: none

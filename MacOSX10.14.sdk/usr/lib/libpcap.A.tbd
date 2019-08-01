@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FA490ABF-6C15-336A-818F-0C14A8C090DB' ]
+uuids:           [ 'x86_64: C0893641-7DFF-3A33-BDAE-190FF54837E8' ]
 platform:        macosx
 install-name:    /usr/lib/libpcap.A.dylib
 objc-constraint: none

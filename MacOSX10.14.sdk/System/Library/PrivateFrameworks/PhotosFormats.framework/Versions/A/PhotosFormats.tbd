@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 918527C3-3DCB-354B-B89B-892AD823D11A' ]
+uuids:           [ 'x86_64: F3107A66-9F74-3BA7-88D9-B9992E60327D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotosFormats.framework/Versions/A/PhotosFormats
-current-version: 3441.7.100
+current-version: 3461.7.140
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CAMUserPreferenceCaptureEncodingBehavior, _CAMUserPreferenceSlomoConfiguration, 

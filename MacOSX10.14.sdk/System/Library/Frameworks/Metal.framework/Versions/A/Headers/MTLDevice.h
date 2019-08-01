@@ -155,6 +155,7 @@ typedef NS_ENUM(NSUInteger, MTLFeatureSet)
     MTLFeatureSet_tvOS_GPUFamily1_v4 API_AVAILABLE(tvos(12.0)) API_UNAVAILABLE(ios) API_UNAVAILABLE(macos) = 30004,
 } API_AVAILABLE(macos(10.11), ios(8.0)) API_AVAILABLE(tvos(9.0));
 
+
 /*!
  @enum MTLPipelineOption
  @abstract Controls the creation of the pipeline
@@ -319,6 +320,7 @@ API_AVAILABLE(macos(10.11), ios(8.0))
  and heaps less than this threshold, beyond which the device is likely to be overcommitted and incur a
  performance penalty. */
 @property (readonly) uint64_t recommendedMaxWorkingSetSize API_AVAILABLE(macos(10.12)) API_UNAVAILABLE(ios);
+
 
 /*!
  @property depth24Stencil8PixelFormatSupported

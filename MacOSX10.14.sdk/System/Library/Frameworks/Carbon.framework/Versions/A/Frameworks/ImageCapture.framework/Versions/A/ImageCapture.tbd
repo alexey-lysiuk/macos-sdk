@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B02BE202-793D-3609-8E60-694A39D75CD0' ]
+uuids:           [ 'x86_64: DB063E87-ED8F-3E4E-A7E2-A6B45FA73EF7' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/ImageCapture.framework/Versions/A/ImageCapture
 current-version: 5

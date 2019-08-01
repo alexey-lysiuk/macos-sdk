@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 68770CCD-9C7F-31AB-8BBB-0DE4577D5F61' ]
+uuids:           [ 'x86_64: BF4B29F7-FBC8-3299-98E8-C3F8C04B7C92' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreWLAN.framework/Versions/A/CoreWLAN
 exports:         
@@ -75,11 +75,11 @@ exports:
                        _WiFiManagerClientGetDevice, _WiFiManagerClientGetThermalIndex, 
                        _WiFiManagerClientGetWoWCapability, _WiFiManagerClientGetWoWState, 
                        _WiFiManagerClientRegisterDeviceAttachmentCallback, _WiFiManagerClientRegisterWowStateChangedCallback, 
-                       _WiFiManagerClientScheduleWithRunLoop, _WiFiManagerClientSetPower, 
-                       _WiFiManagerClientSetThermalIndex, _WiFiManagerClientSetWoWState, 
-                       _WiFiManagerClientTemporarilyDisableNetwork, _WiFiManagerClientUnscheduleFromRunLoop, 
-                       _WiFiManagerClientUpdateNetwork, _WiFiManagerCopyDeviceList, 
-                       _WiFiNetworkCopyBSSIDData, _WiFiNetworkCopyHashedWPAPassword, 
+                       _WiFiManagerClientScheduleWithRunLoop, _WiFiManagerClientSetNetworkProperty, 
+                       _WiFiManagerClientSetPower, _WiFiManagerClientSetThermalIndex, 
+                       _WiFiManagerClientSetWoWState, _WiFiManagerClientTemporarilyDisableNetwork, 
+                       _WiFiManagerClientUnscheduleFromRunLoop, _WiFiManagerClientUpdateNetwork, 
+                       _WiFiManagerCopyDeviceList, _WiFiNetworkCopyBSSIDData, _WiFiNetworkCopyHashedWPAPassword, 
                        _WiFiNetworkCopyRecord, _WiFiNetworkCopyShareablePassword, 
                        _WiFiNetworkCreate, _WiFiNetworkCreateCopy, _WiFiNetworkGetChannel, 
                        _WiFiNetworkGetIntProperty, _WiFiNetworkGetOperatingBand, 
@@ -127,13 +127,14 @@ exports:
                        _kCWPowerDidChangeNotification, _kCWSSIDDidChangeNotification, 
                        _kCWScanKeyBSSID, _kCWScanKeyDwellTime, _kCWScanKeyMerge, 
                        _kCWScanKeyRestTime, _kCWScanKeySSID, _kCWScanKeyScanType, 
-                       _knownNetworkEntryForNetworkProfile, _legacySecurityTypeForSecurityType, 
-                       _locStringForErrorCode, _networkHiddenOrBroadcast, _readCurrentNetworkFromNVRAM, 
-                       _readRecoveryNetworksFromNVRAM, _roamingProfileTypeForSchemaString, 
-                       _schemaStringForRoamingProfileType, _schemaStringForSecurityType, 
-                       _schemaStringForShareMode, _schemaStringForUserRole, _securityTypeForLegacySecurityType, 
-                       _securityTypeForSchemaString, _shareModeForSchemaString, _stringFromData, 
-                       _updateAPModeConfiguration, _userRoleForSchemaString, _wlanNetworkInterfaceAvailable, 
+                       _kWiFiNetworkIsAutoJoinedKey, _knownNetworkEntryForNetworkProfile, 
+                       _legacySecurityTypeForSecurityType, _locStringForErrorCode, 
+                       _networkHiddenOrBroadcast, _readCurrentNetworkFromNVRAM, _readRecoveryNetworksFromNVRAM, 
+                       _roamingProfileTypeForSchemaString, _schemaStringForRoamingProfileType, 
+                       _schemaStringForSecurityType, _schemaStringForShareMode, _schemaStringForUserRole, 
+                       _securityTypeForLegacySecurityType, _securityTypeForSchemaString, 
+                       _shareModeForSchemaString, _stringFromData, _updateAPModeConfiguration, 
+                       _userRoleForSchemaString, _wlanNetworkInterfaceAvailable, 
                        _wow_get_parameters, _wow_get_wake_condition, _wow_preference_enabled, 
                        _wow_set_parameters, _wow_set_wake_condition, _wps_cancel, 
                        _wps_generate_pin, _wps_requires_pin, _wps_start, _wps_validate_checksum, 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AB988F08-FC1F-3C94-957B-657F38586280' ]
+uuids:           [ 'x86_64: FFB75307-AE51-3317-9D51-238392600A80' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/CommunicationsFilter.framework/Versions/A/CommunicationsFilter
 current-version: 800

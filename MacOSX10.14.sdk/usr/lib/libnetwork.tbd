@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D8F52B1D-1AD9-3D33-8D59-2D631A3CBFEC' ]
+uuids:           [ 'x86_64: 72C7E9E3-B2BE-3300-BE1B-64606222022C' ]
 platform:        zippered
 install-name:    /usr/lib/libnetwork.dylib
 objc-constraint: none

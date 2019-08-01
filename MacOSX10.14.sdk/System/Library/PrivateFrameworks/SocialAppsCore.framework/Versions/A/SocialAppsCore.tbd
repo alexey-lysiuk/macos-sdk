@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E3E3E784-9B8A-347C-B168-CBDF43F4F957' ]
+uuids:           [ 'x86_64: 25ACC42D-4700-379F-B3A6-DF09F4F8AA6E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SocialAppsCore.framework/Versions/A/SocialAppsCore
 current-version: 5500
@@ -55,7 +55,7 @@ exports:
     objc-ivars:      [ SOAccountAlias._active ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A0EA393B-E375-3CD8-89B1-8CECDA6A4BED' ]
+uuids:           [ 'x86_64: 544A0D5F-522A-3214-9E54-4EC9041B1D9D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IMCore.framework/Versions/A/IMCore
 current-version: 800
@@ -128,7 +128,8 @@ exports:
                        _IMChatPurgedAttachmentsDownloadBatchCompleteNotification, 
                        _IMChatPurgedAttachmentsDownloadCompleteNotification, _IMChatQueryIDKey, 
                        _IMChatReceivedDowngradeNotification, _IMChatRecipientDidChangeNotification, 
-                       _IMChatRecipientReceivedDowngradeNotification, _IMChatRegistryContinuityActivityType, 
+                       _IMChatRecipientReceivedDowngradeNotification, _IMChatRegistryChatsToObserveUserInfoKey, 
+                       _IMChatRegistryChatsToUnregisterUserInfoKey, _IMChatRegistryContinuityActivityType, 
                        _IMChatRegistryContinuityURLKey, _IMChatRegistryDidLoadIsRefreshKey, 
                        _IMChatRegistryDidLoadNotification, _IMChatRegistryDidRegisterChatNotification, 
                        _IMChatRegistryDidUnregisterChatNotification, _IMChatRegistryFailedCountChangedNotification, 
@@ -309,7 +310,7 @@ exports:
                        IMMessage._timeRead, IMServiceAgent._currentAVChatInfo ]
 --- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: AA56562D-CFC2-32BE-A783-91A14F3CD725', 'x86_64: C85E1558-F051-3B97-A26E-136505E52791' ]
+uuids:           [ 'i386: 9016AA9F-6F57-3FBD-A822-FEC72FF16CCD', 'x86_64: 098F3A98-2184-32EF-8EC9-87B892CD85CA' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/IMFoundation.framework/Versions/A/IMFoundation
 current-version: 800

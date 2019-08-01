@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4B675276-DB67-3DFF-8212-BC3B5EBBFC87' ]
+uuids:           [ 'x86_64: 9C45F3FE-F2D1-363F-8714-0BC494597C4B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/BridgeOSInstall.framework/Versions/A/BridgeOSInstall
 exports:         

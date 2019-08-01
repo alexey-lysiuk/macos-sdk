@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1F56E852-793F-33C8-A1EF-D6368D11C3EA' ]
+uuids:           [ 'x86_64: 21493FB3-2DEB-384A-A2A1-771A591786D6' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/iAdCore.framework/Versions/A/iAdCore
 exports:         
@@ -1596,13 +1596,13 @@ exports:
                        __ZN2ad6AdData30kTargetAppURLSchemeFieldNumberE, __ZN2ad6AdData30kUnfilledReasonCodeFieldNumberE, 
                        __ZN2ad6AdData30kUnfilledReasonInfoFieldNumberE, __ZN2ad6AdData31kBannerWebArchiveURLFieldNumberE, 
                        __ZN2ad6AdData31kScreenSaverImageURLFieldNumberE, __ZN2ad6AdData31kTransparencyDetailsFieldNumberE, 
-                       __ZN2ad6AdData33kAdOriginalRequesterIdFieldNumberE, __ZN2ad6AdData33kAdPrivacyMarkPositionFieldNumberE, 
-                       __ZN2ad6AdData34ADDataUnfilledReasonCode_ARRAYSIZEE, __ZN2ad6AdData34kLetterboxCreativeColorFieldNumberE, 
-                       __ZN2ad6AdData34kRewardTokensExpirationFieldNumberE, __ZN2ad6AdData35kConfirmedClickPixelURLsFieldNumberE, 
-                       __ZN2ad6AdData36kAccessibilityDescriptionFieldNumberE, __ZN2ad6AdData36kAdDataResponseIdentifierFieldNumberE, 
-                       __ZN2ad6AdData36kImpressionIdentifierDataFieldNumberE, __ZN2ad6AdData37kBannerImpressionThresholdFieldNumberE, 
-                       __ZN2ad6AdData37kDoesNotResetListeningTimeFieldNumberE, __ZN2ad6AdData37kMaximumPretapRequestCountFieldNumberE, 
-                       __ZN2ad6AdData39kNativeMediaCreativeMetadataFieldNumberE, 
+                       __ZN2ad6AdData32kExpressionToEvaluateFieldNumberE, __ZN2ad6AdData33kAdOriginalRequesterIdFieldNumberE, 
+                       __ZN2ad6AdData33kAdPrivacyMarkPositionFieldNumberE, __ZN2ad6AdData34ADDataUnfilledReasonCode_ARRAYSIZEE, 
+                       __ZN2ad6AdData34kLetterboxCreativeColorFieldNumberE, __ZN2ad6AdData34kRewardTokensExpirationFieldNumberE, 
+                       __ZN2ad6AdData35kConfirmedClickPixelURLsFieldNumberE, __ZN2ad6AdData36kAccessibilityDescriptionFieldNumberE, 
+                       __ZN2ad6AdData36kAdDataResponseIdentifierFieldNumberE, __ZN2ad6AdData36kImpressionIdentifierDataFieldNumberE, 
+                       __ZN2ad6AdData37kBannerImpressionThresholdFieldNumberE, __ZN2ad6AdData37kDoesNotResetListeningTimeFieldNumberE, 
+                       __ZN2ad6AdData37kMaximumPretapRequestCountFieldNumberE, __ZN2ad6AdData39kNativeMediaCreativeMetadataFieldNumberE, 
                        __ZN2ad6AdData44kTrackingURLSubstitutionParameterFieldNumberE, 
                        __ZN2ad6AdData46kBannerNewContentCandidacyThresholdFieldNumberE, 
                        __ZN2ad6AdData47kMinimumIntervalBetweenPresentationsFieldNumberE, 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D30944E3-D088-3E6F-80BB-D42EA81083F5' ]
+uuids:           [ 'x86_64: 9EC1FED2-BA47-307B-A326-43C4D05166E7' ]
 platform:        zippered
 install-name:    /System/Library/Frameworks/CoreML.framework/Versions/A/CoreML
 objc-constraint: none

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7EBD9C7A-E48A-3A0F-BFC6-8A4DEBE6DFAB' ]
+uuids:           [ 'x86_64: 8549A34A-7AC2-3210-B108-4ACC9B73126B' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/UserActivity.framework/Versions/A/UserActivity
 current-version: 232

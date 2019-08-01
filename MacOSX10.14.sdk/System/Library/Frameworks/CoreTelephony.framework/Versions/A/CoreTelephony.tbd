@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0461230D-A877-30EA-84EE-FEFCAE8E8D4A' ]
+uuids:           [ 'x86_64: 7027A48C-8701-3B33-896B-B151A851CDCB' ]
 platform:        zippered
 install-name:    /System/Library/Frameworks/CoreTelephony.framework/Versions/A/CoreTelephony
 current-version: 0

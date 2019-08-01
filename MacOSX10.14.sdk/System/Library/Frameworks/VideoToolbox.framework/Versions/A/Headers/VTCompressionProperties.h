@@ -484,7 +484,31 @@ VT_EXPORT const CFStringRef kVTVideoEncoderSpecification_RequireHardwareAccelera
 */
 VT_EXPORT const CFStringRef kVTCompressionPropertyKey_UsingHardwareAcceleratedVideoEncoder API_AVAILABLE(macosx(10.9), ios(8.0), tvos(10.2)); // CFBoolean, Read; assumed false by default
 #endif // !TARGET_OS_IPHONE
-	
+
+/*!
+	@constant	kVTVideoEncoderSpecification_RequiredEncoderGPURegistryID
+	@abstract
+		If set, the VideoToolbox will only use a hardware encoder running on the GPU specified by the provided GPU registryID.
+	@discussion
+		This specification implies kVTVideoEncoderSpecification_EnableHardwareAcceleratedVideoEncoder.  A separate hardware encode opt-in is not required.
+		The GPU registryID can be obtained from a MTLDevice using [MTLDevice registryID] or can be obtained from OpenGL or OpenCL.
+*/
+VT_EXPORT const CFStringRef kVTVideoEncoderSpecification_RequiredEncoderGPURegistryID API_AVAILABLE(macosx(10.14)); // CFNumber, Optional
+
+/*!
+	@constant	kVTVideoEncoderSpecification_PreferredEncoderGPURegistryID
+	@abstract
+		If set, the VideoToolbox will try to use a hardware encoder running on the GPU specified by the provided GPU registryID.  If the
+		GPU does not support encode of the specified format, the VideoToolbox will fall back to alternate encoders.
+	@discussion
+		This specification implies kVTVideoEncoderSpecification_EnableHardwareAcceleratedVideoEncoder.  A separate hardware encode opt-in is not required.
+		If both kVTVideoEncoderSpecification_PreferredEncoderGPURegistryID and kVTVideoEncoderSpecification_RequiredEncoderGPURegistryID are set, kVTVideoEncoderSpecification_PreferredEncoderGPURegistryID will be ignored.
+		This specification can be used in conjunction with kVTVideoEncoderSpecification_RequireHardwareAcceleratedVideoEncoder to prevent a fallback to software encode.
+		The GPU registryID can be obtained from a MTLDevice using [MTLDevice registryID] or can be obtained from OpenGL or OpenCL.
+*/
+VT_EXPORT const CFStringRef kVTVideoEncoderSpecification_PreferredEncoderGPURegistryID API_AVAILABLE(macosx(10.14)); // CFNumber, Optional
+
+
 #pragma mark Per-frame configuration
 	
 /*!

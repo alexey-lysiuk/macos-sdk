@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5B8A0AEE-FBA7-36E5-AFC5-932323DC560C' ]
+uuids:           [ 'x86_64: D94A14EC-88C4-3D53-915E-6552BE47FB00' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/AppSupport.framework/Versions/A/AppSupport
 current-version: 29
@@ -319,7 +319,7 @@ exports:
                        _ReachabilityRequest._receivedAtLeastOneCallback ]
 --- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: C5CD9368-C330-34B3-AB79-17C5A2174527', 'x86_64: 01CAC5E2-B6B1-3444-8939-595A9301399C' ]
+uuids:           [ 'i386: 1DB10692-B154-3257-91EC-5950298E10BC', 'x86_64: 11F97C7E-C183-305F-8E6C-9B374F50E26B' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/CorePhoneNumbers.framework/Versions/A/CorePhoneNumbers
 objc-constraint: none

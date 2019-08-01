@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0A637B3F-A0E4-3BF1-90E0-B562026713F2' ]
+uuids:           [ 'x86_64: C710BE20-BB0F-31EF-9F73-3F7445F24472' ]
 platform:        macosx
 install-name:    /usr/lib/libAccountPolicyTranslation.dylib
 objc-constraint: none

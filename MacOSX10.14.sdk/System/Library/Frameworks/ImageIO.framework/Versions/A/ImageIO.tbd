@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: DF69B73A-BD00-3A57-994C-844F2F3567F6', 'x86_64h: 81BA6C12-123A-3FD8-9E88-0698100471A6' ]
+uuids:           [ 'x86_64: EAA38DD6-8072-3E7C-AC9E-C84B8FD8B5F6', 'x86_64h: 75E46A31-D87D-35CE-86A4-96A50971FDB2' ]
 platform:        zippered
 install-name:    /System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO
 objc-constraint: none

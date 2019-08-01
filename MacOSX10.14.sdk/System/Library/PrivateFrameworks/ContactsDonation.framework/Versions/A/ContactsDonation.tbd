@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DDC2F820-5103-3A96-A7BF-2C91B85DAD66' ]
+uuids:           [ 'x86_64: 24034D34-A2F8-3CD1-96C8-B454F510DF84' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/ContactsDonation.framework/Versions/A/ContactsDonation
 exports:         

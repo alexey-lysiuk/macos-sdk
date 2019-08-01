@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3CC8C10C-34D3-30A5-83A0-7000253DDA26' ]
+uuids:           [ 'x86_64: 5A9BF060-9D78-3DAE-A49A-A4864D926972' ]
 platform:        zippered
 install-name:    /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLVMPlugin.dylib
 objc-constraint: none

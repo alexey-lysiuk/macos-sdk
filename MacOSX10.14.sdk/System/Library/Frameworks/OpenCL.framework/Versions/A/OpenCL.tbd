@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F558A6A7-3B33-320E-83C0-CF16220A150F' ]
+uuids:           [ 'x86_64: 056BAD8A-23BC-3F74-9E2C-3AC81E7DEA5A' ]
 platform:        zippered
 install-name:    /System/Library/Frameworks/OpenCL.framework/Versions/A/OpenCL
 objc-constraint: none

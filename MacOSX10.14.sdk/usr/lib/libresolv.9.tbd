@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DB6CA331-BB44-306D-8528-023EADE54BF7' ]
+uuids:           [ 'x86_64: 893142A5-F153-3437-A22D-407EE542B5C5' ]
 platform:        zippered
 install-name:    /usr/lib/libresolv.9.dylib
 objc-constraint: none

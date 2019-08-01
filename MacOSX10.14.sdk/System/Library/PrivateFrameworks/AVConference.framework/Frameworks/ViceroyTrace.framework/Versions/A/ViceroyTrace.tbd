@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8D209AD0-C018-3533-9B3B-1633D5AA6E6A' ]
+uuids:           [ 'x86_64: E68339CC-18ED-3884-94DF-5CBED25B92C6' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AVConference.framework/Frameworks/ViceroyTrace.framework/Versions/A/ViceroyTrace
 exports:         
@@ -55,11 +55,14 @@ exports:
                        CallSegment._audioSentPacketCount, CallSegment._averageAudioErasuresRate, 
                        CallSegment._averageBWE, CallSegment._averageRTT, CallSegment._averageReceiveBitrate, 
                        CallSegment._averageSendBitrate, CallSegment._averageSpeechErasuresRate, 
-                       CallSegment._averageTargetBitrate, CallSegment._callDeviceRole, 
-                       CallSegment._callMode, CallSegment._callTransportType, CallSegment._decodedVideoFrameEnqueueCounter, 
-                       CallSegment._delegate, CallSegment._duration, CallSegment._errorCode, 
-                       CallSegment._framerate, CallSegment._frequency, CallSegment._interval, 
-                       CallSegment._latency, CallSegment._maxAudioStallInterval, 
+                       CallSegment._averageTargetBitrate, CallSegment._averageTotalVideoRecvBitrate, 
+                       CallSegment._averageTotalVideoSendBitrate, CallSegment._averageVideoFECSendBitrate, 
+                       CallSegment._averageVideoHeaderSendBitrate, CallSegment._averageVideoMediaSendBitrate, 
+                       CallSegment._callDeviceRole, CallSegment._callMode, CallSegment._callTransportType, 
+                       CallSegment._captureVideoFrameCounter, CallSegment._decodedVideoFrameEnqueueCounter, 
+                       CallSegment._delegate, CallSegment._duration, CallSegment._encodedVideoFrameCounter, 
+                       CallSegment._errorCode, CallSegment._framerate, CallSegment._frequency, 
+                       CallSegment._interval, CallSegment._latency, CallSegment._maxAudioStallInterval, 
                        CallSegment._maxBWE, CallSegment._maxNoRemotePacketsInterval, 
                        CallSegment._maxVideoStallInterval, CallSegment._mediaStall, 
                        CallSegment._mediaStallCount, CallSegment._minBWE, CallSegment._poorConnection, 

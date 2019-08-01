@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: ED559674-45CC-30E3-B7CB-6AD29DAEDFE6' ]
+uuids:           [ 'x86_64: CFEE60A9-E3BF-35F8-952F-F2D51AFB5138' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/WirelessDiagnostics.framework/Versions/A/Libraries/libAWDSupport.dylib
 objc-constraint: none

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: 1CD3BAF5-C53F-3931-B28E-B28FD2C5AFFF', 'x86_64h: F9C4B95C-7BE9-30A4-98D4-FD9996EE5E81' ]
+uuids:           [ 'x86_64: 2905F53F-12C4-3583-A0A3-82607C5341CA', 'x86_64h: 53FA3611-894E-3158-A654-FBD2F70998FE' ]
 platform:        zippered
 install-name:    /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vImage.framework/Versions/A/vImage
 current-version: 506.22

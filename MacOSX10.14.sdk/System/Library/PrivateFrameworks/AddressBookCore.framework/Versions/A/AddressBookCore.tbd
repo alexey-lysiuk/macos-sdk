@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4E3E6B43-026C-387A-9F09-77FBCD3952AE' ]
+uuids:           [ 'x86_64: BAA3419D-2C62-3277-980D-11A9C51B1084' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/AddressBookCore.framework/Versions/A/AddressBookCore
 exports:         

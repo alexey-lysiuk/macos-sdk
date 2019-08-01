@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B3365E07-6FC3-3AAA-884D-D6EE7ACDAE16' ]
+uuids:           [ 'x86_64: 6DFD9A6E-BF95-3A27-89E7-ACAA9E30D90A' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IOPresentment.framework/Versions/A/IOPresentment
 current-version: 44.4

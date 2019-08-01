@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3E32B3FF-0A2E-39F6-BBE0-F2E9607AB83A' ]
+uuids:           [ 'x86_64: 55AE7C9E-27C3-30E9-A047-3B92A6FD53B4' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE
 current-version: 773

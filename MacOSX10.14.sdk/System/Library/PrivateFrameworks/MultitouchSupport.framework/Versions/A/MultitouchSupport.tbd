@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FAE48832-BB56-35C9-B433-F0D03EF50FCD' ]
+uuids:           [ 'x86_64: 42A23EC9-64A7-31C7-BF33-DF4412ED8A3F' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/MultitouchSupport.framework/Versions/A/MultitouchSupport
-current-version: 2440.7
+current-version: 2450.1
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

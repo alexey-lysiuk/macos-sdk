@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 30BEE107-6D81-3A6A-8913-627CB18E4CCC' ]
+uuids:           [ 'x86_64: 2F69DEC0-6EC6-3DC4-A68A-FE01DD98D933' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/GPUSupport.framework/Versions/A/Libraries/libGPUSupport.dylib
 objc-constraint: none

@@ -34,7 +34,7 @@ typedef NS_ENUM(NSUInteger, MTLTextureType)
 } API_AVAILABLE(macos(10.11), ios(8.0));
 
 
-API_AVAILABLE(macos(10.14)) API_UNAVAILABLE(ios)
+MTL_EXPORT API_AVAILABLE(macos(10.14))
 @interface MTLSharedTextureHandle : NSObject <NSSecureCoding>
 {
     struct MTLSharedTextureHandlePrivate *_priv;

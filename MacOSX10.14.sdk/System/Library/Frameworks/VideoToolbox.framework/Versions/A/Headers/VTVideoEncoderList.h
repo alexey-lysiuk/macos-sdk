@@ -39,7 +39,12 @@ VT_EXPORT const CFStringRef kVTVideoEncoderList_EncoderID API_AVAILABLE(macosx(1
 VT_EXPORT const CFStringRef kVTVideoEncoderList_CodecName API_AVAILABLE(macosx(10.8), ios(8.0), tvos(10.2)); // CFString, for display to user (eg, "H.264")
 VT_EXPORT const CFStringRef kVTVideoEncoderList_EncoderName API_AVAILABLE(macosx(10.8), ios(8.0), tvos(10.2)); // CFString, for display to user (eg, "Apple H.264")
 VT_EXPORT const CFStringRef kVTVideoEncoderList_DisplayName API_AVAILABLE(macosx(10.8), ios(8.0), tvos(10.2)); // CFString (same as CodecName if there is only one encoder for that format, otherwise same as EncoderName)
-
+VT_EXPORT const CFStringRef kVTVideoEncoderList_GPURegistryID API_AVAILABLE(macosx(10.14)); // optional. CFNumberRef.  If encoder is associated with a specific GPU, this corresponds to the GPU registryID as reported by [MTLDevice registryID].
+VT_EXPORT const CFStringRef kVTVideoEncoderList_SupportedSelectionProperties API_AVAILABLE(macosx(10.14)); // optional. CFDictionary.  If present, represents a subset of supported properties that may be useful during encoder selection
+VT_EXPORT const CFStringRef kVTVideoEncoderList_PerformanceRating API_AVAILABLE(macosx(10.14)); // optional. CFNumber.  If present, indicates a relative rating value for the encoder compared to other encoders of the same format.
+VT_EXPORT const CFStringRef kVTVideoEncoderList_QualityRating API_AVAILABLE(macosx(10.14)); // optional. CFNumber.  If present, indicates a Quality Rating value for the encoder relative to other encoders of the same format.  This is a highly generalized value and different encoders may have strengths at different resolutions and bitrates.
+VT_EXPORT const CFStringRef kVTVideoEncoderList_InstanceLimit API_AVAILABLE(macosx(10.14)); // optional. CFBoolean.  If present and set to kCFBooleanTrue, there is a global instance limit cap on this encoder.  Indicates that an encoder is a scarce resource which may potentially be unavailable.
+VT_EXPORT const CFStringRef kVTVideoEncoderList_IsHardwareAccelerated API_AVAILABLE(macosx(10.14)); // optional. CFBoolean.  If present and set to kCFBooleanTrue, indicates that the encoder is hardware accelerated.
 CM_ASSUME_NONNULL_END
 
 /*!

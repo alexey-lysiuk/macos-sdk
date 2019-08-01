@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0CD6861B-EC5F-3345-9C24-B21EEB85E44F' ]
+uuids:           [ 'x86_64: A453E8EE-860D-3CED-B5DC-BE54E9DB4348' ]
 platform:        zippered
 install-name:    /usr/lib/system/libsystem_blocks.dylib
 current-version: 73

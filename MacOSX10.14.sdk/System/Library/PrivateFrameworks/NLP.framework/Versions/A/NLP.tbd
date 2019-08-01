@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 57F5918E-80EF-3FDD-8C46-7A5DF5927271' ]
+uuids:           [ 'x86_64: 87BF44B7-FCAC-3D74-BAE4-9C3D84755AF9' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/NLP.framework/Versions/A/NLP
 current-version: 122.25.1

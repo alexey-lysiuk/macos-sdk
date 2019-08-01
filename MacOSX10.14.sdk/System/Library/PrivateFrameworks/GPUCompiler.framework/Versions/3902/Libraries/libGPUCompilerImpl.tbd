@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EDB4A94E-074A-3EB8-85BA-C3CC2734BF55' ]
+uuids:           [ 'x86_64: 0F84FC35-C7C3-3E39-B4E5-A748EE5F768E' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/GPUCompiler.framework/Versions/3902/Libraries/libGPUCompilerImpl.dylib
 current-version: 902.3.2

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1950AEDB-8782-39C9-9477-CB43ECB0EB38' ]
+uuids:           [ 'x86_64: 8E643B27-7986-3351-B37E-038FB6794BF9' ]
 platform:        macosx
 install-name:    /usr/lib/libCoreStorage.dylib
 objc-constraint: none

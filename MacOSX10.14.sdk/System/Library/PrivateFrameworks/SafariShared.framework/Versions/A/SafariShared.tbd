@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FDEA2003-EC72-30AB-BD67-FFFEAF2FAB57' ]
+uuids:           [ 'x86_64: DCE0B927-4F85-3C27-8A2D-CCF35404B9B1' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SafariShared.framework/Versions/A/SafariShared
-current-version: 607.1.40
+current-version: 607.3.8
 compatibility-version: 0
 exports:         
   - archs:           [ x86_64 ]
@@ -247,9 +247,9 @@ exports:
                        _WBSTopSitesMinimumVisitCountThresholdOnHistoryQueue, _WBSTopSitesScore, 
                        _WBSTopSitesScoreForCaching, _WBSTopSitesScoreWithCachedValues, 
                        _WBSTouchIconCacheWillPurgeUnneededImagesNotification, _WBSTouchIconWebViewConfigurationGroupIdentifier, 
-                       _WBSUnifiedFieldInputTypeForString, _WBSWebGLPreferenceIdentifier, 
-                       _WBSWebsiteShouldStartWithReaderEnabledUserInfoKey, _WBSZoomPreferenceIdentifier, 
-                       __SSURLCompletionMatchLocationForWBSURLCompletionMatchLocation, 
+                       _WBSUnifiedFieldInputTypeForString, _WBSUserHasUsedNonVirtualCardPreferenceKey, 
+                       _WBSWebGLPreferenceIdentifier, _WBSWebsiteShouldStartWithReaderEnabledUserInfoKey, 
+                       _WBSZoomPreferenceIdentifier, __SSURLCompletionMatchLocationForWBSURLCompletionMatchLocation, 
                        __WBSABAddressCityKey, __WBSABAddressCountryKey, __WBSABAddressStateKey, 
                        __WBSABAddressStreetKey, __WBSABAddressZIPKey, __WBSABInstantMessageServiceKey, 
                        __WBSABInstantMessageUsernameKey, __WBSABJobTitleProperty, 
@@ -455,15 +455,18 @@ exports:
                        __ZTVN12SafariShared12JSControllerE, __ZTVN12SafariShared13FrameMetadataE, 
                        __ZTVN12SafariShared18ReaderJSControllerE, __ZTVN12SafariShared25ArticleFinderJSControllerE, 
                        __ZTVN12SafariShared28ReaderAvailabilityControllerE, _allocCNAvatarViewControllerInstance, 
-                       _allocIMOneTimeCodeAcceleratorInstance, _canLoadContactsUI, 
-                       _canLoadIMCore, _coreSpotlightHistoryContentType, _coreSpotlightPageVisitCountKey, 
+                       _allocIMOneTimeCodeAcceleratorInstance, _allocPKGlyphViewInstance, 
+                       _allocPKVirtualCardInstance, _allocPKVirtualCardManagerInstance, 
+                       _canLoadContactsUI, _canLoadIMCore, _canLoadPassKitCore, _canLoadPassKitUIFoundation, 
+                       _coreSpotlightHistoryContentType, _coreSpotlightPageVisitCountKey, 
                        _developerSecureDefaults, _dpLanguageCodeForEnglish, _dpLanguageCodeForFrench, 
                        _dpLanguageCodeForGerman, _dpLanguageCodeForJapanese, _dpLanguageCodeForOthers, 
                        _dpLanguageCodeForRussian, _dpLanguageCodeForSimplifiedChinese, 
                        _dpLanguageCodeForSpanish, _getCNAvatarViewControllerClass, 
                        _getIMOneTimeCodeAcceleratorClass, _getIMOneTimeCodeDisplayKey, 
                        _getIMOneTimeCodeGuidKey, _getIMOneTimeCodeHandleKey, _getIMOneTimeCodeKey, 
-                       _getIMOneTimeCodeTimeStampKey, _registerSecureDefaultsRefreshObserver, 
+                       _getIMOneTimeCodeTimeStampKey, _getPKGlyphViewClass, _getPKVirtualCardClass, 
+                       _getPKVirtualCardManagerClass, _registerSecureDefaultsRefreshObserver, 
                        _unregisterSecureDefaultsRefreshObserver ]
     objc-classes:    [ WBSAddressBookMatch, WBSAsynchronousRequestHelper, WBSAutomaticBugCaptureManager, 
                        WBSAutomaticReaderActivationManager, WBSBookmarkAndHistoryCompletionMatch, 
@@ -593,10 +596,10 @@ exports:
                        WBSHistoryItem._visitsPendingWriteToDataStore ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7B88C301-869C-3B33-BF7B-BAA9A7461C29' ]
+uuids:           [ 'x86_64: 8884A558-9865-3023-83EB-38871A4DA0C1' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/SafariCore.framework/Versions/A/SafariCore
-current-version: 607.1.40
+current-version: 607.3.8
 compatibility-version: 0
 exports:         
   - archs:           [ x86_64 ]

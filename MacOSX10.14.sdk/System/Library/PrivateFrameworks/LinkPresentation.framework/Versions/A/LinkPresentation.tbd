@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4B36B5E9-D327-3322-A9A4-8D7AD45C5917' ]
+uuids:           [ 'x86_64: 8665D58C-D734-3873-8245-D9B55F7B06A1' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/LinkPresentation.framework/Versions/A/LinkPresentation
-current-version: 59.42
+current-version: 59.45
 exports:         
   - archs:           [ x86_64 ]
     re-exports:      [ /System/Library/PrivateFrameworks/URLFormatting.framework/Versions/A/URLFormatting ]
@@ -30,9 +30,9 @@ exports:
                        LPiTunesPlaybackInformation ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 07170511-A1F9-3C60-BA61-BF4DA94E8A31' ]
+uuids:           [ 'x86_64: C9C4EB02-BCDB-358E-87EC-19EEA897D6C1' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/URLFormatting.framework/Versions/A/URLFormatting
-current-version: 59.42
+current-version: 59.45
 objc-constraint: none
 ...

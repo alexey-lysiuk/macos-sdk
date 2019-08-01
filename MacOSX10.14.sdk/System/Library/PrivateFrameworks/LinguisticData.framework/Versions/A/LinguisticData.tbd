@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E155D8DF-8AC1-34B2-B143-BBD3408C8D19' ]
+uuids:           [ 'x86_64: F529B961-098C-3E4C-A3E9-9DA9BFA1B3F0' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/LinguisticData.framework/Versions/A/LinguisticData
-current-version: 238.24.1
+current-version: 238.25
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _LDCreateSystemLexiconCompatibilityVersion, _LDEnumerateAssetDataItems, 

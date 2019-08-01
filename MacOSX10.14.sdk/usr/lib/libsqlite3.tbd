@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: 4DB422B2-DFBD-3C46-ABA9-50CC2D4490FD', 'x86_64h: 378D7B48-4661-3BA6-AC55-0B3A64F8C7E3' ]
+uuids:           [ 'x86_64: E28DB56E-90D1-3A05-B79A-DC2FFCE8D117', 'x86_64h: 6404BA3B-BCA4-301F-B2FE-8776105A2AA3' ]
 platform:        zippered
 install-name:    /usr/lib/libsqlite3.dylib
-current-version: 274.22
+current-version: 274.26
 compatibility-version: 9
 objc-constraint: none
 exports:         
@@ -93,18 +93,19 @@ exports:
                        _sqlite3_update_hook, _sqlite3_uri_boolean, _sqlite3_uri_int64, 
                        _sqlite3_uri_parameter, _sqlite3_user_data, _sqlite3_value_blob, 
                        _sqlite3_value_bytes, _sqlite3_value_bytes16, _sqlite3_value_double, 
-                       _sqlite3_value_dup, _sqlite3_value_free, _sqlite3_value_int, 
-                       _sqlite3_value_int64, _sqlite3_value_nochange, _sqlite3_value_numeric_type, 
-                       _sqlite3_value_pointer, _sqlite3_value_subtype, _sqlite3_value_text, 
-                       _sqlite3_value_text16, _sqlite3_value_text16be, _sqlite3_value_text16le, 
-                       _sqlite3_value_type, _sqlite3_version, _sqlite3_vfs_find, 
-                       _sqlite3_vfs_register, _sqlite3_vfs_unregister, _sqlite3_vmprintf, 
-                       _sqlite3_vsnprintf, _sqlite3_vtab_collation, _sqlite3_vtab_config, 
-                       _sqlite3_vtab_nochange, _sqlite3_vtab_on_conflict, _sqlite3_wal_autocheckpoint, 
-                       _sqlite3_wal_checkpoint, _sqlite3_wal_checkpoint_v2, _sqlite3_wal_hook, 
-                       _sqlite3changegroup_add, _sqlite3changegroup_add_strm, _sqlite3changegroup_delete, 
-                       _sqlite3changegroup_new, _sqlite3changegroup_output, _sqlite3changegroup_output_strm, 
-                       _sqlite3changeset_apply, _sqlite3changeset_apply_strm, _sqlite3changeset_apply_v2, 
+                       _sqlite3_value_dup, _sqlite3_value_free, _sqlite3_value_frombind, 
+                       _sqlite3_value_int, _sqlite3_value_int64, _sqlite3_value_nochange, 
+                       _sqlite3_value_numeric_type, _sqlite3_value_pointer, _sqlite3_value_subtype, 
+                       _sqlite3_value_text, _sqlite3_value_text16, _sqlite3_value_text16be, 
+                       _sqlite3_value_text16le, _sqlite3_value_type, _sqlite3_version, 
+                       _sqlite3_vfs_find, _sqlite3_vfs_register, _sqlite3_vfs_unregister, 
+                       _sqlite3_vmprintf, _sqlite3_vsnprintf, _sqlite3_vtab_collation, 
+                       _sqlite3_vtab_config, _sqlite3_vtab_nochange, _sqlite3_vtab_on_conflict, 
+                       _sqlite3_wal_autocheckpoint, _sqlite3_wal_checkpoint, _sqlite3_wal_checkpoint_v2, 
+                       _sqlite3_wal_hook, _sqlite3changegroup_add, _sqlite3changegroup_add_strm, 
+                       _sqlite3changegroup_delete, _sqlite3changegroup_new, _sqlite3changegroup_output, 
+                       _sqlite3changegroup_output_strm, _sqlite3changeset_apply, 
+                       _sqlite3changeset_apply_strm, _sqlite3changeset_apply_v2, 
                        _sqlite3changeset_apply_v2_strm, _sqlite3changeset_concat, 
                        _sqlite3changeset_concat_strm, _sqlite3changeset_conflict, 
                        _sqlite3changeset_finalize, _sqlite3changeset_fk_conflicts, 

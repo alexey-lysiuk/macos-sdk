@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2007 Apple Inc. All rights reserved.
+ * Copyright (c) 2007-2019 Apple Inc. All rights reserved.
  */
 /*
  * CDDL HEADER START
@@ -244,6 +244,12 @@
 
 #define DTRACE_PHYSLAT3(name, type1, arg1, type2, arg2, type3, arg3)            \
 	DTRACE_PROBE3(__sdt_, name, arg1, arg2, arg3);
+
+#define DTRACE_PHYSLAT4(name, type1, arg1, type2, arg2, type3, arg3, type4, arg4)        \
+	DTRACE_PROBE4(__sdt_, name, arg1, arg2, arg3, arg4);
+
+#define DTRACE_PHYSLAT5(name, type1, arg1, type2, arg2, type3, arg3, type4, arg4, type5, arg5)  \
+	DTRACE_PROBE5(__sdt_, name, arg1, arg2, arg3, arg4, arg5);
 
 #define DTRACE_VM(name)                                                 \
 	DTRACE_PROBE(__vminfo_, name)

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4C59119B-6C1B-3808-831E-AE18B0182EF1' ]
+uuids:           [ 'x86_64: B4FF2EC4-2FA9-3F80-ADAA-9741440A7789' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/CoreSuggestions.framework/Versions/A/CoreSuggestions
 exports:         

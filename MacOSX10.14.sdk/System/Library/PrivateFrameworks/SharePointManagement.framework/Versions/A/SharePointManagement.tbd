@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2739CDB3-2B8E-397E-9991-E5BE23E0E5DD' ]
+uuids:           [ 'x86_64: C2441CD7-B049-3700-8E23-814D757DB748' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SharePointManagement.framework/Versions/A/SharePointManagement
 current-version: 57.1

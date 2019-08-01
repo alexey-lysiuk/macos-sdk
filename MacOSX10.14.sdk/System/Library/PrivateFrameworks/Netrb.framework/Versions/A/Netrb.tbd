@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D6573EAF-4ACE-3EB4-B1AF-4CFA74542F3E' ]
+uuids:           [ 'x86_64: C276439F-8DBF-3C12-BE80-DF17CDF68802' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Netrb.framework/Versions/A/Netrb
 objc-constraint: none

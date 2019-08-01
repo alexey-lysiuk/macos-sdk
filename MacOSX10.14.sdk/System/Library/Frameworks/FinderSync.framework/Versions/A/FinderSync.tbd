@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 58E3067E-A13D-3B7A-A01A-33BD78C9EE56' ]
+uuids:           [ 'x86_64: 64F1E6ED-4709-30E5-AFD9-B06FE6BB75C5' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/FinderSync.framework/Versions/A/FinderSync
 current-version: 0

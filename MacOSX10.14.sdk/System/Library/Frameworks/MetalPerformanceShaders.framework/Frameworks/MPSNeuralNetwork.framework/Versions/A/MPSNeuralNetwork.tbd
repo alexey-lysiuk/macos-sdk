@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4866922C-9732-3FCE-9419-402E5DD22639' ]
+uuids:           [ 'x86_64: F2CF26B6-73F1-3644-8FE9-CDB9B2C4501F' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSNeuralNetwork.framework/Versions/A/MPSNeuralNetwork
 current-version: 121.4.2

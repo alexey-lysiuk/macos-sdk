@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CBA82F08-26CC-3FB4-9539-B0B55B35C5E1' ]
+uuids:           [ 'x86_64: 28B2FF2D-3FDE-3A20-B343-341E5BD4E22F' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/CoreSymbolication.framework/Versions/A/CoreSymbolication
 current-version: 64490.25.1

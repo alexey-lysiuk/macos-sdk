@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: 9A1E0733-E8BA-3BCC-884C-204B8F20DEA3', 'x86_64h: A3CDEEC3-42B0-3C6E-9CCE-465C472609CD' ]
+uuids:           [ 'x86_64: 5CCB7F4C-B11F-39B4-AF43-173D8A839632', 'x86_64h: 1B6C92D9-F4B8-37BA-9635-94C4A56098CE' ]
 platform:        zippered
 install-name:    /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vImage.framework/Versions/A/Libraries/libCGInterfaces.dylib
 current-version: 506.22

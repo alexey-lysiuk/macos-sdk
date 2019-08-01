@@ -133,99 +133,88 @@
 .\" ========================================================================
 .\"
 .IX Title "PERLDELTA 1"
-.TH PERLDELTA 1 "2014-01-06" "perl v5.18.2" "Perl Programmers Reference Guide"
+.TH PERLDELTA 1 "2014-10-01" "perl v5.18.4" "Perl Programmers Reference Guide"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
 .nh
 .SH "NAME"
-perldelta \- what is new for perl v5.18.2
+perldelta \- what is new for perl v5.18.4
 .SH "DESCRIPTION"
 .IX Header "DESCRIPTION"
-This document describes differences between the 5.18.1 release and the 5.18.2
-release.
+This document describes differences between the 5.18.4 release and the 5.18.2
+release.  \fBPlease note:\fR  This document ignores perl 5.18.3, a broken release
+which existed for a few hours only.
 .PP
-If you are upgrading from an earlier release such as 5.18.0, first read
-perl5181delta, which describes differences between 5.18.0 and 5.18.1.
+If you are upgrading from an earlier release such as 5.18.1, first read
+perl5182delta, which describes differences between 5.18.1 and 5.18.2.
 .SH "Modules and Pragmata"
 .IX Header "Modules and Pragmata"
 .SS "Updated Modules and Pragmata"
 .IX Subsection "Updated Modules and Pragmata"
 .IP "\(bu" 4
-B has been upgraded from version 1.42_01 to 1.42_02.
+Digest::SHA has been upgraded from 5.84_01 to 5.84_02.
+.IP "\(bu" 4
+perl5db.pl has been upgraded from version 1.39_10 to 1.39_11.
 .Sp
-The fix for [perl #118525] introduced a regression in the behaviour of
-\&\f(CW\*(C`B::CV::GV\*(C'\fR, changing the return value from a \f(CW\*(C`B::SPECIAL\*(C'\fR object on
-a \f(CW\*(C`NULL\*(C'\fR \f(CW\*(C`CvGV\*(C'\fR to \f(CW\*(C`undef\*(C'\fR.  \f(CW\*(C`B::CV::GV\*(C'\fR again returns a
-\&\f(CW\*(C`B::SPECIAL\*(C'\fR object in this case.  [perl #119413]
+This fixes a crash in tab completion, where available. [perl #120827]  Also,
+filehandle information is properly reset after a pager is run. [perl #121456]
+.SH "Platform Support"
+.IX Header "Platform Support"
+.SS "Platform-Specific Notes"
+.IX Subsection "Platform-Specific Notes"
+.IP "Win32" 4
+.IX Item "Win32"
+.RS 4
+.PD 0
 .IP "\(bu" 4
-B::Concise has been upgraded from version 0.95 to 0.95_01.
-.Sp
-This fixes a bug in dumping unexpected SEPCIALs.
-.IP "\(bu" 4
-English has been upgraded from version 1.06 to 1.06_01.  This fixes an
-error about the performance of \f(CW\*(C`$\`\*(C'\fR, \f(CW$&\fR, and c<$'>.
-.IP "\(bu" 4
-File::Glob has been upgraded from version 1.20 to 1.20_01.
-.SH "Documentation"
-.IX Header "Documentation"
-.SS "Changes to Existing Documentation"
-.IX Subsection "Changes to Existing Documentation"
-.IP "\(bu" 4
-perlrepository has been restored with a pointer to more useful pages.
-.IP "\(bu" 4
-perlhack has been updated with the latest changes from blead.
+.PD
+Introduced by
+perl #113536 <https://rt.perl.org/Public/Bug/Display.html?id=113536>, a memory
+leak on every call to \f(CW\*(C`system\*(C'\fR and backticks (\f(CW\*(C` \`\` \*(C'\fR), on most Win32 Perls
+starting from 5.18.0 has been fixed.  The memory leak only occurred if you
+enabled psuedo-fork in your build of Win32 Perl, and were running that build on
+Server 2003 R2 or newer \s-1OS. \s0 The leak does not appear on WinXP \s-1SP3.\s0
+[perl #121676 <https://rt.perl.org/Public/Bug/Display.html?id=121676>]
+.RE
+.RS 4
+.RE
 .SH "Selected Bug Fixes"
 .IX Header "Selected Bug Fixes"
 .IP "\(bu" 4
-Perl 5.18.1 introduced a regression along with a bugfix for lexical subs.
-Some B::SPECIAL results from B::CV::GV became undefs instead.  This broke
-Devel::Cover among other libraries.  This has been fixed.  [perl #119351]
+The debugger now properly resets filehandles as needed. [perl #121456]
 .IP "\(bu" 4
-Perl 5.18.0 introduced a regression whereby \f(CW\*(C`[:^ascii:]\*(C'\fR, if used in the same
-character class as other qualifiers, would fail to match characters in the
-Latin\-1 block.  This has been fixed.  [perl #120799]
+A segfault in Digest::SHA has been addressed.  [perl #121421]
 .IP "\(bu" 4
-Perl 5.18.0 introduced a regression when using \->SUPER::method with \s-1AUTOLOAD\s0
-by looking up \s-1AUTOLOAD\s0 from the current package, rather than the current
-packageXs superclass.  This has been fixed. [perl #120694]
+perl can again be built with \s-1USE_64_BIT_INT,\s0 with Visual C 2003, 32 bit.
+[perl #120925]
 .IP "\(bu" 4
-Perl 5.18.0 introduced a regression whereby \f(CW\*(C`\-bareword\*(C'\fR was no longer
-permitted under the \f(CW\*(C`strict\*(C'\fR and \f(CW\*(C`integer\*(C'\fR pragmata when used together.  This
-has been fixed.  [perl #120288]
+A leading { (brace) in formats is properly parsed again. [perl #119973]
 .IP "\(bu" 4
-Previously PerlIOBase_dup didn't check if pushing the new layer succeeded
-before (optionally) setting the utf8 flag. This could cause
-segfaults-by-nullpointer.  This has been fixed.
+Copy the values used to perturb hash iteration when cloning an
+interpreter.  This was fairly harmless but caused \f(CW\*(C`valgrind\*(C'\fR to
+complain. [perl #121336]
 .IP "\(bu" 4
-A buffer overflow with very long identifiers has been fixed.
-.IP "\(bu" 4
-A regression from 5.16 in the handling of padranges led to assertion failures
-if a keyword plugin declined to handle the second XmyX, but only after creating
-a padop.
-.Sp
-This affected, at least, Devel::CallParser under threaded builds.
-.Sp
-This has been fixed
-.IP "\(bu" 4
-The construct \f(CW\*(C`$r=qr/.../; /$r/p\*(C'\fR is now handled properly, an issue which
-had been worsened by changes 5.18.0. [perl #118213]
+In Perl v5.18 \f(CW\*(C`undef *_; goto &sub\*(C'\fR and \f(CW\*(C`local *_; goto &sub\*(C'\fR started
+crashing.  This has been fixed. [perl #119949]
 .SH "Acknowledgements"
 .IX Header "Acknowledgements"
-Perl 5.18.2 represents approximately 3 months of development since Perl
-5.18.1 and contains approximately 980 lines of changes across 39 files from 4
+Perl 5.18.4 represents approximately 9 months of development since Perl 5.18.2
+and contains approximately 2,000 lines of changes across 53 files from 13
 authors.
 .PP
-Perl continues to flourish into its third decade thanks to a vibrant
-community of users and developers. The following people are known to have
-contributed the improvements that became Perl 5.18.2:
+Perl continues to flourish into its third decade thanks to a vibrant community
+of users and developers. The following people are known to have contributed the
+improvements that became Perl 5.18.4:
 .PP
-Craig A. Berry, David Mitchell, Ricardo Signes, Tony Cook.
+Daniel Dragan, David Mitchell, Doug Bell, Father Chrysostomos, Hiroo Hayashi,
+James E Keenan, Karl Williamson, Mark Shelor, Ricardo Signes, Shlomi Fish,
+Smylers, Steve Hay, Tony Cook.
 .PP
-The list above is almost certainly incomplete as it is automatically
-generated from version control history. In particular, it does not include
-the names of the (very much appreciated) contributors who reported issues to
-the Perl bug tracker.
+The list above is almost certainly incomplete as it is automatically generated
+from version control history. In particular, it does not include the names of
+the (very much appreciated) contributors who reported issues to the Perl bug
+tracker.
 .PP
 Many of the changes included in this version originated in the \s-1CPAN\s0 modules
 included in Perl's core. We're grateful to the entire \s-1CPAN\s0 community for

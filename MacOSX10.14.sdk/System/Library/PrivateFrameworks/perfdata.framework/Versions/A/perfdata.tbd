@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 483D5F7E-C655-3CC1-9389-06C8D4427EF8' ]
+uuids:           [ 'x86_64: 2DC571B6-DDC3-3EA4-AC85-61F34B3C662B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/perfdata.framework/Versions/A/perfdata
 current-version: 4.250.16

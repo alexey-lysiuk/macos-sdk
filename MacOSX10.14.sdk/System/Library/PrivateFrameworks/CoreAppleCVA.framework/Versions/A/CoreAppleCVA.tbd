@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 93625EC3-04B9-3B90-9616-74356D80783E' ]
+uuids:           [ 'x86_64: 4674483D-3EDF-37AF-94CE-C76E4B10BA3C' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreAppleCVA.framework/Versions/A/CoreAppleCVA
 current-version: 2.40

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0ACB8CFD-57D4-3D5D-A61E-5FB8A9CF1A12' ]
+uuids:           [ 'x86_64: 1B48EDA3-E73C-3AB6-A306-BBC0F95F4937' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CPMLBestShim.framework/Versions/A/CPMLBestShim
 exports:         

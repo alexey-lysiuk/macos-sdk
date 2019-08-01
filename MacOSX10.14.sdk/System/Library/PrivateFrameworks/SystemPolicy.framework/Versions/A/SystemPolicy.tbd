@@ -1,32 +1,37 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7E43EFF3-41AC-3AF2-A2FD-1AE013FF32E6' ]
+uuids:           [ 'x86_64: 9CDA85A3-875C-3615-8818-2DC73E9FFE8B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SystemPolicy.framework/Versions/A/SystemPolicy
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _SystemPolicyVersionNumber, _SystemPolicyVersionString, _copyAdhocSignatureHash, 
                        _copyBootUUID, _copyBundleID, _copyBundleVersion, _copyCdhash, 
-                       _copyCdhashFromKextURL, _copyDeveloperName, _copyLegacyBundleID, 
-                       _copyLegacyCdhash, _copyLegacyDeveloperName, _copyLegacyKextListEntry, 
-                       _copySigningID, _copySystemRequiredKernelExtensions, _copyTeamIdentifier, 
-                       _copyTeamIdentifierFromCertificates, _copyUnstagedURL, _createCodeReference, 
-                       _createHexStringFromData, _createURLWithoutPrefix, _doBooleanXPCFunction, 
-                       _doObjectXPCFunction, _findFirstSubdirectoryURL, _getDictionaryValue, 
-                       _hasCodeRequirementString, _isAdhocSignature, _isAppleInternalMachine, 
-                       _isAppleSignedCode, _isCdhashOnLegacyList, _isCodelessKext, 
-                       _isDeveloperIDKextSignedCode, _isDeveloperIDSignedCode, _isKernelExtensionPolicyForceEnabled, 
-                       _isKernelExtensionSystemRequired, _isMacAppStoreSignedCode, 
-                       _isSIPDisabledMachine, _isSKELDisabledMachine, _kextDefaultAllowed, 
-                       _scanForBundledKernelExtensions, _scanForKernelExtensions, 
+                       _copyCdhashFromKextURL, _copyDeveloperName, _copyLegacyCdhash, 
+                       _copyLegacyDeveloperName, _copySigningID, _copySystemRequiredKernelExtensions, 
+                       _copyTeamIdentifier, _copyTeamIdentifierFromCertificates, 
+                       _copyUnstagedURL, _createCodeReference, _createHexStringFromData, 
+                       _createURLWithoutPrefix, _doBooleanXPCFunction, _doObjectXPCFunction, 
+                       _findFirstSubdirectoryURL, _getDictionaryValue, _hasCodeRequirementString, 
+                       _isAdhocSignature, _isAppleInternalMachine, _isAppleSignedCode, 
+                       _isCodelessKext, _isDeveloperIDKextSignedCode, _isDeveloperIDSignedCode, 
+                       _isKernelExtensionPolicyForceEnabled, _isKernelExtensionSystemRequired, 
+                       _isKextAllowedWithoutNotarization, _isMacAppStoreSignedCode, 
+                       _isNotarizedKext, _isSIPDisabledMachine, _isSKELDisabledMachine, 
+                       _kextDefaultAllowed, _scanForBundledKernelExtensions, _scanForKernelExtensions, 
                        _systemUptime ]
-    objc-classes:    [ SPExecutionHistoryItem, SPExecutionPolicy, SPKernelExtensionPolicy, 
-                       SPKernelExtensionPolicyItem, SPMigration ]
-    objc-ivars:      [ SPExecutionHistoryItem._cdHash, SPExecutionHistoryItem._developerName, 
+    objc-classes:    [ AKELData, SPExecutionHistoryItem, SPExecutionPolicy, SPKernelExtensionHistory, 
+                       SPKernelExtensionHistoryItem, SPKernelExtensionPolicy, SPKernelExtensionPolicyItem, 
+                       SPMigration ]
+    objc-ivars:      [ AKELData._signatureExceptionData, AKELData._timestamp, AKELData._timestampExceptionData, 
+                       AKELData._url, SPExecutionHistoryItem._cdHash, SPExecutionHistoryItem._developerName, 
                        SPExecutionHistoryItem._execPath, SPExecutionHistoryItem._lastSeen, 
                        SPExecutionHistoryItem._mmapPath, SPExecutionHistoryItem._responsiblePath, 
                        SPExecutionHistoryItem._signingID, SPExecutionHistoryItem._teamID, 
                        SPExecutionPolicy._connection, SPExecutionPolicy._interface, 
+                       SPKernelExtensionHistory._connection, SPKernelExtensionHistory._interface, 
+                       SPKernelExtensionHistoryItem._bundleID, SPKernelExtensionHistoryItem._cdHash, 
+                       SPKernelExtensionHistoryItem._path, SPKernelExtensionHistoryItem._teamID, 
                        SPKernelExtensionPolicy._connection, SPKernelExtensionPolicy._currentPolicy, 
                        SPKernelExtensionPolicy._interface, SPKernelExtensionPolicyItem._allowed, 
                        SPKernelExtensionPolicyItem._applicationName, SPKernelExtensionPolicyItem._applicationPath, 

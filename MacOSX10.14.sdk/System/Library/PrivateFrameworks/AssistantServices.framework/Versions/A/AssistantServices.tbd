@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 94A7C105-6BBD-3867-8DBC-BE2474BB69A4' ]
+uuids:           [ 'x86_64: 941218FC-3525-3597-A070-5F297981EFB8' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AssistantServices.framework/Versions/A/AssistantServices
 exports:         
@@ -211,7 +211,9 @@ exports:
                        __AFPreferencesEnableSiriMiniPreferred, __AFPreferencesEnableSpeakerGradingDebugUI, 
                        __AFPreferencesForceRTL, __AFPreferencesForceSpeexAudioRecording, 
                        __AFPreferencesForceUncompressedAudioRecording, __AFPreferencesGetClientCommandDeliveryDelay, 
-                       __AFPreferencesGetForcedInterstitialStyle, __AFPreferencesGetInterstitialDisplayDisabledBeforeSpeechRecognition, 
+                       __AFPreferencesGetForcedInterstitialStyle, __AFPreferencesGetInitialInterstitialDelay, 
+                       __AFPreferencesGetInitialInterstitialDelayForVoiceTriggerOneShotWithoutAudioDucking, 
+                       __AFPreferencesGetInterstitialDisplayDisabledBeforeSpeechRecognition, 
                        __AFPreferencesGetTuscanyStatus, __AFPreferencesIgnoreEVFailures, 
                        __AFPreferencesInProgressOutputVoice, __AFPreferencesIsSiriServerLoggingEnabled, 
                        __AFPreferencesIsVOXModeEnabled, __AFPreferencesLanguageCode, 
@@ -233,6 +235,7 @@ exports:
                        __AFPreferencesSetEnableSpeakerGradingDebugUI, __AFPreferencesSetForceRTL, 
                        __AFPreferencesSetForceSpeexAudioRecording, __AFPreferencesSetForceUncompressedAudioRecording, 
                        __AFPreferencesSetIgnoreEVFailures, __AFPreferencesSetInProgressOutputVoice, 
+                       __AFPreferencesSetInitialInterstitialDelay, __AFPreferencesSetInitialInterstitialDelayForVoiceTriggerOneShotWithoutAudioDucking, 
                        __AFPreferencesSetLanguageCode, __AFPreferencesSetLastPushedCensorSpeechSetting, 
                        __AFPreferencesSetLimitedPersistentAudioLogging, __AFPreferencesSetLowerWristEducationHeaderDisplayCount, 
                        __AFPreferencesSetMirroredTCCInfo, __AFPreferencesSetMyriadConstantGoodness, 

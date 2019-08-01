@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B240DD44-41D1-3B1B-B7D7-24984EC5B133' ]
+uuids:           [ 'x86_64: 14F57DF7-966B-3DE8-AFB5-78E4FB20FF05' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/IOBluetoothUI.framework/Versions/A/IOBluetoothUI
 exports:         
@@ -29,8 +29,11 @@ exports:
                        _TypeForModelStr, __IOBluetoothUI_AlignCGPointToUserSpace, 
                        __IOBluetoothUI_AlignCGRectToUserSpace, __IOBluetoothUI_AlignPointToUserSpace, 
                        __IOBluetoothUI_AlignRectToUserSpace, _gAppleObjectPushServiceClassUUID, 
-                       _isDebugLogEnabled, _registerValueTransformers, _sOBEXObjectPushSupportFormatsListNameMapping ]
-    objc-classes:    [ AppleOptions, AudioOptions2, EnhancedAppleOptions, EnhancedAppleOptions2, 
+                       _isDebugLogEnabled, _registerValueTransformers, _sOBEXObjectPushSupportFormatsListNameMapping, 
+                       _uiLog ]
+    objc-classes:    [ AssetHelper, AudioOptions, AudioOptionsViewController, AudioOptionsViewDoubleTap, 
+                       AudioOptionsViewDoubleTapExtended, AudioOptionsViewInEarDetection, 
+                       AudioOptionsViewListeningMode, AudioOptionsViewMicSwitching, 
                        FauxUIElement, IOBluetoothAccessibilityIgnoredImageCell, IOBluetoothAccessibilityIgnoredTextFieldCell, 
                        IOBluetoothConcreteDeviceController, IOBluetoothConcreteDeviceSelectorController, 
                        IOBluetoothConcreteObjectPush, IOBluetoothConcretePairingController, 
@@ -49,21 +52,13 @@ exports:
                        IOBluetoothUI_BatteryControl, IOBluetooth_HIDNameFormatter, 
                        OBEXObjectReceiveConcreteWindowController, OBEXObjectReceiveWindowController, 
                        ObjectTableDataSource, PlainFormatter, TerminateEnabledModalPanel ]
-    objc-ivars:      [ AppleOptions.appleDeviceSetting, AppleOptions.appleOptionsViewPlaceholder, 
-                       AppleOptions.appleOptionsWindow, AppleOptions.checkBoxEnableInEarDetection, 
-                       AppleOptions.doubleTapButton, AppleOptions.microphoneButton, 
-                       AudioOptions2.ancImageButton, AudioOptions2.appleDeviceSetting, 
-                       AudioOptions2.appleOptionsViewPlaceholder, AudioOptions2.appleOptionsWindow, 
-                       AudioOptions2.buttonsLocked, AudioOptions2.normalImageButton, 
-                       AudioOptions2.unlockTimer, EnhancedAppleOptions.appleDeviceSetting, 
-                       EnhancedAppleOptions.appleOptionsViewPlaceholder, EnhancedAppleOptions.appleOptionsWindow, 
-                       EnhancedAppleOptions.checkBoxEnableInEarDetection, EnhancedAppleOptions.leftDoubleTapButton, 
-                       EnhancedAppleOptions.microphoneButton, EnhancedAppleOptions.rightDoubleTapButton, 
-                       EnhancedAppleOptions2.appleDeviceSetting, EnhancedAppleOptions2.appleOptionsViewPlaceholder, 
-                       EnhancedAppleOptions2.appleOptionsWindow, EnhancedAppleOptions2.checkBoxEnableInEarDetection, 
-                       EnhancedAppleOptions2.doubleTapBox, EnhancedAppleOptions2.leftDoubleTapButton, 
-                       EnhancedAppleOptions2.microphoneButton, EnhancedAppleOptions2.rightDoubleTapButton, 
-                       FauxUIElement.parent, FauxUIElement.role, IOBluetoothConcreteDeviceController._collectionView, 
+    objc-ivars:      [ AssetHelper.mDictCache, AudioOptions._device, AudioOptions.isReferenceUsed, 
+                       AudioOptions.optionViewControllers, AudioOptionsViewListeningMode._imageButtonANC, 
+                       AudioOptionsViewListeningMode._imageButtonNormal, AudioOptionsViewListeningMode._legendANC, 
+                       AudioOptionsViewListeningMode._textButtonANC, AudioOptionsViewListeningMode._textButtonNormal, 
+                       AudioOptionsViewListeningMode.buttonsLocked, AudioOptionsViewListeningMode.mReady, 
+                       AudioOptionsViewListeningMode.unlockTimer, FauxUIElement.parent, 
+                       FauxUIElement.role, IOBluetoothConcreteDeviceController._collectionView, 
                        IOBluetoothConcreteDeviceController._placeHolderView, IOBluetoothConcreteDeviceController.mAllowedServiceArray, 
                        IOBluetoothConcreteDeviceController.mBTNotificationRef, IOBluetoothConcreteDeviceController.mCancel, 
                        IOBluetoothConcreteDeviceController.mCancelButton, IOBluetoothConcreteDeviceController.mContextInfo, 

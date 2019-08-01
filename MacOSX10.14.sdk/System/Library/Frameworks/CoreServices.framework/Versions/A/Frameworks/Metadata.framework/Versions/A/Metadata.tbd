@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8DD9AC75-7D3E-3607-BEA0-556E98C30765' ]
+uuids:           [ 'x86_64: BFFAED00-2560-318A-BB8F-4E7E5123EC61' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Metadata
-current-version: 1191.56
+current-version: 1191.57
 parent-umbrella: CoreServices
 exports:         
   - archs:           [ x86_64 ]

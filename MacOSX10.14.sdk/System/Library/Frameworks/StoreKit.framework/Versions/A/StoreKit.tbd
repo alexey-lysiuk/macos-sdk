@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5F85D7AF-AD00-3179-8642-7562B83D4B61' ]
+uuids:           [ 'x86_64: 5E26D23D-D85C-32EF-AE44-2B0437893274' ]
 platform:        zippered
 install-name:    /System/Library/Frameworks/StoreKit.framework/Versions/A/StoreKit
 current-version: 379

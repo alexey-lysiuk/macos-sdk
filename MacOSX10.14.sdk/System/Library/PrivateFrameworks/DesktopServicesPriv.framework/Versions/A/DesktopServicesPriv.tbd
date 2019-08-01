@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 420CC09F-7C18-3644-A024-DA8997FECA02' ]
+uuids:           [ 'x86_64: 265C0E94-B8BF-3F58-8D68-EA001EEA0B15' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DesktopServicesPriv.framework/Versions/A/DesktopServicesPriv
 current-version: 0

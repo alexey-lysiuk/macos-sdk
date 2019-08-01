@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5D5019C0-A53A-3753-A4E6-C8C4FE5923F1' ]
+uuids:           [ 'x86_64: 7A8CC4C0-75BA-3156-87FB-6244A91B4A29' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoLibraryPrivate.framework/Versions/A/Frameworks/MediaConversionService.framework/Versions/A/MediaConversionService
-current-version: 3441.7.100
+current-version: 3461.7.140
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _MediaConversionServiceVersionNumber, _MediaConversionServiceVersionString, 

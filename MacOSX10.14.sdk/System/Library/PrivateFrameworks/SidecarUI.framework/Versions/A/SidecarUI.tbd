@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 63C77D8A-1306-3963-855B-2D1268EE6F5F' ]
+uuids:           [ 'x86_64: B2CF3906-E8F1-3B82-BF46-FFE89690FE73' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SidecarUI.framework/Versions/A/SidecarUI
-current-version: 38.1
+current-version: 38.2
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _SidecarLocalizedString, _SidecarRequestFromRepresentedObject ]

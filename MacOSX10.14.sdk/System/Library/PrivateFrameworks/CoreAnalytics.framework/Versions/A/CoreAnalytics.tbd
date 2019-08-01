@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D0BF86C2-7D6F-3973-AC19-9969B6A4AC12' ]
+uuids:           [ 'x86_64: 5AFC8A18-30CA-3D29-A509-DF21AC4DB921' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/CoreAnalytics.framework/Versions/A/CoreAnalytics
 exports:         

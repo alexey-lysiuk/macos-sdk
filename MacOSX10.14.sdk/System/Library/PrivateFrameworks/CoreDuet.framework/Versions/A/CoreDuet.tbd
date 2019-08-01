@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 58E827F4-E1D2-3A65-B34E-2D6D5C053AD0' ]
+uuids:           [ 'x86_64: E3224B54-3AA5-372E-A395-93E440AF9515' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/CoreDuet.framework/Versions/A/CoreDuet
 exports:         
@@ -118,6 +118,7 @@ exports:
                        _CDSpotlightItemUtils, _CDSpotlightQuerier, _CDStats, _CDStatsPrinter, 
                        _CDStringTokenizer, _CDSuggestedPerson, _CDTemporalInteractionAdvisor, 
                        _CDTopicMetadataKey, _CDUserActivity, _CDVersionRecord, _DKActivityThrottler, 
+                       _DKAirPlayPredictionCategory, _DKAirPlayPredictionMetadataKey, 
                        _DKAnyDoubleQuantity, _DKAnyIntegerCategory, _DKAnyStringIdentifier, 
                        _DKAppActivityStreamTombstoneRequirement, _DKAppInstallMetadataKey, 
                        _DKAppIntentsStreamTombstoneRequirement, _DKAppUsageTombstoneRequirement, 

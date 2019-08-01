@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9F3B2155-71A5-3DDF-AB37-3BF77AB2BA12' ]
+uuids:           [ 'x86_64: 4C98D5F1-F2AB-3972-9D32-2741665CA7FF' ]
 platform:        macosx
 install-name:    /System/Library/CoreServices/Encodings/libGreekConverter.dylib
 current-version: 73

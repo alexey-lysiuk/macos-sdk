@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F4BE593B-5B7A-389D-91BD-BB0D2A020CBA' ]
+uuids:           [ 'x86_64: 5BF06BE1-24F4-346A-95DE-D7CC699C49DA' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Versions/A/Frameworks/PhotosGraph.framework/Versions/A/PhotosGraph
 exports:         
@@ -270,7 +270,7 @@ exports:
                        PGWeekendMemoryGenerator, PGYearSummaryMemoryGenerator, PhotosGraphTestsCommon ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C0688CEE-5D31-3F74-AF13-CDEC676A9F78' ]
+uuids:           [ 'x86_64: F300FB02-2F0C-3269-8860-8836F1C5F077' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Versions/A/Frameworks/PhotosGraph.framework/Versions/A/Frameworks/KnowledgeGraphKit.framework/Versions/A/KnowledgeGraphKit
 exports:         
@@ -292,7 +292,7 @@ exports:
                        MAPath, MAPaths, MAStatisticsElapsedTime, MASubGraph ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BFB4E4E7-BD5A-33D0-ACFF-34B7084F1492' ]
+uuids:           [ 'x86_64: A6FB8A66-FD26-3237-A3B4-CBC9BCA4A2D8' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Versions/A/Frameworks/PhotosGraph.framework/Versions/A/Frameworks/MediaMiningKit.framework/Versions/A/MediaMiningKit
 exports:         
@@ -746,7 +746,7 @@ exports:
                        CLSRatingServicePerson._workAddressesWeight ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D9AA5C9A-A348-3EC4-9811-86F41E25A57A' ]
+uuids:           [ 'x86_64: 93BEB244-38D8-3B93-BF11-D3990DE684E6' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Versions/A/Frameworks/PhotosGraph.framework/Versions/A/Frameworks/PipelineKit.framework/Versions/A/PipelineKit
 exports:         

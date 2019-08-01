@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5359E30D-AF76-3013-8B50-0A93DB97BB8F' ]
+uuids:           [ 'x86_64: 917480B5-14BE-30E0-ABE6-9702336CC35A' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/UIFoundation.framework/Versions/A/UIFoundation
-current-version: 551
+current-version: 551.2
 exports:         
   - archs:           [ x86_64 ]
     allowable-clients: [ AppKit, UIKitCore ]
@@ -190,22 +190,23 @@ exports:
                        NSDocFormatReader._firstEntryNumber, NSDocFormatReader._fontCache, 
                        NSDocFormatReader._fontInfoEnd, NSDocFormatReader._fontInfoStart, 
                        NSDocFormatReader._fontNames, NSDocFormatReader._globalFlags, 
-                       NSDocFormatReader._indexingLimit, NSDocFormatReader._lastModifier, 
-                       NSDocFormatReader._magicNumber, NSDocFormatReader._metaInfoEnd, 
-                       NSDocFormatReader._metaInfoStart, NSDocFormatReader._parAttributes, 
-                       NSDocFormatReader._parInfoEnd, NSDocFormatReader._parInfoStart, 
-                       NSDocFormatReader._predefinedAttributes, NSDocFormatReader._predefinedHeaderLength, 
-                       NSDocFormatReader._predefinedInfoEnd, NSDocFormatReader._predefinedInfoStart, 
-                       NSDocFormatReader._predefinedOffsets, NSDocFormatReader._previousRowArray, 
-                       NSDocFormatReader._primaryData, NSDocFormatReader._primaryIndex, 
-                       NSDocFormatReader._productNumber, NSDocFormatReader._removeRowInfo, 
-                       NSDocFormatReader._secondaryData, NSDocFormatReader._secondaryIndex, 
-                       NSDocFormatReader._stringEncoding, NSDocFormatReader._tableData, 
-                       NSDocFormatReader._tableOfContents, NSDocFormatReader._textInfoEnd, 
-                       NSDocFormatReader._textInfoStart, NSDocFormatReader._textLength, 
-                       NSDocFormatReader._textStart, NSDocFormatReader._thumbnailLimit, 
-                       NSDocFormatReader._versionCode, NSDocFormatReader._versionNumber, 
-                       NSDocFormatWriter._attrStr, NSDocFormatWriter._charData, NSDocFormatWriter._charFlags, 
+                       NSDocFormatReader._indexingLimit, NSDocFormatReader._infoData, 
+                       NSDocFormatReader._lastModifier, NSDocFormatReader._magicNumber, 
+                       NSDocFormatReader._metaInfoEnd, NSDocFormatReader._metaInfoStart, 
+                       NSDocFormatReader._parAttributes, NSDocFormatReader._parInfoEnd, 
+                       NSDocFormatReader._parInfoStart, NSDocFormatReader._predefinedAttributes, 
+                       NSDocFormatReader._predefinedHeaderLength, NSDocFormatReader._predefinedInfoEnd, 
+                       NSDocFormatReader._predefinedInfoStart, NSDocFormatReader._predefinedOffsets, 
+                       NSDocFormatReader._previousRowArray, NSDocFormatReader._primaryData, 
+                       NSDocFormatReader._primaryIndex, NSDocFormatReader._productNumber, 
+                       NSDocFormatReader._removeRowInfo, NSDocFormatReader._secondaryData, 
+                       NSDocFormatReader._secondaryIndex, NSDocFormatReader._stringEncoding, 
+                       NSDocFormatReader._tableData, NSDocFormatReader._tableOfContents, 
+                       NSDocFormatReader._textInfoEnd, NSDocFormatReader._textInfoStart, 
+                       NSDocFormatReader._textLength, NSDocFormatReader._textStart, 
+                       NSDocFormatReader._thumbnailLimit, NSDocFormatReader._versionCode, 
+                       NSDocFormatReader._versionNumber, NSDocFormatWriter._attrStr, 
+                       NSDocFormatWriter._charData, NSDocFormatWriter._charFlags, 
                        NSDocFormatWriter._documentAttrs, NSDocFormatWriter._documentData, 
                        NSDocFormatWriter._documentSummaryInfoData, NSDocFormatWriter._fontArray, 
                        NSDocFormatWriter._needsTrailingBreak, NSDocFormatWriter._parData, 

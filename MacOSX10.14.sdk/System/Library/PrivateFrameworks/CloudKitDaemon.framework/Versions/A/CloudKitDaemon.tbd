@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4083D321-D44F-3498-B3EB-A98368CECD5A' ]
+uuids:           [ 'x86_64: 39215D4C-B0CC-3D68-8F2F-66362067FB13' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CloudKitDaemon.framework/Versions/A/CloudKitDaemon
-current-version: 736.216
+current-version: 736.232
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CKClientContextAccountDidChangeNotification, _CKDAssetCacheDbSchema, 

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D4D58ED1-1325-3FA0-AD7B-7C944D36D35B' ]
+uuids:           [ 'x86_64: 9FB11573-E3A4-3B14-80DD-62BAD635CE49' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/JavaScriptCore.framework/Versions/A/JavaScriptCore
-current-version: 607.1.40
+current-version: 607.3.8
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _JSCheckScriptSyntax, _JSClassCreate, _JSClassRelease, _JSClassRetain, 

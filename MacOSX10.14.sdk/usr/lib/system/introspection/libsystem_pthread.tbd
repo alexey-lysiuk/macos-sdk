@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 59062CB9-D8A6-34F3-8D7A-DAA982F60CCD' ]
+uuids:           [ 'x86_64: 7F595064-9E17-3A57-ADB1-E0BFEE863DCB' ]
 platform:        macosx
 install-name:    /usr/lib/system/introspection/libsystem_pthread.dylib
 current-version: 330.250.2

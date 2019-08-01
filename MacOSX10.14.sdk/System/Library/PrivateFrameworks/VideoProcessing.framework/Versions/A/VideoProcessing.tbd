@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DF074827-A2BF-38EC-A11B-7440FDDE3650' ]
+uuids:           [ 'x86_64: ECCB621C-2403-3F7F-B35D-4B5D37307625' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/VideoProcessing.framework/Versions/A/VideoProcessing
 exports:         

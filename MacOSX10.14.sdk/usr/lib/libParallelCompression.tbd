@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D3B6911C-E6EE-3772-97E1-52E0E606E505' ]
+uuids:           [ 'x86_64: 4DD7DE36-0A7F-3D68-9AE3-FABB8F0402DC' ]
 platform:        macosx
 install-name:    /usr/lib/libParallelCompression.dylib
 objc-constraint: none

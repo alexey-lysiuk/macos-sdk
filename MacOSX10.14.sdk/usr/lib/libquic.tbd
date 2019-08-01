@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1855CB21-7331-39A4-AD94-26318CF40D61' ]
+uuids:           [ 'x86_64: 0E91F39A-FDD8-3B7C-AF59-5B8EFE69DC08' ]
 platform:        macosx
 install-name:    /usr/lib/libquic.dylib
 objc-constraint: none

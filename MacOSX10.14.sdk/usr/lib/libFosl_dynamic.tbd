@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C46C13F6-2799-39A0-BB32-126C2259194A' ]
+uuids:           [ 'x86_64: 1B5DD4E2-8AE0-315E-829E-D5BFCD264EA8' ]
 platform:        macosx
 install-name:    /usr/lib/libFosl_dynamic.dylib
 current-version: 0

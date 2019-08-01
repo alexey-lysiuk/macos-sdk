@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3EE59BD1-FCDD-3DE2-A7D6-6C503564E1AC' ]
+uuids:           [ 'x86_64: 746EB200-DC51-30AE-9CBC-608A7B4CC8DA' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/DictionaryServices.framework/Versions/A/DictionaryServices
-current-version: 284.16.3
+current-version: 284.16.4
 parent-umbrella: CoreServices
 exports:         
   - archs:           [ x86_64 ]

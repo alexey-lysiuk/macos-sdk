@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 29438EA6-0617-321F-9D2F-307A3E96511A' ]
+uuids:           [ 'x86_64: 1AFB7DA6-293F-39A3-B26F-E48C343DD893' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/WiFiVelocity.framework/Versions/A/WiFiVelocity
 exports:         

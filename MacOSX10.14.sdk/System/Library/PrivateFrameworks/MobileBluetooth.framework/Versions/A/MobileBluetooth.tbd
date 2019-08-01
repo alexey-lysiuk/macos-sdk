@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DF0A6F6E-AFF1-3D48-B0C1-CC81AB1144FF' ]
+uuids:           [ 'x86_64: AC506347-295C-3DE3-AD0A-AB8123158AB5' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MobileBluetooth.framework/Versions/A/MobileBluetooth
 objc-constraint: none
@@ -34,12 +34,13 @@ exports:
                        _BTDeviceGetMagicPairingStatus, _BTDeviceGetName, _BTDeviceGetPairingStatus, 
                        _BTDeviceGetServiceSettings, _BTDeviceGetSupportedServices, 
                        _BTDeviceGetSyncSettings, _BTDeviceGetVirtualType, _BTDeviceIsAppleAudioDevice, 
-                       _BTDeviceMatchesAdvertisedKey, _BTDevicePhysicalLinkDisconnect, 
-                       _BTDeviceSetAuthorizedServices, _BTDeviceSetGroup, _BTDeviceSetHIDProperties, 
-                       _BTDeviceSetServiceSettings, _BTDeviceSetSyncSettings, _BTDeviceSetUserName, 
-                       _BTDeviceSetVirtualType, _BTDeviceSupportsHS, _BTDiscoveryAgentAddKey, 
-                       _BTDiscoveryAgentCreate, _BTDiscoveryAgentDestroy, _BTDiscoveryAgentGetDevices, 
-                       _BTDiscoveryAgentRemoveKey, _BTDiscoveryAgentStartScan, _BTDiscoveryAgentStartScanForAdvertizedData, 
+                       _BTDeviceIsUsingLowSecurity, _BTDeviceMatchesAdvertisedKey, 
+                       _BTDevicePhysicalLinkDisconnect, _BTDeviceSetAuthorizedServices, 
+                       _BTDeviceSetGroup, _BTDeviceSetHIDProperties, _BTDeviceSetServiceSettings, 
+                       _BTDeviceSetSyncSettings, _BTDeviceSetUserName, _BTDeviceSetVirtualType, 
+                       _BTDeviceSupportsHS, _BTDiscoveryAgentAddKey, _BTDiscoveryAgentCreate, 
+                       _BTDiscoveryAgentDestroy, _BTDiscoveryAgentGetDevices, _BTDiscoveryAgentRemoveKey, 
+                       _BTDiscoveryAgentStartScan, _BTDiscoveryAgentStartScanForAdvertizedData, 
                        _BTDiscoveryAgentStopScan, _BTLocalDeviceAddCallbacks, _BTLocalDeviceAdvertiseData, 
                        _BTLocalDeviceDisableLeTestMode, _BTLocalDeviceEnableDUTMode, 
                        _BTLocalDeviceEnableLeRxTestMode, _BTLocalDeviceEnableLeTxTestMode, 
@@ -95,14 +96,14 @@ exports:
                        __BTDeviceGetDeviceType, __BTDeviceGetGroups, __BTDeviceGetMagicPairingStatus, 
                        __BTDeviceGetName, __BTDeviceGetPairingStatus, __BTDeviceGetServiceSettings, 
                        __BTDeviceGetSupportedServices, __BTDeviceGetSyncSettings, 
-                       __BTDeviceGetVirtualType, __BTDeviceIsAppleAudioDevice, __BTDeviceMatchesAdvertisedKey, 
-                       __BTDevicePhysicalLinkDisconnect, __BTDeviceSetGroup, __BTDeviceSetHIDProperties, 
-                       __BTDeviceSetServiceSettings, __BTDeviceSetSyncSettings, __BTDeviceSetUserName, 
-                       __BTDeviceSetVirtualType, __BTDeviceSupportsHS, __BTDiscoveryAgentAddKey, 
-                       __BTDiscoveryAgentCreate, __BTDiscoveryAgentDestroy, __BTDiscoveryAgentGetDevices, 
-                       __BTDiscoveryAgentRemoveKey, __BTDiscoveryAgentStartScan, 
-                       __BTDiscoveryAgentStartScanForAdvertizedData, __BTDiscoveryAgentStopScan, 
-                       __BTLocalDeviceAddCallbacks, __BTLocalDeviceAdvertiseData, 
+                       __BTDeviceGetVirtualType, __BTDeviceIsAppleAudioDevice, __BTDeviceIsUsingLowSecurity, 
+                       __BTDeviceMatchesAdvertisedKey, __BTDevicePhysicalLinkDisconnect, 
+                       __BTDeviceSetGroup, __BTDeviceSetHIDProperties, __BTDeviceSetServiceSettings, 
+                       __BTDeviceSetSyncSettings, __BTDeviceSetUserName, __BTDeviceSetVirtualType, 
+                       __BTDeviceSupportsHS, __BTDiscoveryAgentAddKey, __BTDiscoveryAgentCreate, 
+                       __BTDiscoveryAgentDestroy, __BTDiscoveryAgentGetDevices, __BTDiscoveryAgentRemoveKey, 
+                       __BTDiscoveryAgentStartScan, __BTDiscoveryAgentStartScanForAdvertizedData, 
+                       __BTDiscoveryAgentStopScan, __BTLocalDeviceAddCallbacks, __BTLocalDeviceAdvertiseData, 
                        __BTLocalDeviceDisableLeTestMode, __BTLocalDeviceEnableDUTMode, 
                        __BTLocalDeviceEnableLeRxTestMode, __BTLocalDeviceEnableLeTxTestMode, 
                        __BTLocalDeviceGetAddressString, __BTLocalDeviceGetAdvertisingStatus, 

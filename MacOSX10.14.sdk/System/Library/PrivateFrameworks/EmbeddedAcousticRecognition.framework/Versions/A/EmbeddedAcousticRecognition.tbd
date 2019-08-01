@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 40711FCF-5A01-3AAE-8C66-C1E2E1F9A5B9' ]
+uuids:           [ 'x86_64: EE90DF97-F87A-3C71-92F8-8F8280762952' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/EmbeddedAcousticRecognition.framework/Versions/A/EmbeddedAcousticRecognition
 exports:         

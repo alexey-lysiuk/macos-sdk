@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3F922DA4-5CE1-3A8F-B8E6-BBE5D4131D07' ]
+uuids:           [ 'x86_64: 6358EBC8-719B-3287-A385-7E6E0D4CDC7D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/iWorkXPC.framework/Versions/A/iWorkXPC
 current-version: 7

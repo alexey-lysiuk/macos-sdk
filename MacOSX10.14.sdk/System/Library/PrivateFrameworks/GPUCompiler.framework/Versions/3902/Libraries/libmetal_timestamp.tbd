@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E4C0B5C2-AFAE-3DAD-8638-9D972E13F27C' ]
+uuids:           [ 'x86_64: 05389463-AF2E-33E2-A14F-1416E4A30835' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/GPUCompiler.framework/Versions/3902/Libraries/libmetal_timestamp.dylib
 current-version: 902.3.2

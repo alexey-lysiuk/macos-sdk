@@ -1,10 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A3A768E1-A3EC-3245-A916-051CB60DA3FE' ]
+uuids:           [ 'x86_64: 2F345116-3F66-3E57-AB2C-B7D65A5C926B' ]
 platform:        macosx
 flags:           [ not_app_extension_safe ]
 install-name:    /System/Library/PrivateFrameworks/CoreFP.framework/CoreFP
-current-version: 2.13.37
+current-version: 2.13.41
 compatibility-version: 2.2.19
 exports:         
   - archs:           [ x86_64 ]

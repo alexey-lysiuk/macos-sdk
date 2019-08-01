@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EAD14DAD-5755-3D93-BB8D-F4DD3CEA1E7F' ]
+uuids:           [ 'x86_64: 1D43794E-BEB8-359B-A27D-A8C623C925B1' ]
 platform:        macosx
 install-name:    /System/Library/CoreServices/Encodings/libSimplifiedChineseConverter.dylib
 current-version: 73

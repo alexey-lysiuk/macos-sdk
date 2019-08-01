@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 09CE062A-5CC7-3008-A1AD-F09EBB2E1BA2' ]
+uuids:           [ 'x86_64: 2B9A7F84-66B1-3400-B761-105BEC1F164A' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/IDS.framework/Versions/A/IDS
 current-version: 800

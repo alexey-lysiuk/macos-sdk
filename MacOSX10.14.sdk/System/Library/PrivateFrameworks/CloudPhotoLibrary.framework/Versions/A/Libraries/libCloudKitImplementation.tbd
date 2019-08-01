@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FB063054-3EF0-3068-87AE-202F66F28051' ]
+uuids:           [ 'x86_64: BBA028B7-B384-3123-9254-003856BB971B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/Versions/A/Libraries/libCloudKitImplementation.dylib
 current-version: 0

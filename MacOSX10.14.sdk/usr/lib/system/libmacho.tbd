@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D8515A20-ED7B-3B13-9ADA-4BD7E19E38C4' ]
+uuids:           [ 'x86_64: A377D608-77AB-3F6E-90F0-B4F251A5C12F' ]
 platform:        zippered
 install-name:    /usr/lib/system/libmacho.dylib
-current-version: 927.0.2
+current-version: 927.0.3
 objc-constraint: none
 parent-umbrella: System
 exports:         

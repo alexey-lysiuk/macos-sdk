@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DCE404E0-9D81-33F0-8842-EB76AF6DC368' ]
+uuids:           [ 'x86_64: 53D7EBAC-C10F-3BA0-9D6B-156E12885EA2' ]
 platform:        macosx
 flags:           [ not_app_extension_safe ]
 install-name:    /System/Library/PrivateFrameworks/MobileDevice.framework/Versions/A/MobileDevice
@@ -41,12 +41,13 @@ exports:
                        _AFCOperationGetContext, _AFCOperationGetResultObject, _AFCOperationGetResultStatus, 
                        _AFCOperationGetState, _AFCOperationGetTypeID, _AFCOperationSetContext, 
                        _AFCPlatformInitialize, _AFCRemovePath, _AFCRenamePath, _AFCSetLogLevel, 
-                       _AMAuthInstallApCreateImageProperties, _AMAuthInstallApImg4CopyPayloadType, 
-                       _AMAuthInstallApImg4ForceLocalSigning, _AMAuthInstallApImg4PersonalizeFile, 
-                       _AMAuthInstallApImg4SetSepNonce, _AMAuthInstallApSetNonce, 
-                       _AMAuthInstallApSetParameters, _AMAuthInstallCreate, _AMAuthInstallLogSetHandler, 
-                       _AMAuthInstallSetSigningServerURL, _AMAuthInstallSsoEnable, 
-                       _AMAuthInstallSsoInitialize, _AMAuthInstallSupportCopyDataFromHexString, 
+                       _AMAuthInstallApCreateImageProperties, _AMAuthInstallApCreatePersonalizedResponse, 
+                       _AMAuthInstallApImg4CopyPayloadType, _AMAuthInstallApImg4CreateServerRequestDictionary, 
+                       _AMAuthInstallApImg4CreateStitchTicket, _AMAuthInstallApImg4ForceLocalSigning, 
+                       _AMAuthInstallApImg4PersonalizeFile, _AMAuthInstallApImg4SetSepNonce, 
+                       _AMAuthInstallApSetNonce, _AMAuthInstallApSetParameters, _AMAuthInstallCreate, 
+                       _AMAuthInstallLogSetHandler, _AMAuthInstallSetSigningServerURL, 
+                       _AMAuthInstallSsoEnable, _AMAuthInstallSsoInitialize, _AMAuthInstallSupportCopyDataFromHexString, 
                        _AMAuthInstallSupportCopyURLToNewTempDirectory, _AMAuthInstallSupportCreateDataFromFileURL, 
                        _AMAuthInstallSupportCreateDictionaryFromFileURL, _AMAuthInstallSupportDictionarySetBoolean, 
                        _AMAuthInstallSupportDictionarySetInteger32, _AMAuthInstallSupportDictionarySetInteger64, 

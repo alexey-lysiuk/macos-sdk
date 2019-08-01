@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1C1B1E5B-CFDD-3669-8A96-4D387C61C5BF' ]
+uuids:           [ 'x86_64: 4ACFF78B-7FAA-33EB-9D72-AC914B0B5EE4' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotosPlayer.framework/Versions/A/PhotosPlayer
-current-version: 3401.3.190
+current-version: 3461.4.110
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _BlurFilterKey, _CMTimeMod, _ISBlurFilterName, _ISBlurKeyPath, 

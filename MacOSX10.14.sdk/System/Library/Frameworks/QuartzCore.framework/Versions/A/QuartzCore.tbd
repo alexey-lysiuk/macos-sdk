@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BB1034F0-B791-3AF1-B166-6532B2AB54FE' ]
+uuids:           [ 'x86_64: 33E846BE-1794-3186-9BF2-6ADF62C782A3' ]
 platform:        zippered
 install-name:    /System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore
 current-version: 1.11
@@ -224,11 +224,10 @@ exports:
                        _CARenderUpdateAddRect, _CARenderUpdateAddRegion, _CARenderUpdateAddedAllContexts, 
                        _CARenderUpdateAllocateSeed, _CARenderUpdateBegin, _CARenderUpdateBegin2, 
                        _CARenderUpdateCheckUnobscuredRegionOfInterest, _CARenderUpdateClipBackdropInvalidations, 
-                       _CARenderUpdateCopyLayerHostBindings, _CARenderUpdateCopyLayerHostBindings2, 
-                       _CARenderUpdateCopyRegion, _CARenderUpdateCopyUnobscuredHostedRegion, 
-                       _CARenderUpdateFinish, _CARenderUpdateGetBackdropLayerCount, 
-                       _CARenderUpdateGetBackdropLayerInfo, _CARenderUpdateGetBounds, 
-                       _CARenderUpdateGetFlags, _CARenderUpdateGetMaxBitsPerChannel, 
+                       _CARenderUpdateCopyLayerHostBindings2, _CARenderUpdateCopyRegion, 
+                       _CARenderUpdateCopyUnobscuredHostedRegion, _CARenderUpdateFinish, 
+                       _CARenderUpdateGetBackdropLayerCount, _CARenderUpdateGetBackdropLayerInfo, 
+                       _CARenderUpdateGetBounds, _CARenderUpdateGetFlags, _CARenderUpdateGetMaxBitsPerChannel, 
                        _CARenderUpdateGetNextTime, _CARenderUpdateGetProxyLayerCount, 
                        _CARenderUpdateGetProxyLayerInfo, _CARenderUpdateGetSeed, 
                        _CARenderUpdateGetTime, _CARenderUpdateGetTimeStamp, _CARenderUpdateGetVersionedProxyLayerInfo, 
@@ -315,9 +314,10 @@ exports:
                        _kCADepthNormalizationMax, _kCADepthNormalizationMin, _kCADepthNormalizationNone, 
                        _kCADepthNormalizationWidth, _kCADisplayAuto, _kCADisplayDolbyVision, 
                        _kCADisplayDolbyVisionLowLatency, _kCADisplayDolbyVisionNative, 
-                       _kCADisplayDolbyVisionTunneled, _kCADisplayHDR10YCbCr420, 
-                       _kCADisplayHDR10YCbCr420LimitedRange, _kCADisplayHDR10YCbCr422, 
-                       _kCADisplayHDR10YCbCr422LimitedRange, _kCADisplayInsetBounds, 
+                       _kCADisplayDolbyVisionTunneled, _kCADisplayHDR10RGBFullRange, 
+                       _kCADisplayHDR10YCbCr420, _kCADisplayHDR10YCbCr420LimitedRange, 
+                       _kCADisplayHDR10YCbCr422, _kCADisplayHDR10YCbCr422LimitedRange, 
+                       _kCADisplayHDR10YCbCr444LimitedRange, _kCADisplayInsetBounds, 
                        _kCADisplayModeDolby, _kCADisplayModeGamutBT2020, _kCADisplayModeGamutP3, 
                        _kCADisplayModeGamutSRGB, _kCADisplayModeHDR10, _kCADisplayModeHLG, 
                        _kCADisplayModeSDR, _kCADisplayNone, _kCADisplayOrientationRotation0, 

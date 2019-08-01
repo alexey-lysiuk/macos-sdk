@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1263087C-1D3F-3774-990C-E6FC7E1B70EF' ]
+uuids:           [ 'x86_64: F61E9BA6-656F-3B48-BC4F-D06510D485CE' ]
 platform:        macosx
 flags:           [ flat_namespace ]
 install-name:    /usr/lib/libapr-1.0.dylib

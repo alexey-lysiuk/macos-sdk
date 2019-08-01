@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2208141A-8888-39B6-99DD-321AD82519E0' ]
+uuids:           [ 'x86_64: 90383EF2-A3AE-3006-98EC-2A1511BB6A53' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/Rapport.framework/Versions/A/Rapport
 current-version: 0
@@ -9,9 +9,8 @@ exports:
   - archs:           [ x86_64 ]
     symbols:         [ _RPAppIDRemote, _RPAssertionDuckAudio, _RPAssertionImminentUse, 
                        _RPAssertionKeepAlive, _RPBonjourFlagsUpdateWithRPCompanionLinkFlags, 
-                       _RPCloudServiceIdentifierDigitalHealth, _RPCompanionLinkFlagsToShortString, 
-                       _RPCompanionLinkFlagsWithUpdateBonjourFlags, _RPDecodeNSError, 
-                       _RPDestinationIdentifierActivePhone, _RPDestinationIdentifierActiveWatch, 
+                       _RPCompanionLinkFlagsToShortString, _RPCompanionLinkFlagsWithUpdateBonjourFlags, 
+                       _RPDecodeNSError, _RPDestinationIdentifierActivePhone, _RPDestinationIdentifierActiveWatch, 
                        _RPDestinationIdentifierDirectPeer, _RPDestinationIdentifierInterestedPeers, 
                        _RPDestinationIdentifierPairedCompanion, _RPDestinationIdentifierPersonalCompanion, 
                        _RPDestinationIdentifierSameHome, _RPDestinationIdentifierSameRoom, 
@@ -30,15 +29,14 @@ exports:
                        _RPRequestIDAny, _RPRequestIDIdentify, _RPRequestIDSpeak, 
                        _RPTopicNone, _RPTopicNowPlayingArtwork, _RPTopicNowPlayingProgress, 
                        _RPTopicNowPlayingText ]
-    objc-classes:    [ RPClient, RPCloudServer, RPCloudSession, RPCompanionLinkAssertion, 
-                       RPCompanionLinkClient, RPCompanionLinkDevice, RPConnection, 
-                       RPDevice, RPEndpoint, RPEventRegistration, RPFileTransferInfo, 
-                       RPFileTransferItem, RPFileTransferProgress, RPFileTransferSession, 
-                       RPHIDSession, RPHIDTouchEvent, RPHIDTouchSession, RPIdentity, 
-                       RPLegacyDeviceDiscovery, RPLegacyService, RPLegacySession, 
+    objc-classes:    [ RPClient, RPCompanionLinkAssertion, RPCompanionLinkClient, 
+                       RPCompanionLinkDevice, RPConnection, RPDevice, RPDiscovery, 
+                       RPEndpoint, RPEventRegistration, RPFileTransferItem, RPFileTransferProgress, 
+                       RPFileTransferSession, RPHIDSession, RPHIDTouchEvent, RPHIDTouchSession, 
+                       RPIdentity, RPLegacyDeviceDiscovery, RPLegacyService, RPLegacySession, 
                        RPLiveAudioSession, RPMediaControlSession, RPPeopleDiscovery, 
                        RPPerson, RPRemoteDisplayDevice, RPRemoteDisplayDiscovery, 
                        RPRemoteDisplayServer, RPRemoteDisplaySession, RPRequestRegistration, 
-                       RPSiriAudioSession, RPSiriSession, RPStreamServer, RPStreamSession, 
-                       RPTextInputSession ]
+                       RPServer, RPSession, RPSiriAudioSession, RPSiriSession, RPStreamServer, 
+                       RPStreamSession, RPTextInputSession ]
 ...

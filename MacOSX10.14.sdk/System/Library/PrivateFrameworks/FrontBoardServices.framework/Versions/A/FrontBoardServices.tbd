@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 50929EBB-4FAD-3DDC-A650-7A258F90AE61' ]
+uuids:           [ 'x86_64: 61FD05CF-ECDD-360A-A6C1-1D176818965F' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/FrontBoardServices.framework/Versions/A/FrontBoardServices
 current-version: 0
@@ -33,8 +33,8 @@ exports:
                        _FBSDisplayLayoutMonitorMessageKeyResult, _FBSDisplayLayoutMonitorServiceIdentifier, 
                        _FBSDisplayOverscanCompensationDescription, _FBSDisplayOverscanCompensationFromCADisplayOverscanAdjustment, 
                        _FBSDisplayOverscanCompensationIsValid, _FBSDisplayOverscanCompensationToCADisplayOverscanAdjustment, 
-                       _FBSDisplayRotationDescription, _FBSDisplayRotationFromCADisplayNativeOrientation, 
-                       _FBSDisplayRotationIsValid, _FBSDisplayRotationRadians, _FBSDisplayRotationToCADisplayNativeOrientation, 
+                       _FBSDisplayRotationDescription, _FBSDisplayRotationFromCADisplayRotation, 
+                       _FBSDisplayRotationIsValid, _FBSDisplayRotationRadians, _FBSDisplayRotationToCADisplayRotation, 
                        _FBSDisplayTypeDescription, _FBSDisplayTypeIsValid, _FBSDisplayTypeName, 
                        _FBSFrontBoardServicesVersionNumber, _FBSFrontBoardServicesVersionString, 
                        _FBSGetServiceFacilityManager, _FBSLaunchServicesEntitlement, 
@@ -138,11 +138,12 @@ exports:
                        FBSWorkspaceSceneLayerEvent, FBSWorkspaceSceneMessageEvent, 
                        FBSWorkspaceSceneUpdateEvent, FBSWorkspaceSceneUpdateResponse, 
                        FBSWorkspaceSceneUpdateResponseEvent, FBSXPCMessage ]
-    objc-ivars:      [ FBSDisplayConfigurationRequest._hdrMode, FBSDisplayConfigurationRequest._overscanCompensation, 
-                       FBSDisplayConfigurationRequest._pixelSize, FBSDisplayConfigurationRequest._refreshRate ]
+    objc-ivars:      [ FBSDisplayConfigurationRequest._hdrMode, FBSDisplayConfigurationRequest._nativePixelSize, 
+                       FBSDisplayConfigurationRequest._overscanCompensation, FBSDisplayConfigurationRequest._pixelSize, 
+                       FBSDisplayConfigurationRequest._refreshRate ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 215A242E-BD57-3A4B-BCA4-FCC9D674CE7B' ]
+uuids:           [ 'x86_64: 68FA8044-F3CD-3BC6-9DAB-27DACF52BFC0' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/BaseBoard.framework/Versions/A/BaseBoard
 current-version: 0
@@ -278,9 +279,5 @@ exports:
                        BSUIApplicationSupport, BSUserDefaultsTestDoubleDictionaryImpl, 
                        BSWatchdog, BSXPCBundle, BSXPCCodingArray, BSXPCConnectionListenerManager, 
                        BSXPCMessage, BSXPCReply, BSZeroingWeakReference ]
-    objc-ivars:      [ BSBaseXPCClient._queue, BSBaseXPCServer._queue, BSBasicServerClient._connection, 
-                       BSDateTimeCache._2daysFromNow, BSDateTimeCache._6daysAgo, 
-                       BSDateTimeCache._lastAttemptedResetTime, BSDateTimeCache._lastSuccessfulResetTime, 
-                       BSDateTimeCache._nextWeek, BSDateTimeCache._prevWeek, BSDateTimeCache._today, 
-                       BSDateTimeCache._tomorrow, BSDateTimeCache._yesterday ]
+    objc-ivars:      [ BSBaseXPCClient._queue, BSBaseXPCServer._queue, BSBasicServerClient._connection ]
 ...

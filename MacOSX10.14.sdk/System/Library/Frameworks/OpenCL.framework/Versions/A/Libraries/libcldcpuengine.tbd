@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 49B139D2-D0D6-3333-9603-DF158D61544C' ]
+uuids:           [ 'x86_64: AAE49359-EB53-3FD4-ADBF-C60498BD0B34' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/OpenCL.framework/Versions/A/Libraries/libcldcpuengine.dylib
 current-version: 2.11

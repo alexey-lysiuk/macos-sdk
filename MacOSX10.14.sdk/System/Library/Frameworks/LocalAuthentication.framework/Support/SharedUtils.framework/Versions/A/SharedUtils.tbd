@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C14AC30F-CF74-3330-874F-FA551C50B636' ]
+uuids:           [ 'x86_64: 67FAA45B-8ABA-3948-A2E5-B928EF63A4E7' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/LocalAuthentication.framework/Support/SharedUtils.framework/Versions/A/SharedUtils
-current-version: 425.250.11
+current-version: 425.255.3
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _ACMContextAddCredential, _ACMContextAddCredentialWithScope, 

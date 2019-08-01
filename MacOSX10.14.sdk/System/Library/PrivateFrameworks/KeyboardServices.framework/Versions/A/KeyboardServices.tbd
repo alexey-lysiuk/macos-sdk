@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 04F40FE2-44ED-31F5-B050-49F872364F13' ]
+uuids:           [ 'x86_64: 3AEC6965-A363-38B0-B499-9AF9274D2EB0' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/KeyboardServices.framework/KeyboardServices
 exports:         
@@ -21,12 +21,13 @@ exports:
                        __KSUserWordsWereDownloadedFilesKey, __KSUserWordsWereDownloadedLanguageKey, 
                        __KSUserWordsWereDownloadedNotification, _dataModelName, _kKSApplePreferencesDomain, 
                        _kKeyboardServicesCloudKitContainerID, _kMaxOperationRetryCount, 
-                       _kRetryWaitInSeconds, _kTextReplacementEntitlement, _kiOSMajorVersForCloudKitSync, 
-                       _kiOSMinorVersForCloudKitSync, _kosxMajorVersForCloudKitSync, 
-                       _kosxMinorSubversionForCloudKitSync, _kosxMinorVersForCloudKitSync, 
-                       _ksDefaultDateNormalise, _ksDefaultEnabled, _ksDefaultPullTime, 
-                       _ksDefaultPushTime, _ksDefaultSaveDynamicData, _ksDefaultSaveLanguageModel, 
-                       _ksDefaultSizeNormalise, _ksDefaultSortDynamicData, _ksDefaultSortLanguageModel ]
+                       _kMaxTextReplacementLength, _kRetryWaitInSeconds, _kTextReplacementEntitlement, 
+                       _kiOSMajorVersForCloudKitSync, _kiOSMinorVersForCloudKitSync, 
+                       _kosxMajorVersForCloudKitSync, _kosxMinorSubversionForCloudKitSync, 
+                       _kosxMinorVersForCloudKitSync, _ksDefaultDateNormalise, _ksDefaultEnabled, 
+                       _ksDefaultPullTime, _ksDefaultPushTime, _ksDefaultSaveDynamicData, 
+                       _ksDefaultSaveLanguageModel, _ksDefaultSizeNormalise, _ksDefaultSortDynamicData, 
+                       _ksDefaultSortLanguageModel ]
     objc-classes:    [ ArraySlice, ArraySlicer, _KSAggdLogger, _KSCKSyncStateManagedObject, 
                        _KSCloudKitManager, _KSControlFileController, _KSDeviceInfo, 
                        _KSDeviceStateMonitor, _KSFileDirectory, _KSFileEntry, _KSFileFile, 

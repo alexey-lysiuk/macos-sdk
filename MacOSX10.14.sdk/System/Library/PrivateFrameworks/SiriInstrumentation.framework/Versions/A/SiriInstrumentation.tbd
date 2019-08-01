@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 95222ADB-E63F-3769-880D-0D3F35D129B7' ]
+uuids:           [ 'x86_64: 17F7AB75-82FA-3FB7-8D53-628A08E15FDA' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/SiriInstrumentation.framework/Versions/A/SiriInstrumentation
 exports:         

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AF7D1285-08EE-3EEB-B8B7-6C358768473D' ]
+uuids:           [ 'x86_64: 5BF1A9EB-2694-3267-9514-A4EB3BEF4081' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/OTSVG.framework/Versions/A/OTSVG
 current-version: 0

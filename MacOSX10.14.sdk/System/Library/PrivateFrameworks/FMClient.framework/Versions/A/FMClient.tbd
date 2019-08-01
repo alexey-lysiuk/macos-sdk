@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 48D86C4D-40B2-393B-AB9A-D673175565D7' ]
+uuids:           [ 'x86_64: 105494D1-66AA-3E17-A4F9-5EAFA62FDFB3' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/FMClient.framework/Versions/A/FMClient
 swift-abi-version: 7

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 510547F5-B5ED-3585-A71D-8A2AB114D6EE' ]
+uuids:           [ 'x86_64: C41D2744-FE84-361F-844A-4E2BD3B1EF1C' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IDSSystemPreferencesSignIn.framework/Versions/A/IDSSystemPreferencesSignIn
 current-version: 800

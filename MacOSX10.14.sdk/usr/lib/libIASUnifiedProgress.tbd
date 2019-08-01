@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DEE999E9-1AE3-3CEA-BA3C-BDE0BA574F63' ]
+uuids:           [ 'x86_64: C121C45B-0EC7-389A-9244-09351CF0DDB9' ]
 platform:        macosx
 install-name:    /usr/lib/libIASUnifiedProgress.dylib
 exports:         

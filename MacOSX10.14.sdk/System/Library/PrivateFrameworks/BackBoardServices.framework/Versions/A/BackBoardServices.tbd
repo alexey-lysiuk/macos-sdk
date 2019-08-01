@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 42BD3842-30B3-383E-84BF-451EF69E0AD4' ]
+uuids:           [ 'x86_64: DE065302-CC95-350D-B1EC-DA3F779BAE71' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/BackBoardServices.framework/Versions/A/BackBoardServices
 exports:         

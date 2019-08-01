@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5D5BF074-1A8A-3104-AD0B-5D6684EC97AF' ]
+uuids:           [ 'x86_64: 9B7192AA-A6F0-3B14-B88B-5E649972B349' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoVision.framework/Versions/A/PhotoVision
 exports:         

@@ -67,7 +67,8 @@ typedef struct NSScreenAuxiliary NSScreenAuxiliaryOpaque;
 APPKIT_EXTERN NSNotificationName const NSScreenColorSpaceDidChangeNotification NS_AVAILABLE_MAC(10_6);  // the notification object is the screen whose profile has changed
 
 
-@interface NSScreen (NSExtendedDynamicRange)
+/* Extended Dynamic Range */
+@interface NSScreen ()
 
 /* Returns the current maximum color component value for the screen. Typically the maximum is 1.0, but if any rendering context on the screen has requested extended dynamic range, it may return a value greater than 1.0, depending on system capabilities and other conditions. Only rendering contexts that support extended dynamic range can use values greater than 1.0. When the value changes, NSApplicationDidChangeScreenParametersNotification will be posted.
  */

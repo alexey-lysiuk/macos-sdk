@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CE1181D5-B199-3D8C-B4A8-895EF24C0003' ]
+uuids:           [ 'x86_64: AB1966AA-A45D-37C2-BC39-EA25550FD2AC' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CloudKitCodeProtobuf.framework/Versions/A/CloudKitCodeProtobuf
 swift-abi-version: 7

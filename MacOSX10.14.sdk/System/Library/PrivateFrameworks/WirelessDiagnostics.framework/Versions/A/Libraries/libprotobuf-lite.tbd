@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6936D87E-A8BE-352C-B42D-C3423108F5C6' ]
+uuids:           [ 'x86_64: 297886A7-F889-38AA-B6F6-162598345EC4' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/WirelessDiagnostics.framework/Versions/A/Libraries/libprotobuf-lite.dylib
 objc-constraint: none

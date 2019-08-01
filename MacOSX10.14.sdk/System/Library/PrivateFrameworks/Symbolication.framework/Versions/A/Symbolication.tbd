@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 15A1DF22-3EE2-359A-8F94-B27F89F35ECE' ]
+uuids:           [ 'x86_64: 9FDCC98D-5B32-35AD-A9BF-94DF2B78507F' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/Symbolication.framework/Versions/A/Symbolication
 current-version: 64490.38.1

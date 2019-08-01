@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2000-2012 Apple Inc. All rights reserved.
+ * Copyright (c) 2000-2019 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
  *
@@ -446,7 +446,7 @@ stac(void)
 	__asm__ volatile("wrmsr" : : "c" (msr), "a" (lo), "d" (hi))
 
 #define rdtsc(lo, hi) \
-	__asm__ volatile("lfence; rdtsc; lfence" : "=a" (lo), "=d" (hi))
+	__asm__ volatile("lfence; rdtsc" : "=a" (lo), "=d" (hi))
 
 #define rdtsc_nofence(lo, hi) \
 	__asm__ volatile("rdtsc" : "=a" (lo), "=d" (hi))
@@ -543,6 +543,17 @@ __END_DECLS
 
 #define MSR_IA32_MPERF                          0xE7
 #define MSR_IA32_APERF                          0xE8
+
+#define MSR_IA32_ARCH_CAPABILITIES              0x10a
+#define         MSR_IA32_ARCH_CAPABILITIES_RDCL_NO      (1ULL << 0)
+#define         MSR_IA32_ARCH_CAPABILITIES_IBRS_ALL     (1ULL << 1)
+#define         MSR_IA32_ARCH_CAPABILITIES_RSBA         (1ULL << 2)
+#define         MSR_IA32_ARCH_CAPABILITIES_L1DF_NO      (1ULL << 3)
+#define         MSR_IA32_ARCH_CAPABILITIES_SSB_NO       (1ULL << 4)
+#define         MSR_IA32_ARCH_CAPABILITIES_MDS_NO       (1ULL << 5)
+
+#define MSR_IA32_TSX_FORCE_ABORT                0x10f
+#define         MSR_IA32_TSXFA_RTM_FORCE_ABORT  (1ULL << 0)     /* Bit 0 */
 
 #define MSR_IA32_BBL_CR_CTL                     0x119
 

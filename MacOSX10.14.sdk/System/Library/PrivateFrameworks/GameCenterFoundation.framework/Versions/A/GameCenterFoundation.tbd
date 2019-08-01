@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E5557B97-4E5F-3511-B87C-2365A6E81FD8' ]
+uuids:           [ 'x86_64: 08DD4F54-F45C-3C40-81B4-9805BB070C55' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/GameCenterFoundation.framework/Versions/A/GameCenterFoundation
 exports:         
@@ -209,10 +209,10 @@ exports:
                        _GKURLComponentHostTD4Internal, _GKURLComponentITMSGCSScheme, 
                        _GKURLComponentITMSGCScheme, _GKURLComponentMe, _GKURLComponentPlayer, 
                        _GKURLComponentRecommendations, _GKURLComponentRequests, _GKURLComponentSignIn, 
-                       _GKURLComponentStore, _GKURLComponentVerifyAccount, _GKUnderageKey, 
-                       _GKUnknownPlayerID, _GKVerifiedKey, _NSRangeInRange, __gkBeautifyVariableName, 
-                       __gkTabStringForTabLevel, __gkUnicodifyDescription, __hash, 
-                       _gGKSessionTrace, _gkEscapedQueryString, _headerChecksum, 
+                       _GKURLComponentStore, _GKURLComponentVerifyAccount, _GKUnavailablePlayerID, 
+                       _GKUnderageKey, _GKUnknownPlayerID, _GKVerifiedKey, _NSRangeInRange, 
+                       __gkBeautifyVariableName, __gkTabStringForTabLevel, __gkUnicodifyDescription, 
+                       __hash, _gGKSessionTrace, _gkEscapedQueryString, _headerChecksum, 
                        _kGKArgumentIndexesCopied, _os_log_GKLogCache, _os_log_GKLogDaemon, 
                        _os_log_GKLogDeveloper, _os_log_GKLogDispatch, _os_log_GKLogError, 
                        _os_log_GKLogGeneral, _os_log_GKLogHTTP, _os_log_GKLogHosted, 

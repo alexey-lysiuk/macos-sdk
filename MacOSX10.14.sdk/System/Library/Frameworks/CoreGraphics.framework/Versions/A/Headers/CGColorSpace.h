@@ -122,6 +122,17 @@ CG_AVAILABLE_STARTING(10.11, 9.0);
 CG_EXTERN const CFStringRef kCGColorSpaceDCIP3
 CG_AVAILABLE_STARTING(10.11, 9.0);
 
+CG_EXTERN const CFStringRef kCGColorSpaceExtendedLinearITUR_2020
+CG_AVAILABLE_STARTING(10.14.3, 12.3);
+
+CG_EXTERN const CFStringRef kCGColorSpaceExtendedLinearDisplayP3
+CG_AVAILABLE_STARTING(10.14.3, 12.3);
+
+CG_EXTERN const CFStringRef kCGColorSpaceITUR_2020_PQ_EOTF
+CG_AVAILABLE_STARTING(10.14, 12.0);
+
+
+
 /*  The name of the extended sRGB color space.
     The extended sRGB color space allows to specify colors beyond the range of [0.0, 1.0],
     while still preserving the colorimetry and encoding of sRGB (see above for more details).

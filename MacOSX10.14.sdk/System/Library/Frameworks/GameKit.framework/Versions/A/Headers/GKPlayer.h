@@ -27,6 +27,12 @@ NS_CLASS_AVAILABLE(10_8, 4_1) __WATCHOS_AVAILABLE(3_0)
 
 @property(readonly, nullable, retain, NS_NONATOMIC_IOSONLY)  NSString    *playerID;
 
+//  This is the local player's unique and persistent ID that is scoped to this app. For non-local player's, this ID is unique for this instantiation of this app.
+@property(NS_NONATOMIC_IOSONLY, readonly, nonnull, retain) NSString *gamePlayerID API_AVAILABLE(ios(12.4), macos(10.14.6), tvos(12.4)) API_UNAVAILABLE(watchos);
+
+//  This is the local player's unique and persistent ID that is scoped to this app. For non-local player's, this ID is unique for this instantiation of this app.
+@property(NS_NONATOMIC_IOSONLY, readonly, nonnull, retain) NSString *teamPlayerID API_AVAILABLE(ios(12.4), macos(10.14.6), tvos(12.4)) API_UNAVAILABLE(watchos);
+
 // This player's full name as displayed in the Game Center in-game UI. Use this when you need to display the player's name. The display name may be very long, so be sure to use appropriate string truncation API when drawing.
 @property(readonly, nullable, NS_NONATOMIC_IOSONLY)          NSString    *displayName NS_AVAILABLE(10_8, 6_0) __WATCHOS_AVAILABLE(3_0);
 

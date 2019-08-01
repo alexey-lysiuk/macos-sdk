@@ -133,7 +133,7 @@
 .\" ========================================================================
 .\"
 .IX Title "PERLPOLICY 1"
-.TH PERLPOLICY 1 "2013-11-04" "perl v5.18.2" "Perl Programmers Reference Guide"
+.TH PERLPOLICY 1 "2014-09-30" "perl v5.18.4" "Perl Programmers Reference Guide"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -206,9 +206,9 @@ and maintain releases of Perl.
 This document codifies the support and maintenance commitments that
 the Perl community should expect from Perl's developers:
 .IP "\(bu" 4
-We \*(L"officially\*(R" support the two most recent stable release series.  5.12.x
-and earlier are now out of support.  As of the release of 5.18.0, we will
-\&\*(L"officially\*(R" end support for Perl 5.14.x, other than providing security
+We \*(L"officially\*(R" support the two most recent stable release series.  5.14.x
+and earlier are now out of support.  As of the release of 5.20.0, we will
+\&\*(L"officially\*(R" end support for Perl 5.16.x, other than providing security
 updates as described below.
 .IP "\(bu" 4
 To the best of our ability, we will attempt to fix critical issues
@@ -311,7 +311,12 @@ an experimental feature useful and want to help shape its future.
 .IP "deprecated" 4
 .IX Item "deprecated"
 If something in the Perl core is marked as \fBdeprecated\fR, we may remove it
-from the core in the next stable release series, though we may not. As of
+from the core in the future, though we might not.  Generally, backward
+incompatible changes will have deprecation warnings for two release
+cycles before being removed, but may be removed after just one cycle if
+the risk seems quite low or the benefits quite high.
+.Sp
+As of
 Perl 5.12, deprecated features and modules warn the user as they're used.
 When a module is deprecated, it will also be made available on \s-1CPAN.\s0
 Installing it from \s-1CPAN\s0 will silence deprecation warnings for that module.
@@ -326,13 +331,13 @@ features.
 .IX Item "discouraged"
 From time to time, we may mark language constructs and features which we
 consider to have been mistakes as \fBdiscouraged\fR.  Discouraged features
-aren't candidates for removal in the next major release series, but
+aren't currently candidates for removal, but
 we may later deprecate them if they're found to stand in the way of a
 significant improvement to the Perl core.
 .IP "removed" 4
 .IX Item "removed"
-Once a feature, construct or module has been marked as deprecated for a
-stable release cycle, we may remove it from the Perl core.  Unsurprisingly,
+Once a feature, construct or module has been marked as deprecated, we
+may remove it from the Perl core.  Unsurprisingly,
 we say we've \fBremoved\fR these things.  When a module is removed, it will
 no longer ship with Perl, but will continue to be available on \s-1CPAN.\s0
 .SH "MAINTENANCE BRANCHES"
@@ -349,7 +354,7 @@ or \s-1OS\s0 release that involve changes to the implementation are \s-1NOT\s0
 acceptable.
 .IP "\(bu" 4
 Acceptable documentation updates are those that correct factual errors,
-explain significant bugs or deficiencies in the current implementation, 
+explain significant bugs or deficiencies in the current implementation,
 or fix broken markup.
 .IP "\(bu" 4
 Patches that add new warnings or errors or deprecate features
@@ -365,10 +370,10 @@ rather than applied directly.
 Patches that fix regressions in perl's behavior relative to previous
 releases are acceptable.
 .IP "\(bu" 4
-Updates to dual-life modules should consist of minimal patches to 
+Updates to dual-life modules should consist of minimal patches to
 fix crashing or security issues (as above).
 .IP "\(bu" 4
-Minimal patches that fix platform-specific test failures or
+Minimal patches that fix platform-specific test failures or build or
 installation issues are acceptable. When these changes are made
 to dual-life modules for which \s-1CPAN\s0 is canonical, any changes
 should be coordinated with the upstream author.
@@ -390,7 +395,7 @@ maint branches.
 .PP
 Any committer may cherry-pick any commit from blead to a maint branch if
 they send mail to perl5\-porters announcing their intent to cherry-pick
-a specific commit along with a rationale for doing so and at least two 
+a specific commit along with a rationale for doing so and at least two
 other committers respond to the list giving their assent. (This policy
 applies to current and former pumpkings, as well as other committers.)
 .SH "CONTRIBUTED MODULES"
@@ -533,6 +538,33 @@ than what it used to do.  It's perfectly reasonable to include notes
 in documentation about how behaviour has changed from previous releases,
 but, with very few exceptions, documentation isn't \*(L"dual-life\*(R" \*(--
 it doesn't need to fully describe how all old versions used to work.
+.SH "STANDARDS OF CONDUCT"
+.IX Header "STANDARDS OF CONDUCT"
+The official forum for the development of perl is the perl5\-porters mailing
+list, mentioned above, and its bugtracker at rt.perl.org.  All participants in
+discussion there are expected to adhere to a standard of conduct.
+.IP "\(bu" 4
+Always be civil.
+.IP "\(bu" 4
+Heed the moderators.
+.PP
+Civility is simple:  stick to the facts while avoiding demeaning remarks and
+sarcasm.  It is not enough to be factual.  You must also be civil.  Responding
+in kind to incivility is not acceptable.
+.PP
+If the list moderators tell you that you are not being civil, carefully
+consider how your words have appeared before responding in any way.  You may
+protest, but repeated protest in the face of a repeatedly reaffirmed decision
+is not acceptable.
+.PP
+Unacceptable behavior will result in a public and clearly identified warning.
+Repeated unacceptable behavior will result in removal from the mailing list.
+The first removal is for one month.  Subsequent removals will double in length.
+After six months with no warning, a user's ban length is reset.  Removals, like
+warnings, are public.
+.PP
+The list of moderators will be public knowledge.  At present, it is:
+Aaron Crane, Andy Dougherty, Ricardo Signes, Steffen Mu\*:ller.
 .SH "CREDITS"
 .IX Header "CREDITS"
 \&\*(L"Social Contract about Contributed Modules\*(R" originally by Russ Allbery <rra@stanford.edu> and the perl5\-porters.

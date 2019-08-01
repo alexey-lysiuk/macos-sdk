@@ -1,0 +1,24 @@
+--- !tapi-tbd-v3
+archs:           [ x86_64 ]
+uuids:           [ 'x86_64: D66D924D-A684-3850-890C-CEF15E41166E' ]
+platform:        macosx
+install-name:    /System/Library/PrivateFrameworks/HIDDisplay.framework/Versions/A/HIDDisplay
+exports:         
+  - archs:           [ x86_64 ]
+    symbols:         [ _HIDDisplayCopyPreset, _HIDDisplayCopyPresetUniqueID, _HIDDisplayCreateDeviceWithContainerID, 
+                       _HIDDisplayCreateIOReportingInterfaceWithContainerID, _HIDDisplayCreatePresetInterfaceWithContainerID, 
+                       _HIDDisplayGetActivePresetIndex, _HIDDisplayGetFactoryDefaultPresetIndex, 
+                       _HIDDisplayGetPresetCapabilities, _HIDDisplayGetPresetCount, 
+                       _HIDDisplayIOReportingActivate, _HIDDisplayIOReportingCancel, 
+                       _HIDDisplayIOReportingSetCancelHandler, _HIDDisplayIOReportingSetDispatchQueue, 
+                       _HIDDisplayIOReportingSetInputDataHandler, _HIDDisplayIOReportingSetOutputData, 
+                       _HIDDisplayIsPresetValid, _HIDDisplayIsPresetWritable, _HIDDisplayLog, 
+                       _HIDDisplaySetActivePresetIndex, _HIDDisplaySetPreset, _HIDDisplayVersionNumber, 
+                       _HIDDisplayVersionString, _kHIDDisplayPresetFieldDataBlockOneKey, 
+                       _kHIDDisplayPresetFieldDataBlockOneLengthKey, _kHIDDisplayPresetFieldDataBlockTwoKey, 
+                       _kHIDDisplayPresetFieldDataBlockTwoLengthKey, _kHIDDisplayPresetFieldDescriptionKey, 
+                       _kHIDDisplayPresetFieldNameKey, _kHIDDisplayPresetFieldValidKey, 
+                       _kHIDDisplayPresetFieldWritableKey, _kHIDDisplayPresetUniqueIDKey ]
+    objc-classes:    [ HIDDisplayIOReportingInterface, HIDDisplayInterface, HIDDisplayPresetData, 
+                       HIDDisplayPresetInterface, HIDElement ]
+...

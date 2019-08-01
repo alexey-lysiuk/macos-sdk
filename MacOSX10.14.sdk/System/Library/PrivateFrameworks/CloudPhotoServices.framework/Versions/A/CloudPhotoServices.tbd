@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2AEFF01B-BB82-393B-9AF1-744EBD6D480B' ]
+uuids:           [ 'x86_64: 0DC8B108-DBB3-3193-BC82-7F3AC217BB27' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CloudPhotoServices.framework/Versions/A/CloudPhotoServices
-current-version: 3441.7.100
+current-version: 3461.7.140
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _AssetManagementAssetCollectionIDKey, _AssetManagementAssetCountKey, 

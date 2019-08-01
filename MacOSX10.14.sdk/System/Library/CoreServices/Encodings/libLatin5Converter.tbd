@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5D0940A4-45A4-3D3C-8EDC-A97A5B4695C0' ]
+uuids:           [ 'x86_64: 242133A1-A152-39AE-90AF-353B62596934' ]
 platform:        macosx
 install-name:    /System/Library/CoreServices/Encodings/libLatin5Converter.dylib
 current-version: 73

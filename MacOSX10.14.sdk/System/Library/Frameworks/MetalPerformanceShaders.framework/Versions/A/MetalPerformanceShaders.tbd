@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A589BBEA-93C6-325C-A695-6E7371B8477C' ]
+uuids:           [ 'x86_64: 69F14BCF-C5C5-3BF8-9C31-8F87D2D6130A' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/MetalPerformanceShaders.framework/Versions/A/MetalPerformanceShaders
 current-version: 121.4.2
@@ -15,7 +15,7 @@ exports:
                        _MPSSetHeapCacheDuration, _MPSSupportsMTLDevice ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BE0FF8B9-2DBA-3276-A293-C8B0F62BFFC4' ]
+uuids:           [ 'x86_64: 44CE8362-E972-3697-AD6F-15BC863BAEB8' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSCore.framework/Versions/A/MPSCore
 current-version: 121.4.2
@@ -86,7 +86,7 @@ exports:
                        MPSState._resources, MPSTemporaryImage._readCount ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7E94924C-1648-3AE2-A32E-FC0AFCA433C6' ]
+uuids:           [ 'x86_64: EE8440DA-66DF-3923-ABBC-E0543211C069' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSImage.framework/Versions/A/MPSImage
 current-version: 121.4.2
@@ -118,7 +118,7 @@ exports:
                        MPSUnaryImageKernel._getPreferredTileSize ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E878F04A-43F8-3AA4-B9D8-0401F5F98653' ]
+uuids:           [ 'x86_64: E64450DF-2B96-331E-B7F4-666E00571C70' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSMatrix.framework/Versions/A/MPSMatrix
 current-version: 121.4.2
@@ -137,7 +137,7 @@ exports:
     objc-ivars:      [ MPSMatrix._buffer, MPSVector._buffer ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4866922C-9732-3FCE-9419-402E5DD22639' ]
+uuids:           [ 'x86_64: F2CF26B6-73F1-3644-8FE9-CDB9B2C4501F' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSNeuralNetwork.framework/Versions/A/MPSNeuralNetwork
 current-version: 121.4.2
@@ -235,7 +235,7 @@ exports:
                        MPSRNNSingleGateDescriptor ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 80CB3AF2-4401-3B3C-8941-7DEB648DD001' ]
+uuids:           [ 'x86_64: B33A35C3-0393-366B-ACFB-F4BB6A5F7B4A' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSRayIntersector.framework/Versions/A/MPSRayIntersector
 current-version: 121.4.2

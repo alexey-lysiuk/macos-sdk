@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 47B91C83-6BE6-3B0B-8B42-83AE41160F3F' ]
+uuids:           [ 'x86_64: A584E403-8C95-3841-9C16-E22664A5A63F' ]
 platform:        macosx
 install-name:    /usr/lib/libspindump.dylib
 objc-constraint: none

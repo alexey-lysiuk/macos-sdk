@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9FC5724C-DD03-3E14-A6E1-2DD009D79E0A' ]
+uuids:           [ 'x86_64: E9A5ACCF-E35F-3909-AF0A-2A37CD217276' ]
 platform:        zippered
 install-name:    /usr/lib/system/libsystem_dnssd.dylib
-current-version: 878.250.4
+current-version: 878.255.2
 objc-constraint: none
 parent-umbrella: System
 exports:         

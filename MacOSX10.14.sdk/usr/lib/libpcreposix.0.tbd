@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 54B6AE02-8845-32C9-A6E9-60757C1C1C01' ]
+uuids:           [ 'x86_64: 9C78866D-E1CC-30A5-BD3A-5C0682AA7BC1' ]
 platform:        macosx
 install-name:    /usr/lib/libpcreposix.0.dylib
 objc-constraint: none

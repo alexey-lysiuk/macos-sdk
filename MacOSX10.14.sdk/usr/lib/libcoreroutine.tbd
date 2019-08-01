@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6DB0DFA0-37A0-34F2-97C7-CAEB3F9D5DDB' ]
+uuids:           [ 'x86_64: 6C9D2698-FF1D-38CA-9DE3-BB6602668669' ]
 platform:        macosx
 install-name:    /usr/lib/libcoreroutine.dylib
 exports:         

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3F4534F0-8701-31BC-8881-4EDB249913E5' ]
+uuids:           [ 'x86_64: E8364686-44A0-3358-A73B-E304A0DFEE50' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/EmojiFoundation.framework/Versions/A/EmojiFoundation
 exports:         

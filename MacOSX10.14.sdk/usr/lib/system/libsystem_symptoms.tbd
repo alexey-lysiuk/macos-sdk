@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C8517F35-E9DA-3649-B07D-2B38349C6730' ]
+uuids:           [ 'x86_64: 03F1C2DD-0F5A-3D9D-88F6-B26C0F94EB52' ]
 platform:        zippered
 install-name:    /usr/lib/system/libsystem_symptoms.dylib
 objc-constraint: none

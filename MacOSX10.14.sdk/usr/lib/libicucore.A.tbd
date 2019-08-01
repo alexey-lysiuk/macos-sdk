@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3936C798-1978-3C6C-9050-3BBD57CDA53E' ]
+uuids:           [ 'x86_64: A0D63918-76E9-3C1B-B255-46F4C1DA7FE8' ]
 platform:        zippered
 install-name:    /usr/lib/libicucore.A.dylib
 current-version: 62.1
@@ -1055,7 +1055,8 @@ exports:
                        __ZN3icu16DateIntervalInfoD1Ev, __ZN3icu16DateIntervalInfoD2Ev, 
                        __ZN3icu16DateIntervalInfoaSERKS0_, __ZN3icu16EthiopicCalendar16getStaticClassIDEv, 
                        __ZN3icu16JapaneseCalendar13getCurrentEraEv, __ZN3icu16JapaneseCalendar16getStaticClassIDEv, 
-                       __ZN3icu16ReorderingBuffer10previousCCEv, __ZN3icu16ReorderingBuffer12appendZeroCCEPKDsS2_R10UErrorCode, 
+                       __ZN3icu16JapaneseCalendar18enableTentativeEraEv, __ZN3icu16ReorderingBuffer10previousCCEv, 
+                       __ZN3icu16ReorderingBuffer12appendZeroCCEPKDsS2_R10UErrorCode, 
                        __ZN3icu16ReorderingBuffer12appendZeroCCEiR10UErrorCode, __ZN3icu16ReorderingBuffer12removeSuffixEi, 
                        __ZN3icu16ReorderingBuffer12skipPreviousEv, __ZN3icu16ReorderingBuffer19appendSupplementaryEihR10UErrorCode, 
                        __ZN3icu16ReorderingBuffer4initEiR10UErrorCode, __ZN3icu16ReorderingBuffer6appendEPKDsihhR10UErrorCode, 
@@ -2223,7 +2224,10 @@ exports:
                        __ZN3icu8Collator8getBoundEPKhi13UColBoundModejPhiR10UErrorCode, 
                        __ZN3icu8CollatorC2E18UColAttributeValue18UNormalizationMode, 
                        __ZN3icu8CollatorC2ERKS0_, __ZN3icu8CollatorC2Ev, __ZN3icu8CollatorD0Ev, 
-                       __ZN3icu8CollatorD1Ev, __ZN3icu8CollatorD2Ev, __ZN3icu8TimeUnit14createInstanceENS0_15UTimeUnitFieldsER10UErrorCode, 
+                       __ZN3icu8CollatorD1Ev, __ZN3icu8CollatorD2Ev, __ZN3icu8EraRules14createInstanceEPKcaR10UErrorCode, 
+                       __ZN3icu8EraRules14initCurrentEraEv, __ZN3icu8EraRulesC1ERNS_11LocalMemoryIiEEi, 
+                       __ZN3icu8EraRulesC2ERNS_11LocalMemoryIiEEi, __ZN3icu8EraRulesD1Ev, 
+                       __ZN3icu8EraRulesD2Ev, __ZN3icu8TimeUnit14createInstanceENS0_15UTimeUnitFieldsER10UErrorCode, 
                        __ZN3icu8TimeUnit16getStaticClassIDEv, __ZN3icu8TimeUnitC1ENS0_15UTimeUnitFieldsE, 
                        __ZN3icu8TimeUnitC1ERKS0_, __ZN3icu8TimeUnitC2ENS0_15UTimeUnitFieldsE, 
                        __ZN3icu8TimeUnitC2ERKS0_, __ZN3icu8TimeUnitD0Ev, __ZN3icu8TimeUnitD1Ev, 
@@ -3422,10 +3426,11 @@ exports:
                        __ZNK3icu8Collator7compareER13UCharIteratorS2_R10UErrorCode, 
                        __ZNK3icu8Collator7compareERKNS_13UnicodeStringES3_, __ZNK3icu8Collator7compareERKNS_13UnicodeStringES3_i, 
                        __ZNK3icu8Collator7greaterERKNS_13UnicodeStringES3_, __ZNK3icu8Collator9safeCloneEv, 
-                       __ZNK3icu8CollatoreqERKS0_, __ZNK3icu8CollatorneERKS0_, __ZNK3icu8TimeUnit16getTimeUnitFieldEv, 
-                       __ZNK3icu8TimeUnit17getDynamicClassIDEv, __ZNK3icu8TimeUnit5cloneEv, 
-                       __ZNK3icu8TimeZone12hasSameRulesERKS0_, __ZNK3icu8TimeZone13getDSTSavingsEv, 
-                       __ZNK3icu8TimeZone14getDisplayNameERKNS_6LocaleERNS_13UnicodeStringE, 
+                       __ZNK3icu8CollatoreqERKS0_, __ZNK3icu8CollatorneERKS0_, __ZNK3icu8EraRules11getEraIndexEiiiR10UErrorCode, 
+                       __ZNK3icu8EraRules12getStartDateEiRA3_iR10UErrorCode, __ZNK3icu8EraRules12getStartYearEiR10UErrorCode, 
+                       __ZNK3icu8TimeUnit16getTimeUnitFieldEv, __ZNK3icu8TimeUnit17getDynamicClassIDEv, 
+                       __ZNK3icu8TimeUnit5cloneEv, __ZNK3icu8TimeZone12hasSameRulesERKS0_, 
+                       __ZNK3icu8TimeZone13getDSTSavingsEv, __ZNK3icu8TimeZone14getDisplayNameERKNS_6LocaleERNS_13UnicodeStringE, 
                        __ZNK3icu8TimeZone14getDisplayNameERNS_13UnicodeStringE, __ZNK3icu8TimeZone14getDisplayNameEaNS0_12EDisplayTypeERKNS_6LocaleERNS_13UnicodeStringE, 
                        __ZNK3icu8TimeZone14getDisplayNameEaNS0_12EDisplayTypeERNS_13UnicodeStringE, 
                        __ZNK3icu8TimeZone9getOffsetEdaRiS1_R10UErrorCode, __ZNK3icu8TimeZoneeqERKS0_, 

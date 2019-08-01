@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 08EAFFE4-54FA-397D-9C8B-0F959234749B' ]
+uuids:           [ 'x86_64: 25121E40-3A4E-396D-A972-D1A2FB51D65B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoFoundation.framework/Versions/A/PhotoFoundation
-current-version: 3441.7.100
+current-version: 3461.7.140
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _LastAddRemoveTaskState, _NSStringFromPFIntPoint, _NSStringFromPFIntRect, 

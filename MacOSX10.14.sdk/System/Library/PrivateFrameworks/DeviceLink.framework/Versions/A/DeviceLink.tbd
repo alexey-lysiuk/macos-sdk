@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3943807F-3AEB-3653-BB0A-69873D2C6737' ]
+uuids:           [ 'x86_64: 24CE90FE-764F-3E5C-9744-0680BDF5F52C' ]
 platform:        macosx
 flags:           [ not_app_extension_safe ]
 install-name:    /System/Library/PrivateFrameworks/DeviceLink.framework/Versions/A/DeviceLink
@@ -16,11 +16,11 @@ exports:
                        _DLCreateCondition, _DLCreateDataFromString, _DLCreateDeviceLinkConnectionForComputer, 
                        _DLCreateDeviceLinkConnectionForDevice, _DLCreateDirectory, 
                        _DLCreateMutex, _DLCreatePropertyListFromFile, _DLCreateStringFromData, 
-                       _DLCreateUUID, _DLDeleteCondition, _DLDeleteDeviceLinkConnection, 
-                       _DLDeleteMutex, _DLDeviceArrayCallbacks, _DLDeviceCopyAMDValue, 
-                       _DLDeviceCreateDescription, _DLDeviceGetAMDevice, _DLDeviceGetEndpointForType, 
-                       _DLDeviceGetEndpoints, _DLDeviceGetName, _DLDeviceGetUDID, 
-                       _DLDeviceGetUID, _DLDeviceGetWithName, _DLDeviceGetWithUDID, 
+                       _DLCreateUUID, _DLDataCreateWithMallocedBytesNoCopy, _DLDeleteCondition, 
+                       _DLDeleteDeviceLinkConnection, _DLDeleteMutex, _DLDeviceArrayCallbacks, 
+                       _DLDeviceCopyAMDValue, _DLDeviceCreateDescription, _DLDeviceGetAMDevice, 
+                       _DLDeviceGetEndpointForType, _DLDeviceGetEndpoints, _DLDeviceGetName, 
+                       _DLDeviceGetUDID, _DLDeviceGetUID, _DLDeviceGetWithName, _DLDeviceGetWithUDID, 
                        _DLDeviceGetWithUID, _DLDeviceListenerCreate, _DLDeviceListenerCreateWithCallbacks, 
                        _DLDeviceListenerDestroy, _DLDeviceListenerSetAttachedCallback, 
                        _DLDeviceListenerSetContext, _DLDeviceListenerSetDetachedCallback, 

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EE17AC2D-1A19-388D-9BF9-904DDE79FF55' ]
+uuids:           [ 'x86_64: 7641BC9F-1754-303B-A9C7-1F7FBE54458F' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Photos.framework/Versions/A/Photos
-current-version: 3441.7.100
+current-version: 3461.7.140
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

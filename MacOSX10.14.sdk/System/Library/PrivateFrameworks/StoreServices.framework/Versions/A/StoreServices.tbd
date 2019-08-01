@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 991D4E63-756B-31D0-98AF-C934F0D32E34' ]
+uuids:           [ 'x86_64: 1AFB342A-4440-3C44-B070-440044699DCB' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/StoreServices.framework/Versions/A/StoreServices
 exports:         

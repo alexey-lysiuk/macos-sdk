@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 043335AE-2AE3-30E5-ABE3-EC390B60DC50' ]
+uuids:           [ 'x86_64: B955FDFD-5AA7-3661-9CE9-74A6EEB5DB0D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ScreenSharing.framework/Versions/A/ScreenSharing
 exports:         

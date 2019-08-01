@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: ADC7274D-C919-32A8-907A-1B448665ECC6' ]
+uuids:           [ 'x86_64: C9076988-AC8A-3ADA-A10F-B5B9EFD8492E' ]
 platform:        macosx
 install-name:    /usr/lib/libktrace.dylib
 objc-constraint: none
@@ -9,10 +9,10 @@ exports:
     re-exports:      [ /System/Library/PrivateFrameworks/ktrace.framework/Versions/A/ktrace ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 494ADEC2-B175-3A33-8B52-AAC8E2C4F370' ]
+uuids:           [ 'x86_64: E758A2A3-B125-3C40-A21C-F335199AE841' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ktrace.framework/Versions/A/ktrace
-current-version: 271.250.1
+current-version: 271.255.1
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

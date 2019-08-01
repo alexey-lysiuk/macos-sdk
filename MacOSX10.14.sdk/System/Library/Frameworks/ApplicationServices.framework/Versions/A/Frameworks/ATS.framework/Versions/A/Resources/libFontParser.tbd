@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BBB2EECE-7C24-3D43-A902-EB473A70EDED' ]
+uuids:           [ 'x86_64: 3602D55B-3B9E-3B3A-A814-08C1244A8AE4' ]
 platform:        zippered
 install-name:    /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Resources/libFontParser.dylib
 objc-constraint: none

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B5536158-F8DB-312C-8B7B-CFB6CA456C6C' ]
+uuids:           [ 'x86_64: 67865701-4C5F-318F-8C0D-1C5D78DAB87E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ClassroomKit.framework/Versions/A/ClassroomKit
 exports:         
@@ -268,11 +268,12 @@ exports:
                        CRKUIConstants_Dark_macOS, CRKUIConstants_Light_macOS, CRKUIConstants_macOS, 
                        CRKUnzipOperation, CRKUpdatePickableAirPlayRoutesRequest, 
                        CRKUsageStatistics, CRKUser, CRKUserDefaultsObject, CRKUserPreferredOrderSCNetworkInterfaceProvider, 
-                       CRKView, CRKZipOperation, _CRKConcreteArrayDifferenceConfiguration, 
+                       CRKView, CRKWiProxDeviceRegistration, CRKWiProxTrackerScanner, 
+                       CRKZipOperation, _CRKConcreteArrayDifferenceConfiguration, 
                        _CRKErrorHelper ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4C17B701-F12A-3AA7-A0D9-3BDC103CD2BE' ]
+uuids:           [ 'x86_64: 54EBC3E6-E1B7-38FB-959A-772D52EE880F' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/Catalyst.framework/Versions/A/Catalyst
 current-version: 5.10
@@ -299,7 +300,7 @@ exports:
                        CATTaskSession, CATTransition, CATTransport, CATXPCTransport ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 74FE1FA3-089B-3310-9D57-7340F92EB9CE' ]
+uuids:           [ 'x86_64: 4EF927CE-A172-38B7-91DE-ECCE75E26644' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DeviceManagement.framework/Versions/A/DeviceManagement
 current-version: 21.1

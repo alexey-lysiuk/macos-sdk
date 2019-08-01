@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8CBBCF32-CBDD-3458-A51A-FE1DA2F1477B' ]
+uuids:           [ 'x86_64: A160E186-4232-3E63-ACD3-B194354B528A' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ConversationKit.framework/Versions/A/ConversationKit
 swift-abi-version: 7

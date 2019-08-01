@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2AB1BE2E-05D1-3746-8C40-1770E7DAE919' ]
+uuids:           [ 'x86_64: 411DF2DB-89A8-393A-8DDE-3139024C2D4E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/OnBoardingKit.framework/Versions/A/OnBoardingKit
 exports:         
@@ -8,12 +8,13 @@ exports:
     symbols:         [ _OBPrivacyActivityIdentifier, _OBPrivacyAdvertisingIdentifier, 
                        _OBPrivacyAnalyticsAppIdentifier, _OBPrivacyAnalyticsDeviceIdentifier, 
                        _OBPrivacyAnalyticsiCloudIdentifier, _OBPrivacyAppStoreIdentifier, 
-                       _OBPrivacyAppleIDIdentifier, _OBPrivacyAppleMusicFriendsIdentifier, 
-                       _OBPrivacyAppleMusicIdentifier, _OBPrivacyApplePayCashIdentifier, 
-                       _OBPrivacyApplePayIdentifier, _OBPrivacyAskSiriIdentifier, 
-                       _OBPrivacyCloudCallingIdentifier, _OBPrivacyDictationdentifier, 
-                       _OBPrivacyEmergencySOSIdentifier, _OBPrivacyFaceIDDiagnosticsIdentifier, 
-                       _OBPrivacyFaceIDIdentifier, _OBPrivacyGymKitIdentifier, _OBPrivacyHealthRecordsIdentifier, 
+                       _OBPrivacyAppleCardIdentifier, _OBPrivacyAppleIDIdentifier, 
+                       _OBPrivacyAppleMusicFriendsIdentifier, _OBPrivacyAppleMusicIdentifier, 
+                       _OBPrivacyApplePayCashIdentifier, _OBPrivacyApplePayIdentifier, 
+                       _OBPrivacyAskSiriIdentifier, _OBPrivacyCloudCallingIdentifier, 
+                       _OBPrivacyDictationdentifier, _OBPrivacyEmergencySOSIdentifier, 
+                       _OBPrivacyFaceIDDiagnosticsIdentifier, _OBPrivacyFaceIDIdentifier, 
+                       _OBPrivacyGymKitIdentifier, _OBPrivacyHealthRecordsIdentifier, 
                        _OBPrivacyImproveHealthIdentifier, _OBPrivacyImproveHealthRecordsIdentifier, 
                        _OBPrivacyImproveMapsIdentifier, _OBPrivacyLocationServicesIdentifier, 
                        _OBPrivacyMapsRAPIdentifier, _OBPrivacyNewsIdentifier, _OBPrivacyPodcastsIdentifier, 

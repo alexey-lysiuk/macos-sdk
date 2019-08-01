@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4725E2D3-053A-3C91-B20F-1416FA90AFA3' ]
+uuids:           [ 'x86_64: 6DA9C4BC-FCBE-371B-880D-98C6ADD52703' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MobileAssetUpdater.framework/Versions/A/MobileAssetUpdater
 exports:         

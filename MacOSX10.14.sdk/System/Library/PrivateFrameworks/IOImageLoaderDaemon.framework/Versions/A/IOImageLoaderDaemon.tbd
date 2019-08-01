@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4E5630C3-F31C-3368-B2BE-FFEF3197251E' ]
+uuids:           [ 'x86_64: 5D59E55C-2A3B-30E0-B421-09A5B8F19A03' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IOImageLoaderDaemon.framework/Versions/A/IOImageLoaderDaemon
 objc-constraint: none

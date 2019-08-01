@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 12D79EDD-3A5F-38D1-9478-800E45289F7E' ]
+uuids:           [ 'x86_64: 6DF10B0A-5D31-31A5-B07A-574127C16DEF' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/HDAInterface.framework/Versions/A/HDAInterface
 exports:         

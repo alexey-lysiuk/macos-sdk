@@ -181,6 +181,13 @@ enum
  						the wide-angle direction. Second 1 byte specifies whether digital zoom is enabled or disabled.
  						Third 1 byte represent speed of control change where low number specifies low speed and
  						higher number specifies higher speed. Last 1 byte is padding byte.
+ 	@constant kCMIORollAbsoluteControlClassID
+ 						A CMIOFeratureControl that control rotate degree of camera image. Value ranges from
+ 						+180 to -180 degree with default value set to zero determining no rotation. Positive
+ 						value causes a clockwise rotation of the camera image along with the image
+ 						viewing axis and negative value causes a counter clockwise rotation of camera image.
+ 						Rotation degree can be any value in range +180 to -180 or set of discrete values
+ 						+90, -90, +180/-180. Values supported for rotation degree is implementation specific.
 */
 enum
 {
@@ -211,6 +218,7 @@ enum
 	kCMIOPanTiltAbsoluteControlClassID          = 'ptab',
 	kCMIOPanTiltRelativeControlClassID          = 'ptrl',
 	kCMIOZoomRelativeControlClassID             = 'zomr',
+	kCMIORollAbsoluteControlClassID             = 'rola'
 };
 
 #pragma mark -

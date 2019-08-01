@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3E480F86-8046-3459-9F3E-98B7F6332B5E' ]
+uuids:           [ 'x86_64: 54BB500E-BE55-3221-BE2D-ADA4EE651CFD' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MFAAuthentication.framework/Versions/A/MFAAuthentication
 exports:         
@@ -22,12 +22,12 @@ exports:
                        _MFAARemoveCertDataEntryFromCache, _MFAATokenManagerErrorDomain, 
                        _MFAAUpdateDataSignature, _MFAAUserDefaultsDomain, _MFAAUserDefaultsKey_BypassCertificateExpirationCheck, 
                        _MFAAUserDefaultsKey_BypassFairPlaySAPSignatureVerification, 
+                       _MFAAUserDefaultsKey_CertStatusCache, _MFAAUserDefaultsKey_CertStatusCacheVersion, 
+                       _MFAAUserDefaultsKey_CertStatusCache_Status, _MFAAUserDefaultsKey_CertStatusCache_Timestamp, 
                        _MFAAUserDefaultsKey_CustomServer, _MFAAUserDefaultsKey_DisableFairPlaySAP, 
                        _MFAAUserDefaultsKey_FairPlaySAPServer, _MFAAUserDefaultsKey_ForceFairPlaySAPFailure, 
                        _MFAAUserDefaultsKey_ForceNetworkFailure, _MFAAUserDefaultsKey_ForceTokenActivationFailure, 
-                       _MFAAUserDefaultsKey_ForceTokenConfirmationFailure, _MFAAUserDefaultsKey_InvalidCertCache, 
-                       _MFAAUserDefaultsKey_InvalidCertCacheVersion, _MFAAUserDefaultsKey_InvalidCertCache_Status, 
-                       _MFAAUserDefaultsKey_InvalidCertCache_Timestamp, _MFAAUserDefaultsKey_Server, 
+                       _MFAAUserDefaultsKey_ForceTokenConfirmationFailure, _MFAAUserDefaultsKey_Server, 
                        _MFAAUserDefaultsKey_SpoofCertificateStatus, _MFAAUserDefaultsKey_SpoofPPIDMetadata, 
                        _MFAAUserDefaultsKey_SpoofTokenActivation, _MFAAUserDefaultsKey_StaticContentServer, 
                        _MFAAUserDefaultsNotification, _MFAAUserDefaultsValue_Server_Custom, 

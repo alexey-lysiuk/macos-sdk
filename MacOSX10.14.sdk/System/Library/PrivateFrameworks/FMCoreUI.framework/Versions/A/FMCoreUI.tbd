@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3DFEDDFC-B904-3627-B2A0-7085326B241C' ]
+uuids:           [ 'x86_64: C8400C9A-8F82-33A8-BC26-62AAEBD1AAA5' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/FMCoreUI.framework/Versions/A/FMCoreUI
 exports:         

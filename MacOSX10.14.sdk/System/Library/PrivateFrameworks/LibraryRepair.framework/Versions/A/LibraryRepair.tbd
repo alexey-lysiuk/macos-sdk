@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B90D336C-BD20-3A5D-9FBB-33668C5D4A7E' ]
+uuids:           [ 'x86_64: 8C359729-95FB-334E-A8AC-B6DA18CC7802' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/LibraryRepair.framework/Versions/A/LibraryRepair
 exports:         

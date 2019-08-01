@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 56ADEF62-9AF3-3DD6-A134-C922D1D67567' ]
+uuids:           [ 'x86_64: A8D14D15-88A3-35BE-8250-4BC42AF575D4' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/NeutrinoKit.framework/Versions/A/NeutrinoKit
-current-version: 3441.2.160
+current-version: 3461.2.160
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _NUBoundingRectForRotatedRect, _NUEdgeInsetsInsetRect, _NUFitScaleForImageRectInRect, 

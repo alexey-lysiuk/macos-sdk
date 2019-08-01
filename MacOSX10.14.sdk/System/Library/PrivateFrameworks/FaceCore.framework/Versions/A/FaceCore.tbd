@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D642D5E1-C7C5-3EBF-9D0A-397BDE2A5723' ]
+uuids:           [ 'x86_64: A576E2DA-BF6F-3B18-8FEB-324E5C5FA9BD' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/FaceCore.framework/Versions/A/FaceCore
 current-version: 3.3.4

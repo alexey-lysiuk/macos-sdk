@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 23F132CA-DFF8-3731-B8D5-FE51CBB49542' ]
+uuids:           [ 'x86_64: B3D33241-8271-3944-8EBA-C18380648C02' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/SiriTTS.framework/Versions/A/SiriTTS
 objc-constraint: none

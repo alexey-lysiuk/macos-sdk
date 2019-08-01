@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9D8DB70F-569E-3443-8FD1-FFBEEBDD225A' ]
+uuids:           [ 'x86_64: 0D9E02AB-2933-3843-90F2-4F4F4A27E777' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/DistributedEvaluation.framework/Versions/A/DistributedEvaluation
 exports:         

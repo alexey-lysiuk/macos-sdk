@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EB0E05BC-7FB4-3C59-A5B4-3BF1B9C094AD' ]
+uuids:           [ 'x86_64: 9F2E77EB-B234-31DC-B66E-38BA9F326CF8' ]
 platform:        macosx
 install-name:    /System/Library/CoreServices/Encodings/libJapaneseConverter.dylib
 current-version: 73

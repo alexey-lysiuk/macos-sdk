@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 708A6F95-ED04-3885-B8EE-54ACDD656A2A' ]
+uuids:           [ 'x86_64: 1572D227-A937-399A-B3D6-B894FAE5A786' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AirPlaySender.framework/Versions/A/AirPlaySender
 exports:         
@@ -23,12 +23,13 @@ exports:
                        _APEndpointStreamScreenSetRecordingState, _APEndpointUpdateWithTransportDevice, 
                        _APMediaRemoteCommandSinkCreate, _APMessageRingBufferedGetTypeID, 
                        _APMessageRingGetTypeID, _APMetadataSourceCreate, _APMetadataSourceSetMetadata, 
-                       _APPairingClientCoreUtilsCreate, _APPairingClientCoreUtilsPerformAddPairing, 
-                       _APPairingClientCoreUtilsPerformListPairings, _APPairingClientCoreUtilsPerformRemovePairing, 
-                       _APPairingClientCoreUtilsSetUseXPC, _APPairingClientGetCMBaseObject, 
-                       _APPairingClientLegacyCreate, _APSampleBufferConsumerCreateForEndpointStream, 
-                       _APSenderGroupContextIsValid, _APSenderSessionAirPlayCreate, 
-                       _APSenderSessionAirPlayPerformPairingPeersListManagement, 
+                       _APPairingClientCoreUtilsCreate, _APPairingClientCoreUtilsPairedPeerDescriptionHasWoLInfo, 
+                       _APPairingClientCoreUtilsPatchPairedPeerDescriptionWithWoLInfo, 
+                       _APPairingClientCoreUtilsPerformAddPairing, _APPairingClientCoreUtilsPerformListPairings, 
+                       _APPairingClientCoreUtilsPerformRemovePairing, _APPairingClientCoreUtilsSetUseXPC, 
+                       _APPairingClientGetCMBaseObject, _APPairingClientLegacyCreate, 
+                       _APSampleBufferConsumerCreateForEndpointStream, _APSenderGroupContextIsValid, 
+                       _APSenderSessionAirPlayCreate, _APSenderSessionAirPlayPerformPairingPeersListManagement, 
                        _APSenderSessionGetCMBaseObject, _APSenderSessionUtilityFetchInitialVolume, 
                        _APSubEndpointAddRemoveObservingProtocolGetProtocolID, _APVirtualDisplaySinkCreate, 
                        _APVirtualDisplayTestSinkCreate, _ASBDToAPAudioFormat, _AirPlayAddAWDLTrafficRegistration, 
@@ -145,7 +146,8 @@ exports:
                        _kAPEndpointDescriptionProperty_SupportsUnifiedPairSetupAndMFi, 
                        _kAPEndpointDescriptionProperty_SupportsUnifiedPairVerifyAndMFi, 
                        _kAPEndpointDescriptionProperty_SupportsVocoderInfo, _kAPEndpointDescriptionProperty_SupportsVolume, 
-                       _kAPEndpointDescriptionProperty_TXTRecordAirPlay, _kAPEndpointDescriptionProperty_TightSyncBuddyNotReachable, 
+                       _kAPEndpointDescriptionProperty_SupportsWoL, _kAPEndpointDescriptionProperty_TXTRecordAirPlay, 
+                       _kAPEndpointDescriptionProperty_TightSyncBuddyNotReachable, 
                        _kAPEndpointDescriptionProperty_TightSyncIsGroupLeader, _kAPEndpointDescriptionProperty_TightSyncUUID, 
                        _kAPEndpointDescriptionProperty_UseIndirectStarkSpeechModeTransitions, 
                        _kAPEndpointDescriptionProperty_UseLegacyStarkModeActions, 

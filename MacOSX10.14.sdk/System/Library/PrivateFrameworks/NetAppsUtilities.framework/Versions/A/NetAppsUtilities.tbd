@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 49CA6811-E2A8-3884-A877-DADE58AC4560' ]
+uuids:           [ 'x86_64: 17E9EF8C-7F01-3009-828F-232681A4F3CC' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/NetAppsUtilities.framework/Versions/A/NetAppsUtilities
 exports:         

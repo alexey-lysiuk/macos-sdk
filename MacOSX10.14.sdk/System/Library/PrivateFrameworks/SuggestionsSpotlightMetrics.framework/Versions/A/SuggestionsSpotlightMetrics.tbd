@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5287F8C0-8A3C-3645-9A8D-715872D94DF4' ]
+uuids:           [ 'x86_64: 177A2048-A631-3448-B45D-25D8DCE2B415' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/SuggestionsSpotlightMetrics.framework/Versions/A/SuggestionsSpotlightMetrics
 exports:         

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A2D1FDAD-E10F-3E53-958F-CB6BC8485767' ]
+uuids:           [ 'x86_64: 38C09CED-9090-3719-90F3-04A2749F5428' ]
 platform:        zippered
 install-name:    '/usr/lib/libc++abi.dylib'
 current-version: 400.17

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F0DED0D7-EAEF-3607-A8D8-BCA60DAC1CBD' ]
+uuids:           [ 'x86_64: DB68EC08-EC2D-35DC-8D34-B4A2C36A9DE9' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/SymptomDiagnosticReporter.framework/Versions/A/SymptomDiagnosticReporter
 current-version: 820.255.1

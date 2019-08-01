@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CA91E4AF-AF9E-3B82-8EEC-765809B12C15' ]
+uuids:           [ 'x86_64: 5A2AEFB4-3865-3B16-BD37-5DA4D08316DF' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreMediaStream.framework/Versions/A/CoreMediaStream
 current-version: 510.8

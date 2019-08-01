@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 225F20A9-A7DE-3E3D-ACBC-8436F6C8CF52' ]
+uuids:           [ 'x86_64: 1A043DAE-5C24-3668-8D11-81E1DD4504E6' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/zudp.framework/Versions/A/zudp
 objc-constraint: none

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 771E035C-5FE2-34D2-A4BA-4981B65CAE1E' ]
+uuids:           [ 'x86_64: D8F9EF8C-2FD3-3E8A-8504-C5B0C019E2D5' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/AppStoreDaemon.framework/Versions/A/AppStoreDaemon
 exports:         

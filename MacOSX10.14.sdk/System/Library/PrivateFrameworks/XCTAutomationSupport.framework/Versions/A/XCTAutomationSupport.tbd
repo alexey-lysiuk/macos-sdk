@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B6B784D7-A8FA-3880-A3B9-F3B4076E9ECF' ]
+uuids:           [ 'x86_64: 79987A1B-A6CA-3010-AFD9-4DDB9F053B08' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/XCTAutomationSupport.framework/Versions/A/XCTAutomationSupport
 exports:         

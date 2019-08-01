@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FE97A980-B026-32AC-856B-E2CAFEF9C4C1' ]
+uuids:           [ 'x86_64: BAC6F340-F06D-38E4-A0B6-ABBF1C2B041A' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreTelephony.framework/Support/libCommCenterCommandDrivers.dylib
 objc-constraint: none

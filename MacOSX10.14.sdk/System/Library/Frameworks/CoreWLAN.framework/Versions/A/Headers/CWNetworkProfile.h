@@ -41,6 +41,8 @@ NS_CLASS_AVAILABLE_MAC(10_7)
     
     BOOL            _captiveBypass;
 
+    NSDate          *_captiveSheetTimestamp;
+
     BOOL            _isPasspoint;
     
     NSString        *_domainName;

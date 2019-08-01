@@ -1,11 +1,12 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A38DB402-7EB2-3D81-A9FA-4C95748FFC2D' ]
+uuids:           [ 'x86_64: C7C5DD21-66DE-31D1-92D9-BBEEAAE156FB' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/MobileKeyBag.framework/Versions/A/MobileKeyBag
 exports:         
   - archs:           [ x86_64 ]
-    symbols:         [ _MKBDeviceGetGracePeriod, _MKBDeviceLockAssertion, _MKBDeviceSetGracePeriod, 
+    symbols:         [ _MKBDeviceGetGracePeriod, _MKBDeviceLockAssertion, _MKBDeviceLockAssertionConsume, 
+                       _MKBDeviceLockAssertionPromote, _MKBDeviceSetGracePeriod, 
                        _MKBDeviceUnlockedSinceBoot, _MKBFilevaultStashKek, _MKBGetDeviceConfigurations, 
                        _MKBGetDeviceLockState, _MKBGetDeviceLockStateIndirect, _MKBGetDeviceLockStateInfo, 
                        _MKBGetPolicyStatus, _MKBKeyBagBindKEK, _MKBKeyBagChangeSystemSecret, 

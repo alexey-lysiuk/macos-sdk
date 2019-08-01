@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BEE8D6FF-BA73-38A1-A7EC-1261126D3A25' ]
+uuids:           [ 'x86_64: DE8A2CA7-9312-3C1E-8704-6E4EA0313CD9' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/TelephonyUtilities.framework/Versions/A/TelephonyUtilities
 exports:         
@@ -9,15 +9,16 @@ exports:
                        _TUAddTelephonyCenterObserver, _TUAudioRouteBluetoothProductIdentifierAirPods, 
                        _TUAudioRouteBluetoothProductIdentifierAirPods2, _TUAudioRouteBluetoothProductIdentifierBeatsSolo, 
                        _TUAudioRouteBluetoothProductIdentifierBeatsStudio, _TUAudioRouteBluetoothProductIdentifierBeatsX, 
-                       _TUAudioRouteBluetoothProductIdentifierPowerbeats, _TUAudioSystemActiveCategoryVolumeChangedNotification, 
-                       _TUAudioSystemAudioPickableRoutesChanged, _TUAudioSystemDownlinkMuteStatusChangedNotification, 
-                       _TUAudioSystemTTYChangedNotification, _TUAudioSystemUplinkMuteStatusChangedNotification, 
-                       _TUBinaryGCD, _TUBundle, _TUBundleIdentifierCallServicesDaemon, 
-                       _TUBundleIdentifierFaceTimeApplication, _TUBundleIdentifierInCallServiceApplication, 
-                       _TUBundleIdentifierMessagesApplication, _TUBundleIdentifierMobilePhoneApplication, 
-                       _TUBundleIdentifierNanoPhoneApplication, _TUBundleIdentifierTelephonyUtilitiesFramework, 
-                       _TUCTServerConnection, _TUCallAudioPropertiesChangedNotification, 
-                       _TUCallCameraTypeChangedNotification, _TUCallCapabilitiesCloudCallingDevicesChangedNotification, 
+                       _TUAudioRouteBluetoothProductIdentifierPowerbeats, _TUAudioRouteBluetoothProductIdentifierPowerbeats2, 
+                       _TUAudioSystemActiveCategoryVolumeChangedNotification, _TUAudioSystemAudioPickableRoutesChanged, 
+                       _TUAudioSystemDownlinkMuteStatusChangedNotification, _TUAudioSystemTTYChangedNotification, 
+                       _TUAudioSystemUplinkMuteStatusChangedNotification, _TUBinaryGCD, 
+                       _TUBundle, _TUBundleIdentifierCallServicesDaemon, _TUBundleIdentifierFaceTimeApplication, 
+                       _TUBundleIdentifierInCallServiceApplication, _TUBundleIdentifierMessagesApplication, 
+                       _TUBundleIdentifierMobilePhoneApplication, _TUBundleIdentifierNanoPhoneApplication, 
+                       _TUBundleIdentifierTelephonyUtilitiesFramework, _TUCTServerConnection, 
+                       _TUCallAudioPropertiesChangedNotification, _TUCallCameraTypeChangedNotification, 
+                       _TUCallCapabilitiesCloudCallingDevicesChangedNotification, 
                        _TUCallCapabilitiesEmergencyCallbackModeChangedNotification, 
                        _TUCallCapabilitiesEmergencyCallbackPossibleChangedNotification, 
                        _TUCallCapabilitiesFaceTimeAvailabilityChangedNotification, 

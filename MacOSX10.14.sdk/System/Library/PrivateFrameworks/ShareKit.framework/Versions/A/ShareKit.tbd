@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8BB4AD0C-D66E-3ED4-B5EF-877180B5BC38' ]
+uuids:           [ 'x86_64: 6563A611-6FA7-34E5-BCB2-3E7ECABBD48B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ShareKit.framework/Versions/A/ShareKit
 current-version: 577.5

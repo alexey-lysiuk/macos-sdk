@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2A591F27-0FEE-3CE1-B6C3-7A3B56C9D18D' ]
+uuids:           [ 'x86_64: 06FB1A07-7AE6-3ADD-8E7E-41955FAB38E8' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/DataDetectorsCore.framework/Versions/A/DataDetectorsCore
-current-version: 590.24
+current-version: 590.27
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _DDAddressBookAccessAllowed, _DDAddressResultCanBeMergedWith, 

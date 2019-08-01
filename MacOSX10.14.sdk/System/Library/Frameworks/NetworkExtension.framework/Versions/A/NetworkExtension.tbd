@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E6D24816-9AC5-343B-8B13-D6290856E250' ]
+uuids:           [ 'x86_64: A71178B3-5F47-3E36-B337-58DA43FAF8CC' ]
 platform:        zippered
 install-name:    /System/Library/Frameworks/NetworkExtension.framework/Versions/A/NetworkExtension
 objc-constraint: none

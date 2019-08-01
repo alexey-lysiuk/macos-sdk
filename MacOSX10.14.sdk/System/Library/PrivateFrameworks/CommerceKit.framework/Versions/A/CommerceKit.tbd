@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3DBBFF0C-58AF-34AA-A2F5-B7A0FF936F92' ]
+uuids:           [ 'x86_64: 5DCB6EA6-F7FB-3BED-9B56-E8259B85684E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CommerceKit.framework/Versions/A/CommerceKit
 current-version: 379
@@ -118,7 +118,7 @@ exports:
                        _CKDAAPBuffer._data ]
 --- !tapi-tbd-v3
 archs:           [ i386, x86_64 ]
-uuids:           [ 'i386: 44ABC428-1AA3-3043-BAB9-E24323DFD9B4', 'x86_64: 864F9266-5DFB-3305-BCD9-BA94126DCA50' ]
+uuids:           [ 'i386: 9F09BF93-883F-3C45-B469-CC957D8C6865', 'x86_64: B5939A65-745F-3AB7-A212-EF140E148F42' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CommerceKit.framework/Versions/A/Frameworks/CommerceCore.framework/Versions/A/CommerceCore
 current-version: 379

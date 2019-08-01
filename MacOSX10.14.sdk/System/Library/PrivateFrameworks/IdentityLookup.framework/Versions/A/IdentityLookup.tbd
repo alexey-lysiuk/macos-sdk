@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8F6C4B62-871F-3A91-91DB-D97F0AAD562D' ]
+uuids:           [ 'x86_64: 36AB26DA-3F26-3CF1-87CC-21987A5C74F9' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IdentityLookup.framework/Versions/A/IdentityLookup
 exports:         

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7C7FA804-6E84-3428-B83B-906F5402C239' ]
+uuids:           [ 'x86_64: 5DDCBB72-570E-353A-87B4-7A7404BE31FA' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/PersonalizationPortrait.framework/Versions/A/PersonalizationPortrait
 exports:         

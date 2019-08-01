@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 29383676-6133-3EB4-8CAC-5A6F25FE2F4D' ]
+uuids:           [ 'x86_64: 7CEAC05A-D283-3D5A-B1E3-C849285FA0BF' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/TextureIO.framework/Versions/A/TextureIO
 current-version: 3.8.4

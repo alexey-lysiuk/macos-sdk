@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F2269F7B-5FCC-3187-8F13-A15F2C9D21E5' ]
+uuids:           [ 'x86_64: 6F4FAACA-E06B-38AD-A0C2-14EA5408A231' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DebugSymbols.framework/Versions/A/DebugSymbols
 current-version: 190

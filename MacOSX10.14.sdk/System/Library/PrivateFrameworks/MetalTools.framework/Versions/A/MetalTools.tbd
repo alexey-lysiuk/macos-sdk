@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 09394594-A80D-3D8B-99E8-E71693909FA1' ]
+uuids:           [ 'x86_64: CBE2176A-8048-3A9C-AFE4-13973D44C704' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/MetalTools.framework/Versions/A/MetalTools
 current-version: 0
@@ -20,7 +20,7 @@ exports:
                        MTLDebugComputePipelineState, MTLDebugDepthStencilState, MTLDebugDevice, 
                        MTLDebugFunction, MTLDebugHeap, MTLDebugIndirectCommandBuffer, 
                        MTLDebugIndirectRenderCommand, MTLDebugLibrary, MTLDebugParallelRenderCommandEncoder, 
-                       MTLDebugRenderCommandEncoder, MTLDebugRenderPipelineState, 
+                       MTLDebugPipelineLibrary, MTLDebugRenderCommandEncoder, MTLDebugRenderPipelineState, 
                        MTLDebugResource, MTLDebugSamplerState, MTLDebugSharedEvent, 
                        MTLDebugTexture, MTLDebugVideoCommandEncoder, MTLToolsArgumentEncoder, 
                        MTLToolsBlitCommandEncoder, MTLToolsBuffer, MTLToolsCommandBuffer, 
@@ -29,9 +29,10 @@ exports:
                        MTLToolsEvent, MTLToolsFence, MTLToolsFunction, MTLToolsHeap, 
                        MTLToolsIndirectCommandBuffer, MTLToolsIndirectRenderCommand, 
                        MTLToolsLibrary, MTLToolsMotionEstimationPipeline, MTLToolsObject, 
-                       MTLToolsParallelRenderCommandEncoder, MTLToolsRenderCommandEncoder, 
-                       MTLToolsRenderPipelineState, MTLToolsResource, MTLToolsSamplerState, 
-                       MTLToolsSharedEvent, MTLToolsTexture, MTLToolsVideoCommandEncoder ]
+                       MTLToolsParallelRenderCommandEncoder, MTLToolsPipelineLibrary, 
+                       MTLToolsRenderCommandEncoder, MTLToolsRenderPipelineState, 
+                       MTLToolsResource, MTLToolsSamplerState, MTLToolsSharedEvent, 
+                       MTLToolsTexture, MTLToolsVideoCommandEncoder ]
     objc-ivars:      [ MTLDebugBuffer._common, MTLDebugCommandBuffer._currentEncoder, 
                        MTLDebugHeap._historyLock, MTLDebugRenderCommandEncoder._attachmentInfo, 
                        MTLDebugRenderCommandEncoder._dirtyBits, MTLDebugRenderCommandEncoder._vertexBuiltinArguments, 

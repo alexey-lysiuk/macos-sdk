@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 722092E6-C0E6-3AD4-A870-5C4E1CF2B388' ]
+uuids:           [ 'x86_64: 4D7D03EB-744F-3402-8C3E-B483A74BEF1E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ToneLibrary.framework/Versions/A/ToneLibrary
 exports:         

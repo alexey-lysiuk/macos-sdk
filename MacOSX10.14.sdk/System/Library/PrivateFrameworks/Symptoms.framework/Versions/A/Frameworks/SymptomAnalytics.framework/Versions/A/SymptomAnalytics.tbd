@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0690DBAE-8AFE-339F-8DAF-3B6B99AF6437' ]
+uuids:           [ 'x86_64: C950FF28-B179-300D-8E78-501C96AAE2E9' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Symptoms.framework/Frameworks/SymptomAnalytics.framework/Versions/A/SymptomAnalytics
 current-version: 820.255.1

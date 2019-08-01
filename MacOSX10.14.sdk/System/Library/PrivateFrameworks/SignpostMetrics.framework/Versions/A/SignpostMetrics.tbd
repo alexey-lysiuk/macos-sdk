@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1B729440-9185-3C88-B6A6-4399ABFE60CA' ]
+uuids:           [ 'x86_64: D0A5B3FD-356F-38AE-95B8-7DD1B5F697F4' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SignpostMetrics.framework/Versions/A/SignpostMetrics
-current-version: 27
+current-version: 31.1
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _SignpostMetricsVersionNumber, _SignpostMetricsVersionString, 

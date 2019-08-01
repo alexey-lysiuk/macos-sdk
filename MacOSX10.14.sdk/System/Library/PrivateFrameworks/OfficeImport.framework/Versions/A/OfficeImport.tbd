@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 156998D7-1A6F-32CE-89E1-CC2CB2C951D5' ]
+uuids:           [ 'x86_64: 9F6357AE-1DF5-385A-9F46-2F9998688294' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/OfficeImport.framework/Versions/A/OfficeImport
-current-version: 268.1
+current-version: 268.2
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _AMOFullMethodName, _CGContextAddPathSafe, _CGImageJPEGRepresentation, 

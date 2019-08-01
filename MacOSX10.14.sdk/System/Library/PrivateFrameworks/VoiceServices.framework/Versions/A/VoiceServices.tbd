@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AD73CCBC-FFD9-3F35-B4F0-34C5EC81F209' ]
+uuids:           [ 'x86_64: F171B777-1F03-36CF-A0E4-9F6784E46D0C' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/VoiceServices.framework/Versions/A/VoiceServices
 exports:         

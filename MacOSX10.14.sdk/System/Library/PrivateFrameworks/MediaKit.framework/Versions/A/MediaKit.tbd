@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D9B33C2A-706E-3A7C-90D1-D78EA4EFF871' ]
+uuids:           [ 'x86_64: 5EE0E7DA-5ACC-33F3-9BF0-47A448C011A1' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MediaKit.framework/Versions/A/MediaKit
-current-version: 906
+current-version: 907
 compatibility-version: 302
 objc-constraint: none
 exports:         

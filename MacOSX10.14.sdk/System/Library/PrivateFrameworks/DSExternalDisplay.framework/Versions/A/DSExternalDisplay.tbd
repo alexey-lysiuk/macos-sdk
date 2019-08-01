@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6AC4F805-7AAF-31D3-B614-C78B61907EE3' ]
+uuids:           [ 'x86_64: 787B9748-B120-3453-B8FE-61D9E363A9E0' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/DSExternalDisplay.framework/Versions/A/DSExternalDisplay
 objc-constraint: none

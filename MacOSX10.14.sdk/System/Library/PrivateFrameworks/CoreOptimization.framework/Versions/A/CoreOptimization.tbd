@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8BFA0B2B-E3D2-3D6A-91B8-9F07A0B96A71' ]
+uuids:           [ 'x86_64: 1C724E01-E9FA-3AEE-BE4B-C4DB8EC0C812' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/CoreOptimization.framework/Versions/A/CoreOptimization
 objc-constraint: none

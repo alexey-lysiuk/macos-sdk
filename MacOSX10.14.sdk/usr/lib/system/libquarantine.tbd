@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8A9BF971-DB7D-311A-B131-6C5025E82F8F' ]
+uuids:           [ 'x86_64: 6D0BC770-7348-3608-9254-F7FFBD347634' ]
 platform:        zippered
 install-name:    /usr/lib/system/libquarantine.dylib
 current-version: 86.220.1

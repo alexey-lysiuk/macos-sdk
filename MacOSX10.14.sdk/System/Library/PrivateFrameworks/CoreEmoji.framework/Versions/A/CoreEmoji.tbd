@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 90ACD3F0-1542-3094-A1F6-FF2F508A8561' ]
+uuids:           [ 'x86_64: 228457B3-E191-356E-9A5B-3C0438D05FBA' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/CoreEmoji.framework/Versions/A/CoreEmoji
 current-version: 69.19.9

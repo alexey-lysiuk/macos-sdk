@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 93F92932-615B-3328-9691-22C69359EC55' ]
+uuids:           [ 'x86_64: 4624CB7E-98C6-357C-A3BB-1819C38EABBC' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/MultipeerConnectivity.framework/Versions/A/MultipeerConnectivity
 current-version: 155.2

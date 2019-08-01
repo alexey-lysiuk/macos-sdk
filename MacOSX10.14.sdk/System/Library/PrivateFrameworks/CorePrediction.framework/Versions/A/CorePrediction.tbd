@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CC860CCD-09C7-345C-A026-C3C3B44A3F24' ]
+uuids:           [ 'x86_64: A66C8A6F-C3B2-3547-985D-C62C62F9FA48' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/CorePrediction.framework/Versions/A/CorePrediction
 exports:         

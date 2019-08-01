@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: ADB2A56E-5E99-312A-B3B0-E96B519E46B1' ]
+uuids:           [ 'x86_64: 6226A905-D055-321D-B665-5B0CC4798A74' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/InternationalSupport.framework/Versions/A/InternationalSupport
 current-version: 10.15.6

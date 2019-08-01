@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AED43490-8762-3C77-BC2D-82083E96D066' ]
+uuids:           [ 'x86_64: 57BD29EC-2274-3DC4-B5E4-7A1A045BD573' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Python.framework/Versions/2.7/Python
 current-version: 2.7.10

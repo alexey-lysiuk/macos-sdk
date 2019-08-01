@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EDE87E9E-011C-31DC-84BF-74238079E321' ]
+uuids:           [ 'x86_64: 91917433-47D2-3E7B-A483-02493181D65C' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SIUFoundation.framework/Versions/A/SIUFoundation
 exports:         

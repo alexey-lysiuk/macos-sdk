@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A43DA13B-C0BB-3A62-A131-134E5CE0355A' ]
+uuids:           [ 'x86_64: A01D45FB-1ED2-381B-BDBF-235BCC035ABB' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/SampleAnalysis.framework/Versions/A/SampleAnalysis
 current-version: 218.2

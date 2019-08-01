@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B63EA71B-3391-3EC4-A39D-8F02083E84AA' ]
+uuids:           [ 'x86_64: C3F7FC88-CA5D-3C9B-AB7F-F0BC5B8D4E57' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoLibraryPrivate.framework/Versions/A/Frameworks/UXKit.framework/Versions/A/UXKit
-current-version: 3441.7.100
+current-version: 3461.7.140
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _NSStringFromUXCollectionViewLayoutDropPosition, _UXCollectionElementKindCell, 

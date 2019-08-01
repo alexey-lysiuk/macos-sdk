@@ -464,6 +464,9 @@ public:
     virtual bool didTerminate( IOService * provider, IOOptionBits options, bool * defer ) APPLE_KEXT_OVERRIDE;
     virtual void free() APPLE_KEXT_OVERRIDE;
     virtual IOWorkLoop * getWorkLoop() const APPLE_KEXT_OVERRIDE;
+#ifndef _OPEN_SOURCE_
+    virtual IOReturn setProperties(OSObject* properties) APPLE_KEXT_OVERRIDE;
+#endif
 
     IOWorkLoop * getGraphicsSystemWorkLoop() const;
     IOWorkLoop * getControllerWorkLoop() const;

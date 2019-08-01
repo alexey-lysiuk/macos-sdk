@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B48608C1-4EDA-39ED-BB43-82BEE6BEEB38' ]
+uuids:           [ 'x86_64: FBBFB21D-B87B-3189-8FEE-B0C2FB2B80A6' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SiriClientFlow.framework/Versions/A/SiriClientFlow
 exports:         

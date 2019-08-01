@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CD0F90A3-3A64-3BFE-B2AA-F5525F8E57DF' ]
+uuids:           [ 'x86_64: B0DF53FC-2E51-37E5-8409-97E05097929E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/WhitePages.framework/Versions/A/WhitePages
 exports:         

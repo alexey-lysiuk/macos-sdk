@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 31D04F91-B79C-37F1-8546-02EE27326F7F' ]
+uuids:           [ 'x86_64: 0C25AF38-1C74-31D1-A2BC-2C7FAF3DAA17' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AppStoreUI.framework/Versions/A/AppStoreUI
 exports:         

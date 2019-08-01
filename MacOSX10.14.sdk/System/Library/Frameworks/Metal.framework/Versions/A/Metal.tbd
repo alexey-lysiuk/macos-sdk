@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 18BEB663-0D31-3255-9710-50BC5C3D2A0F' ]
+uuids:           [ 'x86_64: FFF7DFF3-7C4E-32C6-A0B5-C356079D3B7C' ]
 platform:        zippered
 install-name:    /System/Library/Frameworks/Metal.framework/Versions/A/Metal
-current-version: 161.7.1
+current-version: 162.2
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -132,7 +132,8 @@ exports:
                        _MTLIndirectArgumentEncoder, _MTLIndirectDrawArguments, _MTLIndirectDrawIndexedArguments, 
                        _MTLIndirectDrawIndexedPatchesArguments, _MTLIndirectDrawPatchesArguments, 
                        _MTLIndirectTessellationFactorArguments, _MTLLibrary, _MTLParallelRenderCommandEncoder, 
-                       _MTLPipelineCache, _MTLRenderPipelineState, _MTLSamplerState ]
+                       _MTLPipelineCache, _MTLRenderPipelineState, _MTLSamplerState, 
+                       _PipelineLibrarySerializer ]
     objc-ivars:      [ MTLCaptureManager._defaultCaptureScope, MTLCaptureManager._isCapturing, 
                        MTLCaptureScope._commandQueue, MTLCaptureScope._device, MTLCaptureScope._label, 
                        MTLIOAccelBuffer._deallocator, MTLIOAccelBuffer._length, MTLIOAccelBuffer._masterBuffer, 
@@ -226,5 +227,5 @@ exports:
                        _MTLParallelRenderCommandEncoder._numCommands, _MTLParallelRenderCommandEncoder._numRequestedCounters, 
                        _MTLParallelRenderCommandEncoder._numThisEncoder, _MTLParallelRenderCommandEncoder._queue, 
                        _MTLParallelRenderCommandEncoder._renderPassDescriptor, _MTLParallelRenderCommandEncoder._retainedReferences, 
-                       _MTLSamplerState._device, _MTLSamplerState._label ]
+                       _MTLSamplerState._device, _MTLSamplerState._label, _PipelineLibrarySerializer._binarySerializer ]
 ...

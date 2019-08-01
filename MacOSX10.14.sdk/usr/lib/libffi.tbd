@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B8F68AAD-8510-3D84-A684-ADF311BD6509' ]
+uuids:           [ 'x86_64: DA1198F8-9789-3F16-BF60-9DA170519295' ]
 platform:        macosx
 install-name:    /usr/lib/libffi.dylib
 objc-constraint: none

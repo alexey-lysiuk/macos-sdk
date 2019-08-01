@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C7F844C1-C78B-302B-AFEF-BE74467FD3EF' ]
+uuids:           [ 'x86_64: 8D186F44-49C6-31C1-8D2A-2B66B14CF264' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/FoundInAppsPlugins.framework/Versions/A/FoundInAppsPlugins
 exports:         

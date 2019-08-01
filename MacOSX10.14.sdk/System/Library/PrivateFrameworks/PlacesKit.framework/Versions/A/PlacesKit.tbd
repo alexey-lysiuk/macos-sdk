@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A5202AC2-A18F-3463-BEC1-5D2B66B6A41B' ]
+uuids:           [ 'x86_64: 9583DD22-F485-3490-8871-6B2EEBF685EB' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PlacesKit.framework/Versions/A/PlacesKit
-current-version: 3401.4.130
+current-version: 3461.4.210
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _PXMapStoreDefaultCapacityPerNode, _PXMapStoreMinimumRectWidth, 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D014070C-5391-3062-A56F-B5D4AEB853F9' ]
+uuids:           [ 'x86_64: 1F234476-C1FC-31C3-B1B8-F5803DF92A1E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AppleVPA.framework/Versions/A/AppleVPA
 objc-constraint: none

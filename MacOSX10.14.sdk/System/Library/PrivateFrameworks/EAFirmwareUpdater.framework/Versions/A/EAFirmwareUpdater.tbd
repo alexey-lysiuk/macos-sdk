@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3ED498D3-4D5A-38C4-8BE2-5290301020FD' ]
+uuids:           [ 'x86_64: E1B8C70B-A836-36E8-8F90-D08AD60444BD' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/EAFirmwareUpdater.framework/Versions/A/EAFirmwareUpdater
 exports:         
@@ -9,28 +9,32 @@ exports:
     objc-classes:    [ EAFirmwareUpdater, FirmwareBundle, HSModel, iAUPServer ]
     objc-ivars:      [ EAFirmwareUpdater._accessory, EAFirmwareUpdater._appProtocol, 
                        EAFirmwareUpdater._applyCompletion, EAFirmwareUpdater._bootloaderProtocol, 
-                       EAFirmwareUpdater._byteEscape, EAFirmwareUpdater._cumulativeBytesDownloaded, 
-                       EAFirmwareUpdater._cumulativeCloakTime, EAFirmwareUpdater._cumulativeProgressPercent, 
-                       EAFirmwareUpdater._cumulativeTimeTaken, EAFirmwareUpdater._currentFirmwareVersionOnAcc, 
-                       EAFirmwareUpdater._currentSessionCloakTime, EAFirmwareUpdater._currentSessionTimeTaken, 
-                       EAFirmwareUpdater._deviceClass, EAFirmwareUpdater._eaNotificationDispatchQueue, 
+                       EAFirmwareUpdater._buildIdentities, EAFirmwareUpdater._byteEscape, 
+                       EAFirmwareUpdater._cumulativeBytesDownloaded, EAFirmwareUpdater._cumulativeCloakTime, 
+                       EAFirmwareUpdater._cumulativeProgressPercent, EAFirmwareUpdater._cumulativeTimeTaken, 
+                       EAFirmwareUpdater._currentFirmwareVersionOnAcc, EAFirmwareUpdater._currentSessionCloakTime, 
+                       EAFirmwareUpdater._currentSessionTimeTaken, EAFirmwareUpdater._deviceClass, 
+                       EAFirmwareUpdater._deviceOptions, EAFirmwareUpdater._eaNotificationDispatchQueue, 
                        EAFirmwareUpdater._firmwareBundleFilename, EAFirmwareUpdater._firmwareBundleURL, 
                        EAFirmwareUpdater._firmwareUpdateComplete, EAFirmwareUpdater._firmwareVersionAvailable, 
                        EAFirmwareUpdater._firmwareVersionMajor, EAFirmwareUpdater._firmwareVersionMinor, 
-                       EAFirmwareUpdater._firmwareVersionRelease, EAFirmwareUpdater._forceSilentUpdate, 
-                       EAFirmwareUpdater._iAUPServer, EAFirmwareUpdater._isExpectingReconnect, 
-                       EAFirmwareUpdater._isMultiAssetSession, EAFirmwareUpdater._multiassetAppProtocol, 
-                       EAFirmwareUpdater._outputData, EAFirmwareUpdater._progressHandler, 
-                       EAFirmwareUpdater._protocolString, EAFirmwareUpdater._reconnectTimer, 
-                       EAFirmwareUpdater._resumeCount, EAFirmwareUpdater._resumedFromPercentNum, 
-                       EAFirmwareUpdater._session, EAFirmwareUpdater._skipDFUMode, 
+                       EAFirmwareUpdater._firmwareVersionRelease, EAFirmwareUpdater._flushOutputLock, 
+                       EAFirmwareUpdater._forceSilentUpdate, EAFirmwareUpdater._iAUPServer, 
+                       EAFirmwareUpdater._isExpectingReconnect, EAFirmwareUpdater._isMultiAssetSession, 
+                       EAFirmwareUpdater._manifestIDs, EAFirmwareUpdater._manifestIndex, 
+                       EAFirmwareUpdater._manifestList, EAFirmwareUpdater._multiassetAppProtocol, 
+                       EAFirmwareUpdater._outputData, EAFirmwareUpdater._personalizationRequestHandler, 
+                       EAFirmwareUpdater._progressHandler, EAFirmwareUpdater._protocolString, 
+                       EAFirmwareUpdater._reconnectTimer, EAFirmwareUpdater._resumeCount, 
+                       EAFirmwareUpdater._resumedFromPercentNum, EAFirmwareUpdater._session, 
+                       EAFirmwareUpdater._skipDFUMode, EAFirmwareUpdater._skipReconnect, 
                        EAFirmwareUpdater._totalBytesForCompleteUpdate, EAFirmwareUpdater._transportType, 
                        EAFirmwareUpdater._updateHandler, EAFirmwareUpdater._updateStartTime, 
                        FirmwareBundle._bundleDescription, HSModel.delegate, iAUPServer._accessoryCapabilities, 
                        iAUPServer._byteEscape, iAUPServer._delegate, iAUPServer._escapeInProgress, 
                        iAUPServer._firmwareBundle, iAUPServer._firmwareImageBaseTransferAddress, 
-                       iAUPServer._hsModel, iAUPServer._parserState, iAUPServer._serverState, 
-                       iAUPServer._startEventSent, iAUPServer._telegramChecksum, 
+                       iAUPServer._hsModel, iAUPServer._parserState, iAUPServer._restartRequired, 
+                       iAUPServer._serverState, iAUPServer._startEventSent, iAUPServer._telegramChecksum, 
                        iAUPServer._telegramDataIn, iAUPServer._telegramLength, iAUPServer._totalBytesDownloadedInCurrentSession, 
                        iAUPServer.objectBlockTransferSizes ]
 ...

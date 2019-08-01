@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DFDCEC5B-2182-3491-B11A-E7F6F1A8DB1E' ]
+uuids:           [ 'x86_64: 815A6536-7B25-3D6F-8B03-9138C4CF7BF3' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/Admin.framework/Versions/A/Admin
 exports:         

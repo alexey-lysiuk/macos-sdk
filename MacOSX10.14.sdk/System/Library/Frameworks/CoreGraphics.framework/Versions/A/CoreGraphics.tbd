@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: BB033674-310A-39FF-85D3-4FE17875CE65', 'x86_64h: 58D98B52-5BEF-3345-B8DD-AAE476234FC1' ]
+uuids:           [ 'x86_64: 79190987-281B-3D7A-9C3F-95A85DD28021', 'x86_64h: BC95B558-EF77-3A57-A0BC-11606C778991' ]
 platform:        zippered
 install-name:    /System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics
-current-version: 1251.12
+current-version: 1265.9
 compatibility-version: 64
 objc-constraint: none
 exports:         
@@ -82,8 +82,9 @@ exports:
                        _CGColorCodeFragmentGetTextureData, _CGColorCodeFragmentGetTextureFormat, 
                        _CGColorCodeFragmentGetTextureGridPoints, _CGColorCodeFragmentRelease, 
                        _CGColorConversionInfoCreate, _CGColorConversionInfoCreateFromList, 
-                       _CGColorConversionInfoCreateFromListWithArguments, _CGColorConversionInfoGetTypeID, 
-                       _CGColorConversionInfoIterateColorSpaceFunctionsWithCallbacks, 
+                       _CGColorConversionInfoCreateFromListWithArguments, _CGColorConversionInfoCreateWithOptions, 
+                       _CGColorConversionInfoGetTypeID, _CGColorConversionInfoIterateColorSpaceFunctionsWithCallbacks, 
+                       _CGColorConversionInfoIterateColorSpaceFunctionsWithCallbacksAndOptions, 
                        _CGColorConversionInfoIterateFunctionsWithCallbacks, _CGColorConverterCreate, 
                        _CGColorConverterCreateSimple, _CGColorConverterGetTypeID, 
                        _CGColorConverterIterateColorSpaceFunctionsWithCallbacks, 
@@ -101,6 +102,7 @@ exports:
                        _CGColorGetTypeID, _CGColorMatrixConcat, _CGColorMatrixGetMatrix, 
                        _CGColorMatrixGetTypeID, _CGColorMatrixIsIdentity, _CGColorMatrixMake, 
                        _CGColorMatrixMakeIdentity, _CGColorNxMLUTGetLUT, _CGColorNxMLUTGetTypeID, 
+                       _CGColorNxMTransformGetTransform, _CGColorNxMTransformGetTypeID, 
                        _CGColorRelease, _CGColorRetain, _CGColorSpaceConcatenate, 
                        _CGColorSpaceCopyColorTable, _CGColorSpaceCopyDefaultColor, 
                        _CGColorSpaceCopyICCData, _CGColorSpaceCopyICCProfile, _CGColorSpaceCopyICCProfileASCIIDescriptionString, 
@@ -133,7 +135,7 @@ exports:
                        _CGColorSpaceIsWideGamutRGB, _CGColorSpaceRelease, _CGColorSpaceRetain, 
                        _CGColorSpaceStreamPSDefinition, _CGColorSpaceSupportsOutput, 
                        _CGColorSpaceUsesExtendedRange, _CGColorTRCGetFunction, _CGColorTRCGetGammaID, 
-                       _CGColorTRCGetLuminanceScale, _CGColorTRCGetTypeID, _CGColorTransformConvertColor, 
+                       _CGColorTRCGetTypeID, _CGColorTRCPureGammaOriginal, _CGColorTransformConvertColor, 
                        _CGColorTransformConvertColorComponents, _CGColorTransformConvertColorFloatComponents, 
                        _CGColorTransformConvertComponentData, _CGColorTransformConvertData, 
                        _CGColorTransformConvertImage, _CGColorTransformConvertNeedsCMS, 

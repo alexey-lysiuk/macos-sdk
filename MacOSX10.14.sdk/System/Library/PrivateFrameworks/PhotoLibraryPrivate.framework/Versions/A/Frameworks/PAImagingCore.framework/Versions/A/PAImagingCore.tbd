@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 01057088-8519-3F53-B1BC-06699FFB37F6' ]
+uuids:           [ 'x86_64: 21AC3EDC-226F-3F4D-9063-B3F073984C2C' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoLibraryPrivate.framework/Versions/A/Frameworks/PAImagingCore.framework/Versions/A/PAImagingCore
-current-version: 3441.7.100
+current-version: 3461.7.140
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CompareLab, _DGColorAllHues, _DGColorAllInputTypes, _DGSelectiveColorAllHues, 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F9B27999-A2F7-35BD-A1B1-834834F54F10' ]
+uuids:           [ 'x86_64: A55AAA76-8196-31F8-B0BF-E648464CDF9B' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/SpeechObjects.framework/Versions/A/Frameworks/DictationFeedbackServices.framework/Versions/A/DictationFeedbackServices
 objc-constraint: none

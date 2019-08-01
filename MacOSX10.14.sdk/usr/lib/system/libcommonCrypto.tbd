@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 17C4F395-9FF0-331F-8167-5E85AA3588E9' ]
+uuids:           [ 'x86_64: 1765BB6E-6784-3653-B16B-CB839721DC9A' ]
 platform:        zippered
 install-name:    /usr/lib/system/libcommonCrypto.dylib
 current-version: 60118.250.2

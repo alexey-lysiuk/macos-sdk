@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 14459C59-D53A-3C24-94CC-D60CD1749FDB' ]
+uuids:           [ 'x86_64: EB207683-FBD6-3B74-A606-3FE22234372C' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DiskManagement.framework/Versions/A/DiskManagement
 exports:         

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BFB4E4E7-BD5A-33D0-ACFF-34B7084F1492' ]
+uuids:           [ 'x86_64: A6FB8A66-FD26-3237-A3B4-CBC9BCA4A2D8' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Versions/A/Frameworks/PhotosGraph.framework/Versions/A/Frameworks/MediaMiningKit.framework/Versions/A/MediaMiningKit
 exports:         

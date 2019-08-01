@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BF089FD5-E1BB-3CF2-ADFA-0E2D7FC8B065' ]
+uuids:           [ 'x86_64: C8951E30-1724-3B60-8E8F-4D58C2978731' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreNameParser.framework/Versions/A/CoreNameParser
 exports:         

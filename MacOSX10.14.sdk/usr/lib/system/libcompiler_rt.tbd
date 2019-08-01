@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8CB2B2B6-2C55-3733-9842-0E037AE3F46A' ]
+uuids:           [ 'x86_64: 5212BA7B-B7EA-37B4-AF6E-AC4F507EDFB8' ]
 platform:        zippered
 install-name:    /usr/lib/system/libcompiler_rt.dylib
 current-version: 63.4

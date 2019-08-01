@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 933DEDB0-CE29-3E78-AAF6-C77570D246DB' ]
+uuids:           [ 'x86_64: 58F6EF13-A740-3727-9CD3-0928CBAFEE0F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/NotificationCenterUI.framework/Versions/A/NotificationCenterUI
-current-version: 747.7
+current-version: 747.8
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _NCSnippetCreate, _NCSnippetDestroy ]

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 034CCEB4-DD64-3728-9778-EB2CF8997858' ]
+uuids:           [ 'x86_64: B27CB2B6-FB01-3FEE-94C5-CF421B16D862' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/TextInput.framework/Versions/A/TextInput
 exports:         

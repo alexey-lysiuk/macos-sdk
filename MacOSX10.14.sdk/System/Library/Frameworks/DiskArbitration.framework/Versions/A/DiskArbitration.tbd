@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F30DF62A-0BE9-371D-8D86-96554FF45811' ]
+uuids:           [ 'x86_64: F481F2C0-884E-3265-8111-ABBEC93F0920' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration
 objc-constraint: none

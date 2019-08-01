@@ -1,8 +1,8 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 64CFBA70-4925-35F2-8292-29BB53984918' ]
+uuids:           [ 'x86_64: D16DB277-00FE-37EF-B020-DE89FA0A9CF7' ]
 platform:        macosx
 install-name:    /usr/lib/log/liblog_signpost.telemetry.dylib
-current-version: 27
+current-version: 31.1
 objc-constraint: none
 ...

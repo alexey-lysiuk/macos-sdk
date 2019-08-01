@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 40BBE899-4DF4-3F28-924C-33C0C9C41F11' ]
+uuids:           [ 'x86_64: 0004C9BB-B36E-314F-B6ED-492B630E2941' ]
 platform:        macosx
 install-name:    /usr/lib/libperfcheck.dylib
 objc-constraint: none

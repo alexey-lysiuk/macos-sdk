@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1BF8F42E-048B-3442-83FB-321C530FBC75' ]
+uuids:           [ 'x86_64: 2B374C8D-D717-3157-9619-F09A9F70E689' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CalendarPersistence.framework/Versions/A/CalendarPersistence
 current-version: 505.4.2

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D6125E51-598A-3A1E-9C75-4BDC5AC03F55' ]
+uuids:           [ 'x86_64: 71BB5D76-34CA-3A30-AECF-24BE29FCC275' ]
 platform:        zippered
 install-name:    /System/Library/Frameworks/MediaToolbox.framework/Versions/A/MediaToolbox
 objc-constraint: none
@@ -9,7 +9,8 @@ exports:
     symbols:         [ _FCSupport_CopyChapterTimeRangesForChapterGroup, _FCSupport_CopyChapterTimesForChapterGroup, 
                        _FPSupport_CopyDestinationPixelBufferAttributesWithIOSurfaceSupport, 
                        _FPSupport_CopyMainDisplayCAName, _FPSupport_CreateAllVideoRangesSupportedByDisplays, 
-                       _FPSupport_CreateDestinationPixelBufferAttributes, _FPSupport_GetCurrentDisplayModeVideoRangeAndSizeAndFrameRate, 
+                       _FPSupport_CreateDestinationPixelBufferAttributes, _FPSupport_GetClosestCommonRefreshIntervalForRate, 
+                       _FPSupport_GetCurrentDisplayModeVideoRangeAndSizeAndFrameRate, 
                        _FPSupport_GetDefaultTrackIDForMediaType, _FPSupport_GetDisplayInfoForCADisplay, 
                        _FPSupport_GetDisplayRefreshInformation, _FPSupport_GetDisplayVideoRangeNotificationSingleton, 
                        _FPSupport_GetFirstEnabledTrackIDForMediaType, _FPSupport_GetMainDisplayVideoRangeAndSizeAndFrameRate, 
@@ -248,12 +249,15 @@ exports:
                        _FigOfflineAudioRenderPipelineCreate, _FigOutputMonitorIsScreenProbablyBeingRecorded, 
                        _FigPartialSampleTableAccessorCopy, _FigPartialSampleTableAccessorDestroy, 
                        _FigPartialSampleTableAccessorGetChunkDetails, _FigPartialSampleTableAccessorGetDependencyInfo, 
+                       _FigPartialSampleTableAccessorGetExtendedDependencyAttributeInfo, 
                        _FigPartialSampleTableAccessorGetFormatDescriptionIdentifier, 
                        _FigPartialSampleTableAccessorGetSampleTiming, _FigPartialSampleTableAccessorGetSyncInfo, 
                        _FigPartialSampleTableAccessorGetUnrefinedSampleLocation, 
                        _FigPartialSampleTableAccessorStep, _FigPartialSampleTableCreateAccessorAtIndex, 
                        _FigPartialSampleTableCreateForWriting, _FigPartialSampleTableCreateFromBlockBuffer, 
                        _FigPartialSampleTableFinishWriting, _FigPartialSampleTableGetTypeID, 
+                       _FigPartialSampleTableHelperCreateOutOfBandObjectsFromCompactData, 
+                       _FigPartialSampleTableHelperFillCompactDataForOutOfBandObjects, 
                        _FigPartialSampleTableTryAppendSampleInformation, _FigPhotoAuxiliaryImageMetadataCreateFromXMPData, 
                        _FigPhotoAuxiliaryImageMetadataCreateXMPData, _FigPhotoCompressionCreateContainerFromImageExt, 
                        _FigPhotoCompressionCreateDataContainerFromImage, _FigPhotoCompressionCreateNativePixelFormatArray, 
@@ -576,8 +580,10 @@ exports:
                        _kFigAccessLogKey__TotalMediaRequests, _kFigAccessLogKey__UnsuccessfulUpgrade, 
                        _kFigActivitySchedulerProperty_ClientPID, _kFigActivitySchedulerProperty_MachTimeSharePolicy, 
                        _kFigActivitySchedulerProperty_ThreadPriority, _kFigActivitySchedulerProperty_ThrottleForBackground, 
-                       _kFigAssertionProperty_HolderName, _kFigAssetAlternativeConfigurationKey_RTCReportingHierarchyToken, 
+                       _kFigAssertionProperty_HolderName, _kFigAssetAlternativeConfigurationKey_ContentProvider, 
+                       _kFigAssetAlternativeConfigurationKey_MediaIdentifier, _kFigAssetAlternativeConfigurationKey_RTCReportingHierarchyToken, 
                        _kFigAssetAlternativeConfigurationKey_ServiceIdentifier, _kFigAssetAlternativeConfigurationKey_StorefrontID, 
+                       _kFigAssetAlternativeConfigurationKey_iTunesServiceMonitoringKey, 
                        _kFigAssetAnalysisKey_AnalysisType, _kFigAssetAnalysisTextParsingMessageKey_DiagnosticInformation, 
                        _kFigAssetAnalysisTextParsingMessageKey_LineNumber, _kFigAssetAnalysisTextParsingMessageKey_MessageType, 
                        _kFigAssetAnalysisTextParsingMessageKey_ReferencedText, _kFigAssetAnalysisTextParsingMessageKey_TextRange, 
@@ -969,7 +975,8 @@ exports:
                        _kFigCPEProtectorCryptorCreationOptionDecryptDestination_Nero, 
                        _kFigCPEProtectorCryptorCreationOptionDecryptFormatType_MSE, 
                        _kFigCPEProtectorCryptorCreationOptionDecryptFormatType_Pastis, 
-                       _kFigCPEProtectorCryptorCreationOption_AssetID, _kFigCPEProtectorCryptorCreationOption_CryptKeyAttributes, 
+                       _kFigCPEProtectorCryptorCreationOption_AssetID, _kFigCPEProtectorCryptorCreationOption_AuditToken, 
+                       _kFigCPEProtectorCryptorCreationOption_CryptKeyAttributes, 
                        _kFigCPEProtectorCryptorCreationOption_DecryptDestination, 
                        _kFigCPEProtectorCryptorCreationOption_DecryptFormatType, 
                        _kFigCPEProtectorCryptorCreationOption_SecureStopManager, 
@@ -2417,17 +2424,22 @@ exports:
                        _kMTPluginFormatReader_MaxDirectoryDescents, _kMTPluginFormatReader_UTTypeArrayKey, 
                        _kMTPluginMetadataItemProperty_DataType, _kMTPluginMetadataItemProperty_ExtendedLanguageTag, 
                        _kMTPluginMetadataItemProperty_Info, _kMTPluginMetadataItemProperty_Key, 
-                       _kMTPluginMetadataItemProperty_Value, _kMTPluginTrackReaderProperty_Dimensions, 
-                       _kMTPluginTrackReaderProperty_Enabled, _kMTPluginTrackReaderProperty_EstimatedDataRate, 
-                       _kMTPluginTrackReaderProperty_ExtendedLanguageTag, _kMTPluginTrackReaderProperty_FormatDescriptionArray, 
-                       _kMTPluginTrackReaderProperty_FrameReorderingRequired, _kMTPluginTrackReaderProperty_Metadata, 
-                       _kMTPluginTrackReaderProperty_NaturalTimescale, _kMTPluginTrackReaderProperty_NominalFrameRate, 
-                       _kMTPluginTrackReaderProperty_PreferredTransform, _kMTPluginTrackReaderProperty_TotalSampleDataLength, 
-                       _kMTPluginTrackReaderProperty_UneditedDuration, _kSampleGeneratorNotification_PrerollSampleNotImmediatelyAvailable, 
+                       _kMTPluginMetadataItemProperty_Value, _kMTPluginSampleCursorExtendedDependencyAttribute_HEVCStepwiseTemporalSubLayerAccess, 
+                       _kMTPluginSampleCursorExtendedDependencyAttribute_HEVCSyncSampleNALUnitType, 
+                       _kMTPluginSampleCursorExtendedDependencyAttribute_HEVCTemporalLevelInfo, 
+                       _kMTPluginSampleCursorExtendedDependencyAttribute_HEVCTemporalSubLayerAccess, 
+                       _kMTPluginTrackReaderProperty_Dimensions, _kMTPluginTrackReaderProperty_Enabled, 
+                       _kMTPluginTrackReaderProperty_EstimatedDataRate, _kMTPluginTrackReaderProperty_ExtendedLanguageTag, 
+                       _kMTPluginTrackReaderProperty_FormatDescriptionArray, _kMTPluginTrackReaderProperty_FrameReorderingRequired, 
+                       _kMTPluginTrackReaderProperty_Metadata, _kMTPluginTrackReaderProperty_NaturalTimescale, 
+                       _kMTPluginTrackReaderProperty_NominalFrameRate, _kMTPluginTrackReaderProperty_PreferredTransform, 
+                       _kMTPluginTrackReaderProperty_TotalSampleDataLength, _kMTPluginTrackReaderProperty_UneditedDuration, 
+                       _kSampleGeneratorNotification_PrerollSampleNotImmediatelyAvailable, 
                        _kSampleGeneratorNotification_ScheduledReadFailed, _kSampleGeneratorScheduledReadFailedKey_ErrorCode, 
                        _kiTunesChapterMetadataItemImageResolution_Key, _kiTunesChapterMetadataItemImageResolution_PixelHeight, 
                        _kiTunesChapterMetadataItemImageResolution_PixelWidth, _kiTunesMetadataItemProperty_ImageResolution ]
-    objc-classes:    [ FigBaseCALayer, FigBaseCALayerHost, FigCaptionLayer, FigNeroLayer, 
-                       FigSubtitleBackdropCALayer, FigSubtitleCALayer, FigVideoContainerLayer ]
+    objc-classes:    [ FigBaseCALayer, FigBaseCALayerHost, FigCaptionBackdropLayer, 
+                       FigCaptionLayer, FigNeroLayer, FigSubtitleBackdropCALayer, 
+                       FigSubtitleCALayer, FigVideoContainerLayer ]
     objc-ivars:      [ FigSubtitleBackdropCALayer.bdLayerInternal, FigSubtitleCALayer.layerInternal ]
 ...

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 85468CFF-0B22-34F8-950D-4D444F215A77' ]
+uuids:           [ 'x86_64: 14E48769-A36C-305A-9C73-ED629EB18F5B' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Message.framework/Versions/B/Message
 current-version: 1604

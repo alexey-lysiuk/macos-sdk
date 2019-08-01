@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AAF61DE0-758D-3220-ADE3-8D1996D908BD' ]
+uuids:           [ 'x86_64: B21B2E0F-F856-3921-B3CA-B20C5F48206D' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/TextToSpeech.framework/Versions/A/TextToSpeech
 exports:         

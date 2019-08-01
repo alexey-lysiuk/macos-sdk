@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 13BCA6D2-98F6-361D-837D-D683EB0E538A' ]
+uuids:           [ 'x86_64: F01E0661-7156-380B-A6A8-B3CFF2BB6D37' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/AutoLoop.framework/Versions/A/AutoLoop
 exports:         

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 07CA7CEF-3948-380C-A933-6446054A2847' ]
+uuids:           [ 'x86_64: 9B4E9C14-753B-301F-96C2-376806756953' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MediaControlSender.framework/Versions/A/MediaControlSender
 exports:         

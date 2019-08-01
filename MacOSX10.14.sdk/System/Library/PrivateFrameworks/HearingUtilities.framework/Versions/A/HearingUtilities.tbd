@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7B7050C5-DBA0-3B92-8918-FBE7F6B2969F' ]
+uuids:           [ 'x86_64: 235717D3-99C4-312A-94A5-218E9861C51A' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/HearingUtilities.framework/Versions/A/HearingUtilities
 exports:         

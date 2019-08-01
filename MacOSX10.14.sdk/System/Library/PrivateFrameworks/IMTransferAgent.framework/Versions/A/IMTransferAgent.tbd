@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9D9BFC15-351C-3F0E-86E4-B5E2295918FC' ]
+uuids:           [ 'x86_64: 7C52C9AF-43A4-3682-A61E-B554030D4082' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/IMTransferAgent.framework/Versions/A/IMTransferAgent
 exports:         

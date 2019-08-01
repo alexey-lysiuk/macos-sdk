@@ -133,7 +133,7 @@
 .\" ========================================================================
 .\"
 .IX Title "PERLFORK 1"
-.TH PERLFORK 1 "2013-11-04" "perl v5.18.2" "Perl Programmers Reference Guide"
+.TH PERLFORK 1 "2014-09-26" "perl v5.18.4" "Perl Programmers Reference Guide"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -277,7 +277,7 @@ pseudo-child created by it that is also a pseudo-parent will only exit
 after their pseudo-children have exited.
 .PP
 Starting with Perl 5.14 a parent will not \fIwait()\fR automatically
-for any child that has been signalled with \f(CW\*(C`sig(\*(AqTERM\*(Aq, ...)\*(C'\fR
+for any child that has been signalled with \f(CW\*(C`kill(\*(AqTERM\*(Aq, ...)\*(C'\fR
 to avoid a deadlock in case the child is blocking on I/O and
 never receives the signal.
 .SH "CAVEATS AND LIMITATIONS"

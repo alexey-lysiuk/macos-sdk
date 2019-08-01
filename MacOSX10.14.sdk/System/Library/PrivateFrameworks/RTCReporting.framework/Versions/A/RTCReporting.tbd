@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F6C1ABA5-36D9-3338-AD76-C10B339937BB' ]
+uuids:           [ 'x86_64: B297695B-2EF1-3172-90E6-2C0480E8FB31' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/RTCReporting.framework/Versions/A/RTCReporting
 exports:         

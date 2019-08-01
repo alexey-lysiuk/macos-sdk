@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8989F8DD-3A3C-37E0-9941-6D00E8B9D545' ]
+uuids:           [ 'x86_64: 72EA4265-4024-3143-80D2-A0074698A376' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Social.framework/Versions/A/Social
-current-version: 565.7
+current-version: 565.9
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]
@@ -72,10 +72,11 @@ exports:
                        SLGoogleLegacyTokenMigrationTokenResponse, SLGoogleOAuth2TokenRequest, 
                        SLGoogleOAuth2TokenResponse, SLGoogleUserInfoResponse, SLGoogleWebAuthRequest, 
                        SLGoogleWebClient, SLGuaranteedRemoteCall, SLInternalTencentWeiboRequest, 
-                       SLLinkedInMacContactUpdaterHelper, SLLinkedInProfile, SLLinkedInServerInterface, 
-                       SLLinkedInSession, SLLinkedInShare, SLManagedObject, SLMicroBlogStatus, 
-                       SLMicroBlogUserRecord, SLNotificationPrefs, SLPlace, SLRemoteSession, 
-                       SLRemoteSessionProxy, SLRequest, SLRequestMultiPart, SLSafeLocationManagerDelegate, 
+                       SLLegacyGooglePlusUserInfoResponse, SLLinkedInMacContactUpdaterHelper, 
+                       SLLinkedInProfile, SLLinkedInServerInterface, SLLinkedInSession, 
+                       SLLinkedInShare, SLManagedObject, SLMicroBlogStatus, SLMicroBlogUserRecord, 
+                       SLNotificationPrefs, SLPlace, SLRemoteSession, SLRemoteSessionProxy, 
+                       SLRequest, SLRequestMultiPart, SLSafeLocationManagerDelegate, 
                        SLService, SLServiceListener, SLTencentWeiboServerInterface, 
                        SLTencentWeiboSession, SLTencentWeiboUserRecord, SLTwitterRequest, 
                        SLTwitterReverseAuthRequest, SLTwitterSession, SLTwitterUserRecord, 

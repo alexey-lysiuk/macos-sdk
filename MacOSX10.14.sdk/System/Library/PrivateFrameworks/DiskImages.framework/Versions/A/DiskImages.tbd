@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D05B1775-2120-35CE-9A21-E1665D123234' ]
+uuids:           [ 'x86_64: 2E15BEFC-21C1-37F9-ADF3-257C911FABCC' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DiskImages.framework/Versions/A/DiskImages
-current-version: 480.250.6
+current-version: 480.255.1
 compatibility-version: 1.0.8
 exports:         
   - archs:           [ x86_64 ]

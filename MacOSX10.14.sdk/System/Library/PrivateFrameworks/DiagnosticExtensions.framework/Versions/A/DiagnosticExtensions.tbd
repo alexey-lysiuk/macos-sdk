@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F3368B42-666E-31E0-B6B9-4032055614FC' ]
+uuids:           [ 'x86_64: ED516C7F-C11E-3D81-911D-CD47AD5E8EEA' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/DiagnosticExtensions.framework/Versions/A/DiagnosticExtensions
 exports:         

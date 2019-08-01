@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FC26689B-7B67-3D4B-9E67-6272DE25C492' ]
+uuids:           [ 'x86_64: 82FC8662-E1D2-37A5-919C-242F3CC7AD6A' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/ScreenSaver.framework/Versions/A/ScreenSaver
 exports:         

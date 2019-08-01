@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D9AA5C9A-A348-3EC4-9811-86F41E25A57A' ]
+uuids:           [ 'x86_64: 93BEB244-38D8-3B93-BF11-D3990DE684E6' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Versions/A/Frameworks/PhotosGraph.framework/Versions/A/Frameworks/PipelineKit.framework/Versions/A/PipelineKit
 exports:         

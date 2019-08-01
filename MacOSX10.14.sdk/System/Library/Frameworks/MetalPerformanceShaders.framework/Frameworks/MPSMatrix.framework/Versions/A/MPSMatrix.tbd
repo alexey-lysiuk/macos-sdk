@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E878F04A-43F8-3AA4-B9D8-0401F5F98653' ]
+uuids:           [ 'x86_64: E64450DF-2B96-331E-B7F4-666E00571C70' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSMatrix.framework/Versions/A/MPSMatrix
 current-version: 121.4.2

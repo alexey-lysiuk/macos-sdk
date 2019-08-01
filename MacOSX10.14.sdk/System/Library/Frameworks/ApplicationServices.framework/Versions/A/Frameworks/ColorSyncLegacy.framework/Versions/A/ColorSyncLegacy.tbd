@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6EDD928D-BC75-385E-AB04-3CB63EAEBF96' ]
+uuids:           [ 'x86_64: C0D9E23C-ABA0-39DE-A4EB-5A41C5499056' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ColorSyncLegacy.framework/Versions/A/ColorSyncLegacy
 objc-constraint: none

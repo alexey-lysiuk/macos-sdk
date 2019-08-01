@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1158E2DE-6A43-3C10-B226-71CDA23D2AFB' ]
+uuids:           [ 'x86_64: BA056A32-4BF0-31FA-8FD9-79163115F93C' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/AdPlatformsInternal.framework/Versions/A/AdPlatformsInternal
 exports:         

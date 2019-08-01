@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5B30E86D-B3AB-3346-A19F-F2CABF342465' ]
+uuids:           [ 'x86_64: A258DA73-114B-3102-A056-4AAAD3CEB9DD' ]
 platform:        zippered
 install-name:    /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/ATS
 current-version: 236

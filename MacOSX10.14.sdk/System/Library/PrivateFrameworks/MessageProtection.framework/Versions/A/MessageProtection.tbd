@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 834EE8EE-1480-3CFE-BDFA-241BCC9F5D3E' ]
+uuids:           [ 'x86_64: 13727888-0BEA-35E1-9CD6-29F04EA00791' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/MessageProtection.framework/Versions/A/MessageProtection
 current-version: 139.200.4

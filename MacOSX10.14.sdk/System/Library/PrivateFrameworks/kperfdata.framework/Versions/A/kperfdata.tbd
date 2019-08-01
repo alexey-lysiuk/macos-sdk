@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5C0659C4-3E2A-3E28-A36D-DC9D4156AC14' ]
+uuids:           [ 'x86_64: 248B4338-2D31-3621-B553-ABB3B9CDCC4F' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/kperfdata.framework/Versions/A/kperfdata
 objc-constraint: none

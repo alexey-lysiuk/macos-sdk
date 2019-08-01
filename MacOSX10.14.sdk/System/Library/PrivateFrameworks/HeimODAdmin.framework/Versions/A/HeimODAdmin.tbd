@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3BB5E09C-C916-346F-A6B5-D96A344E175F' ]
+uuids:           [ 'x86_64: 4D44362D-8F3D-3B01-8ED8-BFDBC4F32562' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/HeimODAdmin.framework/Versions/A/HeimODAdmin
 objc-constraint: none

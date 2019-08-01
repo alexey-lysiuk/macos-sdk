@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C3553B4B-3663-341D-AC5A-38CC19D749D9' ]
+uuids:           [ 'x86_64: 8C4188A4-DB72-372E-8FD7-85AC3E254E02' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/CaptiveNetwork.framework/Versions/A/CaptiveNetwork
 exports:         
@@ -29,10 +29,11 @@ exports:
                        _ServerConnectionResume, ___CNCopyCurrentNetworkInfo, ___CNCopySupportedInterfaces, 
                        ___CNMarkPortalOffline, ___CNMarkPortalOnline, ___CNSetSupportedSSIDs, 
                        _kCNPluginOptionDisplayName, _kCNSCaptiveBypassProperty, _kCNSCaptiveNetworkProperty, 
-                       _kCNSDisabledByCaptiveProperty, _kCNSIsWhitelistedCaptiveNetworkProperty, 
-                       _kCNSNetworkWasCaptiveProperty, _kCNSWebsheetInfoPropertyInterfaceName, 
-                       _kCNSWebsheetInfoPropertySSID, _kCNSWebsheetInfoPropertyURL, 
-                       _kCNSWhitelistedCaptiveNetworkProbeDateProperty, _kCNStateAuthReply, 
-                       _kCNStateBusy, _kCNStateDisabled, _kCNStateKey, _kCNStateRedirect, 
-                       _kCNStateStage, _kCNStateURL, _kCNStateWaitingOnUI, _kCNWebSheetOptionsRedirectURLType ]
+                       _kCNSCaptiveNetworkWebSheetLoginDateProperty, _kCNSDisabledByCaptiveProperty, 
+                       _kCNSIsWhitelistedCaptiveNetworkProperty, _kCNSNetworkWasCaptiveProperty, 
+                       _kCNSWebsheetInfoPropertyInterfaceName, _kCNSWebsheetInfoPropertySSID, 
+                       _kCNSWebsheetInfoPropertyURL, _kCNSWhitelistedCaptiveNetworkProbeDateProperty, 
+                       _kCNStateAuthReply, _kCNStateBusy, _kCNStateDisabled, _kCNStateKey, 
+                       _kCNStateRedirect, _kCNStateStage, _kCNStateURL, _kCNStateWaitingOnUI, 
+                       _kCNWebSheetOptionsRedirectURLType ]
 ...

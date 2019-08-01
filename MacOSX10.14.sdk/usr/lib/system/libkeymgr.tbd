@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BEA04E04-FCF1-3A70-810F-08D0FF54CA36' ]
+uuids:           [ 'x86_64: 0D0F9CA2-8D5A-3273-8723-59987B5827F2' ]
 platform:        zippered
 install-name:    /usr/lib/system/libkeymgr.dylib
 current-version: 30

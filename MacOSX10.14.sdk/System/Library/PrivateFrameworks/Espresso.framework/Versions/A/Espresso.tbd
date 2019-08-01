@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 606AFD0D-D2DF-335C-915D-87A862C46765' ]
+uuids:           [ 'x86_64: 8B56D943-F87B-3A01-B7A4-19DE3312B61C' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/Espresso.framework/Versions/A/Espresso
 current-version: 120

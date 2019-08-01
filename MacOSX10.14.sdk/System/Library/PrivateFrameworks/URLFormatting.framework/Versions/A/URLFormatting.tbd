@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 07170511-A1F9-3C60-BA61-BF4DA94E8A31' ]
+uuids:           [ 'x86_64: C9C4EB02-BCDB-358E-87EC-19EEA897D6C1' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/URLFormatting.framework/Versions/A/URLFormatting
-current-version: 59.42
+current-version: 59.45
 ...

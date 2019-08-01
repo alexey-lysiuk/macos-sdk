@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F21CE523-2C00-3E55-8361-96597F72FFD5' ]
+uuids:           [ 'x86_64: 4544A822-9855-392B-A100-FC3B684A9BA1' ]
 platform:        macosx
 install-name:    /usr/lib/libAppletTranslationLibrary.dylib
 objc-constraint: none

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A6A69A68-C4E9-3C19-A72C-1D8E4372B941' ]
+uuids:           [ 'x86_64: 4A934672-8D79-3248-93FE-8FCD57EA8842' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/FlightUtilities.framework/Versions/A/FlightUtilities
 current-version: 115.10

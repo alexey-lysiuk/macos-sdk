@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A8116AFC-F78F-32BF-A66C-ED3B5E9FF1D9' ]
+uuids:           [ 'x86_64: 756C2253-E8B1-3C48-9945-DE8D6AD24DE2' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/ROCKit.framework/Versions/A/ROCKit
 current-version: 27.6

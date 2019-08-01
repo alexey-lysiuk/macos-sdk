@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8ECC31E6-72AE-3D11-812A-A7EA75D58094' ]
+uuids:           [ 'x86_64: 46818272-55DD-3BFB-9B8A-00047BCBBE99' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/ParsecSubscriptionServiceSupport.framework/Versions/A/ParsecSubscriptionServiceSupport
 exports:         

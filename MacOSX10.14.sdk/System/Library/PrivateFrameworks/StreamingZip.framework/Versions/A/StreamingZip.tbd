@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E25346D8-9C5E-3AD3-9F77-44F8A4449234' ]
+uuids:           [ 'x86_64: 046FAD5C-E0C5-3013-B1FE-24C018A0DDCF' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/StreamingZip.framework/Versions/A/StreamingZip
 exports:         

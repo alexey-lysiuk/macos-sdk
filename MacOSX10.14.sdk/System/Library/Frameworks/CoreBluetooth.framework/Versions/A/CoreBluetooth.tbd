@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D0C72748-F75A-3C27-9620-C7973C4D365D' ]
+uuids:           [ 'x86_64: A73F1709-DD18-3052-9F22-C0015278834B' ]
 platform:        zippered
 install-name:    /System/Library/Frameworks/CoreBluetooth.framework/Versions/A/CoreBluetooth
 objc-constraint: none
@@ -9,7 +9,8 @@ exports:
     symbols:         [ _CBATTErrorDomain, _CBAdvertisementAppleMfgTypeKey, _CBAdvertisementDataAppleBeaconKey, 
                        _CBAdvertisementDataAppleMfgData, _CBAdvertisementDataChannel, 
                        _CBAdvertisementDataDeviceAddress, _CBAdvertisementDataIsConnectable, 
-                       _CBAdvertisementDataLocalNameKey, _CBAdvertisementDataManufacturerDataKey, 
+                       _CBAdvertisementDataLeBluetoothDeviceAddressKey, _CBAdvertisementDataLocalNameKey, 
+                       _CBAdvertisementDataManufacturerDataInternalKey, _CBAdvertisementDataManufacturerDataKey, 
                        _CBAdvertisementDataOverflowServiceUUIDsKey, _CBAdvertisementDataProximityLevelKey, 
                        _CBAdvertisementDataSaturated, _CBAdvertisementDataServiceDataKey, 
                        _CBAdvertisementDataServiceUUIDsKey, _CBAdvertisementDataSolicitedServiceUUIDsKey, 

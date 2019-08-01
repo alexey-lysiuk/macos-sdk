@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6C27F2BF-3050-36EC-A628-152A313E5312' ]
+uuids:           [ 'x86_64: 0F59F59B-AC14-3116-83C5-CF7BC57D9EB1' ]
 platform:        zippered
 install-name:    /System/Library/Frameworks/CoreLocation.framework/Versions/A/CoreLocation
-current-version: 2245.12.30
+current-version: 2245.16.14
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

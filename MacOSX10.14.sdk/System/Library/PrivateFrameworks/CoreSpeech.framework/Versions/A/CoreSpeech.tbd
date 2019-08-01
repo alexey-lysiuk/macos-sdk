@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 539A4E54-236A-3914-9BC8-CC01E7C22A42' ]
+uuids:           [ 'x86_64: 1360984F-CFEF-3BE2-9C0B-1FA18A6C098A' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreSpeech.framework/Versions/A/CoreSpeech
 exports:         
@@ -120,13 +120,14 @@ exports:
                        CSSpIdSATAnalyzer, CSSpIdSpeakerVectorGenerator, CSSpIdTIOnlySpeakerRecognizer, 
                        CSSpIdTrainingParallelRecorder, CSSpIdVTSpeakerRecognizer, 
                        CSSpeakerDetectorNDAPI, CSSpeakerIdRecognizerFactory, CSSpeakerModel, 
-                       CSSpeakerModelRetrainer, CSSpeechController, CSSpeechEndpointAssetMetaUpdateMonitor, 
-                       CSSpeechManager, CSSpeechManagerStateMachineFactory, CSSpringboardStartMonitor, 
-                       CSStateMachine, CSTimerMonitor, CSUtils, CSUtteranceMetadataManager, 
-                       CSVAD2EndpointAnalyzer, CSVTUIASRGrammars, CSVTUIAudioSessionAVVC, 
-                       CSVTUIAudioSessionRemote, CSVTUIKeywordDetector, CSVTUIRegularExpressionMatcher, 
-                       CSVTUITrainingManager, CSVTUITrainingSession, CSVTUITrainingSessionWithPayload, 
-                       CSVoiceProfileContext, CSVoiceTriggerAssetChangeMonitor, CSVoiceTriggerAssetDownloadMonitor, 
+                       CSSpeakerModelRetrainer, CSSpeechController, CSSpeechEndHostTimeEstimator, 
+                       CSSpeechEndpointAssetMetaUpdateMonitor, CSSpeechManager, CSSpeechManagerStateMachineFactory, 
+                       CSSpringboardStartMonitor, CSStateMachine, CSTimerMonitor, 
+                       CSUtils, CSUtteranceMetadataManager, CSVAD2EndpointAnalyzer, 
+                       CSVTUIASRGrammars, CSVTUIAudioSessionAVVC, CSVTUIAudioSessionRemote, 
+                       CSVTUIKeywordDetector, CSVTUIRegularExpressionMatcher, CSVTUITrainingManager, 
+                       CSVTUITrainingSession, CSVTUITrainingSessionWithPayload, CSVoiceProfileContext, 
+                       CSVoiceTriggerAssetChangeMonitor, CSVoiceTriggerAssetDownloadMonitor, 
                        CSVoiceTriggerAssetMetaUpdateMonitor, CSVoiceTriggerEnabledMonitor, 
                        CSVoiceTriggerEnabledPolicyFactory, CSVoiceTriggerEnabledPolicyMac, 
                        CSVoiceTriggerEnabledPolicyNonAOP, CSVoiceTriggerEnrollmentDataManager, 

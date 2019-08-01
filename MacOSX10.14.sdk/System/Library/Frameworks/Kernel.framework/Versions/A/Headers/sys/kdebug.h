@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2000-2016 Apple Inc. All rights reserved.
+ * Copyright (c) 2000-2019 Apple Inc. All rights reserved.
  *
  * @APPLE_OSREFERENCE_LICENSE_HEADER_START@
  *
@@ -187,6 +187,15 @@ __BEGIN_DECLS
 #define DBG_MACH_THREAD_GROUP   0xA6 /* Thread groups */
 #define DBG_MACH_COALITION      0xA7 /* Coalitions */
 #define DBG_MACH_SHAREDREGION   0xA8 /* Shared region */
+#define DBG_MACH_IO             0xAA /* I/O */
+
+/* Codes for DBG_MACH_IO */
+#define DBC_MACH_IO_MMIO_READ           0x1
+#define DBC_MACH_IO_MMIO_WRITE          0x2
+#define DBC_MACH_IO_PHYS_READ           0x3
+#define DBC_MACH_IO_PHYS_WRITE          0x4
+#define DBC_MACH_IO_PORTIO_READ         0x5
+#define DBC_MACH_IO_PORTIO_WRITE        0x6
 
 /* Interrupt type bits for DBG_MACH_EXCP_INTR */
 #define DBG_INTR_TYPE_UNKNOWN   0x0     /* default/unknown interrupt */
@@ -781,6 +790,7 @@ __BEGIN_DECLS
 /* Subclasses for the user space allocator */
 #define DBG_UMALLOC_EXTERNAL                    0x1
 #define DBG_UMALLOC_INTERNAL                    0x2
+
 /**********************************************************************/
 
 #define KDBG_MIGCODE(msgid) ((DBG_MIG << KDBG_CLASS_OFFSET) | \

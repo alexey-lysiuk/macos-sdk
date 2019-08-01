@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5A8540CA-8535-3139-AF1F-E558CC043707' ]
+uuids:           [ 'x86_64: C8C4F16A-F800-3635-82EE-A278CA940E4F' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/Navigation.framework/Versions/A/Navigation
 exports:         

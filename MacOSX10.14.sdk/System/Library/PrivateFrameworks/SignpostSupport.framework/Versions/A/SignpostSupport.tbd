@@ -1,15 +1,16 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3F503394-DF4F-314C-A42C-EA3B3AB64D51' ]
+uuids:           [ 'x86_64: 8A31C61E-406E-3FA0-8DAF-C8D5001FB24F' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/SignpostSupport.framework/Versions/A/SignpostSupport
-current-version: 27
+current-version: 31.1
 exports:         
   - archs:           [ x86_64 ]
-    symbols:         [ _SSCAEventTypeForSignpost, _SSCAIntervalTypeForSignpostInterval, 
-                       _SSCAIsCAMetadataSubsystemCategory, _SSCAIsCAWindowServerInMemorySubsystemCategory, 
-                       _SignpostPlatformForDevice, _SignpostPlatformForString, _SignpostSerializationErrorDomain, 
-                       _SignpostSupportAverageDurationMachContinuousTimeForIntervals, 
+    symbols:         [ _IsPerfLoggingInterval, _PassesPerfLoggingWhitelist, _SSCAEventTypeForSignpost, 
+                       _SSCAIntervalTypeForSignpostInterval, _SSCAIsCAMetadataSubsystemCategory, 
+                       _SSCAIsCAWindowServerInMemorySubsystemCategory, _SignpostPlatformForDevice, 
+                       _SignpostPlatformForString, _SignpostReporterShouldUseWhitelist, 
+                       _SignpostReporterWhitelistedStringSet, _SignpostSupportAverageDurationMachContinuousTimeForIntervals, 
                        _SignpostSupportAverageDurationNsForIntervals, _SignpostSupportAverageDurationOfLongestIntervalsInMachContinuousTime, 
                        _SignpostSupportAverageDurationOfLongestIntervalsInNs, _SignpostSupportAverageDurationOfShortestIntervalsInMachContinuousTime, 
                        _SignpostSupportAverageDurationOfShortestIntervalsInNs, _SignpostSupportDeserializationEnumerateObjectArrayFromData, 
@@ -19,7 +20,8 @@ exports:
                        _SignpostSupportTotalDurationMachContinuousTimeForIntervals, 
                        _SignpostSupportTotalDurationNsForIntervals, _SignpostSupportVersionNumber, 
                        _SignpostSupportVersionString, _SignpostSystemTimebaseRatio, 
-                       _StringForSignpostPlatform, __SignpostSerializeableObjectFromSerializedObjectDictionary, 
+                       _StringForSignpostPlatform, _StringPassesSignpostReporterStringWhitelist, 
+                       __SignpostSerializeableObjectFromSerializedObjectDictionary, 
                        __SignpostSupportSerializationDataFromObjectArray, __signpost_debug_log, 
                        _kSignpostSupportMachTimeTranslator_UnknownTime ]
     objc-classes:    [ SignpostAnimationAccumulatedState, SignpostAnimationInterval, 

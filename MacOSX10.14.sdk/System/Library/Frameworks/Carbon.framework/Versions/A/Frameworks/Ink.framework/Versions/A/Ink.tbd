@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 091165EE-D540-3978-9B0C-2FAB5CB185A8' ]
+uuids:           [ 'x86_64: 7C7E9483-2E91-3DD3-B1E0-C238F42CA0DD' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Ink.framework/Versions/A/Ink
 current-version: 225

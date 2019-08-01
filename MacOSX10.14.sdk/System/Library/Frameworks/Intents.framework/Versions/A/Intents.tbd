@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B04A6DEE-8162-3433-943C-6BEB1F83BDC1' ]
+uuids:           [ 'x86_64: D022E832-CC69-3DB7-9FF4-90647589CF48' ]
 platform:        zippered
 install-name:    /System/Library/Frameworks/Intents.framework/Versions/A/Intents
 objc-constraint: none

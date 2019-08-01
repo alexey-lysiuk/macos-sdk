@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AD9DE1B9-49D8-3328-A132-C06EA5FAA73F' ]
+uuids:           [ 'x86_64: 3FFCAE6B-4CD2-3B8D-AE27-0A3693C9470F' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/AddressBook.framework/Versions/A/AddressBook
-current-version: 1893
+current-version: 1894
 exports:         
   - archs:           [ x86_64 ]
     re-exports:      [ /System/Library/PrivateFrameworks/AddressBookCore.framework/Versions/A/AddressBookCore, 

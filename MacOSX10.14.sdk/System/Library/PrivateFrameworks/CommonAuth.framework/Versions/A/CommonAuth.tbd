@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 55CEF8E6-A659-3D68-BEE0-1236F36E494C' ]
+uuids:           [ 'x86_64: 93335CB6-ABEB-3EC7-A040-8A667F40D5F3' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/CommonAuth.framework/Versions/A/CommonAuth
 objc-constraint: none

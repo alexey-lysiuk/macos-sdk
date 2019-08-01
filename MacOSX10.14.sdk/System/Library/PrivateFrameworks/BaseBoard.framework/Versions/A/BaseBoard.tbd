@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 215A242E-BD57-3A4B-BCA4-FCC9D674CE7B' ]
+uuids:           [ 'x86_64: 68FA8044-F3CD-3BC6-9DAB-27DACF52BFC0' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/BaseBoard.framework/Versions/A/BaseBoard
 current-version: 0
@@ -152,11 +152,7 @@ exports:
                        _BSSqlitePreparedSimpleStatement, _BSTransactionChildRelationship, 
                        _BSTransactionDefaults, _BSTransactionParentRelationship ]
     objc-ivars:      [ BSBaseXPCClient._queue, BSBaseXPCServer._queue, BSBasicServerClient._connection, 
-                       BSDateTimeCache._2daysFromNow, BSDateTimeCache._6daysAgo, 
-                       BSDateTimeCache._lastAttemptedResetTime, BSDateTimeCache._lastSuccessfulResetTime, 
-                       BSDateTimeCache._nextWeek, BSDateTimeCache._prevWeek, BSDateTimeCache._today, 
-                       BSDateTimeCache._tomorrow, BSDateTimeCache._yesterday, BSIntegerMap._mapTable, 
-                       BSIntegerMap._zeroIndexValue, BSIntegerSet._hasZeroValue, 
+                       BSIntegerMap._mapTable, BSIntegerMap._zeroIndexValue, BSIntegerSet._hasZeroValue, 
                        BSIntegerSet._hashTable, BSKeyedSettings._keyMap, BSPowerMonitor._lock_observers, 
                        BSPowerMonitor._observersLock, BSPowerMonitor._queue, BSPowerMonitor._rootDomainConnect, 
                        BSSettings._settingToFlagMap, BSSettings._settingToObjectMap, 

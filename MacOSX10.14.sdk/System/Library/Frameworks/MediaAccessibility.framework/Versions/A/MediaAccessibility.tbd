@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FD877F9B-6CAF-3BCD-8D74-5F25D61CB78C' ]
+uuids:           [ 'x86_64: 76C449C5-DB45-3D7F-BFAD-3DACEF15DA21' ]
 platform:        zippered
 install-name:    /System/Library/Frameworks/MediaAccessibility.framework/Versions/A/MediaAccessibility
 current-version: 62

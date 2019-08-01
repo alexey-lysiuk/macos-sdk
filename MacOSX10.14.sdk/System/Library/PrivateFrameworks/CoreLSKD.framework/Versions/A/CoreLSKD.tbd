@@ -1,10 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B2F388AD-50A7-39F8-BB32-966382ADAE77' ]
+uuids:           [ 'x86_64: E536BEC7-F8BD-3288-8CB9-24C1914B2FCC' ]
 platform:        macosx
 flags:           [ not_app_extension_safe ]
 install-name:    /System/Library/PrivateFrameworks/CoreLSKD.framework/CoreLSKD
-current-version: 10.9
+current-version: 11.3.3
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

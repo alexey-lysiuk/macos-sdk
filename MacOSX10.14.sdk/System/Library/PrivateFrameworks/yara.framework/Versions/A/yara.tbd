@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 421C9373-F451-3216-B167-3FBA05266443' ]
+uuids:           [ 'x86_64: BECBC0B5-B8B1-33C7-9FA4-72232F159D37' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/yara.framework/Versions/A/yara
 objc-constraint: none

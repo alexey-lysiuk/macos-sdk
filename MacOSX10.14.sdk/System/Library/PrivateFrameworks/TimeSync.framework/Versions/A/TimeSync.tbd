@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F0600695-6659-3E14-A065-4CCC5D4D9EA1' ]
+uuids:           [ 'x86_64: F04A4A5B-DBDC-37CA-B9C9-F8C3EB7C537D' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/TimeSync.framework/Versions/A/TimeSync
 exports:         

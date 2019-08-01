@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4B770ECA-7B4F-3498-8483-14ADD5B84408' ]
+uuids:           [ 'x86_64: 244BCAE1-2D75-3D1C-B398-F714CF511EAA' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/OpenCL.framework/Versions/A/Libraries/ImageFormats/float_rgx.dylib
 objc-constraint: none

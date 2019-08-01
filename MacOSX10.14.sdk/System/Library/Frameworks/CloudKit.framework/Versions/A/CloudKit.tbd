@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5ADE7790-97DF-37F4-907D-9893BFA40B38' ]
+uuids:           [ 'x86_64: F643F4D4-7F23-32C3-84E1-7981BD45F64C' ]
 platform:        zippered
 install-name:    /System/Library/Frameworks/CloudKit.framework/Versions/A/CloudKit
-current-version: 736.216
+current-version: 736.232
 objc-constraint: none
 exports:         
   - archs:           [ x86_64 ]

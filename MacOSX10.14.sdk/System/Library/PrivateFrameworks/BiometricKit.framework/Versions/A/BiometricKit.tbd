@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C8ABB585-75FB-3A15-891D-CD63BE0C1A3B' ]
+uuids:           [ 'x86_64: F32FA6F4-B1D8-3B30-AFC2-E805C0455AB9' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/BiometricKit.framework/Versions/A/BiometricKit
 exports:         

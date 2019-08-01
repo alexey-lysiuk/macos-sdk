@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D2B09AFC-BD1B-3EC4-A1C4-F7B3D594D61F' ]
+uuids:           [ 'x86_64: EE60D559-4778-3BB1-A87F-452008CFAC58' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/WebDriver.framework/Versions/A/WebDriver
-current-version: 607.1.40
+current-version: 607.3.8
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _DDExtractFileNameWithoutExtension, _DDIntersectionRange, 

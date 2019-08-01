@@ -106,7 +106,13 @@
 #define SIOCGIFPHYS     _IOWR('i', 53, struct ifreq)    /* get IF wire */
 #define SIOCSIFPHYS      _IOW('i', 54, struct ifreq)    /* set IF wire */
 #define SIOCSIFMEDIA    _IOWR('i', 55, struct ifreq)    /* set net media */
-#define SIOCGIFMEDIA    _IOWR('i', 56, struct ifmediareq) /* get net media */
+
+/*
+ * The command SIOCGIFMEDIA does not allow a process to access the extended
+ * media subtype and extended subtype values are returned as IFM_OTHER.
+ */
+#define SIOCGIFMEDIA    _IOWR('i', 56, struct ifmediareq) /* get compatible net media  */
+
 #define SIOCSIFGENERIC   _IOW('i', 57, struct ifreq)    /* generic IF set op */
 #define SIOCGIFGENERIC  _IOWR('i', 58, struct ifreq)    /* generic IF get op */
 #define SIOCRSLVMULTI   _IOWR('i', 59, struct rslvmulti_req)
@@ -123,6 +129,15 @@
 #define SIOCGIFALTMTU   _IOWR('i', 72, struct ifreq)    /* get if alternate mtu */
 #define SIOCSIFBOND      _IOW('i', 70, struct ifreq)    /* set bond if config */
 #define SIOCGIFBOND     _IOWR('i', 71, struct ifreq)    /* get bond if config */
+
+/*
+ * The command SIOCGIFXMEDIA is meant to be used by processes only to be able
+ * to access the extended media subtypes with the extended IFM_TMASK.
+ *
+ * An ifnet must not implement SIOCGIFXMEDIA as it gets the extended
+ * media subtypes by simply compiling with <net/if_media.h>
+ */
+#define SIOCGIFXMEDIA   _IOWR('i', 72, struct ifmediareq) /* get net extended media */
 
 
 #define SIOCSIFCAP       _IOW('i', 90, struct ifreq)    /* set IF features */

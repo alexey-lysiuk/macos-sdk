@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7BB5AEC5-A509-3188-9884-619E0DF8EED6' ]
+uuids:           [ 'x86_64: A0C91634-9410-38E8-BC11-7A5A369E6BA5' ]
 platform:        macosx
 install-name:    /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices
-current-version: 944.3
+current-version: 946
 parent-umbrella: CoreServices
 exports:         
   - archs:           [ x86_64 ]

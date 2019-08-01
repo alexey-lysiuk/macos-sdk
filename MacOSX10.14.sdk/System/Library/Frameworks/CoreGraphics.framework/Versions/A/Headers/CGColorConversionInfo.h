@@ -31,6 +31,9 @@ typedef CF_ENUM (uint32_t, CGColorConversionInfoTransformType) {
 CG_EXTERN CGColorConversionInfoRef __nullable CGColorConversionInfoCreate(cg_nullable CGColorSpaceRef src, cg_nullable CGColorSpaceRef dst)
     CG_AVAILABLE_STARTING(10.12, 10.0);
 
+CG_EXTERN CGColorConversionInfoRef __nullable CGColorConversionInfoCreateWithOptions(__nonnull CGColorSpaceRef src, __nonnull CGColorSpaceRef dst, CFDictionaryRef __nullable options)
+CG_AVAILABLE_STARTING(10.14.6, 13);
+
 /* Create CGColorConversionInfoRef from a list of CG color spaces, transform types and rendering intents.
  * ColorSpaces are iterated from first to last. The list of triples:
  * {CGColorSpaceRef, CGColorConversionInfoTransformType, CGColorRenderingIntent} must be terminated with NULL

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C0688CEE-5D31-3F74-AF13-CDEC676A9F78' ]
+uuids:           [ 'x86_64: F300FB02-2F0C-3269-8860-8836F1C5F077' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/PhotoAnalysis.framework/Versions/A/Frameworks/PhotosGraph.framework/Versions/A/Frameworks/KnowledgeGraphKit.framework/Versions/A/KnowledgeGraphKit
 exports:         

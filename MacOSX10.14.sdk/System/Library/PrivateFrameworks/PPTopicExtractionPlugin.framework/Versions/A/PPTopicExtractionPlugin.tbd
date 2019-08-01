@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E11B94B2-E139-3FE9-ABA4-1B287D10D810' ]
+uuids:           [ 'x86_64: 48ACEBAA-0879-37ED-889A-0DC94DFB4E14' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/PPTopicExtractionPlugin.framework/Versions/A/PPTopicExtractionPlugin
 exports:         

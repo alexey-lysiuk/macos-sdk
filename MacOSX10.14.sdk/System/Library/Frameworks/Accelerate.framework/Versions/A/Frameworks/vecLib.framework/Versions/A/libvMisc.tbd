@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: AC290632-C0DA-3FB4-992C-DC44B905D78B', 'x86_64h: 41FB4684-9DC8-3C19-8E2D-3BB7E6F74AAA' ]
+uuids:           [ 'x86_64: 9B4E3148-A73F-3DBF-A47B-68DAA26D15BE', 'x86_64h: D5BA4812-BFFC-3CD0-B382-905CD8555DA6' ]
 platform:        zippered
 install-name:    /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libvMisc.dylib
 current-version: 671.250.4

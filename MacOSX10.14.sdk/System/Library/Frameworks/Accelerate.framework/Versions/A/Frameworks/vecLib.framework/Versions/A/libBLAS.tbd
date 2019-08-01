@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: EDCBFA9D-93E3-39AD-913F-25D269394249', 'x86_64h: F2B8340C-4147-3EE4-9BDF-1C259F9CB76E' ]
+uuids:           [ 'x86_64: 02059CCF-0B14-3BFA-9B74-B5685219682E', 'x86_64h: 417CA0FC-B6CB-3FB3-ACBC-8914E3F62D20' ]
 platform:        zippered
 install-name:    /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib
 objc-constraint: none

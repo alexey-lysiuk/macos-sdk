@@ -2286,7 +2286,7 @@
 #define PHP_SIGCHILD 0
 
 /* uname -a output */
-#define PHP_UNAME "Darwin osx391.sd.apple.com 18.0 Darwin Kernel Version 17.0.0: Fri May 4 10:33:38 PDT 2018; root:xnu-4570.1.46.100.2~1/DEVELOPMENT_X86_64 x86_64"
+#define PHP_UNAME "Darwin osx346.sd.apple.com 18.0 Darwin Kernel Version 17.0.0: Fri May 4 10:33:38 PDT 2018; root:xnu-4570.1.46.100.2~1/DEVELOPMENT_X86_64 x86_64"
 
 /* Whether PHP has to use its own crypt_r for blowfish, des and ext des */
 #define PHP_USE_PHP_CRYPT_R 1

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1C76AD80-1106-312E-B2C0-126A8D62F192' ]
+uuids:           [ 'x86_64: 04F482F1-E1C1-3955-8A6C-8AA152AA06F3' ]
 platform:        zippered
 install-name:    /System/Library/Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox
 current-version: 492

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 004123DA-DEF6-3D2F-B13C-4E49E2BB89F3' ]
+uuids:           [ 'x86_64: 5DC9C14F-4724-3542-9D4C-59FB6513FD81' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/UIKitHostAppServices.framework/Versions/A/UIKitHostAppServices
 current-version: 41
@@ -18,7 +18,7 @@ exports:
                        UHASTouchBarItem._itemDescription ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C64AD7B0-92FF-3516-87C3-A83F9B8CED8A' ]
+uuids:           [ 'x86_64: 4EF6A090-5EEE-38F6-A474-5415343A6A6D' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/UIKitHostAppProtocols.framework/Versions/A/UIKitHostAppProtocols
 current-version: 41

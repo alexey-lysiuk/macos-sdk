@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C7A64576-B082-323A-AC02-E890C6DDF181' ]
+uuids:           [ 'x86_64: A04A99B8-DAC5-36FC-BAC7-7431600C1F89' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CoreAVCHD.framework/Versions/A/CoreAVCHD
 current-version: 6000

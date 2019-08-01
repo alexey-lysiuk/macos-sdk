@@ -110,6 +110,7 @@ API_AVAILABLE(macos(10.11), ios(8.0), watchos(2.0), tvos(9.0))
 
 @property BOOL wantsExtendedDynamicRangeContent;
 
+
 /* This property controls if this layer and its drawables will be synchronized
  * to the display's Vsync. The default value is YES. */
 

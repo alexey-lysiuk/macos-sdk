@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 57D5D670-D90D-3951-AE5B-AA8DA56FA92C' ]
+uuids:           [ 'x86_64: 5EA50731-E3C0-3675-B420-49F9DC19656C' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CalendarFoundation.framework/Versions/A/CalendarFoundation
 current-version: 591.3.1

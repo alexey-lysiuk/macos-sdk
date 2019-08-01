@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4E3FB186-831E-33A2-A37E-E2AB953A642F' ]
+uuids:           [ 'x86_64: 272C7469-303B-3F1B-839E-BCC5C1595990' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/CloudServices.framework/Versions/A/CloudServices
 exports:         

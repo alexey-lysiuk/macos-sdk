@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2A637CF5-E50A-3016-88CB-F03F32662886' ]
+uuids:           [ 'x86_64: B5E746AE-1DCB-3299-8626-10CCCBC2D5EE' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/QuickLookThumbnailing.framework/Versions/A/QuickLookThumbnailing
 exports:         

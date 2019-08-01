@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 35C92AD0-DA08-35B3-B0F7-2088705EA2CC' ]
+uuids:           [ 'x86_64: D681A7EF-5E5E-3CFA-9993-61CF1ABE265C' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/RTTUI.framework/Versions/A/RTTUI
 exports:         

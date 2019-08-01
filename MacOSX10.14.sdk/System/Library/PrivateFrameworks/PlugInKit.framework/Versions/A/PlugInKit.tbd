@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 044C51BE-30F6-3085-B63D-4263D3C85584' ]
+uuids:           [ 'x86_64: 910C3AFE-7C46-3C34-B000-4ED92336B9FD' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/PlugInKit.framework/Versions/A/PlugInKit
 exports:         

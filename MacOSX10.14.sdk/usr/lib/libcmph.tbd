@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 740A788E-FD92-36F3-B678-E7D510B1E2A1' ]
+uuids:           [ 'x86_64: 9C52B2FE-179F-32AC-B87E-2AFC49ABF817' ]
 platform:        zippered
 install-name:    /usr/lib/libcmph.dylib
 objc-constraint: none

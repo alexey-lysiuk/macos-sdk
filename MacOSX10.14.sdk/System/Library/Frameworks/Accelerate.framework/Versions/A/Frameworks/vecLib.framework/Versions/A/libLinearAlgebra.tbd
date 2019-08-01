@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: 7B1B0EB3-179A-3FA5-992E-F5D006219874', 'x86_64h: BD6B8E28-C982-3002-868C-C96A18175030' ]
+uuids:           [ 'x86_64: E7507B69-EF24-39D6-9B35-4A66E833C3F8', 'x86_64h: CB671EE6-DEA1-391C-9B2B-AA09A46B4D7A' ]
 platform:        zippered
 install-name:    /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libLinearAlgebra.dylib
 objc-constraint: none

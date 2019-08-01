@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 161764DD-1EC7-3A26-8089-CD24B12F3ED6' ]
+uuids:           [ 'x86_64: 611D62CA-E87B-37DE-90F8-B3DE8A8EA241' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/ServerFoundation.framework/Versions/A/ServerFoundation
 current-version: 2

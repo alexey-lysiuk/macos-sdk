@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 731EEEC5-1613-3725-B33C-B38BBD55FA96' ]
+uuids:           [ 'x86_64: 30CFE05C-4108-3879-AFAA-5BB02CBE190B' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/KeychainCircle.framework/Versions/A/KeychainCircle
 exports:         

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5BD3BABB-D99A-3661-BBEC-BDD255B63C1C' ]
+uuids:           [ 'x86_64: 38191B9B-F811-3298-AEDF-CAC344E4988E' ]
 platform:        macosx
 install-name:    /System/Library/PrivateFrameworks/RapportUI.framework/Versions/A/RapportUI
 current-version: 0

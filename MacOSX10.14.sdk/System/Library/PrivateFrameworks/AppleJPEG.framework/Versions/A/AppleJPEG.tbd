@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EED8C42F-AF5B-355F-BC86-66A6458513C7' ]
+uuids:           [ 'x86_64: 4C1F426B-7D77-3980-9633-7DBD8C666B9A' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/AppleJPEG.framework/Versions/A/AppleJPEG
 objc-constraint: none

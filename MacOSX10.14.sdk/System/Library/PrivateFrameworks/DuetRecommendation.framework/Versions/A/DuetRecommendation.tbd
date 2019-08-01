@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5A6C5E7C-4DFA-3DAD-BB1E-9AD3089432EA' ]
+uuids:           [ 'x86_64: 4A588D4C-D58D-3942-8DF1-42C5A238B1B5' ]
 platform:        zippered
 install-name:    /System/Library/PrivateFrameworks/DuetRecommendation.framework/DuetRecommendation
 exports:         

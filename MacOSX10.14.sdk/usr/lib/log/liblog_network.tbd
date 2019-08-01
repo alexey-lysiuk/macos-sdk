@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CB1FD4A4-982C-3AC7-AAB4-82ACBC614106' ]
+uuids:           [ 'x86_64: C9C042D5-C018-3FB6-AC50-F11F44F3D815' ]
 platform:        zippered
 install-name:    /usr/lib/log/liblog_network.dylib
 exports:         
