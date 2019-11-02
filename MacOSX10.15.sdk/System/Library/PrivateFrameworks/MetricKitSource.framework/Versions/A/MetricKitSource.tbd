@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5F0CD99F-97A5-35EA-9BDC-A84A50741505' ]
+uuids:           [ 'x86_64: C96A7958-9F82-356A-8080-AE8F39EF7261' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/MetricKitSource.framework/Versions/A/MetricKitSource'
 exports:         

@@ -702,7 +702,6 @@ extern const CFStringRef kSecImportItemIdentity
 OSStatus SecPKCS12Import(CFDataRef pkcs12_data, CFDictionaryRef options, CFArrayRef * __nonnull CF_RETURNS_RETAINED items)
      API_AVAILABLE(macos(10.6), ios(2.0));
 
-
 CF_IMPLICIT_BRIDGING_DISABLED
 CF_ASSUME_NONNULL_END
 

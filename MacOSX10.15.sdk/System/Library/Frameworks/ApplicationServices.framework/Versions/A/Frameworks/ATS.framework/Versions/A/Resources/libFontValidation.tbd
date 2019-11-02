@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7BA49F82-2F28-3C34-BC1A-3BAC644BDD16' ]
+uuids:           [ 'x86_64: 8D4B72F8-9707-3385-A9D3-5A97D675ED7E' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Resources/libFontValidation.dylib'
 exports:         

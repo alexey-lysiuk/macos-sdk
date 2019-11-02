@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 489C072C-79EF-32DE-AA05-F53E6EA8C05F', 'x86_64: 489C072C-79EF-32DE-AA05-F53E6EA8C05F' ]
+uuids:           [ 'x86_64: 2BA92C00-27D3-3941-AE2D-A8CC01FFADBA', 'x86_64: 2BA92C00-27D3-3941-AE2D-A8CC01FFADBA' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/RTTUtilities.framework/Versions/A/RTTUtilities'
 exports:         
@@ -15,9 +15,9 @@ exports:
                        _AXTTYMessageKeyWriteAction, _AXTTYPreferredTransportMethodChangedNotification, 
                        _RTTUtilitiesVersionNumber, _RTTUtilitiesVersionString, _accessibilityRTTUtilitiesBundle, 
                        _kAXSRTTSettingsVersionPreference, _kAXSTTYHardwareEnabledPreference, 
-                       _kAXSTTYIncomingCallsTTYPreference, _kAXSTTYPreferenceDomain, 
-                       _kAXSTTYPreferredRelayNumberPreference, _kAXSTTYShouldBeRealtimePreference, 
-                       _kAXSTTYSoftwareEnabledPreference, _ttyLocString, _ttyLocStringAndLocale ]
+                       _kAXSTTYIncomingCallsTTYPreference, _kAXSTTYPreferredRelayNumberPreference, 
+                       _kAXSTTYShouldBeRealtimePreference, _kAXSTTYSoftwareEnabledPreference, 
+                       _ttyLocString, _ttyLocStringAndLocale ]
     objc-classes:    [ AXRTTSettingsListenerHelper, AXTTYSimulatorSubscriptionContext, 
                        RTTCall, RTTController, RTTConversation, RTTDatabaseManager, 
                        RTTDictionaryManager, RTTNanoSettings, RTTRemoteCall, RTTServer, 

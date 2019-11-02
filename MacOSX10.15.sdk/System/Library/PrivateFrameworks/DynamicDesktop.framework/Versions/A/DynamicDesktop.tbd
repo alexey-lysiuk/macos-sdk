@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7722E5F4-085B-37A6-AB14-6A562F3861D6' ]
+uuids:           [ 'x86_64: E720A8E2-636E-3A84-8FFF-F258FE49EB0C' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/DynamicDesktop.framework/Versions/A/DynamicDesktop'
-current-version: 2035
+current-version: 2044.5
 swift-abi-version: 7
 exports:         
   - archs:           [ x86_64 ]

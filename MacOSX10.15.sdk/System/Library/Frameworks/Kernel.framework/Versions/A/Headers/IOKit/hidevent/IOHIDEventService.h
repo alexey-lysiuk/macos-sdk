@@ -105,7 +105,11 @@ struct DebugKeyAction {
  @abstract
  @discussion
  */
-class IOHIDEventService: public IOService
+#if defined(KERNEL) && !defined(KERNEL_PRIVATE)
+class __deprecated_msg("Use DriverKit") IOHIDEventService : public IOService
+#else
+class IOHIDEventService : public IOService
+#endif
 {
     OSDeclareDefaultStructorsWithDispatch( IOHIDEventService )
     

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0FDFFCBB-8574-3CFA-8F16-C02CC81D7984', 'x86_64: 0FDFFCBB-8574-3CFA-8F16-C02CC81D7984' ]
+uuids:           [ 'x86_64: BB2011D9-77DB-3C50-9228-C0A7B3880821', 'x86_64: BB2011D9-77DB-3C50-9228-C0A7B3880821' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreAVCHD.framework/Versions/A/CoreAVCHD'
 current-version: 6100

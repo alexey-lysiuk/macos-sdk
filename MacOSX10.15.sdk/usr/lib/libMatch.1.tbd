@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 233A3A64-1998-3254-9FBD-6DBF1AD8DF9F', 'x86_64: 233A3A64-1998-3254-9FBD-6DBF1AD8DF9F' ]
+uuids:           [ 'x86_64: D059FA22-1620-3A26-BF81-70EA469C97EB', 'x86_64: D059FA22-1620-3A26-BF81-70EA469C97EB' ]
 platform:        zippered
 install-name:    '/usr/lib/libMatch.1.dylib'
 exports:         

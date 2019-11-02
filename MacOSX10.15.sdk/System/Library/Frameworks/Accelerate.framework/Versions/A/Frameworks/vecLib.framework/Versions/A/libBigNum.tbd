@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BCDE66E2-AC1F-3C6C-93AC-1DCEA46F6B62' ]
+uuids:           [ 'x86_64: ABC04CA1-BB4E-3D99-AA4F-5B6F4E9DADC6' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBigNum.dylib'
 ...

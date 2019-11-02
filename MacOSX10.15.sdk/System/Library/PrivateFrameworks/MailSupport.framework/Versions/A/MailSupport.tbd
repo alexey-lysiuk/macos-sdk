@@ -1,15 +1,15 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4EED4C64-EA8B-3F69-BE0A-AC8B33EA8531', 'x86_64: 4EED4C64-EA8B-3F69-BE0A-AC8B33EA8531' ]
+uuids:           [ 'x86_64: 605C35DD-C71E-3668-A298-DE93112E5909', 'x86_64: 605C35DD-C71E-3668-A298-DE93112E5909' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/MailSupport.framework/Versions/A/MailSupport'
-current-version: 3578.1
+current-version: 3601.0.7
 exports:         
   - archs:           [ x86_64 ]
     allowable-clients: [ EmailTests, IMAP, MIME, Mail, MailCompositionService, MailIntentsExtension, 
                          MailNotificationContentExtension, MailQuickLookExtension, 
-                         MailUI, MailUnitTests, MailWebProcessSupport, Message, MessageUI, 
-                         MessageUITests, MobileMail, MobileMailInternalSettings, 
+                         MailUI, MailUnitTests, MailWebProcessBundle, MailWebProcessSupport, 
+                         Message, MessageUI, MessageUITests, MobileMail, MobileMailInternalSettings, 
                          MobileMailUI, NLPLearner, NLPLearnerTests, NanoMailBridgeSettings, 
                          NanoMailKitClient, PFLTests, POP, QuickTypeDESPlugin, maild ]
     symbols:         [ _AWDMailAutoFetchReportReadFrom, _AWDMailCannotGetMailErrorReportReadFrom, 
@@ -68,10 +68,12 @@ exports:
                        _MSAccessibilityIdentifierTextFormatListNumberButton, _MSAccessibilityIdentifierTextFormatStrikethroughButton, 
                        _MSAccessibilityIdentifierTextFormatTextColorButton, _MSAccessibilityIdentifierTextFormatTitle, 
                        _MSAccessibilityIdentifierTextFormatUnderlineButton, _MSAccessibilityIdentifierToField, 
-                       _MSComposeBodyFieldExceptionKeyCallStackSymbols, _MSComposeBodyFieldExceptionKeyJavaScriptStack, 
+                       _MSBlobURLScheme, _MSComposeBodyFieldExceptionKeyCallStackSymbols, 
+                       _MSComposeBodyFieldExceptionKeyJavaScriptStack, _MSContentIDURLScheme, 
                        _MSCopyClosestMatchingExistingContactUsingAddressesAndDisplayName, 
                        _MSCopyClosestMatchingExistingContactUsingAddressesAndDisplayNameUnified, 
-                       _MSDescriptorForRequiredKeysForCompositeName, _MSFetchNonUnifiedContactsForPredicate, 
+                       _MSDataURLScheme, _MSDescriptorForRequiredKeysForCompositeName, 
+                       _MSFetchNonUnifiedContactsForPredicate, _MSFileURLScheme, 
                        _MSMailAccountStatisticsKindAOL, _MSMailAccountStatisticsKindExchange, 
                        _MSMailAccountStatisticsKindGmail, _MSMailAccountStatisticsKindHotmail, 
                        _MSMailAccountStatisticsKindICloud, _MSMailAccountStatisticsKindIMAP, 

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 77C4B489-1CF2-3F76-93B4-3CB85F537A17', 'x86_64: 77C4B489-1CF2-3F76-93B4-3CB85F537A17' ]
+uuids:           [ 'x86_64: 7A2329E0-3C84-3DB7-BC32-E7796C50D621', 'x86_64: 7A2329E0-3C84-3DB7-BC32-E7796C50D621' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_configuration.dylib'
-current-version: 1061.0.2
+current-version: 1061.40.2
 parent-umbrella: System
 exports:         
   - archs:           [ x86_64 ]

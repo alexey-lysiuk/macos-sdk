@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 60C488E4-AFB5-346C-9ADE-2C754F435465', 'x86_64: 60C488E4-AFB5-346C-9ADE-2C754F435465' ]
+uuids:           [ 'x86_64: A52A533D-DA25-3607-A18E-CA7C539E1C52', 'x86_64: A52A533D-DA25-3607-A18E-CA7C539E1C52' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration'
-current-version: 1061.0.2
+current-version: 1061.40.2
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CNCopyCurrentNetworkInfo, _CNCopySupportedInterfaces, _CNMarkPortalOffline, 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 756B9030-C2C1-3F84-90A6-B38AD8FD7C56' ]
+uuids:           [ 'x86_64: A716AF73-52D5-391F-94A7-380291D907D0' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/iPodSync.framework/Versions/A/iPodSync'
 current-version: 121.1

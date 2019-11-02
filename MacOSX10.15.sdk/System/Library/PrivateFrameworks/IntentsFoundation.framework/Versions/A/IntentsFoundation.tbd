@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 564B5D11-F7B6-3CDC-835C-B429665DE62D', 'x86_64: 564B5D11-F7B6-3CDC-835C-B429665DE62D' ]
+uuids:           [ 'x86_64: 370929EA-5643-3EE7-A2A9-1C41C2389074', 'x86_64: 370929EA-5643-3EE7-A2A9-1C41C2389074' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/IntentsFoundation.framework/Versions/A/IntentsFoundation'
 exports:         

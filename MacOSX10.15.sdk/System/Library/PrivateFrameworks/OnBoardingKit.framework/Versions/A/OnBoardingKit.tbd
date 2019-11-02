@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1688E889-F6A0-3313-8CAA-B87E19F5A726' ]
+uuids:           [ 'x86_64: 7FCA5A11-5ACB-3B99-ACDE-733E76E570BB' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/OnBoardingKit.framework/Versions/A/OnBoardingKit'
 exports:         
@@ -13,11 +13,12 @@ exports:
                        _OBPrivacyAppleMusicIdentifier, _OBPrivacyApplePayCashIdentifier, 
                        _OBPrivacyApplePayIdentifier, _OBPrivacyAskSiriIdentifier, 
                        _OBPrivacyBusinessChatIdentifier, _OBPrivacyClassKitIdentifier, 
-                       _OBPrivacyCloudCallingIdentifier, _OBPrivacyEmergencySOSIdentifier, 
-                       _OBPrivacyFaceIDDiagnosticsIdentifier, _OBPrivacyFaceIDIdentifier, 
-                       _OBPrivacyGameCenterIdentifier, _OBPrivacyGymKitIdentifier, 
-                       _OBPrivacyHealthRecordsIdentifier, _OBPrivacyImproveHealthIdentifier, 
-                       _OBPrivacyImproveHealthRecordsIdentifier, _OBPrivacyImproveMapsIdentifier, 
+                       _OBPrivacyCloudCallingIdentifier, _OBPrivacyDictationIdentifier, 
+                       _OBPrivacyEmergencySOSIdentifier, _OBPrivacyFaceIDDiagnosticsIdentifier, 
+                       _OBPrivacyFaceIDIdentifier, _OBPrivacyGameCenterIdentifier, 
+                       _OBPrivacyGymKitIdentifier, _OBPrivacyHealthRecordsIdentifier, 
+                       _OBPrivacyImproveHealthIdentifier, _OBPrivacyImproveHealthRecordsIdentifier, 
+                       _OBPrivacyImproveMapsIdentifier, _OBPrivacyImproveSiriIdentifier, 
                        _OBPrivacyLocationServicesIdentifier, _OBPrivacyMapsRAPIdentifier, 
                        _OBPrivacyNewsIdentifier, _OBPrivacyPodcastsIdentifier, _OBPrivacyPrivacyPaneIdentifier, 
                        _OBPrivacyPrivacyPaneMiniIdentifier, _OBPrivacySafariIdentifier, 

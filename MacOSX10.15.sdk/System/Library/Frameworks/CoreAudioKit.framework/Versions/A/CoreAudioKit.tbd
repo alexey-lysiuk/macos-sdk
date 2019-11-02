@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8B8D77F4-2689-3AD4-B660-FF197AC12083' ]
+uuids:           [ 'x86_64: D9698F91-844E-3E41-AF88-FB2BE7B56984' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/CoreAudioKit.framework/Versions/A/CoreAudioKit'
 exports:         

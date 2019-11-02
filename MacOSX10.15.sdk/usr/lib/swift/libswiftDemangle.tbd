@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E700D43C-D210-364E-9357-CEBA0942B216' ]
+uuids:           [ 'x86_64: 928F575A-19A1-3E21-A1AD-7A24534EA777' ]
 platform:        macosx
 install-name:    '/usr/lib/swift/libswiftDemangle.dylib'
 current-version: 1100.8.255
@@ -115,6 +115,7 @@ exports:
                        __ZN5swift8Demangle9Demangler30demangleRetroactiveConformanceEv, 
                        __ZN5swift8Demangle9Demangler31popDependentProtocolConformanceEv, 
                        __ZN5swift8Demangle9Demangler32demanglePrivateContextDescriptorEv, 
+                       __ZN5swift8Demangle9Demangler33demangleDependentConformanceIndexEv, 
                        __ZN5swift8Demangle9Demangler33popDependentAssociatedConformanceEv, 
                        __ZN5swift8Demangle9Demangler35demangleConcreteProtocolConformanceEv, 
                        __ZN5swift8Demangle9Demangler40demangleDependentProtocolConformanceRootEv, 

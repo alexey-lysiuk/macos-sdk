@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E85E7213-15CE-3C96-9494-7F35E99C26EE', 'x86_64: E85E7213-15CE-3C96-9494-7F35E99C26EE' ]
+uuids:           [ 'x86_64: 51B9680F-41CE-394E-A600-1B5B0EC8D52B', 'x86_64: 51B9680F-41CE-394E-A600-1B5B0EC8D52B' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/login.framework/Versions/A/login'
 exports:         
@@ -94,7 +94,7 @@ exports:
                        LFSessionAgentMessageHandler._miniBuddyCompletionBlockQueue ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FD40A145-2FC6-3401-97AB-2E382A238786', 'x86_64: FD40A145-2FC6-3401-97AB-2E382A238786' ]
+uuids:           [ 'x86_64: FFE90A0A-BEBC-3032-9368-94C016BE0795', 'x86_64: FFE90A0A-BEBC-3032-9368-94C016BE0795' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/login.framework/Versions/A/Frameworks/loginsupport.framework/Versions/A/loginsupport'
 exports:         

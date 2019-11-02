@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7CC09B90-D92E-3A1A-BA55-247A6EB05C9E', 'x86_64: 7CC09B90-D92E-3A1A-BA55-247A6EB05C9E' ]
+uuids:           [ 'x86_64: 64947BC3-DE21-3220-AE94-436A86A5D083', 'x86_64: 64947BC3-DE21-3220-AE94-436A86A5D083' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/InternationalTextSearch.framework/Versions/A/InternationalTextSearch'
 exports:         

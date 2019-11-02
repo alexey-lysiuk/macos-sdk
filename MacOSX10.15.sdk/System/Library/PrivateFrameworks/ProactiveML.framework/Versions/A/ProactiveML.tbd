@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 810357B6-15BA-379B-876B-30582F06B871', 'x86_64: 810357B6-15BA-379B-876B-30582F06B871' ]
+uuids:           [ 'x86_64: F968CCD4-4C5C-35A2-8137-7660B2AACD50', 'x86_64: F968CCD4-4C5C-35A2-8137-7660B2AACD50' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ProactiveML.framework/Versions/A/ProactiveML'
-current-version: 1052
+current-version: 1052.14
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _AWDProactiveModelFittingAvailableSessionsReadFrom, _AWDProactiveModelFittingEvalMetricsReadFrom, 
@@ -18,7 +18,7 @@ exports:
                        _AWDProactiveModelFittingSparseFloatVectorReadFrom, _PMLBuildChunkFile, 
                        _PMLErrorDomain, _PMLReadChunkData, _PMLReadChunkFile, _PMLWriteChunkFile, 
                        _PML_LogHandle, _PML_PLIST_CLASS_NAME, _ProactiveMLVersionNumber, 
-                       _ProactiveMLVersionString ]
+                       _ProactiveMLVersionString, _kPFLIdentifierContacts, _kPFLIdentifierQuickResponses ]
     objc-classes:    [ AWDProactiveModelFittingAvailableSessions, AWDProactiveModelFittingEvalMetrics, 
                        AWDProactiveModelFittingEvaluation, AWDProactiveModelFittingLabelSupportPair, 
                        AWDProactiveModelFittingLinRegFeatureMatrix, AWDProactiveModelFittingLinRegObjectiveFeatures, 

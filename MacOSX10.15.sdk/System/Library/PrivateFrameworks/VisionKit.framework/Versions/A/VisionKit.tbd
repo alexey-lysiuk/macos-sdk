@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 67058260-CAF6-3283-8CBD-E9E4C62AD937' ]
+uuids:           [ 'x86_64: 20D24E33-F084-332B-8C16-B4C584D231B0' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/VisionKit.framework/Versions/A/VisionKit'
 exports:         

@@ -117,8 +117,9 @@
 #define MAC_OS_X_VERSION_10_14_1    101401
 #define MAC_OS_X_VERSION_10_14_4    101404
 #define MAC_OS_X_VERSION_10_15      101500
+#define MAC_OS_X_VERSION_10_15_1    101501
 
-/* 
+/*
  * If min OS not specified, assume 10.4 for intel
  * Note: compiler driver may set _ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED_ based on MACOSX_DEPLOYMENT_TARGET environment variable
  */

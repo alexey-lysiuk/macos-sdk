@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FDFEEC6F-70F4-3814-96FD-817A45688C21' ]
+uuids:           [ 'x86_64: BA2461D1-D8E3-3939-826B-2D22037189F3' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/MultipeerConnectivity.framework/Versions/A/MultipeerConnectivity'
 current-version: 164

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 90BAE50D-C605-39F4-9BEB-AB44DCDA2E0D', 'x86_64: 90BAE50D-C605-39F4-9BEB-AB44DCDA2E0D' ]
+uuids:           [ 'x86_64: 6C075457-FEBB-3DF5-853A-7BF15ED4B461', 'x86_64: 6C075457-FEBB-3DF5-853A-7BF15ED4B461' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/EmbeddedAcousticRecognition.framework/Versions/A/EmbeddedAcousticRecognition'
 exports:         
@@ -50,6 +50,7 @@ exports:
                        _EARResultCombiner, _EARSpeechModelInfo, _EARSpeechRecognition, 
                        _EARSpeechRecognitionAudioBuffer, _EARSpeechRecognitionResult, 
                        _EARSpeechRecognitionResultPackage, _EARSpeechRecognitionToken, 
-                       _EARSpeechRecognizer, _EARSystemResult, _EARTransformUtil, 
-                       _EARUserProfile, _EARUserProfileBuilder, _EARWordPart ]
+                       _EARSpeechRecognizer, _EARSyncSpeechRecognizer, _EARSystemResult, 
+                       _EARTransformUtil, _EARUserProfile, _EARUserProfileBuilder, 
+                       _EARWordPart ]
 ...

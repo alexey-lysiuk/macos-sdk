@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 33724A97-1BD3-3F53-B50D-3854AA978A8F' ]
+uuids:           [ 'x86_64: 38246F1B-3150-3015-90FC-1DA00ACB4C80' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/LoginUIKit.framework/Versions/A/LoginUIKit'
 exports:         
@@ -123,7 +123,7 @@ exports:
                        LUIWindowController._mainWindow ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 42E5535D-F68D-319C-8842-17E04831F32B' ]
+uuids:           [ 'x86_64: 7E1FC261-596B-3EBF-8BA2-0E2D616C9103' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/LoginUIKit.framework/Versions/A/Frameworks/LoginUICore.framework/Versions/A/LoginUICore'
 exports:         

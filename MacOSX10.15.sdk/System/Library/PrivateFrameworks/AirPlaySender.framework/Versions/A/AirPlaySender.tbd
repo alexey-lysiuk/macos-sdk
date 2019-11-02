@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 881A5E9C-2D37-3110-BB23-74D9143298E6' ]
+uuids:           [ 'x86_64: 8ECDBD5E-9A65-3715-AED1-4F6AA515A7B8' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AirPlaySender.framework/Versions/A/AirPlaySender'
 exports:         
@@ -74,9 +74,11 @@ exports:
                        _gLogCategory_APSenderStatsCollector, _gLogCategory_APVirtualDisplaySink, 
                        _gLogCategory_APVirtualDisplayTestSink, _gLogCategory_AirPlayDebugIPCUtilities, 
                        _gLogCategory_AirPlayJitterBuffer, _gLogCategory_EndpointPlaybackSessionMC, 
-                       _kAPAudioCompressionSourceProperty_PacketSizeLimit, _kAPAudioCompressionSourceProperty_VBRBitRate, 
-                       _kAPAudioEngineCreationOption_AudioFormat, _kAPAudioEngineCreationOption_StreamType, 
-                       _kAPAudioEngineDeregistrationOption_SuspendAfterDeregistration, 
+                       _kAPAudioCompressionSourceProperty_AlgorithmicLatency, _kAPAudioCompressionSourceProperty_PacketSizeLimit, 
+                       _kAPAudioCompressionSourceProperty_VBRBitRate, _kAPAudioEngineBufferingPriority_Relaxed, 
+                       _kAPAudioEngineBufferingPriority_Urgent, _kAPAudioEngineCreationOption_AudioFormat, 
+                       _kAPAudioEngineCreationOption_StreamType, _kAPAudioEngineDeregistrationOption_SuspendAfterDeregistration, 
+                       _kAPAudioEngineNotificationKey_BufferingPriority, _kAPAudioEngineNotification_BufferingPriorityChanged, 
                        _kAPAudioEngineProperty_ActiveAudioFormat, _kAPAudioEngineProperty_AudioSource, 
                        _kAPAudioEngineProperty_Cryptor, _kAPAudioEngineProperty_CurrentRTPTime, 
                        _kAPAudioEngineProperty_FramesPerPacket, _kAPAudioEngineProperty_MessageRingCapacity, 
@@ -192,7 +194,8 @@ exports:
                        _kAPEndpointManagerProperty_PeerToPeerActive, _kAPEndpointManagerProperty_PeerToPeerEnabled, 
                        _kAPEndpointManagerProperty_ShowInfo, _kAPEndpointManagerShowInfoKey_ActivatedEndpointShowInfos, 
                        _kAPEndpointManagerShowInfoKey_DetailedDescription, _kAPEndpointManagerShowInfoKey_EndpointShowInfos, 
-                       _kAPEndpointNotificationPayloadKey_WasAutoconnected, _kAPEndpointPlaybackSessionAudioMode_Default, 
+                       _kAPEndpointNotificationPayloadKey_IsInUse, _kAPEndpointNotificationPayloadKey_WasAutoconnected, 
+                       _kAPEndpointNotification_IsInUseDidChange, _kAPEndpointPlaybackSessionAudioMode_Default, 
                        _kAPEndpointPlaybackSessionAudioMode_MoviePlayback, _kAPEndpointPlaybackSessionCreationOptionKey_EndpointActivationTime, 
                        _kAPEndpointPlaybackSessionCreationOptionKey_EndpointID, _kAPEndpointPlaybackSessionCreationOptionKey_InitialVolumeDB, 
                        _kAPEndpointPlaybackSessionCreationOptionKey_MetadataSource, 

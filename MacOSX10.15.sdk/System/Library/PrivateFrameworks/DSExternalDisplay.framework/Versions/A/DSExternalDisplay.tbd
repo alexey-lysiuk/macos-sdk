@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EAA6162D-5EF5-3DD4-B23E-D64A4CA58479', 'x86_64: EAA6162D-5EF5-3DD4-B23E-D64A4CA58479' ]
+uuids:           [ 'x86_64: F34E4A29-FD30-3DD0-946E-0AEDAE04EB18', 'x86_64: F34E4A29-FD30-3DD0-946E-0AEDAE04EB18' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/DSExternalDisplay.framework/Versions/A/DSExternalDisplay'
 exports:         

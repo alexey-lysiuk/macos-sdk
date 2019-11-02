@@ -11,6 +11,8 @@ typedef NS_ENUM(NSInteger, ASAuthorizationAppleIDButtonType) {
     ASAuthorizationAppleIDButtonTypeSignIn,
     ASAuthorizationAppleIDButtonTypeContinue,
 
+    ASAuthorizationAppleIDButtonTypeSignUp API_AVAILABLE(ios(13.2), macos(10.15.1), tvos(13.1)) API_UNAVAILABLE(watchos),
+
     ASAuthorizationAppleIDButtonTypeDefault = ASAuthorizationAppleIDButtonTypeSignIn,
 } NS_SWIFT_NAME(ASAuthorizationAppleIDButton.ButtonType) API_AVAILABLE(ios(13.0), macos(10.15), tvos(13.0)) API_UNAVAILABLE(watchos);
 

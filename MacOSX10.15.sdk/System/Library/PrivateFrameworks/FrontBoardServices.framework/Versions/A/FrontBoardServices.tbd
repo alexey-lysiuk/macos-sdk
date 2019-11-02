@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 36CBE5A5-9F37-3D67-93F0-0509C3D05EEE', 'x86_64: 36CBE5A5-9F37-3D67-93F0-0509C3D05EEE' ]
+uuids:           [ 'x86_64: 700BB434-FADB-3C49-AC07-DF7FE3586418', 'x86_64: 700BB434-FADB-3C49-AC07-DF7FE3586418' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/FrontBoardServices.framework/Versions/A/FrontBoardServices'
 current-version: 0
@@ -58,17 +58,17 @@ exports:
                        _FBSOpenApplicationOptionKeyPayloadIsValid4LS, _FBSOpenApplicationOptionKeyPayloadOptions, 
                        _FBSOpenApplicationOptionKeyPayloadURL, _FBSOpenApplicationOptionKeyPromptUnlockDevice, 
                        _FBSOpenApplicationOptionKeyServiceAvailabilityTimeout, _FBSOpenApplicationOptionKeyUnlockDevice, 
-                       _FBSOpenApplicationServiceErrorCodeToString, _FBSOpenApplicationServiceErrorDomain, 
-                       _FBSOpenApplicationWithNewScene, _FBSOrientationObserverInterestAll, 
-                       _FBSOrientationObserverMessageKeyDuration, _FBSOrientationObserverMessageKeyOrientationInterest, 
-                       _FBSOrientationObserverMessageKeyRotationDirection, _FBSOrientationObserverMessageKeySequenceNumber, 
-                       _FBSOrientationObserverMessageKeyUIOrientation, _FBSOrientationObserverServiceIdentifier, 
-                       _FBSProcessExceptionCodeDescription, _FBSProcessGraphicsPolicyDescription, 
-                       _FBSProcessJetsamPolicyDescription, _FBSProcessPrettyDescription, 
-                       _FBSProcessResourceAllowanceExtend, _FBSProcessResourceAllowanceGetType, 
-                       _FBSProcessResourceAllowanceGetValue, _FBSProcessResourceAllowanceIsValid, 
-                       _FBSProcessResourceAllowanceMake, _FBSProcessResourceAllowanceMakeWithRealTimeInterval, 
-                       _FBSProcessResourceAllowanceMakeWithScheduledTimeInterval, 
+                       _FBSOpenApplicationOptionKeyUserActivity4LS, _FBSOpenApplicationServiceErrorCodeToString, 
+                       _FBSOpenApplicationServiceErrorDomain, _FBSOpenApplicationWithNewScene, 
+                       _FBSOrientationObserverInterestAll, _FBSOrientationObserverMessageKeyDuration, 
+                       _FBSOrientationObserverMessageKeyOrientationInterest, _FBSOrientationObserverMessageKeyRotationDirection, 
+                       _FBSOrientationObserverMessageKeySequenceNumber, _FBSOrientationObserverMessageKeyUIOrientation, 
+                       _FBSOrientationObserverServiceIdentifier, _FBSProcessExceptionCodeDescription, 
+                       _FBSProcessGraphicsPolicyDescription, _FBSProcessJetsamPolicyDescription, 
+                       _FBSProcessPrettyDescription, _FBSProcessResourceAllowanceExtend, 
+                       _FBSProcessResourceAllowanceGetType, _FBSProcessResourceAllowanceGetValue, 
+                       _FBSProcessResourceAllowanceIsValid, _FBSProcessResourceAllowanceMake, 
+                       _FBSProcessResourceAllowanceMakeWithRealTimeInterval, _FBSProcessResourceAllowanceMakeWithScheduledTimeInterval, 
                        _FBSProcessResourceAllowanceMakeWithScheduledTimeIntervalAndRefreshInterval, 
                        _FBSProcessResourceAllowanceMakeWithTimeInterval, _FBSProcessResourceAllowanceMakeWithValue, 
                        _FBSProcessResourceAllowanceScale, _FBSProcessResourceAllowanceValue, 
@@ -159,7 +159,7 @@ exports:
                        FBSSceneTransitionContext._watchdogTransitionContext ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FCAB05AD-2B17-3806-B7FB-4F422F003EAB', 'x86_64: FCAB05AD-2B17-3806-B7FB-4F422F003EAB' ]
+uuids:           [ 'x86_64: 1A44B522-904F-3541-BC8C-5EDF0C6EE49C', 'x86_64: 1A44B522-904F-3541-BC8C-5EDF0C6EE49C' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/BaseBoard.framework/Versions/A/BaseBoard'
 current-version: 0
@@ -286,12 +286,12 @@ exports:
                        BSActionResponse, BSAnimationSettings, BSAtomicFlag, BSAtomicSignal, 
                        BSAuditHistory, BSAuditHistoryItem, BSAuditToken, BSBaseXPCClient, 
                        BSBaseXPCServer, BSBasicServerClient, BSBlockSentinel, BSBlockTransaction, 
-                       BSCFBundle, BSCGImageFromIOSurfaceBuilder, BSColor, BSCopyingCacheSet, 
-                       BSCornerRadiusConfiguration, BSDateFormatterCache, BSDateTimeCache, 
-                       BSDescriptionBuilder, BSDispatchQueueAttributes, BSEqualsBuilder, 
-                       BSError, BSEventQueue, BSEventQueueEvent, BSEventQueueLock, 
-                       BSHashBuilder, BSIntegerMap, BSIntegerSet, BSKeyedSettings, 
-                       BSLogStateCaptureEntry, BSMIGServer, BSMachPortReceiveRight, 
+                       BSCFBundle, BSCGImageFromIOSurfaceBuilder, BSColor, BSCompoundAssertion, 
+                       BSCopyingCacheSet, BSCornerRadiusConfiguration, BSDateFormatterCache, 
+                       BSDateTimeCache, BSDescriptionBuilder, BSDispatchQueueAttributes, 
+                       BSEqualsBuilder, BSError, BSEventQueue, BSEventQueueEvent, 
+                       BSEventQueueLock, BSHashBuilder, BSIntegerMap, BSIntegerSet, 
+                       BSKeyedSettings, BSLogStateCaptureEntry, BSMIGServer, BSMachPortReceiveRight, 
                        BSMachPortRight, BSMachPortSendRight, BSMachPortTaskNameRight, 
                        BSMachPortTransferableSendRight, BSMonotonicReferenceTime, 
                        BSMutableAnimationSettings, BSMutableIntegerMap, BSMutableIntegerSet, 
@@ -312,7 +312,7 @@ exports:
                        BSXPCCoder._message, BSXPCCoder._xpcConnection ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CCB26AA1-A062-3999-84FA-9B6627789047' ]
+uuids:           [ 'x86_64: 4FB18B88-8B58-3963-8DE9-B49CBA7B1BCF' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/BoardServices.framework/Versions/A/BoardServices'
 current-version: 0

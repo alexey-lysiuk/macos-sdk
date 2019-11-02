@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 91462FC8-AFBA-395B-86C0-45CE147F5D02', 'x86_64: 91462FC8-AFBA-395B-86C0-45CE147F5D02' ]
+uuids:           [ 'x86_64: DA23246F-9BB6-3FB8-86F0-A50C73C9C31B', 'x86_64: DA23246F-9BB6-3FB8-86F0-A50C73C9C31B' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/GameCenterFoundation.framework/Versions/A/GameCenterFoundation'
 exports:         

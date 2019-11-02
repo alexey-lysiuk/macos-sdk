@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D59E90EB-110A-3729-BF21-28D27EE59ADB' ]
+uuids:           [ 'x86_64: E7EEEDB2-D1E3-3DCF-9B26-D6DBF7191A88' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/MonitorPanel.framework/Versions/A/MonitorPanel'
 exports:         

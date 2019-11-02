@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 10EE2766-C4DA-3A08-AF06-A79F253BBE01' ]
+uuids:           [ 'x86_64: 0215A0C2-0B80-3C6D-990E-54BDBD57F16C' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/MLFoundation.framework/Versions/A/MLFoundation'
 exports:         

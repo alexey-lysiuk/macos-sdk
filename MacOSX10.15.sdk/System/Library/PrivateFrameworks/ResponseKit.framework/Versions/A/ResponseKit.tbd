@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6634A9A0-C358-300E-801F-9A3CDC5752B3', 'x86_64: 6634A9A0-C358-300E-801F-9A3CDC5752B3' ]
+uuids:           [ 'x86_64: 90DECB43-ABEE-3F81-AA3A-F495FF904FD7', 'x86_64: 90DECB43-ABEE-3F81-AA3A-F495FF904FD7' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ResponseKit.framework/Versions/A/ResponseKit'
 current-version: 148

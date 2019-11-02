@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A09C743C-1757-308C-9DCD-B0DEF587BCF5', 'x86_64: A09C743C-1757-308C-9DCD-B0DEF587BCF5' ]
+uuids:           [ 'x86_64: E6755796-E58D-3C24-A0E9-0029521120C4', 'x86_64: E6755796-E58D-3C24-A0E9-0029521120C4' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/FileProvider.framework/Versions/A/FileProvider'
 exports:         
@@ -74,7 +74,8 @@ exports:
                        _FPSpotlightIndexDidChangeNotification, _FPStatFSFromPath, 
                        _FPStitchingSessionFieldsKey, _FPStitchingSessionItemKey, 
                        _FPTagDataXattrName, _FPThumbnailFormatBRUndecorated, _FPThumbnailFormatLICachedBitmap, 
-                       _FPURLIsInFileProvider, _FPURLMightBeInFileProvider, _FPURLMightBeInFileProviderForEUID, 
+                       _FPURLIsInFileProvider, _FPURLIsLocatedOnRemovableStorage, 
+                       _FPURLMightBeInFileProvider, _FPURLMightBeInFileProviderForEUID, 
                        _FPURLResourceKeysByItemPropertyNames, _FPUbiquitousDocumentMainWindowDidChange, 
                        _FPUniversalBookmarkableStringFromDocumentURL, _FPUpdateLastUsedDate, 
                        _FPUserCancelledError, _FPUserRelativePathsEntitlement, _FPVersion, 

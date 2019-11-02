@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E4A911A2-322F-39A2-9B1D-4A841C70CA5E' ]
+uuids:           [ 'x86_64: 92F2E43C-6682-39DA-A3FB-8B80325C973A' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ProVideo.framework/Versions/A/ProVideo'
 current-version: 443.4.42

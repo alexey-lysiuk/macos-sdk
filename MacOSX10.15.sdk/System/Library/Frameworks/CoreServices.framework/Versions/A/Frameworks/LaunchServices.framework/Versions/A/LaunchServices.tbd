@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 200F66C5-EB4A-332C-A1AE-04513628C7B3', 'x86_64: 200F66C5-EB4A-332C-A1AE-04513628C7B3' ]
+uuids:           [ 'x86_64: 88F59BD5-412A-35EE-AD45-E6BF80B24891', 'x86_64: 88F59BD5-412A-35EE-AD45-E6BF80B24891' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices'
-current-version: 1065.2
+current-version: 1069.11
 parent-umbrella: CoreServices
 exports:         
   - archs:           [ x86_64 ]
@@ -168,28 +168,28 @@ exports:
                        __LSWaitUntilSeedingComplete, __LSWriteApplicationPlaceholderToURL, 
                        __UTCopyDeclaredTypeIdentifiers, __UTTypeCopyDescriptionLocalizationDictionary, 
                        __UTTypeCopyDynamicIdentifiersForTags, __UTTypeCopyGlyphName, 
-                       __UTTypeCopyIconFileURL, __UTTypeCopyIconName, __UTTypeCopyKindStringDictionaryForNonMaterializedItem, 
-                       __UTTypeCopyKindStringForNonMaterializedItem, __UTTypeCopyPedigree, 
-                       __UTTypeCopyPedigreeSet, __UTTypeCreateSuggestedFilename, 
+                       __UTTypeCopyIconFileURL, __UTTypeCopyIconName, __UTTypeCopyIdentifierForPromiseAtURL, 
+                       __UTTypeCopyKindStringDictionaryForNonMaterializedItem, __UTTypeCopyKindStringForNonMaterializedItem, 
+                       __UTTypeCopyPedigree, __UTTypeCopyPedigreeSet, __UTTypeCreateSuggestedFilename, 
                        __UTTypeGetStatus, __UTTypeHash, __UTTypeIdentifierIsValid, 
                        __UTTypeIsWildcard, __UTTypePrecachePropertiesOfIdentifiers, 
                        __UnlattenIconRef, ___LSDefaultsGetSharedInstance, __kLSASNKey, 
                        __kLSASNToBringForwardAtNextApplicationExitKey, __kLSActivePageUserVisibleOriginsKey, 
                        __kLSAddToPermittedFrontASNsArrayKey, __kLSAllowedToBecomeFrontmostKey, 
                        __kLSApplicationBackgroundOnlyTypeKey, __kLSApplicationBackgroundPriorityKey, 
-                       __kLSApplicationCountKey, __kLSApplicationDesiresAttentionKey, 
-                       __kLSApplicationForegroundPriorityKey, __kLSApplicationForegroundTypeKey, 
-                       __kLSApplicationHasRegisteredKey, __kLSApplicationHasSignalledItIsReadyKey, 
-                       __kLSApplicationInSandboxKey, __kLSApplicationInStoppedStateKey, 
-                       __kLSApplicationInThrottledStateAfterLaunchKey, __kLSApplicationInformationSeedKey, 
-                       __kLSApplicationIsHiddenKey, __kLSApplicationListSeedKey, 
-                       __kLSApplicationLockedInStoppedStateKey, __kLSApplicationOverriddenBackgroundDomainNameKey, 
-                       __kLSApplicationReadyToBeFrontableKey, __kLSApplicationSandboxedInformationItemsKey, 
-                       __kLSApplicationTypeKey, __kLSApplicationTypeToRestoreKey, 
-                       __kLSApplicationUIElementTypeKey, __kLSApplicationVersionKey, 
-                       __kLSApplicationWasTerminatedByTALKey, __kLSApplicationWouldBeTerminatedByTALKey, 
-                       __kLSApplicationsRecordingAppleEventsKey, __kLSArchitectureKey, 
-                       __kLSArchitecturePowerPC64Value, __kLSArchitecturePowerPCValue, 
+                       __kLSApplicationCountKey, __kLSApplicationDelayLaunchUntilTimeKey, 
+                       __kLSApplicationDesiresAttentionKey, __kLSApplicationForegroundPriorityKey, 
+                       __kLSApplicationForegroundTypeKey, __kLSApplicationHasRegisteredKey, 
+                       __kLSApplicationHasSignalledItIsReadyKey, __kLSApplicationInSandboxKey, 
+                       __kLSApplicationInStoppedStateKey, __kLSApplicationInThrottledStateAfterLaunchKey, 
+                       __kLSApplicationInformationSeedKey, __kLSApplicationIsHiddenKey, 
+                       __kLSApplicationListSeedKey, __kLSApplicationLockedInStoppedStateKey, 
+                       __kLSApplicationOverriddenBackgroundDomainNameKey, __kLSApplicationReadyToBeFrontableKey, 
+                       __kLSApplicationSandboxedInformationItemsKey, __kLSApplicationTypeKey, 
+                       __kLSApplicationTypeToRestoreKey, __kLSApplicationUIElementTypeKey, 
+                       __kLSApplicationVersionKey, __kLSApplicationWasTerminatedByTALKey, 
+                       __kLSApplicationWouldBeTerminatedByTALKey, __kLSApplicationsRecordingAppleEventsKey, 
+                       __kLSArchitectureKey, __kLSArchitecturePowerPC64Value, __kLSArchitecturePowerPCValue, 
                        __kLSArchitectureUnknownValue, __kLSArchitecturei386Value, 
                        __kLSArchitecturex86_64Value, __kLSAuditTokenKey, __kLSBackgroundPriorityKey, 
                        __kLSBackgroundPriorityOnceKey, __kLSBindingResourceInfoBadgeableKey, 

@@ -1,13 +1,13 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A0363A60-2B68-3364-8797-A50FC1F14DC3' ]
+uuids:           [ 'x86_64: B389118D-8932-32A5-8FCF-159D60D7E2BB' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/VoiceShortcutClient.framework/Versions/A/VoiceShortcutClient'
 exports:         
   - archs:           [ x86_64 ]
-    symbols:         [ _VCActionDonationCategoryAll, _VCBundleIdentifierDaemon, _VCBundleIdentifierDocuments, 
-                       _VCBundleIdentifierFaceTime, _VCBundleIdentifierHome, _VCBundleIdentifierMail, 
-                       _VCBundleIdentifierMaps, _VCBundleIdentifierMessages, _VCBundleIdentifierMobilePhone, 
+    symbols:         [ _VCBundleIdentifierDaemon, _VCBundleIdentifierDocuments, _VCBundleIdentifierFaceTime, 
+                       _VCBundleIdentifierHome, _VCBundleIdentifierMail, _VCBundleIdentifierMaps, 
+                       _VCBundleIdentifierMessages, _VCBundleIdentifierMobilePhone, 
                        _VCBundleIdentifierNotes, _VCBundleIdentifierPassbookUIService, 
                        _VCBundleIdentifierPhoneIntentHandler, _VCBundleIdentifierPodcasts, 
                        _VCBundleIdentifierPreferences, _VCBundleIdentifierShortcuts, 

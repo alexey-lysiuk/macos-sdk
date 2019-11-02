@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A712BEB7-3216-32A1-BFF0-035A0DD906C9', 'x86_64: A712BEB7-3216-32A1-BFF0-035A0DD906C9' ]
+uuids:           [ 'x86_64: EF0F0C7A-CF20-313E-8CE3-E54B741E5FFA', 'x86_64: EF0F0C7A-CF20-313E-8CE3-E54B741E5FFA' ]
 platform:        zippered
 install-name:    '/System/Library/CoreServices/Encodings/libLatinSuppConverter.dylib'
 current-version: 76

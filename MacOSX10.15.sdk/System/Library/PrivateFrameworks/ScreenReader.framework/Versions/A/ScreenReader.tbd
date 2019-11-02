@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D977D461-57D2-3FED-BFE8-6EE99DB42A7C' ]
+uuids:           [ 'x86_64: F95316DA-12BB-375E-A9A0-EBDCEEFE373D' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ScreenReader.framework/Versions/A/ScreenReader'
 current-version: 390
@@ -11,8 +11,8 @@ exports:
                        _SCRCreateImageData, _SCRDebugHumanReadableTextFromSpeechSynthesizerMessage, 
                        _SCRDigestForImageRef, _SCRDisplayTextFontIndexForFontSize, 
                        _SCRDisplayTextFontSizes, _SCRDisplayTextFontSizesCount, _SCRHIDDetectionDisable, 
-                       _SCRHIDDetectionEnable, _SCRIsCodesignedByApple, _SCRKeyboardInitialize, 
-                       _SCRKeyboardLayoutInputSourceID, _SCRKeyboardLayoutOverrideInputSourceID, 
+                       _SCRHIDDetectionEnable, _SCRHIDTrackpads, _SCRIsCodesignedByApple, 
+                       _SCRKeyboardInitialize, _SCRKeyboardLayoutInputSourceID, _SCRKeyboardLayoutOverrideInputSourceID, 
                        _SCRKeyboardPostInitialize, _SCRLocalizedSpeechStringForComposedCharacter, 
                        _SCRLocalizedStringForComposedCharacter, _SCRLocalizedStringForKey, 
                        _SCRMovementDispositionForDirection, _SCRRemoveConfigurationPlaceholderTokens, 

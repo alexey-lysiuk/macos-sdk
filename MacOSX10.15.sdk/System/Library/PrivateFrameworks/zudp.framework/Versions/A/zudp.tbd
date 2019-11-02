@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F082A87B-B056-387D-AC8A-3AD397EBDE6C', 'x86_64: F082A87B-B056-387D-AC8A-3AD397EBDE6C' ]
+uuids:           [ 'x86_64: 07DAF24A-EF62-3CD3-A8A3-88DF2588A8B4', 'x86_64: 07DAF24A-EF62-3CD3-A8A3-88DF2588A8B4' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/zudp.framework/Versions/A/zudp'
 exports:         

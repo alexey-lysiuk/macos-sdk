@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2DA93318-C4F2-3B2C-8FDE-3AE050EB9760' ]
+uuids:           [ 'x86_64: E721673F-0452-3E94-B02B-5E7C072AD82A' ]
 platform:        macosx
 install-name:    '/usr/lib/libcoreroutine.dylib'
 exports:         
@@ -25,7 +25,8 @@ exports:
                        _RTApplicationManagerBundleIdWeather, _RTApplicationManagerBundleIdWebKitPlugin, 
                        _RTApplicationManagerBundleIdiBooks, _RTApplicationManagerBundleIdiTunesStore, 
                        _RTApplicationManagerExecutableCoreautomationd, _RTApplicationManagerExecutableInduce, 
-                       _RTApplicationManagerExecutableLocationd, _RTApplicationManagerExecutableRoutineDiagnosticExtension, 
+                       _RTApplicationManagerExecutableLocationd, _RTApplicationManagerExecutableLoctool, 
+                       _RTApplicationManagerExecutableRoutineDiagnosticExtension, 
                        _RTApplicationManagerExecutableWedge, _RTApplicationManagerExecutableXctest, 
                        _RTAssetManagerErrorDomain, _RTAssetManagerRawAssetsFileName, 
                        _RTAssetManagerXPCActivityGracePeriod, _RTAssetManagerXPCActivityIdentifier, 
@@ -66,7 +67,6 @@ exports:
                        _RTPersistenceMirroringManagerMirroringOperationDefaultTimeout, 
                        _RTPersistenceMirroringManagerMirroringOperationRetryTimeInterval, 
                        _RTPersistenceMirroringManagerPostInstallXpcActivity, _RTPersistenceMirroringManagerQoSTimerName, 
-                       _RTPersistenceMirroringManagerUserRequestedBackupXpcActivity, 
                        _RTPersistenceMirroringManagerZoneResetRecoveryAttemptMax, 
                        _RTPersistenceMirroringRequestRetryCountMax, _RTPersistenceModelDirectoryExtension, 
                        _RTPersistenceModelExtension, _RTPersistenceModelName, _RTPersistenceRemoteStoreServerServiceNameCache, 
@@ -173,9 +173,11 @@ exports:
                        _kWork_MaxDaysPerWeek, _kWork_MinAvgTimePerDay, _kWork_MinClustEntPerWeek, 
                        _kWork_MinDaysPerWeek, _logArrayRTLocations, _logArrayRTWiFiAccessPoints, 
                        _logInputBluePoi, _logReconciledGraph, _logReferenceLocation, 
-                       _maxIdentifierRollCount, _onGUIConsoleSessionChanged, _onGUISessionUserChanged, 
-                       _onKeybagLockStatusChange, _onSiriCloudSyncPreferenceChangedNotification, 
-                       _onUnlockedSinceBoot, _safeLog, _timeQuantization, _validConfidence ]
+                       _maxIdentifierRollCount, _motionActivityTypeForTransitionBetweenGraphs, 
+                       _onGUIConsoleSessionChanged, _onGUISessionUserChanged, _onKeybagLockStatusChange, 
+                       _onSiriCloudSyncPreferenceChangedNotification, _onUnlockedSinceBoot, 
+                       _preferredReconciliationAlgorithm, _safeLog, _timeQuantization, 
+                       _validConfidence ]
     objc-classes:    [ RTAccount, RTAccountManager, RTAccountManagerNotificationAccountChanged, 
                        RTAccountManagerNotificationCloudSyncAuthorizationStateChanged, 
                        RTAccountManager_OSX, RTAccount_OSX, RTAddressMO, RTArchiver, 
@@ -238,7 +240,7 @@ exports:
                        RTMapItemProviderProactiveExpertsParameters, RTMapItemProviderReverseGeocode, 
                        RTMapItemProviderReverseGeocodeParameters, RTMapServiceManager, 
                        RTMapsSupportManager, RTMapsSupportManager_MSP, RTMapsSupportManager_MSP_OSX, 
-                       RTMetric, RTMetricManager, RTMigrationHelperOneStateAndEntryExitPair, 
+                       RTMapsSupportQueryState, RTMetric, RTMetricManager, RTMigrationHelperOneStateAndEntryExitPair, 
                        RTMotionActivityHistogram, RTMotionActivityHistogramBin, RTMotionActivityManager, 
                        RTMotionActivityManagerNotificationActivity, RTMotionActivityManagerNotificationMotionSettledStateChange, 
                        RTMotionActivityManagerNotificationVehicleConnected, RTMotionActivityManagerNotificationVehicleExit, 

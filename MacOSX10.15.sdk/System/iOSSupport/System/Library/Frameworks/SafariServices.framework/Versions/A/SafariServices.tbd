@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5E1A285B-52B4-3FDE-8E2B-13A35E4FC302' ]
+uuids:           [ 'x86_64: CC28C7E0-2B86-3F34-AAF0-49055B01C54E' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/SafariServices.framework/Versions/A/SafariServices'
 exports:         
@@ -16,13 +16,13 @@ exports:
                        __SFCustomUserAgentStringIfNeeded, __SFDebugContentDispositionHeaderStartsDownloadsKey, 
                        __SFDebugDownloadAttributeForcesDownloadsKey, __SFDebugEnableDownloadsInSubframesKey, 
                        __SFDebugPromptForDownloadsOnNavigationResponseKey, __SFDebugRenderWebContentLikeMacKey, 
-                       __SFDemoSiriSuggestionsKey, __SFDeviceHasHomeButton, __SFDeviceIsPad, 
-                       __SFDeviceStatusBarHasNonTransparentBackground, __SFDeviceSupportsDesktopSitesByDefault, 
-                       __SFDeviceSupportsHighQualityGraphics, __SFDisableICECandidateFiltering, 
-                       __SFDownloadExpirationIntervalDefaultsKey, __SFEnableDownloadImport, 
-                       __SFEnableEnumeratingAllNetworkInterfaces, __SFEnableMediaCapture, 
-                       __SFEnableMockCaptureDevices, __SFEqualWithEpsilon, __SFFloorFloatToPixels, 
-                       __SFHasCompletedReadingListArchivePreferenceMigrationKey, 
+                       __SFDemoSiriSuggestionsKey, __SFDeviceHasHomeButton, __SFDeviceHasRectangularScreen, 
+                       __SFDeviceIsPad, __SFDeviceStatusBarHasNonTransparentBackground, 
+                       __SFDeviceSupportsDesktopSitesByDefault, __SFDeviceSupportsHighQualityGraphics, 
+                       __SFDisableICECandidateFiltering, __SFDownloadExpirationIntervalDefaultsKey, 
+                       __SFEnableDownloadImport, __SFEnableEnumeratingAllNetworkInterfaces, 
+                       __SFEnableMediaCapture, __SFEnableMockCaptureDevices, __SFEqualWithEpsilon, 
+                       __SFFloorFloatToPixels, __SFHasCompletedReadingListArchivePreferenceMigrationKey, 
                        __SFIPhoneSafariUserAgentString, __SFIconsInTabsEnabledKey, 
                        __SFInlineMediaPlaybackRequiresPlaysInlineAttributeKey, __SFInsetIsInvalid, 
                        __SFInterpolate, __SFInvisibleAutoplayNotPermittedKey, __SFJavaScriptCanOpenWindowsAutomaticallyDefaultsKey, 
@@ -43,7 +43,10 @@ exports:
                        __SFSafariNonContaineredSettingsDirectoryPath, __SFSafariPerSitePreferenceDidChangeNotification, 
                        __SFSafariPreferencesDomain, __SFSafariSavedStateDirectoryPath, 
                        __SFSafariTemporaryDirectoryPath, __SFSafariTestContentDirectoryPath, 
-                       __SFScreenNativeScale, __SFScreenScale, __SFShouldCaptureAudioInUIProcessKey, 
+                       __SFScreenNativeScale, __SFScreenScale, __SFSearchEngineBaidu, 
+                       __SFSearchEngineBing, __SFSearchEngineDuckDuckGo, __SFSearchEngineGoogle, 
+                       __SFSearchEngineQihoo, __SFSearchEngineSogou, __SFSearchEngineStringDefaultsKey, 
+                       __SFSearchEngineYahoo, __SFSearchEngineYandex, __SFShouldCaptureAudioInUIProcessKey, 
                        __SFSizeClassForWidth, __SFUserAgentDefaultsKey, __SFVideoPlaybackRequiresUserActionKey, 
                        __SFWarnAboutFraudulentWebsitesDefaultsKey, __SFWebKitShowLinkPreviewsDefaultsKey, 
                        __SFWebKitSiteSpecificHacksEnabledKey, __SFWidthIsCompactSizeClass ]

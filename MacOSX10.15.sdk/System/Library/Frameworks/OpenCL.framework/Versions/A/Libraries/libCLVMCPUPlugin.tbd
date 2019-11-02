@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 65AA45FA-9462-3854-81A3-B320933130AC', 'x86_64: 65AA45FA-9462-3854-81A3-B320933130AC' ]
+uuids:           [ 'x86_64: C439D28E-7078-3E41-B8A7-509185255DB7', 'x86_64: C439D28E-7078-3E41-B8A7-509185255DB7' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/OpenCL.framework/Versions/A/Libraries/libCLVMCPUPlugin.dylib'
 current-version: 2.12.7

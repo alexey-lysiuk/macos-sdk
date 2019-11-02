@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 891EB4AF-FAB0-3237-B500-EB106914BE98', 'x86_64: 891EB4AF-FAB0-3237-B500-EB106914BE98' ]
+uuids:           [ 'x86_64: 925C61BA-D10B-395A-B45F-E18E492AC952', 'x86_64: 925C61BA-D10B-395A-B45F-E18E492AC952' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AssetsLibraryServices.framework/Versions/A/AssetsLibraryServices'
-current-version: 101.13.100
+current-version: 111.16.150
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _ALGetLibrarySizes, _ALGetPhotosAndVideosCount, _ALPhotosAndVideosCountNotificationName, 
@@ -97,7 +97,8 @@ exports:
                        _PLLibraryServicesOperationNameCrashRecoveryResetSearchIndex, 
                        _PLLibraryServicesOperationNameCrashRecoveryRestartPendingPlaceholderAssets, 
                        _PLLibraryServicesOperationNameCreateConstraintsDirectory, 
-                       _PLLibraryServicesOperationNameInitChangeHandling, _PLLibraryServicesOperationNameNotifyLibraryAvailability, 
+                       _PLLibraryServicesOperationNameInitChangeHandling, _PLLibraryServicesOperationNameLocaleChangeCheck, 
+                       _PLLibraryServicesOperationNameNotifyLibraryAvailability, 
                        _PLLibraryServicesOperationNameStartJournalManager, _PLLibraryServicesOperationNameThumbnailRebuildReq, 
                        _PLLibraryServicesOperationNameWaitDataMigrationCheckpoint, 
                        _PLLibraryViewBulletinSuppresionContext, _PLLightweightReimportPhotoCloudSharingAlbumInfoFileName, 
@@ -117,7 +118,9 @@ exports:
                        _PLMacPlatformLibraryServicesOperationNameFileSystemImport, 
                        _PLMacPlatformLibraryServicesOperationNameFilesystemImportNotifyEvent, 
                        _PLMacPlatformLibraryServicesOperationNameInitCPLManager, 
+                       _PLMacPlatformLibraryServicesOperationNameInitializePhotoStream, 
                        _PLMacPlatformLibraryServicesOperationNameMigrateOrRebuild, 
+                       _PLMacPlatformLibraryServicesOperationNameNotifySPLMigrated, 
                        _PLMacPlatformLibraryServicesOperationNameRefreshRampState, 
                        _PLMacPlatformLibraryServicesOperationNameRegisterBackgroundJobService, 
                        _PLMacPlatformLibraryServicesOperationNameSetSceneTaxonomyClass, 
@@ -173,10 +176,11 @@ exports:
                        _PLSuppresionContextAlbumListView, _PLSuppresionContextAlbumView, 
                        _PLSuppresionContextMemoriesFeedView, _PLSuppresionContextPrefixAlbumView, 
                        _PLSuppresionContextPrefixSharedAlbumOptionsView, _PLSuppressionContextForMomentShareUUID, 
-                       _PLSyncInfoFileName, _PLSystemPhotoLibraryURLChangeNotificationName, 
-                       _PLThumbnailManagerThumbnailFormatKey, _PLThumbnailManagerVersionKey, 
-                       _PLThumbnailTableExtension, _PLURLForResourceProperties, _PLURLFromXPCDictionary, 
-                       _PLUUIDBytesFromString, _PLUUIDDataFromString, _PLUnarchiveUUIDStringsSetFromData, 
+                       _PLSyncInfoFileName, _PLSystemPhotoLibraryAvailableNotificationName, 
+                       _PLSystemPhotoLibraryURLChangeNotificationName, _PLThumbnailManagerThumbnailFormatKey, 
+                       _PLThumbnailManagerVersionKey, _PLThumbnailTableExtension, 
+                       _PLURLForResourceProperties, _PLURLFromXPCDictionary, _PLUUIDBytesFromString, 
+                       _PLUUIDDataFromString, _PLUnarchiveUUIDStringsSetFromData, 
                        _PLUnderlyingPOSIXError, _PLUniformTypeIdentifierIsRenderableImage, 
                        _PLVideoMetadataFileExtension, _PLVideoMetadataFileSuffix, 
                        _PLWatchPlatformLibraryServicesOperationNameMigrateOrRebuild, 
@@ -192,6 +196,7 @@ exports:
                        _PLiOSPlatformLibraryServicesOperationNameFileSystemImport, 
                        _PLiOSPlatformLibraryServicesOperationNameFilesystemImportNotifyEvent, 
                        _PLiOSPlatformLibraryServicesOperationNameInitCPLManager, 
+                       _PLiOSPlatformLibraryServicesOperationNameInitializePhotoStream, 
                        _PLiOSPlatformLibraryServicesOperationNameMigrateOrRebuild, 
                        _PLiOSPlatformLibraryServicesOperationNamePrepairOTARestore, 
                        _PLiOSPlatformLibraryServicesOperationNameRefreshRampState, 

@@ -1,9 +1,10 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.1 (swiftlang-1100.8.259.70 clang-1100.0.32.1)
+// swift-compiler-version: Apple Swift version 5.1.1 (swiftlang-1100.8.275.1 clang-1100.0.32.1)
 // swift-module-flags: -target x86_64-apple-macosx10.15 -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftAppKit -swift-version 5 -O -enforce-exclusivity=unchecked -module-name AppKit
 @_exported import AppKit
 import Foundation
 import Swift
+import _SwiftAppKitOverlayShims
 extension NSCursor : Swift.__DefaultCustomPlaygroundQuickLookable {
   @available(*, deprecated, message: "NSCursor._defaultCustomPlaygroundQuickLook will be removed in a future Swift version")
   public var _defaultCustomPlaygroundQuickLook: Swift.PlaygroundQuickLook {
@@ -77,6 +78,71 @@ extension NSWindow.Level : AppKit._AppKitKitNumericRawRepresentable {
 }
 @available(swift 4)
 extension NSFont.Weight : AppKit._AppKitKitNumericRawRepresentable {
+}
+@available(OSX 10.15.1, *)
+public struct NSDiffableDataSourceSnapshot<SectionIdentifierType, ItemIdentifierType> where SectionIdentifierType : Swift.Hashable, ItemIdentifierType : Swift.Hashable {
+  public init()
+  public var numberOfItems: Swift.Int {
+    get
+  }
+  public var numberOfSections: Swift.Int {
+    get
+  }
+  public var sectionIdentifiers: [SectionIdentifierType] {
+    get
+  }
+  public var itemIdentifiers: [ItemIdentifierType] {
+    get
+  }
+  public func numberOfItems(inSection identifier: SectionIdentifierType) -> Swift.Int
+  public func itemIdentifiers(inSection identifier: SectionIdentifierType) -> [ItemIdentifierType]
+  public func sectionIdentifier(containingItem identifier: ItemIdentifierType) -> SectionIdentifierType?
+  public func indexOfItem(_ identifier: ItemIdentifierType) -> Swift.Int?
+  public func indexOfSection(_ identifier: SectionIdentifierType) -> Swift.Int?
+  mutating public func appendItems(_ identifiers: [ItemIdentifierType], toSection sectionIdentifier: SectionIdentifierType? = nil)
+  mutating public func insertItems(_ identifiers: [ItemIdentifierType], beforeItem beforeIdentifier: ItemIdentifierType)
+  mutating public func insertItems(_ identifiers: [ItemIdentifierType], afterItem afterIdentifier: ItemIdentifierType)
+  mutating public func deleteItems(_ identifiers: [ItemIdentifierType])
+  mutating public func deleteAllItems()
+  mutating public func moveItem(_ identifier: ItemIdentifierType, beforeItem toIdentifier: ItemIdentifierType)
+  mutating public func moveItem(_ identifier: ItemIdentifierType, afterItem toIdentifier: ItemIdentifierType)
+  mutating public func reloadItems(_ identifiers: [ItemIdentifierType])
+  mutating public func appendSections(_ identifiers: [SectionIdentifierType])
+  mutating public func insertSections(_ identifiers: [SectionIdentifierType], beforeSection toIdentifier: SectionIdentifierType)
+  mutating public func insertSections(_ identifiers: [SectionIdentifierType], afterSection toIdentifier: SectionIdentifierType)
+  mutating public func deleteSections(_ identifiers: [SectionIdentifierType])
+  mutating public func moveSection(_ identifier: SectionIdentifierType, beforeSection toIdentifier: SectionIdentifierType)
+  mutating public func moveSection(_ identifier: SectionIdentifierType, afterSection toIdentifier: SectionIdentifierType)
+  mutating public func reloadSections(_ identifiers: [SectionIdentifierType])
+}
+@available(OSX 10.15.1, *)
+extension NSDiffableDataSourceSnapshot : Swift._ObjectiveCBridgeable {
+  @_semantics("convertToObjectiveC") public func _bridgeToObjectiveC() -> AppKit.NSDiffableDataSourceSnapshotReference
+  public static func _forceBridgeFromObjectiveC(_ input: AppKit.NSDiffableDataSourceSnapshotReference, result: inout AppKit.NSDiffableDataSourceSnapshot<SectionIdentifierType, ItemIdentifierType>?)
+  public static func _conditionallyBridgeFromObjectiveC(_ input: AppKit.NSDiffableDataSourceSnapshotReference, result: inout AppKit.NSDiffableDataSourceSnapshot<SectionIdentifierType, ItemIdentifierType>?) -> Swift.Bool
+  @_effects(readonly) public static func _unconditionallyBridgeFromObjectiveC(_ snapshot: AppKit.NSDiffableDataSourceSnapshotReference?) -> AppKit.NSDiffableDataSourceSnapshot<SectionIdentifierType, ItemIdentifierType>
+  public typealias _ObjectiveCType = AppKit.NSDiffableDataSourceSnapshotReference
+}
+@available(OSX 10.15.1, *)
+open class NSCollectionViewDiffableDataSource<SectionIdentifierType, ItemIdentifierType> : ObjectiveC.NSObject, AppKit.NSCollectionViewDataSource where SectionIdentifierType : Swift.Hashable, ItemIdentifierType : Swift.Hashable {
+  public typealias ItemProvider = (AppKit.NSCollectionView, Foundation.IndexPath, ItemIdentifierType) -> AppKit.NSCollectionViewItem?
+  public typealias SupplementaryViewProvider = (AppKit.NSCollectionView, Swift.String, Foundation.IndexPath) -> (AppKit.NSView & AppKit.NSCollectionViewElement)?
+  public var supplementaryViewProvider: AppKit.NSCollectionViewDiffableDataSource<SectionIdentifierType, ItemIdentifierType>.SupplementaryViewProvider? {
+    get
+    set
+  }
+  public init(collectionView: AppKit.NSCollectionView, itemProvider: @escaping AppKit.NSCollectionViewDiffableDataSource<SectionIdentifierType, ItemIdentifierType>.ItemProvider)
+  open func apply(_ snapshot: AppKit.NSDiffableDataSourceSnapshot<SectionIdentifierType, ItemIdentifierType>, animatingDifferences: Swift.Bool = true, completion: (() -> Swift.Void)? = nil)
+  open func snapshot() -> AppKit.NSDiffableDataSourceSnapshot<SectionIdentifierType, ItemIdentifierType>
+  open func itemIdentifier(for indexPath: Foundation.IndexPath) -> ItemIdentifierType?
+  open func indexPath(for itemIdentifier: ItemIdentifierType) -> Foundation.IndexPath?
+  @objc open func numberOfSections(in collectionView: AppKit.NSCollectionView) -> Swift.Int
+  @objc open func collectionView(_ collectionView: AppKit.NSCollectionView, numberOfItemsInSection section: Swift.Int) -> Swift.Int
+  @objc open func collectionView(_ collectionView: AppKit.NSCollectionView, itemForRepresentedObjectAt indexPath: Foundation.IndexPath) -> AppKit.NSCollectionViewItem
+  @objc open func collectionView(_ collectionView: AppKit.NSCollectionView, viewForSupplementaryElementOfKind kind: AppKit.NSCollectionView.SupplementaryElementKind, at indexPath: Foundation.IndexPath) -> AppKit.NSView
+  public func description() -> Swift.String
+  @objc override dynamic public init()
+  @objc deinit
 }
 extension IndexPath {
   public init(item: Swift.Int, section: Swift.Int)

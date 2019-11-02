@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 28841C72-934B-3855-8C5C-A0F2B7F1F4E5' ]
+uuids:           [ 'x86_64: 6BEEAD15-3445-316C-9676-0BC355D415C5' ]
 platform:        macosx
 install-name:    '/usr/lib/libhunspell-1.2.0.dylib'
 exports:         

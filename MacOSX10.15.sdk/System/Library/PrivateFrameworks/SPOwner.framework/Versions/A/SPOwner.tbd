@@ -1,19 +1,18 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0DD494FF-AEC1-3F33-8A07-1D0FBD472F70', 'x86_64: 0DD494FF-AEC1-3F33-8A07-1D0FBD472F70' ]
+uuids:           [ 'x86_64: 4492EA17-5381-33C2-9D1B-022AD6933AFF', 'x86_64: 4492EA17-5381-33C2-9D1B-022AD6933AFF' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SPOwner.framework/Versions/A/SPOwner'
 exports:         
   - archs:           [ x86_64 ]
-    symbols:         [ _SPBeaconEstimatedLocationChangedNotification, _SPBeaconRoleIdUndefined, 
-                       _SPBeaconTaskNameAcceptShare, _SPBeaconTaskNameBeginLeashing, 
-                       _SPBeaconTaskNameBeginRanging, _SPBeaconTaskNameDeclineShare, 
-                       _SPBeaconTaskNameDisableLostMode, _SPBeaconTaskNameDisableNotifyWhenFound, 
-                       _SPBeaconTaskNameEnableLostMode, _SPBeaconTaskNameEnableNotifyWhenFound, 
-                       _SPBeaconTaskNameEndLeashing, _SPBeaconTaskNameEndRanging, 
-                       _SPBeaconTaskNameLocating, _SPBeaconTaskNamePlaySound, _SPBeaconTaskNameStartSharing, 
-                       _SPBeaconTaskNameStopSharing, _SPBeaconTaskNameStopSound, 
-                       _SPBeaconZoneCreationDateKey, _SPBeaconZoneCreationErrorCodeKey, 
+    symbols:         [ _SPBeaconEstimatedLocationChangedNotification, _SPBeaconLocationSourceConnection, 
+                       _SPBeaconLocationSourceConnectionMaintenance, _SPBeaconLocationSourceDisconnection, 
+                       _SPBeaconLocationSourceHarvesterNetwork, _SPBeaconLocationSourceHarvesterOnDiskNearOwner, 
+                       _SPBeaconLocationSourceHarvesterOnDiskWild, _SPBeaconLocationSourceLocalReductiveFilter, 
+                       _SPBeaconLocationSourcePairingLocationManager, _SPBeaconLocationSourceSelfPublish, 
+                       _SPBeaconLocationSourceUnknown, _SPBeaconRoleIdOther, _SPBeaconRoleIdUndefined, 
+                       _SPBeaconTaskNameDisableNotifyWhenFound, _SPBeaconTaskNameEnableNotifyWhenFound, 
+                       _SPBeaconTaskNameLocating, _SPBeaconZoneCreationDateKey, _SPBeaconZoneCreationErrorCodeKey, 
                        _SPBeaconingStateChangedNotification, _SPBeaconsChangedNotification, 
                        _SPCommandErrorDomain, _SPDisabledReasonLowAccountSecurity, 
                        _SPDisabledReasonNone, _SPDisabledReasonUserOptOut, _SPDisabledReasoniCloudSignedOut, 
@@ -24,11 +23,11 @@ exports:
                        _SPServiceStateEnabled, _SPSettingsServiceDisabledReasonsKey, 
                        _SPSettingsServiceStateKey, _SPSettingsSharedSuiteName ]
     objc-classes:    [ SPBeacon, SPBeaconDescription, SPBeaconLocation, SPBeaconManager, 
-                       SPBeaconRole, SPBeaconShare, SPBeaconTaskInformation, SPBeaconUpdates, 
-                       SPBeaconingKey, SPCommand, SPCommandKeys, SPHandle, SPLocationAddress, 
-                       SPLostModeInfo, SPMacBeaconConfig, SPObservationLocation, 
-                       SPOwnerInterface, SPOwnerSession, SPPairingData, SPPairingManager, 
-                       SPPairingSession, SPRawSearchResult, SPRole, SPSafeLocation, 
-                       SPSettingsConfiguration, SPUnauthorizedTrackingAdvertisement, 
+                       SPBeaconObservation, SPBeaconRole, SPBeaconShare, SPBeaconTaskInformation, 
+                       SPBeaconUpdates, SPBeaconingKey, SPCommand, SPCommandKeys, 
+                       SPHandle, SPLocationAddress, SPLostModeInfo, SPMacBeaconConfig, 
+                       SPObservationLocation, SPOwnerInterface, SPOwnerSession, SPPairingData, 
+                       SPPairingManager, SPPairingSession, SPRawSearchResult, SPRole, 
+                       SPSafeLocation, SPSettingsConfiguration, SPUnauthorizedTrackingAdvertisement, 
                        SPUnauthorizedTrackingObservation ]
 ...

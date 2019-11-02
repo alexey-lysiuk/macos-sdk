@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6EB3D019-1C42-305F-AD71-21F7B924D6E1', 'x86_64: 6EB3D019-1C42-305F-AD71-21F7B924D6E1' ]
+uuids:           [ 'x86_64: EC5B95D9-388B-3351-9192-CD6CDB8C3E0F', 'x86_64: EC5B95D9-388B-3351-9192-CD6CDB8C3E0F' ]
 platform:        zippered
 install-name:    '/usr/lib/libcharset.1.dylib'
 current-version: 2

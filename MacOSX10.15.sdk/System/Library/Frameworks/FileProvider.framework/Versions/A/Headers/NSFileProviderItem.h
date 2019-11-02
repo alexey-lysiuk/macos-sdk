@@ -16,7 +16,7 @@ typedef NSString *NSFileProviderItemIdentifier NS_EXTENSIBLE_STRING_ENUM;
  The root of the hierarchical enumeration, i.e the container enumerated when the
  user starts browsing your file provider.
  */
-FOUNDATION_EXPORT NSFileProviderItemIdentifier const NSFileProviderRootContainerItemIdentifier NS_SWIFT_NAME(NSFileProviderItemIdentifier.rootContainer) API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(macos) API_UNAVAILABLE(watchos, tvos);
+FOUNDATION_EXPORT NSFileProviderItemIdentifier const NSFileProviderRootContainerItemIdentifier NS_SWIFT_NAME(NSFileProviderItemIdentifier.rootContainer) API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(macos, macCatalyst) API_UNAVAILABLE(watchos, tvos);
 
 /**
  The item identifier of the working set, a synthetic container used by the
@@ -45,7 +45,7 @@ FOUNDATION_EXPORT NSFileProviderItemIdentifier const NSFileProviderRootContainer
  is listed in the materialized containers, see the documentation on
  -materializedItemsDidChangeWithCompletionHandler:.
  */
-FOUNDATION_EXPORT NSFileProviderItemIdentifier const NSFileProviderWorkingSetContainerItemIdentifier NS_SWIFT_NAME(NSFileProviderItemIdentifier.workingSet) API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(macos) API_UNAVAILABLE(watchos, tvos);
+FOUNDATION_EXPORT NSFileProviderItemIdentifier const NSFileProviderWorkingSetContainerItemIdentifier NS_SWIFT_NAME(NSFileProviderItemIdentifier.workingSet) API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(macos, macCatalyst) API_UNAVAILABLE(watchos, tvos);
 
 
 /**
@@ -55,7 +55,7 @@ FOUNDATION_EXPORT NSFileProviderItemIdentifier const NSFileProviderWorkingSetCon
  */
 typedef NSData *NSFileProviderVersionData NS_TYPED_EXTENSIBLE_ENUM;
 
-API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos)
+API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst)
 @interface NSFileProviderItemVersion : NSObject
 
 /**
@@ -92,7 +92,7 @@ API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos)
  A special value for favorite ranks, to use when no rank was set when the item
  was favorited.
  */
-FOUNDATION_EXPORT unsigned long long const NSFileProviderFavoriteRankUnranked API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(macos) API_UNAVAILABLE(watchos, tvos);
+FOUNDATION_EXPORT unsigned long long const NSFileProviderFavoriteRankUnranked API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(macos, macCatalyst) API_UNAVAILABLE(watchos, tvos);
 
 typedef NS_OPTIONS(NSUInteger, NSFileProviderItemCapabilities) {
     /**
@@ -192,7 +192,7 @@ typedef NS_OPTIONS(NSUInteger, NSFileProviderItemCapabilities) {
  The flags of the item. Flags define on-disk properties of the item but are
  also taken into account by the UI to determine item actions.
  */
-@property (nonatomic, readonly, strong, nullable) id <NSFileProviderItemFlags> flags API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos);
+@property (nonatomic, readonly, strong, nullable) id <NSFileProviderItemFlags> flags API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst);
 
 @property (nonatomic, readonly, copy, nullable) NSNumber *documentSize;
 @property (nonatomic, readonly, copy, nullable) NSNumber *childItemCount;
@@ -232,7 +232,7 @@ typedef NS_OPTIONS(NSUInteger, NSFileProviderItemCapabilities) {
  will be communicated under NSFileProviderItemFieldContents.  Remote changes to
  the resource fork should bump itemVersion.contentVersion.
  */
-@property (nonatomic, readonly, strong, nullable) NSDictionary <NSString *, NSData *> *extendedAttributes API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos);
+@property (nonatomic, readonly, strong, nullable) NSDictionary <NSString *, NSData *> *extendedAttributes API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst);
 
 
 /*
@@ -321,7 +321,7 @@ typedef NS_OPTIONS(NSUInteger, NSFileProviderItemCapabilities) {
  the discretion of the file provider extension.
  */
 @property (nonatomic, readonly, getter=isExcludedFromSync) BOOL excludedFromSync
-    API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos);
+    API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst);
 
 @property (nonatomic, readonly, getter=isMostRecentVersionDownloaded) BOOL mostRecentVersionDownloaded;
 
@@ -348,7 +348,7 @@ typedef NS_OPTIONS(NSUInteger, NSFileProviderItemCapabilities) {
 /**
  The version is used to track which version of an item has been modified when informing a provider about changes. It is also used to invalidate the thumbnail cache.
  */
-@property (nonatomic, strong, readonly, nullable) NSFileProviderItemVersion *itemVersion API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos);
+@property (nonatomic, strong, readonly, nullable) NSFileProviderItemVersion *itemVersion API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst);
 
 /**
  Use this dictionary to add state information to the item. It is accessible to

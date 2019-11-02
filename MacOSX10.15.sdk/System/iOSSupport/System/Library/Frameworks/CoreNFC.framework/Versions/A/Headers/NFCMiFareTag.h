@@ -64,7 +64,7 @@ API_AVAILABLE(ios(13.0)) API_UNAVAILABLE(watchos, macos, tvos)
 /*!
  * @method sendMiFareCommand:completionHandler:
  *
- * @param command           The complete MiFare command.  The CRC bytes shall be included for MiFare UltraLight commands.
+ * @param command           The complete MiFare command.  CRC bytes are calculated and inserted automatically to the provided packet data frame.
  * @param completionHandler Completion handler called when the operation is completed.  error is nil if operation succeeds. A @link NFCErrorDomain @link/ error
  *                          is returned when there is a communication issue with the tag. Successfully read data blocks will be returned from the NSData object.
  *

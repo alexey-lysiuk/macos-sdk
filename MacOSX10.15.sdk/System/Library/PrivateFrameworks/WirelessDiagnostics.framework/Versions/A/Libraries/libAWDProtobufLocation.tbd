@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D89EF726-86F2-3453-AE8B-47286119BB67', 'x86_64: D89EF726-86F2-3453-AE8B-47286119BB67' ]
+uuids:           [ 'x86_64: 526A31A5-44B5-3B61-9C12-D3CA196F258B', 'x86_64: 526A31A5-44B5-3B61-9C12-D3CA196F258B' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/WirelessDiagnostics.framework/Versions/A/Libraries/libAWDProtobufLocation.dylib'
 exports:         
@@ -54,6 +54,7 @@ exports:
                        __ZN3awd7metrics14CompassSession24kQuality3DMaxFieldNumberE, 
                        __ZN3awd7metrics14CompassSession24kQuality3DMinFieldNumberE, 
                        __ZN3awd7metrics14CompassSession24kTimestampEndFieldNumberE, 
+                       __ZN3awd7metrics14CompassSession25kFinalAccuracyFieldNumberE, 
                        __ZN3awd7metrics14CompassSession25kGyroDeltaBiasFieldNumberE, 
                        __ZN3awd7metrics14CompassSession25kQuality2DMeanFieldNumberE, 
                        __ZN3awd7metrics14CompassSession25kQuality3DMeanFieldNumberE, 

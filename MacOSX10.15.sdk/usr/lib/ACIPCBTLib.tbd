@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B5042D52-32B6-3A0A-B697-E758F0C61EFB' ]
+uuids:           [ 'x86_64: 1A78C02D-F3C6-3D41-9865-C7C9FB343558' ]
 platform:        macosx
 install-name:    '/usr/lib/ACIPCBTLib.dylib'
 exports:         

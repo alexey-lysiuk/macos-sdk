@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0EAF4130-B301-3328-96DE-6D0F0DB92B44', 'x86_64: 0EAF4130-B301-3328-96DE-6D0F0DB92B44' ]
+uuids:           [ 'x86_64: 0E1F7502-6AEB-33B9-B8AB-3B7F1C4A38C2', 'x86_64: 0E1F7502-6AEB-33B9-B8AB-3B7F1C4A38C2' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/KerberosHelper.framework/Versions/A/KerberosHelper'
 exports:         

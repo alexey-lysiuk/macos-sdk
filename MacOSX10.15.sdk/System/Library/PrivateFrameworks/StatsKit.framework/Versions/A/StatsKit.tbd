@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 97B0C968-EE2C-369D-ABD0-D88F99519768', 'x86_64: 97B0C968-EE2C-369D-ABD0-D88F99519768' ]
+uuids:           [ 'x86_64: AC593A00-A230-3F7A-9644-FA6E63AFE9E0', 'x86_64: AC593A00-A230-3F7A-9644-FA6E63AFE9E0' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/StatsKit.framework/Versions/A/StatsKit'
 exports:         

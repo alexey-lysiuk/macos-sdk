@@ -76,6 +76,7 @@ extern int (*PE_halt_restart)(unsigned int type);
 extern int PEHaltRestart(unsigned int type);
 
 
+
 // Save the Panic Info.  Returns the number of bytes saved.
 extern UInt32 PESavePanicInfo(UInt8 *buffer, UInt32 length);
 extern void PESavePanicInfoAction(void *buffer, UInt32 offset, UInt32 length);

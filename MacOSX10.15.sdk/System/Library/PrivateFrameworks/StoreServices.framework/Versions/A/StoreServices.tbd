@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2495E517-3CAA-3479-9671-7F7EECD6348C', 'x86_64: 2495E517-3CAA-3479-9671-7F7EECD6348C' ]
+uuids:           [ 'x86_64: 055007CA-D21F-3F1F-9F72-49BDAB4DA01F', 'x86_64: 055007CA-D21F-3F1F-9F72-49BDAB4DA01F' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/StoreServices.framework/Versions/A/StoreServices'
 exports:         
@@ -604,11 +604,12 @@ exports:
                        _kSSNotificationTriggerDownloads, _kSSNotificationUpdateQueueChanged, 
                        _kSSNotificationUpdatesStoreChanged, _kSSOperationDefaultSnapshotInterval, 
                        _kSSPurchaseRequestSucceededNotification, _kSSSQLiteQueryNoLimit, 
-                       _kSSStoreKitEntitlementClientOverride, _kSSStoreKitEntitlementRequestData, 
-                       _kSSUserDefaultsIdentifier, _kSSUserDefaultsKeyAutoPlayVideoSetting, 
-                       _kSSUserDefaultsKeyAutoUpdatesEnabled, _kSSUserDefaultsKeyInAppReviewEnabled, 
-                       _kSSUserDefaultsKeyLastLowPowerModeValue, _kSSUserDefaultsKeyLastReduceMotionValue, 
-                       _kSSUserDefaultsKeyLastUserSetAutoPlayVideoValue, _kSSUserDefaultsKeyLowPowerModeSetLastAutoPlayVideoValue, 
+                       _kSSStoreKitEntitlementClientOverride, _kSSStoreKitEntitlementDeveloperRequestData, 
+                       _kSSStoreKitEntitlementRequestData, _kSSUserDefaultsIdentifier, 
+                       _kSSUserDefaultsKeyAutoPlayVideoSetting, _kSSUserDefaultsKeyAutoUpdatesEnabled, 
+                       _kSSUserDefaultsKeyInAppReviewEnabled, _kSSUserDefaultsKeyLastLowPowerModeValue, 
+                       _kSSUserDefaultsKeyLastReduceMotionValue, _kSSUserDefaultsKeyLastUserSetAutoPlayVideoValue, 
+                       _kSSUserDefaultsKeyLowPowerModeSetLastAutoPlayVideoValue, 
                        _kSSUserDefaultsKeyReduceMotionSetLastAutoPlayVideoValue, 
                        _kSSUserDefaultsKeyUserSetAutoPlayVideoSetting, _kSSVLoadMoreEndIDParameter, 
                        _kSSVLoadMoreStartIDParameter, _kSSVNotificationSubscriptionEntitlementsChanged, 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 45FA09E4-2BDE-3D0A-A32C-BE03CF7B8DAB', 'x86_64: 45FA09E4-2BDE-3D0A-A32C-BE03CF7B8DAB' ]
+uuids:           [ 'x86_64: 12ED0A6C-D006-34EB-BBD9-8E7F2300DBDC', 'x86_64: 12ED0A6C-D006-34EB-BBD9-8E7F2300DBDC' ]
 platform:        zippered
 install-name:    '/usr/lib/libAccessibility.dylib'
 exports:         
@@ -56,12 +56,10 @@ exports:
                        __AXSGuidedAccessSetHasPasscode, __AXSGuidedAccessStartSession, 
                        __AXSHandleHomeButtonPressSwallowedForGuidedAccess, __AXSHandleTripleClickHomeButtonPress, 
                        __AXSHearingAidComplianceEnabled, __AXSHearingAidComplianceSetEnabled, 
-                       __AXSHearingAidEarIndependenceEnabled, __AXSHearingAidEarIndependenceSetEnabled, 
                        __AXSHearingAidRingtoneStreamingEnabled, __AXSHearingAidRingtoneStreamingSetEnabled, 
-                       __AXSHearingCopyPairedUUIDs, __AXSHearingDevicePairedEars, 
-                       __AXSHearingSetDevicePairedEars, __AXSHearingSetPairedUUIDs, 
-                       __AXSHighContrastFocusIndicatorsEnabled, __AXSHomeButtonAssistant, 
-                       __AXSHomeButtonRestingUnlock, __AXSHomeButtonRestingUnlockEverSet, 
+                       __AXSHearingAidsPaired, __AXSHearingAidsSetPaired, __AXSHearingDevicePairedEars, 
+                       __AXSHearingSetDevicePairedEars, __AXSHighContrastFocusIndicatorsEnabled, 
+                       __AXSHomeButtonAssistant, __AXSHomeButtonRestingUnlock, __AXSHomeButtonRestingUnlockEverSet, 
                        __AXSHomeButtonSetRestingUnlock, __AXSHomeClickEnabled, __AXSHomeClickSetSpeed, 
                        __AXSHomeClickSpeed, __AXSInDataMigrationMode, __AXSInPerformanceTestMode, 
                        __AXSInUnitTestMode, __AXSIncreaseButtonLegibility, __AXSInvertColorsDisplaySetEnabled, 

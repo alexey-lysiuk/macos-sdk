@@ -41,6 +41,10 @@ UIKIT_EXTERN API_AVAILABLE(ios(8.0)) API_UNAVAILABLE(tvos) @interface UIPopoverP
 @property (nonatomic, assign) UIPopoverArrowDirection permittedArrowDirections;
 
 @property (nullable, nonatomic, strong) UIView *sourceView;
+
+// The rectangle in the coordinate space of sourceView that the popover should point at. This property is ignored if a barButtonItem is set.
+// Starting in iOS 13.2, a value of CGRectNull will cause the popover to point at the current frame of sourceView and automatically update when the size of sourceView changes. Prior to iOS 13.2, a null rectangle was not supported.
+// The default value in iOS 13.2 is CGRectNull. Prior to iOS 13.2, the default value was CGRectZero.
 @property (nonatomic, assign) CGRect sourceRect;
 
 // By default, a popover is not allowed to overlap its source view rect.

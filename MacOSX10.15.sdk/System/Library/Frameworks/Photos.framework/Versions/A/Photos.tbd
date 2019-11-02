@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 397ED6E6-79BA-33C7-B490-E600622E4463', 'x86_64: 397ED6E6-79BA-33C7-B490-E600622E4463' ]
+uuids:           [ 'x86_64: 9C921A09-D0EC-3F37-AB67-5B84C8ECA97A', 'x86_64: 9C921A09-D0EC-3F37-AB67-5B84C8ECA97A' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Photos.framework/Versions/A/Photos'
-current-version: 101.13.100
+current-version: 111.16.150
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _NSStringFromPHErrorCode, _PHAdjustmentBaseVersionDescription, 
@@ -19,8 +19,9 @@ exports:
                        _PHAssetExportRequestAlternatePhotoURLKey, _PHAssetExportRequestCopyFileURL, 
                        _PHAssetExportRequestCreateOutputDirectory, _PHAssetExportRequestCustomAccessibilityLabelForAsset, 
                        _PHAssetExportRequestCustomDateForAssetWithOptions, _PHAssetExportRequestError, 
-                       _PHAssetExportRequestErrorDomain, _PHAssetExportRequestFullSizePhotoURLKey, 
-                       _PHAssetExportRequestFullSizeVideoURLKey, _PHAssetExportRequestLocationMetadataOperationForAssetWithOptions, 
+                       _PHAssetExportRequestErrorDomain, _PHAssetExportRequestFilenameForAsset, 
+                       _PHAssetExportRequestFullSizePhotoURLKey, _PHAssetExportRequestFullSizeVideoURLKey, 
+                       _PHAssetExportRequestLocationMetadataOperationForAssetWithOptions, 
                        _PHAssetExportRequestMediaFormatConversionManager, _PHAssetExportRequestNeedsColorSpaceConversionForAssetWithOptions, 
                        _PHAssetExportRequestNeedsCustomAccessibilityLabelBakedInForAssetWithOptions, 
                        _PHAssetExportRequestOriginalAdjustmentDataFileURLKey, _PHAssetExportRequestPerformMediaConversion, 
@@ -31,14 +32,15 @@ exports:
                        _PHAssetLocationCoordinatesAreEqual, _PHAssetMediaAnalysisStringWithSingleAudioClassification, 
                        _PHAssetMediaAnalysisStringsWithMultipleAudioClassifications, 
                        _PHAssetMediaSubtypesDebugDescription, _PHAssetMediaTypeDebugDescription, 
-                       _PHAssetOriginalLocationForAsset, _PHAssetPlaybackStyleDebugDescription, 
-                       _PHAssetPlaybackVariationDebugDescription, _PHAssetPropertySetAdjustment, 
-                       _PHAssetPropertySetAesthetic, _PHAssetPropertySetAnalysisState, 
-                       _PHAssetPropertySetComments, _PHAssetPropertySetCore, _PHAssetPropertySetCuration, 
-                       _PHAssetPropertySetDescription, _PHAssetPropertySetDestinationAssetCopy, 
-                       _PHAssetPropertySetFaceWorker, _PHAssetPropertySetGridMetadata, 
-                       _PHAssetPropertySetIdentifier, _PHAssetPropertySetImageManager, 
-                       _PHAssetPropertySetImport, _PHAssetPropertySetKeywords, _PHAssetPropertySetLocalDate, 
+                       _PHAssetOriginalCreationDateForAsset, _PHAssetOriginalLocationForAsset, 
+                       _PHAssetPlaybackStyleDebugDescription, _PHAssetPlaybackVariationDebugDescription, 
+                       _PHAssetPropertySetAdjustment, _PHAssetPropertySetAesthetic, 
+                       _PHAssetPropertySetAnalysisState, _PHAssetPropertySetComments, 
+                       _PHAssetPropertySetCore, _PHAssetPropertySetCuration, _PHAssetPropertySetDescription, 
+                       _PHAssetPropertySetDestinationAssetCopy, _PHAssetPropertySetFaceWorker, 
+                       _PHAssetPropertySetGridMetadata, _PHAssetPropertySetIdentifier, 
+                       _PHAssetPropertySetImageManager, _PHAssetPropertySetImport, 
+                       _PHAssetPropertySetKeywords, _PHAssetPropertySetLocalDate, 
                        _PHAssetPropertySetMediaAnalysis, _PHAssetPropertySetOriginalMetadata, 
                        _PHAssetPropertySetPhotoIris, _PHAssetPropertySetPhotosInfoPanelExtended, 
                        _PHAssetPropertySetPhotosOneUp, _PHAssetPropertySetPlacesCore, 
@@ -93,7 +95,8 @@ exports:
                        _PHPhotosErrorDomain, _PHPhotosHighlightVisibilityStateIsVisibleInMonth, 
                        _PHQueryTransformExpressionConstantValue, _PHResourceDownloadRequestAdjustmentBaseFullSizePhotoURLKey, 
                        _PHResourceDownloadRequestAdjustmentBasePairedVideoURLKey, 
-                       _PHResourceDownloadRequestAdjustmentBaseVideoURLKey, _PHResourceDownloadRequestAdjustmentDataURLKey, 
+                       _PHResourceDownloadRequestAdjustmentBaseVideoURLKey, _PHResourceDownloadRequestAdjustmentDataBlobURLKey, 
+                       _PHResourceDownloadRequestAdjustmentDataBlobUTIKey, _PHResourceDownloadRequestAdjustmentDataURLKey, 
                        _PHResourceDownloadRequestAdjustmentDataUTIKey, _PHResourceDownloadRequestAlternatePhotoURLKey, 
                        _PHResourceDownloadRequestErrorDomain, _PHResourceDownloadRequestFullSizePhotoURLKey, 
                        _PHResourceDownloadRequestFullSizeVideoURLKey, _PHResourceDownloadRequestOriginalAdjustmentDataURLKey, 

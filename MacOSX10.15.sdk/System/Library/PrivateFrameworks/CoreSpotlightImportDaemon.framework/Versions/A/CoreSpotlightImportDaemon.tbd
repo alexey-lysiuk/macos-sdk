@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B589CEB7-1714-35C3-BCF5-3DBC52627C67' ]
+uuids:           [ 'x86_64: 7C4F8D65-D570-38FA-8843-25465A751B29' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CoreSpotlightImportDaemon.framework/Versions/A/CoreSpotlightImportDaemon'
 exports:         

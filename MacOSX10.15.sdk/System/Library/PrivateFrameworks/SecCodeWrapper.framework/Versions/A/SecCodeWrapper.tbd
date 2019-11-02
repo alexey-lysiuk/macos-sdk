@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8BC389D9-F258-3B3C-A22D-27DEED022AED', 'x86_64: 8BC389D9-F258-3B3C-A22D-27DEED022AED' ]
+uuids:           [ 'x86_64: C2138BC2-5F03-3E79-AC0C-F95F0BC9C0B3', 'x86_64: C2138BC2-5F03-3E79-AC0C-F95F0BC9C0B3' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SecCodeWrapper.framework/Versions/A/SecCodeWrapper'
 exports:         

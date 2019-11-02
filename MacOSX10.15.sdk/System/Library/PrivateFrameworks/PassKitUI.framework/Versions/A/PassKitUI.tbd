@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9F397C49-DE09-38A6-938D-8F4A7CF8101F' ]
+uuids:           [ 'x86_64: 5F6403D6-3495-383E-ADD1-C5E95E43B5BF' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PassKitUI.framework/Versions/A/PassKitUI'
 exports:         
@@ -24,8 +24,8 @@ exports:
                        PKAutocompleteTableCellView, PKAutocompleteTableView, PKAutocompleteTextField, 
                        PKAutocompleteViewController, PKAutocompleteWindow, PKBackFieldTableCellView, 
                        PKBackTableView, PKBackgroundView, PKButton, PKButtonCell, 
-                       PKCardInfoViewController, PKCardsTableViewController, PKChildWindow, 
-                       PKChildWindowContentView, PKContactAndShippingViewController, 
+                       PKCaptureExclusionView, PKCardInfoViewController, PKCardsTableViewController, 
+                       PKChildWindow, PKChildWindowContentView, PKContactAndShippingViewController, 
                        PKContactButton, PKContactCountryPopUpButton, PKContactCountryPopUpButtonCell, 
                        PKContactEditorViewController, PKContactLabelMenuController, 
                        PKContactTextField, PKContactTextFieldCell, PKCountryInformation, 

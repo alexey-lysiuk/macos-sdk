@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 506E3631-F856-3A2A-9E73-3B24E8F57509' ]
+uuids:           [ 'x86_64: 83327F55-0EEC-342B-814C-74A47D7EE2D3' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/WiFiPolicy.framework/Versions/A/WiFiPolicy'
 exports:         

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 26C11D4C-EADD-38B6-9739-F8282A906694', 'x86_64: 26C11D4C-EADD-38B6-9739-F8282A906694' ]
+uuids:           [ 'x86_64: E538EF89-5719-3AB6-811A-5C10DEF8FC95', 'x86_64: E538EF89-5719-3AB6-811A-5C10DEF8FC95' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SignpostSupport.framework/Versions/A/SignpostSupport'
-current-version: 40
+current-version: 41
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _IsPerfLoggingInterval, _PassesPerfLoggingWhitelist, _SSCAEventTypeForSignpost, 

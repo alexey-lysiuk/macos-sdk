@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BAC522A9-747E-33F9-A924-89C663C0917F', 'x86_64: BAC522A9-747E-33F9-A924-89C663C0917F' ]
+uuids:           [ 'x86_64: F9315A29-AF0B-35B5-886C-095B731070D3', 'x86_64: F9315A29-AF0B-35B5-886C-095B731070D3' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/NaturalLanguage.framework/Versions/A/NaturalLanguage'
 current-version: 57

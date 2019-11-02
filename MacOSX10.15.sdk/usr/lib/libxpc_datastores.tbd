@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8D763C76-6A71-3349-9C02-782DFEA4C96D' ]
+uuids:           [ 'x86_64: 1CC0FE38-3A02-3866-A52A-18B621A5D676' ]
 platform:        macosx
 install-name:    '/usr/lib/libxpc_datastores.dylib'
 exports:         

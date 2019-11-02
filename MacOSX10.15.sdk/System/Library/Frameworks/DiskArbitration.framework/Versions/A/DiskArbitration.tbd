@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: ED82EFFE-679F-3D01-B2C8-9A7EC26780F7', 'x86_64: ED82EFFE-679F-3D01-B2C8-9A7EC26780F7' ]
+uuids:           [ 'x86_64: A3D2B0A0-3C72-3893-87BF-D45FE398A905', 'x86_64: A3D2B0A0-3C72-3893-87BF-D45FE398A905' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration'
 exports:         

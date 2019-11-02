@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.1 (swiftlang-1100.8.259.70 clang-1100.0.32.1)
+// swift-compiler-version: Apple Swift version 5.1.1 (swiftlang-1100.8.275.1 clang-1100.0.32.1)
 // swift-module-flags: -target x86_64-apple-macos10.15 -enable-objc-interop -enable-library-evolution -module-link-name swiftCreateML -swift-version 5 -enforce-exclusivity=checked -O -module-name CreateML
 import AVFoundation
 import CoreGraphics
@@ -80,14 +80,21 @@ public struct MLObjectDetector {
   public var validationMetrics: CreateML.MLObjectDetectorMetrics {
     get
   }
+  @available(OSX, introduced: 10.15, deprecated: 10.15)
   public init(trainingData: CreateML.MLObjectDetector.DataSource, boundingBoxOrigin: CreateML.MLObjectDetector.Origin = .center, parameters: CreateML.MLObjectDetector.ModelParameters = ModelParameters()) throws
+  public init(trainingData: CreateML.MLObjectDetector.DataSource, parameters: CreateML.MLObjectDetector.ModelParameters = .init(), annotationType: CreateML.MLObjectDetector.AnnotationType) throws
+  @available(OSX, introduced: 10.15, deprecated: 10.15)
   public init(trainingData: CreateML.MLDataTable, imageColumn: Swift.String, annotationColumn: Swift.String, boundingBoxOrigin: CreateML.MLObjectDetector.Origin = .center, parameters: CreateML.MLObjectDetector.ModelParameters = ModelParameters()) throws
+  public init(trainingData: CreateML.MLDataTable, imageColumn: Swift.String, annotationColumn: Swift.String, annotationType: CreateML.MLObjectDetector.AnnotationType, parameters: CreateML.MLObjectDetector.ModelParameters = ModelParameters()) throws
   public func prediction(from image: Foundation.URL) throws -> CreateML.MLObjectDetector.DetectedObjects
   public func predictions(from images: [Foundation.URL]) throws -> [CreateML.MLObjectDetector.DetectedObjects]
   public func evaluation(on annotatedImages: CreateML.MLObjectDetector.DataSource) -> CreateML.MLObjectDetectorMetrics
   public func evaluation(on annotatedImages: CreateML.MLDataTable, imageColumn: Swift.String, annotationColumn: Swift.String) -> CreateML.MLObjectDetectorMetrics
   public func write(to fileURL: Foundation.URL, metadata: CreateML.MLModelMetadata? = MLModelMetadata()) throws
   public func write(toFile path: Swift.String, metadata: CreateML.MLModelMetadata? = MLModelMetadata()) throws
+  public enum AnnotationType {
+    case boundingBox(units: CreateML.MLBoundingBoxUnits = .pixel, origin: CreateML.MLBoundingBoxCoordinatesOrigin = .topLeft, anchor: CreateML.MLBoundingBoxAnchor = .center)
+  }
   public struct ObjectAnnotation {
     public var label: Swift.String
     public var boundingBox: CoreGraphics.CGRect
@@ -120,6 +127,7 @@ public struct MLObjectDetector {
     public func imagesWithObjectAnnotations() throws -> CreateML.MLDataTable
     public func stratifiedSplit(proportions: [Swift.Double], seed: Swift.Int = timestampSeed(), annotationColumn: Swift.String) throws -> CreateML.MLDataTable
   }
+  @available(OSX, introduced: 10.15, deprecated: 10.15)
   public enum Origin {
     case center
     public static func == (a: CreateML.MLObjectDetector.Origin, b: CreateML.MLObjectDetector.Origin) -> Swift.Bool
@@ -195,7 +203,6 @@ extension MLObjectDetector : Swift.CustomStringConvertible, Swift.CustomDebugStr
 }
 @available(OSX 10.14, *)
 public struct MLImageClassifier {
-  public static let defaultParameters: CreateML.MLImageClassifier.ModelParameters
   public var model: CoreML.MLModel {
     get
   }
@@ -206,8 +213,8 @@ public struct MLImageClassifier {
   public var validationMetrics: CreateML.MLClassifierMetrics {
     get
   }
-  public init(trainingData: CreateML.MLImageClassifier.DataSource, parameters: CreateML.MLImageClassifier.ModelParameters = MLImageClassifier.defaultParameters) throws
-  public init(trainingData: [Swift.String : [Foundation.URL]], parameters: CreateML.MLImageClassifier.ModelParameters = MLImageClassifier.defaultParameters) throws
+  public init(trainingData: CreateML.MLImageClassifier.DataSource, parameters: CreateML.MLImageClassifier.ModelParameters = ModelParameters(validationData: [:])) throws
+  public init(trainingData: [Swift.String : [Foundation.URL]], parameters: CreateML.MLImageClassifier.ModelParameters = ModelParameters(validationData: [:])) throws
   public func prediction(from image: CoreGraphics.CGImage) throws -> Swift.String
   public func prediction(from image: Foundation.URL) throws -> Swift.String
   public func predictions(from images: [Foundation.URL]) throws -> [Swift.String]
@@ -374,7 +381,6 @@ extension MLActivityClassifier.ModelParameters : Swift.CustomStringConvertible, 
 }
 @available(OSX 10.14, *)
 public struct MLTextClassifier {
-  public static let defaultParameters: CreateML.MLTextClassifier.ModelParameters
   public var model: CoreML.MLModel {
     get
   }
@@ -385,9 +391,9 @@ public struct MLTextClassifier {
   public var validationMetrics: CreateML.MLClassifierMetrics {
     get
   }
-  public init(trainingData: CreateML.MLTextClassifier.DataSource, parameters: CreateML.MLTextClassifier.ModelParameters = MLTextClassifier.defaultParameters) throws
-  public init(trainingData: [Swift.String : [Swift.String]], parameters: CreateML.MLTextClassifier.ModelParameters = MLTextClassifier.defaultParameters) throws
-  public init(trainingData: CreateML.MLDataTable, textColumn: Swift.String, labelColumn: Swift.String, parameters: CreateML.MLTextClassifier.ModelParameters = MLTextClassifier.defaultParameters) throws
+  public init(trainingData: CreateML.MLTextClassifier.DataSource, parameters: CreateML.MLTextClassifier.ModelParameters = ModelParameters(validationData: [:])) throws
+  public init(trainingData: [Swift.String : [Swift.String]], parameters: CreateML.MLTextClassifier.ModelParameters = ModelParameters(validationData: [:])) throws
+  public init(trainingData: CreateML.MLDataTable, textColumn: Swift.String, labelColumn: Swift.String, parameters: CreateML.MLTextClassifier.ModelParameters = ModelParameters(validationData: [:])) throws
   public func prediction(from text: Swift.String) throws -> Swift.String
   public func predictions(from texts: [Swift.String]) throws -> [Swift.String]
   public func predictions(from texts: CreateML.MLDataColumn<Swift.String>) throws -> CreateML.MLDataColumn<Swift.String>
@@ -504,7 +510,6 @@ extension MLTextClassifier.FeatureExtractorType : Swift.CustomStringConvertible,
 }
 @available(OSX 10.14, *)
 public struct MLWordTagger {
-  public static let defaultParameters: CreateML.MLWordTagger.ModelParameters
   public typealias Token = Swift.String
   public var model: CoreML.MLModel {
     get
@@ -516,8 +521,8 @@ public struct MLWordTagger {
   public var validationMetrics: CreateML.MLWordTaggerMetrics {
     get
   }
-  public init(trainingData: [(tokens: [CreateML.MLWordTagger.Token], labels: [Swift.String])], parameters: CreateML.MLWordTagger.ModelParameters = MLWordTagger.defaultParameters) throws
-  public init(trainingData: CreateML.MLDataTable, tokenColumn: Swift.String, labelColumn: Swift.String, parameters: CreateML.MLWordTagger.ModelParameters = MLWordTagger.defaultParameters) throws
+  public init(trainingData: [(tokens: [CreateML.MLWordTagger.Token], labels: [Swift.String])], parameters: CreateML.MLWordTagger.ModelParameters = ModelParameters(validationData: [])) throws
+  public init(trainingData: CreateML.MLDataTable, tokenColumn: Swift.String, labelColumn: Swift.String, parameters: CreateML.MLWordTagger.ModelParameters = ModelParameters(validationData: [])) throws
   public func prediction(from text: Swift.String) throws -> [Swift.String]
   public func prediction(from tokens: [CreateML.MLWordTagger.Token]) throws -> [Swift.String]
   public func predictions(from texts: CreateML.MLDataColumn<Swift.String>) throws -> CreateML.MLDataTable
@@ -848,7 +853,6 @@ extension MLRegressor : Swift.CustomStringConvertible, Swift.CustomDebugStringCo
 }
 @available(OSX 10.14, *)
 public struct MLBoostedTreeClassifier {
-  public static let defaultParameters: CreateML.MLBoostedTreeClassifier.ModelParameters
   public var model: CoreML.MLModel {
     get
   }
@@ -861,7 +865,7 @@ public struct MLBoostedTreeClassifier {
   public var validationMetrics: CreateML.MLClassifierMetrics {
     get
   }
-  public init(trainingData: CreateML.MLDataTable, targetColumn: Swift.String, featureColumns: [Swift.String]? = nil, parameters: CreateML.MLBoostedTreeClassifier.ModelParameters = MLBoostedTreeClassifier.defaultParameters) throws
+  public init(trainingData: CreateML.MLDataTable, targetColumn: Swift.String, featureColumns: [Swift.String]? = nil, parameters: CreateML.MLBoostedTreeClassifier.ModelParameters = ModelParameters(validationData: nil)) throws
   public func predictions(from data: CreateML.MLDataTable) throws -> CreateML.MLUntypedColumn
   public func evaluation(on labeledData: CreateML.MLDataTable) -> CreateML.MLClassifierMetrics
   public func write(to fileURL: Foundation.URL, metadata: CreateML.MLModelMetadata? = nil) throws
@@ -924,7 +928,6 @@ extension MLBoostedTreeClassifier : Swift.CustomStringConvertible, Swift.CustomD
 }
 @available(OSX 10.14, *)
 public struct MLRandomForestClassifier {
-  public static let defaultParameters: CreateML.MLRandomForestClassifier.ModelParameters
   public var model: CoreML.MLModel {
     get
   }
@@ -937,7 +940,7 @@ public struct MLRandomForestClassifier {
   public var validationMetrics: CreateML.MLClassifierMetrics {
     get
   }
-  public init(trainingData: CreateML.MLDataTable, targetColumn: Swift.String, featureColumns: [Swift.String]? = nil, parameters: CreateML.MLRandomForestClassifier.ModelParameters = MLRandomForestClassifier.defaultParameters) throws
+  public init(trainingData: CreateML.MLDataTable, targetColumn: Swift.String, featureColumns: [Swift.String]? = nil, parameters: CreateML.MLRandomForestClassifier.ModelParameters = ModelParameters(validationData: nil)) throws
   public func predictions(from data: CreateML.MLDataTable) throws -> CreateML.MLUntypedColumn
   public func evaluation(on labeledData: CreateML.MLDataTable) -> CreateML.MLClassifierMetrics
   public func write(to fileURL: Foundation.URL, metadata: CreateML.MLModelMetadata? = nil) throws
@@ -998,7 +1001,6 @@ extension MLRandomForestClassifier : Swift.CustomStringConvertible, Swift.Custom
 }
 @available(OSX 10.14, *)
 public struct MLDecisionTreeClassifier {
-  public static let defaultParameters: CreateML.MLDecisionTreeClassifier.ModelParameters
   public var model: CoreML.MLModel {
     get
   }
@@ -1011,7 +1013,7 @@ public struct MLDecisionTreeClassifier {
   public var validationMetrics: CreateML.MLClassifierMetrics {
     get
   }
-  public init(trainingData: CreateML.MLDataTable, targetColumn: Swift.String, featureColumns: [Swift.String]? = nil, parameters: CreateML.MLDecisionTreeClassifier.ModelParameters = MLDecisionTreeClassifier.defaultParameters) throws
+  public init(trainingData: CreateML.MLDataTable, targetColumn: Swift.String, featureColumns: [Swift.String]? = nil, parameters: CreateML.MLDecisionTreeClassifier.ModelParameters = ModelParameters(validationData: nil)) throws
   public func predictions(from data: CreateML.MLDataTable) throws -> CreateML.MLUntypedColumn
   public func evaluation(on labeledData: CreateML.MLDataTable) -> CreateML.MLClassifierMetrics
   public func write(to fileURL: Foundation.URL, metadata: CreateML.MLModelMetadata? = nil) throws
@@ -1067,9 +1069,18 @@ extension MLDecisionTreeClassifier : Swift.CustomStringConvertible, Swift.Custom
     get
   }
 }
+@available(OSX 10.15, *)
+public enum MLBoundingBoxUnits {
+  case pixel
+  case normalized
+  public static func == (a: CreateML.MLBoundingBoxUnits, b: CreateML.MLBoundingBoxUnits) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
 @available(OSX 10.14, *)
 public struct MLLogisticRegressionClassifier {
-  public static let defaultParameters: CreateML.MLLogisticRegressionClassifier.ModelParameters
   public var model: CoreML.MLModel {
     get
   }
@@ -1082,7 +1093,7 @@ public struct MLLogisticRegressionClassifier {
   public var validationMetrics: CreateML.MLClassifierMetrics {
     get
   }
-  public init(trainingData: CreateML.MLDataTable, targetColumn: Swift.String, featureColumns: [Swift.String]? = nil, parameters: CreateML.MLLogisticRegressionClassifier.ModelParameters = MLLogisticRegressionClassifier.defaultParameters) throws
+  public init(trainingData: CreateML.MLDataTable, targetColumn: Swift.String, featureColumns: [Swift.String]? = nil, parameters: CreateML.MLLogisticRegressionClassifier.ModelParameters = ModelParameters(validationData: nil)) throws
   public func predictions(from data: CreateML.MLDataTable) throws -> CreateML.MLUntypedColumn
   public func evaluation(on labeledData: CreateML.MLDataTable) -> CreateML.MLClassifierMetrics
   public func write(to fileURL: Foundation.URL, metadata: CreateML.MLModelMetadata? = nil) throws
@@ -1142,7 +1153,6 @@ extension MLLogisticRegressionClassifier : Swift.CustomStringConvertible, Swift.
 }
 @available(OSX 10.14, *)
 public struct MLSupportVectorClassifier {
-  public static let defaultParameters: CreateML.MLSupportVectorClassifier.ModelParameters
   public var model: CoreML.MLModel {
     get
   }
@@ -1155,7 +1165,7 @@ public struct MLSupportVectorClassifier {
   public var validationMetrics: CreateML.MLClassifierMetrics {
     get
   }
-  public init(trainingData: CreateML.MLDataTable, targetColumn: Swift.String, featureColumns: [Swift.String]? = nil, parameters: CreateML.MLSupportVectorClassifier.ModelParameters = MLSupportVectorClassifier.defaultParameters) throws
+  public init(trainingData: CreateML.MLDataTable, targetColumn: Swift.String, featureColumns: [Swift.String]? = nil, parameters: CreateML.MLSupportVectorClassifier.ModelParameters = ModelParameters(validationData: nil)) throws
   public func predictions(from data: CreateML.MLDataTable) throws -> CreateML.MLUntypedColumn
   public func evaluation(on labeledData: CreateML.MLDataTable) -> CreateML.MLClassifierMetrics
   public func write(to fileURL: Foundation.URL, metadata: CreateML.MLModelMetadata? = nil) throws
@@ -1374,6 +1384,17 @@ extension MLDecisionTreeRegressor : Swift.CustomStringConvertible, Swift.CustomD
   public var playgroundDescription: Any {
     get
   }
+}
+@available(OSX 10.15, *)
+public enum MLBoundingBoxAnchor {
+  case center
+  case topLeft
+  case bottomLeft
+  public static func == (a: CreateML.MLBoundingBoxAnchor, b: CreateML.MLBoundingBoxAnchor) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
 }
 @available(OSX 10.14, *)
 public struct MLLinearRegressor {
@@ -2313,6 +2334,16 @@ extension String : CreateML.MLDataValueConvertible {
     get
   }
 }
+@available(OSX 10.15, *)
+public enum MLBoundingBoxCoordinatesOrigin {
+  case topLeft
+  case bottomLeft
+  public static func == (a: CreateML.MLBoundingBoxCoordinatesOrigin, b: CreateML.MLBoundingBoxCoordinatesOrigin) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
 @available(OSX 10.14, *)
 extension MLDataValue.SequenceType {
   public init()
@@ -2587,14 +2618,22 @@ extension MLCreateError : Swift.CustomStringConvertible, Swift.CustomDebugString
     get
   }
 }
-@available(OSX 10.15, *)
+@available(OSX, introduced: 10.15, deprecated: 10.15)
 extension CreateML.MLObjectDetector.Origin : Swift.Equatable {}
-@available(OSX 10.15, *)
+@available(OSX, introduced: 10.15, deprecated: 10.15)
 extension CreateML.MLObjectDetector.Origin : Swift.Hashable {}
 @available(OSX 10.15, *)
 extension CreateML.MLRecommender.SimilarityType : Swift.Equatable {}
 @available(OSX 10.15, *)
 extension CreateML.MLRecommender.SimilarityType : Swift.Hashable {}
+@available(OSX 10.15, *)
+extension CreateML.MLBoundingBoxUnits : Swift.Equatable {}
+@available(OSX 10.15, *)
+extension CreateML.MLBoundingBoxUnits : Swift.Hashable {}
+@available(OSX 10.15, *)
+extension CreateML.MLBoundingBoxAnchor : Swift.Equatable {}
+@available(OSX 10.15, *)
+extension CreateML.MLBoundingBoxAnchor : Swift.Hashable {}
 @available(OSX 10.14, *)
 extension CreateML.MLDataTable.JoinType : Swift.Equatable {}
 @available(OSX 10.14, *)
@@ -2605,3 +2644,7 @@ extension CreateML.MLDataTable.PackType : Swift.Equatable {}
 extension CreateML.MLDataTable.PackType : Swift.Hashable {}
 @available(OSX 10.14, *)
 extension CreateML.MLDataValue.ValueType : Swift.Hashable {}
+@available(OSX 10.15, *)
+extension CreateML.MLBoundingBoxCoordinatesOrigin : Swift.Equatable {}
+@available(OSX 10.15, *)
+extension CreateML.MLBoundingBoxCoordinatesOrigin : Swift.Hashable {}

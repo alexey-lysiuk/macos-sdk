@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3E0A3117-9EE5-3901-9D71-BD2CFD072E63' ]
+uuids:           [ 'x86_64: 41C84531-7B33-3169-8CC7-AA4D60B65A1D' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/MediaPlayer.framework/Versions/A/MediaPlayer'
 exports:         
@@ -91,8 +91,7 @@ exports:
                        _MPRequestErrorDomain, _MPRequestUnderlyingErrorsUserInfoKey, 
                        _MPResponseDidInvalidateNotification, _MPRouteDiscoveryModeDescription, 
                        _MPRouteDiscoveryModeFromMRDiscoveryMode, _MPShuffleTypeDescription, 
-                       _MPSystemAppSpecializedQueueProminentStationIdentifier, _MPSystemAppSpecializedQueueQuickPlayIdentifier, 
-                       _MRMediaRemoteCommandHandlerStatusFromMPRemoteCommandHandlerStatus, 
+                       _MPSystemAppSpecializedQueueProminentStationIdentifier, _MRMediaRemoteCommandHandlerStatusFromMPRemoteCommandHandlerStatus, 
                        __MPAVRouteConnectionDidConnectNotification, __MPAVRouteConnectionDidInvalidateNotification, 
                        __MPContentItemDidChangeNotification, __MPContentItemDidChangeUserInfoKeyDeltaItem, 
                        __MPContentItemDidChangeUserInfoKeyDeltaRequest, __MPContentItemDidChangeUserInfoKeyImmediately, 
@@ -100,7 +99,6 @@ exports:
                        __MPNowPlayingCollectionInfoCollectionTypeRadio, __MPNowPlayingCollectionInfoKeyCollectionType, 
                        __MPNowPlayingCollectionInfoKeyIdentifiers, __MPNowPlayingCollectionInfoKeyTitle, 
                        __MPNowPlayingContentItemsDidChangeNotification, __MPNowPlayingInfoCenterPlaybackQueueDidChangeNotification, 
-                       __MPNowPlayingInfoCenterPlaybackStateDidChangeNotification, 
                        __MPNowPlayingInfoPropertyAlbumiTunesStoreAdamIdentifier, 
                        __MPNowPlayingInfoPropertyAppMetrics, __MPNowPlayingInfoPropertyArtistiTunesStoreAdamIdentifier, 
                        __MPNowPlayingInfoPropertyArtworkData, __MPNowPlayingInfoPropertyArtworkIdentifier, 
@@ -140,8 +138,8 @@ exports:
                        MPNowPlayingInfoCenter, MPNowPlayingInfoLanguageOption, MPNowPlayingInfoLanguageOptionGroup, 
                        MPNowPlayingInfoLyricsEvent, MPNowPlayingInfoLyricsItem, MPNowPlayingInfoLyricsItemToken, 
                        MPNowPlayingInfoTransportableSessionResponse, MPPlayableContentManager, 
-                       MPPlayableContentManagerContext, MPPlaybackArchive, MPPlaybackArchiveDisplayProperties, 
-                       MPQuickPlayPlaybackQueue, MPRadioStationRemotePlaybackQueue, 
+                       MPPlayableContentManagerContext, MPPlaybackArchive, MPPlaybackArchiveConfiguration, 
+                       MPPlaybackArchiveDisplayProperties, MPRadioStationRemotePlaybackQueue, 
                        MPRatingCommand, MPRatingCommandEvent, MPRemoteCommand, MPRemoteCommandCenter, 
                        MPRemoteCommandEvent, MPRemotePlaybackQueue, MPReorderQueueCommand, 
                        MPReorderQueueCommandEvent, MPRequest, MPRequestResponseController, 

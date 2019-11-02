@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D9B386B1-1E3A-3718-A7A6-067426B66100' ]
+uuids:           [ 'x86_64: A90ABBE9-C0DD-325A-99C7-5C1B560DFD01' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AudioDSPManager.framework/Versions/A/AudioDSPManager'
 exports:         

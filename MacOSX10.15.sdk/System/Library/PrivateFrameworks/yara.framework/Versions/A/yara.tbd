@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 27786062-EAE1-3266-BEC8-4BEA12BBF01A' ]
+uuids:           [ 'x86_64: C9B9AA63-7C06-34F5-BD19-1743BB262982' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/yara.framework/Versions/A/yara'
 exports:         

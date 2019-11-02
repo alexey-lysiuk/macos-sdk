@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E1D1DF91-E990-3892-94F8-EF7B56E45703', 'x86_64: E1D1DF91-E990-3892-94F8-EF7B56E45703' ]
+uuids:           [ 'x86_64: 0B987B50-1E14-3C70-9B90-A4AAB28BBF4F', 'x86_64: 0B987B50-1E14-3C70-9B90-A4AAB28BBF4F' ]
 platform:        zippered
 install-name:    '/usr/lib/swift/libswiftos.dylib'
 current-version: 0

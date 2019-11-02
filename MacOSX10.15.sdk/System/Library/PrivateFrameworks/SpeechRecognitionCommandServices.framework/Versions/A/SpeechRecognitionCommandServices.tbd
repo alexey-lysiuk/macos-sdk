@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 62A859EA-F3D9-3DFC-BB79-938061511380' ]
+uuids:           [ 'x86_64: 8A497E09-A1B0-3C58-982D-5DC7C6CFCAC2' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SpeechRecognitionCommandServices.framework/Versions/A/SpeechRecognitionCommandServices'
 exports:         

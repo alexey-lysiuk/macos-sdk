@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B1AE0B45-FF70-3366-9773-8B331E816D98' ]
+uuids:           [ 'x86_64: 0032CD0D-3E39-321C-B6B8-FAE688278630' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ReplayKitMacHelper.framework/Versions/A/ReplayKitMacHelper'
 exports:         

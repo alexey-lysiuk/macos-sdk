@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7AD81EEB-F2AA-348C-AC95-218A876B12C7', 'x86_64: 7AD81EEB-F2AA-348C-AC95-218A876B12C7' ]
+uuids:           [ 'x86_64: 618B774A-1F77-3056-B910-1C7419B8F97F', 'x86_64: 618B774A-1F77-3056-B910-1C7419B8F97F' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/PhotoVision.framework/Versions/A/PhotoVision'
 exports:         
@@ -44,7 +44,6 @@ exports:
                        _PVNotificationClustererNeedsToBeSyncedWithPhotoLibrary, _PVNotificationClustererReady, 
                        _PVNotificationClusteringFinished, _PVNotificationClusteringStarted, 
                        _PVPersonPromoterQuiescentStateRequirementsMinimumNumberOfFacesOnSourceForUpgrading, 
-                       _PVStartResultClusteringStateKey, _PVStartResultSuccessKey, 
                        _PVSuggestionUpdateCancelled, _PVSuggestionUpdateFinished, 
                        _PVSuggestionUpdateProgress, _PVSuggestionUpdateStarted, _PVVisionClustersMinusLibraryClusters, 
                        _PVVisionFaceLandmarkConfidenceThreshold, _PVVisionFaceSmilingThreshold, 
@@ -68,12 +67,9 @@ exports:
                        _PV_FACECROP_FACEBOX_KEY, _PV_FACECROP_GROUPID_KEY, _PV_FACECROP_METADATA_NAMESPACE, 
                        _PV_FACECROP_METADATA_PREFIX, _PV_FACECROP_METADATA_ROOT_PATH, 
                        _PV_FACECROP_VERSION_KEY, _PhotoVisionVersionNumber, _PhotoVisionVersionString, 
-                       __PVBatchSizeForUnclusteringFaces, __PVClusteredFaceCountDifferenceThresholdForFullCompare, 
-                       __PVClusteredFaceCountDifferenceThresholdForQuickCompare, 
-                       __PVClustererSecondsInWeek, __PVMinimumClusterSizeForClusterComparison, 
                        _createOrientedCroppedAndScaledImageFromCGImageSource, _getImagePropertiesFromCGImageSource, 
-                       _kClusterCacheVersion, _kGraphNodeF2Threshold, _kGraphNodeHighPrecisionThreshold, 
-                       _kGraphNodeHighRecallThreshold, _kMD5ChecksumSize, _kPVAggregateForAggdPrimaryDomainName, 
+                       _kGraphNodeF2Threshold, _kGraphNodeHighPrecisionThreshold, 
+                       _kGraphNodeHighRecallThreshold, _kPVAggregateForAggdPrimaryDomainName, 
                        _makeOrientationTransform, _makeRectClippedAgainstImageBounds, 
                        _makeRectWithAllIntegers, _makeScaledRect ]
     objc-classes:    [ PVAggregate, PVCanceler, PVClusterer, PVContext, PVDataAccessor, 

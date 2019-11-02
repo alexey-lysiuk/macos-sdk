@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: 9EEE8D2C-F265-3737-9C84-EC44D4305D73', 'x86_64: 9EEE8D2C-F265-3737-9C84-EC44D4305D73', 
-                   'x86_64h: ADA9FFC1-7C95-36D4-8DD0-9570034DB4A5', 'x86_64h: ADA9FFC1-7C95-36D4-8DD0-9570034DB4A5' ]
+uuids:           [ 'x86_64: 427A292C-9B1A-3E91-951D-739F1F85D9F5', 'x86_64: 427A292C-9B1A-3E91-951D-739F1F85D9F5', 
+                   'x86_64h: D866A31E-5CB1-3327-8D22-C4F83C9225D0', 'x86_64h: D866A31E-5CB1-3327-8D22-C4F83C9225D0' ]
 platform:        zippered
 install-name:    '/usr/lib/libobjc.A.dylib'
 current-version: 228
@@ -67,10 +67,10 @@ exports:
                        _objc_atomicCompareAndSwapInstanceVariableBarrier, _objc_atomicCompareAndSwapPtr, 
                        _objc_atomicCompareAndSwapPtrBarrier, _objc_autorelease, _objc_autoreleasePoolPop, 
                        _objc_autoreleasePoolPush, _objc_autoreleaseReturnValue, _objc_begin_catch, 
-                       _objc_clear_deallocating, _objc_clear_stack, _objc_collect, 
-                       _objc_collect_init, _objc_collectableZone, _objc_collectingEnabled, 
-                       _objc_collecting_enabled, _objc_constructInstance, _objc_copyClassList, 
-                       _objc_copyClassNamesForImage, _objc_copyClassNamesForImageHeader, 
+                       _objc_class_abi_version, _objc_clear_deallocating, _objc_clear_stack, 
+                       _objc_collect, _objc_collect_init, _objc_collectableZone, 
+                       _objc_collectingEnabled, _objc_collecting_enabled, _objc_constructInstance, 
+                       _objc_copyClassList, _objc_copyClassNamesForImage, _objc_copyClassNamesForImageHeader, 
                        _objc_copyCppObjectAtomic, _objc_copyImageNames, _objc_copyProtocolList, 
                        _objc_copyRealizedClassList, _objc_copyStruct, _objc_copyWeak, 
                        _objc_debug_autoreleasepoolpage_child_offset, _objc_debug_autoreleasepoolpage_depth_offset, 

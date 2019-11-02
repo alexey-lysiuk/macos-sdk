@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D831AA07-7540-3F96-9AB0-0EFCE01FD556' ]
+uuids:           [ 'x86_64: 4707042A-7145-3122-997B-EEBF186434AA' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CoreFollowUp.framework/Versions/A/CoreFollowUp'
 exports:         

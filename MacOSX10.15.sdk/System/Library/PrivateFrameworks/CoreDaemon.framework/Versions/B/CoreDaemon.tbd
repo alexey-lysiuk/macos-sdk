@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AC9398A7-0A1A-32E6-9716-4ACF7ABA09EB', 'x86_64: AC9398A7-0A1A-32E6-9716-4ACF7ABA09EB' ]
+uuids:           [ 'x86_64: E382C414-45C5-370B-A011-ED8FFCE8737D', 'x86_64: E382C414-45C5-370B-A011-ED8FFCE8737D' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreDaemon.framework/Versions/B/CoreDaemon'
 current-version: 3

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: ACAB540E-FEEA-3702-AA4C-80E6DC5D4FBD', 'x86_64: ACAB540E-FEEA-3702-AA4C-80E6DC5D4FBD' ]
+uuids:           [ 'x86_64: 01560258-122E-33EE-86C3-E3809990A31B', 'x86_64: 01560258-122E-33EE-86C3-E3809990A31B' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ktrace.framework/Versions/A/ktrace'
-current-version: 354.0.3
+current-version: 354.40.7
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CFArrayApplierTrampoline, _CFDictionaryApplierTrampoline, 
@@ -12,7 +12,7 @@ exports:
                        __Z27ktrace_address_space_createi, __Z31ktrace_uuid_map_update_internalP15ktrace_uuid_mapP14ktrace_sessionP12ktrace_pointbbU13block_pointerFv10prepass_opE, 
                        __Z32ktrace_address_space_from_dscsymPvm, __Z32ktrace_uuid_map_get_shared_cacheP15ktrace_uuid_map11CFUUIDBytes, 
                        __Z33ktrace_uuid_map_learn_sharedcacheP15ktrace_uuid_map11CFUUIDBytes, 
-                       __Z35ktrace_address_space_from_stackshot11kcdata_iter, __Z38ktrace_uuid_map_read_process_info_dictP15ktrace_uuid_mapPK14__CFDictionary, 
+                       __Z35ktrace_address_space_from_stackshot11kcdata_iter, __Z38ktrace_uuid_map_read_process_info_dictP15ktrace_uuid_mapPK14__CFDictionaryb, 
                        __Z39ktrace_symboilcator_learn_ariadne_chunkP18KtraceSymbolicatorP12ktrace_chunk, 
                        __Z40ktrace_symboilcator_learn_tailspin_chunkP18KtraceSymbolicatorP12ktrace_chunk, 
                        __Z43ktrace_address_space_get_offset_for_addressP15ktrace_uuid_mapP20ktrace_address_spacey, 
@@ -75,10 +75,11 @@ exports:
                        _ktrace_config_set_command, _ktrace_config_set_context_kind, 
                        _ktrace_config_set_reason, _ktrace_config_set_trigger_kind, 
                        _ktrace_configure, _ktrace_convert_timestamp_to_nanoseconds, 
-                       _ktrace_copy_symbolicator_from_chunk, _ktrace_cpu_map_estimate_cpus, 
-                       _ktrace_create_cssymbolicator_for_pid, _ktrace_create_cssymbolicator_for_task, 
-                       _ktrace_create_cssymbolicator_for_thread, _ktrace_create_dsym_search_configuration, 
-                       _ktrace_current_timebase, _ktrace_describe_uuid_offset, _ktrace_disable_configured, 
+                       _ktrace_convert_timestamp_to_walltime, _ktrace_copy_symbolicator_from_chunk, 
+                       _ktrace_cpu_map_estimate_cpus, _ktrace_create_cssymbolicator_for_pid, 
+                       _ktrace_create_cssymbolicator_for_task, _ktrace_create_cssymbolicator_for_thread, 
+                       _ktrace_create_dsym_search_configuration, _ktrace_current_timebase, 
+                       _ktrace_describe_uuid_offset, _ktrace_disable_configured, 
                        _ktrace_dsym_search_configuration_add_dstroot_path, _ktrace_dsym_search_configuration_copy_plist, 
                        _ktrace_dsym_search_configuration_create_with_plist, _ktrace_dsym_search_configuration_set_allow_arch_unknown, 
                        _ktrace_dsym_search_configuration_set_allow_image_type_unknown, 
@@ -110,10 +111,10 @@ exports:
                        _ktrace_file_ktrace_event_count, _ktrace_file_latest_timestamp, 
                        _ktrace_file_latest_walltime, _ktrace_file_log, _ktrace_file_machtime_to_walltime, 
                        _ktrace_file_open, _ktrace_file_open_fd, _ktrace_file_open_memory, 
-                       _ktrace_file_read, _ktrace_file_relationship_type, _ktrace_file_timebase, 
-                       _ktrace_file_uuid, _ktrace_file_walltime_offset, _ktrace_file_write, 
-                       _ktrace_file_write_header_system_default, _ktrace_filter_pid, 
-                       _ktrace_filter_process, _ktrace_free_dsym_search_configuration, 
+                       _ktrace_file_read, _ktrace_file_relationship_type, _ktrace_file_tap_to_radar, 
+                       _ktrace_file_timebase, _ktrace_file_uuid, _ktrace_file_walltime_offset, 
+                       _ktrace_file_write, _ktrace_file_write_header_system_default, 
+                       _ktrace_filter_pid, _ktrace_filter_process, _ktrace_free_dsym_search_configuration, 
                        _ktrace_get_buffer_size, _ktrace_get_collection_interval, 
                        _ktrace_get_collection_qos, _ktrace_get_cputime_for_thread, 
                        _ktrace_get_cputime_total, _ktrace_get_current_timestamp, 

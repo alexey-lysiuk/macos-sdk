@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CF67465C-6C51-3EC9-A3DB-A60A1EB1BC04', 'x86_64: CF67465C-6C51-3EC9-A3DB-A60A1EB1BC04' ]
+uuids:           [ 'x86_64: 1A7EAD57-7817-32B1-8F22-D6A3FEC50CB9', 'x86_64: 1A7EAD57-7817-32B1-8F22-D6A3FEC50CB9' ]
 platform:        zippered
 install-name:    '/usr/lib/swift/libswiftNetwork.dylib'
 current-version: 0

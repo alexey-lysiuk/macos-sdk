@@ -1,4 +1,4 @@
-/* iig(DriverKit-73.0.1) generated from IOUserNetworkRxCompletionQueue.iig */
+/* iig(DriverKit-73.40.3) generated from IOUserNetworkRxCompletionQueue.iig */
 
 /* IOUserNetworkRxCompletionQueue.iig:1-17 */
 #ifndef _IOUSERNETWORKRXCOMPLETIONQUEUE_IIG

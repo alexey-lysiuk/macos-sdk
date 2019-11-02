@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C3253E7C-6ADB-3E0B-A642-43896D3ACE23', 'x86_64: C3253E7C-6ADB-3E0B-A642-43896D3ACE23' ]
+uuids:           [ 'x86_64: 4E29C1A6-71BE-30C0-BB57-0EC519A6CAD9', 'x86_64: 4E29C1A6-71BE-30C0-BB57-0EC519A6CAD9' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ExchangeWebServices.framework/Versions/A/ExchangeWebServices'
 current-version: 281

@@ -1,4 +1,4 @@
-/* iig(DriverKit-73.0.1) generated from IOUserHIDEventDriver.iig */
+/* iig(DriverKit-73.40.3) generated from IOUserHIDEventDriver.iig */
 
 /* IOUserHIDEventDriver.iig:1-37 */
 /*
@@ -38,7 +38,7 @@ class IOHIDElement;
 class IOHIDEvent;
 class IOHIDDigitizerCollection;
 
-/* class IOUserHIDEventDriver IOUserHIDEventDriver.iig:38-310 */
+/* class IOUserHIDEventDriver IOUserHIDEventDriver.iig:38-311 */
 
 
 #define IOUserHIDEventDriver_Start_Args \
@@ -64,6 +64,10 @@ public:\
 \
     void\
     setSurfaceDimensions(\
+);\
+\
+    void\
+    setTipThreshold(\
 );\
 \
     IOHIDEvent *\
@@ -255,6 +259,6 @@ public:
 };
 #endif /* !KERNEL */
 
-/* IOUserHIDEventDriver.iig:312- */
+/* IOUserHIDEventDriver.iig:313- */
 
 #endif /* _HIDDRIVERKIT_IOUSERHIDEVENTDRIVER_H */

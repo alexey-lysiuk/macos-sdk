@@ -8,14 +8,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 NS_SWIFT_UNAVAILABLE("NSInvocation and related APIs not available")
 @interface NSMethodSignature : NSObject
-#if !__OBJC2__
-{
-@private
-    void *_private;
-    void *_reserved[5];
-    unsigned long _flags;
-}
-#endif
 
 + (nullable NSMethodSignature *)signatureWithObjCTypes:(const char *)types;
 

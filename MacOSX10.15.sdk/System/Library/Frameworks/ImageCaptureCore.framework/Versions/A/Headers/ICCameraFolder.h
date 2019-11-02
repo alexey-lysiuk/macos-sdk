@@ -17,8 +17,8 @@ CF_ASSUME_NONNULL_BEGIN
 
 //--------------------------------------------------------------------------------------------------------------- ICCameraFolder
 /*!
- @class ICCameraFolder
- @abstract This class represents a folder on an ICCameraDevice object.
+  @class ICCameraFolder
+  @abstract This class represents a folder on an ICCameraDevice object.
  */
 IC_AVAILABLE(macos(10.4), ios(13.0))
 @interface ICCameraFolder : ICCameraItem
@@ -26,8 +26,8 @@ IC_AVAILABLE(macos(10.4), ios(13.0))
 }
 
 /*!
- @property contents
- @abstract ￼A list of items contained by this folder.
+  @property contents
+  @abstract ￼A list of items contained by this folder.
  */
 @property (nonatomic, readonly, nullable) NSArray<ICCameraItem*>* contents IC_AVAILABLE(macos(10.4), ios(13.0));
 

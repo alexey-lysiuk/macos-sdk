@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 62116F41-1C6C-338D-845C-BF2A1206A046' ]
+uuids:           [ 'x86_64: 2725B6AE-AFDB-349F-B66E-5CA492B56CF8' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SearchUI.framework/Versions/A/SearchUI'
 exports:         
@@ -61,8 +61,9 @@ exports:
                        SearchUISelectableGridCardSectionView, SearchUISelectableTextView, 
                        SearchUISeparatorView, SearchUISingleResultTableCellView, 
                        SearchUIStock, SearchUIStockChartData, SearchUIStockChartDisplayMode, 
-                       SearchUIStockDataSource, SearchUIStockGraphView, SearchUIStockManager, 
-                       SearchUIStocksBundles, SearchUIStocksCardSectionView, SearchUIStocksPreferences, 
+                       SearchUIStockDataSource, SearchUIStockGraphSectionRowModel, 
+                       SearchUIStockGraphView, SearchUIStockManager, SearchUIStocksBundles, 
+                       SearchUIStocksCardSectionView, SearchUIStocksPreferences, 
                        SearchUISuggestionCardSectionView, SearchUISymbolImage, SearchUITLKConverters, 
                        SearchUITLKImage, SearchUITLKImageConverter, SearchUITLKMultilineTextConverter, 
                        SearchUITableModel, SearchUITableRowCardView, SearchUITableRowView, 

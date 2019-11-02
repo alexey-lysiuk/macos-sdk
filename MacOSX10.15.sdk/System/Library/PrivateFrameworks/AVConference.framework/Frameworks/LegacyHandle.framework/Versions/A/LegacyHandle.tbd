@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1AD96B79-39CB-36F2-B04A-BB49133229B7', 'x86_64: 1AD96B79-39CB-36F2-B04A-BB49133229B7' ]
+uuids:           [ 'x86_64: B44CD962-4BCC-33E3-A4BA-D9A3850B322B', 'x86_64: B44CD962-4BCC-33E3-A4BA-D9A3850B322B' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AVConference.framework/Frameworks/LegacyHandle.framework/Versions/A/LegacyHandle'
 exports:         

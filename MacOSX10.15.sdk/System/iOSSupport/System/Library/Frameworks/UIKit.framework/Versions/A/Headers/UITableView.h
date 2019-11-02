@@ -257,10 +257,6 @@ UIKIT_EXTERN API_AVAILABLE(ios(9.0)) @interface UITableViewFocusUpdateContext : 
  */
 - (void)tableView:(UITableView *)tableView willPerformPreviewActionForMenuWithConfiguration:(UIContextMenuConfiguration *)configuration animator:(id<UIContextMenuInteractionCommitAnimating>)animator API_AVAILABLE(ios(13.0)) API_UNAVAILABLE(watchos, tvos);
 
-
-/// This method is deprecated and will be removed in a future seed. Please use its replacement.
-- (void)tableView:(UITableView *)tableView willCommitMenuWithAnimator:(id<UIContextMenuInteractionCommitAnimating>)animator API_AVAILABLE(ios(13.0)) API_UNAVAILABLE(watchos, tvos) API_DEPRECATED_WITH_REPLACEMENT("tableView:willPerformPreviewActionForMenuWithConfiguration:animator:", ios(13.0, 13.0));
-
 @end
 
 UIKIT_EXTERN NSNotificationName const UITableViewSelectionDidChangeNotification;

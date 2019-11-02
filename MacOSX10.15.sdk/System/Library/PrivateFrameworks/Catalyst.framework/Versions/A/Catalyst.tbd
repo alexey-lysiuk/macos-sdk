@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5E7EC981-EDCD-31AF-B1CD-56F8F5DC43E3', 'x86_64: 5E7EC981-EDCD-31AF-B1CD-56F8F5DC43E3' ]
+uuids:           [ 'x86_64: F1B42AF0-28D6-30BD-8DBD-34274BB4EC41', 'x86_64: F1B42AF0-28D6-30BD-8DBD-34274BB4EC41' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/Catalyst.framework/Versions/A/Catalyst'
 current-version: 6

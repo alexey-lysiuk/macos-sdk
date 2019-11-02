@@ -1,11 +1,11 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A69B07DD-B1E0-308F-8F11-B1B83BA12B87' ]
+uuids:           [ 'x86_64: F9B177D0-204D-35C5-8FF0-225B2F3A6ECB' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/EAFirmwareUpdater.framework/Versions/A/EAFirmwareUpdater'
 exports:         
   - archs:           [ x86_64 ]
-    symbols:         [ _kOverrideProtocol, _payload_length_for_command ]
+    symbols:         [ _isCloseEASession, _kOverrideProtocol, _payload_length_for_command ]
     objc-classes:    [ EAFirmwareUpdater, FirmwareBundle, HSModel, iAUPServer ]
     objc-ivars:      [ EAFirmwareUpdater._accessory, EAFirmwareUpdater._appProtocol, 
                        EAFirmwareUpdater._applyCompletion, EAFirmwareUpdater._bootloaderProtocol, 
@@ -15,8 +15,9 @@ exports:
                        EAFirmwareUpdater._cumulativeTimeTaken, EAFirmwareUpdater._currentFirmwareVersionOnAcc, 
                        EAFirmwareUpdater._currentSessionCloakTime, EAFirmwareUpdater._currentSessionTimeTaken, 
                        EAFirmwareUpdater._deviceClass, EAFirmwareUpdater._deviceOptions, 
-                       EAFirmwareUpdater._eaNotificationDispatchQueue, EAFirmwareUpdater._firmwareBundleFilename, 
-                       EAFirmwareUpdater._firmwareBundleURL, EAFirmwareUpdater._firmwareUpdateComplete, 
+                       EAFirmwareUpdater._eaNotificationDispatchQueue, EAFirmwareUpdater._excludeUniqueAccessoryCheck, 
+                       EAFirmwareUpdater._firmwareBundleFilename, EAFirmwareUpdater._firmwareBundleURL, 
+                       EAFirmwareUpdater._firmwareUpdateComplete, EAFirmwareUpdater._firmwareUpdateIsUrgent, 
                        EAFirmwareUpdater._firmwareVersionAvailable, EAFirmwareUpdater._firmwareVersionMajor, 
                        EAFirmwareUpdater._firmwareVersionMinor, EAFirmwareUpdater._firmwareVersionRelease, 
                        EAFirmwareUpdater._flushOutputLock, EAFirmwareUpdater._forceSilentUpdate, 

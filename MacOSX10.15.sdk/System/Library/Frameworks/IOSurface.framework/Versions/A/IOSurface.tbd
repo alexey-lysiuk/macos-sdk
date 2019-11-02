@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 71639E56-36AF-33C1-8F70-FF97C16DF70B', 'x86_64: 71639E56-36AF-33C1-8F70-FF97C16DF70B' ]
+uuids:           [ 'x86_64: DB88C9C2-0F53-3C77-98F0-1D8A1DFA9CB1', 'x86_64: DB88C9C2-0F53-3C77-98F0-1D8A1DFA9CB1' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/IOSurface.framework/Versions/A/IOSurface'
 exports:         

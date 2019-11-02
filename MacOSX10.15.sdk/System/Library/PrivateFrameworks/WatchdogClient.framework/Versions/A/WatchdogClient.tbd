@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 868784CB-920F-3B12-81F7-E6A6CF24021A' ]
+uuids:           [ 'x86_64: B1228D4E-50B5-3630-A7F4-5598651CE963' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/WatchdogClient.framework/Versions/A/WatchdogClient'
-current-version: 67.0.2
+current-version: 67.40.1
 compatibility-version: 0
 exports:         
   - archs:           [ x86_64 ]

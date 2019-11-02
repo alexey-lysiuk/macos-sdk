@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C11C2741-9991-38FA-929E-B8C1CA0D4A65', 'x86_64: C11C2741-9991-38FA-929E-B8C1CA0D4A65' ]
+uuids:           [ 'x86_64: 36EB7D45-4E72-31B9-BEF7-E446A5C803BB', 'x86_64: 36EB7D45-4E72-31B9-BEF7-E446A5C803BB' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/Montreal.framework/Versions/A/Montreal'
 current-version: 120.1

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FE9B461B-F534-3674-8FD9-A7205A3350E1', 'x86_64: FE9B461B-F534-3674-8FD9-A7205A3350E1' ]
+uuids:           [ 'x86_64: 975FBE7C-C399-3B64-AFF1-24B3B161F477', 'x86_64: 975FBE7C-C399-3B64-AFF1-24B3B161F477' ]
 platform:        zippered
 install-name:    '/usr/lib/libperfcheck.dylib'
 exports:         

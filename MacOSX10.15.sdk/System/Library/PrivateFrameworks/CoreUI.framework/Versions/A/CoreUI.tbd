@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C8A643A5-80F2-337C-A2F5-55C563512DA5', 'x86_64: C8A643A5-80F2-337C-A2F5-55C563512DA5' ]
+uuids:           [ 'x86_64: 5FB17928-EB0D-3C46-B078-7B9621261385', 'x86_64: 5FB17928-EB0D-3C46-B078-7B9621261385' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreUI.framework/Versions/A/CoreUI'
-current-version: 603
+current-version: 607
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CSIEqualMetrics, _CSIIllegalMetrics, _CUIBlendModeDescriptionFromCGBlendMode, 

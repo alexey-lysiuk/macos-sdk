@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EDFB3B34-805A-3C48-B593-40F1075EB855', 'x86_64: EDFB3B34-805A-3C48-B593-40F1075EB855' ]
+uuids:           [ 'x86_64: E157272F-14DD-37B3-849F-011E2A79B81A', 'x86_64: E157272F-14DD-37B3-849F-011E2A79B81A' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/USDKit.framework/Versions/A/USDKit'
 current-version: 24

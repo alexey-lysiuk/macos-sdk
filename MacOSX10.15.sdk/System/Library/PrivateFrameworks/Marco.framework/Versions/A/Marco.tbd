@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8B559AF5-C80C-38E3-9CCC-78DB70C49C7A', 'x86_64: 8B559AF5-C80C-38E3-9CCC-78DB70C49C7A' ]
+uuids:           [ 'x86_64: 0EA43E00-4C88-3A5C-A895-934DF9C5DDF9', 'x86_64: 0EA43E00-4C88-3A5C-A895-934DF9C5DDF9' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/Marco.framework/Versions/A/Marco'
 current-version: 800

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A1E6CB90-90DA-3AAE-8611-6A70D8DFAC95', 'x86_64: A1E6CB90-90DA-3AAE-8611-6A70D8DFAC95' ]
+uuids:           [ 'x86_64: DF8E9B1C-2009-349D-B5EA-0AE2302128CD', 'x86_64: DF8E9B1C-2009-349D-B5EA-0AE2302128CD' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/Netrb.framework/Versions/A/Netrb'
 exports:         

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DEBDC8E7-9C47-32FA-90E9-55B63CCFBD32', 'x86_64: DEBDC8E7-9C47-32FA-90E9-55B63CCFBD32' ]
+uuids:           [ 'x86_64: 38F989F6-5143-3D01-9F41-3B34553B68F0', 'x86_64: 38F989F6-5143-3D01-9F41-3B34553B68F0' ]
 platform:        zippered
 install-name:    '/usr/lib/libcups.2.dylib'
 current-version: 2.14

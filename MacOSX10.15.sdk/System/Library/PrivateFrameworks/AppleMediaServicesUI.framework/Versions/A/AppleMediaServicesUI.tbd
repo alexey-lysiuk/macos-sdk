@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 657DA125-0AA0-38E2-A9E6-B3CA5D913243' ]
+uuids:           [ 'x86_64: 73D7A577-13E6-3DA5-A453-470D34244294' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AppleMediaServicesUI.framework/Versions/A/AppleMediaServicesUI'
 exports:         

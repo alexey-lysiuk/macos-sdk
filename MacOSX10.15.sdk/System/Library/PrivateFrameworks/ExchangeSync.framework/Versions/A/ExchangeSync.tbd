@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0F8B6768-4868-302C-A8EA-D6E4A4FEA683' ]
+uuids:           [ 'x86_64: 58B0BA50-1840-385E-B41A-A8AC077E02E3' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ExchangeSync.framework/Versions/A/ExchangeSync'
-current-version: 116
+current-version: 117
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _ExchangeSyncVersionNumber, _ExchangeSyncVersionString, _kExchangeSyncD_SyncNowNotification ]

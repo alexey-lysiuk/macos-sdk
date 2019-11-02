@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F550E48F-C5BE-36BD-83F6-0E74C655E6FF', 'x86_64: F550E48F-C5BE-36BD-83F6-0E74C655E6FF' ]
+uuids:           [ 'x86_64: C7526E78-CCEB-3178-B560-32E6315AC4D1', 'x86_64: C7526E78-CCEB-3178-B560-32E6315AC4D1' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/PowerLog.framework/Versions/A/PowerLog'
 exports:         

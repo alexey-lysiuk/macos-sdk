@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6C019A0F-028B-3215-922D-1DAC4EF1B9DD' ]
+uuids:           [ 'x86_64: 2B4B5C5A-9B76-3717-AED1-51DBD89BE892' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/RemoteCoreML.framework/Versions/A/RemoteCoreML'
 exports:         

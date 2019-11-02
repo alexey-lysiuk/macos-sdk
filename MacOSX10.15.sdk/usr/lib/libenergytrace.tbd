@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BBB900F9-76FA-32ED-AF35-520108862259', 'x86_64: BBB900F9-76FA-32ED-AF35-520108862259' ]
+uuids:           [ 'x86_64: 1CE2BD78-F68E-36A3-BCE9-E9EAB78D9FF3', 'x86_64: 1CE2BD78-F68E-36A3-BCE9-E9EAB78D9FF3' ]
 platform:        zippered
 install-name:    '/usr/lib/libenergytrace.dylib'
 exports:         

@@ -15,6 +15,14 @@
 #import <Availability.h>
 #import <os/availability.h>
 
+#if defined(__has_include)
+#if __has_include(<AppleFeatures/AppleFeatures.h>)
+#include <AppleFeatures/AppleFeatures.h>
+#endif // AppleFeatures
+#else // !defined(__has_include)
+#error "__has_include not defined."
+#endif // __has_include
+
 #ifdef __cplusplus
 #define CL_EXTERN extern "C" __attribute__((visibility ("default")))
 #else

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0ED9A3D4-0465-3FDB-8AFF-3917D98B1E23' ]
+uuids:           [ 'x86_64: A693E889-891E-3F70-9F5D-9DBDE919A80D' ]
 platform:        uikitformac
 install-name:    '/System/Library/PrivateFrameworks/FMIPCore.framework/Versions/A/FMIPCore'
 swift-abi-version: 7
@@ -106,7 +106,9 @@ exports:
                        '_$s8FMIPCore11FMIPManagerC13familyMembersSayAA10FMIPPersonVGvpMV', 
                        '_$s8FMIPCore11FMIPManagerC13isInitializedSbvg', '_$s8FMIPCore11FMIPManagerC13isInitializedSbvgTq', 
                        '_$s8FMIPCore11FMIPManagerC13isInitializedSbvpMV', '_$s8FMIPCore11FMIPManagerC13isInitializedSbvpWvd', 
-                       '_$s8FMIPCore11FMIPManagerC13isInitializedSbvpfi', '_$s8FMIPCore11FMIPManagerC14selectedDeviceAA10FMIPDeviceVSgvM', 
+                       '_$s8FMIPCore11FMIPManagerC13isInitializedSbvpfi', '_$s8FMIPCore11FMIPManagerC14refreshBeacons10completionyyycSg_tF', 
+                       '_$s8FMIPCore11FMIPManagerC14refreshBeacons10completionyyycSg_tFTq', 
+                       '_$s8FMIPCore11FMIPManagerC14selectedDeviceAA10FMIPDeviceVSgvM', 
                        '_$s8FMIPCore11FMIPManagerC14selectedDeviceAA10FMIPDeviceVSgvMTq', 
                        '_$s8FMIPCore11FMIPManagerC14selectedDeviceAA10FMIPDeviceVSgvg', 
                        '_$s8FMIPCore11FMIPManagerC14selectedDeviceAA10FMIPDeviceVSgvgTq', 
@@ -118,9 +120,12 @@ exports:
                        '_$s8FMIPCore11FMIPManagerC14stopRefreshingyyF', '_$s8FMIPCore11FMIPManagerC14stopRefreshingyyFTq', 
                        '_$s8FMIPCore11FMIPManagerC15startRefreshingyyF', '_$s8FMIPCore11FMIPManagerC15startRefreshingyyFTq', 
                        '_$s8FMIPCore11FMIPManagerC16debugDescriptionSSvg', '_$s8FMIPCore11FMIPManagerC16debugDescriptionSSvgTq', 
-                       '_$s8FMIPCore11FMIPManagerC16debugDescriptionSSvpMV', '_$s8FMIPCore11FMIPManagerC23isUpdatingSingleDevices33_2C896CDCBBB3FEED6B3798C85D481EDFLLSbvpfi', 
+                       '_$s8FMIPCore11FMIPManagerC16debugDescriptionSSvpMV', '_$s8FMIPCore11FMIPManagerC20forceStartRefreshingyyF', 
+                       '_$s8FMIPCore11FMIPManagerC20forceStartRefreshingyyFTq', '_$s8FMIPCore11FMIPManagerC23isUpdatingSingleDevices33_2C896CDCBBB3FEED6B3798C85D481EDFLLSbvpfi', 
                        '_$s8FMIPCore11FMIPManagerC24updateLastLocationStatus7enabledySb_tF', 
                        '_$s8FMIPCore11FMIPManagerC24updateLastLocationStatus7enabledySb_tFTq', 
+                       '_$s8FMIPCore11FMIPManagerC25updateLastActiveTimestampyyF', 
+                       '_$s8FMIPCore11FMIPManagerC25updateLastActiveTimestampyyFTq', 
                        '_$s8FMIPCore11FMIPManagerC5ownerAA10FMIPPersonVSgvg', '_$s8FMIPCore11FMIPManagerC5ownerAA10FMIPPersonVSgvgTq', 
                        '_$s8FMIPCore11FMIPManagerC5ownerAA10FMIPPersonVSgvpMV', '_$s8FMIPCore11FMIPManagerC6handle3url10completiony10Foundation3URLV_yAI_SSSgAA13FMIPURLActionOSgs5Error_pSgtctF', 
                        '_$s8FMIPCore11FMIPManagerC6handle3url10completiony10Foundation3URLV_yAI_SSSgAA13FMIPURLActionOSgs5Error_pSgtctFTq', 
@@ -198,7 +203,7 @@ exports:
                        '_$s8FMIPCore12FMIPLocationV2eeoiySbAC_ACtFZ', '_$s8FMIPCore12FMIPLocationV4fromACs7Decoder_p_tKcfC', 
                        '_$s8FMIPCore12FMIPLocationV5isOldSbvg', '_$s8FMIPCore12FMIPLocationV5isOldSbvpMV', 
                        '_$s8FMIPCore12FMIPLocationV6encode2toys7Encoder_p_tKF', '_$s8FMIPCore12FMIPLocationV8location15shiftedLocationA2C_So10CLLocationCtcfC', 
-                       '_$s8FMIPCore12FMIPLocationV8locationACSo10CLLocationC_tcfC', 
+                       '_$s8FMIPCore12FMIPLocationV8location4typeACSo10CLLocationC_AA0B4TypeOtcfC', 
                        '_$s8FMIPCore12FMIPLocationV8locationSo10CLLocationCvg', '_$s8FMIPCore12FMIPLocationV8locationSo10CLLocationCvpMV', 
                        '_$s8FMIPCore12FMIPLocationVMa', '_$s8FMIPCore12FMIPLocationVMn', 
                        '_$s8FMIPCore12FMIPLocationVN', '_$s8FMIPCore12FMIPLocationVSEAAMc', 
@@ -445,6 +450,7 @@ exports:
                        '_$s8FMIPCore20FMIPAccountFormatterOMa', '_$s8FMIPCore20FMIPAccountFormatterOMn', 
                        '_$s8FMIPCore20FMIPAccountFormatterON', '_$s8FMIPCore20FMIPAccountFormatterOSHAAMc', 
                        '_$s8FMIPCore20FMIPAccountFormatterOSQAAMc', '_$s8FMIPCore20FMIPAccountFormatterOSYAAMc', 
+                       '_$s8FMIPCore20FMIPURLConfigureHostSSvau', '_$s8FMIPCore20FMIPURLConfigureHostSSvp', 
                        '_$s8FMIPCore21FMIPCancelEraseActionC18isPasswordRequiredSbvg', 
                        '_$s8FMIPCore21FMIPCancelEraseActionC2eeoiySbAC_ACtFZ', '_$s8FMIPCore21FMIPCancelEraseActionC6deviceAcA10FMIPDeviceV_tcfC', 
                        '_$s8FMIPCore21FMIPCancelEraseActionC6deviceAcA10FMIPDeviceV_tcfc', 

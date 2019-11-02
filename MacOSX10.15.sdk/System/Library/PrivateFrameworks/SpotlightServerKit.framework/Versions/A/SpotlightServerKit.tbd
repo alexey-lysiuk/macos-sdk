@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 40CDACDF-52CA-3C09-81EB-1A269552A130' ]
+uuids:           [ 'x86_64: EA71EDB8-C55F-3363-A378-3BD8F566B811' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SpotlightServerKit.framework/Versions/A/SpotlightServerKit'
-current-version: 2061
+current-version: 2074.4
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _BWA_Create, _BWA_DataAllocate, _BWA_DataDeallocate, _CFDataCreateWithContentsOfURL, 

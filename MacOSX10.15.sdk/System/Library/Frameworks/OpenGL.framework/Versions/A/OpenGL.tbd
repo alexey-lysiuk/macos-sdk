@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D847CEC9-1B6F-3FE5-9189-24B331F6B60E', 'x86_64: D847CEC9-1B6F-3FE5-9189-24B331F6B60E' ]
+uuids:           [ 'x86_64: 0142B045-DCF8-3554-A7FB-48A173541E40', 'x86_64: 0142B045-DCF8-3554-A7FB-48A173541E40' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/OpenGL.framework/Versions/A/OpenGL'
 exports:         
@@ -33,7 +33,7 @@ exports:
                        _glcPluginCount, _glcPluginDisconnect, _glcRecordError ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FBF0CD8F-0052-3F47-A35B-74367687BD41', 'x86_64: FBF0CD8F-0052-3F47-A35B-74367687BD41' ]
+uuids:           [ 'x86_64: 59E124FF-8F56-3028-9816-40699F152B3B', 'x86_64: 59E124FF-8F56-3028-9816-40699F152B3B' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib'
 exports:         
@@ -424,7 +424,7 @@ exports:
                        _glWindowPos3sv, _glWindowPos3svARB, _gll_noop ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 674FC095-D986-3646-9E64-560075762B8D', 'x86_64: 674FC095-D986-3646-9E64-560075762B8D' ]
+uuids:           [ 'x86_64: A4C86485-7CDF-30B0-ACB5-B0D11CA88ED0', 'x86_64: A4C86485-7CDF-30B0-ACB5-B0D11CA88ED0' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLU.dylib'
 exports:         

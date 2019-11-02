@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0F219678-6979-3D25-93FF-61B2E4E6A177' ]
+uuids:           [ 'x86_64: 8193355C-B247-36E2-A736-958E60BFD77B' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ConfigurationProfiles.framework/Versions/A/ConfigurationProfiles'
 exports:         

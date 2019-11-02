@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A0CFD18F-485B-377B-A045-A3C4C9077CB5' ]
+uuids:           [ 'x86_64: A58F0513-93B6-32A7-A737-F03A742334C3' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/HIDAnalytics.framework/Versions/A/HIDAnalytics'
 exports:         

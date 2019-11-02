@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 412B8F80-FC07-33B7-B759-6515296C357F', 'x86_64: 412B8F80-FC07-33B7-B759-6515296C357F' ]
+uuids:           [ 'x86_64: 0ED54BF3-FD8C-32E9-A8E8-5087AB372230', 'x86_64: 0ED54BF3-FD8C-32E9-A8E8-5087AB372230' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/IMFoundation.framework/Versions/A/IMFoundation'
 current-version: 800
@@ -251,8 +251,9 @@ exports:
                        _kFZInvisibleState, _kFZIsIgnoredChatParticipantProperty, 
                        _kFZJoinBlobChatProperty, _kFZListenerCapAVChatInfo, _kFZListenerCapAVObserver, 
                        _kFZListenerCapAccounts, _kFZListenerCapAppleAC, _kFZListenerCapAppleLegacyVC, 
-                       _kFZListenerCapAppleVC, _kFZListenerCapAuxInput, _kFZListenerCapBuddyList, 
-                       _kFZListenerCapChatCountsObserver, _kFZListenerCapChats, _kFZListenerCapDatabaseUpdateObserver, 
+                       _kFZListenerCapAppleVC, _kFZListenerCapAuxInput, _kFZListenerCapBlackholedChatRegistry, 
+                       _kFZListenerCapBuddyList, _kFZListenerCapChatCountsObserver, 
+                       _kFZListenerCapChats, _kFZListenerCapDatabaseUpdateObserver, 
                        _kFZListenerCapEvenMoreTruncatedChatRegistry, _kFZListenerCapFileTransfers, 
                        _kFZListenerCapIDQueries, _kFZListenerCapManageStatus, _kFZListenerCapMessageHistory, 
                        _kFZListenerCapModifyReadState, _kFZListenerCapNotifications, 

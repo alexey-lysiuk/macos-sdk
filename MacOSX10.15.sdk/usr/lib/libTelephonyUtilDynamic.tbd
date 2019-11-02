@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6210F555-3203-34E2-9337-6E0DA69825BF', 'x86_64: 6210F555-3203-34E2-9337-6E0DA69825BF' ]
+uuids:           [ 'x86_64: 6ED64F20-2FEE-340B-9E7F-5E3A3AF93E93', 'x86_64: 6ED64F20-2FEE-340B-9E7F-5E3A3AF93E93' ]
 platform:        zippered
 install-name:    '/usr/lib/libTelephonyUtilDynamic.dylib'
 exports:         

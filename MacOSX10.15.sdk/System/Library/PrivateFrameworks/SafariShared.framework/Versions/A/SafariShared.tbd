@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0D81298D-F3CA-3450-822D-A6808E86F7F7' ]
+uuids:           [ 'x86_64: 45602A2A-1360-3C22-A9BA-FDB1CF35A519' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SafariShared.framework/Versions/A/SafariShared'
-current-version: 608.2.6
+current-version: 608.3.10
 compatibility-version: 0
 exports:         
   - archs:           [ x86_64 ]
@@ -266,8 +266,9 @@ exports:
                        _WBSTopSitesScore, _WBSTopSitesScoreForCaching, _WBSTopSitesScoreWithCachedValues, 
                        _WBSTouchIconCacheWillPurgeUnneededImagesNotification, _WBSTouchIconWebViewConfigurationGroupIdentifier, 
                        _WBSUnifiedFieldInputTypeForString, _WBSUserHasUsedNonVirtualCardPreferenceKey, 
-                       _WBSWebGLPreferenceIdentifier, _WBSWebsiteShouldStartWithReaderEnabledUserInfoKey, 
-                       _WBSZoomPreferenceIdentifier, __SSURLCompletionMatchLocationForWBSURLCompletionMatchLocation, 
+                       _WBSWebGLPreferenceIdentifier, _WBSWebProcessPlugInSearchEnginesForRedirectToSafeSearchKey, 
+                       _WBSWebsiteShouldStartWithReaderEnabledUserInfoKey, _WBSZoomPreferenceIdentifier, 
+                       __SSURLCompletionMatchLocationForWBSURLCompletionMatchLocation, 
                        __WBSABAddressCityKey, __WBSABAddressCountryKey, __WBSABAddressStateKey, 
                        __WBSABAddressStreetKey, __WBSABAddressZIPKey, __WBSABInstantMessageServiceKey, 
                        __WBSABInstantMessageUsernameKey, __WBSABJobTitleProperty, 
@@ -638,10 +639,10 @@ exports:
                        WBSHistoryItem._visitsPendingWriteToDataStore ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A2BB4C85-590B-3F75-9F5A-AEEE0F02F20A', 'x86_64: A2BB4C85-590B-3F75-9F5A-AEEE0F02F20A' ]
+uuids:           [ 'x86_64: 9AD2A920-74AD-3A00-8998-A5C930FE11D3', 'x86_64: 9AD2A920-74AD-3A00-8998-A5C930FE11D3' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SafariCore.framework/Versions/A/SafariCore'
-current-version: 608.2.6
+current-version: 608.3.10
 compatibility-version: 0
 exports:         
   - archs:           [ x86_64 ]

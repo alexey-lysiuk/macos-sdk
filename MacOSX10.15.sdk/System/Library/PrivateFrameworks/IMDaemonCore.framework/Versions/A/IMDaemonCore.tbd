@@ -1,12 +1,12 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0D24EA89-0BCA-3948-B868-C96CE3C6EB02' ]
+uuids:           [ 'x86_64: FFA6C95D-0DC3-344C-9958-76F74F49E78D' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/IMDaemonCore.framework/Versions/A/IMDaemonCore'
 current-version: 800
 exports:         
   - archs:           [ x86_64 ]
-    symbols:         [ _CKNicknameRecordType, _CKRecordFileTransferAssetKey, _CKRecordFileTransferAttachmentCompressedMetadataKey, 
+    symbols:         [ _CKRecordFileTransferAssetKey, _CKRecordFileTransferAttachmentCompressedMetadataKey, 
                        _CKRecordFileTransferAttachmentGuidKey, _CKRecordFileTransferAttachmentMetadataKey, 
                        _CKRecordFileTransferAttributionInfoKey, _CKRecordFileTransferAuxVideoAssetKey, 
                        _CKRecordFileTransferAuxVideoLastPathComponentKey, _CKRecordFileTransferCreatedDateKey, 

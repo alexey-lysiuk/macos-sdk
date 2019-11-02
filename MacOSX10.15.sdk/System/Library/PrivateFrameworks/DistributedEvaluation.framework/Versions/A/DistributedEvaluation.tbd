@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 76E81CF8-9F19-35DC-8B28-1833961D2DD3', 'x86_64: 76E81CF8-9F19-35DC-8B28-1833961D2DD3' ]
+uuids:           [ 'x86_64: 4AC9EF38-9CA7-3363-B926-D9EFE4BABE98', 'x86_64: 4AC9EF38-9CA7-3363-B926-D9EFE4BABE98' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/DistributedEvaluation.framework/Versions/A/DistributedEvaluation'
 exports:         
@@ -19,7 +19,7 @@ exports:
                        _DESRecipeResponseURLPartScheme, _DESServiceAvailable, _DESServiceGetXPCInterface, 
                        _DESSubmissionLogDirectoryURL, _DESSubmissionLogFileURLs, 
                        _DESSubmissionLogGarbageCollect, _DESSubmissionLogSetHandler, 
-                       _DESWriteSubmissionLog, _DistributedEvaluationVersionNumber, 
+                       _DESWriteSubmissionLog, _DESWriteSubmissionLogData, _DistributedEvaluationVersionNumber, 
                        _DistributedEvaluationVersionString, _FSCopyFormatNameForFSType, 
                        _GetDiskImageEncryptionStatus, _GetFSEncryptionStatus, __DESIsHorseman, 
                        __FSCopyLocalizedNameForVolumeFormatAtNode, __FSCopyLocalizedNameForVolumeFormatAtURL, 

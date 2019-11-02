@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CA64343C-9A36-3357-87AE-88275DE8215E', 'x86_64: CA64343C-9A36-3357-87AE-88275DE8215E' ]
+uuids:           [ 'x86_64: C7EFDA44-34D9-372F-BE47-BDFA49316F65', 'x86_64: C7EFDA44-34D9-372F-BE47-BDFA49316F65' ]
 platform:        zippered
 install-name:    '/usr/lib/libnfshared.dylib'
 exports:         
@@ -101,8 +101,8 @@ exports:
                        NFAWDVASTransactionException, NFAWDVersionInfo, NFCurrency, 
                        NFJSONEncoder, NFMSEIParser, NFMemoryObserver, NFNdefMessageInternal, 
                        NFNdefRecordInternal, NFPowerAssertion, NFPowerObserver, NFPreferenceObserver, 
-                       NFPropertyCoder, NFRunScriptParameters, NFTLV, NFTagInternal, 
-                       NFTimer, NFWeakReference ]
+                       NFPropertyCoder, NFReaderSessionConfig, NFRunScriptParameters, 
+                       NFTLV, NFTagInternal, NFTimer, NFVASPassConfig, NFWeakReference ]
     objc-ivars:      [ AWDExpressTransactionType._appletType, AWDExpressTransactionType._count, 
                        AWDExpressTransactionType._has, AWDExpressTransactionType._ridAndPix, 
                        AWDExpressTransactionType._spid, AWDNFCCRSAuthExceptionEvent._has, 

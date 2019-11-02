@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B8982CD5-3A47-3366-A927-CDBB00D0E0A7', 'x86_64: B8982CD5-3A47-3366-A927-CDBB00D0E0A7' ]
+uuids:           [ 'x86_64: 028AC15A-35B7-3E1F-BCDC-470C8EA0CA09', 'x86_64: 028AC15A-35B7-3E1F-BCDC-470C8EA0CA09' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Metadata'
-current-version: 2061
+current-version: 2074.4
 parent-umbrella: CoreServices
 exports:         
   - archs:           [ x86_64 ]
@@ -11,7 +11,8 @@ exports:
     symbols:         [ _MDBackupBegin, _MDBackupCancel, _MDBackupCreate, _MDBackupEnd, 
                        _MDBackupFileWasIndexed, _MDBackupFinishedForVolume, _MDBackupFlushFallbackBackup, 
                        _MDBackupIndexFile, _MDBackupQuiescentForVolume, _MDBackupResume, 
-                       _MDBackupWriteRawAttributesToPath, _MDCopyLabelKinds, _MDCopyLabelWithID, 
+                       _MDBackupWriteRawAttributesToPath, _MDChildPlistBytesContextCreate, 
+                       _MDChildPlistBytesContextDestroy, _MDCopyLabelKinds, _MDCopyLabelWithID, 
                        _MDCopyLabelWithUUID, _MDCopyLabelsMatchingExpression, _MDCopyLabelsWithKind, 
                        _MDCopyPathForSpotlight, _MDCopySessionBegin, _MDCopySessionCancel, 
                        _MDCopySessionCreate, _MDCopySessionEnd, _MDCopySessionEnterUserDirectory, 
@@ -186,7 +187,7 @@ exports:
                        __MDCopyImportInfo, __MDCopyImporterPluginPathForFile, __MDCopyIndexSize, 
                        __MDCopyIndexingStatus, __MDCopyIndexingStatusForVolume, __MDCopyLabelUserUUID, 
                        __MDCopyLocalizedGroupNameDictionary, __MDCopyMDSimpleGroupingsPlist, 
-                       __MDCopyShortcutsDictionary, __MDCopyUTIToGroupNumberDictionary, 
+                       __MDCopyShortcutsDictionary, __MDCopyTextShortcutsSet, __MDCopyUTIToGroupNumberDictionary, 
                        __MDCopyVolumeFilter, __MDCopyVolumeFilterEngine, __MDCreateAppRankEvaluator, 
                        __MDCreateDictionaryByMappingXMPDictionary, __MDCreateSimpleQueryEvaluator, 
                        __MDCreateSimpleQueryEvaluatorWithBlock, __MDCreateSimpleQueryEvaluatorWithOptions, 

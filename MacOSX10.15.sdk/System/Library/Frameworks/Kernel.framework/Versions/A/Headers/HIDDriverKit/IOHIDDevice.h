@@ -1,4 +1,4 @@
-/* iig(DriverKit-73.0.1) generated from IOHIDDevice.iig */
+/* iig(DriverKit-73.40.3) generated from IOHIDDevice.iig */
 
 /* IOHIDDevice.iig:1-44 */
 /*

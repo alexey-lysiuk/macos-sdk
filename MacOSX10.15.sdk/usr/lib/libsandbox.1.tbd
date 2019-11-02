@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 06D2E4D6-1288-33EC-B72D-F6A9BD13D98A', 'x86_64: 06D2E4D6-1288-33EC-B72D-F6A9BD13D98A' ]
+uuids:           [ 'x86_64: EAC4CA6F-6527-373C-8AD8-F8F1B590B54B', 'x86_64: EAC4CA6F-6527-373C-8AD8-F8F1B590B54B' ]
 platform:        zippered
 install-name:    '/usr/lib/libsandbox.1.dylib'
 exports:         

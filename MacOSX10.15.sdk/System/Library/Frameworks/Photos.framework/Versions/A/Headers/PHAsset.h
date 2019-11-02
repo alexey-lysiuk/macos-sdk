@@ -46,6 +46,9 @@ OS_EXPORT
 
 @property (nonatomic, assign, readonly, getter=isFavorite) BOOL favorite;
 
+// deprecated, will always return NO for now.
+@property (nonatomic, assign, readonly, getter=isSyncFailureHidden) BOOL syncFailureHidden API_DEPRECATED("No longer supported", macos(10.14, 10.15)) API_UNAVAILABLE(ios, tvos, watchos);
+
 @property (nonatomic, strong, readonly, nullable) NSString *burstIdentifier API_AVAILABLE(macos(10.15));
 @property (nonatomic, assign, readonly) PHAssetBurstSelectionType burstSelectionTypes API_AVAILABLE(macos(10.15));
 @property (nonatomic, assign, readonly) BOOL representsBurst API_AVAILABLE(macos(10.15));

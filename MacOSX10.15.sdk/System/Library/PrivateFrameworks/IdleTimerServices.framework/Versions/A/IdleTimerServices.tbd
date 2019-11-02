@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6F701286-4115-3ADD-9B9B-1BD9449E353A', 'x86_64: 6F701286-4115-3ADD-9B9B-1BD9449E353A' ]
+uuids:           [ 'x86_64: 5AAD70E3-F95F-3262-A4D9-84138261A315', 'x86_64: 5AAD70E3-F95F-3262-A4D9-84138261A315' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/IdleTimerServices.framework/Versions/A/IdleTimerServices'
 exports:         

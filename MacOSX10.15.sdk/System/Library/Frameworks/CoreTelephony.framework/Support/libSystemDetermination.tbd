@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7DA421F5-AD3D-31B2-BF4C-B807D5A02291' ]
+uuids:           [ 'x86_64: F6D18E93-4D34-3F39-9B68-C1F32E6049C2' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/CoreTelephony.framework/Support/libSystemDetermination.dylib'
 exports:         
@@ -477,7 +477,7 @@ exports:
                        _kCTMobileEquipmentInfoIMEI, _kCTMobileEquipmentInfoIMSI, 
                        _kCTMobileEquipmentInfoMEID, _kCTMobileEquipmentInfoMIN, _kCTMobileEquipmentInfoNAI, 
                        _kCTMobileEquipmentInfoPRIVersion, _kCTMobileEquipmentInfoPRLVersion, 
-                       _kCTMobileEquipmentInfoSlotId, _kIMSConnectivityHelperKey ]
+                       _kCTMobileEquipmentInfoSlotId ]
     weak-def-symbols: [ __ZTI17SimInstanceLoggerI26SystemDeterminationManagerN3ctu10LoggerBaseINSt3__110shared_ptrINS1_9LogServerEEEEEE, 
                         __ZTI19SimInstanceLoggableI26SystemDeterminationManagerN3ctu10LoggerBaseINSt3__110shared_ptrINS1_9LogServerEEEEEE, 
                         __ZTI24SimInstanceLoggerDefaultIN3ctu10LoggerBaseINSt3__110shared_ptrINS0_9LogServerEEEEEE, 

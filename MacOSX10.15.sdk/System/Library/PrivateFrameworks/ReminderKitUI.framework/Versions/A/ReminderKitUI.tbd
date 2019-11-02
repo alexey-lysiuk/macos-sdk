@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 96B28BC9-4BF8-35FA-BFCB-1A67791412EF' ]
+uuids:           [ 'x86_64: 64884A66-46A2-342F-AB13-4488F6BEABF8' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ReminderKitUI.framework/Versions/A/ReminderKitUI'
 exports:         

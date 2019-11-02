@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 79D66419-30B6-379B-8364-FCDAB6A8BCC3', 'x86_64: 79D66419-30B6-379B-8364-FCDAB6A8BCC3' ]
+uuids:           [ 'x86_64: 00FDBCD4-A7CC-3E32-AC10-878B6A74596F', 'x86_64: 00FDBCD4-A7CC-3E32-AC10-878B6A74596F' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreSVG.framework/Versions/A/CoreSVG'
 current-version: 129

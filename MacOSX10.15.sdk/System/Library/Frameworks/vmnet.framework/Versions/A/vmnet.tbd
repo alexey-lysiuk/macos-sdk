@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 74B82CFA-EEBA-3A9E-A0EC-27BDA47B030C' ]
+uuids:           [ 'x86_64: 32E91C86-4331-3B09-B4AB-59E95C67134C' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/vmnet.framework/Versions/A/vmnet'
 exports:         

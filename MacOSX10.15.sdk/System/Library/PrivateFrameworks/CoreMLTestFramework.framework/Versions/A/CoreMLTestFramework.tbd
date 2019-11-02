@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 79AAD419-042A-3AA8-BDA6-8C36DEB8C989' ]
+uuids:           [ 'x86_64: D0377A6B-799F-3FC9-A0CD-F5E68A3F881E' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CoreMLTestFramework.framework/Versions/A/CoreMLTestFramework'
 exports:         

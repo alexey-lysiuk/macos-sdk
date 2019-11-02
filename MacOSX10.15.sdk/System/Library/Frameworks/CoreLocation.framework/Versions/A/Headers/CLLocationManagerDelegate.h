@@ -63,7 +63,7 @@ NS_ASSUME_NONNULL_BEGIN
  *    Invoked when a new heading is available.
  */
 - (void)locationManager:(CLLocationManager *)manager
-       didUpdateHeading:(CLHeading *)newHeading API_AVAILABLE(ios(3.0)) API_UNAVAILABLE(watchos, tvos, macos);
+       didUpdateHeading:(CLHeading *)newHeading API_AVAILABLE(ios(3.0), watchos(2.0)) API_UNAVAILABLE(tvos, macos);
 
 /*
  *  locationManagerShouldDisplayHeadingCalibration:
@@ -72,7 +72,7 @@ NS_ASSUME_NONNULL_BEGIN
  *    Invoked when a new heading is available. Return YES to display heading calibration info. The display 
  *    will remain until heading is calibrated, unless dismissed early via dismissHeadingCalibrationDisplay.
  */
-- (BOOL)locationManagerShouldDisplayHeadingCalibration:(CLLocationManager *)manager  API_AVAILABLE(ios(3.0)) API_UNAVAILABLE(watchos, tvos, macos);
+- (BOOL)locationManagerShouldDisplayHeadingCalibration:(CLLocationManager *)manager  API_AVAILABLE(ios(3.0), watchos(2.0)) API_UNAVAILABLE(tvos, macos);
 
 /*
  *  locationManager:didDetermineState:forRegion:

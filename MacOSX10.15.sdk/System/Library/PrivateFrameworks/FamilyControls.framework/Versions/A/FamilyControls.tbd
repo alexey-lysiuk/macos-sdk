@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6BCFAECB-F6E4-363D-8638-620382ED54C3' ]
+uuids:           [ 'x86_64: 47382E4B-C84D-3307-BB9F-CF86FBEC5601' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/FamilyControls.framework/Versions/A/FamilyControls'
 exports:         

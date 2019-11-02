@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E00C62C9-E15F-36CF-AEEB-2254A133DA67', 'x86_64: E00C62C9-E15F-36CF-AEEB-2254A133DA67' ]
+uuids:           [ 'x86_64: D3478ED9-A757-355F-A4A0-464E133182D6', 'x86_64: D3478ED9-A757-355F-A4A0-464E133182D6' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/LanguageModeling.framework/Versions/A/LanguageModeling'
-current-version: 212
+current-version: 215
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _LMCreateMontrealIDsFromLMTokenIDSequence, _LMEnumerateAssetDataItems, 
@@ -129,14 +129,14 @@ exports:
                        _kLMLanguageModelNegativeLearningThresholdKey, _kLMLanguageModelPruningTargetSizeKey, 
                        _kLMLanguageModelRecencyModelWeightKey, _kLMLanguageModelRecencyNgramCountThresholdKey, 
                        _kLMLanguageModelRecencyUnigramCountThresholdKey, _kLMLanguageModelRecipientContextKey, 
-                       _kLMLanguageModelSpatialTemporalContextKey, _kLMLanguageModelStaticModelWeightKey, 
-                       _kLMLanguageModelStaticModelsEnabledKey, _kLMLanguageModelTagBitCountKey, 
-                       _kLMLanguageModelTagGenreMatchCountWeightKey, _kLMLanguageModelTagMatchCountWeightKey, 
-                       _kLMLanguageModelTagMismatchCountWeightKey, _kLMLanguageModelTagRecipientMatchCountWeightKey, 
-                       _kLMLanguageModelTagSpatialTemporalMatchCountWeightKey, _kLMLanguageModelUnknownTokenPenaltyKey, 
-                       _kLMLanguageModelUseDynamicTokenCharacterFilterKey, _kLMLanguageModelUseMontrealKey, 
-                       _kLMLanguageModelUseMontrealUNKKey, _kLMLanguageModelUseSerializedCacheKey, 
-                       _kLMLanguageModelUseSpecialNumberTokenKey, _kLMRecordFamilyNameKey, 
-                       _kLMRecordGivenNameKey, _kLMRecordHashKey, _kLMRecordNicknameKey, 
-                       _kLMVocabularyLocaleKey ]
+                       _kLMLanguageModelShouldExcludeMobileAssetsKey, _kLMLanguageModelSpatialTemporalContextKey, 
+                       _kLMLanguageModelStaticModelWeightKey, _kLMLanguageModelStaticModelsEnabledKey, 
+                       _kLMLanguageModelTagBitCountKey, _kLMLanguageModelTagGenreMatchCountWeightKey, 
+                       _kLMLanguageModelTagMatchCountWeightKey, _kLMLanguageModelTagMismatchCountWeightKey, 
+                       _kLMLanguageModelTagRecipientMatchCountWeightKey, _kLMLanguageModelTagSpatialTemporalMatchCountWeightKey, 
+                       _kLMLanguageModelUnknownTokenPenaltyKey, _kLMLanguageModelUseDynamicTokenCharacterFilterKey, 
+                       _kLMLanguageModelUseMontrealKey, _kLMLanguageModelUseMontrealUNKKey, 
+                       _kLMLanguageModelUseSerializedCacheKey, _kLMLanguageModelUseSpecialNumberTokenKey, 
+                       _kLMRecordFamilyNameKey, _kLMRecordGivenNameKey, _kLMRecordHashKey, 
+                       _kLMRecordNicknameKey, _kLMVocabularyLocaleKey ]
 ...

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C95A3B8E-C5FC-3247-8D36-17F8250F41FF' ]
+uuids:           [ 'x86_64: C920556E-E092-3E0D-AB0D-4B8075C94254' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/InputMethodKit.framework/Versions/A/InputMethodKit'
-current-version: 424
+current-version: 429
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _IMKButtonCallbackKey, _IMKButtonCallbackObjectKey, _IMKCandidateControllerFunctionViewPadding, 
@@ -65,26 +65,26 @@ exports:
                        _IMKUIExpandedLayoutName, _IMKUILocationHintString, _IMKUIOppositeLocationHint, 
                        _IMKUIPanelCornerRadius, _IMKUIPanelTypeIsScrubber, _IMKUIPanelTypeIsTouchBar, 
                        _IMKUIPanelTypeToString, _IMKUIPressAndHoldCandidateSelectionPadding, 
-                       _IMKUISpeechBalloonMaskCornerRadius, _IMKUITouchBarFunctionKeyBarLength, 
-                       _IMKUITouchBarFunctionKeySpacing, _IMKUITouchBarFunctionKeyWidth, 
-                       _IMKUITouchBarStandardLength, _IMKUITouchBarTrackpadStandardLength, 
-                       _IMKUTF32StringEncoding, _IMKUnsignedSubtract, _IMKWindowCategoryFromType, 
-                       _InputMethodServerControllerClass, _InputMethodServerDelegateClass, 
-                       _InputMethodServerModeDictionary, _NSModifierFlagsFromIMKKeyModifiers, 
-                       _NSRectRoundedSize, _NSSizeAddSize, _NSStringFromCandidateArray, 
-                       _NSStringFromIMKCandidateWindowType, _NSZeroOriginRect, _NSZeroOriginRectFromSize, 
-                       __IMKCandidateGroupCandidatesKey, __IMKCandidateGroupLabelKey, 
-                       ___IMKADBKeyCodeMapping, __debug_logging, __imk_asl, __imk_asl_log_messages, 
-                       __imk_logFile, __imk_log_controller_allocations, __imk_log_msg, 
-                       __imk_log_processDisplayName, __serverClient_tracing, __serverClient_xpc_blockStall_logging, 
-                       __serverClient_xpc_tracing, _asl_init, _asl_stop, _isEqualWithNil, 
-                       _k32BitNSNotFound, _k64BitNSNotFound, _kCandidateWindowFudgeFactor, 
-                       _kEventPending, _kIMKCommandClientName, _kIMKCommandMenuItemName, 
-                       _kIMKKeyboardServiceDelegate, _kIMKShortcutModifiers, _kIMKUISpotlightIdentifier, 
-                       _kIMKUISpotlightMarginFromTextRect, _kSpotlightIdentifier, 
-                       _kSpotlightMarginFromTextRect, _nameFor, _server_client_ipc_signpost_log, 
-                       _server_perf_signpost_log, _server_ui_signpost_log, _unkownSpellDocumentID, 
-                       _waitingSpellDocumentID ]
+                       _IMKUIQuickTypeBarWidth, _IMKUISpeechBalloonMaskCornerRadius, 
+                       _IMKUITouchBarFunctionKeyBarLength, _IMKUITouchBarFunctionKeySpacing, 
+                       _IMKUITouchBarFunctionKeyWidth, _IMKUITouchBarStandardLength, 
+                       _IMKUITouchBarTrackpadStandardLength, _IMKUTF32StringEncoding, 
+                       _IMKUnsignedSubtract, _IMKWindowCategoryFromType, _InputMethodServerControllerClass, 
+                       _InputMethodServerDelegateClass, _InputMethodServerModeDictionary, 
+                       _NSModifierFlagsFromIMKKeyModifiers, _NSRectRoundedSize, _NSSizeAddSize, 
+                       _NSStringFromCandidateArray, _NSStringFromIMKCandidateWindowType, 
+                       _NSZeroOriginRect, _NSZeroOriginRectFromSize, __IMKCandidateGroupCandidatesKey, 
+                       __IMKCandidateGroupLabelKey, ___IMKADBKeyCodeMapping, __debug_logging, 
+                       __imk_asl, __imk_asl_log_messages, __imk_logFile, __imk_log_controller_allocations, 
+                       __imk_log_msg, __imk_log_processDisplayName, __serverClient_tracing, 
+                       __serverClient_xpc_blockStall_logging, __serverClient_xpc_tracing, 
+                       _asl_init, _asl_stop, _isEqualWithNil, _k32BitNSNotFound, 
+                       _k64BitNSNotFound, _kCandidateWindowFudgeFactor, _kEventPending, 
+                       _kIMKCommandClientName, _kIMKCommandMenuItemName, _kIMKKeyboardServiceDelegate, 
+                       _kIMKShortcutModifiers, _kIMKUISpotlightIdentifier, _kIMKUISpotlightMarginFromTextRect, 
+                       _kSpotlightIdentifier, _kSpotlightMarginFromTextRect, _nameFor, 
+                       _server_client_ipc_signpost_log, _server_perf_signpost_log, 
+                       _server_ui_signpost_log, _unkownSpellDocumentID, _waitingSpellDocumentID ]
     objc-classes:    [ IMKAbstractInputMethod, IMKAbstractTextDocument, IMKAppleSpellCandidateEngine, 
                        IMKAutoCapitalizationInputMethod, IMKAutoPeriodInputMethod, 
                        IMKCandidate, IMKCandidateArrowView, IMKCandidateBasedInputController, 
@@ -350,19 +350,20 @@ exports:
                        IMKUICandidateTouchBarCandidateListItemController._layout, 
                        IMKUICandidateTouchBarCandidateListItemController._selectedCandidate, 
                        IMKUICandidateTouchBarCandidateListItemController._showsChevron, 
+                       IMKUICandidateTouchBarCandidateListItemController._surfaceWidth, 
                        IMKUICandidateTouchBarCandidateListItemController._view, IMKUICandidateTouchBarCandidateListItemController._viewController, 
                        IMKUICandidateTouchBarController._numberOfSimilarWidthCandidates, 
                        IMKUICandidateTouchBarController._secondaryCandidatesShowChevron, 
-                       IMKUICandidateTouchBarController._viewController, IMKUICandidateTouchBarItemController._candidateGroups, 
-                       IMKUICandidateTouchBarItemController._delegate, IMKUICandidateTouchBarItemController._fixedWidth, 
-                       IMKUICandidateTouchBarItemController._itemLayout, IMKUICandidateTouchBarItemController._layoutTraits, 
-                       IMKUICandidateTouchBarItemController._lineIndex, IMKUICandidateTouchBarItemController._lineLayout, 
-                       IMKUICandidateTouchBarItemController._lineLayoutIterator, 
+                       IMKUICandidateTouchBarController._surfaceWidth, IMKUICandidateTouchBarController._viewController, 
+                       IMKUICandidateTouchBarItemController._candidateGroups, IMKUICandidateTouchBarItemController._delegate, 
+                       IMKUICandidateTouchBarItemController._fixedWidth, IMKUICandidateTouchBarItemController._itemLayout, 
+                       IMKUICandidateTouchBarItemController._layoutTraits, IMKUICandidateTouchBarItemController._lineIndex, 
+                       IMKUICandidateTouchBarItemController._lineLayout, IMKUICandidateTouchBarItemController._lineLayoutIterator, 
                        IMKUICandidateTouchBarItemController._numberOfFixedWidthCandidates, 
                        IMKUICandidateTouchBarItemController._scrubberView, IMKUICandidateTouchBarItemController._selectedCandidate, 
                        IMKUICandidateTouchBarItemController._showsChevron, IMKUICandidateTouchBarItemController._style, 
-                       IMKUICandidateTouchBarItemController._view, IMKUICandidateTouchBarItemController._viewController, 
-                       IMKUICandidateTouchBarOnScreenBridge._auxiliaryOnscreenController, 
+                       IMKUICandidateTouchBarItemController._surfaceWidth, IMKUICandidateTouchBarItemController._view, 
+                       IMKUICandidateTouchBarItemController._viewController, IMKUICandidateTouchBarOnScreenBridge._auxiliaryOnscreenController, 
                        IMKUICandidateTouchBarOnScreenBridge._auxiliaryOnscreenControllerClass, 
                        IMKUICandidateTouchBarOnScreenBridge._onscreenCandidatesReflectedInTouchBar, 
                        IMKUICandidateTouchBarOnScreenBridge._scrubbingInTouchBarUpdatesOnscreenCandidates, 
@@ -404,7 +405,7 @@ exports:
                        IPMDServerClientWrapper._isForcedSilentCommitComposition, 
                        IPMDServerClientWrapper._keyboardType, IPMDServerClientWrapper._markedCharacterCount, 
                        IPMDServerClientWrapper._markedTextCache, IPMDServerClientWrapper._replyTimeout, 
-                       IPMDServerClientWrapper._usesXPC, IPMDServerClientWrapper._validEvents, 
-                       IPMDServerClientWrapper._viewEffectiveAppearance_Cache, IPMDServerClientWrapper._windowLevel_Cache, 
-                       IPMDServerClientWrapper._xpcConnection ]
+                       IPMDServerClientWrapper._touchBarAvailableFrameCache, IPMDServerClientWrapper._usesXPC, 
+                       IPMDServerClientWrapper._validEvents, IPMDServerClientWrapper._viewEffectiveAppearance_Cache, 
+                       IPMDServerClientWrapper._windowLevel_Cache, IPMDServerClientWrapper._xpcConnection ]
 ...

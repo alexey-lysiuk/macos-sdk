@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4AA19867-A84F-3760-A000-6B006363E59C', 'x86_64: 4AA19867-A84F-3760-A000-6B006363E59C' ]
+uuids:           [ 'x86_64: A7F6CA89-0B93-389A-9C1B-187BC22A3E18', 'x86_64: A7F6CA89-0B93-389A-9C1B-187BC22A3E18' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ProactiveSupport.framework/Versions/A/ProactiveSupport'
-current-version: 258
+current-version: 258.3
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _PASScoreNotSet, _ProactiveSupportVersionNumber, _ProactiveSupportVersionString, 

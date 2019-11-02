@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F3705C6E-AA86-3232-89D3-D37841357E45', 'x86_64: F3705C6E-AA86-3232-89D3-D37841357E45' ]
+uuids:           [ 'x86_64: F0A931E4-0C31-36BA-8DD7-01FDF9813FB7', 'x86_64: F0A931E4-0C31-36BA-8DD7-01FDF9813FB7' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/SearchKit.framework/Versions/A/SearchKit'
 current-version: 417.1

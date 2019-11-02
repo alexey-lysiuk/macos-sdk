@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 13DF92D1-05F3-32DE-999B-C8A8FDDAEAC2', 'x86_64: 13DF92D1-05F3-32DE-999B-C8A8FDDAEAC2' ]
+uuids:           [ 'x86_64: 46AAA43E-6FC6-38A8-B696-62143706D33B', 'x86_64: 46AAA43E-6FC6-38A8-B696-62143706D33B' ]
 platform:        zippered
 install-name:    '/usr/lib/libxar.1.dylib'
 current-version: 1.3

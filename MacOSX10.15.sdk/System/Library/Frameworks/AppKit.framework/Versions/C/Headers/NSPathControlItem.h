@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import <AppKit/AppKitDefines.h>
+#import <AppKit/NSImage.h>
 
 NS_ASSUME_NONNULL_BEGIN
 API_UNAVAILABLE_BEGIN(ios)

@@ -33,7 +33,7 @@ typedef NSString *NSFileProviderDomainIdentifier NS_EXTENSIBLE_STRING_ENUM;
  common directory. That directory path is indicated by the
  @p pathRelativeToDocumentStorage property.
  */
-API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(macos) API_UNAVAILABLE(watchos, tvos)
+API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(macos, macCatalyst) API_UNAVAILABLE(watchos, tvos)
 @interface NSFileProviderDomain : NSObject
 
 /**
@@ -75,11 +75,11 @@ API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(macos) API_UNAVAILABLE(watchos, tvos)
  The disconnected state can be modified on an existing domain by recreating a domain
  with the same identifier, then passing it to addDomain.
  */
-@property (readwrite, getter=isDisconnected) BOOL disconnected API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos);
+@property (readwrite, getter=isDisconnected) BOOL disconnected API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst);
 
 @end
 
-API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(macos) API_UNAVAILABLE(watchos, tvos)
+API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(macos, macCatalyst) API_UNAVAILABLE(watchos, tvos)
 @interface NSFileProviderExtension (NSFileProviderDomain)
 @property(nonatomic, readonly, nullable) NSFileProviderDomain *domain;
 @end

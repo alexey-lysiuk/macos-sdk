@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F63A29C0-8546-37DA-9EFA-16ABB57C4065', 'x86_64: F63A29C0-8546-37DA-9EFA-16ABB57C4065' ]
+uuids:           [ 'x86_64: CAD75201-57C8-338E-BE1B-5C5E2EEB9DAB', 'x86_64: CAD75201-57C8-338E-BE1B-5C5E2EEB9DAB' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/UserManagement.framework/Versions/A/UserManagement'
 exports:         

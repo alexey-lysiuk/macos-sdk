@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 87C9A26E-0FF4-3536-A62F-D613F3560AD1', 'x86_64: 87C9A26E-0FF4-3536-A62F-D613F3560AD1' ]
+uuids:           [ 'x86_64: 702DAB35-ED5E-335C-86D9-C2512BD89C16', 'x86_64: 702DAB35-ED5E-335C-86D9-C2512BD89C16' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreSpotlight.framework/Versions/A/CoreSpotlight'
 exports:         
@@ -173,7 +173,7 @@ exports:
                        _MDSearchQueryErrorDomain, _MDSearchQueryOptionFetchAttributes, 
                        _MDSearchQueryOptionGrouped, _MDSearchQueryOptionMaxCount, 
                        _MDSearchQueryOptionRankingQueries, __MDIndexExtensionsLoadedNotification, 
-                       __MDPlainTextFromHTMLData, _csindex_xpc_dictionary_decode_status_with_error, 
+                       __MDPlainTextFromHTMLData, _addExtensionToken, _csindex_xpc_dictionary_decode_status_with_error, 
                        _csindex_xpc_dictionary_encode_status_with_error, _csquery_xpc_dictionary_decode_status_with_error, 
                        _csquery_xpc_dictionary_encode_status, _csquery_xpc_dictionary_encode_status_with_error, 
                        _hasInternalCSEntitlement, _hasPrivateIndexUnsandboxEntitlement, 

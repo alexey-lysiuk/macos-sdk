@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 96BE921C-3144-37FD-A897-66262C666A70', 'x86_64: 96BE921C-3144-37FD-A897-66262C666A70' ]
+uuids:           [ 'x86_64: EECC495E-98E8-3E71-9DF7-D963E339EB66', 'x86_64: EECC495E-98E8-3E71-9DF7-D963E339EB66' ]
 platform:        zippered
 install-name:    '/usr/lib/swift/libswiftDarwin.dylib'
 current-version: 0

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 53F8FA89-C39B-3097-BAEE-1E9E41E4EC7A' ]
+uuids:           [ 'x86_64: FDF99D62-B631-3C26-9304-8F0F5E892867' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/RunningBoard.framework/Versions/A/RunningBoard'
-current-version: 223.0.4
+current-version: 223.40.19
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _NSStringFromRBSJetsamBand, _RBAttributePrimitiveEntitlement, 
@@ -29,15 +29,16 @@ exports:
                        RBBundlePropertiesLSProvider, RBBundlePropertiesManager, RBClientInheritanceManager, 
                        RBConcreteTarget, RBDaemon, RBDomainAttributeManager, RBDomainAttributeManagerDataProvider, 
                        RBEntitlementManager, RBEntitlements, RBEventQueue, RBEventQueueEvent, 
-                       RBInheritanceCollection, RBJetsamBandProvider, RBLSBundleProperties, 
-                       RBLaunchdJobLabel, RBMeteredMessageQueue, RBMutableInheritanceCollection, 
-                       RBMutableProcessState, RBMutableSystemState, RBPowerAssertionManager, 
-                       RBProcess, RBProcessCPUMaximumLimits, RBProcessCPUMinimumLimits, 
-                       RBProcessIndex, RBProcessManager, RBProcessMap, RBProcessMonitor, 
-                       RBProcessMonitorObserver, RBProcessMonitorObserverConnection, 
-                       RBProcessReconnectManager, RBProcessState, RBProcessStateChange, 
-                       RBProcessStateChangeSet, RBStateCaptureManager, RBSystemState, 
-                       RBThrottleBestEffortNetworkingManager, RBXPCBundleProperties ]
+                       RBIgnoreAllEntitlementsManager, RBInheritanceCollection, RBJetsamBandProvider, 
+                       RBLSBundleProperties, RBLaunchdJobLabel, RBMeteredMessageQueue, 
+                       RBMutableInheritanceCollection, RBMutableProcessState, RBMutableSystemState, 
+                       RBPowerAssertionManager, RBProcess, RBProcessCPUMaximumLimits, 
+                       RBProcessCPUMinimumLimits, RBProcessIndex, RBProcessManager, 
+                       RBProcessMap, RBProcessMonitor, RBProcessMonitorObserver, 
+                       RBProcessMonitorObserverConnection, RBProcessReconnectManager, 
+                       RBProcessState, RBProcessStateChange, RBProcessStateChangeSet, 
+                       RBStateCaptureManager, RBSystemState, RBThrottleBestEffortNetworkingManager, 
+                       RBXPCBundleProperties ]
     objc-ivars:      [ RBProcessState._flags, RBProcessState._identity, RBProcessState._inheritances, 
                        RBProcessState._jetsamBand, RBProcessState._jetsamLenientModeByRole, 
                        RBProcessState._legacyAssertions, RBProcessState._legacyFinishTaskReason, 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C22E1E80-26BF-311B-B026-3F6D807D585B', 'x86_64: C22E1E80-26BF-311B-B026-3F6D807D585B' ]
+uuids:           [ 'x86_64: 9E9694E7-D565-3181-8E86-C80513E78FFB', 'x86_64: 9E9694E7-D565-3181-8E86-C80513E78FFB' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/RenderBox.framework/Versions/A/RenderBox'
 exports:         

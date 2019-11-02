@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1EAD7EB4-E418-33D2-B85E-38C8B56DC286', 'x86_64: 1EAD7EB4-E418-33D2-B85E-38C8B56DC286' ]
+uuids:           [ 'x86_64: 72609DCF-1F5D-3AA7-9737-A6AF512C8B29', 'x86_64: 72609DCF-1F5D-3AA7-9737-A6AF512C8B29' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/MetricMeasurement.framework/Versions/A/MetricMeasurement'
 exports:         

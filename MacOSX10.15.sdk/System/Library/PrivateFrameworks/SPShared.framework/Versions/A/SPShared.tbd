@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 745EB333-9DB4-36FC-9181-950C6447619E' ]
+uuids:           [ 'x86_64: A993DEC6-5DF2-3303-A3FD-2301218B12EC' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SPShared.framework/Versions/A/SPShared'
 swift-abi-version: 7
@@ -13,13 +13,12 @@ exports:
                        '_$s10Foundation3URLV8SPSharedE22ExtendedAttributeErrorOMn', 
                        '_$s10Foundation3URLV8SPSharedE22ExtendedAttributeErrorON', 
                        '_$s10Foundation3URLV8SPSharedE22ExtendedAttributeErrorOs0F0ADMc', 
-                       '_$s10Foundation4DataV8SPSharedE10int32Values5Int32Vvg', '_$s10Foundation4DataV8SPSharedE10int32Values5Int32VvpMV', 
-                       '_$s10Foundation4DataV8SPSharedE10int64Values5Int64Vvg', '_$s10Foundation4DataV8SPSharedE10int64Values5Int64VvpMV', 
                        '_$s10Foundation4DataV8SPSharedE11randomBytes5countACSi_tKFZ', 
                        '_$s10Foundation4DataV8SPSharedE4hash9algorithmAcD13HashAlgorithmO_tF', 
                        '_$s10Foundation4DataV8SPSharedE4hmac3key9algorithmA2C_AD13HmacAlgorithmOtF', 
                        '_$s10Foundation4DataV8SPSharedE5write2to17excludeFromBackup7optionsyAA3URLV_SbSo20NSDataWritingOptionsVSgtKF', 
                        '_$s10Foundation4DataV8SPSharedE7encrypt3keyAD09EncryptedB0VAC_tKF', 
+                       '_$s10Foundation4DataV8SPSharedE8intValueSivg', '_$s10Foundation4DataV8SPSharedE8intValueSivpMV', 
                        '_$s10Foundation4DataV8SPSharedE9hexStringACSgSS_tcfC', '_$s10Foundation4DataV8SPSharedE9hexStringSSvg', 
                        '_$s10Foundation4DataV8SPSharedE9hexStringSSvpMV', '_$s10Foundation4DataV8SPSharedE9subObject5rangexSnySiGSg_tlF', 
                        '_$s10Foundation4DateV8SPSharedE5epochs5Int64Vvg', '_$s10Foundation4DateV8SPSharedE5epochs5Int64VvpMV', 
@@ -245,7 +244,8 @@ exports:
                        '_$s8SPShared9SchedulerO09immediateB0AA0B8Protocol_pvsZ', 
                        '_$s8SPShared9SchedulerO9scheduler4withAA0B8Protocol_pSo17OS_dispatch_queueC_tFZ', 
                        '_$s8SPShared9SchedulerOMa', '_$s8SPShared9SchedulerOMn', 
-                       '_$s8SPShared9SchedulerON', '_$sSY8SPShared10Foundation4DataV8RawValueRtzrlE19base64EncodedString7optionsSSSo27NSDataBase64EncodingOptionsV_tF', 
+                       '_$s8SPShared9SchedulerON', '_$sSS8SPSharedE8utf8Data10Foundation0C0Vvg', 
+                       '_$sSS8SPSharedE8utf8Data10Foundation0C0VvpMV', '_$sSY8SPShared10Foundation4DataV8RawValueRtzrlE19base64EncodedString7optionsSSSo27NSDataBase64EncodingOptionsV_tF', 
                        '_$sSY8SPShared10Foundation4DataV8RawValueRtzrlE9hexStringSSvg', 
                        '_$sSY8SPShared10Foundation4DataV8RawValueRtzrlE9hexStringSSvpMV', 
                        '_$sSa8SPSharedE7chunked4intoSaySayxGGSi_tF', '_$sSa8SPSharedSHRzlE7uniquedSayxGyF', 

@@ -54,6 +54,16 @@ API_UNAVAILABLE(macosx)
                             sender:(nullable INPerson *)sender
                         recipients:(nullable NSArray<INPerson *> *)recipients
                          groupName:(nullable INSpeakableString *)groupName
+                       messageType:(INMessageType)messageType
+                       serviceName:(nullable NSString *)serviceName NS_DESIGNATED_INITIALIZER API_AVAILABLE(ios(13.2), watchos(6.1)) API_UNAVAILABLE(macosx);
+
+- (instancetype)initWithIdentifier:(NSString *)identifier
+            conversationIdentifier:(nullable NSString *)conversationIdentifier
+                           content:(nullable NSString *)content
+                          dateSent:(nullable NSDate *)dateSent
+                            sender:(nullable INPerson *)sender
+                        recipients:(nullable NSArray<INPerson *> *)recipients
+                         groupName:(nullable INSpeakableString *)groupName
                        messageType:(INMessageType)messageType NS_DESIGNATED_INITIALIZER API_AVAILABLE(ios(11.0), watchos(4.0)) API_UNAVAILABLE(macosx);
 
 - (instancetype)initWithIdentifier:(NSString *)identifier
@@ -85,6 +95,8 @@ API_UNAVAILABLE(macosx)
 @property (readonly, copy, nullable, NS_NONATOMIC_IOSONLY) INSpeakableString *groupName API_AVAILABLE(ios(11.0), watchos(4.0)) API_UNAVAILABLE(macosx);
 
 @property (readonly, NS_NONATOMIC_IOSONLY) INMessageType messageType API_AVAILABLE(ios(11.0), watchos(4.0)) API_UNAVAILABLE(macosx);
+
+@property (readonly, copy, nullable, NS_NONATOMIC_IOSONLY) NSString *serviceName API_AVAILABLE(ios(13.2), watchos(6.1)) API_UNAVAILABLE(macosx);
 
 @end
 

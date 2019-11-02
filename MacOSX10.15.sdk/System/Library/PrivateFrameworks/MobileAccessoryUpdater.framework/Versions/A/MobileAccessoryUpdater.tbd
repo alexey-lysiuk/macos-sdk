@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9E2C6A66-616E-32F0-9EBA-FA1D1E17D944' ]
+uuids:           [ 'x86_64: 1C274DE8-0155-3442-9FC0-AAAE7CB000D7' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/MobileAccessoryUpdater.framework/Versions/A/MobileAccessoryUpdater'
 exports:         
@@ -12,10 +12,10 @@ exports:
                        _kMAU_STEP_APPLY, _kMAU_STEP_BOOTSTRAP, _kMAU_STEP_COMPLETE_INFO_KEY_NEXT_STEP, 
                        _kMAU_STEP_CONTINUE, _kMAU_STEP_DONE, _kMAU_STEP_DOWNLOAD, 
                        _kMAU_STEP_END, _kMAU_STEP_FIND, _kMAU_STEP_FINISH, _kMAU_STEP_PREPARE, 
-                       _objectFinalizer, _objectFromXpcDictionary, _parseSuperBinaryAndPayloadHeaders, 
-                       _parseSuperBinaryHeader, _parseUInt16, _parseUInt32, _printSuperBinaryHeader, 
-                       _sendMessageToExternalClient, _sendMessageToInternalClient, 
-                       _sendReplyMessageToClient, _sendReplyMessageToExternalClient, 
+                       _metadataTLVGetNext, _objectFinalizer, _objectFromXpcDictionary, 
+                       _parseSuperBinaryAndPayloadHeaders, _parseSuperBinaryHeader, 
+                       _parseUInt16, _parseUInt32, _printSuperBinaryHeader, _sendMessageToExternalClient, 
+                       _sendMessageToInternalClient, _sendReplyMessageToClient, _sendReplyMessageToExternalClient, 
                        _sendReplyMessageToInternalClient, _unarchivedKeyedObject, 
                        _updateSuperBinaryPayload ]
     objc-classes:    [ AUDAccessory, FudInternalConnection, FudPersonalizationObjectInfo, 

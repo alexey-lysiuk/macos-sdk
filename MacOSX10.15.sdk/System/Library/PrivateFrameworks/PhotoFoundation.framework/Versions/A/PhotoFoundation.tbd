@@ -1,17 +1,17 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 42E41BCB-32C2-30B0-8E8F-F8DC40BA1F11', 'x86_64: 42E41BCB-32C2-30B0-8E8F-F8DC40BA1F11' ]
+uuids:           [ 'x86_64: 03A20D12-9CA2-3FC8-B683-EB1C3701D2E4', 'x86_64: 03A20D12-9CA2-3FC8-B683-EB1C3701D2E4' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/PhotoFoundation.framework/Versions/A/PhotoFoundation'
-current-version: 101.13.100
+current-version: 111.16.150
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _LastAddRemoveTaskState, _NSStringFromPFIntPoint, _NSStringFromPFIntRect, 
                        _NSStringFromPFIntSize, _PFAspectRatioToWholeLengths, _PFCMTimeDescription, 
                        _PFCMTimeFromQTTimeString, _PFCMTimeRangeDescription, _PFCMTimeRangeFromQTTimeRangeString, 
-                       _PFConstrainPointToRect, _PFDateFormatterForTimeZone, _PFDateFormatterForTimeZoneAndFormat, 
-                       _PFDateFromGMTDateTimeZone, _PFDateFromString, _PFDateFromStringTimeZoneFormat, 
-                       _PFDateRangeStringRepresentationControllerNonExpiringTimeInterval, 
+                       _PFConstrainPointToRect, _PFCount, _PFDateFormatterForTimeZone, 
+                       _PFDateFormatterForTimeZoneAndFormat, _PFDateFromGMTDateTimeZone, 
+                       _PFDateFromString, _PFDateFromStringTimeZoneFormat, _PFDateRangeStringRepresentationControllerNonExpiringTimeInterval, 
                        _PFDispatchAsyncEnforceCurrentQoS, _PFDispatchAsyncEnforceQoS, 
                        _PFExists, _PFFileNameUniquingEmptyString, _PFFileNameUniquingFormat, 
                        _PFFileNameUniquingInitialCountString, _PFFileNameUniquingLeftDelimiter, 
@@ -54,12 +54,11 @@ exports:
                        _PFTextRingBufferCopy, _PFTextRingBufferCreate, _PFTextRingBufferCreateWithBuffer, 
                        _PFTextRingBufferDestroy, _PFTimeZoneDateFromGMTDate, _PFZeroIntPoint, 
                        _PFZeroIntSize, _PFZlibErrorDomain, _PF_QOSClassName, _PF_QOSClassOfIndex, 
-                       _PF_QOSClassOfName, _PF_QOSIndexOfClass, _PF_configureClassForMainThreadOnlyDealloc, 
-                       _PF_dispatchAsyncToQueueWithCurrentQOS, _PF_enumerateQOSClasses, 
-                       _PF_enumerateQOSClassesReverse, _PF_enumerateQOSIndices, _PF_runOnce, 
-                       _PF_succeedOnce, _PhotoFoundationVersionNumber, _PhotoFoundationVersionString, 
-                       _ZeroRectEdge, __PFAssertContinueHandler, __PFAssertFailHandler, 
-                       __PFThreadName, __qosNameTable, _kCacheDataAccessTimeCacheEntryKey, 
+                       _PF_QOSClassOfName, _PF_QOSIndexOfClass, _PF_dispatchAsyncToQueueWithCurrentQOS, 
+                       _PF_enumerateQOSClasses, _PF_enumerateQOSClassesReverse, _PF_enumerateQOSIndices, 
+                       _PF_runOnce, _PF_succeedOnce, _PhotoFoundationVersionNumber, 
+                       _PhotoFoundationVersionString, _ZeroRectEdge, __PFAssertContinueHandler, 
+                       __PFAssertFailHandler, __PFThreadName, __qosNameTable, _kCacheDataAccessTimeCacheEntryKey, 
                        _kCacheDataFileLengthCacheEntryKey, _kCacheDataFileNameExtension, 
                        _kCacheDataFileNameTempExtension, _kCacheDataUniqueIDCacheEntryKey, 
                        _kCacheDirectoryName, _kCacheManagementDataInitialCapacity, 
@@ -116,7 +115,6 @@ exports:
                        _PFActionLogStateChange, _PFDQDEBlockInfo, _PFDQDECallSite, 
                        _PFDQRBEThreadStack, _PFDeferredInitializationTriggerWorkItem, 
                        _PFFinishedLaunchingTriggerWorkItem, _PFLocalizedDateRangeFormatter, 
-                       _PFMainThreadReleaseMethods, _PFMainThreadReleaseObjectsHash, 
                        _PFMulticasterMessageReceivers, _PFMulticasterReceiverList, 
                        _PFPlaceholderMulticaster, _PFPriorityQueueExtensionBlockInfo, 
                        _PFStartupInitializationTriggerWorkItem, _PFTriggeredWorkItem, 
@@ -159,9 +157,6 @@ exports:
                        _PFDeferredInitializationTriggerWorkItem._sleepTime, _PFDeferredInitializationTriggerWorkItem._startTime, 
                        _PFDeferredInitializationTriggerWorkItem._targetPercent, _PFDeferredInitializationTriggerWorkItem._timerFired, 
                        _PFDeferredInitializationTriggerWorkItem._wakePercent, _PFDeferredInitializationTriggerWorkItem._wakeTime, 
-                       _PFMainThreadReleaseObjectsHash._highIndex, _PFMainThreadReleaseObjectsHash._lowIndex, 
-                       _PFMainThreadReleaseObjectsHash._objectCount, _PFMainThreadReleaseObjectsHash._objects, 
-                       _PFMainThreadReleaseObjectsHash._objectsClasses, _PFMainThreadReleaseObjectsHash._releaseCounts, 
                        _PFMulticasterMessageReceivers._strongReceivers, _PFMulticasterMessageReceivers._weakReceivers, 
                        _PFMulticasterReceiverList._extraReceivers, _PFMulticasterReceiverList._inlineReceivers, 
                        _PFTriggeredWorkItem._triggeredWorkItems, _PFTriggeredWorkItem._triggeredWorkItemsLock, 

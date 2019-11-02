@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 06488279-9CB3-315C-86B7-D42DC27FE57D', 'x86_64: 06488279-9CB3-315C-86B7-D42DC27FE57D' ]
+uuids:           [ 'x86_64: 7FA925C8-BE9B-343B-9517-58577F121B94', 'x86_64: 7FA925C8-BE9B-343B-9517-58577F121B94' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AppStoreDaemon.framework/Versions/A/AppStoreDaemon'
 exports:         
@@ -10,14 +10,15 @@ exports:
                        _ASDAppLibraryServiceNotificationKeyAction, _ASDAppLibraryServiceNotificationKeyApps, 
                        _ASDAppLibraryServiceNotificationKeyBundleIDs, _ASDAppLibraryServiceNotificationKeyDeviceID, 
                        _ASDAppLibraryServiceNotificationName, _ASDAppQueryErrorDomain, 
-                       _ASDCKPurchaseQueueIdentifier, _ASDDebugFileLevel, _ASDDebugLevel, 
-                       _ASDDebugLog, _ASDDebugLogV, _ASDDebugSetFileLoggingOptions, 
-                       _ASDError, _ASDErrorAskPermissionRequestIdentifier, _ASDErrorBySettingUserInfoValue, 
-                       _ASDErrorDomain, _ASDErrorHTTPStatusCodeKey, _ASDErrorIsEqual, 
-                       _ASDErrorIsNilReturn, _ASDErrorWithDescription, _ASDErrorWithUnderlyingError, 
-                       _ASDErrorWithUnderlyingErrorAndDescription, _ASDErrorWithUnderlyingErrorAndInfo, 
-                       _ASDInGameAnalyticsErrorDomain, _ASDLogCategoryDaemon, _ASDLogCategoryDaemonOversize, 
-                       _ASDLogCategoryFramework, _ASDLogSubsystemDefault, _ASDLookupPropertyBundleIdentifier, 
+                       _ASDArcadeSubscriptionBagDidChangeNotification, _ASDCKPurchaseQueueIdentifier, 
+                       _ASDDebugFileLevel, _ASDDebugLevel, _ASDDebugLog, _ASDDebugLogV, 
+                       _ASDDebugSetFileLoggingOptions, _ASDError, _ASDErrorAskPermissionRequestIdentifier, 
+                       _ASDErrorBySettingUserInfoValue, _ASDErrorDomain, _ASDErrorHTTPStatusCodeKey, 
+                       _ASDErrorIsEqual, _ASDErrorIsNilReturn, _ASDErrorWithDescription, 
+                       _ASDErrorWithUnderlyingError, _ASDErrorWithUnderlyingErrorAndDescription, 
+                       _ASDErrorWithUnderlyingErrorAndInfo, _ASDInGameAnalyticsErrorDomain, 
+                       _ASDLogCategoryDaemon, _ASDLogCategoryDaemonOversize, _ASDLogCategoryFramework, 
+                       _ASDLogSubsystemDefault, _ASDLookupPropertyBundleIdentifier, 
                        _ASDLookupPropertyBuyParams, _ASDLookupPropertyContentRating, 
                        _ASDLookupPropertyDisplayVersion, _ASDLookupPropertyExternalVersionIdentifier, 
                        _ASDLookupPropertyFileSize, _ASDLookupPropertyItemIdentifier, 

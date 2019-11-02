@@ -111,8 +111,11 @@ int main(int argc, const char * argv[])
 
     struct passwd *pwd = getpwuid(uid);
     if (pwd == NULL) {
-        os_log_error(OS_LOG_DEFAULT, "failed to lookup user %d", uid);
-        return ENOENT;
+        /* Like most library functions, os_log does not preserve errno. */
+        int err = errno;
+        os_log_error(OS_LOG_DEFAULT,
+                "failed to lookup user %d: %{darwin.errno}d", uid, err);
+        return err;
     }
 }
 

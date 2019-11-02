@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A3B9E8BB-B19B-33F4-BD7A-B21B7AEA6B31' ]
+uuids:           [ 'x86_64: E19BDCD4-4088-308D-AB0B-2DBC6277D945' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/NetFSServer.framework/Versions/A/NetFSServer'
 exports:         

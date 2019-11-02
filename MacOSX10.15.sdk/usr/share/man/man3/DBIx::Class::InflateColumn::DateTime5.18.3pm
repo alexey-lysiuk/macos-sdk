@@ -133,7 +133,7 @@
 .\" ========================================================================
 .\"
 .IX Title "DBIx::Class::InflateColumn::DateTime 3"
-.TH DBIx::Class::InflateColumn::DateTime 3 "2013-12-16" "perl v5.18.2" "User Contributed Perl Documentation"
+.TH DBIx::Class::InflateColumn::DateTime 3 "2014-01-30" "perl v5.18.2" "User Contributed Perl Documentation"
 .\" For nroff, turn off justification.  Always turn off hyphenation; it makes
 .\" way too many mistakes in technical documents.
 .if n .ad l
@@ -297,6 +297,14 @@ use the old way you'll see a warning \- please fix your code then!
 .SH "AUTHOR"
 .IX Header "AUTHOR"
 Matt S. Trout <mst@shadowcatsystems.co.uk>
+.SH "INHERITED METHODS"
+.IX Header "INHERITED METHODS"
+.IP "DBIx::Class::InflateColumn" 4
+.IX Item "DBIx::Class::InflateColumn"
+get_inflated_column, inflate_column, set_inflated_column, store_inflated_column
+.IP "DBIx::Class::Row" 4
+.IX Item "DBIx::Class::Row"
+copy, delete, discard_changes, get_column, get_columns, get_dirty_columns, get_from_storage, get_inflated_columns, has_column_loaded, in_storage, inflate_result, insert, insert_or_update, is_changed, is_column_changed, make_column_dirty, new, result_source, set_column, set_columns, set_inflated_columns, store_column, throw_exception, update, update_or_insert
 .SH "CONTRIBUTORS"
 .IX Header "CONTRIBUTORS"
 Aran Deltac <bluefeet@cpan.org>

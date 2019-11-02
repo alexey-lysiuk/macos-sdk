@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0BE1343B-D412-3D6D-8889-CB30F158DEC9' ]
+uuids:           [ 'x86_64: FB94811C-67C1-34BA-B64F-7041695D33E3' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/AddressBook.framework/Versions/A/AddressBook'
-current-version: 2409
+current-version: 2421
 exports:         
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/PrivateFrameworks/AddressBookCore.framework/Versions/A/AddressBookCore', 
@@ -180,7 +180,7 @@ exports:
                        ABDistributionListPeoplePickerView, ABDropDownMenuUIAction, 
                        ABEditButton, ABEditSmartGroupCommand, ABEmailCertificateController, 
                        ABEmailCertificateSearchOperation, ABEmailCollectionViewItem, 
-                       ABEvent, ABExchangeSetup, ABExecuteRedoUndoableCommandVisitor, 
+                       ABEmailFormatter, ABEvent, ABExchangeSetup, ABExecuteRedoUndoableCommandVisitor, 
                        ABExecuteUndoUndoableCommandVisitor, ABExecuteUndoableCommandVisitor, 
                        ABFaceTimeActionsCollectionViewItem, ABFaceTimeCommunicationsBridge, 
                        ABFakeSuggestedData, ABFetchesContactsForVCardExport, ABFlippedStackView, 
@@ -690,7 +690,7 @@ exports:
                        _ABMonogramOptions._foregroundColor, _ABMonogramOptions._vibrant ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 31064C3E-28D8-3D2C-9AFA-65C6711A9575', 'x86_64: 31064C3E-28D8-3D2C-9AFA-65C6711A9575' ]
+uuids:           [ 'x86_64: 5EAF64DA-595B-3A42-B5A8-9F2C2D3D6597', 'x86_64: 5EAF64DA-595B-3A42-B5A8-9F2C2D3D6597' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AddressBookCore.framework/Versions/A/AddressBookCore'
 exports:         
@@ -718,12 +718,12 @@ exports:
                        _ABAccountExternalServerHostKey, _ABAccountExternalServerPathKey, 
                        _ABAccountExternalServerPortKey, _ABAccountExternalServerUseSSLKey, 
                        _ABAccountFullNameKey, _ABAccountGuardianRestrictedKey, _ABAccountIdentiferKey, 
-                       _ABAccountIdentifierKey, _ABAccountLDAPSearchBaseKey, _ABAccountLDAPSearchScopeKey, 
-                       _ABAccountLDAPUseAuthenticationKey, _ABAccountMigrationAccountIdentifierKey, 
-                       _ABAccountMigrationContactsDataClassKey, _ABAccountMigrationPhaseComplete, 
-                       _ABAccountMigrationPhaseConnecting, _ABAccountMigrationPhasePreparing, 
-                       _ABAccountMigratorShouldAutomaticallyExportSummaries, _ABAccountPasswordKey, 
-                       _ABAccountPrincipalInfo, _ABAccountRepositoryAccountsKey, 
+                       _ABAccountIdentifierKey, _ABAccountIsChildDelegateKey, _ABAccountLDAPSearchBaseKey, 
+                       _ABAccountLDAPSearchScopeKey, _ABAccountLDAPUseAuthenticationKey, 
+                       _ABAccountMigrationAccountIdentifierKey, _ABAccountMigrationContactsDataClassKey, 
+                       _ABAccountMigrationPhaseComplete, _ABAccountMigrationPhaseConnecting, 
+                       _ABAccountMigrationPhasePreparing, _ABAccountMigratorShouldAutomaticallyExportSummaries, 
+                       _ABAccountPasswordKey, _ABAccountPrincipalInfo, _ABAccountRepositoryAccountsKey, 
                        _ABAccountRepositoryAllAccountsKey, _ABAccountRepositoryDidChangeNotification, 
                        _ABAccountRepositoryDidChangeNotificationPriv, _ABAccountSearchableKey, 
                        _ABAccountServerHostKey, _ABAccountServerPathKey, _ABAccountServerPortKey, 
@@ -778,10 +778,12 @@ exports:
                        _ABCNWorkLabel, _ABCachedAccountCollectionKey, _ABCachedAccountIdentifierKey, 
                        _ABCachedClearedDateKey, _ABCachedKnownPropertiesKey, _ABCachedPropertyTypesKey, 
                        _ABCachedRemoteCustomPropertiesKey, _ABCachedRemotePeopleKey, 
-                       _ABCancelLoadingImageDataForTag, _ABCardDAVAccountType, _ABCardPaneFrame, 
-                       _ABCenterSquareRect, _ABCollationKey, _ABCompareDataSortKeys, 
-                       _ABComparePeopleName, _ABCompareSortKeys, _ABCompareStringsUsingICUSortKey, 
-                       _ABComplement, _ABContactsApplicationBundleIdentifier, _ABContactsFrameworkBundle, 
+                       _ABCancelLoadingImageDataForTag, _ABCardDAVAccountType, _ABCardDAVCollectionPathKey, 
+                       _ABCardDAVRecordTypeKey, _ABCardDAVRecordTypeSystemGroup, 
+                       _ABCardDAVRecordTypeUserGroup, _ABCardPaneFrame, _ABCenterSquareRect, 
+                       _ABCollationKey, _ABCompareDataSortKeys, _ABComparePeopleName, 
+                       _ABCompareSortKeys, _ABCompareStringsUsingICUSortKey, _ABComplement, 
+                       _ABContactsApplicationBundleIdentifier, _ABContactsFrameworkBundle, 
                        _ABCoordinateWritingToUrl, _ABCopyArrayOfAllGroups, _ABCopyArrayOfAllPeople, 
                        _ABCopyArrayOfMatchingRecords, _ABCopyArrayOfPropertiesForRecordType, 
                        _ABCopyDefaultCountryCode, _ABCopyLocalizedPropertyOrLabel, 
@@ -957,17 +959,18 @@ exports:
                        _kABAddressProperty, _kABAddressRegionKey, _kABAddressSamaKey, 
                        _kABAddressStateKey, _kABAddressStreetKey, _kABAddressSubLocalityKey, 
                        _kABAddressWorkLabel, _kABAddressZIPKey, _kABAlternateBirthdayComponentsProperty, 
-                       _kABAlternateBirthdayLabel, _kABAnniversaryLabel, _kABAppleAccountClassPropertyKey, 
-                       _kABAssistantLabel, _kABBirthdayComponentsProperty, _kABBirthdayLabel, 
-                       _kABBirthdayProperty, _kABBrotherLabel, _kABCalendarURIsProperty, 
-                       _kABCardDAVSourceClassName, _kABCardDAVUIDProperty, _kABChildLabel, 
-                       _kABClipRectTransformType, _kABCreationDateProperty, _kABDatabaseChangedExternallyNotification, 
-                       _kABDatabaseChangedExternallyNotificationPriv, _kABDatabaseChangedNotification, 
-                       _kABDatabaseChangedNotificationPriv, _kABDatabaseDirectoryKey, 
-                       _kABDatabaseWillSaveNotification, _kABDaughterLabel, _kABDefaultSelectedGroup, 
-                       _kABDefaultSelectedMember, _kABDeletedRecords, _kABDeltasRecordAdded, 
-                       _kABDeltasRecordDeleted, _kABDeltasRecordUnchanged, _kABDeltasRecordUpdated, 
-                       _kABDepartmentProperty, _kABDirectoryResultColumnTitle, _kABDirectoryServicesSourceClassName, 
+                       _kABAlternateBirthdayLabel, _kABAnniversaryLabel, _kABAppleAccountClassPrimary, 
+                       _kABAppleAccountClassPropertyKey, _kABAssistantLabel, _kABBirthdayComponentsProperty, 
+                       _kABBirthdayLabel, _kABBirthdayProperty, _kABBrotherLabel, 
+                       _kABCalendarURIsProperty, _kABCardDAVSourceClassName, _kABCardDAVUIDProperty, 
+                       _kABChildLabel, _kABClipRectTransformType, _kABCreationDateProperty, 
+                       _kABDatabaseChangedExternallyNotification, _kABDatabaseChangedExternallyNotificationPriv, 
+                       _kABDatabaseChangedNotification, _kABDatabaseChangedNotificationPriv, 
+                       _kABDatabaseDirectoryKey, _kABDatabaseWillSaveNotification, 
+                       _kABDaughterLabel, _kABDefaultSelectedGroup, _kABDefaultSelectedMember, 
+                       _kABDeletedRecords, _kABDeltasRecordAdded, _kABDeltasRecordDeleted, 
+                       _kABDeltasRecordUnchanged, _kABDeltasRecordUpdated, _kABDepartmentProperty, 
+                       _kABDirectoryResultColumnTitle, _kABDirectoryServicesSourceClassName, 
                        _kABDistributedDatabaseChangedNotification, _kABDistributedDatabaseChangedNotificationPriv, 
                        _kABDistributionListWindowGroupUID, _kABDistributionListWindowIdentifier, 
                        _kABDontAutoMerge, _kABDowntimeWhitelistProperty, _kABEditCardOnDoubleClick, 
@@ -1130,7 +1133,8 @@ exports:
                        ABDirectoryServicesImageTask, ABDispatchQueue, ABDispatchUtilities, 
                        ABDistributedNotificationListener, ABDynamicAccountSearchPolicy, 
                        ABError, ABExchangeLabelsConstraint, ABExistingPersonVCardAdapter, 
-                       ABFileServices, ABFileUtilities, ABFilteredAccess, ABFindsPreferredLinkedPerson, 
+                       ABFileServices, ABFileUtilities, ABFilteredAccess, ABFindDuplicateGroupsTask, 
+                       ABFindVisibleSystemGroupsTask, ABFindsPreferredLinkedPerson, 
                        ABFindsUserDataInAddressBook, ABForwardingFuture, ABFrameworkApplicationServices, 
                        ABGlobalReference, ABGravatarImageTask, ABGroup, ABGroupContents, 
                        ABGroupSummaryBuilder, ABHTTPUserAgent, ABIAMigrationAccount, 
@@ -1173,16 +1177,16 @@ exports:
                        ABPushNotificationCenter, ABReadOnlyPersistenceBackendDecorator, 
                        ABRecord, ABRecordConstraint, ABRecordCoreDataFactoryImpl, 
                        ABRecordMover, ABRecordValueSanitizer, ABRemoteImageLoader, 
-                       ABSchedulers, ABSearchElement, ABSearchElementAlternateBirthdayPredicates, 
-                       ABSearchElementConjunction, ABSearchElementHelper, ABSearchElementMatch, 
-                       ABSearchElementMemberOfGroupPredicates, ABSearchElementTransformer, 
-                       ABSearchOperation, ABSimilarRecordMerger, ABSingleValueSummaryBuilder, 
-                       ABSmartGroup, ABSocialProfileSummaryBuilder, ABSocialProfileURLParser, 
-                       ABSpecialGroup, ABStaticAccountCollection, ABStreetAddressSummaryBuilder, 
-                       ABStringRangeFinder, ABStringTokenizer, ABStrongAddressBookReference, 
-                       ABSubscribedGroup, ABSubscribedPerson, ABSubscription, ABSuggestionLogPair, 
-                       ABSummaryOperation, ABSyncManager, ABSyncScheduleOptions, 
-                       ABSyncStandbyOperation, ABTargetedAccountComponentValidationHelper, 
+                       ABResolveDuplicateGroupsTask, ABSchedulers, ABSearchElement, 
+                       ABSearchElementAlternateBirthdayPredicates, ABSearchElementConjunction, 
+                       ABSearchElementHelper, ABSearchElementMatch, ABSearchElementMemberOfGroupPredicates, 
+                       ABSearchElementTransformer, ABSearchOperation, ABSimilarRecordMerger, 
+                       ABSingleValueSummaryBuilder, ABSmartGroup, ABSocialProfileSummaryBuilder, 
+                       ABSocialProfileURLParser, ABSpecialGroup, ABStaticAccountCollection, 
+                       ABStreetAddressSummaryBuilder, ABStringRangeFinder, ABStringTokenizer, 
+                       ABStrongAddressBookReference, ABSubscribedGroup, ABSubscribedPerson, 
+                       ABSubscription, ABSuggestionLogPair, ABSummaryOperation, ABSyncManager, 
+                       ABSyncScheduleOptions, ABSyncStandbyOperation, ABTargetedAccountComponentValidationHelper, 
                        ABTargetedAccountFactory, ABTask, ABTaskOperation, ABTimeMachineTempFileHelper, 
                        ABTracedLog, ABTracedLogger, ABURL, ABUndoManager, ABUndoer, 
                        ABUnlinksLoneRemainingPeopleCommand, ABUpdatesLinkingInformation, 
@@ -1191,6 +1195,7 @@ exports:
                        ABWorkQueue, ABXPCACAccountStore, ABXPCUtils, ABvCardDraggingImage, 
                        CNPostalAddressMapping, PHXSource, _ABAccountImageStatus, 
                        _ABAccountNetworkActivityStatus, _ABAggregateTask, _ABBlockTask, 
+                       _ABFindDuplicateUserGroupsStrategy, _ABFindVisibleSystemGroupsStrategy, 
                        _ABMapTask, _AB_PeopleSorting_Operation ]
     objc-ivars:      [ ABACAccountPersistenceBackend._components, ABACAccountType._identifier, 
                        ABACInProcessAccountStore._accountStore, ABACInProcessAccountStore._migrationDelay, 
@@ -1199,9 +1204,9 @@ exports:
                        ABAccount._canReimportFromMetadata, ABAccount._childAccounts, 
                        ABAccount._config, ABAccount._customizationPolicy, ABAccount._directoryLabel, 
                        ABAccount._dsid, ABAccount._futureSource, ABAccount._groupsCanRemoveMembers, 
-                       ABAccount._identifier, ABAccount._invalid, ABAccount._isMainAccount, 
-                       ABAccount._name, ABAccount._parentAccount, ABAccount._persistentStoreURL, 
-                       ABAccount._searchPolicy, ABAccount._showAllContactsIfOnlyOneGroup, 
+                       ABAccount._identifier, ABAccount._invalid, ABAccount._isChildDelegateAccount, 
+                       ABAccount._isMainAccount, ABAccount._name, ABAccount._parentAccount, 
+                       ABAccount._persistentStoreURL, ABAccount._searchPolicy, ABAccount._showAllContactsIfOnlyOneGroup, 
                        ABAccount._sortOrder, ABAccount._sourceClass, ABAccount._supportsDistributionLists, 
                        ABAccount._usesSyncServices, ABAccountBackupOperation._backupFilename, 
                        ABAccountBuilder._acAccount, ABAccountBuilder._accountStore, 
@@ -1226,9 +1231,10 @@ exports:
                        ABAccountPersistence._backend, ABAccountPersistence._delayedApplyToken, 
                        ABAccountPersistence._delegate, ABAccountPersistence._hasChanges, 
                        ABAccountPersistence._invalidated, ABAccountPersistence._persistentValues, 
-                       ABAccountRepository._areExistingAccountsValid, ABAccountRepository._defaultAccountPreference, 
-                       ABAccountRepository._existingAccounts, ABAccountRepository._factory, 
-                       ABAccountRepository._futureAutocompletionAccounts, ABAccountStatus._action, 
+                       ABAccountRepository._areExistingAccountsValid, ABAccountRepository._areHiddenAccountsValid, 
+                       ABAccountRepository._defaultAccountPreference, ABAccountRepository._existingAccounts, 
+                       ABAccountRepository._factory, ABAccountRepository._futureAutocompletionAccounts, 
+                       ABAccountRepository._hiddenAccounts, ABAccountStatus._action, 
                        ABAccountStatus._state, ABAccountStatus._target, ABAddPersistentStoreResults._coordinator, 
                        ABAddPersistentStoreResults._didMigrate, ABAddPersistentStoreResults._pristineDatabase, 
                        ABAddPersistentStoreResults._shouldCache, ABAddPersistentStoreResults._store, 
@@ -1415,7 +1421,7 @@ exports:
                        PHXSource.configurationView, PHXSource.passwordField, _ABBlockTask._block ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FA7D317D-CE0F-3196-84C3-1DD41056177C', 'x86_64: FA7D317D-CE0F-3196-84C3-1DD41056177C' ]
+uuids:           [ 'x86_64: 70E2EC97-3A38-3E59-B732-C6F961BDAF8B', 'x86_64: 70E2EC97-3A38-3E59-B732-C6F961BDAF8B' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ContactsPersistence.framework/Versions/A/ContactsPersistence'
 exports:         

@@ -150,11 +150,11 @@ Enable or disable whether the power button can sleep the computer.
 .It Fl getremotelogin
 Displays whether remote login (SSH) is on or off.
 .It Fl setremotelogin Ar [-f] on | off
-Sets remote login (SSH) to either on or off. Important  If you turn off remote login, you won't be able to administer the server using remote command line tools and SSH. To turn remote login back on, you'll need to connect a monitor and keyboard to the server to administer it locally. Use "setremotelogin -f off" to suppress prompting when turning remote login off.
+Sets remote login (SSH) to either on or off. Requires Full Disk Access privileges. Important  If you turn off remote login, you won't be able to administer the server using remote command line tools and SSH. To turn remote login back on, you'll need to connect a monitor and keyboard to the server to administer it locally. Use "setremotelogin -f off" to suppress prompting when turning remote login off.
 .It Fl getremoteappleevents
 Displays whether remote apple events are on or off.
 .It Fl setremoteappleevents Ar on | off
-Use this command to set whether the server responds to events sent by other computers (such as AppleScripts).
+Use this command to set whether the server responds to events sent by other computers (such as AppleScripts). Requires Full Disk Access privileges.
 .It Fl getcomputername
 Displays computer name.
 .It Fl setcomputername Ar computername

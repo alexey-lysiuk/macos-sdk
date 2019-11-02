@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7E4CDE22-7522-3AA0-BF66-9302EDCD2ADF' ]
+uuids:           [ 'x86_64: 1B3106AB-8016-3C0D-80AF-6DC602C906DD' ]
 platform:        uikitformac
 install-name:    '/System/Library/PrivateFrameworks/FMFCore.framework/Versions/A/FMFCore'
 swift-abi-version: 7
@@ -81,6 +81,8 @@ exports:
                        '_$s7FMFCore10FMFManagerC18contactsControllerAA015FMFContactsDataD0CvgTq', 
                        '_$s7FMFCore10FMFManagerC18contactsControllerAA015FMFContactsDataD0CvpMV', 
                        '_$s7FMFCore10FMFManagerC21fmfManagerSerialQueue33_698D1E7E8966A501D0014EB639143E78LLSo17OS_dispatch_queueCvpfi', 
+                       '_$s7FMFCore10FMFManagerC25updateLastActiveTimestampyyF', 
+                       '_$s7FMFCore10FMFManagerC25updateLastActiveTimestampyyFTq', 
                        '_$s7FMFCore10FMFManagerC27friendsOperationsRestrictedSbvg', 
                        '_$s7FMFCore10FMFManagerC27friendsOperationsRestrictedSbvgTq', 
                        '_$s7FMFCore10FMFManagerC27friendsOperationsRestrictedSbvpMV', 

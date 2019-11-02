@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1A3729E5-3B25-3FE1-84AB-87F64F2B279B' ]
+uuids:           [ 'x86_64: CE11CD71-B858-34E4-820A-3324A2E47FFD' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Automator.framework/Versions/A/Automator'
 current-version: 0

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 102C0847-454A-371F-816C-73308569E74E', 'x86_64: 102C0847-454A-371F-816C-73308569E74E' ]
+uuids:           [ 'x86_64: B84D3BAB-BCF7-3DD8-A656-498D5444DC9D', 'x86_64: B84D3BAB-BCF7-3DD8-A656-498D5444DC9D' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AppleIDAuthSupport.framework/Versions/A/AppleIDAuthSupport'
-current-version: 90.0.1
+current-version: 90.40.3
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _AppleIDAuthSupportAuthenticate, _AppleIDAuthSupportCopyAppNewAppTokensWithAuthAttribute, 

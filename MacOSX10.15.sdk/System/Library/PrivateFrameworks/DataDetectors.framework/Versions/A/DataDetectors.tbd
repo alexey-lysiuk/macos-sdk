@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8FC033A8-7159-375D-A545-1D2762AF5B34' ]
+uuids:           [ 'x86_64: B0B64A67-E48A-3832-94C4-424EADAEBA43' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/DataDetectors.framework/Versions/A/DataDetectors'
-current-version: 409
+current-version: 410
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _DDActionLogHandle, _DDActionsManagerDidRunActionNotification, 

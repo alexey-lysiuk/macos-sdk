@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 357E4BF4-C375-3C4C-B787-0CA6D652E684', 'x86_64: 357E4BF4-C375-3C4C-B787-0CA6D652E684' ]
+uuids:           [ 'x86_64: 2FAF9ABF-530E-32D7-9B83-8F5FDB2EE2DA', 'x86_64: 2FAF9ABF-530E-32D7-9B83-8F5FDB2EE2DA' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AXRuntime.framework/Versions/A/AXRuntime'
 exports:         
@@ -125,16 +125,16 @@ exports:
                        __AXUIElementCopyElementAtPositionWithParams, __AXUIElementCreateAppElementWithPid, 
                        __AXUIElementCreateData, __AXUIElementCreateInternal, __AXUIElementCreateWithData, 
                        __AXUIElementCreateWithID, __AXUIElementCreateWithPIDAndID, 
-                       __AXUIElementIDForElement, __AXUIElementMachPortForAXServer, 
-                       __AXUIElementPostNotification, __AXUIElementRegisterNotificationBypassCallback, 
-                       __AXUIElementRegisterNotificationObserverDiedCallback, __AXUIElementRegisterServerWithRunLoop, 
-                       __AXUIElementRegisterSystemWideServerBroadcastRelayerCallback, 
-                       __AXUIElementRegisterSystemWideServerWithRunLoop, __AXUIElementServerRegistered, 
-                       __AXUIElementSetGlobalTimeout, __AXUIElementSetLastGlobalError, 
-                       __AXUIElementSetMachPortForNextMessage, __AXUIElementUnregisterServer, 
-                       __AXUIElementValidate, __AXUIScreenConvertToCAScreen, __AXUISetConvertToCAScreenBlock, 
-                       __AXValueCreateFromInternalData, __AXXMIGAccessibilityDefs_subsystem, 
-                       __AXXMIGAddNotification, __AXXMIGBroadcastNotification, __AXXMIGCopyAttributeValue, 
+                       __AXUIElementIDForElement, __AXUIElementPostNotification, 
+                       __AXUIElementRegisterNotificationBypassCallback, __AXUIElementRegisterNotificationObserverDiedCallback, 
+                       __AXUIElementRegisterServerWithRunLoop, __AXUIElementRegisterSystemWideServerBroadcastRelayerCallback, 
+                       __AXUIElementRegisterSystemWideServerWithRunLoop, __AXUIElementRemoteBridgeMachPortForAXServer, 
+                       __AXUIElementServerRegistered, __AXUIElementSetGlobalTimeout, 
+                       __AXUIElementSetLastGlobalError, __AXUIElementSetMachPortForNextMessage, 
+                       __AXUIElementUnregisterServer, __AXUIElementValidate, __AXUIScreenConvertToCAScreen, 
+                       __AXUISetConvertToCAScreenBlock, __AXValueCreateFromInternalData, 
+                       __AXXMIGAccessibilityDefs_subsystem, __AXXMIGAddNotification, 
+                       __AXXMIGBroadcastNotification, __AXXMIGCopyAttributeValue, 
                        __AXXMIGCopyElementAtPosition, __AXXMIGCopyMultipleAttributeValues, 
                        __AXXMIGCopyParameterizedAttributeValue, __AXXMIGPerformAction, 
                        __AXXMIGPerformActionWithValue, __AXXMIGPostNotification, 
@@ -166,7 +166,7 @@ exports:
                        _kAXCACCustomCommandIdentifierKey, _kAXCaptionsDisplayedTextRuns, 
                        _kAXCausesPageTurnTrait, _kAXContainedByFieldsetTrait, _kAXContainedByLandmarkTrait, 
                        _kAXContainedByListTrait, _kAXContainedByTableTrait, _kAXCustomActionKeyIdentifier, 
-                       _kAXCustomActionKeyTargetPoint, _kAXDeleteKeyTrait, _kAXDidFinishSpeakingAssistantNotification, 
+                       _kAXDeleteKeyTrait, _kAXDidFinishSpeakingAssistantNotification, 
                        _kAXDraggableTrait, _kAXElementKey, _kAXFolderIconTrait, _kAXFooterTrait, 
                        _kAXForceUpdateChangeToken, _kAXGesturePracticeRegionTrait, 
                        _kAXHeaderTrait, _kAXIgnoreItemChooserTrait, _kAXImageTrait, 

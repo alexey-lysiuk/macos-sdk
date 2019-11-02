@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3E79F14D-5BB0-3F79-8860-30B5EFE6140C', 'x86_64: 3E79F14D-5BB0-3F79-8860-30B5EFE6140C' ]
+uuids:           [ 'x86_64: 0748E453-524B-33BA-806B-22786DED2958', 'x86_64: 0748E453-524B-33BA-806B-22786DED2958' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices'
 current-version: 52
@@ -21,7 +21,7 @@ exports:
     symbols:         [ _ApplicationServicesVersionNumber, _ApplicationServicesVersionString ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BEBCC736-639C-32A7-9A69-5B322A4F6FF4', 'x86_64: BEBCC736-639C-32A7-9A69-5B322A4F6FF4' ]
+uuids:           [ 'x86_64: CF8434BF-B51D-3A68-B6FC-AFB0765530A2', 'x86_64: CF8434BF-B51D-3A68-B6FC-AFB0765530A2' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/ATS'
 current-version: 236
@@ -175,7 +175,7 @@ exports:
                        _kFOTypeKey, _kFOUnicodeCharSetKey, _kFOcmapOverrideKey ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C40AD2D0-7E05-325D-816E-630832860409' ]
+uuids:           [ 'x86_64: 50DC5F09-5336-3718-AEE9-490773BA3070' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATSUI.framework/Versions/A/ATSUI'
 exports:         
@@ -234,7 +234,7 @@ exports:
                        _NewRedrawBackgroundUPP ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 19D492D6-8495-327E-A370-7F3D181001B4' ]
+uuids:           [ 'x86_64: D4F7C969-FE2C-3036-94E3-FD2882F89C6F' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ColorSyncLegacy.framework/Versions/A/ColorSyncLegacy'
 parent-umbrella: ApplicationServices
@@ -285,10 +285,10 @@ exports:
                        _kCMIlluminantD50, _kCMIlluminantD65 ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A2EC18D1-26D2-3BDA-BD87-9BBEEB578A73' ]
+uuids:           [ 'x86_64: 0B1FD2E8-DEBD-3ED3-82F7-E0F80F21621A' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/HIServices.framework/Versions/A/HIServices'
-current-version: 671
+current-version: 672
 parent-umbrella: ApplicationServices
 exports:         
   - archs:           [ x86_64 ]
@@ -509,7 +509,7 @@ exports:
                        _kAXUnderlineTextAttribute, _kAXVisibleNameKey, _kAXVisualTextAlignmentKey ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AF10E7BC-F8DC-3501-976C-7B9E9871CC09' ]
+uuids:           [ 'x86_64: 72ECDBB9-F607-3FB3-ABC3-882C9EFB3245' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LangAnalysis.framework/Versions/A/LangAnalysis'
 parent-umbrella: ApplicationServices
@@ -551,7 +551,7 @@ exports:
                        _LATextToMorphemes ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CDEAF06D-0C81-3975-8285-2708E7AD66C8' ]
+uuids:           [ 'x86_64: 78F4A9D5-82F5-3578-A78F-CDD438DB6A6C' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/PrintCore.framework/Versions/A/PrintCore'
 current-version: 516
@@ -720,7 +720,7 @@ exports:
     objc-ivars:      [ PMInkChecker._consumables, PMInkChecker._printer, PMInkChecker._supplies ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3E1769C3-2C41-380D-9316-E802003E532F' ]
+uuids:           [ 'x86_64: 63CCC6D7-659A-341A-A8A4-55B596EEFE9C' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/QD.framework/Versions/A/QD'
 parent-umbrella: ApplicationServices
@@ -1109,7 +1109,7 @@ exports:
                        _XorRgn ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E294C2A6-8DFF-314D-B1C0-FD338445686D' ]
+uuids:           [ 'x86_64: 202F6033-A76D-3B2C-9BA9-9CCF4493AB4D' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/SpeechSynthesis.framework/Versions/A/SpeechSynthesis'
 parent-umbrella: ApplicationServices

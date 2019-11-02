@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FA7D317D-CE0F-3196-84C3-1DD41056177C', 'x86_64: FA7D317D-CE0F-3196-84C3-1DD41056177C' ]
+uuids:           [ 'x86_64: 70E2EC97-3A38-3E59-B732-C6F961BDAF8B', 'x86_64: 70E2EC97-3A38-3E59-B732-C6F961BDAF8B' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ContactsPersistence.framework/Versions/A/ContactsPersistence'
 exports:         

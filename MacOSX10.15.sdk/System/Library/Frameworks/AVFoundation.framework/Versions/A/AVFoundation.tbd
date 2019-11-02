@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EFE0A7D7-DAC6-308D-8730-EE42B724FB2E', 'x86_64: EFE0A7D7-DAC6-308D-8730-EE42B724FB2E' ]
+uuids:           [ 'x86_64: EA7413E2-C050-380B-A396-F622BFA73071', 'x86_64: EA7413E2-C050-380B-A396-F622BFA73071' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/AVFoundation.framework/Versions/A/AVFoundation'
 current-version: 2
@@ -632,8 +632,8 @@ exports:
                        _AVURLAssetOutOfBandMIMETypeKey, _AVURLAssetPreferPreciseDurationAndTimingKey, 
                        _AVURLAssetPreloadDurationWhenNextItemKey, _AVURLAssetProtectedContentSupportStorageURLKey, 
                        _AVURLAssetPurchaseBundleKey, _AVURLAssetReferenceRestrictionsKey, 
-                       _AVURLAssetRequiresCustomURLLoadingKey, _AVURLAssetSSLPropertiesKey, 
-                       _AVURLAssetShouldMatchDataInCacheByURLPathComponentOnlyKey, 
+                       _AVURLAssetRemoteCustomURLHandlerContextKey, _AVURLAssetRequiresCustomURLLoadingKey, 
+                       _AVURLAssetSSLPropertiesKey, _AVURLAssetShouldMatchDataInCacheByURLPathComponentOnlyKey, 
                        _AVURLAssetShouldMatchDataInCacheByURLWithoutQueryComponentKey, 
                        _AVURLAssetShouldPrepareToOptimizeForExclusivePlaybackKey, 
                        _AVURLAssetShouldSupportAliasDataReferencesKey, _AVURLAssetShouldSupportAnalysisReportingKey, 
@@ -691,24 +691,25 @@ exports:
                        AVAssetReaderOutputCaptionAdaptor, AVAssetReaderOutputMetadataAdaptor, 
                        AVAssetReaderSampleReferenceOutput, AVAssetReaderTrackOutput, 
                        AVAssetReaderVideoCompositionOutput, AVAssetResourceLoader, 
-                       AVAssetResourceLoadingContentInformationRequest, AVAssetResourceLoadingDataRequest, 
-                       AVAssetResourceLoadingRequest, AVAssetResourceLoadingRequestor, 
-                       AVAssetResourceRenewalRequest, AVAssetTrack, AVAssetTrackGroup, 
-                       AVAssetTrackSegment, AVAssetWriter, AVAssetWriterInput, AVAssetWriterInputCaptionAdaptor, 
-                       AVAssetWriterInputGroup, AVAssetWriterInputMetadataAdaptor, 
-                       AVAssetWriterInputPassDescription, AVAssetWriterInputPixelBufferAdaptor, 
-                       AVAsynchronousCIImageFilteringRequest, AVAsynchronousVideoCompositionRequest, 
-                       AVAudioMix, AVAudioMixEffectParameters, AVAudioMixInputParameters, 
-                       AVAudioMixSweepFilterEffectParameters, AVAudioOutputSettings, 
-                       AVCMNotificationDispatcher, AVCallbackContextRegistry, AVCameraCalibrationData, 
-                       AVCaption, AVCaptionConversionAdjustment, AVCaptionConversionTimeRangeAdjustment, 
-                       AVCaptionConversionValidator, AVCaptionConversionWarning, 
-                       AVCaptionFormatConformer, AVCaptionGroup, AVCaptionGrouper, 
-                       AVCaptionLength, AVCaptionPosition, AVCaptionRegion, AVCaptionRenderer, 
-                       AVCaptionRendererScene, AVCaptionRuby, AVCaptureAudioChannel, 
-                       AVCaptureAudioDataOutput, AVCaptureAudioFileOutput, AVCaptureAudioPreviewOutput, 
-                       AVCaptureAutoExposureBracketedStillImageSettings, AVCaptureBracketedStillImageSettings, 
-                       AVCaptureConnection, AVCaptureDataOutputSynchronizer, AVCaptureDepthDataOutput, 
+                       AVAssetResourceLoaderRemoteHandlerContext, AVAssetResourceLoadingContentInformationRequest, 
+                       AVAssetResourceLoadingDataRequest, AVAssetResourceLoadingRequest, 
+                       AVAssetResourceLoadingRequestor, AVAssetResourceRenewalRequest, 
+                       AVAssetTrack, AVAssetTrackGroup, AVAssetTrackSegment, AVAssetWriter, 
+                       AVAssetWriterInput, AVAssetWriterInputCaptionAdaptor, AVAssetWriterInputGroup, 
+                       AVAssetWriterInputMetadataAdaptor, AVAssetWriterInputPassDescription, 
+                       AVAssetWriterInputPixelBufferAdaptor, AVAsynchronousCIImageFilteringRequest, 
+                       AVAsynchronousVideoCompositionRequest, AVAudioMix, AVAudioMixEffectParameters, 
+                       AVAudioMixInputParameters, AVAudioMixSweepFilterEffectParameters, 
+                       AVAudioOutputSettings, AVCMNotificationDispatcher, AVCallbackContextRegistry, 
+                       AVCameraCalibrationData, AVCaption, AVCaptionConversionAdjustment, 
+                       AVCaptionConversionTimeRangeAdjustment, AVCaptionConversionValidator, 
+                       AVCaptionConversionWarning, AVCaptionFormatConformer, AVCaptionGroup, 
+                       AVCaptionGrouper, AVCaptionLength, AVCaptionPosition, AVCaptionRegion, 
+                       AVCaptionRenderer, AVCaptionRendererScene, AVCaptionRuby, 
+                       AVCaptureAudioChannel, AVCaptureAudioDataOutput, AVCaptureAudioFileOutput, 
+                       AVCaptureAudioPreviewOutput, AVCaptureAutoExposureBracketedStillImageSettings, 
+                       AVCaptureBracketedStillImageSettings, AVCaptureConnection, 
+                       AVCaptureDataOutputSynchronizer, AVCaptureDepthDataOutput, 
                        AVCaptureDevice, AVCaptureDeviceDiscoverySession, AVCaptureDeviceFormat, 
                        AVCaptureDeviceInput, AVCaptureDeviceInputSource, AVCaptureFileOutput, 
                        AVCaptureInput, AVCaptureInputPort, AVCaptureManualExposureBracketedStillImageSettings, 
@@ -778,7 +779,7 @@ exports:
                        AVMetadataItem._priv, AVMutableCaption._mutableInternal, AVMutableMetadataItem._mutablePriv ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0255960D-A702-31A9-BA52-440E0B3E4423', 'x86_64: 0255960D-A702-31A9-BA52-440E0B3E4423' ]
+uuids:           [ 'x86_64: A883D211-9A6C-34E5-84FE-0FDEF778E289', 'x86_64: A883D211-9A6C-34E5-84FE-0FDEF778E289' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/AVFoundation.framework/Versions/A/Frameworks/AVFAudio.framework/Versions/A/AVFAudio'
 exports:         

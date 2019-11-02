@@ -516,12 +516,16 @@ section below for some command lines that show snapshot restores.
 .Pp
 .Nm
 also supports restoring the difference between two snapshots, referred to as a "snapshot delta."  In this
-case there must be both a "from" snapshot and a "to" snapshot on the source volume, the target volume
-must not be erased, and the target volume must already contain a snapshot which is identical to the
+case there must be both a "from" snapshot and a "to" snapshot on the source volume, the target must be specified
+as a specific volume rather than a whole container, and the target volume must already contain a snapshot which is identical to the
 source's "from" snapshot.  The result of a snapshot delta restore is that the target ends up looking like
 the source's "to" snapshot, similar to a regular snapshot restore as described above.  But the restore only
 needs to copy over the difference between the two snapshots, so it may save considerable time and/or network
-or bus resources.  Again, see the
+or bus resources.  Note that a snapshot delta restore can still discard data from the target volume, so
+.Nm
+does require using the
+.Fl -erase
+option when doing a snapshot delta restore.  Again, see the
 .Sy EXAMPLES
 section below for some command line examples of snapshot delta restores.
 .Pp
@@ -566,9 +570,37 @@ volume, and the Data-role volume in the
 .Ar target
 is deleted.
 .El
+.Sh SNAPSHOTS AND ROSV VOLUME GROUPS
+.Nm
+can restore snapshots and snapshot deltas from any volume in a volume group, but the behavior is
+different between snapshot restores and snapshot delta restores.
 .Pp
-Any snapshots which are specified must be relative to the System-role volume.  There is currently no mechanism for
-restoring snapshots in the Data-role volume.
+When doing a snapshot restore (i.e. using the
+.Fl -toSnapshot
+option without the
+.Fl -fromSnapshot
+option), each volume in the source volume group is examined
+to see if it contains the specified "to" snapshot.  Each volume
+in the group which contains the snapshot will be copied as a snapshot
+replication, as described in the
+.Sy RESTORING WITH APFS SNAPSHOTS
+section, above.  Each volume in the group which does not contain the
+snapshot will be copied as a live volume replication.  So all volumes in the
+group are restored, and only those which contain the given "to" snapshot will
+have a snapshot restore performed.  Note that if the "to" snapshot is specified
+by name, multiple volumes in the source group may have a snapshot with that name,
+though those snapshots need not be related in any way.
+.Pp
+By contrast, snapshot delta restores (i.e. using both the
+.Fl -toSnapshot
+and
+.Fl -fromSnapshot
+options) are only ever performed on a single volume.
+The source volume can be any volume (i.e. it need not have any particular role),
+but whether or not it's in a group, that will be the only volume restored.  So if
+there are multiple volumes which have snapshots with the same names and you want to
+do a snapshot delta restore for all of them, then you must invoke asr once for each
+such volume.
 .Sh BUFFERING
 The following options control how
 .Nm

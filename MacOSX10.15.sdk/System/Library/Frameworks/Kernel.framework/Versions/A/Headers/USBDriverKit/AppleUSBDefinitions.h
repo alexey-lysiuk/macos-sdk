@@ -311,6 +311,7 @@ typedef struct IOUSBEndpointDescriptor IOUSBEndpointDescriptor;
 enum
 {
     kIOUSBEndpointDescriptorNumber                  = IOUSBBitRange(0, 3),
+    kIOUSBEndpointDescriptorNumberPhase             = IOUSBBitRangePhase(0, 3),
     kIOUSBEndpointDescriptorEndpointAddressReserved = IOUSBBitRange(4, 6),
     kIOUSBEndpointDescriptorDirection               = IOUSBBit(7),
     kIOUSBEndpointDescriptorDirectionPhase          = IOUSBBitRangePhase(7, 7),
@@ -382,6 +383,24 @@ enum tIOUSBEndpointType
 
 typedef enum tIOUSBEndpointType tIOUSBEndpointType;
 
+enum tIOUSBEndpointSynchronizationType
+{
+    kIOUSBEndpointSynchronizationTypeNone         = (kIOUSBEndpointDescriptorSynchronizationTypeNone >> kIOUSBEndpointDescriptorSynchronizationTypePhase),
+    kIOUSBEndpointSynchronizationTypeAsynchronous = (kIOUSBEndpointDescriptorSynchronizationTypeAsynchronous >> kIOUSBEndpointDescriptorSynchronizationTypePhase),
+    kIOUSBEndpointSynchronizationTypeAdaptive     = (kIOUSBEndpointDescriptorSynchronizationTypeAdaptive >> kIOUSBEndpointDescriptorSynchronizationTypePhase),
+    kIOUSBEndpointSynchronizationTypeSynchronous  = (kIOUSBEndpointDescriptorSynchronizationTypeSynchronous >> kIOUSBEndpointDescriptorSynchronizationTypePhase)
+};
+
+typedef enum tIOUSBEndpointSynchronizationType tIOUSBEndpointSynchronizationType;
+
+enum tIOUSBEndpointUsageType
+{
+    kIOUSBEndpointUsageTypeIsocData     = (kIOUSBEndpointDescriptorUsageTypeIsocData >> kIOUSBEndpointDescriptorUsageTypePhase),
+    kIOUSBEndpointUsageTypeIsocFeedback = (kIOUSBEndpointDescriptorUsageTypeIsocFeedback >> kIOUSBEndpointDescriptorUsageTypePhase),
+    kIOUSBEndpointUsageTypeIsocImplicit = (kIOUSBEndpointDescriptorUsageTypeIsocImplicit >> kIOUSBEndpointDescriptorUsageTypePhase)
+};
+
+typedef enum tIOUSBEndpointUsageType tIOUSBEndpointUsageType;
 
 /*!
  * @enum  tIOUSBLanguageID

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 93A1B284-D3A6-3F02-AE9C-79505F5CFA51' ]
+uuids:           [ 'x86_64: A51DC371-BB84-30DC-A9ED-A7868A7302C3' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/SceneKit.framework/Versions/A/SceneKit'
-current-version: 540
+current-version: 540.3
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _C3DGetFileDecryptionCallbacks, _C3DIOCreateCStringFromCFString, 

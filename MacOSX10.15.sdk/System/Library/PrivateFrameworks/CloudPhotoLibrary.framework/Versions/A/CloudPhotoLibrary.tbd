@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F963B3AB-0253-3985-834B-FE1E6F00C4D0', 'x86_64: F963B3AB-0253-3985-834B-FE1E6F00C4D0' ]
+uuids:           [ 'x86_64: CC084E77-4320-3BA5-BE3C-C8D9E26C8402', 'x86_64: CC084E77-4320-3BA5-BE3C-C8D9E26C8402' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/Versions/A/CloudPhotoLibrary'
-current-version: 101.13.100
+current-version: 111.16.150
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CPLAccountFlagsReadFrom, _CPLAnalysisReferenceUnadjustedFingerprint, 

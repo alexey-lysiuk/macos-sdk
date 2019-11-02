@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 62A39507-E86F-3D2F-BDFD-CF7AD7EDE3D7', 'x86_64: 62A39507-E86F-3D2F-BDFD-CF7AD7EDE3D7' ]
+uuids:           [ 'x86_64: 7EE59014-8FC5-3369-868B-8A87E590BF78', 'x86_64: 7EE59014-8FC5-3369-868B-8A87E590BF78' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libQuadrature.dylib'
 exports:         

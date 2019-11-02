@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5053D621-F89E-3156-BB56-8707F8E91FA9', 'x86_64: 5053D621-F89E-3156-BB56-8707F8E91FA9' ]
+uuids:           [ 'x86_64: 946994C1-96F1-328D-A5E5-90FC99274BDE', 'x86_64: 946994C1-96F1-328D-A5E5-90FC99274BDE' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreDAV.framework/Versions/A/CoreDAV'
 exports:         

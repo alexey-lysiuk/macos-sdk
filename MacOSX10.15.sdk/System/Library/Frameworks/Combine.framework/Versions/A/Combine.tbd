@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BE5FC3BA-0EB8-331A-94AA-5EC758A6505C', 'x86_64: BE5FC3BA-0EB8-331A-94AA-5EC758A6505C' ]
+uuids:           [ 'x86_64: 75063077-8394-39CE-817E-7D755AA6243B', 'x86_64: 75063077-8394-39CE-817E-7D755AA6243B' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Combine.framework/Versions/A/Combine'
 current-version: 132.10

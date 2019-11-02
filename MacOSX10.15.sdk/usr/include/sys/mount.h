@@ -243,7 +243,7 @@ struct vfsstatfs {
 #define MNT_VISFLAGMASK (MNT_RDONLY	| MNT_SYNCHRONOUS | MNT_NOEXEC	| \
 	                MNT_NOSUID	| MNT_NODEV	| MNT_UNION	| \
 	                MNT_ASYNC	| MNT_EXPORTED	| MNT_QUARANTINE | \
-	                MNT_LOCAL	| MNT_QUOTA | \
+	                MNT_LOCAL	| MNT_QUOTA | MNT_REMOVABLE | \
 	                MNT_ROOTFS	| MNT_DOVOLFS	| MNT_DONTBROWSE | \
 	                MNT_IGNORE_OWNERSHIP | MNT_AUTOMOUNTED | MNT_JOURNALED | \
 	                MNT_NOUSERXATTR | MNT_DEFWRITE	| MNT_MULTILABEL | \

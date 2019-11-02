@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BE4291C4-6B10-3769-A733-BB46AF44B77D' ]
+uuids:           [ 'x86_64: F613C885-DB45-31DE-96B9-B322BA094440' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/PencilKit.framework/Versions/A/PencilKit'
 exports:         

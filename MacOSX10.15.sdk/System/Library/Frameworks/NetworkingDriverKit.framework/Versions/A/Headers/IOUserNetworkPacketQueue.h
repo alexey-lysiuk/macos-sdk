@@ -1,4 +1,4 @@
-/* iig(DriverKit-73.0.1) generated from IOUserNetworkPacketQueue.iig */
+/* iig(DriverKit-73.40.3) generated from IOUserNetworkPacketQueue.iig */
 
 /* IOUserNetworkPacketQueue.iig:1-16 */
 #ifndef _IOUSERNETWORKPACKETQUEUE_IIG

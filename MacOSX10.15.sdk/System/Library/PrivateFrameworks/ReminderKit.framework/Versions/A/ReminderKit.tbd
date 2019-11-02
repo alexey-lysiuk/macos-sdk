@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 891DE575-B931-323E-9508-0445F011C511', 'x86_64: 891DE575-B931-323E-9508-0445F011C511' ]
+uuids:           [ 'x86_64: 3746EF8D-FE12-345D-AF5A-CF50E32F8707', 'x86_64: 3746EF8D-FE12-345D-AF5A-CF50E32F8707' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ReminderKit.framework/Versions/A/ReminderKit'
 exports:         
@@ -1087,11 +1087,12 @@ exports:
                        REMStoreInvocationValueStorage, REMStoreSwiftInvocation, REMStoreSwiftInvocationResult, 
                        REMStructuredLocation, REMSyncInterface, REMSystemUtilities, 
                        REMURLAttachment, REMUserActivity, REMUserDefaults, REMUserDefaultsObserver, 
-                       REMXPCChangeTrackingPerformerInterface, REMXPCDaemonController, 
-                       REMXPCDaemonControllerPerformerResolver, REMXPCDaemonControllerPerformerResolver_changeTracking, 
-                       REMXPCDaemonControllerPerformerResolver_debug, REMXPCDaemonControllerPerformerResolver_indexing, 
-                       REMXPCDaemonControllerPerformerResolver_store, REMXPCDaemonControllerPerformerResolver_sync, 
-                       REMXPCDaemonInterface, REMXPCDebugPerformerInterface, REMXPCIndexingPerformerInterface, 
+                       REMXPCChangeTrackingPerformerInterface, REMXPCClientInterface, 
+                       REMXPCDaemonController, REMXPCDaemonControllerPerformerResolver, 
+                       REMXPCDaemonControllerPerformerResolver_changeTracking, REMXPCDaemonControllerPerformerResolver_debug, 
+                       REMXPCDaemonControllerPerformerResolver_indexing, REMXPCDaemonControllerPerformerResolver_store, 
+                       REMXPCDaemonControllerPerformerResolver_sync, REMXPCDaemonInterface, 
+                       REMXPCDebugPerformerInterface, REMXPCIndexingPerformerInterface, 
                        REMXPCStorePerformerInterface, REMXPCSyncInterfacePerformerInterface, 
                        TTArray, TTCRVectorMultiTimestamp, TTCRVectorTimestamp, TTFont, 
                        TTMergeableAttributedString, TTMergeableString, TTMergeableStringSelection, 

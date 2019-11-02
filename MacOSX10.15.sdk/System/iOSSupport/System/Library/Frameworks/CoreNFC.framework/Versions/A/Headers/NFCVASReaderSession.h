@@ -26,7 +26,7 @@ API_AVAILABLE(ios(13.0)) API_UNAVAILABLE(watchos, macos, tvos)
 /*!
  * @enum VASMode
  *
- * @constant VASModeURLOnly     URL VAS protocol only.
+ * @constant VASModeURLOnly     Reserved.
  * @constant VASModeNormal      Full VAS protocol.
  */
 typedef NS_ENUM(NSInteger, VASMode) {

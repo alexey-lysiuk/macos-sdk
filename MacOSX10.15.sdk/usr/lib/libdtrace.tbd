@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 687CD16F-ABB3-3895-8100-BCDE1072E6EF' ]
+uuids:           [ 'x86_64: D2A01A18-0A38-367D-83EC-8F81AEF400E8' ]
 platform:        macosx
 install-name:    '/usr/lib/libdtrace.dylib'
 exports:         

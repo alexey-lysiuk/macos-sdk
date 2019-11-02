@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F7D6E32F-8ABD-3FCE-82DB-D051D2FA8143', 'x86_64: F7D6E32F-8ABD-3FCE-82DB-D051D2FA8143' ]
+uuids:           [ 'x86_64: BE9A4A96-20C7-391B-AEA7-2104A33F96E1', 'x86_64: BE9A4A96-20C7-391B-AEA7-2104A33F96E1' ]
 platform:        zippered
 install-name:    '/usr/lib/swift/libswiftMetal.dylib'
 current-version: 0

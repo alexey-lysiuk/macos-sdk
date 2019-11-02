@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BDE39131-6389-3243-9C4A-DBA165B8A2F9', 'x86_64: BDE39131-6389-3243-9C4A-DBA165B8A2F9' ]
+uuids:           [ 'x86_64: CD9D21FC-06E2-30D4-AE76-822C69456F16', 'x86_64: CD9D21FC-06E2-30D4-AE76-822C69456F16' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CommonAuth.framework/Versions/A/CommonAuth'
 exports:         

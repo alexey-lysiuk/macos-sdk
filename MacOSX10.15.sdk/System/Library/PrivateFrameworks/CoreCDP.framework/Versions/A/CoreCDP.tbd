@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E4C1EAD5-BB5C-3C82-B9FA-0EB2A9F57482', 'x86_64: E4C1EAD5-BB5C-3C82-B9FA-0EB2A9F57482' ]
+uuids:           [ 'x86_64: D72C1B62-F3F6-3AEE-9BF3-518F16B8743C', 'x86_64: D72C1B62-F3F6-3AEE-9BF3-518F16B8743C' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreCDP.framework/Versions/A/CoreCDP'
 exports:         
@@ -12,7 +12,8 @@ exports:
                        _CDPStateErrorDomain, _CDPUIProviderExportedInterface, _CDPUnqualifiedDeviceClassToLocKey, 
                        _CDP_FOLLOWUP_OFFLINE_PASSCODE, _CDP_FOLLOWUP_RECOVERY_KEY_REGEN, 
                        _CDP_FOLLOWUP_STATE_REPAIR, _CoreCDPVersionNumber, _CoreCDPVersionString, 
-                       __CDPGetLogSystem, __CDPStateError, __CDPStateErrorWithUnderlying, 
+                       __CDPLogSystem, __CDPSignpostCreate, __CDPSignpostGetNanoseconds, 
+                       __CDPSignpostLogSystem, __CDPStateError, __CDPStateErrorWithUnderlying, 
                        __CDPSuffixForDeviceClass, __CDPSuffixForSecretType, __CDPSuffixForUnqualifiedDeviceClass, 
                        _hasFullCDPSupport ]
     objc-classes:    [ CDPAccount, CDPAuthProviderProxy, CDPCircleProxyImpl, CDPContext, 

@@ -1,4 +1,4 @@
-/* iig(DriverKit-73.0.1) generated from IOMemoryDescriptor.iig */
+/* iig(DriverKit-73.40.3) generated from IOMemoryDescriptor.iig */
 
 /* IOMemoryDescriptor.iig:1-87 */
 /*

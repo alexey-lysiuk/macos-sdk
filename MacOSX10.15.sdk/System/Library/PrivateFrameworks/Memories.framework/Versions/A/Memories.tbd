@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4412E505-C75E-310C-912D-082373DD6A9E' ]
+uuids:           [ 'x86_64: D5E58768-311C-36A6-B189-C4CD6EFEE69E' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/Memories.framework/Versions/A/Memories'
 exports:         
@@ -116,9 +116,9 @@ exports:
                        MiroAppDelegate, MiroExportController, MiroProject, PMAVSynchronizedView, 
                        PMAnalyticsHelper, PMCoreAnalyticsEvent, PMDurationProvider, 
                        PMMoodProvider, PMMovieProvider, PMMovieProviderAnalyticsEvent, 
-                       PMPXFeatureSpec, PMPipelineAnalyticsEvent, PMPlayerContainerView, 
-                       PMPosterContainerView, PMPosterViewController, PMSaveProvider, 
-                       PMShareAnalyticsEvent, PMTitleSubtitleView, PMmacOSPlayerViewController, 
+                       PMPXFeatureSpec, PMPipelineAnalyticsEvent, PMPosterContainerView, 
+                       PMPosterViewController, PMSaveProvider, PMShareAnalyticsEvent, 
+                       PMTitleSubtitleView, PMmacOSPlayerView, PMmacOSPlayerViewController, 
                        PMmacOSProgressIndicatorView, VEKAutoEditStage, VEKBlueprint, 
                        VEKClipSuggestion, VEKDownloadStage, VEKExportPreset, VEKMovieCompositionStage, 
                        VEKPicklistStage, VEKPipeline, VEKPipelineStage, VEKPlayerItem, 

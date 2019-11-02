@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D1FC1EA4-AA73-32E1-85BD-77837068EB01' ]
+uuids:           [ 'x86_64: 3DE1D9EC-FC28-3832-A705-3C9E0A22623F' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/PhotosUI.framework/Versions/A/PhotosUI'
-current-version: 101.13.100
+current-version: 111.16.150
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _PHDisplayVelocityZero, _PUAdjustPointsToBeWithinRect, _PUAffineTransformIsApproximatelyEqualToTransform, 
@@ -25,11 +25,11 @@ exports:
                        _PUFloatInterpolateFloats, _PUFloorToPixel, _PUFullMomentsSectionHeaderKind, 
                        _PUGetRequestedNavigationTransition, _PUImageContentModeForPhotoViewContentMode, 
                        _PUInsetsOfRectInRect, _PUInvisibleSubtitlePlaceholder, _PULineDistanceBetweenPoints, 
-                       _PULineDistanceToPoint, _PULineIntersection, _PULocalizedEditString, 
-                       _PULocalizedString, _PUMainScreenScale, _PUMediaProviderErrorDomain, 
-                       _PUMediaProviderResultIsFullSizeFormat, _PUMediaProviderResultIsPlaceholder, 
-                       _PUMediaProviderStillDisplayTimeKey, _PUNormalizePoint, _PUPerformWithNavigationTransition, 
-                       _PUPhotoCellIdentifier, _PUPhotoViewBannerHeight, _PUPhotosGridDownloadHelperCancelledCode, 
+                       _PULineDistanceToPoint, _PULineIntersection, _PULocalizedString, 
+                       _PUMainScreenScale, _PUMediaProviderErrorDomain, _PUMediaProviderResultIsFullSizeFormat, 
+                       _PUMediaProviderResultIsPlaceholder, _PUMediaProviderStillDisplayTimeKey, 
+                       _PUNormalizePoint, _PUPerformWithNavigationTransition, _PUPhotoCellIdentifier, 
+                       _PUPhotoViewBannerHeight, _PUPhotosGridDownloadHelperCancelledCode, 
                        _PUPhotosSectionHeaderBottomBaselineOffset, _PUPhotosSectionHeaderDefaultTitleBaselineOffset, 
                        _PUPhotosSectionHeaderSubtitleBaselineOffset, _PUPhotosSectionHeaderYearsTitleBaselineOffset, 
                        _PUPixelSizeFromPointSize, _PUPixelWidth, _PUPointAdd, _PUPointApplyPerspectiveTransform, 

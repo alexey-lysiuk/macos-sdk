@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AB8485D9-32CE-3EEF-A977-9C7C65A31F07', 'x86_64: AB8485D9-32CE-3EEF-A977-9C7C65A31F07' ]
+uuids:           [ 'x86_64: AD8E54A9-FF82-338B-88B1-67E7F6065FDE', 'x86_64: AD8E54A9-FF82-338B-88B1-67E7F6065FDE' ]
 platform:        zippered
 install-name:    '/usr/lib/swift/libswiftCoreML.dylib'
 current-version: 0

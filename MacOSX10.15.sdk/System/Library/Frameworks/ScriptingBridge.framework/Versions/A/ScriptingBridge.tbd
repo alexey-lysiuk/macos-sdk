@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 95FD0BC3-CC6E-3CC7-B82D-C446E7B0FA99' ]
+uuids:           [ 'x86_64: 94588FFC-3A8C-34F9-B196-CCFF6B77F4AB' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/ScriptingBridge.framework/Versions/A/ScriptingBridge'
 exports:         

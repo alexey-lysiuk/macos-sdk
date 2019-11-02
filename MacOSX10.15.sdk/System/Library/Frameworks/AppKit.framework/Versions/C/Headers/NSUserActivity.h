@@ -60,9 +60,10 @@ API_UNAVAILABLE_BEGIN(ios)
 
 @end
 
-
+#if !TARGET_OS_IPHONE
 /* When NSUbiquitousDocumentUserActivityType is present in a CFBundleDocumentTypes entry, AppKit will automatically create an NSUserActivity for documents in iCloud, using the given activityType. */
 APPKIT_EXTERN NSString * const NSUserActivityDocumentURLKey API_AVAILABLE(macos(10.10));
+#endif
 
 API_UNAVAILABLE_END
 NS_ASSUME_NONNULL_END

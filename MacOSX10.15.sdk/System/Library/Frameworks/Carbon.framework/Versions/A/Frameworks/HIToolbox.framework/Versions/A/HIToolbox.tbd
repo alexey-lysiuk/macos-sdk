@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 354DF29C-98AB-3E73-A313-1EC13C41CD40' ]
+uuids:           [ 'x86_64: AB2DC9D2-6A2A-3EB0-8ED9-8053CFEEC0A9' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox'
-current-version: 986
+current-version: 993.4
 parent-umbrella: Carbon
 exports:         
   - archs:           [ x86_64 ]
@@ -419,25 +419,26 @@ exports:
                        _kHIObjectCustomDataSuperClassIDKey, _kHIObjectInitParamDescription, 
                        _kHIObjectInitParamEventName, _kHIObjectInitParamEventType, 
                        _kHIObjectInitParamUserName, _kHITextViewClassID, _kHIToolboxVersionNumber, 
-                       _kHIViewWindowContentID, _kHIViewWindowGrowBoxID, _kIMKRequestInputMethodsCheckinEndpoints, 
-                       _kIMKXPCPrivateRunLoopMode, _kTISAppleCharacterPaletteInputSourceID, 
-                       _kTISAppleChineseHandwritingInputSourceID, _kTISAppleEmojiDFRPaletteInputSourceID, 
-                       _kTISAppleJapaneseKanaPaletteInputSourceID, _kTISAppleKeyboardViewerPaletteInputSourceID, 
-                       _kTISApplePressAndHoldInputSourceID, _kTISAppleSyntheticRomanModeInputSourceID, 
-                       _kTISCategoryInkInputSource, _kTISCategoryKeyboardInputSource, 
-                       _kTISCategoryPaletteInputSource, _kTISIterationPropertyPreferredInputSourceLocalePart, 
-                       _kTISNotifyEnabledKeyboardInputSourcesChanged, _kTISNotifyEnabledNonKeyboardInputSourcesChanged, 
-                       _kTISNotifyHandwritingInputSourceChanged, _kTISNotifyInstalledInputSourcesChanged, 
-                       _kTISNotifyIronwoodAutoEnableChanged, _kTISNotifySelectedKeyboardInputSourceChanged, 
-                       _kTISPlistKeyCapsLockIsSwitch, _kTISPlistKeyCapsLockIsSwitchToIMRomanMode, 
-                       _kTISPlistKeyDoubleSpaceSubstitution, _kTISPlistKeyHandwritingLanguages, 
-                       _kTISPlistKeyIconLabels, _kTISPlistKeyIconShouldBeTemplate, 
-                       _kTISPlistKeyInputSourceID, _kTISPlistKeyIntendedLanguage, 
-                       _kTISPlistKeyParticipatesInTouchBar, _kTISPropertyAlternateIconImage, 
-                       _kTISPropertyBundleID, _kTISPropertyDataFileProperties, _kTISPropertyDataFileWordList, 
-                       _kTISPropertyHandwritingLanguages, _kTISPropertyHandwritingLocalizedNames, 
-                       _kTISPropertyIconFamilyOrURL, _kTISPropertyIconImage, _kTISPropertyIconImageURL, 
-                       _kTISPropertyIconRef, _kTISPropertyIconShouldBeTemplate, _kTISPropertyInputModeID, 
+                       _kHIViewMenuContentID, _kHIViewWindowContentID, _kHIViewWindowGrowBoxID, 
+                       _kIMKRequestInputMethodsCheckinEndpoints, _kIMKXPCPrivateRunLoopMode, 
+                       _kTISAppleCharacterPaletteInputSourceID, _kTISAppleChineseHandwritingInputSourceID, 
+                       _kTISAppleEmojiDFRPaletteInputSourceID, _kTISAppleJapaneseKanaPaletteInputSourceID, 
+                       _kTISAppleKeyboardViewerPaletteInputSourceID, _kTISApplePressAndHoldInputSourceID, 
+                       _kTISAppleSyntheticRomanModeInputSourceID, _kTISCategoryInkInputSource, 
+                       _kTISCategoryKeyboardInputSource, _kTISCategoryPaletteInputSource, 
+                       _kTISIterationPropertyPreferredInputSourceLocalePart, _kTISNotifyEnabledKeyboardInputSourcesChanged, 
+                       _kTISNotifyEnabledNonKeyboardInputSourcesChanged, _kTISNotifyHandwritingInputSourceChanged, 
+                       _kTISNotifyInstalledInputSourcesChanged, _kTISNotifyIronwoodAutoEnableChanged, 
+                       _kTISNotifySelectedKeyboardInputSourceChanged, _kTISPlistKeyCapsLockIsSwitch, 
+                       _kTISPlistKeyCapsLockIsSwitchToIMRomanMode, _kTISPlistKeyDoubleSpaceSubstitution, 
+                       _kTISPlistKeyHandwritingLanguages, _kTISPlistKeyIconLabels, 
+                       _kTISPlistKeyIconShouldBeTemplate, _kTISPlistKeyInputSourceID, 
+                       _kTISPlistKeyIntendedLanguage, _kTISPlistKeyParticipatesInTouchBar, 
+                       _kTISPropertyAlternateIconImage, _kTISPropertyBundleID, _kTISPropertyDataFileProperties, 
+                       _kTISPropertyDataFileWordList, _kTISPropertyHandwritingLanguages, 
+                       _kTISPropertyHandwritingLocalizedNames, _kTISPropertyIconFamilyOrURL, 
+                       _kTISPropertyIconImage, _kTISPropertyIconImageURL, _kTISPropertyIconRef, 
+                       _kTISPropertyIconShouldBeTemplate, _kTISPropertyInputModeID, 
                        _kTISPropertyInputSourceCategory, _kTISPropertyInputSourceDoesCapsLockSwitch, 
                        _kTISPropertyInputSourceDoesCapsLockSwitchToRomanMode, _kTISPropertyInputSourceDoubleSpaceSubstitution, 
                        _kTISPropertyInputSourceID, _kTISPropertyInputSourceIconLabels, 

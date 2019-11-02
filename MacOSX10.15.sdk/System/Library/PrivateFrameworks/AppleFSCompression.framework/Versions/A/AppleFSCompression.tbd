@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C04FD0B4-7810-300E-AC34-6B2E69105AA9', 'x86_64: C04FD0B4-7810-300E-AC34-6B2E69105AA9' ]
+uuids:           [ 'x86_64: 7EEDBF8A-8812-33D6-A5B0-F7D36825EE73', 'x86_64: 7EEDBF8A-8812-33D6-A5B0-F7D36825EE73' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AppleFSCompression.framework/Versions/A/AppleFSCompression'
 current-version: 119

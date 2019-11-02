@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CED78776-36A7-3AC3-A8F7-AD63E627B954' ]
+uuids:           [ 'x86_64: F2804722-1E7C-37DC-AD5C-DD7A10A80A7D' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/GPUInfo.framework/Versions/A/GPUInfo'
-current-version: 1.2.25
+current-version: 1.2.38
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ __Z10GetBoardIdv, __Z11ValidConfigv, __Z13get_gpu_DevIDP16__GPUWranglerGPUP14__CFDictionary, 

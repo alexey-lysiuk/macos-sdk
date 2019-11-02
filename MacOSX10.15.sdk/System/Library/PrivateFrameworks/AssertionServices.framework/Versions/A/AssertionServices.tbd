@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 984950F4-8401-3227-9B17-769DCA621DF5', 'x86_64: 984950F4-8401-3227-9B17-769DCA621DF5' ]
+uuids:           [ 'x86_64: 73B5C0D9-AB04-3961-A01D-FFBC94D1348E', 'x86_64: 73B5C0D9-AB04-3961-A01D-FFBC94D1348E' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AssertionServices.framework/Versions/A/AssertionServices'
-current-version: 223.0.4
+current-version: 223.40.19
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _AssertionServicesVersionNumber, _AssertionServicesVersionString, 

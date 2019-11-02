@@ -1,4 +1,4 @@
-/* iig(DriverKit-73.0.1) generated from IOUSBHostPipe.iig */
+/* iig(DriverKit-73.40.3) generated from IOUSBHostPipe.iig */
 
 /* IOUSBHostPipe.iig:1-104 */
 /*

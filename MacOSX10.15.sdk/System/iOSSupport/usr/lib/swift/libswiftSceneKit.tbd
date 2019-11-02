@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1E1405C5-7368-332D-996F-23C4C6068C62' ]
+uuids:           [ 'x86_64: B0156AAE-E647-38AC-94AB-F057B8BC4833' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/usr/lib/swift/libswiftSceneKit.dylib'
 current-version: 0

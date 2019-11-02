@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9226247E-CBDC-3AA4-BF99-748BCF3E25D3', 'x86_64: 9226247E-CBDC-3AA4-BF99-748BCF3E25D3' ]
+uuids:           [ 'x86_64: 8DF95EFB-9951-35E5-B844-25BC335F64B3', 'x86_64: 8DF95EFB-9951-35E5-B844-25BC335F64B3' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit'
-current-version: 1875
+current-version: 1894.10.122
 compatibility-version: 45
 exports:         
   - archs:           [ x86_64 ]
@@ -843,7 +843,8 @@ exports:
                        _ResetNSAutomaticallyTrackKeyValueDependencies, _ResetNSCollectionViewWeakDelegate, 
                        _ResetNSConservativeTAMICConstraintCreation, _ResetNSConstraintBasedLayoutDetectAmbiguousViews, 
                        _ResetNSConstraintBasedLayoutEngageNonLazily, _ResetNSDynamicPropertiesCaptureDependencyContextMetadata, 
-                       _ResetNSImageCompositeFromRectIsInRepCoords, _ResetNSOutlineViewValidateChanges, 
+                       _ResetNSImageCompositeFromRectIsInRepCoords, _ResetNSLifeguardOnDuty, 
+                       _ResetNSLifeguardTestable, _ResetNSOutlineViewValidateChanges, 
                        _ResetNSPasteboardRequiresSecureCoding, _ResetNSPopoverWeakDelegate, 
                        _ResetNSSavePanelForceMicrosoftAccessoryViewCentering, _ResetNSSavePanelWorkAroundBadAccessoryViewFittingSizes, 
                        _ResetNSScreenIsMutable, _ResetNSSplitViewWeakDelegate, _ResetNSStackViewWeakDelegate, 
@@ -856,10 +857,10 @@ exports:
                        _SetNSCollectionViewWeakDelegate, _SetNSConservativeTAMICConstraintCreation, 
                        _SetNSConstraintBasedLayoutDetectAmbiguousViews, _SetNSConstraintBasedLayoutEngageNonLazily, 
                        _SetNSDynamicPropertiesCaptureDependencyContextMetadata, _SetNSImageCompositeFromRectIsInRepCoords, 
-                       _SetNSOutlineViewValidateChanges, _SetNSPasteboardRequiresSecureCoding, 
-                       _SetNSPopoverWeakDelegate, _SetNSSavePanelForceMicrosoftAccessoryViewCentering, 
-                       _SetNSSavePanelWorkAroundBadAccessoryViewFittingSizes, _SetNSScreenIsMutable, 
-                       _SetNSSplitViewWeakDelegate, _SetNSStackViewWeakDelegate, 
+                       _SetNSLifeguardOnDuty, _SetNSLifeguardTestable, _SetNSOutlineViewValidateChanges, 
+                       _SetNSPasteboardRequiresSecureCoding, _SetNSPopoverWeakDelegate, 
+                       _SetNSSavePanelForceMicrosoftAccessoryViewCentering, _SetNSSavePanelWorkAroundBadAccessoryViewFittingSizes, 
+                       _SetNSScreenIsMutable, _SetNSSplitViewWeakDelegate, _SetNSStackViewWeakDelegate, 
                        _SetNSUseRemoteSavePanel, _SetNSViewControllerSupports10_10Features, 
                        _SetNSViewIterateForManualLayout, _SetNSViewResolveRTLGlobally, 
                        _SetNSViewThrowUnsatisfiableConstraints, _SetNSWindowAssertWhenDisplayCycleLimitReached, 
@@ -1109,7 +1110,8 @@ exports:
                        _NS1DVelocityFilter, _NS2DVelocityFilter, _NSBorderlessLayerTreeProjectionWindow, 
                        _NSBrowserColumnView, _NSBrowserColumnsContainerView, _NSBrowserScrollView, 
                        _NSBrowserTableColumnViewController, _NSCloudSharingParticipantDetails, 
-                       _NSDatePickerCellSubfield, _NSDisplayOperationStack, _NSInputAlignmentControllerSession, 
+                       _NSConstraintBasedLayoutHostingView, _NSDatePickerCellSubfield, 
+                       _NSDisplayOperationStack, _NSInputAlignmentControllerSession, 
                        _NSInputAlignmentGuide, _NSInputAlignmentItem, _NSInputAlignmentMatch, 
                        _NSKeyboardFocusClipView, _NSMenuContext, _NSMenuServicesView, 
                        _NSQuickAction, _NSQuickActionConfiguration, _NSQuickActionProvider, 
@@ -1346,10 +1348,10 @@ exports:
                        _NSToolbarSeparator._inPalette ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C7B13273-8603-3A5B-9B07-C5889F632B89', 'x86_64: C7B13273-8603-3A5B-9B07-C5889F632B89' ]
+uuids:           [ 'x86_64: 99072103-6A73-3538-944A-5FD2AF709A78', 'x86_64: 99072103-6A73-3538-944A-5FD2AF709A78' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/UIFoundation.framework/Versions/A/UIFoundation'
-current-version: 655
+current-version: 659.5
 exports:         
   - archs:           [ x86_64 ]
     allowable-clients: [ AppKit, UIKitCore ]
@@ -1475,37 +1477,37 @@ exports:
                        __NSFontAttributeNames, __NSHTMLEncoding, __NSLayoutManagerObservedTextViewChangeNotification, 
                        __NSNegatedDirectionalInsetsForInsets, __NSNewTextView, __NSNonAttachmentCharacterSet, 
                        __NSOldTextView, __NSOpposingDirectionalEdgeForEdge, __NSOriginalFontAttributeName, 
-                       __NSPinnedNonOverlappingFramesForContentFrameVisibleFrame, 
-                       __NSRTreeExpansionCostScoreForFrames, __NSReadAttributedStringFromData, 
-                       __NSReadAttributedStringFromURL, __NSReadAttributedStringFromURLOrData, 
-                       __NSRectClampRectToMinimumSizeForAxis, __NSRectSubtractingRectYieldingDirectionalInsets, 
-                       __NSSizeClampToMinimumSizeForAxis, __NSStringDrawingCore, 
-                       __NSStringHasRightToLeftBaseWritingDirectionAtIndex, __NSStringHasRightToLeftCharactersInRange, 
-                       __NSStringImputedBaseWritingDirectionAtIndex, __NSXMLEncoding, 
-                       __UIAddPointValueForAxis, __UIAddSizeValueForAxis, __UIApplyDirectionalInsetsToRect, 
-                       __UIApplyOffsetFromEdgeInsetsForPoint, __UIApplyRTLTransformForFrameWithDimension, 
-                       __UIAxisDescription, __UICGVectorEqualToVectorWithTolerance, 
-                       __UIDirectionalInsetsAdd, __UIDirectionalInsetsForInsetsAlongAxis, 
-                       __UIEffectiveEdgeInsetsForSize, __UIFoundationRoundedInverseTextScalingFactor, 
-                       __UIFoundationRoundedTextScalingFactor, __UIFrameByPinningToContainerFrameEdge, 
-                       __UILeadingOffsetForInsetsAlongAxis, __UINormalizeOffsetForContainerRect, 
-                       __UINormalizeRectForPositiveOrigin, __UIOffsetFromCenteredAnchorPointForEdgesInRect, 
-                       __UIOrthogonalAxisForAxis, __UIPinnedFrameForFrameWithContainerFrameVisibleFrame, 
-                       __UIPointValueForAxis, __UIRectAddOffset, __UIRectAdjustWithAnchorPoint, 
-                       __UIRectAnchorPointForEdges, __UIRectAnchorPointForUnitAnchorPoint, 
-                       __UIRectByAnchoringSizeInContainer, __UIRectExpandByFactorAndUnitVector, 
-                       __UIRectSubtractOffset, __UISetPointValueForAxis, __UISetSizeValueForAxis, 
-                       __UISizeAdd, __UISizeEqualToSizeWithPrecision, __UISizeValueForAxis, 
-                       __UISystemFontName, __UITotalEdgeDimensionsForLayoutAxis, 
-                       __UITrailingOffsetForInsetsAlongAxis, __UIUnitAnchorPointForEdges, 
-                       ___NSGetVariantMetaFontType, ___NSTokenizerLanguageSet, ___UIFontGetExtraData, 
-                       ___objectEqual ]
+                       __NSOrthogonalAxisForAxis, __NSPinnedNonOverlappingFramesForContentFrameVisibleFrame, 
+                       __NSPointValueForAxis, __NSRTreeExpansionCostScoreForFrames, 
+                       __NSReadAttributedStringFromData, __NSReadAttributedStringFromURL, 
+                       __NSReadAttributedStringFromURLOrData, __NSRectClampRectToMinimumSizeForAxis, 
+                       __NSRectSubtractingRectYieldingDirectionalInsets, __NSSizeClampToMinimumSizeForAxis, 
+                       __NSStringDrawingCore, __NSStringHasRightToLeftBaseWritingDirectionAtIndex, 
+                       __NSStringHasRightToLeftCharactersInRange, __NSStringImputedBaseWritingDirectionAtIndex, 
+                       __NSXMLEncoding, __UIAddPointValueForAxis, __UIAddSizeValueForAxis, 
+                       __UIApplyDirectionalInsetsToRect, __UIApplyOffsetFromEdgeInsetsForPoint, 
+                       __UIApplyRTLTransformForFrameWithDimension, __UIAxisDescription, 
+                       __UICGVectorEqualToVectorWithTolerance, __UIDirectionalInsetsAdd, 
+                       __UIDirectionalInsetsForInsetsAlongAxis, __UIEffectiveEdgeInsetsForSize, 
+                       __UIFoundationRoundedInverseTextScalingFactor, __UIFoundationRoundedTextScalingFactor, 
+                       __UIFrameByPinningToContainerFrameEdge, __UILeadingOffsetForInsetsAlongAxis, 
+                       __UINormalizeOffsetForContainerRect, __UINormalizeRectForPositiveOrigin, 
+                       __UIOffsetFromCenteredAnchorPointForEdgesInRect, __UIPinnedFrameForFrameWithContainerFrameVisibleFrame, 
+                       __UIRectAddOffset, __UIRectAdjustWithAnchorPoint, __UIRectAnchorPointForEdges, 
+                       __UIRectAnchorPointForUnitAnchorPoint, __UIRectByAnchoringSizeInContainer, 
+                       __UIRectExpandByFactorAndUnitVector, __UIRectSubtractOffset, 
+                       __UISetPointValueForAxis, __UISetSizeValueForAxis, __UISizeAdd, 
+                       __UISizeEqualToSizeWithPrecision, __UISizeValueForAxis, __UISystemFontName, 
+                       __UITotalEdgeDimensionsForLayoutAxis, __UITrailingOffsetForInsetsAlongAxis, 
+                       __UIUnitAnchorPointForEdges, ___NSGetVariantMetaFontType, 
+                       ___NSTokenizerLanguageSet, ___UIFontGetExtraData, ___objectEqual ]
     objc-classes:    [ NSATSGlyphStorage, NSATSLineFragment, NSATSTypesetter, NSAttributeDictionary, 
                        NSAttributeDictionaryEnumerator, NSCIDGlyphInfo, NSCTFont, 
                        NSCTFontDescriptor, NSCTGlyphInfo, NSCollectionLayoutAnchor, 
                        NSCollectionLayoutBoundarySupplementaryItem, NSCollectionLayoutContainer, 
                        NSCollectionLayoutDecorationItem, NSCollectionLayoutDimension, 
-                       NSCollectionLayoutEdgeSpacing, NSCollectionLayoutGroup, NSCollectionLayoutGroupCustomItem, 
+                       NSCollectionLayoutEdgeSpacing, NSCollectionLayoutEnvironment, 
+                       NSCollectionLayoutGroup, NSCollectionLayoutGroupCustomItem, 
                        NSCollectionLayoutItem, NSCollectionLayoutSection, NSCollectionLayoutSize, 
                        NSCollectionLayoutSpacing, NSCollectionLayoutSupplementaryItem, 
                        NSCollectionLayoutVisibleItem, NSCollectionViewCompositionalLayout, 
@@ -1542,7 +1544,8 @@ exports:
                        UIQuadCurvePointFIFO, _NSASCIIArtFramesRenderer, _NSATSTypesetterGuts, 
                        _NSAttributeRun, _NSAttributes, _NSCachedAttributedString, 
                        _NSCollectionCompositionalLayoutSolver, _NSCollectionCompositionalLayoutSolverBookmarkStateSnapshotter, 
-                       _NSCollectionCompositionalLayoutSolverUpdate, _NSCollectionCompositionalSolverPreferredSizesRebaseInfo, 
+                       _NSCollectionCompositionalLayoutSolverOptions, _NSCollectionCompositionalLayoutSolverUpdate, 
+                       _NSCollectionCompositionalSolverPreferredSizesRebaseInfo, 
                        _NSCollectionLayoutAnchor, _NSCollectionLayoutAuxiliaryItemSolver, 
                        _NSCollectionLayoutAuxiliaryKey, _NSCollectionLayoutAuxiliaryOffsets, 
                        _NSCollectionLayoutBoundarySupplementaryItem, _NSCollectionLayoutDecorationItem, 
@@ -1564,10 +1567,10 @@ exports:
                        _NSFlowLayoutInfo, _NSFlowLayoutItem, _NSFlowLayoutRow, _NSFlowLayoutSection, 
                        _NSGenericCollectionViewUpdateItem, _NSIdentifierDiffer, _NSIdentifierDifferMovePair, 
                        _NSRTree, _NSTextStorageSideData, _NSUIAnimator, _UICache, 
-                       _UICollectionCompositionalLayoutSolverOptions, _UIFontCacheKey, 
-                       _UIFontDescriptorCacheKey, _UIFontNameCacheKey, _UIFontSystemCacheKey, 
-                       _UIFontTextStyleCacheKey, __NSATSStringSegment, __NSDiffableDataSource, 
-                       __NSDiffableDataSourceSnapshot, __NSFontExtraData, __NSFontTypefaceInfo ]
+                       _UIFontCacheKey, _UIFontDescriptorCacheKey, _UIFontNameCacheKey, 
+                       _UIFontSystemCacheKey, _UIFontTextStyleCacheKey, __NSATSStringSegment, 
+                       __NSDiffableDataSource, __NSDiffableDataSourceSnapshot, __NSFontExtraData, 
+                       __NSFontTypefaceInfo ]
     objc-ivars:      [ NSATSTypesetter.attributedString, NSATSTypesetter.currentParagraphStyle, 
                        NSATSTypesetter.currentTextContainer, NSATSTypesetter.currentTextContainerIndex, 
                        NSATSTypesetter.currentTextContainerSize, NSATSTypesetter.layoutManager, 
@@ -1697,9 +1700,9 @@ exports:
                        NSRTFWriter._curEncoding, NSRTFWriter._curFont, NSRTFWriter._curForegroundColor, 
                        NSRTFWriter._curKern, NSRTFWriter._curParagraphStyle, NSRTFWriter._curSuperscript, 
                        NSRTFWriter._curTraits, NSRTFWriter._curUnderlineStyle, NSRTFWriter._docAttrs, 
-                       NSRTFWriter._document, NSRTFWriter._fontNames, NSRTFWriter._layoutSections, 
-                       NSRTFWriter._listRanges, NSRTFWriter._output, NSRTFWriter._rightMargin, 
-                       NSRTFWriter._rwFlags, NSRTFWriter._textScalingConversionSource, 
+                       NSRTFWriter._document, NSRTFWriter._fontNames, NSRTFWriter._fontObjects, 
+                       NSRTFWriter._layoutSections, NSRTFWriter._listRanges, NSRTFWriter._output, 
+                       NSRTFWriter._rightMargin, NSRTFWriter._rwFlags, NSRTFWriter._textScalingConversionSource, 
                        NSRTFWriter._textScalingConversionTarget, NSShadow._reserved, 
                        NSShadow._reservedFloat, NSShadow._shadowBlurRadius, NSShadow._shadowColor, 
                        NSShadow._shadowFlags, NSShadow._shadowOffset, NSStringDrawingTextStorageSettings._settings, 

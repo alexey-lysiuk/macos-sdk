@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 14CE48BF-FE83-36CA-9C3A-BAF37BE515A4' ]
+uuids:           [ 'x86_64: 2A43881E-DE4B-347D-8D16-5CFD6B940658' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/VoiceShortcuts.framework/Versions/A/VoiceShortcuts'
 exports:         

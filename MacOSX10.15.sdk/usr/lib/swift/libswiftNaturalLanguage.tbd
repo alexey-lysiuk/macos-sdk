@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C0BD266C-57F5-37AC-8369-8BD0A5A74DBE', 'x86_64: C0BD266C-57F5-37AC-8369-8BD0A5A74DBE' ]
+uuids:           [ 'x86_64: DBF4F2B5-CC5A-3948-BB5A-1A2F2C0124EC', 'x86_64: DBF4F2B5-CC5A-3948-BB5A-1A2F2C0124EC' ]
 platform:        zippered
 install-name:    '/usr/lib/swift/libswiftNaturalLanguage.dylib'
 current-version: 0

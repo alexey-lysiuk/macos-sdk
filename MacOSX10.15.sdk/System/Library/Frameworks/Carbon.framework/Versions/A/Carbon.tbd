@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E3188D98-8AC5-3312-8F8D-767A9A4FD413' ]
+uuids:           [ 'x86_64: 56A09CBE-D5EB-3918-B42B-B3ABFF52E1D1' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Carbon.framework/Versions/A/Carbon'
 current-version: 162
@@ -20,7 +20,7 @@ exports:
     symbols:         [ _CarbonVersionNumber, _CarbonVersionString ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DE39DC10-C506-3249-BEE3-FF952E3B511B' ]
+uuids:           [ 'x86_64: 9286951D-8B2F-3A4B-86B2-767AFCC6A591' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CommonPanels.framework/Versions/A/CommonPanels'
 current-version: 101
@@ -54,10 +54,10 @@ exports:
                        _kFontPanelVariationAxesKey, _kFontPanelVariationValuesKey ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 354DF29C-98AB-3E73-A313-1EC13C41CD40' ]
+uuids:           [ 'x86_64: AB2DC9D2-6A2A-3EB0-8ED9-8053CFEEC0A9' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox'
-current-version: 986
+current-version: 993.4
 parent-umbrella: Carbon
 exports:         
   - archs:           [ x86_64 ]
@@ -473,25 +473,26 @@ exports:
                        _kHIObjectCustomDataSuperClassIDKey, _kHIObjectInitParamDescription, 
                        _kHIObjectInitParamEventName, _kHIObjectInitParamEventType, 
                        _kHIObjectInitParamUserName, _kHITextViewClassID, _kHIToolboxVersionNumber, 
-                       _kHIViewWindowContentID, _kHIViewWindowGrowBoxID, _kIMKRequestInputMethodsCheckinEndpoints, 
-                       _kIMKXPCPrivateRunLoopMode, _kTISAppleCharacterPaletteInputSourceID, 
-                       _kTISAppleChineseHandwritingInputSourceID, _kTISAppleEmojiDFRPaletteInputSourceID, 
-                       _kTISAppleJapaneseKanaPaletteInputSourceID, _kTISAppleKeyboardViewerPaletteInputSourceID, 
-                       _kTISApplePressAndHoldInputSourceID, _kTISAppleSyntheticRomanModeInputSourceID, 
-                       _kTISCategoryInkInputSource, _kTISCategoryKeyboardInputSource, 
-                       _kTISCategoryPaletteInputSource, _kTISIterationPropertyPreferredInputSourceLocalePart, 
-                       _kTISNotifyEnabledKeyboardInputSourcesChanged, _kTISNotifyEnabledNonKeyboardInputSourcesChanged, 
-                       _kTISNotifyHandwritingInputSourceChanged, _kTISNotifyInstalledInputSourcesChanged, 
-                       _kTISNotifyIronwoodAutoEnableChanged, _kTISNotifySelectedKeyboardInputSourceChanged, 
-                       _kTISPlistKeyCapsLockIsSwitch, _kTISPlistKeyCapsLockIsSwitchToIMRomanMode, 
-                       _kTISPlistKeyDoubleSpaceSubstitution, _kTISPlistKeyHandwritingLanguages, 
-                       _kTISPlistKeyIconLabels, _kTISPlistKeyIconShouldBeTemplate, 
-                       _kTISPlistKeyInputSourceID, _kTISPlistKeyIntendedLanguage, 
-                       _kTISPlistKeyParticipatesInTouchBar, _kTISPropertyAlternateIconImage, 
-                       _kTISPropertyBundleID, _kTISPropertyDataFileProperties, _kTISPropertyDataFileWordList, 
-                       _kTISPropertyHandwritingLanguages, _kTISPropertyHandwritingLocalizedNames, 
-                       _kTISPropertyIconFamilyOrURL, _kTISPropertyIconImage, _kTISPropertyIconImageURL, 
-                       _kTISPropertyIconRef, _kTISPropertyIconShouldBeTemplate, _kTISPropertyInputModeID, 
+                       _kHIViewMenuContentID, _kHIViewWindowContentID, _kHIViewWindowGrowBoxID, 
+                       _kIMKRequestInputMethodsCheckinEndpoints, _kIMKXPCPrivateRunLoopMode, 
+                       _kTISAppleCharacterPaletteInputSourceID, _kTISAppleChineseHandwritingInputSourceID, 
+                       _kTISAppleEmojiDFRPaletteInputSourceID, _kTISAppleJapaneseKanaPaletteInputSourceID, 
+                       _kTISAppleKeyboardViewerPaletteInputSourceID, _kTISApplePressAndHoldInputSourceID, 
+                       _kTISAppleSyntheticRomanModeInputSourceID, _kTISCategoryInkInputSource, 
+                       _kTISCategoryKeyboardInputSource, _kTISCategoryPaletteInputSource, 
+                       _kTISIterationPropertyPreferredInputSourceLocalePart, _kTISNotifyEnabledKeyboardInputSourcesChanged, 
+                       _kTISNotifyEnabledNonKeyboardInputSourcesChanged, _kTISNotifyHandwritingInputSourceChanged, 
+                       _kTISNotifyInstalledInputSourcesChanged, _kTISNotifyIronwoodAutoEnableChanged, 
+                       _kTISNotifySelectedKeyboardInputSourceChanged, _kTISPlistKeyCapsLockIsSwitch, 
+                       _kTISPlistKeyCapsLockIsSwitchToIMRomanMode, _kTISPlistKeyDoubleSpaceSubstitution, 
+                       _kTISPlistKeyHandwritingLanguages, _kTISPlistKeyIconLabels, 
+                       _kTISPlistKeyIconShouldBeTemplate, _kTISPlistKeyInputSourceID, 
+                       _kTISPlistKeyIntendedLanguage, _kTISPlistKeyParticipatesInTouchBar, 
+                       _kTISPropertyAlternateIconImage, _kTISPropertyBundleID, _kTISPropertyDataFileProperties, 
+                       _kTISPropertyDataFileWordList, _kTISPropertyHandwritingLanguages, 
+                       _kTISPropertyHandwritingLocalizedNames, _kTISPropertyIconFamilyOrURL, 
+                       _kTISPropertyIconImage, _kTISPropertyIconImageURL, _kTISPropertyIconRef, 
+                       _kTISPropertyIconShouldBeTemplate, _kTISPropertyInputModeID, 
                        _kTISPropertyInputSourceCategory, _kTISPropertyInputSourceDoesCapsLockSwitch, 
                        _kTISPropertyInputSourceDoesCapsLockSwitchToRomanMode, _kTISPropertyInputSourceDoubleSpaceSubstitution, 
                        _kTISPropertyInputSourceID, _kTISPropertyInputSourceIconLabels, 
@@ -511,7 +512,7 @@ exports:
                        _kTISTypeKeyboardViewer ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 08284EF4-0759-3A29-AF89-B7CF6D257B67' ]
+uuids:           [ 'x86_64: 64630D33-B292-3FD1-A3B7-AE98D4157EF1' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Help.framework/Versions/A/Help'
 current-version: 68
@@ -528,7 +529,7 @@ exports:
                        _kFILE, _kOPENBOOK, _kSEARCH, _kSEARCHALL, _kSTRING ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 96798C26-3B90-36C8-B3CE-916AA17D6505' ]
+uuids:           [ 'x86_64: 4B628CBB-65EC-3A36-8EBB-2F9D7D328744' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/ImageCapture.framework/Versions/A/ImageCapture'
 current-version: 5
@@ -640,7 +641,7 @@ exports:
                        _kICAWMCVersionKey, _kMetaDataDictionaryKey ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 32CDFAC2-D1E7-3B8D-BE6D-835C8AAD97AC' ]
+uuids:           [ 'x86_64: ED29C75F-6E14-352E-ACB9-AA899E2F5429' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Ink.framework/Versions/A/Ink'
 current-version: 227
@@ -656,7 +657,7 @@ exports:
                        _InkTextGetTypeID, _InkTextKeyModifiers, _InkUserWritingMode ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 04163CFC-5F1E-385C-8F85-9202F683DE2A' ]
+uuids:           [ 'x86_64: D300E418-CF0F-3127-BCBA-A7553F2F1E88' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/OpenScripting.framework/Versions/A/OpenScripting'
 parent-umbrella: Carbon
@@ -705,14 +706,14 @@ exports:
                        __OSALoadURL, __OSAStoreScriptDataToURL, __OSAStoreURL ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D0911F1C-38A3-32FC-A553-9E37B3993F22' ]
+uuids:           [ 'x86_64: 4DDF3DC5-A69B-3BB8-B5F3-42ECC341A0B4' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/Print.framework/Versions/A/Print'
 current-version: 271
 parent-umbrella: Carbon
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E4AC3FB2-EEBE-3AED-B705-CA02C714ECD0' ]
+uuids:           [ 'x86_64: 8E09C68A-87BB-3D55-A52F-AB1B249D06F8' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SecurityHI.framework/Versions/A/SecurityHI'
 current-version: 55008
@@ -731,7 +732,7 @@ exports:
                        _kcunlock ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A131311E-D40C-3052-BC0D-631BE62A5CAE' ]
+uuids:           [ 'x86_64: E2CECD92-568A-3C7A-AD98-D99CEF1BBCBF' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SpeechRecognition.framework/Versions/A/SpeechRecognition'
 parent-umbrella: Carbon

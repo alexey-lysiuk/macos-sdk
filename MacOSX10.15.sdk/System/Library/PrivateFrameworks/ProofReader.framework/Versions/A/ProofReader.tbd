@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 576EA238-53DE-3497-BF68-C645F4B38A46', 'x86_64: 576EA238-53DE-3497-BF68-C645F4B38A46' ]
+uuids:           [ 'x86_64: AF392C16-1F93-369A-8921-6BD20C95727E', 'x86_64: AF392C16-1F93-369A-8921-6BD20C95727E' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ProofReader.framework/Versions/A/ProofReader'
-current-version: 491
+current-version: 492
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _PRCopyAlternativesForPinyinInputString, _PRCopyCorrectionsForPinyinInputString, 

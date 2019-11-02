@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 678E4D94-7211-3B79-BF2B-5B2C136D7303' ]
+uuids:           [ 'x86_64: 1AEB0984-C283-3E95-AFEB-3385AC243973' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/CoreTelephony.framework/Support/libCommCenterCommandDrivers.dylib'
 exports:         
@@ -121,7 +121,7 @@ exports:
                        __ZN17CallCommandDriver17setCallCapabilityEPKcbbN10subscriber7SimSlotE, 
                        __ZN17CallCommandDriver20shouldMTCallContinueEbRK8CallInfo, 
                        __ZN17CallCommandDriver21computeClirValue_syncERK8CallInfo, 
-                       __ZN17CallCommandDriver21handlePersonalityGoneERKNSt3__110shared_ptrIK15PersonalityInfoEE, 
+                       __ZN17CallCommandDriver21handlePersonalityGoneERK13PersonalityID, 
                        __ZN17CallCommandDriver22handlePersonalityAddedERKNSt3__110shared_ptrIK15PersonalityInfoEE, 
                        __ZN17CallCommandDriver29fillUpDefaultCallCapabilitiesEN10subscriber7SimSlotE, 
                        __ZN17CallCommandDriver8shutdownEN8dispatch13group_sessionE, 

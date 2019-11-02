@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E0347DF1-B7CA-34BD-AD64-C0F9242093FE', 'x86_64: E0347DF1-B7CA-34BD-AD64-C0F9242093FE' ]
+uuids:           [ 'x86_64: 05734797-94BC-33DF-AA28-4F6602EE6B1F', 'x86_64: 05734797-94BC-33DF-AA28-4F6602EE6B1F' ]
 platform:        zippered
 install-name:    '/usr/lib/libprequelite.dylib'
 current-version: 101

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2118C75F-3D35-36CE-A75F-4768DAE0D6AE', 'x86_64: 2118C75F-3D35-36CE-A75F-4768DAE0D6AE' ]
+uuids:           [ 'x86_64: 88D7D8FA-8936-392E-AD40-07E758C04256', 'x86_64: 88D7D8FA-8936-392E-AD40-07E758C04256' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreDuet.framework/Versions/A/CoreDuet'
 exports:         
@@ -45,6 +45,7 @@ exports:
                        __DKSyncPolicyDidChangeNotification, __DKSyncUrgencyDidChangeNotification, 
                        __DKTombstoneEligibleForPredictionIdentifier, __DKTristateCategoryValue, 
                        __DKUIOrientationCategoryValue, __DKUserLocalMachServiceName, 
+                       __DKZoneIDsWithAdditionChangesKey, __DKZoneIDsWithDeletionChangesKey, 
                        __isTimeRestrictionOverwritten, _batchSize, _bucket_name_for_timing, 
                        _ceilDateWithOffset, _convert1dReversedBitPatternTo2dArray, 
                        _convert2dArrayTo1dReversedBitPattern, _cumulateSleepWakeProbability, 

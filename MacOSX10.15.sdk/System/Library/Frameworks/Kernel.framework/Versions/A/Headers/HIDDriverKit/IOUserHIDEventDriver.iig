@@ -40,6 +40,7 @@ class IOUserHIDEventDriver : public IOUserHIDEventService
 private:
     void setAccelerationProperties() LOCALONLY;
     void setSurfaceDimensions() LOCALONLY;
+    void setTipThreshold() LOCALONLY;
     
 public:
     /*!

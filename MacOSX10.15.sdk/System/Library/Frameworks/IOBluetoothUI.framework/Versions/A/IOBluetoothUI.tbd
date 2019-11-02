@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 29DACC6A-66D3-320D-A713-9F749F869A07' ]
+uuids:           [ 'x86_64: FA651213-92ED-30EB-B2FA-F2971F3033E5' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/IOBluetoothUI.framework/Versions/A/IOBluetoothUI'
 exports:         
@@ -29,17 +29,18 @@ exports:
                        __IOBluetoothUI_AlignCGRectToUserSpace, __IOBluetoothUI_AlignPointToUserSpace, 
                        __IOBluetoothUI_AlignRectToUserSpace, _gAppleObjectPushServiceClassUUID, 
                        _isDebugLogEnabled, _registerValueTransformers, _sOBEXObjectPushSupportFormatsListNameMapping ]
-    objc-classes:    [ AssetHelper, AudioOptions, AudioOptionsViewController, AudioOptionsViewDoubleTap, 
-                       AudioOptionsViewDoubleTapExtended, AudioOptionsViewInEarDetection, 
-                       AudioOptionsViewListeningMode, AudioOptionsViewMicSwitching, 
-                       FauxUIElement, IOBluetoothAccessibilityIgnoredImageCell, IOBluetoothAccessibilityIgnoredTextFieldCell, 
-                       IOBluetoothConcreteDeviceController, IOBluetoothConcreteDeviceSelectorController, 
-                       IOBluetoothConcreteObjectPush, IOBluetoothConcretePairingController, 
-                       IOBluetoothConcreteServiceBrowserController, IOBluetoothDeviceImageVault, 
-                       IOBluetoothDeviceInquiryTableView, IOBluetoothDevicePairViewController, 
-                       IOBluetoothDevicePairViewControllerExpansion, IOBluetoothDeviceSelectorController, 
-                       IOBluetoothHardwareValidation, IOBluetoothObjectPushUIController, 
-                       IOBluetoothPairingController, IOBluetoothPasskeyDisplay, IOBluetoothPasskeyDisplayNibOwner, 
+    objc-classes:    [ AssetHelper, AudioOptions, AudioOptionsViewClick, AudioOptionsViewController, 
+                       AudioOptionsViewDoubleTap, AudioOptionsViewDoubleTapExtended, 
+                       AudioOptionsViewInEarDetection, AudioOptionsViewListeningMode, 
+                       AudioOptionsViewMicSwitching, FauxUIElement, IOBluetoothAccessibilityIgnoredImageCell, 
+                       IOBluetoothAccessibilityIgnoredTextFieldCell, IOBluetoothConcreteDeviceController, 
+                       IOBluetoothConcreteDeviceSelectorController, IOBluetoothConcreteObjectPush, 
+                       IOBluetoothConcretePairingController, IOBluetoothConcreteServiceBrowserController, 
+                       IOBluetoothDeviceImageVault, IOBluetoothDeviceInquiryTableView, 
+                       IOBluetoothDevicePairViewController, IOBluetoothDevicePairViewControllerExpansion, 
+                       IOBluetoothDeviceSelectorController, IOBluetoothHardwareValidation, 
+                       IOBluetoothObjectPushUIController, IOBluetoothPairingController, 
+                       IOBluetoothPasskeyDisplay, IOBluetoothPasskeyDisplayNibOwner, 
                        IOBluetoothServiceBrowserController, IOBluetoothTransferProgressUI, 
                        IOBluetoothUIBackgroundStyle2AlternateRemoveButton, IOBluetoothUIBackgroundStyle2GrayColorTransformer, 
                        IOBluetoothUIBackgroundStyle2RemoveButton, IOBluetoothUIBool2BWColorTransformer, 

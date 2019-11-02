@@ -58,7 +58,7 @@
    container identified by NSFileProviderWorkingSetContainerItemIdentifier;
  - Include this item in the next enumeration of the working set.
  */
-- (void)materializedItemsDidChangeWithCompletionHandler:(void (^)(void))completionHandler API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos);
+- (void)materializedItemsDidChangeWithCompletionHandler:(void (^)(void))completionHandler API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst);
 
 @end
 
@@ -74,7 +74,7 @@
  - The extension enumerates the materialized set after the system calls
    'materializedContainersDidChangeWithCompletionHandler'.
  */
-- (id<NSFileProviderEnumerator>)enumeratorForMaterializedItems API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos);
+- (id<NSFileProviderEnumerator>)enumeratorForMaterializedItems API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst);
 
 @end
 

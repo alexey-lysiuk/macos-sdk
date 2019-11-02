@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3C5C389A-E7C7-3A1F-9542-2200948B47D8' ]
+uuids:           [ 'x86_64: 9B60339C-F14F-33F4-9555-8F431E5894CE' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/JavaScriptCore'
-current-version: 608.2.6
+current-version: 608.3.10
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ '$ld$install_name$os4.3$/System/Library/PrivateFrameworks/JavaScriptCore.framework/JavaScriptCore', 
@@ -149,7 +149,7 @@ exports:
                        __ZN3JSC11VMInspector13dumpCallFrameEPNS_9ExecStateEj, __ZN3JSC11VMInspector13dumpRegistersEPNS_9ExecStateE, 
                        __ZN3JSC11VMInspector14dumpCellMemoryEPNS_6JSCellE, __ZN3JSC11VMInspector16isValidCodeBlockEPNS_9ExecStateEPNS_9CodeBlockE, 
                        __ZN3JSC11VMInspector17codeBlockForFrameEPNS_9ExecStateEj, 
-                       __ZN3JSC11VMInspector22dumpCellMemoryToStreamEPNS_6JSCellERN3WTF11PrintStreamE, 
+                       __ZN3JSC11VMInspector18dumpSubspaceHashesEPNS_2VME, __ZN3JSC11VMInspector22dumpCellMemoryToStreamEPNS_6JSCellERN3WTF11PrintStreamE, 
                        __ZN3JSC11VMInspector23currentThreadOwnsJSLockEPNS_9ExecStateE, 
                        __ZN3JSC11VMInspector2gcEPNS_9ExecStateE, __ZN3JSC11VMInspector6edenGCEPNS_9ExecStateE, 
                        __ZN3JSC11VMInspector8isInHeapEPNS_4HeapEPv, __ZN3JSC11VMInspector9dumpStackEPNS_9ExecStateEj, 

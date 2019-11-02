@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 54A52B4A-793B-3BEC-9684-BC2700F40572', 'x86_64: 54A52B4A-793B-3BEC-9684-BC2700F40572' ]
+uuids:           [ 'x86_64: DD1ADA26-B650-36C2-B85F-31414EE4AC0B', 'x86_64: DD1ADA26-B650-36C2-B85F-31414EE4AC0B' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/PhoneNumbers.framework/Versions/A/PhoneNumbers'
 exports:         
@@ -9,7 +9,7 @@ exports:
     symbols:         [ _PhoneNumbersVersionNumber, _PhoneNumbersVersionString, _pn_default_log ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 20A7A74F-773C-3E0F-8EED-250FEC838561', 'x86_64: 20A7A74F-773C-3E0F-8EED-250FEC838561' ]
+uuids:           [ 'x86_64: D4405704-6DD4-3486-9DE4-80FC91F1F80B', 'x86_64: D4405704-6DD4-3486-9DE4-80FC91F1F80B' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CorePhoneNumbers.framework/Versions/A/CorePhoneNumbers'
 exports:         

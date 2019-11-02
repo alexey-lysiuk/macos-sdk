@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C40AD2D0-7E05-325D-816E-630832860409' ]
+uuids:           [ 'x86_64: 50DC5F09-5336-3718-AEE9-490773BA3070' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATSUI.framework/Versions/A/ATSUI'
 exports:         

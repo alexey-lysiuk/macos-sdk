@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 130AE9A3-A08E-347A-B492-E2D59E0F9379' ]
+uuids:           [ 'x86_64: 5D91DBFA-0F5E-389A-879F-2B3001249BF7' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SiriClientFlow.framework/Versions/A/SiriClientFlow'
 swift-abi-version: 7
@@ -64,7 +64,7 @@ exports:
                        CFPBJSONReader, CFPBJSONUtils, CFPBJSONWriter, CFPBProperty, 
                        CFPreferences, CFRequestHandler, CFScriptDownloadManager, 
                        CFSecurityUtils, CFServiceConnector, CFServiceHelper, CFUpdateScriptsCommandHandler, 
-                       CFVSGetVoiceAssetsRequest, CFVSGetVoiceAssetsResponse ]
+                       CFUtils, CFVSGetVoiceAssetsRequest, CFVSGetVoiceAssetsResponse ]
     objc-ivars:      [ CFPBProperty._convertFromString, CFPBProperty._convertToString, 
                        CFPBProperty._count, CFPBProperty._fromDictionaryReprFn, CFPBProperty._getter, 
                        CFPBProperty._has, CFPBProperty._name, CFPBProperty._setter, 

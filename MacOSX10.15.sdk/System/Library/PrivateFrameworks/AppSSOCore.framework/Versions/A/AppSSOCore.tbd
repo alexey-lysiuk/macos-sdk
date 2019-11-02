@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7BD8D575-7549-3C9B-BE20-B2262EC1F6D5', 'x86_64: 7BD8D575-7549-3C9B-BE20-B2262EC1F6D5' ]
+uuids:           [ 'x86_64: 0EC1D344-A2EB-33A7-86F6-A562B19E3D98', 'x86_64: 0EC1D344-A2EB-33A7-86F6-A562B19E3D98' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AppSSOCore.framework/Versions/A/AppSSOCore'
 exports:         

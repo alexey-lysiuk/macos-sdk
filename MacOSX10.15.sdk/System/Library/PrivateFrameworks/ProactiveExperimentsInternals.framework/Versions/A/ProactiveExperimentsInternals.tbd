@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 37AF2EB7-E535-3453-B886-F5212B7B85AF', 'x86_64: 37AF2EB7-E535-3453-B886-F5212B7B85AF' ]
+uuids:           [ 'x86_64: 2DB0FA3F-82A3-3D77-AD62-EADC3EBE96CF', 'x86_64: 2DB0FA3F-82A3-3D77-AD62-EADC3EBE96CF' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ProactiveExperimentsInternals.framework/Versions/A/ProactiveExperimentsInternals'
 exports:         

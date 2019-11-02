@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 99D152C4-84CB-31B2-8C88-EC32A5FE8C4B', 'x86_64: 99D152C4-84CB-31B2-8C88-EC32A5FE8C4B' ]
+uuids:           [ 'x86_64: 94910CCB-C386-3912-84A2-1A730BB6EF62', 'x86_64: 94910CCB-C386-3912-84A2-1A730BB6EF62' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/Lexicon.framework/Versions/A/Lexicon'
-current-version: 70
+current-version: 72
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _LXCompileStemSuffixTokenIDConversionMap, _LXCompileUnigramsFile, 

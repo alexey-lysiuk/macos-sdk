@@ -145,16 +145,13 @@ const IOUSBDeviceCapabilityUSB2Extension* IOUSBGetUSB20ExtensionDeviceCapability
  */
 const IOUSBDeviceCapabilitySuperSpeedUSB* IOUSBGetSuperSpeedDeviceCapabilityDescriptor(const IOUSBBOSDescriptor* bosDescriptor);
 
-#if 0
-//TODO define IOUSBDeviceCapabilitySuperSpeedPlusUSB
 /*!
  * @brief       Find the first SuperSpeedPlusUSBDeviceCapabilityDescriptor in a BOS descriptor
  * @discussion  This method uses getNextCapabilityDescriptorWithType to fetch the first SuperSpeedPlusUSBDeviceCapabilityDescriptor
  * @param       bosDescriptor BOS descriptor that contains the descriptors to iterate through
  * @return      SuperSpeedPlusUSBDeviceCapabilityDescriptor pointer, or NULL if no matching descriptor can be found
  */
-const SuperSpeedPlusUSBDeviceCapabilityDescriptor* IOUSBGetSuperSpeedPlusDeviceCapabilityDescriptor(const IOUSBBOSDescriptor* bosDescriptor);
-#endif
+const IOUSBDeviceCapabilitySuperSpeedPlusUSB* IOUSBGetSuperSpeedPlusDeviceCapabilityDescriptor(const IOUSBBOSDescriptor* bosDescriptor);
 
 /*!
  * @brief       Find the first ContainerIDCapabilityDescriptor in a BOS descriptor
@@ -164,16 +161,13 @@ const SuperSpeedPlusUSBDeviceCapabilityDescriptor* IOUSBGetSuperSpeedPlusDeviceC
  */
 const IOUSBDeviceCapabilityContainerID* IOUSBGetContainerIDDescriptor(const IOUSBBOSDescriptor* bosDescriptor);
 
-#if 0
-//TODO define IOUSBPlatformCapabilityDescriptor
 /*!
  * @brief       Find the first PlatformCapabilityDescriptor in a BOS descriptor
  * @discussion  This method uses getNextCapabilityDescriptorWithType to fetch the first PlatformCapabilityDescriptor
  * @param       bosDescriptor BOS descriptor that contains the descriptors to iterate through
  * @return      PlatformCapabilityDescriptor pointer, or NULL if no matching descriptor can be found
  */
-const PlatformCapabilityDescriptor* IOUSBGetPlatformCapabilityDescriptor(const IOUSBBOSDescriptor* bosDescriptor);
-#endif
+const IOUSBPlatformCapabilityDescriptor* IOUSBGetPlatformCapabilityDescriptor(const IOUSBBOSDescriptor* bosDescriptor);
 
 /*!
  * @brief       Find the first BillboardCapabilityDescriptor in a BOS descriptor
@@ -226,7 +220,6 @@ uint8_t IOUSBGetEndpointType(const IOUSBEndpointDescriptor* descriptor);
  */
 uint16_t IOUSBGetEndpointMaxPacketSize(uint32_t usbDeviceSpeed, const IOUSBEndpointDescriptor* descriptor);
 
-#if 0
 /*!
  * @brief       Extract the burst size from endpoint descriptors
  * @discussion  This method parses endpoint descriptors to determine burst size, which includes mult and burst factors as applicable.  SuperSpeed Plus isochronous endpoints will return the dwBytesPerInterval field from the SuperSpeedPlusIsochronousEndpointCompanionDescriptor parameter.
@@ -239,7 +232,7 @@ uint16_t IOUSBGetEndpointMaxPacketSize(uint32_t usbDeviceSpeed, const IOUSBEndpo
 uint32_t IOUSBGetEndpointBurstSize(uint32_t usbDeviceSpeed,
                                    const IOUSBEndpointDescriptor* descriptor,
                                    const IOUSBSuperSpeedEndpointCompanionDescriptor* companionDescriptor,
-                                   const SuperSpeedPlusIsochronousEndpointCompanionDescriptor* sspCompanionDescriptor);
+                                   const IOUSBSuperSpeedPlusIsochronousEndpointCompanionDescriptor* sspCompanionDescriptor);
 
 /*!
  * @brief       Extract the mult count from endpoint descriptors
@@ -253,8 +246,7 @@ uint32_t IOUSBGetEndpointBurstSize(uint32_t usbDeviceSpeed,
 uint8_t IOUSBGetEndpointMult(uint32_t usbDeviceSpeed,
                              const IOUSBEndpointDescriptor* descriptor,
                              const IOUSBSuperSpeedEndpointCompanionDescriptor* companionDescriptor,
-                             const SuperSpeedPlusIsochronousEndpointCompanionDescriptor* sspCompanionDescriptor);
-#endif
+                             const IOUSBSuperSpeedPlusIsochronousEndpointCompanionDescriptor* sspCompanionDescriptor);
 
 /*!
  * @brief       Extract the interval of an endpoint descriptor

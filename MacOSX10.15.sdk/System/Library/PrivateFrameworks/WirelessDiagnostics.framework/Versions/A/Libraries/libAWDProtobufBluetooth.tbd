@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 75740BB9-E1F7-3843-8090-95404C6A0028', 'x86_64: 75740BB9-E1F7-3843-8090-95404C6A0028' ]
+uuids:           [ 'x86_64: 60D1E5FC-AE7F-3124-ADBB-5B638B7965AB', 'x86_64: 60D1E5FC-AE7F-3124-ADBB-5B638B7965AB' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/WirelessDiagnostics.framework/Versions/A/Libraries/libAWDProtobufBluetooth.dylib'
 exports:         

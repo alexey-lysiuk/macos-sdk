@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 52D995B5-BED4-3E9A-86FF-799FE99A137F' ]
+uuids:           [ 'x86_64: 9ED4FF63-775F-3832-908B-92AFF16A51EC' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Vision.framework/liblowLevelDetectors.dylib'
-current-version: 3.0.86
+current-version: 3.0.91
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CCRectLowLevel, _createPerMeshForFFTSIZE, _horizonDetectionFFT, 

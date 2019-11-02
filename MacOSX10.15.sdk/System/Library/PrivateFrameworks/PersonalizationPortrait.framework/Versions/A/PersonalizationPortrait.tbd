@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 95ED38BD-42C4-3999-9348-D99786A87B76', 'x86_64: 95ED38BD-42C4-3999-9348-D99786A87B76' ]
+uuids:           [ 'x86_64: 09B0EFE7-06AC-3659-84EC-B437E59DC2A2', 'x86_64: 09B0EFE7-06AC-3659-84EC-B437E59DC2A2' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/PersonalizationPortrait.framework/Versions/A/PersonalizationPortrait'
-current-version: 1052
+current-version: 1052.14
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _PETPortraitFeatureId, _PPCollapseWhitespaceAndStrip, _PPCreateCalendarColorWithDecoder, 

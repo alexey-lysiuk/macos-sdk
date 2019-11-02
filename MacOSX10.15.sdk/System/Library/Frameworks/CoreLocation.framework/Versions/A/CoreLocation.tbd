@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4F5A01EB-688C-3691-BEF3-B50DEA539C50', 'x86_64: 4F5A01EB-688C-3691-BEF3-B50DEA539C50' ]
+uuids:           [ 'x86_64: D9BE9D62-C4E4-32AF-9E98-770AE8778A90', 'x86_64: D9BE9D62-C4E4-32AF-9E98-770AE8778A90' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreLocation.framework/Versions/A/CoreLocation'
-current-version: 2387.0.8
+current-version: 2388.0.21
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CLAppResetChangedNotification, _CLAppStatusChangedNotification, 
@@ -16,9 +16,9 @@ exports:
                        _CLClientGetLocation, _CLClientGetTypeID, _CLClientInvalidate, 
                        _CLClientIsAuthorizationPromptMapDisplayEnabled, _CLClientIsHeadingAvailable, 
                        _CLClientIsLocationServicesAvailable, _CLClientIsLocationServicesEnabled, 
-                       _CLClientIsValid, _CLClientLog, _CLClientLogDump, _CLClientRequestAuthorization, 
-                       _CLClientRetrieveAuthorizationStatus, _CLClientRetrieveLocation, 
-                       _CLClientRetrieveLocationWithDynamicAccuracyReductionAndAlteredAccessoryLocations, 
+                       _CLClientIsValid, _CLClientLog, _CLClientLogDump, _CLClientMarkAsHavingReceivedLocation, 
+                       _CLClientRequestAuthorization, _CLClientRetrieveAuthorizationStatus, 
+                       _CLClientRetrieveLocation, _CLClientRetrieveLocationWithDynamicAccuracyReductionAndAlteredAccessoryLocations, 
                        _CLClientSetAllowsMapCorrection, _CLClientSetCallback, _CLClientSetShowLocationPrompt, 
                        _CLClientShowHeadingCalibration, _CLClientShutdownDaemon, 
                        _CLClientStartHeadingUpdates, _CLClientStartLocationUpdates, 
@@ -51,6 +51,7 @@ exports:
                        _kCLLocationAccuracyNearestTenMeters, _kCLLocationAccuracyThreeKilometers, 
                        _kCLLocationCoordinate2DInvalid, _kCLLocationIntegrityHigh, 
                        _kCLLocationIntegrityLow, _kCLLocationIntegrityMedium, _kCLLocationIntegrityNone, 
+                       _kCLPolygonalRegionMaxVertices, _kCLPolygonalRegionMinVertices, 
                        _kInvalidMacAddress ]
     objc-classes:    [ CLAssertion, CLBeacon, CLBeaconIdentityConstraint, CLBeaconRegion, 
                        CLCircularRegion, CLEmergencyEnablementAssertion, CLFloor, 
@@ -59,5 +60,6 @@ exports:
                        CLStateTracker, CLVisit, _CLLSLHeading, _CLLSLHeadingEstimation, 
                        _CLLSLHeadingSupplInfo, _CLLSLLocation, _CLLSLLocationCoordinate, 
                        _CLLSLMapRoadSegment, _CLLocationGroundAltitude, _CLPlaceInference, 
-                       _CLRangingPeer, _CLRangingPeerDistance, _CLVIOEstimation ]
+                       _CLPolygonalRegion, _CLRangingPeer, _CLRangingPeerDistance, 
+                       _CLVIOEstimation, _CLVertex ]
 ...

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1D3D0EF5-D414-3B86-BB3E-8628D77696A8', 'x86_64: 1D3D0EF5-D414-3B86-BB3E-8628D77696A8' ]
+uuids:           [ 'x86_64: 2105A99D-0838-3FE6-8FEF-3147BF680D37', 'x86_64: 2105A99D-0838-3FE6-8FEF-3147BF680D37' ]
 platform:        zippered
 install-name:    '/usr/lib/libipsec.A.dylib'
 current-version: 300

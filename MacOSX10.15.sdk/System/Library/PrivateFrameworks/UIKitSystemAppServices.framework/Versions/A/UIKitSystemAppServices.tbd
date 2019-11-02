@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BA0658D1-31FD-3F53-916D-BDD828E67AE4', 'x86_64: BA0658D1-31FD-3F53-916D-BDD828E67AE4' ]
+uuids:           [ 'x86_64: 48EAF869-E81F-3536-A4CE-4A3559853545', 'x86_64: 48EAF869-E81F-3536-A4CE-4A3559853545' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/UIKitSystemAppServices.framework/Versions/A/UIKitSystemAppServices'
-current-version: 180
+current-version: 182
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _UIKitSystemAppServicesVersionNumber, _UIKitSystemAppServicesVersionString, 

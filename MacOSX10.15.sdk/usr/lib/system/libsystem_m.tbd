@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: C00238C6-9C0C-3255-9A63-330EA6EA5240', 'x86_64: C00238C6-9C0C-3255-9A63-330EA6EA5240', 
-                   'x86_64h: 0D584E17-26D4-37B0-8826-59A2BBB89164', 'x86_64h: 0D584E17-26D4-37B0-8826-59A2BBB89164' ]
+uuids:           [ 'x86_64: 895CC10E-5385-37F6-B813-060AD6E6E01C', 'x86_64: 895CC10E-5385-37F6-B813-060AD6E6E01C', 
+                   'x86_64h: 636A1A1C-7AFC-3E82-B86B-0173912A3437', 'x86_64h: 636A1A1C-7AFC-3E82-B86B-0173912A3437' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_m.dylib'
 current-version: 3178

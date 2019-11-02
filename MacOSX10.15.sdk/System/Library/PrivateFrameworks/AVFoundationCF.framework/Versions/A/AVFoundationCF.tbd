@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 40D9C551-578B-3117-B9B9-AF2B872BD5FD' ]
+uuids:           [ 'x86_64: 9732986F-B37E-3D81-8C20-35B57CDD226D' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AVFoundationCF.framework/Versions/A/AVFoundationCF'
 current-version: 2
@@ -203,12 +203,7 @@ exports:
                        _AVCFMediaCharacteristicLanguageTranslation, _AVCFMediaCharacteristicLegible, 
                        _AVCFMediaCharacteristicTranscribesSpokenDialogForAccessibility, 
                        _AVCFMediaCharacteristicVisual, _AVCFMediaCharacteristicVoiceOverTranslation, 
-                       _AVCFMediaComputeOperationIdx_Invalid, _AVCFMediaComputeRequest_Cancel, 
-                       _AVCFMediaComputeRequest_CopyAsset, _AVCFMediaComputeRequest_Create, 
-                       _AVCFMediaComputeRequest_GetProgress, _AVCFMediaComputeRequest_GetTypeID, 
-                       _AVCFMediaComputeRequest_Resume, _AVCFMediaComputeRequest_Start, 
-                       _AVCFMediaComputeRequest_Suspend, _AVCFMediaCompute_CreateDestinationByteStream, 
-                       _AVCFMediaCompute_CreateSourceByteStream, _AVCFMediaSelectionCopyOptionsFromArrayFilteredAndSortedAccordingToPreferredLanguages, 
+                       _AVCFMediaSelectionCopyOptionsFromArrayFilteredAndSortedAccordingToPreferredLanguages, 
                        _AVCFMediaSelectionCopyOptionsFromArrayWithLocale, _AVCFMediaSelectionCopyOptionsFromArrayWithMediaCharacteristics, 
                        _AVCFMediaSelectionCopyOptionsFromArrayWithoutMediaCharacteristics, 
                        _AVCFMediaSelectionCopyPlayableOptionsFromArray, _AVCFMediaSelectionCopySelectedMediaOptionInMediaSelectionGroup, 
@@ -511,9 +506,6 @@ exports:
                        __AVCFPlayerItemIsRentalPlaybackStarted, __AVCFPlayerItemSetApplicationAuthorizationChallengeResponse, 
                        __AVCFUninitializeProtectedContentPlaybackSupportSession, 
                        _kAIGRequestKey_RequestID, _kAVCFAssetExportSessionDesc, _kAVCFAssetProxyVersionNumber, 
-                       _kAVCFMediaComputeOperationType_Transcode, _kAVCFMediaComputeOperation_Preset_HEIF_Medium, 
-                       _kAVCFMediaComputeOperation_Preset_ICPLAux, _kAVCFMediaComputeOperation_Preset_ICPLAuxHD, 
-                       _kAVCFMediaComputeOperation_Preset_JPEG_Medium, _kAVCFMediaComputeOperation_Preset_Original, 
                        _kAVCFPlayerItemLegibleOutputDesc, _kFigAirPlayCustomURLResponseKey_RequestID ]
     objc-classes:    [ AVCFInternalPlayerLayer, AVCFInternalSubtitleLayer, AVCInternalHUDLayer ]
     objc-ivars:      [ AVCFInternalPlayerLayer.AVCFLayer, AVCFInternalSubtitleLayer._subtitleLayerRef ]

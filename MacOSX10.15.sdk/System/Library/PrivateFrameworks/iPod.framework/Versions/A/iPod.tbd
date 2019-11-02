@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 29A90DB1-33F7-3D23-9D8A-5927BA679B18' ]
+uuids:           [ 'x86_64: D414F949-6249-36DC-84C6-ADA42D02B0D9' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/iPod.framework/Versions/A/iPod'
 current-version: 24

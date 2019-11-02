@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 49D49C58-1278-31AE-AF6C-A5CBC87C2E7A', 'x86_64: 49D49C58-1278-31AE-AF6C-A5CBC87C2E7A' ]
+uuids:           [ 'x86_64: B9726418-D9B2-342A-8703-1A6DA745B8B9', 'x86_64: B9726418-D9B2-342A-8703-1A6DA745B8B9' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/FontServices.framework/Versions/A/FontServices'
 exports:         

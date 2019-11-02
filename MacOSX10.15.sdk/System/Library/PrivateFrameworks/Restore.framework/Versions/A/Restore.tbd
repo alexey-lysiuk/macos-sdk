@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 692972E3-6CAD-3E90-8449-17711BEB1564' ]
+uuids:           [ 'x86_64: 7FF64E7F-ED56-38FE-A8E4-51656859CE7A' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/Restore.framework/Versions/A/Restore'
-current-version: 508
+current-version: 511
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _RestoreOperation ]

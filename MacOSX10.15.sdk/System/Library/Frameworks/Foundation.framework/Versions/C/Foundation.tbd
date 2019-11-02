@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B0FF9637-F35E-3886-A035-90D559A5E7EC', 'x86_64: B0FF9637-F35E-3886-A035-90D559A5E7EC' ]
+uuids:           [ 'x86_64: 470C2315-3047-39BB-BB6B-2C620087091C', 'x86_64: 470C2315-3047-39BB-BB6B-2C620087091C' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation'
-current-version: 1670.10
+current-version: 1673.126
 compatibility-version: 300
 exports:         
   - archs:           [ x86_64 ]

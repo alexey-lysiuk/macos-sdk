@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DE887E5A-BEBE-3644-9955-2202269AE33D' ]
+uuids:           [ 'x86_64: DD3AAD19-CA5A-399D-92C3-6F1B1A265333' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AccessoryNowPlaying.framework/Versions/A/AccessoryNowPlaying'
 exports:         

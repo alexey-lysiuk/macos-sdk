@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 05C59CF1-8C13-3EF0-B9EC-CD379ACDA8B0' ]
+uuids:           [ 'x86_64: 7E30A366-B1AB-37F6-8D9A-ED188BC4A01C' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/Mondrian.framework/Versions/A/Mondrian'
-current-version: 101.13.100
+current-version: 111.16.150
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _GridRectEdgeOppositeEdge, _MOAVAssetCreateThumbnailWithURL, 
@@ -104,7 +104,7 @@ exports:
                        _kMOMonitoringSystemStatsSystemCPUUsagePercentageKey, _kMOMonitoringSystemStatsVMCompressorPageCountBytesKey, 
                        _kMOMonitoringSystemStatsVMPageInBytesKey, _kMOMonitoringSystemStatsVMPageOutBytesKey, 
                        _kMOMonitoringSystemStatsVMSwapUsedBytesKey, _kMONSOperationErrorDomain, 
-                       _kMONSOperationProgressKey, _kRecommendedVisibleContentPreparationWaitDelay ]
+                       _kRecommendedVisibleContentPreparationWaitDelay ]
     objc-classes:    [ AXTextField, MOAssetsLayout, MOAssetsMediaView, MOAssetsView, 
                        MOCollectionView, MOCollectionView_NRS, MOFast2DIndex, MOImageDiskCache, 
                        MOLRUCache, MOLiveUpdateController, MOLogger, MOLoggingStore, 

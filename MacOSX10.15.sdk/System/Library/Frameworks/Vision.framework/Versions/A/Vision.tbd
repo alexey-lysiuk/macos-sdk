@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C64A9DEA-28C5-3961-82FE-276C42D3DE4A', 'x86_64: C64A9DEA-28C5-3961-82FE-276C42D3DE4A' ]
+uuids:           [ 'x86_64: E3C2D5F5-C138-3228-A105-B49EA69011E0', 'x86_64: E3C2D5F5-C138-3228-A105-B49EA69011E0' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Vision.framework/Versions/A/Vision'
-current-version: 3.0.86
+current-version: 3.0.91
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CCRectLowLevel, _VNAnimalDetectorCat, _VNAnimalDetectorDog, 

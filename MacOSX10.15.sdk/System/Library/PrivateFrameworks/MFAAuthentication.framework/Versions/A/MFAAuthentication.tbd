@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A1B866AA-61CB-38A1-856F-510A72361A43', 'x86_64: A1B866AA-61CB-38A1-856F-510A72361A43' ]
+uuids:           [ 'x86_64: 6A39AB8F-EBA1-3568-90DF-38293F847C30', 'x86_64: 6A39AB8F-EBA1-3568-90DF-38293F847C30' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/MFAAuthentication.framework/Versions/A/MFAAuthentication'
 exports:         

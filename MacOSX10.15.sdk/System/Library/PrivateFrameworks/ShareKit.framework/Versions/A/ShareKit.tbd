@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 558C0C9C-FB3B-3DA5-B36B-079EFEB36922' ]
+uuids:           [ 'x86_64: 247F44E5-7D38-380C-86DB-97ECA647ADAC' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ShareKit.framework/Versions/A/ShareKit'
-current-version: 637
+current-version: 641.4
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _NSSharingPlugInServiceOptionAppIDKey, _NSSharingPlugInServiceOptionAppIsBackgroundOnlyKey, 

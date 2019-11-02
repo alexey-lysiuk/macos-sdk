@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 23B8C3C0-FCAA-323A-B80C-84F8B15BDBAB' ]
+uuids:           [ 'x86_64: 42260307-7646-3CD8-8ECA-255CC08AA159' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/VCXMPP.framework/Versions/A/Frameworks/XMPPToolkit.framework/Versions/A/XMPPToolkit'
 exports:         
@@ -136,7 +136,7 @@ exports:
                        XTInvocationQueue.delegate ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FF6B1E88-FBE5-3F25-9E11-4A90D4A3A4BA' ]
+uuids:           [ 'x86_64: 6CA9C139-ADF9-3708-9FC9-A41C0F6579BB' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/VCXMPP.framework/Versions/A/Frameworks/uxmi.framework/Versions/0.1/uxmi'
 exports:         

@@ -1,4 +1,4 @@
-/* iig(DriverKit-73.0.1) generated from IOUserUSBHostHIDDevice.iig */
+/* iig(DriverKit-73.40.3) generated from IOUserUSBHostHIDDevice.iig */
 
 /* IOUserUSBHostHIDDevice.iig:1-41 */
 /*

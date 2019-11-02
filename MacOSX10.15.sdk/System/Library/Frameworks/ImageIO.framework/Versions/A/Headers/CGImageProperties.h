@@ -238,6 +238,9 @@ IMAGEIO_EXTERN const CFStringRef kCGImagePropertyExifLensMake  IMAGEIO_AVAILABLE
 IMAGEIO_EXTERN const CFStringRef kCGImagePropertyExifLensModel  IMAGEIO_AVAILABLE_STARTING(10.7, 5.0);
 IMAGEIO_EXTERN const CFStringRef kCGImagePropertyExifLensSerialNumber  IMAGEIO_AVAILABLE_STARTING(10.7, 5.0);
 IMAGEIO_EXTERN const CFStringRef kCGImagePropertyExifGamma  IMAGEIO_AVAILABLE_STARTING(10.4, 4.0);
+IMAGEIO_EXTERN const CFStringRef kCGImagePropertyExifCompositeImage  IMAGEIO_AVAILABLE_STARTING(10.15.1, 13.1);
+IMAGEIO_EXTERN const CFStringRef kCGImagePropertyExifSourceImageNumberOfCompositeImage  IMAGEIO_AVAILABLE_STARTING(10.15.1, 13.1);
+IMAGEIO_EXTERN const CFStringRef kCGImagePropertyExifSourceExposureTimesOfCompositeImage  IMAGEIO_AVAILABLE_STARTING(10.15.1, 13.1);
 
 /* Deprecated. See kCGImagePropertyExifSubsecTimeOriginal */
 IMAGEIO_EXTERN const CFStringRef kCGImagePropertyExifSubsecTimeOrginal IMAGEIO_AVAILABLE_BUT_DEPRECATED(10.4, 10.11, 4.0, 10.0);

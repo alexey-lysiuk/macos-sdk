@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 963846CC-D87A-363A-9871-3A6F5737F047' ]
+uuids:           [ 'x86_64: 04DF8A2C-B85C-3406-A372-F4758DA98FA8' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/TimeMachine.framework/Versions/A/TimeMachine'
 exports:         
@@ -17,7 +17,8 @@ exports:
                        _TMAutomaticBackupsEnabledKey, _TMBackupPhaseLazyThinning, 
                        _TMBumpAndCheckFileID, _TMCStrDeleteLastPathComponent, _TMCStrGetLastPathComponent, 
                        _TMCStrLengthWithoutLastPathComponent, _TMCStrLengthWithoutTrailingPathDelimiters, 
-                       _TMCleanMountsDirectory, _TMCommonDebugLoggingKey, _TMContainerPathForVolumeDevice, 
+                       _TMCatalinaSparseBundleExtension, _TMCleanMountsDirectory, 
+                       _TMCommonDebugLoggingKey, _TMContainerPathForVolumeDevice, 
                        _TMCurrentPreferencesVersion, _TMDefaultsDomain, _TMDeleteURLsToBaseURL, 
                        _TMDestinationsKey, _TMDeviceIndexForPath, _TMDiskMountBlockTrampoline, 
                        _TMDiskMountWithArguments, _TMDiskSynchMountWithArguments, 
@@ -31,7 +32,8 @@ exports:
                        _TMLoggingConfigurationKey, _TMMachineStoreURLForVolume, _TMMountPointForDisk, 
                        _TMMountsDirectoryURL, _TMNodeCacheEntryReadFrom, _TMPathFilterCopyDebugDescription, 
                        _TMPathFilterGetRealm, _TMPathForInode, _TMPathIsCloneFile, 
-                       _TMPlistBackupExtension, _TMPreferencesVersionKey, _TMPurgeableSparseBundleExtension, 
+                       _TMPlistBackupExtension, _TMPreCatalinaSparseBundleExtension, 
+                       _TMPreferencesVersionKey, _TMPurgeableSparseBundleExtension, 
                        _TMRequiresACPowerKey, _TMSessionUnmountApprovalTrampoline, 
                        _TMSetVolumeRole, _TMSiblingLinkPathsForInode, _TMStructureErrorDomain, 
                        _TMStructureTypeAPFSBackup, _TMStructureTypeAPFSMachineStore, 

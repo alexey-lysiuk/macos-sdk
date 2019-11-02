@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E995778F-5BD5-3960-81FF-F090BAEA83A1', 'x86_64: E995778F-5BD5-3960-81FF-F090BAEA83A1' ]
+uuids:           [ 'x86_64: 14BA32F0-A038-3720-83A6-176986C9B962', 'x86_64: 14BA32F0-A038-3720-83A6-176986C9B962' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/WirelessDiagnostics.framework/Versions/A/WirelessDiagnostics'
 current-version: 757
@@ -694,7 +694,7 @@ exports:
                         __ZTSNSt3__123enable_shared_from_thisI12PRNGeneratorEE ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7A7D68B8-32A0-3E25-BD88-73BC3609F79D', 'x86_64: 7A7D68B8-32A0-3E25-BD88-73BC3609F79D' ]
+uuids:           [ 'x86_64: 9D077F42-DA50-3358-96D8-0DBB80E14615', 'x86_64: 9D077F42-DA50-3358-96D8-0DBB80E14615' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/WirelessDiagnostics.framework/Versions/A/Libraries/libAWDSupportFramework.dylib'
 exports:         
@@ -887,17 +887,18 @@ exports:
                        _AWDWiFiMetricsManagerSoftErrorReadFrom, _AWDWiFiMetricsManagerSoftErrorUserFeedbackReadFrom, 
                        _AWDWiFiMetricsManagerStateMachineReadFrom, _AWDWiFiMetricsManagerUserBlacklistEventReadFrom, 
                        _AWDWiFiMetricsManagerWatchdogEventReadFrom, _AWDWiFiMetricsManagerWifidAvailabilityReadFrom, 
-                       _AWDWiFiOtaSystemInfoReadFrom, _AWDWiFiRangingRttDataReadFrom, 
-                       _AWDWiFiSDBReadFrom, _AWDWiFiSDBSliceSpecificReadFrom, _AWDWiFiSoftAPClientReadFrom, 
-                       _AWDWiFiSoftAPReadFrom, _AWDWiFiTxInhibitEventReadFrom, _AWDWiFiUIConfigureEventReadFrom, 
-                       _AWDWiFiUIEventReadFrom, _AWDWiFiUIJoinEventReadFrom, _AWDWiFiUIScanCountReadFrom, 
+                       _AWDWiFiOtaSystemInfoReadFrom, _AWDWiFiP2PAirplayMetricsReadFrom, 
+                       _AWDWiFiRangingRttDataReadFrom, _AWDWiFiSDBReadFrom, _AWDWiFiSDBSliceSpecificReadFrom, 
+                       _AWDWiFiSoftAPClientReadFrom, _AWDWiFiSoftAPReadFrom, _AWDWiFiTxInhibitEventReadFrom, 
+                       _AWDWiFiUIConfigureEventReadFrom, _AWDWiFiUIEventReadFrom, 
+                       _AWDWiFiUIJoinEventReadFrom, _AWDWiFiUIScanCountReadFrom, 
                        _AWDWiFiUIScanSessionReadFrom, _AWDWifiAssociationReadFrom, 
                        _AWDWifiAwdlD2dMigrationStatsReadFrom, _AWDWifiAwdlHistogramBinReadFrom, 
                        _AWDWifiAwdlServiceRecordReadFrom, _AWDWifiAwdlStateInfoReadFrom, 
                        _AWDWifiCallingCallEndReportReadFrom, _AWDWifiHardwareVersionReadFrom, 
                        _AWDWifiLinkQualityRecordReadFrom, _AWDWifiMetricWiFiTetheredDeviceOUIReadFrom, 
-                       _AWDWifiMostUsedNetworksReadFrom, _AWDWifiPowerStateReadFrom, 
-                       _AWDWifiStatsReadFrom ]
+                       _AWDWifiMostUsedNetworksReadFrom, _AWDWifiP2PAirplayHistogramBinReadFrom, 
+                       _AWDWifiPowerStateReadFrom, _AWDWifiStatsReadFrom ]
     objc-classes:    [ AWDCFNetworkCacheMetrics, AWDCFNetworkStreamTaskTiming, AWDCFNetworkTaskMetrics, 
                        AWDCFNetworkTransactionMetrics, AWDCFNetworkW3CNavigationTiming, 
                        AWDCaptiveSession, AWDChipCountersRx, AWDChipCountersTx, AWDChipErrorCountersTx, 
@@ -1062,14 +1063,15 @@ exports:
                        AWDWiFiMetricsManagerSoftError, AWDWiFiMetricsManagerSoftErrorUserFeedback, 
                        AWDWiFiMetricsManagerStateMachine, AWDWiFiMetricsManagerUserBlacklistEvent, 
                        AWDWiFiMetricsManagerWatchdogEvent, AWDWiFiMetricsManagerWifidAvailability, 
-                       AWDWiFiOtaSystemInfo, AWDWiFiRangingRttData, AWDWiFiSDB, AWDWiFiSDBSliceSpecific, 
-                       AWDWiFiSoftAP, AWDWiFiSoftAPClient, AWDWiFiTxInhibitEvent, 
-                       AWDWiFiUIConfigureEvent, AWDWiFiUIEvent, AWDWiFiUIJoinEvent, 
-                       AWDWiFiUIScanCount, AWDWiFiUIScanSession, AWDWifiAssociation, 
-                       AWDWifiAwdlD2dMigrationStats, AWDWifiAwdlHistogramBin, AWDWifiAwdlServiceRecord, 
-                       AWDWifiAwdlStateInfo, AWDWifiCallingCallEndReport, AWDWifiHardwareVersion, 
-                       AWDWifiLinkQualityRecord, AWDWifiMetricWiFiTetheredDeviceOUI, 
-                       AWDWifiMostUsedNetworks, AWDWifiPowerState, AWDWifiStats ]
+                       AWDWiFiOtaSystemInfo, AWDWiFiP2PAirplayMetrics, AWDWiFiRangingRttData, 
+                       AWDWiFiSDB, AWDWiFiSDBSliceSpecific, AWDWiFiSoftAP, AWDWiFiSoftAPClient, 
+                       AWDWiFiTxInhibitEvent, AWDWiFiUIConfigureEvent, AWDWiFiUIEvent, 
+                       AWDWiFiUIJoinEvent, AWDWiFiUIScanCount, AWDWiFiUIScanSession, 
+                       AWDWifiAssociation, AWDWifiAwdlD2dMigrationStats, AWDWifiAwdlHistogramBin, 
+                       AWDWifiAwdlServiceRecord, AWDWifiAwdlStateInfo, AWDWifiCallingCallEndReport, 
+                       AWDWifiHardwareVersion, AWDWifiLinkQualityRecord, AWDWifiMetricWiFiTetheredDeviceOUI, 
+                       AWDWifiMostUsedNetworks, AWDWifiP2PAirplayHistogramBin, AWDWifiPowerState, 
+                       AWDWifiStats ]
     objc-ivars:      [ AWDCFNetworkCacheMetrics._bundleID, AWDCFNetworkCacheMetrics._has, 
                        AWDCFNetworkCacheMetrics._timestamp, AWDCFNetworkCacheMetrics._totalBytesWritten, 
                        AWDCFNetworkStreamTaskTiming._connectEnd, AWDCFNetworkStreamTaskTiming._connectStart, 
@@ -3039,15 +3041,29 @@ exports:
                        AWDWiFiOtaSystemInfo._wpsDeviceNameElement, AWDWiFiOtaSystemInfo._wpsManufacturerElement, 
                        AWDWiFiOtaSystemInfo._wpsModelName, AWDWiFiOtaSystemInfo._wpsModelNumber, 
                        AWDWiFiOtaSystemInfo._wpsPrimaryDeviceTypeCategory, AWDWiFiOtaSystemInfo._wpsPrimaryDeviceTypeSubCategory, 
-                       AWDWiFiOtaSystemInfo._wpsResponseType, AWDWiFiRangingRttData._bitErrorRate, 
-                       AWDWiFiRangingRttData._channel, AWDWiFiRangingRttData._coreId, 
-                       AWDWiFiRangingRttData._flags, AWDWiFiRangingRttData._has, 
-                       AWDWiFiRangingRttData._losPeakRatio, AWDWiFiRangingRttData._peerBitErrorRate, 
-                       AWDWiFiRangingRttData._peerCoreId, AWDWiFiRangingRttData._peerLosPeakRatio, 
-                       AWDWiFiRangingRttData._peerPhyError, AWDWiFiRangingRttData._peerSnr, 
-                       AWDWiFiRangingRttData._phyError, AWDWiFiRangingRttData._rssi, 
-                       AWDWiFiRangingRttData._rtt, AWDWiFiRangingRttData._snr, AWDWiFiRangingRttData._status, 
-                       AWDWiFiSDB._has, AWDWiFiSDB._realTimeSessionStateResultingInSubmission, 
+                       AWDWiFiOtaSystemInfo._wpsResponseType, AWDWiFiP2PAirplayMetrics._avgCCAPeerInfraChannels, 
+                       AWDWiFiP2PAirplayMetrics._avgCCASelfInfraChannels, AWDWiFiP2PAirplayMetrics._avgCCASocialChannels, 
+                       AWDWiFiP2PAirplayMetrics._awdlVersion, AWDWiFiP2PAirplayMetrics._clientModeDuration, 
+                       AWDWiFiP2PAirplayMetrics._csaDuringDfspMode, AWDWiFiP2PAirplayMetrics._csaToDfsChannel, 
+                       AWDWiFiP2PAirplayMetrics._dfsProxyMode, AWDWiFiP2PAirplayMetrics._has, 
+                       AWDWiFiP2PAirplayMetrics._inRetroMode, AWDWiFiP2PAirplayMetrics._infraDisconnectedCount, 
+                       AWDWiFiP2PAirplayMetrics._missingAWStartEventCount, AWDWiFiP2PAirplayMetrics._peerInfraChannel, 
+                       AWDWiFiP2PAirplayMetrics._peerIsSDB, AWDWiFiP2PAirplayMetrics._peerRSSIs, 
+                       AWDWiFiP2PAirplayMetrics._psfEnabledCount, AWDWiFiP2PAirplayMetrics._routablePeerCount, 
+                       AWDWiFiP2PAirplayMetrics._rxBytes, AWDWiFiP2PAirplayMetrics._selfInfraChannel, 
+                       AWDWiFiP2PAirplayMetrics._selfIsSDB, AWDWiFiP2PAirplayMetrics._senderPlatform, 
+                       AWDWiFiP2PAirplayMetrics._sequenceNumberNotUpdatedCount, AWDWiFiP2PAirplayMetrics._serverModeDuration, 
+                       AWDWiFiP2PAirplayMetrics._splitModeDuration, AWDWiFiP2PAirplayMetrics._startingRSSI, 
+                       AWDWiFiP2PAirplayMetrics._timestamp, AWDWiFiP2PAirplayMetrics._totalDuration, 
+                       AWDWiFiP2PAirplayMetrics._totalPeerCount, AWDWiFiP2PAirplayMetrics._txBytes, 
+                       AWDWiFiRangingRttData._bitErrorRate, AWDWiFiRangingRttData._channel, 
+                       AWDWiFiRangingRttData._coreId, AWDWiFiRangingRttData._flags, 
+                       AWDWiFiRangingRttData._has, AWDWiFiRangingRttData._losPeakRatio, 
+                       AWDWiFiRangingRttData._peerBitErrorRate, AWDWiFiRangingRttData._peerCoreId, 
+                       AWDWiFiRangingRttData._peerLosPeakRatio, AWDWiFiRangingRttData._peerPhyError, 
+                       AWDWiFiRangingRttData._peerSnr, AWDWiFiRangingRttData._phyError, 
+                       AWDWiFiRangingRttData._rssi, AWDWiFiRangingRttData._rtt, AWDWiFiRangingRttData._snr, 
+                       AWDWiFiRangingRttData._status, AWDWiFiSDB._has, AWDWiFiSDB._realTimeSessionStateResultingInSubmission, 
                        AWDWiFiSDB._sliceStats, AWDWiFiSDB._timestamp, AWDWiFiSDBSliceSpecific._ackTxPowerBackoffCount, 
                        AWDWiFiSDBSliceSpecific._has, AWDWiFiSDBSliceSpecific._timestamp, 
                        AWDWiFiSDBSliceSpecific._txDeferDuration, AWDWiFiSDBSliceSpecific._txDeferredCount, 
@@ -3131,6 +3147,8 @@ exports:
                        AWDWifiMostUsedNetworks._networkScoreBitMap, AWDWifiMostUsedNetworks._securityType, 
                        AWDWifiMostUsedNetworks._switchToCount, AWDWifiMostUsedNetworks._switchedAwayFromCount, 
                        AWDWifiMostUsedNetworks._timeUsed, AWDWifiMostUsedNetworks._timeUsedMinutes, 
+                       AWDWifiP2PAirplayHistogramBin._binEnd, AWDWifiP2PAirplayHistogramBin._binStart, 
+                       AWDWifiP2PAirplayHistogramBin._count, AWDWifiP2PAirplayHistogramBin._has, 
                        AWDWifiPowerState._has, AWDWifiPowerState._powerState, AWDWifiPowerState._timestamp, 
                        AWDWifiStats._averageCCA, AWDWifiStats._avgJitterRx, AWDWifiStats._avgLatencyTx, 
                        AWDWifiStats._avgRetx, AWDWifiStats._avgRssi, AWDWifiStats._avgTimeBackoff, 

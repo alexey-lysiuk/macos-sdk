@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2916BE0D-B3E6-340C-9C99-6130C46766C4', 'x86_64: 2916BE0D-B3E6-340C-9C99-6130C46766C4' ]
+uuids:           [ 'x86_64: 49E47D81-CBE8-3CB3-82F6-927B0AE64086', 'x86_64: 49E47D81-CBE8-3CB3-82F6-927B0AE64086' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/IconServices.framework/Versions/A/IconServices'
-current-version: 434
+current-version: 438.2
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _ISCreateCGImageFromBindingWithSizeScaleAndOptions, __ISCopyCacheContentsDescription, 

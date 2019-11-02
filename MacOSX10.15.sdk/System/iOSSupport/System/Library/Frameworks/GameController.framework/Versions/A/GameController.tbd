@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D981CCB1-49B6-3464-9962-B9987847A323' ]
+uuids:           [ 'x86_64: 5B9425CD-B728-3A04-A5EA-8F4E6416F9EF' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/GameController.framework/Versions/A/GameController'
 exports:         

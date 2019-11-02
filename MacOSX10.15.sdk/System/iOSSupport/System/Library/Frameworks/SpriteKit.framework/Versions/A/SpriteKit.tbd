@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C606559D-B15A-3A77-B6C4-9140C3E26A50' ]
+uuids:           [ 'x86_64: 7549273C-64F3-33E0-8876-A92B46F18116' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/SpriteKit.framework/Versions/A/SpriteKit'
-current-version: 25.32
+current-version: 25.35
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _SKComponentRGBABlack, _SKComponentRGBABlue, _SKComponentRGBAClear, 

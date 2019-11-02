@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 00C4E420-018C-3ED4-935B-B6C36F421FFC', 'x86_64: 00C4E420-018C-3ED4-935B-B6C36F421FFC' ]
+uuids:           [ 'x86_64: A933F275-F70B-39C7-9B21-60949D028A85', 'x86_64: A933F275-F70B-39C7-9B21-60949D028A85' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/PhotosFormats.framework/Versions/A/PhotosFormats'
-current-version: 101.13.100
+current-version: 111.16.150
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CAMUserPreferenceCaptureEncodingBehavior, _CAMUserPreferenceSlomoConfiguration, 
@@ -24,6 +24,7 @@ exports:
                        _PFAssetBundleMetadataMediaSubtypesKey, _PFAssetBundleMetadataMediaTypeKey, 
                        _PFAssetBundleMetadataPairingIdentifierKey, _PFAssetBundleMetadataPlaybackStyleKey, 
                        _PFAssetBundleMetadataPlaybackVariationKey, _PFAssetBundleMetadataReframeVariationKey, 
+                       _PFAssetBundleMetadataSpatialOvercaptureResourcesPurgeableKey, 
                        _PFAssetBundleMetadataTimingInfoKey, _PFAssetBundleMetadataVersionKey, 
                        _PFAssetBundleMetadataVideoComplementVisibilityStateKey, _PFAssetBundlePathAdjustmentBasePairedVideoKey, 
                        _PFAssetBundlePathAdjustmentBasePhotoKey, _PFAssetBundlePathAdjustmentBaseVideoKey, 

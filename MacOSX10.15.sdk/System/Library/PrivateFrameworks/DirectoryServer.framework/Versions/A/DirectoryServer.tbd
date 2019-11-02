@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4D5337FB-BE18-3D40-BE0A-4EE16E0E49C8' ]
+uuids:           [ 'x86_64: 3342D7C8-6F5E-3358-B76A-46AB5F461CE5' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/DirectoryServer.framework/Versions/A/DirectoryServer'
 exports:         
@@ -14,7 +14,7 @@ exports:
     objc-ivars:      [ DSLog.asl, DSLog.logfd ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9BA7C1D8-2E46-3E3F-AB5C-79E78E8EB668' ]
+uuids:           [ 'x86_64: 8FEA7710-43C7-33C5-9E88-D7B419A5AEEC' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/DirectoryServer.framework/Frameworks/CFDirectoryServer.framework/Versions/A/CFDirectoryServer'
 exports:         

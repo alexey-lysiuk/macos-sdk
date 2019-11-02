@@ -17,6 +17,8 @@ CX_EXTERN NSErrorDomain const CXErrorDomainCallDirectoryManager API_AVAILABLE(io
 
 typedef NS_ERROR_ENUM(CXErrorDomain, CXErrorCode) {
     CXErrorCodeUnknownError = 0,
+    CXErrorCodeUnentitled API_AVAILABLE(ios(13.2), macCatalyst(13.2)) API_UNAVAILABLE(macos, watchos) = 1,
+    CXErrorCodeInvalidArgument API_AVAILABLE(ios(13.2), macCatalyst(13.2)) API_UNAVAILABLE(macos, watchos) = 2,
 } API_AVAILABLE(ios(10.0), macCatalyst(13.0)) API_UNAVAILABLE( tvos) API_UNAVAILABLE(macos, watchos);
 
 typedef NS_ERROR_ENUM(CXErrorDomainIncomingCall, CXErrorCodeIncomingCallError) {

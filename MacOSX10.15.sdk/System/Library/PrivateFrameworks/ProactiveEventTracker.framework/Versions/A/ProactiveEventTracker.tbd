@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2BB3630C-CAEB-3932-803A-0A61DCE4F38C', 'x86_64: 2BB3630C-CAEB-3932-803A-0A61DCE4F38C' ]
+uuids:           [ 'x86_64: A1C60CB5-1975-3EB0-9C7D-70EA65B20400', 'x86_64: A1C60CB5-1975-3EB0-9C7D-70EA65B20400' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ProactiveEventTracker.framework/Versions/A/ProactiveEventTracker'
-current-version: 258
+current-version: 258.3
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _PETAggregatedMessageReadFrom, _PETAggregationKeyReadFrom, 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 28482ACC-993F-3791-B176-7D96A13A71C8' ]
+uuids:           [ 'x86_64: 64E06232-BDC5-3FA4-BAD2-DE656BD2D93B' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/AppleScriptObjC.framework/Versions/A/AppleScriptObjC'
 current-version: 35

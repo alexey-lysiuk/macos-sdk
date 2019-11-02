@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.1 (swiftlang-1100.8.259.70 clang-1100.0.32.1)
-// swift-module-flags: -target x86_64-apple-ios13.0-macabi -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name CryptoKit
+// swift-compiler-version: Apple Swift version 5.1.1 (swiftlang-1100.8.275.1 clang-1100.0.32.1)
+// swift-module-flags: -target x86_64-apple-ios13.2-macabi -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name CryptoKit
 import Foundation
 import LocalAuthentication
 import Security.SecAccessControl
@@ -224,7 +224,8 @@ public struct HMAC<H> where H : CryptoKit.HashFunction {
   public init(key: CryptoKit.SymmetricKey)
   public static func authenticationCode<D>(for data: D, using key: CryptoKit.SymmetricKey) -> CryptoKit.HMAC<H>.MAC where D : Foundation.DataProtocol
   public static func isValidAuthenticationCode<D>(_ authenticationCode: CryptoKit.HMAC<H>.MAC, authenticating authenticatedData: D, using key: CryptoKit.SymmetricKey) -> Swift.Bool where D : Foundation.DataProtocol
-  public static func isValidAuthenticationCode<D>(_ authenticationCode: Foundation.ContiguousBytes, authenticating authenticatedData: D, using key: CryptoKit.SymmetricKey) -> Swift.Bool where D : Foundation.DataProtocol
+  @available(iOS 13.2, OSX 10.15, watchOS 6.1, tvOS 13.2, *)
+  public static func isValidAuthenticationCode<C, D>(_ authenticationCode: C, authenticating authenticatedData: D, using key: CryptoKit.SymmetricKey) -> Swift.Bool where C : Foundation.ContiguousBytes, D : Foundation.DataProtocol
   mutating public func update<D>(data: D) where D : Foundation.DataProtocol
   public func finalize() -> CryptoKit.HMAC<H>.MAC
 }
@@ -244,6 +245,291 @@ public struct HashedAuthenticationCode<H> : CryptoKit.MessageAuthenticationCode 
   }
   public func hash(into hasher: inout Swift.Hasher)
 }
+@usableFromInline
+internal struct SecureBytes {
+  @usableFromInline
+  internal var backing: CryptoKit.SecureBytes.Backing!
+  @inlinable internal init() {
+        self = .init(count: 0)
+    }
+  @usableFromInline
+  internal init(count: Swift.Int)
+  @usableFromInline
+  internal init(unsafeUninitializedCapacity: Swift.Int, initializingWith callback: (inout Swift.UnsafeMutableRawBufferPointer, inout Swift.Int) throws -> Swift.Void) rethrows
+}
+extension SecureBytes {
+  @inlinable mutating internal func append<C>(_ data: C) where C : Swift.Collection, C.Element == Swift.UInt8 {
+        let requiredCapacity = self.count + data.count
+        if !isKnownUniquelyReferenced(&self.backing) || requiredCapacity > self.backing.capacity {
+            let newBacking = Backing.create(capacity: requiredCapacity)
+            newBacking._appendBytes(self.backing, inRange: 0..<self.count)
+            self.backing = newBacking
+        }
+        self.backing._appendBytes(data)
+    }
+  @usableFromInline
+  mutating internal func reserveCapacity(_ n: Swift.Int)
+}
+extension SecureBytes : Swift.Equatable {
+  public static func == (lhs: CryptoKit.SecureBytes, rhs: CryptoKit.SecureBytes) -> Swift.Bool
+}
+extension SecureBytes : Swift.Collection {
+  @usableFromInline
+  internal struct Index {
+    @usableFromInline
+    internal var offset: Swift.Int
+    @usableFromInline
+    internal init(offset: Swift.Int)
+  }
+  @inlinable internal var startIndex: CryptoKit.SecureBytes.Index {
+    get {
+        return Index(offset: 0)
+    }
+  }
+  @inlinable internal var endIndex: CryptoKit.SecureBytes.Index {
+    get {
+        return Index(offset: self.count)
+    }
+  }
+  @inlinable internal var count: Swift.Int {
+    get {
+        return self.backing.count
+    }
+  }
+  @inlinable internal subscript(index: CryptoKit.SecureBytes.Index) -> Swift.UInt8 {
+    get {
+            return self.backing[offset: index.offset]
+        }
+    set {
+            self.backing[offset: index.offset] = newValue
+        }
+  }
+  @inlinable internal func index(after index: CryptoKit.SecureBytes.Index) -> CryptoKit.SecureBytes.Index {
+        return index.advanced(by: 1)
+    }
+  @usableFromInline
+  internal typealias Element = Swift.UInt8
+  @usableFromInline
+  internal typealias Iterator = Swift.IndexingIterator<CryptoKit.SecureBytes>
+  @usableFromInline
+  internal typealias SubSequence = Swift.Slice<CryptoKit.SecureBytes>
+  @usableFromInline
+  internal typealias Indices = Swift.Range<CryptoKit.SecureBytes.Index>
+}
+extension SecureBytes : Swift.BidirectionalCollection {
+  @inlinable internal func index(before index: CryptoKit.SecureBytes.Index) -> CryptoKit.SecureBytes.Index {
+        return index.advanced(by: -1)
+    }
+}
+extension SecureBytes : Swift.RandomAccessCollection {
+}
+extension SecureBytes : Swift.MutableCollection {
+}
+extension SecureBytes : Swift.RangeReplaceableCollection {
+  @inlinable mutating internal func replaceSubrange<C>(_ subrange: Swift.Range<CryptoKit.SecureBytes.Index>, with newElements: C) where C : Swift.Collection, C.Element == Swift.UInt8 {
+        let requiredCapacity = self.backing.count - subrange.count + newElements.count
+
+        if !isKnownUniquelyReferenced(&self.backing) || requiredCapacity > self.backing.capacity {
+            // We have to allocate anyway, so let's use a nice straightforward copy.
+            let newBacking = Backing.create(capacity: requiredCapacity)
+
+            let lowerSlice = 0..<subrange.lowerBound.offset
+            let upperSlice = subrange.upperBound.offset..<self.count
+
+            newBacking._appendBytes(self.backing, inRange: lowerSlice)
+            newBacking._appendBytes(newElements)
+            newBacking._appendBytes(self.backing, inRange: upperSlice)
+
+            self.backing = newBacking
+            return
+        } else {
+            // We have room, and a unique pointer. Ask the backing storage to shuffle around.
+            let offsetRange = subrange.lowerBound.offset..<subrange.upperBound.offset
+            self.backing.replaceSubrangeFittingWithinCapacity(offsetRange, with: newElements)
+        }
+    }
+}
+extension SecureBytes : Foundation.ContiguousBytes {
+  @inlinable internal func withUnsafeBytes<T>(_ body: (Swift.UnsafeRawBufferPointer) throws -> T) rethrows -> T {
+        return try self.backing.withUnsafeBytes(body)
+    }
+  @inlinable mutating internal func withUnsafeMutableBytes<T>(_ body: (Swift.UnsafeMutableRawBufferPointer) throws -> T) rethrows -> T {
+        if !isKnownUniquelyReferenced(&self.backing) {
+            self.backing = Backing.create(copying: self.backing)
+        }
+
+        return try self.backing.withUnsafeMutableBytes(body)
+    }
+}
+extension SecureBytes : Foundation.DataProtocol {
+  @inlinable internal var regions: Swift.CollectionOfOne<CryptoKit.SecureBytes> {
+    get {
+        return CollectionOfOne(self)
+    }
+  }
+  @usableFromInline
+  internal typealias Regions = Swift.CollectionOfOne<CryptoKit.SecureBytes>
+}
+extension SecureBytes : Foundation.MutableDataProtocol {
+}
+extension SecureBytes.Index : Swift.Hashable {
+  @usableFromInline
+  internal var hashValue: Swift.Int {
+    @usableFromInline
+    get
+  }
+  @usableFromInline
+  internal func hash(into hasher: inout Swift.Hasher)
+}
+extension SecureBytes.Index : Swift.Comparable {
+  @usableFromInline
+  internal static func < (lhs: CryptoKit.SecureBytes.Index, rhs: CryptoKit.SecureBytes.Index) -> Swift.Bool
+}
+extension SecureBytes.Index : Swift.Strideable {
+  @usableFromInline
+  internal func advanced(by n: Swift.Int) -> CryptoKit.SecureBytes.Index
+  @usableFromInline
+  internal func distance(to other: CryptoKit.SecureBytes.Index) -> Swift.Int
+  @usableFromInline
+  internal typealias Stride = Swift.Int
+}
+extension SecureBytes {
+  @usableFromInline
+  internal struct BackingHeader {
+    @usableFromInline
+    internal var count: Swift.Int
+    @usableFromInline
+    internal var capacity: Swift.Int
+  }
+  @usableFromInline
+  internal class Backing : Swift.ManagedBuffer<CryptoKit.SecureBytes.BackingHeader, Swift.UInt8> {
+    @usableFromInline
+    internal class func create(capacity: Swift.Int) -> CryptoKit.SecureBytes.Backing
+    @usableFromInline
+    internal class func create(copying original: CryptoKit.SecureBytes.Backing) -> CryptoKit.SecureBytes.Backing
+    @inlinable internal class func create<D>(bytes: D) -> CryptoKit.SecureBytes.Backing where D : Foundation.ContiguousBytes {
+            return bytes.withUnsafeBytes { bytesPtr in
+                let backing = Backing.create(capacity: bytesPtr.count)
+                backing._withVeryUnsafeMutableBytes { targetPtr in
+                    targetPtr.copyMemory(from: bytesPtr)
+                }
+                backing.count = bytesPtr.count
+                precondition(backing.count <= backing.capacity)
+                return backing
+            }
+        }
+    @usableFromInline
+    internal class func create(randomBytes: Swift.Int) -> CryptoKit.SecureBytes.Backing
+    @objc deinit
+    @usableFromInline
+    internal var count: Swift.Int {
+      get
+      set
+    }
+    @usableFromInline
+    internal subscript(offset offset: Swift.Int) -> Swift.UInt8 {
+      get
+      set
+    }
+  }
+}
+extension SecureBytes.Backing {
+  @inlinable internal func replaceSubrangeFittingWithinCapacity<C>(_ subrange: Swift.Range<Swift.Int>, with newElements: C) where C : Swift.Collection, C.Element == Swift.UInt8 {
+        // This function is called when have a unique reference to the backing storage, and we have enough room to store these bytes without
+        // any problem. We have one pre-existing buffer made up of 4 regions: a prefix set of bytes that are
+        // before the range "subrange", a range of bytes to be replaced (R1), a suffix set of bytes that are after
+        // the range "subrange" but within the valid count, and then a region of uninitialized memory. We also have
+        // a new set of bytes, R2, that may be larger or smaller than R1, and could indeed be empty!
+        //
+        // ┌────────────────────────┬──────────────────┬──────────────────┬───────────────┐
+        // │         Prefix         │        R1        │      Suffix      │ Uninitialized │
+        // └────────────────────────┴──────────────────┴──────────────────┴───────────────┘
+        //
+        //                ┌─────────────────────────────────────┐
+        //                │                  R2                 │
+        //                └─────────────────────────────────────┘
+        //
+        // The minimal number of steps we can take in the general case is two steps. We can't just copy R2 into the space
+        // for R1 and then move the suffix, as if R2 is larger than R1 we'll have thrown some suffix bytes away. So we have
+        // to move suffix first. What we do is take the bytes in suffix, and move them (via memmove). We can then copy
+        // R2 in, and feel confident that the space in memory is right.
+        precondition(self.count - subrange.count + newElements.count <= self.capacity, "Insufficient capacity")
+
+        let moveDistance = newElements.count - subrange.count
+        let suffixRange = subrange.upperBound..<self.count
+        self._moveBytes(range: suffixRange, by: moveDistance)
+        self._copyBytes(newElements, at: subrange.lowerBound)
+        self.count += newElements.count - subrange.count
+    }
+  @inlinable internal func _appendBytes<C>(_ bytes: C) where C : Swift.Collection, C.Element == Swift.UInt8 {
+        let byteCount = bytes.count
+
+        precondition(self.capacity - self.count - byteCount >= 0, "Insufficient space for byte copying, must have reallocated!")
+
+        let lowerOffset = self.count
+        self._withVeryUnsafeMutableBytes { bytesPtr in
+            let innerPtrSlice = UnsafeMutableRawBufferPointer(rebasing: bytesPtr[lowerOffset...])
+            innerPtrSlice.copyBytes(from: bytes)
+        }
+        self.count += byteCount
+    }
+  @inlinable internal func _appendBytes(_ backing: CryptoKit.SecureBytes.Backing, inRange range: Swift.Range<Swift.Int>) {
+        precondition(range.lowerBound >= 0)
+        precondition(range.upperBound <= backing.capacity)
+        precondition(self.capacity - self.count - range.count >= 0, "Insufficient space for byte copying, must have reallocated!")
+
+        backing.withUnsafeBytes { backingPtr in
+            let ptrSlice = UnsafeRawBufferPointer(rebasing: backingPtr[range])
+
+            let lowerOffset = self.count
+            self._withVeryUnsafeMutableBytes { bytesPtr in
+                let innerPtrSlice = UnsafeMutableRawBufferPointer(rebasing: bytesPtr[lowerOffset...])
+                innerPtrSlice.copyMemory(from: ptrSlice)
+            }
+            self.count += ptrSlice.count
+        }
+    }
+  @usableFromInline
+  internal func _moveBytes(range: Swift.Range<Swift.Int>, by delta: Swift.Int)
+  @inlinable internal func _copyBytes<C>(_ bytes: C, at offset: Swift.Int) where C : Swift.Collection, C.Element == Swift.UInt8 {
+        precondition(offset >= 0)
+        precondition(offset + bytes.count <= self.capacity)
+
+        let byteRange = offset..<(offset + bytes.count)
+
+        self._withVeryUnsafeMutableBytes { backingPtr in
+            let dest = UnsafeMutableRawBufferPointer(rebasing: backingPtr[byteRange])
+            dest.copyBytes(from: bytes)
+        }
+    }
+}
+extension SecureBytes.Backing : Foundation.ContiguousBytes {
+  @inlinable internal func withUnsafeBytes<T>(_ body: (Swift.UnsafeRawBufferPointer) throws -> T) rethrows -> T {
+        let count = self.count
+
+        return try self.withUnsafeMutablePointerToElements { elementsPtr in
+            return try body(UnsafeRawBufferPointer(start: elementsPtr, count: count))
+        }
+    }
+  @inlinable internal func withUnsafeMutableBytes<T>(_ body: (Swift.UnsafeMutableRawBufferPointer) throws -> T) rethrows -> T {
+        let count = self.count
+
+        return try self.withUnsafeMutablePointerToElements { elementsPtr in
+            return try body(UnsafeMutableRawBufferPointer(start: elementsPtr, count: count))
+        }
+    }
+  @inlinable internal func _withVeryUnsafeMutableBytes<T>(_ body: (Swift.UnsafeMutableRawBufferPointer) throws -> T) rethrows -> T {
+        let capacity = self.capacity
+
+        return try self.withUnsafeMutablePointerToElements { elementsPtr in
+            return try body(UnsafeMutableRawBufferPointer(start: elementsPtr, count: capacity))
+        }
+    }
+}
+extension UInt32 {
+  @usableFromInline
+  internal func nextPowerOf2ClampedToMax() -> Swift.UInt32
+}
 @available(iOS 13.0, OSX 10.15, watchOS 6.0, tvOS 13.0, *)
 public enum P256 {
 }
@@ -252,6 +538,10 @@ public enum P384 {
 }
 @available(iOS 13.0, OSX 10.15, watchOS 6.0, tvOS 13.0, *)
 public enum P521 {
+}
+extension HMAC {
+  @usableFromInline
+  internal static func isValidAuthenticationCode<D>(_ authenticationCode: Foundation.ContiguousBytes, authenticating authenticatedData: D, using key: CryptoKit.SymmetricKey) -> Swift.Bool where D : Foundation.DataProtocol
 }
 @available(iOS 13.0, OSX 10.15, watchOS 6.0, tvOS 13.0, *)
 public protocol Digest : Foundation.ContiguousBytes, Swift.CustomStringConvertible, Swift.Hashable, Swift.Sequence where Self.Element == Swift.UInt8 {
@@ -392,6 +682,7 @@ extension SecureEnclave.P256.KeyAgreement.PrivateKey {
 }
 @available(iOS 13.0, OSX 10.15, watchOS 6.0, tvOS 13.0, *)
 public struct SHA256 {
+  public static var blockByteCount: Swift.Int
   public typealias Digest = CryptoKit.SHA256Digest
   public static var byteCount: Swift.Int
   public init()
@@ -400,6 +691,7 @@ public struct SHA256 {
 }
 @available(iOS 13.0, OSX 10.15, watchOS 6.0, tvOS 13.0, *)
 public struct SHA384 {
+  public static var blockByteCount: Swift.Int
   public typealias Digest = CryptoKit.SHA384Digest
   public static var byteCount: Swift.Int
   public init()
@@ -408,6 +700,7 @@ public struct SHA384 {
 }
 @available(iOS 13.0, OSX 10.15, watchOS 6.0, tvOS 13.0, *)
 public struct SHA512 {
+  public static var blockByteCount: Swift.Int
   public typealias Digest = CryptoKit.SHA512Digest
   public static var byteCount: Swift.Int
   public init()
@@ -502,6 +795,8 @@ extension SymmetricKey : Swift.Equatable {
 }
 @available(iOS 13.0, OSX 10.15, watchOS 6.0, tvOS 13.0, *)
 public protocol HashFunction {
+  @available(iOS 13.2, OSX 10.15, watchOS 6.1, tvOS 13.2, *)
+  static var blockByteCount: Swift.Int { get }
   associatedtype Digest : CryptoKit.Digest
   init()
   mutating func update(bufferPointer: Swift.UnsafeRawBufferPointer)
@@ -655,6 +950,7 @@ extension SharedSecret : Swift.CustomStringConvertible, Swift.Equatable {
 }
 extension Insecure {
   public struct SHA1 {
+    public static var blockByteCount: Swift.Int
     public typealias Digest = CryptoKit.Insecure.SHA1Digest
     public static var byteCount: Swift.Int
     public init()
@@ -662,6 +958,7 @@ extension Insecure {
     public func finalize() -> CryptoKit.Insecure.SHA1.Digest
   }
   public struct MD5 {
+    public static var blockByteCount: Swift.Int
     public typealias Digest = CryptoKit.Insecure.MD5Digest
     public static var byteCount: Swift.Int
     public init()

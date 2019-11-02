@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4823F67A-993F-3903-A793-E7E6B6BE9B1F', 'x86_64: 4823F67A-993F-3903-A793-E7E6B6BE9B1F' ]
+uuids:           [ 'x86_64: 696AD74E-6B5D-3A74-98B8-4E8432F34CB8', 'x86_64: 696AD74E-6B5D-3A74-98B8-4E8432F34CB8' ]
 platform:        zippered
 install-name:    '/usr/lib/libdscsym.dylib'
-current-version: 242
+current-version: 243
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _dscsym_buffer_iterate, _dscsym_buffer_iterate_binaries, _dscsym_copy_dscsym_files, 

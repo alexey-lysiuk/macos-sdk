@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 27764992-A226-33A9-A504-9D879D8EC737' ]
+uuids:           [ 'x86_64: AF9A1D81-757F-3C27-9DE3-02A936057167' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/XPCService.framework/Versions/A/XPCService'
 exports:         

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1A876313-E04B-377F-9BDD-17530DC892EF' ]
+uuids:           [ 'x86_64: 652D2F61-D477-345A-BA7A-AEEC8C5A53C3' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AnnotationKit.framework/Versions/A/AnnotationKit'
 exports:         
@@ -34,8 +34,9 @@ exports:
                        AKPolygonAnnotation, AKPopupAnnotation, AKRectAnnotation, 
                        AKRectangularShapeAnnotation, AKSecureSerializationHelper, 
                        AKShapeAnnotation, AKSidecarController, AKSignature, AKSignatureAnnotation, 
-                       AKSignatureView, AKSpeechBubbleAnnotation, AKStarAnnotation, 
-                       AKStarAnnotationRenderer, AKStrokedAnnotation, AKTextAnnotationAttributeHelper, 
-                       AKTextBoxAnnotation, AKTextFieldAnnotation, AKThoughtBubbleAnnotation, 
-                       AKToolbarViewController, AKTriangleAnnotation, AKUndoController ]
+                       AKSignatureView, AKSparseMutableControllerArray, AKSpeechBubbleAnnotation, 
+                       AKStarAnnotation, AKStarAnnotationRenderer, AKStrokedAnnotation, 
+                       AKTextAnnotationAttributeHelper, AKTextBoxAnnotation, AKTextFieldAnnotation, 
+                       AKThoughtBubbleAnnotation, AKToolbarViewController, AKTriangleAnnotation, 
+                       AKUndoController ]
 ...

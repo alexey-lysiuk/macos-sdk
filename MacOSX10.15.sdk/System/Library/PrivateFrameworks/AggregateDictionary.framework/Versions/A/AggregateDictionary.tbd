@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4462E294-E63D-31FD-80B1-01D8F63220F9', 'x86_64: 4462E294-E63D-31FD-80B1-01D8F63220F9' ]
+uuids:           [ 'x86_64: 93D38CEB-C8F2-3011-8810-64D1E33B0D62', 'x86_64: 93D38CEB-C8F2-3011-8810-64D1E33B0D62' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AggregateDictionary.framework/Versions/A/AggregateDictionary'
 exports:         

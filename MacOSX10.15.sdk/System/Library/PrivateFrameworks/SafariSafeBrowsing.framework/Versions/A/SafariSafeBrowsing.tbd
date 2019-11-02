@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 53E2DA20-EC77-3662-BADE-13B4E3205D6A', 'x86_64: 53E2DA20-EC77-3662-BADE-13B4E3205D6A' ]
+uuids:           [ 'x86_64: 0EAC823B-0A4F-3FFC-89B0-EF5B19B1E339', 'x86_64: 0EAC823B-0A4F-3FFC-89B0-EF5B19B1E339' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SafariSafeBrowsing.framework/Versions/A/SafariSafeBrowsing'
 current-version: 0

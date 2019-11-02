@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 249746DF-9C32-3CEC-A881-F3785F0923E9' ]
+uuids:           [ 'x86_64: 6D3A0C0C-0A90-30A2-A0BA-8D663711931E' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/Helium.framework/Versions/A/Helium'
 current-version: 0

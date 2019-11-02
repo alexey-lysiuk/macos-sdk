@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 15261E0D-60B0-3768-8177-0247E943E155' ]
+uuids:           [ 'x86_64: 6283A682-EEE6-3BA5-9A78-A54DAF813CAE' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/MailCore.framework/Versions/A/MailCore'
-current-version: 3578.1
+current-version: 3601.0.7
 exports:         
   - archs:           [ x86_64 ]
     allowable-clients: [ CoreSuggestionsTests, DebugBundle, EmailAuthenticationPlugin, 
@@ -173,9 +173,10 @@ exports:
                        MCURLMatch, MCURLifier, MCWorkerThread, MailCoreFramework, 
                        _FormatFlowedWriter, _MCActivityAggregateArrayController, 
                        _MCActivityMonitorMultiTarget, _MCBatchingTimer, _MCCompositeImageRep, 
-                       _MCConnectionAttempt, _MCDisplayNameInfoCacheItem, _MCInvocationOperation, 
-                       _MCMemoryMessage, _MCMimeEnrichedReader, _MCMimeEnrichedReaderCommandStackEntry, 
-                       _MCMimeEnrichedState, _MCMimeEnrichedWriter, _MCMimeEnrichedWriterCommandStackEntry, 
+                       _MCConnectionAttempt, _MCCredentialRenewalResult, _MCDisplayNameInfoCacheItem, 
+                       _MCInvocationOperation, _MCMemoryMessage, _MCMimeEnrichedReader, 
+                       _MCMimeEnrichedReaderCommandStackEntry, _MCMimeEnrichedState, 
+                       _MCMimeEnrichedWriter, _MCMimeEnrichedWriterCommandStackEntry, 
                        _MCMimeHeaderScanContext ]
     objc-ivars:      [ MCMessage._bccRecipients, MCMessage._ccRecipients, MCMessage._dateLastViewedInterval, 
                        MCMessage._dateReceivedInterval, MCMessage._dateSentInterval, 

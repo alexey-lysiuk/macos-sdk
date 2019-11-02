@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D1CEC71D-3912-312D-A042-BE09793FE921', 'x86_64: D1CEC71D-3912-312D-A042-BE09793FE921' ]
+uuids:           [ 'x86_64: EC45DD4B-21F9-3AFB-85CC-B155D10EB112', 'x86_64: EC45DD4B-21F9-3AFB-85CC-B155D10EB112' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/EmailCore.framework/Versions/A/EmailCore'
-current-version: 3578.1
+current-version: 3601.0.7
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _ECAccountSchemeDataAccess, _ECAccountSchemeEWS, _ECAccountSchemeIMAP, 
@@ -79,8 +79,8 @@ exports:
                        ECEncodedWordDecoder, ECEncodedWordEncoder, ECExchangeAccount, 
                        ECExternalAuthScheme, ECFlagChangeMessageAction, ECFlagChangeUndownloadedMessageAction, 
                        ECGSSAPIAuthScheme, ECGmailLabelChangeReplayer, ECHTMLStringAndMIMECharset, 
-                       ECIDNADecoder, ECIDNAEncoder, ECIMAPAccount, ECIMAPCopyInfo, 
-                       ECIMAPFlagChangeActionReplayer, ECIMAPFlagChangeUndownloadedActionReplayer, 
+                       ECIDNADecoder, ECIDNAEncoder, ECIMAPAccount, ECIMAPAppendInfo, 
+                       ECIMAPCopyInfo, ECIMAPFlagChangeActionReplayer, ECIMAPFlagChangeUndownloadedActionReplayer, 
                        ECLabelChangeMessageAction, ECLocalActionReplayer, ECLocalMessageAction, 
                        ECLocalMessageActionResults, ECMessageFlagChange, ECMessageFlags, 
                        ECNTLMAuthScheme, ECNWConnectionWrapper, ECOAuth2AuthScheme, 

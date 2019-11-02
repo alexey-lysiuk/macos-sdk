@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C6619B13-73D7-3B6F-8F39-D53D413A9376', 'x86_64: C6619B13-73D7-3B6F-8F39-D53D413A9376' ]
+uuids:           [ 'x86_64: F4F1A097-C691-38BC-B91B-FFD828C3EA4E', 'x86_64: F4F1A097-C691-38BC-B91B-FFD828C3EA4E' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AppleSystemInfo.framework/Versions/A/AppleSystemInfo'
 exports:         

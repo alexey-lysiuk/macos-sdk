@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CD6155D5-3A22-36FE-9B7D-994905D82D5C', 'x86_64: CD6155D5-3A22-36FE-9B7D-994905D82D5C' ]
+uuids:           [ 'x86_64: B88D4C21-DAEF-3566-8EAE-5973C51A16FD', 'x86_64: B88D4C21-DAEF-3566-8EAE-5973C51A16FD' ]
 platform:        zippered
 install-name:    '/usr/lib/libutil.dylib'
 exports:         

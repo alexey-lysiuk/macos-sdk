@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6B521815-1B6E-39C6-83D2-DF5E22DF62EB', 'x86_64: 6B521815-1B6E-39C6-83D2-DF5E22DF62EB' ]
+uuids:           [ 'x86_64: 30E737A8-2BA4-38D1-BBB1-BDEF3554161E', 'x86_64: 30E737A8-2BA4-38D1-BBB1-BDEF3554161E' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/MapsSuggestions.framework/Versions/A/MapsSuggestions'
 exports:         
@@ -330,6 +330,8 @@ exports:
                        _MapsSuggestionsLogPredictedTransportModeForEntry, _MapsSuggestionsLogPredictedTransportModeForMapItem, 
                        _MapsSuggestionsLoggingEnableVerbose, _MapsSuggestionsLoggingIsVerbose, 
                        _MapsSuggestionsMapItemCityName, _MapsSuggestionsMapItemConvertIfNeeded, 
+                       _MapsSuggestionsMapItemIsAirport, _MapsSuggestionsMapItemIsGate, 
+                       _MapsSuggestionsMapItemIsTerminal, _MapsSuggestionsMapItemIsVenue, 
                        _MapsSuggestionsMapItemShortAddress, _MapsSuggestionsMapItemStreetName, 
                        _MapsSuggestionsMapItemStreetWithNumber, _MapsSuggestionsMapItemWithCorrectedLocation, 
                        _MapsSuggestionsMapItemsAreEqual, _MapsSuggestionsMergeAsShortcut, 

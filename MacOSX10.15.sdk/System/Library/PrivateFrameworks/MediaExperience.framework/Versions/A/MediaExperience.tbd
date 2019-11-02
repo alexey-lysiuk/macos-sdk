@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 94E18456-635C-3043-BD1C-A5C9EC92921E', 'x86_64: 94E18456-635C-3043-BD1C-A5C9EC92921E' ]
+uuids:           [ 'x86_64: 40A6CE90-66FA-341B-ABF9-5EE0FB506645', 'x86_64: 40A6CE90-66FA-341B-ABF9-5EE0FB506645' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/MediaExperience.framework/Versions/A/MediaExperience'
 exports:         

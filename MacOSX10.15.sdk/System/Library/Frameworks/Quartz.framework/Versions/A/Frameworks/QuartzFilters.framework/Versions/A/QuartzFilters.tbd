@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E811B6C9-57D7-3A6B-9E76-27FABFA73565' ]
+uuids:           [ 'x86_64: 0D03F25B-07A5-31F1-9A70-CE33E69CB4CF' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Quartz.framework/Versions/A/Frameworks/QuartzFilters.framework/Versions/A/QuartzFilters'
 exports:         

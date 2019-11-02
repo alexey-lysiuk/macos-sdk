@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 523ED9FC-35FC-3234-9593-F21837D225C1' ]
+uuids:           [ 'x86_64: D9032BB3-4A50-3C0B-9B0C-079865EFE1AD' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/WeatherFoundation.framework/Versions/A/WeatherFoundation'
 exports:         

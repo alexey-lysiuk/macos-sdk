@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 100C6D67-C920-3422-AD10-76345887449E' ]
+uuids:           [ 'x86_64: 0AB594F6-83F8-3B77-8AE7-1B75ED4D16C4' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SocialUI.framework/Versions/A/SocialUI'
 current-version: 5500
@@ -60,7 +60,8 @@ exports:
                        _SOBalloonPluginPasteboardType, _SOBalloonPluginTranscriptGuidKey, 
                        _SOBundleImageNamed, _SOBusinessNameDidResolveNotification, 
                        _SOChatDetailsContentWidth, _SOChatDetailsPopoverPreferredMinimumMaximumHeight, 
-                       _SOChatDetailsPopoverWidth, _SOChatDetailsSideMargin, _SOChatDisplayControllerChatDidChangeNotification, 
+                       _SOChatDetailsPopoverWidth, _SOChatDetailsSideMargin, _SOChatDisplayControllerAllowedByScreenTimeDidChangeNotification, 
+                       _SOChatDisplayControllerAllowedByScreenTimeKey, _SOChatDisplayControllerChatDidChangeNotification, 
                        _SOChatDisplayControllerChatWillChangeNotification, _SOChatDisplayControllerInputLineContentRestorableDataKey, 
                        _SOChatDisplayControllerInputLineSelectedRangesKey, _SOChatDisplayControllerLastActivityDateDidChangeNotification, 
                        _SOChatDisplayControllerNewChatKey, _SOChatDisplayControllerOldChatKey, 

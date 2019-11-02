@@ -1,10 +1,10 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: 90682A9D-2B7B-35C0-AD6E-EADEF346CE45', 'x86_64: 90682A9D-2B7B-35C0-AD6E-EADEF346CE45', 
-                   'x86_64h: 830E7037-2CE8-30FC-9CEF-0B350BEA2D12', 'x86_64h: 830E7037-2CE8-30FC-9CEF-0B350BEA2D12' ]
+uuids:           [ 'x86_64: 09EB9DD0-25BC-3730-9716-FE231CAF2C70', 'x86_64: 09EB9DD0-25BC-3730-9716-FE231CAF2C70', 
+                   'x86_64h: 15D61616-B29B-3BDB-8624-4B84A4956485', 'x86_64h: 15D61616-B29B-3BDB-8624-4B84A4956485' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation'
-current-version: 1670.10
+current-version: 1673.126
 compatibility-version: 150
 exports:         
   - archs:           [ x86_64 ]

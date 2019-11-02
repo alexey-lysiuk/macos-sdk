@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 96CBAA8E-F616-39A2-919B-A2585F9707E9', 'x86_64: 96CBAA8E-F616-39A2-919B-A2585F9707E9' ]
+uuids:           [ 'x86_64: 31460C4F-FFF1-3F8F-95BA-18BC646DF739', 'x86_64: 31460C4F-FFF1-3F8F-95BA-18BC646DF739' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CacheDelete.framework/Versions/A/CacheDelete'
 exports:         
@@ -42,8 +42,8 @@ exports:
                        _markNotifiedVolume, _normalizePath, _paddingForVolume, _pruneFile, 
                        _removeBreadcrumb, _sentinelDir, _serviceForFSPurgeableType, 
                        _set_first_boot_work_completed, _stringForFSPurgeableType, 
-                       _tallyDict, _thresholdsForMountPoint, _timeStamp, _traverse_directory, 
-                       _validateTimestamp, _volumeForUUID, _writeToCacheFile ]
+                       _tallyDict, _thresholdsForMountPoint, _timeStamp, _traverse_dir_with_state, 
+                       _traverse_directory, _validateTimestamp, _volumeForUUID, _writeToCacheFile ]
     objc-classes:    [ CacheDeleteHostExtensionContext, CacheDeleteListener, CacheDeleteRemoteExtensionContext, 
                        CacheDeleteServiceInfo, CacheDeleteServiceListener, CacheDeleteVolume, 
                        CacheManagementAsset ]

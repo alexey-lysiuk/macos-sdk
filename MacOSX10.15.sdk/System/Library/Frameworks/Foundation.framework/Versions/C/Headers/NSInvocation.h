@@ -10,15 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 NS_SWIFT_UNAVAILABLE("NSInvocation and related APIs not available")
-@interface NSInvocation : NSObject {
-@private
-    void *_frame;
-    void *_retdata;
-    id _signature;
-    id _container;
-    uint8_t _retainedArgs;
-    uint8_t _reserved[15];
-}
+@interface NSInvocation : NSObject
 
 + (NSInvocation *)invocationWithMethodSignature:(NSMethodSignature *)sig;
 

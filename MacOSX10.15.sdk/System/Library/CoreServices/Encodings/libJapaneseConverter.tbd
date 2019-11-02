@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E5B7F68C-A567-35AD-99BA-A28EAA694A9A', 'x86_64: E5B7F68C-A567-35AD-99BA-A28EAA694A9A' ]
+uuids:           [ 'x86_64: 94B809BB-E0D6-3A30-AB90-53987547C42B', 'x86_64: 94B809BB-E0D6-3A30-AB90-53987547C42B' ]
 platform:        zippered
 install-name:    '/System/Library/CoreServices/Encodings/libJapaneseConverter.dylib'
 current-version: 76

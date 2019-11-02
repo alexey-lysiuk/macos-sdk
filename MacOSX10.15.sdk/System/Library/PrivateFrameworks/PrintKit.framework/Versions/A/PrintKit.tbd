@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A535507B-57F7-34DF-A024-F8E90F838D0A', 'x86_64: A535507B-57F7-34DF-A024-F8E90F838D0A' ]
+uuids:           [ 'x86_64: B0D00536-E9BB-3C45-B1B8-75A9BEA76170', 'x86_64: B0D00536-E9BB-3C45-B1B8-75A9BEA76170' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/PrintKit.framework/Versions/A/PrintKit'
 current-version: 244

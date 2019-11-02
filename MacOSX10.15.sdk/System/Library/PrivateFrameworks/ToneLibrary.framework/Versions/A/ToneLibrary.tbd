@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F4DC0F41-F79A-3702-B71A-EE6080CE4FB4', 'x86_64: F4DC0F41-F79A-3702-B71A-EE6080CE4FB4' ]
+uuids:           [ 'x86_64: 1071517F-71C5-3F14-A1B8-6895800ECE7B', 'x86_64: 1071517F-71C5-3F14-A1B8-6895800ECE7B' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ToneLibrary.framework/Versions/A/ToneLibrary'
 exports:         

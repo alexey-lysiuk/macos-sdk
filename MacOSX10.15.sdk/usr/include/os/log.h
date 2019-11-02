@@ -308,6 +308,13 @@ os_log_create(const char *subsystem, const char *category);
  * Note, in a debugger, it is possible to set a breakpoint on _os_log_error_impl
  * to break on any error being emitted.
  *
+ * A common use of os_log_error is to log failures from system calls and
+ * library functions, including the value of errno.  Like other system calls
+ * and library functions, the os_log functions do not preserve the value of
+ * errno across calls.  errno can change even if the log message is logged
+ * successfully.  Consider saving errno into a local variable before calling
+ * os_log, if you still need errno's value afterward.
+ *
  * @param log
  * Pass OS_LOG_DEFAULT or a log object previously created with os_log_create.
  *

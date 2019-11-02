@@ -20,6 +20,7 @@ typedef NS_ENUM(NSInteger, INStartCallIntentResponseCode) {
     INStartCallIntentResponseCodeFailureUnableToHandOff,
     INStartCallIntentResponseCodeFailureAppConfigurationRequired,
     INStartCallIntentResponseCodeFailureCallInProgress,
+    INStartCallIntentResponseCodeFailureCallRinging API_UNAVAILABLE(ios, watchos, macosx),
 } API_AVAILABLE(ios(13.0), watchos(6.0)) API_UNAVAILABLE(macosx);
 
 NS_ASSUME_NONNULL_BEGIN

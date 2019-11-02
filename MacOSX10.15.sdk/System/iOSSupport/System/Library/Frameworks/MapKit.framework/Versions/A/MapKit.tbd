@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 370482BC-1723-3565-B846-2788769BEAD4' ]
+uuids:           [ 'x86_64: C6E163D5-3799-3504-B8F6-B19239B8CEFA' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/MapKit.framework/Versions/A/MapKit'
 current-version: 14

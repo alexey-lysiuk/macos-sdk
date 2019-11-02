@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A7FD35DD-7C51-37BB-8965-09BD93371BA3', 'x86_64: A7FD35DD-7C51-37BB-8965-09BD93371BA3' ]
+uuids:           [ 'x86_64: BF36FE10-7753-3D8C-87A8-2AF9901D6E50', 'x86_64: BF36FE10-7753-3D8C-87A8-2AF9901D6E50' ]
 platform:        zippered
 install-name:    '/usr/lib/libAudioIssueDetector.dylib'
 exports:         

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2DBEAA3A-82CC-35CC-923B-ADF61DA377C8', 'x86_64: 2DBEAA3A-82CC-35CC-923B-ADF61DA377C8' ]
+uuids:           [ 'x86_64: 4F054E37-783A-3FCD-B90B-23A0A83621D9', 'x86_64: 4F054E37-783A-3FCD-B90B-23A0A83621D9' ]
 platform:        zippered
 install-name:    '/usr/lib/libcoretls.dylib'
 current-version: 167

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FC5712CB-2188-3DAD-8DD4-CC3ECCA3F9A8' ]
+uuids:           [ 'x86_64: 528A0ABE-B583-3DA1-8E5B-9CA7E89303DE' ]
 platform:        macosx
 install-name:    '/usr/lib/libfakelink.dylib'
 current-version: 0

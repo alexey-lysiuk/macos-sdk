@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 11B0DBB8-4B36-345A-A5F9-DF49B98E8998' ]
+uuids:           [ 'x86_64: 445D1183-447D-3F73-9532-11DAFF69F2A8' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/Mangrove.framework/Versions/A/Mangrove'
 exports:         

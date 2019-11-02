@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 31A511D4-68D9-346B-8B91-F22425E7B65F', 'x86_64: 31A511D4-68D9-346B-8B91-F22425E7B65F' ]
+uuids:           [ 'x86_64: 1198DC41-F9DE-3F04-A0EF-B75556CDF7BC', 'x86_64: 1198DC41-F9DE-3F04-A0EF-B75556CDF7BC' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/MessageProtection.framework/Versions/A/MessageProtection'
-current-version: 206.0.2
+current-version: 206.40.5
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _SecExposeStream, _SecMPComputePaddingForStorage, _SecMPCopyProtectedMsgHash, 

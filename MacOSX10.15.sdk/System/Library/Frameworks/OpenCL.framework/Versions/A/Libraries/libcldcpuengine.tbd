@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 97A0B7E7-2F84-3FFA-BC4C-A0CBEDDD3576', 'x86_64: 97A0B7E7-2F84-3FFA-BC4C-A0CBEDDD3576' ]
+uuids:           [ 'x86_64: A868A807-EA7D-3F78-9AEB-74E0AC72F8EC', 'x86_64: A868A807-EA7D-3F78-9AEB-74E0AC72F8EC' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/OpenCL.framework/Versions/A/Libraries/libcldcpuengine.dylib'
 current-version: 2.12.7

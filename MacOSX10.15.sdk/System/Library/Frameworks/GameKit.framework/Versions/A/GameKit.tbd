@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6C14C881-FA41-3F9B-95D5-ED9072BDEA06' ]
+uuids:           [ 'x86_64: E2DF54C1-AF95-3E6C-8FC9-3CF125C60260' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/GameKit.framework/Versions/A/GameKit'
-current-version: 665.3
+current-version: 665.11.4
 exports:         
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/Frameworks/Cocoa.framework/Versions/A/Cocoa', 
@@ -21,7 +21,7 @@ exports:
                        _kGameKitGameKitVersionString ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 91462FC8-AFBA-395B-86C0-45CE147F5D02', 'x86_64: 91462FC8-AFBA-395B-86C0-45CE147F5D02' ]
+uuids:           [ 'x86_64: DA23246F-9BB6-3FB8-86F0-A50C73C9C31B', 'x86_64: DA23246F-9BB6-3FB8-86F0-A50C73C9C31B' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/GameCenterFoundation.framework/Versions/A/GameCenterFoundation'
 exports:         
@@ -365,7 +365,7 @@ exports:
                        _GKStateMachine._validTransitions ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C5C20602-15AC-3361-ACA0-F38FF152CEE0' ]
+uuids:           [ 'x86_64: 15EF11E5-4523-34F0-98CF-1278C2CF2B06' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/GameCenterUI.framework/Versions/A/GameCenterUI'
 exports:         
@@ -533,7 +533,7 @@ exports:
                        _UIContentUnavailableView._titleView ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D142B853-8EB3-336B-929F-BD0BF7730740', 'x86_64: D142B853-8EB3-336B-929F-BD0BF7730740' ]
+uuids:           [ 'x86_64: 978E4751-F957-3945-963B-FB1EA6CFADD5', 'x86_64: 978E4751-F957-3945-963B-FB1EA6CFADD5' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/GameCenterUICore.framework/Versions/A/GameCenterUICore'
 exports:         
@@ -554,9 +554,9 @@ exports:
                        __UIKitShimGraphicsGetCurrentContext, __UIKitShimGraphicsGetImageFromCurrentImageContext, 
                        _findClipViewAncestorForView ]
     objc-classes:    [ GKAccountViewController, GKAdditions_NSAlert_SuperDelegate, 
-                       GKAppearanceWebViewWrapper, GKAvatarImageBrush, GKBadgedGameIconBrush, 
-                       GKBrush, GKBrushList, GKCircleImageBrush, GKColorPalette, 
-                       GKComposedImageBrush, GKConditionBrush, GKDialogController, 
+                       GKAppearanceWebViewWrapper, GKAvatarImage, GKAvatarImageBrush, 
+                       GKBadgedGameIconBrush, GKBrush, GKBrushList, GKCircleImageBrush, 
+                       GKColorPalette, GKComposedImageBrush, GKConditionBrush, GKDialogController, 
                        GKDialogController_Concrete, GKFocusableDarkColorPalette, 
                        GKGameMessagesBrush, GKGradient, GKGreenBuddyViewController, 
                        GKImageBrush, GKImageColorPalette, GKImageContext, GKImageKey, 

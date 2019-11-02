@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9E9BEE04-2F87-3DF7-9AC9-057E62659932', 'x86_64: 9E9BEE04-2F87-3DF7-9AC9-057E62659932' ]
+uuids:           [ 'x86_64: B4683446-C838-3761-A3AA-DE6A8325220E', 'x86_64: B4683446-C838-3761-A3AA-DE6A8325220E' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/OSAnalytics.framework/Versions/A/OSAnalytics'
 exports:         

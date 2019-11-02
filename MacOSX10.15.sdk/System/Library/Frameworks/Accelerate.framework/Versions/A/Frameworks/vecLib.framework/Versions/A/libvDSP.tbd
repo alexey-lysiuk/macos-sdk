@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: 6CCE40B0-2F6F-3778-AE1C-E7B2895F8641', 'x86_64: 6CCE40B0-2F6F-3778-AE1C-E7B2895F8641', 
-                   'x86_64h: EE2CBD92-EA9A-3288-B9B4-D61AA08F1114', 'x86_64h: EE2CBD92-EA9A-3288-B9B4-D61AA08F1114' ]
+uuids:           [ 'x86_64: 1D607D95-D349-39C4-B97A-EFD73AC176A2', 'x86_64: 1D607D95-D349-39C4-B97A-EFD73AC176A2', 
+                   'x86_64h: E849AEB0-2995-38A4-B0C3-4ACEAF434D12', 'x86_64h: E849AEB0-2995-38A4-B0C3-4ACEAF434D12' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libvDSP.dylib'
 current-version: 735

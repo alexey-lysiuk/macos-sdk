@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 72CD0364-8A3C-388E-A70D-51AD492B4045' ]
+uuids:           [ 'x86_64: 8A40857E-9D0C-32BF-8A72-166EBD381AE1' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CoreUtilsSwift.framework/Versions/A/CoreUtilsSwift'
 current-version: 0
@@ -66,5 +66,16 @@ exports:
                        '_$s14CoreUtilsSwift7PThreadCfD', '_$s14CoreUtilsSwift7PThreadCfd', 
                        '_$s14CoreUtilsSwift7PThreadCyACyycKcfC', '_$s14CoreUtilsSwift7PThreadCyACyycKcfCTq', 
                        '_$s14CoreUtilsSwift7PThreadCyACyycKcfc', '_$s14CoreUtilsSwift7UpTickss6UInt64VyF', 
-                       '_$sSq14CoreUtilsSwiftE6unwrap_4file4linexSSyXK_s12StaticStringVSutF' ]
+                       '_$sSq14CoreUtilsSwiftE6unwrap_4file4linexSSyXK_s12StaticStringVSutF', 
+                       '_$ss26DefaultStringInterpolationV14CoreUtilsSwiftE05PrintE12TimeDurationO21__derived_enum_equalsySbAE_AEtFZ', 
+                       '_$ss26DefaultStringInterpolationV14CoreUtilsSwiftE05PrintE12TimeDurationO4hash4intoys6HasherVz_tF', 
+                       '_$ss26DefaultStringInterpolationV14CoreUtilsSwiftE05PrintE12TimeDurationO9hashValueSivg', 
+                       '_$ss26DefaultStringInterpolationV14CoreUtilsSwiftE05PrintE12TimeDurationO9hashValueSivpMV', 
+                       '_$ss26DefaultStringInterpolationV14CoreUtilsSwiftE05PrintE12TimeDurationOMa', 
+                       '_$ss26DefaultStringInterpolationV14CoreUtilsSwiftE05PrintE12TimeDurationOMn', 
+                       '_$ss26DefaultStringInterpolationV14CoreUtilsSwiftE05PrintE12TimeDurationON', 
+                       '_$ss26DefaultStringInterpolationV14CoreUtilsSwiftE05PrintE12TimeDurationOSHACMc', 
+                       '_$ss26DefaultStringInterpolationV14CoreUtilsSwiftE05PrintE12TimeDurationOSQACMc', 
+                       '_$ss26DefaultStringInterpolationV14CoreUtilsSwiftE06appendC08nilPrintyxSg_ts06CustomB11ConvertibleRzlF', 
+                       '_$ss26DefaultStringInterpolationV14CoreUtilsSwiftE06appendC0yySi_AbCE05PrintE12TimeDurationOtF' ]
 ...

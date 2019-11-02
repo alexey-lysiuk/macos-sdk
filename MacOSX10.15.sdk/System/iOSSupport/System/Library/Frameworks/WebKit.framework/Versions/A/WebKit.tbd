@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DA4C46D1-4966-3C8A-9C42-911F1A92E702' ]
+uuids:           [ 'x86_64: 44C5CD14-601E-3785-A077-C9CC12CA83D1' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/WebKit.framework/Versions/A/WebKit'
-current-version: 608.2.6
+current-version: 608.3.10
 exports:         
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/iOSSupport/System/Library/PrivateFrameworks/WebCore.framework/Versions/A/WebCore', 
@@ -192,10 +192,11 @@ exports:
                        _WKContextClearCachedCredentials, _WKContextClearCurrentModifierStateForTesting, 
                        _WKContextClearPluginClientPolicies, _WKContextClearSupportedPlugins, 
                        _WKContextClearVisitedLinks, _WKContextConfigurationAlwaysKeepAndReuseSwappedProcesses, 
-                       _WKContextConfigurationCopyApplicationCacheDirectory, _WKContextConfigurationCopyDiskCacheDirectory, 
-                       _WKContextConfigurationCopyIndexedDBDatabaseDirectory, _WKContextConfigurationCopyInjectedBundlePath, 
-                       _WKContextConfigurationCopyLocalStorageDirectory, _WKContextConfigurationCopyMediaKeysStorageDirectory, 
-                       _WKContextConfigurationCopyOverrideLanguages, _WKContextConfigurationCopyResourceLoadStatisticsDirectory, 
+                       _WKContextConfigurationCopyApplicationCacheDirectory, _WKContextConfigurationCopyCustomClassesForParameterCoder, 
+                       _WKContextConfigurationCopyDiskCacheDirectory, _WKContextConfigurationCopyIndexedDBDatabaseDirectory, 
+                       _WKContextConfigurationCopyInjectedBundlePath, _WKContextConfigurationCopyLocalStorageDirectory, 
+                       _WKContextConfigurationCopyMediaKeysStorageDirectory, _WKContextConfigurationCopyOverrideLanguages, 
+                       _WKContextConfigurationCopyResourceLoadStatisticsDirectory, 
                        _WKContextConfigurationCopyWebSQLDatabaseDirectory, _WKContextConfigurationCreate, 
                        _WKContextConfigurationCreateWithLegacyOptions, _WKContextConfigurationDiskCacheSizeOverride, 
                        _WKContextConfigurationFullySynchronousModeIsAllowedForTesting, 
@@ -203,8 +204,9 @@ exports:
                        _WKContextConfigurationPrewarmsProcessesAutomatically, _WKContextConfigurationProcessSwapsOnNavigation, 
                        _WKContextConfigurationProcessSwapsOnWindowOpenWithOpener, 
                        _WKContextConfigurationSetAlwaysKeepAndReuseSwappedProcesses, 
-                       _WKContextConfigurationSetApplicationCacheDirectory, _WKContextConfigurationSetDiskCacheDirectory, 
-                       _WKContextConfigurationSetDiskCacheSizeOverride, _WKContextConfigurationSetFullySynchronousModeIsAllowedForTesting, 
+                       _WKContextConfigurationSetApplicationCacheDirectory, _WKContextConfigurationSetCustomClassesForParameterCoder, 
+                       _WKContextConfigurationSetDiskCacheDirectory, _WKContextConfigurationSetDiskCacheSizeOverride, 
+                       _WKContextConfigurationSetFullySynchronousModeIsAllowedForTesting, 
                        _WKContextConfigurationSetIgnoreSynchronousMessagingTimeoutsForTesting, 
                        _WKContextConfigurationSetIndexedDBDatabaseDirectory, _WKContextConfigurationSetInjectedBundlePath, 
                        _WKContextConfigurationSetLocalStorageDirectory, _WKContextConfigurationSetMediaKeysStorageDirectory, 
@@ -754,6 +756,7 @@ exports:
                        _WKWebsiteDataStoreRemoveFetchCacheForOrigin, _WKWebsiteDataStoreSetPerOriginStorageQuota, 
                        _WKWebsiteDataStoreSetResourceLoadStatisticsDebugMode, _WKWebsiteDataStoreSetResourceLoadStatisticsDebugModeWithCompletionHandler, 
                        _WKWebsiteDataStoreSetResourceLoadStatisticsEnabled, _WKWebsiteDataStoreSetResourceLoadStatisticsPrevalentResourceForDebugMode, 
+                       _WKWebsiteDataStoreSetResourceLoadStatisticsShouldDowngradeReferrerForTesting, 
                        _WKWebsiteDataStoreSetServiceWorkerRegistrationDirectory, 
                        _WKWebsiteDataStoreSetStatisticsCacheMaxAgeCap, _WKWebsiteDataStoreSetStatisticsCrossSiteLoadWithLinkDecoration, 
                        _WKWebsiteDataStoreSetStatisticsGrandfathered, _WKWebsiteDataStoreSetStatisticsGrandfatheringTime, 
@@ -840,10 +843,10 @@ exports:
                        _WKWebsiteDataStoreConfiguration, _WKWebsitePolicies ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 433D4832-6A47-377C-9843-B2D5FC33BB6B' ]
+uuids:           [ 'x86_64: 3BF877B5-880D-3449-BF8E-4C1FFE131096' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/PrivateFrameworks/WebCore.framework/Versions/A/WebCore'
-current-version: 608.2.6
+current-version: 608.3.10
 exports:         
   - archs:           [ x86_64 ]
     allowable-clients: [ Casablanca, DumpRenderTree, Remote, TVBooks, TestWebKitAPI, 
@@ -1148,7 +1151,7 @@ exports:
                        __ZN7WebCore11FontCascadeC2Ev, __ZN7WebCore11FontCascadeaSERKS0_, 
                        __ZN7WebCore11FrameLoader11loadArchiveEON3WTF3RefINS_7ArchiveENS1_13DumbPtrTraitsIS3_EEEE, 
                        __ZN7WebCore11FrameLoader11shouldCloseEv, __ZN7WebCore11FrameLoader11urlSelectedERKN3WTF3URLERKNS1_6StringEPNS_5EventENS_11LockHistoryENS_19LockBackForwardListENS_18ShouldSendReferrerENS_28ShouldOpenExternalURLsPolicyENS1_8OptionalINS_20NewFrameOpenerPolicyEEERKNS1_10AtomStringERKNS_17SystemPreviewInfoEONSE_INS_18AdClickAttributionEEE, 
-                       __ZN7WebCore11FrameLoader14detachChildrenEv, __ZN7WebCore11FrameLoader14stopAllLoadersENS_26ClearProvisionalItemPolicyE, 
+                       __ZN7WebCore11FrameLoader14detachChildrenEv, __ZN7WebCore11FrameLoader14stopAllLoadersENS_26ClearProvisionalItemPolicyENS_17StopLoadingPolicyE, 
                        __ZN7WebCore11FrameLoader16detachFromParentEv, __ZN7WebCore11FrameLoader16loadFrameRequestEONS_16FrameLoadRequestEPNS_5EventEON3WTF6RefPtrINS_9FormStateENS5_13DumbPtrTraitsIS7_EEEEONS5_8OptionalINS_18AdClickAttributionEEE, 
                        __ZN7WebCore11FrameLoader17stopForUserCancelEb, __ZN7WebCore11FrameLoader21clearTestingOverridesEv, 
                        __ZN7WebCore11FrameLoader21loadURLIntoChildFrameERKN3WTF3URLERKNS1_6StringEPNS_5FrameE, 
@@ -1631,6 +1634,8 @@ exports:
                        __ZN7WebCore14DragController11dragUpdatedERKNS_8DragDataE, 
                        __ZN7WebCore14DragController14placeDragCaretERKNS_8IntPointE, 
                        __ZN7WebCore14DragController20performDragOperationERKNS_8DragDataE, 
+                       __ZN7WebCore14DragController31finalizeDroppedImagePlaceholderERNS_16HTMLImageElementE, 
+                       __ZN7WebCore14DragController37insertDroppedImagePlaceholdersAtCaretERKN3WTF6VectorINS_7IntSizeELm0ENS1_15CrashOnOverflowELm16EEE, 
                        __ZN7WebCore14DragController9dragEndedEv, __ZN7WebCore14FileIconLoader10iconLoadedEON3WTF6RefPtrINS_4IconENS1_13DumbPtrTraitsIS3_EEEE, 
                        __ZN7WebCore14FormController19referencedFilePathsERKN3WTF6VectorINS1_6StringELm0ENS1_15CrashOnOverflowELm16EEE, 
                        __ZN7WebCore14FrameSelection12setSelectionERKNS_16VisibleSelectionEN3WTF9OptionSetINS0_18SetSelectionOptionEEENS_23AXTextStateChangeIntentENS0_19CursorAlignOnScrollENS_15TextGranularityE, 
@@ -1654,10 +1659,12 @@ exports:
                        __ZN7WebCore14FrameSelectionC2EPNS_5FrameE, __ZN7WebCore14HTMLMapElement5areasEv, 
                        __ZN7WebCore14IDBRequestDataC1Ev, __ZN7WebCore14IDBRequestDataC2Ev, 
                        __ZN7WebCore14IDBTransaction23numberOfIDBTransactionsE, __ZN7WebCore14IOSApplication10isEvernoteEv, 
-                       __ZN7WebCore14IOSApplication12isCardiogramEv, __ZN7WebCore14IOSApplication12isMobileMailEv, 
-                       __ZN7WebCore14IOSApplication12isWebProcessEv, __ZN7WebCore14IOSApplication14isMobileSafariEv, 
-                       __ZN7WebCore14IOSApplication15isWebBookmarksDEv, __ZN7WebCore14IOSApplication16isDumpRenderTreeEv, 
-                       __ZN7WebCore14IOSApplication18isAppleApplicationEv, __ZN7WebCore14IOSApplication31isTheSecretSocietyHiddenMysteryEv, 
+                       __ZN7WebCore14IOSApplication12isCardiogramEv, __ZN7WebCore14IOSApplication12isEventbriteEv, 
+                       __ZN7WebCore14IOSApplication12isMobileMailEv, __ZN7WebCore14IOSApplication12isWebProcessEv, 
+                       __ZN7WebCore14IOSApplication14isMobileSafariEv, __ZN7WebCore14IOSApplication15isWebBookmarksDEv, 
+                       __ZN7WebCore14IOSApplication16isDataActivationEv, __ZN7WebCore14IOSApplication16isDumpRenderTreeEv, 
+                       __ZN7WebCore14IOSApplication18isAppleApplicationEv, __ZN7WebCore14IOSApplication24isMailCompositionServiceEv, 
+                       __ZN7WebCore14IOSApplication31isTheSecretSocietyHiddenMysteryEv, 
                        __ZN7WebCore14IOSApplication6isIMDbEv, __ZN7WebCore14IOSApplication6isNikeEv, 
                        __ZN7WebCore14IOSApplication8isIBooksEv, __ZN7WebCore14IOSApplication8isWebAppEv, 
                        __ZN7WebCore14IOSApplication9isFirefoxEv, __ZN7WebCore14JSAudioContext12heapSnapshotEPN3JSC6JSCellERNS1_19HeapSnapshotBuilderE, 
@@ -1778,9 +1785,10 @@ exports:
                        __ZN7WebCore14XMLHttpRequestD2Ev, __ZN7WebCore14areRangesEqualEPKNS_5RangeES2_, 
                        __ZN7WebCore14copyTimingDataEP12NSDictionaryRNS_18NetworkLoadMetricsE, 
                        __ZN7WebCore14endOfParagraphERKNS_15VisiblePositionENS_27EditingBoundaryCrossingRuleE, 
-                       __ZN7WebCore14isPublicSuffixERKN3WTF6StringE, __ZN7WebCore14keyForKeyEventEP8WebEvent, 
-                       __ZN7WebCore14lineBreakTableE, __ZN7WebCore14roundedIntRectERKNS_9FloatRectE, 
-                       __ZN7WebCore14stopResolveDNSEy, __ZN7WebCore14valueForLengthERKNS_6LengthENS_10LayoutUnitE, 
+                       __ZN7WebCore14foldQuoteMarksERKN3WTF6StringE, __ZN7WebCore14isPublicSuffixERKN3WTF6StringE, 
+                       __ZN7WebCore14keyForKeyEventEP8WebEvent, __ZN7WebCore14lineBreakTableE, 
+                       __ZN7WebCore14roundedIntRectERKNS_9FloatRectE, __ZN7WebCore14stopResolveDNSEy, 
+                       __ZN7WebCore14valueForLengthERKNS_6LengthENS_10LayoutUnitE, 
                        __ZN7WebCore15AffineTransform12makeIdentityEv, __ZN7WebCore15AffineTransform15scaleNonUniformEdd, 
                        __ZN7WebCore15AffineTransform4skewEdd, __ZN7WebCore15AffineTransform5blendERKS0_d, 
                        __ZN7WebCore15AffineTransform5flipXEv, __ZN7WebCore15AffineTransform5flipYEv, 
@@ -1993,11 +2001,12 @@ exports:
                        __ZN7WebCore15LegacyTileCache14drainLayerPoolEv, __ZN7WebCore15LegacyTileCache20setLayerPoolCapacityEj, 
                        __ZN7WebCore15LogDisplayListsE, __ZN7WebCore15LogIconDatabaseE, 
                        __ZN7WebCore15LogMediaQueriesE, __ZN7WebCore15LogMessagePortsE, 
-                       __ZN7WebCore15PasteboardImageC1Ev, __ZN7WebCore15PasteboardImageC2Ev, 
-                       __ZN7WebCore15PasteboardImageD1Ev, __ZN7WebCore15PasteboardImageD2Ev, 
-                       __ZN7WebCore15PlatformCALayer10isWebLayerEv, __ZN7WebCore15PlatformCALayer11flipContextEP9CGContextd, 
-                       __ZN7WebCore15PlatformCALayer13frameForLayerEPK7CALayer, __ZN7WebCore15PlatformCALayer15moveToLayerPoolEv, 
-                       __ZN7WebCore15PlatformCALayer15platformCALayerEPv, __ZN7WebCore15PlatformCALayer17drawLayerContentsEP9CGContextPS0_RN3WTF6VectorINS_9FloatRectELm5ENS4_15CrashOnOverflowELm16EEEj, 
+                       __ZN7WebCore15MIMETypeFromUTIERKN3WTF6StringE, __ZN7WebCore15PasteboardImageC1Ev, 
+                       __ZN7WebCore15PasteboardImageC2Ev, __ZN7WebCore15PasteboardImageD1Ev, 
+                       __ZN7WebCore15PasteboardImageD2Ev, __ZN7WebCore15PlatformCALayer10isWebLayerEv, 
+                       __ZN7WebCore15PlatformCALayer11flipContextEP9CGContextd, __ZN7WebCore15PlatformCALayer13frameForLayerEPK7CALayer, 
+                       __ZN7WebCore15PlatformCALayer15moveToLayerPoolEv, __ZN7WebCore15PlatformCALayer15platformCALayerEPv, 
+                       __ZN7WebCore15PlatformCALayer17drawLayerContentsEP9CGContextPS0_RN3WTF6VectorINS_9FloatRectELm5ENS4_15CrashOnOverflowELm16EEEj, 
                        __ZN7WebCore15PlatformCALayer19collectRectsToPaintEP9CGContextPS0_, 
                        __ZN7WebCore15PlatformCALayer20drawRepaintIndicatorEP9CGContextPS0_iP7CGColor, 
                        __ZN7WebCore15PlatformCALayer21setBoundsOnMainThreadE6CGRect, 
@@ -2842,8 +2851,7 @@ exports:
                        __ZN7WebCore21ContentSecurityPolicyC2EON3WTF3URLEPNS_27ContentSecurityPolicyClientE, 
                        __ZN7WebCore21ContentSecurityPolicyD1Ev, __ZN7WebCore21ContentSecurityPolicyD2Ev, 
                        __ZN7WebCore21CookieStorageObserver13stopObservingEv, __ZN7WebCore21CookieStorageObserver14startObservingEON3WTF8FunctionIFvvEEE, 
-                       __ZN7WebCore21CookieStorageObserver16cookiesDidChangeEv, __ZN7WebCore21CookieStorageObserver6createEP19NSHTTPCookieStorage, 
-                       __ZN7WebCore21CookieStorageObserverC1EP19NSHTTPCookieStorage, 
+                       __ZN7WebCore21CookieStorageObserver16cookiesDidChangeEv, __ZN7WebCore21CookieStorageObserverC1EP19NSHTTPCookieStorage, 
                        __ZN7WebCore21CookieStorageObserverC2EP19NSHTTPCookieStorage, 
                        __ZN7WebCore21CookieStorageObserverD1Ev, __ZN7WebCore21CookieStorageObserverD2Ev, 
                        __ZN7WebCore21DeviceOrientationData6createEN3WTF8OptionalIdEES3_S3_S3_S3_, 
@@ -3200,6 +3208,7 @@ exports:
                        __ZN7WebCore24DeprecatedGlobalSettings38gShouldOptOutOfNetworkStateObservationE, 
                        __ZN7WebCore24DeprecatedGlobalSettings38setLowPowerVideoAudioBufferSizeEnabledEb, 
                        __ZN7WebCore24DeprecatedGlobalSettings45setShouldRespectPriorityInCSSAttributeSettersEb, 
+                       __ZN7WebCore24DocumentMarkerController10hasMarkersERNS_5RangeEN3WTF9OptionSetINS_14DocumentMarker10MarkerTypeEEE, 
                        __ZN7WebCore24DocumentMarkerController10markersForERNS_4NodeEN3WTF9OptionSetINS_14DocumentMarker10MarkerTypeEEE, 
                        __ZN7WebCore24DocumentMarkerController13filterMarkersERNS_5RangeENSt3__18functionIFbPNS_14DocumentMarkerEEEEN3WTF9OptionSetINS5_10MarkerTypeEEENS0_37RemovePartiallyOverlappingMarkerOrNotE, 
                        __ZN7WebCore24DocumentMarkerController13removeMarkersEN3WTF9OptionSetINS_14DocumentMarker10MarkerTypeEEE, 
@@ -3692,6 +3701,7 @@ exports:
                        __ZN7WebCore43initializeMaximumHTTPConnectionCountPerHostEv, 
                        __ZN7WebCore44computeMinimumScaleFactorForContentContainedERKNS_18ViewportAttributesERKNS_7IntSizeES5_, 
                        __ZN7WebCore45plainTextUsingBackwardsTextIteratorForTestingERKNS_5RangeE, 
+                       __ZN7WebCore46visibleImageElementsInRangeWithNonLoadedImagesERKNS_5RangeE, 
                        __ZN7WebCore47attributedStringByStrippingAttachmentCharactersEP18NSAttributedString, 
                        __ZN7WebCore49reportExtraMemoryAllocatedForCollectionIndexCacheEm, 
                        __ZN7WebCore4Attr5styleEv, __ZN7WebCore4Attr8setValueERKN3WTF10AtomStringE, 
@@ -3837,6 +3847,7 @@ exports:
                        __ZN7WebCore5Frame25setPageAndTextZoomFactorsEff, __ZN7WebCore5Frame26initWithSimpleHTMLDocumentERKN3WTF6StringERKNS1_3URLE, 
                        __ZN7WebCore5Frame27injectUserScriptImmediatelyERNS_15DOMWrapperWorldERKNS_10UserScriptE, 
                        __ZN7WebCore5Frame27nodeRespondingToClickEventsERKNS_10FloatPointERS1_PNS_14SecurityOriginE, 
+                       __ZN7WebCore5Frame27nodeRespondingToInteractionERKNS_10FloatPointERS1_, 
                        __ZN7WebCore5Frame27resizePageRectsKeepingRatioERKNS_9FloatSizeES3_, 
                        __ZN7WebCore5Frame29resetAllGeolocationPermissionEv, __ZN7WebCore5Frame32dispatchPageHideEventBeforePauseEv, 
                        __ZN7WebCore5Frame32nodeRespondingToDoubleClickEventERKNS_10FloatPointERS1_, 
@@ -4951,7 +4962,7 @@ exports:
                        __ZNK7WebCore11MessagePort5derefEv, __ZNK7WebCore11PageOverlay10controllerEv, 
                        __ZNK7WebCore11PageOverlay19viewToOverlayOffsetEv, __ZNK7WebCore11PageOverlay5frameEv, 
                        __ZNK7WebCore11PageOverlay6boundsEv, __ZNK7WebCore11RenderLayer19absoluteBoundingBoxEv, 
-                       __ZNK7WebCore11RenderLayer49isTransparentOrFullyClippedRespectingParentFramesEv, 
+                       __ZNK7WebCore11RenderLayer35isTransparentRespectingParentFramesEv, 
                        __ZNK7WebCore11RenderStyle10lineHeightEv, __ZNK7WebCore11RenderStyle11fontCascadeEv, 
                        __ZNK7WebCore11RenderStyle11fontMetricsEv, __ZNK7WebCore11RenderStyle15fontDescriptionEv, 
                        __ZNK7WebCore11RenderStyle18computedLineHeightEv, __ZNK7WebCore11RenderStyle21visitedDependentColorENS_13CSSPropertyIDE, 
@@ -4981,6 +4992,7 @@ exports:
                        __ZNK7WebCore12RenderObject21localToContainerPointERKNS_10FloatPointEPKNS_22RenderLayerModelObjectEjPb, 
                        __ZNK7WebCore12RenderObject23absoluteBoundingBoxRectEbPb, 
                        __ZNK7WebCore12RenderObject39pixelSnappedAbsoluteClippedOverflowRectEv, 
+                       __ZNK7WebCore12RenderObject44hasNonEmptyVisibleRectRespectingParentFramesEv, 
                        __ZNK7WebCore12RenderObject7childAtEj, __ZNK7WebCore12RenderWidget14windowClipRectEv, 
                        __ZNK7WebCore12SettingsBase15fixedFontFamilyE11UScriptCode, 
                        __ZNK7WebCore12SettingsBase15serifFontFamilyE11UScriptCode, 
@@ -5120,7 +5132,7 @@ exports:
                        __ZNK7WebCore15GraphicsLayerCA44platformCALayerShouldAggressivelyRetainTilesEPNS_15PlatformCALayerE, 
                        __ZNK7WebCore15GraphicsLayerCA49platformCALayerContentsScaleMultiplierForNewTilesEPNS_15PlatformCALayerE, 
                        __ZNK7WebCore15GraphicsLayerCA49platformCALayerShouldTemporarilyRetainTileCohortsEPNS_15PlatformCALayerE, 
-                       __ZNK7WebCore15HTMLAreaElement11computeRectEPNS_12RenderObjectE, 
+                       __ZNK7WebCore15GraphicsLayerCA9debugNameEv, __ZNK7WebCore15HTMLAreaElement11computeRectEPNS_12RenderObjectE, 
                        __ZNK7WebCore15HTMLAreaElement12imageElementEv, __ZNK7WebCore15HTMLBaseElement4hrefEv, 
                        __ZNK7WebCore15HTMLFormElement12autocompleteEv, __ZNK7WebCore15HTMLFormElement17shouldAutocorrectEv, 
                        __ZNK7WebCore15HTMLFormElement24unsafeAssociatedElementsEv, 
@@ -5514,6 +5526,7 @@ exports:
                        __ZNK7WebCore6Quirks47shouldAvoidScrollingWhenFocusedContentIsVisibleEv, 
                        __ZNK7WebCore6Quirks49isTouchBarUpdateSupressedForHiddenContentEditableEv, 
                        __ZNK7WebCore6Quirks56shouldDispatchSyntheticMouseEventsWhenModifyingSelectionEv, 
+                       __ZNK7WebCore6Quirks61shouldUseLegacySelectPopoverDismissalBehaviorInDataActivationEv, 
                        __ZNK7WebCore6Quirks70shouldSuppressAutocorrectionAndAutocaptializationInHiddenEditableAreasEv, 
                        __ZNK7WebCore6Region10intersectsERKS0_, __ZNK7WebCore6Region5rectsEv, 
                        __ZNK7WebCore6Region8containsERKNS_8IntPointE, __ZNK7WebCore6Region8containsERKS0_, 
@@ -5763,10 +5776,10 @@ exports:
                        WebScriptObjectPrivate.originRootObject, WebScriptObjectPrivate.rootObject ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DF34BFAD-AD49-31A3-885B-A7DF5013EEAC' ]
+uuids:           [ 'x86_64: 00FBB067-249F-3CC4-9B36-C2D55A209F7E' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/PrivateFrameworks/WebKitLegacy.framework/Versions/A/WebKitLegacy'
-current-version: 608.2.6
+current-version: 608.3.10
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _DOMEventException, _DOMException, _DOMRangeException, _DOMXPathException, 

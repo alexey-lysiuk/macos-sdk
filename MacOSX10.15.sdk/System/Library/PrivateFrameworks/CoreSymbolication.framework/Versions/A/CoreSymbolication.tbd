@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EAA04094-F9A4-3EB3-A649-33524C9D4640', 'x86_64: EAA04094-F9A4-3EB3-A649-33524C9D4640' ]
+uuids:           [ 'x86_64: F0A1415B-068A-3CE6-9AB3-B11EF978B58A', 'x86_64: F0A1415B-068A-3CE6-9AB3-B11EF978B58A' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreSymbolication.framework/Versions/A/CoreSymbolication'
-current-version: 64509.95.1
+current-version: 64509.98.1
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CSAddressSetAdd, _CSAddressSetCreate, _CSArchitectureGetArchitectureForName, 

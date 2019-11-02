@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A2BB4C85-590B-3F75-9F5A-AEEE0F02F20A', 'x86_64: A2BB4C85-590B-3F75-9F5A-AEEE0F02F20A' ]
+uuids:           [ 'x86_64: 9AD2A920-74AD-3A00-8998-A5C930FE11D3', 'x86_64: 9AD2A920-74AD-3A00-8998-A5C930FE11D3' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SafariCore.framework/Versions/A/SafariCore'
-current-version: 608.2.6
+current-version: 608.3.10
 compatibility-version: 0
 exports:         
   - archs:           [ x86_64 ]

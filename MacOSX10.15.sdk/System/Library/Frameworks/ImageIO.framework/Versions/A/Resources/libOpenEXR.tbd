@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: BD465658-CDC0-3D1D-B4EA-FF692074A3CE', 'x86_64: BD465658-CDC0-3D1D-B4EA-FF692074A3CE', 
-                   'x86_64h: 258F9D63-99B0-38E4-A833-135DE3E6DB64', 'x86_64h: 258F9D63-99B0-38E4-A833-135DE3E6DB64' ]
+uuids:           [ 'x86_64: 8B127C18-EAAA-3DC2-A33B-2693914075B8', 'x86_64: 8B127C18-EAAA-3DC2-A33B-2693914075B8', 
+                   'x86_64h: A813EB86-27FE-3848-8B60-E46BC86BD344', 'x86_64h: A813EB86-27FE-3848-8B60-E46BC86BD344' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libOpenEXR.dylib'
 exports:         

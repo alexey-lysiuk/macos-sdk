@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AF10E7BC-F8DC-3501-976C-7B9E9871CC09' ]
+uuids:           [ 'x86_64: 72ECDBB9-F607-3FB3-ABC3-882C9EFB3245' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/LangAnalysis.framework/Versions/A/LangAnalysis'
 parent-umbrella: ApplicationServices

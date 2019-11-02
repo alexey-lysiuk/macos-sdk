@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 81E42926-0A03-350C-8342-6808F3DB71C8' ]
+uuids:           [ 'x86_64: EE9C4B12-E141-3DF3-B995-E5C869B32404' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/TWAIN.framework/Versions/A/TWAIN'
 exports:         

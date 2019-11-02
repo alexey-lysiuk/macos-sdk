@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F9F0424A-03A6-350B-ABAB-E66F139103A7' ]
+uuids:           [ 'x86_64: BEFD51E4-54F1-3B54-A513-D7F214AEB69B' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/LocalAuthenticationUI.framework/Versions/A/LocalAuthenticationUI'
-current-version: 693.0.12
+current-version: 693.40.8
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _LAUIAuthenticationSheetAccountBlocked, _LAUIAuthenticationSheetBackoffTimeout ]

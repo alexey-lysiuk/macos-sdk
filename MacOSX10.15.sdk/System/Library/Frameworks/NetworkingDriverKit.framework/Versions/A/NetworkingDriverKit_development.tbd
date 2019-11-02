@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0F8DB4A5-4D16-3D5B-BD7A-EA0A12407A36' ]
+uuids:           [ 'x86_64: 0626948B-E72F-3EE7-A7F0-EC308ABAD836' ]
 platform:        macosx
 install-name:    '//System/Library/Frameworks/NetworkingDriverKit.framework/Versions/A/NetworkingDriverKit_development'
 exports:         

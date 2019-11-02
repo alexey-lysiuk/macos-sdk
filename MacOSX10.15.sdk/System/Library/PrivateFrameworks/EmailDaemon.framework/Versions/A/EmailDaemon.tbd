@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FC12DF6B-6723-3602-9F51-10C4E8E78C25' ]
+uuids:           [ 'x86_64: 435CEB58-1DAF-3F83-AA27-7E3D970E1311' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/EmailDaemon.framework/Versions/A/EmailDaemon'
-current-version: 3578.1
+current-version: 3601.0.7
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _EDConversationFlagsChanged, _EDConversationFlagsChangedConversationIDKey, 
@@ -11,8 +11,9 @@ exports:
                        _EDConversationFlagsReason, _EDConversationRemoteCloudKitStoragePushNotificationName, 
                        _EDInteractionEventLogDataKeyDuration, _EDInteractionEventLogDataKeyScrolledToEnd, 
                        _EDInteractionEventLogDataKeyValue, _EDInteractionEventLogVersion, 
-                       _EDMessageListItemPredicatesKeyPathBody, _EDMessageListItemPredicatesKeyPathMailboxObjectIDs, 
-                       _EDMessageListItemPredicatesKeyPathRecipientCcAddress, _EDMessageListItemPredicatesKeyPathRecipientCcDisplayName, 
+                       _EDMessageBatchSize, _EDMessageListItemPredicatesKeyPathBody, 
+                       _EDMessageListItemPredicatesKeyPathMailboxObjectIDs, _EDMessageListItemPredicatesKeyPathRecipientCcAddress, 
+                       _EDMessageListItemPredicatesKeyPathRecipientCcDisplayName, 
                        _EDMessageListItemPredicatesKeyPathRecipientToAddress, _EDMessageListItemPredicatesKeyPathRecipientToDisplayName, 
                        _EDMessageListItemPredicatesKeyPathSenderAddress, _EDMessageListItemPredicatesKeyPathSenderDisplayName, 
                        _EDMessageListItemPredicatesKeyPathSpotlight, _EDMessageListItemPredicatesKeyPathSpotlightAnyRecipient, 
@@ -40,7 +41,8 @@ exports:
                        __expandForCompoundPredicate, __expandPredicate, __indexedEmptySubjectDiags, 
                        _kEDSearchableIndexMaxAttachmentItemsToIndexPerBatch, _kEDSearchableIndexMaximumBodySizeForBodyIndexing, 
                        _kEDSearchableIndexOutboxIdentifier, _kEDSearchableIndexTransportIdentifier, 
-                       _kMaximumNumberOfMessageIdsToSync ]
+                       _kFailingVerificationFullReindexThreshold, _kMaximumNumberOfMessageIdsToSync, 
+                       _kSpotlightVerificationSampleSize ]
     objc-classes:    [ EDAccountECAccountTransformer, EDAccountRepository, EDActivityPersistence, 
                        EDActivityRegistry, EDAddMessagesDeletedDateReceivedIndexUpgradeStep, 
                        EDAddThreadTablesUpgradeStep, EDAssetDownloadScheduler, EDCachingMailboxPredictor, 
@@ -77,26 +79,29 @@ exports:
                        EDPETQuotaReachedEvent, EDPETSubmittedEvent, EDPersistedMessageQueryIterator, 
                        EDPersistence, EDPersistenceAssociationPlaceholder, EDPersistenceDatabase, 
                        EDPersistenceDatabaseConnection, EDPersistenceDatabaseConnectionPool, 
-                       EDPersistenceDatabaseJournal, EDPersistenceDatabaseJournalManager, 
-                       EDPersistenceDatabaseSchema, EDPersistenceForeignKeyPlaceholder, 
-                       EDPersistenceHookRegistry, EDPersonaPersistenceLayoutManager, 
-                       EDPrecomputedThreadQueryHandler, EDProtectedDatabasePersistence, 
-                       EDRemoteClient, EDRemoveUnusedSchemaTableUpgradeStep, EDRenameThreadsTableUpgradeStep, 
-                       EDSearchableIndex, EDSearchableIndexAttachmentItem, EDSearchableIndexAttachmentItemMetadatum, 
-                       EDSearchableIndexBudgetConfiguration, EDSearchableIndexClientState, 
-                       EDSearchableIndexItem, EDSearchableIndexManager, EDSearchableIndexPendingItem, 
-                       EDSearchableIndexPersistence, EDSearchableIndexPersistenceAttachmentDatum, 
-                       EDSearchableIndexRecipientTester, EDSearchableIndexScheduler, 
+                       EDPersistenceDatabaseGenerationWindow, EDPersistenceDatabaseJournal, 
+                       EDPersistenceDatabaseJournalManager, EDPersistenceDatabaseSchema, 
+                       EDPersistenceForeignKeyPlaceholder, EDPersistenceHookRegistry, 
+                       EDPersonaPersistenceLayoutManager, EDPrecomputedThreadQueryHandler, 
+                       EDProtectedDatabasePersistence, EDRemoteClient, EDRemoveUnusedSchemaTableUpgradeStep, 
+                       EDRenameThreadsTableUpgradeStep, EDSearchableIndex, EDSearchableIndexAttachmentItem, 
+                       EDSearchableIndexAttachmentItemMetadatum, EDSearchableIndexBudgetConfiguration, 
+                       EDSearchableIndexClientState, EDSearchableIndexItem, EDSearchableIndexManager, 
+                       EDSearchableIndexPendingItem, EDSearchableIndexPersistence, 
+                       EDSearchableIndexPersistenceAttachmentDatum, EDSearchableIndexScheduler, 
                        EDSearchableIndexSubjectTester, EDSearchableIndexUpdates, 
                        EDSearchableIndexVerificationData, EDSearchableIndexVerifier, 
                        EDServer, EDServerMessagePersistence, EDServerMessagePersistenceFactory, 
                        EDSubjectTokenizer, EDTableMetadataPersistence, EDTaskScheduler, 
                        EDThreadPersistence, EDThreadQueryHandler, EDThreadScopeManager, 
-                       EDTransactionService, EDUbiquitousConversationManager, EDVIPManager, 
-                       EDVIPManagerProxy, _EDAssetDownloadSchedulerContinuation, 
+                       EDTransactionService, EDUbiquitousConversationManager, EDUpdateThrottler, 
+                       EDVIPManager, EDVIPManagerProxy, _EDAssetDownloadSchedulerContinuation, 
                        _EDLazyWrappedMessage, _EDMailboxServerCount, _EDPersistenceDatabaseConnectionWrapper, 
-                       _EDThreadPositionChangeSet, _EDThreadScopeInfo, _EDUserActionState, 
-                       _EDWrappedMessage, _MSTTLReference ]
+                       _EDThreadPersistence_PersistedThread, _EDThreadPersistence_SQLHelper, 
+                       _EDThreadPersistence_StatementCache, _EDThreadPersistence_ThreadMessages, 
+                       _EDThreadPersistence_ThreadScope, _EDThreadPositionChangeSet, 
+                       _EDThreadScopeInfo, _EDUserActionState, _EDWrappedMessage, 
+                       _MSTTLReference ]
     objc-ivars:      [ EDPBInteractionEvent._appBackground, EDPBInteractionEvent._appLaunch, 
                        EDPBInteractionEvent._appResume, EDPBInteractionEvent._eventName, 
                        EDPBInteractionEvent._flagChanged, EDPBInteractionEvent._forwardDraftStarted, 
@@ -175,5 +180,6 @@ exports:
                        EDPETQuotaReachedEvent._droppedEventsCount, EDPETQuotaReachedEvent._has, 
                        EDPETQuotaReachedEvent._sequenceNumber, EDPETQuotaReachedEvent._timestamp, 
                        EDPETQuotaReachedEvent._timezoneOffset, EDPETSubmittedEvent._has, 
-                       EDPETSubmittedEvent._timestamp, EDPETSubmittedEvent._timezoneOffset ]
+                       EDPETSubmittedEvent._timestamp, EDPETSubmittedEvent._timezoneOffset, 
+                       _EDThreadPersistence_PersistedThread._didCreateTempMessagesView ]
 ...

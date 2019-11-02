@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 299821EA-ACEB-3FED-84C6-963B8D843356', 'x86_64: 299821EA-ACEB-3FED-84C6-963B8D843356' ]
+uuids:           [ 'x86_64: 4D3F50DF-1220-3396-B60D-78C33A3EDE74', 'x86_64: 4D3F50DF-1220-3396-B60D-78C33A3EDE74' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/AdSupport.framework/Versions/A/AdSupport'
 exports:         

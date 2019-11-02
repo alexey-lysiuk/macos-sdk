@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AB18078C-BF10-3AC0-A62B-3E90FA048FB0' ]
+uuids:           [ 'x86_64: C0941FD7-1690-37CD-998E-03AA2B795650' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/IntlPreferences.framework/Versions/A/IntlPreferences'
-current-version: 294
+current-version: 301.4
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _IPAllowToChangeEnablingStatePropertyKey, _IPAppleLanguagesSchemaVersionCurrent, 

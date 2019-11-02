@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9AA83303-4BDD-33DB-AD41-BB1FF30767D0', 'x86_64: 9AA83303-4BDD-33DB-AD41-BB1FF30767D0' ]
+uuids:           [ 'x86_64: 87DCDFD6-3CC2-3740-8375-53176039A5EE', 'x86_64: 87DCDFD6-3CC2-3740-8375-53176039A5EE' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SiriCore.framework/Versions/A/SiriCore'
 current-version: 0

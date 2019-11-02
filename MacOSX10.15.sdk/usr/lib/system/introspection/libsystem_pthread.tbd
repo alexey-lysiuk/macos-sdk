@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E8D76110-641D-3ADB-8DC0-304BC747136A', 'x86_64: E8D76110-641D-3ADB-8DC0-304BC747136A' ]
+uuids:           [ 'x86_64: E93B9A98-B204-327F-8839-2D71B720ECAE', 'x86_64: E93B9A98-B204-327F-8839-2D71B720ECAE' ]
 platform:        zippered
 install-name:    '/usr/lib/system/introspection/libsystem_pthread.dylib'
-current-version: 416.0.6
+current-version: 416.40.3
 parent-umbrella: System
 exports:         
   - archs:           [ x86_64 ]
@@ -63,16 +63,17 @@ exports:
                        _pthread_mutexattr_setprioceiling, _pthread_mutexattr_setprotocol, 
                        _pthread_mutexattr_setpshared, _pthread_mutexattr_settype, 
                        _pthread_once, _pthread_override_qos_class_end_np, _pthread_override_qos_class_start_np, 
-                       _pthread_qos_max_parallelism, _pthread_rwlock_destroy, _pthread_rwlock_init, 
-                       _pthread_rwlock_rdlock, _pthread_rwlock_tryrdlock, _pthread_rwlock_trywrlock, 
-                       _pthread_rwlock_unlock, _pthread_rwlock_wrlock, _pthread_rwlockattr_destroy, 
-                       _pthread_rwlockattr_getpshared, _pthread_rwlockattr_init, 
-                       _pthread_rwlockattr_setpshared, _pthread_self, _pthread_set_fixedpriority_self, 
-                       _pthread_set_qos_class_np, _pthread_set_qos_class_self_np, 
-                       _pthread_set_timeshare_self, _pthread_setcancelstate, _pthread_setcanceltype, 
-                       _pthread_setconcurrency, _pthread_setname_np, _pthread_setschedparam, 
-                       _pthread_setspecific, _pthread_sigmask, _pthread_stack_frame_decode_np, 
-                       _pthread_testcancel, _pthread_threadid_np, _pthread_time_constraint_max_parallelism, 
+                       _pthread_prefer_alternate_amx_self, _pthread_qos_max_parallelism, 
+                       _pthread_rwlock_destroy, _pthread_rwlock_init, _pthread_rwlock_rdlock, 
+                       _pthread_rwlock_tryrdlock, _pthread_rwlock_trywrlock, _pthread_rwlock_unlock, 
+                       _pthread_rwlock_wrlock, _pthread_rwlockattr_destroy, _pthread_rwlockattr_getpshared, 
+                       _pthread_rwlockattr_init, _pthread_rwlockattr_setpshared, 
+                       _pthread_self, _pthread_set_fixedpriority_self, _pthread_set_qos_class_np, 
+                       _pthread_set_qos_class_self_np, _pthread_set_timeshare_self, 
+                       _pthread_setcancelstate, _pthread_setcanceltype, _pthread_setconcurrency, 
+                       _pthread_setname_np, _pthread_setschedparam, _pthread_setspecific, 
+                       _pthread_sigmask, _pthread_stack_frame_decode_np, _pthread_testcancel, 
+                       _pthread_threadid_np, _pthread_time_constraint_max_parallelism, 
                        _pthread_workqueue_addthreads_np, _pthread_workqueue_setdispatch_np, 
                        _pthread_workqueue_setdispatchoffset_np, _pthread_workqueue_setup, 
                        _pthread_yield_np, _qos_class_main, _qos_class_self, _sched_get_priority_max, 

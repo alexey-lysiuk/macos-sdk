@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DE39DC10-C506-3249-BEE3-FF952E3B511B' ]
+uuids:           [ 'x86_64: 9286951D-8B2F-3A4B-86B2-767AFCC6A591' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/CommonPanels.framework/Versions/A/CommonPanels'
 current-version: 101

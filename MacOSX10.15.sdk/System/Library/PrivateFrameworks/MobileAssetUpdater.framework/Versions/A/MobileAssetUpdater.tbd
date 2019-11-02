@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: ABE95F79-121C-37C2-AB81-3E7CBDA7972A' ]
+uuids:           [ 'x86_64: 15AF25F2-6388-39F8-A2D5-5FD6B26496AA' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/MobileAssetUpdater.framework/Versions/A/MobileAssetUpdater'
 exports:         
@@ -8,8 +8,8 @@ exports:
     symbols:         [ _kMobileAssetUpdaterErrorDomain ]
     objc-classes:    [ MobileAssetUpdater ]
     objc-ivars:      [ MobileAssetUpdater._asset, MobileAssetUpdater._assetDownloaded, 
-                       MobileAssetUpdater._assetType, MobileAssetUpdater._logger, 
-                       MobileAssetUpdater._overrideApplied, MobileAssetUpdater._overrideFile, 
-                       MobileAssetUpdater._purgeOverrideFile, MobileAssetUpdater._query, 
-                       MobileAssetUpdater._requireAssetMetadata ]
+                       MobileAssetUpdater._assetType, MobileAssetUpdater._downloadOnCellularAllowed, 
+                       MobileAssetUpdater._logger, MobileAssetUpdater._overrideApplied, 
+                       MobileAssetUpdater._overrideFile, MobileAssetUpdater._purgeOverrideFile, 
+                       MobileAssetUpdater._query, MobileAssetUpdater._requireAssetMetadata ]
 ...

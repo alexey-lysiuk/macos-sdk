@@ -23,6 +23,12 @@
 #ifndef __IOHIDDescriptorParser__
 #define __IOHIDDescriptorParser__
 
+#if defined(KERNEL) && !defined(KERNEL_PRIVATE)
+#define __iohid_deprecated(_msg) __deprecated_msg(_msg)
+#else /* !defined(KERNEL) || defined(KERNEL_PRIVATE) */
+#define __iohid_deprecated(_msg)
+#endif /* !defined(KERNEL) || defined(KERNEL_PRIVATE) */
+
 #if RTKIT
 #include <stdio.h>
 #include <stdint.h>
@@ -407,6 +413,7 @@ typedef struct HIDValueCapabilities HIDValueCapabilities, * HIDValueCapabilities
   @result OSStatus Returns an error code if an error was encountered or noErr on success.
  */
 
+__iohid_deprecated("Use DriverKit")
 extern
 OSStatus
 HIDOpenReportDescriptor	   (void *					hidReportDescriptor,
@@ -421,6 +428,7 @@ HIDOpenReportDescriptor	   (void *					hidReportDescriptor,
   @result OSStatus Returns an error code if an error was encountered or noErr on success.
  */
 
+__iohid_deprecated("Use DriverKit")
 extern
 OSStatus
 HIDCloseReportDescriptor   (HIDPreparsedDataRef		preparsedDataRef);
@@ -435,6 +443,7 @@ HIDCloseReportDescriptor   (HIDPreparsedDataRef		preparsedDataRef);
   @result OSStatus Returns an error code if an error was encountered or noErr on success.
  */
 
+__iohid_deprecated("Use DriverKit")
 extern
 OSStatus
 HIDGetButtonCaps		   (HIDReportType			reportType,
@@ -452,6 +461,7 @@ HIDGetButtonCaps		   (HIDReportType			reportType,
   @result OSStatus Returns an error code if an error was encountered or noErr on success.
  */
 
+__iohid_deprecated("Use DriverKit")
 extern
 OSStatus
 HIDGetButtonCapabilities   (HIDReportType			reportType,
@@ -467,6 +477,7 @@ HIDGetButtonCapabilities   (HIDReportType			reportType,
   @result OSStatus Returns an error code if an error was encountered or noErr on success.
  */
 
+__iohid_deprecated("Use DriverKit")
 extern
 OSStatus
 HIDGetCaps				   (HIDPreparsedDataRef		preparsedDataRef,
@@ -480,6 +491,7 @@ HIDGetCaps				   (HIDPreparsedDataRef		preparsedDataRef,
   @result OSStatus Returns an error code if an error was encountered or noErr on success.
  */
 
+__iohid_deprecated("Use DriverKit")
 extern
 OSStatus
 HIDGetCapabilities		   (HIDPreparsedDataRef		preparsedDataRef,
@@ -495,6 +507,7 @@ HIDGetCapabilities		   (HIDPreparsedDataRef		preparsedDataRef,
   @result OSStatus Returns an error code if an error was encountered or noErr on success.
  */
 
+__iohid_deprecated("Use DriverKit")
 extern
 OSStatus
 HIDGetCollectionNodes	   (HIDCollectionNodePtr	collectionNodes,
@@ -516,6 +529,7 @@ HIDGetCollectionNodes	   (HIDCollectionNodePtr	collectionNodes,
   @result OSStatus Returns an error code if an error was encountered or noErr on success.
  */
 
+__iohid_deprecated("Use DriverKit")
 extern 
 OSStatus
 HIDGetScaledUsageValue	   (HIDReportType			reportType,
@@ -541,6 +555,7 @@ HIDGetScaledUsageValue	   (HIDReportType			reportType,
   @result OSStatus Returns an error code if an error was encountered or noErr on success.
  */
 
+__iohid_deprecated("Use DriverKit")
 extern
 OSStatus
 HIDGetSpecificButtonCaps   (HIDReportType			reportType,
@@ -565,6 +580,7 @@ HIDGetSpecificButtonCaps   (HIDReportType			reportType,
   @result OSStatus Returns an error code if an error was encountered or noErr on success.
  */
 
+__iohid_deprecated("Use DriverKit")
 extern
 OSStatus
 HIDGetSpecificButtonCapabilities   (HIDReportType			reportType,
@@ -589,6 +605,7 @@ HIDGetSpecificButtonCapabilities   (HIDReportType			reportType,
   @result OSStatus Returns an error code if an error was encountered or noErr on success.
  */
 
+__iohid_deprecated("Use DriverKit")
 extern
 OSStatus
 HIDGetSpecificValueCaps	   (HIDReportType			reportType,
@@ -613,6 +630,7 @@ HIDGetSpecificValueCaps	   (HIDReportType			reportType,
   @result OSStatus Returns an error code if an error was encountered or noErr on success.
  */
 
+__iohid_deprecated("Use DriverKit")
 extern
 OSStatus
 HIDGetSpecificValueCapabilities	   (HIDReportType			reportType,
@@ -637,6 +655,7 @@ HIDGetSpecificValueCapabilities	   (HIDReportType			reportType,
   @result OSStatus Returns an error code if an error was encountered or noErr on success.
  */
 
+__iohid_deprecated("Use DriverKit")
 extern 
 OSStatus
 HIDGetButtonsOnPage		   (HIDReportType			reportType,
@@ -661,6 +680,7 @@ HIDGetButtonsOnPage		   (HIDReportType			reportType,
   @result OSStatus Returns an error code if an error was encountered or noErr on success.
  */
 
+__iohid_deprecated("Use DriverKit")
 extern 
 OSStatus
 HIDGetButtons			   (HIDReportType			reportType,
@@ -671,6 +691,7 @@ HIDGetButtons			   (HIDReportType			reportType,
 							void *					report,
 							IOByteCount				reportLength);
 
+__iohid_deprecated("Use DriverKit")
 extern 
 OSStatus
 HIDGetNextButtonInfo       (HIDReportType          reportType,
@@ -680,6 +701,7 @@ HIDGetNextButtonInfo       (HIDReportType          reportType,
                             UInt8 *                reportID,
                             HIDPreparsedDataRef    preparsedDataRef);
 
+__iohid_deprecated("Use DriverKit")
 extern 
 OSStatus
 HIDGetNextUsageValueInfo   (HIDReportType          reportType,
@@ -689,6 +711,7 @@ HIDGetNextUsageValueInfo   (HIDReportType          reportType,
                             UInt8 *                reportID,
                             HIDPreparsedDataRef    preparsedDataRef);
 
+__iohid_deprecated("Use DriverKit")
 extern 
 OSStatus
 HIDGetReportLength         (HIDReportType          	reportType,
@@ -711,6 +734,7 @@ HIDGetReportLength         (HIDReportType          	reportType,
   @result OSStatus Returns an error code if an error was encountered or noErr on success.
  */
 
+__iohid_deprecated("Use DriverKit")
 extern 
 OSStatus
 HIDGetUsageValue		   (HIDReportType			reportType,
@@ -738,6 +762,7 @@ HIDGetUsageValue		   (HIDReportType			reportType,
   @result OSStatus Returns an error code if an error was encountered or noErr on success.
  */
 
+__iohid_deprecated("Use DriverKit")
 extern 
 OSStatus
 HIDGetUsageValueArray	   (HIDReportType			reportType,
@@ -761,6 +786,7 @@ HIDGetUsageValueArray	   (HIDReportType			reportType,
   @result OSStatus Returns an error code if an error was encountered or noErr on success.
  */
 
+__iohid_deprecated("Use DriverKit")
 extern
 OSStatus
 HIDGetValueCaps			   (HIDReportType			reportType,
@@ -779,6 +805,7 @@ HIDGetValueCaps			   (HIDReportType			reportType,
   @result OSStatus Returns an error code if an error was encountered or noErr on success.
  */
 
+__iohid_deprecated("Use DriverKit")
 extern
 OSStatus
 HIDGetValueCapabilities	   (HIDReportType			reportType,
@@ -786,6 +813,7 @@ HIDGetValueCapabilities	   (HIDReportType			reportType,
 							UInt32 *				valueCapsSize,
 							HIDPreparsedDataRef		preparsedDataRef);
 
+__iohid_deprecated("Use DriverKit")
 extern 
 OSStatus
 HIDInitReport              (HIDReportType          reportType,
@@ -803,6 +831,7 @@ HIDInitReport              (HIDReportType          reportType,
   @result OSStatus Returns an error code if an error was encountered or noErr on success.
  */
 
+__iohid_deprecated("Use DriverKit")
 extern  
 UInt32
 HIDMaxUsageListLength	   (HIDReportType			reportType,
@@ -824,6 +853,7 @@ HIDMaxUsageListLength	   (HIDReportType			reportType,
   @result OSStatus Returns an error code if an error was encountered or noErr on success.
  */
 
+__iohid_deprecated("Use DriverKit")
 extern 
 OSStatus
 HIDSetScaledUsageValue	   (HIDReportType			reportType,
@@ -849,6 +879,7 @@ HIDSetScaledUsageValue	   (HIDReportType			reportType,
   @result OSStatus Returns an error code if an error was encountered or noErr on success.
  */
 
+__iohid_deprecated("Use DriverKit")
 extern 
 OSStatus
 HIDSetButtons			   (HIDReportType			reportType,
@@ -875,6 +906,7 @@ HIDSetButtons			   (HIDReportType			reportType,
   @result OSStatus Returns an error code if an error was encountered or noErr on success.
  */
 
+__iohid_deprecated("Use DriverKit")
 extern 
 OSStatus
 HIDSetUsageValue		   (HIDReportType			reportType,
@@ -902,6 +934,7 @@ HIDSetUsageValue		   (HIDReportType			reportType,
   @result OSStatus Returns an error code if an error was encountered or noErr on success.
  */
 
+__iohid_deprecated("Use DriverKit")
 extern 
 OSStatus
 HIDSetUsageValueArray	   (HIDReportType			reportType,
@@ -925,6 +958,7 @@ HIDSetUsageValueArray	   (HIDReportType			reportType,
   @result OSStatus Returns an error code if an error was encountered or noErr on success.
  */
 
+__iohid_deprecated("Use DriverKit")
 extern 
 OSStatus
 HIDUsageListDifference	   (HIDUsage *				previousUsageList,
@@ -946,6 +980,7 @@ HIDUsageListDifference	   (HIDUsage *				previousUsageList,
   @result OSStatus Returns an error code if an error was encountered or noErr on success.
  */
 
+__iohid_deprecated("Use DriverKit")
 extern 
 OSStatus
 HIDSetButton			   (HIDReportType			reportType,

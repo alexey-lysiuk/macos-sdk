@@ -543,6 +543,7 @@ protected:
     {
         uint16_t _persistentOutEndpointMask;
         uint16_t _persistentInEndpointMask;
+        bool     _allPipesDestroyed;
     };
     tExpansionData* _expansionData;
 };

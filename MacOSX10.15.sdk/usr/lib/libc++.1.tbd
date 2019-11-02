@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6AFC6A2D-0F9E-36F9-9484-85230BBBB189', 'x86_64: 6AFC6A2D-0F9E-36F9-9484-85230BBBB189' ]
+uuids:           [ 'x86_64: 1D42387D-206A-3F06-9B5F-705B83EAC295', 'x86_64: 1D42387D-206A-3F06-9B5F-705B83EAC295' ]
 platform:        zippered
 install-name:    '/usr/lib/libc++.1.dylib'
-current-version: 800.6
+current-version: 800.7
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ __ZNKSt10bad_typeid4whatEv, __ZNKSt11logic_error4whatEv, __ZNKSt12bad_any_cast4whatEv, 

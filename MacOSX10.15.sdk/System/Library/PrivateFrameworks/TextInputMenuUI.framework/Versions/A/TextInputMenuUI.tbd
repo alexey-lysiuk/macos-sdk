@@ -1,20 +1,20 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 12A4D24F-3B32-34AD-B8F7-28BFB6EA1E94' ]
+uuids:           [ 'x86_64: 670681BF-FA5A-39E3-B5AB-F1B3E6F96D87' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/TextInputMenuUI.framework/Versions/A/TextInputMenuUI'
-current-version: 243
+current-version: 249
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _AmTargetProcess, _CarbonModifiersToAppkitModifiers, _CreateClassFromKey, 
                        _CreateNSImageFromIconRef, _GetKeyFocusProcess, _MessageTracerLogDidSwitch, 
                        _TISMakeRectWithAspectRatioInsideRect, __InputSwitcherIsRunning, 
                        __InputSwitcherStart, __InputSwitcherStop, __InputSwitcherSwitch, 
-                       _alignPointToUserSpace, _alignRectToUserSpace, _createAlignedImage, 
-                       _kFloatingIndicatorIconSize, _kIMSReceiveUIServerMessagesPortName, 
-                       _kImageViewTag, _kLableViewTag, _kSCIMInputSourceID, _kTCIMInputSourceID, 
-                       _kTouchBarReceiveDisableInputMessagesPortName, _kTrackingOff, 
-                       _kTrackingOn, _kWindowHVInset, _tabID ]
+                       __ToggleInputSwitcherIfNecessary, _alignPointToUserSpace, 
+                       _alignRectToUserSpace, _createAlignedImage, _kFloatingIndicatorIconSize, 
+                       _kIMSReceiveUIServerMessagesPortName, _kImageViewTag, _kLableViewTag, 
+                       _kSCIMInputSourceID, _kTCIMInputSourceID, _kTouchBarReceiveDisableInputMessagesPortName, 
+                       _kTrackingOff, _kTrackingOn, _kWindowHVInset, _tabID ]
     objc-classes:    [ CPInputSource, HUDCollectionView, HUDCollectionViewItem, HUDController, 
                        HUDPanel, HUDRoundedContextView, HUDTextView, HUDWindowController, 
                        HandwritingInputSource, IMInputSource, ISWHotKey, InputSource, 

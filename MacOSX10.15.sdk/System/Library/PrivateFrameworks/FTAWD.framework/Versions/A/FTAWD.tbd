@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7C817D61-82C9-39F3-AE1E-43BDB47951F0', 'x86_64: 7C817D61-82C9-39F3-AE1E-43BDB47951F0' ]
+uuids:           [ 'x86_64: 48C7C91B-A1B6-3F54-9B93-A65963A6A22D', 'x86_64: 48C7C91B-A1B6-3F54-9B93-A65963A6A22D' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/FTAWD.framework/Versions/A/FTAWD'
 current-version: 800

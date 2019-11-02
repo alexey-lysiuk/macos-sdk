@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7EAD516E-87C1-317C-B170-EF41EAE78B5A', 'x86_64: 7EAD516E-87C1-317C-B170-EF41EAE78B5A' ]
+uuids:           [ 'x86_64: 7CF95B11-4705-3139-9FEC-2828ED21F75E', 'x86_64: 7CF95B11-4705-3139-9FEC-2828ED21F75E' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AutoLoop.framework/Versions/A/AutoLoop'
 exports:         

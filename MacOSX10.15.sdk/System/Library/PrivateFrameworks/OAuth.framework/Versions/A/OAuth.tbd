@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 94013C1F-6C06-3462-AA0A-56473FDF5B22', 'x86_64: 94013C1F-6C06-3462-AA0A-56473FDF5B22' ]
+uuids:           [ 'x86_64: 0D3A2C8D-41BC-3813-AF59-B33F4A4B0F7D', 'x86_64: 0D3A2C8D-41BC-3813-AF59-B33F4A4B0F7D' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/OAuth.framework/Versions/A/OAuth'
 current-version: 25

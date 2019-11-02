@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C5FC4115-38C4-33E3-A96B-11CD86DF1BF0' ]
+uuids:           [ 'x86_64: 77FFB010-2EB3-38A2-944B-15ADB04F90BA' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/AVKit.framework/Versions/A/AVKit'
 exports:         

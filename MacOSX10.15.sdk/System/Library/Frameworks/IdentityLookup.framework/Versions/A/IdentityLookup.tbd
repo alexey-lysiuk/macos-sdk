@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B9119156-4706-3340-8943-A23AA1F0B01D', 'x86_64: B9119156-4706-3340-8943-A23AA1F0B01D' ]
+uuids:           [ 'x86_64: 70E9FAD8-786A-33B9-9F8D-86D26F52CE8E', 'x86_64: 70E9FAD8-786A-33B9-9F8D-86D26F52CE8E' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/IdentityLookup.framework/Versions/A/IdentityLookup'
 exports:         

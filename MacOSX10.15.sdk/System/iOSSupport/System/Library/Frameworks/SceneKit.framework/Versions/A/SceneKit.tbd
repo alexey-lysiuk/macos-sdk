@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F8E39ED0-5F79-394B-8422-29830C60EF78' ]
+uuids:           [ 'x86_64: CB02070E-CA3C-3543-9165-73D9B849D54B' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/SceneKit.framework/Versions/A/SceneKit'
-current-version: 540
+current-version: 540.3
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _C3DGetFileDecryptionCallbacks, _C3DSetFileDecryptionCallbacks, 

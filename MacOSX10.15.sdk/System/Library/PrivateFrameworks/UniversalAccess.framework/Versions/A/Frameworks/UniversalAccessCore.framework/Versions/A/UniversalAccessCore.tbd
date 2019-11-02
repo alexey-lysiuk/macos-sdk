@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AEC94EE1-A519-38B1-A891-BA2D5B27F8F6' ]
+uuids:           [ 'x86_64: D806DB82-B1EA-3214-B808-F6A1DF90A9A6' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/UniversalAccess.framework/Versions/A/Frameworks/UniversalAccessCore.framework/Versions/A/UniversalAccessCore'
 current-version: 236
@@ -146,7 +146,7 @@ exports:
                        UASettings, UASpeechSettings, UAUserSwitch, UAZoomSettings ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9958D955-0C15-3EC1-8CEC-1E29822964FC' ]
+uuids:           [ 'x86_64: 9CADC754-A484-3556-AFBB-E35A2080F17E' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/UniversalAccess.framework/Versions/A/Libraries/libUAPreferences.dylib'
 exports:         

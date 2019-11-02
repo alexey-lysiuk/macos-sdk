@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 383352EB-A56A-3E15-9787-3AB23317C580' ]
+uuids:           [ 'x86_64: ED732400-13DE-39C6-AD41-1BC97EBEF946' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/WPDaemon.framework/Versions/A/WPDaemon'
 exports:         

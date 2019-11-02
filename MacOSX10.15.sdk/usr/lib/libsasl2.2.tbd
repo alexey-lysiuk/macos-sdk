@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 17F2D8C6-7CC5-355A-9F9B-4D7B765BA331' ]
+uuids:           [ 'x86_64: FA0CF2A0-1989-3CCF-8118-45017132788B' ]
 platform:        macosx
 install-name:    '/usr/lib/libsasl2.2.dylib'
 current-version: 3.15

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E9913E51-79E1-34BF-86AE-2CCD03230D07' ]
+uuids:           [ 'x86_64: 371D317D-1D0D-36FD-A17A-73498F24E5DB' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/ICADevices.framework/Versions/A/ICADevices'
 exports:         
@@ -79,9 +79,9 @@ exports:
                        _USBDeviceSendScanEventNotification, ___ICLogDateString, ___ICLogTypeEnabled, 
                        ___ICOSLogCreate, ___ICReadPrefs, __gDiskArbSession, __gExecutableArchitecture, 
                        __gICOSLog, _gArgc, _gArgv, _gFilenamePrefix, _gICDCallbackFunctions, 
-                       _gICDScannerCallbackFunctions, _gIsCameraModule, _gNextFilenameCount, 
-                       _gQuitWhenLastDeviceIsDisconnected, _gTimerCalledCount, _gTimerValueInSeconds, 
-                       _kICAActualByteCountKey, _kICAAddMetaDataToFinderCommentKey, 
+                       _gICDScannerCallbackFunctions, _gIsCameraModule, _gModuleSpecificPrefs, 
+                       _gNextFilenameCount, _gQuitWhenLastDeviceIsDisconnected, _gTimerCalledCount, 
+                       _gTimerValueInSeconds, _kICAActualByteCountKey, _kICAAddMetaDataToFinderCommentKey, 
                        _kICAAdjustCreationDateKey, _kICAAppNameKey, _kICAAudioCodecsKey, 
                        _kICABIPVersionKey, _kICABluetoothAddressKey, _kICABluetoothTransportType, 
                        _kICABonjourDevicesKey, _kICABonjourServiceNameKey, _kICABonjourServiceTypeKey, 

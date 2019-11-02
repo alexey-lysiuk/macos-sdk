@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B146D587-BFB6-3C04-886C-E74E16D15089' ]
+uuids:           [ 'x86_64: F0C01D2B-5FF6-3B69-A88D-BA015E7008D6' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/QuickLook.framework/Versions/A/QuickLook'
 exports:         
@@ -9,7 +9,7 @@ exports:
     objc-classes:    [ QLPreviewController ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D063D169-DAE2-37FD-B26D-61181342AB39', 'x86_64: D063D169-DAE2-37FD-B26D-61181342AB39' ]
+uuids:           [ 'x86_64: 725B549C-EE72-3F7C-9668-AF0FF3C47C9B', 'x86_64: 725B549C-EE72-3F7C-9668-AF0FF3C47C9B' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/QuickLookIosmac.framework/Versions/A/QuickLookIosmac'
 current-version: 0
@@ -258,35 +258,35 @@ exports:
                        __QL_AddThumbnailToCache_function, __QL_CacheDiscardMemory, 
                        __QL_CacheReserveMemory, __QL_WithThumbnailCacheDo, __Z18QLTryCatchAndCrashU13block_pointerFvvE, 
                        ___QLShouldLogForInternalDebug, __geParenttFolderForFileURL, 
-                       __getHelperManagerQueue, _kQLDebugActionKey, _kQLDebugClearAllKey, 
-                       _kQLDebugNameKey, _kQLDebugSatelliteNameKey, _kQLDebugSatelliteStatusKey, 
-                       _kQLDebugServerStatusKey, _kQLDisplayBundle3D, _kQLDisplayBundleAudio, 
-                       _kQLDisplayBundleContact, _kQLDisplayBundleEvent, _kQLDisplayBundleExtension, 
-                       _kQLDisplayBundleGeneric, _kQLDisplayBundleIcon, _kQLDisplayBundleImage, 
-                       _kQLDisplayBundleLivePhoto, _kQLDisplayBundleMap, _kQLDisplayBundleMovie, 
-                       _kQLDisplayBundlePDF, _kQLDisplayBundlePDFKit, _kQLDisplayBundleReminder, 
-                       _kQLDisplayBundleText, _kQLDisplayBundleWeb, _kQLDisplayBundleWeb2, 
-                       _kQLGeneratorsHaveChangedNotification, _kQLPreviewAttachmentMagic, 
-                       _kQLPreviewBubbleAnimationTypeCustomScale, _kQLPreviewBubbleAnimationTypeFade, 
-                       _kQLPreviewBubbleAnimationTypePop, _kQLPreviewBubbleAnimationTypeScale, 
-                       _kQLPreviewBubbleAnimationTypeUnfold, _kQLPreviewBubbleAppearanceTypeDark, 
-                       _kQLPreviewBubbleAppearanceTypeLight, _kQLPreviewBubbleButtonAddToReadingListIdentifier, 
-                       _kQLPreviewBubbleButtonAvailableWhenGenericKey, _kQLPreviewBubbleButtonDefaultOpenIdentifier, 
-                       _kQLPreviewBubbleButtonIdentifier, _kQLPreviewBubbleButtonKeyEquivalent, 
-                       _kQLPreviewBubbleButtonLeftAligned, _kQLPreviewBubbleButtonShrinkable, 
-                       _kQLPreviewBubbleButtonTightTitle, _kQLPreviewBubbleButtonTitle, 
-                       _kQLPreviewBubbleButtonURL, _kQLPreviewBubbleOptionAimPoint, 
-                       _kQLPreviewBubbleOptionAnimationType, _kQLPreviewBubbleOptionAppearanceType, 
-                       _kQLPreviewBubbleOptionAutoplays, _kQLPreviewBubbleOptionButtons, 
-                       _kQLPreviewBubbleOptionCustomScaleContentFrame, _kQLPreviewBubbleOptionCustomScaleFrame, 
-                       _kQLPreviewBubbleOptionCustomScaleImageData, _kQLPreviewBubbleOptionForcePreferredEdge, 
-                       _kQLPreviewBubbleOptionLoadImmediately, _kQLPreviewBubbleOptionMaxArea, 
-                       _kQLPreviewBubbleOptionMaxSize, _kQLPreviewBubbleOptionPreferredEdge, 
-                       _kQLPreviewBubbleOptionPreloadedURLs, _kQLPreviewBubbleOptionPreviewData, 
-                       _kQLPreviewBubbleOptionPreviewProperties, _kQLPreviewBubbleOptionPreviewType, 
-                       _kQLPreviewBubbleOptionSkipAnimationInvoke, _kQLPreviewBubbleOptionWindowLevel, 
-                       _kQLPreviewBubbleOptionsSkipAlphaDuringOpenAnimation, _kQLPreviewContentIDScheme, 
-                       _kQLPreviewMagic, _kQLPreviewOptionAllowsProgressiveRendering, 
+                       __getHelperManagerQueue, __isDropboxFault, _kQLDebugActionKey, 
+                       _kQLDebugClearAllKey, _kQLDebugNameKey, _kQLDebugSatelliteNameKey, 
+                       _kQLDebugSatelliteStatusKey, _kQLDebugServerStatusKey, _kQLDisplayBundle3D, 
+                       _kQLDisplayBundleAudio, _kQLDisplayBundleContact, _kQLDisplayBundleEvent, 
+                       _kQLDisplayBundleExtension, _kQLDisplayBundleGeneric, _kQLDisplayBundleIcon, 
+                       _kQLDisplayBundleImage, _kQLDisplayBundleLivePhoto, _kQLDisplayBundleMap, 
+                       _kQLDisplayBundleMovie, _kQLDisplayBundlePDF, _kQLDisplayBundlePDFKit, 
+                       _kQLDisplayBundleReminder, _kQLDisplayBundleText, _kQLDisplayBundleWeb, 
+                       _kQLDisplayBundleWeb2, _kQLGeneratorsHaveChangedNotification, 
+                       _kQLPreviewAttachmentMagic, _kQLPreviewBubbleAnimationTypeCustomScale, 
+                       _kQLPreviewBubbleAnimationTypeFade, _kQLPreviewBubbleAnimationTypePop, 
+                       _kQLPreviewBubbleAnimationTypeScale, _kQLPreviewBubbleAnimationTypeUnfold, 
+                       _kQLPreviewBubbleAppearanceTypeDark, _kQLPreviewBubbleAppearanceTypeLight, 
+                       _kQLPreviewBubbleButtonAddToReadingListIdentifier, _kQLPreviewBubbleButtonAvailableWhenGenericKey, 
+                       _kQLPreviewBubbleButtonDefaultOpenIdentifier, _kQLPreviewBubbleButtonIdentifier, 
+                       _kQLPreviewBubbleButtonKeyEquivalent, _kQLPreviewBubbleButtonLeftAligned, 
+                       _kQLPreviewBubbleButtonShrinkable, _kQLPreviewBubbleButtonTightTitle, 
+                       _kQLPreviewBubbleButtonTitle, _kQLPreviewBubbleButtonURL, 
+                       _kQLPreviewBubbleOptionAimPoint, _kQLPreviewBubbleOptionAnimationType, 
+                       _kQLPreviewBubbleOptionAppearanceType, _kQLPreviewBubbleOptionAutoplays, 
+                       _kQLPreviewBubbleOptionButtons, _kQLPreviewBubbleOptionCustomScaleContentFrame, 
+                       _kQLPreviewBubbleOptionCustomScaleFrame, _kQLPreviewBubbleOptionCustomScaleImageData, 
+                       _kQLPreviewBubbleOptionForcePreferredEdge, _kQLPreviewBubbleOptionLoadImmediately, 
+                       _kQLPreviewBubbleOptionMaxArea, _kQLPreviewBubbleOptionMaxSize, 
+                       _kQLPreviewBubbleOptionPreferredEdge, _kQLPreviewBubbleOptionPreloadedURLs, 
+                       _kQLPreviewBubbleOptionPreviewData, _kQLPreviewBubbleOptionPreviewProperties, 
+                       _kQLPreviewBubbleOptionPreviewType, _kQLPreviewBubbleOptionSkipAnimationInvoke, 
+                       _kQLPreviewBubbleOptionWindowLevel, _kQLPreviewBubbleOptionsSkipAlphaDuringOpenAnimation, 
+                       _kQLPreviewContentIDScheme, _kQLPreviewMagic, _kQLPreviewOptionAllowsProgressiveRendering, 
                        _kQLPreviewOptionContentTypeUTI, _kQLPreviewOptionCursorKey, 
                        _kQLPreviewOptionPasswordKey, _kQLPreviewOptionPrefersAutoPagination, 
                        _kQLPreviewPropertiesOnlyKey, _kQLPreviewPropertyAllowFullFileAccessKey, 

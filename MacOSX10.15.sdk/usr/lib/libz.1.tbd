@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FCC20F6F-3209-3174-A382-B46AA188A371', 'x86_64: FCC20F6F-3209-3174-A382-B46AA188A371' ]
+uuids:           [ 'x86_64: 3EC7A143-AF2D-35EE-9C08-542B2907E3D2', 'x86_64: 3EC7A143-AF2D-35EE-9C08-542B2907E3D2' ]
 platform:        zippered
 install-name:    '/usr/lib/libz.1.dylib'
 current-version: 1.2.11

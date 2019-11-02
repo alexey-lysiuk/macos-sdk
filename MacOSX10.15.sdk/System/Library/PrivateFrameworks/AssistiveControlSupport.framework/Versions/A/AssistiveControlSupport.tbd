@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F0C23E9E-0F68-3293-896E-2F2987CDE8AB' ]
+uuids:           [ 'x86_64: C85020C4-569F-3A9C-8FE2-D9E526BD35DE' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AssistiveControlSupport.framework/Versions/A/AssistiveControlSupport'
 current-version: 87
@@ -9,10 +9,10 @@ exports:
     symbols:         [ _ACAP_DOCUMENT_CURRENT_VERSION, _ACAP_DOCUMENT_TYPE_NAME, 
                        _ACAP_DOCUMENT_TYPE_NAME_OLD, _ACSHActionTypeFromString, _ACSHActionTypeToString, 
                        _ACSHAdjustedColorForAttributeColor, _ACSHAssetTypeFromString, 
-                       _ACSHAssetTypeToString, _ACSHBoundingRectForAllRectsFromSetContainingXCoordinate, 
-                       _ACSHCarbonModifierBitsByEventModifierFlags, _ACSHColorFromString, 
-                       _ACSHColorToString, _ACSHContainingBoundsForRects, _ACSHCreateCGImageFromData, 
-                       _ACSHCreateCGImageFromFile, _ACSHCreateCGImageFromResource, 
+                       _ACSHAssetTypeToString, _ACSHAssistiveControlIcon, _ACSHBoundingRectForAllRectsFromSetContainingXCoordinate, 
+                       _ACSHBundle, _ACSHCarbonModifierBitsByEventModifierFlags, 
+                       _ACSHColorFromString, _ACSHColorToString, _ACSHContainingBoundsForRects, 
+                       _ACSHCreateCGImageFromData, _ACSHCreateCGImageFromFile, _ACSHCreateCGImageFromResource, 
                        _ACSHCreateCursorImage, _ACSHCreateGradientWithColor, _ACSHCreateGroupBorder, 
                        _ACSHCreateIconWithImageMask, _ACSHCreateImageFromResource, 
                        _ACSHCreateImageFromResourceAndBundle, _ACSHCreateNSImageFromFile, 

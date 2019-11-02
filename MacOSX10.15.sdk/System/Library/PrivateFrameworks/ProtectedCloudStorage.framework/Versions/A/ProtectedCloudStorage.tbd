@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 211E67F9-92B2-39BC-ACAB-79599F854B80', 'x86_64: 211E67F9-92B2-39BC-ACAB-79599F854B80' ]
+uuids:           [ 'x86_64: 9B166C3E-ACED-3528-A68F-22491EE811BA', 'x86_64: 9B166C3E-ACED-3528-A68F-22491EE811BA' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ProtectedCloudStorage.framework/Versions/A/ProtectedCloudStorage'
 exports:         
@@ -37,18 +37,19 @@ exports:
                        _PCSFPCopyUnwrappedKey, _PCSFPCopyWrappedKey, _PCSFPCreate, 
                        _PCSFPCreateLight, _PCSFPCreatePEMData, _PCSFPCreatePrivateKey, 
                        _PCSFPCreateShare, _PCSFPCreateUniqueID, _PCSFPCreateWithExported, 
-                       _PCSFPGetAuthorIdentity, _PCSFPGetAvailableMasterKeyID, _PCSFPGetChainingKeyset, 
-                       _PCSFPGetCurrentMasterKeyID, _PCSFPGetUnwrapPublicIdentity, 
+                       _PCSFPGetAuthorIdentity, _PCSFPGetAuthorshipIdentity, _PCSFPGetAvailableMasterKeyID, 
+                       _PCSFPGetChainingKeyset, _PCSFPGetCurrentMasterKeyID, _PCSFPGetUnwrapPublicIdentity, 
                        _PCSFPIsLight, _PCSFPIsOutOfNetwork, _PCSFPIsReadWrite, _PCSFPRemoveMasterKey, 
                        _PCSFPRemovePrivateKey, _PCSFPRemovePublicIdentity, _PCSFPRemoveSharePCS, 
-                       _PCSFPRollMasterKey, _PCSFPSetCurrentPrivateKey, _PCSFPSetOwnerIdentity, 
-                       _PCSFPShouldRoll, _PCSFPShouldUpdate, _PCSFPStatus, _PCSFPSupportFeature, 
-                       _PCSFPUpdateIdentityAndRollZoneKey, _PCSFPUpdateZoneKey, _PCSFPValidateShare, 
-                       _PCSGetBoundaryKey, _PCSGetPublicIdentitites, _PCSGetViewNameFromViewHint, 
-                       _PCSIdentityCheckInitialSync, _PCSIdentityCheckValidPublicKey, 
-                       _PCSIdentityCheckWrappable, _PCSIdentityCollectionCopyCurrent, 
-                       _PCSIdentityCollectionCopyPublicKeyInfo, _PCSIdentityCollectionDestroy, 
-                       _PCSIdentityCollectionSave, _PCSIdentityCollectionSetup, _PCSIdentityCollectionStatus, 
+                       _PCSFPRollMasterKey, _PCSFPSetAuthorshipIdentity, _PCSFPSetCurrentPrivateKey, 
+                       _PCSFPSetOwnerIdentity, _PCSFPShouldRoll, _PCSFPShouldUpdate, 
+                       _PCSFPStatus, _PCSFPSupportFeature, _PCSFPUpdateIdentityAndRollZoneKey, 
+                       _PCSFPUpdateZoneKey, _PCSFPValidateShare, _PCSGetBoundaryKey, 
+                       _PCSGetPublicIdentitites, _PCSGetViewNameFromViewHint, _PCSIdentityCheckInitialSync, 
+                       _PCSIdentityCheckValidPublicKey, _PCSIdentityCheckWrappable, 
+                       _PCSIdentityCollectionCopyCurrent, _PCSIdentityCollectionCopyPublicKeyInfo, 
+                       _PCSIdentityCollectionDestroy, _PCSIdentityCollectionSave, 
+                       _PCSIdentityCollectionSetup, _PCSIdentityCollectionStatus, 
                        _PCSIdentityCopyCircleFingerPrint, _PCSIdentityCopyCurrentKeyFingerprint, 
                        _PCSIdentityCopyDiagnostic, _PCSIdentityCopyExportedPrivateKey, 
                        _PCSIdentityCopyExportedPublicKey, _PCSIdentityCopyExternalForm, 

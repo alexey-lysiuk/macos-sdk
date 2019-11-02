@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 17A2848B-897B-3620-B1BC-4EF02B2546A3' ]
+uuids:           [ 'x86_64: C29DBBE8-8821-3222-9EE8-4B0C3CBE5495' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/MetalKit.framework/Versions/A/MetalKit'
-current-version: 137.2
+current-version: 141.1
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _MTKMetalVertexDescriptorFromModelIO, _MTKMetalVertexDescriptorFromModelIOWithError, 

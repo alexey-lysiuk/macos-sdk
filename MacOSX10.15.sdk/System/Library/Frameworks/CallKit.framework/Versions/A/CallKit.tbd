@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 66A05571-2125-32DF-ADE7-B50EB73368F9', 'x86_64: 66A05571-2125-32DF-ADE7-B50EB73368F9' ]
+uuids:           [ 'x86_64: C9F8FAB3-B6C4-3B0C-B637-47E437164E78', 'x86_64: C9F8FAB3-B6C4-3B0C-B637-47E437164E78' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CallKit.framework/Versions/A/CallKit'
 exports:         

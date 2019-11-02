@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E8BE7153-B6DA-3816-A2DF-56F7C07A24E1' ]
+uuids:           [ 'x86_64: 9C5597A5-38D2-35A5-95C5-07DFAD722BFF' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CalendarDraw.framework/Versions/A/CalendarDraw'
-current-version: 2377
+current-version: 2380.2.1
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _BirthdayCalendarColor, _BirthdayMonthCalendarColor, _CalCGColorConvertToRGBCopy, 

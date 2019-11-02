@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 54EC6486-7A3E-39D3-B213-EFCC4110E511', 'x86_64: 54EC6486-7A3E-39D3-B213-EFCC4110E511' ]
+uuids:           [ 'x86_64: FB95B500-E5A3-3FAD-882E-D12FD9CA0964', 'x86_64: FB95B500-E5A3-3FAD-882E-D12FD9CA0964' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSCore.framework/Versions/A/MPSCore'
-current-version: 122.0.52
+current-version: 122.2
 exports:         
   - archs:           [ x86_64 ]
     allowable-clients: [ MPSImage, MPSMatrix, MPSNDArray, MPSNeuralNetwork, MPSParallelPrimitives, 

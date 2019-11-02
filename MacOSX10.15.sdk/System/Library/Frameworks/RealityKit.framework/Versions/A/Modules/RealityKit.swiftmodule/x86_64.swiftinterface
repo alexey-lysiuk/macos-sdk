@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.1 (swiftlang-1100.8.259.70 clang-1100.0.32.1)
+// swift-compiler-version: Apple Swift version 5.1.1 (swiftlang-1100.8.275.1 clang-1100.0.32.1)
 // swift-module-flags: -target x86_64-apple-macos10.15 -enable-objc-interop -swift-version 5 -enforce-exclusivity=checked -O -enable-library-evolution -module-name RealityKit
 import AppKit
 import Combine
@@ -717,6 +717,7 @@ public class __RKEmphasisSpinAnimation : RealityKit.__RKEmphasisBaseAnimation {
   @objc deinit
 }
 extension ARView {
+  @objc override dynamic open func layout()
   @objc override dynamic open func viewDidChangeBackingProperties()
   @objc override dynamic open func viewDidMoveToSuperview()
   @objc override dynamic open var frame: Foundation.NSRect {
@@ -3070,6 +3071,7 @@ extension HasPointLight {
 extension __REAssetBundle {
   public static func __init(element: RealityKit.Entity, assetService: RealityKit.__REAssetService) -> RealityKit.__REAssetBundle
   public static func __init(realityScenes: [RealityKit.Scene], assetService: RealityKit.__REAssetService) -> RealityKit.__REAssetBundle
+  public static func loadSceneDescriptors(url: Foundation.URL) throws -> [RealityKit.__REAssetBundle.AssetMap.SceneDescriptor]
 }
 @available(OSX 10.15, iOS 13.0, *)
 public class LoadRequest<Output> : Combine.Publisher {

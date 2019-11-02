@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 82A0263D-4F0D-32F0-8391-1DD1866EB402' ]
+uuids:           [ 'x86_64: 8A7F0075-FFD9-384F-9B4D-3C9E9F1E701A' ]
 platform:        macosx
 install-name:    '/BuildRoot/Library/Caches/com.apple.xbs/Binaries/GPUDriversNvidia/install/TempContent/Root/System/Library/Frameworks/OpenCL.framework/Versions/A/Libraries/NVPTX.dylib'
 exports:         

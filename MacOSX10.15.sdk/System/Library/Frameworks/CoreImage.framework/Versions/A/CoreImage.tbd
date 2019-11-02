@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CDD19371-6280-3B39-B3A8-9F7359F5F876', 'x86_64: CDD19371-6280-3B39-B3A8-9F7359F5F876' ]
+uuids:           [ 'x86_64: CE3DB305-25FF-31FE-9334-C2370473BAAF', 'x86_64: CE3DB305-25FF-31FE-9334-C2370473BAAF' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreImage.framework/Versions/A/CoreImage'
 current-version: 5

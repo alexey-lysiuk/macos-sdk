@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9E5164D8-6E45-3375-8BD4-0F6B04476F17', 'x86_64: 9E5164D8-6E45-3375-8BD4-0F6B04476F17' ]
+uuids:           [ 'x86_64: 14DACBCB-C956-3E44-BBF8-6E8D8D87AB95', 'x86_64: 14DACBCB-C956-3E44-BBF8-6E8D8D87AB95' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks//CoreSymbolication.framework/Versions/A/Resources/libCoreSymbolicationLTO.dylib'
-current-version: 64509.95.1
+current-version: 64509.98.1
 exports:         
   - archs:           [ x86_64 ]
     allowable-clients: [ '!' ]

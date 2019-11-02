@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C76FD8E8-2A0E-300D-B0FE-8A2492BFE9BF' ]
+uuids:           [ 'x86_64: 3C069796-5360-32F6-8841-BC263B94B2A3' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/Backup.framework/Versions/A/Backup'
 current-version: 0

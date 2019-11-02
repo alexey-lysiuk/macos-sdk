@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AB5EC981-0EC9-369C-888C-F6492E37D849' ]
+uuids:           [ 'x86_64: 2EACB0C2-DFBF-30B5-A8AB-8A8CCC9A243B' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CloudDocsDaemon.framework/Versions/A/CloudDocsDaemon'
-current-version: 672.1
+current-version: 681
 compatibility-version: 0
 exports:         
   - archs:           [ x86_64 ]

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9032CB3F-5477-3128-8A2A-AFA6C52D9B35' ]
+uuids:           [ 'x86_64: EF7384C7-8A1E-3BB5-9DFD-270DF136595F' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/IMSharedUI.framework/Versions/A/IMSharedUI'
 exports:         

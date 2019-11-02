@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 48D8A14E-47DA-3AA0-B112-2D6BD947138E', 'x86_64: 48D8A14E-47DA-3AA0-B112-2D6BD947138E' ]
+uuids:           [ 'x86_64: D8A1F2E0-D3FE-3A1C-A1AD-E9B4507286E7', 'x86_64: D8A1F2E0-D3FE-3A1C-A1AD-E9B4507286E7' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/Symptoms.framework/Frameworks/SymptomAnalytics.framework/Versions/A/SymptomAnalytics'
-current-version: 1238.0.2
+current-version: 1238.40.4
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _SymptomAnalyticsFrameworkDidSaveNotification, _kProcessKeyTypeBundleName, 

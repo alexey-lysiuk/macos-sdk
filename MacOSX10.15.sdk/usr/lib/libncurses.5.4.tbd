@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7042B124-AEEA-3E42-87A8-426015A3CEF7', 'x86_64: 7042B124-AEEA-3E42-87A8-426015A3CEF7' ]
+uuids:           [ 'x86_64: 7115BD9E-9A53-3538-BA7C-6D71E8C0F9F1', 'x86_64: 7115BD9E-9A53-3538-BA7C-6D71E8C0F9F1' ]
 platform:        zippered
 install-name:    '/usr/lib/libncurses.5.4.dylib'
 current-version: 5.4

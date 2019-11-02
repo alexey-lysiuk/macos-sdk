@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 92A4306C-28EE-3069-9A6D-2BB7F09C2A92' ]
+uuids:           [ 'x86_64: E7CB7791-9124-366C-A486-19CC10268BE5' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/Tourist.framework/Versions/A/Tourist'
-current-version: 1.0.64
+current-version: 1.0.65
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _TouristDefinitionABTestCasesKey, _TouristDefinitionAllowQAPaths, 

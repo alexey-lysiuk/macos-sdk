@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 82E98376-D970-3095-9A56-32A2D7947CBA', 'x86_64: 82E98376-D970-3095-9A56-32A2D7947CBA' ]
+uuids:           [ 'x86_64: DF341577-A307-3722-BB24-D4AACEAB19B3', 'x86_64: DF341577-A307-3722-BB24-D4AACEAB19B3' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_coreservices.dylib'
 current-version: 114

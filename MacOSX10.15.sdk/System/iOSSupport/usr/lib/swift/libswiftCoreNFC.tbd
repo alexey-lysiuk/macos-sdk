@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EF8F9E63-A51C-385C-84CF-5CBD637FA44C' ]
+uuids:           [ 'x86_64: 75B2F1F1-08F4-35D2-AF13-66E7FC22734F' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/usr/lib/swift/libswiftCoreNFC.dylib'
 current-version: 0

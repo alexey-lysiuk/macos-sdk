@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 268E86E5-0D55-35C4-B646-1B16E072F9A0' ]
+uuids:           [ 'x86_64: 3CBA18FC-6E45-3168-9ECF-66E76DE85B78' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/DriverKit.framework/Versions/A/DriverKit'
 exports:         
@@ -96,19 +96,18 @@ exports:
                        __ZN17OSObjectMetaClass8DispatchE5IORPC, __ZN17OSStringMetaClass3NewEP8OSObject, 
                        __ZN18IOMemoryDescriptor10_CopyStateEP16IOMDPrivateStatePFiP15OSMetaClassBase5IORPCE, 
                        __ZN18IOMemoryDescriptor13CreateMappingEyyyyyPP11IOMemoryMapPFiP15OSMetaClassBase5IORPCE, 
-                       __ZN18IOMemoryDescriptor13Create_InvokeE5IORPCPFiyjPK16IOAddressSegmentPPS_E, 
                        __ZN18IOMemoryDescriptor13PrepareForDMAEyP9IOServiceyyPyS2_PjP16IOAddressSegmentPFiP15OSMetaClassBase5IORPCE, 
                        __ZN18IOMemoryDescriptor17_CopyState_InvokeE5IORPCP15OSMetaClassBasePFiS2_P16IOMDPrivateStateE, 
                        __ZN18IOMemoryDescriptor20CreateMapping_InvokeE5IORPCP15OSMetaClassBasePFiS2_yyyyyPP11IOMemoryMapE, 
                        __ZN18IOMemoryDescriptor20PrepareForDMA_InvokeE5IORPCP15OSMetaClassBasePFiS2_yP9IOServiceyyPyS5_PjP16IOAddressSegmentE, 
                        __ZN18IOMemoryDescriptor3MapEyyyyPyS0_, __ZN18IOMemoryDescriptor4freeEv, 
-                       __ZN18IOMemoryDescriptor4initEv, __ZN18IOMemoryDescriptor6CreateEyjPK16IOAddressSegmentPPS_, 
-                       __ZN18IOMemoryDescriptor8DispatchE5IORPC, __ZN18IOMemoryDescriptor9GetLengthEPy, 
-                       __ZN18IOMemoryDescriptor9_DispatchEPS_5IORPC, __ZN18IOServiceMetaClass3NewEP8OSObject, 
-                       __ZN18IOServiceMetaClass8DispatchE5IORPC, __ZN18OSBooleanMetaClass3NewEP8OSObject, 
-                       __ZN20IOMemoryMapMetaClass3NewEP8OSObject, __ZN20IOMemoryMapMetaClass8DispatchE5IORPC, 
-                       __ZN20IOPCIDeviceMetaClass3NewEP8OSObject, __ZN20IOPCIDeviceMetaClass8DispatchE5IORPC, 
-                       __ZN20OSContainerMetaClass3NewEP8OSObject, __ZN21IOTimerDispatchSource10SetHandlerEP8OSActionPFiP15OSMetaClassBase5IORPCE, 
+                       __ZN18IOMemoryDescriptor4initEv, __ZN18IOMemoryDescriptor8DispatchE5IORPC, 
+                       __ZN18IOMemoryDescriptor9GetLengthEPy, __ZN18IOMemoryDescriptor9_DispatchEPS_5IORPC, 
+                       __ZN18IOServiceMetaClass3NewEP8OSObject, __ZN18IOServiceMetaClass8DispatchE5IORPC, 
+                       __ZN18OSBooleanMetaClass3NewEP8OSObject, __ZN20IOMemoryMapMetaClass3NewEP8OSObject, 
+                       __ZN20IOMemoryMapMetaClass8DispatchE5IORPC, __ZN20IOPCIDeviceMetaClass3NewEP8OSObject, 
+                       __ZN20IOPCIDeviceMetaClass8DispatchE5IORPC, __ZN20OSContainerMetaClass3NewEP8OSObject, 
+                       __ZN21IOTimerDispatchSource10SetHandlerEP8OSActionPFiP15OSMetaClassBase5IORPCE, 
                        __ZN21IOTimerDispatchSource10WakeAtTimeEyyyPFiP15OSMetaClassBase5IORPCE, 
                        __ZN21IOTimerDispatchSource11Cancel_ImplEU13block_pointerFvvE, 
                        __ZN21IOTimerDispatchSource11Create_ImplEP15IODispatchQueuePPS_, 

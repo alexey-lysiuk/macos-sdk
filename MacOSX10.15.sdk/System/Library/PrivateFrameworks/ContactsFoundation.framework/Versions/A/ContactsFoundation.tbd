@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 193DEB8F-568D-361C-BBFF-477A76154856', 'x86_64: 193DEB8F-568D-361C-BBFF-477A76154856' ]
+uuids:           [ 'x86_64: AD51E6E6-0601-3F72-84FF-6FD73F606E54', 'x86_64: AD51E6E6-0601-3F72-84FF-6FD73F606E54' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ContactsFoundation.framework/Versions/A/ContactsFoundation'
 exports:         
@@ -191,7 +191,7 @@ exports:
                        CNReaderWriterScheduler._activeWriters, CNReaderWriterScheduler._pendingReaders, 
                        CNReaderWriterScheduler._pendingWriters, CNReaderWriterScheduler._queue, 
                        CNReaderWriterScheduler._suspended, CNReplaySubject._enforcement, 
-                       CNReplaySubject._observers, CNReplaySubject._recentEvents, 
+                       CNReplaySubject._observers, CNReplaySubject._recentEventStrategy, 
                        CNReplaySubject._resourceLock, CNReplaySubject._schedulerProvider, 
                        CNSchedulerProvider._backgroundScheduler, CNSchedulerProvider._immediateScheduler, 
                        CNSchedulerProvider._inlineScheduler, CNSchedulerProvider._mainThreadScheduler, 

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 27546718-60ED-3E3C-AAEE-F8B20C0A68CD', 'x86_64: 27546718-60ED-3E3C-AAEE-F8B20C0A68CD' ]
+uuids:           [ 'x86_64: 8F9720B5-B0B9-337E-AE77-66BDA18D2E09', 'x86_64: 8F9720B5-B0B9-337E-AE77-66BDA18D2E09' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/FoundInAppsPlugins.framework/Versions/A/FoundInAppsPlugins'
-current-version: 1052
+current-version: 1052.14
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _FoundInAppsPluginsVersionNumber, _FoundInAppsPluginsVersionString ]

@@ -59,6 +59,15 @@
  *
  * @field twist
  * The clockwise rotation of the stylus.
+ *
+ * @field pointerType
+ * Optional pointer type defined by vendor.
+ *
+ * @field effect
+ * Optional stylus effect defined by vendor.
+ *
+ * @field uniqueID
+ * Optional stylus unique identifier.
  * 
  * @field inRange
  * True if the stylus is in range.
@@ -94,6 +103,9 @@ typedef struct IOHIDDigitizerStylusData {
     IOFixed tiltX;
     IOFixed tiltY;
     IOFixed twist;
+    uint32_t pointerType;
+    uint32_t effect;
+    uint64_t uniqueID;
     uint32_t inRange : 1;
     uint32_t tip : 1;
     uint32_t barrelSwitch : 1;

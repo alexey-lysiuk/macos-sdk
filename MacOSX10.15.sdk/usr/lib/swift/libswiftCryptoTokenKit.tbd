@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D0922005-F6AC-3D19-80EA-FBF7BCD5205A', 'x86_64: D0922005-F6AC-3D19-80EA-FBF7BCD5205A' ]
+uuids:           [ 'x86_64: 57D0461C-3D08-311E-878E-BAF28406B4D6', 'x86_64: 57D0461C-3D08-311E-878E-BAF28406B4D6' ]
 platform:        zippered
 install-name:    '/usr/lib/swift/libswiftCryptoTokenKit.dylib'
 current-version: 0

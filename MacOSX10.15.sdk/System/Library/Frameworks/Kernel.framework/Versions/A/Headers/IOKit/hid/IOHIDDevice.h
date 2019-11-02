@@ -67,7 +67,11 @@ class   IOHIDDeviceElementContainer;
     by the physical device, as long as the reports abide to the USB
     specification. */
 
+#if defined(KERNEL) && !defined(KERNEL_PRIVATE)
+class __deprecated_msg("Use DriverKit") IOHIDDevice : public IOService
+#else
 class IOHIDDevice : public IOService
+#endif
 {
     OSDeclareDefaultStructorsWithDispatch ( IOHIDDevice )
 

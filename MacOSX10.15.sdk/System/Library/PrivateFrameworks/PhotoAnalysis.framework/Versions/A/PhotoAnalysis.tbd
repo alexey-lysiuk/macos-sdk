@@ -1,15 +1,16 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EA73AD93-C3F9-36B6-A308-CA503587996D' ]
+uuids:           [ 'x86_64: 9BB37DCC-93F7-3F72-9E37-67CB6CA279E4' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PhotoAnalysis.framework/Versions/A/PhotoAnalysis'
-current-version: 101.13.100
+current-version: 111.16.150
 exports:         
   - archs:           [ x86_64 ]
     allowable-clients: [ photoanalysisd ]
-    symbols:         [ _PHAAssetLocalIdentifiersFromUUIDs, _PHABoolValueForStringAtIndex, 
-                       _PHAIsAppleInternal, _PHASuggestionsClientHandlerDefaultNumberOfSuggestions, 
-                       _PHASuggestionsDefaultNumberOfDaysBetweenStartAndEndDate, 
+    symbols:         [ _PHAAspectRatioOfPixelDimensions, _PHAAssetLocalIdentifiersFromUUIDs, 
+                       _PHABoolValueForStringAtIndex, _PHAEvaluatedPixelDimension, 
+                       _PHAIsAppleInternal, _PHAIsProcessableUniformTypeIdentifier, 
+                       _PHASuggestionsClientHandlerDefaultNumberOfSuggestions, _PHASuggestionsDefaultNumberOfDaysBetweenStartAndEndDate, 
                        _PHAUUIDsFromAssetLocalIdentifiers, _PHAVisionServiceWorkerAnalysisAttributeAnalysisWorkerJob, 
                        _PHAVisionServiceWorkerAnalysisAttributeAssetResourceType, 
                        _PHAVisionServiceWorkerAnalysisAttributeAssetResourceWasDownloaded, 
@@ -27,8 +28,8 @@ exports:
                        _PhotoAnalysisGraphMetricsReportingJobTimeIntervalAppleInternal, 
                        _PhotoAnalysisGraphMetricsReportingJobTimeIntervalNonAppleInternal, 
                        _PhotoAnalysisLibraryScopedWorkerPreferencesFilename, _PhotoAnalysisMemoryGenerationForcedBetaKey, 
-                       _PhotoAnalysisNotificationDelayOverrideKey, _PhotoAnalysisNotificationSimulationDelayOverrideKey, 
-                       _PhotoAnalysisShouldForceTriggerNotificationKey, _PhotoAnalysisShouldOverrideUserIsActivelyUsingPhotosKey, 
+                       _PhotoAnalysisNotificationSimulationDelayOverrideKey, _PhotoAnalysisShouldForceTriggerNotificationKey, 
+                       _PhotoAnalysisShouldOverrideUserIsActivelyUsingPhotosKey, 
                        _PhotoAnalysisShouldTriggerNotificationEveryDayKey, _PhotoAnalysisVersionNumber, 
                        _PhotoAnalysisVersionString, _PhotoAnalysisVisionFacesDisabledKey, 
                        ___PXLog_automationOSLog, ___PXLog_automationOnceToken, ___PXLog_automationSetupOSLog, 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2FD6877F-1682-3520-BEDE-CA829EE9A672', 'x86_64: 2FD6877F-1682-3520-BEDE-CA829EE9A672' ]
+uuids:           [ 'x86_64: 6DA504FF-A5B3-3315-934B-BEAB9970C041', 'x86_64: 6DA504FF-A5B3-3315-934B-BEAB9970C041' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/PodcastServices.framework/Support/Frameworks/PodcastsDatabaseCore.framework/Versions/A/PodcastsDatabaseCore'
 exports:         
@@ -14,8 +14,8 @@ exports:
                        _MTLogCategoryMacOSSpecific, _MTLogCategoryMediaLibrary, _MTLogCategoryMediaRemote, 
                        _MTLogCategoryMediaRemoteRouting, _MTLogCategoryMetrics, _MTLogCategoryNetwork, 
                        _MTLogCategoryNotifications, _MTLogCategoryPlayback, _MTLogCategoryPrivacy, 
-                       _MTLogCategorySiri, _MTLogCategorySpotlight, _MTLogCategoryUPPSync, 
-                       _MTLogCategoryiTunesMigration, _MTPlayReasonFromPersistentString, 
+                       _MTLogCategoryQuickLook, _MTLogCategorySiri, _MTLogCategorySpotlight, 
+                       _MTLogCategoryUPPSync, _MTLogCategoryiTunesMigration, _MTPlayReasonFromPersistentString, 
                        _NSPersistentStringForMTEpisodeContext, _NSPersistentStringForMTEpisodeContextSortType, 
                        _NSPersistentStringForMTPlayReason, _PodcastsDatabaseCoreVersionNumber, 
                        _PodcastsDatabaseCoreVersionString, _kEpisodeAssetURL, _kEpisodeAudio, 

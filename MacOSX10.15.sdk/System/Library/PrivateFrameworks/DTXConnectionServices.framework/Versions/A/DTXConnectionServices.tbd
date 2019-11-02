@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5B87560B-62B8-3AB7-B78F-BCC4B3BAFD72', 'x86_64: 5B87560B-62B8-3AB7-B78F-BCC4B3BAFD72' ]
+uuids:           [ 'x86_64: 59D2F54E-F900-3223-996E-D4A264E911A3', 'x86_64: 59D2F54E-F900-3223-996E-D4A264E911A3' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/DTXConnectionServices.framework/Versions/A/DTXConnectionServices'
 current-version: 64523.185.1

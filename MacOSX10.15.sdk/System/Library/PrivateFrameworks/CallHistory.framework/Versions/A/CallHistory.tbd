@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7676C46F-D42E-3D4A-AF7D-3A446AD46726', 'x86_64: 7676C46F-D42E-3D4A-AF7D-3A446AD46726' ]
+uuids:           [ 'x86_64: 0FEB6B12-6938-3AA2-8F9E-E1A2747BF658', 'x86_64: 0FEB6B12-6938-3AA2-8F9E-E1A2747BF658' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CallHistory.framework/Versions/A/CallHistory'
 current-version: 2

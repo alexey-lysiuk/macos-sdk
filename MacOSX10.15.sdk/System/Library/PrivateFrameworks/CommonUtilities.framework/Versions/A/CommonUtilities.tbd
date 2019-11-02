@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 02B5989A-F392-3A09-861D-75F0243FAEBC', 'x86_64: 02B5989A-F392-3A09-861D-75F0243FAEBC' ]
+uuids:           [ 'x86_64: 0B13423D-84E7-394A-8E2A-62D815B5BC4B', 'x86_64: 0B13423D-84E7-394A-8E2A-62D815B5BC4B' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CommonUtilities.framework/Versions/A/CommonUtilities'
 current-version: 800

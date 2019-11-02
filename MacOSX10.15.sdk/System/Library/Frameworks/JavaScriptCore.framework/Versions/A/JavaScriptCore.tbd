@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DD075F8A-449A-33EC-BEC8-5C9EA21EF7B2' ]
+uuids:           [ 'x86_64: 84426449-FDEA-3B11-94AB-544A56CB07B3' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/JavaScriptCore'
-current-version: 608.2.6
+current-version: 608.3.10
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _JSCheckScriptSyntax, _JSClassCreate, _JSClassRelease, _JSClassRetain, 
@@ -143,7 +143,7 @@ exports:
                        __ZN3JSC11VMInspector13dumpCallFrameEPNS_9ExecStateEj, __ZN3JSC11VMInspector13dumpRegistersEPNS_9ExecStateE, 
                        __ZN3JSC11VMInspector14dumpCellMemoryEPNS_6JSCellE, __ZN3JSC11VMInspector16isValidCodeBlockEPNS_9ExecStateEPNS_9CodeBlockE, 
                        __ZN3JSC11VMInspector17codeBlockForFrameEPNS_9ExecStateEj, 
-                       __ZN3JSC11VMInspector22dumpCellMemoryToStreamEPNS_6JSCellERN3WTF11PrintStreamE, 
+                       __ZN3JSC11VMInspector18dumpSubspaceHashesEPNS_2VME, __ZN3JSC11VMInspector22dumpCellMemoryToStreamEPNS_6JSCellERN3WTF11PrintStreamE, 
                        __ZN3JSC11VMInspector23currentThreadOwnsJSLockEPNS_9ExecStateE, 
                        __ZN3JSC11VMInspector2gcEPNS_9ExecStateE, __ZN3JSC11VMInspector6edenGCEPNS_9ExecStateE, 
                        __ZN3JSC11VMInspector8isInHeapEPNS_4HeapEPv, __ZN3JSC11VMInspector9dumpStackEPNS_9ExecStateEj, 

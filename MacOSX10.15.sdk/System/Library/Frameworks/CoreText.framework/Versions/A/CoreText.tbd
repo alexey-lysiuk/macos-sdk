@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0F275CA6-52E2-3739-AD02-43F5AAAD7F33', 'x86_64: 0F275CA6-52E2-3739-AD02-43F5AAAD7F33' ]
+uuids:           [ 'x86_64: 4525DC61-0B5B-33B2-A249-68C6A1267EE7', 'x86_64: 4525DC61-0B5B-33B2-A249-68C6A1267EE7' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreText.framework/Versions/A/CoreText'
 exports:         
@@ -168,14 +168,15 @@ exports:
                        __CTCopyDefaultFontFallbacksDictionary, __CTEnumerateScriptRanges, 
                        __CTFontCreateWithNameAndSymbolicTraits, __CTFontManagerDisableSystemVisibleFonts, 
                        __CTFontManagerGetCharacterCoverage, __CTFontManagerUnregisterFontForData, 
-                       __CTGetCharacterClass, __CTGetEmojiFontName, __CTGlyphInfoGetBaseString, 
-                       __CTGlyphInfoGetFont, __CTGlyphInfoGetGlyph, ___CTInitialize, 
-                       _kCTBackgroundColorAttributeName, _kCTBaselineAttributeName, 
-                       _kCTBaselineClassAttributeName, _kCTBaselineClassHanging, 
-                       _kCTBaselineClassIdeographicCentered, _kCTBaselineClassIdeographicHigh, 
-                       _kCTBaselineClassIdeographicLow, _kCTBaselineClassMath, _kCTBaselineClassRoman, 
-                       _kCTBaselineInfoAttributeName, _kCTBaselineOffsetAttributeName, 
-                       _kCTBaselineOriginalFont, _kCTBaselineReferenceFont, _kCTBaselineReferenceInfoAttributeName, 
+                       __CTGetCharacterClass, __CTGetEmojiFontName, __CTGetFrameworkBundleForLocalization, 
+                       __CTGlyphInfoGetBaseString, __CTGlyphInfoGetFont, __CTGlyphInfoGetGlyph, 
+                       __CTSetFrameworkBundleForLocalization, ___CTInitialize, _kCTBackgroundColorAttributeName, 
+                       _kCTBaselineAttributeName, _kCTBaselineClassAttributeName, 
+                       _kCTBaselineClassHanging, _kCTBaselineClassIdeographicCentered, 
+                       _kCTBaselineClassIdeographicHigh, _kCTBaselineClassIdeographicLow, 
+                       _kCTBaselineClassMath, _kCTBaselineClassRoman, _kCTBaselineInfoAttributeName, 
+                       _kCTBaselineOffsetAttributeName, _kCTBaselineOriginalFont, 
+                       _kCTBaselineReferenceFont, _kCTBaselineReferenceInfoAttributeName, 
                        _kCTBaselineVerticalOriginalFont, _kCTCharacterShapeAttributeName, 
                        _kCTFontAssetFontInfoKey, _kCTFontAssetType, _kCTFontAttributeName, 
                        _kCTFontBaselineAdjustAttribute, _kCTFontCSSFamilyCursive, 

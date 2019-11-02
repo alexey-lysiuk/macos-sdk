@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2F6C11A6-8732-3F20-BA5C-B49C649E2380', 'x86_64: 2F6C11A6-8732-3F20-BA5C-B49C649E2380' ]
+uuids:           [ 'x86_64: F5583DFD-E3A1-3D6A-8698-613F7FA119A0', 'x86_64: F5583DFD-E3A1-3D6A-8698-613F7FA119A0' ]
 platform:        zippered
 install-name:    '/usr/lib/libFosl_dynamic.dylib'
 current-version: 0

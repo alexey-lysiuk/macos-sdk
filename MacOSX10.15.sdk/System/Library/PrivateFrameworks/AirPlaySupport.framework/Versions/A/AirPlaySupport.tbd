@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C7E672AD-036E-37AB-A0CE-E8B21E218640' ]
+uuids:           [ 'x86_64: 24EC0E91-7D3E-337C-A690-B88FF9B65C54' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AirPlaySupport.framework/Versions/A/AirPlaySupport'
 exports:         
@@ -14,6 +14,8 @@ exports:
                        _APSAllocatorGetDefaultAirPlayMallocZoneCFAllocator, _APSAtomicMessageQueueCreate, 
                        _APSAtomicMessageQueueGetTypeID, _APSAtomicMessageQueueReadMessage, 
                        _APSAtomicMessageQueueSendMessage, _APSAtomicMessageQueueSendMessageUsingSentBackings, 
+                       _APSAudioStatsCreate, _APSAudioStats_CopySampleRateStatsAsString, 
+                       _APSAudioStats_ProcessAudioBuffer, _APSAudioStats_TerminateSession, 
                        _APSCMBlockBufferReplace, _APSClearLegacyAirPlayPairingInfo, 
                        _APSConnectionInterfaceManagerCreate, _APSConnectionInterfaceManagerGetTypeID, 
                        _APSConnectionInterfaceManagerReleaseInterfaceSelection, _APSConnectionInterfaceManagerSelectInterface, 
@@ -98,18 +100,19 @@ exports:
                        _AirPlayPairing_Test, _Dk7hjUuq, _Fqbh1vZGfV6J, _G30ooIXBM, 
                        _GvMGlTNs, _KUY675K4ryxHGzD5GVD, _PCFdAVst, _PHDcW8, _RKIu6glG, 
                        _SrtySZG0, _VBAEFt, _XoN3GgjZNCvkN1T8I3, _aMoe8v8GNE9T, _gLogCategory_APAudioFormat, 
-                       _gLogCategory_APSAPCompressionType, _gLogCategory_APSConnectionInterfaceManager, 
-                       _gLogCategory_APSContiguousAllocator, _gLogCategory_APSEventRecorder, 
-                       _gLogCategory_APSIntrospector, _gLogCategory_APSKeyHolderCommon, 
-                       _gLogCategory_APSLogUtils, _gLogCategory_APSNetworkAddress, 
-                       _gLogCategory_APSNetworkClockCommon, _gLogCategory_APSNetworkClockLog, 
-                       _gLogCategory_APSNetworkClockNTP, _gLogCategory_APSNetworkClockPTP, 
-                       _gLogCategory_APSPowerAssertion, _gLogCategory_APSRTCReporting, 
-                       _gLogCategory_APSRTCReportingAgent, _gLogCategory_APSRTPJitterBuffer, 
-                       _gLogCategory_APSRTPPassThroughJitterBuffer, _gLogCategory_APSSharedRingBuffer, 
-                       _gLogCategory_APSSystemUtils, _gLogCategory_APSXPCService, 
-                       _gLogCategory_AirPlayHTTPUtilities, _gLogCategory_AirPlayPairing, 
-                       _gQblcfSzZBQsYCCV, _h4BvW7X, _i9kF3TCOFmU, _kAPSNetworkClockNotificationPayloadKey_PeerList, 
+                       _gLogCategory_APSAPCompressionType, _gLogCategory_APSAudioStats, 
+                       _gLogCategory_APSConnectionInterfaceManager, _gLogCategory_APSContiguousAllocator, 
+                       _gLogCategory_APSEventRecorder, _gLogCategory_APSIntrospector, 
+                       _gLogCategory_APSKeyHolderCommon, _gLogCategory_APSLogUtils, 
+                       _gLogCategory_APSNetworkAddress, _gLogCategory_APSNetworkClockCommon, 
+                       _gLogCategory_APSNetworkClockLog, _gLogCategory_APSNetworkClockNTP, 
+                       _gLogCategory_APSNetworkClockPTP, _gLogCategory_APSPowerAssertion, 
+                       _gLogCategory_APSRTCReporting, _gLogCategory_APSRTCReportingAgent, 
+                       _gLogCategory_APSRTPJitterBuffer, _gLogCategory_APSRTPPassThroughJitterBuffer, 
+                       _gLogCategory_APSSharedRingBuffer, _gLogCategory_APSSystemUtils, 
+                       _gLogCategory_APSXPCService, _gLogCategory_AirPlayHTTPUtilities, 
+                       _gLogCategory_AirPlayPairing, _gQblcfSzZBQsYCCV, _h4BvW7X, 
+                       _i9kF3TCOFmU, _kAPSNetworkClockNotificationPayloadKey_PeerList, 
                        _kAPSNetworkClockNotificationPayloadKey_PeerListExtended, 
                        _kAPSNetworkClockNotification_GrandmasterChanged, _kAPSNetworkClockNotification_LockStateChanged, 
                        _kAPSNetworkClockNotification_PeerListChanged, _kAPSNetworkClockPTPUpdateRate_PowerSaveMs, 

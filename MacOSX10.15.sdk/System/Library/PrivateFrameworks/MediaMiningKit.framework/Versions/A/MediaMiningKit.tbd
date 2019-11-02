@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5E596CA2-1994-3173-B808-7EBF4209CE28' ]
+uuids:           [ 'x86_64: 71E08F16-0B81-31BA-A6D0-6952AF73713A' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/MediaMiningKit.framework/Versions/A/MediaMiningKit'
 exports:         

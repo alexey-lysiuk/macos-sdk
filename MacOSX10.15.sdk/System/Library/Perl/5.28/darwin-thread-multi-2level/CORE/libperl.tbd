@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5C22EF63-67DE-3A46-8C71-F6F583E8AC99' ]
+uuids:           [ 'x86_64: F6080B90-0890-3625-A228-D1DE448D9A0C' ]
 platform:        macosx
 install-name:    '/System/Library/Perl/5.28/darwin-thread-multi-2level/CORE/libperl.dylib'
 current-version: 5.28.2

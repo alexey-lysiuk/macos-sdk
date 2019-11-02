@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 84EEA2A4-847E-384B-AF19-CEB5D42E220F', 'x86_64: 84EEA2A4-847E-384B-AF19-CEB5D42E220F' ]
+uuids:           [ 'x86_64: D8C5B7F0-04D5-3470-A9C4-EF8B2FF96986', 'x86_64: D8C5B7F0-04D5-3470-A9C4-EF8B2FF96986' ]
 platform:        zippered
 install-name:    '/usr/lib/libnetwork.dylib'
 exports:         
@@ -514,6 +514,7 @@ exports:
                        _nw_parameters_set_service_class, _nw_parameters_set_should_trust_invalid_certificates, 
                        _nw_parameters_set_sleep_keepalive_interval, _nw_parameters_set_source_application, 
                        _nw_parameters_set_source_application_by_bundle_id, _nw_parameters_set_source_application_by_bundle_id_internal, 
+                       _nw_parameters_set_source_application_by_external_bundle_id, 
                        _nw_parameters_set_ssl_cipher_suites, _nw_parameters_set_tfo, 
                        _nw_parameters_set_tfo_no_cookie, _nw_parameters_set_tls, 
                        _nw_parameters_set_tls13_enabled, _nw_parameters_set_tls_enforce_ev, 

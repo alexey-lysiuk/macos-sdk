@@ -9,6 +9,10 @@
 #import <MapKit/MKPlacemark.h>
 #import <MapKit/MKPointOfInterestCategory.h>
 
+#if TARGET_OS_IOS
+@class UIScene;
+#endif
+
 NS_ASSUME_NONNULL_BEGIN
 
 NS_CLASS_AVAILABLE(10_9, 6_0) __TVOS_AVAILABLE(9_2)
@@ -32,6 +36,12 @@ NS_CLASS_AVAILABLE(10_9, 6_0) __TVOS_AVAILABLE(9_2)
 
 - (BOOL)openInMapsWithLaunchOptions:(nullable NSDictionary<NSString *, id> *)launchOptions API_UNAVAILABLE(tvos);
 + (BOOL)openMapsWithItems:(NSArray<MKMapItem *> *)mapItems launchOptions:(nullable NSDictionary<NSString *, id> *)launchOptions API_UNAVAILABLE(tvos);
+
+#if TARGET_OS_IOS
+// fromScene is used to indicate the UIScene where the user interaction took place.
+- (void)openInMapsWithLaunchOptions:(nullable NSDictionary<NSString *, id> *)launchOptions fromScene:(nullable UIScene *)scene completionHandler:(void (^__nullable)(BOOL success))completion API_AVAILABLE(ios(13.2)) API_UNAVAILABLE(watchos, tvos, macos);
++ (void)openMapsWithItems:(NSArray<MKMapItem *> *)mapItems launchOptions:(nullable NSDictionary<NSString *, id> *)launchOptions fromScene:(nullable UIScene *)scene completionHandler:(void (^__nullable)(BOOL success))completion API_AVAILABLE(ios(13.2)) API_UNAVAILABLE(watchos, tvos, macos);
+#endif
 
 @end
 

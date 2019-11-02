@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 986879EB-03B3-3CC8-B954-0D08F0F458FD' ]
+uuids:           [ 'x86_64: 8DC460C6-2CAB-3BD7-876C-C99D1859EF99' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/BookCoverUtility.framework/Versions/A/BookCoverUtility'
-current-version: 1266
+current-version: 1277
 compatibility-version: 0
 exports:         
   - archs:           [ x86_64 ]

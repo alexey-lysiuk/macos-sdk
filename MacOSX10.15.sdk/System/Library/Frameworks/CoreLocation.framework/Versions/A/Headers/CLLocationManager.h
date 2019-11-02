@@ -127,7 +127,7 @@ API_AVAILABLE(macos(10.6), ios(2.0))
  *  Discussion:
  *      Returns YES if the device supports the heading service, otherwise NO.
  */
-+ (BOOL)headingAvailable API_AVAILABLE(ios(4.0), macos(10.7)) API_UNAVAILABLE(watchos, tvos);
++ (BOOL)headingAvailable API_AVAILABLE(ios(4.0), macos(10.7), watchos(2.0)) API_UNAVAILABLE(tvos);
 
 /*
  *  significantLocationChangeMonitoringAvailable
@@ -313,7 +313,7 @@ API_AVAILABLE(macos(10.6), ios(2.0))
  *      be notified of updates less than the stated filter value. Pass in kCLHeadingFilterNone to be
  *      notified of all updates. By default, 1 degree is used.
  */
-@property(assign, nonatomic) CLLocationDegrees headingFilter API_AVAILABLE(ios(3.0)) API_UNAVAILABLE(watchos, tvos, macos);
+@property(assign, nonatomic) CLLocationDegrees headingFilter API_AVAILABLE(ios(3.0), watchos(2.0)) API_UNAVAILABLE(tvos, macos);
 
 /*
  *  headingOrientation
@@ -324,7 +324,7 @@ API_AVAILABLE(macos(10.6), ios(2.0))
  *      CLDeviceOrientationFaceDown are ignored.
  *      
  */
-@property(assign, nonatomic) CLDeviceOrientation headingOrientation API_AVAILABLE(ios(4.0)) API_UNAVAILABLE(watchos, tvos, macos);
+@property(assign, nonatomic) CLDeviceOrientation headingOrientation API_AVAILABLE(ios(4.0), watchos(2.0)) API_UNAVAILABLE(tvos, macos);
 
 /*
  *  heading
@@ -332,7 +332,7 @@ API_AVAILABLE(macos(10.6), ios(2.0))
  *  Discussion:
  *      Returns the latest heading update received, or nil if none is available.
  */
-@property(readonly, nonatomic, copy, nullable) CLHeading *heading API_AVAILABLE(ios(4.0)) API_UNAVAILABLE(watchos, tvos, macos);
+@property(readonly, nonatomic, copy, nullable) CLHeading *heading API_AVAILABLE(ios(4.0), watchos(2.0)) API_UNAVAILABLE(tvos, macos);
 
 /*
  *  maximumRegionMonitoringDistance
@@ -491,7 +491,7 @@ API_AVAILABLE(macos(10.6), ios(2.0))
  *  Discussion:
  *      Start updating heading.
  */
-- (void)startUpdatingHeading API_AVAILABLE(ios(3.0)) API_UNAVAILABLE(watchos, tvos, macos);
+- (void)startUpdatingHeading API_AVAILABLE(ios(3.0), watchos(2.0)) API_UNAVAILABLE(tvos, macos);
 
 /*
  *  stopUpdatingHeading
@@ -499,7 +499,7 @@ API_AVAILABLE(macos(10.6), ios(2.0))
  *  Discussion:
  *      Stop updating heading.
  */
-- (void)stopUpdatingHeading API_AVAILABLE(ios(3.0)) API_UNAVAILABLE(watchos, tvos, macos);
+- (void)stopUpdatingHeading API_AVAILABLE(ios(3.0), watchos(2.0)) API_UNAVAILABLE(tvos, macos);
 
 /*
  *  dismissHeadingCalibrationDisplay
@@ -507,7 +507,7 @@ API_AVAILABLE(macos(10.6), ios(2.0))
  *  Discussion:
  *      Dismiss the heading calibration immediately.
  */
-- (void)dismissHeadingCalibrationDisplay API_AVAILABLE(ios(3.0)) API_UNAVAILABLE(watchos, tvos, macos);
+- (void)dismissHeadingCalibrationDisplay API_AVAILABLE(ios(3.0), watchos(2.0)) API_UNAVAILABLE(tvos, macos);
 
 /*
  *  startMonitoringSignificantLocationChanges

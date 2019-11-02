@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4A1A42C1-2FEC-3580-9E58-9134034076A8' ]
+uuids:           [ 'x86_64: C39BC311-A85F-357D-A824-A20C71120172' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/HealthKitUI.framework/Versions/A/HealthKitUI'
 exports:         

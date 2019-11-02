@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2AE15513-E4A9-3AE4-BF79-7A7C5F9B0D65' ]
+uuids:           [ 'x86_64: 5CBEF693-B0F5-3334-AE0C-4C9E8B89D1C6' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/UIKit.framework/Versions/A/UIKit'
 current-version: 61000
@@ -11,10 +11,10 @@ exports:
                        '/System/iOSSupport/System/Library/PrivateFrameworks/UIKitCore.framework/Versions/A/UIKitCore' ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AB00D367-522D-338F-A05F-4D85D93FC188' ]
+uuids:           [ 'x86_64: BD24F310-41FD-3736-9E4E-59CFB94F76D2' ]
 platform:        uikitformac
 install-name:    '/System/Library/PrivateFrameworks/ShareSheet.framework/Versions/A/ShareSheet'
-current-version: 1470.1
+current-version: 1496.4
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _UIActivityTypeAddToReadingList, _UIActivityTypeAirDrop, _UIActivityTypeAssignToContact, 
@@ -27,22 +27,22 @@ exports:
                        _UIActivityTypeSaveToCameraRoll, _UIActivityTypeSaveToNotes, 
                        _UIActivityTypeUserDefaults, _UIActivityViewControllerSharingExpandedNotification, 
                        __UIActivityOpenInApplicationTypeForActivityType, __UIActivityRecipientManagerServiceName, 
-                       __UINSExtensionItemUserInfoIsContentManagedKey, __UISecureDecodeCGSizeWithKeyAndDefaultSize, 
-                       __UISecureDecodeExtensionItemsWithKey, __UISecureEncodeCGSizeWithKey, 
-                       __UISecureStandardPropertyListClasses ]
+                       __UIActivityUserDefaultsManagerServiceName, __UINSExtensionItemUserInfoIsContentManagedKey, 
+                       __UISecureDecodeCGSizeWithKeyAndDefaultSize, __UISecureDecodeExtensionItemsWithKey, 
+                       __UISecureEncodeCGSizeWithKey, __UISecureStandardPropertyListClasses ]
     objc-classes:    [ UIActivity, UIActivityItemCustomization, UIActivityItemProvider, 
                        UIActivityViewController, UIAirDropNode, UIDocumentInteractionController, 
                        UISUIActivityExtensionItemData, UISUIAirDropSecurityScopedResource, 
                        UISUIOpenInByCopySecurityScopedResource, UISUISecurityContext, 
                        UISUISecurityScopedResource, _UIActivityItemCustomization, 
                        _UIActivityItemCustomizationGroup, _UIActivityRecipientManager, 
-                       _UIUserDefaultsActivityProxy ]
+                       _UIActivityUserDefaultsManager, _UIUserDefaultsActivityProxy ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C7B13273-8603-3A5B-9B07-C5889F632B89', 'x86_64: C7B13273-8603-3A5B-9B07-C5889F632B89' ]
+uuids:           [ 'x86_64: 99072103-6A73-3538-944A-5FD2AF709A78', 'x86_64: 99072103-6A73-3538-944A-5FD2AF709A78' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/UIFoundation.framework/Versions/A/UIFoundation'
-current-version: 655
+current-version: 659.5
 exports:         
   - archs:           [ x86_64 ]
     allowable-clients: [ AppKit, UIKitCore ]
@@ -168,37 +168,37 @@ exports:
                        __NSFontAttributeNames, __NSHTMLEncoding, __NSLayoutManagerObservedTextViewChangeNotification, 
                        __NSNegatedDirectionalInsetsForInsets, __NSNewTextView, __NSNonAttachmentCharacterSet, 
                        __NSOldTextView, __NSOpposingDirectionalEdgeForEdge, __NSOriginalFontAttributeName, 
-                       __NSPinnedNonOverlappingFramesForContentFrameVisibleFrame, 
-                       __NSRTreeExpansionCostScoreForFrames, __NSReadAttributedStringFromData, 
-                       __NSReadAttributedStringFromURL, __NSReadAttributedStringFromURLOrData, 
-                       __NSRectClampRectToMinimumSizeForAxis, __NSRectSubtractingRectYieldingDirectionalInsets, 
-                       __NSSizeClampToMinimumSizeForAxis, __NSStringDrawingCore, 
-                       __NSStringHasRightToLeftBaseWritingDirectionAtIndex, __NSStringHasRightToLeftCharactersInRange, 
-                       __NSStringImputedBaseWritingDirectionAtIndex, __NSXMLEncoding, 
-                       __UIAddPointValueForAxis, __UIAddSizeValueForAxis, __UIApplyDirectionalInsetsToRect, 
-                       __UIApplyOffsetFromEdgeInsetsForPoint, __UIApplyRTLTransformForFrameWithDimension, 
-                       __UIAxisDescription, __UICGVectorEqualToVectorWithTolerance, 
-                       __UIDirectionalInsetsAdd, __UIDirectionalInsetsForInsetsAlongAxis, 
-                       __UIEffectiveEdgeInsetsForSize, __UIFoundationRoundedInverseTextScalingFactor, 
-                       __UIFoundationRoundedTextScalingFactor, __UIFrameByPinningToContainerFrameEdge, 
-                       __UILeadingOffsetForInsetsAlongAxis, __UINormalizeOffsetForContainerRect, 
-                       __UINormalizeRectForPositiveOrigin, __UIOffsetFromCenteredAnchorPointForEdgesInRect, 
-                       __UIOrthogonalAxisForAxis, __UIPinnedFrameForFrameWithContainerFrameVisibleFrame, 
-                       __UIPointValueForAxis, __UIRectAddOffset, __UIRectAdjustWithAnchorPoint, 
-                       __UIRectAnchorPointForEdges, __UIRectAnchorPointForUnitAnchorPoint, 
-                       __UIRectByAnchoringSizeInContainer, __UIRectExpandByFactorAndUnitVector, 
-                       __UIRectSubtractOffset, __UISetPointValueForAxis, __UISetSizeValueForAxis, 
-                       __UISizeAdd, __UISizeEqualToSizeWithPrecision, __UISizeValueForAxis, 
-                       __UISystemFontName, __UITotalEdgeDimensionsForLayoutAxis, 
-                       __UITrailingOffsetForInsetsAlongAxis, __UIUnitAnchorPointForEdges, 
-                       ___NSGetVariantMetaFontType, ___NSTokenizerLanguageSet, ___UIFontGetExtraData, 
-                       ___objectEqual ]
+                       __NSOrthogonalAxisForAxis, __NSPinnedNonOverlappingFramesForContentFrameVisibleFrame, 
+                       __NSPointValueForAxis, __NSRTreeExpansionCostScoreForFrames, 
+                       __NSReadAttributedStringFromData, __NSReadAttributedStringFromURL, 
+                       __NSReadAttributedStringFromURLOrData, __NSRectClampRectToMinimumSizeForAxis, 
+                       __NSRectSubtractingRectYieldingDirectionalInsets, __NSSizeClampToMinimumSizeForAxis, 
+                       __NSStringDrawingCore, __NSStringHasRightToLeftBaseWritingDirectionAtIndex, 
+                       __NSStringHasRightToLeftCharactersInRange, __NSStringImputedBaseWritingDirectionAtIndex, 
+                       __NSXMLEncoding, __UIAddPointValueForAxis, __UIAddSizeValueForAxis, 
+                       __UIApplyDirectionalInsetsToRect, __UIApplyOffsetFromEdgeInsetsForPoint, 
+                       __UIApplyRTLTransformForFrameWithDimension, __UIAxisDescription, 
+                       __UICGVectorEqualToVectorWithTolerance, __UIDirectionalInsetsAdd, 
+                       __UIDirectionalInsetsForInsetsAlongAxis, __UIEffectiveEdgeInsetsForSize, 
+                       __UIFoundationRoundedInverseTextScalingFactor, __UIFoundationRoundedTextScalingFactor, 
+                       __UIFrameByPinningToContainerFrameEdge, __UILeadingOffsetForInsetsAlongAxis, 
+                       __UINormalizeOffsetForContainerRect, __UINormalizeRectForPositiveOrigin, 
+                       __UIOffsetFromCenteredAnchorPointForEdgesInRect, __UIPinnedFrameForFrameWithContainerFrameVisibleFrame, 
+                       __UIRectAddOffset, __UIRectAdjustWithAnchorPoint, __UIRectAnchorPointForEdges, 
+                       __UIRectAnchorPointForUnitAnchorPoint, __UIRectByAnchoringSizeInContainer, 
+                       __UIRectExpandByFactorAndUnitVector, __UIRectSubtractOffset, 
+                       __UISetPointValueForAxis, __UISetSizeValueForAxis, __UISizeAdd, 
+                       __UISizeEqualToSizeWithPrecision, __UISizeValueForAxis, __UISystemFontName, 
+                       __UITotalEdgeDimensionsForLayoutAxis, __UITrailingOffsetForInsetsAlongAxis, 
+                       __UIUnitAnchorPointForEdges, ___NSGetVariantMetaFontType, 
+                       ___NSTokenizerLanguageSet, ___UIFontGetExtraData, ___objectEqual ]
     objc-classes:    [ NSATSGlyphStorage, NSATSLineFragment, NSATSTypesetter, NSAttributeDictionary, 
                        NSAttributeDictionaryEnumerator, NSCIDGlyphInfo, NSCTFont, 
                        NSCTFontDescriptor, NSCTGlyphInfo, NSCollectionLayoutAnchor, 
                        NSCollectionLayoutBoundarySupplementaryItem, NSCollectionLayoutContainer, 
                        NSCollectionLayoutDecorationItem, NSCollectionLayoutDimension, 
-                       NSCollectionLayoutEdgeSpacing, NSCollectionLayoutGroup, NSCollectionLayoutGroupCustomItem, 
+                       NSCollectionLayoutEdgeSpacing, NSCollectionLayoutEnvironment, 
+                       NSCollectionLayoutGroup, NSCollectionLayoutGroupCustomItem, 
                        NSCollectionLayoutItem, NSCollectionLayoutSection, NSCollectionLayoutSize, 
                        NSCollectionLayoutSpacing, NSCollectionLayoutSupplementaryItem, 
                        NSCollectionLayoutVisibleItem, NSCollectionViewCompositionalLayout, 
@@ -235,7 +235,8 @@ exports:
                        UIQuadCurvePointFIFO, _NSASCIIArtFramesRenderer, _NSATSTypesetterGuts, 
                        _NSAttributeRun, _NSAttributes, _NSCachedAttributedString, 
                        _NSCollectionCompositionalLayoutSolver, _NSCollectionCompositionalLayoutSolverBookmarkStateSnapshotter, 
-                       _NSCollectionCompositionalLayoutSolverUpdate, _NSCollectionCompositionalSolverPreferredSizesRebaseInfo, 
+                       _NSCollectionCompositionalLayoutSolverOptions, _NSCollectionCompositionalLayoutSolverUpdate, 
+                       _NSCollectionCompositionalSolverPreferredSizesRebaseInfo, 
                        _NSCollectionLayoutAnchor, _NSCollectionLayoutAuxiliaryItemSolver, 
                        _NSCollectionLayoutAuxiliaryKey, _NSCollectionLayoutAuxiliaryOffsets, 
                        _NSCollectionLayoutBoundarySupplementaryItem, _NSCollectionLayoutDecorationItem, 
@@ -257,10 +258,10 @@ exports:
                        _NSFlowLayoutInfo, _NSFlowLayoutItem, _NSFlowLayoutRow, _NSFlowLayoutSection, 
                        _NSGenericCollectionViewUpdateItem, _NSIdentifierDiffer, _NSIdentifierDifferMovePair, 
                        _NSRTree, _NSTextStorageSideData, _NSUIAnimator, _UICache, 
-                       _UICollectionCompositionalLayoutSolverOptions, _UIFontCacheKey, 
-                       _UIFontDescriptorCacheKey, _UIFontNameCacheKey, _UIFontSystemCacheKey, 
-                       _UIFontTextStyleCacheKey, __NSATSStringSegment, __NSDiffableDataSource, 
-                       __NSDiffableDataSourceSnapshot, __NSFontExtraData, __NSFontTypefaceInfo ]
+                       _UIFontCacheKey, _UIFontDescriptorCacheKey, _UIFontNameCacheKey, 
+                       _UIFontSystemCacheKey, _UIFontTextStyleCacheKey, __NSATSStringSegment, 
+                       __NSDiffableDataSource, __NSDiffableDataSourceSnapshot, __NSFontExtraData, 
+                       __NSFontTypefaceInfo ]
     objc-ivars:      [ NSATSTypesetter.attributedString, NSATSTypesetter.currentParagraphStyle, 
                        NSATSTypesetter.currentTextContainer, NSATSTypesetter.currentTextContainerIndex, 
                        NSATSTypesetter.currentTextContainerSize, NSATSTypesetter.layoutManager, 
@@ -390,9 +391,9 @@ exports:
                        NSRTFWriter._curEncoding, NSRTFWriter._curFont, NSRTFWriter._curForegroundColor, 
                        NSRTFWriter._curKern, NSRTFWriter._curParagraphStyle, NSRTFWriter._curSuperscript, 
                        NSRTFWriter._curTraits, NSRTFWriter._curUnderlineStyle, NSRTFWriter._docAttrs, 
-                       NSRTFWriter._document, NSRTFWriter._fontNames, NSRTFWriter._layoutSections, 
-                       NSRTFWriter._listRanges, NSRTFWriter._output, NSRTFWriter._rightMargin, 
-                       NSRTFWriter._rwFlags, NSRTFWriter._textScalingConversionSource, 
+                       NSRTFWriter._document, NSRTFWriter._fontNames, NSRTFWriter._fontObjects, 
+                       NSRTFWriter._layoutSections, NSRTFWriter._listRanges, NSRTFWriter._output, 
+                       NSRTFWriter._rightMargin, NSRTFWriter._rwFlags, NSRTFWriter._textScalingConversionSource, 
                        NSRTFWriter._textScalingConversionTarget, NSShadow._reserved, 
                        NSShadow._reservedFloat, NSShadow._shadowBlurRadius, NSShadow._shadowColor, 
                        NSShadow._shadowFlags, NSShadow._shadowOffset, NSStringDrawingTextStorageSettings._settings, 
@@ -500,10 +501,10 @@ exports:
                         __ZTSNSt3__120__shared_ptr_emplaceINS_6vectorIlNS_9allocatorIlEEEENS2_IS4_EEEE ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 87BF779C-FA24-314D-8150-45C23D665EE1' ]
+uuids:           [ 'x86_64: 2B4D08EF-8B67-3E3B-BF56-A9753F7185AE' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/PrivateFrameworks/DocumentManager.framework/Versions/A/DocumentManager'
-current-version: 168
+current-version: 171.2.4
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _DOCAdaptSizeToRect, _DOCAlertItemIsNotReadable, _DOCAlertUserTheNetworkIsNotReachable, 
@@ -575,7 +576,7 @@ exports:
                        UIDocumentBrowserTransitionController, UIDocumentBrowserViewController ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2D6DD851-5745-3EE8-ABB4-70C1F492F0F8' ]
+uuids:           [ 'x86_64: C78CAED8-246E-393F-979D-21CAEAC39034' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/PrivateFrameworks/UIKitCore.framework/Versions/A/UIKitCore'
 current-version: 61000
@@ -800,9 +801,10 @@ exports:
                        _UIDrawNavBarBackgroundTint, _UIEdgeInsetsAdd, _UIEdgeInsetsFromApplicationSupportDisplayEdgeInsetsWrapper, 
                        _UIEdgeInsetsFromString, _UIEdgeInsetsMakeWithEdges, _UIEdgeInsetsMax, 
                        _UIEdgeInsetsMin, _UIEdgeInsetsReplace, _UIEdgeInsetsRotate, 
-                       _UIEdgeInsetsSubtract, _UIEdgeInsetsZero, _UIExtendedSystemSpace, 
-                       _UIFloatRangeInfinite, _UIFloatRangeIsEqualToRange, _UIFloatRangeIsInfinite, 
-                       _UIFloatRangeZero, _UIFloorToScale, _UIFloorToViewScale, _UIFlowLayoutCommonRowHorizontalAlignmentKey, 
+                       _UIEdgeInsetsSubtract, _UIEdgeInsetsZero, _UIEditableAlertWindowLevel, 
+                       _UIExtendedSystemSpace, _UIFloatRangeInfinite, _UIFloatRangeIsEqualToRange, 
+                       _UIFloatRangeIsInfinite, _UIFloatRangeZero, _UIFloorToScale, 
+                       _UIFloorToViewScale, _UIFlowLayoutCommonRowHorizontalAlignmentKey, 
                        _UIFlowLayoutLastRowHorizontalAlignmentKey, _UIFlowLayoutRowVerticalAlignmentKey, 
                        _UIFocusDidUpdateNotification, _UIFocusGetSensitivitySetting, 
                        _UIFocusMovementDidFailNotification, _UIFocusSetSensitivitySetting, 
@@ -1082,13 +1084,14 @@ exports:
                        _UIKBKeyInteractionTypeUnderlineStr, _UIKBKeyInteractionTypeUndoStr, 
                        _UIKBKeyVariantsTypeAccentsStr, _UIKBKeyVariantsTypeBIUStr, 
                        _UIKBKeyVariantsTypeCurrencyStr, _UIKBKeyVariantsTypeEmailStr, 
-                       _UIKBKeyVariantsTypeImmediateAccentsStr, _UIKBKeyVariantsTypeInputModesStr, 
-                       _UIKBKeyVariantsTypeKeyplaneAccentsStr, _UIKBKeyVariantsTypePrepopulatedStr, 
-                       _UIKBKeyVariantsTypeSkinToneEmojiStr, _UIKBKeyVariantsTypeURLStr, 
-                       _UIKBKeyboardAutomaticDimension, _UIKBKeyboardDrawsOpaque, 
-                       _UIKBKeyboardIsEmailKeyboard, _UIKBKeyboardIsLandscape, _UIKBKeyboardIsPortrait, 
-                       _UIKBKeyboardIsSplit, _UIKBKeyboardIsURLKeyboard, _UIKBLegacyCandidateGridCellAlternativeText, 
-                       _UIKBLegacyCandidateGridCellHighlightedBackgroundGradient, 
+                       _UIKBKeyVariantsTypeExtendedSkinToneEmojiStr, _UIKBKeyVariantsTypeImmediateAccentsStr, 
+                       _UIKBKeyVariantsTypeInputModesStr, _UIKBKeyVariantsTypeKeyplaneAccentsStr, 
+                       _UIKBKeyVariantsTypePrepopulatedExtendedSkinToneEmojiStr, 
+                       _UIKBKeyVariantsTypePrepopulatedSkinToneEmojiStr, _UIKBKeyVariantsTypeSkinToneEmojiStr, 
+                       _UIKBKeyVariantsTypeURLStr, _UIKBKeyboardAutomaticDimension, 
+                       _UIKBKeyboardDrawsOpaque, _UIKBKeyboardIsEmailKeyboard, _UIKBKeyboardIsLandscape, 
+                       _UIKBKeyboardIsPortrait, _UIKBKeyboardIsSplit, _UIKBKeyboardIsURLKeyboard, 
+                       _UIKBLegacyCandidateGridCellAlternativeText, _UIKBLegacyCandidateGridCellHighlightedBackgroundGradient, 
                        _UIKBLegacyCandidateGridCellHighlightedBackgroundGradientEnd, 
                        _UIKBLegacyCandidateGridCellHighlightedBackgroundGradientStart, 
                        _UIKBLegacyCandidateGridCellOutline, _UIKBLegacyCandidateGridCellOutlineShadow, 
@@ -1166,13 +1169,13 @@ exports:
                        _UIKeyboardCheckSpellingPossibleForInputMode, _UIKeyboardCurrencyVariants, 
                        _UIKeyboardCurrentInputModeAllowsChineseOrJapaneseReanalysisForText, 
                        _UIKeyboardDeviceSupportsSplit, _UIKeyboardDictationDockItemIdentifier, 
-                       _UIKeyboardDictationIconImageName, _UIKeyboardDidChangeFrameNotification, 
-                       _UIKeyboardDidHideNotification, _UIKeyboardDidShowNotification, 
-                       _UIKeyboardDisableAutomaticAppearance, _UIKeyboardDisableAutomaticAppearanceForCanvas, 
-                       _UIKeyboardDisableAutomaticAppearanceForWindowScene, _UIKeyboardEmojiCategoryKey, 
-                       _UIKeyboardEmojiIconImageName, _UIKeyboardEnableAutomaticAppearance, 
-                       _UIKeyboardEnableAutomaticAppearanceForCanvas, _UIKeyboardEnableAutomaticAppearanceForWindowScene, 
-                       _UIKeyboardEnabledInputModesAllowChineseTransliterationForText, 
+                       _UIKeyboardDictationIconFilledImageName, _UIKeyboardDictationIconImageName, 
+                       _UIKeyboardDidChangeFrameNotification, _UIKeyboardDidHideNotification, 
+                       _UIKeyboardDidShowNotification, _UIKeyboardDisableAutomaticAppearance, 
+                       _UIKeyboardDisableAutomaticAppearanceForCanvas, _UIKeyboardDisableAutomaticAppearanceForWindowScene, 
+                       _UIKeyboardEmojiCategoryKey, _UIKeyboardEmojiIconImageName, 
+                       _UIKeyboardEnableAutomaticAppearance, _UIKeyboardEnableAutomaticAppearanceForCanvas, 
+                       _UIKeyboardEnableAutomaticAppearanceForWindowScene, _UIKeyboardEnabledInputModesAllowChineseTransliterationForText, 
                        _UIKeyboardEnabledInputModesAllowOneToManyShortcuts, _UIKeyboardFinishRotation, 
                        _UIKeyboardFontFallbackLanguageForInputMode, _UIKeyboardForceOrderInAutomatic, 
                        _UIKeyboardForceOrderInAutomaticAnimated, _UIKeyboardForceOrderInAutomaticFromDirectionWithDuration, 
@@ -1291,15 +1294,15 @@ exports:
                        _UIMenuAlignment, _UIMenuApplication, _UIMenuBringAllToFront, 
                        _UIMenuClose, _UIMenuControllerDidHideMenuNotification, _UIMenuControllerDidShowMenuNotification, 
                        _UIMenuControllerMenuFrameDidChangeNotification, _UIMenuControllerWillHideMenuNotification, 
-                       _UIMenuControllerWillShowMenuNotification, _UIMenuEdit, _UIMenuFile, 
-                       _UIMenuFind, _UIMenuFont, _UIMenuFormat, _UIMenuFullscreen, 
-                       _UIMenuHelp, _UIMenuHide, _UIMenuLearn, _UIMenuLookup, _UIMenuMinimizeAndZoom, 
-                       _UIMenuNewScene, _UIMenuPreferences, _UIMenuPrint, _UIMenuQuit, 
-                       _UIMenuReplace, _UIMenuRoot, _UIMenuServices, _UIMenuShare, 
-                       _UIMenuSpeech, _UIMenuSpelling, _UIMenuSpellingOptions, _UIMenuSpellingPanel, 
-                       _UIMenuStandardEdit, _UIMenuSubstitutionOptions, _UIMenuSubstitutions, 
-                       _UIMenuSubstitutionsPanel, _UIMenuText, _UIMenuTextColor, 
-                       _UIMenuTextSize, _UIMenuTextStyle, _UIMenuTextStylePasteboard, 
+                       _UIMenuControllerWillShowMenuNotification, _UIMenuDeferredMenuPlaceholder, 
+                       _UIMenuEdit, _UIMenuFile, _UIMenuFind, _UIMenuFont, _UIMenuFormat, 
+                       _UIMenuFullscreen, _UIMenuHelp, _UIMenuHide, _UIMenuLearn, 
+                       _UIMenuLookup, _UIMenuMinimizeAndZoom, _UIMenuNewScene, _UIMenuPreferences, 
+                       _UIMenuPrint, _UIMenuQuit, _UIMenuReplace, _UIMenuRoot, _UIMenuServices, 
+                       _UIMenuShare, _UIMenuSpeech, _UIMenuSpelling, _UIMenuSpellingOptions, 
+                       _UIMenuSpellingPanel, _UIMenuStandardEdit, _UIMenuSubstitutionOptions, 
+                       _UIMenuSubstitutions, _UIMenuSubstitutionsPanel, _UIMenuText, 
+                       _UIMenuTextColor, _UIMenuTextSize, _UIMenuTextStyle, _UIMenuTextStylePasteboard, 
                        _UIMenuToolbar, _UIMenuTransformations, _UIMenuUndoRedo, _UIMenuView, 
                        _UIMenuWindow, _UIMenuWritingDirection, _UIMidPointBetweenPoints, 
                        _UIMinimumKeepAliveTimeout, _UIMinutelessTimeFormat, _UIMonthDayFormat, 
@@ -1503,7 +1506,8 @@ exports:
                        __UIApplicationIsExtension, __UIApplicationIsWebKitLoaded, 
                        __UIApplicationLaunchOptionsOpenAsDownloadKey, __UIApplicationLinkedOnOrAfter, 
                        __UIApplicationLinkedOnVersion, __UIApplicationLoadWebKit, 
-                       __UIApplicationOpenURLOptionsSourceProcessHandleKey, __UIApplicationRunLoopMode, 
+                       __UIApplicationOpenURLOptionIgnoreUniversalLinks, __UIApplicationOpenURLOptionsSourceProcessHandleKey, 
+                       __UIApplicationPackedDeploymentVersionFromString, __UIApplicationRunLoopMode, 
                        __UIApplicationRunLoopModePopNotification, __UIApplicationRunLoopModePushNotification, 
                        __UIApplicationRunLoopModeRequesterUserInfoKey, __UIApplicationSceneConnectionHandler, 
                        __UIApplicationSceneDisconnectionHandler, __UIApplicationSceneLifecycleActionTypeDescription, 
@@ -1651,6 +1655,7 @@ exports:
                        __UIMenuControllerWillShowReplacementsMenuNotification, __UIMenuSystemShouldRebuildNotification, 
                        __UIMenuSystemShouldRevalidateNotification, __UIMinimumHeightForSizeClasses, 
                        __UIMinimumWidthForSizeClasses, __UIMotionEffectsEnabledDidChangeNotification, 
+                       __UINSActivitiesFromUIActivities, __UINSActivityItemSourcesFromUIActivityItems, 
                        __UINavBarButtonImage, __UINavigationBarEnableBasicChromeless, 
                        __UINavigationBarUsesDynamicType, __UINavigationButtonAccessibilityBackground, 
                        __UINavigationButtonAccessibilityBackgroundCapInsets, __UINavigationButtonUpdateAccessibilityBackgrounds, 
@@ -1920,11 +1925,11 @@ exports:
                        UIPasteboard, UIPencilInteraction, UIPercentDrivenInteractiveTransition, 
                        UIPeripheralHost, UIPickerContentView, UIPickerView, UIPinchGestureRecognizer, 
                        UIPopoverBackgroundView, UIPopoverController, UIPopoverPresentationController, 
-                       UIPresentationController, UIPress, UIPressesEvent, UIPreviewAction, 
-                       UIPreviewActionGroup, UIPreviewForceInteractionProgress, UIPreviewInteraction, 
-                       UIPreviewInteractionController, UIPreviewItemController, UIPreviewMenuItem, 
-                       UIPreviewParameters, UIPreviewPresentationController, UIPreviewTarget, 
-                       UIPrintFormatter, UIPrintInfo, UIPrintInteractionController, 
+                       UIPresentationController, UIPress, UIPressInfo, UIPressesEvent, 
+                       UIPreviewAction, UIPreviewActionGroup, UIPreviewForceInteractionProgress, 
+                       UIPreviewInteraction, UIPreviewInteractionController, UIPreviewItemController, 
+                       UIPreviewMenuItem, UIPreviewParameters, UIPreviewPresentationController, 
+                       UIPreviewTarget, UIPrintFormatter, UIPrintInfo, UIPrintInteractionController, 
                        UIPrintPageRenderer, UIPrintPaper, UIPrinter, UIPrinterPickerController, 
                        UIProgressHUD, UIProgressIndicator, UIProgressView, UIPushBehavior, 
                        UIRefreshControl, UIRegion, UIRemoveControl, UIResponder, 
@@ -2013,7 +2018,7 @@ exports:
                        _UICollectionViewListLayoutInvalidationContext, _UICollectionViewListLayoutSection, 
                        _UICollectionViewListLayoutSectionConfiguration, _UICommandIdentifier, 
                        _UIContentUnavailableView, _UIContextBinder, _UIContextBinderSubstrate, 
-                       _UIContextMenuInteraction, _UIContextMenuPreviewActionGroup, 
+                       _UIContextMenuAccessoryView, _UIContextMenuInteraction, _UIContextMenuPreviewActionGroup, 
                        _UIContextMenuStyle, _UIContextualMenuGestureRecognizer, _UICopyConfiguration, 
                        _UICoreUICatalogColorWrapper, _UICoreUIEffect, _UICurrentContextPresentationController, 
                        _UICustomBlurEffect, _UIDataTransferMonitor, _UIDataTransferRequest, 
@@ -2262,7 +2267,8 @@ exports:
                        UIScrollAnimation._startPoint, UISearchResultsTableView._offsetForNoResultsMessage, 
                        UISearchResultsTableView._topShadowView, UIStatusBarAnimationParameters._animationFactory, 
                        UIStatusBarAnimationParameters._curve, UIStatusBarAnimationParameters._delay, 
-                       UIStatusBarAnimationParameters._duration, UIStatusBarHideAnimationParameters._additionalSlideHeight, 
+                       UIStatusBarAnimationParameters._duration, UIStatusBarAnimationParameters._skipFencing, 
+                       UIStatusBarHideAnimationParameters._additionalSlideHeight, 
                        UIStatusBarHideAnimationParameters._hideAnimation, UIStatusBarOrientationAnimationParameters._orientationAnimation, 
                        UIStatusBarServer._source, UIStatusBarServer._statusBar, UIStatusBarStyleAnimationParameters._styleAnimation, 
                        UIStatusBarWindow._orientation, UIStatusBarWindow._statusBar, 

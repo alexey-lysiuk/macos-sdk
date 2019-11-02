@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0D3D28C7-9C5B-39A6-A184-B000050F4B63' ]
+uuids:           [ 'x86_64: 6CDA5BB0-65BA-3C9D-896E-B5BC410EEA8C' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AmbientDisplay.framework/Versions/A/AmbientDisplay'
 current-version: 110
@@ -162,13 +162,13 @@ exports:
                        _saveSettingsToPreferencesByDisplayID, _saveSettingsToPreferencesByDisplayIDLegacy, 
                        _saveSettingsToPreferencesByDisplayUUID, _saveSettingsToPreferencesByDisplayUUIDLegacy, 
                        _scalarBlackPoint, _setALSLMUdataPort, _setALSLMUdataPortLegacy, 
-                       _setALSserviceForDisplayID, _setAllowableAdaptationOverDisplayBrightnessRatio, 
-                       _setAndAnimateToGammaHelper, _setAndAnimateToGammaHelperLegacy, 
-                       _setAndApplyALSluxToAllDevicesLegacy, _setAndApplyALSluxToDevice, 
-                       _setAndApplyALSluxToDeviceWithDisplayID, _setBlackPointAndGammaOnCurrentIntention, 
-                       _setBlackPointAndGammaOnCurrentIntentionLegacy, _setCompensationFlagOnDisplayID, 
-                       _setCompensationFlagOnDisplayIDLegacy, _setDisplayParameters, 
-                       _setDisplayParametersLegacy, _setDisplayRemovedStateAndUnregisterCallbacks, 
+                       _setALSluxOnDeviceWithDisplayID, _setALSserviceForDisplayID, 
+                       _setAllowableAdaptationOverDisplayBrightnessRatio, _setAndAnimateToGammaHelper, 
+                       _setAndAnimateToGammaHelperLegacy, _setAndApplyALSluxToAllDevicesLegacy, 
+                       _setAndApplyALSluxToDevice, _setAndApplyALSluxToDeviceWithDisplayID, 
+                       _setBlackPointAndGammaOnCurrentIntention, _setBlackPointAndGammaOnCurrentIntentionLegacy, 
+                       _setCompensationFlagOnDisplayID, _setCompensationFlagOnDisplayIDLegacy, 
+                       _setDisplayParameters, _setDisplayParametersLegacy, _setDisplayRemovedStateAndUnregisterCallbacks, 
                        _setDisplayRemovedStateLegacy, _setHIDserviceController, _setIntention, 
                        _setIntentionLegacy, _setLuxSourceHIDlegacy, _setNativeWhitePoint, 
                        _setNativeWhitePointLegacy, _setOptimizationMode, _setOptimizationModeLegacy, 

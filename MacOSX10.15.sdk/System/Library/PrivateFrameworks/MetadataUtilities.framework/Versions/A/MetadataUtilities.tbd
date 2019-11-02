@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2504794C-7131-307A-92FE-84C7F39120BB', 'x86_64: 2504794C-7131-307A-92FE-84C7F39120BB' ]
+uuids:           [ 'x86_64: 8957F147-9371-3728-896E-FC517AC7E86E', 'x86_64: 8957F147-9371-3728-896E-FC517AC7E86E' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/MetadataUtilities.framework/Versions/A/MetadataUtilities'
-current-version: 2061
+current-version: 2074.4
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _MDCopyBestAvailableLanguage, _MDCreateFilterGenerator, _MDGetBestAvailableLanguage, 
@@ -19,6 +19,7 @@ exports:
                        _MDRetrieveBestAvailableLanguage, _MDSPathFilterDefineFieldPtr, 
                        _MDTokenizerCreate, _MDTokenizerDispose, _MDTokenizerGetTokenRanges, 
                        _MDTokenizerGetTokenRangesWithTranscriptionOptional, _MDTokenizerGetTokens, 
+                       __MDChildPlistBytesContextCreate, __MDChildPlistBytesContextDestroy, 
                        __MDLogForCategoryDefault, __MDPathFilterDumpRawFilterInternal, 
                        __MDPerf_IndexingLog, __MDPerf_LifeCycleLog, __MDPerf_QueryLog, 
                        __MDPlistArrayGetCount, __MDPlistArrayGetPlistObjectAtIndex, 

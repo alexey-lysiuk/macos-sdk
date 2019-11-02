@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 82CB4F67-06AE-3371-9E94-399E4BDDBB97', 'x86_64: 82CB4F67-06AE-3371-9E94-399E4BDDBB97' ]
+uuids:           [ 'x86_64: 77EB08CE-419B-38D5-9160-C1D4D3EE5131', 'x86_64: 77EB08CE-419B-38D5-9160-C1D4D3EE5131' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AppleSRP.framework/Versions/A/AppleSRP'
 exports:         

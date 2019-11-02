@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7BFA5B2A-8C21-3470-ACAE-67EE431F783F', 'x86_64: 7BFA5B2A-8C21-3470-ACAE-67EE431F783F' ]
+uuids:           [ 'x86_64: D5D50BCE-287B-3C95-8F7E-B85182D64A97', 'x86_64: D5D50BCE-287B-3C95-8F7E-B85182D64A97' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SpotlightIndex.framework/Versions/A/SpotlightIndex'
-current-version: 2061
+current-version: 2074.4
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _RLEOIDArrayAddOid, _RLEOIDArrayAddOid_locked, _RLEOIDArrayAddOids, 
@@ -30,20 +30,21 @@ exports:
                        _SIInitialIndexingEnded, _SIInitialIndexingStarted, _SIMatch, 
                        _SIMatchWithFuzzyIndicies, _SIMatcherCreate, _SIMatcherDispose, 
                        _SIMigrateIndex, _SIMoveDirectories, _SIMoveFiles, _SINotePermChange, 
-                       _SIOpenIndex, _SIOpenIndexAtPathWithCallbacks, _SIPathFilterCreate, 
-                       _SIPathFilterEvaluate, _SIPathFilterFilter, _SIPersistentIDStoreCheckAccessAndScopesForOIDs, 
-                       _SIPersistentIDStoreCheckSandboxForOIDs, _SIPersistentIDStoreClose, 
-                       _SIPersistentIDStoreCreate, _SIPersistentIDStoreGetCredential, 
-                       _SIPersistentIDStoreGetFastPathForOid, _SIPersistentIDStoreGetOIDForCPath, 
-                       _SIPersistentIDStoreGetOidPathForOid, _SIPersistentIDStoreGetOidPathForPath, 
-                       _SIPersistentIDStoreGetParentForOid, _SIPersistentIDStoreGetRealPathForOid, 
-                       _SIPersistentIDStoreGetTimeMachinePath, _SIPersistentIDStoreIsLocal, 
-                       _SIPersistentIDStoreItemIdentifier, _SIPersistentIDStoreRename, 
-                       _SIPersistentIDStoreSetRootPath, _SIPersistentIDStoreSetRootPath2, 
-                       _SIPersistentIDStoreSupportsDirMap, _SIPersistentIDStoreSync, 
-                       _SIPossibleMoves, _SIPossibleMovesBulk, _SIPreHeatIndex, _SIPreHeatPermissions, 
-                       _SIProcessTerminating, _SIQueryAddResultFilter, _SIQueryAddResults, 
-                       _SIQueryCreate, _SIQueryCreateWithItems, _SIQueryCreateWithItemsAndCompletionString, 
+                       _SIOpenIndex, _SIOpenIndexAtPathWithCallbacks, _SIOutstandingPSIDCalls, 
+                       _SIPathFilterCreate, _SIPathFilterEvaluate, _SIPathFilterFilter, 
+                       _SIPersistentIDStoreCheckAccessAndScopesForOIDs, _SIPersistentIDStoreCheckSandboxForOIDs, 
+                       _SIPersistentIDStoreClose, _SIPersistentIDStoreCreate, _SIPersistentIDStoreDelete, 
+                       _SIPersistentIDStoreGetCredential, _SIPersistentIDStoreGetFastPathForOid, 
+                       _SIPersistentIDStoreGetOIDForCPath, _SIPersistentIDStoreGetOidPathForOid, 
+                       _SIPersistentIDStoreGetOidPathForPath, _SIPersistentIDStoreGetParentForOid, 
+                       _SIPersistentIDStoreGetRealPathForOid, _SIPersistentIDStoreGetTimeMachinePath, 
+                       _SIPersistentIDStoreIsLocal, _SIPersistentIDStoreItemIdentifier, 
+                       _SIPersistentIDStoreRename, _SIPersistentIDStoreSetRootPath, 
+                       _SIPersistentIDStoreSetRootPath2, _SIPersistentIDStoreSupportsDirMap, 
+                       _SIPersistentIDStoreSync, _SIPossibleMoves, _SIPossibleMovesBulk, 
+                       _SIPreHeatIndex, _SIPreHeatPermissions, _SIProcessTerminating, 
+                       _SIQueryAddResultFilter, _SIQueryAddResults, _SIQueryCreate, 
+                       _SIQueryCreateWithItems, _SIQueryCreateWithItemsAndCompletionString, 
                        _SIQueryCreateWithItemsAndCompletionStringWithCurrentTime, 
                        _SIQueryGetUniqueId, _SIQueryRelease, _SIQueryRetain, _SIQuerySetBatchingParameters, 
                        _SIQuerySetDominantRankingQueryCount, _SIQuerySetFuzzyQueryInfo, 
@@ -72,7 +73,7 @@ exports:
                        __SICooldownIndexFilesForMerge, __SICopyPropertyIDMap, __SIDirectoryStoreIterate, 
                        __SIFlushAndSyncIndex, __SIGetAllOids, __SIGetErrorString, 
                        __SIGetLastUsedDate, __SIGetRecoverTimeStamp, __SIIssueBadIndex, 
-                       __SIIssueCacheCleanup, __SIIssueFlush, __SIIssueFullMerge, 
+                       __SIIssueCacheCleanup, __SIIssueDefrag, __SIIssueFlush, __SIIssueFullMerge, 
                        __SIIssueFullMergeWithGroup, __SIIssueMerge, __SIIssueRecovery, 
                        __SIIssueSchedulerDump, __SIIssueSizeRepair, __SIIssueSplit, 
                        __SIIssueVerify, __SIMinimizeDiskSpace, __SIOpenIndexFilesForMerge, 

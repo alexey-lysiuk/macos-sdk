@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8C1E696A-86DA-3F26-B7C5-F3D678C809FD' ]
+uuids:           [ 'x86_64: D26A2548-EEC7-35AC-81B8-46D2BB762B63' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/JavaScriptOSA.framework/Versions/A/JavaScriptOSA'
 exports:         

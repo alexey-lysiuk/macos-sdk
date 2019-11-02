@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F1969C44-92AC-3240-9CA8-A2F636A3BABA', 'x86_64: F1969C44-92AC-3240-9CA8-A2F636A3BABA' ]
+uuids:           [ 'x86_64: DE3E8323-4F86-3293-A793-D3AA0ACA8804', 'x86_64: DE3E8323-4F86-3293-A793-D3AA0ACA8804' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/WirelessDiagnostics.framework/Versions/A/Libraries/libprotobuf-lite.dylib'
 exports:         

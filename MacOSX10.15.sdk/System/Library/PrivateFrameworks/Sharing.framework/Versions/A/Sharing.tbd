@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3A21737C-7AD2-3F25-BAEC-1B886E950984', 'x86_64: 3A21737C-7AD2-3F25-BAEC-1B886E950984' ]
+uuids:           [ 'x86_64: 509EE7C8-C096-372E-B1CC-1CBB7B59DFEF', 'x86_64: 509EE7C8-C096-372E-B1CC-1CBB7B59DFEF' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/Sharing.framework/Versions/A/Sharing'
-current-version: 1470.1
+current-version: 1496.4
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _NSDataFromHexString, _NSStringLooksLikeBTAddress, _RPCompanionLinkDeviceIsEqualToSFDevice, 
@@ -142,13 +142,13 @@ exports:
                        _SFNodeSetURL, _SFNodeSetUserName, _SFNodeSetWorkgroup, _SFNodeSetWorkgroups, 
                        _SFNodeSupportsAskToUse, _SFNodeSupportsCredentials, _SFNodeSupportsFMF, 
                        _SFNodeSupportsFileSharing, _SFNodeSupportsIris, _SFNodeSupportsMixedTypes, 
-                       _SFNodeSupportsPasses, _SFNodeSupportsScreenSharing, _SFNonLocalizedString, 
-                       _SFNormalizeEmailAddress, _SFNormalizePhoneNumber, _SFNormalizedUserIdentifiersForContactIdentifier, 
-                       _SFNormalizedUserIdentifiersForContactIdentifierEx, _SFNotificationKeyConnectionState, 
-                       _SFNotificationNamePipeConnectionStateChanged, _SFOperationCancel, 
-                       _SFOperationCopyProperty, _SFOperationCreate, _SFOperationGetTypeID, 
-                       _SFOperationResume, _SFOperationSetClient, _SFOperationSetDispatchQueue, 
-                       _SFOperationSetProperty, _SFPairedUnlockStateChangedNotification, 
+                       _SFNodeSupportsPasses, _SFNodeSupportsScreenSharing, _SFNonBreakingStringFromDeviceName, 
+                       _SFNonLocalizedString, _SFNormalizeEmailAddress, _SFNormalizePhoneNumber, 
+                       _SFNormalizedUserIdentifiersForContactIdentifier, _SFNormalizedUserIdentifiersForContactIdentifierEx, 
+                       _SFNotificationKeyConnectionState, _SFNotificationNamePipeConnectionStateChanged, 
+                       _SFOperationCancel, _SFOperationCopyProperty, _SFOperationCreate, 
+                       _SFOperationGetTypeID, _SFOperationResume, _SFOperationSetClient, 
+                       _SFOperationSetDispatchQueue, _SFOperationSetProperty, _SFPairedUnlockStateChangedNotification, 
                        _SFPasswordSharingAvailabilityNotification, _SFRTIDataPayloadForData, 
                        _SFRemoteHotspotNetworkTypeHSDPA, _SFRemoteTextInputPayloadFromLegacyAPI, 
                        _SFRemoteTextInputPayloadToLegacyAPI, _SFRemovableSystemAppAvailable, 
@@ -193,7 +193,7 @@ exports:
                        _kSFAppleIDClientPersonInfoAccountIdentifierCFKey, _kSFAppleIDClientPersonInfoAltDSIDCFKey, 
                        _kSFAppleIDClientPersonInfoCertificateStatusCFKey, _kSFAppleIDClientPersonInfoMatchedValueCFKey, 
                        _kSFBrowserKindAirDrop, _kSFBrowserKindNetwork, _kSFBrowserKindPrinter, 
-                       _kSFBrowserKindRemoteDisc, _kSFBrowserKindSuggestion, _kSFBrowserOptionsBundleIDKey, 
+                       _kSFBrowserKindRemoteDisc, _kSFBrowserOptionsBundleIDKey, 
                        _kSFBrowserOptionsPhotosAssetIDsKey, _kSFBrowserOptionsURLsBeingSharedKey, 
                        _kSFBrowserPreferencesAllEnabled, _kSFBrowserPreferencesBackToMyMacEnabled, 
                        _kSFBrowserPreferencesBonjourEnabled, _kSFBrowserPreferencesConnectedEnabled, 

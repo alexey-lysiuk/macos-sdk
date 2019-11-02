@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B8EA7905-0685-317F-ACD2-27346DF0BA11', 'x86_64: B8EA7905-0685-317F-ACD2-27346DF0BA11' ]
+uuids:           [ 'x86_64: C95CC58E-35E7-3828-AA2A-6EED73C12DE5', 'x86_64: C95CC58E-35E7-3828-AA2A-6EED73C12DE5' ]
 platform:        zippered
 install-name:    '/usr/lib/system/libsystem_notify.dylib'
 current-version: 241

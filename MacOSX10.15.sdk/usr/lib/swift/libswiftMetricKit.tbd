@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EEA63C7E-27F9-3B8A-AB44-2A4138C7FDF5', 'x86_64: EEA63C7E-27F9-3B8A-AB44-2A4138C7FDF5' ]
+uuids:           [ 'x86_64: 072934C5-7AE1-3040-B643-354390F3CB1D', 'x86_64: 072934C5-7AE1-3040-B643-354390F3CB1D' ]
 platform:        zippered
 install-name:    '/usr/lib/swift/libswiftMetricKit.dylib'
 current-version: 0

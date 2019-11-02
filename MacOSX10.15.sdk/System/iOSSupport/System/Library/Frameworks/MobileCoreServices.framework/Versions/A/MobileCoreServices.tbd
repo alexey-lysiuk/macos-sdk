@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 41F36C53-D776-33A2-BF9D-5CFFD6FAC232' ]
+uuids:           [ 'x86_64: AA558F63-E75C-3F9B-A899-AD0917FF981D' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/MobileCoreServices.framework/Versions/A/MobileCoreServices'
-current-version: 1065.2
+current-version: 1069.11
 exports:         
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices' ]

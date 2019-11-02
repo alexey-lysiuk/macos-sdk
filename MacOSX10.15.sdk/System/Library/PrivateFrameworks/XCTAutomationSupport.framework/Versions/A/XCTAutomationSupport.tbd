@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6EF83FB2-3603-3E7E-9C95-6F1B82C05369', 'x86_64: 6EF83FB2-3603-3E7E-9C95-6F1B82C05369' ]
+uuids:           [ 'x86_64: 4A7CC8CA-7598-36BD-8F0F-9190AFC9FD6C', 'x86_64: 4A7CC8CA-7598-36BD-8F0F-9190AFC9FD6C' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/XCTAutomationSupport.framework/Versions/A/XCTAutomationSupport'
 exports:         
@@ -23,6 +23,8 @@ exports:
                        _XCTASSetDebugLogger, _XCTAccessibilityErrorKey, _XCTAccessibilityFrameworkAssertThreadRequirement, 
                        _XCTAccessibilityFrameworkCanAccessElement, _XCTApplicationStateFromBKSApplicationState, 
                        _XCTAutomationSupportErrorDomain, _XCTCapabilityAcceptRemoteConnection, 
+                       _XCTCapabilityElementIndexingTransformer, _XCTCapabilityElementIndexingTransformer_VersionWithCorrectOrdering, 
+                       _XCTCapabilityElementIndexingTransformer_VersionWithRelatedElements, 
                        _XCTCapabilityEvaluateQuery, _XCTCapabilityFetchAXAttributes, 
                        _XCTCapabilityNotifyAnimationsIdle, _XCTCapabilityNotifyMainRunLoopIdle, 
                        _XCTDefaultIdentifierFromSubrole, _XCTElementTypeFromAXAutomationType, 

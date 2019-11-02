@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5F1ECAA6-4514-36A4-AD7C-12F10B45543E' ]
+uuids:           [ 'x86_64: 974965F3-662B-36C3-A996-1F0DE25442E6' ]
 platform:        macosx
 install-name:    '/usr/lib/libecpg.6.dylib'
 current-version: 6.5

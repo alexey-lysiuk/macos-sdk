@@ -1,7 +1,7 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64, x86_64h ]
-uuids:           [ 'x86_64: 6BBAD2ED-FBAE-37AA-BF92-0A60BA837B1F', 'x86_64: 6BBAD2ED-FBAE-37AA-BF92-0A60BA837B1F', 
-                   'x86_64h: 1888D401-435E-30AA-A69B-ECB15957AE75', 'x86_64h: 1888D401-435E-30AA-A69B-ECB15957AE75' ]
+uuids:           [ 'x86_64: 7E61073B-DB96-3AE8-B188-5FBB20479A8C', 'x86_64: 7E61073B-DB96-3AE8-B188-5FBB20479A8C', 
+                   'x86_64h: 5C248B39-F233-3074-A3A5-AF8F436FBF87', 'x86_64h: 5C248B39-F233-3074-A3A5-AF8F436FBF87' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libLAPACK.dylib'
 exports:         

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B923432F-D8BD-332F-8D8D-9445293509FE' ]
+uuids:           [ 'x86_64: FE3C742B-34A2-39AB-8BBE-E0C68C175F3E' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/Shortcut.framework/Versions/A/Shortcut'
 current-version: 106

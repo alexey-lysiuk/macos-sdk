@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 34B5956A-04FC-34A9-9147-226F170E7CE8' ]
+uuids:           [ 'x86_64: 480800CB-C0E9-360E-B7A6-7FAABD07FA3F' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Tk.framework/Versions/8.5/Tk'
 current-version: 8.5.9

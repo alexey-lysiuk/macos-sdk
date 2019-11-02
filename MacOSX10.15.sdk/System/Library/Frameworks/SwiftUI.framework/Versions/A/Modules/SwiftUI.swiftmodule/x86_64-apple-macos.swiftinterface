@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.1 (swiftlang-1100.8.259.70 clang-1100.0.32.1)
+// swift-compiler-version: Apple Swift version 5.1.1 (swiftlang-1100.8.275.1 clang-1100.0.32.1)
 // swift-module-flags: -target x86_64-apple-macos10.15 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Osize -module-name SwiftUI
 import AppKit
 import Combine
@@ -89,6 +89,15 @@ extension Optional : SwiftUI.View where Wrapped : SwiftUI.View {
   public typealias Body = Swift.Never
   public static func _makeView(view: SwiftUI._GraphValue<Swift.Optional<Wrapped>>, inputs: SwiftUI._ViewInputs) -> SwiftUI._ViewOutputs
   public static func _makeViewList(view: SwiftUI._GraphValue<Swift.Optional<Wrapped>>, inputs: SwiftUI._ViewListInputs) -> SwiftUI._ViewListOutputs
+}
+@available(iOS 13.0, OSX 10.15, tvOS 13.0, *)
+@available(watchOS, unavailable)
+public struct _DisclosureIndicator : SwiftUI.View {
+  public init()
+  public var body: some SwiftUI.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s7SwiftUI20_DisclosureIndicatorV4bodyQrvp", 0) 🦸
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 public protocol PrimitiveButtonStyle {
@@ -718,10 +727,15 @@ extension CGFloat : SwiftUI.VectorArithmetic {
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension Image {
+  public static var _mainNamedBundle: Foundation.Bundle?
+}
+@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
+extension Image {
   public init(_ name: Swift.String, bundle: Foundation.Bundle? = nil)
   public init(_ name: Swift.String, bundle: Foundation.Bundle? = nil, label: SwiftUI.Text)
   public init(decorative name: Swift.String, bundle: Foundation.Bundle? = nil)
-  public static var _mainNamedBundle: Foundation.Bundle?
+  @available(OSX, unavailable)
+  public init(systemName: Swift.String)
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 public struct __FourUpLayout {
@@ -1406,14 +1420,6 @@ extension IDView {
   @usableFromInline
   internal static func _makeViewList(view: SwiftUI._GraphValue<SwiftUI.IDView<Content, ID>>, inputs: SwiftUI._ViewListInputs) -> SwiftUI._ViewListOutputs
 }
-@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-public struct _DisclosureIndicator : SwiftUI.View {
-  public init()
-  public var body: some SwiftUI.View {
-    get
-  }
-  public typealias Body = @_opaqueReturnTypeOf("$s7SwiftUI20_DisclosureIndicatorV4bodyQrvp", 0) 🦸
-}
 extension View {
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
@@ -1592,14 +1598,14 @@ extension VerticalAlignment {
   @usableFromInline
   internal static func < (lhs: SwiftUI.AlignmentKey, rhs: SwiftUI.AlignmentKey) -> Swift.Bool
   @usableFromInline
+  internal static func == (a: SwiftUI.AlignmentKey, b: SwiftUI.AlignmentKey) -> Swift.Bool
+  @usableFromInline
   internal var hashValue: Swift.Int {
     @usableFromInline
     get
   }
   @usableFromInline
   internal func hash(into hasher: inout Swift.Hasher)
-  @usableFromInline
-  internal static func == (a: SwiftUI.AlignmentKey, b: SwiftUI.AlignmentKey) -> Swift.Bool
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension View {
@@ -1731,11 +1737,11 @@ internal class AnyGestureStorageBase<Value> {
 public enum LayoutDirection : Swift.Hashable, Swift.CaseIterable {
   case leftToRight
   case rightToLeft
-  public static func == (a: SwiftUI.LayoutDirection, b: SwiftUI.LayoutDirection) -> Swift.Bool
   public var hashValue: Swift.Int {
     get
   }
   public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: SwiftUI.LayoutDirection, b: SwiftUI.LayoutDirection) -> Swift.Bool
   public typealias AllCases = [SwiftUI.LayoutDirection]
   public static var allCases: [SwiftUI.LayoutDirection] {
     get
@@ -3204,6 +3210,7 @@ public struct GraphicalDatePickerStyle : SwiftUI.DatePickerStyle {
         self.value = value
     }
   public static func _makeView(modifier: SwiftUI._GraphValue<SwiftUI._AnimationModifier<Value>>, inputs: SwiftUI._ViewInputs, body: @escaping (SwiftUI._Graph, SwiftUI._ViewInputs) -> SwiftUI._ViewOutputs) -> SwiftUI._ViewOutputs
+  public static func _makeViewList(modifier: SwiftUI._GraphValue<SwiftUI._AnimationModifier<Value>>, inputs: SwiftUI._ViewListInputs, body: @escaping (SwiftUI._Graph, SwiftUI._ViewListInputs) -> SwiftUI._ViewListOutputs) -> SwiftUI._ViewListOutputs
   public typealias Body = Swift.Never
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
@@ -5689,12 +5696,6 @@ extension View {
   public func _digitalCrownRotation<V>(_ binding: SwiftUI.Binding<V>, configuration: SwiftUI._DigitalCrownConfiguration) -> some SwiftUI.View where V : Swift.BinaryFloatingPoint
   
 }
-@available(iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-@available(OSX, unavailable)
-extension Image {
-  @available(OSX, unavailable)
-  public init(systemName: Swift.String)
-}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension Gesture {
   @inlinable public func exclusively<Other>(before other: Other) -> SwiftUI.ExclusiveGesture<Self, Other> where Other : SwiftUI.Gesture {
@@ -5847,6 +5848,7 @@ public protocol AnimatableModifier : SwiftUI.Animatable, SwiftUI.ViewModifier {
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension AnimatableModifier {
   public static func _makeView(modifier: SwiftUI._GraphValue<Self>, inputs: SwiftUI._ViewInputs, body: @escaping (SwiftUI._Graph, SwiftUI._ViewInputs) -> SwiftUI._ViewOutputs) -> SwiftUI._ViewOutputs
+  public static func _makeViewList(modifier: SwiftUI._GraphValue<Self>, inputs: SwiftUI._ViewListInputs, body: @escaping (SwiftUI._Graph, SwiftUI._ViewListInputs) -> SwiftUI._ViewListOutputs) -> SwiftUI._ViewListOutputs
 }
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 public struct _ScrollableLayoutView<Data, Layout> : SwiftUI.View where Data : Swift.RandomAccessCollection, Layout : SwiftUI._ScrollableLayout, Data.Element : SwiftUI.View, Data.Index : Swift.Hashable {
@@ -6263,6 +6265,7 @@ extension View {
   public func accessibility(addTraits traits: SwiftUI.AccessibilityTraits) -> SwiftUI.ModifiedContent<Self, SwiftUI.AccessibilityAttachmentModifier>
   public func accessibility(removeTraits traits: SwiftUI.AccessibilityTraits) -> SwiftUI.ModifiedContent<Self, SwiftUI.AccessibilityAttachmentModifier>
   public func accessibility(identifier: Swift.String) -> SwiftUI.ModifiedContent<Self, SwiftUI.AccessibilityAttachmentModifier>
+  public func accessibility(selectionIdentifier: Swift.AnyHashable) -> SwiftUI.ModifiedContent<Self, SwiftUI.AccessibilityAttachmentModifier>
   public func accessibility(sortPriority: Swift.Double) -> SwiftUI.ModifiedContent<Self, SwiftUI.AccessibilityAttachmentModifier>
   public func accessibility(activationPoint: CoreGraphics.CGPoint) -> SwiftUI.ModifiedContent<Self, SwiftUI.AccessibilityAttachmentModifier>
   public func accessibility(activationPoint: SwiftUI.UnitPoint) -> SwiftUI.ModifiedContent<Self, SwiftUI.AccessibilityAttachmentModifier>
@@ -6276,6 +6279,7 @@ extension ModifiedContent where Modifier == SwiftUI.AccessibilityAttachmentModif
   public func accessibility(addTraits traits: SwiftUI.AccessibilityTraits) -> SwiftUI.ModifiedContent<Content, Modifier>
   public func accessibility(removeTraits traits: SwiftUI.AccessibilityTraits) -> SwiftUI.ModifiedContent<Content, Modifier>
   public func accessibility(identifier: Swift.String) -> SwiftUI.ModifiedContent<Content, Modifier>
+  public func accessibility(selectionIdentifier: Swift.AnyHashable) -> SwiftUI.ModifiedContent<Content, Modifier>
   public func accessibility(sortPriority: Swift.Double) -> SwiftUI.ModifiedContent<Content, Modifier>
   public func accessibility(activationPoint: CoreGraphics.CGPoint) -> SwiftUI.ModifiedContent<Content, Modifier>
   public func accessibility(activationPoint: SwiftUI.UnitPoint) -> SwiftUI.ModifiedContent<Content, Modifier>
@@ -6571,11 +6575,11 @@ extension Font {
     public static let bold: SwiftUI.Font.Weight
     public static let heavy: SwiftUI.Font.Weight
     public static let black: SwiftUI.Font.Weight
-    public static func == (a: SwiftUI.Font.Weight, b: SwiftUI.Font.Weight) -> Swift.Bool
     public var hashValue: Swift.Int {
       get
     }
     public func hash(into hasher: inout Swift.Hasher)
+    public static func == (a: SwiftUI.Font.Weight, b: SwiftUI.Font.Weight) -> Swift.Bool
   }
   public enum _StylisticAlternative : Swift.Int, Swift.Hashable {
     case one
@@ -6911,6 +6915,12 @@ open class NSHostingView<Content> : AppKit.NSView, AppKit.NSUserInterfaceValidat
     @objc set
   }
   @objc override dynamic open func renewGState()
+  @objc override dynamic open var firstBaselineOffsetFromTop: CoreGraphics.CGFloat {
+    @objc get
+  }
+  @objc override dynamic open var lastBaselineOffsetFromBottom: CoreGraphics.CGFloat {
+    @objc get
+  }
   @objc override dynamic open var intrinsicContentSize: Foundation.NSSize {
     @objc get
   }
@@ -6936,6 +6946,7 @@ open class NSHostingView<Content> : AppKit.NSView, AppKit.NSUserInterfaceValidat
   }
   @objc override dynamic open func viewWillMove(toWindow newWindow: AppKit.NSWindow?)
   @objc override dynamic open func viewDidMoveToWindow()
+  @objc override dynamic open func viewDidMoveToSuperview()
   @objc override dynamic open func observeValue(forKeyPath keyPath: Swift.String?, of object: Any?, change: [Foundation.NSKeyValueChangeKey : Any]?, context: Swift.UnsafeMutableRawPointer?)
   @objc override dynamic open func hitTest(_ point: Foundation.NSPoint) -> AppKit.NSView?
   @objc override dynamic open var acceptsFirstResponder: Swift.Bool {
@@ -6987,7 +6998,8 @@ extension NSHostingView {
 extension NSHostingView {
   public func _renderForTest(interval: Swift.Double)
 }
-@available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
+@available(iOS 13.0, OSX 10.15, watchOS 6.0, *)
+@available(tvOS, unavailable)
 public struct SwitchToggleStyle : SwiftUI.ToggleStyle {
   public init()
   public func makeBody(configuration: SwiftUI.SwitchToggleStyle.Configuration) -> some SwiftUI.View
@@ -7403,43 +7415,6 @@ public struct DragGesture {
   public init(minimumDistance: CoreGraphics.CGFloat = 10, coordinateSpace: SwiftUI.CoordinateSpace = .local)
   public static func _makeGesture(gesture: SwiftUI._GraphValue<SwiftUI.DragGesture>, inputs: SwiftUI._GestureInputs) -> SwiftUI._GestureOutputs<SwiftUI.DragGesture.Value>
   public typealias Body = Swift.Never
-}
-@available(iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-@available(OSX, unavailable)
-public struct _UnbridgedNavigationItem {
-  public enum LargeTitleDisplayMode {
-    case automatic
-    case always
-    case never
-    public static func == (a: SwiftUI._UnbridgedNavigationItem.LargeTitleDisplayMode, b: SwiftUI._UnbridgedNavigationItem.LargeTitleDisplayMode) -> Swift.Bool
-    public var hashValue: Swift.Int {
-      get
-    }
-    public func hash(into hasher: inout Swift.Hasher)
-  }
-  public var title: Swift.String
-  public var trailingView: SwiftUI.AnyView
-  public var largeTitleDisplayMode: SwiftUI._UnbridgedNavigationItem.LargeTitleDisplayMode
-  public var content: SwiftUI.AnyView
-  public init<C>(title: Swift.String, largeTitleDisplayMode: SwiftUI._UnbridgedNavigationItem.LargeTitleDisplayMode = .automatic, content: C) where C : SwiftUI.View
-  public init<C, V>(title: Swift.String, trailingView: V, largeTitleDisplayMode: SwiftUI._UnbridgedNavigationItem.LargeTitleDisplayMode = .automatic, content: C) where C : SwiftUI.View, V : SwiftUI.View
-}
-@available(iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-@available(OSX, unavailable)
-extension View {
-  @available(OSX, unavailable)
-  public func _unbridgedNavigationItem<Value>(value bindingValue: SwiftUI.Binding<Value?>, _ function: (Value) -> SwiftUI._UnbridgedNavigationItem) -> some SwiftUI.View
-  
-}
-@available(iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-@available(OSX, unavailable)
-public struct _UnbridgedNavigationPushPresentation {
-}
-@available(iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-@available(OSX, unavailable)
-public struct _UnbridgedNavigationPushPresentationKey : SwiftUI.PreferenceKey {
-  public typealias Value = SwiftUI._UnbridgedNavigationPushPresentation?
-  public static func reduce(value: inout SwiftUI._UnbridgedNavigationPushPresentationKey.Value, nextValue: () -> SwiftUI._UnbridgedNavigationPushPresentationKey.Value)
 }
 @available(OSX 10.15, *)
 @available(iOS, unavailable)
@@ -8517,6 +8492,12 @@ extension SwiftUI.__ViewRemovalLayout : SwiftUI.Animatable {}
 extension SwiftUI.Image : SwiftUI.View {}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension SwiftUI.Color : SwiftUI.View {}
+@available(iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+@available(OSX, unavailable)
+extension SwiftUI.Image.Scale : Swift.Equatable {}
+@available(iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+@available(OSX, unavailable)
+extension SwiftUI.Image.Scale : Swift.Hashable {}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension SwiftUI.__FourUpLayout : SwiftUI._VariadicView_UnaryViewRoot {}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
@@ -8711,12 +8692,6 @@ extension SwiftUI._PagingViewConfig.Direction : Swift.Equatable {}
 extension SwiftUI._PagingViewConfig.Direction : Swift.Hashable {}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension SwiftUI.Image.TemplateRenderingMode : Swift.Hashable {}
-@available(iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-@available(OSX, unavailable)
-extension SwiftUI.Image.Scale : Swift.Equatable {}
-@available(iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-@available(OSX, unavailable)
-extension SwiftUI.Image.Scale : Swift.Hashable {}
 @available(iOS 13.0, *)
 @available(OSX, unavailable)
 @available(tvOS, unavailable)
@@ -8862,12 +8837,6 @@ extension SwiftUI.Image.ResizingMode : Swift.Hashable {}
 @available(iOS 13.0, OSX 10.15, watchOS 6.0, *)
 @available(tvOS, unavailable)
 extension SwiftUI.DragGesture : SwiftUI.Gesture {}
-@available(iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-@available(OSX, unavailable)
-extension SwiftUI._UnbridgedNavigationItem.LargeTitleDisplayMode : Swift.Equatable {}
-@available(iOS 13.0, tvOS 13.0, watchOS 6.0, *)
-@available(OSX, unavailable)
-extension SwiftUI._UnbridgedNavigationItem.LargeTitleDisplayMode : Swift.Hashable {}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 extension SwiftUI._VStackLayout : SwiftUI._VariadicView_UnaryViewRoot {}
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9B2A68FD-03BB-3E75-9A10-E4325163589E' ]
+uuids:           [ 'x86_64: 54754C0E-A974-3B56-A19C-C779D9FA21D0' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/DeviceManagement.framework/Versions/A/DeviceManagement'
-current-version: 30.70
+current-version: 30.86
 exports:         
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/PrivateFrameworks/Catalyst.framework/Versions/A/Catalyst' ]
@@ -200,7 +200,7 @@ exports:
                        DMFWebsitePolicyMonitor, DMFiCloudPolicyMonitor ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5E7EC981-EDCD-31AF-B1CD-56F8F5DC43E3', 'x86_64: 5E7EC981-EDCD-31AF-B1CD-56F8F5DC43E3' ]
+uuids:           [ 'x86_64: F1B42AF0-28D6-30BD-8DBD-34274BB4EC41', 'x86_64: F1B42AF0-28D6-30BD-8DBD-34274BB4EC41' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/Catalyst.framework/Versions/A/Catalyst'
 current-version: 6

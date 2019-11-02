@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4C501E0F-94B9-3C15-A848-46C56B0E1D93', 'x86_64: 4C501E0F-94B9-3C15-A848-46C56B0E1D93' ]
+uuids:           [ 'x86_64: 3FCC0B63-0D46-36FF-AC17-C2A634CE4C85', 'x86_64: 3FCC0B63-0D46-36FF-AC17-C2A634CE4C85' ]
 platform:        zippered
 install-name:    '/usr/lib/libsysdiagnose.dylib'
 exports:         

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1A417785-2E85-34B1-8F4E-9F5C27E8F4B7', 'x86_64: 1A417785-2E85-34B1-8F4E-9F5C27E8F4B7' ]
+uuids:           [ 'x86_64: 0213D3EE-B786-38B5-A55A-3C1F616D5689', 'x86_64: 0213D3EE-B786-38B5-A55A-3C1F616D5689' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SignpostMetrics.framework/Versions/A/SignpostMetrics'
-current-version: 40
+current-version: 41
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _SignpostMetricsVersionNumber, _SignpostMetricsVersionString, 

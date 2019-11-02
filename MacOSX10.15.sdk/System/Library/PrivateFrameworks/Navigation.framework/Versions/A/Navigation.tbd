@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BC4C7F62-34B6-3BD2-939E-1F5492D0C68A', 'x86_64: BC4C7F62-34B6-3BD2-939E-1F5492D0C68A' ]
+uuids:           [ 'x86_64: 952EC324-EA4A-3CE2-BD7D-45C45356CEFF', 'x86_64: 952EC324-EA4A-3CE2-BD7D-45C45356CEFF' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/Navigation.framework/Versions/A/Navigation'
 exports:         
@@ -57,9 +57,11 @@ exports:
                        _NavigationConfig_LocationOverdueTimeoutForNotTunnel, _NavigationConfig_LocationOverdueTimeoutForTunnel, 
                        _NavigationConfig_LocationOverdueTimeoutForUnknown, _NavigationConfig_MapLocalizeLabels, 
                        _NavigationConfig_MinLocationAccuracyForPreArrivalReroute, 
+                       _NavigationConfig_MinimumDistanceBetweenReroutes, _NavigationConfig_MinimumTimeBetweenReroutes, 
                        _NavigationConfig_NavDoomCacheCurrentTripTag, _NavigationConfig_NavdDisconnectRetryCount, 
                        _NavigationConfig_NavdDisconnectRetryWindow, _NavigationConfig_NavdMonitoringDistanceThreshold, 
                        _NavigationConfig_NavigationDisableServerTTS, _NavigationConfig_NavigationPreventsManifestUpdate, 
+                       _NavigationConfig_RerouteThrottleCount, _NavigationConfig_RerouteThrottleInterval, 
                        _NavigationConfig_RouteRecalHighFrequencySeconds, _NavigationConfig_RouteRecalHighFrequencyTries, 
                        _NavigationConfig_RouteRecalLowFrequencySeconds, _NavigationConfig_SaveRoutesToDiskInsteadXPC, 
                        _NavigationConfig_ShouldSpeakWrittenAddresses, _NavigationConfig_ShouldSpeakWrittenDirections, 

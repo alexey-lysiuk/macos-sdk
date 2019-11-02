@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A1AFC19C-A9A2-3320-ABA9-E2867CD5DF79' ]
+uuids:           [ 'x86_64: 751C717D-BDD2-358B-9453-CACEBA38B421' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/DisplayServices.framework/Versions/A/DisplayServices'
 exports:         

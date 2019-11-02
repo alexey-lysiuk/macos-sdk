@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4AF6B65A-345D-378C-8670-E0DC53F9DB28', 'x86_64: 4AF6B65A-345D-378C-8670-E0DC53F9DB28' ]
+uuids:           [ 'x86_64: 105A9665-CF7E-3DFB-BBBB-249AD4CB6913', 'x86_64: 105A9665-CF7E-3DFB-BBBB-249AD4CB6913' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Metal.framework/Versions/A/Metal'
-current-version: 211.51
+current-version: 212.2.3
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _MTLAddDevice, _MTLAddDeviceClass, _MTLCPUCacheModeString, 

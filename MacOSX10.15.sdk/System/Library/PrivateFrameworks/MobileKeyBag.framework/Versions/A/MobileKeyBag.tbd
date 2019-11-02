@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 81D0BF0A-A2EB-36AC-8876-E1C64C7A9FC9', 'x86_64: 81D0BF0A-A2EB-36AC-8876-E1C64C7A9FC9' ]
+uuids:           [ 'x86_64: C137BEF9-6103-3AA5-B4BB-25BFE550B473', 'x86_64: C137BEF9-6103-3AA5-B4BB-25BFE550B473' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/MobileKeyBag.framework/Versions/A/MobileKeyBag'
 exports:         

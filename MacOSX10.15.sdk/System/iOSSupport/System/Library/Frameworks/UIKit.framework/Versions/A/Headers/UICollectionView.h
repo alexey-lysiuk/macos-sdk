@@ -224,10 +224,6 @@ UIKIT_EXTERN API_AVAILABLE(ios(9.0)) @interface UICollectionViewFocusUpdateConte
  */
 - (void)collectionView:(UICollectionView *)collectionView willPerformPreviewActionForMenuWithConfiguration:(UIContextMenuConfiguration *)configuration animator:(id<UIContextMenuInteractionCommitAnimating>)animator API_AVAILABLE(ios(13.0)) API_UNAVAILABLE(watchos, tvos);
 
-
-/// This method is deprecated and will be removed in a future seed. Please use its replacement.
-- (void)collectionView:(UICollectionView *)collectionView willCommitMenuWithAnimator:(id<UIContextMenuInteractionCommitAnimating>)animator API_AVAILABLE(ios(13.0)) API_UNAVAILABLE(watchos, tvos) API_DEPRECATED_WITH_REPLACEMENT("collectionView:willPerformPreviewActionForMenuWithConfiguration:animator:", ios(13.0, 13.0));
-
 @end
 
 UIKIT_EXTERN API_AVAILABLE(ios(6.0)) @interface UICollectionView : UIScrollView <UIDataSourceTranslating>

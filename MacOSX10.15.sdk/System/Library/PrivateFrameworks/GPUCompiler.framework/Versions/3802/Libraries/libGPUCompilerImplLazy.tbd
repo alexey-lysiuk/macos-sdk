@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E6EB2FC0-11FE-350B-A573-0317E60B7F13' ]
+uuids:           [ 'x86_64: F530AF4D-EC0B-3F7A-B869-ECB484731CCB' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/GPUCompiler.framework/Versions/3802/Libraries/libGPUCompilerImplLazy.dylib'
 current-version: 802.6

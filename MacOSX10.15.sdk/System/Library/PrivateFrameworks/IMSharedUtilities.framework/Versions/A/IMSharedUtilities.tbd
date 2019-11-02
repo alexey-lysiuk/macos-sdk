@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0861FAC2-7150-342A-B009-625E0D37F158' ]
+uuids:           [ 'x86_64: EF440689-8A51-3FE5-8894-199F34C6A99C' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/IMSharedUtilities.framework/Versions/A/IMSharedUtilities'
 exports:         
@@ -109,7 +109,7 @@ exports:
                        _IMCreateEscapedStringFromString, _IMCreatePNGImageDataFromCGImageRef, 
                        _IMCreateSuperFormatStringFromPlainTextString, _IMCreateSuperFormatStringWithoutFileTransfers, 
                        _IMCreateThumbnailWithImageSourceAtIndexForMaxDimension, _IMCroppedImageDataFromDataWithCropRect, 
-                       _IMDCNPersonNotFound, _IMDeviceIsGreenTea, _IMDidPerformInitialChatVocabularyUpdate, 
+                       _IMDeviceIsGreenTea, _IMDidPerformInitialChatVocabularyUpdate, 
                        _IMEnableMentions, _IMEnableNicknamesMeCardSyncing, _IMEventListenerErrorDomain, 
                        _IMExtensionPayloadAccessibilityLableKey, _IMExtensionPayloadAdamIDIKey, 
                        _IMExtensionPayloadAlternateTextKey, _IMExtensionPayloadAppIconKey, 
@@ -219,7 +219,7 @@ exports:
                        _IMMetricsCollectorTotalMessagesViewedKey, _IMNicknameDataKey, 
                        _IMNicknameDirectoryPath, _IMNicknameEncryptionHelpersErrorDomain, 
                        _IMNicknamePreferencesDidChangeNotification, _IMNicknamesAppleIDAndiCloudAccountMatchAndExistKey, 
-                       _IMNicknamesDomain, _IMNicknamesMeCardSharingAudienceKey, 
+                       _IMNicknamesDomain, _IMNicknamesHasPendingNicknameKey, _IMNicknamesMeCardSharingAudienceKey, 
                        _IMNicknamesMeCardSharingEnabledKey, _IMNicknamesMeCardSharingImageForkedKey, 
                        _IMNicknamesMeCardSharingNameForkedKey, _IMNicknamesMeCardSharingNameFormatKey, 
                        _IMNicknamesMultiplePhoneNumbersTiedToAppleID, _IMNicknamesNicknameVersionKey, 
@@ -307,6 +307,7 @@ exports:
                        _IMUTTypeIsVCard, _IMUnitTestRunnerErrorDomain, _IMUnitTestRunnerErrorUnhandledExceptionKey, 
                        _IMUnlocalizedInternalPhishingWarningString, _IMUpdateTransferConstraintAndSizeKeys, 
                        _IMiMessageAppsHostExtensionPointName, _IMiMessageAppsViewServiceIdentifier, 
+                       __IMSanitizedURLForIMExtensionPayloadURLKey, __IMServerSaysToKeepNicknamesEnabled, 
                        __MessageGUIDToSignpostId, ___IMSharedHelperCheckPersistMergeID, 
                        __iMessageTelemetryLogHandle, __signpostSendFileMessage, __signpostSendMessage, 
                        _kAttachmentsAutomationAdditionalErrorInfoKey, _kAttachmentsAutomationErrorKey, 
@@ -324,12 +325,13 @@ exports:
                        _kSticker, _kStickerTransferInfoPlistFileFolder, _kStickersDomain, 
                        _localizedTextForAppName ]
     objc-classes:    [ FZMessage, IMAKAppleIDAuthenticationController, IMAnimatedImagePreviewGenerator, 
-                       IMAssociatedMessageItem, IMAttachmentUtilities, IMAttributedStringParser, 
-                       IMAttributedStringParserContext, IMAutomaticEventNotificationQueue, 
-                       IMBagUtilities, IMBatteryStatus, IMBroadcastingKeyValueCollection, 
-                       IMBusinessNameManager, IMCKPadding, IMCTSMSUtilities, IMContactCardPreviewGenerator, 
-                       IMContactStore, IMContactStoreChangeHistoryEventsHandler, 
-                       IMCoreAutomationNotifications, IMCoreSpotlightUtilities, IMDCNPersonAliasResolver, 
+                       IMAppleStoreHelper, IMAssociatedMessageItem, IMAttachmentUtilities, 
+                       IMAttributedStringParser, IMAttributedStringParserContext, 
+                       IMAutomaticEventNotificationQueue, IMBagUtilities, IMBatteryStatus, 
+                       IMBroadcastingKeyValueCollection, IMBusinessNameManager, IMCKPadding, 
+                       IMCTSMSUtilities, IMContactCardPreviewGenerator, IMContactStore, 
+                       IMContactStoreChangeHistoryEventsHandler, IMCoreAutomationNotifications, 
+                       IMCoreSpotlightUtilities, IMDContactStoreChangeHistoryEventsHandler, 
                        IMDSharedUtilitiesPluginPayload, IMDefaults, IMDeviceConditions, 
                        IMDeviceUtilities, IMEventListener, IMEventListenerList, IMEventListenerReference, 
                        IMEventNotification, IMEventNotificationBroadcaster, IMEventNotificationManager, 
@@ -357,8 +359,8 @@ exports:
                        IMSharedUtilitiesProtoCloudKitEncryptedGroupTitleChange, IMSharedUtilitiesProtoCloudKitEncryptedLocationShareStatusChange, 
                        IMSharedUtilitiesProtoCloudKitEncryptedMessage, IMSharedUtilitiesProtoCloudKitEncryptedMessageAction, 
                        IMSharedUtilitiesProtoCloudKitEncryptedParticipantChange, 
-                       IMShellCommandRunner, IMSingletonOverride, IMSticker, IMStickerPack, 
-                       IMSuperToPlainParserContext, IMSuperToSuperSanitizerContext, 
+                       IMShellCommandRunner, IMSingletonOverride, IMSpamFilterHelper, 
+                       IMSticker, IMStickerPack, IMSuperToPlainParserContext, IMSuperToSuperSanitizerContext, 
                        IMTUConversationItem, IMToSuperParserContext, IMToSuperParserFrame, 
                        IMTranscoderTelemetry, IMUnarchiverDecoder, IMUnitTestBundleLoader, 
                        IMUnitTestFrameworkLoader, IMUnitTestLogger, IMUnitTestRunner, 

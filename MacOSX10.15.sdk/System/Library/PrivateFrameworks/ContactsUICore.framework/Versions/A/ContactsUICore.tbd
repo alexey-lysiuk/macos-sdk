@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4FD711CB-96FD-3CE0-9D7F-2CDCB4773F0C', 'x86_64: 4FD711CB-96FD-3CE0-9D7F-2CDCB4773F0C' ]
+uuids:           [ 'x86_64: 70390D1D-1B49-328B-B8DA-C6E4BEC5ECDA', 'x86_64: 70390D1D-1B49-328B-B8DA-C6E4BEC5ECDA' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ContactsUICore.framework/Versions/A/ContactsUICore'
 exports:         
@@ -8,9 +8,9 @@ exports:
     symbols:         [ _CNContactsUIErrorDialRequestKey, _CNContactsUIErrorDomain, 
                        _CNContactsUIErrorURLKey, _CNContactsUIErrorUserActivityKey, 
                        _CNLaunchServicesAppicationDatabaseLookupEntitlement, _CNUIActivityTypeEditingContact, 
-                       _CNUIActivityTypeViewingContact, _CNUIAddCircleToContextInRect, 
-                       _CNUIAddRoundedRectToContextInRect, _CNUIApplyOutlineToContext, 
-                       _CNUIBitmapContextCreate, _CNUICalculateSubRectsForOverlappingLikenesses, 
+                       _CNUIActivityTypeViewingContact, _CNUIActivityTypeViewingList, 
+                       _CNUIAddCircleToContextInRect, _CNUIAddRoundedRectToContextInRect, 
+                       _CNUIApplyOutlineToContext, _CNUIBitmapContextCreate, _CNUICalculateSubRectsForOverlappingLikenesses, 
                        _CNUICircularImageCreate, _CNUIClipContextWithCircleInRect, 
                        _CNUIClipContextWithRoundedRectInRect, _CNUIClipPathInRect, 
                        _CNUIDrawCircularImagesInRects, _CNUIDrawImagesInRects, _CNUIDrawLikenessPlatterInContext, 

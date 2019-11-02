@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 14EAC253-CD0E-3465-AF58-F5C89D14DF41' ]
+uuids:           [ 'x86_64: 06129518-AB3B-3E78-AB6F-EB106645406B' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/BusinessChat.framework/Versions/A/BusinessChat'
 exports:         
@@ -17,13 +17,14 @@ exports:
                        _BCMessageDataRequestIdentifierKey, _BCMessageDataVersionKey, 
                        _BCMessageRootAuthenticateKey, _BCMessageRootContentKey, _BCMessageRootErrorKey, 
                        _BCMessageRootEventKey, _BCMessageRootInternalAuthenticateKey, 
-                       _BCMessageRootListPickerKey, _BCMessageRootPaymentKey, _BCMessageRootUnknownKey, 
-                       _BCOAuthRedirectURI, _BCParameterNameBody, _BCParameterNameGroup, 
-                       _BCParameterNameIntent, _kAuthenticationErrorDomain, _kCryptorErrorDomain ]
+                       _BCMessageRootJITAppKitKey, _BCMessageRootListPickerKey, _BCMessageRootPaymentKey, 
+                       _BCMessageRootUnknownKey, _BCOAuthRedirectURI, _BCParameterNameBody, 
+                       _BCParameterNameGroup, _BCParameterNameIntent, _kAuthenticationErrorDomain, 
+                       _kCryptorErrorDomain ]
     objc-classes:    [ BCApplePayManager, BCAuthenticationLabels, BCAuthenticationManager, 
                        BCAuthenticationRequest, BCAuthenticationResponse, BCChatAction, 
-                       BCChatButton, BCCryptor, BCError, BCImage, BCImageStore, BCInternalAuthenticationManager, 
-                       BCInternalAuthenticationRequest, BCInternalAuthenticationResponse, 
-                       BCLogger, BCMessage, BCMessageData, BCMessageInfo, BCOAuth2Parameters, 
-                       BCWebViewController ]
+                       BCChatButton, BCConstants, BCCryptor, BCError, BCImage, BCImageStore, 
+                       BCInternalAuthenticationManager, BCInternalAuthenticationRequest, 
+                       BCInternalAuthenticationResponse, BCLogger, BCMessage, BCMessageData, 
+                       BCMessageInfo, BCOAuth2Parameters, BCWebViewController ]
 ...

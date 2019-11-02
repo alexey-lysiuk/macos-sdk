@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1B85C064-9827-3BAF-9749-2B2DE5D5EBF9' ]
+uuids:           [ 'x86_64: AA81FC34-A7F6-3DA2-A275-B34F75099C7B' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/OpenDirectory.framework/Versions/A/Frameworks/CFOpenDirectory.framework/Versions/A/CFOpenDirectory'
 exports:         
@@ -36,8 +36,9 @@ exports:
                        _ODRecordSecondsUntilAuthenticationsExpire, _ODRecordSecondsUntilPasswordExpires, 
                        _ODRecordSetAccountPolicies, _ODRecordSetNodeCredentials, 
                        _ODRecordSetNodeCredentialsExtended, _ODRecordSetNodeCredentialsUsingKerberosCache, 
-                       _ODRecordSetPolicies, _ODRecordSetPolicy, _ODRecordSetValue, 
-                       _ODRecordSynchronize, _ODRecordVerifyPassword, _ODRecordVerifyPasswordExtended, 
+                       _ODRecordSetNodeCredentialsWithBootstrapToken, _ODRecordSetPolicies, 
+                       _ODRecordSetPolicy, _ODRecordSetValue, _ODRecordSynchronize, 
+                       _ODRecordVerifyPassword, _ODRecordVerifyPasswordExtended, 
                        _ODRecordWillAuthenticationsExpire, _ODRecordWillPasswordExpire, 
                        _ODSessionCopyNodeNames, _ODSessionCopySessionKeySupport, 
                        _ODSessionCreate, _ODSessionCreateWithDSRef, _ODSessionGetDSRef, 

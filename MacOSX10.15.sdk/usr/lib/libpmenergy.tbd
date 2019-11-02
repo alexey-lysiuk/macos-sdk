@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4FDB98C5-F4DA-3C93-9AC6-B68D1CFDEBC2' ]
+uuids:           [ 'x86_64: BA693637-732C-3E4B-AECD-B750D136183B' ]
 platform:        macosx
 install-name:    '/usr/lib/libpmenergy.dylib'
 exports:         

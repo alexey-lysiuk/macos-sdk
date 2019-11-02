@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 74C461AE-6E8E-38C0-BB98-EBD33D9B82D2', 'x86_64: 74C461AE-6E8E-38C0-BB98-EBD33D9B82D2' ]
+uuids:           [ 'x86_64: E881A3F9-7D1E-3943-B8DB-7BF31057CBB6', 'x86_64: E881A3F9-7D1E-3943-B8DB-7BF31057CBB6' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/InternationalSupport.framework/Versions/A/InternationalSupport'
 current-version: 44

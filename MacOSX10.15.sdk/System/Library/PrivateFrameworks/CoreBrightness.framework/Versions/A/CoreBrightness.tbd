@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BDE4A3E5-CDF7-3A16-B514-FBB15E1685B7', 'x86_64: BDE4A3E5-CDF7-3A16-B514-FBB15E1685B7' ]
+uuids:           [ 'x86_64: 64E207A7-F520-3EA4-A756-E1CFAB30CEF2', 'x86_64: 64E207A7-F520-3EA4-A756-E1CFAB30CEF2' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreBrightness.framework/Versions/A/CoreBrightness'
 exports:         

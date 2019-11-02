@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 948A559B-D0A1-3A48-9C1E-8082DD6B8BB5' ]
+uuids:           [ 'x86_64: 55EEDC38-C01B-327C-835E-BFE045E9D68F' ]
 platform:        macosx
 install-name:    '/usr/lib/libMaxEnt.dylib'
 exports:         

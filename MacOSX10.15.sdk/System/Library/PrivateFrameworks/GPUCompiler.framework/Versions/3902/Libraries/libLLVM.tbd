@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F74A24ED-CCCF-3637-872B-3EA073F325D2', 'x86_64: F74A24ED-CCCF-3637-872B-3EA073F325D2' ]
+uuids:           [ 'x86_64: 6F403C4B-CE61-3CA5-AAB7-669FD14339C4', 'x86_64: 6F403C4B-CE61-3CA5-AAB7-669FD14339C4' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/GPUCompiler.framework/Versions/3902/Libraries/libLLVM.dylib'
-current-version: 3902.9.58
+current-version: 3902.11.1
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _EnableIPRA, _LLVMABIAlignmentOfType, _LLVMABISizeOfType, 

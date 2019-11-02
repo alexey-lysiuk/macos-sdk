@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E208C9EF-C32D-35E5-8ECD-BBF7E154D707', 'x86_64: E208C9EF-C32D-35E5-8ECD-BBF7E154D707' ]
+uuids:           [ 'x86_64: E61ECB5C-38AC-3D4F-A770-A422260B3E77', 'x86_64: E61ECB5C-38AC-3D4F-A770-A422260B3E77' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/ImageCaptureCore.framework/Versions/A/ImageCaptureCore'
 exports:         
@@ -35,11 +35,11 @@ exports:
                        __ICIsValidDevice, __ICSetSharingPreferences, __ICStartReceivingSharingPreferences, 
                        ___ICLogDateString, ___ICLogTypeEnabled, ___ICOSLogCreate, 
                        ___ICReadPrefs, __gICOSLog ]
-    objc-classes:    [ ICCameraDevice, ICCameraFile, ICCameraFolder, ICCameraItem, 
-                       ICDevice, ICDeviceBrowser, ICScannerBandData, ICScannerDevice, 
-                       ICScannerFeature, ICScannerFeatureBoolean, ICScannerFeatureEnumeration, 
-                       ICScannerFeatureRange, ICScannerFeatureTemplate, ICScannerFunctionalUnit, 
-                       ICScannerFunctionalUnitDocumentFeeder, ICScannerFunctionalUnitFlatbed, 
-                       ICScannerFunctionalUnitNegativeTransparency, ICScannerFunctionalUnitPositiveTransparency, 
-                       ICScannerImageRep ]
+    objc-classes:    [ ICAccessManager, ICCameraDevice, ICCameraFile, ICCameraFolder, 
+                       ICCameraItem, ICDevice, ICDeviceBrowser, ICScannerBandData, 
+                       ICScannerDevice, ICScannerFeature, ICScannerFeatureBoolean, 
+                       ICScannerFeatureEnumeration, ICScannerFeatureRange, ICScannerFeatureTemplate, 
+                       ICScannerFunctionalUnit, ICScannerFunctionalUnitDocumentFeeder, 
+                       ICScannerFunctionalUnitFlatbed, ICScannerFunctionalUnitNegativeTransparency, 
+                       ICScannerFunctionalUnitPositiveTransparency, ICScannerImageRep ]
 ...

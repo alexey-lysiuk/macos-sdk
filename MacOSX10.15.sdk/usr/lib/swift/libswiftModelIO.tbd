@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B8A44E22-A143-3360-BC26-D2341900DC4B', 'x86_64: B8A44E22-A143-3360-BC26-D2341900DC4B' ]
+uuids:           [ 'x86_64: 13DA9F10-A6ED-3F55-863E-0EC570CB3A48', 'x86_64: 13DA9F10-A6ED-3F55-863E-0EC570CB3A48' ]
 platform:        zippered
 install-name:    '/usr/lib/swift/libswiftModelIO.dylib'
 current-version: 0

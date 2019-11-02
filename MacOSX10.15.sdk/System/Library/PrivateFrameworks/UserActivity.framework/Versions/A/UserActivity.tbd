@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 20ACCC92-54C1-31F9-8E0C-C4E1BDBCBD9D', 'x86_64: 20ACCC92-54C1-31F9-8E0C-C4E1BDBCBD9D' ]
+uuids:           [ 'x86_64: 36E5712E-0BC8-3582-98C6-B645ABA33EBF', 'x86_64: 36E5712E-0BC8-3582-98C6-B645ABA33EBF' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/UserActivity.framework/Versions/A/UserActivity'
-current-version: 352.1
+current-version: 354
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _UAAlwaysAdvertise, _UABestAppSuggestionManagerServiceName, 

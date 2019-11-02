@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D0F2C5AC-4984-3CC8-BE6E-DAA6A264FEF9' ]
+uuids:           [ 'x86_64: C5280173-EB2A-3427-970D-56BFAB3493CF' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/UAUPlugin.framework/Versions/A/UAUPlugin'
 exports:         

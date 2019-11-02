@@ -29,12 +29,12 @@ typedef NS_OPTIONS(NSUInteger, NSFileProviderItemField) {
     NSFileProviderItemFieldFlags = 1 << 8,
     NSFileProviderItemFieldTrashed = 1 << 9,
     NSFileProviderItemFieldExtendedAttributes = 1 << 10
-} API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos);
+} API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst);
 
-API_AVAILABLE(ios(8.0)) API_UNAVAILABLE(macos) API_UNAVAILABLE(watchos, tvos)
+API_AVAILABLE(ios(8.0)) API_UNAVAILABLE(macos, macCatalyst) API_UNAVAILABLE(watchos, tvos)
 @interface NSFileProviderExtension : NSObject
 
-- (nullable NSFileProviderItem)itemForIdentifier:(NSFileProviderItemIdentifier)identifier error:(NSError * _Nullable *)error NS_SWIFT_NAME(item(for:)) API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(macos) API_UNAVAILABLE(watchos, tvos);
+- (nullable NSFileProviderItem)itemForIdentifier:(NSFileProviderItemIdentifier)identifier error:(NSError * _Nullable *)error NS_SWIFT_NAME(item(for:)) API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(macos, macCatalyst) API_UNAVAILABLE(watchos, tvos);
 
 /**
  Download the item for the given identifier and return it via the completion handler.
@@ -54,7 +54,7 @@ API_AVAILABLE(ios(8.0)) API_UNAVAILABLE(macos) API_UNAVAILABLE(watchos, tvos)
  */
 - (NSProgress *)fetchContentsForItemWithIdentifier:(NSFileProviderItemIdentifier)itemIdentifier
                                            version:(nullable NSFileProviderItemVersion *)requestedVersion
-                                 completionHandler:(void(^)(NSURL * _Nullable fileContents, NSFileProviderItem _Nullable item, NSError * _Nullable error))completionHandler  NS_SWIFT_NAME(fetchContents(for:version:completionHandler:)) API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos);
+                                 completionHandler:(void(^)(NSURL * _Nullable fileContents, NSFileProviderItem _Nullable item, NSError * _Nullable error))completionHandler  NS_SWIFT_NAME(fetchContents(for:version:completionHandler:)) API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst);
 
 /**
  Update a previously provided item to a new version.
@@ -71,7 +71,7 @@ API_AVAILABLE(ios(8.0)) API_UNAVAILABLE(macos) API_UNAVAILABLE(watchos, tvos)
                                    existingVersion:(NSFileProviderItemVersion *)existingVersion
                                  completionHandler:(void(^)(NSURL * _Nullable fileContents, NSFileProviderItem _Nullable item, NSError * _Nullable error))completionHandler
 NS_SWIFT_NAME(fetchContents(for:version:usingExistingContentsAt:existingVersion:completionHandler:))
-API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos);
+API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst);
 
 /**
  Informs the provider that an item or its metadata have changed. More than one
@@ -92,7 +92,7 @@ API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos);
         baseVersion:(NSFileProviderItemVersion *)version
       changedFields:(NSFileProviderItemField)changedFields
            contents:(nullable NSURL *)newContents
-  completionHandler:(void(^)(NSFileProviderItem _Nullable item, NSError * _Nullable error))completionHandler API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos);
+  completionHandler:(void(^)(NSFileProviderItem _Nullable item, NSError * _Nullable error))completionHandler API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst);
 
 @end
 
@@ -124,7 +124,7 @@ typedef NS_OPTIONS(NSUInteger, NSFileProviderCreateItemOptions) {
      will call -[NSFileProviderExtension importDidFinishWithCompletionHandler:].
      */
     NSFileProviderCreateItemOptionsItemMayAlreadyExist = 1 << 0,
-} API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos);
+} API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst);
 
 @interface NSFileProviderExtension (CreateItem)
 
@@ -199,7 +199,7 @@ typedef NS_OPTIONS(NSUInteger, NSFileProviderCreateItemOptions) {
                           options:(NSFileProviderCreateItemOptions)options
                 completionHandler:(void (^)(NSFileProviderItem _Nullable createdItem, NSError * _Nullable error))completionHandler
     NS_SWIFT_NAME(createItem(basedOn:fields:contents:options:completionHandler:))
-    API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos);
+    API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst);
 
 @end
 
@@ -208,7 +208,7 @@ typedef NS_OPTIONS(NSUInteger, NSFileProviderCreateItemOptions) {
  */
 typedef NS_OPTIONS(NSUInteger, NSFileProviderDeleteItemOptions) {
     NSFileProviderDeleteItemOptionsRecursive = 1 << 0
-} API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos);
+} API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst);
 
 @interface NSFileProviderExtension (DeleteItem)
 
@@ -234,7 +234,7 @@ typedef NS_OPTIONS(NSUInteger, NSFileProviderDeleteItemOptions) {
 - (void)deleteItemWithIdentifier:(NSFileProviderItemIdentifier)itemIdentifier
                      baseVersion:(NSFileProviderItemVersion *)version
                          options:(NSFileProviderDeleteItemOptions)options
-               completionHandler:(void (^)(NSError * _Nullable))completionHandler API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos);
+               completionHandler:(void (^)(NSError * _Nullable))completionHandler API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst);
 
 @end
 
@@ -255,7 +255,7 @@ typedef NS_OPTIONS(NSUInteger, NSFileProviderDeleteItemOptions) {
  is called.
  */
 - (void)importDidFinishWithCompletionHandler:(void (^)(void))completionHandler
-API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos);
+API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst);
 
 @end
 
@@ -303,8 +303,8 @@ API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos);
  corresponding to the same file. By default, this returns the path relative to
  the path returned by documentStorageURL.
  */
-- (nullable NSURL *)URLForItemWithPersistentIdentifier:(NSFileProviderItemIdentifier)identifier API_DEPRECATED("No longer called", ios(8.0, 13.0)) API_UNAVAILABLE(tvos, watchos) API_UNAVAILABLE(macos);
-- (nullable NSFileProviderItemIdentifier)persistentIdentifierForItemAtURL:(NSURL *)url API_AVAILABLE(ios(8.0)) API_UNAVAILABLE(tvos, watchos) API_UNAVAILABLE(macos);
+- (nullable NSURL *)URLForItemWithPersistentIdentifier:(NSFileProviderItemIdentifier)identifier API_AVAILABLE(ios(8.0)) API_UNAVAILABLE(tvos, watchos) API_UNAVAILABLE(macos, macCatalyst);
+- (nullable NSFileProviderItemIdentifier)persistentIdentifierForItemAtURL:(NSURL *)url API_AVAILABLE(ios(8.0)) API_UNAVAILABLE(tvos, watchos) API_UNAVAILABLE(macos, macCatalyst);
 
 /**
  This method is called when a placeholder URL should be provided for the item at
@@ -315,13 +315,13 @@ API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos);
  +[NSFileProviderManager placeholderURLForURL:], then call the completion
  handler.
  */
-- (void)providePlaceholderAtURL:(NSURL *)url completionHandler:(void (^)(NSError * _Nullable error))completionHandler API_AVAILABLE(ios(8.0)) API_UNAVAILABLE(tvos, watchos) API_UNAVAILABLE(macos);
+- (void)providePlaceholderAtURL:(NSURL *)url completionHandler:(void (^)(NSError * _Nullable error))completionHandler API_AVAILABLE(ios(8.0)) API_UNAVAILABLE(tvos, watchos) API_UNAVAILABLE(macos, macCatalyst);
 
 /**
  Should ensure that the actual file is in the position returned by
  URLForItemWithPersistentIdentifier:, then call the completion handler.
  */
-- (void)startProvidingItemAtURL:(NSURL *)url completionHandler:(void (^)(NSError * _Nullable error))completionHandler NS_SWIFT_NAME(startProvidingItem(at:completionHandler:)) API_AVAILABLE(ios(8.0)) API_UNAVAILABLE(tvos, watchos) API_UNAVAILABLE(macos);
+- (void)startProvidingItemAtURL:(NSURL *)url completionHandler:(void (^)(NSError * _Nullable error))completionHandler NS_SWIFT_NAME(startProvidingItem(at:completionHandler:)) API_AVAILABLE(ios(8.0)) API_UNAVAILABLE(tvos, watchos) API_UNAVAILABLE(macos, macCatalyst);
 
 /**
  Called after the last claim to the file has been released. At this point, it is
@@ -330,13 +330,13 @@ API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos);
  Care should be taken that the corresponding placeholder file stays behind after
  the content file has been deleted.
  */
-- (void)stopProvidingItemAtURL:(NSURL *)url NS_SWIFT_NAME(stopProvidingItem(at:)) API_AVAILABLE(ios(8.0)) API_UNAVAILABLE(tvos, watchos) API_UNAVAILABLE(macos);
+- (void)stopProvidingItemAtURL:(NSURL *)url NS_SWIFT_NAME(stopProvidingItem(at:)) API_AVAILABLE(ios(8.0)) API_UNAVAILABLE(tvos, watchos) API_UNAVAILABLE(macos, macCatalyst);
 
 /**
  Called at some point after the file has changed; the provider may then trigger
  an upload.
  */
-- (void)itemChangedAtURL:(NSURL *)url API_AVAILABLE(ios(8.0)) API_UNAVAILABLE(tvos, watchos) API_UNAVAILABLE(macos);
+- (void)itemChangedAtURL:(NSURL *)url API_AVAILABLE(ios(8.0)) API_UNAVAILABLE(tvos, watchos) API_UNAVAILABLE(macos, macCatalyst);
 
 @end
 

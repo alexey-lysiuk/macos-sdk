@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8BD6FC75-E828-3A77-AE99-D6C0703CE599' ]
+uuids:           [ 'x86_64: CD34A7DC-C2BE-3A33-81A6-377EC8FD00FD' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CharacterPicker.framework/Versions/A/CharacterPicker'
-current-version: 159
+current-version: 164.2
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CPKCategoryTitleFavorites, _CPKCategoryTitleMore, _CPKCategoryTitleRecents, 

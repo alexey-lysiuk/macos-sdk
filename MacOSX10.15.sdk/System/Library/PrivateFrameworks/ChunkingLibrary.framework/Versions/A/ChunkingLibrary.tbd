@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 36D0B0EE-1560-3F2C-8319-15EE073F7913', 'x86_64: 36D0B0EE-1560-3F2C-8319-15EE073F7913' ]
+uuids:           [ 'x86_64: 593921FE-7EFE-36F6-8B05-4E89B00EABD6', 'x86_64: 593921FE-7EFE-36F6-8B05-4E89B00EABD6' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ChunkingLibrary.framework/Versions/A/ChunkingLibrary'
 current-version: 302

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BE33A1D8-6230-3D66-95CD-97F7E0CFD1FB' ]
+uuids:           [ 'x86_64: 8276BB0C-C146-385B-840F-2D9F11FDD5EE' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PhotosGraph.framework/Versions/A/PhotosGraph'
 exports:         
@@ -48,6 +48,8 @@ exports:
                        _PGHighlightEstimatesStatisticsKeyUtilityAssetCount, _PGHighlightTailorInvalidPromotionScore, 
                        _PGHighlightTailorInvalidTitle, _PGHobbyStringFromPGHobbyType, 
                        _PGIsAppleInternal, _PGLocationArgumentTitleBusinessNameMaximumLength, 
+                       _PGLocationTitleUtilityChinaISOCountryCode, _PGLocationTitleUtilityHongKongISOCountryCode, 
+                       _PGLocationTitleUtilityMacaoISOCountryCode, _PGLocationTitleUtilityTaiwanISOCountryCode, 
                        _PGManagerAnalysisConstructionGraphName, _PGManagerAnalysisLiveUpdateGraphName, 
                        _PGManagerAnalysisOperationKey, _PGManagerGraphAvailableNotificationName, 
                        _PGManagerNotificationExtendedTimeIntervalBeforeNotifying, 
@@ -282,10 +284,11 @@ exports:
                        _kPGMonthEnrichmentRuleNumberOfCuratedAssets, _kPGMoodKeywordAnniversary, 
                        _kPGMoodKeywordBabies, _kPGMoodKeywordBeach, _kPGMoodKeywordBirthday, 
                        _kPGMoodKeywordDisney, _kPGMoodKeywordFamily, _kPGMoodKeywordGathering, 
-                       _kPGMoodKeywordHawaii, _kPGMoodKeywordLondon, _kPGMoodKeywordNature, 
-                       _kPGMoodKeywordNewYorkCity, _kPGMoodKeywordParis, _kPGMoodKeywordParty, 
-                       _kPGMoodKeywordPets, _kPGMoodKeywordSports, _kPGMoodKeywordUniversal, 
-                       _kPGMoodKeywordWedding, _kPGMoodKeywordWinterHoliday, _kPGNamingAddressAnalyzerMinimumAddressDistanceThreshold, 
+                       _kPGMoodKeywordHawaii, _kPGMoodKeywordLondon, _kPGMoodKeywordM5, 
+                       _kPGMoodKeywordNature, _kPGMoodKeywordNewYorkCity, _kPGMoodKeywordParis, 
+                       _kPGMoodKeywordParty, _kPGMoodKeywordPets, _kPGMoodKeywordSports, 
+                       _kPGMoodKeywordUniversal, _kPGMoodKeywordWedding, _kPGMoodKeywordWinterHoliday, 
+                       _kPGNamingAddressAnalyzerMinimumAddressDistanceThreshold, 
                        _kPGNamingProcessorMaximumNumberOfContactSuggestions, _kPGNumberOfHoursPerDayInSeconds, 
                        _kPGPlaceAreaMemoryGeneratorMinimumNumberOfMomentsForAllYears, 
                        _kPGPlaceAreaMemoryGeneratorMinimumNumberOfMomentsForFeaturedYear, 
@@ -320,8 +323,9 @@ exports:
                        _placeSurveyDataKeyRegion, _publicEventSurveyDataKeyMoment, 
                        _publicEventSurveyDataKeyPublicEvents, _publicEventSurveyDataKeyRegion, 
                        _searchIndexCategoryForLocationLabel, _seasonNodeZeroKeyword, 
-                       _zeroKeywordForLocationOrAreaWithName, _zeroKeywordLocalizationKeyForMeaningLabel, 
-                       _zeroKeywordLocalizationKeyForSceneLabel, _zeroKeywordWithAttributes ]
+                       _shouldLocationRemoveParenthesesForCountryCode, _zeroKeywordForLocationOrAreaWithName, 
+                       _zeroKeywordLocalizationKeyForMeaningLabel, _zeroKeywordLocalizationKeyForSceneLabel, 
+                       _zeroKeywordWithAttributes ]
     objc-classes:    [ CLSPPTimeLocationCluster, PGAOINameShortener, PGAbstractSuggester, 
                        PGAggregationEnrichmentProfile, PGAggregationHighlightTitleGenerator, 
                        PGAggregationsTitleSpecFactory, PGAssetCluster, PGAssetDebugInformation, 
@@ -491,6 +495,6 @@ exports:
                        PGTitleSpecPublicEventArgument, PGTitleSpecTimeArgument, PGTitleTuple, 
                        PGTripCollectionTitleGenerator, PGTripHighlightSharingSuggester, 
                        PGTripHighlightTitleGenerator, PGTripMemoryGenerator, PGTripMemoryTitleGenerator, 
-                       PGUserDefaults, PGYearEnrichmentRule, PGYearSummaryMemoryGenerator, 
+                       PGUnfairLock, PGUserDefaults, PGYearEnrichmentRule, PGYearSummaryMemoryGenerator, 
                        PGZeroKeywordComputer, PGZeroKeywordMapping ]
 ...

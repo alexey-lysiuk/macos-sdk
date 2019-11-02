@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 61F62C29-B2C1-3C0D-B2E0-07F774391833' ]
+uuids:           [ 'x86_64: 17514787-02A7-331F-ACBB-A389EED473D2' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/TVRemoteCore.framework/Versions/A/TVRemoteCore'
-current-version: 100
+current-version: 100.20.2
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _TVRCAirplayIDKey, _TVRCButtonApplicationBundleIDKey, _TVRCButtonSkipIntervalKey, 

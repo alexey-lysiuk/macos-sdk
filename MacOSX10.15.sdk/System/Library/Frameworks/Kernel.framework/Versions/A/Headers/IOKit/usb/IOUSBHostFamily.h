@@ -235,12 +235,12 @@ enum
  */
 enum tUSBHostPortType
 {
-    kUSBHostPortTypeStandard = 0,
-    kUSBHostPortTypeCaptive,
-    kUSBHostPortTypeInternal,
-    kUSBHostPortTypeAccessory,
-    kUSBHostPortTypeExpressCard,
-    kUSBHostPortTypeCount
+    kUSBHostPortTypeStandard    = kIOUSBHostPortTypeStandard,
+    kUSBHostPortTypeCaptive     = kIOUSBHostPortTypeCaptive,
+    kUSBHostPortTypeInternal    = kIOUSBHostPortTypeInternal,
+    kUSBHostPortTypeAccessory   = kIOUSBHostPortTypeAccessory,
+    kUSBHostPortTypeExpressCard = kIOUSBHostPortTypeExpressCard,
+    kUSBHostPortTypeCount       = kIOUSBHostPortTypeCount
 };
 
 /*!
@@ -299,27 +299,27 @@ enum
  */
 enum tUSBHostPortStatus
 {
-    kUSBHostPortStatusPortTypeMask               = StandardUSBBitRange(0, 3),
-    kUSBHostPortStatusPortTypePhase              = StandardUSBBitRangePhase(0, 3),
-    kUSBHostPortStatusPortTypeStandard           = (kUSBHostPortTypeStandard << StandardUSBBitRangePhase(0, 3)),
-    kUSBHostPortStatusPortTypeCaptive            = (kUSBHostPortTypeCaptive << StandardUSBBitRangePhase(0, 3)),
-    kUSBHostPortStatusPortTypeInternal           = (kUSBHostPortTypeInternal << StandardUSBBitRangePhase(0, 3)),
-    kUSBHostPortStatusPortTypeAccessory          = (kUSBHostPortTypeAccessory << StandardUSBBitRangePhase(0, 3)),
-    kUSBHostPortStatusPortTypeReserved           = StandardUSBBitRange(4, 7),
-    kUSBHostPortStatusConnectedSpeedMask         = StandardUSBBitRange(8, 10),
-    kUSBHostPortStatusConnectedSpeedPhase        = StandardUSBBitRangePhase(8, 10),
-    kUSBHostPortStatusConnectedSpeedNone         = (kUSBHostPortConnectionSpeedNone << StandardUSBBitRangePhase(8, 10)),
-    kUSBHostPortStatusConnectedSpeedFull         = (kUSBHostPortConnectionSpeedFull << StandardUSBBitRangePhase(8, 10)),
-    kUSBHostPortStatusConnectedSpeedLow          = (kUSBHostPortConnectionSpeedLow << StandardUSBBitRangePhase(8, 10)),
-    kUSBHostPortStatusConnectedSpeedHigh         = (kUSBHostPortConnectionSpeedHigh << StandardUSBBitRangePhase(8, 10)),
-    kUSBHostPortStatusConnectedSpeedSuper        = (kUSBHostPortConnectionSpeedSuper << StandardUSBBitRangePhase(8, 10)),
-    kUSBHostPortStatusConnectedSpeedSuperPlus    = (kUSBHostPortConnectionSpeedSuperPlus << StandardUSBBitRangePhase(8, 10)),
-    kUSBHostPortStatusConnectedSpeedSuperPlusBy2 = (kUSBHostPortConnectionSpeedSuperPlusBy2 << StandardUSBBitRangePhase(8, 10)),
-    kUSBHostPortStatusResetting                  = StandardUSBBit(11),
-    kUSBHostPortStatusEnabled                    = StandardUSBBit(12),
-    kUSBHostPortStatusSuspended                  = StandardUSBBit(13),
-    kUSBHostPortStatusOvercurrent                = StandardUSBBit(14),
-    kUSBHostPortStatusTestMode                   = StandardUSBBit(15)
+    kUSBHostPortStatusPortTypeMask               = kIOUSBHostPortStatusPortTypeMask,
+    kUSBHostPortStatusPortTypePhase              = kIOUSBHostPortStatusPortTypePhase,
+    kUSBHostPortStatusPortTypeStandard           = kIOUSBHostPortStatusPortTypeStandard,
+    kUSBHostPortStatusPortTypeCaptive            = kIOUSBHostPortStatusPortTypeCaptive,
+    kUSBHostPortStatusPortTypeInternal           = kIOUSBHostPortStatusPortTypeInternal,
+    kUSBHostPortStatusPortTypeAccessory          = kIOUSBHostPortStatusPortTypeAccessory,
+    kUSBHostPortStatusPortTypeReserved           = kIOUSBHostPortStatusPortTypeReserved,
+    kUSBHostPortStatusConnectedSpeedMask         = kIOUSBHostPortStatusConnectedSpeedMask,
+    kUSBHostPortStatusConnectedSpeedPhase        = kIOUSBHostPortStatusConnectedSpeedPhase,
+    kUSBHostPortStatusConnectedSpeedNone         = kIOUSBHostPortStatusConnectedSpeedNone,
+    kUSBHostPortStatusConnectedSpeedFull         = kIOUSBHostPortStatusConnectedSpeedFull,
+    kUSBHostPortStatusConnectedSpeedLow          = kIOUSBHostPortStatusConnectedSpeedLow,
+    kUSBHostPortStatusConnectedSpeedHigh         = kIOUSBHostPortStatusConnectedSpeedHigh,
+    kUSBHostPortStatusConnectedSpeedSuper        = kIOUSBHostPortStatusConnectedSpeedSuper,
+    kUSBHostPortStatusConnectedSpeedSuperPlus    = kIOUSBHostPortStatusConnectedSpeedSuperPlus,
+    kUSBHostPortStatusConnectedSpeedSuperPlusBy2 = kIOUSBHostPortStatusConnectedSpeedSuperPlusBy2,
+    kUSBHostPortStatusResetting                  = kIOUSBHostPortStatusResetting,
+    kUSBHostPortStatusEnabled                    = kIOUSBHostPortStatusEnabled,
+    kUSBHostPortStatusSuspended                  = kIOUSBHostPortStatusSuspended,
+    kUSBHostPortStatusOvercurrent                = kIOUSBHostPortStatusOvercurrent,
+    kUSBHostPortStatusTestMode                   = kIOUSBHostPortStatusTestMode
 };
 
 /*!

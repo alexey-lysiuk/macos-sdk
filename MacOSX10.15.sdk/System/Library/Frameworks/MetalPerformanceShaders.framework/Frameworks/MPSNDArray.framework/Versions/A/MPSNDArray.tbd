@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 73DBE1D5-89C4-3410-95DA-A384BF9C2C1E', 'x86_64: 73DBE1D5-89C4-3410-95DA-A384BF9C2C1E' ]
+uuids:           [ 'x86_64: EE7CF802-BF7F-3EEC-9EC2-26A3B3432275', 'x86_64: EE7CF802-BF7F-3EEC-9EC2-26A3B3432275' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/MetalPerformanceShaders.framework/Frameworks/MPSNDArray.framework/Versions/A/MPSNDArray'
 exports:         

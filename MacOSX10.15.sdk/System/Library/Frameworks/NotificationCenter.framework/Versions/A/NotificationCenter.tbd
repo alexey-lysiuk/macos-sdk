@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AB3F764B-735B-38FF-9368-1163EF8CFA0C' ]
+uuids:           [ 'x86_64: 3E057D17-1F33-3FDC-BE61-66599C045F17' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/NotificationCenter.framework/Versions/A/NotificationCenter'
-current-version: 828
+current-version: 843
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _NCMaterialComputedStyle, _NCMaterialControlColor, _NCMaterialGetCustomAppearance, 

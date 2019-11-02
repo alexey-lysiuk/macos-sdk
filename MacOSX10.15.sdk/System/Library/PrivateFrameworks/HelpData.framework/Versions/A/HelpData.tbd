@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 97F56E8C-A6F4-3D32-BA20-52A74D92BDE9' ]
+uuids:           [ 'x86_64: AE971BD2-1550-355D-B6F1-937B1AB85D2E' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/HelpData.framework/Versions/A/HelpData'
 current-version: 199

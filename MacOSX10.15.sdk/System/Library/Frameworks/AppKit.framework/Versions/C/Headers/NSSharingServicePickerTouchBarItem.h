@@ -7,6 +7,13 @@
 
 #import <AppKit/NSTouchBarItem.h>
 #import <AppKit/NSSharingService.h>
+#import <TargetConditionals.h>
+
+#if !TARGET_OS_IPHONE
+@class NSImage;
+#else
+@class UIImage;
+#endif
 
 @protocol NSSharingServicePickerTouchBarItemDelegate;
 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 875FD7EE-2916-34D9-8BD2-548DF69A01B0', 'x86_64: 875FD7EE-2916-34D9-8BD2-548DF69A01B0' ]
+uuids:           [ 'x86_64: F79FB35F-E4FF-35E5-882F-3CADB9316011', 'x86_64: F79FB35F-E4FF-35E5-882F-3CADB9316011' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/NetworkServiceProxy.framework/Versions/A/NetworkServiceProxy'
 exports:         

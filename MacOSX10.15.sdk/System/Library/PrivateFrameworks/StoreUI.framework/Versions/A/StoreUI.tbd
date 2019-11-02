@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 384FEA76-F2AC-3AC8-B891-6087132C8DC6' ]
+uuids:           [ 'x86_64: EE5894EC-64DB-3565-80B5-D5C17CA32655' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/StoreUI.framework/Versions/A/StoreUI'
 current-version: 379

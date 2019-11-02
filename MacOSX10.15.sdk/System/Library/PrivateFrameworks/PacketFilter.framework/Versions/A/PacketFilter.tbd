@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 14222744-D866-37CE-9C61-AA8487208E51', 'x86_64: 14222744-D866-37CE-9C61-AA8487208E51' ]
+uuids:           [ 'x86_64: 0983C9EC-5971-35FB-9C56-36230447AFFD', 'x86_64: 0983C9EC-5971-35FB-9C56-36230447AFFD' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/PacketFilter.framework/Versions/A/PacketFilter'
 exports:         

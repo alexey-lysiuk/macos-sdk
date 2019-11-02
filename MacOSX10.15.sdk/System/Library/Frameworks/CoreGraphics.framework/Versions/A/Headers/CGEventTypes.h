@@ -374,7 +374,11 @@ typedef CF_ENUM(uint32_t, CGEventField) {
   
   /* Added in 10.5; made public in 10.7 */
   kCGMouseEventWindowUnderMousePointer = 91,
-  kCGMouseEventWindowUnderMousePointerThatCanHandleThisEvent = 92
+  kCGMouseEventWindowUnderMousePointerThatCanHandleThisEvent = 92,
+
+  /* Unaccelerated pointer movement */
+  kCGEventUnacceleratedPointerMovementX = 170,
+  kCGEventUnacceleratedPointerMovementY = 171
 };
 
 /* Constants used with the `kCGMouseEventSubtype' event field. */

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2B717678-E4B8-352F-A9D8-A0D6E68D9B7A', 'x86_64: 2B717678-E4B8-352F-A9D8-A0D6E68D9B7A' ]
+uuids:           [ 'x86_64: 6DB92B98-BC0A-364A-8AAD-89869FFA2489', 'x86_64: 6DB92B98-BC0A-364A-8AAD-89869FFA2489' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/VideoSubscriberAccount.framework/Versions/A/VideoSubscriberAccount'
-current-version: 316.0.1
+current-version: 316.20.3
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _VSAccountProviderAuthenticationSchemeAPI, _VSAccountProviderAuthenticationSchemeSAML, 

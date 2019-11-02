@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 25EFCD3E-3926-3238-A1E6-72C924AEAA5B', 'x86_64: 25EFCD3E-3926-3238-A1E6-72C924AEAA5B' ]
+uuids:           [ 'x86_64: 87BF283B-53B9-3E0C-90E5-DAD386131101', 'x86_64: 87BF283B-53B9-3E0C-90E5-DAD386131101' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/DeviceCheck.framework/Versions/A/DeviceCheck'
 exports:         

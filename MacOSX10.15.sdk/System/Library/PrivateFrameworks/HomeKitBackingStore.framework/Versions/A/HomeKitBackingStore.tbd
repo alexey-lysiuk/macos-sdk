@@ -1,41 +1,48 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 14B88441-58CF-3F24-8CED-DC9946F6E8BF' ]
+uuids:           [ 'x86_64: 946BC7C1-BCBA-3197-8618-1D0970EE07CA' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/HomeKitBackingStore.framework/Versions/A/HomeKitBackingStore'
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _HMBCKErrorNoRetryDelay, _HMBCloudDatabaseConfigurationDefaultSourceApplicationBundleIdentifier, 
-                       _HMBDefaultCKErrorRetryDelay, _HMBLocalSQLContextQueryableIndex, 
-                       _HMBLocalSQLContextQueryableTable, _HMBStringFromLoggingVisibility, 
-                       _HMFBackingStoreLocalErrorExtendedCode, _HMFBackingStoreLocalErrorStatement, 
-                       _HMFBackingStoreLocalErrorText, _hmbBindDataSQLite3, _hmbBindIntSQLite3, 
-                       _hmbBindStringSQLite3, _hmbBindUUIDSQLite3, _hmbNSUIntegerWithSQLite3Column, 
-                       _kCloudVersionKey, _kHMBCloudDatabaseIsInternalObjectKey, 
+                       _HMBDefaultCKErrorRetryDelay, _HMBLocalSQLContextIndexSentinelIndex, 
+                       _HMBLocalSQLContextIndexSentinelTable, _HMBLocalZoneQueryResultModelTypeBindVariable, 
+                       _HMBLocalZoneQueryResultZoneRowBindVariable, _HMBSQLQueryStatementSequenceBindVariable, 
+                       _HMBStringFromLoggingVisibility, _HMFBackingStoreLocalErrorExtendedCode, 
+                       _HMFBackingStoreLocalErrorStatement, _HMFBackingStoreLocalErrorText, 
+                       ___execAndSetError, ___execRowAndSetError, _hmbBindDataSQLite3, 
+                       _hmbBindIntSQLite3, _hmbBindStringSQLite3, _hmbBindUUIDSQLite3, 
+                       _hmbNSUIntegerWithSQLite3Column, _kCloudVersionKey, _kHMBCloudDatabaseIsInternalObjectKey, 
                        _kHMBCloudDatabaseModelIDKey, _kHMBCloudDatabaseModelTypeKey, 
                        _kHMBCloudDatabaseParentModelIDKey, _kHMBCloudDatabasePushDeviceKey, 
                        _kHMBCloudDatabasePushEncodingKey, _kHMBModelDataVersionKey, 
                        _kHMBModelDeprecatedDataVersionKey, _kHMBModelGenericTypeKey, 
                        _kHMBModelParentUUIDKey, _kHMBModelTypeKey, _kHMBModelUUIDKey, 
                        _prepareSQLite3, _selectSQLite3 ]
-    objc-classes:    [ HMBAction, HMBBackedObject, HMBBackedObjectBase, HMBBackedObjectRoot, 
-                       HMBCloudDatabase, HMBCloudDatabaseConfiguration, HMBCloudDatabaseStateModel, 
-                       HMBCloudID, HMBCloudStateModel, HMBCloudZone, HMBCloudZoneConflict, 
-                       HMBCloudZoneID, HMBCloudZonePullResult, HMBCloudZonePushResult, 
-                       HMBCloudZoneRebuilderStatus, HMBCloudZoneRecordPushResult, 
+    objc-classes:    [ HMBAction, HMBCloudDatabase, HMBCloudDatabaseConfiguration, 
+                       HMBCloudDatabaseStateModel, HMBCloudID, HMBCloudStateModel, 
+                       HMBCloudZone, HMBCloudZoneConfiguration, HMBCloudZoneConflict, 
+                       HMBCloudZoneEncodingContext, HMBCloudZoneID, HMBCloudZonePullResult, 
+                       HMBCloudZonePushResult, HMBCloudZoneRebuilderStatus, HMBCloudZoneRecordPushResult, 
                        HMBCloudZoneShareModel, HMBCloudZoneShareParticipantModel, 
                        HMBCloudZoneStateModel, HMBEntrySearch, HMBLocalDatabase, 
-                       HMBLocalSQLContext, HMBLocalSQLContextInputBlock, HMBLocalSQLContextRowBlock, 
+                       HMBLocalSQLContext, HMBLocalSQLContextInputBlock, HMBLocalSQLContextQueryIndex, 
+                       HMBLocalSQLContextQueryTable, HMBLocalSQLContextRowBlock, 
                        HMBLocalSQLContextRowQuery, HMBLocalSQLContextRowQueryTuple, 
                        HMBLocalZone, HMBLocalZoneIDUnshared, HMBLocalZoneQueryResult, 
                        HMBLocalZoneReplicationItem, HMBMirrorInput, HMBMirrorOutputGroup, 
                        HMBMirrorOutputResult, HMBMirrorOutputTuple, HMBModel, HMBModelCloudReference, 
-                       HMBModelContainer, HMBModelField, HMBModelFieldDeprecatedField, 
-                       HMBModelFieldOption, HMBModelReference, HMBModelUnsupported, 
-                       HMBMutableAction, HMBMutableCloudDatabaseConfiguration, HMBMutableModelContainer, 
+                       HMBModelContainer, HMBModelContainerEncodingContext, HMBModelCountMatchesQuery, 
+                       HMBModelField, HMBModelFieldDeprecatedField, HMBModelFieldOption, 
+                       HMBModelFiniteQuery, HMBModelIndexedQuery, HMBModelInfiniteQuery, 
+                       HMBModelQuery, HMBModelQueryArgument, HMBModelReference, HMBModelUnindexedQuery, 
+                       HMBModelUnsupported, HMBMutableAction, HMBMutableCloudDatabaseConfiguration, 
+                       HMBMutableCloudZoneConfiguration, HMBMutableModelContainer, 
                        HMBMutableModelField, HMBProcessingModelCreation, HMBProcessingModelDeletion, 
                        HMBProcessingModelResult, HMBProcessingModelUpdate, HMBProcessingOptions, 
-                       HMBProcessingOptionsMirror, HMBProcessingResult, HMBSQLContext, 
-                       HMBSQLFile, HMBShareInvitation, HMBShareInvitationContext, 
-                       HMBShareParticipant, HMBShareUserID ]
+                       HMBProcessingResult, HMBSQLContext, HMBSQLFile, HMBSQLQueryIterator, 
+                       HMBSQLQueryStatement, HMBSQLStatement, HMBSQLStatementQueryPlanTuple, 
+                       HMBShareInvitation, HMBShareInvitationContext, HMBShareParticipant, 
+                       HMBShareUserID, HMBStreamingAsset ]
 ...

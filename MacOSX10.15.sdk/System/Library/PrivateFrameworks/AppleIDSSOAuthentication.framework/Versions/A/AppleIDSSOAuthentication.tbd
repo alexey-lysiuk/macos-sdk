@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5B2CE0B6-9A4A-3FA8-ABE1-8633993DF842', 'x86_64: 5B2CE0B6-9A4A-3FA8-ABE1-8633993DF842' ]
+uuids:           [ 'x86_64: 914DE180-C948-37AD-AFBB-F6A0B5D37B0D', 'x86_64: 914DE180-C948-37AD-AFBB-F6A0B5D37B0D' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AppleIDSSOAuthentication.framework/Versions/A/AppleIDSSOAuthentication'
 exports:         

@@ -123,16 +123,6 @@ UIKIT_EXTERN API_AVAILABLE(ios(13.0)) API_UNAVAILABLE(watchos, tvos) @protocol U
  */
 - (void)contextMenuInteraction:(UIContextMenuInteraction *)interaction willEndForConfiguration:(UIContextMenuConfiguration *)configuration animator:(nullable id<UIContextMenuInteractionAnimating>)animator;
 
-
-
-
-
-- (void)contextMenuInteraction:(UIContextMenuInteraction *)interaction willCommitWithAnimator:(id<UIContextMenuInteractionCommitAnimating>)animator API_DEPRECATED_WITH_REPLACEMENT("contextMenuInteraction:willPerformPreviewActionForMenuWithConfiguration:animator:", ios(13.0, 13.0));
-
-- (void)contextMenuInteractionWillPresent:(UIContextMenuInteraction *)interaction API_DEPRECATED_WITH_REPLACEMENT("contextMenuInteraction:willDisplayMenuForConfiguration:animator:", ios(13.0, 13.0));
-
-- (void)contextMenuInteractionDidEnd:(UIContextMenuInteraction *)interaction API_DEPRECATED_WITH_REPLACEMENT("contextMenuInteraction:willEndForConfiguration:animator:", ios(13.0, 13.0));
-
 @end
 
 NS_ASSUME_NONNULL_END

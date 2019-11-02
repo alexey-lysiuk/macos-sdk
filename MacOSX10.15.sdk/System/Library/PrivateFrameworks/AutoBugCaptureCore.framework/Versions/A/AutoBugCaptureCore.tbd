@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5F393ED5-57C2-317A-8947-986506081470' ]
+uuids:           [ 'x86_64: BAE17F8F-A076-3BDD-9CAA-DC36E27BE155' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AutoBugCaptureCore.framework/Versions/A/AutoBugCaptureCore'
-current-version: 1238.0.2
+current-version: 1238.40.4
 exports:         
   - archs:           [ x86_64 ]
     objc-classes:    [ ABCAdministrator ]

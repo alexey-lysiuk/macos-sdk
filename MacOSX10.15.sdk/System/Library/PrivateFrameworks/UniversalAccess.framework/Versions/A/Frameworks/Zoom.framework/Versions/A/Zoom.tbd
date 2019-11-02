@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 873D56C2-DACB-38A1-AC6C-61E5863CB754' ]
+uuids:           [ 'x86_64: 3DAB9331-0D85-3588-A175-58D6E20FE155' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/UniversalAccess.framework/Versions/A/Frameworks/Zoom.framework/Versions/A/Zoom'
 current-version: 68

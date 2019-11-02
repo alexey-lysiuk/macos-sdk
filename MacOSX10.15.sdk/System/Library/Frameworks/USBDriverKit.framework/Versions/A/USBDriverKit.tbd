@@ -1,22 +1,23 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 66E3209B-B835-3566-9AFE-EDE7ACB8A009' ]
+uuids:           [ 'x86_64: 63176948-0B35-3437-9693-A60CA992D6FA' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/USBDriverKit.framework/Versions/A/USBDriverKit'
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _IOUSBGetBillboardDescriptor, _IOUSBGetConfigurationMaxPowerMilliAmps, 
                        _IOUSBGetContainerIDDescriptor, _IOUSBGetEndpointAddress, 
-                       _IOUSBGetEndpointDirection, _IOUSBGetEndpointIntervalEncodedMicroframes, 
+                       _IOUSBGetEndpointBurstSize, _IOUSBGetEndpointDirection, _IOUSBGetEndpointIntervalEncodedMicroframes, 
                        _IOUSBGetEndpointIntervalFrames, _IOUSBGetEndpointIntervalMicroframes, 
                        _IOUSBGetEndpointMaxPacketSize, _IOUSBGetEndpointMaxStreams, 
-                       _IOUSBGetEndpointMaxStreamsEncoded, _IOUSBGetEndpointNumber, 
-                       _IOUSBGetEndpointType, _IOUSBGetNextAssociatedDescriptor, 
+                       _IOUSBGetEndpointMaxStreamsEncoded, _IOUSBGetEndpointMult, 
+                       _IOUSBGetEndpointNumber, _IOUSBGetEndpointType, _IOUSBGetNextAssociatedDescriptor, 
                        _IOUSBGetNextAssociatedDescriptorWithType, _IOUSBGetNextCapabilityDescriptor, 
                        _IOUSBGetNextCapabilityDescriptorWithType, _IOUSBGetNextDescriptor, 
                        _IOUSBGetNextDescriptorWithType, _IOUSBGetNextEndpointDescriptor, 
                        _IOUSBGetNextInterfaceAssociationDescriptor, _IOUSBGetNextInterfaceDescriptor, 
-                       _IOUSBGetSuperSpeedDeviceCapabilityDescriptor, _IOUSBGetUSB20ExtensionDeviceCapabilityDescriptor, 
+                       _IOUSBGetPlatformCapabilityDescriptor, _IOUSBGetSuperSpeedDeviceCapabilityDescriptor, 
+                       _IOUSBGetSuperSpeedPlusDeviceCapabilityDescriptor, _IOUSBGetUSB20ExtensionDeviceCapabilityDescriptor, 
                        _IOUSBHostDevice_Class, _IOUSBHostInterface_Class, _IOUSBHostPipe_Class, 
                        __Z23IOUSBHostFreeDescriptorPK18IOUSBBOSDescriptor, __Z23IOUSBHostFreeDescriptorPK21IOUSBDeviceDescriptor, 
                        __Z23IOUSBHostFreeDescriptorPK21IOUSBStringDescriptor, __Z23IOUSBHostFreeDescriptorPK28IOUSBConfigurationDescriptor, 

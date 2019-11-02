@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 933429B9-4F28-3AF3-9AAD-83C7C8FF9B99', 'x86_64: 933429B9-4F28-3AF3-9AAD-83C7C8FF9B99' ]
+uuids:           [ 'x86_64: C8F86BE7-AAED-30A6-BBC2-550446137E7C', 'x86_64: C8F86BE7-AAED-30A6-BBC2-550446137E7C' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices'
-current-version: 1065.2
+current-version: 1069.11
 exports:         
   - archs:           [ x86_64 ]
     re-exports:      [ '/System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork', 
@@ -27,10 +27,10 @@ exports:
                        _nextafterf, _remquo, '_remquo$fenv_access_off' ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0DF53735-58DB-354B-9BC2-F8B0ED698782', 'x86_64: 0DF53735-58DB-354B-9BC2-F8B0ED698782' ]
+uuids:           [ 'x86_64: 3301AF1B-D178-306A-9641-B57AA03FB1BE', 'x86_64: 3301AF1B-D178-306A-9641-B57AA03FB1BE' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE'
-current-version: 835.1
+current-version: 838
 compatibility-version: 0
 parent-umbrella: CoreServices
 exports:         
@@ -106,10 +106,10 @@ exports:
                        _vAEBuildAppleEvent, _vAEBuildDesc, _vAEBuildParameters ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 76BF7526-6876-388B-8E14-03BED28B6041' ]
+uuids:           [ 'x86_64: FAA1467B-6D39-3EBE-9810-A4DF49478F10' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore'
-current-version: 1214
+current-version: 1217
 parent-umbrella: CoreServices
 exports:         
   - archs:           [ x86_64 ]
@@ -749,10 +749,10 @@ exports:
                        _scPrefsSetString, _str2dec, _x80tod, _x80told ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8E9E1B77-AEB2-34CE-855D-651369E18325', 'x86_64: 8E9E1B77-AEB2-34CE-855D-651369E18325' ]
+uuids:           [ 'x86_64: C1798F09-36D3-3C8E-AF72-A3DE63962AF1', 'x86_64: C1798F09-36D3-3C8E-AF72-A3DE63962AF1' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/DictionaryServices.framework/Versions/A/DictionaryServices'
-current-version: 321
+current-version: 323
 parent-umbrella: CoreServices
 exports:         
   - archs:           [ x86_64 ]
@@ -816,10 +816,10 @@ exports:
                        _kIDXSearchPrefixMatch, _kIDXSearchWildcardMatch ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 78D2AB1A-9053-3D32-8C18-C1DD31FF9400', 'x86_64: 78D2AB1A-9053-3D32-8C18-C1DD31FF9400' ]
+uuids:           [ 'x86_64: 9BB76885-7CD7-3369-B759-33F7E5DA5392', 'x86_64: 9BB76885-7CD7-3369-B759-33F7E5DA5392' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/FSEvents'
-current-version: 1268.0.6
+current-version: 1268.40.5
 parent-umbrella: CoreServices
 exports:         
   - archs:           [ x86_64 ]
@@ -835,10 +835,10 @@ exports:
                        _FSEventsPurgeEventsForDeviceUpToEventId ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 200F66C5-EB4A-332C-A1AE-04513628C7B3', 'x86_64: 200F66C5-EB4A-332C-A1AE-04513628C7B3' ]
+uuids:           [ 'x86_64: 88F59BD5-412A-35EE-AD45-E6BF80B24891', 'x86_64: 88F59BD5-412A-35EE-AD45-E6BF80B24891' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices'
-current-version: 1065.2
+current-version: 1069.11
 parent-umbrella: CoreServices
 exports:         
   - archs:           [ x86_64 ]
@@ -1003,28 +1003,28 @@ exports:
                        __LSWaitUntilSeedingComplete, __LSWriteApplicationPlaceholderToURL, 
                        __UTCopyDeclaredTypeIdentifiers, __UTTypeCopyDescriptionLocalizationDictionary, 
                        __UTTypeCopyDynamicIdentifiersForTags, __UTTypeCopyGlyphName, 
-                       __UTTypeCopyIconFileURL, __UTTypeCopyIconName, __UTTypeCopyKindStringDictionaryForNonMaterializedItem, 
-                       __UTTypeCopyKindStringForNonMaterializedItem, __UTTypeCopyPedigree, 
-                       __UTTypeCopyPedigreeSet, __UTTypeCreateSuggestedFilename, 
+                       __UTTypeCopyIconFileURL, __UTTypeCopyIconName, __UTTypeCopyIdentifierForPromiseAtURL, 
+                       __UTTypeCopyKindStringDictionaryForNonMaterializedItem, __UTTypeCopyKindStringForNonMaterializedItem, 
+                       __UTTypeCopyPedigree, __UTTypeCopyPedigreeSet, __UTTypeCreateSuggestedFilename, 
                        __UTTypeGetStatus, __UTTypeHash, __UTTypeIdentifierIsValid, 
                        __UTTypeIsWildcard, __UTTypePrecachePropertiesOfIdentifiers, 
                        __UnlattenIconRef, ___LSDefaultsGetSharedInstance, __kLSASNKey, 
                        __kLSASNToBringForwardAtNextApplicationExitKey, __kLSActivePageUserVisibleOriginsKey, 
                        __kLSAddToPermittedFrontASNsArrayKey, __kLSAllowedToBecomeFrontmostKey, 
                        __kLSApplicationBackgroundOnlyTypeKey, __kLSApplicationBackgroundPriorityKey, 
-                       __kLSApplicationCountKey, __kLSApplicationDesiresAttentionKey, 
-                       __kLSApplicationForegroundPriorityKey, __kLSApplicationForegroundTypeKey, 
-                       __kLSApplicationHasRegisteredKey, __kLSApplicationHasSignalledItIsReadyKey, 
-                       __kLSApplicationInSandboxKey, __kLSApplicationInStoppedStateKey, 
-                       __kLSApplicationInThrottledStateAfterLaunchKey, __kLSApplicationInformationSeedKey, 
-                       __kLSApplicationIsHiddenKey, __kLSApplicationListSeedKey, 
-                       __kLSApplicationLockedInStoppedStateKey, __kLSApplicationOverriddenBackgroundDomainNameKey, 
-                       __kLSApplicationReadyToBeFrontableKey, __kLSApplicationSandboxedInformationItemsKey, 
-                       __kLSApplicationTypeKey, __kLSApplicationTypeToRestoreKey, 
-                       __kLSApplicationUIElementTypeKey, __kLSApplicationVersionKey, 
-                       __kLSApplicationWasTerminatedByTALKey, __kLSApplicationWouldBeTerminatedByTALKey, 
-                       __kLSApplicationsRecordingAppleEventsKey, __kLSArchitectureKey, 
-                       __kLSArchitecturePowerPC64Value, __kLSArchitecturePowerPCValue, 
+                       __kLSApplicationCountKey, __kLSApplicationDelayLaunchUntilTimeKey, 
+                       __kLSApplicationDesiresAttentionKey, __kLSApplicationForegroundPriorityKey, 
+                       __kLSApplicationForegroundTypeKey, __kLSApplicationHasRegisteredKey, 
+                       __kLSApplicationHasSignalledItIsReadyKey, __kLSApplicationInSandboxKey, 
+                       __kLSApplicationInStoppedStateKey, __kLSApplicationInThrottledStateAfterLaunchKey, 
+                       __kLSApplicationInformationSeedKey, __kLSApplicationIsHiddenKey, 
+                       __kLSApplicationListSeedKey, __kLSApplicationLockedInStoppedStateKey, 
+                       __kLSApplicationOverriddenBackgroundDomainNameKey, __kLSApplicationReadyToBeFrontableKey, 
+                       __kLSApplicationSandboxedInformationItemsKey, __kLSApplicationTypeKey, 
+                       __kLSApplicationTypeToRestoreKey, __kLSApplicationUIElementTypeKey, 
+                       __kLSApplicationVersionKey, __kLSApplicationWasTerminatedByTALKey, 
+                       __kLSApplicationWouldBeTerminatedByTALKey, __kLSApplicationsRecordingAppleEventsKey, 
+                       __kLSArchitectureKey, __kLSArchitecturePowerPC64Value, __kLSArchitecturePowerPCValue, 
                        __kLSArchitectureUnknownValue, __kLSArchitecturei386Value, 
                        __kLSArchitecturex86_64Value, __kLSAuditTokenKey, __kLSBackgroundPriorityKey, 
                        __kLSBackgroundPriorityOnceKey, __kLSBindingResourceInfoBadgeableKey, 
@@ -1215,10 +1215,10 @@ exports:
                        _LSURLOverride, _UTType, _UTTypeQuery ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B8982CD5-3A47-3366-A927-CDBB00D0E0A7', 'x86_64: B8982CD5-3A47-3366-A927-CDBB00D0E0A7' ]
+uuids:           [ 'x86_64: 028AC15A-35B7-3E1F-BCDC-470C8EA0CA09', 'x86_64: 028AC15A-35B7-3E1F-BCDC-470C8EA0CA09' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Metadata'
-current-version: 2061
+current-version: 2074.4
 parent-umbrella: CoreServices
 exports:         
   - archs:           [ x86_64 ]
@@ -1226,7 +1226,8 @@ exports:
     symbols:         [ _MDBackupBegin, _MDBackupCancel, _MDBackupCreate, _MDBackupEnd, 
                        _MDBackupFileWasIndexed, _MDBackupFinishedForVolume, _MDBackupFlushFallbackBackup, 
                        _MDBackupIndexFile, _MDBackupQuiescentForVolume, _MDBackupResume, 
-                       _MDBackupWriteRawAttributesToPath, _MDCopyLabelKinds, _MDCopyLabelWithID, 
+                       _MDBackupWriteRawAttributesToPath, _MDChildPlistBytesContextCreate, 
+                       _MDChildPlistBytesContextDestroy, _MDCopyLabelKinds, _MDCopyLabelWithID, 
                        _MDCopyLabelWithUUID, _MDCopyLabelsMatchingExpression, _MDCopyLabelsWithKind, 
                        _MDCopyPathForSpotlight, _MDCopySessionBegin, _MDCopySessionCancel, 
                        _MDCopySessionCreate, _MDCopySessionEnd, _MDCopySessionEnterUserDirectory, 
@@ -1401,7 +1402,7 @@ exports:
                        __MDCopyImportInfo, __MDCopyImporterPluginPathForFile, __MDCopyIndexSize, 
                        __MDCopyIndexingStatus, __MDCopyIndexingStatusForVolume, __MDCopyLabelUserUUID, 
                        __MDCopyLocalizedGroupNameDictionary, __MDCopyMDSimpleGroupingsPlist, 
-                       __MDCopyShortcutsDictionary, __MDCopyUTIToGroupNumberDictionary, 
+                       __MDCopyShortcutsDictionary, __MDCopyTextShortcutsSet, __MDCopyUTIToGroupNumberDictionary, 
                        __MDCopyVolumeFilter, __MDCopyVolumeFilterEngine, __MDCreateAppRankEvaluator, 
                        __MDCreateDictionaryByMappingXMPDictionary, __MDCreateSimpleQueryEvaluator, 
                        __MDCreateSimpleQueryEvaluatorWithBlock, __MDCreateSimpleQueryEvaluatorWithOptions, 
@@ -1658,10 +1659,10 @@ exports:
                        _MDPlistBytes, _MDServiceConnection ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F31A1213-B3E5-39DE-B0DD-44C476D8180B', 'x86_64: F31A1213-B3E5-39DE-B0DD-44C476D8180B' ]
+uuids:           [ 'x86_64: A667F007-A599-3869-99F7-1F8460011015', 'x86_64: A667F007-A599-3869-99F7-1F8460011015' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSServices.framework/Versions/A/OSServices'
-current-version: 1065.2
+current-version: 1069.11
 parent-umbrella: CoreServices
 exports:         
   - archs:           [ x86_64 ]
@@ -1795,7 +1796,7 @@ exports:
                        _kcgetkeychainname, _wsCFDateToISO8601String, _wsCreateDateFromISO8601 ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F3705C6E-AA86-3232-89D3-D37841357E45', 'x86_64: F3705C6E-AA86-3232-89D3-D37841357E45' ]
+uuids:           [ 'x86_64: F0A931E4-0C31-36BA-8DD7-01FDF9813FB7', 'x86_64: F0A931E4-0C31-36BA-8DD7-01FDF9813FB7' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/SearchKit.framework/Versions/A/SearchKit'
 current-version: 417.1
@@ -1918,10 +1919,10 @@ exports:
                        _kSKSubstitutions, _kSKTermChars ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D495FA45-5492-335F-BB73-A01309BF1DC5', 'x86_64: D495FA45-5492-335F-BB73-A01309BF1DC5' ]
+uuids:           [ 'x86_64: 62C3066A-3991-313F-AE2D-75B2B5934D52', 'x86_64: 62C3066A-3991-313F-AE2D-75B2B5934D52' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/SharedFileList.framework/Versions/A/SharedFileList'
-current-version: 129
+current-version: 131
 parent-umbrella: CoreServices
 exports:         
   - archs:           [ x86_64 ]

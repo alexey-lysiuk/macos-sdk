@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 263C4FA6-933B-3770-A333-1B9F6DA97F5F', 'x86_64: 263C4FA6-933B-3770-A333-1B9F6DA97F5F' ]
+uuids:           [ 'x86_64: 6EC9AB3C-3FFD-3B77-B052-5385245E7A52', 'x86_64: 6EC9AB3C-3FFD-3B77-B052-5385245E7A52' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/MapsSupport.framework/Versions/A/MapsSupport'
 exports:         
@@ -20,16 +20,17 @@ exports:
                        _GEOConfigMSPShareETAUserEnabled, _GEOConfigMSPSharedETASenderIdentifier, 
                        _GEOConfigMSPSharedTripServerEnabled, _GEOConfigMSPUpNextMaximumAllowableHorizontalAccuracyInMeters, 
                        _GEOConfigMSPUpNextMinimumAllowableDistanceToEntryInMeters, 
-                       _GEOConfigMapsSyncCloudPushBatchSize, _GEOConfigMapsSyncMaxMergeDuration, 
-                       _GEOConfigMapsSyncRequireDeviceToDeviceEncryption, _GEOConfigMapsSyncTimerDelayForLocalChange, 
-                       _GEOConfigMapsSyncTimerDelayForRefresh, _GEOConfigMapsSyncTimerDelayForRemoteChange, 
-                       _MSPBookmarkStorageArrayFromPropertyList, _MSPBookmarkStorageReadFrom, 
-                       _MSPBookmarksKey, _MSPBookmarksVersionKey, _MSPBookmarksVersion_Fall2014toFall2016, 
-                       _MSPBundle, _MSPCollectionItemReplicaStorageReadFrom, _MSPCollectionItemStorageReadFrom, 
-                       _MSPCollectionStorageReadFrom, _MSPCollectionsKey, _MSPCollectionsVersionKey, 
-                       _MSPCompanionSyncedItemReadFrom, _MSPDirectionsSearchReadFrom, 
-                       _MSPDroppedPinReadFrom, _MSPErrorDomain, _MSPExcludePathFromBackup, 
-                       _MSPFavoriteGetAbridgedBookmarkStorageForSpotlightStorage, 
+                       _GEOConfigMapsSyncCloudPushBatchSize, _GEOConfigMapsSyncForceRunCollectionsMigrator, 
+                       _GEOConfigMapsSyncMaxMergeDuration, _GEOConfigMapsSyncRequireDeviceToDeviceEncryption, 
+                       _GEOConfigMapsSyncTimerDelayForLocalChange, _GEOConfigMapsSyncTimerDelayForRefresh, 
+                       _GEOConfigMapsSyncTimerDelayForRemoteChange, _GEOConfigMapsSyncTimerDelayForRetryMax, 
+                       _GEOConfigMapsSyncTimerDelayForRetryMin, _MSPBookmarkStorageArrayFromPropertyList, 
+                       _MSPBookmarkStorageReadFrom, _MSPBookmarksKey, _MSPBookmarksVersionKey, 
+                       _MSPBookmarksVersion_Fall2014toFall2016, _MSPBundle, _MSPCollectionItemReplicaStorageReadFrom, 
+                       _MSPCollectionItemStorageReadFrom, _MSPCollectionStorageReadFrom, 
+                       _MSPCollectionsKey, _MSPCollectionsVersionKey, _MSPCompanionSyncedItemReadFrom, 
+                       _MSPDirectionsSearchReadFrom, _MSPDroppedPinReadFrom, _MSPErrorDomain, 
+                       _MSPExcludePathFromBackup, _MSPFavoriteGetAbridgedBookmarkStorageForSpotlightStorage, 
                        _MSPFavoriteGetBookmarkStorage, _MSPFavoriteMakeFromBookmarkStorage, 
                        _MSPFavoritesArrayMakeFromSerializedRepresentation, _MSPGroupSessionStorageReadFrom, 
                        _MSPHistoryEntriesArrayMakeFromSerializedRepresentation, _MSPHistoryEntryGetStorage, 

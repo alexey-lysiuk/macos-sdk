@@ -109,7 +109,11 @@ typedef void (*UpdateEventFlagsCallback)(
 #define EV_DEFAULTKEYREPEAT     83333333ULL     // 1/12 sec in nanoseconds
 #define EV_MINKEYREPEAT         16700000ULL     // 1/60 sec
 
+#if defined(KERNEL) && !defined(KERNEL_PRIVATE)
+class __deprecated_msg("Use DriverKit") IOHIKeyboard : public IOHIDevice
+#else
 class IOHIKeyboard : public IOHIDevice
+#endif
 {
     OSDeclareDefaultStructors(IOHIKeyboard);
 

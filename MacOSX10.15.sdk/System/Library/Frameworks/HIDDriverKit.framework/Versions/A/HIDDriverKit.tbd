@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 29A09CB4-414C-3328-B3C7-8C50963D8E74' ]
+uuids:           [ 'x86_64: FDA7A3A3-73DE-308A-985A-949C01C88741' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/HIDDriverKit.framework/Versions/A/HIDDriverKit'
 exports:         
@@ -118,7 +118,8 @@ exports:
                        __ZN20IOHIDDeviceMetaClass8DispatchE5IORPC, __ZN20IOUserHIDEventDriver10Start_ImplEP9IOService, 
                        __ZN20IOUserHIDEventDriver11SetLED_ImplEjb, __ZN20IOUserHIDEventDriver12handleReportEyPhj15IOHIDReportTypej, 
                        __ZN20IOUserHIDEventDriver13parseElementsEP7OSArray, __ZN20IOUserHIDEventDriver15parseLEDElementEP12IOHIDElement, 
-                       __ZN20IOUserHIDEventDriver18handleScrollReportEyj, __ZN20IOUserHIDEventDriver18parseScrollElementEP12IOHIDElement, 
+                       __ZN20IOUserHIDEventDriver15setTipThresholdEv, __ZN20IOUserHIDEventDriver18handleScrollReportEyj, 
+                       __ZN20IOUserHIDEventDriver18parseScrollElementEP12IOHIDElement, 
                        __ZN20IOUserHIDEventDriver19parsePointerElementEP12IOHIDElement, 
                        __ZN20IOUserHIDEventDriver20handleKeyboardReportEyj, __ZN20IOUserHIDEventDriver20parseKeyboardElementEP12IOHIDElement, 
                        __ZN20IOUserHIDEventDriver20setSurfaceDimensionsEv, __ZN20IOUserHIDEventDriver21handleDigitizerReportEyj, 

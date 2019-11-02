@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 295F0722-1C03-3C6B-B603-44C892E3E85C', 'x86_64: 295F0722-1C03-3C6B-B603-44C892E3E85C' ]
+uuids:           [ 'x86_64: E916D1BA-7646-30C7-8CF8-99B8CC968C07', 'x86_64: E916D1BA-7646-30C7-8CF8-99B8CC968C07' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AVConference.framework/Versions/A/AVConference'
 exports:         
@@ -108,17 +108,17 @@ exports:
                        _VCWifiAssistBudgetStatusEnableThreshold, _VCWifiAssistDuplicationEnableThreshold, 
                        _VCWifiAssistStatusBarEnableThreshold, _VCWifiLowTierRedundancyEnableThreshold, 
                        _VCiRATMetricsEnableThreshold, _VCiRATRtpEnableThreshold, 
-                       _hwrandom, _kAVCKeyAudioPowerSpectrumTokenInput, _kAVCKeyAudioPowerSpectrumTokenOutput, 
-                       _kAVCKeyRTCPSocket, _kAVCKeyRTPLocalSSRC, _kAVCKeyRTPSocket, 
-                       _kAVCKeySharedSocket, _kAVCKeySourcePort, _kAVCKeySupportedAudioCodecs, 
-                       _kAVCKeySupportedCodecs, _kAVCKeySupportedMaxVideoDecodes, 
-                       _kAVCKeySupportedVideoDecodingCodecs, _kAVCKeySupportedVideoDecodingResolutions, 
-                       _kAVCKeySupportedVideoEncodingCodecs, _kAVCKeySupportedVideoEncodingResolutions, 
-                       _kAVCKeyVideoStreamDownlinkIsOperatingAtMaxBitrate, _kAVCKeyVideoStreamDownlinkIsOperatingAtMinBitrate, 
-                       _kAVCKeyVideoStreamDownlinkOperatingBitrate, _kAVCKeyVideoStreamDownlinkOptimalBitrate, 
-                       _kAVCKeyVideoStreamUplinkOperatingBitrate, _kAVCMediaStreamOptionCallID, 
-                       _kAVCMediaStreamOptionClientPID, _kAVCMediaStreamOptionRemoteEndpointInfo, 
-                       _kAVCMediaStreamOptionRunInProcess ]
+                       _hwrandom, _hwrandom16, _kAVCKeyAudioPowerSpectrumTokenInput, 
+                       _kAVCKeyAudioPowerSpectrumTokenOutput, _kAVCKeyRTCPSocket, 
+                       _kAVCKeyRTPLocalSSRC, _kAVCKeyRTPSocket, _kAVCKeySharedSocket, 
+                       _kAVCKeySourcePort, _kAVCKeySupportedAudioCodecs, _kAVCKeySupportedCodecs, 
+                       _kAVCKeySupportedMaxVideoDecodes, _kAVCKeySupportedVideoDecodingCodecs, 
+                       _kAVCKeySupportedVideoDecodingResolutions, _kAVCKeySupportedVideoEncodingCodecs, 
+                       _kAVCKeySupportedVideoEncodingResolutions, _kAVCKeyVideoStreamDownlinkIsOperatingAtMaxBitrate, 
+                       _kAVCKeyVideoStreamDownlinkIsOperatingAtMinBitrate, _kAVCKeyVideoStreamDownlinkOperatingBitrate, 
+                       _kAVCKeyVideoStreamDownlinkOptimalBitrate, _kAVCKeyVideoStreamUplinkOperatingBitrate, 
+                       _kAVCMediaStreamOptionCallID, _kAVCMediaStreamOptionClientPID, 
+                       _kAVCMediaStreamOptionRemoteEndpointInfo, _kAVCMediaStreamOptionRunInProcess ]
     objc-classes:    [ AVAudioClient, AVAudioDevice, AVAudioDeviceList, AVCAudioPowerSpectrum, 
                        AVCAudioPowerSpectrumBin, AVCAudioPowerSpectrumChannel, AVCAudioPowerSpectrumMeter, 
                        AVCAudioStream, AVCAudioStreamConfig, AVCCaptionsClient, AVCCaptionsConfig, 

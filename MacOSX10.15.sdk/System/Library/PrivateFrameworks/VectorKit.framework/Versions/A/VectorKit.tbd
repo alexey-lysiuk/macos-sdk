@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AD65FBFB-D4A2-3967-921C-280D64D336D8', 'x86_64: AD65FBFB-D4A2-3967-921C-280D64D336D8' ]
+uuids:           [ 'x86_64: 2A817BE6-8B96-3B1C-B582-A63B9F8B36C0', 'x86_64: 2A817BE6-8B96-3B1C-B582-A63B9F8B36C0' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/VectorKit.framework/Versions/A/VectorKit'
-current-version: 1606.20.8
+current-version: 1606.21.8
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CGPointZero, _CGRectNull, _CGRectStandardize, _CGRectUnion, 
@@ -68,14 +68,14 @@ exports:
                        VKMapSnapshotCreator._mapCanvas, VKMapSnapshotCreator._mapDisplayStyle, 
                        VKMapSnapshotCreator._mapType, VKMapSnapshotCreator._pointsOfInterestFilter, 
                        VKOverlay._canProvideVectorGeometry, VKOverlay._delegate, 
-                       VKOverlay._level, VKOverlay._replaceMapContentInRect, VKPlatform._isMac, 
-                       VKPlatform._memSize, VKPlatform._numCPUs, VKTimedAnimation._duration, 
-                       VKTimedAnimation._lastTimestamp, VKTimedAnimation._resuming, 
-                       VKTimedAnimation._startTimestamp, VKTimedAnimation._startTimestampSet, 
-                       VKTimedAnimation._stepHandler, VKTimedAnimation._timingFunction, 
-                       VKTrafficFeature._approachingDistanceInMeters, VKTrafficFeature._approachingRouteOffset, 
-                       VKTrafficFeature._groupIdentifier, VKTrafficFeature._priority, 
-                       VKTrafficFeature._state, VKTrafficFeature._uniqueIdentifier, 
+                       VKOverlay._level, VKOverlay._replaceMapContentInRect, VKOverlay.identifier, 
+                       VKPlatform._isMac, VKPlatform._memSize, VKPlatform._numCPUs, 
+                       VKTimedAnimation._duration, VKTimedAnimation._lastTimestamp, 
+                       VKTimedAnimation._resuming, VKTimedAnimation._startTimestamp, 
+                       VKTimedAnimation._startTimestampSet, VKTimedAnimation._stepHandler, 
+                       VKTimedAnimation._timingFunction, VKTrafficFeature._approachingDistanceInMeters, 
+                       VKTrafficFeature._approachingRouteOffset, VKTrafficFeature._groupIdentifier, 
+                       VKTrafficFeature._priority, VKTrafficFeature._state, VKTrafficFeature._uniqueIdentifier, 
                        VKVectorOverlayData._delegate ]
     weak-def-symbols: [ __ZTINSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 
                         __ZTINSt3__118basic_stringstreamIcNS_11char_traitsIcEENS_9allocatorIcEEEE, 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 296DD73E-2C8A-3242-8939-41BD65DB9A6B' ]
+uuids:           [ 'x86_64: 31139189-28C2-30F6-A357-BE76B4A82769' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/IASUtilities.framework/Versions/A/IASUtilities'
 current-version: 119
@@ -73,6 +73,6 @@ exports:
                        IASLogWindowController._logDataSource, IASLogWindowController._logDetailLevelPopUpButton, 
                        IASLogWindowController._resourcesBundle, IASLogWindowController._toolbarIDList, 
                        IASLogWindowController._toolbarItems, IASLogWindowController.sendLogCommentTxt, 
-                       IASLogWindowController.sendLogContactTxt, IASLogWindowController.sendLogSheet, 
-                       IASLogWindowController.uiLogView, IASLogWindowController.window ]
+                       IASLogWindowController.sendLogContactTxt, IASLogWindowController.uiLogView, 
+                       IASLogWindowController.window ]
 ...

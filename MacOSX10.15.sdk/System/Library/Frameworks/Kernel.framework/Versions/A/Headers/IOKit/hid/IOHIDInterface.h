@@ -39,7 +39,11 @@ class OSAction;
     @abstract In kernel interface to a HID device.
 */
 
-class IOHIDInterface: public IOService
+#if defined(KERNEL) && !defined(KERNEL_PRIVATE)
+class __deprecated_msg("Use DriverKit") IOHIDInterface : public IOService
+#else
+class IOHIDInterface : public IOService
+#endif
 {
     OSDeclareDefaultStructorsWithDispatch( IOHIDInterface )
     
@@ -113,7 +117,6 @@ private:
     ExpansionData *             _reserved;
 	
     bool openGated(IOService *forClient, IOOptionBits options, OSAction *action);
-    void closeGated(IOService *forClient, IOOptionBits options);
     void handleReportGated(AbsoluteTime timestamp,
                            IOMemoryDescriptor *report,
                            IOHIDReportType type,

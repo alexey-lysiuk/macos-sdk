@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3F84D5F9-0C02-3B5C-A2B5-E387CEB7C893' ]
+uuids:           [ 'x86_64: 00DC0745-DAC7-3DC8-8689-C7EBBFFD1AE2' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PSNormalizer.framework/Versions/A/Libraries/libnserverlite.dylib'
 exports:         

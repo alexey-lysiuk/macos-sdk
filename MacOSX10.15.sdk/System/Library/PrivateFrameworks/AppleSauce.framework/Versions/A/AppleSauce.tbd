@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 7AF61A24-2E0D-3D2E-8A0A-A04E78669234', 'x86_64: 7AF61A24-2E0D-3D2E-8A0A-A04E78669234' ]
+uuids:           [ 'x86_64: EFF69698-9566-3957-B3F5-CEC2B206EE7C', 'x86_64: EFF69698-9566-3957-B3F5-CEC2B206EE7C' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AppleSauce.framework/Versions/A/AppleSauce'
 current-version: 0

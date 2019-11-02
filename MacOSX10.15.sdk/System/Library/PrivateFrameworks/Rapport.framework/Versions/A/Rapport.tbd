@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 52368BC4-4700-3E6A-BEA2-552191D47ACE', 'x86_64: 52368BC4-4700-3E6A-BEA2-552191D47ACE' ]
+uuids:           [ 'x86_64: D54D57D1-6CDC-3A24-A02D-77E87FFE92D0', 'x86_64: D54D57D1-6CDC-3A24-A02D-77E87FFE92D0' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/Rapport.framework/Versions/A/Rapport'
 current-version: 0
@@ -29,14 +29,15 @@ exports:
                        _RPOptionStatusFlags, _RPOptionTimeoutSeconds, _RPOptionXID, 
                        _RPProfileIDDuetSync, _RPRequestIDAny, _RPRequestIDIdentify, 
                        _RPRequestIDSpeak, _RPTopicNone, _RPTopicNowPlayingArtwork, 
-                       _RPTopicNowPlayingProgress, _RPTopicNowPlayingText ]
+                       _RPTopicNowPlayingProgress, _RPTopicNowPlayingText, _gRPPrivateDaemon ]
     objc-classes:    [ RPAppSignInService, RPClient, RPCompanionLinkAssertion, RPCompanionLinkClient, 
                        RPCompanionLinkDevice, RPConnection, RPDevice, RPDiscovery, 
                        RPEndpoint, RPEventRegistration, RPFileTransferItem, RPFileTransferProgress, 
                        RPFileTransferSession, RPHIDSession, RPHIDTouchEvent, RPHIDTouchSession, 
                        RPIdentity, RPLegacyDeviceDiscovery, RPLegacyService, RPLegacySession, 
-                       RPMediaControlSession, RPPeopleDiscovery, RPPerson, RPRemoteDisplayDevice, 
-                       RPRemoteDisplayDiscovery, RPRemoteDisplayServer, RPRemoteDisplaySession, 
-                       RPRequestRegistration, RPServer, RPSession, RPSiriAudioSession, 
-                       RPSiriSession, RPStreamServer, RPStreamSession, RPTextInputSession ]
+                       RPMediaControlSession, RPPeopleDiscovery, RPPerson, RPPrivateAdvertiser, 
+                       RPPrivateDiscovery, RPRemoteDisplayDevice, RPRemoteDisplayDiscovery, 
+                       RPRemoteDisplayServer, RPRemoteDisplaySession, RPRequestRegistration, 
+                       RPServer, RPSession, RPSiriAudioSession, RPSiriSession, RPStreamServer, 
+                       RPStreamSession, RPTextInputSession ]
 ...

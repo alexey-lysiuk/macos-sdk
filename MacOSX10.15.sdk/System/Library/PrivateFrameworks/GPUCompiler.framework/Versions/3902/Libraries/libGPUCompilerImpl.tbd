@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 38FA86A7-0D5D-36CF-8573-2282A87DB723', 'x86_64: 38FA86A7-0D5D-36CF-8573-2282A87DB723' ]
+uuids:           [ 'x86_64: 30A9EA83-231F-3D9E-B734-91388FE01DB5', 'x86_64: 30A9EA83-231F-3D9E-B734-91388FE01DB5' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/GPUCompiler.framework/Versions/3902/Libraries/libGPUCompilerImpl.dylib'
-current-version: 902.9.58
+current-version: 902.11.1
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ __Z11getThreadIDRN4llvm8FunctionE, __Z12isTracepointRKN4llvm8FunctionE, 

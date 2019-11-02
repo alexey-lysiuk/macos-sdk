@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 628F61C7-1CAB-3246-9B96-6DA5AEEEA104', 'x86_64: 628F61C7-1CAB-3246-9B96-6DA5AEEEA104' ]
+uuids:           [ 'x86_64: D8DDFD1A-003E-399A-9469-E6E55551726D', 'x86_64: D8DDFD1A-003E-399A-9469-E6E55551726D' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/VideoToolbox.framework/Versions/A/VideoToolbox'
 exports:         
@@ -338,12 +338,13 @@ exports:
                        _kVTTileDecoderRequirement_MinimumDecodableWidth, _kVTTileDecoderRequirement_MinimumTileHeight, 
                        _kVTTileDecoderRequirement_MinimumTileWidth, _kVTTileDecoderRequirement_TileByteAlignment, 
                        _kVTTileDecoderRequirement_TileHeightPixelAlignment, _kVTTileDecoderRequirement_TileWidthPixelAlignment, 
-                       _kVTTileEncoderRequirement_EncoderCanClipEdges, _kVTTileEncoderRequirement_MaximumCanvasHeight, 
-                       _kVTTileEncoderRequirement_MaximumCanvasRowBytes, _kVTTileEncoderRequirement_MaximumCanvasWidth, 
-                       _kVTTileEncoderRequirement_MaximumTileHeight, _kVTTileEncoderRequirement_MaximumTileWidth, 
-                       _kVTTileEncoderRequirement_MinimumTileHeight, _kVTTileEncoderRequirement_MinimumTileWidth, 
-                       _kVTTileEncoderRequirement_TileByteAlignment, _kVTTileEncoderRequirement_TileHeightPixelAlignment, 
-                       _kVTTileEncoderRequirement_TileWidthPixelAlignment, _kVTVideoDecoderInfo_DecoderMetalRegistryID, 
+                       _kVTTileEncoderRequirement_EncoderCanClipEdges, _kVTTileEncoderRequirement_HorizontalOffsetAlignment, 
+                       _kVTTileEncoderRequirement_MaximumCanvasHeight, _kVTTileEncoderRequirement_MaximumCanvasRowBytes, 
+                       _kVTTileEncoderRequirement_MaximumCanvasWidth, _kVTTileEncoderRequirement_MaximumTileHeight, 
+                       _kVTTileEncoderRequirement_MaximumTileWidth, _kVTTileEncoderRequirement_MinimumTileHeight, 
+                       _kVTTileEncoderRequirement_MinimumTileWidth, _kVTTileEncoderRequirement_TileByteAlignment, 
+                       _kVTTileEncoderRequirement_TileHeightPixelAlignment, _kVTTileEncoderRequirement_TileWidthPixelAlignment, 
+                       _kVTTileEncoderRequirement_VerticalOffsetAlignment, _kVTVideoDecoderInfo_DecoderMetalRegistryID, 
                        _kVTVideoDecoderInfo_IORegistryCapabilitiesKey, _kVTVideoDecoderInfo_MaxDecodeLevel, 
                        _kVTVideoDecoderInfo_MaxPlaybackLevel, _kVTVideoDecoderInfo_PerProfileDetails, 
                        _kVTVideoDecoderInfo_Rating, _kVTVideoDecoderInfo_RequiredSpecificationEntries, 

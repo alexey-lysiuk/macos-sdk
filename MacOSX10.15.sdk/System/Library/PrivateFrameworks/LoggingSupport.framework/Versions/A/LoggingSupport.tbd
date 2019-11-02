@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BDF0F144-89D9-38CC-9AD5-7993E446448A', 'x86_64: BDF0F144-89D9-38CC-9AD5-7993E446448A' ]
+uuids:           [ 'x86_64: 55A028BC-D1FB-3F67-83A1-AE8791E984BA', 'x86_64: 55A028BC-D1FB-3F67-83A1-AE8791E984BA' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/LoggingSupport.framework/Versions/A/LoggingSupport'
-current-version: 1147.0.3
+current-version: 1147.40.13
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _OSLogClearOptions, _OSLogConstructArchive, _OSLogConstructHighVolumeAgeLimit, 
@@ -44,8 +44,8 @@ exports:
                        _logarchive_key_fe_size, _logarchive_key_fe_time, _logarchive_key_hv_size, 
                        _logarchive_key_hv_time, _logarchive_key_livedata, _logarchive_key_path, 
                        _logarchive_key_sp_size, _logarchive_key_sp_time, _logarchive_key_ttl_size, 
-                       _logarchive_key_ttl_time, _os_activity_stream_add_pid, _os_activity_stream_cancel, 
-                       _os_activity_stream_for_pid, _os_activity_stream_for_simulator, 
+                       _logarchive_key_ttl_time, _logging_support_test_oslog, _os_activity_stream_add_pid, 
+                       _os_activity_stream_cancel, _os_activity_stream_for_pid, _os_activity_stream_for_simulator, 
                        _os_activity_stream_resume, _os_activity_stream_set_event_handler, 
                        _os_activity_stream_set_filter, _os_log_copy_formatted_message, 
                        _os_log_fmt_compose, _os_log_fmt_convert_trace, _os_log_fmt_extract_pubdata, 

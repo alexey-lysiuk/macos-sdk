@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9B9FD06D-05AE-353F-9503-EDCB0CF3583C', 'x86_64: 9B9FD06D-05AE-353F-9503-EDCB0CF3583C' ]
+uuids:           [ 'x86_64: 776875DB-5DF5-36D6-B84D-3A7A9AC34449', 'x86_64: 776875DB-5DF5-36D6-B84D-3A7A9AC34449' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AXMediaUtilities.framework/Versions/A/AXMediaUtilities'
 exports:         
@@ -105,8 +105,8 @@ exports:
                        AXMAudioDataSourceMixer, AXMAudioEffect, AXMAudioSession, 
                        AXMBarcodeNode, AXMCameraFrameContext, AXMCameraMetadataNode, 
                        AXMCaptionDetectorNode, AXMCaptureManager, AXMCaptureSettings, 
-                       AXMCompressor, AXMCoreMotionNode, AXMDataDetector, AXMDataPoint, 
-                       AXMDataRegressionModel, AXMDataRegressionModelExponential, 
+                       AXMCaptureVideoDataOutput, AXMCompressor, AXMCoreMotionNode, 
+                       AXMDataDetector, AXMDataPoint, AXMDataRegressionModel, AXMDataRegressionModelExponential, 
                        AXMDataRegressionModelLinear, AXMDataRegressionModelLogarithmic, 
                        AXMDataRegressionModelPower, AXMDataRegressionModelSine, AXMDataSonifier, 
                        AXMDataSummary, AXMDescriptionBuilder, AXMDeviceInfo, AXMDiagnosticMetric, 
@@ -136,9 +136,8 @@ exports:
                        AXMVisionFeatureColorInfo, AXMVisionFeatureComparator, AXMVisionFeatureFaceAttributes, 
                        AXMVisionFeatureFaceDetectionResult, AXMVisionFeatureFaceLandmarks, 
                        AXMVisionPipelineContext, AXMVisionResult, AXMVoiceOverVisionEngine, 
-                       KeyPitch, _AXMCaptureManagerDetectionEngine, _AXMCaptureVideoDataOutput, 
-                       _AXMOutputRequestTask, _AXMPlayerItemLegibleOutput, _AXMSettingObserver, 
-                       _AXMVisionEngineAnalysisTask ]
+                       KeyPitch, _AXMCaptureManagerDetectionEngine, _AXMOutputRequestTask, 
+                       _AXMPlayerItemLegibleOutput, _AXMSettingObserver, _AXMVisionEngineAnalysisTask ]
     objc-ivars:      [ AXMCaptureManager._activeScenario, AXMCaptureManager._captureDevice, 
                        AXMCaptureManager._captureDeviceInput, AXMCaptureManager._captureSession, 
                        AXMCaptureManager._detectionEngine, AXMCaptureManager._featureDetectionObservers, 

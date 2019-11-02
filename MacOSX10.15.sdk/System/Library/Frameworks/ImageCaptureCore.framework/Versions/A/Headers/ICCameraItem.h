@@ -123,7 +123,7 @@ IC_AVAILABLE(macos(10.4), ios(13.0))
   @property fileSystemPath
   @abstract ￼The file system path of the item for items on a device with transportType of ICTransportTypeMassStorage.
 */
-@property (nonatomic, readonly, nullable) NSString* fileSystemPath IC_AVAILABLE(macos(10.4),ios(13.0));
+@property (nonatomic, readonly, nullable) NSString* fileSystemPath IC_AVAILABLE(macos(10.4)) IC_UNAVAILABLE(ios);
 
 /*!
   @property locked
@@ -201,19 +201,19 @@ IC_AVAILABLE(macos(10.4), ios(13.0))
  @abstract ￼Metadata for the file if one is readily available. If one is not readily available, accessing this property will send a message to the device requesting metadata for the file. The delegate of the device will be notified via method "cameraDevice:didReceiveMetadata:forItem:error:", if this method is implemented by the delegate.
  @note Execution of the delegate callback will occur on the main thread.
 */
-- (void)requestMetadata  IC_AVAILABLE(macos(10.15), ios(13.0));
+- (void)requestMetadata IC_AVAILABLE(macos(10.15), ios(13.0));
 
 /*!
  @method flushThumbnailCache
  @abstract ￼Deletes cached thumbnail for the item.
 */
-- (void)flushThumbnailCache  IC_AVAILABLE(macos(10.15), ios(13.0));
+- (void)flushThumbnailCache IC_AVAILABLE(macos(10.15), ios(13.0));
 
 /*!
- @method flushMetadataCache
- @abstract ￼Deletes cached metadata for the item.
-*/
-- (void)flushMetadataCache IC_AVAILABLE(macos(10.15), ios(13.0));
+   @method flushMetadataCache
+   @abstract ￼Deletes cached metadata for the item.
+ */
+- (void) flushMetadataCache IC_AVAILABLE(macos(10.15), ios(13.0));
 
 #pragma mark - Deprecated
 

@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
  The class also provides methods to manage provider domains. Each domain has a
  corresponding manager.
  */
-API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(macos) API_UNAVAILABLE(watchos, tvos)
+API_AVAILABLE(ios(11.0)) API_UNAVAILABLE(macos, macCatalyst) API_UNAVAILABLE(watchos, tvos)
 @interface NSFileProviderManager : NSObject
 
 - (instancetype)init NS_UNAVAILABLE;
@@ -85,7 +85,7 @@ Return the manager responsible for the default domain.
  files will not trigger materialization; instead, accesses to unmd
  files will fail with EDEADLK.
  */
-- (void)getUserVisibleURLForItemIdentifier:(NSFileProviderItemIdentifier)itemIdentifier completionHandler:(void (^)(NSURL * __nullable userVisibleFile, NSError * __nullable error))completionHandler API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos) NS_SWIFT_NAME(getUserVisibleURL(for:completionHandler:));
+- (void)getUserVisibleURLForItemIdentifier:(NSFileProviderItemIdentifier)itemIdentifier completionHandler:(void (^)(NSURL * __nullable userVisibleFile, NSError * __nullable error))completionHandler API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst) NS_SWIFT_NAME(getUserVisibleURL(for:completionHandler:));
 
 
 /**
@@ -95,7 +95,7 @@ Return the manager responsible for the default domain.
  applicable. Calling this method on a file which doesn't reside in your
  provider/domain will return the Cocoa error NSFileNoSuchFileError.
  */
-+ (void)getIdentifierForUserVisibleFileAtURL:(NSURL *)url completionHandler:(void (^)(NSFileProviderItemIdentifier __nullable itemIdentifier, NSFileProviderDomainIdentifier __nullable domainIdentifier, NSError * __nullable error))completionHandler API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos);
++ (void)getIdentifierForUserVisibleFileAtURL:(NSURL *)url completionHandler:(void (^)(NSFileProviderItemIdentifier __nullable itemIdentifier, NSFileProviderDomainIdentifier __nullable domainIdentifier, NSError * __nullable error))completionHandler API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst);
 
 
 
@@ -200,7 +200,7 @@ Return the manager responsible for the default domain.
  will be received for both the import and the scan.
  */
 + (void)importDomain:(NSFileProviderDomain *)domain fromDirectoryAtURL:(NSURL *)url completionHandler:(void(^)(NSError * _Nullable error))completionHandler
-API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos);
+API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst);
 
 /** Notify the system that the itemIdentifiers known by the system are not valid anymore.
 
@@ -233,7 +233,7 @@ API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos);
 - (void)reimportItemsBelowItemWithIdentifier:(NSFileProviderItemIdentifier)itemIdentifier
                            completionHandler:(void (^)(NSError * _Nullable error))completionHandler
     NS_SWIFT_NAME(reimportItems(below:completionHandler:))
-    API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos);
+    API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst);
 
 @end
 
@@ -265,7 +265,7 @@ typedef NS_ENUM(NSUInteger, NSFileProviderDownloadPolicy) {
      space to run out.
      */
     NSFileProviderDownloadPolicyKeepDownloaded = 2,
-} API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos);
+} API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst);
 
 @interface NSFileProviderManager (DownloadAndEviction)
 
@@ -279,7 +279,7 @@ typedef NS_ENUM(NSUInteger, NSFileProviderDownloadPolicy) {
 - (void)setDownloadPolicy:(NSFileProviderDownloadPolicy)downloadPolicy
     forItemWithIdentifier:(NSFileProviderItemIdentifier)itemIdentifier
         completionHandler:(void (^)(NSError * _Nullable))completionHandler
-    API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos);
+    API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst);
 
 /**
  Request that the system removes an item from its cache.
@@ -292,7 +292,7 @@ typedef NS_ENUM(NSUInteger, NSFileProviderDownloadPolicy) {
  */
 - (void)evictItemWithIdentifier:(NSFileProviderItemIdentifier)itemIdentifier
               completionHandler:(void (^)(NSError * _Nullable))completionHandler
-    API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos);
+    API_UNAVAILABLE(watchos, tvos) API_UNAVAILABLE(ios, macos, macCatalyst);
 
 @end
 

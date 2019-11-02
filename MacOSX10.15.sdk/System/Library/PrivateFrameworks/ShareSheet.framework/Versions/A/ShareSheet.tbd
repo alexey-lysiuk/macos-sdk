@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AB00D367-522D-338F-A05F-4D85D93FC188' ]
+uuids:           [ 'x86_64: BD24F310-41FD-3736-9E4E-59CFB94F76D2' ]
 platform:        uikitformac
 install-name:    '/System/Library/PrivateFrameworks/ShareSheet.framework/Versions/A/ShareSheet'
-current-version: 1470.1
+current-version: 1496.4
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _ShareSheetVersionNumber, _ShareSheetVersionString, _UIActivityTypeAddToReadingList, 
@@ -21,7 +21,7 @@ exports:
                        _UIActivityViewControllerSharingExpandedNotification, __ShareSheetBundle, 
                        __ShareSheetBundleIDFromAuditToken, __SharingUIAuditTokenForCurrentProcess, 
                        __UIActivityOpenInApplicationTypeForActivityType, __UIActivityRecipientManagerServiceName, 
-                       __UIApplicationExtensionDiscoveryShouldExcludeiCloudDriveForActivityItemURLs, 
+                       __UIActivityUserDefaultsManagerServiceName, __UIApplicationExtensionDiscoveryShouldExcludeiCloudDriveForActivityItemURLs, 
                        __UIKitUserDefaults, __UINSExtensionItemUserInfoIsContentManagedKey, 
                        __UISecureDecodeCGSizeWithKeyAndDefaultSize, __UISecureDecodeExtensionItemsWithKey, 
                        __UISecureEncodeCGSizeWithKey, __UISecureStandardPropertyListClasses, 
@@ -42,5 +42,6 @@ exports:
                        _UIActivityItemCustomizationGroup, _UIActivityItemCustomizationPicker, 
                        _UIActivityItemCustomizationSwitch, _UIActivityNavigationController, 
                        _UIActivityPlaceholderItemProxy, _UIActivityRecipientManager, 
-                       _UIActivityResourceLoader, _UIHostActivityProxy, _UIUserDefaultsActivityProxy ]
+                       _UIActivityResourceLoader, _UIActivityUserDefaultsManager, 
+                       _UIHostActivityProxy, _UIUserDefaultsActivityProxy ]
 ...

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 72AFB81B-5FA8-35CD-8AD4-AD9CB3E1DAF1', 'x86_64: 72AFB81B-5FA8-35CD-8AD4-AD9CB3E1DAF1' ]
+uuids:           [ 'x86_64: 83D12E8D-E9EA-3237-95C0-34E9C81D05CD', 'x86_64: 83D12E8D-E9EA-3237-95C0-34E9C81D05CD' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SymptomReporter.framework/Versions/A/SymptomReporter'
-current-version: 1238.0.2
+current-version: 1238.40.4
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _set_symptom_verbosity, _symptom_create, _symptom_framework_init, 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0E96C98D-B9BA-3606-9670-6FDE7D8A6F59', 'x86_64: 0E96C98D-B9BA-3606-9670-6FDE7D8A6F59' ]
+uuids:           [ 'x86_64: 38F65393-1393-3888-9F02-C4087F19CA0D', 'x86_64: 38F65393-1393-3888-9F02-C4087F19CA0D' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Network.framework/Versions/A/Network'
 exports:         

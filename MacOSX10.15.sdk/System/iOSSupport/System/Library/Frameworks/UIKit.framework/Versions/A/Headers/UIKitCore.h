@@ -20,13 +20,6 @@
 #endif
 
 #if TARGET_OS_MACCATALYST
-#if __has_include(<UIKit/UIActivity.h>)
-#import <UIKit/UIActivity.h>
-#import <UIKit/UIActivityItemProvider.h>
-#import <UIKit/UIActivityViewController.h>
-#import <UIKit/UIDocumentInteractionController.h>
-#endif
-
 #import <UIKit/NSToolbar+UIKitAdditions.h>
 #import <UIKit/NSTouchBar+UIKitAdditions.h>
 #endif

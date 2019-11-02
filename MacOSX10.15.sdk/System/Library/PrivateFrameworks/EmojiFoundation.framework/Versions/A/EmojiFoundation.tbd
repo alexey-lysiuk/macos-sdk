@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6BC101F0-6BA9-361E-B870-7664BFC8ECFE', 'x86_64: 6BC101F0-6BA9-361E-B870-7664BFC8ECFE' ]
+uuids:           [ 'x86_64: 4D145A0F-A089-3BBA-B906-AD0AE1C24246', 'x86_64: 4D145A0F-A089-3BBA-B906-AD0AE1C24246' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/EmojiFoundation.framework/Versions/A/EmojiFoundation'
 exports:         
@@ -11,7 +11,10 @@ exports:
                        _EMFEmojiCategoryTravelAndPlaces, _EMFEmojiPreferencesChangedNotification, 
                        _EMFEmojiPreferencesServiceName, _EMFEmojiUsageAdornment, 
                        _EMFEmojiUsageKeyboard, _EMFEmojiUsageKeywordMatch, _EMFEmojiUsageLearning, 
-                       _EMFGetDeviceBuildVersion, _EMFGetDeviceRegionCode ]
+                       _EMFGetDeviceBuildVersion, _EMFGetDeviceRegionCode, _EMFSkinToneSpecifierTypeFitzpatrick1_2, 
+                       _EMFSkinToneSpecifierTypeFitzpatrick3, _EMFSkinToneSpecifierTypeFitzpatrick4, 
+                       _EMFSkinToneSpecifierTypeFitzpatrick5, _EMFSkinToneSpecifierTypeFitzpatrick6, 
+                       _EMFSkinToneSpecifierTypeFitzpatrickNone, _EMFSkinToneSpecifierTypeFitzpatrickSilhouette ]
     objc-classes:    [ EMFEmojiCategory, EMFEmojiLocaleData, EMFEmojiPreferences, 
                        EMFEmojiPreferencesClient, EMFEmojiPreferencesService, EMFEmojiToken, 
                        EMFStringUtilities ]

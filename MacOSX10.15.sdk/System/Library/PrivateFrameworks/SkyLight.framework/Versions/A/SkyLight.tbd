@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1FEB656D-546D-3E15-B2A0-A3E29F14D150', 'x86_64: 1FEB656D-546D-3E15-B2A0-A3E29F14D150' ]
+uuids:           [ 'x86_64: 87B4BC36-78DA-3320-B455-FACB48DC63AA', 'x86_64: 87B4BC36-78DA-3320-B455-FACB48DC63AA' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SkyLight.framework/Versions/A/SkyLight'
 current-version: 600
@@ -563,11 +563,12 @@ exports:
                        _SLSWindowSetShadowProperties, _SLSWindowSetTrustedForObscuring, 
                        _SLSWindowThaw, _SLSWindowThawBackdrops, _SLSWindowVisibleRegionSeed, 
                        _SLSZoomPoint, _SLScreenRegisterMoveCallback, _SLScreenUnregisterMoveCallback, 
-                       _SLSessionCopyCurrentDictionary, _SLSessionOwnerCopyXPCSerializationAndInvalidate, 
-                       _SLSessionOwnerCreateBySettingLoginwindowConnection, _SLSessionOwnerCreateNewSessionWithAuditSessionID, 
-                       _SLSessionOwnerCreateWithPort, _SLSessionOwnerCreateWithXPCSerialization, 
-                       _SLSessionOwnerGetAuditSessionID, _SLSessionOwnerGetSessionID, 
-                       _SLSessionOwnerIsValid, _SLSetDisplayTransferByByteTable, 
+                       _SLSecureCursorAssertionCreate, _SLSecureCursorAssertionInvalidate, 
+                       _SLSecureCursorAssertionIsValid, _SLSessionCopyCurrentDictionary, 
+                       _SLSessionOwnerCopyXPCSerializationAndInvalidate, _SLSessionOwnerCreateBySettingLoginwindowConnection, 
+                       _SLSessionOwnerCreateNewSessionWithAuditSessionID, _SLSessionOwnerCreateWithPort, 
+                       _SLSessionOwnerCreateWithXPCSerialization, _SLSessionOwnerGetAuditSessionID, 
+                       _SLSessionOwnerGetSessionID, _SLSessionOwnerIsValid, _SLSetDisplayTransferByByteTable, 
                        _SLSetDisplayTransferByFormula, _SLSetDisplayTransferByTable, 
                        _SLSetLocalEventsFilterDuringSuppressionState, _SLSetLocalEventsFilterDuringSupressionState, 
                        _SLSetLocalEventsSuppressionInterval, _SLShieldingWindowID, 
@@ -630,5 +631,5 @@ exports:
                        _slglsGetPixelFormat, _slglsGetState, _slglsGetSurface, _slglsGetVirtualScreen, 
                        _slglsQueryRendererInfo, _slglsSetInteger, _slglsTexImageIOSurface2D, 
                        _slglsTexImagePBuffer ]
-    objc-classes:    [ SLDataTimelineConfig, SLSessionOwner ]
+    objc-classes:    [ SLDataTimelineConfig, SLSecureCursorAssertion, SLSessionOwner ]
 ...

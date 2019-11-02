@@ -1,4 +1,4 @@
-/* iig(DriverKit-73.0.1) generated from IOUserHIDEventService.iig */
+/* iig(DriverKit-73.40.3) generated from IOUserHIDEventService.iig */
 
 /* IOUserHIDEventService.iig:1-38 */
 /*

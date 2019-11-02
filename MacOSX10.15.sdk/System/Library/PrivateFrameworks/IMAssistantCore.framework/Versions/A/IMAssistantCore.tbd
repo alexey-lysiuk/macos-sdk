@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D7937AE1-EA60-3607-A986-9DE4462B4465' ]
+uuids:           [ 'x86_64: 18276C25-FCD7-3895-A5CF-B0A72EBD37E5' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/IMAssistantCore.framework/Versions/A/IMAssistantCore'
 current-version: 800
@@ -10,8 +10,8 @@ exports:
                        _IMAssistantContinuityHandlesKey, _IMAssistantCoreInstantMessageServiceBusinessChat, 
                        __IMAssistantCoreGeneralSignpostLogHandle, __IMAssistantCoreSearchForMessageSignpostLogHandle, 
                        __IMAssistantCoreSendMessageSignpostLogHandle ]
-    objc-classes:    [ IMAssistantAudioPlayer, IMAssistantChatParticipant, IMAssistantINMessageConverter, 
-                       IMAssistantIntentHandler, IMAssistantMessageAttributeOptions, 
+    objc-classes:    [ IMAssistantAudioPlayer, IMAssistantChatParticipant, IMAssistantHandleFromContact, 
+                       IMAssistantINMessageConverter, IMAssistantIntentHandler, IMAssistantMessageAttributeOptions, 
                        IMAssistantMessageHandler, IMAssistantMessageHandlerDefaultDataSource, 
                        IMAssistantMessagePlayAudioHandler, IMAssistantMessagePlayMessageSoundHandler, 
                        IMAssistantMessageQueryHandler, IMAssistantMessageReadAttributeSanitizer, 

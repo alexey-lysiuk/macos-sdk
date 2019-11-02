@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 752F05A3-3FCF-3140-8438-BE7E1EA96BCC' ]
+uuids:           [ 'x86_64: 6E6DC063-AAEF-37AE-9527-421F1CBB03CC' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/Social.framework/Versions/A/Social'
-current-version: 605
+current-version: 607
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CPFileBuildDirectoriesToPath, _SLErrorDomain, _SLFacebookEnvironmentDidChangeNotification, 

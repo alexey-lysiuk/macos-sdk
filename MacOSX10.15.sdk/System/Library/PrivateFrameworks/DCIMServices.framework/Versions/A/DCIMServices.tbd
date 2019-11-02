@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B5418495-D791-33F7-A35F-B979B5A5768B', 'x86_64: B5418495-D791-33F7-A35F-B979B5A5768B' ]
+uuids:           [ 'x86_64: 76103AFA-A992-3A3E-A1DD-97034B61DBA7', 'x86_64: 76103AFA-A992-3A3E-A1DD-97034B61DBA7' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/DCIMServices.framework/Versions/A/DCIMServices'
-current-version: 101.13.100
+current-version: 111.16.150
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _DCIMAVMetadataCaptureModeKey, _DCIMAVMetadataCaptureModeTimelapseValue, 
@@ -94,7 +94,7 @@ exports:
                        _kPLImageWriterJobTypeDaemonJob, _kPLImageWriterJobTypeDeletePhotoStreamAssetUUIDs, 
                        _kPLImageWriterJobTypeDeletePhotoStreamData, _kPLImageWriterJobTypeEnablePhotoStream, 
                        _kPLImageWriterJobTypeImage, _kPLImageWriterJobTypeImportImage, 
-                       _kPLImageWriterJobTypeIngestSyncedAsset, _kPLImageWriterJobTypeReenqueueAssetUUIDsToPhotoStream, 
+                       _kPLImageWriterJobTypeProcessSyncClientJobs, _kPLImageWriterJobTypeReenqueueAssetUUIDsToPhotoStream, 
                        _kPLImageWriterJobTypeSavePhotoStreamImageToCameraRoll, _kPLImageWriterJobTypeSyncedVideoSave, 
                        _kPLImageWriterJobTypeVideoAssetMayExist, _kPLImageWriterJobTypeVideoCapture, 
                        _kPLImageWriterJobTypeVideoPreviewImageOnly, _kPLImageWriterJobTypeVideoSave, 
@@ -129,13 +129,12 @@ exports:
                        _kPLImageWriterVideoSpatialOverCaptureContentIncomingPath, 
                        _kPLImageWriterVideoSpatialOverCaptureContentSourcePath, _kPLPhotoSavingCropRect, 
                        _kPLPhotoSavingCroppedImage, _kPLPhotoSavingCroppedImageData, 
-                       _kPLPhotoSavingFullScreenImage, _kPLPhotoSavingFullScreenImageData, 
-                       _kPLPhotoSavingFullSizeImageData, _kPLPhotoSavingMetadata, 
-                       _kPLPhotoSavingOriginalImageData, _kPLPhotoStreamAssetCollectionUUID, 
-                       _kPLPhotoStreamDateCreatedKey, _kPLPhotoStreamDerivedAssetHashKey, 
-                       _kPLPhotoStreamMasterAssetHashKey, _kPLPhotoStreamMasterAssetMetadataKey, 
-                       _kPLPhotoStreamModifiedDateKey, _kPLPhotoStreamServerUploadedDateKey, 
-                       _kPLRequiresSaveOnlyAuthorization ]
+                       _kPLPhotoSavingFullScreenImageData, _kPLPhotoSavingFullSizeImageData, 
+                       _kPLPhotoSavingMetadata, _kPLPhotoSavingOriginalImageData, 
+                       _kPLPhotoStreamAssetCollectionUUID, _kPLPhotoStreamDateCreatedKey, 
+                       _kPLPhotoStreamDerivedAssetHashKey, _kPLPhotoStreamMasterAssetHashKey, 
+                       _kPLPhotoStreamMasterAssetMetadataKey, _kPLPhotoStreamModifiedDateKey, 
+                       _kPLPhotoStreamServerUploadedDateKey, _kPLRequiresSaveOnlyAuthorization ]
     objc-classes:    [ DCIMAVMetadataUtilities, DCIMAssetFormats, DCIMDirectoryUtilities, 
                        DCIMImageUtilities, DCIMImageWellUtilities, DCIMImageWriter, 
                        DCIMLocationUtilities, DCIMSlalomUtilities, PLIOSurfaceData ]

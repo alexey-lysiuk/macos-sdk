@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F6942B6B-18F2-3BA2-97DD-CDD25A5E3058' ]
+uuids:           [ 'x86_64: B210E250-B13F-3E6E-BD40-CAE44A1C131F' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/MetalKit.framework/Versions/A/MetalKit'
-current-version: 137.2
+current-version: 141.1
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _MTKMetalVertexDescriptorFromModelIO, _MTKMetalVertexDescriptorFromModelIOWithError, 

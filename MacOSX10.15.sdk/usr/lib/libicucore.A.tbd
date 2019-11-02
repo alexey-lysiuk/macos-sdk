@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 88E47471-605C-3C86-871B-5D2F4628A936', 'x86_64: 88E47471-605C-3C86-871B-5D2F4628A936' ]
+uuids:           [ 'x86_64: 4CBF52D7-7235-34C8-9FF1-8657076B604F', 'x86_64: 4CBF52D7-7235-34C8-9FF1-8657076B604F' ]
 platform:        zippered
 install-name:    '/usr/lib/libicucore.A.dylib'
 current-version: 64.2
@@ -444,7 +444,8 @@ exports:
                        __ZN3icu12NumberFormat12makeInstanceERKNS_6LocaleE18UNumberFormatStyleaR10UErrorCode, 
                        __ZN3icu12NumberFormat14createInstanceER10UErrorCode, __ZN3icu12NumberFormat14createInstanceERKNS_6LocaleE18UNumberFormatStyleR10UErrorCode, 
                        __ZN3icu12NumberFormat14createInstanceERKNS_6LocaleER10UErrorCode, 
-                       __ZN3icu12NumberFormat15setGroupingUsedEa, __ZN3icu12NumberFormat15setRoundingModeENS0_13ERoundingModeE, 
+                       __ZN3icu12NumberFormat15setDateSettingsEv, __ZN3icu12NumberFormat15setGroupingUsedEa, 
+                       __ZN3icu12NumberFormat15setRoundingModeENS0_13ERoundingModeE, 
                        __ZN3icu12NumberFormat16getStaticClassIDEv, __ZN3icu12NumberFormat16isStyleSupportedE18UNumberFormatStyle, 
                        __ZN3icu12NumberFormat19getAvailableLocalesERi, __ZN3icu12NumberFormat19setParseIntegerOnlyEa, 
                        __ZN3icu12NumberFormat20createSharedInstanceERKNS_6LocaleE18UNumberFormatStyleR10UErrorCode, 
@@ -622,8 +623,8 @@ exports:
                        __ZN3icu13DecimalFormat12setAttributeE22UNumberFormatAttributeiR10UErrorCode, 
                        __ZN3icu13DecimalFormat12touchNoErrorEv, __ZN3icu13DecimalFormat13setMultiplierEi, 
                        __ZN3icu13DecimalFormat14setFormatWidthEi, __ZN3icu13DecimalFormat14setPadPositionENS0_12EPadPositionE, 
-                       __ZN3icu13DecimalFormat15setGroupingSizeEi, __ZN3icu13DecimalFormat15setGroupingUsedEa, 
-                       __ZN3icu13DecimalFormat15setPadCharacterERKNS_13UnicodeStringE, 
+                       __ZN3icu13DecimalFormat15setDateSettingsEv, __ZN3icu13DecimalFormat15setGroupingSizeEi, 
+                       __ZN3icu13DecimalFormat15setGroupingUsedEa, __ZN3icu13DecimalFormat15setPadCharacterERKNS_13UnicodeStringE, 
                        __ZN3icu13DecimalFormat15setRoundingModeENS_12NumberFormat13ERoundingModeE, 
                        __ZN3icu13DecimalFormat15setupFastFormatEv, __ZN3icu13DecimalFormat16getStaticClassIDEv, 
                        __ZN3icu13DecimalFormat16setCurrencyUsageE14UCurrencyUsageP10UErrorCode, 

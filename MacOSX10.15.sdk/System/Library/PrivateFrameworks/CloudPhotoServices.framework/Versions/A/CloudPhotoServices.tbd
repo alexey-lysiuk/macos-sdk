@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 942F9231-D023-3741-95ED-754517F5862F', 'x86_64: 942F9231-D023-3741-95ED-754517F5862F' ]
+uuids:           [ 'x86_64: A39FCEE0-F887-3FDF-91DC-35A92B7FBB15', 'x86_64: A39FCEE0-F887-3FDF-91DC-35A92B7FBB15' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CloudPhotoServices.framework/Versions/A/CloudPhotoServices'
-current-version: 101.13.100
+current-version: 111.16.150
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CloudPhotoServicesOptionBakeInOrientationKey, _CloudPhotoServicesOptionColorOutputKey, 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BA609ACC-20C3-311A-A161-7E68F68D9E00', 'x86_64: BA609ACC-20C3-311A-A161-7E68F68D9E00' ]
+uuids:           [ 'x86_64: 34848168-B77D-3749-A7ED-B1F3F92E5162', 'x86_64: 34848168-B77D-3749-A7ED-B1F3F92E5162' ]
 platform:        zippered
 install-name:    '/usr/lib/libresolv.9.dylib'
 exports:         

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A5CD3296-A811-37B2-861A-9E7D636FAD7A' ]
+uuids:           [ 'x86_64: 4327B52D-2681-3195-B1F8-270D9137F932' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/TrustEvaluationAgent.framework/Versions/A/TrustEvaluationAgent'
 current-version: 33

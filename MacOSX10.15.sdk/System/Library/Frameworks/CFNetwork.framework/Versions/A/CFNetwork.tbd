@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4167897D-A39D-3F7B-8A05-1CE6015D0AEE', 'x86_64: 4167897D-A39D-3F7B-8A05-1CE6015D0AEE' ]
+uuids:           [ 'x86_64: 5EA797F3-2F7A-3E0C-8DBC-DBE145004EC5', 'x86_64: 5EA797F3-2F7A-3E0C-8DBC-DBE145004EC5' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork'
 current-version: 0
@@ -343,18 +343,18 @@ exports:
                        _NSURLProtectionSpaceHTTPProxy, _NSURLProtectionSpaceHTTPS, 
                        _NSURLProtectionSpaceHTTPSProxy, _NSURLProtectionSpaceSOCKSProxy, 
                        _NSURLSessionDefaultLoadingPriority, _NSURLSessionDownloadTaskResumeData, 
-                       _NSURLSessionProxyErrorDomain, _NSURLSessionTaskOriginalStartTimeKey, 
-                       _NSURLSessionTaskPriorityDefault, _NSURLSessionTaskPriorityHigh, 
-                       _NSURLSessionTaskPriorityLow, _NSURLSessionTransferSizeUnknown, 
-                       __CFCachedURLGetEncodedUserInfoPtr, __CFCachedURLResponseGetEncodedReceiverDataLength, 
-                       __CFCachedURLResponseGetEncodedUserInfoLength, __CFCachedURLResponseGetHashedKey, 
-                       __CFCachedURLResponseGetMemMappedData, __CFCachedURLResponseGetSizeOfData, 
-                       __CFCachedURLResponseSetBecameFileBackedCallBackBlock, __CFCachedURLResponseSetHashForKey, 
-                       __CFCachedURLResponseSetKey, __CFCachedURLResponseSetWrappedRequest, 
-                       __CFCachedURLResponseStoragePolicy, __CFErrorCreateWithStreamError, 
-                       __CFHTTPAuthenticationApplyProxyAuthorizationToRequest, __CFHTTPAuthenticationPasswordInClear, 
-                       __CFHTTPCookieCreateCookiesWithResponseMessage, __CFHTTPCookieCreateWithStringAndPartition, 
-                       __CFHTTPCookieStorageCopyCookiesForURLWithMainDocumentURL, 
+                       _NSURLSessionProxyErrorDomain, _NSURLSessionSourceApplicationBundleIdentifierIsExternal, 
+                       _NSURLSessionTaskOriginalStartTimeKey, _NSURLSessionTaskPriorityDefault, 
+                       _NSURLSessionTaskPriorityHigh, _NSURLSessionTaskPriorityLow, 
+                       _NSURLSessionTransferSizeUnknown, __CFCachedURLGetEncodedUserInfoPtr, 
+                       __CFCachedURLResponseGetEncodedReceiverDataLength, __CFCachedURLResponseGetEncodedUserInfoLength, 
+                       __CFCachedURLResponseGetHashedKey, __CFCachedURLResponseGetMemMappedData, 
+                       __CFCachedURLResponseGetSizeOfData, __CFCachedURLResponseSetBecameFileBackedCallBackBlock, 
+                       __CFCachedURLResponseSetHashForKey, __CFCachedURLResponseSetKey, 
+                       __CFCachedURLResponseSetWrappedRequest, __CFCachedURLResponseStoragePolicy, 
+                       __CFErrorCreateWithStreamError, __CFHTTPAuthenticationApplyProxyAuthorizationToRequest, 
+                       __CFHTTPAuthenticationPasswordInClear, __CFHTTPCookieCreateCookiesWithResponseMessage, 
+                       __CFHTTPCookieCreateWithStringAndPartition, __CFHTTPCookieStorageCopyCookiesForURLWithMainDocumentURL, 
                        __CFHTTPCookieStorageCopyRequestHeaderFieldsForURL, __CFHTTPCookieStorageCreateInMemory, 
                        __CFHTTPCookieStorageCreateWithProperties, __CFHTTPCookieStorageFlushCookieStores, 
                        __CFHTTPCookieStorageGetDefault, __CFHTTPCookieStorageSetCookiesWithResponseHeaderFields, 

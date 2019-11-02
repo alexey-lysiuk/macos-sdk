@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1D995E09-E778-3582-9681-2D44D88ECF5E' ]
+uuids:           [ 'x86_64: 03826E0E-5E75-3F74-97C5-9D2C5D35857A' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/JetUI.framework/Versions/A/JetUI'
 swift-abi-version: 7

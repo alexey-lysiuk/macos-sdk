@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2DDF86CB-AC1B-3102-A2D7-4F66B6BD757C' ]
+uuids:           [ 'x86_64: CE5E9F07-EA5B-3FD7-A609-A5B250D47ED5' ]
 platform:        macosx
 install-name:    '/usr/lib/PN548_HAL.dylib'
 exports:         

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 20A7A74F-773C-3E0F-8EED-250FEC838561', 'x86_64: 20A7A74F-773C-3E0F-8EED-250FEC838561' ]
+uuids:           [ 'x86_64: D4405704-6DD4-3486-9DE4-80FC91F1F80B', 'x86_64: D4405704-6DD4-3486-9DE4-80FC91F1F80B' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CorePhoneNumbers.framework/Versions/A/CorePhoneNumbers'
 exports:         

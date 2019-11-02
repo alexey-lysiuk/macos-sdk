@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B40BF4D2-0491-3382-B6D9-4C623D6A0A48', 'x86_64: B40BF4D2-0491-3382-B6D9-4C623D6A0A48' ]
+uuids:           [ 'x86_64: 3C100538-5C43-3857-A126-1878D5B8C89B', 'x86_64: 3C100538-5C43-3857-A126-1878D5B8C89B' ]
 platform:        zippered
 install-name:    '/usr/lib/libnetworkextension.dylib'
 exports:         

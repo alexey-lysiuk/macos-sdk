@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2467032B-EAAA-3DB9-A294-9BC7D354C32C' ]
+uuids:           [ 'x86_64: E02F194F-E7E6-3F94-AF9D-ABCA857AF727' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/EmbeddedSensingProtocols.framework/Versions/A/EmbeddedSensingProtocols'
 current-version: 2

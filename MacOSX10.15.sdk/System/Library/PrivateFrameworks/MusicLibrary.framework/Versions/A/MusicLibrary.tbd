@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1392482C-7F63-39E5-8E59-087BA4419ED3', 'x86_64: 1392482C-7F63-39E5-8E59-087BA4419ED3' ]
+uuids:           [ 'x86_64: 0F3484D2-1A58-3E72-9552-003C45952AD3', 'x86_64: 0F3484D2-1A58-3E72-9552-003C45952AD3' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/MusicLibrary.framework/Versions/A/MusicLibrary'
 current-version: 18
@@ -430,7 +430,7 @@ exports:
                        __ZN16ML3ImportSession28_insertIntoArtworkTokenTableEx14ML3ImportValueINSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEE20ML3ArtworkSourceType13ML3EntityType14ML3ArtworkType, 
                        __ZN16ML3ImportSession28_shouldPreserveTrackPropertyENSt3__110shared_ptrI13ML3ImportItemEEj, 
                        __ZN16ML3ImportSession28getContainerPidSourceMappingEv, __ZN16ML3ImportSession29_addContainerDataToSourceMapsENSt3__110shared_ptrI13ML3ImportItemEE, 
-                       __ZN16ML3ImportSession32_prepareContainerItemImportItemsENSt3__110shared_ptrI13ML3ImportItemEERNS0_6vectorIS3_NS0_9allocatorIS3_EEEEP14NSMutableArray, 
+                       __ZN16ML3ImportSession32_prepareContainerItemImportItemsENSt3__110shared_ptrI13ML3ImportItemEERNS0_6vectorIS3_NS0_9allocatorIS3_EEEEP14NSMutableArraySA_, 
                        __ZN16ML3ImportSession32_removeContainerItemsFromLibraryEP7NSArray, 
                        __ZN16ML3ImportSession34_prepareArtworkFromSecondarySourceENSt3__110shared_ptrI13ML3ImportItemEEjj14ML3ArtworkType, 
                        __ZN16ML3ImportSession34_prepareTracksForAutomaticDownloadERNSt3__16vectorINS0_10shared_ptrI13ML3ImportItemEENS0_9allocatorIS4_EEEE, 

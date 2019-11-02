@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 46294AF1-C41E-3BAD-9746-9208A325BD92' ]
+uuids:           [ 'x86_64: E35A0DD7-C7B1-3831-A5A5-785C1DBF949E' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ServerCompatibility.framework/Versions/A/ServerCompatibility'
 exports:         

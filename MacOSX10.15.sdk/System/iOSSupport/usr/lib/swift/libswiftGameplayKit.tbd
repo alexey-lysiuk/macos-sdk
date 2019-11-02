@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 697924DF-E091-3C89-BDA5-D1600C155E3C' ]
+uuids:           [ 'x86_64: 7A2B8CE5-515C-3356-B510-21D2EB656C19' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/usr/lib/swift/libswiftGameplayKit.dylib'
 current-version: 0

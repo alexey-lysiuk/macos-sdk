@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2373A852-97EB-37BB-B7D2-5F22297EADCF', 'x86_64: 2373A852-97EB-37BB-B7D2-5F22297EADCF' ]
+uuids:           [ 'x86_64: 2DBD115A-ACC8-37D9-9F5E-DE2F8C9F5D09', 'x86_64: 2DBD115A-ACC8-37D9-9F5E-DE2F8C9F5D09' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/MobileAsset.framework/Versions/A/MobileAsset'
 exports:         

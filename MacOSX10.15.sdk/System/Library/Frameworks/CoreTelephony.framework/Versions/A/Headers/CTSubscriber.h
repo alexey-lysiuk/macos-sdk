@@ -25,11 +25,12 @@ API_DEPRECATED_WITH_REPLACEMENT("-[CTSubscriberDelegate subscriberTokenRefreshed
 
 @class CTSubscriber;
 
+API_AVAILABLE(ios(12.1)) API_UNAVAILABLE(macCatalyst, watchos) API_UNAVAILABLE(macos, tvos)
 @protocol CTSubscriberDelegate
 - (void)subscriberTokenRefreshed:(CTSubscriber *)subscriber;
 @end
 
-CORETELEPHONY_CLASS_AVAILABLE(7_0)
+CORETELEPHONY_CLASS_AVAILABLE(7_0) API_UNAVAILABLE(macCatalyst, watchos) API_UNAVAILABLE(macos, tvos)
 @interface CTSubscriber : NSObject
 
 /*
@@ -55,13 +56,15 @@ API_DEPRECATED("Deprecated; returns nil starting in iOS 11.3.", ios(7.0, 11.0))
  */
 
 @property (nonatomic, readonly) NSString* identifier
-API_UNAVAILABLE(macos)
+API_UNAVAILABLE(macos, tvos)
 API_AVAILABLE(ios(12.1))
+API_UNAVAILABLE(macCatalyst, watchos)
 ;
 
 @property (nonatomic, weak) id<CTSubscriberDelegate> delegate
-API_UNAVAILABLE(macos)
+API_UNAVAILABLE(macos, tvos)
 API_AVAILABLE(ios(12.1))
+API_UNAVAILABLE(macCatalyst, watchos)
 ;
 
 @end

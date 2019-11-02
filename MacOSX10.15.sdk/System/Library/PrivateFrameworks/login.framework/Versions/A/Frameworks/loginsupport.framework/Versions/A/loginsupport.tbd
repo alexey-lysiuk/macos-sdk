@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FD40A145-2FC6-3401-97AB-2E382A238786', 'x86_64: FD40A145-2FC6-3401-97AB-2E382A238786' ]
+uuids:           [ 'x86_64: FFE90A0A-BEBC-3032-9368-94C016BE0795', 'x86_64: FFE90A0A-BEBC-3032-9368-94C016BE0795' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/login.framework/Versions/A/Frameworks/loginsupport.framework/Versions/A/loginsupport'
 exports:         

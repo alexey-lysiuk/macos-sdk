@@ -1,16 +1,15 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4D65FC60-F255-30E8-AA22-41DD69DF2740', 'x86_64: 4D65FC60-F255-30E8-AA22-41DD69DF2740' ]
+uuids:           [ 'x86_64: 3F9A3D2A-F7A6-3D85-845F-D6DDD8180514', 'x86_64: 3F9A3D2A-F7A6-3D85-845F-D6DDD8180514' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SidecarCore.framework/Versions/A/SidecarCore'
-current-version: 188
+current-version: 208
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _SidecarBundle, _SidecarDeviceGeneration, _SidecarDevicesChangedNotification, 
                        _SidecarDiagnose, _SidecarDisplayManagerConnectedDevicesChangedNotification, 
                        _SidecarDisplayManagerPreferencesChangedNotification, _SidecarErrorDomain, 
-                       _SidecarGetProcessUniqueID, _SidecarLocalizedString, _SidecarMarkServicePresenterReady, 
-                       _SidecarMarkServiceProviderReady, _SidecarMessageCreateMutable, 
+                       _SidecarGetProcessUniqueID, _SidecarLocalizedString, _SidecarMessageCreateMutable, 
                        _SidecarMessageGetDefaults, _SidecarMessageGetDictionaryRepresentation, 
                        _SidecarMessageGetItemData, _SidecarMessageGetRequestID, _SidecarMessageGetServiceName, 
                        _SidecarMessageGetTransferID, _SidecarMessageGetType, _SidecarMessageSetDefaults, 
@@ -22,7 +21,8 @@ exports:
                        _SidecarServiceNameAnnotation, _SidecarServiceNameDisplay, 
                        _SidecarServiceNameMarkupDisplay, _SidecarServiceNameScanDocument, 
                        _SidecarServiceNameSignature, _SidecarServiceNameSketch, _SidecarServiceNameTakePhoto, 
-                       _makeDeviceIdentifierMap ]
+                       _SidecarServicePresenterReady, _SidecarServiceProviderReady, 
+                       _kUTType_iPadPro, _makeDeviceIdentifierMap ]
     objc-classes:    [ SidecarDebugRequest, SidecarDevice, SidecarDisplayConfig, 
                        SidecarDisplayManager, SidecarItem, SidecarPasteboardInfo, 
                        SidecarRequest, SidecarResponse, SidecarService, SidecarSession, 

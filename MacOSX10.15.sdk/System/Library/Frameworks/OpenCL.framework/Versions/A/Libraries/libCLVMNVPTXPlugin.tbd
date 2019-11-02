@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: ED9563C8-1BE1-38A0-A26C-7D046220DDED' ]
+uuids:           [ 'x86_64: DF390A12-B76F-3DED-B23B-43587186D8ED' ]
 platform:        macosx
 install-name:    '/BuildRoot/Library/Caches/com.apple.xbs/Binaries/GPUDriversNvidia/install/TempContent/Root/System/Library/Frameworks/OpenCL.framework/Versions/A/Libraries/libCLVMNVPTXPlugin.dylib'
 exports:         

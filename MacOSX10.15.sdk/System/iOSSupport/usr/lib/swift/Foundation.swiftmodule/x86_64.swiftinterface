@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.1 (swiftlang-1100.8.259.70 clang-1100.0.32.1)
+// swift-compiler-version: Apple Swift version 5.1.1 (swiftlang-1100.8.275.1 clang-1100.0.32.1)
 // swift-module-flags: -target x86_64-apple-ios13.0-macabi -enable-objc-interop -autolink-force-load -enable-library-evolution -module-link-name swiftFoundation -swift-version 5 -O -enforce-exclusivity=unchecked -module-name Foundation
 import Combine
 import CoreFoundation
@@ -5812,7 +5812,7 @@ extension Range where Bound == Swift.Int {
 }
 extension Range where Bound == Swift.String.Index {
   public init?(_ range: Foundation.NSRange, in string: __shared Swift.String)
-  @available(OSX 10.15, iOS 13.0, watchOS 6.0, tvOS 13.0, *)
+  @available(OSX 10.15, iOS 13, tvOS 13, watchOS 6, *)
   public init?<S>(_ range: Foundation.NSRange, in string: __shared S) where S : Swift.StringProtocol
 }
 extension _NSRange : Swift.CustomReflectable {

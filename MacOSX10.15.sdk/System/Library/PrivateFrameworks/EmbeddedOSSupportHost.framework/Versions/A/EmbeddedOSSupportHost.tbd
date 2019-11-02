@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: BEC0E11B-DB8D-3D6F-B4FD-0BC49A1477E7' ]
+uuids:           [ 'x86_64: CC9E39AC-0D75-3365-8E2B-7A6EE9B94E16' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/EmbeddedOSSupportHost.framework/Versions/A/EmbeddedOSSupportHost'
 exports:         

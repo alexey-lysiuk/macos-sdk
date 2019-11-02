@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 480D4FCF-0293-397E-9429-6927B4AEDFF4', 'x86_64: 480D4FCF-0293-397E-9429-6927B4AEDFF4' ]
+uuids:           [ 'x86_64: 5FF77E18-E609-39E3-9C29-E59B1FC0C4F0', 'x86_64: 5FF77E18-E609-39E3-9C29-E59B1FC0C4F0' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreRE.framework/Versions/A/CoreRE'
-current-version: 31.40
+current-version: 31.106
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CoreRELog, _REAABBAreEqual, _REAABBCenter, _REAABBComputeDistanceSquaredToPoint, 
@@ -243,8 +243,9 @@ exports:
                        _REAudioPlayerComponentStopAll, _REAudioPlayerComponentStopToken, 
                        _REAudioPlayerComponentUnregisterAsset, _REAudioPlayerDidChangeStateEventSubscribe, 
                        _REAudioPlayerDidCompleteEventSubscribe, _REAudioPlayerDidCreateAudioUnitEventSubscribe, 
-                       _REAudioPlayerDidThrowErrorEventSubscribe, _REAudioServiceStartAudioEngine, 
-                       _REAudioServiceStopAudioEngine, _REAuraKitIsAvailable, _REBackgroundTaskManagerTasksSize, 
+                       _REAudioPlayerDidThrowErrorEventSubscribe, _REAudioServiceGetAudioEngineStartCount, 
+                       _REAudioServiceStartAudioEngine, _REAudioServiceStopAudioEngine, 
+                       _REAuraKitIsAvailable, _REBackgroundTaskManagerTasksSize, 
                        _REBackgroundTaskManagerUpdate, _REBackgroundTaskManager_Get, 
                        _REBallSocketJointComponentGetBodyA, _REBallSocketJointComponentGetBodyB, 
                        _REBallSocketJointComponentGetCollisionsEnabled, _REBallSocketJointComponentGetLocalAnchorPoseA, 
@@ -1117,7 +1118,7 @@ exports:
                        _RETransformComponentSetWorldPose, _RETransformComponentSetWorldPosition, 
                        _RETransformComponentSetWorldSRT, _RETransformComponentSetWorldScale, 
                        _RETwistSwingJointCreate, _RETwistSwingJointSetAngularLimit, 
-                       _REUnarchivePackage, _RREMaterialParameterBlockRemovePassTechniqueMapping, 
+                       _REUnarchivePackage, _REZipArchiveCopyFileAsData, _RREMaterialParameterBlockRemovePassTechniqueMapping, 
                        __REArchiveOperationArchiveToURL, __REArchiveOperationCreateWithURL, 
                        __REArchiveOperationRelease, __REArchiveOperationSetArchiveCompressionLevel, 
                        __REArchiveOperationSetProgress, __REArchiveOperationSetStreamCompression, 

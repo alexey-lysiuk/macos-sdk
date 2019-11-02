@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 67F2AC3A-3FD9-3D86-AE0A-24C25C3ED175' ]
+uuids:           [ 'x86_64: 85054E31-5F9F-3790-81A6-E76B6E8768B0' ]
 platform:        macosx
 install-name:    '/usr/lib/libpam.1.dylib'
 exports:         

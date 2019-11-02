@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 94B55912-2D9E-3D3D-9710-7A59B927A3DB' ]
+uuids:           [ 'x86_64: 5E89ED1E-AF42-3340-85B2-4F6F9BC9D585' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/OpenCL.framework/Versions/A/Libraries/ImageFormats/float_i.dylib'
 exports:         

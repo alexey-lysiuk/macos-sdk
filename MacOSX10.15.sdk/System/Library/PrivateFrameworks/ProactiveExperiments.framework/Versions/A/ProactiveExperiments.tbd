@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FC10E4CA-FFED-3C22-A654-3B494E2E06F6', 'x86_64: FC10E4CA-FFED-3C22-A654-3B494E2E06F6' ]
+uuids:           [ 'x86_64: 84134004-EE73-32E8-B3DC-C18920742E22', 'x86_64: 84134004-EE73-32E8-B3DC-C18920742E22' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/ProactiveExperiments.framework/Versions/A/ProactiveExperiments'
-current-version: 1052
+current-version: 1052.14
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _PREAMEngagedResponseReadFrom, _PREAMResponseItemReadFrom, 

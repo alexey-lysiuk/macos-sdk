@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D142B853-8EB3-336B-929F-BD0BF7730740', 'x86_64: D142B853-8EB3-336B-929F-BD0BF7730740' ]
+uuids:           [ 'x86_64: 978E4751-F957-3945-963B-FB1EA6CFADD5', 'x86_64: 978E4751-F957-3945-963B-FB1EA6CFADD5' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/GameCenterUICore.framework/Versions/A/GameCenterUICore'
 exports:         
@@ -21,9 +21,9 @@ exports:
                        __UIKitShimGraphicsGetCurrentContext, __UIKitShimGraphicsGetImageFromCurrentImageContext, 
                        _findClipViewAncestorForView ]
     objc-classes:    [ GKAccountViewController, GKAdditions_NSAlert_SuperDelegate, 
-                       GKAppearanceWebViewWrapper, GKAvatarImageBrush, GKBadgedGameIconBrush, 
-                       GKBrush, GKBrushList, GKCircleImageBrush, GKColorPalette, 
-                       GKComposedImageBrush, GKConditionBrush, GKDialogController, 
+                       GKAppearanceWebViewWrapper, GKAvatarImage, GKAvatarImageBrush, 
+                       GKBadgedGameIconBrush, GKBrush, GKBrushList, GKCircleImageBrush, 
+                       GKColorPalette, GKComposedImageBrush, GKConditionBrush, GKDialogController, 
                        GKDialogController_Concrete, GKFocusableDarkColorPalette, 
                        GKGameMessagesBrush, GKGradient, GKGreenBuddyViewController, 
                        GKImageBrush, GKImageColorPalette, GKImageContext, GKImageKey, 

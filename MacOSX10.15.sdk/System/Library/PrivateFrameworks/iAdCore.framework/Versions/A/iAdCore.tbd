@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0AE658A0-14E2-3E15-8CA8-A235EB6C3533', 'x86_64: 0AE658A0-14E2-3E15-8CA8-A235EB6C3533' ]
+uuids:           [ 'x86_64: F5D935B3-D0B4-3B1F-BD3F-C88054AE90EB', 'x86_64: F5D935B3-D0B4-3B1F-BD3F-C88054AE90EB' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/iAdCore.framework/Versions/A/iAdCore'
 exports:         

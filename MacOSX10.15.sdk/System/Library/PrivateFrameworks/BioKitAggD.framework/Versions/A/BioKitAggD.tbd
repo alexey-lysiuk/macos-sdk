@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: AFE8B921-D081-342C-B54D-296B0D267EE2' ]
+uuids:           [ 'x86_64: 0E3FA81C-419C-3ACF-B1D3-92419B6A9FF7' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/BioKitAggD.framework/Versions/A/BioKitAggD'
 exports:         

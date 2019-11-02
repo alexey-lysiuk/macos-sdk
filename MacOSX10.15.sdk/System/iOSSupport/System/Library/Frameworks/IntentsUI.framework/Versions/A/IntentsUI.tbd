@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 960F0CA4-1C06-3DA6-AD79-B981F6EF2D83' ]
+uuids:           [ 'x86_64: E67819C2-BFB6-3535-B0FB-6FB86CB6F78D' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/IntentsUI.framework/Versions/A/IntentsUI'
 exports:         

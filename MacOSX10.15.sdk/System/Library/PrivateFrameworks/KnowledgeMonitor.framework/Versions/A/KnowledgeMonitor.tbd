@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FB9E0B75-E189-39B8-B81C-172AF252484F', 'x86_64: FB9E0B75-E189-39B8-B81C-172AF252484F' ]
+uuids:           [ 'x86_64: A3CAD5EB-EF01-389E-9558-3692AAD31934', 'x86_64: A3CAD5EB-EF01-389E-9558-3692AAD31934' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/KnowledgeMonitor.framework/Versions/A/KnowledgeMonitor'
 exports:         

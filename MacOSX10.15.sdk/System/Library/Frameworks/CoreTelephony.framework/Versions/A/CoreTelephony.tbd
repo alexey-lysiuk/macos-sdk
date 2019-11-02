@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0D588855-83EF-317E-87A7-C277A8DA745C', 'x86_64: 0D588855-83EF-317E-87A7-C277A8DA745C' ]
+uuids:           [ 'x86_64: E9E4C228-3B5C-3670-8604-A97AD2415078', 'x86_64: E9E4C228-3B5C-3670-8604-A97AD2415078' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreTelephony.framework/Versions/A/CoreTelephony'
 current-version: 0
@@ -219,8 +219,8 @@ exports:
                        __CTServerConnectionGetXpcConnection, __CTServerConnectionHandleReply, 
                        __CTServerConnectionHideDataIndicator, __CTServerConnectionHideRatIndicator, 
                        __CTServerConnectionICloudAccountReset, __CTServerConnectionInjectCellBroadcastMessage, 
-                       __CTServerConnectionInstallCarrierBundle, __CTServerConnectionIsAnyCallActiveOrHeld, 
-                       __CTServerConnectionIsCDMAInternationalRoamingSettingAllowed, 
+                       __CTServerConnectionInjectCellBroadcastMessageWithWac, __CTServerConnectionInstallCarrierBundle, 
+                       __CTServerConnectionIsAnyCallActiveOrHeld, __CTServerConnectionIsCDMAInternationalRoamingSettingAllowed, 
                        __CTServerConnectionIsDataAttached, __CTServerConnectionIsDataAttachedForPreferredDataSIM, 
                        __CTServerConnectionIsDefaultConnection, __CTServerConnectionIsEmergencyNumber, 
                        __CTServerConnectionIsEmergencyNumberWithWhitelistIncluded, 

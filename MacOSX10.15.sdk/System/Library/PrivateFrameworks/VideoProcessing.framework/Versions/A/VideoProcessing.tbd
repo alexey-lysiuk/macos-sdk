@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 394EB98E-4971-3651-B287-2D8EA7799F8E', 'x86_64: 394EB98E-4971-3651-B287-2D8EA7799F8E' ]
+uuids:           [ 'x86_64: 10105300-7B8D-3E1B-956E-76094E14FF9A', 'x86_64: 10105300-7B8D-3E1B-956E-76094E14FF9A' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/VideoProcessing.framework/Versions/A/VideoProcessing'
 exports:         
@@ -153,11 +153,11 @@ exports:
                        _VCPMAFullAnalysisTypesMovie, _VCPMAFullAnalysisTypesThumbnail, 
                        _VCPParseConfigurationRecordAndCreateParameterSets, _VCPParseParameterSetsAndCreateConfigurationRecord, 
                        _VCPPerformance_RecordMeasurement, _VCPPerformance_ReportSummary, 
-                       _VCPPhotosMediaAnalysisTaskID, _VCPPhotosSceneAnalysisTaskID, 
-                       _VCPPhotosSceneProcessingVersion, _VCPPriorityScoreKey, _VCPProcessingStatusDescription, 
-                       _VCPProcessingStatusShortDescription, _VCPReadCodecConfigParams, 
-                       _VCPReadDecMaxFrameFormat, _VCPReadEncMaxFrameFormat, _VCPReadFrameSliceHeader, 
-                       _VCPReadHEVCSliceHeader, _VCPSceneProcessing_ForceFullScanKey, 
+                       _VCPPhotoLibrariesDefaultsKey, _VCPPhotosMediaAnalysisTaskID, 
+                       _VCPPhotosSceneAnalysisTaskID, _VCPPhotosSceneProcessingVersion, 
+                       _VCPPriorityScoreKey, _VCPProcessingStatusDescription, _VCPProcessingStatusShortDescription, 
+                       _VCPReadCodecConfigParams, _VCPReadDecMaxFrameFormat, _VCPReadEncMaxFrameFormat, 
+                       _VCPReadFrameSliceHeader, _VCPReadHEVCSliceHeader, _VCPSceneProcessing_ForceFullScanKey, 
                        _VCPSessionCopyProperty, _VCPSessionCreate, _VCPSessionCreateDefaultBufferProperties, 
                        _VCPSessionExecute, _VCPSessionGetTypeID, _VCPSessionSetProperty, 
                        _VCPSignPostLog, _VCPTaskIDDescription, _VCPTurboProcessing_QualityOfServiceKey, 

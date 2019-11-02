@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0F0EB502-ED0F-3827-A0B0-B3D451DD8B16', 'x86_64: 0F0EB502-ED0F-3827-A0B0-B3D451DD8B16' ]
+uuids:           [ 'x86_64: E3AACF97-C85A-3720-90F0-61CAEF721F3D', 'x86_64: E3AACF97-C85A-3720-90F0-61CAEF721F3D' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/IOPresentment.framework/Versions/A/IOPresentment'
 current-version: 47.6

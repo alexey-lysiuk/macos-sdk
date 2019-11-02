@@ -172,9 +172,19 @@ CM_EXPORT const CFStringRef kCMMetadataIdentifier_QuickTimeMetadataVideoOrientat
 /*!
 	@const kCMMetadataIdentifier_QuickTimeMetadataLivePhotoStillImageTransform
 		A perspective transform that can be used to adjust a Live Photo still image to match the Live Photo movie.
+		Expected data type is kCMMetadataBaseDataType_PerspectiveTransformF64.
 */
 CM_EXPORT const CFStringRef kCMMetadataIdentifier_QuickTimeMetadataLivePhotoStillImageTransform
 								API_AVAILABLE(macos(10.15), ios(13.0), tvos(13.0), watchos(6.0));
+
+/*!
+	@const kCMMetadataIdentifier_QuickTimeMetadataLivePhotoStillImageTransformReferenceDimensions
+		The dimensions of the image used to generate kCMMetadataIdentifier_QuickTimeMetadataLivePhotoStillImageTransform.
+		Expected data type is kCMMetadataBaseDataType_DimensionsF32.
+*/
+CM_EXPORT const CFStringRef kCMMetadataIdentifier_QuickTimeMetadataLivePhotoStillImageTransformReferenceDimensions
+								API_AVAILABLE(macos(10.15.1), ios(13.2), tvos(13.2), watchos(6.1));
+
 	
 CM_ASSUME_NONNULL_END
 

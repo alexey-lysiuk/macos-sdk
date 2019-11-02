@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F5108345-A37B-3269-82E9-30A23B252921', 'x86_64: F5108345-A37B-3269-82E9-30A23B252921' ]
+uuids:           [ 'x86_64: BC7B4BFC-988C-360D-833F-7C35E210C172', 'x86_64: BC7B4BFC-988C-360D-833F-7C35E210C172' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/OpenAL.framework/Versions/A/OpenAL'
 exports:         

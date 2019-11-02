@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9CC1A54C-5963-3AF3-BF8A-230D2C347FB2', 'x86_64: 9CC1A54C-5963-3AF3-BF8A-230D2C347FB2' ]
+uuids:           [ 'x86_64: 792520D2-5D81-3867-8DC7-75F8205D5A5B', 'x86_64: 792520D2-5D81-3867-8DC7-75F8205D5A5B' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreServicesStore.framework/Versions/A/CoreServicesStore'
-current-version: 1065.2
+current-version: 1069.11
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CSMapAddMapTable, _CSMapGetHeader, _CSMapGetKeyAndValueForKeyData, 

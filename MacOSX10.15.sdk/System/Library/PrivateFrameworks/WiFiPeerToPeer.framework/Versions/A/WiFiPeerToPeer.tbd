@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1ACBC09E-39F7-379D-B76F-EE645E679446' ]
+uuids:           [ 'x86_64: 52EFDFE4-5A61-3D98-9D91-5DCDD6E0F7B4' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/WiFiPeerToPeer.framework/Versions/A/WiFiPeerToPeer'
 exports:         

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8F08AEF6-A380-3811-BAF0-D80E7C84B5AD', 'x86_64: 8F08AEF6-A380-3811-BAF0-D80E7C84B5AD' ]
+uuids:           [ 'x86_64: 329A9840-CBD8-33A2-A584-2805042284A9', 'x86_64: 329A9840-CBD8-33A2-A584-2805042284A9' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreNLP.framework/Versions/A/CoreNLP'
-current-version: 211
+current-version: 213
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _NLCNNModelCopyFeatureRepresentation, _NLCNNModelCopyFeatureRepresentationLayers, 

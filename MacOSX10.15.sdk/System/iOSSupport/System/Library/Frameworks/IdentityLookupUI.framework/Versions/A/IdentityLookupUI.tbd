@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5B910582-B94D-37BA-9486-C548ABF2141A' ]
+uuids:           [ 'x86_64: E749A015-B17C-3C38-8096-FF82080E428A' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/IdentityLookupUI.framework/Versions/A/IdentityLookupUI'
 exports:         

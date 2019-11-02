@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6874A93E-331E-34BA-984F-C2BC40938D9F', 'x86_64: 6874A93E-331E-34BA-984F-C2BC40938D9F' ]
+uuids:           [ 'x86_64: 67076218-F639-3C44-9670-20B54714E339', 'x86_64: 67076218-F639-3C44-9670-20B54714E339' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/MultitouchSupport.framework/Versions/A/MultitouchSupport'
-current-version: 3400.33
+current-version: 3410.2
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _MTAbsoluteTimeGetCurrent, _MTActuationActuate, _MTActuationCreateFromDictionary, 

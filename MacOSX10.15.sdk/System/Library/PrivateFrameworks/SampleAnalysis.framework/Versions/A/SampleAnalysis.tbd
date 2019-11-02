@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 45110E64-78FB-3A10-81C0-DFE678846D2B', 'x86_64: 45110E64-78FB-3A10-81C0-DFE678846D2B' ]
+uuids:           [ 'x86_64: D06F7BC8-D416-3131-AB1A-37875F543250', 'x86_64: D06F7BC8-D416-3131-AB1A-37875F543250' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/SampleAnalysis.framework/Versions/A/SampleAnalysis'
-current-version: 242
+current-version: 243
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _EventTypeString, _SABinarySearchArray, _SACFAbsoluteTimeFromTimespec, 

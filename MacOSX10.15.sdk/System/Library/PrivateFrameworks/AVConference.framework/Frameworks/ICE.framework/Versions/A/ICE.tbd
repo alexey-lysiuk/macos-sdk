@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 1F5456E1-9C4B-3E5C-9886-1356A5F67491', 'x86_64: 1F5456E1-9C4B-3E5C-9886-1356A5F67491' ]
+uuids:           [ 'x86_64: 21C97741-BE8F-370B-A21C-2968F5415883', 'x86_64: 21C97741-BE8F-370B-A21C-2968F5415883' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AVConference.framework/Frameworks/ICE.framework/Versions/A/ICE'
 exports:         

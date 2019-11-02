@@ -335,7 +335,7 @@ IC_AVAILABLE(macos(10.4), ios(13.0))
  @method requestOpenSessionWithOptions:completion
  @abstract This message requests to open a session on the device.
  @discussion This request will execute the completion handler provided upon return.
- @note Execution of the completion block will occur on the thread initially called from.
+ @note The completion block will execute on an any available queue, often this will not be the main queue.
  */
 - (void)requestOpenSessionWithOptions:(NSDictionary<ICSessionOptions, id>* _Nullable)options
                            completion:(void (^)(NSError* _Nullable error))completion IC_AVAILABLE(macos(10.15), ios(13.0));
@@ -344,7 +344,7 @@ IC_AVAILABLE(macos(10.4), ios(13.0))
  @method requestCloseSessionWithOptions:completion
  @abstract This message requests to close a previously opened session on this device.
  @discussion This request will execute the completion handler provided upon return.
- @note Execution of the completion block will occur on the thread initially called from.
+ @note The completion block will execute on an any available queue, often this will not be the main queue.
  */
 - (void)requestCloseSessionWithOptions:(NSDictionary<ICSessionOptions, id>* _Nullable)options
                             completion:(void (^)(NSError* _Nullable error))completion IC_AVAILABLE(macos(10.15), ios(13.0));
@@ -353,7 +353,7 @@ IC_AVAILABLE(macos(10.4), ios(13.0))
  @method requestEjectWithCompletion:
  @abstract Eject the media, or disconnect the device - if permitted by the device.
  @discussion This request will execute the completion handler provided upon return.
- @note Execution of the completion block will occur on the thread initially called from.
+ @note The completion block will execute on an any available queue, often this will not be the main queue.
  */
 - (void)requestEjectWithCompletion:(void (^)(NSError* _Nullable error))completion IC_AVAILABLE(macos(10.15), ios(13.0));
 

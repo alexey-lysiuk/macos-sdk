@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 224C01CA-7035-3D98-B9A4-4402DBECB906' ]
+uuids:           [ 'x86_64: 251848B8-FA84-39EF-BC98-E3175A339A32' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/Symptoms.framework/Frameworks/SymptomEvaluator.framework/Versions/A/SymptomEvaluator'
-current-version: 1238.0.2
+current-version: 1238.40.4
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CLIPS_BASEBAND_BEDF_MODULE, _CLIPS_BASEBAND_MODULE, _CLIPS_BLUETOOTH_MODULE, 
@@ -28,13 +28,14 @@ exports:
                        _kNotificationFallbackRecommendation, _kNotificationLinkQualityValue, 
                        _kNotificationNewConnectivityEpochCell, _kNotificationNewConnectivityEpochWiFi, 
                        _kNotificationNewConnectivityEpochWired, _kNotificationNewModelGenerated, 
-                       _kNotificationNewPrimaryInterface, _kNotificationOfFlowDisruptingEvent, 
-                       _kNotificationOfTetheringState, _kNotificationRecommendationDetail, 
-                       _kNotificationStateChangeTimeStamp, _kNotificationStateDetail, 
-                       _kNotificationStateHashedPrimaryKey, _kNotificationStateKeyOnOff, 
-                       _kNotificationStateRelayReady, _kNotificationSymptomsOSLogReceivedFromSymptomsTool, 
-                       _kNotificationWiFiLinkQualityChange, _kNotificationWiredLinkQualityChange, 
-                       _lowInternetModeScoresDL, _lowInternetModeScoresUL, _machAbsoluteTimeFromNanoseconds, 
+                       _kNotificationNewPrimaryInterface, _kNotificationNewTraffic, 
+                       _kNotificationOfFlowDisruptingEvent, _kNotificationOfTetheringState, 
+                       _kNotificationRecommendationDetail, _kNotificationStateChangeTimeStamp, 
+                       _kNotificationStateDetail, _kNotificationStateHashedPrimaryKey, 
+                       _kNotificationStateKeyOnOff, _kNotificationStateRelayReady, 
+                       _kNotificationSymptomsOSLogReceivedFromSymptomsTool, _kNotificationWiFiLinkQualityChange, 
+                       _kNotificationWiredLinkQualityChange, _lowInternetModeScoresDL, 
+                       _lowInternetModeScoresUL, _machAbsoluteTimeFromNanoseconds, 
                        _machAbsoluteTime_secs, _machContinuousTime_secs, _nanosecondsFromMachAbsoluteTime, 
                        _secondsFromMachAbsoluteTime, _symptom_evaluator_shutdown, 
                        _timeIntervalFromMachAbsoluteTime, _timeStringMillisecondsBetweenTimeIntervals, 
@@ -43,7 +44,7 @@ exports:
     objc-classes:    [ AnalyticsEngineCore, CLIPSShim, CellFallbackHandler, CountDown, 
                        DailyMaintenanceActivity, DateRounder, DecisionDetails, Evaluation, 
                        EventDescription, ExpertSystemHandlerCore, ExpertSystemStateCore, 
-                       ImpoExpoService, JournalTimeStamp, LQMPredictionInternalRecord, 
+                       FlowAnalyticsEngine, ImpoExpoService, JournalTimeStamp, LQMPredictionInternalRecord, 
                        ManagedEventHandler, ManagedEventTransport, MathUtility, NWAppAdvice, 
                        NWNetworkAdviceUpdate, NWNetworkOfInterest, NWNetworkPredictions, 
                        NetworkAnalyticsEngine, NetworkAnalyticsModel, NetworkAnalyticsStateRelay, 

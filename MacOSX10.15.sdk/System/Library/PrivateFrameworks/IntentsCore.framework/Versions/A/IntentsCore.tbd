@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: D5578B08-64EF-31F3-9E37-3E691005661D', 'x86_64: D5578B08-64EF-31F3-9E37-3E691005661D' ]
+uuids:           [ 'x86_64: E61A2E7D-28C2-32D8-8FED-A91310E3668E', 'x86_64: E61A2E7D-28C2-32D8-8FED-A91310E3668E' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/IntentsCore.framework/Versions/A/IntentsCore'
 exports:         
@@ -11,9 +11,10 @@ exports:
                        _INCGetCurrentGroupDeviceUIDs, _INCNativeMessagesAppBundleIdentifier, 
                        _INCRouteAudioToAirplayOutputDevices, _INCRouteAudioToAirplayOutputDevicesForAudioSession, 
                        _INCSerializeNSUserActivity, _IntentsCoreVersionNumber, _IntentsCoreVersionString ]
-    objc-classes:    [ INCAppLaunchRequest, INCAppProxy, INCExtensionConnection, 
-                       INCExtensionError, INCExtensionManager, INCExtensionPlugInBundleManager, 
-                       INCExtensionProxy, INCExtensionRequest, INCExtensionTransaction, 
-                       INCExtensionTransactionState, INCIntentExecutionInfo, INCIntentExecutionInfoResolver, 
-                       INCLocalExtensionRegistry ]
+    objc-classes:    [ INCAppLaunchRequest, INCAppProxy, INCExecutionInfo, INCExecutionInfoResolver, 
+                       INCExtensionConnection, INCExtensionError, INCExtensionManager, 
+                       INCExtensionPlugInBundleManager, INCExtensionProxy, INCExtensionRequest, 
+                       INCExtensionTransaction, INCExtensionTransactionState, INCIntentExecutionInfo, 
+                       INCIntentExecutionInfoResolver, INCLocalExtensionRegistry, 
+                       INCUserActivityExecutionInfo ]
 ...

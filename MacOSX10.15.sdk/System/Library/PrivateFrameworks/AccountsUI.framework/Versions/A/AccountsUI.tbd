@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 72D85F5C-83A4-3A21-B3B9-75D223FB9FE3' ]
+uuids:           [ 'x86_64: 42ED1604-3AE3-3835-98EC-D6B61F0E5F5C' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/AccountsUI.framework/Versions/A/AccountsUI'
 exports:         

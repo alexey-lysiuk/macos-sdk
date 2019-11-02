@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B8EBA046-7C39-3E97-9A96-77271246BB00', 'x86_64: B8EBA046-7C39-3E97-9A96-77271246BB00' ]
+uuids:           [ 'x86_64: 8AAF105D-7963-3F9A-94BD-258510CDDB7E', 'x86_64: 8AAF105D-7963-3F9A-94BD-258510CDDB7E' ]
 platform:        zippered
 install-name:    '/System/Library/CoreServices/Encodings/libHebrewConverter.dylib'
 current-version: 76

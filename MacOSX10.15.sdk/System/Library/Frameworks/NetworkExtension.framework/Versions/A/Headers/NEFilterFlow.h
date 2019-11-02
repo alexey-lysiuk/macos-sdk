@@ -69,6 +69,12 @@ API_AVAILABLE(macos(10.15), ios(9.0)) API_UNAVAILABLE(watchos, tvos)
  */
 @property (readonly, nullable) NSData *sourceAppAuditToken API_AVAILABLE(macos(10.15)) API_UNAVAILABLE(ios, watchos, tvos);
 
+/*!
+ * @property identifier
+ * @discussion The unique identifier of the flow.
+ */
+@property (readonly) NSUUID *identifier API_AVAILABLE(macos(10.15), ios(13.1)) API_UNAVAILABLE(watchos, tvos);
+
 @end
 
 /*!

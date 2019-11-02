@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 25F9B078-226D-3B5B-B905-3FB340CDD485' ]
+uuids:           [ 'x86_64: 62B68826-0844-309D-891E-7A3525219D2D' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/ConditionInducer.framework/Versions/A/ConditionInducer'
 exports:         

@@ -71,7 +71,7 @@ API_AVAILABLE(macos(10.13))
 @property (class, readonly, copy) NSUserInterfaceCompressionOptions *hideTextOption;
 
 /*
- Option specifying views should reduce their internal metrics when possible to reduce padding around contents. The system will handle this for system controls when available.
+ Option specifying views should reduce their internal metrics when possible to reduce padding around contents.
  */
 @property (class, readonly, copy) NSUserInterfaceCompressionOptions *reduceMetricsOption;
 

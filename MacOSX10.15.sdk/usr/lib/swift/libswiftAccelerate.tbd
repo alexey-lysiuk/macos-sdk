@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CB92B029-1F5A-3E26-84A2-761EED2C21E1', 'x86_64: CB92B029-1F5A-3E26-84A2-761EED2C21E1' ]
+uuids:           [ 'x86_64: 9C840166-767B-3D46-B6A5-9C849EF98876', 'x86_64: 9C840166-767B-3D46-B6A5-9C849EF98876' ]
 platform:        zippered
 install-name:    '/usr/lib/swift/libswiftAccelerate.dylib'
 current-version: 0

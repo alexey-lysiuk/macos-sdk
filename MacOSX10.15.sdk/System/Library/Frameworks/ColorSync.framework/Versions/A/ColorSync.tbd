@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4E3FDA20-2CD9-31AE-A8A6-3957B070CD6A', 'x86_64: 4E3FDA20-2CD9-31AE-A8A6-3957B070CD6A' ]
+uuids:           [ 'x86_64: DCAECEC5-F7D0-3A28-AE9D-3FA59CC9FB26', 'x86_64: DCAECEC5-F7D0-3A28-AE9D-3FA59CC9FB26' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/ColorSync.framework/Versions/A/ColorSync'
 current-version: 4.7

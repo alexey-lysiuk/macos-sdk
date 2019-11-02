@@ -103,7 +103,11 @@ typedef void (*ScrollWheelEventCallback)(
 class IOHIDPointingDevice;
 struct ScrollAccelInfo;
 
+#if defined(KERNEL) && !defined(KERNEL_PRIVATE)
+class __deprecated_msg("Use DriverKit") IOHIPointing : public IOHIDevice
+#else
 class IOHIPointing : public IOHIDevice
+#endif
 {
     OSDeclareDefaultStructors(IOHIPointing);
     

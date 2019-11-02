@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3124BA91-B08A-3A36-83CB-288954989003', 'x86_64: 3124BA91-B08A-3A36-83CB-288954989003' ]
+uuids:           [ 'x86_64: 1B960259-D31B-3B05-B7B7-751BDC7BF3B7', 'x86_64: 1B960259-D31B-3B05-B7B7-751BDC7BF3B7' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/InertiaCam.framework/Versions/A/InertiaCam'
 exports:         

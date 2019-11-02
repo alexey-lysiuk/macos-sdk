@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A9BDE17D-0E3F-3BF9-95A7-F226EC3D13DA', 'x86_64: A9BDE17D-0E3F-3BF9-95A7-F226EC3D13DA' ]
+uuids:           [ 'x86_64: 4FF2CAE0-985D-3708-8ABA-915A4B4A3CF1', 'x86_64: 4FF2CAE0-985D-3708-8ABA-915A4B4A3CF1' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/MediaServices.framework/Versions/A/MediaServices'
 exports:         
@@ -14,11 +14,12 @@ exports:
                        _MSVCryptoDigestForData, _MSVCryptoDigestForString, _MSVCryptoUtilitiesHexStringFromDigest, 
                        _MSVDeviceHasCellularBaseband, _MSVDeviceIsAppleTV, _MSVDeviceIsAudioAccessory, 
                        _MSVDeviceIsiPad, _MSVDeviceOSHasInternalDiagnostics, _MSVDeviceOSIsInternalInstall, 
-                       _MSVDevicePPTTestsAreInProgress, _MSVDeviceSupportsExtendedColorDisplay, 
-                       _MSVDeviceSupportsMultipleLibraries, _MSVDiagnoseSecureCodingClassesWithPrefix, 
-                       _MSVErrorDomain, _MSVFrameworkExists, _MSVGetMaximumScreenScale, 
-                       _MSVGetMaximumScreenSize, _MSVGzipCompressData, _MSVGzipCompressFile, 
-                       _MSVGzipDecompressData, _MSVGzipDecompressFile, _MSVImageUtilitiesAddImageToDestination, 
+                       _MSVDevicePPTTestsAreInProgress, _MSVDeviceSupportsDelegatedIdentities, 
+                       _MSVDeviceSupportsExtendedColorDisplay, _MSVDeviceSupportsMultipleLibraries, 
+                       _MSVDiagnoseSecureCodingClassesWithPrefix, _MSVErrorDomain, 
+                       _MSVFrameworkExists, _MSVGetMaximumScreenScale, _MSVGetMaximumScreenSize, 
+                       _MSVGzipCompressData, _MSVGzipCompressFile, _MSVGzipDecompressData, 
+                       _MSVGzipDecompressFile, _MSVImageUtilitiesAddImageToDestination, 
                        _MSVImageUtilitiesAddJPEGToDestination, _MSVImageUtilitiesAddSourceImageToDestination, 
                        _MSVImageUtilitiesAddSourceImageToJPEGDestination, _MSVImageUtilitiesCopyUTTypeForImage, 
                        _MSVImageUtilitiesCopyUTTypeForImageFormat, _MSVImageUtilitiesCreateDataImageDestination, 

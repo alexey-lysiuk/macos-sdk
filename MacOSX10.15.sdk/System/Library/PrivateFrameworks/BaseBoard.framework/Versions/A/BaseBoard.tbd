@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: FCAB05AD-2B17-3806-B7FB-4F422F003EAB', 'x86_64: FCAB05AD-2B17-3806-B7FB-4F422F003EAB' ]
+uuids:           [ 'x86_64: 1A44B522-904F-3541-BC8C-5EDF0C6EE49C', 'x86_64: 1A44B522-904F-3541-BC8C-5EDF0C6EE49C' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/BaseBoard.framework/Versions/A/BaseBoard'
 current-version: 0
@@ -15,8 +15,10 @@ exports:
                        _BSAuditTokenTaskCopyEntitlementValue, _BSAuditTokenTaskHasEntitlement, 
                        _BSBaseBoardVersionNumber, _BSBaseBoardVersionString, _BSBundleIDForAuditToken, 
                        _BSBundleIDForPID, _BSBundleIDForXPCConnection, _BSCGFloatEpsilon, 
-                       _BSCompareBuildVersions, _BSCompareFloats, _BSCompareIntegers, 
-                       _BSCompareSizes, _BSComplement, _BSConditionalBlock, _BSConvertPointFromOrientationToOrientation, 
+                       _BSCollectionCompactMap, _BSCollectionFilter, _BSCollectionFind, 
+                       _BSCollectionMap, _BSCollectionReduce, _BSCompareBuildVersions, 
+                       _BSCompareFloats, _BSCompareIntegers, _BSCompareSizes, _BSComplement, 
+                       _BSConditionalBlock, _BSConvertPointFromOrientationToOrientation, 
                        _BSConvertRectFromOrientationToOrientation, _BSCopyDeviceTreeProperty, 
                        _BSCreateDeserializedArrayFromXPCDictionaryWithKey, _BSCreateDeserializedArrayOfBSXPCEncodableObjectsFromXPCDictionaryWithKey, 
                        _BSCreateDeserializedBSXPCEncodableObjectFromXPCDictionary, 
@@ -129,21 +131,22 @@ exports:
                        _BSXPCEncodingClassKey, _BSXPCMessageEncodedObjectClassNameKey, 
                        _BSXPCMessageEncodedObjectFallbackClassNameKey, _BSXPCObjectBaseClass, 
                        _NSStringFromBSDiagnosticReportType, _NSStringFromBSProcessExceptionCode, 
-                       _NSStringFromInterval, __BSBundleForExecutablePath, __BSBundleIDForXPCConnectionAndIKnowWhatImDoingISwear, 
-                       __BSLogAddStateCaptureBlockWithTitle, __BSLogStateCaptureCheckStateDataSizeIsPermitted, 
-                       __BSLogStateDataWithPlist, __BSRectTransformByTransformingCorners ]
+                       _NSStringFromInterval, __BSBundleIDForXPCConnectionAndIKnowWhatImDoingISwear, 
+                       __BSBundleIdentifierForExecutablePath, __BSLogAddStateCaptureBlockWithTitle, 
+                       __BSLogStateCaptureCheckStateDataSizeIsPermitted, __BSLogStateDataWithPlist, 
+                       __BSRectTransformByTransformingCorners ]
     objc-classes:    [ BSAbstractDefaultDomain, BSAbstractDefaultDomainClassMetadata, 
                        BSAction, BSActionListener, BSActionListenerController, BSActionListenerToken, 
                        BSActionResponse, BSAnimationSettings, BSAtomicFlag, BSAtomicSignal, 
                        BSAuditHistory, BSAuditHistoryItem, BSAuditToken, BSBaseXPCClient, 
                        BSBaseXPCServer, BSBasicServerClient, BSBlockSentinel, BSBlockSentinelSignalContext, 
                        BSBlockTransaction, BSCFBundle, BSCGImageFromIOSurfaceBuilder, 
-                       BSColor, BSCopyingCacheSet, BSCornerRadiusConfiguration, BSCurrentContainerPathProvider, 
-                       BSDateFormatterCache, BSDateTimeCache, BSDescriptionBuilder, 
-                       BSDispatchQueueAttributes, BSDispatchSource, BSEqualsBuilder, 
-                       BSError, BSEventQueue, BSEventQueueEvent, BSEventQueueLock, 
-                       BSFuture, BSHashBuilder, BSIntegerMap, BSIntegerSet, BSKeyedSettings, 
-                       BSLogStateCaptureEntry, BSMIGServer, BSMachPortReceiveRight, 
+                       BSColor, BSCompoundAssertion, BSCopyingCacheSet, BSCornerRadiusConfiguration, 
+                       BSCurrentContainerPathProvider, BSDateFormatterCache, BSDateTimeCache, 
+                       BSDescriptionBuilder, BSDispatchQueueAttributes, BSDispatchSource, 
+                       BSEqualsBuilder, BSError, BSEventQueue, BSEventQueueEvent, 
+                       BSEventQueueLock, BSFuture, BSHashBuilder, BSIntegerMap, BSIntegerSet, 
+                       BSKeyedSettings, BSLogStateCaptureEntry, BSMIGServer, BSMachPortReceiveRight, 
                        BSMachPortRight, BSMachPortSendRight, BSMachPortTaskNameRight, 
                        BSMachPortTransferableSendRight, BSMonotonicReferenceTime, 
                        BSMutableAnimationSettings, BSMutableIntegerMap, BSMutableIntegerSet, 
@@ -160,10 +163,11 @@ exports:
                        BSTimer, BSTransaction, BSTransactionBlockObserver, BSUIApplicationSupport, 
                        BSUserDefaultsTestDoubleDictionaryImpl, BSWatchdog, BSXPCBundle, 
                        BSXPCCoder, BSXPCCodingArray, BSXPCConnectionListener, BSXPCConnectionListenerManager, 
-                       BSXPCMessage, BSXPCReply, BSZeroingWeakReference, _BSDefaultObserver, 
-                       _BSSqliteDeferredPreparedSimpleStatement, _BSSqliteFrozenResultRow, 
-                       _BSSqlitePreparedCompoundStatement, _BSSqlitePreparedSimpleStatement, 
-                       _BSTransactionChildRelationship, _BSTransactionDefaults, _BSTransactionParentRelationship ]
+                       BSXPCMessage, BSXPCReply, BSZeroingWeakReference, _BSCompoundAssertionAcquisition, 
+                       _BSCompoundAssertionState, _BSDefaultObserver, _BSSqliteDeferredPreparedSimpleStatement, 
+                       _BSSqliteFrozenResultRow, _BSSqlitePreparedCompoundStatement, 
+                       _BSSqlitePreparedSimpleStatement, _BSTransactionChildRelationship, 
+                       _BSTransactionDefaults, _BSTransactionParentRelationship ]
     objc-ivars:      [ BSBaseXPCClient._queue, BSBaseXPCServer._queue, BSBasicServerClient._connection, 
                        BSIntegerMap._mapTable, BSIntegerMap._zeroIndexValue, BSIntegerSet._hasZeroValue, 
                        BSIntegerSet._hashTable, BSKeyedSettings._keyMap, BSObjCArgument._encoding, 

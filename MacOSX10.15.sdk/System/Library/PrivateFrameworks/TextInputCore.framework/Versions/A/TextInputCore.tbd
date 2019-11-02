@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E58CCAB2-5273-3AB8-AFF8-5B5254430A1C' ]
+uuids:           [ 'x86_64: 53763F52-7BCB-3837-B475-86BDC7717A55' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/TextInputCore.framework/Versions/A/TextInputCore'
 exports:         
@@ -1761,8 +1761,8 @@ exports:
                        _kTISKDeleteToPathMetric, _kTISKDeleteToShiftMetric, _kTISKDeleteToSpaceMetric, 
                        _kTISKDeleteTouchDownUpMetric, _kTISKDeleteUpErrorDistance, 
                        _kTISKDownErrorDistance, _kTISKKeyToDeleteMetric, _kTISKLongWordPositionalDownErrorDistance, 
-                       _kTISKLongWordPositionalUpErrorDistance, _kTISKLongWordTouchDownUpPositionalMetric, 
-                       _kTISKLongWordTouchUpDownPositionalMetric, _kTISKNumberOfAlteredWordsCounter, 
+                       _kTISKLongWordPositionalUpErrorDistance, _kTISKLongWordTouchDownDownPositionalMetric, 
+                       _kTISKLongWordTouchDownUpPositionalMetric, _kTISKNumberOfAlteredWordsCounter, 
                        _kTISKNumberOfAutoCorrections, _kTISKNumberOfDeletesCounter, 
                        _kTISKNumberOfDiacriticCorrections, _kTISKNumberOfDragsCounter, 
                        _kTISKNumberOfEmojiCounter, _kTISKNumberOfHitTestCorrections, 
@@ -1779,8 +1779,8 @@ exports:
                        _kTISKSpaceTo123Metric, _kTISKSpaceToCharMetric, _kTISKSpaceToDeleteMetric, 
                        _kTISKSpaceToPathMetric, _kTISKSpaceToPredictionMetric, _kTISKSpaceToShiftMetric, 
                        _kTISKSpaceToSpaceMetric, _kTISKSpaceTouchDownUpMetric, _kTISKSpaceUpErrorDistance, 
-                       _kTISKTotalPathLength, _kTISKTotalPathTime, _kTISKTouchDownUpMetric, 
-                       _kTISKTouchUpDownMetric, _kTISKUpErrorDistance, _kTIStatistics1stPersonCategory, 
+                       _kTISKTotalPathLength, _kTISKTotalPathTime, _kTISKTouchDownDownMetric, 
+                       _kTISKTouchDownUpMetric, _kTISKUpErrorDistance, _kTIStatistics1stPersonCategory, 
                        _kTIStatistics3rdPersonCategory, _kTIStatisticsContactAddressHomeCategory, 
                        _kTIStatisticsContactAddressWorkCategory, _kTIStatisticsContactAnyAddressCategory, 
                        _kTIStatisticsContactAnyPhoneCategory, _kTIStatisticsContactBioCategory, 

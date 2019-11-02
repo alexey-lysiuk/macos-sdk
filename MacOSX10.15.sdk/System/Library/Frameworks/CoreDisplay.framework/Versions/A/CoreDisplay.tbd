@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 18043E0A-A8F6-3A13-82EC-87CEEEEA2278' ]
+uuids:           [ 'x86_64: B18FC063-4638-3EFB-B8DB-999B380C7CBE' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/CoreDisplay.framework/Versions/A/CoreDisplay'
-current-version: 168
+current-version: 186
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CDNotificationRegisterCallbackBlock, _CDNotificationRegisterCallbackBlockOnQueue, 

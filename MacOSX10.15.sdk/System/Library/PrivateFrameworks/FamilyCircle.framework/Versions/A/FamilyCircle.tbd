@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 495263D8-A438-304E-98F6-32D679AC44E3', 'x86_64: 495263D8-A438-304E-98F6-32D679AC44E3' ]
+uuids:           [ 'x86_64: 22D01D48-270F-3CD2-8DE8-AFDF6331C6AC', 'x86_64: 22D01D48-270F-3CD2-8DE8-AFDF6331C6AC' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/FamilyCircle.framework/Versions/A/FamilyCircle'
 exports:         
@@ -20,9 +20,10 @@ exports:
                        _kFAServicePasswordOption, _kFAServiceUsernameOption ]
     objc-classes:    [ FAAddFamilyMemberRequest, FAClearFamilyCircleCacheRequest, 
                        FADispatchFamilyPushRequest, FAFamilyCircle, FAFamilyCircleRequest, 
-                       FAFamilyCloudKitProperties, FAFamilyMember, FAFamilySettings, 
-                       FAFetchFamilyCircleRequest, FAFetchFamilyPhotoRequest, FAFollowUpController, 
-                       FAHandleFamilyEventPushNotificationRequest, FAPushNotificationHandler, 
-                       FARegisterPushTokenRequest, FARemoveFamilyMemberRequest, FAUpdateFamilyMemberFlagRequest, 
-                       _FAFamilyCircleRequestConnectionFactory, _FAFamilyCircleRequestConnectionProvider ]
+                       FAFamilyCloudKitProperties, FAFamilyMember, FAFamilyMemberPhotoRequest, 
+                       FAFamilySettings, FAFetchFamilyCircleRequest, FAFetchFamilyPhotoRequest, 
+                       FAFollowUpController, FAHandleFamilyEventPushNotificationRequest, 
+                       FAPushNotificationHandler, FARegisterPushTokenRequest, FARemoveFamilyMemberRequest, 
+                       FAUpdateFamilyMemberFlagRequest, _FAFamilyCircleRequestConnectionFactory, 
+                       _FAFamilyCircleRequestConnectionProvider ]
 ...

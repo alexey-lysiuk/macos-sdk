@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C80A7F2E-CC77-34F6-A6C0-476CF97A1456', 'x86_64: C80A7F2E-CC77-34F6-A6C0-476CF97A1456' ]
+uuids:           [ 'x86_64: 12B83BB5-43F8-347C-93A9-13E624388DB5', 'x86_64: 12B83BB5-43F8-347C-93A9-13E624388DB5' ]
 platform:        zippered
 install-name:    '/usr/lib/libboringssl.dylib'
 current-version: 0

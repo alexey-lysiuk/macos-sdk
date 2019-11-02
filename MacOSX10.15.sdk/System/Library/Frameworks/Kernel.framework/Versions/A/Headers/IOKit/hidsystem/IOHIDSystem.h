@@ -76,7 +76,11 @@ class IOHIDPointingDevice;
 class IOHIDEvent;
 class IOFixedPoint64;
 
+#if defined(KERNEL) && !defined(KERNEL_PRIVATE)
+class __deprecated_msg("Use DriverKit") IOHIDSystem : public IOService
+#else
 class IOHIDSystem : public IOService
+#endif
 {
 	OSDeclareDefaultStructors(IOHIDSystem);
 

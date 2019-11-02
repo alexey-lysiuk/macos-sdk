@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0183FE50-D9F5-3F39-9FCA-42F05E780956', 'x86_64: 0183FE50-D9F5-3F39-9FCA-42F05E780956' ]
+uuids:           [ 'x86_64: 1A997236-CEC8-3C49-A3E5-2F4B57A581EC', 'x86_64: 1A997236-CEC8-3C49-A3E5-2F4B57A581EC' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AudioPasscode.framework/Versions/A/AudioPasscode'
 exports:         

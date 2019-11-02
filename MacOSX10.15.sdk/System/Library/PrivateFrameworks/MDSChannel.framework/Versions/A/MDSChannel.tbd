@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F97CE4A4-BE77-33B7-8E24-933C74CE365A' ]
+uuids:           [ 'x86_64: D4678C88-1C53-33B3-8BD9-90846A69C772' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/MDSChannel.framework/Versions/A/MDSChannel'
 exports:         

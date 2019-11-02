@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C53D22CF-BE80-348B-A6EA-EB1E054A77C7', 'x86_64: C53D22CF-BE80-348B-A6EA-EB1E054A77C7' ]
+uuids:           [ 'x86_64: 3ABE9077-9FD8-3921-AFA1-78D3D27BF520', 'x86_64: 3ABE9077-9FD8-3921-AFA1-78D3D27BF520' ]
 platform:        zippered
 install-name:    '/usr/lib/swift/libswiftXPC.dylib'
 current-version: 0
