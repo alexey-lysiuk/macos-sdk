@@ -293,7 +293,11 @@
         #define __OSX_AVAILABLE_STARTING(_osx, _ios)
         #define __OSX_AVAILABLE_BUT_DEPRECATED(_osxIntro, _osxDep, _iosIntro, _iosDep)
         #define __OSX_AVAILABLE_BUT_DEPRECATED_MSG(_osxIntro, _osxDep, _iosIntro, _iosDep, _msg)
-      #endif
+        #endif
+      #else
+      #define __OSX_AVAILABLE_STARTING(_osx, _ios)
+      #define __OSX_AVAILABLE_BUT_DEPRECATED(_osxIntro, _osxDep, _iosIntro, _iosDep)
+      #define __OSX_AVAILABLE_BUT_DEPRECATED_MSG(_osxIntro, _osxDep, _iosIntro, _iosDep, _msg)
     #endif
 #endif /* __OSX_AVAILABLE_STARTING */
 
