@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A51E559A-493F-3D5D-8A9A-BD731CA64551', 'x86_64: A51E559A-493F-3D5D-8A9A-BD731CA64551' ]
+uuids:           [ 'x86_64: 03B2705C-7D62-3B60-947E-620FAC72B081', 'x86_64: 03B2705C-7D62-3B60-947E-620FAC72B081' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CryptoKit.framework/Versions/A/CryptoKit'
 swift-abi-version: 7

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CAF545FE-59CC-3276-A6AA-8879E2C4F03A', 'x86_64: CAF545FE-59CC-3276-A6AA-8879E2C4F03A' ]
+uuids:           [ 'x86_64: 998FDEFC-1407-32C1-A19A-D9559187A7D6', 'x86_64: 998FDEFC-1407-32C1-A19A-D9559187A7D6' ]
 platform:        zippered
 install-name:    '/usr/lib/libMTLCapture.dylib'
 current-version: 266.65

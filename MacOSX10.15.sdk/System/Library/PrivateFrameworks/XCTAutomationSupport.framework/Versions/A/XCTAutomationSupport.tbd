@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4A7CC8CA-7598-36BD-8F0F-9190AFC9FD6C', 'x86_64: 4A7CC8CA-7598-36BD-8F0F-9190AFC9FD6C' ]
+uuids:           [ 'x86_64: 9ECBEC6A-E45B-39A7-AA09-F7126BA5237F', 'x86_64: 9ECBEC6A-E45B-39A7-AA09-F7126BA5237F' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/XCTAutomationSupport.framework/Versions/A/XCTAutomationSupport'
 exports:         

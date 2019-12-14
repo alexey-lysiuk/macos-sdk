@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5CBEF693-B0F5-3334-AE0C-4C9E8B89D1C6' ]
+uuids:           [ 'x86_64: 255170CB-771E-33FD-ADD3-9C8908A6AEF0' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/UIKit.framework/Versions/A/UIKit'
 current-version: 61000
@@ -576,7 +576,7 @@ exports:
                        UIDocumentBrowserTransitionController, UIDocumentBrowserViewController ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: C78CAED8-246E-393F-979D-21CAEAC39034' ]
+uuids:           [ 'x86_64: BC35E263-E8ED-388C-A06E-E86C89F8B780' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/PrivateFrameworks/UIKitCore.framework/Versions/A/UIKitCore'
 current-version: 61000

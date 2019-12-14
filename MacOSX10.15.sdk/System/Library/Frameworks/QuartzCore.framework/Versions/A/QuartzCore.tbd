@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 931D3502-20C0-3497-9686-5A4E14DF7D90', 'x86_64: 931D3502-20C0-3497-9686-5A4E14DF7D90' ]
+uuids:           [ 'x86_64: 5F492A40-BBBC-3A31-83A8-32462A7B1FB4', 'x86_64: 5F492A40-BBBC-3A31-83A8-32462A7B1FB4' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore'
 current-version: 1.11

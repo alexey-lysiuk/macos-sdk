@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 45FABFCE-1983-33E1-A47B-FF06F2F3F56F' ]
+uuids:           [ 'x86_64: FEFEADE0-322F-30ED-8269-17C1D986140C' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/MessageUI.framework/Versions/A/MessageUI'
-current-version: 3601.0.7
+current-version: 3601.0.10
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _MFAccessibilityLargeTextEnabled, _MFAutomaticHorizontalEdgeInsets, 

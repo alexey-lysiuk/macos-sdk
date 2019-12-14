@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 649D57F7-9100-3247-AF19-C2D29F3BD650' ]
+uuids:           [ 'x86_64: 1AB2399B-4962-3D7A-9D89-7B126B1489B9' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PipelineKit.framework/Versions/A/PipelineKit'
 exports:         

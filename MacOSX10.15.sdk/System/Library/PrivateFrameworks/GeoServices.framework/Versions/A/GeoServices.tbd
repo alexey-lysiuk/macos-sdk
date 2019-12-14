@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CFB64946-CE50-33B0-BFEE-B624CA67884C', 'x86_64: CFB64946-CE50-33B0-BFEE-B624CA67884C' ]
+uuids:           [ 'x86_64: 2634B6F8-4114-3DA8-BB91-EB0860EB87BD', 'x86_64: 2634B6F8-4114-3DA8-BB91-EB0860EB87BD' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/GeoServices.framework/Versions/A/GeoServices'
 current-version: 1624.21.8

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 67247778-BEB9-33B6-B2F4-21A3B7E3B9A9' ]
+uuids:           [ 'x86_64: 3DF0117D-CEA7-390C-8BB1-59B48D37ED4F' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/usr/lib/libAXSafeCategoryBundle.dylib'
 exports:         

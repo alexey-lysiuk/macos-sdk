@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F2FB23AA-5170-35B8-8508-FA31B89593B3' ]
+uuids:           [ 'x86_64: 74AABE75-DDE0-34DA-BDF2-FFC43B8DCDC6' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PhotosUICore.framework/Versions/A/PhotosUICore'
-current-version: 111.16.150
+current-version: 111.16.180
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CGImagePropertyOrientationFromPXImageOrientation, _FromZoomLevelInAnimation, 

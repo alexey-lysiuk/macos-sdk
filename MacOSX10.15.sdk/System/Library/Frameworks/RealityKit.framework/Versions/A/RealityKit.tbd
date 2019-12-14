@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B62A4645-DC3C-3C03-A1B6-7345ECD798D6' ]
+uuids:           [ 'x86_64: 1AC88E3B-7056-3136-ACF8-EF6011ABA9E9' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/RealityKit.framework/Versions/A/RealityKit'
 current-version: 31.106

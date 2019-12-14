@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DD531C8C-B49A-38E8-9C90-7008402E415B', 'x86_64: DD531C8C-B49A-38E8-9C90-7008402E415B' ]
+uuids:           [ 'x86_64: F17C0A5A-70A5-385E-B4AB-F126F07A87FA', 'x86_64: F17C0A5A-70A5-385E-B4AB-F126F07A87FA' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/IntentsServices.framework/Versions/A/IntentsServices'
 exports:         

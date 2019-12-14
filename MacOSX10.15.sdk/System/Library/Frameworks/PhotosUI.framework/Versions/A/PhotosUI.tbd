@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 06E7C750-4716-3AF7-9B78-CC0519DC9382' ]
+uuids:           [ 'x86_64: 5CAFAC7E-5ACF-30BC-8BAC-DE6D9C8E5C61' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/PhotosUI.framework/Versions/A/PhotosUI'
-current-version: 111.16.150
+current-version: 111.16.180
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _PHProjectCategoryBook, _PHProjectCategoryCalendar, _PHProjectCategoryCard, 

@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 605C35DD-C71E-3668-A298-DE93112E5909', 'x86_64: 605C35DD-C71E-3668-A298-DE93112E5909' ]
+uuids:           [ 'x86_64: 69FC6CC8-D05E-3EC7-9DA3-DD58703146FA', 'x86_64: 69FC6CC8-D05E-3EC7-9DA3-DD58703146FA' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/MailSupport.framework/Versions/A/MailSupport'
-current-version: 3601.0.7
+current-version: 3601.0.10
 exports:         
   - archs:           [ x86_64 ]
     allowable-clients: [ EmailTests, IMAP, MIME, Mail, MailCompositionService, MailIntentsExtension, 

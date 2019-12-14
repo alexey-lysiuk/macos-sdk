@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 3DE1D9EC-FC28-3832-A705-3C9E0A22623F' ]
+uuids:           [ 'x86_64: 841969AC-8C25-34B9-B58A-33429E3B770E' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/PhotosUI.framework/Versions/A/PhotosUI'
-current-version: 111.16.150
+current-version: 111.16.180
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _PHDisplayVelocityZero, _PUAdjustPointsToBeWithinRect, _PUAffineTransformIsApproximatelyEqualToTransform, 

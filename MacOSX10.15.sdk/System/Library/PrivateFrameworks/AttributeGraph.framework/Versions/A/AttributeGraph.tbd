@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9DA1E98B-1064-3DA3-8CF2-5616F3EF157B', 'x86_64: 9DA1E98B-1064-3DA3-8CF2-5616F3EF157B' ]
+uuids:           [ 'x86_64: FA2646A3-ED5A-3C57-8542-A2C3B591023C', 'x86_64: FA2646A3-ED5A-3C57-8542-A2C3B591023C' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AttributeGraph.framework/Versions/A/AttributeGraph'
 swift-abi-version: 7

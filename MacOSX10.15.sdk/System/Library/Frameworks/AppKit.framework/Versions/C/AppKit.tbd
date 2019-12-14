@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8DF95EFB-9951-35E5-B844-25BC335F64B3', 'x86_64: 8DF95EFB-9951-35E5-B844-25BC335F64B3' ]
+uuids:           [ 'x86_64: 76EB4086-CA3D-3448-8CE0-9812F9A94F3A', 'x86_64: 76EB4086-CA3D-3448-8CE0-9812F9A94F3A' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit'
-current-version: 1894.10.122
+current-version: 1894.10.126
 compatibility-version: 45
 exports:         
   - archs:           [ x86_64 ]

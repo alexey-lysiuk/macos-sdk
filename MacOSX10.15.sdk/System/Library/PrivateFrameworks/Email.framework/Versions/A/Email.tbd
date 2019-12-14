@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 72B0E8B1-415B-3177-8A10-14A8B294A4AE', 'x86_64: 72B0E8B1-415B-3177-8A10-14A8B294A4AE' ]
+uuids:           [ 'x86_64: 4D94F976-B7EC-377C-BC23-E0DB50D9699E', 'x86_64: 4D94F976-B7EC-377C-BC23-E0DB50D9699E' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/Email.framework/Versions/A/Email'
-current-version: 3601.0.7
+current-version: 3601.0.10
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _EMAccountsChangedNotification, _EMAccountsChangedNotificationAccountsKey, 

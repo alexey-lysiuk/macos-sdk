@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 531D46C5-2DF5-31AF-AE42-B4374913D85C', 'x86_64: 531D46C5-2DF5-31AF-AE42-B4374913D85C' ]
+uuids:           [ 'x86_64: 0140040F-A87F-3FC5-B610-9BF44C53D798', 'x86_64: 0140040F-A87F-3FC5-B610-9BF44C53D798' ]
 platform:        zippered
 install-name:    '/usr/lib/swift/libswiftCore.dylib'
 current-version: 1100.8.255

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 105A9665-CF7E-3DFB-BBBB-249AD4CB6913', 'x86_64: 105A9665-CF7E-3DFB-BBBB-249AD4CB6913' ]
+uuids:           [ 'x86_64: AA7DE079-2DFD-3E9F-A041-464CFBE1ABAE', 'x86_64: AA7DE079-2DFD-3E9F-A041-464CFBE1ABAE' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/Metal.framework/Versions/A/Metal'
 current-version: 212.2.3

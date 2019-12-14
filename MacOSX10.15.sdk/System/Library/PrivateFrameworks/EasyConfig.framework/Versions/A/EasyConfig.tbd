@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 5F557AC2-047E-3D87-9C49-467A679358E5', 'x86_64: 5F557AC2-047E-3D87-9C49-467A679358E5' ]
+uuids:           [ 'x86_64: 559522B7-6BF3-34DE-80AF-017674B1274B', 'x86_64: 559522B7-6BF3-34DE-80AF-017674B1274B' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/EasyConfig.framework/Versions/A/EasyConfig'
 exports:         

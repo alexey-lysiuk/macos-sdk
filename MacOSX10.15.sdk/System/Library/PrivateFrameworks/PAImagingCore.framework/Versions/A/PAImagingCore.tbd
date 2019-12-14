@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 96D2E59B-5E80-33BB-886A-88A8DABFA3C2' ]
+uuids:           [ 'x86_64: 59D67C56-2144-348B-BC48-7D27A98636CE' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PAImagingCore.framework/Versions/A/PAImagingCore'
-current-version: 111.16.150
+current-version: 111.16.180
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CompareLab, _PAImageFormatInvalid, _PAImagingCoreVersionNumber, 

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 12ED0A6C-D006-34EB-BBD9-8E7F2300DBDC', 'x86_64: 12ED0A6C-D006-34EB-BBD9-8E7F2300DBDC' ]
+uuids:           [ 'x86_64: 26E69EEB-BEBD-3411-956A-FF6F0C238937', 'x86_64: 26E69EEB-BEBD-3411-956A-FF6F0C238937' ]
 platform:        zippered
 install-name:    '/usr/lib/libAccessibility.dylib'
 exports:         

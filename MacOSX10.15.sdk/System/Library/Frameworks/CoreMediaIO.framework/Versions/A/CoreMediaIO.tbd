@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: F4E2766D-2F34-30F6-92B3-C19D925F3707', 'x86_64: F4E2766D-2F34-30F6-92B3-C19D925F3707' ]
+uuids:           [ 'x86_64: 61698CAC-C8A3-33F2-B09F-DDC1A7319644', 'x86_64: 61698CAC-C8A3-33F2-B09F-DDC1A7319644' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/CoreMediaIO.framework/Versions/A/CoreMediaIO'
 exports:         

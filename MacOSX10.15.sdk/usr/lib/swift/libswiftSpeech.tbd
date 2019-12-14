@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 834E22A6-EF42-3FFD-A8C4-AEEA68340709', 'x86_64: 834E22A6-EF42-3FFD-A8C4-AEEA68340709' ]
+uuids:           [ 'x86_64: 8176A12D-5EDF-3D6D-940B-B9E0F7379A36', 'x86_64: 8176A12D-5EDF-3D6D-940B-B9E0F7379A36' ]
 platform:        zippered
 install-name:    '/usr/lib/swift/libswiftSpeech.dylib'
 current-version: 0

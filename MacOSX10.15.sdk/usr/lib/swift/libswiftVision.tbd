@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 43EEBA53-D814-39CA-91ED-0791A7840DC2', 'x86_64: 43EEBA53-D814-39CA-91ED-0791A7840DC2' ]
+uuids:           [ 'x86_64: 4B526ADE-193A-3E5C-BF83-5CFFC160BA41', 'x86_64: 4B526ADE-193A-3E5C-BF83-5CFFC160BA41' ]
 platform:        zippered
 install-name:    '/usr/lib/swift/libswiftVision.dylib'
 current-version: 0

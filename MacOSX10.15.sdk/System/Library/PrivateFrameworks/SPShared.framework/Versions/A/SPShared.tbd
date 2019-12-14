@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A993DEC6-5DF2-3303-A3FD-2301218B12EC' ]
+uuids:           [ 'x86_64: C7964DA4-B748-360E-8980-FC9D65F47C42' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/SPShared.framework/Versions/A/SPShared'
 swift-abi-version: 7

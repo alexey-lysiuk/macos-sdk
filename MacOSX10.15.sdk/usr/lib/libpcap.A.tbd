@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EA91111C-EC3A-33A7-A934-257A307AB716', 'x86_64: EA91111C-EC3A-33A7-A934-257A307AB716' ]
+uuids:           [ 'x86_64: C4F9F5BD-BA21-3038-9665-4D298FB7511C', 'x86_64: C4F9F5BD-BA21-3038-9665-4D298FB7511C' ]
 platform:        zippered
 install-name:    '/usr/lib/libpcap.A.dylib'
 exports:         

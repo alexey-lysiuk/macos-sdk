@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 6F0B1C87-88F8-35E6-B747-28CFE9141B24', 'x86_64: 6F0B1C87-88F8-35E6-B747-28CFE9141B24' ]
+uuids:           [ 'x86_64: F30A7871-3E32-327B-BF6C-B0B28681928B', 'x86_64: F30A7871-3E32-327B-BF6C-B0B28681928B' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/UIKitMacHelper.framework/Versions/A/UIKitMacHelper'
 current-version: 61000

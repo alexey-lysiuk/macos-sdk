@@ -779,7 +779,7 @@ exports:
                        AVMetadataItem._priv, AVMutableCaption._mutableInternal, AVMutableMetadataItem._mutablePriv ]
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A883D211-9A6C-34E5-84FE-0FDEF778E289', 'x86_64: A883D211-9A6C-34E5-84FE-0FDEF778E289' ]
+uuids:           [ 'x86_64: 4978E752-5EF4-3066-963B-68B208871BD6', 'x86_64: 4978E752-5EF4-3066-963B-68B208871BD6' ]
 platform:        zippered
 install-name:    '/System/Library/Frameworks/AVFoundation.framework/Versions/A/Frameworks/AVFAudio.framework/Versions/A/AVFAudio'
 exports:         

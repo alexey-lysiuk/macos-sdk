@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 8A40857E-9D0C-32BF-8A72-166EBD381AE1' ]
+uuids:           [ 'x86_64: 8AE6DC8B-77D0-39B1-A72C-FE991CF59CF9' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/CoreUtilsSwift.framework/Versions/A/CoreUtilsSwift'
 current-version: 0

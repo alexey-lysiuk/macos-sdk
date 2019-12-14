@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DD97E968-9592-32C5-9BDB-9D5050A50145' ]
+uuids:           [ 'x86_64: 5F4C942F-BF4B-36D6-B76C-B37CBBB0E293' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PAImaging.framework/Versions/A/PAImaging'
-current-version: 111.16.150
+current-version: 111.16.180
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CATransform3DFromNSString, _CGAffineTransformFromNSString, 

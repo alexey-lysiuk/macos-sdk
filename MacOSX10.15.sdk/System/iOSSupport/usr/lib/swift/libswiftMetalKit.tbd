@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: DCA8518D-AF8B-3B58-BCEF-04790354370A' ]
+uuids:           [ 'x86_64: 54FF31CB-6D40-304B-986F-A916CDAA090E' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/usr/lib/swift/libswiftMetalKit.dylib'
 current-version: 0

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: CA776095-02B9-3C3D-99C0-50E8E16DD61A' ]
+uuids:           [ 'x86_64: 79F8C837-4866-35D2-B5B5-EE6CFD856755' ]
 platform:        uikitformac
 install-name:    '/System/iOSSupport/System/Library/Frameworks/SwiftUI.framework/Versions/A/SwiftUI'
 swift-abi-version: 7

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A693E889-891E-3F70-9F5D-9DBDE919A80D' ]
+uuids:           [ 'x86_64: 7C0BFE31-C266-3C8E-8486-CABCFD6ACD72' ]
 platform:        uikitformac
 install-name:    '/System/Library/PrivateFrameworks/FMIPCore.framework/Versions/A/FMIPCore'
 swift-abi-version: 7

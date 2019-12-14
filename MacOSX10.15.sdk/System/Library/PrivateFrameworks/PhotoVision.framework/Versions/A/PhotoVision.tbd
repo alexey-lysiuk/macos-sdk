@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 618B774A-1F77-3056-B910-1C7419B8F97F', 'x86_64: 618B774A-1F77-3056-B910-1C7419B8F97F' ]
+uuids:           [ 'x86_64: B93A451A-A2A3-3840-8BCC-1C2CD6870D2E', 'x86_64: B93A451A-A2A3-3840-8BCC-1C2CD6870D2E' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/PhotoVision.framework/Versions/A/PhotoVision'
 exports:         

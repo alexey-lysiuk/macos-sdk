@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 09B3D2CB-176A-37EA-B6BC-0FD15ADCA050', 'x86_64: 09B3D2CB-176A-37EA-B6BC-0FD15ADCA050' ]
+uuids:           [ 'x86_64: C361C3BA-EE7C-3483-953E-2EC0D52B4028', 'x86_64: C361C3BA-EE7C-3483-953E-2EC0D52B4028' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/EmailFoundation.framework/Versions/A/EmailFoundation'
-current-version: 3601.0.7
+current-version: 3601.0.10
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _EFArraysAreEqual, _EFAtomicObjectLoad, _EFAtomicObjectRelease, 

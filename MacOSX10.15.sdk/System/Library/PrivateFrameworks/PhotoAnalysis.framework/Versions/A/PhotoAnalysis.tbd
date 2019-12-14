@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 9BB37DCC-93F7-3F72-9E37-67CB6CA279E4' ]
+uuids:           [ 'x86_64: 2A62CBB0-979D-3ADF-8005-F79229A608E8' ]
 platform:        macosx
 install-name:    '/System/Library/PrivateFrameworks/PhotoAnalysis.framework/Versions/A/PhotoAnalysis'
-current-version: 111.16.150
+current-version: 111.16.180
 exports:         
   - archs:           [ x86_64 ]
     allowable-clients: [ photoanalysisd ]

@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 4B36DFAC-A31A-35E3-94B4-3E2E7CE5AB7C' ]
+uuids:           [ 'x86_64: 2FFD882C-2BFD-3994-A845-FC3894422ADB' ]
 platform:        macosx
 install-name:    '/usr/lib/swift/libswiftMetalKit.dylib'
 current-version: 0

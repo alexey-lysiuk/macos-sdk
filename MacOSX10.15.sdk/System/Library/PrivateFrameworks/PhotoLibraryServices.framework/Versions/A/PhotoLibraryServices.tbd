@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A4E3CC7E-BE27-3712-AA50-8BA92967CB48', 'x86_64: A4E3CC7E-BE27-3712-AA50-8BA92967CB48' ]
+uuids:           [ 'x86_64: 7CB86CC1-36C5-375F-B9EB-F5AEFC136A96', 'x86_64: 7CB86CC1-36C5-375F-B9EB-F5AEFC136A96' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/PhotoLibraryServices.framework/Versions/A/PhotoLibraryServices'
-current-version: 111.16.150
+current-version: 111.16.180
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CLOUD_COALESCED_EVENT_KEY, _CLOUD_SYNC_CHANGE_KEY, _CPLStatusFromPathManager, 

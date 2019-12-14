@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: A8EED2D7-02C1-312D-BFB0-E6B5D1206775' ]
+uuids:           [ 'x86_64: ECABC413-413C-31C4-A6B8-D59159B3424A' ]
 platform:        macosx
 install-name:    '/System/Library/Frameworks/SwiftUI.framework/Versions/A/SwiftUI'
 swift-abi-version: 7

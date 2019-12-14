@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: EC45DD4B-21F9-3AFB-85CC-B155D10EB112', 'x86_64: EC45DD4B-21F9-3AFB-85CC-B155D10EB112' ]
+uuids:           [ 'x86_64: 19ACBC89-6DD3-373C-874E-47D92777E731', 'x86_64: 19ACBC89-6DD3-373C-874E-47D92777E731' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/EmailCore.framework/Versions/A/EmailCore'
-current-version: 3601.0.7
+current-version: 3601.0.10
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _ECAccountSchemeDataAccess, _ECAccountSchemeEWS, _ECAccountSchemeIMAP, 

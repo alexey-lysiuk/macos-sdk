@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: E61A2E7D-28C2-32D8-8FED-A91310E3668E', 'x86_64: E61A2E7D-28C2-32D8-8FED-A91310E3668E' ]
+uuids:           [ 'x86_64: 90743AE0-CAC0-313E-B35C-815EA12952E5', 'x86_64: 90743AE0-CAC0-313E-B35C-815EA12952E5' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/IntentsCore.framework/Versions/A/IntentsCore'
 exports:         

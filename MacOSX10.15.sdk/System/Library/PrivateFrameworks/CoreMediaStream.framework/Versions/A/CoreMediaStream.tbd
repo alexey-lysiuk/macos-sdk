@@ -1,9 +1,9 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 0E757CEC-EEF8-38C8-B0CF-695F2A7AFEC1', 'x86_64: 0E757CEC-EEF8-38C8-B0CF-695F2A7AFEC1' ]
+uuids:           [ 'x86_64: 5C242922-82E5-3CCE-91FC-E448EFB03CB7', 'x86_64: 5C242922-82E5-3CCE-91FC-E448EFB03CB7' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/CoreMediaStream.framework/Versions/A/CoreMediaStream'
-current-version: 111.16.150
+current-version: 111.16.180
 exports:         
   - archs:           [ x86_64 ]
     symbols:         [ _CoreMediaStreamVersionNumber, _CoreMediaStreamVersionString, 

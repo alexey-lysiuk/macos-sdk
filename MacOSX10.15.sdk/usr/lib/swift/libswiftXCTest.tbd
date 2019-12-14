@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: B66EE424-E274-3DE0-8E08-A12998BDE348', 'x86_64: B66EE424-E274-3DE0-8E08-A12998BDE348' ]
+uuids:           [ 'x86_64: 3CAC5518-06BA-331A-A1F3-0232D37AAEFA', 'x86_64: 3CAC5518-06BA-331A-A1F3-0232D37AAEFA' ]
 platform:        zippered
 install-name:    '/usr/lib/swift/libswiftXCTest.dylib'
 current-version: 0

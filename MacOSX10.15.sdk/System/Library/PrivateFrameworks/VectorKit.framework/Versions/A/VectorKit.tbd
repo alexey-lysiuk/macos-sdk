@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2A817BE6-8B96-3B1C-B582-A63B9F8B36C0', 'x86_64: 2A817BE6-8B96-3B1C-B582-A63B9F8B36C0' ]
+uuids:           [ 'x86_64: 902E00AE-E033-3E3D-BE2C-DD50F47A8189', 'x86_64: 902E00AE-E033-3E3D-BE2C-DD50F47A8189' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/VectorKit.framework/Versions/A/VectorKit'
 current-version: 1606.21.8

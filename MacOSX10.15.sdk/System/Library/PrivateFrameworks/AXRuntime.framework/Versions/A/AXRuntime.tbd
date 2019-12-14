@@ -1,6 +1,6 @@
 --- !tapi-tbd-v3
 archs:           [ x86_64 ]
-uuids:           [ 'x86_64: 2FAF9ABF-530E-32D7-9B83-8F5FDB2EE2DA', 'x86_64: 2FAF9ABF-530E-32D7-9B83-8F5FDB2EE2DA' ]
+uuids:           [ 'x86_64: 8F140CD8-C7C8-3A88-AB8B-DC045E5D9A2E', 'x86_64: 8F140CD8-C7C8-3A88-AB8B-DC045E5D9A2E' ]
 platform:        zippered
 install-name:    '/System/Library/PrivateFrameworks/AXRuntime.framework/Versions/A/AXRuntime'
 exports:         
